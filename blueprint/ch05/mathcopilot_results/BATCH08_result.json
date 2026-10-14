@@ -1,0 +1,176 @@
+{
+  "batch": "BATCH08",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "50266cd01efe930507cdbcedd567e4c9e4c5fbf29c1b506441db7b48e8c86fb5",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.2.2-RapidAdjoint",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ADJOINT_SYMBOL_MISMATCH",
+          "CONTEXT_NOTATION_MISSING",
+          "SOURCE_DECAY_CAVEAT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-RapidAdjoint",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185–186",
+          "pdf_page": "206–207",
+          "statement_latex": "Let $u,v$ be two scalar valued functions in $\\mathbb R^m$ which tend to zero sufficiently rapidly at infinity. By our assumptions that $u$ and $v$ are rapidly decaying we know that $B\\to0$, as $\\ell\\to\\infty$. Taking the limit, we are thus left with the equation\n\\[\\langle u,\\mathcal L_fv\\rangle=-\\sum_i\\int_{\\mathbb R^m}v\\frac{\\partial}{\\partial z_i}(uf_i)\\,d\\omega=\\langle M_fu,v\\rangle.\\]\nWe refer to $M_f$ as the adjoint operator of $\\mathcal L_f$ and we write $M_f=\\mathcal L_f^\\dagger$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathcal M_f w=-\\nabla\\cdot(wf)$；原页将此算子记为$\\mathcal L_f^\\dagger$。",
+            "$\\mathcal L_fv=\\sum_i f_i\\partial v/\\partial z_i$；$\\langle u,v\\rangle=\\int_{\\mathbb R^m}uv\\,d\\omega$，$d\\omega$为Lebesgue体积。",
+            "$\\mathcal A_\\ell=[-\\ell,\\ell]^m$；$B=\\sum_i\\int_{\\partial\\mathcal A_\\ell}uf_i v\\nu_i\\,d\\sigma$，$\\nu$为外单位法向。",
+            "原书由u,v迅速衰减推出B→0，未在该段明确f的增长约束；此处保留原句，不能视为对任意f已成立的无条件断言。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.rapidAdjoint",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]快速衰减函数用真实SchwartzMap资格；明确混合乘积可积及原证明所用实际B→0条件（任意增长的f下不能仅凭u/v衰减推出）；不是把最终伴随等式作前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH08 first-with-deps：对PDF页206–207原图核对，修正上述转录/上下文；不改变原书疑误的原句。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原书伴随符号是dagger而非star。",
+          "原context_notation为空，未交代M_f、配对、体积及B。",
+          "原书衰减论证隐含f的增长控制；例如m=1、u=v=exp(-x²)、f=x exp(2x²)时B(ell)=2ell，不趋于零。保留原书表述并明确疑误，未静默修正。"
+        ],
+        "evidence": [
+          "PDF页206（印刷185）：M_f w=-∇·(wf)，u,v 在 R^m 上充分迅速衰减；式(5.4)–(5.5)给出盒域分部积分。",
+          "PDF页206（印刷185）底部：⟨u,L_f v⟩=-Σ_i∫_{R^m}v ∂(u f_i)/∂z_i dω=⟨M_f u,v⟩。",
+          "PDF页207（印刷186）顶部：原书写 M_f=L_f^†，以及 L_f^†u=-∇·(uf)；脚注3区分函数算子伴随与第2章映射伴随。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.rapidAdjoint",
+        "verdict": "PASS",
+        "explanation": "按本轮规则直接采信Mathlib标准含义，不要求其定义体出现在项目依赖摘录中。Ch05_deps.txt:5315、5317、5333–5336、5343展开本项目定义：E n是带欧氏内积的ℝⁿ，volume为标准Lebesgue测度；lie f v z=Dv(z)[f(z)]=Σᵢfᵢ∂ᵢv；divergence是Jacobian的迹；liouvillian f u=-div(uf)=-Σᵢ∂ᵢ(ufᵢ)；schwartzSpace=SchwartzMap，即光滑且所有导数快速衰减的实函数。Ch05.lean:441–446的boxBoundaryTerm经依赖5465–5468的rectangle、boxFace、faceFlux以及5357–5359的hausdorffArea展开，是[-ell,ell]ⁿ各正面与负面的uvfᵢ通量差；hausdorffArea为单位d球体积/2^d乘Mathlib的d维Hausdorff测度，给出欧氏面面积。量词顺序∀n,f,u,v，随后n>0、f为C¹、两个全空间配对Integrable及B(ell)→0，最后得∫u L_fv=∫M_fu v，含原展示式中间负散度求和的全部内容。双可积条件使Bochner积分的不可积置零约定无关；边界趋零是原分部积分论证的实际条件，并非最终伴随等式的改写前提。[EXTRA]Schwartz资格与C¹是合理的精确正则性条件；双可积及边界消失合理补足原段对任意增长f的限制遗漏，n>0是面通量论证的合理维数条件。仅凭u,v为Schwartz不能推出任意f下B→0，例如一维u=v=e^{-x²}、f=x e^{2x²}时B=2ell；该例不满足Lean新增前提，不构成签名反例。无[ERRATUM?]标记；按原形式伴随解释，不宣称识别闭Hilbert算子伴随域。签名PASS与证明状态分开：实际theorem体含sorry，本轮未写证明或作Lean编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-CompactAdjoint",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-CompactAdjoint",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185–186",
+          "pdf_page": "206–207",
+          "statement_latex": "$\\langle u,\\mathcal L_fv\\rangle=\\langle M_fu,v\\rangle$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathcal M_fu=-\\nabla\\cdot(uf)$，$\\mathcal L_fv=f\\cdot\\nabla v$，$\\langle u,v\\rangle=\\int_{\\mathbb R^m}uv\\,d\\omega$。",
+            "原文条件为u,v充分迅速衰减；紧支持C¹是此条另列的形式化特殊版本，并非教材在该处独立陈述的紧支持定理。",
+            "原书在PDF页207用dagger记函数算子形式伴随，未在此识别闭Hilbert算子的定义域。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.liouvillianAdjoint",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]紧支持C¹版本，作为快速衰减完整条目的特殊情形另列；是微分表达式的积分配对，不是闭Hilbert算子伴随的域识别。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH08 first-with-deps：对PDF页206–207原图核对，修正上述转录/上下文；不改变原书疑误的原句。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "展示公式逐字数学内容正确，页码正确；但空context_notation遗漏微分表达式和配对定义，且须区分原文衰减条件与另列紧支持版本。proof_latex=null可保留：原书无独立命名证明，但邻近段落确有式(5.4)–(5.5)的分部积分论证。"
+        ],
+        "evidence": [
+          "PDF页206（印刷185）：M_f w=-∇·(wf)，u,v 在 R^m 上充分迅速衰减；式(5.4)–(5.5)给出盒域分部积分。",
+          "PDF页206（印刷185）底部：⟨u,L_f v⟩=-Σ_i∫_{R^m}v ∂(u f_i)/∂z_i dω=⟨M_f u,v⟩。",
+          "PDF页207（印刷186）顶部：原书写 M_f=L_f^†，以及 L_f^†u=-∇·(uf)；脚注3区分函数算子伴随与第2章映射伴随。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.liouvillianAdjoint",
+        "verdict": "PASS",
+        "explanation": "按Mathlib标准含义理解EuclideanSpace、volume、fderiv、ContDiff、HasCompactSupport与Bochner积分，无需在Ch05_deps.txt中展开这些库定义。展开本项目定义（依赖5315–5317、5333–5336）：E n=ℝⁿ，lie f v=Dv[f]，liouvillian f u=-div(uf)。故结论完整等于教材PDF页206–207的∫u(f·∇v)=∫[-div(uf)]v。量词依次∀n,f,u,v，假设f,u,v均C¹且u,v紧支持，无隐含改变对象或量词顺序。紧支持C¹函数及其导数连续紧支持，两个混合乘积可积，边界通量最终为零，无需额外限制f在无穷远增长；因此不可积时积分取0的标准约定不会产生虚假等式。[EXTRA]明确此为另列的紧支持C¹特殊版本，正则性足够合理；同时要求u,v紧支持强于必要条件（其中一个紧支持即可），但仍是合法充分条件。C¹紧支持未必属于Schwartz，因此此处是同一分部积分结论的特殊衰减版本，不声称由Schwartz类型直接蕴涵。签名仅述微分表达式的积分配对，未承诺闭Hilbert伴随的域；n=0时导数与散度均零，结论仍成立。无[ERRATUM?]标记。签名PASS；theorem体含sorry，证明完成与否不作为此语义判定依据。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-MeasurePropagator",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ADJOINT_SYMBOL_MISMATCH",
+          "SOURCE_VARIABLE_PUNCTUATION",
+          "CONTEXT_IMPLEMENTATION_SUBSTITUTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-MeasurePropagator",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "186",
+          "pdf_page": "207",
+          "statement_latex": "The density $\\rho$ evolves as the solution of the partial differential equation $\\partial\\rho/\\partial t=\\mathcal L_f^\\dagger\\rho$, where we interpret $\\rho$ as a function of both $z$ and $t$ and view $\\mathcal L_f^\\dagger$ as only operating on the spatial components. This means, formally, $\\rho(\\boldsymbol z,t)=e^{t\\mathcal L_f^\\dagger}\\rho(\\boldsymbol z,0)$. We can think of $\\exp(t\\mathcal L_f^\\dagger)$ as defining the propagator of measure.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原页$\\mathcal L_f^\\dagger\\rho=-\\nabla_z\\cdot(\\rho f)$；$f$是自治ODE $\\dot z=f(z)$的向量场，算子仅作用于空间变量。",
+            "$e^{t\\mathcal L_f^\\dagger}$在原书是密度演化的形式解算子记号；此段并未构造一般无界算子指数。",
+            "Lean中的Measure.map (Φ t) μ是测度推前的实现选择；必须另行连接实际f流、密度测度与Liouville方程，不能把这一实现选择当作原页上下文。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.measurePropagator",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH08 first-with-deps：对PDF页206–207原图核对，修正上述转录/上下文；不改变原书疑误的原句。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原书用dagger，变量写作ρ(粗体z,t)、ρ(粗体z,0)，不是star和分号。",
+          "原context_notation仅解释Lean实现并否认PDE构造，未提供原页的负散度和实际ODE背景；已区分原文记号与形式化实现。"
+        ],
+        "evidence": [
+          "PDF页207（印刷186）上半页：∂ρ/∂t=L_f^†ρ，随后明确算子仅作用于空间变量。",
+          "同页下一句：形式上ρ(z,t)=e^{tL_f^†}ρ(z,0)，并将exp(tL_f^†)称为propagator of measure；页首给出L_f^†u=-∇·(uf)。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.measurePropagator",
+        "verdict": "FAIL",
+        "explanation": "直接按Mathlib标准含义理解Measure.map为可测映射的测度推前；不因标准库定义体未提供而判NEEDS_HUMAN。Ch05.lean:475–476及项目依赖5337–5338展开后确实只有Measure.map (Φ t) μ，参数为任意可测空间X、任意Φ:ℝ→X→X、t和μ。这是有效的通用辅助定义，但本source_id引用的原文（PDF页207）还含∂tρ=L_f^†ρ=-div_z(ρf)、初始密度ρ(z,0)、形式指数及其与实际自治动力学的联系。签名未含f，未限定Φ为实际f流，未连接μ与密度，未给零时刻或PDE性质；故全部引文范围下仍有缺失条款。项目依赖5319–5322的flow展开为Φ0=id、群律及HasDerivAt轨道(f沿轨道)，5327的densityMeasure展开为volume.withDensity(ofReal ρ)，但该签名没有使用它们。对通用Measure.map本身，不必把可测性放进定义才能写出Lean项；然而要从它得到原文的密度传播解释，必须补足实际流及相应可测/正则条件。context称形式exp仅记号、不构造一般PDE解，可以免除一般无界算子指数构造，不能省去已引用的PDE与流联系。FAIL依据是语义范围缺失，与库定义体是否提供无关。无[EXTRA]或[ERRATUM?]标记；该def无sorry，亦不能由此推出语义完整。",
+        "counterexample": "取X=ℝ，f=0，Φ t x=0，对所有t均为可测常值映射；μ为标准高斯密度对应的概率测度。通用定义给Measure.map (Φ t) μ=δ₀，包括t=0。原文零场的实际流是恒等映射，密度方程∂tρ=0应保持初始高斯密度，且δ₀没有Lebesgue密度。此例展示签名未排除与所引动力学相冲突的族；不是指Measure.map的通用定义本身数学错误。",
+        "suggested_fix": "保留Measure.map (Φ t) μ作为通用辅助定义，并为本source_id补充实际f流与密度传播的连接陈述：在flow f Φ及适当可测、光滑和局部积分控制条件下，若ρ从ρ₀给出实际推前密度，则证明ρ 0=ρ₀及HasDerivAt (fun s=>ρ s z) (liouvillian f (ρ t) z) t，或明确限定为对应的弱Liouville测试函数方程。形式e^{tL_f^†}可用作该实际密度演化的记号，不要求构造一般无界算子指数。仅在定义中记录推前关系不能充当证明PDE；也不要把待得的PDE作前提。"
+      }
+    }
+  ]
+}

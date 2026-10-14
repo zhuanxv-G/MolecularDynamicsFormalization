@@ -1,0 +1,160 @@
+{
+  "batch": "BATCH18",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "b1301c62ffa61f0b1895afd9bf083b0df9418024bdfa1265b56243c0d380c3b8",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.5.1-AdjointEuler",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材PDF第185页（印刷第163页），已读取文字层并检查该页渲染图；页码符合印刷页+22。",
+          "核对 Now replace h by −h、三式及 another first order method；F在Q求值，两个约束乘子项均带h，statement_latex 无转录差异。context 的h≠0只用于乘子吸收缩放，不应作公式在h=0无定义的说法。 proof_latex、proof_discussion_latex均为null，与所引页无独立证明一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.adjointEulerRelation",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 Ch04.lean:1158–1163 与依赖 ReviewDefinitions.lean:4497–4502 的关系逐式相同：half=p−hG(q)ᵀrho；Q=q+hM⁻¹half；P=half+hF(Q)−hG(Q)ᵀμ；末位置与隐藏约束均正确。定义本身没有初始余切条件，可作为关系的外延定义；要把它当作余切丛上的方法须另限制输入域。原文还声称它是 G*ₕ=G₋ₕ⁻¹ 且一阶；这个 Prop 只列更新等式，不陈述逆映射关系或精度，因此按本条完整原句范围 FAIL，并非更新公式错误。h≠0 时 E 中未乘 h 的末投影乘子与书中乘 h 的乘子可重标定，h=0 不应以除 h 解释。无 [ERRATUM?]；本声明是定义，无 sorry。",
+        "counterexample": "缺失条款：与逆负步长 Euler 分支的等价关系，以及一阶局部误差结论；不是公式的反例。",
+        "suggested_fix": "保留关系定义，另在正质量、光滑独立约束、选定局部隐式分支和初始余切域下陈述 adjoint 逆映射等价及 O(h²) 局部误差；或明确把本条范围缩为三式与末约束并分别登记另外两个原文结论。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.5.1-ConstrainedComposition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXTRA_ASSUMPTION_METADATA_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.5.1-ConstrainedComposition",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.5.1",
+          "printed_page": "163",
+          "pdf_page": "185",
+          "statement_latex": "By composing the maps $G_{h/2}$ and $G^*_{h/2}$ we get a second order symplectic method. In the sense that it is defined by first order maps which reduce to the Symplectic Euler method and its adjoint, this is an analogous scheme to the Störmer-Verlet method. Interestingly, this method is not equivalent to SHAKE or RATTLE.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch04.constrainedComposition",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 实际签名要求势U与各约束g_j为C³、正质量；对每个实数h，E、A、中间动量和全部乘子分支对z可微，且对全部初始余切点满足更新关系及末位置/隐藏约束。结论仅是两半步组合的受限辛形式保持；二阶精度由另条声明处理，退化说明与SHAKE/RATTLE非等价性尚未列入此签名。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH18只读审校：更正附加假设元数据为实际C³及可微分支；原书陈述和附件均未修改。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原文引句、页码均正确；extra_assumptions 的 C²势/约束与实际签名 C³ 不符，C¹分支也不能等同仅 Differentiable。仅修订该附加假设说明，不改原书。"
+        ],
+        "evidence": [
+          "教材PDF第185页（印刷第163页），已读取文字层并检查该页渲染图；页码符合印刷页+22。",
+          "核对 second order symplectic、Störmer-Verlet类比与 not equivalent to SHAKE or RATTLE 全部句子；context_notation为空；无独立证明。附加假设说明依实际Lean签名修订。 proof_latex、proof_discussion_latex均为null，与所引页无独立证明一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constrainedComposition",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 依赖 ReviewDefinitions.lean:4469–4473 中 projectedEulerRelation 展开为 pE=p+hF(q)−hG(q)ᵀrhoE，Q=q+hM⁻¹pE，g(Q)=0，P=pE−G(Q)ᵀμE，GM⁻¹P=0；adjointEulerRelation 为上述三式。restrictedSymplectic 展开为对每个余切点 z 和两个 tangentPhase 向量 u,v，ω(DG(z)u,DG(z)v)=ω(u,v)，ω(u,v)=Σu_q v_p−Σv_q u_p；tangentPhase 同时要求 Dg(q)u_q=0 及 D[(q,p)↦Dg(q)M⁻¹p](z)u=0。结论确为 A(h/2)∘E(h/2) 的完整切向拉回形式，不是空泛名称，输出余切性也由关系假设蕴含。量词为先任取所有分支及乘子，再在所有 h,z 满足关系的前提下对所有 h 给结论。正质量、可微分支和势/约束正则性合理；C³较注释的C²更强且未论证最小必要性，Differentiable 并不等同 C¹；∀h 全局分支要求明显强于通常小步长局部方法。核心辛性签名合理，但原文的二阶、无约束时退化到 Euler/adjoint 的说明及与 SHAKE/RATTLE 不等价没有列入该结论，故全条 FAIL。另一个 order 声明只覆盖精度，不补后两项。无 [ERRATUM?]；该 theorem 的证明为 sorry，语义判定与之独立。",
+        "counterexample": "缺失条款：二阶精度、退化关系和非等价性。非等价性必须表述为一般方法并非相同，不能量化为每个系统都不同：无约束 U=0 时两半步和 RATTLE 都是同一个自由漂移。",
+        "suggested_fix": "在小步长局部分支域上给出辛性与二阶精度的联合陈述，并登记退化结果及一个展示与 SHAKE/RATTLE 不同的约束系统实例；或拆分原文句子并明确各条范围。把元数据/注释的 C² 改为实际 C³，C¹ 分支改为实际可微分支，避免声称更弱前提已被证明。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.5.1-ConstrainedCompositionOrder",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材PDF第185页（印刷第163页），已读取文字层并检查该页渲染图；页码符合印刷页+22。",
+          "核对与上一条重叠的第一句 second order symplectic method；context_notation为空；无独立证明。局部精度范围另在audit说明。 proof_latex、proof_discussion_latex均为null，与所引页无独立证明一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constrainedCompositionOrder",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 E/A 关系的实际展开与上一条相同。还展开 ConstrainedReaction.lean:3731–3742：κ_j(q,p)=D²g_j(q)[M⁻¹p,M⁻¹p]，rho=(GM⁻¹Gᵀ)⁻¹(GM⁻¹F+κ)；ConstrainedReactionRegularity.lean:4024–4030 的 textbookConstrainedPhaseVectorField=(M⁻¹p,−∇U−Gᵀrho)，textbookPotentialForce=-坐标梯度，来自 SymplecticEuler.lean:583–586。所以比较的是实际约束动力学，没有用任意命名向量场替代。量词先任取联合 C³ 的 E,A，再任取初始余切点 z（Gram 非奇异）和穿过 z 的 C³ 真解 Φ，最后存在依赖于 z、Φ 的 C,d>0，使所有 0<h<d 满足误差 ≤Ch³。这是逐点局部二阶精度，没有声称统一于全部初值或固定长时间全局误差。[EXTRA] 正质量、C⁴势/约束、联合 C³分支、零步长恒等和初始Gram非奇异是合理的局部正则资格，阶数并非已证最小；muE 0 z=0 是分支正规化，Gram非奇异且输入余切时可由零步长关系推出。只有 E,A 光滑被显式假设，乘子光滑并未显式假设。∀h、∀z 的全局关系比局部选支更强，实际存在性没有给出。精度子句与原文相符；但本 source 的 statement_latex 仍是 second order symplectic，签名仅给精度，没有辛性，所以逐 source 完整结论审计 FAIL。可以引用上一条的辛性结论补成同前提的联合结果，不能在当前签名内视作已有结论。无 [ERRATUM?]；证明为 sorry。",
+        "counterexample": "缺失条款：symplectic。局部 O(h³) 签名本身未发现反例；本判定不把 sorry 当作语义失败。",
+        "suggested_fix": "将该 source 的正式结论与同域 restrictedSymplectic 合取，必要时加入空间可微的乘子分支假设；或者明确将本 source 范围限定为二阶精度子句，并以另一个 source 单独覆盖辛性。若要声明全局二阶收敛，还需稳定性与一致估计，当前局部结论不应冒充全局结论。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.5.1-MomentumProjector",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材PDF第185页（印刷第163页），已读取文字层并检查该页渲染图；页码符合印刷页+22。",
+          "核对Π=I−g′(q)ᵀ[g′(q)M⁻¹g′(q)ᵀ]⁻¹g′(q)M⁻¹及 mass-weighted projector 原句。context 明确动量协向量、非奇异Gram和非欧氏投影；保留原书tangent措辞。 proof_latex、proof_discussion_latex均为null，与所引页无独立证明一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.momentumProjector",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 Ch04.lean:1198–1200 与依赖 ReviewDefinitions.lean:4503–4505 同为 I−Gᵀ(GM⁻¹Gᵀ)⁻¹GM⁻¹，矩阵顺序与 PDF185 完全一致。原文 tangent space 的措辞须按动量/速度的质量识别解释：Π 的像是 ker(GM⁻¹)，并非一般的速度切空间 ker G；context_notation 已明确此点，未静默更改书中公式。正质量、Gram非奇异时 Π²=Π、GM⁻¹Π=0，对 M⁻¹ 内积自伴；M⁻¹Πp 对应切速度。具体地 G=(1,1), M=diag(1,2) 时 Π(1,0)=(1/3,−2/3)，GΠ(1,0)=−1/3 而 GM⁻¹Π(1,0)=0。这排除了把书中语句误读成欧氏正交速度投影。这里审核的是带已有 context 资格的公式定义，不是无条件投影定理；Lean 的总定义在奇异Gram、零质量处依然有值，不能据此宣称那些点也是投影。没有 [EXTRA] 或 [ERRATUM?] 标记，也没有 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.5.1-ConstrainedPotentialFlow",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材PDF第185页（印刷第163页），已读取文字层并检查该页渲染图；页码符合印刷页+22。",
+          "核对 For the potential energy term、an exact solution 和 Q=q,P=p−hΠ(q)∇U(q)，符号、负号和q求值点正确；context为空；无独立证明。 proof_latex、proof_discussion_latex均为null，与所引页无独立证明一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constrainedPotentialFlow",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 Ch04.lean:1204–1210 的 let P(s)=p−sΠ(q)∇U(q) 显式固定 q；∀t 的结论既保留 g(q)=0 和 GM⁻¹P(t)=0，也给出 P′(t)=−Π(q)∇U(q)。因此 Q=q、P=p−tΠ∇U 的具体解以及投影动量ODE均已表达。q 常值的零导数是该表达的直接语义，不需要把公式改成泛称 solution。乘子可取 −(GM⁻¹Gᵀ)⁻¹GM⁻¹∇U，故 P′=−∇U−Gᵀlambda，与势能子流一致。[EXTRA] 初始余切域和非奇异Gram是自然资格，可微约束合理（实际该证明只用代数关系，可弱化）；不需要势能 Hessian，固定位置使斜率常值。U 没有可微假设，fderiv 在不可微点取总化默认值，故作为 Lean 代数恒等式结论仍成立；物理 Hamiltonian 解释应限制 U 在 q 可微，这是语义域资格，不把该总化扩展误当非光滑经典流。原文没有要求流的唯一性/全局存在性定理。无 [ERRATUM?]。此 theorem 的附件正文有实际证明且未出现 sorry，但本次未运行 Lean 编译，不作编译通过声明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.5.1-GeodesicRelation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材PDF第186页（印刷第164页），已读取文字层并检查该页渲染图；页码符合印刷页+22。",
+          "核对dq/dt=M⁻¹p、dp/dt=−g′(q)ᵀlambda、0=g(q)及 mass-weighted geodesic flow 句；context说明零势ODE及未搭建流形理论；无独立证明。 proof_latex、proof_discussion_latex均为null，与所引页无独立证明一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.geodesicRelation",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 依赖 ReviewDefinitions.lean:4431–4435 的 constrainedSolution 展开后，geodesicRelation 为 ∀t∈I，HasDerivWithinAt q (M⁻¹p(t)) I t 且 HasDerivWithinAt p (−G(q(t))ᵀrho(t)) I t 且 ∀j,g_j(q(t))=0。这忠实记录了 PDF186 的三条微分代数方程。任意集合 I 上的 within 导数并不等于无条件开放时间区间上的经典导数；用于流应限制 I 为合适区间。该定义没有正质量、约束独立性、光滑流形或质量度量的结构，也没有将曲线的协变加速度为零与此ODE等价的陈述，故未覆盖原文最后一句 mass-weighted geodesic flow。context 中“不搭建流形测地流存在理论”可以说明不主张存在性，但不能替代原文的几何识别结论。没有 [ERRATUM?]；该定义无 sorry。",
+        "counterexample": "缺失条款：在质量度量约束流形上的测地线识别。具体资格缺失：n=1,m₀=0,g≡0,p≡0,q≡0,rho≡0,I=ℝ 满足该关系，但 diag(m) 是零矩阵，不是 Riemannian 度量；故不能对定义允许的所有参数称其为质量度量测地流。",
+        "suggested_fix": "保留零势ODE定义；另在 m_i>0、光滑独立约束与开放时间区间上定义诱导质量度量，证明上述ODE与测地线方程的等价。无需声称全局流存在。若只打算形式化三式，需明确缩小 statement_scope，把几何识别另列为未覆盖义务。"
+      }
+    }
+  ]
+}

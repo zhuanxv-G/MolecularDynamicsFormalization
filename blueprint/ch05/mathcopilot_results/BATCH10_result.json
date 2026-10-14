@@ -1,0 +1,204 @@
+{
+  "batch": "BATCH10",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "229eec7858b5fc0f45da6667aa17c53321e30b3e3b1e6d98dd466005807b5fde",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.3.1-TestSpace",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第209页／印刷第188页，§5.3.1 第一段及两个项目符号：test functions；C_0^∞(ℝ^m)；S(ℝ^m)；whose derivatives decay rapidly at infinity。两种空间均在 JSON 陈述中保留。",
+          "原页印作 Schwarz space，本审阅保留原书拼写；没有静默改成 Schwartz。statement_latex 的无穷阶符号以渲染图核对，未采用文本提取中的 C1 误读。",
+          "该页没有本条独立证明，proof_latex=null 正确。context_notation 关于两种选择及紧支持光滑函数资格的说明与原页相符。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.testSpace",
+        "verdict": "FAIL",
+        "explanation": "FAIL。已展开附件中的项目定义：MolecularDynamics.Chapter05Review.E n := EuclideanSpace ℝ (Fin n)，项目库 testSpace 与 MD.Ch05.testSpace 都是 {φ : E n → ℝ // ContDiff ℝ ⊤ φ ∧ HasCompactSupport φ}。按指定版本的标准含义，E n 为 ℝⁿ，而 ContDiff 的阶数类型为 WithTop ℕ∞；此处裸 ⊤ 是最外层顶元 ω，表示实解析，C∞ 对应 scoped ContDiff 下的 ∞。所以签名实际选择全域实解析且紧支持的函数，未忠实编码原文 C_0^∞(ℝ^m)。n≥1 时这类实值函数只能为零，丢失所有非零光滑紧支持测试函数。本条无 [EXTRA] 授权解析性加强；即使明示加强，仍不能把此类型认作原书的紧支持 C∞ 空间。本批 Schwartz 选项的独立存在不修复第一种空间的错误。无 [ERRATUM?]，偏差来自形式化阶数，不是原文勘误。版本依据：Mathlib v4.34.0 官方 ContDiff.Defs 中的阶数记号说明、ContDiff 的 ℕ∞ω 参数及 contDiff_omega_iff_analyticOnNhd；https://raw.githubusercontent.com/leanprover-community/mathlib4/v4.34.0/Mathlib/Analysis/Calculus/ContDiff/Defs.lean。本次仅审计签名语义；直接定义不含 sorry，未进行 Lean 编译或补写证明。",
+        "counterexample": "取 n=1，用坐标把 E 1 识别为 ℝ，设 b(x)=exp(−1/(1−x²))（|x|<1），b(x)=0（|x|≥1）。这是 C∞ 函数，tsupport(b)=[−1,1]，且 b(0)=e^(−1)>0；它在开区间 (1,∞) 恒为0，故由解析恒等原理不可能在整个 ℝ 上实解析。 原书 C_0^∞(ℝ) 包含 b，而 Lean 的 ContDiff ℝ ⊤ b 不成立，所以它没有成为当前 testSpace 1 的成员。这是定义遗漏合法对象的反例。",
+        "suggested_fix": "仅建议签名修复，不修改附件：在 MD.Ch05.testSpace 及依赖库 MolecularDynamics.Chapter05Review.testSpace 中把 ContDiff ℝ ⊤ φ 改为 ContDiff ℝ ∞ φ，并在相应文件启用 open scoped ContDiff。用 scoped 的 ∞ 明确选择 C∞，不要使用最外层裸 ⊤。保持 HasCompactSupport、实值函数类型与独立 Schwartz 选项。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-SchwartzSpace",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第209页／印刷第188页，脚注5：The formal definition of S is；S(ℝ^m)={f∈C^∞(ℝ^m) | ‖f‖_{α,β}<∞}。",
+          "脚注明确 α、β 是 arbitrary multi-indices／vectors of non-negative integers；下式逐项核对 z_1^{α_1}⋯z_m^{α_m}、总微分阶数 β_1+⋯+β_m、分母 ∂z_1^{β_1}⋯∂z_m^{β_m}、绝对值和 sup_{z∈ℝ^m}，均与 JSON 相符。",
+          "proof_latex=null，context_notation=[]；原页没有独立证明。此项 A 审校不把 extra_assumptions 中关于 Mathlib 实现的说明当作原页证据，实际实现另见 C 审计。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.schwartzTestSpace",
+        "verdict": "PASS",
+        "explanation": "PASS。项目 E n 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开为 EuclideanSpace ℝ (Fin n)；MD.Ch05.schwartzTestSpace n 为 SchwartzMap (E n) ℝ。依用户补充规则，采信 SchwartzMap 的标准意义：实际实值 C∞ 函数，任意自然数 k 与微分阶数 r 的 ‖x‖^k‖D^r f(x)‖ 有统一有限上界。该标准空间自身使用 C∞ 阶数 ∞，不能因项目 testSpace 中另有 ⊤ 误用而把它当成解析函数空间。在有限维 ℝⁿ 上，全阶 Fréchet 导数范数的多项式权界与原书任意多重指标 α、β 的坐标单项式加权偏导数界等价：正向由坐标偏导受全阶导数范数控制，反向由有限坐标展开及有限维范数等价保证。n 任意，标量及函数值均为 ℝ，全部微分阶数与全部权的量词均保留。[EXTRA] 是等价的标准实现说明，没有增加数学限制，合理；无 [ERRATUM?]。本次仅审计签名语义；直接定义不含 sorry，未进行 Lean 编译或补写证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-GeneralizedFunction",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第209页／印刷第188页，§5.3.1 第一段：Formally, we define a generalized function as a real-valued linear operation (a linear functional) defined on a suitable space of functions. 与 JSON 陈述一致。",
+          "原句只写 real-valued 和 linear，未提出泛函连续性；context_notation 关于不额外要求连续性的说明符合该原句。原书未给本条独立证明，proof_latex=null 正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.generalizedFunction",
+        "verdict": "PASS",
+        "explanation": "PASS。MD.Ch05.generalizedFunction 的完整定义是 (T : Type*) [AddCommGroup T] [Module ℝ T] := T →ₗ[ℝ] ℝ；该声明没有调用待展开的 MolecularDynamics 自定义定义。按标准含义，结果恰为 T 上满足加法及实数标量作用的实值代数线性泛函。量词／参数顺序为测试空间 T、其加法群及实模块结构，随后构成所有这些线性泛函的类型；这些结构编码原文所需的实向量空间。T 作为适当测试函数空间的抽象参数，无需给测试函数选定拓扑。原文只要求 real-valued linear operation，没有连续性要求，本签名亦没有连续性前提或字段，符合 context_notation。[EXTRA] 与 [ERRATUM?] 均无。本次仅审计签名语义；直接定义不含 sorry，未进行 Lean 编译或补写证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-SchwartzFunctional",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第209页／印刷第188页，§5.3.1 第一段的 real-valued linear operation (a linear functional) 定义与 JSON 引文一致。",
+          "同段第二个测试空间选项为 S(ℝ^m)。本条选择它的说明位于 extra_assumptions；这不是原书另写的一条独立定义或证明，proof_latex=null 和 context_notation=[] 与所引材料一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.schwartzFunctional",
+        "verdict": "PASS",
+        "explanation": "PASS。已从依赖附件展开 MolecularDynamics.Chapter05Review.schwartzSpace n := SchwartzMap (E n) ℝ 与 E n := EuclideanSpace ℝ (Fin n)。因此 MD.Ch05.schwartzFunctional n 是 ℝⁿ 上实际 Schwartz 实值测试函数空间到 ℝ 的实线性泛函类型。变量 n 任意，实标量、实值域及完整线性要求均保留，没有附加连续性。[EXTRA] 明确选择原书列出的第二种测试空间，是合理专门化，泛型 generalizedFunction 与另一测试空间条目在本批分别保留。另一条 testSpace 的阶数偏差由该条的 FAIL 单独记录，不影响此处 Schwartz 专门化与原文的对应。无 [ERRATUM?]。本次仅审计签名语义；直接定义不含 sorry，未进行 Lean 编译或补写证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-RegularDistribution",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PAGE_RANGE_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-RegularDistribution",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "188–189",
+          "pdf_page": "209–210",
+          "statement_latex": "If $f$ is a bounded, smooth function on $\\mathbb R^m$, we may define a generalized function $T_f$ by reference to its action on a test function $\\phi\\in\\mathcal T$ via integration:\n\\[T_f(\\phi)=\\int_{\\mathbb R^m}f(z)\\phi(z)d\\omega.\\]\nThis is very like the $L^2$ inner product, but the functions involved do not both need to lie in $L^2$. Nevertheless, we write $T_f(\\phi)=\\langle f,\\phi\\rangle$, as a helpful shorthand.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际Lebesgue积分配对；线性泛函性质及有界光滑f下可积性须另证，定义编译未代替这一结论。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.regularDistribution",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH10 原文审校：完整引文最后的 as a helpful shorthand. 位于 PDF210／印刷189；页码范围补为印刷188–189／PDF209–210。statement_latex、proof_latex 和 context_notation 保持原样。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch05/BATCH10_evidence/pdf209.png; .mathcopilot/reviews/ch05/BATCH10_evidence/pdf210.png"
+        },
+        "issues": [
+          "statement_latex 包含跨页续文 as a helpful shorthand.；printed_page=188、pdf_page=209 只标了起始页，遗漏印刷189／PDF210。按完整引文范围修正为188–189／209–210，陈述及原书疑误不作改写。"
+        ],
+        "evidence": [
+          "教材 PDF 第209页／印刷第188页，中下部段落：If f is a bounded, smooth function on ℝ^m；展示公式 T_f(φ)=∫_{ℝ^m} f(z)φ(z)dω；随后 L² 比较及 T_f(φ)=⟨f,φ⟩。",
+          "教材 PDF 第210页／印刷第189页，页首 as a helpful shorthand. 是第209页末尾 Nevertheless, we write 及展示公式所在句的续文。JSON 的完整 statement_latex 含这段续文，故完整引文页码范围为印刷188–189、PDF209–210。",
+          "statement_latex 的文字、两条公式及 context_notation 关于实际积分配对和另证可积／线性的说明没有发现转录错误；原页未给独立证明，proof_latex=null 正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.regularDistribution",
+        "verdict": "PASS",
+        "explanation": "PASS。已展开项目 E n := EuclideanSpace ℝ (Fin n)、schwartzSpace n := SchwartzMap (E n) ℝ，以及依赖库 regularDistribution f φ := ∫ z, f z * φ z；MD.Ch05.regularDistribution 的公式与库定义相同。按补充规则，默认 volume 是标准 Lebesgue 测度，该实值 Bochner 积分就是原页 T_f(φ)=∫_{ℝ^m}f(z)φ(z)dω。定义给出作用公式，允许在更大的 f 参数类型上使用总化积分；在原文规定的有界光滑 f 有效域内，f·φ 可积，故不可积时取0的约定不改变此公式的数学作用。选用 Schwartz 测试函数是原文列出的选项之一，其 L¹ 性质和 f 的有界光滑性保障该作用的可积性及实线性；也不要求 f 自身属于 L²。原文的内积写法是配对简记，与 context_notation 相符。此 PASS 针对配对定义在原文有效域内的语义，不把它解释为任意 f 均已给出线性泛函；独立的 regularDistributionLinearity 定理仍需按自己的前提审计，其解析性加强在该条记 FAIL。此定义没有单列 [EXTRA]，Schwartz 选择由同批相关条目明示；无额外数学前提，无 [ERRATUM?]。本次仅审计签名语义；直接定义不含 sorry，未进行 Lean 编译或补写证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-RegularDistributionLinearity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第209页／印刷第188页，If f is a bounded, smooth function on ℝ^m 至 via integration 及 T_f(φ)=∫_{ℝ^m} f(z)φ(z)dω 与 JSON 引文一致。",
+          "generalized function 在同页上文定义为实值线性泛函，因此此处构造蕴含线性要求；原页没有单列完整线性／可积性证明，proof_latex=null 正确。本条引文未含第210页的 helpful shorthand 续文，页码209无需扩展。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.regularDistributionLinearity",
+        "verdict": "FAIL",
+        "explanation": "FAIL。已展开依赖中的 E n := EuclideanSpace ℝ (Fin n)、schwartzSpace n := SchwartzMap (E n) ℝ 和 regularDistribution f φ := ∫ z, f z * φ z。完整量词顺序为 ∀ n f，随后 ContDiff ℝ ⊤ f 及 ∃ C : ℝ, ∀ z, |f z|≤C；结论保留 ∀ φ 的可积性，以及 ∀ φ ψ a b 的完整实线性组合律，未将可积性移入假设。这些结论与有界前提均正确对应原文。实质偏差是指定 Mathlib 版本中 ContDiff ℝ ⊤ f 要求实解析 Cω，不是原文 smooth／C∞；它排除了有界光滑但非解析的 f，将适用范围缩小。[EXTRA] 所写“原有界光滑 f”没有披露这一加强；解析性对于此可积性和线性结论也不必要，不是合理保真的附加假设。Schwartz 空间的明确选择本身合理。此 FAIL 是原文允许的输入范围被遗漏，并非断言现有较强前提下的蕴含式为假。无 [ERRATUM?]，不修改原文。版本依据：Mathlib v4.34.0 官方 ContDiff.Defs 中的阶数记号说明、ContDiff 的 ℕ∞ω 参数及 contDiff_omega_iff_analyticOnNhd；https://raw.githubusercontent.com/leanprover-community/mathlib4/v4.34.0/Mathlib/Analysis/Calculus/ContDiff/Defs.lean。sorry 独立检查：该条可见证明体不含 sorry；其有无 sorry 或是否编译不消除此签名偏差。本次未编译、未补证明。",
+        "counterexample": "取 n=1，用坐标把 E 1 识别为 ℝ，设 b(x)=exp(−1/(1−x²))（|x|<1），b(x)=0（|x|≥1）。这是 C∞ 函数，tsupport(b)=[−1,1]，且 b(0)=e^(−1)>0；它在开区间 (1,∞) 恒为0，故由解析恒等原理不可能在整个 ℝ 上实解析。 取 f=b，则 0≤f≤1，可用 C=1 满足原文有界光滑条件；对任意 Schwartz φ，f·φ 可积并具有原文所需的线性积分作用，但当前定理的 ContDiff ℝ ⊤ f 前提不成立。故此合法输入被签名排除；这是适用范围不忠实的反例，不是现有蕴含式的逻辑反例。",
+        "suggested_fix": "仅建议签名修复，不修改附件：把 MD.Ch05.regularDistributionLinearity 的 ContDiff ℝ ⊤ f 改为 ContDiff ℝ ∞ f（文件已 open scoped ContDiff）。保留 ∀ n f、∃ C ∀ z 的有界条件、Schwartz 选择、可积性结论及 ∀ φ ψ a b 的完整线性组合结论。[EXTRA] 继续说明 Schwartz 的选择；无需加入解析性或把可积性改为前提。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-DiracAction",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第210页／印刷第189页，页首：For the Dirac delta δ, its action on a function φ∈T is δ[φ]=φ(0). We write this also as；紧接展示公式 ⟨δ,φ⟩=∫δ(z)φ(z)dω=φ(0)。",
+          "statement_latex、零点评价、形式积分记号及页码均相符。context_notation 区分评价泛函与普通 Lebesgue 密度，符合第209页对点分布不能用光滑函数甚至 L² 函数表示的说明。原书没有独立证明，proof_latex=null 正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.diracAction",
+        "verdict": "PASS",
+        "explanation": "PASS。已展开项目 schwartzSpace n := SchwartzMap (E n) ℝ 与 E n := EuclideanSpace ℝ (Fin n)，MD.Ch05.diracAction {n} φ 与依赖同名定义均直接返回 φ 0。按标准 SchwartzMap 函数作用，0 是 ℝⁿ 的零向量，返回实际实数 φ(0)，n 与 φ 均任意，恰为原页 δ[φ]=φ(0)。评价对测试函数加法和实数倍具有标准线性意义，原页 ⟨δ,φ⟩ 和形式积分表示同一动作，没有要求普通 Lebesgue 密度。选择原书列出的 Schwartz 测试空间是合理专门化；本条未单列 [EXTRA]，但这一选择由参数类型及本批相关定义明确，不附加排除 Schwartz 成员的条件。无 [ERRATUM?]。本次仅审计签名语义；直接定义不含 sorry，未进行 Lean 编译或补写证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-DiracMeasure",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第210页／印刷第189页，页首 For the Dirac delta δ 至 δ[φ]=φ(0) 与 JSON 的短引文一致。",
+          "第209页／印刷188页开头把该对象称为 concentrates all measure at a single point 的 point distribution，并说明它不能直接用光滑函数甚至 L² 函数表示。因此 context_notation 的测度解释与不具有普通光滑密度的说明相符；Measure.dirac 的具体实现不由原书引文担保，另见 C 审计。",
+          "原书未给本条独立证明，proof_latex=null 正确；本条引文及其作用律所在页为 PDF210／印刷189。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.diracMeasure",
+        "verdict": "PASS",
+        "explanation": "PASS。已展开项目 E n := EuclideanSpace ℝ (Fin n)，并核对 MD.Ch05.diracMeasure n 与依赖同名定义均为 Measure.dirac 0 : Measure (E n)。按补充规则采信标准零点 Dirac 测度：单位质量集中于0；其对本批连续 Schwartz 测试函数的积分作用为 ∫ φ(z) d(δ_0)(z)=φ(0)。因此测度对象、零点、单位质量、任意维度以及原文的全部评价动作均一致，与同批 diracAction 的实现相符。它实现原文的点分布，没有将形式 δ(z)dω 解释成普通光滑 Lebesgue 密度。不存在必要而未提供的项目自定义定义。[EXTRA] 与 [ERRATUM?] 均无。本次仅审计签名语义；直接定义不含 sorry，未进行 Lean 编译或补写证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

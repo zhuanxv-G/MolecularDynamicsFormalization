@@ -1,0 +1,183 @@
+{
+  "batch": "BATCH14",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "6e55b55fcce4dd65bb9d9970bdd9a346a1a2fbf0c6d385c2a6cfaf6971acb6a6",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.4-ProjectedEulerPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "教材PDF页181（印刷页159），已对照原页渲染与文本核对；页码满足PDF=印刷+22。statement_latex的文字与公式、proof_latex及空context_notation均按本条引文范围核对；非本条引入的背景记号不强制重复列入context_notation。 PDF181的(4.20–24)确认pbar与两组乘子、−hF符号；原书疑误保留。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.projectedEulerPrinted",
+        "verdict": "PASS",
+        "explanation": "已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i项为(m i)⁻¹v_i；Jacobian的(j,i)项为fderiv(g j)(q)(e_i)。constraintSet是所有g_j(q)=0；cotangentSet同时含位置约束及GM⁻¹p=0。因此五个合取依次等价于(4.21)、(4.20)、(4.22)、(4.23)、(4.24)，重复位置约束不改变关系。输入与输出及两组乘子均为显式参数，不声称存在。保留−hF符合印刷本。[ERRATUM?]成立：PDF185印刷163为+hF；这不影响逐字版通过。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.4-ProjectedEulerRelation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "教材PDF页181（印刷页159），已对照原页渲染与文本核对；页码满足PDF=印刷+22。statement_latex的文字与公式、proof_latex及空context_notation均按本条引文范围核对；非本条引入的背景记号不强制重复列入context_notation。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.projectedEulerRelation",
+        "verdict": "FAIL",
+        "explanation": "已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。展开与逐字版相同，唯一变化为+hF，但所绑定原句是方法辛性的论断；此定义只有五条更新约束，没有任何拉回二形式不变结论，也没有F来自势的限制。[EXTRA]符号修正版可以作为另一个算法定义，但不能充当所引辛性原句的形式化。",
+        "counterexample": "缺失条款：方法保持受约束辛形式。无约束n=2、m=1、h=1、F(q)=(q₂,0)满足该算法关系却非辛：输入方向u=(δq=e₂,δp=0)、v=(δq=e₁,δp=0)原二形式为0，更新后的二形式为−1。",
+        "suggested_fix": "将此条重新绑定为明确标记的修正版(4.20–24)定义；若继续绑定辛性原句，应限制F=−∇U、U为C²及可微求解分支，并加入完整受约束拉回二形式不变结论。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.4-Lemma41",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_ORDER"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.4-Lemma41",
+          "kind": "lemma",
+          "label": "Lemma 4.1",
+          "section": "4.3.4",
+          "printed_page": "159–160",
+          "pdf_page": "181–182",
+          "statement_latex": "Lemma 4.1 Let $\\gamma:\\mathbb R^{N_c}\\to\\mathbb R$ be $C^2$. Let $q,p\\in\\mathbb R^{N_c}$ be constrained to the manifold defined by\n\\[\\gamma(q)=0,\\quad p\\cdot\\nabla\\gamma(q)=0,\\]\nand suppose $P,\\mu$ satisfy $P=p-\\mu\\nabla\\gamma(q)$. Then\n\\[\\sum_{j=1}^{N_c}dq_j\\wedge dP_j=\\sum_{j=1}^{N_c}dq_j\\wedge dp_j.\\]",
+          "proof_latex": "Clearly the result follows provided\n\\[\\sum_{j=1}^{N_c}dq_j\\wedge d[\\mu\\nabla\\gamma(q)]_j=0,\\]\nwhere $[\\ldots]_j$ indicates the jth component of the term in brackets. We have\n\\[\\sum_jdq_j\\wedge d[\\mu\\nabla\\gamma(q)]_j=\\sum_jdq_j\\wedge\\left(\\frac{\\partial\\gamma}{\\partial q_j}d\\mu+\\mu\\sum_i\\gamma''_{ij}dq_j\\right).\\]\nThen we note\n\\[\\sum_jdq_j\\wedge\\frac{\\partial\\gamma}{\\partial q_j}d\\mu=\\sum_j\\frac{\\partial\\gamma}{\\partial q_j}dq_j\\wedge d\\mu=0,\\]\nsince $\\gamma(q)\\equiv0$ implies $d\\gamma(q)=\\sum_j\\frac{\\partial\\gamma}{\\partial q_j}dq_j\\equiv0$. Moreover\n\\[\\sum_jdq_j\\wedge\\sum_i\\gamma''_{ij}dq_j=0,\\]\nsince the Hessian matrix $\\gamma''$ is symmetric.",
+          "proof_note": "原书计算按原页转录。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "p160证明两处内和印刷dq_j；实际Hessian链式公式应dq_i。原proof_latex保持字面，正式库用真实Hessian对称性证明结论。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.lemma41",
+          "reusable_proofs": [
+            "MolecularDynamics.lemma_4_1"
+          ],
+          "extra_assumptions": [
+            "真实局部参数图、q/p/μ可微，约束在x邻域成立；完整拉回2形式对任意u,v相等。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [
+            "PDF182逐字恢复“Then we note”第二个和式中偏导系数在dq_j之前的排版；不改原书两处内和dq_j疑误。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "proof_latex中“Then we note”的第二个和式把原页的(∂γ/∂q_j)dq_j写成dq_j(∂γ/∂q_j)；数学上等价，但本次逐字审校恢复原页次序。原书两处内和dq_j均保留；ERRATUM?已核实。"
+        ],
+        "evidence": "教材PDF页181–182（印刷页159–160），已对照原页渲染与文本核对；页码满足PDF=印刷+22。statement_latex的文字与公式、proof_latex及空context_notation均按本条引文范围核对；非本条引入的背景记号不强制重复列入context_notation。 PDF182“Then we note”第二个和式为Σ_j(∂γ/∂q_j)dq_j∧dμ；上方和下方Hessian内和均确印dq_j。PDF181确认Lemma4.1完整假设与结论。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.lemma41",
+        "verdict": "PASS",
+        "explanation": "已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。依赖ConstrainedProjection.lean中gradient_i=fderiv γ(q)(e_i)，constrainedMomentum=p−μ∇γ(q)，cotangentChart=Sum.elim q p。SymplecticForm使用J=[0 I;−I 0]，值为Σ_i(u_qi v_pi−u_pi v_qi)，正是Σdq_i∧dp_i。hchart在x邻域要求γ(q)=0及p·∇γ(q)=0；对任意参数空间E、x及u,v给出两拉回形式相等。[EXTRA]可微参数图、乘子及邻域约束是微分形式的合理显式资格，无结论作假设。P由定义消去符合原式。[ERRATUM?]两处dq_j链式公式索引错误成立，应为dq_i；库用真实导数，不继承该计算错误。包装证明调用lemma_4_1，语义判定与证明完整性独立。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.4-MultiMomentumPullback",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "教材PDF页182（印刷页160），已对照原页渲染与文本核对；页码满足PDF=印刷+22。statement_latex的文字与公式、proof_latex及空context_notation均按本条引文范围核对；非本条引入的背景记号不强制重复列入context_notation。 PDF182“Observe that”梯度和式与其后第一条拉回等式均一致。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.multiMomentumPullback",
+        "verdict": "PASS",
+        "explanation": "已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。multiConstrainedMomentum=p−Σ_{j∈s}μ_j∇γ_j(q)，chart与SymplecticForm如Lemma41展开，结论正是新位置的Σdq∧dp等于Σdq∧d pbar。有限指标集推广Fin l合理，s中每条约束C²、乘子与q,p在x可微，且邻域位置约束确保dγ_j(q)=0。无需假设pbar满足动量隐藏约束：该拉回恒等式对任意pbar成立，属于有效加强。[EXTRA]合理，不声称分支存在。调用依赖中的同名拉回定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.4-ProjectedEulerPullback",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "教材PDF页182（印刷页160），已对照原页渲染与文本核对；页码满足PDF=印刷+22。statement_latex的文字与公式、proof_latex及空context_notation均按本条引文范围核对；非本条引入的背景记号不强制重复列入context_notation。 PDF182底部“we next show”与“and, finally”两条等式一致。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.projectedEulerPullback",
+        "verdict": "FAIL",
+        "explanation": "已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。展开Pbar=p+aF_U(q)−hΣλ_j∇γ_j(q)，F_U=−∇U；Q_i=q_i+h(m_i)⁻¹Pbar_i；最终P=Pbar−Σμ_j∇γ_j(Q)。签名只断言Ω(Q,P)=Ω(q,p)。所引原文却明确有两个中间等式Ω(Q,Pbar)=Ω(q,Pbar)及Ω(q,Pbar)=Ω(q,p)，签名均未给出；它把上一条末投影等式一起组合为总结果，不能完整覆盖本条两结论。[EXTRA]C²、可微分支、前后位置约束合理，a=−h和a=h覆盖两种力符号；质量系数固定，拉回恒等式无需正质量。",
+        "counterexample": "缺失上述两个中间拉回形式等式；总等式本身正确，不提供数学反例冒充错误定理。",
+        "suggested_fix": "令Pbar=textbookProjectedEulerPreMomentum，Q=textbookProjectedEulerPosition；结论增加Ω(D(Q,Pbar)u,D(Q,Pbar)v)=Ω(D(q,Pbar)u,D(q,Pbar)v)以及Ω(D(q,Pbar)u,D(q,Pbar)v)=Ω(D(q,p)u,D(q,p)v)，用合取逐条覆盖原句，可保留总等式。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.4-CotangentMultiplier",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "教材PDF页181（印刷页159），已对照原页渲染与文本核对；页码满足PDF=印刷+22。statement_latex的文字与公式、proof_latex及空context_notation均按本条引文范围核对；非本条引入的背景记号不强制重复列入context_notation。 PDF181的(4.23)/(4.24)短公式确与所引条目一致；显式Gram公式仅在extra_assumptions中解释，没有伪造为原文。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.cotangentMultiplier",
+        "verdict": "FAIL",
+        "explanation": "已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。依赖展开G=实际约束Jacobian，D=diag(m_i⁻¹)，A=GDGᵀ；定义返回A⁻¹GD p，其中p必须解释为pbar。所引原式是G D p_next=0，本定义既不陈述该条件，也不带A.det≠0资格。[EXTRA]提到非奇异Gram，但签名中并无相应前提；总定义在奇异处的值不是一般求解乘子。",
+        "counterexample": "n=1,l=2,m₁=1，γ₁(q)=γ₂(q)=q₁，q=0,pbar=1。G=(1,1)ᵀ，A为全1的2×2矩阵，det A=0，Lean非奇异逆定义给零矩阵，返回μ=0。p_next=1，GDp_next=(1,1)ᵀ≠0；真实方程可取μ=(1,0)。",
+        "suggested_fix": "将绑定对象明确为(4.23–24)推导出的资格限定构造；用hdet:A.det≠0参数或受限域，并补充Aμ=GDpbar及投影满足隐藏约束的定理，不能把值函数直接当作(4.24)陈述。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.4-CotangentProjection",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "教材PDF页181（印刷页159），已对照原页渲染与文本核对；页码满足PDF=印刷+22。statement_latex的文字与公式、proof_latex及空context_notation均按本条引文范围核对；非本条引入的背景记号不强制重复列入context_notation。 PDF181的(4.23)/(4.24)短公式确与所引条目一致；显式Gram公式仅在extra_assumptions中解释，没有伪造为原文。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.cotangentProjection",
+        "verdict": "FAIL",
+        "explanation": "已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。展开确为pbar−Gᵀμ，但μ被固定为A⁻¹GDpbar，原式(4.23)则保留待由(4.24)确定的μ。此专项构造在det A≠0时合理；[EXTRA]声称非奇异Gram是资格，但实际签名既无hdet也无正质量与独立性，奇异处返回值未必是余切投影。",
+        "counterexample": "同CotangentMultiplier的n=1,l=2重复约束例，q=0,pbar=1,m=1：定义返回1，违反两条隐藏约束；满足(4.23–24)的实际动量为0。",
+        "suggested_fix": "逐字绑定(4.23)可定义含任意μ的关系P=pbar−Gᵀμ；保留Gram专项实现则添加det A≠0资格并明确这是推导出的限定构造，另用隐藏约束定理说明输出。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.4-CotangentHidden",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "教材PDF页181（印刷页159），已对照原页渲染与文本核对；页码满足PDF=印刷+22。statement_latex的文字与公式、proof_latex及空context_notation均按本条引文范围核对；非本条引入的背景记号不强制重复列入context_notation。 PDF181的(4.23)/(4.24)短公式确与所引条目一致；显式Gram公式仅在extra_assumptions中解释，没有伪造为原文。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.cotangentHidden",
+        "verdict": "PASS",
+        "explanation": "已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。展开输出为P=pbar−Gᵀ(GDGᵀ)⁻¹GDpbar，结论GP_mass=GDP=0逐分量正是(4.24)。hm要求所有质量严格正，hind要求实际fderiv梯度行线性独立；依赖ConstrainedGram.lean给出Gram.det≠0，再调用CotangentProjection.lean隐藏约束定理。[EXTRA]是确保Gram可逆的充分且合理资格，未假设目标结论。q,pbar任意；此条只处理隐藏动量约束，原(4.24)本身也不包含位置约束，不应额外要求γ(q)=0。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

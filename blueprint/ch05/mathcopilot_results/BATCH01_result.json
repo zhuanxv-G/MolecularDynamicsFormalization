@@ -1,0 +1,182 @@
+{
+  "batch": "BATCH01",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "03b33b282337d27bced885364d323fabeba4db9b6c96161c5ab0923f6aa46dbf",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.1-LieDerivative",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [
+          "context_notation 含形式化实现/记号作用域说明，非教材逐字引文；与原文定义相容。"
+        ],
+        "evidence": [
+          "PDF201/印刷180，§5.1 首句及 L_f g=f·∇g；标量函数 g、自治系统和公式逐项一致。",
+          "已逐项核对页码（PDF页=印刷页+21）；本条无独立 proof_latex，原页未列独立证明。展示的推导保留在 statement_latex，proof_note 不被解释为完全没有推导。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.lie",
+        "verdict": "PASS",
+        "explanation": "实际读取的 Blueprint/Ch05.lean 对应附件为 /workspace/Ch05.lean。只读签名审计，未编译工程。依赖摘录 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5323 展开 E n = EuclideanSpace ℝ (Fin n)，lie f g z = (fderiv ℝ g z)(f z)，pullback Φ g t z = g(Φ t z)，flow f Φ = (∀z, Φ 0 z=z) ∧ (∀s t z, Φ(s+t)z=Φ s(Φ t z)) ∧ (∀t z, HasDerivAt (fun s => Φ s z) (f(Φ t z)) t)。 实有限维欧氏空间中的 Fréchet 导数作用于 f(z)，在 g 可微处恰为 f·∇g；顺序和标量值域一致。定义本身未声明可微性，Lean 的 fderiv 在不可微处的全定义延拓不应解释为原书对不可微 g 的断言；数学作用域是有导数的可观测量。context_notation 的 EuclideanSpace/fderiv 是实现说明，不是教材原句。无 [EXTRA]、[ERRATUM?]，定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.1-TrajectoryChain",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "SOURCE_ARGUMENT_ORDER_INCONSISTENCY"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原书先写 g̃(z,t)，式(5.1)左侧却写 (∂g̃/∂t)(t,z)；JSON忠实保留该参数顺序疑误，未静默改成(z,t)。"
+        ],
+        "evidence": [
+          "PDF201/印刷180，复合函数求导段、轨道导数公式和(5.1)，三个等号及时间导数均一致。",
+          "已逐项核对页码（PDF页=印刷页+21）；本条无独立 proof_latex，原页未列独立证明。展示的推导保留在 statement_latex，proof_note 不被解释为完全没有推导。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.trajectoryChain",
+        "verdict": "PASS",
+        "explanation": "实际读取的 Blueprint/Ch05.lean 对应附件为 /workspace/Ch05.lean。只读签名审计，未编译工程。依赖摘录 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5323 展开 E n = EuclideanSpace ℝ (Fin n)，lie f g z = (fderiv ℝ g z)(f z)，pullback Φ g t z = g(Φ t z)，flow f Φ = (∀z, Φ 0 z=z) ∧ (∀s t z, Φ(s+t)z=Φ s(Φ t z)) ∧ (∀t z, HasDerivAt (fun s => Φ s z) (f(Φ t z)) t)。 依赖 MolecularDynamics/Chapter03/LiePoisson.lean:2527–2541 展开 textbookLieDerivative f φ z = (fderiv ℝ φ z)(f z)，并逐项读取 hasDerivAt_textbookLieDerivative 的 hφ、hγ 和结论，未凭名称判定。E 是任意实赋范空间；f、φ、γ、t 任意，假设 φ 在 γ(t) 可微、γ 在 t 的导数为 f(γ(t))，结论给出复合函数的真实时间导数。取 γ(u)=Φ u ξ 即同时覆盖轨道式与固定 z 的式(5.1)；梯度点乘的中间计算由欧氏空间链式法则表达，未增加假设结论。局部可微 [EXTRA] 必要且合理；一般赋范空间是推广，不缩小欧氏对象。源式(5.1)的 (t,z) 保留为原书参数书写问题，Lean 固定 z 后沿时间求导消除此歧义。证明调用上述真实链式法则，无本条 sorry；未作编译认证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.1-ActualFlow",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF201/印刷180，轨道段 z(t)=F_t(ξ), t∈ℝ；本条是该句片段，页码一致。",
+          "已逐项核对页码（PDF页=印刷页+21）；本条无独立 proof_latex，原页未列独立证明。展示的推导保留在 statement_latex，proof_note 不被解释为完全没有推导。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.flow",
+        "verdict": "PASS",
+        "explanation": "实际读取的 Blueprint/Ch05.lean 对应附件为 /workspace/Ch05.lean。只读签名审计，未编译工程。依赖摘录 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5323 展开 E n = EuclideanSpace ℝ (Fin n)，lie f g z = (fderiv ℝ g z)(f z)，pullback Φ g t z = g(Φ t z)，flow f Φ = (∀z, Φ 0 z=z) ∧ (∀s t z, Φ(s+t)z=Φ s(Φ t z)) ∧ (∀t z, HasDerivAt (fun s => Φ s z) (f(Φ t z)) t)。 定义同时要求零时刻恒等、所有实时间的群律、每个初值上满足自治 ODE 的实际导数。对象是完整欧氏相空间上的全局流，时间与初值的全称量词对应原文 t∈ℝ 及任意初值。零时刻、群律是 flow map 的结构，ODE 条件忠实于 solution trajectory；[EXTRA] 合理而非结论循环。本条仅刻画已给定全局流，不声称任意向量场都有全局流；一般局部流需要另改定义域。定义无 sorry，无 [ERRATUM?]。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.1-ObservablePullback",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [
+          "context_notation 含形式化实现/记号作用域说明，非教材逐字引文；与原文定义相容。"
+        ],
+        "evidence": [
+          "PDF201/印刷180，Replacing ξ by z 及 g̃(z,t) 的定义；PDF202/印刷181，It is intuitively appealing…及 G_t=e^{tL_f}。",
+          "已逐项核对页码（PDF页=印刷页+21）；本条无独立 proof_latex，原页未列独立证明。展示的推导保留在 statement_latex，proof_note 不被解释为完全没有推导。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.pullback",
+        "verdict": "PASS",
+        "explanation": "实际读取的 Blueprint/Ch05.lean 对应附件为 /workspace/Ch05.lean。只读签名审计，未编译工程。依赖摘录 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5323 展开 E n = EuclideanSpace ℝ (Fin n)，lie f g z = (fderiv ℝ g z)(f z)，pullback Φ g t z = g(Φ t z)，flow f Φ = (∀z, Φ 0 z=z) ∧ (∀s t z, Φ(s+t)z=Φ s(Φ t z)) ∧ (∀t z, HasDerivAt (fun s => Φ s z) (f(Φ t z)) t)。 任意 X、Φ、g、t、z 的定义直接等于 g(Φ t z)，覆盖原文的可观测量回拉。原文 G_t=e^{t L_f} 在 context_notation 中明确作为此回拉解算子的记号，非收敛指数级数主张；已展开依赖 solutionOperator Φ t g = pullback Φ g t，因而符号解释有实际定义支持。将 Φ 专门化为 flow 时 Φ 0=id，使 g̃(·,0)=g，于是 G_t g̃(·,0)=g̃(·,t)。泛型定义不要求流，是定义的自然推广；本条没有声称任意 Φ 的回拉满足 PDE。无 [EXTRA]、[ERRATUM?]，无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.1-FlowFieldTransport",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF202/印刷181，页首五行等式，Jacobian 转置、D F_t·f 和末行 (L_f g)(F_t(z)) 一致；JSON 省略两处视觉分组方括号，不改变作用范围。",
+          "已逐项核对页码（PDF页=印刷页+21）；本条无独立 proof_latex，原页未列独立证明。展示的推导保留在 statement_latex，proof_note 不被解释为完全没有推导。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.flowFieldTransport",
+        "verdict": "FAIL",
+        "explanation": "实际读取的 Blueprint/Ch05.lean 对应附件为 /workspace/Ch05.lean。只读签名审计，未编译工程。依赖摘录 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5323 展开 E n = EuclideanSpace ℝ (Fin n)，lie f g z = (fderiv ℝ g z)(f z)，pullback Φ g t z = g(Φ t z)，flow f Φ = (∀z, Φ 0 z=z) ∧ (∀s t z, Φ(s+t)z=Φ s(Φ t z)) ∧ (∀t z, HasDerivAt (fun s => Φ s z) (f(Φ t z)) t)。 FAIL 是签名范围不完整，与 sorry 分开。量词遍历 n、f、Φ，并要求真实 flow 和联合 C²，结论只含 DΦ_t(z) f(z)=f(Φ_t(z))，没有任何可观测量 g，也没有原文整条展示式的 (L_f g̃)(z)=(L_f g)(Φ_t(z))。中间输运恒等式本身正确，C² 是合理但强于必要的充分假设（联合 C¹ 已足够）；[EXTRA] 的“本条保存中间式”不能覆盖 statement_scope 明确要求的本条全部展示公式。声明正文含 sorry，独立记为证明未完成，不据此判语义失败。无 [ERRATUM?]。",
+        "counterexample": "缺失条款（非错误恒等式的反例）：原文要求对可微标量 g 的完整 L_f(g∘Φ_t)(z)=(L_f g)(Φ_t(z))；当前签名没有 g，故只能表示其向量输运中间步骤，不能独立表示全部所引结论。",
+        "suggested_fix": "保留输运式为辅助引理，并在本 source_id 的正式声明增加 g : E n → ℝ、ContDiff ℝ 1 g，结论包含现有输运式以及 ∀t z, lie f (pullback Φ g t) z = lie f g (Φ t z)；如需逐行证据，再给出链式法则中间等式。不要用本批以外的声明代替本条完整范围。联合 C² 可保留并标为充分而非最小假设。"
+      }
+    },
+    {
+      "source_id": "MD-5.1-PullbackPDE",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF202/印刷181，This is the same…、(5.2)及 time-dependent, linear (hyperbolic) 描述。",
+          "已逐项核对页码（PDF页=印刷页+21）；本条无独立 proof_latex，原页未列独立证明。展示的推导保留在 statement_latex，proof_note 不被解释为完全没有推导。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.pullbackPDE",
+        "verdict": "PASS",
+        "explanation": "实际读取的 Blueprint/Ch05.lean 对应附件为 /workspace/Ch05.lean。只读签名审计，未编译工程。依赖摘录 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5323 展开 E n = EuclideanSpace ℝ (Fin n)，lie f g z = (fderiv ℝ g z)(f z)，pullback Φ g t z = g(Φ t z)，flow f Φ = (∀z, Φ 0 z=z) ∧ (∀s t z, Φ(s+t)z=Φ s(Φ t z)) ∧ (∀t z, HasDerivAt (fun s => Φ s z) (f(Φ t z)) t)。 展开 HasDerivAt 结论中的 pullback 与 lie 后，正是 d/ds|s=t g(Φ_s(z)) = D[g∘Φ_t](z) f(z)，即式(5.2)。量词覆盖所有 n、f、Φ、g、t、z；真实 flow 排除了任意映射冒充 ODE 流。[EXTRA] 联合 C² 流和 C¹ 可观测量保证空间与时间求导合法，C² 强于所需 C¹，但合理而非循环。原文的线性/一阶输运（hyperbolic）说明是此算子的性质，不是额外 PDE 存在唯一性主张；签名覆盖本条 PDE 断言。正文有 sorry：语义 PASS，证明未完成，未编译认证。无 [ERRATUM?]。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.1-SteadyFirstIntegral",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF202/印刷181，稳态段落 ∂g̃/∂t=0、g̃(z,t)=φ(z)、L_fφ(z)≡0、first integrals 和自治 ODE，全部一致。",
+          "已逐项核对页码（PDF页=印刷页+21）；本条无独立 proof_latex，原页未列独立证明。展示的推导保留在 statement_latex，proof_note 不被解释为完全没有推导。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.steadyFirstIntegral",
+        "verdict": "PASS",
+        "explanation": "实际读取的 Blueprint/Ch05.lean 对应附件为 /workspace/Ch05.lean。只读签名审计，未编译工程。依赖摘录 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5323 展开 E n = EuclideanSpace ℝ (Fin n)，lie f g z = (fderiv ℝ g z)(f z)，pullback Φ g t z = g(Φ t z)，flow f Φ = (∀z, Φ 0 z=z) ∧ (∀s t z, Φ(s+t)z=Φ s(Φ t z)) ∧ (∀t z, HasDerivAt (fun s => Φ s z) (f(Φ t z)) t)。 任意 n、f、实际全局流 Φ、可微 g；结论双向：(∀z,Dg(z)f(z)=0) ↔ (∀t z,g(Φ_t(z))=g(z))，无单向缺失或把恒定性作为前提。右边就是第一积分/回拉与时间无关，且可微轨道上时间导数为零等价于此恒定性，所以原文稳态形如 φ(z) 及 L_fφ≡0 的两项通过该双向关系表达。[EXTRA] 对所有初值的真实 flow 与 g 可微必要且合理；群律在此证明并非必需，但作为 flow 的标准结构合理。源码含链式法则、零导数推出常值及反向导数唯一性的证明，无本条 sorry；未作编译认证。无 [ERRATUM?]。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.1-CoordinatePullback",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [
+          "context_notation 含形式化实现/记号作用域说明，非教材逐字引文；与原文定义相容。"
+        ],
+        "evidence": [
+          "PDF202/印刷181，坐标段明确 The projection onto the ith coordinate, denoted ∂_i，以及 ∂_i(z)=z_i；末式 (e^{tL_f}∂_i)(z(0))=z_i(t)。",
+          "已逐项核对页码（PDF页=印刷页+21）；本条无独立 proof_latex，原页未列独立证明。展示的推导保留在 statement_latex，proof_note 不被解释为完全没有推导。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.coordinatePullback",
+        "verdict": "PASS",
+        "explanation": "实际读取的 Blueprint/Ch05.lean 对应附件为 /workspace/Ch05.lean。只读签名审计，未编译工程。依赖摘录 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5323 展开 E n = EuclideanSpace ℝ (Fin n)，lie f g z = (fderiv ℝ g z)(f z)，pullback Φ g t z = g(Φ t z)，flow f Φ = (∀z, Φ 0 z=z) ∧ (∀s t z, Φ(s+t)z=Φ s(Φ t z)) ∧ (∀t z, HasDerivAt (fun s => Φ s z) (f(Φ t z)) t)。 依赖 ReviewProofs.lean:5644–5645 的 coordinatePullback_proved 已展开：pullback Φ (fun x => x i) t z = Φ t z i，由 rfl。E n 为实际 EuclideanSpace，i : Fin n 是坐标索引；可观测量 fun x => x i 忠实于原文明确规定的 ∂_i(z)=z_i，绝非偏微分算子。取 z=z(0)，Φ 为实际 flow，右边为 z_i(t)，G_t/e^{tL_f} 按本批 context_notation 是回拉记号。对任意 Φ 的恒等式比实际流实例更一般，不需要流存在或算子指数收敛假设；无额外假设、无 [ERRATUM?]。源码复用 rfl 证明，无本条 sorry；未编译认证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

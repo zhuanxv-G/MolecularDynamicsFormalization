@@ -1,0 +1,273 @@
+{
+  "batch": "BATCH17",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "8e2dc26f02882697d3dee1e867b423fbc39744cab3b7de52ab9c135bc17f2a6f",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.4-TimeAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_NOTATION_MISMATCH",
+          "SOURCE_DELIMITER_TYPO"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4-TimeAverage",
+          "kind": "definition",
+          "label": null,
+          "section": "5.4",
+          "printed_page": "195",
+          "pdf_page": "216",
+          "statement_latex": "Given an autonomous system of differential equations $\\dot z=f(z)$ in $\\mathbb R^m$, and a trajectory $\\Gamma=\\{z(t)\\mid t\\in[0,\\infty)\\}$, let $g=g(z)$ be any smooth scalar valued function of $z$ (an observable) and define (assuming it exists) the infinite time average of $g$ along $\\Gamma$ by\n\\[\\bar g_\\Gamma=\\lim_{\\tau\\to\\infty}\\tau^{-1}\\int_0^\\tau g(z(t))dt.\\tag{5.9}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实0..T区间积分；T>0及极限存在意义另条，T=0总化值不赋予平均意义。",
+            "原PDF式(5.9)使用 Γ 表示轨道、τ 表示截断时间、ḡ_Γ 表示依赖轨道的平均；Lean 用 z 和 T 表示相应对象。"
+          ],
+          "issues": [
+            "原PDF第216页/印刷195页式(5.9)为 ḡ_Γ，原文轨道是 Γ、积分及极限参数为 τ；JSON 改成 τ 轨道/T 时间并省略平均的轨道下标，数学上可改名但逐字审校须恢复并说明。原书区间印为[0,∞}，此为括号排印问题；修订保留规范[0,∞)并显式记录，不静默处理。"
+          ],
+          "lean_decl": "MD.Ch05.timeAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH17 first-with-deps",
+              "changes": [
+                "原PDF第216页/印刷195页式(5.9)为 ḡ_Γ，原文轨道是 Γ、积分及极限参数为 τ；JSON 改成 τ 轨道/T 时间并省略平均的轨道下标，数学上可改名但逐字审校须恢复并说明。原书区间印为[0,∞}，此为括号排印问题；修订保留规范[0,∞)并显式记录，不静默处理。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本轮实际核对教材 PDF 216–218 页"
+        },
+        "issues": [
+          "原PDF第216页/印刷195页式(5.9)为 ḡ_Γ，原文轨道是 Γ、积分及极限参数为 τ；JSON 改成 τ 轨道/T 时间并省略平均的轨道下标，数学上可改名但逐字审校须恢复并说明。原书区间印为[0,∞}，此为括号排印问题；修订保留规范[0,∞)并显式记录，不静默处理。"
+        ],
+        "evidence": [
+          "教材原PDF第216页（印刷第195页），已读取文本并核对渲染图。第5.4节开头完整段及展示公式(5.9)。 本条无独立证明，proof_latex/proof_discussion_latex=null 正确；页码与印刷页+21吻合。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.timeAverage",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义，不要求 Ch05_deps.txt 提供 Mathlib 定义体。 Blueprint/Ch05.lean 第943行的 MD.Ch05.timeAverage 与依赖中的同名定义逐字相同，均只定义有限截断时间平均函数 T↦T⁻¹∫₀ᵀg(z(t))dt。区间积分采用标准有向 Bochner 积分；不可积时总化为0，T=0也总化为0，这些值不声称具有物理平均意义。任意类型 X、任意 z/g 是公式定义的合理推广；对书中光滑可观测量及连续系统轨道，正有限区间上的积分具有通常意义。PDF第216页式(5.9)及本条 statement_scope 却包含完整无限时间平均，当前定义没有 lim、Tendsto 或极限存在条件。context_notation 已说明拆分，HasTimeAverage 确实在本批承接极限部分；按每条覆盖其所引原句全部内容的规则，本条仍为范围不足的 FAIL，并非有限积分公式错误。本条无[EXTRA]或[ERRATUM?]标注。证明状态单独记录：本条实际正文未出现 sorry/admit；仅做只读语义审计，未运行 Lean 编译，也未核验整个项目的公理依赖。",
+        "counterexample": "缺失条款：式(5.9)中的 T→∞ 极限及“assuming it exists”。当前声明只返回依赖 T 的实数，未定义无限平均；有限公式本身无需反例。",
+        "suggested_fix": "在后续修改中把本条 statement_scope 明确限定为式(5.9)的有限截断平均因子，并明确由 MD-5.4-HasTimeAverage 承接极限；若维持本条完整原文范围，则应关联同时包含有限平均定义和候选极限谓词的声明。本轮不修改 A 或附件。"
+      }
+    },
+    {
+      "source_id": "MD-5.4-HasTimeAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_NOTATION_MISMATCH",
+          "SOURCE_DELIMITER_TYPO"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4-HasTimeAverage",
+          "kind": "definition",
+          "label": null,
+          "section": "5.4",
+          "printed_page": "195",
+          "pdf_page": "216",
+          "statement_latex": "define (assuming it exists) the infinite time average of $g$ along $\\Gamma$ by $\\bar g_\\Gamma=\\lim_{\\tau\\to\\infty}\\tau^{-1}\\int_0^\\tau g(z(t))dt$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实Tendsto atTop；定义未声称所有轨道或所有可观测量必有极限。",
+            "原PDF式(5.9)使用 Γ 表示轨道、τ 表示截断时间、ḡ_Γ 表示依赖轨道的平均；Lean 用 z 和 T 表示相应对象。"
+          ],
+          "issues": [
+            "原PDF第216页/印刷195页式(5.9)为 ḡ_Γ，原文轨道是 Γ、积分及极限参数为 τ；JSON 改成 τ 轨道/T 时间并省略平均的轨道下标，数学上可改名但逐字审校须恢复并说明。原书区间印为[0,∞}，此为括号排印问题；修订保留规范[0,∞)并显式记录，不静默处理。"
+          ],
+          "lean_decl": "MD.Ch05.hasTimeAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH17 first-with-deps",
+              "changes": [
+                "原PDF第216页/印刷195页式(5.9)为 ḡ_Γ，原文轨道是 Γ、积分及极限参数为 τ；JSON 改成 τ 轨道/T 时间并省略平均的轨道下标，数学上可改名但逐字审校须恢复并说明。原书区间印为[0,∞}，此为括号排印问题；修订保留规范[0,∞)并显式记录，不静默处理。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本轮实际核对教材 PDF 216–218 页"
+        },
+        "issues": [
+          "原PDF第216页/印刷195页式(5.9)为 ḡ_Γ，原文轨道是 Γ、积分及极限参数为 τ；JSON 改成 τ 轨道/T 时间并省略平均的轨道下标，数学上可改名但逐字审校须恢复并说明。原书区间印为[0,∞}，此为括号排印问题；修订保留规范[0,∞)并显式记录，不静默处理。"
+        ],
+        "evidence": [
+          "教材原PDF第216页（印刷第195页），已读取文本并核对渲染图。第5.4节开头 assuming it exists 及式(5.9)。 本条无独立证明，proof_latex/proof_discussion_latex=null 正确；页码与印刷页+21吻合。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.hasTimeAverage",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义，不要求 Ch05_deps.txt 提供 Mathlib 定义体。 Blueprint/Ch05.lean 第946–947行实际调用的是 MolecularDynamics.Chapter05Review.timeAverage，而非仅凭本地同名函数猜测。项目依赖 MolecularDynamics/Chapter05/ReviewDefinitions.lean（Ch05_deps.txt 第5373–5375行）展开 timeAverage z g T=T⁻¹*(∫ t in 0..T,g(z t))、hasTimeAverage z g a=Tendsto (timeAverage z g) atTop (𝓝 a)。 因而实际谓词精确表示 lim_{T→+∞}(1/T)∫₀ᵀg(z(t))dt=a，a为任意候选实数；没有声称每个轨道/观测量必有极限。标准实数 atTop 只检验最终的正时间，负时间及 T=0 总化值不影响极限。书中非负时间轨道可任意延拓到负半轴，不改变未来积分；任意 X/z/g 的定义推广可限制到原文自治系统的光滑轨道/观测量，不构成额外前提。不可积函数的总化行为不等于本条声称它们是书中光滑可观测量。本条无[EXTRA]或[ERRATUM?]，覆盖 PDF第216页式(5.9)的极限语义。证明状态单独记录：本条实际正文未出现 sorry/admit；仅做只读语义审计，未运行 Lean 编译，也未核验整个项目的公理依赖。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4-ConservedAverage",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材原PDF第217–218页（印刷第196–197页），已读取文本并核对渲染图。217页首段 Considering any conservative system；218页首段 More generally, if ... I=I(z)。 本条无独立证明，proof_latex/proof_discussion_latex=null 正确；页码与印刷页+21吻合。 statement_latex 的所选引文内容与原页一致（排版换行及数学编码规范化）；context_notation 为编者说明，无冒充原文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.conservedAverage",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义，不要求 Ch05_deps.txt 提供 Mathlib 定义体。项目依赖 MolecularDynamics/Chapter05/ReviewDefinitions.lean（Ch05_deps.txt 第5373–5375行）展开 timeAverage z g T=T⁻¹*(∫ t in 0..T,g(z t))、hasTimeAverage z g a=Tendsto (timeAverage z g) atTop (𝓝 a)。 Blueprint/Ch05.lean 第951–953行量词依次为任意 X、z、g、a，守恒条件 ∀t,g(z t)=a，再任意 T≠0；结论只是有限时间平均等于 a。t=0 可识别 a=g(z 0)，不需要再假设初值关系；常数复合函数也可另行实例化该引理，但它们的无限极限没有成为本条结论。[EXTRA]中的守恒是原文的必要条件，T≠0 排除0逆元总化，允许负时间是正确的有限平均推广。负时间守恒比未来轨道条件强，但任意未来轨道都可在负时间常值延拓。PDF第217–218页所引原句还包含无限平均及任意依赖第一积分之量的平均；声明没有这两类极限结论。ConservedInfiniteAverage 在本批补齐这些内容，不能让本条自身的有限结论等同于整个原句。本条 FAIL 原因是所宣称范围与签名不一致，不是 Mathlib 积分或守恒恒等式错误。无[ERRATUM?]。依赖 ReviewProofs.lean 第5650–5652行 conservedAverage_proved 展开为同一有限恒等式的常数区间积分证明，本条调用此结果。证明状态单独记录：本条实际正文未出现 sorry/admit；仅做只读语义审计，未运行 Lean 编译，也未核验整个项目的公理依赖。",
+        "counterexample": "缺失条款：hasTimeAverage z I (I(z 0)) 及对任意 r 的 hasTimeAverage z (r ∘ I) (r(I(z 0)))。本有限时间恒等式正确，无需其反例。",
+        "suggested_fix": "后续将本条范围注明为有限平均辅助引理并引用 MD-5.4-ConservedInfiniteAverage 承接原文完整结论，或在保持原文范围时把对应两个无限平均结论纳入签名。需要直接覆盖单向轨道时，可将守恒前提限制为 t≥0、平均时间限制为 T>0。本轮不修改 A 或附件。"
+      }
+    },
+    {
+      "source_id": "MD-5.4-ConservedInfiniteAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_QUOTE_CONTEXT_OMITTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4-ConservedInfiniteAverage",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4",
+          "printed_page": "196–197",
+          "pdf_page": "217–218",
+          "statement_latex": "Considering any conservative system, we know that the energy itself is a conserved quantity along trajectories, and its average is therefore a function of the initial condition. More generally, if a given system has a first integral (conserved quantity) $I=I(z)$, different from the energy, which is preserved along trajectories, then the average of this conserved quantity (and any other quantity that depends upon it) will be dependent on the choice of initial condition.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "保留第一积分及任意依赖它的量两个无限平均结论；不只保留有限时间积分。"
+          ],
+          "issues": [
+            "PDF第217页首段能源句及第218页首段第一积分句被拼接；原文第二句是 More generally, if ... then the average ...，并非独立的 The average ...。恢复完整条件，避免将 this conserved quantity 的指代与条件删掉。"
+          ],
+          "lean_decl": "MD.Ch05.conservedInfiniteAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH17 first-with-deps",
+              "changes": [
+                "PDF第217页首段能源句及第218页首段第一积分句被拼接；原文第二句是 More generally, if ... then the average ...，并非独立的 The average ...。恢复完整条件，避免将 this conserved quantity 的指代与条件删掉。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本轮实际核对教材 PDF 216–218 页"
+        },
+        "issues": [
+          "PDF第217页首段能源句及第218页首段第一积分句被拼接；原文第二句是 More generally, if ... then the average ...，并非独立的 The average ...。恢复完整条件，避免将 this conserved quantity 的指代与条件删掉。"
+        ],
+        "evidence": [
+          "教材原PDF第217–218页（印刷第196–197页），已读取文本并核对渲染图。217页首段 energy ... function of the initial condition；218页首段完整第一积分条件及括号内 any other quantity that depends upon it。 本条无独立证明，proof_latex/proof_discussion_latex=null 正确；页码与印刷页+21吻合。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.conservedInfiniteAverage",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义，不要求 Ch05_deps.txt 提供 Mathlib 定义体。项目依赖 MolecularDynamics/Chapter05/ReviewDefinitions.lean（Ch05_deps.txt 第5373–5375行）展开 timeAverage z g T=T⁻¹*(∫ t in 0..T,g(z t))、hasTimeAverage z g a=Tendsto (timeAverage z g) atTop (𝓝 a)。 Blueprint/Ch05.lean 第956–967行依次量化任意 X、z、I、r，再假定 ∀t,I(z t)=I(z 0)，结论是两条极限的合取：第一积分平均为 I(z 0)，复合量 r∘I 的平均为 r(I(z 0))。两部分均保留；取 I 为能量覆盖能源特例，取不同第一积分覆盖 PDF第218页一般句。无需假定 I≠H，因为更一般的恒等式同时包含这两个特例。r 不需光滑性，因为沿守恒轨道的复合值为常数并可积；没有以不可积总化值替代守恒量的真实积分。全实时间的守恒条件可由未来轨道的负时间常值延拓满足，未来极限不变。“dependent on the choice of initial condition”保留为明确的初值函数表达，不强化为所有不同初值的平均都不同；r 常数或不同初值具有同一积分值时，平均可以相同。此声明不主张该不成立的强化解释，因此无需人工裁决。本条无[EXTRA]/[ERRATUM?]标注。实际正文利用依赖 conservedAverage_proved 及最终 T>0 的常值收敛。证明状态单独记录：本条实际正文未出现 sorry/admit；仅做只读语义审计，未运行 Lean 编译，也未核验整个项目的公理依赖。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4-DoubleWellEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材原PDF第217页（印刷第196页），已读取文本并核对渲染图。Example 5.3 的 φ 展示公式及紧随的 H、+∞、by zero 句。 本条无独立证明，proof_latex/proof_discussion_latex=null 正确；页码与印刷页+21吻合。 statement_latex 的所选引文内容与原页一致（排版换行及数学编码规范化）；context_notation 为编者说明，无冒充原文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.doubleWellEnergy",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义，不要求 Ch05_deps.txt 提供 Mathlib 定义体。项目依赖 MolecularDynamics/Chapter05/ReviewDefinitions.lean（Ch05_deps.txt 第5315行）展开 E n=EuclideanSpace ℝ (Fin n)，按标准含义是具有欧氏内积与拓扑的 ℝⁿ；Blueprint/Ch05.lean 第968行的 MD.Ch05.doubleWellEnergy 展开为 p²/2+(1-q²)²，其中 q=z 0、p=z 1。 类型是实际二维相空间，势与能量公式精确符合 PDF第217页 Example 5.3。签名为实值函数定义，没有额外假设。但本条 statement_latex/statement_scope 还包含能量向+∞的极限和下界0两条性质；函数定义没有作为定理结论陈述它们。context_notation 明确将这些性质交给本批 DoubleWellCoercivity，分拆本身数学上合理；在要求本条独立覆盖全部所引结论的规则下，仍为范围不匹配的 FAIL，不是坐标、EuclideanSpace 或能量公式错误。无[EXTRA]/[ERRATUM?]。证明状态单独记录：本条实际正文未出现 sorry/admit；仅做只读语义审计，未运行 Lean 编译，也未核验整个项目的公理依赖。",
+        "counterexample": "缺失条款：∀z,0≤H(z) 以及 q→+∞ 或 p→+∞ 时 H→+∞；不是能量定义的反例。",
+        "suggested_fix": "后续明确把本条范围限定为势函数和能量公式的定义，并引用 MD-5.4-DoubleWellCoercivity 承接非负性和强制性；若保持当前完整原文范围，则需关联相应性质定理。本轮不修改 A 或附件。"
+      }
+    },
+    {
+      "source_id": "MD-5.4-DoubleWellCoercivity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材原PDF第217页（印刷第196页），已读取文本并核对渲染图。Example 5.3 的 The energy H(q,p) ... will tend to +∞ ... bounded below (by zero) 句。 本条无独立证明，proof_latex/proof_discussion_latex=null 正确；页码与印刷页+21吻合。 statement_latex 的所选引文内容与原页一致（排版换行及数学编码规范化）；context_notation 为编者说明，无冒充原文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.doubleWellCoercivity",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义，不要求 Ch05_deps.txt 提供 Mathlib 定义体。项目依赖 MolecularDynamics/Chapter05/ReviewDefinitions.lean（Ch05_deps.txt 第5315行）展开 E n=EuclideanSpace ℝ (Fin n)，按标准含义是具有欧氏内积与拓扑的 ℝⁿ；Blueprint/Ch05.lean 第968行的 MD.Ch05.doubleWellEnergy 展开为 p²/2+(1-q²)²，其中 q=z 0、p=z 1。 Blueprint/Ch05.lean 第972–993行结论为(∀z,0≤H(z))与(∀c∈ℝ,{z|H(z)≤c}紧)的合取。IsCompact 按标准欧氏紧性理解；能量为连续多项式，其闭下水平集在有限维空间紧，等价于通常的强制性，涵盖原文 q→+∞ 或 p→+∞ 时 H→+∞（另一坐标固定或任意变化），并合理推广到任意坐标逃逸。c<0 时下水平集为空，紧性仍成立，无能级遗漏。[EXTRA]实际是性质的等价表达说明，而非签名中的附加前提；没有给一般势函数添加未经论证的强制性。两个原文结论均被表达，无[ERRATUM?]。证明状态单独记录：本条实际正文未出现 sorry/admit；仅做只读语义审计，未运行 Lean 编译，也未核验整个项目的公理依赖。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4-DoubleWellDisconnected",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材原PDF第217页（印刷第196页），已读取文本并核对渲染图。Example 5.3 的 From the graph ... more than one component if 0<E<1 句及 Fig.5.2。 本条无独立证明，proof_latex/proof_discussion_latex=null 正确；页码与印刷页+21吻合。 statement_latex 的所选引文内容与原页一致（排版换行及数学编码规范化）；context_notation 为编者说明，无冒充原文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.doubleWellDisconnected",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义，不要求 Ch05_deps.txt 提供 Mathlib 定义体。项目依赖 MolecularDynamics/Chapter05/ReviewDefinitions.lean（Ch05_deps.txt 第5315行）展开 E n=EuclideanSpace ℝ (Fin n)，按标准含义是具有欧氏内积与拓扑的 ℝⁿ；Blueprint/Ch05.lean 第968行的 MD.Ch05.doubleWellEnergy 展开为 p²/2+(1-q²)²，其中 q=z 0、p=z 1。 项目依赖 ReviewDefinitions.lean 第5355行展开 energySurface H c={z|H(z)=c}。Blueprint/Ch05.lean 第996–1015行量词 ∀c∈Ioo 0 1 正是对所有0<c<1。标准 ¬IsPreconnected 表达该能级作为拓扑子空间不连通；这里能级非空（例如 q=±1,p=√(2c)），因而与原文“more than one component”一致，不依赖空集约定。q=0 时 H=p²/2+1≥1，且能级同时含 q<0 和 q>0 两侧点，断开对象确实是整个能量面，并非投影或子集。无额外前提、无[EXTRA]/[ERRATUM?]。标准连通定义直接采信，不因依赖摘录不含其 Mathlib 定义体而降级。证明状态单独记录：本条实际正文未出现 sorry/admit；仅做只读语义审计，未运行 Lean 编译，也未核验整个项目的公理依赖。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4-DoubleWellBasin",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材原PDF第217页（印刷第196页），已读取文本并核对渲染图。Example 5.3 的 If an initial condition ... remain forever ... thus the averages ... overall average ... 完整句。 本条无独立证明，proof_latex/proof_discussion_latex=null 正确；页码与印刷页+21吻合。 statement_latex 的所选引文内容与原页一致（排版换行及数学编码规范化）；context_notation 为编者说明，无冒充原文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.doubleWellBasin",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义，不要求 Ch05_deps.txt 提供 Mathlib 定义体。项目依赖 MolecularDynamics/Chapter05/ReviewDefinitions.lean（Ch05_deps.txt 第5315行）展开 E n=EuclideanSpace ℝ (Fin n)，按标准含义是具有欧氏内积与拓扑的 ℝⁿ；Blueprint/Ch05.lean 第968行的 MD.Ch05.doubleWellEnergy 展开为 p²/2+(1-q²)²，其中 q=z 0、p=z 1。 Blueprint/Ch05.lean 第1020–1046行量化任意全实时间轨道 z 和能量 c，依次假设 Continuous z、0<c<1、∀t,H(z t)=c，再断言所有 t 与初始时刻的 q 均同为正或同为负，两个 basin 均被保留。连续和守恒是来自实际微分方程轨道的合理[EXTRA]抽象，能级限制来自 PDF第217页紧邻前句；全实时间条件可通过负时间常值延拓涵盖仅向未来定义的轨道。这里结论正确表达不能穿越 q=0 的 basin 保持性质。但原句 thus 后还声称轨道平均不能良好近似整个能级的空间平均；签名中没有观测量、无限平均或空间平均，故该结论子句缺失。定性措辞不要求编造数量或误差阈值，但不能当作已由本签名表达。FAIL 不源自 Mathlib 连续性/欧氏空间资料不足。无[ERRATUM?]。证明状态单独记录：本条实际正文未出现 sorry/admit；仅做只读语义审计，未运行 Lean 编译，也未核验整个项目的公理依赖。",
+        "counterexample": "缺失条款：轨道平均与整个固定能级空间平均的比较。可用可观测量 g(q,p)=q 指明该缺失：右侧能级上 q≥√(1-√c)>0，故存在时的轨道平均也≥该正下界；对于对称归一化微正则空间分布，q 的空间平均为0。这是补缺方向的见证，不是 basin 不变性反例，也不是把原文“many”改成所有观测量。",
+        "suggested_fix": "保留此声明作为左右 basin 不变性的子引理，在后续范围修订中明确平均比较仍需单独陈述；若维持完整原句范围，应增添一个与空间平均不同的轨道平均见证，例如在对称归一化微正则分布和轨道平均存在的条件下选 g=q。相关测度归一化/对称性及平均存在条件应明确，不能把它们隐藏为 basin 不变性的已证结论。本轮不修改 A 或附件。"
+      }
+    }
+  ]
+}

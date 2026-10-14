@@ -1,0 +1,311 @@
+{
+  "batch": "BATCH04",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "022d5e7f2118bc2687f4161b823205f700d52efbf94c344592f1e3d006b186b1",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.2.1-DomainL2",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_REFERENCE_REPLACED",
+          "SOURCE_SYMBOL_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.1-DomainL2",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.1",
+          "printed_page": "183",
+          "pdf_page": "204",
+          "statement_latex": "The set of functions from $\\mathcal D\\subset\\mathbb R^m$ to $\\mathbb R$ which satisfy (5.3) is referred to as the space $L^2(\\mathcal D)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.204，式(5.3)：$\\int_{\\mathcal D}\\phi^2(z)\\,d\\omega<\\infty$；原书此处使用 $\\phi$，不是 $\\rho$。"
+          ],
+          "issues": [
+            "原书正文引用“which satisfy (5.3)”，JSON 将其无标记改写成积分公式；且原式(5.3)的变量为 φ，而不是 ρ。已恢复正文引用，并把原公式列入上下文。"
+          ],
+          "lean_decl": "MD.Ch05.domainL2",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]Mathlib Lp使用Lebesgue可测函数的AE等价类；书中未写商空间，若不取AE类，所谓范数可能为0而原始函数非零。保留一般D；透明别名复用实际Lp的实例。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH04 first-with-deps：对照实际渲染的原教材 PDF 页修正文字/符号；未修改源附件。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原书正文引用“which satisfy (5.3)”，JSON 将其无标记改写成积分公式；且原式(5.3)的变量为 φ，而不是 ρ。已恢复正文引用，并把原公式列入上下文。"
+        ],
+        "evidence": [
+          "已实际读取并渲染教材完整 PDF p.204（印刷 p.183）；页码满足 PDF=印刷+21。",
+          "该页未为本条给出独立证明；proof_latex=null、proof_discussion_latex=null 与原页一致。",
+          "式(5.3)用 φ²；正文明确引用 (5.3)。",
+          "字体/记号 D 与 𝒟、LaTeX 排版空格视为等价转写；context_notation 中的 Lean 实现说明按实现注释而非原书引文处理，未将其当成依赖定义已展开的证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.domainL2",
+        "verdict": "PASS",
+        "explanation": "本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.204（印刷 p.183）式(5.3)及 L²(𝒟) 定义，对应 Ch05.lean:171 的 domainL2 n D := Lp ℝ 2 (volume.restrict D)。E n 是欧氏 ℝⁿ，volume 是 Lebesgue 测度，restriction 保留一般 D；Lp ℝ 2 表示相对于该限制测度可测且平方可积的实函数的 a.e. 等价类，正是标准 L²(D)。维数/域作为任意参数未缩小原文范围。[EXTRA]可测资格与 a.e. 商使原书的范数/内积正定，是合理且必要的标准严谨化，不是额外动力学条件。原书没有明写商空间这一点仍明确记录；没有静默改写原文。该声明为定义，不涉及 sorry；无 [ERRATUM?] 标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-L2Norm",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_SYMBOL_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.1-L2Norm",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.1",
+          "printed_page": "183",
+          "pdf_page": "204",
+          "statement_latex": "we define the $L^2(\\mathcal D)$ norm by $\\|\\phi\\|_{L^2(\\mathcal D)}\\stackrel{\\rm def}{=}[\\int_{\\mathcal D}\\phi^2(z)\\,d\\omega]^{1/2}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际Lp范数；与原积分公式的等式独立定理，不将定义编译冒称公式已证。"
+          ],
+          "issues": [
+            "PDF p.204 的该公式使用 φ；JSON 错写成 ρ。已按原书修正，未改动数学内容。"
+          ],
+          "lean_decl": "MD.Ch05.domainL2Norm",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH04 first-with-deps：对照实际渲染的原教材 PDF 页修正文字/符号；未修改源附件。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "PDF p.204 的该公式使用 φ；JSON 错写成 ρ。已按原书修正，未改动数学内容。"
+        ],
+        "evidence": [
+          "已实际读取并渲染教材完整 PDF p.204（印刷 p.183）；页码满足 PDF=印刷+21。",
+          "该页未为本条给出独立证明；proof_latex=null、proof_discussion_latex=null 与原页一致。",
+          "定义式 ‖φ‖=[∫ φ²]^(1/2)。",
+          "字体/记号 D 与 𝒟、LaTeX 排版空格视为等价转写；context_notation 中的 Lean 实现说明按实现注释而非原书引文处理，未将其当成依赖定义已展开的证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.domainL2Norm",
+        "verdict": "PASS",
+        "explanation": "本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.204（印刷 p.183）的平方积分开方定义对应 Ch05.lean:174 的 domainL2Norm g := ‖g‖。展开 domainL2 为 Lp ℝ 2 (volume.restrict D) 后，标准 Lp 范数就是 (∫D |g(z)|² dω)^(1/2)，而实数 |g|²=g²，故与原公式完全一致；Lp 成员保证平方可积且范数有限，a.e. 代表选择不影响结果。n、D 为任意隐式参数，g 为任意 L²(D) 元素；无需另加可积性假设。这里判定定义的数学语义，不把仅定义 ‖g‖ 当成独立桥接定理已经经过本轮编译验证。定义无 sorry，无额外假设或 [ERRATUM?] 标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-L2Inner",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已实际读取并渲染教材完整 PDF p.204（印刷 p.183）；页码满足 PDF=印刷+21。",
+          "该页未为本条给出独立证明；proof_latex=null、proof_discussion_latex=null 与原页一致。",
+          "“for any φ,ψ ∈ L²(𝒟)”以及 ∫𝒟 φ(z)ψ(z)dω。",
+          "字体/记号 D 与 𝒟、LaTeX 排版空格视为等价转写；context_notation 中的 Lean 实现说明按实现注释而非原书引文处理，未将其当成依赖定义已展开的证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.domainL2Inner",
+        "verdict": "PASS",
+        "explanation": "本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.204（印刷 p.183）的 ∀φ,ψ∈L²(D)，⟨φ,ψ⟩=∫D φψ，对应 Ch05.lean:177–178 的 domainL2Inner f g := ∫ z in D, f z*g z。展开 domainL2，f、g 是同一限制测度下的实 L² 类；标准 Hölder/Cauchy–Schwarz 保证乘积可积，积分与代表选择无关。标准 L2.inner_def 与实数内积的乘法表达表明它恰为真实 L² 内积。对象、全部输入及积分域一致，没有遗漏前提或加入额外前提。定义无 sorry，无 [ERRATUM?] 标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-L2NormSquare",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_SYMBOL_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.1-L2NormSquare",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.1",
+          "printed_page": "183",
+          "pdf_page": "204",
+          "statement_latex": "Thus $\\|\\phi\\|_{L^2(\\mathcal D)}^2=\\langle\\phi,\\phi\\rangle_{L^2(\\mathcal D)}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际Lp内积到积分桥接，不假设范数积分公式。"
+          ],
+          "issues": [
+            "PDF p.204 的该公式使用 φ；JSON 错写成 ρ。已按原书修正，未改动数学内容。"
+          ],
+          "lean_decl": "MD.Ch05.domainL2NormSquare",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH04 first-with-deps：对照实际渲染的原教材 PDF 页修正文字/符号；未修改源附件。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "PDF p.204 的该公式使用 φ；JSON 错写成 ρ。已按原书修正，未改动数学内容。"
+        ],
+        "evidence": [
+          "已实际读取并渲染教材完整 PDF p.204（印刷 p.183）；页码满足 PDF=印刷+21。",
+          "该页未为本条给出独立证明；proof_latex=null、proof_discussion_latex=null 与原页一致。",
+          "“Thus”后公式 ‖φ‖²=⟨φ,φ⟩。",
+          "字体/记号 D 与 𝒟、LaTeX 排版空格视为等价转写；context_notation 中的 Lean 实现说明按实现注释而非原书引文处理，未将其当成依赖定义已展开的证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.domainL2NormSquare",
+        "verdict": "PASS",
+        "explanation": "本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.204（印刷 p.183）的 ‖φ‖²=⟨φ,φ⟩对应 Ch05.lean:181–185：∀n,D,g∈domainL2 n D，domainL2Norm g^2=domainL2Inner g g。展开前述两个定义后为 ‖g‖²=∫D g(z)g(z)，与原结论全部一致，未加假设或替换对象。量词完整、AE 商处理沿用标准 L²。证明体使用标准实内积范数恒等式及 L2.inner_def，没有 sorry；签名语义判定与证明状态分别记录，本轮未运行 Lean 编译。无 [ERRATUM?] 标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-L2Complete",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_SENTENCE_TRUNCATED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.1-L2Complete",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.1",
+          "printed_page": "183",
+          "pdf_page": "204",
+          "statement_latex": "This is a real Hilbert space or complete inner product space in which, for any $\\phi,\\psi\\in L^2(\\mathcal D)$, the inner product is defined by $\\langle\\phi,\\psi\\rangle_{L^2(\\mathcal D)}\\stackrel{\\rm def}{=}\\int_{\\mathcal D}\\phi(z)\\psi(z)\\,d\\omega$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "JSON 在“space”后添加句号并截断原句；原书继续“in which, for any … the inner product is defined by”。按逐字要求恢复完整原句；与 L2Inner 条目重叠不删除。原书未明说 AE 商；该原文资格问题保留在审计中。"
+          ],
+          "lean_decl": "MD.Ch05.domainL2Complete",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]完备结论在AE商L²上；原生函数集合的正定性缺AE资格。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH04 first-with-deps：对照实际渲染的原教材 PDF 页修正文字/符号；未修改源附件。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "JSON 在“space”后添加句号并截断原句；原书继续“in which, for any … the inner product is defined by”。按逐字要求恢复完整原句；与 L2Inner 条目重叠不删除。原书未明说 AE 商；该原文资格问题保留在审计中。"
+        ],
+        "evidence": [
+          "已实际读取并渲染教材完整 PDF p.204（印刷 p.183）；页码满足 PDF=印刷+21。",
+          "该页未为本条给出独立证明；proof_latex=null、proof_discussion_latex=null 与原页一致。",
+          "“real Hilbert space or complete inner product space in which”及紧接的内积定义。",
+          "字体/记号 D 与 𝒟、LaTeX 排版空格视为等价转写；context_notation 中的 Lean 实现说明按实现注释而非原书引文处理，未将其当成依赖定义已展开的证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.domainL2Complete",
+        "verdict": "PASS",
+        "explanation": "本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.204（印刷 p.183）称 L²(D) 为实 Hilbert/完备内积空间。Ch05.lean:189–192 对任意 n、D 和任意序列 u:ℕ→domainL2 n D，断言 CauchySeq u → ∃v，Tendsto u atTop (𝓝 v)，准确表达每个柯西序列在该空间内收敛。标准 Lp ℝ 2 已具有实内积空间结构，其内积由 domainL2Inner 的积分定义给出；度量空间中顺序完备与完备等价，因此未漏掉 Hilbert 子句，也不需要重复声明已有实例。[EXTRA]在 AE 商上讨论完备内积空间合理且必要：不取商时非零的零测集指示函数可有零范数，不能成为正定内积空间。证明体无 sorry；本轮未编译，语义 PASS 不冒称完成新的证明检查。无 [ERRATUM?] 标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-L2SymmetricBilinear",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已实际读取并渲染教材完整 PDF p.204（印刷 p.183）；页码满足 PDF=印刷+21。",
+          "该页未为本条给出独立证明；proof_latex=null、proof_discussion_latex=null 与原页一致。",
+          "同时出现 αf+βg 的左线性式和 ⟨f,g⟩=⟨g,f⟩。",
+          "字体/记号 D 与 𝒟、LaTeX 排版空格视为等价转写；context_notation 中的 Lean 实现说明按实现注释而非原书引文处理，未将其当成依赖定义已展开的证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.domainL2SymmetricBilinear",
+        "verdict": "PASS",
+        "explanation": "本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.204（印刷 p.183）的线性公式和对称公式，在 Ch05.lean:195–203 由合取同时保留：inner(a•f+b•g,h)=a*inner(f,h)+b*inner(g,h)，以及 inner(f,g)=inner(g,f)。n、D、f、g、h、a、b 均任意，全称量词中独立标量的位置换序无语义变化。展开 domainL2Inner 为乘积积分、domainL2 为真实 L² 类后，标准 Lp 的加法/实数标量乘法与代表元的逐点运算 a.e. 一致，全部乘积可积。对称性加左线性也蕴含右线性，故原文“symmetric, bilinear”完整保留。无新增前提。证明无 sorry；不将此事实与签名语义混淆，本轮未编译。无 [ERRATUM?] 标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-CompactL2",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已实际读取并渲染教材完整 PDF p.204（印刷 p.183）；页码满足 PDF=印刷+21。",
+          "该页未为本条给出独立证明；proof_latex=null、proof_discussion_latex=null 与原页一致。",
+          "“continuous functions with compact (closed, bounded) support”；随后定义 support 为非零集合的 closure。",
+          "字体/记号 D 与 𝒟、LaTeX 排版空格视为等价转写；context_notation 中的 Lean 实现说明按实现注释而非原书引文处理，未将其当成依赖定义已展开的证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.compactL2",
+        "verdict": "PASS",
+        "explanation": "本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.204（印刷 p.183）称欧氏空间上的连续紧支持实函数属于 L²，且 support 是非零集合的闭包。Ch05.lean:206–209 对任意 n 和 g:E n→ℝ，以 Continuous g 与 HasCompactSupport g 为前提，结论 MemLp g 2 volume。按标准含义 HasCompactSupport g 是 tsupport g 的紧性，tsupport=closure(Function.support g)，Function.support 是非零集合；因此与原书闭支持定义一致。在有限维欧氏空间中紧等价于闭且有界；连续紧支持函数有界且支集的 Lebesgue 测度有限，确为平方可积。MemLp 同时提供可测资格，正好表达原文包含关系，无须强行构造商类作为结论。对象、全部假设及结论一致，无额外假设。证明无 sorry，本轮未编译；无 [ERRATUM?] 标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-DensityAverageOn",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已实际读取并渲染教材完整 PDF p.205（印刷 p.184）；页码满足 PDF=印刷+21。",
+          "该页未为本条给出独立证明；proof_latex=null、proof_discussion_latex=null 与原页一致。",
+          "首段完整 Avρ(g)=(∫𝒟ρ)⁻¹⟨g,ρ⟩=∫𝒟gρ̂；下一句称 spatial average 与 associated probability measure。",
+          "字体/记号 D 与 𝒟、LaTeX 排版空格视为等价转写；context_notation 中的 Lean 实现说明按实现注释而非原书引文处理，未将其当成依赖定义已展开的证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.densityAverageOn",
+        "verdict": "PASS",
+        "explanation": "本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.205（印刷 p.184）的空间平均定义，对应 Ch05.lean:212–213 的 densityAverageOn D ρ g := (∫D gρ)/(∫Dρ)，其中 E n 展开为欧氏 ℝⁿ。原文第一种写法 (∫Dρ)⁻¹⟨g,ρ⟩ 在本段将 ⟨g,ρ⟩定义为乘积积分，故与该比值相同；令 ρ̂(z)=ρ(z)/(∫Dρ)，Bochner 积分对常数因子的标准性质给出同一表达式 ∫D gρ̂，完整保留展示公式的两种表达，不需要要求 g、ρ 都属于 L²。原文的概率解释适用于非负可积密度、正的有限质量以及可积乘积；原 JSON 的 context_notation 已明确这个解释范围。该 Lean 声明是比值的总化定义，并没有声称所有任意输入都生成概率测度；对零质量、负密度或不可积输入也给一个总化值不会构成对原文适用域内公式的反例，故撤回上一轮将这些输入作为 FAIL 反例的判断。Bochner 积分不可积时取0以及实数除法的总化均按标准库含义采信，未把这些扩展值解释为概率期望。项目依赖中 density（Measurable、非负、Integrable）、probabilityDensity（另要求质量1）、densityMeasure（volume.withDensity (ENNReal.ofReal∘ρ)）的定义可核对上述概率解释，但它们并不是本声明隐藏调用的前提。定义无需把所有适用域条件作为类型参数，也不额外冒称已经证明概率测度构造定理。定义无 sorry、无 [EXTRA] 或 [ERRATUM?] 标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "batch": "BATCH26",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "ad0061f5de3efffb6d39f5f9dd4714fd6ae69cf8f8af4b5bea01bdc057c78513",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.6-VerletShadow2",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "PDF229／印刷208：For the Verlet scheme… 展示 Htilde_h=H+h²/24(2pᵀM⁻¹U″(q)M⁻¹p−∇U(q)M⁻¹∇U(q))+O(h⁴)；下一句 a finite truncation… the series expansion itself does not typically converge。已对照渲染页逐项核对。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.verletShadow2",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。附件声明和项目同名定义均展开为 v_i=p_i/m_i，H₂(q,p)=∑p_i²/(2m_i)+U(q)+(h²/24)(2D²U(q)[v,v]−∑(∂_iU(q))²/m_i)。fderiv、欧氏 gradient 与 WithLp.toLp 2 的标准含义直接给出矩阵式 pᵀM⁻¹U″M⁻¹p 和力平方项。对原书正对角质量矩阵、光滑 U，逐项系数、负号、对象一致；任意 n、m、U、h、z 的定义没有额外命题量词。本条 context_notation 明确是有限 h² 截断定义，PASS 限于该表达式：未证明原算法的 O(h⁴) 余项、近似轨道性质或形式级数不收敛。零质量/不可微函数上的总化值不被当作物理 Hamiltonian。无 [EXTRA] 或 [ERRATUM?]；定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-Theorem51",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "PDF229／印刷208末尾：Theorem5.1 的 Htilde=H+εη、两张能量面均假设紧；PDF230／印刷209开头续接 smooth w、w·∇H≠0、smooth g、两项校正及 +O(ε²)，随后 u=εηw/(w·∇H)。原页未给证明，页跨229–230正确。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.theorem51",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。microAverage H c g=∫g dμ_H,c，其中 μ_H,c=((microRaw H c) univ)⁻¹ • microRaw H c；microRaw=(hausdorffArea(n−1)|_{H=c}).withDensity(ofReal(‖∇H‖⁻¹))；hausdorffArea(d)=(vol(B_ℝᵈ(0,1))/2ᵈ) • hausdorffMeasure(d)。欧氏体积、Hausdorff测度、限制、密度和积分均按标准含义理解；固定面积归一因子在概率归一后消去，故为原文 dσ/‖∇H‖ 的微正则平均。regularEnergy 明列能量面非空、紧、梯度非零及 raw 总质量正且有限。同段 divergence f z=trace(Df(z))；perturbationDisplacement=(εη/⟨w,∇H⟩) • w；perturbationCorrection=Av_{H+εη=c}(div(g u))−Av_{H+εη=c}(g)Av_{H+εη=c}(div u)。这是整个 div(g u)，并未漏掉 g div u。先固定 n>0、H、η、g、w、c，再取 C>0、δ>0，最后对所有 |ε|<δ 给出 |Av_H(g)−Av_{H+εη}(g)−correction(ε)|≤Cε²。因此量词顺序、两种能量面上的平均、两项校正的符号及 O(ε²) 全部保留；推广到一般正维欧氏空间不需要额外 Hamiltonian 动力学假设。C∞ 是明确的光滑版本。[EXTRA] 中非空和正有限质量是归一平均资格，横截 w 已蕴含原能量面梯度非零；整个小参数族统一包含于紧 K，且 K 上原分母非零，是较强但合理的局部一致资格，防止远处新分支并提供一致余项控制，并非仅由每张面分别紧自动推出。它没有将校正等式或误差结论放入假设。PASS 是对已披露额外资格下原关系的忠实签名判断；证明体仍为 sorry，coarea 等证明义务未因此完成，二者不混同。无 [ERRATUM?] 标签，也未改写原书公式。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-PerturbationDisplacement",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "PDF230／印刷209：where 后单独展示 u=ε[η/(w·∇H)]w；上文明确横截假设。没有单独证明。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.perturbationDisplacement",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。附件声明与项目同名定义逐点均为 u(z)=(εη(z)/⟨w(z),∇H(z)⟩)w(z)，与 PDF230 的分数、乘法和向量方向完全相同；H、η、w、ε 先作参数，再取 z。原书横截条件及 context_notation 明示相关带内分母非零，这属于该表达式的数学适用域，定义并未另断言位移公式在分母零处成立。Lean 实数除法的总化不构成此合格域上的差异。无 [EXTRA] 或 [ERRATUM?]；定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-PerturbationCorrection",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "PDF230／印刷209上部：平均差等式第一项为 Av_Htilde(∇·gu)，第二项为 −Av_Htilde(g)Av_Htilde(∇·u)，余项 +O(ε²)；不是仅 ∇g·u。原页无单独证明。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.perturbationCorrection",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。microAverage H c g=∫g dμ_H,c，其中 μ_H,c=((microRaw H c) univ)⁻¹ • microRaw H c；microRaw=(hausdorffArea(n−1)|_{H=c}).withDensity(ofReal(‖∇H‖⁻¹))；hausdorffArea(d)=(vol(B_ℝᵈ(0,1))/2ᵈ) • hausdorffMeasure(d)。欧氏体积、Hausdorff测度、限制、密度和积分均按标准含义理解；固定面积归一因子在概率归一后消去，故为原文 dσ/‖∇H‖ 的微正则平均。regularEnergy 明列能量面非空、紧、梯度非零及 raw 总质量正且有限。同段 divergence f z=trace(Df(z))；perturbationDisplacement=(εη/⟨w,∇H⟩) • w；perturbationCorrection=Av_{H+εη=c}(div(g u))−Av_{H+εη=c}(g)Av_{H+εη=c}(div u)。这是整个 div(g u)，并未漏掉 g div u。右端校正量作为定义是准确的。但本条 statement_latex 与 statement_scope 引用整条平均差等式及 O(ε²)；指定 lean_decl 只返回标量，没有平均差或误差界的结论，没有对 ε→0 的量化关系。context_notation 已承认定义不是完整定理，另一个条目 theorem51 具有所缺关系，仍不能把本条指定声明当作整条关系。FAIL 的唯一理由是这一原文范围与声明范围的缺失，绝非 Mathlib 定义缺失、积分含义不明或数学公式反例。无 [ERRATUM?]；定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": "保留正确的校正量定义，把其对应范围明确缩为右端两个平均组成的校正项；若保持目前完整所引等式范围，则令该条对应 theorem51 的完整估计，明列正则能量族与分母资格。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-DenominatorBound",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "PDF230／印刷209第一句：Suppose that w is an arbitrary smooth vector field such that w·∇H≠0 on Σ_E。紧性上下文在PDF229；本页未单列正下界定理或证明。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.denominatorBound",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。附件声明逐一固定 H、w、c，要求 energySurface 紧、|⟨w,∇H⟩| 在其上连续、处处非零，推出存在与 z 无关的 a>0 使全能量面上 a≤|⟨w,∇H⟩|。展开 ReviewProofs 段的 denominatorBound_proved 后，确实是紧集上正连续函数的正下界；空面时结论真空成立。[EXTRA] 说明这是衍生引理，紧性与连续性对该结论是合理资格；只要求标量连续而不要求光滑 H、w 是有效的一般化，本身不是数学错误。但当前 statement_scope 的原句描述的是 arbitrary smooth w 的横截假设，不是独立正下界结论；当前声明也没有保留 smooth w 条款，因而对所引原句完整范围判 FAIL。不能把此 FAIL 解释为正下界定理为假，更不能解释为 Mathlib 语义未提供。无 [ERRATUM?]；附件和依赖的展示证明均无 sorry，本轮不编译、不补证明。",
+        "counterexample": "这是原文 smooth 条款未编码的见证，不是下界引理反例：H(x,y)=x²+y²、c=1，w(x,y)=(x,y)+1_{x≥0}(-y,x)。内积为2(x²+y²)，单位圆上恒2，因此满足当前所有前提和下界结论，而 w 在单位圆 x=0 处不连续。",
+        "suggested_fix": "明确把正下界结果标为引用假设的独立衍生引理并调整其对应范围；若要求保留当前整句语义，需另保留光滑 w 与横截的原假设。仅添加光滑前提仍应说明正下界是衍生结论，而不是原书在此单列的断言。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-SmoothDenominatorBound",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "PDF230／印刷209第一句为 arbitrary smooth vector field… w·∇H≠0 on Σ_E。这里并没有单列 C² H/continuous w 的下界命题或证明。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.smoothDenominatorBound",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。附件声明固定 H、w、c，要求紧能量面、C² H、Continuous w、横截，推出统一 a>0 的绝对分母下界。项目 ReviewProofs 段的 smoothDenominatorBound_proved 展开为 ∇H 连续、内积与绝对值连续，再用前一正下界引理，数学含义正确。[EXTRA] 的 C²/连续资格足够且合理；使用比 C∞ 更弱的假设是有效的一般化，不单独构成数学错误。但当前原句与 statement_scope 仍是 smooth w 的横截假设，并没有独立声称该下界；当前声明未完整保留所引对象的光滑资格。因此 FAIL 是严格原文对应范围的差异，不是连续梯度证明失败或 Mathlib 定义体缺失。无 [ERRATUM?]；附件与依赖的展示证明无 sorry，本轮不编译、不补证明。",
+        "counterexample": "这是光滑条款未编码的见证，不是下界引理反例：H(x,y)=x²+y²、c=1，w(x,y)=(x,y)+|x|(-y,x)。w 连续但在 (0,±1) 不可微；内积为2(x²+y²)，故当前前提、结论全部成立，却不符合原句 smooth w。",
+        "suggested_fix": "保留 C² H/连续 w 版本为正确的一般化衍生引理，明确调整 source 对应范围；原文 smooth/transverse 条件另保存。不要以该下界引理替代完整平均扰动公式。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-ZeroPerturbation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PAGE_RANGE_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-ZeroPerturbation",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "208–209",
+          "pdf_page": "229–230",
+          "statement_latex": "$\\widetilde H(q,p)=H(q,p)+\\varepsilon\\eta(q,p)$; $u=\\varepsilon\\eta w/(w\\cdot\\nabla H)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "页码只标209／230不完整：Htilde=H+εη 的所引公式在印刷208／PDF229，u 公式在印刷209／PDF230，应标208–209／229–230。"
+          ],
+          "lean_decl": "MD.Ch05.zeroPerturbation",
+          "reusable_proofs": [
+            "MolecularDynamics.Chapter05Review.zeroPerturbation_proved"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]η恒0时实际校正函数为0的直接后果；不将零扰动特例冒充任意η的平均误差定理。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "页码只标209／230不完整：Htilde=H+εη 的所引公式在印刷208／PDF229，u 公式在印刷209／PDF230，应标208–209／229–230。"
+          ],
+          "source_page_verification": "本轮实际核对教材PDF渲染页229–230；印刷页208–209，偏移+21。"
+        },
+        "issues": [
+          "页码只标209／230不完整：Htilde=H+εη 的所引公式在印刷208／PDF229，u 公式在印刷209／PDF230，应标208–209／229–230。"
+        ],
+        "evidence": "PDF229／印刷208末尾 Theorem5.1 首句出现 Htilde(q,p)=H(q,p)+εη(q,p)；PDF230／印刷209展示 u=εηw/(w·∇H)。本条两段公式跨页，原书没有单列 η=0 的校正引理。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.zeroPerturbation",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。microAverage H c g=∫g dμ_H,c，其中 μ_H,c=((microRaw H c) univ)⁻¹ • microRaw H c；microRaw=(hausdorffArea(n−1)|_{H=c}).withDensity(ofReal(‖∇H‖⁻¹))；hausdorffArea(d)=(vol(B_ℝᵈ(0,1))/2ᵈ) • hausdorffMeasure(d)。欧氏体积、Hausdorff测度、限制、密度和积分均按标准含义理解；固定面积归一因子在概率归一后消去，故为原文 dσ/‖∇H‖ 的微正则平均。regularEnergy 明列能量面非空、紧、梯度非零及 raw 总质量正且有限。同段 divergence f z=trace(Df(z))；perturbationDisplacement=(εη/⟨w,∇H⟩) • w；perturbationCorrection=Av_{H+εη=c}(div(g u))−Av_{H+εη=c}(g)Av_{H+εη=c}(div u)。这是整个 div(g u)，并未漏掉 g div u。附件声明固定 H、g、w、c、ε，仅对 η≡0 给出校正量为0。ReviewProofs 段的 zeroPerturbation_proved 先得到 u≡0，再令两种散度与相应积分为0；无须额外可积性或非零分母假设，因为零向量场的导数及零函数积分按标准含义均为0。[EXTRA] 的 η=0 是已披露的合理特例，但本条 statement_latex/statement_scope 引用任意 η 下 Htilde=H+εη 与 u 的定义；当前签名并未陈述这两个一般公式，只给校正量的零扰动后果。所以严格原文对应 FAIL，零扰动引理本身正确，失败与 Mathlib 缺少定义体无关。无 [ERRATUM?]；展示证明无 sorry，本轮不编译、不补证明。",
+        "counterexample": "覆盖范围见证而非零扰动引理的反例：n=1、H(x)=x、η(x)=1、w(x)=1 时，原定义给 Htilde(x)=x+ε、u(x)=ε；当前 η≡0 的结论不能表达这个非零扰动实例。",
+        "suggested_fix": "将此声明的对应范围明确改为 η≡0 的校正量后果；当前一般公式应由 Hε 与 perturbationDisplacement 的一般定义承载，若包含完整平均误差则应对应 theorem51。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-GradientTransverse",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "PDF230／印刷209中部：A natural choice of the function w that appears in the theorem is w=∇H。该句指向上方定理资格；没有独立证明。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.gradientTransverse",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。先固定 n、H、c，要求能量面上 ∇H≠0，再对所有该面上的 z 得 ⟨∇H(z),∇H(z)⟩≠0。这是欧氏内积平方范数的标准性质，确实验证选取 w=∇H 的横截资格；任意正则 H 都适用。[EXTRA] 梯度非零必要且合理，也由原定理任何横截 w 的存在推出。原文光滑 H 的上下文使 ∇H 光滑，本声明没有声称对不光滑 H 的梯度也光滑；在该上下文中保留了选择及其适用条件。无 [ERRATUM?]；附件展示证明仅用 inner_self_ne_zero，无 sorry，本轮不编译、不补证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

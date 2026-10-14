@@ -1,0 +1,198 @@
+{
+  "batch": "BATCH16",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "d952f14601b111bdc4c17662d1a7fe7969be11c7260e68ce1cd59b188dd3bfc8",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.3.3-MicroMeasure",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.3-MicroMeasure",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.3",
+          "printed_page": "194",
+          "pdf_page": "215",
+          "statement_latex": "Let $d\\mu_E=Z_E^{-1}\\|\\nabla H\\|^{-1}d\\sigma$. We refer to this as the microcanonical probability density and write, for an “appropriate” set $\\mathcal A$, $\\operatorname{Pr}(\\mathcal A)=\\mu_E(\\mathcal A)=\\int_{\\mathcal A} d\\mu_E$. The only requirement for this to make sense is that the set $\\mathcal A$ be a measurable subset of the $H=E$ energy surface, i.e. that it be possible to compute its surface area.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "原书集合记号为花体𝒜；原JSON统一转写成A，数学意义未变，但不符合逐字记号核对。"
+          ],
+          "lean_decl": "MD.Ch05.microMeasure",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]总raw质量正且有限是使用概率意义的必要资格；定义用实际ENNReal标量归一化，不把无穷总质量逆值0解释成概率测度。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "原书集合记号为花体𝒜；原JSON统一转写成A，数学意义未变，但不符合逐字记号核对。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次实际渲染核对PDF页215"
+        },
+        "issues": [
+          "原书集合记号为花体𝒜；原JSON统一转写成A，数学意义未变，但不符合逐字记号核对。"
+        ],
+        "evidence": [
+          "已实际渲染核对教材PDF第215页（印刷第194页），页码偏移+21正确；原页本条无独立证明，proof_latex=null正确。 原页Pr(𝒜)、μ_E(𝒜)及积分下标𝒜；其余所引词句和公式一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microMeasure",
+        "verdict": "PASS",
+        "explanation": "按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准数学含义，不要求在项目依赖摘录中提供Mathlib定义体。已展开Ch05_deps.txt中MolecularDynamics/Chapter05/ReviewDefinitions.lean的项目定义（行5315、5355–5366）：E n=EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ；energySurface H c={z | H z=c}；grad H=gradient H；hausdorffArea k=ENNReal.ofReal(vol(B₁⊂ℝᵏ)/2^k) • Measure.hausdorffMeasure k，为通常规范化欧氏k维Hausdorff面积；surfaceMeasure H c=hausdorffArea(n−1).restrict(energySurface H c)；microRaw H c=surfaceMeasure H c.withDensity(z↦ENNReal.ofReal(‖grad H z‖⁻¹))；microMeasure H c=(microRaw H c univ)⁻¹ • microRaw H c。PDF第215页（印刷194页）dμ_E=Z_E⁻¹‖∇H‖⁻¹dσ与Ch05.lean行891–892的定义对应：先用逆梯度范数加权曲面面积，再用该raw测度总质量归一化。MD.Ch05.microMeasure与展开后的MolecularDynamics.Chapter05Review.microMeasure内容相同。[EXTRA]正有限raw总质量是将此测度称作概率测度的必要使用资格，合理；定义没有把它列成参数，也没有声称任意H,c都产生概率。因此PASS针对原公式及其有效概率背景下的定义，不认可零/无穷质量输入的概率解释。对不满足背景的输入，Lean全定义运算不应被当成原书概率定义域的扩张结论。原书“only requirement”须连同已经成立的微正则概率背景理解；未改写A审校中的原句。无[ERRATUM?]标注。此定义没有sorry；未做编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.3-MicroProbability",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.3-MicroProbability",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.3",
+          "printed_page": "195",
+          "pdf_page": "216",
+          "statement_latex": "We have the standard properties of a probability function: $0\\leq\\operatorname{Pr}(\\mathcal A)\\leq1$ for all measurable sets $\\mathcal A$; $\\operatorname{Pr}(\\Sigma_E)=1$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "原书集合记号为花体𝒜；原JSON统一转写成A，数学意义未变，但不符合逐字记号核对。"
+          ],
+          "lean_decl": "MD.Ch05.microProbability",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原H光滑背景及正有限总质量明示；ΣE总概率1也保留，不仅证明ambient univ质量1。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "原书集合记号为花体𝒜；原JSON统一转写成A，数学意义未变，但不符合逐字记号核对。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次实际渲染核对PDF页216"
+        },
+        "issues": [
+          "原书集合记号为花体𝒜；原JSON统一转写成A，数学意义未变，但不符合逐字记号核对。"
+        ],
+        "evidence": [
+          "已实际渲染核对教材PDF第216页（印刷第195页），页码偏移+21正确；原页本条无独立证明，proof_latex=null正确。 原页Pr(𝒜)、μ_E(𝒜)及积分下标𝒜；其余所引词句和公式一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microProbability",
+        "verdict": "PASS",
+        "explanation": "按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准数学含义，不要求在项目依赖摘录中提供Mathlib定义体。已展开Ch05_deps.txt中MolecularDynamics/Chapter05/ReviewDefinitions.lean的项目定义（行5315、5355–5366）：E n=EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ；energySurface H c={z | H z=c}；grad H=gradient H；hausdorffArea k=ENNReal.ofReal(vol(B₁⊂ℝᵏ)/2^k) • Measure.hausdorffMeasure k，为通常规范化欧氏k维Hausdorff面积；surfaceMeasure H c=hausdorffArea(n−1).restrict(energySurface H c)；microRaw H c=surfaceMeasure H c.withDensity(z↦ENNReal.ofReal(‖grad H z‖⁻¹))；microMeasure H c=(microRaw H c univ)⁻¹ • microRaw H c。PDF第216页（印刷195页）的两项概率性质完整对应Ch05.lean行896–901。量词先任意n,H,c，随后C¹光滑性、raw总质量正且有限，结论为μ_E(univ)=1、μ_E(Σ_E)=1、对所有A有0≤μ_E(A)≤1。n为环境维数；在相空间取n=2N_d即为原背景。原文要求可测A，而标准Lean测度亦对任意集合给外测度值，其界仍成立，属于合理强化；没有漏掉Σ_E质量1。[EXTRA]正有限质量必要且合理；C¹符合原书光滑背景，使等值面闭且可测，若只为可测性则连续性已经足够。标准restrict、withDensity及归一化给出能量面外质量0；有限ENNReal概率与[0,1]实概率对应。无[ERRATUM?]。声明有显式证明体且无sorry；此PASS为签名语义判断，未运行编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.3-LowerDimensionNull",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已实际渲染核对教材PDF第216页（印刷第195页），页码偏移+21正确；原页本条无独立证明，proof_latex=null正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.lowerDimensionNull",
+        "verdict": "FAIL",
+        "explanation": "按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准数学含义，不要求在项目依赖摘录中提供Mathlib定义体。已展开Ch05_deps.txt中MolecularDynamics/Chapter05/ReviewDefinitions.lean的项目定义（行5315、5355–5366）：E n=EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ；energySurface H c={z | H z=c}；grad H=gradient H；hausdorffArea k=ENNReal.ofReal(vol(B₁⊂ℝᵏ)/2^k) • Measure.hausdorffMeasure k，为通常规范化欧氏k维Hausdorff面积；surfaceMeasure H c=hausdorffArea(n−1).restrict(energySurface H c)；microRaw H c=surfaceMeasure H c.withDensity(z↦ENNReal.ofReal(‖grad H z‖⁻¹))；microMeasure H c=(microRaw H c univ)⁻¹ • microRaw H c。另已展开regularEnergy（同一项目文件行5369–5373）：Σ_E非空∧Σ_E紧∧∀z∈Σ_E,grad H z≠0∧0<microRaw(univ)<∞。Ch05.lean行926–930按n,d,H,c,g,K的顺序量化，并要求d+1<n、H为C¹、regularEnergy、g为C¹、K紧、g''K⊆Σ_E，结论仅为μ_E(g''K)=0。d+1<n正确表达参数维数d<n−1，零测结论本身在这些条件下符合标准数学意义。光滑参数化紧块是已披露的合理低维模型，不按任意拓扑低维集合解释。但PDF第216页（印刷195页）本条所引范围还包括ambient Lebesgue零测和能量面维数2N_d−1；该签名没有这两项结论。ambient句另有本批声明，并不补入本条绑定签名；n−1维Hausdorff测度的选择也不是水平集维数声明。此外regularEnergy暗含整个能量面的紧性，而本条[EXTRA]只明示紧参数像与正则能量面；整个能量面紧性对局部低维零测不必要，会排除已存在微正则概率的非紧正则能量面。正有限质量是概率资格；梯度非零是光滑余维1背景的合理条件。无[ERRATUM?]。FAIL来自引用范围覆盖与不必要全局限制，不来自Mathlib定义缺失；证明体sorry仅表示证明尚未完成。",
+        "counterexample": "缺失结论：ambient Lebesgue零测及正则能量面维数n−1（取n=2N_d）。全局紧性造成范围缺失的具体例子：H(x,y)=x²(1+y²)²，c=1。Σ_E为x=±1/(1+y²)两条非紧光滑曲线，∂H/∂x=±2(1+y²)在其上非零；每支dσ/‖∇H‖=dy/[2(1+y²)]，故raw总质量为π，正且有限。其点等低维光滑集合微正则概率为0，但regularEnergy的紧性要求使当前声明无法应用。这不是条件定理本身的反例。",
+        "suggested_fix": "保留现有零测引理，同时明确关联本批ambient声明，并增加正则水平集维数n−1的正式结论，解释相空间n=2N_d。把regularEnergy拆成局部正则条件和概率归一化条件，移除本引理不必要的整个能量面紧性；或如实将声明范围改为紧能量面局部特例并披露全部限制。若要覆盖一般低维光滑集合，列出可数参数块覆盖及零测推广。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.3-MicroAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "DENSITY_NOTATION_TRANSCRIPTION",
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.3-MicroAverage",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.3",
+          "printed_page": "195",
+          "pdf_page": "216",
+          "statement_latex": "As we mentioned in motivating the microcanonical distribution, we could alternatively view microcanonical averages as integrals with respect to the singular measure on the ambient space $\\mathcal D$ defined by $\\rho'_Ed\\omega=Z_E^{-1}\\delta[H-E]d\\omega$. Regardless of which formulation is adopted, we may use the probability measure to compute expectations (averages) of (suitable) functions defined on the phase space. We write such an expectation as\n\\[\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)d\\mu_E=\\int_{\\mathcal D}g(z)\\rho'_Ed\\omega.\\]\nAs shorthand, where the underlying space and probability density are assumed, one may write such an average more simply as $\\operatorname{Av}_{H=E}(g)=\\langle g\\rangle$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原书ρ'_E dω=Z_E^{-1}δ[H−E]dω；δ为Dirac delta记号，dω为全部坐标和动量所定义欧氏空间的体积元；𝒟为环境相空间。实际Lean采用归一化奇异测度上的积分；面积/δ两描述的识别仍为coarea义务。"
+          ],
+          "issues": [
+            "原书为ρ'_E dω，撇号属于ρ而非ω；JSON两处均误写μ_E dω'。原书环境域为𝒟。补充原页对δ和dω的明确解释；未将奇异测度静默改写成普通Lebesgue密度。"
+          ],
+          "lean_decl": "MD.Ch05.microAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "原书为ρ'_E dω，撇号属于ρ而非ω；JSON两处均误写μ_E dω'。原书环境域为𝒟。补充原页对δ和dω的明确解释；未将奇异测度静默改写成普通Lebesgue密度。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次实际渲染核对PDF页216"
+        },
+        "issues": [
+          "原书为ρ'_E dω，撇号属于ρ而非ω；JSON两处均误写μ_E dω'。原书环境域为𝒟。补充原页对δ和dω的明确解释；未将奇异测度静默改写成普通Lebesgue密度。"
+        ],
+        "evidence": [
+          "已实际渲染核对教材PDF第216页（印刷第195页），页码偏移+21正确；原页本条无独立证明，proof_latex=null正确。 原页两展示公式均用ρ'_E dω；正文明确δ为Dirac delta、dω为全部坐标和动量的欧氏体积元。选录省去了这些解释及observable插句，后者不改变所引定义。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microAverage",
+        "verdict": "FAIL",
+        "explanation": "按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准数学含义，不要求在项目依赖摘录中提供Mathlib定义体。已展开Ch05_deps.txt中MolecularDynamics/Chapter05/ReviewDefinitions.lean的项目定义（行5315、5355–5366）：E n=EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ；energySurface H c={z | H z=c}；grad H=gradient H；hausdorffArea k=ENNReal.ofReal(vol(B₁⊂ℝᵏ)/2^k) • Measure.hausdorffMeasure k，为通常规范化欧氏k维Hausdorff面积；surfaceMeasure H c=hausdorffArea(n−1).restrict(energySurface H c)；microRaw H c=surfaceMeasure H c.withDensity(z↦ENNReal.ofReal(‖grad H z‖⁻¹))；microMeasure H c=(microRaw H c univ)⁻¹ • microRaw H c。已展开项目average（同一文件行5330）：average μ g=∫z,g z ∂μ；项目microAverage（行5367）及MD.Ch05.microAverage（Ch05.lean行934）均为average(microMeasure H c)g。标准Bochner积分在Integrable g μ_E的适宜函数范围内忠实表示期望；不可积时取0是全定义约定，不能独立作为语义FAIL理由。H,c,g全定义参数也不声称所有输入都有概率期望。在原光滑正则、正有限质量背景下，受限面积加权测度支持在Σ_E上，ambient积分可表示曲面积分。然而PDF第216页（印刷195页）本条所引范围明确还给出ρ'_E dω=Z_E⁻¹δ[H−E]dω及两积分相等。签名只定义一个测度积分，没有独立δ[H−c]的分布配对/薄壳极限表述及与曲面积分的识别等式。context_notation承认coarea识别仍为义务，但本条声明没有表达这一义务；这与一个已有等式签名仅含sorry是不同情况。无[EXTRA]或[ERRATUM?]标注；适宜g及概率资格按原使用背景理解。FAIL仅针对原引用的完整表述未被覆盖，不归因于Mathlib定义体缺失、不可积默认值或未证明；定义本身无sorry。",
+        "counterexample": "缺失条款：独立形式化的Z_E⁻¹δ[H−c]dω配对与逆梯度加权曲面测度配对相等。现有average(microMeasure H c)g只是一个积分定义；标准Bochner积分的含义不能自动补出未表达的δ/coarea识别命题。",
+        "suggested_fix": "保留平均值定义，在适宜函数、正则水平集和正有限质量背景下另列曲面限制积分等式；使用明确的分布配对或薄壳极限表达δ[H−c]dω，并把与曲面测度配对相等作为本条关联正式义务。可以留下该义务的sorry，但需要有相应签名。δ不能改成普通Lebesgue函数密度，也不能靠给同一测度另取名字代替识别。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.3-AmbientLowerDimensionNull",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已实际渲染核对教材PDF第216页（印刷第195页），页码偏移+21正确；原页本条无独立证明，proof_latex=null正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.ambientLowerDimensionNull",
+        "verdict": "PASS",
+        "explanation": "按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准数学含义，不要求在项目依赖摘录中提供Mathlib定义体。已展开项目E（Ch05_deps.txt中MolecularDynamics/Chapter05/ReviewDefinitions.lean行5315）：E n=EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ；volume按标准含义为其Lebesgue测度，无需项目摘录另供定义体。Ch05.lean行938–939依次量化任意n,d,C¹映射g:ℝᵈ→ℝⁿ及紧K⊆ℝᵈ，并在d<n时断言volume(g''K)=0；对象、量词、维数比较及实际ambient零测结论正确。PDF第216页（印刷195页）点、ℝ²中的曲线、ℝ³中的曲面分别有d=0、(d,n)=(1,2)、(2,3)的光滑参数块模型。[EXTRA]C¹参数化紧像已明确披露，是通常光滑低维对象的合理局部形式；C¹提供局部Lipschitz性质，紧性有利于有限局部覆盖，并非零测所必需。一般光滑曲线或曲面可通过可数紧参数块/局部图覆盖归约，原文无限对象不会因局部块形式而被解释成高维对象。不扩张为任意连续曲线或任意拓扑低维集合的断言。无[ERRATUM?]。证明体含sorry，但签名的语义PASS与证明完成度分开；未运行编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

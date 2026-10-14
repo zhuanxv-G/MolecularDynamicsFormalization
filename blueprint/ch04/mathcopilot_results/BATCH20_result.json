@@ -1,0 +1,348 @@
+{
+  "batch": "BATCH20",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "fab61dfe090b1ccd0036c5459cbc7b10a42215f6ce1be00fa8d704c893698169",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4-WaterPairPotential",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_MISMATCH",
+          "TEXT_MISMATCH",
+          "PAGE_RANGE",
+          "CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-WaterPairPotential",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "166–167",
+          "pdf_page": "188–189",
+          "statement_latex": "The potential energy for the interaction of a pair of such molecules, the sets of whose charge sites are denoted by $A$ and $B$, takes the form\n\\[\\varphi^{\\rm water-water}=\\sum_{i\\in A}\\sum_{j\\in B}\\frac{k_1Q_iQ_j}{r_{ij}}+\\frac{k_2}{r_{OO}^{12}}-\\frac{k_3}{r_{OO}^{6}},\\]\nwhere $r_{OO}$ represents the distance between the oxygen atoms of the two molecules, and $k_1,k_2,k_3$ are positive constants.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "A、B为两分子电荷位点集合；TIP4P每分子有三个电荷位点（两个氢核及一个ghost位点）；Q_i为位点电荷，r_{ij}为位点间距离。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.waterPairPotential",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "有限电荷位点、所有距离>0与k1,k2,k3>0是物理定义域；不将经验模型当普遍物理定律。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH20 first-with-deps：原文势能记号为φ上标water–water，非φ下标water；句首为PDF188页末的“The potential energy for the interaction of a pair of such molecules, the”，在PDF189页续接“sets of whose charge sites”。修正跨页范围和原文措辞；不改势公式。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原文势能记号为φ上标water–water，非φ下标water；句首为PDF188页末的“The potential energy for the interaction of a pair of such molecules, the”，在PDF189页续接“sets of whose charge sites”。修正跨页范围和原文措辞；不改势公式。"
+        ],
+        "evidence": [
+          "已目视核对教材PDF第188–189页（印刷166–167页）；对应原句及展示公式。",
+          "the interaction of two water molecules, the sets of whose charge sites are denoted by $A$ and $B$, takes the form\n\\[\\varphi_{\\rm water}=\\sum_{i\\in A}\\sum_{j\\in B}\\frac{k_1Q_iQ_j}{r_{ij}}+\\frac{k_2}{r_{OO}^{12}}-\\frac{k_3}{r_{OO}^{6}},\\]\nwhere $r_{OO}$ represents the distance between the oxygen atoms of the two molecules, and $k_1,k_2,k_3$ are positive constants."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.waterPairPotential",
+        "verdict": "PASS",
+        "explanation": "依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 本地定义逐项为双重有限和 k1*qa i*qb j/r i j，加 k2/rOO^12，减 k3/rOO^6，忠实于经验势公式。有限位点合理；[EXTRA]中正距离和正常数为物理定义域说明，但并未成为类型中的假设。这里是总化的实函数定义，在物理有效域上符合原文；不能将注释当成已编码的正性约束，也不能据此断言普遍物理定律。无[ERRATUM?]。定义无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-TotalMass",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已目视核对教材PDF第189页（印刷167页）；对应原句及展示公式。",
+          "where $M=\\sum_{i=1}^Nm_i$ is the total mass."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.totalMass",
+        "verdict": "PASS",
+        "explanation": "依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 展开正式库 totalMass m=∑ i,m i；本地定义相同，准确表达总质量。没有额外假设或勘误。定义无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-CenterMass",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-CenterMass",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "167",
+          "pdf_page": "189",
+          "statement_latex": "The atomic positions may be referred to a coordinate system placed at the center of mass of the collection $q_{\\rm cm}=\\frac{\\sum_{i=1}^Nm_iq_i}{M}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "q_i为原子位置、m_i为其质量，M=∑_{i=1}^N m_i；q_cm为质心位置（物理适用域M>0）。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.centerMass",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH20 first-with-deps：原context_notation夹带实现或证明状态说明，未明确原文记号含义；改为原页实际记号上下文。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation夹带实现或证明状态说明，未明确原文记号含义；改为原页实际记号上下文。"
+        ],
+        "evidence": [
+          "已目视核对教材PDF第189页（印刷167页）；对应原句及展示公式。",
+          "The atomic positions may be referred to a coordinate system placed at the center of mass of the collection $q_{\\rm cm}=\\frac{\\sum_{i=1}^Nm_iq_i}{M}$."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.centerMass",
+        "verdict": "PASS",
+        "explanation": "依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 centerMass m q=(totalMass m)⁻¹ • ∑ i,m i • q i，totalMass m=∑ i,m i。逐坐标为原文质心公式。非零总质量是物理适用域；实数逆在零处的总化扩展不应被当作零质量体系的物理质心。原文正质量非空体系给M>0，但Lean未限制输入；作为公式定义在有效域上忠实。定义无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RelativePositions",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-RelativePositions",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "167",
+          "pdf_page": "189",
+          "statement_latex": "We write $q_i=q_{\\rm cm}+\\delta_i$, where $\\sum_{i=1}^Nm_i\\delta_i=0$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "δ_i=q_i-q_cm为相对质心的位置；原文同时给出∑_{i=1}^N m_i δ_i=0。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.relativePositions",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH20 first-with-deps：原context_notation夹带实现或证明状态说明，未明确原文记号含义；改为原页实际记号上下文。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation夹带实现或证明状态说明，未明确原文记号含义；改为原页实际记号上下文。"
+        ],
+        "evidence": [
+          "已目视核对教材PDF第189页（印刷167页）；对应原句及展示公式。",
+          "We write $q_i=q_{\\rm cm}+\\delta_i$, where $\\sum_{i=1}^Nm_i\\delta_i=0$."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.relativePositions",
+        "verdict": "FAIL",
+        "explanation": "依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 relativePositions m q i=q i-centerMass m q，质心和总质量展开如上；这给出q_i=q_cm+δ_i，但指定定义没有陈述所引原句的加权零和结论。context_notation中“另条真实证明”不能替代本条statement_scope要求的全部子句。相邻relativeWeightedZero确实承载零和，仍应明确拆分本条原文范围或建立汇总声明。定义无sorry；FAIL为覆盖不全，不是定义减法错误。",
+        "counterexample": "缺失条款：∑m_iδ_i=0。",
+        "suggested_fix": "将本条statement_latex限定为q_i=q_cm+δ_i的定义部分，并明确零和交由MD-4.4-RelativeWeightedZero；或增加M≠0下同时陈述位置重构和加权零和的汇总声明。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-RelativeWeightedZero",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已目视核对教材PDF第189页（印刷167页）；对应原句及展示公式。",
+          "We write $q_i=q_{\\rm cm}+\\delta_i$, where $\\sum_{i=1}^Nm_i\\delta_i=0$."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.relativeWeightedZero",
+        "verdict": "PASS",
+        "explanation": "依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 展开 relativePositions、centerMass、totalMass 后，结论就是∑m_i(q_i-(∑m_j q_j)/M)=0，前提M≠0。该[EXTRA]合理且对任意实权重的推广一般必要：两权重1,-1、位置e1,0时M=0而加权和非零。正物理质量非空体系满足它；空体系零和本身成立，注释“空体系排除”只说明本签名不覆盖空体系而非其为反例。原句位置分解由展开减法自动成立，结论零和完整。该定理有实际by证明，无sorry；未运行编译，签名审计不等于编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-KineticSplit",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION",
+          "SUM_LIMITS"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-KineticSplit",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "167",
+          "pdf_page": "189",
+          "statement_latex": "Thus the kinetic energy becomes\n\\[K=\\frac12\\sum_{i=1}^Nm_i\\|\\dot q_{\\rm cm}\\|^2+\\sum_{i=1}^Nm_i\\dot q_{\\rm cm}\\cdot\\dot\\delta_i+\\frac12\\sum_{i=1}^Nm_i\\|\\dot\\delta_i\\|^2\n=\\frac M2\\|\\dot q_{\\rm cm}\\|^2+\\frac12\\sum_{i=1}^Nm_i\\|\\dot\\delta_i\\|^2,\\]\nwhere we have used the fact that $\\sum_{i=1}^Nm_i\\delta_i\\equiv0$, hence that the time derivative also vanishes, in order to remove the middle term.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "点号表示时间导数；M=∑_{i=1}^N m_i，∑m_i δ_i恒为零；原文将两项分别记为K_trans和K_rot。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.kineticSplit",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH20 first-with-deps：原context_notation夹带实现或证明状态说明，未明确原文记号含义；改为原页实际记号上下文。",
+            "BATCH20 first-with-deps：各有限和补齐原版明确印出的i=1至N；原版还在末式下标注K_trans和K_rot，记入context_notation。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation夹带实现或证明状态说明，未明确原文记号含义；改为原页实际记号上下文。",
+          "各有限和补齐原版明确印出的i=1至N；原版还在末式下标注K_trans和K_rot，记入context_notation。"
+        ],
+        "evidence": [
+          "已目视核对教材PDF第189页（印刷167页）；对应原句及展示公式。",
+          "Thus the kinetic energy becomes\n\\[K=\\frac12\\sum_im_i\\|\\dot q_{\\rm cm}\\|^2+\\sum_im_i\\dot q_{\\rm cm}\\cdot\\dot\\delta_i+\\frac12\\sum_im_i\\|\\dot\\delta_i\\|^2\n=\\frac M2\\|\\dot q_{\\rm cm}\\|^2+\\frac12\\sum_im_i\\|\\dot\\delta_i\\|^2,\\]\nwhere we have used the fact that $\\sum_im_i\\delta_i\\equiv0$, hence that the time derivative also vanishes, in order to remove the middle term."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.kineticSplit",
+        "verdict": "PASS",
+        "explanation": "依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 dot u v=∑ a,u a*v a；V虽为Pi类型，其Pi范数不是欧氏范数，但签名用dot而非该范数，故dot x x准确为欧氏平方。v对应质心速度，w_i对应相对速度；前提∑m_i•w_i=0正是原文去交叉项用的导数零和。有限和展开给原文中间的三项式并消去交叉项，最终式准确；本签名是瞬时代数恒等式，不证明轨道求导步骤。无需质量正性，推广合理。该定理有实际by证明，无sorry；未运行编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-SecondMoment",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-SecondMoment",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "168",
+          "pdf_page": "190",
+          "statement_latex": "where the fixed matrix $R$ is given by $R=\\sum_{i=1}^Nm_i\\delta_i(0)\\delta_i(0)^T$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "δ_i(0)为固定初始相对位置；R为其质量加权外积和所得3×3矩阵。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.secondMoment",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH20 first-with-deps：原context_notation夹带实现或证明状态说明，未明确原文记号含义；改为原页实际记号上下文。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation夹带实现或证明状态说明，未明确原文记号含义；改为原页实际记号上下文。"
+        ],
+        "evidence": [
+          "已目视核对教材PDF第190页（印刷168页）；对应原句及展示公式。",
+          "where the fixed matrix $R$ is given by $R=\\sum_{i=1}^Nm_i\\delta_i(0)\\delta_i(0)^T$."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.secondMoment",
+        "verdict": "PASS",
+        "explanation": "依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 outer v=fun a b=>v a*v b，secondMoment m δ=∑i,m i•outer(δ i)。故矩阵(a,b)元为∑i,m_i δ_i(a)δ_i(b)，等于原文δ_i(0)δ_i(0)^T之和。δ参数应解释为固定初始相对位置，非当前轨道值；矩阵类型为真实3×3实矩阵，对称性由公式自动成立。无额外假设或勘误，定义无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationKinetic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-RotationKinetic",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "168",
+          "pdf_page": "190",
+          "statement_latex": "$K_{\\rm rot}=\\frac12\\sum_{i=1}^Nm_i\\delta_i(0)^T\\dot\\Theta^T\\dot\\Theta\\delta_i(0)$. This expression may be rewritten as $K_{\\rm rot}=\\frac12\\operatorname{Tr}[\\dot\\Theta R\\dot\\Theta^T]$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Θ(t)为正交3×3旋转矩阵，δ_i(t)=Θ(t)δ_i(0)；R=∑m_iδ_i(0)δ_i(0)^T。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rotationKinetic",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH20 first-with-deps：原context_notation夹带实现或证明状态说明，未明确原文记号含义；改为原页实际记号上下文。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation夹带实现或证明状态说明，未明确原文记号含义；改为原页实际记号上下文。"
+        ],
+        "evidence": [
+          "已目视核对教材PDF第190页（印刷168页）；对应原句及展示公式。",
+          "$K_{\\rm rot}=\\frac12\\sum_{i=1}^Nm_i\\delta_i(0)^T\\dot\\Theta^T\\dot\\Theta\\delta_i(0)$. This expression may be rewritten as $K_{\\rm rot}=\\frac12\\operatorname{Tr}[\\dot\\Theta R\\dot\\Theta^T]$."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationKinetic",
+        "verdict": "FAIL",
+        "explanation": "依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 rotationKinetic R dΘ=(dΘ*R*dΘᵀ).trace/2，与本地定义相同；secondMoment及outer展开给原文R。然而指定定义只定义trace表达式，不包含所引原文第一有限和表达式与它的等式，也不绑定R=secondMoment m δ。相邻rotationTraceIdentity含该等式且有by证明，但不在本条lean_decl中。完整原文范围下应FAIL；不是1/2或矩阵乘法次序错误。定义无sorry。",
+        "counterexample": "缺失条款：有限和二次型表达式与trace表达式的等价关系及R与初始位形的绑定。",
+        "suggested_fix": "将本条statement_latex限定为trace定义，第一式及其等价性移至RotationTraceIdentity；或将本条lean_decl改为包含R=secondMoment m δ及两表达式等式的声明。"
+      }
+    }
+  ]
+}

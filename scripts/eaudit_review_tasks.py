@@ -72,10 +72,12 @@ def build(ch,eaudit,section,sids):
   for k,p in enumerate(nums):
    with fitz.open(pdf) as original:assert cropped[k].get_pixmap(matrix=fitz.Matrix(.5,.5)).samples==original[p-1].get_pixmap(matrix=fitz.Matrix(.5,.5)).samples
   hashes={**shared,label+'_materials':hashlib.sha256(materials[sid].encode()).hexdigest(),label+'_PAGES.pdf':sha(crop)}
-  prompt=('先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。'
+  prompt=('以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。\n'
+    '先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。'
     f'\n本条{sid}；原PDF页映射={nums}。必须实际写入 {output}，对象含batch={eaudit}、input_sha256、items。'
     '共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。'
-    '\nitems每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。最后仅报告实际文件路径。\ninput_sha256：\n'+json.dumps(hashes,ensure_ascii=False,indent=2)+'\n\n')
+    '\nitems每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。'
+    '必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。\ninput_sha256：\n'+json.dumps(hashes,ensure_ascii=False,indent=2)+'\n\n')
   paste=folder/'PASTE.txt';paste.write_text(prompt+materials[sid],encoding='utf-8');mp=folder/'MANIFEST.json'
   m=dict(eaudit=eaudit,source_id=sid,input_sha256=hashes,source_pdf_sha256=expected,pdf_page_mapping=nums,
     crop_pixel_identity='PASS',paste_sha256=sha(paste),dependency_excerpts=excerpts[sid],expected_output=output)

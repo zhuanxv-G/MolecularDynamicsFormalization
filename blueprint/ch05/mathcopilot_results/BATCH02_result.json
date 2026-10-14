@@ -1,0 +1,128 @@
+{
+  "batch": "BATCH02",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "2040cfcc6777fa3006944ce67adef22a128650760898871a63a8453858ca89ed",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.1-SolutionOperator",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材PDF第202页/印刷第181页：展示式为 g̃(z,t)=G_t g̃(z,0), where G_t=e^{t L_f}；紧接着称 G_t 为与 ż=f(z) 相关的 solution operator。PDF第201页定义 g̃(z,t)=g(F_t(z))。页码与公式一致。指数作为原书算子记号的解释合理，原书并未在此构造无界算子指数级数。无独立证明；context_notation 所称真实pullback须以实际流为前提。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.solutionOperator",
+        "verdict": "FAIL",
+        "explanation": "依赖 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 第5318行展开 pullback Φ g t z=g(Φ t z)。实际 MD.Ch05.solutionOperator 第92行只接受任意类型 X、任意 Φ:ℝ→X→X、任意 t 和实值 g；没有 f 或 flow f Φ 条件。因此它忠实定义一般拉回，但不能独立忠实表达与 ż=f(z) 相关的解算子及初值关系。依赖第5320–5322行的 flow 实际包含零时刻恒等、全时间群律及 HasDerivAt 的自治ODE条件，并未由此定义引用。原书指数记号不要求另行证明级数收敛，此点不是失败原因。本定义没有 sorry；定义存在与解算子语义成立须分开。",
+        "counterexample": "取 X=ℝ、Φ(t,z)=z+1、g(z)=z，则 solutionOperator Φ 0 g z=z+1≠g(z)，不满足解算子的 G_0=id。即使额外要求 Φ(0,z)=z，取 Φ(t,z)=z+t²，也不满足流群律，不能作为所述自治系统的解算子。",
+        "suggested_fix": "保留一般pullback作为辅助定义；为本条增加实际向量场 f 和已展开的 flow f Φ 资格（可用依赖的 EuclideanSpace E n 或适当一般空间上的真实流结构），再定义受此资格约束的 solutionOperator。说明 e^{t L_f} 是该流拉回的记号，并给出 G_0 g=g 的接口；无需构造指数级数。"
+      }
+    },
+    {
+      "source_id": "MD-5.1-CoordinateLie",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STATEMENT_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.1-CoordinateLie",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.1",
+          "printed_page": "181",
+          "pdf_page": "202",
+          "statement_latex": "The projection onto the $i$th coordinate, denoted $\\partial_i$, is itself a scalar valued function of $z$ ($\\partial_i(z)=z_i$). Calculating directly we have $\\mathcal L_fz_i=f_i$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "保留实际EuclideanSpace的第i坐标投影；∂i是原书的坐标函数，不是对其它函数的偏导。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.coordinateLie",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [
+            "BATCH02 first-with-deps：按PDF第202页恢复坐标投影的原书英文句子，保持 ∂i 为坐标函数的原书记号。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原条目的 “In this notation, the symbol ... refers to ...” 是转述，不是原书逐字引句；恢复原文 “The projection onto the ith coordinate, denoted ... is itself a scalar valued function ...”。公式、页码和context_notation均正确。"
+        ],
+        "evidence": [
+          "教材PDF第202页/印刷第181页，下半页：The projection onto the ith coordinate, denoted ∂i, is itself a scalar valued function of z (∂i(z)=zi). Calculating directly we have L_f zi=fi. 无另列独立证明；这里的 ∂i 确为坐标投影。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.coordinateLie",
+        "verdict": "PASS",
+        "explanation": "依赖第5315行 E n=EuclideanSpace ℝ (Fin n)，第5317行 lie f g z=(fderiv ℝ g z)(f z)。代入 g(x)=x i 得 Dπ_i(z)[f(z)]=(f(z))_i。量词依次为任意维数n、向量场f、点z、坐标i:Fin n，准确保留所有坐标及所有点；无需f的可微性，因为只微分线性坐标投影。原书 ∂i 的记号由实际函数 fun x=>x i 表达，没有误译为偏导算子。无[EXTRA]或[ERRATUM?]。实际第95–102行用 PiLp.proj、ContinuousLinearMap.fderiv 和 rfl 给出证明，无sorry；本次只读语义检查，没有编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.1-LiePullbackCommutes",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "FORMULA_GROUPING_TRANSCRIPTION",
+          "MISSING_CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.1-LiePullbackCommutes",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.1",
+          "printed_page": "181",
+          "pdf_page": "202",
+          "statement_latex": "$ (\\mathcal L_f\\widetilde g)(z)=f(z)\\cdot\\nabla_z[g(\\mathcal F_t(z))]\n=f(z)\\cdot[\\mathcal F_t'(z)^T\\nabla g(\\mathcal F_t(z))]\n=[\\mathcal F_t'(z)f(z)]\\cdot\\nabla g(\\mathcal F_t(z))\n=f(\\mathcal F_t(z))\\cdot\\nabla g(\\mathcal F_t(z))\n=(\\mathcal L_fg)(\\mathcal F_t(z))$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "承接PDF第201页：自治系统 ż=f(z)，实际流映射 F_t，g̃(z,t)=g(F_t(z))；本页在固定t时只对相变量z施加L_f。F_t′(z)是对初值z的Jacobian，T表示转置。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.liePullbackCommutes",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际C²流与C¹可观测量；完整Lie交换结论单列，不只保留中间DFt·f输运式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [
+            "BATCH02 first-with-deps：恢复原书第二、第三行方括号，补明上一页pullback定义与固定t的相变量微分上下文；不改动原书数学论证。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原JSON省略原书第二行 Jacobian转置作用于梯度、第三行 Jacobian作用于f 的方括号；应恢复以避免点积结合次序含混。context_notation为空，遗漏 g̃(z,t)=g(F_t(z)) 与固定t按z微分的上下文。展示等式链已完整保留，无独立另列证明，proof_latex=null可保留。"
+        ],
+        "evidence": [
+          "教材PDF第202页/印刷第181页顶部五行等式：第二行 f(z)·[F_t′(z)^T ∇g(F_t(z))]；第三行 [F_t′(z)f(z)]·∇g(F_t(z))；最后一行 (L_f g)(F_t(z))。PDF第201页/印刷第180页定义 g̃(z,t)=g(F_t(z))；第202页开头明确 viewing L_f as an operator on the phase variables only。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.liePullbackCommutes",
+        "verdict": "PASS",
+        "explanation": "依赖 ReviewDefinitions.lean 第5315、5317–5322行：E n是真实EuclideanSpace；lie f u z=Du(z)[f(z)]；pullback Φ g t z=g(Φ t z)；flow f Φ含∀z Φ0z=z、∀s t z Φ(s+t)z=Φs(Φt z)、∀t z HasDerivAt(s↦Φs z)(f(Φt z))t。展开签名得到∀n f Φ g，真实自治流、联合C²的Φ和C¹的g⇒∀t z，D(g∘Φ_t)(z)[f(z)]=Dg(Φ_t z)[f(Φ_t z)]。对象、量词和终端等式与原书吻合；等式链是推导，不是额外独立结论。群律和ODE支持DΦ_t(z)f(z)=f(Φ_t z)，链式法则给最终等式。[EXTRA] C¹ g及空间可微流是自然资格，联合C²是合理但非最小的加强，联合C¹已足够；全ℝ全空间flow将陈述限制在全局流情形，与书中t∈ℝ约定相符。不把结论作为前提。无[ERRATUM?]，未发现本条原书疑误。实际 Ch05.lean 第105–109行证明为sorry；签名语义PASS不表示已证明或已编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

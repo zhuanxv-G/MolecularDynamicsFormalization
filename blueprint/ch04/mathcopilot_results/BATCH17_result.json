@@ -1,0 +1,125 @@
+{
+  "batch": "BATCH17",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "9891bf630c4edb3b1f9725a6dc304f9362f67ac481e0cde5e2763fc059fe87f1",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.5-SHAKEElimination",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "SOURCE_FORMULA_INCONSISTENCY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.5-SHAKEElimination",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.5",
+          "printed_page": "161",
+          "pdf_page": "183",
+          "statement_latex": "It is possible to demonstrate (see exercises) that this method reduces to (4.25)–(4.26) by eliminating the momenta.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "M=\\operatorname{diag}(m_i),\\quad g(q)=(g_1(q),\\ldots,g_l(q)),\\quad G(q)=g\\prime(q).",
+            "\\text{(4.25), as printed: }q_{n+1}-2q_n+q_{n-1}=h^2M^{-1}F(q_n)-h^2G(q_n)^T\\lambda_n.",
+            "\\text{(4.26): }g(q_{n+1})=0.",
+            "\\text{(4.27): }q_{n+1}=q_n+hM^{-1}p_{n+1/2}.",
+            "\\text{(4.28): }p_{n+1/2}=p_n+(h/2)F(q_n)-(h/2)G(q_n)^T\\lambda_n.",
+            "\\text{(4.29): }p_{n+1}=p_{n+1/2}+(h/2)F(q_{n+1})-(h/2)G(q_{n+1})^T\\lambda_{n+1}."
+          ],
+          "issues": [
+            "原文 (4.25) 反力项未含 M⁻¹；保留印刷式，不能把质量一致修正式当成逐字原文。"
+          ],
+          "lean_decl": "MD.Ch04.shakeElimination",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际相空间SHAKE消元给质量一致M⁻¹(F−Gᵀλ)；原(4.25)缺M⁻¹的字面版单列待审；只转录正文结论，不进入习题。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "补录 PDF183/印刷161 的公式上下文；保留原书 (4.25) 的反力项及原陈述，不改写原书疑误。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF183 / printed161; reviewed page183.png"
+        },
+        "issues": [
+          "statement_latex 与原页文字相符；SHAKEPositionOrder 由两处原句摘录组成，中间省略推导文字。proof_latex=null、proof_discussion_latex=null 与本页没有独立完整证明相符；Elimination 的 see exercises 未作为正文证明录入。页码 161+22=183 正确。context_notation=[] 遗漏限定所引方法的展示公式，现补录并保留印刷疑误。"
+        ],
+        "evidence": [
+          "教材 PDF183（印刷161），§4.3.5 第一段的 second-order alternatives / SHAKE method，(4.25)–(4.26) 后的 symmetry 句，以及 (4.29) 后的 eliminating the momenta 句；已对 PDF 页面渲染逐字核对。",
+          "PDF183，(4.25) 的力项为 h²M⁻¹F(q_n)，反力项为 −h²g′(q_n)ᵀλ_n；(4.27)–(4.29) 的动量更新则先在动量空间减去反力，再通过 M⁻¹ 更新位置。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.shakeElimination",
+        "verdict": "FAIL",
+        "explanation": "依赖展开（Ch04_deps.txt，MolecularDynamics/Chapter04/ReviewDefinitions.lean）：Q n=Fin n→ℝ；invMass m v 的第 i 分量为 (m i)⁻¹*v i；constraintSet g={x|∀j,g j x=0}；shakePositionRelation a b c rho 为 c−2b+a=h² M⁻¹(F(b)−G(b)ᵀrho) 且 g(c)=0。CotangentProjection.lean 中 textbookConstraintJacobian 的 (j,i) 项是 textbookConstraintGradient (g j) q i；ConstrainedProjection.lean 中该梯度为 (fderiv ℝ (g j) q)(Pi.single i 1)，即真实坐标导数。 shakeRelation 展开为 half=p+(h/2)(F(q)−G(q)ᵀrho)，qnew=q+hM⁻¹half，g(qnew)=0，pnew=half+(h/2)(F(qnew)−G(qnew)ᵀrhonew)。签名全称量化 n,l,m,F,g,h 及四套序列，假设每一步满足该关系；用连续两步消去 p，结论以 k+1 为中心、乘子 rho(k+1)，并包含 g(q(k+2))=0；指标及量词正确，代数不需 h≠0、质量正性或光滑性。[EXTRA] 实际是更换结论公式，非额外假设；质量一致消元在数学上正确，但并非原句声称的印刷 (4.25)。[ERRATUM?] 反力缺失 M⁻¹ 的判断成立，不能对一般非标量对角质量仅重命名乘子解决。故原文忠实性 FAIL，非判定修正式为假。Ch04.lean:1120 有显式代数证明，无 sorry；未运行 Lean 编译，证明完成状态与语义结论分开。",
+        "counterexample": "取 n=2,l=1,h=1,m=(1,2)，g(x)=x₁+x₂，F(x)=(1,1)。所有 k 取 q_k=p_k=half_k=(0,0)，rho_k=1。每一步 shakeRelation 成立，质量一致位置式右端为 0；印刷 (4.25) 右端为 (1,1/2)−(1,1)=(0,−1/2)，不等于左端 0。即使允许重选标量乘子，也不能让 (1,1/2) 成为 (1,1) 的标量倍数。",
+        "suggested_fix": "保留当前命题作为明确标注的“质量一致修正式消元”；另记录原书到印刷 (4.25) 的字面消元声明存在错误。若要求忠实字面结论，可限制 M=I 后使用 shakePositionPrinted；一般质量下应明确建议原书 (4.25) 的反力项改为 −h²M⁻¹Gᵀλ，而不静默替换原句。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.5-SHAKEPositionOrder",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "SOURCE_FORMULA_INCONSISTENCY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.5-SHAKEPositionOrder",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.5",
+          "printed_page": "161",
+          "pdf_page": "183",
+          "statement_latex": "There are several constraint-preserving, second-order alternatives which generalize the Störmer-Verlet scheme. One of these is the SHAKE method [322]. The symmetry suggests that this will be second order.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "M=\\operatorname{diag}(m_i),\\quad g(q)=(g_1(q),\\ldots,g_l(q)),\\quad G(q)=g\\prime(q).",
+            "\\text{(4.25), as printed: }q_{n+1}-2q_n+q_{n-1}=h^2M^{-1}F(q_n)-h^2G(q_n)^T\\lambda_n.",
+            "\\text{(4.26): }g(q_{n+1})=0."
+          ],
+          "issues": [
+            "原文 (4.25) 反力项未含 M⁻¹；保留印刷式，不能把质量一致修正式当成逐字原文。"
+          ],
+          "lean_decl": "MD.Ch04.shakePositionOrder",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]正质量、C⁴势/约束/实际轨道、沿解非奇异Gram、相容两步初值；精确给真实有限区间位置误差O(h²)及分支存在，不把误差界作假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "补录 PDF183/印刷161 的公式上下文；保留原书 (4.25) 的反力项及原陈述，不改写原书疑误。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF183 / printed161; reviewed page183.png"
+        },
+        "issues": [
+          "statement_latex 与原页文字相符；SHAKEPositionOrder 由两处原句摘录组成，中间省略推导文字。proof_latex=null、proof_discussion_latex=null 与本页没有独立完整证明相符；Elimination 的 see exercises 未作为正文证明录入。页码 161+22=183 正确。context_notation=[] 遗漏限定所引方法的展示公式，现补录并保留印刷疑误。"
+        ],
+        "evidence": [
+          "教材 PDF183（印刷161），§4.3.5 第一段的 second-order alternatives / SHAKE method，(4.25)–(4.26) 后的 symmetry 句，以及 (4.29) 后的 eliminating the momenta 句；已对 PDF 页面渲染逐字核对。",
+          "PDF183，(4.25) 的力项为 h²M⁻¹F(q_n)，反力项为 −h²g′(q_n)ᵀλ_n；(4.27)–(4.29) 的动量更新则先在动量空间减去反力，再通过 M⁻¹ 更新位置。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.shakePositionOrder",
+        "verdict": "FAIL",
+        "explanation": "依赖展开（Ch04_deps.txt，MolecularDynamics/Chapter04/ReviewDefinitions.lean）：Q n=Fin n→ℝ；invMass m v 的第 i 分量为 (m i)⁻¹*v i；constraintSet g={x|∀j,g j x=0}；shakePositionRelation a b c rho 为 c−2b+a=h² M⁻¹(F(b)−G(b)ᵀrho) 且 g(c)=0。CotangentProjection.lean 中 textbookConstraintJacobian 的 (j,i) 项是 textbookConstraintGradient (g j) q i；ConstrainedProjection.lean 中该梯度为 (fderiv ℝ (g j) q)(Pi.single i 1)，即真实坐标导数。 grad U=textbookConstraintGradient U，所以 F=−∇U。constrainedSolution 在 I=[0,tau] 的每个 t 要求 q 的区间导数为 M⁻¹p，p 的区间导数为 −∇U−Gᵀrho，且 g(q)=0；textbookInverseMassMatrix=diag(m_i⁻¹)，textbookConstraintGram=G diag(m_i⁻¹) Gᵀ。全称量化数据与精确解后，先要求 tau>0、正质量、U/g/q 为 C⁴、p 为 C³、实际受约束解、沿紧区间 Gram 行列式非零；然后存在与 N 无关的 C>0,N0≥2，每个 N≥N0 存在离散位置及乘子，精确两步初值 qn0=q0,qn1=q(h)，满足 k+2≤N 的递推与全部 k≤N 的误差 C h²。这是真实有限区间二阶位置误差及存在性结论，不是把误差作假设。[EXTRA] 正质量、正则性、独立约束和相容起步对通常二阶收敛论述合理，但 C⁴ 全局正则及精确第二初值属于较强的充分条件，不应称为最小必要条件；结论仅选择存在的好分支，不声称所有隐式根均收敛，也不含动量误差。主要忠实性问题仍是：原页 symmetry 句紧接印刷 (4.25)，Lean 却对质量一致修正式给阶数，改变了方法；一般质量下两者甚至不逼近同一受约束解。因此 FAIL 不由 sorry 引起。Ch04.lean:1142 的证明为 sorry，二阶修正式的证明仍待完成，本审计不把它视为已验证定理。",
+        "counterexample": "原印刷方法与精确受约束动力学的差异：n=2,l=1,m=(1,2)，g(x)=x₁+x₂，U(x)=−x₁，F=(1,0)，tau=1。精确解 q(t)=(t²/6,−t²/6)，p(t)=(t/3,−2t/3)，rho=2/3，Gram=3/2，均满足签名正则假设。质量一致加速度为 (1/3,−1/3)。印刷 (4.25) 配合 g(qnew)=0 强制每步 λ=1/2，加速度为 (1/2,−1/2)。用相同精确两步初值、h=1/N，其唯一位置序列为 qn_k=(k h²/6+k(k−1)h²/4)(1,−1)，终点误差的范数为 (1−1/N)/12，不能被固定 C h² 控制。这是对字面原法二阶解释的反例，不是对当前质量一致 Lean 签名的反例。",
+        "suggested_fix": "明确将本 Lean 命题绑定到单独标注的质量一致 SHAKE 修正式，并把原文 (4.25) 的疑误及解释保留在原文审校记录中。若审计目标必须是印刷 (4.25) 的二阶声明，则使用 shakePositionPrinted 并限制 M=I（或另行给出质量与约束反力空间兼容条件）；同时说明结论是以精确两步起步、所选近轨道分支的位置收敛。之后另行补证当前 sorry；本次只读不改代码。"
+      }
+    }
+  ]
+}

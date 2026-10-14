@@ -1,0 +1,261 @@
+{
+  "batch": "BATCH09",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "f0c307f145d8541c133dfaf55e8c2ba37300ed20e1ada717bac7ceb1df0c501c",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.2.3-HamiltonianDivergence",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已读取并渲染教材 PDF 第 207 页（印刷第 186 页），页码满足 PDF=印刷+21；§5.2.3。",
+          "原句：The term ∇·f vanishes for f=J∇H。未附独立证明。",
+          "proof_latex=null 与页面无独立完整证明一致；proof_note/proof_discussion_latex 已核对。原书公式没有需要静默更改的疑误。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.hamiltonianDivergence",
+        "verdict": "PASS",
+        "explanation": "PASS：依赖 SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ，按 q,p 排列，textbookJ=[[0,I],[-I,0]]；SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))_i；SymplecticMaps.lean 的 textbookJacobian=LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap，其 trace 正是坐标散度。因此任意 Nc,H,z 下的结论是 div(J∇H)(z)=0。[EXTRA]局部 C² 保证真实二阶导数对称，是合理的光滑性资格，不假设结论。原书无本条 [ERRATUM?]。本声明调用依赖 HamiltonianVolume.lean 中已给出 Hessian 对称性与 trace(JS)=−trace(JS) 的证明，声明本体无 sorry；此为静态语义审阅，未运行 Lean 编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ADJOINT_SYMBOL_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.3",
+          "printed_page": "186",
+          "pdf_page": "207",
+          "statement_latex": "From the above we know that for a smooth scalar function $u=u(z)$, $\\mathcal L_f^\\daggeru=-\\nabla\\cdot(uf)=-f\\cdot\\nabla u-u\\nabla\\cdot f$. The term $\\nabla\\cdot f$ vanishes for $f=J\\nabla H$. Thus we have $\\mathcal L_f^\\daggeru=-f\\cdot\\nabla u=-\\mathcal L_fu$. If this holds for all smooth $u$, we write $\\mathcal L_f^\\dagger=-\\mathcal L_f$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.hamiltonianSkewExpression",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]本条保留任意零散度场的实际表达式；Hamiltonian散度零另以正式库桥接；原书的skew-adjoint用语只作形式积分伴随记号，未声称已构造闭算子及其Hilbert空间定义域。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH09 first-with-deps",
+              "changes": [
+                "原 PDF 使用伴随符号 dagger (†)，不是星号 *；修正 statement_latex 中全部对应符号，不改变原书数学内容。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原 PDF 使用伴随符号 dagger (†)，不是星号 *；修正 statement_latex 中全部对应符号，不改变原书数学内容。"
+        ],
+        "evidence": [
+          "已读取并渲染教材 PDF 第 207 页（印刷第 186 页），页码满足 PDF=印刷+21；§5.2.3。",
+          "页面下半部依次出现 L_f†u=−∇·(uf)=−f·∇u−u∇·f、Hamiltonian 零散度及 L_f†=−L_f；未附独立完整证明。",
+          "proof_latex=null 与页面无独立完整证明一致；proof_note/proof_discussion_latex 已核对。原书公式没有需要静默更改的疑误。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.hamiltonianSkewExpression",
+        "verdict": "PASS",
+        "explanation": "PASS：ReviewDefinitions.lean 中 E n=EuclideanSpace ℝ (Fin n)，lie f u z=Du(z)[f(z)]，divergence f z=trace(Df(z))，liouvillian f u z=−div(u f)(z)，不是未解释的占位符。先任取 n,f,u，再要求 f,u 全局可微及各点 div f=0，最后对所有 z 断言 −div(u f)=−Du[f]；展开乘积法则即原书两项式中第二项消失。对全部 u 的量化保留形式算子等式；Hamiltonian 特例由上一条的零散度结论提供。[EXTRA]一般零散度场是合理推广，可微是 smooth 的较弱充分条件；不声称已构造 Hilbert 空间闭算子伴随，无需追加算子定义域。无 [ERRATUM?]。本声明本体无 sorry，使用 liouvilleProduct；证明完成状态与签名忠实性分开，本次未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.3-HamiltonianDensityPropagation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ADJOINT_SYMBOL_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.3-HamiltonianDensityPropagation",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.3",
+          "printed_page": "187",
+          "pdf_page": "208",
+          "statement_latex": "An important consequence of the skew symmetry of $\\mathcal L_f$ for a divergence-free system is that the propagator $e^{t\\mathcal L_f^\\dagger}$ preserves the integral over the whole phase space, i.e.\n\\[\\int_D e^{t\\mathcal L_f^\\dagger}\\rho(z)d\\omega=\\int_D e^{-t\\mathcal L_f}\\rho(z)d\\omega=\\int_D\\rho(\\mathcal F_{-t}(z))d\\omega=\\int_D\\rho(z)d\\omega,\\]\nsince we can view $\\mathcal F_{-t}(z)$ as a change of variables by a volume-preserving map.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.hamiltonianDensityPropagation",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]一般Lebesgue可测且流不变的相空间D；实际C²自治流，明确域的资格。体积保持是需要推出的中间结论，未作为结论假设；算子exp记号解释为实际pullback/map。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH09 first-with-deps",
+              "changes": [
+                "原 PDF 使用伴随符号 dagger (†)，不是星号 *；修正 statement_latex 中全部对应符号，不改变原书数学内容。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原 PDF 使用伴随符号 dagger (†)，不是星号 *；修正 statement_latex 中全部对应符号，不改变原书数学内容。"
+        ],
+        "evidence": [
+          "已读取并渲染教材 PDF 第 208 页（印刷第 187 页），页码满足 PDF=印刷+21；§5.2.3。",
+          "页面中部完整四项积分等式，指数第一项为 e^{t L_f†}，后为 e^{−t L_f}、ρ(F_{−t}(z))、ρ(z)；紧接 volume-preserving map 换元说明已保留于 statement_latex。",
+          "proof_latex=null 与页面无独立完整证明一致；proof_note/proof_discussion_latex 已核对。原书公式没有需要静默更改的疑误。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.hamiltonianDensityPropagation",
+        "verdict": "PASS",
+        "explanation": "PASS：依赖 ReviewDefinitions.lean 的 flow 展开为 Φ₀=id、Φₛ₊ₜ=Φₛ∘Φₜ 和对每一初值所有时间满足 dΦₜ(z)/dt=f(Φₜ(z))；measurePropagator Φ t μ=Measure.map (Φ t) μ。Ch05.lean:112–114 的 densityOn D ρ 展开为 D 零可测、ρ 对受限 volume 几乎处处可测、域上逐点非负及 IntegrableOn；:136–137 的 densityMeasureOn=(volume.restrict D).withDensity (ofReal∘ρ)。量词任取 n,D,f,Φ,ρ，在 C¹ f、联合 C² 流、全空间零散度、全部时间 D 流不变下，对每一实 t 断言积分保持及 ρ∘Φ₋ₜ 的密度测度恰等于正向推送。流群律给出逆映射 Φ₋ₜ；Liouville Jacobian 方程由零散度推出体积保持，没有把体积保持当假设。原文两种算子指数以逆时拉回和正时测度推送解释，等式链实质保留。[EXTRA]可测可积及不变域是换元必需资格；联合 C² 是足够但偏强的技术条件，全时间流明确限制为已存在的全局流，不宣称任意光滑场都完备。无 [ERRATUM?]。声明本体含 sorry，语义 PASS 不代表证明完成。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.3-MechanicalLiouvillian",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ADJOINT_SYMBOL_TRANSCRIPTION",
+          "CONTEXT_NOTATION_EDITORIAL_TEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.3-MechanicalLiouvillian",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.3",
+          "printed_page": "187",
+          "pdf_page": "208",
+          "statement_latex": "The Liouvillian of a Hamiltonian system with $N_c$ degrees of freedom and a Hamiltonian of the form $H=\\sum_{i=1}^{N_c}p_i^2/(2m_i)+U(q_1,\\ldots,q_{N_c})$ can be written\n\\[\\mathcal L_H^\\dagger=-\\sum_{i=1}^{N_c}m_i^{-1}p_i\\frac{\\partial}{\\partial q_i}-\\sum_{i=1}^{N_c}F_i\\frac{\\partial}{\\partial p_i},\\]\nwhere $F_i=-\\partial U/\\partial q_i$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$q_i,p_i$ 为位置、动量坐标，$m_i$ 为质量；$U=U(q_1,\\ldots,q_{N_c})$，$F_i=-\\partial U/\\partial q_i$。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.mechanicalLiouvillian",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "reason": "原文记号与形式化说明分离",
+              "previous_context_notation": [
+                "实际相空间Fréchet导数沿(p/m,F)方向的负值，是上述坐标偏导求和；完整原H触发到该表达式的对应另条。"
+              ]
+            },
+            {
+              "review": "BATCH09 first-with-deps",
+              "changes": [
+                "原 PDF 使用伴随符号 dagger (†)，不是星号 *；修正 statement_latex 中全部对应符号，不改变原书数学内容。",
+                "context_notation 原项为形式化实现说明，不是原文记号；移入 repair_log，context_notation 改为原文 q_i,p_i,m_i,U,F_i 的解释。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原 PDF 使用伴随符号 dagger (†)，不是星号 *；修正 statement_latex 中全部对应符号，不改变原书数学内容。",
+          "context_notation 原项为形式化实现说明，不是原文记号；移入 repair_log，context_notation 改为原文 q_i,p_i,m_i,U,F_i 的解释。"
+        ],
+        "evidence": [
+          "已读取并渲染教材 PDF 第 208 页（印刷第 187 页），页码满足 PDF=印刷+21；§5.2.3。",
+          "页面下部机械 Hamiltonian 及两个 i=1,…,Nc 的坐标求和；左侧 L_H†，末句 F_i=−∂U/∂q_i；无独立完整证明。",
+          "proof_latex=null 与页面无独立完整证明一致；proof_note/proof_discussion_latex 已核对。原书公式没有需要静默更改的疑误。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.mechanicalLiouvillian",
+        "verdict": "PASS",
+        "explanation": "PASS：依赖 ReviewDefinitions.lean 的 Phase n=E n×E n，顺序为 (q,p)，其中 E 为真正 EuclideanSpace。本定义及依赖同名定义均为 −Du(q,p)[(p_i/m_i)_i,F(q)]；有限维导数线性展开给出 −Σ_i(p_i/m_i)∂q_i u−Σ_i F_i(q)∂p_i u，符号与原书一致。定义任取 m,F,u,z，是坐标表达式的参数化；F=−∇U、机械 Hamiltonian 到该表达式的对应由本批 mechanicalLiouvillianIdentity 补足，不能将本定义单独理解为已经证明任意 F 来自势。context_notation 中这段是审计解释而非教材记号，应移至 repair_log。m=0 或 u 不可微时 Lean 总化仍有值，但教材的物理应用取正质量、可微测试函数，资格在配套 identity 中给出；定义的总化不改变这些合格对象的表达式。无 [EXTRA]/[ERRATUM?]。这是定义，本体无 sorry，不承担证明义务。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.3-MechanicalLiouvillianIdentity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ADJOINT_SYMBOL_TRANSCRIPTION",
+          "STATEMENT_NONVERBATIM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.3-MechanicalLiouvillianIdentity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.3",
+          "printed_page": "187",
+          "pdf_page": "208",
+          "statement_latex": "The Liouvillian of a Hamiltonian system with $N_c$ degrees of freedom and a Hamiltonian of the form $H=\\sum_{i=1}^{N_c}p_i^2/(2m_i)+U(q_1,\\ldots,q_{N_c})$ can be written\n\\[\\mathcal L_H^\\dagger=-\\sum_{i=1}^{N_c}m_i^{-1}p_i\\frac{\\partial}{\\partial q_i}-\\sum_{i=1}^{N_c}F_i\\frac{\\partial}{\\partial p_i},\\]\nwhere $F_i=-\\partial U/\\partial q_i$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.mechanicalLiouvillianIdentity",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]正的固定物理质量及C²势；任意实际可微u与完整q,p，保留一般U，不仅二次势；此处为Hamiltonian场的实际负Lie表达式，形式伴随由散度/积分资格另条。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH09 first-with-deps",
+              "changes": [
+                "原 PDF 使用伴随符号 dagger (†)，不是星号 *；修正 statement_latex 中全部对应符号，不改变原书数学内容。",
+                "原条压缩了原文：system with Nc、两处从 i=1 到 Nc 的求和上下界和展示公式；恢复与同批定义条相同的完整原文陈述。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原 PDF 使用伴随符号 dagger (†)，不是星号 *；修正 statement_latex 中全部对应符号，不改变原书数学内容。",
+          "原条压缩了原文：system with Nc、两处从 i=1 到 Nc 的求和上下界和展示公式；恢复与同批定义条相同的完整原文陈述。"
+        ],
+        "evidence": [
+          "已读取并渲染教材 PDF 第 208 页（印刷第 187 页），页码满足 PDF=印刷+21；§5.2.3。",
+          "同页机械 Liouvillian 段落；与本批定义条引用同一原句，无独立完整证明。",
+          "proof_latex=null 与页面无独立完整证明一致；proof_note/proof_discussion_latex 已核对。原书公式没有需要静默更改的疑误。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.mechanicalLiouvillianIdentity",
+        "verdict": "PASS",
+        "explanation": "PASS：ReviewDefinitions.lean 中 hamiltonianField H(q,p)=(∇p H(q,p),−∇q H(q,p))；mechanicalLiouvillian m F u(q,p)=−Du(q,p)[(p/m,F(q))]，E/Phase 分别为欧氏空间及其 q,p 乘积。签名先任取 n,m,U，给出逐坐标正质量及 C² 势，再任取全局可微 u 和全部 z；H=Σ p_i²/(2m_i)+U(q) 保留任意势、全部动量位置坐标。展开梯度得到 (p/m,−∇U)，因此两侧正是原书 Liouvillian 的负 Lie 坐标表达式。这里不另构造积分伴随，但 Hamiltonian 散度为零和上一条形式伴随表达式给出该解释；不遗漏原书的 F_i=−∂U/∂q_i。[EXTRA]质量正性是物理质量的合理资格，非零已足够代数求导；C² 势强于本等式单独所需的 C¹，却与本节零散度/光滑 Hamiltonian 相容，不假设结论。无 [ERRATUM?]。声明本体含 sorry；签名 PASS 不代表已证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

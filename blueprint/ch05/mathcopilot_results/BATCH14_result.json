@@ -1,0 +1,451 @@
+{
+  "batch": "BATCH14",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "7424cb6eea2bb8c76a3626635579361592d9f6faf5cdb3c26ad2e3446d5651e1",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.3.2-NormalInverseTaylor",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-NormalInverseTaylor",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "192",
+          "pdf_page": "213",
+          "statement_latex": "$\\Delta E=H(z+n\\xi)-H(z)=\\nabla H\\cdot n\\xi+O(\\Delta E^2)$, and $n=\\nabla H/\\|\\nabla H\\|$, we have $\\xi=\\Delta E/\\|\\nabla H\\|+O(\\Delta E^2)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 213（印刷192）：z∈Σ_E={H=E}；n=∇H(z)/‖∇H(z)‖ 为单位法向（不是维数）；ξ是沿此固定法向到Σ_{E+ΔE}的局部距离；∇H在z处取值；ΔE为小能量偏移。",
+            "该页假定‖∇H‖在Σ_E上远离零；前页假定能量面有界。"
+          ],
+          "issues": [
+            "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。"
+          ],
+          "lean_decl": "MD.Ch05.normalInverseTaylor",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际C²和非零梯度，ξ由真实局部能量方程得到；保留反向ξ及以ΔE计的正向余项两个结论，不只证明O(ξ²)。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH14 first-with-deps：核对原PDF渲染页；补全上下文；原书疑误保留原文并显式标注。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 212–214，逐条对应evidence所列原页。"
+        },
+        "issues": [
+          "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。"
+        ],
+        "evidence": [
+          "教材PDF 213（印刷页=PDF页−21），已看实际渲染：statement_latex所引文字/展示公式与原页一致，未消去原印刷疑误。",
+          "PDF 213（印刷192）：z∈Σ_E={H=E}；n=∇H(z)/‖∇H(z)‖ 为单位法向（不是维数）；ξ是沿此固定法向到Σ_{E+ΔE}的局部距离；∇H在z处取值；ΔE为小能量偏移。",
+          "proof_latex=null符合未提供独立完整证明；PatchShellVolume的推导已经保存在statement_latex，MicroRawInvariant的动机也在statement中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.normalInverseTaylor",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义：EuclideanSpace 是欧氏空间，volume 是其标准Lebesgue测度，积分为Bochner积分，MeasurePreserving 是可测映射的推前测度保持；restrict、withDensity、Tendsto、ContDiff、gradient、ENNReal.ofReal/toReal 等均按标准含义，不要求其定义体收录在依赖摘录。仅展开本项目自定义，使用与上一轮三项SHA256完全相同的附件；未采用其他旧工程文件。核对 Ch05.lean 的 MD.Ch05.normalInverseTaylor（800–807行）及PDF213/印刷192。在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 中逐项展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z | H z=c}；grad H z=gradient H z；normalField H z=‖grad H z‖⁻¹ • grad H z；hausdorffArea d=ENNReal.ofReal(vol(Ball(0:E d,1)).toReal/2^d) • hausdorffMeasure d；surfaceMeasure 是 hausdorffArea(n−1) 在 energySurface 上的限制；microRaw 是 surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))，即原文未归一化的曲面加权测度。欧氏空间中这个Hausdorff归一化对应通常诱导面积，不因工程尚有余面积证明义务而把定义判为未知。量词为先固定维数n、H、z，在C²和grad H z≠0条件下选C,δ>0，随后∀|e|<δ选ξ；并列保留实际能量交点方程、ξ=e/‖grad‖+O(e²)、H(z+ξn)−H(z)=‖grad‖ξ+O(e²)。共同C可由两个估计常数的较大者取得。e就是ΔE；不将余项偷换成仅O(ξ²)。C²与非零梯度是合理局部假设，不会把结论本身当前提。非零梯度条件也排除了零维退化情形。附件对应theorem的证明体仍为sorry；这里只判断签名语义，PASS不表示Lean证明已完成。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-PatchShellVolume",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "SOURCE_ERRATUM_FLAG"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-PatchShellVolume",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "192–193",
+          "pdf_page": "213–214",
+          "statement_latex": "The volume of this thickened shell is clearly $\\Delta V=\\int_M\\xi d\\sigma$, but since $\\Delta E=H(z+n\\xi)-H(z)=\\nabla H\\cdot n\\xi+O(\\Delta E^2)$, and $n=\\nabla H/\\|\\nabla H\\|$, we have $\\xi=\\Delta E/\\|\\nabla H\\|+O(\\Delta E^2)$, and $\\Delta V=\\int_M\\frac{\\Delta E}{\\|\\nabla H\\|}d\\sigma+O(\\Delta E^2)$. Taking the ratio of $\\Delta V$ to $\\Delta E$ we find $\\Delta V/\\Delta E=\\int_M\\|\\nabla H\\|^{-1}d\\sigma+O(\\Delta E)$. The limit of this as $\\Delta E\\to0$ defines a quantity $\\mu(M)=\\int_M\\|\\nabla H\\|^{-1}d\\sigma$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 212–214（印刷191–193）：M⊂Σ_E；dσ是诱导曲面面积元；μ(M)=∫_M‖∇H‖⁻¹dσ 为未归一化测度。",
+            "PDF 213：n为单位法向；ξ(z,ΔE)为法向交点距离；ΔV为M上方能量介于E与E+ΔE的薄壳体积；梯度在Σ_E上远离零。",
+            "[ERRATUM?] 原书“clearly ΔV=∫_M ξ dσ”按一般曲面并非精确等式，缺少法线管Jacobian；保留原句，不静默改写。"
+          ],
+          "issues": [
+            "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。",
+            "[ERRATUM?] 原书“clearly ΔV=∫_M ξ dσ”按一般曲面并非精确等式，缺少法线管Jacobian；保留原句，不静默改写。"
+          ],
+          "lean_decl": "MD.Ch05.patchShellVolume",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际紧可测正则曲面片M及薄法线管；原“clearly”体积式实际还需法线管Jacobian=1+O(ξ)，不是一般曲面的精确体积等式；最终O(ΔE)误差保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH14 first-with-deps：核对原PDF渲染页；补全上下文；原书疑误保留原文并显式标注。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 212–214，逐条对应evidence所列原页。"
+        },
+        "issues": [
+          "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。",
+          "[ERRATUM?] 原书“clearly ΔV=∫_M ξ dσ”按一般曲面并非精确等式，缺少法线管Jacobian；保留原句，不静默改写。"
+        ],
+        "evidence": [
+          "教材PDF 213–214（印刷页=PDF页−21），已看实际渲染：statement_latex所引文字/展示公式与原页一致，未消去原印刷疑误。",
+          "PDF 212–214（印刷191–193）：M⊂Σ_E；dσ是诱导曲面面积元；μ(M)=∫_M‖∇H‖⁻¹dσ 为未归一化测度。",
+          "proof_latex=null符合未提供独立完整证明；PatchShellVolume的推导已经保存在statement_latex，MicroRawInvariant的动机也在statement中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.patchShellVolume",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义：EuclideanSpace 是欧氏空间，volume 是其标准Lebesgue测度，积分为Bochner积分，MeasurePreserving 是可测映射的推前测度保持；restrict、withDensity、Tendsto、ContDiff、gradient、ENNReal.ofReal/toReal 等均按标准含义，不要求其定义体收录在依赖摘录。仅展开本项目自定义，使用与上一轮三项SHA256完全相同的附件；未采用其他旧工程文件。核对 Ch05.lean 的 MD.Ch05.patchShellVolume（810–817行）及PDF213–214/印刷192–193。在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 中逐项展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z | H z=c}；grad H z=gradient H z；normalField H z=‖grad H z‖⁻¹ • grad H z；hausdorffArea d=ENNReal.ofReal(vol(Ball(0:E d,1)).toReal/2^d) • hausdorffMeasure d；surfaceMeasure 是 hausdorffArea(n−1) 在 energySurface 上的限制；microRaw 是 surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))，即原文未归一化的曲面加权测度。欧氏空间中这个Hausdorff归一化对应通常诱导面积，不因工程尚有余面积证明义务而把定义判为未知。regularEnergy 并非仅正则值条件，而是能量面非空、紧、处处grad≠0、raw总质量严格正且有限的合取。实际签名对每个紧可测M⊂Σ_c，先选C,δ>0，再对所有0<e<δ，给由x=z+s n(z)、0≤s<δ、H(x)−H(z)≤e定义的真实法线薄壳满足|vol(S_e)/e−μ(M)|≤Ce。C²、紧正则面与可测片足以保证小管几何，额外全能量面非空及质量正并非局部估计的最小要求，但作为明确的物理背景合理。最终O(e)结论以及由它推出的极限正确；乘以e也得到体积的O(e²)式。然而本条statement_scope覆盖所引整段，其“clearly ΔV=∫_M ξdσ”精确等式既未编码也一般不成立；[EXTRA]关于Jacobian的勘误判断成立，不能将该错误原印刷式视为已经保留。此FAIL针对完整引用范围的覆盖，不是否定修正后最终渐近估计。附件对应theorem的证明体仍为sorry；这里只判断签名语义，PASS不表示Lean证明已完成。",
+        "counterexample": "取ℝ²中H(z)=‖z‖²/2、c=1/2，M为单位圆，ξ>0为统一向外法向厚度。薄壳真实面积π((1+ξ)²−1)=2πξ+πξ²，但∫_M ξdσ=2πξ。",
+        "suggested_fix": "把错误的原印刷精确式明确列为ERRATUM保留记录，将正确目标范围单列；用ΔV=∫_M∫_0^{ξ(z,e)}J(z,s)ds dσ、J(z,s)=1+O(s)说明修正。当前O(e)签名可作为修正版目标，不应标为已覆盖整段每个原等式。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-WholeShellVolumeLimit",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "PAGE_RANGE_OVERBROAD"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-WholeShellVolumeLimit",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "192",
+          "pdf_page": "213",
+          "statement_latex": "$\\Delta V/\\Delta E=\\int_M\\|\\nabla H\\|^{-1}d\\sigma+O(\\Delta E)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 213（印刷192）：M是任意能量面片，ΔV是该片沿法向加厚后的壳体积，原式含O(ΔE)误差；整能量面是另列特例。",
+            "Σ_E={H=E}；dσ为曲面面积；‖∇H‖在Σ_E上远离零。"
+          ],
+          "issues": [
+            "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。",
+            "所引比值公式完整位于印刷192/PDF213；原192–193/213–214范围包含后续极限定义，应精确定位。"
+          ],
+          "lean_decl": "MD.Ch05.shellVolumeLimit",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]整个正则紧能量面的壳层极限特例，原任意紧曲面片及O(ΔE)结论另条保留，不用特例替换原全结论。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH14 first-with-deps：核对原PDF渲染页；补全上下文；原书疑误保留原文并显式标注。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 212–214，逐条对应evidence所列原页。"
+        },
+        "issues": [
+          "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。",
+          "所引比值公式完整位于印刷192/PDF213；原192–193/213–214范围包含后续极限定义，应精确定位。"
+        ],
+        "evidence": [
+          "教材PDF 213（印刷页=PDF页−21），已看实际渲染：statement_latex所引文字/展示公式与原页一致，未消去原印刷疑误。",
+          "PDF 213（印刷192）：M是任意能量面片，ΔV是该片沿法向加厚后的壳体积，原式含O(ΔE)误差；整能量面是另列特例。",
+          "proof_latex=null符合未提供独立完整证明；PatchShellVolume的推导已经保存在statement_latex，MicroRawInvariant的动机也在statement中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.shellVolumeLimit",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义：EuclideanSpace 是欧氏空间，volume 是其标准Lebesgue测度，积分为Bochner积分，MeasurePreserving 是可测映射的推前测度保持；restrict、withDensity、Tendsto、ContDiff、gradient、ENNReal.ofReal/toReal 等均按标准含义，不要求其定义体收录在依赖摘录。仅展开本项目自定义，使用与上一轮三项SHA256完全相同的附件；未采用其他旧工程文件。核对 Ch05.lean 的 MD.Ch05.shellVolumeLimit（821–827行）及所引PDF213/印刷192比值式。在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 中逐项展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z | H z=c}；grad H z=gradient H z；normalField H z=‖grad H z‖⁻¹ • grad H z；hausdorffArea d=ENNReal.ofReal(vol(Ball(0:E d,1)).toReal/2^d) • hausdorffMeasure d；surfaceMeasure 是 hausdorffArea(n−1) 在 energySurface 上的限制；microRaw 是 surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))，即原文未归一化的曲面加权测度。欧氏空间中这个Hausdorff归一化对应通常诱导面积，不因工程尚有余面积证明义务而把定义判为未知。regularEnergy 并非仅正则值条件，而是能量面非空、紧、处处grad≠0、raw总质量严格正且有限的合取。microPartition H c=((microRaw H c) univ).toReal；regularEnergy确保有限性，在此处toReal无损。签名表达整能量面全壳{c≤H≤c+ε}的体积比值在ε→0+时收敛到该总质量。额外紧正则能量带避免远处分支贡献，是合理的全壳控制；其邻域∀z梯度非零明确且非循环。但所引式对任意片M并含O(ΔE)，而本签名无M且仅Tendsto，没有O(ε)误差界。[EXTRA]诚实标明这是特例，不能使较弱特例等同于所引全部结论；别条保留片定理也不改变本声明。附件对应theorem的证明体仍为sorry；这里只判断签名语义，PASS不表示Lean证明已完成。",
+        "counterexample": "缺失条款为任意紧可测M⊂Σ_c的片壳结论及∃C,δ>0、∀0<ε<δ的误差≤Cε。一般仅极限不蕴含O(ε)：ε↦L+√ε趋于L却无该误差界；此例只说明结论强弱，不是本几何模型的反例。",
+        "suggested_fix": "将引用范围明确改为整面极限推论；若要求覆盖当前整条原式，则增加任意片M及O(ε)定量结论。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-MicroRawInvariant",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-MicroRawInvariant",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "193",
+          "pdf_page": "214",
+          "statement_latex": "As both volume and energy are invariant under the Hamiltonian flow, $\\mu(M)$ must be invariant under the flow, thus $\\mu(\\mathcal F_t(M))=\\mu(M)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 214（印刷193）：μ(M)=∫_M‖∇H‖⁻¹dσ 是未归一化测度；M⊂Σ_E；𝓕_t是Hamiltonian流，正文调用体积及能量保持。"
+          ],
+          "issues": [
+            "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。"
+          ],
+          "lean_decl": "MD.Ch05.microRawInvariant",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原正文调用的实际全流、体积与能量保持先验明确写出；需要推出的是曲面加权raw测度保持，未把该结论作前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH14 first-with-deps：核对原PDF渲染页；补全上下文；原书疑误保留原文并显式标注。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 212–214，逐条对应evidence所列原页。"
+        },
+        "issues": [
+          "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。"
+        ],
+        "evidence": [
+          "教材PDF 214（印刷页=PDF页−21），已看实际渲染：statement_latex所引文字/展示公式与原页一致，未消去原印刷疑误。",
+          "PDF 214（印刷193）：μ(M)=∫_M‖∇H‖⁻¹dσ 是未归一化测度；M⊂Σ_E；𝓕_t是Hamiltonian流，正文调用体积及能量保持。",
+          "proof_latex=null符合未提供独立完整证明；PatchShellVolume的推导已经保存在statement_latex，MicroRawInvariant的动机也在statement中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microRawInvariant",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义：EuclideanSpace 是欧氏空间，volume 是其标准Lebesgue测度，积分为Bochner积分，MeasurePreserving 是可测映射的推前测度保持；restrict、withDensity、Tendsto、ContDiff、gradient、ENNReal.ofReal/toReal 等均按标准含义，不要求其定义体收录在依赖摘录。仅展开本项目自定义，使用与上一轮三项SHA256完全相同的附件；未采用其他旧工程文件。核对 Ch05.lean 的 MD.Ch05.microRawInvariant（831–837行）及PDF214/印刷193。在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 中逐项展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z | H z=c}；grad H z=gradient H z；normalField H z=‖grad H z‖⁻¹ • grad H z；hausdorffArea d=ENNReal.ofReal(vol(Ball(0:E d,1)).toReal/2^d) • hausdorffMeasure d；surfaceMeasure 是 hausdorffArea(n−1) 在 energySurface 上的限制；microRaw 是 surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))，即原文未归一化的曲面加权测度。欧氏空间中这个Hausdorff归一化对应通常诱导面积，不因工程尚有余面积证明义务而把定义判为未知。regularEnergy 并非仅正则值条件，而是能量面非空、紧、处处grad≠0、raw总质量严格正且有限的合取。flow f Φ 展开为 Φ 0 z=z、Φ(s+t)z=Φ s(Φ t z)，以及∀t,z，HasDerivAt (fun s => Φ s z) (f(Φ t z)) t。因此每个Φ t的逆为Φ(−t)；联合C²保证这些互逆映射连续可测，并保持可测集合的像。签名先给C² H、regularEnergy、真实全流、联合C²、每个时刻的Lebesgue体积保持、每点H(Φ t z)=H z，然后结论∀t同时给raw的MeasurePreserving和∀可测M的raw(Φ t  M)=raw(M)。后一项正对应原文集合像等式；对一般M比只限M⊂Σ_c更强，因raw已支撑于Σ_c而合理。能量及体积保持配合光滑曲面变换给此加权面积保持；其前提没有循环假定raw保持。将Hamiltonian流放宽为任何满足这些实际条件的流是合理推广；全局紧/有限条件比不变性最低要求强，但已明确声明。附件对应theorem的证明体仍为sorry；这里只判断签名语义，PASS不表示Lean证明已完成。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-MicroInvariant",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-MicroInvariant",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "193",
+          "pdf_page": "214",
+          "statement_latex": "$\\mu(\\mathcal F_t(M))=\\mu(M)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 214（印刷193）：此处μ仍是未归一化曲面加权测度，M⊂Σ_E，𝓕_t是Hamiltonian流；该句尚未引入概率归一化。"
+          ],
+          "issues": [
+            "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。"
+          ],
+          "lean_decl": "MD.Ch05.microInvariant",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]归一化measure版本另列；原始未归一化µ的不变及集合像等式由上一完整条目保留，不能只凭归一化定义编译称全部已证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH14 first-with-deps：核对原PDF渲染页；补全上下文；原书疑误保留原文并显式标注。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 212–214，逐条对应evidence所列原页。"
+        },
+        "issues": [
+          "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。"
+        ],
+        "evidence": [
+          "教材PDF 214（印刷页=PDF页−21），已看实际渲染：statement_latex所引文字/展示公式与原页一致，未消去原印刷疑误。",
+          "PDF 214（印刷193）：此处μ仍是未归一化曲面加权测度，M⊂Σ_E，𝓕_t是Hamiltonian流；该句尚未引入概率归一化。",
+          "proof_latex=null符合未提供独立完整证明；PatchShellVolume的推导已经保存在statement_latex，MicroRawInvariant的动机也在statement中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microInvariant",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义：EuclideanSpace 是欧氏空间，volume 是其标准Lebesgue测度，积分为Bochner积分，MeasurePreserving 是可测映射的推前测度保持；restrict、withDensity、Tendsto、ContDiff、gradient、ENNReal.ofReal/toReal 等均按标准含义，不要求其定义体收录在依赖摘录。仅展开本项目自定义，使用与上一轮三项SHA256完全相同的附件；未采用其他旧工程文件。核对 Ch05.lean 的 MD.Ch05.microInvariant（841–845行）及PDF214/印刷193。在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 中逐项展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z | H z=c}；grad H z=gradient H z；normalField H z=‖grad H z‖⁻¹ • grad H z；hausdorffArea d=ENNReal.ofReal(vol(Ball(0:E d,1)).toReal/2^d) • hausdorffMeasure d；surfaceMeasure 是 hausdorffArea(n−1) 在 energySurface 上的限制；microRaw 是 surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))，即原文未归一化的曲面加权测度。欧氏空间中这个Hausdorff归一化对应通常诱导面积，不因工程尚有余面积证明义务而把定义判为未知。regularEnergy 并非仅正则值条件，而是能量面非空、紧、处处grad≠0、raw总质量严格正且有限的合取。flow f Φ 展开为 Φ 0 z=z、Φ(s+t)z=Φ s(Φ t z)，以及∀t,z，HasDerivAt (fun s => Φ s z) (f(Φ t z)) t。因此每个Φ t的逆为Φ(−t)；联合C²保证这些互逆映射连续可测，并保持可测集合的像。microMeasure H c 展开为a⁻¹ • microRaw H c，其中a=(microRaw H c) univ。在本签名的regularEnergy下0<a<∞，因此归一化系数为有限非零常数且可消去。∀t MeasurePreserving(Φ t)(a⁻¹μ)(a⁻¹μ)与同一流保持μ在数学上等价；由可测双射Φ t及其可测逆，推前保持又推出∀可测M，μ(Φ t  M)=μ(M)。所以归一化虽改变测度总质量，并没有丢失本条不变性结论的内容。[EXTRA]明确标为归一化版本合理，无需把rawInvariant的待证明结果当成本条前提。上一轮把测度不相等当成不变性不等价的理由不成立，本轮纠正此判断。H光滑、全流、能量及体积保持的假设与raw版本一致，量词∀t也完整。附件对应theorem的证明体仍为sorry；这里只判断签名语义，PASS不表示Lean证明已完成。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-MicroPartition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-MicroPartition",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "193",
+          "pdf_page": "214",
+          "statement_latex": "The invariant measure of the whole level set $\\Sigma_E$ is defined as the microcanonical partition function $Z_E=\\mu(\\Sigma_E)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 214（印刷193）：Σ_E={H=E}；μ(A)=∫_{A∩Σ_E}‖∇H‖⁻¹dσ 为未归一化测度；Z_E=μ(Σ_E)。",
+            "raw测度本身受限于Σ_E，univ总质量对应Σ_E；ENNReal转实只有有限总质量时适用物理Z_E，概率归一化条件后续明确。"
+          ],
+          "issues": [
+            "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。"
+          ],
+          "lean_decl": "MD.Ch05.microPartition",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH14 first-with-deps：核对原PDF渲染页；补全上下文；原书疑误保留原文并显式标注。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 212–214，逐条对应evidence所列原页。"
+        },
+        "issues": [
+          "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。"
+        ],
+        "evidence": [
+          "教材PDF 214（印刷页=PDF页−21），已看实际渲染：statement_latex所引文字/展示公式与原页一致，未消去原印刷疑误。",
+          "PDF 214（印刷193）：Σ_E={H=E}；μ(A)=∫_{A∩Σ_E}‖∇H‖⁻¹dσ 为未归一化测度；Z_E=μ(Σ_E)。",
+          "proof_latex=null符合未提供独立完整证明；PatchShellVolume的推导已经保存在statement_latex，MicroRawInvariant的动机也在statement中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microPartition",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义：EuclideanSpace 是欧氏空间，volume 是其标准Lebesgue测度，积分为Bochner积分，MeasurePreserving 是可测映射的推前测度保持；restrict、withDensity、Tendsto、ContDiff、gradient、ENNReal.ofReal/toReal 等均按标准含义，不要求其定义体收录在依赖摘录。仅展开本项目自定义，使用与上一轮三项SHA256完全相同的附件；未采用其他旧工程文件。核对 Ch05.lean 的 MD.Ch05.microPartition（849行）及PDF214/印刷193的Z_E=μ(Σ_E)。在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 中逐项展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z | H z=c}；grad H z=gradient H z；normalField H z=‖grad H z‖⁻¹ • grad H z；hausdorffArea d=ENNReal.ofReal(vol(Ball(0:E d,1)).toReal/2^d) • hausdorffMeasure d；surfaceMeasure 是 hausdorffArea(n−1) 在 energySurface 上的限制；microRaw 是 surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))，即原文未归一化的曲面加权测度。欧氏空间中这个Hausdorff归一化对应通常诱导面积，不因工程尚有余面积证明义务而把定义判为未知。MD.Ch05.microPartition H c=((microRaw H c) univ).toReal，与依赖中的同名项目定义一致。因为microRaw来自在Σ_c上的restrict，raw(univ)=raw(Σ_c)，所以集合对象univ没有把能量面之外质量算入。BATCH14本条context_notation已明确“ENNReal转实只有有限总质量时适用物理Z_E”；在教材有界光滑正则能量面的上下文、或regularEnergy域上该质量有限，toReal正是同一有限数的实数表示，定义忠实。def允许在意图域外给出总化值，不是一个宣称对无限质量也成立的等式定理；因此上一轮用无界直线无限质量反驳上下文中的有限实值定义不成立。域外raw质量为∞时toReal=0确实不能作为物理Z_E；这项已在原context明确，不据此宣称无条件有限性。本条是定义，不存在sorry证明已完成的判断；没有额外断言所有H,c都可归一化。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-ShellPointValuePrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "SOURCE_ERRATUM_FLAG"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-ShellPointValuePrinted",
+          "kind": "notation",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "191",
+          "pdf_page": "212",
+          "statement_latex": "The proof that (5.8) can be taken and that\n\\[\\lim_{\\varepsilon\\to0}Z_\\varepsilon^{-1}\\int_D\\phi(q,p)\\rho_\\varepsilon d\\omega=\\rho_0(q,p)=Z_{H=E}^{-1}\\int_D\\phi(q,p)\\delta[H(q,p)-E]d\\omega\\]\nmay be found in the PhD thesis of Hartmann [171, Appendix D].",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 212（印刷191）：φ∈𝒯为测试函数；D为积分域，dω为相空间体积；ρ₀=Z_{H=E}^{−1}δ[H−E]为分布，式(5.8)要求弱极限。",
+            "[ERRATUM?] 原书在标量测试函数配对之间写ρ₀(q,p)点值，存在类型不一致；式(5.8)及随后展示式还同时保留Z_ε⁻¹与ρ_ε，不能在转录中擅自消去。"
+          ],
+          "issues": [
+            "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。",
+            "[ERRATUM?] 原书在标量测试函数配对之间写ρ₀(q,p)点值，存在类型不一致；式(5.8)及随后展示式还同时保留Z_ε⁻¹与ρ_ε，不能在转录中擅自消去。"
+          ],
+          "lean_decl": "MD.Ch05.shellWeakPairing",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]Lean仅提供良类型的测试函数配对记号，不把配对记号的编译当原印刷等式的证明；完整正确弱极限另条，重复Z版本也保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH14 first-with-deps：核对原PDF渲染页；补全上下文；原书疑误保留原文并显式标注。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 212–214，逐条对应evidence所列原页。"
+        },
+        "issues": [
+          "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。",
+          "[ERRATUM?] 原书在标量测试函数配对之间写ρ₀(q,p)点值，存在类型不一致；式(5.8)及随后展示式还同时保留Z_ε⁻¹与ρ_ε，不能在转录中擅自消去。"
+        ],
+        "evidence": [
+          "教材PDF 212（印刷页=PDF页−21），已看实际渲染：statement_latex所引文字/展示公式与原页一致，未消去原印刷疑误。",
+          "PDF 212（印刷191）：φ∈𝒯为测试函数；D为积分域，dω为相空间体积；ρ₀=Z_{H=E}^{−1}δ[H−E]为分布，式(5.8)要求弱极限。",
+          "proof_latex=null符合未提供独立完整证明；PatchShellVolume的推导已经保存在statement_latex，MicroRawInvariant的动机也在statement中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.shellWeakPairing",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义：EuclideanSpace 是欧氏空间，volume 是其标准Lebesgue测度，积分为Bochner积分，MeasurePreserving 是可测映射的推前测度保持；restrict、withDensity、Tendsto、ContDiff、gradient、ENNReal.ofReal/toReal 等均按标准含义，不要求其定义体收录在依赖摘录。仅展开本项目自定义，使用与上一轮三项SHA256完全相同的附件；未采用其他旧工程文件。核对 Ch05.lean 的 MD.Ch05.shellWeakPairing（853–854行）及PDF212/印刷191展示式。在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 中逐项展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z | H z=c}；grad H z=gradient H z；normalField H z=‖grad H z‖⁻¹ • grad H z；hausdorffArea d=ENNReal.ofReal(vol(Ball(0:E d,1)).toReal/2^d) • hausdorffMeasure d；surfaceMeasure 是 hausdorffArea(n−1) 在 energySurface 上的限制；microRaw 是 surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))，即原文未归一化的曲面加权测度。欧氏空间中这个Hausdorff归一化对应通常诱导面积，不因工程尚有余面积证明义务而把定义判为未知。项目定义链为shellWeakPairing H c φ=microAverage H c φ=average(microMeasure H c)φ，average μ φ=∫z,φ z ∂μ，microMeasure=(raw univ)⁻¹ • raw。故它是一个实值归一化曲面测试函数配对；标准Bochner积分不可积时取0，无测试函数或Integrable限制的def不能额外承诺其物理弱配对对所有φ都有效。本条实际没有ε、D、Z_ε、ρ_ε及Tendsto，不表达所引弱极限等式。[EXTRA]如实承认这里只给notation；这不够覆盖当前statement_scope的整条原式。原式把依赖φ的标量配对写成分布ρ₀(q,p)点值，ERRATUM判断成立；重复的Z_ε⁻¹按原印刷保留，其解释不得从本notation的类型正确性推出。此def本身无sorry，但也无待验证的弱极限定理。",
+        "counterexample": "原式若按字面点值解释，则φ=0使两端配对为0，中间ρ₀却是非零归一化Dirac型分布；该分布通常没有逐点ρ₀(q,p)。签名还缺全部ε→0的收敛条款，无法用一个固定配对定义替代。",
+        "suggested_fix": "保留印刷式和ERRATUM标记；将shellWeakPairing单列为有限正质量、适当可积测试函数域上的记号。要覆盖弱极限应另列带shell族、测试函数、必要尾部/正则控制的Tendsto定理，显式说明重复归一化问题。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-HarmonicEnergy",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "SOURCE_ERRATUM_FLAG"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-HarmonicEnergy",
+          "kind": "definition",
+          "label": "Example 5.1",
+          "section": "5.3.2",
+          "printed_page": "193",
+          "pdf_page": "214",
+          "statement_latex": "Example 5.1 Consider the harmonic oscillator $H(q,p)=p^2/2+\\Omega^2q^2/2$. The energy surface $H=E>0$ is an ellipse.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 214（印刷193），Example 5.1：q为位置，p为动量，Ω为振子频率，E>0为能量；Lean坐标对应z 0=q，z 1=p。",
+            "“ellipse”隐含Ω≠0（物理频率通常Ω>0）；原句未显式写此条件，不静默补入statement_latex。"
+          ],
+          "issues": [
+            "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。",
+            "“ellipse”隐含Ω≠0（物理频率通常Ω>0）；原句未显式写此条件，不静默补入statement_latex。"
+          ],
+          "lean_decl": "MD.Ch05.harmonicEnergy",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH14 first-with-deps：核对原PDF渲染页；补全上下文；原书疑误保留原文并显式标注。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF 212–214，逐条对应evidence所列原页。"
+        },
+        "issues": [
+          "context_notation未完整记录所引段落的对象及记号；补充来源上下文，不改变原书公式。",
+          "“ellipse”隐含Ω≠0（物理频率通常Ω>0）；原句未显式写此条件，不静默补入statement_latex。"
+        ],
+        "evidence": [
+          "教材PDF 214（印刷页=PDF页−21），已看实际渲染：statement_latex所引文字/展示公式与原页一致，未消去原印刷疑误。",
+          "PDF 214（印刷193），Example 5.1：q为位置，p为动量，Ω为振子频率，E>0为能量；Lean坐标对应z 0=q，z 1=p。",
+          "proof_latex=null符合未提供独立完整证明；PatchShellVolume的推导已经保存在statement_latex，MicroRawInvariant的动机也在statement中。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.harmonicEnergy",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义：EuclideanSpace 是欧氏空间，volume 是其标准Lebesgue测度，积分为Bochner积分，MeasurePreserving 是可测映射的推前测度保持；restrict、withDensity、Tendsto、ContDiff、gradient、ENNReal.ofReal/toReal 等均按标准含义，不要求其定义体收录在依赖摘录。仅展开本项目自定义，使用与上一轮三项SHA256完全相同的附件；未采用其他旧工程文件。核对 Ch05.lean 的 MD.Ch05.harmonicEnergy（857行）及PDF214/印刷193 Example 5.1。项目E 2=EuclideanSpace ℝ(Fin 2)已在依赖展开；取z 0=q、z 1=p后定义(z 1)²/2+Ω²(z 0)²/2与原能量函数完全相同。但本条引用范围同时包括H=E>0为ellipse，实际只有def，未列能量面几何陈述；Ω:ℝ也未限制非零。教材振子频率非零是合理背景，若允许Ω=0则ellipse句不成立。应区别正确能量函数定义与尚未表达的额外几何结论；此FAIL不涉及EuclideanSpace的库定义缺失。本条没有[EXTRA]限制或sorry证明，定义本身不声称已证明能量面性质。",
+        "counterexample": "Ω=0、E=1时H(q,p)=p²/2，正能量面p=±√2为两条无界直线，并非椭圆。即使Ω≠0，当前def也没有独立表达所引几何结论。",
+        "suggested_fix": "保留当前能量定义，另补Ω≠0、E>0时能量面(q/(√(2E)/|Ω|))²+(p/√(2E))²=1的陈述；或者将该source范围限制为能量定义，并把ellipse句独立列项。"
+      }
+    }
+  ]
+}

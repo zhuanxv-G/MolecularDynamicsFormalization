@@ -1,0 +1,69 @@
+{
+  "batch": "BATCH26",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "b5ecb14868d0bc63f9a83f5afe06a5847145315fc66a0d1d2b18502063b55650",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4.1-ExactPlanarRotation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "SOURCE_FORMULA_AMBIGUITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-ExactPlanarRotation",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4.1",
+          "printed_page": "173",
+          "pdf_page": "195",
+          "statement_latex": "Each of these is, it turns out, easily integrated as a planar rotation (see Exercise 7).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "印刷p.172/PDFp.194：\\pi 为体坐标角动量，\\dot\\pi=\\pi\\times T^{-1}\\pi\\ (4.41)，T=\\operatorname{diag}(I_1,I_2,I_3)。",
+            "印刷p.173/PDFp.195原样展示：\\dot\\pi=\\pi\\times(T_1^{-1}\\pi_1,0,0)^T，\\dot\\pi=\\pi\\times(0,T_2^{-1}\\pi,0)^T，\\dot\\pi=\\pi\\times(0,0,T_3^{-1}\\pi)^T。原页此处使用T_i，第二、第三式的\\pi没有分量下标；不在原文转录中补成\\pi_2、\\pi_3。",
+            "预期主轴子系统的解释为\\dot\\pi=\\pi\\times e_i(\\pi_i/I_i)，但这是对上述缺下标原式的解释，需与原式区分；Lean的Fin 3索引0、1、2对应书中1、2、3。"
+          ],
+          "issues": [
+            "原展示公式第二、第三子系统的π缺分量下标，且主轴系数写作T_i^{-1}；context_notation应保留原样并标明与I_i解释的关系，不能静默修正。"
+          ],
+          "lean_decl": "MD.Ch04.exactPlanarRotation",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]第二/第三子场按完整π₂/π₃解释，与PrincipalAxisField一致；显式负角主动旋转给出(4.41)的π×ω符号，不将原表正角错误候选当作该精确子流。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "补录被Each of these引用的三个展示子系统及(4.41)上下文，保留原书第二、第三式缺下标疑误；陈述、证明字段和页码不变。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex与PDFp.195原句逐字一致；proof_latex=null和proof_note正确：此处仅指向Exercise 7，无独立证明；printed_page=173、pdf_page=195正确。",
+          "statement_scope明确包括展示公式，但context_notation为空，遗漏Each of these的三个指代对象。补录原式，保留第二、第三式缺下标，不能据预期数学意义静默修书。"
+        ],
+        "evidence": [
+          "教材PDFp.195/印刷p.173顶部三个叉积展示式及紧随其后的Each of these is, it turns out, easily integrated as a planar rotation (see Exercise 7). 已用渲染页视觉核对。",
+          "PDFp.194/印刷p.172公式(4.41)为π̇=π×T⁻¹π；页末T=diag(I₁,I₂,I₃)并说明绕三个惯量轴依次旋转。",
+          "PDFp.195第二、第三向量中的非零项分别印为T₂⁻¹π、T₃⁻¹π，π无下标。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.exactPlanarRotation",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "依赖已展开：Ch04_deps.txt中MolecularDynamics/Chapter04/ReviewDefinitions.lean的V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)。axisRotation的三分支分别是主动Rx=[[1,0,0],[0,cosφ,−sinφ],[0,sinφ,cosφ]]、Ry=[[cosφ,0,sinφ],[0,1,0],[−sinφ,0,cosφ]]、Rz=[[cosφ,−sinφ,0],[sinφ,cosφ,0],[0,0,1]]。Pi.single i a在i处为a，其余处为0；矩阵*ᵥ为逐行点积，HasDerivAt断言实际实参数向量导数。量词为任意I、初值π、轴i，在0<I_i下，所有实t；γ(t)=R_i(−tπ_i/I_i)π。旋转固定第i分量并在t=0为恒等，导数为−(π_i/I_i)e_i×γ=γ×e_i(γ_i/I_i)，因此该签名完整表达了预期主轴子场的精确平面旋转，三个结论均正确；不需要其它轴惯量的正性，选中惯量正性符合物理背景但数学上非零已足够。[EXTRA]负角是该主动矩阵与(4.41)叉积方向下必要的符号选择，并未将p.174正角算法替代为正确精确流。[EXTRA]把第二、第三子场的无下标π解释为π₂/π₃合理且符合p.172对角惯量分裂，但原页字面第二、第三式把向量π放在单个标量分量中，含义未定义；无法对原样展示公式无条件给PASS。需人工确认原书缺下标及T_i与I_i的意图；这是原文数学含义问题，不是缺库定义。[ERRATUM?]本条无独立该标签，所涉及缺下标确实存在；正角方向疑点由以上导数支持。签名语义与证明完成度分开：实际exactPlanarRotation的证明体为sorry，本次未写证明、未声称Lean已验证此结论。",
+        "counterexample": null,
+        "suggested_fix": "请确认原页第二、第三式非零项应分别为π₂/I₂、π₃/I₃，并确认T_i表示对应主惯量。确认后现有负角Lean签名可就解释后的精确平面旋转判PASS；在JSON上下文保留原样展示和勘误说明，勿改原书转录或把sorry当已证。"
+      }
+    }
+  ]
+}

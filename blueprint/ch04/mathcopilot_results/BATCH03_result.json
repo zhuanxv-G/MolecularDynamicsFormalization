@@ -1,0 +1,238 @@
+{
+  "batch": "BATCH03",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "ce9dbe8313150429e90055c7d56efc1b88275c2c367f9fddae72a78e913e40b0",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.1-PrintedImplicitRelation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.1-PrintedImplicitRelation",
+          "kind": "definition",
+          "label": null,
+          "section": "4.1",
+          "printed_page": "142",
+          "pdf_page": "164",
+          "statement_latex": "The Implicit Midpoint method which, for the ODE $\\dot z=f(z)$ takes the form\n\\[z_{n+1}=z_n+h\\frac{f(z_n)+f(z_{n+1})}{2},\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "p142名为Implicit Midpoint却写Trapezoidal Rule更新式；p144采用真正机械中点式。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.printedImplicitRelation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "field": "statement_latex",
+              "reason": "原句遗漏 which 并改变标点；修正转录，保留原书梯形公式及已有 ERRATUM?，不将它静默改成真正中点式。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原句遗漏 which 并改变标点；修正转录，保留原书梯形公式及已有 ERRATUM?，不将它静默改成真正中点式。"
+        ],
+        "evidence": [
+          "PDF164 / 印刷142，正文 “The Implicit Midpoint method which, for the ODE” 及其下展示的端点场平均公式；PDF166 / 印刷144 为中点场。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.printedImplicitRelation",
+        "verdict": "PASS",
+        "explanation": "依赖摘录 MolecularDynamics/Chapter04/ReviewDefinitions.lean: Q n = Fin n → ℝ，Z n = Q n × Q n；向量运算逐坐标。 展开 MD.Ch04.printedImplicitRelation 得 Z=z+(h/2)(f(z)+f(Z))，对象、自由参数和等式与印刷公式一致，无存在唯一性断言。ERRATUM? 成立：一般非线性场下端点平均不等于中点取值；此定义忠实保存印刷疑误。定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.1-ActualMidpointRelation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION",
+          "SOURCE_SCOPE",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.1-ActualMidpointRelation",
+          "kind": "definition",
+          "label": null,
+          "section": "4.1",
+          "printed_page": "142",
+          "pdf_page": "164",
+          "statement_latex": "The Implicit Midpoint method which, for the ODE $\\dot z=f(z)$ takes the form\n\\[z_{n+1}=z_n+h\\frac{f(z_n)+f(z_{n+1})}{2},\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch04.actualMidpointRelation",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]名称通常对应的真正中点关系Z=z+h f((z+Z)/2)供审校上下文；不是原页的印刷公式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "field": "statement_latex",
+              "reason": "原文截句遗漏 which 及 takes the form；补齐原句和紧随展示公式。真正中点式仅在 extra_assumptions 中作为另行解释保留，不能声称是 PDF164 的印刷关系。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原文截句遗漏 which 及 takes the form；补齐原句和紧随展示公式。真正中点式仅在 extra_assumptions 中作为另行解释保留，不能声称是 PDF164 的印刷关系。"
+        ],
+        "evidence": [
+          "PDF164 / 印刷142，与前条同一句和同一个梯形公式；PDF166 / 印刷144 给出机械中点关系。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.actualMidpointRelation",
+        "verdict": "FAIL",
+        "explanation": "依赖摘录 MolecularDynamics/Chapter04/ReviewDefinitions.lean: Q n = Fin n → ℝ，Z n = Q n × Q n；向量运算逐坐标。 实际定义为 Z=z+h f((z+Z)/2)，而指定原页给的是 Z=z+(h/2)(f(z)+f(Z))。[EXTRA] 已坦陈这是另行更正候选，合理用于比较，但不使其成为原页忠实陈述。定义无 sorry。",
+        "counterexample": "取 n=1，f(x)=x²，z=0，Z=2，h=1：印刷式为 2=(0+4)/2，成立；实际中点式要求 2=1，不成立。",
+        "suggested_fix": "将此条明确标为更正候选，来源注明 PDF166 的机械中点背景；若要求忠实于 PDF164，则使用 printedImplicitRelation。不要覆盖原书疑误。"
+      }
+    },
+    {
+      "source_id": "MD-4.1-ImplicitFactor",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF164 / 印刷142，“can be applied to” 后的纯虚线性方程及 z_{n+1}=((1+ihΩ/2)/(1-ihΩ/2))z_n；context 中分母实部为1的说明正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.implicitFactor",
+        "verdict": "FAIL",
+        "explanation": "展开 MD.Ch04.implicitFactor 与正式库 implicitFactor 均得复数比值 (1+i hΩ/2)/(1-i hΩ/2)，Ω,h 为实数。定义准确表达因子，但引用还断言方法应用于线性方程后得到该更新：签名没有 z_n、z_{n+1}、线性场关系或更新等式，缺失该结论。无额外假设，定义无 sorry。",
+        "counterexample": "缺失条款：由线性场的印刷隐式关系（或真正中点关系）推出 z_{n+1}=implicitFactor Ω h * z_n。",
+        "suggested_fix": "保留因子定义，增加复标量更新关系的等价定理，明确线性场 iΩz；用分母实部1处理非零性。"
+      }
+    },
+    {
+      "source_id": "MD-4.1-ImplicitModulus",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [
+          "原句 linear system 须按本段已解耦的纯虚线性振子理解；不能推广成任意线性系统所有轨道有界。原句照录保留。"
+        ],
+        "evidence": [
+          "PDF164 / 印刷142，模长展示式及紧接的 no stability threshold 句；该节开头限定谐振子解耦复标量方程。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.implicitModulus",
+        "verdict": "FAIL",
+        "explanation": "正式库 implicitFactor 展开为上述比值；∀ Ω h : ℝ, ‖factor‖=1 准确保留公式且量词无步长限制。[EXTRA] 限定纯虚振子合理。引用的第二句“无稳定阈值”所需所有迭代有界结论未在签名中表达；依赖中 scalarStable a = ∃ C : ℝ, ∀ k : ℕ, ‖a^k‖≤C，但本声明没有它。 签名语义与证明完成度分开：本条实际 Ch04.lean 中有证明体，未见 sorry；本审计未执行 Lean 编译。",
+        "counterexample": "缺失条款：任意 h 的标量迭代幂有界／轨道范数保持；模长结论本身正确，无反例。",
+        "suggested_fix": "增加 ∀ Ω h, scalarStable (implicitFactor Ω h)，或 ∀ Ω h z k, ‖factor^k*z‖=‖z‖；不扩大成任意线性系统。"
+      }
+    },
+    {
+      "source_id": "MD-4.1-PrintedModifiedFrequency",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "LOG_BRANCH_UNSPECIFIED"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "频率公式转录正确；原书未显式指定复对数分支，该问题已在条目中记录，不能从正确转录自动批准分支语义。"
+        ],
+        "evidence": [
+          "PDF165 / 印刷143，频率公式 1/(ih) ln((1+ihΩ/2)/(1-ihΩ/2))；随后图4.2及小 hΩ 说明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.printedModifiedFrequency",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "MD.Ch04.printedModifiedFrequency 展开为 (i h)⁻¹ * Complex.log factor，factor 的正式定义已查明。原文 ln 的分支未指定，这是需要裁定的原文问题，并非缺失项目定义。主支候选合理：有限实 x=hΩ/2 时 factor 的连续主相位为 2 atan x ∈ (-π,π)，与实频率解释相容；其他支给频率加 2πk/h。[EXTRA] 注释写 h≠0，但实际定义没有这一资格，Lean 总化逆元在 h=0 返回0；必须显式限制物理解读到非零步长。定义无 sorry。",
+        "counterexample": "分支 k 与0的频率相差 2πk/h（h≠0）；h=0 时 Lean 定义为0，而原式含 1/(ih)，未定义。",
+        "suggested_fix": "裁定并记录原文 ln 采用连续于 h=0 的主相位解释；将来源等式的使用域明确设为 h≠0，并给与 2 atan(hΩ/2)/h 的桥接等式。若希望零步长连续延拓，应单独定义值 Ω。"
+      }
+    },
+    {
+      "source_id": "MD-4.1-ModifiedFrequencyLimit",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF165 / 印刷143，连续两句：small hΩ 时频率近似良好，hΩ≫1 时频率 highly modified；context 对实相位的说明为显式解释。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.modifiedFrequencyLimit",
+        "verdict": "FAIL",
+        "explanation": "实际正式定义 modifiedFrequency Ω h = 2*Real.arctan(h*Ω/2)/h。签名对每个固定 Ω，沿 nhdsWithin 0 ({0}ᶜ) 即非零实步长趋0的滤子取极限 Ω，正确表达小步长一致性。[EXTRA] 此精确化合理，但弱于原文完整的 hΩ 尺度描述：未表达随 Ω 变化的频率比，亦遗漏 hΩ≫1 的高度修改结论。 签名语义与证明完成度分开：本条实际 Ch04.lean 中有证明体，未见 sorry；本审计未执行 Lean 编译。",
+        "counterexample": "缺失条款：对 x=hΩ>0，频率比 2 atan(x/2)/x 在 x→0 时趋1、x→+∞ 时趋0。固定 Ω 的 h→0 极限没有后一结论。",
+        "suggested_fix": "增加频率比函数 r(x)=2 atan(x/2)/x（x≠0）的零点极限和正无穷极限，并在 hΩ≠0 时连接 modifiedFrequency Ω h / Ω = r(hΩ)。"
+      }
+    },
+    {
+      "source_id": "MD-4.1-MechanicalMidpoint",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF166 / 印刷144，开头四个更新关系逐个对应；无独立证明。context 所称质量正是物理资格，没有变成条目中的存在唯一性声称。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.mechanicalMidpointRelation",
+        "verdict": "PASS",
+        "explanation": "依赖摘录 MolecularDynamics/Chapter04/ReviewDefinitions.lean: Q n = Fin n → ℝ，Z n = Q n × Q n；向量运算逐坐标。正式 grad U q = textbookConstraintGradient U q；在 MolecularDynamics/Chapter04/ConstrainedProjection.lean 展开后为 fun i => (fderiv ℝ U q) (Pi.single i 1)，是真实 Fréchet 偏导梯度。invMass m v = fun i => (m i)⁻¹*v i，是对角质量逆作用。 四个合取逐项对应 mid=(q̂,p̂)、z=(q_n,p_n)、out=(q_{n+1},p_{n+1})，全部正负号和 h/2 系数正确。没有交换量词或宣称解存在唯一。[EXTRA] 无新增假设；物理质量应正、势应可微，签名是代数关系的总化延伸，对合格对象限制后忠实；它没有声称任意不可微 U 的 fderiv 就是经典梯度。应明确记录此使用域，m=0 的逆元总化不代表物理质量逆。定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.1-MidpointElimination",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF166 / 印刷144，“composition of Implicit Euler and Explicit Euler half-steps” 句及其后的 q̂ 消元式，均已照录。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.midpointElimination",
+        "verdict": "FAIL",
+        "explanation": "依赖摘录 MolecularDynamics/Chapter04/ReviewDefinitions.lean: Q n = Fin n → ℝ，Z n = Q n × Q n；向量运算逐坐标。正式 grad U q = textbookConstraintGradient U q；在 MolecularDynamics/Chapter04/ConstrainedProjection.lean 展开后为 fun i => (fderiv ℝ U q) (Pi.single i 1)，是真实 Fréchet 偏导梯度。invMass m v = fun i => (m i)⁻¹*v i，是对角质量逆作用。 正式 mechanicalMidpointRelation 展开为全部四个更新等式；∀ n m U h z mid out 后，以该关系为前提推出位置消元式，符号、h²/4、M⁻¹作用均正确，也没有增加存在性或Newton收敛。但引用同时断言隐式Euler半步后接显式Euler半步的分解，签名仅有消元结论，遗漏组合条款。 签名语义与证明完成度分开：本条实际 Ch04.lean 中有证明体，未见 sorry；本审计未执行 Lean 编译。",
+        "counterexample": "缺失条款：令 F(q,p)=(invMass m p,-grad U q)，mid=z+(h/2)F(mid)，out=mid+(h/2)F(mid)，即原文所称两种Euler半步组合。",
+        "suggested_fix": "保留消元定理，增加 mechanicalMidpointRelation 与上述两个相空间Euler半步关系的等价陈述，或将已引 statement_scope 明确缩为仅消元公式（需显式修改来源范围，不能静默删句）。"
+      }
+    }
+  ]
+}

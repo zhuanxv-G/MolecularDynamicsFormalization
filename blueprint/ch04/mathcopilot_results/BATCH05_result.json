@@ -1,0 +1,433 @@
+{
+  "batch": "BATCH05",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "462fe8205da43129ae5ee3e0a028d483af0e792253e2dabc173d70a3334adf2d",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.2.1-ImpulseTrace",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-ImpulseTrace",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.2.1",
+          "printed_page": "146",
+          "pdf_page": "168",
+          "statement_latex": "On the other hand, a short calculation shows that\n\\[\\lambda_1+\\lambda_2=\\operatorname{Tr}(W_h)=2\\cos(h\\Omega)-\\frac h\\Omega\\sin(h\\Omega).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.168（印刷p.146）：状态列向量为(q,p)ᵀ；Ω≫1是模型背景。此处代数结论适用于任意Ω>0，不需要定量大频率门槛。",
+            "S_h=[[1,0],[-h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}，快子系统在内步趋零时采用精确流，不是一次Verlet更新。",
+            "λ₁、λ₂是W_h的两个复特征根，按代数重数计；det(W_h)=1，μ(h)=Tr(W_h)=2cos(hΩ)−(h/Ω)sin(hΩ)。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.impulseTrace",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "Ω≠0为原F_h分母资格；当前Lean只给trace计算，原句λ₁+λ₂=Tr(W_h)的按代数重数计谱桥接未在签名中给出。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "detail": "逐字核对PDF并补齐context_notation；原书措辞或系数疑误仅登记，不改印刷statement_latex。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex与对应PDF原句及公式一致；页码印刷页+22正确；未发现独立证明，proof_latex=null及proof_note合理。原context_notation未定义所用记号，或用审计/实现说明替代教材上下文，现补齐原文模型、矩阵、谱及局部参数。"
+        ],
+        "evidence": [
+          "教材PDF p.168（印刷p.146），已用pdftotext及渲染页逐项核对：λ₁+λ₂=Tr(W_h)=2cos(hΩ)−(h/Ω)sin(hΩ)；上方S_h、F_h、W_h矩阵。",
+          "Ch04_deps.txt：-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，slowMatrix/fastMatrix/impulseMatrix及（需要时）eigenvalueOutside定义已展开；Ch04.lean实际对应声明及证明体已读取。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.impulseTrace",
+        "verdict": "FAIL",
+        "explanation": "已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 Ω≠0合理：原F_h含Ω分母；该trace恒等式本身甚至可延至Lean约定除零的Ω=0，不影响本条审计。签名只写Tr(W_h)=μ(h)，没有所引完整链式等式中的λ₁+λ₂=Tr(W_h)，也没有任何两个谱根及其重数的绑定。不是等式算错，而是明确缺少所要求的谱结论子句。实际文件有证明体、无sorry；本次未编译，不能据此宣称核验通过。",
+        "counterexample": "缺失条款：两个按代数重数计的复特征根之和等于实trace的复嵌入；仅trace等式没有陈述这一桥接。",
+        "suggested_fix": "保留trace计算辅助引理，另以复特征多项式分解(或两个根含重数的完整刻画)绑定λ₁、λ₂并给出λ₁+λ₂=(Tr W_h:ℂ)。不可只量化任意两个det=0的根，因为会重复选择同一简单根。"
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ResonancePower",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-ResonancePower",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.2.1",
+          "printed_page": "146",
+          "pdf_page": "168",
+          "statement_latex": "For example, at $h=\\pi/\\Omega$, we have\n\\[F_h=-I\\Rightarrow W_h=-S_{h/2}^2=-\\begin{bmatrix}1&0\\\\-h&1\\end{bmatrix},\\]\nso that\n\\[W_h^n=(-1)^n\\begin{bmatrix}1&0\\\\-nh&1\\end{bmatrix}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.168（印刷p.146）：状态列向量为(q,p)ᵀ；Ω≫1是模型背景。此处代数结论适用于任意Ω>0，不需要定量大频率门槛。",
+            "S_h=[[1,0],[-h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}，快子系统在内步趋零时采用精确流，不是一次Verlet更新。",
+            "λ₁、λ₂是W_h的两个复特征根，按代数重数计；det(W_h)=1，μ(h)=Tr(W_h)=2cos(hΩ)−(h/Ω)sin(hΩ)。",
+            "本条固定h=π/Ω，n为非负整数迭代次数；I为2×2单位矩阵。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.resonancePower",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "Ω>0为频率资格，较原背景Ω≫1弱且对公式足够；n为所有非负整数是原W_h^n通式已有语义，不是图示次数的外推。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "detail": "逐字核对PDF并补齐context_notation；原书措辞或系数疑误仅登记，不改印刷statement_latex。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex与对应PDF原句及公式一致；页码印刷页+22正确；未发现独立证明，proof_latex=null及proof_note合理。原context_notation未定义所用记号，或用审计/实现说明替代教材上下文，现补齐原文模型、矩阵、谱及局部参数。"
+        ],
+        "evidence": [
+          "教材PDF p.168（印刷p.146），已用pdftotext及渲染页逐项核对：底部F_h=−I⇒W_h=−S_{h/2}²=−[[1,0],[-h,1]]，及W_h^n=(−1)^n[[1,0],[-nh,1]]。",
+          "Ch04_deps.txt：-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，slowMatrix/fastMatrix/impulseMatrix及（需要时）eigenvalueOutside定义已展开；Ch04.lean实际对应声明及证明体已读取。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.resonancePower",
+        "verdict": "PASS",
+        "explanation": "已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 Ω>0是频率的合理资格；Ω≫1并非此恒等式所需。∀k:ℕ精确表达所有迭代，包括k=0；实标量作用等于整张矩阵乘(−1)^k，负下三角项−kπ/Ω正确。k=1恢复原W_h矩阵，展开fastMatrix在Ω(π/Ω)=π处即得F_h=−I，展开slowMatrix平方即得W_h=−S_{h/2}²，因此原前置公式没有额外未覆盖的数学内容。实际文件有证明体、无sorry；本次只审计签名，不宣称已经编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ResonanceTaylor",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "TRUNCATED_TAYLOR_EQUALITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-ResonanceTaylor",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.2.1",
+          "printed_page": "147",
+          "pdf_page": "169",
+          "statement_latex": "We can see this by expanding $\\mu(h)=2\\cos(h\\Omega)-\\frac h\\Omega\\sin(h\\Omega)$ in a Taylor expansion around $h=\\pi/\\Omega$:\n\\[\\mu(h)=-2+\\varepsilon,\\qquad\\varepsilon=\\frac\\pi\\Omega(h-\\pi/\\Omega).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.168（印刷p.146）：状态列向量为(q,p)ᵀ；Ω≫1是模型背景。此处代数结论适用于任意Ω>0，不需要定量大频率门槛。",
+            "S_h=[[1,0],[-h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}，快子系统在内步趋零时采用精确流，不是一次Verlet更新。",
+            "λ₁、λ₂是W_h的两个复特征根，按代数重数计；det(W_h)=1，μ(h)=Tr(W_h)=2cos(hΩ)−(h/Ω)sin(hΩ)。",
+            "h₀=π/Ω；ε=(π/Ω)(h−h₀)。原展示μ(h)=−2+ε是截断的一阶Taylor写法，非精确恒等式；同页随后λ+λ⁻¹=−2+ε+O(ε²)明确保留余项。"
+          ],
+          "issues": [
+            {
+              "code": "TRUNCATED_TAYLOR_EQUALITY",
+              "detail": "原μ(h)=−2+ε是截断Taylor写法，下一行有O(ε²)；不能作为精确等式。保留原展示公式，只补上下文解释。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.resonanceTaylor",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原省略高阶项以真实一致O((h−π/Ω)²)余项保留，不将截断线性式当精确等式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "detail": "逐字核对PDF并补齐context_notation；原书措辞或系数疑误仅登记，不改印刷statement_latex。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex与对应PDF原句及公式一致；页码印刷页+22正确；未发现独立证明，proof_latex=null及proof_note合理。原context_notation未定义所用记号，或用审计/实现说明替代教材上下文，现补齐原文模型、矩阵、谱及局部参数。",
+          "原μ(h)=−2+ε是截断Taylor写法，下一行有O(ε²)；不能作为精确等式。保留原展示公式，只补上下文解释。"
+        ],
+        "evidence": [
+          "教材PDF p.169（印刷p.147），已用pdftotext及渲染页逐项核对：μ(h)=−2+ε、ε=(π/Ω)(h−π/Ω)；下一行λ+λ⁻¹=−2+ε+O(ε²)。",
+          "Ch04_deps.txt：-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，slowMatrix/fastMatrix/impulseMatrix及（需要时）eigenvalueOutside定义已展开；Ch04.lean实际对应声明及证明体已读取。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.resonanceTaylor",
+        "verdict": "PASS",
+        "explanation": "已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 固定Ω>0后依次存在C>0、δ>0，再对所有|h−h₀|<δ成立，正确表达局部一致二阶余项，而非让常数依赖h。μ(h₀)=−2、μ′(h₀)=π/Ω，故线性项正确。原书下一行λ+λ⁻¹=−2+ε+O(ε²)支持将上一行等号解释为截断Taylor记法；[EXTRA]余项不是额外前提，而是将这个已有渐近语义写精确。若把原展示式按精确恒等式读则不成立，审校已显式注明，没有改动原句。实际文件含sorry；PASS仅表示签名语义，绝不表示证明完成。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ResonanceInstability",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-ResonanceInstability",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.2.1",
+          "printed_page": "147",
+          "pdf_page": "169",
+          "statement_latex": "Here both eigenvalues are real and one is outside the unit circle. There is thus a small interval of exponential instability directly below $h=\\pi/\\Omega$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.168（印刷p.146）：状态列向量为(q,p)ᵀ；Ω≫1是模型背景。此处代数结论适用于任意Ω>0，不需要定量大频率门槛。",
+            "S_h=[[1,0],[-h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}，快子系统在内步趋零时采用精确流，不是一次Verlet更新。",
+            "λ₁、λ₂是W_h的两个复特征根，按代数重数计；det(W_h)=1，μ(h)=Tr(W_h)=2cos(hΩ)−(h/Ω)sin(hΩ)。",
+            "Here指ε<0，即h<π/Ω且充分接近π/Ω；两个根均实且互为倒数，至少一个模大于1。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.resonanceInstability",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "Ω>0；存在左邻域，每个h有真实复谱模>1。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "detail": "逐字核对PDF并补齐context_notation；原书措辞或系数疑误仅登记，不改印刷statement_latex。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex与对应PDF原句及公式一致；页码印刷页+22正确；未发现独立证明，proof_latex=null及proof_note合理。原context_notation未定义所用记号，或用审计/实现说明替代教材上下文，现补齐原文模型、矩阵、谱及局部参数。"
+        ],
+        "evidence": [
+          "教材PDF p.169（印刷p.147），已用pdftotext及渲染页逐项核对：Here both eigenvalues are real；small interval of exponential instability directly below h=π/Ω。",
+          "Ch04_deps.txt：-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，slowMatrix/fastMatrix/impulseMatrix及（需要时）eigenvalueOutside定义已展开；Ch04.lean实际对应声明及证明体已读取。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.resonanceInstability",
+        "verdict": "FAIL",
+        "explanation": "已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 另已展开行4398的eigenvalueOutside：∃rho:ℂ, 1<‖rho‖ ∧ ∃v:Fin 2→ℂ, v≠0 ∧ (A.map Complex.ofReal)*ᵥv=rho•v。它确实是非零特征向量和实际模大于1，而非只检查trace。Ω>0合理；∃δ>0再∀h∈左开邻域顺序正确。所引句还明确说both eigenvalues are real，签名没有这一实谱子句。由于这个具体矩阵det=1，实2×2矩阵的非实根必共轭且乘积为模平方，可从外单位圆根另行推出两根实；所以不是数学反例，而是要求的全结论签名未显式给出。实际文件含sorry，与遗漏独立。",
+        "counterexample": "缺失条款：两个特征根均为实数的断言及其完整谱绑定；eigenvalueOutside只存在一个复谱模>1。",
+        "suggested_fix": "在每个h的结论中并列完整实谱刻画，例如∃r₁ r₂:ℝ，使复特征多项式等于(X−r₁)(X−r₂)，且max(|r₁|,|r₂|)>1（或一个模>1且两根均实）。可另补det=1与实谱桥接引理。δ还可缩至≤π/Ω以明确正步长。"
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ResonanceEigenPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "ERRATUM_CONFIRMED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-ResonanceEigenPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.2.1",
+          "printed_page": "147",
+          "pdf_page": "169",
+          "statement_latex": "For $\\varepsilon<0$, however, we have\n\\[\\lambda=-1\\pm(|\\varepsilon|/2)^{1/2}+O(\\varepsilon).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.168（印刷p.146）：状态列向量为(q,p)ᵀ；Ω≫1是模型背景。此处代数结论适用于任意Ω>0，不需要定量大频率门槛。",
+            "S_h=[[1,0],[-h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}，快子系统在内步趋零时采用精确流，不是一次Verlet更新。",
+            "λ₁、λ₂是W_h的两个复特征根，按代数重数计；det(W_h)=1，μ(h)=Tr(W_h)=2cos(hΩ)−(h/Ω)sin(hΩ)。",
+            "ε=(π/Ω)(h−π/Ω)<0；λ指两个特征根，±应覆盖两支，O(ε)以ε→0⁻解释。原书(|ε|/2)^(1/2)照录保留，正确首项应为sqrt(|ε|)。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "PDF原样确为sqrt(|ε|/2)；由λ+λ⁻¹=−2+ε+O(ε²)得首项应为sqrt(|ε|)，原式系数仅为正确值的1/sqrt(2)。不改statement_latex。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.resonanceEigenPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "detail": "逐字核对PDF并补齐context_notation；原书措辞或系数疑误仅登记，不改印刷statement_latex。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex与对应PDF原句及公式一致；页码印刷页+22正确；未发现独立证明，proof_latex=null及proof_note合理。原context_notation未定义所用记号，或用审计/实现说明替代教材上下文，现补齐原文模型、矩阵、谱及局部参数。",
+          "PDF原样确为sqrt(|ε|/2)；由λ+λ⁻¹=−2+ε+O(ε²)得首项应为sqrt(|ε|)，原式系数仅为正确值的1/sqrt(2)。不改statement_latex。"
+        ],
+        "evidence": [
+          "教材PDF p.169（印刷p.147），已用pdftotext及渲染页逐项核对：ε<0后的展示λ=−1±(|ε|/2)^(1/2)+O(ε)，分母2经渲染页确认。",
+          "Ch04_deps.txt：-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，slowMatrix/fastMatrix/impulseMatrix及（需要时）eigenvalueOutside定义已展开；Ch04.lean实际对应声明及证明体已读取。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.resonanceEigenPrinted",
+        "verdict": "FAIL",
+        "explanation": "已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 原印刷(|ε|/2)^(1/2)确有系数错误，[ERRATUM?]成立：令t=h₀−h>0、a=π/Ω，则μ=−2−at+O(t²)，根为−1±sqrt(at)+O(t)，不是−1±sqrt(at/2)+O(t)。Lean保留了错误的正支近似，任何根都不能满足该O(t)误差。另外原±两支均需刻画，签名只存在一根。Ω>0合理；先∃C,δ后∀h正确，但不能救错误系数。实际文件含sorry；FAIL由假命题及缺支造成，非因sorry。",
+        "counterexample": "固定Ω=1、h=π−t，t↓0。两根r±满足(r±+1)/sqrt(t)→±sqrt(π)。目标正支为sqrt(πt/2)，故任一根与目标的差除以t均无界；正支差的首项是(1−1/sqrt(2))sqrt(πt)，负支更大。因此不存在所要求的固定C、δ。",
+        "suggested_fix": "原文照录并保留已确认的ERRATUM记录；将数学修正版另立声明：sqrt(|(π/Ω)(h−π/Ω)|)，去掉/2，并同时给出两支实特征根、两条O(|h−h₀|)界及完整谱因子分解。不得把修正版冒充原印刷等式的证明。"
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ResonanceLinearRate",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_NOT_SOURCE",
+          "ERRATUM_NORM_OSCILLATION",
+          "MISSING_INITIAL_DATA_QUALIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-ResonanceLinearRate",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.2.1",
+          "printed_page": "147",
+          "pdf_page": "169",
+          "statement_latex": "and the norm of the solution will oscillate and grow linearly with $n$ as $n\\to\\infty$. This is the simplest type of linear resonance present in multiple timestepping.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.168（印刷p.146）：状态列向量为(q,p)ᵀ；Ω≫1是模型背景。此处代数结论适用于任意Ω>0，不需要定量大频率门槛。",
+            "S_h=[[1,0],[-h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}，快子系统在内步趋零时采用精确流，不是一次Verlet更新。",
+            "λ₁、λ₂是W_h的两个复特征根，按代数重数计；det(W_h)=1，μ(h)=Tr(W_h)=2cos(hΩ)−(h/Ω)sin(hΩ)。",
+            "本句承接PDF p.168的W_h^n公式，固定h=π/Ω且z₀=(q₀,p₀)ᵀ：z_n=(−1)^n(q₀,p₀−nhq₀)ᵀ。线性增长需要q₀≠0；q₀=0时范数恒定。",
+            "原句norm ... oscillate照录保留；交替的是解的整体符号，范数一般没有交替振荡。Lean Fin 2→ℝ采用Pi最大范数max(|q|,|p|)，并非EuclideanSpace包装的二范数。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原文未声明q₀≠0，q₀=0时范数恒定；(−1)^n表示解符号交替，不能使范数振荡，q₀=1,p₀=0时范数单调增长。原引文保留，数学资格及措辞疑误显式记录。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.resonanceLinearRate",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]选实际Pi最大范数给出精确正线性率；q0≠0，否则此增长结论不成立。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "detail": "逐字核对PDF并补齐context_notation；原书措辞或系数疑误仅登记，不改印刷statement_latex。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex与对应PDF原句及公式一致；页码印刷页+22正确；未发现独立证明，proof_latex=null及proof_note合理。原context_notation未定义所用记号，或用审计/实现说明替代教材上下文，现补齐原文模型、矩阵、谱及局部参数。",
+          "原文未声明q₀≠0，q₀=0时范数恒定；(−1)^n表示解符号交替，不能使范数振荡，q₀=1,p₀=0时范数单调增长。原引文保留，数学资格及措辞疑误显式记录。"
+        ],
+        "evidence": [
+          "教材PDF p.169（印刷p.147），已用pdftotext及渲染页逐项核对：图4.3之后首句norm ... oscillate and grow linearly；前页底部矩阵幂公式。",
+          "Ch04_deps.txt：-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，slowMatrix/fastMatrix/impulseMatrix及（需要时）eigenvalueOutside定义已展开；Ch04.lean实际对应声明及证明体已读取。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.resonanceLinearRate",
+        "verdict": "FAIL",
+        "explanation": "已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 Ω>0与q₀=z 0≠0合理且q₀≠0对正增长必要。Fin 2→ℝ的范数是max(|q|,|p|)，故极限为|h₀q₀|>0，定量地保留了线性增长；量词先Ω、再所有合格初值，没有假设增长本身。可是所引句还声称范数oscillate，签名没有该子句，且原句对范数的字面表述不成立。该签名适合作为明确纠正措辞后的线性率定理，不能判为所引全部原句忠实编码。实际文件有证明体、无sorry，本次未编译。",
+        "counterexample": "Ω=π（h₀=1），z=(1,0)，则W^k z=(−1)^k(1,−k)，Pi范数为max(1,k)，单调且最终恰等k，并不振荡；二范数sqrt(1+k²)也单调。z=(0,1)则范数恒为1，说明附加q₀≠0必要。",
+        "suggested_fix": "保留原引文并标注ERRATUM/措辞疑误；把修正版明确写为解的符号交替而范数线性增长。在线性率结论旁给出z_k=(−1)^k(q₀,p₀−kh₀q₀)以表达解的交替行为，不要声称范数振荡。"
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ResonanceGrowth",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_NOT_SOURCE",
+          "ERRATUM_NORM_OSCILLATION",
+          "MISSING_INITIAL_DATA_QUALIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-ResonanceGrowth",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.2.1",
+          "printed_page": "147",
+          "pdf_page": "169",
+          "statement_latex": "and the norm of the solution will oscillate and grow linearly with $n$ as $n\\to\\infty$. This is the simplest type of linear resonance present in multiple timestepping.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.168（印刷p.146）：状态列向量为(q,p)ᵀ；Ω≫1是模型背景。此处代数结论适用于任意Ω>0，不需要定量大频率门槛。",
+            "S_h=[[1,0],[-h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}，快子系统在内步趋零时采用精确流，不是一次Verlet更新。",
+            "λ₁、λ₂是W_h的两个复特征根，按代数重数计；det(W_h)=1，μ(h)=Tr(W_h)=2cos(hΩ)−(h/Ω)sin(hΩ)。",
+            "本句承接PDF p.168的W_h^n公式，固定h=π/Ω且z₀=(q₀,p₀)ᵀ：z_n=(−1)^n(q₀,p₀−nhq₀)ᵀ。线性增长需要q₀≠0；q₀=0时范数恒定。",
+            "原句norm ... oscillate照录保留；交替的是解的整体符号，范数一般没有交替振荡。Lean Fin 2→ℝ采用Pi最大范数；仅范数趋无穷没有表达所引句子的线性增长率。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原文未声明q₀≠0，q₀=0时范数恒定；(−1)^n表示解符号交替，不能使范数振荡，q₀=1,p₀=0时范数单调增长。原引文保留，数学资格及措辞疑误显式记录。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.resonanceGrowth",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "原泛称增长补q0≠0；q0=0时纯动量轨道模不增长。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "detail": "逐字核对PDF并补齐context_notation；原书措辞或系数疑误仅登记，不改印刷statement_latex。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex与对应PDF原句及公式一致；页码印刷页+22正确；未发现独立证明，proof_latex=null及proof_note合理。原context_notation未定义所用记号，或用审计/实现说明替代教材上下文，现补齐原文模型、矩阵、谱及局部参数。",
+          "原文未声明q₀≠0，q₀=0时范数恒定；(−1)^n表示解符号交替，不能使范数振荡，q₀=1,p₀=0时范数单调增长。原引文保留，数学资格及措辞疑误显式记录。"
+        ],
+        "evidence": [
+          "教材PDF p.169（印刷p.147），已用pdftotext及渲染页逐项核对：图4.3之后首句norm ... oscillate and grow linearly；前页底部矩阵幂公式。",
+          "Ch04_deps.txt：-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，slowMatrix/fastMatrix/impulseMatrix及（需要时）eigenvalueOutside定义已展开；Ch04.lean实际对应声明及证明体已读取。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.resonanceGrowth",
+        "verdict": "FAIL",
+        "explanation": "已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 Ω>0和q₀≠0合理，后者排除恒定范数轨道；∀z量词和矩阵幂作用正确。签名只有‖W^kz‖→+∞，没有所引句的线性增长率，也没有振荡子句。文件中的证明调用resonanceLinearRate不使被调用结论自动成为本定理签名的一部分。原范数振荡措辞本身有误，应明确记录。实际文件有证明体、无sorry，本次未编译。",
+        "counterexample": "缺失条款：线性增长。抽象数列sqrt(k)、k²均趋无穷但均不满足正有限线性率，说明Tendsto atTop atTop的结论形式不足；这不是该固定W的矩阵反例，该W的线性率确实成立。另Ω=π,z=(1,0)的Pi范数max(1,k)单调，不符合原字面振荡。",
+        "suggested_fix": "把此条明确标为原结论的发散推论，缩小statement_scope，或在当前签名并列‖W^kz‖/k→|h₀q₀|和精确带(−1)^k的轨道式。对范数oscillate保留原文疑误记录，修正版应说解交替。"
+      }
+    }
+  ]
+}

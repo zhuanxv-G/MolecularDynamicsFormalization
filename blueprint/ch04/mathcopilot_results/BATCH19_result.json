@@ -1,0 +1,161 @@
+{
+  "batch": "BATCH19",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "9b7abcb11b136ca7e1b15a8f1b57d23ab316821384988f129395fffb534507bd",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.6-MShakeIteration",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已读取并渲染教材 PDF 第186页，页眉印刷第164页；页码关系 PDF=印刷+22 成立，§4.3.6 正确。",
+          "PDF186 M-Shake 条目首句与 statement_latex 完全一致；其后的历史、实现与参考文献讨论不在本条选句范围内。该选句未附独立证明或展示公式，proof_latex 与 proof_discussion_latex=null 正确。",
+          "context_notation 的从零迭代 k 次是实现范围说明，不是该页逐字引文；PDF179/印刷157 的(4.18)–(4.19)给出更新和候选位置，并允许零初值；PDF183/印刷161 给出所引(4.27)–(4.29)。没有静默改动所引原书公式或疑误。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.mShakeIteration",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean、ConstrainedProjection.lean 与 CotangentProjection.lean：Q n=Fin n→ℝ；textbookConstraintGradient (g j) x i=(fderiv ℝ (g j) x)(Pi.single i 1)；G(x) 的 j,i 元为该梯度；invMass m v i=(m i)⁻¹v i，textbookInverseMassMatrix m=diag((m i)⁻¹)。令 x(η)=base−M⁻¹G(q)ᵀη，则 residual(η)=g(x(η))，projectionJacobian(η)=G(x(η))M⁻¹G(q)ᵀ，newtonConstraint(η)=η+projectionJacobian(η)⁻¹residual(η)。残差的真正导数为上述矩阵的负值，故更新中的加号正确，逐项对应 PDF179/印刷157 的(4.18)–(4.19)。mShakeIteration 将此实际更新从零复合 k 次，k=0 返回零，不是恒等占位或冻结雅可比更新。这里 base 是已消去显式动力学更新后的无约束位置，η 吸收步长因子；在 SHAKE 中可取 base=q+hM⁻¹p+(h²/2)M⁻¹F(q)，η=(h²/2)ρ，对应 PDF183 的(4.27)–(4.28)。正文允许零初值，context_notation 明确本条仅记录有限次迭代，未声称已经精确求解、收敛或构成完整相空间时间步。自然数 n,l,k 与 m,g,q,base 均为定义参数，无存在性或全称收敛命题。定义没有假设正质量、可微性或每步可逆；Lean 的逆与 fderiv 在退化输入上是总化运算，这只扩展定义域，不能将退化输入解释为有效物理 Newton 求解。没有 [EXTRA] 或 [ERRATUM?] 标签；本定义无 sorry。签名在所标明有限迭代范围内忠实。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.6-SETTLE",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已读取并渲染教材 PDF 第187页，页眉印刷第165页；页码关系 PDF=印刷+22 成立，§4.3.6 正确。",
+          "PDF187 SETTLE 两句与 statement_latex 完全一致，包含 small system、exact solve 及 usually applied to treat rigid bodies。原页无独立证明或 SETTLE 闭式公式；两个证明字段为 null、context_notation=[] 正确。extra_assumptions 只说明登记范围，并非原书句子。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.settleRelation",
+        "verdict": "PASS",
+        "explanation": "已展开 projectionResidual、Q、invMass、textbookConstraintJacobian、textbookConstraintGradient 和 textbookInverseMassMatrix，具体表达同上一条：settleRelation m g q base η 等价于 ∀j, g j(base−M⁻¹G(q)ᵀη)=0。这是 SHAKE 消元后的真实非线性方程的精确解关系；等号是精确等号，没有误差容限。全部 n,l,m,g,q,base,η 为参数；无解的输入可以使关系为假，不宣称存在、唯一性、闭式求解器或输出算法。[EXTRA] 是明确的范围说明而非额外逻辑前提：正文没有给出 SETTLE 的专门求解公式，故记录解关系是合理的最小数学登记。小系统与通常用于刚体是应用范围描述，书中没有给出维数上界或只允许刚体的全称限制；不应自行添加 n 或 l 的数值界。此泛化关系不区分 SETTLE 与其他精确求解同一方程的方法，不能单凭此定义宣称已经形式化 SETTLE 的专门算法，但附件已明确只登记关系，因此本条按该范围 PASS。无 [ERRATUM?]，定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.6-LINCSInverse",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "REFERENCE_WHITESPACE_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.6-LINCSInverse",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3.6",
+          "printed_page": "165",
+          "pdf_page": "187",
+          "statement_latex": "LINCS In solving the Eqs. (4.27)–(4.29) by Newton iteration, the largest cost and the most significant barrier to parallelization is the linear solve. The LINCS method [119, 175] uses a series expansion to approximate the inverse matrix (which is valid only under certain conditions).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch04.lincsInverse",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]标准Neumann有限和Σ(j=0..k) C^j表达series inverse，正文没有印系数公式；收敛条件另条。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "field": "statement_latex",
+              "before": "[119,175]",
+              "after": "[119, 175]",
+              "reason": "PDF187/印刷165 的原页参考文献标记包含逗号后空格；仅恢复逐字转录。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页为 [119, 175]，JSON 写成 [119,175]；仅转录空格差异，无数学改动。"
+        ],
+        "evidence": [
+          "已读取并渲染教材 PDF 第187页，页眉印刷第165页；页码关系 PDF=印刷+22 成立，§4.3.6 正确。",
+          "PDF187 LINCS 段落参考文献标记为 [119, 175]。除该空格外，选定句子的单词、标点和方程号均一致；换行连字符仅作版式合并。原页没有级数系数公式或收敛证明，两个证明字段为 null、context_notation=[] 正确。",
+          "statement_scope 仅覆盖已选首两句；原页随后关于 large, weakly-coupled systems 的性能句未列为本条陈述，不补入本批所选范围。Neumann 有限和只在 [EXTRA] 中注明，原书并未印出该公式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.lincsInverse",
+        "verdict": "PASS",
+        "explanation": "实际声明及依赖 ReviewDefinitions.lean 中的 lincsInverse 都展开为 S_k(C)=∑_{j=0}^k C^j；Finset.range(k+1) 确实包含零次项和第 k 次项，矩阵乘法与乘法单位给出 C^0=I。l,k 为自然数，C 为任意 l×l 实矩阵；这是有限和定义，不带收敛断言，因此无需在定义上加范数或谱半径假设。[EXTRA] 明确把原文未印出的 series expansion 具体化为标准 Neumann 部分和，是合理的补充建模选择，不能称为原书展示公式或完整 LINCS 算法。逆的目标应解释为 I−C；同批依赖 lincsConvergence_statement 与实际 lincsConvergence 已明确这一目标，故没有把 C 自身的逆错误地写成 ∑C^j。若要应用于 Newton 线性矩阵 R，尚需在调用处给出 R=I−C 或含对角预条件的分解及相应缩放；本定义不宣称已经完成这种连接。原句中成本和并行化障碍属于算法动机，不是此矩阵定义的数学结论。本条按已标明的标准部分和登记范围 PASS，无 [ERRATUM?]，定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.6-LINCSConvergence",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "REFERENCE_WHITESPACE_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.6-LINCSConvergence",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.6",
+          "printed_page": "165",
+          "pdf_page": "187",
+          "statement_latex": "The LINCS method [119, 175] uses a series expansion to approximate the inverse matrix (which is valid only under certain conditions).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch04.lincsConvergence",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明确实际连续线性算子C.toLin'.toContinuousLinearMap的范数<1；不使用逐元素最大范数作为Neumann收敛资格。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "field": "statement_latex",
+              "before": "[119,175]",
+              "after": "[119, 175]",
+              "reason": "PDF187/印刷165 的原页参考文献标记包含逗号后空格；仅恢复逐字转录。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页为 [119, 175]，JSON 写成 [119,175]；仅转录空格差异，无数学改动。"
+        ],
+        "evidence": [
+          "已读取并渲染教材 PDF 第187页，页眉印刷第165页；页码关系 PDF=印刷+22 成立，§4.3.6 正确。",
+          "PDF187 LINCS 段落参考文献标记为 [119, 175]。除该空格外，选定句子的单词、标点和方程号均一致；换行连字符仅作版式合并。原页没有级数系数公式或收敛证明，两个证明字段为 null、context_notation=[] 正确。",
+          "所选一句为完整原句，括号中的 valid only under certain conditions 确实存在。算子范数条件是已标明 [EXTRA] 的数学具体化，未冒充原书原文或勘误。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.lincsConvergence",
+        "verdict": "PASS",
+        "explanation": "已展开依赖 ReviewDefinitions.lean 的 lincsInverse 为 S_k(C)=∑_{j=0}^k C^j，并核对 Statements.lean 的 lincsConvergence_statement 与实际声明一致。量词顺序为 ∀l∈ℕ, ∀C∈ℝ^{l×l}，随后假设 ‖C.toLin'.toContinuousLinearMap‖<1，结论 k→∞ 时 S_k(C) 在矩阵有限维拓扑中趋于 (I−C)⁻¹。toLin' 表示 x↦C*ᵥx，转成连续线性映射后范数是算子范数；即使当前开启 Matrix.Norms.Elementwise，也没有将条件替换为矩阵元素最大值。有限维函数空间的标准范数下，该算子范数具有次乘性，‖C^j‖op≤‖C‖op^j，几何级数收敛且 (I−C)S_k=I−C^{k+1}=S_k(I−C)，给出真正双侧逆；矩阵与算子拓扑在有限维一致，因而结论正确。[EXTRA] 把原文未具体说明的 certain conditions 实例化为一个充分条件，合理但不是必要条件：例如二阶矩阵 [[0,2],[0,0]] 范数为2却幂零，级数仍在一次后终止。Lean 没有写成必要充分条件，所以没有不当加强；也无需再假设 I−C 可逆，该条件已保证可逆。该条是标准 Neumann 充分收敛命题，不能据此宣称验证了完整 LINCS 的分解和性能。无 [ERRATUM?]。实际 theorem 的证明体为 by sorry，故此 PASS 仅为签名语义 PASS，不表示定理已有 Lean 完整证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

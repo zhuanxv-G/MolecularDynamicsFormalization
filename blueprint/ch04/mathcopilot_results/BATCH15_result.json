@@ -1,0 +1,226 @@
+{
+  "batch": "BATCH15",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "e355f35a536eff20ef488c2814d3fa8ce752fb336a96b78d49cc1395e2074587",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.4-CotangentRegularity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SUMMATION_BOUNDS_MISSING",
+          "CONTEXT_NOTATION_MISSING",
+          "PROOF_DISCUSSION_OMITTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.4-CotangentRegularity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.4",
+          "printed_page": "160",
+          "pdf_page": "182",
+          "statement_latex": "Thus we may apply Lemma 4.1 with $\\gamma$ replaced by each $g_k$ to demonstrate $\\sum_{j=1}^{N_c}dq_{n+1,j}\\wedge dp_{n+1,j}=\\sum_{j=1}^{N_c}dq_{n+1,j}\\wedge d\\bar p_{n+1,j}$.",
+          "proof_latex": null,
+          "proof_note": "原书以有限梯度和及 Lemma 4.1 给出本等式的简短论证；未另列独立定理或完整重复证明。",
+          "proof_discussion_latex": "Observe that $g\\prime(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$. Thus we may apply Lemma 4.1 with $\\gamma$ replaced by each $g_k$.",
+          "context_notation": [
+            "$q_{n+1}\\in\\mathbb R^{N_c}$ satisfies $g(q_{n+1})=0$; $g=(g_1,\\ldots,g_l)$.",
+            "$\\bar p_{n+1}$ is the pre-projection momentum; $p_{n+1}=\\bar p_{n+1}-g\\prime(q_{n+1})^T\\mu_{n+1}$ (4.23).",
+            "$g\\prime(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$; Lemma 4.1 assumes $\\gamma\\in C^2$.",
+            "The displayed two-forms are restricted to constrained parameter variations, with $d g_k(q_{n+1})=0$; $j=1,\\ldots,N_c$."
+          ],
+          "issues": [
+            "原图两端求和均明确标为 j=1 到 N_c；JSON 仅写 sum_j。",
+            "空 context_notation 遗漏新位置约束、末动量投影和乘子有限梯度和；这些是套用 Lemma 4.1 的上下文。",
+            "原书有紧邻的有限梯度和以及套用引理的论证，应记录为 proof_discussion；不将原书推导中的其他疑误改写入本条。"
+          ],
+          "lean_decl": "MD.Ch04.cotangentRegularity",
+          "reusable_proofs": [
+            "MolecularDynamics.contDiffAt_textbookCotangentProjection"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]实际逆Gram投影的一阶正则性资格：C²约束、C¹参数图、Gram非奇异；非另印定理。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "issue_codes": [
+                "SUMMATION_BOUNDS_MISSING",
+                "CONTEXT_NOTATION_MISSING",
+                "PROOF_DISCUSSION_OMITTED"
+              ],
+              "description": "仅在审校输出内恢复原印刷求和/页码、上下文和已给出的论证；附件未修改。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF181/printed159 and PDF182/printed160, first-with-deps"
+        },
+        "issues": [
+          "原图两端求和均明确标为 j=1 到 N_c；JSON 仅写 sum_j。",
+          "空 context_notation 遗漏新位置约束、末动量投影和乘子有限梯度和；这些是套用 Lemma 4.1 的上下文。",
+          "原书有紧邻的有限梯度和以及套用引理的论证，应记录为 proof_discussion；不将原书推导中的其他疑误改写入本条。"
+        ],
+        "evidence": [
+          "已对照 PDF 第182页/印刷第160页图像：Observe that 后为 g′(q_{n+1})ᵀμ_{n+1}=Σ_{k=1}^{l}μ_{n+1,k}∇g_k(q_{n+1})。",
+          "同页 Thus we may apply Lemma 4.1 后，等式两端求和下界 1、上界 N_c；p 与带横线的 p 区分正确。",
+          "PDF 第181页/印刷第159页 (4.22)–(4.24) 给出新位置约束、末动量投影和隐藏约束。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.cotangentRegularity",
+        "verdict": "FAIL",
+        "explanation": "定义已展开：SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookSymplecticForm=J.toBilin\\'，其坐标值为 Σ_i(u_q,i v_p,i−u_p,i v_q,i)，即 Σdq_i∧dp_i。textbookCotangentChart q p=Sum.elim(q)(p)。textbookConstraintGradient γ(q)_i=Dγ(q)(e_i)；textbookConstraintJacobian G_ji=Dγ_j(q)(e_i)；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ；textbookCotangentMultiplier=(GM⁻¹Gᵀ)⁻¹GM⁻¹p；textbookCotangentProjection=p−Gᵀμ。E 是任意实赋范空间；x 和 u,v 均全称量化；约束的 ∀ᶠ 是 x 邻域中的恒等关系，不是仅在 x 处为零。 cotangentRegularity 的唯一结论是投影映射在 x 处 C¹；没有二形式等式，也没有邻域位置约束。其 C²约束、C¹参数图和 Gram 非奇异作为正则性辅助定理的 [EXTRA] 合理，但不能代替本条冻结的原文等式。原文并未单独声称本条正则性，extra_assumptions 的“非另印定理”不能消除结论缺失。签名问题独立于证明：附件该声明使用正式库 apply，无 sorry；本审计未编译工程。无 [ERRATUM?] 标注。",
+        "counterexample": "缺失结论且现有假设不足：Nc=2, Mc=1, E=ℝ², m=(1,1), γ_1(q)=q_1, q(s,t)=(s,t), p(s,t)=(t,0)。Gram=(1)，所有正则性假设成立；实际投影 p−Gᵀμ=(0,0)，故投影后拉回二形式为 0，而投影前为 ds∧dt。u=(1,0),v=(0,1) 时分别为 0 和 1。取 x=(0,0) 连点上的位置约束也成立，但邻域约束不成立。",
+        "suggested_fix": "作为辅助正则性声明单独标记并移出本原句的忠实性映射；若保留该 source_id，增加 ∀j, ∀ᶠy in 𝓝x, γ_j(q(y))=0 并将结论补为对所有 u,v 的两侧实际二形式拉回等式，可采用本批 cotangentPullback 的签名。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.4-CotangentPullback",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SUMMATION_BOUNDS_MISSING",
+          "CONTEXT_NOTATION_MISSING",
+          "PROOF_DISCUSSION_OMITTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.4-CotangentPullback",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.4",
+          "printed_page": "160",
+          "pdf_page": "182",
+          "statement_latex": "Thus we may apply Lemma 4.1 with $\\gamma$ replaced by each $g_k$ to demonstrate $\\sum_{j=1}^{N_c}dq_{n+1,j}\\wedge dp_{n+1,j}=\\sum_{j=1}^{N_c}dq_{n+1,j}\\wedge d\\bar p_{n+1,j}$.",
+          "proof_latex": null,
+          "proof_note": "原书以有限梯度和及 Lemma 4.1 给出本等式的简短论证；未另列独立定理或完整重复证明。",
+          "proof_discussion_latex": "Observe that $g\\prime(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$. Thus we may apply Lemma 4.1 with $\\gamma$ replaced by each $g_k$.",
+          "context_notation": [
+            "$q_{n+1}\\in\\mathbb R^{N_c}$ satisfies $g(q_{n+1})=0$; $g=(g_1,\\ldots,g_l)$.",
+            "$\\bar p_{n+1}$ is the pre-projection momentum; $p_{n+1}=\\bar p_{n+1}-g\\prime(q_{n+1})^T\\mu_{n+1}$ (4.23).",
+            "$g\\prime(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$; Lemma 4.1 assumes $\\gamma\\in C^2$.",
+            "The displayed two-forms are restricted to constrained parameter variations, with $d g_k(q_{n+1})=0$; $j=1,\\ldots,N_c$."
+          ],
+          "issues": [
+            "原图两端求和均明确标为 j=1 到 N_c；JSON 仅写 sum_j。",
+            "空 context_notation 遗漏新位置约束、末动量投影和乘子有限梯度和；这些是套用 Lemma 4.1 的上下文。",
+            "原书有紧邻的有限梯度和以及套用引理的论证，应记录为 proof_discussion；不将原书推导中的其他疑误改写入本条。"
+          ],
+          "lean_decl": "MD.Ch04.cotangentPullback",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookCotangentProjection_preserves_pullback"
+          ],
+          "extra_assumptions": [
+            "实际逆Gram投影、C²约束、C¹参数图、Gram非奇异及邻域位置约束；可微乘子由正式库导出，不作新假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "issue_codes": [
+                "SUMMATION_BOUNDS_MISSING",
+                "CONTEXT_NOTATION_MISSING",
+                "PROOF_DISCUSSION_OMITTED"
+              ],
+              "description": "仅在审校输出内恢复原印刷求和/页码、上下文和已给出的论证；附件未修改。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF181/printed159 and PDF182/printed160, first-with-deps"
+        },
+        "issues": [
+          "原图两端求和均明确标为 j=1 到 N_c；JSON 仅写 sum_j。",
+          "空 context_notation 遗漏新位置约束、末动量投影和乘子有限梯度和；这些是套用 Lemma 4.1 的上下文。",
+          "原书有紧邻的有限梯度和以及套用引理的论证，应记录为 proof_discussion；不将原书推导中的其他疑误改写入本条。"
+        ],
+        "evidence": [
+          "已对照 PDF 第182页/印刷第160页图像：Observe that 后为 g′(q_{n+1})ᵀμ_{n+1}=Σ_{k=1}^{l}μ_{n+1,k}∇g_k(q_{n+1})。",
+          "同页 Thus we may apply Lemma 4.1 后，等式两端求和下界 1、上界 N_c；p 与带横线的 p 区分正确。",
+          "PDF 第181页/印刷第159页 (4.22)–(4.24) 给出新位置约束、末动量投影和隐藏约束。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.cotangentPullback",
+        "verdict": "PASS",
+        "explanation": "定义已展开：SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookSymplecticForm=J.toBilin\\'，其坐标值为 Σ_i(u_q,i v_p,i−u_p,i v_q,i)，即 Σdq_i∧dp_i。textbookCotangentChart q p=Sum.elim(q)(p)。textbookConstraintGradient γ(q)_i=Dγ(q)(e_i)；textbookConstraintJacobian G_ji=Dγ_j(q)(e_i)；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ；textbookCotangentMultiplier=(GM⁻¹Gᵀ)⁻¹GM⁻¹p；textbookCotangentProjection=p−Gᵀμ。E 是任意实赋范空间；x 和 u,v 均全称量化；约束的 ∀ᶠ 是 x 邻域中的恒等关系，不是仅在 x 处为零。 令 q=q_{n+1}, p=bar p_{n+1}，构造投影为原文 p_{n+1}；任意 u,v 上的双线性等式恰好是原文完整两侧二形式等式，方向一致。每一 γ_j 都 C²，q,p 在 x 处 C¹；有限个约束逐个在邻域恒为零，保证切向变分；Gram 非奇异保证实际末投影和乘子局部可微。以上 [EXTRA] 是实际逆Gram构造和微分形式的合理局部资格，而非假设目标等式。不需要预投影动量满足隐藏约束：Lemma 4.1 的二形式论证只用位置约束和 Hessian 对称，这一加强合理。正质量不是该纯代数/二形式身份所必需；固定任意 m 的推广仍涵盖物理正质量。结论限于给定参数图和一点的所有方向，不声称全局解存在或全局微分同胚。无 [ERRATUM?]；实际声明为库 apply，无 sorry，未作工程编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.4-GramProjectedEuler",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PAGE_INCORRECT",
+          "CONTEXT_NOTATION_MISSING",
+          "PROOF_DISCUSSION_OMITTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.4-GramProjectedEuler",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.4",
+          "printed_page": "159",
+          "pdf_page": "181",
+          "statement_latex": "The demonstration that the method is symplectic can be seen as a consequence of the following lemma.",
+          "proof_latex": null,
+          "proof_note": "所引句位于印刷第159页；方法的三段二形式论证在印刷第160页，未另列独立完整定理证明。",
+          "proof_discussion_latex": "On printed p.160 (PDF p.182), Lemma 4.1 first gives $\\sum_{j=1}^{N_c}dq_{n+1,j}\\wedge dp_{n+1,j}=\\sum_{j=1}^{N_c}dq_{n+1,j}\\wedge d\\bar p_{n+1,j}$. The wedge-product argument next gives $\\sum_{j=1}^{N_c}dq_{n+1,j}\\wedge d\\bar p_{n+1,j}=\\sum_{j=1}^{N_c}dq_{n,j}\\wedge d\\bar p_{n+1,j}$; invoking Lemma 4.1 again gives $\\sum_{j=1}^{N_c}dq_{n,j}\\wedge d\\bar p_{n+1,j}=\\sum_{j=1}^{N_c}dq_{n,j}\\wedge dp_{n,j}$.",
+          "context_notation": [
+            "The method refers to (4.20)–(4.24): $q_{n+1}=q_n+hM^{-1}\\bar p_{n+1}$; $\\bar p_{n+1}=p_n-hF_n-hg\\prime(q_n)^T\\lambda_n$; $g(q_{n+1})=0$; $p_{n+1}=\\bar p_{n+1}-g\\prime(q_{n+1})^T\\mu_{n+1}$; $g\\prime(q_{n+1})M^{-1}p_{n+1}=0$.",
+            "$M$ is the diagonal mass matrix; $F_n=F(q_n)$; $\\lambda_n,\\mu_{n+1}$ are constraint multipliers. The printed force sign in (4.21) is retained.",
+            "Symplecticity means preservation of $\\sum_{j=1}^{N_c}dq_j\\wedge dp_j$ on the constrained phase space."
+          ],
+          "issues": [
+            "所引 The demonstration ... following lemma. 位于印刷第159页/PDF第181页，不在所标160/182。",
+            "未记录 the method 指代的 (4.20)–(4.24) 及末页三段二形式等式。",
+            "原书 (4.21) 的 −hF_n 原样保留；此处不静默改为 +hF_n，也不替原书认定勘误。"
+          ],
+          "lean_decl": "MD.Ch04.gramProjectedEuler",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookGramProjectedEulerChart_hiddenConstraint_and_pullback"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]将(4.20–24)实际Gram末投影同时证明隐藏约束与完整拉回形式不变；给定C¹位置投影分支，非解的存在理论。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "issue_codes": [
+                "SOURCE_PAGE_INCORRECT",
+                "CONTEXT_NOTATION_MISSING",
+                "PROOF_DISCUSSION_OMITTED"
+              ],
+              "description": "仅在审校输出内恢复原印刷求和/页码、上下文和已给出的论证；附件未修改。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF181/printed159 and PDF182/printed160, first-with-deps"
+        },
+        "issues": [
+          "所引 The demonstration ... following lemma. 位于印刷第159页/PDF第181页，不在所标160/182。",
+          "未记录 the method 指代的 (4.20)–(4.24) 及末页三段二形式等式。",
+          "原书 (4.21) 的 −hF_n 原样保留；此处不静默改为 +hF_n，也不替原书认定勘误。"
+        ],
+        "evidence": [
+          "PDF第181页/印刷第159页图像：(4.20)–(4.24) 下方、Lemma 4.1 上方逐字出现所引句。",
+          "PDF第182页/印刷第160页图像：Thus we may apply ...、Using similar argumentation ...、and, finally, invoking Lemma 4.1 again ... 给出三段等式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.gramProjectedEuler",
+        "verdict": "FAIL",
+        "explanation": "定义已展开：SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookSymplecticForm=J.toBilin\\'，其坐标值为 Σ_i(u_q,i v_p,i−u_p,i v_q,i)，即 Σdq_i∧dp_i。textbookCotangentChart q p=Sum.elim(q)(p)。textbookConstraintGradient γ(q)_i=Dγ(q)(e_i)；textbookConstraintJacobian G_ji=Dγ_j(q)(e_i)；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ；textbookCotangentMultiplier=(GM⁻¹Gᵀ)⁻¹GM⁻¹p；textbookCotangentProjection=p−Gᵀμ。E 是任意实赋范空间；x 和 u,v 均全称量化；约束的 ∀ᶠ 是 x 邻域中的恒等关系，不是仅在 x 处为零。 进一步展开：textbookPotentialForce U(q)=−∇U(q)；textbookMultiConstrainedMomentum=p−Σ_j μ_j∇γ_j(q)；PreMomentum=P=p+aF(q)−hΣ_j lam_j∇γ_j(q)；Position=Q=q+h diag(m_i⁻¹)P；GramProjectedEulerChart=(Q, P−G(Q)ᵀ(G(Q)M⁻¹G(Q)ᵀ)⁻¹G(Q)M⁻¹P)。邻域旧/新位置约束、C¹初始乘子分支、C²势与约束、终点 Gram 非奇异均为局部方法分支/末投影的合理 [EXTRA]；新位置约束蕴含输出的位置约束，第一结论给出隐藏约束，第二结论完整给出二形式拉回不变，未把它们作为假设。初始隐藏约束和正质量可在物理子类上额外限制，不是该更强恒等式的必要条件。关键对象不一致：a 是任意全称实数，原印刷 (4.21) 固定 −hF_n，按该库 F=−∇U 只有 a=−h 才是原印方法。a=h 是另一动力学符号，a=0 则忽略势力。合理推广仍应显式给出原书特例；本签名没有绑定 a，故作为实际 (4.20)–(4.24) 的对应声明不通过。无 [ERRATUM?] 标注，不能借推广静默改变原书力符号。本声明 apply 库定理，无 sorry；此判定是对象忠实性，未声称其数学拉回定理为假或完成编译。",
+        "counterexample": "方法对象反例：Nc=1, Mc=0, m=1, U(q)=q²/2, h=1, a=0, E=ℝ, q(y)=1,p(y)=0。所有约束假设空真，空 Gram 的 determinant=1，光滑性成立。Lean 的 P=0,Q=1，输出 (1,0)；原印 (4.21) 中 F(1)=−1，bar p=0−1·(−1)=1，(4.20) 输出 (2,1)。两者都可满足二形式恒等式，但不是同一方法。",
+        "suggested_fix": "在本 source_id 的原印方法包装中删去自由 a 并全部代入 a=−h，或增加 ha:a=−h 后明确原印特例。任意 a 的几何推广可另作辅助声明；如选择 Hamiltonian 一致 a=h，须单独标明原印符号疑误并审议，不能静默替换。补充物理正质量/初始隐藏约束时说明它们限定物理相空间；不要宣称本局部等式证明了分支存在或全局微分同胚。"
+      }
+    }
+  ]
+}

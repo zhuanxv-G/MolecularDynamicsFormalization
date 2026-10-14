@@ -1,0 +1,461 @@
+{
+  "batch": "BATCH23",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "f51ace1ae794905a6b1318836933896f0feca1607e94d7105c8ac18aae96928d",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4-RigidHamiltonian",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PAGE_RANGE",
+          "MISSING_CONTEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-RigidHamiltonian",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "170–171",
+          "pdf_page": "192–193",
+          "statement_latex": "The Hamiltonian is (for a single rigid body):\n\\[H_{\\rm RB}=\\frac{\\|p_{\\rm cm}\\|^2}{2M}+\\frac{\\operatorname{Tr}[\\Pi R^{-1}\\Pi^T]}2+U(q_{\\rm cm},\\Theta),\\]\nsubject to the orthogonality constraint $\\Theta^T\\Theta=I$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "M是刚体总质量；q_cm、p_cm为质心位置和动量；Θ、Π是3×3矩阵，Θ表示方向，Π为其共轭动量。",
+            "R=Σ_i m_i δ_i(0)δ_i(0)^T 是固定的二阶矩矩阵；U依赖质心位置及刚体方向。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rigidHamiltonian",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "M>0、R非奇异是物理资格；正交约束单列在真实ODE关系中；inverse定义不计存在理论。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH23 first-with-deps",
+              "changes": [
+                "statement_latex 的公式在印刷170/PDF192页，subject to 正交约束在印刷171/PDF193页；单页标注不覆盖完整引文。",
+                "补齐质量、动量、方向矩阵及R的原文上下文。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF pages 190–193 rechecked in this review"
+        },
+        "issues": [
+          "statement_latex 的公式在印刷170/PDF192页，subject to 正交约束在印刷171/PDF193页；单页标注不覆盖完整引文。",
+          "补齐质量、动量、方向矩阵及R的原文上下文。"
+        ],
+        "evidence": [
+          "PDF192页底部 Hamiltonian 公式；PDF193页顶部 subject to the orthogonality constraint Θ^TΘ=I。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidHamiltonian",
+        "verdict": "FAIL",
+        "explanation": "展开deps中V=Fin 3→ℝ、Mat3=Matrix (Fin 3) (Fin 3) ℝ、dot p p=Σp_i²，公式三项准确。但本source的陈述明确包含subject to Θ^TΘ=I；本decl只是对任意Θ返回实数，未表示受约束对象或允许域。后续rigidMatrixRelation中的约束不能替代本条完整陈述。[EXTRA] M>0与R非奇异是合理物理资格，但只是注释，签名不强制；总化除法/矩阵逆作为公式延拓可接受，不能据此声称约束已编码。本decl为定义，无sorry。",
+        "counterexample": "M=1,R=I,p=q=0,U=0,Θ=0,mom=0：定义返回0，而Θ^TΘ=0≠I。",
+        "suggested_fix": "保留数值公式作为辅助定义；本source另定义受约束状态域或将Θ置于正交矩阵子类型，并将M>0、R可逆的资格与公式延拓明确分开。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-SecondMomentDiagonal",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-SecondMomentDiagonal",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "168",
+          "pdf_page": "190",
+          "statement_latex": "By choosing an appropriate coordinate frame, it is possible to insure that the symmetric matrix $R$ is a diagonal matrix.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "R=Σ_{i=1}^N m_i δ_i(0)δ_i(0)^T；δ_i(0)是固定参考构形中相对质心的位置向量。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.secondMomentDiagonal",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH23 first-with-deps",
+              "changes": [
+                "context_notation 未定义本句中的R；补入该页紧邻公式。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF pages 190–193 rechecked in this review"
+        },
+        "issues": [
+          "context_notation 未定义本句中的R；补入该页紧邻公式。"
+        ],
+        "evidence": [
+          "PDF190/印刷168页，R的求和定义及 By choosing an appropriate coordinate frame 原句。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.secondMomentDiagonal",
+        "verdict": "PASS",
+        "explanation": "deps 4377–4383、4519–4520展开V、Mat3、outer v=(v_i v_j)、secondMoment=Σm_i outer δ_i，因此R是真实对称二阶矩矩阵。∀N,m,δ 后存在一个共同正交O，O^TRO所有非对角元为0，准确表示选择坐标系使R对角。无需正质量或中心化假设；允许实权是成立的推广。O^TO=I在三维方阵足以表示正交，不需要det=1；原句仅要求坐标系。签名忠实；该本地证明没有sorry，未运行Lean编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationBodyEnergy",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-RotationBodyEnergy",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "169",
+          "pdf_page": "191",
+          "statement_latex": "It is convenient to express this in terms of the so-called body angular velocity $\\omega_b=\\Theta^T\\omega$ in which case it becomes $K_{\\rm rot}=\\frac12\\omega_b^TT\\omega_b$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "δ_i(t)=Θ(t)δ_i(0)，Θ为正交旋转矩阵；空间角速度满足 dotδ_i=ω×δ_i。",
+            "ω_b=Θ^Tω；T=Σ_i m_i[||δ_i(0)||²I−δ_i(0)δ_i(0)^T]，为体坐标系中的惯性张量。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rotationBodyEnergy",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "真实SO3旋转；不把动能等式/叉积协变当假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH23 first-with-deps",
+              "changes": [
+                "补齐T、参考位置和空间角速度定义，否则空context不能确定公式中的惯性张量。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF pages 190–193 rechecked in this review"
+        },
+        "issues": [
+          "补齐T、参考位置和空间角速度定义，否则空context不能确定公式中的惯性张量。"
+        ],
+        "evidence": [
+          "PDF191/印刷169页，body angular velocity 原句、K_rot=ω_b^TTω_b/2 及其下方T定义。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationBodyEnergy",
+        "verdict": "PASS",
+        "explanation": "deps 4523–4526展开标准cross3、T=Σm_i[(Σδ_i²)I−δ_iδ_i^T]、rotationalEnergy(T,x)=Σx_i(Tx)_i/2，故结论确为从空间旋转动能得到(Θ^Tω)^TT(Θ^Tω)/2；δ参数是δ_i(0)。对象、有限求和、全称量词及两种能量一致。[EXTRA] Θ^TΘ=I必要且符合原文；detΘ=1合理描述真实刚体旋转，但此能量等式在det=-1时也成立，故不是数学必要假设，可删除以忠实于仅正交的原句。未把能量等式或叉积协变作为前提。本地证明没有sorry；未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-DipolarConstraint",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOT_SOURCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-DipolarConstraint",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "170",
+          "pdf_page": "192",
+          "statement_latex": "The vectors $\\mu_k$ can be taken to be unit vectors reflecting the dipole orientation, so they are subject to the constraint $\\|\\mu_k\\|\\equiv1$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "μ_k为第k个刚体偶极子的单位方向向量；||·||为三维欧氏范数，其模长恒为1。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.dipolarConstraint",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH23 first-with-deps",
+              "changes": [
+                "原context是实现说明；补为原书偶极方向语义，并保留欧氏范数说明。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF pages 190–193 rechecked in this review"
+        },
+        "issues": [
+          "原context是实现说明；补为原书偶极方向语义，并保留欧氏范数说明。"
+        ],
+        "evidence": [
+          "PDF192/印刷170页首段 unit vectors reflecting the dipole orientation 及 ||μ_k||≡1。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dipolarConstraint",
+        "verdict": "PASS",
+        "explanation": "展开V=Fin 3→ℝ、dot u v=Σu_i v_i，∀i dot(μ_i)(μ_i)=1恰是每个偶极方向的欧氏模长恒1（平方与模长等价）；未误用函数空间最大范数。N有限与粒子模型一致，无额外假设。定义无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-DipolarPotentialSum",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_TRANSCRIPTION",
+          "MISSING_CONTEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-DipolarPotentialSum",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "170",
+          "pdf_page": "192",
+          "statement_latex": "$\\varphi^{\\rm dip}_{ij}=\\varphi_{\\rm LJ}(r_{ij})+\\mu_i^TL(q_{ij})\\mu_j$, with $U$ given as the sum of these over pairs.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "q_ij=q_i−q_j，r_ij=||q_ij||为欧氏距离；μ_i、μ_j为单位偶极方向。",
+            "原PDF写 L(q_ij)=1/r_ij³−(3/r_ij⁵)q_ij q_ij^T，并称L为3×3矩阵；首项按标量乘单位矩阵理解，原式未显式印I。",
+            "U是所有不同粒子无序配对的相互作用势之和；φ_LJ为Lennard–Jones径向势，使用r_ij>0的无重叠构形。"
+          ],
+          "issues": [
+            {
+              "code": "IMPLICIT_IDENTITY",
+              "detail": "原PDF的L首项未显式印I；本审计按标量乘单位矩阵解释，未修改原书公式。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.dipolarPotentialSum",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "对无重叠位置，真实Euclidean距离sqrtΣ(qi−qj)²及有限无序pair和；经验势定义，不计模拟正确性。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH23 first-with-deps",
+              "changes": [
+                "PDF记作 φ_LJ(r_ij)，JSON写作 φ^{LJ}(r_ij)，下标应忠实转录。",
+                "补入L、q_ij、距离和配对求和语义；原书L首项未显式印出I，须单独注明，不静默改写原式。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF pages 190–193 rechecked in this review"
+        },
+        "issues": [
+          "PDF记作 φ_LJ(r_ij)，JSON写作 φ^{LJ}(r_ij)，下标应忠实转录。",
+          "补入L、q_ij、距离和配对求和语义；原书L首项未显式印出I，须单独注明，不静默改写原式。"
+        ],
+        "evidence": [
+          "PDF192/印刷170页 φ_ij^dip=φ_LJ(r_ij)+μ_i^TL(q_ij)μ_j，with U given as the sum of these over pairs，及其下方L定义。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dipolarPotentialSum",
+        "verdict": "PASS",
+        "explanation": "deps outer(q)_ab=q_a q_b、dot=欧氏内积；本地dipolarPairPotential在Ch04.lean 1481–1482展开为lj(r)+μ^T[(r³)^(-1)I−(3/r⁵)qq^T]ν。q_i−q_j与sqrt(Σ(q_i−q_j)²)准确给出q_ij和r_ij；双重Fin N求和仅取i<j，每对恰一次。lj作为径向势参数是合理抽象，应实例化为φ_LJ。原书L首项将标量用于矩阵，按单位矩阵的通行解释一致，已在context显式注明。[EXTRA] 无重叠是合理的原势定义域，注释不构成Lean假设，代码在碰撞处仅作总化延拓；本审计的忠实性限于r_ij>0构形。单位方向另由dipolarConstraint表示，势公式自身允许任意向量合理。定义无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationTrajectory",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STATEMENT_SUBSTITUTION",
+          "MISSING_CONTEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-RotationTrajectory",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "168",
+          "pdf_page": "190",
+          "statement_latex": "$\\delta_i(t)=\\Theta(t)\\delta_i(0)$, see Fig. 4.7, thus we have\n\\[K_{\\rm rot}=\\frac12\\sum_{i=1}^N m_i\\delta_i(0)^T\\dot\\Theta^T\\dot\\Theta\\delta_i(0).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "δ_i(t)为相对质心的位置，δ_i(0)为参考构形；Θ(t)为3×3正交方向矩阵，m_i为各粒子质量，dotΘ为时间导数。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rotationTrajectory",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH23 first-with-deps",
+              "changes": [
+                "原书 thus we have 后展示的是旋转动能求和式，而非 JSON 所写 dotδ_i=dotΘδ_i(0)。导数公式在同页稍后出现，不能替换此处原文。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF pages 190–193 rechecked in this review"
+        },
+        "issues": [
+          "原书 thus we have 后展示的是旋转动能求和式，而非 JSON 所写 dotδ_i=dotΘδ_i(0)。导数公式在同页稍后出现，不能替换此处原文。"
+        ],
+        "evidence": [
+          "PDF190/印刷168页图4.7下方 δ_i(t)=Θ(t)δ_i(0), see Fig.4.7, thus we have；紧接K_rot求和式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationTrajectory",
+        "verdict": "FAIL",
+        "explanation": "V、Mat3和乘矩阵向量均为真实三维线性运算；HasDerivAt Θ d t后得HasDerivAt(s↦Θ(s)δ)(dδ)t，是正确的求导引理（δ表示固定参考位置）。但核对原PDF后本source的thus we have所接结论为K_rot=Σm_iδ_i(0)^TdotΘ^TdotΘδ_i(0)/2，该Lean签名完全没有质量、动能或该求和结论；不是所标原句的完整形式化。原轨道关系以函数构造表达可接受，缺失动能结论不可忽略。本地证明无sorry；正确求导引理不等于本source通过。",
+        "counterexample": "缺失条款：旋转动能求和式及其质量参数，当前签名不能表达该结论。",
+        "suggested_fix": "将此导数引理保留为辅助结果；为本source补入有限粒子质量和旋转动能对象，并陈述其求和表达式；或明确缩小并重标source_scope，但不要沿用当前原文范围。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationDerivativePrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT",
+          "ERRATUM_CONFIRMED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-RotationDerivativePrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "168",
+          "pdf_page": "190",
+          "statement_latex": "An alternative form for the rotational kinetic energy may be obtained by writing\n\\[\\dot\\delta_i=\\dot\\Theta\\delta_i(0)=\\dot\\Theta\\Theta^T\\Theta\\delta_i(0)=\\dot\\Theta\\Theta^T\\dot\\delta_i,\\]\nwhere we have used the fact that $\\Theta$ is orthogonal.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "δ_i=δ_i(t)=Θ(t)δ_i(0)，dotδ_i为其时间导数；Θ为正交矩阵。",
+            "原书最后一项印为 dotΘΘ^T dotδ_i；从前一项代换所得应为 dotΘΘ^T δ_i。此为显式勘误说明，statement_latex 保留印刷错误。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM_CONFIRMED",
+              "detail": "原PDF末项确有dotδ_i；正确代换应为δ_i。statement_latex保持原书印式，反例见audit。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.rotationDerivativePrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH23 first-with-deps",
+              "changes": [
+                "逐字转录正确：最后一个δ_i确实带点。保留原式；原有ERRATUM?经数学核查成立。",
+                "补齐δ_i(t)=Θ(t)δ_i(0)及dotΘΘ^T语义。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF pages 190–193 rechecked in this review"
+        },
+        "issues": [
+          "逐字转录正确：最后一个δ_i确实带点。保留原式；原有ERRATUM?经数学核查成立。",
+          "补齐δ_i(t)=Θ(t)δ_i(0)及dotΘΘ^T语义。"
+        ],
+        "evidence": [
+          "PDF190/印刷168页底部三步等式，末项明确为 dotΘΘ^T dotδ_i，后接 where we have used the fact that Θ is orthogonal。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationDerivativePrinted",
+        "verdict": "FAIL",
+        "explanation": "签名忠实再现印刷末项：设δ=δ_i(0)、d=dotΘ(t)，右端确为(dΘ(t)^T)(dδ)。ERRATUM?成立，印刷末项应使用当前配置Θ(t)δ而非速度dδ。它不是正交性和可微性推得的真命题，即使Θ整条轨道属于SO(3)仍失败。HasDerivAt为实际矩阵时间导数；ΘΘ^T=I是正确的正交条件。该decl明确含sorry；此处FAIL来自反例，不是因为sorry，原文忠实性单独为通过。",
+        "counterexample": "取Θ(s)=[[cos s,−sin s,0],[sin s,cos s,0],[0,0,1]]，t=0，δ=e1，d=[[0,−1,0],[1,0,0],[0,0,0]]。Θ是全局SO(3)轨道，Θ(0)=I且导数为d；左端de1=e2，右端d²e1=−e1，二者不同。",
+        "suggested_fix": "原印刷等式仅作为错误陈述记录并显式标注勘误；另立正确命题 dδ=(dΘ(t)^T)(Θ(t)δ)。不要静默改原文，也不要试图证明当前假命题。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-RigidMatrixRelation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOT_SOURCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-RigidMatrixRelation",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "171",
+          "pdf_page": "193",
+          "statement_latex": "The constraint may be enforced using Lagrange multipliers with the following equations\n\\[\\frac d{dt}q_{\\rm cm}=p_{\\rm cm}/M,\\quad\\frac d{dt}\\Theta=\\Pi R^{-1},\\]\n\\[\\frac d{dt}p_{\\rm cm}=-\\nabla_{q_{\\rm cm}}U,\\quad\\frac d{dt}\\Pi=-\\nabla_\\Theta U-\\Theta\\Lambda,\\quad I=\\Theta^T\\Theta.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "q_cm、p_cm为质心位置和动量，M为总质量；Θ、Π为方向矩阵及共轭动量，R为固定二阶矩矩阵。",
+            "Λ为执行Θ^TΘ=I约束的矩阵拉格朗日乘子；∇_q U和∇_Θ U分别为位置梯度和按矩阵元素取偏导的梯度。",
+            "原书点态时间导数的轨道解释以可微势、M>0及可逆R的物理构形为背景；原文未在此另作解存在性断言。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rigidMatrixRelation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH23 first-with-deps",
+              "changes": [
+                "原context仅说明Lean实现；补齐Λ、矩阵梯度及变量语义。公式与页码核对一致。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF pages 190–193 rechecked in this review"
+        },
+        "issues": [
+          "原context仅说明Lean实现；补齐Λ、矩阵梯度及变量语义。公式与页码核对一致。"
+        ],
+        "evidence": [
+          "PDF193/印刷171页上半部，四个时间演化方程及 I=Θ^TΘ。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidMatrixRelation",
+        "verdict": "FAIL",
+        "explanation": "deps中grad展开至ConstrainedProjection.lean 2975–2978：grad(U,q)_i=(fderiv ℝ U q)(e_i)；matrixGrad(U,Θ)_ij=(fderiv ℝ U Θ)(E_ij)。因此确为真实元素偏导而非占位函数，四项向量/矩阵右端、负号、乘法次序及Θ^TΘ=I均匹配。但∀t∈I使用HasDerivWithinAt且I是任意Set，没有区间或UniqueDiffWithinAt资格；这严格弱于原书实际时间导数轨道方程，尤其单点域允许任意给定导数。fderiv还在不可微势处总化为零，未强制原文梯度存在。可采用在可微势和真实时间区间上的域限定版本，当前无限制关系并非完整忠实轨道关系。原书不要求在此证明存在性。定义无sorry。",
+        "counterexample": "I={0}, M=1,R=I,U=0，取全局常轨道q=0,p=e1,Θ=I,mom=Λ=0。单点集合上HasDerivWithinAt对任意导数成立，故该relation为真；实际dq/dt=0却不同于p/M=e1。",
+        "suggested_fix": "将各项改为HasDerivAt，或将I限定为非退化时间区间并提供UniqueDiffWithinAt等真实导数资格；同时限定U在所用位置和矩阵处可微、M>0、R可逆，或显式将这些资格作为外层域条件。"
+      }
+    }
+  ]
+}

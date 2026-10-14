@@ -1,0 +1,199 @@
+{
+  "batch": "BATCH13",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "bc9eced06d0510f87ab6348b2187bf9a77c1fe3fe101723d8185e1f9dad94299",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.3-ComponentPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.3-ComponentPrinted",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3.3",
+          "printed_page": "158",
+          "pdf_page": "180",
+          "statement_latex": "In general, we perform a sequence of updates\n\\[\\Delta\\Lambda_j=[\\nabla g_j(Q)^TM^{-1}G_j^1]^{-1}g_j(Q),\\qquad Q:=Q-M^{-1}G_n^j\\Delta\\Lambda_j,\\]\nas $j$ cycles repeatedly from $1$ to $m$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF第180页（印刷第158页）§4.3.3：G_n^k=\\nabla g_k(q_n)，为G_n^T的第k列；q_n为固定旧位置，Q为在分量更新过程中不断改变的位置，Q_n为初始试探位置。",
+            "约束分量编号为j=1,...,m；M为质量矩阵，M^{-1}作用于梯度向量。Lean中的n是位置坐标维数，l是约束数，m : Fin n → ℝ是各坐标质量，Fin l的0,...,l-1对应原文1,...,m。",
+            "本页初始化为Λ=0、Q=Q_n；ΔΛ_j是第j个乘子分量的增量，Q:=Q-M^{-1}G_n^jΔΛ_j使用当前Q计算后立即覆盖Q。",
+            "原文方括号的逆是标量逆；有意义的线性化步骤要求该分母非零，M可逆，并要求g_j在求梯度处可微。原句未把这些技术资格逐一写成假设。",
+            "原书一般式分母确印为G_j^1，而同页已定义的是G_n^k、更新方向为G_n^j；保留印刷索引，不将其静默改为G_n^j。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "一般分量式分母G_j^1疑为G_n^j的索引误写；原文不静默改。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.componentPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]Gsup1是未定义印刷G_j^1的显式参数，未假设它等于已定义梯度。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "detail": "对照PDF180渲染页补全上下文；保留原书G_j^1索引疑误，不修改附件。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex的现有文字与公式（除Sweep用省略号省去的一般公式）核对无转录错误；页码正确。context_notation缺少解释公式所需的G_n^k、q_n/Q/Q_n、乘子增量及质量矩阵背景，现补全；不改原书疑误。"
+        ],
+        "evidence": [
+          "教材PDF第180页，页眉印刷158，§4.3.3；已同时核对pdftotext文本及该整页渲染图。158+22=180，三条页码与节号均正确。",
+          "同页：G_n^k=∇g_k(q_n)，并称其为G_n^T的第k列；初始化Λ=0及Q=Q_n。",
+          "同页无本批各定义的独立证明；proof_latex=null、proof_discussion_latex=null、proof_note未给独立完整证明均可保留。",
+          "PDF180下半页一般式逐字为ΔΛ_j=[∇g_j(Q)^T M^{-1}G_j^1]^{-1}g_j(Q)，Q:=Q-M^{-1}G_n^jΔΛ_j；随后为“as j cycles repeatedly from 1 to m.”。JSON已忠实保留G_j^1。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.componentPrinted",
+        "verdict": "FAIL",
+        "explanation": "已展开Ch04_deps.txt中MolecularDynamics/Chapter04/ReviewDefinitions.lean：Q n=Fin n→ℝ；invMass m v的第i坐标=(m i)⁻¹v_i；dot u v=Σ_i u_i v_i；grad U q=textbookConstraintGradient U q。进一步展开MolecularDynamics/Chapter04/CotangentProjection.lean中textbookConstraintGradient：第i坐标=(fderiv ℝ U q)(Pi.single i 1)，是真实Fréchet导数的坐标梯度。 MD.Ch04.componentPrinted将ΔΛ_j代入位置更新，Gsup1 j明确对应未解释的印刷G_j^1，固定q对应q_n；在质量非零、相关梯度存在和分母非零时，单步代数式相符。Gsup1是显式记号参数而非额外等式假设，这种保留原式的处理合理；[ERRATUM?]有本页已定义G_n^k及第一分量式作依据，但不据此认定原书修订已获确认。FAIL：签名没有任何有效域条件，Lean把0的逆和除以0定义为0，因而在原式没有可用标量逆时仍返回Qnow；也只定义一个j的单步，没有该条所引重复循环的序列。这里没有sorry，定义完整不等于原文全部语义已覆盖。",
+        "counterexample": "一维、一个约束，质量=1，g_1(x)=x，q_n=Q=1，Gsup1(第一个分量)=0。原式分母为1·1·0=0，ΔΛ_1=[0]^{-1}·1无定义；Lean除以0为0，结果仍为Q=1。",
+        "suggested_fix": "保留Gsup1参数与原书疑误说明；把可逆质量、所需可微性及dot(grad(g j) Qnow)(invMass m(Gsup1 j))≠0列入有效步骤资格（可用子类型或关系），显式给出ΔΛ_j及位置更新。若本条仍包含“cycles repeatedly”，补顺序循环迭代定义；否则把statement_scope明确限制为单个印刷分量步骤，将循环归入Sweep。不要静默设置Gsup1 j=grad(g j) q。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.3-ComponentConstraintStep",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.3-ComponentConstraintStep",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3.3",
+          "printed_page": "158",
+          "pdf_page": "180",
+          "statement_latex": "\\[\\Delta\\Lambda_1=[\\nabla g_1(Q)^TM^{-1}G_n^1]^{-1}g_1(Q).\\]\nWe then update $Q$ by\n\\[Q:=Q-M^{-1}G_n^1\\Delta\\Lambda_1.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF第180页（印刷第158页）§4.3.3：G_n^k=\\nabla g_k(q_n)，为G_n^T的第k列；q_n为固定旧位置，Q为在分量更新过程中不断改变的位置，Q_n为初始试探位置。",
+            "约束分量编号为j=1,...,m；M为质量矩阵，M^{-1}作用于梯度向量。Lean中的n是位置坐标维数，l是约束数，m : Fin n → ℝ是各坐标质量，Fin l的0,...,l-1对应原文1,...,m。",
+            "本页初始化为Λ=0、Q=Q_n；ΔΛ_j是第j个乘子分量的增量，Q:=Q-M^{-1}G_n^jΔΛ_j使用当前Q计算后立即覆盖Q。",
+            "原文方括号的逆是标量逆；有意义的线性化步骤要求该分母非零，M可逆，并要求g_j在求梯度处可微。原句未把这些技术资格逐一写成假设。",
+            "原书一般式分母确印为G_j^1，而同页已定义的是G_n^k、更新方向为G_n^j；保留印刷索引，不将其静默改为G_n^j。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.componentConstraintStep",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]一般j采用已定义Gn^j=grad gj(qn)，取非零分母才是可用步骤；原一般式索引疑误由ComponentPrinted保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "detail": "对照PDF180渲染页补全上下文；保留原书G_j^1索引疑误，不修改附件。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex的现有文字与公式（除Sweep用省略号省去的一般公式）核对无转录错误；页码正确。context_notation缺少解释公式所需的G_n^k、q_n/Q/Q_n、乘子增量及质量矩阵背景，现补全；不改原书疑误。"
+        ],
+        "evidence": [
+          "教材PDF第180页，页眉印刷158，§4.3.3；已同时核对pdftotext文本及该整页渲染图。158+22=180，三条页码与节号均正确。",
+          "同页：G_n^k=∇g_k(q_n)，并称其为G_n^T的第k列；初始化Λ=0及Q=Q_n。",
+          "同页无本批各定义的独立证明；proof_latex=null、proof_discussion_latex=null、proof_note未给独立完整证明均可保留。",
+          "PDF180中部第一分量公式为ΔΛ_1=[∇g_1(Q)^T M^{-1}G_n^1]^{-1}g_1(Q)，接“We then update Q by”及Q:=Q-M^{-1}G_n^1ΔΛ_1。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.componentConstraintStep",
+        "verdict": "FAIL",
+        "explanation": "已展开Ch04_deps.txt中MolecularDynamics/Chapter04/ReviewDefinitions.lean：Q n=Fin n→ℝ；invMass m v的第i坐标=(m i)⁻¹v_i；dot u v=Σ_i u_i v_i；grad U q=textbookConstraintGradient U q。进一步展开MolecularDynamics/Chapter04/CotangentProjection.lean中textbookConstraintGradient：第i坐标=(fderiv ℝ U q)(Pi.single i 1)，是真实Fréchet导数的坐标梯度。 MD.Ch04.componentConstraintStep对任意j返回Qnow-[g_j(Qnow)/Σ_i∂_i g_j(Qnow)(m_i)⁻¹∂_i g_j(q)]·M^{-1}∇g_j(q)，第一索引实例与该条原式代数一致，任意j是自然参数化。合并ΔΛ_j并返回Q是可接受的消元表达。[EXTRA]声称“取非零分母才是可用步骤”必要且合理，却没有落实于签名；质量非零及梯度存在资格也未落实。故FAIL为有效域缺失，而不是一般j或合并公式本身错误。该条没有[ERRATUM?]原书第一分量公式索引一致；同页一般式疑误不能作为已确认原文更正。定义无sorry；不作编译或证明完成性断言。",
+        "counterexample": "一维、一个约束，质量=1，g_1(x)=x²+1，q_n=0，Q=1。grad(g_1)(q_n)=0、grad(g_1)(Q)=2，分母=0、g_1(Q)=2。原文逆不存在，Lean总函数仍返回Q=1；注释中的非零前提不在函数参数中。",
+        "suggested_fix": "给有效单步定义或其关系加入非零质量、g_j在q_n及当前Q处可微和该标量分母≠0的条件；保证调用时检查这些条件。明确Fin l的首项对应原文j=1，注明推广任意j属于参数化解释。可另保留当前总函数作为实现扩张，但不要把零分母输出当原文有效步骤。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.3-ComponentSweep",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "STATEMENT_FORMULA_OMITTED",
+          "CONTEXT_STOPPING_CRITERION_IMPRECISE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.3-ComponentSweep",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3.3",
+          "printed_page": "158",
+          "pdf_page": "180",
+          "statement_latex": "and continue to update $\\Lambda_2$ in the same manner (using the second constraint). In general, we perform a sequence of updates\n\\[\\Delta\\Lambda_j=[\\nabla g_j(Q)^TM^{-1}G_j^1]^{-1}g_j(Q),\\qquad Q:=Q-M^{-1}G_n^j\\Delta\\Lambda_j,\\]\nas $j$ cycles repeatedly from $1$ to $m$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF第180页（印刷第158页）§4.3.3：G_n^k=\\nabla g_k(q_n)，为G_n^T的第k列；q_n为固定旧位置，Q为在分量更新过程中不断改变的位置，Q_n为初始试探位置。",
+            "约束分量编号为j=1,...,m；M为质量矩阵，M^{-1}作用于梯度向量。Lean中的n是位置坐标维数，l是约束数，m : Fin n → ℝ是各坐标质量，Fin l的0,...,l-1对应原文1,...,m。",
+            "本页初始化为Λ=0、Q=Q_n；ΔΛ_j是第j个乘子分量的增量，Q:=Q-M^{-1}G_n^jΔΛ_j使用当前Q计算后立即覆盖Q。",
+            "原文方括号的逆是标量逆；有意义的线性化步骤要求该分母非零，M可逆，并要求g_j在求梯度处可微。原句未把这些技术资格逐一写成假设。",
+            "原书一般式分母确印为G_j^1，而同页已定义的是G_n^k、更新方向为G_n^j；保留印刷索引，不将其静默改为G_n^j。",
+            "原页实际给出的停止建议是$\\|\\Delta\\Lambda_j\\|\\leq\\mathrm{tol}$，$j=1,2,\\ldots,m$；“或残差”不是这句原文给出的条件。本条不声称收敛。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.componentSweep",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]一次完整顺序sweep，使用上一条统一Gn索引；多轮为其真实函数迭代。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "detail": "对照PDF180渲染页补全上下文；补回省略的一般展示公式并精确记录原停止建议；保留原书G_j^1索引疑误，不修改附件。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex的现有文字与公式（除Sweep用省略号省去的一般公式）核对无转录错误；页码正确。context_notation缺少解释公式所需的G_n^k、q_n/Q/Q_n、乘子增量及质量矩阵背景，现补全；不改原书疑误。",
+          "原statement_latex用“...”替代同页两个展示公式；为逐字审校补回印刷公式，仍保留分母G_j^1，不替换为G_n^j。",
+          "原context_notation的“或残差”是实现扩展而非本页所列条件；改为本页实际的各分量增量停止建议。"
+        ],
+        "evidence": [
+          "教材PDF第180页，页眉印刷158，§4.3.3；已同时核对pdftotext文本及该整页渲染图。158+22=180，三条页码与节号均正确。",
+          "同页：G_n^k=∇g_k(q_n)，并称其为G_n^T的第k列；初始化Λ=0及Q=Q_n。",
+          "同页无本批各定义的独立证明；proof_latex=null、proof_discussion_latex=null、proof_note未给独立完整证明均可保留。",
+          "PDF180下部完整段落含一般ΔΛ_j及Q更新公式，再接“as j cycles repeatedly from 1 to m.”；停止例为‖ΔΛ_j‖≤tol，j=1,2,...,m。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.componentSweep",
+        "verdict": "FAIL",
+        "explanation": "已展开Ch04_deps.txt中MolecularDynamics/Chapter04/ReviewDefinitions.lean：Q n=Fin n→ℝ；invMass m v的第i坐标=(m i)⁻¹v_i；dot u v=Σ_i u_i v_i；grad U q=textbookConstraintGradient U q。进一步展开MolecularDynamics/Chapter04/CotangentProjection.lean中textbookConstraintGradient：第i坐标=(fderiv ℝ U q)(Pi.single i 1)，是真实Fréchet导数的坐标梯度。 已另外展开依赖文件中componentConstraintStep（两处grad分别在Qcur与固定q取值）及componentSweep的List.finRange l.foldl：按0,...,l-1，每次使用上一步Q结果，完成恰好一次全分量扫描；MD.Ch04.componentSweep调用的是这个正式库单步而非componentPrinted。[EXTRA]一次扫描合理地构成实现部件，但本签名没有多轮迭代、循环状态或ΔΛ分量记录，注释称“多轮为其真实函数迭代”未给出该定义。它还把印刷分母G_j^1改用∇g_j(q)，是明确但未经确认的数学解释，不是逐字原式。[ERRATUM?]索引不一致有依据，未确认两者相等。有效质量、可微性及每次分母非零也没有要求。因此FAIL：该条引用反复循环的全部范围未被覆盖，且有有效域缺失及原式替换。无sorry，单次fold定义的完整性与语义覆盖分开判断；原停止建议不是收敛结论，不能据此要求证明收敛。",
+        "counterexample": "重复扫描缺失的具体例：一维一个约束，质量=1，g(x)=x²-1，固定q_n=1、Q初值=2。分母=4Q非零，单步S(Q)=Q-(Q²-1)/(2Q)：一次扫描S(2)=5/4；继续下一轮S(5/4)=41/40，两者不同。当前componentSweep只返回5/4，没有表示原句下一轮及其后的过程。若q_n=0、g(x)=x²+1，则还出现零分母而原文有效逆不存在。",
+        "suggested_fix": "保留一次扫描作为辅助函数，增加明确的多轮顺序迭代（例如S^[k]，或含轮次/分量及Λ的状态递推），并对每步所用逆添加有效域条件。字面扫描应调用含Gsup1的印刷步骤；采用G_n^j的扫描另列为有明确修订标记的解释。停止条件若纳入范围，需记录各ΔΛ_j及全分量检查；无需添加收敛承诺。"
+      }
+    }
+  ]
+}

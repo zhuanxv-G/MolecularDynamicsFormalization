@@ -1,0 +1,402 @@
+{
+  "batch": "BATCH27",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "fcdf19794400d1bb2fe57da2ccf77f645a8c94af1efad8f54661eafb7184f054",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.6-DynamicalCorrection",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "教材PDF230/印刷209，末段完整引文；该句无独立证明，proof_latex=null合理。 本条无独立完整证明；null证明与proof_note正确。section=5.6，页码偏移21；除已指出页码外匹配。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.dynamicalCorrection",
+        "verdict": "PASS",
+        "explanation": "C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。 microAverage=对归一化 microRaw 积分；microRaw=能量面上归一化Hausdorff面积乘 ‖gradient H‖⁻¹；regularEnergy 包含非空、紧性、梯度非零和原始质量正且有限。perturbationCorrection 在 Hε=H+εη 上计算 Av(div(gu))−Av(g)Av(div u)，u=εηw/(w·∇H)，divergence=实际导数矩阵迹。固定 n,d,H,η,w,a,b,Φ,c,t 后，先假设光滑性与统一紧正则能量带，后存在 C,δ 对全部小 ε 给 O(ε²) 界，符号和两项均与 PDF230 的定理5.1相符。g=⟨a∘Φ_t,b⟩正是固定lag平稳相关的被积函数。[EXTRA]统一紧带/横截性和正则性是合理的局部扰动技术条件；C、δ可依赖lag，没有宣称对t一致。Φ_t无需满足ODE即可作为光滑pullback；本条只覆盖同一观测量的测度校正，未覆盖随H变化的流误差，已在EXTRA明确限定。无ERRATUM标签；签名通过，正文仍有sorry，本审计不等于证明验证。 补充积分语义核对：在统一紧K及非零横截分母的假设下，g、u及两个散度在能量面上光滑且有界；regularEnergy确保原始质量正且有限，归一化microMeasure为概率。因此这里的Bochner积分并非借不可积时默认0得到空洞结论。Hausdorff面积的仅依赖维数的正常数在归一化平均中抵消。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-ForwardNormDivergence",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "OMITTED_SOURCE_WORDS",
+          "SOURCE_ERRATUM_FLAG"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-ForwardNormDivergence",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "207",
+          "pdf_page": "228",
+          "statement_latex": "and we see that the eigenvalues of the propagation matrix are outside the unit disk. Thus both solution components tend to infinity unless $(q_0,p_0)=(0,0)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "z_n=(q_n,p_n), H(q,p)=p^2/2+q^2/2；h为数值时间步长。",
+            "\\widetilde f 是数值方法的modified向量场；\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=-\\nabla\\cdot(\\rho\\widetilde f)；\\delta[q]\\delta[p] 是原点Dirac概率。"
+          ],
+          "issues": [
+            "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+            "引文漏去原句开头and we see that，已补回。",
+            "[ERRATUM?]原书两分量断言错误：h=1时两分量均有无限多零值；保留原文，未替换为范数发散。"
+          ],
+          "lean_decl": "MD.Ch05.forwardNormDivergence",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]独立修正为实际范数发散，不覆盖原两分量字面版；h≠0及非原点。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH27 first-with-deps：对照PDF影像补正引文/页码/上下文；原书疑误原样保留。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+          "引文漏去原句开头and we see that，已补回。",
+          "[ERRATUM?]原书两分量断言错误：h=1时两分量均有无限多零值；保留原文，未替换为范数发散。"
+        ],
+        "evidence": "教材PDF228/印刷207，第一段矩阵[[1,h],[-h,1]]、both solution components、弱方程的dagger字形、δ[q]δ[p]以及not “asymptotically stable.”；已核对渲染影像。 本条无独立完整证明；null证明与proof_note正确。section=5.6，页码偏移21；除已指出页码外匹配。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.forwardNormDivergence",
+        "verdict": "FAIL",
+        "explanation": "C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。 Lean只给非零步长、非零初值下欧氏范数趋于+∞，既没有特征值位于单位圆外的结论，也没有原文“两分量趋于无穷”的结论。[EXTRA]h≠0必要，非原点对应原文例外；修正为范数发散在数学上正确，但不能作为原句全部结论的忠实形式化。没有显式ERRATUM标签，必须明确登记原书疑误。此定理正文未见sorry，但证明存在不消除语义偏差。 复审仍判FAIL的原因是与原书结论的绑定差异，而非Mathlib范数或Tendsto含义不明。[EXTRA]已明确承认是独立修正，修正合理不等于原句语义相同。",
+        "counterexample": "h=1，z₀=(1,0)。z_k=(√2)^k(cos(kπ/4),−sin(kπ/4))；p_{4m}=0，q_{4m+2}=0，因此连两个分量的绝对值分别趋于∞都不成立，范数却确实趋于∞。",
+        "suggested_fix": "保留原书逐字引文，添加明确[ERRATUM?]及反例；将本Lean定理标为独立修正版，并另保留矩阵特征值模为√(1+h²)>1的结论。不要把范数命题标成原“两分量”句的PASS。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-WeakStationary",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "ADJOINT_GLYPH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-WeakStationary",
+          "kind": "definition",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "207",
+          "pdf_page": "228",
+          "statement_latex": "the only solution, in the weak sense, of $\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=0$ is the point distribution $\\delta[q]\\delta[p]$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "z_n=(q_n,p_n), H(q,p)=p^2/2+q^2/2；h为数值时间步长。",
+            "\\widetilde f 是数值方法的modified向量场；\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=-\\nabla\\cdot(\\rho\\widetilde f)；\\delta[q]\\delta[p] 是原点Dirac概率。"
+          ],
+          "issues": [
+            "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+            "PDF228影像使用dagger（†）而非星号（*）；数学伴随含义相同，但逐字审校须还原字形。"
+          ],
+          "lean_decl": "MD.Ch05.weakStationaryModel",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]复用§5.3.2已经定义的真实弱Liouville稳态：所有C∞紧支测试函数的Lie导数可积且配对为零，允许Dirac等奇异概率；与离散Measure.map不变分别陈述，不从名称推出等价。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH27 first-with-deps：对照PDF影像补正引文/页码/上下文；原书疑误原样保留。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+          "PDF228影像使用dagger（†）而非星号（*）；数学伴随含义相同，但逐字审校须还原字形。"
+        ],
+        "evidence": "教材PDF228/印刷207，第一段矩阵[[1,h],[-h,1]]、both solution components、弱方程的dagger字形、δ[q]δ[p]以及not “asymptotically stable.”；已核对渲染影像。 本条无独立完整证明；null证明与proof_note正确。section=5.6，页码偏移21；除已指出页码外匹配。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.weakStationaryModel",
+        "verdict": "FAIL",
+        "explanation": "C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。weakStationary f μ 展开为：对每个 ContDiff ℝ ⊤ 且 HasCompactSupport 的实值测试函数 φ，lie f φ 可积且积分为零；lie f φ(z)=(fderiv ℝ φ z)(f z)。diracMeasure 2=Measure.dirac 0。这是真正弱Liouville方程，不是离散不变性。 weakStationaryModel仅为上述一般谓词的别名，没有指定Forward Euler的modified场，也未断言δ₀为解或其唯一性。[EXTRA]测试函数解释合理，但不补足原文的唯一解断言；源条目标为definition不能改变其statement_latex实际是一条唯一性断言。 复审确认该弱方程谓词本身含义正确；FAIL仅针对当前source_id完整唯一性引文与仅作谓词别名的声明不相符，并不否定该辅助定义的数学意义。所有项目自定义依赖均已找到。",
+        "counterexample": "缺失条款：δ₀满足弱方程；∀概率μ，weakStationary(f̃,μ)→μ=δ₀。定义别名并不推出这些条款。",
+        "suggested_fix": "将此条引文改绑定为弱方程的技术定义来源，并明确其非原书独立定义；若保留当前唯一解引文，则关联forwardWeakStationary的前两个结论，并注明概率归一化。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-WeakAttractor",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-WeakAttractor",
+          "kind": "definition",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "207",
+          "pdf_page": "228",
+          "statement_latex": "this solution is not “asymptotically stable.”",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "z_n=(q_n,p_n), H(q,p)=p^2/2+q^2/2；h为数值时间步长。",
+            "\\widetilde f 是数值方法的modified向量场；\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=-\\nabla\\cdot(\\rho\\widetilde f)；\\delta[q]\\delta[p] 是原点Dirac概率。",
+            "this solution指Forward Euler相关弱稳态δ[q]δ[p]，并非任意平衡。"
+          ],
+          "issues": [
+            "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。"
+          ],
+          "lean_decl": "MD.Ch05.weakAttractor",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]“attractive”取概率弱拓扑中某邻域内所有初值概率的有界连续测试函数收敛；邻域以有限测试族和正ε明确，不把个别轨道收敛当全密度吸引。此为三个后续结论共用的技术定义；不添加已收敛或已不变的前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH27 first-with-deps：对照PDF影像补正引文/页码/上下文；原书疑误原样保留。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。"
+        ],
+        "evidence": "教材PDF228/印刷207，第一段矩阵[[1,h],[-h,1]]、both solution components、弱方程的dagger字形、δ[q]δ[p]以及not “asymptotically stable.”；已核对渲染影像。 本条无独立完整证明；null证明与proof_note正确。section=5.6，页码偏移21；除已指出页码外匹配。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.weakAttractor",
+        "verdict": "FAIL",
+        "explanation": "C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。weakAttractor 展开为存在有限个有界连续测试函数及 ε>0，使该弱邻域中每个概率测度 ν、每个有界连续 φ 都满足 ∫φ(Φ_t z)dν→∫φdμ。此为局部弱吸引，未同时定义Lyapunov稳定性；非吸引足以否定渐近稳定。 当前声明仅定义正的吸引谓词，既没有Forward Euler实例，也没有否定该谓词。[EXTRA]邻域与测试量词安排正确，可作辅助定义；不等于原文“this solution is not asymptotically stable”这个负断言。 概率ν和实际连续logarithmic流的有界连续测试积分均可积；不能因Bochner积分的总化而拒绝该实例。FAIL仍来自原负断言未出现在此定义中，而非对标准弱收敛含义有疑问。",
+        "counterexample": "缺失条款：¬weakAttractor(eulerLogFlow false h)(diracMeasure 2)，以及h>0和当前解δ₀的绑定。",
+        "suggested_fix": "将该声明登记为辅助定义；当前负断言应关联forwardWeakStationary的第三个结论。若要独立形式化“渐近稳定”，应定义稳定性及吸引性，并给其否定。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-EulerLogField",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "ADJOINT_GLYPH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-EulerLogField",
+          "kind": "definition",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "207",
+          "pdf_page": "228",
+          "statement_latex": "the only solution, in the weak sense, of $\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=0$ is the point distribution $\\delta[q]\\delta[p]$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "z_n=(q_n,p_n), H(q,p)=p^2/2+q^2/2；h为数值时间步长。",
+            "\\widetilde f 是数值方法的modified向量场；\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=-\\nabla\\cdot(\\rho\\widetilde f)；\\delta[q]\\delta[p] 是原点Dirac概率。"
+          ],
+          "issues": [
+            "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+            "PDF228影像使用dagger（†）而非星号（*）；数学伴随含义相同，但逐字审校须还原字形。"
+          ],
+          "lean_decl": "MD.Ch05.eulerLogField",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]单位振子Euler的实际实线性logarithmic modified场；取h>0时正/负径向率分别对应前/后Euler，旋转率arctan(h)/h。真实模型的一步对应及ODE资格另条，定义本身不证明无限BEA展开收敛。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH27 first-with-deps：对照PDF影像补正引文/页码/上下文；原书疑误原样保留。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+          "PDF228影像使用dagger（†）而非星号（*）；数学伴随含义相同，但逐字审校须还原字形。"
+        ],
+        "evidence": "教材PDF228/印刷207，第一段矩阵[[1,h],[-h,1]]、both solution components、弱方程的dagger字形、δ[q]δ[p]以及not “asymptotically stable.”；已核对渲染影像。 本条无独立完整证明；null证明与proof_note正确。section=5.6，页码偏移21；除已指出页码外匹配。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.eulerLogField",
+        "verdict": "FAIL",
+        "explanation": "C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。设 α=±log(1+h²)/(2h)，β=arctan(h)/h。eulerLogField=(αq+βp,αp−βq)，eulerLogFlow=e^(αt)(q cos(βt)+p sin(βt),p cos(βt)−q sin(βt))。forwardEuler=(q+hp,p−hq)，backwardEuler=((q+hp)/(1+h²),(p−hq)/(1+h²))，均已在依赖原定义中核对。weakStationary f μ 展开为：对每个 ContDiff ℝ ⊤ 且 HasCompactSupport 的实值测试函数 φ，lie f φ 可积且积分为零；lie f φ(z)=(fderiv ℝ φ z)(f z)。diracMeasure 2=Measure.dirac 0。这是真正弱Liouville方程，不是离散不变性。 场定义本身是正确的单位振子精确logarithmic模型；h>0的限定在后续对应定理中，h=0时Lean除法给零场，不能理解为h→0的物理极限。[EXTRA]模型选择合理且未声称BEA级数收敛。但绑定引文是弱稳态唯一性，当前def未给出任一弱稳态或唯一性结论。 复审确认h>0时该具体场选择合理；定义正确与原文唯一解断言缺失分别记录。FAIL不取决于Real.log、Real.arctan或WithLp.toLp的定义体是否收录。",
+        "counterexample": "缺失原引文的弱方程唯一概率解δ₀断言；仅展开向量场无法得到该结论。",
+        "suggested_fix": "把此声明标为明确新增的技术模型定义，来源关联PDF227–228的Euler模型讨论；当前唯一性引文应关联forwardWeakStationary。记录h>0为模型解释域。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-EulerLogFlow",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "WRONG_PAGE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-EulerLogFlow",
+          "kind": "definition",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "206",
+          "pdf_page": "227",
+          "statement_latex": "interpret the numerical method as being approximately equivalent to the solution of a perturbed differential equation",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "z_n=(q_n,p_n), H(q,p)=p^2/2+q^2/2；h为数值时间步长。",
+            "\\widetilde f 是数值方法的modified向量场；\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=-\\nabla\\cdot(\\rho\\widetilde f)；\\delta[q]\\delta[p] 是原点Dirac概率。",
+            "dz/dt=f(z)+h^r f_{(r)}(z)\\equiv\\widetilde f_h(z)，r为方法阶数；原书明说采用backward error analysis展开的有限截断。"
+          ],
+          "issues": [
+            "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+            "所引interpret the numerical method…语句在印刷206/PDF227，非207/PDF228。"
+          ],
+          "lean_decl": "MD.Ch05.eulerLogFlow",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]为两种实际线性modified场写出完整连续时间指数旋转流；不是把任意算法的有限截断当精确解。只有本单位线性振子的对应作为独立待证明义务。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH27 first-with-deps：对照PDF影像补正引文/页码/上下文；原书疑误原样保留。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+          "所引interpret the numerical method…语句在印刷206/PDF227，非207/PDF228。"
+        ],
+        "evidence": "教材PDF227/印刷206，interpret…approximately equivalent及dz/dt展示式；PDF228不含该句。 本条无独立完整证明；null证明与proof_note正确。section=5.6，页码偏移21；除已指出页码外匹配。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.eulerLogFlow",
+        "verdict": "FAIL",
+        "explanation": "C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。设 α=±log(1+h²)/(2h)，β=arctan(h)/h。eulerLogField=(αq+βp,αp−βq)，eulerLogFlow=e^(αt)(q cos(βt)+p sin(βt),p cos(βt)−q sin(βt))。forwardEuler=(q+hp,p−hq)，backwardEuler=((q+hp)/(1+h²),(p−hq)/(1+h²))，均已在依赖原定义中核对。 显式流在h≠0时给选定logarithmic场的真实解，但当前def无ODE、一时步对应、误差界或一般r阶方法的量词。原句是一般数值方法由有限截断perturbed equation近似解释；[EXTRA]特意限定单位线性振子虽合理，却明显缩小来源语义。h=0的除法总化使此定义为恒等流，并不恢复振子的零步长极限。 复审确认指数旋转函数确为所选场的流，其性质由显式公式可检查；FAIL指当前来源的一般方法解释与该特例辅助定义的语义绑定，不能把函数定义当成一般近似关系的陈述。",
+        "counterexample": "缺失条款：一般数值方法、f+h^r f_(r)及近似关系；该显式函数本身没有声称任何对应或误差性质。",
+        "suggested_fix": "登记为单位振子的新增技术流定义，并用eulerLogCorrespondence证明其实际意义。若保留一般原句来源，则另外形式化数值映射与有限截断modified场的近似关系及误差条件。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-EulerLogCorrespondence",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "UNMARKED_ABRIDGEMENT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-EulerLogCorrespondence",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "206–207",
+          "pdf_page": "227–228",
+          "statement_latex": "Let us assume that the perturbed equation is a realistic model for the numerical solutions, then define the evolving density by $\\frac{\\partial\\rho}{\\partial t}=\\mathcal L_{\\widetilde f}^{\\dagger}\\rho\\overset{\\mathrm{def}}{=}\\mathcal L_f^{\\dagger}\\rho+h^r\\mathcal L_{f_{(r)}}^{\\dagger}\\rho$. […] Applying Forward Euler to the harmonic oscillator, we have $q_{n+1}=q_n+hp_n$, $p_{n+1}=p_n-hq_n$. […] As an alternative, consider the Backward Euler method: $q_{n+1}=q_n+hp_{n+1}$, $p_{n+1}=p_n-hq_{n+1}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "z_n=(q_n,p_n), H(q,p)=p^2/2+q^2/2；h为数值时间步长。",
+            "\\widetilde f 是数值方法的modified向量场；\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=-\\nabla\\cdot(\\rho\\widetilde f)；\\delta[q]\\delta[p] 是原点Dirac概率。"
+          ],
+          "issues": [
+            "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+            "首句在原页以逗号继续then define the evolving density by及展示方程，原JSON改为句号且未标省略；已还原并用[…]明确不同原文段落拼接。"
+          ],
+          "lean_decl": "MD.Ch05.eulerLogCorrespondence",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]只对书中实际单位线性振子给出选定logarithmic场与两Euler更新的真实对应及全部t的ODE；不把更新等式或ODE作假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH27 first-with-deps：对照PDF影像补正引文/页码/上下文；原书疑误原样保留。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+          "首句在原页以逗号继续then define the evolving density by及展示方程，原JSON改为句号且未标省略；已还原并用[…]明确不同原文段落拼接。"
+        ],
+        "evidence": "教材PDF227/印刷206：Let us assume…then define与Forward Euler更新；PDF228/印刷207：As an alternative…Backward Euler更新。 本条无独立完整证明；null证明与proof_note正确。section=5.6，页码偏移21；除已指出页码外匹配。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.eulerLogCorrespondence",
+        "verdict": "PASS",
+        "explanation": "C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。设 α=±log(1+h²)/(2h)，β=arctan(h)/h。eulerLogField=(αq+βp,αp−βq)，eulerLogFlow=e^(αt)(q cos(βt)+p sin(βt),p cos(βt)−q sin(βt))。forwardEuler=(q+hp,p−hq)，backwardEuler=((q+hp)/(1+h²),(p−hq)/(1+h²))，均已在依赖原定义中核对。 h>0后对每个初值z同时断言两种一时步等式，另对每个Bool、初值和所有实t断言HasDerivAt，导数为场作用于当前流点。取exp(αh)=√(1+h²)或其倒数，cos(arctan h)=1/√(1+h²)，sin(arctan h)=h/√(1+h²)，恰得到前后Euler两组更新。时间零值和群律也由所定义指数旋转式成立，非随意命名流。[EXTRA]正步长与选择实logarithmic模型合理，原文中假设模型真实被此特例的更强精确对应替代，不作一般BEA收敛推论。该绑定确实覆盖两种更新；不把周围密度误差讨论增入本条。正文未见sorry；这里只审签名，不运行Lean检查。 两组Euler递推在依赖中分别是显式更新和隐式更新解出的有理映射；后一组等式等价于原书隐式递推，因为1+h²>0。新增全部时间ODE结论是合理加强，不是额外假设；原文模型真实性假设未被循环用作更新等式或ODE的前提。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-ForwardWeakStationary",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION",
+          "ADJOINT_GLYPH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-ForwardWeakStationary",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "207",
+          "pdf_page": "228",
+          "statement_latex": "To put it another way, the only solution, in the weak sense, of $\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=0$ is the point distribution $\\delta[q]\\delta[p]$, and this solution is not “asymptotically stable.”",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "z_n=(q_n,p_n), H(q,p)=p^2/2+q^2/2；h为数值时间步长。",
+            "\\widetilde f 是数值方法的modified向量场；\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=-\\nabla\\cdot(\\rho\\widetilde f)；\\delta[q]\\delta[p] 是原点Dirac概率。"
+          ],
+          "issues": [
+            "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+            "PDF228影像使用dagger（†）而非星号（*）；数学伴随含义相同，但逐字审校须还原字形。"
+          ],
+          "lean_decl": "MD.Ch05.forwardWeakStationary",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际概率弱稳态和弱拓扑非吸引两个结论；选择上一条给出的真实modified场/流及正h。离散不变概率唯一性不替代本弱PDE与非吸引结论。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH27 first-with-deps：对照PDF影像补正引文/页码/上下文；原书疑误原样保留。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation为空，缺少决定当前句对象的单位振子、步长及modified场/Dirac背景；已补全，不将新logarithmic公式伪称原文公式。",
+          "PDF228影像使用dagger（†）而非星号（*）；数学伴随含义相同，但逐字审校须还原字形。"
+        ],
+        "evidence": "教材PDF228/印刷207，第一段矩阵[[1,h],[-h,1]]、both solution components、弱方程的dagger字形、δ[q]δ[p]以及not “asymptotically stable.”；已核对渲染影像。 本条无独立完整证明；null证明与proof_note正确。section=5.6，页码偏移21；除已指出页码外匹配。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.forwardWeakStationary",
+        "verdict": "PASS",
+        "explanation": "C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。weakStationary f μ 展开为：对每个 ContDiff ℝ ⊤ 且 HasCompactSupport 的实值测试函数 φ，lie f φ 可积且积分为零；lie f φ(z)=(fderiv ℝ φ z)(f z)。diracMeasure 2=Measure.dirac 0。这是真正弱Liouville方程，不是离散不变性。设 α=±log(1+h²)/(2h)，β=arctan(h)/h。eulerLogField=(αq+βp,αp−βq)，eulerLogFlow=e^(αt)(q cos(βt)+p sin(βt),p cos(βt)−q sin(βt))。forwardEuler=(q+hp,p−hq)，backwardEuler=((q+hp)/(1+h²),(p−hq)/(1+h²))，均已在依赖原定义中核对。weakAttractor 展开为存在有限个有界连续测试函数及 ε>0，使该弱邻域中每个概率测度 ν、每个有界连续 φ 都满足 ∫φ(Φ_t z)dν→∫φdμ。此为局部弱吸引，未同时定义Lyapunov稳定性；非吸引足以否定渐近稳定。 对每个h>0，α>0，声明依次包含δ₀弱稳态、所有概率弱稳态唯一性、δ₀非局部弱吸引，三项对应原文全部实质结论。概率归一化是“distribution”在此密度语境中的合理明确化；不解释为所有未归一化Schwartz分布（否则零分布与任意倍δ₀会反驳原文唯一性）。向外螺旋流的有限概率稳态只能集中原点；任意弱邻域内可取靠近原点的非零Dirac，其半径e^(αt)增长，用φ(z)=1/(1+‖z‖²)检验即不收敛至φ(0)=1，所以非吸引足以否定渐近稳定。[EXTRA]场选择、正h、概率弱拓扑均合理，未将离散map不变性替换弱PDE。正文为sorry；签名PASS不代表已证。 本条无缺失的项目定义：未限定命名空间的weakStationary解析到MD.Ch05本地定义，它与依赖中的Chapter05Review.weakStationary有相同测试空间、可积性和零配对条件。weakAttractor及eulerLogField/eulerLogFlow均在当前Lean附件内已展开。有限概率条件排除零测度及非单位倍Dirac，属于原文分布语境的合理补足。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

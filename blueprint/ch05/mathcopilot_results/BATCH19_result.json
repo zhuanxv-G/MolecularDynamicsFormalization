@@ -1,0 +1,233 @@
+{
+  "batch": "BATCH19",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "937ea7160e3293ef16f47dab01113f44f4466894e33fa1779839c9f6319b5afd",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.4.1-HarmonicFlow",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PAGE_RANGE_OVERSTATED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-HarmonicFlow",
+          "kind": "definition",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "198",
+          "pdf_page": "219",
+          "statement_latex": "As a very simple example, the harmonic oscillator is always ergodic on its energy surfaces (i.e. energy curves, in this case).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.harmonicFlow",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实解析振子流，用于完整遍历命题；Ω>0使用资格另条。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "所引 harmonic oscillator 原句全部位于印刷198/PDF219；印刷199/PDF220没有本条的解析流公式，也不是该引文的延续。只收窄页码，不把推导公式写成原书展示公式。"
+          ],
+          "source_page_verification": "本轮直接核对教材PDF原页渲染和文本；页码偏移+21。"
+        },
+        "issues": [
+          "所引 harmonic oscillator 原句全部位于印刷198/PDF219；印刷199/PDF220没有本条的解析流公式，也不是该引文的延续。只收窄页码，不把推导公式写成原书展示公式。"
+        ],
+        "evidence": [
+          "PDF219/印刷198：原句 As a very simple example…energy curves, in this case). 与 statement_latex 相符；无独立证明或振子流展示公式。PDF220为 Example 5.4 的延续。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.harmonicFlow",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准含义：EuclideanSpace为带欧氏内积的实坐标空间，volume为标准Lebesgue测度，积分为Bochner积分（不可积时取0），限制测度、withDensity、ENNReal.ofReal、连续性、闭包、同胚、梯度和Fréchet导数均采用标准数学含义；不要求这些库定义出现在项目依赖摘录。项目E 2展开为R²；附件Ch05.lean:1103–1105定义Φt(q,p)=(q cos(Ωt)+p sin(Ωt)/Ω,p cos(Ωt)−Ωq sin(Ωt))。在[EXTRA]声明的Ω>0使用范围，该公式正是H=(p²+Ω²q²)/2的解析流；零频率下的总化值不构成本声明适用域内的反例。定义中没有sorry。仍判FAIL的原因是当前source_id的statement_scope明确覆盖所引原句，而原句是谐振子在能量曲线上遍历；def只给映射，不含遍历断言。作为辅助定义它正确，作为本条完整原文的形式化它缺结论；这与Mathlib定义体是否提供无关。",
+        "counterexample": "缺失条款：所引原句的遍历性没有出现在harmonicFlow的声明中。未发现Ω>0域内的解析公式反例。",
+        "suggested_fix": "将本条范围明确限定为由原书系统推导的辅助解析流，把原文遍历断言明确绑定到HarmonicErgodic；若保持本条完整原句范围，则在其声明映射中同时承载该结论。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-HarmonicErgodic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF219/印刷198：statement_latex 原句逐字匹配，无独立完整证明。PDF218/印刷197定义上下文：for almost all trajectories… and for any observable g。页码219正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.harmonicErgodic",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准含义：EuclideanSpace为带欧氏内积的实坐标空间，volume为标准Lebesgue测度，积分为Bochner积分（不可积时取0），限制测度、withDensity、ENNReal.ofReal、连续性、闭包、同胚、梯度和Fréchet导数均采用标准数学含义；不要求这些库定义出现在项目依赖摘录。项目依赖Chapter05/ReviewDefinitions.lean实际展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z|H z=c}；grad H=gradient H；hausdorffArea d=[vol(B₁⊂Rᵈ)/2ᵈ]·HausdorffMeasure d；surfaceMeasure=(hausdorffArea(n−1)).restrict(energySurface H c)；microRaw=surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))；microMeasure=(microRaw univ)⁻¹·microRaw；average μ g=∫g dμ；microAverage H c g=average(microMeasure H c)g。附件本地harmonicEnergy=(p²+Ω²q²)/2，harmonicFlow是上条解析流。项目timeAverage=T⁻¹∫₀ᵀg(Φt z)dt，hasTimeAverage是该函数在atTop收敛到指定平均。microErgodic实际量词为∀g,Integrable g μ→∀ᵐz,hasTimeAverage(Φ·z)g(∫g dμ)。量词没有被误读为∀ᵐz∀g；[EXTRA]明确选取标准逐个L¹观测量版本。Ω>0排除退化频率，符号限制可由Ω↦|Ω|消除；c>0限定非退化能量曲线，在该椭圆上梯度非零，microRaw有限正，microMeasure是真概率测度。轨道覆盖整条椭圆且周期为2π/Ω；ds/‖∇H‖等于时间元，所以空间平均等于归一化周期平均。光滑观测量在所有初值上都得到该周期平均，亦符合原文共同满测集的光滑解释。或者以紧椭圆上连续函数的可数一致稠密族及一致逼近恢复共同满测集。因此量词改为标准L¹版本在此具体系统中没有导致语义反例。PASS范围为声明的正频率、正能量；不声称梯度零的零能量点也适用此microMeasure构造。证明体为sorry，故PASS仅指签名语义，不指Lean证明已完成。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-TwoOscillatorEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF219/印刷198 页底：Example 5.4 标题和 H=p₁²/2+p₂²/2+Ω₁²q₁²/2+Ω₂²q₂²/2。PDF220/印刷199：two nonzero parameters；two invariants 后明确写出两项公式。statement_latex、跨页页码均匹配；无独立证明，context_notation 的空表未加入错误符号。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.twoOscillatorEnergy",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准含义：EuclideanSpace为带欧氏内积的实坐标空间，volume为标准Lebesgue测度，积分为Bochner积分（不可积时取0），限制测度、withDensity、ENNReal.ofReal、连续性、闭包、同胚、梯度和Fréchet导数均采用标准数学含义；不要求这些库定义出现在项目依赖摘录。项目E 4=R⁴。标准Fin.castAdd 2 i保留位置索引i=0,1，Fin.natAdd 2 i取动量索引2+i；所以附件1114–1115定义Hᵢ=pᵢ²/2+Ωᵢ²qᵢ²/2，坐标顺序(q₁,q₂,p₁,p₂)，公式完全正确。它可在全部实频率上定义，不必把原文非零应用资格塞进每个辅助def。无sorry。然而本条原文范围还包括总Hamiltonian展示式和“two invariants”的动态结论，当前lean_decl仅定义分能量，未承载完整引文中的这些结论。FAIL是来源范围缺项，非标准库语义不明。",
+        "counterexample": "缺失条款：总H与H₁+H₂的对应、沿所给系统真实流的两项能量保持。未发现分能量公式反例。",
+        "suggested_fix": "明确收窄本条到H₁,H₂辅助定义，并绑定总Hamiltonian和不变性各自的声明；若维持整句范围，则增加相应总能量表达和不变量结论。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-TwoOscillatorFlow",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PAGE_RANGE_OVERSTATED",
+          "NONVERBATIM_ABBREVIATION",
+          "CONTEXT_OMITTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-TwoOscillatorFlow",
+          "kind": "definition",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "199",
+          "pdf_page": "220",
+          "statement_latex": "Because the two systems involving $q_1,p_1$ and $q_2,p_2$ are not coupled in the equations of motion, this system has two invariants $H_1=p_1^2/2+\\Omega_1^2q_1^2/2$ and $H_2=p_2^2/2+\\Omega_2^2q_2^2/2$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本句承接Example 5.4；Ω₁、Ω₂为非零参数；H₁、H₂为对应两个无耦合子系统的分能量。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.twoOscillatorFlow",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明确相空间排列(q1,q2,p1,p2)和真实两个振子流；非零频率资格另条。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "本句仅在印刷199/PDF220；原书在H₁、H₂后各有完整公式，现有statement_latex省略公式且未标节略。恢复完整原句，并补其承接的非零频率语境；不添加原书不存在的解析流展示式。"
+          ],
+          "source_page_verification": "本轮直接核对教材PDF原页渲染和文本；页码偏移+21。"
+        },
+        "issues": [
+          "本句仅在印刷199/PDF220；原书在H₁、H₂后各有完整公式，现有statement_latex省略公式且未标节略。恢复完整原句，并补其承接的非零频率语境；不添加原书不存在的解析流展示式。"
+        ],
+        "evidence": [
+          "PDF220/印刷199，图5.3后首段：Because the two systems…this system has two invariants H₁=p₁²/2+Ω₁²q₁²/2 and H₂=p₂²/2+Ω₂²q₂²/2. 前句规定two nonzero parameters。无独立完整证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.twoOscillatorFlow",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准含义：EuclideanSpace为带欧氏内积的实坐标空间，volume为标准Lebesgue测度，积分为Bochner积分（不可积时取0），限制测度、withDensity、ENNReal.ofReal、连续性、闭包、同胚、梯度和Fréchet导数均采用标准数学含义；不要求这些库定义出现在项目依赖摘录。项目E 4=R⁴。附件1119–1123四个分量按(q₁,q₂,p₁,p₂)展开为两个独立谐振子的解析旋转；在原书Ω₁,Ω₂≠0范围确为无耦合Hamilton流，[EXTRA]坐标顺序及使用资格合理，定义无sorry。不能以Ωᵢ=0时的总化值否定其非零频率域内的公式。但本条所引原句的内容是H₁,H₂为不变量，当前statement_scope仍要求覆盖该句；该def没有Hᵢ(Φt z)=Hᵢ(z)结论，故完整引文范围未被此lean_decl承载。FAIL不涉及Mathlib未提供定义体，亦不声称解析映射错误。",
+        "counterexample": "缺失条款：所引“两不变量”的沿流保持结论。未发现原书非零频率范围内的解析流反例。",
+        "suggested_fix": "明确本条是辅助解析流，并把“两不变量”原文结论绑定到相应分能量保持声明；若维持完整原句范围则补该声明。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-TwoOscillatorTori",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "SOURCE_ERRATUM_DEGENERATE_FIBRES",
+          "SOURCE_DENSITY_WORDING"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "转录与原页一致，不更改原句。原书“all such 2-tori”遗漏零分能量层；“eventually be filled in”应作轨道稠密理解，不能当有限时间覆盖。extra_assumptions已指出这两点，但不是Lean结论。"
+        ],
+        "evidence": [
+          "PDF220/印刷199：从For any E₁,E₂>0到so the system is not ergodic. 全部句子及公式逐字核对一致。尤其原书确实写the union of all such 2-tori with E₁+E₂=E；保留该疑误。无独立完整证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.twoOscillatorTori",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准含义：EuclideanSpace为带欧氏内积的实坐标空间，volume为标准Lebesgue测度，积分为Bochner积分（不可积时取0），限制测度、withDensity、ENNReal.ofReal、连续性、闭包、同胚、梯度和Fréchet导数均采用标准数学含义；不要求这些库定义出现在项目依赖摘录。项目依赖Chapter05/ReviewDefinitions.lean实际展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z|H z=c}；grad H=gradient H；hausdorffArea d=[vol(B₁⊂Rᵈ)/2ᵈ]·HausdorffMeasure d；surfaceMeasure=(hausdorffArea(n−1)).restrict(energySurface H c)；microRaw=surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))；microMeasure=(microRaw univ)⁻¹·microRaw；average μ g=∫g dμ；microAverage H c g=average(microMeasure H c)g。本地Hᵢ和Φ分别展开为上述分能量及无耦合旋转。签名∀Ω,c，∀i Ωᵢ≠0且cᵢ>0，然后令T={z|∀i,Hᵢ(z)=cᵢ}；其合取项分别是T与两个欧氏单位圆的积同胚、∀z∈T∀t∀i的分能量保持、Ω₁/Ω₂无理时每条全实时间轨道闭包等于T、以及∀E>0的总能量微正则非遍历性。项目flowInvariant Φ A=∀t,Φt ''A=A；setErgodic μ Φ=∀可测A,flowInvariant Φ A→μA=0∨μA=1。这些对象和量词均准确；正分能量及非零频率是非退化2-torus所需，“filled in”解释为稠密而非有限时间覆盖合理。但原文“总能量面是全部这类层的并”的分解结论不在本定理的四个合取项中；[EXTRA]指出退化圆，却没有在本lean_decl写出包括它们的分解。原书按正分能量2-tori穷尽整面存在确定边界漏项，须明示勘误而非静默改变原文。FAIL是结论缺项；证明体sorry单独记录，标准Hausdorff测度/积分未提供定义体不是判定理由。",
+        "counterexample": "Ω=(1,1),E=1,z=(0,0,√2,0)位于总能量面，但H₂=0，不在任何两项都正的2-torus中。它反驳原书按严格正层解释的穷尽表述；当前签名则完全缺少分解子句。",
+        "suggested_fix": "增加能量面等于所有cᵢ≥0且∑cᵢ=E的共同分能量层之并的声明，明确正层为2-tori、正总能量的端点层为圆；保留A原书引文，显式记录退化层勘误。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-Mixing",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF220/印刷199 页底：mixing system、finite time density ρ(z;t)、invariant distribution ρ∞(z)、for all test functions φ in some chosen space，及展示弱收敛配对公式均与statement_latex一致。无独立完整证明；页码正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.weakMixing",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准含义：EuclideanSpace为带欧氏内积的实坐标空间，volume为标准Lebesgue测度，积分为Bochner积分（不可积时取0），限制测度、withDensity、ENNReal.ofReal、连续性、闭包、同胚、梯度和Fréchet导数均采用标准数学含义；不要求这些库定义出现在项目依赖摘录。附件1139–1142的weakMixing展开为：∀r,φ，Integrable r μ、逐点非负、∫r dμ=1、φ连续且值域有界⇒∫φ(Φt z)r(z)dμ→average μ φ；项目average μ φ=∫φ dμ。这是针对初值概率rμ、C_b测试函数的弱收敛，且正确采用参考测度μ上的可积性，没有误用依赖中旧mixing的Lebesgue density谓词。若μ为不变概率测度且Φ是真实可测流，所有被积分函数均可积，标准Bochner积分的不可积默认0不会破坏这一解释。不过当前def的参数为任意Measure μ和任意映射Φ，没有把[EXTRA]所说的不变概率参考测度或真实流资格编码为结构或条件；μ=0时所有概率初值条件都不可能满足，因此该谓词空泛为真。至少概率/非空性资格确实缺失，不能由名字或[EXTRA]说明自动得到。不变性在适当概率、可测流及群律背景下可以由收敛性质进一步推出，本轮不把“没有显式MeasurePreserving字样”单独当作必然错误。名称weakMixing不等同通常Cesàro弱混合，这里按原文密度弱收敛解释；名称不参与判定。无sorry。",
+        "counterexample": "μ=0且Φ任意时，每个r的∫r dμ都为0，没有归一初值，所以weakMixing μ Φ为真；μ却不可能是原文的不变概率分布。",
+        "suggested_fix": "在定义的应用域或结构中明确IsProbabilityMeasure μ及可测实际流资格；不变测度可作为背景条件或在完整流背景下证明为后果。保留现有AC概率初值与C_b配对收敛。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-KAMPersistence",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "SOURCE_COMPONENTS_AMBIGUITY"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原页转录准确。“apparently…isolated components (bounded by two-dimensional closed surfaces)”是双摆数值讨论中的措辞；仅凭本段不能推出能量面的拓扑连通分支。保留原句，记录解释限制。"
+        ],
+        "evidence": [
+          "PDF221/印刷200，Example 5.5 后段：The energy surface is three-dimensional…These are none other than the tori predicted by the KAM theory [386]. 引文、页码和文献号匹配。前文给k₁=k₂=2、ℓ₁=ℓ₂=1、E=4；并无本条Lean的通用KAM完整定理或独立证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.kam",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准含义：EuclideanSpace为带欧氏内积的实坐标空间，volume为标准Lebesgue测度，积分为Bochner积分（不可积时取0），限制测度、withDensity、ENNReal.ofReal、连续性、闭包、同胚、梯度和Fréchet导数均采用标准数学含义；不要求这些库定义出现在项目依赖摘录。项目E n=Rⁿ，Phase n=E n×E n。依赖hamiltonianField H(q,p)=(∇pH,−∇qH)；periodicPerturbation P为P(q+k,p)=P(q,p)（∀整数向量k）；diophantine ω κ τ为κ>0、τ>n−1及∀k≠0,κ/(1+‖k‖)^τ≤|k·ω|。附件1146–1158在n>0、全域解析H₀,P、周期扰动、I₀处频率映射导数双射、上述Diophantine条件下，量化∃δ>0∀|ε|<δ∃K；K为C¹、导数逐点单射、整数平移等变、DK·∇H₀(I₀)=X_{H₀+εP}∘K，且作用量距I₀<1。[EXTRA]的解析近可积资格和非退化性合理；这是通用KAM背景命题。但所引原文是特定双摆的三维能量面、隔离区域及图示环面的叙述；本签名没有该双摆、指定能量或其KAM适用资格的验证，[EXTRA]还明确不声称双摆参数满足资格。因此并非当前statement_scope下完整原句的忠实形式化。导数单射本身只表示浸入；半共轭等式还须结合周期等变、Diophantine稠密性及光滑ODE唯一性来理解全局嵌入/共轭，不能用任意自交浸入充当满足全部条件的反例。本轮FAIL仅由确切来源对象与结论缺失支撑。原书components也未被静默提升为拓扑连通分支断言。证明体为sorry；标准解析性或导数定义未出现在摘录中不影响上述审计。",
+        "counterexample": "缺失对象/结论：原书双摆及其指定能量面，图示隔离区域与不变环面的对应。未提出通用KAM数学命题的反例。",
+        "suggested_fix": "把通用KAM命题明确绑定为书中KAM引用的补充背景，另保留双摆经验性叙述；若维持原句范围，则给出双摆对象与可核查资格，并承载其能量面和环面对应结论。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-AnisotropicPotential",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF222/印刷201：Example 5.6 (Anisotropic Oscillator)及首句The anisotropic oscillator was used in Chap. 1 to illustrate the concept of a chaotic dynamical system. 与statement_latex一致。context_notation明确是回引第1章模型而非声称本页展示势能公式；无独立证明，页码正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.anisotropicPotential",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准含义：EuclideanSpace为带欧氏内积的实坐标空间，volume为标准Lebesgue测度，积分为Bochner积分（不可积时取0），限制测度、withDensity、ENNReal.ofReal、连续性、闭包、同胚、梯度和Fréchet导数均采用标准数学含义；不要求这些库定义出现在项目依赖摘录。附件1161–1162调用项目Chapter01Review.anisotropicEnergy κ l ε (z 0) (z 1) 0 0。依赖Chapter01/ReviewDefinitions.lean实际展开anisotropicAngular：r=√(x²+y²)，c=x/r，c₃=4c³−3c；anisotropicParameters=(κ(1−εc₃/2),l(1+εc₃/2))；anisotropicEnergy=(v²+w²)/2+κ(1−εc₃/2)(r−l(1+εc₃/2))²/2。令v=w=0取得原第1章模型的势能，E 2为位置欧氏平面；与context_notation明确限定的零速度势一致。不把历史性的混沌模型回引误当作本def证明混沌。原点的总化除法是既有定义的延拓约定，本条没有声称原点解析性，也没有额外物理假设。无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

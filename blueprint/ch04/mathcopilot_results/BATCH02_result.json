@@ -1,0 +1,308 @@
+{
+  "batch": "BATCH02",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "9b724101ce07bc3184d11b6fe9bce6fa75455f050d88884ab939d0300efc232f",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4-PRKThreshold",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4-PRKThreshold",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4",
+          "printed_page": "140",
+          "pdf_page": "162",
+          "statement_latex": "Among explicit symplectic Partitioned Runge-Kutta methods this is the maximum stability threshold [74].",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "this 指本页前句 Symplectic Euler 的步长稳定阈值 2/Ω；不是无量纲常数 2 本身。",
+            "本页仅写 explicit symplectic Partitioned Runge-Kutta methods，并引用[74]；未在此说明级数、每步成本或连通稳定区间的限制。"
+          ],
+          "issues": [
+            {
+              "code": "NEEDS_HUMAN",
+              "detail": "原文[74]的方法类限制需要审，未访问引用文献。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.prkThreshold",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "CONTEXT_NOTATION",
+              "detail": "补足原句指代、矩阵及记号/端点背景；保留原文公式和不等号。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation缺失或混入形式化解释，现补足原页指代与数学背景；statement_latex及proof_latex保持原样。"
+        ],
+        "evidence": [
+          "已目视渲染教材 PDF p.162（印刷p.140），页码偏移+22正确；statement_latex 的原句/公式与页面一致；页面无本条独立完整证明，proof_latex=null 正确。",
+          "PDF p.162 底部 Among explicit symplectic Partitioned Runge-Kutta methods this is the maximum stability threshold [74]；this 的前句为2/Ω。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.prkThreshold",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 prkOscillatorRelation 展开为 qᵢ=z₀+hΣⱼAᵢⱼpⱼ，pᵢ=z₁-hΩ²ΣⱼBᵢⱼqⱼ，out₀=z₀+hΣᵢbᵢpᵢ，out₁=z₁-hΩ²Σᵢcᵢqᵢ。签名全称量化任意级数s和系数；一致性、辛条件及A严格下三角/B下三角均未限制子步数或成本。将“最大阈值”编码为任意稳定步长均≤2更强，且本方法类内已有反例。此判断无需缺失定义或查阅[74]。实际声明含sorry，另记为未完成证明。",
+        "counterexample": "s=2，b=c=(1/2,1/2)，A=[[0,0],[1/2,0]]，B=[[1/2,0],[1/2,1/2]]，G(Ω,h)=S(Ω,h/2)^2（S为symplecticEulerMatrix）。全部系数和、辛关系和三角条件成立，阶段关系有唯一解。Ω=1,h=3时G=[[7/16,-3/8],[3/8,1/4]]，det G=1，trace G=11/16，两个不同单位圆复根，故matrixStable(G)，但|hΩ|=3>2。实际上连通内区间为0<hΩ<4。",
+        "suggested_fix": "删除或明确标记当前泛化为错误；先核实原书[74]中是否按级数/力计算成本归一化或限制方法类，再据真实限制重写阈值定义及结论；不能只补证明。"
+      }
+    },
+    {
+      "source_id": "MD-4-VerletStability",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已目视渲染教材 PDF p.163（印刷p.141），页码偏移+22正确；statement_latex 的原句/公式与页面一致；页面无本条独立完整证明，proof_latex=null 正确。",
+          "PDF p.163：原文明确保留 hΩ≤2；审校不将≤静默改为<。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.verletStability",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 量词为任意实Ω,h；[EXTRA]0<|hΩ|<2给出数学正确的内区间幂有界定理，符号推广合理，但排除原文≤2端点，故不是原句的全部语义。[ERRATUM?]成立。排除零乘积有部分必要性：Ω=0,h≠0是自由粒子剪切，h=0则矩阵为I仍稳定。实际有证明体且本条无sorry；本次只读未做Lean编译，证明状态不决定忠实性。",
+        "counterexample": "原文覆盖Ω=1,h=2：V=[[-1,2],[0,-1]]，V^k(0,1)=(-1)^k(-2k,1)无界；Lean严格不等式排除此原文实例。",
+        "suggested_fix": "标注为显式修订后的内区间结论而非原文等价形式；原句端点继续单列。若完整覆盖零步长，增加h=0分支；正频率正步长下用0<hΩ<2。"
+      }
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerBoundaryPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已目视渲染教材 PDF p.162（印刷p.140），页码偏移+22正确；statement_latex 的原句/公式与页面一致；页面无本条独立完整证明，proof_latex=null 正确。",
+          "PDF p.162：原文明确保留 hΩ≤2；审校不将≤静默改为<。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.symplecticEulerBoundaryPrinted",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 Ω>0和h>0是频率/步长背景的合理显式假设；≤2忠实保留印刷端点，但将稳定解释成matrixStable使印刷断言为假。[ERRATUM?]端点反例成立。忠实保留错误原句与数学真伪分别记录；声明含sorry，不能视作已证明。",
+        "counterexample": "Ω=1,h=2：S=[[-3,2],[-2,1]]=-I+N，N=[[-2,2],[-2,2]]，N²=0。对v=(1,0)，S^k v=(-1)^k(1+2k,2k)，范数无界。",
+        "suggested_fix": "原文≤2单独保存并标为错误；正确幂有界定理用0<hΩ<2（Ω,h>0），或将含端点结论明确改为谱模为1的结论。"
+      }
+    },
+    {
+      "source_id": "MD-4-VerletBoundaryPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已目视渲染教材 PDF p.163（印刷p.141），页码偏移+22正确；statement_latex 的原句/公式与页面一致；页面无本条独立完整证明，proof_latex=null 正确。",
+          "PDF p.163：原文明确保留 hΩ≤2；审校不将≤静默改为<。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.verletBoundaryPrinted",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 Ω>0和h>0是频率/步长背景的合理显式假设；≤2忠实保留印刷端点，但将稳定解释成matrixStable使印刷断言为假。[ERRATUM?]端点反例成立。忠实保留错误原句与数学真伪分别记录；声明含sorry，不能视作已证明。",
+        "counterexample": "Ω=1,h=2：V=[[-1,2],[0,-1]]=-I+N，N²=0。对v=(0,1)，V^k v=(-1)^k(-2k,1)，范数无界。",
+        "suggested_fix": "原文≤2单独保存并标为错误；正确幂有界定理用0<hΩ<2（Ω,h>0），或将含端点结论明确改为谱模为1的结论。"
+      }
+    },
+    {
+      "source_id": "MD-4-OscillatorSpectrum",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4-OscillatorSpectrum",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4",
+          "printed_page": "140",
+          "pdf_page": "162",
+          "statement_latex": "The eigenvalues are $\\pm i\\omega$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.161（印刷p.139）的谐振子矩阵 A=[[0,I],[-Ω²I,0]]；本条 PDF p.162 原样写 ±iω，ω 与前页 Ω 的字体记号不一致，保留原文，不静默改为 Ω。",
+            "Lean 取单自由度 I=1；Ω=0 时特征值集合为{0}，并不声称矩阵可对角化。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.oscillatorSpectrum",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "CONTEXT_NOTATION",
+              "detail": "补足原句指代、矩阵及记号/端点背景；保留原文公式和不等号。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation缺失或混入形式化解释，现补足原页指代与数学背景；statement_latex及proof_latex保持原样。"
+        ],
+        "evidence": [
+          "已目视渲染教材 PDF p.162（印刷p.140），页码偏移+22正确；statement_latex 的原句/公式与页面一致；页面无本条独立完整证明，proof_latex=null 正确。",
+          "PDF p.162 首句 The eigenvalues are ±iω；矩阵上下文在PDF p.161。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.oscillatorSpectrum",
+        "verdict": "PASS",
+        "explanation": "正式oscillatorMatrix(Ω)=[[0,1],[-Ω²,0]]，来自依赖ReviewDefinitions；签名使用非零复特征向量的存在双向等价，完整给出特征值集合{±iΩ}，Ω=0也有非零核向量。教材前页一般I块取单自由度是该标量谱断言的实例，无特征值遗漏；ω→Ω按原矩阵频率解释，原文字体差异已在JSON保留。实际证明体无sorry；未编译，不以此代替签名审计。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerRoots",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4-SymplecticEulerRoots",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4",
+          "printed_page": "140",
+          "pdf_page": "162",
+          "statement_latex": "The eigenvalues of the matrix are easily found, they are\n\\[\\lambda_{1,2}=1-\\frac{h^2\\Omega^2}{2}\\pm\\frac12\\sqrt{h^4\\Omega^4-4h^2\\Omega^2}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.162：Q=q+hP，P=p-hΩ²q；故作用于(q,p)ᵀ的矩阵为[[1-h²Ω²,h],[-hΩ²,1]]。",
+            "λ₁,₂ 是该矩阵的复特征值；平方根的两个符号共同给出根集合，重根按集合理解。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.symplecticEulerRoots",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "以任意复平方根d²=判别式表达±，避免未指定复sqrt分支；不是仅特征多项式断言。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "CONTEXT_NOTATION",
+              "detail": "补足原句指代、矩阵及记号/端点背景；保留原文公式和不等号。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation缺失或混入形式化解释，现补足原页指代与数学背景；statement_latex及proof_latex保持原样。"
+        ],
+        "evidence": [
+          "已目视渲染教材 PDF p.162（印刷p.140），页码偏移+22正确；statement_latex 的原句/公式与页面一致；页面无本条独立完整证明，proof_latex=null 正确。",
+          "PDF p.162 中部 λ₁,₂=1-h²Ω²/2±(1/2)√(h⁴Ω⁴-4h²Ω²)。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.symplecticEulerRoots",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 全称Ω,h,ζ，左侧存在非零复特征向量，右侧存在复数d满足d²=h⁴Ω⁴-4h²Ω²并取两个符号；是实际特征值集合的完整双向刻画，含重根。存在平方根不是额外参数限制，避免分支选择合理，全部公式项一致。实际证明体无sorry；未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerUnitRoots",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4-SymplecticEulerUnitRoots",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4",
+          "printed_page": "140",
+          "pdf_page": "162",
+          "statement_latex": "Then we observe that for $h^2\\Omega^2\\le4$, they are complex and their squared magnitude is\n\\[|\\lambda_{1,2}|^2=\\left(1-\\frac{h^2\\Omega^2}{2}\\right)^2+\\frac14(4h^2\\Omega^2-h^4\\Omega^4)=1,\\]\nthus both eigenvalues lie on the unit circle in the complex plane as long as $h\\Omega\\le2$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "λ₁,₂ 指 PDF p.162 上方 Symplectic Euler 矩阵的特征值；平方条件 h²Ω²≤4 包括0和4两个重根端点。",
+            "原文 they are complex 在端点根为实数±1；只有0<h²Ω²<4时为非实复共轭根。原文末句 hΩ≤2 按正频率、正步长背景理解；任意实参数需|hΩ|≤2。",
+            "模平方公式为原页推导，不是独立完整证明；单位圆谱不等于幂有界。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.symplecticEulerUnitRoots",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "CONTEXT_NOTATION",
+              "detail": "补足原句指代、矩阵及记号/端点背景；保留原文公式和不等号。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation缺失或混入形式化解释，现补足原页指代与数学背景；statement_latex及proof_latex保持原样。"
+        ],
+        "evidence": [
+          "已目视渲染教材 PDF p.162（印刷p.140），页码偏移+22正确；statement_latex 的原句/公式与页面一致；页面无本条独立完整证明，proof_latex=null 正确。",
+          "PDF p.162 下半页 h²Ω²≤4、模平方展开=1、末句 hΩ≤2 三处均核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.symplecticEulerUnitRoots",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 原页前句明确平方条件h²Ω²≤4；签名以相同条件量化任意复根ζ，结论‖ζ‖=1等价于原模平方=1。根方程ζ²-(2-h²Ω²)ζ+1=0正是所述矩阵特征方程（det=1，trace=2-h²Ω²），因此不丢失实际谱结论。原展开式是计算论证，非另一结论。complex按复数域理解包含端点实重根；若原文意指非实则端点措辞有误，已明确记录。末句hΩ≤2依正参数背景，采用平方条件忠实且消除负参数歧义。没有声称幂有界。实际证明体无sorry；未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerStability",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已目视渲染教材 PDF p.162（印刷p.140），页码偏移+22正确；statement_latex 的原句/公式与页面一致；页面无本条独立完整证明，proof_latex=null 正确。",
+          "PDF p.162：原文明确保留 hΩ≤2；审校不将≤静默改为<。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.symplecticEulerStability",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 eigenvalueOutside(A)=∃ρ∈ℂ,1<‖ρ‖且存在非零复向量v满足A v=ρv。签名仅给严格内区间幂有界和存在一个圆外特征值；[EXTRA]内区间修订数学合理但不保留≤2。漏掉原文超阈值时两个特征值均实、一个严格圆内一个严格圆外、存在指数增长解，以及步长阈值2/Ω的陈述。圆外特征值蕴涵某些增长解，但声明本身未写这些完整结论。实际有证明体且本条无sorry；未运行编译。[ERRATUM?]端点疑误成立。",
+        "counterexample": "Ω=1,h=2：S=[[-3,2],[-2,1]]，S^k(1,0)=(-1)^k(1+2k,2k)无界。超阈值缺失子句：现签名仅存在圆外根，未表述另一根为实且模<1。",
+        "suggested_fix": "明确标为修订定理；Ω>0,h>0下增加超阈值两实根及0<|λin|<1<|λout|、存在指数增长轨道，并用稳定步长集合上确界等精确定义表达阈值2/Ω；保留原文错误端点记录。"
+      }
+    }
+  ]
+}

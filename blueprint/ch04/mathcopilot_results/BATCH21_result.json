@@ -1,0 +1,440 @@
+{
+  "batch": "BATCH21",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "2b53748b7f449e76f9f64936d36e04b713f63f51c5e39bdd7138b702a2c19ad9",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4-RotationTraceIdentity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-RotationTraceIdentity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "168",
+          "pdf_page": "190",
+          "statement_latex": "$K_{\\rm rot}=\\frac12\\sum_{i=1}^Nm_i\\delta_i(0)^T\\dot\\Theta^T\\dot\\Theta\\delta_i(0)$. This expression may be rewritten as $K_{\\rm rot}=\\frac12\\operatorname{Tr}[\\dot\\Theta R\\dot\\Theta^T]$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF190（印刷168）：δ_i(t)=Θ(t)δ_i(0)，Θ(t)为3×3正交矩阵，δ_i(0)为固定参考相对位置，m_i为粒子质量。",
+            "R=∑_{i=1}^N m_i δ_i(0)δ_i(0)^T 为固定矩阵；Tr为矩阵迹，dot Θ为时间导数。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rotationTraceIdentity",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补全原文context_notation",
+              "evidence": "PDF190–191（印刷168–169），见审校evidence；保留statement_latex及proof_latex，不静默修正书中疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation缺少所引公式必需的原文记号，或原有文字仅是工程拆分说明；依据实际PDF补全，未更改原书公式。"
+        ],
+        "evidence": [
+          "已读取PDF第190（印刷168）页渲染图并逐项核对；页码换算PDF=印刷+22正确。",
+          "两项动能式与“This expression may be rewritten as”一致；其下明确给出固定R的定义。",
+          "proof_latex=null：所引段落没有另行标记的独立完整证明；书中紧邻的推导性说明未被当成新增证明。原有proof_note可保留。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationTraceIdentity",
+        "verdict": "PASS",
+        "explanation": "依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 所有N、实质量权重m、参考向量δ和任意矩阵dΘ先全称量化，无附加前提。展开后左侧为∑_i m_i||dΘδ_i||₂²/2，右侧为Tr(dΘ(∑_i m_i δ_iδ_i^T)dΘ^T)/2，正是两展示式的等价性。将正质量、质心及旋转约束省去得到有效代数推广；不需要这些物理限制。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationSkew",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-RotationSkew",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "168–169",
+          "pdf_page": "190–191",
+          "statement_latex": "Moreover, since $\\Theta\\Theta^T=I$, we have $\\dot\\Theta\\Theta^T+\\Theta\\dot\\Theta^T=0$, which indicates that $\\dot\\Theta\\Theta^T$ is a skew symmetric matrix.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF190–191（印刷168–169）：Θ(t)是可微正交矩阵轨道，ΘΘ^T=I为轨道约束，dot Θ为时间导数；上标T为转置。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rotationSkew",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "真实HasDerivAt矩阵轨道与邻域正交约束；不假设导数乘积恒等式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补全原文context_notation",
+              "evidence": "PDF190–191（印刷168–169），见审校evidence；保留statement_latex及proof_latex，不静默修正书中疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation缺少所引公式必需的原文记号，或原有文字仅是工程拆分说明；依据实际PDF补全，未更改原书公式。"
+        ],
+        "evidence": [
+          "已读取PDF第190–191（印刷168–169）页渲染图并逐项核对；页码换算PDF=印刷+22正确。",
+          "PDF190页末为dot Θ Θ^T+Θ dot Θ^T=0；PDF191页首为“is a skew symmetric matrix”，跨页范围正确。",
+          "proof_latex=null：所引段落没有另行标记的独立完整证明；书中紧邻的推导性说明未被当成新增证明。原有proof_note可保留。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationSkew",
+        "verdict": "PASS",
+        "explanation": "依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 量词为轨道Θ、时刻t、导数d，随后给出真实HasDerivAt及t邻域内正交约束。它们忠实展开原文可微正交轨道，不循环假定导数乘积公式。结论(dΘᵀ)^T=-(dΘᵀ)展开为Θdᵀ=-dΘᵀ，与dΘᵀ+Θdᵀ=0等价，因此覆盖原文两个结论。邻域约束足够且合理，单点正交一般不足以推出本结论。无[ERRATUM?]。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-SkewMatrix",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-SkewMatrix",
+          "kind": "definition",
+          "label": "(4.38)",
+          "section": "4.4",
+          "printed_page": "169",
+          "pdf_page": "191",
+          "statement_latex": "Any $3\\times3$ skew matrix may be written as\n\\[\\dot\\Theta\\Theta^T=\\operatorname{skew}(\\omega)\\equiv\\begin{bmatrix}0&-\\omega_3&\\omega_2\\\\\\omega_3&0&-\\omega_1\\\\-\\omega_2&\\omega_1&0\\end{bmatrix}.\\tag{4.38}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF191（印刷169）式(4.38)定义右手约定的skew(ω)；ω=(ω_1,ω_2,ω_3)^T称为空间角速度，满足dot Θ Θ^T=skew(ω)。",
+            "原句同时声称任意3×3反对称矩阵均有该表示；定义本身不构成此存在性结论的证明。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.skewMatrix",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补全原文context_notation",
+              "evidence": "PDF190–191（印刷168–169），见审校evidence；保留statement_latex及proof_latex，不静默修正书中疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation缺少所引公式必需的原文记号，或原有文字仅是工程拆分说明；依据实际PDF补全，未更改原书公式。"
+        ],
+        "evidence": [
+          "已读取PDF第191（印刷169）页渲染图并逐项核对；页码换算PDF=印刷+22正确。",
+          "式(4.38)九个元素逐项一致；下一句称ω为空间角速度。",
+          "proof_latex=null：所引段落没有另行标记的独立完整证明；书中紧邻的推导性说明未被当成新增证明。原有proof_note可保留。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.skewMatrix",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 定义的九个元素与(4.38)完全一致，0基索引转换正确；但本条statement_scope涵盖所引原句及展示公式，包含任意反对称矩阵可表示的存在性和dot Θ Θ^T=skew(ω)。lean_decl仅定义v↦skew(v)，没有矩阵轨道对象、导数关系或存在性量词。context_notation提及另条不能使本条签名覆盖完整范围。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。",
+        "counterexample": "缺失条款：∀A,Aᵀ=-A→∃ω,skewMatrix ω=A；以及轨道下dot Θ Θ^T=skew(ω)的角速度选择关系。公式定义本身正确，无数值反例。",
+        "suggested_fix": "将本条statement_latex及statement_scope明确收窄到skew的坐标定义；或保留当前范围并将lean_decl绑定到含反对称表示存在性及轨道关系的复合陈述。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-CrossProduct",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-CrossProduct",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "169",
+          "pdf_page": "191",
+          "statement_latex": "$\\frac d{dt}\\delta_i=\\operatorname{skew}(\\omega)\\delta_i=\\omega\\times\\delta_i=-\\operatorname{skew}(\\delta_i)\\omega$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF190–191（印刷168–169）：δ_i(t)=Θ(t)δ_i(0)，ω为空间角速度，dot Θ Θ^T=skew(ω)；×为三维右手叉积。",
+            "PDF191式(4.39)含真实时间导数及三个等号；cross3坐标定义本身不表达完整运动学陈述。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.cross3",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补全原文context_notation",
+              "evidence": "PDF190–191（印刷168–169），见审校evidence；保留statement_latex及proof_latex，不静默修正书中疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation缺少所引公式必需的原文记号，或原有文字仅是工程拆分说明；依据实际PDF补全，未更改原书公式。"
+        ],
+        "evidence": [
+          "已读取PDF第191（印刷169）页渲染图并逐项核对；页码换算PDF=印刷+22正确。",
+          "式(4.39)完整导数等式链逐项一致；所引是运动学公式，非原书独立坐标定义。",
+          "proof_latex=null：所引段落没有另行标记的独立完整证明；书中紧邻的推导性说明未被当成新增证明。原有proof_note可保留。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.cross3",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 cross3展开为(u₂v₃-u₃v₂,u₃v₁-u₁v₃,u₁v₂-u₂v₁)，右手约定正确，但函数定义没有Θ轨道、导数、skew乘法或任何等式结论。所引整条(4.39)不是叉积的坐标定义；“实际导数运动学另条”不改变本条声明范围。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。",
+        "counterexample": "缺失条款：在δ_i(t)=Θ(t)δ_i(0)及角速度关系下的真实导数公式和两条代数等式。",
+        "suggested_fix": "把本条范围改为三维右手叉积坐标定义，并把整条(4.39)绑定到完整运动学定理；或将当前lean_decl换为包含全部导数与代数等式的陈述。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-SkewRepresentation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-SkewRepresentation",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "169",
+          "pdf_page": "191",
+          "statement_latex": "Any $3\\times3$ skew matrix may be written as $\\operatorname{skew}(\\omega)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF191（印刷169）式(4.38)：skew(ω)=[[0,-ω_3,ω_2],[ω_3,0,-ω_1],[-ω_2,ω_1,0]]；skew matrix指实3×3反对称矩阵。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.skewRepresentation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补全原文context_notation",
+              "evidence": "PDF190–191（印刷168–169），见审校evidence；保留statement_latex及proof_latex，不静默修正书中疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation缺少所引公式必需的原文记号，或原有文字仅是工程拆分说明；依据实际PDF补全，未更改原书公式。"
+        ],
+        "evidence": [
+          "已读取PDF第191（印刷169）页渲染图并逐项核对；页码换算PDF=印刷+22正确。",
+          "式(4.38)前原句“Any 3 × 3 skew matrix may be written as”确实存在；原文未显式声称唯一性。",
+          "proof_latex=null：所引段落没有另行标记的独立完整证明；书中紧邻的推导性说明未被当成新增证明。原有proof_note可保留。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.skewRepresentation",
+        "verdict": "PASS",
+        "explanation": "依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 对任意实3×3矩阵A，先假定Aᵀ=-A，再存在唯一实三维ω使依赖中的实际skewMatrix ω=A。覆盖原文存在性；唯一性是正确的加强，ω=(A₃₂,A₁₃,A₂₁)，由矩阵三个非对角元素直接确定，不是额外假设。无[ERRATUM?]。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-CrossMatrix",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-CrossMatrix",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "169",
+          "pdf_page": "191",
+          "statement_latex": "$\\operatorname{skew}(\\omega)\\delta_i=\\omega\\times\\delta_i=-\\operatorname{skew}(\\delta_i)\\omega$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF191（印刷169）式(4.38)定义skew，式(4.39)的代数部分为skew(ω)δ_i=ω×δ_i=-skew(δ_i)ω；×为三维右手叉积。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.crossMatrix",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]本条仅首等式的子引理；原式两个等式全部保存在CrossIdentityFull，不把子引理当全部结论。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补全原文context_notation",
+              "evidence": "PDF190–191（印刷168–169），见审校evidence；保留statement_latex及proof_latex，不静默修正书中疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation缺少所引公式必需的原文记号，或原有文字仅是工程拆分说明；依据实际PDF补全，未更改原书公式。"
+        ],
+        "evidence": [
+          "已读取PDF第191（印刷169）页渲染图并逐项核对；页码换算PDF=印刷+22正确。",
+          "式(4.39)的两个代数等式逐项一致，末项负号及参数顺序正确。",
+          "proof_latex=null：所引段落没有另行标记的独立完整证明；书中紧邻的推导性说明未被当成新增证明。原有proof_note可保留。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.crossMatrix",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 对任意u、v，结论只有skewMatrix u *ᵥ v=cross3 u v；缺少原文第二等式cross3 u v=-(skewMatrix v *ᵥ u)。[EXTRA]实际是范围说明而非假设，承认子引理是合理的，但不能使本条指定签名覆盖其statement_scope的全部结论；另条承载完整等式不自动合并进本条签名。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。",
+        "counterexample": "缺失第二等式：∀u v,cross3 u v=-(skewMatrix v *ᵥ u)。现有第一等式正确，无反例。",
+        "suggested_fix": "将结论改为两个等式的合取；或将本条原文范围明确收窄到首等式，并以完整陈述单独绑定原式。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-RigidVelocity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-RigidVelocity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "169",
+          "pdf_page": "191",
+          "statement_latex": "$\\frac d{dt}\\delta_i=\\operatorname{skew}(\\omega)\\delta_i=\\omega\\times\\delta_i=-\\operatorname{skew}(\\delta_i)\\omega$, which is the usual definition.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF190（印刷168）：δ_i(t)=Θ(t)δ_i(0)，δ_i(0)固定，Θ为正交矩阵轨道。",
+            "PDF191（印刷169）：ω为空间角速度，dot Θ Θ^T=skew(ω)，式(4.39)同时给出导数、skew乘积、叉积和负的反向skew乘积。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rigidVelocity",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "给定真实正交旋转轨道和定义角速度的skew关系；不是把速度公式当假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补全原文context_notation",
+              "evidence": "PDF190–191（印刷168–169），见审校evidence；保留statement_latex及proof_latex，不静默修正书中疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation缺少所引公式必需的原文记号，或原有文字仅是工程拆分说明；依据实际PDF补全，未更改原书公式。"
+        ],
+        "evidence": [
+          "已读取PDF第191（印刷169）页渲染图并逐项核对；页码换算PDF=印刷+22正确。",
+          "式(4.39)导数及三等号和其后“which is the usual definition”一致。",
+          "proof_latex=null：所引段落没有另行标记的独立完整证明；书中紧邻的推导性说明未被当成新增证明。原有proof_note可保留。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidVelocity",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 先全称量化Θ、dΘ、固定参考δ、空间角速度ω、t；假设真实导数、单点正交、dΘ(Θt)^T=skew(ω)，推出位置轨道s↦Θsδ的导数为ω×(Θtδ)。这些前提非循环且足够，单点正交即可由给定角速度关系得到该速度结论；不必要求det Θ=1。核心导数公式正确，但签名未同时陈述导数等于skew(ω)(Θtδ)以及等于-skew(Θtδ)ω；在要求所有结论子句的当前范围下不完整。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。",
+        "counterexample": "缺失原式的skew乘积和负的反向skew乘积等式；无导数主结论的反例。",
+        "suggested_fix": "在现有HasDerivAt结论之外加入skewMatrix ω *ᵥ (Θt *ᵥ δ)=cross3 ω (Θt *ᵥ δ)和cross3 ω (Θt *ᵥ δ)=-(skewMatrix (Θt *ᵥ δ) *ᵥ ω)的合取，或显式收窄原文范围。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-InertiaTensor",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-InertiaTensor",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "169",
+          "pdf_page": "191",
+          "statement_latex": "$K_{\\rm rot}=\\frac12\\omega_b^TT\\omega_b$, where the matrix $T=-\\sum_{i=1}^Nm_i\\operatorname{skew}(\\delta_i(0))^2$ is referred to as the moment of inertia tensor or simply the inertia tensor and can be written as\n\\[T=\\sum_{i=1}^Nm_i[\\|\\delta_i(0)\\|^2I-\\delta_i(0)\\delta_i(0)^T].\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF190–191（印刷168–169）：δ_i(0)为固定参考相对位置，m_i为质量；ω_b=Θ^Tω称为体角速度。",
+            "PDF191（印刷169）：T=-∑_i m_i skew(δ_i(0))^2；矩阵平方指矩阵乘法，I为3×3单位矩阵，||δ_i(0)||为欧氏范数，T称为惯性张量。",
+            "所引原文同时包含K_rot=(1/2)ω_b^T T ω_b及T的两种表达式；仅定义有限和不表达这些等价结论。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.inertiaTensor",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补全原文context_notation",
+              "evidence": "PDF190–191（印刷168–169），见审校evidence；保留statement_latex及proof_latex，不静默修正书中疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation缺少所引公式必需的原文记号，或原有文字仅是工程拆分说明；依据实际PDF补全，未更改原书公式。"
+        ],
+        "evidence": [
+          "已读取PDF第191（印刷169）页渲染图并逐项核对；页码换算PDF=印刷+22正确。",
+          "体角速度段给出ω_b=Θ^Tω；T的负skew平方和、欧氏有限和及二次型动能均逐项一致。",
+          "proof_latex=null：所引段落没有另行标记的独立完整证明；书中紧邻的推导性说明未被当成新增证明。原有proof_note可保留。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.inertiaTensor",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 定义展开为∑_i m_i (||δ_i||₂² I-δ_iδ_i^T)，精确对应原文最后展示式，任意实权重是有效推广；没有混淆函数空间范数。可是当前所引范围还包含T=-∑_i m_i skew(δ_i)^2及K_rot=ω_b^T Tω_b/2；定义的参数仅N、m、δ，没有ω_b、旋转动能或这两条等价结论。context_notation宣称另条不能补足本条签名。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。",
+        "counterexample": "缺失skew平方等价式及体角速度下的动能恒等式。有限和定义正确，无反例。",
+        "suggested_fix": "将此定义条目范围明确限制为T的欧氏有限和；或增加完整陈述，包含skew平方等价式和正交旋转轨道及ω_b=Θ^Tω下的旋转动能恒等式。"
+      }
+    }
+  ]
+}

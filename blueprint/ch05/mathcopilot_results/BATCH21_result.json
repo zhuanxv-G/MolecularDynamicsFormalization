@@ -1,0 +1,69 @@
+{
+  "batch": "BATCH21",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "ad6fc603fafe4a815ac2e68c30a15f9d9b4d15fdc2d23c14c9b619dacc716abc",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.4.1-CircleInitialPoints",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第223页（印刷202页），以 “Now consider an alternative initial set.” 开始的段落；逐句核对至 “since the momenta of successive points may differ greatly.”。展示圆公式为 p_x²+p_y²=2(E_0−U(x,0))。statement_latex 内容一致；proof_latex=null，原页无独立证明。context_notation 是实现解释，非教材引文：非负资格下为角参数化，半径零为退化点，均匀角推送另见本批下一条；与定义一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.circleInitialPoints",
+        "verdict": "FAIL",
+        "explanation": "本次按补充规则，Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、Real.sqrt、三角函数、Measure.map、volume、restrict、Ioc、ENNReal.ofReal 及测度标量作用均直接使用标准数学含义，不要求 Ch05_deps.txt 提供其定义体。仅使用三个 SHA256 与上一轮一致的附件内容；附件 Blueprint/Ch05.lean 在本工作区的落地路径为 /workspace/Ch05.lean，未采用其他未绑定的旧工程或 source JSON。项目定义已实际展开：Ch05_deps.txt 中 FILE MolecularDynamics/Chapter05/ReviewDefinitions.lean 的 E n := EuclideanSpace ℝ (Fin n)、Phase n := E n × E n 给出欧氏 ℝⁿ 与位置/动量乘积；Phase 2 是四维相空间。附件 Blueprint/Ch05.lean 中 anisotropicPotential κ l ε q := MolecularDynamics.Chapter01Review.anisotropicEnergy κ l ε (q 0) (q 1) 0 0。依赖 FILE MolecularDynamics/Chapter01/ReviewDefinitions.lean 的 anisotropicAngular、anisotropicParameters、anisotropicEnergy 完整展开为 r=√(x²+y²)，a=4(x/r)³−3x/r，κ′=κ(1−εa/2)，l′=l(1+εa/2)，H=(v²+w²)/2+κ′(r−l′)²/2，故 U=κ′(r−l′)²/2。原文证据为 PDF 第223页（印刷202页）“Begin, as before, with a line segment on the x-axis”及圆公式 p_x²+p_y²=2(E_0−U(x,0))，随后涉及均匀选取、能量面及相邻初值的定性比较。circleInitialPoints 对六个任意实参数输出 q=(x,0)、p=√(2(c−U(x,0)))(cosθ,sinθ)；在 c≥U 时几何对象正确，c=U 时合理退化为一点。但是原文实际可用的实动量圆要求 c≥U，签名未限定此域；在负被开方数下标准 Real.sqrt 返回0，所得点不在原文圆或 H=c 上。context_notation 中的“根号非负时对应书中圆”准确标明这一资格，却没有使输入类型或签名限定于该资格；因此不能将总函数在所有输入上解释为原文圆初值。此外按 statement_scope 要求审查全部所引句，此定义本身只是参数化，不表达继承的初始线段范围、均匀抽样或相邻样本比较；后两条分担的内容不能自动成为本条签名的结论。不要求将“may differ greatly”错误强化为每对相邻点必然远离，但应明确哪些原句由哪一条正式陈述覆盖。[EXTRA] 本条未列额外假设；可行域条件必要且合理。[ERRATUM?] 无该标记，未据此修正原书。定义无 sorry；FAIL 来自适用域及所引内容覆盖，完全不来自缺少 Mathlib 定义体。",
+        "counterexample": "取 κ=1、l=1、ε=0、c=1/1000、x=11/10、θ=0。参数 κ,l,c 均为正，且 x∈[1.05,1.15]。依赖展开得 U(x,0)=(x−1)²/2=1/200>c，2(c−U)=−1/125。标准 Real.sqrt(−1/125)=0，故 circleInitialPoints 给出 ((11/10,0),(0,0))，其 H=1/200≠1/1000，且 p_x²+p_y²=0≠−1/125；原文圆为空。这是定义无适用域限制时的反例，不是对满足能量可行条件的原文实验的反例。",
+        "suggested_fix": "使用 c≥anisotropicPotential κ l ε (x,0) 的可行参数子类型或显式资格来界定本定义作为原文初值的输入域。若保留当前总函数，则明确其为延拓，并另以带可行条件的规范表达其原文用途。在本条要求覆盖完整摘录时，还应显式指定初始线段及每个固定 x 使用 circleInitialLaw 的选取方式；定性样本比较须明确保留为讨论或独立陈述，不强化为所有样本必然远离。此为修复建议，本次不改附件也不补证明。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-CircleInitialLaw",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第223页（印刷202页），同一段的 “choose the initial momenta from the uniform distribution on the circle” 及紧随圆公式；原页用句号结束该选取句。statement_latex 一致；proof_latex=null；context_notation=[] 无冲突。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.circleInitialLaw",
+        "verdict": "FAIL",
+        "explanation": "本次按补充规则，Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、Real.sqrt、三角函数、Measure.map、volume、restrict、Ioc、ENNReal.ofReal 及测度标量作用均直接使用标准数学含义，不要求 Ch05_deps.txt 提供其定义体。仅使用三个 SHA256 与上一轮一致的附件内容；附件 Blueprint/Ch05.lean 在本工作区的落地路径为 /workspace/Ch05.lean，未采用其他未绑定的旧工程或 source JSON。项目定义已实际展开：Ch05_deps.txt 中 FILE MolecularDynamics/Chapter05/ReviewDefinitions.lean 的 E n := EuclideanSpace ℝ (Fin n)、Phase n := E n × E n 给出欧氏 ℝⁿ 与位置/动量乘积；Phase 2 是四维相空间。附件 Blueprint/Ch05.lean 中 anisotropicPotential κ l ε q := MolecularDynamics.Chapter01Review.anisotropicEnergy κ l ε (q 0) (q 1) 0 0。依赖 FILE MolecularDynamics/Chapter01/ReviewDefinitions.lean 的 anisotropicAngular、anisotropicParameters、anisotropicEnergy 完整展开为 r=√(x²+y²)，a=4(x/r)³−3x/r，κ′=κ(1−εa/2)，l′=l(1+εa/2)，H=(v²+w²)/2+κ′(r−l′)²/2，故 U=κ′(r−l′)²/2。原文证据为 PDF 第223页（印刷202页）的均匀动量圆选取句。继续展开项目 circleInitialPoints，固定 κ,l,ε,c,x 后得角映射 F(θ)=((x,0),R(cosθ,sinθ))，R=√(2(c−U(x,0)))。circleInitialLaw 正是 F_*ν，其中 ν=(2π)⁻¹ Lebesgue|_(0,2π]。F 对 θ 连续可测；标准 Lebesgue 测度给出 ν(ℝ)=(2π)⁻¹(2π)=1，故推送总质量为1。R>0 时，在可测动量集合上的质量就是该集合与圆相交的弧长除以2πR；相空间测度同时把位置固定于(x,0)。c=U 时 F 为常值，推送是零动量初值处的 Dirac，适合退化圆。端点选用 Ioc 不影响分布。[EXTRA] 固定 x 的角推送是明确原文对象的合理实现，不需要、也未加入跨 x 独立性；“概率总质量尚未逐条证明”是证明状态，不影响这一语义判断。然而此签名仍没有 c≥U 的适用域资格；在 c<U 时原文圆为空，均匀概率不存在，定义却给出总质量1的 Dirac，因此当前所有实参数的定义不能无条件表示原文所称的圆上均匀分布。此 FAIL 的唯一实质障碍是适用域：在可行参数上公式本身正确，不因缺概率证明或 Mathlib 定义体而否定它。[ERRATUM?] 无该标记；定义本身无 sorry。",
+        "counterexample": "取 κ=l=1、ε=0、c=1/1000、x=11/10。则 U(x,0)=1/200，原文圆要求 p_x²+p_y²=−1/125，因此为空。circleInitialPoints 的全部角输入却给出同一点 ((11/10,0),(0,0))，circleInitialLaw 是该点的 Dirac 概率，总质量为1而在原文空圆上的质量为0；不能作为空圆上的均匀概率。此反例针对总定义在不可行参数上的解释；可行参数上的均匀角推送没有这一问题。",
+        "suggested_fix": "将作为原文均匀圆概率使用的参数域限定为 c≥anisotropicPotential κ l ε (x,0)，例如使用可行参数子类型，或保留总函数并配套带此资格的分布规范。保留当前归一化角测度推送；c=U 时明确为退化 Dirac。无需新增跨 x 独立性，也无需查找 Mathlib 定义体。总质量与圆上支撑性质可另列待证明性质，本次只作语义审计。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-CircleInitialEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第223页（印刷202页），同一段的 “In this way we again get initial conditions on the H=E_0 energy surface”；本条为原句前半句的摘录，原页其后接 “but this time ...”。摘录末尾独立句号不改变其内容；无独立证明，proof_latex=null；context_notation=[] 无冲突。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.circleInitialEnergy",
+        "verdict": "PASS",
+        "explanation": "本次按补充规则，Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、Real.sqrt、三角函数、Measure.map、volume、restrict、Ioc、ENNReal.ofReal 及测度标量作用均直接使用标准数学含义，不要求 Ch05_deps.txt 提供其定义体。仅使用三个 SHA256 与上一轮一致的附件内容；附件 Blueprint/Ch05.lean 在本工作区的落地路径为 /workspace/Ch05.lean，未采用其他未绑定的旧工程或 source JSON。项目定义已实际展开：Ch05_deps.txt 中 FILE MolecularDynamics/Chapter05/ReviewDefinitions.lean 的 E n := EuclideanSpace ℝ (Fin n)、Phase n := E n × E n 给出欧氏 ℝⁿ 与位置/动量乘积；Phase 2 是四维相空间。附件 Blueprint/Ch05.lean 中 anisotropicPotential κ l ε q := MolecularDynamics.Chapter01Review.anisotropicEnergy κ l ε (q 0) (q 1) 0 0。依赖 FILE MolecularDynamics/Chapter01/ReviewDefinitions.lean 的 anisotropicAngular、anisotropicParameters、anisotropicEnergy 完整展开为 r=√(x²+y²)，a=4(x/r)³−3x/r，κ′=κ(1−εa/2)，l′=l(1+εa/2)，H=(v²+w²)/2+κ′(r−l′)²/2，故 U=κ′(r−l′)²/2。原文证据为 PDF 第223页（印刷202页）“In this way we again get initial conditions on the H=E_0 energy surface”。量词顺序是先任取 κ,l,ε,c,x,θ∈ℝ，再要求0≤c−U(x,0)，最后令 z=circleInitialPoints κ l ε c x θ 并断言 ((z.2 0)²+(z.2 1)²)/2+U(z.1)=c。展开后 q=(x,0)，R=√(2(c−U(x,0)))；非负假设使 R²=2(c−U)，标准恒等式 cos²θ+sin²θ=1 给出动能 c−U，因此全部能量结论恰为 H=c。[EXTRA] 根号非负是实动量圆非空的必要且充分资格，不假设待证能量等式；零半径允许，κ,l,ε无需其他限制即可满足该代数结论。此能量后果对任意可行 x 均成立，故省去原具体位置线段限制是有效推广；没有将长期图像覆盖或遍历性混入结论。[ERRATUM?] 无该标记。签名语义 PASS；附件中证明体仍为 sorry，说明尚未有此条完整 Lean 证明，不将证明状态混同于语义忠实性。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

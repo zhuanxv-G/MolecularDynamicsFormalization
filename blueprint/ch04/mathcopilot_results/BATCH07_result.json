@@ -1,0 +1,200 @@
+{
+  "batch": "BATCH07",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "17ce3179009dc568338ee9dc5297d83f8301e74dc936f71d7b244f5392b3a34b",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3-HolonomicRelation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PAGE_RANGE_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-HolonomicRelation",
+          "kind": "definition",
+          "label": "(4.3)",
+          "section": "4.3",
+          "printed_page": "149–150",
+          "pdf_page": "171–172",
+          "statement_latex": "In this section we consider holonomic constraints which may be expressed in terms of positions only, and perhaps time, i.e.\n\\[g(q,t)=0.\\tag{4.3}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "g的真实位置/时间函数；不同于任意独立动量约束。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.holonomicRelation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [
+            "原句从印刷149/PDF171页末开始，i.e.及(4.3)在印刷150/PDF172页；只修订跨页范围，原文陈述不变。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "所引完整句子跨页，原条目只标公式所在页150/172，遗漏句子主体149/171。context_notation 中“真实位置/时间函数”是审阅释义，不是原文新增假设。"
+        ],
+        "evidence": [
+          "PDF171/印刷149页末从“In this section we consider holonomic”至“and perhaps time,”；PDF172/印刷150页首“i.e.”及(4.3) g(q,t)=0。",
+          "本条为定义或随文求导/计数说明，无单列证明；proof_latex=null、proof_discussion_latex=null与原页一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.holonomicRelation",
+        "verdict": "PASS",
+        "explanation": "依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 g 是真实位置与时间的函数，q 是时间曲线，∀t 的约束为 g(q(t),t)=0，忠实实现沿运动的完整 holonomic 关系。没有把独立动量约束混入 g，也不声称约束解存在。定义无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-TimeConstraintDerivative",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF172/印刷150，(4.3)后首句，∇_qg(q,t)·q̇+∂g/∂t=0，结尾“which involves velocities.”。",
+          "本条为定义或随文求导/计数说明，无单列证明；proof_latex=null、proof_discussion_latex=null与原页一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.timeConstraintDerivative",
+        "verdict": "PASS",
+        "explanation": "依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 Function.uncurry g 的对象是位置×时间；量词为任意 n,l,g,q,t,v，依次要求联合可微、q 在 t 的实际导数为 v、局部约束恒等于零，结论为 Dg(q(t),t)(v,1)=0。该结论按线性性展开正是 D_qg·q̇+∂_tg=0；联合可微和曲线可微是原文链式求导所需的合理 [EXTRA]，局部恒零足以且比全时恒零弱，没有把所求结论作前提。Ch04.lean:576–587 给出链式法则和导数唯一性证明，无 sorry；本结论仍为签名审计而非编译验证。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-ConstrainedSolution",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF174/印刷152，(4.4)–(4.6)的求和从k=1至l，(4.7)–(4.9)中负号、g′(q)^Tλ及向量零约束均与JSON一致。上下文F=−grad U为原力项的参数化解释。",
+          "本条为定义或随文求导/计数说明，无单列证明；proof_latex=null、proof_discussion_latex=null与原页一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constrainedSolution",
+        "verdict": "FAIL",
+        "explanation": "依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 在 F=−grad U、正质量、非退化时间区间及约束可微的解释下，分量方程与(4.4)–(4.9)完全对应，rho 是给定的真实时变乘子，无存在性假设。但实际签名允许任意 F、零质量和任意集合 I，且用 HasDerivWithinAt 而非实际时间导数；context_notation 中 F=−grad U 的代入没有作为签名限制，单点 I 上导数条件失去动力学含义，故不能作为所引运动方程的完整忠实定义。定义无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。",
+        "counterexample": "取 n=l=1，m=1，g₀(x)=x，q(t)=t，p(t)=0，rho(t)=0，F=0，I={0}。单点集合上的 HasDerivWithinAt 允许任意导数值，两项导数条件成立，q(0)=0，因而该定义成立；但 q 的实际导数为1而 M⁻¹p=0，不满足(4.4)/(4.7)。另零质量使 invMass 采用 Lean 的0⁻¹=0，并非教材的可逆质量矩阵。",
+        "suggested_fix": "保留一般位置力辅助定义，但为本 source_id 提供 U 参数并固定 F=−grad U、正质量的专门化；以开时间区间和 HasDerivAt 表述运动，或对 I 给出保证 within 导数唯一且等于运动时间导数的非退化条件，并明确端点约定。约束函数须在所讨论点可微。"
+      }
+    },
+    {
+      "source_id": "MD-4.3-ConstraintSet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF174/印刷152，(4.9)后“Constraints such as those described above define a manifold in the configuration space”及M={q|g(q)=0}；JSON忠实保留原句，未静默加正则性。",
+          "本条为定义或随文求导/计数说明，无单列证明；proof_latex=null、proof_discussion_latex=null与原页一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constraintSet",
+        "verdict": "FAIL",
+        "explanation": "依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 零点集合与向量约束 g(q)=0 完全对应，但本条 statement_scope 包含原句“define a manifold”，实际 Lean 仅有 Set，没有可微性、正则值/梯度独立性或流形结论。[EXTRA] 注释正确提示了差异，却不能充当正式假设或补足该结论。原书这一句需要规则约束的隐含资格；不静默替原书添加资格。定义无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。",
+        "counterexample": "n=2,l=1，g₀(x,y)=xy。零点集合是两坐标轴的交叉，在原点不是嵌入的一维光滑流形；Lean 定义仍照常适用。",
+        "suggested_fix": "把此声明明确限定为零点集合定义，并将原句的流形部分记录为单独待形式化义务；若保持完整原句范围，另加 g 的适当光滑性及零点处 Dg 满射，并给出局部嵌入流形结论。"
+      }
+    },
+    {
+      "source_id": "MD-4.3-CotangentSet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF174/印刷152，hidden constraint段后的并列等式g(q)=0、g′(q)M⁻¹p=0及“is called the co-tangent bundle ... T* M”；context_notation 为集合表示的审阅限定。",
+          "本条为定义或随文求导/计数说明，无单列证明；proof_latex=null、proof_discussion_latex=null与原页一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.cotangentSet",
+        "verdict": "PASS",
+        "explanation": "依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 定义的元素确为相空间中的(q,p)，两个且仅两个集合成员条件逐分量展开为 g(q)=0 与 g′(q)M⁻¹p=0；未漏掉同时满足要求。原文在这里用这两个等式命名其嵌入相空间的余切集合，该集合实现忠实，不能据此宣称已经构造抽象余切丛。正质量保证质量逆的物理解释，梯度独立和光滑性保证基底流形及通常余切丛解释；[EXTRA] 为这些解释资格而非成员条件中额外过滤条件，合理。任意 m,g 的总化扩展不能单独承载上述几何解释，但不改变本条所给集合等式。定义无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-ConstraintJacobian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF174/印刷152，(4.6)之后“It is often convenient to combine all the constraints ... a single vector-valued function g:ℝ^Nc→ℝ^l”；(4.8)使用g′(q)^Tλ。JSON原句确实仅指向量约束函数，语义错配在audit记录。",
+          "本条为定义或随文求导/计数说明，无单列证明；proof_latex=null、proof_discussion_latex=null与原页一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constraintJacobian",
+        "verdict": "FAIL",
+        "explanation": "依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 Lean 定义的确是由真实 Fréchet 坐标偏导组成的 l×Nc Jacobian，并与依赖 textbookConstraintJacobian 逐项相同；不是任意给定的矩阵。但 JSON statement_latex 所选原句只定义把标量约束汇总成向量函数 g:ℝ^Nc→ℝ^l，Lean 返回的却是点 q 处的导数矩阵。context_notation 提到(4.8)不能替代 statement_scope 中所引句子的函数对象。对象与签名不对应；定义无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。",
+        "counterexample": "对象错配：Nc=Mc=1，γ₀(x)=x²，q=0。原句所定义的向量函数 y↦y² 保留其值；Lean 返回1×1零矩阵，既不是该函数也不能恢复它。",
+        "suggested_fix": "为所选原句定义 combineConstraints γ := fun y j => γ j y。若保留 Jacobian 定义，则另立对应 source/范围，将(4.8)及 g′ 的导数解释纳入正式所审陈述，不以现有向量函数原句冒充 Jacobian 定义。"
+      }
+    },
+    {
+      "source_id": "MD-4.3-JacobianActualDerivative",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF174/印刷152，(4.9)后“Given a motion ... (4.7)–(4.9)”以及依次g(q(t))≡0、g′(q(t))q̇(t)≡0、g′(q(t))M⁻¹p(t)≡0。",
+          "本条为定义或随文求导/计数说明，无单列证明；proof_latex=null、proof_discussion_latex=null与原页一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.jacobianActualDerivative",
+        "verdict": "FAIL",
+        "explanation": "依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 依赖 Ch04_deps.txt:3405 起的 textbookConstraintJacobian_eq_actualDerivative 已展开：在逐分量可微条件下，矩阵等于向量函数 fderiv 的坐标矩阵。当前 theorem 仅复用此桥接，不含时间曲线 q(t)、动量 p(t)、乘子、运动方程、约束恒零假设，也没有 g′(q(t))q̇(t)=0 或 g′(q(t))M⁻¹p(t)=0 的结论。可微 [EXTRA] 对桥接合理，但“另条保留”不能补足本 source_id 冻结范围。证明体没有 sorry；证明完整与原文对应失败须分开。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。",
+        "counterexample": "缺失条款：原文的沿解恒等式以及由 q̇=M⁻¹p 推出的隐藏约束均未陈述。桥接在 γ(x)=x、q=0 时成立，而任意 p=1、m=1 给出 G M⁻¹p=1≠0；该桥接自身完全不约束运动或动量。此例说明桥接不足，不声称是原文运动方程的反例。",
+        "suggested_fix": "保留桥接作为辅助 lemma；为本 source_id 陈述曲线求导定理：g 在 q(t) 可微、HasDerivAt q (invMass m (p t)) t、邻域内 g(q(s))=0，推出 G(q(t))*ᵥinvMass m(p(t))=0，并保留 G(q(t))q̇(t)=0 的中间结论；也可从有合适时间域的 constrainedSolution 推出全时版本。"
+      }
+    },
+    {
+      "source_id": "MD-4.3-ConstraintDegrees",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF173/印刷151，脚注1完整句子“Note that with l constraints ... Nd=Nc−l.”；原文未显式写独立约束，JSON未静默添加。",
+          "本条为定义或随文求导/计数说明，无单列证明；proof_latex=null、proof_discussion_latex=null与原页一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constraintDegrees",
+        "verdict": "PASS",
+        "explanation": "依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 量词依次为维数 n,l、真实向量约束 g 和点 q，再给可微及真实导数满射条件；结论 dim ker Dg+l=n 等价于独立约束下 Nd=Nc−l。满射保证 l≤n，避免自然数截断伪装维数关系；没有把维数关系作为前提。原文未显式说独立约束，但这是自由度公式必要而合理的 [EXTRA]，例如重复约束不应重复扣减。当前结论是线性化可行速度空间的维数；如进一步声称零集为光滑流形，还需合适邻域光滑性，当前定理不含此额外几何声称。Ch04.lean:621–630 的证明用秩零化度公式，无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

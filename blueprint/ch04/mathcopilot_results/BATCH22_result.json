@@ -1,0 +1,319 @@
+{
+  "batch": "BATCH22",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "e9733572eaa708dbccca0f01e51d6ef9fa5cca026dbfb360c58107c2fa5a8971",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4-CrossIdentityFull",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 191 / 印刷169，(4.39)后三项：skew(ω)δ_i=ω×δ_i=−skew(δ_i)ω；本条明确只截取该代数子链，不包括最前面的时间导数。无独立证明段。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.crossIdentityFull",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 skewMatrix u 展开为 [[0,−u₂,u₁],[u₂,0,−u₀],[−u₁,u₀,0]]；cross3 u v 展开为 (u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)。∀u v 的合取恰含两条等式，Lean 0基索引对应原书1基索引。任意实向量的代数恒等式无需运动学假设。没有 [EXTRA]/[ERRATUM?]。该声明有显式证明且未见 sorry；此与签名 PASS 分开记录。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationalEnergy",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-RotationalEnergy",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "169",
+          "pdf_page": "191",
+          "statement_latex": "It is convenient to express this in terms of the so-called body angular velocity $\\omega_b=\\Theta^T\\omega$ in which case it becomes $K_{\\rm rot}=\\frac12\\omega_b^TT\\omega_b$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "ω为空间角速度；Θ为刚体旋转矩阵；ω_b=Θᵀω 为体坐标角速度。",
+            "T 为参考构型 δ_i(0) 的惯性张量；K_rot=1/2 ω_bᵀTω_b。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rotationalEnergy",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH22 原页审校：statement_latex 和页码正确；context_notation 未说明 ω_b 为体坐标角速度、Θ 为旋转矩阵、T 为参考构型惯性张量，容易把 Lean 参数 ω 误认为空间角速度。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex 和页码正确；context_notation 未说明 ω_b 为体坐标角速度、Θ 为旋转矩阵、T 为参考构型惯性张量，容易把 Lean 参数 ω 误认为空间角速度。"
+        ],
+        "evidence": [
+          "PDF 191 / 印刷169：body angular velocity ω_b=Θᵀω；紧接 K_rot=1/2 ω_bᵀTω_b。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationalEnergy",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 函数值展开为 1/2∑j ω_j∑k T_jk ω_k，正确表示以体角速度为参数的二次型；但本条所引原句还定义 ω_b=Θᵀω，签名完全没有 Θ 或该关系。自由 Mat3 参数并未绑定原文惯性张量。不是错误二次型，而是原句的变换子句缺失；def 无 sorry。",
+        "counterexample": "缺失条款：ω_b=Θᵀω。若把参数 ω 当空间角速度，取 T=diag(1,2,3)、ω=e₁、Θ 为绕第三轴90°旋转，则本函数为1/2，而原文体坐标值为1。",
+        "suggested_fix": "明确参数名为 ω_b；为本 source_id 增加包含旋转矩阵 Θ、空间 ω、ω_b=Θᵀ*ᵥω 和该能量表达式的关系/定理，或明确缩减 statement_scope 并将变换句另立条目。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-InertiaSkewIdentity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 191 / 印刷169：where the matrix T=−∑_{i=1}^N m_i skew(δ_i(0))²；随后给出惯性张量分量式，无独立证明段。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.inertiaSkewIdentity",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 inertiaTensor m δ 展开为 ∑i m_i( (∑j δ_ij²)I−δ_iδ_iᵀ)。skewMatrix 的矩阵平方恰为 δ_iδ_iᵀ−(∑jδ_ij²)I，因此所有有限 N、实 m、实 δ 都满足签名。δ 参数可直接取参考构型 δ_i(0)，无需时间参数；Fin N 覆盖原书1至N。无需正质量假设，推广到实权重合理；无额外假设或勘误。显式证明体未见 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-InertiaTracePrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_SUM_BOUNDS"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-InertiaTracePrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "169",
+          "pdf_page": "191",
+          "statement_latex": "This matrix is closely related to the matrix $R$:\n\\[R=\\sum_{i=1}^Nm_i\\delta_i\\delta_i^T=\\sum_{i=1}^Nm_i\\|\\delta_i\\|^2I-T=(T_{11}+T_{22}+T_{33})I-T.\\tag{4.40}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "(4.40)末式应trace(T)/2 I−T；原式逐字保留。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.inertiaTracePrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH22 原页审校：PDF (4.40) 两个求和均明确写 i=1 到 N，JSON 写成无上下界的 ∑_i；补回原式范围。原书错误的 trace(T) 系数必须保留，已有 ERRATUM? 标注成立。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "PDF (4.40) 两个求和均明确写 i=1 到 N，JSON 写成无上下界的 ∑_i；补回原式范围。原书错误的 trace(T) 系数必须保留，已有 ERRATUM? 标注成立。"
+        ],
+        "evidence": [
+          "PDF 191 / 印刷169，(4.40)：R=∑_{i=1}^N m_i δ_iδ_iᵀ=∑_{i=1}^N m_i‖δ_i‖²I−T=(T₁₁+T₂₂+T₃₃)I−T。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.inertiaTracePrinted",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 secondMoment 展开为 ∑i m_iδ_iδ_iᵀ；inertiaTensor 如上述定义，trace(T)=2∑i m_i dot δ_i δ_i。签名忠实保留原书错误的末式，故并非转录系数错误，但该全称命题为假；还未显式列出原句中间等式。原书 ERRATUM? 成立，应改系数为 trace(T)/2。实际证明体为 sorry；FAIL 的数学反例独立于 sorry。",
+        "counterexample": "满足正质量及质心约束的反例：N=2，m₁=m₂=1，δ₁=(1,0,0)，δ₂=(−1,0,0)。R=diag(2,0,0)，T=diag(0,2,2)，trace(T)I−T=diag(4,2,2)≠R。",
+        "suggested_fix": "保留原印刷版本作为原文记录/命题定义，不把它列为已成立定理；在独立纠正版用 trace(T)/2，并显式包含中间等式 R=(∑i m_i dot δ_i δ_i)•I−T。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-InertiaTraceCorrected",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_SUM_BOUNDS",
+          "CORRECTION_SCOPE_UNCLEAR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-InertiaTraceCorrected",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "169",
+          "pdf_page": "191",
+          "statement_latex": "$R=\\sum_{i=1}^Nm_i\\delta_i\\delta_i^T=\\sum_{i=1}^Nm_i\\|\\delta_i\\|^2I-T$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本条摘录 (4.40) 正确前半链；原书末式 trace(T)I−T 保留在 InertiaTracePrinted。",
+            "Lean 中 R=(trace(T)/2)I−T 是由惯性张量定义得到的明确纠正版；/2 不在原印刷公式中。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.inertiaTraceCorrected",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]纠正(4.40)末式系数为trace(T)/2；不覆盖原印刷条目。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH22 原页审校：摘录的正确前半链须保留原书 i=1 至 N；context_notation 还需明确 Lean 的 trace(T)/2 末式是数学纠正，不是原页逐字原式。现有 [EXTRA] 是勘误说明，并非新增假设。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "摘录的正确前半链须保留原书 i=1 至 N；context_notation 还需明确 Lean 的 trace(T)/2 末式是数学纠正，不是原页逐字原式。现有 [EXTRA] 是勘误说明，并非新增假设。"
+        ],
+        "evidence": [
+          "PDF 191 / 印刷169，(4.40) 前半链如本条；原页末式是 trace(T)I−T，没有 /2。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.inertiaTraceCorrected",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 依据已展开定义，trace(T)/2=∑i m_i dot δ_i δ_i，故签名恰与本条原文正确前半链等价；R 的第一等式由 secondMoment 的定义展开得到，中间等式由上述迹关系恢复，未丢数学结论。纠正版 /2 合理且必需；[EXTRA] 不应被解释为前提。∀N,m,δ 的代数推广不需正质量。此为明确标注的纠正推论，不能冒充原印刷末式。显式证明体未见 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-DipolarHamiltonian",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-DipolarHamiltonian",
+          "kind": "definition",
+          "label": "Example 4.1",
+          "section": "4.4",
+          "printed_page": "169–170",
+          "pdf_page": "191–192",
+          "statement_latex": "Example 4.1 (Dipolar Molecular Liquid) The Hamiltonian for a more general dipolar system can be written\n\\[H=K_{\\rm rot}(\\pi_1,\\ldots,\\pi_N)+K_{\\rm trans}(p_1,\\ldots,p_N)+U(q_1,\\ldots,q_N,\\mu_1,\\ldots,\\mu_N).\\]\nThe vectors $\\mu_k$ can be taken to be unit vectors reflecting the dipole orientation, so they are subject to the constraint $\\|\\mu_k\\|\\equiv1$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原文假设 identical ellipsoids；共同主惯性矩为 I₁,I₂,I₃。",
+            "π_i 为体坐标角动量，p_i 为平移动量，q_i 为位置；μ_i 为单位偶极方向，‖μ_i‖≡1。",
+            "PDF192给出 K_rot=1/2∑_{i=1}^N(π_{i,1}²/I₁+π_{i,2}²/I₂+π_{i,3}²/I₃)。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.dipolarHamiltonian",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "所有质量/主惯性矩>0，单位偶极方向为物理约束；N有限。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH22 原页审校：所选陈述、单位约束和跨页页码正确；遗漏了 π 为体坐标角动量、同型椭球和共同主惯性矩的必要上下文。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "所选陈述、单位约束和跨页页码正确；遗漏了 π 为体坐标角动量、同型椭球和共同主惯性矩的必要上下文。"
+        ],
+        "evidence": [
+          "PDF 191 / 印刷169：Let us assume that they are identical ellipsoids，及 Hamiltonian 分解；PDF 192 / 印刷170：body-fixed angular momentum vectors，‖μ_k‖≡1，及 K_rot=1/2∑i(π_i,1²/I₁+π_i,2²/I₂+π_i,3²/I₃)。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dipolarHamiltonian",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 展开 dot 可确认平移动能项为 ∑i‖p_i‖²/(2 mass_i)，转动项正好是原页共同主惯性矩下的体角动量表达式；N 有限且共同 inertia 与 identical ellipsoids 相符。但本 source_id 陈述显式包括 ∀k‖μ_k‖=1，函数接收任意 μ 未表达约束。注释所称质量及主惯性矩>0也没有成为签名前提；有限 N 实际存在。正性对物理域合理，代数函数可延拓而无需正性，不能把注释当形式假设。def 无 sorry。",
+        "counterexample": "取 N=1，mass=1，inertia=(1,1,1)，q=p=π=μ=0，U=0，函数合法返回0，但‖μ₁‖=0，违反本条明示的单位方向约束。",
+        "suggested_fix": "保留代数函数并补充物理域关系或受约束状态类型，表达 ∀i dot(μ_i)(μ_i)=1；如声称 [EXTRA] 正性已形式化，应加入质量/主惯性矩正性条件；注明 π 是体坐标角动量。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-DipolarPairPotential",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_LJ_SUBSCRIPT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-DipolarPairPotential",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "170",
+          "pdf_page": "192",
+          "statement_latex": "The total dipole-dipole interaction potential then takes the form $\\varphi^{\\rm dip}_{ij}=\\varphi_{\\rm LJ}(r_{ij})+\\mu_i^TL(q_{ij})\\mu_j$, with $U$ given as the sum of these over pairs. The $3\\times3$ matrix $L$ is given by\n\\[L(q_{ij})=\\frac1{r_{ij}^3}I-\\frac3{r_{ij}^5}q_{ij}q_{ij}^T,\\qquad q_{ij}=q_i-q_j.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 原式 L 的首项为标量 1/r_{ij}³；因 L 为3×3矩阵，该项表示 (1/r_{ij}³)I，JSON 显式补出 I。",
+            "q_{ij}=q_i−q_j；r_{ij} 为其欧氏长度；U 为非重复粒子对的相互作用和。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.dipolarPairPotential",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "r=Euclidean距离>0；本条实际pair函数，不声称经验模型准确性。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH22 原页审校：原页 Lennard–Jones 项写为 φ_LJ(r_ij)，JSON 写为 φ^{LJ}(r_ij)。补回下标；矩阵首项的单位矩阵 I 在原页省略，JSON 显式补 I 是类型解释，应在 context_notation 标明。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页 Lennard–Jones 项写为 φ_LJ(r_ij)，JSON 写为 φ^{LJ}(r_ij)。补回下标；矩阵首项的单位矩阵 I 在原页省略，JSON 显式补 I 是类型解释，应在 context_notation 标明。"
+        ],
+        "evidence": [
+          "PDF 192 / 印刷170：φ_ij^dip=φ_LJ(r_ij)+μ_iᵀL(q_ij)μ_j；with U given as the sum of these over pairs；L(q_ij)=1/r_ij³−3/r_ij⁵ q_ij q_ijᵀ，q_ij=q_i−q_j。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dipolarPairPotential",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 outer q 展开为 qqᵀ，dot μ (L*ᵥν) 为 μᵀLν，标量首项用 I 解释正确。但签名 r、q 独立，无 r=√(dot q q)>0，也没有 q=q_i−q_j；尤其原句 U 为所有对的和完全缺失。注释 [EXTRA] 的距离正性是排除碰撞所需的合理物理域条件，却未形式表达。函数本身可作代数核，但不足以覆盖本条全部范围。def 无 sorry。",
+        "counterexample": "例如 r=1、q=(2,0,0)、μ=ν=(1,0,0)、lj=0 均为合法输入，得到 −11；实际距离 r=‖q‖=2 时得到 −1/4。另无任何全局 U 或成对求和结论。",
+        "suggested_fix": "补充使用 q_i−q_j 和 r_ij=√(dot(q_i−q_j)(q_i−q_j)) 的粒子对实例，声明非碰撞条件；定义 U=∑_{i<j} pair(...) 并关联本 source_id。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-DipolarRotationalPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 192 / 印刷170：Then K_rot=∑_{i=1}^N Tr(Θ̇_iRΘ̇_iᵀ)，with R defined in terms of T=diag(I₁,I₂,I₃) by (4.40)。确无1/2；已有 ERRATUM? 如实保留。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dipolarRotationalPrinted",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 函数准确保留印刷求和式且未擅自补1/2；但本条还明确要求 R 由 T=diag(I₁,I₂,I₃) 经(4.40)定义，签名 R 为自由矩阵，未含 T、I 或关系，dΘ 也不绑定旋转矩阵的导数。故全部原句的语义未覆盖；印刷动能缺1/2的 ERRATUM? 成立，并且所引(4.40)另有系数错误。此为 def，无 sorry；并非因没有证明而 FAIL。",
+        "counterexample": "缺失条款：R 与 T=diag(I₁,I₂,I₃) 的关系。物理系数核验：R=I₃、T=2I₃、Θ=I₃、Θ̇=skew(e₃)，则印刷函数值2，而 K_rot=1/2 e₃ᵀT e₃=1。",
+        "suggested_fix": "保留印刷函数作为记录，补充其所引 R/T 关系并明确关系本身有原书勘误；另立纠正版采用 R=(trace(T)/2)I−T 与 1/2∑i trace(Θ̇_iRΘ̇_iᵀ)。不要静默修改原印刷条目。"
+      }
+    }
+  ]
+}

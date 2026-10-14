@@ -1,0 +1,619 @@
+{
+  "registered_at": "2026-10-14T23:46:24.580379",
+  "raw_files": {
+    "blueprint/ch04/mathcopilot_results/BATCH01_result.json": "84bba136aa96418d8ceb2b517f69377ac20f055ebc451a6389515f73ef7f6a28",
+    "blueprint/ch04/mathcopilot_results/BATCH02_result.json": "8a5032eae6b68a1c6857a2179e5356ee17ee63010edcafcac669b9117b8f1ec0",
+    "blueprint/ch04/mathcopilot_results/BATCH03_result.json": "415959aad607363ea55dfcbdbdb00ab81db387eb4340c6bb95cc4a716635ef3e",
+    "blueprint/ch04/mathcopilot_results/BATCH04_result.json": "67012248671dd6f725546b7c2be567ad1b7ebd8c5fb88fd74b7ebd40b4434382",
+    "blueprint/ch04/mathcopilot_results/BATCH05_result.json": "c4885ab7b5122377ba598270a4b85f4a127537320830a3428c3d0d59317bdde8",
+    "blueprint/ch04/mathcopilot_results/BATCH06_result.json": "8bd5d9b0fc4c478084fc311c9aa54e05d4a5c573cdf3392e9f7bf3be5c1d22c2",
+    "blueprint/ch04/mathcopilot_results/BATCH07_result.json": "9dd292dda4c1536c2c34c3da73cb06b4ec649e46b8e788f58661aeb07f055ad3",
+    "blueprint/ch04/mathcopilot_results/BATCH08_result.json": "761510c6f457615a3d599a866e6701c82c311217644e1406c080919225ce5e69",
+    "blueprint/ch04/mathcopilot_results/BATCH09_result.json": "1ae54c550779751be5848609afa5cdd40bddd7b1c5daccc64c827aacbc6122d9",
+    "blueprint/ch04/mathcopilot_results/BATCH10_result.json": "5563295acb0fce5610ef1c1ba6747bb4a8904f37a91b8ce3ec64cf91b16c7af7",
+    "blueprint/ch04/mathcopilot_results/BATCH11_result.json": "316f24eb0645d0b2019f6aa1878f0c5ca515691576ee9092836ee7f2d9aa870b",
+    "blueprint/ch04/mathcopilot_results/BATCH12_result.json": "8b1231985767fcb96e50a09292c8530da6336b53a7c992d491643ef9141d63ef",
+    "blueprint/ch04/mathcopilot_results/BATCH13_result.json": "4ace204c06edf56d834a7019e1c50791ffd3ed92c7f8517fbf7c98004490f250",
+    "blueprint/ch04/mathcopilot_results/BATCH14_result.json": "e0e4dde628e24f329153fb7bcab5415467a92f967423af5d95a7780899deda93",
+    "blueprint/ch04/mathcopilot_results/BATCH15_result.json": "d809ac3f80f80a77cf1952fdc1f5cd9121f42642812539afb96dbcba9d55b9eb",
+    "blueprint/ch04/mathcopilot_results/BATCH16_result.json": "17b2caadc38cb762d3fb1ffbc46cf4750a1c0f463fa8e651872d4380c45041d1",
+    "blueprint/ch04/mathcopilot_results/BATCH17_result.json": "5eef4973259ecbd3682fa1b2288b7f21cbb936d9fcdd4e99473e17d5cc6aaf3b",
+    "blueprint/ch04/mathcopilot_results/BATCH18_result.json": "6ce4922ec92fa3318b05877b80350edd61741597c7056a4b932c33f182ba8505",
+    "blueprint/ch04/mathcopilot_results/BATCH19_result.json": "7820515ee8708223d50ba23a2d687b486f62bdb92c384216d70eb4d9bcbd7e14",
+    "blueprint/ch04/mathcopilot_results/BATCH20_result.json": "015a72dc6306a98671e18d2892b4b5ec94de32271c1f8847b8a83f84652a33bd",
+    "blueprint/ch04/mathcopilot_results/BATCH21_result.json": "7bc0bf29acb5d2aa6e6b63c8e922e7e2226b196141355d5792c4e0c5ce51c286",
+    "blueprint/ch04/mathcopilot_results/BATCH22_result.json": "1db36e4062d009618f4abb435fb252e16a61c0803173be6d5f1548ddc96dc55f",
+    "blueprint/ch04/mathcopilot_results/BATCH23_result.json": "21071a60b2a8aec4ad2fb284ca9a6bbbc847b25144e11f87698f84706a6e846c",
+    "blueprint/ch04/mathcopilot_results/BATCH24_result.json": "4c48aae96fe9fae4dc11e3dd4fa0e04063267f5fd535482a983844f283fddae0",
+    "blueprint/ch04/mathcopilot_results/BATCH25_result.json": "983fc4cd55b97e61c17772c570e08540776257d25925f54c0c7c93b89f64b309",
+    "blueprint/ch04/mathcopilot_results/BATCH26_result.json": "f49030eb87ca49cd7472290d6f7e1caaf8f2a19f1f3768e4502565ae86e2fb4c",
+    "blueprint/ch04/mathcopilot_results/BATCH27_result.json": "004071dd8fba8096e880ac7296fc913db4fff9d8e69bd2aae34ca2f96325274e",
+    "blueprint/ch04/mathcopilot_results/BATCH28_result.json": "58e3e04fd343acea59666cd51d6297a4d56234cd04b119c042ff960a14c7ee8c",
+    "blueprint/ch04/mathcopilot_results/BATCH29_result.json": "81f0ceae02fc335d270d7ea64319f0e7ff0d2ad35c5642c9e2e2862f20bfd876"
+  },
+  "bindings": {
+    "blueprint/ch04/mathcopilot_results/BATCH01_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "2bcfc71899d1b322db46c9e423c57ea55c102f08b219907f9aad796262ce91c5",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH02_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "9b724101ce07bc3184d11b6fe9bce6fa75455f050d88884ab939d0300efc232f",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH03_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "ce9dbe8313150429e90055c7d56efc1b88275c2c367f9fddae72a78e913e40b0",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH04_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "68b0b3826d7972dc6a1e367ad7329a5277b339220820f550fc49c5c439549884",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH05_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "462fe8205da43129ae5ee3e0a028d483af0e792253e2dabc173d70a3334adf2d",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH06_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "e8d2621d6b14e26c7d792fdfc49ff5763a806cb8ff10cb6b70b5f4e78a932c73",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH07_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "17ce3179009dc568338ee9dc5297d83f8301e74dc936f71d7b244f5392b3a34b",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH08_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "3601fd696ab010e8783b8507c13b622b3d0b80e19741a22af7f5817900cb17b7",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH09_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "8568ff093c3f9347af843d5e814471741db186774809a8da9d9dbc5130a62689",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH10_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "bda90ae8d0b9c280917c18a05553f6c583b11b973f9629ed2d2ddcccd7f5f3a4",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH11_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "c48302da1b83905fd214225283a2f040bfb570a6624e2b401a3f23712fadf9f8",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH12_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "712301e0e345927a7033f588526922e92adc775b3989ca2c9938eeca3fceaa0b",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH13_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "bc9eced06d0510f87ab6348b2187bf9a77c1fe3fe101723d8185e1f9dad94299",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH14_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "6e55b55fcce4dd65bb9d9970bdd9a346a1a2fbf0c6d385c2a6cfaf6971acb6a6",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH15_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "e355f35a536eff20ef488c2814d3fa8ce752fb336a96b78d49cc1395e2074587",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH16_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "80e24d83bef9b16269df82009ca4b6f098df0bb26413da0325f17c6a14f896a4",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH17_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "9891bf630c4edb3b1f9725a6dc304f9362f67ac481e0cde5e2763fc059fe87f1",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH18_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "b1301c62ffa61f0b1895afd9bf083b0df9418024bdfa1265b56243c0d380c3b8",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH19_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "9b7abcb11b136ca7e1b15a8f1b57d23ab316821384988f129395fffb534507bd",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH20_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "fab61dfe090b1ccd0036c5459cbc7b10a42215f6ce1be00fa8d704c893698169",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH21_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "2b53748b7f449e76f9f64936d36e04b713f63f51c5e39bdd7138b702a2c19ad9",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH22_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "e9733572eaa708dbccca0f01e51d6ef9fa5cca026dbfb360c58107c2fa5a8971",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH23_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "f51ace1ae794905a6b1318836933896f0feca1607e94d7105c8ac18aae96928d",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH24_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "6cacfb241d98b1d8b7d6d27586d392a02cd785dac5310bfede8f1082d04cd611",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH25_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "732de25f9860a5fe5281cfc203b507d4100072f9b33abc4e98246d84162ddaee",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH26_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "b5ecb14868d0bc63f9a83f5afe06a5847145315fc66a0d1d2b18502063b55650",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH27_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "d7db991c1f7d62fcea31ce10785962388c39112e48124814cb035c9290f78d66",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH28_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "6c8fda2a238b6374f142f2eeea775242ed64ba28e4c60b4e84904e34b9b72d33",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    },
+    "blueprint/ch04/mathcopilot_results/BATCH29_result.json": {
+      "bound": true,
+      "rule": "a",
+      "version": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+      "generation_commit": "ca2715c9646e62ed50bffb025b0c45dfe6f69401",
+      "registration_commit": "6b822a9a524fd198e8232a4d43e9290ed660fb5f",
+      "input_sha256": {
+        "BATCH.md": "6c6f39374643c0384db8f36ba391c4efb4f34dcc991350e0bfc2bd8a04fa8875",
+        "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+        "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+      },
+      "checks": {
+        "bundle_manifest": true,
+        "Ch04_deps.txt": true,
+        "Blueprint/Ch04.lean": true,
+        "BATCH.md": true
+      },
+      "lean_modification_commits": [],
+      "reasons": []
+    }
+  },
+  "source_sha256": "ec859dbde452505834ef2bb42a1016b8747dc1256f654b2b0db651ac0938065f",
+  "lean_sha256": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+  "first_json_review_files": {}
+}

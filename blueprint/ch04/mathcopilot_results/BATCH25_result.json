@@ -1,0 +1,245 @@
+{
+  "batch": "BATCH25",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "732de25f9860a5fe5281cfc203b507d4100072f9b33abc4e98246d84162ddaee",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4.1-AxisRotation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_MISMATCH",
+          "SECTION_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-AxisRotation",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.1; 4.4.2",
+          "printed_page": "173–174",
+          "pdf_page": "195–196",
+          "statement_latex": "Each of these is, it turns out, easily integrated as a planar rotation (see Exercise 7). The notation $\\Theta^x(\\phi)$ refers to a rotation around the x-axis by an angle $\\phi$, that is\n\\[\\Theta^x(\\phi)=\\begin{bmatrix}1&0&0\\\\0&\\cos(\\phi)&-\\sin(\\phi)\\\\0&\\sin(\\phi)&\\cos(\\phi)\\end{bmatrix},\\]\nwith corresponding formulae for $\\Theta^y$ and $\\Theta^z$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "右手主动轴旋转；原书使用上标Θ^x、Θ^y、Θ^z；Fin 3的0,1,2对应书1,2,3。",
+            "平面旋转句在§4.4.1 PDF195；旋转矩阵定义在§4.4.2 PDF196。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.axisRotation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-13",
+              "reason": "BATCH25首次依赖审校：PDF 196原旋转记号为Θ^x、Θ^y、Θ^z，JSON转成了下标；矩阵数值无误。；条目拼接§4.4.1的平面旋转句与§4.4.2的旋转定义，应明确跨节来源。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "PDF 196原旋转记号为Θ^x、Θ^y、Θ^z，JSON转成了下标；矩阵数值无误。",
+          "条目拼接§4.4.1的平面旋转句与§4.4.2的旋转定义，应明确跨节来源。"
+        ],
+        "evidence": [
+          "PDF 195/印刷173：Each of these ... planar rotation (see Exercise 7).",
+          "PDF 196/印刷174，§4.4.2 Spin后：The notation Θ^x(φ) ...；展示矩阵第一行(1,0,0)，第二行(0,cos(φ),−sin(φ))，第三行(0,sin(φ),cos(φ))。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.axisRotation",
+        "verdict": "PASS",
+        "explanation": "依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 Ch04.lean中的axisRotation与依赖同名定义逐分支一致：x为所印矩阵，y为[[cos,0,sin],[0,1,0],[−sin,0,cos]]，z为[[cos,−sin,0],[sin,cos,0],[0,0,1]]；覆盖全部Fin 3，右手主动旋转解释合理。作为旋转定义忠实；所引平面可积分句仅提供上下文，不由本定义证明。无额外假设、无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-SecondAxisPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 195/印刷173，页首三个子系统中的第2式：T_2^{−1}π确实未印π的分量下标；其余位置为0。保留原式，未静默补下标。",
+          "原页本段没有独立证明；proof_latex=null符合。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.secondAxisPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 展开Ch04.lean定义得到π×e_2·(a/I_2)。依赖没有缺失定义。a是新增独立实参数；若原书无下标π意为独立标量，此参数化可用；若意为动量分量π_2则a应绑定该分量。原书此标量未定义，不能以参数占位宣称已忠实翻译。惯量由T_j映射为I_j符合前文T=diag(I₁,I₂,I₃)的意图，但原式T_j记法本身也应保留解释记录。[ERRATUM?]缺下标外观确认，数学裁定仍需明确原文标量π含义。无sorry。",
+        "counterexample": null,
+        "suggested_fix": "请裁定PDF195第2子系统的无下标标量π是否应为π_2；如是，另建有明示勘误的π×e_2(π_2/I_2)版本，保留当前印刷占位版本，并记录a的含义。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-ThirdAxisPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 195/印刷173，页首三个子系统中的第3式：T_3^{−1}π确实未印π的分量下标；其余位置为0。保留原式，未静默补下标。",
+          "原页本段没有独立证明；proof_latex=null符合。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.thirdAxisPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 展开Ch04.lean定义得到π×e_3·(a/I_3)。依赖没有缺失定义。a是新增独立实参数；若原书无下标π意为独立标量，此参数化可用；若意为动量分量π_3则a应绑定该分量。原书此标量未定义，不能以参数占位宣称已忠实翻译。惯量由T_j映射为I_j符合前文T=diag(I₁,I₂,I₃)的意图，但原式T_j记法本身也应保留解释记录。[ERRATUM?]缺下标外观确认，数学裁定仍需明确原文标量π含义。无sorry。",
+        "counterexample": null,
+        "suggested_fix": "请裁定PDF195第3子系统的无下标标量π是否应为π_3；如是，另建有明示勘误的π×e_3(π_3/I_3)版本，保留当前印刷占位版本，并记录a的含义。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-PrincipalAxisField",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PAGE_MISMATCH",
+          "TRANSCRIPTION_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-PrincipalAxisField",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.1",
+          "printed_page": "172",
+          "pdf_page": "194",
+          "statement_latex": "If $T$ is a diagonal matrix, $T=\\operatorname{diag}(I_1,I_2,I_3)$, then we split the Euler equations and approximate the solution by successive rotations around the three axes of inertia,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch04.principalAxisField",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]将第二和第三子场的分量分别明确为π₂/π₃；原印刷两处缺下标另列待审，不覆盖原式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-11",
+              "reason": "原页高倍率复核纠正预备转录：列动量Rπ、方向ΘRᵀ与正式库一致；第二及第三拆分均缺下标。原记录归档，正角与π×ω子流符号疑点仍待审。",
+              "before": "blueprint/ch04/validation/transcription-repair-20261011/BEFORE.json",
+              "visual_sha256": {
+                "blueprint/ch04/source_pages/p195-split-detail.png": "2187e0fc326143559f3ee751a3d628e8168e8376ed833d5b4d440bb1cf5039b0",
+                "blueprint/ch04/source_pages/p196-spin-detail.png": "103c0a22caee08e216a7a749055fb24cd007afd063c43f0139555845b335c501"
+              }
+            },
+            {
+              "date": "2026-10-13",
+              "reason": "BATCH25首次依赖审校：整个所引句位于印刷172/PDF194，不在173/195；末尾原书为逗号，下一页接i.e. we compose the flows of。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "整个所引句位于印刷172/PDF194，不在173/195；末尾原书为逗号，下一页接i.e. we compose the flows of。"
+        ],
+        "evidence": [
+          "PDF 194/印刷172末段：If T is a diagonal matrix, T = diag(I₁,I₂,I₃), ... three axes of inertia,",
+          "PDF 195/印刷173页首接i.e. we compose the flows of及三个子系统。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.principalAxisField",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 Pi.single i (π i/I i)展开为第i位置π_i/I_i、其余位置0，因此定义确实给出按分量解释的一个子场。但本条冻结范围是PDF194整句：对角T下分裂Euler方程并用连续轴旋转近似求解。当前签名没有T、对角条件、原Euler场与子场之和的等式、流复合或近似结论，仅给一个向量场；不能覆盖全部所引结论。[EXTRA]补π₂/π₃是合理勘误候选而非原式已成立的假设，应明确分离。无sorry。",
+        "counterexample": "缺失条款：T=diag(I₁,I₂,I₃)时eulerRigidField等于三个principalAxisField之和，以及相应子流复合近似的声明。",
+        "suggested_fix": "将本定义的source scope明确缩为单子场；另立完整分裂与旋转复合的一致性/近似陈述，显式对角T、正主惯量与步长极限；原书缺下标勘误另行记录。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-AxisFlowFormal",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 195/印刷173三个子系统后：Each of these is, it turns out, easily integrated as a planar rotation (see Exercise 7).",
+          "PDF 196/印刷174原算法为正角Θ^x(hπ₁/I₁)、列动量Θπ、姿态Θ_kΘᵀ；PDF194式(4.41)为π×T⁻¹π。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.axisFlow",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 spinAxis展开为R=axisRotation i(tπ_i/I_i)，输出(Rπ,ΘRᵀ)；HasDerivAt对实时间求整个三维动量的导数，∀I,π,i且I_i>0，∀t。正角导数为ω×π，签名右端为π×ω，符号相反；[ERRATUM?]在原矩阵与列动量约定下成立。I_i>0合理且足够，但不能修复符号。axisFlow含sorry，仅记录证明未完成，FAIL依据签名反例。",
+        "counterexample": "取I=(1,1,1)，π=(1,1,0)，i=0，t=0。γ(t)=(1,cos t,sin t)，γ′(0)=(0,0,1)；cross3(γ(0),Pi.single 0 1)=(0,0,−1)。",
+        "suggested_fix": "忠实精确子流应使用axisRotation i(−tπ_i/I_i)作用于列动量，并显式γ(0)=π及轴分量恒定；保留原书正角算法作为独立印刷版本，不静默修书。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-SpinPoissonFormal",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 195/印刷173：This yields a simple, efficient algorithm for the free rigid body which is symplectic in a generalized sense.",
+          "PDF 194/印刷172：三维依赖π且退化的结构矩阵J̃(π)=skew(π)，说明此处generalized sense为非canonical几何结构。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.spinPoisson",
+        "verdict": "PASS",
+        "explanation": "依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 展开spinStep为x(h/2)∘y(h/2)∘z(h)∘y(h/2)∘x(h/2)五步，spinAxis的动量部分为正角Rπ，初始姿态1不影响动量。Statements.lean中poissonMap展开为∀π，D_ij=(fderiv ℝ G π)(e_j)_i，D skewMatrix(π) Dᵀ=skewMatrix(Gπ)。这确实是自由刚体三维约化动量上的Poisson保持，不是空谓词或抽象替代；对应本条generalized symplectic的几何结论。正角各步是相应负时间Hamiltonian子流，同样Poisson；故axisFlow符号FAIL不推出本条FAIL。∀I正主惯量、∀h合理；[EXTRA]明确约化动量范围，与自由刚体段落一致，不覆盖后续含姿态的完整算法。简单/高效为定性描述，无定量复杂度命题。spinPoisson含sorry；PASS只判签名语义，不声称已验证其证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-RigidPoissonSkew",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 194/印刷172：(4.41)后where J̃(π)=skew(π) is obviously skew symmetric。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidPoissonSkew",
+        "verdict": "PASS",
+        "explanation": "依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 rigidPoissonMatrix展开为skewMatrix(π)=[[0,−π₂,π₁],[π₂,0,−π₀],[−π₁,π₀,0]]。∀π，矩阵转置等于负矩阵，恰是原书skew symmetric，无Jacobi或非退化附加断言；无额外假设。Ch04.lean该声明有逐分量证明，无sorry；本次只读，不作编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-RigidHamiltonianField",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 194/印刷172：(4.41)及其后π̇=J̃(π)∇H̃，J̃=skew(π)，H̃=πᵀT⁻¹π/2。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidHamiltonianField",
+        "verdict": "PASS",
+        "explanation": "依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 eulerRigidField=π×(T⁻¹π)，rigidPoissonMatrix=skewMatrix(π)；dot=Σ_i x_i y_i；grad= textbookConstraintGradient，后者在ConstrainedProjection.lean展开为i↦(fderiv ℝ H π)(Pi.single i 1)，为真实坐标梯度而非假设。原式的对象、所有能量因子及梯度位置完整保留。∀T,π，T.PosDef是物理非退化惯量的合理资格，提供对称与可逆性；对称性保证此二次型梯度为T⁻¹π，无把结论作假设。skew性质已由单列RigidPoissonSkew覆盖。[EXTRA]正定性强于此等式所需的对称性，但在使用T⁻¹的物理惯量范围合理。Ch04.lean有Fréchet微分和逐分量证明，无sorry；本次未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

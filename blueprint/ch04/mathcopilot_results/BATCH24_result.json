@@ -1,0 +1,444 @@
+{
+  "batch": "BATCH24",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "6cacfb241d98b1d8b7d6d27586d392a02cd785dac5310bfede8f1082d04cd611",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4.1-AngularMomentum",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-AngularMomentum",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.1",
+          "printed_page": "171",
+          "pdf_page": "193",
+          "statement_latex": "The angular momentum vector in the reference frame is given by $l=\\sum_{i=1}^Nm_i\\delta_i\\times\\dot\\delta_i$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$m_i$ 为粒子质量，$\\delta_i=q_i-q_{cm}\\in\\mathbb R^3$，$\\dot\\delta_i$ 是其时间导数；$l$ 是空间参考系角动量。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.angularMomentum",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补齐context_notation并按原页核对",
+              "pdf_page": "193"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation未给足原文对象及记号解释；补入原文语境并区分Lean形式化说明。"
+        ],
+        "evidence": [
+          "已查看教材PDF第193页渲染图（印刷第171页）；页码满足PDF=印刷+22；陈述公式与原页逐项核对。",
+          "相关记号的前文来源：PDF190–191（印刷168–169），δ(t)=Θ(t)δ(0)、（4.38）、（4.39）、ω_b及T。",
+          "本项proof_latex=null；未虚构独立证明。Lean目标片段已阅读：本批三条theorem含by证明而非sorry；语义判定不依赖此事实，未运行Lean编译检查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.angularMomentum",
+        "verdict": "PASS",
+        "explanation": "依赖 ReviewDefinitions.lean：V=Fin 3→ℝ；cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)（Lean下标0起）；angularMomentum=∑i mᵢ•cross3 δᵢ vᵢ。取 vᵢ=δ̇ᵢ，Fin N 是原1…N重编号，公式完整。质量正性不是该代数定义所必需。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-BodyMomentum",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-BodyMomentum",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.1",
+          "printed_page": "171",
+          "pdf_page": "193",
+          "statement_latex": "Define $\\pi=\\Theta^Tl$, the angular momentum vector referred to the body frame of reference.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\Theta$ 是从初始体坐标到空间坐标的正交旋转矩阵；$l$ 为空间角动量，$\\pi=\\Theta^Tl$ 为体坐标角动量。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.bodyMomentum",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补齐context_notation并按原页核对",
+              "pdf_page": "193"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation未给足原文对象及记号解释；补入原文语境并区分Lean形式化说明。"
+        ],
+        "evidence": [
+          "已查看教材PDF第193页渲染图（印刷第171页）；页码满足PDF=印刷+22；陈述公式与原页逐项核对。",
+          "相关记号的前文来源：PDF190–191（印刷168–169），δ(t)=Θ(t)δ(0)、（4.38）、（4.39）、ω_b及T。",
+          "本项proof_latex=null；未虚构独立证明。Lean目标片段已阅读：本批三条theorem含by证明而非sorry；语义判定不依赖此事实，未运行Lean编译检查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.bodyMomentum",
+        "verdict": "PASS",
+        "explanation": "依赖 Mat3=Matrix(Fin 3)(Fin 3)ℝ、V=Fin 3→ℝ，bodyMomentum Θ l=Θᵀ*ᵥl，即分量 ∑j Θ[j,i]l[j]。与原π=Θᵀl一致。定义允许任意矩阵是代数延拓；作为体坐标解释时取上下文旋转矩阵。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-AngularInertia",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-AngularInertia",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4.1",
+          "printed_page": "171",
+          "pdf_page": "193",
+          "statement_latex": "From Eq. (4.39) we may write this as $l=\\sum_im_i\\delta_i\\times\\omega\\times\\delta_i$, from which, using the vector triple product identity $a\\times b\\times c=(a\\cdot c)b-(a\\cdot b)c$, we obtain $l=\\sum_im_i[\\|\\delta_i\\|^2I-\\delta_i\\delta_i^T]\\omega$. Define $\\pi=\\Theta^Tl$, then we have (using $\\delta_i=\\Theta\\delta_i(0)$): $\\pi=T\\omega_b$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\delta_i(t)=\\Theta(t)\\delta_i(0)$，$\\dot\\delta_i=\\omega\\times\\delta_i$（4.39）；$\\omega_b=\\Theta^T\\omega$。",
+            "$T=\\sum_{i=1}^Nm_i[\\|\\delta_i(0)\\|^2I-\\delta_i(0)\\delta_i(0)^T]$；$\\pi=\\Theta^Tl$。",
+            "原书三重叉积未加括号；原页给出的恒等式及（4.39）确定其为右嵌套 $a\\times(b\\times c)$，保留原排版，不默改。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.angularInertia",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "真实SO(3)矩阵和cross3，嵌套为δ×(ω×δ)；原无括号三重积含糊，明确上下文对象。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补齐context_notation并按原页核对",
+              "pdf_page": "193"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation未给足原文对象及记号解释；补入原文语境并区分Lean形式化说明。",
+          "原页包含推导/解释，现proof_latex=null表示未单列独立证明，不能解读为原页没有推导；推导已在statement及审计中核对。"
+        ],
+        "evidence": [
+          "已查看教材PDF第193页渲染图（印刷第171页）；页码满足PDF=印刷+22；陈述公式与原页逐项核对。",
+          "相关记号的前文来源：PDF190–191（印刷168–169），δ(t)=Θ(t)δ(0)、（4.38）、（4.39）、ω_b及T。",
+          "本项proof_latex=null；未虚构独立证明。Lean目标片段已阅读：本批三条theorem含by证明而非sorry；语义判定不依赖此事实，未运行Lean编译检查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.angularInertia",
+        "verdict": "PASS",
+        "explanation": "展开 bodyMomentum=Θᵀ*ᵥl、angularMomentum=∑mᵢ•cross3 δᵢ vᵢ、dot u v=∑uᵢvᵢ、outer δ[i,j]=δ[i]δ[j]、inertiaTensor=∑mᵢ•((dot δᵢ δᵢ)•1−outer δᵢ)，cross3 是真实三维叉积。Lean δ 是原δ(0)，Θδ是现时δ，速度显式为ω×Θδ，右侧Θᵀω正是ω_b。最终等式给出π=Tω_b；取Θ=1还给出空间惯性公式；三重积为右嵌套，其恒等式是所用代数改写。对象及量词正确。[EXTRA] 正交性合理；det=1对这个含两次叉积的恒等式并非必要（所有正交矩阵都成立），但对物理旋转合理，无循环假设。原无括号不构成需改数学公式的ERRATUM。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-EulerRigidField",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-EulerRigidField",
+          "kind": "definition",
+          "label": "(4.41)",
+          "section": "4.4.1",
+          "printed_page": "172",
+          "pdf_page": "194",
+          "statement_latex": "but since $\\omega_b=T^{-1}\\pi$, we may conclude $\\dot\\pi=\\pi\\times T^{-1}\\pi$. These are the so-called Euler equations for the free rigid body.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "无外力的自由刚体，$\\pi=\\Theta^Tl$，$T$ 为固定体坐标惯性张量；本页使用可逆 $T$，$\\omega_b=T^{-1}\\pi$；点表示时间导数。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.eulerRigidField",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补齐context_notation并按原页核对",
+              "pdf_page": "194"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation未给足原文对象及记号解释；补入原文语境并区分Lean形式化说明。",
+          "原页包含推导/解释，现proof_latex=null表示未单列独立证明，不能解读为原页没有推导；推导已在statement及审计中核对。"
+        ],
+        "evidence": [
+          "已查看教材PDF第194页渲染图（印刷第172页）；页码满足PDF=印刷+22；陈述公式与原页逐项核对。",
+          "相关记号的前文来源：PDF190–191（印刷168–169），δ(t)=Θ(t)δ(0)、（4.38）、（4.39）、ω_b及T。",
+          "本项proof_latex=null；未虚构独立证明。Lean目标片段已阅读：本批三条theorem含by证明而非sorry；语义判定不依赖此事实，未运行Lean编译检查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.eulerRigidField",
+        "verdict": "PASS",
+        "explanation": "展开 V、Mat3 与 cross3；eulerRigidField(T,π)=π×(T⁻¹π)，准确给出（4.41）右端的向量场。该项标为definition，不把函数定义误说成轨道方程或解存在定理。物理解释要求上下文可逆惯性张量；Lean对任意矩阵的逆运算延拓不影响可逆实例。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-FreeRigidSolution",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-FreeRigidSolution",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.1",
+          "printed_page": "172",
+          "pdf_page": "194",
+          "statement_latex": "$\\dot\\pi=\\pi\\times T^{-1}\\pi$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "这是（4.41）的原公式，原书未另行定义一个命名的解关系。",
+            "无外力自由刚体；$\\pi(t)\\in\\mathbb R^3$，$T$ 为固定、可逆的体坐标惯性张量；点表示时间导数。",
+            "Lean 用集合 $I$ 上 HasDerivWithinAt 表示解，是形式化选择而非原文记号；不声称轨道存在。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.freeRigidSolution",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补齐context_notation并按原页核对",
+              "pdf_page": "194"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation未给足原文对象及记号解释；补入原文语境并区分Lean形式化说明。"
+        ],
+        "evidence": [
+          "已查看教材PDF第194页渲染图（印刷第172页）；页码满足PDF=印刷+22；陈述公式与原页逐项核对。",
+          "相关记号的前文来源：PDF190–191（印刷168–169），δ(t)=Θ(t)δ(0)、（4.38）、（4.39）、ω_b及T。",
+          "本项proof_latex=null；未虚构独立证明。Lean目标片段已阅读：本批三条theorem含by证明而非sorry；语义判定不依赖此事实，未运行Lean编译检查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.freeRigidSolution",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "已展开 freeRigidSolution=∀t∈I, HasDerivWithinAt π (cross3 (π t) (T⁻¹*ᵥπ t)) I t；依赖中的 eulerRigidField、cross3、V、Mat3均已展开。结构上是逐时欧拉方程，未假设轨道存在。但 Ch04_deps.txt 只有 HasDerivWithinAt 的使用和导入，找不到该谓词的定义及其底层导数定义；按必须展开定义的要求，不能完成此处限定集合导数与原点导数的严格审计。尤其任意集合I（孤立点）与时间区间解须区分。",
+        "counterexample": null,
+        "suggested_fix": "补充 Mathlib 的 HasDerivWithinAt 及所依赖 HasFDerivWithinAt 定义摘录；明确I为时间区间，并说明端点为单侧/集合内导数，重新审计。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-RigidInvariants",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "SOURCE_TEXT_OMISSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-RigidInvariants",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4.1",
+          "printed_page": "172",
+          "pdf_page": "194",
+          "statement_latex": "Thus the Euler equations are in the form of a Hamiltonian system on a three-dimensional phase space. The symplectic structure matrix is dependent on the phase variables, and it is degenerate: $\\widetilde J\\pi=\\pi\\times\\pi=0$, signifying that total angular momentum is conserved: $\\|\\pi\\|=\\mathrm{constant}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\widetilde J(\\pi)=\\operatorname{skew}(\\pi)$，$\\widetilde H=\\pi^TT^{-1}\\pi/2$；$\\pi$ 为自由刚体的体坐标角动量。",
+            "$\\|\\pi\\|$ 为欧氏长度。原书称退化矩阵为 symplectic structure matrix；保留措辞，此处是退化的 Hamiltonian/Poisson 表述，不能将其解读为非退化辛形式。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rigidInvariants",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "对称正定T、实际连续闭区间轨道，证明原能量H̃=πᵀT⁻¹π/2和角动量平方同时守恒；不假设任一守恒。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补齐context_notation并按原页核对",
+              "pdf_page": "194"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation未给足原文对象及记号解释；补入原文语境并区分Lean形式化说明。",
+          "PDF194原句以“Thus the Euler equations”起，摘录漏Thus；补回，不修改原书symplectic措辞。",
+          "原页包含推导/解释，现proof_latex=null表示未单列独立证明，不能解读为原页没有推导；推导已在statement及审计中核对。"
+        ],
+        "evidence": [
+          "已查看教材PDF第194页渲染图（印刷第172页）；页码满足PDF=印刷+22；陈述公式与原页逐项核对。",
+          "相关记号的前文来源：PDF190–191（印刷168–169），δ(t)=Θ(t)δ(0)、（4.38）、（4.39）、ω_b及T。",
+          "本项proof_latex=null；未虚构独立证明。Lean目标片段已阅读：本批三条theorem含by证明而非sorry；语义判定不依赖此事实，未运行Lean编译检查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidInvariants",
+        "verdict": "FAIL",
+        "explanation": "展开 dot、freeRigidSolution、eulerRigidField、cross3 后，结论只保证固定闭区间上两倍能量及欧氏角动量平方与初值相等；平方守恒等价于欧氏长度守恒。[EXTRA] a≤b及真实解关系合理；连续性由导数关系可得，属冗余但合理；正定性比角动量守恒所需更强，固定对称可逆T足以做能量守恒，并符合非退化惯性模型。缺失原statement_scope明确包含的三维Hamiltonian表示、结构矩阵依赖π及退化J̃π=0；不能凭另一个source_id补全本项。另，Matrix.PosDef、ContinuousOn、HasDerivWithinAt 的定义未收录于依赖摘录，只见导入/使用，不能声称这些已逐层展开；缺失结论已足以判FAIL。",
+        "counterexample": "缺失条款：签名完全不提J̃、Hamiltonian向量场表示或J̃π=0。两项标量守恒本身无法推出某个指定矩阵的退化性，例如零场也可保存两项标量而使用单位矩阵；这不是原欧拉方程的反例，而是缺失子句的独立性说明。",
+        "suggested_fix": "保留现有守恒结论，另在本声明加入J̃π=0以及实际梯度的Hamiltonian场表示和矩阵定义/反对称性；或将本JSON范围明确缩小为守恒子句并为剩余子句建立可追踪独立条目。补充PosDef、ContinuousOn、HasDerivWithinAt定义。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-RigidPoissonMatrix",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-RigidPoissonMatrix",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.1",
+          "printed_page": "172",
+          "pdf_page": "194",
+          "statement_latex": "$\\dot\\pi=\\widetilde J(\\pi)\\nabla\\widetilde H$, where $\\widetilde J(\\pi)=\\operatorname{skew}(\\pi)$ is obviously skew symmetric, and $\\widetilde H=\\pi^TT^{-1}\\pi/2$ is the energy function.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\pi\\in\\mathbb R^3$，$T$ 为固定体坐标惯性张量；$\\nabla$ 是欧氏坐标梯度。",
+            "$\\operatorname{skew}(v)=\\begin{pmatrix}0&-v_3&v_2\\\\v_3&0&-v_1\\\\-v_2&v_1&0\\end{pmatrix}$，满足 $\\operatorname{skew}(v)w=v\\times w$（4.38）。",
+            "本条原文范围包括场恒等式、反对称性及能量函数；原 context_notation 的“另条”不能取消 statement_scope 中的这些子句。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rigidPoissonMatrix",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补齐context_notation并按原页核对",
+              "pdf_page": "194"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation未给足原文对象及记号解释；补入原文语境并区分Lean形式化说明。"
+        ],
+        "evidence": [
+          "已查看教材PDF第194页渲染图（印刷第172页）；页码满足PDF=印刷+22；陈述公式与原页逐项核对。",
+          "相关记号的前文来源：PDF190–191（印刷168–169），δ(t)=Θ(t)δ(0)、（4.38）、（4.39）、ω_b及T。",
+          "本项proof_latex=null；未虚构独立证明。Lean目标片段已阅读：本批三条theorem含by证明而非sorry；语义判定不依赖此事实，未运行Lean编译检查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidPoissonMatrix",
+        "verdict": "FAIL",
+        "explanation": "依赖 rigidPoissonMatrix π=skewMatrix π；skewMatrix π=[[0,−π₂,π₁],[π₂,0,−π₀],[−π₁,π₀,0]]，即正确的三维叉乘矩阵。签名仅定义J̃。原文同时包含π̇=J̃∇H̃、J̃反对称和H̃=πᵀT⁻¹π/2；定义未表述后两项对象/性质及场恒等式。context_notation中“另条”与当前statement_scope全句范围冲突，不能据此给完整原句PASS。",
+        "counterexample": "缺失条款：声明没有T、H̃、梯度或π̇，故没有Hamiltonian场等式及能量定义；矩阵反对称可由展开计算得出，但并未作为本声明的结论。",
+        "suggested_fix": "增加能量定义和在对称可逆惯性张量下的场恒等式、反对称性声明，并绑定本source_id；或者把本项原文范围缩为J̃(π)=skew(π)，其余子句显式映射到独立条目。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.1-PoissonDegeneracy",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-PoissonDegeneracy",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4.1",
+          "printed_page": "172",
+          "pdf_page": "194",
+          "statement_latex": "$\\widetilde J\\pi=\\pi\\times\\pi=0$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\widetilde J=\\widetilde J(\\pi)=\\operatorname{skew}(\\pi)$，$\\pi\\in\\mathbb R^3$；零为三维零向量。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.poissonDegeneracy",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "action": "补齐context_notation并按原页核对",
+              "pdf_page": "194"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原context_notation未给足原文对象及记号解释；补入原文语境并区分Lean形式化说明。"
+        ],
+        "evidence": [
+          "已查看教材PDF第194页渲染图（印刷第172页）；页码满足PDF=印刷+22；陈述公式与原页逐项核对。",
+          "相关记号的前文来源：PDF190–191（印刷168–169），δ(t)=Θ(t)δ(0)、（4.38）、（4.39）、ω_b及T。",
+          "本项proof_latex=null；未虚构独立证明。Lean目标片段已阅读：本批三条theorem含by证明而非sorry；语义判定不依赖此事实，未运行Lean编译检查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.poissonDegeneracy",
+        "verdict": "PASS",
+        "explanation": "展开 rigidPoissonMatrix=skewMatrix，逐分量乘π得(−π₂π₁+π₁π₂,π₂π₀−π₀π₂,−π₁π₀+π₀π₁)=0；cross3 π π同样逐分量为零。∀π覆盖原公式，π=0时仍成立；无额外假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

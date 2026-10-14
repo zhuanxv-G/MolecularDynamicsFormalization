@@ -1,0 +1,181 @@
+{
+  "batch": "BATCH09",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "8568ff093c3f9347af843d5e814471741db186774809a8da9d9dbc5130a62689",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3-GramInvertible",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-GramInvertible",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "153",
+          "pdf_page": "175",
+          "statement_latex": "Assuming $g'(q)M^{-1}g'(q)^T$ is invertible, we may solve for $\\lambda$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$q,p\\in\\mathbb R^{N_c}$ 为位置和动量；$M$ 为质量矩阵，$F(q)=-\\nabla U(q)$（PDF174/印刷152，(4.7)–(4.8)）。",
+            "$g:\\mathbb R^{N_c}\\to\\mathbb R^l$ 汇集约束，$g\\prime(q)$ 为其 Jacobian，$\\lambda\\in\\mathbb R^l$ 为 Lagrange 乘子（PDF174/印刷152）。",
+            "$\\varphi_k=p^TM^{-1}\\nabla^2g_k(q)M^{-1}p$，且 $g\\prime(q)M^{-1}[F-g\\prime(q)^T\\lambda]+\\varphi\\equiv0$（PDF175/印刷153，页首两个展示公式）。"
+          ],
+          "issues": [
+            "原context_notation为空，补录引文所依赖的教材记号及乘子线性方程；未改动原书文字或将额外正则性写成原书断言。"
+          ],
+          "lean_decl": "MD.Ch04.gramInvertible",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookConstraintGram_det_ne_zero"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]质量正及梯度独立推出真实Gram det≠0；不是将该结论作为前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH09 first-with-deps：核对PDF175渲染页及PDF174上下文，补充context_notation。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex逐字内容与PDF175吻合（数学字体、换行作LaTeX转写）；印刷153对应PDF175，section=4.3正确。proof_latex=null合理，原页没有单独证明段。context_notation遗漏必要上下文，已补齐。"
+        ],
+        "evidence": [
+          "PDF175/印刷153：已查看渲染页，乘子线性方程之后的段落包含该引文；PDF174/印刷152：(4.7)–(4.10)及co-tangent bundle定义说明各记号。",
+          "PDF175：“Assuming … is invertible, we may solve for λ.”，原文并未在这里证明Gram可逆。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.gramInvertible",
+        "verdict": "FAIL",
+        "explanation": "已展开依赖：textbookConstraintGradient(γ_j,q)_i=Dγ_j(q)[e_i]（ConstrainedProjection）；textbookConstraintJacobian 的第j行为此梯度，textbookInverseMassMatrix=diag(1/m_i)，textbookConstraintGram=A=G diag(1/m_i) Gᵀ（CotangentProjection）。实际签名对任意m、γ、q，在正质量及梯度线性独立下只得 det A≠0。两项[EXTRA]是物理上合理的充分条件；正质量并非一般可逆矩阵所必需，梯度独立在正质量模型中对应非退化。原文把可逆性作为前提，结论是由线性方程解出λ；当前签名没有F、p、φ、λ，也没有解的存在或唯一性，故是有用的充分条件引理而非该整句的忠实形式化。依赖ConstrainedReaction已定义ρ=A⁻¹(GM⁻¹F+φ)并证明balance，但该结论未进入本声明。无[ERRATUM?]标记；无需认定原书错误。当前声明及所调用Gram引理展示的是实际证明，未含sorry；此事实不能补足签名缺失，且本次未进行工程编译。",
+        "counterexample": "缺失结论（不是该Gram引理的数值反例）：签名仅有det A≠0，无法直接表达或推出作为其结论的“存在唯一λ满足GM⁻¹(F−Gᵀλ)+φ=0”，因为F、p、λ均未出现在签名中。",
+        "suggested_fix": "保留现有引理并标注为可逆性的充分条件补充；为该source_id增加以det A≠0为前提的乘子解定理，结论为∃! λ, G*ᵥ(D*ᵥ(F q−Gᵀ*ᵥλ))+φ=0，并给λ=A⁻¹*ᵥ(G*ᵥ(D*ᵥF q)+φ)。可引用已展开的textbookConstrainedReactionMultiplier及textbookConstrainedReaction_balance，另补唯一性。若仅保留现有签名，应缩小该条的statement_scope至明确的[EXTRA]充分条件引理而非原句全部结论。"
+      }
+    },
+    {
+      "source_id": "MD-4.3-CotangentInvariant",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-CotangentInvariant",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "153",
+          "pdf_page": "175",
+          "statement_latex": "Reinserting this expression for $\\lambda$ into (4.8) then gives a system of ordinary differential equations whose solutions, starting from a point on $T^*\\mathcal M$, will remain on $T^*\\mathcal M$ for all time. The co-tangent bundle becomes an invariant manifold of this ODE system. $\\lambda$ is defined at any time by the physical variables $q$ and $p$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$q,p\\in\\mathbb R^{N_c}$ 为位置和动量；$M$ 为质量矩阵，$F(q)=-\\nabla U(q)$（PDF174/印刷152，(4.7)–(4.8)）。",
+            "$g:\\mathbb R^{N_c}\\to\\mathbb R^l$ 汇集约束，$g\\prime(q)$ 为其 Jacobian，$\\lambda\\in\\mathbb R^l$ 为 Lagrange 乘子（PDF174/印刷152）。",
+            "$\\varphi_k=p^TM^{-1}\\nabla^2g_k(q)M^{-1}p$，且 $g\\prime(q)M^{-1}[F-g\\prime(q)^T\\lambda]+\\varphi\\equiv0$（PDF175/印刷153，页首两个展示公式）。",
+            "$\\mathcal M=\\{q:g(q)=0\\}$；$T^*\\mathcal M=\\{(q,p):g(q)=0,\\ g\\prime(q)M^{-1}p=0\\}$（PDF174/印刷152）。"
+          ],
+          "issues": [
+            "原context_notation为空，补录引文所依赖的教材记号及乘子线性方程；未改动原书文字或将额外正则性写成原书断言。"
+          ],
+          "lean_decl": "MD.Ch04.cotangentInvariant",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookConstrainedODE_cotangent_invariant_of_mass_and_independence"
+          ],
+          "extra_assumptions": [
+            "给定闭区间实际ODE解、C²约束、正质量及沿解梯度独立；“for all time”仅在实际解定义区间，不声称任意长时域解存在。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH09 first-with-deps：核对PDF175渲染页及PDF174上下文，补充context_notation。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex逐字内容与PDF175吻合（数学字体、换行作LaTeX转写）；印刷153对应PDF175，section=4.3正确。proof_latex=null合理，原页没有单独证明段。context_notation遗漏必要上下文，已补齐。"
+        ],
+        "evidence": [
+          "PDF175/印刷153：已查看渲染页，乘子线性方程之后的段落包含该引文；PDF174/印刷152：(4.7)–(4.10)及co-tangent bundle定义说明各记号。",
+          "PDF175：“will remain … for all time”及“λ is defined … by … q and p”；原书未在此给全局存在证明，保留原话。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.cotangentInvariant",
+        "verdict": "PASS",
+        "explanation": "已展开梯度、Jacobian G、D=diag(1/m_i)、A=GDGᵀ，并展开ConstrainedReaction中的φ_j=D²γ_j(q)[Dp,Dp]及ρ(q,p)=A⁻¹(GDF(q)+φ)。所以hq和hp精确要求q̇=Dp、ṗ=F(q)−Gᵀρ(q,p)的实际解，并非预先假定约束保持。PDF174给出的T*𝓜是γ_j(q)=0与Dγ_j(q)[Dp]=0同时成立；结论对每个t∈[0,τ]和每个j确实保留全部两项。量词固定模型及曲线后，在沿曲线的非退化性和初始两项约束下推出不变性；λ由q,p确定已体现在hp使用的显式ρ定义中。任意位置力F是对原保守力的合理推广，取F=−∇U恢复原文。C²为两次求导的充分条件；正质量/沿解独立为A可逆的合理充分条件，并非最弱前提。闭区间实际解假设合理，不推出全局存在；τ<0时结论空泛，τ=0仅是初值，不影响正时间解区间的结论。这里“for all time”按已声明的实际解区间解释，未声称负时间或全局流；若需双向时间可另以任意含初始时刻的区间表述。未见[ERRATUM?]。本声明、所调用不变性引理及所读取证明链有实际证明，无sorry；签名判断独立于此，本次未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-ReducedFieldRegularity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-ReducedFieldRegularity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "153",
+          "pdf_page": "175",
+          "statement_latex": "Reinserting this expression for $\\lambda$ into (4.8) then gives a system of ordinary differential equations",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$q,p\\in\\mathbb R^{N_c}$ 为位置和动量；$M$ 为质量矩阵，$F(q)=-\\nabla U(q)$（PDF174/印刷152，(4.7)–(4.8)）。",
+            "$g:\\mathbb R^{N_c}\\to\\mathbb R^l$ 汇集约束，$g\\prime(q)$ 为其 Jacobian，$\\lambda\\in\\mathbb R^l$ 为 Lagrange 乘子（PDF174/印刷152）。",
+            "$\\varphi_k=p^TM^{-1}\\nabla^2g_k(q)M^{-1}p$，且 $g\\prime(q)M^{-1}[F-g\\prime(q)^T\\lambda]+\\varphi\\equiv0$（PDF175/印刷153，页首两个展示公式）。"
+          ],
+          "issues": [
+            "原context_notation为空，补录引文所依赖的教材记号及乘子线性方程；未改动原书文字或将额外正则性写成原书断言。"
+          ],
+          "lean_decl": "MD.Ch04.reducedFieldRegularity",
+          "reusable_proofs": [
+            "MolecularDynamics.contDiffAt_textbookConstrainedPhaseVectorField_of_mass_and_independence"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]C³约束/C¹位置力、质量正、真实梯度独立给局部C¹场；是隐含正则性的独立补充，不冒充构造流存在。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH09 first-with-deps：核对PDF175渲染页及PDF174上下文，补充context_notation。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex逐字内容与PDF175吻合（数学字体、换行作LaTeX转写）；印刷153对应PDF175，section=4.3正确。proof_latex=null合理，原页没有单独证明段。context_notation遗漏必要上下文，已补齐。"
+        ],
+        "evidence": [
+          "PDF175/印刷153：已查看渲染页，乘子线性方程之后的段落包含该引文；PDF174/印刷152：(4.7)–(4.10)及co-tangent bundle定义说明各记号。",
+          "PDF175：“Reinserting this expression … gives a system of ordinary differential equations”；原句止于所抽取片段，C¹不是原句明说的结论。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.reducedFieldRegularity",
+        "verdict": "PASS",
+        "explanation": "已展开PotentialForce(U,q)_i=−DU(q)[e_i]；梯度为Dγ_j(q)[e_i]，G为相应行矩阵，D=diag(1/m_i)，A=GDGᵀ，φ_j=D²γ_j(q)[Dp,Dp]，ρ=A⁻¹(GDF+φ)。ConstrainedReactionRegularity中的textbookConstrainedPhaseVectorField(z)实际等于(D z.2,−∇U(z.1)−G(z.1)ᵀρ(z.1,z.2))，故所研究对象就是将λ代回(4.8)所得的约化ODE右端。签名对任意相点z（不强加在约束集上），以正质量、该点梯度独立、U全局C²及约束全局C³推出该场在z处C¹；没有偷换为抽象场或假定反作用可微。C³使Hessian曲率项C¹，U C²使力C¹；这些是合理充分条件，但局部同等正则性即可，非最弱必要假设。原句本身只说得到ODE，并未声称C¹；本条已在[EXTRA]明确声明为独立正则性补充，因此按这一明示扩展范围PASS，不应当把C¹作为原书逐字断言或把本结论当作构造流/全局存在。未见[ERRATUM?]。本声明及对应正则性引理展示实际证明，无sorry；本次只做签名审计，未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

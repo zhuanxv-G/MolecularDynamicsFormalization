@@ -1,0 +1,397 @@
+{
+  "batch": "BATCH07",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "8ae8b703a49ea6e1b4eeafff09659139ca6ecb92ef24f677837b6a564a4dd411",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.2.2-LieCoordinates",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-LieCoordinates",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "statement_latex": "$\\mathcal L_fv=\\sum_i f_i\\frac{\\partial v}{\\partial z_i}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "z∈ℝ^m，f_i为向量场f的第i个坐标，v为可微标量函数，求和遍历所有m个坐标；本页通过截断内积公式使用Lie导数的坐标表达，并无独立同形展示公式。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.lieCoordinates",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际Euclidean规范基、Fréchet导数线性和坐标投影，明确原文全部有限求和；恒等式不要求另造形式梯度。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。"
+        ],
+        "evidence": [
+          "教材PDF页206（印刷页185），已读取文字并目视核对页面图像；页码偏移+21正确。",
+          "页206截断内积公式右端u∑i f_i ∂v/∂z_i，支持提取的Lie坐标表达；不是独立编号公式。",
+          "proof_latex=null可接受：此处无另立的完整证明；所选截断条目已在statement_latex中保留分部积分推导。未将原书疑误静默修正。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.lieCoordinates",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义；只从版本绑定的 Ch05_deps.txt 展开项目自定义定义，不以 Mathlib 定义体未收录为材料不足。项目 ReviewDefinitions.lean 的 E n 展开为 EuclideanSpace ℝ (Fin n)，即欧氏 ℝⁿ，volume 是标准 Lebesgue 测度。项目 lie f g z=(fderiv ℝ g z)(f z)。核对教材 PDF 页206的 Lie 坐标表达及 Ch05.lean 的 ∀n f g z：将 f(z)按标准规范基 e_i 展开，线性导数作用后得到∑i f_i(z)Dg(z)[e_i]，与原式完全对应，g/v仅重命名。原文可微语境下 Dg[e_i]为实际偏导；无可微假设的签名还包括 fderiv 的总化延伸，不改变可微语境的公式。[EXTRA]规范基、线性性、坐标投影属于合理表示选择，不是凭空添加的导数对象。本条无[ERRATUM?]。文件中有显式证明、无sorry；此处是只读签名审计，未运行编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-DivergenceCoordinates",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-DivergenceCoordinates",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "statement_latex": "$\\frac{\\partial\\rho}{\\partial t}=-\\sum_i\\left(\\rho\\frac{\\partial f_i}{\\partial z_i}+f_i\\frac{\\partial\\rho}{\\partial z_i}\\right)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "ρ(z;t)是随向量场f输运的光滑概率密度；z∈ℝ^m，求和遍历所有坐标，偏导对时间或相应空间坐标取。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.divergenceCoordinates",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际可微向量场的导数迹等于所有坐标对角偏导之和；和LiouvilleProduct共同保留原完整展开，不将任意矩阵命名为Jacobian。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。"
+        ],
+        "evidence": [
+          "教材PDF页206（印刷页185），已读取文字并目视核对页面图像；页码偏移+21正确。",
+          "页206 An alternative form for the continuity equation 下方完整∂tρ坐标求和。",
+          "proof_latex=null可接受：此处无另立的完整证明；所选截断条目已在statement_latex中保留分部积分推导。未将原书疑误静默修正。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.divergenceCoordinates",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义；只从版本绑定的 Ch05_deps.txt 展开项目自定义定义，不以 Mathlib 定义体未收录为材料不足。项目 ReviewDefinitions.lean 的 E n 展开为 EuclideanSpace ℝ (Fin n)，即欧氏 ℝⁿ，volume 是标准 Lebesgue 测度。项目 divergence f z=LinearMap.trace ℝ (E n) (fderiv ℝ f z).toLinearMap，即实际 Fréchet 导数的迹。教材 PDF 页206、本source_id的完整陈述为∂tρ=-∑i(ρ∂i f_i+f_i∂iρ)。签名却仅有 ∀n f z、f在z点可微，以及 div f=∑i∂i f_i；没有ρ、时间或时间导数，也没有整个右侧的ρ权重及输运项。[EXTRA]点可微性是散度坐标引理的合理条件，但该引理及其他条目的组合不能替代本source_id的完整结论。FAIL缘于缺失陈述子句，与 Mathlib 定义体、sorry均无关；文件中本条有显式证明、无sorry。无[ERRATUM?]。",
+        "counterexample": "缺失条款：ρ(t,z)、∂tρ及完整连续性方程。例取n=1、f=0、ρ_t(z)=π^(-1/2)exp(-(z-t)²)，各时刻均为光滑概率密度。签名的散度等式成立，但∂tρ_t(z)=2(z-t)ρ_t(z)通常非零，而连续性右侧为0。此例说明仅该签名不能约束演化；它不满足静止流输运条件，故不是教材在输运条件下的反例。",
+        "suggested_fix": "保留 divergenceCoordinates 为辅助散度引理；本source_id增加ρ : ℝ→E n→ℝ和真实流输运及足够光滑性假设，给出∀t z，HasDerivAt (fun s => ρ s z) (-(∑i,ρ t z*D(f_i)(z)[e_i]+f z i*D(ρ t)(z)[e_i])) t。不可改动原文陈述以迁就辅助引理。"
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "statement_latex": "An alternative form for the continuity equation is:\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\sum_i\\left(\\rho\\frac{\\partial f_i}{\\partial z_i}+f_i\\frac{\\partial\\rho}{\\partial z_i}\\right).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "ρ(z;t)是随向量场f输运的光滑概率密度；f_i为f的坐标分量，求和遍历所有空间坐标。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.liouvilleProductCoordinates",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际点可微性；保存原整个有限求和右侧，连续性PDE左侧的时间导数由LiouvilleEquation完整条目保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。"
+        ],
+        "evidence": [
+          "教材PDF页206（印刷页185），已读取文字并目视核对页面图像；页码偏移+21正确。",
+          "页206 An alternative form for the continuity equation 及其下方公式；圆括号与方括号仅排版等价。",
+          "proof_latex=null可接受：此处无另立的完整证明；所选截断条目已在statement_latex中保留分部积分推导。未将原书疑误静默修正。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.liouvilleProductCoordinates",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义；只从版本绑定的 Ch05_deps.txt 展开项目自定义定义，不以 Mathlib 定义体未收录为材料不足。项目 ReviewDefinitions.lean 的 E n 展开为 EuclideanSpace ℝ (Fin n)，即欧氏 ℝⁿ，volume 是标准 Lebesgue 测度。项目 divergence f z=LinearMap.trace ℝ (E n) (fderiv ℝ f z).toLinearMap，即实际 Fréchet 导数的迹。项目 liouvillian f u z=-divergence (fun x => u x • f x) z。教材 PDF 页206明确称该式为连续性方程的另一形式，左侧是∂tρ。签名量化静态ρ : E n→ℝ，在f和ρ点可微条件下给出M_fρ的完整坐标展开；各空间项及负号正确，但没有时间密度、时间导数和输运关系。[EXTRA]实际点可微性合理；“时间导数由LiouvilleEquation另一条保留”只说明辅助分工，不使本source_id本身含有完整PDE。FAIL是缺失结论子句，直接采信 Mathlib 标准含义不会消除该缺项。本条有显式证明、无sorry；无[ERRATUM?]。",
+        "counterexample": "缺失条款：∂tρ=M_fρ。取n=1、f=0、ρ_t(z)=π^(-1/2)exp(-(z-t)²)。任一固定时刻静态M_fρ_t及其坐标展开都为0；时间导数为2(z-t)ρ_t(z)，通常非0。静态等式成立不足以推出动态方程；本例未假定被f=0的流输运，并非反驳教材的输运结论。",
+        "suggested_fix": "保留静态 liouvilleProductCoordinates 为辅助乘积引理；针对本source_id用ρ : ℝ→E n→ℝ、光滑生成流Φ及densityMeasure(ρ t)=Measure.map (Φ t) (densityMeasure(ρ 0))等真实输运条件，明确结论∀t z的时间导数等于整个负坐标求和。"
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-RectangularDomain",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材PDF页205（印刷页184），已读取文字并目视核对页面图像；页码偏移+21正确。",
+          "页205 Let A be a suitable region of volume V ... (say a rectangular m-dimensional box)，转录正确。",
+          "proof_latex=null可接受：此处无另立的完整证明；所选截断条目已在statement_latex中保留分部积分推导。未将原书疑误静默修正。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.rectangularDomain",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义；只从版本绑定的 Ch05_deps.txt 展开项目自定义定义，不以 Mathlib 定义体未收录为材料不足。项目 ReviewDefinitions.lean 的 E n 展开为 EuclideanSpace ℝ (Fin n)，即欧氏 ℝⁿ，volume 是标准 Lebesgue 测度。项目 Statements.lean 的 rectangle a b={z | ∀i,a i≤z i ∧ z i≤b i}；boxFace a b i side={z | z∈rectangle a b ∧ z i=side}。展开 MD.Ch05.rectangularDomain 就是上述 rectangle。教材 PDF 页205在一般合适区域后明确给出矩形m维盒这一例子，本条将该例子的维数及坐标端点具体化，定义未冒称覆盖任意形状区域。体积V是区域体积的描述记号，不是额外数值结论。[EXTRA]矩形特化合理；本定义可用于空或退化盒是集合定义的自然延伸，后续通量定理另有a_i<b_i。没有漏掉本条的定理结论，也没有[ERRATUM?]。定义不含sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-FaceFlux",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "SOURCE_SYMBOL_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-FaceFlux",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "184",
+          "pdf_page": "205",
+          "statement_latex": "$\\frac{d\\nu}{dt}=-\\int_{\\partial A}f\\cdot n\\,\\rho(z;t)\\,d\\sigma$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "ν(t)=∫_Aρ(z;t)dω；ρ为随f输运的光滑概率密度；n(z)为∂A上的单位外法向，dσ为表面积元。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.faceFlux",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]矩形单个面上ρfi的真实Hausdorff面积积分；正负法向由上下两个面的组合体现。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。",
+            "PDF页205质量分数符号为ϑ的字形对应原页希腊字母ν（nu），不是vartheta；须按实际原页保留ν。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。",
+          "PDF页205质量分数符号为ϑ的字形对应原页希腊字母ν（nu），不是vartheta；须按实际原页保留ν。"
+        ],
+        "evidence": [
+          "教材PDF页205（印刷页184），已读取文字并目视核对页面图像；页码偏移+21正确。",
+          "页205 The fraction ν ... 和负边界通量公式，随后明确n为单位外法向、dσ为表面积元。",
+          "proof_latex=null可接受：此处无另立的完整证明；所选截断条目已在statement_latex中保留分部积分推导。未将原书疑误静默修正。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.faceFlux",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义；只从版本绑定的 Ch05_deps.txt 展开项目自定义定义，不以 Mathlib 定义体未收录为材料不足。项目 ReviewDefinitions.lean 的 E n 展开为 EuclideanSpace ℝ (Fin n)，即欧氏 ℝⁿ，volume 是标准 Lebesgue 测度。项目 Statements.lean 的 rectangle a b={z | ∀i,a i≤z i ∧ z i≤b i}；boxFace a b i side={z | z∈rectangle a b ∧ z i=side}。项目 hausdorffArea d=ENNReal.ofReal(vol(B₁⊂ℝᵈ)/2^d) • Measure.hausdorffMeasure d，给出标准欧氏面积归一化（d=0为计数测度）；faceFlux f ρ a b i side=∫_{boxFace a b i side}ρ(z)f_i(z) dH^{n-1}，为真实单面面积分。教材 PDF 页205、本source_id的陈述是质量时间导数等于整个边界的负通量。MD.Ch05.faceFlux 只是单面上ρ f_i的无定向积分，参数side还可任取实数；没有时间密度、质量函数、HasDerivAt、外法向或全部面的组合。[EXTRA]单面Hausdorff积分作为辅助定义正确，上下两面组合可恢复法向符号，但本声明未给该组合和质量守恒结论。故FAIL为对象及结论缺失，不是对标准面积或积分含义的疑问。定义不含sorry；无[ERRATUM?]。",
+        "counterexample": "取n=1，A=[0,1]，f=1，ρ_t(z)=π^(-1/2)exp(-(z-t)²)，为平移流真实输运的光滑概率密度。t=0时质量导数=ρ_0(0)-ρ_0(1)>0，若用单独上面的负faceFlux则为-ρ_0(1)<0。必须加入下方面才能得到书中全边界负通量；单面定义本身也没有质量导数子句。",
+        "suggested_fix": "保留 faceFlux 为辅助定义；本source_id另给真实输运假设下的质量导数定理，结论使用所有下方面积分减上方面积分，或整个边界上真实单位外法向的负通量积分。保留原文完整陈述。"
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-BoxFluxBalance",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "SOURCE_SYMBOL_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-BoxFluxBalance",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "184",
+          "pdf_page": "205",
+          "statement_latex": "Using the divergence theorem, we may rewrite the latter quantity as a volume integral:\n\\[\\frac{d\\nu}{dt}=-\\int_A\\nabla\\cdot(f(z)\\rho(z;t))\\,d\\omega.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "ν(t)=∫_Aρ(z;t)dω；ρ为随f输运的光滑概率密度；A为适合散度定理的区域，矩形为原文例子，dω为体积元。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.fluxBalance",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原书矩形例子的全部面公式，和一般光滑域通量条目并存；实际被流输运的光滑密度。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。",
+            "PDF页205质量分数符号为ϑ的字形对应原页希腊字母ν（nu），不是vartheta；须按实际原页保留ν。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。",
+          "PDF页205质量分数符号为ϑ的字形对应原页希腊字母ν（nu），不是vartheta；须按实际原页保留ν。"
+        ],
+        "evidence": [
+          "教材PDF页205（印刷页184），已读取文字并目视核对页面图像；页码偏移+21正确。",
+          "页205 Using the divergence theorem ... as a volume integral 及页末负散度体积分；原页质量符号ν。",
+          "proof_latex=null可接受：此处无另立的完整证明；所选截断条目已在statement_latex中保留分部积分推导。未将原书疑误静默修正。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.fluxBalance",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义；只从版本绑定的 Ch05_deps.txt 展开项目自定义定义，不以 Mathlib 定义体未收录为材料不足。项目 ReviewDefinitions.lean 的 E n 展开为 EuclideanSpace ℝ (Fin n)，即欧氏 ℝⁿ，volume 是标准 Lebesgue 测度。项目 divergence f z=LinearMap.trace ℝ (E n) (fderiv ℝ f z).toLinearMap，即实际 Fréchet 导数的迹。项目 Statements.lean 的 rectangle a b={z | ∀i,a i≤z i ∧ z i≤b i}；boxFace a b i side={z | z∈rectangle a b ∧ z i=side}。项目 hausdorffArea d=ENNReal.ofReal(vol(B₁⊂ℝᵈ)/2^d) • Measure.hausdorffMeasure d，给出标准欧氏面积归一化（d=0为计数测度）；faceFlux f ρ a b i side=∫_{boxFace a b i side}ρ(z)f_i(z) dH^{n-1}，为真实单面面积分。还逐一展开项目定义：massFraction ρ A t=∫_Aρ_t；density要求可测、逐点非负且Lebesgue可积；probabilityDensity=density且∫ρ=1；densityMeasure ρ=volume.withDensity(ofReal∘ρ)；measurePropagator Φ t μ=Measure.map (Φ t) μ；flow要求Φ₀=id、Φ_{s+t}=Φ_s∘Φ_t及轨道导数f(Φ_tz)。签名先∀n f Φ ρ a b，再所有正维数、正边长、f为C¹、真实流、Φ为C²、ρ联合C¹、逐时概率密度与测度输运假设，最后∀t。两项结论分别为质量导数=下方面总和−上方面总和、散度体积分=上方面总和−下方面总和，相合即 PDF 页205的质量导数=-∫_Adiv(ρ_t f)。C¹及紧盒保证这些体积和面积积分可积，不因Bochner积分总化为0而失真。[EXTRA]矩形特化对应原文矩形例子，未宣称一般域；全局C²流比局部必要条件强，但是合理充分条件，概率归一化符合原文对象。无[ERRATUM?]。声明有sorry；本PASS仅为签名语义，不代表证明完成。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-BoundaryTerm",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "SOURCE_TEXT_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-BoundaryTerm",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "statement_latex": "where the term $B=\\sum_i\\int_{\\partial A_\\ell}uf_iv\\nu_i\\,d\\sigma$, is a surface integral over the boundary of $A_\\ell$, where $\\nu_i$ is the $i$’th component of the unit outward normal to the surface $\\partial A_\\ell$ bounding the region $A_\\ell$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "A_ℓ为以原点为中心、边长2ℓ的m维盒，ℓ>0；u,v为标量函数，f_i为向量场坐标，ν_i是∂A_ℓ单位外法向的第i分量，dσ为表面积元。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.boxBoundaryTerm",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。",
+            "原页206文字为 i’th，不是JSON中的 ith。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。",
+          "原页206文字为 i’th，不是JSON中的 ith。"
+        ],
+        "evidence": [
+          "教材PDF页206（印刷页185），已读取文字并目视核对页面图像；页码偏移+21正确。",
+          "页206 where the term B=∑i∫∂Aℓ u f_i v ν_i dσ 及 i’th component of the unit outward normal。",
+          "proof_latex=null可接受：此处无另立的完整证明；所选截断条目已在statement_latex中保留分部积分推导。未将原书疑误静默修正。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.boxBoundaryTerm",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义；只从版本绑定的 Ch05_deps.txt 展开项目自定义定义，不以 Mathlib 定义体未收录为材料不足。项目 ReviewDefinitions.lean 的 E n 展开为 EuclideanSpace ℝ (Fin n)，即欧氏 ℝⁿ，volume 是标准 Lebesgue 测度。项目 Statements.lean 的 rectangle a b={z | ∀i,a i≤z i ∧ z i≤b i}；boxFace a b i side={z | z∈rectangle a b ∧ z i=side}。项目 hausdorffArea d=ENNReal.ofReal(vol(B₁⊂ℝᵈ)/2^d) • Measure.hausdorffMeasure d，给出标准欧氏面积归一化（d=0为计数测度）；faceFlux f ρ a b i side=∫_{boxFace a b i side}ρ(z)f_i(z) dH^{n-1}，为真实单面面积分。展开 MD.Ch05.boxBoundaryTerm：a_i=-ell，b_i=ell，对每个i取正式库faceFlux f (u*v) a b i ell减faceFlux f (u*v) a b i (-ell)，再对全部坐标求和。原文盒语境ell>0时，上方面ν_i=+1，下方面ν_i=-1，其他面的第i法向分量为0，恰为 PDF 页206的B=∑i∫_{∂A_ell}u f_i v ν_i dσ。n=1是端点计数；n≥2时不同面的交集为面积零集。在原文光滑、有限盒语境，被积函数可积；不以不可积函数的Bochner积分总化推广面分解恒等式。定义允许额外参数值或更一般函数，是总化定义，不声称负ell产生正边长盒。无额外假设清单及[ERRATUM?]；定义不含sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-TruncatedIntegrationByParts",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-TruncatedIntegrationByParts",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "statement_latex": "We truncate the domain to a large box $A_\\ell$ with edge of length $2\\ell$ centered at the origin, approximating the inner product by:\n\\[\\langle u,\\mathcal L_fv\\rangle\\approx\\int_{A_\\ell}u\\mathcal L_fv\\,d\\omega=\\int_{A_\\ell}u\\sum_i f_i\\frac{\\partial v}{\\partial z_i}\\,d\\omega.\\]\nSplitting this sum up, we treat each term by integration by parts\n\\[\\int_{A_\\ell}u\\sum_i f_i\\frac{\\partial v}{\\partial z_i}\\,d\\omega=\\sum_i\\int_{A_\\ell}uf_i\\frac{\\partial v}{\\partial z_i}\\,d\\omega\\tag{5.4}\\]\n\\[=B-\\sum_i\\int_{A_\\ell}v\\frac{\\partial}{\\partial z_i}(uf_i)\\,d\\omega.\\tag{5.5}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "u,v为ℝ^m上标量函数，原文上一句假定其在无穷远充分迅速趋零；A_ℓ=[-ℓ,ℓ]^m，ℓ>0；B=∑i∫_{∂A_ℓ}u f_i v ν_i dσ，ν为单位外法向；dω为体积元。≈为截断近似，不是精确恒等式。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.truncatedIntegrationByParts",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]正边长、C¹数据及真实矩形面；等号(5.4)的有限求和分配已经内含于实际Lie导数，非正式∞近似未当精确等号。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "context_notation未记录本条实际原文对象及记号约定，或以Lean实现说明替代原文记号；已对照原页补全。"
+        ],
+        "evidence": [
+          "教材PDF页206（印刷页185），已读取文字并目视核对页面图像；页码偏移+21正确。",
+          "页206 We truncate ... 2ℓ centered at the origin，近似内积展示式以及(5.4)、(5.5)，积分域、各项、负号与编号正确。",
+          "proof_latex=null可接受：此处无另立的完整证明；所选截断条目已在statement_latex中保留分部积分推导。未将原书疑误静默修正。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.truncatedIntegrationByParts",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义；只从版本绑定的 Ch05_deps.txt 展开项目自定义定义，不以 Mathlib 定义体未收录为材料不足。项目 ReviewDefinitions.lean 的 E n 展开为 EuclideanSpace ℝ (Fin n)，即欧氏 ℝⁿ，volume 是标准 Lebesgue 测度。项目 lie f g z=(fderiv ℝ g z)(f z)。项目 divergence f z=LinearMap.trace ℝ (E n) (fderiv ℝ f z).toLinearMap，即实际 Fréchet 导数的迹。项目 liouvillian f u z=-divergence (fun x => u x • f x) z。项目 Statements.lean 的 rectangle a b={z | ∀i,a i≤z i ∧ z i≤b i}；boxFace a b i side={z | z∈rectangle a b ∧ z i=side}。项目 hausdorffArea d=ENNReal.ofReal(vol(B₁⊂ℝᵈ)/2^d) • Measure.hausdorffMeasure d，给出标准欧氏面积归一化（d=0为计数测度）；faceFlux f ρ a b i side=∫_{boxFace a b i side}ρ(z)f_i(z) dH^{n-1}，为真实单面面积分。MD.Ch05.boxBoundaryTerm 已展开为a_i=-ell、b_i=ell时正式库faceFlux对密度u*v的上方面减下方面总和。签名∀n f u v ell，先要求n>0、ell>0及f,u,v为C¹，再给A=[-ell,ell]^n上∫u L_fv=B+∫(M_fu)v。展开Lie、散度和Liouvillian，右侧恰为B−∑i∫v∂i(uf_i)，左侧为∫u∑i f_i∂i v。C¹、紧盒及有限面积保证各项可积，允许有限和与积分交换，恢复 PDF 页206的(5.4)和(5.5)，不会因不可积积分默认为0掩盖缺项。[EXTRA]正边长、C¹、真实面均合理；无穷远衰减对有限盒恒等式不必要。原文≈仅为截断动机且未给误差界，不应误译成精确等号；签名不声称后续B→0或全空间极限。无[ERRATUM?]。声明有sorry，语义PASS与证明完成分开。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

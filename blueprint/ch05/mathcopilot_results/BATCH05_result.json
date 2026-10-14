@@ -1,0 +1,88 @@
+{
+  "batch": "BATCH05",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "bb1162f2df6f4c4f35852970deb632c51a11fe45e5deabd2f10648b0df0c1753",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.2.1-ClosedSupport",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF204（印刷183），正文最后一段：“the support of a function f is the closure of the set of arguments for which the function is nonzero and is denoted supp f.”；已查看渲染页。statement_latex 文本、记号和页码一致，context_notation 区分闭支集与非零点集合正确；本条无独立证明，proof_latex=null 合理。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.closedSupport",
+        "verdict": "PASS",
+        "explanation": "依补充规则直接采信 Mathlib 标准含义。已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开项目别名 E n := EuclideanSpace ℝ (Fin n)，对象为欧氏 ℝⁿ 上的实函数。附件 Blueprint/Ch05.lean 中 MD.Ch05.closedSupport f := tsupport f，展开标准含义就是 closure (Function.support f)=closure {z | f z ≠ 0}，与 PDF204/印刷183 正文支集定义完全一致。任意 n、任意 f，不添加连续性或紧性假设，不将支集误作未闭合的非零点集；完整返回该集合。本条没有 [EXTRA] 或 [ERRATUM?]。该声明是定义，无 sorry；PASS 仅评价定义语义，不声称完成 Lean 编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-GaussianL2",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF204（印刷183），脚注2从 “L²(ℝᵐ) also includes many other types” 至 “so the improper integral converges.”；渲染确认 Gaussian 为 exp(-∑_{i=1}^m α_i x_i²)，α_i>0，i=1,...,m，且 x_i→∞。JSON完整保留该解释；proof_latex=null，不把解释误录为独立证明；context_notation 与原式吻合。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.gaussianL2",
+        "verdict": "PASS",
+        "explanation": "依补充规则采信标准 MemLp、EuclideanSpace 和 volume。已在 Ch05_deps.txt 的 ReviewDefinitions.lean 段展开 E n := EuclideanSpace ℝ (Fin n)，所以体积为完整 ℝⁿ 上标准 Lebesgue 测度。签名先量化任意有限维 n、所有系数 a : Fin n → ℝ，再要求每个 a i > 0；结论 MemLp (exp(-∑ i,a i*(z i)^2)) 2 volume 恰为该实 Gaussian 可测且平方可积。与 PDF204/印刷183 脚注2所称任意正系数多元 Gaussian 属于 L²(ℝᵐ) 一致，未改为等系数径向函数、截断域或预先假设可积。原文“goes rapidly to zero”是可积性的解释，未单列为具有指定速率的极限定理；可测性由连续性自然满足，平方后仍为系数 2a i > 0 的 Gaussian，其平方积分为有限乘积 ∏ᵢ sqrt(π/(2a i))。允许 n=0 是无害扩展，空乘积为1。本条无 [EXTRA]/[ERRATUM?]。附件本条有证明正文且未含 sorry；语义 PASS 与编译及证明核验分开。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-FiniteJumpL2",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF204（印刷183），脚注2末句：“L²(ℝᵐ) also includes the compactly supported functions with finite ‘jump discontinuities’ at a finite number of locations.”；已渲染核对，JSON文句与页码一致，context_notation=[] 无错误，proof_latex=null 合理；[EXTRA] 是正式化说明，不冒充原书文字。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.finiteJumpL2",
+        "verdict": "PASS",
+        "explanation": "已从 Ch05_deps.txt 的 ReviewDefinitions.lean 段展开 E n := EuclideanSpace ℝ (Fin n)；Mathlib 的 HasCompactSupport 表示 closure {x | g x ≠ 0} 紧，MemLp g 2 volume 表示对标准 Lebesgue 测度平方可积。签名依次量化 n、实函数 g、异常集 S，假设 S 有限、g 紧支、g 在 S 的补集连续，并在每个 z∈S 量化各自的 C>0 和邻域 U，使 U 中所有 |g x|≤C；结论只有完整 L² 归属，与 PDF204/印刷183 脚注2的结论一致。[EXTRA] 合理且不循环：有限跳跃具有有限邻域界，该条件还允许较一般的有界振荡，并不把有限跳跃当作精确定义的等价命题。它是对原文有限跳跃函数的充分资格，不排除原文中只有有限个跳跃位置的实函数。有限异常集外连续保证可测；各点局部有界和支集紧性给出统一有限界，紧集的 Lebesgue 测度有限，故平方可积。若仅要求紧支和有限异常点而省掉邻域控制，g(x)=1/x（0<x<1）、其余处为0将不平方可积；它不满足有限跳跃条件，也不是本签名反例。无 [ERRATUM?]，不修正原书。本条证明正文无 sorry；PASS 是签名语义判定，未运行编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-NormalizedAverageFormula",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF205（印刷184），页首展示公式 Av_ρ(g) := (1/∫_D ρ(z)dω)⟨g,ρ⟩ = ∫_D gρ̂dω；上句明写 ⟨g,ρ⟩=∫_D g(z)ρ(z)dω 并限定配对积分有限，下句称 spatial average。已渲染确认帽号、分母、等号及页码；JSON context 明示代数恒等式和概率解释的条件区别，proof_latex=null 合理。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.normalizedAverageFormula",
+        "verdict": "PASS",
+        "explanation": "已从 Ch05_deps.txt 的 ReviewDefinitions.lean 段展开 E n := EuclideanSpace ℝ (Fin n)。本条实际引用的项目定义是附件 Blueprint/Ch05.lean 中本地 MD.Ch05.densityAverageOn D ρ g := (∫ z in D,g z*ρ z)/(∫ z in D,ρ z)，已读取并展开；它不是依赖摘录中定义在全空间的 MolecularDynamics.Chapter05Review.densityAverage。令 c=∫ x in D,ρ x，右端为 ∫ z in D,g z*(ρ z/c)，以受限 Lebesgue 测度积分。先量化 n、任意 D、ρ、g 后给出等式，保留 PDF205/印刷184 的平均积分比值和归一化密度 ρ̂=ρ/c 两种表示。按标准 Bochner 积分及实数除法的总化含义，常数因子可移出积分：c≠0 时可积性在乘以 c⁻¹ 后等价，不可积时两积分都按标准约定取0；c=0 时 ρ/c 恒0，等式两端皆0。因此无需额外密度、可积性或非零分母假设即可成立为代数恒等式。在教材的密度、正质量及有限配对条件下它就是原公式；JSON context 已明确该公式不宣称任意输入都有概率平均意义。无 [EXTRA]/[ERRATUM?]。证明正文无 sorry；PASS 评价语义，不等于 Lean 编译证明检查。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

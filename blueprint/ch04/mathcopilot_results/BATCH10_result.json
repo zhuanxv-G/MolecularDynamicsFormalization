@@ -1,0 +1,125 @@
+{
+  "batch": "BATCH10",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "bda90ae8d0b9c280917c18a05553f6c583b11b973f9629ed2d2ddcccd7f5f3a4",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.1-RestrictedForm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "逐页渲染并对照 PDF 175 / 印刷 153，页差22；原句和公式定位已核对。",
+          "§4.3.1 首段：ambient space → co-tangent bundle → associated symplectic form；context_notation 中拉回/非退化提醒属于审阅解释，不是原书额外公式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.restrictedForm",
+        "verdict": "FAIL",
+        "explanation": "依赖 ReviewDefinitions 中 Q n=Fin n→ℝ，Z n=Q n×Q n，dot u v=Σᵢuᵢvᵢ，phaseForm u v=Σᵢ(u.qᵢv.pᵢ−v.qᵢu.pᵢ)。签名确实定义任意映射 chart 的环境标准二形式拉回 Dchart(z)*ω，但 chart 任意，未要求可微、像落在 cotangentSet、约束正则或相应切空间；定义本身也不陈述非退化。因此仅忠实于拉回运算，未表达本条原句的“on the co-tangent bundle”及“symplectic form on the manifold”。context_notation 已提醒非退化未证明，但也称“真实可微约束图”，签名没有该限制。无 [ERRATUM?]；这里是形式化范围缺失，不是原书错误。该项为定义，没有 sorry 证明义务。",
+        "counterexample": "n=1，chart(z)=0，则 Dchart=0，restrictedForm 恒为0；在二维非零切空间退化。也可取恒等 chart、g(q)=q，它的像并不落在约束余切集合。",
+        "suggested_fix": "保留一般 pullback 辅助定义；另以真实约束余切流形/局部参数化为对象，要求可微且像满足位置和隐藏约束，并在适当切空间给出标准限制形式及非退化结论。不要把零空间例外或任意 chart 的拉回直接称为辛形式。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.1-VariationalFormula",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "逐页渲染并对照 PDF 176 / 印刷 154，页差22；原句和公式定位已核对。",
+          "(4.11) M^{-1}dp；(4.12) 两个负号、乘子微分及约束Hessian项；(4.13) j=1,2,…,l，JSON以1,…,l等价排版。U/g Hessian释义见下一页177。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.variational",
+        "verdict": "FAIL",
+        "explanation": "展开 invMass 为对角逆质量乘法，grad U 为实际坐标 Fréchet 偏导；textbookConstraintJacobian 的第 j 行是 grad(g j)，故转置乘 rho 是 Σⱼrhoⱼ grad(g j)。等式两分量准确表达 (4.11)–(4.12) 的向量场线性化；U/g C²、rho 在 z 可微足够，合理但全局 C²强于点附近正则。m 未要求正或非零：导数等式仍真（Lean 实数逆零为零），但作为物理 M⁻¹应限定非零/正质量。核心缺项是 (4.13)：量化任意 z,v，既无合法约束状态、切向假设，也无 dgⱼ(q)dq=0 结论。依赖 tangentPhase 定义确含 ∀j,Dgⱼ(q)v.q=0 及隐藏约束导数为零，但该签名未引用它；其他条不能补足本 source_id 全部子句。该声明有 sorry；本 FAIL 属于签名覆盖缺失，与 sorry 独立。无本条 [ERRATUM?]。",
+        "counterexample": "n=l=1，m=1，U=0，g(q)=q，rho=0，z=(0,0)，v=(1,0)。全部现有假设满足，向量场导数等式成立，却 Dg(0)v.q=1≠0；即使 z 是合法约束状态也不够。",
+        "suggested_fix": "将一般向量场导数公式保留为辅助命题；对应原文的条目增加合法约束图或切向变分假设，并把 ∀j,(fderiv ℝ (g j) z.1) v.1=0 与两个导数公式一起明确输出。正质量可作为物理解释假设；不能仅在注释中说 (4.13) 在别条保留。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.1-HessianPullbackCancel",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "UNMARKED_OMISSION",
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.1-HessianPullbackCancel",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.1",
+          "printed_page": "155",
+          "pdf_page": "177",
+          "statement_latex": "This follows from the antisymmetry of the wedge product $(\\mathrm dx\\wedge\\mathrm dy=-\\mathrm dy\\wedge\\mathrm dx)$, and the fact that the Hessian matrix of $U$ is symmetric. Next, note that\n\\[\\sum_{i=1}^{N_c}\\sum_{k=1}^{l}\\mathrm dq_i\\wedge\\lambda_k\\sum_{j=1}^{N_c}(g_k^{\\prime\\prime})_{ij}\\mathrm dq_j=\\sum_{k=1}^{l}\\lambda_k\\sum_{i=1}^{N_c}\\mathrm dq_i\\wedge\\sum_{j=1}^{N_c}(g_k^{\\prime\\prime})_{ij}\\mathrm dq_j=0,\\]\nby the same reasoning, since each of $g_k^{\\prime\\prime}$ is a symmetric matrix. Finally\n\\[\\sum_{i=1}^{N_c}\\sum_{k=1}^{l}[\\mathrm dq_i\\wedge(\\mathrm d\\lambda_k)g_{ki}^{\\prime}]=\\sum_{k=1}^{l}\\left(\\sum_{i=1}^{N_c}g_{ki}^{\\prime}\\mathrm dq_i\\right)\\wedge\\mathrm d\\lambda_k=\\sum_{k=1}^{l}\\mathrm dg_k\\wedge\\mathrm d\\lambda_k=0,\\]\nsince we know that $\\mathrm dg_k=0$ from (4.13). Therefore\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\sum_{j=1}^{N_c}\\mathrm dq_j\\wedge\\mathrm dp_j=0.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "U及各g_k的双撇表示Hessian；质量矩阵常对角，m_i为第i个对角元。完整时间导数还使用本页上半部 Σ_i m_i^{-1} dp_i∧dp_i=0 和Leibniz规则。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.hessianPullbackCancel",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookConstrainedAcceleration_pullback_zero"
+          ],
+          "extra_assumptions": [
+            "完整实际C²势/约束、可微乘子和切向位置图；前文各消去项在已证正式库有限和展开中保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "恢复PDF177中被无省略号删去的约束Hessian及乘子微分消去段，并补记最终时间导数所需上下文；不修改原书结论。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex 将原页关于势Hessian的句子直接接到最终 Therefore，未标省略地删去了约束Hessian和 dg_k∧dλ_k 消去推理，造成最终结论看似仅由 U Hessian 对称推出；补回原文中间段。proof_latex=null 按“无独立完整证明”约定可保留，但原页确实有连续推导，不能解释为没有论证。"
+        ],
+        "evidence": [
+          "逐页渲染并对照 PDF 177 / 印刷 155，页差22；原句和公式定位已核对。",
+          "本页从Leibniz和对角质量消去开始；势Hessian句后依次有约束Hessian消去、dg_k∧dλ_k=0，才出现 Therefore 及最终守恒公式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.hessianPullbackCancel",
+        "verdict": "FAIL",
+        "explanation": "textbookPotentialForce U(q)=−grad U(q)；textbookMultiConstrainedMomentum univ γ ρ q p=p−Σⱼρⱼ grad γⱼ(q)。代入 p=−grad U∘q 后，该命名为 Momentum 的函数实际是 ṗ 的力/加速度项。结论是 Σᵢ(dqᵢ∧d ṗᵢ)(u,v)=0，包含势 Hessian、每个约束 Hessian 和乘子导数的全部消去。hconstraint 的邻域恒零结合 hq 导出 Dγⱼ(q)Dq=0；C²/可微条件合理，邻域恒零是切向约束的充分而较强表达，不是假设消去结论。但原条 statement_latex 最后陈述 d/dt Σdqᵢ∧dpᵢ=0，本签名没有时间、动量图、质量、q̇=M⁻¹p，因此未表达 Leibniz 的另一项 Σd q̇ᵢ∧dpᵢ，也未陈述完整时间守恒。库引用证明正文无显式 sorry，未在此运行编译或审计整个依赖的公理；该事实不改变签名判定。无本条 [ERRATUM?]。",
+        "counterexample": "缺失条款而非现有消去等式错误：Nc=1,Mc=0,U=0 时当前结论对任意 q 恒成立。另取 q(t,a,b)=a、p(t,a,b)=t b，则拉回 dq∧dp=t da∧db 不恒定；该签名没有约束这个 p 或其 ODE，不能排除此例。此例不是原书受约束 ODE 的反例。",
+        "suggested_fix": "把现有签名标为动量导数项消去辅助引理；本条增加实际时间相关 q,p、常对角逆质量及 ODE/变分关系，明确证明位置导数项为零，并用 Leibniz 得到完整二形式时间导数为零。或收窄本条摘录至该辅助引理，但不能保留完整原文结论却只审计半项。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.1-ConstrainedFlowPullback",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "逐页渲染并对照 PDF 178 / 印刷 156，页差22；原句和公式定位已核对。",
+          "页首完整段：conserved by … (4.7)–(4.9)，analogous to a Hamiltonian system，symplectic map of the co-tangent bundle；文字及页码相符。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constrainedFlowPullback",
+        "verdict": "PASS",
+        "explanation": "展开 textbookCotangentChart q p=Sum.elim q p，SymplecticCoordinates=(Fin Nc⊕Fin Nc)→ℝ，textbookJ=[0,I;−I,0]，textbookSymplecticForm=J.toBilin′，坐标值 Σᵢ(u.qᵢv.pᵢ−u.pᵢv.qᵢ)。InverseMassMatrix=diag(mᵢ⁻¹)，Gⱼᵢ=Dγⱼ(q)eᵢ，Gram=GM⁻¹Gᵀ；Curvatureⱼ=D²γⱼ(q)[M⁻¹p,M⁻¹p]，ReactionMultiplier=Gram⁻¹(GM⁻¹F+Curvature)，F=−grad U。PhaseVectorField=(M⁻¹p,F−GᵀReactionMultiplier)，符号与 (4.7)–(4.9) 相合。Φ 是给定联合 C² 解族；对区间全部 t、全部 y 要求 ODE 和梯度独立，初始位置/隐藏约束全保留；x,u,v 任意，结论恰为各时刻相对于 t=0 的二形式拉回相等。无需 Φ(0,y)=y：允许任意初始约束图，等式本身正是沿流保持该图的拉回形式，换成初始局部坐标即原句。它不声称构造全局流、逆映射或流形非退化定理，原文这里的辛映射表述按形式保持解释。正质量/独立梯度保证 Gram 可逆；联合 C²、C³约束/C²势是充分且合理的技术加强，非最低必要条件，没有将辛性作为前提。Icc 0 τ 只覆盖正向所给区间；τ<0 时为空，不能解释为负时守恒。对应这一局部守恒签名 PASS；无本条 [ERRATUM?]。正文调用依赖同名桥接定理，无显式 sorry；未做编译验证，此 PASS 仅为只读签名语义审计。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

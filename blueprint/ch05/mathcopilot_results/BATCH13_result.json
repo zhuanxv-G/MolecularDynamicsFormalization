@@ -1,0 +1,276 @@
+{
+  "batch": "BATCH13",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "2aad3188fdf3a833a3f3919fc05ace02295913349a87b32d31ffdfcc17bb4046",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.3.2-EnergySurface",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF212/印刷191，下半页：We assume the level sets Σ_E = {(q,p)|H(q,p)=E} to be bounded；页差21。statement_latex为该假设的摘引；proof_latex=null，原页无独立证明；context_notation明确有界性是使用资格。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.energySurface",
+        "verdict": "PASS",
+        "explanation": "按补充规则，Mathlib v4.34.0的EuclideanSpace、volume、gradient、restrict、withDensity、ENNReal.ofReal、Bochner积分、ContDiff、Tendsto等直接采用标准数学含义，不在项目依赖中要求其定义体。已展开附件Ch05_deps.txt中-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean的本项目定义。E n = EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，volume为Lebesgue测度；grad H z = gradient H z。 MD.Ch05.energySurface {n} H c = {z | H z=c}，与原文Σ_E完全相同，n为环境维度，c为能量值。此条kind=definition，只形式化能量等值集合；原书有界性是使用假设，原条context_notation已明确单列，不从def推出。没有额外假设或ERRATUM；定义体无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-SurfaceMeasure",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF212/印刷191，μ(M)公式后：where dσ is the “area element” ... “hyperarea” or “volume” since we are in many dimensions；文字吻合，proof_latex=null，context_notation空。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.surfaceMeasure",
+        "verdict": "PASS",
+        "explanation": "按补充规则，Mathlib v4.34.0的EuclideanSpace、volume、gradient、restrict、withDensity、ENNReal.ofReal、Bochner积分、ContDiff、Tendsto等直接采用标准数学含义，不在项目依赖中要求其定义体。已展开附件Ch05_deps.txt中-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean的本项目定义。E n = EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，volume为Lebesgue测度；grad H z = gradient H z。hausdorffArea d = ENNReal.ofReal(v_d/2^d) • Measure.hausdorffMeasure d，其中v_d为欧氏ℝᵈ单位球Lebesgue体积；这将基于直径的Hausdorff测度规范化为欧氏d维面积。surfaceMeasure H c = (hausdorffArea (n−1)).restrict {z | H z=c}。 MD.Ch05.surfaceMeasure直接采用上述项目曲面面积定义，所取维度n−1与原文m−1一致，测度对象位于整个相空间而其质量受限于能量面，这是dσ的标准测度实现。EXTRA的Hausdorff规范化选择合理，与Gram图公式的识别是后续证明义务；缺少该证明并不使定义的数学对象失真。正维光滑正则面是几何解释的背景，n=0仅是总化扩展。无ERRATUM，无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-MicroRaw",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF212/印刷191：define the invariant measure of a set M ⊂ Σ_E by μ(M)=∫_M 1/‖∇H‖ dσ；页末Thus ... rescaling of the indicated metric ... 1/‖∇H‖。metric为原书字样，保留。原页未给独立完整证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microRaw",
+        "verdict": "PASS",
+        "explanation": "按补充规则，Mathlib v4.34.0的EuclideanSpace、volume、gradient、restrict、withDensity、ENNReal.ofReal、Bochner积分、ContDiff、Tendsto等直接采用标准数学含义，不在项目依赖中要求其定义体。已展开附件Ch05_deps.txt中-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean的本项目定义。E n = EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，volume为Lebesgue测度；grad H z = gradient H z。hausdorffArea d = ENNReal.ofReal(v_d/2^d) • Measure.hausdorffMeasure d，其中v_d为欧氏ℝᵈ单位球Lebesgue体积；这将基于直径的Hausdorff测度规范化为欧氏d维面积。surfaceMeasure H c = (hausdorffArea (n−1)).restrict {z | H z=c}。 MD.Ch05.microRaw以非负权ofReal(‖grad H z‖⁻¹)给surfaceMeasure加密度。因此在非零梯度的原文使用范围内，对面上可测M确有μ(M)=∫_M 1/‖∇H‖ dσ，未加概率归一化因子。withDensity、restrict与ofReal按标准含义已足以判定这一对象，不需要它们的库内实现。零梯度处逆元总化为0，不能解释成奇异权；原文PDF213另设梯度远离0。context_notation关于raw与概率的区别正确。此def记录原文测度，不独立证明Hamiltonian动力学下的invariant属性；没有将该属性冒充已证。无EXTRA/ERRATUM，无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-ShellWeakPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_NORMALIZATION_CONTEXT",
+          "SOURCE_ERRATUM_FLAG",
+          "MISSING_PROOF_REFERENCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-ShellWeakPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "191",
+          "pdf_page": "212",
+          "statement_latex": "As we decrease $\\varepsilon$, the density remains invariant under Liouville's equation. The prefactor means that we can think of a sequence of smooth densities taken with successively smaller values of $\\varepsilon$ as approaching the limiting distribution defined in terms of the delta function by\n\\[\\rho_0(q,p)=Z_{H=E}^{-1}\\delta[H(q,p)-E].\\tag{5.7}\\]\nTo make this statement precise, the definition of the limit must be taken here in the weak sense, that is, we need to study the limit\n\\[\\lim_{\\varepsilon\\to0}Z_\\varepsilon^{-1}\\int_D\\phi(q,p)\\rho_\\varepsilon d\\omega,\\tag{5.8}\\]\ntaken in relation to a test function $\\phi\\in\\mathcal T$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明；PDF212转引Hartmann博士论文[171, Appendix D]。",
+          "proof_discussion_latex": "The proof that (5.8) can be taken and that the stated weak-limit identity holds may be found in the PhD thesis of Hartmann [171, Appendix D].（对原页转引的摘要；该恒等式含原书重复归一化及以ρ₀(q,p)代替分布配对的记号疑误，未在此修正。）",
+          "context_notation": [
+            "ρ_ε在PDF211已归一化；式(5.8)额外Z_ε^{-1}为原书疑误，必须保留原式并标注，不可静默删去。",
+            "原书关于Z_{H=E}为normalization constant的appropriate limiting value亦需区分：未缩放的Z_ε通常趋0，而曲面归一化常数是高斯尺度提取后的极限。",
+            "原书以Hamiltonian流为背景；密度的Liouville不变性需要该背景，单纯函数H与弱极限签名不包含动力学不变命题。"
+          ],
+          "issues": [
+            "ρ_ε在PDF211已归一化；式(5.8)额外Z_ε^{-1}为原书疑误，必须保留原式并标注，不可静默删去。",
+            "原书关于Z_{H=E}为normalization constant的appropriate limiting value亦需区分：未缩放的Z_ε通常趋0，而曲面归一化常数是高斯尺度提取后的极限。",
+            "原书以Hamiltonian流为背景；密度的Liouville不变性需要该背景，单纯函数H与弱极限签名不包含动力学不变命题。"
+          ],
+          "lean_decl": "MD.Ch05.shellWeakPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]此处记录全相空间版本D=ℝ^m，微正则测度定义给出分布配对目标；其他约束需重定义相应曲面。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "ρ_ε在PDF211已归一化；式(5.8)额外Z_ε^{-1}为原书疑误，必须保留原式并标注，不可静默删去。",
+          "原书关于Z_{H=E}为normalization constant的appropriate limiting value亦需区分：未缩放的Z_ε通常趋0，而曲面归一化常数是高斯尺度提取后的极限。",
+          "原书以Hamiltonian流为背景；密度的Liouville不变性需要该背景，单纯函数H与弱极限签名不包含动力学不变命题。"
+        ],
+        "evidence": [
+          "PDF211/印刷190先定义ρ_ε=Z_ε^{-1}exp(−(H−E)^2/(2ε))，并要求H在无穷远增长充分迅速使总积分存在。",
+          "PDF212/印刷191，式(5.7)、(5.8)与所引文字吻合，但摘录跳过where Z_{H=E} is the appropriate limiting value of the normalization constant；式(5.8)及其后等式确实再次含Z_ε^{-1}。",
+          "PDF212说明证明may be found in the PhD thesis of Hartmann [171, Appendix D]；原页没有完整证明。这里只核对书内转引，未审查该论文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.shellWeakPrinted",
+        "verdict": "FAIL",
+        "explanation": "按补充规则，Mathlib v4.34.0的EuclideanSpace、volume、gradient、restrict、withDensity、ENNReal.ofReal、Bochner积分、ContDiff、Tendsto等直接采用标准数学含义，不在项目依赖中要求其定义体。已展开附件Ch05_deps.txt中-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean的本项目定义。E n = EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，volume为Lebesgue测度；grad H z = gradient H z。hausdorffArea d = ENNReal.ofReal(v_d/2^d) • Measure.hausdorffMeasure d，其中v_d为欧氏ℝᵈ单位球Lebesgue体积；这将基于直径的Hausdorff测度规范化为欧氏d维面积。surfaceMeasure H c = (hausdorffArea (n−1)).restrict {z | H z=c}。shellWeight H c ε z = exp(−(H z−c)²/(2ε))；shellPartition H c ε = ∫shellWeight；shellDensity = shellWeight/shellPartition。testSpace n = {φ : ℝⁿ→ℝ | φ为C∞且有紧支撑}。microRaw = surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))；microMeasure = ((microRaw H c) univ)⁻¹ • microRaw H c；microAverage = average microMeasure，average μ g = ∫g dμ。regularEnergy H c展开为能量面非空、紧、每点grad≠0，以及raw总质量严格正且有限。 量词为∀n,H,c，在C²与regularEnergy前提后对每个C∞紧支φ，主张ε↓0时Z_ε⁻¹∫φρ_ε趋向microAverage。PDF211已将ρ_ε定义为归一化密度，PDF212式(5.8)再次出现外层Z_ε⁻¹；项目定义展开确认该签名确实重复归一化。全相空间D=ℝⁿ的EXTRA是合理范围选择，但不能消除反例；原书的尾部可积性也未由regularEnergy单独保证。原文所引Liouville不变性不在本签名结论中。相关原书疑误成立；FAIL来自错误极限和缺失结论，不是Mathlib材料不足。实际声明含sorry，此事实与语义判定分开。",
+        "counterexample": "取n=2，H(z)=‖z‖²，c=1。单位圆能量面非空紧，grad=2z，raw总质量π>0且有限，故全部签名前提满足。取C∞紧支φ，在能量面某邻域恒1。由极坐标Z_ε=π∫₀^∞exp(−(u−1)²/(2ε))du ~ π√(2πε)→0，而∫φρ_ε→1。因此额外乘Z_ε⁻¹后的左侧发散，microAverage=1。此反例中权确实可积，Bochner总化不参与反例。",
+        "suggested_fix": "将字面版保留为原书勘误记录；可证明的修正版删去外层Z_ε⁻¹，补上控制尾部的紧能量带及小ε权可积等条件。若仍按当前statement_scope覆盖全部所引文字，还需独立陈述Hamiltonian流下的Liouville不变性。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_NORMALIZATION_CONTEXT",
+          "SOURCE_ERRATUM_FLAG"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "191",
+          "pdf_page": "212",
+          "statement_latex": "$\\lim_{\\varepsilon\\to0}Z_\\varepsilon^{-1}\\int_D\\phi(q,p)\\rho_\\varepsilon d\\omega$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "此statement_latex逐字保留原式(5.8)，并非修正后的公式；Lean是独立勘误版本：ρ_ε已含Z_ε^{-1}，正确配对为lim_{ε↓0}∫φρ_ε dω。",
+            "PDF211已定义归一化ρ_ε并要求无穷远增长使权可积；PDF212重复除Z_ε属于原书疑误。修正不回写statement_latex。",
+            "microAverage指raw有限正总质量归一化后的曲面积分，不能把未缩放Z_ε的普通极限直接认作该曲面质量。"
+          ],
+          "issues": [
+            "此statement_latex逐字保留原式(5.8)，并非修正后的公式；Lean是独立勘误版本：ρ_ε已含Z_ε^{-1}，正确配对为lim_{ε↓0}∫φρ_ε dω。",
+            "PDF211已定义归一化ρ_ε并要求无穷远增长使权可积；PDF212重复除Z_ε属于原书疑误。修正不回写statement_latex。",
+            "microAverage指raw有限正总质量归一化后的曲面积分，不能把未缩放Z_ε的普通极限直接认作该曲面质量。"
+          ],
+          "lean_decl": "MD.Ch05.shellWeakLimit",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]独立修正版：不再对已归一化ρ_ε重复除Zε；可达非空正则能量、C²、紧带及小ε权可积/分母正，全部明示。采用D=ℝ^m；不覆盖附加其他守恒约束的情形。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "所引公式与原页一致；但context_notation空，未区分原式和独立修正版，补齐勘误语义而保留原式。"
+        ],
+        "evidence": [
+          "PDF212/印刷191式(5.8)，外部Z_ε^{-1}原样存在；PDF211已定义ρ_ε=Z_ε^{-1}exp(−(H−E)^2/(2ε))。proof_latex=null，原书无本修正版的独立证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.shellWeakLimit",
+        "verdict": "PASS",
+        "explanation": "按补充规则，Mathlib v4.34.0的EuclideanSpace、volume、gradient、restrict、withDensity、ENNReal.ofReal、Bochner积分、ContDiff、Tendsto等直接采用标准数学含义，不在项目依赖中要求其定义体。已展开附件Ch05_deps.txt中-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean的本项目定义。E n = EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，volume为Lebesgue测度；grad H z = gradient H z。hausdorffArea d = ENNReal.ofReal(v_d/2^d) • Measure.hausdorffMeasure d，其中v_d为欧氏ℝᵈ单位球Lebesgue体积；这将基于直径的Hausdorff测度规范化为欧氏d维面积。surfaceMeasure H c = (hausdorffArea (n−1)).restrict {z | H z=c}。shellWeight H c ε z = exp(−(H z−c)²/(2ε))；shellPartition H c ε = ∫shellWeight；shellDensity = shellWeight/shellPartition。testSpace n = {φ : ℝⁿ→ℝ | φ为C∞且有紧支撑}。microRaw = surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))；microMeasure = ((microRaw H c) univ)⁻¹ • microRaw H c；microAverage = average microMeasure，average μ g = ∫g dμ。regularEnergy H c展开为能量面非空、紧、每点grad≠0，以及raw总质量严格正且有限。 量词依次为n,H,c，正维、C²、regularEnergy、存在能量面点、存在一个δ>0的紧能量带及每个ε∈(0,δ)的权可积/分母正，最后∀C∞紧支φ的ε↓0极限。声明使用∫φρ_ε，已删重复归一化，目标是raw归一化后的概率配对。非零梯度和紧性保证能量面附近的余面积配对连续；紧能量带将其与远处隔离，固定一个小正ε₀的可积权给出带外的指数尾界，足以得到所述高斯壳弱极限。EXTRA明示正则/紧带/可积条件和D=ℝⁿ，合理且不是把待证极限当假设；∃z,H z=c已含于regularEnergy，故冗余但无害。原书式(5.8)的疑误仍成立，这里PASS指已明确标识的独立修正版，不表示原式正确。实际有sorry，未验证或补写证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-SurfaceAreaFormula",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_TRANSCRIPTION",
+          "SOURCE_ERRATUM_FLAG"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-SurfaceAreaFormula",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "191",
+          "pdf_page": "212",
+          "statement_latex": "If we can represent the $m-1$-dimensional set $M$ as the image of an open set $U\\in\\mathbb R^{m-1}$ under a smooth mapping $g:\\mathbb R^{m-1}\\to\\Sigma_E$, then we have\n\\[\\operatorname{Vol}(M)=\\int_U\\sqrt{\\det[(g'(\\zeta))^Tg'(\\zeta)]}\\,d\\zeta_1d\\zeta_2\\cdots d\\zeta_{m-1}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原页参数化公式写g′(ζ)及dζ₁⋯dζ_{m−1}；原JSON改成θ，逐字审校恢复ζ。",
+            "保留原书U∈ℝ^{m−1}，尽管作为开集应写U⊂ℝ^{m−1}；不静默纠正原文。",
+            "原文仅说smooth mapping，未显式排除重复覆盖；无重数面积公式需单射参数化，EXTRA补充这一资格合理。"
+          ],
+          "issues": [
+            "原页参数化公式写g′(ζ)及dζ₁⋯dζ_{m−1}；原JSON改成θ，逐字审校恢复ζ。",
+            "保留原书U∈ℝ^{m−1}，尽管作为开集应写U⊂ℝ^{m−1}；不静默纠正原文。",
+            "原文仅说smooth mapping，未显式排除重复覆盖；无重数面积公式需单射参数化，EXTRA补充这一资格合理。"
+          ],
+          "lean_decl": "MD.Ch05.surfaceAreaFormula",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]单射C¹浸入及实际Gram矩阵；书中的图须避免重复覆盖和退化，不能把任意光滑映射当无重数面积参数化。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页参数化公式写g′(ζ)及dζ₁⋯dζ_{m−1}；原JSON改成θ，逐字审校恢复ζ。",
+          "保留原书U∈ℝ^{m−1}，尽管作为开集应写U⊂ℝ^{m−1}；不静默纠正原文。",
+          "原文仅说smooth mapping，未显式排除重复覆盖；无重数面积公式需单射参数化，EXTRA补充这一资格合理。"
+        ],
+        "evidence": [
+          "PDF212/印刷191底部Vol(M)公式：sqrt(det[(g′(ζ))ᵀg′(ζ)])dζ₁⋯dζ_{m−1}；上一句确写open set U ∈ ℝ^{m−1}。原页未给独立证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.surfaceAreaFormula",
+        "verdict": "PASS",
+        "explanation": "按补充规则，Mathlib v4.34.0的EuclideanSpace、volume、gradient、restrict、withDensity、ENNReal.ofReal、Bochner积分、ContDiff、Tendsto等直接采用标准数学含义，不在项目依赖中要求其定义体。已展开附件Ch05_deps.txt中-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean的本项目定义。E n = EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，volume为Lebesgue测度；grad H z = gradient H z。hausdorffArea d = ENNReal.ofReal(v_d/2^d) • Measure.hausdorffMeasure d，其中v_d为欧氏ℝᵈ单位球Lebesgue体积；这将基于直径的Hausdorff测度规范化为欧氏d维面积。surfaceMeasure H c = (hausdorffArea (n−1)).restrict {z | H z=c}。 签名∀d,g,U，U开、g在U上C¹、g全局单射、U上fderiv单射；结论比较hausdorffArea d(g(U)).toReal与Gram面积密度的Lebesgue Bochner积分。基向量是WithLp.toLp 2 (Pi.single i 1)，矩阵条目为Dg(e_i)与Dg(e_j)的欧氏内积，故确为(Dg)ᵀDg，平方根行列式为实际d维Jacobian。C¹替代光滑足够；浸入保证图的几何解释，单射排除重数。全局单射可减弱为U上InjOn，但这一EXTRA更强且合理。面积公式与特定能量函数无关，推广到任意环境超曲面图仍涵盖原文M⊂Σ_E，缺少H不构成缺失结论。标准非负扩展面积公式给hausdorffArea d(g(U))=∫⁻_U ofReal(J_g)；有限时两侧转实得到当前签名，无限时测度toReal和不可积非负Bochner积分均为0，所以当前实值等式仍成立。上一轮直线例子给0=0，并非签名反例，应撤回FAIL；不能仅因标准库总化就判错。原文任意smooth mapping若重复覆盖则无重数公式有疑误，现有单射EXTRA正确修复。实际含sorry，签名PASS不表示面积定理已证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-NormalField",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF213/印刷192第一正文段：We suppose ‖∇H‖ to be bounded away from zero on Σ_E；n=∇H/‖∇H‖及局部距离坐标ξ的引文吻合。proof_latex=null；context_notation已说明非零梯度资格。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.normalField",
+        "verdict": "PASS",
+        "explanation": "按补充规则，Mathlib v4.34.0的EuclideanSpace、volume、gradient、restrict、withDensity、ENNReal.ofReal、Bochner积分、ContDiff、Tendsto等直接采用标准数学含义，不在项目依赖中要求其定义体。已展开附件Ch05_deps.txt中-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean的本项目定义。E n = EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，volume为Lebesgue测度；grad H z = gradient H z。 展开MD.Ch05.normalField与项目normalField均为‖grad H z‖⁻¹ • grad H z，对非零梯度正是原文n=∇H/‖∇H‖，范数1并与能量面切空间正交。原文梯度在面上远离0是使用资格；context_notation明确零梯度处总化向量0不具有单位法线意义。作为normalField定义，此条形式化n，局部距离坐标ξ为引用背景，不自动宣称其存在性。没有EXTRA/ERRATUM，无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-NormalEnergyTaylor",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF213/印刷192两展示式：ΔE=H(z+nξ)−H(z)=∇H·nξ+O(ΔE²)，ξ=ΔE/‖∇H‖+O(ΔE²)。原页确实写ΔE²而非ξ²；原JSON保留该字样且未静默修正。proof_latex=null，原页为启发推导，无独立完整证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.normalEnergyTaylor",
+        "verdict": "FAIL",
+        "explanation": "按补充规则，Mathlib v4.34.0的EuclideanSpace、volume、gradient、restrict、withDensity、ENNReal.ofReal、Bochner积分、ContDiff、Tendsto等直接采用标准数学含义，不在项目依赖中要求其定义体。已展开附件Ch05_deps.txt中-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean的本项目定义。E n = EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，volume为Lebesgue测度；grad H z = gradient H z。 normalField展开为‖grad H z‖⁻¹ • grad H z。签名∀n,H,z，在H为C²且grad H z≠0后，∃C>0,δ>0,∀|s|<δ：|H(z+s n)−H(z)−s‖grad H z‖|≤C s²。这个正向Taylor界本身数学正确，C²为合理充分条件，非零梯度使线性项非退化。但当前statement_latex和statement_scope同时引用以ΔE为参数的余项及ξ=ΔE/‖∇H‖+O(ΔE²)反向展开，签名没有小能量偏移的量词、局部逆解的存在性或O((ΔE)²)结论。EXTRA承认另条分拆，不能替当前source_id补齐全部结论。本批不审计其他source_id，也不把其结论自动计入当前签名。原书O((ΔE)²)在非退化局部逆坐标下可以成立，不是必须改成O(ξ²)的原书错误。FAIL仅针对源范围与签名结论不完整；声明含sorry，与本判定独立。",
+        "counterexample": "缺失条款而非正向界的数值反例：应对充分小e=ΔE给出ξ满足H(z+ξ n)=H(z)+e，并声明|ξ−e/‖grad H z‖|≤C e²及|H(z+ξ n)−H(z)−ξ‖grad H z‖|≤C e²。当前签名只量化位移s，没有这些能量参数结论。",
+        "suggested_fix": "扩展当前签名，加入∀充分小能量偏移e的局部ξ存在性及两项O(e²)界；或者将源映射及statement_scope明确缩成正向Taylor子引理，并把所引反向结论明确映射到单独声明。仅在注释中称另条处理不足以满足当前全部结论审计。"
+      }
+    }
+  ]
+}

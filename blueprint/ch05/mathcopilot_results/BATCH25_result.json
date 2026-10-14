@@ -1,0 +1,270 @@
+{
+  "batch": "BATCH25",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "fb5663a6c5bf964df2c4d3c55dda7f59564ae4fd7dbccd316716ae0c6730ebbd",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.6-EulerInvariant",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "OPERATOR_SUPERSCRIPT_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-EulerInvariant",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "207",
+          "pdf_page": "228",
+          "statement_latex": "This means that with the single exception $\\rho(q,p;0)=\\delta[q]\\delta[p]$ there is no limiting (invariant) distribution for Forward Euler. To put it another way, the only solution, in the weak sense, of $\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=0$ is the point distribution $\\delta[q]\\delta[p]$, and this solution is not “asymptotically stable.”",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.eulerInvariant",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实Forward Euler映射的不变概率测度，h≠0；一般modified微分方程的弱稳态并非自动等同离散不变测度，原记号作为解释而非未经证明的算子识别。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页算子上标为 dagger (†)，JSON 转录为 *；须逐字恢复原书记号。"
+        ],
+        "evidence": [
+          "PDF 第228页，页眉印刷207，§5.6；已查看渲染原页并核对递推式、语句、符号和页码。",
+          "该选段没有独立证明或编号；proof_latex=null 与 proof_note 一致。",
+          "上下文（PDF227/印刷206）：单位谐振子 H(q,p)=(p²+q²)/2，h 为步长，q_n,p_n 为离散状态；f̃ 为 backward error analysis 的扰动向量场；PDF228 的 H̃_h 为扰动 Hamiltonian。context_notation=[] 未含错误记号；本审查将依赖的上下文显式列在证据中。",
+          "原页对应短语：This means that with the single exception $\\rho(q,p;0)=\\delta[q]\\delta[p]$ there is no limiting (invariant) distribution for Forward Euler. To put it another way, the only solution, in the weak sense, of $\\mathcal L_{\\widetilde f}^*\\rho=0$ is the point distribution $\\delta[q]\\delta[p]$, and this solution is not “asymptotically stable.”"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.eulerInvariant",
+        "verdict": "FAIL",
+        "explanation": "复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 项目 forwardEuler（Ch05_deps.txt:5401）展开为 G_h(q,p)=(q+hp,p−hq)，diracMeasure 2（5347）=δ_(0,0)。Ch05.lean:1490–1493 的量词为 ∀h≠0、∀概率 μ，不变性是前提，结论仅 μ=δ0；这忠实表达离散不变概率的唯一性，δ0 确为该映射不动点测度。h≠0 必要，因为 h=0 时所有概率测度都不变；归一化与原文“distribution”作概率分布解释相符。但所引原文另外断言一般初始分布不存在概率极限、modified Liouville 方程的弱稳态唯一性、δ0 非渐近稳定性。当前签名没有这些条款，也没有指定 modified 场及对应关系。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。修复涉及的项目 weakStationary 已在 Ch05_deps.txt:5349–5350 展开：对每个 testSpace n 测试函数要求 lie f φ 可积且其积分为0；testSpace n（5342）是 C∞ 紧支实函数，lie f φ z（5317）=(fderiv ℝ φ z)(f z)。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。",
+        "counterexample": "缺失条款：modified Liouville 弱稳态唯一性、非渐近稳定性，以及除 δ0 外初始概率无概率弱极限。现有离散唯一性结论本身正确；未把它误判为假命题。",
+        "suggested_fix": "保留离散唯一性作为子结论；在当前 source_id 的完整陈述中组合明确 modified 场/流及与 Euler 更新的对应、概率 weakStationary 唯一性、弱概率非吸引性，并对 μ≠δ0 明确排除离散推前概率的弱概率极限。连续 modified 模型须明确正时间步长或相应时间方向。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-BackwardEuler",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 第228页，页眉印刷207，§5.6；已查看渲染原页并核对递推式、语句、符号和页码。",
+          "该选段没有独立证明或编号；proof_latex=null 与 proof_note 一致。",
+          "上下文（PDF227/印刷206）：单位谐振子 H(q,p)=(p²+q²)/2，h 为步长，q_n,p_n 为离散状态；f̃ 为 backward error analysis 的扰动向量场；PDF228 的 H̃_h 为扰动 Hamiltonian。context_notation=[] 未含错误记号；本审查将依赖的上下文显式列在证据中。",
+          "原页对应短语：As an alternative, consider the Backward Euler method: $q_{n+1}=q_n+hp_{n+1}$, $p_{n+1}=p_n-hq_{n+1}$. Then it is easily shown that both eigenvalues of the matrix lie in the interior of the unit disk, and hence all solutions of the recurrence relation tend to the origin with increasing $n$ (the origin is an attractive equilibrium point)."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.backwardEuler",
+        "verdict": "FAIL",
+        "explanation": "复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 MD.Ch05.backwardEuler（Ch05.lean:1521–1522）与项目库 backwardEuler（Ch05_deps.txt:5399–5400）均展开为 B_h(q,p)=((q+hp)/(1+h²),(p−hq)/(1+h²))。1+h² 恒正，故这是原页 q′=q+hp′、p′=p−hq′ 的唯一解，定义部分完整忠实，定义本身无需 h≠0。但是本 JSON statement 同时包含两个特征值严格位于单位圆内和所有递推解趋原点；单独的 def 没有陈述这些结论。注释中的 [EXTRA] h≠0 是收缩结论所需的合理限制，却不是此 def 的假设或定理子句。源文未明写该资格，须公开说明 h=0 例外，不能按全实步长宣称严格收缩。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。",
+        "counterexample": "h=0 时 B_h 是恒等映射，两个特征值为1，初值(1,0)的轨道恒为(1,0)。缺失的谱/收敛子句须在 h≠0 下陈述；更新定义自身正确。",
+        "suggested_fix": "若保留当前完整引文范围，为该 source_id 增列或组合 h≠0 下两个复特征值 (1±ih)/(1+h²) 的模均为 1/√(1+h²)<1，以及所有初值的迭代趋0。若只保留定义，需明确缩小映射所对应的陈述范围。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-BackwardEnergyDecay",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 第228页，页眉印刷207，§5.6；已查看渲染原页并核对递推式、语句、符号和页码。",
+          "该选段没有独立证明或编号；proof_latex=null 与 proof_note 一致。",
+          "上下文（PDF227/印刷206）：单位谐振子 H(q,p)=(p²+q²)/2，h 为步长，q_n,p_n 为离散状态；f̃ 为 backward error analysis 的扰动向量场；PDF228 的 H̃_h 为扰动 Hamiltonian。context_notation=[] 未含错误记号；本审查将依赖的上下文显式列在证据中。",
+          "原页对应短语：both eigenvalues of the matrix lie in the interior of the unit disk, and hence all solutions of the recurrence relation tend to the origin with increasing $n$."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.backwardEnergyDecay",
+        "verdict": "FAIL",
+        "explanation": "复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 库 backwardEuler（Ch05_deps.txt:5399–5400）是 B_h(q,p)=((q+hp)/(1+h²),(p−hq)/(1+h²))。Ch05.lean:1526–1528 签名为 ∀h∈ℝ、∀z∈ℝ²、∀k∈ℕ，‖B_h^k z‖²=(1+h²)^(−k)‖z‖²；Lean 的 (1+h²)⁻¹^k 即 ((1+h²)⁻¹)^k。这是正确的全部有限步平方范数恒等式，包括 h=0 与 k=0，但所引原文是两个特征值严格位于单位圆内以及所有轨道趋原点。签名没有这两个结论，也没有严格衰减所需 h≠0 的资格。[EXTRA] 中有限步代数恒等式不是额外数学假设，而是对结论的缩减。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。",
+        "counterexample": "h=0、z=(1,0) 时当前恒等式对所有 k 成立，但轨道不趋0、特征值不在单位圆内部；在 h≠0 下仍需明确补上引文的谱与极限子句。",
+        "suggested_fix": "把现有恒等式明确标作辅助结果，并在当前完整 source_id 中加入 h≠0 下谱模严格小于1及 ∀z，Tendsto (fun k => B_h^[k] z) atTop (𝓝 0)。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-BackwardEulerLimit",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "OPERATOR_SUPERSCRIPT_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-BackwardEulerLimit",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "207",
+          "pdf_page": "228",
+          "statement_latex": "all solutions of the recurrence relation tend to the origin with increasing $n$ (the origin is an attractive equilibrium point). In this case, all densities evolve toward the Dirac distribution centered at the origin: $\\delta[q]\\delta[p]$. The only (distributional) solution of $\\mathcal L_{\\widetilde f}\\rho=0$ is again $\\delta[q]\\delta[p]$, which in this case is attractive.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.backwardEulerLimit",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]h≠0及实际任意初始概率测度；全轨道收缩与对每个有界连续测试函数的弱趋Dirac两个结论，非普通密度逐点收敛。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页 Backward Euler 段的算子印为无上标的 L_{f̃}ρ=0；JSON 加了 *。保留原书此处与前后段不一致的印法，不静默统一。"
+        ],
+        "evidence": [
+          "PDF 第228页，页眉印刷207，§5.6；已查看渲染原页并核对递推式、语句、符号和页码。",
+          "该选段没有独立证明或编号；proof_latex=null 与 proof_note 一致。",
+          "上下文（PDF227/印刷206）：单位谐振子 H(q,p)=(p²+q²)/2，h 为步长，q_n,p_n 为离散状态；f̃ 为 backward error analysis 的扰动向量场；PDF228 的 H̃_h 为扰动 Hamiltonian。context_notation=[] 未含错误记号；本审查将依赖的上下文显式列在证据中。",
+          "原页对应短语：all solutions of the recurrence relation tend to the origin with increasing $n$ (the origin is an attractive equilibrium point). In this case, all densities evolve toward the Dirac distribution centered at the origin: $\\delta[q]\\delta[p]$. The only (distributional) solution of $\\mathcal L_{\\widetilde f}^*\\rho=0$ is again $\\delta[q]\\delta[p]$, which in this case is attractive."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.backwardEulerLimit",
+        "verdict": "FAIL",
+        "explanation": "复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 库 backwardEuler（Ch05_deps.txt:5399–5400）展开为 B_h(q,p)=((q+hp)/(1+h²),(p−hq)/(1+h²))。Ch05.lean:1545–1551 的量词和两个结论正确：对每个 h≠0，所有初值轨道趋0；对每个初始概率 μ、每个有界连续实 φ，∫φ(B_h^k z)dμ→φ(0)。有限概率测度与有界连续测试函数保证这些积分可积，Bochner 积分的不可积取0约定不会虚化结论；这确为全体概率推前的弱趋 δ0，合理涵盖所有初始密度及奇异概率。全轨道收缩和概率弱吸引子结论均正确，h≠0 必要。但引文末句关于明确 modified Liouville 方程的 distributional 稳态唯一性没有出现在签名中；离散弱极限也没有单独识别原文相关连续模型。概率归一化是对“distributional”在概率语境的合理限定，不能扩充成任意未归一化广义分布的唯一性。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。修复涉及的项目 weakStationary 已在 Ch05_deps.txt:5349–5350 展开：对每个 testSpace n 测试函数要求 lie f φ 可积且其积分为0；testSpace n（5342）是 C∞ 紧支实函数，lie f φ z（5317）=(fderiv ℝ φ z)(f z)。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。",
+        "counterexample": "缺失条款：明确 modified 向量场的 weakStationary 概率解唯一为 δ0，及对应连续流的吸引陈述。当前离散全轨道极限与全概率弱极限本身均成立。",
+        "suggested_fix": "保留当前两个离散结论，组合实际 modified 场/流的一步对应、δ0 的 weakStationary 资格、概率 weakStationary 唯一性及连续流的弱概率吸引性；正时间模型应明确正步长。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-SymplecticEuler",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 第228页，页眉印刷207，§5.6；已查看渲染原页并核对递推式、语句、符号和页码。",
+          "该选段没有独立证明或编号；proof_latex=null 与 proof_note 一致。",
+          "上下文（PDF227/印刷206）：单位谐振子 H(q,p)=(p²+q²)/2，h 为步长，q_n,p_n 为离散状态；f̃ 为 backward error analysis 的扰动向量场；PDF228 的 H̃_h 为扰动 Hamiltonian。context_notation=[] 未含错误记号；本审查将依赖的上下文显式列在证据中。",
+          "原页对应短语：Now consider the application of the Symplectic Euler method, $q_{n+1}=q_n+hp_{n+1}$, $p_{n+1}=p_n-hq_n$."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.symplecticEuler",
+        "verdict": "PASS",
+        "explanation": "复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 MD.Ch05.symplecticEuler（Ch05.lean:1585）与项目库 symplecticEuler（Ch05_deps.txt:5402）都展开为 S_h(q,p)=((1−h²)q+hp,p−hq)。给定任意实步长和二维初值，先 p′=p−hq，再 q′=q+hp′，恰为原页两式，无量词限制、符号差异或额外假设。本引文只有方法定义，没有需要另行纳入的谱、椭圆或密度结论。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-SymplecticEulerShadow",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 第228页，页眉印刷207，§5.6；已查看渲染原页并核对递推式、语句、符号和页码。",
+          "该选段没有独立证明或编号；proof_latex=null 与 proof_note 一致。",
+          "上下文（PDF227/印刷206）：单位谐振子 H(q,p)=(p²+q²)/2，h 为步长，q_n,p_n 为离散状态；f̃ 为 backward error analysis 的扰动向量场；PDF228 的 H̃_h 为扰动 Hamiltonian。context_notation=[] 未含错误记号；本审查将依赖的上下文显式列在证据中。",
+          "原页对应短语：the solution through any given initial point remains confined to an ellipse for all $n$ defined by $\\widetilde H_h(q,p)=\\widetilde H_h(q_0,p_0)$, where $\\widetilde H_h$ is the perturbed Hamiltonian defined by the backward error analysis.",
+          "原书该段没有写 |h|<2 或排除原点；保留转录，不静默添加。椭圆资格的缺失在语义审计中公开说明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.symplecticEulerShadow",
+        "verdict": "FAIL",
+        "explanation": "复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 Ch05.lean:1589 的 symplecticEulerShadow_statement 来自项目 Statements.lean（Ch05_deps.txt:5601–5602），完整展开为 ∀h∈ℝ、∀z∈ℝ²，Q_h(S_h z)=Q_h(z)。库定义（5402–5403）为 S_h(q,p)=((1−h²)q+hp,p−hq)，Q_h(q,p)=(q²+p²−hqp)/2。一步保持确实成立并可用于归纳，但签名没有原句的所有 n 迭代保持、椭圆资格及与 backward error analysis 的 Hamiltonian 识别。h 无限制时，能量保持不意味着水平集是椭圆。[EXTRA] 将几何和全迭代另列属于缩减覆盖范围，不是本定理新增前提。原文未明确稳定步长和原点退化情况，应显式注释疑误而不改动原引文。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。",
+        "counterexample": "h=2 时 Q_h=(q−p)²/2。初值(1,0)经一步变成(-3,-2)，能量均为1/2，而水平集 q−p=±1 是两条无界直线。更具体 S_2^k(1,0)=((-1)^k(1+2k),(-1)^k 2k)，故轨道无界，不能限制在椭圆。",
+        "suggested_fix": "保留一步式为辅助定理；完整条目在 |h|<2 下加入所有 k∈ℕ 的保持、非零初值的椭圆水平集与零初值的退化点，并说明书中 modified Hamiltonian 与此二次不变量的比例/所用阶次关系。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-SymplecticEulerEllipse",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 第228页，页眉印刷207，§5.6；已查看渲染原页并核对递推式、语句、符号和页码。",
+          "该选段没有独立证明或编号；proof_latex=null 与 proof_note 一致。",
+          "上下文（PDF227/印刷206）：单位谐振子 H(q,p)=(p²+q²)/2，h 为步长，q_n,p_n 为离散状态；f̃ 为 backward error analysis 的扰动向量场；PDF228 的 H̃_h 为扰动 Hamiltonian。context_notation=[] 未含错误记号；本审查将依赖的上下文显式列在证据中。",
+          "原页对应短语：the solution through any given initial point remains confined to an ellipse for all $n$ defined by $\\widetilde H_h(q,p)=\\widetilde H_h(q_0,p_0)$.",
+          "原书该段没有写 |h|<2 或排除原点；保留转录，不静默添加。椭圆资格的缺失在语义审计中公开说明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.symplecticEulerEllipse",
+        "verdict": "PASS",
+        "explanation": "复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 Ch05_deps.txt:5402–5403 展开 S_h(q,p)=((1−h²)q+hp,p−hq)，Q_h(q,p)=(q²+p²−hqp)/2。Ch05.lean:1594–1600 的顺序是 ∀h、|h|<2，然后合取：所有非零 z 的 Q_h(z)>0；对所有实 c，{Q_h≤c} 紧；对所有 z、所有非负整数 k，Q_h(S_h^k z)=Q_h(z)。在已展开的实际二次型下，令 u=(q+p)/√2、v=(q−p)/√2，则 Q_h=((2−h)u²+(2+h)v²)/4。两个系数均正，非零初值的正能量水平集确为椭圆，零初值水平集为原点；因此几何含义与全部离散迭代约束都已覆盖，无需额外寻找 Mathlib 的 IsCompact 或 EuclideanSpace 定义。[EXTRA] |h|<2 必要且合理，紧性是正确的加强子句；c<0 时子水平集为空仍紧。原书未限定步长的椭圆说法在 h=±2 退化、|h|>2 不定，且初值0本来只能给退化点；该疑误的数学判断明确成立，条目已公开作资格补充。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-SymplecticEulerDensity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "OPERATOR_SUPERSCRIPT_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-SymplecticEulerDensity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "207",
+          "pdf_page": "228",
+          "statement_latex": "This implies that a density which is a function of $\\widetilde H_h$ will remain invariant under the associated Liouville equation. There are many solutions of $\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=0$, none of which is attractive.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.symplecticEulerDensity",
+          "reusable_proofs": [
+            "MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]真实离散映射MeasurePreserving、不变二次能量、实际概率密度r∘Htilde；完整弱Liouville稳态及非吸引另条，所有r都可归一不能自动推出。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页算子上标为 dagger (†)，JSON 转录为 *；须逐字恢复原书记号。"
+        ],
+        "evidence": [
+          "PDF 第228页，页眉印刷207，§5.6；已查看渲染原页并核对递推式、语句、符号和页码。",
+          "该选段没有独立证明或编号；proof_latex=null 与 proof_note 一致。",
+          "上下文（PDF227/印刷206）：单位谐振子 H(q,p)=(p²+q²)/2，h 为步长，q_n,p_n 为离散状态；f̃ 为 backward error analysis 的扰动向量场；PDF228 的 H̃_h 为扰动 Hamiltonian。context_notation=[] 未含错误记号；本审查将依赖的上下文显式列在证据中。",
+          "原页对应短语：This implies that a density which is a function of $\\widetilde H_h$ will remain invariant under the associated Liouville equation. There are many solutions of $\\mathcal L_{\\widetilde f}^*\\rho=0$, none of which is attractive."
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.symplecticEulerDensity",
+        "verdict": "FAIL",
+        "explanation": "复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 Ch05_deps.txt:5402–5403 展开 S_h(q,p)=((1−h²)q+hp,p−hq)，Q_h(q,p)=(q²+p²−hqp)/2。density（5323–5324）展开为可测、逐点非负、Lebesgue 可积；probabilityDensity（5325）再加积分=1；densityMeasure（5326）=volume.withDensity (fun z => ENNReal.ofReal (ρ z))，在非负密度下正是 ρ(z)dz。Ch05.lean:1642–1648 的签名次序为 ∀h、|h|<2、∀r，若 ρ=r∘Q_h 是概率密度，则 S_h 对 ρdz 测度保持。ρ 可测可积归一化是合理概率资格；不需要 r 本身连续，未把不可积 r 误作概率。S_h 的行列式为1且保持 Q_h，故所述离散不变性正确。然而引文要求 associated Liouville equation 的稳态、许多稳态以及没有任何稳态吸引；签名没有这些条款，也未识别对应的 modified 连续场/流。[EXTRA] 稳定资格合理，但改述成离散 MeasurePreserving 并将其它结论放到另条并不能完成当前全文范围。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。修复涉及的项目 weakStationary 已在 Ch05_deps.txt:5349–5350 展开：对每个 testSpace n 测试函数要求 lie f φ 可积且其积分为0；testSpace n（5342）是 C∞ 紧支实函数，lie f φ z（5317）=(fderiv ℝ φ z)(f z)。证明状态单独记录：本声明文本含 sorry，未完成证明不改变上述签名语义判定。",
+        "counterexample": "缺失条款：r∘Q_h 对相应 modified Liouville 场的 weakStationary；多个不同概率稳态的存在；所有这些稳态的非吸引性。单步测度不变不蕴含这些全部子句；在 h=0 的允许情形，离散映射甚至是恒等，任何概率测度都离散不变，而真实振子连续场的稳态是不同条件。",
+        "suggested_fix": "保留离散密度不变性为子结论，完整陈述另明确实际 modified Hamiltonian 场/流，组合函数能量密度的 weakStationary、不同概率稳态存在及所有概率稳态的弱非吸引性，并明确能量比例因子与稳定区资格。"
+      }
+    }
+  ]
+}

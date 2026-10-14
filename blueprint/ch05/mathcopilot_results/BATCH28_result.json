@@ -1,0 +1,52 @@
+{
+  "batch": "BATCH28",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "071f41d2931e58b90420031710cff4d07fc9b557718f1c3735165ce0ce1954db",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.6-BackwardWeakStationary",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF228 / 印刷207，已读取全文并渲染核对。后向 Euler 段末的 The only (distributional) solution ... is again ... which in this case is attractive；δ[q]δ[p]、Liouville 算子星号及全部语句与 statement_latex 一致。前文给出后向 Euler 更新与特征值在单位圆内的论证，但没有独立完整弱PDE证明；proof_latex=null、proof_discussion_latex=null 与 proof_note 不构成伪造证明。",
+          "207+21=228，页码正确；context_notation=[] 未包含错误定义，此条是完整句子引用，没有另行孤立摘出的记号。原句隐含的单位振子、modified 场及概率解释已在语义审计中展开；未更改或静默修正原书文字。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.backwardWeakStationary",
+        "verdict": "PASS",
+        "explanation": "版本绑定：本次材料逐字节 SHA256 与上一轮三个附件一致；仅依据此绑定版本审计，不采纳其他旧工程文件。按补充规则，Mathlib v4.34.0 的标准定义直接采信，gradient 是欧氏内积对应的梯度，volume 是标准 Lebesgue 测度，不要求 Ch05_deps.txt 收录其定义体。项目自定义已展开：Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段，E 2=EuclideanSpace ℝ (Fin 2)，坐标0、1分别是q、p；diracMeasure 2=Measure.dirac 0；testSpace 2 为 C∞ 紧支持实函数；lie f φ z=(fderiv ℝ φ z)(f z)。签名中的 MD.Ch05.weakStationary 由绑定 Blueprint/Ch05.lean 698–700行展开为：每个上述测试函数的 Lie 导数可积且对 μ 的积分为0，与依赖中的同名弱稳态定义一致，实现分布意义的 Liouville 稳态。weakAttractor（1757–1764行）展开为存在有限个有界连续测试函数及正 ε 所定义的概率弱拓扑邻域，使其中所有初始概率在全部有界连续测试函数下随实时间 t→+∞ 收敛到 μ；m=0 允许全局吸引。以上可积资格避免利用 Bochner 积分不可积时取0制造假稳态。本条 eulerLogField true h（1767–1771行）是 f(q,p)=(aq+bp,ap−bq)，a=−log(1+h²)/(2h)，b=arctan(h)/h；eulerLogFlow true h（1774–1779行）是 exp(at) 乘 [[cos(bt),sin(bt)],[−sin(bt),cos(bt)]]。h>0 保证 a<0，且时刻h的映射等于依赖 backwardEuler 的 ((q+hp)/(1+h²),(p−hq)/(1+h²))。签名1843–1848行依次给出 Dirac 是弱稳态、任意概率弱稳态只能是此 Dirac、此 Dirac 对上述真实连续流弱吸引，完整保留 PDF228/印刷207 后向 Euler 段末的唯一性和吸引性。光滑线性场的弱稳态概率可由流保持解释，收缩流对所有初始概率的有界连续测试积分都趋于原点取值，因此这三项相互一致；没有把离散单步不变性或个别轨道趋零当作分布吸引结论。[EXTRA] 正h符合前进步长且排除h=0；概率归一化符合原书密度上下文，若不限定概率则0及cδ也满足线性弱方程，故该资格必要且合理；实际对数场精确嵌入本例后向 Euler 更新，公开选择此模型合理，未对任意有限阶 modified 场额外声称唯一性。对象、量词顺序和两个原文结论都忠实。无 [ERRATUM?] 标记，无须更正原文。结论为签名语义 PASS；证明体仍含 sorry，证明未完成，与此语义判定分开，本轮不写证明也不声称 Lean 证明已验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-SymplecticWeakStationary",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF228 / 印刷207，已读取全文并渲染核对。辛 Euler 段末从 This implies that a density ... 到 none of which is attractive，含 modified Hamiltonian 的 h 下标、Liouville 算子星号，全部与 statement_latex 一致。前文以椭圆上的能量保持解释此结论，没有独立完整弱稳态/非吸引性证明；两个 proof 字段为 null 合理。",
+          "207+21=228，页码正确；context_notation=[] 未包含错误定义，此条是完整句子引用，没有另行孤立摘出的记号。原句隐含的单位振子、modified 场及概率解释已在语义审计中展开；未更改或静默修正原书文字。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.symplecticWeakStationary",
+        "verdict": "PASS",
+        "explanation": "版本绑定：本次材料逐字节 SHA256 与上一轮三个附件一致；仅依据此绑定版本审计，不采纳其他旧工程文件。按补充规则，Mathlib v4.34.0 的标准定义直接采信，gradient 是欧氏内积对应的梯度，volume 是标准 Lebesgue 测度，不要求 Ch05_deps.txt 收录其定义体。项目自定义已展开：Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段，E 2=EuclideanSpace ℝ (Fin 2)，坐标0、1分别是q、p；diracMeasure 2=Measure.dirac 0；testSpace 2 为 C∞ 紧支持实函数；lie f φ z=(fderiv ℝ φ z)(f z)。签名中的 MD.Ch05.weakStationary 由绑定 Blueprint/Ch05.lean 698–700行展开为：每个上述测试函数的 Lie 导数可积且对 μ 的积分为0，与依赖中的同名弱稳态定义一致，实现分布意义的 Liouville 稳态。weakAttractor（1757–1764行）展开为存在有限个有界连续测试函数及正 ε 所定义的概率弱拓扑邻域，使其中所有初始概率在全部有界连续测试函数下随实时间 t→+∞ 收敛到 μ；m=0 允许全局吸引。以上可积资格避免利用 Bochner 积分不可积时取0制造假稳态。本条另用的项目定义均已展开：依赖5320–5326行 flow f Φ 要求 Φ 0=id、全部实时间的群律及每条轨迹在每个时刻的导数为 f(Φ t z)；density 要求可测、逐点非负及 Lebesgue 可积，probabilityDensity 再要求积分1，densityMeasure=volume.withDensity(ENNReal.ofReal∘ρ)，所以其对象确为概率测度。依赖5403行 shadowOscillator h(q,p)=(q²+p²−hqp)/2。采信标准 gradient 后，其梯度实际为(q−hp/2,p−hq/2)，签名里的 f 实际为(p−hq/2,−q+hp/2)，是此二次式的规范 Hamilton 场，散度为0且保持该能量。依赖5402行 symplecticEuler 的更新为(q+h(p−hq),p−hq)，同样保持此二次式。|h|<2 时二次型正定；其精确 logarithmic modified Hamiltonian 可取 c(h)·shadowOscillator h，其中 c(h)=2 asin(h/2)/(h sqrt(1−h²/4))，h=0 取连续值1，在整个稳定区为正。因此签名使用的 Hamilton 场与精确连续嵌入场只差正时间缩放，能量函数密度的类别、弱稳态及吸引/非吸引结论一致。1852–1861行的量词顺序是先任意h及稳定区资格，定义f，再任意满足真实全时间 flow 的Φ，结论共有三项：(1)全部 r:ℝ→ℝ，只要 r∘shadowOscillator 是概率密度，其对应测度就满足弱PDE稳态；此处不需要额外假设r可微，沿流能量不变且体积保持足以保证任意此类可测密度不变，Lie导数对紧支测试函数可积；(2)存在两个不同概率弱稳态，例如原点Dirac和归一化 exp(−shadowOscillator) 密度，凸组合还给出无限多，忠实于 many solutions；(3)每个概率弱稳态对该真实Φ都非弱吸引，包含奇异稳态，忠实于 none ... attractive。对于任意目标稳态μ，选不同稳态σ，(1−ε)μ+εσ可任意接近μ且仍由流保持，某个有界连续测试函数区分两者，所以其轨道不能收敛到μ；这直接核对了该弱邻域吸引定义的否定，而不只诉诸单步能量保持。光滑线性Hamilton场有真实全时间唯一流，flow前提也没有令结论空泛。[EXTRA] 稳定区是原文 ellipse 背景必要的适用资格，h=±2退化、|h|>2为双曲；概率密度归一化合理；明确真实Hamilton场、全时间流和正比例时间缩放均不偷加最终结论。对象、全部量词、假设及三项结论忠实于 PDF228/印刷207 的两句话。无 [ERRATUM?] 标签；原文省略稳定区的地方已由公开 [EXTRA] 限定，没有静默改书。结论为签名语义 PASS；原先因 Mathlib gradient 定义体未收录而保留的 NEEDS_HUMAN 已按补充规则撤销。证明体仍含 sorry，证明未完成，本轮没有修改附件或补证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

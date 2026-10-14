@@ -1,0 +1,226 @@
+{
+  "batch": "BATCH11",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "c48302da1b83905fd214225283a2f040bfb570a6624e2b401a3f23712fadf9f8",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.2-PositionEulerPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF178/印刷156：原句及(4.14)–(4.16)逐字核对；(4.15)为 pₙ₊₁=pₙ−hFₙ−hg′(qₙ)ᵀλₙ。proof_latex=null正确；context_notation为空不改变公式。",
+          "符号旁证：PDF174/印刷152 (4.8)为 −∇U−g′ᵀλ；PDF183/印刷161 (4.31)及PDF184/印刷162 (4.36)使用 +hF。保留原书负号，不静默修订。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.positionEulerPrinted",
+        "verdict": "PASS",
+        "explanation": "依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:782–786 的 Prop 恰记录三式，合取换序不改变含义；rho=λₙ，z=(qₙ,pₙ)，out=(qₙ₊₁,pₙ₊₁)。它是关系而非存在唯一性断言，不要求非零步长或隐约束成立。[ERRATUM?] 与书中其他力符号确有冲突；若Fₙ解释为∇U则此式自洽，不能仅从本页断言必须改负号。定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-PositionEulerForceConvention",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF178/印刷156：所引英文短句逐字一致；+hF公式不在此条statement_latex中，extra_assumptions明确说明是统一力版本。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.positionEulerRelation",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:789–793 只给任意 F 的 +hF 更新；没有 F=−grad U 的约束，也没有 F_printed=−F 的参数转换。额外说明属于改变力参数或修订原式，不能作为同一F下的额外假设消除负号差异。原句仅命名方法，不能证明改号公式忠实。定义无 sorry。",
+        "counterexample": "n=1,l=0,m=1,h=1,z=(0,0),F≡1：印刷关系输出 (−1,−1)，统一力关系输出 (1,1)，二者不同。",
+        "suggested_fix": "明确区分 F_printed 与 F_force，要求 F_printed=−F_force，并记录力版本为显式派生/修订而非原式；如声明F=−∇U，应在签名中参数化U并使用该实际力。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-HiddenEulerError",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF178/印刷156：hidden constraint g′(q₀)M⁻¹p₀=0、Taylor近似和最终g′(qₙ₊₁)M⁻¹pₙ₊₁≈0逐字及下标一致；无独立完整证明，proof_latex=null。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.hiddenEulerError",
+        "verdict": "PASS",
+        "explanation": "依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:796–803 全称量化固定旧状态z及真实out(h),rho(h)，随后给存在C,δ及全体0<h<δ的O(h)界。依赖4445–4448展开为+ h(−grad U)动量更新、q(h)=q₀+h invMass p(h)、全部位置约束。区间含0且out(0)=z，故初位置合法已蕴含；对位置恒等式在0求导并对g(q(h))=0求导得初隐约束，再由C²约束及分支得到残差C¹、在0为0，因而O(h)。C²实际分支是合理的局部条件，但比原文更强，且只论单步局部h界，不保证长时间一致误差。力符号不影响这个几何论证。原文“will be violated”是泛指通常不精确保持，非所有例子必非零（线性约束可精确保持）。签名合理形式化该近似结论；证明体为 sorry，未验证证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-ProjectionResidual",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF178/印刷156：(4.17)、Qₙ=qₙ+hM⁻¹pₙ−h²M⁻¹Fₙ、Gₙ=g′(qₙ)、Λ=h²λₙ均一致；context明确声明仅定义残差。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.projectionResidual",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:806–808 和依赖4449–4451仅给r(η)=g(base−DG(q)ᵀη)。这准确表示残差函数，但所冻结statement_scope包含等式r=0、Qₙ的具体定义、Λ=h²λₙ及从三更新式消元；均不在此定义中。任意base并不能表达给定旧状态的简化方程，context的缩小范围不满足所引全部条款。定义无 sorry。",
+        "counterexample": "n=l=1,m=1,g(x)=x,q=0,base=1,η=0 时定义返回1，完全没有断言(4.17)的零残差；定义还不接收pₙ,Fₙ,h,λₙ，无法绑定Qₙ及Λ。",
+        "suggested_fix": "另给projectionEquation : Prop := projectionResidual ... η=0，并用旧状态/步长/力绑定base=q+h invMass p−h²invMass(F q)、η=h²λ；单列消元等价命题。或经显式范围变更将原文条目拆成残差定义与消元关系。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-ProjectionJacobian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF179/印刷157：R⁽ˡ⁾ΔΛ⁽ˡ⁾=g(Q⁽ˡ⁾)、R⁽ˡ⁾定义式一致；context关于R是负残差Jacobian、Newton加号正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.projectionJacobian",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:811–814 及依赖4452–4455展开给Q=base−DG(q)ᵀη与R=G(Q)DG(q)ᵀ，矩阵次序正确；当g可微时Dηr=−R。但所引完整原文还含线性求解方程RΔΛ=g(Q)，签名没有ΔΛ或该等式。定义无 sorry。",
+        "counterexample": "取n=l=1,m=1,g(x)=x,q=0,base=1,η=0：R=1且r=1；签名既不指定ΔΛ，也不排除ΔΛ=0，而原线性方程要求ΔΛ=1。",
+        "suggested_fix": "保留R定义，增加含ΔΛ的Prop，要求projectionJacobian ... *ᵥ ΔΛ=projectionResidual ...；绑定ΔΛ=η_next−η并说明Q的对应关系。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-NewtonConstraint",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF179/印刷157：(4.18)更新加号、(4.19)位置定义及可选Λ⁽⁰⁾=0逐字一致；context指出矩阵非奇异才是合法求解步。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.newtonConstraint",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:817–819 通过依赖4456–4458给η+R⁻¹r，位置与残差确用真实Q(η)，符号正确。签名只是一跳的全定义函数，未给迭代序列与可选零初始化，也没有非奇异限定以保证逆矩阵代表线性求解。context声称η₀=0但该声明中未出现初值。Ch04_deps.txt未展开标准库Matrix.inv/Matrix.nonsingInv的实现，不能仅从⁻¹名字审定奇异输入的行为；无需此行为即可判定初始化/合法求解域遗漏。定义无 sorry。",
+        "counterexample": "缺失条款：没有Λ⁽⁰⁾=0或任何以l编号的序列；没有det R≠0的有效步域。本条定义允许所有g,m,q,base,η，含常量非零约束（R=0、r≠0），此时原线性方程无解。",
+        "suggested_fix": "定义合法Newton步关系，加入det R≠0及η_next=η+R⁻¹r；另定义从0开始的迭代，初值仍注明原文是可选建议。补充依赖中Matrix.inv/Matrix.nonsingInv的定义，说明全定义函数在无效输入上的约定。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-FrozenNewtonConstraint",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_OVERRESTRICTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.2-FrozenNewtonConstraint",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3.2",
+          "printed_page": "157",
+          "pdf_page": "179",
+          "statement_latex": "we may be able to fix $R$ at the beginning of the timestep, factor it once only, and then solve at each iteration with the same factors. Moreover, in case we have chosen $\\Lambda^{(0)}=0$, we have\n\\[R^{(0)}=G_nM^{-1}G_n^T,\\]\nwhich is a symmetric matrix,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "固定η₀=0处的R作为每步矩阵；Q(0)=base，所以一般R(0)=G(base)M⁻¹G(q)ᵀ；原书仍保留R(0)=G(q)M⁻¹G(q)ᵀ及对称性文字，不将其静默修正。Qₙ=qₙ是充分条件但非必要条件；例如仿射约束的Jacobian恒定时也成立。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原书按(4.19)得R(0)=g′(Qₙ)M⁻¹Gₙᵀ，一般不等于GₙM⁻¹Gₙᵀ；Qₙ=qₙ或g′(Qₙ)=g′(qₙ)均是充分条件，亦可显式另选冻结旧位置Jacobian。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.frozenNewtonConstraint",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "本轮仅修正审阅条目中的条件表述，保留原书公式和疑误；不修改附件。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "“只有Qₙ=qₙ或冻结Jacobian到旧位置时相同”不是必要条件；恒定或两点相同的Jacobian也可满足。原英文和Gram等式准确抄录，疑误来自教材。"
+        ],
+        "evidence": [
+          "PDF179/印刷157：原文确写Λ⁽⁰⁾=0时R⁽⁰⁾=GₙM⁻¹Gₙᵀ，which is a symmetric matrix；同页(4.19)使Q⁽⁰⁾=Qₙ。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.frozenNewtonConstraint",
+        "verdict": "FAIL",
+        "explanation": "依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:823–825及依赖4459–4461固定的是R(0)=G(base)DG(q)ᵀ。这属于合理的冻结Newton实现，但未忠实表达原文另外声称的旧位置Gram等式、对称性以及一次分解复用。所标[ERRATUM?]一般成立；不能把正确的交叉矩阵版本当作已表达错误原式。若显式采用修订语义，可保留实现并对原式另标疑误。定义无 sorry。",
+        "counterexample": "n=l=1,m=1,g(x)=x²−1,q=1,base=2,η₀=0：G(q)=2,G(base)=4，R(0)=8，而旧位置Gram=4；即便q为合法位置亦不等。n=l=2,g₁(x,y)=x,g₂(x,y)=xy,q=(1,0),base=(1,1),D=I，则R(0)=[[1,0],[1,1]]，不对称。",
+        "suggested_fix": "明确保留原式为教材疑误；将冻结交叉Jacobian方案与冻结旧位置Gram方案分列。对Gram等式加入G(base)DG(q)ᵀ=G(q)DG(q)ᵀ的条件（例如G(base)=G(q)）；对对称性与因子复用另写语义条款。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-NewtonQuadratic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ASSUMPTION_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.2-NewtonQuadratic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.2",
+          "printed_page": "157",
+          "pdf_page": "179",
+          "statement_latex": "When the solution is unique, the constraints sufficiently smooth, and the determinant of $R$ is bounded well away from zero, Newton’s method has a very rapid asymptotic convergence property. It is possible to show that, if $\\Lambda_*$ is the solution of (4.17), then sufficiently near the zero we have\n\\[\\|\\Lambda^{(l+1)}-\\Lambda_*\\|\\le C\\|\\Lambda^{(l)}-\\Lambda_*\\|^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch04.newtonQuadratic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]签名实际要求全空间C²约束（不是仅局部C²）；真实残差root=0及真实R(root) det≠0。非奇异根处的连续性可给局部det远离零及局部唯一性；结论给存在邻域/二次界，不把Newton误差结论当作前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "修正extra_assumptions将全局ContDiff误称为局部C²的问题；原文陈述保持不变。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "extra_assumptions写“局部C²”，实际∀j,ContDiff ℝ 2(g j)要求全空间C²；应准确报告这一加强。"
+        ],
+        "evidence": [
+          "PDF179/印刷157：唯一解、约束充分光滑、det远离零，以及近根二次误差不等式逐字一致；Ch04.lean:831实际为全局ContDiff。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.newtonQuadratic",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:829–834与依赖4669–4673量词为全体数据→C²→真根→根处det非零→∃C>0,δ>0→∀η近根的单步二次界，量词正确。展开r=g(base−DG(q)ᵀη)、R=G(Q(η))DG(q)ᵀ后，光滑情形Dr=−R，Newton加号匹配。根处det≠0连续推出邻域det有正下界及局部唯一性，故全局唯一性不需要；全空间C²强于所需局部C²，应明确。[EXTRA]未偷渡误差界。标准Newton理论预期该签名成立，但实际使用的矩阵逆定义Matrix.inv（背后Matrix.nonsingInv）没有在Ch04_deps.txt中展开，无法按要求完全核对实际⁻¹语义；这是本项唯一材料缺口，非因为 sorry。证明体有 sorry，另行记为未证明。",
+        "counterexample": null,
+        "suggested_fix": "补充Mathlib.LinearAlgebra.Matrix.NonsingularInverse中Matrix.inv/Matrix.nonsingInv及关联Inv实例的定义后完成该项审计；若希望降低加强，可将全局C²改为投影位置附近的局部C²。"
+      }
+    }
+  ]
+}

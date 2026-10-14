@@ -1,0 +1,240 @@
+{
+  "batch": "BATCH11",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "ad1c07255e7bd9f56e9898b593e52cd6da8b9b07813ec73263299b0eaf7cac15",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.3.1-DiracApproximation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "ORIGINAL_MISSING_HYPOTHESIS"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原句逐字对应；原书 (i) 仅写积分1，(ii) 写 supp(dε)→0，没有显式非负性或统一 L¹ 界。此为原书假设不足的数学问题，保留原文，不静默添加；Lean 的显式 [EXTRA] 已处理，详见 audit。"
+        ],
+        "evidence": [
+          "教材 PDF 第210页／印刷第189页，§5.3.1：已实际查看渲染页并核对公式及正文；页码满足189+21=210。该页未给这五条的独立证明，proof_latex=null 与 proof_note 相符。",
+          "PDF210原段落从 “This concept of the delta function” 至 “actions of the functions dε”；连续性、两个条件与极限描述均相符。context_notation=[] 未误植其他记号。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.diracApproximation",
+        "verdict": "PASS",
+        "explanation": "已读取并展开 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean（5315–5348行）：E n = EuclideanSpace ℝ (Fin n)；density ρ = Measurable ρ ∧ (∀ z,0 ≤ ρ z) ∧ Integrable ρ volume；probabilityDensity ρ = density ρ ∧ (∫ z,ρ z)=1；schwartzSpace n = SchwartzMap (E n) ℝ；diracAction φ = φ 0；diracMeasure n = Measure.dirac 0；gaussianDelta ε z = Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε)。 量词顺序为任意维数、任意参数族，依次给出正参数下连续性、概率密度资格及统一最终支撑收缩，最后对每个连续测试函数断言 ε→0+ 的积分收敛到 φ(0)。Function.support 是非零点集合；对所有 δ>0 的该收缩条件与闭支持收缩等价（先用 δ/2）。连续测试函数虽可全局无界，但最终支持位于零点附近，局部有界足以保证乘积可积。非负性是明确披露、合理的 [EXTRA]；原文只列质量1与支撑收缩，若允许带符号函数，其推论不成立。例如取非负偶光滑紧支撑概率密度 b，令 rε(x)=ε⁻¹b(x/ε)+ε⁻²b((x−2ε)/ε)−ε⁻²b((x+2ε)/ε)，则质量1、支持收缩，而对在零附近等于 x 的光滑紧支撑 φ，积分最终等于4而 φ(0)=0。统一 L¹ 界可作为非负性的替代条件；当前签名已作显式修补，不应把这一修补回写为原书已有假设。无 [ERRATUM?] 标签。 签名语义与证明状态分别判断：已读 Ch05.lean 对应声明及其证明块，本条无 sorry/admit；本轮只读语义审计，没有运行 Lean 编译，PASS 不表示编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-GaussianDelta",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "FORMULA_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-GaussianDelta",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "189",
+          "pdf_page": "210",
+          "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\varepsilon\\pi}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Gaussian替代族的真实函数，ε>0下有概率解释；其支撑是整个ℝ，未声称它满足上一条紧支撑收缩条件。"
+          ],
+          "issues": [
+            "原页分母排印为 sqrt(2επ)，条目为等价的 sqrt(2πε)；按逐字审校恢复原页因子顺序，数学内容无变化。"
+          ],
+          "lean_decl": "MD.Ch05.gaussianDelta",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [
+            "本轮依据 PDF210 渲染页恢复 Gaussian 展示公式及分母因子次序；未改原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页分母排印为 sqrt(2επ)，条目为等价的 sqrt(2πε)；按逐字审校恢复原页因子顺序，数学内容无变化。"
+        ],
+        "evidence": [
+          "教材 PDF 第210页／印刷第189页，§5.3.1：已实际查看渲染页并核对公式及正文；页码满足189+21=210。该页未给这五条的独立证明，proof_latex=null 与 proof_note 相符。",
+          "PDF210 “Alternatively, one may use a sequence of smooth functions” 后的展示式：dε=1/sqrt(2επ) exp(−z²/(2ε))。原句并无独立概率归一化或弱极限证明；两条性质为另列的语义细化。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.gaussianDelta",
+        "verdict": "PASS",
+        "explanation": "已读取并展开 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean（5315–5348行）：E n = EuclideanSpace ℝ (Fin n)；density ρ = Measurable ρ ∧ (∀ z,0 ≤ ρ z) ∧ Integrable ρ volume；probabilityDensity ρ = density ρ ∧ (∫ z,ρ z)=1；schwartzSpace n = SchwartzMap (E n) ℝ；diracAction φ = φ 0；diracMeasure n = Measure.dirac 0；gaussianDelta ε z = Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε)。 本地 MD.Ch05.gaussianDelta 与正式库 gaussianDelta 的展开公式一致，ℝ 上对象、一维变量与系数均正确；2πε 与原式2επ相等。定义没有参数正性前提，是 Lean 总函数延拓；原书概率近似族只解释 ε>0，在此范围定义忠实。单独定义不声称已证明光滑性、归一化或弱收敛，这些性质不能从声明名称推出。无 [EXTRA] 或 [ERRATUM?] 标签。 签名语义与证明状态分别判断：已读 Ch05.lean 对应声明及其证明块，本条无 sorry/admit；本轮只读语义审计，没有运行 Lean 编译，PASS 不表示编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-DiracEvaluates",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-DiracEvaluates",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "189",
+          "pdf_page": "210",
+          "statement_latex": "$\\langle\\delta,\\phi\\rangle=\\int\\delta(z)\\phi(z)d\\omega=\\phi(0)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "形式积分以真实Dirac测度实现；不是给δ(z)定义普通Lebesgue函数。",
+            "φ∈𝒯；上文 PDF209／印刷188页列出可选测试空间 C_c^∞(ℝ^m) 与 Schwartz 空间 𝒮(ℝ^m)，此条 Lean 选择后者；dω 为欧氏空间体积积分记号，δ 处的积分为分布配对的形式写法。"
+          ],
+          "issues": [
+            "陈述公式正确；context_notation 缺少原文明确的 φ∈𝒯 及其上文测试空间资格，补入以免误读为任意函数。"
+          ],
+          "lean_decl": "MD.Ch05.diracEvaluates",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [
+            "补入 PDF209–210 明确给出的测试函数资格，保留原陈述和原书形式积分。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "陈述公式正确；context_notation 缺少原文明确的 φ∈𝒯 及其上文测试空间资格，补入以免误读为任意函数。"
+        ],
+        "evidence": [
+          "教材 PDF 第210页／印刷第189页，§5.3.1：已实际查看渲染页并核对公式及正文；页码满足189+21=210。该页未给这五条的独立证明，proof_latex=null 与 proof_note 相符。",
+          "PDF210 页首明确 “its action on a function φ∈𝒯” 及 ⟨δ,φ⟩=∫δ(z)φ(z)dω=φ(0)；PDF209 §5.3.1 的测试空间列表已读取核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.diracEvaluates",
+        "verdict": "PASS",
+        "explanation": "已读取并展开 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean（5315–5348行）：E n = EuclideanSpace ℝ (Fin n)；density ρ = Measurable ρ ∧ (∀ z,0 ≤ ρ z) ∧ Integrable ρ volume；probabilityDensity ρ = density ρ ∧ (∫ z,ρ z)=1；schwartzSpace n = SchwartzMap (E n) ℝ；diracAction φ = φ 0；diracMeasure n = Measure.dirac 0；gaussianDelta ε z = Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε)。 任意 n 及任意 Schwartz 测试函数，积分测度展开为零点 Dirac 测度，右端展开为 φ(0)。因此积分实现了原文形式配对与零点评价。原文上文列出的两种可选测试空间为光滑紧支撑函数与 Schwartz 空间；选取其中 Schwartz 空间合理，前者亦属于后者，不丢失所列测试函数。未把 δ(z) 当作普通 Lebesgue 密度。无额外假设或 [ERRATUM?] 标签。 签名语义与证明状态分别判断：已读 Ch05.lean 对应声明及其证明块，本条无 sorry/admit；本轮只读语义审计，没有运行 Lean 编译，PASS 不表示编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-GaussianDeltaProbability",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "FORMULA_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-GaussianDeltaProbability",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "189",
+          "pdf_page": "210",
+          "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\varepsilon\\pi}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "原页分母排印为 sqrt(2επ)，条目为等价的 sqrt(2πε)；按逐字审校恢复原页因子顺序，数学内容无变化。"
+          ],
+          "lean_decl": "MD.Ch05.gaussianDeltaProbability",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]ε>0，完整真实概率密度资格另列；定义没有替代归一化证明。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [
+            "本轮依据 PDF210 渲染页恢复 Gaussian 展示公式及分母因子次序；未改原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页分母排印为 sqrt(2επ)，条目为等价的 sqrt(2πε)；按逐字审校恢复原页因子顺序，数学内容无变化。"
+        ],
+        "evidence": [
+          "教材 PDF 第210页／印刷第189页，§5.3.1：已实际查看渲染页并核对公式及正文；页码满足189+21=210。该页未给这五条的独立证明，proof_latex=null 与 proof_note 相符。",
+          "PDF210 “Alternatively, one may use a sequence of smooth functions” 后的展示式：dε=1/sqrt(2επ) exp(−z²/(2ε))。原句并无独立概率归一化或弱极限证明；两条性质为另列的语义细化。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.gaussianDeltaProbability",
+        "verdict": "PASS",
+        "explanation": "已读取并展开 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean（5315–5348行）：E n = EuclideanSpace ℝ (Fin n)；density ρ = Measurable ρ ∧ (∀ z,0 ≤ ρ z) ∧ Integrable ρ volume；probabilityDensity ρ = density ρ ∧ (∫ z,ρ z)=1；schwartzSpace n = SchwartzMap (E n) ℝ；diracAction φ = φ 0；diracMeasure n = Measure.dirac 0；gaussianDelta ε z = Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε)。 先量化 ε，再要求 ε>0；三个结论分别是所有实数点上的非负性、对 Lebesgue volume 可积、积分为1，展开后为原式真实 Gaussian 的概率资格。正性是必要且合理的 [EXTRA]：Lean 中 ε=0 时分母0而总除法给零函数，积分不是1；ε<0 时实平方根分母也为0。该条是对原文替代近似族的补充性质，未声称原页有独立证明，也未把非负性或可积性省略。无 [ERRATUM?] 标签。 签名语义与证明状态分别判断：已读 Ch05.lean 对应声明及其证明块，本条无 sorry/admit；本轮只读语义审计，没有运行 Lean 编译，PASS 不表示编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-GaussianDeltaWeak",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "FORMULA_TRANSCRIPTION",
+          "DISPLAY_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-GaussianDeltaWeak",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "189",
+          "pdf_page": "210",
+          "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\varepsilon\\pi}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "原页分母排印为 sqrt(2επ)，条目为等价的 sqrt(2πε)；按逐字审校恢复原页因子顺序，数学内容无变化。",
+            "原页为展示公式，条目改成行内负幂形式；恢复原式，不改其数学含义。"
+          ],
+          "lean_decl": "MD.Ch05.gaussianDeltaWeak",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明确选择有界连续测试函数的实际概率弱极限；原“suitable test”以此资格实现，Schwartz测试也适用。全空间Gaussian没有收缩support，不用上一条support假设套用。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [
+            "本轮依据 PDF210 渲染页恢复 Gaussian 展示公式及分母因子次序；未改原书数学内容。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原页分母排印为 sqrt(2επ)，条目为等价的 sqrt(2πε)；按逐字审校恢复原页因子顺序，数学内容无变化。",
+          "原页为展示公式，条目改成行内负幂形式；恢复原式，不改其数学含义。"
+        ],
+        "evidence": [
+          "教材 PDF 第210页／印刷第189页，§5.3.1：已实际查看渲染页并核对公式及正文；页码满足189+21=210。该页未给这五条的独立证明，proof_latex=null 与 proof_note 相符。",
+          "PDF210 “Alternatively, one may use a sequence of smooth functions” 后的展示式：dε=1/sqrt(2επ) exp(−z²/(2ε))。原句并无独立概率归一化或弱极限证明；两条性质为另列的语义细化。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.gaussianDeltaWeak",
+        "verdict": "PASS",
+        "explanation": "已读取并展开 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean（5315–5348行）：E n = EuclideanSpace ℝ (Fin n)；density ρ = Measurable ρ ∧ (∀ z,0 ≤ ρ z) ∧ Integrable ρ volume；probabilityDensity ρ = density ρ ∧ (∫ z,ρ z)=1；schwartzSpace n = SchwartzMap (E n) ℝ；diracAction φ = φ 0；diracMeasure n = Measure.dirac 0；gaussianDelta ε z = Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε)。 任意实值 φ，在连续及值域有界条件后，断言 Lebesgue 积分对正 ε 趋零收敛到 φ(0)。Bornology.IsBounded (range φ) 在 ℝ 上即存在统一绝对值上界。该 [EXTRA] 合理地选择概率弱收敛测试类，并包含原文两种光滑测试空间；Gaussian 对 ε>0 的支持为整个 ℝ，签名正确地没有调用收缩支持条件。不能删除所有增长限制而宣称任意连续函数：例如 φ(x)=exp(x^4) 与每个正参数 Gaussian 的乘积不可积，Lean 总积分返回0，故不趋向 φ(0)=1。有界性是充分而非最弱限制，已明示。无 [ERRATUM?] 标签。 签名语义与证明状态分别判断：已读 Ch05.lean 对应声明及其证明块，本条无 sorry/admit；本轮只读语义审计，没有运行 Lean 编译，PASS 不表示编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

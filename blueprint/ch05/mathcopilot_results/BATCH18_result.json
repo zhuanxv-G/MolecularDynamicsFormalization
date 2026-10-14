@@ -1,0 +1,432 @@
+{
+  "batch": "BATCH18",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "fa75372f80a9f6132b28e2f99b1778f3ea6b12026c8b716555a0dcfec911b59f",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.4.1-UniformMicroErgodic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_MISMATCH",
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-UniformMicroErgodic",
+          "kind": "definition",
+          "label": "Definition 5.1",
+          "section": "5.4.1",
+          "printed_page": "197",
+          "pdf_page": "218",
+          "statement_latex": "Definition 5.1 A Hamiltonian system is said to be ergodic on an energy surface $\\Sigma_E$ (microcanonically ergodic) if, for almost all trajectories $\\Gamma$ emanating from initial conditions on $\\Sigma_E$, and for any observable $g$, the following holds $\\bar g_\\Gamma=\\operatorname{Av}_{H=E}(g)$, where $\\bar g_\\Gamma$ is defined in (5.9). By “almost all” we mean that there could be a low-dimensional subset for which the trajectory averages fail to equal the space averages.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\Gamma=\\{z(t):t\\in[0,\\infty)\\}$ 是轨道；$\\bar g_\\Gamma$ 按(5.9)定义（PDF216/印刷195）；$\\operatorname{Av}_{H=E}$ 是微正则概率空间平均；$\\Sigma_E=\\{H=E\\}$。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.uniformMicroErgodic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]沿用前文光滑可观测量且明确µ可积，避免给不存在空间平均的函数套等式；AE采用真实µ_E零测资格。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH18 first-with-deps：按PDF218–219页面图像恢复原文记号、核对页码、补足context；未静默修改原书疑误。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF218–219; batch18-page-218.png and batch18-page-219.png"
+        },
+        "issues": [
+          "按PDF图像恢复原文记号（集合为calligraphic A，轨道为Γ，时间平均有轨道下标；indicator两条另恢复χ及时间τ）。原文字句及段落选取范围保留。",
+          "补齐本条所需原文上下文，区别实际记号和审计者评论；proof_latex=null保留：未发现独立定理证明块，定义后说明/论证已在所引陈述和上下文中记录。"
+        ],
+        "evidence": [
+          "PDF218（印刷197），已阅读页面图像及文本；Definition5.1展示式为bar g_Γ，原轨道Γ，并引用(5.9)。",
+          "PDF218–219：χ定义跨页，0在A内、1在Σ_E\\A；PDF216/印刷195给出(5.9)及smooth scalar valued function。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.uniformMicroErgodic",
+        "verdict": "FAIL",
+        "explanation": "本次按补充规则复审C：Mathlib v4.34.0定义直接按标准数学含义采信，未要求其定义体出现在Ch05_deps.txt；以下展开只针对附件中的项目定义。AE指相应测度下几乎处处；Integrable为Bochner可积；积分不可积时取0；Tendsto atTop (𝓝 a)为T→+∞的实数极限。判定针对本条引用范围的全部语义，不把sorry作为FAIL理由。 项目定义已展开（Ch05_deps.txt，FILE MolecularDynamics/Chapter05/ReviewDefinitions.lean，5315、5330、5355–5378行）：E n是带欧氏内积的ℝⁿ；energySurface H c={z|H z=c}；grad H=gradient H；hausdorffArea d=[标准d维单位球Lebesgue体积/2^d]×d维Hausdorff测度；surfaceMeasure将(n−1)维该测度限制到能量面；microRaw以‖grad H‖⁻¹作密度；microMeasure=(microRaw univ)⁻¹•microRaw；average μ g=∫g dμ；microAverage=average microMeasure；timeAverage z g T=T⁻¹∫₀ᵀg(z(t))dt；hasTimeAverage=该函数趋于a。regularEnergy在另一定义中要求非空紧能量面、非零梯度及0<microRaw univ<∞，它不会自动成为本条前提。 PDF218/印刷197的Definition5.1要求同一AE初值集合上所有观测量的平均等式；签名AE z在∀g之前正确，光滑资格对应PDF216/印刷195，附加可积资格合理，真实概率零测例外的表达也合理。但是Measure类型不自动意味着概率测度，归一化公式仅在原始质量非零有限时给概率；这里也未限制Φ为给定Hamiltonian的能量保持流。对一般H,c,Φ的谓词会真空成立，缺少原句的系统/概率能量面资格。作为在适当系统背景中使用的公式，它的核心平均条件正确；作为当前无资格参数域上的完整定义，FAIL。本定义无sorry；无[ERRATUM?]标记。",
+        "counterexample": "参数域反例：n=2,H≡0,c=1时energySurface为空，microRaw=0，microMeasure=0，任意Φ的AE条件均成立。这个例子说明背景资格未落实，不是对良定Hamiltonian概率系统中平均公式的反例。",
+        "suggested_fix": "明确限定定义的应用域为真实Hamiltonian能量保持流，并在签名/承载结构中记录0<microRaw H c univ<∞及概率资格；保留共同AE、光滑且可积观测量的现有量词顺序。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-MicroErgodicStandard",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_MISMATCH",
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-MicroErgodicStandard",
+          "kind": "definition",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "197",
+          "pdf_page": "218",
+          "statement_latex": "for almost all trajectories $\\Gamma$ emanating from initial conditions on $\\Sigma_E$, and for any observable $g$, $\\bar g_\\Gamma=\\operatorname{Av}_{H=E}(g)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本句摘自Definition 5.1；原文先“almost all trajectories”，再“any observable”；$\\Gamma$ 和 $\\bar g_\\Gamma$ 同(5.9)，PDF216。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.microErgodic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]标准每个L¹可观测量各自AE初值版本，和原字面共满测集版本分开；不声称两者已等价。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH18 first-with-deps：按PDF218–219页面图像恢复原文记号、核对页码、补足context；未静默修改原书疑误。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF218–219; batch18-page-218.png and batch18-page-219.png"
+        },
+        "issues": [
+          "按PDF图像恢复原文记号（集合为calligraphic A，轨道为Γ，时间平均有轨道下标；indicator两条另恢复χ及时间τ）。原文字句及段落选取范围保留。",
+          "补齐本条所需原文上下文，区别实际记号和审计者评论；proof_latex=null保留：未发现独立定理证明块，定义后说明/论证已在所引陈述和上下文中记录。"
+        ],
+        "evidence": [
+          "PDF218（印刷197），已阅读页面图像及文本；Definition5.1原句先almost all trajectories Γ，再any observable g。",
+          "PDF218–219：χ定义跨页，0在A内、1在Σ_E\\A；PDF216/印刷195给出(5.9)及smooth scalar valued function。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microErgodic",
+        "verdict": "FAIL",
+        "explanation": "本次按补充规则复审C：Mathlib v4.34.0定义直接按标准数学含义采信，未要求其定义体出现在Ch05_deps.txt；以下展开只针对附件中的项目定义。AE指相应测度下几乎处处；Integrable为Bochner可积；积分不可积时取0；Tendsto atTop (𝓝 a)为T→+∞的实数极限。判定针对本条引用范围的全部语义，不把sorry作为FAIL理由。 项目定义已展开（Ch05_deps.txt，FILE MolecularDynamics/Chapter05/ReviewDefinitions.lean，5315、5330、5355–5378行）：E n是带欧氏内积的ℝⁿ；energySurface H c={z|H z=c}；grad H=gradient H；hausdorffArea d=[标准d维单位球Lebesgue体积/2^d]×d维Hausdorff测度；surfaceMeasure将(n−1)维该测度限制到能量面；microRaw以‖grad H‖⁻¹作密度；microMeasure=(microRaw univ)⁻¹•microRaw；average μ g=∫g dμ；microAverage=average microMeasure；timeAverage z g T=T⁻¹∫₀ᵀg(z(t))dt；hasTimeAverage=该函数趋于a。regularEnergy在另一定义中要求非空紧能量面、非零梯度及0<microRaw univ<∞，它不会自动成为本条前提。 PDF218的原句量词是AE轨道之后∀观测量；当前改为∀L¹观测量之后各自AE初值，并取消前文光滑资格。[EXTRA]如实声明了这个替代版本，但这属于改换定义/资格，不能单凭备注认定为所引原句的完整忠实翻译，也没有在本条给出适用背景下的等价连接。AE及Integrable的标准含义已明确，不存在Mathlib材料缺失问题；还同样缺微正则概率及真实流参数资格。本定义无sorry；无[ERRATUM?]标记。",
+        "counterexample": "缺失/变更条款：原共同满测初值集合上∀光滑观测量条件没有原样保留，替换为每个L¹观测量自己的满测集合。一般AE量词不可直接交换；例如非原子概率空间上P(z,a)=(z≠a)，每个a各自AE z成立，但AE z∀a失败。该例仅说明量词逻辑，未冒称为本Hamiltonian定义的动力系统反例；此条FAIL还由明确的对象资格及函数类变化支持。",
+        "suggested_fix": "按原句恢复AE z后∀适当光滑观测量的定义并补足概率/流资格；若保留现有标准L¹版本，将其单独标为替代定义，并明确证明与原定义在所需系统背景下的关系。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-FlowInvariant",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_MISMATCH",
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "PAGE_RANGE_OVERBROAD"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-FlowInvariant",
+          "kind": "definition",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "197",
+          "pdf_page": "218",
+          "statement_latex": "An invariant set $\\mathcal A$ of the flow is one such that $\\mathcal F_t(\\mathcal A)=\\mathcal A$, for all $t\\ne0$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathcal F_t$ 是流映射，$\\mathcal F_t(\\mathcal A)$ 是集合像；真实流有 $\\mathcal F_0=\\mathrm{id}$。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.flowInvariant",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原t≠0；真实流的零时刻恒等自动补上t=0，因而用实际全实时间集合像不变性。仅给定的真实流可解释为动力系统不变性。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH18 first-with-deps：按PDF218–219页面图像恢复原文记号、核对页码、补足context；未静默修改原书疑误。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF218–219; batch18-page-218.png and batch18-page-219.png"
+        },
+        "issues": [
+          "按PDF图像恢复原文记号（集合为calligraphic A，轨道为Γ，时间平均有轨道下标；indicator两条另恢复χ及时间τ）。原文字句及段落选取范围保留。",
+          "补齐本条所需原文上下文，区别实际记号和审计者评论；proof_latex=null保留：未发现独立定理证明块，定义后说明/论证已在所引陈述和上下文中记录。",
+          "本条完整引句、公式及t≠0都在PDF218/印刷197，不应标218–219。"
+        ],
+        "evidence": [
+          "PDF218（印刷197），已阅读页面图像及文本；An invariant set公式使用calligraphic A，下一行for all t≠0，均在同页。",
+          "PDF218–219：χ定义跨页，0在A内、1在Σ_E\\A；PDF216/印刷195给出(5.9)及smooth scalar valued function。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.flowInvariant",
+        "verdict": "FAIL",
+        "explanation": "本次按补充规则复审C：Mathlib v4.34.0定义直接按标准数学含义采信，未要求其定义体出现在Ch05_deps.txt；以下展开只针对附件中的项目定义。AE指相应测度下几乎处处；Integrable为Bochner可积；积分不可积时取0；Tendsto atTop (𝓝 a)为T→+∞的实数极限。判定针对本条引用范围的全部语义，不把sorry作为FAIL理由。 项目定义已展开（Ch05_deps.txt，FILE MolecularDynamics/Chapter05/ReviewDefinitions.lean，5379–5381行）：flowInvariant Φ A=∀t∈ℝ, Set.image (Φ t) A=A；setErgodic μ Φ=∀A,MeasurableSet A→flowInvariant Φ A→(μ A=0∨μ A=1)。项目flow定义（5322–5324行）另要求零时刻恒等、群律与ODE导数条件，裸函数参数Φ不会自动拥有这些条件。 PDF218/印刷197明确排除t=0，签名则量化全部实时间。[EXTRA]关于真实流零时刻恒等使两条件等价的数学解释正确；问题是该资格没有编码到Φ参数中。对真实流该公式忠实，但当前声明的参数域包含不满足零时刻恒等的函数族，两谓词在那里不同。判定不涉及任何缺失Mathlib定义。本定义无sorry；无[ERRATUM?]标记。",
+        "counterexample": "取X=ℝ,A={0}，t≠0时Φ t=id，t=0时Φ 0恒等于1。所有非零时间Φ t(A)=A成立，而Φ 0(A)={1}≠A。该反例恰在签名允许、原文“流”排除的参数域。",
+        "suggested_fix": "将Φ改为含零时刻恒等资格的流对象；或原样定义∀t,t≠0→Set.image (Φ t) A=A，并另说明真实流下等价于全时间版本。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-SetErgodic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_MISMATCH",
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "PAGE_RANGE_OVERBROAD"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-SetErgodic",
+          "kind": "definition",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "197",
+          "pdf_page": "218",
+          "statement_latex": "Alternatively, we may say that a dynamical system as ergodic if the probability measure of any invariant set $\\mathcal A$ of the flow is either 0 or 1.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathcal A$ 是流的不变集合，概率测度取值0或1；不变性公式及 $t\\ne0$ 都在PDF218。原书“as ergodic”原样保留。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.setErgodic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明示集合可测和实际概率测度背景；原“as ergodic”字面保留，不在逐字JSON中默改为“is”。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH18 first-with-deps：按PDF218–219页面图像恢复原文记号、核对页码、补足context；未静默修改原书疑误。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF218–219; batch18-page-218.png and batch18-page-219.png"
+        },
+        "issues": [
+          "按PDF图像恢复原文记号（集合为calligraphic A，轨道为Γ，时间平均有轨道下标；indicator两条另恢复χ及时间τ）。原文字句及段落选取范围保留。",
+          "补齐本条所需原文上下文，区别实际记号和审计者评论；proof_latex=null保留：未发现独立定理证明块，定义后说明/论证已在所引陈述和上下文中记录。",
+          "本条完整引句、公式及t≠0都在PDF218/印刷197，不应标218–219。"
+        ],
+        "evidence": [
+          "PDF218（印刷197），已阅读页面图像及文本；原页确为“a dynamical system as ergodic”；概率measure与calligraphic A逐字核对。",
+          "PDF218–219：χ定义跨页，0在A内、1在Σ_E\\A；PDF216/印刷195给出(5.9)及smooth scalar valued function。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.setErgodic",
+        "verdict": "FAIL",
+        "explanation": "本次按补充规则复审C：Mathlib v4.34.0定义直接按标准数学含义采信，未要求其定义体出现在Ch05_deps.txt；以下展开只针对附件中的项目定义。AE指相应测度下几乎处处；Integrable为Bochner可积；积分不可积时取0；Tendsto atTop (𝓝 a)为T→+∞的实数极限。判定针对本条引用范围的全部语义，不把sorry作为FAIL理由。 项目定义已展开（Ch05_deps.txt，FILE MolecularDynamics/Chapter05/ReviewDefinitions.lean，5379–5381行）：flowInvariant Φ A=∀t∈ℝ, Set.image (Φ t) A=A；setErgodic μ Φ=∀A,MeasurableSet A→flowInvariant Φ A→(μ A=0∨μ A=1)。项目flow定义（5322–5324行）另要求零时刻恒等、群律与ODE导数条件，裸函数参数Φ不会自动拥有这些条件。 PDF218的概率不变集合0/1条件与展开后的核心公式一致；明示可测集合是合理EXTRA。可是μ:Measure X没有IsProbabilityMeasure背景，Φ仍是任意函数族；[EXTRA]所称实际概率背景没有体现在声明中。由Measure的标准意义不能推断μ univ=1。该谓词可作为一般测度上的扩展定义，但原句限定概率动力系统，其完整对象资格未编码。本定义无sorry；原书“as ergodic”保持不变，无[ERRATUM?]标记。",
+        "counterexample": "μ=0、Φ t=id时setErgodic成立，因为所有A的μ A=0，然而μ univ=0，不能解释为原文概率系统。这说明谓词参数域比原文宽，核心0/1公式本身没有被此例否定。",
+        "suggested_fix": "明确IsProbabilityMeasure μ背景及实际流资格，或把这些资格纳入承载对象；保留可测不变集合的0/1条件。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-InvariantIndicator",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_MISMATCH",
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-InvariantIndicator",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "198",
+          "pdf_page": "219",
+          "statement_latex": "Then for any trajectory starting in $\\mathcal A$, we have that the average of $\\chi$ along $\\Gamma$ vanishes, i.e. $\\bar\\chi_\\Gamma=\\lim_{\\tau\\to\\infty}\\tau^{-1}\\int_0^\\tau\\chi(z(t))dt=0$, since $\\mathcal A$ is an invariant set.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF218–219：$\\chi(z)=0$ 若 $z\\in\\mathcal A$，$\\chi(z)=1$ 若 $z\\in\\Sigma_E\\setminus\\mathcal A$；初值在 $\\mathcal A$；$\\Gamma$ 是该轨道，$\\tau$ 为平均时长。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.invariantIndicator",
+          "reusable_proofs": [
+            "MolecularDynamics.Chapter05Review.invariantIndicator_proved"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]原χ是可达空间内A的补集示性函数，实际Measure支撑空间限定时可用ambient Aᶜ示性函数；本条保留沿轨道逐点为零，完整无限时间平均另条。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH18 first-with-deps：按PDF218–219页面图像恢复原文记号、核对页码、补足context；未静默修改原书疑误。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF218–219; batch18-page-218.png and batch18-page-219.png"
+        },
+        "issues": [
+          "按PDF图像恢复原文记号（集合为calligraphic A，轨道为Γ，时间平均有轨道下标；indicator两条另恢复χ及时间τ）。原文字句及段落选取范围保留。",
+          "补齐本条所需原文上下文，区别实际记号和审计者评论；proof_latex=null保留：未发现独立定理证明块，定义后说明/论证已在所引陈述和上下文中记录。"
+        ],
+        "evidence": [
+          "PDF219（印刷198），已阅读页面图像及文本；顶部Then for any trajectory...及展示式使用χ、Γ下标和τ上限。",
+          "PDF218–219：χ定义跨页，0在A内、1在Σ_E\\A；PDF216/印刷195给出(5.9)及smooth scalar valued function。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.invariantIndicator",
+        "verdict": "FAIL",
+        "explanation": "本次按补充规则复审C：Mathlib v4.34.0定义直接按标准数学含义采信，未要求其定义体出现在Ch05_deps.txt；以下展开只针对附件中的项目定义。AE指相应测度下几乎处处；Integrable为Bochner可积；积分不可积时取0；Tendsto atTop (𝓝 a)为T→+∞的实数极限。判定针对本条引用范围的全部语义，不把sorry作为FAIL理由。 项目定义已展开（Ch05_deps.txt，FILE MolecularDynamics/Chapter05/ReviewDefinitions.lean，5379–5381行）：flowInvariant Φ A=∀t∈ℝ, Set.image (Φ t) A=A；setErgodic μ Φ=∀A,MeasurableSet A→flowInvariant Φ A→(μ A=0∨μ A=1)。项目flow定义（5322–5324行）另要求零时刻恒等、群律与ODE导数条件，裸函数参数Φ不会自动拥有这些条件。 PDF218–219的χ是能量面内A的补集示性函数；Set.indicator的标准含义使Aᶜ.indicator 1在A内为0。签名的h、hz推出Φ t z∈A，ambient补集在该轨道上与能量面补集一致，因此逐点零结论正确。附件ReviewProofs.lean第5653–5658行的invariantIndicator_proved也已阅读；本地声明复用它且无sorry。可是本条statement_scope涵盖PDF219的完整无限时间平均等于0，声明只给逐点值，遗漏hasTimeAverage结论。[EXTRA]说明另条保留平均并不改变本条所引范围；FAIL依据结论缺项，无[ERRATUM?]标记。",
+        "counterexample": "缺失结论：hasTimeAverage (fun t=>Φ t z) (Aᶜ.indicator (fun _=>1)) 0。逐点为0能数学推出它，但当前本条声明未包含这一完整平均结论。",
+        "suggested_fix": "在本条结论中包含实际hasTimeAverage零极限；或者将本条source范围明确限为逐点辅助结论，与下一条平均声明分别绑定。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-InvariantIndicatorAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_MISMATCH",
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-InvariantIndicatorAverage",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "198",
+          "pdf_page": "219",
+          "statement_latex": "$\\bar\\chi_\\Gamma=\\lim_{\\tau\\to\\infty}\\tau^{-1}\\int_0^\\tau\\chi(z(t))dt=0$, since $\\mathcal A$ is an invariant set.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF218–219：$\\chi$ 是 $\\Sigma_E\\setminus\\mathcal A$ 的示性函数；本结论的初值在不变集合 $\\mathcal A$；$\\Gamma$ 是该轨道，$\\tau$ 为平均时长。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.invariantIndicatorAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH18 first-with-deps：按PDF218–219页面图像恢复原文记号、核对页码、补足context；未静默修改原书疑误。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF218–219; batch18-page-218.png and batch18-page-219.png"
+        },
+        "issues": [
+          "按PDF图像恢复原文记号（集合为calligraphic A，轨道为Γ，时间平均有轨道下标；indicator两条另恢复χ及时间τ）。原文字句及段落选取范围保留。",
+          "补齐本条所需原文上下文，区别实际记号和审计者评论；proof_latex=null保留：未发现独立定理证明块，定义后说明/论证已在所引陈述和上下文中记录。"
+        ],
+        "evidence": [
+          "PDF219（印刷198），已阅读页面图像及文本；顶部展示式为bar χ_Γ=lim(τ→∞)τ⁻¹∫₀^τχ(z(t))dt=0。",
+          "PDF218–219：χ定义跨页，0在A内、1在Σ_E\\A；PDF216/印刷195给出(5.9)及smooth scalar valued function。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.invariantIndicatorAverage",
+        "verdict": "PASS",
+        "explanation": "本次按补充规则复审C：Mathlib v4.34.0定义直接按标准数学含义采信，未要求其定义体出现在Ch05_deps.txt；以下展开只针对附件中的项目定义。AE指相应测度下几乎处处；Integrable为Bochner可积；积分不可积时取0；Tendsto atTop (𝓝 a)为T→+∞的实数极限。判定针对本条引用范围的全部语义，不把sorry作为FAIL理由。 项目定义已展开（Ch05_deps.txt，FILE MolecularDynamics/Chapter05/ReviewDefinitions.lean，5379–5381行）：flowInvariant Φ A=∀t∈ℝ, Set.image (Φ t) A=A；setErgodic μ Φ=∀A,MeasurableSet A→flowInvariant Φ A→(μ A=0∨μ A=1)。项目flow定义（5322–5324行）另要求零时刻恒等、群律与ODE导数条件，裸函数参数Φ不会自动拥有这些条件。 项目定义已展开（同一FILE，5373–5375行）：timeAverage z g T=T⁻¹∫₀ᵀg(z(t))dt，hasTimeAverage z g a是该实值函数在atTop趋于a。average μ g=∫g dμ（5330行）。 PDF219的完整零时间平均被hasTimeAverage精确表达。hA及hz保证所有t的Φ t z在A内，故沿轨道的示性函数恒为0，其每个有限区间积分为0，T→+∞的平均也为0；有限区间上的实际被积函数恒零，因此不需要另加流可测性或L¹背景。ambient补集在这些轨道上与原文能量面补集的取值相同。无[EXTRA]额外限制，无[ERRATUM?]标记。声明实现有sorry；PASS仅为签名语义判定，不表示证明已经检查通过。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_MISMATCH",
+          "CONTEXT_NOTATION_INCOMPLETE",
+          "SOURCE_ARGUMENT_CAVEAT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "198",
+          "pdf_page": "219",
+          "statement_latex": "If we assume the system is ergodic, we must have $\\operatorname{Pr}(\\Sigma_E\\setminus\\mathcal A)=0$, thus $\\operatorname{Pr}(\\mathcal A)=1$. Since, according to the definition, equality of time and space averages is allowed to fail only on a set of probability measure zero, we have that either $\\operatorname{Pr}(\\mathcal A)=0$ or $\\operatorname{Pr}(\\mathcal A)=1$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF218–219：$\\mathcal A$ 不变，$\\chi=1_{\\Sigma_E\\setminus\\mathcal A}$；其空间平均为 $\\operatorname{Pr}(\\Sigma_E\\setminus\\mathcal A)$，在 $\\mathcal A$ 中的轨道平均为零。原书先写补集概率为0，最后才分辨 $\\operatorname{Pr}(\\mathcal A)=0$ 的情形；应用AE等式推出补集概率为0须先有 $\\operatorname{Pr}(\\mathcal A)>0$，这里仅记录而不改原句。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.ergodicTimeAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]完整全实时间可测流、概率保持、群律及L¹资格；对应标准每观测量AE版本，未将原共满测集量词交换当无条件事实。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH18 first-with-deps：按PDF218–219页面图像恢复原文记号、核对页码、补足context；未静默修改原书疑误。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF218–219; batch18-page-218.png and batch18-page-219.png"
+        },
+        "issues": [
+          "按PDF图像恢复原文记号（集合为calligraphic A，轨道为Γ，时间平均有轨道下标；indicator两条另恢复χ及时间τ）。原文字句及段落选取范围保留。",
+          "补齐本条所需原文上下文，区别实际记号和审计者评论；proof_latex=null保留：未发现独立定理证明块，定义后说明/论证已在所引陈述和上下文中记录。",
+          "原书先断言Pr(A)=1而未先排除零测A；保留原句并在context记录所需分支。没有[ERRATUM?]标签，但indicator对光滑定义的应用也须额外论证。"
+        ],
+        "evidence": [
+          "PDF219（印刷198），已阅读页面图像及文本；On the other hand后Pr(Σ_E\\A)=0、Pr(A)=1及最终either 0 or1，与引用逐句一致。",
+          "PDF218–219：χ定义跨页，0在A内、1在Σ_E\\A；PDF216/印刷195给出(5.9)及smooth scalar valued function。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.ergodicTimeAverage",
+        "verdict": "FAIL",
+        "explanation": "本次按补充规则复审C：Mathlib v4.34.0定义直接按标准数学含义采信，未要求其定义体出现在Ch05_deps.txt；以下展开只针对附件中的项目定义。AE指相应测度下几乎处处；Integrable为Bochner可积；积分不可积时取0；Tendsto atTop (𝓝 a)为T→+∞的实数极限。判定针对本条引用范围的全部语义，不把sorry作为FAIL理由。 项目定义已展开（Ch05_deps.txt，FILE MolecularDynamics/Chapter05/ReviewDefinitions.lean，5379–5381行）：flowInvariant Φ A=∀t∈ℝ, Set.image (Φ t) A=A；setErgodic μ Φ=∀A,MeasurableSet A→flowInvariant Φ A→(μ A=0∨μ A=1)。项目flow定义（5322–5324行）另要求零时刻恒等、群律与ODE导数条件，裸函数参数Φ不会自动拥有这些条件。 项目定义已展开（同一FILE，5373–5375行）：timeAverage z g T=T⁻¹∫₀ᵀg(z(t))dt，hasTimeAverage z g a是该实值函数在atTop趋于a。average μ g=∫g dμ（5330行）。 PDF219所引段落给时间平均遍历性推出集合0/1的论证；当前签名是集合遍历性与∀L¹观测量各自AE时间平均的双向等价。概率保持、零时刻、群律、联合可测和L¹资格均已落实；这些EXTRA对标准可测概率保持流的遍历定理合理，签名作为该标准版本有正确数学意图。但所引Definition5.1的共同AE、光滑观测量条件被改换，[EXTRA]也明确承认没有建立这种量词版本的连接，故不能对本条固定原句的完整忠实性判PASS。PDF218“same concept”声称的是原定义的联系，不能自动替换其量词和函数类。原书Pr(A)=1的中间步骤还需先处理μ(A)>0分支，指示函数对光滑版本的直接套用也需论证；这些源文问题仅记录，不静默改写。无[ERRATUM?]标签。实现含sorry，与本次语义FAIL分别判断。",
+        "counterexample": "改变/缺失：共同AE光滑观测量版的前提及其与标准逐g AE L¹版的连接未出现；另增反向蕴含。原文中间句若不先分支，取A=∅便有Pr(A)=0及Pr(Σ_E\\A)=1，不能无条件推出Pr(A)=1；最后的0/1结论并不因此错误。以上不是对标准L¹双向遍历定理的反例。",
+        "suggested_fix": "对本条限定引用保留原定义的时间平均资格及集合0/1结论，补齐μ(A)>0分支和indicator适用性；现有标准L¹双向定理单列为扩展版本，明确与原共同AE光滑定义在相应背景中的连接。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-NonergodicSet",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_MISMATCH",
+          "CONTEXT_NOTATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-NonergodicSet",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "198",
+          "pdf_page": "219",
+          "statement_latex": "If a system is not ergodic, then there will be an invariant set $\\mathcal A$ whose probability measure is strictly between zero and one. The trajectories emanating from this set are unable to explore the entire energy surface and the corresponding trajectory averages will, at least for some observables, be different than the spatial average of that observable.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathcal A$ 是能量面 $\\Sigma_E$ 中的不变集合，$0<\\operatorname{Pr}(\\mathcal A)<1$；该段还声称轨道受困及某些可观测量的时间平均异于空间平均。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.nonergodicSet",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH18 first-with-deps：按PDF218–219页面图像恢复原文记号、核对页码、补足context；未静默修改原书疑误。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; PDF218–219; batch18-page-218.png and batch18-page-219.png"
+        },
+        "issues": [
+          "按PDF图像恢复原文记号（集合为calligraphic A，轨道为Γ，时间平均有轨道下标；indicator两条另恢复χ及时间τ）。原文字句及段落选取范围保留。",
+          "补齐本条所需原文上下文，区别实际记号和审计者评论；proof_latex=null保留：未发现独立定理证明块，定义后说明/论证已在所引陈述和上下文中记录。"
+        ],
+        "evidence": [
+          "PDF219（印刷198），已阅读页面图像及文本；If a system is not ergodic段两句与引用一致；集合原字体为calligraphic A。",
+          "PDF218–219：χ定义跨页，0在A内、1在Σ_E\\A；PDF216/印刷195给出(5.9)及smooth scalar valued function。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.nonergodicSet",
+        "verdict": "FAIL",
+        "explanation": "本次按补充规则复审C：Mathlib v4.34.0定义直接按标准数学含义采信，未要求其定义体出现在Ch05_deps.txt；以下展开只针对附件中的项目定义。AE指相应测度下几乎处处；Integrable为Bochner可积；积分不可积时取0；Tendsto atTop (𝓝 a)为T→+∞的实数极限。判定针对本条引用范围的全部语义，不把sorry作为FAIL理由。 项目定义已展开（Ch05_deps.txt，FILE MolecularDynamics/Chapter05/ReviewDefinitions.lean，5379–5381行）：flowInvariant Φ A=∀t∈ℝ, Set.image (Φ t) A=A；setErgodic μ Φ=∀A,MeasurableSet A→flowInvariant Φ A→(μ A=0∨μ A=1)。项目flow定义（5322–5324行）另要求零时刻恒等、群律与ODE导数条件，裸函数参数Φ不会自动拥有这些条件。 项目定义已展开（同一FILE，5373–5375行）：timeAverage z g T=T⁻¹∫₀ᵀg(z(t))dt，hasTimeAverage z g a是该实值函数在atTop趋于a。average μ g=∫g dμ（5330行）。 IsProbabilityMeasure μ确实落实概率资格，故在标准Measure数学意义下否定集合0/1条件等价于存在可测不变A满足0<μ A<1；这一存在性核心是正确的，不能因其Measure或ENNReal定义体不在摘录中而拒绝。但PDF219所引第二句还要求A内轨道受困，以及某些观测量时间平均异于空间平均，当前结论完全没有这些轨道/观测量子句。本条EXTRA为空，statement_scope未删去该句，因此仍为结论覆盖不完整。即使这些子句能从不变性另行推出，也不是当前已声明的结论。实现含sorry；无[ERRATUM?]标记。",
+        "counterexample": "缺失结论而非集合存在性公式的反例：在A内的初值应满足∀t,Φ t z∈A；选g=1_A，沿这些轨道的时间平均为1而空间平均为(μ A).toReal∈(0,1)。原句包含这些动力学/平均信息，当前存在性结论没有声明。",
+        "suggested_fix": "补上真实能量保持流背景及A在能量面的资格，加入轨道保持在A和实际hasTimeAverage与空间平均不等的子句；或者将引用范围仅限定为第一句的中间概率不变集合存在性。"
+      }
+    }
+  ]
+}

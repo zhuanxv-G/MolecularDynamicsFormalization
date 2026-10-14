@@ -1,0 +1,172 @@
+{
+  "batch": "BATCH03",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "a247bf98faf70cedb605a0e377f15c79d05280f20413231a0a64877b8a216d1e",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.2.1-DensityOn",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 203（印刷182）正文：ρ:D→ℝ；(i) ρ(z)≥0,z∈D；(ii) ∫_Dρdω<∞；dω=dz₁…dz_m；括号中明确 measurable function / Lebesgue sense；脚注1要求D Lebesgue-measurable。",
+          "已对PDF渲染页与文本同时核对；statement_latex及页码吻合，proof_latex=null符合本页无独立证明；context_notation为形式化说明而非原书引文，未发现与当前原文上下文冲突。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.densityOn",
+        "verdict": "PASS",
+        "explanation": "依补充规则直接采用 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义。项目自定义 E 已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开为 EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，其 volume 是标准Lebesgue测度。以下 MD.Ch05 自定义项按本批附件声明逐层展开；未用依赖中同名主题的全空间 density、probabilityDensity、densityMeasure 替代这些受限域定义。PDF203/印刷182正文及脚注1要求Lebesgue可测D、可测ρ:D→ℝ、D内逐点非负与有限积分。实际定义展开为 NullMeasurableSet D volume ∧ AEMeasurable ρ (volume.restrict D) ∧ (∀z∈D,0≤ρ z) ∧ IntegrableOn ρ D。NullMeasurableSet表达与Borel可测集几乎处处相同，恰为Lebesgue完备化可测；实值函数对受限测度的AEMeasurable对应完成测度下的可测性。IntegrableOn是对volume.restrict D的Bochner可积性，在非负实值条件下等价于原文有限Lebesgue积分，并排除了Bochner积分对不可积函数取0的误用。ρ写成全空间函数仅为域内函数选择任意域外延拓；所有资格和积分只依赖D内值，未要求域外非负或可积。n是原文m的任意有限维度重命名，无额外维数限制。[EXTRA]的可测域/函数及可积资格来自原文和脚注；AEMeasurable与IntegrableOn中的可测性部分重叠但无实质加强。无[ERRATUM?]。本条为定义，无证明占位问题。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-ProbabilityDensityOn",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 203（印刷182）正文 “A probability density function (or p.d.f.) on D is a density which is normalized” 及展示公式 ∫_Dρdω=1。",
+          "已对PDF渲染页与文本同时核对；statement_latex及页码吻合，proof_latex=null符合本页无独立证明；context_notation为形式化说明而非原书引文，未发现与当前原文上下文冲突。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.probabilityDensityOn",
+        "verdict": "PASS",
+        "explanation": "依补充规则直接采用 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义。项目自定义 E 已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开为 EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，其 volume 是标准Lebesgue测度。以下 MD.Ch05 自定义项按本批附件声明逐层展开；未用依赖中同名主题的全空间 density、probabilityDensity、densityMeasure 替代这些受限域定义。PDF203/印刷182给出“density which is normalized”及∫_Dρdω=1。实际 probabilityDensityOn D ρ := densityOn D ρ ∧ (∫z in D,ρ z)=1。递归展开densityOn后，完整保留Lebesgue可测D、受限可测ρ、D内逐点非负和可积，再附加同一D上的积分为1。对象为域D上的密度，不换成全空间密度；域外延拓不影响该条件。可积资格保证积分取实际值而非不可积时的默认0。无额外假设，无[ERRATUM?]。本条为定义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-DensityOnNormalization",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 203（印刷182）正文原句 “Any density (with positive total integral) can be normalized by dividing by” 后接 ∫_Dρdω。正积分资格确实来自原书。",
+          "已对PDF渲染页与文本同时核对；statement_latex及页码吻合，proof_latex=null符合本页无独立证明；context_notation为形式化说明而非原书引文，未发现与当前原文上下文冲突。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.densityOnNormalization",
+        "verdict": "PASS",
+        "explanation": "依补充规则直接采用 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义。项目自定义 E 已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开为 EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，其 volume 是标准Lebesgue测度。以下 MD.Ch05 自定义项按本批附件声明逐层展开；未用依赖中同名主题的全空间 density、probabilityDensity、densityMeasure 替代这些受限域定义。PDF203/印刷182明确要求“with positive total integral”，并按∫_Dρdω相除。实际量词为∀n D ρ，假设依次为densityOn D ρ、0<∫_Dρ，结论为probabilityDensityOn D (z↦ρ(z)/∫_Dρ)。展开前后两个密度谓词，结论包含归一化函数的受限可测性、D内逐点非负、可积以及积分恰为1，全部原文结论均保留。原密度可积使分母有限，正性使分母非零；除以正常数保持资格，积分线性给出归一化。未把归一化当假设。正积分资格来自原书，非[EXTRA]；无[ERRATUM?]。本批附件附有证明且该声明无sorry；PASS仅评价签名语义，不宣称本轮已编译工程。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-DensityProbability",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 203（印刷182）末段：“For any measurable subset A of D, and probability density ρ, we define” 及 Pr(A)≝∫_Aρdω。",
+          "已对PDF渲染页与文本同时核对；statement_latex及页码吻合，proof_latex=null符合本页无独立证明；context_notation为形式化说明而非原书引文，未发现与当前原文上下文冲突。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.densityProbability",
+        "verdict": "PASS",
+        "explanation": "依补充规则直接采用 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义。项目自定义 E 已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开为 EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，其 volume 是标准Lebesgue测度。以下 MD.Ch05 自定义项按本批附件声明逐层展开；未用依赖中同名主题的全空间 density、probabilityDensity、densityMeasure 替代这些受限域定义。PDF203/印刷182定义可测A⊆D及概率密度ρ下的Pr(A)=∫_Aρdω。实际 densityProbability ρ A := ∫z in A,ρ z，恰为同一受限Lebesgue/Bochner积分。它作为总函数未把资格编码进参数，但也未声明所有输入都产生概率；本条context_notation将资格留到后续界定理，实际densityProbabilityBounds签名确有probabilityDensityOn D ρ、A⊆D、NullMeasurableSet A volume。展开这些资格后，ρ在A上可积且非负，故定义在原书允许的输入上与Pr(A)完全一致，域外延拓无影响。对任意无资格输入的默认积分值不应解释成原书概率，当前声明及上下文没有作这种断言。无实质额外假设，无[ERRATUM?]。本条为定义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-DensityMeasureOn",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 203（印刷182）末段与 DensityProbability 同一原句及 Pr(A)≝∫_Aρdω；原书未在此给出 withDensity 实现，这是同一公式的测度表示。",
+          "已对PDF渲染页与文本同时核对；statement_latex及页码吻合，proof_latex=null符合本页无独立证明；context_notation为形式化说明而非原书引文，未发现与当前原文上下文冲突。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.densityMeasureOn",
+        "verdict": "PASS",
+        "explanation": "依补充规则直接采用 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义。项目自定义 E 已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开为 EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，其 volume 是标准Lebesgue测度。以下 MD.Ch05 自定义项按本批附件声明逐层展开；未用依赖中同名主题的全空间 density、probabilityDensity、densityMeasure 替代这些受限域定义。PDF203/印刷182同一Pr(A)=∫_Aρdω公式的测度表示。实际 densityMeasureOn D ρ := (volume.restrict D).withDensity (z↦ENNReal.ofReal (ρ z))。展开其使用的项目别名E后，在原文资格probabilityDensityOn D ρ及Lebesgue可测A⊆D下，withDensity给出对受限Lebesgue测度的非负扩展实值积分；ENNReal.ofReal在D内ρ≥0时不改变值，域外的负值或其他延拓不影响受限积分。故该测度对A的值为ENNReal.ofReal(∫_Aρ)，其toReal为densityProbability ρ A；总质量由∫_Dρ=1得到1，D外质量为0。签名允许一般ρ以定义总函数，不断言这些输入均为概率测度，也不限制任意概率测度必须有密度。[EXTRA]仅为将原书实值积分概率实现为测度的合理表示选择，无新增实质资格或遗漏原文事件公式。无[ERRATUM?]。定义的语义对应可在标准含义下判断，无需本轮补写桥接证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-LebesgueClosure",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 203（印刷182）脚注1：D be Lebesgue-measurable；“Open and closed sets” 与 rectangular box 示例；“countable unions or intersections” 闭包。当前引文选取这些句子，省略的病态集合说明不改变本条陈述范围。",
+          "已对PDF渲染页与文本同时核对；statement_latex及页码吻合，proof_latex=null符合本页无独立证明；context_notation为形式化说明而非原书引文，未发现与当前原文上下文冲突。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.lebesgueClosure",
+        "verdict": "PASS",
+        "explanation": "依补充规则直接采用 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义。项目自定义 E 已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开为 EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，其 volume 是标准Lebesgue测度。以下 MD.Ch05 自定义项按本批附件声明逐层展开；未用依赖中同名主题的全空间 density、probabilityDensity、densityMeasure 替代这些受限域定义。PDF203/印刷182脚注1说明D的Lebesgue可测要求、开闭集（矩形盒示例）可测，以及可数并/交保持可测。实际∀n s (A:ℕ→Set(E n))，结论合取开集可测、闭集可测，以及若∀k A k可测则⋃k A k与⋂k A k均可测；四项均用NullMeasurableSet · volume，故是Lebesgue完备化可测族而非仅Borel族。前提顺序没有额外限制，可数族以ℕ索引覆盖可数并交，空族情形的空集与全空间同样可测。矩形盒作为示例由坐标区间的可测性及有限交给出，不要求把每种盒单独列为定理结论；D可测的上下文要求已在densityOn明确编码。无额外假设或[ERRATUM?]。本批附件有证明且该声明无sorry；本轮PASS是语义判定，不是编译结果。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-BorelSigma",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 203（印刷182）脚注1末句：“Borel σ-algebra obtained by countable unions, intersections, or relative complements of open balls in ℝ^m”。",
+          "已对PDF渲染页与文本同时核对；statement_latex及页码吻合，proof_latex=null符合本页无独立证明；context_notation为形式化说明而非原书引文，未发现与当前原文上下文冲突。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.borelSigma",
+        "verdict": "PASS",
+        "explanation": "依补充规则直接采用 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义。项目自定义 E 已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开为 EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，其 volume 是标准Lebesgue测度。以下 MD.Ch05 自定义项按本批附件声明逐层展开；未用依赖中同名主题的全空间 density、probabilityDensity、densityMeasure 替代这些受限域定义。PDF203/印刷182脚注1末句指定由欧氏开球经σ代数生成得到的Borel族。实际 borelSigma n := borel (E n)。展开E后，标准borel是欧氏拓扑中由全部开集生成的最小σ代数；ℝⁿ有可数开球基，任意开集是该基中球的可数并，因此与由开球生成的σ代数一致。可数并、交和相对补是σ代数闭包操作，原文与定义的生成含义相同。context_notation区分Borel与其Lebesgue完备化，与前条采用NullMeasurableSet相容；无缺失原文条件，无额外假设或[ERRATUM?]。本条为定义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-DensityProbabilityBounds",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF 204（印刷183）首句：“It is automatic that 0≤Pr(A)≤1.”；事件A与概率密度资格承接PDF 203末段。",
+          "已对PDF渲染页与文本同时核对；statement_latex及页码吻合，proof_latex=null符合本页无独立证明；context_notation为形式化说明而非原书引文，未发现与当前原文上下文冲突。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.densityProbabilityBounds",
+        "verdict": "PASS",
+        "explanation": "依补充规则直接采用 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义。项目自定义 E 已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开为 EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，其 volume 是标准Lebesgue测度。以下 MD.Ch05 自定义项按本批附件声明逐层展开；未用依赖中同名主题的全空间 density、probabilityDensity、densityMeasure 替代这些受限域定义。PDF204/印刷183首句给出0≤Pr(A)≤1，承接PDF203的可测A⊆D及概率密度ρ资格。实际∀n D A ρ，依次假设probabilityDensityOn D ρ、A⊆D、NullMeasurableSet A volume，结论同时保留0≤densityProbability ρ A及densityProbability ρ A≤1。递归展开后，前提为D Lebesgue可测、ρ受限可测、D内逐点非负、D上可积、∫_Dρ=1，以及可测A⊆D；结论为0≤∫_Aρ≤1。A上的非负与可积继承自D，积分单调性给出∫_Aρ≤∫_Dρ=1。注释中资格来自原文上下文，必要且合理，未引入实质[EXTRA]，未用“测度已是概率测度”代替密度归一化。无[ERRATUM?]。本批附件有证明且该声明无sorry；未进行本轮Lean编译，签名忠实性与证明状态分别评价。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

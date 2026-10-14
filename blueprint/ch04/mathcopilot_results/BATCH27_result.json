@@ -1,0 +1,255 @@
+{
+  "batch": "BATCH27",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "d7db991c1f7d62fcea31ce10785962388c39112e48124814cb035c9290f78d66",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4.2-PrintedSpinAxis",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF196/印刷174，Step 3 五行均为 πᵏ:=Θπᵏ；Θᵏ:=ΘᵏΘᵀ，正角 x 矩阵 sin 位于 (3,2)、−sin 位于 (2,3)。",
+          "已目视核对渲染页及文字抽取；标注 PDF 页=印刷页+22 正确。所引内容无独立证明，proof_latex=null 正确；context_notation 为审校注释，非原书逐字引文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.printedSpinAxis",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。axisRotation 的三个分支分别是标准正角 x/y/z 旋转矩阵；角度为 hπ_i/I_i，返回 (Rπ,ΘRᵀ)，与 PDF196 五行中共同的赋值逐项一致。Fin 3 的 0/1/2 对应印刷 1/2/3；原书物理惯量非零，Lean 对除零的总化并不被声称为物理子流。[ERRATUM?] 成立：对 x 轴 I₁=1、π=(1,1,0)，R_x(h)π 在 h=0 导数为 (0,0,1)，而 π×(1,0,0)=(0,0,-1)；这里只保留字面算法，没有声称精确求解(4.41)。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-PrintedSpinStep",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF196/印刷174，Step 3 依次 x(hπ₁ᵏ/(2I₁)), y(hπ₂ᵏ/(2I₂)), z(hπ₃ᵏ/I₃), y, x；每行 π、Θ 赋值一致。",
+          "已目视核对渲染页及文字抽取；标注 PDF 页=印刷页+22 正确。所引内容无独立证明，proof_latex=null 正确；context_notation 为审校注释，非原书逐字引文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.printedSpinStep",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。展开 printedSpinAxis 与正式库 axisRotation；函数复合从右向左执行，回文链实际为 x(h/2),y(h/2),z(h),y(h/2),x(h/2)。每次角度使用当前更新后的 π，姿态使用当前 Θ；与 PDF196 Step 3 全部五行一致。该定义没有附加精确子流或几何结构结论；正角符号疑误仍保留。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-RigidForce",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_INDEX_POSITION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-RigidForce",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "173",
+          "pdf_page": "195",
+          "statement_latex": "The relevant expressions are $F^k=-\\partial U/\\partial q^k$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实Fréchet偏导，不用新力公理。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rigidForce",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原书将身体编号 k 写为 F、τ 的上标；当前 statement_latex 写为下标。已只修正转录，完整条目保留原书 Drift 和 Spin 及既有疑误记录。"
+        ],
+        "evidence": [
+          "PDF195/印刷173，末行原式 Fᵏ=−∂U/∂qᵏ；PDF196/印刷174明确偏导记号。",
+          "已目视核对渲染页及文字抽取；标注 PDF 页=印刷页+22 正确。所引内容无独立证明，proof_latex=null 正确；context_notation 为审校注释，非原书逐字引文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidForce",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。grad→textbookConstraintGradient→fun i => (fderiv ℝ U q)(Pi.single i 1)，故返回固定 Θ 时对 q 三个坐标的偏导的负值。原文对第 k 体的偏导可通过固定其余身体变量得到这样的 U；本条是局部力定义，不声称完整 N 体算法。Fréchet 导数在可微势上确为坐标偏导；未作可微性定理，fderiv 在不可微点的总化不被解释为原文经典导数。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-MatrixRot",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF196/印刷174，页首 rot(A)=skew⁻¹(A−Aᵀ)，无 1/2。",
+          "已目视核对渲染页及文字抽取；标注 PDF 页=印刷页+22 正确。所引内容无独立证明，proof_latex=null 正确；context_notation 为审校注释，非原书逐字引文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.matrixRot",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。skewMatrix(v)=[[0,-v₂,v₁],[v₂,0,-v₀],[-v₁,v₀,0]]。对 B=A−Aᵀ，skew 的逆为 (B₂₁,B₀₂,B₁₀)；展开后正是 Lean 三个坐标 (A₂₁−A₁₂,A₀₂−A₂₀,A₁₀−A₀₁)。没有额外 1/2，无新增假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-RigidTorque",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_INDEX_POSITION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-RigidTorque",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "173",
+          "pdf_page": "195",
+          "statement_latex": "$\\tau^k=-\\operatorname{rot}(\\Theta^{kT}\\partial U/\\partial\\Theta^k)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rigidTorque",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原书将身体编号 k 写为 F、τ 的上标；当前 statement_latex 写为下标。已只修正转录，完整条目保留原书 Drift 和 Spin 及既有疑误记录。"
+        ],
+        "evidence": [
+          "PDF195/印刷173，末行 τᵏ=−rot([Θᵏ]ᵀ ∂U/∂Θᵏ)；PDF196/印刷174首段说明矩阵元素偏导。",
+          "已目视核对渲染页及文字抽取；标注 PDF 页=印刷页+22 正确。所引内容无独立证明，proof_latex=null 正确；context_notation 为审校注释，非原书逐字引文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidTorque",
+        "verdict": "PASS",
+        "explanation": "已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。matrixGrad(U q)(Θ) 的 (i,j) 元素为 (fderiv ℝ (U q) Θ)(Pi.single i (Pi.single j 1))，即固定 q 的矩阵元素偏导；matrixRot 已展开为 skew⁻¹(A−Aᵀ) 的三个坐标。Θᵀ 在左乘矩阵梯度，整体取负，符合 PDF195 的所有乘法顺序和符号。多体局部偏导同样可固定其余变量；在光滑势的通常语境中没有新增力矩公理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-DLMPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_INDEX_POSITION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-DLMPrinted",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "174",
+          "pdf_page": "196",
+          "statement_latex": "DLM Rigid Body Molecular Dynamics Step\n1. “Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k;\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]\n2. “Drift”: step forward a whole step in positions\n\\[q^k:=q^k+hp^k.\\]\n3. “Spin”: update the rotational state of the kth rigid body by the sequence of steps\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^z(h\\pi_3^k/I_3);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T.\\]\n4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F^k$ and torques $\\tau^k$ evaluated at the current $q,\\Theta$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原表列动量Rπ与方向ΘRᵀ，与正式库一致。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "字面drift缺1/M；正角spin动量符号疑点保留。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.dlmPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]本条仅N=1实例；任意N体耦合势与完整算法另由DLMPrintedSystem忠实保存。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原书将身体编号 k 写为 F、τ 的上标；当前 statement_latex 写为下标。已只修正转录，完整条目保留原书 Drift 和 Spin 及既有疑误记录。"
+        ],
+        "evidence": [
+          "PDF196/印刷174，Step 1 原书 Fᵏ、τᵏ；Step 2 qᵏ:=qᵏ+hpᵏ；Step 3 五轴行；Step 4 新 Fᵏ、τᵏ evaluated at the current q,Θ。PDF195/印刷173说明 for all rigid bodies。",
+          "已目视核对渲染页及文字抽取；标注 PDF 页=印刷页+22 正确。所引内容无独立证明，proof_latex=null 正确；context_notation 为审校注释，非原书逐字引文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dlmPrinted",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。RBState=((q,p),(π,Θ))。rigidKick 保留 q、Θ 并更新 p+hF、π+hτ；rigidDrift 1 h 更新 q+hp；printedSpinStep 为五轴字面旋转。复合顺序为旧力半 Kick、Drift、Spin、新状态重算力矩半 Kick，单体实例逐项正确。但 PDF195 明说对所有刚体执行，U 是系统势；签名只有一个 q、Θ，无法表示任意 N 体耦合。[EXTRA] N=1 是明确的范围缩减，非必要的忠实翻译假设，另有声明不补足本条签名。[ERRATUM?] 缺质量成立：PDF193/印刷171给 dq/dt=p/M，PDF196仍印 q+hp；正角符号问题同 PrintedSpinAxis。",
+        "counterexample": "N=2、U(q¹,q²)=‖q¹−q²‖²/2 时 F¹=−(q¹−q²)，改变 q² 而固定 q¹、Θ¹会改变第一体 Kick。当前 U:V→Mat3→ℝ 和单体 RBState 不能同时承载两个可变位置及第二体输出；这不是完整系统算法。",
+        "suggested_fix": "把本条绑定到任意 N 的系统状态和耦合势版本（输入所有 q、Θ，并在两次 Kick 各用当前完整配置求偏导），或明确将 source statement/scope 改为原文 N=1 特例，避免以本条覆盖完整原算法。保持原印刷 Drift 和 Spin；疑误另列，不静默修正。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-DLMMassOnly",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF196/印刷174，Step 2 原文确为 “Drift”: step forward a whole step in positions，qᵏ:=qᵏ+hpᵏ，无质量分母；statement_latex 保留原式，extra_assumptions 是审校者的修订说明。",
+          "已目视核对渲染页及文字抽取；标注 PDF 页=印刷页+22 正确。所引内容无独立证明，proof_latex=null 正确；context_notation 为审校注释，非原书逐字引文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dlmMassOnly",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。展开 rigidDrift M h 得 q+(h/M)p，并且 dlmMassOnly 是含两次 Kick 和五轴 Spin 的完整单体映射。所绑定原文却只有 Step 2 的 q+hp，既引入质量分母，又扩大对象到完整算法。[EXTRA] 描述的是修订算法而非额外数学假设，不能使陈述忠实于所引原句。质量修订有 PDF193 的 dq/dt=p/M 依据，但必须与原式分开；无论证明是否完成均属签名不一致。",
+        "counterexample": "取 M=2、h=1、U=0、q=0、p=(1,0,0)、π=0、Θ=1、I=(1,1,1)。Lean 输出 q=(1/2,0,0)，原印刷 Drift 输出 q=(1,0,0)；两者在合法正质量下已不同。",
+        "suggested_fix": "原文 Drift 单独绑定 rigidDrift 1 h 或等价字面定义；将 dlmMassOnly 明确标记为另一个有依据的质量修订算法，并补其完整修订陈述及单体范围，而不要把 q+hp 的原句绑定到它。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-DriftSpinCommute",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF196/印刷174，末段全文，含 dividing the “Drift” step into two half steps、(Kick, Drift, Spin, Drift, Kick)、decoupled 和 order ... not important。",
+          "已目视核对渲染页及文字抽取；标注 PDF 页=印刷页+22 正确。所引内容无独立证明，proof_latex=null 正确；context_notation 为审校注释，非原书逐字引文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.driftSpinCommute",
+        "verdict": "FAIL",
+        "explanation": "已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。展开 rigidDrift 后第二分量 (π,Θ) 完全不变；printedSpinStep 不改变 (q,p)，所以给出的全状态等式确实是 Drift∘Spin=Spin∘Drift，任意 M,h,I,z 的量词无需额外假设；本条实际证明为 intro ...; rfl，没有 sorry。但原句还明确说可把一个 Drift 换为 Spin 前后各一半 Drift，以显出 Kick,Drift,Spin,Drift,Kick 的对称排列。当前签名只有交换等式，没有半步分解或两种完整步的相等结论；按本批要求核对全部结论子句，覆盖不完整。",
+        "counterexample": "缺失条款（不是交换等式的反例）：D_{M,h}=D_{M,h/2}∘D_{M,h/2}，以及 K_{h/2}∘S_h∘D_{M,h}∘K_{h/2}=K_{h/2}∘D_{M,h/2}∘S_h∘D_{M,h/2}∘K_{h/2}。这些结论可由定义和交换性推出，但没有包含在当前签名中。",
+        "suggested_fix": "在本条声明中增加 Drift 的半步合成恒等式及两个完整算法排列的全状态等式（原印刷实例取 M=1），或将本条 source scope 明确缩为最后的交换性分句并另建覆盖前半句的声明。"
+      }
+    }
+  ]
+}

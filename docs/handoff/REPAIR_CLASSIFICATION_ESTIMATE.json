@@ -1,0 +1,1307 @@
+[
+  {
+    "chapter": 2,
+    "source_id": "MD-2-HamiltonianODE",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2-Hamiltonian",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2-OneStep",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.2-VerletOrder",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.2.1-FirstVariation",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.2.1-StationaryAction",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.2.1-StationaryNotMin",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.2.2-DiscreteAction",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.2.2-DiscreteStationaryPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.2.2-Stormer",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.2.3-Consistency",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.2.3-DefectPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.2.4-FirstIntegral",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.2.4-IntegralErrorPrinted",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.1-Divergence",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.1-VariationalPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.1-FlowDet",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.1-LJOscillator",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.2-EulerVolumePrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.2-EulerVolumeCounterexample",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.3-SymplecticMap",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.3-OneForm",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.3-FormSumWedges",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.3-SymplecticIffForm",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.3-HamiltonDet",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.4-HamiltonVariationalPrinted",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.4-MatrixCancellation",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.5-GlobalGroupPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.6-SymplecticIntegrator",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.3.7-AdjointSymplecticEuler",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.4.2-CompositionOrder",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.4.3-HarmonicSplit",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.4.4-ImplicitLocal",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.4.4-BackwardEulerSolve",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.4.5-EulerConjugacy",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.4.5-Processing",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.4.5-ProcessingIterates",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.4.5-ProcessingOrder",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.5.1-RKSymplectic",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.5.1-GaussFamily",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.5.1-MidpointProperties",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.5.1-GaussTwoOrder",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.5.2-GeneralSymplectic",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.5.2-GeneralVerletSymplectic",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.5.3-NewmarkReduction",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.5.3-NewmarkNotSymplectic",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.5.4-TIForce",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.5.4-TIOrder",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 2,
+    "source_id": "MD-2.5.5-BeemanOrder",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3-ModifiedConstruction",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.1-EnergyFailure",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.1-FormalHamiltonian",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.1-FormalHamiltonianField",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3-FormalSplitting",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3-DifferenceCommutator",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3-DifferenceCubic",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3-LeadingShadowHamiltonian",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3-BCHHamiltonianMatching",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3.2-VerletHamiltonianParts",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3.2-VerletModifiedMatching",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3.2-ModifiedEven",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3.2-DifferentLogsCommute",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3.2-StrangCubic",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3.3-YoshidaRaiseOrder",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3.3-Yoshida4",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3.4-TakahashiShadow",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3.4-ProcessorEnergyPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.3.4-TakahashiEffectiveOrder",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.4-TruncationSmooth",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.4-Thm3.1",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.4-EnergyTelescoping",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.4-UniformTruncatedLipschitz",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.4-PhysicalEnergyDrift",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.4-StepCountPower",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.4-OptimalTruncation",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.4-ScalarVerletShadow4",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.4-CommutingEnergy",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.4-EnergySymplecticNoGo",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.5-LinearEulerIntegral",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6-HamiltonianFlowStructures",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6-VolumeNotSymplectic",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6.1-MechanicalReversal",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6.1-ReversedTrajectory",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6.2-SymmetricAffineReversible",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6.2-RKAffine",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6.2-PartitionedAffinePrinted",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6.2-PartitionedAffine",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6.3-SymplecticSpectrum",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6.3-ConjugateIterates",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6.3-ConjugateOrderPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.6.3-ReversibleVolumeFailure",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.7-CollisionRegularity",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.7.1-HardCorePotential",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.7.1-PrimitiveOrder",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.7.1-PrimitiveDefect",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.7.1-EndImpactThirdOrderPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.7.1-FreeHardSphereHamiltonian",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.7.2-CollisionalVerletRelation",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.7.2-CollisionalVerletOrder",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 3,
+    "source_id": "MD-3.7.3-DecoupledOrder",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4-EulerImaginaryGrowth",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4-SymplecticEulerCharacteristic",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4-PRKThreshold",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4-VerletStability",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4-SymplecticEulerBoundaryPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4-VerletBoundaryPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4-SymplecticEulerStability",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.1-ActualMidpointRelation",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.1-ImplicitFactor",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.1-ImplicitModulus",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.1-ModifiedFrequencyLimit",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.1-MidpointElimination",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.2.1-RESPAStructure",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.2.1-SlowMatrix",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.2.1-FastMatrix",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.2.1-ImpulseDet",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.2.1-ImpulseTrace",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.2.1-ResonanceInstability",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.2.1-ResonanceEigenPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.2.1-ResonanceLinearRate",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.2.1-ResonanceGrowth",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3-ConstrainedSolution",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3-ConstraintSet",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3-ConstraintJacobian",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3-JacobianActualDerivative",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3-RestraintForcePrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3-ConstrainedPendulum",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3-GramPositive",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3-GramInvertible",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.1-RestrictedForm",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.1-VariationalFormula",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.1-HessianPullbackCancel",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.2-PositionEulerForceConvention",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.2-ProjectionResidual",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.2-ProjectionJacobian",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.2-NewtonConstraint",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.2-FrozenNewtonConstraint",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.2-FrozenGramPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.3-ComponentPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.3-ComponentConstraintStep",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.3-ComponentSweep",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.4-ProjectedEulerRelation",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.4-ProjectedEulerPullback",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.4-CotangentMultiplier",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.4-CotangentProjection",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.4-CotangentRegularity",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.4-GramProjectedEuler",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.5-SHAKEPositionMass",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.5-ConstrainedOrders",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.5-RATTLESymplectic",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.5-StaggeredConstraint",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.5-SHAKERATTLEEquivalence",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.5-SHAKEElimination",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.5-SHAKEPositionOrder",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.5.1-AdjointEuler",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.5.1-ConstrainedComposition",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.5.1-ConstrainedCompositionOrder",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.3.5.1-GeodesicRelation",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-RelativePositions",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-RotationKinetic",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-SkewMatrix",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-CrossProduct",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-CrossMatrix",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-RigidVelocity",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-InertiaTensor",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-RotationalEnergy",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-InertiaTracePrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-DipolarHamiltonian",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-DipolarPairPotential",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-DipolarRotationalPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-RigidHamiltonian",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-RotationTrajectory",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-RotationDerivativePrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4-RigidMatrixRelation",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4.1-RigidInvariants",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4.1-RigidPoissonMatrix",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4.1-PrincipalAxisField",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4.1-AxisFlowFormal",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4.2-DLMPrinted",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4.2-DLMMassOnly",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4.2-DriftSpinCommute",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4.2-DLMStructureFormal",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4.2-DLMPrintedStructure",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 4,
+    "source_id": "MD-4.4.2-RigidSystemSymplectic",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.1-FlowFieldTransport",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.1-SolutionOperator",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.2.2-MassDerivative",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.2.2-Divergence",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.2.2-LiouvilleProduct",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.2.2-DivergenceCoordinates",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.2.2-FaceFlux",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.2.2-MeasurePropagator",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.1-TestSpace",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.1-RegularDistributionLinearity",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-ConvergenceHeuristic",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-HamiltonianEnergyIntegral",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-ShellWeight",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-ShellWeakPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-NormalEnergyTaylor",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-PatchShellVolume",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-WholeShellVolumeLimit",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-ShellPointValuePrinted",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-HarmonicEnergy",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-HarmonicQuadraturePrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-HarmonicPartition",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-IdealGasPositionDomain",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.2-IdealGasPartition",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.3-LowerDimensionNull",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.3.3-MicroAverage",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4-TimeAverage",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4-ConservedAverage",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4-DoubleWellEnergy",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4-DoubleWellBasin",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-UniformMicroErgodic",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-MicroErgodicStandard",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-FlowInvariant",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-SetErgodic",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-InvariantIndicator",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-NonergodicSet",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-HarmonicFlow",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-TwoOscillatorEnergy",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-TwoOscillatorFlow",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-TwoOscillatorTori",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-Mixing",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-KAMPersistence",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-AnisotropicAxisPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-PendulumRegionPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-InitialSegmentPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-CircleInitialPoints",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.4.1-CircleInitialLaw",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.5-CorrelationTimePrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.5-PositionTransition",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.5-MeasureDuality",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.5-MixingCorrelationPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.5-MixingCorrelation",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.5-CenteredCorrelation",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-DiscreteAverage",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-DiscretePropagator",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-ModifiedLiouvillian",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-ForwardComponentsPrinted",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-ForwardEnergyGrowth",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-EulerInvariant",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-BackwardEuler",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-BackwardEnergyDecay",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-BackwardEulerLimit",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-SymplecticEulerShadow",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-SymplecticEulerDensity",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-PerturbationCorrection",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-DenominatorBound",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-SmoothDenominatorBound",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-ZeroPerturbation",
+    "estimated_category": "C"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-ForwardNormDivergence",
+    "estimated_category": "D"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-WeakStationary",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-WeakAttractor",
+    "estimated_category": "B"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-EulerLogField",
+    "estimated_category": "A"
+  },
+  {
+    "chapter": 5,
+    "source_id": "MD-5.6-EulerLogFlow",
+    "estimated_category": "C"
+  }
+]

@@ -1,0 +1,344 @@
+{
+  "batch": "BATCH20",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "e2dd7170d1d125e9c35e43dd4e97054a56c20709806ab0efb08d546bcb689d97",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.4.1-AnisotropicAxisPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_MISSING",
+          "SOURCE_MATHEMATICAL_ISSUE",
+          "SCOPE_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-AnisotropicAxisPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "201",
+          "pdf_page": "222",
+          "statement_latex": "Fix, arbitrarily, a small set of initial conditions for the anisotropic pendulum at energy $E_0$, with positions in a small interval on the positive $x$ axis, $1.05\\le x\\le1.15$ and $y=0$. For each point $(x,0)$ taken from this set select the initial velocities as $\\dot x=0$, $\\dot y=[2(E_0-U(x,0))]^{1/2}$. The set $y=0$, $\\dot y=0$ is invariant under the differential equations of the perturbed central force problem, since the force acts in the radial direction; our choice of initial conditions ensures that trajectories explore the larger $H=E_0$ energy surface.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "U 为第1章各向异性振子势：c₃=4(x/r)³−3x/r，κ=κ₀(1−εc₃/2)，l=l₀(1+εc₃/2)，U=κ(r−l)²/2，r=√(x²+y²)；经典角度表达限定 r>0。",
+            "单位质量下速度对应动量。原书径向力理由及保证探索整个能量面的措辞按原样保留，数学疑误见 issues。"
+          ],
+          "issues": [
+            "原文转录及页码正确，保留原书 anisotropic pendulum 与径向力说法，不改写为已证正确命题。",
+            "context_notation 未交代第1章真实各向异性势；径向力理由对一般 ε 不成立。初值离开轴不变集也不能保证探索整个能量面。"
+          ],
+          "lean_decl": "MD.Ch05.anisotropicAxisPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]用第1章实际各向异性势陈述全真实轨道上的轴不变义务；κ/l正及全时间可微轨道，不把轴不变结论作假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH20 first-with-deps：原文及页码按实际 PDF 核对；补充上下文/显式疑误，不改写原书 statement_latex，不补造证明。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原文转录及页码正确，保留原书 anisotropic pendulum 与径向力说法，不改写为已证正确命题。",
+          "context_notation 未交代第1章真实各向异性势；径向力理由对一般 ε 不成立。初值离开轴不变集也不能保证探索整个能量面。"
+        ],
+        "evidence": [
+          "PDF222/印刷201，Example 5.6，逐字核对从 Fix, arbitrarily 至 larger H=E₀ energy surface，含区间、两速度式及轴不变句；无独立证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.anisotropicAxisPrinted",
+        "verdict": "FAIL",
+        "explanation": "依补充规则重审：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、HasDerivAt、gradient、ContDiff、deriv、Set.image、Icc 和 segment 等按标准数学含义采信，不要求其定义体出现在项目依赖摘录。仅展开项目自定义对象。Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5316 中 E n=EuclideanSpace ℝ (Fin n)、Phase n=E n×E n，分别是欧氏 ℝⁿ 与位置/动量积空间。目标附件 Blueprint/Ch05.lean:1161–1162 中 anisotropicPotential κ₀ l₀ ε q=Chapter01Review.anisotropicEnergy κ₀ l₀ ε (q 0) (q 1) 0 0；依赖摘录 MolecularDynamics/Chapter01/ReviewDefinitions.lean:12008–12019 展开后，r=√(x²+y²)、c₃=4(x/r)³−3x/r、κ_eff=κ₀(1−εc₃/2)、l_eff=l₀(1+εc₃/2)，U=κ_eff(r−l_eff)²/2。声明对任意 κ₀,l₀>0、任意实 ε 以及任意全实时间 C¹ 相空间轨道 z，假定 z′=(p,−∇U(q))、y(0)=p_y(0)=0，推出所有实 t 的 y(t)=p_y(t)=0。该签名刻画轴不变性，没有把该结论作前提；但原文 statement_scope 包含能量 E₀、给定短区间初值与“ensures ... explore the larger H=E₀ energy surface”，本声明不含这些初值约束和探索条款，不能把整段原句判为覆盖完整。初值构造已另有条目，不等于此声明包含了缺失结论。[EXTRA]正基准参数是合理物理资格，全时间轨道限制须区分于经典局部解；并且正基准参数不保证任意 ε 下有效参数为正。展开的势含角向依赖，故原书径向力理由一般不成立；远离原点的轴上则有反射对称性，可用于局部轴不变结论。全局签名未区分原点处总定义的 Lean gradient 与经典可微势，宜另加有效定义域资格。FAIL 的确定依据是全条覆盖缺失和原书理由的显式问题，无须因标准库定义缺失转为 NEEDS_HUMAN。声明体为 sorry；这与签名语义分开记录。",
+        "counterexample": "缺失条款：E₀、x∈[1.05,1.15]、p_x=0、p_y=√(2(E₀−U(x,0))) 及探索描述。对原书“力沿径向”的反例：κ₀=l₀=1、ε=1/2，在 r=2、θ=π/6 处 ∂θU=9/8≠0，故力有切向分量；这只反驳径向力理由，不是对轴不变性的反例。",
+        "suggested_fix": "明确拆分轴不变性、能量合格初值与数值探索三部分：轴不变性用远离原点的真实最大解区间和光滑/唯一性资格；初值构造引用本批独立条目；探索全能量面的说法明确作为未经此定理推出的观察，且显式标记径向力理由疑误。若维持整段 statement_scope，则须补齐所有数学结论或准确收窄范围。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_MISSING",
+          "SOURCE_DEGENERATE_LAYER_OMISSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "199",
+          "pdf_page": "220",
+          "statement_latex": "On the other hand, the energy surface $H=E$ is the union of all such 2-tori with $E_1+E_2=E$. There is no mechanism for the system to move from one torus to the other, so the system is not ergodic.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "相空间坐标顺序(q₁,q₂,p₁,p₂)，H_i=p_i²/2+Ω_i²q_i²/2，H=H₁+H₂；原语境 Ω₁,Ω₂≠0。",
+            "原文 such 2-tori 指前文 E₁,E₂>0 的层；E_i=0 的退化层未被原句字面涵盖，保留该原书疑误。"
+          ],
+          "issues": [
+            "原文和页码正确；空 context_notation 遗漏 H₁,H₂、非零频率及前句 E₁,E₂>0 的语境。",
+            "原书 all such 2-tori 字面漏掉 E_i=0 的退化层；不得静默把原书原句改为正确分层版本。"
+          ],
+          "lean_decl": "MD.Ch05.twoOscillatorEnergyDecomposition",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]包括c_i=0的退化边界；原“all such 2-tori”字面忽略零分能量层，完整全能量面分解不能遗漏这些层。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH20 first-with-deps：原文及页码按实际 PDF 核对；补充上下文/显式疑误，不改写原书 statement_latex，不补造证明。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原文和页码正确；空 context_notation 遗漏 H₁,H₂、非零频率及前句 E₁,E₂>0 的语境。",
+          "原书 all such 2-tori 字面漏掉 E_i=0 的退化层；不得静默把原书原句改为正确分层版本。"
+        ],
+        "evidence": [
+          "PDF220/印刷199，首段给 H₁=p₁²/2+Ω₁²q₁²/2、H₂=p₂²/2+Ω₂²q₂²/2，前句 For any E₁,E₂>0；本条连续三句转录正确；无独立证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.twoOscillatorEnergyDecomposition",
+        "verdict": "FAIL",
+        "explanation": "依补充规则重审：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、HasDerivAt、gradient、ContDiff、deriv、Set.image、Icc 和 segment 等按标准数学含义采信，不要求其定义体出现在项目依赖摘录。仅展开项目自定义对象。Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5316 中 E n=EuclideanSpace ℝ (Fin n)、Phase n=E n×E n，分别是欧氏 ℝⁿ 与位置/动量积空间。目标附件:1114–1115 中 twoOscillatorEnergy Ω i z=z_(i+2)²/2+(Ω_i)²z_i²/2，坐标顺序(q₁,q₂,p₁,p₂)。本声明量化任意 Ω∈ℝ²、E∈ℝ、z∈ℝ⁴，等价式右侧给 c_i≥0、c₁+c₂=E、H_i(z)=c_i；这是正确的静态非负能量层分解，无需频率非零。[EXTRA]加入零分能量层是对原书“所有正分能量二维环面”的必要边界澄清，合理且已经明示，但不是环面拓扑或动力学的替代。原文随后断言不能跨越环面及系统非遍历，本声明没有流、层不变或非遍历结论；在非零频率下正能量层为二维环面的事实也不在签名内。其他条目的结论不能自动视为本签名所述。因此是全条语义覆盖 FAIL，不是非负分解等价式本身错误；标准 Mathlib 语义不改变此结论。声明体为 sorry，独立于本判定。",
+        "counterexample": "原文正分能量环面穷尽说法的边界反例：Ω=(1,1)、E=1、z=(0,0,√2,0)，H₁=1、H₂=0，位于总能量面而不属于任意 H₁=E₁>0,H₂=E₂>0 的二维环面。Lean 允许 c₂=0，已修复该边界；仍缺“不跨层”和“非遍历”两项结论。",
+        "suggested_fix": "若只保留此等价式，将范围明确限定为含退化边界的静态能量层分解并保留原书疑误；若继续对应整段，则在非零频率、正总能量及真实流/参考测度下补齐层不变与非遍历结论，分清正分能量二维环面、零分能量圆及原点。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-CurveImageDimension",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF223/印刷202，Fig.5.6 下第二段，从 The segment of initial conditions 至 position projection，两句逐字相符；无独立证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.curveImageDimension",
+        "verdict": "PASS",
+        "explanation": "依补充规则重审：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、HasDerivAt、gradient、ContDiff、deriv、Set.image、Icc 和 segment 等按标准数学含义采信，不要求其定义体出现在项目依赖摘录。仅展开项目自定义对象。Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5316 中 E n=EuclideanSpace ℝ (Fin n)、Phase n=E n×E n，分别是欧氏 ℝⁿ 与位置/动量积空间。项目依赖 ReviewDefinitions.lean:5320–5322 的 flow f Φ 展开为 Φ₀=id、Φ_(s+t)=Φ_s∘Φ_t，以及对全部 t,z 的真实自治 ODE 导数 HasDerivAt (s↦Φ_s z) (f(Φ_t z)) t。本声明对任意 n,f,Φ,γ 假定该流、联合 C∞、γ∈C∞ 与每点 γ′≠0，再对每个 t 同时给出像参数曲线 C∞ 和每点导数非零。群律使 Φ_(-t) 成为 Φ_t 的光滑逆，故 DΦ_t 可逆，非零切向量被保留；没有把像曲线正则性预先作为假设。[EXTRA]全时间光滑流、正则参数曲线是比原文局部描述更强但明确合理的充分资格，适用于包含所选紧参数段的光滑有效区域。结论是相空间中的正则曲线，不声称位置投影也正则。原文“appears ... dense covering”是视觉观察，附件已明示仅保留观察，故无需将它升级为严格稠密性结论。PASS 指该数学签名忠实；声明体为 sorry，并非已验证完成证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-PendulumPotential",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-PendulumPotential",
+          "kind": "definition",
+          "label": "Example 5.5",
+          "section": "5.4.1",
+          "printed_page": "200",
+          "pdf_page": "221",
+          "statement_latex": "Example 5.5 (Double Pendulum) To explore some of the issues related to ergodicity, let us return to the double pendulum considered in Chap. 3.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本条为第5章引用的第3章双弹簧对象的本地定义；不改变第3章文件。",
+            "q=(x,y)，两固定端为(0,0)、(0,−2)，r₁=√(x²+y²)，r₂=√(x²+(y+2)²)，k_i 为弹簧系数、l_i 为自然长度，物理情形均为正。",
+            "U(q)=k₁(r₁−l₁)²/2+k₂(r₂−l₂)²/2；公式回指教材 PDF148/印刷126。"
+          ],
+          "issues": [
+            "PDF221 只给返回第3章对象的指代句，现有 context_notation 未展开该对象的公式、参数和两圆心；extra_assumptions 中出现了公式，但应将对象记号补入 context_notation。原文转录、label 和页码正确。"
+          ],
+          "lean_decl": "MD.Ch05.pendulumPotential",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]引用的真实双弹簧势按§3.5印刷126/PDF148已存在原页核对：U=k₁(r₁−l₁)²/2+k₂(r₂−l₂)²/2，r₁=√(x²+y²)、r₂=√(x²+(y+2)²)；不是把数值轨迹图当势的定义。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH20 first-with-deps：原文及页码按实际 PDF 核对；补充上下文/显式疑误，不改写原书 statement_latex，不补造证明。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "PDF221 只给返回第3章对象的指代句，现有 context_notation 未展开该对象的公式、参数和两圆心；extra_assumptions 中出现了公式，但应将对象记号补入 context_notation。原文转录、label 和页码正确。"
+        ],
+        "evidence": [
+          "PDF221/印刷200，Example 5.5 首句逐字相符。回指公式已查教材 PDF148/印刷126：U=k₁(r₁−l₁)²/2+k₂(r₂−l₂)²/2，r₁=√(x²+y²)、r₂=√(x²+(y+2)²)。第3章页差与第5章不同。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.pendulumPotential",
+        "verdict": "PASS",
+        "explanation": "依补充规则重审：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、HasDerivAt、gradient、ContDiff、deriv、Set.image、Icc 和 segment 等按标准数学含义采信，不要求其定义体出现在项目依赖摘录。仅展开项目自定义对象。Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5316 中 E n=EuclideanSpace ℝ (Fin n)、Phase n=E n×E n，分别是欧氏 ℝⁿ 与位置/动量积空间。直接展开目标附件:1189–1191 的 pendulumPotential：k₁(√(q₀²+q₁²)−l₁)²/2+k₂(√(q₀²+(q₁+2)²)−l₂)²/2。两个距离的中心分别为(0,0)、(0,−2)，系数和自然长度位置均正确，与保留的 A 审校中教材 PDF148/印刷126 公式一致，正是 PDF221 的回指对象。[EXTRA]将第3章回指对象在第5章本地展开属于合理解释，无额外结论。作为势的公式定义允许任意实参数，不把物理正参数资格塞入公式，也不因此声称非物理参数有相同动力学性质。def 无 sorry 证明义务。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-PendulumRegionPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_MISSING",
+          "SOURCE_MATHEMATICAL_ISSUE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-PendulumRegionPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "200",
+          "pdf_page": "221",
+          "statement_latex": "For given positive values of the coefficients, the region swept out in the plane by trajectories can be seen to be a union of intersections of pairs of disks centered at the origin and $(0,-2)$, with radii $r_1,r_2$ respectively, which themselves represent a point on an ellipse in the first quadrant. Determining the boundary of this region analytically is difficult but it is easy to find it numerically. For the special case $k_1=k_2=2$, $l_1=l_2=1$, and $E=4$ that the projected region covered by positions at this energy is the interior of the level set $U=E$ shown as a dark oval curve in the three panels of Fig. 5.4.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "U 为双弹簧势 k₁(d₁−l₁)²/2+k₂(d₂−l₂)²/2，d₁=√(x²+y²)，d₂=√(x²+(y+2)²)。",
+            "单位质量 H=|p|²/2+U；所有能量初值的位置投影为 U≤E，不等同于单条轨道覆盖范围。",
+            "原书圆盘并描述及 interior 用语按原样保留，数学问题见 issues/audit；r_i 为原文用来参数化椭圆的半径。"
+          ],
+          "issues": [
+            "原文三句、参数、interior 及不完整语法 and E=4 that 均与 PDF 一致，保留不改。",
+            "圆盘交之并的普遍陈述有反例；位置能量投影自然是闭次水平集 U≤E，不能静默用 interior 代替。空 context_notation 遗漏所引用势与能量解释。"
+          ],
+          "lean_decl": "MD.Ch05.pendulumRegionPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原描述的可达region按所有能量初值的位置投影解释，单位动能；真实两圆盘中心、正半径和半径能量椭圆完整保留，不假设所求等式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH20 first-with-deps：原文及页码按实际 PDF 核对；补充上下文/显式疑误，不改写原书 statement_latex，不补造证明。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原文三句、参数、interior 及不完整语法 and E=4 that 均与 PDF 一致，保留不改。",
+          "圆盘交之并的普遍陈述有反例；位置能量投影自然是闭次水平集 U≤E，不能静默用 interior 代替。空 context_notation 遗漏所引用势与能量解释。"
+        ],
+        "evidence": [
+          "PDF221/印刷200，Example 5.5 从 For given positive values 至 three panels of Fig.5.4；圆心(0,−2)、正半径椭圆描述和 k₁=k₂=2,l₁=l₂=1,E=4 均核对相符。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.pendulumRegionPrinted",
+        "verdict": "FAIL",
+        "explanation": "依补充规则重审：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、HasDerivAt、gradient、ContDiff、deriv、Set.image、Icc 和 segment 等按标准数学含义采信，不要求其定义体出现在项目依赖摘录。仅展开项目自定义对象。Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5316 中 E n=EuclideanSpace ℝ (Fin n)、Phase n=E n×E n，分别是欧氏 ℝⁿ 与位置/动量积空间。目标附件:1189–1191 的 pendulumPotential 逐项为双弹簧势 U(q)=k₁(d₁−l₁)²/2+k₂(d₂−l₂)²/2，其中 d₁=√(x²+y²)、d₂=√(x²+(y+2)²)。声明量化所有严格正 k₁,k₂,l₁,l₂,c。左集是存在动量使 |p|²/2+U(q)=c 的位置投影，按标准实欧氏语义恰为 {U≤c}；右集是存在正 r₁,r₂ 处于半径能量椭圆，且 d₁≤r₁、d₂≤r₂ 的圆盘交之并。平方项(r−l)²在 r<l 时并不单调递增，故半径上界不足以控制实际势。[EXTRA]单位质量及将可达区域解释为所有能量初值的位置投影合理，全部正参数也未把结论作前提，但它们不能消除下列反例。原书特例及 interior 的边界问题亦应区分；闭能量投影包含零动量边界。FAIL 是展开后等式为假的确定判定，无需查看 Mathlib 定义体。声明体为 sorry。",
+        "counterexample": "k₁=k₂=2、l₁=l₂=3、c=1、q=(0,0)。d₁=0、d₂=2、U=9+1=10，所以 q 不属于左集。取 r₁=r₂=3+1/√2>0，则(r₁−3)²+(r₂−3)²=1，且 d₁≤r₁、d₂≤r₂，故 q 属于右集。所有声明前提满足。",
+        "suggested_fix": "数学陈述改为能量投影={q | U(q)≤c}；若需半径参数化，则以 r_i=d_i 和半径能量≤c 表述，不能以 r_i≥d_i 的圆盘交替代。原书一般圆盘并说法显式标疑误，特例 E=4 的闭次水平集、边界与数值图像观察分别陈述。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-AnisotropicInitialCurve",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF222/印刷201，Example 5.6 从 Fix, arbitrarily 至初速度平方根式，区间1.05≤x≤1.15、y=0、ẋ=0均核对相符。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.anisotropicInitialCurve",
+        "verdict": "PASS",
+        "explanation": "依补充规则重审：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、HasDerivAt、gradient、ContDiff、deriv、Set.image、Icc 和 segment 等按标准数学含义采信，不要求其定义体出现在项目依赖摘录。仅展开项目自定义对象。Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5316 中 E n=EuclideanSpace ℝ (Fin n)、Phase n=E n×E n，分别是欧氏 ℝⁿ 与位置/动量积空间。目标附件 Blueprint/Ch05.lean:1161–1162 中 anisotropicPotential κ₀ l₀ ε q=Chapter01Review.anisotropicEnergy κ₀ l₀ ε (q 0) (q 1) 0 0；依赖摘录 MolecularDynamics/Chapter01/ReviewDefinitions.lean:12008–12019 展开后，r=√(x²+y²)、c₃=4(x/r)³−3x/r、κ_eff=κ₀(1−εc₃/2)、l_eff=l₀(1+εc₃/2)，U=κ_eff(r−l_eff)²/2。展开目标附件:1205–1206 的 anisotropicInitialCurve 得 γ(x)=((x,0),(0,√(2(c−U(x,0)))))，WithLp.toLp 2 仅将指定坐标放入标准欧氏空间；c 对应 E₀，单位质量下动量等于速度。此项是参数化公式定义，原区间[1.05,1.15]已在 context_notation 明示，集合使用时应限制到该区间，映射本身在整个实线上定义并不改变受限初值集。Real.sqrt 在负参数上取0的总定义按标准语义理解：本 def 自身没有断言所有参数下能量恒等式成立，实初值能量资格由下一条明确约束。因此不将缺少定义体或总定义延拓误判为缺失对象或数学错误。extra_assumptions 为空，def 无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-AnisotropicInitialEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF222/印刷201，Example 5.6 逐字核对 For each point (x,0) 至 ẏ=[2(E₀−U(x,0))]^{1/2}；无独立证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.anisotropicInitialEnergy",
+        "verdict": "PASS",
+        "explanation": "依补充规则重审：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、HasDerivAt、gradient、ContDiff、deriv、Set.image、Icc 和 segment 等按标准数学含义采信，不要求其定义体出现在项目依赖摘录。仅展开项目自定义对象。Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5316 中 E n=EuclideanSpace ℝ (Fin n)、Phase n=E n×E n，分别是欧氏 ℝⁿ 与位置/动量积空间。目标附件 Blueprint/Ch05.lean:1161–1162 中 anisotropicPotential κ₀ l₀ ε q=Chapter01Review.anisotropicEnergy κ₀ l₀ ε (q 0) (q 1) 0 0；依赖摘录 MolecularDynamics/Chapter01/ReviewDefinitions.lean:12008–12019 展开后，r=√(x²+y²)、c₃=4(x/r)³−3x/r、κ_eff=κ₀(1−εc₃/2)、l_eff=l₀(1+εc₃/2)，U=κ_eff(r−l_eff)²/2。目标附件:1205–1206 的初值定义展开为 q=(x,0)、p=(0,√(2(c−U(q))))。本声明量化所有实 κ₀,l₀,ε,c,x，在唯一前提 c−U(q)≥0 下推出 |p|²/2+U(q)=c；前提正好保证实平方根的平方等于根号内量。[EXTRA]非负根号资格必要且合理，单位质量已体现于动能系数1/2；参数正性和短区间约束不是这个代数能量恒等式所必需，省去它们是有效的一般化。本项没有声称轨道覆盖或遍历整个能量面，也未将能量结论作为前提。PASS 只批准签名语义，theorem 主体仍为 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-InitialSegmentPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_MISSING",
+          "SOURCE_MATHEMATICAL_ISSUE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-InitialSegmentPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "201",
+          "pdf_page": "222",
+          "statement_latex": "The set of initial conditions forms a line segment in the four-dimensional phase space.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "初值集合为 γ([1.05,1.15])，γ(x)=((x,0),(0,√(2(E₀−U(x,0)))))，单位质量。",
+            "line segment 按原书四维相空间字面保留；仅其位置投影必为直线段，相空间像通常为曲线，原书疑误见 issues/audit。"
+          ],
+          "issues": [
+            "原文 line segment in the four-dimensional phase space 确实如此印刷，不能改写成 curve 后仍称原文转录。",
+            "位置投影是线段，但动量平方根依赖 x，真实四维相空间初值集合一般不是仿射线段。需在 context_notation 明示初值映射并显式记录原书疑误。"
+          ],
+          "lean_decl": "MD.Ch05.initialSegmentPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]保留真实相空间对象、书中区间及实初值的非负根号资格；不把线段结论作假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH20 first-with-deps：原文及页码按实际 PDF 核对；补充上下文/显式疑误，不改写原书 statement_latex，不补造证明。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原文 line segment in the four-dimensional phase space 确实如此印刷，不能改写成 curve 后仍称原文转录。",
+          "位置投影是线段，但动量平方根依赖 x，真实四维相空间初值集合一般不是仿射线段。需在 context_notation 明示初值映射并显式记录原书疑误。"
+        ],
+        "evidence": [
+          "PDF222/印刷201，Example 5.6 后一段首句 The set of initial conditions forms a line segment in the four-dimensional phase space. 完全相符；与同页初速度式合读。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.initialSegmentPrinted",
+        "verdict": "FAIL",
+        "explanation": "依补充规则重审：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、HasDerivAt、gradient、ContDiff、deriv、Set.image、Icc 和 segment 等按标准数学含义采信，不要求其定义体出现在项目依赖摘录。仅展开项目自定义对象。Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5316 中 E n=EuclideanSpace ℝ (Fin n)、Phase n=E n×E n，分别是欧氏 ℝⁿ 与位置/动量积空间。目标附件 Blueprint/Ch05.lean:1161–1162 中 anisotropicPotential κ₀ l₀ ε q=Chapter01Review.anisotropicEnergy κ₀ l₀ ε (q 0) (q 1) 0 0；依赖摘录 MolecularDynamics/Chapter01/ReviewDefinitions.lean:12008–12019 展开后，r=√(x²+y²)、c₃=4(x/r)³−3x/r、κ_eff=κ₀(1−εc₃/2)、l_eff=l₀(1+εc₃/2)，U=κ_eff(r−l_eff)²/2。目标附件:1205–1206 的实际初值是 γ(x)=((x,0),(0,√(2(c−U(x,0)))))；1218–1220 量化任意实 κ₀,l₀,ε,c，假定闭区间 I=[21/20,23/20] 上 c−U≥0，结论存在 a,b∈Phase 2 使 γ(I)=segment ℝ a b。标准 Mathlib segment ℝ a b 是 {(1−s)a+s b | 0≤s≤1} 的仿射闭线段，不能理解成任意拓扑弧或参数曲线。[EXTRA]保留真实相空间对象、区间与非负根号资格正确且无循环，但不能使平方根动量关于 x 为仿射函数。该签名忠实复现原书 line segment 的字面措辞，同时把原书疑误写成了假的数学定理，应 FAIL；问题与 Mathlib 定义体是否提供无关。没有显式 [ERRATUM?] 标签可据此默认接受错误，疑误及修复必须明示。声明体为 sorry，独立记录。",
+        "counterexample": "取 κ₀=l₀=c=1、ε=0。对所有 x∈[21/20,23/20]，U(x,0)=(x−1)²/2<1，所以满足全部前提；p_y(x)=√(2−(x−1)²)，在此区间的二阶导数为−2/(2−(x−1)²)^(3/2)<0。两端初值的中点位置是 x=11/10，其动量严格小于 p_y(11/10)，故该中点不在 γ(I)。γ(I) 不凸，而每个 segment 都凸，因此不可能等于任何 segment。",
+        "suggested_fix": "保留并标记原书四维 line segment 疑误：位置投影是直线段，相空间初值集应写为 γ(I) 的参数曲线。有严格正根号时可陈述光滑、正则（x 坐标导数为1）；仅非负根号时先保持连续参数曲线结论。若坚持仿射线段，则需另有使动量依赖仿射的特殊条件，原有资格不足。"
+      }
+    }
+  ]
+}

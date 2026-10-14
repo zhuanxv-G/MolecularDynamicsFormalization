@@ -1,20 +1,20 @@
 # 项目接续与形式化约定
 
-当前任务：第2–6章本地流程继续；按2026-10-13网站版本绑定规则交替修复第1→3→2章（第2章reaudit已到齐）。
-下一步：回第6章§6.3.3，激活scripts/ch06_section633.py首8条热浴完整陈述；复用112条/§6.3.2检查和方差积分证明。节提交后继续第1章一批网站修复，不恢复封存长证明。
+当前任务：修复第2–5章网站审计问题（见 docs/handoff/REPAIR_QUEUE.md）；第6章暂停；不进入第7章。
+下一步：核对REPAIR_QUEUE后从第2章尚未修复的最早节接续；复用EAUDIT01证据。
 
-## 当前最高优先级范围（2026-10-10用户新指令）
+## 当前最高优先级范围（用户2026-10-14晚指令）
 
-- 第2章复用已完成证据，随后第3→4→5→6章自动推进，不等网站，不进入第7章。范围见LOCAL_PIPELINE，习题/参考文献除外，以PDF原页为准。
-- 每章①逐字JSON及全部旧CSV映射；②忠实Blueprint加入构建；③模板C本地预审及完整BATCH/compact的PASTE.txt+原页PDF+SHA256 MANIFEST（实际磁盘字节<256000）；④仅本地PASS证明，已有桥接→短证明→其余；⑤逐条公理、7段文档及终验。
-- [EXTRA]逐项注明，疑误[ERRATUM?]与NEEDS_HUMAN；禁止True、P→P、结论作假设、admit、新增axiom、unsafe、偷换对象/量词/结论。网站列按WEBSITE_AUDIT_RULES.zh-CN.md登记绑定版本，未绑定仍待审，不伪造PASS或冻结。
-- MolecularDynamics/正式库不改源码或签名、0 sorry；第1章仅按用户网站审计修复例外修改；正式库仍冻结。每完成第5/6章一节处理一批第1→3→2章网站修复，原始件和repair_log只追加，修签名后EAUDIT重审，再回当前章。
-- 第5章Mathlib缺失的微正则/遍历/KAM等大型理论不建设，忠实陈述后sorry+缺项；每节2小时时间盒。第6章可桥接已有正式定理并进行本地短证明，不恢复封存断点/长证明；Thm6.1/6.2/Prop6.4无现成桥接则sorry。
-- 每章从上章最后commit新建chapterXX-blueprint；每节一次commit+push已授权。每小批≤8条及时落盘，更新该章PROGRESS与跨章唯一总表LOCAL_PIPELINE；每小批单文件lake env lean，每节完整scripts/check.ps1。固定Lean4.34.0/Mathlibv4.34.0。
-- 单条3条失败路线或缺大型理论即sorry+缺项继续；不等待导师。最终状态仅self-contained / checked+documented priors / incomplete，含sorryAx必须incomplete，区分直接和传递占位。
-- 唤醒先git status，再只读AGENTS、CURRENT_STATE顶部、WORK_LOG最新、LOCAL_PIPELINE及当前章PROGRESS；核对现有编译/验证证据，复用已通过工作；未提交半成品核对后续做，不丢弃。每检查点WORK_LOG≤3行；不向STATUS/FORMALIZATION_MAP/ASSUMPTIONS追加长文；其他任务output/tmp/check-full06等不动、不提交。
-- heartbeat lean prompt已授权扩大为第2–6章；ACTIVE/15分钟、原target及resume_state.json去重保留。只在明确usage limit/quota/rate limit中断且get_usage_limits恢复后发送；运行/排队则安静；同失败轮一次，间隔≥30分钟；不购买/切账号/切模型。同章同检查点连续3次无进展中断后停止自动发送并通知，配置成功不等于恢复已实测。
-- 全部完成后CURRENT_STATE顶部写“第2–6章本地流程全部完成；第1–6章均等待用户提交 MathCopilot 批次（见各章 mathcopilot_tasks/INDEX.md）”，停止；以后仅确认状态或整合新返回件。
+- 顺序第2→3→4→5章，每章按节；第1章按原规则继续登记/修复，优先级较低。第6章暂停于WIP 6b822a9a524f，第7章禁止进入。
+- 修复队列docs/handoff/REPAIR_QUEUE.md为准。A漏前提/定义域：补签名或子类型并标[EXTRA]；B漏结论：优先补全，跨source_id才显式缩statement_scope并追加repair_log；C对象不忠实：按网站路线修，需路线选择或书中疑误则仅记NEEDS_HUMAN；D数学判断仅登记问题、选项、网站反例并保持现状。
+- 修复阶段不写新证明。已有证明受签名影响仅尝试≤3次小修补，失败保留sorry并记录；新证明留到复审PASS冻结后。
+- 每批≤8条：单文件编译、相关已有证明重查、逐条#print axioms、生成EAUDIT复审包。完整scripts/check.ps1仅每章结束一次；每节commit+push。固定Lean/Mathlib v4.34.0，正式库源码/签名冻结且0 sorry。
+- 返回件按WEBSITE_AUDIT_RULES.zh-CN.md绑定快照；第2章reaudit审计优先、第一轮json_review优先。旧快照PASS不自动覆盖新签名。原始返回/旧绑定收据不改，工程外mathcopilot_bundles只读。
+- CORRECTED对照PDF原页视觉复核后合并源JSON；repair_log只追加，不静默删句。[EXTRA]、[ERRATUM?]及直接/传递sorry风险明确登记。
+- 每个PASTE开头声明仅以本PASTE及附件为准、忽略网站/workspace旧版本，Mathlib标准定义按标准数学含义采信；全部input_sha256值直接写出并要求原样回显。网站用代码写入/workspace/.mathcopilot/reviews/chXX_eaudit/EAUDITxx_review.json对象(batch,input_sha256,items)，json.loads自检后仅回复路径和统计。每章EAUDIT INDEX列出待提交包。
+- heartbeat lean保持ACTIVE/15分钟/原target和去重机制，仅额度明确中断且恢复才接续；运行/排队安静。REPAIR_QUEUE显示第2–5章全部修复完成则停止发送。配置保存不等于恢复续接已实测。
+- 每检查点更新CURRENT_STATE并追加WORK_LOG≤3行；每章一行网站PASS/已修待复审/待导师/修复中。全部完成顶部写“第2–5章修复完成，等待用户提交 EAUDIT 复审包（见各章 mathcopilot_tasks/EAUDIT*/INDEX.md）”，停止只确认状态。
+- 先git status，读AGENTS、CURRENT_STATE顶部、WORK_LOG最新和REPAIR_QUEUE，复用已有通过证据。保留其他任务output/tmp/check-full06等，不动不提交。
 
 ## 第1章规则（网站审计修复时适用）
 
@@ -28,7 +28,7 @@
 - scripts/render_blueprint.py生成docs/review/CH01_BLUEPRINT.zh-CN.md；每条7段并有汇总及NEEDS_HUMAN/[ERRATUM?]列表。状态只用self-contained / checked+documented priors / incomplete。
 - 每次唤醒只读AGENTS、CURRENT_STATE顶部、WORK_LOG最新、PROGRESS.md，再按下一步读相关输入。每检查点更新CURRENT_STATE，WORK_LOG≤3行；不向STATUS/FORMALIZATION_MAP/ASSUMPTIONS追加长文。
 - 首次接续核验Git分支、HEAD、未提交文件，保留其他任务文件。commit+push已授权；每节一次commit。
-- heartbeat lean保持ACTIVE/15分钟；prompt已按用户新指令扩大为第2–6章，原target和去重机制保留。第1章规则仅暂停时的新返回件整合适用。完成标准：全章JSON/Blueprint/本地预审/批次包齐全、能证已证、文档生成、check通过、push。完成后顶部写“第1章本地部分完成，等待用户提交 MathCopilot 批次（见 INDEX.md）”，以后只确认状态。
+- heartbeat lean保持ACTIVE/15分钟；prompt按2026-10-14指令限于第2–5章网站修复，原target和去重机制保留。第1章规则仅暂停时的新返回件整合适用。完成标准：全章JSON/Blueprint/本地预审/批次包齐全、能证已证、文档生成、check通过、push。完成后顶部写“第1章本地部分完成，等待用户提交 MathCopilot 批次（见 INDEX.md）”，以后只确认状态。
 - mathcopilot_results/出现新返回件时优先合并JSON审校和语义审计，登记EAUDIT批次；保留原始件、repair_log只追加，签名修复后重新审计。
 - 默认中文先说重点，明确原页核对、Lean编译、公理审计、网站审计、导师确认哪些已验证。本次用户新指令取代试点5条后等待及先冻结再证明限制。
 

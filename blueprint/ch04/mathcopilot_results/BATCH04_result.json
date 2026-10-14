@@ -1,0 +1,237 @@
+{
+  "batch": "BATCH04",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "68b0b3826d7972dc6a1e367ad7329a5277b339220820f550fc49c5c439549884",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.2.1-SplitHamiltonian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第167页（印刷第145页），§4.2.1 首句给出 H(q,p)=p^T M^{-1}p/2+U_S(q)+U_F(q)，并使用 “soft”、relatively slow、much stronger、relatively rapid motion；所引整句、加号、1/2及势函数自变量一致。",
+          "本条为定义性分解，原页没有对应的独立证明，proof_latex=null 恰当。printed_page=145、pdf_page=167 满足本章页差22。",
+          "context_notation 中的对角质量约定与教材 PDF 第102页（印刷第80页）“with M a diagonal mass matrix”一致；第167页的软/强及慢/快是定性说明，不是某个数值不等式假设。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.splitHamiltonian",
+        "verdict": "PASS",
+        "explanation": "所读 /workspace/Ch04.lean 对应本报告逻辑路径 Blueprint/Ch04.lean；第398–399行的 MD.Ch04.splitHamiltonian 为本条实际声明。Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 中，Q n=Fin n→ℝ，Z n=Q n×Q n，故 z.1=q、z.2=p；invMass m v 的第i分量为 (m i)⁻¹*v i，dot u v=∑i,u i*v i。完全展开后返回 (∑i,p_i*(m_i⁻¹*p_i))/2+US(q)+UF(q)，在教材的正对角质量约定下正是 p^T M⁻¹p/2+US(q)+UF(q)。参数次序 n,m,US,UF,z 及势函数的配置空间自变量一致，没有遗漏公式项。定义对任意实 m 总化；m_i=0 时的 Lean 逆元约定不能解释为物理质量矩阵的逆，但此定义没有声称这些非物理输入也是教材的系统。慢/快、软/强作为定性背景没有被改为虚构的数值假设。本条无 [EXTRA]、[ERRATUM?]。本条是无 sorry 的定义；PASS 是公式语义结论，未运行 Lean 编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-FastVerlet",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LIE_OPERATOR_NOTATION_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-FastVerlet",
+          "kind": "definition",
+          "label": null,
+          "section": "4.2.1",
+          "printed_page": "145",
+          "pdf_page": "167",
+          "statement_latex": "Let $\\mathcal G_h^F$ denote the map associated to the Verlet method for the system without $U_S$, using a stepsize $h$:\n\\[\\mathcal G_h^F=\\mathrm e^{\\frac h2\\mathcal L_{U_F}}\\mathrm e^{h\\mathcal L_K}\\mathrm e^{\\frac h2\\mathcal L_{U_F}},\\]\nwhere $\\mathcal L_K$ is the Lie-derivative corresponding to the kinetic energy component of the Hamiltonian $(K=p^TM^{-1}p/2)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Lie指数按实际势kick与质量drift作用解释；复用第2章实际数学映射。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.fastVerlet",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "对照 PDF 第167页（印刷第145页）渲染页：将 Lie 导数记号 L_{U_F}、L_K 还原为原书的花体 \\mathcal L_{U_F}、\\mathcal L_K；指数、步长及乘积顺序均保持原书。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch04/evidence/BATCH04_pdf167.png"
+        },
+        "issues": [
+          "原页展示公式与随后说明均使用花体 Lie 导数记号 \\mathcal L；输入 statement_latex 使用普通 L。修正只还原原书记号，不改公式含义。"
+        ],
+        "evidence": [
+          "教材 PDF 第167页（印刷第145页），首段后的第一条展示公式为 \\mathcal G_h^F=e^{(h/2)\\mathcal L_{U_F}}e^{h\\mathcal L_K}e^{(h/2)\\mathcal L_{U_F}}；紧接的文字是 “where \\mathcal L_K is the Lie-derivative”。",
+          "所引 “for the system without U_S”、using a stepsize h 及 K=p^T M^{-1}p/2 均与该页一致；页码正确，proof_latex=null 与本条为算法定义一致。",
+          "context_notation 的 kick/drift 解释与第167页相邻的 (4.2) 算法相符；它是实际映射解释，不是把整个快子系统的精确流等同于一个 Verlet 步。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.fastVerlet",
+        "verdict": "PASS",
+        "explanation": "实际声明在 Ch04.lean 第402–403行。依赖展开：Chapter04Review.Q n=Fin n→ℝ、Z n=Q n×Q n；Chapter04Review.grad UF q=textbookConstraintGradient UF q；后者在 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean 第2975–2977行定义为 i↦(fderiv ℝ UF q)(Pi.single i 1)，即实际坐标偏导组成的梯度。不是任意同名力，也不是把辛性当作定义。-- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 第2859–2861行的 verlet m F h 令 qnew=q+h*invMass(m,p)+(h²/2)*invMass(m,F(q))，再返回 (qnew,p+(h/2)*(F(q)+F(qnew)))；该文件 invMass 同样逐坐标为 m_i⁻¹v_i。代入 F=-grad UF，恰为快势半 kick、动能全 drift、快势半 kick 的展开式，因此与教材三因子公式的实映射语义一致。n,m,UF,h 的参数及省去 US 均正确。势函数可微、质量非零是原梯度/质量逆的通常解释域；Lean 定义本身是总函数，未额外声称非可微输入的 fderiv 是经典梯度。没有声称快 Hamiltonian 的完整精确流等于 Verlet。无 [EXTRA] 或 [ERRATUM?]。定义无 sorry；本 PASS 不表示已经编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-RESPA",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LIE_OPERATOR_NOTATION_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-RESPA",
+          "kind": "definition",
+          "label": "(4.2)",
+          "section": "4.2.1",
+          "printed_page": "145",
+          "pdf_page": "167",
+          "statement_latex": "Now consider the map constructed by taking $r$ steps using $\\mathcal G_{F,h/r}$ and composing this with kicks from the soft force:\n\\[\\mathcal G_h^{\\mathrm{MTS}}=\\mathrm e^{\\frac h2\\mathcal L_{U_S}}[\\mathcal G_{h/r}^F]^r\\mathrm e^{\\frac h2\\mathcal L_{U_S}}.\\]\nReversible RESPA Algorithm\n\\[P:=p-(h/2)\\nabla U_S(q),\\quad Q:=q;\\]\nRepeat $r$ times:\n\\[P:=P-(h/2)\\nabla U_F(Q)/r,\\quad Q:=Q+hM^{-1}P/r,\\quad P:=P-(h/2)\\nabla U_F(Q)/r;\\tag{4.2}\\]\n\\[P:=P-(h/2)\\nabla U_S(Q).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch04.respa",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "r为正自然数，实际r次函数迭代；不把形式算子等式当实际ODE流。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "对照 PDF 第167页（印刷第145页）渲染页：将软势 Lie 导数 L_{U_S} 还原为原书的 \\mathcal L_{U_S}；保留原书文字中的 \\mathcal G_{F,h/r} 与展示公式中的 \\mathcal G_{h/r}^F，不静默统一两种写法。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch04/evidence/BATCH04_pdf167.png"
+        },
+        "issues": [
+          "原页 MTS 展示公式使用 \\mathcal L_{U_S}，输入使用普通 L_{U_S}；其余算法更新、r 次循环与 (4.2) 编号核对一致。"
+        ],
+        "evidence": [
+          "教材 PDF 第167页（印刷第145页），MTS 展示公式为 \\mathcal G_h^{MTS}=e^{(h/2)\\mathcal L_{U_S}}[\\mathcal G_{h/r}^F]^r e^{(h/2)\\mathcal L_{U_S}}。",
+          "该页算法框标题为 Reversible RESPA Algorithm，初始 P:=p−(h/2)∇U_S(q)、Q:=q；Repeat r times 内依次是 P:=P−(h/2)∇U_F(Q)/r、Q:=Q+hM^{-1}P/r、P:=P−(h/2)∇U_F(Q)/r；末尾 P:=P−(h/2)∇U_S(Q)，编号 (4.2)。",
+          "放大核对第167页：正文确实写 \\mathcal G_{F,h/r}，随后的展示公式写 \\mathcal G_{h/r}^F；该输入在这一点忠实于原书，未将其当作提取错误而改写。proof_latex=null、printed_page=145、pdf_page=167 均恰当。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.respa",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean 第407–408行定义外层软势半 kick、r 次快步、末尾软势半 kick。在依赖 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 中，Q n=Fin n→ℝ，Z n=Q n×Q n；kick U t(q,p)=(q,p−t*grad U(q))，grad 经 textbookConstraintGradient 展开为 i↦(fderiv ℝ U q)(Pi.single i 1)。这里使用的是正式库 Chapter04Review.fastVerlet，而非未经核对的本地同名定义；其体为 Chapter02Review.verlet m (−grad UF) δ，后者展开为 qnew=q+δ*invMass(m,p)−(δ²/2)*invMass(m,grad UF(q))，pnew=p−(δ/2)*(grad UF(q)+grad UF(qnew))，invMass 第i分量为 m_i⁻¹p_i。故 δ=h/(r:ℝ) 的一个快步等于原算法循环里的三个顺序更新，^[r] 是真实自然数 r 次函数迭代，不是形式 Lie 算子的幂。外层两个 kick 的位置、h/2 系数及循环中 h/(2r)、h/r 系数都一致，输入和输出都是 (q,p)。[EXTRA] 将 r 解释为正自然数是循环计数及 h/r 所必需且合理的原文资格，不是随意删去有效 r。实际 def 的 r:ℕ 没有携带 0<r 的证明；r=0 时 Lean 的 h/0=0 且零次迭代为恒等，返回软势全 kick。这是定义在原算法域之外的总化分支，不能援引注释声称签名已排除它；在 r>0 的原算法域上，定义逐更新忠实。后续保结构定理确实显式使用 0<r。无 [ERRATUM?]，未声称这是完整系统的精确 ODE 流。定义无 sorry；未做 Lean 编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-RESPAStructure",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第167页（印刷第145页）首段原句为 “Because U_F requires small timesteps, we think of separating the calculation of a timestep, typically in a symmetric form.”；输入所引句子、页码均一致。",
+          "第167页标题 The Reversible RESPA Scheme 和算法框 Reversible RESPA Algorithm 支持可逆算法的上下文，但该句本身没有写 Jacobian 辛性或给出证明；proof_latex=null 正确。",
+          "extra_assumptions 引用的辛性文字确实在 PDF 第171页（印刷第149页）：关于 mollified multiple timestepping 的一段写 “just as with the MTS method, the scheme remains symplectic”。这是跨页背景，不能当作已包括在第167页所引句中的原文结论。",
+          "context_notation 的 “实际Jacobian辛性与反步恒等式” 是 Lean 实现说明，原句的源文本仍只是通常采用对称分裂。原文提取 APPROVED 与下述签名范围 FAIL 分开判定。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.respaStructure",
+        "verdict": "FAIL",
+        "explanation": "Ch04.lean 第412–416行量化 n、m、US、UF、r、h，要求所有 m_i>0、US/UF 为 C²、r>0，然后结论为辛性与对所有 z 的 G_{−h}(G_h(z))=z。所有依赖均已展开：Q n=Fin n→ℝ、Z n=Q n×Q n；dot u v=∑i u_i v_i；phaseForm(u,v)=dot(u.q,v.p)−dot(v.q,u.p)；symplecticMap G=∀z u v,phaseForm((fderiv ℝ G z)u,(fderiv ℝ G z)v)=phaseForm(u,v)。respa、kick、fastVerlet、Chapter02Review.verlet、invMass、grad→textbookConstraintGradient 分别是两次软势半 kick 包住 r 次快势 Verlet、p↦p−t∇U、实际坐标梯度及质量 drift，不是把保辛或可逆结论预先塞入定义。n 到 h 的量词顺序没有隐藏依赖，h 可为任意实数；C²保证实际梯度的 C¹ 及 Hessian 对称。[EXTRA] 正质量与 r>0 是合理的物理/算法资格，C² 是保辛的合理充分正则性；反步恒等式本身并不需要 C²，且作为代数映射的辛性也不严格需要质量为正，只需所用对角 drift 的适当解释。它们没有制造错误结论。FAIL 的原因是当前 statement_scope 明定仅覆盖所引原句及展示公式，而第167页这句话只是对称分裂的动机，没有断言任意 C² 势、任意步长下的全局 Jacobian 辛性与恒等式。注释把第171页的辛性及算法名称合并，扩大了来源与结论范围；[EXTRA] 可以标明补充假设，但不能自动使两项额外结论成为当前冻结原句的忠实陈述。此外 G_{−h}∘G_h=id 表示步长反号的自伴性；若 Reversible 专指 R(q,p)=(q,−p) 的动量反射可逆，还应显式交代 R∘G_h∘R=G_{−h}。该具体算法在这些正则性条件下的保结构命题数学上合理，此 FAIL 是来源/范围不匹配，没有声称已找到数学反例。本条无 [ERRATUM?]。第416行存在 sorry，证明仍未完成；范围 FAIL 不以 sorry 为理由，亦不把 sorry 当作命题为假的证据。",
+        "counterexample": null,
+        "suggested_fix": "二选一修复来源对应关系：(1) 保持现有冻结原句，则仅把它登记为算法设计背景，不将 MD.Ch04.respaStructure 当作该句的忠实翻译；(2) 若保留现有保结构定理，则明确将当前 source_id 的来源范围扩为第167页 (4.2) 算法及可逆标题、第171页 “just as with the MTS method ... remains symplectic” 的跨页声明，补列 printed/pdf 页码145/149、167/171，并标注这是据算法作出的精确化。若目标还包括动量反射可逆，增加并明示 R∘G_h∘R=G_{−h}，不要把一般反步恒等式与该关系无说明地等同。"
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-SlowMatrix",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第168页（印刷第146页）“with” 后的同一展示公式同时给出 S_h=[[1,0],[-h,1]] 和 F_h=[[cos(Ωh),Ω^{-1}sin(Ωh)],[-Ωsin(Ωh),cos(Ωh)]]；输入两个矩阵的符号、元素、顺序均一致。",
+          "context_notation 的 U_S(q)=q²/2、质量1 来自 PDF 第167页（印刷第145页）末尾的一自由度模型 H=p²/2+U_S+U_F、U_S=q²/2、U_F=Ω²q²/2；第168页续句补充 Ω≫1。",
+          "本条没有独立证明，proof_latex=null 正确；printed_page=146、pdf_page=168 正确。保留输入所合引的两个矩阵，未为迁就 Lean 范围而删去原公式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.slowMatrix",
+        "verdict": "FAIL",
+        "explanation": "Ch04.lean 第419行的 MD.Ch04.slowMatrix h 是真实 2×2 实矩阵 !![1,0;−h,1]，Matrix (Fin 2) (Fin 2) ℝ 的四个元素分别为 1,0,−h,1。依赖 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 第4418行的正式库 slowMatrix 完全同体，作用于 (q,p) 后给 (q,p−hq)，与质量1、U_S=q²/2 的实际慢势 kick 一致；h:ℝ 没有多余的步长限制。但是本条 statement_latex 同时陈述 S_h 与 F_h，statement_scope 又规定整个展示公式均在本条范围内。该声明只定义 S_h，没有 Ω 参数、F_h 的三角函数矩阵或将其归入 context_notation 的范围说明；不能用同批另一个 source_id 存在 fastMatrix 替代本条缺失的结论覆盖。故是部分忠实而整体 FAIL，缺失条款是 F_h=[[cos(Ωh),Ω⁻¹sin(Ωh)],[−Ωsin(Ωh),cos(Ωh)]]。本条无 [EXTRA]、[ERRATUM?]。定义本身无 sorry，元素没有数学错误；FAIL 与证明状态无关。",
+        "counterexample": null,
+        "suggested_fix": "保持 source_id 不变，将本条 statement_scope 明确限定为 S_h 的定义，并把原页同时展示的 F_h 放入 context_notation；若继续保留现有完整合引范围，则本条对应的 Lean 声明需共同覆盖 S_h 与 F_h，而不是只给一个 slowMatrix 定义。"
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-FastMatrix",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第168页（印刷第146页）“with” 后同一展示公式的 F_h 元素依次是 cos(Ωh)、Ω^{-1}sin(Ωh)、−Ωsin(Ωh)、cos(Ωh)，S_h 同时展示；输入全部元素及页码一致。",
+          "第168页开头注明模型 Ω≫1；该页 “H_F=p²/2+Ω²q²/2 exactly” 说明 F_h 是质量1快振子的精确流矩阵，extra_assumptions 所称非单个 Verlet 矩阵正确。Ω>0 是公式可用的较弱解释域，不能宣称是原句逐字写出的假设。",
+          "context_notation 为空，没有错误记号；源模型背景见第167页末尾及第168页续文。proof_latex=null 与本条为定义一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.fastMatrix",
+        "verdict": "FAIL",
+        "explanation": "Ch04.lean 第423–424行定义真实 Matrix (Fin 2) (Fin 2) ℝ，四项为 cos(Ωh), sin(Ωh)/Ω, −Ω*sin(Ωh), cos(Ωh)。依赖 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 第4419–4420行的 fastMatrix 是同一个实际矩阵；在 Ω≠0 的原模型域内第二项 sin(Ωh)/Ω 与 Ω⁻¹sin(Ωh) 相同，符号及坐标顺序 (q,p) 正确。[EXTRA] 这是精确快振子流而非一个 Verlet 步，说明合理；Ω>0 是原 Ω≫1 模型中自然且充分的分母资格，但实际 def 并未限制 Ω>0，注释不是签名假设。它对 Ω=0 的总化值为单位矩阵，此值不能解释为频率0且 h≠0 的精确自由漂移 [[1,h],[0,1]]；在给定原模型的 Ω>0 域内没有这项问题。整体 FAIL 的确定理由是本条冻结 statement_latex 与 statement_scope 还包括 S_h=[[1,0],[−h,1]]，而 MD.Ch04.fastMatrix 只给 F_h，没有共同陈述或定义 S_h，且输入 context_notation 没有将 S_h 移到背景。同批另一个声明不能在每个 source_id 的完整范围要求下自动填补这一条缺失。本条无 [ERRATUM?]；定义没有 sorry，不存在本次检查已发现的矩阵元素错误。缺失是 S_h 定义的覆盖，不是对原 Ω≫1 条件下 F_h 的数学反例。",
+        "counterexample": null,
+        "suggested_fix": "保持 source_id 不变，将本条范围限定为 F_h 的定义，把同页 S_h 的等式放入 context_notation；或给出共同覆盖原合引两个矩阵的 Lean 声明。明确该矩阵在 Ω>0（至少 Ω≠0）的原模型域使用，如要宣称 Ω=0 也代表精确流，则另外将零频分支定义为 [[1,h],[0,1]]，不能依赖 Lean 除零总化。"
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ImpulseMatrix",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第168页（印刷第146页）从 “In the limit of small inner step” 至 “matrix-vector multiply” 的原句、H_F=p²/2+Ω²q²/2 及列向量 [Q,P]^T=W_h[q,p]^T 与输入一致。",
+          "同页紧随的公式是 W_h=S_{h/2}F_hS_{h/2}，输入把前面的列向量式与此公式合引，次序及两个半步均正确。",
+          "context_notation 指明理想精确内步 impulse 模型，与原页以快子系统精确流取代内步的语境一致；没有把该矩阵冒充有限 r 的 RESPA 步。第167页末至第168页开头给质量1、U_S=q²/2、U_F=Ω²q²/2、Ω≫1 背景。proof_latex=null 和页码均恰当。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.impulseMatrix",
+        "verdict": "PASS",
+        "explanation": "实际 MD.Ch04.impulseMatrix 在 Ch04.lean 第427行；它使用的是依赖正式库中的 slowMatrix 与 fastMatrix，均已查体：S_t=[[1,0],[−t,1]]，F_h=[[cos(Ωh),sin(Ωh)/Ω],[−Ωsin(Ωh),cos(Ωh)]]。返回 Matrix (Fin 2) (Fin 2) ℝ 的乘积 S_{h/2}*F_h*S_{h/2}；Matrix 乘法按列向量作用时右因子先作用，正是软势半 impulse、精确快振子流、软势半 impulse。任意输入 (q,p) 的输出是此矩阵乘该列向量，两分量次序与原页 [Q,P]^T 对齐，所有乘积因子和系数齐全。这里审核的是该理想 exact-inner-step 矩阵定义，原文 “In the limit of small inner step” 描述理想模型的选取，不含给定范数/收敛速率的独立极限定理；该 def 也没有把有限 r RESPA 矩阵与这个理想矩阵断言为相等。Ω 的解释域继承原 Ω≫1 模型，至少应取 Ω≠0；它没有声称除零总化后的 Ω=0 仍是精确快流。US=q²/2、UF=Ω²q²/2 与质量1已体现在查得的两个矩阵中，没有将一般势偷换成这些矩阵。本条无新增 [EXTRA] 或 [ERRATUM?]。定义无 sorry；本 PASS 是定义与模型公式的语义对应，不是对内步极限收敛或 Lean 编译的证明认证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ImpulseDet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "教材 PDF 第168页（印刷第146页）两个矩阵公式后原句逐字为 “Both of these matrices have unit determinant for any h, so the product of the eigenvalues of W_h is 1.”；statement_latex、printed_page=146、pdf_page=168 一致。",
+          "“Both” 指上文 S_h 与 F_h；完整源句同时包含两矩阵行列式为1及 W_h 的两个特征值按重数计乘积为1。proof_latex=null 恰当，原页只给这一简短因果说明，没有独立完整证明。",
+          "context_notation 的行列式/复特征多项式解释数学上正确；extra_assumptions 的 Ω≠0 是原快振子频率背景及公式中 Ω^{-1} 的自然资格。它不能替代原句已明确写出的谱结论。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.impulseDet",
+        "verdict": "FAIL",
+        "explanation": "Ch04.lean 第431–433行：∀Ω h:ℝ, Ω≠0→det(S_h)=1 ∧ det(F_h)=1 ∧ det(W_h)=1。全部矩阵定义从依赖正式库展开：S_h=[[1,0],[−h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[−Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}。因此两基础矩阵的行列式分别是1与 cos²(Ωh)+sin²(Ωh)=1，W_h 的行列式也是1，第三项是从原句因果关系中抽出的正确中间结论。[EXTRA] Ω≠0 是合理的分母资格；严格地说此总化 F_h 在 Ω=0 也为单位矩阵且 det=1，所以该条件不是这个孤立代数行列式断言不可去掉的假设，但对原精确振子流公式的解释恰当，未排除原模型有效输入。Ω 在 h 之前量化、h 无限制，对应原 any h。FAIL 的缺失条款是原句最后 “the product of the eigenvalues of W_h is 1”。当前签名既没有复特征值，也没有按代数重数列出两个根，没有根乘积等式；上下文说明“来自特征多项式”不等于声明已经包含这个结论。行列式为1当然可推出按重数计的复谱乘积为1，但逐条完整语义覆盖需要明示这一桥接，而不能把中间结论当作源句全部结论。本条无 [ERRATUM?]；证明体第434–444行未见 sorry，然而没有在本任务中运行 Lean 编译。已写行列式证明与谱结论尚未进入签名是独立事项；FAIL 不是由证明体完成与否决定。",
+        "counterexample": null,
+        "suggested_fix": "保留现有三项行列式结论，再明确加入 W_h 经 Complex.ofReal 扩张后的二次特征多项式及其两个复根按重数计的乘积为1：例如规定 roots(charpoly(W_h)) 为多重集 {λ₁,λ₂} 时 λ₁λ₂=1，并交代该根多重集存在且长度为2；或用 charpoly.roots 的多重集乘积等于1直接表达，同时说明二次首一多项式在 ℂ 上分裂。必须保留重根的代数重数，不能仅说“任取两个特征值”相乘为1，也不能只再陈述 det(W_h)=1。"
+      }
+    }
+  ]
+}

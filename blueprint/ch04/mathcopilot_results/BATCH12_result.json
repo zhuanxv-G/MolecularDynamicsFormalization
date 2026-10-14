@@ -1,0 +1,258 @@
+{
+  "batch": "BATCH12",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "712301e0e345927a7033f588526922e92adc775b3989ca2c9938eeca3fceaa0b",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.2-FrozenNewtonLinear",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LATEX_ACCENT_MISMATCH",
+          "CONTEXT_NOTATION_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.2-FrozenNewtonLinear",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.2",
+          "printed_page": "157",
+          "pdf_page": "179",
+          "statement_latex": "When $R$ is evaluated only once per step, the asymptotic convergence of Newton’s method is linear, i.e. we have instead\n\\[\\|\\Lambda^{(l+1)}-\\Lambda_*\\|\\le\\widehat C\\|\\Lambda^{(l)}-\\Lambda_*\\|,\\]\nsufficiently near to the solution.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$g$ is the vector of holonomic constraints; $G_n=g^{\\prime}(q_n)$ is its Jacobian at the old position. PDF p.178 / printed p.156, immediately below (4.17).",
+            "$Q_n=q_n+hM^{-1}p_n-h^2M^{-1}F_n$ is the predictor printed below (4.17); retain this minus sign literally. PDF p.178 / printed p.156.",
+            "$\\Lambda=h^2\\lambda_n$ is the scaled vector of constraint multipliers, and $g(Q_n-M^{-1}G_n^T\\Lambda)=0$ is (4.17). PDF p.178 / printed p.156.",
+            "$Q^{(l)}=Q_n-M^{-1}G_n^T\\Lambda^{(l)}$ and $R^{(l)}=g^{\\prime}(Q^{(l)})M^{-1}G_n^T$; $l$ is the iteration index. PDF p.179 / printed p.157, (4.19) and the definition of $R^{(l)}$.",
+            "$M^{-1}$ is the inverse mass matrix; $h$ is the timestep, and the subscript $n$ labels the old timestep. In the Lean signature, $n$ instead denotes the number of position coordinates, $l$ the number of scalar constraints, and $m$ the vector of diagonal masses.",
+            "$\\Lambda_*$ solves (4.17), and $\\Lambda^{(l)}$ is the $l$th iterate. PDF p.179 / printed p.157, the paragraph beginning “When the solution is unique” and the two displayed error estimates.",
+            "$\\widehat C$ is the constant printed in the frozen-iteration linear error bound, and $\\|\\cdot\\|$ is the norm on multiplier errors. The textbook does not specify the norm or explicitly print $\\widehat C<1$ in this displayed formula.",
+            "“When $R$ is evaluated only once per step” refers to the previously described sufficiently small timestep and sufficiently smooth $g^{\\prime}$, with the matrix fixed at the beginning of the timestep. The neighboring Newton discussion assumes a unique solution, sufficiently smooth constraints, and a determinant bounded away from zero. PDF p.179 / printed p.157."
+          ],
+          "issues": [
+            {
+              "code": "LATEX_ACCENT_MISMATCH",
+              "detail": "PDF p.179 / 印刷 p.157 的线性误差界中常数为带帽的 $\\widehat C$，不是 JSON 的 $\\widetilde C$；修正转录，不改数学陈述。"
+            },
+            {
+              "code": "CONTEXT_NOTATION_MISSING",
+              "detail": "context_notation 原为空，遗漏 $\\Lambda_*、\\Lambda^{(l)}、R^{(l)}、Q^{(l)}、G_n$ 和冻结矩阵取值点；补入原页及相邻 (4.17)–(4.19) 的记号和适用语境。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.frozenNewtonLinear",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实冻结映射在root的导数范数<1量化small-step收缩资格；det R0≠0、真实root和C²约束，不无条件声称冻结必收敛。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "LATEX_ACCENT_MISMATCH",
+              "detail": "PDF p.179 / 印刷 p.157 的线性误差界中常数为带帽的 $\\widehat C$，不是 JSON 的 $\\widetilde C$；修正转录，不改数学陈述。"
+            },
+            {
+              "code": "CONTEXT_NOTATION_MISSING",
+              "detail": "context_notation 原为空，遗漏 $\\Lambda_*、\\Lambda^{(l)}、R^{(l)}、Q^{(l)}、G_n$ 和冻结矩阵取值点；补入原页及相邻 (4.17)–(4.19) 的记号和适用语境。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch04/BATCH12_evidence/page-179.png; context-178.png"
+        },
+        "issues": [
+          {
+            "code": "LATEX_ACCENT_MISMATCH",
+            "detail": "PDF p.179 / 印刷 p.157 的线性误差界中常数为带帽的 $\\widehat C$，不是 JSON 的 $\\widetilde C$；修正转录，不改数学陈述。"
+          },
+          {
+            "code": "CONTEXT_NOTATION_MISSING",
+            "detail": "context_notation 原为空，遗漏 $\\Lambda_*、\\Lambda^{(l)}、R^{(l)}、Q^{(l)}、G_n$ 和冻结矩阵取值点；补入原页及相邻 (4.17)–(4.19) 的记号和适用语境。"
+          }
+        ],
+        "evidence": [
+          "已实际重渲染并目视核对 PDF p.179，页眉印刷 p.157，157+22=179。证据图：.mathcopilot/reviews/ch04/BATCH12_evidence/page-179.png；背景 (4.17) 见 context-178.png。",
+          "目标段从 “When $R$ is evaluated only once per step” 起，经展示的 $\\|\\Lambda^{(l+1)}-\\Lambda_*\\|\\le\\widehat C\\|\\Lambda^{(l)}-\\Lambda_*\\|$，到 “sufficiently near to the solution.”；除常数帽号外，原 statement_latex 的词句、下标、指数、范数和不等号一致。",
+          "原页没有本条独立证明，proof_latex=null、proof_discussion_latex=null 和“原书未给独立完整证明”的 proof_note 可保留；前段是适用条件及收敛讨论，不是遗漏的本条证明。",
+          "本条 printed_page=157、pdf_page=179、section=4.3.2 正确。context_notation 原为空，已补充原页实际使用的记号与明确上下文。",
+          "版本与路径：本工作区上传文件的实际路径为 /workspace/BATCH12.md、/workspace/Ch04.lean、/workspace/Ch04_deps.txt；输入中的逻辑名 Blueprint/Ch04.lean 对应实际读取的 /workspace/Ch04.lean，未创建或改写任何输入副本。三个 SHA256 均按原始字节计算，包括原有换行；BATCH12 中本条 Lean 摘录经空白归一化后与实际 Ch04.lean 签名一致。依赖证据行号按原文件 LF 计数，等同 rg/sed 的行号。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.frozenNewtonLinear",
+        "verdict": "PASS",
+        "explanation": "核对位置：Ch04.lean LF 836–845。实际签名显式引用的是 MolecularDynamics.Chapter04Review 的正式库定义，并非只根据 MD.Ch04 中同名局部定义推断。Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，LF 4377–4381 给出 Q n = Fin n → ℝ、Z n = Q n × Q n、invMass m v i = (m i)⁻¹*v i；LF 4449–4461 给出完整残差、R 和冻结更新。其余基础定义位于 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean LF 2975–2977：textbookConstraintGradient (g j) x i = (fderiv ℝ (g j) x)(Pi.single i 1)；-- FILE: MolecularDynamics/Chapter04/CotangentProjection.lean LF 3385–3387：textbookConstraintJacobian g x 的第 j,i 项即该真实偏导，记 J(x)；LF 3413–3414：textbookInverseMassMatrix m = diag((m i)⁻¹)，记 D。由此残差为 H(η)=g(base−D J(q)ᵀη)，R(η)=J(base−D J(q)ᵀη) D J(q)ᵀ，冻结映射为 T(η)=η+R(0)⁻¹H(η)。H 的实际导数是 −R，所以更新中的加号与原书 (4.18) 一致；R(0) 真正取在 base，对应 Q_n，并未偷换成旧点 Gram。\n对象与量词：先任意给定 n,l,m,g,q,base,root，再依次假设各 g_j 为 C²、H(root)=0、det R(0)≠0、‖DT(root)‖<1；随后存在同一对 C∈(0,1)、δ>0，对全部 ‖η−root‖<δ 给出 ‖T(η)−root‖≤C‖η−root‖。C 与 δ 可依赖前述固定数据，但不依赖 η。用 η=Λ^(l)、root=Λ_* 后即得到原书展示的局部线性误差上界；C<1 还保证该根邻域中迭代保持在邻域内并收敛。这解释原文“linear, i.e.”展示的上界，不宣称恰好一阶或排除某些特殊情况下更快收敛。\n[EXTRA] 审查：真实根资格与 det R(0)≠0 是标准的固定点及逆矩阵资格，不把误差界作为假设；C² 比本冻结映射所需的局部 C¹ 更强，但与教材“sufficiently smooth”一致。‖DT(root)‖<1 是比谱半径<1更强的充分收缩条件，并非局部收敛在所有范数下的必要条件；它明确限定了适用范围，合理地量化原文“小步长”下可用冻结矩阵的资格。签名没有独立推导步长阈值，亦不证明仅凭冻结 R 即无条件收敛；本 PASS 绑定这一公开限定后的条件性误差界。不需要额外全局唯一性，结论只围绕给定根；根附近的非退化性由上述收缩与可逆性资格保证。正质量未显式加入，但这个代数性的条件结论在更一般的固定对角 D 下仍适用，教材正质量实例被包含。本条无独立 [ERRATUM?] 标记；不得利用原书错误的 R(0)=旧点 Gram 来解释这里的 R(0)。\n证明状态单独记录：Ch04.lean LF 844–845 为 := by / sorry。PASS 仅表示已展开定义后的签名语义通过，不表示定理已获 Lean 证明或编译验证；本次只读审计未写证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-ProjectionScale",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PUNCTUATION_MISMATCH",
+          "CONTEXT_NOTATION_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.2-ProjectionScale",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.2",
+          "printed_page": "158",
+          "pdf_page": "180",
+          "statement_latex": "It is worth noting that $\\Lambda(h)=O(h^2)$, i.e. for small steps $\\Lambda$ will also be small. This justifies the initial guess $\\Lambda^{(0)}=0$,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$g$ is the vector of holonomic constraints; $G_n=g^{\\prime}(q_n)$ is its Jacobian at the old position. PDF p.178 / printed p.156, immediately below (4.17).",
+            "$Q_n=q_n+hM^{-1}p_n-h^2M^{-1}F_n$ is the predictor printed below (4.17); retain this minus sign literally. PDF p.178 / printed p.156.",
+            "$\\Lambda=h^2\\lambda_n$ is the scaled vector of constraint multipliers, and $g(Q_n-M^{-1}G_n^T\\Lambda)=0$ is (4.17). PDF p.178 / printed p.156.",
+            "$Q^{(l)}=Q_n-M^{-1}G_n^T\\Lambda^{(l)}$ and $R^{(l)}=g^{\\prime}(Q^{(l)})M^{-1}G_n^T$; $l$ is the iteration index. PDF p.179 / printed p.157, (4.19) and the definition of $R^{(l)}$.",
+            "$M^{-1}$ is the inverse mass matrix; $h$ is the timestep, and the subscript $n$ labels the old timestep. In the Lean signature, $n$ instead denotes the number of position coordinates, $l$ the number of scalar constraints, and $m$ the vector of diagonal masses.",
+            "$\\Lambda(h)$ denotes the solution multiplier of (4.17) as the timestep $h$ varies; $O(h^2)$ is its asymptotic size as $h\\to0$, not the size of the unscaled $\\lambda_n$. PDF p.180 / printed p.158, first paragraph; scaling is printed on PDF p.178.",
+            "$\\Lambda^{(0)}=0$ is the initial Newton iterate for a fixed timestep, whereas $\\Lambda(0)=0$ would be the value of a step-dependent root branch at zero step. These are different uses of zero. PDF p.179, (4.18)–(4.19), and PDF p.180, first paragraph.",
+            "The excerpt stops after the initial-guess clause; the actual second sentence continues with “and it also suggests” a smaller timestep if convergence is poor. Its printed comma is preserved at the excerpt boundary. PDF p.180 / printed p.158.",
+            "PDF p.178 explicitly permits violation of the hidden constraint in the discussed method. The conditional Lean estimate assumes an initially compatible cotangent state; this is a declared extra hypothesis, not an assertion that every method step satisfies the hidden constraint exactly."
+          ],
+          "issues": [
+            {
+              "code": "PUNCTUATION_MISMATCH",
+              "detail": "PDF p.180 / 印刷 p.158 顶段中，$\\Lambda^{(0)}=0$ 后是逗号并接 “and it also suggests …”，JSON 在这里人为写成句号。为不扩大 statement_scope，保留摘录的终点，仅把句号恢复为原书逗号；不将后续建议另扩为本批结论。"
+            },
+            {
+              "code": "CONTEXT_NOTATION_MISSING",
+              "detail": "context_notation 原为空，未定义 $\\Lambda(h)=h^2\\lambda_n$、步长 $h$、(4.17) 的解分支和零初始迭代猜测；也未区分 $\\Lambda(h)$ 的步长依赖与 $\\Lambda^{(0)}$ 的迭代编号。补入上下文并保留 PDF p.178 的预测点原负号。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.projectionScale",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "给定真实C²选根分支η0=0、正则Gram及初始余切资格；非线性根存在是独立缺项，不把O(h²)结论作假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "PUNCTUATION_MISMATCH",
+              "detail": "PDF p.180 / 印刷 p.158 顶段中，$\\Lambda^{(0)}=0$ 后是逗号并接 “and it also suggests …”，JSON 在这里人为写成句号。为不扩大 statement_scope，保留摘录的终点，仅把句号恢复为原书逗号；不将后续建议另扩为本批结论。"
+            },
+            {
+              "code": "CONTEXT_NOTATION_MISSING",
+              "detail": "context_notation 原为空，未定义 $\\Lambda(h)=h^2\\lambda_n$、步长 $h$、(4.17) 的解分支和零初始迭代猜测；也未区分 $\\Lambda(h)$ 的步长依赖与 $\\Lambda^{(0)}$ 的迭代编号。补入上下文并保留 PDF p.178 的预测点原负号。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch04/BATCH12_evidence/page-180.png; context-178.png; page-179.png"
+        },
+        "issues": [
+          {
+            "code": "PUNCTUATION_MISMATCH",
+            "detail": "PDF p.180 / 印刷 p.158 顶段中，$\\Lambda^{(0)}=0$ 后是逗号并接 “and it also suggests …”，JSON 在这里人为写成句号。为不扩大 statement_scope，保留摘录的终点，仅把句号恢复为原书逗号；不将后续建议另扩为本批结论。"
+          },
+          {
+            "code": "CONTEXT_NOTATION_MISSING",
+            "detail": "context_notation 原为空，未定义 $\\Lambda(h)=h^2\\lambda_n$、步长 $h$、(4.17) 的解分支和零初始迭代猜测；也未区分 $\\Lambda(h)$ 的步长依赖与 $\\Lambda^{(0)}$ 的迭代编号。补入上下文并保留 PDF p.178 的预测点原负号。"
+          }
+        ],
+        "evidence": [
+          "已实际重渲染并目视核对 PDF p.180，页眉印刷 p.158，158+22=180。证据图：.mathcopilot/reviews/ch04/BATCH12_evidence/page-180.png；Λ 的缩放和预测点见 context-178.png，Newton 初值见 page-179.png。",
+          "页首实际印 “It is worth noting that $\\Lambda(h)=O(h^2)$, i.e. for small steps $\\Lambda$ will also be small.”，随后 “This justifies the initial guess $\\Lambda^{(0)}=0$, and it also suggests …”。第一句及全部数学记号一致；本条摘录末尾的原始标点是逗号。",
+          "依声明的 statement_scope 不扩入后面的条件性建议句。修正只恢复摘录边界处的原书标点，并明确记录该边界；未把原文未明示的余切资格当作教材字面文字。",
+          "原页仅陈述和解释零猜测，没有本条独立证明；proof_latex=null、proof_discussion_latex=null 和原 proof_note 可保留。printed_page=158、pdf_page=180、section=4.3.2 正确。",
+          "版本与路径：本工作区上传文件的实际路径为 /workspace/BATCH12.md、/workspace/Ch04.lean、/workspace/Ch04_deps.txt；输入中的逻辑名 Blueprint/Ch04.lean 对应实际读取的 /workspace/Ch04.lean，未创建或改写任何输入副本。三个 SHA256 均按原始字节计算，包括原有换行；BATCH12 中本条 Lean 摘录经空白归一化后与实际 Ch04.lean 签名一致。依赖证据行号按原文件 LF 计数，等同 rg/sed 的行号。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.projectionScale",
+        "verdict": "PASS",
+        "explanation": "核对位置：Ch04.lean LF 847–857。已逐一定义展开，而非根据 cotangentSet 或 projectionResidual 的名字判断。Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean LF 4377–4381：Q n = Fin n → ℝ，Z n = Q n × Q n，invMass m v i=(m i)⁻¹*v i。LF 4428：constraintSet g={q | ∀j,g j q=0}；LF 4429–4430：cotangentSet m g={z | g(z.1)=0 ∧ J(z.1) D z.2=0}。这里 J 的实际元素是 (fderiv ℝ (g j) q)(Pi.single i 1)，来自 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean LF 2975–2977 与 -- FILE: MolecularDynamics/Chapter04/CotangentProjection.lean LF 3385–3387；D=diag((m i)⁻¹)，由后者 LF 3413–3414。LF 3417–3420 的 textbookConstraintGram 实际等于 A(q)=J(q)D J(q)ᵀ。ReviewDefinitions.lean LF 4449–4451 的残差实际是 g(base−D J(q)ᵀη)。\n因此本签名的方程展开为 g(q+hDp+h²DF(q)−D J(q)ᵀη(h))=0，其中 q=z.1、p=z.2，且初始状态同时满足 g(q)=0 与 J(q)Dp=0。它与原书 (4.17) 的对象及 Λ 的缩放一致。原书 PDF p.178 的预测点是 q_n+hM⁻¹p_n−h²M⁻¹F_n，而本签名写 +h²DF(q)；必须明确以 Lean 的 F(q)=−F_n 对应字面原式，不能把原式静默改成加号。由于 F 在此任意量化、只取固定点 q 的值，正负号对本阶估计不构成语义损失，也不需要 F 的额外光滑性。\n量词及全部数学结论：任意给定 n,l,m,F,g,z 和实际分支 η 后，假设 z∈cotangentSet、各 g_j 为 C²、η 为 C²、η(0)=0、det A(q)≠0，以及存在统一邻域使全部 h 都满足真实残差为零；结论再给出 C>0、δ>0，所有 −δ<h<δ 均满足 ‖η(h)‖≤C h²。结论邻域可以缩小，不必与前提邻域相同；C 与 δ 不依赖 h。该界是 Λ(h)=O(h²) 的明确有限维范数表述，并蕴含 η(h)→0，给出原文选择零初始猜测的定量依据。此处是缩放后的 Λ，不误写成 λ_n=O(h²)。\n[EXTRA] 审查：初始余切资格消去一阶项；若只知 q∈M 而不知 J(q)Dp=0，通常会出现 O(h) 项，所以该资格对固定初始状态的此种估计具有实质作用。对已有隐藏约束误差的后续步，本签名不直接作普遍保证。det A(q)≠0 提供乘子方向的正则性，是标准充分条件；η(0)=0 选择靠近零的根分支，排除远离零的其他根。C² 的真实选根分支是显式、较强但合理的正规性资格；残差等式并不是阶估计的循环假设，没有把 ‖η(h)‖≤Ch² 或 η′(0)=0 预先当作前提。假设方程及初始余切资格对一阶导数的约束为 A(q)η′(0)=J(q)Dp=0，正则性消去线性项。签名审查的是给定正则根分支的大小，不建立非线性根分支的存在性；这一范围限制与 JSON 的 extra_assumptions 一致。正质量也未显式列入，但该条件结论并不依赖 D 的正定性，已包含教材的正质量实例。本条无 [ERRATUM?] 标记；原文的泛化适用条件需要通过这些明示附加假设理解，不能把它说成对任意不相容状态都成立。\n证明状态单独记录：Ch04.lean LF 856–857 为 := by / sorry。PASS 仅针对已展开定义的条件性签名，不是已完成根存在性证明，也不是 Lean 证明通过；本次未补证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-FrozenGramPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_NOTATION_MISSING",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.2-FrozenGramPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.2",
+          "printed_page": "157",
+          "pdf_page": "179",
+          "statement_latex": "Moreover, in case we have chosen $\\Lambda^{(0)}=0$, we have\n\\[R^{(0)}=G_nM^{-1}G_n^T,\\]\nwhich is a symmetric matrix,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$g$ is the vector of holonomic constraints; $G_n=g^{\\prime}(q_n)$ is its Jacobian at the old position. PDF p.178 / printed p.156, immediately below (4.17).",
+            "$Q_n=q_n+hM^{-1}p_n-h^2M^{-1}F_n$ is the predictor printed below (4.17); retain this minus sign literally. PDF p.178 / printed p.156.",
+            "$\\Lambda=h^2\\lambda_n$ is the scaled vector of constraint multipliers, and $g(Q_n-M^{-1}G_n^T\\Lambda)=0$ is (4.17). PDF p.178 / printed p.156.",
+            "$Q^{(l)}=Q_n-M^{-1}G_n^T\\Lambda^{(l)}$ and $R^{(l)}=g^{\\prime}(Q^{(l)})M^{-1}G_n^T$; $l$ is the iteration index. PDF p.179 / printed p.157, (4.19) and the definition of $R^{(l)}$.",
+            "$M^{-1}$ is the inverse mass matrix; $h$ is the timestep, and the subscript $n$ labels the old timestep. In the Lean signature, $n$ instead denotes the number of position coordinates, $l$ the number of scalar constraints, and $m$ the vector of diagonal masses.",
+            "$\\Lambda^{(0)}=0$ gives $Q^{(0)}=Q_n$ by (4.19), hence the definition printed on the same page gives $R^{(0)}=g^{\\prime}(Q_n)M^{-1}G_n^T$. This need not equal $G_nM^{-1}G_n^T$. PDF p.179 / printed p.157.",
+            "The textbook actually prints $R^{(0)}=G_nM^{-1}G_n^T$ and then “which is a symmetric matrix”. Both are retained as original text; the inconsistency is reported as [ERRATUM?], not silently corrected. PDF p.179 / printed p.157, immediately after the discussion of factoring the frozen matrix once per timestep."
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "R(0)仍是新预测点与旧点的交叉Gram，原等式一般不成立。"
+            },
+            {
+              "code": "CONTEXT_NOTATION_MISSING",
+              "detail": "context_notation 原为空，未列 (4.19) 和 $R^{(l)}$ 的定义；这两项在 $\\Lambda^{(0)}=0$ 时给出 $Q^{(0)}=Q_n$，而不是 $q_n$。补记真实定义，保留原书印出的 $R^{(0)}=G_nM^{-1}G_n^T$ 及“symmetric matrix”字样，不把书中疑误改成正确公式。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.frozenGramPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "code": "CONTEXT_NOTATION_MISSING",
+              "detail": "context_notation 原为空，未列 (4.19) 和 $R^{(l)}$ 的定义；这两项在 $\\Lambda^{(0)}=0$ 时给出 $Q^{(0)}=Q_n$，而不是 $q_n$。补记真实定义，保留原书印出的 $R^{(0)}=G_nM^{-1}G_n^T$ 及“symmetric matrix”字样，不把书中疑误改成正确公式。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch04/BATCH12_evidence/page-179.png; context-178.png"
+        },
+        "issues": [
+          {
+            "code": "CONTEXT_NOTATION_MISSING",
+            "detail": "context_notation 原为空，未列 (4.19) 和 $R^{(l)}$ 的定义；这两项在 $\\Lambda^{(0)}=0$ 时给出 $Q^{(0)}=Q_n$，而不是 $q_n$。补记真实定义，保留原书印出的 $R^{(0)}=G_nM^{-1}G_n^T$ 及“symmetric matrix”字样，不把书中疑误改成正确公式。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "原 JSON 已标记的书中疑误经实际定义展开与精确反例确认。字面 statement_latex 的等式和“symmetric matrix”均忠实于 PDF，因此保持不改；CORRECTED 源于 context_notation 的补充，不是把原书错误静默换成正确结论。"
+          }
+        ],
+        "evidence": [
+          "已实际重渲染并目视核对 PDF p.179，页眉印刷 p.157，157+22=179。证据图：.mathcopilot/reviews/ch04/BATCH12_evidence/page-179.png。",
+          "在“factor it once only”讨论后，教材确实印出 “in case we have chosen $\\Lambda^{(0)}=0$, we have” 及 $R^{(0)}=G_nM^{-1}G_n^T$，接着“which is a symmetric matrix,”。JSON 的选定原文和展示公式一致，摘录保留原书逗号。",
+          "同一页 (4.19) 印出 $Q^{(l)}=Q_n-M^{-1}G_n^T\\Lambda^{(l)}$，其下一组展示式定义 $R^{(l)}=g^{\\prime}(Q^{(l)})M^{-1}G_n^T$；PDF p.178 又给 $G_n=g^{\\prime}(q_n)$。这些原书定义支持 $R^{(0)}=g^{\\prime}(Q_n)M^{-1}G_n^T$，暴露所印同点 Gram 等式的疑误。",
+          "原页无本条独立证明；proof_latex=null、proof_discussion_latex=null 与原 proof_note 可保留。printed_page=157、pdf_page=179、section=4.3.2 正确。原 ERRATUM? 记录保留，语义反例另见 audit。",
+          "版本与路径：本工作区上传文件的实际路径为 /workspace/BATCH12.md、/workspace/Ch04.lean、/workspace/Ch04_deps.txt；输入中的逻辑名 Blueprint/Ch04.lean 对应实际读取的 /workspace/Ch04.lean，未创建或改写任何输入副本。三个 SHA256 均按原始字节计算，包括原有换行；BATCH12 中本条 Lean 摘录经空白归一化后与实际 Ch04.lean 签名一致。依赖证据行号按原文件 LF 计数，等同 rg/sed 的行号。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.frozenGramPrinted",
+        "verdict": "FAIL",
+        "explanation": "核对位置：Ch04.lean LF 859–864。Q n 在 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean LF 4377 展开为 Fin n → ℝ。正式库 projectionJacobian 的完整定义位于同文件 LF 4452–4455：R(η)=J(base−D J(q)ᵀη)D J(q)ᵀ，其中 invMass 的坐标式在 LF 4381，等价于 D=diag((m i)⁻¹) 的乘向量作用。J(x) 的每项为真实偏导 (fderiv ℝ (g j) x)(Pi.single i 1)，来自 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean LF 2975–2977 及 -- FILE: MolecularDynamics/Chapter04/CotangentProjection.lean LF 3385–3387；D 的定义在后者 LF 3413–3414，textbookConstraintGram 在 LF 3417–3420 实际为 J(q)D J(q)ᵀ。令 η=0 后，左边是 J(base)D J(q)ᵀ；右边则是 J(q)D J(q)ᵀ。\n对象与量词：签名先对 n,l,m,g,q,base 全称量化，随后无任何假设就断言两矩阵相等。这逐字承接了原书所印等式，但原书 (4.19) 和同页 R 的定义并不支持它；本条 [ERRATUM?] 成立，问题已可由完整定义和反例判定，无需因“缺定义”转交人工。正质量、C² 约束、旧点满足约束、约束 Jacobian 满行秩、预测点任意接近旧点、甚至 R(0) 可逆，都不能补救该无条件等式。\n缺失结论：原摘录还明确说“which is a symmetric matrix”，Lean 签名仅给等式，没有列出 R(0) 的对称性断言。右端 Gram 的确对称，因为 D 为实对角矩阵；但实际左端是两个不同位置 Jacobian 的交叉乘积，一般连对称性也不成立。在正确的同点或同 Jacobian 限定下，等式可用于推导对称性；要审查全部结论子句，应把这一性质在对应正确声明中显式列出，而不能靠错误等式充当其依据。\n本条没有 [EXTRA] 假设；修复必须清楚区分“保留原书勘误记录”和“新增可证明的正确声明”，不得直接修改 corrected_json 的原文等式。\n证明状态单独记录：Ch04.lean LF 863–864 为 := by / sorry。FAIL 来自展开定义后的错误普遍等式及缺失结论，与 sorry 是否存在是两个独立问题。",
+        "counterexample": "取 n=l=2，m=(1,1)，g₁(x,y)=x−1，g₂(x,y)=y+x²−1，q=(1,0)，base=(1+ε,0)，其中 ε>0 可任意小。约束均为多项式，g(q)=0，J(q)=[[1,0],[2,1]] 满秩，D=I，J(base)=[[1,0],[2+2ε,1]]。于是 projectionJacobian m g q base 0=[[1,2],[2+2ε,5+4ε]]，textbookConstraintGram m g q=[[1,2],[2,5]]。ε≠0 时二者不相等，且左矩阵的 (1,2) 与 (2,1) 项不同，故不对称；两矩阵行列式都为 1。取 p=0、h²=ε、Lean 的 F(q)=(1,0)，此 base 也来自本批投影预测式且初始隐藏约束成立；按原书字面负号则取 F_n=(−1,0)。因此反例不是靠不相容初值或大步长构造。以 ε=1/10 作精确有理数复核，左矩阵为 [[1,2],[11/5,27/5]]，右矩阵为 [[1,2],[2,5]]，左行列式为 1。",
+        "suggested_fix": "保留原书字面等式及 [ERRATUM?] 的来源记录，将可证明的基本声明改为 projectionJacobian m g q base 0 = textbookConstraintJacobian g base * textbookInverseMassMatrix m * (textbookConstraintJacobian g q)ᵀ；这条正确交叉矩阵等式不附带一般对称性。若仍要声明它等于旧点 Gram，应另加 base=q，或更弱的 textbookConstraintJacobian g base = textbookConstraintJacobian g q，并在这个限定后的声明中显式加入 Aᵀ=A（A 为该冻结矩阵）或等价的矩阵对称性子句。这些假设只是足够条件，不是必要条件，必须标为额外限定，不能伪装成仅由 Λ^(0)=0 得出的原文结论。如果算法本意是冻结到旧点 Gram，则另定义该近似矩阵 J(q)D J(q)ᵀ 及相应更新映射，与真实 R(0) 区分；不要暗中改写本批前两条使用的正式库定义。"
+      }
+    }
+  ]
+}

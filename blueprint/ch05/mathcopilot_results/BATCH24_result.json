@@ -1,0 +1,310 @@
+{
+  "batch": "BATCH24",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "78ba3e1ab015ac8d0098bd5bb1a64c24f4699e17e5eac8f7d66fa0a9f0e27c7a",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.6-DiscreteAveragePrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-DiscreteAveragePrinted",
+          "kind": "definition",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "206",
+          "pdf_page": "227",
+          "statement_latex": "If $z_n$ represents the approximation to $z(t_n)$, then we might attempt to estimate $\\bar g_\\Gamma$ by\n\\[\\bar g_\\Gamma\\approx\\lim_{n\\to\\infty}n^{-1}\\sum_{k=0}^ng(z_k).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原式包含n+1项却除n，字面有限和保留；无限极限并非对所有算法/所有轨道存在。",
+            "原书平均记号为\\bar g_\\Gamma；z_k为数值轨道，形式化用G^[k] z表示自治单步映射迭代；原书未保证无限平均存在。"
+          ],
+          "issues": [
+            "遗漏原书平均记号的下标Γ；保留原书k=0到n的n+1项及除n，不将其静默改为n项。"
+          ],
+          "lean_decl": "MD.Ch05.discreteAveragePrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "遗漏原书平均记号的下标Γ；保留原书k=0到n的n+1项及除n，不将其静默改为n项。"
+          ],
+          "source_page_verification": "本轮实际核对教材PDF渲染页227–228；页码偏移+21。"
+        },
+        "issues": [
+          "遗漏原书平均记号的下标Γ；保留原书k=0到n的n+1项及除n，不将其静默改为n项。"
+        ],
+        "evidence": "PDF227／印刷206：首段及展示式为bar g_Gamma ≈ lim n^{-1} sum_{k=0}^{n} g(z_k)；下一段说明无限平均可能无意义。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.discreteAveragePrinted",
+        "verdict": "PASS",
+        "explanation": "本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。依赖MolecularDynamics/Chapter05/ReviewDefinitions.lean（Ch05_deps.txt:5393–5394）的项目定义及附件声明均为(N:ℝ)⁻¹∑_{k∈range(N+1)}g(G^[k]z)。标准range与iterate给出k=0,…,N及从z出发的自治数值轨道，任意X、G、实值g、z与N均为定义参数；不需要额外可测性。与PDF227／印刷206原式被取极限的有限统计量完全对应，保留n+1项除n。按definition及context_notation的范围，本定义不宣称无限极限存在、算法遍历或平均等于bar g_Gamma；原文“might attempt”“approximately”不被改成无条件定理。N=0的总化逆元只扩展定义，不赋予统计含义。无[EXTRA]或字面[ERRATUM?]标签；此处不将端点计数差异擅自判为原书错误。它是def，未涉及sorry证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-DiscreteAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-DiscreteAverage",
+          "kind": "definition",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "206",
+          "pdf_page": "227",
+          "statement_latex": "$\\bar g_\\Gamma\\approx\\lim_{n\\to\\infty}n^{-1}\\sum_{k=0}^ng(z_k)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原书平均记号为\\bar g_\\Gamma；z_k为数值轨道，形式化用G^[k] z表示自治单步映射迭代；原书未保证无限平均存在。"
+          ],
+          "issues": [
+            "遗漏平均记号下标Γ；原式仍保留n+1项，标准n项版本仅是附件明确另列的修改。"
+          ],
+          "lean_decl": "MD.Ch05.discreteAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]标准n项平均修正版，另列不覆盖原n+1项；n=0总化除法不赋予统计平均意义。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "遗漏平均记号下标Γ；原式仍保留n+1项，标准n项版本仅是附件明确另列的修改。"
+          ],
+          "source_page_verification": "本轮实际核对教材PDF渲染页227–228；页码偏移+21。"
+        },
+        "issues": [
+          "遗漏平均记号下标Γ；原式仍保留n+1项，标准n项版本仅是附件明确另列的修改。"
+        ],
+        "evidence": "PDF227／印刷206：同一平均展示式，求和上限n而非n−1。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.discreteAverage",
+        "verdict": "FAIL",
+        "explanation": "本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。依赖ReviewDefinitions.lean:5395–5396展开为(N:ℝ)⁻¹∑_{k∈range N}g(G^[k]z)，只含k=0,…,N−1；任意参数的有限统计量与PDF227／印刷206原式相差g(G^[N]z)/N（N>0）。[EXTRA]明确说明标准n项变体另列，是合理衍生定义，但不是使原文n+1项变为n项的额外假设，也没有有限统计量相等的结论。故按本条声明的原句及展示式范围仍FAIL；这不是Mathlib定义缺失，也不是sorry问题。未见字面[ERRATUM?]标签；不静默修改原式。",
+        "counterexample": "X取单点空间，G=id，g恒为1，N=1：原式有限统计量为2，本定义为1。",
+        "suggested_fix": "保留标准n项平均作为明确的衍生定义；原式对应使用discreteAveragePrinted，并使source_id的statement_scope说明变体范围。若要求二者极限一致，另证差项g(G^[N]z)/N→0的条件及结论，不能将有限统计量视为相同。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-DiscretePropagator",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-DiscretePropagator",
+          "kind": "definition",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "206",
+          "pdf_page": "227",
+          "statement_latex": "In a similar way, a numerical method $z_{n+1}=\\mathcal F_h(z_n)$ induces an effective distributional propagator.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际Measure.map迭代映射；不把有限modified equation宣称算法的精确全时流。",
+            "G应可测（至少对μ几乎处处可测）才能把Measure.map解释为分布推前。"
+          ],
+          "issues": [
+            "原书单步算子是花体\\mathcal F_h，附件写成F_h；补充可测性资格。"
+          ],
+          "lean_decl": "MD.Ch05.discretePropagator",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "原书单步算子是花体\\mathcal F_h，附件写成F_h；补充可测性资格。"
+          ],
+          "source_page_verification": "本轮实际核对教材PDF渲染页227–228；页码偏移+21。"
+        },
+        "issues": [
+          "原书单步算子是花体\\mathcal F_h，附件写成F_h；补充可测性资格。"
+        ],
+        "evidence": "PDF227／印刷206：a numerical method z_{n+1}=mathcal F_h(z_n) induces an effective distributional propagator."
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.discretePropagator",
+        "verdict": "FAIL",
+        "explanation": "本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。项目定义ReviewDefinitions.lean:5397及附件声明确实展开为Measure.map G μ，无其他包装条件。按标准Measure.map语义，可测或μ几乎处处可测G的分布推前解释正确，但声明任意G:X→X，只具有MeasurableSpace X，缺少AEMeasurable G μ资格；在不几乎处处可测的分支map总化为零测度，不能代表概率分布传播。概率资格并非对一般测度推前定义的必要条件；真正缺失的是映射可测资格。原句PDF227／印刷206说数值方法诱导分布传播，这需要该资格（常用连续数值更新自然满足）。没有[EXTRA]可测性假设；无字面[ERRATUM?]标签。FAIL依据标准数学意义下的资格缺失，不依据标准库源码是否提供；此处是def而非sorry证明。",
+        "counterexample": "有限X={a,b,c}，σ代数为{∅,{a,b},{c},X}；令μ({a,b})=1、μ({c})=0，则μ为概率测度。取G(a)=a，G(b)=c，G(c)=c。目标可测集合{c}的逆像为{b,c}，在μ的完备化中仍不可测，故G不AEMeasurable（正质量原子{a,b}不能拆分，零集仅位于{c}）。标准Measure.map G μ=0，质量由1降为0。",
+        "suggested_fix": "定义参数增加Measurable G，或对给定μ增加AEMeasurable G μ；在此资格下将map解释为可测集合逆像测度，并在讨论概率分布时使用相应的质量保持性质。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-ModifiedField",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-ModifiedField",
+          "kind": "definition",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "206",
+          "pdf_page": "227",
+          "statement_latex": "One way to understand this propagator is to interpret the numerical method as being approximately equivalent to the solution of a perturbed differential equation\n\\[\\frac{dz}{dt}=f(z)+h^rf_{(r)}(z)\\equiv\\widetilde f_h(z).\\]\nThe perturbation term may be viewed as the finite truncation of the perturbative expansion obtained from the backward error analysis using the methods of the previous chapter. ($r$ is the order of the numerical method.)",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际有限截断向量场；近似与余项受控未由定义推出，不假设形式展开收敛。"
+          ],
+          "issues": [
+            "原书扰动系数为下标f_{(r)}，不是上标f^{(r)}；定义同一性的符号为≡。"
+          ],
+          "lean_decl": "MD.Ch05.modifiedField",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "原书扰动系数为下标f_{(r)}，不是上标f^{(r)}；定义同一性的符号为≡。"
+          ],
+          "source_page_verification": "本轮实际核对教材PDF渲染页227–228；页码偏移+21。"
+        },
+        "issues": [
+          "原书扰动系数为下标f_{(r)}，不是上标f^{(r)}；定义同一性的符号为≡。"
+        ],
+        "evidence": "PDF227／印刷206：dz/dt=f(z)+h^r f_{(r)}(z)≡tilde f_h(z)，其下说明finite truncation和r为方法阶数。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.modifiedField",
+        "verdict": "PASS",
+        "explanation": "本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。项目E在ReviewDefinitions.lean:5315定义为EuclideanSpace ℝ (Fin n)，按标准数学意义即实n维欧氏空间；modifiedField在:5398及附件声明逐点为f(z)+h^r fr(z)。参数f/fr为该空间向量场，h:ℝ、r:ℕ；标量乘法确实表示原文h^r f_(r)，没有把fr解释为r阶导数或任意形式级数。PDF227／印刷206中的有限截断向量场得到忠实表达。定义可允许h=0或r=0，未声称所有此类参数来自某个给定阶数算法；“r为方法阶数”及近似模型资格属于原文上下文。context_notation已明确近似与余项控制不是定义的推论，不假设无限展开收敛。没有新增限制、[EXTRA]或字面[ERRATUM?]标签；它是def，未涉及sorry证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-ModifiedLiouvillian",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NOTATION_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-ModifiedLiouvillian",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "206",
+          "pdf_page": "227",
+          "statement_latex": "Let us assume that the perturbed equation is a realistic model for the numerical solutions, then define the evolving density by\n\\[\\frac{\\partial\\rho}{\\partial t}=\\mathcal L_{\\widetilde f}^{*}\\rho\n\\stackrel{\\rm def}{\\equiv}\\mathcal L_f^{\\dagger}\\rho+h^r\\mathcal L_{f_{(r)}}^{\\dagger}\\rho.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "原书伴随符号为dagger而非星号，扰动场为f_{(r)}；def上方对应≡。"
+          ],
+          "lean_decl": "MD.Ch05.modifiedLiouvillian",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际Fréchet导数和trace，可微f/fr/u资格；只证微分表达式对场线性，不声称余项密度误差已受控。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "原书伴随符号为dagger而非星号，扰动场为f_{(r)}；def上方对应≡。"
+          ],
+          "source_page_verification": "本轮实际核对教材PDF渲染页227–228；页码偏移+21。"
+        },
+        "issues": [
+          "原书伴随符号为dagger而非星号，扰动场为f_{(r)}；def上方对应≡。"
+        ],
+        "evidence": "PDF227／印刷206：partial_t rho=L_tilde f^dagger rho ≡def L_f^dagger rho+h^r L_f_(r)^dagger rho。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.modifiedLiouvillian",
+        "verdict": "FAIL",
+        "explanation": "本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。项目定义ReviewDefinitions.lean:5315、5333–5336、5398全部已展开：E为ℝⁿ，divergence V(z)=trace(DV(z))，liouvillian f u(z)=−div(u f)(z)，modifiedField=f+h^r fr。标准Fréchet导数和trace给出真实伴随Liouville微分表达式。量词是对任意n,f,fr,u,h,r，先假设f/fr/u全局可微，再对每个z断言算子线性，次序正确；[EXTRA]可微性是合理且充分的经典微分资格，全局条件强于逐点所需，但不是假设结论。算子线性部分忠实且正确；然而PDF227／印刷206所引完整展示式还定义时变密度partial_t rho=L_tilde f^dagger rho，本签名没有rho(t,z)、时间导数或满足演化模型的条件/定义，仅取静态u，遗漏该子句。因statement_scope覆盖整句及展示式，仍FAIL；[EXTRA]披露只证线性不能使完整演化定义自动包含于签名。无字面[ERRATUM?]标签。当前声明证明体未见直接sorry；此观察不代表本轮编译或证明依赖闭包检查，且不改变签名审计。",
+        "counterexample": "缺失条款：必须表达密度随时间满足partial_t rho(t,z)=−div(rho(t,·)(f+h^r fr))(z)。空间算子线性本身不限制rho的时间变化；例如f=fr=0、rho(t,z)=exp(t−‖z‖²)，每个时间切片光滑且算子线性成立，但时间导数非零，右侧为0。原书是定义演化模型，不能从此线性恒等式推得任意rho都满足模型。",
+        "suggested_fix": "保留当前声明为算子线性引理；为原条另外定义时变密度满足的modified Liouville演化关系，再在该模型条件下表达完整右侧展开。新增模型资格要作为原文的定义/假设，不能把“所有空间可微rho自动满足PDE”写成结论。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-ForwardEuler",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": "PDF227／印刷206末尾的两个更新分量；PDF228／印刷207顶部矩阵[1,h;−h,1]。"
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.forwardEuler",
+        "verdict": "PASS",
+        "explanation": "本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。项目E在ReviewDefinitions.lean:5315为实二维欧氏空间（n=2）；forwardEuler在:5401及附件声明是WithLp.toLp 2 ![z 0+h*z 1,z 1−h*z 0]。标准WithLp转换保留坐标，因此将z 0=q、z 1=p后得到q_next=q+h p、p_next=p−h q，等价于矩阵[[1,h],[−h,1]]，完整覆盖PDF227–228／印刷206–207的两种写法。h为任意实定义参数，不需要渐近增长所需的h≠0。单位频率由原文H=(p²+q²)/2固定；没有把质量或频率引入额外资格。没有[EXTRA]或字面[ERRATUM?]标签；它是def，未涉及sorry证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-ForwardComponentsPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "SOURCE_ERRATUM"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "逐字转录与页码正确，但原书两分量趋于无穷的推论不成立；保留原文，不改成范数发散。"
+        ],
+        "evidence": "PDF228／印刷207顶部：Thus both solution components tend to infinity unless (q_0,p_0)=(0,0)."
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.forwardComponentsPrinted",
+        "verdict": "FAIL",
+        "explanation": "本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。ReviewDefinitions.lean:5315、5401展开后，对象为实际欧氏平面的A_h=[[1,h],[−h,1]]迭代。量词为所有非零实h、所有非零初值z；两个Tendsto atTop atTop按标准意义分别要求每个坐标绝对值最终超过任意实阈值。[EXTRA]h≠0、z≠0对增长是合理必要资格，绝对值解释也明确，但两坐标各自趋于+∞仍有反例，故原书疑误能够确定，不需NEEDS_HUMAN。PDF228／印刷207的谱外扩子句亦未单独表达；特征值模大于1可导致范数发散，不保证每个坐标绝对值发散。不存在字面[ERRATUM?]标签，但应明确保留原句并报告此疑误。附件中本声明证明体直接含sorry；反例与遗漏子句是FAIL依据，sorry另记，不能混淆。",
+        "counterexample": "h=1，z=(1,0)。A²=[[0,2],[−2,0]]，A⁴=−4I。对所有m≥0，A^(4m)z=((-4)^m,0)，A^(4m+2)z=(0,−2(-4)^m)。故p的绝对值在4m子列为0，q的绝对值在4m+2子列为0，两个Tendsto结论均失败。",
+        "suggested_fix": "原书字面版标记为有反例的疑误，不补成可证定理；独立修订为非零步长、非零初值的范数发散。若覆盖完整原句，另给复特征值1±ih及模sqrt(1+h²)>1的谱结论；不要把原句两分量发散静默替换。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-ForwardEnergyGrowth",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "SOURCE_IMPLICIT_STEPSIZE"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原文转录正确；谱严格在单位圆外隐含非零步长，h=0时不成立。"
+        ],
+        "evidence": "PDF228／印刷207矩阵之后：the eigenvalues of the propagation matrix are outside the unit disk."
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.forwardEnergyGrowth",
+        "verdict": "FAIL",
+        "explanation": "本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。ReviewDefinitions.lean:5315、5401已展开，标准iterate和平方运算使当前签名对任意实h、z∈ℝ²、k∈ℕ断言‖A_h^k z‖²=(1+h²)^k‖z‖²。它是正确有限步恒等式，不需要h≠0或z≠0；[EXTRA]说明其作为谱外扩的代数后果另列，数学上合理。可是本source_id的statement_latex与statement_scope对应PDF228／印刷207的“特征值在单位圆外”，签名没有复特征值或严格模界，不能把另列恒等式视作已形式化完整谱子句。h=0时恒等式仍成立而严格谱子句不成立；通常正步长的上下文资格若要形式化谱结论，应明确提供。FAIL是原条范围不匹配，并非当前恒等式本身有反例、标准EuclideanSpace不明或Mathlib定义未提供。无字面[ERRATUM?]标签；原谱句在非零步长下正确。附件中当前证明体未见直接sorry；未执行编译或依赖闭包检查，证明状态与此签名判定分开。",
+        "counterexample": "当前恒等式没有这里所指的反例；缺失的是λ=1±ih及h≠0时|λ|>1的谱条款。定义域差异例：h=0时A_h=I，恒等式成立，而λ=1仅位于单位圆上。",
+        "suggested_fix": "保留能量恒等式为独立衍生结果并明确其statement_scope；为原谱source另陈述h≠0（或h>0）下的复特征值及模严格大于1。如果声称用能量恒等式实现等价形式，应明示非零步长与谱推论的对应，而非仅写不同结论。"
+      }
+    }
+  ]
+}

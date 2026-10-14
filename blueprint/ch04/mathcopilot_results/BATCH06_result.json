@@ -1,0 +1,105 @@
+{
+  "batch": "BATCH06",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "e8d2621d6b14e26c7d792fdfc49ff5763a806cb8ff10cb6b70b5f4e78a932c73",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.2.2-MollifiedAverage",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "原PDF第171页/印刷第149页，已直接渲染并目视核对：The mapping A(q) is defined by reference to the fast dynamics, e.g. by the weighted average；公式A(q)=1/(K+1) Σ_{i=0}^K φ_i θ_i(q)。",
+          "同页下一展示公式H^fast(q,p)=pᵀM⁻¹p/2+U_F(q)；随后starting from initial position q and zero initial momentum p, for K timesteps using a small stepsize τ_f。statement_latex完整吻合所选范围，页码满足149+22=171。",
+          "同页上下文说明τ_f仅用于平均，不必直接关联MTS快步长；权重可多种选法。context_notation=[]没有相反信息；本条未承诺转录后续全部讨论。原书未附独立证明，proof_latex、proof_discussion_latex为null及proof_note一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.mollifiedAverage",
+        "verdict": "PASS",
+        "explanation": "结论：PASS，按已明示的[EXTRA]解释为原书加权构造的Verlet具体实例。实际附件是 /workspace/Ch04.lean；在 input_sha256 中按请求使用逻辑键 Blueprint/Ch04.lean。以下为只读签名及定义审计，未编辑附件、未补证明、未将compact摘录作为独立工程编译。\n对象与依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；invMass m p 的第j分量为(m j)⁻¹p j，即常对角质量矩阵的逆作用；grad U q=textbookConstraintGradient U q。后者在 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean 定义为 j↦(fderiv ℝ U q)(Pi.single j 1)，不是未知或抽象力。fastVerlet m UF δ=Chapter02Review.verlet m (fun q=>−grad UF q) δ；继续展开 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 的同型Q、Z、invMass和verlet，得到 q⁺=q+δM⁻¹p−(δ²/2)M⁻¹grad UF(q)，p⁺=p−(δ/2)(grad UF(q)+grad UF(q⁺))。因此这是快Hamiltonian pᵀM⁻¹p/2+UF(q)的velocity-Verlet离散位置序列。\n量词、初态及结果：隐式n:ℕ，显式参数m、UF、K:ℕ、w:ℕ→ℝ、δ:ℝ、q；固定前述参数后得到仅依赖q的映射。θ_i(q)=((fastVerlet m UF δ)^[i](q,0)).1，θ_0=q；Finset.range(K+1)恰给i=0,…,K，w i对应φ_i，外部因子1/(K+1)与原式一致。δ就是平均过程的小步长参数，没有被强制等同于RESPA内步长，符合原页上下文。\n[EXTRA]评估：原书只说 recursively by solving 及 e.g.，未指定快积分器；选择Verlet合理，但不是原文要求或唯一方案，必须保留该实例说明。有限加权和不要求权重和为K+1，也未宣称任意权重都有滤波效果。签名不限制δ为小正数、质量为正或UF光滑，是总函数定义的代数扩展；其物理积分器解释使用正质量、可微势及适当小正步长，不能据此把全部参数称为有效物理滤波器。这里没有关于有效性、收敛性或精确流的定理结论，故该总定义扩展不造成此条结论错误。\n[ERRATUM?]：本条没有该标注；原页所选公式未发现需要勘误之处。证明状态：本项是def，主体无sorry；不据此声称滤波性能已证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.2-MollifiedPotential",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PAGE_RANGE_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.2-MollifiedPotential",
+          "kind": "definition",
+          "label": null,
+          "section": "4.2.2",
+          "printed_page": "148–149",
+          "pdf_page": "170–171",
+          "statement_latex": "Effectively, one replaces $U_S(q)$ wherever it appears within the MTS method by a modified potential function $\\overline U(q)\\stackrel{\\mathrm{def}}=U_S(\\mathcal A(q))$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际US∘A；前条原页加权构造分开，不将def当滤波性能定理。"
+          ],
+          "issues": [
+            "完整statement_latex句子始于印刷148/PDF170而结束于印刷149/PDF171。printed_page与pdf_page需补为完整范围；原句及复合势公式无转录错误。"
+          ],
+          "lean_decl": "MD.Ch04.mollifiedPotential",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH06 first-with-deps：重新渲染并核对原PDF170–171，完整引句跨页，页码补为印刷148–149/PDF170–171；不修改原书陈述、公式、proof_latex或context_notation。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; 本次直接核对原PDF170–171（印刷148–149）。"
+        },
+        "issues": [
+          "完整statement_latex句子始于印刷148/PDF170而结束于印刷149/PDF171。printed_page与pdf_page需补为完整范围；原句及复合势公式无转录错误。"
+        ],
+        "evidence": [
+          "原PDF第170页/印刷第148页，已直接渲染并目视核对：该节标题4.2.2；页末本句起于Effectively, one replaces U_S(q) wherever it appears。",
+          "原PDF第171页/印刷第149页，已直接渲染并目视核对：页首续句within the MTS method by a modified potential function，公式overline U(q) def=U_S(A(q))。完整statement_latex逐字吻合跨页句子，故其原页码范围应为PDF170–171/印刷148–149；单列171/149仅指续句及公式。",
+          "context_notation的US∘A解释与原式相符；无滤波性能定理或独立证明，proof_latex、proof_discussion_latex=null及proof_note正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.mollifiedPotential",
+        "verdict": "PASS",
+        "explanation": "结论：PASS。实际附件是 /workspace/Ch04.lean；在 input_sha256 中按请求使用逻辑键 Blueprint/Ch04.lean。以下为只读签名及定义审计，未编辑附件、未补证明、未将compact摘录作为独立工程编译。\n对象与定义展开：Ch04.lean中def mollifiedPotential取隐式n:ℕ、US:(Fin n→ℝ)→ℝ和A:(Fin n→ℝ)→(Fin n→ℝ)，返回US∘A；Function.comp逐点展开为q↦US(A(q))。库 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 的同名定义也是US∘A，与本地对象逐点完全一致，后续结构定理引用的是这一库定义。\n量词、假设及结论：对任意给定慢势US及位置映射A定义overline U，无隐藏存在量词、动力学关系或附加前提。statement_scope是所引定义句及公式；此项保存替换使用的势函数，不另声称滤波性能、算法结构、力为−grad US(A(q))或精确快流。复合势的定义本身不需要A平滑，平滑资格在结构条目另列。\n[EXTRA]与[ERRATUM?]：本条均无相关标注，未发现公式勘误。唯一原文审校修正是完整引句跨印刷148–149/PDF170–171，定义公式本身在后页。证明状态：本项是def，主体无sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.2-MollifiedStructure",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "原PDF第171页/印刷第149页，已直接渲染并目视核对：In each of the mollified multiple timestepping methods起首整段，与statement_latex逐字一致。",
+          "同段包含since only the potential energy is modified、by a smooth mapping of positions、forces derived by differentiating overline U are still conservative及scheme remains symplectic两个结论。没有原书文字或公式需要静默勘误。",
+          "页码149+22=171；该处是解释性陈述，没有独立完整证明，proof_latex、proof_discussion_latex=null和proof_note正确；context_notation=[]无冲突。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.mollifiedStructure",
+        "verdict": "PASS",
+        "explanation": "结论：PASS，针对实际RESPA/Verlet实现及任意C²位置映射；原文的两项结构结论均可由所用真实定义读取，不靠名称或sorry判断。实际附件是 /workspace/Ch04.lean；在 input_sha256 中按请求使用逻辑键 Blueprint/Ch04.lean。以下为只读签名及定义审计，未编辑附件、未补证明、未将compact摘录作为独立工程编译。\n全部对象与量词顺序：∀n:ℕ、m:Fin n→ℝ、US UF:Q n→ℝ、A:Q n→Q n、r:ℕ、h:ℝ，随后依次假设∀i,0<m i、ContDiff ℝ 2 US、ContDiff ℝ 2 UF、ContDiff ℝ 2 A、0<r。结论为链式法则与辛性之合取；链式法则再对所有q,v:Q n量化。h未被要求为小正数，无隐藏依赖顺序或先假设结论。\n复合势与保守力展开：库 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 的mollifiedPotential US A=US∘A，Q n=Fin n→ℝ。第一合取为D(US∘A)(q)[v]=DUS(A(q))[DA(q)[v]]。同文件grad U q=textbookConstraintGradient U q，而 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean 的后者逐分量给出DU(q)[e_i]。kick U t(q,p)=(q,p−t grad U(q))，故实际慢力F_i(q)=−D(US∘A)(q)[e_i]=−DUS(A(q))[DA(q)e_i]，即全局标量势的负梯度。原文 conservative 虽未单独引入谓词，但实际力及其势的关系已被这些定义直接表达，未漏用DA，也未把力保守作为前提。\n算法展开：respa m U UF r h(q,p)=kick U(h/2)((fastVerlet m UF(h/r))^[r](kick U(h/2)(q,p)))，其中U=US∘A。fastVerlet=Chapter02Review.verlet m(−grad UF)；展开 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 的verlet及invMass，给出q⁺=q+tM⁻¹p−t²M⁻¹grad UF(q)/2和p⁺=p−t(grad UF(q)+grad UF(q⁺))/2。快势和快步未被复合映射替换，只有慢势kick使用复合势，符合原页紧接着的 only applied ... modifying the slow impulse 的解释。任意C²的A覆盖本批所谈位置映射，不要求A为可逆映射、辛映射或平均构造。\n辛性结论展开：同一库文件Z n=Q n×Q n，dot a b=Σ_i a_i b_i，phaseForm(u,v)=Σ_i u_qi v_pi−Σ_i v_qi u_pi。symplecticMap G真正声明∀z,u,v，phaseForm((fderiv ℝ G z)u,(fderiv ℝ G z)v)=phaseForm(u,v)，即标准辛形式的实际Fréchet导数拉回。该算法在给定C²假设下有C¹梯度和C¹更新，故不存在靠不可微点的fderiv默认值空洞表达辛性的情形。此处不是只检验行列式或抽象性质。\n[EXTRA]逐项评估：正质量为原物理常质量的合理资格，数学上非零质量已足够，正性不是最弱假设；US、UF、A的C²确保复合势C²、梯度C¹及Hessian对称，是保结构所需的合理充分光滑性，比原 smooth 的无限光滑要求更弱而不损失该结论；r>0保证自然数细分及h/r有实际步数意义，排除了无快步的r=0退化情形，虽该退化代数映射也可单独保辛。上述条件均未假设待证链式法则、保守性或辛性。以实际RESPA和fastVerlet表达是批次明确采用的实现范围，不声称证明了未指定的任意快积分器也辛。\n[ERRATUM?]：本条无该标注，所引原文未发现需要改写的数学错误。证明状态独立记录：Ch04.lean中mollifiedStructure的证明体是by sorry；依赖Statements.lean的mollifiedStructure_statement只是对应Prop定义。PASS仅指签名和展开后语义忠实，不表示证明已完成或编译验证通过。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

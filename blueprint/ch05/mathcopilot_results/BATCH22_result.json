@@ -1,0 +1,366 @@
+{
+  "batch": "BATCH22",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "b50e9459b9e6d0fdbd6123c10f33ff667dac6a1fb5890f279d2f8047c9d77836",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.5-Correlation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PAGE_RANGE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.5-Correlation",
+          "kind": "definition",
+          "label": null,
+          "section": "5.5",
+          "printed_page": "203–204",
+          "pdf_page": "224–225",
+          "statement_latex": "Let $a$ and $b$ be mappings from the phase space to the same Euclidean space, and define the temporal correlation of $a$ and $b$ (on the surface of energy $E$) by\n\\[C_{ab}(\\tau)\\stackrel{\\rm def}{=}k\\operatorname{Av}_{H=E}(a(\\mathcal F_t(z))\\cdot b(z))\n=kZ_E^{-1}\\int_{\\Sigma_E}a(\\mathcal F_t(z))\\cdot b(z)\\delta[H-E]d\\omega,\\]\nwhere $k$ is a normalization constant that is often incorporated to ensure that $C_{ab}(0)=1$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实向量内积与µ积分；原左τ右t记号保留、Lean用单个lag参数；k只在零lag非零时能归一。δ积分解释为真实微正则测度配对。"
+          ],
+          "issues": [
+            "陈述最后的 where k... 位于印刷204/PDF225；所引完整陈述需标203–204/224–225。原式左τ右t是原书记号，保留。"
+          ],
+          "lean_decl": "MD.Ch05.correlation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH22 first-with-deps",
+              "issue_codes": [
+                "PAGE_RANGE"
+              ],
+              "changes": [
+                "陈述最后的 where k... 位于印刷204/PDF225；所引完整陈述需标203–204/224–225。原式左τ右t是原书记号，保留。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "陈述最后的 where k... 位于印刷204/PDF225；所引完整陈述需标203–204/224–225。原式左τ右t是原书记号，保留。"
+        ],
+        "evidence": [
+          "PDF224底部 Cab(τ)=k Av及k Z_E^{-1}δ积分；PDF225顶部 where k... Cab(0)=1。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.correlation",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则采信Lean 4.34.0 / Mathlib v4.34.0标准含义：欧氏空间、实内积、Bochner积分、指标、测度推前/限制/加权、AE及Tendsto均不要求在项目依赖中提供定义体；以下只展开项目自定义。项目依赖定位：Ch05_deps.txt，-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean。 E n := EuclideanSpace ℝ (Fin n)；average μ g := ∫z,g z ∂μ；correlation μ Φ a b k t := k*(∫z,inner ℝ (a(Φ t z))(b z) ∂μ)。MD.Ch05.correlation在绑定的Blueprint附件中有同一函数体。参数{n d}、μ、Φ、a、b、k、t保留相空间到同一ℝ^d的两个观测量、实内积、先流动a后与b配对、归一化系数和lag。它是对指定测度的通用相关函数定义；以正规微正则概率测度代入μ，就得到原Av与Z_E归一化δ配对的测度解释。定义本身没有断言任意μ都是微正则测度，也没有断言任意观测可积或k总能使零lag值为1；原context已公开非零零lag资格。单个t统一原左τ右t记号，与context相符。无[EXTRA]/[ERRATUM?]假设。不可积时积分取0是Mathlib总化语义，不是原物理平均存在性的证明。定义无sorry；该PASS仅评估签名语义，未重编译工程。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.5-CorrelationPullback",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF225/印刷204：alternative formulation，b(z)·(e^{tL}a)(z)。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.correlationPullback",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则采信Lean 4.34.0 / Mathlib v4.34.0标准含义：欧氏空间、实内积、Bochner积分、指标、测度推前/限制/加权、AE及Tendsto均不要求在项目依赖中提供定义体；以下只展开项目自定义。项目依赖定位：Ch05_deps.txt，-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean。 E n := EuclideanSpace ℝ (Fin n)；average μ g := ∫z,g z ∂μ；correlation μ Φ a b k t := k*(∫z,inner ℝ (a(Φ t z))(b z) ∂μ)。项目pullback Φ g t z := g(Φ t z)，solutionOperator Φ t g := pullback Φ g t。两者在定义中为实标量观测；向量观测的逐坐标传播就是a(Φt z)。主声明对任意n,d,μ,Φ,a,b,k,t断言correlation等于其展开积分，保留k及全部配对项；欧氏实内积对称，故与原b(z)·(e^{tL}a)(z)相同。没有凭函数名字假定它是微分算子的指数：这里使用原flow拉回的传播含义，实际展开体已核对。无额外假设或新增勘误。Ch05_deps.txt的ReviewProofs.lean中correlationPullback_proved为rfl，主声明调用它；本条无sorry。无编译验证声明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.5-CorrelationTimePrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_VARIABLE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.5-CorrelationTimePrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.5",
+          "printed_page": "204",
+          "pdf_page": "225",
+          "statement_latex": "If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $H=E$ energy surface:\n\\[C_{a,b}(t)=k\\lim_{\\tau\\to\\infty}\\frac1\\tau\\int_0^{\\tau} a(z(s+t))\\cdot b(z(s))ds.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "原书极限变量、分母及积分上界均为τ，附件改写为T；按逐字原文审校恢复τ。"
+          ],
+          "lean_decl": "MD.Ch05.correlationTimePrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实能量面/微正则测度、标准遍历先验及给定lag相关可积资格；原字面全能量初值只作为待裁定义务，不能当本地PASS。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH22 first-with-deps",
+              "issue_codes": [
+                "TRANSCRIPTION_VARIABLE"
+              ],
+              "changes": [
+                "原书极限变量、分母及积分上界均为τ，附件改写为T；按逐字原文审校恢复τ。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原书极限变量、分母及积分上界均为τ，附件改写为T；按逐字原文审校恢复τ。"
+        ],
+        "evidence": [
+          "PDF225/印刷204：If the system is ergodic... any trajectory；lim_{τ→∞}(1/τ)∫₀^τ。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.correlationTimePrinted",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则采信Lean 4.34.0 / Mathlib v4.34.0标准含义：欧氏空间、实内积、Bochner积分、指标、测度推前/限制/加权、AE及Tendsto均不要求在项目依赖中提供定义体；以下只展开项目自定义。项目依赖定位：Ch05_deps.txt，-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean。 E n := EuclideanSpace ℝ (Fin n)；average μ g := ∫z,g z ∂μ；correlation μ Φ a b k t := k*(∫z,inner ℝ (a(Φ t z))(b z) ∂μ)。项目依赖定位：Ch05_deps.txt，-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean。 energySurface H c := {z | H z=c}；grad H := gradient H；hausdorffArea m := ofReal(volume(单位ℝ^m球).toReal/2^m) • hausdorffMeasure m；surfaceMeasure H c := (hausdorffArea (n-1)).restrict(energySurface H c)；microRaw H c := (surfaceMeasure H c).withDensity(fun z => ofReal(‖grad H z‖⁻¹))；microMeasure H c := ((microRaw H c) univ)⁻¹ • microRaw H c；microAverage H c g := average(microMeasure H c)g。timeAverage z g T := T⁻¹*(∫s in 0..T,g(z s))；hasTimeAverage z g a := Tendsto(timeAverage z g) atTop (𝓝 a)；microErgodic H c Φ := ∀g, Integrable g (microMeasure H c) → ∀ᵐz∂microMeasure H c, hasTimeAverage(fun s=>Φs z)g(microAverage H c g)。签名依次全称量化n,d,H,c,Φ,a,b,k,t，假设Φ0=id、flow加法群律、microErgodic及给定lag观测的可积性，结论为所有z∈{H=c}的相关时间积分极限。原文any trajectory确实对应这个全点结论；但本项目microErgodic只提供对每个可积观测的AE性质，不能推出全能量面点性质。[EXTRA]给定lag可积和群律合理，却不足以支持原any；没有正有限微正则质量、正则能量资格或全点平均假设。原文any在通常测度遍历含义下应公开作AE勘误，不能由名字ergodic获得全点结论。下面给出当前签名的直接反例，不因未给Mathlib定义而待裁定。主声明有sorry，但签名失败独立于证明完成度。",
+        "counterexample": "取n=d=1，以ℝ¹坐标x写H(x)=x²，c=0；Φ(s,x)=x；a(x)=b(x)=单位向量1；k=1，t=0。Σ={0}，grad H(0)=0，实数‖grad H(0)‖⁻¹=0，故withDensity在Σ上的权重为0，microRaw=0。注意microMeasure的质量逆元是ENNReal逆元：0⁻¹=∞，但∞ • 零测度仍是零测度，故μ=0。microErgodic的AE命题在μ=0下自动成立，lag观测也可积，恒等flow满足两条群律。z=0∈Σ，时间被积函数恒为1，对所有T>0，T⁻¹∫₀ᵀ1 ds=1；右端correlation μ...=0。极限1不等于0。",
+        "suggested_fix": "对标准遍历版改为∀ᵐz∂microMeasure，并公开标示原any→AE的勘误；如需物理微正则概率资格，补正有限microRaw质量或regularEnergy。regularEnergy的项目定义是能量面非空紧、面上grad非零、原始质量正有限；它能排除上述退化反例，但不单独把AE提升成所有初值。若坚持原any，须另给比通常遍历性更强的全点时间平均假设，不能把待证等式作为无说明的额外假设。"
+      }
+    },
+    {
+      "source_id": "MD-5.5-CorrelationTimeAE",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_VARIABLE",
+          "OMITTED_CONTEXT",
+          "EXPLICIT_ERRATUM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.5-CorrelationTimeAE",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.5",
+          "printed_page": "204",
+          "pdf_page": "225",
+          "statement_latex": "If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $H=E$ energy surface:\n\\[C_{a,b}(t)=k\\lim_{\\tau\\to\\infty}\\frac1\\tau\\int_0^{\\tau} a(z(s+t))\\cdot b(z(s))ds.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原书字面为any trajectory；本条Lean是明确的几乎处处修订版，不可将AE当作逐字原文。对每个给定t有AE集合，未断言同一满测集同时适用所有t。"
+          ],
+          "issues": [
+            "原书极限变量、分母及积分上界均为τ，附件改写为T；按逐字原文审校恢复τ。",
+            "单独展示公式省略前句的遍历条件、能量面和any trajectory量词；AE是数学修订而不是原书原句，必须显式区分。"
+          ],
+          "lean_decl": "MD.Ch05.correlationTime",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]按本章标准遍历结论修正为对给定lag逐次AE初值；保留真实时间积分、向量内积、可积性和flow群律，原any字面另条。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH22 first-with-deps",
+              "issue_codes": [
+                "TRANSCRIPTION_VARIABLE",
+                "OMITTED_CONTEXT",
+                "EXPLICIT_ERRATUM"
+              ],
+              "changes": [
+                "原书极限变量、分母及积分上界均为τ，附件改写为T；按逐字原文审校恢复τ。",
+                "单独展示公式省略前句的遍历条件、能量面和any trajectory量词；AE是数学修订而不是原书原句，必须显式区分。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原书极限变量、分母及积分上界均为τ，附件改写为T；按逐字原文审校恢复τ。",
+          "单独展示公式省略前句的遍历条件、能量面和any trajectory量词；AE是数学修订而不是原书原句，必须显式区分。"
+        ],
+        "evidence": [
+          "PDF225/印刷204：原公式τ；前句any trajectory initiated on H=E。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.correlationTime",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则采信Lean 4.34.0 / Mathlib v4.34.0标准含义：欧氏空间、实内积、Bochner积分、指标、测度推前/限制/加权、AE及Tendsto均不要求在项目依赖中提供定义体；以下只展开项目自定义。项目依赖定位：Ch05_deps.txt，-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean。 E n := EuclideanSpace ℝ (Fin n)；average μ g := ∫z,g z ∂μ；correlation μ Φ a b k t := k*(∫z,inner ℝ (a(Φ t z))(b z) ∂μ)。项目依赖定位：Ch05_deps.txt，-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean。 timeAverage z g T := T⁻¹∫₀ᵀg(z(s))ds；hasTimeAverage为其Tendsto；本签名的遍历前提完整写出∀g, Integrable g μ → ∀ᵐz∂μ, hasTimeAverage(fun s=>Φs z)g(average μ g)。它等于项目microErgodic的时间平均式含义在一般μ上的参数化。量词n,d,μ,Φ,a,b,k,t均在AE量词之前：每个固定lag、观测及k得到一个满测集，不是一个对所有lag同时适用的满测集。取g(z)=inner(a(Φt z))(b z)，给定lag可积保障前提可用；群律及s+t=t+s把g(Φs z)改写为inner(a(Φ(s+t)z))(b(Φs z))，乘k得到完整原公式的AE版。零时恒等假设对该推导冗余，但符合flow且不改变结果。[EXTRA]公开将原any改成AE，属于合理且必要的勘误；此PASS对应明确标注的AE修订，不能充作原全初值条目的PASS。遍历前提不是从标准Ergodic自动推出，签名保留该前提而未假装证明Birkhoff。正文有该直接证明、本条无sorry；未重编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.5-VelocityCorrelation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF225/印刷204：Cv,v(t)=〈v(t)·v(0)〉/〈v(0)·v(0)〉；microcanonical if otherwise unspecified。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.velocityCorrelation",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则采信Lean 4.34.0 / Mathlib v4.34.0标准含义：欧氏空间、实内积、Bochner积分、指标、测度推前/限制/加权、AE及Tendsto均不要求在项目依赖中提供定义体；以下只展开项目自定义。项目依赖定位：Ch05_deps.txt，-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean。 E n := EuclideanSpace ℝ (Fin n)；average μ g := ∫z,g z ∂μ；correlation μ Φ a b k t := k*(∫z,inner ℝ (a(Φ t z))(b z) ∂μ)。项目依赖定位：Ch05_deps.txt，-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean。 velocityCorrelation μ Φ v t := correlation μ Φ v v 1 t / correlation μ Φ v v 1 0；MD.Ch05中的定义调用同一项目correlation。展开为∫inner(v(Φt z))(v z)∂μ除以∫inner(v(Φ0 z))(v z)∂μ。在原轨迹/flow上下文Φ0=id时分母正是〈v(0)·v(0)〉，输出空间ℝ^d及真实dot均保留。μ参数允许原otherwise unspecified的微正则选择及其他指定测度。此定义不声称任意Φ为flow，不自动证明分母非零或可积；context已明确除零总化没有归一化意义，合法使用时须非零零lag平均。无[EXTRA]/[ERRATUM?]假设；定义无sorry。标准Bochner积分/除法定义不造成NEEDS_HUMAN。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.5-PositionTransition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NORMALIZATION_AMBIGUITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.5-PositionTransition",
+          "kind": "definition",
+          "label": null,
+          "section": "5.5",
+          "printed_page": "204",
+          "pdf_page": "225",
+          "statement_latex": "Now let $A$ and $B$ be subsets of configuration space (i.e. subsets in the position space) of nonzero measure, and define $T_{AB}(\\tau)\\stackrel{\\rm def}{=}C_{1_B,1_A}(\\tau)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "π是实际位置投影，配置集合在相空间上的逆像；真实指标乘积平均，不把状态点概率误作首次到达时间。",
+            "原T_AB=C_{1_B,1_A}继承C定义的k；当前Lean无k，仅对应k=1。随后概率公式暗示未归一化指标相关，应公开该解释，不能默认为逐字相同。"
+          ],
+          "issues": [
+            "原句和页码一致，但context把T_AB说成无k的指标乘积平均；原式定义为此前带k的C，需显式标出k=1的解释选择与原文不一致。原书随后除以μ(A)的概率公式暗示此处k=1，不能静默省略。"
+          ],
+          "lean_decl": "MD.Ch05.positionTransition",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH22 first-with-deps",
+              "issue_codes": [
+                "NORMALIZATION_AMBIGUITY"
+              ],
+              "changes": [
+                "原句和页码一致，但context把T_AB说成无k的指标乘积平均；原式定义为此前带k的C，需显式标出k=1的解释选择与原文不一致。原书随后除以μ(A)的概率公式暗示此处k=1，不能静默省略。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "原句和页码一致，但context把T_AB说成无k的指标乘积平均；原式定义为此前带k的C，需显式标出k=1的解释选择与原文不一致。原书随后除以μ(A)的概率公式暗示此处k=1，不能静默省略。"
+        ],
+        "evidence": [
+          "PDF225/印刷204：A、B nonzero measure；T_AB(τ)=C_{1_B,1_A}(τ)。PDF224定义C带k。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.positionTransition",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则采信Lean 4.34.0 / Mathlib v4.34.0标准含义：欧氏空间、实内积、Bochner积分、指标、测度推前/限制/加权、AE及Tendsto均不要求在项目依赖中提供定义体；以下只展开项目自定义。项目依赖定位：Ch05_deps.txt，-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean。 E n := EuclideanSpace ℝ (Fin n)；average μ g := ∫z,g z ∂μ；correlation μ Φ a b k t := k*(∫z,inner ℝ (a(Φ t z))(b z) ∂μ)。主附件MD.Ch05.positionTransition直接定义为∫1_B(π(Φt z))*1_A(πz)∂μ，而非依赖中另一个名称相同的定义；π:E n→E d、A/B⊆E d保留配置集合逆像及初始A、终时B方向。标准实指标与积分含义足以核对这些项。原T_AB=C_{1_B,1_A}继承已定义C中的k；当前签名既没有k也没有约束该处使用k=1。它因此仅实现未归一化指标相关特例。A/B非零测度、π为实际位置投影及μ为物理微正则测度是定义的原使用上下文，泛化本身不据此判FAIL；FAIL的实质是未明示的k=1专门化。随后原概率式确实暗示k=1，但该解释不能静默覆盖所引定义的全部参数。A审校的归一化歧义记录保持不变；本轮未把它当作已修改附件的签名。无本条sorry。",
+        "counterexample": "令n=2，d=1，μ为任一微正则概率测度，例如H(x,y)=x²+y²的c=1能量面归一化测度；Φ为圆周旋转flow，π(x,y)=x，A=B=ℝ，k=2。A/B均为正测度集合，指标恒为1。原带k的C_{1_B,1_A}(t)=2，而当前positionTransition(t)=1。若指定k=1则两式相同，正说明需要公开该专门化。",
+        "suggested_fix": "忠实保留带k相关定义时给positionTransition加入k并乘k；若按原后续概率语句选择未归一化相关，明确标注k=1的解释/勘误，再以一维欧氏指标观测建立positionTransition=correlation(...,k=1)的桥接。使用时沿用位置投影、可测性和非零测度上下文。"
+      }
+    },
+    {
+      "source_id": "MD-5.5-TransitionProbability",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF225/印刷204：Pr(A→_τ B)=〈1_B(z(τ))1_A(z(0))〉/〈1_A(z(0))〉；microcanonical at energy E。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.transitionProbability",
+        "verdict": "PASS",
+        "explanation": "本轮按补充规则采信Lean 4.34.0 / Mathlib v4.34.0标准含义：欧氏空间、实内积、Bochner积分、指标、测度推前/限制/加权、AE及Tendsto均不要求在项目依赖中提供定义体；以下只展开项目自定义。项目依赖定位：Ch05_deps.txt，-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean。 transitionProbability μ Φ A B t := (μ(A ∩ (Φt)⁻¹' B)).toReal/(μA).toReal。量化n及指定μ、Φ、相空间集合A/B和时刻t，事件是初始在A且终时在B，没有交换方向或替换为首次到达。按[EXTRA]，A/B解释为配置集合在实际位置投影下的逆像；这与上一条位置配置对象兼容。对微正则概率μ、可测/μ零可测的事件、可测flow及0<μA，指标乘积是A∩(Φt)⁻¹B的指标，故Bochner积分比值就是该测度比值；Φ0=id对应原初始轨迹记号。定义泛化到其他μ/集合不声称这些输入均有原条件概率解释；零分母及无限测度toReal的总化不是概率性结论。在原有限概率、正分母域内，所有分子分母子句完整，[EXTRA]逆像解释必要且合理。上一条T_AB的k歧义不影响这里直接写出的无k比值公式。定义无sorry；未要求项目附件重给Mathlib指标积分定义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.5-MeasureDuality",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_ADJOINT",
+          "TRANSCRIPTION_DENSITY_ARGUMENT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.5-MeasureDuality",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.5",
+          "printed_page": "205",
+          "pdf_page": "226",
+          "statement_latex": "\\[\\int_{\\Sigma_E}\\phi(z)\\rho(z;t)d\\omega\n=\\int_{\\Sigma_E}\\phi(z)e^{t\\mathcal L^\\dagger}\\rho(z,0)d\\omega\n=\\int_{\\Sigma_E}[e^{t\\mathcal L}\\phi(z)]\\rho(z,0)d\\omega\n=\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))\\rho(z,0)d\\omega\n=\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))\\frac{\\rho(z,0)}{\\rho_E(z)}\\rho_E(z)d\\omega.\\tag{5.10}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "PDF原式用L†而非L*；初始密度统一写ρ(z,0)，附件部分写ρ(z;0)。保留原首项ρ(z;t)，不改写原书微正则密度比值疑问。"
+          ],
+          "lean_decl": "MD.Ch05.measureDuality",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]演化密度用真实Measure.map，微正则ρE的比值应理解为对参考奇异测度的Radon–Nikodym密度；不当普通Lebesgue密度相除。明确可测及map下可积，不将最终等式作前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "BATCH22 first-with-deps",
+              "issue_codes": [
+                "TRANSCRIPTION_ADJOINT",
+                "TRANSCRIPTION_DENSITY_ARGUMENT"
+              ],
+              "changes": [
+                "PDF原式用L†而非L*；初始密度统一写ρ(z,0)，附件部分写ρ(z;0)。保留原首项ρ(z;t)，不改写原书微正则密度比值疑问。"
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "PDF原式用L†而非L*；初始密度统一写ρ(z,0)，附件部分写ρ(z;0)。保留原首项ρ(z;t)，不改写原书微正则密度比值疑问。"
+        ],
+        "evidence": [
+          "PDF226/印刷205，公式(5.10)：e^{tL†}ρ(z,0)，最后ρ(z,0)/ρ_E(z)·ρ_E(z)。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.measureDuality",
+        "verdict": "FAIL",
+        "explanation": "本轮按补充规则采信Lean 4.34.0 / Mathlib v4.34.0标准含义：欧氏空间、实内积、Bochner积分、指标、测度推前/限制/加权、AE及Tendsto均不要求在项目依赖中提供定义体；以下只展开项目自定义。项目依赖定位：Ch05_deps.txt，-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean。 measurePropagator Φ t μ := Measure.map(Φt)μ；average μ φ := ∫φ∂μ；pullback Φ φ t z := φ(Φt z)。签名全称量化n,μ,Φ,φ,t，仅假设Measurable(Φt)及Integrable φ (Measure.map(Φt)μ)，结论完整展开为∫φ d(Φt_*μ)=∫φ∘Φt dμ。它是标准、正确的推前/拉回对偶子等式，原正文用integral_map证明且无本条sorry。可测/可积[EXTRA]合理，没有把最终等式作为假设。可是冻结的statement_scope是全部(5.10)：还须表达初始/演化密度、伴随传播与测度推前的识别，及最后ρ(z,0)/ρ_E(z)·ρ_E(z)换权子句。当前无参考微正则测度ν、密度r、绝对连续资格或相应withDensity等式。[EXTRA]把奇异微正则比值解释为RN密度是合理的公开数学解释，但只是文字，未落实在项目定义或该签名。故已证明的一个正确对偶等式不足以覆盖全部指定结论；这不是Mathlib缺定义造成的失败。",
+        "counterexample": "缺失子句的具体见证：令ν为单位圆上的无原子微正则概率测度，p为圆上一点，μ=δ_p，Φ为恒等flow，φ≡1。当前签名的可测及可积前提成立、推前对偶结论1=1成立，但μ不绝对连续于ν，不存在密度r使μ=ν.withDensity r：因为ν({p})=0而μ({p})=1。这不反驳现有二项等式，而证明它未保障原最后换权表示所需的资格及结论。",
+        "suggested_fix": "把现有声明明确定位为(5.10)的推前对偶子等式；若保留完整scope，增加参考微正则测度ν、初始μ₀≪ν及其非负RN密度r/withDensity表示，表达∫φ∘Φt dμ₀=∫(φ∘Φt)r dν，并显式给出初始与演化密度、伴随传播与Measure.map的识别。可测、可积假设用于这些具体配对；公开ρ/ρ_E的RN解释，避免对奇异δ分布作普通函数相除。"
+      }
+    }
+  ]
+}

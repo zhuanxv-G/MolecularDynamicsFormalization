@@ -1,0 +1,498 @@
+{
+  "batch": "BATCH12",
+  "chapter": "ch05",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "8f9ebec8dbf166e9f6c78694befcde9a6101c3bf9e4baf93dba6e1b458db6328",
+    "Blueprint/Ch05.lean": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+    "Ch05_deps.txt": "c68aa5743f2724fa58f8107f2b21fe741c2b2222c5ec02daf0f1c50a13ef392c"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.3.2-WeakStationary",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ORIGINAL_SYMBOL_MISMATCH",
+          "ORIGINAL_TEXT_MISMATCH",
+          "CONTEXT_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-WeakStationary",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "189–190",
+          "pdf_page": "210–211",
+          "statement_latex": "We are inclined to view the steady states (equilibrium solutions) of the Liouville equation as solutions of\n\\[\\mathcal L_f^\\dagger\\rho=0.\\]\nHowever, this requires a little care. In general, we would like to be able to apply $\\mathcal L_f^\\dagger$ to nonsmooth distributions such as Dirac delta functions for which the application of the Liouville operator does not make obvious sense (as we have not mentioned how to differentiate delta functions). Instead we will define the stationary solution in terms of integrals against test functions.\nthis suggests that the condition for the invariant probability density function $\\rho_\\infty$ should be\n\\[\\int_{\\mathcal D}\\phi\\mathcal L_f^\\dagger\\rho_\\infty\\,d\\omega=0,\\]\nfor all suitable functions $\\phi\\in C_0^\\infty(\\mathbb R^m)$. We say that $\\rho_\\infty$ satisfies\n\\[\\mathcal L^\\dagger\\rho_\\infty=0,\\]\nin the weak or variational sense.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathcal D\\subset\\mathbb R^m$ 为可容许相空间，$d\\omega=dz_1\\cdots dz_m$ 为 Lebesgue 体积元；$\\rho_\\infty$ 是待讨论的平稳概率分布或其密度。",
+            "PDF p.211 在 “this suggests” 前的原文背景是 $\\partial\\rho/\\partial t=\\mathcal L_f^\\dagger\\rho$；本条摘录跨越 p.189–190 的不同段落。",
+            "$C_0^\\infty(\\mathbb R^m)$ 是光滑紧支撑测试函数空间；对奇异测度，展示积分应按分布对偶理解。对受限测度的零延拓求分布导数时，边界贡献不能删除。",
+            "原书末式为 $\\mathcal L^\\dagger\\rho_\\infty=0$，省略 f 下标；这里按原页保留，并不更换其所指算子。"
+          ],
+          "issues": [
+            "PDF p.210–211 使用伴随符号 †，不是 *；p.211 最后一个弱方程原式为 L^†ρ∞=0，没有下标 f。修订保留原书这一省略，不擅自添回 f。",
+            "原句为 “We say that ρ∞ satisfies” 再接展示公式；记录省略了主语和 satisfies。恢复该措辞及 p.210 解释 nonsmooth distributions 的原句。",
+            "补记实际测试函数空间、D 和概率分布语境，以及 p.211 引出弱方程的 ∂ρ/∂t=L_f^†ρ；原文展示式写成分布对偶记号，不将奇异分布静默当作经典可微函数。"
+          ],
+          "lean_decl": "MD.Ch05.weakStationary",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实测度对实际测试Lie导数的零配对实现弱方程，来自形式伴随；不是把不可微分布当普通密度求导。用全空间上的测度表达，包括受限D的测度。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "batch": "BATCH12",
+              "round": "first-with-deps",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "reason": "仅在本报告中恢复原页文字、记号或补齐上下文；附件文件未修改。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf; PDF p.210–211; /workspace/.mathcopilot/reviews/ch05/BATCH12_pages/"
+        },
+        "issues": [
+          "PDF p.210–211 使用伴随符号 †，不是 *；p.211 最后一个弱方程原式为 L^†ρ∞=0，没有下标 f。修订保留原书这一省略，不擅自添回 f。",
+          "原句为 “We say that ρ∞ satisfies” 再接展示公式；记录省略了主语和 satisfies。恢复该措辞及 p.210 解释 nonsmooth distributions 的原句。",
+          "补记实际测试函数空间、D 和概率分布语境，以及 p.211 引出弱方程的 ∂ρ/∂t=L_f^†ρ；原文展示式写成分布对偶记号，不将奇异分布静默当作经典可微函数。"
+        ],
+        "evidence": [
+          "PDF p.210 / 印刷 p.189，§5.3.2 起首：L_f^†ρ=0；随后说明 Dirac delta functions 和 stationary solution against test functions。",
+          "PDF p.211 / 印刷 p.190，中段：∂ρ/∂t=L_f^†ρ；∫_D φ L_f^†ρ∞ dω=0；φ∈C_0^∞(ℝ^m)；末式字面为 L^†ρ∞=0。",
+          "两页均无此定义的独立证明；proof_latex=null、proof_discussion_latex=null 与 proof_note 相符。页码范围 189–190 / 210–211 正确。",
+          "以原教材 PDF 的渲染图逐字核对；不是仅依赖 pdftotext 的乱码输出。第 5 章页偏移核实为 PDF 页 = 印刷页 + 21。Blueprint/Ch05.lean 的实际上传文件路径为 /workspace/Ch05.lean；哈希键保留用户要求的逻辑路径。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.weakStationary",
+        "verdict": "PASS",
+        "explanation": "本轮依补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义：EuclideanSpace ℝ (Fin n) 是欧氏 ℝⁿ，volume 是标准 Lebesgue 测度，积分是 Bochner 积分（不可积时为 0），受限测度、可测性、可积性、紧支撑、光滑性和极限均按标准含义解释；不在 Ch05_deps.txt 寻找 Mathlib 定义体，不因其未收录而判材料不足。本次仅使用与 input_sha256 一致的三个附件；不使用其他旧 Ch0x.lean 或 ch0x_source.json。项目自定义已核对 Chapter05/ReviewDefinitions 分段的 E、testSpace、lie、weakStationary：E n=EuclideanSpace ℝ (Fin n)，testSpace 是满足 C∞ 与紧支撑的实值函数子类型，lie f φ z=(fderiv ℝ φ z)(f z)。Ch05.lean:698–699 对所有这些 φ 同时要求 Lie 导数对 μ 可积和积分为零。这就是 L_f^†μ=0 的分布测试函数条件，对普通概率密度与 Dirac 型概率测度均适用。[EXTRA] 可积性使零配对成为实际可定义的有限积分，不会因不可积积分总化为 0 而误判；测度表达对应源文的 nonsmooth distributions，扩域合理。本定义是弱方程谓词，概率资格应由其使用处另行给出；它没有宣称任意满足谓词的 μ 都是概率测度。若 μ 来自受限域 D，应按全空间受限测度的分布方程理解，边界贡献包含在分布导数中，不能将之替换为任意 D 内部的经典零导数方程。对象、测试函数量词和零配对结论忠实；PASS。该条为 def，无 sorry；本批此条无 [ERRATUM?] 标注。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-EnsembleAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ORIGINAL_NOTATION_MISMATCH",
+          "CONTEXT_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-EnsembleAverage",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "190",
+          "pdf_page": "211",
+          "statement_latex": "Let $\\phi$ be a $C^\\infty$ function of the phase variables with compact support and define the time $t$ average by\n\\[\\bar\\phi(t)=\\frac{\\int_{\\mathcal D}\\phi(\\mathbf q,\\mathbf p)\\rho(\\mathbf q,\\mathbf p,t)\\,d\\omega}{\\int_{\\mathcal D}\\rho(\\mathbf q,\\mathbf p,t)\\,d\\omega}.\\tag{5.6}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathbf q,\\mathbf p$ 为相空间的位置和动量坐标；$\\phi\\in C_0^\\infty(\\mathbb R^m)$；$\\rho(\\mathbf q,\\mathbf p,t)$ 是时刻 t 的概率密度，$\\mathcal D$ 为其相空间域。",
+            "原文 “time t average” 在式 (5.6) 中是瞬时系综平均；分母为该时刻的总质量，在概率密度语境中为 1。"
+          ],
+          "issues": [
+            "式 (5.6) 的积分域是花体 D，q、p 为粗体相变量，密度的三个参数之间用逗号而非分号；修订恢复这些原页记号。",
+            "原文的 “time t average” 指给定时刻 t 的系综平均；补记 φ 的光滑紧支撑资格和非零有限总质量语境，不将其解释成单轨道的时间区间平均。"
+          ],
+          "lean_decl": "MD.Ch05.ensembleAverageOn",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "batch": "BATCH12",
+              "round": "first-with-deps",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "reason": "仅在本报告中恢复原页文字、记号或补齐上下文；附件文件未修改。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf; PDF p.211; /workspace/.mathcopilot/reviews/ch05/BATCH12_pages/"
+        },
+        "issues": [
+          "式 (5.6) 的积分域是花体 D，q、p 为粗体相变量，密度的三个参数之间用逗号而非分号；修订恢复这些原页记号。",
+          "原文的 “time t average” 指给定时刻 t 的系综平均；补记 φ 的光滑紧支撑资格和非零有限总质量语境，不将其解释成单轨道的时间区间平均。"
+        ],
+        "evidence": [
+          "PDF p.211 / 印刷 p.190，第一段：“Let φ be a C^∞ function ... with compact support”；式 (5.6) 为 ∫_D φ(q,p)ρ(q,p,t)dω / ∫_D ρ(q,p,t)dω。",
+          "原页确为 C^∞，不是 pdftotext 输出中的 C1；原文 “time t average” 的用词原样保留。页码 190 / 211 正确，无独立证明。",
+          "以原教材 PDF 的渲染图逐字核对；不是仅依赖 pdftotext 的乱码输出。第 5 章页偏移核实为 PDF 页 = 印刷页 + 21。Blueprint/Ch05.lean 的实际上传文件路径为 /workspace/Ch05.lean；哈希键保留用户要求的逻辑路径。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.ensembleAverageOn",
+        "verdict": "PASS",
+        "explanation": "本轮依补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义：EuclideanSpace ℝ (Fin n) 是欧氏 ℝⁿ，volume 是标准 Lebesgue 测度，积分是 Bochner 积分（不可积时为 0），受限测度、可测性、可积性、紧支撑、光滑性和极限均按标准含义解释；不在 Ch05_deps.txt 寻找 Mathlib 定义体，不因其未收录而判材料不足。本次仅使用与 input_sha256 一致的三个附件；不使用其他旧 Ch0x.lean 或 ch0x_source.json。核对 Ch05.lean:702–703，并展开其中实际调用的 MD.Ch05.densityAverageOn（:212–213）：得到 (∫ z in D,φ z*ρ t z)/(∫ z in D,ρ t z)。该 MD 项目定义就在绑定的 Lean 附件中，不需要它在 deps 中重复出现；项目 E 的定义已在 Chapter05/ReviewDefinitions 分段核对。标准受限 Lebesgue 积分给出原式 (5.6) 的分子、分母及一般域 D，t 是瞬时时刻。函数参数次序与 φ(q,p)ρ(q,p,t) 相符，未变为单轨道上的时间区间平均。定义在其他 φ 或 ρ 上的总化扩域不改变其在源文光滑紧支撑 φ、非负可积且总质量为正的密度语境中的含义，也未额外断言所有不合格输入都是概率平均；PASS。该条为 def，无 sorry；无 [EXTRA] 或 [ERRATUM?]。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-ConvergenceHeuristic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ORIGINAL_NOTATION_MISMATCH",
+          "CONTEXT_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-ConvergenceHeuristic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "190",
+          "pdf_page": "211",
+          "statement_latex": "As the flow is Hamiltonian, $\\int_{\\mathcal D}\\rho(\\mathbf q,\\mathbf p,t)\\,d\\omega\\equiv\\int_{\\mathcal D}\\rho(\\mathbf q,\\mathbf p,0)\\,d\\omega$. Thus the condition for $\\bar\\phi$ to converge is just that\n\\[\\int_{\\mathcal D}\\phi(\\mathbf q,\\mathbf p)\\frac{\\partial\\rho}{\\partial t}(\\mathbf q,\\mathbf p,t)\\,d\\omega\\to0.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\bar\\phi$ 指式 (5.6) 的系综平均，$\\phi\\in C_0^\\infty(\\mathbb R^m)$；$\\rho$ 是随实际流输运的概率密度。",
+            "本段延续 Hamiltonian 情形，$\\mathcal D$ 是流作用的相空间；采用一般 D 时，要明确流不变性才能使用保体积换元。",
+            "原书只给 “the condition ... is just that” 的启发式论述，没有独立证明或显示的 iff；该措辞原样保留。不能以无动力学背景的标量函数例子断言附带真实保体积流前提的 Lean 充分方向为假。"
+          ],
+          "issues": [
+            "原页质量恒等式使用 ≡，积分域为花体 D，q、p 为粗体，密度参数以逗号分隔；恢复这些字面记号，不改动 “the condition ... is just that” 的论断。",
+            "补记输运中的概率密度、Hamiltonian 背景和相空间 D；不能脱离这些背景，把原段落改写为对任意标量函数的导数趋零命题。"
+          ],
+          "lean_decl": "MD.Ch05.convergenceHeuristic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际流、流不变D、原Hamiltonian背景使用的体积保持先验、平滑概率密度和紧支持测试函数明示；不替换成任意标量函数，不将最终平均收敛作假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "batch": "BATCH12",
+              "round": "first-with-deps",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "reason": "仅在本报告中恢复原页文字、记号或补齐上下文；附件文件未修改。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf; PDF p.211; /workspace/.mathcopilot/reviews/ch05/BATCH12_pages/"
+        },
+        "issues": [
+          "原页质量恒等式使用 ≡，积分域为花体 D，q、p 为粗体，密度参数以逗号分隔；恢复这些字面记号，不改动 “the condition ... is just that” 的论断。",
+          "补记输运中的概率密度、Hamiltonian 背景和相空间 D；不能脱离这些背景，把原段落改写为对任意标量函数的导数趋零命题。"
+        ],
+        "evidence": [
+          "PDF p.211 / 印刷 p.190，紧接 (5.6)：“As the flow is Hamiltonian” 后为 ∫_Dρ(q,p,t)dω≡∫_Dρ(q,p,0)dω。",
+          "同页原句为 “Thus the condition for φ̄ to converge is just that”，随后展示 ∫_Dφ(q,p)∂ρ/∂t(q,p,t)dω→0。没有独立证明或明确的 iff 公式。",
+          "这里只核对原文并记录完整措辞；没有把该句静默改成带有新假设的充分性定理。页码 190 / 211 正确。",
+          "以原教材 PDF 的渲染图逐字核对；不是仅依赖 pdftotext 的乱码输出。第 5 章页偏移核实为 PDF 页 = 印刷页 + 21。Blueprint/Ch05.lean 的实际上传文件路径为 /workspace/Ch05.lean；哈希键保留用户要求的逻辑路径。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.convergenceHeuristic",
+        "verdict": "FAIL",
+        "explanation": "本轮依补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义：EuclideanSpace ℝ (Fin n) 是欧氏 ℝⁿ，volume 是标准 Lebesgue 测度，积分是 Bochner 积分（不可积时为 0），受限测度、可测性、可积性、紧支撑、光滑性和极限均按标准含义解释；不在 Ch05_deps.txt 寻找 Mathlib 定义体，不因其未收录而判材料不足。本次仅使用与 input_sha256 一致的三个附件；不使用其他旧 Ch0x.lean 或 ch0x_source.json。核对 Ch05.lean:707–716，并展开项目 flow、measurePropagator 以及本文件的 densityOn、probabilityDensityOn、densityMeasureOn、densityAverageOn。flow 含 Φ0=id、实时间群律及每条轨道的真实 ODE 导数；measurePropagator 是 Measure.map；densityOn 是受限体积下的可测、非负、可积资格，probabilityDensityOn 另含 ∫_Dρ=1；densityMeasureOn 是 (volume.restrict D).withDensity(ofReal ρ)；densityAverageOn 是实际积分商。标准定义足以确认这些对象，无缺失 Mathlib 定义问题。量词先给 n,D,f,Φ,ρ,φ，前提为零可测 D、真实流、D 流不变、每个 Φt 保体积、联合 C¹ 密度、C∞ 紧支撑 φ、各时刻实际概率密度及从初始测度的真实输运；最后假设导数配对趋零，并得依赖 φ 的某个平均极限。[EXTRA] 域不变、输运与保体积均合理，未假设最终平均收敛。质量等式可由各时刻概率归一化直接读出，两端都是 1，不因其未重复列在结论而判失败。保留 FAIL 的具体原因是 statement_scope 的完整条件措辞：“the condition ... is just that”的条件读法包含必要方向，当前签名只有导数配对趋零 ⇒ 平均收敛；缺少反向，而且没有在映射中登记为单向子命题。原文未写显式 iff，这一范围问题不能通过默认把“condition”缩成充分性来静默消除；若采用这种作者解释，需明确登记缩窄范围。此 FAIL 不表示目前充分方向在上述动力学背景中为假，也不依据 Mathlib 缺失。一般标量导数趋零却不收敛的例子不是满足该签名全部前提的反例。证明体为 sorry，单独记录，不用于决定语义 verdict；无 [ERRATUM?] 标注。",
+        "counterexample": "缺失条款：在原段落的“condition ... is just that”完整条件读法下，缺少 (∃ L, Tendsto (ensembleAverageOn D ρ φ) atTop (𝓝 L)) → Tendsto (fun t => ∫ z in D,φ z*deriv (fun s => ρ s z) t) atTop (𝓝 0)。这是一项范围缺失，不是对现有充分方向的反例。",
+        "suggested_fix": "保留原句的字面记录。把质量守恒背景与收敛条件分清，并按本条完整范围补出必要方向；对必要方向登记足够的向量场/导数正则性，例如连续向量场使测试 Lie 导数在紧支撑上可控，不能仅凭一般微积分把它当作自动成立。若只拟形式化充分方向，应明确将该 Lean 项登记为原启发式的单向子命题，同时另列原句未覆盖的方向，不能把目前单向签名标作完整覆盖。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-HamiltonianEnergyIntegral",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ORIGINAL_SYMBOL_MISMATCH",
+          "CONTEXT_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-HamiltonianEnergyIntegral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "190",
+          "pdf_page": "211",
+          "statement_latex": "In the case of a Hamiltonian system, we know that $\\mathcal L_f^\\dagger=-\\mathcal L_f$, and, moreover, $\\mathcal L_fH=0$, so that $H$ is a first integral.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$f=J\\nabla H$ 为自治 Hamiltonian 向量场，$\\mathcal L_f u=D u[f]$，$\\mathcal L_f^\\dagger u=-\\nabla\\cdot(u f)$；Hamiltonian 场散度为零给出 $\\mathcal L_f^\\dagger=-\\mathcal L_f$。",
+            "本条范围包括伴随算子关系、$\\mathcal L_fH=0$ 和能量第一积分含义。第一积分指 H 沿实际 Hamiltonian 轨道恒定，不仅是一个对总化 fderiv 的形式等式。"
+          ],
+          "issues": [
+            "原页为 L_f^†=-L_f，而非 L_f^*=-L_f；恢复 †。原文同时包含该算子关系、L_fH=0 和 first integral 结论，不能删去第一项来匹配 Lean。",
+            "补记 f 是该 H 产生的自治 Hamiltonian 场，以及两项算子/能量结论和沿轨道的 first integral 含义。"
+          ],
+          "lean_decl": "MD.Ch05.hamiltonianEnergyIntegral",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson",
+            "MolecularDynamics.textbookPoissonBracket_self"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "batch": "BATCH12",
+              "round": "first-with-deps",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "reason": "仅在本报告中恢复原页文字、记号或补齐上下文；附件文件未修改。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf; PDF p.211; /workspace/.mathcopilot/reviews/ch05/BATCH12_pages/"
+        },
+        "issues": [
+          "原页为 L_f^†=-L_f，而非 L_f^*=-L_f；恢复 †。原文同时包含该算子关系、L_fH=0 和 first integral 结论，不能删去第一项来匹配 Lean。",
+          "补记 f 是该 H 产生的自治 Hamiltonian 场，以及两项算子/能量结论和沿轨道的 first integral 含义。"
+        ],
+        "evidence": [
+          "PDF p.211 / 印刷 p.190，弱方程后的同段：“In the case of a Hamiltonian system, we know that L_f^†=-L_f, and, moreover,” 接 L_fH=0，再接 “so that H is a first integral.”",
+          "陈述的其他词句与原页相符，页码 190 / 211 正确；此处没有独立完整证明，保留 proof_latex=null。",
+          "以原教材 PDF 的渲染图逐字核对；不是仅依赖 pdftotext 的乱码输出。第 5 章页偏移核实为 PDF 页 = 印刷页 + 21。Blueprint/Ch05.lean 的实际上传文件路径为 /workspace/Ch05.lean；哈希键保留用户要求的逻辑路径。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.hamiltonianEnergyIntegral",
+        "verdict": "FAIL",
+        "explanation": "本轮依补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义：EuclideanSpace ℝ (Fin n) 是欧氏 ℝⁿ，volume 是标准 Lebesgue 测度，积分是 Bochner 积分（不可积时为 0），受限测度、可测性、可积性、紧支撑、光滑性和极限均按标准含义解释；不在 Ch05_deps.txt 寻找 Mathlib 定义体，不因其未收录而判材料不足。本次仅使用与 input_sha256 一致的三个附件；不使用其他旧 Ch0x.lean 或 ch0x_source.json。展开项目 SymplecticCoordinates=(Fin Nc ⊕ Fin Nc)→ℝ、textbookJ=fromBlocks 0 1 (-1) 0；textbookHamiltonianVectorField 是 J 乘以真实 fderiv H 的坐标向量；textbookLieDerivative f H z=(fderiv ℝ H z)(f z)；textbookPoissonBracket F G z=DF(z)[X_G(z)]。这些定义分别位于 deps 的 SymplecticForm、SplittingError 和 LiePoisson 分段，已读实际正文。Ch05.lean:719–723 正确表达 L_(J∇H)H=0，并通过项目的 hamiltonian_eq_poisson 与 PoissonBracket_self 证明。标准 fderiv 的含义足以理解该恒等式，无 Mathlib 定义体欠缺问题。原文同条还明确声称 L_f^†=−L_f；当前签名没有真实 Liouville/伴随算子、合适 u 的量词及相应算子等式。原句的 first integral 沿真实可微轨道的含义也没有直接列为结论；无光滑性限制的总化 fderiv 恒等式本身不能认证经典运动。因此所保留的能量恒等式正确，但没有覆盖既定源条目的全部结论；FAIL 的核心是缺少伴随算子关系，并非标准库解释不足。证明体没有 sorry，与语义范围判定分开；无 [EXTRA] 或 [ERRATUM?]。",
+        "counterexample": "缺失条款：对于光滑 H 及由 H 产生的 f，需要保留对合适 u 的 L_f^†u=-L_fu；当前定理只说 L_fH=0。原文 first integral 的沿解 H(γ(t))=H(γ(0)) 也未作为结论陈述。不把正确的反对称能量恒等式伪称为存在数值反例。",
+        "suggested_fix": "保留现有能量恒等式，在同一源条目的正式陈述中加入对应坐标空间的真实 Liouville 算子关系 −div(u f)=−D u[f]（f=textbookHamiltonianVectorField H，登记 H 的 C² 和 u 的 C¹ 资格），并用实际 Hamiltonian 解及可微 H 表述能量沿轨道恒定。可利用 deps 中 HamiltonianVolume 的 textbookHamiltonianVectorField_divergence_zero 和 LiePoisson 的 textbookHamiltonian_energy_const_on_Icc；不能只靠本条的 L_fH=0 覆盖伴随算子结论。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-EnergyDensityInvariant",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF p.211 / 印刷 p.190，紧接 “so that H is a first integral.”：完整原句 “Any probability distribution whose density is a smooth function of H will also be an invariant distribution.” 与 JSON 一致。",
+          "源句只含 H 记号，未有待修正的 PDF 数学符号或页码；proof_latex=null、proof_discussion_latex=null 和未给独立证明的备注正确。",
+          "前文是 Hamiltonian 情形；现有 extra_assumptions 已明确登记真实能量、体积保持与归一化密度背景。context_notation=[] 未引入相反的解释。",
+          "以原教材 PDF 的渲染图逐字核对；不是仅依赖 pdftotext 的乱码输出。第 5 章页偏移核实为 PDF 页 = 印刷页 + 21。Blueprint/Ch05.lean 的实际上传文件路径为 /workspace/Ch05.lean；哈希键保留用户要求的逻辑路径。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.energyDensityInvariant",
+        "verdict": "PASS",
+        "explanation": "本轮依补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义：EuclideanSpace ℝ (Fin n) 是欧氏 ℝⁿ，volume 是标准 Lebesgue 测度，积分是 Bochner 积分（不可积时为 0），受限测度、可测性、可积性、紧支撑、光滑性和极限均按标准含义解释；不在 Ch05_deps.txt 寻找 Mathlib 定义体，不因其未收录而判材料不足。本次仅使用与 input_sha256 一致的三个附件；不使用其他旧 Ch0x.lean 或 ch0x_source.json。已展开 Chapter05/ReviewDefinitions 中 E、flow、lie、density、probabilityDensity、densityMeasure、measurePropagator，并核对 Ch05.lean:726–732。项目 probabilityDensity(r∘H) 要求其可测、非负、对标准体积可积且积分为 1；densityMeasure 是实际 withDensity(ofReal(r∘H))，推前是 Measure.map。全称量词对 n,H,f,Φ,r，假设 H,r 为 C¹、Φ 是真实自治流、DH[f]=0、每个 Φt 保体积和真实概率资格；结论是对全部实时间 t 密度测度推前等于原测度。[EXTRA] 能量第一积分与保体积是 Hamiltonian 背景的实际结构属性，抽象登记后给出更一般的同结论命题，并未把待证的不变密度测度当成假设。C¹ 足以支持链式法则，概率资格保留了源文对 distribution 的限制；未声称任意 r∘H 自动可积。对象、量词、假设及不变结论忠实；PASS。证明体为 sorry；该 PASS 只指签名语义，不表示证明完成。无 [ERRATUM?] 标注。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-ShellWeight",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ORIGINAL_NOTATION_MISMATCH",
+          "CONTEXT_SCOPE_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-ShellWeight",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "190",
+          "pdf_page": "211",
+          "statement_latex": "In particular, consider the density $\\rho_\\varepsilon(\\mathbf q,\\mathbf p)=Z_\\varepsilon^{-1}e^{-(H(\\mathbf q,\\mathbf p)-E)^2/(2\\varepsilon)}$, where $\\varepsilon$ is an arbitrary small positive constant and $E$ is an accessible energy level.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原句定义的是完整归一化密度 $\\rho_\\varepsilon$。未归一化指数权可另记为 $w_\\varepsilon(z)=e^{-(H(z)-E)^2/(2\\varepsilon)}$，两者相差 $Z_\\varepsilon^{-1}$。",
+            "$\\varepsilon>0$，E 为可达能级；H 为此前 Hamiltonian 系统的能量，$z=(\\mathbf q,\\mathbf p)$。下文 p.190–191 假设 H 充分增长以使权可积并选取归一化因子。"
+          ],
+          "issues": [
+            "原页公式中的 q、p 为粗体相变量；恢复向量记号，指数中的 -(H−E)²/(2ε) 与原书一致。",
+            "context_notation 将本条称为“指数权”，但所引原句实际定义带 Z_ε^−1 的概率密度。必须区分 w_ε 与 ρ_ε，不可删去原式的归一化因子来迁就 shellWeight。"
+          ],
+          "lean_decl": "MD.Ch05.shellWeight",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "batch": "BATCH12",
+              "round": "first-with-deps",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "reason": "仅在本报告中恢复原页文字、记号或补齐上下文；附件文件未修改。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf; PDF p.211; /workspace/.mathcopilot/reviews/ch05/BATCH12_pages/"
+        },
+        "issues": [
+          "原页公式中的 q、p 为粗体相变量；恢复向量记号，指数中的 -(H−E)²/(2ε) 与原书一致。",
+          "context_notation 将本条称为“指数权”，但所引原句实际定义带 Z_ε^−1 的概率密度。必须区分 w_ε 与 ρ_ε，不可删去原式的归一化因子来迁就 shellWeight。"
+        ],
+        "evidence": [
+          "PDF p.211 / 印刷 p.190，下部：“In particular, consider the density” 后为 ρ_ε(q,p)=Z_ε^−1 e^{−(H(q,p)−E)²/(2ε)}。",
+          "同页紧接 “where ε is an arbitrary small positive constant and E is an accessible energy level.”；原书语法确为 arbitrary small，未替换为 arbitrarily small。",
+          "页码 190 / 211 正确，无独立证明。原式已经归一化，只有指数因子才是未归一化权。",
+          "以原教材 PDF 的渲染图逐字核对；不是仅依赖 pdftotext 的乱码输出。第 5 章页偏移核实为 PDF 页 = 印刷页 + 21。Blueprint/Ch05.lean 的实际上传文件路径为 /workspace/Ch05.lean；哈希键保留用户要求的逻辑路径。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.shellWeight",
+        "verdict": "FAIL",
+        "explanation": "本轮依补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义：EuclideanSpace ℝ (Fin n) 是欧氏 ℝⁿ，volume 是标准 Lebesgue 测度，积分是 Bochner 积分（不可积时为 0），受限测度、可测性、可积性、紧支撑、光滑性和极限均按标准含义解释；不在 Ch05_deps.txt 寻找 Mathlib 定义体，不因其未收录而判材料不足。本次仅使用与 input_sha256 一致的三个附件；不使用其他旧 Ch0x.lean 或 ch0x_source.json。核对 Ch05.lean:735 及 Chapter05/ReviewDefinitions 中 shellWeight、shellPartition、shellDensity。当前映射的返回值仅为 exp(−(H z−c)²/(2ε))，c 对应能级 E，指数、平方与 2ε 都正确；但本条 statement_scope 所引完整源式是 ρ_ε=Z_ε^−1 exp(−(H−E)²/(2ε))。项目 shellDensity 才是权除以实际权积分。标准积分、Real.exp 与实数除法含义已采信，因此可以直接确认此映射缺少归一化因子，返回对象从完整密度变成指数权；FAIL。其他 source_id 下存在 shellDensity 不会自动使本条指定的 lean_decl 覆盖该因子。ε>0、能级可达与可积性可作为辅助权的后续使用资格，但不会把未归一化权变成归一化密度。反例保留满足源资格的具体 H 和 ε；此失败不依赖任何缺失的 Mathlib 定义。该条为 def，无 sorry；无 [EXTRA] 或 [ERRATUM?] 标注。",
+        "counterexample": "取 n=2、全相空间 ℝ²、H(q,p)=(q²+p²)/2、c=0、ε=1/(8π³)>0。H 光滑且充分增长，0 是可达能级，指数权可积；其积分 Z_ε=π√(2πε)=1/2。于原点 shellWeight=1，而原书已归一化的 ρ_ε=2。两者在满足源资格的输入上就不相等。",
+        "suggested_fix": "保持源句的完整归一化公式。将本条对应对象指向实际 shellDensity，或在本条明确并列未归一化权 w_ε、Z_ε=∫w_ε 及 ρ_ε=w_ε/Z_ε。若确实只需 shellWeight 作辅助定义，应登记为从该源式抽出的因子，另列完整源式的覆盖关系；不能静默把源陈述中的 Z_ε^−1 删去。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-ShellPartition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ORIGINAL_NOTATION_MISMATCH",
+          "CONTEXT_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-ShellPartition",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "190–191",
+          "pdf_page": "211–212",
+          "statement_latex": "We assume that $H$ tends to infinity sufficiently rapidly as $\\|\\mathbf z\\|\\to\\infty$ so that the exponential decays sufficiently rapidly (and thus the total integral exists) and take $Z_\\varepsilon$ to be a normalization factor that insures that we have, for each $\\varepsilon$, a well defined probability density function.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathbf z=(\\mathbf q,\\mathbf p)$，$\\varepsilon>0$；上一段的指数权为 $w_\\varepsilon=e^{-(H-E)^2/(2\\varepsilon)}$，归一化要求确定 $Z_\\varepsilon=\\int_{\\mathbb R^m}w_\\varepsilon\\,d\\omega$。",
+            "此全相空间表达沿用原文 H 充分增长以保证总积分存在的语境。可积性及 $0<Z_\\varepsilon<\\infty$ 是实际概率使用资格；总化积分定义不自动提供资格证明。"
+          ],
+          "issues": [
+            "原页范数中的 z 是粗体相空间向量；修订恢复该记号，原词 insures 和原有充分增长/可积性措辞均保留。",
+            "补记 Z_ε 对应上一段未归一化指数权的积分，以及 ε>0、H 充分增长和正有限分母的原文使用资格。定义的积分公式与保证概率资格应区分。"
+          ],
+          "lean_decl": "MD.Ch05.shellPartition",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "batch": "BATCH12",
+              "round": "first-with-deps",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "reason": "仅在本报告中恢复原页文字、记号或补齐上下文；附件文件未修改。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf; PDF p.211–212; /workspace/.mathcopilot/reviews/ch05/BATCH12_pages/"
+        },
+        "issues": [
+          "原页范数中的 z 是粗体相空间向量；修订恢复该记号，原词 insures 和原有充分增长/可积性措辞均保留。",
+          "补记 Z_ε 对应上一段未归一化指数权的积分，以及 ε>0、H 充分增长和正有限分母的原文使用资格。定义的积分公式与保证概率资格应区分。"
+        ],
+        "evidence": [
+          "PDF p.211 / 印刷 p.190，最后两行：H tends to infinity sufficiently rapidly as ‖z‖→∞，指数衰减使总积分存在。",
+          "PDF p.212 / 印刷 p.191，最上方续句：take Z_ε to be a normalization factor ... “insures ... a well defined probability density function.”",
+          "该句确实跨 190–191 / 211–212，页码无误。原书没有在此另给 Z_ε=∫w_ε 的展示公式或独立证明；该积分是由归一化要求确定的因子。",
+          "以原教材 PDF 的渲染图逐字核对；不是仅依赖 pdftotext 的乱码输出。第 5 章页偏移核实为 PDF 页 = 印刷页 + 21。Blueprint/Ch05.lean 的实际上传文件路径为 /workspace/Ch05.lean；哈希键保留用户要求的逻辑路径。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.shellPartition",
+        "verdict": "PASS",
+        "explanation": "本轮依补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义：EuclideanSpace ℝ (Fin n) 是欧氏 ℝⁿ，volume 是标准 Lebesgue 测度，积分是 Bochner 积分（不可积时为 0），受限测度、可测性、可积性、紧支撑、光滑性和极限均按标准含义解释；不在 Ch05_deps.txt 寻找 Mathlib 定义体，不因其未收录而判材料不足。本次仅使用与 input_sha256 一致的三个附件；不使用其他旧 Ch0x.lean 或 ch0x_source.json。展开 Ch05.lean:738 调用的项目 shellWeight，得到标准 ℝⁿ 上 Z_ε=∫ exp(−(H z−c)²/(2ε)) dvolume。项目 E 与 shellWeight 的定义已在 deps 中核对，积分按标准 Bochner 含义直接理解。它积分的是未归一化指数权，正是原文由归一化要求确定的因子。在源文 ε>0、H 充分增长以使总积分存在的语境中，权为正且积分有限，因子正确；PASS。无假设的函数定义是公式的总化扩域，没有定理断言任意输入都是正有限归一化常数。因此在不满足源文增长/可积资格时，Bochner 积分可能为 0 不构成此定义在源资格下的语义反例；实际概率用途仍需对应资格。没有以编译成功代替概率性质证明。该条为 def，无 sorry；无 [EXTRA] 或 [ERRATUM?]。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-ShellDensity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "PAGE_SPAN_MISMATCH",
+          "ORIGINAL_NOTATION_MISMATCH",
+          "CONTEXT_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-ShellDensity",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "190",
+          "pdf_page": "211",
+          "statement_latex": "$\\rho_\\varepsilon(\\mathbf q,\\mathbf p)=Z_\\varepsilon^{-1}e^{-(H(\\mathbf q,\\mathbf p)-E)^2/(2\\varepsilon)}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\varepsilon>0$，E 为可达能级，$\\mathbf z=(\\mathbf q,\\mathbf p)$；归一化因子由实际全相空间指数权的积分确定。原文在后续句子登记 H 的充分增长/可积资格。",
+            "ρ_ε 已除一次 $Z_\\varepsilon$；原有对后文 (5.8) 若再除一次须单列字面疑误的提示予以保留。本条只审计 PDF p.211 的密度定义，不处理 (5.8) 的其他 source_id。"
+          ],
+          "issues": [
+            "本条仅引 ρ_ε 的展示定义，该公式实际在印刷 p.190 / PDF p.211；p.191 / PDF p.212 是归一化解释和后续极限公式。按本条 statement_scope 将页码收紧到 190 / 211。",
+            "原页公式中 q、p 为粗体相变量；恢复该记号，保留已经出现的单次 Z_ε^−1。",
+            "补记 ε>0、可达能级以及归一化所需的正有限权积分；原有关于后文再次除 Z 的提示仅作为上下文保留，不审计本批外极限条目。"
+          ],
+          "lean_decl": "MD.Ch05.shellDensity",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "batch": "BATCH12",
+              "round": "first-with-deps",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page",
+                "statement_latex",
+                "context_notation"
+              ],
+              "reason": "仅在本报告中恢复原页文字、记号或补齐上下文；附件文件未修改。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf; PDF p.211; /workspace/.mathcopilot/reviews/ch05/BATCH12_pages/"
+        },
+        "issues": [
+          "本条仅引 ρ_ε 的展示定义，该公式实际在印刷 p.190 / PDF p.211；p.191 / PDF p.212 是归一化解释和后续极限公式。按本条 statement_scope 将页码收紧到 190 / 211。",
+          "原页公式中 q、p 为粗体相变量；恢复该记号，保留已经出现的单次 Z_ε^−1。",
+          "补记 ε>0、可达能级以及归一化所需的正有限权积分；原有关于后文再次除 Z 的提示仅作为上下文保留，不审计本批外极限条目。"
+        ],
+        "evidence": [
+          "PDF p.211 / 印刷 p.190，下部无编号展示公式：ρ_ε(q,p)=Z_ε^−1 e^{−(H(q,p)−E)²/(2ε)}。",
+          "PDF p.212 / 印刷 p.191 开头只续接 Z_ε 的归一化说明；本条引用的密度定义式未跨页。页码修正不改动本批其他条目。",
+          "原式确实已含一次 Z_ε^−1。保留上下文对后文 (5.8) 的字面提示，不修订或评判本批之外的 source_id。无独立证明。",
+          "以原教材 PDF 的渲染图逐字核对；不是仅依赖 pdftotext 的乱码输出。第 5 章页偏移核实为 PDF 页 = 印刷页 + 21。Blueprint/Ch05.lean 的实际上传文件路径为 /workspace/Ch05.lean；哈希键保留用户要求的逻辑路径。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.shellDensity",
+        "verdict": "PASS",
+        "explanation": "本轮依补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义：EuclideanSpace ℝ (Fin n) 是欧氏 ℝⁿ，volume 是标准 Lebesgue 测度，积分是 Bochner 积分（不可积时为 0），受限测度、可测性、可积性、紧支撑、光滑性和极限均按标准含义解释；不在 Ch05_deps.txt 寻找 Mathlib 定义体，不因其未收录而判材料不足。本次仅使用与 input_sha256 一致的三个附件；不使用其他旧 Ch0x.lean 或 ch0x_source.json。展开 Ch05.lean:741 与 deps 中项目 shellWeight、shellPartition，得到 exp(−(H z−c)²/(2ε))/(∫ x,exp(−(H x−c)²/(2ε)))。按标准 ℝⁿ 的 Lebesgue 测度、Bochner 积分和实数除法理解，参数 c 对应 E，分子指数、分母实际权积分及归一化次数均与源文完全相同；PASS。本定义只有一次归一化，不另乘 Z^−1。ε>0、能级可达、H 的增长/可积资格为原文的实际使用背景；定义对不合格输入的总化扩域没有额外声称这些输入都构成概率密度。后文弱极限的其他源条目不在本次审计范围。该条为 def，无 sorry；无 [EXTRA] 或 [ERRATUM?]。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

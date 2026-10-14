@@ -1,0 +1,200 @@
+{
+  "batch": "BATCH01",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "2bcfc71899d1b322db46c9e423c57ea55c102f08b219907f9aad796262ce91c5",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4-LinearField",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第161页（印刷139页），章首原句、(4.1)及其后 where z∈ℝ^m, A∈ℝ^{m×m}。context_notation 的 generic conditions 见紧接下文；Jordan 警示为审校注释而非原文引句。",
+          "页码与PDF页=印刷页+22一致；选定段落未给独立证明，proof_latex=null正确；context_notation已结合相邻原段核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.linearField",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean:26；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4387）展开 linearField 为 A *ᵥ z，即第i分量 Σj Aᵢⱼzⱼ。原文定义实线性系统的右端；Lean 给出复线性右端，实矩阵和实向量逐项嵌入后完全一致。[EXTRA] 是明示且合理的复扩张，无对角化或谱判据的额外断言。此定义不承担ODE解或渐近性质证明。定义体无 sorry；本次仅审计语义，未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-EulerFactor",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TEXT_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4-EulerFactor",
+          "kind": "definition",
+          "label": null,
+          "section": "4",
+          "printed_page": "139",
+          "pdf_page": "161",
+          "statement_latex": "Here $\\lambda$, hence $u$ may in general be complex. Then one applies the numerical method directly to the scalar equation. For example Euler’s method yields\n\\[u_{n+1}=(1+h\\lambda)u_n.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "标量连续方程u′=λu，h实数；迭代因子1+hλ。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.eulerFactor",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "BATCH01 first-with-deps：对照PDF第161页，将擅加的λ∈ℂ还原为原文Here λ, hence u may in general be complex；数学语义仍由上下文明确。"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          "statement_latex将原书Here λ改为Here λ∈ℂ；虽数学上正确，仍不符合逐字摘录，完整修订条目已恢复原句。"
+        ],
+        "evidence": [
+          "PDF第161页（印刷139页），原句为 Here λ, hence u may in general be complex.；下一展示式 u_{n+1}=(1+hλ)u_n。原书并未写 Here λ∈ℂ, hence…。标量方程 u̇=λu 见前句。",
+          "页码与PDF页=印刷页+22一致；选定段落未给独立证明，proof_latex=null正确；context_notation已结合相邻原段核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.eulerFactor",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean:29；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4388）eulerFactor h rho = 1 + (h:ℂ)*rho。h:ℝ、rho:ℂ，正是标量Euler迭代的乘法因子；rho只是λ的重命名。定义条目并未声称已经证明整个迭代关系。无 [EXTRA] 或 [ERRATUM?]；定义体无 sorry，未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-ScalarEulerStable",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第161页（印刷139页），The iteration is stable if |u_n| remains bounded as n→∞…及 |1+hλ|≤1。此处 asymptotic stability 按书中有界定义保留，不改成趋零。",
+          "页码与PDF页=印刷页+22一致；选定段落未给独立证明，proof_latex=null正确；context_notation已结合相邻原段核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.scalarEulerStable",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean:33–48；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4388,4390）：eulerFactor h rho = 1+(h:ℂ)*rho；scalarStable a = ∃ C:ℝ, ∀ k:ℕ, ‖a^k‖≤C。签名为 ∀ h:ℝ, ∀ rho:ℂ，上述幂有界性质 ↔ ‖1+h rho‖≤1。常数在k之前，正确要求一致有界；复范数等于模。[EXTRA] 合理地明确方法稳定性，而不是仅某个零初值轨道的有界性：对非零初值乘除‖u₀‖即可等价，对所有初值也等价。等价式的充分方向是原文条件的正确补全。没有将有界误作趋零。证明体无 sorry；未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-EulerRegion",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第161页（印刷139页），disk in the complex hλ-plane centered around −1 of radius 1；闭边界来自上一公式≤1。",
+          "页码与PDF页=印刷页+22一致；选定段落未给独立证明，proof_latex=null正确；context_notation已结合相邻原段核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.eulerStabilityRegion",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean:51；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4389）同名定义展开为 {z:ℂ | ‖1+z‖≤1}。每个z满足 dist z (−1)=‖1+z‖，故恰为复平面以−1为心、半径1的闭圆盘；变量为hλ，不是λ。无额外假设；定义体无 sorry，未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-OscillatorMatrix",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第161页（印刷139页），末段 q̇=p; ṗ=−Ω²q 及 A=[0 I; −Ω² 0]。I 与Ω保持原书记法，没有静默改为标量1。",
+          "页码与PDF页=印刷页+22一致；选定段落未给独立证明，proof_latex=null正确；context_notation已结合相邻原段核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.oscillatorMatrix",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean:55；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4393）oscillatorMatrix Ω = !![0,1; −Ω^2,0]，Ω:ℝ，作用于(q,p)得到(p,−Ω²q)。[EXTRA] 明示一个自由度、I=1，是合理的标量振子实例；不能将本定义当作一般多自由度块矩阵的形式化。原句本身未量化一般矩阵Ω，按已声明的标量实例接受。定义体无 sorry；未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-EulerImaginaryGrowth",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第162页（印刷140页），首句 The eigenvalues are ±iω. 与首段末两句 The stability condition always fails…及 z_n grows exponentially rapidly…。JSON选择了这几句而未收录中间的分子动力学动机段，符合声明的摘录scope；ω/Ω异记保留。原书always须排除零步长、零频率和零初值，不静默更改原句。",
+          "页码与PDF页=印刷页+22一致；选定段落未给独立证明，proof_latex=null正确；context_notation已结合相邻原段核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.eulerImaginaryGrowth",
+        "verdict": "FAIL",
+        "explanation": "Ch04.lean:60–74；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4388,4393）eulerFactor h rho=1+(h:ℂ)*rho，oscillatorMatrix Ω=[0,1;−Ω²,0]。签名量词为 ∀ h Ω:ℝ, h≠0 → Ω≠0 → ∀ z:ℂ, z≠0 → ‖(1+h iΩ)^k z‖→+∞。[EXTRA] 排除退化情况必要且合理；它不推广到任意非线性Hamiltonian系统。但所引原句包含矩阵谱±iω与指数速率；该签名没有谱结论、没有增长底数>1的定量结论，也没有将复标量初值与原实相空间向量z_n联系起来。Tendsto到+∞自身弱于指数增长；证明内部虽然计算范数，不会补全签名。另列谱声明不能替代本条全部结论。本条无 [ERRATUM?] 标记；原always的退化例外已由 [EXTRA] 明示。证明体无 sorry；未编译。",
+        "counterexample": "缺失条款：振子矩阵的完整谱、指数增长速率、实向量轨道与复标量模态的联系。仅有Tendsto无法表达指数速率，例如k+1→∞但非指数增长（此为逻辑强度示例，不是本Euler序列的反例）。原句若不排除h=0、Ω=0或零初值，则always也不成立。",
+        "suggested_fix": "在本条签名或与本条明确绑定的联合结果中加入矩阵复谱恰为±iΩ；令r=√(1+(hΩ)²)>1，给出∀k, ‖(1+h iΩ)^k z‖=r^k‖z‖，以及对实振子轨道可用w=Ωq+i p的模或等价范数得到指数增长。明确原ω对应Ω，并保留h、Ω和初值非零条件。不要把原摘录改写成无条件真命题。"
+      }
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerMatrix",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第162页（印刷140页），The timestep map is defined by 两行Q=q+hP、P=p−hΩ²q；Solving for Q, P this yields 后的矩阵逐项为1−h²Ω²,h,−hΩ²,1。",
+          "页码与PDF页=印刷页+22一致；选定段落未给独立证明，proof_latex=null正确；context_notation已结合相邻原段核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.symplecticEulerMatrix",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean:77–78；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4394–4395）symplecticEulerMatrix Ω h=!![1−h^2*Ω^2,h;−h*Ω^2,1]。任意实Ω,h及输入(q,p)，矩阵输出P=p−hΩ²q，Q=(1−h²Ω²)q+hp=q+hP，覆盖两条更新关系及消元矩阵，无隐式分支或非零条件。上下文动量先更新正确。无 [EXTRA]/[ERRATUM?]；定义体无 sorry，未编译。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerCharacteristic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "PDF第162页（印刷140页），The eigenvalues of the matrix are easily found, they are 与 λ_{1,2}=1−h²Ω²/2 ± (1/2)√(h⁴Ω⁴−4h²Ω²)。JSON根号范围、系数和符号均与渲染页相符。",
+          "页码与PDF页=印刷页+22一致；选定段落未给独立证明，proof_latex=null正确；context_notation已结合相邻原段核对。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.symplecticEulerCharacteristic",
+        "verdict": "FAIL",
+        "explanation": "Ch04.lean:83–90；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4394–4395）symplecticEulerMatrix Ω h=[1−h²Ω²,h;−hΩ²,1]。签名 ∀ Ω h:ℝ, ∀ rho:ℂ, det(rho I−Aℂ)=rho²−(2−h²Ω²)rho+1，确为真实复特征多项式等式，非占位定义。但是原文结论是两个显式特征根；本签名既未断言特征向量/特征值条件，也未给出±复平方根的完整根集合。[EXTRA] 说明另列根公式，只承认当前声明的范围缩小，不能作为本条忠实覆盖的理由；这不是必要数学假设，而是缺少结论。没有 [ERRATUM?]；原根公式数学上成立（须以复平方根解读）。证明体无 sorry；未编译。",
+        "counterexample": "缺失条款而非等式反例：签名正确计算det，却没有任何形如rho=1−h²Ω²/2±√(h⁴Ω⁴−4h²Ω²)/2的结论。Ω=h=1时，原文特征值为(1±i√3)/2，签名只给rho²−rho+1，未陈述这两个值是且仅是特征值。",
+        "suggested_fix": "保留特征多项式为辅助结果；在本条补充∀Ω h rho，存在非零复特征向量当且仅当rho等于上述两个复平方根表达式之一。将判别式显式嵌入ℂ并使用复平方根，覆盖判别式为负、零、正的所有情况及重根；无需增加判别式非负假设。"
+      }
+    }
+  ]
+}

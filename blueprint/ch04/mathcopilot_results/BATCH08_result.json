@@ -1,0 +1,327 @@
+{
+  "batch": "BATCH08",
+  "chapter": "ch04",
+  "round": "first-with-deps",
+  "input_sha256": {
+    "BATCH.md": "3601fd696ab010e8783b8507c13b622b3d0b80e19741a22af7f5817900cb17b7",
+    "Blueprint/Ch04.lean": "fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61",
+    "Ch04_deps.txt": "faa5638badad6b286637d3030daf3ee9cb451babaa25c267c4c949798b09c53e"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "OMITTED_SOURCE_TEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "150",
+          "pdf_page": "172",
+          "statement_latex": "We suppose the restraint to have an associated coefficient $k=\\varepsilon^{-1}$, where $\\varepsilon$ is a small parameter. Then we have a generalized flexible pendulum with Hamiltonian $H=\\|p\\|^2/(2m)+U(q)+\\varepsilon^{-1}(\\|q\\|-r_0)^2/2$ (see the left panel of Fig. 4.4).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "欧氏Position3及欧氏norm，非Pi最大范数；m>0,ε>0为物理模型资格。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.flexiblePendulumHamiltonian",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "changes": [
+                {
+                  "code": "OMITTED_SOURCE_TEXT",
+                  "detail": "PDF172 在 Hamiltonian 公式之后、句号之前含 “(see the left panel of Fig. 4.4)”，JSON 省略该原句部分。"
+                }
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; BATCH08 review directly rendered the stated PDF page"
+        },
+        "issues": [
+          {
+            "code": "OMITTED_SOURCE_TEXT",
+            "detail": "PDF172 在 Hamiltonian 公式之后、句号之前含 “(see the left panel of Fig. 4.4)”，JSON 省略该原句部分。"
+          }
+        ],
+        "evidence": [
+          "直接核对教材 PDF 第172页（印刷第150页，偏移+22），pdftotext 与渲染图一致。段落 “We suppose the restraint ...” 至 Hamiltonian 公式及 Fig.4.4 引用；无独立证明。 statement_latex、proof_latex=null、页码及 context_notation 均已核查；context 中实现/模型资格说明与原文逐字转录分开评价。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.flexiblePendulumHamiltonian",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean:631–634；依赖 Notation.lean 的 Position n := EuclideanSpace ℝ (Fin n)，所以两个范数都是欧氏范数；z.1=q、z.2=p。三个能量项及系数逐项相同，无额外定理假设。m、ε 的正性是模型资格，定义在所有实参数上的全定义延拓不宣称这些参数均为物理模型。定义无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-RestraintPotential",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "直接核对教材 PDF 第172页（印刷第150页，偏移+22），pdftotext 与渲染图一致。页底 “where the restraint potential ... has associated restoring force”；径向势系数与平方相同，无独立证明。 statement_latex、proof_latex=null、页码及 context_notation 均已核查；context 中实现/模型资格说明与原文逐字转录分开评价。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.restraintPotential",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean:636–637；Position 3 展开为 EuclideanSpace ℝ (Fin 3)，势为 ε⁻¹(‖q‖−r₀)²/2，与 PDF172 相同。这里只定义函数，未宣称在 q=0 可微或光滑；无额外假设、无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-RestraintForcePrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_ERROR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-RestraintForcePrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "150",
+          "pdf_page": "172",
+          "statement_latex": "\\[F_\\varepsilon=-\\nabla\\varphi_\\varepsilon(q)=\\varphi_\\varepsilon(q).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原页印为 Fε=−∇φε(q)=φε(q)，末项标量势与向量力类型不相容；无 prime，不静默修正原书。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.restraintForcePrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]现有 Lean 将末项解释为配置梯度，但原页没有 prime 且不支持该解释；该形式化解释不获批准。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "changes": [
+                {
+                  "code": "TRANSCRIPTION_ERROR",
+                  "detail": "PDF172 页底末项为 φε(q)，没有撇号；JSON 擅增 prime。仅删除转录多出的 prime，不修正原书等式。"
+                }
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; BATCH08 review directly rendered the stated PDF page"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_ERROR",
+            "detail": "PDF172 页底末项为 φε(q)，没有撇号；JSON 擅增 prime。仅删除转录多出的 prime，不修正原书等式。"
+          }
+        ],
+        "evidence": [
+          "直接核对教材 PDF 第172页（印刷第150页，偏移+22），pdftotext 与渲染图一致。页底 Fε=−∇φε(q)=φε(q)，渲染图确认末项没有 prime；没有独立证明，原书疑误保留。 statement_latex、proof_latex=null、页码及 context_notation 均已核查；context 中实现/模型资格说明与原文逐字转录分开评价。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.restraintForcePrinted",
+        "verdict": "FAIL",
+        "explanation": "Ch04.lean:642–647 实际量化所有 ε,r₀,q 并断言 −gradient φ q = gradient φ q。原 PDF172 的末项是 φε(q)，没有 prime，且 φ 为标量、力为向量，原书确有类型疑误。[EXTRA] 把 prime 解释为配置梯度既无原文依据，也产生错误等式。[ERRATUM?] 应改为原书的标量势/向量力疑误，不能把缺失的 prime 当成原书问题。Position 是欧氏空间；gradient 为真实总梯度，光滑点不是任意符号。该声明另有 sorry，但 FAIL 来自签名。",
+        "counterexample": "ε=1,r₀=1,q=(2,0,0)。在此非零点势光滑，∇φ(q)=(1,0,0)，故 −∇φ(q)=(−1,0,0)≠(1,0,0)。",
+        "suggested_fix": "忠实转录末项 φε(q)，明确标注原书类型疑误；不要将该印刷等式作为可证明定理。数学修订版本另立条目：定义 Fε(q)=−gradient φε q；若给显式径向公式，在 q≠0、ε>0 下证明 Fε(q)=−ε⁻¹(‖q‖−r₀)•(q/‖q‖)，并明确这是勘误版本。"
+      }
+    },
+    {
+      "source_id": "MD-4.3-ConstrainedPendulum",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "直接核对教材 PDF 第173页（印刷第151页，偏移+22），pdftotext 与渲染图一致。Fig.4.4 后三行 q̇=v、v̇=−∇U(q)−qλ、0=‖q‖²−r₀²；邻文说明 λ 随时间变化，无独立证明。 statement_latex、proof_latex=null、页码及 context_notation 均已核查；context 中实现/模型资格说明与原文逐字转录分开评价。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constrainedPendulum",
+        "verdict": "FAIL",
+        "explanation": "Ch04.lean:650–655 三个合取项对应 q′=v、v′=−∇U−λq、球面约束，Position 确为欧氏空间。单位质量沿用印刷方程，λ 吸收法向因子2是合理记号解释。但 I 任意且使用 HasDerivWithinAt，无开区间或 UniqueDiffOn 条件，孤立点上指定导数可任意，故并非原文运动方程的忠实定义。定义无 sorry。",
+        "counterexample": "取 I={0},r₀=1,U=0,λ(t)=0,q(t)=(1,0,0),v(t)=(1,0,0) 均为常函数。单点集合上 HasDerivWithinAt q (v 0) I 0 及 HasDerivWithinAt v 0 I 0 都成立，球面约束成立，所以 Lean 谓词成立；但全导数 q′(0)=0≠v(0)。",
+        "suggested_fix": "要求 I 为开时间区间并使用 HasDerivAt，或添加 IsOpen I 后保留 within 导数；闭区间版本需明确非退化区间和端点单侧导数约定。"
+      }
+    },
+    {
+      "source_id": "MD-4.3-ConstraintCurvature",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "直接核对教材 PDF 第175页（印刷第153页，偏移+22），pdftotext 与渲染图一致。页首 “where φ is an l-dimensional vector ...” 及 φ_k=p(t)ᵀM⁻¹∇²g_k(q(t))M⁻¹p(t)；本条为定义，没有独立证明。 statement_latex、proof_latex=null、页码及 context_notation 均已核查；context 中实现/模型资格说明与原文逐字转录分开评价。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constraintCurvature",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean:657–661；textbookInverseMassMatrix 展开为 diagonal (fun i => (m i)⁻¹)。因此每分量是 D²γ_j(q)[M⁻¹p,M⁻¹p]，正是 pᵀM⁻¹ Hessian(γ_j) M⁻¹p（对角质量矩阵对称）。Fin Mc 表示 l 个分量，q,p 为当前时间切片。Pi 的范数不影响有限维坐标导数及此双线性计算，未使用错误的径向 Pi 范数。fderiv 是总操作；这一定义不声称非光滑约束也具有经典 Hessian。无额外假设、无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-ReactionMultiplier",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_ERROR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-ReactionMultiplier",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "153",
+          "pdf_page": "175",
+          "statement_latex": "Using (4.8) in (4.10) we obtain\n\\[g'(q)M^{-1}[F-g'(q)^T\\lambda]+\\varphi\\equiv0.\\]\nThis is a system of linear equations for $\\lambda$. Assuming $g'(q)M^{-1}g'(q)^T$ is invertible, we may solve for $\\lambda$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "λ为真实Gram逆乘(GM⁻¹F+φ)；矩阵逆的语义资格det≠0在下一定理及Gram性质中明确。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.reactionMultiplier",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "changes": [
+                {
+                  "code": "TRANSCRIPTION_ERROR",
+                  "detail": "PDF175 展示式末尾为 +φ≡0，JSON 记作 +φ=0；恢复印刷恒等符号，保留数学原意。"
+                }
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; BATCH08 review directly rendered the stated PDF page"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_ERROR",
+            "detail": "PDF175 展示式末尾为 +φ≡0，JSON 记作 +φ=0；恢复印刷恒等符号，保留数学原意。"
+          }
+        ],
+        "evidence": [
+          "直接核对教材 PDF 第175页（印刷第153页，偏移+22），pdftotext 与渲染图一致。页首 “Using (4.8) in (4.10) we obtain” 与 G M⁻¹[F−Gᵀλ]+φ≡0；紧接线性系统和 Gram 可逆句。仅有这段推导说明，无独立完整证明。 statement_latex、proof_latex=null、页码及 context_notation 均已核查；context 中实现/模型资格说明与原文逐字转录分开评价。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.reactionMultiplier",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean:663–669。依赖展开：textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)；Jacobian G 的第 j 行为该真实坐标梯度；D=diagonal(m_i⁻¹)；Gram A=G D Gᵀ；Curvature 为 D²γ_j(q)[Dp,Dp]。故定义恰为 λ=A⁻¹(G D F+φ)，符号正确。原文逆存在的适用资格在 context_notation 明确，并在同批 reactionBalance 的 hdet 中实现。定义允许奇异矩阵的总逆延拓，但自身不宣称该延拓解方程；PASS 仅评价条件适用域内的显式定义，不把解存在或唯一性当成已证明结论。无 sorry。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-ReactionBalance",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_ERROR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-ReactionBalance",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "153",
+          "pdf_page": "175",
+          "statement_latex": "Using (4.8) in (4.10) we obtain\n\\[g'(q)M^{-1}[F-g'(q)^T\\lambda]+\\varphi\\equiv0.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch04.reactionBalance",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookConstrainedReaction_balance"
+          ],
+          "extra_assumptions": [
+            "真实Gram det≠0；F=−grad U是Hamiltonian实例，一般位置力定理提供更强桥接。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "round": "first-with-deps",
+              "changes": [
+                {
+                  "code": "TRANSCRIPTION_ERROR",
+                  "detail": "PDF175 展示式末尾为 +φ≡0，JSON 记作 +φ=0；恢复印刷恒等符号，保留数学原意。"
+                }
+              ]
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; BATCH08 review directly rendered the stated PDF page"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_ERROR",
+            "detail": "PDF175 展示式末尾为 +φ≡0，JSON 记作 +φ=0；恢复印刷恒等符号，保留数学原意。"
+          }
+        ],
+        "evidence": [
+          "直接核对教材 PDF 第175页（印刷第153页，偏移+22），pdftotext 与渲染图一致。页首 “Using (4.8) in (4.10) we obtain” 与 G M⁻¹[F−Gᵀλ]+φ≡0；紧接线性系统和 Gram 可逆句。仅有这段推导说明，无独立完整证明。 statement_latex、proof_latex=null、页码及 context_notation 均已核查；context 中实现/模型资格说明与原文逐字转录分开评价。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.reactionBalance",
+        "verdict": "PASS",
+        "explanation": "Ch04.lean:672–678；展开 Gradient、Jacobian、InverseMassMatrix、Gram、Curvature、textbookConstrainedReactionMultiplier 后，结论是 G D(F−Gᵀ A⁻¹(GDF+φ))+φ=0。所有分量同时等于0，当前 q,p 在量词末尾，没有调换时间/状态量词。hdet 是原文指定逆解的必要资格，并未把结论作为前提。F 任意位置力是原 Hamiltonian 力的合理推广，F=−∇U 是实例而非签名实际额外假设。库证明由 A A⁻¹=1 推得恒等式，声明无 sorry；这里不包含也不宣称动力学推导或约束保持。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-GramPositive",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "直接核对教材 PDF 第175页（印刷第153页，偏移+22），pdftotext 与渲染图一致。页首 “Assuming g′(q)M⁻¹g′(q)ᵀ is invertible, we may solve for λ.”；本句没有正定或独立梯度结论，没有独立完整证明。 statement_latex、proof_latex=null、页码及 context_notation 均已核查；context 中实现/模型资格说明与原文逐字转录分开评价。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.gramPositive",
+        "verdict": "FAIL",
+        "explanation": "Ch04.lean:682–689 及 textbookConstraintGram_posDef 展开的是正质量、真实坐标约束梯度线性独立 ⇒ G D Gᵀ 正定。该结果正确且证明无 sorry，但 PDF175 所选句是“假设 Gram 可逆，便可解出 λ”。[EXTRA] 正质量和梯度独立是正定/可逆的合理充分条件，却不是原假设不可省略的必要条件；PosDef 也没有表达 λ 的存在、解方程或唯一性。因此该条是辅助充分条件，不是所选原句的完整形式化。",
+        "counterexample": "缺失条款：在 Gram 可逆条件下，存在（且线性系统唯一确定）λ 满足 G D(F−Gᵀλ)+φ=0。例如 Nc=Mc=1,m=−1,γ(q)=q，Gram=−1 可逆，原句仍适用而 hm 不成立；说明正质量不是纯代数可解性的必要条件。",
+        "suggested_fix": "将 gramPositive 单独标为来源推导出的辅助引理；所选原句另以 det≠0 为假设，陈述 ∃! λ, G D(F−Gᵀλ)+φ=0，并以反力乘子显式式实现。若只保留辅助引理，应修改 statement_scope 明确不代表原句的全部结论。"
+      }
+    }
+  ]
+}
