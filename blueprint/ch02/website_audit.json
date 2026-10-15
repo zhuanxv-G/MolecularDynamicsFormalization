@@ -9729,7 +9729,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT12",
+    "repair": {
+      "eaudit": "EAUDIT12",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT12/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT12.md": "09624da96a08efd393863ab3d07661b5110060076d295a73972f2b8bce0877c4",
+        "Blueprint/Ch02.lean": "5731cf203876637f928cb6f318cc260e06a8cb25393dd1c49cf2523af691fe4c",
+        "blueprint/ch02/ch02_source.json": "576a9ccde22e5f8a7c2b01bdbc47037fdcc4c34ed248b88b63645b2532d90ac5"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.6-SymplecticEuler",
@@ -10092,7 +10104,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT12",
+    "repair": {
+      "eaudit": "EAUDIT12",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT12/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT12.md": "09624da96a08efd393863ab3d07661b5110060076d295a73972f2b8bce0877c4",
+        "Blueprint/Ch02.lean": "5731cf203876637f928cb6f318cc260e06a8cb25393dd1c49cf2523af691fe4c",
+        "blueprint/ch02/ch02_source.json": "576a9ccde22e5f8a7c2b01bdbc47037fdcc4c34ed248b88b63645b2532d90ac5"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.7-Adjoint",

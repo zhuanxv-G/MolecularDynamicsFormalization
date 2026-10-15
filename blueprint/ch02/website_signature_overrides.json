@@ -133,5 +133,11 @@
       "S对称；任意矩阵W。",
       "[EXTRA] 保留已证代数消去；补真实时间矩阵曲线、对称S(t)、W′=JSW及完整乘积导数/零导数结论，未以导数结论为前提。"
     ]
+  },
+  "MD-2.3.6-SymplecticIntegrator": {
+    "code": "def bp_symplecticIntegrator {n : ℕ}\n    (H : SymplecticCoordinates n → ℝ) (F : Flow ℝ (SymplecticCoordinates n))\n    (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) : Prop :=\n  ContDiff ℝ 2 H ∧\n  (∀ t z, HasDerivAt (fun s ↦ F s z) (textbookHamiltonianVectorField H (F t z)) t) ∧\n  ∃ δ > 0, (∀ h ∈ Ioo 0 δ, bp_IsSymplecticMap (G h)) ∧\n    ∃ r : ℝ, 0 < r ∧ ∀ z, ∃ K ≥ 0, ∃ d > 0, d ≤ δ ∧\n      ∀ h ∈ Ioo 0 d, ‖G h z - F h z‖ ≤ K * h^(r+1)",
+    "extra_assumptions": [
+      "[EXTRA] 补实际Hamiltonian流、正阶局部一致性及可用正步长域；保辛性质与数值近似资格合取，C²为充分[EXTRA]，未把无关辛映射冒充积分方法。"
+    ]
   }
 }

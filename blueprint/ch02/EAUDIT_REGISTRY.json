@@ -492,5 +492,44 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT11/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT12",
+    "section": "2.3.6",
+    "source_ids": [
+      "MD-2.3.6-SymplecticEulerPreserves",
+      "MD-2.3.6-SymplecticIntegrator"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.6-SymplecticIntegrator",
+      "MD-2.3.6-SymplecticEulerPreserves"
+    ],
+    "human_ids": [],
+    "lean_sha256": "5731cf203876637f928cb6f318cc260e06a8cb25393dd1c49cf2523af691fe4c",
+    "source_sha256": "576a9ccde22e5f8a7c2b01bdbc47037fdcc4c34ed248b88b63645b2532d90ac5",
+    "pages": [
+      102,
+      103
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch02.olean",
+        "Blueprint/Ch02.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "5731cf203876637f928cb6f318cc260e06a8cb25393dd1c49cf2523af691fe4c",
+      "log_sha256": "99054a4a2b9675eccbdc1ef93acef4db754c12cf0342692a2b94ba341b8fa48f"
+    },
+    "axiom_decl_count": 2,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT12/INDEX.md"
   }
 ]

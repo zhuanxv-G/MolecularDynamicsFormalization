@@ -3427,16 +3427,16 @@
     "MD-2.3.6-SymplecticIntegrator": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_symplecticIntegrator",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "593f5f3d0b323b5ebe4c517f6a4d1bb0ef7452aea77eab904ad3e70e3ea66fae",
-      "block_sha256": "593f5f3d0b323b5ebe4c517f6a4d1bb0ef7452aea77eab904ad3e70e3ea66fae",
+      "signature_sha256": "16e08d8be8c48983f588e68d5c0bd8bb36c619510b1cfa2b8c9dbe77a668ca89",
+      "block_sha256": "16e08d8be8c48983f588e68d5c0bd8bb36c619510b1cfa2b8c9dbe77a668ca89",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -3453,7 +3453,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT12/axioms.log",
+      "compiled": true
     },
     "MD-2.3.6-SymplecticEuler": {
       "checked": true,
@@ -3590,9 +3591,9 @@
     "MD-2.3.6-SymplecticEulerPreserves": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.symplecticEulerPreserves",
@@ -3618,7 +3619,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT12/axioms.log",
+      "compiled": true
     },
     "MD-2.3.7-Adjoint": {
       "checked": true,

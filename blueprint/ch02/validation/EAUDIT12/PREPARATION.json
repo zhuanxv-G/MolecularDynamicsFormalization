@@ -1,0 +1,24 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT12",
+  "section": "2.3.6",
+  "source_ids": [
+    "MD-2.3.6-SymplecticEulerPreserves",
+    "MD-2.3.6-SymplecticIntegrator"
+  ],
+  "reaudit_ids": [
+    "MD-2.3.6-SymplecticIntegrator",
+    "MD-2.3.6-SymplecticEulerPreserves"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+  "lean_sha256": "5731cf203876637f928cb6f318cc260e06a8cb25393dd1c49cf2523af691fe4c",
+  "source_sha256": "576a9ccde22e5f8a7c2b01bdbc47037fdcc4c34ed248b88b63645b2532d90ac5",
+  "pages": [
+    102,
+    103
+  ],
+  "prior_proof_blocks": {
+    "MD-2.3.6-SymplecticIntegrator": "def bp_symplecticIntegrator {n : ℕ} (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) : Prop :=\n  ∀ h, IsTextbookSymplecticMap (G h)"
+  }
+}

@@ -982,9 +982,16 @@ theorem globalGroupPrinted : ∀ n (Φ : SymplecticCoordinates n → SymplecticC
       IsTextbookSymplecticMap (Function.invFun Φ) := by
   sorry
 
-/-- source_id: MD-2.3.6-SymplecticIntegrator · definition · §2.3.6 · 印刷p.80 / PDFp.102 -/
-def bp_symplecticIntegrator {n : ℕ} (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) : Prop :=
-  ∀ h, IsTextbookSymplecticMap (G h)
+/-- source_id: MD-2.3.6-SymplecticIntegrator · definition · §2.3.6 · 印刷p.80 / PDFp.102 
+[EXTRA] 补实际Hamiltonian流、正阶局部一致性及可用正步长域；保辛性质与数值近似资格合取，C²为充分[EXTRA]，未把无关辛映射冒充积分方法。 -/
+def bp_symplecticIntegrator {n : ℕ}
+    (H : SymplecticCoordinates n → ℝ) (F : Flow ℝ (SymplecticCoordinates n))
+    (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) : Prop :=
+  ContDiff ℝ 2 H ∧
+  (∀ t z, HasDerivAt (fun s ↦ F s z) (textbookHamiltonianVectorField H (F t z)) t) ∧
+  ∃ δ > 0, (∀ h ∈ Ioo 0 δ, bp_IsSymplecticMap (G h)) ∧
+    ∃ r : ℝ, 0 < r ∧ ∀ z, ∃ K ≥ 0, ∃ d > 0, d ≤ δ ∧
+      ∀ h ∈ Ioo 0 d, ‖G h z - F h z‖ ≤ K * h^(r+1)
 
 /-- source_id: MD-2.3.6-SymplecticEuler · definition · §2.3.6 · 印刷p.80 / PDFp.102 -/
 noncomputable def bp_symplecticEuler {Nc : ℕ}
