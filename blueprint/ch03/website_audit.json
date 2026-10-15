@@ -10620,7 +10620,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH25_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT19",
+    "repair": {
+      "eaudit": "EAUDIT19",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT19/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT19.md": "984957ca4bf075f61db4da8005ed25c588284b184f8a523e21b32970914ed0fc",
+        "Blueprint/Ch03.lean": "35ee3f3a5232e0ab25a6987a9dbd789cdeaca4ba663e088894b0f7d6a5bef3d3",
+        "blueprint/ch03/ch03_source.json": "a7f93712fe0cb1ad3b39f65c83520b1e7dfe76f416ca2bb2454a10a5fae462f2"
+      }
+    }
   },
   {
     "source_id": "MD-3.7.2-CollisionQuartic",
@@ -10729,7 +10741,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH25_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT19",
+    "repair": {
+      "eaudit": "EAUDIT19",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT19/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT19.md": "984957ca4bf075f61db4da8005ed25c588284b184f8a523e21b32970914ed0fc",
+        "Blueprint/Ch03.lean": "35ee3f3a5232e0ab25a6987a9dbd789cdeaca4ba663e088894b0f7d6a5bef3d3",
+        "blueprint/ch03/ch03_source.json": "a7f93712fe0cb1ad3b39f65c83520b1e7dfe76f416ca2bb2454a10a5fae462f2"
+      }
+    }
   },
   {
     "source_id": "MD-3.7.2-CollisionalVerletOrder",
@@ -10783,8 +10807,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH25_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT19（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT19",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原二阶需先选同时间位置/相空间还是时间对齐误差，并修复参考轨迹端点及碰后值、实际首根/无根分支；选项：指定物理右连续轨迹和指标后重述受限二阶／将现时间对齐界另列辅助。当前错误资格不能视为已修定理，保持现状。"
+    }
   },
   {
     "source_id": "MD-3.7.3-PairForceDecoupling",

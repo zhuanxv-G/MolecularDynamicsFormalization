@@ -1,0 +1,27 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT19",
+  "section": "3.7.2",
+  "source_ids": [
+    "MD-3.7.2-CollisionTimeRelation",
+    "MD-3.7.2-CollisionalVerletOrder",
+    "MD-3.7.2-CollisionalVerletRelation"
+  ],
+  "reaudit_ids": [
+    "MD-3.7.2-CollisionTimeRelation",
+    "MD-3.7.2-CollisionalVerletRelation"
+  ],
+  "human_ids": [
+    "MD-3.7.2-CollisionalVerletOrder"
+  ],
+  "old_lean_sha256": "9385a3dc5762df984984abee9002ae3f3ccbe0f86082a8caef74b98363b26156",
+  "lean_sha256": "35ee3f3a5232e0ab25a6987a9dbd789cdeaca4ba663e088894b0f7d6a5bef3d3",
+  "source_sha256": "a7f93712fe0cb1ad3b39f65c83520b1e7dfe76f416ca2bb2454a10a5fae462f2",
+  "pages": [
+    157,
+    158
+  ],
+  "prior_proof_blocks": {
+    "MD-3.7.2-CollisionalVerletRelation": "def collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (Rc : Z n → Z n)\n    (tc hmax h : ℝ) (z w : Z n) : Prop :=\n  0 < tc ∧ 0 < hmax ∧ h=min tc hmax ∧\n    w=if tc<hmax then Rc (verlet m F h z) else verlet m F h z"
+  }
+}

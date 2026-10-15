@@ -4781,16 +4781,31 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "a=Qi,b=Qj,radius=σi+σj；关系列出所有正候选根；下一次最小根与横截资格由方法声明单列。"
+      "对预先选定的不同粒子索引 i≠j，a(t)=Q_i(t)、b(t)=Q_j(t)、radius=σ_i+σ_j，其中 σ_i、σ_j 为球的核半径，‖·‖为物理空间欧氏范数。",
+      "式(3.19)给出接触候选方程；collisionTimeRelation 取其中 t>0 的候选时刻，不编码最小性、根的存在性或横截性。下一碰撞需要从各不同粒子对的候选根中选择最早的合格正根；原页没有单独陈述横截假设。",
+      "本批 collisionalVerletRelation 仅给定 tc 后的更新分支；collisionalVerletOrder 另以 g 规定首个正接触根，但没有对该数值根规定横截性。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch03.collisionTimeRelation",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:32:51.271067",
+        "before_sha256": "36d3b3a1aaa579685d6cf77302dc5590c65ebfa147d62407e9c3b27c9936de57",
+        "after_sha256": "1c5f5408ad1c60302980bc87d06b0aa8b704b6a640623d65c7a86977113be365",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH25_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.7.2-CollisionQuartic",
@@ -4842,12 +4857,24 @@
     "lean_decl": "MD.Ch03.collisionalVerletRelation",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "tc>0,hmax>0明示；tc必须是下一接触时刻，求根实现不是数学定理。"
+      "tc>0,hmax>0明示；tc必须是下一接触时刻，求根实现不是数学定理。",
+      "[EXTRA] 保留给定tc/Rc的更新辅助；补实际粒子二次路径、正质量/半径、F=−∇U的对偶资格、不同粒子对的最早真实接触、唯一单碰撞及该接触面的质量加权弹性反射。Option.none明确无正根；严格tc<hmax及等号else照原印保留，不静默修改算法。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:32:51.271067",
+        "before_sha256": "c056ea91c0fea84656aaf3a74684b747279cb90d7af814de0601ce26d8a2de6c",
+        "after_sha256": "5e40a7efccc458a4e33b62a1189fc87e8865918ee2458509bfce5791e14acaa5",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH25_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.7.2-CollisionalVerletOrder",
@@ -4874,8 +4901,19 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:32:51.271067",
+        "before_sha256": "97775740e95797c78da8e7fc97749edc3b554327659aee74bec61920ccfd9bd7",
+        "after_sha256": "9b447b4331f6681d81a1bda6c350ea13a5532a4c65be101469802a5a63fce07b",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH25_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.7.3-PairForceDecoupling",

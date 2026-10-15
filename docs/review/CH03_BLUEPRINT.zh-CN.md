@@ -145,10 +145,10 @@
 | MD-3.7.1-CollisionDefectZero | 134/156 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
 | MD-3.7.1-EndImpactThirdOrderPrinted | 134/156 | FAIL | 待导师 / EAUDIT18（原返回FAIL保留） | incomplete |
 | MD-3.7.2-CollisionQuadraticPath | 135/157 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
-| MD-3.7.2-CollisionTimeRelation | 135/157 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
+| MD-3.7.2-CollisionTimeRelation | 135/157 | PASS | 待复审 / EAUDIT19 | self-contained |
 | MD-3.7.2-CollisionQuartic | 135/157 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
-| MD-3.7.2-CollisionalVerletRelation | 135/157 | PASS | FAIL（绑定版本 433a13ca6407） | self-contained |
-| MD-3.7.2-CollisionalVerletOrder | 135/157 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | incomplete |
+| MD-3.7.2-CollisionalVerletRelation | 135/157 | PASS | 待复审 / EAUDIT19 | self-contained |
+| MD-3.7.2-CollisionalVerletOrder | 135/157 | NEEDS_HUMAN | 待导师 / EAUDIT19（原返回FAIL保留） | incomplete |
 | MD-3.7.3-PairForceDecoupling | 136/158 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | incomplete |
 | MD-3.7.3-DecoupledOrder | 136/158 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | incomplete |
 | MD-3.7.3-ModifiedCollisionProjection | 136/158 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
@@ -7891,7 +7891,7 @@ def collisionTimeRelation {d : ℕ} (a b : ℝ → Position d) (radius t : ℝ) 
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT19**。原文JSON：CORRECTED；未冻结。
 
 已展开 MolecularDynamics/Notation.lean:844 的 Position d=EuclideanSpace ℝ (Fin d)，故这里 ‖a t−b t‖ 是 d 维欧氏距离，不是 Q 上的坐标最大范数。本地 Ch03.lean:1423 及 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3651 的定义均为 0<t ∧ ‖a t−b t‖=radius。以 a=Q_i、b=Q_j、radius=σ_i+σ_j 实例化，表达预先选定的一对 i≠j 的正时间接触候选，保持了(3.19)距离及半径和两个关键量。i≠j 是粒子索引条件，不应误译为 a≠b 的函数条件；此定义是单对方程的辅助关系，原句没有在本条要求它选择所有粒子对中的最小根。增加 t>0 对“subsequent collision”的未来候选解释合理，t=0 的当前接触不作为下一次步长。不把它误称为下一碰撞求解器，不由它推断根存在或横截。没有[ERRATUM?]；定义没有 sorry。
 
@@ -7901,11 +7901,11 @@ def collisionTimeRelation {d : ℕ} (a b : ℝ → Position d) (radius t : ℝ) 
 
 位置：[Blueprint/Ch03.lean:1714](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1714>)（`MD.Ch03.collisionTimeRelation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`ee0722ca4ea0c7ace19913f622e7dbfec5b164dd34ddce53a053239921e91384`；原文SHA256：`cfb2f1f8c6304ac2ded6beab0f03790ecc477f79b8cac782bb155dac266e4889`。
+签名SHA256：`ee0722ca4ea0c7ace19913f622e7dbfec5b164dd34ddce53a053239921e91384`；原文SHA256：`bf7dcfb7e22f65697467e705a1a95a9506fcef0195d35c082769722aabfee6d9`。
 
 ## 1. MD-3.7.2-CollisionQuartic · unnumbered_claim · 印刷p.135 / PDFp.157
 
@@ -7983,6 +7983,48 @@ def collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (R
     (tc hmax h : ℝ) (z w : Z n) : Prop :=
   0 < tc ∧ 0 < hmax ∧ h=min tc hmax ∧
     w=if tc<hmax then Rc (verlet m F h z) else verlet m F h z
+
+def particleQuadraticPath {N d : ℕ} (m : Fin N → ℝ)
+    (F : (Fin N → Position d) → Fin N → Position d)
+    (z : (Fin N → Position d) × (Fin N → Position d)) (t : ℝ) : Fin N → Position d :=
+  fun i ↦ z.1 i+(t/m i) • z.2 i+(t^2/(2*m i)) • F z.1 i
+
+def particleVerlet {N d : ℕ} (m : Fin N → ℝ)
+    (F : (Fin N → Position d) → Fin N → Position d)
+    (h : ℝ) (z : (Fin N → Position d) × (Fin N → Position d)) :=
+  let P := z.2+(h/2) • F z.1
+  let Q := fun i ↦ z.1 i+(h/m i) • P i
+  (Q,P+(h/2) • F Q)
+
+def particleReflection {N d : ℕ} (m : Fin N → ℝ) (i j : Fin N)
+    (z : (Fin N → Position d) × (Fin N → Position d)) :=
+  let u : Fin N → Position d := fun a ↦ if a=i then z.1 i-z.1 j
+    else if a=j then z.1 j-z.1 i else 0
+  let α := -2*(∑ a, inner ℝ (u a) (z.2 a)/m a)/(∑ a, ‖u a‖^2/m a)
+  (z.1,z.2+α • u)
+
+def physicalCVARelation {N d : ℕ} (m σ : Fin N → ℝ)
+    (U : (Fin N → Position d) → ℝ)
+    (F : (Fin N → Position d) → Fin N → Position d)
+    (event : Option (ℝ × (Fin N × Fin N))) (hmax h : ℝ)
+    (z w : (Fin N → Position d) × (Fin N → Position d)) : Prop :=
+  (∀ i, 0 < m i ∧ 0 < σ i) ∧ Differentiable ℝ U ∧
+  (∀ q ξ, fderiv ℝ U q ξ = -∑ i, inner ℝ (F q i) (ξ i)) ∧
+  (∀ i j, i ≠ j → σ i+σ j ≤ ‖z.1 i-z.1 j‖) ∧ 0 < hmax ∧
+  match event with
+  | none =>
+    (∀ t > 0, ∀ i j, i ≠ j → σ i+σ j <
+      ‖particleQuadraticPath m F z t i-particleQuadraticPath m F z t j‖) ∧
+    h=hmax ∧ w=particleVerlet m F h z
+  | some (tc,(i,j)) =>
+    0 < tc ∧ i ≠ j ∧
+    ‖particleQuadraticPath m F z tc i-particleQuadraticPath m F z tc j‖=σ i+σ j ∧
+    (∀ t ∈ Ioo 0 tc, ∀ a b, a ≠ b → σ a+σ b <
+      ‖particleQuadraticPath m F z t a-particleQuadraticPath m F z t b‖) ∧
+    (∀ a b, a ≠ b → (a,b) ≠ (i,j) → (a,b) ≠ (j,i) →
+      σ a+σ b < ‖particleQuadraticPath m F z tc a-particleQuadraticPath m F z tc b‖) ∧
+    h=min tc hmax ∧ w=if tc<hmax then particleReflection m i j (particleVerlet m F h z)
+      else particleVerlet m F h z
 ```
 
 ### 5. 对照表
@@ -7991,13 +8033,14 @@ def collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (R
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch03.collisionalVerletRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | tc>0,hmax>0明示；tc必须是下一接触时刻，求根实现不是数学定理。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留给定tc/Rc的更新辅助；补实际粒子二次路径、正质量/半径、F=−∇U的对偶资格、不同粒子对的最早真实接触、唯一单碰撞及该接触面的质量加权弹性反射。Option.none明确无正根；严格tc<hmax及等号else照原印保留，不静默修改算法。 | [EXTRA] |
 | 原页核对/疑点 | tc=hmax边界时原伪代码不反射，之后的二阶陈述排除此边界，不能冒充一般结果。 | NEEDS_HUMAN |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT19**。原文JSON：DRAFT；未冻结。
 
 已展开 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v i=v i/m i，以及 verlet：qnew=q+hM^{-1}p+(h²/2)M^{-1}F(q)，pnew=p+(h/2)(F(q)+F(qnew))（MolecularDynamics/Chapter02/ReviewDefinitions.lean:2816–2817、2840、2859–2861）。本地 Ch03.lean:1437–1441 和依赖 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3652–3655 一致：tc>0、hmax>0、h=min tc hmax，并按严格 tc<hmax 决定是否对 Verlet 结果应用给定 Rc。这忠实于框内更新分支，tc=hmax 不反射也忠实于原书，应保留并单独标明边界问题。[EXTRA]正时间及正最大步长合理。FAIL 的原因是本条引用范围包含算法首行 Calculate 下一碰撞：谓词没有任何 Q_i/Q_j、半径、接触、最小正根、选中碰撞对或 Rc 为实际弹性反射的条件，任意正数 tc 与任意 Rc 都可满足；extra_assumptions 中“tc必须是下一接触时刻”仅为文字，没有在定义中表达。若仅把它定位为给定合格 tc、Rc 后的分支图，可以使用此辅助关系；当前不能据此覆盖完整算法定义。全实数 tc 也没有表达没有未来接触时应直接走 hmax 的情形。此定义无 sorry，失败与证明空缺无关。
 
@@ -8009,13 +8052,13 @@ def collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (R
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1728](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1728>)（`MD.Ch03.collisionalVerletRelation`）。
+位置：[Blueprint/Ch03.lean:1729](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1729>)（`MD.Ch03.collisionalVerletRelation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`d08e4b7e5a551a4f22bfb2dd2a2557da1837f578621de5cc298a309cf6b14fe0`；原文SHA256：`4ab8611645a8a25df2942d42ecc51c6c108f08a4c593037b1f199aeb67468eb6`。
+签名SHA256：`940fcfb78fdf24637485d088abede3d7422d4f77872f631d853e62ae7f993089`；原文SHA256：`4ab8611645a8a25df2942d42ecc51c6c108f08a4c593037b1f199aeb67468eb6`。
 
 ## 1. MD-3.7.2-CollisionalVerletOrder · unnumbered_claim · 印刷p.135 / PDFp.157
 
@@ -8064,7 +8107,7 @@ theorem collisionalVerletOrder :
 
 本地预审：**NEEDS_HUMAN**。原文二阶论断未明示边界和跳跃轨道误差度量；忠实记录额外资格，不能将变步长当固定hmax迭代时钟。
 
-网站审计：**FAIL（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT19（原返回FAIL保留）**。原文JSON：DRAFT；未冻结。
 
 已读本地 Ch03.lean:1445–1468 及依赖 MolecularDynamics/Chapter03/Statements.lean:4508–4530，并展开所有专用定义。Q n=Fin n→ℝ，Z n=Q n×Q n；positiveMass m 为 ∀i,0<m i；grad U q i=(fderiv ℝ U q)(Pi.single i 1)；invMass m v i=v i/m i；collisionQuadraticPath 与 verlet 如式(3.18)及完整速度 Verlet 更新。oneStepIterate G h z j=(G h)^[j]z（MolecularDynamics/Chapter02/OneStepConvergence.lean:1443–1444），所以这里迭代的 h 参数是固定外层 hmax，实际累计时间另由 times 的 min(tc,hmax) 递推。admissibleCollisionState（Statements.lean:4464–4465）为 g(q)>0 或 g(q)=0 且 ∑ grad g(q)_i p_i/m_i>0。finiteCollisionTrajectory（4431–4440）只要求 q 在闭区间连续、g(q)≥0、在开区间非事件处满足 Newton ODE，并在有限 events 的每个内部事件有接触、左右动量极限、负入射法向速度及弹性左右极限关系；它不规定 p 在端点的值／连续性，不规定事件处 p(t) 取哪侧，也没有“所有接触恰为 events”的双向资格。签名再要求每个 admissible 状态都有有限最小正二次路径根 tc，明确给出 Rc 的质量加权反射公式，并要求所有 h>0、所有状态满足分支关系。结论是存在统一 C,δ，在合格自适应网格上允许 θ:ℝ≃oℝ 的 O(hmax²) 时间对齐后，全相空间节点误差 O(hmax²)，且 θ 固定0和τ。定义全部已找到，不需要 NEEDS_HUMAN。
 [EXTRA]正质量、光滑势／接触函数和有限非切向实际事件，是可用于限定二阶论断的合理资格，但数值根没有横截条件；所谓“有限横截隔离事件”只保证列出的实际 events，而不排除漏列接触。排除 tc=hmax 如实避开原书未反射边界，得到的是额外限定版本；时间对齐在结论中而非前提中，不能冒充原书明示的同时间二阶误差定义。要求对所有 admissible 状态必有有限未来根不必要且过强，排除了自由静止或永不相撞的合法状态，宜按有限窗口／可选接触表示。
@@ -8078,9 +8121,9 @@ theorem collisionalVerletOrder :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch03.lean:1736](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1736>)（`MD.Ch03.collisionalVerletOrder`）。
+位置：[Blueprint/Ch03.lean:1779](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1779>)（`MD.Ch03.collisionalVerletOrder`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -8128,7 +8171,7 @@ Ch03.lean:1467–1468展开为对每个实数r有φ(r)=α(r)+β(r)，且deriv α
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1758](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1758>)（`MD.Ch03.pairForceDecoupling`）。
+位置：[Blueprint/Ch03.lean:1801](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1801>)（`MD.Ch03.pairForceDecoupling`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8190,7 +8233,7 @@ theorem decoupledOrder :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch03.lean:1764](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1764>)（`MD.Ch03.decoupledOrder`）。
+位置：[Blueprint/Ch03.lean:1807](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1807>)（`MD.Ch03.decoupledOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8241,7 +8284,7 @@ def modifiedCollisionProjection {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1779](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1779>)（`MD.Ch03.modifiedCollisionProjection`）。
+位置：[Blueprint/Ch03.lean:1822](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1822>)（`MD.Ch03.modifiedCollisionProjection`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8308,7 +8351,7 @@ def freeHardSphereHamiltonian_contactAllowed {N d : ℕ} (m σ : Fin N → ℝ)
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1787](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1787>)（`MD.Ch03.freeHardSphereHamiltonian`）。
+位置：[Blueprint/Ch03.lean:1830](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1830>)（`MD.Ch03.freeHardSphereHamiltonian`）。
 
 Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 

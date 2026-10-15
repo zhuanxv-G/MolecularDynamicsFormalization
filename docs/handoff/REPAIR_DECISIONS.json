@@ -883,5 +883,20 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "3.7.1"
+  },
+  "MD-3.7.2-CollisionalVerletRelation": {
+    "category": "A",
+    "handling": "保留给定tc/Rc的更新辅助；补实际粒子二次路径、正质量/半径、F=−∇U的对偶资格、不同粒子对的最早真实接触、唯一单碰撞及该接触面的质量加权弹性反射。Option.none明确无正根；严格tc<hmax及等号else照原印保留，不静默修改算法。",
+    "section": "3.7.2"
+  },
+  "MD-3.7.2-CollisionTimeRelation": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "3.7.2"
+  },
+  "MD-3.7.2-CollisionalVerletOrder": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "3.7.2"
   }
 }

@@ -4906,9 +4906,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.collisionTimeRelation",
@@ -4933,7 +4933,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT19/axioms.log"
     },
     "MD-3.7.2-CollisionQuartic": {
       "checked": true,
@@ -4974,16 +4974,16 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.collisionalVerletRelation",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "d08e4b7e5a551a4f22bfb2dd2a2557da1837f578621de5cc298a309cf6b14fe0",
-      "block_sha256": "d08e4b7e5a551a4f22bfb2dd2a2557da1837f578621de5cc298a309cf6b14fe0",
+      "signature_sha256": "940fcfb78fdf24637485d088abede3d7422d4f77872f631d853e62ae7f993089",
+      "block_sha256": "940fcfb78fdf24637485d088abede3d7422d4f77872f631d853e62ae7f993089",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -5001,16 +5001,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT19/axioms.log"
     },
     "MD-3.7.2-CollisionalVerletOrder": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.collisionalVerletOrder",
@@ -5035,7 +5035,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT19/axioms.log"
     },
     "MD-3.7.3-PairForceDecoupling": {
       "checked": true,

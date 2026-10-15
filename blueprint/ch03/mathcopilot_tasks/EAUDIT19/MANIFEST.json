@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT19",
+  "input_sha256": {
+    "BATCH_EAUDIT19.md": "984957ca4bf075f61db4da8005ed25c588284b184f8a523e21b32970914ed0fc",
+    "Blueprint/Ch03.lean": "35ee3f3a5232e0ab25a6987a9dbd789cdeaca4ba663e088894b0f7d6a5bef3d3",
+    "blueprint/ch03/ch03_source.json": "a7f93712fe0cb1ad3b39f65c83520b1e7dfe76f416ca2bb2454a10a5fae462f2"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT19a",
+      "source_id": "MD-3.7.2-CollisionTimeRelation",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT19/a",
+      "total_bytes": 91360,
+      "manifest_sha256": "71a921fd5be1f9f04f3212333c48663d9518870563ff016955bc66f479cae68f"
+    },
+    {
+      "subtask": "EAUDIT19b",
+      "source_id": "MD-3.7.2-CollisionalVerletRelation",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT19/b",
+      "total_bytes": 99583,
+      "manifest_sha256": "8fb2c9c598efffc3a308abfb6afa93e022bc58969ceab07b798ceb049f9da3e9"
+    }
+  ]
+}
