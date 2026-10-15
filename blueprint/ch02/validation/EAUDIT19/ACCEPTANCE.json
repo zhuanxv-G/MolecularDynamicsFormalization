@@ -1,0 +1,47 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT19",
+  "section": "2.4.5",
+  "source_ids": [
+    "MD-2.4.5-ConjugateIterates",
+    "MD-2.4.5-ConjugateLimits",
+    "MD-2.4.5-EulerConjugacy",
+    "MD-2.4.5-Processing",
+    "MD-2.4.5-ProcessingIterates",
+    "MD-2.4.5-ProcessingOrder"
+  ],
+  "reaudit_ids": [
+    "MD-2.4.5-ConjugateIterates",
+    "MD-2.4.5-EulerConjugacy",
+    "MD-2.4.5-Processing",
+    "MD-2.4.5-ProcessingIterates",
+    "MD-2.4.5-ProcessingOrder"
+  ],
+  "human_ids": [
+    "MD-2.4.5-ConjugateLimits"
+  ],
+  "lean_sha256": "785cdedb160471c29a7e3ebfc4132ef07d4310fce39e3b032a9ca44bf4a255f4",
+  "source_sha256": "ac42dd27e0ffe34b479d5e637e1f5755c1617439b01acb8a99c3e52a39940feb",
+  "pages": [
+    110
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch02.olean",
+      "Blueprint/Ch02.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "785cdedb160471c29a7e3ebfc4132ef07d4310fce39e3b032a9ca44bf4a255f4",
+    "log_sha256": "581693dd1873b0aa1d4bd8f8cc74785a3ec9db194af143bff8e8c0a947a748fb"
+  },
+  "axiom_decl_count": 8,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT19/INDEX.md"
+}

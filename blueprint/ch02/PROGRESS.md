@@ -135,12 +135,12 @@
 | MD-2.4.4-NewtonQuadratic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | placeholder / incomplete；定量Newton–Kantorovich局部定理、邻域导数逆有界与二阶余项。 |
 | MD-2.4.4-FrozenNewton | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；沿凸球积分/均值范数界、保持邻域与迭代几何界。 |
 | MD-2.4.5-Conjugacy | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.4.5-ConjugateIterates | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.4.5-ConjugateLimits | DRAFT/原页已核 | 已编译 | PASS | NEEDS_HUMAN（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.4.5-EulerConjugacy | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
-| MD-2.4.5-Processing | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.4.5-ProcessingIterates | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.4.5-ProcessingOrder | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.4.5-ConjugateIterates | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | existing_bridge / checked+documented priors |
+| MD-2.4.5-ConjugateLimits | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT19（原返回NEEDS_HUMAN保留） | existing_bridge / checked+documented priors |
+| MD-2.4.5-EulerConjugacy | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | local_proof / self-contained |
+| MD-2.4.5-Processing | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | definition / self-contained |
+| MD-2.4.5-ProcessingIterates | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | existing_bridge / checked+documented priors |
+| MD-2.4.5-ProcessingOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | existing_bridge / checked+documented priors |
 | MD-2.4.5-EulerEffectiveOrder | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际半kick Homeomorph处理器构造及完整Verlet全局二阶，局部共轭代数条目不能单独证明有效二阶。 |
 | MD-2.5.1-RK | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.5.1-RK4 | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
@@ -443,3 +443,5 @@ EAUDIT16 §2.4.2：2条落盘，单文件与2项公理通过；未写新证明�
 EAUDIT17 §2.4.3：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT18 §2.4.4：4条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT19 §2.4.5：6条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。

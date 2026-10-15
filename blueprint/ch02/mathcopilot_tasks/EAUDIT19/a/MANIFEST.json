@@ -1,0 +1,27 @@
+{
+  "eaudit": "EAUDIT19",
+  "source_id": "MD-2.4.5-ConjugateIterates",
+  "input_sha256": {
+    "BATCH_EAUDIT19.md": "57ce08e5935124a46390be255d460d09687023570de002c406c5ebc494e5aa03",
+    "Blueprint/Ch02.lean": "785cdedb160471c29a7e3ebfc4132ef07d4310fce39e3b032a9ca44bf4a255f4",
+    "blueprint/ch02/ch02_source.json": "ac42dd27e0ffe34b479d5e637e1f5755c1617439b01acb8a99c3e52a39940feb",
+    "EAUDIT19a_materials": "2548a6c93d294ba4adbbf3d746c190f705df04096b864b35aa7f9175dd13755f",
+    "EAUDIT19a_PAGES.pdf": "667d466133788eb6ecc9f9a6f8591d67805d4c21308b404cb0098d07069f5582"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    110
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "bc294ed85f08f9451faddad21a623c270f7f8fe6fd2221ffa9af5aacaac0cff1",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ProcessedMethods.lean",
+      "name": "textbookConjugateMap",
+      "file_sha256": "789126e91c8dc6b98160f2cb3fda025efacb1be31c6842e3784a0b6e2325fcdb",
+      "excerpt_sha256": "691a91929f16607bebfb35c4f6a7795fdf4c2394df70674264320b0ac7487e54"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT19_review.json",
+  "total_task_bytes": 86485
+}

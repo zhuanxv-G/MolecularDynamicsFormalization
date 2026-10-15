@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT19",
+  "source_id": "MD-2.4.5-ProcessingIterates",
+  "input_sha256": {
+    "BATCH_EAUDIT19.md": "57ce08e5935124a46390be255d460d09687023570de002c406c5ebc494e5aa03",
+    "Blueprint/Ch02.lean": "785cdedb160471c29a7e3ebfc4132ef07d4310fce39e3b032a9ca44bf4a255f4",
+    "blueprint/ch02/ch02_source.json": "ac42dd27e0ffe34b479d5e637e1f5755c1617439b01acb8a99c3e52a39940feb",
+    "EAUDIT19d_materials": "2c5c7f41fbf0b21da8dc8f3214be77eef00a9654d0e02695b7b891372369a77e",
+    "EAUDIT19d_PAGES.pdf": "667d466133788eb6ecc9f9a6f8591d67805d4c21308b404cb0098d07069f5582"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    110
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "1c111ad9362486d18ae6a6473b32021a2b4c8c399aeb2f3051585cf52ff15a58",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "name": "oneStepIterate",
+      "file_sha256": "c9bc53727962c962a9420dbfa305ede46e90b38fdded8952b400381f474e3385",
+      "excerpt_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ProcessedMethods.lean",
+      "name": "textbookConjugateMap",
+      "file_sha256": "789126e91c8dc6b98160f2cb3fda025efacb1be31c6842e3784a0b6e2325fcdb",
+      "excerpt_sha256": "691a91929f16607bebfb35c4f6a7795fdf4c2394df70674264320b0ac7487e54"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ProcessedMethods.lean",
+      "name": "textbookProcessedIterate",
+      "file_sha256": "789126e91c8dc6b98160f2cb3fda025efacb1be31c6842e3784a0b6e2325fcdb",
+      "excerpt_sha256": "9adc7c4e9ae705d9618c521f48ebee56bb8400dcf2c2f20c5eb4de994a43da92"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ProcessedMethods.lean",
+      "name": "textbookProcessedMethod",
+      "file_sha256": "789126e91c8dc6b98160f2cb3fda025efacb1be31c6842e3784a0b6e2325fcdb",
+      "excerpt_sha256": "29505ccaac14272c1b5ada05fd7f389b763a96eb7077acdb48d490e032103a2d"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT19_review.json",
+  "total_task_bytes": 88806
+}

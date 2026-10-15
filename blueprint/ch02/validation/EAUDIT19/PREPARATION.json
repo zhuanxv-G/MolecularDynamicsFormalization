@@ -1,0 +1,35 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT19",
+  "section": "2.4.5",
+  "source_ids": [
+    "MD-2.4.5-ConjugateIterates",
+    "MD-2.4.5-ConjugateLimits",
+    "MD-2.4.5-EulerConjugacy",
+    "MD-2.4.5-Processing",
+    "MD-2.4.5-ProcessingIterates",
+    "MD-2.4.5-ProcessingOrder"
+  ],
+  "reaudit_ids": [
+    "MD-2.4.5-ConjugateIterates",
+    "MD-2.4.5-EulerConjugacy",
+    "MD-2.4.5-Processing",
+    "MD-2.4.5-ProcessingIterates",
+    "MD-2.4.5-ProcessingOrder"
+  ],
+  "human_ids": [
+    "MD-2.4.5-ConjugateLimits"
+  ],
+  "old_lean_sha256": "2947ce247280ce606c75c9c9a9a99d95ec396e15f1d09266ac465027cfca9f61",
+  "lean_sha256": "785cdedb160471c29a7e3ebfc4132ef07d4310fce39e3b032a9ca44bf4a255f4",
+  "source_sha256": "ac42dd27e0ffe34b479d5e637e1f5755c1617439b01acb8a99c3e52a39940feb",
+  "pages": [
+    110
+  ],
+  "prior_proof_blocks": {
+    "MD-2.4.5-EulerConjugacy": "theorem eulerConjugacy :\n  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h,\n    textbookMomentumKick (textbookPotentialForce U) (h/2) ∘ textbookSymplecticEuler m U h ∘\n      textbookMomentumKick (textbookPotentialForce U) (-h/2) = coordinateVerlet m (textbookPotentialForce U) h := by\n  intro n m U h\n  funext z\n  let F := textbookPotentialForce U\n  let q : Q n := fun i => z (Sum.inl i)+h*(m i)⁻¹*\n    (z (Sum.inr i)+(h/2)*F (textbookPositionProjection n z) i)\n  have hl : textbookPositionProjection n\n      (textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z))=q := by\n    funext i\n    simp [q,F,textbookPositionProjection,textbookSymplecticEuler,\n      textbookMomentumKick,textbookPositionDrift,Function.comp_def]\n    ring <;> simp\n  have hr : textbookPositionProjection n\n      (textbookPositionDrift m h (textbookMomentumKick F (h/2) z))=q := by\n    funext i\n    simp [q,textbookPositionProjection,textbookPositionDrift,textbookMomentumKick]\n  funext i\n  rcases i with i | i\n  · change textbookPositionProjection n\n      (textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z)) i =\n        textbookPositionProjection n (textbookPositionDrift m h (textbookMomentumKick F (h/2) z)) i\n    rw [hl,hr]\n  · change textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z) (Sum.inr i)+\n      (h/2)*F (textbookPositionProjection n\n        (textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z))) i =\n      textbookMomentumKick F (h/2) z (Sum.inr i)+(h/2)*F (textbookPositionProjection n\n        (textbookPositionDrift m h (textbookMomentumKick F (h/2) z))) i\n    rw [hl,hr,textbookSymplecticEuler_momentum,textbookPositionProjection_momentumKick]\n    simp [F,textbookMomentumKick]\n    ring",
+    "MD-2.4.5-Processing": "noncomputable def bp_processedIterate (χ : ℝ → E ≃ₜ E) (B : ℝ → E → E)\n    (h : ℝ) (z₀ : E) (n : ℕ) : E :=\n  (χ h).symm (oneStepIterate B h ((χ h) z₀) n)",
+    "MD-2.4.5-ProcessingIterates": "theorem processingIterates (χ : ℝ → E ≃ₜ E)\n    (B G : ℝ → E → E) (hG : ∀ h, G h = textbookProcessedMethod χ B h)\n    (h : ℝ) (z₀ : E) (n : ℕ) :\n    textbookProcessedIterate χ B h z₀ n = oneStepIterate G h z₀ n := by\n  apply MolecularDynamics.textbookProcessedIterate_eq_of_conjugacy <;> assumption",
+    "MD-2.4.5-ProcessingOrder": "theorem processingOrder (χ : ℝ → E ≃ₜ E) (B G : ℝ → E → E)\n    (hG : ∀ h, G h=textbookProcessedMethod χ B h) (γ : ℝ → E) (τ : ℝ) (r : ℕ)\n    (horder : ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,\n      oneStepMaxError G (τ/ν) γ ν ≤ C*(τ/ν)^r) :\n    (∀ h ν, textbookProcessedMaxError χ B h γ ν=oneStepMaxError G h γ ν) ∧\n    (∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,\n      textbookProcessedMaxError χ B (τ/ν) γ ν ≤ C*(τ/ν)^r) := by\n  have heq := MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy χ B G hG\n  refine ⟨fun h ν => heq h γ ν, ?_⟩\n  simpa only [heq] using horder"
+  }
+}

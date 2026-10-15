@@ -166,5 +166,30 @@
     "extra_assumptions": [
       "[EXTRA] 保留残差并补零点与隐式更新等价、给定G满足的映射方程；不假设任意f,h都有唯一解。"
     ]
+  },
+  "MD-2.4.5-EulerConjugacy": {
+    "code": "theorem eulerConjugacy :\n  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h,\n    textbookMomentumKick (textbookPotentialForce U) (h/2) ∘ textbookSymplecticEuler m U h ∘\n      textbookMomentumKick (textbookPotentialForce U) (-h/2) = coordinateVerlet m (textbookPotentialForce U) h := by\n  intro n m U h\n  funext z\n  let F := textbookPotentialForce U\n  let q : Q n := fun i => z (Sum.inl i)+h*(m i)⁻¹*\n    (z (Sum.inr i)+(h/2)*F (textbookPositionProjection n z) i)\n  have hl : textbookPositionProjection n\n      (textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z))=q := by\n    funext i\n    simp [q,F,textbookPositionProjection,textbookSymplecticEuler,\n      textbookMomentumKick,textbookPositionDrift,Function.comp_def]\n    ring <;> simp\n  have hr : textbookPositionProjection n\n      (textbookPositionDrift m h (textbookMomentumKick F (h/2) z))=q := by\n    funext i\n    simp [q,textbookPositionProjection,textbookPositionDrift,textbookMomentumKick]\n  funext i\n  rcases i with i | i\n  · change textbookPositionProjection n\n      (textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z)) i =\n        textbookPositionProjection n (textbookPositionDrift m h (textbookMomentumKick F (h/2) z)) i\n    rw [hl,hr]\n  · change textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z) (Sum.inr i)+\n      (h/2)*F (textbookPositionProjection n\n        (textbookSymplecticEuler m U h (textbookMomentumKick F (-h/2) z))) i =\n      textbookMomentumKick F (h/2) z (Sum.inr i)+(h/2)*F (textbookPositionProjection n\n        (textbookPositionDrift m h (textbookMomentumKick F (h/2) z))) i\n    rw [hl,hr,textbookSymplecticEuler_momentum,textbookPositionProjection_momentumKick]\n    simp [F,textbookMomentumKick]\n    ring\n\ntheorem eulerConjugacy_homeomorph (n : ℕ) (m : Fin n → ℝ)\n    (_hm : ∀ i, 0 < m i) (U : Q n → ℝ)\n    (_hF : Continuous (textbookPotentialForce U)) (h : ℝ) :\n    ∃ χ : SymplecticCoordinates n ≃ₜ SymplecticCoordinates n,\n      (∀ z, χ z = textbookMomentumKick (textbookPotentialForce U) (-h/2) z) ∧\n      (∀ z, χ.symm z = textbookMomentumKick (textbookPotentialForce U) (h/2) z) ∧\n      coordinateVerlet m (textbookPotentialForce U) h =\n        χ.symm ∘ textbookSymplecticEuler m U h ∘ χ := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 原代数恒等式及证明完整保留；补正质量、连续力资格下的真实Homeomorph见证、双向kick及共轭方向。新结论暂sorry。"
+    ]
+  },
+  "MD-2.4.5-Processing": {
+    "code": "noncomputable def bp_processedIterate (χ : ℝ → E ≃ₜ E) (B : ℝ → E → E)\n    (h : ℝ) (z₀ : E) (n : ℕ) : E :=\n  (χ h).symm (oneStepIterate B h ((χ h) z₀) n)\n\ndef processingData (χ : ℝ → E ≃ₜ E) (B G : ℝ → E → E)\n    (F : Flow ℝ E) (f : E → E) (r s : ℕ) : Prop :=\n  0 < s ∧ s < r ∧\n  (∀ t z, HasDerivAt (fun u ↦ F u z) (f (F t z)) t) ∧\n  (∀ h, G h = textbookProcessedMethod χ B h) ∧\n  methodLocalOrder G (fun h ↦ F h) r ∧ methodLocalOrder B (fun h ↦ F h) s ∧\n  ¬ methodLocalOrder B (fun h ↦ F h) (s+1)",
+    "extra_assumptions": [
+      "[EXTRA] 保留预/后处理算法；补实际ODE流与共轭、正低阶s<r、高阶G及低阶B相对同一精确流F的局部阶资格，¬s+1明确低阶而非仅下界；不以共轭误差结论为假设。"
+    ]
+  },
+  "MD-2.4.5-ProcessingIterates": {
+    "code": "theorem processingIterates (χ : ℝ → E ≃ₜ E)\n    (B G : ℝ → E → E) (hG : ∀ h, G h = textbookProcessedMethod χ B h)\n    (h : ℝ) (z₀ : E) (n : ℕ) :\n    textbookProcessedIterate χ B h z₀ n = oneStepIterate G h z₀ n := by\n  apply MolecularDynamics.textbookProcessedIterate_eq_of_conjugacy <;> assumption",
+    "extra_assumptions": [
+      "[EXTRA] 本条明确仅承担算法与G迭代的精确恒等式；同一原句的r阶及低阶资格完整归MD-2.4.5-ProcessingOrder，保留原句不删并记录跨条映射。"
+    ]
+  },
+  "MD-2.4.5-ProcessingOrder": {
+    "code": "theorem processingOrder (χ : ℝ → E ≃ₜ E) (B G : ℝ → E → E)\n    (hG : ∀ h, G h=textbookProcessedMethod χ B h) (γ : ℝ → E) (τ : ℝ) (_hτ : 0 < τ) (r s : ℕ) (_hs : 0 < s) (_hsr : s < r)\n    (F : Flow ℝ E) (f : E → E) (_hdata : processingData χ B G F f r s)\n    (_hγ : ∀ t, γ t = F t (γ 0))\n    (_hB : ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,\n      oneStepMaxError B (τ/ν) γ ν ≤ C*(τ/ν)^s)\n    (horder : ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,\n      oneStepMaxError G (τ/ν) γ ν ≤ C*(τ/ν)^r) :\n    (∀ h ν, textbookProcessedMaxError χ B h γ ν=oneStepMaxError G h γ ν) ∧\n    (∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,\n      textbookProcessedMaxError χ B (τ/ν) γ ν ≤ C*(τ/ν)^r) := by\n  have heq := MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy χ B G hG\n  refine ⟨fun h ν => heq h γ ν, ?_⟩\n  simpa only [heq] using horder",
+    "extra_assumptions": [
+      "r自然数有限时间窗误差界；χh为实际Homeomorph。",
+      "[EXTRA] 补正时间窗与低阶B的s阶误差资格及0<s<r；原G高阶假设和两项误差转移结论、已证证明均保留。processingData另给严格低阶的一般方法资格。"
+    ]
   }
 }

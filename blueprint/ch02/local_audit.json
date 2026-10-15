@@ -4524,9 +4524,9 @@
     "MD-2.4.5-ConjugateIterates": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.conjugateIterates",
@@ -4552,14 +4552,15 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT19/axioms.log",
+      "compiled": true
     },
     "MD-2.4.5-ConjugateLimits": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.conjugateLimits",
@@ -4585,22 +4586,24 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT19/axioms.log",
+      "compiled": true
     },
     "MD-2.4.5-EulerConjugacy": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch02.eulerConjugacy",
       "verdict": "PASS",
       "explanation": "完整实际半kick共轭恒等式已短证；有效二阶单列，不能据此冒充完整二阶误差已证。",
       "signature_sha256": "1768f66436ec26ebb9d3d6a271ed49d92a59bafb797122cffd7e1a0e71c6d32c",
-      "block_sha256": "f01c3dd081a93359fa69ac31ba658432fcf121067e14adde0032de527f273651",
-      "direct_placeholder": false,
+      "block_sha256": "05fe106f95a77560a7c8ec3f91aefae132d64a286bb818d3bbb304f4912678e7",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -4616,27 +4619,28 @@
       "suggested_fix": null,
       "proof_attempts": 3,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT19/axioms.log",
       "proof_failures": 2,
       "attempt_evidence": [
         "blueprint/ch02/validation/section24-preview1.log",
         "blueprint/ch02/validation/section24-preview2.log",
         "blueprint/ch02/validation/section24-preview3.log"
-      ]
+      ],
+      "compiled": true
     },
     "MD-2.4.5-Processing": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_processedIterate",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "f577ed040a558b725bb65303a765c359eecb20bcdf40e135613cb87948c000bb",
-      "block_sha256": "f577ed040a558b725bb65303a765c359eecb20bcdf40e135613cb87948c000bb",
+      "signature_sha256": "3ca53e36040b3e3e76c553509a1b9d2e58e16e4169884cc9312ec02e86ccac2a",
+      "block_sha256": "3ca53e36040b3e3e76c553509a1b9d2e58e16e4169884cc9312ec02e86ccac2a",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4653,14 +4657,15 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT19/axioms.log",
+      "compiled": true
     },
     "MD-2.4.5-ProcessingIterates": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.processingIterates",
@@ -4686,21 +4691,22 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT19/axioms.log",
+      "compiled": true
     },
     "MD-2.4.5-ProcessingOrder": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.processingOrder",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "510287b0056b765b86b162007abca10eb1c45512f08808be7a3c6d1c36406732",
-      "block_sha256": "888b18fd3dd2e172e5816427da9fc28bcc8cf0b66ceb02e649c04782190641a2",
+      "signature_sha256": "e2cfff3657e29afe6f1c2b5e03c8d1d9354d33e74bf02c823e7d122a473dd20a",
+      "block_sha256": "de13f1bac87374b13ce826835b516a34216fdd38f0574618866b94fc02d77bf5",
       "direct_placeholder": false,
       "proof_status": "existing_bridge",
       "documented_priors": [
@@ -4719,7 +4725,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT19/axioms.log",
+      "compiled": true
     },
     "MD-2.4.5-EulerEffectiveOrder": {
       "checked": true,

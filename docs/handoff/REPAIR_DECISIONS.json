@@ -333,5 +333,35 @@
     "category": "B",
     "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
     "section": "2.4.4"
+  },
+  "MD-2.4.5-EulerConjugacy": {
+    "category": "B",
+    "handling": "原代数恒等式及证明完整保留；补正质量、连续力资格下的真实Homeomorph见证、双向kick及共轭方向。新结论暂sorry。",
+    "section": "2.4.5"
+  },
+  "MD-2.4.5-Processing": {
+    "category": "B",
+    "handling": "保留预/后处理算法；补实际ODE流与共轭、正低阶s<r、高阶G及低阶B相对同一精确流F的局部阶资格，¬s+1明确低阶而非仅下界；不以共轭误差结论为假设。",
+    "section": "2.4.5"
+  },
+  "MD-2.4.5-ProcessingIterates": {
+    "category": "B",
+    "handling": "本条明确仅承担算法与G迭代的精确恒等式；同一原句的r阶及低阶资格完整归MD-2.4.5-ProcessingOrder，保留原句不删并记录跨条映射。",
+    "section": "2.4.5"
+  },
+  "MD-2.4.5-ProcessingOrder": {
+    "category": "A",
+    "handling": "补正时间窗与低阶B的s阶误差资格及0<s<r；原G高阶假设和两项误差转移结论、已证证明均保留。processingData另给严格低阶的一般方法资格。",
+    "section": "2.4.5"
+  },
+  "MD-2.4.5-ConjugateIterates": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "2.4.5"
+  },
+  "MD-2.4.5-ConjugateLimits": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "2.4.5"
   }
 }

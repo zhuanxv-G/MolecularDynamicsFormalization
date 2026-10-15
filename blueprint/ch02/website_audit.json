@@ -13134,7 +13134,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT19",
+    "repair": {
+      "eaudit": "EAUDIT19",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT19/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT19.md": "57ce08e5935124a46390be255d460d09687023570de002c406c5ebc494e5aa03",
+        "Blueprint/Ch02.lean": "785cdedb160471c29a7e3ebfc4132ef07d4310fce39e3b032a9ca44bf4a255f4",
+        "blueprint/ch02/ch02_source.json": "ac42dd27e0ffe34b479d5e637e1f5755c1617439b01acb8a99c3e52a39940feb"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.5-ConjugateLimits",
@@ -13214,7 +13226,14 @@
       "reasons": []
     },
     "needs_category": "原文数学判断",
-    "effective_status": "NEEDS_HUMAN（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待导师 / EAUDIT19（原返回NEEDS_HUMAN保留）",
+    "repair": {
+      "eaudit": "EAUDIT19",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "equivalent stability是否包括Lyapunov稳定/吸引性双向等价，还是仅随后共同极限例子，需确定范围；选项：补指定稳定性定义及等价／批准缩为共同极限例子。当前已证签名保持。"
+    }
   },
   {
     "source_id": "MD-2.4.5-EulerConjugacy",
@@ -13320,7 +13339,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT19",
+    "repair": {
+      "eaudit": "EAUDIT19",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT19/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT19.md": "57ce08e5935124a46390be255d460d09687023570de002c406c5ebc494e5aa03",
+        "Blueprint/Ch02.lean": "785cdedb160471c29a7e3ebfc4132ef07d4310fce39e3b032a9ca44bf4a255f4",
+        "blueprint/ch02/ch02_source.json": "ac42dd27e0ffe34b479d5e637e1f5755c1617439b01acb8a99c3e52a39940feb"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.5-Processing",
@@ -13428,7 +13459,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT19",
+    "repair": {
+      "eaudit": "EAUDIT19",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT19/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT19.md": "57ce08e5935124a46390be255d460d09687023570de002c406c5ebc494e5aa03",
+        "Blueprint/Ch02.lean": "785cdedb160471c29a7e3ebfc4132ef07d4310fce39e3b032a9ca44bf4a255f4",
+        "blueprint/ch02/ch02_source.json": "ac42dd27e0ffe34b479d5e637e1f5755c1617439b01acb8a99c3e52a39940feb"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.5-ProcessingIterates",
@@ -13538,7 +13581,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT19",
+    "repair": {
+      "eaudit": "EAUDIT19",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT19/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT19.md": "57ce08e5935124a46390be255d460d09687023570de002c406c5ebc494e5aa03",
+        "Blueprint/Ch02.lean": "785cdedb160471c29a7e3ebfc4132ef07d4310fce39e3b032a9ca44bf4a255f4",
+        "blueprint/ch02/ch02_source.json": "ac42dd27e0ffe34b479d5e637e1f5755c1617439b01acb8a99c3e52a39940feb"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.5-ProcessingOrder",
@@ -13650,7 +13705,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT19",
+    "repair": {
+      "eaudit": "EAUDIT19",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT19/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT19.md": "57ce08e5935124a46390be255d460d09687023570de002c406c5ebc494e5aa03",
+        "Blueprint/Ch02.lean": "785cdedb160471c29a7e3ebfc4132ef07d4310fce39e3b032a9ca44bf4a255f4",
+        "blueprint/ch02/ch02_source.json": "ac42dd27e0ffe34b479d5e637e1f5755c1617439b01acb8a99c3e52a39940feb"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.5-EulerEffectiveOrder",

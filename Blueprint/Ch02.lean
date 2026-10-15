@@ -1278,7 +1278,8 @@ theorem conjugateLimits (χ : E ≃ₜ E) (A B : E → E) (hA : A=textbookConjug
   apply (MolecularDynamics.textbook_conjugate_iterates_tendsto_iff χ A B hA z (χ.symm zStar)).mpr
   simpa using hB (χ z)
 
-/-- source_id: MD-2.4.5-EulerConjugacy · unnumbered_claim · §2.4.5 · 印刷p.88 / PDFp.110 -/
+/-- source_id: MD-2.4.5-EulerConjugacy · unnumbered_claim · §2.4.5 · 印刷p.88 / PDFp.110 
+[EXTRA] 原代数恒等式及证明完整保留；补正质量、连续力资格下的真实Homeomorph见证、双向kick及共轭方向。新结论暂sorry。 -/
 theorem eulerConjugacy :
   ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h,
     textbookMomentumKick (textbookPotentialForce U) (h/2) ∘ textbookSymplecticEuler m U h ∘
@@ -1313,12 +1314,32 @@ theorem eulerConjugacy :
     simp [F,textbookMomentumKick]
     ring
 
-/-- source_id: MD-2.4.5-Processing · definition · §2.4.5 · 印刷p.88 / PDFp.110 -/
+theorem eulerConjugacy_homeomorph (n : ℕ) (m : Fin n → ℝ)
+    (_hm : ∀ i, 0 < m i) (U : Q n → ℝ)
+    (_hF : Continuous (textbookPotentialForce U)) (h : ℝ) :
+    ∃ χ : SymplecticCoordinates n ≃ₜ SymplecticCoordinates n,
+      (∀ z, χ z = textbookMomentumKick (textbookPotentialForce U) (-h/2) z) ∧
+      (∀ z, χ.symm z = textbookMomentumKick (textbookPotentialForce U) (h/2) z) ∧
+      coordinateVerlet m (textbookPotentialForce U) h =
+        χ.symm ∘ textbookSymplecticEuler m U h ∘ χ := by
+  sorry
+
+/-- source_id: MD-2.4.5-Processing · definition · §2.4.5 · 印刷p.88 / PDFp.110 
+[EXTRA] 保留预/后处理算法；补实际ODE流与共轭、正低阶s<r、高阶G及低阶B相对同一精确流F的局部阶资格，¬s+1明确低阶而非仅下界；不以共轭误差结论为假设。 -/
 noncomputable def bp_processedIterate (χ : ℝ → E ≃ₜ E) (B : ℝ → E → E)
     (h : ℝ) (z₀ : E) (n : ℕ) : E :=
   (χ h).symm (oneStepIterate B h ((χ h) z₀) n)
 
-/-- source_id: MD-2.4.5-ProcessingIterates · unnumbered_claim · §2.4.5 · 印刷p.88 / PDFp.110 -/
+def processingData (χ : ℝ → E ≃ₜ E) (B G : ℝ → E → E)
+    (F : Flow ℝ E) (f : E → E) (r s : ℕ) : Prop :=
+  0 < s ∧ s < r ∧
+  (∀ t z, HasDerivAt (fun u ↦ F u z) (f (F t z)) t) ∧
+  (∀ h, G h = textbookProcessedMethod χ B h) ∧
+  methodLocalOrder G (fun h ↦ F h) r ∧ methodLocalOrder B (fun h ↦ F h) s ∧
+  ¬ methodLocalOrder B (fun h ↦ F h) (s+1)
+
+/-- source_id: MD-2.4.5-ProcessingIterates · unnumbered_claim · §2.4.5 · 印刷p.88 / PDFp.110 
+[EXTRA] 本条明确仅承担算法与G迭代的精确恒等式；同一原句的r阶及低阶资格完整归MD-2.4.5-ProcessingOrder，保留原句不删并记录跨条映射。 -/
 theorem processingIterates (χ : ℝ → E ≃ₜ E)
     (B G : ℝ → E → E) (hG : ∀ h, G h = textbookProcessedMethod χ B h)
     (h : ℝ) (z₀ : E) (n : ℕ) :
@@ -1326,9 +1347,14 @@ theorem processingIterates (χ : ℝ → E ≃ₜ E)
   apply MolecularDynamics.textbookProcessedIterate_eq_of_conjugacy <;> assumption
 
 /-- source_id: MD-2.4.5-ProcessingOrder · unnumbered_claim · §2.4.5 · 印刷p.88 / PDFp.110
-[EXTRA] r自然数有限时间窗误差界；χh为实际Homeomorph。 -/
+[EXTRA] r自然数有限时间窗误差界；χh为实际Homeomorph。 
+[EXTRA] 补正时间窗与低阶B的s阶误差资格及0<s<r；原G高阶假设和两项误差转移结论、已证证明均保留。processingData另给严格低阶的一般方法资格。 -/
 theorem processingOrder (χ : ℝ → E ≃ₜ E) (B G : ℝ → E → E)
-    (hG : ∀ h, G h=textbookProcessedMethod χ B h) (γ : ℝ → E) (τ : ℝ) (r : ℕ)
+    (hG : ∀ h, G h=textbookProcessedMethod χ B h) (γ : ℝ → E) (τ : ℝ) (_hτ : 0 < τ) (r s : ℕ) (_hs : 0 < s) (_hsr : s < r)
+    (F : Flow ℝ E) (f : E → E) (_hdata : processingData χ B G F f r s)
+    (_hγ : ∀ t, γ t = F t (γ 0))
+    (_hB : ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+      oneStepMaxError B (τ/ν) γ ν ≤ C*(τ/ν)^s)
     (horder : ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
       oneStepMaxError G (τ/ν) γ ν ≤ C*(τ/ν)^r) :
     (∀ h ν, textbookProcessedMaxError χ B h γ ν=oneStepMaxError G h γ ν) ∧

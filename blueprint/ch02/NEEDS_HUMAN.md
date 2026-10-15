@@ -47,3 +47,7 @@
 ## EAUDIT16 原文数学判断（保持现状）
 
 - MD-2.4.2-CompositionOrder：原文typically及高于min的例子未被当前下界覆盖，且局部阶逐点常数不能直接用于移动初值；选项：导师确定通常/确切阶的范围后补邻域一致阶及辛Euler→Verlet严格升阶实例／将本条完整拆分并交叉映射现有Verlet条目。当前签名保持，不能把下界静默当作整句。 网站反例：缺失结论条款而非已建立的定理反例：原文“but it can be higher, as the example of the Verlet method (constructed by composing symplectic Euler and its adjoint) shows”没有对应Lean结论。min阶下界即使成立，也不能推出存在一对方法使复合确切阶严格高于两者最小确切阶。; 原返回FAIL保留。
+
+## EAUDIT19 原文数学判断（保持现状）
+
+- MD-2.4.5-ConjugateLimits：equivalent stability是否包括Lyapunov稳定/吸引性双向等价，还是仅随后共同极限例子，需确定范围；选项：补指定稳定性定义及等价／批准缩为共同极限例子。当前已证签名保持。 网站反例：展开 textbookConjugateMap 后，签名的具体收敛命题忠实：先固定共同极限zStar，再假设∀z，B^[k] z→zStar，最后∀z，A^[k] z→χ⁻¹zStar。B轨道应从χ z出发；全称hB使这一换初值合法。ProcessedMethods.lean 的 textbook_conjugate_iterates_tendsto_iff（合集:1672附近）确实给对应初值和对应极限的双向收敛，并利用χ及χ⁻¹的连续性。所有实际用到的项目定义已找到，缺的不是库定义。需要数学判断的原文问题是 statement_scope 中“equivalent stability properties under iteration”是否只指随后给出的全局共同极限例子，还是还要求一般Lyapunov稳定性、吸引性等性质的双向等价；签名仅明确形式化随后例子的单向结论，没有这些一般稳定性谓词。若来源范围只限该例子可判PASS；若包含一般稳定性断言则缺条款。无[ERRATUM?]；本地与所引收敛定理均无sorry。; 原返回NEEDS_HUMAN保留。
