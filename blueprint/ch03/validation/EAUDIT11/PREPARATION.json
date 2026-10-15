@@ -1,0 +1,37 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT11",
+  "section": "3.4",
+  "source_ids": [
+    "MD-3.4-AnalyticDefect",
+    "MD-3.4-OptimalTruncation",
+    "MD-3.4-PhysicalEnergyDrift",
+    "MD-3.4-ScalarVerletShadow4",
+    "MD-3.4-StepCountPower"
+  ],
+  "reaudit_ids": [
+    "MD-3.4-PhysicalEnergyDrift",
+    "MD-3.4-StepCountPower",
+    "MD-3.4-ScalarVerletShadow4"
+  ],
+  "human_ids": [
+    "MD-3.4-AnalyticDefect",
+    "MD-3.4-OptimalTruncation"
+  ],
+  "old_lean_sha256": "e425b9132b3e9eb26e5fe9269c3342c12189d0e9f5fbfee197a668da27765df8",
+  "lean_sha256": "85dbc75a087a951e8e7bf57add11d73cf70e1b97630f4b266783dfe0e8642210",
+  "source_sha256": "d9fd55a14be96063be2f1b47c4c22db5a7d1304bd976ac799373a0651525748b",
+  "pages": [
+    135,
+    136,
+    137,
+    138,
+    139,
+    140
+  ],
+  "prior_proof_blocks": {
+    "MD-3.4-PhysicalEnergyDrift": "theorem physicalEnergyDrift\n    (H : SymplecticCoordinates Nc → ℝ) (Hj : ℕ → SymplecticCoordinates Nc → ℝ)\n    (r k : ℕ) (D B : Set (SymplecticCoordinates Nc))\n    (hD : IsOpen D) (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)\n    (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D)\n    (G : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)\n    (γ : ℝ → SymplecticCoordinates Nc → ℝ → SymplecticCoordinates Nc)\n    (hγ₀ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, γ h z 0 = z)\n    (hγB : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h, γ h z t ∈ B)\n    (hγ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h,\n      HasDerivWithinAt (γ h z)\n        (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)\n          (γ h z t)) (Icc 0 h) t) :\n    ∃ C : ℝ, 0 < C ∧ ∃ L : ℝ, 0 < L ∧\n      ∀ h ∈ Icc (0 : ℝ) 1, ∀ z₀, ∀ n : ℕ,\n        (∀ i ≤ n, oneStepIterate G h z₀ i ∈ B) →\n        ‖H (oneStepIterate G h z₀ n) - H z₀‖ ≤ 2 * C * h ^ r +\n          L * ∑ i ∈ Finset.range n, ‖G h (oneStepIterate G h z₀ i) -\n            γ h (oneStepIterate G h z₀ i) h‖ := by\n  apply MolecularDynamics.textbook_energy_drift_le_actual_defects <;> assumption",
+    "MD-3.4-StepCountPower": "theorem stepCountPower (r k n : ℕ) (hrk : r ≤ k) (h : ℝ) :\n    (n : ℝ) * h ^ (k + 1) = ((n : ℝ) * h * h ^ (k - r)) * h ^ r := by\n  apply MolecularDynamics.energy_step_count_power_factor <;> assumption",
+    "MD-3.4-ScalarVerletShadow4": "def scalarVerletShadow4 (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ :=\n  let p := z.2; let q := z.1\n  p^2/2+U q+h^2/24*(2*p^2*deriv (deriv U) q-(deriv U q)^2)+h^4*(\n    p^4*iteratedDeriv 4 U q/720-p^2*deriv U q*iteratedDeriv 3 U q/120-\n    (deriv U q)^2*iteratedDeriv 2 U q/240-p^2*((iteratedDeriv 2 U q)^2+deriv U q*iteratedDeriv 3 U q)/60)"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT11",
+  "input_sha256": {
+    "BATCH_EAUDIT11.md": "ed95fa6093bd27282422bc985f0f53612c24eb239e6d770ac6d6d4aa94cd47b8",
+    "Blueprint/Ch03.lean": "85dbc75a087a951e8e7bf57add11d73cf70e1b97630f4b266783dfe0e8642210",
+    "blueprint/ch03/ch03_source.json": "d9fd55a14be96063be2f1b47c4c22db5a7d1304bd976ac799373a0651525748b"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT11a",
+      "source_id": "MD-3.4-PhysicalEnergyDrift",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT11/a",
+      "total_bytes": 99100,
+      "manifest_sha256": "50a8c45edae83c9ddbbea43a38dd2490b0372b322f54a3de25152113138e1bc7"
+    },
+    {
+      "subtask": "EAUDIT11b",
+      "source_id": "MD-3.4-StepCountPower",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT11/b",
+      "total_bytes": 90202,
+      "manifest_sha256": "d5978a22106979e078e8a75b28981b7a05e87a410466a99edc591a9269bc6a35"
+    },
+    {
+      "subtask": "EAUDIT11c",
+      "source_id": "MD-3.4-ScalarVerletShadow4",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT11/c",
+      "total_bytes": 209015,
+      "manifest_sha256": "a946a797c8fd84d6f8eedc06b00cb430ed465adac8ea0c6d5a350a8cd23aed74"
+    }
+  ]
+}

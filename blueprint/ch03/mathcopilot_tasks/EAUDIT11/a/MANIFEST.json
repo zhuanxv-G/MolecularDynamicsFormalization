@@ -1,0 +1,62 @@
+{
+  "eaudit": "EAUDIT11",
+  "source_id": "MD-3.4-PhysicalEnergyDrift",
+  "input_sha256": {
+    "BATCH_EAUDIT11.md": "ed95fa6093bd27282422bc985f0f53612c24eb239e6d770ac6d6d4aa94cd47b8",
+    "Blueprint/Ch03.lean": "85dbc75a087a951e8e7bf57add11d73cf70e1b97630f4b266783dfe0e8642210",
+    "blueprint/ch03/ch03_source.json": "d9fd55a14be96063be2f1b47c4c22db5a7d1304bd976ac799373a0651525748b",
+    "EAUDIT11a_materials": "eb1342561f631b56d12928909dd4fbf79a1c2a0173f577109770d677082aa1c7",
+    "EAUDIT11a_PAGES.pdf": "ce685429d3ddea234ee45d3f5fe4f7aa5778af6ba7a086757b93e44a785f6750"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    137
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "9b4142a24d592da5ef100da1d55046fa7324e56501ed9136041698615c9146a4",
+  "source_block_sha256": "b8b8122c8fc5fd3f459ec0b999941d2d85f66f396bbbc396b286a7dcba5a7259",
+  "source_declarations": [
+    "physicalEnergyDrift",
+    "physicalEnergyDrift_complete"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinateMatrix",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "name": "oneStepIterate",
+      "file_sha256": "c9bc53727962c962a9420dbfa305ede46e90b38fdded8952b400381f474e3385",
+      "excerpt_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "name": "textbookHamiltonianVectorField",
+      "file_sha256": "bc9f7688e08676874bd5c50502a5e27fa659e7ff10f116045a4605a42ccfa703",
+      "excerpt_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "textbookJ",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ModifiedHamiltonianBounds.lean",
+      "name": "textbookTruncatedHamiltonian",
+      "file_sha256": "a4bc3858fbd3e46ff382425fe9d10db2c805ac01dd27f09199a4aefab2cb54d0",
+      "excerpt_sha256": "ae4576437497e7b2a8dde76a400e7f755c31380752cb4ac2abe3b94f50ad8979"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT11_review.json",
+  "total_task_bytes": 99100
+}

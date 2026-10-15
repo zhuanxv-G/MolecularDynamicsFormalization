@@ -2335,9 +2335,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.truncatedHamiltonian",
@@ -2362,23 +2362,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT10/axioms.log"
     },
     "MD-3.4-TruncationSmooth": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch03.truncationSmooth",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "175380f1ed099a2b94e1ce33c33bb7459e6cf5a8b093a1102b41aee0ff0ef8e7",
-      "block_sha256": "ea155d39b91edf40f14911d39975661eda356a77f5a9c9ae1a7c0bba1920de62",
-      "direct_placeholder": false,
+      "signature_sha256": "03938cf2c6790feabec3f3504330c48cf3276c174479ac0191d00ed79dca1212",
+      "block_sha256": "c4831c746d426690f4616b2c88964a7b055a98a1a9c8c26025ae15a000365951",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian"
@@ -2397,23 +2398,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT10/axioms.log"
     },
     "MD-3.4-Thm3.1": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.theorem31",
       "verdict": "NEEDS_HUMAN",
       "explanation": "完整构造/匹配/长时间能量结论均未假设；但原文给定H̃_k，本签名以存在H_j重建它，量词严格化及截断轨道资格仍需导师裁定，不宣称已证原书定理。",
-      "signature_sha256": "b5ceb7075955e7b4641df25fab48b8b76c3cb1595ee811753c7c3a39fc286e58",
-      "block_sha256": "d672a248322adb699819a5dc453909a07d5cf6478683dc2ce9469cdb2da4ff00",
+      "signature_sha256": "a6e6f54bc86be635e64db961aa579fa546c721baf0d8b1bc14616c31383a517a",
+      "block_sha256": "54e43c42de23e69d12a9abb4970c62d7a998d9d75a88ba442a565558f9d0dbe6",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -2431,7 +2432,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT10/axioms.log"
     },
     "MD-3.4-CompactLipschitz": {
       "checked": true,
@@ -2472,9 +2473,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.truncatedFlow",
@@ -2499,7 +2500,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT10/axioms.log"
     },
     "MD-3.4-FiniteMatchingConstruction": {
       "checked": true,
@@ -2539,9 +2540,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch03.truncatedConservation",
@@ -2568,23 +2569,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT10/axioms.log"
     },
     "MD-3.4-EnergyTelescoping": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch03.energyTelescoping",
       "verdict": "PASS",
       "explanation": "本条有限和恒等式与前两项守恒/缺陷定义共同给出三行；只桥接真实望远镜求和，不伪称modifiedConstruction完成。",
       "signature_sha256": "a1403377ce8b71c6cb7c33dd20a2d5be06d52bc5c81dc9ba066b8599d5fcab4c",
-      "block_sha256": "9e45bcccbb231542b4a3f962aeda49ead38a28fa3c8ce09d29c181dfdaa528df",
-      "direct_placeholder": false,
+      "block_sha256": "fa0cbb651e5cd8f078e01c8ddef77cc5256a3e3a276d571bc57c9a7ee0e93c24",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.oneStep_energy_telescoping"
@@ -2603,23 +2605,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT10/axioms.log"
     },
     "MD-3.4-UniformTruncatedLipschitz": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch03.uniformTruncatedLipschitz",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "f14ed6f267d6614cf6a7d6cee024fd264601881d4a37f9b93936d5128053cdaf",
-      "block_sha256": "3e8d303d8e87c0285a9107890af51f67de3a09daa8c4462709fcc0297a74e146",
-      "direct_placeholder": false,
+      "block_sha256": "e467d2515b8f43129776386f39805a87212b4c99ef82b35489ec394d26bd6d5e",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz"
@@ -2638,15 +2641,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT10/axioms.log"
     },
     "MD-3.4-TruncationRemainder": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch03.truncationRemainder",
@@ -2673,23 +2676,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT10/axioms.log"
     },
     "MD-3.4-PhysicalEnergyDrift": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch03.physicalEnergyDrift",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "35f4c7619f093a43e8762642c21321c12d8c8c124f026c7b7033de07c2d153eb",
-      "block_sha256": "d9014c7cdabe25f3764492c34c4ad6dbe1dc3f95baaa9483e270345af9273d1c",
-      "direct_placeholder": false,
+      "block_sha256": "b8b8122c8fc5fd3f459ec0b999941d2d85f66f396bbbc396b286a7dcba5a7259",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.textbook_energy_drift_le_actual_defects"
@@ -2708,7 +2712,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT11/axioms.log"
     },
     "MD-3.4-PolynomialEnergyRate": {
       "checked": true,
@@ -2750,9 +2754,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch03.stepCountPower",
@@ -2779,7 +2783,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT11/axioms.log"
     },
     "MD-3.4-ArbitraryFiniteTruncation": {
       "checked": true,
@@ -2819,10 +2823,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.analyticBEA",
@@ -2847,16 +2851,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT11/axioms.log"
     },
     "MD-3.4-OptimalTruncation": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.optimalTruncation",
@@ -2881,7 +2885,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT11/axioms.log"
     },
     "MD-3.4-ExponentialFlat": {
       "checked": true,
@@ -2925,17 +2929,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.scalarVerletShadow4",
       "verdict": "NEEDS_HUMAN",
       "explanation": "有限式定义忠实保留；原文modified energy的O(h⁶)真实性需完整Verlet BCH匹配，不能只凭定义记为已证。",
-      "signature_sha256": "0a044f304059badf4881166f196e4d0e33728eae6c9d1dce50cc77f41c39f1d5",
-      "block_sha256": "0a044f304059badf4881166f196e4d0e33728eae6c9d1dce50cc77f41c39f1d5",
-      "direct_placeholder": false,
+      "signature_sha256": "a1771664dfc6430937aba6ba81cd22899b0e2f8ac17af526aa9132e426522d82",
+      "block_sha256": "a1771664dfc6430937aba6ba81cd22899b0e2f8ac17af526aa9132e426522d82",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -2952,7 +2957,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT11/axioms.log"
     },
     "MD-3.4-CommutingEnergy": {
       "checked": true,

@@ -2,11 +2,11 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 422；章末验收待完成 [3, 4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 402；章末验收待完成 [3, 4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
-第3章：网站PASS 76 / 已修待复审 30 / 待导师 10 / 修复中 33。
+第3章：网站PASS 72 / 已修待复审 41 / 待导师 11 / 修复中 25。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
@@ -239,24 +239,24 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.3.4-TakahashiEffectiveOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT09 |
 | 3 | MD-3.4-ModifiedField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-LeadingModifiedField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-TruncatedHamiltonian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.4-TruncationSmooth | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.4-Thm3.1 | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.4-TruncatedHamiltonian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT10 |
+| 3 | MD-3.4-TruncationSmooth | FAIL | B | 光滑假设与结论均提升C∞，覆盖原文光滑截断；原正式有限和定理可按阶数参数实例化，保留原证明小修。 | 已修待复审 | EAUDIT10 |
+| 3 | MD-3.4-Thm3.1 | FAIL | B | 将构造与能量估计分开：Hj及实际有限匹配由FiniteMatchingConstruction/ArbitraryFiniteTruncation提供；本条不再要求从B每点出发的全部截断短轨迹留B，保留原数值轨道约束和正确长时间量词。 | 已修待复审 | EAUDIT10 |
 | 3 | MD-3.4-CompactLipschitz | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-TruncatedFlow | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.4-TruncatedFlow | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT10 |
 | 3 | MD-3.4-FiniteMatchingConstruction | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-TruncatedConservation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.4-EnergyTelescoping | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.4-UniformTruncatedLipschitz | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.4-TruncationRemainder | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.4-PhysicalEnergyDrift | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
+| 3 | MD-3.4-TruncatedConservation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT10 |
+| 3 | MD-3.4-EnergyTelescoping | FAIL | B | 保留已证首行望远镜恒等式；补给定守恒截断步F、真实差η=数值步−F的完整三行等式，不以待证能量差为前提。 | 已修待复审 | EAUDIT10 |
+| 3 | MD-3.4-UniformTruncatedLipschitz | FAIL | B | 保留统一截断Lipschitz定理，补原完整能量差≤LΣ‖η‖≤LAνh^(k+1)链；A为原文缺陷常数重命名，F为所给守恒截断一步。 | 已修待复审 | EAUDIT10 |
+| 3 | MD-3.4-TruncationRemainder | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT10 |
+| 3 | MD-3.4-PhysicalEnergyDrift | FAIL | B | 保留已证实际缺陷和界，新增实际截断流的统一一步匹配误差资格与完整2Ch^r+LAνh^(k+1)结论；不是以能量结论为假设。 | 已修待复审 | EAUDIT11 |
 | 3 | MD-3.4-PolynomialEnergyRate | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-StepCountPower | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.4-StepCountPower | FAIL | B | 本条仅承担步数幂次代数辅助；原句的完整能量率由MD-3.4-PolynomialEnergyRate承担，原文不删并显式跨条映射。 | 已修待复审 | EAUDIT11 |
 | 3 | MD-3.4-ArbitraryFiniteTruncation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-AnalyticDefect | NEEDS_HUMAN | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待导师；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.4-OptimalTruncation | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.4-AnalyticDefect | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT11 |
+| 3 | MD-3.4-OptimalTruncation | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT11 |
 | 3 | MD-3.4-ExponentialFlat | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-ScalarVerletShadow4 | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.4-ScalarVerletShadow4 | FAIL | B | 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。 | 已修待复审 | EAUDIT11 |
 | 3 | MD-3.4-CommutingEnergy | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |
 | 3 | MD-3.4-CommutingEnergySymmetry | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-EnergySymplecticNoGo | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |

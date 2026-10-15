@@ -112,5 +112,53 @@
     "extra_assumptions": [
       "[EXTRA] 保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。"
     ]
+  },
+  "MD-3.4-TruncationSmooth": {
+    "code": "theorem truncationSmooth (H : E → ℝ) (Hj : ℕ → E → ℝ)\n    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ ⊤ H D)\n    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ ⊤ (Hj j) D) :\n    ContDiffOn ℝ ⊤ (textbookTruncatedHamiltonian H Hj r k h) D := by\n  sorry\n\ntheorem truncationSmooth_C1 (H : E → ℝ) (Hj : ℕ → E → ℝ)\n    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ 1 H D)\n    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :\n    ContDiffOn ℝ 1 (textbookTruncatedHamiltonian H Hj r k h) D := by\n  apply MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian <;> assumption",
+    "extra_assumptions": [
+      "各系数在开放环境D为C¹；这里只证明所需C¹子结论，原文smooth假设本身不作为新断言。",
+      "[EXTRA] 光滑假设与结论均提升C∞，覆盖原文光滑截断；原正式有限和定理可按阶数参数实例化，保留原证明小修。"
+    ]
+  },
+  "MD-3.4-Thm3.1": {
+    "code": "theorem theorem31 (n r k : ℕ)\n    (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)\n    (D B : Set (SymplecticCoordinates n)) (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)\n    (_hr : 0 < r) (_hrk : r ≤ k) (_hD : IsOpen D) (_hconvD : Convex ℝ D)\n    (_hB : IsCompact B) (_hconvB : Convex ℝ B) (_hBD : B ⊆ D)\n    (_hH : ContDiffOn ℝ ⊤ H D) (_hHj : ∀ j, ContDiffOn ℝ ⊤ (Hj j) D)\n    (_hmatching : finiteMatching H Hj r k D B G) :\n    ∀ T > 0, ∃ M > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z₀ ∈ B, ∀ ν : ℕ,\n      (∀ i ≤ ν, oneStepIterate G h z₀ i ∈ B) →\n      (ν:ℝ)*h*h^(k-r) ≤ T →\n      ‖H (oneStepIterate G h z₀ ν)-H z₀‖ ≤ M*h^r := by\n  sorry",
+    "extra_assumptions": [
+      "smoothSymplecticData显式添加原方法r阶/近恒等辛/joint C∞、开放凸环境D、紧凸B⊆D、真实原流；r>0。",
+      "本签名保留完整构造H_j与finiteMatching为结论，k≥r固定；数值迭代和截断ODE留B，常数可依赖k,T而非所有k统一。",
+      "[EXTRA] 将构造与能量估计分开：Hj及实际有限匹配由FiniteMatchingConstruction/ArbitraryFiniteTruncation提供；本条不再要求从B每点出发的全部截断短轨迹留B，保留原数值轨道约束和正确长时间量词。"
+    ]
+  },
+  "MD-3.4-EnergyTelescoping": {
+    "code": "theorem energyTelescoping {E : Type*} (K : E → ℝ)\n    (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :\n    ∑ i ∈ Finset.range n, (K (oneStepIterate G h z₀ (i + 1)) -\n      K (oneStepIterate G h z₀ i)) = K (oneStepIterate G h z₀ n) - K z₀ := by\n  apply MolecularDynamics.oneStep_energy_telescoping <;> assumption\n\ntheorem energyTelescoping_complete (K : E → ℝ) (G : ℝ → E → E)\n    (F : E → E) (h : ℝ) (z₀ : E) (n : ℕ)\n    (_hconserve : ∀ i < n, K (F (oneStepIterate G h z₀ i))=K (oneStepIterate G h z₀ i)) :\n    let z := oneStepIterate G h z₀\n    let η := fun i ↦ z (i+1)-F (z i)\n    K (z n)-K z₀ = ∑ i ∈ Finset.range n, (K (z (i+1))-K (z i)) ∧\n    (∑ i ∈ Finset.range n, (K (z (i+1))-K (z i))) =\n      ∑ i ∈ Finset.range n, (K (z (i+1))-K (F (z i))) ∧\n    (∑ i ∈ Finset.range n, (K (z (i+1))-K (F (z i)))) =\n      ∑ i ∈ Finset.range n, (K (F (z i)+η i)-K (F (z i))) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 保留已证首行望远镜恒等式；补给定守恒截断步F、真实差η=数值步−F的完整三行等式，不以待证能量差为前提。"
+    ]
+  },
+  "MD-3.4-UniformTruncatedLipschitz": {
+    "code": "theorem uniformTruncatedLipschitz\n    (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (D B : Set E) (hD : IsOpen D)\n    (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)\n    (hH : ContDiffOn ℝ 1 H D)\n    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :\n    ∃ L : ℝ, 0 < L ∧ ∀ h ∈ Icc (0 : ℝ) 1, ∀ u ∈ B, ∀ v ∈ B,\n      ‖textbookTruncatedHamiltonian H Hj r k h v -\n        textbookTruncatedHamiltonian H Hj r k h u‖ ≤ L * ‖v - u‖ := by\n  apply MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz <;> assumption\n\ntheorem uniformTruncatedLipschitz_chain (K : E → ℝ) (G : ℝ → E → E)\n    (F : E → E) (h L A : ℝ) (k n : ℕ) (z₀ : E)\n    (_hh : 0 ≤ h) (_hL : 0 ≤ L) (_hA : 0 ≤ A)\n    (_hconserve : ∀ i < n, K (F (oneStepIterate G h z₀ i))=K (oneStepIterate G h z₀ i))\n    (_hlip : ∀ i < n,\n      |K (oneStepIterate G h z₀ (i+1))-K (F (oneStepIterate G h z₀ i))| ≤\n        L*‖oneStepIterate G h z₀ (i+1)-F (oneStepIterate G h z₀ i)‖)\n    (_hdefect : ∀ i < n, ‖oneStepIterate G h z₀ (i+1)-F (oneStepIterate G h z₀ i)‖ ≤ A*h^(k+1)) :\n    |K (oneStepIterate G h z₀ n)-K z₀| ≤\n      L*∑ i ∈ Finset.range n, ‖oneStepIterate G h z₀ (i+1)-F (oneStepIterate G h z₀ i)‖ ∧\n    (L*∑ i ∈ Finset.range n, ‖oneStepIterate G h z₀ (i+1)-F (oneStepIterate G h z₀ i)‖) ≤\n      L*A*(n:ℝ)*h^(k+1) := by\n  sorry",
+    "extra_assumptions": [
+      "开放D、紧凸B⊆D及H和有限H_j在D C¹；0≤h≤1；L由有限系数导数界推出。",
+      "[EXTRA] 保留统一截断Lipschitz定理，补原完整能量差≤LΣ‖η‖≤LAνh^(k+1)链；A为原文缺陷常数重命名，F为所给守恒截断一步。"
+    ]
+  },
+  "MD-3.4-PhysicalEnergyDrift": {
+    "code": "theorem physicalEnergyDrift\n    (H : SymplecticCoordinates Nc → ℝ) (Hj : ℕ → SymplecticCoordinates Nc → ℝ)\n    (r k : ℕ) (D B : Set (SymplecticCoordinates Nc))\n    (hD : IsOpen D) (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)\n    (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D)\n    (G : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)\n    (γ : ℝ → SymplecticCoordinates Nc → ℝ → SymplecticCoordinates Nc)\n    (hγ₀ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, γ h z 0 = z)\n    (hγB : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h, γ h z t ∈ B)\n    (hγ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h,\n      HasDerivWithinAt (γ h z)\n        (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)\n          (γ h z t)) (Icc 0 h) t) :\n    ∃ C : ℝ, 0 < C ∧ ∃ L : ℝ, 0 < L ∧\n      ∀ h ∈ Icc (0 : ℝ) 1, ∀ z₀, ∀ n : ℕ,\n        (∀ i ≤ n, oneStepIterate G h z₀ i ∈ B) →\n        ‖H (oneStepIterate G h z₀ n) - H z₀‖ ≤ 2 * C * h ^ r +\n          L * ∑ i ∈ Finset.range n, ‖G h (oneStepIterate G h z₀ i) -\n            γ h (oneStepIterate G h z₀ i) h‖ := by\n  apply MolecularDynamics.textbook_energy_drift_le_actual_defects <;> assumption\n\ntheorem physicalEnergyDrift_complete\n    (H : SymplecticCoordinates Nc → ℝ) (Hj : ℕ → SymplecticCoordinates Nc → ℝ)\n    (r k : ℕ) (D B : Set (SymplecticCoordinates Nc))\n    (hD : IsOpen D) (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)\n    (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D)\n    (G : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)\n    (γ : ℝ → SymplecticCoordinates Nc → ℝ → SymplecticCoordinates Nc)\n    (hγ₀ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, γ h z 0 = z)\n    (hγB : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h, γ h z t ∈ B)\n    (hγ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h,\n      HasDerivWithinAt (γ h z)\n        (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)\n          (γ h z t)) (Icc 0 h) t)\n    (A : ℝ) (_hA : 0 ≤ A)\n    (_hdefect : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ‖G h z-γ h z h‖ ≤ A*h^(k+1)) :\n    ∃ C : ℝ, 0 < C ∧ ∃ L : ℝ, 0 < L ∧\n      ∀ h ∈ Icc (0 : ℝ) 1, ∀ z₀, ∀ n : ℕ,\n        (∀ i ≤ n, oneStepIterate G h z₀ i ∈ B) →\n        ‖H (oneStepIterate G h z₀ n) - H z₀‖ ≤ 2 * C * h ^ r +\n          L*A*(n:ℝ)*h^(k+1) := by\n  sorry",
+    "extra_assumptions": [
+      "开放D、紧凸B⊆D及有限C¹系数；给定真实截断ODE族γ及其留B、γ(h,z,0)=z，未假设γ的能量守恒或误差界。",
+      "[EXTRA] 保留已证实际缺陷和界，新增实际截断流的统一一步匹配误差资格与完整2Ch^r+LAνh^(k+1)结论；不是以能量结论为假设。"
+    ]
+  },
+  "MD-3.4-StepCountPower": {
+    "code": "theorem stepCountPower (r k n : ℕ) (hrk : r ≤ k) (h : ℝ) :\n    (n : ℝ) * h ^ (k + 1) = ((n : ℝ) * h * h ^ (k - r)) * h ^ r := by\n  apply MolecularDynamics.energy_step_count_power_factor <;> assumption",
+    "extra_assumptions": [
+      "自然数r≤k使k−r没有截断损失；不将此代数辅助冒充完整能量定理。",
+      "[EXTRA] 本条仅承担步数幂次代数辅助；原句的完整能量率由MD-3.4-PolynomialEnergyRate承担，原文不删并显式跨条映射。"
+    ]
+  },
+  "MD-3.4-ScalarVerletShadow4": {
+    "code": "def scalarVerletShadow4 (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ :=\n  let p := z.2; let q := z.1\n  p^2/2+U q+h^2/24*(2*p^2*deriv (deriv U) q-(deriv U q)^2)+h^4*(\n    p^4*iteratedDeriv 4 U q/720-p^2*deriv U q*iteratedDeriv 3 U q/120-\n    (deriv U q)^2*iteratedDeriv 2 U q/240-p^2*((iteratedDeriv 2 U q)^2+deriv U q*iteratedDeriv 3 U q)/60)\n\ntheorem scalarVerletShadow4_matching (U : ℝ → ℝ) (_hU : ContDiff ℝ ⊤ U)\n    (B : Set (ℝ × ℝ)) (_hB : IsCompact B) :\n    ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → (ℝ × ℝ) → ℝ → (ℝ × ℝ),\n      ∀ h ∈ Ioo 0 δ, ∀ z ∈ B, Γ h z 0=z ∧\n        solution (fun x : ℝ × ℝ ↦\n          (deriv (fun p ↦ scalarVerletShadow4 U h (x.1,p)) x.2,\n           -deriv (fun q ↦ scalarVerletShadow4 U h (q,x.2)) x.1)) (Γ h z) 0 h ∧\n        ‖(let P := z.2-(h/2)*deriv U z.1\n           let Q := z.1+h*P\n           (Q,P-(h/2)*deriv U Q))-Γ h z h‖ ≤ C*h^7 := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。"
+    ]
   }
 }

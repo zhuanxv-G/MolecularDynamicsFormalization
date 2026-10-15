@@ -779,8 +779,15 @@ noncomputable def truncatedHamiltonian (H : E → ℝ) (Hj : ℕ → E → ℝ)
   H z + ∑ j ∈ Finset.Icc r k, h ^ j * Hj j z
 
 /-- source_id: MD-3.4-TruncationSmooth · unnumbered_claim · §3.4 · 印刷p.114 / PDFp.136
-[EXTRA] 各系数在开放环境D为C¹；这里只证明所需C¹子结论，原文smooth假设本身不作为新断言。 -/
+[EXTRA] 各系数在开放环境D为C¹；这里只证明所需C¹子结论，原文smooth假设本身不作为新断言。 
+[EXTRA] 光滑假设与结论均提升C∞，覆盖原文光滑截断；原正式引理仅C¹；一次小修不适用，C∞暂sorry，原C¹已证辅助保留。 -/
 theorem truncationSmooth (H : E → ℝ) (Hj : ℕ → E → ℝ)
+    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ ⊤ H D)
+    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ ⊤ (Hj j) D) :
+    ContDiffOn ℝ ⊤ (textbookTruncatedHamiltonian H Hj r k h) D := by
+  sorry
+
+theorem truncationSmooth_C1 (H : E → ℝ) (Hj : ℕ → E → ℝ)
     (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ 1 H D)
     (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :
     ContDiffOn ℝ 1 (textbookTruncatedHamiltonian H Hj r k h) D := by
@@ -790,19 +797,19 @@ theorem truncationSmooth (H : E → ℝ) (Hj : ℕ → E → ℝ)
 [EXTRA] smoothSymplecticData显式添加原方法r阶/近恒等辛/joint C∞、开放凸环境D、紧凸B⊆D、真实原流；r>0。
 [EXTRA] 本签名保留完整构造H_j与finiteMatching为结论，k≥r固定；数值迭代和截断ODE留B，常数可依赖k,T而非所有k统一。
 [NEEDS_HUMAN] 给定H̃_k与存在一组构造系数的量词对应、截断轨道留B及所有n≤ν的长时间范围需审；任意n和T的量化包含原文每个n≤ν。
-[NEEDS_HUMAN] 证明先对H取L，后对H̃_k沿用L，并在Lνh^(k+1)中省略缺陷常数C；本地辅助桥接显式给实际截断族统一L和C，但原文不改。 -/
-theorem theorem31 :
-  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
-    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
-    smoothSymplecticData H D B G Φ r →
-    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
-    ∀ k ≥ r, finiteMatching H Hj r k D B G ∧
-      ∀ T > 0, ∃ M > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z₀ ∈ B, ∀ ν : ℕ,
-        (∀ i ≤ ν, oneStepIterate G h z₀ i ∈ B) →
-        (∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
-          ∀ z ∈ B, truncatedFlow H Hj r k h z (Γ h z) ∧
-            (∀ t ∈ Icc 0 h, Γ h z t ∈ B)) →
-        (ν:ℝ)*h*h^(k-r) ≤ T → ‖H (oneStepIterate G h z₀ ν)-H z₀‖ ≤ M*h^r := by
+[NEEDS_HUMAN] 证明先对H取L，后对H̃_k沿用L，并在Lνh^(k+1)中省略缺陷常数C；本地辅助桥接显式给实际截断族统一L和C，但原文不改。 
+[EXTRA] 将构造与能量估计分开：Hj及实际有限匹配由FiniteMatchingConstruction/ArbitraryFiniteTruncation提供；本条不再要求从B每点出发的全部截断短轨迹留B，保留原数值轨道约束和正确长时间量词。 -/
+theorem theorem31 (n r k : ℕ)
+    (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)
+    (D B : Set (SymplecticCoordinates n)) (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
+    (_hr : 0 < r) (_hrk : r ≤ k) (_hD : IsOpen D) (_hconvD : Convex ℝ D)
+    (_hB : IsCompact B) (_hconvB : Convex ℝ B) (_hBD : B ⊆ D)
+    (_hH : ContDiffOn ℝ ⊤ H D) (_hHj : ∀ j, ContDiffOn ℝ ⊤ (Hj j) D)
+    (_hmatching : finiteMatching H Hj r k D B G) :
+    ∀ T > 0, ∃ M > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z₀ ∈ B, ∀ ν : ℕ,
+      (∀ i ≤ ν, oneStepIterate G h z₀ i ∈ B) →
+      (ν:ℝ)*h*h^(k-r) ≤ T →
+      ‖H (oneStepIterate G h z₀ ν)-H z₀‖ ≤ M*h^r := by
   sorry
 
 /-- source_id: MD-3.4-CompactLipschitz · unnumbered_claim · §3.4 · 印刷p.114 / PDFp.136
@@ -838,15 +845,29 @@ theorem truncatedConservation (H : SymplecticCoordinates Nc → ℝ)
     ∀ t ∈ Icc 0 τ, H (γ t) = H (γ 0) := by
   apply MolecularDynamics.textbookHamiltonian_energy_const_on_Icc <;> assumption
 
-/-- source_id: MD-3.4-EnergyTelescoping · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137 -/
+/-- source_id: MD-3.4-EnergyTelescoping · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137 
+[EXTRA] 保留已证首行望远镜恒等式；补给定守恒截断步F、真实差η=数值步−F的完整三行等式，不以待证能量差为前提。 -/
 theorem energyTelescoping {E : Type*} (K : E → ℝ)
     (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
     ∑ i ∈ Finset.range n, (K (oneStepIterate G h z₀ (i + 1)) -
       K (oneStepIterate G h z₀ i)) = K (oneStepIterate G h z₀ n) - K z₀ := by
   apply MolecularDynamics.oneStep_energy_telescoping <;> assumption
 
+theorem energyTelescoping_complete (K : E → ℝ) (G : ℝ → E → E)
+    (F : E → E) (h : ℝ) (z₀ : E) (n : ℕ)
+    (_hconserve : ∀ i < n, K (F (oneStepIterate G h z₀ i))=K (oneStepIterate G h z₀ i)) :
+    let z := oneStepIterate G h z₀
+    let η := fun i ↦ z (i+1)-F (z i)
+    K (z n)-K z₀ = ∑ i ∈ Finset.range n, (K (z (i+1))-K (z i)) ∧
+    (∑ i ∈ Finset.range n, (K (z (i+1))-K (z i))) =
+      ∑ i ∈ Finset.range n, (K (z (i+1))-K (F (z i))) ∧
+    (∑ i ∈ Finset.range n, (K (z (i+1))-K (F (z i)))) =
+      ∑ i ∈ Finset.range n, (K (F (z i)+η i)-K (F (z i))) := by
+  sorry
+
 /-- source_id: MD-3.4-UniformTruncatedLipschitz · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
-[EXTRA] 开放D、紧凸B⊆D及H和有限H_j在D C¹；0≤h≤1；L由有限系数导数界推出。 -/
+[EXTRA] 开放D、紧凸B⊆D及H和有限H_j在D C¹；0≤h≤1；L由有限系数导数界推出。 
+[EXTRA] 保留统一截断Lipschitz定理，补原完整能量差≤LΣ‖η‖≤LAνh^(k+1)链；A为原文缺陷常数重命名，F为所给守恒截断一步。 -/
 theorem uniformTruncatedLipschitz
     (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (D B : Set E) (hD : IsOpen D)
     (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
@@ -856,6 +877,20 @@ theorem uniformTruncatedLipschitz
       ‖textbookTruncatedHamiltonian H Hj r k h v -
         textbookTruncatedHamiltonian H Hj r k h u‖ ≤ L * ‖v - u‖ := by
   apply MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz <;> assumption
+
+theorem uniformTruncatedLipschitz_chain (K : E → ℝ) (G : ℝ → E → E)
+    (F : E → E) (h L A : ℝ) (k n : ℕ) (z₀ : E)
+    (_hh : 0 ≤ h) (_hL : 0 ≤ L) (_hA : 0 ≤ A)
+    (_hconserve : ∀ i < n, K (F (oneStepIterate G h z₀ i))=K (oneStepIterate G h z₀ i))
+    (_hlip : ∀ i < n,
+      |K (oneStepIterate G h z₀ (i+1))-K (F (oneStepIterate G h z₀ i))| ≤
+        L*‖oneStepIterate G h z₀ (i+1)-F (oneStepIterate G h z₀ i)‖)
+    (_hdefect : ∀ i < n, ‖oneStepIterate G h z₀ (i+1)-F (oneStepIterate G h z₀ i)‖ ≤ A*h^(k+1)) :
+    |K (oneStepIterate G h z₀ n)-K z₀| ≤
+      L*∑ i ∈ Finset.range n, ‖oneStepIterate G h z₀ (i+1)-F (oneStepIterate G h z₀ i)‖ ∧
+    (L*∑ i ∈ Finset.range n, ‖oneStepIterate G h z₀ (i+1)-F (oneStepIterate G h z₀ i)‖) ≤
+      L*A*(n:ℝ)*h^(k+1) := by
+  sorry
 
 /-- source_id: MD-3.4-TruncationRemainder · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
 [EXTRA] 各有限系数在紧B连续；0≤h≤1；统一正C由紧性推出，未供应所需余项界。 -/
@@ -867,7 +902,8 @@ theorem truncationRemainder
   apply MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder <;> assumption
 
 /-- source_id: MD-3.4-PhysicalEnergyDrift · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
-[EXTRA] 开放D、紧凸B⊆D及有限C¹系数；给定真实截断ODE族γ及其留B、γ(h,z,0)=z，未假设γ的能量守恒或误差界。 -/
+[EXTRA] 开放D、紧凸B⊆D及有限C¹系数；给定真实截断ODE族γ及其留B、γ(h,z,0)=z，未假设γ的能量守恒或误差界。 
+[EXTRA] 保留已证实际缺陷和界，新增实际截断流的统一一步匹配误差资格与完整2Ch^r+LAνh^(k+1)结论；不是以能量结论为假设。 -/
 theorem physicalEnergyDrift
     (H : SymplecticCoordinates Nc → ℝ) (Hj : ℕ → SymplecticCoordinates Nc → ℝ)
     (r k : ℕ) (D B : Set (SymplecticCoordinates Nc))
@@ -888,6 +924,28 @@ theorem physicalEnergyDrift
           L * ∑ i ∈ Finset.range n, ‖G h (oneStepIterate G h z₀ i) -
             γ h (oneStepIterate G h z₀ i) h‖ := by
   apply MolecularDynamics.textbook_energy_drift_le_actual_defects <;> assumption
+
+theorem physicalEnergyDrift_complete
+    (H : SymplecticCoordinates Nc → ℝ) (Hj : ℕ → SymplecticCoordinates Nc → ℝ)
+    (r k : ℕ) (D B : Set (SymplecticCoordinates Nc))
+    (hD : IsOpen D) (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
+    (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D)
+    (G : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (γ : ℝ → SymplecticCoordinates Nc → ℝ → SymplecticCoordinates Nc)
+    (hγ₀ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, γ h z 0 = z)
+    (hγB : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h, γ h z t ∈ B)
+    (hγ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h,
+      HasDerivWithinAt (γ h z)
+        (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)
+          (γ h z t)) (Icc 0 h) t)
+    (A : ℝ) (_hA : 0 ≤ A)
+    (_hdefect : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ‖G h z-γ h z h‖ ≤ A*h^(k+1)) :
+    ∃ C : ℝ, 0 < C ∧ ∃ L : ℝ, 0 < L ∧
+      ∀ h ∈ Icc (0 : ℝ) 1, ∀ z₀, ∀ n : ℕ,
+        (∀ i ≤ n, oneStepIterate G h z₀ i ∈ B) →
+        ‖H (oneStepIterate G h z₀ n) - H z₀‖ ≤ 2 * C * h ^ r +
+          L*A*(n:ℝ)*h^(k+1) := by
+  sorry
 
 /-- source_id: MD-3.4-PolynomialEnergyRate · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
 [EXTRA] [EXTRA]hdefect是假设明确给出的实际一步O(h^(k+1))端点界，源自原书“By construction”尚未形式化的先验；不是本条能量结论。
@@ -915,7 +973,8 @@ theorem polynomialEnergyRate
     H Hj r k hrk D B hD hB hconv hBD hH hHj G γ hγ₀ hγB hγ A T hA hT hdefect
 
 /-- source_id: MD-3.4-StepCountPower · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
-[EXTRA] 自然数r≤k使k−r没有截断损失；不将此代数辅助冒充完整能量定理。 -/
+[EXTRA] 自然数r≤k使k−r没有截断损失；不将此代数辅助冒充完整能量定理。 
+[EXTRA] 本条仅承担步数幂次代数辅助；原句的完整能量率由MD-3.4-PolynomialEnergyRate承担，原文不删并显式跨条映射。 -/
 theorem stepCountPower (r k n : ℕ) (hrk : r ≤ k) (h : ℝ) :
     (n : ℝ) * h ^ (k + 1) = ((n : ℝ) * h * h ^ (k - r)) * h ^ r := by
   apply MolecularDynamics.energy_step_count_power_factor <;> assumption
@@ -978,12 +1037,25 @@ theorem exponentialFlat :
   · simp
 
 /-- source_id: MD-3.4-ScalarVerletShadow4 · definition · §3.4 · 印刷p.117 / PDFp.139
-[NEEDS_HUMAN] O(h⁶)的实际修正匹配另为未完成理论；有限函数与余项分开。 -/
+[NEEDS_HUMAN] O(h⁶)的实际修正匹配另为未完成理论；有限函数与余项分开。 
+[EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。 -/
 def scalarVerletShadow4 (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ :=
   let p := z.2; let q := z.1
   p^2/2+U q+h^2/24*(2*p^2*deriv (deriv U) q-(deriv U q)^2)+h^4*(
     p^4*iteratedDeriv 4 U q/720-p^2*deriv U q*iteratedDeriv 3 U q/120-
     (deriv U q)^2*iteratedDeriv 2 U q/240-p^2*((iteratedDeriv 2 U q)^2+deriv U q*iteratedDeriv 3 U q)/60)
+
+theorem scalarVerletShadow4_matching (U : ℝ → ℝ) (_hU : ContDiff ℝ ⊤ U)
+    (B : Set (ℝ × ℝ)) (_hB : IsCompact B) :
+    ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → (ℝ × ℝ) → ℝ → (ℝ × ℝ),
+      ∀ h ∈ Ioo 0 δ, ∀ z ∈ B, Γ h z 0=z ∧
+        solution (fun x : ℝ × ℝ ↦
+          (deriv (fun p ↦ scalarVerletShadow4 U h (x.1,p)) x.2,
+           -deriv (fun q ↦ scalarVerletShadow4 U h (q,x.2)) x.1)) (Γ h z) 0 h ∧
+        ‖(let P := z.2-(h/2)*deriv U z.1
+           let Q := z.1+h*P
+           (Q,P-(h/2)*deriv U Q))-Γ h z h‖ ≤ C*h^7 := by
+  sorry
 
 /-- source_id: MD-3.4-CommutingEnergy · unnumbered_claim · §3.4 · 印刷p.117 / PDFp.139
 [EXTRA] H在开放D为C¹、实际K-Hamiltonian流存在正η且全轨道H守恒。
@@ -1641,3 +1713,170 @@ def freeHardSphereHamiltonian {N d : ℕ} (m σ : Fin N → ℝ)
     (Classical.propDecidable _) ((∑ i, ‖p i‖^2/(2*m i) : ℝ) : WithTop ℝ) ⊤
 
 end MD.Ch03
+
+/- BEGIN WEBSITE REPAIR AXIOMS -/
+#print axioms MD.Ch03.modifiedConstruction
+#print axioms MD.Ch03.oscillatorAdjointEuler
+#print axioms MD.Ch03.oscillatorShadow
+#print axioms MD.Ch03.oscillatorEnergyFailure
+#print axioms MD.Ch03.oscillatorShadowInvariant
+#print axioms MD.Ch03.shadowEllipses
+#print axioms MD.Ch03.eulerOscillatorGrowth
+#print axioms MD.Ch03.formalHamiltonian
+#print axioms MD.Ch03.formalHamiltonianField
+#print axioms MD.Ch03.textbookLieDerivative
+#print axioms MD.Ch03.observableDerivative
+#print axioms MD.Ch03.observableSecondDerivative
+#print axioms MD.Ch03.formalOperatorExponential
+#print axioms MD.Ch03.formalObservable
+#print axioms MD.Ch03.lieTaylor
+#print axioms MD.Ch03.flowCoordinates
+#print axioms MD.Ch03.textbookPoissonBracket
+#print axioms MD.Ch03.poissonCoordinates
+#print axioms MD.Ch03.poissonBilinearity
+#print axioms MD.Ch03.poissonSkew
+#print axioms MD.Ch03.poissonSelf
+#print axioms MD.Ch03.poissonJacobi
+#print axioms MD.Ch03.hamiltonianObservableDerivative
+#print axioms MD.Ch03.hamiltonianLie_eq_poisson
+#print axioms MD.Ch03.hamiltonianCoordinateDerivative
+#print axioms MD.Ch03.hamiltonianLieAdditivity
+#print axioms MD.Ch03.formalSplitting
+#print axioms MD.Ch03.formalExactSplit
+#print axioms MD.Ch03.hamiltonianSplittingObservable
+#print axioms MD.Ch03.hamiltonianExactObservable
+#print axioms MD.Ch03.exactExponentialCubic
+#print axioms MD.Ch03.productExponentialCubic
+#print axioms MD.Ch03.differenceCommutator
+#print axioms MD.Ch03.differenceCommutator_coeff2
+#print axioms MD.Ch03.differenceCommutator_hamiltonian
+#print axioms MD.Ch03.differenceCubic
+#print axioms MD.Ch03.differenceCubic_coeff3
+#print axioms MD.Ch03.hamiltonianCommutator
+#print axioms MD.Ch03.leadingShadowPrinted
+#print axioms MD.Ch03.leadingModifiedExponential
+#print axioms MD.Ch03.leadingShadowHamiltonian
+#print axioms MD.Ch03.bch4
+#print axioms MD.Ch03.bchHamiltonian3
+#print axioms MD.Ch03.bchHamiltonianMatching
+#print axioms MD.Ch03.commutingFlows
+#print axioms MD.Ch03.symplecticEulerShadow3
+#print axioms MD.Ch03.symplecticEulerShadowMatching
+#print axioms MD.Ch03.verletMaps
+#print axioms MD.Ch03.verletHamiltonianParts
+#print axioms MD.Ch03.verletHamiltonianParts_sum
+#print axioms MD.Ch03.verletStructure
+#print axioms MD.Ch03.verletModifiedH
+#print axioms MD.Ch03.verletModifiedMatching
+#print axioms MD.Ch03.verletModifiedMatching_general
+#print axioms MD.Ch03.modifiedEven
+#print axioms MD.Ch03.formalStrang
+#print axioms MD.Ch03.differentLogsCommute
+#print axioms MD.Ch03.strangInverse
+#print axioms MD.Ch03.strangCubic
+#print axioms MD.Ch03.strangCubic_coeff3
+#print axioms MD.Ch03.yoshidaCompose
+#print axioms MD.Ch03.yoshidaCoefficients
+#print axioms MD.Ch03.yoshidaCancellation
+#print axioms MD.Ch03.yoshidaUnique
+#print axioms MD.Ch03.yoshidaRaiseOrder
+#print axioms MD.Ch03.yoshida4
+#print axioms MD.Ch03.yoshida4Structure
+#print axioms MD.Ch03.generalSplitting
+#print axioms MD.Ch03.takahashiImada
+#print axioms MD.Ch03.potentialDoubleBracket
+#print axioms MD.Ch03.takahashiShadow2
+#print axioms MD.Ch03.takahashiShadow2_matching
+#print axioms MD.Ch03.takahashiProcessor
+#print axioms MD.Ch03.processorEnergyPrinted
+#print axioms MD.Ch03.takahashiEffectiveOrder
+#print axioms MD.Ch03.formalField
+#print axioms MD.Ch03.leadingModifiedField
+#print axioms MD.Ch03.truncatedHamiltonian
+#print axioms MD.Ch03.truncationSmooth
+#print axioms MD.Ch03.truncationSmooth_C1
+#print axioms MD.Ch03.theorem31
+#print axioms MD.Ch03.compactLipschitz
+#print axioms MD.Ch03.truncatedFlow
+#print axioms MD.Ch03.finiteMatchingConstruction
+#print axioms MD.Ch03.truncatedConservation
+#print axioms MD.Ch03.energyTelescoping
+#print axioms MD.Ch03.energyTelescoping_complete
+#print axioms MD.Ch03.uniformTruncatedLipschitz
+#print axioms MD.Ch03.uniformTruncatedLipschitz_chain
+#print axioms MD.Ch03.truncationRemainder
+#print axioms MD.Ch03.physicalEnergyDrift
+#print axioms MD.Ch03.physicalEnergyDrift_complete
+#print axioms MD.Ch03.polynomialEnergyRate
+#print axioms MD.Ch03.stepCountPower
+#print axioms MD.Ch03.arbitraryFiniteTruncation
+#print axioms MD.Ch03.analyticBEA
+#print axioms MD.Ch03.optimalTruncation
+#print axioms MD.Ch03.exponentialFlat
+#print axioms MD.Ch03.scalarVerletShadow4
+#print axioms MD.Ch03.scalarVerletShadow4_matching
+#print axioms MD.Ch03.commutingEnergy
+#print axioms MD.Ch03.commutingEnergySymmetry
+#print axioms MD.Ch03.energySymplecticNoGo
+#print axioms MD.Ch03.equalComponentFirstIntegral
+#print axioms MD.Ch03.equalEulerIntegral
+#print axioms MD.Ch03.linearEulerIntegral
+#print axioms MD.Ch03.linearRKIntegral
+#print axioms MD.Ch03.verletOscillatorEnergy
+#print axioms MD.Ch03.momentumProjection
+#print axioms MD.Ch03.projectionConstraint
+#print axioms MD.Ch03.projectionFactor
+#print axioms MD.Ch03.projectionEnergy
+#print axioms MD.Ch03.kineticZero
+#print axioms MD.Ch03.energyProjectionRelation
+#print axioms MD.Ch03.noHamiltonianAttractor
+#print axioms MD.Ch03.linearContinuousIntegral
+#print axioms MD.Ch03.hamiltonianFlowStructures
+#print axioms MD.Ch03.volumeNotSymplectic
+#print axioms MD.Ch03.linearInvolution
+#print axioms MD.Ch03.reversedField
+#print axioms MD.Ch03.momentumReversal
+#print axioms MD.Ch03.mechanicalReversalPrinted
+#print axioms MD.Ch03.reversedTrajectoryPrinted
+#print axioms MD.Ch03.reversedTrajectory
+#print axioms MD.Ch03.flowReversal
+#print axioms MD.Ch03.flowReversalIdentity
+#print axioms MD.Ch03.reversibleMethod
+#print axioms MD.Ch03.symmetricMethod
+#print axioms MD.Ch03.affineInvariant
+#print axioms MD.Ch03.symmetricAffineReversible
+#print axioms MD.Ch03.rkAffine
+#print axioms MD.Ch03.partitionedAffinePrinted
+#print axioms MD.Ch03.partitionedAffine
+#print axioms MD.Ch03.symplecticNotReversible
+#print axioms MD.Ch03.trapezoidalRelation
+#print axioms MD.Ch03.trapezoidalProperties
+#print axioms MD.Ch03.hamiltonianSpectrum
+#print axioms MD.Ch03.symplecticSpectrum
+#print axioms MD.Ch03.reversibleSpectrum
+#print axioms MD.Ch03.conjugateIterates
+#print axioms MD.Ch03.mechanicalReversalCorrect
+#print axioms MD.Ch03.conjugateOrderPrinted
+#print axioms MD.Ch03.reversibleVolumeFailure
+#print axioms MD.Ch03.hardCoreDomain
+#print axioms MD.Ch03.elasticReflection
+#print axioms MD.Ch03.elasticEnergy
+#print axioms MD.Ch03.collisionComposition
+#print axioms MD.Ch03.collisionRegularity
+#print axioms MD.Ch03.hardCorePotential
+#print axioms MD.Ch03.primitiveSplitting
+#print axioms MD.Ch03.primitiveOrder
+#print axioms MD.Ch03.obstacleReflection
+#print axioms MD.Ch03.primitiveDefect
+#print axioms MD.Ch03.collisionDefectZero
+#print axioms MD.Ch03.endImpactThirdOrderPrinted
+#print axioms MD.Ch03.collisionQuadraticPath
+#print axioms MD.Ch03.collisionTimeRelation
+#print axioms MD.Ch03.collisionQuartic
+#print axioms MD.Ch03.collisionalVerletRelation
+#print axioms MD.Ch03.collisionalVerletOrder
+#print axioms MD.Ch03.pairForceDecoupling
+#print axioms MD.Ch03.decoupledOrder
+#print axioms MD.Ch03.modifiedCollisionProjection
+#print axioms MD.Ch03.freeHardSphereHamiltonian
+/- END WEBSITE REPAIR AXIOMS -/

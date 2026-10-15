@@ -74,24 +74,24 @@
 | MD-3.3.4-TakahashiEffectiveOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT09（原返回FAIL保留） | placeholder / incomplete；缺处理器逆、局部展开与实际四阶余项/稳定性的完整理论；本地非PASS不证明。 |
 | MD-3.4-ModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.4-LeadingModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺真实步长Taylor展开、系数极限及修正场ODE余项桥接；属于完整修正方程理论，保留sorry。 |
-| MD-3.4-TruncatedHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.4-TruncationSmooth | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.4-Thm3.1 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺Hamiltonian形式jet构造、全阶匹配与实际局部ODE统一余项；不建设大型BEA理论。 |
+| MD-3.4-TruncatedHamiltonian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | definition / self-contained |
+| MD-3.4-TruncationSmooth | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | existing_bridge / checked+documented priors |
+| MD-3.4-Thm3.1 | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT10 | placeholder / incomplete；缺Hamiltonian形式jet构造、全阶匹配与实际局部ODE统一余项；不建设大型BEA理论。 |
 | MD-3.4-CompactLipschitz | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.4-TruncatedFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.4-TruncatedFlow | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | definition / self-contained |
 | MD-3.4-FiniteMatchingConstruction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺形式jet的Hamiltonian构造与实际有限截断匹配/余项；大型BEA理论缺项。 |
-| MD-3.4-TruncatedConservation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.4-EnergyTelescoping | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.4-UniformTruncatedLipschitz | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.4-TruncationRemainder | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.4-PhysicalEnergyDrift | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.4-TruncatedConservation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | existing_bridge / checked+documented priors |
+| MD-3.4-EnergyTelescoping | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | existing_bridge / checked+documented priors |
+| MD-3.4-UniformTruncatedLipschitz | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | existing_bridge / checked+documented priors |
+| MD-3.4-TruncationRemainder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | existing_bridge / checked+documented priors |
+| MD-3.4-PhysicalEnergyDrift | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT11 | existing_bridge / checked+documented priors |
 | MD-3.4-PolynomialEnergyRate | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.4-StepCountPower | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.4-StepCountPower | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT11 | existing_bridge / checked+documented priors |
 | MD-3.4-ArbitraryFiniteTruncation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺全阶Hamiltonian构造与实际截断匹配；C∞的任意固定阶不推出统一解析界。 |
-| MD-3.4-AnalyticDefect | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | placeholder / incomplete；缺解析Hamiltonian jet、Cauchy阶乘界和实际流统一余项；不建设大型BEA理论。 |
-| MD-3.4-OptimalTruncation | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺整数最优截断与一致指数常数界；原文取整问题待审。 |
+| MD-3.4-AnalyticDefect | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT11（原返回NEEDS_HUMAN保留） | placeholder / incomplete；缺解析Hamiltonian jet、Cauchy阶乘界和实际流统一余项；不建设大型BEA理论。 |
+| MD-3.4-OptimalTruncation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT11（原返回FAIL保留） | placeholder / incomplete；缺整数最优截断与一致指数常数界；原文取整问题待审。 |
 | MD-3.4-ExponentialFlat | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
-| MD-3.4-ScalarVerletShadow4 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | definition / incomplete |
+| MD-3.4-ScalarVerletShadow4 | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT11 | definition / incomplete |
 | MD-3.4-CommutingEnergy | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；非PASS不进入证明；连续流版本可以另桥接Lie–Poisson导数。 |
 | MD-3.4-CommutingEnergySymmetry | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
 | MD-3.4-EnergySymplecticNoGo | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺Ge–Marsden精确理论及局部全局资格；不建设大型理论。 |
@@ -397,3 +397,7 @@ EAUDIT07 §3.3.2：7条落盘，单文件与10项公理通过；未写新证明�
 EAUDIT08 §3.3.3：3条落盘，单文件与3项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT09 §3.3.4：4条落盘，单文件与5项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT10 §3.4：8条落盘，单文件与11项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT11 §3.4：5条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。

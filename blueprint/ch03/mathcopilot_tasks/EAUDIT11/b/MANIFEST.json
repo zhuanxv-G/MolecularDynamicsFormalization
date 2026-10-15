@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT11",
+  "source_id": "MD-3.4-StepCountPower",
+  "input_sha256": {
+    "BATCH_EAUDIT11.md": "ed95fa6093bd27282422bc985f0f53612c24eb239e6d770ac6d6d4aa94cd47b8",
+    "Blueprint/Ch03.lean": "85dbc75a087a951e8e7bf57add11d73cf70e1b97630f4b266783dfe0e8642210",
+    "blueprint/ch03/ch03_source.json": "d9fd55a14be96063be2f1b47c4c22db5a7d1304bd976ac799373a0651525748b",
+    "EAUDIT11b_materials": "0e6e2da91a6b52e5743946928cdde406653e40cc570ca98f1268cf25dba408bc",
+    "EAUDIT11b_PAGES.pdf": "7371c76a36255e5920017fcce94d94005b83f143d7a5b1dd9d97e1e69d801a39"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    138
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "1dc9db08e2c53e1a12e22b0d1f6422e0a785beae4c4eb8ef79430c5d661b7168",
+  "source_block_sha256": "6bcc450eae48fe140e7f8be192688b46c58fad3df46c51ea745c0efeb1fcc611",
+  "source_declarations": [
+    "stepCountPower"
+  ],
+  "dependency_excerpts": [],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT11_review.json",
+  "total_task_bytes": 90202
+}

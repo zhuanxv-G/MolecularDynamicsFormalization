@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT11",
+  "source_id": "MD-3.4-ScalarVerletShadow4",
+  "input_sha256": {
+    "BATCH_EAUDIT11.md": "ed95fa6093bd27282422bc985f0f53612c24eb239e6d770ac6d6d4aa94cd47b8",
+    "Blueprint/Ch03.lean": "85dbc75a087a951e8e7bf57add11d73cf70e1b97630f4b266783dfe0e8642210",
+    "blueprint/ch03/ch03_source.json": "d9fd55a14be96063be2f1b47c4c22db5a7d1304bd976ac799373a0651525748b",
+    "EAUDIT11c_materials": "0d23d460a92febe0aa37927c1ab35200157c5a2829a3574b0e3ca68d5e85a405",
+    "EAUDIT11c_PAGES.pdf": "d945dfc2007cb0d2dbc0c95c9dbfeb26e88c6383b4f57e496809ed14d5023002"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    139
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "892663f2edd54bc089013ab73afbd24588c84c9d7ec7d325e2faad436e6eae15",
+  "source_block_sha256": "a1771664dfc6430937aba6ba81cd22899b0e2f8ac17af526aa9132e426522d82",
+  "source_declarations": [
+    "scalarVerletShadow4",
+    "scalarVerletShadow4_matching"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "scalarVerletShadow4",
+      "file_sha256": "85dbc75a087a951e8e7bf57add11d73cf70e1b97630f4b266783dfe0e8642210",
+      "excerpt_sha256": "0a044f304059badf4881166f196e4d0e33728eae6c9d1dce50cc77f41c39f1d5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "solution",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "4246b13784e62583efb6e55b0aaf0235c08565f8c3c6ec6bf888afa19baaf49b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT11_review.json",
+  "total_task_bytes": 209015
+}

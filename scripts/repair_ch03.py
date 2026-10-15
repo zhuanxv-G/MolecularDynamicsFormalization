@@ -153,8 +153,9 @@ theorem takahashiShadow2_matching (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ
         human[sid('TakahashiEffectiveOrder')]='原后处理P=id+h²a与现χ⁻¹∘G∘χ的方向及全局Homeomorph域不匹配；选项：轨迹邻域P∘G∘P⁻¹并绑定原a／令χ=P⁻¹且系数取负并明确局部域。与第2章TI符号疑误一并裁定，当前保持。'
         pages=[134,135]
     elif section=='3.4':
-        change('TruncationSmooth',current('TruncationSmooth').replace('ContDiffOn ℝ 1','ContDiffOn ℝ ⊤'),
-          'B','光滑假设与结论均提升C∞，覆盖原文光滑截断；原正式有限和定理可按阶数参数实例化，保留原证明小修。')
+        old=current('TruncationSmooth')
+        change('TruncationSmooth',old.split(' := by')[0].replace('ContDiffOn ℝ 1','ContDiffOn ℝ ⊤')+' := by\n  sorry\n\n'+old.replace('theorem truncationSmooth','theorem truncationSmooth_C1',1),
+          'B','光滑假设与结论均提升C∞；正式引理仅C¹，一次小修检查不适用，不新写有限和证明。C∞保留sorry，原C¹已有证明改名保留并重查。')
         change('Thm3.1','''theorem theorem31 (n r k : ℕ)
     (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)
     (D B : Set (SymplecticCoordinates n)) (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
@@ -430,6 +431,9 @@ def physicalCVARelation {N d : ℕ} (m σ : Fin N → ℝ)
 
 def run_batches(section,edits,human,pages,refresh=()):
     sources=read(ROOT/'blueprint/ch03/ch03_source.json');web={w['source_id']:w for w in read(ROOT/'blueprint/ch03/website_audit.json')}
+    handled=lambda k: web[k].get('repair',{}).get('status') in ('awaiting_reaudit','awaiting_mentor')
+    edits={k:v for k,v in edits.items() if not handled(k)}
+    human={k:v for k,v in human.items() if not handled(k)}
     source_only=[s['source_id'] for s in sources if s['section']==section and s['source_id'] not in edits and s['source_id'] not in human and
       (s['source_id'] in refresh or (web[s['source_id']]['json_review']['status']=='CORRECTED' and not web[s['source_id']].get('repair',{}).get('json_review_locally_verified')))]
     touched=set(edits)|set(human)|set(source_only);ids=[s['source_id'] for s in sources if s['source_id'] in touched]

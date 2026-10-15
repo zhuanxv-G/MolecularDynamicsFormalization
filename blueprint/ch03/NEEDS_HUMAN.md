@@ -35,3 +35,8 @@
 
 - MD-3.3.4-ProcessorEnergyPrinted：原印第一行T遗漏U，h=0即不等于H；选项：批准另立Corrected将T改H，保留第二界／原印仅存档。当前原式保留，不尝试证明。 网站反例：n=1，m₀=1，U(q)≡1，B={(q=0,p=0)}。正质量、C⁴、紧性均满足。grad U=0、U''=0，处理器恒等，shadowTerms=(0,0,0)，T=0，H=1，takahashiShadow2=1。任意δ>0都有h=0∈(−δ,δ)，第一界要求1≤C·0⁴=0，第二界为0≤0。即使删除h=0，第一界1≤Ch⁴在h→0时仍不成立。; 原返回FAIL保留。
 - MD-3.3.4-TakahashiEffectiveOrder：原后处理P=id+h²a与现χ⁻¹∘G∘χ的方向及全局Homeomorph域不匹配；选项：轨迹邻域P∘G∘P⁻¹并绑定原a／令χ=P⁻¹且系数取负并明确局部域。与第2章TI符号疑误一并裁定，当前保持。 网站反例：缺失条款：存在任意χ的声明不要求原文指定处理器或其二阶展开，且把局部坐标展开提升为全空间homeomorphism。具体说明此提升不能直接由式(3.9)给出：n=1,m=1,U(q)=q⁴，则P_h第一分量q−h²q³/3；任意h≠0，(q,p)=(0,0)、(√3/|h|,0)、(−√3/|h|,0)均映到(0,0)，所以式(3.9)自身不是全局homeomorphism。该例只否定将显式P_h直接认作全局可逆映射，不是否定存在另一族全局χ的命题。; 原返回FAIL保留。
+
+## EAUDIT11 原文数学判断（保持现状）
+
+- MD-3.4-AnalyticDefect：原文many standard classes没有给出准确方法类及解析邻域资格；选项：指定解析一阶方法类并核定k·h窗口／保留仅有限阶构造并另列指数严格化。需数学判断，不以缺陷结论作前提。 网站反例：已展开Ch03_deps.txt：SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；smoothSymplecticData要求r>0、开放凸D、紧凸B⊆D、H光滑、G(0)=id、联合光滑、Jacobian满足AᵀJA=J、B上真实H流以及局部O(|h|^(r+1))阶。Jacobian是实际fderiv矩阵。truncatedFlow要求Γ(0)=z及[0,h]上的实际ODE；Hamiltonian为H+Σ_{j=r}^k h^j Hj。解析假设、统一C/A/δ先于k、真实流估计均明确，且加入A(k+1)h≤1并另给指数截断。未找到缺失定义；原文many standard classes未界定适用类，需数学判断这些解析及域条件是否足以支持此全域解析系数结论；不能仅据名字或sorry判PASS。analyticBEA含sorry，与此语义判定分开。; 原返回NEEDS_HUMAN保留。
+- MD-3.4-OptimalTruncation：原印指数1/(γh)与γ=1/(De)及现标量优化的γ/h不一致，标量界也不直接给真实缺陷；选项：导师确认指数勘误后与AnalyticDefect连接／原式保留存档。当前不自行确定勘误。 网站反例：缺失实际流差结论及增长/最小化条款。取A=0.1、h_N=1/(0.1 e N)，Lean幂=(1/e)^N；原书指数界则exp(−0.1 e/h_N)=exp(−0.01 e²N)，与Lean率不同；A较大时原书率还会比真实连续最小值快，无法用固定C̃吸收。; 原返回FAIL保留。
