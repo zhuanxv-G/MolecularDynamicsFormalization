@@ -115,8 +115,8 @@
 | MD-4.3.5.1-GeodesicRelation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT15 | definition / self-contained |
 | MD-4.3.6-MShakeIteration | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.3.6-SETTLE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3.6-LINCSInverse | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3.6-LINCSConvergence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；缺Banach代数Neumann级数与有限维矩阵逆/逐元素拓扑之间的接口桥接；保留真实有限和逆矩阵极限，不新建一般逆算子理论。 |
+| MD-4.3.6-LINCSInverse | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT16 | definition / self-contained |
+| MD-4.3.6-LINCSConvergence | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT16 | placeholder / incomplete；缺Banach代数Neumann级数与有限维矩阵逆/逐元素拓扑之间的接口桥接；保留真实有限和逆矩阵极限，不新建一般逆算子理论。 |
 | MD-4.4-WaterPairPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.4-TotalMass | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.4-CenterMass | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
@@ -378,3 +378,5 @@ EAUDIT13 §4.3.4：8条落盘，单文件与12项公理通过；未写新证明�
 EAUDIT14 §4.3.5：7条落盘，单文件与9项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT15 §4.3.5.1：4条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT16 §4.3.6：2条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。

@@ -112,8 +112,8 @@
 | MD-4.3.5.1-GeodesicRelation | 164/186 | PASS | 待复审 / EAUDIT15 | incomplete |
 | MD-4.3.6-MShakeIteration | 164/186 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.3.6-SETTLE | 165/187 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.3.6-LINCSInverse | 165/187 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.3.6-LINCSConvergence | 165/187 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.6-LINCSInverse | 165/187 | PASS | 待复审 / EAUDIT16 | self-contained |
+| MD-4.3.6-LINCSConvergence | 165/187 | PASS | 待复审 / EAUDIT16 | incomplete |
 | MD-4.4-WaterPairPotential | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.4-TotalMass | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.4-CenterMass | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
@@ -6264,7 +6264,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 2. 原文陈述
 
-> LINCS In solving the Eqs. (4.27)–(4.29) by Newton iteration, the largest cost and the most significant barrier to parallelization is the linear solve. The LINCS method [119,175] uses a series expansion to approximate the inverse matrix (which is valid only under certain conditions).
+> LINCS In solving the Eqs. (4.27)–(4.29) by Newton iteration, the largest cost and the most significant barrier to parallelization is the linear solve. The LINCS method [119, 175] uses a series expansion to approximate the inverse matrix (which is valid only under certain conditions).
 
 ### 3. 原文证明
 
@@ -6289,7 +6289,7 @@ def lincsInverse {l : ℕ} (C : Matrix (Fin l) (Fin l) ℝ) (k : ℕ) := ∑ j �
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT16**。原文JSON：CORRECTED；未冻结。
 
 实际声明及依赖 ReviewDefinitions.lean 中的 lincsInverse 都展开为 S_k(C)=∑_{j=0}^k C^j；Finset.range(k+1) 确实包含零次项和第 k 次项，矩阵乘法与乘法单位给出 C^0=I。l,k 为自然数，C 为任意 l×l 实矩阵；这是有限和定义，不带收敛断言，因此无需在定义上加范数或谱半径假设。[EXTRA] 明确把原文未印出的 series expansion 具体化为标准 Neumann 部分和，是合理的补充建模选择，不能称为原书展示公式或完整 LINCS 算法。逆的目标应解释为 I−C；同批依赖 lincsConvergence_statement 与实际 lincsConvergence 已明确这一目标，故没有把 C 自身的逆错误地写成 ∑C^j。若要应用于 Newton 线性矩阵 R，尚需在调用处给出 R=I−C 或含对角预条件的分解及相应缩放；本定义不宣称已经完成这种连接。原句中成本和并行化障碍属于算法动机，不是此矩阵定义的数学结论。本条按已标明的标准部分和登记范围 PASS，无 [ERRATUM?]，定义无 sorry。
 
@@ -6299,17 +6299,17 @@ def lincsInverse {l : ℕ} (C : Matrix (Fin l) (Fin l) ℝ) (k : ℕ) := ∑ j �
 
 位置：[Blueprint/Ch04.lean:1746](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1746>)（`MD.Ch04.lincsInverse`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`4e3ca7cb84d0e3233bbe9e8055d9f7a343a30b1fd2983b3c72983d2536e809aa`；原文SHA256：`0e8357f6fbcc1aa3d43a0cacbc40f3c320ab873edf019c5950bbe95aef1c1b15`。
+签名SHA256：`4e3ca7cb84d0e3233bbe9e8055d9f7a343a30b1fd2983b3c72983d2536e809aa`；原文SHA256：`90e6224b4f35daa859362e74755bd3dd19ff142391204d8d2849a24c65798543`。
 
 ## 1. MD-4.3.6-LINCSConvergence · unnumbered_claim · 印刷p.165 / PDFp.187
 
 ### 2. 原文陈述
 
-> The LINCS method [119,175] uses a series expansion to approximate the inverse matrix (which is valid only under certain conditions).
+> The LINCS method [119, 175] uses a series expansion to approximate the inverse matrix (which is valid only under certain conditions).
 
 ### 3. 原文证明
 
@@ -6336,7 +6336,7 @@ theorem lincsConvergence :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT16**。原文JSON：CORRECTED；未冻结。
 
 已展开依赖 ReviewDefinitions.lean 的 lincsInverse 为 S_k(C)=∑_{j=0}^k C^j，并核对 Statements.lean 的 lincsConvergence_statement 与实际声明一致。量词顺序为 ∀l∈ℕ, ∀C∈ℝ^{l×l}，随后假设 ‖C.toLin'.toContinuousLinearMap‖<1，结论 k→∞ 时 S_k(C) 在矩阵有限维拓扑中趋于 (I−C)⁻¹。toLin' 表示 x↦C*ᵥx，转成连续线性映射后范数是算子范数；即使当前开启 Matrix.Norms.Elementwise，也没有将条件替换为矩阵元素最大值。有限维函数空间的标准范数下，该算子范数具有次乘性，‖C^j‖op≤‖C‖op^j，几何级数收敛且 (I−C)S_k=I−C^{k+1}=S_k(I−C)，给出真正双侧逆；矩阵与算子拓扑在有限维一致，因而结论正确。[EXTRA] 把原文未具体说明的 certain conditions 实例化为一个充分条件，合理但不是必要条件：例如二阶矩阵 [[0,2],[0,0]] 范数为2却幂零，级数仍在一次后终止。Lean 没有写成必要充分条件，所以没有不当加强；也无需再假设 I−C 可逆，该条件已保证可逆。该条是标准 Neumann 充分收敛命题，不能据此宣称验证了完整 LINCS 的分解和性能。无 [ERRATUM?]。实际 theorem 的证明体为 by sorry，故此 PASS 仅为签名语义 PASS，不表示定理已有 Lean 完整证明。
 
@@ -6346,13 +6346,13 @@ theorem lincsConvergence :
 
 位置：[Blueprint/Ch04.lean:1750](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1750>)（`MD.Ch04.lincsConvergence`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺Banach代数Neumann级数与有限维矩阵逆/逐元素拓扑之间的接口桥接；保留真实有限和逆矩阵极限，不新建一般逆算子理论。
 
-签名SHA256：`b4aaefdc84beb9218743f26fc668e1fcfc0a631a466ff15b38d1ca300e2eb504`；原文SHA256：`ceee0c5032c2713d2dff69aaeef6caba603fc1448f5c31e99656659e246980fc`。
+签名SHA256：`b4aaefdc84beb9218743f26fc668e1fcfc0a631a466ff15b38d1ca300e2eb504`；原文SHA256：`eee6854a6a5f9f448c0b9d82ef07039e05f132ecdc1401eb8410e6de4604b2cf`。
 
 ## 1. MD-4.4-WaterPairPotential · definition · 印刷p.167 / PDFp.189
 

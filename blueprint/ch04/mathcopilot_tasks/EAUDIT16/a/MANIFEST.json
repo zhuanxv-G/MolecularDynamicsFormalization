@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT16",
+  "source_id": "MD-4.3.6-LINCSInverse",
+  "input_sha256": {
+    "BATCH_EAUDIT16.md": "38b20b745f065be440b8f3f16ec9ca02cb86bdc5b9aa2eec151f67d0d1f13cc1",
+    "Blueprint/Ch04.lean": "2677062c8361f7538ae88c6ae56e8819b1c368401e9549cd0743055547e55d49",
+    "blueprint/ch04/ch04_source.json": "20b02bfb263ce9ff6f51423597ab72eb37ba026c0214cae0c769c0e5a48c0035",
+    "EAUDIT16a_materials": "e7eb17813628bc46b970b8688e68e4e24ce3efaf3e4500182ec6fd87a4f0a29c",
+    "EAUDIT16a_PAGES.pdf": "142f63b3856f43e37b342cb67cde6b8619943c5dec79c0ccd7bc64409ea9d42c"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    187
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "08515a7987b9060e234a4de8a5676a0fbd9376a4ae06b97c182c2690bc0d0dfc",
+  "source_block_sha256": "4e3ca7cb84d0e3233bbe9e8055d9f7a343a30b1fd2983b3c72983d2536e809aa",
+  "source_declarations": [
+    "lincsInverse"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "lincsInverse",
+      "file_sha256": "2677062c8361f7538ae88c6ae56e8819b1c368401e9549cd0743055547e55d49",
+      "excerpt_sha256": "4e3ca7cb84d0e3233bbe9e8055d9f7a343a30b1fd2983b3c72983d2536e809aa"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT16_review.json",
+  "total_task_bytes": 75108
+}
