@@ -2,12 +2,12 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 267；章末验收待完成 [4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 257；章末验收待完成 [4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 57 / 已修待复审 72 / 待导师 20 / 修复中 0。
-第4章：网站PASS 69 / 已修待复审 58 / 待导师 15 / 修复中 37。
+第4章：网站PASS 69 / 已修待复审 60 / 待导师 20 / 修复中 30。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
@@ -412,15 +412,15 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 4 | MD-4.3.4-CotangentPullback | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT13 |
 | 4 | MD-4.3.4-GramProjectedEuler | FAIL | C | 教材包装全部固定a=−h，对应原印−hF的特殊参数；任意a几何推广作为独立辅助保留，原已证apply仅参数实例化。未把a=h物理修订暗作原印；不声称隐式分支存在或全局微分同胚。 | 已修待复审 | EAUDIT13 |
 | 4 | MD-4.3.5-SHAKEPositionPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3.5-SHAKEPositionMass | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
+| 4 | MD-4.3.5-SHAKEPositionMass | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
 | 4 | MD-4.3.5-SHAKEPhase | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.5-RATTLE | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3.5-ConstrainedOrders | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.3.5-RATTLESymplectic | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
-| 4 | MD-4.3.5-StaggeredConstraint | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |
-| 4 | MD-4.3.5-SHAKERATTLEEquivalence | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 4 | MD-4.3.5-SHAKEElimination | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.3.5-SHAKEPositionOrder | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 4 | MD-4.3.5-ConstrainedOrders | FAIL | B | 保留局部一致性辅助，补真实光滑正则求解分支及紧时间精确轨道上的全局Euler一阶/RATTLE二阶，并给无约束振子一阶下界表达only first order。SHAKE位置阶专归SHAKEPositionOrder，其质量勘误路线待导师；原文不删。 | 已修待复审 | EAUDIT14 |
+| 4 | MD-4.3.5-RATTLESymplectic | FAIL | A | 改为正质量、C²势/约束、余切域满秩的开放邻域C¹求解分支上真实拉回辛性；不假设全局隐式单值法，不声称分支存在。 | 已修待复审 | EAUDIT14 |
+| 4 | MD-4.3.5-StaggeredConstraint | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
+| 4 | MD-4.3.5-SHAKERATTLEEquivalence | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
+| 4 | MD-4.3.5-SHAKEElimination | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
+| 4 | MD-4.3.5-SHAKEPositionOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
 | 4 | MD-4.3.5.1-AdjointEuler | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
 | 4 | MD-4.3.5.1-ConstrainedComposition | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
 | 4 | MD-4.3.5.1-ConstrainedCompositionOrder | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |

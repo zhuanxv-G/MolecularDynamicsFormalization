@@ -3251,8 +3251,19 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:57:05.217336",
+        "before_sha256": "efa699db6fd861afb18814334e3bbc1ac5d3ee8185ff94289f7fc70054b33b67",
+        "after_sha256": "ca7b2052e6d1a7f7e6e23a01b3b602b22bc30978c8fe52eb90155325f10322ad",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.5-SHAKEPhase",
@@ -3311,17 +3322,34 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "statement_latex依原文先后选取非连续句子：省略“Note that (4.20)–(4.24) reduces ...”说明及SHAKE两步来源推导；末句“The symmetry suggests ...”位于(4.26)后。所引句子全部在印刷161/PDF183。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.constrainedOrders",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "正质量、C⁴数据、独立约束与真实光滑隐式解分支及紧区间；明确局部截断误差Euler O(h²)、RATTLE O(h³)。"
+      "正质量、C⁴数据、独立约束与真实光滑隐式解分支及紧区间；明确局部截断误差Euler O(h²)、RATTLE O(h³)。",
+      "[EXTRA] 保留局部一致性辅助，补真实光滑正则求解分支及紧时间精确轨道上的全局Euler一阶/RATTLE二阶，并给无约束振子一阶下界表达only first order。SHAKE位置阶专归SHAKEPositionOrder，其质量勘误路线待导师；原文不删。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "statement_scope": "投影Euler全局一阶（含非二阶实例）及RATTLE全局二阶；SHAKE位置全局二阶由MD-4.3.5-SHAKEPositionOrder承担，其原印质量约定待导师。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:57:05.217421",
+        "before_sha256": "f53c93306fc9b7fdcad1d823b73e65959ccef9f18cc1db541dd5d2553ddda8ad",
+        "after_sha256": "63050ff359bff656aeb81e274fba78bad693a16cc416b1223a2132ab052b52fa",
+        "changed_fields": [
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.5-RATTLESymplectic",
@@ -3339,12 +3367,24 @@
     "lean_decl": "MD.Ch04.rattleSymplectic",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "实际C¹分支、C²势与约束；完整真实拉回两形式，非把辛性作假设。"
+      "实际C¹分支、C²势与约束；完整真实拉回两形式，非把辛性作假设。",
+      "[EXTRA] 改为正质量、C²势/约束、余切域满秩的开放邻域C¹求解分支上真实拉回辛性；不假设全局隐式单值法，不声称分支存在。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:57:05.217489",
+        "before_sha256": "ae225f119c5b1d10f553076ef0d45d3a44c02537a3d811b5fd73cacd5ac91059",
+        "after_sha256": "6bedfd2b055965aa27859d41688615609163c6e71b1f2aadb29a4e350b25e3da",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.5-StaggeredConstraint",
@@ -3371,8 +3411,19 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:57:05.217548",
+        "before_sha256": "dc48e7c2f2febe66e117a06dbf7a34a96fb1bf5e3100073c4a5e424fe4390b5c",
+        "after_sha256": "48d367b68bdee4ade61fb0bab6d0e279185588c87b546795c9ba25827d616d8f",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.5-SHAKERATTLEEquivalence",
@@ -3400,8 +3451,19 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:57:05.217608",
+        "before_sha256": "737d1498dd82b81b26daa6d9800c84a61cf6d88ad3bc72a05575ae37c1b14c51",
+        "after_sha256": "08c51c6d8a9ccee3f1d91624e17f57ed8001c62d9f63c21b673fbf0f4afcae0a",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.5-SHAKEElimination",
@@ -3414,7 +3476,14 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "M=\\operatorname{diag}(m_i),\\quad g(q)=(g_1(q),\\ldots,g_l(q)),\\quad G(q)=g\\prime(q).",
+      "\\text{(4.25), as printed: }q_{n+1}-2q_n+q_{n-1}=h^2M^{-1}F(q_n)-h^2G(q_n)^T\\lambda_n.",
+      "\\text{(4.26): }g(q_{n+1})=0.",
+      "\\text{(4.27): }q_{n+1}=q_n+hM^{-1}p_{n+1/2}.",
+      "\\text{(4.28): }p_{n+1/2}=p_n+(h/2)F(q_n)-(h/2)G(q_n)^T\\lambda_n.",
+      "\\text{(4.29): }p_{n+1}=p_{n+1/2}+(h/2)F(q_{n+1})-(h/2)G(q_{n+1})^T\\lambda_{n+1}."
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.shakeElimination",
     "reusable_proofs": [],
@@ -3422,9 +3491,22 @@
       "[EXTRA]实际相空间SHAKE消元给质量一致M⁻¹(F−Gᵀλ)；原(4.25)缺M⁻¹的字面版单列待审；只转录正文结论，不进入习题。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:57:05.217662",
+        "before_sha256": "5687f97957f311403f33ce813b5b417616510fc95e2d4641a0f650bdaf248d6f",
+        "after_sha256": "eb84798f91d76429fa8e499a0b4e5348563d2d4883fe4980b12d94c8f0fae75a",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.5-SHAKEPositionOrder",
@@ -3437,7 +3519,11 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "M=\\operatorname{diag}(m_i),\\quad g(q)=(g_1(q),\\ldots,g_l(q)),\\quad G(q)=g\\prime(q).",
+      "\\text{(4.25), as printed: }q_{n+1}-2q_n+q_{n-1}=h^2M^{-1}F(q_n)-h^2G(q_n)^T\\lambda_n.",
+      "\\text{(4.26): }g(q_{n+1})=0."
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.shakePositionOrder",
     "reusable_proofs": [],
@@ -3445,9 +3531,22 @@
       "[EXTRA]正质量、C⁴势/约束/实际轨道、沿解非奇异Gram、相容两步初值；精确给真实有限区间位置误差O(h²)及分支存在，不把误差界作假设。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:57:05.217716",
+        "before_sha256": "674de27511fd1e46c913656a84fda7d8218a85fa46cdbc98c9ee5fc6888297c3",
+        "after_sha256": "a526f712f7ac4060009e335a533ebf58069327b1c0a6d40217680ca9f1b9fcab",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.5.1-AdjointEuler",

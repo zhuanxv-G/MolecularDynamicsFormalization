@@ -1,0 +1,36 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT14",
+  "section": "4.3.5",
+  "source_ids": [
+    "MD-4.3.5-ConstrainedOrders",
+    "MD-4.3.5-RATTLESymplectic",
+    "MD-4.3.5-SHAKEElimination",
+    "MD-4.3.5-SHAKEPositionMass",
+    "MD-4.3.5-SHAKEPositionOrder",
+    "MD-4.3.5-SHAKERATTLEEquivalence",
+    "MD-4.3.5-StaggeredConstraint"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.5-ConstrainedOrders",
+    "MD-4.3.5-RATTLESymplectic"
+  ],
+  "human_ids": [
+    "MD-4.3.5-SHAKEPositionMass",
+    "MD-4.3.5-SHAKEElimination",
+    "MD-4.3.5-SHAKEPositionOrder",
+    "MD-4.3.5-StaggeredConstraint",
+    "MD-4.3.5-SHAKERATTLEEquivalence"
+  ],
+  "old_lean_sha256": "7f91bbd1c2ebf978f3587bdc858c181dfbeef7d79d7dfa9a231a1525682a2f2e",
+  "lean_sha256": "4e1874e4d084a889dd84e6add8bb2d0dd5c1ba24eccd8b020c14fa4acf844821",
+  "source_sha256": "7c8d938906ecf93393dc8203dcaa61e949704824b5610f8f426d1ab21a350077",
+  "pages": [
+    183,
+    184
+  ],
+  "prior_proof_blocks": {
+    "MD-4.3.5-RATTLESymplectic": "theorem rattleSymplectic :\n  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    h (G : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (half : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l),\n    (∀ j, ContDiff ℝ 2 (g j)) → ContDiff ℝ 2 U → Differentiable ℝ G →\n    Differentiable ℝ half → Differentiable ℝ rho → Differentiable ℝ μ →\n    (∀ z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g, MolecularDynamics.Chapter04Review.rattleRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (G z) (half z) (rho z) (μ z)) →\n    MolecularDynamics.Chapter04Review.restrictedSymplectic m g G := by\n  sorry",
+    "MD-4.3.5-ConstrainedOrders": "theorem constrainedOrders :\n  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (z : MolecularDynamics.Chapter04Review.Z n) (Φ E R : ℝ → MolecularDynamics.Chapter04Review.Z n) (pE pR : ℝ → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoR μR : ℝ → MolecularDynamics.Chapter04Review.Q l),\n    (∀ i, 0 < m i) → ContDiff ℝ 4 U → (∀ j, ContDiff ℝ 4 (g j)) →\n    z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g → (textbookConstraintGram m g z.1).det ≠ 0 →\n    ContDiff ℝ 3 E → ContDiff ℝ 3 R → ContDiff ℝ 3 Φ → E 0=z → R 0=z → Φ 0=z →\n    ContDiff ℝ 2 rhoE → ContDiff ℝ 2 μE → ContDiff ℝ 2 rhoR → ContDiff ℝ 2 μR →\n    μE 0=0 → μR 0=0 →\n    (∃ δ > 0, ∀ h ∈ Ioo (-δ) δ,\n      MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h) (pE h) (rhoE h) (μE h) ∧\n      MolecularDynamics.Chapter04Review.rattleRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (R h) (pR h) (rhoR h) (μR h) ∧\n      HasDerivAt Φ (textbookConstrainedPhaseVectorField m g U (Φ h)) h) →\n    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ‖E h-Φ h‖ ≤ C*h^2 ∧ ‖R h-Φ h‖ ≤ C*h^3 := by\n  sorry"
+  }
+}

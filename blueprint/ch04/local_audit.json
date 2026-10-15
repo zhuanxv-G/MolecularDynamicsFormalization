@@ -3196,9 +3196,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.shakePositionRelation",
@@ -3223,7 +3223,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT14/axioms.log"
     },
     "MD-4.3.5-SHAKEPhase": {
       "checked": true,
@@ -3295,17 +3295,17 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.constrainedOrders",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "0eb651c0b0d2579c8f8e289002aab1f3554ccd61075a04d5edab31ed1e3a52fe",
-      "block_sha256": "661113aa0ee43a53c6afd63e7b775cc89ff7b07a5456c3b681dc262874ae8641",
+      "block_sha256": "f03be5aadc03818c4bc9377cb41251958cd97863ddea299ebd44e65b2a0c23c7",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -3323,23 +3323,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT14/axioms.log"
     },
     "MD-4.3.5-RATTLESymplectic": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.rattleSymplectic",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "01f9e68f9dd703f8bc57d89ae40e16af4468534d030e414ed8d8f4972ea9ec74",
-      "block_sha256": "952cd02e9fd5b0a2fbc81e2320d0c1a13d0b37bdc26ea39a5ee14fe915e6d2f8",
+      "signature_sha256": "4e74d724b13dbc4c0ae95bb350a0b04d91c6c363ed36a1ee56d6dc3caaaae14b",
+      "block_sha256": "03d7a432c01bd98a6b0b2f2d12de362b292c17ceaa64e105aaeef4aea099c35e",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -3357,15 +3357,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT14/axioms.log"
     },
     "MD-4.3.5-StaggeredConstraint": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.staggeredConstraintRelation",
@@ -3390,16 +3390,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT14/axioms.log"
     },
     "MD-4.3.5-SHAKERATTLEEquivalence": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.shakeRattlePositions",
@@ -3424,15 +3424,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT14/axioms.log"
     },
     "MD-4.3.5-SHAKEElimination": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.shakeElimination",
@@ -3466,16 +3466,16 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT14/axioms.log"
     },
     "MD-4.3.5-SHAKEPositionOrder": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.shakePositionOrder",
@@ -3500,7 +3500,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT14/axioms.log"
     },
     "MD-4.3.5.1-AdjointEuler": {
       "checked": true,

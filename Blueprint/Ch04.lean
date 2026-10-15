@@ -1423,7 +1423,8 @@ def rattleRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapte
   out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
 
 /-- source_id: MD-4.3.5-ConstrainedOrders · unnumbered_claim · §4.3.5 · 印刷p.161–162 / PDFp.183–184
-[EXTRA] 正质量、C⁴数据、独立约束与真实光滑隐式解分支及紧区间；明确局部截断误差Euler O(h²)、RATTLE O(h³)。 -/
+[EXTRA] 正质量、C⁴数据、独立约束与真实光滑隐式解分支及紧区间；明确局部截断误差Euler O(h²)、RATTLE O(h³)。 
+[EXTRA] 保留局部一致性辅助，补真实光滑正则求解分支及紧时间精确轨道上的全局Euler一阶/RATTLE二阶，并给无约束振子一阶下界表达only first order。SHAKE位置阶专归SHAKEPositionOrder，其质量勘误路线待导师；原文不删。 -/
 theorem constrainedOrders :
   ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (z : MolecularDynamics.Chapter04Review.Z n) (Φ E R : ℝ → MolecularDynamics.Chapter04Review.Z n) (pE pR : ℝ → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoR μR : ℝ → MolecularDynamics.Chapter04Review.Q l),
@@ -1439,15 +1440,69 @@ theorem constrainedOrders :
     ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ‖E h-Φ h‖ ≤ C*h^2 ∧ ‖R h-Φ h‖ ≤ C*h^3 := by
   sorry
 
+theorem constrainedOrders_global (n l : ℕ) (m : Fin n → ℝ)
+    (U : MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (D : Set (MolecularDynamics.Chapter04Review.Z n)) (_hD : IsOpen D)
+    (_hm : ∀ i, 0 < m i) (_hU : ContDiff ℝ 4 U) (_hg : ∀ j, ContDiff ℝ 4 (g j))
+    (_hreg : ∀ z ∈ D, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+      (textbookConstraintGram m g z.1).det ≠ 0)
+    (E R : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n)
+    (pE pR : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n)
+    (rhoE μE rhoR μR : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l)
+    (η : ℝ) (_hη : 0 < η)
+    (_hE : ContDiffOn ℝ 3 (Function.uncurry E) (Ioo (-η) η ×ˢ D))
+    (_hR : ContDiffOn ℝ 3 (Function.uncurry R) (Ioo (-η) η ×ˢ D))
+    (_hrhoE : ContDiffOn ℝ 2 (Function.uncurry rhoE) (Ioo (-η) η ×ˢ D))
+    (_hμE : ContDiffOn ℝ 2 (Function.uncurry μE) (Ioo (-η) η ×ˢ D))
+    (_hrhoR : ContDiffOn ℝ 2 (Function.uncurry rhoR) (Ioo (-η) η ×ˢ D))
+    (_hμR : ContDiffOn ℝ 2 (Function.uncurry μR) (Ioo (-η) η ×ˢ D))
+    (_hzero : ∀ z ∈ D, E 0 z=z ∧ R 0 z=z ∧ μE 0 z=0 ∧ μR 0 z=0)
+    (_hsteps : ∀ h ∈ Ioo (-η) η, ∀ z ∈ D,
+      z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+      MolecularDynamics.Chapter04Review.projectedEulerRelation m
+        (fun q ↦ -MolecularDynamics.Chapter04Review.grad U q) g h z (E h z) (pE h z) (rhoE h z) (μE h z) ∧
+      MolecularDynamics.Chapter04Review.rattleRelation m
+        (fun q ↦ -MolecularDynamics.Chapter04Review.grad U q) g h z (R h z) (pR h z) (rhoR h z) (μR h z))
+    (T : ℝ) (_hT : 0 < T) (Φ : ℝ → MolecularDynamics.Chapter04Review.Z n)
+    (_hΦ : ∀ t ∈ Icc 0 T, HasDerivAt Φ (textbookConstrainedPhaseVectorField m g U (Φ t)) t)
+    (_hc : ∀ t ∈ Icc 0 T, Φ t ∈ MolecularDynamics.Chapter04Review.cotangentSet m g)
+    (_hcompact : ∃ B, IsCompact B ∧ B ⊆ D ∧ ∀ t ∈ Icc 0 T, Φ t ∈ B) :
+    ∃ C > 0, ∃ N₀ : ℕ, ∀ N ≥ N₀, 0 < N →
+      let h := T/(N:ℝ)
+      ∀ k ≤ N, ‖(E h)^[k] (Φ 0)-Φ ((k:ℝ)*h)‖ ≤ C*h ∧
+        ‖(R h)^[k] (Φ 0)-Φ ((k:ℝ)*h)‖ ≤ C*h^2 := by
+  sorry
+
+theorem constrainedOrders_firstOrderSharp :
+    ∃ c > 0, ∃ N₀ : ℕ, ∀ N ≥ N₀, 0 < N →
+      c/(N:ℝ) ≤ ‖(MolecularDynamics.Chapter04Review.symplecticEulerMatrix 1 (1/(N:ℝ)))^N *ᵥ
+        (![1,0] : Fin 2 → ℝ)-![Real.cos 1,-Real.sin 1]‖ := by
+  sorry
+
 /-- source_id: MD-4.3.5-RATTLESymplectic · unnumbered_claim · §4.3.5 · 印刷p.162 / PDFp.184
-[EXTRA] 实际C¹分支、C²势与约束；完整真实拉回两形式，非把辛性作假设。 -/
-theorem rattleSymplectic :
-  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
-    h (G : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (half : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l),
-    (∀ j, ContDiff ℝ 2 (g j)) → ContDiff ℝ 2 U → Differentiable ℝ G →
-    Differentiable ℝ half → Differentiable ℝ rho → Differentiable ℝ μ →
-    (∀ z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g, MolecularDynamics.Chapter04Review.rattleRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (G z) (half z) (rho z) (μ z)) →
-    MolecularDynamics.Chapter04Review.restrictedSymplectic m g G := by
+[EXTRA] 实际C¹分支、C²势与约束；完整真实拉回两形式，非把辛性作假设。 
+[EXTRA] 改为正质量、C²势/约束、余切域满秩的开放邻域C¹求解分支上真实拉回辛性；不假设全局隐式单值法，不声称分支存在。 -/
+theorem rattleSymplectic (n l : ℕ) (m : Fin n → ℝ)
+    (U : MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (_hm : ∀ i, 0 < m i) (_hU : ContDiff ℝ 2 U) (_hg : ∀ j, ContDiff ℝ 2 (g j))
+    (D : Set (MolecularDynamics.Chapter04Review.Z n)) (_hD : IsOpen D) (h : ℝ)
+    (G : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n)
+    (half : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n)
+    (rho μ : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l)
+    (_hreg : ∀ z ∈ D, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+      LinearIndependent ℝ (fun j ↦ textbookConstraintGradient (g j) z.1))
+    (_hG : ContDiffOn ℝ 1 G D) (_hp : ContDiffOn ℝ 1 half D)
+    (_hr : ContDiffOn ℝ 1 rho D) (_hμ : ContDiffOn ℝ 1 μ D)
+    (_hstep : ∀ z ∈ D, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+      MolecularDynamics.Chapter04Review.rattleRelation m
+        (fun q ↦ -MolecularDynamics.Chapter04Review.grad U q) g h z (G z) (half z) (rho z) (μ z)) :
+    ∀ z ∈ D, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+      ∀ u v, MolecularDynamics.Chapter04Review.tangentPhase m g z u →
+      MolecularDynamics.Chapter04Review.tangentPhase m g z v →
+        MolecularDynamics.Chapter04Review.phaseForm ((fderiv ℝ G z) u) ((fderiv ℝ G z) v)=
+          MolecularDynamics.Chapter04Review.phaseForm u v := by
   sorry
 
 /-- source_id: MD-4.3.5-StaggeredConstraint · definition · §4.3.5 · 印刷p.162 / PDFp.184
@@ -2422,6 +2477,8 @@ end MD.Ch04
 #print axioms MD.Ch04.shakeRelation
 #print axioms MD.Ch04.rattleRelation
 #print axioms MD.Ch04.constrainedOrders
+#print axioms MD.Ch04.constrainedOrders_global
+#print axioms MD.Ch04.constrainedOrders_firstOrderSharp
 #print axioms MD.Ch04.rattleSymplectic
 #print axioms MD.Ch04.staggeredConstraintRelation
 #print axioms MD.Ch04.shakeRattlePositions

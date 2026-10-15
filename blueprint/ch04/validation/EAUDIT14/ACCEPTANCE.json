@@ -1,0 +1,50 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT14",
+  "section": "4.3.5",
+  "source_ids": [
+    "MD-4.3.5-ConstrainedOrders",
+    "MD-4.3.5-RATTLESymplectic",
+    "MD-4.3.5-SHAKEElimination",
+    "MD-4.3.5-SHAKEPositionMass",
+    "MD-4.3.5-SHAKEPositionOrder",
+    "MD-4.3.5-SHAKERATTLEEquivalence",
+    "MD-4.3.5-StaggeredConstraint"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.5-ConstrainedOrders",
+    "MD-4.3.5-RATTLESymplectic"
+  ],
+  "human_ids": [
+    "MD-4.3.5-SHAKEPositionMass",
+    "MD-4.3.5-SHAKEElimination",
+    "MD-4.3.5-SHAKEPositionOrder",
+    "MD-4.3.5-StaggeredConstraint",
+    "MD-4.3.5-SHAKERATTLEEquivalence"
+  ],
+  "lean_sha256": "4e1874e4d084a889dd84e6add8bb2d0dd5c1ba24eccd8b020c14fa4acf844821",
+  "source_sha256": "7c8d938906ecf93393dc8203dcaa61e949704824b5610f8f426d1ab21a350077",
+  "pages": [
+    183,
+    184
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "4e1874e4d084a889dd84e6add8bb2d0dd5c1ba24eccd8b020c14fa4acf844821",
+    "log_sha256": "7b0fc9646fb9141c79b5340e88da5d12491684d9e89cd05b5d6ffea680d28006"
+  },
+  "axiom_decl_count": 9,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT14/INDEX.md"
+}

@@ -98,15 +98,15 @@
 | MD-4.3.4-CotangentPullback | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | existing_bridge / checked+documented priors |
 | MD-4.3.4-GramProjectedEuler | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | existing_bridge / checked+documented priors |
 | MD-4.3.5-SHAKEPositionPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / incomplete |
-| MD-4.3.5-SHAKEPositionMass | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.3.5-SHAKEPositionMass | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | definition / self-contained |
 | MD-4.3.5-SHAKEPhase | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.3.5-RATTLE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3.5-ConstrainedOrders | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；缺实际约束ODE与隐式分支的高阶Taylor/一致误差理论；不建设大型收敛理论。 |
-| MD-4.3.5-RATTLESymplectic | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；待桥接已证多约束动量kick、位置drift与末逆Gram投影；若无简短接口保持sorry。 |
-| MD-4.3.5-StaggeredConstraint | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3.5-SHAKERATTLEEquivalence | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；缺真实约束求解分支唯一性与跨步乘子缩放桥接；不建立隐式求解理论。 |
-| MD-4.3.5-SHAKEElimination | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.3.5-SHAKEPositionOrder | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；缺实际约束多步方法一致误差与离散分支存在理论；不建设大型收敛理论。 |
+| MD-4.3.5-ConstrainedOrders | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | placeholder / incomplete；缺实际约束ODE与隐式分支的高阶Taylor/一致误差理论；不建设大型收敛理论。 |
+| MD-4.3.5-RATTLESymplectic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | placeholder / incomplete；待桥接已证多约束动量kick、位置drift与末逆Gram投影；若无简短接口保持sorry。 |
+| MD-4.3.5-StaggeredConstraint | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | definition / self-contained |
+| MD-4.3.5-SHAKERATTLEEquivalence | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | placeholder / incomplete；缺真实约束求解分支唯一性与跨步乘子缩放桥接；不建立隐式求解理论。 |
+| MD-4.3.5-SHAKEElimination | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | local_proof / self-contained |
+| MD-4.3.5-SHAKEPositionOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | placeholder / incomplete；缺实际约束多步方法一致误差与离散分支存在理论；不建设大型收敛理论。 |
 | MD-4.3.5.1-AdjointEuler | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.3.5.1-ConstrainedComposition | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；缺实际Euler/adjoint分支的短组合辛性桥接；不假设分支辛性。 |
 | MD-4.3.5.1-ConstrainedCompositionOrder | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；缺真实约束分支二阶Taylor与局部误差理论；不建设大型理论。 |
@@ -374,3 +374,5 @@ EAUDIT11 §4.3.2：2条落盘，单文件与2项公理通过；未写新证明�
 EAUDIT12 §4.3.3：3条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT13 §4.3.4：8条落盘，单文件与12项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT14 §4.3.5：7条落盘，单文件与9项公理通过；未写新证明；完整check留到章末；网站待复审。

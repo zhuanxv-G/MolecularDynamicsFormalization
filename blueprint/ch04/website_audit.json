@@ -7193,8 +7193,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT14（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT14",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印(4.25)反力漏M⁻¹，与一般质量下的两步消元不一致；选项：批准另立质量一致修正式并显式绑定／原印仅单位质量或兼容反力空间的受限版。当前辅助质量修正对象及原文保持，不擅选勘误路线。"
+    }
   },
   {
     "source_id": "MD-4.3.5-SHAKEPhase",
@@ -7388,7 +7395,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT14",
+    "repair": {
+      "eaudit": "EAUDIT14",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT14/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT14.md": "7d7c3cc276a3170642095555358592a6af919a61e4dc223e4e78e07cdd58ae1f",
+        "Blueprint/Ch04.lean": "4e1874e4d084a889dd84e6add8bb2d0dd5c1ba24eccd8b020c14fa4acf844821",
+        "blueprint/ch04/ch04_source.json": "7c8d938906ecf93393dc8203dcaa61e949704824b5610f8f426d1ab21a350077"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.5-RATTLESymplectic",
@@ -7442,7 +7461,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT14",
+    "repair": {
+      "eaudit": "EAUDIT14",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT14/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT14.md": "7d7c3cc276a3170642095555358592a6af919a61e4dc223e4e78e07cdd58ae1f",
+        "Blueprint/Ch04.lean": "4e1874e4d084a889dd84e6add8bb2d0dd5c1ba24eccd8b020c14fa4acf844821",
+        "blueprint/ch04/ch04_source.json": "7c8d938906ecf93393dc8203dcaa61e949704824b5610f8f426d1ab21a350077"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.5-StaggeredConstraint",
@@ -7495,8 +7526,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT14（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT14",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印RATTLE乘子缩放与(4.33)不符，且初始化由(4.29)导出的反力号与原印相反；选项：原μ下采用λ/2+μ/h并修初始化正号／另定缩放μ且限定同一局部求解分支。需导师裁定，现状保持。"
+    }
   },
   {
     "source_id": "MD-4.3.5-SHAKERATTLEEquivalence",
@@ -7549,8 +7587,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT14（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT14",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印RATTLE乘子缩放与(4.33)不符，且初始化由(4.29)导出的反力号与原印相反；选项：原μ下采用λ/2+μ/h并修初始化正号／另定缩放μ且限定同一局部求解分支。需导师裁定，现状保持。"
+    }
   },
   {
     "source_id": "MD-4.3.5-SHAKEElimination",
@@ -7641,8 +7686,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH17_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT14（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT14",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印(4.25)反力漏M⁻¹，与一般质量下的两步消元不一致；选项：批准另立质量一致修正式并显式绑定／原印仅单位质量或兼容反力空间的受限版。当前辅助质量修正对象及原文保持，不擅选勘误路线。"
+    }
   },
   {
     "source_id": "MD-4.3.5-SHAKEPositionOrder",
@@ -7730,8 +7782,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH17_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT14（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT14",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印(4.25)反力漏M⁻¹，与一般质量下的两步消元不一致；选项：批准另立质量一致修正式并显式绑定／原印仅单位质量或兼容反力空间的受限版。当前辅助质量修正对象及原文保持，不擅选勘误路线。"
+    }
   },
   {
     "source_id": "MD-4.3.5.1-AdjointEuler",
