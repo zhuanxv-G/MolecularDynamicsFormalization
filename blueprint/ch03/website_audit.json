@@ -7932,7 +7932,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH18_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT14",
+    "repair": {
+      "eaudit": "EAUDIT14",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT14/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT14.md": "0503e8dc58d50ad62546f265086e80c2ca6fb6cd7d77c7c0a7ce4964aa0c39cc",
+        "Blueprint/Ch03.lean": "a5e2f56cea39e5a1a687b048f1bddd0a9eec433c01cf8365141e796d358aeb23",
+        "blueprint/ch03/ch03_source.json": "00bce1c6b51da7d0ebda069e82c1314de2ad0e28c0b551bae6579d85c261f104"
+      }
+    }
   },
   {
     "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
@@ -8023,7 +8035,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH18_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT14",
+    "repair": {
+      "eaudit": "EAUDIT14",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT14/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT14.md": "0503e8dc58d50ad62546f265086e80c2ca6fb6cd7d77c7c0a7ce4964aa0c39cc",
+        "Blueprint/Ch03.lean": "a5e2f56cea39e5a1a687b048f1bddd0a9eec433c01cf8365141e796d358aeb23",
+        "blueprint/ch03/ch03_source.json": "00bce1c6b51da7d0ebda069e82c1314de2ad0e28c0b551bae6579d85c261f104"
+      }
+    }
   },
   {
     "source_id": "MD-3.6.1-ReversedTrajectory",
@@ -8075,7 +8099,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH18_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT14",
+    "repair": {
+      "eaudit": "EAUDIT14",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT14/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT14.md": "0503e8dc58d50ad62546f265086e80c2ca6fb6cd7d77c7c0a7ce4964aa0c39cc",
+        "Blueprint/Ch03.lean": "a5e2f56cea39e5a1a687b048f1bddd0a9eec433c01cf8365141e796d358aeb23",
+        "blueprint/ch03/ch03_source.json": "00bce1c6b51da7d0ebda069e82c1314de2ad0e28c0b551bae6579d85c261f104"
+      }
+    }
   },
   {
     "source_id": "MD-3.6.1-MechanicalReversalCorrect",
@@ -8127,7 +8163,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH18_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT14",
+    "repair": {
+      "eaudit": "EAUDIT14",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT14/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT14.md": "0503e8dc58d50ad62546f265086e80c2ca6fb6cd7d77c7c0a7ce4964aa0c39cc",
+        "Blueprint/Ch03.lean": "a5e2f56cea39e5a1a687b048f1bddd0a9eec433c01cf8365141e796d358aeb23",
+        "blueprint/ch03/ch03_source.json": "00bce1c6b51da7d0ebda069e82c1314de2ad0e28c0b551bae6579d85c261f104"
+      }
+    }
   },
   {
     "source_id": "MD-3.6.2-FlowReversal",

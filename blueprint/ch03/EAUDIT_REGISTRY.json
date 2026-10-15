@@ -611,5 +611,48 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT13/INDEX.md"
+  },
+  {
+    "chapter": 3,
+    "eaudit": "EAUDIT14",
+    "section": "3.6.1",
+    "source_ids": [
+      "MD-3.6.1-MechanicalReversal",
+      "MD-3.6.1-MechanicalReversalCorrect",
+      "MD-3.6.1-ReversedTrajectory",
+      "MD-3.6.1-ReversedTrajectoryPrinted"
+    ],
+    "reaudit_ids": [
+      "MD-3.6.1-MechanicalReversal",
+      "MD-3.6.1-ReversedTrajectoryPrinted",
+      "MD-3.6.1-ReversedTrajectory",
+      "MD-3.6.1-MechanicalReversalCorrect"
+    ],
+    "human_ids": [],
+    "lean_sha256": "a5e2f56cea39e5a1a687b048f1bddd0a9eec433c01cf8365141e796d358aeb23",
+    "source_sha256": "00bce1c6b51da7d0ebda069e82c1314de2ad0e28c0b551bae6579d85c261f104",
+    "pages": [
+      150,
+      151
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch03.olean",
+        "Blueprint/Ch03.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "a5e2f56cea39e5a1a687b048f1bddd0a9eec433c01cf8365141e796d358aeb23",
+      "log_sha256": "70216ad48ea09e00782abd4284cb05c281f70d653e417a5455cdaf5eb388d7f8"
+    },
+    "axiom_decl_count": 6,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT14/INDEX.md"
   }
 ]

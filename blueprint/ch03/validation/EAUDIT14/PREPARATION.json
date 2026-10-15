@@ -1,0 +1,31 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT14",
+  "section": "3.6.1",
+  "source_ids": [
+    "MD-3.6.1-MechanicalReversal",
+    "MD-3.6.1-MechanicalReversalCorrect",
+    "MD-3.6.1-ReversedTrajectory",
+    "MD-3.6.1-ReversedTrajectoryPrinted"
+  ],
+  "reaudit_ids": [
+    "MD-3.6.1-MechanicalReversal",
+    "MD-3.6.1-ReversedTrajectoryPrinted",
+    "MD-3.6.1-ReversedTrajectory",
+    "MD-3.6.1-MechanicalReversalCorrect"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "497d7c78e683addee7993c8382482cb954a4a9ec02c843cd7cff94a1f9e31541",
+  "lean_sha256": "a5e2f56cea39e5a1a687b048f1bddd0a9eec433c01cf8365141e796d358aeb23",
+  "source_sha256": "00bce1c6b51da7d0ebda069e82c1314de2ad0e28c0b551bae6579d85c261f104",
+  "pages": [
+    150,
+    151
+  ],
+  "prior_proof_blocks": {
+    "MD-3.6.1-MechanicalReversal": "theorem mechanicalReversalPrinted :\n    ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (z : Z n),\n      (-momentumReversal (mechanicalField m (fun q => -grad U q) (momentumReversal z)) =\n        (-invMass m z.2, grad U z.1)) ∧\n      ((-invMass m z.2, grad U z.1) = mechanicalField m (fun q => -grad U q) z) ∧\n      mechanicalField m (fun q => -grad U q) (momentumReversal z) =\n        -momentumReversal (mechanicalField m (fun q => -grad U q) z) := by\n  sorry",
+    "MD-3.6.1-MechanicalReversalCorrect": "theorem mechanicalReversalCorrect :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) z,\n    mechanicalField m F (momentumReversal z)=-momentumReversal (mechanicalField m F z) := by\n  exact MolecularDynamics.Chapter03Review.mechanicalReversal_proved",
+    "MD-3.6.1-ReversedTrajectoryPrinted": "theorem reversedTrajectoryPrinted :\n  ∀ (n : ℕ) (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (γ : ℝ → Q n),\n    R*R=1 → (∀ t, HasDerivAt γ (f (γ t)) t) →\n    ∀ t, HasDerivAt (fun s => R.mulVec (γ (-s)))\n      (reversedField R f (R.mulVec (γ (-t)))) t := by\n  sorry",
+    "MD-3.6.1-ReversedTrajectory": "theorem reversedTrajectory :\n  ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (γ : ℝ → Q n),\n    linearInvolution R → (∀ z, f (R z)=-R (f z)) →\n    (∀ t, HasDerivAt γ (f (γ t)) t) → ∀ t,\n      HasDerivAt (fun s => R (γ (-s))) (f (R (γ (-t)))) t := by\n  sorry"
+  }
+}

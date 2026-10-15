@@ -758,5 +758,25 @@
     "category": "B",
     "handling": "补真实可测集合体积保存及单射，保留det=1和非辛见证；其余原句明确跨条映射HamiltonianFlowStructures及ProjectionEnergy，不静默删原文。",
     "section": "3.6"
+  },
+  "MD-3.6.1-MechanicalReversal": {
+    "category": "C",
+    "handling": "按原页外部负号修复先前转录误读，两行均为−(−M⁻¹p,∇U)，原书此式无误；先前本条ERRATUM判断撤销，第三反演合取保留。",
+    "section": "3.6.1"
+  },
+  "MD-3.6.1-MechanicalReversalCorrect": {
+    "category": "C",
+    "handling": "原已证独立机械反转结论保留；更正旧注释：原书展示式正确，先前原书错误判断已撤销。",
+    "section": "3.6.1"
+  },
+  "MD-3.6.1-ReversedTrajectoryPrinted": {
+    "category": "C",
+    "handling": "按PDF151真实链式法则写−R f(γ(−t))，另列纯坐标变化Rf(Rz̃)及纯时间反向−f；不以转置reversedField偷换原链式右端。",
+    "section": "3.6.1"
+  },
+  "MD-3.6.1-ReversedTrajectory": {
+    "category": "A",
+    "handling": "补R的坐标矩阵对称资格，与R²=id合起来使Rᵀ=R=R⁻¹，现有经典反演条件才与原字面转置定义等价；该限制显式EXTRA。",
+    "section": "3.6.1"
   }
 }

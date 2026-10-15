@@ -3696,17 +3696,17 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.mechanicalReversalPrinted",
       "verdict": "FAIL",
       "explanation": "字面三项完整保留；n=1,m=1,U=0,z=(0,1)时f=(1,0)，原右列=(−1,0)，与“clearly equal”不符。正确反转结论另列桥接，未以正确结论替换印刷等式。",
-      "signature_sha256": "8a2dc9812a7665ec6c4c36fa2565708a47f628a400297d566371fd9438a64072",
-      "block_sha256": "bec12df562892b9dfaf2a723fc6b41ebee93b0cdcecc1429e03dcaf9c2e79a27",
+      "signature_sha256": "cba982cdf6eb79ab6a3ea33a1a95cd386afcd66fc17c287b8aa47ff67bf266cb",
+      "block_sha256": "2d04917471aa66116fd936dae2eca84f15c8c83e167371fcdab877b56f8ba8a3",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -3724,23 +3724,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT14/axioms.log"
     },
     "MD-3.6.1-ReversedTrajectoryPrinted": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.reversedTrajectoryPrinted",
       "verdict": "FAIL",
       "explanation": "R=[[1,1],[0,−1]]满足R²=I，取常场f=(1,0)；真实反向导数−Rf=(−1,0)，字面−Rᵀf=(−1,−1)不同。",
-      "signature_sha256": "8e2fea05bfe125444f2fd986e254c59ebeab2ed20f3d917c4921761a1cbb3e52",
-      "block_sha256": "3e4b6a7e6f62d279223c987af5316b193b7450bd246822127fc49520c0a6ece3",
+      "signature_sha256": "d2a4e54e0b9f0792665d10d3a4952ec11065ed48276fe5e27e7effe78d49afd1",
+      "block_sha256": "6efc229f0d84283d2d472371c7f15fc0855df6c4afb49de1c33166f0585d46e0",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -3758,23 +3758,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT14/axioms.log"
     },
     "MD-3.6.1-ReversedTrajectory": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.reversedTrajectory",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "1e554736eeb68843d938e49546bb01b1623b85f398c167b3d4bd77b12bef94e7",
-      "block_sha256": "9f9a007a8cd7bb8f091574b601c2cc5c86e77e1a82759b124f808653989214f8",
+      "signature_sha256": "b9c66648e4039fe927d4bf320c260f0aaa662c90c584a92d54e64c955033ca05",
+      "block_sha256": "29f10ab5a63e87ddf6fa826a2a4ad54a2b90b42c113ce097941f8fdc3544b5fb",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -3801,7 +3801,7 @@
       ],
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT14/axioms.log"
     },
     "MD-3.6.2-FlowReversal": {
       "checked": true,
@@ -4362,9 +4362,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch03.mechanicalReversalCorrect",
@@ -4391,7 +4391,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT14/axioms.log"
     },
     "MD-3.6.3-ConjugateOrderPrinted": {
       "checked": true,

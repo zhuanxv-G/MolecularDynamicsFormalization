@@ -179,5 +179,31 @@
     "extra_assumptions": [
       "[EXTRA] 补真实可测集合体积保存及单射，保留det=1和非辛见证；其余原句明确跨条映射HamiltonianFlowStructures及ProjectionEnergy，不静默删原文。"
     ]
+  },
+  "MD-3.6.1-MechanicalReversal": {
+    "code": "theorem mechanicalReversalPrinted :\n    ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (z : Z n),\n      (-momentumReversal (mechanicalField m (fun q => -grad U q) (momentumReversal z)) =\n        -(-invMass m z.2, grad U z.1)) ∧\n      (-(-invMass m z.2, grad U z.1) = mechanicalField m (fun q => -grad U q) z) ∧\n      mechanicalField m (fun q => -grad U q) (momentumReversal z) =\n        -momentumReversal (mechanicalField m (fun q => -grad U q) z) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 按原页外部负号修复先前转录误读，两行均为−(−M⁻¹p,∇U)，原书此式无误；先前本条ERRATUM判断撤销，第三反演合取保留。"
+    ]
+  },
+  "MD-3.6.1-ReversedTrajectoryPrinted": {
+    "code": "theorem reversedTrajectoryPrinted :\n  ∀ (n : ℕ) (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (γ : ℝ → Q n),\n    R*R=1 → (∀ t, HasDerivAt γ (f (γ t)) t) →\n    ∀ t, HasDerivAt (fun s => R.mulVec (γ (-s)))\n      (-R.mulVec (f (γ (-t)))) t := by\n  sorry\n\ntheorem reversedTrajectoryPrinted_coordinateChange (n : ℕ)\n    (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (γ : ℝ → Q n)\n    (_hR : R*R=1) (_hγ : ∀ t, HasDerivAt γ (f (γ t)) t) :\n    ∀ t, HasDerivAt (fun s ↦ R.mulVec (γ s))\n      (R.mulVec (f (R.mulVec (R.mulVec (γ t))))) t := by\n  sorry\n\ntheorem reversedTrajectoryPrinted_timeChange (n : ℕ) (f : Q n → Q n) (γ : ℝ → Q n)\n    (_hγ : ∀ t, HasDerivAt γ (f (γ t)) t) :\n    ∀ t, HasDerivAt (fun s ↦ γ (-s)) (-f (γ (-t))) t := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 按PDF151真实链式法则写−R f(γ(−t))，另列纯坐标变化Rf(Rz̃)及纯时间反向−f；不以转置reversedField偷换原链式右端。"
+    ]
+  },
+  "MD-3.6.1-ReversedTrajectory": {
+    "code": "theorem reversedTrajectory :\n  ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (γ : ℝ → Q n),\n    linearInvolution R → (∀ i j, R (Pi.single j 1) i = R (Pi.single i 1) j) → (∀ z, f (R z)=-R (f z)) →\n    (∀ t, HasDerivAt γ (f (γ t)) t) → ∀ t,\n      HasDerivAt (fun s => R (γ (-s))) (f (R (γ (-t)))) t := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA]采用正确f(Rz)=−Rf(z)而非一般Rᵀ字面定义；每个实t均有真实γ导数。",
+      "[EXTRA] 补R的坐标矩阵对称资格，与R²=id合起来使Rᵀ=R=R⁻¹，现有经典反演条件才与原字面转置定义等价；该限制显式EXTRA。"
+    ]
+  },
+  "MD-3.6.1-MechanicalReversalCorrect": {
+    "code": "theorem mechanicalReversalCorrect :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) z,\n    mechanicalField m F (momentumReversal z)=-momentumReversal (mechanicalField m F z) := by\n  exact MolecularDynamics.Chapter03Review.mechanicalReversal_proved",
+    "extra_assumptions": [
+      "独立正确机械R反转结论；原印展示式亦正确，原先错误标记撤销。",
+      "[EXTRA] 原已证独立机械反转结论保留；更正旧注释：原书展示式正确，先前原书错误判断已撤销。"
+    ]
   }
 }

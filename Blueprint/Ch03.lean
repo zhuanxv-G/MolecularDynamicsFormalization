@@ -1314,30 +1314,45 @@ def reversedField {n : ℕ} (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (
 def momentumReversal {n : ℕ} (z : Z n) : Z n := (z.1,-z.2)
 
 /-- source_id: MD-3.6.1-MechanicalReversal · unnumbered_claim · §3.6.1 · 印刷p.128 / PDFp.150
-[ERRATUM?] p128右端列向量符号与−Rf(Rz)实际计算不符；原文不静默更改。 -/
+原页外部负号核对正确；先前ERRATUM判断因漏读外部负号而撤销，修复日志保留旧注释。 
+[EXTRA] 按原页外部负号修复先前转录误读，两行均为−(−M⁻¹p,∇U)，原书此式无误；先前本条ERRATUM判断撤销，第三反演合取保留。 -/
 theorem mechanicalReversalPrinted :
     ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (z : Z n),
       (-momentumReversal (mechanicalField m (fun q => -grad U q) (momentumReversal z)) =
-        (-invMass m z.2, grad U z.1)) ∧
-      ((-invMass m z.2, grad U z.1) = mechanicalField m (fun q => -grad U q) z) ∧
+        -(-invMass m z.2, grad U z.1)) ∧
+      (-(-invMass m z.2, grad U z.1) = mechanicalField m (fun q => -grad U q) z) ∧
       mechanicalField m (fun q => -grad U q) (momentumReversal z) =
         -momentumReversal (mechanicalField m (fun q => -grad U q) z) := by
   sorry
 
 /-- source_id: MD-3.6.1-ReversedTrajectoryPrinted · unnumbered_claim · §3.6.1 · 印刷p.128–129 / PDFp.150–151
-[ERRATUM?] p128的Rᵀ字面反转与p129的R链式法则不能一般同时成立；具体二维反例见本地审计。 -/
+[ERRATUM?] p128的Rᵀ字面反转与p129的R链式法则不能一般同时成立；具体二维反例见本地审计。 
+[EXTRA] 按PDF151真实链式法则写−R f(γ(−t))，另列纯坐标变化Rf(Rz̃)及纯时间反向−f；不以转置reversedField偷换原链式右端。 
+[EXTRA] 补R的坐标矩阵对称资格，与R²=id合起来使Rᵀ=R=R⁻¹，现有经典反演条件才与原字面转置定义等价；该限制显式EXTRA。 -/
 theorem reversedTrajectoryPrinted :
   ∀ (n : ℕ) (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (γ : ℝ → Q n),
     R*R=1 → (∀ t, HasDerivAt γ (f (γ t)) t) →
     ∀ t, HasDerivAt (fun s => R.mulVec (γ (-s)))
-      (reversedField R f (R.mulVec (γ (-t)))) t := by
+      (-R.mulVec (f (γ (-t)))) t := by
+  sorry
+
+theorem reversedTrajectoryPrinted_coordinateChange (n : ℕ)
+    (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (γ : ℝ → Q n)
+    (_hR : R*R=1) (_hγ : ∀ t, HasDerivAt γ (f (γ t)) t) :
+    ∀ t, HasDerivAt (fun s ↦ R.mulVec (γ s))
+      (R.mulVec (f (R.mulVec (R.mulVec (γ t))))) t := by
+  sorry
+
+theorem reversedTrajectoryPrinted_timeChange (n : ℕ) (f : Q n → Q n) (γ : ℝ → Q n)
+    (_hγ : ∀ t, HasDerivAt γ (f (γ t)) t) :
+    ∀ t, HasDerivAt (fun s ↦ γ (-s)) (-f (γ (-t))) t := by
   sorry
 
 /-- source_id: MD-3.6.1-ReversedTrajectory · unnumbered_claim · §3.6.1 · 印刷p.129 / PDFp.151
 [EXTRA] [EXTRA]采用正确f(Rz)=−Rf(z)而非一般Rᵀ字面定义；每个实t均有真实γ导数。 -/
 theorem reversedTrajectory :
   ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (γ : ℝ → Q n),
-    linearInvolution R → (∀ z, f (R z)=-R (f z)) →
+    linearInvolution R → (∀ i j, R (Pi.single j 1) i = R (Pi.single i 1) j) → (∀ z, f (R z)=-R (f z)) →
     (∀ t, HasDerivAt γ (f (γ t)) t) → ∀ t,
       HasDerivAt (fun s => R (γ (-s))) (f (R (γ (-t)))) t := by
   sorry
@@ -1489,7 +1504,8 @@ theorem conjugateIterates (χ : E ≃ₜ E) (A B : E → E)
   apply MolecularDynamics.textbook_conjugate_iterates <;> assumption
 
 /-- source_id: MD-3.6.1-MechanicalReversalCorrect · unnumbered_claim · §3.6.1 · 印刷p.128 / PDFp.150
-[EXTRA] [EXTRA]独立正确机械R反转结论；原书错误展示等式仍由MechanicalReversalPrinted保留，不静默更改它。 -/
+[EXTRA] 独立机械R反转结论；原印展示式核对正确，原先错误判断已撤销。 
+[EXTRA] 原已证独立机械反转结论保留；更正旧注释：原书展示式正确，先前原书错误判断已撤销。 -/
 theorem mechanicalReversalCorrect :
   ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) z,
     mechanicalField m F (momentumReversal z)=-momentumReversal (mechanicalField m F z) := by
@@ -1858,6 +1874,8 @@ end MD.Ch03
 #print axioms MD.Ch03.momentumReversal
 #print axioms MD.Ch03.mechanicalReversalPrinted
 #print axioms MD.Ch03.reversedTrajectoryPrinted
+#print axioms MD.Ch03.reversedTrajectoryPrinted_coordinateChange
+#print axioms MD.Ch03.reversedTrajectoryPrinted_timeChange
 #print axioms MD.Ch03.reversedTrajectory
 #print axioms MD.Ch03.flowReversal
 #print axioms MD.Ch03.flowReversalIdentity
