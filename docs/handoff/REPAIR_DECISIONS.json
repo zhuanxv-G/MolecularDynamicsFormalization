@@ -656,12 +656,12 @@
   },
   "MD-3.4-TruncationSmooth": {
     "category": "B",
-    "handling": "光滑假设与结论均提升C∞，覆盖原文光滑截断；原正式有限和定理可按阶数参数实例化，保留原证明小修。",
+    "handling": "C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。",
     "section": "3.4"
   },
   "MD-3.4-Thm3.1": {
     "category": "B",
-    "handling": "将构造与能量估计分开：Hj及实际有限匹配由FiniteMatchingConstruction/ArbitraryFiniteTruncation提供；本条不再要求从B每点出发的全部截断短轨迹留B，保留原数值轨道约束和正确长时间量词。",
+    "handling": "本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。",
     "section": "3.4"
   },
   "MD-3.4-EnergyTelescoping": {
@@ -913,5 +913,15 @@
     "category": "B",
     "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
     "section": "3.7.3"
+  },
+  "MD-3.4-CommutingEnergy": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "3.4"
+  },
+  "MD-3.4-EnergySymplecticNoGo": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "3.4"
   }
 }

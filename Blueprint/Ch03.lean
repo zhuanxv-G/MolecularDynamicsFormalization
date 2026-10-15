@@ -779,8 +779,9 @@ noncomputable def truncatedHamiltonian (H : E → ℝ) (Hj : ℕ → E → ℝ)
   H z + ∑ j ∈ Finset.Icc r k, h ^ j * Hj j z
 
 /-- source_id: MD-3.4-TruncationSmooth · unnumbered_claim · §3.4 · 印刷p.114 / PDFp.136
-[EXTRA] 各系数在开放环境D为C¹；这里只证明所需C¹子结论，原文smooth假设本身不作为新断言。 
-[EXTRA] 光滑假设与结论均提升C∞，覆盖原文光滑截断；原正式引理仅C¹；一次小修不适用，C∞暂sorry，原C¹已证辅助保留。 -/
+[EXTRA] 各系数在D上C∞；主结论暂sorry，原C¹辅助证明保留。 
+[EXTRA] 光滑假设与结论均提升C∞，覆盖原文光滑截断；原正式引理仅C¹；一次小修不适用，C∞暂sorry，原C¹已证辅助保留。 
+[EXTRA] C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。 -/
 theorem truncationSmooth (H : E → ℝ) (Hj : ℕ → E → ℝ)
     (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ ⊤ H D)
     (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ ⊤ (Hj j) D) :
@@ -794,11 +795,12 @@ theorem truncationSmooth_C1 (H : E → ℝ) (Hj : ℕ → E → ℝ)
   apply MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian <;> assumption
 
 /-- source_id: MD-3.4-Thm3.1 · Theorem 3.1 · §3.4 · 印刷p.114–116 / PDFp.136–138
-[EXTRA] smoothSymplecticData显式添加原方法r阶/近恒等辛/joint C∞、开放凸环境D、紧凸B⊆D、真实原流；r>0。
-[EXTRA] 本签名保留完整构造H_j与finiteMatching为结论，k≥r固定；数值迭代和截断ODE留B，常数可依赖k,T而非所有k统一。
-[NEEDS_HUMAN] 给定H̃_k与存在一组构造系数的量词对应、截断轨道留B及所有n≤ν的长时间范围需审；任意n和T的量化包含原文每个n≤ν。
-[NEEDS_HUMAN] 证明先对H取L，后对H̃_k沿用L，并在Lνh^(k+1)中省略缺陷常数C；本地辅助桥接显式给实际截断族统一L和C，但原文不改。 
-[EXTRA] 将构造与能量估计分开：Hj及实际有限匹配由FiniteMatchingConstruction/ArbitraryFiniteTruncation提供；本条不再要求从B每点出发的全部截断短轨迹留B，保留原数值轨道约束和正确长时间量词。 -/
+[EXTRA] 本条显式r>0,k≥r、开放凸D、紧凸B⊆D及C∞；给定相邻条目构造的Hj及finiteMatching。
+[EXTRA] 系数存在性及匹配结论在FiniteMatchingConstruction/ArbitraryFiniteTruncation；本条只要求数值轨道留B，常数可依赖k,T。
+[EXTRA] 当前给定截断能量范围已显式映射到独立构造条目，不再附截断轨迹留B的过强前提。
+[EXTRA] 统一截断L及缺陷A由独立Lipschitz/PhysicalEnergyDrift条目明确列出；原文不静默改写。 
+[EXTRA] 将构造与能量估计分开：Hj及实际有限匹配由FiniteMatchingConstruction/ArbitraryFiniteTruncation提供；本条不再要求从B每点出发的全部截断短轨迹留B，保留原数值轨道约束和正确长时间量词。 
+[EXTRA] 本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。 -/
 theorem theorem31 (n r k : ℕ)
     (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)
     (D B : Set (SymplecticCoordinates n)) (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)

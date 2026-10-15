@@ -2,11 +2,11 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 354；章末验收待完成 [3, 4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 352；章末验收待完成 [3, 4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
-第3章：网站PASS 57 / 已修待复审 72 / 待导师 18 / 修复中 2。
+第3章：网站PASS 57 / 已修待复审 72 / 待导师 20 / 修复中 0。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
@@ -240,8 +240,8 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.4-ModifiedField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-LeadingModifiedField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-TruncatedHamiltonian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT10 |
-| 3 | MD-3.4-TruncationSmooth | FAIL | B | 光滑假设与结论均提升C∞，覆盖原文光滑截断；原正式有限和定理可按阶数参数实例化，保留原证明小修。 | 已修待复审 | EAUDIT10 |
-| 3 | MD-3.4-Thm3.1 | FAIL | B | 将构造与能量估计分开：Hj及实际有限匹配由FiniteMatchingConstruction/ArbitraryFiniteTruncation提供；本条不再要求从B每点出发的全部截断短轨迹留B，保留原数值轨道约束和正确长时间量词。 | 已修待复审 | EAUDIT10 |
+| 3 | MD-3.4-TruncationSmooth | FAIL | B | C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。 | 已修待复审 | EAUDIT21 |
+| 3 | MD-3.4-Thm3.1 | FAIL | B | 本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。 | 已修待复审 | EAUDIT21 |
 | 3 | MD-3.4-CompactLipschitz | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-TruncatedFlow | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT10 |
 | 3 | MD-3.4-FiniteMatchingConstruction | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
@@ -257,9 +257,9 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.4-OptimalTruncation | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT11 |
 | 3 | MD-3.4-ExponentialFlat | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-ScalarVerletShadow4 | FAIL | B | 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。 | 已修待复审 | EAUDIT11 |
-| 3 | MD-3.4-CommutingEnergy | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |
+| 3 | MD-3.4-CommutingEnergy | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT21 |
 | 3 | MD-3.4-CommutingEnergySymmetry | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-EnergySymplecticNoGo | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |
+| 3 | MD-3.4-EnergySymplecticNoGo | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT21 |
 | 3 | MD-3.5-EqualComponentIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.5-EqualEulerIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.5-LinearEulerIntegral | FAIL | B | 保留已证Euler精确保存；补连续ODE解上真实线性第一积分恒定，覆盖本条原句连续与离散两结论。 | 已修待复审 | EAUDIT12 |

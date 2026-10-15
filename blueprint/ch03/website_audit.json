@@ -5035,17 +5035,17 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "待复审 / EAUDIT10",
+    "effective_status": "待复审 / EAUDIT21",
     "repair": {
-      "eaudit": "EAUDIT10",
+      "eaudit": "EAUDIT21",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT21/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT10.md": "8542f7a496a00516c87cdbd68be149718f25e684e993e7f6954359edfdf3509a",
-        "Blueprint/Ch03.lean": "e425b9132b3e9eb26e5fe9269c3342c12189d0e9f5fbfee197a668da27765df8",
-        "blueprint/ch03/ch03_source.json": "c01473f20f3f218933c67057cda0771d71ffc8016b9b2209da6d0578d8101868"
+        "BATCH_EAUDIT21.md": "43ba5e969b35f5fa43687fea6047bbee0ce43972831571aef1ab0b9f9e7131f4",
+        "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+        "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14"
       }
     }
   },
@@ -5158,17 +5158,17 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "待复审 / EAUDIT10",
+    "effective_status": "待复审 / EAUDIT21",
     "repair": {
-      "eaudit": "EAUDIT10",
+      "eaudit": "EAUDIT21",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT21/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT10.md": "8542f7a496a00516c87cdbd68be149718f25e684e993e7f6954359edfdf3509a",
-        "Blueprint/Ch03.lean": "e425b9132b3e9eb26e5fe9269c3342c12189d0e9f5fbfee197a668da27765df8",
-        "blueprint/ch03/ch03_source.json": "c01473f20f3f218933c67057cda0771d71ffc8016b9b2209da6d0578d8101868"
+        "BATCH_EAUDIT21.md": "43ba5e969b35f5fa43687fea6047bbee0ce43972831571aef1ab0b9f9e7131f4",
+        "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+        "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14"
       }
     }
   },
@@ -6432,8 +6432,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH14_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT21（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT21",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "离散固定步长守恒不推出生成场Poisson对易；选项：保留连续流引理且另列整族步映射/形式jet资格／导师明确原文形式生成场解释后重述。当前不以连续守恒替代离散结论，现签名仅待判断。"
+    }
   },
   {
     "source_id": "MD-3.4-CommutingEnergySymmetry",
@@ -6532,8 +6539,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH14_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT21（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT21",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "全局统一时间重参数化超出已知局部真实流时间窗且欠域/拓扑资格；选项：限定受控紧邻域并限制τ时间窗／采用全时间真实流并补生成场拓扑资格。原practical评论到精确定理的数学路线待导师，现状保持。"
+    }
   },
   {
     "source_id": "MD-3.5-EqualComponentIntegral",

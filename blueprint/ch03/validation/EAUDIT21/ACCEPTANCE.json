@@ -1,0 +1,47 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT21",
+  "section": "3.4",
+  "source_ids": [
+    "MD-3.4-CommutingEnergy",
+    "MD-3.4-EnergySymplecticNoGo",
+    "MD-3.4-Thm3.1",
+    "MD-3.4-TruncationSmooth"
+  ],
+  "reaudit_ids": [
+    "MD-3.4-TruncationSmooth",
+    "MD-3.4-Thm3.1"
+  ],
+  "human_ids": [
+    "MD-3.4-CommutingEnergy",
+    "MD-3.4-EnergySymplecticNoGo"
+  ],
+  "lean_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+  "source_sha256": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+  "pages": [
+    136,
+    137,
+    138,
+    139,
+    140
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch03.olean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "log_sha256": "2c4cf2972d3f09934ed026faea593dd9c392b72f9eeabf251f199067a9f3c10b"
+  },
+  "axiom_decl_count": 5,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT21/INDEX.md"
+}

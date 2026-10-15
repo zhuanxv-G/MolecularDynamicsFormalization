@@ -2272,8 +2272,8 @@
       "MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian"
     ],
     "extra_assumptions": [
-      "各系数在开放环境D为C¹；这里只证明所需C¹子结论，原文smooth假设本身不作为新断言。",
-      "[EXTRA] 光滑假设与结论均提升C∞，覆盖原文光滑截断；原正式有限和定理可按阶数参数实例化，保留原证明小修。"
+      "系数在D上C∞，主结论C∞暂sorry；原C¹结论的既有证明作为独立辅助重查。",
+      "[EXTRA] C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "CORRECTED",
@@ -2293,9 +2293,32 @@
       {
         "stage": "EAUDIT10_PROOF_REPAIR",
         "reason": "TruncationSmooth: existing lemma fixes C1; one failed instantiation, C∞ left sorry; old C1 proof retained"
+      },
+      {
+        "stage": "EAUDIT21_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:39:27.285258",
+        "before_sha256": "e0c016dbc982bf2d223688830463850e8b4b6301c53c860e92b480e848983c94",
+        "after_sha256": "738688aff517f5e4a6051c65f4e4dc7de660689a0f2d87fbd1eec3f3f06a3564",
+        "changed_fields": [
+          "extra_assumptions"
+        ],
+        "annotation_corrections": {
+          "extra_assumptions": {
+            "before": [
+              "各系数在开放环境D为C¹；这里只证明所需C¹子结论，原文smooth假设本身不作为新断言。",
+              "[EXTRA] 光滑假设与结论均提升C∞，覆盖原文光滑截断；原正式有限和定理可按阶数参数实例化，保留原证明小修。"
+            ],
+            "after": [
+              "系数在D上C∞，主结论C∞暂sorry；原C¹结论的既有证明作为独立辅助重查。",
+              "[EXTRA] C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。"
+            ]
+          }
+        },
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.4-Thm3.1",
@@ -2309,26 +2332,17 @@
     "proof_note": "完整原书证明按PDF136–138跨页拼接；保留bar/tilde混用、L沿用及缺陷常数C省略，不静默修订原书。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "(3.11)来自前面的modified Hamiltonian构造；逐阶匹配不能作为“已经构造成功”的无证假设。"
+      "(3.11)来自前面的modified Hamiltonian构造；逐阶匹配不能作为“已经构造成功”的无证假设。",
+      "原证明中的统一L及缺陷常数由UniformTruncatedLipschitz/PhysicalEnergyDrift显式列出；旧疑点注释保留在repair_log，当前定理不要求全部截断轨迹留B。"
     ],
-    "issues": [
-      {
-        "code": "NEEDS_HUMAN",
-        "detail": "给定H̃_k与存在一组构造系数的量词对应、截断轨道留B及所有n≤ν的长时间范围需审；任意n和T的量化包含原文每个n≤ν。"
-      },
-      {
-        "code": "NEEDS_HUMAN",
-        "detail": "证明先对H取L，后对H̃_k沿用L，并在Lνh^(k+1)中省略缺陷常数C；本地辅助桥接显式给实际截断族统一L和C，但原文不改。"
-      }
-    ],
+    "issues": [],
     "lean_decl": "MD.Ch03.theorem31",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "smoothSymplecticData显式添加原方法r阶/近恒等辛/joint C∞、开放凸环境D、紧凸B⊆D、真实原流；r>0。",
-      "本签名保留完整构造H_j与finiteMatching为结论，k≥r固定；数值迭代和截断ODE留B，常数可依赖k,T而非所有k统一。",
-      "[EXTRA] 将构造与能量估计分开：Hj及实际有限匹配由FiniteMatchingConstruction/ArbitraryFiniteTruncation提供；本条不再要求从B每点出发的全部截断短轨迹留B，保留原数值轨道约束和正确长时间量词。"
+      "r>0,k≥r；开放凸D、紧凸B⊆D，H和Hj在D上C∞；给定相邻构造条目产出的真实有限匹配。",
+      "[EXTRA] 本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "statement_scope": "Theorem3.1中给定有限截断匹配后的能量估计；构造Hj及全截断存在性由MD-3.4-FiniteMatchingConstruction、MD-3.4-ArbitraryFiniteTruncation覆盖，原文保留。",
     "review_status": "CORRECTED",
     "repair_log": [
       {
@@ -2344,9 +2358,58 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EAUDIT21_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:39:27.285258",
+        "before_sha256": "29c7f4b1996157935493c5258bb576d6e694f5ab737b2c666cb6881be0562620",
+        "after_sha256": "e6d0d5ef09b648d668973450949dac8fdaeaaa14492fc428795e951903b162b1",
+        "changed_fields": [
+          "extra_assumptions",
+          "issues",
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {
+          "extra_assumptions": {
+            "before": [
+              "smoothSymplecticData显式添加原方法r阶/近恒等辛/joint C∞、开放凸环境D、紧凸B⊆D、真实原流；r>0。",
+              "本签名保留完整构造H_j与finiteMatching为结论，k≥r固定；数值迭代和截断ODE留B，常数可依赖k,T而非所有k统一。",
+              "[EXTRA] 将构造与能量估计分开：Hj及实际有限匹配由FiniteMatchingConstruction/ArbitraryFiniteTruncation提供；本条不再要求从B每点出发的全部截断短轨迹留B，保留原数值轨道约束和正确长时间量词。"
+            ],
+            "after": [
+              "r>0,k≥r；开放凸D、紧凸B⊆D，H和Hj在D上C∞；给定相邻构造条目产出的真实有限匹配。",
+              "[EXTRA] 本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。"
+            ]
+          },
+          "issues": {
+            "before": [
+              {
+                "code": "NEEDS_HUMAN",
+                "detail": "给定H̃_k与存在一组构造系数的量词对应、截断轨道留B及所有n≤ν的长时间范围需审；任意n和T的量化包含原文每个n≤ν。"
+              },
+              {
+                "code": "NEEDS_HUMAN",
+                "detail": "证明先对H取L，后对H̃_k沿用L，并在Lνh^(k+1)中省略缺陷常数C；本地辅助桥接显式给实际截断族统一L和C，但原文不改。"
+              }
+            ],
+            "after": []
+          },
+          "context_notation": {
+            "before": [
+              "(3.11)来自前面的modified Hamiltonian构造；逐阶匹配不能作为“已经构造成功”的无证假设。"
+            ],
+            "after": [
+              "(3.11)来自前面的modified Hamiltonian构造；逐阶匹配不能作为“已经构造成功”的无证假设。",
+              "原证明中的统一L及缺陷常数由UniformTruncatedLipschitz/PhysicalEnergyDrift显式列出；旧疑点注释保留在repair_log，当前定理不要求全部截断轨迹留B。"
+            ]
+          }
+        },
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.4-CompactLipschitz",
@@ -2921,8 +2984,19 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT21_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:39:27.285258",
+        "before_sha256": "890a90bf61c4e467c9c8c7c377336f45c72440985eef5e0d7d0fd9e9ea30b80f",
+        "after_sha256": "a256f738e8e1f2191e17ed95f160a439755300f9f26c2b815d7351c12e72fff0",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH14_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.4-CommutingEnergySymmetry",
@@ -2974,8 +3048,19 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT21_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:39:27.285258",
+        "before_sha256": "e60ab7fd377908bfe46256d052f18d6b6b6c3a2b048a450055700ad9e4778772",
+        "after_sha256": "baacf748e7e8f5f5574cfa0e9e2abc270f5ebb8c3d388da91e8bed3a9604b0a5",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH14_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.5-EqualComponentIntegral",

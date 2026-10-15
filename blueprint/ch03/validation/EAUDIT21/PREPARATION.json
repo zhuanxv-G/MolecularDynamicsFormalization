@@ -1,0 +1,33 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT21",
+  "section": "3.4",
+  "source_ids": [
+    "MD-3.4-CommutingEnergy",
+    "MD-3.4-EnergySymplecticNoGo",
+    "MD-3.4-Thm3.1",
+    "MD-3.4-TruncationSmooth"
+  ],
+  "reaudit_ids": [
+    "MD-3.4-TruncationSmooth",
+    "MD-3.4-Thm3.1"
+  ],
+  "human_ids": [
+    "MD-3.4-CommutingEnergy",
+    "MD-3.4-EnergySymplecticNoGo"
+  ],
+  "old_lean_sha256": "35ee3f3a5232e0ab25a6987a9dbd789cdeaca4ba663e088894b0f7d6a5bef3d3",
+  "lean_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+  "source_sha256": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+  "pages": [
+    136,
+    137,
+    138,
+    139,
+    140
+  ],
+  "prior_proof_blocks": {
+    "MD-3.4-TruncationSmooth": "theorem truncationSmooth (H : E → ℝ) (Hj : ℕ → E → ℝ)\n    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ ⊤ H D)\n    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ ⊤ (Hj j) D) :\n    ContDiffOn ℝ ⊤ (textbookTruncatedHamiltonian H Hj r k h) D := by\n  sorry\n\ntheorem truncationSmooth_C1 (H : E → ℝ) (Hj : ℕ → E → ℝ)\n    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ 1 H D)\n    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :\n    ContDiffOn ℝ 1 (textbookTruncatedHamiltonian H Hj r k h) D := by\n  apply MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian <;> assumption",
+    "MD-3.4-Thm3.1": "theorem theorem31 (n r k : ℕ)\n    (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)\n    (D B : Set (SymplecticCoordinates n)) (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)\n    (_hr : 0 < r) (_hrk : r ≤ k) (_hD : IsOpen D) (_hconvD : Convex ℝ D)\n    (_hB : IsCompact B) (_hconvB : Convex ℝ B) (_hBD : B ⊆ D)\n    (_hH : ContDiffOn ℝ ⊤ H D) (_hHj : ∀ j, ContDiffOn ℝ ⊤ (Hj j) D)\n    (_hmatching : finiteMatching H Hj r k D B G) :\n    ∀ T > 0, ∃ M > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z₀ ∈ B, ∀ ν : ℕ,\n      (∀ i ≤ ν, oneStepIterate G h z₀ i ∈ B) →\n      (ν:ℝ)*h*h^(k-r) ≤ T →\n      ‖H (oneStepIterate G h z₀ ν)-H z₀‖ ≤ M*h^r := by\n  sorry"
+  }
+}
