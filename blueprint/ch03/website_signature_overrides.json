@@ -106,5 +106,11 @@
       "U全域C²；真实kick/drift及三次回文复合。",
       "[EXTRA] 依赖小修：原无质量限制的结构定理继续对应正式总化辅助算法；教材受限接口另有正质量/可微资格，原已证结论保留。"
     ]
+  },
+  "MD-3.3.4-TakahashiShadow": {
+    "code": "def takahashiShadow2 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) (z : Z n) : ℝ :=\n  mechanicalEnergy m U z+h^2/12*((shadowTerms m U z).1-(shadowTerms m U z).2.1)\n\ntheorem takahashiShadow2_matching (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ)\n    (_hm : positiveMass m) (_hU : ContDiff ℝ ⊤ U) (B : Set (SymplecticCoordinates n))\n    (_hB : IsCompact B) :\n    matchesHamiltonian (fun h z ↦ takahashiShadow2 m U h (unpack z))\n      (takahashiImada m U) B 4 ∧\n    (∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ B,\n      |verletModifiedH (fun x ↦ quadraticKinetic m (unpack x).2)\n        (fun x ↦ takahashiPotential m U h (unpack x).1) h z-\n        takahashiShadow2 m U h (unpack z)| ≤ C*h^4) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。"
+    ]
   }
 }

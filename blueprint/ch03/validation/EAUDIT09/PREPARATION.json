@@ -1,0 +1,29 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT09",
+  "section": "3.3.4",
+  "source_ids": [
+    "MD-3.3.4-ProcessorEnergyPrinted",
+    "MD-3.3.4-TakahashiEffectiveOrder",
+    "MD-3.3.4-TakahashiPotential",
+    "MD-3.3.4-TakahashiShadow"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.4-TakahashiPotential",
+    "MD-3.3.4-TakahashiShadow"
+  ],
+  "human_ids": [
+    "MD-3.3.4-ProcessorEnergyPrinted",
+    "MD-3.3.4-TakahashiEffectiveOrder"
+  ],
+  "old_lean_sha256": "2a83d81b8bb55043bd75ee34ce2fa2688e4c581a087cc9d3774d9b657436a3e0",
+  "lean_sha256": "d2113436a2cbc3f6b39378a78a1f85f496f08f7dd845e6bf1f2b81c24496bcfa",
+  "source_sha256": "17d178bb17a591f92760c8e765dd35b46946fab2a0b5d17895b1f1192b61c850",
+  "pages": [
+    134,
+    135
+  ],
+  "prior_proof_blocks": {
+    "MD-3.3.4-TakahashiShadow": "def takahashiShadow2 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) (z : Z n) : ℝ :=\n  mechanicalEnergy m U z+h^2/12*((shadowTerms m U z).1-(shadowTerms m U z).2.1)"
+  }
+}

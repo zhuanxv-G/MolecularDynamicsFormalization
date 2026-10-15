@@ -1975,7 +1975,7 @@
     "section": "3.3.4",
     "printed_page": "112",
     "pdf_page": "134",
-    "statement_latex": "Recall the Takahashi-Imada method introduced in the last chapter.\n\\[\\widehat P:=p-(h/2)\\nabla\\widetilde U(q),\\qquad Q:=q+hM^{-1}\\widehat P,\\qquad P:=\\widehat P-(h/2)\\nabla\\widetilde U(Q),\\]\nwith modified potential energy function\n\\[\\widetilde U(q)=U(q)-\\frac{h^2}{24}\\nabla U(q)^TM^{-1}\\nabla U(q).\\]",
+    "statement_latex": "Recall the Takahashi-Imada method introduced in the last chapter,\n\\[\\widehat P:=p-(h/2)\\nabla\\widetilde U(q),\\qquad Q:=q+hM^{-1}\\widehat P,\\qquad P:=\\widehat P-(h/2)\\nabla\\widetilde U(Q),\\]\nwith modified potential energy function\n\\[\\widetilde U(q)=U(q)-\\frac{h^2}{24}\\nabla U(q)^TM^{-1}\\nabla U(q).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1989,9 +1989,21 @@
       "M为固定对角质量矩阵，原第1章机械模型。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:17:19.170756",
+        "before_sha256": "c89a86c0d02dad2ffd08b91db478d68d12883e1f78c0b21688e9f003f110ccea",
+        "after_sha256": "638bd049b17c6bba138e9919358570a28031b086e4d3d94f0be219b536d09087",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.4-PotentialDoubleBracket",
@@ -2035,11 +2047,23 @@
     "issues": [],
     "lean_decl": "MD.Ch03.takahashiShadow2",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:17:19.170756",
+        "before_sha256": "dcfd5e7f1caf83c12cb29cbe25d67c81ac825b9947060575b8f040cb2c6f80ee",
+        "after_sha256": "c551aa627901f374cffb30244e196c6e6a606d0c2e9bf021ea0e86eb75f13ccd",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.4-TakahashiProcessor",
@@ -2091,8 +2115,18 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:17:19.170756",
+        "before_sha256": "426631170c50de8d7abe40b2e9f9ab0ffd4eea8d9af4a0fb5ec15de0e35c2858",
+        "after_sha256": "80896f4a93e284a4239efc3cf263d2ddb09ae7ee7209780b8da4476ed675aebc",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.4-TakahashiEffectiveOrder",
@@ -2121,8 +2155,18 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:17:19.170756",
+        "before_sha256": "18534e4251525e18e2556909da5694feea2a20cb854ce3460ad2cd033d3ea937",
+        "after_sha256": "7b9872715c609d1c5d53fa3fb5b3d783ff9724ba76ec5885bba1e9e450d71fed",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.4-ModifiedField",

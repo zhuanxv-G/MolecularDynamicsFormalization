@@ -66,12 +66,12 @@
 | MD-3.3.3-Yoshida4 | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | definition / self-contained |
 | MD-3.3.3-Yoshida4Structure | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
 | MD-3.3.3-GeneralSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.3.4-TakahashiPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.4-TakahashiPotential | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | definition / self-contained |
 | MD-3.3.4-PotentialDoubleBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；需实际机械Hamiltonian的坐标Poisson双括号/梯度接口桥接；当前不存在现成桥接，有限微分路线待处理。 |
-| MD-3.3.4-TakahashiShadow | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.4-TakahashiShadow | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | definition / self-contained |
 | MD-3.3.4-TakahashiProcessor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.3.4-ProcessorEnergyPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；印刷漏项待裁定；非PASS不证明。 |
-| MD-3.3.4-TakahashiEffectiveOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺处理器逆、局部展开与实际四阶余项/稳定性的完整理论；本地非PASS不证明。 |
+| MD-3.3.4-ProcessorEnergyPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | FAIL | 待导师 / EAUDIT09（原返回FAIL保留） | placeholder / incomplete；印刷漏项待裁定；非PASS不证明。 |
+| MD-3.3.4-TakahashiEffectiveOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT09（原返回FAIL保留） | placeholder / incomplete；缺处理器逆、局部展开与实际四阶余项/稳定性的完整理论；本地非PASS不证明。 |
 | MD-3.4-ModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.4-LeadingModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺真实步长Taylor展开、系数极限及修正场ODE余项桥接；属于完整修正方程理论，保留sorry。 |
 | MD-3.4-TruncatedHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
@@ -395,3 +395,5 @@ EAUDIT06 §3.3：8条落盘，单文件与14项公理通过；未写新证明；
 EAUDIT07 §3.3.2：7条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT08 §3.3.3：3条落盘，单文件与3项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT09 §3.3.4：4条落盘，单文件与5项公理通过；未写新证明；完整check留到章末；网站待复审。

@@ -1,0 +1,44 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT09",
+  "section": "3.3.4",
+  "source_ids": [
+    "MD-3.3.4-ProcessorEnergyPrinted",
+    "MD-3.3.4-TakahashiEffectiveOrder",
+    "MD-3.3.4-TakahashiPotential",
+    "MD-3.3.4-TakahashiShadow"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.4-TakahashiPotential",
+    "MD-3.3.4-TakahashiShadow"
+  ],
+  "human_ids": [
+    "MD-3.3.4-ProcessorEnergyPrinted",
+    "MD-3.3.4-TakahashiEffectiveOrder"
+  ],
+  "lean_sha256": "d2113436a2cbc3f6b39378a78a1f85f496f08f7dd845e6bf1f2b81c24496bcfa",
+  "source_sha256": "17d178bb17a591f92760c8e765dd35b46946fab2a0b5d17895b1f1192b61c850",
+  "pages": [
+    134,
+    135
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch03.olean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "d2113436a2cbc3f6b39378a78a1f85f496f08f7dd845e6bf1f2b81c24496bcfa",
+    "log_sha256": "f299338001f6562d5ecd8c931aca22b35bb4c4479ef1f9629bc083aa2ff62160"
+  },
+  "axiom_decl_count": 5,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT09/INDEX.md"
+}

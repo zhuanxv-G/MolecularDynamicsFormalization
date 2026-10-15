@@ -708,9 +708,21 @@ theorem potentialDoubleBracket :
         (textbookPoissonBracket (fun x => U (unpack x).1) (fun x => quadraticKinetic m (unpack x).2)) (pack z) := by
   sorry
 
-/-- source_id: MD-3.3.4-TakahashiShadow · definition · §3.3.4 · 印刷p.112 / PDFp.134 -/
+/-- source_id: MD-3.3.4-TakahashiShadow · definition · §3.3.4 · 印刷p.112 / PDFp.134 
+[EXTRA] 保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。 -/
 def takahashiShadow2 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) (z : Z n) : ℝ :=
   mechanicalEnergy m U z+h^2/12*((shadowTerms m U z).1-(shadowTerms m U z).2.1)
+
+theorem takahashiShadow2_matching (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ)
+    (_hm : positiveMass m) (_hU : ContDiff ℝ ⊤ U) (B : Set (SymplecticCoordinates n))
+    (_hB : IsCompact B) :
+    matchesHamiltonian (fun h z ↦ takahashiShadow2 m U h (unpack z))
+      (takahashiImada m U) B 4 ∧
+    (∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ B,
+      |verletModifiedH (fun x ↦ quadraticKinetic m (unpack x).2)
+        (fun x ↦ takahashiPotential m U h (unpack x).1) h z-
+        takahashiShadow2 m U h (unpack z)| ≤ C*h^4) := by
+  sorry
 
 /-- source_id: MD-3.3.4-TakahashiProcessor · (3.9) · §3.3.4 · 印刷p.113 / PDFp.135 -/
 def takahashiProcessor {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) (z : Z n) : Z n :=

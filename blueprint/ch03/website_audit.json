@@ -4433,7 +4433,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH11_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT09",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT09.md": "69081111f2f86cf8e42c225264f02d4452df04fcb5036f5fc8629e083dfb8cce",
+        "Blueprint/Ch03.lean": "d2113436a2cbc3f6b39378a78a1f85f496f08f7dd845e6bf1f2b81c24496bcfa",
+        "blueprint/ch03/ch03_source.json": "17d178bb17a591f92760c8e765dd35b46946fab2a0b5d17895b1f1192b61c850"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.4-PotentialDoubleBracket",
@@ -4537,7 +4549,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH11_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT09",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT09.md": "69081111f2f86cf8e42c225264f02d4452df04fcb5036f5fc8629e083dfb8cce",
+        "Blueprint/Ch03.lean": "d2113436a2cbc3f6b39378a78a1f85f496f08f7dd845e6bf1f2b81c24496bcfa",
+        "blueprint/ch03/ch03_source.json": "17d178bb17a591f92760c8e765dd35b46946fab2a0b5d17895b1f1192b61c850"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.4-TakahashiProcessor",
@@ -4644,8 +4668,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH11_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT09（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印第一行T遗漏U，h=0即不等于H；选项：批准另立Corrected将T改H，保留第二界／原印仅存档。当前原式保留，不尝试证明。"
+    }
   },
   {
     "source_id": "MD-3.3.4-TakahashiEffectiveOrder",
@@ -4698,8 +4729,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH11_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT09（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原后处理P=id+h²a与现χ⁻¹∘G∘χ的方向及全局Homeomorph域不匹配；选项：轨迹邻域P∘G∘P⁻¹并绑定原a／令χ=P⁻¹且系数取负并明确局部域。与第2章TI符号疑误一并裁定，当前保持。"
+    }
   },
   {
     "source_id": "MD-3.4-ModifiedField",
