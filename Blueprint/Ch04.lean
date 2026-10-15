@@ -368,12 +368,19 @@ def printedImplicitRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n
 def actualMidpointRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
   znew=z+h • f ((1/2 : ℝ) • (z+znew))
 
-/-- source_id: MD-4.1-ImplicitFactor · definition · §4.1 · 印刷p.142 / PDFp.164 -/
+/-- source_id: MD-4.1-ImplicitFactor · definition · §4.1 · 印刷p.142 / PDFp.164 
+[EXTRA] 保留因子并补线性场iΩz的印刷隐式更新等价式；分母实部1不需额外非零假设，新定理暂sorry。 -/
 def implicitFactor (Ω h : ℝ) : ℂ :=
   (1+Complex.I*(h*Ω/2 : ℝ))/(1-Complex.I*(h*Ω/2 : ℝ))
 
+theorem implicitFactor_update (Ω h : ℝ) (z out : ℂ) :
+    (out=z+(h : ℂ)*(Complex.I*Ω*z+Complex.I*Ω*out)/2) ↔
+      out=implicitFactor Ω h*z := by
+  sorry
+
 /-- source_id: MD-4.1-ImplicitModulus · unnumbered_claim · §4.1 · 印刷p.142 / PDFp.164
-[EXTRA] 只保留本段纯虚线性振子对象；不扩成任意不稳定线性系统的有界性。 -/
+[EXTRA] 只保留本段纯虚线性振子对象；不扩成任意不稳定线性系统的有界性。 
+[EXTRA] 增加任意步长的标量迭代范数保持，准确对应当前线性振子模态；不扩大到任意线性系统。原模长证明保留。 -/
 theorem implicitModulus :
   ∀ Ω h : ℝ, ‖MolecularDynamics.Chapter04Review.implicitFactor Ω h‖=1 := by
   intro Ω h
@@ -386,6 +393,10 @@ theorem implicitModulus :
   have hr := congrArg Complex.re hz
   norm_num at hr
 
+theorem implicitModulus_iterates (Ω h : ℝ) (z : ℂ) (k : ℕ) :
+    ‖(MolecularDynamics.Chapter04Review.implicitFactor Ω h)^k*z‖=‖z‖ := by
+  sorry
+
 /-- source_id: MD-4.1-PrintedModifiedFrequency · definition · §4.1 · 印刷p.143 / PDFp.165
 [EXTRA] h≠0；采用Mathlib Complex.log主支，对原未指定log支单独记录；后条连续实相位为2 atan(hΩ/2)/h。
 [NEEDS_HUMAN] 原书未指定复log分支；与连续实相位的桥接须审校。 -/
@@ -393,7 +404,8 @@ def printedModifiedFrequency (Ω h : ℝ) : ℂ :=
   (Complex.I*(h : ℂ))⁻¹ * Complex.log (MolecularDynamics.Chapter04Review.implicitFactor Ω h)
 
 /-- source_id: MD-4.1-ModifiedFrequencyLimit · unnumbered_claim · §4.1 · 印刷p.143 / PDFp.165
-[EXTRA] [EXTRA]将small-h准确表达为连续实相位2 atan(hΩ/2)/h沿非零h→0趋Ω；不声称此极限自动给耦合系统准确度。 -/
+[EXTRA] [EXTRA]将small-h准确表达为连续实相位2 atan(hΩ/2)/h沿非零h→0趋Ω；不声称此极限自动给耦合系统准确度。 
+[EXTRA] 补x=hΩ的频率比零点极限1与正无穷极限0及实际频率桥接，保留旧h→0证明；新结论不作证明。 -/
 theorem modifiedFrequencyLimit :
   ∀ Ω : ℝ, Tendsto (MolecularDynamics.Chapter04Review.modifiedFrequency Ω) (nhdsWithin 0 ({0}ᶜ)) (𝓝 Ω) := by
   intro Ω
@@ -404,13 +416,23 @@ theorem modifiedFrequencyLimit :
   simp [MolecularDynamics.Chapter04Review.modifiedFrequency,smul_eq_mul,div_eq_mul_inv]
   ring
 
+def midpointFrequencyRatio (x : ℝ) : ℝ := 2*Real.arctan (x/2)/x
+
+theorem modifiedFrequencyRatio_limits :
+    Tendsto midpointFrequencyRatio (nhdsWithin 0 ({0}ᶜ)) (𝓝 1) ∧
+    Tendsto midpointFrequencyRatio atTop (𝓝 0) ∧
+    (∀ Ω h : ℝ, h*Ω ≠ 0 →
+      MolecularDynamics.Chapter04Review.modifiedFrequency Ω h/Ω=midpointFrequencyRatio (h*Ω)) := by
+  sorry
+
 /-- source_id: MD-4.1-MechanicalMidpoint · definition · §4.1 · 印刷p.144 / PDFp.166 -/
 def mechanicalMidpointRelation {n : ℕ} (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ)
     (h : ℝ) (z mid out : MolecularDynamics.Chapter04Review.Z n) : Prop :=
   mid.1=z.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m mid.2 ∧ mid.2=z.2-(h/2) • MolecularDynamics.Chapter04Review.grad U mid.1 ∧
   out.1=mid.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m mid.2 ∧ out.2=mid.2-(h/2) • MolecularDynamics.Chapter04Review.grad U mid.1
 
-/-- source_id: MD-4.1-MidpointElimination · unnumbered_claim · §4.1 · 印刷p.144 / PDFp.166 -/
+/-- source_id: MD-4.1-MidpointElimination · unnumbered_claim · §4.1 · 印刷p.144 / PDFp.166 
+[EXTRA] 保留消元公式及其已有证明，补实际相空间场的隐式Euler半步→显式Euler半步关系等价，不静默缩掉组合结论。 -/
 theorem midpointElimination :
   ∀ n (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) h (z mid out : MolecularDynamics.Chapter04Review.Z n),
     MolecularDynamics.Chapter04Review.mechanicalMidpointRelation m U h z mid out →
@@ -424,6 +446,16 @@ theorem midpointElimination :
       funext i
       simp [MolecularDynamics.Chapter04Review.invMass]
       ring
+
+theorem midpointEulerHalfSteps (n : ℕ) (m : Fin n → ℝ)
+    (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ)
+    (z mid out : MolecularDynamics.Chapter04Review.Z n) :
+    MolecularDynamics.Chapter04Review.mechanicalMidpointRelation m U h z mid out ↔
+      (let f := fun w : MolecularDynamics.Chapter04Review.Z n ↦
+        (MolecularDynamics.Chapter04Review.invMass m w.2,
+          -MolecularDynamics.Chapter04Review.grad U w.1)
+       mid=z+(h/2) • f mid ∧ out=mid+(h/2) • f mid) := by
+  sorry
 
 /-- source_id: MD-4.2.1-SplitHamiltonian · definition · §4.2.1 · 印刷p.145 / PDFp.167 -/
 def splitHamiltonian {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (z : MolecularDynamics.Chapter04Review.Z n) : ℝ :=
@@ -1986,11 +2018,16 @@ end MD.Ch04
 #print axioms MD.Ch04.printedImplicitRelation
 #print axioms MD.Ch04.actualMidpointRelation
 #print axioms MD.Ch04.implicitFactor
+#print axioms MD.Ch04.implicitFactor_update
 #print axioms MD.Ch04.implicitModulus
+#print axioms MD.Ch04.implicitModulus_iterates
 #print axioms MD.Ch04.printedModifiedFrequency
 #print axioms MD.Ch04.modifiedFrequencyLimit
+#print axioms MD.Ch04.midpointFrequencyRatio
+#print axioms MD.Ch04.modifiedFrequencyRatio_limits
 #print axioms MD.Ch04.mechanicalMidpointRelation
 #print axioms MD.Ch04.midpointElimination
+#print axioms MD.Ch04.midpointEulerHalfSteps
 #print axioms MD.Ch04.splitHamiltonian
 #print axioms MD.Ch04.fastVerlet
 #print axioms MD.Ch04.respa

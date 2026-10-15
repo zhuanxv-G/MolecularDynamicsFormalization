@@ -549,7 +549,7 @@
     "section": "4.1",
     "printed_page": "142",
     "pdf_page": "164",
-    "statement_latex": "The Implicit Midpoint method, for the ODE $\\dot z=f(z)$ takes the form\n\\[z_{n+1}=z_n+h\\frac{f(z_n)+f(z_{n+1})}{2},\\]",
+    "statement_latex": "The Implicit Midpoint method which, for the ODE $\\dot z=f(z)$ takes the form\n\\[z_{n+1}=z_n+h\\frac{f(z_n)+f(z_{n+1})}{2},\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -564,9 +564,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:52:31.915585",
+        "before_sha256": "fa498573eaca1631807e654059f2a8dc68d6dc7accf2b9cbc803e064bd3a3ced",
+        "after_sha256": "a95bd1a243e3205e600dc2ee64b1e4228bf46b1c217e25abd9fdd7cf9bbfe068",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.1-ActualMidpointRelation",
@@ -575,7 +588,7 @@
     "section": "4.1",
     "printed_page": "142",
     "pdf_page": "164",
-    "statement_latex": "The Implicit Midpoint method, for the ODE $\\dot z=f(z)$",
+    "statement_latex": "The Implicit Midpoint method which, for the ODE $\\dot z=f(z)$ takes the form\n\\[z_{n+1}=z_n+h\\frac{f(z_n)+f(z_{n+1})}{2},\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -587,9 +600,22 @@
       "[EXTRA]名称通常对应的真正中点关系Z=z+h f((z+Z)/2)供审校上下文；不是原页的印刷公式。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:52:31.915585",
+        "before_sha256": "e37c696d07c68b067b356036aae686a4cff65c346e651d21c4535346fb432caf",
+        "after_sha256": "1eff02eb06dfe165ee3adb01660b1492965e47dce2f9aff337b2837f301aa281",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.1-ImplicitFactor",
@@ -608,11 +634,24 @@
     "issues": [],
     "lean_decl": "MD.Ch04.implicitFactor",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留因子并补线性场iΩz的印刷隐式更新等价式；分母实部1不需额外非零假设，新定理暂sorry。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:52:31.915585",
+        "before_sha256": "8021860fd2c844960022dcc32a67943d33e51869334fa80f08a44d466e40df65",
+        "after_sha256": "11d289333462a1e7bce5955c576d606b860aba2dcc888753df303ed5a85b413b",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.1-ImplicitModulus",
@@ -630,12 +669,24 @@
     "lean_decl": "MD.Ch04.implicitModulus",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "只保留本段纯虚线性振子对象；不扩成任意不稳定线性系统的有界性。"
+      "只保留本段纯虚线性振子对象；不扩成任意不稳定线性系统的有界性。",
+      "[EXTRA] 增加任意步长的标量迭代范数保持，准确对应当前线性振子模态；不扩大到任意线性系统。原模长证明保留。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:52:31.915585",
+        "before_sha256": "c387ecd515fe9fc15e624613052d82f8db93f0191f143eb7fff0a601f2805c3f",
+        "after_sha256": "c32ba6090fc753c66b44495b750f1006a56bcda0cba0ba8ec30fff80d72a9747",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.1-PrintedModifiedFrequency",
@@ -662,8 +713,19 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:52:31.915585",
+        "before_sha256": "536e9f92e82886411b048a58ec5d92bef5fd6b1048b0a0387cd4e2b50312e1c5",
+        "after_sha256": "8ec7e05b82bdeb8f9f2fd9decc7ef2665836cbd74e26e285be2685213981c396",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.1-ModifiedFrequencyLimit",
@@ -683,12 +745,24 @@
     "lean_decl": "MD.Ch04.modifiedFrequencyLimit",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]将small-h准确表达为连续实相位2 atan(hΩ/2)/h沿非零h→0趋Ω；不声称此极限自动给耦合系统准确度。"
+      "[EXTRA]将small-h准确表达为连续实相位2 atan(hΩ/2)/h沿非零h→0趋Ω；不声称此极限自动给耦合系统准确度。",
+      "[EXTRA] 补x=hΩ的频率比零点极限1与正无穷极限0及实际频率桥接，保留旧h→0证明；新结论不作证明。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:52:31.915585",
+        "before_sha256": "2c94950bbc719eebd3d2cce8be281f398ce7ec3895cea6d311c145f1f3948fcc",
+        "after_sha256": "1362866f9af48f81977137c54b6c841993c3ab123f1399ad9bbf071b08faa5c4",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.1-MechanicalMidpoint",
@@ -730,11 +804,24 @@
     "issues": [],
     "lean_decl": "MD.Ch04.midpointElimination",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留消元公式及其已有证明，补实际相空间场的隐式Euler半步→显式Euler半步关系等价，不静默缩掉组合结论。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT03_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:52:31.915585",
+        "before_sha256": "1da23e7f63fc7a9416152edfec9509d8a02d5ca03f880fe9ca5013cdc03742db",
+        "after_sha256": "968e30c2d98715f689fde57b9d38d6911c45e5af466130de2d4c0c642d22f393",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.2.1-SplitHamiltonian",

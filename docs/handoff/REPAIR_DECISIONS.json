@@ -978,5 +978,40 @@
     "category": "B",
     "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
     "section": "4"
+  },
+  "MD-4.1-ImplicitFactor": {
+    "category": "B",
+    "handling": "保留因子并补线性场iΩz的印刷隐式更新等价式；分母实部1不需额外非零假设，新定理暂sorry。",
+    "section": "4.1"
+  },
+  "MD-4.1-ImplicitModulus": {
+    "category": "B",
+    "handling": "增加任意步长的标量迭代范数保持，准确对应当前线性振子模态；不扩大到任意线性系统。原模长证明保留。",
+    "section": "4.1"
+  },
+  "MD-4.1-ModifiedFrequencyLimit": {
+    "category": "B",
+    "handling": "补x=hΩ的频率比零点极限1与正无穷极限0及实际频率桥接，保留旧h→0证明；新结论不作证明。",
+    "section": "4.1"
+  },
+  "MD-4.1-MidpointElimination": {
+    "category": "B",
+    "handling": "保留消元公式及其已有证明，补实际相空间场的隐式Euler半步→显式Euler半步关系等价，不静默缩掉组合结论。",
+    "section": "4.1"
+  },
+  "MD-4.1-PrintedImplicitRelation": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.1"
+  },
+  "MD-4.1-ActualMidpointRelation": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.1"
+  },
+  "MD-4.1-PrintedModifiedFrequency": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.1"
   }
 }

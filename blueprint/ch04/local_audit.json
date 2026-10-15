@@ -597,11 +597,11 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch04.printedImplicitRelation",
       "verdict": "NEEDS_HUMAN",
       "explanation": "字面是梯形法。非线性实际中点f((z+Z)/2)另列，不静默改原公式；线性测试时二者相同。",
@@ -624,15 +624,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT03/axioms.log"
     },
     "MD-4.1-ActualMidpointRelation": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.actualMidpointRelation",
@@ -657,23 +657,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT03/axioms.log"
     },
     "MD-4.1-ImplicitFactor": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.implicitFactor",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255",
-      "block_sha256": "d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255",
-      "direct_placeholder": false,
+      "signature_sha256": "3b8b91de288d02c43d1d4919f40ba314bba2dca54f68e93415d125e939c612ba",
+      "block_sha256": "3b8b91de288d02c43d1d4919f40ba314bba2dca54f68e93415d125e939c612ba",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -690,23 +691,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT03/axioms.log"
     },
     "MD-4.1-ImplicitModulus": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.implicitModulus",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "8b259dc410b5741b24216689b139a9e51f809a825dd9da04f9d418aece887aa8",
-      "block_sha256": "b7e50937fd99670ba9c69ab1de65fb6c276228ba797825288e34d6e44cb1001a",
-      "direct_placeholder": false,
+      "block_sha256": "32f52b38affa481694f65efa6f8d3e3f69027c8ebadb65d6e44072ac6dcc8843",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -732,17 +734,17 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT03/axioms.log"
     },
     "MD-4.1-PrintedModifiedFrequency": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch04.printedModifiedFrequency",
       "verdict": "NEEDS_HUMAN",
       "explanation": "印刷复log表达式原样保留，不用实atan定义替换原式。",
@@ -765,23 +767,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT03/axioms.log"
     },
     "MD-4.1-ModifiedFrequencyLimit": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.modifiedFrequencyLimit",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "f90608e8aadadcc5fedfcc3878723bd1bd821207392530d00059dea9251feadd",
-      "block_sha256": "9847676f2406a7ca76a1a8494dbc0d2bf7fdbaa5dfe61af4ddd06e66e1f01e30",
-      "direct_placeholder": false,
+      "block_sha256": "f11ad70e0249ffb2bf85b664f12a06171ebd8cb187d96796f31bb9d9c26d3f78",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -805,7 +808,7 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT03/axioms.log"
     },
     "MD-4.1-MechanicalMidpoint": {
       "checked": true,
@@ -844,17 +847,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.midpointElimination",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "e3b6a28ba13587e41761631949da73e619dbe835a66c510d2ac7501efa576452",
-      "block_sha256": "200ef1f981bf1b11ca8d09abd980b3111132caefce7ce1558c23769ff0361ad9",
-      "direct_placeholder": false,
+      "block_sha256": "80a3672cd7fd0dee2e3a928b7df28c18ef147e01352f3629a3679217f4e53ef5",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -878,7 +882,7 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT03/axioms.log"
     },
     "MD-4.2.1-SplitHamiltonian": {
       "checked": true,

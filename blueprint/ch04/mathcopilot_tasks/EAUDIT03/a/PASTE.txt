@@ -1,0 +1,77 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.1-PrintedImplicitRelation；原PDF页映射=[164]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT03_review.json，对象含batch=EAUDIT03、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT03.md": "390b19a6833babe291a7d6fd69117edcad7cfb61a1f419563e6de937397a219e",
+  "Blueprint/Ch04.lean": "28e6501c9b19dc055292ed6a84681cb2941d882a86a5c521fa4d58981338917d",
+  "blueprint/ch04/ch04_source.json": "7c7aa5bb1e48928db815b8606b99a6769a195e425c2fa4b906d2036408ac7ac1",
+  "EAUDIT03a_materials": "dde2cda083946654e2439337464771068653773ffa1933d6925ea582d975ef73",
+  "EAUDIT03a_PAGES.pdf": "ddd3456e00062f4e9cd461c6e9400ddcbe9de0338a3b4c16185f287e37531a0d"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.1-PrintedImplicitRelation",
+  "kind": "definition",
+  "label": null,
+  "section": "4.1",
+  "printed_page": "142",
+  "pdf_page": "164",
+  "statement_latex": "The Implicit Midpoint method which, for the ODE $\\dot z=f(z)$ takes the form\n\\[z_{n+1}=z_n+h\\frac{f(z_n)+f(z_{n+1})}{2},\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "p142名为Implicit Midpoint却写Trapezoidal Rule更新式；p144采用真正机械中点式。"
+    }
+  ],
+  "lean_decl": "MD.Ch04.printedImplicitRelation",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT03_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:52:31.915585",
+      "before_sha256": "fa498573eaca1631807e654059f2a8dc68d6dc7accf2b9cbc803e064bd3a3ced",
+      "after_sha256": "a95bd1a243e3205e600dc2ee64b1e4228bf46b1c217e25abd9fdd7cf9bbfe068",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def printedImplicitRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
+  znew=z+(h/2) • (f z+f znew)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MD.Ch04.printedImplicitRelation
+```lean
+def printedImplicitRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
+  znew=z+(h/2) • (f z+f znew)
+```

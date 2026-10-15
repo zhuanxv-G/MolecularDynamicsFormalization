@@ -1,0 +1,51 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT03",
+  "section": "4.1",
+  "source_ids": [
+    "MD-4.1-ActualMidpointRelation",
+    "MD-4.1-ImplicitFactor",
+    "MD-4.1-ImplicitModulus",
+    "MD-4.1-MidpointElimination",
+    "MD-4.1-ModifiedFrequencyLimit",
+    "MD-4.1-PrintedImplicitRelation",
+    "MD-4.1-PrintedModifiedFrequency"
+  ],
+  "reaudit_ids": [
+    "MD-4.1-PrintedImplicitRelation",
+    "MD-4.1-ImplicitFactor",
+    "MD-4.1-ImplicitModulus",
+    "MD-4.1-ModifiedFrequencyLimit",
+    "MD-4.1-MidpointElimination"
+  ],
+  "human_ids": [
+    "MD-4.1-ActualMidpointRelation",
+    "MD-4.1-PrintedModifiedFrequency"
+  ],
+  "lean_sha256": "28e6501c9b19dc055292ed6a84681cb2941d882a86a5c521fa4d58981338917d",
+  "source_sha256": "7c7aa5bb1e48928db815b8606b99a6769a195e425c2fa4b906d2036408ac7ac1",
+  "pages": [
+    164,
+    165,
+    166
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "28e6501c9b19dc055292ed6a84681cb2941d882a86a5c521fa4d58981338917d",
+    "log_sha256": "8fc4af2dc9d5143b917f3019500dd51833b8d428e236a92dea67bf357bd7bc14"
+  },
+  "axiom_decl_count": 12,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT03/INDEX.md"
+}

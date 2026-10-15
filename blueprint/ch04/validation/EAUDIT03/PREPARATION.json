@@ -1,0 +1,39 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT03",
+  "section": "4.1",
+  "source_ids": [
+    "MD-4.1-ActualMidpointRelation",
+    "MD-4.1-ImplicitFactor",
+    "MD-4.1-ImplicitModulus",
+    "MD-4.1-MidpointElimination",
+    "MD-4.1-ModifiedFrequencyLimit",
+    "MD-4.1-PrintedImplicitRelation",
+    "MD-4.1-PrintedModifiedFrequency"
+  ],
+  "reaudit_ids": [
+    "MD-4.1-PrintedImplicitRelation",
+    "MD-4.1-ImplicitFactor",
+    "MD-4.1-ImplicitModulus",
+    "MD-4.1-ModifiedFrequencyLimit",
+    "MD-4.1-MidpointElimination"
+  ],
+  "human_ids": [
+    "MD-4.1-ActualMidpointRelation",
+    "MD-4.1-PrintedModifiedFrequency"
+  ],
+  "old_lean_sha256": "2305e9679bfcf1e29293028a309241d83f26c0c79d8d8504ea64eba668be6834",
+  "lean_sha256": "28e6501c9b19dc055292ed6a84681cb2941d882a86a5c521fa4d58981338917d",
+  "source_sha256": "7c7aa5bb1e48928db815b8606b99a6769a195e425c2fa4b906d2036408ac7ac1",
+  "pages": [
+    164,
+    165,
+    166
+  ],
+  "prior_proof_blocks": {
+    "MD-4.1-ImplicitFactor": "def implicitFactor (Ω h : ℝ) : ℂ :=\n  (1+Complex.I*(h*Ω/2 : ℝ))/(1-Complex.I*(h*Ω/2 : ℝ))",
+    "MD-4.1-ImplicitModulus": "theorem implicitModulus :\n  ∀ Ω h : ℝ, ‖MolecularDynamics.Chapter04Review.implicitFactor Ω h‖=1 := by\n  intro Ω h\n  rw [MolecularDynamics.Chapter04Review.implicitFactor,norm_div]\n  have he : (1+Complex.I*((h*Ω/2 : ℝ) : ℂ)) = star (1-Complex.I*((h*Ω/2 : ℝ) : ℂ)) := by simp\n  rw [he,norm_star]\n  apply div_self\n  intro hn\n  have hz := norm_eq_zero.mp hn\n  have hr := congrArg Complex.re hz\n  norm_num at hr",
+    "MD-4.1-ModifiedFrequencyLimit": "theorem modifiedFrequencyLimit :\n  ∀ Ω : ℝ, Tendsto (MolecularDynamics.Chapter04Review.modifiedFrequency Ω) (nhdsWithin 0 ({0}ᶜ)) (𝓝 Ω) := by\n  intro Ω\n  have hd : HasDerivAt (fun h : ℝ => 2*Real.arctan (h*Ω/2)) Ω 0 := by\n    convert (((hasDerivAt_id (0 : ℝ)).mul_const Ω).div_const 2).arctan.const_mul 2 using 1 <;> norm_num <;> ring\n  convert hd.tendsto_slope_zero using 1\n  funext t\n  simp [MolecularDynamics.Chapter04Review.modifiedFrequency,smul_eq_mul,div_eq_mul_inv]\n  ring",
+    "MD-4.1-MidpointElimination": "theorem midpointElimination :\n  ∀ n (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) h (z mid out : MolecularDynamics.Chapter04Review.Z n),\n    MolecularDynamics.Chapter04Review.mechanicalMidpointRelation m U h z mid out →\n    mid.1=z.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m z.2-(h^2/4) • MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad U mid.1) := by\n  intro n m U h z mid out hm\n  rcases hm with ⟨hq,hp,houtq,houtp⟩\n  calc\n    mid.1=z.1+(h/2) • MolecularDynamics.Chapter04Review.invMass m mid.2 := hq\n    _ = _ := by\n      rw [hp]\n      funext i\n      simp [MolecularDynamics.Chapter04Review.invMass]\n      ring"
+  }
+}
