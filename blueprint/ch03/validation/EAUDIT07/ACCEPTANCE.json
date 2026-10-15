@@ -1,0 +1,50 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT07",
+  "section": "3.3.2",
+  "source_ids": [
+    "MD-3.3.2-DifferentLogsCommute",
+    "MD-3.3.2-ModifiedEven",
+    "MD-3.3.2-Strang",
+    "MD-3.3.2-StrangCubic",
+    "MD-3.3.2-VerletHamiltonianParts",
+    "MD-3.3.2-VerletModifiedHamiltonian",
+    "MD-3.3.2-VerletModifiedMatching"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.2-VerletHamiltonianParts",
+    "MD-3.3.2-VerletModifiedHamiltonian",
+    "MD-3.3.2-VerletModifiedMatching",
+    "MD-3.3.2-ModifiedEven",
+    "MD-3.3.2-Strang",
+    "MD-3.3.2-StrangCubic"
+  ],
+  "human_ids": [
+    "MD-3.3.2-DifferentLogsCommute"
+  ],
+  "lean_sha256": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+  "source_sha256": "1b16f3c32702793685e6ee4ed07330a9238dea9922da83ffb8ced5f7048bf4ef",
+  "pages": [
+    129,
+    130
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch03.olean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+    "log_sha256": "a395a74d08b7901cbb7ee54d2c824769f56e66ee92d1a87a7b1ae709bcb7ef2b"
+  },
+  "axiom_decl_count": 10,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/INDEX.md"
+}

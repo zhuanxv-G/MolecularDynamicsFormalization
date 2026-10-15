@@ -1,0 +1,39 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT07",
+  "section": "3.3.2",
+  "source_ids": [
+    "MD-3.3.2-DifferentLogsCommute",
+    "MD-3.3.2-ModifiedEven",
+    "MD-3.3.2-Strang",
+    "MD-3.3.2-StrangCubic",
+    "MD-3.3.2-VerletHamiltonianParts",
+    "MD-3.3.2-VerletModifiedHamiltonian",
+    "MD-3.3.2-VerletModifiedMatching"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.2-VerletHamiltonianParts",
+    "MD-3.3.2-VerletModifiedHamiltonian",
+    "MD-3.3.2-VerletModifiedMatching",
+    "MD-3.3.2-ModifiedEven",
+    "MD-3.3.2-Strang",
+    "MD-3.3.2-StrangCubic"
+  ],
+  "human_ids": [
+    "MD-3.3.2-DifferentLogsCommute"
+  ],
+  "old_lean_sha256": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+  "lean_sha256": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+  "source_sha256": "1b16f3c32702793685e6ee4ed07330a9238dea9922da83ffb8ced5f7048bf4ef",
+  "pages": [
+    129,
+    130
+  ],
+  "prior_proof_blocks": {
+    "MD-3.3.2-VerletHamiltonianParts": "def verletHamiltonianParts {n : ℕ} (T U : SymplecticCoordinates n → ℝ) : Fin 3 → SymplecticCoordinates n → ℝ :=\n  ![(fun z => U z/2), T, (fun z => U z/2)]",
+    "MD-3.3.2-VerletModifiedHamiltonian": "def verletModifiedH {n : ℕ} (T U : SymplecticCoordinates n → ℝ) (h : ℝ) (z : SymplecticCoordinates n) : ℝ :=\n  T z+U z+h^2/12*(textbookPoissonBracket T (textbookPoissonBracket T U) z-\n    textbookPoissonBracket U (textbookPoissonBracket U T) z/2)+h^4/120*(\n      -textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T U))) z/6+\n      textbookPoissonBracket U (textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T U))) z/3-\n      textbookPoissonBracket U (textbookPoissonBracket U (textbookPoissonBracket T (textbookPoissonBracket T U))) z/4+\n      textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket U (textbookPoissonBracket U T))) z)",
+    "MD-3.3.2-VerletModifiedMatching": "theorem verletModifiedMatching :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),\n    positiveMass m → ContDiff ℝ ⊤ U → IsCompact B →\n    matchesHamiltonian (verletModifiedH (fun z => quadraticKinetic m (unpack z).2) (fun z => U (unpack z).1))\n      (coordinateVerlet m (textbookPotentialForce U)) B 5 := by\n  sorry",
+    "MD-3.3.2-ModifiedEven": "theorem modifiedEven :\n  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R), ∀ j : ℕ,\n    PowerSeries.coeff (2*j) (formalLog (formalStrang A B))=0 := by\n  sorry",
+    "MD-3.3.2-StrangCubic": "theorem strangCubic :\n  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),\n    PowerSeries.coeff 3 (formalLog (formalStrang A B))=\n      (1/12:ℝ) • commutator B (commutator B A)-(1/24:ℝ) • commutator A (commutator A B) := by\n  intro R _ _ A B\n  norm_num [formalLog, formalStrang, textbookFormalOperatorExponential,\n    PowerSeries.coeff_mk, PowerSeries.coeff_mul, Finset.Nat.antidiagonal_succ,\n    Nat.factorial_succ, pow_succ, Finset.sum_Icc_succ_top, MolecularDynamics.Chapter03Review.commutator,\n    mul_add, add_mul, mul_sub, sub_mul, smul_mul_assoc, mul_smul_comm,\n    smul_add, smul_sub, smul_smul]\n  simp only [mul_assoc]\n  module"
+  }
+}

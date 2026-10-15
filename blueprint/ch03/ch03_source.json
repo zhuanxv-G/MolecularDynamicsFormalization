@@ -1437,11 +1437,23 @@
     "issues": [],
     "lean_decl": "MD.Ch03.verletHamiltonianParts",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 绑定真实正对角质量、T(p)=pᵀM⁻¹p/2及U(q)，补H1+H2+H3=H；移除任意相空间函数替代机械分解。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:15:22.765671",
+        "before_sha256": "78fcba90628d00f3daa0fd01a2804143faf452a12ab4e517bd96e4777ad92d9a",
+        "after_sha256": "d6a1a8146863fda52b629b7aee29662851ddc0d3f410b0b956bfb29e86f1f946",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.2-VerletStructure",
@@ -1477,7 +1489,7 @@
     "section": "3.3.2",
     "printed_page": "107",
     "pdf_page": "129",
-    "statement_latex": "In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH Lemma gives\n\\[\\begin{aligned}\\widetilde H_h={}&T+U+\\frac{h^2}{12}\\left(\\{T,\\{T,U\\}\\}-\\frac12\\{U,\\{U,T\\}\\}\\right)\\\\\n&+\\frac{h^4}{120}\\left(-\\frac16\\{T,\\{T,\\{T,\\{T,U\\}\\}\\}\\}+\\frac13\\{U,\\{T,\\{T,\\{T,U\\}\\}\\}\\}-\\frac14\\{U,\\{U,\\{T,\\{T,U\\}\\}\\}\\}+\\{T,\\{T,\\{U,\\{U,T\\}\\}\\}\\}\\right)+O(h^6).\\end{aligned}\\]",
+    "statement_latex": "In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH lemma gives\n\\[\\begin{aligned}\\widetilde H_h={}&T+U+\\frac{h^2}{12}\\left(\\{T,\\{T,U\\}\\}-\\frac12\\{U,\\{U,T\\}\\}\\right)\\\\\n&+\\frac{h^4}{120}\\left(-\\frac16\\{T,\\{T,\\{T,\\{T,U\\}\\}\\}\\}+\\frac13\\{U,\\{T,\\{T,\\{T,U\\}\\}\\}\\}-\\frac14\\{U,\\{U,\\{T,\\{T,U\\}\\}\\}\\}+\\{T,\\{T,\\{U,\\{U,T\\}\\}\\}\\}\\right)+O(h^6).\\end{aligned}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1487,11 +1499,26 @@
     "issues": [],
     "lean_decl": "MD.Ch03.verletModifiedH",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "extra_assumptions": [
+      "[EXTRA] 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。"
+    ],
+    "statement_scope": "展示式中到h⁴的有限多项式辅助定义；BCH系数匹配及Hamiltonian O(h⁶)余项范围由MD-3.3.2-VerletModifiedMatching承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:15:22.765671",
+        "before_sha256": "8c4ae90750d51f811616403fd6e9f730eaf406471d67fb6fcf0b8f3d325b3f28",
+        "after_sha256": "c82e85855f8da74ffa53fbf4c1785a3e227007a8fd8a32da21ebf050df911878",
+        "changed_fields": [
+          "statement_latex",
+          "statement_scope"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.2-VerletModifiedMatching",
@@ -1500,7 +1527,7 @@
     "section": "3.3.2",
     "printed_page": "107",
     "pdf_page": "129",
-    "statement_latex": "In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH Lemma gives",
+    "statement_latex": "In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH lemma gives",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1516,12 +1543,25 @@
     "lean_decl": "MD.Ch03.verletModifiedMatching",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "正对角质量、U全域C∞、紧初值B；完整印刷h⁴截断实际O(h⁶)端点匹配为额外严格化。"
+      "正对角质量、U全域C∞、紧初值B；完整印刷h⁴截断实际O(h⁶)端点匹配为额外严格化。",
+      "[EXTRA] 保留已列机械特例，新增一般分离T(p),U(q)、真实局部子流、h⁴系数及所有截断匹配；Hamiltonian余项从h⁶起（奇项零），对应端点O(h⁷)，不混同两个余项。新结论暂sorry，未裁定印刷系数是否正确。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:15:22.765671",
+        "before_sha256": "42b5a580bd6a41b2ecb6ac6bf3879597e7ac2cfa3e2b9324b67bf300762b9ed9",
+        "after_sha256": "73b7f9ae7ac0d6ad3aee77c79dac138ae121348051e4f3b5fed4a9d3495bff37",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.2-ModifiedEven",
@@ -1530,7 +1570,7 @@
     "section": "3.3.2",
     "printed_page": "107–108",
     "pdf_page": "129–130",
-    "statement_latex": "The extra power of $h$ in the leading perturbation reflects the fact that this method is 2nd order accurate, rather than first order, as Symplectic Euler. Note that only even order terms $(h^2,h^4,\\ldots)$ appear in the perturbative expansion; this is a consequence of the symmetry of the method.\nSetting $s=-t$, the left hand side of (3.4) collapses to the identity. Hence the surviving even-powered terms in the expansion on the right hand side of (3.5) must be zero. If the even order terms vanish, then the effect of composing linear operators symmetrically is to keep only odd order terms in the exponent, giving the symmetric BCH formula\n\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(t(X+Y)+t^3\\widehat Z_{[3]}+\\cdots).\\tag{3.6}\\]",
+    "statement_latex": "The extra power of $h$ in the leading perturbation reflects the fact that this method is 2nd order accurate, rather than first order, as Symplectic Euler. Note that only even order terms $(h^2,h^4,\\ldots)$ appear in the perturbative expansion; this is a consequence of the symmetry of the method.\nSetting $s=-t$, the left hand side of (3.4) collapses to the identity. Hence the surviving even-powered terms in the expansion on the right hand side of (3.5) must be zero. If the even order terms vanish, then the effect of composing linear operators symmetrically is to keep only odd order terms in the exponent, giving the symmetric BCH formula\n\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(t(X+Y)+t^3\\widetilde Z_{[3]}+\\cdots).\\tag{3.6}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1540,11 +1580,25 @@
     "issues": [],
     "lean_decl": "MD.Ch03.modifiedEven",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 补一阶log系数A+B并保留全部偶次零，表达至少二阶及Hamiltonian偶性/log奇性；不沿用不同步长log交换的错误推理。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:15:22.765671",
+        "before_sha256": "fa8f8d23dbb14fc9d12a2908f7068e957cffa558addcea4105f968be08199849",
+        "after_sha256": "de2a692cd0a6dc7c25592b63a8d366765dd2fddd97b909cf059c1a37a5fbaed1",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.2-Strang",
@@ -1553,12 +1607,12 @@
     "section": "3.3.2",
     "printed_page": "108",
     "pdf_page": "130",
-    "statement_latex": "For Hamiltonians $X$ and $Y$, consider symmetrizing a composition of exponentials (a Strang splitting), such that\n\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(tZ_t)=\\exp(t(\\widehat Z_{[1]}+t^2\\widehat Z_{[2]}+t^3\\widehat Z_{[3]}+t^4\\widehat Z_{[4]}+\\cdots)).\\]",
+    "statement_latex": "For Hamiltonians $X$ and $Y$, consider symmetrizing a composition of exponentials (a Strang splitting), such that\n\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(tZ_t)=\\exp(t\\widetilde Z_{[1]}+t^2\\widetilde Z_{[2]}+t^3\\widetilde Z_{[3]}+t^4\\widetilde Z_{[4]}+\\cdots).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "本定义为左端真实形式乘积；右端展开的索引可能有排印疑误（t²Z₂应结合后面t³Z₃及log定义审校），不假设log系数交换。"
+      "本定义为左端真实形式乘积；PDF130右端为exp(t widetilde Z_[1]+t² widetilde Z_[2]+t³ widetilde Z_[3]+⋯)，没有共同外层t。各Z_[j]按指数总幂编号，与(3.5)一致；不假设不同步长log交换。"
     ],
     "issues": [
       {
@@ -1570,9 +1624,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:15:22.765671",
+        "before_sha256": "1f2639c516fa471bc20fa64aa12a6a5685559514017929bbba58be018a4c19a5",
+        "after_sha256": "4bb2a1a9bfe4b9cb679de8b0da239ba84a2bbd21fd3c827347026bbfe8283b55",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.2-DifferentLogsCommute",
@@ -1581,7 +1648,7 @@
     "section": "3.3.2",
     "printed_page": "108",
     "pdf_page": "130",
-    "statement_latex": "Multiplying by the same expansion using a different time step $s$, we have\n\\[\\exp(\\tfrac s2X)\\exp(sY)\\exp(\\tfrac s2X)\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(sZ_s)\\exp(tZ_t).\\tag{3.4}\\]\nBut we know that $Z_s$ commutes with $Z_t$, giving\n\\[\\begin{aligned}\\exp(sZ_s)\\exp(tZ_t)&=\\exp(sZ_s+tZ_t)\\\\\n&=\\exp((s+t)\\widehat Z_{[1]}+(s^2+t^2)\\widehat Z_{[2]}+(s^3+t^3)\\widehat Z_{[3]}+(s^4+t^4)\\widehat Z_{[4]}+\\cdots).\\end{aligned}\\tag{3.5}\\]",
+    "statement_latex": "Multiplying by the same expansion using a different time step $s$, we have\n\\[\\exp(\\tfrac s2X)\\exp(sY)\\exp(\\tfrac s2X)\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(sZ_s)\\exp(tZ_t).\\tag{3.4}\\]\nBut we know that $Z_t$ commutes with $Z_s$, giving\n\\[\\begin{aligned}\\exp(sZ_s)\\exp(tZ_t)&=\\exp(sZ_s+tZ_t)\\\\\n&=\\exp((s+t)\\widetilde Z_{[1]}+(s^2+t^2)\\widetilde Z_{[2]}+(s^3+t^3)\\widetilde Z_{[3]}+(s^4+t^4)\\widetilde Z_{[4]}+\\cdots).\\end{aligned}\\tag{3.5}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1598,9 +1665,21 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:15:22.765671",
+        "before_sha256": "6ced7c76a9f9648654a3d93426e86c24bb5d16523b8eb6eebc766e1ba49908e1",
+        "after_sha256": "3cf0cb1c9f8f7e6f6cb7b3dbc57935512bebe31c5cbdccb5e402fdbfc5a0db52",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.2-StrangInverse",
@@ -1632,7 +1711,7 @@
     "section": "3.3.2",
     "printed_page": "108",
     "pdf_page": "130",
-    "statement_latex": "\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(t(X+Y)+t^3\\widehat Z_{[3]}+\\cdots),\\tag{3.6}\\]\nwhere\n\\[\\widehat Z_{[3]}=\\frac1{12}[Y,[Y,X]]-\\frac1{24}[X,[X,Y]].\\tag{3.7}\\]",
+    "statement_latex": "\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(t(X+Y)+t^3\\widetilde Z_{[3]}+\\cdots),\\tag{3.6}\\]\nwhere\n\\[\\widetilde Z_{[3]}=\\frac1{12}[Y,[Y,X]]-\\frac1{24}[X,[X,Y]].\\tag{3.7}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1642,11 +1721,25 @@
     "issues": [],
     "lean_decl": "MD.Ch03.strangCubic",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 补一次系数和全部偶次零，连同原三次公式覆盖完整奇次展开；原已证三次系数保留辅助并重查，新合取暂sorry。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:15:22.765671",
+        "before_sha256": "fb259abd48b9ce38baba28d9424a29f9960572f5a64657fcdbf8028dae246d07",
+        "after_sha256": "4d11be381b7c40a6d24acdbcbba354ab3bc3a066dba50c25ea2791f50d172d09",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH09_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.3-YoshidaComposition",

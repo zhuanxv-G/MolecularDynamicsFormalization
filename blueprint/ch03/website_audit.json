@@ -3212,7 +3212,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "2cc618bbbf53d24d8bae772dbe6d4f68468981c779d360216f91a2ba33087f89",
+        "Blueprint/Ch03.lean": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+        "blueprint/ch03/ch03_source.json": "1b16f3c32702793685e6ee4ed07330a9238dea9922da83ffb8ced5f7048bf4ef"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.2-VerletStructure",
@@ -3342,7 +3354,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "2cc618bbbf53d24d8bae772dbe6d4f68468981c779d360216f91a2ba33087f89",
+        "Blueprint/Ch03.lean": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+        "blueprint/ch03/ch03_source.json": "1b16f3c32702793685e6ee4ed07330a9238dea9922da83ffb8ced5f7048bf4ef"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.2-VerletModifiedMatching",
@@ -3427,7 +3451,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "2cc618bbbf53d24d8bae772dbe6d4f68468981c779d360216f91a2ba33087f89",
+        "Blueprint/Ch03.lean": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+        "blueprint/ch03/ch03_source.json": "1b16f3c32702793685e6ee4ed07330a9238dea9922da83ffb8ced5f7048bf4ef"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.2-ModifiedEven",
@@ -3505,7 +3541,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "2cc618bbbf53d24d8bae772dbe6d4f68468981c779d360216f91a2ba33087f89",
+        "Blueprint/Ch03.lean": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+        "blueprint/ch03/ch03_source.json": "1b16f3c32702793685e6ee4ed07330a9238dea9922da83ffb8ced5f7048bf4ef"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.2-Strang",
@@ -3587,7 +3635,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "2cc618bbbf53d24d8bae772dbe6d4f68468981c779d360216f91a2ba33087f89",
+        "Blueprint/Ch03.lean": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+        "blueprint/ch03/ch03_source.json": "1b16f3c32702793685e6ee4ed07330a9238dea9922da83ffb8ced5f7048bf4ef"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.2-DifferentLogsCommute",
@@ -3673,8 +3733,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT07（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "不同步长Strang的对数一般不交换；选项：保留为原书错误断言档案／批准加A、B交换的受限修复。现状不进入已证结论，奇性改依赖反步恒等式的路线另审。"
+    }
   },
   {
     "source_id": "MD-3.3.2-StrangInverse",
@@ -3809,7 +3876,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH09_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "2cc618bbbf53d24d8bae772dbe6d4f68468981c779d360216f91a2ba33087f89",
+        "Blueprint/Ch03.lean": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+        "blueprint/ch03/ch03_source.json": "1b16f3c32702793685e6ee4ed07330a9238dea9922da83ffb8ced5f7048bf4ef"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.3-YoshidaComposition",

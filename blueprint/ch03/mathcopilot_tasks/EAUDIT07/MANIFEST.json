@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT07",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "2cc618bbbf53d24d8bae772dbe6d4f68468981c779d360216f91a2ba33087f89",
+    "Blueprint/Ch03.lean": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+    "blueprint/ch03/ch03_source.json": "1b16f3c32702793685e6ee4ed07330a9238dea9922da83ffb8ced5f7048bf4ef"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT07a",
+      "source_id": "MD-3.3.2-VerletHamiltonianParts",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/a",
+      "total_bytes": 93433,
+      "manifest_sha256": "08261099baf8facecec4e6fa622c3f1235ecf9ad990b396201897681d0190702"
+    },
+    {
+      "subtask": "EAUDIT07b",
+      "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/b",
+      "total_bytes": 94557,
+      "manifest_sha256": "a6ebdf5756a08263346377ea75cfd17660fbcfca77c26ce2e207a888c18fd041"
+    },
+    {
+      "subtask": "EAUDIT07c",
+      "source_id": "MD-3.3.2-VerletModifiedMatching",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/c",
+      "total_bytes": 100734,
+      "manifest_sha256": "d75f9a48972b159efe18cab725976e6b0045babcf648f80cfa3279465aca1275"
+    },
+    {
+      "subtask": "EAUDIT07d",
+      "source_id": "MD-3.3.2-ModifiedEven",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/d",
+      "total_bytes": 102234,
+      "manifest_sha256": "b9638267ca9c3237d3b87a824fe241ab00cece325576fb135831677cd78bc7e3"
+    },
+    {
+      "subtask": "EAUDIT07e",
+      "source_id": "MD-3.3.2-Strang",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/e",
+      "total_bytes": 77891,
+      "manifest_sha256": "341470faa2a856b6043a30cdb8fd53ff3e63431efa44b22cb2d75cddd2c518a8"
+    },
+    {
+      "subtask": "EAUDIT07f",
+      "source_id": "MD-3.3.2-StrangCubic",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/f",
+      "total_bytes": 78788,
+      "manifest_sha256": "0b90dbe3d195881e7ca28baa9aedfe993abf68e166f8f19e96eaff9d89575a5d"
+    }
+  ]
+}

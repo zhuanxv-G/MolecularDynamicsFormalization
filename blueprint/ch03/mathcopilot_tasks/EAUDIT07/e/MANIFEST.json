@@ -1,0 +1,33 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_id": "MD-3.3.2-Strang",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "2cc618bbbf53d24d8bae772dbe6d4f68468981c779d360216f91a2ba33087f89",
+    "Blueprint/Ch03.lean": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+    "blueprint/ch03/ch03_source.json": "1b16f3c32702793685e6ee4ed07330a9238dea9922da83ffb8ced5f7048bf4ef",
+    "EAUDIT07e_materials": "ab7adea6ea7f6f9a8d15fd57a9d5dd76fe3dea3c4e4c391274bfedcb54e53845",
+    "EAUDIT07e_PAGES.pdf": "f34399d1044e1e658617738e4f8202c83fea3ba86648e4066913ca8058cad19e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    130
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "f45428f05dc0f233392943cccea7c2c3f85cc751f302ec3275ffe1216236495f",
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "formalStrang",
+      "file_sha256": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+      "excerpt_sha256": "5a5308d2a11acae9140a691f24aa00f3314c5242574f4b82dc30b3b95266be01"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalOperatorExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "df5ff488932635200b6f774d1b89d132afee1211289904ed8d00ab209d015a49"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT07_review.json",
+  "total_task_bytes": 77891
+}

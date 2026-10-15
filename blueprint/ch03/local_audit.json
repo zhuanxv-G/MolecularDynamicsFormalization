@@ -1469,17 +1469,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch03.verletHamiltonianParts",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "4e512d856d45249f67285856d6aa5ba560b945e0d56354c83a29d23fd7daa309",
-      "block_sha256": "4e512d856d45249f67285856d6aa5ba560b945e0d56354c83a29d23fd7daa309",
-      "direct_placeholder": false,
+      "signature_sha256": "31e18862b151a8bcb023e69b0a141a140f0046ec2874606abb173b80045c6330",
+      "block_sha256": "31e18862b151a8bcb023e69b0a141a140f0046ec2874606abb173b80045c6330",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -1496,7 +1497,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT07/axioms.log"
     },
     "MD-3.3.2-VerletStructure": {
       "checked": true,
@@ -1537,9 +1538,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.verletModifiedH",
@@ -1564,23 +1565,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT07/axioms.log"
     },
     "MD-3.3.2-VerletModifiedMatching": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.verletModifiedMatching",
       "verdict": "NEEDS_HUMAN",
       "explanation": "印刷h²系数对应哪个Verlet和状态/pullback次序需要核对；完整印刷有限函数的匹配存在结论保留，未用较弱h²另一签名替代。",
       "signature_sha256": "fe9833daea8b9fbf3f4f9db2a417c1c8ea2209c36166b1a15cd47e2af00b70a2",
-      "block_sha256": "cc6dcaf940ca4cf4aa7a67bb4930b91a211b97f834587e616938c99a9ac2ea8a",
+      "block_sha256": "72846b301749c25914f0e93eb67ac3fad5b4c3858f8628293f13252982d0be5a",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -1598,23 +1599,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT07/axioms.log"
     },
     "MD-3.3.2-ModifiedEven": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.modifiedEven",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "f66b51ff4c318d74187c762e0064daa590927cc92fbad75480d0ae2fe306eee7",
-      "block_sha256": "24916fa7390d6dc9c246770fb984d198095d79f5b094b64a226c4a6e72f7e448",
+      "signature_sha256": "5098c34b28392500524263fe4716d78e183feb1f10631d4a0f250f4b79b29ff0",
+      "block_sha256": "6e236bde93bbe491690de32762d16d7160ce6f03542813feec5040273db7ad08",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -1632,15 +1633,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT07/axioms.log"
     },
     "MD-3.3.2-Strang": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.formalStrang",
@@ -1665,16 +1666,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT07/axioms.log"
     },
     "MD-3.3.2-DifferentLogsCommute": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.differentLogsCommute",
@@ -1699,7 +1700,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT07/axioms.log"
     },
     "MD-3.3.2-StrangInverse": {
       "checked": true,
@@ -1739,17 +1740,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch03.strangCubic",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "bb1932bdc29b629891d70e3a6878fa135e7e7efb44ffa0aaebaf88902e986924",
-      "block_sha256": "9944b2fb03a5ec437995a8669d3c3ce9f4248dbfd4acd311975bc5775e97ff84",
-      "direct_placeholder": false,
+      "signature_sha256": "22e02751672dd5df49f473abb5ec529af2f4ab8479c3c76e1024d953f9895ad2",
+      "block_sha256": "c2dff0d6a70c1007ee99683dddebbe3718174e6a5056f552667e81261a209240",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -1775,7 +1777,7 @@
         "blueprint/ch03/validation/short_search/StrangCubic-route3.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT07/axioms.log"
     },
     "MD-3.3.3-YoshidaComposition": {
       "checked": true,

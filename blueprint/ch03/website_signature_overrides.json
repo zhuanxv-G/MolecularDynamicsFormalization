@@ -54,5 +54,36 @@
     "extra_assumptions": [
       "[EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。"
     ]
+  },
+  "MD-3.3.2-VerletHamiltonianParts": {
+    "code": "def verletHamiltonianParts {n : ℕ} (m : Fin n → ℝ)\n    (_hm : positiveMass m) (U : Q n → ℝ) : Fin 3 → SymplecticCoordinates n → ℝ :=\n  ![(fun z ↦ U (unpack z).1/2),\n    (fun z ↦ quadraticKinetic m (unpack z).2), (fun z ↦ U (unpack z).1/2)]\n\ntheorem verletHamiltonianParts_sum {n : ℕ} (m : Fin n → ℝ)\n    (hm : positiveMass m) (U : Q n → ℝ) (z : SymplecticCoordinates n) :\n    (∑ i : Fin 3, verletHamiltonianParts m hm U i z) =\n      quadraticKinetic m (unpack z).2+U (unpack z).1 := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 绑定真实正对角质量、T(p)=pᵀM⁻¹p/2及U(q)，补H1+H2+H3=H；移除任意相空间函数替代机械分解。"
+    ]
+  },
+  "MD-3.3.2-VerletModifiedHamiltonian": {
+    "code": "def verletModifiedH {n : ℕ} (T U : SymplecticCoordinates n → ℝ) (h : ℝ) (z : SymplecticCoordinates n) : ℝ :=\n  T z+U z+h^2/12*(textbookPoissonBracket T (textbookPoissonBracket T U) z-\n    textbookPoissonBracket U (textbookPoissonBracket U T) z/2)+h^4/120*(\n      -textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T U))) z/6+\n      textbookPoissonBracket U (textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T U))) z/3-\n      textbookPoissonBracket U (textbookPoissonBracket U (textbookPoissonBracket T (textbookPoissonBracket T U))) z/4+\n      textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket U (textbookPoissonBracket U T))) z)",
+    "extra_assumptions": [
+      "[EXTRA] 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。"
+    ]
+  },
+  "MD-3.3.2-VerletModifiedMatching": {
+    "code": "theorem verletModifiedMatching :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),\n    positiveMass m → ContDiff ℝ ⊤ U → IsCompact B →\n    matchesHamiltonian (verletModifiedH (fun z => quadraticKinetic m (unpack z).2) (fun z => U (unpack z).1))\n      (coordinateVerlet m (textbookPotentialForce U)) B 5 := by\n  sorry\n\ntheorem verletModifiedMatching_general (n : ℕ) (T U : Q n → ℝ)\n    (D B : Set (SymplecticCoordinates n)) (Φ Ψ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)\n    (η : ℝ) (_hT : ContDiff ℝ ⊤ T) (_hU : ContDiff ℝ ⊤ U)\n    (_hD : IsOpen D) (_hB : IsCompact B) (_hBD : B ⊆ D)\n    (_hΦ : actualFlow (textbookHamiltonianVectorField (fun z ↦ T (unpack z).2)) D Φ η)\n    (_hΨ : actualFlow (textbookHamiltonianVectorField (fun z ↦ U (unpack z).1)) D Ψ η) :\n    let Tp := fun z : SymplecticCoordinates n ↦ T (unpack z).2\n    let Uq := fun z : SymplecticCoordinates n ↦ U (unpack z).1\n    let G := fun h ↦ Ψ (h/2) ∘ Φ h ∘ Ψ (h/2)\n    matchesHamiltonian (verletModifiedH Tp Uq) G B 6 ∧\n    (∃ Hj : ℕ → SymplecticCoordinates n → ℝ,\n      (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧\n      (∀ z ∈ D, Hj 0 z = Tp z+Uq z) ∧\n      (∀ z ∈ D, Hj 2 z =\n        (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq) z-\n          textbookPoissonBracket Uq (textbookPoissonBracket Uq Tp) z/2)/12) ∧\n      (∀ z ∈ D, Hj 4 z =\n        (-textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/6+\n          textbookPoissonBracket Uq (textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/3-\n          textbookPoissonBracket Uq (textbookPoissonBracket Uq (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/4+\n          textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Uq (textbookPoissonBracket Uq Tp))) z)/120) ∧\n      (∀ j z, Hj (2*j+1) z = 0) ∧\n      ∀ k ≥ 6, matchesHamiltonian (fun h z ↦ ∑ j ∈ Finset.range k, h^j*Hj j z) G B k) := by\n  sorry",
+    "extra_assumptions": [
+      "正对角质量、U全域C∞、紧初值B；完整印刷h⁴截断实际O(h⁶)端点匹配为额外严格化。",
+      "[EXTRA] 保留已列机械特例，新增一般分离T(p),U(q)、真实局部子流、h⁴系数及所有截断匹配；Hamiltonian余项从h⁶起（奇项零），对应端点O(h⁷)，不混同两个余项。新结论暂sorry，未裁定印刷系数是否正确。"
+    ]
+  },
+  "MD-3.3.2-ModifiedEven": {
+    "code": "theorem modifiedEven :\n  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),\n    PowerSeries.coeff 1 (formalLog (formalStrang A B))=A+B ∧ ∀ j : ℕ,\n    PowerSeries.coeff (2*j) (formalLog (formalStrang A B))=0 := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 补一阶log系数A+B并保留全部偶次零，表达至少二阶及Hamiltonian偶性/log奇性；不沿用不同步长log交换的错误推理。"
+    ]
+  },
+  "MD-3.3.2-StrangCubic": {
+    "code": "theorem strangCubic :\n  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),\n    PowerSeries.coeff 1 (formalLog (formalStrang A B))=A+B ∧\n    (∀ j : ℕ, PowerSeries.coeff (2*j) (formalLog (formalStrang A B))=0) ∧\n    PowerSeries.coeff 3 (formalLog (formalStrang A B))=\n      (1/12:ℝ) • commutator B (commutator B A)-(1/24:ℝ) • commutator A (commutator A B) := by\n  sorry\n\ntheorem strangCubic_coeff3 :\n  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),\n    PowerSeries.coeff 3 (formalLog (formalStrang A B))=\n      (1/12:ℝ) • commutator B (commutator B A)-(1/24:ℝ) • commutator A (commutator A B) := by\n  intro R _ _ A B\n  norm_num [formalLog, formalStrang, textbookFormalOperatorExponential,\n    PowerSeries.coeff_mk, PowerSeries.coeff_mul, Finset.Nat.antidiagonal_succ,\n    Nat.factorial_succ, pow_succ, Finset.sum_Icc_succ_top, MolecularDynamics.Chapter03Review.commutator,\n    mul_add, add_mul, mul_sub, sub_mul, smul_mul_assoc, mul_smul_comm,\n    smul_add, smul_sub, smul_smul]\n  simp only [mul_assoc]\n  module",
+    "extra_assumptions": [
+      "[EXTRA] 补一次系数和全部偶次零，连同原三次公式覆盖完整奇次展开；原已证三次系数保留辅助并重查，新合取暂sorry。"
+    ]
   }
 }

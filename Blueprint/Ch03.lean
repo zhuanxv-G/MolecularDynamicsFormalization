@@ -465,9 +465,18 @@ def verletMaps {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) :
   (positionVerlet m (textbookPotentialForce U) h,
     coordinateVerlet m (textbookPotentialForce U) h)
 
-/-- source_id: MD-3.3.2-VerletHamiltonianParts · definition · §3.3.2 · 印刷p.107 / PDFp.129 -/
-def verletHamiltonianParts {n : ℕ} (T U : SymplecticCoordinates n → ℝ) : Fin 3 → SymplecticCoordinates n → ℝ :=
-  ![(fun z => U z/2), T, (fun z => U z/2)]
+/-- source_id: MD-3.3.2-VerletHamiltonianParts · definition · §3.3.2 · 印刷p.107 / PDFp.129 
+[EXTRA] 绑定真实正对角质量、T(p)=pᵀM⁻¹p/2及U(q)，补H1+H2+H3=H；移除任意相空间函数替代机械分解。 -/
+def verletHamiltonianParts {n : ℕ} (m : Fin n → ℝ)
+    (_hm : positiveMass m) (U : Q n → ℝ) : Fin 3 → SymplecticCoordinates n → ℝ :=
+  ![(fun z ↦ U (unpack z).1/2),
+    (fun z ↦ quadraticKinetic m (unpack z).2), (fun z ↦ U (unpack z).1/2)]
+
+theorem verletHamiltonianParts_sum {n : ℕ} (m : Fin n → ℝ)
+    (hm : positiveMass m) (U : Q n → ℝ) (z : SymplecticCoordinates n) :
+    (∑ i : Fin 3, verletHamiltonianParts m hm U i z) =
+      quadraticKinetic m (unpack z).2+U (unpack z).1 := by
+  sorry
 
 /-- source_id: MD-3.3.2-VerletStructure · unnumbered_claim · §3.3.2 · 印刷p.107 / PDFp.129
 [EXTRA] U全域C²以保障真实梯度kick为辛映射；原文光滑Hamiltonian假设显式化。 -/
@@ -481,7 +490,8 @@ theorem verletStructure :
       (positionVerlet m (textbookPotentialForce U) h z)=z) := by
   exact MolecularDynamics.Chapter03Review.verletVariants_proved
 
-/-- source_id: MD-3.3.2-VerletModifiedHamiltonian · definition · §3.3.2 · 印刷p.107 / PDFp.129 -/
+/-- source_id: MD-3.3.2-VerletModifiedHamiltonian · definition · §3.3.2 · 印刷p.107 / PDFp.129 
+[EXTRA] 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。 -/
 def verletModifiedH {n : ℕ} (T U : SymplecticCoordinates n → ℝ) (h : ℝ) (z : SymplecticCoordinates n) : ℝ :=
   T z+U z+h^2/12*(textbookPoissonBracket T (textbookPoissonBracket T U) z-
     textbookPoissonBracket U (textbookPoissonBracket U T) z/2)+h^4/120*(
@@ -492,7 +502,8 @@ def verletModifiedH {n : ℕ} (T U : SymplecticCoordinates n → ℝ) (h : ℝ) 
 
 /-- source_id: MD-3.3.2-VerletModifiedMatching · unnumbered_claim · §3.3.2 · 印刷p.107 / PDFp.129
 [EXTRA] 正对角质量、U全域C∞、紧初值B；完整印刷h⁴截断实际O(h⁶)端点匹配为额外严格化。
-[NEEDS_HUMAN] 与速度/位置Verlet的组合次序共同核对h²,h⁴系数；原文Hamiltonian O(h⁶)与实际匹配阶也需裁定。 -/
+[NEEDS_HUMAN] 与速度/位置Verlet的组合次序共同核对h²,h⁴系数；原文Hamiltonian O(h⁶)与实际匹配阶也需裁定。 
+[EXTRA] 保留已列机械特例，新增一般分离T(p),U(q)、真实局部子流、h⁴系数及所有截断匹配；Hamiltonian余项从h⁶起（奇项零），对应端点O(h⁷)，不混同两个余项。新结论暂sorry，未裁定印刷系数是否正确。 -/
 theorem verletModifiedMatching :
   ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),
     positiveMass m → ContDiff ℝ ⊤ U → IsCompact B →
@@ -500,9 +511,36 @@ theorem verletModifiedMatching :
       (coordinateVerlet m (textbookPotentialForce U)) B 5 := by
   sorry
 
-/-- source_id: MD-3.3.2-ModifiedEven · unnumbered_claim · §3.3.2 · 印刷p.107–108 / PDFp.129–130 -/
+theorem verletModifiedMatching_general (n : ℕ) (T U : Q n → ℝ)
+    (D B : Set (SymplecticCoordinates n)) (Φ Ψ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
+    (η : ℝ) (_hT : ContDiff ℝ ⊤ T) (_hU : ContDiff ℝ ⊤ U)
+    (_hD : IsOpen D) (_hB : IsCompact B) (_hBD : B ⊆ D)
+    (_hΦ : actualFlow (textbookHamiltonianVectorField (fun z ↦ T (unpack z).2)) D Φ η)
+    (_hΨ : actualFlow (textbookHamiltonianVectorField (fun z ↦ U (unpack z).1)) D Ψ η) :
+    let Tp := fun z : SymplecticCoordinates n ↦ T (unpack z).2
+    let Uq := fun z : SymplecticCoordinates n ↦ U (unpack z).1
+    let G := fun h ↦ Ψ (h/2) ∘ Φ h ∘ Ψ (h/2)
+    matchesHamiltonian (verletModifiedH Tp Uq) G B 6 ∧
+    (∃ Hj : ℕ → SymplecticCoordinates n → ℝ,
+      (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
+      (∀ z ∈ D, Hj 0 z = Tp z+Uq z) ∧
+      (∀ z ∈ D, Hj 2 z =
+        (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq) z-
+          textbookPoissonBracket Uq (textbookPoissonBracket Uq Tp) z/2)/12) ∧
+      (∀ z ∈ D, Hj 4 z =
+        (-textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/6+
+          textbookPoissonBracket Uq (textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/3-
+          textbookPoissonBracket Uq (textbookPoissonBracket Uq (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/4+
+          textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Uq (textbookPoissonBracket Uq Tp))) z)/120) ∧
+      (∀ j z, Hj (2*j+1) z = 0) ∧
+      ∀ k ≥ 6, matchesHamiltonian (fun h z ↦ ∑ j ∈ Finset.range k, h^j*Hj j z) G B k) := by
+  sorry
+
+/-- source_id: MD-3.3.2-ModifiedEven · unnumbered_claim · §3.3.2 · 印刷p.107–108 / PDFp.129–130 
+[EXTRA] 补一阶log系数A+B并保留全部偶次零，表达至少二阶及Hamiltonian偶性/log奇性；不沿用不同步长log交换的错误推理。 -/
 theorem modifiedEven :
-  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R), ∀ j : ℕ,
+  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),
+    PowerSeries.coeff 1 (formalLog (formalStrang A B))=A+B ∧ ∀ j : ℕ,
     PowerSeries.coeff (2*j) (formalLog (formalStrang A B))=0 := by
   sorry
 
@@ -524,8 +562,17 @@ theorem strangInverse :
   ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R), formalStrang A B * formalStrang (-A) (-B)=1 := by
   sorry
 
-/-- source_id: MD-3.3.2-StrangCubic · (3.6)–(3.7) · §3.3.2 · 印刷p.108 / PDFp.130 -/
+/-- source_id: MD-3.3.2-StrangCubic · (3.6)–(3.7) · §3.3.2 · 印刷p.108 / PDFp.130 
+[EXTRA] 补一次系数和全部偶次零，连同原三次公式覆盖完整奇次展开；原已证三次系数保留辅助并重查，新合取暂sorry。 -/
 theorem strangCubic :
+  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),
+    PowerSeries.coeff 1 (formalLog (formalStrang A B))=A+B ∧
+    (∀ j : ℕ, PowerSeries.coeff (2*j) (formalLog (formalStrang A B))=0) ∧
+    PowerSeries.coeff 3 (formalLog (formalStrang A B))=
+      (1/12:ℝ) • commutator B (commutator B A)-(1/24:ℝ) • commutator A (commutator A B) := by
+  sorry
+
+theorem strangCubic_coeff3 :
   ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),
     PowerSeries.coeff 3 (formalLog (formalStrang A B))=
       (1/12:ℝ) • commutator B (commutator B A)-(1/24:ℝ) • commutator A (commutator A B) := by

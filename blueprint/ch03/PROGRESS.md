@@ -49,15 +49,15 @@
 | MD-3.3.1-SymplecticEulerShadow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.3.1-SymplecticEulerShadowMatching | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺完整BCH机械系数与实际截断ODE匹配；本地非PASS不证明。 |
 | MD-3.3.2-VerletMaps | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.3.2-VerletHamiltonianParts | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.3.2-VerletHamiltonianParts | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
 | MD-3.3.2-VerletStructure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.3.2-VerletModifiedHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.3.2-VerletModifiedMatching | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺完整BCH嵌套Poisson系数推导及实际流余项；非PASS不证明。 |
-| MD-3.3.2-ModifiedEven | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺形式反步恒等式→formalLog奇性的完整桥接；不建设大型非交换formalLog理论。 |
-| MD-3.3.2-Strang | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.3.2-DifferentLogsCommute | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；印刷不同步长交换断言待独立反例/导师裁定；非PASS不证明。 |
+| MD-3.3.2-VerletModifiedHamiltonian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
+| MD-3.3.2-VerletModifiedMatching | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT07 | placeholder / incomplete；缺完整BCH嵌套Poisson系数推导及实际流余项；非PASS不证明。 |
+| MD-3.3.2-ModifiedEven | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | placeholder / incomplete；缺形式反步恒等式→formalLog奇性的完整桥接；不建设大型非交换formalLog理论。 |
+| MD-3.3.2-Strang | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
+| MD-3.3.2-DifferentLogsCommute | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT07（原返回FAIL保留） | placeholder / incomplete；印刷不同步长交换断言待独立反例/导师裁定；非PASS不证明。 |
 | MD-3.3.2-StrangInverse | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺任意实非交换代数中形式指数负参数的完整逆元系数桥接；保留sorry，不搭大型形式指数理论。 |
-| MD-3.3.2-StrangCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.3.2-StrangCubic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | local_proof / self-contained |
 | MD-3.3.3-YoshidaComposition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.3.3-YoshidaCoefficients | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.3.3-YoshidaCancellation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
@@ -391,3 +391,5 @@ EAUDIT04 §3.2：8条落盘，单文件与8项公理通过；未写新证明；�
 EAUDIT05 §3.2：2条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT06 §3.3：8条落盘，单文件与14项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT07 §3.3.2：7条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。

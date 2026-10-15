@@ -1,0 +1,40 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_id": "MD-3.3.2-ModifiedEven",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "2cc618bbbf53d24d8bae772dbe6d4f68468981c779d360216f91a2ba33087f89",
+    "Blueprint/Ch03.lean": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+    "blueprint/ch03/ch03_source.json": "1b16f3c32702793685e6ee4ed07330a9238dea9922da83ffb8ced5f7048bf4ef",
+    "EAUDIT07d_materials": "ad6d103407f1429a122f9cf6bbbca12cafbf143e13d38fef773badf70da31b31",
+    "EAUDIT07d_PAGES.pdf": "96cbcea1e199d6a7764703b6af6a67613af772897d864ad183d052b9234322f1"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    129,
+    130
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "0114c43a208f97d638c23be5cb20153ba1d91eca825730490babcaf69163b62c",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "formalLog",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "cad8bed3cbcba31778a7042f37611d0a517b35b42cdcfe701968dff5f8af8a76"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "formalStrang",
+      "file_sha256": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+      "excerpt_sha256": "5a5308d2a11acae9140a691f24aa00f3314c5242574f4b82dc30b3b95266be01"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalOperatorExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "df5ff488932635200b6f774d1b89d132afee1211289904ed8d00ab209d015a49"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT07_review.json",
+  "total_task_bytes": 102234
+}
