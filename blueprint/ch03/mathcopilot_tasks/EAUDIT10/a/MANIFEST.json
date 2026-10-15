@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT10",
+  "source_id": "MD-3.4-TruncatedHamiltonian",
+  "input_sha256": {
+    "BATCH_EAUDIT10.md": "8542f7a496a00516c87cdbd68be149718f25e684e993e7f6954359edfdf3509a",
+    "Blueprint/Ch03.lean": "e425b9132b3e9eb26e5fe9269c3342c12189d0e9f5fbfee197a668da27765df8",
+    "blueprint/ch03/ch03_source.json": "c01473f20f3f218933c67057cda0771d71ffc8016b9b2209da6d0578d8101868",
+    "EAUDIT10a_materials": "2b82b92eadc5d39c69d811c791b7c17809d80c104330f1743cf056a343924e8e",
+    "EAUDIT10a_PAGES.pdf": "5cb521d35d5998fa3661ad30abd969f9c5f88fd1a97bdbf681643d8b929a5751"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    136
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "af85d453b10a16c1bfb6b24a151fafff0fda151e85866485088e3c531b94dc60",
+  "source_block_sha256": "952febcb8ae1856a20e14d55f20f5a0fc6221ab55689014427af24a87407329a",
+  "source_declarations": [
+    "truncatedHamiltonian"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "truncatedHamiltonian",
+      "file_sha256": "e425b9132b3e9eb26e5fe9269c3342c12189d0e9f5fbfee197a668da27765df8",
+      "excerpt_sha256": "952febcb8ae1856a20e14d55f20f5a0fc6221ab55689014427af24a87407329a"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT10_review.json",
+  "total_task_bytes": 113685
+}

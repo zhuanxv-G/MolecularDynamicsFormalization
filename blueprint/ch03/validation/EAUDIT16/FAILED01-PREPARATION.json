@@ -1,0 +1,30 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT16",
+  "section": "3.6.3",
+  "source_ids": [
+    "MD-3.6.3-ConjugateIterates",
+    "MD-3.6.3-ConjugateOrderPrinted",
+    "MD-3.6.3-ReversibleVolumeFailure",
+    "MD-3.6.3-SymplecticSpectrum"
+  ],
+  "reaudit_ids": [
+    "MD-3.6.3-SymplecticSpectrum",
+    "MD-3.6.3-ConjugateIterates"
+  ],
+  "human_ids": [
+    "MD-3.6.3-ConjugateOrderPrinted",
+    "MD-3.6.3-ReversibleVolumeFailure"
+  ],
+  "old_lean_sha256": "dec75ecbe6e6792177e6d22e5d266e1967216b6ad8cf064baae9cc49221c9ba0",
+  "lean_sha256": "b9df853348037c7cff7c1cfab7152bf057647e9839d1d234af22779a450d6764",
+  "source_sha256": "1f0a4d75e8557f0372404bdd52de7c07fb7af62ce41c99823768d157fce6d83c",
+  "pages": [
+    153,
+    154
+  ],
+  "prior_proof_blocks": {
+    "MD-3.6.3-SymplecticSpectrum": "theorem symplecticSpectrum :\n  ∀ (n : ℕ) (A : Matrix (Fin n ⊕ Fin n) (Fin n ⊕ Fin n) ℝ),\n    A.transpose*textbookJ n*A=textbookJ n → ∀ ζ, complexEigenvalue A ζ →\n      ζ ≠ 0 ∧ complexEigenvalue A ζ⁻¹ ∧ complexEigenvalue A (star ζ) := by\n  sorry",
+    "MD-3.6.3-ConjugateIterates": "theorem conjugateIterates (χ : E ≃ₜ E) (A B : E → E)\n    (hA : A = textbookConjugateMap χ B) (n : ℕ) :\n    A^[n] = textbookConjugateMap χ (B^[n]) := by\n  apply MolecularDynamics.textbook_conjugate_iterates <;> assumption"
+  }
+}

@@ -299,7 +299,7 @@ theorem reversedTrajectoryPrinted_timeChange (n : ℕ) (f : Q n → Q n) (γ : �
 theorem symplecticSpectrum_linearHamiltonian (n : ℕ)
     (K : Matrix (Fin n ⊕ Fin n) (Fin n ⊕ Fin n) ℝ) (_hK : K.IsSymm) :
     let A := textbookJ n*K
-    let Φ := fun t : ℝ ↦ NormedSpace.exp ℝ (t • A)
+    let Φ := fun t : ℝ ↦ NormedSpace.exp (t • A)
     (∀ z, Φ 0 *ᵥ z=z) ∧
     (∀ t z, HasDerivAt (fun s ↦ Φ s *ᵥ z) (A *ᵥ (Φ t *ᵥ z)) t) ∧
     (∀ ζ, complexEigenvalue A ζ → complexEigenvalue A (-ζ) ∧

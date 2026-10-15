@@ -1,0 +1,98 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.4-TruncatedFlow；原PDF页映射=[137]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT10_review.json，对象含batch=EAUDIT10、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT10.md": "8542f7a496a00516c87cdbd68be149718f25e684e993e7f6954359edfdf3509a",
+  "Blueprint/Ch03.lean": "e425b9132b3e9eb26e5fe9269c3342c12189d0e9f5fbfee197a668da27765df8",
+  "blueprint/ch03/ch03_source.json": "c01473f20f3f218933c67057cda0771d71ffc8016b9b2209da6d0578d8101868",
+  "EAUDIT10d_materials": "9aba242ed72efa69526d156e0325962025dab8f6bee50e6b794248146008b45d",
+  "EAUDIT10d_PAGES.pdf": "ce685429d3ddea234ee45d3f5fe4f7aa5778af6ba7a086757b93e44a785f6750"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.4-TruncatedFlow",
+  "kind": "definition",
+  "label": null,
+  "section": "3.4",
+  "printed_page": "115",
+  "pdf_page": "137",
+  "statement_latex": "Denote by $\\mathcal F_h^{(k)}$ the flow map of the truncated Hamiltonian expansion $\\bar H_k$,\n\\[\\mathcal F_h^{(k)}\\stackrel{\\mathrm{def}}=\\exp(h\\mathcal L_{\\bar H_k}).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "实际γ(0)=z、γ满足J∇H̄_k的ODE，F_h^(k)(z)=γ(h)；本关系不把exp记号当解存在证明。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.truncatedFlow",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT10_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:19:30.682664",
+      "before_sha256": "61bc37dfdeb03870c8fc7f61ab9fc701efc3f54d9c44fba5ec5f3bb35643bae4",
+      "after_sha256": "b360292fa328eec110a161a42f4fa24865bdd6c5b20559284362201a16111c8e",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)
+    (r k : ℕ) (h : ℝ) (z : SymplecticCoordinates n) (γ : ℝ → SymplecticCoordinates n) : Prop :=
+  γ 0=z ∧ solution (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)) γ 0 h
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinateMatrix
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.solution
+```lean
+def solution {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (f : E → E) (γ : ℝ → E) (a b : ℝ) : Prop :=
+  ∀ t ∈ Icc a b, HasDerivWithinAt γ (f (γ t)) (Icc a b) t
+```
+### 实际依赖 MolecularDynamics.textbookHamiltonianVectorField
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+### 实际依赖 MolecularDynamics.textbookJ
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### 实际依赖 MolecularDynamics.textbookTruncatedHamiltonian
+```lean
+noncomputable def textbookTruncatedHamiltonian (H : E → ℝ) (Hj : ℕ → E → ℝ)
+    (r k : ℕ) (h : ℝ) (z : E) : ℝ :=
+  H z + ∑ j ∈ Finset.Icc r k, h ^ j * Hj j z
+```
+### 实际依赖 MD.Ch03.truncatedFlow
+```lean
+def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)
+    (r k : ℕ) (h : ℝ) (z : SymplecticCoordinates n) (γ : ℝ → SymplecticCoordinates n) : Prop :=
+  γ 0=z ∧ solution (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)) γ 0 h
+```

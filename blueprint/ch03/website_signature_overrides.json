@@ -225,5 +225,18 @@
       "[EXTRA]正确限定为保持q,p分区的连续线性等价Lq,Lp；不同分区表格不要求混合线性等变。",
       "[EXTRA] 本条显式仅为保持分区的PRK阶段/更新等变修复；普通RK及有符号相容、对称资格的时间反演推论归RKAffine/SymmetricAffineReversible。保留混合变换错误的Printed导师条目。"
     ]
+  },
+  "MD-3.6.3-SymplecticSpectrum": {
+    "code": "theorem symplecticSpectrum :\n  ∀ (n : ℕ) (A : Matrix (Fin n ⊕ Fin n) (Fin n ⊕ Fin n) ℝ),\n    A.transpose*textbookJ n*A=textbookJ n → ∀ ζ, complexEigenvalue A ζ →\n      ζ ≠ 0 ∧ complexEigenvalue A ζ⁻¹ ∧ complexEigenvalue A (star ζ) := by\n  sorry\n\ntheorem symplecticSpectrum_linearHamiltonian (n : ℕ)\n    (K : Matrix (Fin n ⊕ Fin n) (Fin n ⊕ Fin n) ℝ) (_hK : K.IsSymm) :\n    let A := textbookJ n*K\n    let Φ := fun t : ℝ ↦ NormedSpace.exp (t • A)\n    (∀ z, Φ 0 *ᵥ z=z) ∧\n    (∀ t z, HasDerivAt (fun s ↦ Φ s *ᵥ z) (A *ᵥ (Φ t *ᵥ z)) t) ∧\n    (∀ ζ, complexEigenvalue A ζ → complexEigenvalue A (-ζ) ∧\n      complexEigenvalue A (star ζ) ∧ complexEigenvalue A (-star ζ)) ∧\n    (∀ t, (Φ t)ᵀ*textbookJ n*Φ t=textbookJ n) ∧\n    (∀ t ζ, complexEigenvalue (Φ t) ζ →\n      ζ ≠ 0 ∧ complexEigenvalue (Φ t) ζ⁻¹ ∧ complexEigenvalue (Φ t) (star ζ)) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 保留一般辛矩阵谱结论；补对称K的实际线性Hamiltonian流exp(tJK)、ODE、辛矩阵及对应倒数/共轭谱实例。"
+    ]
+  },
+  "MD-3.6.3-ConjugateIterates": {
+    "code": "theorem conjugateIterates {α : Type*} (χ : α ≃ α) (A B : α → α)\n    (_hA : A = χ.symm ∘ B ∘ χ) (n : ℕ) :\n    A^[n] = χ.symm ∘ (B^[n]) ∘ χ := by\n  sorry\n\ntheorem conjugateIterates_homeomorph (χ : E ≃ₜ E) (A B : E → E)\n    (hA : A = textbookConjugateMap χ B) (n : ℕ) :\n    A^[n] = textbookConjugateMap χ (B^[n]) := by\n  apply MolecularDynamics.textbook_conjugate_iterates <;> assumption",
+    "extra_assumptions": [
+      "χ明确为equivalence，以使原文χ⁻¹有定义；原文homomorphism的用词待审。",
+      "[EXTRA] 纯迭代恒等式推广到任意类型及真实Equiv，不附拓扑/范数；原Homeomorph已证版本保留辅助，用于拓扑轨道结论。"
+    ]
   }
 }

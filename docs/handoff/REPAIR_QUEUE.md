@@ -2,11 +2,11 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 376；章末验收待完成 [3, 4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 370；章末验收待完成 [3, 4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
-第3章：网站PASS 62 / 已修待复审 60 / 待导师 12 / 修复中 15。
+第3章：网站PASS 62 / 已修待复审 62 / 待导师 14 / 修复中 11。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
@@ -294,12 +294,12 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.6.3-TrapezoidalRelation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6.3-TrapezoidalProperties | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6.3-HamiltonianSpectrum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.6.3-SymplecticSpectrum | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.6.3-SymplecticSpectrum | FAIL | B | 保留一般辛矩阵谱结论；补对称K的实际线性Hamiltonian流exp(tJK)、ODE、辛矩阵及对应倒数/共轭谱实例。 | 已修待复审 | EAUDIT16 |
 | 3 | MD-3.6.3-ReversibleSpectrum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.6.3-ConjugateIterates | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.6.3-ConjugateIterates | FAIL | A | 纯迭代恒等式推广到任意类型及真实Equiv，不附拓扑/范数；原Homeomorph已证版本保留辅助，用于拓扑轨道结论。 | 已修待复审 | EAUDIT16 |
 | 3 | MD-3.6.1-MechanicalReversalCorrect | PASS | C | 原已证独立机械反转结论保留；更正旧注释：原书展示式正确，先前原书错误判断已撤销。 | 已修待复审 | EAUDIT14 |
-| 3 | MD-3.6.3-ConjugateOrderPrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 3 | MD-3.6.3-ReversibleVolumeFailure | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
+| 3 | MD-3.6.3-ConjugateOrderPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT16 |
+| 3 | MD-3.6.3-ReversibleVolumeFailure | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT16 |
 | 3 | MD-3.7-HardCoreDomain | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
 | 3 | MD-3.7-ElasticReflection | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.7-ElasticEnergy | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |

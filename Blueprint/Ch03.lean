@@ -1483,11 +1483,25 @@ theorem hamiltonianSpectrum :
       complexEigenvalue (textbookJ n*A) (star ζ) := by
   sorry
 
-/-- source_id: MD-3.6.3-SymplecticSpectrum · unnumbered_claim · §3.6.3 · 印刷p.131 / PDFp.153 -/
+/-- source_id: MD-3.6.3-SymplecticSpectrum · unnumbered_claim · §3.6.3 · 印刷p.131 / PDFp.153 
+[EXTRA] 保留一般辛矩阵谱结论；补对称K的实际线性Hamiltonian流exp(tJK)、ODE、辛矩阵及对应倒数/共轭谱实例。 -/
 theorem symplecticSpectrum :
   ∀ (n : ℕ) (A : Matrix (Fin n ⊕ Fin n) (Fin n ⊕ Fin n) ℝ),
     A.transpose*textbookJ n*A=textbookJ n → ∀ ζ, complexEigenvalue A ζ →
       ζ ≠ 0 ∧ complexEigenvalue A ζ⁻¹ ∧ complexEigenvalue A (star ζ) := by
+  sorry
+
+theorem symplecticSpectrum_linearHamiltonian (n : ℕ)
+    (K : Matrix (Fin n ⊕ Fin n) (Fin n ⊕ Fin n) ℝ) (_hK : K.IsSymm) :
+    let A := textbookJ n*K
+    let Φ := fun t : ℝ ↦ NormedSpace.exp (t • A)
+    (∀ z, Φ 0 *ᵥ z=z) ∧
+    (∀ t z, HasDerivAt (fun s ↦ Φ s *ᵥ z) (A *ᵥ (Φ t *ᵥ z)) t) ∧
+    (∀ ζ, complexEigenvalue A ζ → complexEigenvalue A (-ζ) ∧
+      complexEigenvalue A (star ζ) ∧ complexEigenvalue A (-star ζ)) ∧
+    (∀ t, (Φ t)ᵀ*textbookJ n*Φ t=textbookJ n) ∧
+    (∀ t ζ, complexEigenvalue (Φ t) ζ →
+      ζ ≠ 0 ∧ complexEigenvalue (Φ t) ζ⁻¹ ∧ complexEigenvalue (Φ t) (star ζ)) := by
   sorry
 
 /-- source_id: MD-3.6.3-ReversibleSpectrum · unnumbered_claim · §3.6.3 · 印刷p.131 / PDFp.153
@@ -1500,8 +1514,14 @@ theorem reversibleSpectrum :
 
 /-- source_id: MD-3.6.3-ConjugateIterates · unnumbered_claim · §3.6.3 · 印刷p.131–132 / PDFp.153–154
 [EXTRA] χ明确为equivalence，以使原文χ⁻¹有定义；原文homomorphism的用词待审。
-[ERRATUM?] 原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。 -/
-theorem conjugateIterates (χ : E ≃ₜ E) (A B : E → E)
+[ERRATUM?] 原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。 
+[EXTRA] 纯迭代恒等式推广到任意类型及真实Equiv，不附拓扑/范数；原Homeomorph已证版本保留辅助，用于拓扑轨道结论。 -/
+theorem conjugateIterates {α : Type*} (χ : α ≃ α) (A B : α → α)
+    (_hA : A = χ.symm ∘ B ∘ χ) (n : ℕ) :
+    A^[n] = χ.symm ∘ (B^[n]) ∘ χ := by
+  sorry
+
+theorem conjugateIterates_homeomorph (χ : E ≃ₜ E) (A B : E → E)
     (hA : A = textbookConjugateMap χ B) (n : ℕ) :
     A^[n] = textbookConjugateMap χ (B^[n]) := by
   apply MolecularDynamics.textbook_conjugate_iterates <;> assumption
@@ -1894,8 +1914,10 @@ end MD.Ch03
 #print axioms MD.Ch03.trapezoidalProperties
 #print axioms MD.Ch03.hamiltonianSpectrum
 #print axioms MD.Ch03.symplecticSpectrum
+#print axioms MD.Ch03.symplecticSpectrum_linearHamiltonian
 #print axioms MD.Ch03.reversibleSpectrum
 #print axioms MD.Ch03.conjugateIterates
+#print axioms MD.Ch03.conjugateIterates_homeomorph
 #print axioms MD.Ch03.mechanicalReversalCorrect
 #print axioms MD.Ch03.conjugateOrderPrinted
 #print axioms MD.Ch03.reversibleVolumeFailure

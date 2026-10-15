@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT16",
+  "input_sha256": {
+    "BATCH_EAUDIT16.md": "9b36f5f00f3f7250c10bf329e6c88146f213ab5b3434292aa4a9d670349b2c5d",
+    "Blueprint/Ch03.lean": "9d03359d48b1c57c0c3fc606377bbc2b52cc58f0e205fb93c2b3f2dc55bb7116",
+    "blueprint/ch03/ch03_source.json": "1f0a4d75e8557f0372404bdd52de7c07fb7af62ce41c99823768d157fce6d83c"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT16a",
+      "source_id": "MD-3.6.3-SymplecticSpectrum",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT16/a",
+      "total_bytes": 84873,
+      "manifest_sha256": "d5bf8d78970e78a2573f1a43e9d00eb0a88e6fd697353613f0bc51d44e12cfca"
+    },
+    {
+      "subtask": "EAUDIT16b",
+      "source_id": "MD-3.6.3-ConjugateIterates",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT16/b",
+      "total_bytes": 107589,
+      "manifest_sha256": "6d817dcfb9ad8cf7ca5d46c3303b3f8e7dc1f266e90614ab061a3aa92d7c9e4c"
+    }
+  ]
+}

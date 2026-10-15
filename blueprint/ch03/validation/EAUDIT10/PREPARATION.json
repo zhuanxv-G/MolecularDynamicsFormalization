@@ -1,0 +1,44 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT10",
+  "section": "3.4",
+  "source_ids": [
+    "MD-3.4-EnergyTelescoping",
+    "MD-3.4-Thm3.1",
+    "MD-3.4-TruncatedConservation",
+    "MD-3.4-TruncatedFlow",
+    "MD-3.4-TruncatedHamiltonian",
+    "MD-3.4-TruncationRemainder",
+    "MD-3.4-TruncationSmooth",
+    "MD-3.4-UniformTruncatedLipschitz"
+  ],
+  "reaudit_ids": [
+    "MD-3.4-TruncatedHamiltonian",
+    "MD-3.4-TruncationSmooth",
+    "MD-3.4-Thm3.1",
+    "MD-3.4-TruncatedFlow",
+    "MD-3.4-TruncatedConservation",
+    "MD-3.4-EnergyTelescoping",
+    "MD-3.4-UniformTruncatedLipschitz",
+    "MD-3.4-TruncationRemainder"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "d2113436a2cbc3f6b39378a78a1f85f496f08f7dd845e6bf1f2b81c24496bcfa",
+  "lean_sha256": "e425b9132b3e9eb26e5fe9269c3342c12189d0e9f5fbfee197a668da27765df8",
+  "source_sha256": "c01473f20f3f218933c67057cda0771d71ffc8016b9b2209da6d0578d8101868",
+  "pages": [
+    135,
+    136,
+    137,
+    138,
+    139,
+    140
+  ],
+  "prior_proof_blocks": {
+    "MD-3.4-TruncationSmooth": "theorem truncationSmooth (H : E → ℝ) (Hj : ℕ → E → ℝ)\n    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ 1 H D)\n    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :\n    ContDiffOn ℝ 1 (textbookTruncatedHamiltonian H Hj r k h) D := by\n  apply MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian <;> assumption",
+    "MD-3.4-Thm3.1": "theorem theorem31 :\n  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))\n    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),\n    smoothSymplecticData H D B G Φ r →\n    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧\n    ∀ k ≥ r, finiteMatching H Hj r k D B G ∧\n      ∀ T > 0, ∃ M > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z₀ ∈ B, ∀ ν : ℕ,\n        (∀ i ≤ ν, oneStepIterate G h z₀ i ∈ B) →\n        (∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,\n          ∀ z ∈ B, truncatedFlow H Hj r k h z (Γ h z) ∧\n            (∀ t ∈ Icc 0 h, Γ h z t ∈ B)) →\n        (ν:ℝ)*h*h^(k-r) ≤ T → ‖H (oneStepIterate G h z₀ ν)-H z₀‖ ≤ M*h^r := by\n  sorry",
+    "MD-3.4-EnergyTelescoping": "theorem energyTelescoping {E : Type*} (K : E → ℝ)\n    (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :\n    ∑ i ∈ Finset.range n, (K (oneStepIterate G h z₀ (i + 1)) -\n      K (oneStepIterate G h z₀ i)) = K (oneStepIterate G h z₀ n) - K z₀ := by\n  apply MolecularDynamics.oneStep_energy_telescoping <;> assumption",
+    "MD-3.4-UniformTruncatedLipschitz": "theorem uniformTruncatedLipschitz\n    (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (D B : Set E) (hD : IsOpen D)\n    (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)\n    (hH : ContDiffOn ℝ 1 H D)\n    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :\n    ∃ L : ℝ, 0 < L ∧ ∀ h ∈ Icc (0 : ℝ) 1, ∀ u ∈ B, ∀ v ∈ B,\n      ‖textbookTruncatedHamiltonian H Hj r k h v -\n        textbookTruncatedHamiltonian H Hj r k h u‖ ≤ L * ‖v - u‖ := by\n  apply MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_lipschitz <;> assumption"
+  },
+  "proof_repair": "TruncationSmooth: existing lemma fixes C1; one failed instantiation, C∞ left sorry; old C1 proof retained"
+}

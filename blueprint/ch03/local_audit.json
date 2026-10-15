@@ -4259,17 +4259,17 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.symplecticSpectrum",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "fedfed74498a20a5cd15a8c982ac81c7fd1e20f45157e4144f5a25586fed7b99",
-      "block_sha256": "e66ce1c8278a56fb718c2b2634d810482187590aa75e1a7f0b8ef77a4c871fbd",
+      "block_sha256": "40bfb077e7ebfa572b8c31027167f1f11bd4d674276b6d887f04849bc7e6e898",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4287,7 +4287,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT16/axioms.log"
     },
     "MD-3.6.3-ReversibleSpectrum": {
       "checked": true,
@@ -4327,17 +4327,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch03.conjugateIterates",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "4a8770997bd9229e03eef0fd51fe7efdfdc641d18d98fe335f5ed755ce0fbcc8",
-      "block_sha256": "6eff9e3797dea380205e25531dddf24d1f09c80b36ce97032f9663ea5938fd44",
-      "direct_placeholder": false,
+      "signature_sha256": "217e50ddb3ac6b4a3974fc0d41a3cf008ede5e87cab77979b1602137daae77c8",
+      "block_sha256": "0495c3c31bf850b6da0bba368f729326d271077cd13831c85a2830fff6ee4565",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.textbook_conjugate_iterates"
@@ -4356,7 +4357,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT16/axioms.log"
     },
     "MD-3.6.1-MechanicalReversalCorrect": {
       "checked": true,
@@ -4397,10 +4398,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.conjugateOrderPrinted",
@@ -4425,16 +4426,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT16/axioms.log"
     },
     "MD-3.6.3-ReversibleVolumeFailure": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.reversibleVolumeFailure",
@@ -4459,7 +4460,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT16/axioms.log"
     },
     "MD-3.7-HardCoreDomain": {
       "checked": true,

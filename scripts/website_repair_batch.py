@@ -165,6 +165,11 @@ def commit_section(ch,section,eaudits):
     paths=[f'Blueprint/Ch{ch:02}.lean',f'docs/review/CH{ch:02}_BLUEPRINT.zh-CN.md','scripts/website_repair_batch.py','scripts/repair_queue.py','scripts/eaudit_review_tasks.py','docs/handoff/REPAIR_DECISIONS.json','docs/handoff/REPAIR_QUEUE.md','docs/handoff/CURRENT_STATE.zh-CN.md','docs/handoff/WORK_LOG.zh-CN.md']
     paths += [f'blueprint/ch{ch:02}/'+n for n in ('ch%02d_source.json'%ch,'website_audit.json','website_signature_overrides.json','EAUDIT_REGISTRY.json','local_audit.json','NEEDS_HUMAN.md','PROGRESS.md','WEBSITE_SUMMARY.json','mathcopilot_tasks/EAUDIT_INDEX.md')]
     for e in eaudits: paths += [f'blueprint/ch{ch:02}/validation/{e}',f'blueprint/ch{ch:02}/mathcopilot_tasks/{e}']
+    # An interrupted section can leave an accepted earlier batch untracked.
+    for p in (ROOT/f'blueprint/ch{ch:02}/validation').glob('EAUDIT[0-9][0-9]/ACCEPTANCE.json'):
+        tracked=subprocess.run(['git','ls-files','--error-unmatch',p.relative_to(ROOT).as_posix()],cwd=ROOT,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+        if tracked.returncode:
+            paths += [p.parent.relative_to(ROOT).as_posix(),f'blueprint/ch{ch:02}/mathcopilot_tasks/{p.parent.name}']
     paths += [p.relative_to(ROOT).as_posix() for p in (ROOT/'scripts').glob(f'repair_ch{ch:02}*.py')]
     stage([p for p in paths if (ROOT/p).exists()])
     subprocess.run(['git','commit','-m',f'ch{ch:02} sec{section}: repair website audit signatures and package {", ".join(eaudits)}; no new proofs'],cwd=ROOT,check=True)

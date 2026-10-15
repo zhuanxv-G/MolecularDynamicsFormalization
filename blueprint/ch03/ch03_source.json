@@ -4118,16 +4118,31 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "原文一般线性辛矩阵的谱结论直接表达；指数流实例来自线性流为辛的性质；ζ≠0明确，不假设逆谱。"
+      "原文一般线性辛矩阵的谱结论由本签名表达；指数流公式 F_t(z)=exp(tJA)z 及其谱实例未在本签名中表达，需另给线性流公式与 exp(tJA) 辛性的桥接结果。ζ≠0明确，不假设逆谱。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch03.symplecticSpectrum",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留一般辛矩阵谱结论；补对称K的实际线性Hamiltonian流exp(tJK)、ODE、辛矩阵及对应倒数/共轭谱实例。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:26:38.547668",
+        "before_sha256": "78788a1ddee2177e27ade859ac5e8c4d0b5dc1a4f50b8c66664c016b063a2d54",
+        "after_sha256": "24ff475a9a78ae0aad41188db416d31bea71ca3d93c8e450ead2dac40c40bb97",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.6.3-ReversibleSpectrum",
@@ -4164,7 +4179,8 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "数值effective order的附加断言另列ConjugateOrderPrinted，不靠有限共轭恒等式声称已证。"
+      "数值effective order的附加断言另列ConjugateOrderPrinted，不靠有限共轭恒等式声称已证。",
+      "实际签名将空间限制为实赋范空间并将χ限制为homeomorphism；原文迭代代数恒等式只需可逆映射。"
     ],
     "issues": [
       {
@@ -4177,12 +4193,26 @@
       "MolecularDynamics.textbook_conjugate_iterates"
     ],
     "extra_assumptions": [
-      "χ明确为equivalence，以使原文χ⁻¹有定义；原文homomorphism的用词待审。"
+      "χ明确为equivalence，以使原文χ⁻¹有定义；原文homomorphism的用词待审。",
+      "[EXTRA] 纯迭代恒等式推广到任意类型及真实Equiv，不附拓扑/范数；原Homeomorph已证版本保留辅助，用于拓扑轨道结论。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:26:38.547668",
+        "before_sha256": "f5fb862f044bcc6a0492a630be97ff47b66ee9d4cd2f76ef2c9bc7f68037d77a",
+        "after_sha256": "14d4fe0adadf403bedc1831d5f841e392a7b3d385352a97f4eb4878c3564007f",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.6.1-MechanicalReversalCorrect",
@@ -4260,8 +4290,19 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:26:38.547668",
+        "before_sha256": "d5ab04e04523cef309e6df26c3e02974faa18bea26b4bdaf67d4d562cab8ebc5",
+        "after_sha256": "379800549f62f970640828720d1f190650f8b09996fb043b8a3de31c7ffae9c6",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.6.3-ReversibleVolumeFailure",
@@ -4283,8 +4324,19 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:26:38.547668",
+        "before_sha256": "3af0838bb7208527e10c357d285aeb1d00e3604120f81515db2eb36c2bb5fc96",
+        "after_sha256": "08f2eb6c662cc069dea8e28ad44a719cf718222baeed74232d586753c32a8936",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.7-HardCoreDomain",
