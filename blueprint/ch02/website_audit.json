@@ -12347,7 +12347,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT17",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT17.md": "3b4907d89acbdbe77df23b960cf2dc3d138e9fafc6e185ce0cb4a9354fc5ec21",
+        "Blueprint/Ch02.lean": "ecf0a1a7ab955f36237089109c589c23f597c5cad6babcdc95044c0c66db2f2b",
+        "blueprint/ch02/ch02_source.json": "aad01d96227dd7a29d91e79f35ffed2ed0ac5d41da0675c308338778a27c31c9"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.4-ImplicitLocal",

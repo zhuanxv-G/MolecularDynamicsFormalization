@@ -1,0 +1,22 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT17",
+  "section": "2.4.3",
+  "source_ids": [
+    "MD-2.4.3-HarmonicSplit"
+  ],
+  "reaudit_ids": [
+    "MD-2.4.3-HarmonicSplit"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+  "lean_sha256": "ecf0a1a7ab955f36237089109c589c23f597c5cad6babcdc95044c0c66db2f2b",
+  "source_sha256": "aad01d96227dd7a29d91e79f35ffed2ed0ac5d41da0675c308338778a27c31c9",
+  "pages": [
+    107,
+    108
+  ],
+  "prior_proof_blocks": {
+    "MD-2.4.3-HarmonicSplit": "def bp_harmonicAnharmonic (Ω : ℝ) (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=\n  let q := Real.cos (h*Ω)*z.1 + Real.sin (h*Ω)/Ω*z.2\n  (q, -Ω*Real.sin (h*Ω)*z.1 + Real.cos (h*Ω)*z.2 - h*deriv U q)"
+  }
+}

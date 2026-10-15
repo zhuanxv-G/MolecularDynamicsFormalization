@@ -4259,16 +4259,16 @@
     "MD-2.4.3-HarmonicSplit": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_harmonicAnharmonic",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "bceac7ec7db51d0092802e37dabe073960ff147065b243c9c53298131ae8cc30",
-      "block_sha256": "bceac7ec7db51d0092802e37dabe073960ff147065b243c9c53298131ae8cc30",
+      "signature_sha256": "96470ed81c0e238c1cb17dae7e5751d1adb33962d7368c78b38a49f714de4e87",
+      "block_sha256": "96470ed81c0e238c1cb17dae7e5751d1adb33962d7368c78b38a49f714de4e87",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4285,7 +4285,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT17/axioms.log",
+      "compiled": true
     },
     "MD-2.4.4-ImplicitLocal": {
       "checked": true,
