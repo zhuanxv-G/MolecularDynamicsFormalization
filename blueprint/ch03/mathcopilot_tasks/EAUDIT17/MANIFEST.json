@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT17",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "fa4ab75b606b2acb1d8554666146189fed9f5a0966585b919814c506ba528456",
+    "Blueprint/Ch03.lean": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+    "blueprint/ch03/ch03_source.json": "83abaa66a7c134848ab757e574b1eb154f829bfbc815ae5534406796d376613d"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT17a",
+      "source_id": "MD-3.7-HardCoreDomain",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT17/a",
+      "total_bytes": 100739,
+      "manifest_sha256": "84d17b9680ba5691f5eca6a8decc37c02293fe429b320c4aa4210a95f22ba6d4"
+    },
+    {
+      "subtask": "EAUDIT17b",
+      "source_id": "MD-3.7-CollisionComposition",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT17/b",
+      "total_bytes": 115150,
+      "manifest_sha256": "6c9e012a6d02628e14a15339c8bb3b7da47a6e0bb84e469c7957bc64d2785de9"
+    },
+    {
+      "subtask": "EAUDIT17c",
+      "source_id": "MD-3.7-CollisionRegularity",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT17/c",
+      "total_bytes": 92480,
+      "manifest_sha256": "3e090fa24df06d6be0f96b5291334438d97c3089f821f13023f107024baa2672"
+    }
+  ]
+}

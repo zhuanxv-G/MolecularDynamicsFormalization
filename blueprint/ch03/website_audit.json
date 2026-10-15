@@ -9598,7 +9598,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT17",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT17.md": "fa4ab75b606b2acb1d8554666146189fed9f5a0966585b919814c506ba528456",
+        "Blueprint/Ch03.lean": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+        "blueprint/ch03/ch03_source.json": "83abaa66a7c134848ab757e574b1eb154f829bfbc815ae5534406796d376613d"
+      }
+    }
   },
   {
     "source_id": "MD-3.7-ElasticReflection",
@@ -9784,7 +9796,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT17",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT17.md": "fa4ab75b606b2acb1d8554666146189fed9f5a0966585b919814c506ba528456",
+        "Blueprint/Ch03.lean": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+        "blueprint/ch03/ch03_source.json": "83abaa66a7c134848ab757e574b1eb154f829bfbc815ae5534406796d376613d"
+      }
+    }
   },
   {
     "source_id": "MD-3.7-CollisionRegularity",
@@ -9836,7 +9860,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT17",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT17.md": "fa4ab75b606b2acb1d8554666146189fed9f5a0966585b919814c506ba528456",
+        "Blueprint/Ch03.lean": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+        "blueprint/ch03/ch03_source.json": "83abaa66a7c134848ab757e574b1eb154f829bfbc815ae5534406796d376613d"
+      }
+    }
   },
   {
     "source_id": "MD-3.7.1-HardCorePotential",

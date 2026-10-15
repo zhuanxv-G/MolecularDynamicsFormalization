@@ -4466,9 +4466,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.hardCoreDomain",
@@ -4493,7 +4493,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT17/axioms.log"
     },
     "MD-3.7-ElasticReflection": {
       "checked": true,
@@ -4570,9 +4570,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.collisionComposition",
@@ -4597,23 +4597,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT17/axioms.log"
     },
     "MD-3.7-CollisionRegularity": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.collisionRegularity",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "52c48f539c3cac26affad814fc3079c6e56442e2c225e4e4a5f71ac3c8d6672e",
-      "block_sha256": "b9c1773b3cfe895b0fb91ea150783d8a3df29410f6986840a2354111f1bc6f56",
+      "signature_sha256": "146f3e1aa9a98dfd2b1559427c928cb99e6292d9ec390f8dfdda4bd460ace932",
+      "block_sha256": "74aef4b9f67840244c002331f63a8c563d9e21f98f6b2f89fe728750b5c30ede",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4631,7 +4631,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT17/axioms.log"
     },
     "MD-3.7.1-HardCorePotential": {
       "checked": true,

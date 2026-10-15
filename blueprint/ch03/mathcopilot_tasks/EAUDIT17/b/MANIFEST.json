@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-3.7-CollisionComposition",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "fa4ab75b606b2acb1d8554666146189fed9f5a0966585b919814c506ba528456",
+    "Blueprint/Ch03.lean": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+    "blueprint/ch03/ch03_source.json": "83abaa66a7c134848ab757e574b1eb154f829bfbc815ae5534406796d376613d",
+    "EAUDIT17b_materials": "87d33e419e8beec1e2d26a04b0ca7bed5beabe4c6088327e8117d97f37b19cd5",
+    "EAUDIT17b_PAGES.pdf": "91ab5e772b14d12180fc296a2f5ca1060012a43506bd3c7b1b48b3b30f068bac"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    154,
+    155
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "65ece2c1cf47db672074c0edfcaf9095ddbc1c0bc0e406976a1ba943fc6f3ce2",
+  "source_block_sha256": "154fc37d1ad39e89b510aa5241ea54e9afe93cc7415614fd572a9a6191943fa9",
+  "source_declarations": [
+    "collisionComposition"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "collisionComposition",
+      "file_sha256": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+      "excerpt_sha256": "154fc37d1ad39e89b510aa5241ea54e9afe93cc7415614fd572a9a6191943fa9"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 115150
+}

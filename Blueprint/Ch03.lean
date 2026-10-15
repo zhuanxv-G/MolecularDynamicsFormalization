@@ -1608,14 +1608,21 @@ def collisionComposition {E : Type*} (G : ℝ → E → E) (Rc : E → E) (times
 termination_by times.length
 
 /-- source_id: MD-3.7-CollisionRegularity · unnumbered_claim · §3.7 · 印刷p.133 / PDFp.155
-[EXTRA] 有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。 -/
+[EXTRA] 有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。 
+[EXTRA] 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。 -/
 theorem collisionRegularity :
   ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) (g : Q n → ℝ)
     (times : ℕ → ℝ) (segments : ℕ → ℝ → Z n) ν,
-    positiveMass m → ContDiff ℝ ⊤ F → concatenatedCollisionSegments m F g times segments ν →
+    positiveMass m → ContDiff ℝ ⊤ F → ContDiff ℝ 1 g →
+    (∀ j < ν, grad g (segments j (times (j+1))).1 ≠ 0 ∧
+      (∑ i, grad g (segments j (times (j+1))).1 i *
+        (segments j (times (j+1))).2 i/m i) < 0) →
+    (∀ j ≤ ν, ∀ t ∈ Icc (times j) (times (j+1)), 0 ≤ g (segments j t).1) →
+    concatenatedCollisionSegments m F g times segments ν →
+    (∀ j < ν, (segments j (times (j+1))).2 ≠ (segments (j+1) (times (j+1))).2) ∧
     ContinuousOn (fun t => (gluedCollision times segments ν t).1) (Icc (times 0) (times (ν+1))) ∧
     (∀ j ≤ ν, ∀ t ∈ Ioo (times j) (times (j+1)),
-      ContDiffAt ℝ ⊤ (fun t => (gluedCollision times segments ν t).2) t) ∧
+      ContDiffAt ℝ ⊤ (gluedCollision times segments ν) t) ∧
     (∀ j < ν, Tendsto (fun t => (gluedCollision times segments ν t).2)
       (𝓝[<] (times (j+1))) (𝓝 ((segments j (times (j+1))).2)) ∧
       Tendsto (fun t => (gluedCollision times segments ν t).2)

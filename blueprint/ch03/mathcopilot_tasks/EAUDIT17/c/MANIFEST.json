@@ -1,0 +1,79 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-3.7-CollisionRegularity",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "fa4ab75b606b2acb1d8554666146189fed9f5a0966585b919814c506ba528456",
+    "Blueprint/Ch03.lean": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+    "blueprint/ch03/ch03_source.json": "83abaa66a7c134848ab757e574b1eb154f829bfbc815ae5534406796d376613d",
+    "EAUDIT17c_materials": "a29ab865a8a8ca5abca7cf367713d2c30b6333528bbbb3c7b93fd4135fe7f401",
+    "EAUDIT17c_PAGES.pdf": "926163e1bb68af4369c0d14a9326679cf9d53f792d539b78746cc3338ec64fe9"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    155
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "0c0b68fe69ac42841442649ef4cc964d8379f6f273ed32bbc603a477c7cba13e",
+  "source_block_sha256": "74aef4b9f67840244c002331f63a8c563d9e21f98f6b2f89fe728750b5c30ede",
+  "source_declarations": [
+    "collisionRegularity"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Z",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "name": "concatenatedCollisionSegments",
+      "file_sha256": "a00c953a72f2b2e90a58ee21739d49f092104ac3f853db9eec9231a476436b30",
+      "excerpt_sha256": "014672a848a65621b34d1cb289da0115357746b8bc4375de2743f41b6d13d181"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "name": "gluedCollision",
+      "file_sha256": "a00c953a72f2b2e90a58ee21739d49f092104ac3f853db9eec9231a476436b30",
+      "excerpt_sha256": "373e06f48f92723ae9a46ec18b5424d0582bc3b9c383915c3d8e98122799b3f2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "522e86de81741a525bcd8720e95f1f0a3f1ba51791c5d13cea4bed7e30a1620e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "mechanicalField",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "dbb61cd8c7949b5c83d59fd94b8cc8a8460d03206b8458ce4ea72f7a673b37ef"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "positiveMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "b9acc89b85e9b87ac122f258b0bd23cb20efd6ecc4ec0894b39658f630a85d21"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "solution",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "4246b13784e62583efb6e55b0aaf0235c08565f8c3c6ec6bf888afa19baaf49b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 92480
+}

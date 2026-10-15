@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-3.7-HardCoreDomain",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "fa4ab75b606b2acb1d8554666146189fed9f5a0966585b919814c506ba528456",
+    "Blueprint/Ch03.lean": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+    "blueprint/ch03/ch03_source.json": "83abaa66a7c134848ab757e574b1eb154f829bfbc815ae5534406796d376613d",
+    "EAUDIT17a_materials": "9b636399f4e8632a432ea5e80298de9509851f2b9272a011ad553f4f75ec04ab",
+    "EAUDIT17a_PAGES.pdf": "524e49e6e344b4191106f48f7c58bad287ea45685825de5ef491eac36bc49642"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    154
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "bb11df03ed516a25311b70ad6683fc3a9ad1ae5b7c3f64f482764cac2f47e0e9",
+  "source_block_sha256": "9217d3afada6a67f32d3266c291b71812acc2552a4d0403cbc3bb4771a315ca5",
+  "source_declarations": [
+    "hardCoreDomain"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "hardCoreDomain",
+      "file_sha256": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+      "excerpt_sha256": "9217d3afada6a67f32d3266c291b71812acc2552a4d0403cbc3bb4771a315ca5"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 100739
+}

@@ -1,0 +1,41 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT17",
+  "section": "3.7",
+  "source_ids": [
+    "MD-3.7-CollisionComposition",
+    "MD-3.7-CollisionRegularity",
+    "MD-3.7-HardCoreDomain"
+  ],
+  "reaudit_ids": [
+    "MD-3.7-HardCoreDomain",
+    "MD-3.7-CollisionComposition",
+    "MD-3.7-CollisionRegularity"
+  ],
+  "human_ids": [],
+  "lean_sha256": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+  "source_sha256": "83abaa66a7c134848ab757e574b1eb154f829bfbc815ae5534406796d376613d",
+  "pages": [
+    154,
+    155
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch03.olean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+    "log_sha256": "e7849ff28e976219e84f6e69d96eb0be50f7548bbf0b6677ea108ce371f6397b"
+  },
+  "axiom_decl_count": 3,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT17/INDEX.md"
+}

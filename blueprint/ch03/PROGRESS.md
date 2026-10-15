@@ -135,11 +135,11 @@
 | MD-3.6.1-MechanicalReversalCorrect | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | existing_bridge / checked+documented priors |
 | MD-3.6.3-ConjugateOrderPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT16（原返回FAIL保留） | placeholder / incomplete；原文阶数/稳定性性能的精确意义及处理器正则性待审；本地非PASS不证明。 |
 | MD-3.6.3-ReversibleVolumeFailure | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT16（原返回FAIL保留） | placeholder / incomplete；缺非线性可逆光滑equivalence和Jacobian绝对det≠1的反例桥接；线性可逆矩阵不足以给本例。 |
-| MD-3.7-HardCoreDomain | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.7-HardCoreDomain | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
 | MD-3.7-ElasticReflection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.7-ElasticEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
-| MD-3.7-CollisionComposition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.7-CollisionRegularity | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺有限事件gluedCollision索引稳定与各段ODE光滑性/一侧极限的完整桥接；不建设完整混合动力系统理论。 |
+| MD-3.7-CollisionComposition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
+| MD-3.7-CollisionRegularity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | placeholder / incomplete；缺有限事件gluedCollision索引稳定与各段ODE光滑性/一侧极限的完整桥接；不建设完整混合动力系统理论。 |
 | MD-3.7.1-HardCorePotential | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | definition / incomplete |
 | MD-3.7.1-PrimitiveSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.7.1-PrimitiveOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺碰撞事件稳定性与非光滑全局误差理论；不建设大型理论。 |
@@ -411,3 +411,5 @@ EAUDIT14 §3.6.1：4条落盘，单文件与6项公理通过；未写新证明�
 EAUDIT15 §3.6.2：8条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT16 §3.6.3：4条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT17 §3.7：3条落盘，单文件与3项公理通过；未写新证明；完整check留到章末；网站待复审。

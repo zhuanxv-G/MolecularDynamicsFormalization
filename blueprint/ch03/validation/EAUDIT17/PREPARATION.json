@@ -1,0 +1,26 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT17",
+  "section": "3.7",
+  "source_ids": [
+    "MD-3.7-CollisionComposition",
+    "MD-3.7-CollisionRegularity",
+    "MD-3.7-HardCoreDomain"
+  ],
+  "reaudit_ids": [
+    "MD-3.7-HardCoreDomain",
+    "MD-3.7-CollisionComposition",
+    "MD-3.7-CollisionRegularity"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "9d03359d48b1c57c0c3fc606377bbc2b52cc58f0e205fb93c2b3f2dc55bb7116",
+  "lean_sha256": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+  "source_sha256": "83abaa66a7c134848ab757e574b1eb154f829bfbc815ae5534406796d376613d",
+  "pages": [
+    154,
+    155
+  ],
+  "prior_proof_blocks": {
+    "MD-3.7-CollisionRegularity": "theorem collisionRegularity :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) (g : Q n → ℝ)\n    (times : ℕ → ℝ) (segments : ℕ → ℝ → Z n) ν,\n    positiveMass m → ContDiff ℝ ⊤ F → concatenatedCollisionSegments m F g times segments ν →\n    ContinuousOn (fun t => (gluedCollision times segments ν t).1) (Icc (times 0) (times (ν+1))) ∧\n    (∀ j ≤ ν, ∀ t ∈ Ioo (times j) (times (j+1)),\n      ContDiffAt ℝ ⊤ (fun t => (gluedCollision times segments ν t).2) t) ∧\n    (∀ j < ν, Tendsto (fun t => (gluedCollision times segments ν t).2)\n      (𝓝[<] (times (j+1))) (𝓝 ((segments j (times (j+1))).2)) ∧\n      Tendsto (fun t => (gluedCollision times segments ν t).2)\n      (𝓝[>] (times (j+1))) (𝓝 ((segments (j+1) (times (j+1))).2))) := by\n  sorry"
+  }
+}
