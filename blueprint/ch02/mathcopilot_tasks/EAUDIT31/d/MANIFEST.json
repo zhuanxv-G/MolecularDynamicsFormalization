@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT31",
+  "source_id": "MD-2.2.3-ExactExpansion",
+  "input_sha256": {
+    "BATCH_EAUDIT31.md": "e49b40b499d8e458c536b447fb6b51c213969ce9afcf6709285bbb3b92e02620",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+    "EAUDIT31d_materials": "e24bd025bfea797c6d34566b15105d5331b7827f6ead1d21786bdc22b2d49adc",
+    "EAUDIT31d_PAGES.pdf": "28e5bb0e6f73a5f9ff14e710679d502ca47454e18c40dadfba4574d7d5c18b1d"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    90
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a614b4548435a1490c1f8d39140a94b566c427f24521a5dfb62fd58b3c0294d8",
+  "source_block_sha256": "85940fdc8caa3763a7a7b38eeff8f7608a125a37c13ca0a5a593bc261043c93b",
+  "source_declarations": [
+    "exactExpansion"
+  ],
+  "dependency_excerpts": [],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT31_review.json",
+  "total_task_bytes": 85235
+}

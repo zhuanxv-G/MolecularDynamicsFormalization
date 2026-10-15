@@ -1,0 +1,61 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.3.7-Adjoint；原PDF页映射=[103]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT39_review.json，对象含batch=EAUDIT39、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT39.md": "eb97ffa80b2db2eec8077d5d095d4b2dc4ebd3fec03caea47a5f2cc318cb5c6f",
+  "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+  "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+  "EAUDIT39a_materials": "e8fcfa83ed18a66d2ddd4260ba501e5280eefe9f96e2e9662d33674428995ebc",
+  "EAUDIT39a_PAGES.pdf": "ccb477280ff7d4c9a23a62da84af62af7a8786b537e6d1f45954504682ed20f8"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.3.7-Adjoint",
+  "kind": "definition",
+  "label": null,
+  "section": "2.3.7",
+  "printed_page": "81",
+  "pdf_page": "103",
+  "statement_latex": "Given any numerical integrator $\\mathcal G_h$, consider the map\n\\[\\mathcal G_h^\\dagger=\\mathcal G_{-h}^{-1}.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch02.bp_adjoint",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]方法G每个可用h为实际Equiv.Perm；只在负步可逆时定义伴随，不能宣称任意步映射天然可逆。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT13_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:16:33.518100",
+      "before_sha256": "4b531db4dd9bf254954826b7d7f9d7a6e8b820ca4533b908c2906f1431d1d6ff",
+      "after_sha256": "5b2af04df8b9d3df19a094f651c79bf50838a94969a9f1b31ea8fba246fdbd65",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH20_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+noncomputable def bp_adjoint {E : Type*} (G : ℝ → Equiv.Perm E) (h : ℝ) :
+    Equiv.Perm E := (G (-h)).symm
+```
+### 实际依赖 MD.Ch02.bp_adjoint
+```lean
+noncomputable def bp_adjoint {E : Type*} (G : ℝ → Equiv.Perm E) (h : ℝ) :
+    Equiv.Perm E := (G (-h)).symm
+```

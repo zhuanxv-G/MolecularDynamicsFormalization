@@ -1,0 +1,130 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.4.5-ProcessingOrder；原PDF页映射=[110]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT45_review.json，对象含batch=EAUDIT45、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT45.md": "393646802afaf1acfd30948f6a6ab88078cf578d8ee044f6fec570d14310b2a8",
+  "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+  "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+  "EAUDIT45e_materials": "450d5db6d832de0dc5a9f22762457f76c7f43c613265296705f594832fe7ebfc",
+  "EAUDIT45e_PAGES.pdf": "667d466133788eb6ecc9f9a6f8591d67805d4c21308b404cb0098d07069f5582"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.4.5-ProcessingOrder",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "2.4.5",
+  "printed_page": "88",
+  "pdf_page": "110",
+  "statement_latex": "The resulting approximation will be of order $r$ even though all timestepping was performed using a lower order method.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "承接𝒢_h阶r、𝒢̃_h阶s且s<r及𝒢_h=χ_h⁻¹∘𝒢̃_h∘χ_h；r阶是已给的高阶方法的精度，后处理恢复该精度。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.processingOrder",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy"
+  ],
+  "extra_assumptions": [
+    "r自然数有限时间窗误差界；χh为实际Homeomorph。",
+    "[EXTRA] 补正时间窗与低阶B的s阶误差资格及0<s<r；原G高阶假设和两项误差转移结论、已证证明均保留。processingData另给严格低阶的一般方法资格。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT19_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:24:26.172844",
+      "before_sha256": "a395f324c5f3bc3d63d6b1bb8da88f15a12fba99d39f7f55c8d192374460ac5d",
+      "after_sha256": "28e0641f8b9ed23cbb6b1f78118f4f4557afdb3967b5b8099310a499b335a839",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH26_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem processingOrder (χ : ℝ → E ≃ₜ E) (B G : ℝ → E → E)
+    (hG : ∀ h, G h=textbookProcessedMethod χ B h) (γ : ℝ → E) (τ : ℝ) (_hτ : 0 < τ) (r s : ℕ) (_hs : 0 < s) (_hsr : s < r)
+    (F : Flow ℝ E) (f : E → E) (_hdata : processingData χ B G F f r s)
+    (_hγ : ∀ t, γ t = F t (γ 0))
+    (_hB : ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+      oneStepMaxError B (τ/ν) γ ν ≤ C*(τ/ν)^s)
+    (horder : ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+      oneStepMaxError G (τ/ν) γ ν ≤ C*(τ/ν)^r) :
+    (∀ h ν, textbookProcessedMaxError χ B h γ ν=oneStepMaxError G h γ ν) ∧
+    (∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+      textbookProcessedMaxError χ B (τ/ν) γ ν ≤ C*(τ/ν)^r) := by
+  have heq := MolecularDynamics.textbookProcessedMaxError_eq_of_conjugacy χ B G hG
+  refine ⟨fun h ν => heq h γ ν, ?_⟩
+  simpa only [heq] using horder
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.methodLocalOrder
+```lean
+def methodLocalOrder {E : Type*} [NormedAddCommGroup E]
+    (G F : ℝ → E → E) (r : ℕ) : Prop :=
+  ∀ z, ∃ C > 0, ∃ δ > 0, ∀ h : ℝ, |h| < δ → ‖G h z-F h z‖ ≤ C*|h|^(r+1)
+```
+### 实际依赖 MolecularDynamics.oneStepIterate
+```lean
+noncomputable def oneStepIterate (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) : E :=
+  (G h)^[n] z₀
+
+@[simp] theorem oneStepIterate_zero (G : ℝ → E → E) (h : ℝ) (z₀ : E) :
+    oneStepIterate G h z₀ 0 = z₀ := rfl
+
+@[simp] theorem oneStepIterate_succ (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
+    oneStepIterate G h z₀ (n + 1) = G h (oneStepIterate G h z₀ n) :=
+  Function.iterate_succ_apply' _ _ _
+```
+### 实际依赖 MolecularDynamics.oneStepMaxError
+```lean
+noncomputable def oneStepMaxError (G : ℝ → E → E) (h : ℝ) (γ : ℝ → E) (ν : ℕ) : ℝ :=
+  (Finset.range (ν + 1)).sup' Finset.nonempty_range_add_one
+    (fun n => ‖oneStepIterate G h (γ 0) n - γ ((n : ℝ) * h)‖)
+```
+### 实际依赖 MD.Ch02.processingData
+```lean
+def processingData (χ : ℝ → E ≃ₜ E) (B G : ℝ → E → E)
+    (F : Flow ℝ E) (f : E → E) (r s : ℕ) : Prop :=
+  0 < s ∧ s < r ∧
+  (∀ t z, HasDerivAt (fun u ↦ F u z) (f (F t z)) t) ∧
+  (∀ h, G h = textbookProcessedMethod χ B h) ∧
+  methodLocalOrder G (fun h ↦ F h) r ∧ methodLocalOrder B (fun h ↦ F h) s ∧
+  ¬ methodLocalOrder B (fun h ↦ F h) (s+1)
+```
+### 实际依赖 MolecularDynamics.textbookConjugateMap
+```lean
+def textbookConjugateMap (χ : E ≃ₜ E) (B : E → E) : E → E := χ.symm ∘ B ∘ χ
+```
+### 实际依赖 MolecularDynamics.textbookProcessedIterate
+```lean
+noncomputable def textbookProcessedIterate (χ : ℝ → E ≃ₜ E) (B : ℝ → E → E)
+    (h : ℝ) (z₀ : E) (n : ℕ) : E :=
+  (χ h).symm (oneStepIterate B h ((χ h) z₀) n)
+```
+### 实际依赖 MolecularDynamics.textbookProcessedMaxError
+```lean
+noncomputable def textbookProcessedMaxError (χ : ℝ → E ≃ₜ E) (B : ℝ → E → E)
+    (h : ℝ) (γ : ℝ → E) (ν : ℕ) : ℝ :=
+  (Finset.range (ν + 1)).sup' Finset.nonempty_range_add_one
+    (fun n => ‖textbookProcessedIterate χ B h (γ 0) n - γ ((n : ℝ) * h)‖)
+```
+### 实际依赖 MolecularDynamics.textbookProcessedMethod
+```lean
+def textbookProcessedMethod (χ : ℝ → E ≃ₜ E) (B : ℝ → E → E) (h : ℝ) : E → E :=
+  textbookConjugateMap (χ h) (B h)
+```

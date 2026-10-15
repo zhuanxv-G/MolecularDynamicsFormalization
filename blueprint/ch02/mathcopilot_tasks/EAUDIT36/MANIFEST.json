@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT36",
+  "input_sha256": {
+    "BATCH_EAUDIT36.md": "478bf3c4e6b4c41740934d66468f88c2cec8e3b89af19e0f4de45bdeaba125ed",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT36a",
+      "source_id": "MD-2.3.4-MatrixCancellation",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT36/a",
+      "total_bytes": 88300,
+      "manifest_sha256": "a09b7a94f89b0d88b7b3132d2a8fb72d324aa371b4b50db52bbc0a8306f3808e"
+    },
+    {
+      "subtask": "EAUDIT36b",
+      "source_id": "MD-2.3.4-HamiltonSymplectic",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT36/b",
+      "total_bytes": 90468,
+      "manifest_sha256": "896a37d81fb2c2c873b2f94bebda78dfc725e7320faf8090da4f388bfa46d823"
+    }
+  ]
+}

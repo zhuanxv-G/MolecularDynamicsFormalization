@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT32",
+  "source_id": "MD-2.2.4-FirstIntegral",
+  "input_sha256": {
+    "BATCH_EAUDIT32.md": "09d489494c86ea3426853110cc32087d66e14cfb097d7c16f5fb4586e070b6cb",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+    "EAUDIT32a_materials": "b2af3d108ef2e09e6a92d9a50d46d1577c20e67d46f1c01df811c7bf3bae98b9",
+    "EAUDIT32a_PAGES.pdf": "a382a81eea61d10bdb795a04d9ce94632011e8c07972eb62962e04cfed250a17"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    92
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "76cbce76b7220146fbad9092d2b34b780698d399fb88f2c893dbee9fc9aa012e",
+  "source_block_sha256": "23889b437f09d2d50eea348f91e938e5c17941215077f457b393fa7fbabb3034",
+  "source_declarations": [
+    "bp_firstIntegral"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_firstIntegral",
+      "file_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+      "excerpt_sha256": "23889b437f09d2d50eea348f91e938e5c17941215077f457b393fa7fbabb3034"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT32_review.json",
+  "total_task_bytes": 175867
+}

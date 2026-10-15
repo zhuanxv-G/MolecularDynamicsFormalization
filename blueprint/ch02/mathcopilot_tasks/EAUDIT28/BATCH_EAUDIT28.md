@@ -1,0 +1,105 @@
+# EAUDIT28：第2章§2.2网站修复复审
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.2-VerletOrder",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "2.2",
+  "printed_page": "60",
+  "pdf_page": "82",
+  "statement_latex": "The Verlet method (also known as leapfrog or Störmer-Verlet) is a second order method that is popular for molecular simulation. It is specialized to problems that can be expressed in the form $\\dot{\\boldsymbol q}=\\boldsymbol v$, $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$, with even dimensional phase space $\\mathbb R^{2\\mathrm{N}_c}$, which includes constant energy molecular dynamics.",
+  "proof_latex": null,
+  "proof_note": "本条所引 PDF 第82页（印刷第60页）仅陈述 Verlet 的二阶性质，未在该页附独立证明；本批不对后续节是否给出完整证明作结论。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$\\boldsymbol q$ 与 $\\boldsymbol v$：本句机械系统的位置与速度向量；原式为 $\\dot{\\boldsymbol q}=\\boldsymbol v$。依据：PDF 第82页（印刷第60页）§2.2 首段。",
+    "$\\boldsymbol M$：质量矩阵；本页稍后的文字明确为“the mass matrix”。本条首段未额外声明正性或对角性，不能把 Lean 的这些附加限制写成原句假设。依据：PDF 第82页（印刷第60页）。",
+    "$\\boldsymbol F(\\boldsymbol q)$：本句右端仅依赖位置的力向量，满足 $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$；该句未给出势函数表达式。依据：PDF 第82页（印刷第60页）§2.2 首段。",
+    "$\\mathbb R^{2\\mathrm{N}_c}$：原句给出的偶数维相空间，$\\mathrm{N}_c$ 表示对应配置变量的分量数；本页未单独展开其与粒子数的关系，不补入 $\\mathrm{N}_c=3N$ 等约定。依据：PDF 第82页（印刷第60页）§2.2 首段。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.verletOrder",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "固定正对角质量、力全域C⁴、τ>0及实际解在闭时间窗连续；原文未逐一给出的阶定理正则性显式列出。",
+    "[EXTRA] 网站首选路线：直接保留原文(q,v)速度变量，使用已定义velocityVerlet与真实速度场(v,M⁻¹F(q))；正对角质量及C⁴为充分但非最小资格，闭窗连续性为冗余明确限制。未更改正式mechanicalField/verlet，不新增证明。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT02_LOCAL_REPAIR",
+      "timestamp": "2026-10-14T23:55:22.191696",
+      "before_sha256": "69ad2b9747ad9e40afaf8841e94ecedc9f433bd9080c66a134bb6a355770c47b",
+      "after_sha256": "2891afd6cb7d8ce5d5a203a5435af0afde8df4bbd2d021c998a69dbc40a750a3",
+      "changed_fields": [
+        "statement_latex",
+        "proof_note",
+        "context_notation"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH04_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem verletOrder :
+  ∀ n (m : Fin n → ℝ) (F : Q n → Q n) (γ : ℝ → Z n) τ,
+    positiveMass m → ContDiff ℝ 4 F → 0 < τ →
+    solution (fun z : Z n ↦ (z.2, invMass m (F z.1))) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
+    ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+      oneStepMaxError (velocityVerlet m F) (τ / ν) γ ν ≤ C * (τ / ν)^2 := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.invMass
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+### 实际依赖 MolecularDynamics.oneStepIterate
+```lean
+noncomputable def oneStepIterate (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) : E :=
+  (G h)^[n] z₀
+
+@[simp] theorem oneStepIterate_zero (G : ℝ → E → E) (h : ℝ) (z₀ : E) :
+    oneStepIterate G h z₀ 0 = z₀ := rfl
+
+@[simp] theorem oneStepIterate_succ (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
+    oneStepIterate G h z₀ (n + 1) = G h (oneStepIterate G h z₀ n) :=
+  Function.iterate_succ_apply' _ _ _
+```
+### 实际依赖 MolecularDynamics.oneStepMaxError
+```lean
+noncomputable def oneStepMaxError (G : ℝ → E → E) (h : ℝ) (γ : ℝ → E) (ν : ℕ) : ℝ :=
+  (Finset.range (ν + 1)).sup' Finset.nonempty_range_add_one
+    (fun n => ‖oneStepIterate G h (γ 0) n - γ ((n : ℝ) * h)‖)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.positiveMass
+```lean
+def positiveMass {n : ℕ} (m : Fin n → ℝ) : Prop := ∀ i, 0 < m i
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.solution
+```lean
+def solution {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (f : E → E) (γ : ℝ → E) (a b : ℝ) : Prop :=
+  ∀ t ∈ Icc a b, HasDerivWithinAt γ (f (γ t)) (Icc a b) t
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.velocityVerlet
+```lean
+def velocityVerlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z n) : Z n :=
+  let vhalf := z.2 + (h/2) • invMass m (F z.1)
+  let qnew := z.1 + h • vhalf
+  (qnew, vhalf + (h/2) • invMass m (F qnew))
+```

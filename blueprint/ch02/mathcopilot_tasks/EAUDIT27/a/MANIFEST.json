@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT27",
+  "source_id": "MD-2.1.2-SecondDerivative",
+  "input_sha256": {
+    "BATCH_EAUDIT27.md": "7191ae2f8ba09bed97ea6a4bbb03d6a4c4b0c8b1110abab7d33f53fca92ef95b",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+    "EAUDIT27a_materials": "9664abf7defbdd7684be626e2d6ea1cb2caddf9c025da24ef010807a7c2003ea",
+    "EAUDIT27a_PAGES.pdf": "ce7ab6229118e4e70772acb4d8986702ca1a9d07d3d81e88b4c5ea6bb16efc44"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    81
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "61c01e6122d8a85c475f0e03803aab560bd7319aff97900d10151abd1e0c41f9",
+  "source_block_sha256": "d967e9ccd03ec6f795e4b74bee8fd4b981f2649fc71f4af307ed1d0d8ddad470",
+  "source_declarations": [
+    "odeSecondDerivative"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT27_review.json",
+  "total_task_bytes": 79819
+}

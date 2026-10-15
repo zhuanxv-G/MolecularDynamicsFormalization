@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT35",
+  "source_id": "MD-2.3.3-OneForm",
+  "input_sha256": {
+    "BATCH_EAUDIT35.md": "1f28ebdf6a7c3c03ca7c30316210bdc284204289d9c7c05bae21e54e4406351e",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+    "EAUDIT35b_materials": "449723654cd6d934daeb1f47a35b154cb6277d4e5a0be1aeeb8449f05645daa5",
+    "EAUDIT35b_PAGES.pdf": "d436fa771d20d06699a54f6810e064ad794bf398816c6992dd9093cace1e2a08"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    98
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "1022016a2043eeb7b863cdb0500462731819fb92d30516b5abd423c2096ca1b4",
+  "source_block_sha256": "f93c00607cf6128e89f97ce3295f9df24ba4db5a5de4afc8c48abb126aefbe6e",
+  "source_declarations": [
+    "oneFormFamily",
+    "oneFormOfCoefficients",
+    "oneFormOfCoefficients_apply"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "oneFormFamily",
+      "file_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+      "excerpt_sha256": "404fce0c6a0d809bb9b9ba8ddf23eb9bc73a9e7ccb6fba621f6644cf3ab653dd"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "oneFormOfCoefficients",
+      "file_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+      "excerpt_sha256": "7005ede0166554e226ae083c11aa70eae156d568d0a5ffc09fd4136c64a648d4"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT35_review.json",
+  "total_task_bytes": 95175
+}

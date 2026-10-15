@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT39",
+  "input_sha256": {
+    "BATCH_EAUDIT39.md": "eb97ffa80b2db2eec8077d5d095d4b2dc4ebd3fec03caea47a5f2cc318cb5c6f",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT39a",
+      "source_id": "MD-2.3.7-Adjoint",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT39/a",
+      "total_bytes": 82740,
+      "manifest_sha256": "45842cfde292500beee68867bcda82041900c5e8829a43a154f39284e20f8998"
+    },
+    {
+      "subtask": "EAUDIT39b",
+      "source_id": "MD-2.3.7-FlowSelfAdjoint",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT39/b",
+      "total_bytes": 90059,
+      "manifest_sha256": "21b05adf0505dbd9f4414aae8195f86bb260e4f33c41f5aa7b11d0a76f308693"
+    },
+    {
+      "subtask": "EAUDIT39c",
+      "source_id": "MD-2.3.7-BackwardEuler",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT39/c",
+      "total_bytes": 89807,
+      "manifest_sha256": "3c5241dab23ddae34e0ddb3bd7fed707028284cb17f747aa976f20976da5a633"
+    },
+    {
+      "subtask": "EAUDIT39d",
+      "source_id": "MD-2.3.7-AdjointSymplecticEuler",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT39/d",
+      "total_bytes": 96359,
+      "manifest_sha256": "9d78dfdd63307808f5194fc9c894c643d4ca8bf175d2757a6a5d3f39fbe86e87"
+    },
+    {
+      "subtask": "EAUDIT39e",
+      "source_id": "MD-2.3.7-AdjointInvolution",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT39/e",
+      "total_bytes": 89406,
+      "manifest_sha256": "718c415b8def7d89a76306acbb516c6f0c344666797c017e3bcad9293f495bab"
+    }
+  ]
+}

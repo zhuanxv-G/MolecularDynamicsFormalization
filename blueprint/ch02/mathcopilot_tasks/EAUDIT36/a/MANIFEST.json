@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT36",
+  "source_id": "MD-2.3.4-MatrixCancellation",
+  "input_sha256": {
+    "BATCH_EAUDIT36.md": "478bf3c4e6b4c41740934d66468f88c2cec8e3b89af19e0f4de45bdeaba125ed",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+    "EAUDIT36a_materials": "7340f1e7fbfe5e3e34585386c386cf96c1bd9d9acacba0ebde782d5e4b036ba2",
+    "EAUDIT36a_PAGES.pdf": "c7192b47a3a6cb5c4eb1678da333f5859c756e8e084fca511eb7686eff5b39e1"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    101
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "74d3eb5cba4a818824ba99727b0c0d21bfc2f4d33c9bafb6296e2cacc3d7ed52",
+  "source_block_sha256": "aa92fcb38fe9d6318f6eebf42b5040fa3cd9e2fbed66ff63c052c1dab777184b",
+  "source_declarations": [
+    "matrixCancellation",
+    "matrixCancellation_time"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinateMatrix",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "textbookJ",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT36_review.json",
+  "total_task_bytes": 88300
+}

@@ -1,0 +1,169 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.4.1-VerletComposition；原PDF页映射=[106, 107]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT40_review.json，对象含batch=EAUDIT40、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT40.md": "b73ae02d7b0671136b1a4bfb3604d4aa238832dd02d524757b8800fad4d5a348",
+  "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+  "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+  "EAUDIT40f_materials": "f9fa21ddd89ab45ec40b5deb267165f3c166fe32038204ea27b77c4a9e0084eb",
+  "EAUDIT40f_PAGES.pdf": "738d1b7dfbd13d57bc5c0123c909912f667d6dcdef9e22f0e4affabc87da0e95"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.4.1-VerletComposition",
+  "kind": "unnumbered_claim",
+  "label": "Example 2.5 (composition)",
+  "section": "2.4.1",
+  "printed_page": "84–85",
+  "pdf_page": "106–107",
+  "statement_latex": "For the Symplectic Euler method $\\mathcal G_h$ and its adjoint method $\\mathcal G_h^\\dagger$, consider the composition\n\\[\\mathcal K_h:=\\mathcal G_{h/2}^\\dagger\\circ\\mathcal G_{h/2}.\\]",
+  "proof_latex": "Let\n\\[\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix}=\\mathcal G_{h/2}\\begin{bmatrix}\\boldsymbol q\\\\\\boldsymbol p\\end{bmatrix},\\]\ni.e.,\n\\[\\bar{\\boldsymbol q}=\\boldsymbol q+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\bar{\\boldsymbol p}=\\boldsymbol p-(h/2)\nabla U(\\boldsymbol q).\\]\nand set\n\\[\\begin{bmatrix}\\boldsymbol Q\\\\\\boldsymbol P\\end{bmatrix}=\\mathcal G_{h/2}^\\dagger\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix},\\]\ni.e.,\n\\[\\boldsymbol Q=\\bar{\\boldsymbol q}+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-(h/2)\nabla U(\\boldsymbol Q).\\]\nThe composition simplifies to\n\\[\\bar{\\boldsymbol p}=\\boldsymbol p-\\frac h2\nabla U(\\boldsymbol q),\\qquad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-\\frac h2\nabla U(\\boldsymbol Q).\\]\nThis is just the leapfrog/Verlet method in its Hamiltonian form.",
+  "proof_note": "原书计算按原页转录。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch02.verletComposition",
+  "reusable_proofs": [
+    "MolecularDynamics.Chapter02Review.verletComposition_proved"
+  ],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT14_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:19:46.414902",
+      "before_sha256": "9cc16bde6cf373626fb9a369826231cb9149ad6389c66e5c564e395c73952126",
+      "after_sha256": "403eaa92e1a9bdb5e0606b573e751be75ef428bcae341b599f7f59aa4204cdab",
+      "changed_fields": [
+        "statement_latex",
+        "proof_latex"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem verletComposition :
+  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h z,
+    coordinateVerlet m (textbookPotentialForce U) h z =
+      pack (verlet m (textbookPotentialForce U) h (unpack z)) ∧
+    coordinateVerlet m (textbookPotentialForce U) h z =
+      textbookAdjointSymplecticEuler m U (h/2) (textbookSymplecticEuler m U (h/2) z) := by
+  exact MolecularDynamics.Chapter02Review.verletComposition_proved
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.coordinateVerlet
+```lean
+def coordinateVerlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) :
+    SymplecticCoordinates n → SymplecticCoordinates n :=
+  textbookMomentumKick F (h/2) ∘ textbookPositionDrift m h ∘ textbookMomentumKick F (h/2)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.invMass
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.pack
+```lean
+def pack {n : ℕ} (z : Z n) : SymplecticCoordinates n := Sum.elim z.1 z.2
+```
+### 实际依赖 MolecularDynamics.textbookAdjointMethod
+```lean
+noncomputable def textbookAdjointMethod {E : Type*} (G : ℝ → Equiv.Perm E) (h : ℝ) :
+    Equiv.Perm E := (G (-h)).symm
+```
+### 实际依赖 MolecularDynamics.textbookAdjointSymplecticEuler
+```lean
+noncomputable def textbookAdjointSymplecticEuler {Nc : ℕ}
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :
+    Equiv.Perm (SymplecticCoordinates Nc) :=
+  textbookAdjointMethod (textbookSymplecticEulerEquiv m U) h
+```
+### 实际依赖 MolecularDynamics.textbookMomentumKick
+```lean
+noncomputable def textbookMomentumKick {Nc : ℕ}
+    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ)
+    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
+  Sum.elim (fun i => z (Sum.inl i))
+    (fun i => z (Sum.inr i) + h * F (textbookPositionProjection Nc z) i)
+```
+### 实际依赖 MolecularDynamics.textbookMomentumKickEquiv
+```lean
+noncomputable def textbookMomentumKickEquiv {Nc : ℕ}
+    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ) : Equiv.Perm (SymplecticCoordinates Nc) where
+  toFun := textbookMomentumKick F h
+  invFun := textbookMomentumKick F (-h)
+  left_inv := textbookMomentumKick_neg_cancel F h
+  right_inv z := by simpa only [neg_neg] using textbookMomentumKick_neg_cancel F (-h) z
+```
+### 实际依赖 MolecularDynamics.textbookPositionDrift
+```lean
+noncomputable def textbookPositionDrift {Nc : ℕ} (m : Fin Nc → ℝ) (h : ℝ)
+    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
+  Sum.elim (fun i => z (Sum.inl i) + h * (m i)⁻¹ * z (Sum.inr i))
+    (fun i => z (Sum.inr i))
+```
+### 实际依赖 MolecularDynamics.textbookPositionDriftEquiv
+```lean
+noncomputable def textbookPositionDriftEquiv {Nc : ℕ} (m : Fin Nc → ℝ) (h : ℝ) :
+    Equiv.Perm (SymplecticCoordinates Nc) where
+  toFun := textbookPositionDrift m h
+  invFun := textbookPositionDrift m (-h)
+  left_inv := textbookPositionDrift_neg_cancel m h
+  right_inv z := by simpa only [neg_neg] using textbookPositionDrift_neg_cancel m (-h) z
+```
+### 实际依赖 MolecularDynamics.textbookPositionProjection
+```lean
+noncomputable def textbookPositionProjection (Nc : ℕ) :
+    SymplecticCoordinates Nc →L[ℝ] (Fin Nc → ℝ) :=
+  ContinuousLinearMap.pi fun i => ContinuousLinearMap.proj (Sum.inl i)
+```
+### 实际依赖 MolecularDynamics.textbookPotentialForce
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.textbookSymplecticEuler
+```lean
+noncomputable def textbookSymplecticEuler {Nc : ℕ}
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :
+    SymplecticCoordinates Nc → SymplecticCoordinates Nc :=
+  textbookPositionDrift m h ∘ textbookMomentumKick (textbookPotentialForce U) h
+```
+### 实际依赖 MolecularDynamics.textbookSymplecticEulerEquiv
+```lean
+noncomputable def textbookSymplecticEulerEquiv {Nc : ℕ}
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :
+    Equiv.Perm (SymplecticCoordinates Nc) :=
+  textbookPositionDriftEquiv m h * textbookMomentumKickEquiv (textbookPotentialForce U) h
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.unpack
+```lean
+def unpack {n : ℕ} (z : SymplecticCoordinates n) : Z n := (z ∘ Sum.inl, z ∘ Sum.inr)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.verlet
+```lean
+def verlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z n) : Z n :=
+  let qnew := z.1 + h • invMass m z.2 + (h^2/2) • invMass m (F z.1)
+  (qnew, z.2 + (h/2) • (F z.1 + F qnew))
+```

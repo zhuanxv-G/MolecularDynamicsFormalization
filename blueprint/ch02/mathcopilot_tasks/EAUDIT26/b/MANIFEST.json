@@ -1,0 +1,97 @@
+{
+  "eaudit": "EAUDIT26",
+  "source_id": "MD-2-Hamiltonian",
+  "input_sha256": {
+    "BATCH_EAUDIT26.md": "0d138eafe599fe298f81c14ec25c027ad8c14d6e20f39b1db9c038cc90285e8d",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+    "EAUDIT26b_materials": "72489ab30ac535bc964720be75ada25d6dc1af8337bcc27b3427b1c3359516ae",
+    "EAUDIT26b_PAGES.pdf": "65128384afa8dcfd84b08436999320e0a81fc13f5a837b4b2cb3b88f93641468"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    75
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "63cabc74c939cd5ff39739fe09601d2b6340f1027baa47dbe0f123c7f690685d",
+  "source_block_sha256": "82fcad0fe51c739521d17d9feac49e2bc865ca359863c93aba28e5ee9618ad9e",
+  "source_declarations": [
+    "mechanicalHamiltonian"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "name": "CoordinateMasses",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "50939e8d47d2aea37f48a71423ee3ae48b297b19ba4394b17b02a93c1f4510a4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Hamiltonian",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "a398413ee2b70ba99a5495f0910809accbc2695165ffa883d4e42750984770aa"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "KineticEnergy",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "ce8dd0203270efb25964788dba313da42a3bf609ff0325f4a0d556b01a136bbc"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Momentum",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PhaseSpace",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "daa02c2c07383d89b526c2336a494ea2279c29eb9ade168bef41013e54ebff7f"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PotentialEnergy",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "043ad8ba46ea4ec31839daabf34e8017edbc3d00188fad3366e80af19ddc6116"
+    },
+    {
+      "path": "MolecularDynamics/BasicDefinitions.lean",
+      "name": "SeparableEnergy",
+      "file_sha256": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
+      "excerpt_sha256": "6bf2960568b2b56611bf9dd10a9cb8f8f6905fdd0e79578faeac900b6b6b9a66"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Hamiltonian.lean",
+      "name": "massHamiltonian",
+      "file_sha256": "5c62cc4b16f7c3eddf8d2cfc2a1868acd8e991fc20f5c667dd170fc3fa58c54e",
+      "excerpt_sha256": "70b034e13f78388bab20440e5876d5f3e992d5f3fbfb043d54e1e0b03adfacd8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Hamiltonian.lean",
+      "name": "massSeparableEnergy",
+      "file_sha256": "5c62cc4b16f7c3eddf8d2cfc2a1868acd8e991fc20f5c667dd170fc3fa58c54e",
+      "excerpt_sha256": "33718d2a21e67a31862f8f0b45422f1f31940e8530a2a8d287002281b296ad0b"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "mechanicalHamiltonian",
+      "file_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+      "excerpt_sha256": "82fcad0fe51c739521d17d9feac49e2bc865ca359863c93aba28e5ee9618ad9e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Hamiltonian.lean",
+      "name": "momentumKineticEnergy",
+      "file_sha256": "5c62cc4b16f7c3eddf8d2cfc2a1868acd8e991fc20f5c667dd170fc3fa58c54e",
+      "excerpt_sha256": "4e71db829a489e634754bf3038fa5bbe64065f2f6a9f709220f17f5240c5c2aa"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT26_review.json",
+  "total_task_bytes": 102108
+}

@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT45",
+  "input_sha256": {
+    "BATCH_EAUDIT45.md": "393646802afaf1acfd30948f6a6ab88078cf578d8ee044f6fec570d14310b2a8",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT45a",
+      "source_id": "MD-2.4.5-ConjugateIterates",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT45/a",
+      "total_bytes": 86750,
+      "manifest_sha256": "231ca4c42b2ea6f27d0ab54239f8f7fec18f173a327761c1e4165f7dfceb2ad3"
+    },
+    {
+      "subtask": "EAUDIT45b",
+      "source_id": "MD-2.4.5-EulerConjugacy",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT45/b",
+      "total_bytes": 93018,
+      "manifest_sha256": "d52b96f924afa6d376a386704141a65c05c54a7b086a64cfd770501be3b55986"
+    },
+    {
+      "subtask": "EAUDIT45c",
+      "source_id": "MD-2.4.5-Processing",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT45/c",
+      "total_bytes": 90949,
+      "manifest_sha256": "470a178e613af197e2ce1239842d5a8889238b79fce59299f49809a696400c49"
+    },
+    {
+      "subtask": "EAUDIT45d",
+      "source_id": "MD-2.4.5-ProcessingIterates",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT45/d",
+      "total_bytes": 89085,
+      "manifest_sha256": "7daff02165a81e50774f3661acb68a7bae4dcfc022b1364f40a624c300282093"
+    },
+    {
+      "subtask": "EAUDIT45e",
+      "source_id": "MD-2.4.5-ProcessingOrder",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT45/e",
+      "total_bytes": 92275,
+      "manifest_sha256": "e8bbec6b01cce83487c9a4ac6069267aa333f43dc75722bc71f28f9ab2e2fdbd"
+    }
+  ]
+}

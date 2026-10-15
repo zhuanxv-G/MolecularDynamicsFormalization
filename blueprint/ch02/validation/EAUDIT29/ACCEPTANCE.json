@@ -1,0 +1,50 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT29",
+  "section": "2.2.1",
+  "source_ids": [
+    "MD-2.2.1-FirstVariation",
+    "MD-2.2.1-StationaryAction",
+    "MD-2.2.1-EulerLagrange",
+    "MD-2.2.1-VariationalDerivativePrinted"
+  ],
+  "reaudit_ids": [
+    "MD-2.2.1-FirstVariation",
+    "MD-2.2.1-StationaryAction",
+    "MD-2.2.1-EulerLagrange",
+    "MD-2.2.1-VariationalDerivativePrinted"
+  ],
+  "human_ids": [],
+  "lean_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+  "source_sha256": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.2.1-FirstVariation",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch02/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "b6cab208444151fe0cc4c3181f507ee28edbf316b41fb38dd7558779c2c5fa2f"
+    },
+    {
+      "source_id": "MD-2.2.1-StationaryAction",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch02/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "b6cab208444151fe0cc4c3181f507ee28edbf316b41fb38dd7558779c2c5fa2f"
+    },
+    {
+      "source_id": "MD-2.2.1-EulerLagrange",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch02/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "b6cab208444151fe0cc4c3181f507ee28edbf316b41fb38dd7558779c2c5fa2f"
+    },
+    {
+      "source_id": "MD-2.2.1-VariationalDerivativePrinted",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch02/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "b6cab208444151fe0cc4c3181f507ee28edbf316b41fb38dd7558779c2c5fa2f"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT29/INDEX.md"
+}

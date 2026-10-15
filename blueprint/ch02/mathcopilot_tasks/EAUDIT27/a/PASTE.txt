@@ -1,0 +1,68 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.1.2-SecondDerivative；原PDF页映射=[81]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT27_review.json，对象含batch=EAUDIT27、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT27.md": "7191ae2f8ba09bed97ea6a4bbb03d6a4c4b0c8b1110abab7d33f53fca92ef95b",
+  "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+  "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+  "EAUDIT27a_materials": "9664abf7defbdd7684be626e2d6ea1cb2caddf9c025da24ef010807a7c2003ea",
+  "EAUDIT27a_PAGES.pdf": "ce7ab6229118e4e70772acb4d8986702ca1a9d07d3d81e88b4c5ea6bb16efc44"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.1.2-SecondDerivative",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "2.1.2",
+  "printed_page": "59",
+  "pdf_page": "81",
+  "statement_latex": "and the second derivative is obtained by differentiating the differential equation itself:\n\\[\\ddot{\\boldsymbol z}(t)=\\frac{\\mathrm d}{\\mathrm dt}\\dot{\\boldsymbol z}(t)=\\frac{\\mathrm d}{\\mathrm dt}f(\\boldsymbol z(t))=f'(\\boldsymbol z(t))\\dot{\\boldsymbol z}(t)=f'(\\boldsymbol z(t))f(\\boldsymbol z(t)),\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "PDF 第81页（印刷第59页）先写 $\\dot{\\boldsymbol z}_n=f(\\boldsymbol z_n)$，随后用链式法则得到 $\\ddot{\\boldsymbol z}(t)=f^{\\prime}(\\boldsymbol z(t))\\dot{\\boldsymbol z}(t)=f^{\\prime}(\\boldsymbol z(t))f(\\boldsymbol z(t))$。同页明确说明：$\\boldsymbol z\\in\\mathbb R^m$，$f:\\mathbb R^m\\to\\mathbb R^m$，$f^{\\prime}(\\boldsymbol z)$ 是 $m\\times m$ Jacobian，$(f^{\\prime}(\\boldsymbol z))_{ij}=\\partial f_i/\\partial z_j$，亦记为 $\\partial f/\\partial\\boldsymbol z$。本段未显式写出 $f\\in C^1$；全域 $C^1$ 是本条 Lean 陈述采用的充分正则性假设，不能作为原页明示假设记录。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.odeSecondDerivative",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "解γ取C²；原文连续求两次时间导数的正则性显式化。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT25_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:38:36.845458",
+      "before_sha256": "33f09c522c9fc69f2043f1514235f4327d95eb9df9f4964180272425d3e713d5",
+      "after_sha256": "43fe912adf3c587bbb52d5c626473c8a2d5ef41ea07af36495ffb489e6f1cd6a",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH03_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT25/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem odeSecondDerivative :
+  ∀ n (f : Q n → Q n) (γ : ℝ → Q n), ContDiff ℝ 1 f → ContDiff ℝ 2 γ →
+    (∀ t, HasDerivAt γ (f (γ t)) t) →
+    ∀ t, HasDerivAt (deriv γ) ((fderiv ℝ f (γ t)) (f (γ t))) t := by
+  intro n f γ hf hγ hode t
+  have heq : deriv γ = fun s => f (γ s) := funext (fun s => (hode s).deriv)
+  rw [heq]
+  exact ((hf.differentiable (by norm_num)).differentiableAt.hasFDerivAt).comp_hasDerivAt t (hode t)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```

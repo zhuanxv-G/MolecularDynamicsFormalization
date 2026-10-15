@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT43",
+  "source_id": "MD-2.4.3-HarmonicSplit",
+  "input_sha256": {
+    "BATCH_EAUDIT43.md": "b3a4675bc1142f1614663fb998626a8eb779a1aef2a8accebe8091dacfd455ab",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+    "EAUDIT43a_materials": "dbcbc32e86dbc71f1e9fa4f7bdd3668c90a96a293088e5d3bf77d43263a1b590",
+    "EAUDIT43a_PAGES.pdf": "97177e5fb6c869d2be5710acc1d225960daad2ca97922e0bb9ec18bf6f120828"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    107,
+    108
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "9fdedc23a0880bf44f0abf7b6ee5ed1774ef9a08a1ca98d4955defd1da93158f",
+  "source_block_sha256": "96470ed81c0e238c1cb17dae7e5751d1adb33962d7368c78b38a49f714de4e87",
+  "source_declarations": [
+    "bp_harmonicAnharmonic"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_harmonicAnharmonic",
+      "file_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+      "excerpt_sha256": "96470ed81c0e238c1cb17dae7e5751d1adb33962d7368c78b38a49f714de4e87"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT43_review.json",
+  "total_task_bytes": 105076
+}

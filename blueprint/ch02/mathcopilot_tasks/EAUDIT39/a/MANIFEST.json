@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT39",
+  "source_id": "MD-2.3.7-Adjoint",
+  "input_sha256": {
+    "BATCH_EAUDIT39.md": "eb97ffa80b2db2eec8077d5d095d4b2dc4ebd3fec03caea47a5f2cc318cb5c6f",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+    "EAUDIT39a_materials": "e8fcfa83ed18a66d2ddd4260ba501e5280eefe9f96e2e9662d33674428995ebc",
+    "EAUDIT39a_PAGES.pdf": "ccb477280ff7d4c9a23a62da84af62af7a8786b537e6d1f45954504682ed20f8"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    103
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "55031de4e2b05f3b29d6fb06c5bd1c5a8c760874609b5c7e6272bd7716b6f059",
+  "source_block_sha256": "42cb7d57564e1f942c11886dad4d626551250e38a3441e1bb65c675d8b6b1ba1",
+  "source_declarations": [
+    "bp_adjoint"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_adjoint",
+      "file_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+      "excerpt_sha256": "42cb7d57564e1f942c11886dad4d626551250e38a3441e1bb65c675d8b6b1ba1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT39_review.json",
+  "total_task_bytes": 82740
+}

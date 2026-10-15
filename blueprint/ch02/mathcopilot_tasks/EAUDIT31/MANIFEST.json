@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT31",
+  "input_sha256": {
+    "BATCH_EAUDIT31.md": "e49b40b499d8e458c536b447fb6b51c213969ce9afcf6709285bbb3b92e02620",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT31a",
+      "source_id": "MD-2.2.3-Consistency",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT31/a",
+      "total_bytes": 110093,
+      "manifest_sha256": "b73988a15ba360e336f07fbebc1791a102d4c578a1c5feea3066a868ed48923a"
+    },
+    {
+      "subtask": "EAUDIT31b",
+      "source_id": "MD-2.2.3-ErrorBound",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT31/b",
+      "total_bytes": 90240,
+      "manifest_sha256": "e0396667f733f99b634ae895ef12a70a43a0cd2e95af3925bf4b177e4e1ca2ea"
+    },
+    {
+      "subtask": "EAUDIT31c",
+      "source_id": "MD-2.2.3-VerletExpansion",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT31/c",
+      "total_bytes": 98947,
+      "manifest_sha256": "a164e54a65f3500db3651b400e89d5b36131387e447151adff0b628db3c9db30"
+    },
+    {
+      "subtask": "EAUDIT31d",
+      "source_id": "MD-2.2.3-ExactExpansion",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT31/d",
+      "total_bytes": 85235,
+      "manifest_sha256": "d55953a5dcd011059d054468ec26daa69cb19694b0f475bd4d162cff14bf4e3f"
+    },
+    {
+      "subtask": "EAUDIT31e",
+      "source_id": "MD-2.2.3-VerletConsistency",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT31/e",
+      "total_bytes": 86875,
+      "manifest_sha256": "401aa374a3bb53f80d09f530400bd723ea662169c1c64d7f30fffdcf444c2d6d"
+    },
+    {
+      "subtask": "EAUDIT31f",
+      "source_id": "MD-2.2.3-VerletStability",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT31/f",
+      "total_bytes": 233148,
+      "manifest_sha256": "42db4b6894358b5a943c9102a9ce468aff83e3a17f88ecca914ac6a1e2212b4f"
+    }
+  ]
+}

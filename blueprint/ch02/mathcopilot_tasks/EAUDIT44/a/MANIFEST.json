@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT44",
+  "source_id": "MD-2.4.4-ImplicitLocal",
+  "input_sha256": {
+    "BATCH_EAUDIT44.md": "990b83ba100aeca72e8f44d5cc1667d51c4832a1b6a35e0460c7295034386d52",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+    "EAUDIT44a_materials": "9a2e3a8ec605d81c1660ba057200b9084b1a04ce8a779a405e1f3a8c74b68620",
+    "EAUDIT44a_PAGES.pdf": "925eaa6464ecbb360491978944ae4f1e49ab66101001da0984467ebb26732223"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    108
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "3e306e3209f2f24bec33dfa2faf307cec35ab386bfbbf153a3dc9f267c09aada",
+  "source_block_sha256": "614864b5ea2373dc0f2957d60db0c94c4b224a970bd45b1e55ae937c7b25359f",
+  "source_declarations": [
+    "implicitLocal"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT44_review.json",
+  "total_task_bytes": 92125
+}

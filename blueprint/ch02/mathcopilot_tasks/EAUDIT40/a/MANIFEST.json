@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT40",
+  "source_id": "MD-2.4.1-Splitting",
+  "input_sha256": {
+    "BATCH_EAUDIT40.md": "b73ae02d7b0671136b1a4bfb3604d4aa238832dd02d524757b8800fad4d5a348",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+    "EAUDIT40a_materials": "aec0646ee99b9dbe545ceaf7e9fe40e314d1845cebad5f89e3c115ca01678eb1",
+    "EAUDIT40a_PAGES.pdf": "1c3ba0da68d5a2cb50eb154752c3db2064cec5f6f2d87e21b76ee9fb81325b4e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    105
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "5018d7a07a1a843e2d406daa2fdf4dba6393d6784de58b13ded44ebbef9f2f4e",
+  "source_block_sha256": "65aa410d9cfef1499fdebb01078a0e787060f42cec5c94b97faf218e4e365bd4",
+  "source_declarations": [
+    "bp_splittingMap"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_splittingMap",
+      "file_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+      "excerpt_sha256": "65aa410d9cfef1499fdebb01078a0e787060f42cec5c94b97faf218e4e365bd4"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT40_review.json",
+  "total_task_bytes": 89230
+}

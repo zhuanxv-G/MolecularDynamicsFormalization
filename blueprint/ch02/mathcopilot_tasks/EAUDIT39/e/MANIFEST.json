@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT39",
+  "source_id": "MD-2.3.7-AdjointInvolution",
+  "input_sha256": {
+    "BATCH_EAUDIT39.md": "eb97ffa80b2db2eec8077d5d095d4b2dc4ebd3fec03caea47a5f2cc318cb5c6f",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50",
+    "EAUDIT39e_materials": "8ee5f2362209481806b3ebd469d54ef891414454d2164a6e66d186745fb12671",
+    "EAUDIT39e_PAGES.pdf": "4789416bf3029fd8c55c65ea39941dc530f0f63ff0d68569848674be941bd046"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    104
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "045e3f7f6b61e9a2c1812da65c14b9b789f134f6b85ec5d97aff152f9c56d29d",
+  "source_block_sha256": "0129db789e0efd1b8239b1e635c95d7a9646314fea35071cec5c5e8daab8ef9f",
+  "source_declarations": [
+    "adjointInvolution"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/AdjointMethods.lean",
+      "name": "textbookAdjointMethod",
+      "file_sha256": "4d2ac087bf5067c7ebc61b95e4cf1e90f553b51fc1bba92ca8814b141541647e",
+      "excerpt_sha256": "f5c0b5fb6ce848d19f9d67ee0a70de4319fddae5919f016900b935eb3b44ce8e"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT39_review.json",
+  "total_task_bytes": 89406
+}
