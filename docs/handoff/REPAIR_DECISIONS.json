@@ -1228,5 +1228,45 @@
     "category": "B",
     "handling": "保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。",
     "section": "4.3.3"
+  },
+  "MD-4.3.4-ProjectedEulerPullback": {
+    "category": "B",
+    "handling": "原总拉回等式已有证明保留；同条补Q/Pbar与q/Pbar、q/Pbar与q/p的两条实际微分二形式中间等式，逐句覆盖原证明链。",
+    "section": "4.3.4"
+  },
+  "MD-4.3.4-CotangentMultiplier": {
+    "category": "A",
+    "handling": "Gram构造限定det≠0，并补Aμ=GDp及真实投影隐藏约束；这是(4.23–24)推导的受限构造，不用值函数替代方程。",
+    "section": "4.3.4"
+  },
+  "MD-4.3.4-CotangentProjection": {
+    "category": "A",
+    "handling": "主声明忠实为任意μ的印刷投影等式；Gram专项实现独立命名且加可逆资格，隐藏约束由CotangentMultiplier补全，不暗中求解任意原式乘子。",
+    "section": "4.3.4"
+  },
+  "MD-4.3.4-CotangentRegularity": {
+    "category": "B",
+    "handling": "本条显式仅为专项投影C¹正则性辅助；所引完整限制二形式等式已由MD-4.3.4-CotangentPullback承担并含真实邻域位置约束，不重复冒充同一结论。",
+    "section": "4.3.4"
+  },
+  "MD-4.3.4-GramProjectedEuler": {
+    "category": "C",
+    "handling": "教材包装全部固定a=−h，对应原印−hF的特殊参数；任意a几何推广作为独立辅助保留，原已证apply仅参数实例化。未把a=h物理修订暗作原印；不声称隐式分支存在或全局微分同胚。",
+    "section": "4.3.4"
+  },
+  "MD-4.3.4-ProjectedEulerRelation": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.3.4"
+  },
+  "MD-4.3.4-Lemma41": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.3.4"
+  },
+  "MD-4.3.4-CotangentPullback": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.3.4"
   }
 }

@@ -1,0 +1,115 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.3.4-Lemma41；原PDF页映射=[181, 182]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT13_review.json，对象含batch=EAUDIT13、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT13.md": "66b8f775aec3da94c69f9adc764e3039dbf1d1365065a05d64cbe2e4909fb9a9",
+  "Blueprint/Ch04.lean": "7f91bbd1c2ebf978f3587bdc858c181dfbeef7d79d7dfa9a231a1525682a2f2e",
+  "blueprint/ch04/ch04_source.json": "495105333c1e1544f0338200e4fd6ea826ac3f29c5f612749b5cf2d5a8a40a54",
+  "EAUDIT13a_materials": "40eac517ba742287cc8e821385c141113071d53eec5003bc127dede091e72340",
+  "EAUDIT13a_PAGES.pdf": "d2a9d2a2ee5ef72262b21663168b1f5b8b678d6977c07e0401f2450f3c70ebf6"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.3.4-Lemma41",
+  "kind": "lemma",
+  "label": "Lemma 4.1",
+  "section": "4.3.4",
+  "printed_page": "159–160",
+  "pdf_page": "181–182",
+  "statement_latex": "Lemma 4.1 Let $\\gamma:\\mathbb R^{N_c}\\to\\mathbb R$ be $C^2$. Let $q,p\\in\\mathbb R^{N_c}$ be constrained to the manifold defined by\n\\[\\gamma(q)=0,\\quad p\\cdot\\nabla\\gamma(q)=0,\\]\nand suppose $P,\\mu$ satisfy $P=p-\\mu\\nabla\\gamma(q)$. Then\n\\[\\sum_{j=1}^{N_c}dq_j\\wedge dP_j=\\sum_{j=1}^{N_c}dq_j\\wedge dp_j.\\]",
+  "proof_latex": "Clearly the result follows provided\n\\[\\sum_{j=1}^{N_c}dq_j\\wedge d[\\mu\\nabla\\gamma(q)]_j=0,\\]\nwhere $[\\ldots]_j$ indicates the jth component of the term in brackets. We have\n\\[\\sum_jdq_j\\wedge d[\\mu\\nabla\\gamma(q)]_j=\\sum_jdq_j\\wedge\\left(\\frac{\\partial\\gamma}{\\partial q_j}d\\mu+\\mu\\sum_i\\gamma''_{ij}dq_j\\right).\\]\nThen we note\n\\[\\sum_jdq_j\\wedge\\frac{\\partial\\gamma}{\\partial q_j}d\\mu=\\sum_j\\frac{\\partial\\gamma}{\\partial q_j}dq_j\\wedge d\\mu=0,\\]\nsince $\\gamma(q)\\equiv0$ implies $d\\gamma(q)=\\sum_j\\frac{\\partial\\gamma}{\\partial q_j}dq_j\\equiv0$. Moreover\n\\[\\sum_jdq_j\\wedge\\sum_i\\gamma''_{ij}dq_j=0,\\]\nsince the Hessian matrix $\\gamma''$ is symmetric.",
+  "proof_note": "原书计算按原页转录。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "p160证明两处内和印刷dq_j；实际Hessian链式公式应dq_i。原proof_latex保持字面，正式库用真实Hessian对称性证明结论。"
+    }
+  ],
+  "lean_decl": "MD.Ch04.lemma41",
+  "reusable_proofs": [
+    "MolecularDynamics.lemma_4_1"
+  ],
+  "extra_assumptions": [
+    "真实局部参数图、q/p/μ可微，约束在x邻域成立；完整拉回2形式对任意u,v相等。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT13_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T18:55:41.219265",
+      "before_sha256": "08d6c5e8b99731f2ae2b75bbbae8e16b7ec8ba4b8447ea4d44da1a1455c119c8",
+      "after_sha256": "c0388b3e2e6891a2c1a466aefe379e74b59af70e5af11e44cf05547d250d02d5",
+      "changed_fields": [
+        "proof_latex"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH14_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem lemma41 {Nc : ℕ} {E : Type*}
+    [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (γ : (Fin Nc → ℝ) → ℝ) (hγ : ContDiff ℝ 2 γ) (μ : E → ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : DifferentiableAt ℝ q x) (hp : DifferentiableAt ℝ p x)
+    (hμ : DifferentiableAt ℝ μ x)
+    (hchart : ∀ᶠ y in 𝓝 x, γ (q y) = 0 ∧
+      p y ⬝ᵥ textbookConstraintGradient γ (q y) = 0) (u v : E) :
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookCotangentChart q (textbookConstrainedMomentum γ μ q p)) x u)
+      (fderiv ℝ (textbookCotangentChart q (textbookConstrainedMomentum γ μ q p)) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v) := by
+  apply MolecularDynamics.lemma_4_1 <;> assumption
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinateMatrix
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MolecularDynamics.textbookConstrainedMomentum
+```lean
+noncomputable def textbookConstrainedMomentum {Nc : ℕ} {E : Type*}
+    (γ : (Fin Nc → ℝ) → ℝ) (μ : E → ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E) : Fin Nc → ℝ :=
+  p x - μ x • textbookConstraintGradient γ (q x)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.textbookCotangentChart
+```lean
+def textbookCotangentChart {Nc : ℕ} {E : Type*}
+    (q p : E → Fin Nc → ℝ) (x : E) : SymplecticCoordinates Nc :=
+  Sum.elim (q x) (p x)
+```
+### 实际依赖 MolecularDynamics.textbookJ
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### 实际依赖 MolecularDynamics.textbookSymplecticForm
+```lean
+noncomputable def textbookSymplecticForm (Nc : ℕ) :
+    LinearMap.BilinForm ℝ (SymplecticCoordinates Nc) :=
+  (textbookJ Nc).toBilin'
+```

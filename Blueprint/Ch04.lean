@@ -1230,7 +1230,8 @@ theorem multiMomentumPullback {Nc : ℕ} {E ι : Type*}
   apply MolecularDynamics.textbookMultiConstrainedMomentum_preserves_pullback <;> assumption
 
 /-- source_id: MD-4.3.4-ProjectedEulerPullback · unnumbered_claim · §4.3.4 · 印刷p.160 / PDFp.182
-[EXTRA] 真实势力、C²势与约束、可微乘子/参数图，前后位置约束；力kick系数a任意实数覆盖符号两版；不是求解分支存在证明。 -/
+[EXTRA] 真实势力、C²势与约束、可微乘子/参数图，前后位置约束；力kick系数a任意实数覆盖符号两版；不是求解分支存在证明。 
+[EXTRA] 原总拉回等式已有证明保留；同条补Q/Pbar与q/Pbar、q/Pbar与q/p的两条实际微分二形式中间等式，逐句覆盖原证明链。 -/
 theorem projectedEulerPullback {Nc : ℕ} {E ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
     (s : Finset ι) (γ : ι → (Fin Nc → ℝ) → ℝ) (lam μ : ι → E → ℝ)
@@ -1250,17 +1251,59 @@ theorem projectedEulerPullback {Nc : ℕ} {E ι : Type*}
         (fderiv ℝ (textbookCotangentChart q p) x v) := by
   apply MolecularDynamics.textbookProjectedEulerChart_preserves_pullback <;> assumption
 
+theorem projectedEulerPullback_intermediate {Nc : ℕ} {E ι : Type*}
+    [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (s : Finset ι) (γ : ι → (Fin Nc → ℝ) → ℝ) (lam μ : ι → E → ℝ)
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h a : ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : DifferentiableAt ℝ q x) (hp : DifferentiableAt ℝ p x)
+    (hU : ContDiff ℝ 2 U) (hγ : ∀ j ∈ s, ContDiff ℝ 2 (γ j))
+    (hlam : ∀ j ∈ s, DifferentiableAt ℝ (lam j) x)
+    (hμ : ∀ j ∈ s, DifferentiableAt ℝ (μ j) x)
+    (hold : ∀ j ∈ s, ∀ᶠ y in 𝓝 x, γ j (q y) = 0)
+    (hnew : ∀ j ∈ s, ∀ᶠ y in 𝓝 x, γ j
+      (textbookProjectedEulerPosition m h q (textbookProjectedEulerPreMomentum s γ lam U h a q p) y) = 0)
+    (u v : E) :
+    let Pbar := textbookProjectedEulerPreMomentum s γ lam U h a q p
+    let Q := textbookProjectedEulerPosition m h q Pbar
+    (textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart Q Pbar) x u) (fderiv ℝ (textbookCotangentChart Q Pbar) x v) = textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q Pbar) x u) (fderiv ℝ (textbookCotangentChart q Pbar) x v)) ∧
+    (textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q Pbar) x u) (fderiv ℝ (textbookCotangentChart q Pbar) x v) = textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u) (fderiv ℝ (textbookCotangentChart q p) x v)) ∧
+    textbookSymplecticForm Nc (fderiv ℝ (textbookProjectedEulerChart s γ lam μ m U h a q p) x u)
+      (fderiv ℝ (textbookProjectedEulerChart s γ lam μ m U h a q p) x v) =
+      textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+        (fderiv ℝ (textbookCotangentChart q p) x v) := by
+  sorry
+
 /-- source_id: MD-4.3.4-CotangentMultiplier · definition · §4.3.4 · 印刷p.159 / PDFp.181
-[EXTRA] [EXTRA]将(4.23–24)在Gram非奇异资格下解出实际μ=(GM⁻¹Gᵀ)⁻¹GM⁻¹p；正文未另印此显式式。 -/
+[EXTRA] [EXTRA]将(4.23–24)在Gram非奇异资格下解出实际μ=(GM⁻¹Gᵀ)⁻¹GM⁻¹p；正文未另印此显式式。 
+[EXTRA] Gram构造限定det≠0，并补Aμ=GDp及真实投影隐藏约束；这是(4.23–24)推导的受限构造，不用值函数替代方程。 -/
 noncomputable def cotangentMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
-    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ)
+    (_hdet : (textbookConstraintGram m γ q).det ≠ 0) : Fin Mc → ℝ :=
   (textbookConstraintGram m γ q)⁻¹ *ᵥ
     (textbookConstraintJacobian γ q *ᵥ (textbookInverseMassMatrix m *ᵥ p))
 
+theorem cotangentMultiplier_hidden {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q p : MolecularDynamics.Chapter04Review.Q n)
+    (_hdet : (textbookConstraintGram m g q).det ≠ 0) :
+    let μ := textbookCotangentMultiplier m g q p
+    (textbookConstraintGram m g q) *ᵥ μ=
+      textbookConstraintJacobian g q *ᵥ (textbookInverseMassMatrix m *ᵥ p) ∧
+    textbookConstraintJacobian g q *ᵥ (textbookInverseMassMatrix m *ᵥ
+      (p-(textbookConstraintJacobian g q)ᵀ *ᵥ μ))=0 := by
+  sorry
+
 /-- source_id: MD-4.3.4-CotangentProjection · definition · §4.3.4 · 印刷p.159 / PDFp.181
-[EXTRA] [EXTRA]采用实际Gram逆乘子；非奇异Gram是方法资格，另条证明隐藏约束。 -/
-noncomputable def cotangentProjection {Nc Mc : ℕ} (m : Fin Nc → ℝ)
-    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Nc → ℝ :=
+[EXTRA] [EXTRA]采用实际Gram逆乘子；非奇异Gram是方法资格，另条证明隐藏约束。 
+[EXTRA] 主声明忠实为任意μ的印刷投影等式；Gram专项实现独立命名且加可逆资格，隐藏约束由CotangentMultiplier补全，不暗中求解任意原式乘子。 -/
+def cotangentProjection {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p P : Fin Nc → ℝ) (μ : Fin Mc → ℝ) : Prop :=
+  P=p-(textbookConstraintJacobian γ q)ᵀ *ᵥ μ
+
+noncomputable def cotangentProjection_gram {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ)
+    (_hdet : (textbookConstraintGram m γ q).det ≠ 0) : Fin Nc → ℝ :=
   p - (textbookConstraintJacobian γ q)ᵀ *ᵥ textbookCotangentMultiplier m γ q p
 
 /-- source_id: MD-4.3.4-CotangentHidden · unnumbered_claim · §4.3.4 · 印刷p.159 / PDFp.181
@@ -1274,7 +1317,8 @@ theorem cotangentHidden {Nc Mc : ℕ}
   apply MolecularDynamics.textbookCotangentProjection_hiddenConstraint_of_mass_and_independence <;> assumption
 
 /-- source_id: MD-4.3.4-CotangentRegularity · unnumbered_claim · §4.3.4 · 印刷p.160 / PDFp.182
-[EXTRA] [EXTRA]实际逆Gram投影的一阶正则性资格：C²约束、C¹参数图、Gram非奇异；非另印定理。 -/
+[EXTRA] [EXTRA]实际逆Gram投影的一阶正则性资格：C²约束、C¹参数图、Gram非奇异；非另印定理。 
+[EXTRA] 本条显式仅为专项投影C¹正则性辅助；所引完整限制二形式等式已由MD-4.3.4-CotangentPullback承担并含真实邻域位置约束，不重复冒充同一结论。 -/
 theorem cotangentRegularity {Nc Mc : ℕ} (m : Fin Nc → ℝ)
     (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : E → Fin Nc → ℝ) (x : E)
     (hγ : ∀ j, ContDiff ℝ 2 (γ j)) (hq : ContDiffAt ℝ 1 q x)
@@ -1299,8 +1343,33 @@ theorem cotangentPullback {Nc Mc : ℕ} (m : Fin Nc → ℝ)
   apply MolecularDynamics.textbookCotangentProjection_preserves_pullback <;> assumption
 
 /-- source_id: MD-4.3.4-GramProjectedEuler · unnumbered_claim · §4.3.4 · 印刷p.160 / PDFp.182
-[EXTRA] [EXTRA]将(4.20–24)实际Gram末投影同时证明隐藏约束与完整拉回形式不变；给定C¹位置投影分支，非解的存在理论。 -/
+[EXTRA] [EXTRA]将(4.20–24)实际Gram末投影同时证明隐藏约束与完整拉回形式不变；给定C¹位置投影分支，非解的存在理论。 
+[EXTRA] 教材包装全部固定a=−h，对应原印−hF的特殊参数；任意a几何推广作为独立辅助保留，原已证apply仅参数实例化。未把a=h物理修订暗作原印；不声称隐式分支存在或全局微分同胚。 -/
 theorem gramProjectedEuler {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (lam : Fin Mc → E → ℝ)
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : ContDiffAt ℝ 1 q x) (hp : ContDiffAt ℝ 1 p x)
+    (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 2 (γ j))
+    (hlam : ∀ j, ContDiffAt ℝ 1 (lam j) x)
+    (hold : ∀ j, ∀ᶠ y in 𝓝 x, γ j (q y) = 0)
+    (hnew : ∀ j, ∀ᶠ y in 𝓝 x, γ j
+      (textbookProjectedEulerPosition m h q
+        (textbookProjectedEulerPreMomentum Finset.univ γ lam U h (-h) q p) y) = 0)
+    (hdet : (textbookConstraintGram m γ (textbookProjectedEulerPosition m h q
+      (textbookProjectedEulerPreMomentum Finset.univ γ lam U h (-h) q p) x)).det ≠ 0)
+    (u v : E) :
+    (∀ j, (fderiv ℝ (γ j) (fun i => textbookGramProjectedEulerChart γ lam m U h (-h) q p x (Sum.inl i)))
+        (textbookInverseMassMatrix m *ᵥ
+          (fun i => textbookGramProjectedEulerChart γ lam m U h (-h) q p x (Sum.inr i))) = 0) ∧
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookGramProjectedEulerChart γ lam m U h (-h) q p) x u)
+      (fderiv ℝ (textbookGramProjectedEulerChart γ lam m U h (-h) q p) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v) := by
+  apply MolecularDynamics.textbookGramProjectedEulerChart_hiddenConstraint_and_pullback <;> assumption
+
+theorem gramProjectedEuler_general {Nc Mc : ℕ}
     (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (lam : Fin Mc → E → ℝ)
     (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h a : ℝ)
     (q p : E → Fin Nc → ℝ) (x : E)
@@ -2338,12 +2407,16 @@ end MD.Ch04
 #print axioms MD.Ch04.lemma41
 #print axioms MD.Ch04.multiMomentumPullback
 #print axioms MD.Ch04.projectedEulerPullback
+#print axioms MD.Ch04.projectedEulerPullback_intermediate
 #print axioms MD.Ch04.cotangentMultiplier
+#print axioms MD.Ch04.cotangentMultiplier_hidden
 #print axioms MD.Ch04.cotangentProjection
+#print axioms MD.Ch04.cotangentProjection_gram
 #print axioms MD.Ch04.cotangentHidden
 #print axioms MD.Ch04.cotangentRegularity
 #print axioms MD.Ch04.cotangentPullback
 #print axioms MD.Ch04.gramProjectedEuler
+#print axioms MD.Ch04.gramProjectedEuler_general
 #print axioms MD.Ch04.shakePositionPrinted
 #print axioms MD.Ch04.shakePositionRelation
 #print axioms MD.Ch04.shakeRelation

@@ -2817,9 +2817,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.projectedEulerRelation",
@@ -2844,15 +2844,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT13/axioms.log"
     },
     "MD-4.3.4-Lemma41": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch04.lemma41",
@@ -2879,7 +2879,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT13/axioms.log"
     },
     "MD-4.3.4-MultiMomentumPullback": {
       "checked": true,
@@ -2920,17 +2920,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.projectedEulerPullback",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "26400bfff26f455edaa0334851261590966269faa824e192af8d562cd0039375",
-      "block_sha256": "c85d9e90ed87d2ea97f9d53ee35173f8e3d48347ff7e63703b4093db054393c2",
-      "direct_placeholder": false,
+      "block_sha256": "002ebe19e42c5bdead6bc34aa0660f0dc8664567569477afc6db440c48ac7e53",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.textbookProjectedEulerChart_preserves_pullback"
@@ -2949,23 +2950,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT13/axioms.log"
     },
     "MD-4.3.4-CotangentMultiplier": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.cotangentMultiplier",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "9681f67c87a1f051e52b3c502f18066806e7a49cf57bbff359da95e7da3ee21a",
-      "block_sha256": "9681f67c87a1f051e52b3c502f18066806e7a49cf57bbff359da95e7da3ee21a",
-      "direct_placeholder": false,
+      "signature_sha256": "3ed0edb4234783a10de64f48bb10edc4aad97482719279661f0d863d2bfa30fc",
+      "block_sha256": "3ed0edb4234783a10de64f48bb10edc4aad97482719279661f0d863d2bfa30fc",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -2982,22 +2984,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT13/axioms.log"
     },
     "MD-4.3.4-CotangentProjection": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.cotangentProjection",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "167884c62ad831ab7f181f6dccd07fbe2a7fbfe30a9140ce36449f1567eb7ba5",
-      "block_sha256": "167884c62ad831ab7f181f6dccd07fbe2a7fbfe30a9140ce36449f1567eb7ba5",
+      "signature_sha256": "8c5ae149eb33af7076d6b044ce640d7ecaa0f04b611d4f8355a044ccf78c41f3",
+      "block_sha256": "8c5ae149eb33af7076d6b044ce640d7ecaa0f04b611d4f8355a044ccf78c41f3",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -3015,7 +3017,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT13/axioms.log"
     },
     "MD-4.3.4-CotangentHidden": {
       "checked": true,
@@ -3056,9 +3058,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch04.cotangentRegularity",
@@ -3085,15 +3087,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT13/axioms.log"
     },
     "MD-4.3.4-CotangentPullback": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch04.cotangentPullback",
@@ -3120,22 +3122,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT13/axioms.log"
     },
     "MD-4.3.4-GramProjectedEuler": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch04.gramProjectedEuler",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "f386a6680c2cf557c39b33683006c5227044ece14eb2a98acdcf5e443a67c787",
-      "block_sha256": "90ced0def6680f1f917e3a40a09cdeb4a13c86736f74d2a51016264612232818",
+      "signature_sha256": "86dd36692d7077dc6d5980f05bc9b24b3865c95a3b3b630d622f32da017441ea",
+      "block_sha256": "9b67576f7e31984fa3b7cbb6125c128e206a202e77cfae7d5b06317c3ef33611",
       "direct_placeholder": false,
       "proof_status": "existing_bridge",
       "documented_priors": [
@@ -3155,7 +3157,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT13/axioms.log"
     },
     "MD-4.3.5-SHAKEPositionPrinted": {
       "checked": true,

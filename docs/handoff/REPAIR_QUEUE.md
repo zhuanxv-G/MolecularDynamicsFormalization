@@ -2,12 +2,12 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 277；章末验收待完成 [4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 267；章末验收待完成 [4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 57 / 已修待复审 72 / 待导师 20 / 修复中 0。
-第4章：网站PASS 71 / 已修待复审 51 / 待导师 14 / 修复中 43。
+第4章：网站PASS 69 / 已修待复审 58 / 待导师 15 / 修复中 37。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
@@ -401,16 +401,16 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 4 | MD-4.3.3-ComponentConstraintStep | FAIL | A | 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。 | 已修待复审 | EAUDIT12 |
 | 4 | MD-4.3.3-ComponentSweep | FAIL | B | 保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。 | 已修待复审 | EAUDIT12 |
 | 4 | MD-4.3.4-ProjectedEulerPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3.4-ProjectedEulerRelation | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
-| 4 | MD-4.3.4-Lemma41 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
+| 4 | MD-4.3.4-ProjectedEulerRelation | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT13 |
+| 4 | MD-4.3.4-Lemma41 | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT13 |
 | 4 | MD-4.3.4-MultiMomentumPullback | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3.4-ProjectedEulerPullback | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
-| 4 | MD-4.3.4-CotangentMultiplier | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
-| 4 | MD-4.3.4-CotangentProjection | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |
+| 4 | MD-4.3.4-ProjectedEulerPullback | FAIL | B | 原总拉回等式已有证明保留；同条补Q/Pbar与q/Pbar、q/Pbar与q/p的两条实际微分二形式中间等式，逐句覆盖原证明链。 | 已修待复审 | EAUDIT13 |
+| 4 | MD-4.3.4-CotangentMultiplier | FAIL | A | Gram构造限定det≠0，并补Aμ=GDp及真实投影隐藏约束；这是(4.23–24)推导的受限构造，不用值函数替代方程。 | 已修待复审 | EAUDIT13 |
+| 4 | MD-4.3.4-CotangentProjection | FAIL | A | 主声明忠实为任意μ的印刷投影等式；Gram专项实现独立命名且加可逆资格，隐藏约束由CotangentMultiplier补全，不暗中求解任意原式乘子。 | 已修待复审 | EAUDIT13 |
 | 4 | MD-4.3.4-CotangentHidden | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3.4-CotangentRegularity | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.3.4-CotangentPullback | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.3.4-GramProjectedEuler | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 4 | MD-4.3.4-CotangentRegularity | FAIL | B | 本条显式仅为专项投影C¹正则性辅助；所引完整限制二形式等式已由MD-4.3.4-CotangentPullback承担并含真实邻域位置约束，不重复冒充同一结论。 | 已修待复审 | EAUDIT13 |
+| 4 | MD-4.3.4-CotangentPullback | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT13 |
+| 4 | MD-4.3.4-GramProjectedEuler | FAIL | C | 教材包装全部固定a=−h，对应原印−hF的特殊参数；任意a几何推广作为独立辅助保留，原已证apply仅参数实例化。未把a=h物理修订暗作原印；不声称隐式分支存在或全局微分同胚。 | 已修待复审 | EAUDIT13 |
 | 4 | MD-4.3.5-SHAKEPositionPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.5-SHAKEPositionMass | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
 | 4 | MD-4.3.5-SHAKEPhase | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |

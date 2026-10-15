@@ -1,0 +1,41 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT13",
+  "section": "4.3.4",
+  "source_ids": [
+    "MD-4.3.4-CotangentMultiplier",
+    "MD-4.3.4-CotangentProjection",
+    "MD-4.3.4-CotangentPullback",
+    "MD-4.3.4-CotangentRegularity",
+    "MD-4.3.4-GramProjectedEuler",
+    "MD-4.3.4-Lemma41",
+    "MD-4.3.4-ProjectedEulerPullback",
+    "MD-4.3.4-ProjectedEulerRelation"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.4-Lemma41",
+    "MD-4.3.4-ProjectedEulerPullback",
+    "MD-4.3.4-CotangentMultiplier",
+    "MD-4.3.4-CotangentProjection",
+    "MD-4.3.4-CotangentRegularity",
+    "MD-4.3.4-CotangentPullback",
+    "MD-4.3.4-GramProjectedEuler"
+  ],
+  "human_ids": [
+    "MD-4.3.4-ProjectedEulerRelation"
+  ],
+  "old_lean_sha256": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+  "lean_sha256": "7f91bbd1c2ebf978f3587bdc858c181dfbeef7d79d7dfa9a231a1525682a2f2e",
+  "source_sha256": "495105333c1e1544f0338200e4fd6ea826ac3f29c5f612749b5cf2d5a8a40a54",
+  "pages": [
+    181,
+    182
+  ],
+  "prior_proof_blocks": {
+    "MD-4.3.4-ProjectedEulerPullback": "theorem projectedEulerPullback {Nc : ℕ} {E ι : Type*}\n    [NormedAddCommGroup E] [NormedSpace ℝ E]\n    (s : Finset ι) (γ : ι → (Fin Nc → ℝ) → ℝ) (lam μ : ι → E → ℝ)\n    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h a : ℝ)\n    (q p : E → Fin Nc → ℝ) (x : E)\n    (hq : DifferentiableAt ℝ q x) (hp : DifferentiableAt ℝ p x)\n    (hU : ContDiff ℝ 2 U) (hγ : ∀ j ∈ s, ContDiff ℝ 2 (γ j))\n    (hlam : ∀ j ∈ s, DifferentiableAt ℝ (lam j) x)\n    (hμ : ∀ j ∈ s, DifferentiableAt ℝ (μ j) x)\n    (hold : ∀ j ∈ s, ∀ᶠ y in 𝓝 x, γ j (q y) = 0)\n    (hnew : ∀ j ∈ s, ∀ᶠ y in 𝓝 x, γ j\n      (textbookProjectedEulerPosition m h q (textbookProjectedEulerPreMomentum s γ lam U h a q p) y) = 0)\n    (u v : E) :\n    textbookSymplecticForm Nc (fderiv ℝ (textbookProjectedEulerChart s γ lam μ m U h a q p) x u)\n      (fderiv ℝ (textbookProjectedEulerChart s γ lam μ m U h a q p) x v) =\n      textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)\n        (fderiv ℝ (textbookCotangentChart q p) x v) := by\n  apply MolecularDynamics.textbookProjectedEulerChart_preserves_pullback <;> assumption",
+    "MD-4.3.4-CotangentMultiplier": "noncomputable def cotangentMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)\n    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=\n  (textbookConstraintGram m γ q)⁻¹ *ᵥ\n    (textbookConstraintJacobian γ q *ᵥ (textbookInverseMassMatrix m *ᵥ p))",
+    "MD-4.3.4-CotangentProjection": "noncomputable def cotangentProjection {Nc Mc : ℕ} (m : Fin Nc → ℝ)\n    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Nc → ℝ :=\n  p - (textbookConstraintJacobian γ q)ᵀ *ᵥ textbookCotangentMultiplier m γ q p",
+    "MD-4.3.4-CotangentRegularity": "theorem cotangentRegularity {Nc Mc : ℕ} (m : Fin Nc → ℝ)\n    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : E → Fin Nc → ℝ) (x : E)\n    (hγ : ∀ j, ContDiff ℝ 2 (γ j)) (hq : ContDiffAt ℝ 1 q x)\n    (hp : ContDiffAt ℝ 1 p x) (hdet : (textbookConstraintGram m γ (q x)).det ≠ 0) :\n    ContDiffAt ℝ 1 (fun y => textbookCotangentProjection m γ (q y) (p y)) x := by\n  apply MolecularDynamics.contDiffAt_textbookCotangentProjection <;> assumption",
+    "MD-4.3.4-GramProjectedEuler": "theorem gramProjectedEuler {Nc Mc : ℕ}\n    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (lam : Fin Mc → E → ℝ)\n    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h a : ℝ)\n    (q p : E → Fin Nc → ℝ) (x : E)\n    (hq : ContDiffAt ℝ 1 q x) (hp : ContDiffAt ℝ 1 p x)\n    (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 2 (γ j))\n    (hlam : ∀ j, ContDiffAt ℝ 1 (lam j) x)\n    (hold : ∀ j, ∀ᶠ y in 𝓝 x, γ j (q y) = 0)\n    (hnew : ∀ j, ∀ᶠ y in 𝓝 x, γ j\n      (textbookProjectedEulerPosition m h q\n        (textbookProjectedEulerPreMomentum Finset.univ γ lam U h a q p) y) = 0)\n    (hdet : (textbookConstraintGram m γ (textbookProjectedEulerPosition m h q\n      (textbookProjectedEulerPreMomentum Finset.univ γ lam U h a q p) x)).det ≠ 0)\n    (u v : E) :\n    (∀ j, (fderiv ℝ (γ j) (fun i => textbookGramProjectedEulerChart γ lam m U h a q p x (Sum.inl i)))\n        (textbookInverseMassMatrix m *ᵥ\n          (fun i => textbookGramProjectedEulerChart γ lam m U h a q p x (Sum.inr i))) = 0) ∧\n    textbookSymplecticForm Nc\n      (fderiv ℝ (textbookGramProjectedEulerChart γ lam m U h a q p) x u)\n      (fderiv ℝ (textbookGramProjectedEulerChart γ lam m U h a q p) x v) =\n    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)\n      (fderiv ℝ (textbookCotangentChart q p) x v) := by\n  apply MolecularDynamics.textbookGramProjectedEulerChart_hiddenConstraint_and_pullback <;> assumption"
+  }
+}
