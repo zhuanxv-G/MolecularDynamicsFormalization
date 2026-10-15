@@ -1,0 +1,50 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_id": "MD-4.3-ConstraintSet",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "ac61b84bd0cd5ef0e10cee4fae59ddca9bf5daa04bb619b491481b4d068a3c98",
+    "Blueprint/Ch04.lean": "e2a855e7e22395f80f89b7b8ce050018bb830dec82ff369d22d18bd8e140a378",
+    "blueprint/ch04/ch04_source.json": "c1a79aa02fd2954c4f3328aa1db35725429e2833aa097811a7ac6376d2edcbec",
+    "EAUDIT07c_materials": "e77c93c6452423891622985682874b8b5a44bff009c93ac9b7d4b6ed55120c55",
+    "EAUDIT07c_PAGES.pdf": "6d490b60f01847300301eed5d8fc4885fce920d3b5a2efed58ae25cd0a361033"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    174
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a6e92577c019384e9209977b6a60295649885715b92ff22bc4f0578c7f41dc02",
+  "source_block_sha256": "9ff94d728c5db6e85f84c7f2641007bb95746bd62a22bcd13b098f3434c11d15",
+  "source_declarations": [
+    "constraintSet",
+    "constraintSet_regularLevel"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "constraintSet",
+      "file_sha256": "e2a855e7e22395f80f89b7b8ce050018bb830dec82ff369d22d18bd8e140a378",
+      "excerpt_sha256": "cdf79d75391f33efa0755e8d854ddd746cd6dd405774d165dbeceec30e6680ef"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT07_review.json",
+  "total_task_bytes": 98192
+}

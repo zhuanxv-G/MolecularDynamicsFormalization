@@ -1,0 +1,59 @@
+{
+  "eaudit": "EAUDIT07",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "ac61b84bd0cd5ef0e10cee4fae59ddca9bf5daa04bb619b491481b4d068a3c98",
+    "Blueprint/Ch04.lean": "e2a855e7e22395f80f89b7b8ce050018bb830dec82ff369d22d18bd8e140a378",
+    "blueprint/ch04/ch04_source.json": "c1a79aa02fd2954c4f3328aa1db35725429e2833aa097811a7ac6376d2edcbec"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT07a",
+      "source_id": "MD-4.3-HolonomicRelation",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT07/a",
+      "total_bytes": 79957,
+      "manifest_sha256": "9989860d0e67cf54daf43efc45056ca1cf31aa20376d96d62e0fcd6b43e23c0e"
+    },
+    {
+      "subtask": "EAUDIT07b",
+      "source_id": "MD-4.3-ConstrainedSolution",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT07/b",
+      "total_bytes": 105306,
+      "manifest_sha256": "79b4459cf1e2afcf85496de19a5d748212d83ac63ee07ae3600812d8125950e9"
+    },
+    {
+      "subtask": "EAUDIT07c",
+      "source_id": "MD-4.3-ConstraintSet",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT07/c",
+      "total_bytes": 98192,
+      "manifest_sha256": "dccddcfcbdf1934bed858a744c740d2e6ee296a4e3f2a9312d8a70cde477a419"
+    },
+    {
+      "subtask": "EAUDIT07d",
+      "source_id": "MD-4.3-ConstraintJacobian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT07/d",
+      "total_bytes": 98743,
+      "manifest_sha256": "84b92f42c2867b11097421abf9359844d94c8a311dd811078ffc3684f210f41a"
+    },
+    {
+      "subtask": "EAUDIT07e",
+      "source_id": "MD-4.3-JacobianActualDerivative",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT07/e",
+      "total_bytes": 100504,
+      "manifest_sha256": "887952199faed652928a819805551f77603210826b1df9ba59da5eb6f45a2b3f"
+    },
+    {
+      "subtask": "EAUDIT07f",
+      "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT07/f",
+      "total_bytes": 79314,
+      "manifest_sha256": "4708aafaf4999d26d71efc13e6727eecb6b9df546bffffcacfc46badcf635b0c"
+    },
+    {
+      "subtask": "EAUDIT07g",
+      "source_id": "MD-4.3-ConstrainedPendulum",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT07/g",
+      "total_bytes": 131744,
+      "manifest_sha256": "30c12a2027c87eb4dc53a867b7ed725bf1db4c36679f3357d8f010adcd0269a1"
+    }
+  ]
+}

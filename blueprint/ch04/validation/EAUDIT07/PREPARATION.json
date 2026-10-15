@@ -1,0 +1,44 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT07",
+  "section": "4.3",
+  "source_ids": [
+    "MD-4.3-ConstrainedPendulum",
+    "MD-4.3-ConstrainedSolution",
+    "MD-4.3-ConstraintJacobian",
+    "MD-4.3-ConstraintSet",
+    "MD-4.3-FlexiblePendulumHamiltonian",
+    "MD-4.3-HolonomicRelation",
+    "MD-4.3-JacobianActualDerivative",
+    "MD-4.3-RestraintForcePrinted"
+  ],
+  "reaudit_ids": [
+    "MD-4.3-HolonomicRelation",
+    "MD-4.3-ConstrainedSolution",
+    "MD-4.3-ConstraintSet",
+    "MD-4.3-ConstraintJacobian",
+    "MD-4.3-JacobianActualDerivative",
+    "MD-4.3-FlexiblePendulumHamiltonian",
+    "MD-4.3-ConstrainedPendulum"
+  ],
+  "human_ids": [
+    "MD-4.3-RestraintForcePrinted"
+  ],
+  "old_lean_sha256": "0591e70d7679f9f9348deab6e2db50520be58529af0697fbcfb53281a57c491f",
+  "lean_sha256": "e2a855e7e22395f80f89b7b8ce050018bb830dec82ff369d22d18bd8e140a378",
+  "source_sha256": "c1a79aa02fd2954c4f3328aa1db35725429e2833aa097811a7ac6376d2edcbec",
+  "pages": [
+    171,
+    172,
+    173,
+    174,
+    175
+  ],
+  "prior_proof_blocks": {
+    "MD-4.3-ConstrainedSolution": "def constrainedSolution {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) : Prop :=\n  ∀ t ∈ I, HasDerivWithinAt q (MolecularDynamics.Chapter04Review.invMass m (p t)) I t ∧\n    HasDerivWithinAt p (F (q t)-(textbookConstraintJacobian g (q t))ᵀ *ᵥ rho t) I t ∧\n    q t ∈ MolecularDynamics.Chapter04Review.constraintSet g",
+    "MD-4.3-ConstraintSet": "def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}",
+    "MD-4.3-ConstraintJacobian": "noncomputable def constraintJacobian {Nc Mc : ℕ}\n    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Matrix (Fin Mc) (Fin Nc) ℝ :=\n  fun j i => textbookConstraintGradient (γ j) q i",
+    "MD-4.3-JacobianActualDerivative": "theorem jacobianActualDerivative {Nc Mc : ℕ}\n    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)\n    (hγ : ∀ j, DifferentiableAt ℝ (γ j) q) :\n    textbookConstraintJacobian γ q =\n      LinearMap.toMatrix' (fderiv ℝ (fun y j => γ j y) q).toLinearMap := by\n  apply MolecularDynamics.textbookConstraintJacobian_eq_actualDerivative <;> assumption",
+    "MD-4.3-ConstrainedPendulum": "def constrainedPendulum (U : Position 3 → ℝ) (r₀ : ℝ)\n    (q v : ℝ → Position 3) (lam : ℝ → ℝ) (I : Set ℝ) : Prop :=\n  ∀ t ∈ I, HasDerivWithinAt q (v t) I t ∧\n    HasDerivWithinAt v (-gradient U (q t)-(lam t) • q t) I t ∧\n    ‖q t‖^2-r₀^2=0"
+  }
+}

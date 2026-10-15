@@ -1,0 +1,36 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT08",
+  "section": "4.3",
+  "source_ids": [
+    "MD-4.3-CotangentInvariant",
+    "MD-4.3-GramInvertible",
+    "MD-4.3-GramPositive",
+    "MD-4.3-ReactionBalance",
+    "MD-4.3-ReactionMultiplier",
+    "MD-4.3-ReducedFieldRegularity"
+  ],
+  "reaudit_ids": [
+    "MD-4.3-ReactionMultiplier",
+    "MD-4.3-ReactionBalance",
+    "MD-4.3-GramPositive",
+    "MD-4.3-GramInvertible",
+    "MD-4.3-CotangentInvariant",
+    "MD-4.3-ReducedFieldRegularity"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "e2a855e7e22395f80f89b7b8ce050018bb830dec82ff369d22d18bd8e140a378",
+  "lean_sha256": "18d582de7b054b4e1faf3597e19c3864842328f13159d500ed36d8609fc30e3c",
+  "source_sha256": "7cf0ad621a35d7fb6fe538a3eb1bb00db7bf5d00920030266239784da36edc06",
+  "pages": [
+    171,
+    172,
+    173,
+    174,
+    175
+  ],
+  "prior_proof_blocks": {
+    "MD-4.3-GramPositive": "theorem gramPositive {Nc Mc : ℕ} (m : Fin Nc → ℝ)\n    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)\n    (hm : ∀ i, 0 < m i)\n    (hind : LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) q)) :\n    (textbookConstraintGram m γ q).PosDef := by\n  apply MolecularDynamics.textbookConstraintGram_posDef <;> assumption",
+    "MD-4.3-GramInvertible": "theorem gramInvertible {Nc Mc : ℕ} (m : Fin Nc → ℝ)\n    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)\n    (hm : ∀ i, 0 < m i)\n    (hind : LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) q)) :\n    (textbookConstraintGram m γ q).det ≠ 0 := by\n  apply MolecularDynamics.textbookConstraintGram_det_ne_zero <;> assumption"
+  }
+}

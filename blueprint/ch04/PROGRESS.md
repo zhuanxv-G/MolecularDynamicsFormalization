@@ -49,25 +49,25 @@
 | MD-4.2.1-ResonanceLinearRate | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT05（原返回FAIL保留） | local_proof / self-contained |
 | MD-4.2.1-ResonanceGrowth | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | local_proof / self-contained |
 | MD-4.2.2-MollifiedStructure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；正式库无RESPA实际Jacobian辛性/反步定理；需实际链式法则与有限迭代复合桥接，保留sorry，不另建辛流理论。 |
-| MD-4.3-HolonomicRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.3-HolonomicRelation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
 | MD-4.3-TimeConstraintDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.3-ConstrainedSolution | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3-ConstraintSet | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.3-ConstrainedSolution | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
+| MD-4.3-ConstraintSet | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
 | MD-4.3-CotangentSet | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3-ConstraintJacobian | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3-JacobianActualDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | existing_bridge / checked+documented priors |
+| MD-4.3-ConstraintJacobian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
+| MD-4.3-JacobianActualDerivative | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | existing_bridge / checked+documented priors |
 | MD-4.3-ConstraintDegrees | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.3-FlexiblePendulumHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.3-FlexiblePendulumHamiltonian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
 | MD-4.3-RestraintPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3-RestraintForcePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；本地非PASS，等待记号及负号裁定。 |
-| MD-4.3-ConstrainedPendulum | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.3-RestraintForcePrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT07（原返回FAIL保留） | placeholder / incomplete；本地非PASS，等待记号及负号裁定。 |
+| MD-4.3-ConstrainedPendulum | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
 | MD-4.3-ConstraintCurvature | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3-ReactionMultiplier | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3-ReactionBalance | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | existing_bridge / checked+documented priors |
-| MD-4.3-GramPositive | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | existing_bridge / checked+documented priors |
-| MD-4.3-GramInvertible | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | existing_bridge / checked+documented priors |
-| MD-4.3-CotangentInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | existing_bridge / checked+documented priors |
-| MD-4.3-ReducedFieldRegularity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | existing_bridge / checked+documented priors |
+| MD-4.3-ReactionMultiplier | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | definition / self-contained |
+| MD-4.3-ReactionBalance | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
+| MD-4.3-GramPositive | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
+| MD-4.3-GramInvertible | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
+| MD-4.3-CotangentInvariant | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
+| MD-4.3-ReducedFieldRegularity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
 | MD-4.3.1-RestrictedForm | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.3.1-VariationalFormula | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；待实际梯度、Jacobian乘子有限和的Fréchet链式/乘积展开；未建完整场到流变分理论。 |
 | MD-4.3.1-HessianPullbackCancel | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | existing_bridge / checked+documented priors |
@@ -360,3 +360,7 @@ EAUDIT04 §4.2.1：8条落盘，单文件与10项公理通过；未写新证明�
 EAUDIT05 §4.2.1：5条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT06 §4.2.2：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT07 §4.3：8条落盘，单文件与12项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT08 §4.3：6条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。

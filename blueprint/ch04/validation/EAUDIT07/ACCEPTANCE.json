@@ -1,0 +1,55 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT07",
+  "section": "4.3",
+  "source_ids": [
+    "MD-4.3-ConstrainedPendulum",
+    "MD-4.3-ConstrainedSolution",
+    "MD-4.3-ConstraintJacobian",
+    "MD-4.3-ConstraintSet",
+    "MD-4.3-FlexiblePendulumHamiltonian",
+    "MD-4.3-HolonomicRelation",
+    "MD-4.3-JacobianActualDerivative",
+    "MD-4.3-RestraintForcePrinted"
+  ],
+  "reaudit_ids": [
+    "MD-4.3-HolonomicRelation",
+    "MD-4.3-ConstrainedSolution",
+    "MD-4.3-ConstraintSet",
+    "MD-4.3-ConstraintJacobian",
+    "MD-4.3-JacobianActualDerivative",
+    "MD-4.3-FlexiblePendulumHamiltonian",
+    "MD-4.3-ConstrainedPendulum"
+  ],
+  "human_ids": [
+    "MD-4.3-RestraintForcePrinted"
+  ],
+  "lean_sha256": "e2a855e7e22395f80f89b7b8ce050018bb830dec82ff369d22d18bd8e140a378",
+  "source_sha256": "c1a79aa02fd2954c4f3328aa1db35725429e2833aa097811a7ac6376d2edcbec",
+  "pages": [
+    171,
+    172,
+    173,
+    174,
+    175
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "e2a855e7e22395f80f89b7b8ce050018bb830dec82ff369d22d18bd8e140a378",
+    "log_sha256": "be754358d2f3f928f0a993fa10f88e53997ce9846d4f4255c6e935a9fb018375"
+  },
+  "axiom_decl_count": 12,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT07/INDEX.md"
+}

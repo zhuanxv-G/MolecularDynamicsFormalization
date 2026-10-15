@@ -174,15 +174,15 @@ theorem gramInvertible_multiplier (n l : ℕ) (m : Fin n → ℝ)
     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q F : MolecularDynamics.Chapter04Review.Q n) (φ : MolecularDynamics.Chapter04Review.Q l)
     (_hdet : (textbookConstraintGram m g q).det ≠ 0) :
-    (∃! λ : MolecularDynamics.Chapter04Review.Q l,
+    (∃! lam : MolecularDynamics.Chapter04Review.Q l,
       textbookConstraintJacobian g q *ᵥ MolecularDynamics.Chapter04Review.invMass m
-        (F-(textbookConstraintJacobian g q)ᵀ *ᵥ λ)+φ=0) ∧
-    (∀ λ : MolecularDynamics.Chapter04Review.Q l,
+        (F-(textbookConstraintJacobian g q)ᵀ *ᵥ lam)+φ=0) ∧
+    (∀ lam : MolecularDynamics.Chapter04Review.Q l,
       (textbookConstraintJacobian g q *ᵥ MolecularDynamics.Chapter04Review.invMass m
-        (F-(textbookConstraintJacobian g q)ᵀ *ᵥ λ)+φ=0) ↔
-      λ=(textbookConstraintGram m g q)⁻¹ *ᵥ
+        (F-(textbookConstraintJacobian g q)ᵀ *ᵥ lam)+φ=0) ↔
+      lam=(textbookConstraintGram m g q)⁻¹ *ᵥ
         (textbookConstraintJacobian g q *ᵥ MolecularDynamics.Chapter04Review.invMass m F+φ)) := by
-  sorry''','B','保留原可逆性充分条件证明，补det≠0下反力乘子唯一可解及明确逆Gram公式；F和φ是给定线性方程数据，不把所求λ作假设。')
+  sorry''','B','保留原可逆性充分条件证明，补det≠0下反力乘子唯一可解及明确逆Gram公式；F和φ是给定线性方程数据，不把所求lam作假设。')
         pages=[171,172,173,174,175]
     elif section=='4.3.1':
         change('RestrictedForm',current('RestrictedForm')+'''
@@ -513,6 +513,53 @@ theorem geodesicRelation_massMetric (n l : ℕ) (m : Fin n → ℝ) (_hm : ∀ i
         pages=[185,186]
     elif section=='4.3.6':
         pages=[186,187]
+    elif section=='4.4':
+        scopes={
+          'RelativePositions':'仅q_i=q_cm+δ_i的相对位置定义；加权零和由MD-4.4-RelativeWeightedZero承担。',
+          'RotationKinetic':'仅旋转动能trace定义；粒子有限和及两式等价由MD-4.4-RotationTraceIdentity承担。',
+          'SkewMatrix':'仅三维skew坐标定义；反对称表示存在性由MD-4.4-SkewRepresentation，真实旋转导数的反对称性由MD-4.4-RotationSkew承担。',
+          'CrossProduct':'仅三维右手叉积坐标定义；原整条(4.39)的真实轨道导数由MD-4.4-RigidVelocity、全部代数等式由MD-4.4-CrossIdentityFull承担。',
+          'CrossMatrix':'仅skew(u)v=u×v首等式；原整条双等式由MD-4.4-CrossIdentityFull承担。',
+          'RigidVelocity':'仅真实旋转轨道的导数等于ω×δ；原段落全部代数等式由MD-4.4-CrossIdentityFull承担。',
+          'InertiaTensor':'仅T的欧氏有限和定义；skew平方关系由MD-4.4-InertiaSkewIdentity，质量旋转动能及ω_b关系由MD-4.4-RotationBodyEnergy承担。',
+          'RotationalEnergy':'仅体角速度ω_b的二次型能量定义；ω_b=Θᵀω及真实旋转粒子能量由MD-4.4-RotationBodyEnergy承担。',
+          'RotationTrajectory':'仅δ_i(t)=Θ(t)δ_i(0)的真实导数辅助；原段落旋转动能有限和及trace等价由MD-4.4-RotationTraceIdentity承担。'}
+        for k,scope in scopes.items():
+            code=current(k).replace('«ω»','ωb') if k=='RotationalEnergy' else current(k)
+            change(k,code,'B','保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；'+scope,scope=scope)
+        for k in ['InertiaTracePrinted','DipolarRotationalPrinted','RotationDerivativePrinted']:
+            human[sid(k)]='原印trace关系漏1/2、旋转动能另漏1/2或旋转导数末项误用dδ，不能作为真定理；选项：保留字面档案并批准独立修正版／仅存原印疑误。已有独立Corrected不当作原式证明，当前原声明保持。'
+        old=current('DipolarHamiltonian')
+        code=old.replace('(inertia : MolecularDynamics.Chapter04Review.V)',
+          '(inertia : MolecularDynamics.Chapter04Review.V) (_hm : ∀ i, 0 < mass i) (_hI : ∀ j, 0 < inertia j)',1)
+        code=code.replace('(q p μ π : Fin N → MolecularDynamics.Chapter04Review.V) :',
+          '(q p μ πbody : Fin N → MolecularDynamics.Chapter04Review.V)\n    (_hμ : ∀ i, MolecularDynamics.Chapter04Review.dot (μ i) (μ i)=1) :',1).replace('(π i j)','(πbody i j)')
+        change('DipolarHamiltonian',code,'A','真实物理接口补质量/主惯性正性和每个μ单位长度；πbody明确为体坐标角动量，数值公式不变。')
+        change('DipolarPairPotential',current('DipolarPairPotential')+'''
+
+def dipolarPairPotential_particles {N : ℕ} (lj : ℝ → ℝ)
+    (q μ : Fin N → MolecularDynamics.Chapter04Review.V) (i j : Fin N)
+    (_hij : i ≠ j) (_hnoncollision : q i ≠ q j) : ℝ :=
+  let r := q i-q j
+  dipolarPairPotential lj (Real.sqrt (MolecularDynamics.Chapter04Review.dot r r)) r (μ i) (μ j)
+
+def dipolarSystemPotential {N : ℕ} (lj : ℝ → ℝ)
+    (q μ : Fin N → MolecularDynamics.Chapter04Review.V)
+    (_hnoncollision : ∀ i j, i ≠ j → q i ≠ q j) : ℝ :=
+  ∑ i, ∑ j ∈ Finset.univ.filter (fun j ↦ i<j),
+    let r := q i-q j
+    dipolarPairPotential lj (Real.sqrt (MolecularDynamics.Chapter04Review.dot r r)) r (μ i) (μ j)''','B','保留代数核；新增实际非碰撞粒子对q_i−q_j、r_ij=√(r·r)实例和仅i<j的完整系统势能求和，避免任意r与q脱钩。')
+        code=current('RigidHamiltonian').replace('(M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3)',
+          '(M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (_hM : 0 < M) (_hR : R.det ≠ 0)',1)
+        code=code.replace('(Θ mom : MolecularDynamics.Chapter04Review.Mat3) :',
+          '(Θ mom : MolecularDynamics.Chapter04Review.Mat3) (_hΘ : Θᵀ*Θ=1) :',1)
+        change('RigidHamiltonian',code,'A','主接口增加M>0、R可逆及ΘᵀΘ=I的实际受约束域，公式不再将任意矩阵姿态当刚体状态。')
+        code=current('RigidMatrixRelation').replace('(M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3)',
+          '(M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (_hM : 0 < M) (_hR : R.det ≠ 0)',1)
+        code=code.replace('(I : Set ℝ) : Prop',
+          '(I : Set ℝ) (_hI : IsOpen I)\n    (_hU : Differentiable ℝ (fun z : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 ↦ U z.1 z.2)) : Prop',1)
+        change('RigidMatrixRelation',code,'A','增加开放时间域、势能联合经典可微、M>0及R可逆，使within导数等于真实时间导数，排除单点域伪运动；姿态正交约束仍逐t保留。')
+        pages=[189,190,191,192,193]
     else:raise ValueError(section)
     run_batches(section,edits,human,pages,refresh)
 

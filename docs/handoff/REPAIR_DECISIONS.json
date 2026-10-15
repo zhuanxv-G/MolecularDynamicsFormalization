@@ -1083,5 +1083,75 @@
     "category": "B",
     "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
     "section": "4.2.2"
+  },
+  "MD-4.3-ConstrainedSolution": {
+    "category": "A",
+    "handling": "教材主接口固定F=−∇U、正质量、经典可微U/g及开时间域上真实导数；任意位置力/within总化接口改名保留辅助，不冒充教材机械系统。",
+    "section": "4.3"
+  },
+  "MD-4.3-ConstraintSet": {
+    "category": "B",
+    "handling": "零点集合定义保留；补C∞及满秩的真实局部光滑坐标正规形，零点集对应l个坐标为零，即余维l嵌入流形资格；l≤n及正则性均标EXTRA，新结论暂sorry。",
+    "section": "4.3"
+  },
+  "MD-4.3-ConstraintJacobian": {
+    "category": "B",
+    "handling": "在同一source_id补原句真正的标量约束合并向量函数；Jacobian作为相邻(4.8)记号辅助保留，两对象明确。",
+    "section": "4.3"
+  },
+  "MD-4.3-JacobianActualDerivative": {
+    "category": "B",
+    "handling": "保留Jacobian实际导数桥接已有证明，补实际曲线、邻域约束恒零及ODE速度的求导结论，完整包含Gqdot=0与隐藏GMinvp=0。",
+    "section": "4.3"
+  },
+  "MD-4.3-ConstrainedPendulum": {
+    "category": "A",
+    "handling": "增加开时间域，保证within导数确为经典运动导数，排除单点域任意导数的伪运动。",
+    "section": "4.3"
+  },
+  "MD-4.3-HolonomicRelation": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.3"
+  },
+  "MD-4.3-FlexiblePendulumHamiltonian": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.3"
+  },
+  "MD-4.3-RestraintForcePrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.3"
+  },
+  "MD-4.3-GramPositive": {
+    "category": "B",
+    "handling": "仅为正质量/梯度独立推出正定的充分条件辅助；原句可解且唯一的完整乘子结论由MD-4.3-GramInvertible补全，原文不删。",
+    "section": "4.3"
+  },
+  "MD-4.3-GramInvertible": {
+    "category": "B",
+    "handling": "保留原可逆性充分条件证明，补det≠0下反力乘子唯一可解及明确逆Gram公式；F和φ是给定线性方程数据，不把所求λ作假设。",
+    "section": "4.3"
+  },
+  "MD-4.3-ReactionMultiplier": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.3"
+  },
+  "MD-4.3-ReactionBalance": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.3"
+  },
+  "MD-4.3-CotangentInvariant": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.3"
+  },
+  "MD-4.3-ReducedFieldRegularity": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.3"
   }
 }

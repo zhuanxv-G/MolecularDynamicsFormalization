@@ -1,0 +1,62 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_id": "MD-4.3-ConstraintJacobian",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "ac61b84bd0cd5ef0e10cee4fae59ddca9bf5daa04bb619b491481b4d068a3c98",
+    "Blueprint/Ch04.lean": "e2a855e7e22395f80f89b7b8ce050018bb830dec82ff369d22d18bd8e140a378",
+    "blueprint/ch04/ch04_source.json": "c1a79aa02fd2954c4f3328aa1db35725429e2833aa097811a7ac6376d2edcbec",
+    "EAUDIT07d_materials": "70b8e84a2b18042e9f7a34b7244714b99b29068392e42dc162ca21b2d5571c7b",
+    "EAUDIT07d_PAGES.pdf": "6d490b60f01847300301eed5d8fc4885fce920d3b5a2efed58ae25cd0a361033"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    174
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "9b13b9e63b7577919b4669eeea13e231a1e78f4b7a619ada47bd3f938018d69e",
+  "source_block_sha256": "f754d8d3a1bc25c01489dffa3e8f2165bdeb8b5091feb1a64f4c4ea115f83737",
+  "source_declarations": [
+    "constraintJacobian",
+    "combineConstraints"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "combineConstraints",
+      "file_sha256": "e2a855e7e22395f80f89b7b8ce050018bb830dec82ff369d22d18bd8e140a378",
+      "excerpt_sha256": "51e047bf90f36a9f8f2499c4794106c574d6a7692b2c47ae0759e604306f53a5"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "constraintJacobian",
+      "file_sha256": "e2a855e7e22395f80f89b7b8ce050018bb830dec82ff369d22d18bd8e140a378",
+      "excerpt_sha256": "70300cc03ae59d689d656751e6f5cb85d035bcbc3019a6ee1e8b8f1c8f655c75"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "name": "textbookConstraintGradient",
+      "file_sha256": "890274c6144406ad066b0a624cf08e3b95995c17b495545de8c3c05f260d4e44",
+      "excerpt_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT07_review.json",
+  "total_task_bytes": 98743
+}

@@ -680,35 +680,79 @@ theorem timeConstraintDerivative :
     (hasDerivAt_const t (0 : Fin l → ℝ)).congr_of_eventuallyEq hz
   exact hd.unique hzero
 
-/-- source_id: MD-4.3-ConstrainedSolution · (4.4)–(4.9) · §4.3 · 印刷p.152 / PDFp.174 -/
-def constrainedSolution {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+/-- source_id: MD-4.3-ConstrainedSolution · (4.4)–(4.9) · §4.3 · 印刷p.152 / PDFp.174 
+[EXTRA] 教材主接口固定F=−∇U、正质量、经典可微U/g及开时间域上真实导数；任意位置力/within总化接口改名保留辅助，不冒充教材机械系统。 -/
+def constrainedSolution {n l : ℕ} (m : Fin n → ℝ)
+    (_hm : ∀ i, 0 < m i) (U : MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (_hU : Differentiable ℝ U) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (_hg : ∀ j, Differentiable ℝ (g j))
+    (q p : ℝ → MolecularDynamics.Chapter04Review.Q n)
+    (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) (_hI : IsOpen I) : Prop :=
+  ∀ t ∈ I, HasDerivAt q (MolecularDynamics.Chapter04Review.invMass m (p t)) t ∧
+    HasDerivAt p (-MolecularDynamics.Chapter04Review.grad U (q t)-
+      (textbookConstraintJacobian g (q t))ᵀ *ᵥ rho t) t ∧
+    q t ∈ MolecularDynamics.Chapter04Review.constraintSet g
+
+def constrainedSolution_generalForce {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) : Prop :=
   ∀ t ∈ I, HasDerivWithinAt q (MolecularDynamics.Chapter04Review.invMass m (p t)) I t ∧
     HasDerivWithinAt p (F (q t)-(textbookConstraintJacobian g (q t))ᵀ *ᵥ rho t) I t ∧
     q t ∈ MolecularDynamics.Chapter04Review.constraintSet g
 
 /-- source_id: MD-4.3-ConstraintSet · definition · §4.3 · 印刷p.152 / PDFp.174
-[EXTRA] 定义仅集合；称为光滑流形需要独立梯度/正则值资格，未构造抽象流形。 -/
+[EXTRA] 定义仅集合；称为光滑流形需要独立梯度/正则值资格，未构造抽象流形。 
+[EXTRA] 零点集合定义保留；补C∞及满秩的真实局部光滑坐标正规形，零点集对应l个坐标为零，即余维l嵌入流形资格；l≤n及正则性均标EXTRA，新结论暂sorry。 -/
 def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}
+
+theorem constraintSet_regularLevel (n l : ℕ) (_hln : l ≤ n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (_hg : ∀ j, ContDiff ℝ ⊤ (g j))
+    (q : MolecularDynamics.Chapter04Review.Q n) (_hq : q ∈ constraintSet g)
+    (_hregular : Function.Surjective (fderiv ℝ (fun x j ↦ g j x) q)) :
+    ∃ A B : Set (MolecularDynamics.Chapter04Review.Q n), IsOpen A ∧ IsOpen B ∧ q ∈ A ∧ 0 ∈ B ∧
+      ∃ φ ψ : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n,
+        ContDiffOn ℝ ⊤ φ A ∧ ContDiffOn ℝ ⊤ ψ B ∧ φ q=0 ∧
+        MapsTo φ A B ∧ MapsTo ψ B A ∧
+        (∀ x ∈ A, ψ (φ x)=x) ∧ (∀ y ∈ B, φ (ψ y)=y) ∧
+        (∀ x ∈ A, x ∈ constraintSet g ↔ ∀ j : Fin l, φ x (Fin.castLE _hln j)=0) := by
+  sorry
 
 /-- source_id: MD-4.3-CotangentSet · definition · §4.3 · 印刷p.152 / PDFp.174
 [EXTRA] 正质量及独立梯度为几何解释资格。 -/
 def cotangentSet {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Z n) :=
   {z | z.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧ textbookConstraintJacobian g z.1 *ᵥ MolecularDynamics.Chapter04Review.invMass m z.2=0}
 
-/-- source_id: MD-4.3-ConstraintJacobian · definition · §4.3 · 印刷p.152 / PDFp.174 -/
+/-- source_id: MD-4.3-ConstraintJacobian · definition · §4.3 · 印刷p.152 / PDFp.174 
+[EXTRA] 在同一source_id补原句真正的标量约束合并向量函数；Jacobian作为相邻(4.8)记号辅助保留，两对象明确。 -/
 noncomputable def constraintJacobian {Nc Mc : ℕ}
     (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Matrix (Fin Mc) (Fin Nc) ℝ :=
   fun j i => textbookConstraintGradient (γ j) q i
 
+def combineConstraints {n l : ℕ}
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) :
+    MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q l :=
+  fun q j ↦ g j q
+
 /-- source_id: MD-4.3-JacobianActualDerivative · unnumbered_claim · §4.3 · 印刷p.152 / PDFp.174
-[EXTRA] [EXTRA]本条桥接真实向量Jacobian，不以它冒充完整曲线隐藏约束保持；实际曲线/ODE不变性另条保留。 -/
+[EXTRA] [EXTRA]本条桥接真实向量Jacobian，不以它冒充完整曲线隐藏约束保持；实际曲线/ODE不变性另条保留。 
+[EXTRA] 保留Jacobian实际导数桥接已有证明，补实际曲线、邻域约束恒零及ODE速度的求导结论，完整包含Gqdot=0与隐藏GMinvp=0。 -/
 theorem jacobianActualDerivative {Nc Mc : ℕ}
     (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)
     (hγ : ∀ j, DifferentiableAt ℝ (γ j) q) :
     textbookConstraintJacobian γ q =
       LinearMap.toMatrix' (fderiv ℝ (fun y j => γ j y) q).toLinearMap := by
   apply MolecularDynamics.textbookConstraintJacobian_eq_actualDerivative <;> assumption
+
+theorem jacobianActualDerivative_curve (n l : ℕ)
+    (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q : ℝ → MolecularDynamics.Chapter04Review.Q n)
+    (p v : MolecularDynamics.Chapter04Review.Q n) (t : ℝ)
+    (_hg : ∀ j, DifferentiableAt ℝ (g j) (q t)) (_hq : HasDerivAt q v t)
+    (_hv : v=MolecularDynamics.Chapter04Review.invMass m p)
+    (_hc : ∀ᶠ s in 𝓝 t, ∀ j, g j (q s)=0) :
+    textbookConstraintJacobian g (q t) *ᵥ v=0 ∧
+    textbookConstraintJacobian g (q t) *ᵥ MolecularDynamics.Chapter04Review.invMass m p=0 := by
+  sorry
 
 /-- source_id: MD-4.3-ConstraintDegrees · unnumbered_claim · §4.3 · 印刷p.151 / PDFp.173
 [EXTRA] [EXTRA]真实约束导数满射、当前点可微；独立正则约束下切空间是ker Dg，维数关系不作假设。 -/
@@ -740,9 +784,10 @@ theorem restraintForcePrinted :
   sorry
 
 /-- source_id: MD-4.3-ConstrainedPendulum · definition · §4.3 · 印刷p.151 / PDFp.173
-[EXTRA] 原所写v′方程按单位质量，λ吸收法向grad(‖q‖²)=2q的因子；真实欧氏曲线和导数。 -/
+[EXTRA] 原所写v′方程按单位质量，λ吸收法向grad(‖q‖²)=2q的因子；真实欧氏曲线和导数。 
+[EXTRA] 增加开时间域，保证within导数确为经典运动导数，排除单点域任意导数的伪运动。 -/
 def constrainedPendulum (U : Position 3 → ℝ) (r₀ : ℝ)
-    (q v : ℝ → Position 3) (lam : ℝ → ℝ) (I : Set ℝ) : Prop :=
+    (q v : ℝ → Position 3) (lam : ℝ → ℝ) (I : Set ℝ) (_hI : IsOpen I) : Prop :=
   ∀ t ∈ I, HasDerivWithinAt q (v t) I t ∧
     HasDerivWithinAt v (-gradient U (q t)-(lam t) • q t) I t ∧
     ‖q t‖^2-r₀^2=0
@@ -772,7 +817,8 @@ theorem reactionBalance {Nc Mc : ℕ} (m : Fin Nc → ℝ)
   apply MolecularDynamics.textbookConstrainedReaction_balance <;> assumption
 
 /-- source_id: MD-4.3-GramPositive · unnumbered_claim · §4.3 · 印刷p.153 / PDFp.175
-[EXTRA] [EXTRA]原假设的可检验充分条件：质量正且真实约束梯度线性独立；正定作为结论。 -/
+[EXTRA] [EXTRA]原假设的可检验充分条件：质量正且真实约束梯度线性独立；正定作为结论。 
+[EXTRA] 仅为正质量/梯度独立推出正定的充分条件辅助；原句可解且唯一的完整乘子结论由MD-4.3-GramInvertible补全，原文不删。 -/
 theorem gramPositive {Nc Mc : ℕ} (m : Fin Nc → ℝ)
     (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)
     (hm : ∀ i, 0 < m i)
@@ -781,13 +827,28 @@ theorem gramPositive {Nc Mc : ℕ} (m : Fin Nc → ℝ)
   apply MolecularDynamics.textbookConstraintGram_posDef <;> assumption
 
 /-- source_id: MD-4.3-GramInvertible · unnumbered_claim · §4.3 · 印刷p.153 / PDFp.175
-[EXTRA] [EXTRA]质量正及梯度独立推出真实Gram det≠0；不是将该结论作为前提。 -/
+[EXTRA] [EXTRA]质量正及梯度独立推出真实Gram det≠0；不是将该结论作为前提。 
+[EXTRA] 保留原可逆性充分条件证明，补det≠0下反力乘子唯一可解及明确逆Gram公式；F和φ是给定线性方程数据，不把所求λ作假设。 -/
 theorem gramInvertible {Nc Mc : ℕ} (m : Fin Nc → ℝ)
     (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ)
     (hm : ∀ i, 0 < m i)
     (hind : LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) q)) :
     (textbookConstraintGram m γ q).det ≠ 0 := by
   apply MolecularDynamics.textbookConstraintGram_det_ne_zero <;> assumption
+
+theorem gramInvertible_multiplier (n l : ℕ) (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q F : MolecularDynamics.Chapter04Review.Q n) (φ : MolecularDynamics.Chapter04Review.Q l)
+    (_hdet : (textbookConstraintGram m g q).det ≠ 0) :
+    (∃! lam : MolecularDynamics.Chapter04Review.Q l,
+      textbookConstraintJacobian g q *ᵥ MolecularDynamics.Chapter04Review.invMass m
+        (F-(textbookConstraintJacobian g q)ᵀ *ᵥ lam)+φ=0) ∧
+    (∀ lam : MolecularDynamics.Chapter04Review.Q l,
+      (textbookConstraintJacobian g q *ᵥ MolecularDynamics.Chapter04Review.invMass m
+        (F-(textbookConstraintJacobian g q)ᵀ *ᵥ lam)+φ=0) ↔
+      lam=(textbookConstraintGram m g q)⁻¹ *ᵥ
+        (textbookConstraintJacobian g q *ᵥ MolecularDynamics.Chapter04Review.invMass m F+φ)) := by
+  sorry
 
 /-- source_id: MD-4.3-CotangentInvariant · unnumbered_claim · §4.3 · 印刷p.153 / PDFp.175
 [EXTRA] 给定闭区间实际ODE解、C²约束、正质量及沿解梯度独立；“for all time”仅在实际解定义区间，不声称任意长时域解存在。 -/
@@ -2083,10 +2144,14 @@ end MD.Ch04
 #print axioms MD.Ch04.holonomicRelation
 #print axioms MD.Ch04.timeConstraintDerivative
 #print axioms MD.Ch04.constrainedSolution
+#print axioms MD.Ch04.constrainedSolution_generalForce
 #print axioms MD.Ch04.constraintSet
+#print axioms MD.Ch04.constraintSet_regularLevel
 #print axioms MD.Ch04.cotangentSet
 #print axioms MD.Ch04.constraintJacobian
+#print axioms MD.Ch04.combineConstraints
 #print axioms MD.Ch04.jacobianActualDerivative
+#print axioms MD.Ch04.jacobianActualDerivative_curve
 #print axioms MD.Ch04.constraintDegrees
 #print axioms MD.Ch04.flexiblePendulumHamiltonian
 #print axioms MD.Ch04.restraintPotential
@@ -2097,6 +2162,7 @@ end MD.Ch04
 #print axioms MD.Ch04.reactionBalance
 #print axioms MD.Ch04.gramPositive
 #print axioms MD.Ch04.gramInvertible
+#print axioms MD.Ch04.gramInvertible_multiplier
 #print axioms MD.Ch04.cotangentInvariant
 #print axioms MD.Ch04.reducedFieldRegularity
 #print axioms MD.Ch04.restrictedForm

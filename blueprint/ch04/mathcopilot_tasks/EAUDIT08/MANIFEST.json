@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT08",
+  "input_sha256": {
+    "BATCH_EAUDIT08.md": "149561f296d38b137ff271621c24872cf66a5b19160278b243aa69e9fe4f571c",
+    "Blueprint/Ch04.lean": "03326fa44f5ffe880d8a0a394388e09183058c1accffdb9a1b9de9b3a977c966",
+    "blueprint/ch04/ch04_source.json": "7cf0ad621a35d7fb6fe538a3eb1bb00db7bf5d00920030266239784da36edc06"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT08a",
+      "source_id": "MD-4.3-ReactionMultiplier",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT08/a",
+      "total_bytes": 96505,
+      "manifest_sha256": "4176be2191181e9878a0b74d662f5c24915ae4da4db2f6b0c3679feac7f2cd61"
+    },
+    {
+      "subtask": "EAUDIT08b",
+      "source_id": "MD-4.3-ReactionBalance",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT08/b",
+      "total_bytes": 96687,
+      "manifest_sha256": "801f24f160f6a1fa537836e2fffe28e55ee60f5765378a31cc745115887f688a"
+    },
+    {
+      "subtask": "EAUDIT08c",
+      "source_id": "MD-4.3-GramPositive",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT08/c",
+      "total_bytes": 95157,
+      "manifest_sha256": "c919b4b4e4694b1e4c2343c09b47ddf4a1c909dd56757bad80f9815ec4614822"
+    },
+    {
+      "subtask": "EAUDIT08d",
+      "source_id": "MD-4.3-GramInvertible",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT08/d",
+      "total_bytes": 99147,
+      "manifest_sha256": "a85f57614e25b5bf126eadbc990fa6ad414bc6d351887995d84f8d28ae546cfc"
+    },
+    {
+      "subtask": "EAUDIT08e",
+      "source_id": "MD-4.3-CotangentInvariant",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT08/e",
+      "total_bytes": 98171,
+      "manifest_sha256": "7c6978ca8a3eb326df51aeb2509d9c8b5fbab98fb1d98f5a9e376e4631653a44"
+    },
+    {
+      "subtask": "EAUDIT08f",
+      "source_id": "MD-4.3-ReducedFieldRegularity",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT08/f",
+      "total_bytes": 98752,
+      "manifest_sha256": "98cb7f2c93052cb9421e7f8671a8dadd832e7ec4ce54e90636eb9e3f59af055e"
+    }
+  ]
+}

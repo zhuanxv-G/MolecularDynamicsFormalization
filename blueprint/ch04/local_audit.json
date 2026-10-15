@@ -1518,9 +1518,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.holonomicRelation",
@@ -1545,7 +1545,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT07/axioms.log"
     },
     "MD-4.3-TimeConstraintDerivative": {
       "checked": true,
@@ -1593,16 +1593,16 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.constrainedSolution",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "8a73875b6f1cd9d7bf000987cba35b1d144318ccad730d7429d3fc599877f9dd",
-      "block_sha256": "8a73875b6f1cd9d7bf000987cba35b1d144318ccad730d7429d3fc599877f9dd",
+      "signature_sha256": "fa41d0b2b0bd7db0f3037e7215db8da1b11e6024d716bbe9c2959d9134fe7315",
+      "block_sha256": "fa41d0b2b0bd7db0f3037e7215db8da1b11e6024d716bbe9c2959d9134fe7315",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -1620,23 +1620,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT07/axioms.log"
     },
     "MD-4.3-ConstraintSet": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.constraintSet",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "cdf79d75391f33efa0755e8d854ddd746cd6dd405774d165dbeceec30e6680ef",
-      "block_sha256": "cdf79d75391f33efa0755e8d854ddd746cd6dd405774d165dbeceec30e6680ef",
-      "direct_placeholder": false,
+      "signature_sha256": "9ff94d728c5db6e85f84c7f2641007bb95746bd62a22bcd13b098f3434c11d15",
+      "block_sha256": "9ff94d728c5db6e85f84c7f2641007bb95746bd62a22bcd13b098f3434c11d15",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -1653,7 +1654,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT07/axioms.log"
     },
     "MD-4.3-CotangentSet": {
       "checked": true,
@@ -1692,16 +1693,16 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.constraintJacobian",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "70300cc03ae59d689d656751e6f5cb85d035bcbc3019a6ee1e8b8f1c8f655c75",
-      "block_sha256": "70300cc03ae59d689d656751e6f5cb85d035bcbc3019a6ee1e8b8f1c8f655c75",
+      "signature_sha256": "f754d8d3a1bc25c01489dffa3e8f2165bdeb8b5091feb1a64f4c4ea115f83737",
+      "block_sha256": "f754d8d3a1bc25c01489dffa3e8f2165bdeb8b5091feb1a64f4c4ea115f83737",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -1719,23 +1720,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT07/axioms.log"
     },
     "MD-4.3-JacobianActualDerivative": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.jacobianActualDerivative",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "d2f0f8a2fac6c31234271104de3974088690e01728d9579081c7d9c8e7735248",
-      "block_sha256": "7ded663270fcaded706de32bf3a7bbd35640340d8c9ffd5ee17efba69e735872",
-      "direct_placeholder": false,
+      "block_sha256": "9e92695fc423a03f693d5d910dad0bf29b33e9b79e4ecd7450bb316ddcd3d796",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.textbookConstraintJacobian_eq_actualDerivative"
@@ -1754,7 +1756,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT07/axioms.log"
     },
     "MD-4.3-ConstraintDegrees": {
       "checked": true,
@@ -1800,9 +1802,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.flexiblePendulumHamiltonian",
@@ -1827,7 +1829,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT07/axioms.log"
     },
     "MD-4.3-RestraintPotential": {
       "checked": true,
@@ -1866,10 +1868,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.restraintForcePrinted",
@@ -1894,22 +1896,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT07/axioms.log"
     },
     "MD-4.3-ConstrainedPendulum": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.constrainedPendulum",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "1ef32629c463cdc3852a013511ef85c49ab28f11968763a6f6ac4c760f6a79ca",
-      "block_sha256": "1ef32629c463cdc3852a013511ef85c49ab28f11968763a6f6ac4c760f6a79ca",
+      "signature_sha256": "c275e55d4e44b170f9aa63eebd8700df29fd72e03975252f45f5232991ecc864",
+      "block_sha256": "c275e55d4e44b170f9aa63eebd8700df29fd72e03975252f45f5232991ecc864",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -1927,7 +1929,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT07/axioms.log"
     },
     "MD-4.3-ConstraintCurvature": {
       "checked": true,
@@ -1966,9 +1968,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.reactionMultiplier",
@@ -1993,15 +1995,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT08/axioms.log"
     },
     "MD-4.3-ReactionBalance": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch04.reactionBalance",
@@ -2028,15 +2030,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT08/axioms.log"
     },
     "MD-4.3-GramPositive": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch04.gramPositive",
@@ -2063,23 +2065,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT08/axioms.log"
     },
     "MD-4.3-GramInvertible": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.gramInvertible",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "4822b536ae48e677779e74aa8abcd90225e36e8b6cde6356285e0fd646ba67a4",
-      "block_sha256": "a58a83ac0d4a240dfdbb2884c6b47f59ec0a22068d4deecfeb6be14ed009dfd2",
-      "direct_placeholder": false,
+      "block_sha256": "b4de2d3c5875248d96c4b60f1150e5b81af52d6750b02c887a97993e37173230",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.textbookConstraintGram_det_ne_zero"
@@ -2098,15 +2101,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT08/axioms.log"
     },
     "MD-4.3-CotangentInvariant": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch04.cotangentInvariant",
@@ -2133,15 +2136,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT08/axioms.log"
     },
     "MD-4.3-ReducedFieldRegularity": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch04.reducedFieldRegularity",
@@ -2168,7 +2171,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT08/axioms.log"
     },
     "MD-4.3.1-RestrictedForm": {
       "checked": true,
