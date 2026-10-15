@@ -1,0 +1,35 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT09",
+  "section": "2.3.3",
+  "source_ids": [
+    "MD-2.3.3-FormSumWedges",
+    "MD-2.3.3-HamiltonDet",
+    "MD-2.3.3-OneForm",
+    "MD-2.3.3-SymplecticIffForm",
+    "MD-2.3.3-SymplecticMap"
+  ],
+  "reaudit_ids": [
+    "MD-2.3.3-SymplecticMap",
+    "MD-2.3.3-OneForm",
+    "MD-2.3.3-FormSumWedges",
+    "MD-2.3.3-SymplecticIffForm",
+    "MD-2.3.3-HamiltonDet"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "ddffdb8fd962364416d85bace55249318bf65b48d466adc899ff960d0e73514b",
+  "lean_sha256": "3ac0517ef5b88de9e7c9399be6623928bad71940e2a1c29aae19acf38ab5bcf2",
+  "source_sha256": "0df2ee453b8b6a2e189c763daa0453b2b421e677e72e398626fe3f6292abbaf3",
+  "pages": [
+    98,
+    99,
+    100
+  ],
+  "prior_proof_blocks": {
+    "MD-2.3.3-SymplecticMap": "def bp_IsSymplecticMap {Nc : ℕ}\n    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=\n  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)",
+    "MD-2.3.3-OneForm": "def oneFormFamily (n : ℕ) := Q n → Q n →L[ℝ] ℝ",
+    "MD-2.3.3-FormSumWedges": "theorem formSumWedges (Nc : ℕ) :\n    textbookSymplecticForm Nc =\n      ∑ i : Fin Nc, textbookWedgeOneForms (textbookDq i) (textbookDp i) := by\n  apply MolecularDynamics.textbookSymplecticForm_eq_sum_wedges <;> assumption",
+    "MD-2.3.3-SymplecticIffForm": "theorem symplecticIffForm {Nc : ℕ}\n    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) :\n    IsTextbookSymplecticMap Φ ↔ ContDiff ℝ 1 Φ ∧\n      ∀ z u v, textbookSymplecticForm Nc ((fderiv ℝ Φ z) u) ((fderiv ℝ Φ z) v) =\n        textbookSymplecticForm Nc u v := by\n  apply MolecularDynamics.isTextbookSymplecticMap_iff_preserves_form <;> assumption",
+    "MD-2.3.3-HamiltonDet": "theorem hamiltonDet {n : ℕ} (H : SymplecticCoordinates n → ℝ)\n    (hH : ContDiff ℝ 2 H) (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n)\n    (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)\n    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s,z))\n      (textbookHamiltonianVectorField H (Φ (t,z))) t)\n    (hinit : (fun z => Φ (0,z))=id) :\n    (∀ t ∈ Icc 0 τ, ∀ z, (textbookJacobian (fun y => Φ (t,y)) z).det=1) ∧\n    (∀ t ∈ Icc 0 τ, ∀ S : Set (SymplecticCoordinates n), MeasurableSet S →\n      volume ((fun z => Φ (t,z)) '' S)=volume S) := by\n  constructor\n  · exact MolecularDynamics.textbookHamiltonianFlowJacobian_det_eq_one_of_jointC2 H hH Φ hΦ τ hODE hinit\n  · exact MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2 H hH Φ hΦ τ hODE hinit"
+  }
+}

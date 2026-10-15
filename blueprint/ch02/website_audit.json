@@ -7348,7 +7348,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT09",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT09.md": "149b1a16afc108e639b0741f63143675f1db96d32f4c32fdcd428f3102e927dd",
+        "Blueprint/Ch02.lean": "3ac0517ef5b88de9e7c9399be6623928bad71940e2a1c29aae19acf38ab5bcf2",
+        "blueprint/ch02/ch02_source.json": "0df2ee453b8b6a2e189c763daa0453b2b421e677e72e398626fe3f6292abbaf3"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.3-OneForm",
@@ -7425,7 +7437,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT09",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT09.md": "149b1a16afc108e639b0741f63143675f1db96d32f4c32fdcd428f3102e927dd",
+        "Blueprint/Ch02.lean": "3ac0517ef5b88de9e7c9399be6623928bad71940e2a1c29aae19acf38ab5bcf2",
+        "blueprint/ch02/ch02_source.json": "0df2ee453b8b6a2e189c763daa0453b2b421e677e72e398626fe3f6292abbaf3"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.3-Differential",
@@ -7838,7 +7862,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT09",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT09.md": "149b1a16afc108e639b0741f63143675f1db96d32f4c32fdcd428f3102e927dd",
+        "Blueprint/Ch02.lean": "3ac0517ef5b88de9e7c9399be6623928bad71940e2a1c29aae19acf38ab5bcf2",
+        "blueprint/ch02/ch02_source.json": "0df2ee453b8b6a2e189c763daa0453b2b421e677e72e398626fe3f6292abbaf3"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.3-GeneralTwoForm",
@@ -8319,7 +8355,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT09",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT09.md": "149b1a16afc108e639b0741f63143675f1db96d32f4c32fdcd428f3102e927dd",
+        "Blueprint/Ch02.lean": "3ac0517ef5b88de9e7c9399be6623928bad71940e2a1c29aae19acf38ab5bcf2",
+        "blueprint/ch02/ch02_source.json": "0df2ee453b8b6a2e189c763daa0453b2b421e677e72e398626fe3f6292abbaf3"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.3-SymplecticDet",
@@ -8516,7 +8564,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT09",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT09.md": "149b1a16afc108e639b0741f63143675f1db96d32f4c32fdcd428f3102e927dd",
+        "Blueprint/Ch02.lean": "3ac0517ef5b88de9e7c9399be6623928bad71940e2a1c29aae19acf38ab5bcf2",
+        "blueprint/ch02/ch02_source.json": "0df2ee453b8b6a2e189c763daa0453b2b421e677e72e398626fe3f6292abbaf3"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.4-Hessian",

@@ -2271,11 +2271,23 @@
     "issues": [],
     "lean_decl": "MD.Ch02.bp_IsSymplecticMap",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 采用原文经典可微辛映射资格，移除不必要C¹限制；正式库C¹定义保持不变。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:11:56.115019",
+        "before_sha256": "b0f30a6e3771f7a3a757fb150590e48bce00b0e8e7a47fae90deb2d1419fd943",
+        "after_sha256": "05f2d56b6271ea8cbc57cbc5ab46fd8cdee5db893d3c38a27bce6a671b8cdbf3",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH15_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.3-OneForm",
@@ -2294,11 +2306,23 @@
     "issues": [],
     "lean_decl": "MD.Ch02.oneFormFamily",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留逐点1-form类型，补由系数向量a构造连续线性泛函及α(z)(ξ)=a(z)ᵀξ评价式；新结论暂sorry。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:11:56.115019",
+        "before_sha256": "b341c76588680d376c3395aaa0403faec99df79f5cb301d805a4b28a574347f0",
+        "after_sha256": "f4c58a473adf3dd0bf7f10675f44c9eb1bf21b0e6326e4a6e8f12319c21aedc9",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH15_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.3-Differential",
@@ -2399,7 +2423,7 @@
     "section": "2.3.3",
     "printed_page": "77",
     "pdf_page": "99",
-    "statement_latex": "The wedge product of the coordinate differentials $dq_i,dp_i$ may be written\n\\[dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\xi_i\\eta_{i+N_c}-\\xi_{i+N_c}\\eta_i=\\boldsymbol\\xi^TJ^{(i)}\\boldsymbol\\eta.\\]\nSumming these terms results in the symplectic 2-form, denoted $\\psi_S$:\n\\[\\psi_S=\\sum_{i=1}^{N_c}dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\boldsymbol\\xi^TJ\\boldsymbol\\eta.\\]",
+    "statement_latex": "The wedge product of the coordinate differentials $dq_i,dp_i$ may be written\n\\[dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\xi_i\\eta_{i+N_c}-\\xi_{i+N_c}\\eta_i=\\boldsymbol\\xi^TJ^{(i)}\\boldsymbol\\eta.\\]\nSumming these terms results in the symplectic 2-form, denoted $\\psi_S$:\n\\[\\psi_S=\\sum_{i=1}^{N_c}dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\boldsymbol\\xi^T\\left(\\sum_{i=1}^{N_c}J^{(i)}\\right)\\boldsymbol\\eta=\\boldsymbol\\xi^TJ\\boldsymbol\\eta.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -2411,11 +2435,25 @@
     "reusable_proofs": [
       "MolecularDynamics.textbookSymplecticForm_eq_sum_wedges"
     ],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留原总楔积等式，补单项J⁽ⁱ⁾矩阵、逐项评价及ΣJ⁽ⁱ⁾=J；全部原结论保留，新补陈述不写证明。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:11:56.115019",
+        "before_sha256": "dc73e5163fd381ef570ea1c73d78eb0878f3f3647bfcc44e4e797e67f097829d",
+        "after_sha256": "e4cc1111e327250576175e055461af5d6d894c88c4be88ecd221ba0cd6b79ea3",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH15_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.3-GeneralTwoForm",
@@ -2557,11 +2595,23 @@
     "reusable_proofs": [
       "MolecularDynamics.isTextbookSymplecticMap_iff_preserves_form"
     ],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 教材定义等价式使用本章经典可微辛谓词；原正式桥接以C¹为定义，不能直接沿用，保留sorry，不宣称已证。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:11:56.115019",
+        "before_sha256": "5f2578a0730b0619a25f0c24f21ad2587aaa1067082fec118ce27ffd1bdffe2a",
+        "after_sha256": "db572fab0a3766c041069e940d8e2acc5db1133995a435b55c2e7a2242ce0df4",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.3-SymplecticDet",
@@ -2609,12 +2659,23 @@
       "MolecularDynamics.textbookHamiltonianFlowJacobian_det_eq_one_of_jointC2"
     ],
     "extra_assumptions": [
-      "[EXTRA]联合C²实际解族，H C²、Φ0=id，τ>0；体积结论另项HamiltonVolume完整覆盖。"
+      "[EXTRA]联合C²实际解族，H C²、Φ0=id，τ>0；体积结论另项HamiltonVolume完整覆盖。",
+      "[EXTRA] 补∀t流辛性合取，同时保留det=1和可测集合体积；时间域仍Icc0τ，不额外假称τ>0。已有证明仅将现成流辛性定理与原合取作小修补。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:11:56.115019",
+        "before_sha256": "a241c4a20045140f14e764e85241f6b5009f23618cc8aa3aa36a85c7b2b5b6f9",
+        "after_sha256": "2c12d569605fa91890ff81fd3149e3504e24403c0dbd522351b7b0d5eb6b159c",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.4-Hessian",

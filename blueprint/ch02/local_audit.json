@@ -2601,16 +2601,16 @@
     "MD-2.3.3-SymplecticMap": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_IsSymplecticMap",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "96eb04304a1e03b0c729378aabbd1ffddcd65d8156cce2853b1ad30721e6dd70",
-      "block_sha256": "96eb04304a1e03b0c729378aabbd1ffddcd65d8156cce2853b1ad30721e6dd70",
+      "signature_sha256": "80dbb39770ac993dd5cb594e430baa155ab460f1eeda988e6f738b609faef2a2",
+      "block_sha256": "80dbb39770ac993dd5cb594e430baa155ab460f1eeda988e6f738b609faef2a2",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -2627,22 +2627,24 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT09/axioms.log",
+      "compiled": true
     },
     "MD-2.3.3-OneForm": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch02.oneFormFamily",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "404fce0c6a0d809bb9b9ba8ddf23eb9bc73a9e7ccb6fba621f6644cf3ab653dd",
-      "block_sha256": "404fce0c6a0d809bb9b9ba8ddf23eb9bc73a9e7ccb6fba621f6644cf3ab653dd",
-      "direct_placeholder": false,
+      "signature_sha256": "f93c00607cf6128e89f97ce3295f9df24ba4db5a5de4afc8c48abb126aefbe6e",
+      "block_sha256": "f93c00607cf6128e89f97ce3295f9df24ba4db5a5de4afc8c48abb126aefbe6e",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -2658,7 +2660,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT09/axioms.log",
+      "compiled": true
     },
     "MD-2.3.3-Differential": {
       "checked": true,
@@ -2787,17 +2790,18 @@
     "MD-2.3.3-FormSumWedges": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch02.formSumWedges",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
       "signature_sha256": "4b575c19183e85e030e61bcd93a7a9e8ea8924e2eb3fa0d78f98779db992612b",
-      "block_sha256": "72864dc2a047619980b553e4de030e9f041faf6e11ec0dd57b4fe8290db051ed",
-      "direct_placeholder": false,
+      "block_sha256": "b363a4239baead2244830bbf7635aa5e79ca7aa4c997df4de6ad096f0d1ce802",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.textbookSymplecticForm_eq_sum_wedges"
@@ -2815,7 +2819,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT09/axioms.log",
+      "compiled": true
     },
     "MD-2.3.3-GeneralTwoForm": {
       "checked": true,
@@ -2982,17 +2987,18 @@
     "MD-2.3.3-SymplecticIffForm": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch02.symplecticIffForm",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "64a3dfb845cb5e497d3afa3182520c0dc6606396be102ffb12991feacd7594b0",
-      "block_sha256": "03c46df7fd0d500e512ec828ec3ced9fc77eade3247fe79d4abbd10b19285daf",
-      "direct_placeholder": false,
+      "signature_sha256": "592c8576e3b85490b976f362b6ac1e9f9f2cd34c5785ea840a5cc834f000acd1",
+      "block_sha256": "d6844bcb1186e39138d85ac281a8e173493a4fa857293812aa554b69c5ba3b76",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.isTextbookSymplecticMap_iff_preserves_form"
@@ -3010,7 +3016,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT09/axioms.log",
+      "compiled": true
     },
     "MD-2.3.3-SymplecticDet": {
       "checked": true,
@@ -3049,16 +3056,16 @@
     "MD-2.3.3-HamiltonDet": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.hamiltonDet",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "30cb4470734e8189d22a43094a450755569d549de8290d80b921e47bc495dab8",
-      "block_sha256": "feb89a33c01173591a2cf9c0d44b052d0b8681d6ec76fbb31385c2e059e3764a",
+      "signature_sha256": "9da7f329c89ff5c4f67b073a553a2963aa4caf49f5acc262193d50235166312c",
+      "block_sha256": "cd0f9aac7c2f0afb76e13c691ba919f3a28b5fe78ab40cea9292b4583d45a634",
       "direct_placeholder": false,
       "proof_status": "existing_bridge",
       "documented_priors": [
@@ -3078,7 +3085,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT09/axioms.log",
+      "compiled": true
     },
     "MD-2.3.4-Hessian": {
       "checked": true,

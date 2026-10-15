@@ -753,13 +753,22 @@ theorem asymmetricArea :
     (∀ T : Set (Q 2), MeasurableSet T → volume (Ψ '' T)=volume T) := by
   sorry
 
-/-- source_id: MD-2.3.3-SymplecticMap · definition · §2.3.3 · 印刷p.76 / PDFp.98 -/
+/-- source_id: MD-2.3.3-SymplecticMap · definition · §2.3.3 · 印刷p.76 / PDFp.98 
+[EXTRA] 采用原文经典可微辛映射资格，移除不必要C¹限制；正式库C¹定义保持不变。 -/
 def bp_IsSymplecticMap {Nc : ℕ}
     (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=
-  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
+  Differentiable ℝ Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
 
-/-- source_id: MD-2.3.3-OneForm · definition · §2.3.3 · 印刷p.76 / PDFp.98 -/
+/-- source_id: MD-2.3.3-OneForm · definition · §2.3.3 · 印刷p.76 / PDFp.98 
+[EXTRA] 保留逐点1-form类型，补由系数向量a构造连续线性泛函及α(z)(ξ)=a(z)ᵀξ评价式；新结论暂sorry。 -/
 def oneFormFamily (n : ℕ) := Q n → Q n →L[ℝ] ℝ
+
+def oneFormOfCoefficients {n : ℕ} (a : Q n → Q n) (z : Q n) : Q n →L[ℝ] ℝ :=
+  ∑ i : Fin n, (a z i) • ContinuousLinearMap.proj i
+
+theorem oneFormOfCoefficients_apply {n : ℕ} (a : Q n → Q n) (z ξ : Q n) :
+    oneFormOfCoefficients a z ξ = ∑ i : Fin n, a z i * ξ i := by
+  sorry
 
 /-- source_id: MD-2.3.3-Differential · definition · §2.3.3 · 印刷p.76 / PDFp.98 -/
 def bp_differential {n : ℕ} (g : Q n → ℝ) : oneForm n := fderiv ℝ g
@@ -786,11 +795,23 @@ noncomputable def bp_symplecticForm (Nc : ℕ) :
     LinearMap.BilinForm ℝ (SymplecticCoordinates Nc) :=
   (textbookJ Nc).toBilin'
 
-/-- source_id: MD-2.3.3-FormSumWedges · unnumbered_claim · §2.3.3 · 印刷p.77 / PDFp.99 -/
+/-- source_id: MD-2.3.3-FormSumWedges · unnumbered_claim · §2.3.3 · 印刷p.77 / PDFp.99 
+[EXTRA] 保留原总楔积等式，补单项J⁽ⁱ⁾矩阵、逐项评价及ΣJ⁽ⁱ⁾=J；全部原结论保留，新补陈述不写证明。 -/
 theorem formSumWedges (Nc : ℕ) :
     textbookSymplecticForm Nc =
       ∑ i : Fin Nc, textbookWedgeOneForms (textbookDq i) (textbookDp i) := by
   apply MolecularDynamics.textbookSymplecticForm_eq_sum_wedges <;> assumption
+
+def symplecticComponentMatrix {Nc : ℕ} (i : Fin Nc) : SymplecticCoordinateMatrix Nc :=
+  fun a b ↦ if a = Sum.inl i ∧ b = Sum.inr i then 1
+    else if a = Sum.inr i ∧ b = Sum.inl i then -1 else 0
+
+theorem formSumWedges_components (Nc : ℕ) :
+    (∀ (i : Fin Nc) (u v : SymplecticCoordinates Nc),
+      textbookWedgeOneForms (textbookDq i) (textbookDp i) u v =
+        ∑ a, u a * ((symplecticComponentMatrix i) *ᵥ v) a) ∧
+    (∑ i : Fin Nc, symplecticComponentMatrix i) = textbookJ Nc := by
+  sorry
 
 /-- source_id: MD-2.3.3-GeneralTwoForm · definition · §2.3.3 · 印刷p.77 / PDFp.99
 [ERRATUM?] 双和系数A的实际双线性矩阵是A-Aᵀ；若A反对称为2A。后文直接用A作矩阵表示存在因子约定疑点。 -/
@@ -824,8 +845,16 @@ theorem pullbackMatrix :
 def bp_preservesTwoForm {n : ℕ} (Φ : Q n → Q n) (A : twoForm n) : Prop :=
   ∀ z u v, pullbackTwo Φ A z u v = A.val z u v
 
-/-- source_id: MD-2.3.3-SymplecticIffForm · unnumbered_claim · §2.3.3 · 印刷p.78 / PDFp.100 -/
+/-- source_id: MD-2.3.3-SymplecticIffForm · unnumbered_claim · §2.3.3 · 印刷p.78 / PDFp.100 
+[EXTRA] 教材定义等价式使用本章经典可微辛谓词；原正式桥接以C¹为定义，不能直接沿用，保留sorry，不宣称已证。 -/
 theorem symplecticIffForm {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) :
+    bp_IsSymplecticMap Φ ↔ Differentiable ℝ Φ ∧
+      ∀ z u v, textbookSymplecticForm Nc ((fderiv ℝ Φ z) u) ((fderiv ℝ Φ z) v) =
+        textbookSymplecticForm Nc u v := by
+  sorry
+
+theorem symplecticIffForm_C1 {Nc : ℕ}
     (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) :
     IsTextbookSymplecticMap Φ ↔ ContDiff ℝ 1 Φ ∧
       ∀ z u v, textbookSymplecticForm Nc ((fderiv ℝ Φ z) u) ((fderiv ℝ Φ z) v) =
@@ -838,19 +867,23 @@ theorem symplecticDet {n : ℕ} (A : SymplecticCoordinateMatrix n) (hA : IsTextb
   exact ⟨hA.det_square,hA.abs_det⟩
 
 /-- source_id: MD-2.3.3-HamiltonDet · unnumbered_claim · §2.3.3 · 印刷p.78 / PDFp.100
-[EXTRA] [EXTRA]联合C²实际解族，H C²、Φ0=id，τ>0；体积结论另项HamiltonVolume完整覆盖。 -/
+[EXTRA] [EXTRA]联合C²实际解族，H C²、Φ0=id，τ>0；体积结论另项HamiltonVolume完整覆盖。 
+[EXTRA] 补∀t流辛性合取，同时保留det=1和可测集合体积；时间域仍Icc0τ，不额外假称τ>0。已有证明仅将现成流辛性定理与原合取作小修补。 -/
 theorem hamiltonDet {n : ℕ} (H : SymplecticCoordinates n → ℝ)
     (hH : ContDiff ℝ 2 H) (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n)
     (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
     (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s,z))
       (textbookHamiltonianVectorField H (Φ (t,z))) t)
     (hinit : (fun z => Φ (0,z))=id) :
+    (∀ t ∈ Icc 0 τ, IsTextbookSymplecticMap (fun z ↦ Φ (t,z))) ∧
     (∀ t ∈ Icc 0 τ, ∀ z, (textbookJacobian (fun y => Φ (t,y)) z).det=1) ∧
     (∀ t ∈ Icc 0 τ, ∀ S : Set (SymplecticCoordinates n), MeasurableSet S →
       volume ((fun z => Φ (t,z)) '' S)=volume S) := by
   constructor
-  · exact MolecularDynamics.textbookHamiltonianFlowJacobian_det_eq_one_of_jointC2 H hH Φ hΦ τ hODE hinit
-  · exact MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2 H hH Φ hΦ τ hODE hinit
+  · exact MolecularDynamics.textbookHamiltonianFlow_isSymplectic_of_jointC2 H hH Φ hΦ τ hODE hinit
+  · constructor
+    · exact MolecularDynamics.textbookHamiltonianFlowJacobian_det_eq_one_of_jointC2 H hH Φ hΦ τ hODE hinit
+    · exact MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2 H hH Φ hΦ τ hODE hinit
 
 /-- source_id: MD-2.3.4-Hessian · definition · §2.3.4 · 印刷p.79 / PDFp.101 -/
 noncomputable def bp_hessian {Nc : ℕ}

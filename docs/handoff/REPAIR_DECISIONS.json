@@ -158,5 +158,30 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "2.3.2"
+  },
+  "MD-2.3.3-SymplecticMap": {
+    "category": "A",
+    "handling": "采用原文经典可微辛映射资格，移除不必要C¹限制；正式库C¹定义保持不变。",
+    "section": "2.3.3"
+  },
+  "MD-2.3.3-OneForm": {
+    "category": "B",
+    "handling": "保留逐点1-form类型，补由系数向量a构造连续线性泛函及α(z)(ξ)=a(z)ᵀξ评价式；新结论暂sorry。",
+    "section": "2.3.3"
+  },
+  "MD-2.3.3-FormSumWedges": {
+    "category": "B",
+    "handling": "保留原总楔积等式，补单项J⁽ⁱ⁾矩阵、逐项评价及ΣJ⁽ⁱ⁾=J；全部原结论保留，新补陈述不写证明。",
+    "section": "2.3.3"
+  },
+  "MD-2.3.3-SymplecticIffForm": {
+    "category": "A",
+    "handling": "教材定义等价式使用本章经典可微辛谓词；原正式桥接以C¹为定义，不能直接沿用，保留sorry，不宣称已证。",
+    "section": "2.3.3"
+  },
+  "MD-2.3.3-HamiltonDet": {
+    "category": "B",
+    "handling": "补∀t流辛性合取，同时保留det=1和可测集合体积；时间域仍Icc0τ，不额外假称τ>0。已有证明仅将现成流辛性定理与原合取作小修补。",
+    "section": "2.3.3"
   }
 }
