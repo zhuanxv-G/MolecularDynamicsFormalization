@@ -17,20 +17,20 @@
 | MD-3.1-FormalHamiltonian | CORRECTED/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | definition / self-contained |
 | MD-3.1-FormalHamiltonianField | CORRECTED/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | definition / self-contained |
 | MD-3.2-LieDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.2-ObservableDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-ObservableDerivative | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | existing_bridge / checked+documented priors |
 | MD-3.2-ObservableSecondDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.2-OperatorExponential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.2-FormalObservable | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.2-FiniteLieTaylor | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | placeholder / incomplete；任意阶Lie迭代正则性与实际Taylor一致余项桥接尚缺；非PASS不证明。 |
-| MD-3.2-FlowCoordinates | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | placeholder / incomplete；缺实际流与高阶Lie Taylor系数的完整有限余项桥接；本地非PASS不证明。 |
-| MD-3.2-PoissonBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.2-PoissonCoordinates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.2-PoissonBilinearity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.2-PoissonSkew | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.2-PoissonSelf | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.2-PoissonJacobi | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-FiniteLieTaylor | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT04（原返回NEEDS_HUMAN保留） | placeholder / incomplete；任意阶Lie迭代正则性与实际Taylor一致余项桥接尚缺；非PASS不证明。 |
+| MD-3.2-FlowCoordinates | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT04（原返回NEEDS_HUMAN保留） | placeholder / incomplete；缺实际流与高阶Lie Taylor系数的完整有限余项桥接；本地非PASS不证明。 |
+| MD-3.2-PoissonBracket | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | definition / self-contained |
+| MD-3.2-PoissonCoordinates | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonBilinearity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonSkew | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonSelf | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | existing_bridge / checked+documented priors |
+| MD-3.2-PoissonJacobi | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | existing_bridge / checked+documented priors |
 | MD-3.2-HamiltonianObservableDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.2-HamiltonianLie | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.2-HamiltonianLie | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | existing_bridge / checked+documented priors |
 | MD-3.2-HamiltonianCoordinateDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.3-HamiltonianLieAdditivity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.3-FormalSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
@@ -385,3 +385,7 @@
 EAUDIT02 §3：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT03 §3.1：5条落盘，单文件与5项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT04 §3.2：8条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT05 §3.2：2条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。

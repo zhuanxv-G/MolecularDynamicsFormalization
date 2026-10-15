@@ -370,12 +370,12 @@
     "section": "3.2",
     "printed_page": "100–101",
     "pdf_page": "122–123",
-    "statement_latex": "At any point $\\boldsymbol z=\\boldsymbol\\zeta$ in phase space assume that there is a unique solution $\\boldsymbol z(t;\\boldsymbol\\zeta)$ such that $\\dot{\\boldsymbol z}(t)=f(\\boldsymbol z(t))$, $\\boldsymbol z(0)=\\boldsymbol\\zeta$ that is globally defined for all $t$. Now differentiate $\\phi(t)=\\phi(\\boldsymbol z(t))$ with respect to time, using the chain rule, to see how $\\phi(\\boldsymbol z(t))$ is changing as $t$ is varied:\n\\[\\left.\\frac{\\mathrm d}{\\mathrm dt}\\phi\\right|_{t=0}=\\left[\\sum_{i=1}^m\\frac{\\partial\\phi}{\\partial z_i}\\dot z_i\\right]_{\\boldsymbol z=\\boldsymbol\\zeta}=\\nabla\\phi(\\boldsymbol\\zeta)\\cdot f(\\boldsymbol\\zeta).\\]\nand note that the origin of time is irrelevant, then the equation for the evolution of $\\phi$ could be written\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\phi=(\\mathcal L_f\\phi)(\\boldsymbol z).\\tag{3.2}\\]",
+    "statement_latex": "At any point $\\boldsymbol z=\\boldsymbol\\zeta$ in phase space assume that there is a unique solution $\\boldsymbol z(t,\\boldsymbol\\zeta)$ such that $\\dot{\\boldsymbol z}(t)=f(\\boldsymbol z(t))$, $\\boldsymbol z(0)=\\boldsymbol\\zeta$ that is globally defined for all $t$. Now differentiate $\\hat\\phi(t)=\\phi(\\boldsymbol z(t))$ with respect to time, using the chain rule, to see how $\\phi(\\boldsymbol z(t))$ is changing as $t$ is varied:\n\\[\\left.\\frac{\\mathrm d}{\\mathrm dt}\\hat\\phi\\right|_{t=0}=\\left[\\sum_{i=1}^m\\frac{\\partial\\phi}{\\partial z_i}\\dot z_i\\right]_{\\boldsymbol z=\\boldsymbol\\zeta}=\\nabla\\phi(\\boldsymbol\\zeta)\\cdot f(\\boldsymbol\\zeta).\\]\nand note that the origin of time is irrelevant, then the equation for the evolution of $\\phi$ could be written\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\hat\\phi=(\\mathcal L_f\\phi)(\\boldsymbol z).\\tag{3.2}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "$\\gamma$为原文给定实际解；$\\mathcal L_f$见p.100/PDF122。"
+      "$\\gamma$为原文给定实际解，$\\gamma(0)=\\boldsymbol\\zeta$；原文区分相空间函数$\\phi(\\boldsymbol z)$与沿解的时间函数$\\hat\\phi(t)=\\phi(\\gamma(t))$。$\\mathcal L_f$见p.100/PDF122；$\\phi$的smooth资格来自§3.2首句。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch03.observableDerivative",
@@ -384,9 +384,22 @@
     ],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:00:38.885629",
+        "before_sha256": "9263b3d3713575ec5f2b6cd1ac08189cd7a7a470423bdbd7e38c19f10f2d2a2a",
+        "after_sha256": "0528eed059b961e9959be751cbe512695df5867e114552b13ff63cd704e7286a",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH03_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.2-ObservableSecondDerivative",
@@ -489,8 +502,18 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:00:38.885629",
+        "before_sha256": "7073aba981858877e9bfa525f1c4ea5f5d3808688bac471bf2ee5b27d8c880ed",
+        "after_sha256": "80668b16dcd77d36a1bdf3eef23890f38145f87e5622265b252f9c3b92996313",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH03_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.2-FlowCoordinates",
@@ -499,12 +522,12 @@
     "section": "3.2",
     "printed_page": "101",
     "pdf_page": "123",
-    "statement_latex": "This gives a concise formula for the evolution of any function of the phase variables, including, in particular, any solution component $z_i$. Thus the flow map for the system can be represented by $\\exp(t\\mathcal L_f)$. When one writes $\\mathcal F_t=\\exp(t\\mathcal L_f)$, what is actually meant is that the individual components satisfy\n\\[z_i(t,\\boldsymbol\\zeta)=[\\mathcal F_t(\\boldsymbol\\zeta)]_i=\\left.(\\exp(t\\mathcal L_f)z_i)\\right|_{\\boldsymbol z=\\boldsymbol\\zeta}.\\]",
+    "statement_latex": "This gives a concise formula for the evolution of any function of the phase variables, including, in particular, any solution component $z_i$. Thus the flow map of the system can be represented by $\\exp(t\\mathcal L_f)$. When one writes $\\mathcal F_t=\\exp(t\\mathcal L_f)$, what is actually meant is that the individual components satisfy\n\\[z_i(t,\\boldsymbol\\zeta)=[\\mathcal F_t(\\boldsymbol\\zeta)]_i=\\left.(\\exp(t\\mathcal L_f)z_i)\\right|_{\\boldsymbol z=\\boldsymbol\\zeta}.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "原文同页将exp按形式解释；坐标ζ的每个实际流分量的有限Taylor展开，不声称形式级数实际收敛。"
+      "原文同页将$\\exp(t\\mathcal L_f)$按形式级数解释；$z_i$是相空间坐标函数$\\boldsymbol z\\mapsto z_i$，作用后在初值$\\boldsymbol\\zeta$处评价。原文以实际解分量与$[\\mathcal F_t(\\boldsymbol\\zeta)]_i$连接该记号，未写有限Taylor余项不等式；有限余项是本项目额外严格化，不能归作原文已经给出的有限展开结论。"
     ],
     "issues": [
       {
@@ -518,9 +541,22 @@
       "有限截断阶k+1真实余项是额外严格化，原文没有此显式不等式；f全域C∞。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:00:38.885629",
+        "before_sha256": "328f362f38243932d9c57e91adfe2463aaf05fe8b1b6a5fa7a5ddbcae7f5ef6d",
+        "after_sha256": "8a9b314149c9102fe637b29991592695862c52fce5d2bb212a2e13488754d3a7",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH03_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.2-PoissonBracket",
@@ -529,21 +565,34 @@
     "section": "3.2",
     "printed_page": "102",
     "pdf_page": "124",
-    "statement_latex": "Another common notation for performing computations involving Hamiltonian systems is the Poisson bracket which is defined for two smooth scalar-valued functions $g_1$ and $g_2$ of the phase variables $(\\boldsymbol q,\\boldsymbol p)$ of a Hamiltonian system in $\\mathbb R^m$ by\n\\[\\{g_1,g_2\\}=\\sum_{i=1}^N\\left(\\frac{\\partial g_1}{\\partial q_i}\\frac{\\partial g_2}{\\partial p_i}-\\frac{\\partial g_2}{\\partial q_i}\\frac{\\partial g_1}{\\partial p_i}\\right)=\\nabla g_1^T J\\nabla g_2,\\]",
+    "statement_latex": "Another common notation for performing computations involving Hamiltonian systems is the Poisson bracket which is defined for two smooth scalar-valued functions $g_1$ and $g_2$ of the phase variables $(\\boldsymbol q,\\boldsymbol p)$ of a Hamiltonian system in $\\mathbb R^m$ by\n\\[\\{g_1,g_2\\}=\\sum_{i=1}^{N_c}\\left(\\frac{\\partial g_1}{\\partial q_i}\\frac{\\partial g_2}{\\partial p_i}-\\frac{\\partial g_2}{\\partial q_i}\\frac{\\partial g_1}{\\partial p_i}\\right)=\\nabla g_1^T J\\nabla g_2,\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "$J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$；$I$为$N\\times N$单位阵；本文n/Nc为配置坐标数，环境相空间维2n。"
+      "$J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$；原文$I$为$N_c\\times N_c$单位阵，$N_c$为配置坐标数；本文Lean的n/Nc对应$N_c$，环境相空间维数为$2N_c$，$\\mathrm{Sum.inl}$标记位置坐标、$\\mathrm{Sum.inr}$标记动量坐标。$g_1,g_2$为原文规定的smooth scalar-valued函数。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch03.textbookPoissonBracket",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:00:38.885629",
+        "before_sha256": "fd076d744c50da6b1465325ee8568f0a20b2ccfb2467c73058adcc6a2563c44c",
+        "after_sha256": "de78b8d813c4f2d045ce8adf0fa049f6724b55c612bf7841f733588d7f303e49",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH03_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.2-PoissonCoordinates",
@@ -552,12 +601,12 @@
     "section": "3.2",
     "printed_page": "102",
     "pdf_page": "124",
-    "statement_latex": "\\[\\{g_1,g_2\\}=\\sum_{i=1}^N\\left(\\frac{\\partial g_1}{\\partial q_i}\\frac{\\partial g_2}{\\partial p_i}-\\frac{\\partial g_2}{\\partial q_i}\\frac{\\partial g_1}{\\partial p_i}\\right)=\\nabla g_1^T J\\nabla g_2.\\]",
+    "statement_latex": "\\[\\{g_1,g_2\\}=\\sum_{i=1}^{N_c}\\left(\\frac{\\partial g_1}{\\partial q_i}\\frac{\\partial g_2}{\\partial p_i}-\\frac{\\partial g_2}{\\partial q_i}\\frac{\\partial g_1}{\\partial p_i}\\right)=\\nabla g_1^T J\\nabla g_2.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "$g_1,g_2$为同页smooth scalar-valued函数；实际Fréchet偏导对单位基向量作用。"
+      "$N_c$为构型坐标数；$g_1,g_2$为同页smooth scalar-valued函数；$J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$，$I$为$N_c\\times N_c$单位矩阵；坐标偏导在Lean中解释为Fréchet导数作用于对应单位基向量。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch03.poissonCoordinates",
@@ -566,9 +615,22 @@
     ],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:00:38.885629",
+        "before_sha256": "b4751a08838295fb2f626b564fe0c8e2acbbc814b8c18a747c9373b8ca4c3107",
+        "after_sha256": "dce1f98c9887952245426d64bafdb6f5e0c8e1b51ab259ee9a8184eff3bfc7bd",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.2-PoissonBilinearity",
@@ -580,7 +642,7 @@
     "statement_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables):\nBilinearity $\\{g_1,\\alpha g_2+\\beta g_3\\}=\\alpha\\{g_1,g_2\\}+\\beta\\{g_1,g_3\\}$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
-    "proof_discussion_latex": null,
+    "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
     "context_notation": [
       "$\\alpha,\\beta\\in\\mathbb R$；Poisson定义见同页；第一变量线性由下一条反对称性推出。"
     ],
@@ -594,9 +656,21 @@
       "原文smooth函数按点可微资格显式化；保留旧清单双变量线性的完整两条结论。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:00:38.885629",
+        "before_sha256": "732dfa03e2fb1942ccaf468c0baae3d57468d3bb29e5678cb3d17320bf84ea91",
+        "after_sha256": "22d12b4d82eee7935dd08d5e22ff7ebb17cdf2edd68a717bc3df3545d2660d1d",
+        "changed_fields": [
+          "proof_discussion_latex"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.2-PoissonSkew",
@@ -608,7 +682,7 @@
     "statement_latex": "Skew symmetry $\\{g_1,g_2\\}=-\\{g_2,g_1\\}$",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
-    "proof_discussion_latex": null,
+    "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
     "context_notation": [
       "$J$为同页规范辛矩阵；不要求J另有任意自定义参数。"
     ],
@@ -619,9 +693,21 @@
     ],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:00:38.885629",
+        "before_sha256": "e9b9960d13bbebbe33bc681fcab620c3b02637f083f082253e1b415eba810d7b",
+        "after_sha256": "89d10d08ee38671bde7c43194f251db0a5792f5582fba3fc8cfcdaaebedf5d5c",
+        "changed_fields": [
+          "proof_discussion_latex"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.2-PoissonSelf",
@@ -633,7 +719,7 @@
     "statement_latex": "and this implies $\\{g_1,g_1\\}=0$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
-    "proof_discussion_latex": null,
+    "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
     "context_notation": [
       "由同页Skew symmetry；实数域特征不为2。"
     ],
@@ -644,9 +730,21 @@
     ],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:00:38.885629",
+        "before_sha256": "a0f35ae7a7075fd6ab1ab5c9636c5a252b4e1decc0f59f5dde4895692763292f",
+        "after_sha256": "6a5a4acb138560d45b910ed500ca6295b3e276a9281becefeec0a5c5136caed5",
+        "changed_fields": [
+          "proof_discussion_latex"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.2-PoissonJacobi",
@@ -658,7 +756,7 @@
     "statement_latex": "Jacobi identity $\\{g_1,\\{g_2,g_3\\}\\}+\\{g_3,\\{g_1,g_2\\}\\}+\\{g_2,\\{g_3,g_1\\}\\}=0$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
-    "proof_discussion_latex": null,
+    "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
     "context_notation": [
       "同页三个smooth scalar-valued函数；非任意未微分函数。"
     ],
@@ -671,9 +769,21 @@
       "显式各函数在z为C²；真实二阶导数对称性支持Jacobi。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT05_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:02:37.900044",
+        "before_sha256": "70289abb3d895c372ff744518fe38678ee326dd4396b2647b1685a0edcfbf2c9",
+        "after_sha256": "996f564fa082861f17c3a50e458a2297cfea38032d62143405ab989d207ddf69",
+        "changed_fields": [
+          "proof_discussion_latex"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.2-HamiltonianObservableDerivative",
@@ -709,7 +819,7 @@
     "section": "3.2",
     "printed_page": "102",
     "pdf_page": "124",
-    "statement_latex": "As a consequence, we have the following relation between the Lie derivative and the Poisson bracket:\n\\[\\mathcal L_{J\\nabla H}F=\\{F,H\\}.\\]\nFor a Hamiltonian flow, we typically simplify notation by writing $\\mathcal L_H$ in place of $\\mathcal L_{J\\nabla H}$.",
+    "statement_latex": "As a consequence, we have the following relation between the Lie derivative and the Poisson bracket:\n\\[\\mathcal L_{J\\nabla H}F\\equiv \\{F,H\\}.\\]\nFor a Hamiltonian flow, we typically simplify notation by writing $\\mathcal L_H$ in place of $\\mathcal L_{J\\nabla H}$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -723,9 +833,21 @@
     ],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT05_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:02:37.900044",
+        "before_sha256": "8d24aa7536a3f2c36fde213183769450fbd9dc5f6f9dbbbddc3526d7aa0f1f5c",
+        "after_sha256": "3ddcce4fe1e389b22c6e22054f21996ad44b2ab89e7ff924c3a9be78bfdeaec9",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.2-HamiltonianCoordinateDerivative",

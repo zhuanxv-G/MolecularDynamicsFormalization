@@ -1,0 +1,36 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT04",
+  "section": "3.2",
+  "source_ids": [
+    "MD-3.2-FiniteLieTaylor",
+    "MD-3.2-FlowCoordinates",
+    "MD-3.2-ObservableDerivative",
+    "MD-3.2-PoissonBilinearity",
+    "MD-3.2-PoissonBracket",
+    "MD-3.2-PoissonCoordinates",
+    "MD-3.2-PoissonSelf",
+    "MD-3.2-PoissonSkew"
+  ],
+  "reaudit_ids": [
+    "MD-3.2-ObservableDerivative",
+    "MD-3.2-PoissonBracket",
+    "MD-3.2-PoissonCoordinates",
+    "MD-3.2-PoissonBilinearity",
+    "MD-3.2-PoissonSkew",
+    "MD-3.2-PoissonSelf"
+  ],
+  "human_ids": [
+    "MD-3.2-FiniteLieTaylor",
+    "MD-3.2-FlowCoordinates"
+  ],
+  "old_lean_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+  "lean_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+  "source_sha256": "c5e61997c4f39c207a6190e3d66d63b7b0021f08c301350bbafc9b648d32d867",
+  "pages": [
+    122,
+    123,
+    124
+  ],
+  "prior_proof_blocks": {}
+}

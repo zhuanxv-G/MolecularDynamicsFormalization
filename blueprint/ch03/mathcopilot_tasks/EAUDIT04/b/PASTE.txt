@@ -1,0 +1,85 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.2-PoissonBracket；原PDF页映射=[124]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT04_review.json，对象含batch=EAUDIT04、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT04.md": "beaf1ed22bbbcb226583f4a70ad4eeba93f4a85d37589e27436ae6441026d5f1",
+  "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+  "blueprint/ch03/ch03_source.json": "c5e61997c4f39c207a6190e3d66d63b7b0021f08c301350bbafc9b648d32d867",
+  "EAUDIT04b_materials": "a10d5ca32b99b9993ea1732674c89557f4ed3be3add6c6f3c6fda9fed621b023",
+  "EAUDIT04b_PAGES.pdf": "831d5dd8b4a23168f45588ae94b8893bb7227e1b711ed444eeffdb01a43b6199"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.2-PoissonBracket",
+  "kind": "definition",
+  "label": null,
+  "section": "3.2",
+  "printed_page": "102",
+  "pdf_page": "124",
+  "statement_latex": "Another common notation for performing computations involving Hamiltonian systems is the Poisson bracket which is defined for two smooth scalar-valued functions $g_1$ and $g_2$ of the phase variables $(\\boldsymbol q,\\boldsymbol p)$ of a Hamiltonian system in $\\mathbb R^m$ by\n\\[\\{g_1,g_2\\}=\\sum_{i=1}^{N_c}\\left(\\frac{\\partial g_1}{\\partial q_i}\\frac{\\partial g_2}{\\partial p_i}-\\frac{\\partial g_2}{\\partial q_i}\\frac{\\partial g_1}{\\partial p_i}\\right)=\\nabla g_1^T J\\nabla g_2,\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$J=\\begin{bmatrix}0&I\\\\-I&0\\end{bmatrix}$；原文$I$为$N_c\\times N_c$单位阵，$N_c$为配置坐标数；本文Lean的n/Nc对应$N_c$，环境相空间维数为$2N_c$，$\\mathrm{Sum.inl}$标记位置坐标、$\\mathrm{Sum.inr}$标记动量坐标。$g_1,g_2$为原文规定的smooth scalar-valued函数。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.textbookPoissonBracket",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT04_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:00:38.885629",
+      "before_sha256": "fd076d744c50da6b1465325ee8568f0a20b2ccfb2467c73058adcc6a2563c44c",
+      "after_sha256": "de78b8d813c4f2d045ce8adf0fa049f6724b55c612bf7841f733588d7f303e49",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH03_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean
+```lean
+noncomputable def textbookPoissonBracket (F G : SymplecticCoordinates Nc → ℝ)
+    (z : SymplecticCoordinates Nc) : ℝ :=
+  (fderiv ℝ F z) (textbookHamiltonianVectorField G z)
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinateMatrix
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MolecularDynamics.textbookHamiltonianVectorField
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+### 实际依赖 MolecularDynamics.textbookJ
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### 实际依赖 MD.Ch03.textbookPoissonBracket
+```lean
+noncomputable def textbookPoissonBracket (F G : SymplecticCoordinates Nc → ℝ)
+    (z : SymplecticCoordinates Nc) : ℝ :=
+  (fderiv ℝ F z) (textbookHamiltonianVectorField G z)
+```

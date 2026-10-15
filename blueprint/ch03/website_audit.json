@@ -899,7 +899,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH03_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT04",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT04.md": "beaf1ed22bbbcb226583f4a70ad4eeba93f4a85d37589e27436ae6441026d5f1",
+        "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+        "blueprint/ch03/ch03_source.json": "c5e61997c4f39c207a6190e3d66d63b7b0021f08c301350bbafc9b648d32d867"
+      }
+    }
   },
   {
     "source_id": "MD-3.2-ObservableSecondDerivative",
@@ -1111,7 +1123,14 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH03_result.json",
     "needs_category": "原文数学判断",
-    "effective_status": "NEEDS_HUMAN（绑定版本 433a13ca6407）"
+    "effective_status": "待导师 / EAUDIT04（原返回NEEDS_HUMAN保留）",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原文形式exp等号采用形式系数还是Taylor jet/全阶渐近，需数学范围裁定；选项：逐阶导数/形式系数等式／现有有限余项严格化并单独标新增结论。现状保持，不声称无限级数收敛。"
+    }
   },
   {
     "source_id": "MD-3.2-FlowCoordinates",
@@ -1222,7 +1241,14 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH03_result.json",
     "needs_category": "原文数学判断",
-    "effective_status": "NEEDS_HUMAN（绑定版本 433a13ca6407）"
+    "effective_status": "待导师 / EAUDIT04（原返回NEEDS_HUMAN保留）",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原页实际流与形式exp的连接需选形式jet还是全阶渐近解释；选项：定义实际拉回的时间jet并逐系数等同／批准现有局部有限余项作为严格化。保持当前声明。"
+    }
   },
   {
     "source_id": "MD-3.2-PoissonBracket",
@@ -1314,7 +1340,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH03_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT04",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT04.md": "beaf1ed22bbbcb226583f4a70ad4eeba93f4a85d37589e27436ae6441026d5f1",
+        "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+        "blueprint/ch03/ch03_source.json": "c5e61997c4f39c207a6190e3d66d63b7b0021f08c301350bbafc9b648d32d867"
+      }
+    }
   },
   {
     "source_id": "MD-3.2-PoissonCoordinates",
@@ -1399,7 +1437,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT04",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT04.md": "beaf1ed22bbbcb226583f4a70ad4eeba93f4a85d37589e27436ae6441026d5f1",
+        "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+        "blueprint/ch03/ch03_source.json": "c5e61997c4f39c207a6190e3d66d63b7b0021f08c301350bbafc9b648d32d867"
+      }
+    }
   },
   {
     "source_id": "MD-3.2-PoissonBilinearity",
@@ -1487,7 +1537,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT04",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT04.md": "beaf1ed22bbbcb226583f4a70ad4eeba93f4a85d37589e27436ae6441026d5f1",
+        "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+        "blueprint/ch03/ch03_source.json": "c5e61997c4f39c207a6190e3d66d63b7b0021f08c301350bbafc9b648d32d867"
+      }
+    }
   },
   {
     "source_id": "MD-3.2-PoissonSkew",
@@ -1572,7 +1634,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT04",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT04.md": "beaf1ed22bbbcb226583f4a70ad4eeba93f4a85d37589e27436ae6441026d5f1",
+        "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+        "blueprint/ch03/ch03_source.json": "c5e61997c4f39c207a6190e3d66d63b7b0021f08c301350bbafc9b648d32d867"
+      }
+    }
   },
   {
     "source_id": "MD-3.2-PoissonSelf",
@@ -1657,7 +1731,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT04",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT04.md": "beaf1ed22bbbcb226583f4a70ad4eeba93f4a85d37589e27436ae6441026d5f1",
+        "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+        "blueprint/ch03/ch03_source.json": "c5e61997c4f39c207a6190e3d66d63b7b0021f08c301350bbafc9b648d32d867"
+      }
+    }
   },
   {
     "source_id": "MD-3.2-PoissonJacobi",
@@ -1744,7 +1830,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT05",
+    "repair": {
+      "eaudit": "EAUDIT05",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT05.md": "56feba1f3dfc333ce312612ef4a6bbc816bb41d12e892e09efde364241b4ab62",
+        "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+        "blueprint/ch03/ch03_source.json": "01e51386aec92ff0be2f9b5e19cd70fa8baaaf20959d82f4bc17f3e22586a389"
+      }
+    }
   },
   {
     "source_id": "MD-3.2-HamiltonianObservableDerivative",
@@ -1882,7 +1980,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT05",
+    "repair": {
+      "eaudit": "EAUDIT05",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT05.md": "56feba1f3dfc333ce312612ef4a6bbc816bb41d12e892e09efde364241b4ab62",
+        "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+        "blueprint/ch03/ch03_source.json": "01e51386aec92ff0be2f9b5e19cd70fa8baaaf20959d82f4bc17f3e22586a389"
+      }
+    }
   },
   {
     "source_id": "MD-3.2-HamiltonianCoordinateDerivative",

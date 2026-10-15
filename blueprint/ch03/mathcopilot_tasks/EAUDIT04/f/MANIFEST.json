@@ -1,0 +1,51 @@
+{
+  "eaudit": "EAUDIT04",
+  "source_id": "MD-3.2-PoissonSelf",
+  "input_sha256": {
+    "BATCH_EAUDIT04.md": "beaf1ed22bbbcb226583f4a70ad4eeba93f4a85d37589e27436ae6441026d5f1",
+    "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+    "blueprint/ch03/ch03_source.json": "c5e61997c4f39c207a6190e3d66d63b7b0021f08c301350bbafc9b648d32d867",
+    "EAUDIT04f_materials": "108caff0ed39ce26bf67d887153a0d22b954e8f3de135bc0cecfdb33edc5c587",
+    "EAUDIT04f_PAGES.pdf": "831d5dd8b4a23168f45588ae94b8893bb7227e1b711ed444eeffdb01a43b6199"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    124
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a20003c064dabfa06a093e2be82da08fb4de887e7e5c04cdf7a4054cca5ea86c",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinateMatrix",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "name": "textbookHamiltonianVectorField",
+      "file_sha256": "bc9f7688e08676874bd5c50502a5e27fa659e7ff10f116045a4605a42ccfa703",
+      "excerpt_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "textbookJ",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "textbookPoissonBracket",
+      "file_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+      "excerpt_sha256": "8266f6e26328af2f7adab2f4687c220f4d9a91cec52c49dc8827ae913a282f63"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT04_review.json",
+  "total_task_bytes": 95269
+}

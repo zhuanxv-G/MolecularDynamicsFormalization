@@ -14,20 +14,20 @@
 | MD-3.1-FormalHamiltonian | 100/122 | PASS | 待复审 / EAUDIT03 | self-contained |
 | MD-3.1-FormalHamiltonianField | 100/122 | PASS | 待复审 / EAUDIT03 | self-contained |
 | MD-3.2-LieDerivative | 100/122 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
-| MD-3.2-ObservableDerivative | 100–101/122–123 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
+| MD-3.2-ObservableDerivative | 100–101/122–123 | PASS | 待复审 / EAUDIT04 | checked+documented priors |
 | MD-3.2-ObservableSecondDerivative | 101/123 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
 | MD-3.2-OperatorExponential | 101/123 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.2-FormalObservable | 101/123 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
-| MD-3.2-FiniteLieTaylor | 101/123 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | incomplete |
-| MD-3.2-FlowCoordinates | 101/123 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | incomplete |
-| MD-3.2-PoissonBracket | 102/124 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
-| MD-3.2-PoissonCoordinates | 102/124 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
-| MD-3.2-PoissonBilinearity | 102/124 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
-| MD-3.2-PoissonSkew | 102/124 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
-| MD-3.2-PoissonSelf | 102/124 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
-| MD-3.2-PoissonJacobi | 102/124 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
+| MD-3.2-FiniteLieTaylor | 101/123 | NEEDS_HUMAN | 待导师 / EAUDIT04（原返回NEEDS_HUMAN保留） | incomplete |
+| MD-3.2-FlowCoordinates | 101/123 | NEEDS_HUMAN | 待导师 / EAUDIT04（原返回NEEDS_HUMAN保留） | incomplete |
+| MD-3.2-PoissonBracket | 102/124 | PASS | 待复审 / EAUDIT04 | self-contained |
+| MD-3.2-PoissonCoordinates | 102/124 | PASS | 待复审 / EAUDIT04 | checked+documented priors |
+| MD-3.2-PoissonBilinearity | 102/124 | PASS | 待复审 / EAUDIT04 | checked+documented priors |
+| MD-3.2-PoissonSkew | 102/124 | PASS | 待复审 / EAUDIT04 | checked+documented priors |
+| MD-3.2-PoissonSelf | 102/124 | PASS | 待复审 / EAUDIT04 | checked+documented priors |
+| MD-3.2-PoissonJacobi | 102/124 | PASS | 待复审 / EAUDIT05 | checked+documented priors |
 | MD-3.2-HamiltonianObservableDerivative | 102/124 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
-| MD-3.2-HamiltonianLie | 102/124 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
+| MD-3.2-HamiltonianLie | 102/124 | PASS | 待复审 / EAUDIT05 | checked+documented priors |
 | MD-3.2-HamiltonianCoordinateDerivative | 102/124 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
 | MD-3.3-HamiltonianLieAdditivity | 103/125 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
 | MD-3.3-FormalSplitting | 103/125 | PASS | FAIL（绑定版本 433a13ca6407） | self-contained |
@@ -763,10 +763,10 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 2. 原文陈述
 
-> At any point $\boldsymbol z=\boldsymbol\zeta$ in phase space assume that there is a unique solution $\boldsymbol z(t;\boldsymbol\zeta)$ such that $\dot{\boldsymbol z}(t)=f(\boldsymbol z(t))$, $\boldsymbol z(0)=\boldsymbol\zeta$ that is globally defined for all $t$. Now differentiate $\phi(t)=\phi(\boldsymbol z(t))$ with respect to time, using the chain rule, to see how $\phi(\boldsymbol z(t))$ is changing as $t$ is varied:
-> \[\left.\frac{\mathrm d}{\mathrm dt}\phi\right|_{t=0}=\left[\sum_{i=1}^m\frac{\partial\phi}{\partial z_i}\dot z_i\right]_{\boldsymbol z=\boldsymbol\zeta}=\nabla\phi(\boldsymbol\zeta)\cdot f(\boldsymbol\zeta).\]
+> At any point $\boldsymbol z=\boldsymbol\zeta$ in phase space assume that there is a unique solution $\boldsymbol z(t,\boldsymbol\zeta)$ such that $\dot{\boldsymbol z}(t)=f(\boldsymbol z(t))$, $\boldsymbol z(0)=\boldsymbol\zeta$ that is globally defined for all $t$. Now differentiate $\hat\phi(t)=\phi(\boldsymbol z(t))$ with respect to time, using the chain rule, to see how $\phi(\boldsymbol z(t))$ is changing as $t$ is varied:
+> \[\left.\frac{\mathrm d}{\mathrm dt}\hat\phi\right|_{t=0}=\left[\sum_{i=1}^m\frac{\partial\phi}{\partial z_i}\dot z_i\right]_{\boldsymbol z=\boldsymbol\zeta}=\nabla\phi(\boldsymbol\zeta)\cdot f(\boldsymbol\zeta).\]
 > and note that the origin of time is irrelevant, then the equation for the evolution of $\phi$ could be written
-> \[\frac{\mathrm d}{\mathrm dt}\phi=(\mathcal L_f\phi)(\boldsymbol z).\tag{3.2}\]
+> \[\frac{\mathrm d}{\mathrm dt}\hat\phi=(\mathcal L_f\phi)(\boldsymbol z).\tag{3.2}\]
 
 ### 3. 原文证明
 
@@ -793,7 +793,7 @@ theorem observableDerivative (f : E → E) (φ : E → ℝ)
 
 本地预审：**PASS**。用任意实际解及任意时间点的真实链式法则表达；原文全局唯一性强于此局部结论所需，未新增解存在结论。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT04**。原文JSON：CORRECTED；未冻结。
 
 PASS。展开 MD.Ch03.textbookLieDerivative 后结论是 HasDerivAt (φ∘γ) (Dφ(γ(t))[f(γ(t))]) t，与帽号时间函数的导数及(3.2)一致。Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 hasDerivAt_textbookLieDerivative 的完整签名和函数体为 hφ.hasFDerivAt.comp_hasDerivAt t hγ；因此 hγ 确实要求 γ 在 t 的真实导数等于 f(γ(t))，没有把目标结论作为流定义或假设。量词先取 f、φ、γ、t，再给点可微和点ODE导数条件；原文全局光滑 φ、全局实际解蕴含这些条件。唯一性、全时间存在和指定初值对于此链式法则不是必要条件；将原文给定解代入并取 t=0、ζ=γ(0)即可得到原文首式，任意 t 给出(3.2)，没有遗漏导数结论。一般赋范空间版本是有效推广。无 [ERRATUM?]。证明状态独立记录：本声明调用已展开的链式法则，声明及该依赖证明无 sorry；这里只进行源码语义审计，未编译。
 
@@ -803,13 +803,13 @@ PASS。展开 MD.Ch03.textbookLieDerivative 后结论是 HasDerivAt (φ∘γ) (D
 
 位置：[Blueprint/Ch03.lean:137](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:137>)（`MD.Ch03.observableDerivative`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.hasDerivAt_textbookLieDerivative。
 
-签名SHA256：`714e6477f16bacc079bf619047d96de6ffb311cd38ab94c0365077b6400648ba`；原文SHA256：`71f3f1bd0296a34a47854d5d29a17cf53510b07be8eb109ded9864d2606e4d01`。
+签名SHA256：`714e6477f16bacc079bf619047d96de6ffb311cd38ab94c0365077b6400648ba`；原文SHA256：`dd25e3c94977bcdb839f41ada5bcad7e3c4f8794d9e05ac9c9302eadaf3ac8cd`。
 
 ## 1. MD-3.2-ObservableSecondDerivative · unnumbered_claim · 印刷p.101 / PDFp.123
 
@@ -1001,7 +1001,7 @@ theorem lieTaylor :
 
 本地预审：**NEEDS_HUMAN**。旧清单添加了原书未显式写出的有限Taylor余项；完整有限签名保留并标EXTRA，独立审校前不将其称为原书逐字定理。
 
-网站审计：**NEEDS_HUMAN（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT04（原返回NEEDS_HUMAN保留）**。原文JSON：DRAFT；未冻结。
 
 相关自定义定义均已找到，不存在缺失定义。已展开 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ，以及 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 L_fφ(z)=Dφ(z)[f(z)]；-- FILE: MolecularDynamics/Chapter03/Statements.lean 的 lieTaylor_statement 与 Ch03.lean 此签名相同。量词是先任取 n、k、f、φ、γ，给出全域C∞和∀t真实ODE条件，再存在依赖这些数据及k的C>0、δ>0，对所有|t|<δ给出从j=0到k、在γ(0)评价的余项界；不是一个C、δ对所有k统一成立，也没有把余项界当前提。此实际有限Taylor结论数学上合理，不需要analytic或无限级数收敛；全域光滑、全时间解比局部所需资格强。原文需要数学判断的问题明确为：PDF p.123 的实际函数等号随后被声明按formal series解释，是否允许以新增的每一有限阶实际O(|t|^(k+1))估计，作为该形式等号的完整替代陈述。原页没有这种定量不等式，而 [EXTRA] 中的余项界其实是新增结论、不是额外假设；仅“此估计为真”不足以自动认可 source-to-signature 的替代范围。本批已有的严格化待裁定问题因此保留为 NEEDS_HUMAN。若接受全阶Taylor jet／渐近展开解释，可接受该签名作为严格版本；若要求只对应原句的形式系数，应单列形式系数与沿解时间导数的等式，将此余项定理列作辅助结果。不能据光滑性把原式静默改成实际收敛的无限和；本条没有 [ERRATUM?] 标记，本审查也不修改原书。证明状态独立记录：Ch03.lean 的 lieTaylor 函数体为 sorry；这是未完成证明，既不是此语义待裁定的理由，也不提供数学验证。
 
@@ -1015,7 +1015,7 @@ theorem lieTaylor :
 
 位置：[Blueprint/Ch03.lean:164](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:164>)（`MD.Ch03.lieTaylor`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1027,7 +1027,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 ### 2. 原文陈述
 
-> This gives a concise formula for the evolution of any function of the phase variables, including, in particular, any solution component $z_i$. Thus the flow map for the system can be represented by $\exp(t\mathcal L_f)$. When one writes $\mathcal F_t=\exp(t\mathcal L_f)$, what is actually meant is that the individual components satisfy
+> This gives a concise formula for the evolution of any function of the phase variables, including, in particular, any solution component $z_i$. Thus the flow map of the system can be represented by $\exp(t\mathcal L_f)$. When one writes $\mathcal F_t=\exp(t\mathcal L_f)$, what is actually meant is that the individual components satisfy
 > \[z_i(t,\boldsymbol\zeta)=[\mathcal F_t(\boldsymbol\zeta)]_i=\left.(\exp(t\mathcal L_f)z_i)\right|_{\boldsymbol z=\boldsymbol\zeta}.\]
 
 ### 3. 原文证明
@@ -1062,7 +1062,7 @@ theorem flowCoordinates :
 
 本地预审：**NEEDS_HUMAN**。保留真实流、坐标、实际Lie形式系数及任意有限截断余项；原文形式等式与此额外有限解释的范围待独立审校，未把只证明坐标ODE当作整个结论。
 
-网站审计：**NEEDS_HUMAN（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT04（原返回NEEDS_HUMAN保留）**。原文JSON：CORRECTED；未冻结。
 
 相关自定义定义均已找到。已展开 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、-- FILE: MolecularDynamics/Chapter03/ReviewDefinitions.lean 中 formalObservable 的系数 ((L_f)^[j]φ)(ζ)/j!，以及 -- FILE: MolecularDynamics/Chapter03/Statements.lean 中 actualFlow：0<η，且对每个ζ∈D有Φ(0,ζ)=ζ，对每个|t|<η有Φ(t,ζ)∈D并具有真实导数 f(Φ(t,ζ))。所以初值和真实ODE资格没有遗漏，也没有用形式流或目标余项代替实际流。坐标观测量φ(z)=z_i的选取正确，常数项是ζ_i；系数乘t^j、截至j=k，其评价点和阶数与形式exp作用于坐标一致。量词为任取n、k、f、D、Φ、η，在光滑f和actualFlow之后任取ζ∈D和i，再存在可依赖ζ、i、k的C>0、δ>0且δ≤η，界对所有|t|<δ成立；没有对所有初值、坐标、阶数的共同余项常数。该局部实际估计数学上合理，但全域C∞、共同η和D内不离域是显式选用的局部流框架，不是原文给出的全部全局流数据。[EXTRA]中的有限余项是新增结论；没有本条 [ERRATUM?]。需要数学判断的具体原文问题是：页上 z_i(t,ζ)=[F_t(ζ)]_i=(exp(tL_f)z_i)|_(z=ζ) 的实际流与形式算子的连接，在原书不讨论收敛的条件下应怎样精确解释；是否接受每个初值处、任意有限阶的局部渐近估计作为此源等式的完整对应。此签名未直接声明实际流等于某个已定义的算子作用，也没有另声明时间Taylor系数与Lie系数相等；采用Taylor jet解释可认可现有估计，要求原式逐子句对应则应另列形式jet身份，并将余项界作为辅助结果。不能以额外估计本身为真就代替对原文含义的裁定，故 NEEDS_HUMAN，而不是因缺少定义或sorry。证明状态独立记录：Ch03.lean 的 flowCoordinates 为 sorry，尚未证明；本次只读审计未编译。
 
@@ -1076,20 +1076,20 @@ theorem flowCoordinates :
 
 位置：[Blueprint/Ch03.lean:176](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:176>)（`MD.Ch03.flowCoordinates`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺实际流与高阶Lie Taylor系数的完整有限余项桥接；本地非PASS不证明。
 
-签名SHA256：`7735f5d7b0be3e1a9c7a6df4e4402f4d51bf4237e0bc3494dfac3b2945484805`；原文SHA256：`9910a4b9224558593efeab041f3767cac066d80f2749ca77b44ffc6a23dd1667`。
+签名SHA256：`7735f5d7b0be3e1a9c7a6df4e4402f4d51bf4237e0bc3494dfac3b2945484805`；原文SHA256：`93a84e57b9dceaa5f73db4b61a7184a66f02fbe3d14d9213f92cf94b8128a458`。
 
 ## 1. MD-3.2-PoissonBracket · definition · 印刷p.102 / PDFp.124
 
 ### 2. 原文陈述
 
 > Another common notation for performing computations involving Hamiltonian systems is the Poisson bracket which is defined for two smooth scalar-valued functions $g_1$ and $g_2$ of the phase variables $(\boldsymbol q,\boldsymbol p)$ of a Hamiltonian system in $\mathbb R^m$ by
-> \[\{g_1,g_2\}=\sum_{i=1}^N\left(\frac{\partial g_1}{\partial q_i}\frac{\partial g_2}{\partial p_i}-\frac{\partial g_2}{\partial q_i}\frac{\partial g_1}{\partial p_i}\right)=\nabla g_1^T J\nabla g_2,\]
+> \[\{g_1,g_2\}=\sum_{i=1}^{N_c}\left(\frac{\partial g_1}{\partial q_i}\frac{\partial g_2}{\partial p_i}-\frac{\partial g_2}{\partial q_i}\frac{\partial g_1}{\partial p_i}\right)=\nabla g_1^T J\nabla g_2,\]
 
 ### 3. 原文证明
 
@@ -1115,7 +1115,7 @@ noncomputable def textbookPoissonBracket (F G : SymplecticCoordinates Nc → ℝ
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT04**。原文JSON：CORRECTED；未冻结。
 
 PASS。已展开 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/SymplecticForm.lean 中 SymplecticCoordinates Nc=(Fin Nc⊕Fin Nc)→ℝ 和 textbookJ Nc=Matrix.fromBlocks 0 1 (-1) 0；-- FILE: MolecularDynamics/Chapter02/SplittingError.lean 中 textbookHamiltonianVectorField G z=textbookJ Nc *ᵥ (i↦(fderiv ℝ G z)(Pi.single i 1))；-- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 textbookPoissonBracket F G z=(fderiv ℝ F z)(textbookHamiltonianVectorField G z)。Ch03.lean 的本地括号定义与该依赖相同。inl是q坐标、inr是p坐标；G的向量场位置块为∂G/∂p，动量块为−∂G/∂q。将DF作用其上，得到∑ᵢ(∂F/∂qᵢ·∂G/∂pᵢ−∂G/∂qᵢ·∂F/∂pᵢ)，与原文N_c个配置坐标的括号完全相符，矩阵符号没有误用mathlib相反的J。依赖中 textbookPoissonBracket_coordinates 的完整坐标展开也确认此符号与对象。参数F、G、z任意，作为定义在原文光滑函数类上正确；fderiv全函数化在不可微输入上的扩展不等于断言经典偏导存在。无额外假设或 [ERRATUM?]。证明状态独立记录：本条为显式 def，核心依赖也是实际定义而非sorry性质；未编译。
 
@@ -1125,17 +1125,17 @@ PASS。已展开 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/Symplect
 
 位置：[Blueprint/Ch03.lean:188](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:188>)（`MD.Ch03.textbookPoissonBracket`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`8266f6e26328af2f7adab2f4687c220f4d9a91cec52c49dc8827ae913a282f63`；原文SHA256：`781873dac26b26126a19984d9988c81721f31dd72aeca762f61e1c317535909e`。
+签名SHA256：`8266f6e26328af2f7adab2f4687c220f4d9a91cec52c49dc8827ae913a282f63`；原文SHA256：`29c6d99218aeef0bdebcd0c2ae15c05c479caf9914295ce29f3f6efd2cc7385b`。
 
 ## 1. MD-3.2-PoissonCoordinates · unnumbered_claim · 印刷p.102 / PDFp.124
 
 ### 2. 原文陈述
 
-> \[\{g_1,g_2\}=\sum_{i=1}^N\left(\frac{\partial g_1}{\partial q_i}\frac{\partial g_2}{\partial p_i}-\frac{\partial g_2}{\partial q_i}\frac{\partial g_1}{\partial p_i}\right)=\nabla g_1^T J\nabla g_2.\]
+> \[\{g_1,g_2\}=\sum_{i=1}^{N_c}\left(\frac{\partial g_1}{\partial q_i}\frac{\partial g_2}{\partial p_i}-\frac{\partial g_2}{\partial q_i}\frac{\partial g_1}{\partial p_i}\right)=\nabla g_1^T J\nabla g_2.\]
 
 ### 3. 原文证明
 
@@ -1165,7 +1165,7 @@ theorem poissonCoordinates (F G : SymplecticCoordinates Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT04**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。有限坐标求和逐项为 F_q G_p−G_q F_p；由定义同时给出原文的梯度矩阵表达式，无遗漏第二个等号。Fin Nc 与原文1至Nc仅索引平移。任意函数的总化 fderiv 扩展在光滑函数上完全一致；无需额外假设。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。
 
@@ -1175,13 +1175,13 @@ theorem poissonCoordinates (F G : SymplecticCoordinates Nc → ℝ)
 
 位置：[Blueprint/Ch03.lean:193](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:193>)（`MD.Ch03.poissonCoordinates`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.textbookPoissonBracket_coordinates。
 
-签名SHA256：`fc204e4a12085afbf6e165072880e696ea62f0e05afbfed21dd312b67c8be055`；原文SHA256：`173c2c917b25d4f4394147907234c025a3b97316f2633d46cddca3879a692876`。
+签名SHA256：`fc204e4a12085afbf6e165072880e696ea62f0e05afbfed21dd312b67c8be055`；原文SHA256：`51076679e7d1bad23ff5011fadd351a4419c69009bda100d4e5a9ad3f9217b90`。
 
 ## 1. MD-3.2-PoissonBilinearity · unnumbered_claim · 印刷p.102 / PDFp.124
 
@@ -1195,6 +1195,10 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 原书无独立完整证明（proof_latex=null）。
 
 原书未给独立完整证明。
+
+原文证明思路：
+
+> The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).
 
 ### 4. Lean陈述
 
@@ -1220,7 +1224,7 @@ theorem poissonBilinearity (F G H : SymplecticCoordinates Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT04**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。原文右变量线性完整保留，第二合取给出由反对称性推出的左变量线性，是合理的派生加强。F、G、H在z可微是原文smooth的较弱局部资格；对于完整两变量线性，求导线性组合需要这些资格，未假定结论。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。
 
@@ -1230,13 +1234,13 @@ theorem poissonBilinearity (F G H : SymplecticCoordinates Nc → ℝ)
 
 位置：[Blueprint/Ch03.lean:204](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:204>)（`MD.Ch03.poissonBilinearity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.textbookPoissonBracket_linear_right; MolecularDynamics.textbookPoissonBracket_linear_left。
 
-签名SHA256：`0ce95fe3b6022c4037005bcb781aaec02a78e5ed260027a064213f0ecc5bc97c`；原文SHA256：`dc2bbf27c4d8526148d09b04321fa83b070b939223eacb9651fc2c8947a1da61`。
+签名SHA256：`0ce95fe3b6022c4037005bcb781aaec02a78e5ed260027a064213f0ecc5bc97c`；原文SHA256：`d37a75687ae2eae55d5c61e2eb2378f5a4264b4605ff163cba8b8f9a8328b296`。
 
 ## 1. MD-3.2-PoissonSkew · unnumbered_claim · 印刷p.102 / PDFp.124
 
@@ -1249,6 +1253,10 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 原书无独立完整证明（proof_latex=null）。
 
 原书未给独立完整证明。
+
+原文证明思路：
+
+> The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).
 
 ### 4. Lean陈述
 
@@ -1268,7 +1276,7 @@ theorem poissonSkew (F G : SymplecticCoordinates Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT04**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。固定规范J为反对称矩阵，DF[J∇G]=−DG[J∇F]；F、G、z任意，符号及交换顺序一致。无可微前提的总化延拓不影响原文光滑情形。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。
 
@@ -1278,13 +1286,13 @@ theorem poissonSkew (F G : SymplecticCoordinates Nc → ℝ)
 
 位置：[Blueprint/Ch03.lean:216](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:216>)（`MD.Ch03.poissonSkew`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.textbookPoissonBracket_skew。
 
-签名SHA256：`0bcee02b8c56518d7993572a4832ddb0f5ada91b6b8a418c6f8cf52b8356b856`；原文SHA256：`d9096833d5e368b630706ab0ef31a622c53dae3929d5478b8271531d913d9ebe`。
+签名SHA256：`0bcee02b8c56518d7993572a4832ddb0f5ada91b6b8a418c6f8cf52b8356b856`；原文SHA256：`de8b485e80294c6faae6c18813c6c1af59ea0f0c92f2596b2e4fb583b1270f4b`。
 
 ## 1. MD-3.2-PoissonSelf · unnumbered_claim · 印刷p.102 / PDFp.124
 
@@ -1297,6 +1305,10 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 原书无独立完整证明（proof_latex=null）。
 
 原书未给独立完整证明。
+
+原文证明思路：
+
+> The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).
 
 ### 4. Lean陈述
 
@@ -1315,7 +1327,7 @@ theorem poissonSelf (F : SymplecticCoordinates Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT04**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。实数上由反对称性得到{F,F}=0，与原文全部结论一致；没有额外假设。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。
 
@@ -1325,13 +1337,13 @@ theorem poissonSelf (F : SymplecticCoordinates Nc → ℝ)
 
 位置：[Blueprint/Ch03.lean:222](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:222>)（`MD.Ch03.poissonSelf`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.textbookPoissonBracket_self。
 
-签名SHA256：`ec538ae95cb7e2493014039e67bc9c8f098c5d267b5a55d386375a44e64d5a7f`；原文SHA256：`159f251282e8624f5b113750aa7b37f50e4afbeef00f95ed2312bda168afe42d`。
+签名SHA256：`ec538ae95cb7e2493014039e67bc9c8f098c5d267b5a55d386375a44e64d5a7f`；原文SHA256：`ee52db43569583976e879f87a7a7f7279cb53548bb4c486edb464f17b0451257`。
 
 ## 1. MD-3.2-PoissonJacobi · unnumbered_claim · 印刷p.102 / PDFp.124
 
@@ -1344,6 +1356,10 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 原书无独立完整证明（proof_latex=null）。
 
 原书未给独立完整证明。
+
+原文证明思路：
+
+> The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).
 
 ### 4. Lean陈述
 
@@ -1367,7 +1383,7 @@ theorem poissonJacobi (F G H : SymplecticCoordinates Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT05**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。三个嵌套括号按原文 F,{G,H}；H,{F,G}；G,{H,F} 的顺序相加等于零。ContDiffAt ℝ 2 表示点z处局部C²，足以保证实际括号可微和二阶导数对称，是原文smooth的合理弱化，非任意未微分函数。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。
 
@@ -1377,13 +1393,13 @@ theorem poissonJacobi (F G H : SymplecticCoordinates Nc → ℝ)
 
 位置：[Blueprint/Ch03.lean:228](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:228>)（`MD.Ch03.poissonJacobi`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.textbookPoissonBracket_jacobi。
 
-签名SHA256：`59b81a2dc289d562b491e7520921f3afd82560ba6dd761cd7e8ead98e3fb5782`；原文SHA256：`b9486d516b6c14dcb0f4ccb46471220ce487caec38eaeeb89438ad9950a2c89b`。
+签名SHA256：`59b81a2dc289d562b491e7520921f3afd82560ba6dd761cd7e8ead98e3fb5782`；原文SHA256：`64eb70a8083e6c990588b1f8e23c36bc19dad4164cd80e53f8728f1efb6309d5`。
 
 ## 1. MD-3.2-HamiltonianObservableDerivative · unnumbered_claim · 印刷p.102 / PDFp.124
 
@@ -1442,7 +1458,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 2. 原文陈述
 
 > As a consequence, we have the following relation between the Lie derivative and the Poisson bracket:
-> \[\mathcal L_{J\nabla H}F=\{F,H\}.\]
+> \[\mathcal L_{J\nabla H}F\equiv \{F,H\}.\]
 > For a Hamiltonian flow, we typically simplify notation by writing $\mathcal L_H$ in place of $\mathcal L_{J\nabla H}$.
 
 ### 3. 原文证明
@@ -1470,7 +1486,7 @@ theorem hamiltonianLie_eq_poisson
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT05**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。展开两边均为 z↦DF(z)[J∇H(z)]，函数等式覆盖所有相空间点。依赖 Chapter03/ReviewDefinitions.lean 的 hamiltonianLie H F=textbookLieDerivative (textbookHamiltonianVectorField H) F，也实现原文L_H的记号简写。无额外假设。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。
 
@@ -1480,13 +1496,13 @@ theorem hamiltonianLie_eq_poisson
 
 位置：[Blueprint/Ch03.lean:247](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:247>)（`MD.Ch03.hamiltonianLie_eq_poisson`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson。
 
-签名SHA256：`48399597724088ca0b52574346737cfd41019baa390d440f842b2e73732704cd`；原文SHA256：`e409dea4ea3a5a81d1b32ee6fef81b46a7683815ca64e03b4e0c9f507b137a17`。
+签名SHA256：`48399597724088ca0b52574346737cfd41019baa390d440f842b2e73732704cd`；原文SHA256：`d6876ea434cc9e693c3a9700d653fe452c32a66c45d0f47d6d33e7a7fba3df78`。
 
 ## 1. MD-3.2-HamiltonianCoordinateDerivative · unnumbered_claim · 印刷p.102 / PDFp.124
 

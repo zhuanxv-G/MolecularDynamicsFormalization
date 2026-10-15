@@ -134,5 +134,98 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT03/INDEX.md"
+  },
+  {
+    "chapter": 3,
+    "eaudit": "EAUDIT04",
+    "section": "3.2",
+    "source_ids": [
+      "MD-3.2-FiniteLieTaylor",
+      "MD-3.2-FlowCoordinates",
+      "MD-3.2-ObservableDerivative",
+      "MD-3.2-PoissonBilinearity",
+      "MD-3.2-PoissonBracket",
+      "MD-3.2-PoissonCoordinates",
+      "MD-3.2-PoissonSelf",
+      "MD-3.2-PoissonSkew"
+    ],
+    "reaudit_ids": [
+      "MD-3.2-ObservableDerivative",
+      "MD-3.2-PoissonBracket",
+      "MD-3.2-PoissonCoordinates",
+      "MD-3.2-PoissonBilinearity",
+      "MD-3.2-PoissonSkew",
+      "MD-3.2-PoissonSelf"
+    ],
+    "human_ids": [
+      "MD-3.2-FiniteLieTaylor",
+      "MD-3.2-FlowCoordinates"
+    ],
+    "lean_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+    "source_sha256": "c5e61997c4f39c207a6190e3d66d63b7b0021f08c301350bbafc9b648d32d867",
+    "pages": [
+      122,
+      123,
+      124
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch03.olean",
+        "Blueprint/Ch03.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+      "log_sha256": "18b660c6b2d12a9777a5d744b05d7f0148effa0377b87af468ffa252f0206499"
+    },
+    "axiom_decl_count": 8,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/INDEX.md"
+  },
+  {
+    "chapter": 3,
+    "eaudit": "EAUDIT05",
+    "section": "3.2",
+    "source_ids": [
+      "MD-3.2-HamiltonianLie",
+      "MD-3.2-PoissonJacobi"
+    ],
+    "reaudit_ids": [
+      "MD-3.2-PoissonJacobi",
+      "MD-3.2-HamiltonianLie"
+    ],
+    "human_ids": [],
+    "lean_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+    "source_sha256": "01e51386aec92ff0be2f9b5e19cd70fa8baaaf20959d82f4bc17f3e22586a389",
+    "pages": [
+      122,
+      123,
+      124
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch03.olean",
+        "Blueprint/Ch03.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+      "log_sha256": "18b660c6b2d12a9777a5d744b05d7f0148effa0377b87af468ffa252f0206499"
+    },
+    "axiom_decl_count": 2,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT05/INDEX.md"
   }
 ]

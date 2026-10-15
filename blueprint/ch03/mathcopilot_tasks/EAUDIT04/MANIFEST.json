@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT04",
+  "input_sha256": {
+    "BATCH_EAUDIT04.md": "beaf1ed22bbbcb226583f4a70ad4eeba93f4a85d37589e27436ae6441026d5f1",
+    "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+    "blueprint/ch03/ch03_source.json": "c5e61997c4f39c207a6190e3d66d63b7b0021f08c301350bbafc9b648d32d867"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT04a",
+      "source_id": "MD-3.2-ObservableDerivative",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/a",
+      "total_bytes": 116876,
+      "manifest_sha256": "d5b3c7578362afdbeb67385a8b87e9c33f7acebeade082b256dbbfc4fed37023"
+    },
+    {
+      "subtask": "EAUDIT04b",
+      "source_id": "MD-3.2-PoissonBracket",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/b",
+      "total_bytes": 95867,
+      "manifest_sha256": "340553370e91919bcc4f83c8e89e36f238c0fc2ddcbd3633b5393765b77de32a"
+    },
+    {
+      "subtask": "EAUDIT04c",
+      "source_id": "MD-3.2-PoissonCoordinates",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/c",
+      "total_bytes": 95773,
+      "manifest_sha256": "647fa6abf9d0d143f6f2ac6dde1689bb023f07d04441fe0073e1c5c6da381ea6"
+    },
+    {
+      "subtask": "EAUDIT04d",
+      "source_id": "MD-3.2-PoissonBilinearity",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/d",
+      "total_bytes": 96131,
+      "manifest_sha256": "d1b97214d5c79ee71d5af93058e6c4ed7c13ce0998004e85f45717829c5a063d"
+    },
+    {
+      "subtask": "EAUDIT04e",
+      "source_id": "MD-3.2-PoissonSkew",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/e",
+      "total_bytes": 95333,
+      "manifest_sha256": "e857d6acf14d8741a1af0e43e2e71609bc22286873ed1d56ca7b72b0fce2b2f7"
+    },
+    {
+      "subtask": "EAUDIT04f",
+      "source_id": "MD-3.2-PoissonSelf",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT04/f",
+      "total_bytes": 95269,
+      "manifest_sha256": "92f4a7147ae9f008e22b1b97e66b359630c2a14b67d1c3a10e25041e3f2ab258"
+    }
+  ]
+}
