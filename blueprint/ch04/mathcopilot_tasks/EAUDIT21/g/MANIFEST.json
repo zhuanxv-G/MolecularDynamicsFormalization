@@ -1,0 +1,147 @@
+{
+  "eaudit": "EAUDIT21",
+  "source_id": "MD-4.4.1-RigidPoissonMatrix",
+  "input_sha256": {
+    "BATCH_EAUDIT21.md": "2944febaa0d2f5d9159fb62b5c197c7e0ce4fe6e6c755c241a9ef198f69c77c6",
+    "Blueprint/Ch04.lean": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+    "blueprint/ch04/ch04_source.json": "eb5cf26327604d6388ecaeacd018ee1c4cdee187d0f4e24135c5916ca756196b",
+    "EAUDIT21g_materials": "32a55886cff2f8d9155d6ac204754d78b69419f32a3b7d2319875c15a88e42e6",
+    "EAUDIT21g_PAGES.pdf": "df365706ffa0c2c7c1393c5c1720c09d051587a52f9a651c941ca012fee65908"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    194
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "0710df153deb9bdaeea8ff08741bb12663ffb741fefcb94fde62fe4b908f7875",
+  "source_block_sha256": "8dd4d059b0400eb7d47e8fa6102d2bff936c061b2493eab77afdf5c91edd96ab",
+  "source_declarations": [
+    "rigidPoissonMatrix",
+    "rigidBodyHamiltonian",
+    "rigidPoissonMatrix_hamiltonian"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.cross3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "482e275d45f901379b4e5bc7b76d0c76d5a6d4e033a454340d968594bd131931"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.eulerRigidField",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "29fe4fca3ed4076e7f83f6daee97b32ebfdc189529521e5fd7cf0e69bcd597ba"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.grad",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "85d1654c3905d13fe56fe56e9cfad2796ca9c56a6fceba8596a551e567d342a3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.skewMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "2a9ce22411b192f40702811ed441f42477221fbe13c32f50bf28b888707d896b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "cross3",
+      "file_sha256": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+      "excerpt_sha256": "0a5cca048815d451f60fad8066cd7ce02646180304182fb2b95e13a5462cfa50"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "eulerRigidField",
+      "file_sha256": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+      "excerpt_sha256": "7d9b57b97fd40835d66217810c9a4cf0c89f33fa88a8fedb0a44a899a36f7b38"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "522e86de81741a525bcd8720e95f1f0a3f1ba51791c5d13cea4bed7e30a1620e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "85d1654c3905d13fe56fe56e9cfad2796ca9c56a6fceba8596a551e567d342a3"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "rigidBodyHamiltonian",
+      "file_sha256": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+      "excerpt_sha256": "d37f21b8c75323cd3de778bd2623b95bd51bf4bd31bc59aa97b7e954a8ac765f"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "rigidPoissonMatrix",
+      "file_sha256": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+      "excerpt_sha256": "46642526f17aa3f35a0b3f110b878aef8909d1693214a9209c24781e588044d8"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "skewMatrix",
+      "file_sha256": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+      "excerpt_sha256": "239f5666392b7eb19bbe2b0476fc1b88d530419ade96153b90c6f75f167d1824"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "name": "textbookConstraintGradient",
+      "file_sha256": "890274c6144406ad066b0a624cf08e3b95995c17b495545de8c3c05f260d4e44",
+      "excerpt_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT21_review.json",
+  "total_task_bytes": 92786
+}

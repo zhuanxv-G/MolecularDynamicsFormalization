@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT22",
+  "input_sha256": {
+    "BATCH_EAUDIT22.md": "76c4d01470804ae2002e7873e139eade866d40a945b3a51659cc3951c5fc1af3",
+    "Blueprint/Ch04.lean": "f1b6644ea3c7486d1a9c9449351593ffd775becd0b8648d57ae5da0919462251",
+    "blueprint/ch04/ch04_source.json": "fef3964b10465fb4d0dd9df0091a05128c0f79eaa7aafa1addfa3eb11b3e3e4a"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT22a",
+      "source_id": "MD-4.4.1-AxisRotation",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT22/a",
+      "total_bytes": 105376,
+      "manifest_sha256": "d14e6aa62f61db2d3e06db45a8c3e5f31412d57dcc66fc0eb0253958c86c02a5"
+    },
+    {
+      "subtask": "EAUDIT22b",
+      "source_id": "MD-4.4.1-PrincipalAxisField",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT22/b",
+      "total_bytes": 91560,
+      "manifest_sha256": "32df6f3e1f3af1fd43d2709a550963cb5267bd5c58360b4ed90739c1aea6c216"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT21",
+  "section": "4.4.1",
+  "source_ids": [
+    "MD-4.4.1-AngularInertia",
+    "MD-4.4.1-AngularMomentum",
+    "MD-4.4.1-BodyMomentum",
+    "MD-4.4.1-EulerRigidField",
+    "MD-4.4.1-FreeRigidSolution",
+    "MD-4.4.1-PoissonDegeneracy",
+    "MD-4.4.1-RigidInvariants",
+    "MD-4.4.1-RigidPoissonMatrix"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.1-AngularMomentum",
+    "MD-4.4.1-BodyMomentum",
+    "MD-4.4.1-AngularInertia",
+    "MD-4.4.1-EulerRigidField",
+    "MD-4.4.1-FreeRigidSolution",
+    "MD-4.4.1-RigidInvariants",
+    "MD-4.4.1-RigidPoissonMatrix",
+    "MD-4.4.1-PoissonDegeneracy"
+  ],
+  "human_ids": [],
+  "lean_sha256": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+  "source_sha256": "eb5cf26327604d6388ecaeacd018ee1c4cdee187d0f4e24135c5916ca756196b",
+  "pages": [
+    193,
+    194,
+    195,
+    196
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+    "log_sha256": "3066cf5ed390c81c6df6bdb40be39980378fc412dd77c053deec3ec7e0eba749"
+  },
+  "axiom_decl_count": 10,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT21/INDEX.md"
+}

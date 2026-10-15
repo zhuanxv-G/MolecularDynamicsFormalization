@@ -1473,5 +1473,75 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "4.4"
+  },
+  "MD-4.4.1-FreeRigidSolution": {
+    "category": "A",
+    "handling": "采用开放时间域和正定惯性张量，明确within导数就是实际经典导数；Mathlib标准定义按用户约定直接采信，不再因未复制定义体待人工。",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-RigidInvariants": {
+    "category": "B",
+    "handling": "本条仅保留原页的能量与角动量模长守恒，实际Hamiltonian梯度表示/反对称性由RigidPoissonMatrix补全，退化由PoissonDegeneracy原已有声明承担，完整原文保留。",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-RigidPoissonMatrix": {
+    "category": "B",
+    "handling": "保留J定义，补实际二次能量定义、真实fderiv梯度Hamiltonian表示及反对称性；正定惯性是物理充分资格，不预设所求梯度公式。",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-AngularMomentum": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-BodyMomentum": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-AngularInertia": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-EulerRigidField": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-PoissonDegeneracy": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-PrincipalAxisField": {
+    "category": "B",
+    "handling": "本条为单轴分裂场定义；完整印刷五次轴复合由PrintedSpinStep承担，实际子流的负角与原印正角冲突保留AxisFlowFormal/ExactPlanarRotation待导师。",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-AxisRotation": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-SecondAxisPrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-ThirdAxisPrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-AxisFlowFormal": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.4.1"
+  },
+  "MD-4.4.1-ExactPlanarRotation": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.4.1"
   }
 }

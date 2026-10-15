@@ -1,0 +1,55 @@
+{
+  "eaudit": "EAUDIT21",
+  "source_id": "MD-4.4.1-BodyMomentum",
+  "input_sha256": {
+    "BATCH_EAUDIT21.md": "2944febaa0d2f5d9159fb62b5c197c7e0ce4fe6e6c755c241a9ef198f69c77c6",
+    "Blueprint/Ch04.lean": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+    "blueprint/ch04/ch04_source.json": "eb5cf26327604d6388ecaeacd018ee1c4cdee187d0f4e24135c5916ca756196b",
+    "EAUDIT21b_materials": "8b008baaf69a0acb9ee22be6b7bb035314f83c99b1fc893aaff4620e467eb0eb",
+    "EAUDIT21b_PAGES.pdf": "c703fecc788997c44a2ad36a3aa11cc168c8537dba3f962442edfc6cb27bb04d"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    193
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "362853b78f464443ea5ecf5e9ac6705abdfb8fb867dcc92d9e0a56c3967e7b9e",
+  "source_block_sha256": "6a1949bbe3cee312fa77317df4cbfaf5ec38d2547a1e8b90769b66939f5a92e1",
+  "source_declarations": [
+    "bodyMomentum"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "bodyMomentum",
+      "file_sha256": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+      "excerpt_sha256": "6a1949bbe3cee312fa77317df4cbfaf5ec38d2547a1e8b90769b66939f5a92e1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT21_review.json",
+  "total_task_bytes": 88743
+}

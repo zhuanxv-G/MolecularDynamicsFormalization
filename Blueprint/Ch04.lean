@@ -2166,12 +2166,14 @@ theorem angularInertia :
 /-- source_id: MD-4.4.1-EulerRigidField · (4.41) · §4.4.1 · 印刷p.172 / PDFp.194 -/
 def eulerRigidField (T : MolecularDynamics.Chapter04Review.Mat3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := MolecularDynamics.Chapter04Review.cross3 π (T⁻¹ *ᵥ π)
 
-/-- source_id: MD-4.4.1-FreeRigidSolution · definition · §4.4.1 · 印刷p.172 / PDFp.194 -/
-def freeRigidSolution (T : MolecularDynamics.Chapter04Review.Mat3) (π : ℝ → MolecularDynamics.Chapter04Review.V) (I : Set ℝ) : Prop :=
+/-- source_id: MD-4.4.1-FreeRigidSolution · definition · §4.4.1 · 印刷p.172 / PDFp.194 
+[EXTRA] 采用开放时间域和正定惯性张量，明确within导数就是实际经典导数；Mathlib标准定义按用户约定直接采信，不再因未复制定义体待人工。 -/
+def freeRigidSolution (T : MolecularDynamics.Chapter04Review.Mat3) (π : ℝ → MolecularDynamics.Chapter04Review.V) (I : Set ℝ) (_hI : IsOpen I) (_hT : T.PosDef) : Prop :=
   ∀ t ∈ I, HasDerivWithinAt π (MolecularDynamics.Chapter04Review.eulerRigidField T (π t)) I t
 
 /-- source_id: MD-4.4.1-RigidInvariants · unnumbered_claim · §4.4.1 · 印刷p.172 / PDFp.194
-[EXTRA] 对称正定T、实际连续闭区间轨道，证明原能量H̃=πᵀT⁻¹π/2和角动量平方同时守恒；不假设任一守恒。 -/
+[EXTRA] 对称正定T、实际连续闭区间轨道，证明原能量H̃=πᵀT⁻¹π/2和角动量平方同时守恒；不假设任一守恒。 
+[EXTRA] 本条仅保留原页的能量与角动量模长守恒，实际Hamiltonian梯度表示/反对称性由RigidPoissonMatrix补全，退化由PoissonDegeneracy原已有声明承担，完整原文保留。 -/
 theorem rigidInvariants :
   ∀ (T : MolecularDynamics.Chapter04Review.Mat3) (π : ℝ → MolecularDynamics.Chapter04Review.V) a b,
   T.PosDef → a ≤ b → ContinuousOn π (Icc a b) → MolecularDynamics.Chapter04Review.freeRigidSolution T π (Icc a b) →
@@ -2226,8 +2228,20 @@ theorem rigidInvariants :
   intro t ht
   exact ⟨ce t ht,cn t ht⟩
 
-/-- source_id: MD-4.4.1-RigidPoissonMatrix · definition · §4.4.1 · 印刷p.172 / PDFp.194 -/
+/-- source_id: MD-4.4.1-RigidPoissonMatrix · definition · §4.4.1 · 印刷p.172 / PDFp.194 
+[EXTRA] 保留J定义，补实际二次能量定义、真实fderiv梯度Hamiltonian表示及反对称性；正定惯性是物理充分资格，不预设所求梯度公式。 -/
 def rigidPoissonMatrix (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 := MolecularDynamics.Chapter04Review.skewMatrix π
+
+def rigidBodyHamiltonian (T : MolecularDynamics.Chapter04Review.Mat3)
+    (mom : MolecularDynamics.Chapter04Review.V) : ℝ :=
+  MolecularDynamics.Chapter04Review.dot mom (T⁻¹ *ᵥ mom)/2
+
+theorem rigidPoissonMatrix_hamiltonian (T : MolecularDynamics.Chapter04Review.Mat3)
+    (_hT : T.PosDef) (mom : MolecularDynamics.Chapter04Review.V) :
+    (rigidPoissonMatrix mom)ᵀ= -rigidPoissonMatrix mom ∧
+    MolecularDynamics.Chapter04Review.eulerRigidField T mom=
+      rigidPoissonMatrix mom *ᵥ MolecularDynamics.Chapter04Review.grad (rigidBodyHamiltonian T) mom := by
+  sorry
 
 /-- source_id: MD-4.4.1-PoissonDegeneracy · unnumbered_claim · §4.4.1 · 印刷p.172 / PDFp.194 -/
 theorem poissonDegeneracy : ∀ π : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.rigidPoissonMatrix π *ᵥ π=0 := by
@@ -2254,7 +2268,8 @@ def thirdAxisPrinted (I : MolecularDynamics.Chapter04Review.V) (π : MolecularDy
   MolecularDynamics.Chapter04Review.cross3 π ![0,0,a/I 2]
 
 /-- source_id: MD-4.4.1-PrincipalAxisField · definition · §4.4.1 · 印刷p.173 / PDFp.195
-[EXTRA] [EXTRA]将第二和第三子场的分量分别明确为π₂/π₃；原印刷两处缺下标另列待审，不覆盖原式。 -/
+[EXTRA] [EXTRA]将第二和第三子场的分量分别明确为π₂/π₃；原印刷两处缺下标另列待审，不覆盖原式。 
+[EXTRA] 本条为单轴分裂场定义；完整印刷五次轴复合由PrintedSpinStep承担，实际子流的负角与原印正角冲突保留AxisFlowFormal/ExactPlanarRotation待导师。 -/
 def principalAxisField (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V :=
   MolecularDynamics.Chapter04Review.cross3 π (Pi.single i (π i/I i))
 
@@ -2647,6 +2662,8 @@ end MD.Ch04
 #print axioms MD.Ch04.freeRigidSolution
 #print axioms MD.Ch04.rigidInvariants
 #print axioms MD.Ch04.rigidPoissonMatrix
+#print axioms MD.Ch04.rigidBodyHamiltonian
+#print axioms MD.Ch04.rigidPoissonMatrix_hamiltonian
 #print axioms MD.Ch04.poissonDegeneracy
 #print axioms MD.Ch04.axisRotation
 #print axioms MD.Ch04.secondAxisPrinted

@@ -1,0 +1,35 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT22",
+  "section": "4.4.1",
+  "source_ids": [
+    "MD-4.4.1-AxisFlowFormal",
+    "MD-4.4.1-AxisRotation",
+    "MD-4.4.1-ExactPlanarRotation",
+    "MD-4.4.1-PrincipalAxisField",
+    "MD-4.4.1-SecondAxisPrinted",
+    "MD-4.4.1-ThirdAxisPrinted"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.1-AxisRotation",
+    "MD-4.4.1-PrincipalAxisField"
+  ],
+  "human_ids": [
+    "MD-4.4.1-SecondAxisPrinted",
+    "MD-4.4.1-ThirdAxisPrinted",
+    "MD-4.4.1-AxisFlowFormal",
+    "MD-4.4.1-ExactPlanarRotation"
+  ],
+  "old_lean_sha256": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+  "lean_sha256": "f1b6644ea3c7486d1a9c9449351593ffd775becd0b8648d57ae5da0919462251",
+  "source_sha256": "fef3964b10465fb4d0dd9df0091a05128c0f79eaa7aafa1addfa3eb11b3e3e4a",
+  "pages": [
+    193,
+    194,
+    195,
+    196
+  ],
+  "prior_proof_blocks": {
+    "MD-4.4.1-PrincipalAxisField": "def principalAxisField (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V :=\n  MolecularDynamics.Chapter04Review.cross3 π (Pi.single i (π i/I i))"
+  }
+}

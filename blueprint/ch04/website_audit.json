@@ -11514,7 +11514,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH24_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT21",
+    "repair": {
+      "eaudit": "EAUDIT21",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT21.md": "2944febaa0d2f5d9159fb62b5c197c7e0ce4fe6e6c755c241a9ef198f69c77c6",
+        "Blueprint/Ch04.lean": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+        "blueprint/ch04/ch04_source.json": "eb5cf26327604d6388ecaeacd018ee1c4cdee187d0f4e24135c5916ca756196b"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.1-BodyMomentum",
@@ -11600,7 +11612,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH24_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT21",
+    "repair": {
+      "eaudit": "EAUDIT21",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT21.md": "2944febaa0d2f5d9159fb62b5c197c7e0ce4fe6e6c755c241a9ef198f69c77c6",
+        "Blueprint/Ch04.lean": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+        "blueprint/ch04/ch04_source.json": "eb5cf26327604d6388ecaeacd018ee1c4cdee187d0f4e24135c5916ca756196b"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.1-AngularInertia",
@@ -11691,7 +11715,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH24_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT21",
+    "repair": {
+      "eaudit": "EAUDIT21",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT21.md": "2944febaa0d2f5d9159fb62b5c197c7e0ce4fe6e6c755c241a9ef198f69c77c6",
+        "Blueprint/Ch04.lean": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+        "blueprint/ch04/ch04_source.json": "eb5cf26327604d6388ecaeacd018ee1c4cdee187d0f4e24135c5916ca756196b"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.1-EulerRigidField",
@@ -11778,7 +11814,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH24_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT21",
+    "repair": {
+      "eaudit": "EAUDIT21",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT21.md": "2944febaa0d2f5d9159fb62b5c197c7e0ce4fe6e6c755c241a9ef198f69c77c6",
+        "Blueprint/Ch04.lean": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+        "blueprint/ch04/ch04_source.json": "eb5cf26327604d6388ecaeacd018ee1c4cdee187d0f4e24135c5916ca756196b"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.1-FreeRigidSolution",
@@ -11866,7 +11914,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH24_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT21",
+    "repair": {
+      "eaudit": "EAUDIT21",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT21.md": "2944febaa0d2f5d9159fb62b5c197c7e0ce4fe6e6c755c241a9ef198f69c77c6",
+        "Blueprint/Ch04.lean": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+        "blueprint/ch04/ch04_source.json": "eb5cf26327604d6388ecaeacd018ee1c4cdee187d0f4e24135c5916ca756196b"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.1-RigidInvariants",
@@ -11958,7 +12018,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH24_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT21",
+    "repair": {
+      "eaudit": "EAUDIT21",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT21.md": "2944febaa0d2f5d9159fb62b5c197c7e0ce4fe6e6c755c241a9ef198f69c77c6",
+        "Blueprint/Ch04.lean": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+        "blueprint/ch04/ch04_source.json": "eb5cf26327604d6388ecaeacd018ee1c4cdee187d0f4e24135c5916ca756196b"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.1-RigidPoissonMatrix",
@@ -12046,7 +12118,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH24_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT21",
+    "repair": {
+      "eaudit": "EAUDIT21",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT21.md": "2944febaa0d2f5d9159fb62b5c197c7e0ce4fe6e6c755c241a9ef198f69c77c6",
+        "Blueprint/Ch04.lean": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+        "blueprint/ch04/ch04_source.json": "eb5cf26327604d6388ecaeacd018ee1c4cdee187d0f4e24135c5916ca756196b"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.1-PoissonDegeneracy",
@@ -12132,7 +12216,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH24_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT21",
+    "repair": {
+      "eaudit": "EAUDIT21",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT21.md": "2944febaa0d2f5d9159fb62b5c197c7e0ce4fe6e6c755c241a9ef198f69c77c6",
+        "Blueprint/Ch04.lean": "dec82071a85e9284e88e8a0bea02a5820b7333dd9a4fd9ee53f92ee6bf79f41f",
+        "blueprint/ch04/ch04_source.json": "eb5cf26327604d6388ecaeacd018ee1c4cdee187d0f4e24135c5916ca756196b"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.1-AxisRotation",
@@ -12220,7 +12316,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT22",
+    "repair": {
+      "eaudit": "EAUDIT22",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT22/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT22.md": "76c4d01470804ae2002e7873e139eade866d40a945b3a51659cc3951c5fc1af3",
+        "Blueprint/Ch04.lean": "f1b6644ea3c7486d1a9c9449351593ffd775becd0b8648d57ae5da0919462251",
+        "blueprint/ch04/ch04_source.json": "fef3964b10465fb4d0dd9df0091a05128c0f79eaa7aafa1addfa3eb11b3e3e4a"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.1-SecondAxisPrinted",
@@ -12274,7 +12382,14 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
     "needs_category": "原文数学判断",
-    "effective_status": "NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待导师 / EAUDIT22（原返回NEEDS_HUMAN保留）",
+    "repair": {
+      "eaudit": "EAUDIT22",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原页第二/第三轴公式的π无下标，不能从标量与向量歧义擅定其为对应分量；选项：保留印刷占位／导师确认π₂、π₃后另列勘误版。当前a参数与原印签名保持，网站指出缺下标解释尚未确定。"
+    }
   },
   {
     "source_id": "MD-4.4.1-ThirdAxisPrinted",
@@ -12328,7 +12443,14 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
     "needs_category": "原文数学判断",
-    "effective_status": "NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待导师 / EAUDIT22（原返回NEEDS_HUMAN保留）",
+    "repair": {
+      "eaudit": "EAUDIT22",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原页第二/第三轴公式的π无下标，不能从标量与向量歧义擅定其为对应分量；选项：保留印刷占位／导师确认π₂、π₃后另列勘误版。当前a参数与原印签名保持，网站指出缺下标解释尚未确定。"
+    }
   },
   {
     "source_id": "MD-4.4.1-PrincipalAxisField",
@@ -12423,7 +12545,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT22",
+    "repair": {
+      "eaudit": "EAUDIT22",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT22/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT22.md": "76c4d01470804ae2002e7873e139eade866d40a945b3a51659cc3951c5fc1af3",
+        "Blueprint/Ch04.lean": "f1b6644ea3c7486d1a9c9449351593ffd775becd0b8648d57ae5da0919462251",
+        "blueprint/ch04/ch04_source.json": "fef3964b10465fb4d0dd9df0091a05128c0f79eaa7aafa1addfa3eb11b3e3e4a"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.1-AxisFlowFormal",
@@ -12476,8 +12610,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT22（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT22",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "标准右手旋转下印刷正角自旋的导数与π×e_iπ_i/I_i反号；例I=(1,1,1),i=1轴,π=(0,1,0)时绕x正角初导数向+z而原向量场向−z。选项：另列负角精确子流／保持正角只作为印刷算法；需导师选择，不改现签名。"
+    }
   },
   {
     "source_id": "MD-4.4.1-SpinPoissonFormal",
@@ -12727,8 +12868,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH26_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT22（原返回NEEDS_HUMAN保留）",
+    "repair": {
+      "eaudit": "EAUDIT22",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "本负角精确子流依赖将原页第二/三轴缺下标π解释为π₂、π₃；选项：导师确认该勘误解释／继续只保留印刷歧义。网站未否定负角数学式，但来源解释待定，保持现状。"
+    }
   },
   {
     "source_id": "MD-4.4.2-PrintedSpinAxis",

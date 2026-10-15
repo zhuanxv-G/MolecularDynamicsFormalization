@@ -1,0 +1,55 @@
+{
+  "eaudit": "EAUDIT22",
+  "source_id": "MD-4.4.1-PrincipalAxisField",
+  "input_sha256": {
+    "BATCH_EAUDIT22.md": "76c4d01470804ae2002e7873e139eade866d40a945b3a51659cc3951c5fc1af3",
+    "Blueprint/Ch04.lean": "f1b6644ea3c7486d1a9c9449351593ffd775becd0b8648d57ae5da0919462251",
+    "blueprint/ch04/ch04_source.json": "fef3964b10465fb4d0dd9df0091a05128c0f79eaa7aafa1addfa3eb11b3e3e4a",
+    "EAUDIT22b_materials": "5e865d0d1db98d61f36834a7295d5fbd5d758880466a2b13f7cc39cd67792a30",
+    "EAUDIT22b_PAGES.pdf": "04a8091de5488531bda15bae6d122724c7b3b401651b5f293b814610b58ddda9"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    195
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "b971d332fc402ec6b0fe6d907e4800ed754ec02b204c17731f18b709ffbb50e6",
+  "source_block_sha256": "a5bfd652c51afa5df14021112b0bd6a4c2528ae3f95254ecb7ed112c7f0d9798",
+  "source_declarations": [
+    "principalAxisField"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.cross3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "482e275d45f901379b4e5bc7b76d0c76d5a6d4e033a454340d968594bd131931"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "cross3",
+      "file_sha256": "f1b6644ea3c7486d1a9c9449351593ffd775becd0b8648d57ae5da0919462251",
+      "excerpt_sha256": "0a5cca048815d451f60fad8066cd7ce02646180304182fb2b95e13a5462cfa50"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "principalAxisField",
+      "file_sha256": "f1b6644ea3c7486d1a9c9449351593ffd775becd0b8648d57ae5da0919462251",
+      "excerpt_sha256": "a5bfd652c51afa5df14021112b0bd6a4c2528ae3f95254ecb7ed112c7f0d9798"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT22_review.json",
+  "total_task_bytes": 91560
+}
