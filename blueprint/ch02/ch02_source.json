@@ -4316,7 +4316,7 @@
     "section": "2.5.1",
     "printed_page": "89",
     "pdf_page": "111",
-    "statement_latex": "An example of a popular 4th order explicit method is the choice of matrix $A$ with coefficients $a_{ij}=0$ except $a_{21}=1/2$, $a_{32}=1/2$ and $a_{43}=1$, and $b_1=1/6$, $b_2=1/3$, $b_3=1/3$, $b_4=1/6$.",
+    "statement_latex": "An example of a popular 4th order explicit method is the choice of matrix $A$ with coefficients $a_{ij}\\equiv 0$ except $a_{21}=1/2$, $a_{32}=1/2$ and $a_{43}=1$, and $b_1=1/6$, $b_2=1/3$, $b_3=1/3$, $b_4=1/6$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -4328,9 +4328,21 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT20_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:26:18.510671",
+        "before_sha256": "320c7304b6dfeb67935ad056f91684e42cdc98783e02f259f2ae5f90d7a97f79",
+        "after_sha256": "e0551ea2e00095e9f840a6ba2123f19f6e70b605c76197850f1c5c48e943b55c",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH27_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.5.1-RK4Order",
@@ -4364,7 +4376,7 @@
     "section": "2.5.1",
     "printed_page": "89",
     "pdf_page": "111",
-    "statement_latex": "This method is not symplectic, and in fact impossible to find symplectic explicit methods within the Runge-Kutta family.",
+    "statement_latex": "This method is not symplectic, and it is in fact impossible to find symplectic explicit methods within the Runge-Kutta family.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -4376,9 +4388,21 @@
       "[EXTRA]一致性∑bᵢ=1排除全零权重恒等映射；“不辛”解释为存在光滑Hamilton模型与实际阶段/步映射不辛，不宣称每个具体H均不辛。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT20_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:26:18.510671",
+        "before_sha256": "8e4eb7844929520aadd22ab929aca8e27b9732dfb6eb60fa87ee282f6f2bb189",
+        "after_sha256": "4c9d664f9d55de8dc1bb69c240569bf32f58f8dfea6b74c52d4e49c5660af714",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH27_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.5.1-RKSymplectic",
@@ -4408,8 +4432,18 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT20_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:26:18.510671",
+        "before_sha256": "72c41b50c6d28abed58b7e3f76a5629527c87f8d9b4e27696cc1743bfab85aee",
+        "after_sha256": "1aa1c5a25b3dbab107e1753553e26550b6a7bbc84899fe076bdf07045fb25951",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH27_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.5.1-GaussFamily",
@@ -4431,8 +4465,18 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT20_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:26:18.510671",
+        "before_sha256": "37b2f465f2dac4fe858c3ba471cb53c9099bef7b8780793a8b59a2fb0c0643f7",
+        "after_sha256": "bf15d881fcdb80a6f0945a1abeacea72b50513c498c9137dd1d53d70cb0126be",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH27_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.5.1-Midpoint",
@@ -4475,12 +4519,23 @@
     "lean_decl": "MD.Ch02.midpointProperties",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]H C⁴，实际C¹求解映射及Hamilton解族；原文省略的资格明示。"
+      "[EXTRA]H C⁴，实际C¹求解映射及Hamilton解族；原文省略的资格明示。",
+      "[EXTRA] 补一般ODE局部二阶与Hamilton情形局部保辛；显式G0=id及实际方程、开状态域/小步长分支和真实流，移除全步长全初值解要求。C³分支及全域光滑场为充分[EXTRA]；二阶指至少二阶，非每个方程恰二阶。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT20_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:26:18.510671",
+        "before_sha256": "3c3cb51b16331c9836bda40975342d6769835498180eb90d447624154462f38e",
+        "after_sha256": "b70f2001ede3089f8b016f8a05e4fa4bfdf5d37107d4794dc74d3959da21fbac",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH27_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.5.1-GaussTwo",
@@ -4523,12 +4578,23 @@
     "lean_decl": "MD.Ch02.gaussTwoOrder",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]C⁶实际向量场/解轨迹，实际C⁶步族且满足阶段关系；实际求解资格，不把4阶误差作为前提。"
+      "[EXTRA]C⁶实际向量场/解轨迹，实际C⁶步族且满足阶段关系；实际求解资格，不把4阶误差作为前提。",
+      "[EXTRA] 改为紧轨迹开邻域U、δ小步长内的真实光滑阶段分支，显式G0=id；补充分细迭代留U，保留全网格四阶。C⁶分支为充分[EXTRA]，未无条件声称任意步长可解。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT20_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:26:18.510671",
+        "before_sha256": "cd308356f8fa4040a5c4d0d9d3a15b2984350ac9c325098d47b7a53e7e1146f6",
+        "after_sha256": "c44f1f8834d52664410e77c8cf102028fd7c55feaa8a7984258c56871c5cb9ad",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH28_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.5.2-PartitionedVerlet",

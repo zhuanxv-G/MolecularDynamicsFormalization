@@ -191,5 +191,19 @@
       "r自然数有限时间窗误差界；χh为实际Homeomorph。",
       "[EXTRA] 补正时间窗与低阶B的s阶误差资格及0<s<r；原G高阶假设和两项误差转移结论、已证证明均保留。processingData另给严格低阶的一般方法资格。"
     ]
+  },
+  "MD-2.5.1-MidpointProperties": {
+    "code": "theorem midpointProperties\n    (n : ℕ) (H : SymplecticCoordinates n → ℝ)\n    (G F : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)\n    (U : Set (SymplecticCoordinates n)) (δ : ℝ) (_hδ : 0 < δ)\n    (_hU : IsOpen U) (_hH : ContDiff ℝ 4 H)\n    (_hG : ContDiffOn ℝ 3 (Function.uncurry G) (Ioo (-δ) δ ×ˢ U))\n    (_hzero : ∀ z ∈ U, G 0 z = z)\n    (_hstep : ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U,\n      G h z = z+h • textbookHamiltonianVectorField H ((1/2 : ℝ) • (z+G h z)))\n    (_hflow : ∀ z ∈ U, F 0 z = z ∧ ∀ t ∈ Ioo (-δ) δ,\n      HasDerivAt (fun u ↦ F u z) (textbookHamiltonianVectorField H (F t z)) t) :\n    (∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U,\n      IsTextbookSymplectic (textbookJacobian (G h) z)) ∧\n    (∀ z ∈ U, ∃ C > 0, ∃ d > 0, d ≤ δ ∧ ∀ h : ℝ, |h| < d →\n      ‖G h z-F h z‖ ≤ C*|h|^3) := by\n  sorry\n\ntheorem midpointProperties_generalODE (n : ℕ) (f : Q n → Q n)\n    (G F : ℝ → Q n → Q n) (U : Set (Q n)) (δ : ℝ)\n    (_hδ : 0 < δ) (_hU : IsOpen U) (_hf : ContDiff ℝ 3 f)\n    (_hG : ContDiffOn ℝ 3 (Function.uncurry G) (Ioo (-δ) δ ×ˢ U))\n    (_hzero : ∀ z ∈ U, G 0 z = z)\n    (_hstep : ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U, G h z = z+h • f ((1/2 : ℝ) • (z+G h z)))\n    (_hflow : ∀ z ∈ U, F 0 z = z ∧ ∀ t ∈ Ioo (-δ) δ,\n      HasDerivAt (fun u ↦ F u z) (f (F t z)) t) :\n    ∀ z ∈ U, ∃ C > 0, ∃ d > 0, d ≤ δ ∧ ∀ h : ℝ, |h| < d →\n      ‖G h z-F h z‖ ≤ C*|h|^3 := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA]H C⁴，实际C¹求解映射及Hamilton解族；原文省略的资格明示。",
+      "[EXTRA] 补一般ODE局部二阶与Hamilton情形局部保辛；显式G0=id及实际方程、开状态域/小步长分支和真实流，移除全步长全初值解要求。C³分支及全域光滑场为充分[EXTRA]；二阶指至少二阶，非每个方程恰二阶。"
+    ]
+  },
+  "MD-2.5.1-GaussTwoOrder": {
+    "code": "theorem gaussTwoOrder (n : ℕ) (f : Q n → Q n) (G : ℝ → Q n → Q n)\n    (γ : ℝ → Q n) (τ : ℝ) (_htrajectory : compactTrajectory f γ τ)\n    (U : Set (Q n)) (δ : ℝ) (_hδ : 0 < δ) (_hU : IsOpen U)\n    (_hcover : γ '' Icc 0 τ ⊆ U)\n    (_hG : ContDiffOn ℝ 6 (Function.uncurry G) (Ioo (-δ) δ ×ˢ U))\n    (_hzero : ∀ z ∈ U, G 0 z = z)\n    (stages : ℝ → Q n → Fin 2 → Q n)\n    (_hregular : ∀ i, ContDiffOn ℝ 6 (fun x : ℝ × Q n ↦ stages x.1 x.2 i)\n      (Ioo (-δ) δ ×ˢ U))\n    (_hstagezero : ∀ z ∈ U, ∀ i, stages 0 z i = f z)\n    (_hstage : ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U,\n      rungeKuttaRelation f gaussTwoCoefficients (fun _ => 1/2) h z (G h z) (stages h z)) :\n    globalOrder G γ τ 4 ∧\n    (∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀, ∀ k ≤ ν,\n      oneStepIterate G (τ/ν) (γ 0) k ∈ U) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA]C⁶实际向量场/解轨迹，实际C⁶步族且满足阶段关系；实际求解资格，不把4阶误差作为前提。",
+      "[EXTRA] 改为紧轨迹开邻域U、δ小步长内的真实光滑阶段分支，显式G0=id；补充分细迭代留U，保留全网格四阶。C⁶分支为充分[EXTRA]，未无条件声称任意步长可解。"
+    ]
   }
 }

@@ -1,0 +1,33 @@
+{
+  "eaudit": "EAUDIT20",
+  "source_id": "MD-2.5.1-RK4",
+  "input_sha256": {
+    "BATCH_EAUDIT20.md": "08350c4b25c5851bd53da0437ad76b25e4199db0f5431bd6141d94aec6df0ce0",
+    "Blueprint/Ch02.lean": "ae97a910a15ac5a4e65456d000eea65f2ab0aef2a98ff6d286b9ce0918fd76c3",
+    "blueprint/ch02/ch02_source.json": "7e25ace61932e55382557d6e45e884eb01c8538e61c4b6c8cc5d8ae40b82b197",
+    "EAUDIT20a_materials": "736d3b02e4554e8ccb9110fe0cbb4b2623cba39e856574948f7c387eb9c58301",
+    "EAUDIT20a_PAGES.pdf": "6e482b3ae116e89f8523bdca40cb43093b22c9ffbce4a93affee5f66cdb90791"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    111
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "e042c3709ff1ad90ec44a5f40d8ae44fe82202da8edc0bfee19ad9c35dfbb5f7",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_rk4",
+      "file_sha256": "ae97a910a15ac5a4e65456d000eea65f2ab0aef2a98ff6d286b9ce0918fd76c3",
+      "excerpt_sha256": "17248a38e547ebf40f970969b743a7a2ab08095ec2084695c87832e971d651f3"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT20_review.json",
+  "total_task_bytes": 123350
+}

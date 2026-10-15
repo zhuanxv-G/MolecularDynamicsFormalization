@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT20",
+  "input_sha256": {
+    "BATCH_EAUDIT20.md": "08350c4b25c5851bd53da0437ad76b25e4199db0f5431bd6141d94aec6df0ce0",
+    "Blueprint/Ch02.lean": "ae97a910a15ac5a4e65456d000eea65f2ab0aef2a98ff6d286b9ce0918fd76c3",
+    "blueprint/ch02/ch02_source.json": "7e25ace61932e55382557d6e45e884eb01c8538e61c4b6c8cc5d8ae40b82b197"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT20a",
+      "source_id": "MD-2.5.1-RK4",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT20/a",
+      "total_bytes": 123350,
+      "manifest_sha256": "ae9e209d6abfed3e186190c9e71117861e8a90f520fdce23f0bab41ef4966028"
+    },
+    {
+      "subtask": "EAUDIT20b",
+      "source_id": "MD-2.5.1-ExplicitRK",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT20/b",
+      "total_bytes": 126438,
+      "manifest_sha256": "921027d4bf2e29252d26275492c1c9c086697f3f5dbfb50710622dc198ae4e29"
+    },
+    {
+      "subtask": "EAUDIT20c",
+      "source_id": "MD-2.5.1-MidpointProperties",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT20/c",
+      "total_bytes": 84282,
+      "manifest_sha256": "89109c81171d00e1c8e713b1bcf27dd3b090606ad4450b55ce6302d353f1ce32"
+    },
+    {
+      "subtask": "EAUDIT20d",
+      "source_id": "MD-2.5.1-GaussTwoOrder",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT20/d",
+      "total_bytes": 85842,
+      "manifest_sha256": "43b293a9466024605700e7be61250d6cc018adc32747bcd464fe909c8e80258e"
+    }
+  ]
+}

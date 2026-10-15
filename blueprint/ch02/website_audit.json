@@ -13982,7 +13982,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT20",
+    "repair": {
+      "eaudit": "EAUDIT20",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT20.md": "08350c4b25c5851bd53da0437ad76b25e4199db0f5431bd6141d94aec6df0ce0",
+        "Blueprint/Ch02.lean": "ae97a910a15ac5a4e65456d000eea65f2ab0aef2a98ff6d286b9ce0918fd76c3",
+        "blueprint/ch02/ch02_source.json": "7e25ace61932e55382557d6e45e884eb01c8538e61c4b6c8cc5d8ae40b82b197"
+      }
+    }
   },
   {
     "source_id": "MD-2.5.1-RK4Order",
@@ -14167,7 +14179,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT20",
+    "repair": {
+      "eaudit": "EAUDIT20",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT20.md": "08350c4b25c5851bd53da0437ad76b25e4199db0f5431bd6141d94aec6df0ce0",
+        "Blueprint/Ch02.lean": "ae97a910a15ac5a4e65456d000eea65f2ab0aef2a98ff6d286b9ce0918fd76c3",
+        "blueprint/ch02/ch02_source.json": "7e25ace61932e55382557d6e45e884eb01c8538e61c4b6c8cc5d8ae40b82b197"
+      }
+    }
   },
   {
     "source_id": "MD-2.5.1-RKSymplectic",
@@ -14243,8 +14267,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT20（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT20",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "任意可约Butcher表的系数必要性有反例；选项：批准只保留充分方向／指定不可约等资格后保留必要性。当前iff及原文不擅改。"
+    }
   },
   {
     "source_id": "MD-2.5.1-GaussFamily",
@@ -14320,8 +14351,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT20（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT20",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原文even order需区分确切有限阶与偶数阶下界，原全步长唯一分支资格也过强；选项：批准局部唯一分支上的至少2s阶／定义最高有限阶后证明确切阶偶性。需先确定数学范围，当前声明保持。"
+    }
   },
   {
     "source_id": "MD-2.5.1-Midpoint",
@@ -14475,7 +14513,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT20",
+    "repair": {
+      "eaudit": "EAUDIT20",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT20.md": "08350c4b25c5851bd53da0437ad76b25e4199db0f5431bd6141d94aec6df0ce0",
+        "Blueprint/Ch02.lean": "ae97a910a15ac5a4e65456d000eea65f2ab0aef2a98ff6d286b9ce0918fd76c3",
+        "blueprint/ch02/ch02_source.json": "7e25ace61932e55382557d6e45e884eb01c8538e61c4b6c8cc5d8ae40b82b197"
+      }
+    }
   },
   {
     "source_id": "MD-2.5.1-GaussTwo",
@@ -14629,7 +14679,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT20",
+    "repair": {
+      "eaudit": "EAUDIT20",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT20.md": "08350c4b25c5851bd53da0437ad76b25e4199db0f5431bd6141d94aec6df0ce0",
+        "Blueprint/Ch02.lean": "ae97a910a15ac5a4e65456d000eea65f2ab0aef2a98ff6d286b9ce0918fd76c3",
+        "blueprint/ch02/ch02_source.json": "7e25ace61932e55382557d6e45e884eb01c8538e61c4b6c8cc5d8ae40b82b197"
+      }
+    }
   },
   {
     "source_id": "MD-2.5.2-PartitionedVerlet",

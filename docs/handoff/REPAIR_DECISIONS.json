@@ -363,5 +363,35 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "2.4.5"
+  },
+  "MD-2.5.1-MidpointProperties": {
+    "category": "B",
+    "handling": "补一般ODE局部二阶与Hamilton情形局部保辛；显式G0=id及实际方程、开状态域/小步长分支和真实流，移除全步长全初值解要求。C³分支及全域光滑场为充分[EXTRA]；二阶指至少二阶，非每个方程恰二阶。",
+    "section": "2.5.1"
+  },
+  "MD-2.5.1-GaussTwoOrder": {
+    "category": "A",
+    "handling": "改为紧轨迹开邻域U、δ小步长内的真实光滑阶段分支，显式G0=id；补充分细迭代留U，保留全网格四阶。C⁶分支为充分[EXTRA]，未无条件声称任意步长可解。",
+    "section": "2.5.1"
+  },
+  "MD-2.5.1-RK4": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "2.5.1"
+  },
+  "MD-2.5.1-ExplicitRK": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "2.5.1"
+  },
+  "MD-2.5.1-RKSymplectic": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "2.5.1"
+  },
+  "MD-2.5.1-GaussFamily": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "2.5.1"
   }
 }

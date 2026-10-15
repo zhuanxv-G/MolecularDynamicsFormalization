@@ -4795,9 +4795,9 @@
     "MD-2.5.1-RK4": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_rk4",
@@ -4821,7 +4821,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT20/axioms.log",
+      "compiled": true
     },
     "MD-2.5.1-RK4Order": {
       "checked": true,
@@ -4859,10 +4860,10 @@
     "MD-2.5.1-ExplicitRK": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.explicitRK",
@@ -4887,15 +4888,16 @@
       "proof_attempts": 0,
       "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT20/axioms.log",
+      "compiled": true
     },
     "MD-2.5.1-RKSymplectic": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.rkSymplectic",
@@ -4920,15 +4922,16 @@
       "proof_attempts": 0,
       "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT20/axioms.log",
+      "compiled": true
     },
     "MD-2.5.1-GaussFamily": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.gaussFamily",
@@ -4953,7 +4956,8 @@
       "proof_attempts": 0,
       "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT20/axioms.log",
+      "compiled": true
     },
     "MD-2.5.1-Midpoint": {
       "checked": true,
@@ -4989,17 +4993,17 @@
     "MD-2.5.1-MidpointProperties": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.midpointProperties",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "fd95aea0d5eed30ef9be9d6cd8574727a87d587504fef82325c8f6726b7a0c9b",
-      "block_sha256": "5a908609c03cc300d2ef62245997e2ceb30382583f3fcc0eceaeb6f1000375d2",
+      "signature_sha256": "0306d5982ff402d65e1f7ebda4511863f827c8fd506a1dfe09dcd62d487ec3e9",
+      "block_sha256": "c6af9fba36c477f8bbda7d3ebcf4469fc8ef8f59a09acac20a18ed8df585969d",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -5017,7 +5021,8 @@
       "proof_attempts": 0,
       "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT20/axioms.log",
+      "compiled": true
     },
     "MD-2.5.1-GaussTwo": {
       "checked": true,
@@ -5053,17 +5058,17 @@
     "MD-2.5.1-GaussTwoOrder": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.gaussTwoOrder",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "8c996b76ba91e50e2df552b1fab7cc0a6cc662dd1b1c5e6da5bc44cc058b73bc",
-      "block_sha256": "5c53b7da66a078dad0223f9a0f49245756dc66e35725095756f4cd6dba3a7c45",
+      "signature_sha256": "ad9794000fe43943dca59677862d5fdfcee4410ecbfb6d295f289886c34b783f",
+      "block_sha256": "7ea4016cb31f311ace0647c838523ca973ec594922b5582035866d91c7bff01e",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -5081,7 +5086,8 @@
       "proof_attempts": 0,
       "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT20/axioms.log",
+      "compiled": true
     },
     "MD-2.5.2-PartitionedVerlet": {
       "checked": true,

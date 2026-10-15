@@ -143,15 +143,15 @@
 | MD-2.4.5-ProcessingOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | existing_bridge / checked+documented priors |
 | MD-2.4.5-EulerEffectiveOrder | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际半kick Homeomorph处理器构造及完整Verlet全局二阶，局部共轭代数条目不能单独证明有效二阶。 |
 | MD-2.5.1-RK | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.5.1-RK4 | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.5.1-RK4 | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | definition / self-contained |
 | MD-2.5.1-RK4Order | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；一般RK树阶条件/实际四阶Taylor展开及局部误差、稳定性、数值留域的全局阶桥接。 |
-| MD-2.5.1-ExplicitRK | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；已有证明仅系数条件不可能；普适必要性及实际RK反例构造尚缺，不能把系数lemma当完整结论。 |
-| MD-2.5.1-RKSymplectic | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际RK楔积充分性与不可约必要性理论。 |
-| MD-2.5.1-GaussFamily | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；大型Gauss配点构造、正交多项式根/对称性及偶数阶逆步理论；当前库无完整理论。 |
+| MD-2.5.1-ExplicitRK | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | placeholder / incomplete；已有证明仅系数条件不可能；普适必要性及实际RK反例构造尚缺，不能把系数lemma当完整结论。 |
+| MD-2.5.1-RKSymplectic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT20（原返回FAIL保留） | placeholder / incomplete；实际RK楔积充分性与不可约必要性理论。 |
+| MD-2.5.1-GaussFamily | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT20（原返回FAIL保留） | placeholder / incomplete；大型Gauss配点构造、正交多项式根/对称性及偶数阶逆步理论；当前库无完整理论。 |
 | MD-2.5.1-Midpoint | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.5.1-MidpointProperties | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际中点隐式楔积、局部三阶余项及唯一可微求解接口。 |
+| MD-2.5.1-MidpointProperties | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | placeholder / incomplete；实际中点隐式楔积、局部三阶余项及唯一可微求解接口。 |
 | MD-2.5.1-GaussTwo | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.5.1-GaussTwoOrder | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；大型Gauss2阶段局部五阶余项、光滑求解/稳定性及全局阶理论。 |
+| MD-2.5.1-GaussTwoOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | placeholder / incomplete；大型Gauss2阶段局部五阶余项、光滑求解/稳定性及全局阶理论。 |
 | MD-2.5.2-PartitionedVerlet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.5.2-PartitionedReduction | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；机械H两个实际偏导的坐标计算，随后三步关系消元。 |
 | MD-2.5.2-GeneralEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
@@ -445,3 +445,5 @@ EAUDIT17 §2.4.3：1条落盘，单文件与1项公理通过；未写新证明�
 EAUDIT18 §2.4.4：4条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT19 §2.4.5：6条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT20 §2.5.1：6条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。

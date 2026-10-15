@@ -1445,13 +1445,35 @@ def bp_midpointRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop
   w = z + h • f ((1/2 : ℝ) • (z+w))
 
 /-- source_id: MD-2.5.1-MidpointProperties · unnumbered_claim · §2.5.1 · 印刷p.90 / PDFp.112
-[EXTRA] [EXTRA]H C⁴，实际C¹求解映射及Hamilton解族；原文省略的资格明示。 -/
-theorem midpointProperties :
-  ∀ n (H : SymplecticCoordinates n → ℝ) (G F : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
-    ContDiff ℝ 4 H → ContDiff ℝ 1 (Function.uncurry G) →
-    (∀ h z, G h z = z+h • textbookHamiltonianVectorField H ((1/2 : ℝ) • (z+G h z))) →
-    (∀ z, F 0 z = z ∧ ∀ t, HasDerivAt (fun u => F u z) (textbookHamiltonianVectorField H (F t z)) t) →
-    (∀ h, IsTextbookSymplecticMap (G h)) ∧ methodLocalOrder G F 2 := by
+[EXTRA] [EXTRA]H C⁴，实际C¹求解映射及Hamilton解族；原文省略的资格明示。 
+[EXTRA] 补一般ODE局部二阶与Hamilton情形局部保辛；显式G0=id及实际方程、开状态域/小步长分支和真实流，移除全步长全初值解要求。C³分支及全域光滑场为充分[EXTRA]；二阶指至少二阶，非每个方程恰二阶。 -/
+theorem midpointProperties
+    (n : ℕ) (H : SymplecticCoordinates n → ℝ)
+    (G F : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
+    (U : Set (SymplecticCoordinates n)) (δ : ℝ) (_hδ : 0 < δ)
+    (_hU : IsOpen U) (_hH : ContDiff ℝ 4 H)
+    (_hG : ContDiffOn ℝ 3 (Function.uncurry G) (Ioo (-δ) δ ×ˢ U))
+    (_hzero : ∀ z ∈ U, G 0 z = z)
+    (_hstep : ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U,
+      G h z = z+h • textbookHamiltonianVectorField H ((1/2 : ℝ) • (z+G h z)))
+    (_hflow : ∀ z ∈ U, F 0 z = z ∧ ∀ t ∈ Ioo (-δ) δ,
+      HasDerivAt (fun u ↦ F u z) (textbookHamiltonianVectorField H (F t z)) t) :
+    (∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U,
+      IsTextbookSymplectic (textbookJacobian (G h) z)) ∧
+    (∀ z ∈ U, ∃ C > 0, ∃ d > 0, d ≤ δ ∧ ∀ h : ℝ, |h| < d →
+      ‖G h z-F h z‖ ≤ C*|h|^3) := by
+  sorry
+
+theorem midpointProperties_generalODE (n : ℕ) (f : Q n → Q n)
+    (G F : ℝ → Q n → Q n) (U : Set (Q n)) (δ : ℝ)
+    (_hδ : 0 < δ) (_hU : IsOpen U) (_hf : ContDiff ℝ 3 f)
+    (_hG : ContDiffOn ℝ 3 (Function.uncurry G) (Ioo (-δ) δ ×ˢ U))
+    (_hzero : ∀ z ∈ U, G 0 z = z)
+    (_hstep : ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U, G h z = z+h • f ((1/2 : ℝ) • (z+G h z)))
+    (_hflow : ∀ z ∈ U, F 0 z = z ∧ ∀ t ∈ Ioo (-δ) δ,
+      HasDerivAt (fun u ↦ F u z) (f (F t z)) t) :
+    ∀ z ∈ U, ∃ C > 0, ∃ d > 0, d ≤ δ ∧ ∀ h : ℝ, |h| < d →
+      ‖G h z-F h z‖ ≤ C*|h|^3 := by
   sorry
 
 /-- source_id: MD-2.5.1-GaussTwo · definition · §2.5.1 · 印刷p.90 / PDFp.112 -/
@@ -1459,13 +1481,23 @@ def gaussTwoData : Matrix (Fin 2) (Fin 2) ℝ × (Fin 2 → ℝ) :=
   (gaussTwoCoefficients, fun _ => 1/2)
 
 /-- source_id: MD-2.5.1-GaussTwoOrder · unnumbered_claim · §2.5.1 · 印刷p.90 / PDFp.112
-[EXTRA] [EXTRA]C⁶实际向量场/解轨迹，实际C⁶步族且满足阶段关系；实际求解资格，不把4阶误差作为前提。 -/
-theorem gaussTwoOrder : ∀ n (f : Q n → Q n) (G : ℝ → Q n → Q n)
-    (γ : ℝ → Q n) τ,
-    compactTrajectory f γ τ → ContDiff ℝ 6 (Function.uncurry G) →
-    (∀ h z, ∃ stages : Fin 2 → Q n,
-      rungeKuttaRelation f gaussTwoCoefficients (fun _ => 1/2) h z (G h z) stages) →
-    globalOrder G γ τ 4 := by
+[EXTRA] [EXTRA]C⁶实际向量场/解轨迹，实际C⁶步族且满足阶段关系；实际求解资格，不把4阶误差作为前提。 
+[EXTRA] 改为紧轨迹开邻域U、δ小步长内的真实光滑阶段分支，显式G0=id；补充分细迭代留U，保留全网格四阶。C⁶分支为充分[EXTRA]，未无条件声称任意步长可解。 -/
+theorem gaussTwoOrder (n : ℕ) (f : Q n → Q n) (G : ℝ → Q n → Q n)
+    (γ : ℝ → Q n) (τ : ℝ) (_htrajectory : compactTrajectory f γ τ)
+    (U : Set (Q n)) (δ : ℝ) (_hδ : 0 < δ) (_hU : IsOpen U)
+    (_hcover : γ '' Icc 0 τ ⊆ U)
+    (_hG : ContDiffOn ℝ 6 (Function.uncurry G) (Ioo (-δ) δ ×ˢ U))
+    (_hzero : ∀ z ∈ U, G 0 z = z)
+    (stages : ℝ → Q n → Fin 2 → Q n)
+    (_hregular : ∀ i, ContDiffOn ℝ 6 (fun x : ℝ × Q n ↦ stages x.1 x.2 i)
+      (Ioo (-δ) δ ×ˢ U))
+    (_hstagezero : ∀ z ∈ U, ∀ i, stages 0 z i = f z)
+    (_hstage : ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U,
+      rungeKuttaRelation f gaussTwoCoefficients (fun _ => 1/2) h z (G h z) (stages h z)) :
+    globalOrder G γ τ 4 ∧
+    (∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀, ∀ k ≤ ν,
+      oneStepIterate G (τ/ν) (γ 0) k ∈ U) := by
   sorry
 
 /-- source_id: MD-2.5.2-PartitionedVerlet · definition · §2.5.2 · 印刷p.90 / PDFp.112 -/

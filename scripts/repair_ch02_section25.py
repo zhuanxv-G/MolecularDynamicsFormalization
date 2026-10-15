@@ -22,7 +22,7 @@ def run(section):
     (_hflow : ∀ z ∈ U, F 0 z = z ∧ ∀ t ∈ Ioo (-δ) δ,
       HasDerivAt (fun u ↦ F u z) (textbookHamiltonianVectorField H (F t z)) t) :
     (∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U,
-      IsTextbookSymplecticMatrix (textbookJacobian (G h) z)) ∧
+      IsTextbookSymplectic (textbookJacobian (G h) z)) ∧
     (∀ z ∈ U, ∃ C > 0, ∃ d > 0, d ≤ δ ∧ ∀ h : ℝ, |h| < d →
       ‖G h z-F h z‖ ≤ C*|h|^3) := by
   sorry

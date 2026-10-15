@@ -1,0 +1,34 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT20",
+  "section": "2.5.1",
+  "source_ids": [
+    "MD-2.5.1-ExplicitRK",
+    "MD-2.5.1-GaussFamily",
+    "MD-2.5.1-GaussTwoOrder",
+    "MD-2.5.1-MidpointProperties",
+    "MD-2.5.1-RK4",
+    "MD-2.5.1-RKSymplectic"
+  ],
+  "reaudit_ids": [
+    "MD-2.5.1-RK4",
+    "MD-2.5.1-ExplicitRK",
+    "MD-2.5.1-MidpointProperties",
+    "MD-2.5.1-GaussTwoOrder"
+  ],
+  "human_ids": [
+    "MD-2.5.1-RKSymplectic",
+    "MD-2.5.1-GaussFamily"
+  ],
+  "old_lean_sha256": "785cdedb160471c29a7e3ebfc4132ef07d4310fce39e3b032a9ca44bf4a255f4",
+  "lean_sha256": "6e8c14db380d3dada47fa886dc6b1513ef4076b156076fc0049fbc7e49258c11",
+  "source_sha256": "7e25ace61932e55382557d6e45e884eb01c8538e61c4b6c8cc5d8ae40b82b197",
+  "pages": [
+    111,
+    112
+  ],
+  "prior_proof_blocks": {
+    "MD-2.5.1-MidpointProperties": "theorem midpointProperties :\n  ∀ n (H : SymplecticCoordinates n → ℝ) (G F : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),\n    ContDiff ℝ 4 H → ContDiff ℝ 1 (Function.uncurry G) →\n    (∀ h z, G h z = z+h • textbookHamiltonianVectorField H ((1/2 : ℝ) • (z+G h z))) →\n    (∀ z, F 0 z = z ∧ ∀ t, HasDerivAt (fun u => F u z) (textbookHamiltonianVectorField H (F t z)) t) →\n    (∀ h, IsTextbookSymplecticMap (G h)) ∧ methodLocalOrder G F 2 := by\n  sorry",
+    "MD-2.5.1-GaussTwoOrder": "theorem gaussTwoOrder : ∀ n (f : Q n → Q n) (G : ℝ → Q n → Q n)\n    (γ : ℝ → Q n) τ,\n    compactTrajectory f γ τ → ContDiff ℝ 6 (Function.uncurry G) →\n    (∀ h z, ∃ stages : Fin 2 → Q n,\n      rungeKuttaRelation f gaussTwoCoefficients (fun _ => 1/2) h z (G h z) stages) →\n    globalOrder G γ τ 4 := by\n  sorry"
+  }
+}

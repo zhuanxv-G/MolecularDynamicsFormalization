@@ -29,6 +29,8 @@ def render():
                 status = '待导师'; counts['awaiting_mentor'] += 1
             elif r.get('status') == 'awaiting_reaudit' or v == 'NEEDS_HUMAN':
                 status = '已修待复审'; counts['awaiting_reaudit'] += 1
+            elif r.get('status') == 'prepared_unverified':
+                status = '已落盘待本地验证'; counts['repairing'] += 1; unresolved += 1
             elif v == 'PASS' and w['binding']['bound']:
                 status = '网站PASS（绑定版本 ' + w['binding']['version'][:12] + '）'; counts['website_pass'] += 1
             else:
@@ -43,7 +45,9 @@ def render():
     text = '# 第2–5章网站审计修复队列\n\n'
     text += '当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。\n'
     text += '修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。\n'
-    text += '完成状态：' + ('第2–5章全部修复完成，等待用户提交EAUDIT复审包。' if unresolved == 0 else f'修复进行中（待处理项目/原文审校计数 {unresolved}）。') + '\n'
+    pending_chapters = [ch for ch in (2,3,4,5) if not (ROOT/f'blueprint/ch{ch:02}/validation/WEBSITE_REPAIR_CHAPTER_ACCEPTANCE.json').exists()]
+    completed = unresolved == 0 and not pending_chapters
+    text += '完成状态：' + ('第2–5章全部修复完成，等待用户提交EAUDIT复审包。' if completed else f'修复进行中（待处理项目/原文审校计数 {unresolved}；章末验收待完成 {pending_chapters}）。') + '\n'
     text += 'A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。\n\n'
     for ch, c in totals.items():
         text += f'第{ch}章：网站PASS {c["website_pass"]} / 已修待复审 {c["awaiting_reaudit"]} / 待导师 {c["awaiting_mentor"]} / 修复中 {c["repairing"]}。\n'
