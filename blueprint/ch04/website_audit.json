@@ -6009,7 +6009,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH13_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT12",
+    "repair": {
+      "eaudit": "EAUDIT12",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT12/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT12.md": "fe446578e3d9b8f0c4f19facf6b693b77286dabed29f3ea90c8f3a3d5c8edf1a",
+        "Blueprint/Ch04.lean": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+        "blueprint/ch04/ch04_source.json": "c10e7b2a670be57ffc571f305cb6bfa92af3daae8f72f48e5285bbb14566a9f2"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.3-ComponentConstraintStep",
@@ -6102,7 +6114,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH13_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT12",
+    "repair": {
+      "eaudit": "EAUDIT12",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT12/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT12.md": "fe446578e3d9b8f0c4f19facf6b693b77286dabed29f3ea90c8f3a3d5c8edf1a",
+        "Blueprint/Ch04.lean": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+        "blueprint/ch04/ch04_source.json": "c10e7b2a670be57ffc571f305cb6bfa92af3daae8f72f48e5285bbb14566a9f2"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.3-ComponentSweep",
@@ -6200,7 +6224,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH13_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT12",
+    "repair": {
+      "eaudit": "EAUDIT12",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT12/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT12.md": "fe446578e3d9b8f0c4f19facf6b693b77286dabed29f3ea90c8f3a3d5c8edf1a",
+        "Blueprint/Ch04.lean": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+        "blueprint/ch04/ch04_source.json": "c10e7b2a670be57ffc571f305cb6bfa92af3daae8f72f48e5285bbb14566a9f2"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.4-ProjectedEulerPrinted",

@@ -1,0 +1,40 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT12",
+  "section": "4.3.3",
+  "source_ids": [
+    "MD-4.3.3-ComponentConstraintStep",
+    "MD-4.3.3-ComponentPrinted",
+    "MD-4.3.3-ComponentSweep"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.3-ComponentPrinted",
+    "MD-4.3.3-ComponentConstraintStep",
+    "MD-4.3.3-ComponentSweep"
+  ],
+  "human_ids": [],
+  "lean_sha256": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+  "source_sha256": "c10e7b2a670be57ffc571f305cb6bfa92af3daae8f72f48e5285bbb14566a9f2",
+  "pages": [
+    180
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+    "log_sha256": "f86174bbe2cfbf63084984ae009f5717ae2548a0c8fcd8773279c8ad047698b7"
+  },
+  "axiom_decl_count": 7,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT12/INDEX.md"
+}

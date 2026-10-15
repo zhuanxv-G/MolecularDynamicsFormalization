@@ -1,0 +1,143 @@
+{
+  "eaudit": "EAUDIT12",
+  "source_id": "MD-4.3.3-ComponentSweep",
+  "input_sha256": {
+    "BATCH_EAUDIT12.md": "fe446578e3d9b8f0c4f19facf6b693b77286dabed29f3ea90c8f3a3d5c8edf1a",
+    "Blueprint/Ch04.lean": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+    "blueprint/ch04/ch04_source.json": "c10e7b2a670be57ffc571f305cb6bfa92af3daae8f72f48e5285bbb14566a9f2",
+    "EAUDIT12c_materials": "e1e031dbe3f779207682fd77179f623e42db2e3bc797cd59f8d0c3050ad1430c",
+    "EAUDIT12c_PAGES.pdf": "a10747239070958afdfbb7b59059d888771cd6d9715e8e970bf847f882421baf"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    180
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "acada0a1c05573b97d4a39e9a0f0b90a9beac5b6e481326da7492a5da3547561",
+  "source_block_sha256": "a27788d74d06c62fcbba5fcc3c9557cde0b455c46b23a52c07400e8435fd7eeb",
+  "source_declarations": [
+    "componentSweep",
+    "componentPrintedDelta",
+    "componentPrintedTrajectory",
+    "componentPrintedIteration",
+    "componentPrintedStop"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.componentConstraintStep",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "07add41df1bb610b476e9d1ae0b778b381b4e0a156c76dae5fa3745aa0d76917"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.grad",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "85d1654c3905d13fe56fe56e9cfad2796ca9c56a6fceba8596a551e567d342a3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.invMass",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "componentConstraintStep",
+      "file_sha256": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+      "excerpt_sha256": "67148c734134705d53b83f2b054de130875a32322752751207036aeda291088d"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "componentPrintedDelta",
+      "file_sha256": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+      "excerpt_sha256": "fbe97e62b9d5d575cc5b91c109ca3a631735fe77686faa3bd10814204613989f"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "componentPrintedIteration",
+      "file_sha256": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+      "excerpt_sha256": "aacdd728944e5b8fbb23ba4d193ff6aaeeceb8794932e1a14c0b63bd3cd7fcfe"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "componentPrintedStop",
+      "file_sha256": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+      "excerpt_sha256": "9e54a9cb03e9177dfa83c49073626941942958dbf7b09740673f4b9f0468f944"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "componentPrintedTrajectory",
+      "file_sha256": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+      "excerpt_sha256": "ad93f27a8f9eec3b61f7468b3e5f1d62ab61351434c6676c4825bd8b6d199ed0"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "componentSweep",
+      "file_sha256": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+      "excerpt_sha256": "f323195bcb6cdf1c6347e35a0ff8a6ba239dbb4ec13ccccf1ad678c3705809ac"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "522e86de81741a525bcd8720e95f1f0a3f1ba51791c5d13cea4bed7e30a1620e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "85d1654c3905d13fe56fe56e9cfad2796ca9c56a6fceba8596a551e567d342a3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "name": "textbookConstraintGradient",
+      "file_sha256": "890274c6144406ad066b0a624cf08e3b95995c17b495545de8c3c05f260d4e44",
+      "excerpt_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT12_review.json",
+  "total_task_bytes": 107565
+}

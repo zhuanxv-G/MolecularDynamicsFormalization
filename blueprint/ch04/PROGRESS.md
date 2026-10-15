@@ -83,9 +83,9 @@
 | MD-4.3.2-FrozenNewtonLinear | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | placeholder / incomplete；缺交叉Gram逆的实际Fréchet正则性和局部收缩统一范数界；不建完整一般Newton理论。 |
 | MD-4.3.2-ProjectionScale | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | placeholder / incomplete；缺隐式残差的η′(0)=0链式推导和真实C²小步分支Taylor一致余项桥接；不构造大型分支存在理论。 |
 | MD-4.3.2-FrozenGramPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | FAIL | 待导师 / EAUDIT11（原返回FAIL保留） | placeholder / incomplete；本地FAIL不证明，待原始/冻结版本约定裁定。 |
-| MD-4.3.3-ComponentPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / incomplete |
-| MD-4.3.3-ComponentConstraintStep | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3.3-ComponentSweep | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.3.3-ComponentPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT12 | definition / incomplete |
+| MD-4.3.3-ComponentConstraintStep | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT12 | definition / self-contained |
+| MD-4.3.3-ComponentSweep | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT12 | definition / self-contained |
 | MD-4.3.4-ProjectedEulerPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / incomplete |
 | MD-4.3.4-ProjectedEulerRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.3.4-Lemma41 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | existing_bridge / checked+documented priors |
@@ -370,3 +370,5 @@ EAUDIT09 §4.3.1：3条落盘，单文件与6项公理通过；未写新证明�
 EAUDIT10 §4.3.2：8条落盘，单文件与12项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT11 §4.3.2：2条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT12 §4.3.3：3条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。

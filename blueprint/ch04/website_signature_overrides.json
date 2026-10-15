@@ -178,5 +178,26 @@
     "extra_assumptions": [
       "[EXTRA] 真实Newton主接口加入当前交叉矩阵det≠0；补建议初值0的有限序列且逐步可逆资格显式，不把奇异逆总化当合法迭代。Mathlib逆矩阵按标准含义采信。"
     ]
+  },
+  "MD-4.3.3-ComponentPrinted": {
+    "code": "def componentPrinted {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n) (j : Fin l) (_hm : ∀ i, 0 < m i)\n    (_hgq : DifferentiableAt ℝ (g j) q) (_hgQ : DifferentiableAt ℝ (g j) Qnow)\n    (_hdenom : MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow)\n      (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j)) ≠ 0) : MolecularDynamics.Chapter04Review.Q n :=\n  Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j))) •\n    MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)",
+    "extra_assumptions": [
+      "[EXTRA]Gsup1是未定义印刷G_j^1的显式参数，未假设它等于已定义梯度。",
+      "[EXTRA] 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。"
+    ]
+  },
+  "MD-4.3.3-ComponentConstraintStep": {
+    "code": "def componentConstraintStep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (j : Fin l) (_hm : ∀ i, 0 < m i)\n    (_hgq : DifferentiableAt ℝ (g j) q) (_hgQ : DifferentiableAt ℝ (g j) Qnow)\n    (_hdenom : MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow)\n      (MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)) ≠ 0) : MolecularDynamics.Chapter04Review.Q n :=\n  Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q))) •\n    MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)",
+    "extra_assumptions": [
+      "[EXTRA]一般j采用已定义Gn^j=grad gj(qn)，取非零分母才是可用步骤；原一般式索引疑误由ComponentPrinted保留。",
+      "[EXTRA] 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。"
+    ]
+  },
+  "MD-4.3.3-ComponentSweep": {
+    "code": "def componentSweep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q Qnow : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=\n  (List.finRange l).foldl (fun Qcur j => MolecularDynamics.Chapter04Review.componentConstraintStep m g q Qcur j) Qnow\n\ndef componentPrintedDelta {n l : ℕ} (m : Fin n → ℝ)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (Q : MolecularDynamics.Chapter04Review.Q n)\n    (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n) (j : Fin l) : ℝ :=\n  g j Q/MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Q)\n    (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j))\n\ndef componentPrintedTrajectory {n l : ℕ} (m : Fin n → ℝ)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q Q₀ : MolecularDynamics.Chapter04Review.Q n)\n    (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n) : ℕ → MolecularDynamics.Chapter04Review.Q n\n  | 0 => Q₀\n  | k+1 =>\n    let Q := componentPrintedTrajectory m g q Q₀ Gsup1 k\n    if hl : 0 < l then\n      let j : Fin l := ⟨k%l,Nat.mod_lt k hl⟩\n      Q-componentPrintedDelta m g Q Gsup1 j •\n        MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)\n    else Q\n\ndef componentPrintedIteration {n l : ℕ} (m : Fin n → ℝ)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q Q₀ : MolecularDynamics.Chapter04Review.Q n)\n    (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n)\n    (rounds : ℕ) (_hm : ∀ i, 0 < m i) (_hl : 0 < l)\n    (_hvalid : ∀ k < rounds*l,\n      let j : Fin l := ⟨k%l,Nat.mod_lt k _hl⟩\n      let Q := componentPrintedTrajectory m g q Q₀ Gsup1 k\n      DifferentiableAt ℝ (g j) q ∧ DifferentiableAt ℝ (g j) Q ∧\n        MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Q)\n          (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j)) ≠ 0) :\n    MolecularDynamics.Chapter04Review.Q n :=\n  componentPrintedTrajectory m g q Q₀ Gsup1 (rounds*l)\n\ndef componentPrintedStop {n l : ℕ} (m : Fin n → ℝ)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q Q₀ : MolecularDynamics.Chapter04Review.Q n)\n    (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n)\n    (round : ℕ) (tol : ℝ) (_hl : 0 < l) : Prop :=\n  ∀ j : Fin l, |componentPrintedDelta m g\n    (componentPrintedTrajectory m g q Q₀ Gsup1 (round*l+j.val)) Gsup1 j| < tol",
+    "extra_assumptions": [
+      "[EXTRA]一次完整顺序sweep，使用上一条统一Gn索引；多轮为其真实函数迭代。",
+      "[EXTRA] 保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。"
+    ]
   }
 }

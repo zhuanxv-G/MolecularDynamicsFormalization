@@ -1,0 +1,27 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT12",
+  "section": "4.3.3",
+  "source_ids": [
+    "MD-4.3.3-ComponentConstraintStep",
+    "MD-4.3.3-ComponentPrinted",
+    "MD-4.3.3-ComponentSweep"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.3-ComponentPrinted",
+    "MD-4.3.3-ComponentConstraintStep",
+    "MD-4.3.3-ComponentSweep"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+  "lean_sha256": "077912d2d5d6d555c1c87b9ebdd31d5d36174d877fd13622f84f81f641c03c90",
+  "source_sha256": "c10e7b2a670be57ffc571f305cb6bfa92af3daae8f72f48e5285bbb14566a9f2",
+  "pages": [
+    180
+  ],
+  "prior_proof_blocks": {
+    "MD-4.3.3-ComponentPrinted": "def componentPrinted {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n) (j : Fin l) : MolecularDynamics.Chapter04Review.Q n :=\n  Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j))) •\n    MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)",
+    "MD-4.3.3-ComponentConstraintStep": "def componentConstraintStep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (j : Fin l) : MolecularDynamics.Chapter04Review.Q n :=\n  Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q))) •\n    MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)",
+    "MD-4.3.3-ComponentSweep": "def componentSweep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q Qnow : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=\n  (List.finRange l).foldl (fun Qcur j => MolecularDynamics.Chapter04Review.componentConstraintStep m g q Qcur j) Qnow"
+  }
+}

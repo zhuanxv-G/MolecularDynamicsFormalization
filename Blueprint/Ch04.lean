@@ -1108,24 +1108,75 @@ theorem frozenGramPrinted :
 
 /-- source_id: MD-4.3.3-ComponentPrinted · definition · §4.3.3 · 印刷p.158 / PDFp.180
 [EXTRA] [EXTRA]Gsup1是未定义印刷G_j^1的显式参数，未假设它等于已定义梯度。
-[ERRATUM?] 一般分量式分母G_j^1疑为G_n^j的索引误写；原文不静默改。 -/
+[ERRATUM?] 一般分量式分母G_j^1疑为G_n^j的索引误写；原文不静默改。 
+[EXTRA] 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。 -/
 def componentPrinted {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
-    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n) (j : Fin l) : MolecularDynamics.Chapter04Review.Q n :=
+    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n) (j : Fin l) (_hm : ∀ i, 0 < m i)
+    (_hgq : DifferentiableAt ℝ (g j) q) (_hgQ : DifferentiableAt ℝ (g j) Qnow)
+    (_hdenom : MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow)
+      (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j)) ≠ 0) : MolecularDynamics.Chapter04Review.Q n :=
   Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j))) •
     MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)
 
 /-- source_id: MD-4.3.3-ComponentConstraintStep · definition · §4.3.3 · 印刷p.158 / PDFp.180
-[EXTRA] [EXTRA]一般j采用已定义Gn^j=grad gj(qn)，取非零分母才是可用步骤；原一般式索引疑误由ComponentPrinted保留。 -/
+[EXTRA] [EXTRA]一般j采用已定义Gn^j=grad gj(qn)，取非零分母才是可用步骤；原一般式索引疑误由ComponentPrinted保留。 
+[EXTRA] 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。 -/
 def componentConstraintStep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
-    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (j : Fin l) : MolecularDynamics.Chapter04Review.Q n :=
+    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (j : Fin l) (_hm : ∀ i, 0 < m i)
+    (_hgq : DifferentiableAt ℝ (g j) q) (_hgQ : DifferentiableAt ℝ (g j) Qnow)
+    (_hdenom : MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow)
+      (MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)) ≠ 0) : MolecularDynamics.Chapter04Review.Q n :=
   Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q))) •
     MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)
 
 /-- source_id: MD-4.3.3-ComponentSweep · definition · §4.3.3 · 印刷p.158 / PDFp.180
-[EXTRA] [EXTRA]一次完整顺序sweep，使用上一条统一Gn索引；多轮为其真实函数迭代。 -/
+[EXTRA] [EXTRA]一次完整顺序sweep，使用上一条统一Gn索引；多轮为其真实函数迭代。 
+[EXTRA] 保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。 -/
 def componentSweep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q Qnow : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=
   (List.finRange l).foldl (fun Qcur j => MolecularDynamics.Chapter04Review.componentConstraintStep m g q Qcur j) Qnow
+
+def componentPrintedDelta {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (Q : MolecularDynamics.Chapter04Review.Q n)
+    (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n) (j : Fin l) : ℝ :=
+  g j Q/MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Q)
+    (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j))
+
+def componentPrintedTrajectory {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q Q₀ : MolecularDynamics.Chapter04Review.Q n)
+    (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n) : ℕ → MolecularDynamics.Chapter04Review.Q n
+  | 0 => Q₀
+  | k+1 =>
+    let Q := componentPrintedTrajectory m g q Q₀ Gsup1 k
+    if hl : 0 < l then
+      let j : Fin l := ⟨k%l,Nat.mod_lt k hl⟩
+      Q-componentPrintedDelta m g Q Gsup1 j •
+        MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)
+    else Q
+
+def componentPrintedIteration {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q Q₀ : MolecularDynamics.Chapter04Review.Q n)
+    (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n)
+    (rounds : ℕ) (_hm : ∀ i, 0 < m i) (_hl : 0 < l)
+    (_hvalid : ∀ k < rounds*l,
+      let j : Fin l := ⟨k%l,Nat.mod_lt k _hl⟩
+      let Q := componentPrintedTrajectory m g q Q₀ Gsup1 k
+      DifferentiableAt ℝ (g j) q ∧ DifferentiableAt ℝ (g j) Q ∧
+        MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Q)
+          (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j)) ≠ 0) :
+    MolecularDynamics.Chapter04Review.Q n :=
+  componentPrintedTrajectory m g q Q₀ Gsup1 (rounds*l)
+
+def componentPrintedStop {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q Q₀ : MolecularDynamics.Chapter04Review.Q n)
+    (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n)
+    (round : ℕ) (tol : ℝ) (_hl : 0 < l) : Prop :=
+  ∀ j : Fin l, |componentPrintedDelta m g
+    (componentPrintedTrajectory m g q Q₀ Gsup1 (round*l+j.val)) Gsup1 j| < tol
 
 /-- source_id: MD-4.3.4-ProjectedEulerPrinted · definition · §4.3.4 · 印刷p.159 / PDFp.181
 [ERRATUM?] p159(4.21)力符号与p163及F=−∇U定义不一致。 -/
@@ -2278,6 +2329,10 @@ end MD.Ch04
 #print axioms MD.Ch04.componentPrinted
 #print axioms MD.Ch04.componentConstraintStep
 #print axioms MD.Ch04.componentSweep
+#print axioms MD.Ch04.componentPrintedDelta
+#print axioms MD.Ch04.componentPrintedTrajectory
+#print axioms MD.Ch04.componentPrintedIteration
+#print axioms MD.Ch04.componentPrintedStop
 #print axioms MD.Ch04.projectedEulerPrinted
 #print axioms MD.Ch04.projectedEulerRelation
 #print axioms MD.Ch04.lemma41

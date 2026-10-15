@@ -2685,16 +2685,16 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch04.componentPrinted",
       "verdict": "NEEDS_HUMAN",
       "explanation": "字面分母G_j^1与已定义G_n^j不一致。引入待解释Gsup1保留它，更新方向仍为G_n^j；常规修正版另列。",
-      "signature_sha256": "191641b886b30ebf96e34166d568cc04d2da8f940b7bd959fe5aa62bb2901ec9",
-      "block_sha256": "191641b886b30ebf96e34166d568cc04d2da8f940b7bd959fe5aa62bb2901ec9",
+      "signature_sha256": "5b7629c6aea617cbbf624078f1565cc7a18d0dcea5ba9b28278c9dcb2d1b91ed",
+      "block_sha256": "5b7629c6aea617cbbf624078f1565cc7a18d0dcea5ba9b28278c9dcb2d1b91ed",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -2712,22 +2712,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT12/axioms.log"
     },
     "MD-4.3.3-ComponentConstraintStep": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.componentConstraintStep",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "8f3d0f0b88d4921d418d1c0ad25cd80308d33f575b10cb951725dc0ecd9797af",
-      "block_sha256": "8f3d0f0b88d4921d418d1c0ad25cd80308d33f575b10cb951725dc0ecd9797af",
+      "signature_sha256": "67148c734134705d53b83f2b054de130875a32322752751207036aeda291088d",
+      "block_sha256": "67148c734134705d53b83f2b054de130875a32322752751207036aeda291088d",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -2745,22 +2745,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT12/axioms.log"
     },
     "MD-4.3.3-ComponentSweep": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.componentSweep",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "f323195bcb6cdf1c6347e35a0ff8a6ba239dbb4ec13ccccf1ad678c3705809ac",
-      "block_sha256": "f323195bcb6cdf1c6347e35a0ff8a6ba239dbb4ec13ccccf1ad678c3705809ac",
+      "signature_sha256": "a27788d74d06c62fcbba5fcc3c9557cde0b455c46b23a52c07400e8435fd7eeb",
+      "block_sha256": "a27788d74d06c62fcbba5fcc3c9557cde0b455c46b23a52c07400e8435fd7eeb",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -2778,7 +2778,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT12/axioms.log"
     },
     "MD-4.3.4-ProjectedEulerPrinted": {
       "checked": true,

@@ -1213,5 +1213,20 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "4.3.2"
+  },
+  "MD-4.3.3-ComponentPrinted": {
+    "category": "A",
+    "handling": "补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。",
+    "section": "4.3.3"
+  },
+  "MD-4.3.3-ComponentConstraintStep": {
+    "category": "A",
+    "handling": "补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。",
+    "section": "4.3.3"
+  },
+  "MD-4.3.3-ComponentSweep": {
+    "category": "B",
+    "handling": "保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。",
+    "section": "4.3.3"
   }
 }
