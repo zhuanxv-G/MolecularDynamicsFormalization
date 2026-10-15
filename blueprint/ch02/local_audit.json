@@ -5621,10 +5621,10 @@
     "MD-2.5.5-BeemanOrder": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.beemanOrder",
@@ -5649,7 +5649,8 @@
       "proof_attempts": 0,
       "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT24/axioms.log",
+      "compiled": true
     }
   }
 }

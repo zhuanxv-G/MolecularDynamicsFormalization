@@ -166,7 +166,7 @@
 | MD-2.5.4-TIForce | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT23（原返回FAIL保留） | placeholder / incomplete；原书改势/力符号裁定。 |
 | MD-2.5.4-TIOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT23（原返回FAIL保留） | placeholder / incomplete；大型修正方程/处理器构造及四阶局部消项与全局阶理论。 |
 | MD-2.5.5-Beeman | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.5.5-BeemanOrder | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；先裁定Beeman阶约定/原书疑误；大型多步全局误差理论亦缺。Taylor与数值诊断不是Lean反例证明。 |
+| MD-2.5.5-BeemanOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT24（原返回FAIL保留） | placeholder / incomplete；先裁定Beeman阶约定/原书疑误；大型多步全局误差理论亦缺。Taylor与数值诊断不是Lean反例证明。 |
 
 ## 旧160条完整映射
 
@@ -453,3 +453,5 @@ EAUDIT21 §2.5.2：2条落盘，单文件与2项公理通过；未写新证明�
 EAUDIT22 §2.5.3：2条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT23 §2.5.4：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT24 §2.5.5：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。

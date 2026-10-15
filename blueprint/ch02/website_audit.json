@@ -16105,7 +16105,14 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT24（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT24",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原文three在当前全相空间全网格全局三阶解释下有谐振子二阶反例；选项：批准另立全局二阶修订／先确定原书其他阶概念再形式化。原three、公式、当前待纠错签名均保留。"
+    }
   }
 ]
