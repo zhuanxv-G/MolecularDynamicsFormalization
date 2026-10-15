@@ -51,5 +51,11 @@
     "extra_assumptions": [
       "[EXTRA] 直接使用原文质量乘法形式M(qₙ₊₁−2qₙ+qₙ₋₁)=h²F(qₙ)，避免零质量下逆质量总化造成对象不等价；仅更改Blueprint本条。"
     ]
+  },
+  "MD-2.2.3-Consistency": {
+    "code": "def consistency {n : ℕ} (G F : ℝ → Q n → Q n) (γ : ℝ → Q n) (τ : ℝ) (p : ℕ) : Prop :=\n  0 < p ∧ ∃ K ≥ 0, ∃ δ > 0, ∀ t ∈ Icc 0 τ, ∀ h ∈ Ioo 0 δ,\n    ‖F h (γ t)-G h (γ t)‖ ≤ K*h^(p+1)",
+    "extra_assumptions": [
+      "[EXTRA] 显式0<p；本条只登记正自然数阶，属于[EXTRA]整数阶限制；保持统一K、δ及严格0<h<δ，不静默扩大端点。"
+    ]
   }
 }

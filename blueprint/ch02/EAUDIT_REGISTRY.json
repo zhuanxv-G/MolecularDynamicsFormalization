@@ -172,5 +172,57 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT04/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT05",
+    "section": "2.2.3",
+    "source_ids": [
+      "MD-2.2.3-Consistency",
+      "MD-2.2.3-DefectPrinted",
+      "MD-2.2.3-ErrorBound",
+      "MD-2.2.3-ExactExpansion",
+      "MD-2.2.3-VerletConsistency",
+      "MD-2.2.3-VerletExpansion",
+      "MD-2.2.3-VerletStability"
+    ],
+    "reaudit_ids": [
+      "MD-2.2.3-Consistency",
+      "MD-2.2.3-ErrorBound",
+      "MD-2.2.3-VerletExpansion",
+      "MD-2.2.3-ExactExpansion",
+      "MD-2.2.3-VerletConsistency",
+      "MD-2.2.3-VerletStability"
+    ],
+    "human_ids": [
+      "MD-2.2.3-DefectPrinted"
+    ],
+    "lean_sha256": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+    "source_sha256": "2002f023e586892d520bda2ba0b781b3105cdc482c829060adb2ae5abb5d01dc",
+    "pages": [
+      88,
+      89,
+      90,
+      91
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch02.olean",
+        "Blueprint/Ch02.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+      "log_sha256": "64ad258995269e163b69f6633a190e27c3b3e708e8622a564f823590026c6723"
+    },
+    "axiom_decl_count": 7,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT05/INDEX.md"
   }
 ]

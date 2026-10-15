@@ -1,0 +1,70 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.2.3-Consistency；原PDF页映射=[88, 89]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT05_review.json，对象含batch=EAUDIT05、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT05.md": "02902ba03b463fcd7633d139b55b6daf7c5dabea630002afae510d9cac30cdf7",
+  "Blueprint/Ch02.lean": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+  "blueprint/ch02/ch02_source.json": "2002f023e586892d520bda2ba0b781b3105cdc482c829060adb2ae5abb5d01dc",
+  "EAUDIT05a_materials": "c4494d9e65c78bcf9404478ed521d72d18fb47ea04b2589f9e52e9d2389b637d",
+  "EAUDIT05a_PAGES.pdf": "8e8a5ef4a51e02f1b21f1f69d67cb953f3103dc4540d85917ca8be78814bdb28"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.2.3-Consistency",
+  "kind": "definition",
+  "label": null,
+  "section": "2.2.3",
+  "printed_page": "66–67",
+  "pdf_page": "88–89",
+  "statement_latex": "The first assumption is that $\\mathcal G_h$ is an $O(h^{p+1})$ approximation of $\\mathcal F_h$ in the sense that there is a constant $K\\ge0$ and a constant $\\Delta>0$ such that, for $t\\in[0,\\tau]$, we have\n\\[\\|\\mathcal F_h(\\boldsymbol z(t))-\\mathcal G_h(\\boldsymbol z(t))\\|\\le\\bar K h^{p+1},\\qquad h<\\Delta.\\tag{2.10}\\]\nThe assumption (2.10) that the local error is of order $p+1$, $p>0$, is termed the consistency of the numerical method. We say the method is consistent of order $p$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "正文存在常数K≥0、Δ>0，式(2.10)使用\\bar K；疑似记号不一致，原文未在本处明确K=\\bar K，不静默修正。",
+    "δ对应原文Δ；h>0来自PDF88本节起点；一致性阶要求p>0（PDF89）。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.consistency",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] 显式0<p；本条只登记正自然数阶，属于[EXTRA]整数阶限制；保持统一K、δ及严格0<h<δ，不静默扩大端点。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT05_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:08:20.565003",
+      "before_sha256": "03fc6a3cbe82b1675ccada0daff93d270dbe8c603215b5ae095e654f95bebf73",
+      "after_sha256": "3b8421931d792be9cb60af178210d39a5d97cba522d1fabc569e2c7d4c19d76c",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH09_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean
+```lean
+def consistency {n : ℕ} (G F : ℝ → Q n → Q n) (γ : ℝ → Q n) (τ : ℝ) (p : ℕ) : Prop :=
+  0 < p ∧ ∃ K ≥ 0, ∃ δ > 0, ∀ t ∈ Icc 0 τ, ∀ h ∈ Ioo 0 δ,
+    ‖F h (γ t)-G h (γ t)‖ ≤ K*h^(p+1)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MD.Ch02.consistency
+```lean
+def consistency {n : ℕ} (G F : ℝ → Q n → Q n) (γ : ℝ → Q n) (τ : ℝ) (p : ℕ) : Prop :=
+  0 < p ∧ ∃ K ≥ 0, ∃ δ > 0, ∀ t ∈ Icc 0 τ, ∀ h ∈ Ioo 0 δ,
+    ‖F h (γ t)-G h (γ t)‖ ≤ K*h^(p+1)
+```

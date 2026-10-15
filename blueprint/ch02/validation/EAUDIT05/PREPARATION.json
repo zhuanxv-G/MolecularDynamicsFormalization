@@ -1,0 +1,37 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT05",
+  "section": "2.2.3",
+  "source_ids": [
+    "MD-2.2.3-Consistency",
+    "MD-2.2.3-DefectPrinted",
+    "MD-2.2.3-ErrorBound",
+    "MD-2.2.3-ExactExpansion",
+    "MD-2.2.3-VerletConsistency",
+    "MD-2.2.3-VerletExpansion",
+    "MD-2.2.3-VerletStability"
+  ],
+  "reaudit_ids": [
+    "MD-2.2.3-Consistency",
+    "MD-2.2.3-ErrorBound",
+    "MD-2.2.3-VerletExpansion",
+    "MD-2.2.3-ExactExpansion",
+    "MD-2.2.3-VerletConsistency",
+    "MD-2.2.3-VerletStability"
+  ],
+  "human_ids": [
+    "MD-2.2.3-DefectPrinted"
+  ],
+  "old_lean_sha256": "6424ea9c4b7c3adb9f38c8cad17d12689569961923c99847c0fd43533327a2b1",
+  "lean_sha256": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+  "source_sha256": "2002f023e586892d520bda2ba0b781b3105cdc482c829060adb2ae5abb5d01dc",
+  "pages": [
+    88,
+    89,
+    90,
+    91
+  ],
+  "prior_proof_blocks": {
+    "MD-2.2.3-Consistency": "def consistency {n : ℕ} (G F : ℝ → Q n → Q n) (γ : ℝ → Q n) (τ : ℝ) (p : ℕ) : Prop :=\n  ∃ K ≥ 0, ∃ δ > 0, ∀ t ∈ Icc 0 τ, ∀ h ∈ Ioo 0 δ,\n    ‖F h (γ t)-G h (γ t)‖ ≤ K*h^(p+1)"
+  }
+}

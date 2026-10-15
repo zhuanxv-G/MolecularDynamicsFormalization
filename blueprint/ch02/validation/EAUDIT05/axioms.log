@@ -1,0 +1,7 @@
+'MD.Ch02.consistency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.defectPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.errorBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.exactExpansion' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.verletConsistency' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.verletExpansion' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.verletStability' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

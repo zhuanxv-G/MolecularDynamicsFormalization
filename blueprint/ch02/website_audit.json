@@ -3702,7 +3702,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT05",
+    "repair": {
+      "eaudit": "EAUDIT05",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT05.md": "02902ba03b463fcd7633d139b55b6daf7c5dabea630002afae510d9cac30cdf7",
+        "Blueprint/Ch02.lean": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+        "blueprint/ch02/ch02_source.json": "2002f023e586892d520bda2ba0b781b3105cdc482c829060adb2ae5abb5d01dc"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.3-Stability",
@@ -3987,7 +3999,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT05",
+    "repair": {
+      "eaudit": "EAUDIT05",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT05.md": "02902ba03b463fcd7633d139b55b6daf7c5dabea630002afae510d9cac30cdf7",
+        "Blueprint/Ch02.lean": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+        "blueprint/ch02/ch02_source.json": "2002f023e586892d520bda2ba0b781b3105cdc482c829060adb2ae5abb5d01dc"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.3-ConsistencyConvergence",
@@ -4264,7 +4288,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT05",
+    "repair": {
+      "eaudit": "EAUDIT05",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT05.md": "02902ba03b463fcd7633d139b55b6daf7c5dabea630002afae510d9cac30cdf7",
+        "Blueprint/Ch02.lean": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+        "blueprint/ch02/ch02_source.json": "2002f023e586892d520bda2ba0b781b3105cdc482c829060adb2ae5abb5d01dc"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.3-ExactExpansion",
@@ -4378,7 +4414,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT05",
+    "repair": {
+      "eaudit": "EAUDIT05",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT05.md": "02902ba03b463fcd7633d139b55b6daf7c5dabea630002afae510d9cac30cdf7",
+        "Blueprint/Ch02.lean": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+        "blueprint/ch02/ch02_source.json": "2002f023e586892d520bda2ba0b781b3105cdc482c829060adb2ae5abb5d01dc"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.3-DefectPrinted",
@@ -4500,8 +4548,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT05（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT05",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印Q−q(t+h)三阶项符号与Taylor相减不符；选项：批准另立正残差修正版／保留原印作为疑误。原负/正号不自行裁定，当前字面陈述保持。"
+    }
   },
   {
     "source_id": "MD-2.2.3-VerletConsistency",
@@ -4625,7 +4680,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT05",
+    "repair": {
+      "eaudit": "EAUDIT05",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT05.md": "02902ba03b463fcd7633d139b55b6daf7c5dabea630002afae510d9cac30cdf7",
+        "Blueprint/Ch02.lean": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+        "blueprint/ch02/ch02_source.json": "2002f023e586892d520bda2ba0b781b3105cdc482c829060adb2ae5abb5d01dc"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.3-VerletStability",
@@ -4740,7 +4807,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT05",
+    "repair": {
+      "eaudit": "EAUDIT05",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT05.md": "02902ba03b463fcd7633d139b55b6daf7c5dabea630002afae510d9cac30cdf7",
+        "Blueprint/Ch02.lean": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+        "blueprint/ch02/ch02_source.json": "2002f023e586892d520bda2ba0b781b3105cdc482c829060adb2ae5abb5d01dc"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.4-FirstIntegral",

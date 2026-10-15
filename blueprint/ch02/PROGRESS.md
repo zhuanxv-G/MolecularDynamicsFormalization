@@ -44,17 +44,17 @@
 | MD-2.2.2-LeapfrogInit | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.2.2-LeapfrogReconstruct | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.2.3-ErrorDifference | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.2.3-Consistency | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.3-Consistency | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | definition / self-contained |
 | MD-2.2.3-Stability | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.2.3-ErrorRecursion | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.2.3-ErrorBound | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.2.3-ErrorBound | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | existing_bridge / checked+documented priors |
 | MD-2.2.3-ConsistencyConvergence | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
 | MD-2.2.3-ScalarVerlet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.2.3-VerletExpansion | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际标量复合力的三阶Taylor余项及代数归一。 |
-| MD-2.2.3-ExactExpansion | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；ODE导数升阶与四阶Taylor余项界。 |
-| MD-2.2.3-DefectPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书位置差疑误裁定及实际余项理论。 |
-| MD-2.2.3-VerletConsistency | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际三阶缺陷、κ连续性及统一余项常数。 |
-| MD-2.2.3-VerletStability | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际Verlet映射的1+hC Lipschitz界，可用半踢漂移组合逐坐标界证明。 |
+| MD-2.2.3-VerletExpansion | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | placeholder / incomplete；实际标量复合力的三阶Taylor余项及代数归一。 |
+| MD-2.2.3-ExactExpansion | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | placeholder / incomplete；ODE导数升阶与四阶Taylor余项界。 |
+| MD-2.2.3-DefectPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT05（原返回FAIL保留） | placeholder / incomplete；原书位置差疑误裁定及实际余项理论。 |
+| MD-2.2.3-VerletConsistency | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | placeholder / incomplete；实际三阶缺陷、κ连续性及统一余项常数。 |
+| MD-2.2.3-VerletStability | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | placeholder / incomplete；实际Verlet映射的1+hC Lipschitz界，可用半踢漂移组合逐坐标界证明。 |
 | MD-2.2.4-FirstIntegral | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.2.4-IntegralPreserved | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
 | MD-2.2.4-EnergyPreserved | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
@@ -415,3 +415,5 @@ EAUDIT02 §2.2：1条落盘，单文件与1项公理通过；未写新证明；�
 EAUDIT03 §2.2.1：6条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT04 §2.2.2：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT05 §2.2.3：7条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。

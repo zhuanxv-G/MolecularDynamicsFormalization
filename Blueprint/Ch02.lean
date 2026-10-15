@@ -320,9 +320,10 @@ theorem errorDifference :
       G h (oneStepIterate G h (γ 0) k) - F h (γ (k*h)) := by
   exact MolecularDynamics.Chapter02Review.errorDifference_proved
 
-/-- source_id: MD-2.2.3-Consistency · definition · §2.2.3 · 印刷p.66–67 / PDFp.88–89 -/
+/-- source_id: MD-2.2.3-Consistency · definition · §2.2.3 · 印刷p.66–67 / PDFp.88–89 
+[EXTRA] 显式0<p；本条只登记正自然数阶，属于[EXTRA]整数阶限制；保持统一K、δ及严格0<h<δ，不静默扩大端点。 -/
 def consistency {n : ℕ} (G F : ℝ → Q n → Q n) (γ : ℝ → Q n) (τ : ℝ) (p : ℕ) : Prop :=
-  ∃ K ≥ 0, ∃ δ > 0, ∀ t ∈ Icc 0 τ, ∀ h ∈ Ioo 0 δ,
+  0 < p ∧ ∃ K ≥ 0, ∃ δ > 0, ∀ t ∈ Icc 0 τ, ∀ h ∈ Ioo 0 δ,
     ‖F h (γ t)-G h (γ t)‖ ≤ K*h^(p+1)
 
 /-- source_id: MD-2.2.3-Stability · definition · §2.2.3 · 印刷p.66–67 / PDFp.88–89 -/

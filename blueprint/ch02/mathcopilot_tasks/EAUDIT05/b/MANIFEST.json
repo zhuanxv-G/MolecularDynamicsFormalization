@@ -1,0 +1,27 @@
+{
+  "eaudit": "EAUDIT05",
+  "source_id": "MD-2.2.3-ErrorBound",
+  "input_sha256": {
+    "BATCH_EAUDIT05.md": "02902ba03b463fcd7633d139b55b6daf7c5dabea630002afae510d9cac30cdf7",
+    "Blueprint/Ch02.lean": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+    "blueprint/ch02/ch02_source.json": "2002f023e586892d520bda2ba0b781b3105cdc482c829060adb2ae5abb5d01dc",
+    "EAUDIT05b_materials": "52bb0684a831a8da39446ff9fdbd7cfc90c5120bbb41cbcc82e6fe618f8e31e7",
+    "EAUDIT05b_PAGES.pdf": "3c63296262a7c97f009eb61f845123c1fd4bdca778cb660ce16b754843c54c03"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    89
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "713e6d2a2dafdc7217b9fdfd416586ea485771ec0c0dc966cb35bb312ddead93",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "name": "oneStepIterate",
+      "file_sha256": "c9bc53727962c962a9420dbfa305ede46e90b38fdded8952b400381f474e3385",
+      "excerpt_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT05_review.json",
+  "total_task_bytes": 89990
+}

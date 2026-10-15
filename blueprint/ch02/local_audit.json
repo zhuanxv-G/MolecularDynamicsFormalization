@@ -1289,15 +1289,15 @@
     "MD-2.2.3-Consistency": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.consistency",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "81b9bbc8c8a451935f2f2b65f660d0ee130e97bc3fc4613cbf43b1c624cfbccc",
+      "signature_sha256": "f07aac006241a505dd0773ac82f4b82858a8034cd884ca8c206a6e90fb228bb3",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -1313,9 +1313,10 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "block_sha256": "81b9bbc8c8a451935f2f2b65f660d0ee130e97bc3fc4613cbf43b1c624cfbccc",
+      "block_sha256": "f07aac006241a505dd0773ac82f4b82858a8034cd884ca8c206a6e90fb228bb3",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT05/axioms.log",
+      "compiled": true
     },
     "MD-2.2.3-Stability": {
       "checked": true,
@@ -1384,9 +1385,9 @@
     "MD-2.2.3-ErrorBound": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.errorBound",
@@ -1412,7 +1413,8 @@
       "proof_attempts": 0,
       "block_sha256": "99771ec4486a5cfb725e257da79bad6f88f2b046049d4c8d834bd6721c4b5d62",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT05/axioms.log",
+      "compiled": true
     },
     "MD-2.2.3-ConsistencyConvergence": {
       "checked": true,
@@ -1482,10 +1484,10 @@
     "MD-2.2.3-VerletExpansion": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.verletExpansion",
@@ -1509,16 +1511,17 @@
       "proof_attempts": 0,
       "block_sha256": "8cbf636e7194515b28f5bdc9c6fc7bf6b85335691e443e7cea705dbcc28ba093",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT05/axioms.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "compiled": true
     },
     "MD-2.2.3-ExactExpansion": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.exactExpansion",
@@ -1542,16 +1545,17 @@
       "proof_attempts": 0,
       "block_sha256": "85940fdc8caa3763a7a7b38eeff8f7608a125a37c13ca0a5a593bc261043c93b",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT05/axioms.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "compiled": true
     },
     "MD-2.2.3-DefectPrinted": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.defectPrinted",
@@ -1575,16 +1579,17 @@
       "proof_attempts": 0,
       "block_sha256": "8a0cb6c050cb3b5dbff31d47ce7b904aa3d9a23e3438b79b54ae1329a317d718",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT05/axioms.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
+      "compiled": true
     },
     "MD-2.2.3-VerletConsistency": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.verletConsistency",
@@ -1608,16 +1613,17 @@
       "proof_attempts": 0,
       "block_sha256": "4db39bc6882d31aaf56324d600c6721ec4b955abfd9384a23572f2a6674a94c6",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT05/axioms.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "compiled": true
     },
     "MD-2.2.3-VerletStability": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.verletStability",
@@ -1641,7 +1647,7 @@
       "proof_attempts": 3,
       "block_sha256": "f53fe6597d6e812c89a8af7f2124a0e50460821a2adc97f6d5ce1d147b2e5729",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT05/axioms.log",
       "proof_trials": [
         {
           "route": "exact?",
@@ -1677,7 +1683,8 @@
         "blueprint/ch02/validation/short-search1.log",
         "blueprint/ch02/validation/short-search2.log",
         "blueprint/ch02/validation/short-search3.log"
-      ]
+      ],
+      "compiled": true
     },
     "MD-2.2.4-FirstIntegral": {
       "checked": true,

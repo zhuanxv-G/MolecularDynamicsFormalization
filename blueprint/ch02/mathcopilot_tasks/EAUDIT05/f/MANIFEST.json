@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT05",
+  "source_id": "MD-2.2.3-VerletStability",
+  "input_sha256": {
+    "BATCH_EAUDIT05.md": "02902ba03b463fcd7633d139b55b6daf7c5dabea630002afae510d9cac30cdf7",
+    "Blueprint/Ch02.lean": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+    "blueprint/ch02/ch02_source.json": "2002f023e586892d520bda2ba0b781b3105cdc482c829060adb2ae5abb5d01dc",
+    "EAUDIT05f_materials": "ec7176e42380ba3740d104d304b8deca90f148dcc6a22a6901b54f7234aadef9",
+    "EAUDIT05f_PAGES.pdf": "9abdcfee433c268bfae8f4b4afb83d0b5bf2c98992728f7b47568a0bfa88dca2"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    90,
+    91
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "577b8fb75c874ee0f86fd9416f03182db3f5b0a1410626301c6fe7930bd20a64",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Z",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "positiveMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "b9acc89b85e9b87ac122f258b0bd23cb20efd6ecc4ec0894b39658f630a85d21"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "verlet",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "401060069967ba034fd1337efdba9f5ddda707775b16934659f1d861ecc3c84b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT05_review.json",
+  "total_task_bytes": 232946
+}
