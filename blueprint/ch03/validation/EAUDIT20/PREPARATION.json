@@ -1,0 +1,24 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT20",
+  "section": "3.7.3",
+  "source_ids": [
+    "MD-3.7.3-DecoupledOrder",
+    "MD-3.7.3-ModifiedCollisionProjection",
+    "MD-3.7.3-PairForceDecoupling"
+  ],
+  "reaudit_ids": [
+    "MD-3.7.3-ModifiedCollisionProjection"
+  ],
+  "human_ids": [
+    "MD-3.7.3-PairForceDecoupling",
+    "MD-3.7.3-DecoupledOrder"
+  ],
+  "old_lean_sha256": "35ee3f3a5232e0ab25a6987a9dbd789cdeaca4ba663e088894b0f7d6a5bef3d3",
+  "lean_sha256": "35ee3f3a5232e0ab25a6987a9dbd789cdeaca4ba663e088894b0f7d6a5bef3d3",
+  "source_sha256": "1173d0f036953d1bc73404d7c45f35c130e1fe50348f195fd02d5f0328e3aa59",
+  "pages": [
+    158
+  ],
+  "prior_proof_blocks": {}
+}

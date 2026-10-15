@@ -5041,11 +5041,11 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch03.pairForceDecoupling",
       "verdict": "NEEDS_HUMAN",
       "explanation": "字面公式α′=0保留；second term指β却写α，随后用α生成路径、β作kick，需独立裁定约定。",
@@ -5068,16 +5068,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT20/axioms.log"
     },
     "MD-3.7.3-DecoupledOrder": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.decoupledOrder",
@@ -5102,15 +5102,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT20/axioms.log"
     },
     "MD-3.7.3-ModifiedCollisionProjection": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.modifiedCollisionProjection",
@@ -5135,7 +5135,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT20/axioms.log"
     },
     "MD-3.7.1-FreeHardSphereHamiltonian": {
       "checked": true,

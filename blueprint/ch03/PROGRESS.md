@@ -152,9 +152,9 @@
 | MD-3.7.2-CollisionQuartic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.7.2-CollisionalVerletRelation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | definition / self-contained |
 | MD-3.7.2-CollisionalVerletOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT19（原返回FAIL保留） | placeholder / incomplete；缺自适应碰撞事件定位稳定性与非光滑全局误差理论；不建设大型理论。 |
-| MD-3.7.3-PairForceDecoupling | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | definition / incomplete |
-| MD-3.7.3-DecoupledOrder | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺混合冲量与碰撞稳定性全局误差理论；本地非PASS不证明。 |
-| MD-3.7.3-ModifiedCollisionProjection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.7.3-PairForceDecoupling | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT20（原返回NEEDS_HUMAN保留） | definition / incomplete |
+| MD-3.7.3-DecoupledOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT20（原返回FAIL保留） | placeholder / incomplete；缺混合冲量与碰撞稳定性全局误差理论；本地非PASS不证明。 |
+| MD-3.7.3-ModifiedCollisionProjection | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | definition / self-contained |
 | MD-3.7.1-FreeHardSphereHamiltonian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | definition / self-contained |
 
 ## 旧143条完整映射
@@ -417,3 +417,5 @@ EAUDIT17 §3.7：3条落盘，单文件与3项公理通过；未写新证明；�
 EAUDIT18 §3.7.1：6条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT19 §3.7.2：3条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT20 §3.7.3：3条落盘，单文件与3项公理通过；未写新证明；完整check留到章末；网站待复审。

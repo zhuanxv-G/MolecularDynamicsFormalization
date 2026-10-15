@@ -149,9 +149,9 @@
 | MD-3.7.2-CollisionQuartic | 135/157 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
 | MD-3.7.2-CollisionalVerletRelation | 135/157 | PASS | 待复审 / EAUDIT19 | self-contained |
 | MD-3.7.2-CollisionalVerletOrder | 135/157 | NEEDS_HUMAN | 待导师 / EAUDIT19（原返回FAIL保留） | incomplete |
-| MD-3.7.3-PairForceDecoupling | 136/158 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | incomplete |
-| MD-3.7.3-DecoupledOrder | 136/158 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | incomplete |
-| MD-3.7.3-ModifiedCollisionProjection | 136/158 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
+| MD-3.7.3-PairForceDecoupling | 136/158 | NEEDS_HUMAN | 待导师 / EAUDIT20（原返回NEEDS_HUMAN保留） | self-contained |
+| MD-3.7.3-DecoupledOrder | 136/158 | NEEDS_HUMAN | 待导师 / EAUDIT20（原返回FAIL保留） | incomplete |
+| MD-3.7.3-ModifiedCollisionProjection | 136/158 | PASS | 待复审 / EAUDIT20 | self-contained |
 | MD-3.7.1-FreeHardSphereHamiltonian | 133/155 | PASS | 待复审 / EAUDIT18 | incomplete |
 
 ## 需要导师判断的问题
@@ -8161,7 +8161,7 @@ def pairForceDecoupling (φ α β : ℝ → ℝ) (contact : ℝ) : Prop :=
 
 本地预审：**NEEDS_HUMAN**。字面公式α′=0保留；second term指β却写α，随后用α生成路径、β作kick，需独立裁定约定。
 
-网站审计：**NEEDS_HUMAN（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT20（原返回NEEDS_HUMAN保留）**。原文JSON：DRAFT；未冻结。
 
 Ch03.lean:1467–1468展开为对每个实数r有φ(r)=α(r)+β(r)，且deriv α contact=0；无其他封装定义。contact作为σ_i+σ_j的参数化是合理抽象，但定义只保留展示公式的α′条件，没有解决原文“second term”应指β而后句又让β负责kick的矛盾。[ERRATUM?]冲突经PDF确认成立；需数学判断究竟修改文字“second”为“first”，还是修改公式α′为β′，两者会产生不同算法。另需注意Lean的deriv是全函数，未可微处取0；原书谈导数的语义需适当可微条件。无[EXTRA]。这是定义而非含sorry的定理，签名问题独立于证明状态。所需定义均已找到，NEEDS_HUMAN的原因仅为上述原书问题。
 
@@ -8169,11 +8169,11 @@ Ch03.lean:1467–1468展开为对每个实数r有φ(r)=α(r)+β(r)，且deriv α
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch03.lean:1801](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1801>)（`MD.Ch03.pairForceDecoupling`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -8221,7 +8221,7 @@ theorem decoupledOrder :
 
 本地预审：**NEEDS_HUMAN**。保留完整条件化二阶误差；原文α/β职责冲突及方法/误差资格未裁定，不以某个约定假装原文已审。
 
-网站审计：**FAIL（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT20（原返回FAIL保留）**。原文JSON：DRAFT；未冻结。
 
 依赖Ch03_deps.txt已展开：ReviewDefinitions中的Q n=Fin n→ℝ，Z n=Q n×Q n，grad U q i=(fderiv ℝ U q)(Pi.single i 1)，invMass m v i=v_i/m_i，positiveMass为逐分量正质量；Statements中的finiteCollisionTrajectory要求q在闭区间连续、g(q)≥0、非事件开区间内q′=M⁻¹p及p′=F(q)，有限事件具有入射负法向速度、左右极限和弹性反射；但不约束p在0、τ或事件时刻的实际取值，也不要求端点动量连续。collisionalGlobalOrder展开为∃C>0、ν₀>0，对每个ν≥ν₀存在保序双射θ，固定0和τ且|θ(t)−t|≤C(τ/ν)^2，所有j≤ν的数值状态与(q,p)(θ(jτ/ν))误差≤C(τ/ν)^2；oneStepIterate是真正从(q0,p0)迭代(G h)^j。以下无碰撞反例已否定签名。[EXTRA]正质量、有限横截事件、光滑性和允许O(h²)时间对齐可作为明确的局部适用条件，但Gfree被假设为任意时长的精确V碰撞流，结论使用步首步尾U半kick，未给出原书α的二次Verlet碰撞检测及在碰撞点施加β kick的混合法。边界法向条件是质量加权grad g·M⁻¹grad U=0，需说明它与原书u_⊥的坐标/质量约定，不能直接认作原书未加权点积。并且对所有g≥0状态要求全时长Gfree远强于有限横截局部问题；缺少右连续及端点实际动量约定。[ERRATUM?]原书α/β矛盾确实存在，需另行裁定，但此FAIL不依赖其裁定。Ch03.lean:1485后为sorry；未证明状态与上述语义失败分别记录。
 
@@ -8235,7 +8235,7 @@ theorem decoupledOrder :
 
 位置：[Blueprint/Ch03.lean:1807](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1807>)（`MD.Ch03.decoupledOrder`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -8248,7 +8248,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 ### 2. 原文陈述
 
 > In particular, one may use the backward error analysis to obtain a modified Hamiltonian $\widetilde H_h$ corresponding to the Verlet method with stepsize $h$, then to project during collisions not onto the energy surface, but onto the modified energy surface, so that
-> \[\widetilde H_h=\mathrm{const}.\]
+> \[\widetilde H_h\equiv\mathrm{const}.\]
 > (In practice, a low order approximation of $\widetilde H_h$ is used, such as the truncation to terms of order four or six in the stepsize.)
 
 ### 3. 原文证明
@@ -8276,7 +8276,7 @@ def modifiedCollisionProjection {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT20**。原文JSON：CORRECTED；未冻结。
 
 依赖SymplecticForm.lean定义SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ（前后两组坐标表示q,p）；ModifiedHamiltonianBounds.lean的textbookTruncatedHamiltonian实际定义为H(z)+Σ_{j∈Finset.Icc r k} h^j Hj(j,z)。因此Ch03.lean:1488–1491的关系精确表示同一固定h、同一有限截断在碰撞前z及碰撞后w的值相等，符合本条context_notation声明的修正能量等值关系范围。r,k,h,H,Hj,z,w是自由参数；允许四阶、六阶实例，不把这些示例强制为唯一截断。原页≡const在这里表示一次碰撞前后保持同值，等式关系足够；A中符号转录修正不改变此语义。Hj作为已提供的Verlet修正系数使用：关系本身不证明其来自BEA、不构造投影、不保证存在唯一性或统计准确性，不能把这些当作已验证定理。本条范围已明确这些限制，故PASS针对等值定义。无[EXTRA]及[ERRATUM?]；定义本身无sorry。
 
@@ -8286,11 +8286,11 @@ def modifiedCollisionProjection {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 位置：[Blueprint/Ch03.lean:1822](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1822>)（`MD.Ch03.modifiedCollisionProjection`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`1fbc3c7ff340666a5b40aec745cd1b1d9e447e7f33cf7a71c288b190173e94d8`；原文SHA256：`80f0ff2a9ddbb1c47c6dd7872fa5ad7b2a3061a37e9dfcfd29a75f10ee3397a9`。
+签名SHA256：`1fbc3c7ff340666a5b40aec745cd1b1d9e447e7f33cf7a71c288b190173e94d8`；原文SHA256：`bef87fdecc0c6fb2a04fb8c16c0ef855f93884d78d1755580954b12e8fb0eef0`。
 
 ## 1. MD-3.7.1-FreeHardSphereHamiltonian · definition · 印刷p.133 / PDFp.155
 

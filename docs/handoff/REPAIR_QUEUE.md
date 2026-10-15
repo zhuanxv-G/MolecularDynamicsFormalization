@@ -2,11 +2,11 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 356；章末验收待完成 [3, 4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 354；章末验收待完成 [3, 4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
-第3章：网站PASS 58 / 已修待复审 71 / 待导师 17 / 修复中 3。
+第3章：网站PASS 57 / 已修待复审 72 / 待导师 18 / 修复中 2。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
@@ -317,9 +317,9 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.7.2-CollisionQuartic | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.7.2-CollisionalVerletRelation | FAIL | A | 保留给定tc/Rc的更新辅助；补实际粒子二次路径、正质量/半径、F=−∇U的对偶资格、不同粒子对的最早真实接触、唯一单碰撞及该接触面的质量加权弹性反射。Option.none明确无正根；严格tc<hmax及等号else照原印保留，不静默修改算法。 | 已修待复审 | EAUDIT19 |
 | 3 | MD-3.7.2-CollisionalVerletOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT19 |
-| 3 | MD-3.7.3-PairForceDecoupling | NEEDS_HUMAN | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待导师 | — |
-| 3 | MD-3.7.3-DecoupledOrder | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 3 | MD-3.7.3-ModifiedCollisionProjection | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.7.3-PairForceDecoupling | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT20 |
+| 3 | MD-3.7.3-DecoupledOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT20 |
+| 3 | MD-3.7.3-ModifiedCollisionProjection | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT20 |
 | 3 | MD-3.7.1-FreeHardSphereHamiltonian | FAIL | C | 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。 | 已修待复审 | EAUDIT18 |
 | 4 | MD-4-LinearField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4-EulerFactor | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |

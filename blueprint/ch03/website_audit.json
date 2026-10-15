@@ -10871,7 +10871,14 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH26_result.json",
     "needs_category": "原文数学判断",
-    "effective_status": "NEEDS_HUMAN（绑定版本 433a13ca6407）"
+    "effective_status": "待导师 / EAUDIT20（原返回NEEDS_HUMAN保留）",
+    "repair": {
+      "eaudit": "EAUDIT20",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原文字说第二项β的接触导数为零，展示却写α′=0；选项：批准β为kick且β′(σi+σj)=0／按展示式调整分工并同步算法。需导师裁定，保持原句与定义。"
+    }
   },
   {
     "source_id": "MD-3.7.3-DecoupledOrder",
@@ -10927,7 +10934,14 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH26_result.json",
     "needs_category": "原文数学判断",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待导师 / EAUDIT20（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT20",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原书是α二次Verlet检测加碰撞点β kick，当前精确子流Strang对象不同；选项：导师先裁定α/β后完整指定原CVA混合算法及物理单侧轨迹／保留当前方法为另名辅助。保持现状，不能以精确子流法代替原算法。"
+    }
   },
   {
     "source_id": "MD-3.7.3-ModifiedCollisionProjection",
@@ -11007,6 +11021,18 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH26_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT20",
+    "repair": {
+      "eaudit": "EAUDIT20",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT20.md": "6c6b05f53d54ab0dff404bb94f816cfc42b08ca36c505d2b9624e1fac38aa05c",
+        "Blueprint/Ch03.lean": "35ee3f3a5232e0ab25a6987a9dbd789cdeaca4ba663e088894b0f7d6a5bef3d3",
+        "blueprint/ch03/ch03_source.json": "1173d0f036953d1bc73404d7c45f35c130e1fe50348f195fd02d5f0328e3aa59"
+      }
+    }
   }
 ]
