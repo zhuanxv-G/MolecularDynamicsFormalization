@@ -56,3 +56,8 @@
 
 - MD-2.5.1-RKSymplectic：任意可约Butcher表的系数必要性有反例；选项：批准只保留充分方向／指定不可约等资格后保留必要性。当前iff及原文不擅改。 网站反例：取s=2、A=0、b=(1,−1)。对任何n,H,h和满足关系的阶段，两阶段均等于X_H(z)，输出必为G(z)=z。因此右侧普适命题成立：恒等映射C¹且Jacobian=I，IᵀJI=J。左侧i=j=0时为0=1，失败。即使补一致性也不足：A四项均1/4、b=(1,0)，重复阶段化为中点法而系数条件在首个对角项为1/2=1。; 原返回FAIL保留。
 - MD-2.5.1-GaussFamily：原文even order需区分确切有限阶与偶数阶下界，原全步长唯一分支资格也过强；选项：批准局部唯一分支上的至少2s阶／定义最高有限阶后证明确切阶偶性。需先确定数学范围，当前声明保持。 网站反例：范围反例：n=s=1、c=1/2、f(x)=x，精确流F(t,z)=e^t z全局光滑。h=2,z≠0时阶段方程K=z+K无解，因而被全实h的唯一可解前提排除；这不是条件定理为假的反例。结论缺失：methodLocalOrder是下界，未加入¬methodLocalOrder G F (r+1)，无法得到确切阶为偶数。; 原返回FAIL保留。
+
+## EAUDIT22 原文数学判断（保持现状）
+
+- MD-2.5.3-NewmarkReduction：原印一般质量公式不能推出Verlet，正质量仍有反例；选项：导师批准m≡1限制／另立质量因子修正版newmarkMassCorrected，保留原印与反例。 网站反例：n=1；m(0)=2；F(q)(0)=1（来自光滑势能U(q)=-q(0)）；h=1；z=(0,0)；w=(1/2,1)，各数视作单坐标向量。newmarkRelation m F (1/2) 0 h z w为真；invMass m F=1/2，verlet m F h z=(1/4,1)，因此右侧为假。质量严格为正。; 原返回FAIL保留。
+- MD-2.5.3-NewmarkNotSymplectic：非辛反例未覆盖插值位置处力构造的相关辛方法族，原页只给定性构造并引用395；选项：核对395后指定插值参数及更新关系／导师批准另列独立构造条目。现有反例签名保持，不凭空选择方法族。 网站反例：缺失结论条款：a related family of symplectic methods can be constructed by replacing interpolated forces by forces evaluated at interpolated positions。存在一个非辛Newmark求解映射不会给出任何相关辛方法族或其构造。; 原返回FAIL保留。

@@ -4793,8 +4793,18 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT22_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:30:44.210058",
+        "before_sha256": "a87dc4c9dfd7322e97a37e9afa1df7964f08de03e77cedd574d01b8761eb0844",
+        "after_sha256": "b86533dacc50d4ea223dbf74c27d4fb83e4aeea7448e8ca69e51ce4a54550415",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH30_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT22/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.5.3-NewmarkDamping",
@@ -4826,7 +4836,7 @@
     "section": "2.5.3",
     "printed_page": "92",
     "pdf_page": "114",
-    "statement_latex": "The implicit Newmark methods are not symplectic, but a related family of symplectic methods can be constructed by using linear interpolated forces evaluated at interpolated positions [395].",
+    "statement_latex": "The implicit Newmark methods are not symplectic, but a related family of symplectic methods can be constructed by replacing interpolated forces by forces evaluated at interpolated positions [395].",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -4838,9 +4848,21 @@
       "[EXTRA]存在一个非线性势能、β≠0与非零步长的实际可微求解反例；不是排除每个线性特殊情形。单位质量与字面式一致。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT22_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:30:44.210058",
+        "before_sha256": "ad31a90fec2222016882f2b04d048cd0e7b7859e4da464305b9216f703c9bb56",
+        "after_sha256": "4401610e0a7c489fea041e9f74f7adcf5632c22103c93497429d393c1eb921bb",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH30_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT22/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.5.4-MultiTaylor",

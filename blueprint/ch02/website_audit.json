@@ -15304,8 +15304,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT22（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT22",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印一般质量公式不能推出Verlet，正质量仍有反例；选项：导师批准m≡1限制／另立质量因子修正版newmarkMassCorrected，保留原印与反例。"
+    }
   },
   {
     "source_id": "MD-2.5.3-NewmarkDamping",
@@ -15495,8 +15502,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT22（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT22",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "非辛反例未覆盖插值位置处力构造的相关辛方法族，原页只给定性构造并引用395；选项：核对395后指定插值参数及更新关系／导师批准另列独立构造条目。现有反例签名保持，不凭空选择方法族。"
+    }
   },
   {
     "source_id": "MD-2.5.4-MultiTaylor",

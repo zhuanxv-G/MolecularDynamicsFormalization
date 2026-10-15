@@ -1,0 +1,38 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT22",
+  "section": "2.5.3",
+  "source_ids": [
+    "MD-2.5.3-NewmarkNotSymplectic",
+    "MD-2.5.3-NewmarkReduction"
+  ],
+  "reaudit_ids": [],
+  "human_ids": [
+    "MD-2.5.3-NewmarkReduction",
+    "MD-2.5.3-NewmarkNotSymplectic"
+  ],
+  "lean_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+  "source_sha256": "e1aea1c09f7d23547de1c000eb7447dfb527486fd639521a3ddc9427e754d1a5",
+  "pages": [
+    114
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch02.olean",
+      "Blueprint/Ch02.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "log_sha256": "7c13d743aa2540c7c69524eaf4319eb3baf39a2a1b09338afc9d6f4ad3e4c1c4"
+  },
+  "axiom_decl_count": 2,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": null
+}

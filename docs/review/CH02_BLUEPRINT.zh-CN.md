@@ -155,9 +155,9 @@
 | MD-2.5.2-GeneralSymplectic | 91/113 | PASS | 待复审 / EAUDIT21 | incomplete |
 | MD-2.5.2-GeneralVerletSymplectic | 91/113 | PASS | 待复审 / EAUDIT21 | incomplete |
 | MD-2.5.3-Newmark | 92/114 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
-| MD-2.5.3-NewmarkReduction | 92/114 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
+| MD-2.5.3-NewmarkReduction | 92/114 | NEEDS_HUMAN | 待导师 / EAUDIT22（原返回FAIL保留） | incomplete |
 | MD-2.5.3-NewmarkDamping | 92/114 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
-| MD-2.5.3-NewmarkNotSymplectic | 92/114 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
+| MD-2.5.3-NewmarkNotSymplectic | 92/114 | PASS | 待导师 / EAUDIT22（原返回FAIL保留） | incomplete |
 | MD-2.5.4-MultiTaylor | 92/114 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.5.4-TIPotential | 92–93/114–115 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.5.4-TIForce | 93/115 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
@@ -8463,7 +8463,7 @@ theorem newmarkReduction : ∀ n (m : Fin n → ℝ) (F : Q n → Q n) h z w,
 
 本地预审：**NEEDS_HUMAN**。完整字面一般质量结论，不静默限定单位质量；待裁定。
 
-网站审计：**FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT22（原返回FAIL保留）**。原文JSON：DRAFT；未冻结。
 
 Ch02.lean:1337–1339全称量化n、m、F、h、z、w，固定σ=1/2、η=0，断言关系与w=verlet的双向等价。已展开Ch02_deps.txt:2923–2925：newmarkRelation确为缺力项质量因子的字面关系，未调用2926–2929的质量修正版。2859–2861的verlet则令Q=q+h invMass(m,p)+(h²/2)invMass(m,F(q))，P=p+(h/2)(F(q)+F(Q))。两种位置公式一般不相同，故原句的一般质量解释及当前Lean全称签名均为假，[ERRATUM?]成立。无[EXTRA]，质量正性也不能修复它。“仅M=I”只适用于对所有力和初值的普遍方法等价，不能排除特殊力或轨道的巧合。该定理体含sorry，签名失败由展开定义后的反例确定，不以sorry为判据。
 
@@ -8477,7 +8477,7 @@ Ch02.lean:1337–1339全称量化n、m、F、h、z、w，固定σ=1/2、η=0，�
 
 位置：[Blueprint/Ch02.lean:1559](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1559>)（`MD.Ch02.newmarkReduction`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -8547,7 +8547,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 ### 2. 原文陈述
 
-> The implicit Newmark methods are not symplectic, but a related family of symplectic methods can be constructed by using linear interpolated forces evaluated at interpolated positions [395].
+> The implicit Newmark methods are not symplectic, but a related family of symplectic methods can be constructed by replacing interpolated forces by forces evaluated at interpolated positions [395].
 
 ### 3. 原文证明
 
@@ -8576,7 +8576,7 @@ theorem newmarkNotSymplectic :
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT22（原返回FAIL保留）**。原文JSON：CORRECTED；未冻结。
 
 Ch02.lean:1353–1358；以原样沿用json_review中的校正文句为审计对象。已展开Ch02_deps.txt:33的SymplecticCoordinates 1=(Fin 1⊕Fin 1)→ℝ、2936的unpack z=(z∘Sum.inl,z∘Sum.inr)、583–585的textbookPotentialForce U q i=-(fderiv ℝ U q)(Pi.single i 1)，以及2926–2929的newmarkMassCorrected。m≡1时invMass为恒等，故关系确与字面Newmark一致。238–242的textbookJacobian使用真实fderiv，272–275的IsTextbookSymplecticMap要求C¹且所有点的Jacobian满足138–139的AᵀJA=J，J由39–40定义为[[0,I],[-I,0]]。签名存在量化U、β、h、G，再同时要求C³势能、β≠0、h≠0、C¹全局求解、所有初值满足更新及非辛性；已有C¹，故非辛性真正意味着某点Jacobian不保持J。[EXTRA]单位质量、非零参数及一个实际反例可合理见证该方法并非普遍辛；全局求解是额外构造负担，不能代表所有隐式参数。注释声称非线性势能，但签名没有显式非线性谓词（该描述不应当作已明示假设）。决定性缺失是原句第二子句：通过以插值位置处的力替换插值力构造相关辛方法族。现有签名完全没有该族的构造或辛性结论，故整体FAIL。无[ERRATUM?]；定理体含sorry与此语义缺失分开。
 
@@ -8590,7 +8590,7 @@ Ch02.lean:1353–1358；以原样沿用json_review中的校正文句为审计对
 
 位置：[Blueprint/Ch02.lean:1575](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1575>)（`MD.Ch02.newmarkNotSymplectic`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -8598,7 +8598,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
-签名SHA256：`d77c806530aa710473114f7e62b761761084a8de9a5bdb1a2c110a9032acb228`；原文SHA256：`b77fbb053114d2587fe03b69d0757dd045c06b8082621ef7ec959c31a70a793d`。
+签名SHA256：`d77c806530aa710473114f7e62b761761084a8de9a5bdb1a2c110a9032acb228`；原文SHA256：`e6ded6bec3988cb3787f80d5f2cb3ac65d7a3e63e835a2cdd96c437bc5403a5b`。
 
 ## 1. MD-2.5.4-MultiTaylor · definition · 印刷p.92 / PDFp.114
 
