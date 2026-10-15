@@ -1,0 +1,41 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT06",
+  "section": "3.3",
+  "source_ids": [
+    "MD-3.3-BCHHamiltonianMatching",
+    "MD-3.3-DifferenceCommutator",
+    "MD-3.3-DifferenceCubic",
+    "MD-3.3-ExactExponentialCubic",
+    "MD-3.3-FormalSplitting",
+    "MD-3.3-HamiltonianLieAdditivity",
+    "MD-3.3-LeadingModifiedExponential",
+    "MD-3.3-LeadingShadowHamiltonian"
+  ],
+  "reaudit_ids": [
+    "MD-3.3-HamiltonianLieAdditivity",
+    "MD-3.3-FormalSplitting",
+    "MD-3.3-ExactExponentialCubic",
+    "MD-3.3-DifferenceCommutator",
+    "MD-3.3-DifferenceCubic",
+    "MD-3.3-LeadingModifiedExponential"
+  ],
+  "human_ids": [
+    "MD-3.3-LeadingShadowHamiltonian",
+    "MD-3.3-BCHHamiltonianMatching"
+  ],
+  "old_lean_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+  "lean_sha256": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+  "source_sha256": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914",
+  "pages": [
+    125,
+    126,
+    127,
+    128
+  ],
+  "prior_proof_blocks": {
+    "MD-3.3-FormalSplitting": "def formalSplitting {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R :=\n  textbookFormalOperatorExponential A * textbookFormalOperatorExponential B",
+    "MD-3.3-DifferenceCommutator": "theorem differenceCommutator (A B : R) :\n    PowerSeries.coeff 2 (textbookFormalOperatorExponential A *\n      textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A + B)) =\n      (1 / 2 : ℝ) • (A * B - B * A) := by\n  apply MolecularDynamics.textbookFormalOperatorDifference_coeff_two <;> assumption",
+    "MD-3.3-DifferenceCubic": "theorem differenceCubic (A B : R) :\n    PowerSeries.coeff 3 (textbookFormalOperatorExponential A *\n      textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A + B)) =\n      (1 / 6 : ℝ) • ((2 : ℝ) • (A * B ^ 2) + (2 : ℝ) • (A ^ 2 * B) -\n        B * A ^ 2 - B * A * B - B ^ 2 * A - A * B * A) := by\n  apply MolecularDynamics.textbookFormalOperatorDifference_coeff_three <;> assumption"
+  }
+}

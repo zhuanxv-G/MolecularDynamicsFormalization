@@ -45,13 +45,15 @@ def build(ch,eaudit,section,sids):
    if d['namespace']:index.setdefault(d['namespace']+'.'+d['name'],[]).append(d)
  materials={};excerpts={}
  for sid in sids:
-  selected={};pending=referenced(ds[sid]['statement'],index)
+  # A source_id may contain several conclusions and helper declarations.  The
+  # primary theorem alone is not the complete repaired statement.
+  selected={};pending=referenced(ds[sid]['block'],index)
   while pending:
    name=sorted(pending)[0];pending.remove(name)
    if name in selected:continue
    choices=index[name];selected[name]=[d for d in choices if d['path'].startswith('Blueprint/')] or choices
    for d in selected[name]:pending.update(referenced(d['code'],index)-selected.keys())
-  chunks=['## 原文JSON','```json',json.dumps(indexed[sid],ensure_ascii=False,indent=2),'```','## 完整当前Lean','```lean',ds[sid]['statement'],'```'];excerpts[sid]=[]
+  chunks=['## 原文JSON','```json',json.dumps(indexed[sid],ensure_ascii=False,indent=2),'```','## 完整当前Lean（同一source_id的全部声明）','```lean',ds[sid]['block'],'```'];excerpts[sid]=[]
   for name in sorted(selected):
    for d in selected[name]:
     chunks+=['### 实际依赖 '+d['namespace']+'.'+d['name'],'```lean',d['code'],'```']
@@ -80,7 +82,7 @@ def build(ch,eaudit,section,sids):
     '必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。\ninput_sha256：\n'+json.dumps(hashes,ensure_ascii=False,indent=2)+'\n\n')
   paste=folder/'PASTE.txt';paste.write_text(prompt+materials[sid],encoding='utf-8');mp=folder/'MANIFEST.json'
   m=dict(eaudit=eaudit,source_id=sid,input_sha256=hashes,source_pdf_sha256=expected,pdf_page_mapping=nums,
-    crop_pixel_identity='PASS',paste_sha256=sha(paste),dependency_excerpts=excerpts[sid],expected_output=output)
+    crop_pixel_identity='PASS',paste_sha256=sha(paste),source_block_sha256=ds[sid]['block_sha256'],source_declarations=re.findall(r'(?m)^(?:noncomputable\s+)?(?:theorem|def)\s+(\w+)',ds[sid]['block']),dependency_excerpts=excerpts[sid],expected_output=output)
   for _ in range(4):m['total_task_bytes']=paste.stat().st_size+crop.stat().st_size+(mp.stat().st_size if mp.exists() else 0);dump(mp,m)
   total=sum(p.stat().st_size for p in folder.iterdir() if p.is_file());assert total==m['total_task_bytes']<256000,(label,total)
   subtasks.append(dict(subtask=label,source_id=sid,path=folder.relative_to(ROOT).as_posix(),total_bytes=total,manifest_sha256=sha(mp)))

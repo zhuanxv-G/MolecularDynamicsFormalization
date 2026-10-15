@@ -14,6 +14,12 @@ from repair_queue import render as render_queue
 def entry_hash(s):
     return hashlib.sha256(json.dumps({k:v for k,v in s.items() if k!='repair_log'},ensure_ascii=False,sort_keys=True).encode()).hexdigest()
 
+def axiom_footer(ch,text):
+    text=re.sub(r'\n/- BEGIN WEBSITE REPAIR AXIOMS -/[\s\S]*?/- END WEBSITE REPAIR AXIOMS -/\s*$', '', text)
+    names=re.findall(r'(?m)^(?:noncomputable\s+)?(?:theorem|def)\s+(\w+)',text)
+    assert len(names)==len(set(names))
+    return text.rstrip()+'\n\n/- BEGIN WEBSITE REPAIR AXIOMS -/\n'+''.join(f'#print axioms MD.Ch{ch:02}.{n}\n' for n in names)+'/- END WEBSITE REPAIR AXIOMS -/\n'
+
 def prepare(ch, eaudit, section, edits, *, pages, source_only=(), human=None):
     """edits map source_id to code/category/note; pages have been visually inspected."""
     human = human or {}; base = ROOT/f'blueprint/ch{ch:02}'
@@ -36,12 +42,15 @@ def prepare(ch, eaudit, section, edits, *, pages, source_only=(), human=None):
         prior_proofs[sid]=old
         text=text.replace(old,code,1)
         start=text.index('source_id: '+sid); stop=text.index('-/',start)
-        for before,after in e.get('comment_corrections',{}).items():
-            comment=text[start:stop];assert before in comment,(sid,before)
-            updated=comment.replace(before,after);text=text[:start]+updated+text[stop:]
+        for old_comment,new_comment in e.get('comment_corrections',{}).items():
+            comment=text[start:stop];assert old_comment in comment,(sid,old_comment)
+            updated=comment.replace(old_comment,new_comment);text=text[:start]+updated+text[stop:]
             stop=start+len(updated)
         text=text[:stop]+'\n[EXTRA] '+e['note']+' '+text[stop:]
         decisions[sid]={'category':e['category'],'handling':e['note'],'section':section}
+    # Compile the real chapter and print its axioms in one invocation. This
+    # avoids loading the large imports again for a separate audit-only file.
+    text=axiom_footer(ch,text)
     lean.write_text(text,encoding='utf-8')
     touched=set(edits)|set(source_only)|set(human)
     for s in sources:
@@ -103,8 +112,13 @@ def verify(ch,eaudit):
     for sid in prep['source_ids']:
         names.extend(f'MD.Ch{ch:02}.'+m for m in re.findall(r'(?m)^(?:noncomputable\s+)?(?:theorem|def)\s+(\w+)',ds[sid]['block']))
     ap=folder/'CheckAxioms.lean';ap.write_text(f'import Blueprint.Ch{ch:02}\n'+'\n'.join('#print axioms '+n for n in names)+'\n',encoding='utf-8')
-    r,log,_=compile_recorded(['lake','env','lean',ap.relative_to(ROOT).as_posix()],ROOT,ap,folder/'axioms.log',folder/'AXIOMS.json')
-    assert r['exit_code']==0,log.decode('utf-8',errors='replace')
+    if '/- BEGIN WEBSITE REPAIR AXIOMS -/' in lean.read_text(encoding='utf-8'):
+        log=output
+        (folder/'axioms.log').write_bytes(log)
+        dump(folder/'AXIOMS.json',dict(record,mode='same compiler invocation as single-file compile; persistent chapter #print axioms footer'))
+    else:
+        r,log,_=compile_recorded(['lake','env','lean',ap.relative_to(ROOT).as_posix()],ROOT,ap,folder/'axioms.log',folder/'AXIOMS.json')
+        assert r['exit_code']==0,log.decode('utf-8',errors='replace')
     parsed={}
     for name in names:
         m=re.search("'"+re.escape(name)+r"' (?:depends on axioms:\s*\[([^\]]*)\]|does not depend on any axioms)",log.decode('utf-8'))

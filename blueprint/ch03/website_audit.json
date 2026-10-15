@@ -2132,7 +2132,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "f68b4cfd105fd717f618f090a7600e9c53834ff0556bbd2f5e3ec79898309f52",
+        "Blueprint/Ch03.lean": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+        "blueprint/ch03/ch03_source.json": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914"
+      }
+    }
   },
   {
     "source_id": "MD-3.3-FormalSplitting",
@@ -2186,7 +2198,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "f68b4cfd105fd717f618f090a7600e9c53834ff0556bbd2f5e3ec79898309f52",
+        "Blueprint/Ch03.lean": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+        "blueprint/ch03/ch03_source.json": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914"
+      }
+    }
   },
   {
     "source_id": "MD-3.3-ExactExponentialCubic",
@@ -2271,7 +2295,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "f68b4cfd105fd717f618f090a7600e9c53834ff0556bbd2f5e3ec79898309f52",
+        "Blueprint/Ch03.lean": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+        "blueprint/ch03/ch03_source.json": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914"
+      }
+    }
   },
   {
     "source_id": "MD-3.3-ProductExponentialCubic",
@@ -2379,7 +2415,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "f68b4cfd105fd717f618f090a7600e9c53834ff0556bbd2f5e3ec79898309f52",
+        "Blueprint/Ch03.lean": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+        "blueprint/ch03/ch03_source.json": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914"
+      }
+    }
   },
   {
     "source_id": "MD-3.3-DifferenceCubic",
@@ -2433,7 +2481,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "f68b4cfd105fd717f618f090a7600e9c53834ff0556bbd2f5e3ec79898309f52",
+        "Blueprint/Ch03.lean": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+        "blueprint/ch03/ch03_source.json": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914"
+      }
+    }
   },
   {
     "source_id": "MD-3.3-HamiltonianCommutator",
@@ -2642,7 +2702,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH06_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "f68b4cfd105fd717f618f090a7600e9c53834ff0556bbd2f5e3ec79898309f52",
+        "Blueprint/Ch03.lean": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+        "blueprint/ch03/ch03_source.json": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914"
+      }
+    }
   },
   {
     "source_id": "MD-3.3-LeadingShadowHamiltonian",
@@ -2695,8 +2767,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH06_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT06（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "算子乘积与状态复合方向及Poisson奇数项符号冲突；选项：保留expLA expLB并反转状态端点及h/h³符号／保留当前端点及正号、显式勘误原书算子次序。需导师选路线，当前不改。"
+    }
   },
   {
     "source_id": "MD-3.3-BCH4",
@@ -2857,8 +2936,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH06_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT06（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "算子乘积与状态复合方向及Poisson奇数项符号冲突；选项：保留expLA expLB并反转状态端点及h/h³符号／保留当前端点及正号、显式勘误原书算子次序。需导师选路线，当前不改。"
+    }
   },
   {
     "source_id": "MD-3.3-CommutingFlows",

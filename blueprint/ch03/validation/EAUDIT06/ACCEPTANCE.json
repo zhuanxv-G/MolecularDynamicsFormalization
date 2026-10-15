@@ -1,0 +1,54 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT06",
+  "section": "3.3",
+  "source_ids": [
+    "MD-3.3-BCHHamiltonianMatching",
+    "MD-3.3-DifferenceCommutator",
+    "MD-3.3-DifferenceCubic",
+    "MD-3.3-ExactExponentialCubic",
+    "MD-3.3-FormalSplitting",
+    "MD-3.3-HamiltonianLieAdditivity",
+    "MD-3.3-LeadingModifiedExponential",
+    "MD-3.3-LeadingShadowHamiltonian"
+  ],
+  "reaudit_ids": [
+    "MD-3.3-HamiltonianLieAdditivity",
+    "MD-3.3-FormalSplitting",
+    "MD-3.3-ExactExponentialCubic",
+    "MD-3.3-DifferenceCommutator",
+    "MD-3.3-DifferenceCubic",
+    "MD-3.3-LeadingModifiedExponential"
+  ],
+  "human_ids": [
+    "MD-3.3-LeadingShadowHamiltonian",
+    "MD-3.3-BCHHamiltonianMatching"
+  ],
+  "lean_sha256": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+  "source_sha256": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914",
+  "pages": [
+    125,
+    126,
+    127,
+    128
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch03.olean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+    "log_sha256": "1614515b39036595fc9492249158b371a4decc44b9ab5d857eed37394025311f"
+  },
+  "axiom_decl_count": 14,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT06/INDEX.md"
+}

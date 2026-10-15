@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT06",
+  "source_id": "MD-3.3-LeadingModifiedExponential",
+  "input_sha256": {
+    "BATCH_EAUDIT06.md": "f68b4cfd105fd717f618f090a7600e9c53834ff0556bbd2f5e3ec79898309f52",
+    "Blueprint/Ch03.lean": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+    "blueprint/ch03/ch03_source.json": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914",
+    "EAUDIT06f_materials": "37a47f44d9de32c7e792066533bf57f6e8b63255e0d6721f09020a6cc6837438",
+    "EAUDIT06f_PAGES.pdf": "e646892c2787a0f1c7df6380f66364d4bc574671ab1efd248b7f754e43e67d99"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    127
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "8525c2fad1bbf6f8dd97bcdbf1cd61d9656f76f7282dc0d2338e6af67f8de575",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "modifiedGenerator",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "af92c6f80ee2d81a630a85f2d022f93235bcab281edf7c100617c1a1e7581807"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalModifiedExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "55d41f49346f83361aed465cc6c4b440cc23a0193de48b95714a8a82a9be7896"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalOperatorExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "df5ff488932635200b6f774d1b89d132afee1211289904ed8d00ab209d015a49"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalZeroConstantExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "d26ff56eaaefb9e58c82a60840356f71541f9ae54b0e147f1c0c84d2134902ad"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT06_review.json",
+  "total_task_bytes": 71542
+}

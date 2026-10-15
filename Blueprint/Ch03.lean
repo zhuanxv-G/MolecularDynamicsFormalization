@@ -270,9 +270,26 @@ theorem hamiltonianLieAdditivity (F H₁ H₂ : SymplecticCoordinates Nc → ℝ
       textbookLieDerivative (textbookHamiltonianVectorField H₂) F z := by
   apply MolecularDynamics.textbookHamiltonianLieDerivative_add <;> assumption
 
-/-- source_id: MD-3.3-FormalSplitting · definition · §3.3 · 印刷p.103 / PDFp.125 -/
+/-- source_id: MD-3.3-FormalSplitting · definition · §3.3 · 印刷p.103 / PDFp.125 
+[EXTRA] 同时保留精确形式exp(A+B)及分裂形式expA expB，并用真实Hamiltonian Lie导数的卷积系数实例连接A=L_H1、B=L_H2；仅形式系数，不宣称解析收敛。 -/
 def formalSplitting {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R :=
   textbookFormalOperatorExponential A * textbookFormalOperatorExponential B
+
+def formalExactSplit {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R :=
+  textbookFormalOperatorExponential (A+B)
+
+def hamiltonianSplittingObservable {n : ℕ}
+    (A B φ : SymplecticCoordinates n → ℝ) (z : SymplecticCoordinates n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun k ↦ ∑ i ∈ Finset.range (k+1),
+    ((textbookLieDerivative (textbookHamiltonianVectorField A))^[i]
+      ((textbookLieDerivative (textbookHamiltonianVectorField B))^[k-i] φ)) z /
+      ((Nat.factorial i : ℝ)*(Nat.factorial (k-i) : ℝ)))
+
+def hamiltonianExactObservable {n : ℕ}
+    (A B φ : SymplecticCoordinates n → ℝ) (z : SymplecticCoordinates n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun j ↦
+    ((textbookLieDerivative (textbookHamiltonianVectorField (fun x ↦ A x+B x)))^[j] φ) z /
+      (Nat.factorial j : ℝ))
 
 /-- source_id: MD-3.3-ExactExponentialCubic · unnumbered_claim · §3.3 · 印刷p.103 / PDFp.125 -/
 theorem exactExponentialCubic (A B : R) :
@@ -297,15 +314,44 @@ theorem productExponentialCubic (A B : R) :
     textbookFormalOperatorProduct_coeff_two A B,
     textbookFormalOperatorProduct_coeff_three A B⟩
 
-/-- source_id: MD-3.3-DifferenceCommutator · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 -/
+/-- source_id: MD-3.3-DifferenceCommutator · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 
+[EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 -/
 theorem differenceCommutator (A B : R) :
+    PowerSeries.coeff 0 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
+    PowerSeries.coeff 1 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
+    PowerSeries.coeff 2 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = (1/2 : ℝ) • (A*B-B*A) := by
+  sorry
+
+theorem differenceCommutator_coeff2 (A B : R) :
     PowerSeries.coeff 2 (textbookFormalOperatorExponential A *
       textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A + B)) =
       (1 / 2 : ℝ) • (A * B - B * A) := by
   apply MolecularDynamics.textbookFormalOperatorDifference_coeff_two <;> assumption
 
-/-- source_id: MD-3.3-DifferenceCubic · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 -/
+theorem differenceCommutator_hamiltonian (n : ℕ)
+    (A B φ : SymplecticCoordinates n → ℝ)
+    (_hA : ContDiff ℝ ⊤ A) (_hB : ContDiff ℝ ⊤ B) (_hφ : ContDiff ℝ ⊤ φ)
+    (z : SymplecticCoordinates n) :
+    let S := hamiltonianSplittingObservable A B φ z-hamiltonianExactObservable A B φ z
+    PowerSeries.coeff 0 S = 0 ∧ PowerSeries.coeff 1 S = 0 ∧
+    PowerSeries.coeff 2 S = (1/2 : ℝ)*
+      (textbookLieDerivative (textbookHamiltonianVectorField A)
+        (textbookLieDerivative (textbookHamiltonianVectorField B) φ) z -
+       textbookLieDerivative (textbookHamiltonianVectorField B)
+        (textbookLieDerivative (textbookHamiltonianVectorField A) φ) z) := by
+  sorry
+
+/-- source_id: MD-3.3-DifferenceCubic · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 
+[EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 -/
 theorem differenceCubic (A B : R) :
+    PowerSeries.coeff 0 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
+    PowerSeries.coeff 1 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
+    PowerSeries.coeff 2 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = (1/2 : ℝ) • (A*B-B*A) ∧
+    PowerSeries.coeff 3 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = (1 / 6 : ℝ) • ((2 : ℝ) • (A * B ^ 2) + (2 : ℝ) • (A ^ 2 * B) -
+        B * A ^ 2 - B * A * B - B ^ 2 * A - A * B * A) := by
+  sorry
+
+theorem differenceCubic_coeff3 (A B : R) :
     PowerSeries.coeff 3 (textbookFormalOperatorExponential A *
       textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A + B)) =
       (1 / 6 : ℝ) • ((2 : ℝ) • (A * B ^ 2) + (2 : ℝ) • (A ^ 2 * B) -

@@ -1,0 +1,66 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.3-ExactExponentialCubic；原PDF页映射=[125]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT06_review.json，对象含batch=EAUDIT06、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT06.md": "f68b4cfd105fd717f618f090a7600e9c53834ff0556bbd2f5e3ec79898309f52",
+  "Blueprint/Ch03.lean": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+  "blueprint/ch03/ch03_source.json": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914",
+  "EAUDIT06c_materials": "5e35402fd65f3f9fb0519b6c4e60a6fb64b64ba411010b7ffd9ce8e0a82d1a73",
+  "EAUDIT06c_PAGES.pdf": "2a99d9a2bc86297f843cffbdf45abd3ef1b2d43f4640084f59480fe0fde69f01"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.3-ExactExponentialCubic",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3.3",
+  "printed_page": "103",
+  "pdf_page": "125",
+  "statement_latex": "Expanding these out using the exponential series we have\n\\[\\begin{aligned}e^{h(A+B)}&=\\mathrm{Id}+h(A+B)+\\frac{h^2}{2}(A+B)^2+\\frac{h^3}{6}(A+B)^3+O(h^4)\\\\\n&=\\mathrm{Id}+h(A+B)+\\frac{h^2}{2}(AB+BA+A^2+B^2)\\\\\n&\\quad+\\frac{h^3}{6}(A^3+A^2B+AB^2+ABA+B^2A+BA^2+BAB+B^3)+O(h^4),\\end{aligned}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$R$为任意实结合环代数；不添加AB=BA；$O(h^4)$按形式系数次数≥4解释，不宣称实际范数余项。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.exactExponentialCubic",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookFormalOperatorExponential_coeff"
+  ],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT06_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:04:52.365030",
+      "before_sha256": "4d7170803a39c9a5a4f762f7a286e094be2b29786e9623d7aefced4b9f0dd03c",
+      "after_sha256": "e65aabfb736f2eb460a748ad9e9cffea07eb5ef60a37c92b8115bee23e491463",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean
+```lean
+theorem exactExponentialCubic (A B : R) :
+    (∀ j < 4, PowerSeries.coeff j (textbookFormalOperatorExponential (A+B)) =
+      (1/(j.factorial : ℝ)) • (A+B)^j) ∧
+    ((A+B)^2 = A*B+B*A+A^2+B^2) ∧
+    ((A+B)^3 = A^3+A^2*B+A*B^2+A*B*A+B^2*A+B*A^2+B*A*B+B^3)
+```
+### 实际依赖 MolecularDynamics.textbookFormalOperatorExponential
+```lean
+noncomputable def textbookFormalOperatorExponential (A : R) : PowerSeries R :=
+  PowerSeries.mk (fun n => (1 / (n.factorial : ℝ)) • A ^ n)
+```

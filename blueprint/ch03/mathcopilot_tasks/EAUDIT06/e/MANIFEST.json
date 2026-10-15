@@ -1,0 +1,27 @@
+{
+  "eaudit": "EAUDIT06",
+  "source_id": "MD-3.3-DifferenceCubic",
+  "input_sha256": {
+    "BATCH_EAUDIT06.md": "f68b4cfd105fd717f618f090a7600e9c53834ff0556bbd2f5e3ec79898309f52",
+    "Blueprint/Ch03.lean": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+    "blueprint/ch03/ch03_source.json": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914",
+    "EAUDIT06e_materials": "d245611a3e19b4d01df3ecc1ddac86728482290e458513b7dd319f6f36f03913",
+    "EAUDIT06e_PAGES.pdf": "395feb007672a81966a97b2db48bc4f8415074295cdefa107046c7e9f913fe86"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    126
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "5e30fac5ae0fc0d02d1782c8110005f2920202555895a3f15bdef18ebd22addd",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalOperatorExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "df5ff488932635200b6f774d1b89d132afee1211289904ed8d00ab209d015a49"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT06_review.json",
+  "total_task_bytes": 78367
+}

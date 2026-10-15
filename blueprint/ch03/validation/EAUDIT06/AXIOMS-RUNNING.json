@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint/ch03/validation/EAUDIT06/CheckAxioms.lean"
+  ],
+  "input_sha256": "ee67fb234ee7b78235c5bad179a78eaf30bd5035fd1f4393a23525959a0086be",
+  "parent_pid": 25060,
+  "parent_create_time": 1792036576.596253,
+  "compiler_pid": 15904,
+  "compiler_create_time": 1792037505.7134297,
+  "started_at": "2026-10-15T12:11:45.717384",
+  "status": "completed",
+  "exit_code": 0,
+  "completed_at": "2026-10-15T12:15:09.369270"
+}

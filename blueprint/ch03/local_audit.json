@@ -882,9 +882,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch03.hamiltonianLieAdditivity",
@@ -911,22 +911,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT06/axioms.log"
     },
     "MD-3.3-FormalSplitting": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.formalSplitting",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "2139a1e6c9c3afb35f4f748f5bdc651779422fc77e34356376ca0c84fad80fc1",
-      "block_sha256": "2139a1e6c9c3afb35f4f748f5bdc651779422fc77e34356376ca0c84fad80fc1",
+      "signature_sha256": "f42a6d8a03c3a43a4b56fe3bd7d94b974790e0aa493e4ae04e4fa1eb00b8e804",
+      "block_sha256": "f42a6d8a03c3a43a4b56fe3bd7d94b974790e0aa493e4ae04e4fa1eb00b8e804",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -944,15 +944,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT06/axioms.log"
     },
     "MD-3.3-ExactExponentialCubic": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch03.exactExponentialCubic",
@@ -979,7 +979,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT06/axioms.log"
     },
     "MD-3.3-ProductExponentialCubic": {
       "checked": true,
@@ -1023,17 +1023,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch03.differenceCommutator",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "02e91036ea652078c294b557de230cf9d9288988220d02f340c30dc5956d4fce",
-      "block_sha256": "827260a981534a17e05345ff19b11c349b3d961bda9a9a6652ee38b5c529ddb5",
-      "direct_placeholder": false,
+      "signature_sha256": "bb65fabc7757c2eec384f04e28fa9091e63e0333878b968e88e451aeb5232562",
+      "block_sha256": "a521038b49530e9facf7e5acf6ac29693b04be2c68432ffabbc8b1a3700fabb8",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.textbookFormalOperatorDifference_coeff_two"
@@ -1052,23 +1053,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT06/axioms.log"
     },
     "MD-3.3-DifferenceCubic": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch03.differenceCubic",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "66d9dbf2d118d6369aec5c0ce25284c7c8a17201e7a4977b83c76910eb9498ac",
-      "block_sha256": "ddc1bbb575742cfd0201b153fda15b0a32d861a759ceab9c953bd1281fef20ed",
-      "direct_placeholder": false,
+      "signature_sha256": "e6da7c3d452298620889ccfdbb17446cd86816b6e87deadd44b59a9b44b4c5b2",
+      "block_sha256": "0a2230356bc8cf8dd9660f8aaaa3cc00ef8844aad541797a006926c3be854a7e",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.textbookFormalOperatorDifference_coeff_three"
@@ -1087,7 +1089,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT06/axioms.log"
     },
     "MD-3.3-HamiltonianCommutator": {
       "checked": true,
@@ -1162,10 +1164,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.leadingModifiedExponential",
@@ -1192,16 +1194,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT06/axioms.log"
     },
     "MD-3.3-LeadingShadowHamiltonian": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.leadingShadowHamiltonian",
@@ -1226,7 +1228,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT06/axioms.log"
     },
     "MD-3.3-BCH4": {
       "checked": true,
@@ -1299,10 +1301,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.bchHamiltonianMatching",
@@ -1327,7 +1329,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT06/axioms.log"
     },
     "MD-3.3-CommutingFlows": {
       "checked": true,

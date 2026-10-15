@@ -1,0 +1,51 @@
+{
+  "eaudit": "EAUDIT06",
+  "source_id": "MD-3.3-HamiltonianLieAdditivity",
+  "input_sha256": {
+    "BATCH_EAUDIT06.md": "f68b4cfd105fd717f618f090a7600e9c53834ff0556bbd2f5e3ec79898309f52",
+    "Blueprint/Ch03.lean": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+    "blueprint/ch03/ch03_source.json": "e392b4e7fa6c224298f39492da87496c3c002a8cfdef6fb0cb53115d81b2c914",
+    "EAUDIT06a_materials": "9a0750bcf92aaa923815b1718f6c1d31eaf1cc2a63390fcc03a9835576072b5a",
+    "EAUDIT06a_PAGES.pdf": "2a99d9a2bc86297f843cffbdf45abd3ef1b2d43f4640084f59480fe0fde69f01"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    125
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "b6d5e1a890a43dadff55443b34b505ff4094acc8514bbff962e7e2ddae629cf4",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinateMatrix",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "name": "textbookHamiltonianVectorField",
+      "file_sha256": "bc9f7688e08676874bd5c50502a5e27fa659e7ff10f116045a4605a42ccfa703",
+      "excerpt_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "textbookJ",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "textbookLieDerivative",
+      "file_sha256": "df719a532483240ab819898cfb111e303eb27cf147467b2700ba196d2df7e828",
+      "excerpt_sha256": "568897e0d038d7a64bb00948ec5045c2014446c16bba7bc93488b691f9d2e415"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT06_review.json",
+  "total_task_bytes": 82494
+}

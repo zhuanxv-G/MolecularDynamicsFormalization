@@ -32,19 +32,19 @@
 | MD-3.2-HamiltonianObservableDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.2-HamiltonianLie | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | existing_bridge / checked+documented priors |
 | MD-3.2-HamiltonianCoordinateDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.3-HamiltonianLieAdditivity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.3-FormalSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.3-ExactExponentialCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.3-HamiltonianLieAdditivity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | existing_bridge / checked+documented priors |
+| MD-3.3-FormalSplitting | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | definition / self-contained |
+| MD-3.3-ExactExponentialCubic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | existing_bridge / checked+documented priors |
 | MD-3.3-ProductExponentialCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.3-DifferenceCommutator | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.3-DifferenceCubic | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.3-DifferenceCommutator | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | existing_bridge / checked+documented priors |
+| MD-3.3-DifferenceCubic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | existing_bridge / checked+documented priors |
 | MD-3.3-HamiltonianCommutator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.3-HamiltonianCommutatorPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；印刷符号疑误待网站/导师裁定；本地FAIL不进入证明。 |
-| MD-3.3-LeadingModifiedExponential | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete |
-| MD-3.3-LeadingShadowHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺实际Hamiltonian截断匹配和统一ODE余项；符号/组合约定待审，本地非PASS不证明。 |
+| MD-3.3-LeadingModifiedExponential | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT06 | placeholder / incomplete |
+| MD-3.3-LeadingShadowHamiltonian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT06（原返回FAIL保留） | placeholder / incomplete；缺实际Hamiltonian截断匹配和统一ODE余项；符号/组合约定待审，本地非PASS不证明。 |
 | MD-3.3-BCH4 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺非交换formalLog的四阶有限系数计算桥接；完整BCH理论不建设，保留sorry。 |
 | MD-3.3-BCHHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.3-BCHHamiltonianMatching | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺高阶Hamiltonian/ODE端点余项；非PASS不证明。 |
+| MD-3.3-BCHHamiltonianMatching | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT06（原返回FAIL保留） | placeholder / incomplete；缺高阶Hamiltonian/ODE端点余项；非PASS不证明。 |
 | MD-3.3-CommutingFlows | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺实际Hamiltonian向量场交换子到局部流交换及和场流的桥接；不搭完整交换流理论。 |
 | MD-3.3.1-SymplecticEulerShadow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.3.1-SymplecticEulerShadowMatching | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺完整BCH机械系数与实际截断ODE匹配；本地非PASS不证明。 |
@@ -389,3 +389,5 @@ EAUDIT03 §3.1：5条落盘，单文件与5项公理通过；未写新证明；�
 EAUDIT04 §3.2：8条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT05 §3.2：2条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT06 §3.3：8条落盘，单文件与14项公理通过；未写新证明；完整check留到章末；网站待复审。
