@@ -1242,10 +1242,10 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）",
+    "effective_status": "待复审 / EAUDIT02",
     "repair": {
       "eaudit": "EAUDIT02",
-      "status": "prepared_unverified",
+      "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
       "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT02/INDEX.md",
@@ -1421,7 +1421,14 @@
       "reasons": []
     },
     "needs_category": "原文数学判断",
-    "effective_status": "NEEDS_HUMAN（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待导师 / EAUDIT03（原返回NEEDS_HUMAN保留）",
+    "repair": {
+      "eaudit": "EAUDIT03",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原页先说C²后又说C∞，曲线类采用哪种区间光滑资格？选项：C²区间／C∞可延拓类；现有全线代表资格保持，待裁定。"
+    }
   },
   {
     "source_id": "MD-2.2.1-Action",
@@ -1664,7 +1671,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT03",
+    "repair": {
+      "eaudit": "EAUDIT03",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT03.md": "6c69b99ff8eec6733cdef92612d1ccee45430e73b855ed10429a6da91d0cba2d",
+        "Blueprint/Ch02.lean": "7745fc6589f48d3d1e889dbd51902322e905ccfcb46844867ac20ff927fa6414",
+        "blueprint/ch02/ch02_source.json": "5872a660573699ff0034ecdc38cdc01243f8b82e3d344eb5c2d5daaabb2389e2"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.1-TaylorPrinted",
@@ -1831,7 +1850,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT03",
+    "repair": {
+      "eaudit": "EAUDIT03",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT03.md": "6c69b99ff8eec6733cdef92612d1ccee45430e73b855ed10429a6da91d0cba2d",
+        "Blueprint/Ch02.lean": "7745fc6589f48d3d1e889dbd51902322e905ccfcb46844867ac20ff927fa6414",
+        "blueprint/ch02/ch02_source.json": "5872a660573699ff0034ecdc38cdc01243f8b82e3d344eb5c2d5daaabb2389e2"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.1-Parts",
@@ -2038,7 +2069,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT03",
+    "repair": {
+      "eaudit": "EAUDIT03",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT03.md": "6c69b99ff8eec6733cdef92612d1ccee45430e73b855ed10429a6da91d0cba2d",
+        "Blueprint/Ch02.lean": "7745fc6589f48d3d1e889dbd51902322e905ccfcb46844867ac20ff927fa6414",
+        "blueprint/ch02/ch02_source.json": "5872a660573699ff0034ecdc38cdc01243f8b82e3d344eb5c2d5daaabb2389e2"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.1-VariationalDerivativePrinted",
@@ -2170,7 +2213,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT03",
+    "repair": {
+      "eaudit": "EAUDIT03",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT03.md": "6c69b99ff8eec6733cdef92612d1ccee45430e73b855ed10429a6da91d0cba2d",
+        "Blueprint/Ch02.lean": "7745fc6589f48d3d1e889dbd51902322e905ccfcb46844867ac20ff927fa6414",
+        "blueprint/ch02/ch02_source.json": "5872a660573699ff0034ecdc38cdc01243f8b82e3d344eb5c2d5daaabb2389e2"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.1-StationaryNotMin",
@@ -2294,8 +2349,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT03（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT03",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "脚注的极小/极大/鞍点及第二变分采用哪种曲线空间与拓扑？选项：导师指定C∞空间和范数后补全部分类／明确拆分脚注与既有EulerLagrange条目；原页未给拓扑，保留现状，不自行选一致范数。"
+    }
   },
   {
     "source_id": "MD-2.2.2-DiscretePath",

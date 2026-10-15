@@ -141,7 +141,8 @@ def bp_action {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) 
 def bp_variation {n : ℕ} (q η : ℝ → Q n) (ε : ℝ) (t : ℝ) : Q n := q t + ε • η t
 
 /-- source_id: MD-2.2.1-FirstVariation · unnumbered_claim · §2.2.1 · 印刷p.61 / PDFp.83
-[EXTRA] α<β；L、q、η C²以保证实际导数和紧时间窗余项资格。 -/
+[EXTRA] α<β；L、q、η C²以保证实际导数和紧时间窗余项资格。 
+[EXTRA] 保留原三个结论，并补同一个真实点态Taylor余项的紧时间窗统一C|ε|²控制；没有把余项界当作前提，未新增证明。 -/
 theorem firstVariation :
   ∀ n (L : Q n → Q n → ℝ) (q η : ℝ → Q n) a b,
     a < b → ContDiff ℝ 2 (Function.uncurry L) → ContDiff ℝ 2 q → ContDiff ℝ 2 η →
@@ -154,7 +155,11 @@ theorem firstVariation :
       (fun ε : ℝ => action L a b (variation q η ε)-action L a b q-
         ε*(∫ t in a..b, (fderiv ℝ (fun x => L x (deriv q t)) (q t)) (η t) +
           (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)))
-      (fun ε : ℝ => ε^2) := by
+      (fun ε : ℝ => ε^2)
+    ∧ (∃ C > 0, ∃ δ > 0, ∀ ε : ℝ, |ε| < δ → ∀ t ∈ Icc a b,
+      |L (q t + ε • η t) (deriv q t + ε • deriv η t) - L (q t) (deriv q t) -
+        ε * ((fderiv ℝ (fun x ↦ L x (deriv q t)) (q t)) (η t) +
+          (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t))| ≤ C * |ε|^2) := by
   sorry
 
 /-- source_id: MD-2.2.1-TaylorPrinted · Footnote 3 · §2.2.1 · 印刷p.61 / PDFp.83
@@ -168,10 +173,29 @@ theorem taylorPrinted : ∀ n (k : ℕ) (f : Q n → ℝ) z₀,
   sorry
 
 /-- source_id: MD-2.2.1-StationaryAction · definition · §2.2.1 · 印刷p.61–62 / PDFp.83–84
-[EXTRA] 驻值以真实一阶变分导数为零定义；展开式相等由FirstVariation条目承担。 -/
+[EXTRA] 驻值以真实一阶变分导数为零定义；展开式相等由FirstVariation条目承担。 
+[EXTRA] 保留驻值定义，同一source_id补完整积分I=0等价式及自然Euler–Lagrange运动推出驻值的Hamilton原理；C²及a<b是充分资格。新结论只登记sorry陈述，证明留到网站PASS后。 -/
 def stationarySmoothAction {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) : Prop :=
   ∀ η : ℝ → Q n, ContDiff ℝ ∞ η → η a = 0 → η b = 0 →
     HasDerivAt (fun ε => action L a b (variation q η ε)) 0 0
+
+theorem stationarySmoothAction_iff_first_variation {n : ℕ}
+    (L : Q n → Q n → ℝ) (q : ℝ → Q n) (a b : ℝ)
+    (_hab : a < b) (_hL : ContDiff ℝ 2 (Function.uncurry L)) (_hq : ContDiff ℝ 2 q) :
+    stationarySmoothAction L a b q ↔
+      ∀ η : ℝ → Q n, ContDiff ℝ ∞ η → η a = 0 → η b = 0 →
+      (∫ t in a..b, (fderiv ℝ (fun x ↦ L x (deriv q t)) (q t)) (η t) +
+        (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)) = 0 := by
+  sorry
+
+theorem stationarySmoothAction_hamilton {n : ℕ}
+    (L : Q n → Q n → ℝ) (q : ℝ → Q n) (a b : ℝ)
+    (_hab : a < b) (_hL : ContDiff ℝ 2 (Function.uncurry L)) (_hq : ContDiff ℝ 2 q)
+    (_hnatural : ∀ t ∈ Ioo a b,
+      HasDerivAt (fun s ↦ fderiv ℝ (L (q s)) (deriv q s))
+        (fderiv ℝ (fun x ↦ L x (deriv q t)) (q t)) t) :
+    stationarySmoothAction L a b q := by
+  sorry
 
 /-- source_id: MD-2.2.1-Parts · unnumbered_claim · §2.2.1 · 印刷p.62 / PDFp.84
 [EXTRA] α<β，实际L和q C²；η按原文C∞、零端点；真实作用量驻值。 -/

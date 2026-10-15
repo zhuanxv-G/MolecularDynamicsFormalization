@@ -1,0 +1,8 @@
+'MD.Ch02.admissibleSmooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.hamiltonPrinciple' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.firstVariation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.stationarySmoothAction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.stationarySmoothAction_iff_first_variation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.stationarySmoothAction_hamilton' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.stationaryNotMinimum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.printedVariationalDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]

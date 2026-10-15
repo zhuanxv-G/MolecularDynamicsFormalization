@@ -1,0 +1,27 @@
+{
+  "eaudit": "EAUDIT03",
+  "source_id": "MD-2.2.1-VariationalDerivativePrinted",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "6c69b99ff8eec6733cdef92612d1ccee45430e73b855ed10429a6da91d0cba2d",
+    "Blueprint/Ch02.lean": "7745fc6589f48d3d1e889dbd51902322e905ccfcb46844867ac20ff927fa6414",
+    "blueprint/ch02/ch02_source.json": "5872a660573699ff0034ecdc38cdc01243f8b82e3d344eb5c2d5daaabb2389e2",
+    "EAUDIT03d_materials": "2f1cad46ae9a795cc4200a357cc6119a32767241e0b6e04c3f9f0589742745d7",
+    "EAUDIT03d_PAGES.pdf": "919b0752bf6364180a8718cd71d2cde563eef71ab200ed2dd44b55f8b9a8e7f9"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    84
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "474417247efca1a0c9eac23cecc9e39662784b23999ccac54a3df42e9b0ee05c",
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "printedVariationalDerivative",
+      "file_sha256": "7745fc6589f48d3d1e889dbd51902322e905ccfcb46844867ac20ff927fa6414",
+      "excerpt_sha256": "ca49b5bcf458f8bd2458e4b0792e577bc2433a43fcf9db99968ad7997724b6a1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT03_review.json",
+  "total_task_bytes": 92962
+}

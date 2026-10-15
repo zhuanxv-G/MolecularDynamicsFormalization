@@ -20,16 +20,16 @@
 | MD-2.1.2-Taylor2Order | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；缺一般Taylor方法局部截断误差、数值留域与全局阶桥接；当前库仅一般one-step条件误差定理。 |
 | MD-2.2-VerletOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；缺完整Verlet局部截断误差、稳定性及数值留域推导。 |
 | MD-2.2.1-Lagrangian | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.2.1-Admissible | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
+| MD-2.2.1-Admissible | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT03（原返回NEEDS_HUMAN保留） | definition / incomplete |
 | MD-2.2.1-Action | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.2.1-Variation | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.2.1-FirstVariation | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；积分下求导及一致二阶Taylor余项。 |
+| MD-2.2.1-FirstVariation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | placeholder / incomplete；积分下求导及一致二阶Taylor余项。 |
 | MD-2.2.1-TaylorPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书疑误裁定；正确Taylor余项理论另缺。 |
-| MD-2.2.1-StationaryAction | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.1-StationaryAction | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | definition / self-contained |
 | MD-2.2.1-Parts | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际作用量求导、连续线性泛函值积分分部与变分正则性理论。 |
-| MD-2.2.1-EulerLagrange | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；基本变分引理、积分分部及实际作用量的一阶求导。 |
-| MD-2.2.1-VariationalDerivativePrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
-| MD-2.2.1-StationaryNotMin | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；尚缺具体负动能作用量曲线反例及积分平方严格正证明。 |
+| MD-2.2.1-EulerLagrange | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | placeholder / incomplete；基本变分引理、积分分部及实际作用量的一阶求导。 |
+| MD-2.2.1-VariationalDerivativePrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT03 | definition / incomplete |
+| MD-2.2.1-StationaryNotMin | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT03（原返回FAIL保留） | placeholder / incomplete；尚缺具体负动能作用量曲线反例及积分平方严格正证明。 |
 | MD-2.2.2-DiscretePath | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.2.2-DiscreteVelocity | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.2.2-DiscreteAction | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
@@ -411,3 +411,5 @@ EAUDIT01：章首3条reaudit FAIL完整修复；原页75–76、单文件、完�
 历史DELIVERY_VALIDATION仅对应8ca2ccf原版本；当前修复验收见validation/EAUDIT01/ACCEPTANCE.json。
 
 EAUDIT02 §2.2：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT03 §2.2.1：6条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。

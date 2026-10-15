@@ -1,0 +1,84 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.2.1-EulerLagrange；原PDF页映射=[84]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT03_review.json，对象含batch=EAUDIT03、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT03.md": "6c69b99ff8eec6733cdef92612d1ccee45430e73b855ed10429a6da91d0cba2d",
+  "Blueprint/Ch02.lean": "7745fc6589f48d3d1e889dbd51902322e905ccfcb46844867ac20ff927fa6414",
+  "blueprint/ch02/ch02_source.json": "5872a660573699ff0034ecdc38cdc01243f8b82e3d344eb5c2d5daaabb2389e2",
+  "EAUDIT03c_materials": "83d9a99b708a085f41c6ef002f4976383b2d8c351776b11542ac1a173856a7c7",
+  "EAUDIT03c_PAGES.pdf": "919b0752bf6364180a8718cd71d2cde563eef71ab200ed2dd44b55f8b9a8e7f9"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.2.1-EulerLagrange",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "2.2.1",
+  "printed_page": "62",
+  "pdf_page": "84",
+  "statement_latex": "Since the variation $\\boldsymbol\\eta$ is meant to be arbitrary, it requires\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\frac{\\partial L}{\\partial\\dot{\\boldsymbol q}}(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t))=\\frac{\\partial L}{\\partial\\boldsymbol q}(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t)),\\]\nwhich is precisely the Lagrangian formulation of the equations of motion.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "PDF82／印刷60，§2.2.1：$L(\\boldsymbol q,\\boldsymbol v)=\\boldsymbol v^T M\\boldsymbol v/2-U(\\boldsymbol q)$；$M$ 为质量矩阵，$U$ 在此取 $C^2$。原条选定的运动方程使用这个拉格朗日函数及其位置、速度偏导数。",
+    "PDF82／印刷60：$\\boldsymbol q(t)$ 是构型空间曲线的参数化，$t\\in[\\alpha,\\beta]$，$\\boldsymbol q(\\alpha)=\\boldsymbol Q$、$\\boldsymbol q(\\beta)=\\boldsymbol Q^{\\prime}$；$\\dot{\\boldsymbol q}$ 是时间导数。该页先说 twice continuously differentiable，随后又说各分量 $C^\\infty$ 及 smooth，保留这两处原文，不将其静默统一。",
+    "PDF83／印刷61，式(2.3)：$\\boldsymbol q^\\epsilon(t)=\\boldsymbol q(t)+\\epsilon\\boldsymbol\\eta(t)$；$\\boldsymbol\\eta$ 为 $C^\\infty$ 曲线，$\\boldsymbol\\eta(\\alpha)=\\boldsymbol\\eta(\\beta)=0$。arbitrary 指满足这些资格的任意变分方向。",
+    "PDF82–84／印刷60–62：$\\mathcal A_L(\\Gamma)=\\int_\\alpha^\\beta L(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t))\\,dt$。本句承接 Hamilton 原理要求一阶变分为零，以及 PDF84 上方分部积分后的 $\\int_\\alpha^\\beta [\\partial L/\\partial\\boldsymbol q-(d/dt)(\\partial L/\\partial\\dot{\\boldsymbol q})]\\boldsymbol\\eta(t)\\,dt=0$。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.hamiltonPrinciple",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "α<β，L和q C²；变分按原文C∞且零端点。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT03_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:01:33.943167",
+      "before_sha256": "c9399a4ea1d5cfbf83bb2bbf01b364ca7eae8df70acf173edb4b2b50366b9350",
+      "after_sha256": "0c3d81dcca743f386c64a74e9c24270f165bcf67e481723c7ba8b6952369f6c1",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH06_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean
+```lean
+theorem hamiltonPrinciple :
+  ∀ n (L : Q n → Q n → ℝ) (q : ℝ → Q n) a b,
+    a < b → ContDiff ℝ 2 (Function.uncurry L) → ContDiff ℝ 2 q →
+    (stationarySmoothAction L a b q ↔ ∀ t ∈ Ioo a b,
+      HasDerivAt (fun s => fderiv ℝ (L (q s)) (deriv q s))
+        (fderiv ℝ (fun x => L x (deriv q t)) (q t)) t)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.action
+```lean
+def action {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) : ℝ :=
+  ∫ t in a..b, L (q t) (deriv q t)
+```
+### 实际依赖 MD.Ch02.stationarySmoothAction
+```lean
+def stationarySmoothAction {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) : Prop :=
+  ∀ η : ℝ → Q n, ContDiff ℝ ∞ η → η a = 0 → η b = 0 →
+    HasDerivAt (fun ε => action L a b (variation q η ε)) 0 0
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.variation
+```lean
+def variation {n : ℕ} (q η : ℝ → Q n) (ε : ℝ) (t : ℝ) : Q n := q t + ε • η t
+```

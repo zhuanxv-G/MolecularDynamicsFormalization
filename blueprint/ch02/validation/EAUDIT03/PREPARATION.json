@@ -1,0 +1,35 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT03",
+  "section": "2.2.1",
+  "source_ids": [
+    "MD-2.2.1-Admissible",
+    "MD-2.2.1-EulerLagrange",
+    "MD-2.2.1-FirstVariation",
+    "MD-2.2.1-StationaryAction",
+    "MD-2.2.1-StationaryNotMin",
+    "MD-2.2.1-VariationalDerivativePrinted"
+  ],
+  "reaudit_ids": [
+    "MD-2.2.1-FirstVariation",
+    "MD-2.2.1-StationaryAction",
+    "MD-2.2.1-EulerLagrange",
+    "MD-2.2.1-VariationalDerivativePrinted"
+  ],
+  "human_ids": [
+    "MD-2.2.1-Admissible",
+    "MD-2.2.1-StationaryNotMin"
+  ],
+  "old_lean_sha256": "a02bd2a0161e157728967ff463d4565c2b9884759911c373a37e365bc4c5ad6f",
+  "lean_sha256": "7745fc6589f48d3d1e889dbd51902322e905ccfcb46844867ac20ff927fa6414",
+  "source_sha256": "5872a660573699ff0034ecdc38cdc01243f8b82e3d344eb5c2d5daaabb2389e2",
+  "pages": [
+    82,
+    83,
+    84
+  ],
+  "prior_proof_blocks": {
+    "MD-2.2.1-FirstVariation": "theorem firstVariation :\n  ∀ n (L : Q n → Q n → ℝ) (q η : ℝ → Q n) a b,\n    a < b → ContDiff ℝ 2 (Function.uncurry L) → ContDiff ℝ 2 q → ContDiff ℝ 2 η →\n    (∀ ε : ℝ, action L a b (variation q η ε)-action L a b q =\n      ∫ t in a..b, L (q t+ε • η t) (deriv q t+ε • deriv η t)-L (q t) (deriv q t)) ∧\n    HasDerivAt (fun ε => action L a b (variation q η ε))\n      (∫ t in a..b, (fderiv ℝ (fun x => L x (deriv q t)) (q t)) (η t) +\n        (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)) 0 ∧\n    Asymptotics.IsBigO (𝓝 0)\n      (fun ε : ℝ => action L a b (variation q η ε)-action L a b q-\n        ε*(∫ t in a..b, (fderiv ℝ (fun x => L x (deriv q t)) (q t)) (η t) +\n          (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)))\n      (fun ε : ℝ => ε^2) := by\n  sorry",
+    "MD-2.2.1-StationaryAction": "def stationarySmoothAction {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) : Prop :=\n  ∀ η : ℝ → Q n, ContDiff ℝ ∞ η → η a = 0 → η b = 0 →\n    HasDerivAt (fun ε => action L a b (variation q η ε)) 0 0"
+  }
+}

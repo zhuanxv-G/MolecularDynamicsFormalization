@@ -1,0 +1,46 @@
+{
+  "eaudit": "EAUDIT03",
+  "source_id": "MD-2.2.1-StationaryAction",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "6c69b99ff8eec6733cdef92612d1ccee45430e73b855ed10429a6da91d0cba2d",
+    "Blueprint/Ch02.lean": "7745fc6589f48d3d1e889dbd51902322e905ccfcb46844867ac20ff927fa6414",
+    "blueprint/ch02/ch02_source.json": "5872a660573699ff0034ecdc38cdc01243f8b82e3d344eb5c2d5daaabb2389e2",
+    "EAUDIT03b_materials": "f2aa217cde410313f6da70d76a4ec20adaf87789e15cbe0f2e33c2ea398d77a6",
+    "EAUDIT03b_PAGES.pdf": "69768386379fea568e11d6c8e14b1eb52475be55d47bdbfe6b8987f7acd673a1"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    83,
+    84
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a4817fadcd29f24edb5495518cf89284ab2d4a6206d51f38cd86dffc8ecbcd08",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "action",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "1c1bcaa2125d7feeca685c25e59c8e6743444feb4b96a93f620d5f16a7746abb"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "stationarySmoothAction",
+      "file_sha256": "7745fc6589f48d3d1e889dbd51902322e905ccfcb46844867ac20ff927fa6414",
+      "excerpt_sha256": "5e47ad2b3f039ca3e80fb624e61ffc4a6ac657de6bf25f36cc31f7b4d6ac08c0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "variation",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "2ca72a19c04f16e72aa932b6ee1aa96f75b8edac96d02a233b7e21e576cfe013"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT03_review.json",
+  "total_task_bytes": 113605
+}

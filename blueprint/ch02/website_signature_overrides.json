@@ -25,5 +25,19 @@
       "固定正对角质量、力全域C⁴、τ>0及实际解在闭时间窗连续；原文未逐一给出的阶定理正则性显式列出。",
       "[EXTRA] 网站首选路线：直接保留原文(q,v)速度变量，使用已定义velocityVerlet与真实速度场(v,M⁻¹F(q))；正对角质量及C⁴为充分但非最小资格，闭窗连续性为冗余明确限制。未更改正式mechanicalField/verlet，不新增证明。"
     ]
+  },
+  "MD-2.2.1-FirstVariation": {
+    "code": "theorem firstVariation :\n  ∀ n (L : Q n → Q n → ℝ) (q η : ℝ → Q n) a b,\n    a < b → ContDiff ℝ 2 (Function.uncurry L) → ContDiff ℝ 2 q → ContDiff ℝ 2 η →\n    (∀ ε : ℝ, action L a b (variation q η ε)-action L a b q =\n      ∫ t in a..b, L (q t+ε • η t) (deriv q t+ε • deriv η t)-L (q t) (deriv q t)) ∧\n    HasDerivAt (fun ε => action L a b (variation q η ε))\n      (∫ t in a..b, (fderiv ℝ (fun x => L x (deriv q t)) (q t)) (η t) +\n        (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)) 0 ∧\n    Asymptotics.IsBigO (𝓝 0)\n      (fun ε : ℝ => action L a b (variation q η ε)-action L a b q-\n        ε*(∫ t in a..b, (fderiv ℝ (fun x => L x (deriv q t)) (q t)) (η t) +\n          (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)))\n      (fun ε : ℝ => ε^2)\n    ∧ (∃ C > 0, ∃ δ > 0, ∀ ε : ℝ, |ε| < δ → ∀ t ∈ Icc a b,\n      |L (q t + ε • η t) (deriv q t + ε • deriv η t) - L (q t) (deriv q t) -\n        ε * ((fderiv ℝ (fun x ↦ L x (deriv q t)) (q t)) (η t) +\n          (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t))| ≤ C * |ε|^2) := by\n  sorry",
+    "extra_assumptions": [
+      "α<β；L、q、η C²以保证实际导数和紧时间窗余项资格。",
+      "[EXTRA] 保留原三个结论，并补同一个真实点态Taylor余项的紧时间窗统一C|ε|²控制；没有把余项界当作前提，未新增证明。"
+    ]
+  },
+  "MD-2.2.1-StationaryAction": {
+    "code": "def stationarySmoothAction {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) : Prop :=\n  ∀ η : ℝ → Q n, ContDiff ℝ ∞ η → η a = 0 → η b = 0 →\n    HasDerivAt (fun ε => action L a b (variation q η ε)) 0 0\n\ntheorem stationarySmoothAction_iff_first_variation {n : ℕ}\n    (L : Q n → Q n → ℝ) (q : ℝ → Q n) (a b : ℝ)\n    (_hab : a < b) (_hL : ContDiff ℝ 2 (Function.uncurry L)) (_hq : ContDiff ℝ 2 q) :\n    stationarySmoothAction L a b q ↔\n      ∀ η : ℝ → Q n, ContDiff ℝ ∞ η → η a = 0 → η b = 0 →\n      (∫ t in a..b, (fderiv ℝ (fun x ↦ L x (deriv q t)) (q t)) (η t) +\n        (fderiv ℝ (L (q t)) (deriv q t)) (deriv η t)) = 0 := by\n  sorry\n\ntheorem stationarySmoothAction_hamilton {n : ℕ}\n    (L : Q n → Q n → ℝ) (q : ℝ → Q n) (a b : ℝ)\n    (_hab : a < b) (_hL : ContDiff ℝ 2 (Function.uncurry L)) (_hq : ContDiff ℝ 2 q)\n    (_hnatural : ∀ t ∈ Ioo a b,\n      HasDerivAt (fun s ↦ fderiv ℝ (L (q s)) (deriv q s))\n        (fderiv ℝ (fun x ↦ L x (deriv q t)) (q t)) t) :\n    stationarySmoothAction L a b q := by\n  sorry",
+    "extra_assumptions": [
+      "驻值以真实一阶变分导数为零定义；展开式相等由FirstVariation条目承担。",
+      "[EXTRA] 保留驻值定义，同一source_id补完整积分I=0等价式及自然Euler–Lagrange运动推出驻值的Hamilton原理；C²及a<b是充分资格。新结论只登记sorry陈述，证明留到网站PASS后。"
+    ]
   }
 }

@@ -2,10 +2,10 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 568）。
+完成状态：修复进行中（待处理项目/原文审校计数 561）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
-第2章：网站PASS 108 / 已修待复审 4 / 待导师 2 / 修复中 46。
+第2章：网站PASS 106 / 已修待复审 9 / 待导师 3 / 修复中 42。
 第3章：网站PASS 91 / 已修待复审 4 / 待导师 5 / 修复中 49。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
@@ -23,18 +23,18 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 2 | MD-2.1.2-SecondDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
 | 2 | MD-2.1.2-Taylor2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.1.2-Taylor2Order | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2-VerletOrder | FAIL | C | 网站首选路线：直接保留原文(q,v)速度变量，使用已定义velocityVerlet与真实速度场(v,M⁻¹F(q))；正对角质量及C⁴为充分但非最小资格，闭窗连续性为冗余明确限制。未更改正式mechanicalField/verlet，不新增证明。 | 待分类/修复 | EAUDIT02 |
+| 2 | MD-2.2-VerletOrder | FAIL | C | 网站首选路线：直接保留原文(q,v)速度变量，使用已定义velocityVerlet与真实速度场(v,M⁻¹F(q))；正对角质量及C⁴为充分但非最小资格，闭窗连续性为冗余明确限制。未更改正式mechanicalField/verlet，不新增证明。 | 已修待复审 | EAUDIT02 |
 | 2 | MD-2.2.1-Lagrangian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.1-Admissible | NEEDS_HUMAN | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待导师 | — |
+| 2 | MD-2.2.1-Admissible | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT03 |
 | 2 | MD-2.2.1-Action | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.1-Variation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.1-FirstVariation | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
+| 2 | MD-2.2.1-FirstVariation | FAIL | B | 保留原三个结论，并补同一个真实点态Taylor余项的紧时间窗统一C/ε/²控制；没有把余项界当作前提，未新增证明。 | 已修待复审 | EAUDIT03 |
 | 2 | MD-2.2.1-TaylorPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.1-StationaryAction | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
+| 2 | MD-2.2.1-StationaryAction | FAIL | B | 保留驻值定义，同一source_id补完整积分I=0等价式及自然Euler–Lagrange运动推出驻值的Hamilton原理；C²及a<b是充分资格。新结论只登记sorry陈述，证明留到网站PASS后。 | 已修待复审 | EAUDIT03 |
 | 2 | MD-2.2.1-Parts | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.1-EulerLagrange | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
-| 2 | MD-2.2.1-VariationalDerivativePrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
-| 2 | MD-2.2.1-StationaryNotMin | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 2 | MD-2.2.1-EulerLagrange | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 2 | MD-2.2.1-VariationalDerivativePrinted | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 2 | MD-2.2.1-StationaryNotMin | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT03 |
 | 2 | MD-2.2.2-DiscretePath | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.2-DiscreteVelocity | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.2-DiscreteAction | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |

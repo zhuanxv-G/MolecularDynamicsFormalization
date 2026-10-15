@@ -442,11 +442,11 @@
     "MD-2.2.1-Admissible": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch02.admissibleSmooth",
       "verdict": "NEEDS_HUMAN",
       "explanation": "原文C²与C∞两种表述需导师裁定；当前保留后一C∞，尚不视作与整段完全一致。",
@@ -468,8 +468,9 @@
       "proof_attempts": 0,
       "block_sha256": "a6e26d4be5f24e27a02e5571211fd6f521eb7f6c8f696edc099ee8c5b23d11a9",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT03/axioms.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
+      "compiled": true
     },
     "MD-2.2.1-Action": {
       "checked": true,
@@ -536,16 +537,16 @@
     "MD-2.2.1-FirstVariation": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.firstVariation",
       "verdict": "PASS",
       "explanation": "实际作用量差的精确积分恒等式、一阶导数及O(ε²)余项全部保留。",
-      "signature_sha256": "bff5a9f8d87e38ca0e35668c29e6574bb2e479ead2904c0c34412a23c71e8f4b",
+      "signature_sha256": "b9b07707505a5a544a39566fbcd21923db7c5499e52b02924dbf13b73691baae",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -561,10 +562,11 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "block_sha256": "2708fc802d880428b54df1decd576374aa558470f9377f7a6ed8a8b61e62625c",
+      "block_sha256": "52efdaaa87e48d2620d095f6f4972d718306b0761e61d2e79f5380807ddadc35",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT03/axioms.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "compiled": true
     },
     "MD-2.2.1-TaylorPrinted": {
       "checked": true,
@@ -602,16 +604,17 @@
     "MD-2.2.1-StationaryAction": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch02.stationarySmoothAction",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "5e47ad2b3f039ca3e80fb624e61ffc4a6ac657de6bf25f36cc31f7b4d6ac08c0",
-      "direct_placeholder": false,
+      "signature_sha256": "4985801e8b645535639c0bfeb593a5859b2ce81a256dcbda1559e38146ea2ad4",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -626,9 +629,10 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "block_sha256": "5e47ad2b3f039ca3e80fb624e61ffc4a6ac657de6bf25f36cc31f7b4d6ac08c0",
+      "block_sha256": "4985801e8b645535639c0bfeb593a5859b2ce81a256dcbda1559e38146ea2ad4",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT03/axioms.log",
+      "compiled": true
     },
     "MD-2.2.1-Parts": {
       "checked": true,
@@ -666,10 +670,10 @@
     "MD-2.2.1-EulerLagrange": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.hamiltonPrinciple",
@@ -693,17 +697,18 @@
       "proof_attempts": 0,
       "block_sha256": "f987468949bff3bc1d9263d3d55a485360060c735136b4260fac36a377afa823",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT03/axioms.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "compiled": true
     },
     "MD-2.2.1-VariationalDerivativePrinted": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch02.printedVariationalDerivative",
       "verdict": "NEEDS_HUMAN",
       "explanation": "字面漏基准值；抽象E仅表达函数空间中的方向变分，完整C∞曲线拓扑未构造。",
@@ -725,16 +730,17 @@
       "proof_attempts": 0,
       "block_sha256": "ca49b5bcf458f8bd2458e4b0792e577bc2433a43fcf9db99968ad7997724b6a1",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT03/axioms.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
+      "compiled": true
     },
     "MD-2.2.1-StationaryNotMin": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.stationaryNotMinimum",
@@ -758,8 +764,9 @@
       "proof_attempts": 0,
       "block_sha256": "059989a8d4880047d052f8eb60b187fd547d0fb8971fff4a2385ff0b73b60eaa",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT03/axioms.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "compiled": true
     },
     "MD-2.2.2-DiscretePath": {
       "checked": true,
