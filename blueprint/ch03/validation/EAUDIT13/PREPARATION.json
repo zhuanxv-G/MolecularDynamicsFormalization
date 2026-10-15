@@ -1,0 +1,25 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT13",
+  "section": "3.6",
+  "source_ids": [
+    "MD-3.6-HamiltonianFlowStructures",
+    "MD-3.6-VolumeNotSymplectic"
+  ],
+  "reaudit_ids": [
+    "MD-3.6-HamiltonianFlowStructures",
+    "MD-3.6-VolumeNotSymplectic"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "d731da128c665e09b03211a02bca5862907495e87f6cc3ce06654c691afb1158",
+  "lean_sha256": "497d7c78e683addee7993c8382482cb954a4a9ec02c843cd7cff94a1f9e31541",
+  "source_sha256": "5b3330e057b225b5c2d8c42eaa4237975a7316b3a1e3f14e5c39a82e062dcc50",
+  "pages": [
+    149,
+    150
+  ],
+  "prior_proof_blocks": {
+    "MD-3.6-HamiltonianFlowStructures": "theorem hamiltonianFlowStructures :\n  ∀ n (H : SymplecticCoordinates n → ℝ) D Ω\n    (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n) τ,\n    0 < τ → ContDiffOn ℝ 2 H D → localFlowC1 (textbookHamiltonianVectorField H) D Ω Φ τ →\n    (∀ t ∈ Ioo 0 τ, ∀ z ∈ Ω,\n      HasDerivAt (fun s => textbookJacobian (fun y => Φ (s,y)) z)\n        (textbookJ n*textbookHamiltonianHessian H (Φ (t,z))*textbookJacobian (fun y => Φ (t,y)) z) t) ∧\n    (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, IsTextbookSymplectic (textbookJacobian (fun y => Φ (t,y)) z)) ∧\n    (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, (textbookJacobian (fun y => Φ (t,y)) z).det = 1) ∧\n    (∀ t ∈ Icc 0 τ, ∀ S, MeasurableSet S → S ⊆ Ω →\n      volume ((fun z => Φ (t,z)) '' S) = volume S) := by\n  sorry",
+    "MD-3.6-VolumeNotSymplectic": "theorem volumeNotSymplectic :\n  ∃ G : SymplecticCoordinates 2 → SymplecticCoordinates 2,\n    ContDiff ℝ 1 G ∧ (∀ z, (textbookJacobian G z).det=1) ∧ ¬ IsTextbookSymplecticMap G := by\n  sorry"
+  }
+}

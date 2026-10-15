@@ -748,5 +748,15 @@
     "category": "B",
     "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
     "section": "3.5"
+  },
+  "MD-3.6-HamiltonianFlowStructures": {
+    "category": "B",
+    "handling": "补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。",
+    "section": "3.6"
+  },
+  "MD-3.6-VolumeNotSymplectic": {
+    "category": "B",
+    "handling": "补真实可测集合体积保存及单射，保留det=1和非辛见证；其余原句明确跨条映射HamiltonianFlowStructures及ProjectionEnergy，不静默删原文。",
+    "section": "3.6"
   }
 }

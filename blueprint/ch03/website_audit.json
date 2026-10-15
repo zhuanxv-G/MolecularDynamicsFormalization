@@ -7568,7 +7568,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH17_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT13",
+    "repair": {
+      "eaudit": "EAUDIT13",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT13.md": "fa5a03d2d39f321b7e600ae1b911792c58be85a6dcf946d4a2e7365015968024",
+        "Blueprint/Ch03.lean": "497d7c78e683addee7993c8382482cb954a4a9ec02c843cd7cff94a1f9e31541",
+        "blueprint/ch03/ch03_source.json": "5b3330e057b225b5c2d8c42eaa4237975a7316b3a1e3f14e5c39a82e062dcc50"
+      }
+    }
   },
   {
     "source_id": "MD-3.6-VolumeNotSymplectic",
@@ -7657,7 +7669,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH17_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT13",
+    "repair": {
+      "eaudit": "EAUDIT13",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT13.md": "fa5a03d2d39f321b7e600ae1b911792c58be85a6dcf946d4a2e7365015968024",
+        "Blueprint/Ch03.lean": "497d7c78e683addee7993c8382482cb954a4a9ec02c843cd7cff94a1f9e31541",
+        "blueprint/ch03/ch03_source.json": "5b3330e057b225b5c2d8c42eaa4237975a7316b3a1e3f14e5c39a82e062dcc50"
+      }
+    }
   },
   {
     "source_id": "MD-3.6.1-LinearInvolution",

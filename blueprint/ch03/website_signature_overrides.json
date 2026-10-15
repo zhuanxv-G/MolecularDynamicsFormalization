@@ -166,5 +166,18 @@
     "extra_assumptions": [
       "[EXTRA] 保留已证Euler精确保存；补连续ODE解上真实线性第一积分恒定，覆盖本条原句连续与离散两结论。"
     ]
+  },
+  "MD-3.6-HamiltonianFlowStructures": {
+    "code": "theorem hamiltonianFlowStructures :\n  ∀ n (H : SymplecticCoordinates n → ℝ) D Ω\n    (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n) τ,\n    0 < τ → ContDiffOn ℝ 2 H D → localFlowC1 (textbookHamiltonianVectorField H) D Ω Φ τ →\n    (∀ t ∈ Ioo 0 τ, ∀ z ∈ Ω,\n      HasDerivAt (fun s => textbookJacobian (fun y => Φ (s,y)) z)\n        (textbookJ n*textbookHamiltonianHessian H (Φ (t,z))*textbookJacobian (fun y => Φ (t,y)) z) t) ∧\n    (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, IsTextbookSymplectic (textbookJacobian (fun y => Φ (t,y)) z)) ∧\n    (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, (textbookJacobian (fun y => Φ (t,y)) z).det = 1) ∧\n    (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, H (Φ (t,z))=H z) ∧\n    (∀ t ∈ Icc 0 τ, ∀ S, MeasurableSet S → S ⊆ Ω →\n      volume ((fun z => Φ (t,z)) '' S) = volume S) := by\n  sorry",
+    "extra_assumptions": [
+      "Hamiltonian在开放域C²；真实localFlowC1的初值、ODE与局部定义域资格，未假设显式反步。",
+      "[EXTRA] 补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。"
+    ]
+  },
+  "MD-3.6-VolumeNotSymplectic": {
+    "code": "theorem volumeNotSymplectic :\n  ∃ G : SymplecticCoordinates 2 → SymplecticCoordinates 2,\n    ContDiff ℝ 1 G ∧ Function.Injective G ∧\n    (∀ S, MeasurableSet S → volume (G '' S)=volume S) ∧ (∀ z, (textbookJacobian G z).det=1) ∧ ¬ IsTextbookSymplecticMap G := by\n  sorry\n\ntheorem volumeNotSymplectic_symplectic_volume (n : ℕ)\n    (G : SymplecticCoordinates n → SymplecticCoordinates n)\n    (_hG : IsTextbookSymplecticMap G) (_hinj : Function.Injective G) :\n    ∀ S, MeasurableSet S → volume (G '' S)=volume S := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 补真实可测集合体积保存及单射，保留det=1和非辛见证；其余原句明确跨条映射HamiltonianFlowStructures及ProjectionEnergy，不静默删原文。"
+    ]
   }
 }

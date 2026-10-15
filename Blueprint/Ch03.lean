@@ -1272,7 +1272,8 @@ theorem linearContinuousIntegral :
     (fun s => (hd s).deriv) t 0
 
 /-- source_id: MD-3.6-HamiltonianFlowStructures · unnumbered_claim · §3.6 · 印刷p.127–128 / PDFp.149–150
-[EXTRA] 原场在开放域C¹，真实局部流、反步与局部定义域资格显式。 -/
+[EXTRA] Hamiltonian在开放域C²；真实局部C¹流及局部域资格，无显式反步假设。 
+[EXTRA] 补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。 -/
 theorem hamiltonianFlowStructures :
   ∀ n (H : SymplecticCoordinates n → ℝ) D Ω
     (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n) τ,
@@ -1282,14 +1283,23 @@ theorem hamiltonianFlowStructures :
         (textbookJ n*textbookHamiltonianHessian H (Φ (t,z))*textbookJacobian (fun y => Φ (t,y)) z) t) ∧
     (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, IsTextbookSymplectic (textbookJacobian (fun y => Φ (t,y)) z)) ∧
     (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, (textbookJacobian (fun y => Φ (t,y)) z).det = 1) ∧
+    (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, H (Φ (t,z))=H z) ∧
     (∀ t ∈ Icc 0 τ, ∀ S, MeasurableSet S → S ⊆ Ω →
       volume ((fun z => Φ (t,z)) '' S) = volume S) := by
   sorry
 
-/-- source_id: MD-3.6-VolumeNotSymplectic · unnumbered_claim · §3.6 · 印刷p.128 / PDFp.150 -/
+/-- source_id: MD-3.6-VolumeNotSymplectic · unnumbered_claim · §3.6 · 印刷p.128 / PDFp.150 
+[EXTRA] 补真实可测集合体积保存及单射，保留det=1和非辛见证；其余原句明确跨条映射HamiltonianFlowStructures及ProjectionEnergy，不静默删原文。 -/
 theorem volumeNotSymplectic :
   ∃ G : SymplecticCoordinates 2 → SymplecticCoordinates 2,
-    ContDiff ℝ 1 G ∧ (∀ z, (textbookJacobian G z).det=1) ∧ ¬ IsTextbookSymplecticMap G := by
+    ContDiff ℝ 1 G ∧ Function.Injective G ∧
+    (∀ S, MeasurableSet S → volume (G '' S)=volume S) ∧ (∀ z, (textbookJacobian G z).det=1) ∧ ¬ IsTextbookSymplecticMap G := by
+  sorry
+
+theorem volumeNotSymplectic_symplectic_volume (n : ℕ)
+    (G : SymplecticCoordinates n → SymplecticCoordinates n)
+    (_hG : IsTextbookSymplecticMap G) (_hinj : Function.Injective G) :
+    ∀ S, MeasurableSet S → volume (G '' S)=volume S := by
   sorry
 
 /-- source_id: MD-3.6.1-LinearInvolution · definition · §3.6.1 · 印刷p.128 / PDFp.150 -/
@@ -1842,6 +1852,7 @@ end MD.Ch03
 #print axioms MD.Ch03.linearContinuousIntegral
 #print axioms MD.Ch03.hamiltonianFlowStructures
 #print axioms MD.Ch03.volumeNotSymplectic
+#print axioms MD.Ch03.volumeNotSymplectic_symplectic_volume
 #print axioms MD.Ch03.linearInvolution
 #print axioms MD.Ch03.reversedField
 #print axioms MD.Ch03.momentumReversal

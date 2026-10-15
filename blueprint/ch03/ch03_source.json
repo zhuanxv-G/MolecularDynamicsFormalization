@@ -3391,18 +3391,44 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "原列表第4项time-reversal symmetry由§3.6.1–2单独保留；此签名保留一般C¹局部流的前三性质，不能由较强jointC²桥接冒充。"
+      "原书H=p^T M^{-1}p/2+U(q)，q和p分别为配置与动量，M为质量矩阵，U为势能；PDF150页完整列表共四项。本条按批次约定只摘录第1–3项，第4项为time-reversal symmetry。",
+      "当前Lean签名采用任意H在开放域D上的C²正则性及localFlowC1条件；它陈述变分方程、辛性、Jacobian行列式为1及可测集合体积守恒，尚未陈述能量守恒。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch03.hamiltonianFlowStructures",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "原场在开放域C¹，真实局部流、反步与局部定义域资格显式。"
+      "Hamiltonian在开放域C²；真实localFlowC1的初值、ODE与局部定义域资格，未假设显式反步。",
+      "[EXTRA] 补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT13_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:24:41.776948",
+        "before_sha256": "be4c01973d74b1024513aa9dc954a553d1bd9ca6ca779efa749b3e8714ef8388",
+        "after_sha256": "00bc96652f524c2013fada812e77e49f991b5aabc8da2242b6164c6182011dca",
+        "changed_fields": [
+          "context_notation",
+          "extra_assumptions"
+        ],
+        "annotation_corrections": {
+          "extra_assumptions": {
+            "before": [
+              "原场在开放域C¹，真实局部流、反步与局部定义域资格显式。"
+            ],
+            "after": [
+              "Hamiltonian在开放域C²；真实localFlowC1的初值、ODE与局部定义域资格，未假设显式反步。",
+              "[EXTRA] 补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。"
+            ]
+          }
+        },
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.6-VolumeNotSymplectic",
@@ -3416,16 +3442,33 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "四维实际光滑映射、Jacobian det=1且不辛；辛蕴含体积见第2章，能量投影见§3.5。"
+      "原文将相空间体积守恒称为辛性的后果及更弱条件，并断言存在保体积但不辛的方法、存在精确守恒能量的方法；能量方法在此处写作as we shall show below。",
+      "当前Lean选用SymplecticCoordinates 2，即四维实相空间，G为C¹映射；它只显式要求各点Jacobian行列式为1及G不辛，未显式陈述全局集合体积守恒，也未覆盖该段其他结论。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch03.volumeNotSymplectic",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "extra_assumptions": [
+      "[EXTRA] 补真实可测集合体积保存及单射，保留det=1和非辛见证；其余原句明确跨条映射HamiltonianFlowStructures及ProjectionEnergy，不静默删原文。"
+    ],
+    "statement_scope": "辛C¹全局单射映射的真实体积保持及保体积非辛见证；精确能量方法构造由MD-3.5-ProjectionEnergy承担，Hamiltonian流实例由MD-3.6-HamiltonianFlowStructures承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT13_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:24:41.776948",
+        "before_sha256": "7297168c3c98dde9259b1fca9f4895c33759c60292ed0864e60282fbe2197bb8",
+        "after_sha256": "552ec5b7f8fd60d521e587debf38c9bed314235103ec5199215c818306c7a084",
+        "changed_fields": [
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.6.1-LinearInvolution",

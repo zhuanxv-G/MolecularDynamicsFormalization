@@ -3529,17 +3529,17 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.hamiltonianFlowStructures",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "932ed255c1a8b2a2f31142e2a8165151e6f96b1b0c954ba8e14116239d5f2232",
-      "block_sha256": "00954a325fa0b2eab08177d7de45fc6632a8e5c40d940455100df7c3262476fc",
+      "signature_sha256": "6855c8f0a8b2d1deb45a9484bb9fab3ad5a960d12d1ea752616829fd4411f5ff",
+      "block_sha256": "32fd749cd71be99a2229ad14bb86c4355464af4aae9a7ae8384c1c8d7bd93ff8",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -3557,23 +3557,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT13/axioms.log"
     },
     "MD-3.6-VolumeNotSymplectic": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.volumeNotSymplectic",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "5ae890b15f145f4e2acbf4d9b150f4a21b7b9be95df45aa09f805d04f2025bb2",
-      "block_sha256": "4f59feda88b63adc08c0d17333c831ca5328340052a2af76b947893b0b270a1b",
+      "signature_sha256": "45a77a65c2fed7c777e204feba9d1409224c967cc29ea341a152280fb53d0519",
+      "block_sha256": "c846c313ebaf67d276cc29777d78dbbb6f361c6a0444d0faa530b88d55ccf71d",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -3591,7 +3591,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT13/axioms.log"
     },
     "MD-3.6.1-LinearInvolution": {
       "checked": true,

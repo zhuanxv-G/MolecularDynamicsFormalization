@@ -2,11 +2,11 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 395；章末验收待完成 [3, 4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 391；章末验收待完成 [3, 4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
-第3章：网站PASS 67 / 已修待复审 47 / 待导师 11 / 修复中 24。
+第3章：网站PASS 67 / 已修待复审 49 / 待导师 11 / 修复中 22。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
@@ -273,8 +273,8 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.5-EnergyProjectionRelation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.5-NoHamiltonianAttractor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
 | 3 | MD-3.5-LinearContinuousIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.6-HamiltonianFlowStructures | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.6-VolumeNotSymplectic | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.6-HamiltonianFlowStructures | FAIL | B | 补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。 | 已修待复审 | EAUDIT13 |
+| 3 | MD-3.6-VolumeNotSymplectic | FAIL | B | 补真实可测集合体积保存及单射，保留det=1和非辛见证；其余原句明确跨条映射HamiltonianFlowStructures及ProjectionEnergy，不静默删原文。 | 已修待复审 | EAUDIT13 |
 | 3 | MD-3.6.1-LinearInvolution | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6.1-ReversedFieldPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6.1-MomentumReversal | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
