@@ -160,5 +160,11 @@
     "extra_assumptions": [
       "[EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。"
     ]
+  },
+  "MD-3.5-LinearEulerIntegral": {
+    "code": "theorem linearEulerIntegral :\n  ∀ (n : ℕ) (b : Q n →L[ℝ] ℝ) (f : Q n → Q n), (∀ z, b (f z)=0) →\n    ∀ (h : ℝ) z, b (z+h • f z)=b z := by\n  exact MolecularDynamics.Chapter03Review.linearEulerIntegral_proved\n\ntheorem linearEulerIntegral_continuous (n : ℕ) (b : Q n →L[ℝ] ℝ)\n    (f : Q n → Q n) (_hb : ∀ z, b (f z)=0)\n    (γ : ℝ → Q n) (a d : ℝ) (_had : a ≤ d)\n    (_hγ : ∀ t ∈ Icc a d, HasDerivWithinAt γ (f (γ t)) (Icc a d) t) :\n    ∀ t ∈ Icc a d, b (γ t)=b (γ a) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 保留已证Euler精确保存；补连续ODE解上真实线性第一积分恒定，覆盖本条原句连续与离散两结论。"
+    ]
   }
 }

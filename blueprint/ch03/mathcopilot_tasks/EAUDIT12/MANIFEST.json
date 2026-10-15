@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT12",
+  "input_sha256": {
+    "BATCH_EAUDIT12.md": "72ac2d621feac7ce6edfb830339e3cc84cfc6a47c1b397f2e0565014e92a34bd",
+    "Blueprint/Ch03.lean": "d731da128c665e09b03211a02bca5862907495e87f6cc3ce06654c691afb1158",
+    "blueprint/ch03/ch03_source.json": "549e91f99367f9cb16bc0b54adfe1bc4c6f65690e87bc371ad7d0e61b4357b9a"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT12a",
+      "source_id": "MD-3.5-LinearEulerIntegral",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT12/a",
+      "total_bytes": 73637,
+      "manifest_sha256": "7be205c2e83d71ce1eef9dc76a1e6be37e2d94a0b04814b8efa636d1a9280687"
+    },
+    {
+      "subtask": "EAUDIT12b",
+      "source_id": "MD-3.5-VerletOscillatorEnergy",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT12/b",
+      "total_bytes": 79259,
+      "manifest_sha256": "84e8d1e89779bd3a203a5d4af4b9525c614fd47341ac22b710746851e7e1eeeb"
+    },
+    {
+      "subtask": "EAUDIT12c",
+      "source_id": "MD-3.5-MomentumProjection",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT12/c",
+      "total_bytes": 73624,
+      "manifest_sha256": "bdf533aafe6774f79a7109ba588e66e9eba3e94f814a9a0478451d612b3b7111"
+    },
+    {
+      "subtask": "EAUDIT12d",
+      "source_id": "MD-3.5-ProjectionConstraint",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT12/d",
+      "total_bytes": 72562,
+      "manifest_sha256": "094f3c8b8320ee3df261cb5578c16154321b5e22c8b27c9df328481cc1316a07"
+    },
+    {
+      "subtask": "EAUDIT12e",
+      "source_id": "MD-3.5-ProjectionFactor",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT12/e",
+      "total_bytes": 82452,
+      "manifest_sha256": "7941feb713ae004bc36a6d46e9f3ed68ba436c5ddee115e847e1398f0a637c81"
+    },
+    {
+      "subtask": "EAUDIT12f",
+      "source_id": "MD-3.5-NoHamiltonianAttractor",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT12/f",
+      "total_bytes": 155625,
+      "manifest_sha256": "d9366b160b89d322cf7e136f169f80dbf14c0482b0c468bb557668aa97488a09"
+    }
+  ]
+}

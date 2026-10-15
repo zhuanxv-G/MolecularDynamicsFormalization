@@ -1,0 +1,35 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT12",
+  "section": "3.5",
+  "source_ids": [
+    "MD-3.5-LinearEulerIntegral",
+    "MD-3.5-MomentumProjection",
+    "MD-3.5-NoHamiltonianAttractor",
+    "MD-3.5-ProjectionConstraint",
+    "MD-3.5-ProjectionFactor",
+    "MD-3.5-VerletOscillatorEnergy"
+  ],
+  "reaudit_ids": [
+    "MD-3.5-LinearEulerIntegral",
+    "MD-3.5-VerletOscillatorEnergy",
+    "MD-3.5-MomentumProjection",
+    "MD-3.5-ProjectionConstraint",
+    "MD-3.5-ProjectionFactor",
+    "MD-3.5-NoHamiltonianAttractor"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "85dbc75a087a951e8e7bf57add11d73cf70e1b97630f4b266783dfe0e8642210",
+  "lean_sha256": "d731da128c665e09b03211a02bca5862907495e87f6cc3ce06654c691afb1158",
+  "source_sha256": "549e91f99367f9cb16bc0b54adfe1bc4c6f65690e87bc371ad7d0e61b4357b9a",
+  "pages": [
+    144,
+    145,
+    146,
+    147,
+    148
+  ],
+  "prior_proof_blocks": {
+    "MD-3.5-LinearEulerIntegral": "theorem linearEulerIntegral :\n  ∀ (n : ℕ) (b : Q n →L[ℝ] ℝ) (f : Q n → Q n), (∀ z, b (f z)=0) →\n    ∀ (h : ℝ) z, b (z+h • f z)=b z := by\n  exact MolecularDynamics.Chapter03Review.linearEulerIntegral_proved"
+  }
+}

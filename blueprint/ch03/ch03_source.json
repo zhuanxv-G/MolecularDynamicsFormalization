@@ -3034,7 +3034,7 @@
     "section": "3.5",
     "printed_page": "123",
     "pdf_page": "145",
-    "statement_latex": "Generalizing this slightly, we could imagine a system of ODEs of the form\n\\[\\dot{\\boldsymbol z}=f(\\boldsymbol z),\\]\nsuch that, for some vector $\\boldsymbol b$,\n\\[\\boldsymbol b\\cdot f(\\boldsymbol z)\\equiv0,\\]\nthen $I(\\boldsymbol z)=\\boldsymbol b\\cdot\\boldsymbol z$ is a first integral. It is straightforward to see that Euler's method conserves such a linear first integral exactly, as is true of many other popular numerical methods.",
+    "statement_latex": "Generalizing this slightly, we could imagine a system of ODEs of the form\n\\[\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z),\\]\nsuch that, for some vector $\\boldsymbol b$,\n\\[\\boldsymbol b\\cdot \\boldsymbol f(\\boldsymbol z)\\equiv0,\\]\nthen $I(\\boldsymbol z)=\\boldsymbol b\\cdot\\boldsymbol z$ is a first integral. It is straightforward to see that Euler's method conserves such a linear first integral exactly, as is true of many other popular numerical methods.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3046,11 +3046,26 @@
     "reusable_proofs": [
       "MolecularDynamics.Chapter03Review.linearEulerIntegral_proved"
     ],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留已证Euler精确保存；补连续ODE解上真实线性第一积分恒定，覆盖本条原句连续与离散两结论。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:23:57.297656",
+        "before_sha256": "970628e45831a9e279bad693384cfeff79fe256e1a9449cac0f7b24b1352508b",
+        "after_sha256": "2fa0fff1ff47e69b7d61400b47548a9a53a00f09a63f78ac39282955ed87c1ac",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH15_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.5-LinearRKIntegral",
@@ -3091,7 +3106,8 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "Euler无界另为EulerGrowth；本条保留Verlet谐振子全时间能量界。"
+      "Euler无界另为EulerGrowth；本条保留Verlet谐振子全时间能量界。",
+      "原文此句未写步长稳定性条件；Verlet 的全时间 O(h²) 能量误差界只在稳定步长范围解释。Lean 的 Ω>0、固定0<ρ<2、|hΩ|≤ρ 是对原文省略限定的显式补充，不是原文逐字假设。零初值并无能量波动，故“fluctuates”按典型行为理解；这里只形式化误差上界。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch03.verletOscillatorEnergy",
@@ -3100,9 +3116,22 @@
       "Ω>0，固定ρ∈(0,2)，|hΩ|≤ρ；排除不稳定及阈值步长。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:23:57.297656",
+        "before_sha256": "838a0f5955cbb970b344bf1aec3b13120ed6ea6aab7e440d208617d361ae907b",
+        "after_sha256": "4bc067503482b66507a6146b7778f8ae17a6d2145fd3189bf27935ad2bb423a4",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH15_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.5-MomentumProjection",
@@ -3111,7 +3140,7 @@
     "section": "3.5",
     "printed_page": "123",
     "pdf_page": "145",
-    "statement_latex": "We start by taking a timestep with any arbitrary (nonconserving) numerical method, say to an intermediate phase point $\\overline Q,\\overline P$, then we “fix it up” by scaling the momentum by an adjustment factor, defining\n\\[Q=\\overline Q,\\qquad P=\\gamma\\overline P,\\]\nselecting $\\gamma$ so that the energy in the result is a prescribed value $E$.",
+    "statement_latex": "We start by taking a timestep with any arbitrary (nonconserving) numerical method, say to an intermediate phase point $\\overline{\\boldsymbol Q},\\overline{\\boldsymbol P}$, then we “fix it up” by scaling the momentum by an adjustment factor, defining\n\\[\\boldsymbol Q=\\overline{\\boldsymbol Q},\\qquad\\boldsymbol P=\\gamma\\overline{\\boldsymbol P},\\]\nselecting $\\gamma$ so that the energy in the result is a prescribed value $E$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3123,9 +3152,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:23:57.298157",
+        "before_sha256": "f51035b6478ed6621ff6f0ac14927f8a82ae33eba803a3522032888cc7b4c61a",
+        "after_sha256": "7fa0b495ab95c46eb527649279fbdf24cba30fd73e481d0816398bc3b4503fe4",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH15_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.5-ProjectionConstraint",
@@ -3134,7 +3176,7 @@
     "section": "3.5",
     "printed_page": "123",
     "pdf_page": "145",
-    "statement_latex": "This method is easy to implement: the equation that must be solved is\n\\[\\frac{\\gamma^2\\overline P^TM^{-1}\\overline P}{2}+U(\\overline Q)=E.\\tag{3.12}\\]",
+    "statement_latex": "This method is easy to implement: the equation that must be solved is\n\\[\\frac{\\gamma^2\\overline{\\boldsymbol P}^{T}\\boldsymbol M^{-1}\\overline{\\boldsymbol P}}{2}+U(\\overline{\\boldsymbol Q})=E.\\tag{3.12}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3146,9 +3188,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:23:57.298157",
+        "before_sha256": "37bd7e96b5be450af3ddf7a9e0ec166a617494d08a1f9eb60c4e91f8de909caf",
+        "after_sha256": "46c27b1a353c79f8e1166a7a2fec5c9cd70e0078699b729dff18f758fd726726",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH15_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.5-ProjectionFactor",
@@ -3157,7 +3212,7 @@
     "section": "3.5",
     "printed_page": "124",
     "pdf_page": "146",
-    "statement_latex": "and, since $\\overline Q$ is known, this gives\n\\[\\gamma=\\left(\\frac{E-\\overline U}{\\overline K}\\right)^{1/2},\\tag{3.13}\\]\nwhere $\\overline U=U(\\overline Q)$ and $\\overline K=\\overline P^TM^{-1}\\overline P/2$ are the potential and kinetic energies after a step of the original non-conserving scheme.",
+    "statement_latex": "and, since $\\overline{\\boldsymbol Q}$ is known, this gives\n\\[\\gamma=\\left(\\frac{E-\\overline U}{\\overline K}\\right)^{1/2},\\tag{3.13}\\]\nwhere $\\overline U=U(\\overline{\\boldsymbol Q})$ and $\\overline K=\\overline{\\boldsymbol P}^{T}\\boldsymbol M^{-1}\\overline{\\boldsymbol P}/2$ are the potential and kinetic energies after a step of the original non-conserving scheme.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3169,9 +3224,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:23:57.298157",
+        "before_sha256": "64f06f34870731d87912c040bcea4819d98e2cc3a69a3768cb4e336883c30b84",
+        "after_sha256": "dc6cd0b8c50b901b94642cd950de3ac963b6c5d8cf2cdb03c48e8cc4e87b3623",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH15_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.5-ProjectionEnergy",
@@ -3257,7 +3325,7 @@
     "section": "3.5",
     "printed_page": "126",
     "pdf_page": "148",
-    "statement_latex": "In the first phase, the discrete trajectory appears to be filling in the correct region and without any evidence of nonphysical behavior. The performance is very similar to a Verlet method without projection during this period. In the second phase the system begins to move toward a limit cycle, i.e. an attractive periodic orbit. The presence of such limit cycles is impossible in a Hamiltonian system, thus it is evident that an nonphysical artefact has been introduced by the projection method.",
+    "statement_latex": "In the first phase, the discrete trajectory appears to be filling in the correct region and without any evidence of nonphysical behavior. The performance is very similar to a Verlet method without projection during this period. In the second phase the system begins to move toward a limit cycle, i.e. an attractive periodic orbit. The presence of such limit cycles is impossible in a Hamiltonian system, thus it is evident that a nonphysical artefact has been introduced by the projection method.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3269,9 +3337,22 @@
       "明确C²Hamiltonian的全时间真实流、紧零体积周期轨道、开放正有限体积吸引盆；不只给任意一条轨道。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:23:57.298157",
+        "before_sha256": "b4eadbdc2b95dffb6970f98fa0cd344db2f5cf4b15f7a45120eec13e66806526",
+        "after_sha256": "9bccec99c11fddb5623efb6e17e9615c1ba5fec346bbe7b0f213aa6179a4fd95",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.5-LinearContinuousIntegral",

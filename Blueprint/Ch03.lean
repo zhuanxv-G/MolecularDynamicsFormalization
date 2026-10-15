@@ -1131,11 +1131,19 @@ theorem equalEulerIntegral :
   ∀ (f : ℝ × ℝ → ℝ) h z, equalComponentIntegral (z.1+h*f z,z.2+h*f z)=equalComponentIntegral z := by
   exact MolecularDynamics.Chapter03Review.equalEulerIntegral_proved
 
-/-- source_id: MD-3.5-LinearEulerIntegral · unnumbered_claim · §3.5 · 印刷p.123 / PDFp.145 -/
+/-- source_id: MD-3.5-LinearEulerIntegral · unnumbered_claim · §3.5 · 印刷p.123 / PDFp.145 
+[EXTRA] 保留已证Euler精确保存；补连续ODE解上真实线性第一积分恒定，覆盖本条原句连续与离散两结论。 -/
 theorem linearEulerIntegral :
   ∀ (n : ℕ) (b : Q n →L[ℝ] ℝ) (f : Q n → Q n), (∀ z, b (f z)=0) →
     ∀ (h : ℝ) z, b (z+h • f z)=b z := by
   exact MolecularDynamics.Chapter03Review.linearEulerIntegral_proved
+
+theorem linearEulerIntegral_continuous (n : ℕ) (b : Q n →L[ℝ] ℝ)
+    (f : Q n → Q n) (_hb : ∀ z, b (f z)=0)
+    (γ : ℝ → Q n) (a d : ℝ) (_had : a ≤ d)
+    (_hγ : ∀ t ∈ Icc a d, HasDerivWithinAt γ (f (γ t)) (Icc a d) t) :
+    ∀ t ∈ Icc a d, b (γ t)=b (γ a) := by
+  sorry
 
 /-- source_id: MD-3.5-LinearRKIntegral · unnumbered_claim · §3.5 · 印刷p.123 / PDFp.145
 [EXTRA] 明确选择任意有限阶段Runge–Kutta关系；所有阶段满足原场线性第一积分资格。 -/
@@ -1821,6 +1829,7 @@ end MD.Ch03
 #print axioms MD.Ch03.equalComponentFirstIntegral
 #print axioms MD.Ch03.equalEulerIntegral
 #print axioms MD.Ch03.linearEulerIntegral
+#print axioms MD.Ch03.linearEulerIntegral_continuous
 #print axioms MD.Ch03.linearRKIntegral
 #print axioms MD.Ch03.verletOscillatorEnergy
 #print axioms MD.Ch03.momentumProjection

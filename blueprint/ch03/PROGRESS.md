@@ -97,16 +97,16 @@
 | MD-3.4-EnergySymplecticNoGo | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；缺Ge–Marsden精确理论及局部全局资格；不建设大型理论。 |
 | MD-3.5-EqualComponentIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
 | MD-3.5-EqualEulerIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.5-LinearEulerIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
+| MD-3.5-LinearEulerIntegral | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT12 | existing_bridge / checked+documented priors |
 | MD-3.5-LinearRKIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.5-VerletOscillatorEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
-| MD-3.5-MomentumProjection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.5-ProjectionConstraint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.5-ProjectionFactor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
+| MD-3.5-VerletOscillatorEnergy | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT12 | local_proof / self-contained |
+| MD-3.5-MomentumProjection | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT12 | definition / self-contained |
+| MD-3.5-ProjectionConstraint | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT12 | definition / self-contained |
+| MD-3.5-ProjectionFactor | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT12 | definition / self-contained |
 | MD-3.5-ProjectionEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.5-KineticZero | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.5-EnergyProjectionRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.5-NoHamiltonianAttractor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺实际流体积保持到开放盆不可能吸引零体积轨道的动力系统测度论桥接；不建设大型吸引子理论。 |
+| MD-3.5-NoHamiltonianAttractor | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT12 | placeholder / incomplete；缺实际流体积保持到开放盆不可能吸引零体积轨道的动力系统测度论桥接；不建设大型吸引子理论。 |
 | MD-3.5-LinearContinuousIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
 | MD-3.6-HamiltonianFlowStructures | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；完整C¹流可微性、变分及测度保持桥接仍缺；已存在jointC²特例不能替代本签名。 |
 | MD-3.6-VolumeNotSymplectic | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；待构造四维线性det=1非辛映射并桥接真实Jacobian；缺完整有限矩阵到坐标映射桥接。 |
@@ -401,3 +401,5 @@ EAUDIT09 §3.3.4：4条落盘，单文件与5项公理通过；未写新证明�
 EAUDIT10 §3.4：8条落盘，单文件与11项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT11 §3.4：5条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT12 §3.5：6条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。

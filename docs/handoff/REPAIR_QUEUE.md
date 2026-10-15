@@ -2,11 +2,11 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 402；章末验收待完成 [3, 4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 395；章末验收待完成 [3, 4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
-第3章：网站PASS 72 / 已修待复审 41 / 待导师 11 / 修复中 25。
+第3章：网站PASS 67 / 已修待复审 47 / 待导师 11 / 修复中 24。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
@@ -262,16 +262,16 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.4-EnergySymplecticNoGo | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |
 | 3 | MD-3.5-EqualComponentIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.5-EqualEulerIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.5-LinearEulerIntegral | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.5-LinearEulerIntegral | FAIL | B | 保留已证Euler精确保存；补连续ODE解上真实线性第一积分恒定，覆盖本条原句连续与离散两结论。 | 已修待复审 | EAUDIT12 |
 | 3 | MD-3.5-LinearRKIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.5-VerletOscillatorEnergy | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.5-MomentumProjection | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.5-ProjectionConstraint | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.5-ProjectionFactor | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.5-VerletOscillatorEnergy | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
+| 3 | MD-3.5-MomentumProjection | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
+| 3 | MD-3.5-ProjectionConstraint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
+| 3 | MD-3.5-ProjectionFactor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
 | 3 | MD-3.5-ProjectionEnergy | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.5-KineticZero | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.5-EnergyProjectionRelation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.5-NoHamiltonianAttractor | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.5-NoHamiltonianAttractor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
 | 3 | MD-3.5-LinearContinuousIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6-HamiltonianFlowStructures | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
 | 3 | MD-3.6-VolumeNotSymplectic | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
