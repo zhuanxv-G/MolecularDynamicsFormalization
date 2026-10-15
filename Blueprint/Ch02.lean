@@ -559,8 +559,12 @@ theorem integralErrorPrinted :
     |I a-I b| ≤ (K*B/(2*L))*Real.exp (L*k*h)*h^p := by
   sorry
 
-/-- source_id: MD-2.3.1-Divergence · definition · §2.3.1 · 印刷p.72 / PDFp.94 -/
+/-- source_id: MD-2.3.1-Divergence · definition · §2.3.1 · 印刷p.72 / PDFp.94 
+[EXTRA] 保留散度辅助定义，并补经典可微向量场的散度恒零谓词；覆盖原句零条件。 -/
 def bp_divergence {n : ℕ} (f : Q n → Q n) (z : Q n) : ℝ := (textbookCoordinateJacobian f z).trace
+
+def divergenceFree {n : ℕ} (f : Q n → Q n) : Prop :=
+  Differentiable ℝ f ∧ ∀ z, bp_divergence f z = 0
 
 /-- source_id: MD-2.3.1-Liouville · Liouville’s theorem · §2.3.1 · 印刷p.72 / PDFp.94
 [EXTRA] [EXTRA]实际解族Φ联合C²（原文未重复此较强正则性）；f C¹、Φ0=id、τ>0及实际时间ODE；只对可测S表达Lebesgue体积。 -/
@@ -647,25 +651,38 @@ theorem determinantExponential :
   sorry
 
 /-- source_id: MD-2.3.1-FlowDet · unnumbered_claim · §2.3.1 · 印刷p.73 / PDFp.95
-[EXTRA] [EXTRA]Φ联合C²、f C¹、Φ0=id，τ>0及实际ODE；D0=1由Jacobian初值而非结论假设。 -/
+[EXTRA] [EXTRA]Φ联合C²、f C¹、Φ0=id，τ>0及实际ODE；D0=1由Jacobian初值而非结论假设。 
+[EXTRA] 补全可测集合真实Lebesgue体积结论，保留det=1；显式τ>0对应原[EXTRA]。已有证明仅用两条已证正式结论作合取小修补，无新证明路线。 -/
 theorem flowDet
     (f : ((Fin n) → ℝ) → (Fin n) → ℝ) (hf : ContDiff ℝ 1 f)
     (hdiv : ∀ z, (textbookCoordinateJacobian f z).trace = 0)
     (Φ : ℝ × ((Fin n) → ℝ) → (Fin n) → ℝ) (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
     (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z)) (f (Φ (t, z))) t)
-    (hinit : (fun z => Φ (0, z)) = id) :
-    ∀ t ∈ Icc 0 τ, ∀ z, (textbookCoordinateJacobian (fun y => Φ (t, y)) z).det = 1 := by
-  apply MolecularDynamics.textbookDivergenceFreeFlowJacobian_det_eq_one_of_jointC2 <;> assumption
+    (hinit : (fun z => Φ (0, z)) = id) (_hτ : 0 < τ) :
+    (∀ t ∈ Icc 0 τ, ∀ z, (textbookCoordinateJacobian (fun y => Φ (t, y)) z).det = 1 ) ∧
+    (∀ t ∈ Icc 0 τ, ∀ S : Set (Q n), MeasurableSet S →
+      volume ((fun z ↦ Φ (t,z)) '' S) = volume S) := by
+  constructor
+  · apply MolecularDynamics.textbookDivergenceFreeFlowJacobian_det_eq_one_of_jointC2 <;> assumption
+  · exact MolecularDynamics.textbookDivergenceFreeFlow_volume_image_of_jointC2 f hf hdiv Φ hΦ τ hODE hinit
 
-/-- source_id: MD-2.3.1-LJOscillator · Example 2.3 (model) · §2.3.1 · 印刷p.73–74 / PDFp.95–96 -/
-def ljOscillatorEquation (φ : ℝ → ℝ) (γ : ℝ → ℝ × ℝ) (I : Set ℝ) : Prop :=
+/-- source_id: MD-2.3.1-LJOscillator · Example 2.3 (model) · §2.3.1 · 印刷p.73–74 / PDFp.95–96 
+[EXTRA] 本条绑定明确LJ势4ε[(σ/q)^12−(σ/q)^6]、正参数及正位置；原一般势关系另保留为辅助oscillatorEquation。 -/
+def ljOscillatorEquation (σ ε : ℝ) (_hσ : 0 < σ) (_hε : 0 < ε)
+    (γ : ℝ → ℝ × ℝ) (I : Set ℝ) : Prop :=
+  (∀ t ∈ I, 0 < (γ t).1) ∧
+  ∀ t ∈ I, HasDerivAt γ
+    ((γ t).2,-deriv (fun q : ℝ ↦ 4*ε*((σ/q)^12-(σ/q)^6)) (γ t).1) t
+
+def oscillatorEquation (φ : ℝ → ℝ) (γ : ℝ → ℝ × ℝ) (I : Set ℝ) : Prop :=
   ∀ t ∈ I, HasDerivAt γ ((γ t).2,-deriv φ (γ t).1) t
 
 /-- source_id: MD-2.3.1-LJBoundedPeriodic · unnumbered_claim · §2.3.1 · 印刷p.74 / PDFp.96
-[EXTRA] LJ参数正，实际全时轨迹且位置q>0；平衡解也允许任意正周期。 -/
+[EXTRA] LJ参数正，实际全时轨迹且位置q>0；平衡解也允许任意正周期。 
+[EXTRA] 依赖小修：一般ODE关系改引辅助oscillatorEquation；原显式LJ势、正参数、正位置及全部周期结论逐字保留。 -/
 theorem ljBoundedPeriodic : ∀ (σ ε : ℝ) (γ : ℝ → ℝ × ℝ),
     0 < σ → 0 < ε →
-    ljOscillatorEquation (fun q => 4*ε*((σ/q)^12-(σ/q)^6)) γ Set.univ →
+    oscillatorEquation (fun q => 4*ε*((σ/q)^12-(σ/q)^6)) γ Set.univ →
     (∀ t, 0 < (γ t).1) → Bornology.IsBounded (Set.range γ) →
     ∃ T > 0, ∀ t, γ (t+T) = γ t := by
   sorry

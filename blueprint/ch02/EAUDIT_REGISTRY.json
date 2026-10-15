@@ -268,5 +268,58 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT06/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT07",
+    "section": "2.3.1",
+    "source_ids": [
+      "MD-2.3.1-DeterminantODE",
+      "MD-2.3.1-Divergence",
+      "MD-2.3.1-FlowDet",
+      "MD-2.3.1-HamiltonVolume",
+      "MD-2.3.1-LJBoundedPeriodic",
+      "MD-2.3.1-LJOscillator",
+      "MD-2.3.1-Liouville",
+      "MD-2.3.1-VariationalPrinted"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.1-Divergence",
+      "MD-2.3.1-Liouville",
+      "MD-2.3.1-HamiltonVolume",
+      "MD-2.3.1-DeterminantODE",
+      "MD-2.3.1-FlowDet",
+      "MD-2.3.1-LJOscillator",
+      "MD-2.3.1-LJBoundedPeriodic"
+    ],
+    "human_ids": [
+      "MD-2.3.1-VariationalPrinted"
+    ],
+    "lean_sha256": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+    "source_sha256": "9200fc95dbb921160c987705b4cb673d897e3a0ff2f54303d63df55bbd520365",
+    "pages": [
+      94,
+      95,
+      96
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch02.olean",
+        "Blueprint/Ch02.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+      "log_sha256": "cc65e22ef1038e4301c4588b3ceaa8399ffb1c32faff03c0dc38b4478d2bc883"
+    },
+    "axiom_decl_count": 10,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT07/INDEX.md"
   }
 ]

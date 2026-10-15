@@ -1711,11 +1711,23 @@
     "issues": [],
     "lean_decl": "MD.Ch02.bp_divergence",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留散度辅助定义，并补经典可微向量场的散度恒零谓词；覆盖原句零条件。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:10:09.931611",
+        "before_sha256": "f65c755778fdf003ed02b69cd360ac5f6534b65e75dba99476d5fc8baaa852cf",
+        "after_sha256": "350e0be5a5a06ef7f719c52969531eaa058c3c96bbf7f51c22c3e5b820cf0d5a",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.1-Liouville",
@@ -1738,9 +1750,19 @@
       "[EXTRA]实际解族Φ联合C²（原文未重复此较强正则性）；f C¹、Φ0=id、τ>0及实际时间ODE；只对可测S表达Lebesgue体积。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:10:09.931611",
+        "before_sha256": "38b7c400886bec64429142bb8889c22eb85c78dc2c33252d204d222d4f01739c",
+        "after_sha256": "3734129202806e73e8abbf51c5934c391cba67d2086bcbbe8519310e3d3fdb5b",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.1-HamiltonDivergence",
@@ -1790,9 +1812,19 @@
       "[EXTRA]Φ联合C²；H C²、Φ0=id，τ>0；可测集S。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:10:09.932113",
+        "before_sha256": "062557aea424f64921c592dd516b34127799171ea670f940ccbe0a3d6773d714",
+        "after_sha256": "71b80b96cceda4340a126c6204be0b6b5408ad8eca27063ceaf4eb9ceb7322ff",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.1-VolumeChange",
@@ -1841,8 +1873,18 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:10:09.932113",
+        "before_sha256": "3ae99564ca72892671afbb1cafd7693a24b1662eca9b7932f09e8c2a8f61196e",
+        "after_sha256": "6f4cfd3a7fdef81b3bf186ae2963d916c48527858fa0a588110a9ce93ac019f4",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.1-DeterminantODE",
@@ -1856,7 +1898,7 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "A(t)=f′(z(t))，tr A=div f(z(t))；W满足上一变分ODE。原文除D的等式需D≠0，当前签名登记未除零的最终D′子句。"
+      "A(t)=f′(z(t))，tr A=div f(z(t))；W满足上一变分ODE。原文除D的等式需D≠0；实际Lean签名同时登记最终D′子句及D′/D=tr((AW)W⁻¹)子句，使用HasDerivAt W (A t*W t) t识别W′。A在签名中是一般矩阵系数，取A(t)=f′(z(t))得到原文实例。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch02.determinantODE",
@@ -1867,9 +1909,21 @@
       "实际W′=AW且detW≠0，符合原文W⁻¹及D除法的资格；A=f′(z(t))。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:10:09.932113",
+        "before_sha256": "05180b5f80ad800f00467974b8824540ba2fd6fa410a68c48a0d1d51bc14871e",
+        "after_sha256": "03ef0a4dcc7a260c38eb0b1308b166b2eaa2837abf1a103ff489017d177cab1f",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.1-DeterminantExponential",
@@ -1905,19 +1959,36 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "F_t为ODE ż=f(z)从t=0出发的流映射，F_0=id；F_t′表示关于初始状态的Jacobian。",
+      "D为该Jacobian行列式；初始Jacobian为单位矩阵，故D(0)=1。",
+      "div f=∇·f为向量场散度；S(t)=F_t(S)，Vol(S(t))为像集体积，页上换元公式积分|D|。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch02.flowDet",
     "reusable_proofs": [
       "MolecularDynamics.textbookDivergenceFreeFlowJacobian_det_eq_one_of_jointC2"
     ],
     "extra_assumptions": [
-      "[EXTRA]Φ联合C²、f C¹、Φ0=id，τ>0及实际ODE；D0=1由Jacobian初值而非结论假设。"
+      "[EXTRA]Φ联合C²、f C¹、Φ0=id，τ>0及实际ODE；D0=1由Jacobian初值而非结论假设。",
+      "[EXTRA] 补全可测集合真实Lebesgue体积结论，保留det=1；显式τ>0对应原[EXTRA]。已有证明仅用两条已证正式结论作合取小修补，无新证明路线。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:10:09.932113",
+        "before_sha256": "857e316b3c50da1760f3957561c0a274c719217b59fcb9d776fb9c8e5be209e2",
+        "after_sha256": "e79c1dc5ed463a8336ee0908275765a4c4b50fb936a269e995c5a8142e453bdc",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH13_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.1-LJOscillator",
@@ -1936,11 +2007,23 @@
     "issues": [],
     "lean_decl": "MD.Ch02.ljOscillatorEquation",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 本条绑定明确LJ势4ε[(σ/q)^12−(σ/q)^6]、正参数及正位置；原一般势关系另保留为辅助oscillatorEquation。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:10:09.932113",
+        "before_sha256": "24bae1592cf5ca3d6f2bc18840769290225735bcbd1f537f248bde468118f005",
+        "after_sha256": "ea47e68106d37f6d8c5110c00ce267f8601a1278587daa315e8580194acca1f1",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH13_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.1-LJBoundedPeriodic",
@@ -1953,17 +2036,33 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "this system指Example 2.3中的一维Lennard–Jones振子：q̇=p，ṗ=−φ_LJ′(q)，物理位置q>0。",
+      "bounded individual trajectory指相空间(q,p)中的单条完整轨迹有界；periodic orbit在此按存在正周期解释，平衡轨迹也满足此解释。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch02.ljBoundedPeriodic",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "LJ参数正，实际全时轨迹且位置q>0；平衡解也允许任意正周期。"
+      "LJ参数正，实际全时轨迹且位置q>0；平衡解也允许任意正周期。",
+      "[EXTRA] 依赖小修：一般ODE关系改引辅助oscillatorEquation；原显式LJ势、正参数、正位置及全部周期结论逐字保留。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:10:09.932113",
+        "before_sha256": "10d1f205fba4a4c74157b382f251c2a5f96657e3a9a7bb93f84c4b90b8667f0c",
+        "after_sha256": "8f0242e94852ac75b7ea23adbf055ec85f0e1849beb826c9c40710cdd81078c7",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH13_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.2-LinearDivergence",

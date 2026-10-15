@@ -39,7 +39,8 @@ def oscillatorEquation (φ : ℝ → ℝ) (γ : ℝ → ℝ × ℝ) (I : Set ℝ
         # witness result only if its signature is available during compilation.
         old=current('EulerVolumeCounterexample')
         signature=old.split(' := by')[0].replace('(linearEuler S h).det ≠ 1','|(linearEuler S h).det| ≠ 1')
-        change('EulerVolumeCounterexample',signature+' := by\n  sorry','B','强化见证为每个h≠0时|det(I+hS)|≠1，覆盖实际体积不守恒；原桥接只给det≠1，不能证明强化后的结论，保留sorry并记录原证明不适配，不写新证明。')
+        auxiliary=old.replace('theorem eulerVolumeCounterexample :','theorem eulerVolumeCounterexample_det_only :',1)
+        change('EulerVolumeCounterexample',signature+' := by\n  sorry\n\n'+auxiliary,'B','强化见证为每个h≠0时|det(I+hS)|≠1，覆盖实际体积不守恒；原桥接只给det≠1，原已证结果完整保留为det_only辅助定理并重查，强化结论暂sorry，不写新证明。')
         human['MD-2.3.2-EulerVolumePrinted']='原印体积保存等价det=1遗漏绝对值；选项：批准|det|=1勘误／明确正行列式的小步长限制；保持原印，负行列式反例交导师。'
         eaudit='EAUDIT08';pages=[96,97,98]
     elif section=='2.3.3':
@@ -64,7 +65,7 @@ theorem formSumWedges_components (Nc : ℕ) :
         ∑ a, u a * ((symplecticComponentMatrix i) *ᵥ v) a) ∧
     (∑ i : Fin Nc, symplecticComponentMatrix i) = textbookJ Nc := by
   sorry''','B','保留原总楔积等式，补单项J⁽ⁱ⁾矩阵、逐项评价及ΣJ⁽ⁱ⁾=J；全部原结论保留，新补陈述不写证明。')
-        old=current('SymplecticIffForm');code=old.split(' := by')[0].replace('IsTextbookSymplecticMap Φ','bp_IsSymplecticMap Φ').replace('ContDiff ℝ 1 Φ','Differentiable ℝ Φ')+' := by\n  sorry'
+        old=current('SymplecticIffForm');code=old.split(' := by')[0].replace('IsTextbookSymplecticMap Φ','bp_IsSymplecticMap Φ').replace('ContDiff ℝ 1 Φ','Differentiable ℝ Φ')+' := by\n  sorry\n\n'+old.replace('theorem symplecticIffForm ','theorem symplecticIffForm_C1 ',1)
         change('SymplecticIffForm',code,'A','教材定义等价式使用本章经典可微辛谓词；原正式桥接以C¹为定义，不能直接沿用，保留sorry，不宣称已证。')
         old=current('HamiltonDet');signature=old.split(' := by')[0].replace('    (∀ t ∈ Icc 0 τ, ∀ z,','    (∀ t ∈ Icc 0 τ, IsTextbookSymplecticMap (fun z ↦ Φ (t,z))) ∧\n    (∀ t ∈ Icc 0 τ, ∀ z,',1)
         body=old.split(' := by',1)[1].strip();nested='\n'.join('  '+line for line in body.splitlines())

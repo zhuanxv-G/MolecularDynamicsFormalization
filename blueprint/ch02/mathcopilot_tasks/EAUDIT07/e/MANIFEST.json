@@ -1,0 +1,33 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_id": "MD-2.3.1-FlowDet",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "65dbceb0a969883b6b715021efc8d5f309debc079bb27f21abb808c6b74358d7",
+    "Blueprint/Ch02.lean": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+    "blueprint/ch02/ch02_source.json": "9200fc95dbb921160c987705b4cb673d897e3a0ff2f54303d63df55bbd520365",
+    "EAUDIT07e_materials": "ea344d74e72d43b26e815030e8897434fa76354b036db54ff9c878a80e8ab2fc",
+    "EAUDIT07e_PAGES.pdf": "f45529e2da12b5257d560edf6ff98850a9bf1b29bb387a2379ce61597c65b588"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    95
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "05ee12abe26b5e2c28d772b48f20c22ecbd422c19af4def49ffe81f8c119a444",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/LiouvilleVolume.lean",
+      "name": "textbookCoordinateJacobian",
+      "file_sha256": "cc895f16f329a6dd4943c5ab8d72d7d98dd7d683c006aad395c36ed3be5bf37f",
+      "excerpt_sha256": "96dc75035e362b25476b1c4cbfcd553e5349a04a3b5b286bb07fbb14c496afd0"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT07_review.json",
+  "total_task_bytes": 90855
+}

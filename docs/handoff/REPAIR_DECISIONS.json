@@ -108,5 +108,45 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "2.2.4"
+  },
+  "MD-2.3.1-Divergence": {
+    "category": "B",
+    "handling": "保留散度辅助定义，并补经典可微向量场的散度恒零谓词；覆盖原句零条件。",
+    "section": "2.3.1"
+  },
+  "MD-2.3.1-FlowDet": {
+    "category": "B",
+    "handling": "补全可测集合真实Lebesgue体积结论，保留det=1；显式τ>0对应原[EXTRA]。已有证明仅用两条已证正式结论作合取小修补，无新证明路线。",
+    "section": "2.3.1"
+  },
+  "MD-2.3.1-LJOscillator": {
+    "category": "C",
+    "handling": "本条绑定明确LJ势4ε[(σ/q)^12−(σ/q)^6]、正参数及正位置；原一般势关系另保留为辅助oscillatorEquation。",
+    "section": "2.3.1"
+  },
+  "MD-2.3.1-LJBoundedPeriodic": {
+    "category": "C",
+    "handling": "依赖小修：一般ODE关系改引辅助oscillatorEquation；原显式LJ势、正参数、正位置及全部周期结论逐字保留。",
+    "section": "2.3.1"
+  },
+  "MD-2.3.1-Liouville": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "2.3.1"
+  },
+  "MD-2.3.1-HamiltonVolume": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "2.3.1"
+  },
+  "MD-2.3.1-VariationalPrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "2.3.1"
+  },
+  "MD-2.3.1-DeterminantODE": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "2.3.1"
   }
 }

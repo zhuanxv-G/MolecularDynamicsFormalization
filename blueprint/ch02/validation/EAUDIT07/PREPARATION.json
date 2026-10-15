@@ -1,0 +1,41 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT07",
+  "section": "2.3.1",
+  "source_ids": [
+    "MD-2.3.1-DeterminantODE",
+    "MD-2.3.1-Divergence",
+    "MD-2.3.1-FlowDet",
+    "MD-2.3.1-HamiltonVolume",
+    "MD-2.3.1-LJBoundedPeriodic",
+    "MD-2.3.1-LJOscillator",
+    "MD-2.3.1-Liouville",
+    "MD-2.3.1-VariationalPrinted"
+  ],
+  "reaudit_ids": [
+    "MD-2.3.1-Divergence",
+    "MD-2.3.1-Liouville",
+    "MD-2.3.1-HamiltonVolume",
+    "MD-2.3.1-DeterminantODE",
+    "MD-2.3.1-FlowDet",
+    "MD-2.3.1-LJOscillator",
+    "MD-2.3.1-LJBoundedPeriodic"
+  ],
+  "human_ids": [
+    "MD-2.3.1-VariationalPrinted"
+  ],
+  "old_lean_sha256": "406698a1645967e6dd64bf27d8532953a3073866ed33d93985b1d26f61603802",
+  "lean_sha256": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+  "source_sha256": "9200fc95dbb921160c987705b4cb673d897e3a0ff2f54303d63df55bbd520365",
+  "pages": [
+    94,
+    95,
+    96
+  ],
+  "prior_proof_blocks": {
+    "MD-2.3.1-Divergence": "def bp_divergence {n : ℕ} (f : Q n → Q n) (z : Q n) : ℝ := (textbookCoordinateJacobian f z).trace",
+    "MD-2.3.1-FlowDet": "theorem flowDet\n    (f : ((Fin n) → ℝ) → (Fin n) → ℝ) (hf : ContDiff ℝ 1 f)\n    (hdiv : ∀ z, (textbookCoordinateJacobian f z).trace = 0)\n    (Φ : ℝ × ((Fin n) → ℝ) → (Fin n) → ℝ) (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)\n    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z)) (f (Φ (t, z))) t)\n    (hinit : (fun z => Φ (0, z)) = id) :\n    ∀ t ∈ Icc 0 τ, ∀ z, (textbookCoordinateJacobian (fun y => Φ (t, y)) z).det = 1 := by\n  apply MolecularDynamics.textbookDivergenceFreeFlowJacobian_det_eq_one_of_jointC2 <;> assumption",
+    "MD-2.3.1-LJOscillator": "def ljOscillatorEquation (φ : ℝ → ℝ) (γ : ℝ → ℝ × ℝ) (I : Set ℝ) : Prop :=\n  ∀ t ∈ I, HasDerivAt γ ((γ t).2,-deriv φ (γ t).1) t",
+    "MD-2.3.1-LJBoundedPeriodic": "theorem ljBoundedPeriodic : ∀ (σ ε : ℝ) (γ : ℝ → ℝ × ℝ),\n    0 < σ → 0 < ε →\n    ljOscillatorEquation (fun q => 4*ε*((σ/q)^12-(σ/q)^6)) γ Set.univ →\n    (∀ t, 0 < (γ t).1) → Bornology.IsBounded (Set.range γ) →\n    ∃ T > 0, ∀ t, γ (t+T) = γ t := by\n  sorry"
+  }
+}

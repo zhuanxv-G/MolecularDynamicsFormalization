@@ -62,17 +62,17 @@
 | MD-2.2.4-IntegralMeanValue | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
 | MD-2.2.4-IntegralLipschitz | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | local_proof / self-contained |
 | MD-2.2.4-IntegralErrorPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT06（原返回FAIL保留） | placeholder / incomplete；原书1/2因子裁定；均值与轨迹误差组合。 |
-| MD-2.3.1-Divergence | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.3.1-Liouville | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.1-Divergence | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
+| MD-2.3.1-Liouville | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | existing_bridge / checked+documented priors |
 | MD-2.3.1-HamiltonDivergence | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.3.1-HamiltonVolume | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.1-HamiltonVolume | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | existing_bridge / checked+documented priors |
 | MD-2.3.1-VolumeChange | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
-| MD-2.3.1-VariationalPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书取值点裁定；正确固定初值版本库已有jointC²证明。 |
-| MD-2.3.1-DeterminantODE | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.1-VariationalPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT07（原返回FAIL保留） | placeholder / incomplete；原书取值点裁定；正确固定初值版本库已有jointC²证明。 |
+| MD-2.3.1-DeterminantODE | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | existing_bridge / checked+documented priors |
 | MD-2.3.1-DeterminantExponential | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；真实矩阵行列式导数与标量积分因子常值证明。 |
-| MD-2.3.1-FlowDet | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.3.1-LJOscillator | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.3.1-LJBoundedPeriodic | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；LJ能级闭曲线/非平衡周期轨道理论；能量守恒本身不足以自动得周期。 |
+| MD-2.3.1-FlowDet | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | existing_bridge / checked+documented priors |
+| MD-2.3.1-LJOscillator | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
+| MD-2.3.1-LJBoundedPeriodic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | placeholder / incomplete；LJ能级闭曲线/非平衡周期轨道理论；能量守恒本身不足以自动得周期。 |
 | MD-2.3.2-LinearDivergence | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；线性流行列式指数公式及体积换元的必要/充分方向。 |
 | MD-2.3.2-LinearEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.3.2-EulerVolumePrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete |
@@ -419,3 +419,5 @@ EAUDIT04 §2.2.2：4条落盘，单文件与4项公理通过；未写新证明�
 EAUDIT05 §2.2.3：7条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT06 §2.2.4：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT07 §2.3.1：8条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。

@@ -1926,16 +1926,16 @@
     "MD-2.3.1-Divergence": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_divergence",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "06d622e99a994ecf60fe7d1d45dff3588510734972791164d18cd85b150a3416",
-      "block_sha256": "06d622e99a994ecf60fe7d1d45dff3588510734972791164d18cd85b150a3416",
+      "signature_sha256": "645967d863c32c141b74348356ac0e8d795ec9bcf7fa93346a7fed83ac311b98",
+      "block_sha256": "645967d863c32c141b74348356ac0e8d795ec9bcf7fa93346a7fed83ac311b98",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -1952,14 +1952,15 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT07/axioms.log",
+      "compiled": true
     },
     "MD-2.3.1-Liouville": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.liouville",
@@ -1985,7 +1986,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT07/axioms.log",
+      "compiled": true
     },
     "MD-2.3.1-HamiltonDivergence": {
       "checked": true,
@@ -2023,9 +2025,9 @@
     "MD-2.3.1-HamiltonVolume": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.hamiltonVolume",
@@ -2051,7 +2053,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT07/axioms.log",
+      "compiled": true
     },
     "MD-2.3.1-VolumeChange": {
       "checked": true,
@@ -2092,10 +2095,10 @@
     "MD-2.3.1-VariationalPrinted": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.variationalPrinted",
@@ -2119,15 +2122,16 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT07/axioms.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
+      "compiled": true
     },
     "MD-2.3.1-DeterminantODE": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.determinantODE",
@@ -2153,12 +2157,13 @@
       "suggested_fix": null,
       "proof_attempts": 2,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT07/axioms.log",
       "proof_failures": 1,
       "attempt_evidence": [
         "blueprint/ch02/validation/section23-draft1.log",
         "blueprint/ch02/validation/section23-draft2.log"
-      ]
+      ],
+      "compiled": true
     },
     "MD-2.3.1-DeterminantExponential": {
       "checked": true,
@@ -2196,16 +2201,16 @@
     "MD-2.3.1-FlowDet": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.flowDet",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "e26cc89140a1b0029f9ed5cf4e10a1bee280615d0ae82395a761baef2bc3998c",
-      "block_sha256": "85006e92ff914615aa6e4dafa1ed7b6f2d262a072394f18cafc28b39c15dcf59",
+      "signature_sha256": "1c93333dc885755e368fa75208c49d5d034d430586095343ae1873a7c6fd5874",
+      "block_sha256": "7b0817f1b70801fa3d57fcd1e2b02090f8f8be6605c599de041aae25812ded53",
       "direct_placeholder": false,
       "proof_status": "existing_bridge",
       "documented_priors": [
@@ -2224,21 +2229,22 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT07/axioms.log",
+      "compiled": true
     },
     "MD-2.3.1-LJOscillator": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.ljOscillatorEquation",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "44c3fb1ff72827123789ce65d4fc9708bab7f17453c8b4cac431d5e4b8bb77fa",
-      "block_sha256": "44c3fb1ff72827123789ce65d4fc9708bab7f17453c8b4cac431d5e4b8bb77fa",
+      "signature_sha256": "1f91db42cd9acee7e62b7ae3aba6f5e8b5e13b75505d5776df7d42883ca22041",
+      "block_sha256": "1f91db42cd9acee7e62b7ae3aba6f5e8b5e13b75505d5776df7d42883ca22041",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -2255,22 +2261,23 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT07/axioms.log",
+      "compiled": true
     },
     "MD-2.3.1-LJBoundedPeriodic": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.ljBoundedPeriodic",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "22498ca2f035d27f2ffaf4cc308031586846c4884ce4c37967fb2f4013eae195",
-      "block_sha256": "a1a757f59db8cd898f8217bc5fcb7b3b66c4182f447e5f8ed30377aa528e34a1",
+      "signature_sha256": "1557fbd2365cc335d6ac40831a83317c0cd5a9e2f560925aada7ab084d42ab34",
+      "block_sha256": "c919fb35adda1449f2a4e74c9f33edfbbd2912a56e4ebb99dc8d52bd707f93d1",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -2287,8 +2294,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT07/axioms.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "compiled": true
     },
     "MD-2.3.2-LinearDivergence": {
       "checked": true,

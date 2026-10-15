@@ -1,0 +1,27 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_id": "MD-2.3.1-Liouville",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "65dbceb0a969883b6b715021efc8d5f309debc079bb27f21abb808c6b74358d7",
+    "Blueprint/Ch02.lean": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+    "blueprint/ch02/ch02_source.json": "9200fc95dbb921160c987705b4cb673d897e3a0ff2f54303d63df55bbd520365",
+    "EAUDIT07b_materials": "218ffb4d0540a2b44452fe1f24ada366ef4999b2dffa4a0fb6c6c3f60827c32b",
+    "EAUDIT07b_PAGES.pdf": "e4485ec320208aa15736c7c765fd15ecdaaabdd735d00cbfd847cad98bffd949"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    94
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "bdba4300c0b6c27d1c890b69cc89351aee45ffd7c897467604d2e074ab356cd7",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/LiouvilleVolume.lean",
+      "name": "textbookCoordinateJacobian",
+      "file_sha256": "cc895f16f329a6dd4943c5ab8d72d7d98dd7d683c006aad395c36ed3be5bf37f",
+      "excerpt_sha256": "96dc75035e362b25476b1c4cbfcd553e5349a04a3b5b286bb07fbb14c496afd0"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT07_review.json",
+  "total_task_bytes": 90654
+}

@@ -1,0 +1,76 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.3.1-Divergence；原PDF页映射=[94]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT07_review.json，对象含batch=EAUDIT07、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT07.md": "65dbceb0a969883b6b715021efc8d5f309debc079bb27f21abb808c6b74358d7",
+  "Blueprint/Ch02.lean": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+  "blueprint/ch02/ch02_source.json": "9200fc95dbb921160c987705b4cb673d897e3a0ff2f54303d63df55bbd520365",
+  "EAUDIT07a_materials": "8f863771143ca0a4f3e555ba9d41be873bd564b2488ce1b0520b29b524ecadf3",
+  "EAUDIT07a_PAGES.pdf": "e4485ec320208aa15736c7c765fd15ecdaaabdd735d00cbfd847cad98bffd949"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.3.1-Divergence",
+  "kind": "definition",
+  "label": null,
+  "section": "2.3.1",
+  "printed_page": "72",
+  "pdf_page": "94",
+  "statement_latex": "the divergence of $f$ vanishes, i.e.\n\\[\\nabla\\cdot f=\\sum_{i=1}^m\\frac{\\partial f_i}{\\partial z_i}=0.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "div f为实际Jacobian的迹；f C¹。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.bp_divergence",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] 保留散度辅助定义，并补经典可微向量场的散度恒零谓词；覆盖原句零条件。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT07_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:10:09.931611",
+      "before_sha256": "f65c755778fdf003ed02b69cd360ac5f6534b65e75dba99476d5fc8baaa852cf",
+      "after_sha256": "350e0be5a5a06ef7f719c52969531eaa058c3c96bbf7f51c22c3e5b820cf0d5a",
+      "changed_fields": [],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH12_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean
+```lean
+def bp_divergence {n : ℕ} (f : Q n → Q n) (z : Q n) : ℝ := (textbookCoordinateJacobian f z).trace
+
+def divergenceFree {n : ℕ} (f : Q n → Q n) : Prop :=
+  Differentiable ℝ f ∧ ∀ z, bp_divergence f z = 0
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MD.Ch02.bp_divergence
+```lean
+def bp_divergence {n : ℕ} (f : Q n → Q n) (z : Q n) : ℝ := (textbookCoordinateJacobian f z).trace
+```
+### 实际依赖 MD.Ch02.divergenceFree
+```lean
+def divergenceFree {n : ℕ} (f : Q n → Q n) : Prop :=
+  Differentiable ℝ f ∧ ∀ z, bp_divergence f z = 0
+```
+### 实际依赖 MolecularDynamics.textbookCoordinateJacobian
+```lean
+noncomputable def textbookCoordinateJacobian (f : (ι → ℝ) → ι → ℝ) (z : ι → ℝ) :
+    Matrix ι ι ℝ := LinearMap.toMatrix' (fderiv ℝ f z).toLinearMap
+```

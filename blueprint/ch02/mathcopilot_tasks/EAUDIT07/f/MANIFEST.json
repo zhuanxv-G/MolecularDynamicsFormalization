@@ -1,0 +1,34 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_id": "MD-2.3.1-LJOscillator",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "65dbceb0a969883b6b715021efc8d5f309debc079bb27f21abb808c6b74358d7",
+    "Blueprint/Ch02.lean": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+    "blueprint/ch02/ch02_source.json": "9200fc95dbb921160c987705b4cb673d897e3a0ff2f54303d63df55bbd520365",
+    "EAUDIT07f_materials": "a4ea617ec56583071a58e6c08c0fdadfcef0dd6aa1d18f5806e4026f7ead239b",
+    "EAUDIT07f_PAGES.pdf": "cf70a4e3fc603422a5413df34b8877ccc2bf5ff402458741c690e40cea29a1fb"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    95,
+    96
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "00121d05e27dd541baedb4f7e5fe62735539c390da386cd906fb2e8adc638302",
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "ljOscillatorEquation",
+      "file_sha256": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+      "excerpt_sha256": "ee5b698e20fdf549fcdddd43249b1161c877f0714ebc9113c684f923d7baa1fe"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "oscillatorEquation",
+      "file_sha256": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+      "excerpt_sha256": "275459b19fdeef2475e46c3e0d0b59e865679f2973a18da8cf0730e51471fc1a"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT07_review.json",
+  "total_task_bytes": 178294
+}

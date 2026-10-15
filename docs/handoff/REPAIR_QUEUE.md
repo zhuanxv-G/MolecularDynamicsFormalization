@@ -2,10 +2,10 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 542）。
+完成状态：修复进行中（待处理项目/原文审校计数 532）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
-第2章：网站PASS 98 / 已修待复审 21 / 待导师 6 / 修复中 35。
+第2章：网站PASS 94 / 已修待复审 28 / 待导师 7 / 修复中 31。
 第3章：网站PASS 91 / 已修待复审 4 / 待导师 5 / 修复中 49。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
@@ -67,17 +67,17 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 2 | MD-2.2.4-IntegralMeanValue | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.4-IntegralLipschitz | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT06 |
 | 2 | MD-2.2.4-IntegralErrorPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT06 |
-| 2 | MD-2.3.1-Divergence | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
-| 2 | MD-2.3.1-Liouville | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
+| 2 | MD-2.3.1-Divergence | FAIL | B | 保留散度辅助定义，并补经典可微向量场的散度恒零谓词；覆盖原句零条件。 | 已修待复审 | EAUDIT07 |
+| 2 | MD-2.3.1-Liouville | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT07 |
 | 2 | MD-2.3.1-HamiltonDivergence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.1-HamiltonVolume | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
+| 2 | MD-2.3.1-HamiltonVolume | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT07 |
 | 2 | MD-2.3.1-VolumeChange | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.1-VariationalPrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 2 | MD-2.3.1-DeterminantODE | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
+| 2 | MD-2.3.1-VariationalPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT07 |
+| 2 | MD-2.3.1-DeterminantODE | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT07 |
 | 2 | MD-2.3.1-DeterminantExponential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.1-FlowDet | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 2 | MD-2.3.1-LJOscillator | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 2 | MD-2.3.1-LJBoundedPeriodic | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
+| 2 | MD-2.3.1-FlowDet | FAIL | B | 补全可测集合真实Lebesgue体积结论，保留det=1；显式τ>0对应原[EXTRA]。已有证明仅用两条已证正式结论作合取小修补，无新证明路线。 | 已修待复审 | EAUDIT07 |
+| 2 | MD-2.3.1-LJOscillator | FAIL | C | 本条绑定明确LJ势4ε[(σ/q)^12−(σ/q)^6]、正参数及正位置；原一般势关系另保留为辅助oscillatorEquation。 | 已修待复审 | EAUDIT07 |
+| 2 | MD-2.3.1-LJBoundedPeriodic | PASS | C | 依赖小修：一般ODE关系改引辅助oscillatorEquation；原显式LJ势、正参数、正位置及全部周期结论逐字保留。 | 已修待复审 | EAUDIT07 |
 | 2 | MD-2.3.2-LinearDivergence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.2-LinearEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.2-EulerVolumePrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |

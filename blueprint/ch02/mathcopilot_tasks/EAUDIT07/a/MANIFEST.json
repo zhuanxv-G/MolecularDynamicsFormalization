@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_id": "MD-2.3.1-Divergence",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "65dbceb0a969883b6b715021efc8d5f309debc079bb27f21abb808c6b74358d7",
+    "Blueprint/Ch02.lean": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+    "blueprint/ch02/ch02_source.json": "9200fc95dbb921160c987705b4cb673d897e3a0ff2f54303d63df55bbd520365",
+    "EAUDIT07a_materials": "8f863771143ca0a4f3e555ba9d41be873bd564b2488ce1b0520b29b524ecadf3",
+    "EAUDIT07a_PAGES.pdf": "e4485ec320208aa15736c7c765fd15ecdaaabdd735d00cbfd847cad98bffd949"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    94
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "2e8ea67d743d21d1567211f6559a1b52c0b9ccb52e6b78a1270007d338809885",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_divergence",
+      "file_sha256": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+      "excerpt_sha256": "06d622e99a994ecf60fe7d1d45dff3588510734972791164d18cd85b150a3416"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "divergenceFree",
+      "file_sha256": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+      "excerpt_sha256": "2e2bb49f511e3a1dd346a77e7406744668d87ec366ff9c32561d7bf10d157577"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/LiouvilleVolume.lean",
+      "name": "textbookCoordinateJacobian",
+      "file_sha256": "cc895f16f329a6dd4943c5ab8d72d7d98dd7d683c006aad395c36ed3be5bf37f",
+      "excerpt_sha256": "96dc75035e362b25476b1c4cbfcd553e5349a04a3b5b286bb07fbb14c496afd0"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT07_review.json",
+  "total_task_bytes": 91302
+}

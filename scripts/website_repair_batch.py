@@ -55,6 +55,8 @@ def prepare(ch, eaudit, section, edits, *, pages, source_only=(), human=None):
         if sid in edits:
             note='[EXTRA] '+edits[sid]['note']
             if note not in s['extra_assumptions']: s['extra_assumptions'].append(note)
+            if 'scope' in edits[sid] and s.get('statement_scope') != edits[sid]['scope']:
+                s['statement_scope']=edits[sid]['scope'];changed.append('statement_scope')
             overrides[sid]={'code':edits[sid]['code'].strip(),'extra_assumptions':s['extra_assumptions']}
         s['source_page_verification']=f'VERIFIED_RENDERED; validation/{eaudit}/SOURCE_PAGE_VERIFICATION.json'
         s.setdefault('repair_log',[]).append(dict(stage=eaudit+'_LOCAL_REPAIR',timestamp=datetime.now().isoformat(),before_sha256=old,after_sha256=entry_hash(s),changed_fields=changed,raw_return=w.get('json_review_raw_path',w['raw_path']),reason='已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。'))
