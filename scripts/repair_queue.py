@@ -50,12 +50,13 @@ def render():
     text += '\n| 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |\n|---|---|---|---|---|---|---|\n'
     (HANDOFF/'REPAIR_QUEUE.md').write_text(text+'\n'.join(rows)+'\n',encoding='utf-8')
     state = HANDOFF/'CURRENT_STATE.zh-CN.md'; lines = state.read_text(encoding='utf-8').splitlines()
+    active_end = next((i for i,x in enumerate(lines) if x.startswith('## 历史状态')),len(lines))
+    active = lines[:active_end]; history = lines[active_end:]
     for ch, c in totals.items():
         row = f'第{ch}章：网站PASS {c["website_pass"]} / 已修待复审 {c["awaiting_reaudit"]} / 待导师 {c["awaiting_mentor"]} / 修复中 {c["repairing"]}。'
-        indices = [i for i,x in enumerate(lines[:25]) if x.startswith(f'第{ch}章：网站PASS ')]
-        if indices: lines[indices[0]] = row
-        else: lines.insert(5,row)
-    state.write_text('\n'.join(lines)+'\n',encoding='utf-8')
+        active = [x for x in active if not x.startswith(f'第{ch}章：网站PASS ')]
+        active.insert(5+ch-2,row)
+    state.write_text('\n'.join(active+history)+'\n',encoding='utf-8')
     return totals
 
 if __name__ == '__main__':

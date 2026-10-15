@@ -386,7 +386,7 @@
       "lean_decl": "MD.Ch02.verletOrder",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "c07b38837f52424197c58718962f6ea1b09fd6ef56c8b3400e923b7dbc083dd0",
+      "signature_sha256": "1e54482c06b3079451be92c8c4ade8d879ea548379f6f22f5daeb9bf4a8dd0e4",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -402,10 +402,11 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "block_sha256": "ae931b5cec14e4cfe032f1d9d629f8b4d40ecce708e3531f8a5050431b42026e",
+      "block_sha256": "869f83f584b4e7160ec13f8e352450f11642c0391aa24605ea0c87c62392bcb2",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT02/axioms.log",
+      "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
+      "compiled": true
     },
     "MD-2.2.1-Lagrangian": {
       "checked": true,

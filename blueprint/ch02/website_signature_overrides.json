@@ -18,5 +18,12 @@
     "extra_assumptions": [
       "[EXTRA] EAUDIT01在开放正规相空间D排除势能不可微/奇异点；F的已给全时解族与初值/完整机械ODE相联，G作用于同一D，Z关联全部实际n次迭代。oneStepTargetDifference明确目标F_h与G_h的差；原段未规定定量近似质量，未加入虚构误差阶或收敛结论。全时流是此接口的给定模型资格，不是解存在定理。"
     ]
+  },
+  "MD-2.2-VerletOrder": {
+    "code": "theorem verletOrder :\n  ∀ n (m : Fin n → ℝ) (F : Q n → Q n) (γ : ℝ → Z n) τ,\n    positiveMass m → ContDiff ℝ 4 F → 0 < τ →\n    solution (fun z : Z n ↦ (z.2, invMass m (F z.1))) γ 0 τ → ContinuousOn γ (Icc 0 τ) →\n    ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,\n      oneStepMaxError (velocityVerlet m F) (τ / ν) γ ν ≤ C * (τ / ν)^2 := by\n  sorry",
+    "extra_assumptions": [
+      "固定正对角质量、力全域C⁴、τ>0及实际解在闭时间窗连续；原文未逐一给出的阶定理正则性显式列出。",
+      "[EXTRA] 网站首选路线：直接保留原文(q,v)速度变量，使用已定义velocityVerlet与真实速度场(v,M⁻¹F(q))；正对角质量及C⁴为充分但非最小资格，闭窗连续性为冗余明确限制。未更改正式mechanicalField/verlet，不新增证明。"
+    ]
   }
 }

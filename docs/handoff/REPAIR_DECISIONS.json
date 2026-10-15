@@ -1,0 +1,7 @@
+{
+  "MD-2.2-VerletOrder": {
+    "category": "C",
+    "handling": "网站首选路线：直接保留原文(q,v)速度变量，使用已定义velocityVerlet与真实速度场(v,M⁻¹F(q))；正对角质量及C⁴为充分但非最小资格，闭窗连续性为冗余明确限制。未更改正式mechanicalField/verlet，不新增证明。",
+    "section": "2.2"
+  }
+}

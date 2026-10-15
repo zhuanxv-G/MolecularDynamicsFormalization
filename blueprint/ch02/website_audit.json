@@ -1242,7 +1242,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）",
+    "repair": {
+      "eaudit": "EAUDIT02",
+      "status": "prepared_unverified",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT02/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT02.md": "4290e3ddeae4535a227cb818b2283da930e651bab118d53ba509a5a2a230c1ff",
+        "Blueprint/Ch02.lean": "a02bd2a0161e157728967ff463d4565c2b9884759911c373a37e365bc4c5ad6f",
+        "blueprint/ch02/ch02_source.json": "264aac2b8ecc854dcf289578aea319c7a14b4dac5b9b33d3c132df57a44f5f5d"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.1-Lagrangian",

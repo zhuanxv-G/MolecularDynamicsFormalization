@@ -1,0 +1,18 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-o",
+    ".lake/build/lib/lean/Blueprint/Ch02.olean",
+    "Blueprint/Ch02.lean"
+  ],
+  "input_sha256": "a02bd2a0161e157728967ff463d4565c2b9884759911c373a37e365bc4c5ad6f",
+  "parent_pid": 5476,
+  "parent_create_time": 1791993321.7388296,
+  "compiler_pid": 14288,
+  "compiler_create_time": 1791993323.2171233,
+  "started_at": "2026-10-14T23:55:23.360607",
+  "status": "interrupted_unverified",
+  "reason": "2026-10-15 resumed after user/environment interruption; recorded parent/compiler no longer alive; no completion receipt"
+}

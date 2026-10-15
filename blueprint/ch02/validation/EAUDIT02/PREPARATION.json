@@ -1,0 +1,21 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT02",
+  "section": "2.2",
+  "source_ids": [
+    "MD-2.2-VerletOrder"
+  ],
+  "reaudit_ids": [
+    "MD-2.2-VerletOrder"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "24f728085e058546c4a32b4229d5c7ec328a746f5f53b59aaf7ca1b8d2062e89",
+  "lean_sha256": "a02bd2a0161e157728967ff463d4565c2b9884759911c373a37e365bc4c5ad6f",
+  "source_sha256": "264aac2b8ecc854dcf289578aea319c7a14b4dac5b9b33d3c132df57a44f5f5d",
+  "pages": [
+    82
+  ],
+  "prior_proof_blocks": {
+    "MD-2.2-VerletOrder": "theorem verletOrder :\n  ∀ n (m : Fin n → ℝ) (F : Q n → Q n) (γ : ℝ → Z n) τ,\n    positiveMass m → ContDiff ℝ 4 F → 0 < τ →\n    solution (mechanicalField m F) γ 0 τ → ContinuousOn γ (Icc 0 τ) →\n    ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,\n      oneStepMaxError (verlet m F) (τ / ν) γ ν ≤ C * (τ / ν)^2 := by\n  sorry"
+  }
+}

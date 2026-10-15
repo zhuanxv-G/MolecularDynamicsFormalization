@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT02",
+  "input_sha256": {
+    "BATCH_EAUDIT02.md": "4290e3ddeae4535a227cb818b2283da930e651bab118d53ba509a5a2a230c1ff",
+    "Blueprint/Ch02.lean": "a02bd2a0161e157728967ff463d4565c2b9884759911c373a37e365bc4c5ad6f",
+    "blueprint/ch02/ch02_source.json": "264aac2b8ecc854dcf289578aea319c7a14b4dac5b9b33d3c132df57a44f5f5d"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT02a",
+      "source_id": "MD-2.2-VerletOrder",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT02/a",
+      "total_bytes": 109815,
+      "manifest_sha256": "fb2d3d088ab68a27198da236ef0a71b7307f0bffa1ef0d0daaa29fc124b79584"
+    }
+  ]
+}

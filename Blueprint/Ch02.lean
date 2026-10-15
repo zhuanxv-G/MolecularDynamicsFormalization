@@ -113,13 +113,14 @@ theorem taylor2Order :
   sorry
 
 /-- source_id: MD-2.2-VerletOrder · unnumbered_claim · §2.2 · 印刷p.60 / PDFp.82
-[EXTRA] 固定正对角质量、力全域C⁴、τ>0及实际解在闭时间窗连续；原文未逐一给出的阶定理正则性显式列出。 -/
+[EXTRA] 固定正对角质量、力全域C⁴、τ>0及实际解在闭时间窗连续；原文未逐一给出的阶定理正则性显式列出。 
+[EXTRA] 网站首选路线：直接保留原文(q,v)速度变量，使用已定义velocityVerlet与真实速度场(v,M⁻¹F(q))；正对角质量及C⁴为充分但非最小资格，闭窗连续性为冗余明确限制。未更改正式mechanicalField/verlet，不新增证明。 -/
 theorem verletOrder :
   ∀ n (m : Fin n → ℝ) (F : Q n → Q n) (γ : ℝ → Z n) τ,
     positiveMass m → ContDiff ℝ 4 F → 0 < τ →
-    solution (mechanicalField m F) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
+    solution (fun z : Z n ↦ (z.2, invMass m (F z.1))) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
     ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
-      oneStepMaxError (verlet m F) (τ / ν) γ ν ≤ C * (τ / ν)^2 := by
+      oneStepMaxError (velocityVerlet m F) (τ / ν) γ ν ≤ C * (τ / ν)^2 := by
   sorry
 
 /-- source_id: MD-2.2.1-Lagrangian · definition · §2.2.1 · 印刷p.60 / PDFp.82 -/

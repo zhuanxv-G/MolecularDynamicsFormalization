@@ -18,7 +18,7 @@
 | MD-2.1.2-SecondDerivative | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
 | MD-2.1.2-Taylor2 | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.1.2-Taylor2Order | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；缺一般Taylor方法局部截断误差、数值留域与全局阶桥接；当前库仅一般one-step条件误差定理。 |
-| MD-2.2-VerletOrder | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；缺完整Verlet局部截断误差、稳定性及数值留域推导。 |
+| MD-2.2-VerletOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；缺完整Verlet局部截断误差、稳定性及数值留域推导。 |
 | MD-2.2.1-Lagrangian | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.2.1-Admissible | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
 | MD-2.2.1-Action | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
@@ -409,3 +409,5 @@
 
 EAUDIT01：章首3条reaudit FAIL完整修复；原页75–76、单文件、完整check/160条公理、3份compact通过；仅定义，未新增定量误差或实际解存在证明，网站复审待提交。
 历史DELIVERY_VALIDATION仅对应8ca2ccf原版本；当前修复验收见validation/EAUDIT01/ACCEPTANCE.json。
+
+EAUDIT02 §2.2：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
