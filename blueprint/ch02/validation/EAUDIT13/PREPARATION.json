@@ -1,0 +1,30 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT13",
+  "section": "2.3.7",
+  "source_ids": [
+    "MD-2.3.7-Adjoint",
+    "MD-2.3.7-AdjointInvolution",
+    "MD-2.3.7-AdjointSymplecticEuler",
+    "MD-2.3.7-BackwardEuler",
+    "MD-2.3.7-FlowSelfAdjoint"
+  ],
+  "reaudit_ids": [
+    "MD-2.3.7-Adjoint",
+    "MD-2.3.7-FlowSelfAdjoint",
+    "MD-2.3.7-BackwardEuler",
+    "MD-2.3.7-AdjointSymplecticEuler",
+    "MD-2.3.7-AdjointInvolution"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "5731cf203876637f928cb6f318cc260e06a8cb25393dd1c49cf2523af691fe4c",
+  "lean_sha256": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+  "source_sha256": "5c8cf8eab6b79ac4a968c37e517e5b8e3fcf9aaaa34d87fe6d07c9d145144c8b",
+  "pages": [
+    103,
+    104
+  ],
+  "prior_proof_blocks": {
+    "MD-2.3.7-AdjointSymplecticEuler": "noncomputable def bp_adjointSymplecticEuler {Nc : ℕ}\n    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :\n    Equiv.Perm (SymplecticCoordinates Nc) :=\n  textbookAdjointMethod (textbookSymplecticEulerEquiv m U) h"
+  }
+}

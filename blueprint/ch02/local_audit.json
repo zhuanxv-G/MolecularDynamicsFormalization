@@ -3625,9 +3625,9 @@
     "MD-2.3.7-Adjoint": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_adjoint",
@@ -3651,14 +3651,15 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT13/axioms.log",
+      "compiled": true
     },
     "MD-2.3.7-FlowSelfAdjoint": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.flowSelfAdjoint",
@@ -3684,14 +3685,15 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT13/axioms.log",
+      "compiled": true
     },
     "MD-2.3.7-BackwardEuler": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_backwardEulerRelation",
@@ -3715,7 +3717,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT13/axioms.log",
+      "compiled": true
     },
     "MD-2.3.7-EulerAdjoint": {
       "checked": true,
@@ -3753,17 +3756,18 @@
     "MD-2.3.7-AdjointSymplecticEuler": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch02.bp_adjointSymplecticEuler",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "c292e2abe748bed70188ca6aa328d53b6608001f937e3a5ccb9a60a614dff88e",
-      "block_sha256": "c292e2abe748bed70188ca6aa328d53b6608001f937e3a5ccb9a60a614dff88e",
-      "direct_placeholder": false,
+      "signature_sha256": "36bb34c11b7697cb76e3cc5fb4228a5196dc971c456a7ae11c1ea699a93349f9",
+      "block_sha256": "36bb34c11b7697cb76e3cc5fb4228a5196dc971c456a7ae11c1ea699a93349f9",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -3779,14 +3783,15 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT13/axioms.log",
+      "compiled": true
     },
     "MD-2.3.7-AdjointInvolution": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.adjointInvolution",
@@ -3812,7 +3817,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT13/axioms.log",
+      "compiled": true
     },
     "MD-2.4.1-Splitting": {
       "checked": true,

@@ -10224,7 +10224,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT13",
+    "repair": {
+      "eaudit": "EAUDIT13",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT13.md": "f57f68e8217712fdce01ad7ff99378246ca089c890b8b4e3b4e5e348ed4406d3",
+        "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+        "blueprint/ch02/ch02_source.json": "5c8cf8eab6b79ac4a968c37e517e5b8e3fcf9aaaa34d87fe6d07c9d145144c8b"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.7-FlowSelfAdjoint",
@@ -10334,7 +10346,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "NEEDS_HUMAN（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT13",
+    "repair": {
+      "eaudit": "EAUDIT13",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT13.md": "f57f68e8217712fdce01ad7ff99378246ca089c890b8b4e3b4e5e348ed4406d3",
+        "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+        "blueprint/ch02/ch02_source.json": "5c8cf8eab6b79ac4a968c37e517e5b8e3fcf9aaaa34d87fe6d07c9d145144c8b"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.7-BackwardEuler",
@@ -10443,7 +10467,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT13",
+    "repair": {
+      "eaudit": "EAUDIT13",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT13.md": "f57f68e8217712fdce01ad7ff99378246ca089c890b8b4e3b4e5e348ed4406d3",
+        "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+        "blueprint/ch02/ch02_source.json": "5c8cf8eab6b79ac4a968c37e517e5b8e3fcf9aaaa34d87fe6d07c9d145144c8b"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.7-EulerAdjoint",
@@ -10632,7 +10668,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT13",
+    "repair": {
+      "eaudit": "EAUDIT13",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT13.md": "f57f68e8217712fdce01ad7ff99378246ca089c890b8b4e3b4e5e348ed4406d3",
+        "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+        "blueprint/ch02/ch02_source.json": "5c8cf8eab6b79ac4a968c37e517e5b8e3fcf9aaaa34d87fe6d07c9d145144c8b"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.7-AdjointInvolution",
@@ -10742,7 +10790,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT13",
+    "repair": {
+      "eaudit": "EAUDIT13",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT13.md": "f57f68e8217712fdce01ad7ff99378246ca089c890b8b4e3b4e5e348ed4406d3",
+        "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+        "blueprint/ch02/ch02_source.json": "5c8cf8eab6b79ac4a968c37e517e5b8e3fcf9aaaa34d87fe6d07c9d145144c8b"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.1-Splitting",

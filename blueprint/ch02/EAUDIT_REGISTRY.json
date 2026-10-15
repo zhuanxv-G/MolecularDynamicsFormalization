@@ -531,5 +531,50 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT12/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT13",
+    "section": "2.3.7",
+    "source_ids": [
+      "MD-2.3.7-Adjoint",
+      "MD-2.3.7-AdjointInvolution",
+      "MD-2.3.7-AdjointSymplecticEuler",
+      "MD-2.3.7-BackwardEuler",
+      "MD-2.3.7-FlowSelfAdjoint"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.7-Adjoint",
+      "MD-2.3.7-FlowSelfAdjoint",
+      "MD-2.3.7-BackwardEuler",
+      "MD-2.3.7-AdjointSymplecticEuler",
+      "MD-2.3.7-AdjointInvolution"
+    ],
+    "human_ids": [],
+    "lean_sha256": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+    "source_sha256": "5c8cf8eab6b79ac4a968c37e517e5b8e3fcf9aaaa34d87fe6d07c9d145144c8b",
+    "pages": [
+      103,
+      104
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch02.olean",
+        "Blueprint/Ch02.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+      "log_sha256": "51c7d64a3daf5e6c0200fc1187a9ea6f65937d8d2756855a8f052afffc55699e"
+    },
+    "axiom_decl_count": 6,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT13/INDEX.md"
   }
 ]

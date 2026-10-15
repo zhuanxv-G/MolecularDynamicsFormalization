@@ -139,5 +139,11 @@
     "extra_assumptions": [
       "[EXTRA] 补实际Hamiltonian流、正阶局部一致性及可用正步长域；保辛性质与数值近似资格合取，C²为充分[EXTRA]，未把无关辛映射冒充积分方法。"
     ]
+  },
+  "MD-2.3.7-AdjointSymplecticEuler": {
+    "code": "noncomputable def bp_adjointSymplecticEuler {Nc : ℕ}\n    (m : Fin Nc → ℝ) (_hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (_hU : Differentiable ℝ U) (h : ℝ) :\n    Equiv.Perm (SymplecticCoordinates Nc) :=\n  textbookAdjointMethod (textbookSymplecticEulerEquiv m U) h\n\ntheorem bp_adjointSymplecticEuler_coordinates {Nc : ℕ}\n    (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (hU : Differentiable ℝ U)\n    (h : ℝ) (z : SymplecticCoordinates Nc) :\n    (∀ i, (bp_adjointSymplecticEuler m hm U hU h z) (Sum.inl i) =\n      z (Sum.inl i) + h * (m i)⁻¹ * z (Sum.inr i)) ∧\n    (∀ i, (bp_adjointSymplecticEuler m hm U hU h z) (Sum.inr i) =\n      z (Sum.inr i) - h * fderiv ℝ U\n        (fun j ↦ z (Sum.inl j) + h*(m j)⁻¹*z (Sum.inr j)) (Pi.single i 1)) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 本条显式正质量及U经典可微，并补原文(Q,P)两条坐标公式；原总化正式辅助Equiv保持，新增坐标陈述暂sorry。Mathlib Flow按用户标准含义直接采信，FlowSelfAdjoint只补材料复审。"
+    ]
   }
 }

@@ -2,10 +2,10 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 513）。
+完成状态：修复进行中（待处理项目/原文审校计数 507）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
-第2章：网站PASS 89 / 已修待复审 41 / 待导师 10 / 修复中 20。
+第2章：网站PASS 86 / 已修待复审 45 / 待导师 10 / 修复中 19。
 第3章：网站PASS 91 / 已修待复审 4 / 待导师 5 / 修复中 49。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
@@ -115,12 +115,12 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 2 | MD-2.3.6-KickDifferential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.6-WedgeSelf | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.6-SymplecticEulerPreserves | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
-| 2 | MD-2.3.7-Adjoint | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
-| 2 | MD-2.3.7-FlowSelfAdjoint | NEEDS_HUMAN | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 已修待复审；原文CORRECTED待原页复核 | — |
-| 2 | MD-2.3.7-BackwardEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
+| 2 | MD-2.3.7-Adjoint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT13 |
+| 2 | MD-2.3.7-FlowSelfAdjoint | NEEDS_HUMAN | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT13 |
+| 2 | MD-2.3.7-BackwardEuler | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT13 |
 | 2 | MD-2.3.7-EulerAdjoint | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.7-AdjointSymplecticEuler | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 2 | MD-2.3.7-AdjointInvolution | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
+| 2 | MD-2.3.7-AdjointSymplecticEuler | FAIL | A | 本条显式正质量及U经典可微，并补原文(Q,P)两条坐标公式；原总化正式辅助Equiv保持，新增坐标陈述暂sorry。Mathlib Flow按用户标准含义直接采信，FlowSelfAdjoint只补材料复审。 | 已修待复审 | EAUDIT13 |
+| 2 | MD-2.3.7-AdjointInvolution | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT13 |
 | 2 | MD-2.4.1-Splitting | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
 | 2 | MD-2.4.1-FieldAdd | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.4.1-SplittingLocal | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |

@@ -110,12 +110,12 @@
 | MD-2.3.6-KickDifferential | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；完整步映射Fréchet导数与kick/drift组合的坐标整理。 |
 | MD-2.3.6-WedgeSelf | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
 | MD-2.3.6-SymplecticEulerPreserves | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT12 | existing_bridge / checked+documented priors |
-| MD-2.3.7-Adjoint | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.3.7-FlowSelfAdjoint | DRAFT/原页已核 | 已编译 | PASS | NEEDS_HUMAN（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.3.7-BackwardEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.3.7-Adjoint | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | definition / self-contained |
+| MD-2.3.7-FlowSelfAdjoint | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | existing_bridge / checked+documented priors |
+| MD-2.3.7-BackwardEuler | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | definition / self-contained |
 | MD-2.3.7-EulerAdjoint | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.3.7-AdjointSymplecticEuler | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.3.7-AdjointInvolution | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.7-AdjointSymplecticEuler | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | definition / self-contained |
+| MD-2.3.7-AdjointInvolution | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | existing_bridge / checked+documented priors |
 | MD-2.4.1-Splitting | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.4.1-FieldAdd | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
 | MD-2.4.1-SplittingLocal | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
@@ -431,3 +431,5 @@ EAUDIT10 §2.3.4：3条落盘，单文件与4项公理通过；未写新证明�
 EAUDIT11 §2.3.5：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT12 §2.3.6：2条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT13 §2.3.7：5条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。

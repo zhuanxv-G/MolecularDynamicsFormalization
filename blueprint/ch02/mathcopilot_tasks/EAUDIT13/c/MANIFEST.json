@@ -1,0 +1,33 @@
+{
+  "eaudit": "EAUDIT13",
+  "source_id": "MD-2.3.7-BackwardEuler",
+  "input_sha256": {
+    "BATCH_EAUDIT13.md": "f57f68e8217712fdce01ad7ff99378246ca089c890b8b4e3b4e5e348ed4406d3",
+    "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+    "blueprint/ch02/ch02_source.json": "5c8cf8eab6b79ac4a968c37e517e5b8e3fcf9aaaa34d87fe6d07c9d145144c8b",
+    "EAUDIT13c_materials": "c641fd8c409efa774815d28093faa23f003a7f0245678e335a221a2c31ed8d37",
+    "EAUDIT13c_PAGES.pdf": "4789416bf3029fd8c55c65ea39941dc530f0f63ff0d68569848674be941bd046"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    104
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "65b0c5532f9aea21d0adec8d2a176744e967fd58bdcec35d50f21dbba596afc0",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_backwardEulerRelation",
+      "file_sha256": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+      "excerpt_sha256": "0710fa74f33ab3f99e1850938d06d2e7c63d8f81d0991d268919c67a3bbd9309"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT13_review.json",
+  "total_task_bytes": 89611
+}

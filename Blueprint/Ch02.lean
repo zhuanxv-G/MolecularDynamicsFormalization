@@ -1042,11 +1042,24 @@ theorem eulerAdjoint (f : E → E) (G : ℝ → Equiv.Perm E)
     textbookAdjointMethod G h z = Z ↔ Z = z + h • f Z := by
   apply MolecularDynamics.euler_adjoint_iff_backward <;> assumption
 
-/-- source_id: MD-2.3.7-AdjointSymplecticEuler · definition · §2.3.7 · 印刷p.82 / PDFp.104 -/
+/-- source_id: MD-2.3.7-AdjointSymplecticEuler · definition · §2.3.7 · 印刷p.82 / PDFp.104 
+[EXTRA] 本条显式正质量及U经典可微，并补原文(Q,P)两条坐标公式；原总化正式辅助Equiv保持，新增坐标陈述暂sorry。Mathlib Flow按用户标准含义直接采信，FlowSelfAdjoint只补材料复审。 -/
 noncomputable def bp_adjointSymplecticEuler {Nc : ℕ}
-    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ) :
+    (m : Fin Nc → ℝ) (_hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (_hU : Differentiable ℝ U) (h : ℝ) :
     Equiv.Perm (SymplecticCoordinates Nc) :=
   textbookAdjointMethod (textbookSymplecticEulerEquiv m U) h
+
+theorem bp_adjointSymplecticEuler_coordinates {Nc : ℕ}
+    (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : Differentiable ℝ U)
+    (h : ℝ) (z : SymplecticCoordinates Nc) :
+    (∀ i, (bp_adjointSymplecticEuler m hm U hU h z) (Sum.inl i) =
+      z (Sum.inl i) + h * (m i)⁻¹ * z (Sum.inr i)) ∧
+    (∀ i, (bp_adjointSymplecticEuler m hm U hU h z) (Sum.inr i) =
+      z (Sum.inr i) - h * fderiv ℝ U
+        (fun j ↦ z (Sum.inl j) + h*(m j)⁻¹*z (Sum.inr j)) (Pi.single i 1)) := by
+  sorry
 
 /-- source_id: MD-2.3.7-AdjointInvolution · unnumbered_claim · §2.3.7 · 印刷p.82 / PDFp.104
 [EXTRA] 实际可逆步方法族Equiv.Perm；负步及双逆确实存在。 -/

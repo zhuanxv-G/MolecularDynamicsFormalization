@@ -1,0 +1,6 @@
+'MD.Ch02.bp_adjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.adjointInvolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_adjointSymplecticEuler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_adjointSymplecticEuler_coordinates' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_backwardEulerRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.flowSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]

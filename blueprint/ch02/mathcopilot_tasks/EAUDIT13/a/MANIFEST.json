@@ -1,0 +1,27 @@
+{
+  "eaudit": "EAUDIT13",
+  "source_id": "MD-2.3.7-Adjoint",
+  "input_sha256": {
+    "BATCH_EAUDIT13.md": "f57f68e8217712fdce01ad7ff99378246ca089c890b8b4e3b4e5e348ed4406d3",
+    "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+    "blueprint/ch02/ch02_source.json": "5c8cf8eab6b79ac4a968c37e517e5b8e3fcf9aaaa34d87fe6d07c9d145144c8b",
+    "EAUDIT13a_materials": "29be0cc13547f84a0efe8527a34025b461b06d39bf6bf84d68db7b3514b288a1",
+    "EAUDIT13a_PAGES.pdf": "ccb477280ff7d4c9a23a62da84af62af7a8786b537e6d1f45954504682ed20f8"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    103
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "4872d89a2a02342f29c42bbf05c2abf834c5763de0f6c54d592bcafa0c990c37",
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_adjoint",
+      "file_sha256": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+      "excerpt_sha256": "42cb7d57564e1f942c11886dad4d626551250e38a3441e1bb65c675d8b6b1ba1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT13_review.json",
+  "total_task_bytes": 82558
+}
