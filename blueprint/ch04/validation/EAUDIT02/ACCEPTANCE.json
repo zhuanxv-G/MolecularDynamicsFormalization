@@ -1,0 +1,42 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT02",
+  "section": "4",
+  "source_ids": [
+    "MD-4-SymplecticEulerRoots",
+    "MD-4-SymplecticEulerStability",
+    "MD-4-SymplecticEulerUnitRoots"
+  ],
+  "reaudit_ids": [
+    "MD-4-SymplecticEulerRoots",
+    "MD-4-SymplecticEulerUnitRoots",
+    "MD-4-SymplecticEulerStability"
+  ],
+  "human_ids": [],
+  "lean_sha256": "2305e9679bfcf1e29293028a309241d83f26c0c79d8d8504ea64eba668be6834",
+  "source_sha256": "21712624c6c0e58a30f118be1eeaf2442218c14f4899a392f7747e6d2b77f4ca",
+  "pages": [
+    161,
+    162,
+    163
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "2305e9679bfcf1e29293028a309241d83f26c0c79d8d8504ea64eba668be6834",
+    "log_sha256": "d7d6861fe9ab6823fb36d93d5b87d5afb917ef6fe6b86e68c6161f0fc8b858db"
+  },
+  "axiom_decl_count": 4,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT02/INDEX.md"
+}

@@ -54,7 +54,8 @@ def eulerStabilityRegion : Set ℂ := {z | ‖1+z‖ ≤ 1}
 def oscillatorMatrix (Ω : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![0,1; -Ω^2,0]
 
 /-- source_id: MD-4-EulerImaginaryGrowth · unnumbered_claim · §4 · 印刷p.140 / PDFp.162
-[EXTRA] h≠0、Ω≠0、复标量非零初值；只证明此线性振荡例，不声称所有非线性Hamiltonian平衡点都有纯虚谱。 -/
+[EXTRA] h≠0、Ω≠0、复标量非零初值；只证明此线性振荡例，不声称所有非线性Hamiltonian平衡点都有纯虚谱。 
+[EXTRA] 保留已证趋无穷，并补精确指数率r>1和实际实振子Euler轨道的加权范数等式；矩阵完整复谱已由MD-4-OscillatorSpectrum单列承担，原ω=Ω。非零步长/频率为[EXTRA]资格，新结论暂sorry。 -/
 theorem eulerImaginaryGrowth :
   ∀ h Ω : ℝ, h ≠ 0 → Ω ≠ 0 → ∀ z : ℂ, z ≠ 0 →
     Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.eulerFactor h (Complex.I*Ω))^k*z‖) atTop atTop := by
@@ -68,12 +69,23 @@ theorem eulerImaginaryGrowth :
   have ht := (tendsto_pow_atTop_atTop_of_one_lt hg).atTop_mul_const (norm_pos_iff.mpr hz)
   simpa [norm_mul, norm_pow] using ht
 
+theorem eulerImaginaryGrowth_rate (h Ω : ℝ) (_hh : h ≠ 0) (_hΩ : Ω ≠ 0) :
+    let r := Real.sqrt (1+(h*Ω)^2)
+    1 < r ∧ (∀ (z : ℂ) (k : ℕ),
+      ‖(MolecularDynamics.Chapter04Review.eulerFactor h (Complex.I*Ω))^k*z‖=r^k*‖z‖) ∧
+    (∀ (v : Fin 2 → ℝ) (k : ℕ),
+      let w := (1+h • MolecularDynamics.Chapter04Review.oscillatorMatrix Ω)^k *ᵥ v
+      Real.sqrt (Ω^2*(w 0)^2+(w 1)^2)=
+        r^k*Real.sqrt (Ω^2*(v 0)^2+(v 1)^2)) := by
+  sorry
+
 /-- source_id: MD-4-SymplecticEulerMatrix · definition · §4 · 印刷p.140 / PDFp.162 -/
 def symplecticEulerMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![1-h^2*Ω^2,h; -h*Ω^2,1]
 
 /-- source_id: MD-4-SymplecticEulerCharacteristic · unnumbered_claim · §4 · 印刷p.140 / PDFp.162
-[EXTRA] 以真实复特征多项式等式表达二次根方程；全部复根公式另列，不能将特征多项式等式当实际求根已证。 -/
+[EXTRA] 以真实复特征多项式等式表达二次根方程；全部复根公式另列，不能将特征多项式等式当实际求根已证。 
+[EXTRA] 本条仅为特征多项式辅助计算；原完整两个复根（含零/负判别式及重根）已由MD-4-SymplecticEulerRoots明确承担，跨条目范围写明，保留原文。 -/
 theorem symplecticEulerCharacteristic :
   ∀ Ω h : ℝ, ∀ rho : ℂ, (rho • (1 : Matrix (Fin 2) (Fin 2) ℂ)-
     (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h).map Complex.ofReal).det=rho^2-(2-h^2*Ω^2 : ℝ)*rho+1 := by
@@ -96,7 +108,8 @@ theorem prkThreshold :
 
 /-- source_id: MD-4-VerletStability · unnumbered_claim · §4 · 印刷p.141 / PDFp.163
 [EXTRA] [EXTRA]真正幂有界版本0<|hΩ|<2；原文≤2字面版另列待审。
-[ERRATUM?] Verlet的hΩ=2矩阵也有Jordan增长，不能以谱模1推出所有轨道有界。 -/
+[ERRATUM?] Verlet的hΩ=2矩阵也有Jordan增长，不能以谱模1推出所有轨道有界。 
+[EXTRA] 本条明确是严格稳定内区间的修订版本，另补h=0分支；原印含端点结论保留MD-4-VerletBoundaryPrinted待导师，不宣称与原句等价。 -/
 theorem verletStability :
   ∀ Ω h : ℝ, 0 < |h*Ω| → |h*Ω| < 2 → MolecularDynamics.Chapter04Review.matrixStable (MolecularDynamics.Chapter04Review.verletMatrix Ω h) := by
   intro Ω h hn ht
@@ -154,6 +167,11 @@ theorem verletStability :
     _ = d*(C*‖v‖)^2 := by rw [← hCs]; ring
   have hsq := le_of_mul_le_mul_left hm hd
   simpa using abs_le_of_sq_le_sq hsq (mul_nonneg hC (norm_nonneg v))
+
+theorem verletStability_zero (Ω : ℝ) :
+    MolecularDynamics.Chapter04Review.matrixStable
+      (MolecularDynamics.Chapter04Review.verletMatrix Ω 0) := by
+  sorry
 
 /-- source_id: MD-4-SymplecticEulerBoundaryPrinted · unnumbered_claim · §4 · 印刷p.140 / PDFp.162
 [ERRATUM?] 原≤2声明的端点反例；不证明FAIL。 -/
@@ -252,7 +270,8 @@ theorem symplecticEulerUnitRoots :
 
 /-- source_id: MD-4-SymplecticEulerStability · unnumbered_claim · §4 · 印刷p.140 / PDFp.162
 [EXTRA] [EXTRA]正确的幂有界资格改为0<|hΩ|<2；原≤2字面版独立保留，未声称已审核修复。
-[ERRATUM?] ≤2端点有单位圆谱但通常Jordan线性增长；幂有界不能包含端点。 -/
+[ERRATUM?] ≤2端点有单位圆谱但通常Jordan线性增长；幂有界不能包含端点。 
+[EXTRA] 明确为修订稳定内区间结论；补超阈值实谱恰为一内一外非零实根、真实指数增长轨道及正步长稳定集合上确界2/Ω。原端点错误单列保留，未新增证明。 -/
 theorem symplecticEulerStability :
   ∀ Ω h : ℝ, (0 < |h*Ω| ∧ |h*Ω| < 2 → MolecularDynamics.Chapter04Review.matrixStable (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h)) ∧
     (2 < |h*Ω| → MolecularDynamics.Chapter04Review.eigenvalueOutside (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h)) := by
@@ -326,6 +345,18 @@ theorem symplecticEulerStability :
     refine ⟨(ρ : ℂ), ?_, hv⟩
     rw [Complex.norm_real,Real.norm_eq_abs,abs_of_neg (by linarith)]
     linarith
+
+theorem symplecticEulerStability_complete (Ω : ℝ) (_hΩ : 0 < Ω) :
+    (sSup {h : ℝ | 0 < h ∧ MolecularDynamics.Chapter04Review.matrixStable
+      (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h)}=2/Ω) ∧
+    (∀ h : ℝ, 2 < h*Ω →
+      ∃ a b : ℝ, 0 < |a| ∧ |a| < 1 ∧ 1 < |b| ∧
+        (∀ ζ : ℂ, (∃ v : Fin 2 → ℂ, v ≠ 0 ∧
+          (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h).map Complex.ofReal *ᵥ v=ζ • v) ↔
+          ζ=(a : ℂ) ∨ ζ=(b : ℂ)) ∧
+        ∃ v : Fin 2 → ℝ, v ≠ 0 ∧ ∀ k : ℕ,
+          (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h)^k *ᵥ v=b^k • v) := by
+  sorry
 
 /-- source_id: MD-4.1-PrintedImplicitRelation · definition · §4.1 · 印刷p.142 / PDFp.164
 [ERRATUM?] p142名为Implicit Midpoint却写Trapezoidal Rule更新式；p144采用真正机械中点式。 -/
@@ -1931,3 +1962,187 @@ theorem exactPlanarRotation : ∀ (I π : MolecularDynamics.Chapter04Review.V) (
   sorry
 
 end MD.Ch04
+
+/- BEGIN WEBSITE REPAIR AXIOMS -/
+#print axioms MD.Ch04.linearField
+#print axioms MD.Ch04.eulerFactor
+#print axioms MD.Ch04.scalarEulerStable
+#print axioms MD.Ch04.eulerStabilityRegion
+#print axioms MD.Ch04.oscillatorMatrix
+#print axioms MD.Ch04.eulerImaginaryGrowth
+#print axioms MD.Ch04.eulerImaginaryGrowth_rate
+#print axioms MD.Ch04.symplecticEulerMatrix
+#print axioms MD.Ch04.symplecticEulerCharacteristic
+#print axioms MD.Ch04.prkThreshold
+#print axioms MD.Ch04.verletStability
+#print axioms MD.Ch04.verletStability_zero
+#print axioms MD.Ch04.symplecticEulerBoundaryPrinted
+#print axioms MD.Ch04.verletBoundaryPrinted
+#print axioms MD.Ch04.oscillatorSpectrum
+#print axioms MD.Ch04.symplecticEulerRoots
+#print axioms MD.Ch04.symplecticEulerUnitRoots
+#print axioms MD.Ch04.symplecticEulerStability
+#print axioms MD.Ch04.symplecticEulerStability_complete
+#print axioms MD.Ch04.printedImplicitRelation
+#print axioms MD.Ch04.actualMidpointRelation
+#print axioms MD.Ch04.implicitFactor
+#print axioms MD.Ch04.implicitModulus
+#print axioms MD.Ch04.printedModifiedFrequency
+#print axioms MD.Ch04.modifiedFrequencyLimit
+#print axioms MD.Ch04.mechanicalMidpointRelation
+#print axioms MD.Ch04.midpointElimination
+#print axioms MD.Ch04.splitHamiltonian
+#print axioms MD.Ch04.fastVerlet
+#print axioms MD.Ch04.respa
+#print axioms MD.Ch04.respaStructure
+#print axioms MD.Ch04.slowMatrix
+#print axioms MD.Ch04.fastMatrix
+#print axioms MD.Ch04.impulseMatrix
+#print axioms MD.Ch04.impulseDet
+#print axioms MD.Ch04.impulseTrace
+#print axioms MD.Ch04.resonancePower
+#print axioms MD.Ch04.resonanceTaylor
+#print axioms MD.Ch04.resonanceInstability
+#print axioms MD.Ch04.resonanceEigenPrinted
+#print axioms MD.Ch04.mollifiedAverage
+#print axioms MD.Ch04.mollifiedPotential
+#print axioms MD.Ch04.resonanceLinearRate
+#print axioms MD.Ch04.resonanceGrowth
+#print axioms MD.Ch04.mollifiedStructure
+#print axioms MD.Ch04.holonomicRelation
+#print axioms MD.Ch04.timeConstraintDerivative
+#print axioms MD.Ch04.constrainedSolution
+#print axioms MD.Ch04.constraintSet
+#print axioms MD.Ch04.cotangentSet
+#print axioms MD.Ch04.constraintJacobian
+#print axioms MD.Ch04.jacobianActualDerivative
+#print axioms MD.Ch04.constraintDegrees
+#print axioms MD.Ch04.flexiblePendulumHamiltonian
+#print axioms MD.Ch04.restraintPotential
+#print axioms MD.Ch04.restraintForcePrinted
+#print axioms MD.Ch04.constrainedPendulum
+#print axioms MD.Ch04.constraintCurvature
+#print axioms MD.Ch04.reactionMultiplier
+#print axioms MD.Ch04.reactionBalance
+#print axioms MD.Ch04.gramPositive
+#print axioms MD.Ch04.gramInvertible
+#print axioms MD.Ch04.cotangentInvariant
+#print axioms MD.Ch04.reducedFieldRegularity
+#print axioms MD.Ch04.restrictedForm
+#print axioms MD.Ch04.variational
+#print axioms MD.Ch04.hessianPullbackCancel
+#print axioms MD.Ch04.constrainedFlowPullback
+#print axioms MD.Ch04.positionEulerPrinted
+#print axioms MD.Ch04.positionEulerRelation
+#print axioms MD.Ch04.hiddenEulerError
+#print axioms MD.Ch04.projectionResidual
+#print axioms MD.Ch04.projectionJacobian
+#print axioms MD.Ch04.newtonConstraint
+#print axioms MD.Ch04.frozenNewtonConstraint
+#print axioms MD.Ch04.newtonQuadratic
+#print axioms MD.Ch04.frozenNewtonLinear
+#print axioms MD.Ch04.projectionScale
+#print axioms MD.Ch04.frozenGramPrinted
+#print axioms MD.Ch04.componentPrinted
+#print axioms MD.Ch04.componentConstraintStep
+#print axioms MD.Ch04.componentSweep
+#print axioms MD.Ch04.projectedEulerPrinted
+#print axioms MD.Ch04.projectedEulerRelation
+#print axioms MD.Ch04.lemma41
+#print axioms MD.Ch04.multiMomentumPullback
+#print axioms MD.Ch04.projectedEulerPullback
+#print axioms MD.Ch04.cotangentMultiplier
+#print axioms MD.Ch04.cotangentProjection
+#print axioms MD.Ch04.cotangentHidden
+#print axioms MD.Ch04.cotangentRegularity
+#print axioms MD.Ch04.cotangentPullback
+#print axioms MD.Ch04.gramProjectedEuler
+#print axioms MD.Ch04.shakePositionPrinted
+#print axioms MD.Ch04.shakePositionRelation
+#print axioms MD.Ch04.shakeRelation
+#print axioms MD.Ch04.rattleRelation
+#print axioms MD.Ch04.constrainedOrders
+#print axioms MD.Ch04.rattleSymplectic
+#print axioms MD.Ch04.staggeredConstraintRelation
+#print axioms MD.Ch04.shakeRattlePositions
+#print axioms MD.Ch04.shakeElimination
+#print axioms MD.Ch04.shakePositionOrder
+#print axioms MD.Ch04.adjointEulerRelation
+#print axioms MD.Ch04.constrainedComposition
+#print axioms MD.Ch04.constrainedCompositionOrder
+#print axioms MD.Ch04.momentumProjector
+#print axioms MD.Ch04.constrainedPotentialFlow
+#print axioms MD.Ch04.geodesicRelation
+#print axioms MD.Ch04.mShakeIteration
+#print axioms MD.Ch04.settleRelation
+#print axioms MD.Ch04.lincsInverse
+#print axioms MD.Ch04.lincsConvergence
+#print axioms MD.Ch04.waterPairPotential
+#print axioms MD.Ch04.totalMass
+#print axioms MD.Ch04.centerMass
+#print axioms MD.Ch04.relativePositions
+#print axioms MD.Ch04.relativeWeightedZero
+#print axioms MD.Ch04.kineticSplit
+#print axioms MD.Ch04.secondMoment
+#print axioms MD.Ch04.rotationKinetic
+#print axioms MD.Ch04.rotationTraceIdentity
+#print axioms MD.Ch04.rotationSkew
+#print axioms MD.Ch04.skewMatrix
+#print axioms MD.Ch04.cross3
+#print axioms MD.Ch04.skewRepresentation
+#print axioms MD.Ch04.crossMatrix
+#print axioms MD.Ch04.rigidVelocity
+#print axioms MD.Ch04.inertiaTensor
+#print axioms MD.Ch04.crossIdentityFull
+#print axioms MD.Ch04.rotationalEnergy
+#print axioms MD.Ch04.inertiaSkewIdentity
+#print axioms MD.Ch04.inertiaTracePrinted
+#print axioms MD.Ch04.inertiaTraceCorrected
+#print axioms MD.Ch04.dipolarHamiltonian
+#print axioms MD.Ch04.dipolarPairPotential
+#print axioms MD.Ch04.dipolarRotationalPrinted
+#print axioms MD.Ch04.rigidHamiltonian
+#print axioms MD.Ch04.secondMomentDiagonal
+#print axioms MD.Ch04.rotationBodyEnergy
+#print axioms MD.Ch04.dipolarConstraint
+#print axioms MD.Ch04.dipolarPotentialSum
+#print axioms MD.Ch04.rotationTrajectory
+#print axioms MD.Ch04.rotationDerivativePrinted
+#print axioms MD.Ch04.rigidMatrixRelation
+#print axioms MD.Ch04.angularMomentum
+#print axioms MD.Ch04.bodyMomentum
+#print axioms MD.Ch04.angularInertia
+#print axioms MD.Ch04.eulerRigidField
+#print axioms MD.Ch04.freeRigidSolution
+#print axioms MD.Ch04.rigidInvariants
+#print axioms MD.Ch04.rigidPoissonMatrix
+#print axioms MD.Ch04.poissonDegeneracy
+#print axioms MD.Ch04.axisRotation
+#print axioms MD.Ch04.secondAxisPrinted
+#print axioms MD.Ch04.thirdAxisPrinted
+#print axioms MD.Ch04.principalAxisField
+#print axioms MD.Ch04.printedSpinAxis
+#print axioms MD.Ch04.printedSpinStep
+#print axioms MD.Ch04.axisFlow
+#print axioms MD.Ch04.spinPoisson
+#print axioms MD.Ch04.rigidPoissonSkew
+#print axioms MD.Ch04.rigidHamiltonianField
+#print axioms MD.Ch04.rigidForce
+#print axioms MD.Ch04.matrixRot
+#print axioms MD.Ch04.rigidTorque
+#print axioms MD.Ch04.dlmPrinted
+#print axioms MD.Ch04.dlmMassOnly
+#print axioms MD.Ch04.driftSpinCommute
+#print axioms MD.Ch04.dlmStructure
+#print axioms MD.Ch04.dlmPrintedStructure
+#print axioms MD.Ch04.rigidSystemForce
+#print axioms MD.Ch04.rigidSystemTorque
+#print axioms MD.Ch04.rigidSystemKick
+#print axioms MD.Ch04.rigidSystemDriftPrinted
+#print axioms MD.Ch04.rigidSystemSpinPrinted
+#print axioms MD.Ch04.dlmPrintedSystem
+#print axioms MD.Ch04.systemDriftSpinCommute
+#print axioms MD.Ch04.rigidSystemSymplectic
+#print axioms MD.Ch04.dlmPrintedSystemStructure
+#print axioms MD.Ch04.exactPlanarRotation
+/- END WEBSITE REPAIR AXIOMS -/

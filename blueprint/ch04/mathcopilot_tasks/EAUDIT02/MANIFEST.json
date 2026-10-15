@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT02",
+  "input_sha256": {
+    "BATCH_EAUDIT02.md": "b5fd32b65adf3d55605645c1622d75d848e42bf50ff97c6a07d7be5d776e290e",
+    "Blueprint/Ch04.lean": "2305e9679bfcf1e29293028a309241d83f26c0c79d8d8504ea64eba668be6834",
+    "blueprint/ch04/ch04_source.json": "21712624c6c0e58a30f118be1eeaf2442218c14f4899a392f7747e6d2b77f4ca"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT02a",
+      "source_id": "MD-4-SymplecticEulerRoots",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT02/a",
+      "total_bytes": 78617,
+      "manifest_sha256": "5242874bfcc9489132b7bf495f3fce4d36a4d1667f739103cb1e2ed277554629"
+    },
+    {
+      "subtask": "EAUDIT02b",
+      "source_id": "MD-4-SymplecticEulerUnitRoots",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT02/b",
+      "total_bytes": 77527,
+      "manifest_sha256": "3304eef375a8383580d37d1319a312f8dcae7ea7cd9858beb05e1d25416b2074"
+    },
+    {
+      "subtask": "EAUDIT02c",
+      "source_id": "MD-4-SymplecticEulerStability",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT02/c",
+      "total_bytes": 85458,
+      "manifest_sha256": "f3781b19eac5f72ee6e0355b8de9df9ff0930254460d9ee3fdefde1de74d140a"
+    }
+  ]
+}

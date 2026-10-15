@@ -1,0 +1,403 @@
+Blueprint/Ch04.lean:72:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:94:2: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch04.lean:99:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:126:63: warning: This simp argument is unused:
+  Matrix.mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, dotProduct, vecHead, vecTail, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:126:89: warning: This simp argument is unused:
+  vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, Matrix.mulVec, dotProduct, vecTail,
+    Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:126:98: warning: This simp argument is unused:
+  vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, Matrix.mulVec, dotProduct, vecHead,
+    Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:171:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:178:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:184:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:203:4: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch04.lean:231:4: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch04.lean:306:56: warning: This simp argument is unused:
+  vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecTail]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:306:64: warning: This simp argument is unused:
+  vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecHead]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:308:56: warning: This simp argument is unused:
+  vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecTail]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:308:64: warning: This simp argument is unused:
+  vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecHead]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:388:104: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch04.lean:430:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:471:64: warning: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.impulseMatrix, MolecularDynamics.Chapter04Review.slowMatrix,
+    MolecularDynamics.Chapter04Review.fastMatrix, Matrix.trace, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:495:46: warning: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mul_apply, Fin.sum_univ_two, smul_eq_mul, Nat.cast_add, Nat.cast_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:486:192: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch04.lean:486:192: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch04.lean:495:99: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch04.lean:499:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:507:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:514:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:560:10: warning: This simp argument is unused:
+  Real.norm_eq_abs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [abs_pow, abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ))), hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:560:27: warning: This simp argument is unused:
+  abs_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ))), hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:560:35: warning: This simp argument is unused:
+  abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ)))
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_pow, hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:558:122: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch04.lean:581:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:635:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch04.lean:660:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:696:62: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch04.lean:749:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:814:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:847:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:856:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:867:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:879:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1082:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1099:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1119:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1160:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1185:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1200:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1272:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1453:135: warning: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.dot, MolecularDynamics.Chapter04Review.outer,
+    MolecularDynamics.Chapter04Review.skewMatrix, Fin.sum_univ_three, pow_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1458:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1557:48: warning: This simp argument is unused:
+  Matrix.sub_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.dot, Matrix.smul_mulVec, Matrix.one_mulVec,
+    MolecularDynamics.Chapter04Review.outer, Matrix.mulVec, dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1557:66: warning: This simp argument is unused:
+  Matrix.smul_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.dot, Matrix.sub_mulVec, Matrix.one_mulVec,
+    MolecularDynamics.Chapter04Review.outer, Matrix.mulVec, dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1557:85: warning: This simp argument is unused:
+  Matrix.one_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.dot, Matrix.sub_mulVec, Matrix.smul_mulVec,
+    MolecularDynamics.Chapter04Review.outer, Matrix.mulVec, dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1603:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1769:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1777:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1822:32: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `_root_.sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `_root_.sum_apply x`).
+Blueprint/Ch04.lean:1822:62: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+Blueprint/Ch04.lean:1822:32: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `_root_.sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `_root_.sum_apply x`).
+Blueprint/Ch04.lean:1822:62: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+Blueprint/Ch04.lean:1822:32: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `_root_.sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `_root_.sum_apply x`).
+Blueprint/Ch04.lean:1822:62: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+Blueprint/Ch04.lean:1822:32: warning: This simp argument is unused:
+  ContinuousLinearMap.sum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [L, row, ContinuousLinearMap.smul_apply, ContinuousLinearMap.proj_apply, Fin.sum_univ_three,
+    Pi.single_apply, Matrix.mulVec, dotProduct, hs 1 0, hs 2 0, hs 2 1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1822:62: warning: This simp argument is unused:
+  ContinuousLinearMap.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [L, row, ContinuousLinearMap.sum_apply, ContinuousLinearMap.proj_apply, Fin.sum_univ_three,
+    Pi.single_apply, Matrix.mulVec, dotProduct, hs 1 0, hs 2 0, hs 2 1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1823:56: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [L, row, ContinuousLinearMap.sum_apply, ContinuousLinearMap.smul_apply, ContinuousLinearMap.proj_apply,
+    Fin.sum_univ_three, Matrix.mulVec, dotProduct, hs 1 0, hs 2 0, hs 2 1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch04.lean:1860:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1871:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1937:8: warning: declaration uses `sorry`
+Blueprint/Ch04.lean:1945:8: warning: declaration uses `sorry`
+'MD.Ch04.linearField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.eulerFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.scalarEulerStable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.eulerStabilityRegion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.oscillatorMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.eulerImaginaryGrowth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.eulerImaginaryGrowth_rate' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.symplecticEulerMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.symplecticEulerCharacteristic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.prkThreshold' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.verletStability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.verletStability_zero' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.symplecticEulerBoundaryPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.verletBoundaryPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.oscillatorSpectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.symplecticEulerRoots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.symplecticEulerUnitRoots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.symplecticEulerStability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.printedImplicitRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.actualMidpointRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.implicitFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.implicitModulus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.printedModifiedFrequency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.modifiedFrequencyLimit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.mechanicalMidpointRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.midpointElimination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.splitHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.fastVerlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.respa' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.respaStructure' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.slowMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.fastMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.impulseMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.impulseDet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.impulseTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.resonancePower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.resonanceTaylor' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.resonanceInstability' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.resonanceEigenPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.mollifiedAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.mollifiedPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.resonanceLinearRate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.resonanceGrowth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.mollifiedStructure' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.holonomicRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.timeConstraintDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.constrainedSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.constraintSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.cotangentSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.constraintJacobian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.jacobianActualDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.constraintDegrees' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.flexiblePendulumHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.restraintPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.restraintForcePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.constrainedPendulum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.constraintCurvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.reactionMultiplier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.reactionBalance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.gramPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.gramInvertible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.cotangentInvariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.reducedFieldRegularity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.restrictedForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.variational' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.hessianPullbackCancel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.constrainedFlowPullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.positionEulerPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.positionEulerRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.hiddenEulerError' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.projectionResidual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.projectionJacobian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.newtonConstraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.frozenNewtonConstraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.newtonQuadratic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.frozenNewtonLinear' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.projectionScale' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.frozenGramPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.componentPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.componentConstraintStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.componentSweep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.projectedEulerPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.projectedEulerRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.lemma41' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.multiMomentumPullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.projectedEulerPullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.cotangentMultiplier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.cotangentProjection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.cotangentHidden' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.cotangentRegularity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.cotangentPullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.gramProjectedEuler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.shakePositionPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.shakePositionRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.shakeRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rattleRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.constrainedOrders' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.rattleSymplectic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.staggeredConstraintRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.shakeRattlePositions' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.shakeElimination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.shakePositionOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.adjointEulerRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.constrainedComposition' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.constrainedCompositionOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.momentumProjector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.constrainedPotentialFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.geodesicRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.mShakeIteration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.settleRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.lincsInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.lincsConvergence' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.waterPairPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.totalMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.centerMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.relativePositions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.relativeWeightedZero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.kineticSplit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.secondMoment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rotationKinetic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rotationTraceIdentity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rotationSkew' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.skewMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.cross3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.skewRepresentation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.crossMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidVelocity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.inertiaTensor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.crossIdentityFull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rotationalEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.inertiaSkewIdentity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.inertiaTracePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.inertiaTraceCorrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.dipolarHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.dipolarPairPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.dipolarRotationalPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.secondMomentDiagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rotationBodyEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.dipolarConstraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.dipolarPotentialSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rotationTrajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rotationDerivativePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.rigidMatrixRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.angularMomentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.bodyMomentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.angularInertia' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.eulerRigidField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.freeRigidSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidInvariants' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidPoissonMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.poissonDegeneracy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.axisRotation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.secondAxisPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.thirdAxisPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.principalAxisField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.printedSpinAxis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.printedSpinStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.axisFlow' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.spinPoisson' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.rigidPoissonSkew' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidHamiltonianField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidForce' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.matrixRot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidTorque' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.dlmPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.dlmMassOnly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.driftSpinCommute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.dlmStructure' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.dlmPrintedStructure' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.rigidSystemForce' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidSystemTorque' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidSystemKick' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidSystemDriftPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidSystemSpinPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.dlmPrintedSystem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.systemDriftSpinCommute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidSystemSymplectic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.dlmPrintedSystemStructure' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch04.exactPlanarRotation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

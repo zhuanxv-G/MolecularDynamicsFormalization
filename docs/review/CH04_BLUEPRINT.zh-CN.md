@@ -1,188 +1,188 @@
 # 第4章 Lean Blueprint 本地审阅材料
 
-覆盖印刷p.139–174正文，习题除外。原文JSON审校状态见各条；本地模板C预审独立于网站审计。已整合网站返回0条，其余待网站审计；未冻结。编译和公理检查验证当前Lean陈述/证明，原文忠实性由独立审校核验。
+覆盖印刷p.139–174正文，习题除外。原文JSON审校状态见各条；本地模板C预审独立于网站审计。已整合网站返回179条，其余待网站审计；未冻结。编译和公理检查验证当前Lean陈述/证明，原文忠实性由独立审校核验。
 
 | source_id | 页码 印刷/PDF | 本地预审 | 网站审计 | 状态 |
 |---|---|---|---|---|
-| MD-4-LinearField | 139/161 | PASS | 待网站审计 | self-contained |
-| MD-4-EulerFactor | 139/161 | PASS | 待网站审计 | self-contained |
-| MD-4-ScalarEulerStable | 139/161 | PASS | 待网站审计 | self-contained |
-| MD-4-EulerRegion | 139/161 | PASS | 待网站审计 | self-contained |
-| MD-4-OscillatorMatrix | 139/161 | PASS | 待网站审计 | self-contained |
-| MD-4-EulerImaginaryGrowth | 140/162 | PASS | 待网站审计 | self-contained |
-| MD-4-SymplecticEulerMatrix | 140/162 | PASS | 待网站审计 | self-contained |
-| MD-4-SymplecticEulerCharacteristic | 140/162 | PASS | 待网站审计 | self-contained |
-| MD-4-PRKThreshold | 140/162 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4-VerletStability | 141/163 | PASS | 待网站审计 | self-contained |
-| MD-4-SymplecticEulerBoundaryPrinted | 140/162 | FAIL | 待网站审计 | incomplete |
-| MD-4-VerletBoundaryPrinted | 141/163 | FAIL | 待网站审计 | incomplete |
-| MD-4-OscillatorSpectrum | 140/162 | PASS | 待网站审计 | self-contained |
-| MD-4-SymplecticEulerRoots | 140/162 | PASS | 待网站审计 | self-contained |
-| MD-4-SymplecticEulerUnitRoots | 140/162 | PASS | 待网站审计 | self-contained |
-| MD-4-SymplecticEulerStability | 140/162 | PASS | 待网站审计 | self-contained |
-| MD-4.1-PrintedImplicitRelation | 142/164 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.1-ActualMidpointRelation | 142/164 | PASS | 待网站审计 | self-contained |
-| MD-4.1-ImplicitFactor | 142/164 | PASS | 待网站审计 | self-contained |
-| MD-4.1-ImplicitModulus | 142/164 | PASS | 待网站审计 | self-contained |
-| MD-4.1-PrintedModifiedFrequency | 143/165 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.1-ModifiedFrequencyLimit | 143/165 | PASS | 待网站审计 | self-contained |
-| MD-4.1-MechanicalMidpoint | 144/166 | PASS | 待网站审计 | self-contained |
-| MD-4.1-MidpointElimination | 144/166 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-SplitHamiltonian | 145/167 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-FastVerlet | 145/167 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-RESPA | 145/167 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-RESPAStructure | 145/167 | PASS | 待网站审计 | incomplete |
-| MD-4.2.1-SlowMatrix | 146/168 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-FastMatrix | 146/168 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-ImpulseMatrix | 146/168 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-ImpulseDet | 146/168 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-ImpulseTrace | 146/168 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-ResonancePower | 146/168 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-ResonanceTaylor | 147/169 | PASS | 待网站审计 | incomplete |
-| MD-4.2.1-ResonanceInstability | 147/169 | PASS | 待网站审计 | incomplete |
-| MD-4.2.1-ResonanceEigenPrinted | 147/169 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.2.2-MollifiedAverage | 149/171 | PASS | 待网站审计 | self-contained |
-| MD-4.2.2-MollifiedPotential | 149/171 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-ResonanceLinearRate | 147/169 | PASS | 待网站审计 | self-contained |
-| MD-4.2.1-ResonanceGrowth | 147/169 | PASS | 待网站审计 | self-contained |
-| MD-4.2.2-MollifiedStructure | 149/171 | PASS | 待网站审计 | incomplete |
-| MD-4.3-HolonomicRelation | 150/172 | PASS | 待网站审计 | self-contained |
-| MD-4.3-TimeConstraintDerivative | 150/172 | PASS | 待网站审计 | self-contained |
-| MD-4.3-ConstrainedSolution | 152/174 | PASS | 待网站审计 | self-contained |
-| MD-4.3-ConstraintSet | 152/174 | PASS | 待网站审计 | self-contained |
-| MD-4.3-CotangentSet | 152/174 | PASS | 待网站审计 | self-contained |
-| MD-4.3-ConstraintJacobian | 152/174 | PASS | 待网站审计 | self-contained |
-| MD-4.3-JacobianActualDerivative | 152/174 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3-ConstraintDegrees | 151/173 | PASS | 待网站审计 | self-contained |
-| MD-4.3-FlexiblePendulumHamiltonian | 150/172 | PASS | 待网站审计 | self-contained |
-| MD-4.3-RestraintPotential | 150/172 | PASS | 待网站审计 | self-contained |
-| MD-4.3-RestraintForcePrinted | 150/172 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.3-ConstrainedPendulum | 151/173 | PASS | 待网站审计 | self-contained |
-| MD-4.3-ConstraintCurvature | 153/175 | PASS | 待网站审计 | self-contained |
-| MD-4.3-ReactionMultiplier | 153/175 | PASS | 待网站审计 | self-contained |
-| MD-4.3-ReactionBalance | 153/175 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3-GramPositive | 153/175 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3-GramInvertible | 153/175 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3-CotangentInvariant | 153/175 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3-ReducedFieldRegularity | 153/175 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3.1-RestrictedForm | 153/175 | PASS | 待网站审计 | self-contained |
-| MD-4.3.1-VariationalFormula | 154/176 | PASS | 待网站审计 | incomplete |
-| MD-4.3.1-HessianPullbackCancel | 155/177 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3.1-ConstrainedFlowPullback | 156/178 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3.2-PositionEulerPrinted | 156/178 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.3.2-PositionEulerForceConvention | 156/178 | PASS | 待网站审计 | self-contained |
-| MD-4.3.2-HiddenEulerError | 156/178 | PASS | 待网站审计 | incomplete |
-| MD-4.3.2-ProjectionResidual | 156/178 | PASS | 待网站审计 | self-contained |
-| MD-4.3.2-ProjectionJacobian | 157/179 | PASS | 待网站审计 | self-contained |
-| MD-4.3.2-NewtonConstraint | 157/179 | PASS | 待网站审计 | self-contained |
-| MD-4.3.2-FrozenNewtonConstraint | 157/179 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.3.2-NewtonQuadratic | 157/179 | PASS | 待网站审计 | incomplete |
-| MD-4.3.2-FrozenNewtonLinear | 157/179 | PASS | 待网站审计 | incomplete |
-| MD-4.3.2-ProjectionScale | 158/180 | PASS | 待网站审计 | incomplete |
-| MD-4.3.2-FrozenGramPrinted | 157/179 | FAIL | 待网站审计 | incomplete |
-| MD-4.3.3-ComponentPrinted | 158/180 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.3.3-ComponentConstraintStep | 158/180 | PASS | 待网站审计 | self-contained |
-| MD-4.3.3-ComponentSweep | 158/180 | PASS | 待网站审计 | self-contained |
-| MD-4.3.4-ProjectedEulerPrinted | 159/181 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.3.4-ProjectedEulerRelation | 159/181 | PASS | 待网站审计 | self-contained |
-| MD-4.3.4-Lemma41 | 159–160/181–182 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3.4-MultiMomentumPullback | 160/182 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3.4-ProjectedEulerPullback | 160/182 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3.4-CotangentMultiplier | 159/181 | PASS | 待网站审计 | self-contained |
-| MD-4.3.4-CotangentProjection | 159/181 | PASS | 待网站审计 | self-contained |
-| MD-4.3.4-CotangentHidden | 159/181 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3.4-CotangentRegularity | 160/182 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3.4-CotangentPullback | 160/182 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3.4-GramProjectedEuler | 160/182 | PASS | 待网站审计 | checked+documented priors |
-| MD-4.3.5-SHAKEPositionPrinted | 161/183 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.3.5-SHAKEPositionMass | 161/183 | PASS | 待网站审计 | self-contained |
-| MD-4.3.5-SHAKEPhase | 161/183 | PASS | 待网站审计 | self-contained |
-| MD-4.3.5-RATTLE | 161/183 | PASS | 待网站审计 | self-contained |
-| MD-4.3.5-ConstrainedOrders | 161–162/183–184 | PASS | 待网站审计 | incomplete |
-| MD-4.3.5-RATTLESymplectic | 162/184 | PASS | 待网站审计 | incomplete |
-| MD-4.3.5-StaggeredConstraint | 162/184 | PASS | 待网站审计 | self-contained |
-| MD-4.3.5-SHAKERATTLEEquivalence | 162/184 | PASS | 待网站审计 | incomplete |
-| MD-4.3.5-SHAKEElimination | 161/183 | PASS | 待网站审计 | self-contained |
-| MD-4.3.5-SHAKEPositionOrder | 161/183 | PASS | 待网站审计 | incomplete |
-| MD-4.3.5.1-AdjointEuler | 163/185 | PASS | 待网站审计 | self-contained |
-| MD-4.3.5.1-ConstrainedComposition | 163/185 | PASS | 待网站审计 | incomplete |
-| MD-4.3.5.1-ConstrainedCompositionOrder | 163/185 | PASS | 待网站审计 | incomplete |
-| MD-4.3.5.1-MomentumProjector | 163/185 | PASS | 待网站审计 | self-contained |
-| MD-4.3.5.1-ConstrainedPotentialFlow | 163/185 | PASS | 待网站审计 | self-contained |
-| MD-4.3.5.1-GeodesicRelation | 164/186 | PASS | 待网站审计 | self-contained |
-| MD-4.3.6-MShakeIteration | 164/186 | PASS | 待网站审计 | self-contained |
-| MD-4.3.6-SETTLE | 165/187 | PASS | 待网站审计 | self-contained |
-| MD-4.3.6-LINCSInverse | 165/187 | PASS | 待网站审计 | self-contained |
-| MD-4.3.6-LINCSConvergence | 165/187 | PASS | 待网站审计 | incomplete |
-| MD-4.4-WaterPairPotential | 167/189 | PASS | 待网站审计 | self-contained |
-| MD-4.4-TotalMass | 167/189 | PASS | 待网站审计 | self-contained |
-| MD-4.4-CenterMass | 167/189 | PASS | 待网站审计 | self-contained |
-| MD-4.4-RelativePositions | 167/189 | PASS | 待网站审计 | self-contained |
-| MD-4.4-RelativeWeightedZero | 167/189 | PASS | 待网站审计 | self-contained |
-| MD-4.4-KineticSplit | 167/189 | PASS | 待网站审计 | self-contained |
-| MD-4.4-SecondMoment | 168/190 | PASS | 待网站审计 | self-contained |
-| MD-4.4-RotationKinetic | 168/190 | PASS | 待网站审计 | self-contained |
-| MD-4.4-RotationTraceIdentity | 168/190 | PASS | 待网站审计 | self-contained |
-| MD-4.4-RotationSkew | 168–169/190–191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-SkewMatrix | 169/191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-CrossProduct | 169/191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-SkewRepresentation | 169/191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-CrossMatrix | 169/191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-RigidVelocity | 169/191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-InertiaTensor | 169/191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-CrossIdentityFull | 169/191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-RotationalEnergy | 169/191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-InertiaSkewIdentity | 169/191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-InertiaTracePrinted | 169/191 | FAIL | 待网站审计 | incomplete |
-| MD-4.4-InertiaTraceCorrected | 169/191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-DipolarHamiltonian | 169–170/191–192 | PASS | 待网站审计 | self-contained |
-| MD-4.4-DipolarPairPotential | 170/192 | PASS | 待网站审计 | self-contained |
-| MD-4.4-DipolarRotationalPrinted | 170/192 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.4-RigidHamiltonian | 170/192 | PASS | 待网站审计 | self-contained |
-| MD-4.4-SecondMomentDiagonal | 168/190 | PASS | 待网站审计 | self-contained |
-| MD-4.4-RotationBodyEnergy | 169/191 | PASS | 待网站审计 | self-contained |
-| MD-4.4-DipolarConstraint | 170/192 | PASS | 待网站审计 | self-contained |
-| MD-4.4-DipolarPotentialSum | 170/192 | PASS | 待网站审计 | self-contained |
-| MD-4.4-RotationTrajectory | 168/190 | PASS | 待网站审计 | self-contained |
-| MD-4.4-RotationDerivativePrinted | 168/190 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.4-RigidMatrixRelation | 171/193 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-AngularMomentum | 171/193 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-BodyMomentum | 171/193 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-AngularInertia | 171/193 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-EulerRigidField | 172/194 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-FreeRigidSolution | 172/194 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-RigidInvariants | 172/194 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-RigidPoissonMatrix | 172/194 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-PoissonDegeneracy | 172/194 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-AxisRotation | 173–174/195–196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-SecondAxisPrinted | 173/195 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.4.1-ThirdAxisPrinted | 173/195 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.4.1-PrincipalAxisField | 173/195 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-PrintedSpinAxis | 174/196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-PrintedSpinStep | 174/196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-AxisFlowFormal | 173/195 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.4.1-SpinPoissonFormal | 173/195 | PASS | 待网站审计 | incomplete |
-| MD-4.4.1-RigidPoissonSkew | 172/194 | PASS | 待网站审计 | self-contained |
-| MD-4.4.1-RigidHamiltonianField | 172/194 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-RigidForce | 173/195 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-MatrixRot | 174/196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-RigidTorque | 173/195 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-DLMPrinted | 174/196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-DLMMassOnly | 174/196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-DriftSpinCommute | 174/196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-DLMStructureFormal | 173–174/195–196 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.4.2-DLMPrintedStructure | 173–174/195–196 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.4.2-RigidSystemState | 173/195 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-RigidSystemForce | 173/195 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-RigidSystemTorque | 173/195 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-RigidSystemKick | 174/196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-RigidSystemDriftPrinted | 174/196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-RigidSystemSpinPrinted | 174/196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-DLMPrintedSystem | 174/196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-SystemDriftSpinCommute | 174/196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-RigidSystemSymplectic | 173–174/195–196 | PASS | 待网站审计 | self-contained |
-| MD-4.4.2-DLMPrintedSystemStructure | 173–174/195–196 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-4.4.1-ExactPlanarRotation | 173/195 | PASS | 待网站审计 | incomplete |
+| MD-4-LinearField | 139/161 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4-EulerFactor | 139/161 | PASS | 待复审 / EAUDIT01 | self-contained |
+| MD-4-ScalarEulerStable | 139/161 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4-EulerRegion | 139/161 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4-OscillatorMatrix | 139/161 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4-EulerImaginaryGrowth | 140/162 | PASS | 待复审 / EAUDIT01 | incomplete |
+| MD-4-SymplecticEulerMatrix | 140/162 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4-SymplecticEulerCharacteristic | 140/162 | PASS | 待复审 / EAUDIT01 | self-contained |
+| MD-4-PRKThreshold | 140/162 | NEEDS_HUMAN | 待导师 / EAUDIT01（原返回FAIL保留） | incomplete |
+| MD-4-VerletStability | 141/163 | PASS | 待复审 / EAUDIT01 | incomplete |
+| MD-4-SymplecticEulerBoundaryPrinted | 140/162 | FAIL | 待导师 / EAUDIT01（原返回FAIL保留） | incomplete |
+| MD-4-VerletBoundaryPrinted | 141/163 | FAIL | 待导师 / EAUDIT01（原返回FAIL保留） | incomplete |
+| MD-4-OscillatorSpectrum | 140/162 | PASS | 待复审 / EAUDIT01 | self-contained |
+| MD-4-SymplecticEulerRoots | 140/162 | PASS | 待复审 / EAUDIT02 | self-contained |
+| MD-4-SymplecticEulerUnitRoots | 140/162 | PASS | 待复审 / EAUDIT02 | self-contained |
+| MD-4-SymplecticEulerStability | 140/162 | PASS | 待复审 / EAUDIT02 | incomplete |
+| MD-4.1-PrintedImplicitRelation | 142/164 | NEEDS_HUMAN | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.1-ActualMidpointRelation | 142/164 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.1-ImplicitFactor | 142/164 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.1-ImplicitModulus | 142/164 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.1-PrintedModifiedFrequency | 143/165 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.1-ModifiedFrequencyLimit | 143/165 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.1-MechanicalMidpoint | 144/166 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.1-MidpointElimination | 144/166 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-SplitHamiltonian | 145/167 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-FastVerlet | 145/167 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-RESPA | 145/167 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-RESPAStructure | 145/167 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.2.1-SlowMatrix | 146/168 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-FastMatrix | 146/168 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-ImpulseMatrix | 146/168 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-ImpulseDet | 146/168 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-ImpulseTrace | 146/168 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-ResonancePower | 146/168 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-ResonanceTaylor | 147/169 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.2.1-ResonanceInstability | 147/169 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.2.1-ResonanceEigenPrinted | 147/169 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.2.2-MollifiedAverage | 149/171 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.2-MollifiedPotential | 149/171 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-ResonanceLinearRate | 147/169 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.1-ResonanceGrowth | 147/169 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.2-MollifiedStructure | 149/171 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3-HolonomicRelation | 150/172 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-TimeConstraintDerivative | 150/172 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-ConstrainedSolution | 152/174 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-ConstraintSet | 152/174 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-CotangentSet | 152/174 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-ConstraintJacobian | 152/174 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-JacobianActualDerivative | 152/174 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3-ConstraintDegrees | 151/173 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-FlexiblePendulumHamiltonian | 150/172 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-RestraintPotential | 150/172 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-RestraintForcePrinted | 150/172 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3-ConstrainedPendulum | 151/173 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-ConstraintCurvature | 153/175 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-ReactionMultiplier | 153/175 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3-ReactionBalance | 153/175 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3-GramPositive | 153/175 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3-GramInvertible | 153/175 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3-CotangentInvariant | 153/175 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3-ReducedFieldRegularity | 153/175 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3.1-RestrictedForm | 153/175 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.1-VariationalFormula | 154/176 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.1-HessianPullbackCancel | 155/177 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3.1-ConstrainedFlowPullback | 156/178 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3.2-PositionEulerPrinted | 156/178 | NEEDS_HUMAN | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.2-PositionEulerForceConvention | 156/178 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.2-HiddenEulerError | 156/178 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.2-ProjectionResidual | 156/178 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.2-ProjectionJacobian | 157/179 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.2-NewtonConstraint | 157/179 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.2-FrozenNewtonConstraint | 157/179 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.2-NewtonQuadratic | 157/179 | PASS | NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.2-FrozenNewtonLinear | 157/179 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.2-ProjectionScale | 158/180 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.2-FrozenGramPrinted | 157/179 | FAIL | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.3-ComponentPrinted | 158/180 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.3-ComponentConstraintStep | 158/180 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.3-ComponentSweep | 158/180 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.4-ProjectedEulerPrinted | 159/181 | NEEDS_HUMAN | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.4-ProjectedEulerRelation | 159/181 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.4-Lemma41 | 159–160/181–182 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3.4-MultiMomentumPullback | 160/182 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3.4-ProjectedEulerPullback | 160/182 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3.4-CotangentMultiplier | 159/181 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.4-CotangentProjection | 159/181 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.4-CotangentHidden | 159/181 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3.4-CotangentRegularity | 160/182 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3.4-CotangentPullback | 160/182 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3.4-GramProjectedEuler | 160/182 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
+| MD-4.3.5-SHAKEPositionPrinted | 161/183 | NEEDS_HUMAN | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.5-SHAKEPositionMass | 161/183 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.5-SHAKEPhase | 161/183 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.5-RATTLE | 161/183 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.5-ConstrainedOrders | 161–162/183–184 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.5-RATTLESymplectic | 162/184 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.5-StaggeredConstraint | 162/184 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.5-SHAKERATTLEEquivalence | 162/184 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.5-SHAKEElimination | 161/183 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.5-SHAKEPositionOrder | 161/183 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.5.1-AdjointEuler | 163/185 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.5.1-ConstrainedComposition | 163/185 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.5.1-ConstrainedCompositionOrder | 163/185 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.3.5.1-MomentumProjector | 163/185 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.5.1-ConstrainedPotentialFlow | 163/185 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.5.1-GeodesicRelation | 164/186 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.6-MShakeIteration | 164/186 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.6-SETTLE | 165/187 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.6-LINCSInverse | 165/187 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.3.6-LINCSConvergence | 165/187 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.4-WaterPairPotential | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-TotalMass | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-CenterMass | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-RelativePositions | 167/189 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-RelativeWeightedZero | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-KineticSplit | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-SecondMoment | 168/190 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-RotationKinetic | 168/190 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-RotationTraceIdentity | 168/190 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-RotationSkew | 168–169/190–191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-SkewMatrix | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-CrossProduct | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-SkewRepresentation | 169/191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-CrossMatrix | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-RigidVelocity | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-InertiaTensor | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-CrossIdentityFull | 169/191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-RotationalEnergy | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-InertiaSkewIdentity | 169/191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-InertiaTracePrinted | 169/191 | FAIL | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.4-InertiaTraceCorrected | 169/191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-DipolarHamiltonian | 169–170/191–192 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-DipolarPairPotential | 170/192 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-DipolarRotationalPrinted | 170/192 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.4-RigidHamiltonian | 170/192 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-SecondMomentDiagonal | 168/190 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-RotationBodyEnergy | 169/191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-DipolarConstraint | 170/192 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-DipolarPotentialSum | 170/192 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-RotationTrajectory | 168/190 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-RotationDerivativePrinted | 168/190 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.4-RigidMatrixRelation | 171/193 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-AngularMomentum | 171/193 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-BodyMomentum | 171/193 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-AngularInertia | 171/193 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-EulerRigidField | 172/194 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-FreeRigidSolution | 172/194 | PASS | NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-RigidInvariants | 172/194 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-RigidPoissonMatrix | 172/194 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-PoissonDegeneracy | 172/194 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-AxisRotation | 173–174/195–196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-SecondAxisPrinted | 173/195 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.4.1-ThirdAxisPrinted | 173/195 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.4.1-PrincipalAxisField | 173/195 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-PrintedSpinAxis | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-PrintedSpinStep | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-AxisFlowFormal | 173/195 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.4.1-SpinPoissonFormal | 173/195 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.4.1-RigidPoissonSkew | 172/194 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.1-RigidHamiltonianField | 172/194 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-RigidForce | 173/195 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-MatrixRot | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-RigidTorque | 173/195 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-DLMPrinted | 174/196 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-DLMMassOnly | 174/196 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-DriftSpinCommute | 174/196 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-DLMStructureFormal | 173–174/195–196 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.4.2-DLMPrintedStructure | 173–174/195–196 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.4.2-RigidSystemState | 173/195 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-RigidSystemForce | 173/195 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-RigidSystemTorque | 173/195 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-RigidSystemKick | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-RigidSystemDriftPrinted | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-RigidSystemSpinPrinted | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-DLMPrintedSystem | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-SystemDriftSpinCommute | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-RigidSystemSymplectic | 173–174/195–196 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4.2-DLMPrintedSystemStructure | 173–174/195–196 | NEEDS_HUMAN | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
+| MD-4.4.1-ExactPlanarRotation | 173/195 | PASS | NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
 
 ## 需要导师判断的问题
 
@@ -279,7 +279,9 @@ def linearField {n : ℕ} (A : Matrix (Fin n) (Fin n) ℂ) (z : Fin n → ℂ) :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:26；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4387）展开 linearField 为 A *ᵥ z，即第i分量 Σj Aᵢⱼzⱼ。原文定义实线性系统的右端；Lean 给出复线性右端，实矩阵和实向量逐项嵌入后完全一致。[EXTRA] 是明示且合理的复扩张，无对角化或谱判据的额外断言。此定义不承担ODE解或渐近性质证明。定义体无 sorry；本次仅审计语义，未编译。
 
 ### 7. 状态与证明位置
 
@@ -297,7 +299,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 2. 原文陈述
 
-> Here $\lambda\in\mathbb C$, hence $u$ may in general be complex. Then one applies the numerical method directly to the scalar equation. For example Euler’s method yields
+> Here $\lambda$, hence $u$ may in general be complex. Then one applies the numerical method directly to the scalar equation. For example Euler’s method yields
 > \[u_{n+1}=(1+h\lambda)u_n.\]
 
 ### 3. 原文证明
@@ -322,7 +324,9 @@ def eulerFactor (h : ℝ) (rho : ℂ) : ℂ := 1 + (h : ℂ) * rho
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT01**。原文JSON：CORRECTED；未冻结。
+
+Ch04.lean:29；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4388）eulerFactor h rho = 1 + (h:ℂ)*rho。h:ℝ、rho:ℂ，正是标量Euler迭代的乘法因子；rho只是λ的重命名。定义条目并未声称已经证明整个迭代关系。无 [EXTRA] 或 [ERRATUM?]；定义体无 sorry，未编译。
 
 ### 7. 状态与证明位置
 
@@ -330,11 +334,11 @@ def eulerFactor (h : ℝ) (rho : ℂ) : ℂ := 1 + (h : ℂ) * rho
 
 位置：[Blueprint/Ch04.lean:28](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:28>)（`MD.Ch04.eulerFactor`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`945ea42f3215592b72949d649a29895ead3dffa8d8f1eb1579fc65b319b273b2`；原文SHA256：`11e2745f8c70332de61e0fdf64c9292381589afe9ffc26b9c357b6942eddfd59`。
+签名SHA256：`945ea42f3215592b72949d649a29895ead3dffa8d8f1eb1579fc65b319b273b2`；原文SHA256：`a811327394d0cd4b75478be5e26e46d55f11629b24d51e50fe238c2d0f5af828`。
 
 ## 1. MD-4-ScalarEulerStable · unnumbered_claim · 印刷p.139 / PDFp.161
 
@@ -367,7 +371,9 @@ theorem scalarEulerStable :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:33–48；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4388,4390）：eulerFactor h rho = 1+(h:ℂ)*rho；scalarStable a = ∃ C:ℝ, ∀ k:ℕ, ‖a^k‖≤C。签名为 ∀ h:ℝ, ∀ rho:ℂ，上述幂有界性质 ↔ ‖1+h rho‖≤1。常数在k之前，正确要求一致有界；复范数等于模。[EXTRA] 合理地明确方法稳定性，而不是仅某个零初值轨道的有界性：对非零初值乘除‖u₀‖即可等价，对所有初值也等价。等价式的充分方向是原文条件的正确补全。没有将有界误作趋零。证明体无 sorry；未编译。
 
 ### 7. 状态与证明位置
 
@@ -411,7 +417,9 @@ def eulerStabilityRegion : Set ℂ := {z | ‖1+z‖ ≤ 1}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:51；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4389）同名定义展开为 {z:ℂ | ‖1+z‖≤1}。每个z满足 dist z (−1)=‖1+z‖，故恰为复平面以−1为心、半径1的闭圆盘；变量为hλ，不是λ。无额外假设；定义体无 sorry，未编译。
 
 ### 7. 状态与证明位置
 
@@ -455,7 +463,9 @@ def oscillatorMatrix (Ω : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![0,1; -Ω^2,0]
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:55；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4393）oscillatorMatrix Ω = !![0,1; −Ω^2,0]，Ω:ℝ，作用于(q,p)得到(p,−Ω²q)。[EXTRA] 明示一个自由度、I=1，是合理的标量振子实例；不能将本定义当作一般多自由度块矩阵的形式化。原句本身未量化一般矩阵Ω，按已声明的标量实例接受。定义体无 sorry；未编译。
 
 ### 7. 状态与证明位置
 
@@ -495,26 +505,33 @@ theorem eulerImaginaryGrowth :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.eulerImaginaryGrowth；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | h≠0、Ω≠0、复标量非零初值；只证明此线性振荡例，不声称所有非线性Hamiltonian平衡点都有纯虚谱。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留已证趋无穷，并补精确指数率r>1和实际实振子Euler轨道的加权范数等式；矩阵完整复谱已由MD-4-OscillatorSpectrum单列承担，原ω=Ω。非零步长/频率为[EXTRA]资格，新结论暂sorry。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT01**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:60–74；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4388,4393）eulerFactor h rho=1+(h:ℂ)*rho，oscillatorMatrix Ω=[0,1;−Ω²,0]。签名量词为 ∀ h Ω:ℝ, h≠0 → Ω≠0 → ∀ z:ℂ, z≠0 → ‖(1+h iΩ)^k z‖→+∞。[EXTRA] 排除退化情况必要且合理；它不推广到任意非线性Hamiltonian系统。但所引原句包含矩阵谱±iω与指数速率；该签名没有谱结论、没有增长底数>1的定量结论，也没有将复标量初值与原实相空间向量z_n联系起来。Tendsto到+∞自身弱于指数增长；证明内部虽然计算范数，不会补全签名。另列谱声明不能替代本条全部结论。本条无 [ERRATUM?] 标记；原always的退化例外已由 [EXTRA] 明示。证明体无 sorry；未编译。
+
+网站反例：缺失条款：振子矩阵的完整谱、指数增长速率、实向量轨道与复标量模态的联系。仅有Tendsto无法表达指数速率，例如k+1→∞但非指数增长（此为逻辑强度示例，不是本Euler序列的反例）。原句若不排除h=0、Ω=0或零初值，则always也不成立。
+
+网站建议：在本条签名或与本条明确绑定的联合结果中加入矩阵复谱恰为±iΩ；令r=√(1+(hΩ)²)>1，给出∀k, ‖(1+h iΩ)^k z‖=r^k‖z‖，以及对实振子轨道可用w=Ωq+i p的模或等价范数得到指数增长。明确原ω对应Ω，并保留h、Ω和初值非零条件。不要把原摘录改写成无条件真命题。
 
 ### 7. 状态与证明位置
 
-**self-contained**；本地证明状态：local_proof。
+**incomplete**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:58](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:58>)（`MD.Ch04.eulerImaginaryGrowth`）。
+位置：[Blueprint/Ch04.lean:59](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:59>)（`MD.Ch04.eulerImaginaryGrowth`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/EulerImaginaryGrowth.json；blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route1.lean；blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route1.log；blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route2.lean；blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route2.log。
 
-签名SHA256：`0f44362c601016203b92649b03b9a536c6f4476717ebb3c005e1da23eea658b1`；原文SHA256：`3fe388fd6891230a1c76da096e2bdf8c4d1acd8f60c28ae29ff6609574ae5090`。
+签名SHA256：`0f44362c601016203b92649b03b9a536c6f4476717ebb3c005e1da23eea658b1`；原文SHA256：`fc53cbc753c1fdd6d0e963152c2f3bd8747d50ac72413254a368792adfe69960`。
 
 ## 1. MD-4-SymplecticEulerMatrix · definition · 印刷p.140 / PDFp.162
 
@@ -548,13 +565,15 @@ def symplecticEulerMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:77–78；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4394–4395）symplecticEulerMatrix Ω h=!![1−h^2*Ω^2,h;−h*Ω^2,1]。任意实Ω,h及输入(q,p)，矩阵输出P=p−hΩ²q，Q=(1−h²Ω²)q+hp=q+hP，覆盖两条更新关系及消元矩阵，无隐式分支或非零条件。上下文动量先更新正确。无 [EXTRA]/[ERRATUM?]；定义体无 sorry，未编译。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:72](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:72>)（`MD.Ch04.symplecticEulerMatrix`）。
+位置：[Blueprint/Ch04.lean:83](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:83>)（`MD.Ch04.symplecticEulerMatrix`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -589,26 +608,33 @@ theorem symplecticEulerCharacteristic :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.symplecticEulerCharacteristic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | 以真实复特征多项式等式表达二次根方程；全部复根公式另列，不能将特征多项式等式当实际求根已证。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 本条仅为特征多项式辅助计算；原完整两个复根（含零/负判别式及重根）已由MD-4-SymplecticEulerRoots明确承担，跨条目范围写明，保留原文。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT01**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:83–90；依赖 ReviewDefinitions.lean（Ch04_deps.txt:4394–4395）symplecticEulerMatrix Ω h=[1−h²Ω²,h;−hΩ²,1]。签名 ∀ Ω h:ℝ, ∀ rho:ℂ, det(rho I−Aℂ)=rho²−(2−h²Ω²)rho+1，确为真实复特征多项式等式，非占位定义。但是原文结论是两个显式特征根；本签名既未断言特征向量/特征值条件，也未给出±复平方根的完整根集合。[EXTRA] 说明另列根公式，只承认当前声明的范围缩小，不能作为本条忠实覆盖的理由；这不是必要数学假设，而是缺少结论。没有 [ERRATUM?]；原根公式数学上成立（须以复平方根解读）。证明体无 sorry；未编译。
+
+网站反例：缺失条款而非等式反例：签名正确计算det，却没有任何形如rho=1−h²Ω²/2±√(h⁴Ω⁴−4h²Ω²)/2的结论。Ω=h=1时，原文特征值为(1±i√3)/2，签名只给rho²−rho+1，未陈述这两个值是且仅是特征值。
+
+网站建议：保留特征多项式为辅助结果；在本条补充∀Ω h rho，存在非零复特征向量当且仅当rho等于上述两个复平方根表达式之一。将判别式显式嵌入ℂ并使用复平方根，覆盖判别式为负、零、正的所有情况及重根；无需增加判别式非负假设。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:77](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:77>)（`MD.Ch04.symplecticEulerCharacteristic`）。
+位置：[Blueprint/Ch04.lean:89](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:89>)（`MD.Ch04.symplecticEulerCharacteristic`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic.json；blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.lean；blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.log。
 
-签名SHA256：`0bcc48984b3161487b089e49dd1c361bddd0791e16cde047e64421b6f10d7725`；原文SHA256：`e1d12391c39120e0595bb71c7531e3c9bb16dedf63ac6e629add455a5913f233`。
+签名SHA256：`0bcc48984b3161487b089e49dd1c361bddd0791e16cde047e64421b6f10d7725`；原文SHA256：`545a92d0ac4eae7e5d4cde0c49c1d61e7a979e26a092be24849e9cc23090ac7d`。
 
 ## 1. MD-4-PRKThreshold · unnumbered_claim · 印刷p.140 / PDFp.162
 
@@ -646,21 +672,27 @@ theorem prkThreshold :
 
 本地预审：**NEEDS_HUMAN**。字面普适最大阈值2/Ω保留完整方法参数、阶一一致、显式分区与实际阶段关系；引用文献可能有阶段数/成本/方法类限制，不能凭泛称证明。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT01（原返回FAIL保留）**。原文JSON：CORRECTED；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 prkOscillatorRelation 展开为 qᵢ=z₀+hΣⱼAᵢⱼpⱼ，pᵢ=z₁-hΩ²ΣⱼBᵢⱼqⱼ，out₀=z₀+hΣᵢbᵢpᵢ，out₁=z₁-hΩ²Σᵢcᵢqᵢ。签名全称量化任意级数s和系数；一致性、辛条件及A严格下三角/B下三角均未限制子步数或成本。将“最大阈值”编码为任意稳定步长均≤2更强，且本方法类内已有反例。此判断无需缺失定义或查阅[74]。实际声明含sorry，另记为未完成证明。
+
+网站反例：s=2，b=c=(1/2,1/2)，A=[[0,0],[1/2,0]]，B=[[1/2,0],[1/2,1/2]]，G(Ω,h)=S(Ω,h/2)^2（S为symplecticEulerMatrix）。全部系数和、辛关系和三角条件成立，阶段关系有唯一解。Ω=1,h=3时G=[[7/16,-3/8],[3/8,1/4]]，det G=1，trace G=11/16，两个不同单位圆复根，故matrixStable(G)，但|hΩ|=3>2。实际上连通内区间为0<hΩ<4。
+
+网站建议：删除或明确标记当前泛化为错误；先核实原书[74]中是否按级数/力计算成本归一化或限制方法类，再据真实限制重写阈值定义及结论；不能只补证明。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:87](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:87>)（`MD.Ch04.prkThreshold`）。
+位置：[Blueprint/Ch04.lean:99](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:99>)（`MD.Ch04.prkThreshold`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺明确方法类与阈值定理，不建立PRK稳定性最优理论。
 
-签名SHA256：`c76c585d4e16eea65b7d8a110c4a2ce879f2b1b201d2c1186d83c94c5267bb3d`；原文SHA256：`373540377cfece70053172709112a6e52abce5bdd4748019ebf757854b6bd64a`。
+签名SHA256：`c76c585d4e16eea65b7d8a110c4a2ce879f2b1b201d2c1186d83c94c5267bb3d`；原文SHA256：`3f059db814c096cfca64989393bce4256e25de126533938cb79f04fe4544ea25`。
 
 ## 1. MD-4-VerletStability · unnumbered_claim · 印刷p.141 / PDFp.163
 
@@ -687,27 +719,34 @@ theorem verletStability :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.verletStability；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]真正幂有界版本0<\|hΩ\|<2；原文≤2字面版另列待审。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 本条明确是严格稳定内区间的修订版本，另补h=0分支；原印含端点结论保留MD-4-VerletBoundaryPrinted待导师，不宣称与原句等价。 | [EXTRA] |
 | 原页核对/疑点 | Verlet的hΩ=2矩阵也有Jordan增长，不能以谱模1推出所有轨道有界。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT01**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 量词为任意实Ω,h；[EXTRA]0<|hΩ|<2给出数学正确的内区间幂有界定理，符号推广合理，但排除原文≤2端点，故不是原句的全部语义。[ERRATUM?]成立。排除零乘积有部分必要性：Ω=0,h≠0是自由粒子剪切，h=0则矩阵为I仍稳定。实际有证明体且本条无sorry；本次只读未做Lean编译，证明状态不决定忠实性。
+
+网站反例：原文覆盖Ω=1,h=2：V=[[-1,2],[0,-1]]，V^k(0,1)=(-1)^k(-2k,1)无界；Lean严格不等式排除此原文实例。
+
+网站建议：标注为显式修订后的内区间结论而非原文等价形式；原句端点继续单列。若完整覆盖零步长，增加h=0分支；正频率正步长下用0<hΩ<2。
 
 ### 7. 状态与证明位置
 
-**self-contained**；本地证明状态：local_proof。
+**incomplete**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:100](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:100>)（`MD.Ch04.verletStability`）。
+位置：[Blueprint/Ch04.lean:113](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:113>)（`MD.Ch04.verletStability`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/VerletStability.json；blueprint/ch04/validation/short_search/VerletStability-route1.lean；blueprint/ch04/validation/short_search/VerletStability-route1.log；blueprint/ch04/validation/short_search/VerletStability-route2.lean；blueprint/ch04/validation/short_search/VerletStability-route2.log。
 
-签名SHA256：`605e049af1358c1cae40697e582fb799623d7c0fb8e8cee9740481027cd3ba27`；原文SHA256：`7dd01a97d85bb21b46c6d5e2a721854c1cc0ee7270d57d0765dcabe78761bba3`。
+签名SHA256：`605e049af1358c1cae40697e582fb799623d7c0fb8e8cee9740481027cd3ba27`；原文SHA256：`4069051a1f90528989b09f54a73730bbab87d204200cabc2d7b9389f5eb833cd`。
 
 ## 1. MD-4-SymplecticEulerBoundaryPrinted · unnumbered_claim · 印刷p.140 / PDFp.162
 
@@ -739,15 +778,21 @@ theorem symplecticEulerBoundaryPrinted :
 
 本地预审：**FAIL**。Ω=1,h=2时A=[[-3,2],[-2,1]]=−I+N,N²=0,N≠0；A^k=(−1)^k(I−kN)，对合适非零初值线性增长。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT01（原返回FAIL保留）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 Ω>0和h>0是频率/步长背景的合理显式假设；≤2忠实保留印刷端点，但将稳定解释成matrixStable使印刷断言为假。[ERRATUM?]端点反例成立。忠实保留错误原句与数学真伪分别记录；声明含sorry，不能视作已证明。
+
+网站反例：Ω=1,h=2：S=[[-3,2],[-2,1]]=-I+N，N=[[-2,2],[-2,2]]，N²=0。对v=(1,0)，S^k v=(-1)^k(1+2k,2k)，范数无界。
+
+网站建议：原文≤2单独保存并标为错误；正确幂有界定理用0<hΩ<2（Ω,h>0），或将含端点结论明确改为谱模为1的结论。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:160](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:160>)（`MD.Ch04.symplecticEulerBoundaryPrinted`）。
+位置：[Blueprint/Ch04.lean:178](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:178>)（`MD.Ch04.symplecticEulerBoundaryPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -785,15 +830,21 @@ theorem verletBoundaryPrinted :
 
 本地预审：**FAIL**。Ω=1,h=2时A=[[-1,2],[0,−1]]=−I+N,N²=0；初值(0,1)位置分量模2k，无界。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT01（原返回FAIL保留）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 Ω>0和h>0是频率/步长背景的合理显式假设；≤2忠实保留印刷端点，但将稳定解释成matrixStable使印刷断言为假。[ERRATUM?]端点反例成立。忠实保留错误原句与数学真伪分别记录；声明含sorry，不能视作已证明。
+
+网站反例：Ω=1,h=2：V=[[-1,2],[0,-1]]=-I+N，N²=0。对v=(0,1)，V^k v=(-1)^k(-2k,1)，范数无界。
+
+网站建议：原文≤2单独保存并标为错误；正确幂有界定理用0<hΩ<2（Ω,h>0），或将含端点结论明确改为谱模为1的结论。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:166](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:166>)（`MD.Ch04.verletBoundaryPrinted`）。
+位置：[Blueprint/Ch04.lean:184](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:184>)（`MD.Ch04.verletBoundaryPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -832,21 +883,23 @@ theorem oscillatorSpectrum :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT01**。原文JSON：CORRECTED；未冻结。
+
+正式oscillatorMatrix(Ω)=[[0,1],[-Ω²,0]]，来自依赖ReviewDefinitions；签名使用非零复特征向量的存在双向等价，完整给出特征值集合{±iΩ}，Ω=0也有非零核向量。教材前页一般I块取单自由度是该标量谱断言的实例，无特征值遗漏；ω→Ω按原矩阵频率解释，原文字体差异已在JSON保留。实际证明体无sorry；未编译，不以此代替签名审计。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:171](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:171>)（`MD.Ch04.oscillatorSpectrum`）。
+位置：[Blueprint/Ch04.lean:189](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:189>)（`MD.Ch04.oscillatorSpectrum`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/OscillatorSpectrum.json；blueprint/ch04/validation/short_search/OscillatorSpectrum-route1.lean；blueprint/ch04/validation/short_search/OscillatorSpectrum-route1.log；blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.lean；blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.log。
 
-签名SHA256：`17b2d4e2e7e56c7cd63d9e29fc454f25d02677e62509016806e04730f563c9ca`；原文SHA256：`a14108add0905fc8317b3f25276bdd6d8d8d6cf7db0416baae8d4bf2e9d4099f`。
+签名SHA256：`17b2d4e2e7e56c7cd63d9e29fc454f25d02677e62509016806e04730f563c9ca`；原文SHA256：`ebd99346dbc8975052a3e0a46a6915e22520f5df0d35a7878d7a9d60d1794c1f`。
 
 ## 1. MD-4-SymplecticEulerRoots · unnumbered_claim · 印刷p.140 / PDFp.162
 
@@ -882,21 +935,23 @@ theorem symplecticEulerRoots :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT02**。原文JSON：CORRECTED；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 全称Ω,h,ζ，左侧存在非零复特征向量，右侧存在复数d满足d²=h⁴Ω⁴-4h²Ω²并取两个符号；是实际特征值集合的完整双向刻画，含重根。存在平方根不是额外参数限制，避免分支选择合理，全部公式项一致。实际证明体无sorry；未编译。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:198](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:198>)（`MD.Ch04.symplecticEulerRoots`）。
+位置：[Blueprint/Ch04.lean:216](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:216>)（`MD.Ch04.symplecticEulerRoots`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/SymplecticEulerRoots.json；blueprint/ch04/validation/short_search/SymplecticEulerRoots-route1.lean；blueprint/ch04/validation/short_search/SymplecticEulerRoots-route1.log；blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.lean；blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.log。
 
-签名SHA256：`bd906d72fcb5499e8d5e4d3bab404ee1bcabccbafd8515848c2e5d20cc544165`；原文SHA256：`6ae9249b71237b3be4e3633a3f1038522c7a6cc2bc5ed4ebaeef630ff56abd74`。
+签名SHA256：`bd906d72fcb5499e8d5e4d3bab404ee1bcabccbafd8515848c2e5d20cc544165`；原文SHA256：`af92142c7dde23f875c49e2596bf7ab3b3ad1d35c09cf2bb95d0eebaa3255459`。
 
 ## 1. MD-4-SymplecticEulerUnitRoots · unnumbered_claim · 印刷p.140 / PDFp.162
 
@@ -930,21 +985,23 @@ theorem symplecticEulerUnitRoots :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT02**。原文JSON：CORRECTED；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 原页前句明确平方条件h²Ω²≤4；签名以相同条件量化任意复根ζ，结论‖ζ‖=1等价于原模平方=1。根方程ζ²-(2-h²Ω²)ζ+1=0正是所述矩阵特征方程（det=1，trace=2-h²Ω²），因此不丢失实际谱结论。原展开式是计算论证，非另一结论。complex按复数域理解包含端点实重根；若原文意指非实则端点措辞有误，已明确记录。末句hΩ≤2依正参数背景，采用平方条件忠实且消除负参数歧义。没有声称幂有界。实际证明体无sorry；未编译。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:228](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:228>)（`MD.Ch04.symplecticEulerUnitRoots`）。
+位置：[Blueprint/Ch04.lean:246](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:246>)（`MD.Ch04.symplecticEulerUnitRoots`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots.json；blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route1.lean；blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route1.log；blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route2.lean；blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route2.log。
 
-签名SHA256：`68aaecc991b3ea896935e9813a1be6d8be3b4b0a7218c1b69af5b1582d17cb10`；原文SHA256：`538eecb17dcfdfd45d1c7f27e719dc3b08b8b644de90b4222bdb8602a35e9cd0`。
+签名SHA256：`68aaecc991b3ea896935e9813a1be6d8be3b4b0a7218c1b69af5b1582d17cb10`；原文SHA256：`7fbd44588d2a45596e6560be688ae2c197a3db28baa7d40b487a3240783725b7`。
 
 ## 1. MD-4-SymplecticEulerStability · unnumbered_claim · 印刷p.140 / PDFp.162
 
@@ -972,27 +1029,34 @@ theorem symplecticEulerStability :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.symplecticEulerStability；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]正确的幂有界资格改为0<\|hΩ\|<2；原≤2字面版独立保留，未声称已审核修复。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 明确为修订稳定内区间结论；补超阈值实谱恰为一内一外非零实根、真实指数增长轨道及正步长稳定集合上确界2/Ω。原端点错误单列保留，未新增证明。 | [EXTRA] |
 | 原页核对/疑点 | ≤2端点有单位圆谱但通常Jordan线性增长；幂有界不能包含端点。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT02**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 eigenvalueOutside(A)=∃ρ∈ℂ,1<‖ρ‖且存在非零复向量v满足A v=ρv。签名仅给严格内区间幂有界和存在一个圆外特征值；[EXTRA]内区间修订数学合理但不保留≤2。漏掉原文超阈值时两个特征值均实、一个严格圆内一个严格圆外、存在指数增长解，以及步长阈值2/Ω的陈述。圆外特征值蕴涵某些增长解，但声明本身未写这些完整结论。实际有证明体且本条无sorry；未运行编译。[ERRATUM?]端点疑误成立。
+
+网站反例：Ω=1,h=2：S=[[-3,2],[-2,1]]，S^k(1,0)=(-1)^k(1+2k,2k)无界。超阈值缺失子句：现签名仅存在圆外根，未表述另一根为实且模<1。
+
+网站建议：明确标为修订定理；Ω>0,h>0下增加超阈值两实根及0<|λin|<1<|λout|、存在指数增长轨道，并用稳定步长集合上确界等精确定义表达阈值2/Ω；保留原文错误端点记录。
 
 ### 7. 状态与证明位置
 
-**self-contained**；本地证明状态：local_proof。
+**incomplete**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:256](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:256>)（`MD.Ch04.symplecticEulerStability`）。
+位置：[Blueprint/Ch04.lean:275](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:275>)（`MD.Ch04.symplecticEulerStability`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/SymplecticEulerStability.json；blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.lean；blueprint/ch04/validation/short_search/SymplecticEulerStability-route1.log；blueprint/ch04/validation/short_search/SymplecticEulerStability-route2.lean；blueprint/ch04/validation/short_search/SymplecticEulerStability-route2.log；blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.lean；blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.log。
 
-签名SHA256：`31da4d14a4c75f5466f7d85db446a21959c4160c4d5ee6fdbdb6daf16433e5db`；原文SHA256：`5337d81ef03916ce02696f1c9144e1d1d1ebfb3bcf6ecefab190810118b9327f`。
+签名SHA256：`31da4d14a4c75f5466f7d85db446a21959c4160c4d5ee6fdbdb6daf16433e5db`；原文SHA256：`71763ec35fff94c1e6d70a4bc75b73a2be5a35f7a9504270b723236fe989e2be`。
 
 ## 1. MD-4.1-PrintedImplicitRelation · definition · 印刷p.142 / PDFp.164
 
@@ -1025,13 +1089,15 @@ def printedImplicitRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n
 
 本地预审：**NEEDS_HUMAN**。字面是梯形法。非线性实际中点f((z+Z)/2)另列，不静默改原公式；线性测试时二者相同。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖摘录 MolecularDynamics/Chapter04/ReviewDefinitions.lean: Q n = Fin n → ℝ，Z n = Q n × Q n；向量运算逐坐标。 展开 MD.Ch04.printedImplicitRelation 得 Z=z+(h/2)(f(z)+f(Z))，对象、自由参数和等式与印刷公式一致，无存在唯一性断言。ERRATUM? 成立：一般非线性场下端点平均不等于中点取值；此定义忠实保存印刷疑误。定义无 sorry。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:332](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:332>)（`MD.Ch04.printedImplicitRelation`）。
+位置：[Blueprint/Ch04.lean:363](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:363>)（`MD.Ch04.printedImplicitRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1069,13 +1135,19 @@ def actualMidpointRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n 
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖摘录 MolecularDynamics/Chapter04/ReviewDefinitions.lean: Q n = Fin n → ℝ，Z n = Q n × Q n；向量运算逐坐标。 实际定义为 Z=z+h f((z+Z)/2)，而指定原页给的是 Z=z+(h/2)(f(z)+f(Z))。[EXTRA] 已坦陈这是另行更正候选，合理用于比较，但不使其成为原页忠实陈述。定义无 sorry。
+
+网站反例：取 n=1，f(x)=x²，z=0，Z=2，h=1：印刷式为 2=(0+4)/2，成立；实际中点式要求 2=1，不成立。
+
+网站建议：将此条明确标为更正候选，来源注明 PDF166 的机械中点背景；若要求忠实于 PDF164，则使用 printedImplicitRelation。不要覆盖原书疑误。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:337](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:337>)（`MD.Ch04.actualMidpointRelation`）。
+位置：[Blueprint/Ch04.lean:368](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:368>)（`MD.Ch04.actualMidpointRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1113,13 +1185,19 @@ def implicitFactor (Ω h : ℝ) : ℂ :=
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+展开 MD.Ch04.implicitFactor 与正式库 implicitFactor 均得复数比值 (1+i hΩ/2)/(1-i hΩ/2)，Ω,h 为实数。定义准确表达因子，但引用还断言方法应用于线性方程后得到该更新：签名没有 z_n、z_{n+1}、线性场关系或更新等式，缺失该结论。无额外假设，定义无 sorry。
+
+网站反例：缺失条款：由线性场的印刷隐式关系（或真正中点关系）推出 z_{n+1}=implicitFactor Ω h * z_n。
+
+网站建议：保留因子定义，增加复标量更新关系的等价定理，明确线性场 iΩz；用分母实部1处理非零性。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:341](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:341>)（`MD.Ch04.implicitFactor`）。
+位置：[Blueprint/Ch04.lean:372](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:372>)（`MD.Ch04.implicitFactor`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1159,13 +1237,19 @@ theorem implicitModulus :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+正式库 implicitFactor 展开为上述比值；∀ Ω h : ℝ, ‖factor‖=1 准确保留公式且量词无步长限制。[EXTRA] 限定纯虚振子合理。引用的第二句“无稳定阈值”所需所有迭代有界结论未在签名中表达；依赖中 scalarStable a = ∃ C : ℝ, ∀ k : ℕ, ‖a^k‖≤C，但本声明没有它。 签名语义与证明完成度分开：本条实际 Ch04.lean 中有证明体，未见 sorry；本审计未执行 Lean 编译。
+
+网站反例：缺失条款：任意 h 的标量迭代幂有界／轨道范数保持；模长结论本身正确，无反例。
+
+网站建议：增加 ∀ Ω h, scalarStable (implicitFactor Ω h)，或 ∀ Ω h z k, ‖factor^k*z‖=‖z‖；不扩大成任意线性系统。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:346](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:346>)（`MD.Ch04.implicitModulus`）。
+位置：[Blueprint/Ch04.lean:377](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:377>)（`MD.Ch04.implicitModulus`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1207,13 +1291,19 @@ def printedModifiedFrequency (Ω h : ℝ) : ℂ :=
 
 本地预审：**NEEDS_HUMAN**。印刷复log表达式原样保留，不用实atan定义替换原式。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+MD.Ch04.printedModifiedFrequency 展开为 (i h)⁻¹ * Complex.log factor，factor 的正式定义已查明。原文 ln 的分支未指定，这是需要裁定的原文问题，并非缺失项目定义。主支候选合理：有限实 x=hΩ/2 时 factor 的连续主相位为 2 atan x ∈ (-π,π)，与实频率解释相容；其他支给频率加 2πk/h。[EXTRA] 注释写 h≠0，但实际定义没有这一资格，Lean 总化逆元在 h=0 返回0；必须显式限制物理解读到非零步长。定义无 sorry。
+
+网站反例：分支 k 与0的频率相差 2πk/h（h≠0）；h=0 时 Lean 定义为0，而原式含 1/(ih)，未定义。
+
+网站建议：裁定并记录原文 ln 采用连续于 h=0 的主相位解释；将来源等式的使用域明确设为 h≠0，并给与 2 atan(hΩ/2)/h 的桥接等式。若希望零步长连续延拓，应单独定义值 Ω。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:361](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:361>)（`MD.Ch04.printedModifiedFrequency`）。
+位置：[Blueprint/Ch04.lean:392](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:392>)（`MD.Ch04.printedModifiedFrequency`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1251,13 +1341,19 @@ theorem modifiedFrequencyLimit :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+实际正式定义 modifiedFrequency Ω h = 2*Real.arctan(h*Ω/2)/h。签名对每个固定 Ω，沿 nhdsWithin 0 ({0}ᶜ) 即非零实步长趋0的滤子取极限 Ω，正确表达小步长一致性。[EXTRA] 此精确化合理，但弱于原文完整的 hΩ 尺度描述：未表达随 Ω 变化的频率比，亦遗漏 hΩ≫1 的高度修改结论。 签名语义与证明完成度分开：本条实际 Ch04.lean 中有证明体，未见 sorry；本审计未执行 Lean 编译。
+
+网站反例：缺失条款：对 x=hΩ>0，频率比 2 atan(x/2)/x 在 x→0 时趋1、x→+∞ 时趋0。固定 Ω 的 h→0 极限没有后一结论。
+
+网站建议：增加频率比函数 r(x)=2 atan(x/2)/x（x≠0）的零点极限和正无穷极限，并在 hΩ≠0 时连接 modifiedFrequency Ω h / Ω = r(hΩ)。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:366](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:366>)（`MD.Ch04.modifiedFrequencyLimit`）。
+位置：[Blueprint/Ch04.lean:397](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:397>)（`MD.Ch04.modifiedFrequencyLimit`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1301,13 +1397,15 @@ def mechanicalMidpointRelation {n : ℕ} (m : Fin n → ℝ) (U : MolecularDynam
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖摘录 MolecularDynamics/Chapter04/ReviewDefinitions.lean: Q n = Fin n → ℝ，Z n = Q n × Q n；向量运算逐坐标。正式 grad U q = textbookConstraintGradient U q；在 MolecularDynamics/Chapter04/ConstrainedProjection.lean 展开后为 fun i => (fderiv ℝ U q) (Pi.single i 1)，是真实 Fréchet 偏导梯度。invMass m v = fun i => (m i)⁻¹*v i，是对角质量逆作用。 四个合取逐项对应 mid=(q̂,p̂)、z=(q_n,p_n)、out=(q_{n+1},p_{n+1})，全部正负号和 h/2 系数正确。没有交换量词或宣称解存在唯一。[EXTRA] 无新增假设；物理质量应正、势应可微，签名是代数关系的总化延伸，对合格对象限制后忠实；它没有声称任意不可微 U 的 fderiv 就是经典梯度。应明确记录此使用域，m=0 的逆元总化不代表物理质量逆。定义无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:377](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:377>)（`MD.Ch04.mechanicalMidpointRelation`）。
+位置：[Blueprint/Ch04.lean:408](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:408>)（`MD.Ch04.mechanicalMidpointRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1347,13 +1445,19 @@ theorem midpointElimination :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖摘录 MolecularDynamics/Chapter04/ReviewDefinitions.lean: Q n = Fin n → ℝ，Z n = Q n × Q n；向量运算逐坐标。正式 grad U q = textbookConstraintGradient U q；在 MolecularDynamics/Chapter04/ConstrainedProjection.lean 展开后为 fun i => (fderiv ℝ U q) (Pi.single i 1)，是真实 Fréchet 偏导梯度。invMass m v = fun i => (m i)⁻¹*v i，是对角质量逆作用。 正式 mechanicalMidpointRelation 展开为全部四个更新等式；∀ n m U h z mid out 后，以该关系为前提推出位置消元式，符号、h²/4、M⁻¹作用均正确，也没有增加存在性或Newton收敛。但引用同时断言隐式Euler半步后接显式Euler半步的分解，签名仅有消元结论，遗漏组合条款。 签名语义与证明完成度分开：本条实际 Ch04.lean 中有证明体，未见 sorry；本审计未执行 Lean 编译。
+
+网站反例：缺失条款：令 F(q,p)=(invMass m p,-grad U q)，mid=z+(h/2)F(mid)，out=mid+(h/2)F(mid)，即原文所称两种Euler半步组合。
+
+网站建议：保留消元定理，增加 mechanicalMidpointRelation 与上述两个相空间Euler半步关系的等价陈述，或将已引 statement_scope 明确缩为仅消元公式（需显式修改来源范围，不能静默删句）。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:383](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:383>)（`MD.Ch04.midpointElimination`）。
+位置：[Blueprint/Ch04.lean:414](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:414>)（`MD.Ch04.midpointElimination`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1392,13 +1496,15 @@ def splitHamiltonian {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Ch
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+所读 /workspace/Ch04.lean 对应本报告逻辑路径 Blueprint/Ch04.lean；第398–399行的 MD.Ch04.splitHamiltonian 为本条实际声明。Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 中，Q n=Fin n→ℝ，Z n=Q n×Q n，故 z.1=q、z.2=p；invMass m v 的第i分量为 (m i)⁻¹*v i，dot u v=∑i,u i*v i。完全展开后返回 (∑i,p_i*(m_i⁻¹*p_i))/2+US(q)+UF(q)，在教材的正对角质量约定下正是 p^T M⁻¹p/2+US(q)+UF(q)。参数次序 n,m,US,UF,z 及势函数的配置空间自变量一致，没有遗漏公式项。定义对任意实 m 总化；m_i=0 时的 Lean 逆元约定不能解释为物理质量矩阵的逆，但此定义没有声称这些非物理输入也是教材的系统。慢/快、软/强作为定性背景没有被改为虚构的数值假设。本条无 [EXTRA]、[ERRATUM?]。本条是无 sorry 的定义；PASS 是公式语义结论，未运行 Lean 编译。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:398](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:398>)（`MD.Ch04.splitHamiltonian`）。
+位置：[Blueprint/Ch04.lean:429](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:429>)（`MD.Ch04.splitHamiltonian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1437,13 +1543,15 @@ def fastVerlet {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapter04Re
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+实际声明在 Ch04.lean 第402–403行。依赖展开：Chapter04Review.Q n=Fin n→ℝ、Z n=Q n×Q n；Chapter04Review.grad UF q=textbookConstraintGradient UF q；后者在 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean 第2975–2977行定义为 i↦(fderiv ℝ UF q)(Pi.single i 1)，即实际坐标偏导组成的梯度。不是任意同名力，也不是把辛性当作定义。-- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 第2859–2861行的 verlet m F h 令 qnew=q+h*invMass(m,p)+(h²/2)*invMass(m,F(q))，再返回 (qnew,p+(h/2)*(F(q)+F(qnew)))；该文件 invMass 同样逐坐标为 m_i⁻¹v_i。代入 F=-grad UF，恰为快势半 kick、动能全 drift、快势半 kick 的展开式，因此与教材三因子公式的实映射语义一致。n,m,UF,h 的参数及省去 US 均正确。势函数可微、质量非零是原梯度/质量逆的通常解释域；Lean 定义本身是总函数，未额外声称非可微输入的 fderiv 是经典梯度。没有声称快 Hamiltonian 的完整精确流等于 Verlet。无 [EXTRA] 或 [ERRATUM?]。定义无 sorry；本 PASS 不表示已经编译验证。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:402](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:402>)（`MD.Ch04.fastVerlet`）。
+位置：[Blueprint/Ch04.lean:433](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:433>)（`MD.Ch04.fastVerlet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1487,13 +1595,15 @@ def respa {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Revi
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean 第407–408行定义外层软势半 kick、r 次快步、末尾软势半 kick。在依赖 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 中，Q n=Fin n→ℝ，Z n=Q n×Q n；kick U t(q,p)=(q,p−t*grad U(q))，grad 经 textbookConstraintGradient 展开为 i↦(fderiv ℝ U q)(Pi.single i 1)。这里使用的是正式库 Chapter04Review.fastVerlet，而非未经核对的本地同名定义；其体为 Chapter02Review.verlet m (−grad UF) δ，后者展开为 qnew=q+δ*invMass(m,p)−(δ²/2)*invMass(m,grad UF(q))，pnew=p−(δ/2)*(grad UF(q)+grad UF(qnew))，invMass 第i分量为 m_i⁻¹p_i。故 δ=h/(r:ℝ) 的一个快步等于原算法循环里的三个顺序更新，^[r] 是真实自然数 r 次函数迭代，不是形式 Lie 算子的幂。外层两个 kick 的位置、h/2 系数及循环中 h/(2r)、h/r 系数都一致，输入和输出都是 (q,p)。[EXTRA] 将 r 解释为正自然数是循环计数及 h/r 所必需且合理的原文资格，不是随意删去有效 r。实际 def 的 r:ℕ 没有携带 0<r 的证明；r=0 时 Lean 的 h/0=0 且零次迭代为恒等，返回软势全 kick。这是定义在原算法域之外的总化分支，不能援引注释声称签名已排除它；在 r>0 的原算法域上，定义逐更新忠实。后续保结构定理确实显式使用 0<r。无 [ERRATUM?]，未声称这是完整系统的精确 ODE 流。定义无 sorry；未做 Lean 编译。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:407](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:407>)（`MD.Ch04.respa`）。
+位置：[Blueprint/Ch04.lean:438](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:438>)（`MD.Ch04.respa`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1533,13 +1643,17 @@ theorem respaStructure :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean 第412–416行量化 n、m、US、UF、r、h，要求所有 m_i>0、US/UF 为 C²、r>0，然后结论为辛性与对所有 z 的 G_{−h}(G_h(z))=z。所有依赖均已展开：Q n=Fin n→ℝ、Z n=Q n×Q n；dot u v=∑i u_i v_i；phaseForm(u,v)=dot(u.q,v.p)−dot(v.q,u.p)；symplecticMap G=∀z u v,phaseForm((fderiv ℝ G z)u,(fderiv ℝ G z)v)=phaseForm(u,v)。respa、kick、fastVerlet、Chapter02Review.verlet、invMass、grad→textbookConstraintGradient 分别是两次软势半 kick 包住 r 次快势 Verlet、p↦p−t∇U、实际坐标梯度及质量 drift，不是把保辛或可逆结论预先塞入定义。n 到 h 的量词顺序没有隐藏依赖，h 可为任意实数；C²保证实际梯度的 C¹ 及 Hessian 对称。[EXTRA] 正质量与 r>0 是合理的物理/算法资格，C² 是保辛的合理充分正则性；反步恒等式本身并不需要 C²，且作为代数映射的辛性也不严格需要质量为正，只需所用对角 drift 的适当解释。它们没有制造错误结论。FAIL 的原因是当前 statement_scope 明定仅覆盖所引原句及展示公式，而第167页这句话只是对称分裂的动机，没有断言任意 C² 势、任意步长下的全局 Jacobian 辛性与恒等式。注释把第171页的辛性及算法名称合并，扩大了来源与结论范围；[EXTRA] 可以标明补充假设，但不能自动使两项额外结论成为当前冻结原句的忠实陈述。此外 G_{−h}∘G_h=id 表示步长反号的自伴性；若 Reversible 专指 R(q,p)=(q,−p) 的动量反射可逆，还应显式交代 R∘G_h∘R=G_{−h}。该具体算法在这些正则性条件下的保结构命题数学上合理，此 FAIL 是来源/范围不匹配，没有声称已找到数学反例。本条无 [ERRATUM?]。第416行存在 sorry，证明仍未完成；范围 FAIL 不以 sorry 为理由，亦不把 sorry 当作命题为假的证据。
+
+网站建议：二选一修复来源对应关系：(1) 保持现有冻结原句，则仅把它登记为算法设计背景，不将 MD.Ch04.respaStructure 当作该句的忠实翻译；(2) 若保留现有保结构定理，则明确将当前 source_id 的来源范围扩为第167页 (4.2) 算法及可逆标题、第171页 “just as with the MTS method ... remains symplectic” 的跨页声明，补列 printed/pdf 页码145/149、167/171，并标注这是据算法作出的精确化。若目标还包括动量反射可逆，增加并明示 R∘G_h∘R=G_{−h}，不要把一般反步恒等式与该关系无说明地等同。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:412](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:412>)（`MD.Ch04.respaStructure`）。
+位置：[Blueprint/Ch04.lean:443](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:443>)（`MD.Ch04.respaStructure`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1578,13 +1692,17 @@ def slowMatrix (h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![1,0; -h,1]
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean 第419行的 MD.Ch04.slowMatrix h 是真实 2×2 实矩阵 !![1,0;−h,1]，Matrix (Fin 2) (Fin 2) ℝ 的四个元素分别为 1,0,−h,1。依赖 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 第4418行的正式库 slowMatrix 完全同体，作用于 (q,p) 后给 (q,p−hq)，与质量1、U_S=q²/2 的实际慢势 kick 一致；h:ℝ 没有多余的步长限制。但是本条 statement_latex 同时陈述 S_h 与 F_h，statement_scope 又规定整个展示公式均在本条范围内。该声明只定义 S_h，没有 Ω 参数、F_h 的三角函数矩阵或将其归入 context_notation 的范围说明；不能用同批另一个 source_id 存在 fastMatrix 替代本条缺失的结论覆盖。故是部分忠实而整体 FAIL，缺失条款是 F_h=[[cos(Ωh),Ω⁻¹sin(Ωh)],[−Ωsin(Ωh),cos(Ωh)]]。本条无 [EXTRA]、[ERRATUM?]。定义本身无 sorry，元素没有数学错误；FAIL 与证明状态无关。
+
+网站建议：保持 source_id 不变，将本条 statement_scope 明确限定为 S_h 的定义，并把原页同时展示的 F_h 放入 context_notation；若继续保留现有完整合引范围，则本条对应的 Lean 声明需共同覆盖 S_h 与 F_h，而不是只给一个 slowMatrix 定义。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:419](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:419>)（`MD.Ch04.slowMatrix`）。
+位置：[Blueprint/Ch04.lean:450](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:450>)（`MD.Ch04.slowMatrix`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1623,13 +1741,17 @@ def fastMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean 第423–424行定义真实 Matrix (Fin 2) (Fin 2) ℝ，四项为 cos(Ωh), sin(Ωh)/Ω, −Ω*sin(Ωh), cos(Ωh)。依赖 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 第4419–4420行的 fastMatrix 是同一个实际矩阵；在 Ω≠0 的原模型域内第二项 sin(Ωh)/Ω 与 Ω⁻¹sin(Ωh) 相同，符号及坐标顺序 (q,p) 正确。[EXTRA] 这是精确快振子流而非一个 Verlet 步，说明合理；Ω>0 是原 Ω≫1 模型中自然且充分的分母资格，但实际 def 并未限制 Ω>0，注释不是签名假设。它对 Ω=0 的总化值为单位矩阵，此值不能解释为频率0且 h≠0 的精确自由漂移 [[1,h],[0,1]]；在给定原模型的 Ω>0 域内没有这项问题。整体 FAIL 的确定理由是本条冻结 statement_latex 与 statement_scope 还包括 S_h=[[1,0],[−h,1]]，而 MD.Ch04.fastMatrix 只给 F_h，没有共同陈述或定义 S_h，且输入 context_notation 没有将 S_h 移到背景。同批另一个声明不能在每个 source_id 的完整范围要求下自动填补这一条缺失。本条无 [ERRATUM?]；定义没有 sorry，不存在本次检查已发现的矩阵元素错误。缺失是 S_h 定义的覆盖，不是对原 Ω≫1 条件下 F_h 的数学反例。
+
+网站建议：保持 source_id 不变，将本条范围限定为 F_h 的定义，把同页 S_h 的等式放入 context_notation；或给出共同覆盖原合引两个矩阵的 Lean 声明。明确该矩阵在 Ω>0（至少 Ω≠0）的原模型域使用，如要宣称 Ω=0 也代表精确流，则另外将零频分支定义为 [[1,h],[0,1]]，不能依赖 Lean 除零总化。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:423](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:423>)（`MD.Ch04.fastMatrix`）。
+位置：[Blueprint/Ch04.lean:454](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:454>)（`MD.Ch04.fastMatrix`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1666,13 +1788,15 @@ def impulseMatrix (Ω h : ℝ) := MolecularDynamics.Chapter04Review.slowMatrix (
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+实际 MD.Ch04.impulseMatrix 在 Ch04.lean 第427行；它使用的是依赖正式库中的 slowMatrix 与 fastMatrix，均已查体：S_t=[[1,0],[−t,1]]，F_h=[[cos(Ωh),sin(Ωh)/Ω],[−Ωsin(Ωh),cos(Ωh)]]。返回 Matrix (Fin 2) (Fin 2) ℝ 的乘积 S_{h/2}*F_h*S_{h/2}；Matrix 乘法按列向量作用时右因子先作用，正是软势半 impulse、精确快振子流、软势半 impulse。任意输入 (q,p) 的输出是此矩阵乘该列向量，两分量次序与原页 [Q,P]^T 对齐，所有乘积因子和系数齐全。这里审核的是该理想 exact-inner-step 矩阵定义，原文 “In the limit of small inner step” 描述理想模型的选取，不含给定范数/收敛速率的独立极限定理；该 def 也没有把有限 r RESPA 矩阵与这个理想矩阵断言为相等。Ω 的解释域继承原 Ω≫1 模型，至少应取 Ω≠0；它没有声称除零总化后的 Ω=0 仍是精确快流。US=q²/2、UF=Ω²q²/2 与质量1已体现在查得的两个矩阵中，没有将一般势偷换成这些矩阵。本条无新增 [EXTRA] 或 [ERRATUM?]。定义无 sorry；本 PASS 是定义与模型公式的语义对应，不是对内步极限收敛或 Lean 编译的证明认证。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:427](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:427>)（`MD.Ch04.impulseMatrix`）。
+位置：[Blueprint/Ch04.lean:458](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:458>)（`MD.Ch04.impulseMatrix`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1711,13 +1835,17 @@ theorem impulseDet :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean 第431–433行：∀Ω h:ℝ, Ω≠0→det(S_h)=1 ∧ det(F_h)=1 ∧ det(W_h)=1。全部矩阵定义从依赖正式库展开：S_h=[[1,0],[−h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[−Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}。因此两基础矩阵的行列式分别是1与 cos²(Ωh)+sin²(Ωh)=1，W_h 的行列式也是1，第三项是从原句因果关系中抽出的正确中间结论。[EXTRA] Ω≠0 是合理的分母资格；严格地说此总化 F_h 在 Ω=0 也为单位矩阵且 det=1，所以该条件不是这个孤立代数行列式断言不可去掉的假设，但对原精确振子流公式的解释恰当，未排除原模型有效输入。Ω 在 h 之前量化、h 无限制，对应原 any h。FAIL 的缺失条款是原句最后 “the product of the eigenvalues of W_h is 1”。当前签名既没有复特征值，也没有按代数重数列出两个根，没有根乘积等式；上下文说明“来自特征多项式”不等于声明已经包含这个结论。行列式为1当然可推出按重数计的复谱乘积为1，但逐条完整语义覆盖需要明示这一桥接，而不能把中间结论当作源句全部结论。本条无 [ERRATUM?]；证明体第434–444行未见 sorry，然而没有在本任务中运行 Lean 编译。已写行列式证明与谱结论尚未进入签名是独立事项；FAIL 不是由证明体完成与否决定。
+
+网站建议：保留现有三项行列式结论，再明确加入 W_h 经 Complex.ofReal 扩张后的二次特征多项式及其两个复根按重数计的乘积为1：例如规定 roots(charpoly(W_h)) 为多重集 {λ₁,λ₂} 时 λ₁λ₂=1，并交代该根多重集存在且长度为2；或用 charpoly.roots 的多重集乘积等于1直接表达，同时说明二次首一多项式在 ℂ 上分裂。必须保留重根的代数重数，不能仅说“任取两个特征值”相乘为1，也不能只再陈述 det(W_h)=1。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:431](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:431>)（`MD.Ch04.impulseDet`）。
+位置：[Blueprint/Ch04.lean:462](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:462>)（`MD.Ch04.impulseDet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1759,13 +1887,19 @@ theorem impulseTrace :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 Ω≠0合理：原F_h含Ω分母；该trace恒等式本身甚至可延至Lean约定除零的Ω=0，不影响本条审计。签名只写Tr(W_h)=μ(h)，没有所引完整链式等式中的λ₁+λ₂=Tr(W_h)，也没有任何两个谱根及其重数的绑定。不是等式算错，而是明确缺少所要求的谱结论子句。实际文件有证明体、无sorry；本次未编译，不能据此宣称核验通过。
+
+网站反例：缺失条款：两个按代数重数计的复特征根之和等于实trace的复嵌入；仅trace等式没有陈述这一桥接。
+
+网站建议：保留trace计算辅助引理，另以复特征多项式分解(或两个根含重数的完整刻画)绑定λ₁、λ₂并给出λ₁+λ₂=(Tr W_h:ℂ)。不可只量化任意两个det=0的根，因为会重复选择同一简单根。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:448](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:448>)（`MD.Ch04.impulseTrace`）。
+位置：[Blueprint/Ch04.lean:479](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:479>)（`MD.Ch04.impulseTrace`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1809,13 +1943,15 @@ theorem resonancePower :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 Ω>0是频率的合理资格；Ω≫1并非此恒等式所需。∀k:ℕ精确表达所有迭代，包括k=0；实标量作用等于整张矩阵乘(−1)^k，负下三角项−kπ/Ω正确。k=1恢复原W_h矩阵，展开fastMatrix在Ω(π/Ω)=π处即得F_h=−I，展开slowMatrix平方即得W_h=−S_{h/2}²，因此原前置公式没有额外未覆盖的数学内容。实际文件有证明体、无sorry；本次只审计签名，不宣称已经编译。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:459](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:459>)（`MD.Ch04.resonancePower`）。
+位置：[Blueprint/Ch04.lean:490](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:490>)（`MD.Ch04.resonancePower`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -1858,13 +1994,15 @@ theorem resonanceTaylor :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 固定Ω>0后依次存在C>0、δ>0，再对所有|h−h₀|<δ成立，正确表达局部一致二阶余项，而非让常数依赖h。μ(h₀)=−2、μ′(h₀)=π/Ω，故线性项正确。原书下一行λ+λ⁻¹=−2+ε+O(ε²)支持将上一行等号解释为截断Taylor记法；[EXTRA]余项不是额外前提，而是将这个已有渐近语义写精确。若把原展示式按精确恒等式读则不成立，审校已显式注明，没有改动原句。实际文件含sorry；PASS仅表示签名语义，绝不表示证明完成。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:481](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:481>)（`MD.Ch04.resonanceTaylor`）。
+位置：[Blueprint/Ch04.lean:512](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:512>)（`MD.Ch04.resonanceTaylor`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1905,13 +2043,19 @@ theorem resonanceInstability :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 另已展开行4398的eigenvalueOutside：∃rho:ℂ, 1<‖rho‖ ∧ ∃v:Fin 2→ℂ, v≠0 ∧ (A.map Complex.ofReal)*ᵥv=rho•v。它确实是非零特征向量和实际模大于1，而非只检查trace。Ω>0合理；∃δ>0再∀h∈左开邻域顺序正确。所引句还明确说both eigenvalues are real，签名没有这一实谱子句。由于这个具体矩阵det=1，实2×2矩阵的非实根必共轭且乘积为模平方，可从外单位圆根另行推出两根实；所以不是数学反例，而是要求的全结论签名未显式给出。实际文件含sorry，与遗漏独立。
+
+网站反例：缺失条款：两个特征根均为实数的断言及其完整谱绑定；eigenvalueOutside只存在一个复谱模>1。
+
+网站建议：在每个h的结论中并列完整实谱刻画，例如∃r₁ r₂:ℝ，使复特征多项式等于(X−r₁)(X−r₂)，且max(|r₁|,|r₂|)>1（或一个模>1且两根均实）。可另补det=1与实谱桥接引理。δ还可缩至≤π/Ω以明确正步长。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:489](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:489>)（`MD.Ch04.resonanceInstability`）。
+位置：[Blueprint/Ch04.lean:520](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:520>)（`MD.Ch04.resonanceInstability`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -1955,13 +2099,19 @@ theorem resonanceEigenPrinted :
 
 本地预审：**NEEDS_HUMAN**。det=1、trace=−2+ε的二次根近−1±sqrt(|ε|)+O(ε)，印刷sqrt(|ε|/2)系数疑误；保留字面实根误差界，未更正成PASS。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 原印刷(|ε|/2)^(1/2)确有系数错误，[ERRATUM?]成立：令t=h₀−h>0、a=π/Ω，则μ=−2−at+O(t²)，根为−1±sqrt(at)+O(t)，不是−1±sqrt(at/2)+O(t)。Lean保留了错误的正支近似，任何根都不能满足该O(t)误差。另外原±两支均需刻画，签名只存在一根。Ω>0合理；先∃C,δ后∀h正确，但不能救错误系数。实际文件含sorry；FAIL由假命题及缺支造成，非因sorry。
+
+网站反例：固定Ω=1、h=π−t，t↓0。两根r±满足(r±+1)/sqrt(t)→±sqrt(π)。目标正支为sqrt(πt/2)，故任一根与目标的差除以t均无界；正支差的首项是(1−1/sqrt(2))sqrt(πt)，负支更大。因此不存在所要求的固定C、δ。
+
+网站建议：原文照录并保留已确认的ERRATUM记录；将数学修正版另立声明：sqrt(|(π/Ω)(h−π/Ω)|)，去掉/2，并同时给出两支实特征根、两条O(|h−h₀|)界及完整谱因子分解。不得把修正版冒充原印刷等式的证明。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:496](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:496>)（`MD.Ch04.resonanceEigenPrinted`）。
+位置：[Blueprint/Ch04.lean:527](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:527>)（`MD.Ch04.resonanceEigenPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2006,13 +2156,19 @@ def mollifiedAverage {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapt
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+结论：PASS，按已明示的[EXTRA]解释为原书加权构造的Verlet具体实例。实际附件是 /workspace/Ch04.lean；在 input_sha256 中按请求使用逻辑键 Blueprint/Ch04.lean。以下为只读签名及定义审计，未编辑附件、未补证明、未将compact摘录作为独立工程编译。
+对象与依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；invMass m p 的第j分量为(m j)⁻¹p j，即常对角质量矩阵的逆作用；grad U q=textbookConstraintGradient U q。后者在 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean 定义为 j↦(fderiv ℝ U q)(Pi.single j 1)，不是未知或抽象力。fastVerlet m UF δ=Chapter02Review.verlet m (fun q=>−grad UF q) δ；继续展开 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 的同型Q、Z、invMass和verlet，得到 q⁺=q+δM⁻¹p−(δ²/2)M⁻¹grad UF(q)，p⁺=p−(δ/2)(grad UF(q)+grad UF(q⁺))。因此这是快Hamiltonian pᵀM⁻¹p/2+UF(q)的velocity-Verlet离散位置序列。
+量词、初态及结果：隐式n:ℕ，显式参数m、UF、K:ℕ、w:ℕ→ℝ、δ:ℝ、q；固定前述参数后得到仅依赖q的映射。θ_i(q)=((fastVerlet m UF δ)^[i](q,0)).1，θ_0=q；Finset.range(K+1)恰给i=0,…,K，w i对应φ_i，外部因子1/(K+1)与原式一致。δ就是平均过程的小步长参数，没有被强制等同于RESPA内步长，符合原页上下文。
+[EXTRA]评估：原书只说 recursively by solving 及 e.g.，未指定快积分器；选择Verlet合理，但不是原文要求或唯一方案，必须保留该实例说明。有限加权和不要求权重和为K+1，也未宣称任意权重都有滤波效果。签名不限制δ为小正数、质量为正或UF光滑，是总函数定义的代数扩展；其物理积分器解释使用正质量、可微势及适当小正步长，不能据此把全部参数称为有效物理滤波器。这里没有关于有效性、收敛性或精确流的定理结论，故该总定义扩展不造成此条结论错误。
+[ERRATUM?]：本条没有该标注；原页所选公式未发现需要勘误之处。证明状态：本项是def，主体无sorry；不据此声称滤波性能已证明。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:505](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:505>)（`MD.Ch04.mollifiedAverage`）。
+位置：[Blueprint/Ch04.lean:536](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:536>)（`MD.Ch04.mollifiedAverage`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2048,13 +2204,18 @@ def mollifiedPotential {n : ℕ} (US : MolecularDynamics.Chapter04Review.Q n →
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+结论：PASS。实际附件是 /workspace/Ch04.lean；在 input_sha256 中按请求使用逻辑键 Blueprint/Ch04.lean。以下为只读签名及定义审计，未编辑附件、未补证明、未将compact摘录作为独立工程编译。
+对象与定义展开：Ch04.lean中def mollifiedPotential取隐式n:ℕ、US:(Fin n→ℝ)→ℝ和A:(Fin n→ℝ)→(Fin n→ℝ)，返回US∘A；Function.comp逐点展开为q↦US(A(q))。库 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 的同名定义也是US∘A，与本地对象逐点完全一致，后续结构定理引用的是这一库定义。
+量词、假设及结论：对任意给定慢势US及位置映射A定义overline U，无隐藏存在量词、动力学关系或附加前提。statement_scope是所引定义句及公式；此项保存替换使用的势函数，不另声称滤波性能、算法结构、力为−grad US(A(q))或精确快流。复合势的定义本身不需要A平滑，平滑资格在结构条目另列。
+[EXTRA]与[ERRATUM?]：本条均无相关标注，未发现公式勘误。唯一原文审校修正是完整引句跨印刷148–149/PDF170–171，定义公式本身在后页。证明状态：本项是def，主体无sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:510](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:510>)（`MD.Ch04.mollifiedPotential`）。
+位置：[Blueprint/Ch04.lean:541](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:541>)（`MD.Ch04.mollifiedPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2093,13 +2254,19 @@ theorem resonanceLinearRate : ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 Ω>0与q₀=z 0≠0合理且q₀≠0对正增长必要。Fin 2→ℝ的范数是max(|q|,|p|)，故极限为|h₀q₀|>0，定量地保留了线性增长；量词先Ω、再所有合格初值，没有假设增长本身。可是所引句还声称范数oscillate，签名没有该子句，且原句对范数的字面表述不成立。该签名适合作为明确纠正措辞后的线性率定理，不能判为所引全部原句忠实编码。实际文件有证明体、无sorry，本次未编译。
+
+网站反例：Ω=π（h₀=1），z=(1,0)，则W^k z=(−1)^k(1,−k)，Pi范数为max(1,k)，单调且最终恰等k，并不振荡；二范数sqrt(1+k²)也单调。z=(0,1)则范数恒为1，说明附加q₀≠0必要。
+
+网站建议：保留原引文并标注ERRATUM/措辞疑误；把修正版明确写为解的符号交替而范数线性增长。在线性率结论旁给出z_k=(−1)^k(q₀,p₀−kh₀q₀)以表达解的交替行为，不要声称范数振荡。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:514](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:514>)（`MD.Ch04.resonanceLinearRate`）。
+位置：[Blueprint/Ch04.lean:545](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:545>)（`MD.Ch04.resonanceLinearRate`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2140,13 +2307,19 @@ theorem resonanceGrowth :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开Ch04_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 Ω>0和q₀≠0合理，后者排除恒定范数轨道；∀z量词和矩阵幂作用正确。签名只有‖W^kz‖→+∞，没有所引句的线性增长率，也没有振荡子句。文件中的证明调用resonanceLinearRate不使被调用结论自动成为本定理签名的一部分。原范数振荡措辞本身有误，应明确记录。实际文件有证明体、无sorry，本次未编译。
+
+网站反例：缺失条款：线性增长。抽象数列sqrt(k)、k²均趋无穷但均不满足正有限线性率，说明Tendsto atTop atTop的结论形式不足；这不是该固定W的矩阵反例，该W的线性率确实成立。另Ω=π,z=(1,0)的Pi范数max(1,k)单调，不符合原字面振荡。
+
+网站建议：把此条明确标为原结论的发散推论，缩小statement_scope，或在当前签名并列‖W^kz‖/k→|h₀q₀|和精确带(−1)^k的轨道式。对范数oscillate保留原文疑误记录，修正版应说解交替。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:548](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:548>)（`MD.Ch04.resonanceGrowth`）。
+位置：[Blueprint/Ch04.lean:579](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:579>)（`MD.Ch04.resonanceGrowth`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2189,13 +2362,21 @@ theorem mollifiedStructure :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+结论：PASS，针对实际RESPA/Verlet实现及任意C²位置映射；原文的两项结构结论均可由所用真实定义读取，不靠名称或sorry判断。实际附件是 /workspace/Ch04.lean；在 input_sha256 中按请求使用逻辑键 Blueprint/Ch04.lean。以下为只读签名及定义审计，未编辑附件、未补证明、未将compact摘录作为独立工程编译。
+全部对象与量词顺序：∀n:ℕ、m:Fin n→ℝ、US UF:Q n→ℝ、A:Q n→Q n、r:ℕ、h:ℝ，随后依次假设∀i,0<m i、ContDiff ℝ 2 US、ContDiff ℝ 2 UF、ContDiff ℝ 2 A、0<r。结论为链式法则与辛性之合取；链式法则再对所有q,v:Q n量化。h未被要求为小正数，无隐藏依赖顺序或先假设结论。
+复合势与保守力展开：库 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 的mollifiedPotential US A=US∘A，Q n=Fin n→ℝ。第一合取为D(US∘A)(q)[v]=DUS(A(q))[DA(q)[v]]。同文件grad U q=textbookConstraintGradient U q，而 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean 的后者逐分量给出DU(q)[e_i]。kick U t(q,p)=(q,p−t grad U(q))，故实际慢力F_i(q)=−D(US∘A)(q)[e_i]=−DUS(A(q))[DA(q)e_i]，即全局标量势的负梯度。原文 conservative 虽未单独引入谓词，但实际力及其势的关系已被这些定义直接表达，未漏用DA，也未把力保守作为前提。
+算法展开：respa m U UF r h(q,p)=kick U(h/2)((fastVerlet m UF(h/r))^[r](kick U(h/2)(q,p)))，其中U=US∘A。fastVerlet=Chapter02Review.verlet m(−grad UF)；展开 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 的verlet及invMass，给出q⁺=q+tM⁻¹p−t²M⁻¹grad UF(q)/2和p⁺=p−t(grad UF(q)+grad UF(q⁺))/2。快势和快步未被复合映射替换，只有慢势kick使用复合势，符合原页紧接着的 only applied ... modifying the slow impulse 的解释。任意C²的A覆盖本批所谈位置映射，不要求A为可逆映射、辛映射或平均构造。
+辛性结论展开：同一库文件Z n=Q n×Q n，dot a b=Σ_i a_i b_i，phaseForm(u,v)=Σ_i u_qi v_pi−Σ_i v_qi u_pi。symplecticMap G真正声明∀z,u,v，phaseForm((fderiv ℝ G z)u,(fderiv ℝ G z)v)=phaseForm(u,v)，即标准辛形式的实际Fréchet导数拉回。该算法在给定C²假设下有C¹梯度和C¹更新，故不存在靠不可微点的fderiv默认值空洞表达辛性的情形。此处不是只检验行列式或抽象性质。
+[EXTRA]逐项评估：正质量为原物理常质量的合理资格，数学上非零质量已足够，正性不是最弱假设；US、UF、A的C²确保复合势C²、梯度C¹及Hessian对称，是保结构所需的合理充分光滑性，比原 smooth 的无限光滑要求更弱而不损失该结论；r>0保证自然数细分及h/r有实际步数意义，排除了无快步的r=0退化情形，虽该退化代数映射也可单独保辛。上述条件均未假设待证链式法则、保守性或辛性。以实际RESPA和fastVerlet表达是批次明确采用的实现范围，不声称证明了未指定的任意快积分器也辛。
+[ERRATUM?]：本条无该标注，所引原文未发现需要改写的数学错误。证明状态独立记录：Ch04.lean中mollifiedStructure的证明体是by sorry；依赖Statements.lean的mollifiedStructure_statement只是对应Prop定义。PASS仅指签名和展开后语义忠实，不表示证明已完成或编译验证通过。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:563](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:563>)（`MD.Ch04.mollifiedStructure`）。
+位置：[Blueprint/Ch04.lean:594](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:594>)（`MD.Ch04.mollifiedStructure`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2235,13 +2416,15 @@ def holonomicRelation {n l : ℕ} (g : MolecularDynamics.Chapter04Review.Q n →
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 g 是真实位置与时间的函数，q 是时间曲线，∀t 的约束为 g(q(t),t)=0，忠实实现沿运动的完整 holonomic 关系。没有把独立动量约束混入 g，也不声称约束解存在。定义无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:571](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:571>)（`MD.Ch04.holonomicRelation`）。
+位置：[Blueprint/Ch04.lean:602](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:602>)（`MD.Ch04.holonomicRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2281,13 +2464,15 @@ theorem timeConstraintDerivative :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 Function.uncurry g 的对象是位置×时间；量词为任意 n,l,g,q,t,v，依次要求联合可微、q 在 t 的实际导数为 v、局部约束恒等于零，结论为 Dg(q(t),t)(v,1)=0。该结论按线性性展开正是 D_qg·q̇+∂_tg=0；联合可微和曲线可微是原文链式求导所需的合理 [EXTRA]，局部恒零足以且比全时恒零弱，没有把所求结论作前提。Ch04.lean:576–587 给出链式法则和导数唯一性证明，无 sorry；本结论仍为签名审计而非编译验证。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:576](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:576>)（`MD.Ch04.timeConstraintDerivative`）。
+位置：[Blueprint/Ch04.lean:607](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:607>)（`MD.Ch04.timeConstraintDerivative`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2334,13 +2519,19 @@ def constrainedSolution {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.C
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 在 F=−grad U、正质量、非退化时间区间及约束可微的解释下，分量方程与(4.4)–(4.9)完全对应，rho 是给定的真实时变乘子，无存在性假设。但实际签名允许任意 F、零质量和任意集合 I，且用 HasDerivWithinAt 而非实际时间导数；context_notation 中 F=−grad U 的代入没有作为签名限制，单点 I 上导数条件失去动力学含义，故不能作为所引运动方程的完整忠实定义。定义无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。
+
+网站反例：取 n=l=1，m=1，g₀(x)=x，q(t)=t，p(t)=0，rho(t)=0，F=0，I={0}。单点集合上的 HasDerivWithinAt 允许任意导数值，两项导数条件成立，q(0)=0，因而该定义成立；但 q 的实际导数为1而 M⁻¹p=0，不满足(4.4)/(4.7)。另零质量使 invMass 采用 Lean 的0⁻¹=0，并非教材的可逆质量矩阵。
+
+网站建议：保留一般位置力辅助定义，但为本 source_id 提供 U 参数并固定 F=−grad U、正质量的专门化；以开时间区间和 HasDerivAt 表述运动，或对 I 给出保证 within 导数唯一且等于运动时间导数的非退化条件，并明确端点约定。约束函数须在所讨论点可微。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:590](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:590>)（`MD.Ch04.constrainedSolution`）。
+位置：[Blueprint/Ch04.lean:621](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:621>)（`MD.Ch04.constrainedSolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2377,13 +2568,19 @@ def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 零点集合与向量约束 g(q)=0 完全对应，但本条 statement_scope 包含原句“define a manifold”，实际 Lean 仅有 Set，没有可微性、正则值/梯度独立性或流形结论。[EXTRA] 注释正确提示了差异，却不能充当正式假设或补足该结论。原书这一句需要规则约束的隐含资格；不静默替原书添加资格。定义无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。
+
+网站反例：n=2,l=1，g₀(x,y)=xy。零点集合是两坐标轴的交叉，在原点不是嵌入的一维光滑流形；Lean 定义仍照常适用。
+
+网站建议：把此声明明确限定为零点集合定义，并将原句的流形部分记录为单独待形式化义务；若保持完整原句范围，另加 g 的适当光滑性及零点处 Dg 满射，并给出局部嵌入流形结论。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:598](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:598>)（`MD.Ch04.constraintSet`）。
+位置：[Blueprint/Ch04.lean:629](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:629>)（`MD.Ch04.constraintSet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2423,13 +2620,15 @@ def cotangentSet {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamic
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 定义的元素确为相空间中的(q,p)，两个且仅两个集合成员条件逐分量展开为 g(q)=0 与 g′(q)M⁻¹p=0；未漏掉同时满足要求。原文在这里用这两个等式命名其嵌入相空间的余切集合，该集合实现忠实，不能据此宣称已经构造抽象余切丛。正质量保证质量逆的物理解释，梯度独立和光滑性保证基底流形及通常余切丛解释；[EXTRA] 为这些解释资格而非成员条件中额外过滤条件，合理。任意 m,g 的总化扩展不能单独承载上述几何解释，但不改变本条所给集合等式。定义无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:602](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:602>)（`MD.Ch04.cotangentSet`）。
+位置：[Blueprint/Ch04.lean:633](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:633>)（`MD.Ch04.cotangentSet`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2467,13 +2666,19 @@ noncomputable def constraintJacobian {Nc Mc : ℕ}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 Lean 定义的确是由真实 Fréchet 坐标偏导组成的 l×Nc Jacobian，并与依赖 textbookConstraintJacobian 逐项相同；不是任意给定的矩阵。但 JSON statement_latex 所选原句只定义把标量约束汇总成向量函数 g:ℝ^Nc→ℝ^l，Lean 返回的却是点 q 处的导数矩阵。context_notation 提到(4.8)不能替代 statement_scope 中所引句子的函数对象。对象与签名不对应；定义无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。
+
+网站反例：对象错配：Nc=Mc=1，γ₀(x)=x²，q=0。原句所定义的向量函数 y↦y² 保留其值；Lean 返回1×1零矩阵，既不是该函数也不能恢复它。
+
+网站建议：为所选原句定义 combineConstraints γ := fun y j => γ j y。若保留 Jacobian 定义，则另立对应 source/范围，将(4.8)及 g′ 的导数解释纳入正式所审陈述，不以现有向量函数原句冒充 Jacobian 定义。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:606](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:606>)（`MD.Ch04.constraintJacobian`）。
+位置：[Blueprint/Ch04.lean:637](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:637>)（`MD.Ch04.constraintJacobian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2517,13 +2722,19 @@ theorem jacobianActualDerivative {Nc Mc : ℕ}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 依赖 Ch04_deps.txt:3405 起的 textbookConstraintJacobian_eq_actualDerivative 已展开：在逐分量可微条件下，矩阵等于向量函数 fderiv 的坐标矩阵。当前 theorem 仅复用此桥接，不含时间曲线 q(t)、动量 p(t)、乘子、运动方程、约束恒零假设，也没有 g′(q(t))q̇(t)=0 或 g′(q(t))M⁻¹p(t)=0 的结论。可微 [EXTRA] 对桥接合理，但“另条保留”不能补足本 source_id 冻结范围。证明体没有 sorry；证明完整与原文对应失败须分开。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。
+
+网站反例：缺失条款：原文的沿解恒等式以及由 q̇=M⁻¹p 推出的隐藏约束均未陈述。桥接在 γ(x)=x、q=0 时成立，而任意 p=1、m=1 给出 G M⁻¹p=1≠0；该桥接自身完全不约束运动或动量。此例说明桥接不足，不声称是原文运动方程的反例。
+
+网站建议：保留桥接作为辅助 lemma；为本 source_id 陈述曲线求导定理：g 在 q(t) 可微、HasDerivAt q (invMass m (p t)) t、邻域内 g(q(s))=0，推出 G(q(t))*ᵥinvMass m(p(t))=0，并保留 G(q(t))q̇(t)=0 的中间结论；也可从有合适时间域的 constrainedSolution 推出全时版本。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:612](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:612>)（`MD.Ch04.jacobianActualDerivative`）。
+位置：[Blueprint/Ch04.lean:643](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:643>)（`MD.Ch04.jacobianActualDerivative`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2565,13 +2776,15 @@ theorem constraintDegrees :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖已展开：Chapter04Review.Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m p 的第 i 分量为(m i)⁻¹p i；constraintSet g={q | ∀j,g j q=0}。textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian γ q j i 为此梯度第 i 分量，故矩阵乘向量第 j 分量为 D(γ j)(q)v，转置乘乘子第 i 分量为Σj λj ∂iγj。依赖位置：Ch04_deps.txt:2975、3385、4377–4383、4428–4436。 量词依次为维数 n,l、真实向量约束 g 和点 q，再给可微及真实导数满射条件；结论 dim ker Dg+l=n 等价于独立约束下 Nd=Nc−l。满射保证 l≤n，避免自然数截断伪装维数关系；没有把维数关系作为前提。原文未显式说独立约束，但这是自由度公式必要而合理的 [EXTRA]，例如重复约束不应重复扣减。当前结论是线性化可行速度空间的维数；如进一步声称零集为光滑流形，还需合适邻域光滑性，当前定理不含此额外几何声称。Ch04.lean:621–630 的证明用秩零化度公式，无 sorry。 本审计只读，不修改附件、不补证明；未运行Lean编译。未发现本条的[ERRATUM?]标记。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:621](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:621>)（`MD.Ch04.constraintDegrees`）。
+位置：[Blueprint/Ch04.lean:652](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:652>)（`MD.Ch04.constraintDegrees`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2611,13 +2824,15 @@ def flexiblePendulumHamiltonian (m ε r₀ : ℝ) (U : Position 3 → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:631–634；依赖 Notation.lean 的 Position n := EuclideanSpace ℝ (Fin n)，所以两个范数都是欧氏范数；z.1=q、z.2=p。三个能量项及系数逐项相同，无额外定理假设。m、ε 的正性是模型资格，定义在所有实参数上的全定义延拓不宣称这些参数均为物理模型。定义无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:631](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:631>)（`MD.Ch04.flexiblePendulumHamiltonian`）。
+位置：[Blueprint/Ch04.lean:662](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:662>)（`MD.Ch04.flexiblePendulumHamiltonian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2654,13 +2869,15 @@ def restraintPotential (ε r₀ : ℝ) (q : Position 3) : ℝ :=
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:636–637；Position 3 展开为 EuclideanSpace ℝ (Fin 3)，势为 ε⁻¹(‖q‖−r₀)²/2，与 PDF172 相同。这里只定义函数，未宣称在 q=0 可微或光滑；无额外假设、无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:636](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:636>)（`MD.Ch04.restraintPotential`）。
+位置：[Blueprint/Ch04.lean:667](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:667>)（`MD.Ch04.restraintPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2701,13 +2918,19 @@ theorem restraintForcePrinted :
 
 本地预审：**NEEDS_HUMAN**。原φ′ε(q)未定义；若按通常势导数/梯度理解，末项缺负号且标量径向导数不能直接等向量。本候选签名显式记录该解释，不把疑式当证明。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:642–647 实际量化所有 ε,r₀,q 并断言 −gradient φ q = gradient φ q。原 PDF172 的末项是 φε(q)，没有 prime，且 φ 为标量、力为向量，原书确有类型疑误。[EXTRA] 把 prime 解释为配置梯度既无原文依据，也产生错误等式。[ERRATUM?] 应改为原书的标量势/向量力疑误，不能把缺失的 prime 当成原书问题。Position 是欧氏空间；gradient 为真实总梯度，光滑点不是任意符号。该声明另有 sorry，但 FAIL 来自签名。
+
+网站反例：ε=1,r₀=1,q=(2,0,0)。在此非零点势光滑，∇φ(q)=(1,0,0)，故 −∇φ(q)=(−1,0,0)≠(1,0,0)。
+
+网站建议：忠实转录末项 φε(q)，明确标注原书类型疑误；不要将该印刷等式作为可证明定理。数学修订版本另立条目：定义 Fε(q)=−gradient φε q；若给显式径向公式，在 q≠0、ε>0 下证明 Fε(q)=−ε⁻¹(‖q‖−r₀)•(q/‖q‖)，并明确这是勘误版本。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:642](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:642>)（`MD.Ch04.restraintForcePrinted`）。
+位置：[Blueprint/Ch04.lean:673](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:673>)（`MD.Ch04.restraintForcePrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -2751,13 +2974,19 @@ def constrainedPendulum (U : Position 3 → ℝ) (r₀ : ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:650–655 三个合取项对应 q′=v、v′=−∇U−λq、球面约束，Position 确为欧氏空间。单位质量沿用印刷方程，λ 吸收法向因子2是合理记号解释。但 I 任意且使用 HasDerivWithinAt，无开区间或 UniqueDiffOn 条件，孤立点上指定导数可任意，故并非原文运动方程的忠实定义。定义无 sorry。
+
+网站反例：取 I={0},r₀=1,U=0,λ(t)=0,q(t)=(1,0,0),v(t)=(1,0,0) 均为常函数。单点集合上 HasDerivWithinAt q (v 0) I 0 及 HasDerivWithinAt v 0 I 0 都成立，球面约束成立，所以 Lean 谓词成立；但全导数 q′(0)=0≠v(0)。
+
+网站建议：要求 I 为开时间区间并使用 HasDerivAt，或添加 IsOpen I 后保留 within 导数；闭区间版本需明确非退化区间和端点单侧导数约定。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:650](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:650>)（`MD.Ch04.constrainedPendulum`）。
+位置：[Blueprint/Ch04.lean:681](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:681>)（`MD.Ch04.constrainedPendulum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2797,13 +3026,15 @@ noncomputable def constraintCurvature {Nc Mc : ℕ} (m : Fin Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:657–661；textbookInverseMassMatrix 展开为 diagonal (fun i => (m i)⁻¹)。因此每分量是 D²γ_j(q)[M⁻¹p,M⁻¹p]，正是 pᵀM⁻¹ Hessian(γ_j) M⁻¹p（对角质量矩阵对称）。Fin Mc 表示 l 个分量，q,p 为当前时间切片。Pi 的范数不影响有限维坐标导数及此双线性计算，未使用错误的径向 Pi 范数。fderiv 是总操作；这一定义不声称非光滑约束也具有经典 Hessian。无额外假设、无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:657](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:657>)（`MD.Ch04.constraintCurvature`）。
+位置：[Blueprint/Ch04.lean:688](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:688>)（`MD.Ch04.constraintCurvature`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2846,13 +3077,15 @@ noncomputable def reactionMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:663–669。依赖展开：textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)；Jacobian G 的第 j 行为该真实坐标梯度；D=diagonal(m_i⁻¹)；Gram A=G D Gᵀ；Curvature 为 D²γ_j(q)[Dp,Dp]。故定义恰为 λ=A⁻¹(G D F+φ)，符号正确。原文逆存在的适用资格在 context_notation 明确，并在同批 reactionBalance 的 hdet 中实现。定义允许奇异矩阵的总逆延拓，但自身不宣称该延拓解方程；PASS 仅评价条件适用域内的显式定义，不把解存在或唯一性当成已证明结论。无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:663](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:663>)（`MD.Ch04.reactionMultiplier`）。
+位置：[Blueprint/Ch04.lean:694](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:694>)（`MD.Ch04.reactionMultiplier`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2895,13 +3128,15 @@ theorem reactionBalance {Nc Mc : ℕ} (m : Fin Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:672–678；展开 Gradient、Jacobian、InverseMassMatrix、Gram、Curvature、textbookConstrainedReactionMultiplier 后，结论是 G D(F−Gᵀ A⁻¹(GDF+φ))+φ=0。所有分量同时等于0，当前 q,p 在量词末尾，没有调换时间/状态量词。hdet 是原文指定逆解的必要资格，并未把结论作为前提。F 任意位置力是原 Hamiltonian 力的合理推广，F=−∇U 是实例而非签名实际额外假设。库证明由 A A⁻¹=1 推得恒等式，声明无 sorry；这里不包含也不宣称动力学推导或约束保持。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:672](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:672>)（`MD.Ch04.reactionBalance`）。
+位置：[Blueprint/Ch04.lean:703](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:703>)（`MD.Ch04.reactionBalance`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2944,13 +3179,19 @@ theorem gramPositive {Nc Mc : ℕ} (m : Fin Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+Ch04.lean:682–689 及 textbookConstraintGram_posDef 展开的是正质量、真实坐标约束梯度线性独立 ⇒ G D Gᵀ 正定。该结果正确且证明无 sorry，但 PDF175 所选句是“假设 Gram 可逆，便可解出 λ”。[EXTRA] 正质量和梯度独立是正定/可逆的合理充分条件，却不是原假设不可省略的必要条件；PosDef 也没有表达 λ 的存在、解方程或唯一性。因此该条是辅助充分条件，不是所选原句的完整形式化。
+
+网站反例：缺失条款：在 Gram 可逆条件下，存在（且线性系统唯一确定）λ 满足 G D(F−Gᵀλ)+φ=0。例如 Nc=Mc=1,m=−1,γ(q)=q，Gram=−1 可逆，原句仍适用而 hm 不成立；说明正质量不是纯代数可解性的必要条件。
+
+网站建议：将 gramPositive 单独标为来源推导出的辅助引理；所选原句另以 det≠0 为假设，陈述 ∃! λ, G D(F−Gᵀλ)+φ=0，并以反力乘子显式式实现。若只保留辅助引理，应修改 statement_scope 明确不代表原句的全部结论。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:682](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:682>)（`MD.Ch04.gramPositive`）。
+位置：[Blueprint/Ch04.lean:713](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:713>)（`MD.Ch04.gramPositive`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -2993,13 +3234,19 @@ theorem gramInvertible {Nc Mc : ℕ} (m : Fin Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开依赖：textbookConstraintGradient(γ_j,q)_i=Dγ_j(q)[e_i]（ConstrainedProjection）；textbookConstraintJacobian 的第j行为此梯度，textbookInverseMassMatrix=diag(1/m_i)，textbookConstraintGram=A=G diag(1/m_i) Gᵀ（CotangentProjection）。实际签名对任意m、γ、q，在正质量及梯度线性独立下只得 det A≠0。两项[EXTRA]是物理上合理的充分条件；正质量并非一般可逆矩阵所必需，梯度独立在正质量模型中对应非退化。原文把可逆性作为前提，结论是由线性方程解出λ；当前签名没有F、p、φ、λ，也没有解的存在或唯一性，故是有用的充分条件引理而非该整句的忠实形式化。依赖ConstrainedReaction已定义ρ=A⁻¹(GM⁻¹F+φ)并证明balance，但该结论未进入本声明。无[ERRATUM?]标记；无需认定原书错误。当前声明及所调用Gram引理展示的是实际证明，未含sorry；此事实不能补足签名缺失，且本次未进行工程编译。
+
+网站反例：缺失结论（不是该Gram引理的数值反例）：签名仅有det A≠0，无法直接表达或推出作为其结论的“存在唯一λ满足GM⁻¹(F−Gᵀλ)+φ=0”，因为F、p、λ均未出现在签名中。
+
+网站建议：保留现有引理并标注为可逆性的充分条件补充；为该source_id增加以det A≠0为前提的乘子解定理，结论为∃! λ, G*ᵥ(D*ᵥ(F q−Gᵀ*ᵥλ))+φ=0，并给λ=A⁻¹*ᵥ(G*ᵥ(D*ᵥF q)+φ)。可引用已展开的textbookConstrainedReactionMultiplier及textbookConstrainedReaction_balance，另补唯一性。若仅保留现有签名，应缩小该条的statement_scope至明确的[EXTRA]充分条件引理而非原句全部结论。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:691](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:691>)（`MD.Ch04.gramInvertible`）。
+位置：[Blueprint/Ch04.lean:722](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:722>)（`MD.Ch04.gramInvertible`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3050,13 +3297,15 @@ theorem cotangentInvariant {Nc Mc : ℕ}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开梯度、Jacobian G、D=diag(1/m_i)、A=GDGᵀ，并展开ConstrainedReaction中的φ_j=D²γ_j(q)[Dp,Dp]及ρ(q,p)=A⁻¹(GDF(q)+φ)。所以hq和hp精确要求q̇=Dp、ṗ=F(q)−Gᵀρ(q,p)的实际解，并非预先假定约束保持。PDF174给出的T*𝓜是γ_j(q)=0与Dγ_j(q)[Dp]=0同时成立；结论对每个t∈[0,τ]和每个j确实保留全部两项。量词固定模型及曲线后，在沿曲线的非退化性和初始两项约束下推出不变性；λ由q,p确定已体现在hp使用的显式ρ定义中。任意位置力F是对原保守力的合理推广，取F=−∇U恢复原文。C²为两次求导的充分条件；正质量/沿解独立为A可逆的合理充分条件，并非最弱前提。闭区间实际解假设合理，不推出全局存在；τ<0时结论空泛，τ=0仅是初值，不影响正时间解区间的结论。这里“for all time”按已声明的实际解区间解释，未声称负时间或全局流；若需双向时间可另以任意含初始时刻的区间表述。未见[ERRATUM?]。本声明、所调用不变性引理及所读取证明链有实际证明，无sorry；签名判断独立于此，本次未编译。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:700](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:700>)（`MD.Ch04.cotangentInvariant`）。
+位置：[Blueprint/Ch04.lean:731](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:731>)（`MD.Ch04.cotangentInvariant`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3100,13 +3349,15 @@ theorem reducedFieldRegularity
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开PotentialForce(U,q)_i=−DU(q)[e_i]；梯度为Dγ_j(q)[e_i]，G为相应行矩阵，D=diag(1/m_i)，A=GDGᵀ，φ_j=D²γ_j(q)[Dp,Dp]，ρ=A⁻¹(GDF+φ)。ConstrainedReactionRegularity中的textbookConstrainedPhaseVectorField(z)实际等于(D z.2,−∇U(z.1)−G(z.1)ᵀρ(z.1,z.2))，故所研究对象就是将λ代回(4.8)所得的约化ODE右端。签名对任意相点z（不强加在约束集上），以正质量、该点梯度独立、U全局C²及约束全局C³推出该场在z处C¹；没有偷换为抽象场或假定反作用可微。C³使Hessian曲率项C¹，U C²使力C¹；这些是合理充分条件，但局部同等正则性即可，非最弱必要假设。原句本身只说得到ODE，并未声称C¹；本条已在[EXTRA]明确声明为独立正则性补充，因此按这一明示扩展范围PASS，不应当把C¹作为原书逐字断言或把本结论当作构造流/全局存在。未见[ERRATUM?]。本声明及对应正则性引理展示实际证明，无sorry；本次只做签名审计，未编译。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:717](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:717>)（`MD.Ch04.reducedFieldRegularity`）。
+位置：[Blueprint/Ch04.lean:748](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:748>)（`MD.Ch04.reducedFieldRegularity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3145,13 +3396,19 @@ def restrictedForm {n : ℕ} (chart : MolecularDynamics.Chapter04Review.Z n → 
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 ReviewDefinitions 中 Q n=Fin n→ℝ，Z n=Q n×Q n，dot u v=Σᵢuᵢvᵢ，phaseForm u v=Σᵢ(u.qᵢv.pᵢ−v.qᵢu.pᵢ)。签名确实定义任意映射 chart 的环境标准二形式拉回 Dchart(z)*ω，但 chart 任意，未要求可微、像落在 cotangentSet、约束正则或相应切空间；定义本身也不陈述非退化。因此仅忠实于拉回运算，未表达本条原句的“on the co-tangent bundle”及“symplectic form on the manifold”。context_notation 已提醒非退化未证明，但也称“真实可微约束图”，签名没有该限制。无 [ERRATUM?]；这里是形式化范围缺失，不是原书错误。该项为定义，没有 sorry 证明义务。
+
+网站反例：n=1，chart(z)=0，则 Dchart=0，restrictedForm 恒为0；在二维非零切空间退化。也可取恒等 chart、g(q)=q，它的像并不落在约束余切集合。
+
+网站建议：保留一般 pullback 辅助定义；另以真实约束余切流形/局部参数化为对象，要求可微且像满足位置和隐藏约束，并在适当切空间给出标准限制形式及非退化结论。不要把零空间例外或任意 chart 的拉回直接称为辛形式。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:726](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:726>)（`MD.Ch04.restrictedForm`）。
+位置：[Blueprint/Ch04.lean:757](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:757>)（`MD.Ch04.restrictedForm`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3199,13 +3456,19 @@ theorem variational :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+展开 invMass 为对角逆质量乘法，grad U 为实际坐标 Fréchet 偏导；textbookConstraintJacobian 的第 j 行是 grad(g j)，故转置乘 rho 是 Σⱼrhoⱼ grad(g j)。等式两分量准确表达 (4.11)–(4.12) 的向量场线性化；U/g C²、rho 在 z 可微足够，合理但全局 C²强于点附近正则。m 未要求正或非零：导数等式仍真（Lean 实数逆零为零），但作为物理 M⁻¹应限定非零/正质量。核心缺项是 (4.13)：量化任意 z,v，既无合法约束状态、切向假设，也无 dgⱼ(q)dq=0 结论。依赖 tangentPhase 定义确含 ∀j,Dgⱼ(q)v.q=0 及隐藏约束导数为零，但该签名未引用它；其他条不能补足本 source_id 全部子句。该声明有 sorry；本 FAIL 属于签名覆盖缺失，与 sorry 独立。无本条 [ERRATUM?]。
+
+网站反例：n=l=1，m=1，U=0，g(q)=q，rho=0，z=(0,0)，v=(1,0)。全部现有假设满足，向量场导数等式成立，却 Dg(0)v.q=1≠0；即使 z 是合法约束状态也不够。
+
+网站建议：将一般向量场导数公式保留为辅助命题；对应原文的条目增加合法约束图或切向变分假设，并把 ∀j,(fderiv ℝ (g j) z.1) v.1=0 与两个导数公式一起明确输出。正质量可作为物理解释假设；不能仅在注释中说 (4.13) 在别条保留。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:731](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:731>)（`MD.Ch04.variational`）。
+位置：[Blueprint/Ch04.lean:762](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:762>)（`MD.Ch04.variational`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3256,13 +3519,19 @@ theorem hessianPullbackCancel {Nc Mc : ℕ}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+textbookPotentialForce U(q)=−grad U(q)；textbookMultiConstrainedMomentum univ γ ρ q p=p−Σⱼρⱼ grad γⱼ(q)。代入 p=−grad U∘q 后，该命名为 Momentum 的函数实际是 ṗ 的力/加速度项。结论是 Σᵢ(dqᵢ∧d ṗᵢ)(u,v)=0，包含势 Hessian、每个约束 Hessian 和乘子导数的全部消去。hconstraint 的邻域恒零结合 hq 导出 Dγⱼ(q)Dq=0；C²/可微条件合理，邻域恒零是切向约束的充分而较强表达，不是假设消去结论。但原条 statement_latex 最后陈述 d/dt Σdqᵢ∧dpᵢ=0，本签名没有时间、动量图、质量、q̇=M⁻¹p，因此未表达 Leibniz 的另一项 Σd q̇ᵢ∧dpᵢ，也未陈述完整时间守恒。库引用证明正文无显式 sorry，未在此运行编译或审计整个依赖的公理；该事实不改变签名判定。无本条 [ERRATUM?]。
+
+网站反例：缺失条款而非现有消去等式错误：Nc=1,Mc=0,U=0 时当前结论对任意 q 恒成立。另取 q(t,a,b)=a、p(t,a,b)=t b，则拉回 dq∧dp=t da∧db 不恒定；该签名没有约束这个 p 或其 ODE，不能排除此例。此例不是原书受约束 ODE 的反例。
+
+网站建议：把现有签名标为动量导数项消去辅助引理；本条增加实际时间相关 q,p、常对角逆质量及 ODE/变分关系，明确证明位置导数项为零，并用 Leibniz 得到完整二形式时间导数为零。或收窄本条摘录至该辅助引理，但不能保留完整原文结论却只审计半项。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:744](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:744>)（`MD.Ch04.hessianPullbackCancel`）。
+位置：[Blueprint/Ch04.lean:775](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:775>)（`MD.Ch04.hessianPullbackCancel`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3318,13 +3587,15 @@ theorem constrainedFlowPullback {Nc Mc : ℕ}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+展开 textbookCotangentChart q p=Sum.elim q p，SymplecticCoordinates=(Fin Nc⊕Fin Nc)→ℝ，textbookJ=[0,I;−I,0]，textbookSymplecticForm=J.toBilin′，坐标值 Σᵢ(u.qᵢv.pᵢ−u.pᵢv.qᵢ)。InverseMassMatrix=diag(mᵢ⁻¹)，Gⱼᵢ=Dγⱼ(q)eᵢ，Gram=GM⁻¹Gᵀ；Curvatureⱼ=D²γⱼ(q)[M⁻¹p,M⁻¹p]，ReactionMultiplier=Gram⁻¹(GM⁻¹F+Curvature)，F=−grad U。PhaseVectorField=(M⁻¹p,F−GᵀReactionMultiplier)，符号与 (4.7)–(4.9) 相合。Φ 是给定联合 C² 解族；对区间全部 t、全部 y 要求 ODE 和梯度独立，初始位置/隐藏约束全保留；x,u,v 任意，结论恰为各时刻相对于 t=0 的二形式拉回相等。无需 Φ(0,y)=y：允许任意初始约束图，等式本身正是沿流保持该图的拉回形式，换成初始局部坐标即原句。它不声称构造全局流、逆映射或流形非退化定理，原文这里的辛映射表述按形式保持解释。正质量/独立梯度保证 Gram 可逆；联合 C²、C³约束/C²势是充分且合理的技术加强，非最低必要条件，没有将辛性作为前提。Icc 0 τ 只覆盖正向所给区间；τ<0 时为空，不能解释为负时守恒。对应这一局部守恒签名 PASS；无本条 [ERRATUM?]。正文调用依赖同名桥接定理，无显式 sorry；未做编译验证，此 PASS 仅为只读签名语义审计。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:760](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:760>)（`MD.Ch04.constrainedFlowPullback`）。
+位置：[Blueprint/Ch04.lean:791](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:791>)（`MD.Ch04.constrainedFlowPullback`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3369,13 +3640,15 @@ def positionEulerPrinted {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.
 
 本地预审：**NEEDS_HUMAN**。保留印刷−hFn；p163写+hF(q)，若F一直是−grad U则本页负号冲突。物理力符号统一版另列，未静默修复原式。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:782–786 的 Prop 恰记录三式，合取换序不改变含义；rho=λₙ，z=(qₙ,pₙ)，out=(qₙ₊₁,pₙ₊₁)。它是关系而非存在唯一性断言，不要求非零步长或隐约束成立。[ERRATUM?] 与书中其他力符号确有冲突；若Fₙ解释为∇U则此式自洽，不能仅从本页断言必须改负号。定义无 sorry。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:782](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:782>)（`MD.Ch04.positionEulerPrinted`）。
+位置：[Blueprint/Ch04.lean:813](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:813>)（`MD.Ch04.positionEulerPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3415,13 +3688,19 @@ def positionEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:789–793 只给任意 F 的 +hF 更新；没有 F=−grad U 的约束，也没有 F_printed=−F 的参数转换。额外说明属于改变力参数或修订原式，不能作为同一F下的额外假设消除负号差异。原句仅命名方法，不能证明改号公式忠实。定义无 sorry。
+
+网站反例：n=1,l=0,m=1,h=1,z=(0,0),F≡1：印刷关系输出 (−1,−1)，统一力关系输出 (1,1)，二者不同。
+
+网站建议：明确区分 F_printed 与 F_force，要求 F_printed=−F_force，并记录力版本为显式派生/修订而非原式；如声明F=−∇U，应在签名中参数化U并使用该实际力。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:789](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:789>)（`MD.Ch04.positionEulerRelation`）。
+位置：[Blueprint/Ch04.lean:820](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:820>)（`MD.Ch04.positionEulerRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3467,13 +3746,15 @@ theorem hiddenEulerError :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:796–803 全称量化固定旧状态z及真实out(h),rho(h)，随后给存在C,δ及全体0<h<δ的O(h)界。依赖4445–4448展开为+ h(−grad U)动量更新、q(h)=q₀+h invMass p(h)、全部位置约束。区间含0且out(0)=z，故初位置合法已蕴含；对位置恒等式在0求导并对g(q(h))=0求导得初隐约束，再由C²约束及分支得到残差C¹、在0为0，因而O(h)。C²实际分支是合理的局部条件，但比原文更强，且只论单步局部h界，不保证长时间一致误差。力符号不影响这个几何论证。原文“will be violated”是泛指通常不精确保持，非所有例子必非零（线性约束可精确保持）。签名合理形式化该近似结论；证明体为 sorry，未验证证明。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:796](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:796>)（`MD.Ch04.hiddenEulerError`）。
+位置：[Blueprint/Ch04.lean:827](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:827>)（`MD.Ch04.hiddenEulerError`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3516,13 +3797,19 @@ def projectionResidual {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularD
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:806–808 和依赖4449–4451仅给r(η)=g(base−DG(q)ᵀη)。这准确表示残差函数，但所冻结statement_scope包含等式r=0、Qₙ的具体定义、Λ=h²λₙ及从三更新式消元；均不在此定义中。任意base并不能表达给定旧状态的简化方程，context的缩小范围不满足所引全部条款。定义无 sorry。
+
+网站反例：n=l=1,m=1,g(x)=x,q=0,base=1,η=0 时定义返回1，完全没有断言(4.17)的零残差；定义还不接收pₙ,Fₙ,h,λₙ，无法绑定Qₙ及Λ。
+
+网站建议：另给projectionEquation : Prop := projectionResidual ... η=0，并用旧状态/步长/力绑定base=q+h invMass p−h²invMass(F q)、η=h²λ；单列消元等价命题。或经显式范围变更将原文条目拆成残差定义与消元关系。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:806](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:806>)（`MD.Ch04.projectionResidual`）。
+位置：[Blueprint/Ch04.lean:837](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:837>)（`MD.Ch04.projectionResidual`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3561,13 +3848,19 @@ def projectionJacobian {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularD
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:811–814 及依赖4452–4455展开给Q=base−DG(q)ᵀη与R=G(Q)DG(q)ᵀ，矩阵次序正确；当g可微时Dηr=−R。但所引完整原文还含线性求解方程RΔΛ=g(Q)，签名没有ΔΛ或该等式。定义无 sorry。
+
+网站反例：取n=l=1,m=1,g(x)=x,q=0,base=1,η=0：R=1且r=1；签名既不指定ΔΛ，也不排除ΔΛ=0，而原线性方程要求ΔΛ=1。
+
+网站建议：保留R定义，增加含ΔΛ的Prop，要求projectionJacobian ... *ᵥ ΔΛ=projectionResidual ...；绑定ΔΛ=η_next−η并说明Q的对应关系。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:811](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:811>)（`MD.Ch04.projectionJacobian`）。
+位置：[Blueprint/Ch04.lean:842](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:842>)（`MD.Ch04.projectionJacobian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3608,13 +3901,19 @@ def newtonConstraint {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDyn
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:817–819 通过依赖4456–4458给η+R⁻¹r，位置与残差确用真实Q(η)，符号正确。签名只是一跳的全定义函数，未给迭代序列与可选零初始化，也没有非奇异限定以保证逆矩阵代表线性求解。context声称η₀=0但该声明中未出现初值。Ch04_deps.txt未展开标准库Matrix.inv/Matrix.nonsingInv的实现，不能仅从⁻¹名字审定奇异输入的行为；无需此行为即可判定初始化/合法求解域遗漏。定义无 sorry。
+
+网站反例：缺失条款：没有Λ⁽⁰⁾=0或任何以l编号的序列；没有det R≠0的有效步域。本条定义允许所有g,m,q,base,η，含常量非零约束（R=0、r≠0），此时原线性方程无解。
+
+网站建议：定义合法Newton步关系，加入det R≠0及η_next=η+R⁻¹r；另定义从0开始的迭代，初值仍注明原文是可选建议。补充依赖中Matrix.inv/Matrix.nonsingInv的定义，说明全定义函数在无效输入上的约定。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:817](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:817>)（`MD.Ch04.newtonConstraint`）。
+位置：[Blueprint/Ch04.lean:848](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:848>)（`MD.Ch04.newtonConstraint`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3655,13 +3954,19 @@ def frozenNewtonConstraint {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → Molecu
 
 本地预审：**NEEDS_HUMAN**。定义保留固定实际R(0)版本；原初始Gram和对称性不能当一般已证。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:823–825及依赖4459–4461固定的是R(0)=G(base)DG(q)ᵀ。这属于合理的冻结Newton实现，但未忠实表达原文另外声称的旧位置Gram等式、对称性以及一次分解复用。所标[ERRATUM?]一般成立；不能把正确的交叉矩阵版本当作已表达错误原式。若显式采用修订语义，可保留实现并对原式另标疑误。定义无 sorry。
+
+网站反例：n=l=1,m=1,g(x)=x²−1,q=1,base=2,η₀=0：G(q)=2,G(base)=4，R(0)=8，而旧位置Gram=4；即便q为合法位置亦不等。n=l=2,g₁(x,y)=x,g₂(x,y)=xy,q=(1,0),base=(1,1),D=I，则R(0)=[[1,0],[1,1]]，不对称。
+
+网站建议：明确保留原式为教材疑误；将冻结交叉Jacobian方案与冻结旧位置Gram方案分列。对Gram等式加入G(base)DG(q)ᵀ=G(q)DG(q)ᵀ的条件（例如G(base)=G(q)）；对对称性与因子复用另写语义条款。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:823](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:823>)（`MD.Ch04.frozenNewtonConstraint`）。
+位置：[Blueprint/Ch04.lean:854](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:854>)（`MD.Ch04.frozenNewtonConstraint`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3703,13 +4008,17 @@ theorem newtonQuadratic :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt:4377–4382 中 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v(i)=(m i)⁻¹v(i)、grad U=textbookConstraintGradient U；2975–2977 中该梯度第 i 项为 fderiv ℝ U q(Pi.single i 1)；3385–3387 中 G(j,i) 为约束 g j 的该坐标导数；3413–3415 中 D=diag((m i)⁻¹)；4428 中 constraintSet={q|∀j,g j q=0}。这些是实际导数而非独立输入矩阵。未运行编译，也不把 sorry 当作语义失败。 Ch04.lean:829–834与依赖4669–4673量词为全体数据→C²→真根→根处det非零→∃C>0,δ>0→∀η近根的单步二次界，量词正确。展开r=g(base−DG(q)ᵀη)、R=G(Q(η))DG(q)ᵀ后，光滑情形Dr=−R，Newton加号匹配。根处det≠0连续推出邻域det有正下界及局部唯一性，故全局唯一性不需要；全空间C²强于所需局部C²，应明确。[EXTRA]未偷渡误差界。标准Newton理论预期该签名成立，但实际使用的矩阵逆定义Matrix.inv（背后Matrix.nonsingInv）没有在Ch04_deps.txt中展开，无法按要求完全核对实际⁻¹语义；这是本项唯一材料缺口，非因为 sorry。证明体有 sorry，另行记为未证明。
+
+网站建议：补充Mathlib.LinearAlgebra.Matrix.NonsingularInverse中Matrix.inv/Matrix.nonsingInv及关联Inv实例的定义后完成该项审计；若希望降低加强，可将全局C²改为投影位置附近的局部C²。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:829](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:829>)（`MD.Ch04.newtonQuadratic`）。
+位置：[Blueprint/Ch04.lean:860](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:860>)（`MD.Ch04.newtonQuadratic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3756,13 +4065,18 @@ theorem frozenNewtonLinear :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+核对位置：Ch04.lean LF 836–845。实际签名显式引用的是 MolecularDynamics.Chapter04Review 的正式库定义，并非只根据 MD.Ch04 中同名局部定义推断。Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，LF 4377–4381 给出 Q n = Fin n → ℝ、Z n = Q n × Q n、invMass m v i = (m i)⁻¹*v i；LF 4449–4461 给出完整残差、R 和冻结更新。其余基础定义位于 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean LF 2975–2977：textbookConstraintGradient (g j) x i = (fderiv ℝ (g j) x)(Pi.single i 1)；-- FILE: MolecularDynamics/Chapter04/CotangentProjection.lean LF 3385–3387：textbookConstraintJacobian g x 的第 j,i 项即该真实偏导，记 J(x)；LF 3413–3414：textbookInverseMassMatrix m = diag((m i)⁻¹)，记 D。由此残差为 H(η)=g(base−D J(q)ᵀη)，R(η)=J(base−D J(q)ᵀη) D J(q)ᵀ，冻结映射为 T(η)=η+R(0)⁻¹H(η)。H 的实际导数是 −R，所以更新中的加号与原书 (4.18) 一致；R(0) 真正取在 base，对应 Q_n，并未偷换成旧点 Gram。
+对象与量词：先任意给定 n,l,m,g,q,base,root，再依次假设各 g_j 为 C²、H(root)=0、det R(0)≠0、‖DT(root)‖<1；随后存在同一对 C∈(0,1)、δ>0，对全部 ‖η−root‖<δ 给出 ‖T(η)−root‖≤C‖η−root‖。C 与 δ 可依赖前述固定数据，但不依赖 η。用 η=Λ^(l)、root=Λ_* 后即得到原书展示的局部线性误差上界；C<1 还保证该根邻域中迭代保持在邻域内并收敛。这解释原文“linear, i.e.”展示的上界，不宣称恰好一阶或排除某些特殊情况下更快收敛。
+[EXTRA] 审查：真实根资格与 det R(0)≠0 是标准的固定点及逆矩阵资格，不把误差界作为假设；C² 比本冻结映射所需的局部 C¹ 更强，但与教材“sufficiently smooth”一致。‖DT(root)‖<1 是比谱半径<1更强的充分收缩条件，并非局部收敛在所有范数下的必要条件；它明确限定了适用范围，合理地量化原文“小步长”下可用冻结矩阵的资格。签名没有独立推导步长阈值，亦不证明仅凭冻结 R 即无条件收敛；本 PASS 绑定这一公开限定后的条件性误差界。不需要额外全局唯一性，结论只围绕给定根；根附近的非退化性由上述收缩与可逆性资格保证。正质量未显式加入，但这个代数性的条件结论在更一般的固定对角 D 下仍适用，教材正质量实例被包含。本条无独立 [ERRATUM?] 标记；不得利用原书错误的 R(0)=旧点 Gram 来解释这里的 R(0)。
+证明状态单独记录：Ch04.lean LF 844–845 为 := by / sorry。PASS 仅表示已展开定义后的签名语义通过，不表示定理已获 Lean 证明或编译验证；本次只读审计未写证明。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:838](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:838>)（`MD.Ch04.frozenNewtonLinear`）。
+位置：[Blueprint/Ch04.lean:869](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:869>)（`MD.Ch04.frozenNewtonLinear`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3808,13 +4122,19 @@ theorem projectionScale :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+核对位置：Ch04.lean LF 847–857。已逐一定义展开，而非根据 cotangentSet 或 projectionResidual 的名字判断。Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean LF 4377–4381：Q n = Fin n → ℝ，Z n = Q n × Q n，invMass m v i=(m i)⁻¹*v i。LF 4428：constraintSet g={q | ∀j,g j q=0}；LF 4429–4430：cotangentSet m g={z | g(z.1)=0 ∧ J(z.1) D z.2=0}。这里 J 的实际元素是 (fderiv ℝ (g j) q)(Pi.single i 1)，来自 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean LF 2975–2977 与 -- FILE: MolecularDynamics/Chapter04/CotangentProjection.lean LF 3385–3387；D=diag((m i)⁻¹)，由后者 LF 3413–3414。LF 3417–3420 的 textbookConstraintGram 实际等于 A(q)=J(q)D J(q)ᵀ。ReviewDefinitions.lean LF 4449–4451 的残差实际是 g(base−D J(q)ᵀη)。
+因此本签名的方程展开为 g(q+hDp+h²DF(q)−D J(q)ᵀη(h))=0，其中 q=z.1、p=z.2，且初始状态同时满足 g(q)=0 与 J(q)Dp=0。它与原书 (4.17) 的对象及 Λ 的缩放一致。原书 PDF p.178 的预测点是 q_n+hM⁻¹p_n−h²M⁻¹F_n，而本签名写 +h²DF(q)；必须明确以 Lean 的 F(q)=−F_n 对应字面原式，不能把原式静默改成加号。由于 F 在此任意量化、只取固定点 q 的值，正负号对本阶估计不构成语义损失，也不需要 F 的额外光滑性。
+量词及全部数学结论：任意给定 n,l,m,F,g,z 和实际分支 η 后，假设 z∈cotangentSet、各 g_j 为 C²、η 为 C²、η(0)=0、det A(q)≠0，以及存在统一邻域使全部 h 都满足真实残差为零；结论再给出 C>0、δ>0，所有 −δ<h<δ 均满足 ‖η(h)‖≤C h²。结论邻域可以缩小，不必与前提邻域相同；C 与 δ 不依赖 h。该界是 Λ(h)=O(h²) 的明确有限维范数表述，并蕴含 η(h)→0，给出原文选择零初始猜测的定量依据。此处是缩放后的 Λ，不误写成 λ_n=O(h²)。
+[EXTRA] 审查：初始余切资格消去一阶项；若只知 q∈M 而不知 J(q)Dp=0，通常会出现 O(h) 项，所以该资格对固定初始状态的此种估计具有实质作用。对已有隐藏约束误差的后续步，本签名不直接作普遍保证。det A(q)≠0 提供乘子方向的正则性，是标准充分条件；η(0)=0 选择靠近零的根分支，排除远离零的其他根。C² 的真实选根分支是显式、较强但合理的正规性资格；残差等式并不是阶估计的循环假设，没有把 ‖η(h)‖≤Ch² 或 η′(0)=0 预先当作前提。假设方程及初始余切资格对一阶导数的约束为 A(q)η′(0)=J(q)Dp=0，正则性消去线性项。签名审查的是给定正则根分支的大小，不建立非线性根分支的存在性；这一范围限制与 JSON 的 extra_assumptions 一致。正质量也未显式列入，但该条件结论并不依赖 D 的正定性，已包含教材的正质量实例。本条无 [ERRATUM?] 标记；原文的泛化适用条件需要通过这些明示附加假设理解，不能把它说成对任意不相容状态都成立。
+证明状态单独记录：Ch04.lean LF 856–857 为 := by / sorry。PASS 仅针对已展开定义的条件性签名，不是已完成根存在性证明，也不是 Lean 证明通过；本次未补证明。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:849](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:849>)（`MD.Ch04.projectionScale`）。
+位置：[Blueprint/Ch04.lean:880](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:880>)（`MD.Ch04.projectionScale`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3857,13 +4177,23 @@ theorem frozenGramPrinted :
 
 本地预审：**FAIL**。n=l=1,m=1,g(q)=q²−1,q=1,base=2：g′(base)=4,g′(q)=2，实际R(0)=8而旧点Gram=4。η0=0并不使Q0=qn；若另冻结Jacobian到qn才得到所写对称Gram。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+核对位置：Ch04.lean LF 859–864。Q n 在 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean LF 4377 展开为 Fin n → ℝ。正式库 projectionJacobian 的完整定义位于同文件 LF 4452–4455：R(η)=J(base−D J(q)ᵀη)D J(q)ᵀ，其中 invMass 的坐标式在 LF 4381，等价于 D=diag((m i)⁻¹) 的乘向量作用。J(x) 的每项为真实偏导 (fderiv ℝ (g j) x)(Pi.single i 1)，来自 -- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean LF 2975–2977 及 -- FILE: MolecularDynamics/Chapter04/CotangentProjection.lean LF 3385–3387；D 的定义在后者 LF 3413–3414，textbookConstraintGram 在 LF 3417–3420 实际为 J(q)D J(q)ᵀ。令 η=0 后，左边是 J(base)D J(q)ᵀ；右边则是 J(q)D J(q)ᵀ。
+对象与量词：签名先对 n,l,m,g,q,base 全称量化，随后无任何假设就断言两矩阵相等。这逐字承接了原书所印等式，但原书 (4.19) 和同页 R 的定义并不支持它；本条 [ERRATUM?] 成立，问题已可由完整定义和反例判定，无需因“缺定义”转交人工。正质量、C² 约束、旧点满足约束、约束 Jacobian 满行秩、预测点任意接近旧点、甚至 R(0) 可逆，都不能补救该无条件等式。
+缺失结论：原摘录还明确说“which is a symmetric matrix”，Lean 签名仅给等式，没有列出 R(0) 的对称性断言。右端 Gram 的确对称，因为 D 为实对角矩阵；但实际左端是两个不同位置 Jacobian 的交叉乘积，一般连对称性也不成立。在正确的同点或同 Jacobian 限定下，等式可用于推导对称性；要审查全部结论子句，应把这一性质在对应正确声明中显式列出，而不能靠错误等式充当其依据。
+本条没有 [EXTRA] 假设；修复必须清楚区分“保留原书勘误记录”和“新增可证明的正确声明”，不得直接修改 corrected_json 的原文等式。
+证明状态单独记录：Ch04.lean LF 863–864 为 := by / sorry。FAIL 来自展开定义后的错误普遍等式及缺失结论，与 sorry 是否存在是两个独立问题。
+
+网站反例：取 n=l=2，m=(1,1)，g₁(x,y)=x−1，g₂(x,y)=y+x²−1，q=(1,0)，base=(1+ε,0)，其中 ε>0 可任意小。约束均为多项式，g(q)=0，J(q)=[[1,0],[2,1]] 满秩，D=I，J(base)=[[1,0],[2+2ε,1]]。于是 projectionJacobian m g q base 0=[[1,2],[2+2ε,5+4ε]]，textbookConstraintGram m g q=[[1,2],[2,5]]。ε≠0 时二者不相等，且左矩阵的 (1,2) 与 (2,1) 项不同，故不对称；两矩阵行列式都为 1。取 p=0、h²=ε、Lean 的 F(q)=(1,0)，此 base 也来自本批投影预测式且初始隐藏约束成立；按原书字面负号则取 F_n=(−1,0)。因此反例不是靠不相容初值或大步长构造。以 ε=1/10 作精确有理数复核，左矩阵为 [[1,2],[11/5,27/5]]，右矩阵为 [[1,2],[2,5]]，左行列式为 1。
+
+网站建议：保留原书字面等式及 [ERRATUM?] 的来源记录，将可证明的基本声明改为 projectionJacobian m g q base 0 = textbookConstraintJacobian g base * textbookInverseMassMatrix m * (textbookConstraintJacobian g q)ᵀ；这条正确交叉矩阵等式不附带一般对称性。若仍要声明它等于旧点 Gram，应另加 base=q，或更弱的 textbookConstraintJacobian g base = textbookConstraintJacobian g q，并在这个限定后的声明中显式加入 Aᵀ=A（A 为该冻结矩阵）或等价的矩阵对称性子句。这些假设只是足够条件，不是必要条件，必须标为额外限定，不能伪装成仅由 Λ^(0)=0 得出的原文结论。如果算法本意是冻结到旧点 Gram，则另定义该近似矩阵 J(q)D J(q)ᵀ 及相应更新映射，与真实 R(0) 区分；不要暗中改写本批前两条使用的正式库定义。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:861](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:861>)（`MD.Ch04.frozenGramPrinted`）。
+位置：[Blueprint/Ch04.lean:892](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:892>)（`MD.Ch04.frozenGramPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -3908,13 +4238,19 @@ def componentPrinted {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDyn
 
 本地预审：**NEEDS_HUMAN**。字面分母G_j^1与已定义G_n^j不一致。引入待解释Gsup1保留它，更新方向仍为G_n^j；常规修正版另列。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开Ch04_deps.txt中MolecularDynamics/Chapter04/ReviewDefinitions.lean：Q n=Fin n→ℝ；invMass m v的第i坐标=(m i)⁻¹v_i；dot u v=Σ_i u_i v_i；grad U q=textbookConstraintGradient U q。进一步展开MolecularDynamics/Chapter04/CotangentProjection.lean中textbookConstraintGradient：第i坐标=(fderiv ℝ U q)(Pi.single i 1)，是真实Fréchet导数的坐标梯度。 MD.Ch04.componentPrinted将ΔΛ_j代入位置更新，Gsup1 j明确对应未解释的印刷G_j^1，固定q对应q_n；在质量非零、相关梯度存在和分母非零时，单步代数式相符。Gsup1是显式记号参数而非额外等式假设，这种保留原式的处理合理；[ERRATUM?]有本页已定义G_n^k及第一分量式作依据，但不据此认定原书修订已获确认。FAIL：签名没有任何有效域条件，Lean把0的逆和除以0定义为0，因而在原式没有可用标量逆时仍返回Qnow；也只定义一个j的单步，没有该条所引重复循环的序列。这里没有sorry，定义完整不等于原文全部语义已覆盖。
+
+网站反例：一维、一个约束，质量=1，g_1(x)=x，q_n=Q=1，Gsup1(第一个分量)=0。原式分母为1·1·0=0，ΔΛ_1=[0]^{-1}·1无定义；Lean除以0为0，结果仍为Q=1。
+
+网站建议：保留Gsup1参数与原书疑误说明；把可逆质量、所需可微性及dot(grad(g j) Qnow)(invMass m(Gsup1 j))≠0列入有效步骤资格（可用子类型或关系），显式给出ΔΛ_j及位置更新。若本条仍包含“cycles repeatedly”，补顺序循环迭代定义；否则把statement_scope明确限制为单个印刷分量步骤，将循环归入Sweep。不要静默设置Gsup1 j=grad(g j) q。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:869](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:869>)（`MD.Ch04.componentPrinted`）。
+位置：[Blueprint/Ch04.lean:900](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:900>)（`MD.Ch04.componentPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -3956,13 +4292,19 @@ def componentConstraintStep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → Molec
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开Ch04_deps.txt中MolecularDynamics/Chapter04/ReviewDefinitions.lean：Q n=Fin n→ℝ；invMass m v的第i坐标=(m i)⁻¹v_i；dot u v=Σ_i u_i v_i；grad U q=textbookConstraintGradient U q。进一步展开MolecularDynamics/Chapter04/CotangentProjection.lean中textbookConstraintGradient：第i坐标=(fderiv ℝ U q)(Pi.single i 1)，是真实Fréchet导数的坐标梯度。 MD.Ch04.componentConstraintStep对任意j返回Qnow-[g_j(Qnow)/Σ_i∂_i g_j(Qnow)(m_i)⁻¹∂_i g_j(q)]·M^{-1}∇g_j(q)，第一索引实例与该条原式代数一致，任意j是自然参数化。合并ΔΛ_j并返回Q是可接受的消元表达。[EXTRA]声称“取非零分母才是可用步骤”必要且合理，却没有落实于签名；质量非零及梯度存在资格也未落实。故FAIL为有效域缺失，而不是一般j或合并公式本身错误。该条没有[ERRATUM?]原书第一分量公式索引一致；同页一般式疑误不能作为已确认原文更正。定义无sorry；不作编译或证明完成性断言。
+
+网站反例：一维、一个约束，质量=1，g_1(x)=x²+1，q_n=0，Q=1。grad(g_1)(q_n)=0、grad(g_1)(Q)=2，分母=0、g_1(Q)=2。原文逆不存在，Lean总函数仍返回Q=1；注释中的非零前提不在函数参数中。
+
+网站建议：给有效单步定义或其关系加入非零质量、g_j在q_n及当前Q处可微和该标量分母≠0的条件；保证调用时检查这些条件。明确Fin l的首项对应原文j=1，注明推广任意j属于参数化解释。可另保留当前总函数作为实现扩张，但不要把零分母输出当原文有效步骤。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:876](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:876>)（`MD.Ch04.componentConstraintStep`）。
+位置：[Blueprint/Ch04.lean:907](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:907>)（`MD.Ch04.componentConstraintStep`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4001,13 +4343,19 @@ def componentSweep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynam
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开Ch04_deps.txt中MolecularDynamics/Chapter04/ReviewDefinitions.lean：Q n=Fin n→ℝ；invMass m v的第i坐标=(m i)⁻¹v_i；dot u v=Σ_i u_i v_i；grad U q=textbookConstraintGradient U q。进一步展开MolecularDynamics/Chapter04/CotangentProjection.lean中textbookConstraintGradient：第i坐标=(fderiv ℝ U q)(Pi.single i 1)，是真实Fréchet导数的坐标梯度。 已另外展开依赖文件中componentConstraintStep（两处grad分别在Qcur与固定q取值）及componentSweep的List.finRange l.foldl：按0,...,l-1，每次使用上一步Q结果，完成恰好一次全分量扫描；MD.Ch04.componentSweep调用的是这个正式库单步而非componentPrinted。[EXTRA]一次扫描合理地构成实现部件，但本签名没有多轮迭代、循环状态或ΔΛ分量记录，注释称“多轮为其真实函数迭代”未给出该定义。它还把印刷分母G_j^1改用∇g_j(q)，是明确但未经确认的数学解释，不是逐字原式。[ERRATUM?]索引不一致有依据，未确认两者相等。有效质量、可微性及每次分母非零也没有要求。因此FAIL：该条引用反复循环的全部范围未被覆盖，且有有效域缺失及原式替换。无sorry，单次fold定义的完整性与语义覆盖分开判断；原停止建议不是收敛结论，不能据此要求证明收敛。
+
+网站反例：重复扫描缺失的具体例：一维一个约束，质量=1，g(x)=x²-1，固定q_n=1、Q初值=2。分母=4Q非零，单步S(Q)=Q-(Q²-1)/(2Q)：一次扫描S(2)=5/4；继续下一轮S(5/4)=41/40，两者不同。当前componentSweep只返回5/4，没有表示原句下一轮及其后的过程。若q_n=0、g(x)=x²+1，则还出现零分母而原文有效逆不存在。
+
+网站建议：保留一次扫描作为辅助函数，增加明确的多轮顺序迭代（例如S^[k]，或含轮次/分量及Λ的状态递推），并对每步所用逆添加有效域条件。字面扫描应调用含Gsup1的印刷步骤；采用G_n^j的扫描另列为有明确修订标记的解释。停止条件若纳入范围，需记录各ΔΛ_j及全分量检查；无需添加收敛承诺。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:883](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:883>)（`MD.Ch04.componentSweep`）。
+位置：[Blueprint/Ch04.lean:914](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:914>)（`MD.Ch04.componentSweep`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4053,13 +4401,15 @@ def projectedEulerPrinted {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics
 
 本地预审：**NEEDS_HUMAN**。原(4.21)写−hF_n，与此前F=−∇U及p163的+hF不一致；逐字保留，质量一致及正确力符号版另列。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i项为(m i)⁻¹v_i；Jacobian的(j,i)项为fderiv(g j)(q)(e_i)。constraintSet是所有g_j(q)=0；cotangentSet同时含位置约束及GM⁻¹p=0。因此五个合取依次等价于(4.21)、(4.20)、(4.22)、(4.23)、(4.24)，重复位置约束不改变关系。输入与输出及两组乘子均为显式参数，不声称存在。保留−hF符合印刷本。[ERRATUM?]成立：PDF185印刷163为+hF；这不影响逐字版通过。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:889](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:889>)（`MD.Ch04.projectedEulerPrinted`）。
+位置：[Blueprint/Ch04.lean:920](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:920>)（`MD.Ch04.projectedEulerPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4100,13 +4450,19 @@ def projectedEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamic
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。展开与逐字版相同，唯一变化为+hF，但所绑定原句是方法辛性的论断；此定义只有五条更新约束，没有任何拉回二形式不变结论，也没有F来自势的限制。[EXTRA]符号修正版可以作为另一个算法定义，但不能充当所引辛性原句的形式化。
+
+网站反例：缺失条款：方法保持受约束辛形式。无约束n=2、m=1、h=1、F(q)=(q₂,0)满足该算法关系却非辛：输入方向u=(δq=e₂,δp=0)、v=(δq=e₁,δp=0)原二形式为0，更新后的二形式为−1。
+
+网站建议：将此条重新绑定为明确标记的修正版(4.20–24)定义；若继续绑定辛性原句，应限制F=−∇U、U为C²及可微求解分支，并加入完整受约束拉回二形式不变结论。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:897](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:897>)（`MD.Ch04.projectedEulerRelation`）。
+位置：[Blueprint/Ch04.lean:928](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:928>)（`MD.Ch04.projectedEulerRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4167,13 +4523,15 @@ theorem lemma41 {Nc : ℕ} {E : Type*}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。依赖ConstrainedProjection.lean中gradient_i=fderiv γ(q)(e_i)，constrainedMomentum=p−μ∇γ(q)，cotangentChart=Sum.elim q p。SymplecticForm使用J=[0 I;−I 0]，值为Σ_i(u_qi v_pi−u_pi v_qi)，正是Σdq_i∧dp_i。hchart在x邻域要求γ(q)=0及p·∇γ(q)=0；对任意参数空间E、x及u,v给出两拉回形式相等。[EXTRA]可微参数图、乘子及邻域约束是微分形式的合理显式资格，无结论作假设。P由定义消去符合原式。[ERRATUM?]两处dq_j链式公式索引错误成立，应为dq_i；库用真实导数，不继承该计算错误。包装证明调用lemma_4_1，语义判定与证明完整性独立。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:906](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:906>)（`MD.Ch04.lemma41`）。
+位置：[Blueprint/Ch04.lean:937](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:937>)（`MD.Ch04.lemma41`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4225,13 +4583,15 @@ theorem multiMomentumPullback {Nc : ℕ} {E ι : Type*}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。multiConstrainedMomentum=p−Σ_{j∈s}μ_j∇γ_j(q)，chart与SymplecticForm如Lemma41展开，结论正是新位置的Σdq∧dp等于Σdq∧d pbar。有限指标集推广Fin l合理，s中每条约束C²、乘子与q,p在x可微，且邻域位置约束确保dγ_j(q)=0。无需假设pbar满足动量隐藏约束：该拉回恒等式对任意pbar成立，属于有效加强。[EXTRA]合理，不声称分支存在。调用依赖中的同名拉回定理。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:923](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:923>)（`MD.Ch04.multiMomentumPullback`）。
+位置：[Blueprint/Ch04.lean:954](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:954>)（`MD.Ch04.multiMomentumPullback`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4289,13 +4649,19 @@ theorem projectedEulerPullback {Nc : ℕ} {E ι : Type*}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。展开Pbar=p+aF_U(q)−hΣλ_j∇γ_j(q)，F_U=−∇U；Q_i=q_i+h(m_i)⁻¹Pbar_i；最终P=Pbar−Σμ_j∇γ_j(Q)。签名只断言Ω(Q,P)=Ω(q,p)。所引原文却明确有两个中间等式Ω(Q,Pbar)=Ω(q,Pbar)及Ω(q,Pbar)=Ω(q,p)，签名均未给出；它把上一条末投影等式一起组合为总结果，不能完整覆盖本条两结论。[EXTRA]C²、可微分支、前后位置约束合理，a=−h和a=h覆盖两种力符号；质量系数固定，拉回恒等式无需正质量。
+
+网站反例：缺失上述两个中间拉回形式等式；总等式本身正确，不提供数学反例冒充错误定理。
+
+网站建议：令Pbar=textbookProjectedEulerPreMomentum，Q=textbookProjectedEulerPosition；结论增加Ω(D(Q,Pbar)u,D(Q,Pbar)v)=Ω(D(q,Pbar)u,D(q,Pbar)v)以及Ω(D(q,Pbar)u,D(q,Pbar)v)=Ω(D(q,p)u,D(q,p)v)，用合取逐条覆盖原句，可保留总等式。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:940](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:940>)（`MD.Ch04.projectedEulerPullback`）。
+位置：[Blueprint/Ch04.lean:971](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:971>)（`MD.Ch04.projectedEulerPullback`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4337,13 +4703,19 @@ noncomputable def cotangentMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。依赖展开G=实际约束Jacobian，D=diag(m_i⁻¹)，A=GDGᵀ；定义返回A⁻¹GD p，其中p必须解释为pbar。所引原式是G D p_next=0，本定义既不陈述该条件，也不带A.det≠0资格。[EXTRA]提到非奇异Gram，但签名中并无相应前提；总定义在奇异处的值不是一般求解乘子。
+
+网站反例：n=1,l=2,m₁=1，γ₁(q)=γ₂(q)=q₁，q=0,pbar=1。G=(1,1)ᵀ，A为全1的2×2矩阵，det A=0，Lean非奇异逆定义给零矩阵，返回μ=0。p_next=1，GDp_next=(1,1)ᵀ≠0；真实方程可取μ=(1,0)。
+
+网站建议：将绑定对象明确为(4.23–24)推导出的资格限定构造；用hdet:A.det≠0参数或受限域，并补充Aμ=GDpbar及投影满足隐藏约束的定理，不能把值函数直接当作(4.24)陈述。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:961](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:961>)（`MD.Ch04.cotangentMultiplier`）。
+位置：[Blueprint/Ch04.lean:992](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:992>)（`MD.Ch04.cotangentMultiplier`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4382,13 +4754,19 @@ noncomputable def cotangentProjection {Nc Mc : ℕ} (m : Fin Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。展开确为pbar−Gᵀμ，但μ被固定为A⁻¹GDpbar，原式(4.23)则保留待由(4.24)确定的μ。此专项构造在det A≠0时合理；[EXTRA]声称非奇异Gram是资格，但实际签名既无hdet也无正质量与独立性，奇异处返回值未必是余切投影。
+
+网站反例：同CotangentMultiplier的n=1,l=2重复约束例，q=0,pbar=1,m=1：定义返回1，违反两条隐藏约束；满足(4.23–24)的实际动量为0。
+
+网站建议：逐字绑定(4.23)可定义含任意μ的关系P=pbar−Gᵀμ；保留Gram专项实现则添加det A≠0资格并明确这是推导出的限定构造，另用隐藏约束定理说明输出。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:968](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:968>)（`MD.Ch04.cotangentProjection`）。
+位置：[Blueprint/Ch04.lean:999](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:999>)（`MD.Ch04.cotangentProjection`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4430,13 +4808,15 @@ theorem cotangentHidden {Nc Mc : ℕ}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已读取实际 /workspace/Ch04.lean 与 Ch04_deps.txt，而非仅按批次签名判断。以下为只读签名语义审计；未运行 Lean 编译，也不据 sorry 判定语义。展开输出为P=pbar−Gᵀ(GDGᵀ)⁻¹GDpbar，结论GP_mass=GDP=0逐分量正是(4.24)。hm要求所有质量严格正，hind要求实际fderiv梯度行线性独立；依赖ConstrainedGram.lean给出Gram.det≠0，再调用CotangentProjection.lean隐藏约束定理。[EXTRA]是确保Gram可逆的充分且合理资格，未假设目标结论。q,pbar任意；此条只处理隐藏动量约束，原(4.24)本身也不包含位置约束，不应额外要求γ(q)=0。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:974](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:974>)（`MD.Ch04.cotangentHidden`）。
+位置：[Blueprint/Ch04.lean:1005](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1005>)（`MD.Ch04.cotangentHidden`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4479,13 +4859,19 @@ theorem cotangentRegularity {Nc Mc : ℕ} (m : Fin Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+定义已展开：SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookSymplecticForm=J.toBilin\'，其坐标值为 Σ_i(u_q,i v_p,i−u_p,i v_q,i)，即 Σdq_i∧dp_i。textbookCotangentChart q p=Sum.elim(q)(p)。textbookConstraintGradient γ(q)_i=Dγ(q)(e_i)；textbookConstraintJacobian G_ji=Dγ_j(q)(e_i)；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ；textbookCotangentMultiplier=(GM⁻¹Gᵀ)⁻¹GM⁻¹p；textbookCotangentProjection=p−Gᵀμ。E 是任意实赋范空间；x 和 u,v 均全称量化；约束的 ∀ᶠ 是 x 邻域中的恒等关系，不是仅在 x 处为零。 cotangentRegularity 的唯一结论是投影映射在 x 处 C¹；没有二形式等式，也没有邻域位置约束。其 C²约束、C¹参数图和 Gram 非奇异作为正则性辅助定理的 [EXTRA] 合理，但不能代替本条冻结的原文等式。原文并未单独声称本条正则性，extra_assumptions 的“非另印定理”不能消除结论缺失。签名问题独立于证明：附件该声明使用正式库 apply，无 sorry；本审计未编译工程。无 [ERRATUM?] 标注。
+
+网站反例：缺失结论且现有假设不足：Nc=2, Mc=1, E=ℝ², m=(1,1), γ_1(q)=q_1, q(s,t)=(s,t), p(s,t)=(t,0)。Gram=(1)，所有正则性假设成立；实际投影 p−Gᵀμ=(0,0)，故投影后拉回二形式为 0，而投影前为 ds∧dt。u=(1,0),v=(0,1) 时分别为 0 和 1。取 x=(0,0) 连点上的位置约束也成立，但邻域约束不成立。
+
+网站建议：作为辅助正则性声明单独标记并移出本原句的忠实性映射；若保留该 source_id，增加 ∀j, ∀ᶠy in 𝓝x, γ_j(q(y))=0 并将结论补为对所有 u,v 的两侧实际二形式拉回等式，可采用本批 cotangentPullback 的签名。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:984](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:984>)（`MD.Ch04.cotangentRegularity`）。
+位置：[Blueprint/Ch04.lean:1015](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1015>)（`MD.Ch04.cotangentRegularity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4535,13 +4921,15 @@ theorem cotangentPullback {Nc Mc : ℕ} (m : Fin Nc → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+定义已展开：SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookSymplecticForm=J.toBilin\'，其坐标值为 Σ_i(u_q,i v_p,i−u_p,i v_q,i)，即 Σdq_i∧dp_i。textbookCotangentChart q p=Sum.elim(q)(p)。textbookConstraintGradient γ(q)_i=Dγ(q)(e_i)；textbookConstraintJacobian G_ji=Dγ_j(q)(e_i)；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ；textbookCotangentMultiplier=(GM⁻¹Gᵀ)⁻¹GM⁻¹p；textbookCotangentProjection=p−Gᵀμ。E 是任意实赋范空间；x 和 u,v 均全称量化；约束的 ∀ᶠ 是 x 邻域中的恒等关系，不是仅在 x 处为零。 令 q=q_{n+1}, p=bar p_{n+1}，构造投影为原文 p_{n+1}；任意 u,v 上的双线性等式恰好是原文完整两侧二形式等式，方向一致。每一 γ_j 都 C²，q,p 在 x 处 C¹；有限个约束逐个在邻域恒为零，保证切向变分；Gram 非奇异保证实际末投影和乘子局部可微。以上 [EXTRA] 是实际逆Gram构造和微分形式的合理局部资格，而非假设目标等式。不需要预投影动量满足隐藏约束：Lemma 4.1 的二形式论证只用位置约束和 Hessian 对称，这一加强合理。正质量不是该纯代数/二形式身份所必需；固定任意 m 的推广仍涵盖物理正质量。结论限于给定参数图和一点的所有方向，不声称全局解存在或全局微分同胚。无 [ERRATUM?]；实际声明为库 apply，无 sorry，未作工程编译验证。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:993](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:993>)（`MD.Ch04.cotangentPullback`）。
+位置：[Blueprint/Ch04.lean:1024](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1024>)（`MD.Ch04.cotangentPullback`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4601,13 +4989,19 @@ theorem gramProjectedEuler {Nc Mc : ℕ}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+定义已展开：SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ；textbookJ=[[0,I],[-I,0]]；textbookSymplecticForm=J.toBilin\'，其坐标值为 Σ_i(u_q,i v_p,i−u_p,i v_q,i)，即 Σdq_i∧dp_i。textbookCotangentChart q p=Sum.elim(q)(p)。textbookConstraintGradient γ(q)_i=Dγ(q)(e_i)；textbookConstraintJacobian G_ji=Dγ_j(q)(e_i)；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ；textbookCotangentMultiplier=(GM⁻¹Gᵀ)⁻¹GM⁻¹p；textbookCotangentProjection=p−Gᵀμ。E 是任意实赋范空间；x 和 u,v 均全称量化；约束的 ∀ᶠ 是 x 邻域中的恒等关系，不是仅在 x 处为零。 进一步展开：textbookPotentialForce U(q)=−∇U(q)；textbookMultiConstrainedMomentum=p−Σ_j μ_j∇γ_j(q)；PreMomentum=P=p+aF(q)−hΣ_j lam_j∇γ_j(q)；Position=Q=q+h diag(m_i⁻¹)P；GramProjectedEulerChart=(Q, P−G(Q)ᵀ(G(Q)M⁻¹G(Q)ᵀ)⁻¹G(Q)M⁻¹P)。邻域旧/新位置约束、C¹初始乘子分支、C²势与约束、终点 Gram 非奇异均为局部方法分支/末投影的合理 [EXTRA]；新位置约束蕴含输出的位置约束，第一结论给出隐藏约束，第二结论完整给出二形式拉回不变，未把它们作为假设。初始隐藏约束和正质量可在物理子类上额外限制，不是该更强恒等式的必要条件。关键对象不一致：a 是任意全称实数，原印刷 (4.21) 固定 −hF_n，按该库 F=−∇U 只有 a=−h 才是原印方法。a=h 是另一动力学符号，a=0 则忽略势力。合理推广仍应显式给出原书特例；本签名没有绑定 a，故作为实际 (4.20)–(4.24) 的对应声明不通过。无 [ERRATUM?] 标注，不能借推广静默改变原书力符号。本声明 apply 库定理，无 sorry；此判定是对象忠实性，未声称其数学拉回定理为假或完成编译。
+
+网站反例：方法对象反例：Nc=1, Mc=0, m=1, U(q)=q²/2, h=1, a=0, E=ℝ, q(y)=1,p(y)=0。所有约束假设空真，空 Gram 的 determinant=1，光滑性成立。Lean 的 P=0,Q=1，输出 (1,0)；原印 (4.21) 中 F(1)=−1，bar p=0−1·(−1)=1，(4.20) 输出 (2,1)。两者都可满足二形式恒等式，但不是同一方法。
+
+网站建议：在本 source_id 的原印方法包装中删去自由 a 并全部代入 a=−h，或增加 ha:a=−h 后明确原印特例。任意 a 的几何推广可另作辅助声明；如选择 Hamiltonian 一致 a=h，须单独标明原印符号疑误并审议，不能静默替换。补充物理正质量/初始隐藏约束时说明它们限定物理相空间；不要宣称本局部等式证明了分支存在或全局微分同胚。
 
 ### 7. 状态与证明位置
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch04.lean:1009](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1009>)（`MD.Ch04.gramProjectedEuler`）。
+位置：[Blueprint/Ch04.lean:1040](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1040>)（`MD.Ch04.gramProjectedEuler`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4651,13 +5045,15 @@ def shakePositionPrinted {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.
 
 本地预审：**NEEDS_HUMAN**。保留印刷约束反力缺M⁻¹；与相空间消元一般质量版本不一致。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 ReviewDefinitions：Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i分量为(m i)⁻¹v i；constraintSet g={q | ∀j,g j q=0}。ConstrainedSymplectic 相关定义中 textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian 的第j行为该真实梯度，因此 Gᵀρ 为约束梯度线性组合，并非抽象占位符。签名按参数a=qₙ₋₁、b=qₙ、c=qₙ₊₁、rho=λₙ，完整记录(4.25)和(4.26)，没有额外假设或存在性结论，定义无sorry。[ERRATUM?]成立：从(4.27)–(4.29)消元得h²M⁻¹(F−Gᵀλ)，原印刷反力缺M⁻¹；非标量质量下两种法向空间一般不同。本PASS仅指忠实保留原印刷。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1035](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1035>)（`MD.Ch04.shakePositionPrinted`）。
+位置：[Blueprint/Ch04.lean:1066](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1066>)（`MD.Ch04.shakePositionPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4697,13 +5093,19 @@ def shakePositionRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 ReviewDefinitions：Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i分量为(m i)⁻¹v i；constraintSet g={q | ∀j,g j q=0}。ConstrainedSymplectic 相关定义中 textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian 的第j行为该真实梯度，因此 Gᵀρ 为约束梯度线性组合，并非抽象占位符。该签名只是质量一致位置关系的定义，不是“由相空间方法消去动量得到(4.25)–(4.26)”这一断言：无SHAKE步骤前提、无序列、无消元蕴含，且它的反力为M⁻¹Gᵀρ而非原印刷Gᵀρ。[EXTRA]是合理的勘误候选，但属于改变公式而不是额外假设；不能代替原句的形式化。定义无sorry。
+
+网站反例：取n=2,l=1,m=(1,2),g(q)=q₁+q₂,F=0,h=1,b=(0,0),a=(1,1/2),c=(0,0),ρ=-1。质量一致关系成立：c−2b+a=(1,1/2)=−M⁻¹Gᵀρ。印刷关系即使另选标量乘子也无法生成(1,1/2)，因为Gᵀρ总为(ρ,ρ)。
+
+网站建议：保留印刷定义；另明确标注质量修正公式，并用连续两步shakeRelation作为前提陈述真正的消元定理，结论为质量一致关系。原书“reduces to (4.25)”不应静默改为修正式。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1042](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1042>)（`MD.Ch04.shakePositionRelation`）。
+位置：[Blueprint/Ch04.lean:1073](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1073>)（`MD.Ch04.shakePositionRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4746,13 +5148,15 @@ def shakeRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 ReviewDefinitions：Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i分量为(m i)⁻¹v i；constraintSet g={q | ∀j,g j q=0}。ConstrainedSymplectic 相关定义中 textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian 的第j行为该真实梯度，因此 Gᵀρ 为约束梯度线性组合，并非抽象占位符。cotangentSet m g 展开为 g(q)=0 且 G(q)M⁻¹p=0；grad U 是实际 Fréchet 坐标梯度，textbookPotentialForce U=-grad U。half=pₙ₊½、z=(qₙ,pₙ)、out=(qₙ₊₁,pₙ₊₁)，四个合取项分别为(4.28)、(4.27)、实际位置约束、(4.29)。位置约束来自同页(4.26)的算法上下文，属于必要且合理的补全；两个乘子均按h/2缩放。未要求隐藏约束、未断言求解分支存在。无sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1048](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1048>)（`MD.Ch04.shakeRelation`）。
+位置：[Blueprint/Ch04.lean:1079](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1079>)（`MD.Ch04.shakeRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4798,13 +5202,15 @@ def rattleRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapte
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 ReviewDefinitions：Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i分量为(m i)⁻¹v i；constraintSet g={q | ∀j,g j q=0}。ConstrainedSymplectic 相关定义中 textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian 的第j行为该真实梯度，因此 Gᵀρ 为约束梯度线性组合，并非抽象占位符。cotangentSet m g 展开为 g(q)=0 且 G(q)M⁻¹p=0；grad U 是实际 Fréchet 坐标梯度，textbookPotentialForce U=-grad U。half、rho、μ依次代表pₙ₊½、λₙ、μₙ₊₁。依赖rattleRelation和本地同名定义一致；合取完整包含(4.30)–(4.34)。cotangentSet重复位置约束并包含隐藏约束，故并未漏掉“自动保持两种约束”。末步μ前无h/2，忠实原书不同缩放。无额外假设、无sorry；关系本身不承诺隐式解存在。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1055](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1055>)（`MD.Ch04.rattleRelation`）。
+位置：[Blueprint/Ch04.lean:1086](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1086>)（`MD.Ch04.rattleRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -4853,13 +5259,19 @@ theorem constrainedOrders :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 ReviewDefinitions：Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i分量为(m i)⁻¹v i；constraintSet g={q | ∀j,g j q=0}。ConstrainedSymplectic 相关定义中 textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian 的第j行为该真实梯度，因此 Gᵀρ 为约束梯度线性组合，并非抽象占位符。cotangentSet m g 展开为 g(q)=0 且 G(q)M⁻¹p=0；grad U 是实际 Fréchet 坐标梯度，textbookPotentialForce U=-grad U。已展开 projectedEulerRelation：pbar=p+h(F−Gᵀrho)，qnew=q+hM⁻¹pbar，g(qnew)=0，pnew=pbar−G(qnew)ᵀμ，且out∈cotangentSet；rattleRelation如本批RATTLE条。已展开Gram=GM⁻¹Gᵀ、curvature_j=D²g_j[M⁻¹p,M⁻¹p]、reaction=Gram⁻¹(GM⁻¹F+curvature)、constrainedPhaseVectorField=(M⁻¹p,F−Gᵀreaction)。全部量词在资格前，Φ是真实ODE轨道，E/R为实际局部关系分支，结论仅给一次步长局部误差Euler O(h²)、RATTLE O(h³)。正质量、C⁴数据、初始Gram可逆、C³分支及μ(0)=0是合理技术资格，未循环假设误差。但原文明确包含SHAKE二阶候选，此签名完全没有SHAKE或位置二步方案；也未给稳定性/传播估计以从局部误差推出通常的全局一阶、二阶精度。“only first order”并非单个O(h²)上界可表达。extra_assumptions写有紧区间，实际仅有零点邻域，无紧时间区间假设。定理体为sorry，以上FAIL是签名覆盖不足，独立于未证明状态。
+
+网站反例：缺失条款：SHAKE/位置二步方案的二阶精度；从局部截断误差到有限时间全局阶数的结论。零力自由运动的Euler也满足该局部上界甚至精确，故上界不能表达“only”的非二阶性。
+
+网站建议：将此签名单列为局部一致性结果；另补SHAKE位置误差、适当稳定性与有限时间误差传播；若严格表达“only”，限定为通常阶数并给一阶而非二阶的例子。将extra_assumptions中的紧区间改为实际零点邻域，或在正式全局声明中加入紧时间区间。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1064](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1064>)（`MD.Ch04.constrainedOrders`）。
+位置：[Blueprint/Ch04.lean:1095](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1095>)（`MD.Ch04.constrainedOrders`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -4904,13 +5316,19 @@ theorem rattleSymplectic :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 ReviewDefinitions：Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i分量为(m i)⁻¹v i；constraintSet g={q | ∀j,g j q=0}。ConstrainedSymplectic 相关定义中 textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian 的第j行为该真实梯度，因此 Gᵀρ 为约束梯度线性组合，并非抽象占位符。cotangentSet m g 展开为 g(q)=0 且 G(q)M⁻¹p=0；grad U 是实际 Fréchet 坐标梯度，textbookPotentialForce U=-grad U。restrictedSymplectic 展开为：∀z∈cotangentSet,∀u v，tangentPhase z u和tangentPhase z v推出phaseForm(DG(z)u,DG(z)v)=phaseForm(u,v)。phaseForm(u,v)=Σu.q_i v.p_i−Σv.q_i u.p_i；tangentPhase要求Dg_j(q)u.q=0与D[(q,p)↦Dg_j(q)M⁻¹p](z)u=0。输出属于cotangentSet已由步骤前提保证，未把辛性当假设。C²势/约束及可微分支合理；注释称C¹但实际仅Differentiable，不要求导数连续。然而未要求正质量、约束梯度独立或实际光滑流形；在奇异约束点线性化核不是实际切空间，签名可为假。定理体sorry与反例分开判断。
+
+网站反例：n=l=1,m=1,U=0,g(q)=q²,h=0。令G(q,p)=(0,p),half(q,p)=p,rho=μ=0，全部映射光滑。cotangentSet={(0,p):p∈ℝ}，每个其中输入均满足完整rattleRelation（h=0且g′(0)=0）。在z=(0,0)，Dg=0且D(2qp)=0，故u=(1,0)、v=(0,1)均满足tangentPhase。phaseForm(u,v)=1，而DG u=(0,0)、DG v=(0,1)，输出两形式为0。故结论为假。
+
+网站建议：添加正质量以及在输入约束流形上的梯度线性独立/Gram可逆资格，以使tangentPhase确为实际余切束切空间；改为局部光滑分支/图册上的拉回辛性声明，更符合隐式算法。若注释要求C¹，应把Differentiable改成ContDiff ℝ 1或调整注释。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1081](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1081>)（`MD.Ch04.rattleSymplectic`）。
+位置：[Blueprint/Ch04.lean:1112](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1112>)（`MD.Ch04.rattleSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -4956,13 +5374,19 @@ def staggeredConstraintRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDy
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 ReviewDefinitions：Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i分量为(m i)⁻¹v i；constraintSet g={q | ∀j,g j q=0}。ConstrainedSymplectic 相关定义中 textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian 的第j行为该真实梯度，因此 Gᵀρ 为约束梯度线性组合，并非抽象占位符。参数rho是独立的交错乘子，关系完整记录(4.35)–(4.37)，无sorry。但原文还有SHAKE的tildeλ=λ和RATTLE的tildeλ=(λ+μ)/2及两种迭代可归约为此关系，签名没有原方法乘子、无换算公式、无归约断言，遗漏实质子句。[ERRATUM?]成立：合并上一RATTLE末步和当前首步得newHalf=oldHalf+hF−Gᵀ(μₙ+(h/2)λₙ)，故h≠0时tildeλ=λₙ/2+μₙ/h，非印刷平均。
+
+网站反例：取h=1、Gᵀ=1、F=0、oldHalf=0、λₙ=0、μₙ=1，两次动量子步合成newHalf=-1。印刷平均tildeλ=1/2代入(4.36)给newHalf=-1/2。即乘子换算矛盾。定义还没有陈述任何换算等式。
+
+网站建议：保留交错关系定义；另明确列出印刷乘子公式及缩放疑误。增加SHAKE与RATTLE归约声明，RATTLE须按(4.33)的原μ使用tildeλ=λ/2+μ/h（h≠0），或明确重新定义缩放后的μ。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1092](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1092>)（`MD.Ch04.staggeredConstraintRelation`）。
+位置：[Blueprint/Ch04.lean:1123](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1123>)（`MD.Ch04.staggeredConstraintRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5017,13 +5441,19 @@ theorem shakeRattlePositions :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 ReviewDefinitions：Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i分量为(m i)⁻¹v i；constraintSet g={q | ∀j,g j q=0}。ConstrainedSymplectic 相关定义中 textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian 的第j行为该真实梯度，因此 Gᵀρ 为约束梯度线性组合，并非抽象占位符。cotangentSet m g 展开为 g(q)=0 且 G(q)M⁻¹p=0；grad U 是实际 Fréchet 坐标梯度，textbookPotentialForce U=-grad U。已展开projectionResidual_j=g_j(base−M⁻¹G(q)ᵀeta)、Gram=GM⁻¹Gᵀ、cotangentMultiplier=Gram⁻¹GM⁻¹p、cotangentProjection=p−GᵀGram⁻¹GM⁻¹p。两套真实步骤、qS0=qR0、halfS0=halfR0推出位置相同及k+1动量投影关系，是合理的条件版本，未直接假设位置相同。正质量及约束上梯度独立为实际投影所需，合理。但原文从给定SHAKE初态构造RATTLE初态，签名把半步兼容直接作假设，没有构造pR0，也无k=0的动量投影结论。宣称“同一局部唯一投影分支”的[EXTRA]实际却量化所有q、所有base、所有eta/nu，要求全局根的法向修正唯一；未限制邻域或分支，远强于局部资格并排除常见非线性约束。[ERRATUM?]初始反力符号疑误成立：由(4.29)应得oldHalf=p0−(h/2)F+(h/2)Gᵀλ0，而印刷为负号。定理体为sorry；本FAIL针对原文初始化缺项与不合理全局资格，不声称这个强假设下的条件定理必然为假。
+
+网站反例：缺失条款：从SHAKE初态构造pR0、证明halfS0=halfR0，以及pR0=投影(pS0)。全局资格反例：n=2,l=1,m=(1,1),g(q)=‖q‖₂²−1，q=base=(1,0)，Gᵀ=(2,0)。eta=0和nu=1均使projectionResidual=0（投影点分别为(1,0)、(-1,0)），但Gᵀeta≠Gᵀnu；该约束处处正则且近eta=0分支局部唯一，却被签名排除。
+
+网站建议：把唯一性限于所选局部邻域及实际步长分支，并要求两套步骤均取该分支。补初态投影/半步兼容的构造声明及k=0动量投影。分别保存原印刷初始化负号与由(4.29)推出的正号，显式说明勘误，不能把相容性假设当作原构造的证明。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1101](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1101>)（`MD.Ch04.shakeRattlePositions`）。
+位置：[Blueprint/Ch04.lean:1132](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1132>)（`MD.Ch04.shakeRattlePositions`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -5066,13 +5496,19 @@ theorem shakeElimination :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开（Ch04_deps.txt，MolecularDynamics/Chapter04/ReviewDefinitions.lean）：Q n=Fin n→ℝ；invMass m v 的第 i 分量为 (m i)⁻¹*v i；constraintSet g={x|∀j,g j x=0}；shakePositionRelation a b c rho 为 c−2b+a=h² M⁻¹(F(b)−G(b)ᵀrho) 且 g(c)=0。CotangentProjection.lean 中 textbookConstraintJacobian 的 (j,i) 项是 textbookConstraintGradient (g j) q i；ConstrainedProjection.lean 中该梯度为 (fderiv ℝ (g j) q)(Pi.single i 1)，即真实坐标导数。 shakeRelation 展开为 half=p+(h/2)(F(q)−G(q)ᵀrho)，qnew=q+hM⁻¹half，g(qnew)=0，pnew=half+(h/2)(F(qnew)−G(qnew)ᵀrhonew)。签名全称量化 n,l,m,F,g,h 及四套序列，假设每一步满足该关系；用连续两步消去 p，结论以 k+1 为中心、乘子 rho(k+1)，并包含 g(q(k+2))=0；指标及量词正确，代数不需 h≠0、质量正性或光滑性。[EXTRA] 实际是更换结论公式，非额外假设；质量一致消元在数学上正确，但并非原句声称的印刷 (4.25)。[ERRATUM?] 反力缺失 M⁻¹ 的判断成立，不能对一般非标量对角质量仅重命名乘子解决。故原文忠实性 FAIL，非判定修正式为假。Ch04.lean:1120 有显式代数证明，无 sorry；未运行 Lean 编译，证明完成状态与语义结论分开。
+
+网站反例：取 n=2,l=1,h=1,m=(1,2)，g(x)=x₁+x₂，F(x)=(1,1)。所有 k 取 q_k=p_k=half_k=(0,0)，rho_k=1。每一步 shakeRelation 成立，质量一致位置式右端为 0；印刷 (4.25) 右端为 (1,1/2)−(1,1)=(0,−1/2)，不等于左端 0。即使允许重选标量乘子，也不能让 (1,1/2) 成为 (1,1) 的标量倍数。
+
+网站建议：保留当前命题作为明确标注的“质量一致修正式消元”；另记录原书到印刷 (4.25) 的字面消元声明存在错误。若要求忠实字面结论，可限制 M=I 后使用 shakePositionPrinted；一般质量下应明确建议原书 (4.25) 的反力项改为 −h²M⁻¹Gᵀλ，而不静默替换原句。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1120](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1120>)（`MD.Ch04.shakeElimination`）。
+位置：[Blueprint/Ch04.lean:1151](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1151>)（`MD.Ch04.shakeElimination`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5123,13 +5559,19 @@ theorem shakePositionOrder :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开（Ch04_deps.txt，MolecularDynamics/Chapter04/ReviewDefinitions.lean）：Q n=Fin n→ℝ；invMass m v 的第 i 分量为 (m i)⁻¹*v i；constraintSet g={x|∀j,g j x=0}；shakePositionRelation a b c rho 为 c−2b+a=h² M⁻¹(F(b)−G(b)ᵀrho) 且 g(c)=0。CotangentProjection.lean 中 textbookConstraintJacobian 的 (j,i) 项是 textbookConstraintGradient (g j) q i；ConstrainedProjection.lean 中该梯度为 (fderiv ℝ (g j) q)(Pi.single i 1)，即真实坐标导数。 grad U=textbookConstraintGradient U，所以 F=−∇U。constrainedSolution 在 I=[0,tau] 的每个 t 要求 q 的区间导数为 M⁻¹p，p 的区间导数为 −∇U−Gᵀrho，且 g(q)=0；textbookInverseMassMatrix=diag(m_i⁻¹)，textbookConstraintGram=G diag(m_i⁻¹) Gᵀ。全称量化数据与精确解后，先要求 tau>0、正质量、U/g/q 为 C⁴、p 为 C³、实际受约束解、沿紧区间 Gram 行列式非零；然后存在与 N 无关的 C>0,N0≥2，每个 N≥N0 存在离散位置及乘子，精确两步初值 qn0=q0,qn1=q(h)，满足 k+2≤N 的递推与全部 k≤N 的误差 C h²。这是真实有限区间二阶位置误差及存在性结论，不是把误差作假设。[EXTRA] 正质量、正则性、独立约束和相容起步对通常二阶收敛论述合理，但 C⁴ 全局正则及精确第二初值属于较强的充分条件，不应称为最小必要条件；结论仅选择存在的好分支，不声称所有隐式根均收敛，也不含动量误差。主要忠实性问题仍是：原页 symmetry 句紧接印刷 (4.25)，Lean 却对质量一致修正式给阶数，改变了方法；一般质量下两者甚至不逼近同一受约束解。因此 FAIL 不由 sorry 引起。Ch04.lean:1142 的证明为 sorry，二阶修正式的证明仍待完成，本审计不把它视为已验证定理。
+
+网站反例：原印刷方法与精确受约束动力学的差异：n=2,l=1,m=(1,2)，g(x)=x₁+x₂，U(x)=−x₁，F=(1,0)，tau=1。精确解 q(t)=(t²/6,−t²/6)，p(t)=(t/3,−2t/3)，rho=2/3，Gram=3/2，均满足签名正则假设。质量一致加速度为 (1/3,−1/3)。印刷 (4.25) 配合 g(qnew)=0 强制每步 λ=1/2，加速度为 (1/2,−1/2)。用相同精确两步初值、h=1/N，其唯一位置序列为 qn_k=(k h²/6+k(k−1)h²/4)(1,−1)，终点误差的范数为 (1−1/N)/12，不能被固定 C h² 控制。这是对字面原法二阶解释的反例，不是对当前质量一致 Lean 签名的反例。
+
+网站建议：明确将本 Lean 命题绑定到单独标注的质量一致 SHAKE 修正式，并把原文 (4.25) 的疑误及解释保留在原文审校记录中。若审计目标必须是印刷 (4.25) 的二阶声明，则使用 shakePositionPrinted 并限制 M=I（或另行给出质量与约束反力空间兼容条件）；同时说明结论是以精确两步起步、所选近轨道分支的位置收敛。之后另行补证当前 sorry；本次只读不改代码。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1142](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1142>)（`MD.Ch04.shakePositionOrder`）。
+位置：[Blueprint/Ch04.lean:1173](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1173>)（`MD.Ch04.shakePositionOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -5174,13 +5616,19 @@ def adjointEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 Ch04.lean:1158–1163 与依赖 ReviewDefinitions.lean:4497–4502 的关系逐式相同：half=p−hG(q)ᵀrho；Q=q+hM⁻¹half；P=half+hF(Q)−hG(Q)ᵀμ；末位置与隐藏约束均正确。定义本身没有初始余切条件，可作为关系的外延定义；要把它当作余切丛上的方法须另限制输入域。原文还声称它是 G*ₕ=G₋ₕ⁻¹ 且一阶；这个 Prop 只列更新等式，不陈述逆映射关系或精度，因此按本条完整原句范围 FAIL，并非更新公式错误。h≠0 时 E 中未乘 h 的末投影乘子与书中乘 h 的乘子可重标定，h=0 不应以除 h 解释。无 [ERRATUM?]；本声明是定义，无 sorry。
+
+网站反例：缺失条款：与逆负步长 Euler 分支的等价关系，以及一阶局部误差结论；不是公式的反例。
+
+网站建议：保留关系定义，另在正质量、光滑独立约束、选定局部隐式分支和初始余切域下陈述 adjoint 逆映射等价及 O(h²) 局部误差；或明确把本条范围缩为三式与末约束并分别登记另外两个原文结论。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1158](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1158>)（`MD.Ch04.adjointEulerRelation`）。
+位置：[Blueprint/Ch04.lean:1189](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1189>)（`MD.Ch04.adjointEulerRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5227,13 +5675,19 @@ theorem constrainedComposition :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 依赖 ReviewDefinitions.lean:4469–4473 中 projectedEulerRelation 展开为 pE=p+hF(q)−hG(q)ᵀrhoE，Q=q+hM⁻¹pE，g(Q)=0，P=pE−G(Q)ᵀμE，GM⁻¹P=0；adjointEulerRelation 为上述三式。restrictedSymplectic 展开为对每个余切点 z 和两个 tangentPhase 向量 u,v，ω(DG(z)u,DG(z)v)=ω(u,v)，ω(u,v)=Σu_q v_p−Σv_q u_p；tangentPhase 同时要求 Dg(q)u_q=0 及 D[(q,p)↦Dg(q)M⁻¹p](z)u=0。结论确为 A(h/2)∘E(h/2) 的完整切向拉回形式，不是空泛名称，输出余切性也由关系假设蕴含。量词为先任取所有分支及乘子，再在所有 h,z 满足关系的前提下对所有 h 给结论。正质量、可微分支和势/约束正则性合理；C³较注释的C²更强且未论证最小必要性，Differentiable 并不等同 C¹；∀h 全局分支要求明显强于通常小步长局部方法。核心辛性签名合理，但原文的二阶、无约束时退化到 Euler/adjoint 的说明及与 SHAKE/RATTLE 不等价没有列入该结论，故全条 FAIL。另一个 order 声明只覆盖精度，不补后两项。无 [ERRATUM?]；该 theorem 的证明为 sorry，语义判定与之独立。
+
+网站反例：缺失条款：二阶精度、退化关系和非等价性。非等价性必须表述为一般方法并非相同，不能量化为每个系统都不同：无约束 U=0 时两半步和 RATTLE 都是同一个自由漂移。
+
+网站建议：在小步长局部分支域上给出辛性与二阶精度的联合陈述，并登记退化结果及一个展示与 SHAKE/RATTLE 不同的约束系统实例；或拆分原文句子并明确各条范围。把元数据/注释的 C² 改为实际 C³，C¹ 分支改为实际可微分支，避免声称更弱前提已被证明。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1167](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1167>)（`MD.Ch04.constrainedComposition`）。
+位置：[Blueprint/Ch04.lean:1198](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1198>)（`MD.Ch04.constrainedComposition`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -5284,13 +5738,19 @@ theorem constrainedCompositionOrder :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 E/A 关系的实际展开与上一条相同。还展开 ConstrainedReaction.lean:3731–3742：κ_j(q,p)=D²g_j(q)[M⁻¹p,M⁻¹p]，rho=(GM⁻¹Gᵀ)⁻¹(GM⁻¹F+κ)；ConstrainedReactionRegularity.lean:4024–4030 的 textbookConstrainedPhaseVectorField=(M⁻¹p,−∇U−Gᵀrho)，textbookPotentialForce=-坐标梯度，来自 SymplecticEuler.lean:583–586。所以比较的是实际约束动力学，没有用任意命名向量场替代。量词先任取联合 C³ 的 E,A，再任取初始余切点 z（Gram 非奇异）和穿过 z 的 C³ 真解 Φ，最后存在依赖于 z、Φ 的 C,d>0，使所有 0<h<d 满足误差 ≤Ch³。这是逐点局部二阶精度，没有声称统一于全部初值或固定长时间全局误差。[EXTRA] 正质量、C⁴势/约束、联合 C³分支、零步长恒等和初始Gram非奇异是合理的局部正则资格，阶数并非已证最小；muE 0 z=0 是分支正规化，Gram非奇异且输入余切时可由零步长关系推出。只有 E,A 光滑被显式假设，乘子光滑并未显式假设。∀h、∀z 的全局关系比局部选支更强，实际存在性没有给出。精度子句与原文相符；但本 source 的 statement_latex 仍是 second order symplectic，签名仅给精度，没有辛性，所以逐 source 完整结论审计 FAIL。可以引用上一条的辛性结论补成同前提的联合结果，不能在当前签名内视作已有结论。无 [ERRATUM?]；证明为 sorry。
+
+网站反例：缺失条款：symplectic。局部 O(h³) 签名本身未发现反例；本判定不把 sorry 当作语义失败。
+
+网站建议：将该 source 的正式结论与同域 restrictedSymplectic 合取，必要时加入空间可微的乘子分支假设；或者明确将本 source 范围限定为二阶精度子句，并以另一个 source 单独覆盖辛性。若要声明全局二阶收敛，还需稳定性与一致估计，当前局部结论不应冒充全局结论。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1182](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1182>)（`MD.Ch04.constrainedCompositionOrder`）。
+位置：[Blueprint/Ch04.lean:1213](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1213>)（`MD.Ch04.constrainedCompositionOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -5331,13 +5791,15 @@ def momentumProjector {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDy
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 Ch04.lean:1198–1200 与依赖 ReviewDefinitions.lean:4503–4505 同为 I−Gᵀ(GM⁻¹Gᵀ)⁻¹GM⁻¹，矩阵顺序与 PDF185 完全一致。原文 tangent space 的措辞须按动量/速度的质量识别解释：Π 的像是 ker(GM⁻¹)，并非一般的速度切空间 ker G；context_notation 已明确此点，未静默更改书中公式。正质量、Gram非奇异时 Π²=Π、GM⁻¹Π=0，对 M⁻¹ 内积自伴；M⁻¹Πp 对应切速度。具体地 G=(1,1), M=diag(1,2) 时 Π(1,0)=(1/3,−2/3)，GΠ(1,0)=−1/3 而 GM⁻¹Π(1,0)=0。这排除了把书中语句误读成欧氏正交速度投影。这里审核的是带已有 context 资格的公式定义，不是无条件投影定理；Lean 的总定义在奇异Gram、零质量处依然有值，不能据此宣称那些点也是投影。没有 [EXTRA] 或 [ERRATUM?] 标记，也没有 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1198](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1198>)（`MD.Ch04.momentumProjector`）。
+位置：[Blueprint/Ch04.lean:1229](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1229>)（`MD.Ch04.momentumProjector`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5379,13 +5841,15 @@ theorem constrainedPotentialFlow :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 Ch04.lean:1204–1210 的 let P(s)=p−sΠ(q)∇U(q) 显式固定 q；∀t 的结论既保留 g(q)=0 和 GM⁻¹P(t)=0，也给出 P′(t)=−Π(q)∇U(q)。因此 Q=q、P=p−tΠ∇U 的具体解以及投影动量ODE均已表达。q 常值的零导数是该表达的直接语义，不需要把公式改成泛称 solution。乘子可取 −(GM⁻¹Gᵀ)⁻¹GM⁻¹∇U，故 P′=−∇U−Gᵀlambda，与势能子流一致。[EXTRA] 初始余切域和非奇异Gram是自然资格，可微约束合理（实际该证明只用代数关系，可弱化）；不需要势能 Hessian，固定位置使斜率常值。U 没有可微假设，fderiv 在不可微点取总化默认值，故作为 Lean 代数恒等式结论仍成立；物理 Hamiltonian 解释应限制 U 在 q 可微，这是语义域资格，不把该总化扩展误当非光滑经典流。原文没有要求流的唯一性/全局存在性定理。无 [ERRATUM?]。此 theorem 的附件正文有实际证明且未出现 sorry，但本次未运行 Lean 编译，不作编译通过声明。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1204](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1204>)（`MD.Ch04.constrainedPotentialFlow`）。
+位置：[Blueprint/Ch04.lean:1235](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1235>)（`MD.Ch04.constrainedPotentialFlow`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5427,13 +5891,19 @@ def geodesicRelation {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDyn
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 MolecularDynamics.Chapter04Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n、invMass m v=(m_i⁻¹ v_i)、constraintSet g={q|∀j,g_j(q)=0}、cotangentSet m g={z|g(z.1)=0且G(z.1)M⁻¹z.2=0}。G=textbookConstraintJacobian，其(j,i)项为 fderiv ℝ (g j) q (Pi.single i 1)；grad U 同样取 U 的实际坐标 Fréchet 导数；textbookInverseMassMatrix=diag(m_i⁻¹)；textbookConstraintGram=GM⁻¹Gᵀ。出处：依赖摘录 ConstrainedProjection.lean:2975–2977、CotangentProjection.lean:3385–3420、ReviewDefinitions.lean:4377–4444（行号均为附件行号）。 依赖 ReviewDefinitions.lean:4431–4435 的 constrainedSolution 展开后，geodesicRelation 为 ∀t∈I，HasDerivWithinAt q (M⁻¹p(t)) I t 且 HasDerivWithinAt p (−G(q(t))ᵀrho(t)) I t 且 ∀j,g_j(q(t))=0。这忠实记录了 PDF186 的三条微分代数方程。任意集合 I 上的 within 导数并不等于无条件开放时间区间上的经典导数；用于流应限制 I 为合适区间。该定义没有正质量、约束独立性、光滑流形或质量度量的结构，也没有将曲线的协变加速度为零与此ODE等价的陈述，故未覆盖原文最后一句 mass-weighted geodesic flow。context 中“不搭建流形测地流存在理论”可以说明不主张存在性，但不能替代原文的几何识别结论。没有 [ERRATUM?]；该定义无 sorry。
+
+网站反例：缺失条款：在质量度量约束流形上的测地线识别。具体资格缺失：n=1,m₀=0,g≡0,p≡0,q≡0,rho≡0,I=ℝ 满足该关系，但 diag(m) 是零矩阵，不是 Riemannian 度量；故不能对定义允许的所有参数称其为质量度量测地流。
+
+网站建议：保留零势ODE定义；另在 m_i>0、光滑独立约束与开放时间区间上定义诱导质量度量，证明上述ODE与测地线方程的等价。无需声称全局流存在。若只打算形式化三式，需明确缩小 statement_scope，把几何识别另列为未覆盖义务。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1235](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1235>)（`MD.Ch04.geodesicRelation`）。
+位置：[Blueprint/Ch04.lean:1266](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1266>)（`MD.Ch04.geodesicRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5470,13 +5940,15 @@ def mShakeIteration {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDyna
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean、ConstrainedProjection.lean 与 CotangentProjection.lean：Q n=Fin n→ℝ；textbookConstraintGradient (g j) x i=(fderiv ℝ (g j) x)(Pi.single i 1)；G(x) 的 j,i 元为该梯度；invMass m v i=(m i)⁻¹v i，textbookInverseMassMatrix m=diag((m i)⁻¹)。令 x(η)=base−M⁻¹G(q)ᵀη，则 residual(η)=g(x(η))，projectionJacobian(η)=G(x(η))M⁻¹G(q)ᵀ，newtonConstraint(η)=η+projectionJacobian(η)⁻¹residual(η)。残差的真正导数为上述矩阵的负值，故更新中的加号正确，逐项对应 PDF179/印刷157 的(4.18)–(4.19)。mShakeIteration 将此实际更新从零复合 k 次，k=0 返回零，不是恒等占位或冻结雅可比更新。这里 base 是已消去显式动力学更新后的无约束位置，η 吸收步长因子；在 SHAKE 中可取 base=q+hM⁻¹p+(h²/2)M⁻¹F(q)，η=(h²/2)ρ，对应 PDF183 的(4.27)–(4.28)。正文允许零初值，context_notation 明确本条仅记录有限次迭代，未声称已经精确求解、收敛或构成完整相空间时间步。自然数 n,l,k 与 m,g,q,base 均为定义参数，无存在性或全称收敛命题。定义没有假设正质量、可微性或每步可逆；Lean 的逆与 fderiv 在退化输入上是总化运算，这只扩展定义域，不能将退化输入解释为有效物理 Newton 求解。没有 [EXTRA] 或 [ERRATUM?] 标签；本定义无 sorry。签名在所标明有限迭代范围内忠实。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1240](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1240>)（`MD.Ch04.mShakeIteration`）。
+位置：[Blueprint/Ch04.lean:1271](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1271>)（`MD.Ch04.mShakeIteration`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5514,13 +5986,15 @@ def settleRelation {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynam
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 projectionResidual、Q、invMass、textbookConstraintJacobian、textbookConstraintGradient 和 textbookInverseMassMatrix，具体表达同上一条：settleRelation m g q base η 等价于 ∀j, g j(base−M⁻¹G(q)ᵀη)=0。这是 SHAKE 消元后的真实非线性方程的精确解关系；等号是精确等号，没有误差容限。全部 n,l,m,g,q,base,η 为参数；无解的输入可以使关系为假，不宣称存在、唯一性、闭式求解器或输出算法。[EXTRA] 是明确的范围说明而非额外逻辑前提：正文没有给出 SETTLE 的专门求解公式，故记录解关系是合理的最小数学登记。小系统与通常用于刚体是应用范围描述，书中没有给出维数上界或只允许刚体的全称限制；不应自行添加 n 或 l 的数值界。此泛化关系不区分 SETTLE 与其他精确求解同一方程的方法，不能单凭此定义宣称已经形式化 SETTLE 的专门算法，但附件已明确只登记关系，因此本条按该范围 PASS。无 [ERRATUM?]，定义无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1245](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1245>)（`MD.Ch04.settleRelation`）。
+位置：[Blueprint/Ch04.lean:1276](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1276>)（`MD.Ch04.settleRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5557,13 +6031,15 @@ def lincsInverse {l : ℕ} (C : Matrix (Fin l) (Fin l) ℝ) (k : ℕ) := ∑ j �
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+实际声明及依赖 ReviewDefinitions.lean 中的 lincsInverse 都展开为 S_k(C)=∑_{j=0}^k C^j；Finset.range(k+1) 确实包含零次项和第 k 次项，矩阵乘法与乘法单位给出 C^0=I。l,k 为自然数，C 为任意 l×l 实矩阵；这是有限和定义，不带收敛断言，因此无需在定义上加范数或谱半径假设。[EXTRA] 明确把原文未印出的 series expansion 具体化为标准 Neumann 部分和，是合理的补充建模选择，不能称为原书展示公式或完整 LINCS 算法。逆的目标应解释为 I−C；同批依赖 lincsConvergence_statement 与实际 lincsConvergence 已明确这一目标，故没有把 C 自身的逆错误地写成 ∑C^j。若要应用于 Newton 线性矩阵 R，尚需在调用处给出 R=I−C 或含对角预条件的分解及相应缩放；本定义不宣称已经完成这种连接。原句中成本和并行化障碍属于算法动机，不是此矩阵定义的数学结论。本条按已标明的标准部分和登记范围 PASS，无 [ERRATUM?]，定义无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1250](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1250>)（`MD.Ch04.lincsInverse`）。
+位置：[Blueprint/Ch04.lean:1281](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1281>)（`MD.Ch04.lincsInverse`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5602,13 +6078,15 @@ theorem lincsConvergence :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开依赖 ReviewDefinitions.lean 的 lincsInverse 为 S_k(C)=∑_{j=0}^k C^j，并核对 Statements.lean 的 lincsConvergence_statement 与实际声明一致。量词顺序为 ∀l∈ℕ, ∀C∈ℝ^{l×l}，随后假设 ‖C.toLin'.toContinuousLinearMap‖<1，结论 k→∞ 时 S_k(C) 在矩阵有限维拓扑中趋于 (I−C)⁻¹。toLin' 表示 x↦C*ᵥx，转成连续线性映射后范数是算子范数；即使当前开启 Matrix.Norms.Elementwise，也没有将条件替换为矩阵元素最大值。有限维函数空间的标准范数下，该算子范数具有次乘性，‖C^j‖op≤‖C‖op^j，几何级数收敛且 (I−C)S_k=I−C^{k+1}=S_k(I−C)，给出真正双侧逆；矩阵与算子拓扑在有限维一致，因而结论正确。[EXTRA] 把原文未具体说明的 certain conditions 实例化为一个充分条件，合理但不是必要条件：例如二阶矩阵 [[0,2],[0,0]] 范数为2却幂零，级数仍在一次后终止。Lean 没有写成必要充分条件，所以没有不当加强；也无需再假设 I−C 可逆，该条件已保证可逆。该条是标准 Neumann 充分收敛命题，不能据此宣称验证了完整 LINCS 的分解和性能。无 [ERRATUM?]。实际 theorem 的证明体为 by sorry，故此 PASS 仅为签名语义 PASS，不表示定理已有 Lean 完整证明。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1254](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1254>)（`MD.Ch04.lincsConvergence`）。
+位置：[Blueprint/Ch04.lean:1285](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1285>)（`MD.Ch04.lincsConvergence`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -5651,13 +6129,15 @@ def waterPairPotential {a b : ℕ} (k1 k2 k3 rOO : ℝ) (qa : Fin a → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 本地定义逐项为双重有限和 k1*qa i*qb j/r i j，加 k2/rOO^12，减 k3/rOO^6，忠实于经验势公式。有限位点合理；[EXTRA]中正距离和正常数为物理定义域说明，但并未成为类型中的假设。这里是总化的实函数定义，在物理有效域上符合原文；不能将注释当成已编码的正性约束，也不能据此断言普遍物理定律。无[ERRATUM?]。定义无sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1261](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1261>)（`MD.Ch04.waterPairPotential`）。
+位置：[Blueprint/Ch04.lean:1292](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1292>)（`MD.Ch04.waterPairPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5693,13 +6173,15 @@ def totalMass {N : ℕ} (m : Fin N → ℝ) : ℝ := ∑ i, m i
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 展开正式库 totalMass m=∑ i,m i；本地定义相同，准确表达总质量。没有额外假设或勘误。定义无sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1266](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1266>)（`MD.Ch04.totalMass`）。
+位置：[Blueprint/Ch04.lean:1297](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1297>)（`MD.Ch04.totalMass`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5736,13 +6218,15 @@ def centerMass {N : ℕ} (m : Fin N → ℝ) (q : Fin N → MolecularDynamics.Ch
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 centerMass m q=(totalMass m)⁻¹ • ∑ i,m i • q i，totalMass m=∑ i,m i。逐坐标为原文质心公式。非零总质量是物理适用域；实数逆在零处的总化扩展不应被当作零质量体系的物理质心。原文正质量非空体系给M>0，但Lean未限制输入；作为公式定义在有效域上忠实。定义无sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1269](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1269>)（`MD.Ch04.centerMass`）。
+位置：[Blueprint/Ch04.lean:1300](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1300>)（`MD.Ch04.centerMass`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5779,13 +6263,19 @@ def relativePositions {N : ℕ} (m : Fin N → ℝ) (q : Fin N → MolecularDyna
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 relativePositions m q i=q i-centerMass m q，质心和总质量展开如上；这给出q_i=q_cm+δ_i，但指定定义没有陈述所引原句的加权零和结论。context_notation中“另条真实证明”不能替代本条statement_scope要求的全部子句。相邻relativeWeightedZero确实承载零和，仍应明确拆分本条原文范围或建立汇总声明。定义无sorry；FAIL为覆盖不全，不是定义减法错误。
+
+网站反例：缺失条款：∑m_iδ_i=0。
+
+网站建议：将本条statement_latex限定为q_i=q_cm+δ_i的定义部分，并明确零和交由MD-4.4-RelativeWeightedZero；或增加M≠0下同时陈述位置重构和加权零和的汇总声明。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1273](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1273>)（`MD.Ch04.relativePositions`）。
+位置：[Blueprint/Ch04.lean:1304](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1304>)（`MD.Ch04.relativePositions`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5823,13 +6313,15 @@ theorem relativeWeightedZero : ∀ N (m : Fin N → ℝ) (q : Fin N → Molecula
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 展开 relativePositions、centerMass、totalMass 后，结论就是∑m_i(q_i-(∑m_j q_j)/M)=0，前提M≠0。该[EXTRA]合理且对任意实权重的推广一般必要：两权重1,-1、位置e1,0时M=0而加权和非零。正物理质量非空体系满足它；空体系零和本身成立，注释“空体系排除”只说明本签名不覆盖空体系而非其为反例。原句位置分解由展开减法自动成立，结论零和完整。该定理有实际by证明，无sorry；未运行编译，签名审计不等于编译验证。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1278](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1278>)（`MD.Ch04.relativeWeightedZero`）。
+位置：[Blueprint/Ch04.lean:1309](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1309>)（`MD.Ch04.relativeWeightedZero`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5873,13 +6365,15 @@ theorem kineticSplit :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 dot u v=∑ a,u a*v a；V虽为Pi类型，其Pi范数不是欧氏范数，但签名用dot而非该范数，故dot x x准确为欧氏平方。v对应质心速度，w_i对应相对速度；前提∑m_i•w_i=0正是原文去交叉项用的导数零和。有限和展开给原文中间的三项式并消去交叉项，最终式准确；本签名是瞬时代数恒等式，不证明轨道求导步骤。无需质量正性，推广合理。该定理有实际by证明，无sorry；未运行编译。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1287](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1287>)（`MD.Ch04.kineticSplit`）。
+位置：[Blueprint/Ch04.lean:1318](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1318>)（`MD.Ch04.kineticSplit`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5917,13 +6411,15 @@ def secondMoment {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 outer v=fun a b=>v a*v b，secondMoment m δ=∑i,m i•outer(δ i)。故矩阵(a,b)元为∑i,m_i δ_i(a)δ_i(b)，等于原文δ_i(0)δ_i(0)^T之和。δ参数应解释为固定初始相对位置，非当前轨道值；矩阵类型为真实3×3实矩阵，对称性由公式自动成立。无额外假设或勘误，定义无sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1320](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1320>)（`MD.Ch04.secondMoment`）。
+位置：[Blueprint/Ch04.lean:1351](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1351>)（`MD.Ch04.secondMoment`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -5959,13 +6455,19 @@ def rotationKinetic (R dΘ : MolecularDynamics.Chapter04Review.Mat3) : ℝ := (d
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 rotationKinetic R dΘ=(dΘ*R*dΘᵀ).trace/2，与本地定义相同；secondMoment及outer展开给原文R。然而指定定义只定义trace表达式，不包含所引原文第一有限和表达式与它的等式，也不绑定R=secondMoment m δ。相邻rotationTraceIdentity含该等式且有by证明，但不在本条lean_decl中。完整原文范围下应FAIL；不是1/2或矩阵乘法次序错误。定义无sorry。
+
+网站反例：缺失条款：有限和二次型表达式与trace表达式的等价关系及R与初始位形的绑定。
+
+网站建议：将本条statement_latex限定为trace定义，第一式及其等价性移至RotationTraceIdentity；或将本条lean_decl改为包含R=secondMoment m δ及两表达式等式的声明。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1323](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1323>)（`MD.Ch04.rotationKinetic`）。
+位置：[Blueprint/Ch04.lean:1354](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1354>)（`MD.Ch04.rotationKinetic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6003,13 +6505,15 @@ theorem rotationTraceIdentity : ∀ N (m : Fin N → ℝ) (δ : Fin N → Molecu
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 所有N、实质量权重m、参考向量δ和任意矩阵dΘ先全称量化，无附加前提。展开后左侧为∑_i m_i||dΘδ_i||₂²/2，右侧为Tr(dΘ(∑_i m_i δ_iδ_i^T)dΘ^T)/2，正是两展示式的等价性。将正质量、质心及旋转约束省去得到有效代数推广；不需要这些物理限制。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1326](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1326>)（`MD.Ch04.rotationTraceIdentity`）。
+位置：[Blueprint/Ch04.lean:1357](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1357>)（`MD.Ch04.rotationTraceIdentity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6050,13 +6554,15 @@ theorem rotationSkew :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 量词为轨道Θ、时刻t、导数d，随后给出真实HasDerivAt及t邻域内正交约束。它们忠实展开原文可微正交轨道，不循环假定导数乘积公式。结论(dΘᵀ)^T=-(dΘᵀ)展开为Θdᵀ=-dΘᵀ，与dΘᵀ+Θdᵀ=0等价，因此覆盖原文两个结论。邻域约束足够且合理，单点正交一般不足以推出本结论。无[ERRATUM?]。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1340](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1340>)（`MD.Ch04.rotationSkew`）。
+位置：[Blueprint/Ch04.lean:1371](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1371>)（`MD.Ch04.rotationSkew`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6095,13 +6601,19 @@ def skewMatrix (v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Cha
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 定义的九个元素与(4.38)完全一致，0基索引转换正确；但本条statement_scope涵盖所引原句及展示公式，包含任意反对称矩阵可表示的存在性和dot Θ Θ^T=skew(ω)。lean_decl仅定义v↦skew(v)，没有矩阵轨道对象、导数关系或存在性量词。context_notation提及另条不能使本条签名覆盖完整范围。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
+
+网站反例：缺失条款：∀A,Aᵀ=-A→∃ω,skewMatrix ω=A；以及轨道下dot Θ Θ^T=skew(ω)的角速度选择关系。公式定义本身正确，无数值反例。
+
+网站建议：将本条statement_latex及statement_scope明确收窄到skew的坐标定义；或保留当前范围并将lean_decl绑定到含反对称表示存在性及轨道关系的复合陈述。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1362](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1362>)（`MD.Ch04.skewMatrix`）。
+位置：[Blueprint/Ch04.lean:1393](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1393>)（`MD.Ch04.skewMatrix`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6137,13 +6649,19 @@ def cross3 (u v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapt
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 cross3展开为(u₂v₃-u₃v₂,u₃v₁-u₁v₃,u₁v₂-u₂v₁)，右手约定正确，但函数定义没有Θ轨道、导数、skew乘法或任何等式结论。所引整条(4.39)不是叉积的坐标定义；“实际导数运动学另条”不改变本条声明范围。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
+
+网站反例：缺失条款：在δ_i(t)=Θ(t)δ_i(0)及角速度关系下的真实导数公式和两条代数等式。
+
+网站建议：把本条范围改为三维右手叉积坐标定义，并把整条(4.39)绑定到完整运动学定理；或将当前lean_decl换为包含全部导数与代数等式的陈述。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1365](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1365>)（`MD.Ch04.cross3`）。
+位置：[Blueprint/Ch04.lean:1396](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1396>)（`MD.Ch04.cross3`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6179,13 +6697,15 @@ theorem skewRepresentation : ∀ A : MolecularDynamics.Chapter04Review.Mat3, A�
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 对任意实3×3矩阵A，先假定Aᵀ=-A，再存在唯一实三维ω使依赖中的实际skewMatrix ω=A。覆盖原文存在性；唯一性是正确的加强，ω=(A₃₂,A₁₃,A₂₁)，由矩阵三个非对角元素直接确定，不是额外假设。无[ERRATUM?]。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1368](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1368>)（`MD.Ch04.skewRepresentation`）。
+位置：[Blueprint/Ch04.lean:1399](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1399>)（`MD.Ch04.skewRepresentation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6225,13 +6745,19 @@ theorem crossMatrix :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 对任意u、v，结论只有skewMatrix u *ᵥ v=cross3 u v；缺少原文第二等式cross3 u v=-(skewMatrix v *ᵥ u)。[EXTRA]实际是范围说明而非假设，承认子引理是合理的，但不能使本条指定签名覆盖其statement_scope的全部结论；另条承载完整等式不自动合并进本条签名。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
+
+网站反例：缺失第二等式：∀u v,cross3 u v=-(skewMatrix v *ᵥ u)。现有第一等式正确，无反例。
+
+网站建议：将结论改为两个等式的合取；或将本条原文范围明确收窄到首等式，并以完整陈述单独绑定原式。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1385](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1385>)（`MD.Ch04.crossMatrix`）。
+位置：[Blueprint/Ch04.lean:1416](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1416>)（`MD.Ch04.crossMatrix`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6272,13 +6798,19 @@ theorem rigidVelocity : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 先全称量化Θ、dΘ、固定参考δ、空间角速度ω、t；假设真实导数、单点正交、dΘ(Θt)^T=skew(ω)，推出位置轨道s↦Θsδ的导数为ω×(Θtδ)。这些前提非循环且足够，单点正交即可由给定角速度关系得到该速度结论；不必要求det Θ=1。核心导数公式正确，但签名未同时陈述导数等于skew(ω)(Θtδ)以及等于-skew(Θtδ)ω；在要求所有结论子句的当前范围下不完整。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
+
+网站反例：缺失原式的skew乘积和负的反向skew乘积等式；无导数主结论的反例。
+
+网站建议：在现有HasDerivAt结论之外加入skewMatrix ω *ᵥ (Θt *ᵥ δ)=cross3 ω (Θt *ᵥ δ)和cross3 ω (Θt *ᵥ δ)=-(skewMatrix (Θt *ᵥ δ) *ᵥ ω)的合取，或显式收窄原文范围。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1393](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1393>)（`MD.Ch04.rigidVelocity`）。
+位置：[Blueprint/Ch04.lean:1424](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1424>)（`MD.Ch04.rigidVelocity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6318,13 +6850,19 @@ def inertiaTensor {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamic
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 定义展开为∑_i m_i (||δ_i||₂² I-δ_iδ_i^T)，精确对应原文最后展示式，任意实权重是有效推广；没有混淆函数空间范数。可是当前所引范围还包含T=-∑_i m_i skew(δ_i)^2及K_rot=ω_b^T Tω_b/2；定义的参数仅N、m、δ，没有ω_b、旋转动能或这两条等价结论。context_notation宣称另条不能补足本条签名。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
+
+网站反例：缺失skew平方等价式及体角速度下的动能恒等式。有限和定义正确，无反例。
+
+网站建议：将此定义条目范围明确限制为T的欧氏有限和；或增加完整陈述，包含skew平方等价式和正交旋转轨道及ω_b=Θ^Tω下的旋转动能恒等式。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1412](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1412>)（`MD.Ch04.inertiaTensor`）。
+位置：[Blueprint/Ch04.lean:1443](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1443>)（`MD.Ch04.inertiaTensor`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6362,13 +6900,15 @@ theorem crossIdentityFull : ∀ u v : MolecularDynamics.Chapter04Review.V,
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 skewMatrix u 展开为 [[0,−u₂,u₁],[u₂,0,−u₀],[−u₁,u₀,0]]；cross3 u v 展开为 (u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)。∀u v 的合取恰含两条等式，Lean 0基索引对应原书1基索引。任意实向量的代数恒等式无需运动学假设。没有 [EXTRA]/[ERRATUM?]。该声明有显式证明且未见 sorry；此与签名 PASS 分开记录。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1416](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1416>)（`MD.Ch04.crossIdentityFull`）。
+位置：[Blueprint/Ch04.lean:1447](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1447>)（`MD.Ch04.crossIdentityFull`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6406,13 +6946,19 @@ def rotationalEnergy (T : MolecularDynamics.Chapter04Review.Mat3) («ω» : Mole
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 函数值展开为 1/2∑j ω_j∑k T_jk ω_k，正确表示以体角速度为参数的二次型；但本条所引原句还定义 ω_b=Θᵀω，签名完全没有 Θ 或该关系。自由 Mat3 参数并未绑定原文惯性张量。不是错误二次型，而是原句的变换子句缺失；def 无 sorry。
+
+网站反例：缺失条款：ω_b=Θᵀω。若把参数 ω 当空间角速度，取 T=diag(1,2,3)、ω=e₁、Θ 为绕第三轴90°旋转，则本函数为1/2，而原文体坐标值为1。
+
+网站建议：明确参数名为 ω_b；为本 source_id 增加包含旋转矩阵 Θ、空间 ω、ω_b=Θᵀ*ᵥω 和该能量表达式的关系/定理，或明确缩减 statement_scope 并将变换句另立条目。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1424](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1424>)（`MD.Ch04.rotationalEnergy`）。
+位置：[Blueprint/Ch04.lean:1455](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1455>)（`MD.Ch04.rotationalEnergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6449,13 +6995,15 @@ theorem inertiaSkewIdentity : ∀ N (m : Fin N → ℝ) (δ : Fin N → Molecula
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 inertiaTensor m δ 展开为 ∑i m_i( (∑j δ_ij²)I−δ_iδ_iᵀ)。skewMatrix 的矩阵平方恰为 δ_iδ_iᵀ−(∑jδ_ij²)I，因此所有有限 N、实 m、实 δ 都满足签名。δ 参数可直接取参考构型 δ_i(0)，无需时间参数；Fin N 覆盖原书1至N。无需正质量假设，推广到实权重合理；无额外假设或勘误。显式证明体未见 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1427](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1427>)（`MD.Ch04.inertiaSkewIdentity`）。
+位置：[Blueprint/Ch04.lean:1458](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1458>)（`MD.Ch04.inertiaSkewIdentity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6497,13 +7045,19 @@ theorem inertiaTracePrinted :
 
 本地预审：**FAIL**。3维trace(T)=2Σm|δ|²，末式系数少1/2，一般不成立。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 secondMoment 展开为 ∑i m_iδ_iδ_iᵀ；inertiaTensor 如上述定义，trace(T)=2∑i m_i dot δ_i δ_i。签名忠实保留原书错误的末式，故并非转录系数错误，但该全称命题为假；还未显式列出原句中间等式。原书 ERRATUM? 成立，应改系数为 trace(T)/2。实际证明体为 sorry；FAIL 的数学反例独立于 sorry。
+
+网站反例：满足正质量及质心约束的反例：N=2，m₁=m₂=1，δ₁=(1,0,0)，δ₂=(−1,0,0)。R=diag(2,0,0)，T=diag(0,2,2)，trace(T)I−T=diag(4,2,2)≠R。
+
+网站建议：保留原印刷版本作为原文记录/命题定义，不把它列为已成立定理；在独立纠正版用 trace(T)/2，并显式包含中间等式 R=(∑i m_i dot δ_i δ_i)•I−T。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1440](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1440>)（`MD.Ch04.inertiaTracePrinted`）。
+位置：[Blueprint/Ch04.lean:1471](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1471>)（`MD.Ch04.inertiaTracePrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -6544,13 +7098,15 @@ theorem inertiaTraceCorrected :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 依据已展开定义，trace(T)/2=∑i m_i dot δ_i δ_i，故签名恰与本条原文正确前半链等价；R 的第一等式由 secondMoment 的定义展开得到，中间等式由上述迹关系恢复，未丢数学结论。纠正版 /2 合理且必需；[EXTRA] 不应被解释为前提。∀N,m,δ 的代数推广不需正质量。此为明确标注的纠正推论，不能冒充原印刷末式。显式证明体未见 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1447](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1447>)（`MD.Ch04.inertiaTraceCorrected`）。
+位置：[Blueprint/Ch04.lean:1478](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1478>)（`MD.Ch04.inertiaTraceCorrected`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6594,13 +7150,19 @@ def dipolarHamiltonian {N : ℕ} (mass : Fin N → ℝ) (inertia : MolecularDyna
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 展开 dot 可确认平移动能项为 ∑i‖p_i‖²/(2 mass_i)，转动项正好是原页共同主惯性矩下的体角动量表达式；N 有限且共同 inertia 与 identical ellipsoids 相符。但本 source_id 陈述显式包括 ∀k‖μ_k‖=1，函数接收任意 μ 未表达约束。注释所称质量及主惯性矩>0也没有成为签名前提；有限 N 实际存在。正性对物理域合理，代数函数可延拓而无需正性，不能把注释当形式假设。def 无 sorry。
+
+网站反例：取 N=1，mass=1，inertia=(1,1,1)，q=p=π=μ=0，U=0，函数合法返回0，但‖μ₁‖=0，违反本条明示的单位方向约束。
+
+网站建议：保留代数函数并补充物理域关系或受约束状态类型，表达 ∀i dot(μ_i)(μ_i)=1；如声称 [EXTRA] 正性已形式化，应加入质量/主惯性矩正性条件；注明 π 是体坐标角动量。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1474](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1474>)（`MD.Ch04.dipolarHamiltonian`）。
+位置：[Blueprint/Ch04.lean:1505](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1505>)（`MD.Ch04.dipolarHamiltonian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6639,13 +7201,19 @@ def dipolarPairPotential (lj : ℝ → ℝ) (r : ℝ) (q μ ν : MolecularDynami
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 outer q 展开为 qqᵀ，dot μ (L*ᵥν) 为 μᵀLν，标量首项用 I 解释正确。但签名 r、q 独立，无 r=√(dot q q)>0，也没有 q=q_i−q_j；尤其原句 U 为所有对的和完全缺失。注释 [EXTRA] 的距离正性是排除碰撞所需的合理物理域条件，却未形式表达。函数本身可作代数核，但不足以覆盖本条全部范围。def 无 sorry。
+
+网站反例：例如 r=1、q=(2,0,0)、μ=ν=(1,0,0)、lj=0 均为合法输入，得到 −11；实际距离 r=‖q‖=2 时得到 −1/4。另无任何全局 U 或成对求和结论。
+
+网站建议：补充使用 q_i−q_j 和 r_ij=√(dot(q_i−q_j)(q_i−q_j)) 的粒子对实例，声明非碰撞条件；定义 U=∑_{i<j} pair(...) 并关联本 source_id。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1481](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1481>)（`MD.Ch04.dipolarPairPotential`）。
+位置：[Blueprint/Ch04.lean:1512](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1512>)（`MD.Ch04.dipolarPairPotential`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6683,13 +7251,19 @@ def dipolarRotationalPrinted {N : ℕ} (R : MolecularDynamics.Chapter04Review.Ma
 
 本地预审：**NEEDS_HUMAN**。此处trace和缺1/2，与p168及此页Σπ²/(2I)不一致；且引用错误(4.40)。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 函数准确保留印刷求和式且未擅自补1/2；但本条还明确要求 R 由 T=diag(I₁,I₂,I₃) 经(4.40)定义，签名 R 为自由矩阵，未含 T、I 或关系，dΘ 也不绑定旋转矩阵的导数。故全部原句的语义未覆盖；印刷动能缺1/2的 ERRATUM? 成立，并且所引(4.40)另有系数错误。此为 def，无 sorry；并非因没有证明而 FAIL。
+
+网站反例：缺失条款：R 与 T=diag(I₁,I₂,I₃) 的关系。物理系数核验：R=I₃、T=2I₃、Θ=I₃、Θ̇=skew(e₃)，则印刷函数值2，而 K_rot=1/2 e₃ᵀT e₃=1。
+
+网站建议：保留印刷函数作为记录，补充其所引 R/T 关系并明确关系本身有原书勘误；另立纠正版采用 R=(trace(T)/2)I−T 与 1/2∑i trace(Θ̇_iRΘ̇_iᵀ)。不要静默修改原印刷条目。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1486](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1486>)（`MD.Ch04.dipolarRotationalPrinted`）。
+位置：[Blueprint/Ch04.lean:1517](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1517>)（`MD.Ch04.dipolarRotationalPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6729,13 +7303,19 @@ def rigidHamiltonian (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (U :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+展开deps中V=Fin 3→ℝ、Mat3=Matrix (Fin 3) (Fin 3) ℝ、dot p p=Σp_i²，公式三项准确。但本source的陈述明确包含subject to Θ^TΘ=I；本decl只是对任意Θ返回实数，未表示受约束对象或允许域。后续rigidMatrixRelation中的约束不能替代本条完整陈述。[EXTRA] M>0与R非奇异是合理物理资格，但只是注释，签名不强制；总化除法/矩阵逆作为公式延拓可接受，不能据此声称约束已编码。本decl为定义，无sorry。
+
+网站反例：M=1,R=I,p=q=0,U=0,Θ=0,mom=0：定义返回0，而Θ^TΘ=0≠I。
+
+网站建议：保留数值公式作为辅助定义；本source另定义受约束状态域或将Θ置于正交矩阵子类型，并将M>0、R可逆的资格与公式延拓明确分开。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1491](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1491>)（`MD.Ch04.rigidHamiltonian`）。
+位置：[Blueprint/Ch04.lean:1522](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1522>)（`MD.Ch04.rigidHamiltonian`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6773,13 +7353,15 @@ theorem secondMomentDiagonal : ∀ N (m : Fin N → ℝ) (δ : Fin N → Molecul
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+deps 4377–4383、4519–4520展开V、Mat3、outer v=(v_i v_j)、secondMoment=Σm_i outer δ_i，因此R是真实对称二阶矩矩阵。∀N,m,δ 后存在一个共同正交O，O^TRO所有非对角元为0，准确表示选择坐标系使R对角。无需正质量或中心化假设；允许实权是成立的推广。O^TO=I在三维方阵足以表示正交，不需要det=1；原句仅要求坐标系。签名忠实；该本地证明没有sorry，未运行Lean编译。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1495](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1495>)（`MD.Ch04.secondMomentDiagonal`）。
+位置：[Blueprint/Ch04.lean:1526](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1526>)（`MD.Ch04.secondMomentDiagonal`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6821,13 +7403,15 @@ theorem rotationBodyEnergy : ∀ N (m : Fin N → ℝ) (δ : Fin N → Molecular
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+deps 4523–4526展开标准cross3、T=Σm_i[(Σδ_i²)I−δ_iδ_i^T]、rotationalEnergy(T,x)=Σx_i(Tx)_i/2，故结论确为从空间旋转动能得到(Θ^Tω)^TT(Θ^Tω)/2；δ参数是δ_i(0)。对象、有限求和、全称量词及两种能量一致。[EXTRA] Θ^TΘ=I必要且符合原文；detΘ=1合理描述真实刚体旋转，但此能量等式在det=-1时也成立，故不是数学必要假设，可删除以忠实于仅正交的原句。未把能量等式或叉积协变作为前提。本地证明没有sorry；未编译。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1514](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1514>)（`MD.Ch04.rotationBodyEnergy`）。
+位置：[Blueprint/Ch04.lean:1545](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1545>)（`MD.Ch04.rotationBodyEnergy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6866,13 +7450,15 @@ def dipolarConstraint {N : ℕ} (μ : Fin N → MolecularDynamics.Chapter04Revie
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+展开V=Fin 3→ℝ、dot u v=Σu_i v_i，∀i dot(μ_i)(μ_i)=1恰是每个偶极方向的欧氏模长恒1（平方与模长等价）；未误用函数空间最大范数。N有限与粒子模型一致，无额外假设。定义无sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1563](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1563>)（`MD.Ch04.dipolarConstraint`）。
+位置：[Blueprint/Ch04.lean:1594](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1594>)（`MD.Ch04.dipolarConstraint`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6911,13 +7497,15 @@ def dipolarPotentialSum {N : ℕ} (lj : ℝ → ℝ) (q μ : Fin N → Molecular
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+deps outer(q)_ab=q_a q_b、dot=欧氏内积；本地dipolarPairPotential在Ch04.lean 1481–1482展开为lj(r)+μ^T[(r³)^(-1)I−(3/r⁵)qq^T]ν。q_i−q_j与sqrt(Σ(q_i−q_j)²)准确给出q_ij和r_ij；双重Fin N求和仅取i<j，每对恰一次。lj作为径向势参数是合理抽象，应实例化为φ_LJ。原书L首项将标量用于矩阵，按单位矩阵的通行解释一致，已在context显式注明。[EXTRA] 无重叠是合理的原势定义域，注释不构成Lean假设，代码在碰撞处仅作总化延拓；本审计的忠实性限于r_ij>0构形。单位方向另由dipolarConstraint表示，势公式自身允许任意向量合理。定义无sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1568](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1568>)（`MD.Ch04.dipolarPotentialSum`）。
+位置：[Blueprint/Ch04.lean:1599](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1599>)（`MD.Ch04.dipolarPotentialSum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6954,13 +7542,19 @@ theorem rotationTrajectory : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+V、Mat3和乘矩阵向量均为真实三维线性运算；HasDerivAt Θ d t后得HasDerivAt(s↦Θ(s)δ)(dδ)t，是正确的求导引理（δ表示固定参考位置）。但核对原PDF后本source的thus we have所接结论为K_rot=Σm_iδ_i(0)^TdotΘ^TdotΘδ_i(0)/2，该Lean签名完全没有质量、动能或该求和结论；不是所标原句的完整形式化。原轨道关系以函数构造表达可接受，缺失动能结论不可忽略。本地证明无sorry；正确求导引理不等于本source通过。
+
+网站反例：缺失条款：旋转动能求和式及其质量参数，当前签名不能表达该结论。
+
+网站建议：将此导数引理保留为辅助结果；为本source补入有限粒子质量和旋转动能对象，并陈述其求和表达式；或明确缩小并重标source_scope，但不要沿用当前原文范围。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1573](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1573>)（`MD.Ch04.rotationTrajectory`）。
+位置：[Blueprint/Ch04.lean:1604](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1604>)（`MD.Ch04.rotationTrajectory`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7003,13 +7597,19 @@ theorem rotationDerivativePrinted : ∀ (Θ : ℝ → MolecularDynamics.Chapter0
 
 本地预审：**NEEDS_HUMAN**。原页最后δ_i带点，与先前δ_i=Θδ_i(0)代换不符；通常应为无点δ_i，正确运动学另条保留。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+签名忠实再现印刷末项：设δ=δ_i(0)、d=dotΘ(t)，右端确为(dΘ(t)^T)(dδ)。ERRATUM?成立，印刷末项应使用当前配置Θ(t)δ而非速度dδ。它不是正交性和可微性推得的真命题，即使Θ整条轨道属于SO(3)仍失败。HasDerivAt为实际矩阵时间导数；ΘΘ^T=I是正确的正交条件。该decl明确含sorry；此处FAIL来自反例，不是因为sorry，原文忠实性单独为通过。
+
+网站反例：取Θ(s)=[[cos s,−sin s,0],[sin s,cos s,0],[0,0,1]]，t=0，δ=e1，d=[[0,−1,0],[1,0,0],[0,0,0]]。Θ是全局SO(3)轨道，Θ(0)=I且导数为d；左端de1=e2，右端d²e1=−e1，二者不同。
+
+网站建议：原印刷等式仅作为错误陈述记录并显式标注勘误；另立正确命题 dδ=(dΘ(t)^T)(Θ(t)δ)。不要静默改原文，也不要试图证明当前假命题。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1585](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1585>)（`MD.Ch04.rotationDerivativePrinted`）。
+位置：[Blueprint/Ch04.lean:1616](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1616>)（`MD.Ch04.rotationDerivativePrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -7053,13 +7653,19 @@ def rigidMatrixRelation (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+deps中grad展开至ConstrainedProjection.lean 2975–2978：grad(U,q)_i=(fderiv ℝ U q)(e_i)；matrixGrad(U,Θ)_ij=(fderiv ℝ U Θ)(E_ij)。因此确为真实元素偏导而非占位函数，四项向量/矩阵右端、负号、乘法次序及Θ^TΘ=I均匹配。但∀t∈I使用HasDerivWithinAt且I是任意Set，没有区间或UniqueDiffWithinAt资格；这严格弱于原书实际时间导数轨道方程，尤其单点域允许任意给定导数。fderiv还在不可微势处总化为零，未强制原文梯度存在。可采用在可微势和真实时间区间上的域限定版本，当前无限制关系并非完整忠实轨道关系。原书不要求在此证明存在性。定义无sorry。
+
+网站反例：I={0}, M=1,R=I,U=0，取全局常轨道q=0,p=e1,Θ=I,mom=Λ=0。单点集合上HasDerivWithinAt对任意导数成立，故该relation为真；实际dq/dt=0却不同于p/M=e1。
+
+网站建议：将各项改为HasDerivAt，或将I限定为非退化时间区间并提供UniqueDiffWithinAt等真实导数资格；同时限定U在所用位置和矩阵处可微、M>0、R可逆，或显式将这些资格作为外层域条件。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1591](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1591>)（`MD.Ch04.rigidMatrixRelation`）。
+位置：[Blueprint/Ch04.lean:1622](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1622>)（`MD.Ch04.rigidMatrixRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7096,13 +7702,15 @@ def angularMomentum {N : ℕ} (m : Fin N → ℝ) (δ v : Fin N → MolecularDyn
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 ReviewDefinitions.lean：V=Fin 3→ℝ；cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)（Lean下标0起）；angularMomentum=∑i mᵢ•cross3 δᵢ vᵢ。取 vᵢ=δ̇ᵢ，Fin N 是原1…N重编号，公式完整。质量正性不是该代数定义所必需。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1598](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1598>)（`MD.Ch04.angularMomentum`）。
+位置：[Blueprint/Ch04.lean:1629](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1629>)（`MD.Ch04.angularMomentum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7138,13 +7746,15 @@ def bodyMomentum (Θ : MolecularDynamics.Chapter04Review.Mat3) (l : MolecularDyn
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 Mat3=Matrix(Fin 3)(Fin 3)ℝ、V=Fin 3→ℝ，bodyMomentum Θ l=Θᵀ*ᵥl，即分量 ∑j Θ[j,i]l[j]。与原π=Θᵀl一致。定义允许任意矩阵是代数延拓；作为体坐标解释时取上下文旋转矩阵。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1602](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1602>)（`MD.Ch04.bodyMomentum`）。
+位置：[Blueprint/Ch04.lean:1633](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1633>)（`MD.Ch04.bodyMomentum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7185,13 +7795,15 @@ theorem angularInertia :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+展开 bodyMomentum=Θᵀ*ᵥl、angularMomentum=∑mᵢ•cross3 δᵢ vᵢ、dot u v=∑uᵢvᵢ、outer δ[i,j]=δ[i]δ[j]、inertiaTensor=∑mᵢ•((dot δᵢ δᵢ)•1−outer δᵢ)，cross3 是真实三维叉积。Lean δ 是原δ(0)，Θδ是现时δ，速度显式为ω×Θδ，右侧Θᵀω正是ω_b。最终等式给出π=Tω_b；取Θ=1还给出空间惯性公式；三重积为右嵌套，其恒等式是所用代数改写。对象及量词正确。[EXTRA] 正交性合理；det=1对这个含两次叉积的恒等式并非必要（所有正交矩阵都成立），但对物理旋转合理，无循环假设。原无括号不构成需改数学公式的ERRATUM。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1606](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1606>)（`MD.Ch04.angularInertia`）。
+位置：[Blueprint/Ch04.lean:1637](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1637>)（`MD.Ch04.angularInertia`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7229,13 +7841,15 @@ def eulerRigidField (T : MolecularDynamics.Chapter04Review.Mat3) (π : Molecular
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+展开 V、Mat3 与 cross3；eulerRigidField(T,π)=π×(T⁻¹π)，准确给出（4.41）右端的向量场。该项标为definition，不把函数定义误说成轨道方程或解存在定理。物理解释要求上下文可逆惯性张量；Lean对任意矩阵的逆运算延拓不影响可逆实例。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1643](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1643>)（`MD.Ch04.eulerRigidField`）。
+位置：[Blueprint/Ch04.lean:1674](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1674>)（`MD.Ch04.eulerRigidField`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7272,13 +7886,17 @@ def freeRigidSolution (T : MolecularDynamics.Chapter04Review.Mat3) (π : ℝ →
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 freeRigidSolution=∀t∈I, HasDerivWithinAt π (cross3 (π t) (T⁻¹*ᵥπ t)) I t；依赖中的 eulerRigidField、cross3、V、Mat3均已展开。结构上是逐时欧拉方程，未假设轨道存在。但 Ch04_deps.txt 只有 HasDerivWithinAt 的使用和导入，找不到该谓词的定义及其底层导数定义；按必须展开定义的要求，不能完成此处限定集合导数与原点导数的严格审计。尤其任意集合I（孤立点）与时间区间解须区分。
+
+网站建议：补充 Mathlib 的 HasDerivWithinAt 及所依赖 HasFDerivWithinAt 定义摘录；明确I为时间区间，并说明端点为单侧/集合内导数，重新审计。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1646](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1646>)（`MD.Ch04.freeRigidSolution`）。
+位置：[Blueprint/Ch04.lean:1677](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1677>)（`MD.Ch04.freeRigidSolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7319,13 +7937,19 @@ theorem rigidInvariants :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+展开 dot、freeRigidSolution、eulerRigidField、cross3 后，结论只保证固定闭区间上两倍能量及欧氏角动量平方与初值相等；平方守恒等价于欧氏长度守恒。[EXTRA] a≤b及真实解关系合理；连续性由导数关系可得，属冗余但合理；正定性比角动量守恒所需更强，固定对称可逆T足以做能量守恒，并符合非退化惯性模型。缺失原statement_scope明确包含的三维Hamiltonian表示、结构矩阵依赖π及退化J̃π=0；不能凭另一个source_id补全本项。另，Matrix.PosDef、ContinuousOn、HasDerivWithinAt 的定义未收录于依赖摘录，只见导入/使用，不能声称这些已逐层展开；缺失结论已足以判FAIL。
+
+网站反例：缺失条款：签名完全不提J̃、Hamiltonian向量场表示或J̃π=0。两项标量守恒本身无法推出某个指定矩阵的退化性，例如零场也可保存两项标量而使用单位矩阵；这不是原欧拉方程的反例，而是缺失子句的独立性说明。
+
+网站建议：保留现有守恒结论，另在本声明加入J̃π=0以及实际梯度的Hamiltonian场表示和矩阵定义/反对称性；或将本JSON范围明确缩小为守恒子句并为剩余子句建立可追踪独立条目。补充PosDef、ContinuousOn、HasDerivWithinAt定义。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1651](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1651>)（`MD.Ch04.rigidInvariants`）。
+位置：[Blueprint/Ch04.lean:1682](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1682>)（`MD.Ch04.rigidInvariants`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7363,13 +7987,19 @@ def rigidPoissonMatrix (π : MolecularDynamics.Chapter04Review.V) : MolecularDyn
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖 rigidPoissonMatrix π=skewMatrix π；skewMatrix π=[[0,−π₂,π₁],[π₂,0,−π₀],[−π₁,π₀,0]]，即正确的三维叉乘矩阵。签名仅定义J̃。原文同时包含π̇=J̃∇H̃、J̃反对称和H̃=πᵀT⁻¹π/2；定义未表述后两项对象/性质及场恒等式。context_notation中“另条”与当前statement_scope全句范围冲突，不能据此给完整原句PASS。
+
+网站反例：缺失条款：声明没有T、H̃、梯度或π̇，故没有Hamiltonian场等式及能量定义；矩阵反对称可由展开计算得出，但并未作为本声明的结论。
+
+网站建议：增加能量定义和在对称可逆惯性张量下的场恒等式、反对称性声明，并绑定本source_id；或者把本项原文范围缩为J̃(π)=skew(π)，其余子句显式映射到独立条目。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1706](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1706>)（`MD.Ch04.rigidPoissonMatrix`）。
+位置：[Blueprint/Ch04.lean:1737](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1737>)（`MD.Ch04.rigidPoissonMatrix`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7405,13 +8035,15 @@ theorem poissonDegeneracy : ∀ π : MolecularDynamics.Chapter04Review.V, Molecu
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+展开 rigidPoissonMatrix=skewMatrix，逐分量乘π得(−π₂π₁+π₁π₂,π₂π₀−π₀π₂,−π₁π₀+π₀π₁)=0；cross3 π π同样逐分量为零。∀π覆盖原公式，π=0时仍成立；无额外假设。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1709](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1709>)（`MD.Ch04.poissonDegeneracy`）。
+位置：[Blueprint/Ch04.lean:1740](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1740>)（`MD.Ch04.poissonDegeneracy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7454,13 +8086,15 @@ def axisRotation (i : Fin 3) (φ : ℝ) : MolecularDynamics.Chapter04Review.Mat3
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 Ch04.lean中的axisRotation与依赖同名定义逐分支一致：x为所印矩阵，y为[[cos,0,sin],[0,1,0],[−sin,0,cos]]，z为[[cos,−sin,0],[sin,cos,0],[0,0,1]]；覆盖全部Fin 3，右手主动旋转解释合理。作为旋转定义忠实；所引平面可积分句仅提供上下文，不由本定义证明。无额外假设、无sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1715](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1715>)（`MD.Ch04.axisRotation`）。
+位置：[Blueprint/Ch04.lean:1746](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1746>)（`MD.Ch04.axisRotation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7499,13 +8133,17 @@ def secondAxisPrinted (I : MolecularDynamics.Chapter04Review.V) (π : MolecularD
 
 本地预审：**NEEDS_HUMAN**。第二子系统向量第二分量印π而不是π₂，标量/向量类型含糊；a仅代表未确定印刷标量，不能假定a=π₂。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 展开Ch04.lean定义得到π×e_2·(a/I_2)。依赖没有缺失定义。a是新增独立实参数；若原书无下标π意为独立标量，此参数化可用；若意为动量分量π_2则a应绑定该分量。原书此标量未定义，不能以参数占位宣称已忠实翻译。惯量由T_j映射为I_j符合前文T=diag(I₁,I₂,I₃)的意图，但原式T_j记法本身也应保留解释记录。[ERRATUM?]缺下标外观确认，数学裁定仍需明确原文标量π含义。无sorry。
+
+网站建议：请裁定PDF195第2子系统的无下标标量π是否应为π_2；如是，另建有明示勘误的π×e_2(π_2/I_2)版本，保留当前印刷占位版本，并记录a的含义。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1723](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1723>)（`MD.Ch04.secondAxisPrinted`）。
+位置：[Blueprint/Ch04.lean:1754](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1754>)（`MD.Ch04.secondAxisPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7544,13 +8182,17 @@ def thirdAxisPrinted (I : MolecularDynamics.Chapter04Review.V) (π : MolecularDy
 
 本地预审：**NEEDS_HUMAN**。高倍率原页确认第三子系统末分量也印π而不是π₃；未确定印刷标量以a表示，不假定它等于π₃。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 展开Ch04.lean定义得到π×e_3·(a/I_3)。依赖没有缺失定义。a是新增独立实参数；若原书无下标π意为独立标量，此参数化可用；若意为动量分量π_3则a应绑定该分量。原书此标量未定义，不能以参数占位宣称已忠实翻译。惯量由T_j映射为I_j符合前文T=diag(I₁,I₂,I₃)的意图，但原式T_j记法本身也应保留解释记录。[ERRATUM?]缺下标外观确认，数学裁定仍需明确原文标量π含义。无sorry。
+
+网站建议：请裁定PDF195第3子系统的无下标标量π是否应为π_3；如是，另建有明示勘误的π×e_3(π_3/I_3)版本，保留当前印刷占位版本，并记录a的含义。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1729](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1729>)（`MD.Ch04.thirdAxisPrinted`）。
+位置：[Blueprint/Ch04.lean:1760](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1760>)（`MD.Ch04.thirdAxisPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7588,13 +8230,19 @@ def principalAxisField (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (π
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 Pi.single i (π i/I i)展开为第i位置π_i/I_i、其余位置0，因此定义确实给出按分量解释的一个子场。但本条冻结范围是PDF194整句：对角T下分裂Euler方程并用连续轴旋转近似求解。当前签名没有T、对角条件、原Euler场与子场之和的等式、流复合或近似结论，仅给一个向量场；不能覆盖全部所引结论。[EXTRA]补π₂/π₃是合理勘误候选而非原式已成立的假设，应明确分离。无sorry。
+
+网站反例：缺失条款：T=diag(I₁,I₂,I₃)时eulerRigidField等于三个principalAxisField之和，以及相应子流复合近似的声明。
+
+网站建议：将本定义的source scope明确缩为单子场；另立完整分裂与旋转复合的一致性/近似陈述，显式对角T、正主惯量与步长极限；原书缺下标勘误另行记录。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1734](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1734>)（`MD.Ch04.principalAxisField`）。
+位置：[Blueprint/Ch04.lean:1765](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1765>)（`MD.Ch04.principalAxisField`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7633,13 +8281,15 @@ def printedSpinAxis (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (h : �
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。axisRotation 的三个分支分别是标准正角 x/y/z 旋转矩阵；角度为 hπ_i/I_i，返回 (Rπ,ΘRᵀ)，与 PDF196 五行中共同的赋值逐项一致。Fin 3 的 0/1/2 对应印刷 1/2/3；原书物理惯量非零，Lean 对除零的总化并不被声称为物理子流。[ERRATUM?] 成立：对 x 轴 I₁=1、π=(1,1,0)，R_x(h)π 在 h=0 导数为 (0,0,1)，而 π×(1,0,0)=(0,0,-1)；这里只保留字面算法，没有声称精确求解(4.41)。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1739](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1739>)（`MD.Ch04.printedSpinAxis`）。
+位置：[Blueprint/Ch04.lean:1770](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1770>)（`MD.Ch04.printedSpinAxis`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7682,13 +8332,15 @@ def printedSpinStep (I : MolecularDynamics.Chapter04Review.V) (h : ℝ) : Molecu
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。展开 printedSpinAxis 与正式库 axisRotation；函数复合从右向左执行，回文链实际为 x(h/2),y(h/2),z(h),y(h/2),x(h/2)。每次角度使用当前更新后的 π，姿态使用当前 Θ；与 PDF196 Step 3 全部五行一致。该定义没有附加精确子流或几何结构结论；正角符号疑误仍保留。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1744](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1744>)（`MD.Ch04.printedSpinStep`）。
+位置：[Blueprint/Ch04.lean:1775](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1775>)（`MD.Ch04.printedSpinStep`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7729,13 +8381,19 @@ theorem axisFlow :
 
 本地预审：**NEEDS_HUMAN**。正式库spinAxis正角动量Rπ与π×ω子场符号相反；结论不先证明错误版。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 spinAxis展开为R=axisRotation i(tπ_i/I_i)，输出(Rπ,ΘRᵀ)；HasDerivAt对实时间求整个三维动量的导数，∀I,π,i且I_i>0，∀t。正角导数为ω×π，签名右端为π×ω，符号相反；[ERRATUM?]在原矩阵与列动量约定下成立。I_i>0合理且足够，但不能修复符号。axisFlow含sorry，仅记录证明未完成，FAIL依据签名反例。
+
+网站反例：取I=(1,1,1)，π=(1,1,0)，i=0，t=0。γ(t)=(1,cos t,sin t)，γ′(0)=(0,0,1)；cross3(γ(0),Pi.single 0 1)=(0,0,−1)。
+
+网站建议：忠实精确子流应使用axisRotation i(−tπ_i/I_i)作用于列动量，并显式γ(0)=π及轴分量恒定；保留原书正角算法作为独立印刷版本，不静默修书。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1751](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1751>)（`MD.Ch04.axisFlow`）。
+位置：[Blueprint/Ch04.lean:1782](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1782>)（`MD.Ch04.axisFlow`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -7776,13 +8434,15 @@ theorem spinPoisson :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 展开spinStep为x(h/2)∘y(h/2)∘z(h)∘y(h/2)∘x(h/2)五步，spinAxis的动量部分为正角Rπ，初始姿态1不影响动量。Statements.lean中poissonMap展开为∀π，D_ij=(fderiv ℝ G π)(e_j)_i，D skewMatrix(π) Dᵀ=skewMatrix(Gπ)。这确实是自由刚体三维约化动量上的Poisson保持，不是空谓词或抽象替代；对应本条generalized symplectic的几何结论。正角各步是相应负时间Hamiltonian子流，同样Poisson；故axisFlow符号FAIL不推出本条FAIL。∀I正主惯量、∀h合理；[EXTRA]明确约化动量范围，与自由刚体段落一致，不覆盖后续含姿态的完整算法。简单/高效为定性描述，无定量复杂度命题。spinPoisson含sorry；PASS只判签名语义，不声称已验证其证明。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1759](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1759>)（`MD.Ch04.spinPoisson`）。
+位置：[Blueprint/Ch04.lean:1790](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1790>)（`MD.Ch04.spinPoisson`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -7820,13 +8480,15 @@ theorem rigidPoissonSkew : ∀ π : MolecularDynamics.Chapter04Review.V, (Molecu
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 rigidPoissonMatrix展开为skewMatrix(π)=[[0,−π₂,π₁],[π₂,0,−π₀],[−π₁,π₀,0]]。∀π，矩阵转置等于负矩阵，恰是原书skew symmetric，无Jacobi或非退化附加断言；无额外假设。Ch04.lean该声明有逐分量证明，无sorry；本次只读，不作编译验证。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1765](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1765>)（`MD.Ch04.rigidPoissonSkew`）。
+位置：[Blueprint/Ch04.lean:1796](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1796>)（`MD.Ch04.rigidPoissonSkew`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7865,13 +8527,15 @@ theorem rigidHamiltonianField : ∀ (T : MolecularDynamics.Chapter04Review.Mat3)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 eulerRigidField=π×(T⁻¹π)，rigidPoissonMatrix=skewMatrix(π)；dot=Σ_i x_i y_i；grad= textbookConstraintGradient，后者在ConstrainedProjection.lean展开为i↦(fderiv ℝ H π)(Pi.single i 1)，为真实坐标梯度而非假设。原式的对象、所有能量因子及梯度位置完整保留。∀T,π，T.PosDef是物理非退化惯量的合理资格，提供对称与可逆性；对称性保证此二次型梯度为T⁻¹π，无把结论作假设。skew性质已由单列RigidPoissonSkew覆盖。[EXTRA]正定性强于此等式所需的对称性，但在使用T⁻¹的物理惯量范围合理。Ch04.lean有Fréchet微分和逐分量证明，无sorry；本次未编译。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1772](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1772>)（`MD.Ch04.rigidHamiltonianField`）。
+位置：[Blueprint/Ch04.lean:1803](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1803>)（`MD.Ch04.rigidHamiltonianField`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7909,13 +8573,15 @@ def rigidForce (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Ch
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。grad→textbookConstraintGradient→fun i => (fderiv ℝ U q)(Pi.single i 1)，故返回固定 Θ 时对 q 三个坐标的偏导的负值。原文对第 k 体的偏导可通过固定其余身体变量得到这样的 U；本条是局部力定义，不声称完整 N 体算法。Fréchet 导数在可微势上确为坐标偏导；未作可微性定理，fderiv 在不可微点的总化不被解释为原文经典导数。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1812](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1812>)（`MD.Ch04.rigidForce`）。
+位置：[Blueprint/Ch04.lean:1843](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1843>)（`MD.Ch04.rigidForce`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7951,13 +8617,15 @@ def matrixRot (A : MolecularDynamics.Chapter04Review.Mat3) : MolecularDynamics.C
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。skewMatrix(v)=[[0,-v₂,v₁],[v₂,0,-v₀],[-v₁,v₀,0]]。对 B=A−Aᵀ，skew 的逆为 (B₂₁,B₀₂,B₁₀)；展开后正是 Lean 三个坐标 (A₂₁−A₁₂,A₀₂−A₂₀,A₁₀−A₀₁)。没有额外 1/2，无新增假设。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1815](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1815>)（`MD.Ch04.matrixRot`）。
+位置：[Blueprint/Ch04.lean:1846](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1846>)（`MD.Ch04.matrixRot`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7993,13 +8661,15 @@ def rigidTorque (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.C
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。matrixGrad(U q)(Θ) 的 (i,j) 元素为 (fderiv ℝ (U q) Θ)(Pi.single i (Pi.single j 1))，即固定 q 的矩阵元素偏导；matrixRot 已展开为 skew⁻¹(A−Aᵀ) 的三个坐标。Θᵀ 在左乘矩阵梯度，整体取负，符合 PDF195 的所有乘法顺序和符号。多体局部偏导同样可固定其余变量；在光滑势的通常语境中没有新增力矩公理。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1818](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1818>)（`MD.Ch04.rigidTorque`）。
+位置：[Blueprint/Ch04.lean:1849](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1849>)（`MD.Ch04.rigidTorque`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8050,13 +8720,19 @@ def dlmPrinted (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。RBState=((q,p),(π,Θ))。rigidKick 保留 q、Θ 并更新 p+hF、π+hτ；rigidDrift 1 h 更新 q+hp；printedSpinStep 为五轴字面旋转。复合顺序为旧力半 Kick、Drift、Spin、新状态重算力矩半 Kick，单体实例逐项正确。但 PDF195 明说对所有刚体执行，U 是系统势；签名只有一个 q、Θ，无法表示任意 N 体耦合。[EXTRA] N=1 是明确的范围缩减，非必要的忠实翻译假设，另有声明不补足本条签名。[ERRATUM?] 缺质量成立：PDF193/印刷171给 dq/dt=p/M，PDF196仍印 q+hp；正角符号问题同 PrintedSpinAxis。
+
+网站反例：N=2、U(q¹,q²)=‖q¹−q²‖²/2 时 F¹=−(q¹−q²)，改变 q² 而固定 q¹、Θ¹会改变第一体 Kick。当前 U:V→Mat3→ℝ 和单体 RBState 不能同时承载两个可变位置及第二体输出；这不是完整系统算法。
+
+网站建议：把本条绑定到任意 N 的系统状态和耦合势版本（输入所有 q、Θ，并在两次 Kick 各用当前完整配置求偏导），或明确将 source statement/scope 改为原文 N=1 特例，避免以本条覆盖完整原算法。保持原印刷 Drift 和 Spin；疑误另列，不静默修正。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1823](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1823>)（`MD.Ch04.dlmPrinted`）。
+位置：[Blueprint/Ch04.lean:1854](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1854>)（`MD.Ch04.dlmPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8095,13 +8771,19 @@ def dlmMassOnly (M : ℝ) (I : MolecularDynamics.Chapter04Review.V) (U : Molecul
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。展开 rigidDrift M h 得 q+(h/M)p，并且 dlmMassOnly 是含两次 Kick 和五轴 Spin 的完整单体映射。所绑定原文却只有 Step 2 的 q+hp，既引入质量分母，又扩大对象到完整算法。[EXTRA] 描述的是修订算法而非额外数学假设，不能使陈述忠实于所引原句。质量修订有 PDF193 的 dq/dt=p/M 依据，但必须与原式分开；无论证明是否完成均属签名不一致。
+
+网站反例：取 M=2、h=1、U=0、q=0、p=(1,0,0)、π=0、Θ=1、I=(1,1,1)。Lean 输出 q=(1/2,0,0)，原印刷 Drift 输出 q=(1,0,0)；两者在合法正质量下已不同。
+
+网站建议：原文 Drift 单独绑定 rigidDrift 1 h 或等价字面定义；将 dlmMassOnly 明确标记为另一个有依据的质量修订算法，并补其完整修订陈述及单体范围，而不要把 q+hp 的原句绑定到它。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1829](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1829>)（`MD.Ch04.dlmMassOnly`）。
+位置：[Blueprint/Ch04.lean:1860](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1860>)（`MD.Ch04.dlmMassOnly`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8139,13 +8821,19 @@ theorem driftSpinCommute : ∀ M h (I : MolecularDynamics.Chapter04Review.V) (z 
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开 Ch04_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。展开 rigidDrift 后第二分量 (π,Θ) 完全不变；printedSpinStep 不改变 (q,p)，所以给出的全状态等式确实是 Drift∘Spin=Spin∘Drift，任意 M,h,I,z 的量词无需额外假设；本条实际证明为 intro ...; rfl，没有 sorry。但原句还明确说可把一个 Drift 换为 Spin 前后各一半 Drift，以显出 Kick,Drift,Spin,Drift,Kick 的对称排列。当前签名只有交换等式，没有半步分解或两种完整步的相等结论；按本批要求核对全部结论子句，覆盖不完整。
+
+网站反例：缺失条款（不是交换等式的反例）：D_{M,h}=D_{M,h/2}∘D_{M,h/2}，以及 K_{h/2}∘S_h∘D_{M,h}∘K_{h/2}=K_{h/2}∘D_{M,h/2}∘S_h∘D_{M,h/2}∘K_{h/2}。这些结论可由定义和交换性推出，但没有包含在当前签名中。
+
+网站建议：在本条声明中增加 Drift 的半步合成恒等式及两个完整算法排列的全状态等式（原印刷实例取 M=1），或将本条 source scope 明确缩为最后的交换性分句并另建覆盖前半句的声明。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1834](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1834>)（`MD.Ch04.driftSpinCommute`）。
+位置：[Blueprint/Ch04.lean:1865](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1865>)（`MD.Ch04.driftSpinCommute`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8188,13 +8876,19 @@ theorem dlmStructure :
 
 本地预审：**NEEDS_HUMAN**。正式库spin与原表一致；旧陈述为单体质量修正版及反步关系，不能冒充原任意N体完整算法。正角子流符号仍需审校。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖定位：Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean 分段。V=Fin 3→ℝ，Mat3=3×3 实矩阵，RBState=(V×V)×(V×Mat3)，依次为(q,p,π,Θ)。rbTangent(z,v) 为 ΘᵀδΘ+δΘᵀΘ=0；rbForm 用 ξ=rot(ΘᵀδΘ)/2、η=rot(Θᵀδ′Θ)/2，取 δq·δ′p−δ′q·δp+ξ·δ′π−η·δπ+π·(ξ×η)。rbSymplectic 量化所有满足 ΘᵀΘ=1、det Θ=1 的输入和两个实际切向量，要求真实 fderiv 的两形式拉回等式；它本身未要求输出 SO(3) 或输出导数切向性，不能仅凭谓词名字推断这些结论。axisRotation 的 x 轴矩阵为 [[1,0,0],[0,cos φ,−sin φ],[0,sin φ,cos φ]]，y、z 为对应标准主动旋转。spinAxis 每次由当前 π_i 计算 φ=hπ_i/I_i，更新 (Rπ,ΘRᵀ)；spinStep 的函数复合从右向左执行 x(h/2),y(h/2),z(h),y(h/2),x(h/2)。rigidKick 同时以 −grad U 和 −rot(ΘᵀmatrixGrad U) 更新两种动量；rigidDrift 使用 q+h p/M；dlmMassConsistent 是半 kick、drift、spin、半 kick。签名量词为任意正 M、正主惯性 I、C³ 单体势 U、任意 h；另对每个 SO(3) 输入要求逆步复合为恒等及输出正交性。正质量和正惯性合理，C³ 是较强但合理的技术资格；回逆与正交性是原引用句以外的算法性质，不应当作该句逐字结论。该对象是质量修订的 N=1 实例，而原文为全部刚体、可耦合势的完整系统；[EXTRA] 明示单体并不能补足原结论。签名中的质量一致也只修订 drift，spin 仍是印刷正角，名称不能当作精确原动力学流的证据。正角子步可看作负旋转动能的 Hamilton 子流，因此与原方程符号不符本身不反证辛性。此 FAIL 针对原文对象范围与陈述对应，而非由 sorry 推断数学命题为假。实际证明体含 sorry，独立于签名审计。
+
+网站反例：缺失条款：N 任意、每体完整(q,p,π,Θ)状态、允许 U(q¹,…,qᴺ,Θ¹,…,Θᴺ) 耦合全部刚体。以 N=2 且 U=q¹₁q²₁ 为例，原文要求两体相互作用；该签名单个 V×Mat3 的 U 参数不能表示这个完整系统。此为范围缺失示例，不是单体辛性为假的反例。
+
+网站建议：保留此条时明确标作单体特例，并将它与原文完整结构声明区分；原句的完整 formalization 应量化 N、各体惯性、C³ 耦合 U，使用 rigidSystemSymplectic(dlmPrintedSystem I U h)，并显式包含输入/输出 SO(3) 约束。质量修订对象须另列，不替换原表；若要求对应原动力学精确子流，另列带负角的修订 spin，并保留印刷正角疑误。 回逆性和输出正交性可作为单独算法性质保留，不能当作引用句明确给出的结论。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1842](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1842>)（`MD.Ch04.dlmStructure`）。
+位置：[Blueprint/Ch04.lean:1873](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1873>)（`MD.Ch04.dlmStructure`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8235,13 +8929,19 @@ theorem dlmPrintedStructure : ∀ (I : MolecularDynamics.Chapter04Review.V) (U :
 
 本地预审：**NEEDS_HUMAN**。实际字面算法完整rb拉回形式陈述；原spin的相反角动量符号需审校，不能先判PASS。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖定位：Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean 分段。V=Fin 3→ℝ，Mat3=3×3 实矩阵，RBState=(V×V)×(V×Mat3)，依次为(q,p,π,Θ)。rbTangent(z,v) 为 ΘᵀδΘ+δΘᵀΘ=0；rbForm 用 ξ=rot(ΘᵀδΘ)/2、η=rot(Θᵀδ′Θ)/2，取 δq·δ′p−δ′q·δp+ξ·δ′π−η·δπ+π·(ξ×η)。rbSymplectic 量化所有满足 ΘᵀΘ=1、det Θ=1 的输入和两个实际切向量，要求真实 fderiv 的两形式拉回等式；它本身未要求输出 SO(3) 或输出导数切向性，不能仅凭谓词名字推断这些结论。axisRotation 的 x 轴矩阵为 [[1,0,0],[0,cos φ,−sin φ],[0,sin φ,cos φ]]，y、z 为对应标准主动旋转。spinAxis 每次由当前 π_i 计算 φ=hπ_i/I_i，更新 (Rπ,ΘRᵀ)；spinStep 的函数复合从右向左执行 x(h/2),y(h/2),z(h),y(h/2),x(h/2)。实际使用 MD.Ch04.dlmPrinted：正式库 rigidKick U(h/2)，MD.Ch04.printedSpinStep，rigidDrift 1 h，再 rigidKick U(h/2)。printedSpinAxis 与展开的正式库 spinAxis 同式。任意正 I、C³ 单体势、任意 h 的资格合理；单位质量解释保留字面 q+hp，但不是任意质量原动力学的完整表达。正角旋转虽然是 (4.41) 的反号子流，仍可保存上述两形式，不能仅据符号疑误断言此辛性为假。原文引用句讨论全部刚体系统，而 U 仅有一个 q 和一个 Θ，没有 N 或耦合势，故只能是单体特例，缺少原文全部对象。rbSymplectic 没有输出约束子句；实际各旋转仍保持 SO(3)，应在完整几何陈述中明确列出。证明体含 sorry，未完成证明不作为 FAIL 原因。
+
+网站反例：缺失条款：N 任意、每体完整(q,p,π,Θ)状态、允许 U(q¹,…,qᴺ,Θ¹,…,Θᴺ) 耦合全部刚体。以 N=2 且 U=q¹₁q²₁ 为例，原文要求两体相互作用；该签名单个 V×Mat3 的 U 参数不能表示这个完整系统。此为范围缺失示例，不是单体辛性为假的反例。
+
+网站建议：保留此条时明确标作单体特例，并将它与原文完整结构声明区分；原句的完整 formalization 应量化 N、各体惯性、C³ 耦合 U，使用 rigidSystemSymplectic(dlmPrintedSystem I U h)，并显式包含输入/输出 SO(3) 约束。质量修订对象须另列，不替换原表；若要求对应原动力学精确子流，另列带负角的修订 spin，并保留印刷正角疑误。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1853](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1853>)（`MD.Ch04.dlmPrintedStructure`）。
+位置：[Blueprint/Ch04.lean:1884](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1884>)（`MD.Ch04.dlmPrintedStructure`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8280,13 +8980,15 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖定位：Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean 分段。V=Fin 3→ℝ，Mat3=3×3 实矩阵，RBState=(V×V)×(V×Mat3)，依次为(q,p,π,Θ)。Fin N→RBState 确实为所有刚体同时保存 q、p、π、Θ；N 任意自然数，允许 N=0 是无害的空系统推广。[EXTRA] 是透明表示选择，并未强迫 U 为独立势。这里是承载状态的环境空间，不是 SO(3) 合法态子类型；原文旋转矩阵约束需在使用该状态的几何断言中施加，不能宣称这个类型自动满足它。作为本条“所有刚体执行”的状态表示忠实；无证明义务、无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1860](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1860>)（`MD.Ch04.rigidSystemState`）。
+位置：[Blueprint/Ch04.lean:1891](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1891>)（`MD.Ch04.rigidSystemState`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8325,13 +9027,15 @@ def rigidSystemForce {N : ℕ}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖定位：Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean 分段。V=Fin 3→ℝ，Mat3=3×3 实矩阵，RBState=(V×V)×(V×Mat3)，依次为(q,p,π,Θ)。grad 展开为 textbookConstraintGradient，再在 MolecularDynamics/Chapter04/ConstrainedProjection.lean 分段展开为 (fderiv ℝ U q)(Pi.single i 1)；matrixGrad 为 (fderiv ℝ U Θ)(Pi.single i (Pi.single j 1))。matrixRot(A)=(A₂₁−A₁₂,A₀₂−A₂₀,A₁₀−A₀₁)，恰为 skew⁻¹(A−Aᵀ)，没有额外 1/2。U 接受所有位置和所有方向矩阵，k 为任意 Fin N；Function.update 仅替换第 k 个位置，所有其余坐标及全部方向固定在同一个 z，负梯度给出 F^k。量词、负号、耦合势和分量偏导均吻合。fderiv 在不光滑点的总化不应解释为经典导数；原文使用偏导已隐含可微资格，本定义未额外声称不可微势也有经典力。无额外假设、无 ERRATUM?、无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1863](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1863>)（`MD.Ch04.rigidSystemForce`）。
+位置：[Blueprint/Ch04.lean:1894](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1894>)（`MD.Ch04.rigidSystemForce`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8371,13 +9075,15 @@ def rigidSystemTorque {N : ℕ}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖定位：Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean 分段。V=Fin 3→ℝ，Mat3=3×3 实矩阵，RBState=(V×V)×(V×Mat3)，依次为(q,p,π,Θ)。grad 展开为 textbookConstraintGradient，再在 MolecularDynamics/Chapter04/ConstrainedProjection.lean 分段展开为 (fderiv ℝ U q)(Pi.single i 1)；matrixGrad 为 (fderiv ℝ U Θ)(Pi.single i (Pi.single j 1))。matrixRot(A)=(A₂₁−A₁₂,A₀₂−A₂₀,A₁₀−A₀₁)，恰为 skew⁻¹(A−Aᵀ)，没有额外 1/2。Function.update 仅替换第 k 个方向矩阵；其余方向与全部位置保持 z 中值。Θ_kᵀ 左乘矩阵元素偏导后取负 matrixRot，恰为原公式 τ^k=−rot([Θ^k]ᵀ ∂U/∂Θ^k)。没有偷换为仅依赖一个刚体的 U，没有遗漏转置或多乘 1/2；正交性不需要作为该环境公式的定义条件。原导数可微资格同力定义。无额外假设、无 ERRATUM?、无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1869](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1869>)（`MD.Ch04.rigidSystemTorque`）。
+位置：[Blueprint/Ch04.lean:1900](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1900>)（`MD.Ch04.rigidSystemTorque`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8418,13 +9124,15 @@ def rigidSystemKick {N : ℕ}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖定位：Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean 分段。V=Fin 3→ℝ，Mat3=3×3 实矩阵，RBState=(V×V)×(V×Mat3)，依次为(q,p,π,Θ)。展开 rigidSystemForce/Torque 为完整耦合势在同一 z 计算的力/力矩；函数 fun k 并行更新 p_k+hF_k、π_k+hτ_k，保持 q_k、Θ_k。本定义 h 是 kick 时长，而原表 h 是整个 timestep；context_notation 已明确调用 h/2，对照 Ch04.lean 的 dlmPrintedSystem 确实两次以 h/2 调用，第二次在当前新状态重新计算。因此是合理的参数重命名，没有缺失半步因子；不是把本函数直接以整步 h 对应原表半步。无额外假设、无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1876](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1876>)（`MD.Ch04.rigidSystemKick`）。
+位置：[Blueprint/Ch04.lean:1907](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1907>)（`MD.Ch04.rigidSystemKick`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8463,13 +9171,15 @@ def rigidSystemDriftPrinted {N : ℕ} (h : ℝ) (z : rigidSystemState N) : rigid
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖定位：Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean 分段。V=Fin 3→ℝ，Mat3=3×3 实矩阵，RBState=(V×V)×(V×Mat3)，依次为(q,p,π,Θ)。对所有 k 更新 q_k+h p_k，保持 p、π、Θ；与 PDF196 第2步字面完全一致。[ERRATUM?] 有依据：p 在 PDF195 被定义为线动量；由质心动能 p²/(2M_k) 得 dq/dt=p/M_k，故一般质量应为 q+h p/M_k。例 M_k=2、p=e₁、h=1，原表给位移 e₁，物理平移流给 e₁/2。定义明确是 Printed 且保留疑误，不静默修改，所以签名忠实于印刷式，PASS 不代表原算法对任意质量动力学一致。无额外假设、无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1884](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1884>)（`MD.Ch04.rigidSystemDriftPrinted`）。
+位置：[Blueprint/Ch04.lean:1915](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1915>)（`MD.Ch04.rigidSystemDriftPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8513,13 +9223,15 @@ def rigidSystemSpinPrinted {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04R
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖定位：Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean 分段。V=Fin 3→ℝ，Mat3=3×3 实矩阵，RBState=(V×V)×(V×Mat3)，依次为(q,p,π,Θ)。axisRotation 的 x 轴矩阵为 [[1,0,0],[0,cos φ,−sin φ],[0,sin φ,cos φ]]，y、z 为对应标准主动旋转。spinAxis 每次由当前 π_i 计算 φ=hπ_i/I_i，更新 (Rπ,ΘRᵀ)；spinStep 的函数复合从右向左执行 x(h/2),y(h/2),z(h),y(h/2),x(h/2)。MD.Ch04.printedSpinStep 与依赖展开的 spinStep 同式；每体调用 I k，可有不同主惯性，各子步用已更新动量。保持 q,p，按表更新 π,Θ，全部五子步均包含。[ERRATUM?] 成立：i=x、I₁=1、π=(1,1,0)、Θ=1 时，正角旋转的初始 π 导数为 (0,0,1)，而 π×(π₁e₁/I₁)=(0,0,−1)；Θ 导数也为 −Θ skew(π₁e₁/I₁)，与 PDF195 的恢复方程反号。这不妨碍它是印刷表的忠实定义，也不单独否定辛性。未冒充精确原 Euler 子流，无额外假设、无 sorry。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1889](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1889>)（`MD.Ch04.rigidSystemSpinPrinted`）。
+位置：[Blueprint/Ch04.lean:1920](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1920>)（`MD.Ch04.rigidSystemSpinPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8571,13 +9283,15 @@ def dlmPrintedSystem {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已实际展开Ch04.lean:1739–1747的printedSpinAxis/printedSpinStep及1860–1899的全部system子定义，并读取Ch04_deps.txt的-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean及MolecularDynamics/Chapter04/ConstrainedProjection.lean。V=Fin 3→ℝ，Mat3=3×3实矩阵，RBState=(V×V)×(V×Mat3)，即((q,p),(π,Θ))；rigidSystemState N=Fin N→RBState，未缩减为N=1。grad展开为fun i => (fderiv ℝ U q)(Pi.single i 1)，matrixGrad按矩阵基逐元素取实际Fréchet导数；matrixRot(A)=(A21−A12,A02−A20,A10−A01)，与原书1起编号的rot一致。rigidSystemForce对完整U仅用Function.update改变第k个q，其他全部q、Θ保持当前值；rigidSystemTorque同理只改变第k个Θ，并取−rot(Θ_k^T∂_{Θ_k}U)。kick保持q、Θ，分别加hF及hτ；drift仅作q+h p；spin只改变(π,Θ)，五步各在更新后的π上计算正角R，并作(Rπ,ΘR^T)。函数复合从右向左执行，确为初kick半步→drift全步→spin五子步→末kick半步，末kick使用全体更新后的构型重新求力/力矩，允许任意耦合势。无额外假设或待展开的项目定义缺失；定义对非物理数据的总化不等于声称该数据有物理意义。[ERRATUM?]与原方程的一致性问题成立：线动量的物理质心速度为p/M，而表中是p；正角Rπ及ΘR^T给出反向的旋转子流。但Lean忠实保留这些印刷公式，未把修正版冒充原表，也未在本定义中断言精确流、准确度或辛性。该项是明确def，无sorry；此PASS仅为定义语义忠实，不是后续算法性质已经证明。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1895](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1895>)（`MD.Ch04.dlmPrintedSystem`）。
+位置：[Blueprint/Ch04.lean:1926](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1926>)（`MD.Ch04.dlmPrintedSystem`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8615,13 +9329,15 @@ theorem systemDriftSpinCommute : ∀ N (I : Fin N → MolecularDynamics.Chapter0
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已展开Ch04.lean:1860、1884–1891的rigidSystemState、rigidSystemDriftPrinted和rigidSystemSpinPrinted，以及1739–1747的printedSpinAxis/printedSpinStep；正式库V、Mat3及RBState的实际定义已在Ch04_deps.txt的-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean中读到。全状态每体为((q,p),(π,Θ))。drift把(q,p)改为(q+h p,p)，完整保持(π,Θ)；spin完整保持(q,p)，其R角度只依赖当前π、该体I及h，输出(Rπ,ΘR^T)的五步组合，不读取q或p。两种复合逐体均为((q+h p,p),printedSpinStep(I_k,h,(π,Θ)))，故原文的“decoupled”被表达为真正全N体函数值相等。量词∀N、∀I、∀h、∀z没有偷加独立势或N=1限制，也没有交换依赖全体构型的kick；无需惯性正性、SO(3)或势能正则性才能成立，因为该等式是分量独立性的恒等式。质量与Spin符号的印刷问题也不影响此交换性。Ch04.lean:1902–1907实际证明为intro N I h z; rfl，无sorry；签名忠实与该现有证明的状态分别核对。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1902](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1902>)（`MD.Ch04.systemDriftSpinCommute`）。
+位置：[Blueprint/Ch04.lean:1933](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1933>)（`MD.Ch04.systemDriftSpinCommute`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8663,13 +9379,17 @@ def rigidSystemSymplectic {N : ℕ} (G : rigidSystemState N → rigidSystemState
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+项目定义均可找到，不存在材料不足：已展开Ch04.lean:1910–1916及Ch04_deps.txt的-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean中的V、Mat3、RBState、phaseForm、dot、matrixRot、cross3、rbTangent、rbForm。rbTangent(z,u)就是Θ^TδΘ+δΘ^TΘ=0；cross3为标准三维叉积；令ξ=(1/2)rot(Θ^TδΘ_u)、η=(1/2)rot(Θ^TδΘ_v)，rbForm=Σ_i(u_qi v_pi−v_qi u_pi)+ξ·δπ_v−η·δπ_u+π·(ξ×η)。这是((q,p),(π,Θ))体坐标下的真实刚体余切两形式，各体求和正好给出N体形式。谓词量词为对每个合法SO(3)输入z，先要求输出全部Θ^TΘ=1且detΘ=1，再对任意两条真实切向量u、v要求实际fderiv ℝ G z的拉回形式相等。故[EXTRA]所说完整配置、切向量、两形式和输出约束的内容确实存在且合理；它们主要是把原文“generalized sense of constrained dynamics”展开为具体对象，并非假设算法已辛。然而本source_id所引原文还有明确主语和结论：the combined scheme满足此性质。当前Lean声明只是def rigidSystemSymplectic(G):Prop，既未代入dlmPrintedSystem，也没有断言该谓词成立；缺失的是rigidSystemSymplectic(dlmPrintedSystem I U h)这一算法性质结论。因此正确的辅助谓词仍不能作为该原句的完整对应陈述，判FAIL为来源映射/结论缺项，而非判rbForm错误或辛性命题为假。该def没有sorry；无sorry不弥补未陈述原文结论。
+
+网站建议：保留此def作为辅助几何定义，并给它标注明确的辅助定义来源范围；把PDF195这句算法断言关联至已有MD.Ch04.dlmPrintedSystemStructure，或将本条对应签名改为在正主惯性和适当势能正则性资格下断言rigidSystemSymplectic(dlmPrintedSystem I U h)。不得把定义一个性质与证明组合算法满足它混为一谈。
 
 ### 7. 状态与证明位置
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1910](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1910>)（`MD.Ch04.rigidSystemSymplectic`）。
+位置：[Blueprint/Ch04.lean:1941](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1941>)（`MD.Ch04.rigidSystemSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8709,13 +9429,15 @@ theorem dlmPrintedSystemStructure : ∀ N (I : Fin N → MolecularDynamics.Chapt
 
 本地预审：**NEEDS_HUMAN**。忠实全N、任意耦合势与字面spin算法；未删量词或弱化成单体。原正角动量/旋转符号疑点和一般质量drift需网站/导师裁定。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+已实际展开Ch04.lean:1919–1923的签名、1895–1899的dlmPrintedSystem、1860–1891的全部system子定义和1910–1916的rigidSystemSymplectic，并展开Ch04_deps.txt的-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean中的RBState、V、Mat3、matrixGrad、matrixRot、axisRotation、phaseForm、dot、cross3、rbTangent、rbForm，以及-- FILE: MolecularDynamics/Chapter04/ConstrainedProjection.lean中的textbookConstraintGradient。对象是真正任意N体完整((q,p),(π,Θ))状态，U接受全部位置和全部方向，未强加势能逐体可分；各体主惯性I可不同。量词顺序为∀N,I,U，∀k,i的正主惯性条件及ContDiff ℝ 3(uncurry U)，再∀h，并通过谓词对所有合法SO(3)输入及任意两条切向量给出全部输出SO(3)约束和实际Fréchet拉回的N体两形式等式。与前一项单独def不同，这里确实代入完整组合算法并断言辛性。[EXTRA]主惯性正性保证物理资格和非零分母；C³耦合势是明示且合理的充分正则性，较保形式所需的常见C²资格更强，但不循环假设辛性。原表的两个[ERRATUM?]不能据此造成该签名FAIL：q+h p是单位质量动能子流，虽然不符合一般物理质量；正角(Rπ,ΘR^T)是负旋转子Hamiltonian−π_i²/(2I_i)的子流，虽然相对PDF195的Θ̇及PDF194的(4.41)反向，仍是辛映射。势能kick采用与rbForm相容的−rot(Θ^T∂ΘU)及−∂qU；两个半kick、drift、五个spin的组合保持所定义的真实两形式和SO(3)。因此该签名忠实表达原句所说辛性，未额外宣称印刷算法是正确方向的刚体精确子流、具有阶数精度或量化可靠性。本PASS只针对签名语义：Ch04.lean:1923仍为sorry，算法辛性没有在此附件中获得Lean证明，不能报告为已验证定理。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1919](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1919>)（`MD.Ch04.dlmPrintedSystemStructure`）。
+位置：[Blueprint/Ch04.lean:1950](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1950>)（`MD.Ch04.dlmPrintedSystemStructure`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8757,13 +9479,17 @@ theorem exactPlanarRotation : ∀ (I π : MolecularDynamics.Chapter04Review.V) (
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+网站审计：**NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+
+依赖已展开：Ch04_deps.txt中MolecularDynamics/Chapter04/ReviewDefinitions.lean的V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)。axisRotation的三分支分别是主动Rx=[[1,0,0],[0,cosφ,−sinφ],[0,sinφ,cosφ]]、Ry=[[cosφ,0,sinφ],[0,1,0],[−sinφ,0,cosφ]]、Rz=[[cosφ,−sinφ,0],[sinφ,cosφ,0],[0,0,1]]。Pi.single i a在i处为a，其余处为0；矩阵*ᵥ为逐行点积，HasDerivAt断言实际实参数向量导数。量词为任意I、初值π、轴i，在0<I_i下，所有实t；γ(t)=R_i(−tπ_i/I_i)π。旋转固定第i分量并在t=0为恒等，导数为−(π_i/I_i)e_i×γ=γ×e_i(γ_i/I_i)，因此该签名完整表达了预期主轴子场的精确平面旋转，三个结论均正确；不需要其它轴惯量的正性，选中惯量正性符合物理背景但数学上非零已足够。[EXTRA]负角是该主动矩阵与(4.41)叉积方向下必要的符号选择，并未将p.174正角算法替代为正确精确流。[EXTRA]把第二、第三子场的无下标π解释为π₂/π₃合理且符合p.172对角惯量分裂，但原页字面第二、第三式把向量π放在单个标量分量中，含义未定义；无法对原样展示公式无条件给PASS。需人工确认原书缺下标及T_i与I_i的意图；这是原文数学含义问题，不是缺库定义。[ERRATUM?]本条无独立该标签，所涉及缺下标确实存在；正角方向疑点由以上导数支持。签名语义与证明完成度分开：实际exactPlanarRotation的证明体为sorry，本次未写证明、未声称Lean已验证此结论。
+
+网站建议：请确认原页第二、第三式非零项应分别为π₂/I₂、π₃/I₃，并确认T_i表示对应主惯量。确认后现有负角Lean签名可就解释后的精确平面旋转判PASS；在JSON上下文保留原样展示和勘误说明，勿改原书转录或把sorry当已证。
 
 ### 7. 状态与证明位置
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1927](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1927>)（`MD.Ch04.exactPlanarRotation`）。
+位置：[Blueprint/Ch04.lean:1958](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1958>)（`MD.Ch04.exactPlanarRotation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 

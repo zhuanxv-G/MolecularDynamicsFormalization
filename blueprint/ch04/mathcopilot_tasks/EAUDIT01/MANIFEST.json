@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT01",
+  "input_sha256": {
+    "BATCH_EAUDIT01.md": "735572585f6eede54aba6f28e892645a3dd72a6928df80698e0d9d708b3bb12e",
+    "Blueprint/Ch04.lean": "47f91c1c0f41735d7f6c7e631ec81d0d0682f97c4566b023fedd13793d984703",
+    "blueprint/ch04/ch04_source.json": "2c34f723d9728b374102fad8fb12930e5015e33a25ce5f992a34907f696e69f3"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT01a",
+      "source_id": "MD-4-EulerFactor",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT01/a",
+      "total_bytes": 91928,
+      "manifest_sha256": "945213714d5d4bae3e6d3e539d4dd7bd6c35340e398a42bb7202db3fb993a55a"
+    },
+    {
+      "subtask": "EAUDIT01b",
+      "source_id": "MD-4-EulerImaginaryGrowth",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT01/b",
+      "total_bytes": 79520,
+      "manifest_sha256": "c8c5abbf06fc6ce2aab99594c704d7477ee30a9f7bbeb18585623f2c08e180f3"
+    },
+    {
+      "subtask": "EAUDIT01c",
+      "source_id": "MD-4-SymplecticEulerCharacteristic",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT01/c",
+      "total_bytes": 77593,
+      "manifest_sha256": "6181f29d4a1c3b02d752fd923708608d41017bc4b9bbab4584ca26a7f7333444"
+    },
+    {
+      "subtask": "EAUDIT01d",
+      "source_id": "MD-4-VerletStability",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT01/d",
+      "total_bytes": 125917,
+      "manifest_sha256": "d7013fd6c75ebc626c7d502d389e337183b73ae8c02247e7c82cc1b9aa790bf8"
+    },
+    {
+      "subtask": "EAUDIT01e",
+      "source_id": "MD-4-OscillatorSpectrum",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT01/e",
+      "total_bytes": 78164,
+      "manifest_sha256": "f9b00d66ee7ed2819b8acea1efff508d16627904afb1e0525b23b7c736741c47"
+    }
+  ]
+}

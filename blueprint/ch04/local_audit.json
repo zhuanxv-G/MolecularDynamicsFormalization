@@ -40,9 +40,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.eulerFactor",
@@ -67,7 +67,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT01/axioms.log"
     },
     "MD-4-ScalarEulerStable": {
       "checked": true,
@@ -179,17 +179,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.eulerImaginaryGrowth",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "0f44362c601016203b92649b03b9a536c6f4476717ebb3c005e1da23eea658b1",
-      "block_sha256": "bc7711b16a0724883dc1c14fc1ce36b6a8f34e5706304714e56b9484ac410b5c",
-      "direct_placeholder": false,
+      "block_sha256": "a2f2f6031628622543aa25b40340af742c76587f25ffe8ed22cf46c554db4dd8",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -213,7 +214,7 @@
         "blueprint/ch04/validation/short_search/EulerImaginaryGrowth-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT01/axioms.log"
     },
     "MD-4-SymplecticEulerMatrix": {
       "checked": true,
@@ -252,9 +253,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.symplecticEulerCharacteristic",
@@ -284,16 +285,16 @@
         "blueprint/ch04/validation/short_search/SymplecticEulerCharacteristic-route1.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT01/axioms.log"
     },
     "MD-4-PRKThreshold": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.prkThreshold",
@@ -318,23 +319,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT01/axioms.log"
     },
     "MD-4-VerletStability": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.verletStability",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "605e049af1358c1cae40697e582fb799623d7c0fb8e8cee9740481027cd3ba27",
-      "block_sha256": "98a083a48c0fe8ea0ba97dbb729fd5316f20a1fb848f9ce653d89bd2bbf64ff1",
-      "direct_placeholder": false,
+      "block_sha256": "10c4d5a369eef785078c4e4fc38b480db9d995a5782a4470acbd3caa797802b7",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -358,16 +360,16 @@
         "blueprint/ch04/validation/short_search/VerletStability-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT01/axioms.log"
     },
     "MD-4-SymplecticEulerBoundaryPrinted": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.symplecticEulerBoundaryPrinted",
@@ -392,16 +394,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT01/axioms.log"
     },
     "MD-4-VerletBoundaryPrinted": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.verletBoundaryPrinted",
@@ -426,15 +428,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT01/axioms.log"
     },
     "MD-4-OscillatorSpectrum": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.oscillatorSpectrum",
@@ -466,15 +468,15 @@
         "blueprint/ch04/validation/short_search/OscillatorSpectrum-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT01/axioms.log"
     },
     "MD-4-SymplecticEulerRoots": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.symplecticEulerRoots",
@@ -506,15 +508,15 @@
         "blueprint/ch04/validation/short_search/SymplecticEulerRoots-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT02/axioms.log"
     },
     "MD-4-SymplecticEulerUnitRoots": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.symplecticEulerUnitRoots",
@@ -546,23 +548,24 @@
         "blueprint/ch04/validation/short_search/SymplecticEulerUnitRoots-route2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT02/axioms.log"
     },
     "MD-4-SymplecticEulerStability": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.symplecticEulerStability",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "31da4d14a4c75f5466f7d85db446a21959c4160c4d5ee6fdbdb6daf16433e5db",
-      "block_sha256": "45e8bc9afd885eb6defdcffd83882180d5edfed3d329fbeda0e0118aa859735f",
-      "direct_placeholder": false,
+      "block_sha256": "bb2fa538780480440dae9f9aeefeede9419bb9251d2cfbe48e51735f859a06cd",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -588,7 +591,7 @@
         "blueprint/ch04/validation/short_search/SymplecticEulerStability-route3.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT02/axioms.log"
     },
     "MD-4.1-PrintedImplicitRelation": {
       "checked": true,

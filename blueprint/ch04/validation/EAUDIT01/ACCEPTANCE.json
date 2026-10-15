@@ -1,0 +1,53 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT01",
+  "section": "4",
+  "source_ids": [
+    "MD-4-EulerFactor",
+    "MD-4-EulerImaginaryGrowth",
+    "MD-4-OscillatorSpectrum",
+    "MD-4-PRKThreshold",
+    "MD-4-SymplecticEulerBoundaryPrinted",
+    "MD-4-SymplecticEulerCharacteristic",
+    "MD-4-VerletBoundaryPrinted",
+    "MD-4-VerletStability"
+  ],
+  "reaudit_ids": [
+    "MD-4-EulerFactor",
+    "MD-4-EulerImaginaryGrowth",
+    "MD-4-SymplecticEulerCharacteristic",
+    "MD-4-VerletStability",
+    "MD-4-OscillatorSpectrum"
+  ],
+  "human_ids": [
+    "MD-4-PRKThreshold",
+    "MD-4-SymplecticEulerBoundaryPrinted",
+    "MD-4-VerletBoundaryPrinted"
+  ],
+  "lean_sha256": "47f91c1c0f41735d7f6c7e631ec81d0d0682f97c4566b023fedd13793d984703",
+  "source_sha256": "2c34f723d9728b374102fad8fb12930e5015e33a25ce5f992a34907f696e69f3",
+  "pages": [
+    161,
+    162,
+    163
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "47f91c1c0f41735d7f6c7e631ec81d0d0682f97c4566b023fedd13793d984703",
+    "log_sha256": "af87d23bc000812687de9893c9ea8a58da14e724411def2de872d922b2fd6f89"
+  },
+  "axiom_decl_count": 10,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT01/INDEX.md"
+}

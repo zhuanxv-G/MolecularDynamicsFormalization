@@ -1,0 +1,143 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4-VerletStability；原PDF页映射=[163]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT01_review.json，对象含batch=EAUDIT01、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT01.md": "735572585f6eede54aba6f28e892645a3dd72a6928df80698e0d9d708b3bb12e",
+  "Blueprint/Ch04.lean": "47f91c1c0f41735d7f6c7e631ec81d0d0682f97c4566b023fedd13793d984703",
+  "blueprint/ch04/ch04_source.json": "2c34f723d9728b374102fad8fb12930e5015e33a25ce5f992a34907f696e69f3",
+  "EAUDIT01d_materials": "a5982bb8e0653f76b048b6f1e273dd12a66bb63c9808182f167a673a966ba329",
+  "EAUDIT01d_PAGES.pdf": "8005b85584d526c3413cea51c8dcf1d02bd6f03f74b28084cf4114d9c3559298"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4-VerletStability",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4",
+  "printed_page": "141",
+  "pdf_page": "163",
+  "statement_latex": "For example, applying the Verlet method to the harmonic oscillator with frequency $\\Omega$ we find that the origin is stable (and the numerical solution stays bounded for all time) provided $h\\Omega\\le2$ (the same condition as for stability of Symplectic Euler).",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "Verlet的hΩ=2矩阵也有Jordan增长，不能以谱模1推出所有轨道有界。"
+    }
+  ],
+  "lean_decl": "MD.Ch04.verletStability",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]真正幂有界版本0<|hΩ|<2；原文≤2字面版另列待审。",
+    "[EXTRA] 本条明确是严格稳定内区间的修订版本，另补h=0分支；原印含端点结论保留MD-4-VerletBoundaryPrinted待导师，不宣称与原句等价。"
+  ],
+  "statement_scope": "显式修订的严格稳定内区间及零步长；原印≤端点由MD-4-VerletBoundaryPrinted保留为疑误。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT01_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:50:14.632895",
+      "before_sha256": "577c00f0f15ddcf00504f711009586809b5477d28cbb51dd35835833f47b9e38",
+      "after_sha256": "1d26830a3c62019289fc9a4756a1c16aaabc948ade04289a8c4a88e4c646e2e2",
+      "changed_fields": [
+        "statement_scope"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT01/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem verletStability :
+  ∀ Ω h : ℝ, 0 < |h*Ω| → |h*Ω| < 2 → MolecularDynamics.Chapter04Review.matrixStable (MolecularDynamics.Chapter04Review.verletMatrix Ω h) := by
+  intro Ω h hn ht
+  have hΩ : Ω ≠ 0 := by intro hz; simp [hz] at hn
+  have ht2 : h^2*Ω^2 < 4 := by
+    obtain ⟨ha,hb⟩ := abs_lt.mp ht
+    nlinarith
+  let b : ℝ := Ω^2*(1-h^2*Ω^2/4)
+  have hb : 0 < b := mul_pos (sq_pos_of_ne_zero hΩ) (by nlinarith)
+  let A := MolecularDynamics.Chapter04Review.verletMatrix Ω h
+  let K : (Fin 2 → ℝ) → ℝ := fun v => v 1^2+b*v 0^2
+  have hstep : ∀ v : Fin 2 → ℝ, K (A *ᵥ v)=K v := by
+    intro v
+    simp [K,A,b,MolecularDynamics.Chapter04Review.verletMatrix,Matrix.mulVec,dotProduct, vecHead, vecTail,Fin.sum_univ_two]
+    ring
+  have hi : ∀ k : ℕ, ∀ v : Fin 2 → ℝ, K (A^k *ᵥ v)=K v := by
+    intro k v
+    induction k with
+    | zero => simp
+    | succ k ih => rw [pow_succ',← Matrix.mulVec_mulVec,hstep,ih]
+  let d : ℝ := min 1 b
+  have hd : 0 < d := lt_min (by norm_num) hb
+  have hd1 : d ≤ 1 := min_le_left _ _
+  have hdb : d ≤ b := min_le_right _ _
+  have hcoord : ∀ (v : Fin 2 → ℝ) (i : Fin 2), (v i)^2 ≤ ‖v‖^2 := by
+    intro v i
+    rw [← sq_abs]
+    exact (sq_le_sq₀ (abs_nonneg _) (norm_nonneg _)).mpr (by simpa using norm_le_pi_norm v i)
+  have hu : ∀ v : Fin 2 → ℝ, K v ≤ (1+b)*‖v‖^2 := by
+    intro v
+    have hm := mul_le_mul_of_nonneg_left (hcoord v 0) hb.le
+    dsimp [K]
+    nlinarith [hcoord v 1]
+  have hl : ∀ (v : Fin 2 → ℝ) (i : Fin 2), d*(v i)^2 ≤ K v := by
+    intro v i
+    fin_cases i
+    · dsimp [K]
+      nlinarith [mul_nonneg (sub_nonneg.mpr hdb) (sq_nonneg (v 0)),sq_nonneg (v 1)]
+    · dsimp [K]
+      nlinarith [mul_nonneg (sub_nonneg.mpr hd1) (sq_nonneg (v 1)),mul_nonneg hb.le (sq_nonneg (v 0))]
+  let C : ℝ := Real.sqrt ((1+b)/d)
+  have hC : 0 ≤ C := Real.sqrt_nonneg _
+  have hCs : C^2*d=1+b := by
+    dsimp [C]
+    rw [Real.sq_sqrt (by positivity)]
+    field_simp [ne_of_gt hd]
+  refine ⟨C, ?_⟩
+  intro k v
+  apply (pi_norm_le_iff_of_nonneg (mul_nonneg hC (norm_nonneg v))).mpr
+  intro i
+  have hm : d*((A^k *ᵥ v) i)^2 ≤ d*(C*‖v‖)^2 := calc
+    d*((A^k *ᵥ v) i)^2 ≤ K (A^k *ᵥ v) := hl _ i
+    _ = K v := hi k v
+    _ ≤ (1+b)*‖v‖^2 := hu v
+    _ = d*(C*‖v‖)^2 := by rw [← hCs]; ring
+  have hsq := le_of_mul_le_mul_left hm hd
+  simpa using abs_le_of_sq_le_sq hsq (mul_nonneg hC (norm_nonneg v))
+
+theorem verletStability_zero (Ω : ℝ) :
+    MolecularDynamics.Chapter04Review.matrixStable
+      (MolecularDynamics.Chapter04Review.verletMatrix Ω 0) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.matrixStable
+```lean
+def matrixStable (A : Matrix (Fin 2) (Fin 2) ℝ) : Prop :=
+  ∃ C : ℝ, ∀ k : ℕ, ∀ v : Fin 2 → ℝ, ‖A^k *ᵥ v‖ ≤ C*‖v‖
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.verletMatrix
+```lean
+def verletMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![1-h^2*Ω^2/2,h; -h*Ω^2*(1-h^2*Ω^2/4),1-h^2*Ω^2/2]
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.matrixStable
+```lean
+def matrixStable (A : Matrix (Fin 2) (Fin 2) ℝ) : Prop :=
+  ∃ C : ℝ, ∀ k : ℕ, ∀ v : Fin 2 → ℝ, ‖A^k *ᵥ v‖ ≤ C*‖v‖
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.verletMatrix
+```lean
+def verletMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![1-h^2*Ω^2/2,h; -h*Ω^2*(1-h^2*Ω^2/4),1-h^2*Ω^2/2]
+```

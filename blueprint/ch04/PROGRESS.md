@@ -8,21 +8,21 @@
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
 | MD-4-LinearField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4-EulerFactor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4-EulerFactor | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
 | MD-4-ScalarEulerStable | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
 | MD-4-EulerRegion | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4-OscillatorMatrix | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4-EulerImaginaryGrowth | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
+| MD-4-EulerImaginaryGrowth | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT01 | local_proof / self-contained |
 | MD-4-SymplecticEulerMatrix | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4-SymplecticEulerCharacteristic | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4-PRKThreshold | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；缺明确方法类与阈值定理，不建立PRK稳定性最优理论。 |
-| MD-4-VerletStability | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4-SymplecticEulerBoundaryPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；本地FAIL，等待网站/导师裁定端点。 |
-| MD-4-VerletBoundaryPrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；本地FAIL，等待网站/导师裁定。 |
-| MD-4-OscillatorSpectrum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4-SymplecticEulerRoots | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4-SymplecticEulerUnitRoots | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4-SymplecticEulerStability | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
+| MD-4-SymplecticEulerCharacteristic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT01 | local_proof / self-contained |
+| MD-4-PRKThreshold | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT01（原返回FAIL保留） | placeholder / incomplete；缺明确方法类与阈值定理，不建立PRK稳定性最优理论。 |
+| MD-4-VerletStability | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT01 | local_proof / self-contained |
+| MD-4-SymplecticEulerBoundaryPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | FAIL | 待导师 / EAUDIT01（原返回FAIL保留） | placeholder / incomplete；本地FAIL，等待网站/导师裁定端点。 |
+| MD-4-VerletBoundaryPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | FAIL | 待导师 / EAUDIT01（原返回FAIL保留） | placeholder / incomplete；本地FAIL，等待网站/导师裁定。 |
+| MD-4-OscillatorSpectrum | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT01 | local_proof / self-contained |
+| MD-4-SymplecticEulerRoots | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT02 | local_proof / self-contained |
+| MD-4-SymplecticEulerUnitRoots | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT02 | local_proof / self-contained |
+| MD-4-SymplecticEulerStability | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT02 | local_proof / self-contained |
 | MD-4.1-PrintedImplicitRelation | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / incomplete |
 | MD-4.1-ActualMidpointRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.1-ImplicitFactor | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
@@ -348,3 +348,7 @@
 
 - p.139–144/PDF161–166：MD平衡点类型的经验判断、化学键最快模式、图示精度和误差传播推测、求解成本与使用建议为定性背景；稳定性、谱、端点、频率和中点数学公式均独立保留。
 - p.164–166/PDF186–188：实现成本、并行化、SOR/CG引用和局部参数化实现建议；§4.3.7水体系数值实验、Fig4.5观测误差和推荐步长是特定模拟数据，不当一般定理。算法数学对象和收敛条件均已独立登记。
+
+EAUDIT01 §4：8条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT02 §4：3条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。

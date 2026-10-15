@@ -2,12 +2,12 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 352；章末验收待完成 [4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 340；章末验收待完成 [4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 57 / 已修待复审 72 / 待导师 20 / 修复中 0。
-第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
+第4章：网站PASS 85 / 已修待复审 11 / 待导师 6 / 修复中 77。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
@@ -322,21 +322,21 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.7.3-ModifiedCollisionProjection | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT39 |
 | 3 | MD-3.7.1-FreeHardSphereHamiltonian | FAIL | C | 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。 | 已修待复审 | EAUDIT37 |
 | 4 | MD-4-LinearField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4-EulerFactor | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
+| 4 | MD-4-EulerFactor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT01 |
 | 4 | MD-4-ScalarEulerStable | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4-EulerRegion | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4-OscillatorMatrix | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4-EulerImaginaryGrowth | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
+| 4 | MD-4-EulerImaginaryGrowth | FAIL | B | 保留已证趋无穷，并补精确指数率r>1和实际实振子Euler轨道的加权范数等式；矩阵完整复谱已由MD-4-OscillatorSpectrum单列承担，原ω=Ω。非零步长/频率为[EXTRA]资格，新结论暂sorry。 | 已修待复审 | EAUDIT01 |
 | 4 | MD-4-SymplecticEulerMatrix | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4-SymplecticEulerCharacteristic | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
-| 4 | MD-4-PRKThreshold | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4-VerletStability | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
-| 4 | MD-4-SymplecticEulerBoundaryPrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 4 | MD-4-VerletBoundaryPrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 4 | MD-4-OscillatorSpectrum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4-SymplecticEulerRoots | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4-SymplecticEulerUnitRoots | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4-SymplecticEulerStability | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
+| 4 | MD-4-SymplecticEulerCharacteristic | FAIL | B | 本条仅为特征多项式辅助计算；原完整两个复根（含零/负判别式及重根）已由MD-4-SymplecticEulerRoots明确承担，跨条目范围写明，保留原文。 | 已修待复审 | EAUDIT01 |
+| 4 | MD-4-PRKThreshold | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT01 |
+| 4 | MD-4-VerletStability | FAIL | A | 本条明确是严格稳定内区间的修订版本，另补h=0分支；原印含端点结论保留MD-4-VerletBoundaryPrinted待导师，不宣称与原句等价。 | 已修待复审 | EAUDIT01 |
+| 4 | MD-4-SymplecticEulerBoundaryPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT01 |
+| 4 | MD-4-VerletBoundaryPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT01 |
+| 4 | MD-4-OscillatorSpectrum | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT01 |
+| 4 | MD-4-SymplecticEulerRoots | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT02 |
+| 4 | MD-4-SymplecticEulerUnitRoots | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT02 |
+| 4 | MD-4-SymplecticEulerStability | FAIL | B | 明确为修订稳定内区间结论；补超阈值实谱恰为一内一外非零实根、真实指数增长轨道及正步长稳定集合上确界2/Ω。原端点错误单列保留，未新增证明。 | 已修待复审 | EAUDIT02 |
 | 4 | MD-4.1-PrintedImplicitRelation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
 | 4 | MD-4.1-ActualMidpointRelation | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
 | 4 | MD-4.1-ImplicitFactor | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |

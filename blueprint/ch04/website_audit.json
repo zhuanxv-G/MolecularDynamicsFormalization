@@ -133,7 +133,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH01_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT01",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "735572585f6eede54aba6f28e892645a3dd72a6928df80698e0d9d708b3bb12e",
+        "Blueprint/Ch04.lean": "47f91c1c0f41735d7f6c7e631ec81d0d0682f97c4566b023fedd13793d984703",
+        "blueprint/ch04/ch04_source.json": "2c34f723d9728b374102fad8fb12930e5015e33a25ce5f992a34907f696e69f3"
+      }
+    }
   },
   {
     "source_id": "MD-4-ScalarEulerStable",
@@ -349,7 +361,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH01_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT01",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "735572585f6eede54aba6f28e892645a3dd72a6928df80698e0d9d708b3bb12e",
+        "Blueprint/Ch04.lean": "47f91c1c0f41735d7f6c7e631ec81d0d0682f97c4566b023fedd13793d984703",
+        "blueprint/ch04/ch04_source.json": "2c34f723d9728b374102fad8fb12930e5015e33a25ce5f992a34907f696e69f3"
+      }
+    }
   },
   {
     "source_id": "MD-4-SymplecticEulerMatrix",
@@ -457,7 +481,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH01_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT01",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "735572585f6eede54aba6f28e892645a3dd72a6928df80698e0d9d708b3bb12e",
+        "Blueprint/Ch04.lean": "47f91c1c0f41735d7f6c7e631ec81d0d0682f97c4566b023fedd13793d984703",
+        "blueprint/ch04/ch04_source.json": "2c34f723d9728b374102fad8fb12930e5015e33a25ce5f992a34907f696e69f3"
+      }
+    }
   },
   {
     "source_id": "MD-4-PRKThreshold",
@@ -547,8 +583,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT01（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "两次半步显式辛PRK的稳定阈值可达4/Ω，反驳未按阶段成本归一化的全类最大2/Ω；选项：核对原参考[74]的方法类/成本归一化后重述／保留原印为疑误。需导师判断，现签名不改。"
+    }
   },
   {
     "source_id": "MD-4-VerletStability",
@@ -602,7 +645,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT01",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "735572585f6eede54aba6f28e892645a3dd72a6928df80698e0d9d708b3bb12e",
+        "Blueprint/Ch04.lean": "47f91c1c0f41735d7f6c7e631ec81d0d0682f97c4566b023fedd13793d984703",
+        "blueprint/ch04/ch04_source.json": "2c34f723d9728b374102fad8fb12930e5015e33a25ce5f992a34907f696e69f3"
+      }
+    }
   },
   {
     "source_id": "MD-4-SymplecticEulerBoundaryPrinted",
@@ -655,8 +710,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT01（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印≤端点发生非平凡Jordan块并线性无界；选项：将幂有界域改为严格内区间／保留≤但结论仅谱模1。原印问题保持，等待导师裁定。"
+    }
   },
   {
     "source_id": "MD-4-VerletBoundaryPrinted",
@@ -709,8 +771,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT01（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印≤端点发生非平凡Jordan块并线性无界；选项：将幂有界域改为严格内区间／保留≤但结论仅谱模1。原印问题保持，等待导师裁定。"
+    }
   },
   {
     "source_id": "MD-4-OscillatorSpectrum",
@@ -796,7 +865,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT01",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "735572585f6eede54aba6f28e892645a3dd72a6928df80698e0d9d708b3bb12e",
+        "Blueprint/Ch04.lean": "47f91c1c0f41735d7f6c7e631ec81d0d0682f97c4566b023fedd13793d984703",
+        "blueprint/ch04/ch04_source.json": "2c34f723d9728b374102fad8fb12930e5015e33a25ce5f992a34907f696e69f3"
+      }
+    }
   },
   {
     "source_id": "MD-4-SymplecticEulerRoots",
@@ -884,7 +965,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT02",
+    "repair": {
+      "eaudit": "EAUDIT02",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT02/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT02.md": "b5fd32b65adf3d55605645c1622d75d848e42bf50ff97c6a07d7be5d776e290e",
+        "Blueprint/Ch04.lean": "2305e9679bfcf1e29293028a309241d83f26c0c79d8d8504ea64eba668be6834",
+        "blueprint/ch04/ch04_source.json": "21712624c6c0e58a30f118be1eeaf2442218c14f4899a392f7747e6d2b77f4ca"
+      }
+    }
   },
   {
     "source_id": "MD-4-SymplecticEulerUnitRoots",
@@ -971,7 +1064,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT02",
+    "repair": {
+      "eaudit": "EAUDIT02",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT02/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT02.md": "b5fd32b65adf3d55605645c1622d75d848e42bf50ff97c6a07d7be5d776e290e",
+        "Blueprint/Ch04.lean": "2305e9679bfcf1e29293028a309241d83f26c0c79d8d8504ea64eba668be6834",
+        "blueprint/ch04/ch04_source.json": "21712624c6c0e58a30f118be1eeaf2442218c14f4899a392f7747e6d2b77f4ca"
+      }
+    }
   },
   {
     "source_id": "MD-4-SymplecticEulerStability",
@@ -1025,7 +1130,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT02",
+    "repair": {
+      "eaudit": "EAUDIT02",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT02/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT02.md": "b5fd32b65adf3d55605645c1622d75d848e42bf50ff97c6a07d7be5d776e290e",
+        "Blueprint/Ch04.lean": "2305e9679bfcf1e29293028a309241d83f26c0c79d8d8504ea64eba668be6834",
+        "blueprint/ch04/ch04_source.json": "21712624c6c0e58a30f118be1eeaf2442218c14f4899a392f7747e6d2b77f4ca"
+      }
+    }
   },
   {
     "source_id": "MD-4.1-PrintedImplicitRelation",

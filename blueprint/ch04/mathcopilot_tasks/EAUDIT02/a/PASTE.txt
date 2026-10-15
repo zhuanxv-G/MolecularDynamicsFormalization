@@ -1,0 +1,96 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4-SymplecticEulerRoots；原PDF页映射=[162]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT02_review.json，对象含batch=EAUDIT02、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT02.md": "b5fd32b65adf3d55605645c1622d75d848e42bf50ff97c6a07d7be5d776e290e",
+  "Blueprint/Ch04.lean": "2305e9679bfcf1e29293028a309241d83f26c0c79d8d8504ea64eba668be6834",
+  "blueprint/ch04/ch04_source.json": "21712624c6c0e58a30f118be1eeaf2442218c14f4899a392f7747e6d2b77f4ca",
+  "EAUDIT02a_materials": "33b47c3001abac3c7b9b2b90587994f513502204d12e37ebedbd13ebc6623af0",
+  "EAUDIT02a_PAGES.pdf": "6f95aca8b0b9a1cf6513e61abb0da46ee2b32aac37550a800bc4fe601db85615"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4-SymplecticEulerRoots",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4",
+  "printed_page": "140",
+  "pdf_page": "162",
+  "statement_latex": "The eigenvalues of the matrix are easily found, they are\n\\[\\lambda_{1,2}=1-\\frac{h^2\\Omega^2}{2}\\pm\\frac12\\sqrt{h^4\\Omega^4-4h^2\\Omega^2}.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "PDF p.162：Q=q+hP，P=p-hΩ²q；故作用于(q,p)ᵀ的矩阵为[[1-h²Ω²,h],[-hΩ²,1]]。",
+    "λ₁,₂ 是该矩阵的复特征值；平方根的两个符号共同给出根集合，重根按集合理解。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.symplecticEulerRoots",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "以任意复平方根d²=判别式表达±，避免未指定复sqrt分支；不是仅特征多项式断言。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT02_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:51:09.667335",
+      "before_sha256": "5983aa7b0106839acdfe76289cce58c2dd3d60f3c8a7698cd399887f8af9537c",
+      "after_sha256": "ca9780da2147bed0e113dc03f240d9fb7eae0663777558900347fb644fc617eb",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem symplecticEulerRoots :
+    ∀ Ω h : ℝ, ∀ ζ : ℂ,
+      (∃ v : Fin 2 → ℂ, v ≠ 0 ∧ (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h).map Complex.ofReal *ᵥ v = ζ • v) ↔
+      ∃ d : ℂ, d^2=(h^4*Ω^4-4*h^2*Ω^2 : ℝ) ∧
+        (ζ=1-(h^2*Ω^2 : ℝ)/2+d/2 ∨ ζ=1-(h^2*Ω^2 : ℝ)/2-d/2) := by
+  intro Ω h ζ
+  let A : Matrix (Fin 2) (Fin 2) ℂ := (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h).map Complex.ofReal
+  have heig : (∃ v : Fin 2 → ℂ, v ≠ 0 ∧ A *ᵥ v=ζ • v) ↔ (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-A).det=0 := by
+    rw [← Matrix.exists_mulVec_eq_zero_iff]
+    simp only [Matrix.sub_mulVec, Matrix.smul_mulVec, Matrix.one_mulVec, sub_eq_zero]
+    constructor
+    · rintro ⟨v,hv,he⟩; exact ⟨v,hv,he.symm⟩
+    · rintro ⟨v,hv,he⟩; exact ⟨v,hv,he.symm⟩
+  have hchar : (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-A).det=ζ^2-(2-h^2*Ω^2 : ℝ)*ζ+1 := by
+    simp [A, MolecularDynamics.Chapter04Review.symplecticEulerMatrix, Matrix.det_fin_two]
+    push_cast
+    ring
+  change (∃ v : Fin 2 → ℂ, v ≠ 0 ∧ A *ᵥ v=ζ • v) ↔ _
+  rw [heig,hchar]
+  constructor
+  · intro he
+    refine ⟨2*ζ-(2-h^2*Ω^2 : ℝ), ?_, Or.inl ?_⟩
+    · push_cast at he ⊢
+      linear_combination 4*he
+    · push_cast
+      ring
+  · rintro ⟨d,hroot,(rfl|rfl)⟩ <;> push_cast at hroot ⊢ <;>
+      linear_combination (1/4 : ℂ)*hroot
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.symplecticEulerMatrix
+```lean
+def symplecticEulerMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![1-h^2*Ω^2,h; -h*Ω^2,1]
+```
+### 实际依赖 MD.Ch04.symplecticEulerMatrix
+```lean
+def symplecticEulerMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![1-h^2*Ω^2,h; -h*Ω^2,1]
+```
