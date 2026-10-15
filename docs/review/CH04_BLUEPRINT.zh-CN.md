@@ -42,7 +42,7 @@
 | MD-4.2.1-ResonanceInstability | 147/169 | PASS | 待复审 / EAUDIT05 | incomplete |
 | MD-4.2.1-ResonanceEigenPrinted | 147/169 | NEEDS_HUMAN | 待导师 / EAUDIT05（原返回FAIL保留） | incomplete |
 | MD-4.2.2-MollifiedAverage | 149/171 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.2.2-MollifiedPotential | 149/171 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.2.2-MollifiedPotential | 149/171 | PASS | 待复审 / EAUDIT06 | self-contained |
 | MD-4.2.1-ResonanceLinearRate | 147/169 | PASS | 待导师 / EAUDIT05（原返回FAIL保留） | self-contained |
 | MD-4.2.1-ResonanceGrowth | 147/169 | PASS | 待复审 / EAUDIT05 | self-contained |
 | MD-4.2.2-MollifiedStructure | 149/171 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
@@ -2219,7 +2219,7 @@ def mollifiedPotential {n : ℕ} (US : MolecularDynamics.Chapter04Review.Q n →
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT06**。原文JSON：CORRECTED；未冻结。
 
 结论：PASS。实际附件是 /workspace/Ch04.lean；在 input_sha256 中按请求使用逻辑键 Blueprint/Ch04.lean。以下为只读签名及定义审计，未编辑附件、未补证明、未将compact摘录作为独立工程编译。
 对象与定义展开：Ch04.lean中def mollifiedPotential取隐式n:ℕ、US:(Fin n→ℝ)→ℝ和A:(Fin n→ℝ)→(Fin n→ℝ)，返回US∘A；Function.comp逐点展开为q↦US(A(q))。库 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean 的同名定义也是US∘A，与本地对象逐点完全一致，后续结构定理引用的是这一库定义。
@@ -2232,7 +2232,7 @@ def mollifiedPotential {n : ℕ} (US : MolecularDynamics.Chapter04Review.Q n →
 
 位置：[Blueprint/Ch04.lean:603](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:603>)（`MD.Ch04.mollifiedPotential`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 

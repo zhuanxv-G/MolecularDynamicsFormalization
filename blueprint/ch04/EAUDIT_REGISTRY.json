@@ -246,5 +246,42 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT05/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT06",
+    "section": "4.2.2",
+    "source_ids": [
+      "MD-4.2.2-MollifiedPotential"
+    ],
+    "reaudit_ids": [
+      "MD-4.2.2-MollifiedPotential"
+    ],
+    "human_ids": [],
+    "lean_sha256": "0591e70d7679f9f9348deab6e2db50520be58529af0697fbcfb53281a57c491f",
+    "source_sha256": "ca5a6b0189e61fd537285e8c19e4c080caaa5196779e1dcee12e7e526410065e",
+    "pages": [
+      170,
+      171
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch04.olean",
+        "Blueprint/Ch04.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "0591e70d7679f9f9348deab6e2db50520be58529af0697fbcfb53281a57c491f",
+      "log_sha256": "3ac15849f743255652504a31de627bc4e747482699123a996c96684adea76ba8"
+    },
+    "axiom_decl_count": 1,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT06/INDEX.md"
   }
 ]

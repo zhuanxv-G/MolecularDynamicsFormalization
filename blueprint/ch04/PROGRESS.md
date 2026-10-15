@@ -45,7 +45,7 @@
 | MD-4.2.1-ResonanceInstability | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | placeholder / incomplete；缺trace<-2的局部Taylor判定与真实复特征向量桥接；保留实际谱而非假设谱。 |
 | MD-4.2.1-ResonanceEigenPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT05（原返回FAIL保留） | placeholder / incomplete；字面签名疑误不证明；正确二次根展开也未声称已证。 |
 | MD-4.2.2-MollifiedAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.2.2-MollifiedPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.2.2-MollifiedPotential | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | definition / self-contained |
 | MD-4.2.1-ResonanceLinearRate | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT05（原返回FAIL保留） | local_proof / self-contained |
 | MD-4.2.1-ResonanceGrowth | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | local_proof / self-contained |
 | MD-4.2.2-MollifiedStructure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；正式库无RESPA实际Jacobian辛性/反步定理；需实际链式法则与有限迭代复合桥接，保留sorry，不另建辛流理论。 |
@@ -358,3 +358,5 @@ EAUDIT03 §4.1：7条落盘，单文件与12项公理通过；未写新证明；
 EAUDIT04 §4.2.1：8条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT05 §4.2.1：5条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT06 §4.2.2：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
