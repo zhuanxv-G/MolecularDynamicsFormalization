@@ -1,0 +1,59 @@
+{
+  "eaudit": "EAUDIT19",
+  "input_sha256": {
+    "BATCH_EAUDIT19.md": "4ddef80587e4dfb52f546d6db17f95f902149d8d8957a22882b3527a15307252",
+    "Blueprint/Ch04.lean": "0c72e84c2982b43d7b8f3f368d0045dec5e29a3877d8acdee97edf951c750706",
+    "blueprint/ch04/ch04_source.json": "05706bccf28f5a7919ffb51fea6118f177bc62a1bf13b4280a33f0aa3af94d78"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT19a",
+      "source_id": "MD-4.4-InertiaTraceCorrected",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT19/a",
+      "total_bytes": 95568,
+      "manifest_sha256": "c120604b7d2aa9d35ac3b88902ac866c546c16817f48c823215424591561d3ae"
+    },
+    {
+      "subtask": "EAUDIT19b",
+      "source_id": "MD-4.4-DipolarHamiltonian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT19/b",
+      "total_bytes": 101243,
+      "manifest_sha256": "687fa7001a8b3bd058cfab8f4f3515188d899ecce0c23018961986c726bbcfe7"
+    },
+    {
+      "subtask": "EAUDIT19c",
+      "source_id": "MD-4.4-DipolarPairPotential",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT19/c",
+      "total_bytes": 96296,
+      "manifest_sha256": "6ca765bcf3dca14bbe6f1b725e62bc99fb0ccd021024b97654aaee67746a959d"
+    },
+    {
+      "subtask": "EAUDIT19d",
+      "source_id": "MD-4.4-RigidHamiltonian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT19/d",
+      "total_bytes": 93423,
+      "manifest_sha256": "6a88c07255cc856c89a80c13fa0adabe19b18425902881a513b26aaeeef5640c"
+    },
+    {
+      "subtask": "EAUDIT19e",
+      "source_id": "MD-4.4-SecondMomentDiagonal",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT19/e",
+      "total_bytes": 149789,
+      "manifest_sha256": "91020207416a8435921ca8d59abd0ac262b4cb49b4c5331c5e0acfb34c9cf228"
+    },
+    {
+      "subtask": "EAUDIT19f",
+      "source_id": "MD-4.4-RotationBodyEnergy",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT19/f",
+      "total_bytes": 99526,
+      "manifest_sha256": "24376e6085835769d043cc7ea9635f80b05188b6974355ae4efe0da9eaf4640f"
+    },
+    {
+      "subtask": "EAUDIT19g",
+      "source_id": "MD-4.4-DipolarConstraint",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT19/g",
+      "total_bytes": 91624,
+      "manifest_sha256": "3ef9f8a3327636386f8e696664a2c02e0d9b3aa8456286a0f5da0e6652bd80cd"
+    }
+  ]
+}

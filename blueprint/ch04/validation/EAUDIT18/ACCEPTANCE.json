@@ -1,0 +1,55 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT18",
+  "section": "4.4",
+  "source_ids": [
+    "MD-4.4-CrossMatrix",
+    "MD-4.4-CrossProduct",
+    "MD-4.4-InertiaTensor",
+    "MD-4.4-InertiaTracePrinted",
+    "MD-4.4-RigidVelocity",
+    "MD-4.4-RotationalEnergy",
+    "MD-4.4-SkewMatrix",
+    "MD-4.4-SkewRepresentation"
+  ],
+  "reaudit_ids": [
+    "MD-4.4-SkewMatrix",
+    "MD-4.4-CrossProduct",
+    "MD-4.4-SkewRepresentation",
+    "MD-4.4-CrossMatrix",
+    "MD-4.4-RigidVelocity",
+    "MD-4.4-InertiaTensor",
+    "MD-4.4-RotationalEnergy"
+  ],
+  "human_ids": [
+    "MD-4.4-InertiaTracePrinted"
+  ],
+  "lean_sha256": "9cf896a1fa343f97f6efb31c1a8a0f344d47ac437be4dd9dc41fa06922959fb9",
+  "source_sha256": "452589401e7b03fea6c8d6e5a60764c9583fc66b2f706929a653485da96cccf8",
+  "pages": [
+    189,
+    190,
+    191,
+    192,
+    193
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "9cf896a1fa343f97f6efb31c1a8a0f344d47ac437be4dd9dc41fa06922959fb9",
+    "log_sha256": "6dc63f31c41a721767ba37a25b2ead7852bede895d68d2fb346182dbcb6da087"
+  },
+  "axiom_decl_count": 8,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT18/INDEX.md"
+}

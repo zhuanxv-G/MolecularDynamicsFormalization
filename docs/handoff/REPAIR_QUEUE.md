@@ -2,12 +2,12 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 250；章末验收待完成 [4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 207；章末验收待完成 [4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 57 / 已修待复审 72 / 待导师 20 / 修复中 0。
-第4章：网站PASS 67 / 已修待复审 66 / 待导师 20 / 修复中 26。
+第4章：网站PASS 55 / 已修待复审 91 / 待导师 23 / 修复中 10。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
@@ -431,38 +431,38 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 4 | MD-4.3.6-SETTLE | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.6-LINCSInverse | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT16 |
 | 4 | MD-4.3.6-LINCSConvergence | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT16 |
-| 4 | MD-4.4-WaterPairPotential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
+| 4 | MD-4.4-WaterPairPotential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT17 |
 | 4 | MD-4.4-TotalMass | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4-CenterMass | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-RelativePositions | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 4 | MD-4.4-CenterMass | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT17 |
+| 4 | MD-4.4-RelativePositions | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅q_i=q_cm+δ_i的相对位置定义；加权零和由MD-4.4-RelativeWeightedZero承担。 | 已修待复审 | EAUDIT17 |
 | 4 | MD-4.4-RelativeWeightedZero | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4-KineticSplit | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-SecondMoment | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-RotationKinetic | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-RotationTraceIdentity | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-RotationSkew | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-SkewMatrix | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-CrossProduct | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-SkewRepresentation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-CrossMatrix | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-RigidVelocity | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-InertiaTensor | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 4 | MD-4.4-KineticSplit | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT17 |
+| 4 | MD-4.4-SecondMoment | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT17 |
+| 4 | MD-4.4-RotationKinetic | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅旋转动能trace定义；粒子有限和及两式等价由MD-4.4-RotationTraceIdentity承担。 | 已修待复审 | EAUDIT17 |
+| 4 | MD-4.4-RotationTraceIdentity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT17 |
+| 4 | MD-4.4-RotationSkew | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT17 |
+| 4 | MD-4.4-SkewMatrix | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维skew坐标定义；反对称表示存在性由MD-4.4-SkewRepresentation，真实旋转导数的反对称性由MD-4.4-RotationSkew承担。 | 已修待复审 | EAUDIT18 |
+| 4 | MD-4.4-CrossProduct | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维右手叉积坐标定义；原整条(4.39)的真实轨道导数由MD-4.4-RigidVelocity、全部代数等式由MD-4.4-CrossIdentityFull承担。 | 已修待复审 | EAUDIT18 |
+| 4 | MD-4.4-SkewRepresentation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT18 |
+| 4 | MD-4.4-CrossMatrix | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅skew(u)v=u×v首等式；原整条双等式由MD-4.4-CrossIdentityFull承担。 | 已修待复审 | EAUDIT18 |
+| 4 | MD-4.4-RigidVelocity | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅真实旋转轨道的导数等于ω×δ；原段落全部代数等式由MD-4.4-CrossIdentityFull承担。 | 已修待复审 | EAUDIT18 |
+| 4 | MD-4.4-InertiaTensor | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅T的欧氏有限和定义；skew平方关系由MD-4.4-InertiaSkewIdentity，质量旋转动能及ω_b关系由MD-4.4-RotationBodyEnergy承担。 | 已修待复审 | EAUDIT18 |
 | 4 | MD-4.4-CrossIdentityFull | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4-RotationalEnergy | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 4 | MD-4.4-RotationalEnergy | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅体角速度ω_b的二次型能量定义；ω_b=Θᵀω及真实旋转粒子能量由MD-4.4-RotationBodyEnergy承担。 | 已修待复审 | EAUDIT18 |
 | 4 | MD-4.4-InertiaSkewIdentity | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4-InertiaTracePrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-InertiaTraceCorrected | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-DipolarHamiltonian | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-DipolarPairPotential | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-DipolarRotationalPrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 4 | MD-4.4-RigidHamiltonian | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-SecondMomentDiagonal | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-RotationBodyEnergy | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-DipolarConstraint | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-DipolarPotentialSum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-RotationTrajectory | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-RotationDerivativePrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.4-RigidMatrixRelation | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 4 | MD-4.4-InertiaTracePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT18 |
+| 4 | MD-4.4-InertiaTraceCorrected | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT19 |
+| 4 | MD-4.4-DipolarHamiltonian | FAIL | A | 真实物理接口补质量/主惯性正性和每个μ单位长度；πbody明确为体坐标角动量，数值公式不变。 | 已修待复审 | EAUDIT19 |
+| 4 | MD-4.4-DipolarPairPotential | FAIL | B | 保留代数核；新增实际非碰撞粒子对q_i−q_j、r_ij=√(r·r)实例和仅i<j的完整系统势能求和，避免任意r与q脱钩。 | 已修待复审 | EAUDIT19 |
+| 4 | MD-4.4-DipolarRotationalPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT19 |
+| 4 | MD-4.4-RigidHamiltonian | FAIL | A | 主接口增加M>0、R可逆及ΘᵀΘ=I的实际受约束域，公式不再将任意矩阵姿态当刚体状态。 | 已修待复审 | EAUDIT19 |
+| 4 | MD-4.4-SecondMomentDiagonal | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT19 |
+| 4 | MD-4.4-RotationBodyEnergy | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT19 |
+| 4 | MD-4.4-DipolarConstraint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT19 |
+| 4 | MD-4.4-DipolarPotentialSum | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT20 |
+| 4 | MD-4.4-RotationTrajectory | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅δ_i(t)=Θ(t)δ_i(0)的真实导数辅助；原段落旋转动能有限和及trace等价由MD-4.4-RotationTraceIdentity承担。 | 已修待复审 | EAUDIT20 |
+| 4 | MD-4.4-RotationDerivativePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT20 |
+| 4 | MD-4.4-RigidMatrixRelation | FAIL | A | 增加开放时间域、势能联合经典可微、M>0及R可逆，使within导数等于真实时间导数，排除单点域伪运动；姿态正交约束仍逐t保留。 | 已修待复审 | EAUDIT20 |
 | 4 | MD-4.4.1-AngularMomentum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
 | 4 | MD-4.4.1-BodyMomentum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
 | 4 | MD-4.4.1-AngularInertia | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |

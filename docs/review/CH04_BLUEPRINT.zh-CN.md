@@ -114,38 +114,38 @@
 | MD-4.3.6-SETTLE | 165/187 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.3.6-LINCSInverse | 165/187 | PASS | 待复审 / EAUDIT16 | self-contained |
 | MD-4.3.6-LINCSConvergence | 165/187 | PASS | 待复审 / EAUDIT16 | incomplete |
-| MD-4.4-WaterPairPotential | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-WaterPairPotential | 167/189 | PASS | 待复审 / EAUDIT17 | self-contained |
 | MD-4.4-TotalMass | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-CenterMass | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-RelativePositions | 167/189 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-CenterMass | 167/189 | PASS | 待复审 / EAUDIT17 | self-contained |
+| MD-4.4-RelativePositions | 167/189 | PASS | 待复审 / EAUDIT17 | self-contained |
 | MD-4.4-RelativeWeightedZero | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-KineticSplit | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-SecondMoment | 168/190 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-RotationKinetic | 168/190 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-RotationTraceIdentity | 168/190 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-RotationSkew | 168–169/190–191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-SkewMatrix | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-CrossProduct | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-SkewRepresentation | 169/191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-CrossMatrix | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-RigidVelocity | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-InertiaTensor | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-KineticSplit | 167/189 | PASS | 待复审 / EAUDIT17 | self-contained |
+| MD-4.4-SecondMoment | 168/190 | PASS | 待复审 / EAUDIT17 | self-contained |
+| MD-4.4-RotationKinetic | 168/190 | PASS | 待复审 / EAUDIT17 | self-contained |
+| MD-4.4-RotationTraceIdentity | 168/190 | PASS | 待复审 / EAUDIT17 | self-contained |
+| MD-4.4-RotationSkew | 168–169/190–191 | PASS | 待复审 / EAUDIT17 | self-contained |
+| MD-4.4-SkewMatrix | 169/191 | PASS | 待复审 / EAUDIT18 | self-contained |
+| MD-4.4-CrossProduct | 169/191 | PASS | 待复审 / EAUDIT18 | self-contained |
+| MD-4.4-SkewRepresentation | 169/191 | PASS | 待复审 / EAUDIT18 | self-contained |
+| MD-4.4-CrossMatrix | 169/191 | PASS | 待复审 / EAUDIT18 | self-contained |
+| MD-4.4-RigidVelocity | 169/191 | PASS | 待复审 / EAUDIT18 | self-contained |
+| MD-4.4-InertiaTensor | 169/191 | PASS | 待复审 / EAUDIT18 | self-contained |
 | MD-4.4-CrossIdentityFull | 169/191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-RotationalEnergy | 169/191 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-RotationalEnergy | 169/191 | PASS | 待复审 / EAUDIT18 | self-contained |
 | MD-4.4-InertiaSkewIdentity | 169/191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-InertiaTracePrinted | 169/191 | FAIL | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
-| MD-4.4-InertiaTraceCorrected | 169/191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-DipolarHamiltonian | 169–170/191–192 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-DipolarPairPotential | 170/192 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-DipolarRotationalPrinted | 170/192 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
-| MD-4.4-RigidHamiltonian | 170/192 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-SecondMomentDiagonal | 168/190 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-RotationBodyEnergy | 169/191 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-DipolarConstraint | 170/192 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-DipolarPotentialSum | 170/192 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-RotationTrajectory | 168/190 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4-RotationDerivativePrinted | 168/190 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
-| MD-4.4-RigidMatrixRelation | 171/193 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
+| MD-4.4-InertiaTracePrinted | 169/191 | FAIL | 待导师 / EAUDIT18（原返回FAIL保留） | incomplete |
+| MD-4.4-InertiaTraceCorrected | 169/191 | PASS | 待复审 / EAUDIT19 | self-contained |
+| MD-4.4-DipolarHamiltonian | 169–170/191–192 | PASS | 待复审 / EAUDIT19 | self-contained |
+| MD-4.4-DipolarPairPotential | 170/192 | PASS | 待复审 / EAUDIT19 | self-contained |
+| MD-4.4-DipolarRotationalPrinted | 170/192 | NEEDS_HUMAN | 待导师 / EAUDIT19（原返回FAIL保留） | self-contained |
+| MD-4.4-RigidHamiltonian | 170/192 | PASS | 待复审 / EAUDIT19 | self-contained |
+| MD-4.4-SecondMomentDiagonal | 168/190 | PASS | 待复审 / EAUDIT19 | self-contained |
+| MD-4.4-RotationBodyEnergy | 169/191 | PASS | 待复审 / EAUDIT19 | self-contained |
+| MD-4.4-DipolarConstraint | 170/192 | PASS | 待复审 / EAUDIT19 | self-contained |
+| MD-4.4-DipolarPotentialSum | 170/192 | PASS | 待复审 / EAUDIT20 | self-contained |
+| MD-4.4-RotationTrajectory | 168/190 | PASS | 待复审 / EAUDIT20 | self-contained |
+| MD-4.4-RotationDerivativePrinted | 168/190 | NEEDS_HUMAN | 待导师 / EAUDIT20（原返回FAIL保留） | incomplete |
+| MD-4.4-RigidMatrixRelation | 171/193 | PASS | 待复审 / EAUDIT20 | self-contained |
 | MD-4.4.1-AngularMomentum | 171/193 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.4.1-BodyMomentum | 171/193 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.4.1-AngularInertia | 171/193 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
@@ -6358,8 +6358,8 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 ### 2. 原文陈述
 
-> the interaction of two water molecules, the sets of whose charge sites are denoted by $A$ and $B$, takes the form
-> \[\varphi_{\rm water}=\sum_{i\in A}\sum_{j\in B}\frac{k_1Q_iQ_j}{r_{ij}}+\frac{k_2}{r_{OO}^{12}}-\frac{k_3}{r_{OO}^{6}},\]
+> The potential energy for the interaction of a pair of such molecules, the sets of whose charge sites are denoted by $A$ and $B$, takes the form
+> \[\varphi^{\rm water-water}=\sum_{i\in A}\sum_{j\in B}\frac{k_1Q_iQ_j}{r_{ij}}+\frac{k_2}{r_{OO}^{12}}-\frac{k_3}{r_{OO}^{6}},\]
 > where $r_{OO}$ represents the distance between the oxygen atoms of the two molecules, and $k_1,k_2,k_3$ are positive constants.
 
 ### 3. 原文证明
@@ -6387,7 +6387,7 @@ def waterPairPotential {a b : ℕ} (k1 k2 k3 rOO : ℝ) (qa : Fin a → ℝ)
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT17**。原文JSON：CORRECTED；未冻结。
 
 依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 本地定义逐项为双重有限和 k1*qa i*qb j/r i j，加 k2/rOO^12，减 k3/rOO^6，忠实于经验势公式。有限位点合理；[EXTRA]中正距离和正常数为物理定义域说明，但并未成为类型中的假设。这里是总化的实函数定义，在物理有效域上符合原文；不能将注释当成已编码的正性约束，也不能据此断言普遍物理定律。无[ERRATUM?]。定义无sorry。
 
@@ -6397,11 +6397,11 @@ def waterPairPotential {a b : ℕ} (k1 k2 k3 rOO : ℝ) (qa : Fin a → ℝ)
 
 位置：[Blueprint/Ch04.lean:1757](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1757>)（`MD.Ch04.waterPairPotential`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`9543a62516549cb97cf1fe25e5977b5fbea43273cc75907ff863919bc3b51ae6`；原文SHA256：`446ee09e305332d0c0156d8c97e6f1eae876714e6ef965dd74716e13248e2fd9`。
+签名SHA256：`9543a62516549cb97cf1fe25e5977b5fbea43273cc75907ff863919bc3b51ae6`；原文SHA256：`114ab440d7307f316ec68f3de3a1fe2271fd8e4ffadd56e0abdeeae75faeee20`。
 
 ## 1. MD-4.4-TotalMass · definition · 印刷p.167 / PDFp.189
 
@@ -6476,7 +6476,7 @@ def centerMass {N : ℕ} (m : Fin N → ℝ) (q : Fin N → MolecularDynamics.Ch
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT17**。原文JSON：CORRECTED；未冻结。
 
 依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 centerMass m q=(totalMass m)⁻¹ • ∑ i,m i • q i，totalMass m=∑ i,m i。逐坐标为原文质心公式。非零总质量是物理适用域；实数逆在零处的总化扩展不应被当作零质量体系的物理质心。原文正质量非空体系给M>0，但Lean未限制输入；作为公式定义在有效域上忠实。定义无sorry。
 
@@ -6486,11 +6486,11 @@ def centerMass {N : ℕ} (m : Fin N → ℝ) (q : Fin N → MolecularDynamics.Ch
 
 位置：[Blueprint/Ch04.lean:1765](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1765>)（`MD.Ch04.centerMass`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`5b1cd9a3ba6724e1c5e2a09aa56a12f3afe0ccdc1cac3f7afe0ffd882fbdf1c5`；原文SHA256：`caf6c4457c41d0954cfd0f7746cbda78ab568cee50f0af360216b4a70fe89e10`。
+签名SHA256：`5b1cd9a3ba6724e1c5e2a09aa56a12f3afe0ccdc1cac3f7afe0ffd882fbdf1c5`；原文SHA256：`f9dae4448b7cf98c59ebd8be17c0cde718d61f57e2a091374e7af9e02b687dd5`。
 
 ## 1. MD-4.4-RelativePositions · definition · 印刷p.167 / PDFp.189
 
@@ -6516,12 +6516,13 @@ def relativePositions {N : ℕ} (m : Fin N → ℝ) (q : Fin N → MolecularDyna
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.relativePositions；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅q_i=q_cm+δ_i的相对位置定义；加权零和由MD-4.4-RelativeWeightedZero承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT17**。原文JSON：CORRECTED；未冻结。
 
 依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 relativePositions m q i=q i-centerMass m q，质心和总质量展开如上；这给出q_i=q_cm+δ_i，但指定定义没有陈述所引原句的加权零和结论。context_notation中“另条真实证明”不能替代本条statement_scope要求的全部子句。相邻relativeWeightedZero确实承载零和，仍应明确拆分本条原文范围或建立汇总声明。定义无sorry；FAIL为覆盖不全，不是定义减法错误。
 
@@ -6533,13 +6534,13 @@ def relativePositions {N : ℕ} (m : Fin N → ℝ) (q : Fin N → MolecularDyna
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1769](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1769>)（`MD.Ch04.relativePositions`）。
+位置：[Blueprint/Ch04.lean:1770](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1770>)（`MD.Ch04.relativePositions`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`c932f8175b7e22f0b8e21e3d235a6087c249045132626ac8ef206a96ea7ce7ab`；原文SHA256：`eab48d3c1176818e943ead4d972e4fc847c3119e2b0a8f9f7f129e48f8e83f00`。
+签名SHA256：`c932f8175b7e22f0b8e21e3d235a6087c249045132626ac8ef206a96ea7ce7ab`；原文SHA256：`9ff1279a33c281a4795ade7f4977a8be0c06a91e41b3722b8542b39376b737cc`。
 
 ## 1. MD-4.4-RelativeWeightedZero · unnumbered_claim · 印刷p.167 / PDFp.189
 
@@ -6579,7 +6580,7 @@ theorem relativeWeightedZero : ∀ N (m : Fin N → ℝ) (q : Fin N → Molecula
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1774](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1774>)（`MD.Ch04.relativeWeightedZero`）。
+位置：[Blueprint/Ch04.lean:1775](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1775>)（`MD.Ch04.relativeWeightedZero`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -6594,9 +6595,9 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 2. 原文陈述
 
 > Thus the kinetic energy becomes
-> \[K=\frac12\sum_im_i\|\dot q_{\rm cm}\|^2+\sum_im_i\dot q_{\rm cm}\cdot\dot\delta_i+\frac12\sum_im_i\|\dot\delta_i\|^2
-> =\frac M2\|\dot q_{\rm cm}\|^2+\frac12\sum_im_i\|\dot\delta_i\|^2,\]
-> where we have used the fact that $\sum_im_i\delta_i\equiv0$, hence that the time derivative also vanishes, in order to remove the middle term.
+> \[K=\frac12\sum_{i=1}^Nm_i\|\dot q_{\rm cm}\|^2+\sum_{i=1}^Nm_i\dot q_{\rm cm}\cdot\dot\delta_i+\frac12\sum_{i=1}^Nm_i\|\dot\delta_i\|^2
+> =\frac M2\|\dot q_{\rm cm}\|^2+\frac12\sum_{i=1}^Nm_i\|\dot\delta_i\|^2,\]
+> where we have used the fact that $\sum_{i=1}^Nm_i\delta_i\equiv0$, hence that the time derivative also vanishes, in order to remove the middle term.
 
 ### 3. 原文证明
 
@@ -6623,7 +6624,7 @@ theorem kineticSplit :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT17**。原文JSON：CORRECTED；未冻结。
 
 依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 dot u v=∑ a,u a*v a；V虽为Pi类型，其Pi范数不是欧氏范数，但签名用dot而非该范数，故dot x x准确为欧氏平方。v对应质心速度，w_i对应相对速度；前提∑m_i•w_i=0正是原文去交叉项用的导数零和。有限和展开给原文中间的三项式并消去交叉项，最终式准确；本签名是瞬时代数恒等式，不证明轨道求导步骤。无需质量正性，推广合理。该定理有实际by证明，无sorry；未运行编译。
 
@@ -6631,15 +6632,15 @@ theorem kineticSplit :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1783](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1783>)（`MD.Ch04.kineticSplit`）。
+位置：[Blueprint/Ch04.lean:1784](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1784>)（`MD.Ch04.kineticSplit`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/KineticSplit.json；blueprint/ch04/validation/short_search/KineticSplit-route1.lean；blueprint/ch04/validation/short_search/KineticSplit-route1.log；blueprint/ch04/validation/short_search/KineticSplit-route2.lean；blueprint/ch04/validation/short_search/KineticSplit-route2.log。
 
-签名SHA256：`892a665f484543f505d1504a76a356f1f6951776988f85ac3a25e3eb542e9f3d`；原文SHA256：`8b7536016afa1ffd3f7eb57eb76d21dc5db522d369601a9f40d5b7c012047dd5`。
+签名SHA256：`892a665f484543f505d1504a76a356f1f6951776988f85ac3a25e3eb542e9f3d`；原文SHA256：`fe1e93c9a3372d6c02a24e664db173e8f867de309ea14e9f20db924fa620c38a`。
 
 ## 1. MD-4.4-SecondMoment · definition · 印刷p.168 / PDFp.190
 
@@ -6669,7 +6670,7 @@ def secondMoment {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT17**。原文JSON：CORRECTED；未冻结。
 
 依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 outer v=fun a b=>v a*v b，secondMoment m δ=∑i,m i•outer(δ i)。故矩阵(a,b)元为∑i,m_i δ_i(a)δ_i(b)，等于原文δ_i(0)δ_i(0)^T之和。δ参数应解释为固定初始相对位置，非当前轨道值；矩阵类型为真实3×3实矩阵，对称性由公式自动成立。无额外假设或勘误，定义无sorry。
 
@@ -6677,13 +6678,13 @@ def secondMoment {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1816](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1816>)（`MD.Ch04.secondMoment`）。
+位置：[Blueprint/Ch04.lean:1817](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1817>)（`MD.Ch04.secondMoment`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`da2e5f3712439899f529bac983e6acb48b20499ca89d68d12fb74e286fe2c847`；原文SHA256：`45ee93e2d1de4104f811e02160841bc9afbc0a0fa442d0b7d6d743111af1f53d`。
+签名SHA256：`da2e5f3712439899f529bac983e6acb48b20499ca89d68d12fb74e286fe2c847`；原文SHA256：`c739e5163f298fa1f30bb1e4fffcc6f96dc045562b4660e611db304168a13003`。
 
 ## 1. MD-4.4-RotationKinetic · definition · 印刷p.168 / PDFp.190
 
@@ -6708,12 +6709,13 @@ def rotationKinetic (R dΘ : MolecularDynamics.Chapter04Review.Mat3) : ℝ := (d
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.rotationKinetic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅旋转动能trace定义；粒子有限和及两式等价由MD-4.4-RotationTraceIdentity承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT17**。原文JSON：CORRECTED；未冻结。
 
 依赖 Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3 → ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ；有限和按 Fin N 编号，对应原文1至N。 正式库 rotationKinetic R dΘ=(dΘ*R*dΘᵀ).trace/2，与本地定义相同；secondMoment及outer展开给原文R。然而指定定义只定义trace表达式，不包含所引原文第一有限和表达式与它的等式，也不绑定R=secondMoment m δ。相邻rotationTraceIdentity含该等式且有by证明，但不在本条lean_decl中。完整原文范围下应FAIL；不是1/2或矩阵乘法次序错误。定义无sorry。
 
@@ -6725,13 +6727,13 @@ def rotationKinetic (R dΘ : MolecularDynamics.Chapter04Review.Mat3) : ℝ := (d
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1819](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1819>)（`MD.Ch04.rotationKinetic`）。
+位置：[Blueprint/Ch04.lean:1821](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1821>)（`MD.Ch04.rotationKinetic`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`d17553d74dfe33785740639b31ad64b9e4d7102e1ce1ee93082eb3cf849a3213`；原文SHA256：`aaeb5f418ea5dac197acbf74a717b410282935065e7e5f04e42d9a07067f48d1`。
+签名SHA256：`d17553d74dfe33785740639b31ad64b9e4d7102e1ce1ee93082eb3cf849a3213`；原文SHA256：`c28a4b40b9174f2b771eb0c5c319476cb774397c062d8a827957f4822382b14a`。
 
 ## 1. MD-4.4-RotationTraceIdentity · unnumbered_claim · 印刷p.168 / PDFp.190
 
@@ -6763,7 +6765,7 @@ theorem rotationTraceIdentity : ∀ N (m : Fin N → ℝ) (δ : Fin N → Molecu
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT17**。原文JSON：CORRECTED；未冻结。
 
 依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 所有N、实质量权重m、参考向量δ和任意矩阵dΘ先全称量化，无附加前提。展开后左侧为∑_i m_i||dΘδ_i||₂²/2，右侧为Tr(dΘ(∑_i m_i δ_iδ_i^T)dΘ^T)/2，正是两展示式的等价性。将正质量、质心及旋转约束省去得到有效代数推广；不需要这些物理限制。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
 
@@ -6771,15 +6773,15 @@ theorem rotationTraceIdentity : ∀ N (m : Fin N → ℝ) (δ : Fin N → Molecu
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1822](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1822>)（`MD.Ch04.rotationTraceIdentity`）。
+位置：[Blueprint/Ch04.lean:1824](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1824>)（`MD.Ch04.rotationTraceIdentity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/RotationTraceIdentity.json；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.lean；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f-reconciled-passing.log。
 
-签名SHA256：`01ff22983b69a69f41cbc89abaac4008963354bc33bebb661aaeaf44fc7c55eb`；原文SHA256：`d8be4d91986096901c15ad9b3b63f3b76cf1b95c978357af3e13e1be4b57c8e1`。
+签名SHA256：`01ff22983b69a69f41cbc89abaac4008963354bc33bebb661aaeaf44fc7c55eb`；原文SHA256：`b3bac868e3b860d388e22ef107d9f1c9ec3105fad25356bc520fa4568c5bc658`。
 
 ## 1. MD-4.4-RotationSkew · unnumbered_claim · 印刷p.168–169 / PDFp.190–191
 
@@ -6812,7 +6814,7 @@ theorem rotationSkew :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT17**。原文JSON：CORRECTED；未冻结。
 
 依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 量词为轨道Θ、时刻t、导数d，随后给出真实HasDerivAt及t邻域内正交约束。它们忠实展开原文可微正交轨道，不循环假定导数乘积公式。结论(dΘᵀ)^T=-(dΘᵀ)展开为Θdᵀ=-dΘᵀ，与dΘᵀ+Θdᵀ=0等价，因此覆盖原文两个结论。邻域约束足够且合理，单点正交一般不足以推出本结论。无[ERRATUM?]。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
 
@@ -6820,15 +6822,15 @@ theorem rotationSkew :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1836](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1836>)（`MD.Ch04.rotationSkew`）。
+位置：[Blueprint/Ch04.lean:1838](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1838>)（`MD.Ch04.rotationSkew`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/RotationSkew.json；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.lean；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.log；blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.lean；blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.log。
 
-签名SHA256：`54f550b8b9a0dd8d33149c43a5c6c5749ddd5e7eae2a6c8238b5e5e5ee74bcae`；原文SHA256：`4ff29c22d4d22dc4f6855416b9992151301292bbf441ad4bab3c3e3bfd2a0d5f`。
+签名SHA256：`54f550b8b9a0dd8d33149c43a5c6c5749ddd5e7eae2a6c8238b5e5e5ee74bcae`；原文SHA256：`950c6c50e4d69d03687a42cb183c614cd77f032984345d1728e06e2626c2ea5c`。
 
 ## 1. MD-4.4-SkewMatrix · (4.38) · 印刷p.169 / PDFp.191
 
@@ -6854,12 +6856,13 @@ def skewMatrix (v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Cha
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.skewMatrix；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维skew坐标定义；反对称表示存在性由MD-4.4-SkewRepresentation，真实旋转导数的反对称性由MD-4.4-RotationSkew承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT18**。原文JSON：CORRECTED；未冻结。
 
 依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 定义的九个元素与(4.38)完全一致，0基索引转换正确；但本条statement_scope涵盖所引原句及展示公式，包含任意反对称矩阵可表示的存在性和dot Θ Θ^T=skew(ω)。lean_decl仅定义v↦skew(v)，没有矩阵轨道对象、导数关系或存在性量词。context_notation提及另条不能使本条签名覆盖完整范围。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
 
@@ -6871,13 +6874,13 @@ def skewMatrix (v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Cha
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1858](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1858>)（`MD.Ch04.skewMatrix`）。
+位置：[Blueprint/Ch04.lean:1861](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1861>)（`MD.Ch04.skewMatrix`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`239f5666392b7eb19bbe2b0476fc1b88d530419ade96153b90c6f75f167d1824`；原文SHA256：`0b9205761344708e5d6186db7d299743638f9806e6a64bba8d7d5497406a83b7`。
+签名SHA256：`239f5666392b7eb19bbe2b0476fc1b88d530419ade96153b90c6f75f167d1824`；原文SHA256：`75f3d74a65c6a83a29e87dffb82e5b9fd29a3c1285c00fc0e0871fb1c0e74640`。
 
 ## 1. MD-4.4-CrossProduct · definition · 印刷p.169 / PDFp.191
 
@@ -6902,12 +6905,13 @@ def cross3 (u v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapt
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.cross3；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维右手叉积坐标定义；原整条(4.39)的真实轨道导数由MD-4.4-RigidVelocity、全部代数等式由MD-4.4-CrossIdentityFull承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT18**。原文JSON：CORRECTED；未冻结。
 
 依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 cross3展开为(u₂v₃-u₃v₂,u₃v₁-u₁v₃,u₁v₂-u₂v₁)，右手约定正确，但函数定义没有Θ轨道、导数、skew乘法或任何等式结论。所引整条(4.39)不是叉积的坐标定义；“实际导数运动学另条”不改变本条声明范围。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
 
@@ -6919,13 +6923,13 @@ def cross3 (u v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapt
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1861](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1861>)（`MD.Ch04.cross3`）。
+位置：[Blueprint/Ch04.lean:1865](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1865>)（`MD.Ch04.cross3`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`0a5cca048815d451f60fad8066cd7ce02646180304182fb2b95e13a5462cfa50`；原文SHA256：`ec6906d4d777cc74144991ea7a9889ad49d435dc8f14aa3a660ca4651ee6cdef`。
+签名SHA256：`0a5cca048815d451f60fad8066cd7ce02646180304182fb2b95e13a5462cfa50`；原文SHA256：`7e4f6fad0ea172ae38b6b71084b4a992dc1e178ad33054f33d6a7ea605a9f001`。
 
 ## 1. MD-4.4-SkewRepresentation · unnumbered_claim · 印刷p.169 / PDFp.191
 
@@ -6955,7 +6959,7 @@ theorem skewRepresentation : ∀ A : MolecularDynamics.Chapter04Review.Mat3, A�
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT18**。原文JSON：CORRECTED；未冻结。
 
 依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 对任意实3×3矩阵A，先假定Aᵀ=-A，再存在唯一实三维ω使依赖中的实际skewMatrix ω=A。覆盖原文存在性；唯一性是正确的加强，ω=(A₃₂,A₁₃,A₂₁)，由矩阵三个非对角元素直接确定，不是额外假设。无[ERRATUM?]。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
 
@@ -6963,15 +6967,15 @@ theorem skewRepresentation : ∀ A : MolecularDynamics.Chapter04Review.Mat3, A�
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1864](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1864>)（`MD.Ch04.skewRepresentation`）。
+位置：[Blueprint/Ch04.lean:1868](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1868>)（`MD.Ch04.skewRepresentation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/SkewRepresentation.json；blueprint/ch04/validation/short_search/SkewRepresentation-route1.lean；blueprint/ch04/validation/short_search/SkewRepresentation-route1.log；blueprint/ch04/validation/short_search/SkewRepresentation-route2.lean；blueprint/ch04/validation/short_search/SkewRepresentation-route2.log。
 
-签名SHA256：`017508f1c35191c7a645fb9f78df73b34f7131c81e44334c818f37298e783a90`；原文SHA256：`889ba68ed024cd900999ab1441d996cda82ce87f36981106499f1a879f253e8f`。
+签名SHA256：`017508f1c35191c7a645fb9f78df73b34f7131c81e44334c818f37298e783a90`；原文SHA256：`cdfcc0daa758fc3cd810a9cb39c3ee13bdb3ba8031f5622252ba73bef8b7c307`。
 
 ## 1. MD-4.4-CrossMatrix · unnumbered_claim · 印刷p.169 / PDFp.191
 
@@ -6998,12 +7002,13 @@ theorem crossMatrix :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.crossMatrix；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]本条仅首等式的子引理；原式两个等式全部保存在CrossIdentityFull，不把子引理当全部结论。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅skew(u)v=u×v首等式；原整条双等式由MD-4.4-CrossIdentityFull承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT18**。原文JSON：CORRECTED；未冻结。
 
 依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 对任意u、v，结论只有skewMatrix u *ᵥ v=cross3 u v；缺少原文第二等式cross3 u v=-(skewMatrix v *ᵥ u)。[EXTRA]实际是范围说明而非假设，承认子引理是合理的，但不能使本条指定签名覆盖其statement_scope的全部结论；另条承载完整等式不自动合并进本条签名。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
 
@@ -7015,15 +7020,15 @@ theorem crossMatrix :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1881](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1881>)（`MD.Ch04.crossMatrix`）。
+位置：[Blueprint/Ch04.lean:1886](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1886>)（`MD.Ch04.crossMatrix`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/CrossMatrix.json；blueprint/ch04/validation/short_search/CrossMatrix-route1.lean；blueprint/ch04/validation/short_search/CrossMatrix-route1.log。
 
-签名SHA256：`01b330e533b9be55e63e72a236bb5e8ebfd70cf4b16fae9ec7eb5f463564e6da`；原文SHA256：`3c613de68d1ae65ab007b034c4c1c85749aefa60b29bf04853e48d2e1a3c468f`。
+签名SHA256：`01b330e533b9be55e63e72a236bb5e8ebfd70cf4b16fae9ec7eb5f463564e6da`；原文SHA256：`eabc4396b10b75f2869784d880aaa8015be95ab097ec6007d1e69205f599ec0e`。
 
 ## 1. MD-4.4-RigidVelocity · unnumbered_claim · 印刷p.169 / PDFp.191
 
@@ -7051,12 +7056,13 @@ theorem rigidVelocity : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.rigidVelocity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | 给定真实正交旋转轨道和定义角速度的skew关系；不是把速度公式当假设。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅真实旋转轨道的导数等于ω×δ；原段落全部代数等式由MD-4.4-CrossIdentityFull承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT18**。原文JSON：CORRECTED；未冻结。
 
 依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 先全称量化Θ、dΘ、固定参考δ、空间角速度ω、t；假设真实导数、单点正交、dΘ(Θt)^T=skew(ω)，推出位置轨道s↦Θsδ的导数为ω×(Θtδ)。这些前提非循环且足够，单点正交即可由给定角速度关系得到该速度结论；不必要求det Θ=1。核心导数公式正确，但签名未同时陈述导数等于skew(ω)(Θtδ)以及等于-skew(Θtδ)ω；在要求所有结论子句的当前范围下不完整。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
 
@@ -7068,15 +7074,15 @@ theorem rigidVelocity : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1889](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1889>)（`MD.Ch04.rigidVelocity`）。
+位置：[Blueprint/Ch04.lean:1895](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1895>)（`MD.Ch04.rigidVelocity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/RigidVelocity.json；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.lean；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.log；blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.lean；blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.log。
 
-签名SHA256：`f097bdbe8247095343248e852be3bdb8cd8a9ac26cf088e2634a085eb646250e`；原文SHA256：`1f9d0026da29a3c0448e7a600e0d14689eaa2bb5fd2311a7f1312cdda127a2a9`。
+签名SHA256：`f097bdbe8247095343248e852be3bdb8cd8a9ac26cf088e2634a085eb646250e`；原文SHA256：`6b7cd944d9a661f603a8dc116c603cc6ff9558b79439e2231fa4cc53e633b2f7`。
 
 ## 1. MD-4.4-InertiaTensor · definition · 印刷p.169 / PDFp.191
 
@@ -7103,12 +7109,13 @@ def inertiaTensor {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamic
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.inertiaTensor；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅T的欧氏有限和定义；skew平方关系由MD-4.4-InertiaSkewIdentity，质量旋转动能及ω_b关系由MD-4.4-RotationBodyEnergy承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT18**。原文JSON：CORRECTED；未冻结。
 
 依赖展开：Ch04_deps.txt 的 -- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean，V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ（第4377–4380行）；dot u v=∑j,u j*v j（4383），outer v=(fun j k=>v j*v k)（4519），secondMoment m δ=∑i,m i•outer(δ i)（4520），rotationKinetic R dΘ=trace(dΘ*R*dΘᵀ)/2（4521），skewMatrix 与 cross3 为第4522–4523行的显式三维坐标式，inertiaTensor 为第4524–4525行的有限和。Fin 3 的0、1、2对应原文1、2、3；dot v v 是欧氏长度平方，不是函数空间默认范数的平方。 定义展开为∑_i m_i (||δ_i||₂² I-δ_iδ_i^T)，精确对应原文最后展示式，任意实权重是有效推广；没有混淆函数空间范数。可是当前所引范围还包含T=-∑_i m_i skew(δ_i)^2及K_rot=ω_b^T Tω_b/2；定义的参数仅N、m、δ，没有ω_b、旋转动能或这两条等价结论。context_notation宣称另条不能补足本条签名。 本批实际声明及证明体已只读检查：定理证明体未见 sorry/admit，定义直接给出表达式；未运行Lean编译，不能据此宣称内核验证通过。签名审计不以是否sorry作为判据。
 
@@ -7120,13 +7127,13 @@ def inertiaTensor {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamic
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1908](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1908>)（`MD.Ch04.inertiaTensor`）。
+位置：[Blueprint/Ch04.lean:1915](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1915>)（`MD.Ch04.inertiaTensor`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`3e0f0042552ff9e59c7587b76933e6b414e57ff139e7656994d0d9d93d9d2ddc`；原文SHA256：`fff2084b08696589188bab503abf7a89bc0beeff9e3342ab5612550b979154d8`。
+签名SHA256：`3e0f0042552ff9e59c7587b76933e6b414e57ff139e7656994d0d9d93d9d2ddc`；原文SHA256：`10c946c7dc0ad49524b9e3d87259abfc7fb1e2f2303d20e56f0934022f65007d`。
 
 ## 1. MD-4.4-CrossIdentityFull · unnumbered_claim · 印刷p.169 / PDFp.191
 
@@ -7166,7 +7173,7 @@ theorem crossIdentityFull : ∀ u v : MolecularDynamics.Chapter04Review.V,
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1912](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1912>)（`MD.Ch04.crossIdentityFull`）。
+位置：[Blueprint/Ch04.lean:1919](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1919>)（`MD.Ch04.crossIdentityFull`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7191,7 +7198,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-def rotationalEnergy (T : MolecularDynamics.Chapter04Review.Mat3) («ω» : MolecularDynamics.Chapter04Review.V) : ℝ := MolecularDynamics.Chapter04Review.dot «ω» (T *ᵥ «ω»)/2
+def rotationalEnergy (T : MolecularDynamics.Chapter04Review.Mat3) (ωb : MolecularDynamics.Chapter04Review.V) : ℝ := MolecularDynamics.Chapter04Review.dot ωb (T *ᵥ ωb)/2
 ```
 
 ### 5. 对照表
@@ -7199,12 +7206,13 @@ def rotationalEnergy (T : MolecularDynamics.Chapter04Review.Mat3) («ω» : Mole
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.rotationalEnergy；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅体角速度ω_b的二次型能量定义；ω_b=Θᵀω及真实旋转粒子能量由MD-4.4-RotationBodyEnergy承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT18**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 函数值展开为 1/2∑j ω_j∑k T_jk ω_k，正确表示以体角速度为参数的二次型；但本条所引原句还定义 ω_b=Θᵀω，签名完全没有 Θ 或该关系。自由 Mat3 参数并未绑定原文惯性张量。不是错误二次型，而是原句的变换子句缺失；def 无 sorry。
 
@@ -7216,13 +7224,13 @@ def rotationalEnergy (T : MolecularDynamics.Chapter04Review.Mat3) («ω» : Mole
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1920](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1920>)（`MD.Ch04.rotationalEnergy`）。
+位置：[Blueprint/Ch04.lean:1928](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1928>)（`MD.Ch04.rotationalEnergy`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`704f380d5a21d63a11e5d3b6a7b6e4cd8b8eec7fca6617c0bc7a877a67cefcb2`；原文SHA256：`7ddafaed6f08d06aa822328d59f7ca305f4f8c48aca9a0a0d3d3ac852f25022a`。
+签名SHA256：`91001dfabaa80184603eccaad9e17ae45238942809c18563dd16264473bcae94`；原文SHA256：`cff2f75532c4c74be6c2bd8e9e2b90e1221cc491c24d949058bf05181ffaf226`。
 
 ## 1. MD-4.4-InertiaSkewIdentity · unnumbered_claim · 印刷p.169 / PDFp.191
 
@@ -7261,7 +7269,7 @@ theorem inertiaSkewIdentity : ∀ N (m : Fin N → ℝ) (δ : Fin N → Molecula
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1923](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1923>)（`MD.Ch04.inertiaSkewIdentity`）。
+位置：[Blueprint/Ch04.lean:1931](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1931>)（`MD.Ch04.inertiaSkewIdentity`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7276,7 +7284,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 2. 原文陈述
 
 > This matrix is closely related to the matrix $R$:
-> \[R=\sum_im_i\delta_i\delta_i^T=\sum_im_i\|\delta_i\|^2I-T=(T_{11}+T_{22}+T_{33})I-T.\tag{4.40}\]
+> \[R=\sum_{i=1}^Nm_i\delta_i\delta_i^T=\sum_{i=1}^Nm_i\|\delta_i\|^2I-T=(T_{11}+T_{22}+T_{33})I-T.\tag{4.40}\]
 
 ### 3. 原文证明
 
@@ -7303,7 +7311,7 @@ theorem inertiaTracePrinted :
 
 本地预审：**FAIL**。3维trace(T)=2Σm|δ|²，末式系数少1/2，一般不成立。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT18（原返回FAIL保留）**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 secondMoment 展开为 ∑i m_iδ_iδ_iᵀ；inertiaTensor 如上述定义，trace(T)=2∑i m_i dot δ_i δ_i。签名忠实保留原书错误的末式，故并非转录系数错误，但该全称命题为假；还未显式列出原句中间等式。原书 ERRATUM? 成立，应改系数为 trace(T)/2。实际证明体为 sorry；FAIL 的数学反例独立于 sorry。
 
@@ -7315,21 +7323,21 @@ theorem inertiaTracePrinted :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:1936](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1936>)（`MD.Ch04.inertiaTracePrinted`）。
+位置：[Blueprint/Ch04.lean:1944](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1944>)（`MD.Ch04.inertiaTracePrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：本地FAIL；待网站/导师裁定。
 
-签名SHA256：`2baf54f1a8ea5b97e9504f0e1ea32b71395044fdb7fa4fc344207b9e91e6eb71`；原文SHA256：`8c9d0c8ea346bea6aec9fbd00a1128ad6af6b7ba37dfc759b6a0425f48fa07af`。
+签名SHA256：`2baf54f1a8ea5b97e9504f0e1ea32b71395044fdb7fa4fc344207b9e91e6eb71`；原文SHA256：`d7336d66668a316261214d2d4744fbb8cbfe97de9f631dd619c9b2f772f851ae`。
 
 ## 1. MD-4.4-InertiaTraceCorrected · unnumbered_claim · 印刷p.169 / PDFp.191
 
 ### 2. 原文陈述
 
-> $R=\sum_im_i\delta_i\delta_i^T=\sum_im_i\|\delta_i\|^2I-T$.
+> $R=\sum_{i=1}^Nm_i\delta_i\delta_i^T=\sum_{i=1}^Nm_i\|\delta_i\|^2I-T$.
 
 ### 3. 原文证明
 
@@ -7356,7 +7364,7 @@ theorem inertiaTraceCorrected :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT19**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 依据已展开定义，trace(T)/2=∑i m_i dot δ_i δ_i，故签名恰与本条原文正确前半链等价；R 的第一等式由 secondMoment 的定义展开得到，中间等式由上述迹关系恢复，未丢数学结论。纠正版 /2 合理且必需；[EXTRA] 不应被解释为前提。∀N,m,δ 的代数推广不需正质量。此为明确标注的纠正推论，不能冒充原印刷末式。显式证明体未见 sorry。
 
@@ -7364,15 +7372,15 @@ theorem inertiaTraceCorrected :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1943](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1943>)（`MD.Ch04.inertiaTraceCorrected`）。
+位置：[Blueprint/Ch04.lean:1951](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1951>)（`MD.Ch04.inertiaTraceCorrected`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/InertiaTraceCorrected.json；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.lean；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.log；blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08.lean；blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08.log；blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.lean；blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.log。
 
-签名SHA256：`c7fd376f757874c36787093243eb8441e4f37dfe7c444dd8bf55e1998e6aa12c`；原文SHA256：`982a352e895e3530a174ca2f894286c6ea1ee30c8774d803e07300609e54153b`。
+签名SHA256：`c7fd376f757874c36787093243eb8441e4f37dfe7c444dd8bf55e1998e6aa12c`；原文SHA256：`678d6f5efca3edabd0f39a46a03032ee0e7fe9132ccac106e0262dec3efc6150`。
 
 ## 1. MD-4.4-DipolarHamiltonian · Example 4.1 · 印刷p.169–170 / PDFp.191–192
 
@@ -7391,10 +7399,11 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-def dipolarHamiltonian {N : ℕ} (mass : Fin N → ℝ) (inertia : MolecularDynamics.Chapter04Review.V)
+def dipolarHamiltonian {N : ℕ} (mass : Fin N → ℝ) (inertia : MolecularDynamics.Chapter04Review.V) (_hm : ∀ i, 0 < mass i) (_hI : ∀ j, 0 < inertia j)
     (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.V) → ℝ)
-    (q p μ π : Fin N → MolecularDynamics.Chapter04Review.V) : ℝ :=
-  (∑ i, ∑ j, (π i j)^2/(2*inertia j))+(∑ i, MolecularDynamics.Chapter04Review.dot (p i) (p i)/(2*mass i))+U q μ
+    (q p μ πbody : Fin N → MolecularDynamics.Chapter04Review.V)
+    (_hμ : ∀ i, MolecularDynamics.Chapter04Review.dot (μ i) (μ i)=1) : ℝ :=
+  (∑ i, ∑ j, (πbody i j)^2/(2*inertia j))+(∑ i, MolecularDynamics.Chapter04Review.dot (p i) (p i)/(2*mass i))+U q μ
 ```
 
 ### 5. 对照表
@@ -7403,12 +7412,13 @@ def dipolarHamiltonian {N : ℕ} (mass : Fin N → ℝ) (inertia : MolecularDyna
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.dipolarHamiltonian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | 所有质量/主惯性矩>0，单位偶极方向为物理约束；N有限。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 真实物理接口补质量/主惯性正性和每个μ单位长度；πbody明确为体坐标角动量，数值公式不变。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT19**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 展开 dot 可确认平移动能项为 ∑i‖p_i‖²/(2 mass_i)，转动项正好是原页共同主惯性矩下的体角动量表达式；N 有限且共同 inertia 与 identical ellipsoids 相符。但本 source_id 陈述显式包括 ∀k‖μ_k‖=1，函数接收任意 μ 未表达约束。注释所称质量及主惯性矩>0也没有成为签名前提；有限 N 实际存在。正性对物理域合理，代数函数可延拓而无需正性，不能把注释当形式假设。def 无 sorry。
 
@@ -7420,19 +7430,19 @@ def dipolarHamiltonian {N : ℕ} (mass : Fin N → ℝ) (inertia : MolecularDyna
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1970](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1970>)（`MD.Ch04.dipolarHamiltonian`）。
+位置：[Blueprint/Ch04.lean:1979](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1979>)（`MD.Ch04.dipolarHamiltonian`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`101c5d21f038c3eefc91e45983ed71860b68b0193679a46693c2016b0be0fdbf`；原文SHA256：`f69000f57013ca7d66f7064c2c9653bff75ef37d6ebde789a66b2172ae5c07ed`。
+签名SHA256：`a822dbda628813b511787367e584b4464f2489e5230ed0479849d5d9e5cdee7d`；原文SHA256：`ad21ef544ad3e79d982713691a16be24a04ebb1ce0e65de275ad8589756bfa2b`。
 
 ## 1. MD-4.4-DipolarPairPotential · definition · 印刷p.170 / PDFp.192
 
 ### 2. 原文陈述
 
-> The total dipole-dipole interaction potential then takes the form $\varphi^{\rm dip}_{ij}=\varphi^{\rm LJ}(r_{ij})+\mu_i^TL(q_{ij})\mu_j$, with $U$ given as the sum of these over pairs. The $3\times3$ matrix $L$ is given by
+> The total dipole-dipole interaction potential then takes the form $\varphi^{\rm dip}_{ij}=\varphi_{\rm LJ}(r_{ij})+\mu_i^TL(q_{ij})\mu_j$, with $U$ given as the sum of these over pairs. The $3\times3$ matrix $L$ is given by
 > \[L(q_{ij})=\frac1{r_{ij}^3}I-\frac3{r_{ij}^5}q_{ij}q_{ij}^T,\qquad q_{ij}=q_i-q_j.\]
 
 ### 3. 原文证明
@@ -7446,6 +7456,19 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ```lean
 def dipolarPairPotential (lj : ℝ → ℝ) (r : ℝ) (q μ ν : MolecularDynamics.Chapter04Review.V) : ℝ :=
   lj r+MolecularDynamics.Chapter04Review.dot μ (((r^3)⁻¹ • (1 : MolecularDynamics.Chapter04Review.Mat3)-(3/r^5) • MolecularDynamics.Chapter04Review.outer q) *ᵥ ν)
+
+def dipolarPairPotential_particles {N : ℕ} (lj : ℝ → ℝ)
+    (q μ : Fin N → MolecularDynamics.Chapter04Review.V) (i j : Fin N)
+    (_hij : i ≠ j) (_hnoncollision : q i ≠ q j) : ℝ :=
+  let r := q i-q j
+  dipolarPairPotential lj (Real.sqrt (MolecularDynamics.Chapter04Review.dot r r)) r (μ i) (μ j)
+
+def dipolarSystemPotential {N : ℕ} (lj : ℝ → ℝ)
+    (q μ : Fin N → MolecularDynamics.Chapter04Review.V)
+    (_hnoncollision : ∀ i j, i ≠ j → q i ≠ q j) : ℝ :=
+  ∑ i, ∑ j ∈ Finset.univ.filter (fun j ↦ i<j),
+    let r := q i-q j
+    dipolarPairPotential lj (Real.sqrt (MolecularDynamics.Chapter04Review.dot r r)) r (μ i) (μ j)
 ```
 
 ### 5. 对照表
@@ -7454,12 +7477,13 @@ def dipolarPairPotential (lj : ℝ → ℝ) (r : ℝ) (q μ ν : MolecularDynami
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.dipolarPairPotential；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | r=Euclidean距离>0；本条实际pair函数，不声称经验模型准确性。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留代数核；新增实际非碰撞粒子对q_i−q_j、r_ij=√(r·r)实例和仅i<j的完整系统势能求和，避免任意r与q脱钩。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT19**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 outer q 展开为 qqᵀ，dot μ (L*ᵥν) 为 μᵀLν，标量首项用 I 解释正确。但签名 r、q 独立，无 r=√(dot q q)>0，也没有 q=q_i−q_j；尤其原句 U 为所有对的和完全缺失。注释 [EXTRA] 的距离正性是排除碰撞所需的合理物理域条件，却未形式表达。函数本身可作代数核，但不足以覆盖本条全部范围。def 无 sorry。
 
@@ -7471,13 +7495,13 @@ def dipolarPairPotential (lj : ℝ → ℝ) (r : ℝ) (q μ ν : MolecularDynami
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1977](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1977>)（`MD.Ch04.dipolarPairPotential`）。
+位置：[Blueprint/Ch04.lean:1988](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1988>)（`MD.Ch04.dipolarPairPotential`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`7bcebddcd8b3e698a3919fc7ab678d2765669cf32451f271cc053e9f99829863`；原文SHA256：`ec0f878d8d8d2992db369ae0217ecf2b36923e9bde9d7fd3366ae50fc73ea910`。
+签名SHA256：`2258efedc2511f1da3ff6c18527e6b5612199a52d51a8e3f78209b788dcd8831`；原文SHA256：`7c9b93eb5533a95bff8be53281090de97cfdcb55b2522a379ebd8ddcb6a9b0ae`。
 
 ## 1. MD-4.4-DipolarRotationalPrinted · definition · 印刷p.170 / PDFp.192
 
@@ -7509,7 +7533,7 @@ def dipolarRotationalPrinted {N : ℕ} (R : MolecularDynamics.Chapter04Review.Ma
 
 本地预审：**NEEDS_HUMAN**。此处trace和缺1/2，与p168及此页Σπ²/(2I)不一致；且引用错误(4.40)。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT19（原返回FAIL保留）**。原文JSON：DRAFT；未冻结。
 
 已展开 Ch04_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u_j v_j，outer v 的 (j,k) 元素为 v_j v_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 函数准确保留印刷求和式且未擅自补1/2；但本条还明确要求 R 由 T=diag(I₁,I₂,I₃) 经(4.40)定义，签名 R 为自由矩阵，未含 T、I 或关系，dΘ 也不绑定旋转矩阵的导数。故全部原句的语义未覆盖；印刷动能缺1/2的 ERRATUM? 成立，并且所引(4.40)另有系数错误。此为 def，无 sorry；并非因没有证明而 FAIL。
 
@@ -7519,11 +7543,11 @@ def dipolarRotationalPrinted {N : ℕ} (R : MolecularDynamics.Chapter04Review.Ma
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1982](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1982>)（`MD.Ch04.dipolarRotationalPrinted`）。
+位置：[Blueprint/Ch04.lean:2006](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2006>)（`MD.Ch04.dipolarRotationalPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -7546,7 +7570,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-def rigidHamiltonian (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (q p : MolecularDynamics.Chapter04Review.V) (Θ mom : MolecularDynamics.Chapter04Review.Mat3) : ℝ :=
+def rigidHamiltonian (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (_hM : 0 < M) (_hR : R.det ≠ 0) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (q p : MolecularDynamics.Chapter04Review.V) (Θ mom : MolecularDynamics.Chapter04Review.Mat3) (_hΘ : Θᵀ*Θ=1) : ℝ :=
   MolecularDynamics.Chapter04Review.dot p p/(2*M)+(mom*R⁻¹*momᵀ).trace/2+U q Θ
 ```
 
@@ -7556,12 +7580,13 @@ def rigidHamiltonian (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (U :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.rigidHamiltonian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | M>0、R非奇异是物理资格；正交约束单列在真实ODE关系中；inverse定义不计存在理论。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 主接口增加M>0、R可逆及ΘᵀΘ=I的实际受约束域，公式不再将任意矩阵姿态当刚体状态。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT19**。原文JSON：CORRECTED；未冻结。
 
 展开deps中V=Fin 3→ℝ、Mat3=Matrix (Fin 3) (Fin 3) ℝ、dot p p=Σp_i²，公式三项准确。但本source的陈述明确包含subject to Θ^TΘ=I；本decl只是对任意Θ返回实数，未表示受约束对象或允许域。后续rigidMatrixRelation中的约束不能替代本条完整陈述。[EXTRA] M>0与R非奇异是合理物理资格，但只是注释，签名不强制；总化除法/矩阵逆作为公式延拓可接受，不能据此声称约束已编码。本decl为定义，无sorry。
 
@@ -7573,13 +7598,13 @@ def rigidHamiltonian (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (U :
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:1987](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1987>)（`MD.Ch04.rigidHamiltonian`）。
+位置：[Blueprint/Ch04.lean:2012](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2012>)（`MD.Ch04.rigidHamiltonian`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`c3b386da36e94c93a07337e0bcbfc592ef36a59bd3145ba24d5bd15aa81a0f5d`；原文SHA256：`6e833e1fdb34388c3cdcacfc6eb620a62d8248b9a5850dde8ba736a406f34f66`。
+签名SHA256：`cb91d1d6788d661306c764aa34c71377f2aa08eb4c64e1f33f0feeac77620a0c`；原文SHA256：`abc51f7744fa2cbac3231ef4de41437de6e28663152d2ecb7d3c4573376c5770`。
 
 ## 1. MD-4.4-SecondMomentDiagonal · unnumbered_claim · 印刷p.168 / PDFp.190
 
@@ -7611,7 +7636,7 @@ theorem secondMomentDiagonal : ∀ N (m : Fin N → ℝ) (δ : Fin N → Molecul
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT19**。原文JSON：CORRECTED；未冻结。
 
 deps 4377–4383、4519–4520展开V、Mat3、outer v=(v_i v_j)、secondMoment=Σm_i outer δ_i，因此R是真实对称二阶矩矩阵。∀N,m,δ 后存在一个共同正交O，O^TRO所有非对角元为0，准确表示选择坐标系使R对角。无需正质量或中心化假设；允许实权是成立的推广。O^TO=I在三维方阵足以表示正交，不需要det=1；原句仅要求坐标系。签名忠实；该本地证明没有sorry，未运行Lean编译。
 
@@ -7619,15 +7644,15 @@ deps 4377–4383、4519–4520展开V、Mat3、outer v=(v_i v_j)、secondMoment=
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:1991](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:1991>)（`MD.Ch04.secondMomentDiagonal`）。
+位置：[Blueprint/Ch04.lean:2016](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2016>)（`MD.Ch04.secondMomentDiagonal`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/SecondMomentDiagonal.json；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.lean；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.log；blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08.lean；blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08.log；blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.lean；blueprint/ch04/validation/short_search/algebra-batch-c83783c98b00415c3695.log。
 
-签名SHA256：`bd785e3cc946220a872af5536fe063df194e5d4f7bf7faa3af8595b8546dec0c`；原文SHA256：`5c27c8a2630ceb0d69a1e8ebe9b8107b8378b06cd62344a6f5d1e9b4dcfe8648`。
+签名SHA256：`bd785e3cc946220a872af5536fe063df194e5d4f7bf7faa3af8595b8546dec0c`；原文SHA256：`069cca79008c7e1a8c13522cb7a41293551d40e79ce70f713e978ce9d414d7d4`。
 
 ## 1. MD-4.4-RotationBodyEnergy · unnumbered_claim · 印刷p.169 / PDFp.191
 
@@ -7661,7 +7686,7 @@ theorem rotationBodyEnergy : ∀ N (m : Fin N → ℝ) (δ : Fin N → Molecular
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT19**。原文JSON：CORRECTED；未冻结。
 
 deps 4523–4526展开标准cross3、T=Σm_i[(Σδ_i²)I−δ_iδ_i^T]、rotationalEnergy(T,x)=Σx_i(Tx)_i/2，故结论确为从空间旋转动能得到(Θ^Tω)^TT(Θ^Tω)/2；δ参数是δ_i(0)。对象、有限求和、全称量词及两种能量一致。[EXTRA] Θ^TΘ=I必要且符合原文；detΘ=1合理描述真实刚体旋转，但此能量等式在det=-1时也成立，故不是数学必要假设，可删除以忠实于仅正交的原句。未把能量等式或叉积协变作为前提。本地证明没有sorry；未编译。
 
@@ -7669,15 +7694,15 @@ deps 4523–4526展开标准cross3、T=Σm_i[(Σδ_i²)I−δ_iδ_i^T]、rotatio
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:2010](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2010>)（`MD.Ch04.rotationBodyEnergy`）。
+位置：[Blueprint/Ch04.lean:2035](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2035>)（`MD.Ch04.rotationBodyEnergy`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/RotationBodyEnergy.json；blueprint/ch04/validation/short_search/algebra-batch-f1cc7dc19bb9d13c8d85.lean；blueprint/ch04/validation/short_search/algebra-batch-f1cc7dc19bb9d13c8d85.log；blueprint/ch04/validation/short_search/algebra-batch-f95b57dbc2e454a4881e.lean；blueprint/ch04/validation/short_search/algebra-batch-f95b57dbc2e454a4881e.log。
 
-签名SHA256：`a8ecaa60987235e1848b73b3d42170ec3aa20f0752e6a634c0e7068756d5c5ad`；原文SHA256：`bf9a6aced3f67c6d5c655ccf0b6b3f1227ac946c87605bfb2a290108b5708bec`。
+签名SHA256：`a8ecaa60987235e1848b73b3d42170ec3aa20f0752e6a634c0e7068756d5c5ad`；原文SHA256：`44fce1cbe7e75a3c3e139d0dc12c4308e378ffb546723fad480c3e29b690003b`。
 
 ## 1. MD-4.4-DipolarConstraint · definition · 印刷p.170 / PDFp.192
 
@@ -7708,7 +7733,7 @@ def dipolarConstraint {N : ℕ} (μ : Fin N → MolecularDynamics.Chapter04Revie
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT19**。原文JSON：CORRECTED；未冻结。
 
 展开V=Fin 3→ℝ、dot u v=Σu_i v_i，∀i dot(μ_i)(μ_i)=1恰是每个偶极方向的欧氏模长恒1（平方与模长等价）；未误用函数空间最大范数。N有限与粒子模型一致，无额外假设。定义无sorry。
 
@@ -7716,19 +7741,19 @@ def dipolarConstraint {N : ℕ} (μ : Fin N → MolecularDynamics.Chapter04Revie
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2059](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2059>)（`MD.Ch04.dipolarConstraint`）。
+位置：[Blueprint/Ch04.lean:2084](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2084>)（`MD.Ch04.dipolarConstraint`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`e7a3ca03cb7d821622b51c1930f43c48c9b140aace5d27efd75febbb35e53ec4`；原文SHA256：`c0cd50bcc5bf84c99fc0b9f91abe2c1789686186ab29c397ce84420ec288904e`。
+签名SHA256：`e7a3ca03cb7d821622b51c1930f43c48c9b140aace5d27efd75febbb35e53ec4`；原文SHA256：`35b5160c674346c0ba18ca42c745d978cc030bfd5a527657cb2051eb47a9f399`。
 
 ## 1. MD-4.4-DipolarPotentialSum · definition · 印刷p.170 / PDFp.192
 
 ### 2. 原文陈述
 
-> $\varphi^{\rm dip}_{ij}=\varphi^{\rm LJ}(r_{ij})+\mu_i^TL(q_{ij})\mu_j$, with $U$ given as the sum of these over pairs.
+> $\varphi^{\rm dip}_{ij}=\varphi_{\rm LJ}(r_{ij})+\mu_i^TL(q_{ij})\mu_j$, with $U$ given as the sum of these over pairs.
 
 ### 3. 原文证明
 
@@ -7755,7 +7780,7 @@ def dipolarPotentialSum {N : ℕ} (lj : ℝ → ℝ) (q μ : Fin N → Molecular
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT20**。原文JSON：CORRECTED；未冻结。
 
 deps outer(q)_ab=q_a q_b、dot=欧氏内积；本地dipolarPairPotential在Ch04.lean 1481–1482展开为lj(r)+μ^T[(r³)^(-1)I−(3/r⁵)qq^T]ν。q_i−q_j与sqrt(Σ(q_i−q_j)²)准确给出q_ij和r_ij；双重Fin N求和仅取i<j，每对恰一次。lj作为径向势参数是合理抽象，应实例化为φ_LJ。原书L首项将标量用于矩阵，按单位矩阵的通行解释一致，已在context显式注明。[EXTRA] 无重叠是合理的原势定义域，注释不构成Lean假设，代码在碰撞处仅作总化延拓；本审计的忠实性限于r_ij>0构形。单位方向另由dipolarConstraint表示，势公式自身允许任意向量合理。定义无sorry。
 
@@ -7763,19 +7788,20 @@ deps outer(q)_ab=q_a q_b、dot=欧氏内积；本地dipolarPairPotential在Ch04.
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2064](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2064>)（`MD.Ch04.dipolarPotentialSum`）。
+位置：[Blueprint/Ch04.lean:2089](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2089>)（`MD.Ch04.dipolarPotentialSum`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`def653a605446992ddbde4b43fa9e8000438b8f134eea868ed6ab44c6abecaad`；原文SHA256：`75a99addba48ff1aae8464920c32c7df049ca0e2f76631ca201f33c8e3076cec`。
+签名SHA256：`def653a605446992ddbde4b43fa9e8000438b8f134eea868ed6ab44c6abecaad`；原文SHA256：`7b259960c6cb6aefbf1157c2828f49389768acc33bf1808cfda9a144aeb7efd3`。
 
 ## 1. MD-4.4-RotationTrajectory · unnumbered_claim · 印刷p.168 / PDFp.190
 
 ### 2. 原文陈述
 
-> $\delta_i(t)=\Theta(t)\delta_i(0)$, see Fig. 4.7, thus we have $\dot\delta_i=\dot\Theta\delta_i(0)$.
+> $\delta_i(t)=\Theta(t)\delta_i(0)$, see Fig. 4.7, thus we have
+> \[K_{\rm rot}=\frac12\sum_{i=1}^N m_i\delta_i(0)^T\dot\Theta^T\dot\Theta\delta_i(0).\]
 
 ### 3. 原文证明
 
@@ -7795,12 +7821,13 @@ theorem rotationTrajectory : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.rotationTrajectory；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅δ_i(t)=Θ(t)δ_i(0)的真实导数辅助；原段落旋转动能有限和及trace等价由MD-4.4-RotationTraceIdentity承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT20**。原文JSON：CORRECTED；未冻结。
 
 V、Mat3和乘矩阵向量均为真实三维线性运算；HasDerivAt Θ d t后得HasDerivAt(s↦Θ(s)δ)(dδ)t，是正确的求导引理（δ表示固定参考位置）。但核对原PDF后本source的thus we have所接结论为K_rot=Σm_iδ_i(0)^TdotΘ^TdotΘδ_i(0)/2，该Lean签名完全没有质量、动能或该求和结论；不是所标原句的完整形式化。原轨道关系以函数构造表达可接受，缺失动能结论不可忽略。本地证明无sorry；正确求导引理不等于本source通过。
 
@@ -7812,15 +7839,15 @@ V、Mat3和乘矩阵向量均为真实三维线性运算；HasDerivAt Θ d t后�
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:2069](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2069>)（`MD.Ch04.rotationTrajectory`）。
+位置：[Blueprint/Ch04.lean:2095](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2095>)（`MD.Ch04.rotationTrajectory`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch04/validation/short_search/RotationTrajectory.json；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.lean；blueprint/ch04/validation/short_search/algebra-batch-7d23ff4d0537bd70161f.log；blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.lean；blueprint/ch04/validation/short_search/algebra-batch-2b3ac4f6f94905e89d08-passing-subset.log。
 
-签名SHA256：`a45c920782722e8e7645f19d32ce0b6c45d2829dc73010af99267d5996bc57a0`；原文SHA256：`a78ee4587a4c8209898f715e41af1c91efa0b45820b52c8510431c65c4d00dc3`。
+签名SHA256：`a45c920782722e8e7645f19d32ce0b6c45d2829dc73010af99267d5996bc57a0`；原文SHA256：`23b66be686644baf9f107db6b9cc3f19ec23a19d1ba54a90930a719ab6c3affc`。
 
 ## 1. MD-4.4-RotationDerivativePrinted · unnumbered_claim · 印刷p.168 / PDFp.190
 
@@ -7855,7 +7882,7 @@ theorem rotationDerivativePrinted : ∀ (Θ : ℝ → MolecularDynamics.Chapter0
 
 本地预审：**NEEDS_HUMAN**。原页最后δ_i带点，与先前δ_i=Θδ_i(0)代换不符；通常应为无点δ_i，正确运动学另条保留。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT20（原返回FAIL保留）**。原文JSON：CORRECTED；未冻结。
 
 签名忠实再现印刷末项：设δ=δ_i(0)、d=dotΘ(t)，右端确为(dΘ(t)^T)(dδ)。ERRATUM?成立，印刷末项应使用当前配置Θ(t)δ而非速度dδ。它不是正交性和可微性推得的真命题，即使Θ整条轨道属于SO(3)仍失败。HasDerivAt为实际矩阵时间导数；ΘΘ^T=I是正确的正交条件。该decl明确含sorry；此处FAIL来自反例，不是因为sorry，原文忠实性单独为通过。
 
@@ -7867,15 +7894,15 @@ theorem rotationDerivativePrinted : ∀ (Θ : ℝ → MolecularDynamics.Chapter0
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:2081](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2081>)（`MD.Ch04.rotationDerivativePrinted`）。
+位置：[Blueprint/Ch04.lean:2107](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2107>)（`MD.Ch04.rotationDerivativePrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：待网站/导师裁定最后δ点号；不证明疑误版本。
 
-签名SHA256：`0f7ee09af4e0e3e81dad2e2862fcc6fde050fab01ce776697b49ca4869eee09f`；原文SHA256：`10f68de018a987ea307542dcc4aa5b8e085f4edea3c7ae517c9ebf57f15e90ec`。
+签名SHA256：`0f7ee09af4e0e3e81dad2e2862fcc6fde050fab01ce776697b49ca4869eee09f`；原文SHA256：`90d7d94598e5e4c27fb2d6dc2e925f0bcadc6dac2ed70a0acdf4d3402a7a17af`。
 
 ## 1. MD-4.4-RigidMatrixRelation · definition · 印刷p.171 / PDFp.193
 
@@ -7894,8 +7921,9 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 ### 4. Lean陈述
 
 ```lean
-def rigidMatrixRelation (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ)
-    (q p : ℝ → MolecularDynamics.Chapter04Review.V) (Θ mom Λ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (I : Set ℝ) : Prop :=
+def rigidMatrixRelation (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (_hM : 0 < M) (_hR : R.det ≠ 0) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter04Review.V) (Θ mom Λ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (I : Set ℝ) (_hI : IsOpen I)
+    (_hU : Differentiable ℝ (fun z : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 ↦ U z.1 z.2)) : Prop :=
   ∀ t ∈ I, HasDerivWithinAt q (M⁻¹ • p t) I t ∧ HasDerivWithinAt Θ (mom t*R⁻¹) I t ∧
     HasDerivWithinAt p (-MolecularDynamics.Chapter04Review.grad (fun x => U x (Θ t)) (q t)) I t ∧
     HasDerivWithinAt mom (-MolecularDynamics.Chapter04Review.matrixGrad (U (q t)) (Θ t)-Θ t*Λ t) I t ∧ (Θ t)ᵀ*Θ t=1
@@ -7906,12 +7934,13 @@ def rigidMatrixRelation (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch04.rigidMatrixRelation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 增加开放时间域、势能联合经典可微、M>0及R可逆，使within导数等于真实时间导数，排除单点域伪运动；姿态正交约束仍逐t保留。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT20**。原文JSON：CORRECTED；未冻结。
 
 deps中grad展开至ConstrainedProjection.lean 2975–2978：grad(U,q)_i=(fderiv ℝ U q)(e_i)；matrixGrad(U,Θ)_ij=(fderiv ℝ U Θ)(E_ij)。因此确为真实元素偏导而非占位函数，四项向量/矩阵右端、负号、乘法次序及Θ^TΘ=I均匹配。但∀t∈I使用HasDerivWithinAt且I是任意Set，没有区间或UniqueDiffWithinAt资格；这严格弱于原书实际时间导数轨道方程，尤其单点域允许任意给定导数。fderiv还在不可微势处总化为零，未强制原文梯度存在。可采用在可微势和真实时间区间上的域限定版本，当前无限制关系并非完整忠实轨道关系。原书不要求在此证明存在性。定义无sorry。
 
@@ -7923,13 +7952,13 @@ deps中grad展开至ConstrainedProjection.lean 2975–2978：grad(U,q)_i=(fderiv
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2087](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2087>)（`MD.Ch04.rigidMatrixRelation`）。
+位置：[Blueprint/Ch04.lean:2114](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2114>)（`MD.Ch04.rigidMatrixRelation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`452b2651948d2891859658b69074f55f7c40a81463070ed3b38a95999ca2156d`；原文SHA256：`2505278e47f8078151cf1cfa53ecb8e18e286377a630dab9b02f185da32ea543`。
+签名SHA256：`1f0a6c2c613dc2e4dd6f6b98e666312bc50b99926457b78189bf3678c5a078af`；原文SHA256：`63ef415b708fc04fcbcd53469e1874e7c60f503d915b9723454fb48767d287c6`。
 
 ## 1. MD-4.4.1-AngularMomentum · definition · 印刷p.171 / PDFp.193
 
@@ -7968,7 +7997,7 @@ def angularMomentum {N : ℕ} (m : Fin N → ℝ) (δ v : Fin N → MolecularDyn
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2094](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2094>)（`MD.Ch04.angularMomentum`）。
+位置：[Blueprint/Ch04.lean:2122](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2122>)（`MD.Ch04.angularMomentum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8012,7 +8041,7 @@ def bodyMomentum (Θ : MolecularDynamics.Chapter04Review.Mat3) (l : MolecularDyn
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2098](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2098>)（`MD.Ch04.bodyMomentum`）。
+位置：[Blueprint/Ch04.lean:2126](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2126>)（`MD.Ch04.bodyMomentum`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8061,7 +8090,7 @@ theorem angularInertia :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:2102](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2102>)（`MD.Ch04.angularInertia`）。
+位置：[Blueprint/Ch04.lean:2130](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2130>)（`MD.Ch04.angularInertia`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8107,7 +8136,7 @@ def eulerRigidField (T : MolecularDynamics.Chapter04Review.Mat3) (π : Molecular
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2139](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2139>)（`MD.Ch04.eulerRigidField`）。
+位置：[Blueprint/Ch04.lean:2167](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2167>)（`MD.Ch04.eulerRigidField`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8154,7 +8183,7 @@ def freeRigidSolution (T : MolecularDynamics.Chapter04Review.Mat3) (π : ℝ →
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2142](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2142>)（`MD.Ch04.freeRigidSolution`）。
+位置：[Blueprint/Ch04.lean:2170](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2170>)（`MD.Ch04.freeRigidSolution`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8207,7 +8236,7 @@ theorem rigidInvariants :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:2147](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2147>)（`MD.Ch04.rigidInvariants`）。
+位置：[Blueprint/Ch04.lean:2175](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2175>)（`MD.Ch04.rigidInvariants`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8257,7 +8286,7 @@ def rigidPoissonMatrix (π : MolecularDynamics.Chapter04Review.V) : MolecularDyn
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2202](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2202>)（`MD.Ch04.rigidPoissonMatrix`）。
+位置：[Blueprint/Ch04.lean:2230](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2230>)（`MD.Ch04.rigidPoissonMatrix`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8301,7 +8330,7 @@ theorem poissonDegeneracy : ∀ π : MolecularDynamics.Chapter04Review.V, Molecu
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:2205](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2205>)（`MD.Ch04.poissonDegeneracy`）。
+位置：[Blueprint/Ch04.lean:2233](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2233>)（`MD.Ch04.poissonDegeneracy`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8352,7 +8381,7 @@ def axisRotation (i : Fin 3) (φ : ℝ) : MolecularDynamics.Chapter04Review.Mat3
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2211](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2211>)（`MD.Ch04.axisRotation`）。
+位置：[Blueprint/Ch04.lean:2239](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2239>)（`MD.Ch04.axisRotation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8401,7 +8430,7 @@ def secondAxisPrinted (I : MolecularDynamics.Chapter04Review.V) (π : MolecularD
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2219](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2219>)（`MD.Ch04.secondAxisPrinted`）。
+位置：[Blueprint/Ch04.lean:2247](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2247>)（`MD.Ch04.secondAxisPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8450,7 +8479,7 @@ def thirdAxisPrinted (I : MolecularDynamics.Chapter04Review.V) (π : MolecularDy
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2225](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2225>)（`MD.Ch04.thirdAxisPrinted`）。
+位置：[Blueprint/Ch04.lean:2253](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2253>)（`MD.Ch04.thirdAxisPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8500,7 +8529,7 @@ def principalAxisField (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (π
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2230](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2230>)（`MD.Ch04.principalAxisField`）。
+位置：[Blueprint/Ch04.lean:2258](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2258>)（`MD.Ch04.principalAxisField`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8547,7 +8576,7 @@ def printedSpinAxis (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (h : �
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2235](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2235>)（`MD.Ch04.printedSpinAxis`）。
+位置：[Blueprint/Ch04.lean:2263](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2263>)（`MD.Ch04.printedSpinAxis`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8598,7 +8627,7 @@ def printedSpinStep (I : MolecularDynamics.Chapter04Review.V) (h : ℝ) : Molecu
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2240](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2240>)（`MD.Ch04.printedSpinStep`）。
+位置：[Blueprint/Ch04.lean:2268](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2268>)（`MD.Ch04.printedSpinStep`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8651,7 +8680,7 @@ theorem axisFlow :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:2247](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2247>)（`MD.Ch04.axisFlow`）。
+位置：[Blueprint/Ch04.lean:2275](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2275>)（`MD.Ch04.axisFlow`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8700,7 +8729,7 @@ theorem spinPoisson :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:2255](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2255>)（`MD.Ch04.spinPoisson`）。
+位置：[Blueprint/Ch04.lean:2283](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2283>)（`MD.Ch04.spinPoisson`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8746,7 +8775,7 @@ theorem rigidPoissonSkew : ∀ π : MolecularDynamics.Chapter04Review.V, (Molecu
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:2261](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2261>)（`MD.Ch04.rigidPoissonSkew`）。
+位置：[Blueprint/Ch04.lean:2289](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2289>)（`MD.Ch04.rigidPoissonSkew`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8793,7 +8822,7 @@ theorem rigidHamiltonianField : ∀ (T : MolecularDynamics.Chapter04Review.Mat3)
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:2268](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2268>)（`MD.Ch04.rigidHamiltonianField`）。
+位置：[Blueprint/Ch04.lean:2296](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2296>)（`MD.Ch04.rigidHamiltonianField`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8839,7 +8868,7 @@ def rigidForce (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Ch
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2308](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2308>)（`MD.Ch04.rigidForce`）。
+位置：[Blueprint/Ch04.lean:2336](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2336>)（`MD.Ch04.rigidForce`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8883,7 +8912,7 @@ def matrixRot (A : MolecularDynamics.Chapter04Review.Mat3) : MolecularDynamics.C
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2311](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2311>)（`MD.Ch04.matrixRot`）。
+位置：[Blueprint/Ch04.lean:2339](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2339>)（`MD.Ch04.matrixRot`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8927,7 +8956,7 @@ def rigidTorque (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.C
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2314](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2314>)（`MD.Ch04.rigidTorque`）。
+位置：[Blueprint/Ch04.lean:2342](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2342>)（`MD.Ch04.rigidTorque`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8990,7 +9019,7 @@ def dlmPrinted (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2319](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2319>)（`MD.Ch04.dlmPrinted`）。
+位置：[Blueprint/Ch04.lean:2347](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2347>)（`MD.Ch04.dlmPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9041,7 +9070,7 @@ def dlmMassOnly (M : ℝ) (I : MolecularDynamics.Chapter04Review.V) (U : Molecul
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2325](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2325>)（`MD.Ch04.dlmMassOnly`）。
+位置：[Blueprint/Ch04.lean:2353](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2353>)（`MD.Ch04.dlmMassOnly`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9091,7 +9120,7 @@ theorem driftSpinCommute : ∀ M h (I : MolecularDynamics.Chapter04Review.V) (z 
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:2330](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2330>)（`MD.Ch04.driftSpinCommute`）。
+位置：[Blueprint/Ch04.lean:2358](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2358>)（`MD.Ch04.driftSpinCommute`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9146,7 +9175,7 @@ theorem dlmStructure :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:2338](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2338>)（`MD.Ch04.dlmStructure`）。
+位置：[Blueprint/Ch04.lean:2366](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2366>)（`MD.Ch04.dlmStructure`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -9199,7 +9228,7 @@ theorem dlmPrintedStructure : ∀ (I : MolecularDynamics.Chapter04Review.V) (U :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:2349](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2349>)（`MD.Ch04.dlmPrintedStructure`）。
+位置：[Blueprint/Ch04.lean:2377](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2377>)（`MD.Ch04.dlmPrintedStructure`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -9246,7 +9275,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2356](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2356>)（`MD.Ch04.rigidSystemState`）。
+位置：[Blueprint/Ch04.lean:2384](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2384>)（`MD.Ch04.rigidSystemState`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9293,7 +9322,7 @@ def rigidSystemForce {N : ℕ}
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2359](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2359>)（`MD.Ch04.rigidSystemForce`）。
+位置：[Blueprint/Ch04.lean:2387](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2387>)（`MD.Ch04.rigidSystemForce`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9341,7 +9370,7 @@ def rigidSystemTorque {N : ℕ}
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2365](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2365>)（`MD.Ch04.rigidSystemTorque`）。
+位置：[Blueprint/Ch04.lean:2393](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2393>)（`MD.Ch04.rigidSystemTorque`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9390,7 +9419,7 @@ def rigidSystemKick {N : ℕ}
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2372](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2372>)（`MD.Ch04.rigidSystemKick`）。
+位置：[Blueprint/Ch04.lean:2400](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2400>)（`MD.Ch04.rigidSystemKick`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9437,7 +9466,7 @@ def rigidSystemDriftPrinted {N : ℕ} (h : ℝ) (z : rigidSystemState N) : rigid
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2380](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2380>)（`MD.Ch04.rigidSystemDriftPrinted`）。
+位置：[Blueprint/Ch04.lean:2408](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2408>)（`MD.Ch04.rigidSystemDriftPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9489,7 +9518,7 @@ def rigidSystemSpinPrinted {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04R
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2385](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2385>)（`MD.Ch04.rigidSystemSpinPrinted`）。
+位置：[Blueprint/Ch04.lean:2413](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2413>)（`MD.Ch04.rigidSystemSpinPrinted`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9549,7 +9578,7 @@ def dlmPrintedSystem {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2391](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2391>)（`MD.Ch04.dlmPrintedSystem`）。
+位置：[Blueprint/Ch04.lean:2419](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2419>)（`MD.Ch04.dlmPrintedSystem`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9595,7 +9624,7 @@ theorem systemDriftSpinCommute : ∀ N (I : Fin N → MolecularDynamics.Chapter0
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch04.lean:2398](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2398>)（`MD.Ch04.systemDriftSpinCommute`）。
+位置：[Blueprint/Ch04.lean:2426](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2426>)（`MD.Ch04.systemDriftSpinCommute`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9647,7 +9676,7 @@ def rigidSystemSymplectic {N : ℕ} (G : rigidSystemState N → rigidSystemState
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch04.lean:2406](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2406>)（`MD.Ch04.rigidSystemSymplectic`）。
+位置：[Blueprint/Ch04.lean:2434](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2434>)（`MD.Ch04.rigidSystemSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9695,7 +9724,7 @@ theorem dlmPrintedSystemStructure : ∀ N (I : Fin N → MolecularDynamics.Chapt
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:2415](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2415>)（`MD.Ch04.dlmPrintedSystemStructure`）。
+位置：[Blueprint/Ch04.lean:2443](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2443>)（`MD.Ch04.dlmPrintedSystemStructure`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -9747,7 +9776,7 @@ theorem exactPlanarRotation : ∀ (I π : MolecularDynamics.Chapter04Review.V) (
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch04.lean:2423](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2423>)（`MD.Ch04.exactPlanarRotation`）。
+位置：[Blueprint/Ch04.lean:2451](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch04.lean:2451>)（`MD.Ch04.exactPlanarRotation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 

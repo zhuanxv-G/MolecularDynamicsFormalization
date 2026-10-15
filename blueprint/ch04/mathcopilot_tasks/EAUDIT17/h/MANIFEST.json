@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-4.4-RotationSkew",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "642078db6aabfa871e7a6d4eaeb5a506b1ac5178dc9ddec5a52603335f76cbe5",
+    "Blueprint/Ch04.lean": "d39196a1f047ece834e9364ae625716ed0a039579537cfbdb7ac9399f1db8978",
+    "blueprint/ch04/ch04_source.json": "7530b3af1c5dfc912734ba452b84c188d7fb9d9e55ebf9551f0aba4137e40b3f",
+    "EAUDIT17h_materials": "35f284758009725450cc02925142044e3bbeab106f339cc599b908459b8c970b",
+    "EAUDIT17h_PAGES.pdf": "4093e1ecd0373fdc2081251c602441915303241973d394b452ce4621b02a0a08"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    190,
+    191
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "854df6472d1a29f95f9362ff2c7995200c9d00fd61c74dc102158996ba55198b",
+  "source_block_sha256": "f765d9360ae8732b4c081c24a82ff4686335f00fcf4b372c05a46e90396d50e0",
+  "source_declarations": [
+    "rotationSkew"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 154626
+}

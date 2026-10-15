@@ -1,0 +1,54 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT17",
+  "section": "4.4",
+  "source_ids": [
+    "MD-4.4-CenterMass",
+    "MD-4.4-KineticSplit",
+    "MD-4.4-RelativePositions",
+    "MD-4.4-RotationKinetic",
+    "MD-4.4-RotationSkew",
+    "MD-4.4-RotationTraceIdentity",
+    "MD-4.4-SecondMoment",
+    "MD-4.4-WaterPairPotential"
+  ],
+  "reaudit_ids": [
+    "MD-4.4-WaterPairPotential",
+    "MD-4.4-CenterMass",
+    "MD-4.4-RelativePositions",
+    "MD-4.4-KineticSplit",
+    "MD-4.4-SecondMoment",
+    "MD-4.4-RotationKinetic",
+    "MD-4.4-RotationTraceIdentity",
+    "MD-4.4-RotationSkew"
+  ],
+  "human_ids": [],
+  "lean_sha256": "d39196a1f047ece834e9364ae625716ed0a039579537cfbdb7ac9399f1db8978",
+  "source_sha256": "7530b3af1c5dfc912734ba452b84c188d7fb9d9e55ebf9551f0aba4137e40b3f",
+  "pages": [
+    189,
+    190,
+    191,
+    192,
+    193
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "d39196a1f047ece834e9364ae625716ed0a039579537cfbdb7ac9399f1db8978",
+    "log_sha256": "10d3e0079774818d03910f3b80be5f6393de33b96b07f4061d2fc050c2e59769"
+  },
+  "axiom_decl_count": 8,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT17/INDEX.md"
+}

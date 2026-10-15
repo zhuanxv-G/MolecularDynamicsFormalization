@@ -1,0 +1,73 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-4.4-KineticSplit",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "642078db6aabfa871e7a6d4eaeb5a506b1ac5178dc9ddec5a52603335f76cbe5",
+    "Blueprint/Ch04.lean": "d39196a1f047ece834e9364ae625716ed0a039579537cfbdb7ac9399f1db8978",
+    "blueprint/ch04/ch04_source.json": "7530b3af1c5dfc912734ba452b84c188d7fb9d9e55ebf9551f0aba4137e40b3f",
+    "EAUDIT17d_materials": "3aa5c84cebf532aa7849d9d0495c8f2df4c99dc007b5a730faed6720e3cc5576",
+    "EAUDIT17d_PAGES.pdf": "f1219880c00a6167d11a6be101dc034b59bc8e5b86c18b247baf701b8716a3a6"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    189
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a939851662724ed1bf949062367fada9157aea703c7865d30694ebc4f7778906",
+  "source_block_sha256": "9fce20c2806a4163b8f765b51c479041540066a6f55883d2643f3f8926b3609a",
+  "source_declarations": [
+    "kineticSplit"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.totalMass",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "53a87967f53651705d46ec49a269fb8570d470da775efebccde397615b874c4f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "totalMass",
+      "file_sha256": "d39196a1f047ece834e9364ae625716ed0a039579537cfbdb7ac9399f1db8978",
+      "excerpt_sha256": "53a87967f53651705d46ec49a269fb8570d470da775efebccde397615b874c4f"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 142304
+}

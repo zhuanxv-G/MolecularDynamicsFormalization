@@ -1,0 +1,40 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT17",
+  "section": "4.4",
+  "source_ids": [
+    "MD-4.4-CenterMass",
+    "MD-4.4-KineticSplit",
+    "MD-4.4-RelativePositions",
+    "MD-4.4-RotationKinetic",
+    "MD-4.4-RotationSkew",
+    "MD-4.4-RotationTraceIdentity",
+    "MD-4.4-SecondMoment",
+    "MD-4.4-WaterPairPotential"
+  ],
+  "reaudit_ids": [
+    "MD-4.4-WaterPairPotential",
+    "MD-4.4-CenterMass",
+    "MD-4.4-RelativePositions",
+    "MD-4.4-KineticSplit",
+    "MD-4.4-SecondMoment",
+    "MD-4.4-RotationKinetic",
+    "MD-4.4-RotationTraceIdentity",
+    "MD-4.4-RotationSkew"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "2677062c8361f7538ae88c6ae56e8819b1c368401e9549cd0743055547e55d49",
+  "lean_sha256": "d39196a1f047ece834e9364ae625716ed0a039579537cfbdb7ac9399f1db8978",
+  "source_sha256": "7530b3af1c5dfc912734ba452b84c188d7fb9d9e55ebf9551f0aba4137e40b3f",
+  "pages": [
+    189,
+    190,
+    191,
+    192,
+    193
+  ],
+  "prior_proof_blocks": {
+    "MD-4.4-RelativePositions": "def relativePositions {N : ℕ} (m : Fin N → ℝ) (q : Fin N → MolecularDynamics.Chapter04Review.V) : Fin N → MolecularDynamics.Chapter04Review.V :=\n  fun i => q i-MolecularDynamics.Chapter04Review.centerMass m q",
+    "MD-4.4-RotationKinetic": "def rotationKinetic (R dΘ : MolecularDynamics.Chapter04Review.Mat3) : ℝ := (dΘ*R*dΘᵀ).trace/2"
+  }
+}

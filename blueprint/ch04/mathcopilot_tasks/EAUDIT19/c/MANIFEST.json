@@ -1,0 +1,105 @@
+{
+  "eaudit": "EAUDIT19",
+  "source_id": "MD-4.4-DipolarPairPotential",
+  "input_sha256": {
+    "BATCH_EAUDIT19.md": "4ddef80587e4dfb52f546d6db17f95f902149d8d8957a22882b3527a15307252",
+    "Blueprint/Ch04.lean": "0c72e84c2982b43d7b8f3f368d0045dec5e29a3877d8acdee97edf951c750706",
+    "blueprint/ch04/ch04_source.json": "05706bccf28f5a7919ffb51fea6118f177bc62a1bf13b4280a33f0aa3af94d78",
+    "EAUDIT19c_materials": "574d47378f1c3ee8ea4ec09825527c4b4c46331a2d37b196f34a5d74fca8bc5a",
+    "EAUDIT19c_PAGES.pdf": "935a1ed3507e00eab07811e56576d5fb19b248cb10f16a649f6ea22792167022"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    192
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "022728f3c15b411e41df75da9a8f71fd5f0717e9b574ff8505ef66b94b832305",
+  "source_block_sha256": "2258efedc2511f1da3ff6c18527e6b5612199a52d51a8e3f78209b788dcd8831",
+  "source_declarations": [
+    "dipolarPairPotential",
+    "dipolarPairPotential_particles",
+    "dipolarSystemPotential"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.outer",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "ceb543d2b989d03587540642d9939fa02a7ac890811088bd9a863e1b3ebea77e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "dipolarPairPotential",
+      "file_sha256": "0c72e84c2982b43d7b8f3f368d0045dec5e29a3877d8acdee97edf951c750706",
+      "excerpt_sha256": "7bcebddcd8b3e698a3919fc7ab678d2765669cf32451f271cc053e9f99829863"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "dipolarPairPotential_particles",
+      "file_sha256": "0c72e84c2982b43d7b8f3f368d0045dec5e29a3877d8acdee97edf951c750706",
+      "excerpt_sha256": "393e356e22591eb2bbc40fc382e8143c7fc3b49ed837548f051d27eccf30dc4e"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "dipolarSystemPotential",
+      "file_sha256": "0c72e84c2982b43d7b8f3f368d0045dec5e29a3877d8acdee97edf951c750706",
+      "excerpt_sha256": "e99ae59b28f6e1a63dc06a68c274df52fb99c52ee8c450e1a71a435b3c61daf4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "outer",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "ceb543d2b989d03587540642d9939fa02a7ac890811088bd9a863e1b3ebea77e"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT19_review.json",
+  "total_task_bytes": 96296
+}

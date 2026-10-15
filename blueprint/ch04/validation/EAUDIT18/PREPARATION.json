@@ -1,0 +1,45 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT18",
+  "section": "4.4",
+  "source_ids": [
+    "MD-4.4-CrossMatrix",
+    "MD-4.4-CrossProduct",
+    "MD-4.4-InertiaTensor",
+    "MD-4.4-InertiaTracePrinted",
+    "MD-4.4-RigidVelocity",
+    "MD-4.4-RotationalEnergy",
+    "MD-4.4-SkewMatrix",
+    "MD-4.4-SkewRepresentation"
+  ],
+  "reaudit_ids": [
+    "MD-4.4-SkewMatrix",
+    "MD-4.4-CrossProduct",
+    "MD-4.4-SkewRepresentation",
+    "MD-4.4-CrossMatrix",
+    "MD-4.4-RigidVelocity",
+    "MD-4.4-InertiaTensor",
+    "MD-4.4-RotationalEnergy"
+  ],
+  "human_ids": [
+    "MD-4.4-InertiaTracePrinted"
+  ],
+  "old_lean_sha256": "d39196a1f047ece834e9364ae625716ed0a039579537cfbdb7ac9399f1db8978",
+  "lean_sha256": "9cf896a1fa343f97f6efb31c1a8a0f344d47ac437be4dd9dc41fa06922959fb9",
+  "source_sha256": "452589401e7b03fea6c8d6e5a60764c9583fc66b2f706929a653485da96cccf8",
+  "pages": [
+    189,
+    190,
+    191,
+    192,
+    193
+  ],
+  "prior_proof_blocks": {
+    "MD-4.4-SkewMatrix": "def skewMatrix (v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 := !![0,-v 2,v 1; v 2,0,-v 0; -v 1,v 0,0]",
+    "MD-4.4-CrossProduct": "def cross3 (u v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := ![u 1*v 2-u 2*v 1,u 2*v 0-u 0*v 2,u 0*v 1-u 1*v 0]",
+    "MD-4.4-CrossMatrix": "theorem crossMatrix :\n  ∀ u v : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.skewMatrix u *ᵥ v=MolecularDynamics.Chapter04Review.cross3 u v := by\n  intro u v\n  ext i\n  fin_cases i <;> simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring",
+    "MD-4.4-RigidVelocity": "theorem rigidVelocity : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (dΘ : MolecularDynamics.Chapter04Review.Mat3) (δ «ω» : MolecularDynamics.Chapter04Review.V) t,\n  HasDerivAt Θ dΘ t → Θ t*(Θ t)ᵀ=1 → dΘ*(Θ t)ᵀ=MolecularDynamics.Chapter04Review.skewMatrix «ω» →\n    HasDerivAt (fun s => Θ s *ᵥ δ) (MolecularDynamics.Chapter04Review.cross3 «ω» (Θ t *ᵥ δ)) t := by\n  intro Θ dΘ δ «ω» t hd ho hs\n  have he : ∀ i, HasDerivAt (fun s => ∑ j, Θ s i j*δ j) (∑ j,dΘ i j*δ j) t := by\n    intro i\n    apply HasDerivAt.fun_sum\n    intro j hj\n    exact (hasDerivAt_pi.mp (hasDerivAt_pi.mp hd i) j).mul_const (δ j)\n  have hv : HasDerivAt (fun s => Θ s *ᵥ δ) (dΘ *ᵥ δ) t := hasDerivAt_pi.mpr he\n  have hi : (Θ t)ᵀ*Θ t=1 := mul_eq_one_comm.mp ho\n  have hcross : MolecularDynamics.Chapter04Review.skewMatrix «ω» *ᵥ (Θ t *ᵥ δ)=\n      MolecularDynamics.Chapter04Review.cross3 «ω» (Θ t *ᵥ δ) := by\n    ext i\n    fin_cases i <;> simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring\n  rw [← hcross,← hs,Matrix.mulVec_mulVec,Matrix.mul_assoc,hi,Matrix.mul_one]\n  exact hv",
+    "MD-4.4-InertiaTensor": "def inertiaTensor {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 :=\n  ∑ i, m i • (MolecularDynamics.Chapter04Review.dot (δ i) (δ i) • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer (δ i))",
+    "MD-4.4-RotationalEnergy": "def rotationalEnergy (T : MolecularDynamics.Chapter04Review.Mat3) («ω» : MolecularDynamics.Chapter04Review.V) : ℝ := MolecularDynamics.Chapter04Review.dot «ω» (T *ᵥ «ω»)/2"
+  }
+}

@@ -3876,11 +3876,13 @@
     "section": "4.4",
     "printed_page": "167",
     "pdf_page": "189",
-    "statement_latex": "the interaction of two water molecules, the sets of whose charge sites are denoted by $A$ and $B$, takes the form\n\\[\\varphi_{\\rm water}=\\sum_{i\\in A}\\sum_{j\\in B}\\frac{k_1Q_iQ_j}{r_{ij}}+\\frac{k_2}{r_{OO}^{12}}-\\frac{k_3}{r_{OO}^{6}},\\]\nwhere $r_{OO}$ represents the distance between the oxygen atoms of the two molecules, and $k_1,k_2,k_3$ are positive constants.",
+    "statement_latex": "The potential energy for the interaction of a pair of such molecules, the sets of whose charge sites are denoted by $A$ and $B$, takes the form\n\\[\\varphi^{\\rm water-water}=\\sum_{i\\in A}\\sum_{j\\in B}\\frac{k_1Q_iQ_j}{r_{ij}}+\\frac{k_2}{r_{OO}^{12}}-\\frac{k_3}{r_{OO}^{6}},\\]\nwhere $r_{OO}$ represents the distance between the oxygen atoms of the two molecules, and $k_1,k_2,k_3$ are positive constants.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "A、B为两分子电荷位点集合；TIP4P每分子有三个电荷位点（两个氢核及一个ghost位点）；Q_i为位点电荷，r_{ij}为位点间距离。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.waterPairPotential",
     "reusable_proofs": [],
@@ -3888,9 +3890,23 @@
       "有限电荷位点、所有距离>0与k1,k2,k3>0是物理定义域；不将经验模型当普遍物理定律。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:01:02.573179",
+        "before_sha256": "eeb0d80682adf800ee0f7775e48f7080b97cdbcaf88bebbaa96340b14aa65442",
+        "after_sha256": "cf9c173ab5940ce267532d1af0983043efa8349c38deaab8505920944e937a39",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-TotalMass",
@@ -3925,16 +3941,29 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "物理质量正，M>0；三维向量有限和。"
+      "q_i为原子位置、m_i为其质量，M=∑_{i=1}^N m_i；q_cm为质心位置（物理适用域M>0）。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch04.centerMass",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:01:02.573339",
+        "before_sha256": "696ec4ae28f3df0e62e686245745656844b51d3cd1b2d1f9b30c9c48720237c1",
+        "after_sha256": "96a93c8455205448e64c2183900f9a1131a67d5a6e7914c585e218c26306b1ca",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-RelativePositions",
@@ -3948,16 +3977,32 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "加法关系直接由定义；加权零和另条真实证明。"
+      "δ_i=q_i-q_cm为相对质心的位置；原文同时给出∑_{i=1}^N m_i δ_i=0。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch04.relativePositions",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "extra_assumptions": [
+      "[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅q_i=q_cm+δ_i的相对位置定义；加权零和由MD-4.4-RelativeWeightedZero承担。"
+    ],
+    "statement_scope": "仅q_i=q_cm+δ_i的相对位置定义；加权零和由MD-4.4-RelativeWeightedZero承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:01:02.573449",
+        "before_sha256": "3c902d1291500e398f7b8f8ab52400d0addf2923146aa59e6e5ff12cb0dd132e",
+        "after_sha256": "6cdeddc82ce13112236a25859dfb4fe64cf7db049ba80e77e5864a83a376182c",
+        "changed_fields": [
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-RelativeWeightedZero",
@@ -3989,21 +4034,35 @@
     "section": "4.4",
     "printed_page": "167",
     "pdf_page": "189",
-    "statement_latex": "Thus the kinetic energy becomes\n\\[K=\\frac12\\sum_im_i\\|\\dot q_{\\rm cm}\\|^2+\\sum_im_i\\dot q_{\\rm cm}\\cdot\\dot\\delta_i+\\frac12\\sum_im_i\\|\\dot\\delta_i\\|^2\n=\\frac M2\\|\\dot q_{\\rm cm}\\|^2+\\frac12\\sum_im_i\\|\\dot\\delta_i\\|^2,\\]\nwhere we have used the fact that $\\sum_im_i\\delta_i\\equiv0$, hence that the time derivative also vanishes, in order to remove the middle term.",
+    "statement_latex": "Thus the kinetic energy becomes\n\\[K=\\frac12\\sum_{i=1}^Nm_i\\|\\dot q_{\\rm cm}\\|^2+\\sum_{i=1}^Nm_i\\dot q_{\\rm cm}\\cdot\\dot\\delta_i+\\frac12\\sum_{i=1}^Nm_i\\|\\dot\\delta_i\\|^2\n=\\frac M2\\|\\dot q_{\\rm cm}\\|^2+\\frac12\\sum_{i=1}^Nm_i\\|\\dot\\delta_i\\|^2,\\]\nwhere we have used the fact that $\\sum_{i=1}^Nm_i\\delta_i\\equiv0$, hence that the time derivative also vanishes, in order to remove the middle term.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "真实有限坐标Euclidean平方；只假设加权相对速度和零，不假设能量分解。"
+      "点号表示时间导数；M=∑_{i=1}^N m_i，∑m_i δ_i恒为零；原文将两项分别记为K_trans和K_rot。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch04.kineticSplit",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:01:02.573552",
+        "before_sha256": "b048541b91b64bb5a56898e8c3f13735551d3327565b17288a7ff170b375888a",
+        "after_sha256": "9933d7a2d5b8f2e8d377daa725c0f29f7cf05ba8ec7eee52409c5900d9ff0949",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-SecondMoment",
@@ -4017,16 +4076,29 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "真实参照体固定3×3对称二阶矩。"
+      "δ_i(0)为固定初始相对位置；R为其质量加权外积和所得3×3矩阵。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch04.secondMoment",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:01:02.573648",
+        "before_sha256": "2cc948859fd000bfe6d732f711e5be0802c4baef81d82e1c22dae5a45a0e7f70",
+        "after_sha256": "6e71bc2694dc649dbfa08d73f7f234eda8ca417d1ae3f10a891054daf5e3ffdf",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-RotationKinetic",
@@ -4040,16 +4112,32 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "保留1/2；有限和到trace的恒等式另列，定义不计该恒等式证明。"
+      "Θ(t)为正交3×3旋转矩阵，δ_i(t)=Θ(t)δ_i(0)；R=∑m_iδ_i(0)δ_i(0)^T。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch04.rotationKinetic",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "extra_assumptions": [
+      "[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅旋转动能trace定义；粒子有限和及两式等价由MD-4.4-RotationTraceIdentity承担。"
+    ],
+    "statement_scope": "仅旋转动能trace定义；粒子有限和及两式等价由MD-4.4-RotationTraceIdentity承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:01:02.573741",
+        "before_sha256": "a50f327325d4431e607b166f0dd4db818e1b3066ee21a54cecee3f9b35e73313",
+        "after_sha256": "b32ee2b8a088c15b80e519f5732b82089060325490f5e37c2c2bd12eb3def7e9",
+        "changed_fields": [
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-RotationTraceIdentity",
@@ -4062,15 +4150,31 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "PDF190（印刷168）：δ_i(t)=Θ(t)δ_i(0)，Θ(t)为3×3正交矩阵，δ_i(0)为固定参考相对位置，m_i为粒子质量。",
+      "R=∑_{i=1}^N m_i δ_i(0)δ_i(0)^T 为固定矩阵；Tr为矩阵迹，dot Θ为时间导数。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.rotationTraceIdentity",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:01:02.573831",
+        "before_sha256": "14e621a0b3c8914ff9050d85c5e5178df72c296cb4e94a8d0e244b246a374588",
+        "after_sha256": "9bf9000b899e0ac019ccb28ca36226b3b598139e80e4b04b9bbed10f3908fcd1",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-RotationSkew",
@@ -4083,7 +4187,9 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "PDF190–191（印刷168–169）：Θ(t)是可微正交矩阵轨道，ΘΘ^T=I为轨道约束，dot Θ为时间导数；上标T为转置。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.rotationSkew",
     "reusable_proofs": [],
@@ -4091,9 +4197,22 @@
       "真实HasDerivAt矩阵轨道与邻域正交约束；不假设导数乘积恒等式。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:01:02.573926",
+        "before_sha256": "23b23b74a43f9a663a723747346a8b7598ac71ee84693c94784575a923055bf6",
+        "after_sha256": "b0e090c93c63bb1337fd1c057812d2ae37ab06c56446f2345514416e05758f05",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-SkewMatrix",
@@ -4107,16 +4226,33 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "本条定义实际skew；任意skew有此唯一表示另条，不能省作已证明。"
+      "PDF191（印刷169）式(4.38)定义右手约定的skew(ω)；ω=(ω_1,ω_2,ω_3)^T称为空间角速度，满足dot Θ Θ^T=skew(ω)。",
+      "原句同时声称任意3×3反对称矩阵均有该表示；定义本身不构成此存在性结论的证明。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch04.skewMatrix",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "extra_assumptions": [
+      "[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维skew坐标定义；反对称表示存在性由MD-4.4-SkewRepresentation，真实旋转导数的反对称性由MD-4.4-RotationSkew承担。"
+    ],
+    "statement_scope": "仅三维skew坐标定义；反对称表示存在性由MD-4.4-SkewRepresentation，真实旋转导数的反对称性由MD-4.4-RotationSkew承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:02:01.119418",
+        "before_sha256": "4e1eba102f51a0822077b72ed6f999d392c3674f1b881a66a0db50199507df9d",
+        "after_sha256": "d11af5682c99c9c030775380912713822971338d32fcd43e657bab55eba67d48",
+        "changed_fields": [
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-CrossProduct",
@@ -4130,16 +4266,33 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "右手cross3有限坐标定义；实际导数运动学另条。"
+      "PDF190–191（印刷168–169）：δ_i(t)=Θ(t)δ_i(0)，ω为空间角速度，dot Θ Θ^T=skew(ω)；×为三维右手叉积。",
+      "PDF191式(4.39)含真实时间导数及三个等号；cross3坐标定义本身不表达完整运动学陈述。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch04.cross3",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "extra_assumptions": [
+      "[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维右手叉积坐标定义；原整条(4.39)的真实轨道导数由MD-4.4-RigidVelocity、全部代数等式由MD-4.4-CrossIdentityFull承担。"
+    ],
+    "statement_scope": "仅三维右手叉积坐标定义；原整条(4.39)的真实轨道导数由MD-4.4-RigidVelocity、全部代数等式由MD-4.4-CrossIdentityFull承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:02:01.119569",
+        "before_sha256": "bda5a9fadf4c9413b1cf304762a72fc74b049fd1a8dc5f95806925e97d11803a",
+        "after_sha256": "8ae257441b93118e895d4fb6a6492a7eff3719f25545a6e88cce1d315146ba4e",
+        "changed_fields": [
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-SkewRepresentation",
@@ -4152,15 +4305,30 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "PDF191（印刷169）式(4.38)：skew(ω)=[[0,-ω_3,ω_2],[ω_3,0,-ω_1],[-ω_2,ω_1,0]]；skew matrix指实3×3反对称矩阵。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.skewRepresentation",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:02:01.119680",
+        "before_sha256": "b31188927ec18ce036393aca55294096f6da67e8e0badfec64df05b9c90bbbd9",
+        "after_sha256": "65db48efa604bc145f598ba6000e085bda66515148b3e5a961a73d010842a86a",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-CrossMatrix",
@@ -4173,17 +4341,34 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "PDF191（印刷169）式(4.38)定义skew，式(4.39)的代数部分为skew(ω)δ_i=ω×δ_i=-skew(δ_i)ω；×为三维右手叉积。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.crossMatrix",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]本条仅首等式的子引理；原式两个等式全部保存在CrossIdentityFull，不把子引理当全部结论。"
+      "[EXTRA]本条仅首等式的子引理；原式两个等式全部保存在CrossIdentityFull，不把子引理当全部结论。",
+      "[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅skew(u)v=u×v首等式；原整条双等式由MD-4.4-CrossIdentityFull承担。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "statement_scope": "仅skew(u)v=u×v首等式；原整条双等式由MD-4.4-CrossIdentityFull承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:02:01.119785",
+        "before_sha256": "37e040d7e8fb31cc3334fadc45bda838b125111ae5d4da4e0ece118c129ec344",
+        "after_sha256": "0574a3ae5bf5e7154065aff4b156ccc25a7750a19e3311d0c9264f7e7bfb3ca0",
+        "changed_fields": [
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-RigidVelocity",
@@ -4196,17 +4381,35 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "PDF190（印刷168）：δ_i(t)=Θ(t)δ_i(0)，δ_i(0)固定，Θ为正交矩阵轨道。",
+      "PDF191（印刷169）：ω为空间角速度，dot Θ Θ^T=skew(ω)，式(4.39)同时给出导数、skew乘积、叉积和负的反向skew乘积。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.rigidVelocity",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "给定真实正交旋转轨道和定义角速度的skew关系；不是把速度公式当假设。"
+      "给定真实正交旋转轨道和定义角速度的skew关系；不是把速度公式当假设。",
+      "[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅真实旋转轨道的导数等于ω×δ；原段落全部代数等式由MD-4.4-CrossIdentityFull承担。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "statement_scope": "仅真实旋转轨道的导数等于ω×δ；原段落全部代数等式由MD-4.4-CrossIdentityFull承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:02:01.119888",
+        "before_sha256": "747e018f1dffeaaedf7e1398b66e9001a417eed816fa89b27b0d6b3d45a8c08c",
+        "after_sha256": "47861c6e86f7028af9a9c69b8ef431374dcd280fa2353043ffdb72ff34993eb2",
+        "changed_fields": [
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-InertiaTensor",
@@ -4220,16 +4423,34 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "实际Euclidean有限和定义；skew²等价另条，动能标量定义另条。"
+      "PDF190–191（印刷168–169）：δ_i(0)为固定参考相对位置，m_i为质量；ω_b=Θ^Tω称为体角速度。",
+      "PDF191（印刷169）：T=-∑_i m_i skew(δ_i(0))^2；矩阵平方指矩阵乘法，I为3×3单位矩阵，||δ_i(0)||为欧氏范数，T称为惯性张量。",
+      "所引原文同时包含K_rot=(1/2)ω_b^T T ω_b及T的两种表达式；仅定义有限和不表达这些等价结论。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch04.inertiaTensor",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "extra_assumptions": [
+      "[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅T的欧氏有限和定义；skew平方关系由MD-4.4-InertiaSkewIdentity，质量旋转动能及ω_b关系由MD-4.4-RotationBodyEnergy承担。"
+    ],
+    "statement_scope": "仅T的欧氏有限和定义；skew平方关系由MD-4.4-InertiaSkewIdentity，质量旋转动能及ω_b关系由MD-4.4-RotationBodyEnergy承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:02:01.119994",
+        "before_sha256": "6435fa3bb2e74c1a706a5dc6d71d066451f09fc4630138887008784edf01a371",
+        "after_sha256": "bc773cefc86fe2f10a58360344c6b8f1a31bf2e6546ab71772c13f9457657044",
+        "changed_fields": [
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-CrossIdentityFull",
@@ -4265,15 +4486,34 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "ω为空间角速度；Θ为刚体旋转矩阵；ω_b=Θᵀω 为体坐标角速度。",
+      "T 为参考构型 δ_i(0) 的惯性张量；K_rot=1/2 ω_bᵀTω_b。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.rotationalEnergy",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "extra_assumptions": [
+      "[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅体角速度ω_b的二次型能量定义；ω_b=Θᵀω及真实旋转粒子能量由MD-4.4-RotationBodyEnergy承担。"
+    ],
+    "statement_scope": "仅体角速度ω_b的二次型能量定义；ω_b=Θᵀω及真实旋转粒子能量由MD-4.4-RotationBodyEnergy承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:02:01.120098",
+        "before_sha256": "ddf04a9d8e70553840537662e0030f0de2a86b49a02aac315ddd6d5b46bdd4bb",
+        "after_sha256": "ff78240377d7b87381494a831be5b96a2b5fdad333e92aedce92d4a895b851d9",
+        "changed_fields": [
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-InertiaSkewIdentity",
@@ -4303,7 +4543,7 @@
     "section": "4.4",
     "printed_page": "169",
     "pdf_page": "191",
-    "statement_latex": "This matrix is closely related to the matrix $R$:\n\\[R=\\sum_im_i\\delta_i\\delta_i^T=\\sum_im_i\\|\\delta_i\\|^2I-T=(T_{11}+T_{22}+T_{33})I-T.\\tag{4.40}\\]",
+    "statement_latex": "This matrix is closely related to the matrix $R$:\n\\[R=\\sum_{i=1}^Nm_i\\delta_i\\delta_i^T=\\sum_{i=1}^Nm_i\\|\\delta_i\\|^2I-T=(T_{11}+T_{22}+T_{33})I-T.\\tag{4.40}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -4318,9 +4558,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:02:01.120195",
+        "before_sha256": "ca0ce2d9ebcc60123b2b30f8b28a8fc0a8cf65155c2673a429045e0a2d2a240a",
+        "after_sha256": "8df810000563cf3215ac236fff5e7bc4e81bfb81bc761564691cf4928a25e864",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-InertiaTraceCorrected",
@@ -4329,11 +4582,14 @@
     "section": "4.4",
     "printed_page": "169",
     "pdf_page": "191",
-    "statement_latex": "$R=\\sum_im_i\\delta_i\\delta_i^T=\\sum_im_i\\|\\delta_i\\|^2I-T$.",
+    "statement_latex": "$R=\\sum_{i=1}^Nm_i\\delta_i\\delta_i^T=\\sum_{i=1}^Nm_i\\|\\delta_i\\|^2I-T$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "本条摘录 (4.40) 正确前半链；原书末式 trace(T)I−T 保留在 InertiaTracePrinted。",
+      "Lean 中 R=(trace(T)/2)I−T 是由惯性张量定义得到的明确纠正版；/2 不在原印刷公式中。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.inertiaTraceCorrected",
     "reusable_proofs": [],
@@ -4341,9 +4597,23 @@
       "[EXTRA]纠正(4.40)末式系数为trace(T)/2；不覆盖原印刷条目。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:03:23.691939",
+        "before_sha256": "50f9c7365a8105beec96f8011b4a6ed34fedde3bd8b89ab4b4a22b1e348e17f7",
+        "after_sha256": "b756bd080fa4ebc4221cef1f03f6455bd2e45f7f4c02f37ef0176151002f3c65",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-DipolarHamiltonian",
@@ -4356,17 +4626,35 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "原文假设 identical ellipsoids；共同主惯性矩为 I₁,I₂,I₃。",
+      "π_i 为体坐标角动量，p_i 为平移动量，q_i 为位置；μ_i 为单位偶极方向，‖μ_i‖≡1。",
+      "PDF192给出 K_rot=1/2∑_{i=1}^N(π_{i,1}²/I₁+π_{i,2}²/I₂+π_{i,3}²/I₃)。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.dipolarHamiltonian",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "所有质量/主惯性矩>0，单位偶极方向为物理约束；N有限。"
+      "所有质量/主惯性矩>0，单位偶极方向为物理约束；N有限。",
+      "[EXTRA] 真实物理接口补质量/主惯性正性和每个μ单位长度；πbody明确为体坐标角动量，数值公式不变。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:03:23.692021",
+        "before_sha256": "97df381d0c7a7802c6cdab064b3fae18c099e4aad2df0c5721f0ebd5a5cbb990",
+        "after_sha256": "1ad0912255c5857d17d7ee5b08a55702777f60b79e5d761a96a8beb6e1784a81",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-DipolarPairPotential",
@@ -4375,21 +4663,39 @@
     "section": "4.4",
     "printed_page": "170",
     "pdf_page": "192",
-    "statement_latex": "The total dipole-dipole interaction potential then takes the form $\\varphi^{\\rm dip}_{ij}=\\varphi^{\\rm LJ}(r_{ij})+\\mu_i^TL(q_{ij})\\mu_j$, with $U$ given as the sum of these over pairs. The $3\\times3$ matrix $L$ is given by\n\\[L(q_{ij})=\\frac1{r_{ij}^3}I-\\frac3{r_{ij}^5}q_{ij}q_{ij}^T,\\qquad q_{ij}=q_i-q_j.\\]",
+    "statement_latex": "The total dipole-dipole interaction potential then takes the form $\\varphi^{\\rm dip}_{ij}=\\varphi_{\\rm LJ}(r_{ij})+\\mu_i^TL(q_{ij})\\mu_j$, with $U$ given as the sum of these over pairs. The $3\\times3$ matrix $L$ is given by\n\\[L(q_{ij})=\\frac1{r_{ij}^3}I-\\frac3{r_{ij}^5}q_{ij}q_{ij}^T,\\qquad q_{ij}=q_i-q_j.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "PDF 原式 L 的首项为标量 1/r_{ij}³；因 L 为3×3矩阵，该项表示 (1/r_{ij}³)I，JSON 显式补出 I。",
+      "q_{ij}=q_i−q_j；r_{ij} 为其欧氏长度；U 为非重复粒子对的相互作用和。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.dipolarPairPotential",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "r=Euclidean距离>0；本条实际pair函数，不声称经验模型准确性。"
+      "r=Euclidean距离>0；本条实际pair函数，不声称经验模型准确性。",
+      "[EXTRA] 保留代数核；新增实际非碰撞粒子对q_i−q_j、r_ij=√(r·r)实例和仅i<j的完整系统势能求和，避免任意r与q脱钩。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:03:23.692073",
+        "before_sha256": "32c83b3f8981a17a7b38b32c808e9f65f0ef51976a736d0e4bf7d388eb65daa3",
+        "after_sha256": "5fcf69e246485b0fb85613e22771a63f2840b213e88c0565e11161800ce9c997",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-DipolarRotationalPrinted",
@@ -4414,8 +4720,19 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:03:23.692114",
+        "before_sha256": "6e75f4628df264058026165b0822f431d1ea7dd514a83ec5ebd3ef1b74542e86",
+        "after_sha256": "8892c18f174dad476a4be5e41f3271d05ec1c7d8a48765b42d1ae87cef67cc63",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-RigidHamiltonian",
@@ -4428,17 +4745,34 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "M是刚体总质量；q_cm、p_cm为质心位置和动量；Θ、Π是3×3矩阵，Θ表示方向，Π为其共轭动量。",
+      "R=Σ_i m_i δ_i(0)δ_i(0)^T 是固定的二阶矩矩阵；U依赖质心位置及刚体方向。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.rigidHamiltonian",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "M>0、R非奇异是物理资格；正交约束单列在真实ODE关系中；inverse定义不计存在理论。"
+      "M>0、R非奇异是物理资格；正交约束单列在真实ODE关系中；inverse定义不计存在理论。",
+      "[EXTRA] 主接口增加M>0、R可逆及ΘᵀΘ=I的实际受约束域，公式不再将任意矩阵姿态当刚体状态。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:03:23.692155",
+        "before_sha256": "5b4d296d4ec5b5be43f9daa6dccba32eba16b8b2d9aba420b10109e5cfc1b685",
+        "after_sha256": "deb2d942164212529ce06422826e81280efd430536d1a07763a18a317cc4d6c3",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-SecondMomentDiagonal",
@@ -4451,15 +4785,30 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "R=Σ_{i=1}^N m_i δ_i(0)δ_i(0)^T；δ_i(0)是固定参考构形中相对质心的位置向量。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.secondMomentDiagonal",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:03:23.692195",
+        "before_sha256": "e256e48c6794596e47fb9487e9dafabe884036303598675055160fa69ba1e4b2",
+        "after_sha256": "b639b4ac75e5cf5b184a24f13115dfd16ae358b24b9f7a6bf2a50e23895819be",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-RotationBodyEnergy",
@@ -4472,7 +4821,10 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "δ_i(t)=Θ(t)δ_i(0)，Θ为正交旋转矩阵；空间角速度满足 dotδ_i=ω×δ_i。",
+      "ω_b=Θ^Tω；T=Σ_i m_i[||δ_i(0)||²I−δ_i(0)δ_i(0)^T]，为体坐标系中的惯性张量。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.rotationBodyEnergy",
     "reusable_proofs": [],
@@ -4480,9 +4832,22 @@
       "真实SO3旋转；不把动能等式/叉积协变当假设。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:03:23.692233",
+        "before_sha256": "732932102fd946afad60ee218b6b7bf18cbf1fa52d62a71e79532ce4b3c41ed6",
+        "after_sha256": "2feeb662431e596d6d163d7c121128d4f95bcc69661f7578f16de42570c263ce",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-DipolarConstraint",
@@ -4496,16 +4861,29 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "Euclidean单位平方定义，与Pi最大范数不同。"
+      "μ_k为第k个刚体偶极子的单位方向向量；||·||为三维欧氏范数，其模长恒为1。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch04.dipolarConstraint",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:03:23.692272",
+        "before_sha256": "1ab37c138c963cdbe68679ec47089350159d38c6a150b7052be6099f824f51cd",
+        "after_sha256": "99c094e96c92bee58bb8eb182759248f83047c4e8dc5ac5a707fc342a2c7c922",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-DipolarPotentialSum",
@@ -4514,11 +4892,15 @@
     "section": "4.4",
     "printed_page": "170",
     "pdf_page": "192",
-    "statement_latex": "$\\varphi^{\\rm dip}_{ij}=\\varphi^{\\rm LJ}(r_{ij})+\\mu_i^TL(q_{ij})\\mu_j$, with $U$ given as the sum of these over pairs.",
+    "statement_latex": "$\\varphi^{\\rm dip}_{ij}=\\varphi_{\\rm LJ}(r_{ij})+\\mu_i^TL(q_{ij})\\mu_j$, with $U$ given as the sum of these over pairs.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "q_ij=q_i−q_j，r_ij=||q_ij||为欧氏距离；μ_i、μ_j为单位偶极方向。",
+      "原PDF写 L(q_ij)=1/r_ij³−(3/r_ij⁵)q_ij q_ij^T，并称L为3×3矩阵；首项按标量乘单位矩阵理解，原式未显式印I。",
+      "U是所有不同粒子无序配对的相互作用势之和；φ_LJ为Lennard–Jones径向势，使用r_ij>0的无重叠构形。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.dipolarPotentialSum",
     "reusable_proofs": [],
@@ -4526,9 +4908,23 @@
       "对无重叠位置，真实Euclidean距离sqrtΣ(qi−qj)²及有限无序pair和；经验势定义，不计模拟正确性。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT20_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:04:11.964101",
+        "before_sha256": "0b9ca44fa171ddd8d3ac4cff0327df07d663d3132e416517af5ee3f8f86a78f7",
+        "after_sha256": "311814d1b2f52872358595211eeb815243a20426bccc51a2a3edd76c6b2674ab",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-RotationTrajectory",
@@ -4537,19 +4933,38 @@
     "section": "4.4",
     "printed_page": "168",
     "pdf_page": "190",
-    "statement_latex": "$\\delta_i(t)=\\Theta(t)\\delta_i(0)$, see Fig. 4.7, thus we have $\\dot\\delta_i=\\dot\\Theta\\delta_i(0)$.",
+    "statement_latex": "$\\delta_i(t)=\\Theta(t)\\delta_i(0)$, see Fig. 4.7, thus we have\n\\[K_{\\rm rot}=\\frac12\\sum_{i=1}^N m_i\\delta_i(0)^T\\dot\\Theta^T\\dot\\Theta\\delta_i(0).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "δ_i(t)为相对质心的位置，δ_i(0)为参考构形；Θ(t)为3×3正交方向矩阵，m_i为各粒子质量，dotΘ为时间导数。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.rotationTrajectory",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "extra_assumptions": [
+      "[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅δ_i(t)=Θ(t)δ_i(0)的真实导数辅助；原段落旋转动能有限和及trace等价由MD-4.4-RotationTraceIdentity承担。"
+    ],
+    "statement_scope": "仅δ_i(t)=Θ(t)δ_i(0)的真实导数辅助；原段落旋转动能有限和及trace等价由MD-4.4-RotationTraceIdentity承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT20_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:04:11.964235",
+        "before_sha256": "7891f694c7c894b513cb1c2d42c2248951f436beba14c299ef1086a8bb5fa65f",
+        "after_sha256": "cb836426bafa8d6c344a9da79b2f35bcb7a0d4e8aeca77236a0e334cb7553b7b",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-RotationDerivativePrinted",
@@ -4562,7 +4977,10 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "δ_i=δ_i(t)=Θ(t)δ_i(0)，dotδ_i为其时间导数；Θ为正交矩阵。",
+      "原书最后一项印为 dotΘΘ^T dotδ_i；从前一项代换所得应为 dotΘΘ^T δ_i。此为显式勘误说明，statement_latex 保留印刷错误。"
+    ],
     "issues": [
       {
         "code": "ERRATUM?",
@@ -4573,9 +4991,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT20_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:04:11.964336",
+        "before_sha256": "ee516986b0a7c10dac1af1db6f664d007133ebacc49d322558b6c90afc0c00ed",
+        "after_sha256": "7b6374f26e3bb5f5ca035568d98f8904a0ec54c71db0d8654c4fd800ada38b75",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4-RigidMatrixRelation",
@@ -4589,16 +5020,33 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "真实Fréchet矩阵元素偏导，完整轨道关系；不计解存在证明。"
+      "q_cm、p_cm为质心位置和动量，M为总质量；Θ、Π为方向矩阵及共轭动量，R为固定二阶矩矩阵。",
+      "Λ为执行Θ^TΘ=I约束的矩阵拉格朗日乘子；∇_q U和∇_Θ U分别为位置梯度和按矩阵元素取偏导的梯度。",
+      "原书点态时间导数的轨道解释以可微势、M>0及可逆R的物理构形为背景；原文未在此另作解存在性断言。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch04.rigidMatrixRelation",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 增加开放时间域、势能联合经典可微、M>0及R可逆，使within导数等于真实时间导数，排除单点域伪运动；姿态正交约束仍逐t保留。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT20_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T19:04:11.964438",
+        "before_sha256": "6840048b7b6a6dd4bbcc5ddc82f27f016d7b1caa0d99fb83dd68636e695ab797",
+        "after_sha256": "54f29bfb05bbdf711ecac2efbb9aaa66cfb47f6e81db064901af6572f5184c47",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.4.1-AngularMomentum",

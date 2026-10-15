@@ -1765,7 +1765,8 @@ def totalMass {N : ℕ} (m : Fin N → ℝ) : ℝ := ∑ i, m i
 def centerMass {N : ℕ} (m : Fin N → ℝ) (q : Fin N → MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V :=
   (MolecularDynamics.Chapter04Review.totalMass m)⁻¹ • ∑ i, m i • q i
 
-/-- source_id: MD-4.4-RelativePositions · definition · §4.4 · 印刷p.167 / PDFp.189 -/
+/-- source_id: MD-4.4-RelativePositions · definition · §4.4 · 印刷p.167 / PDFp.189 
+[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅q_i=q_cm+δ_i的相对位置定义；加权零和由MD-4.4-RelativeWeightedZero承担。 -/
 def relativePositions {N : ℕ} (m : Fin N → ℝ) (q : Fin N → MolecularDynamics.Chapter04Review.V) : Fin N → MolecularDynamics.Chapter04Review.V :=
   fun i => q i-MolecularDynamics.Chapter04Review.centerMass m q
 
@@ -1815,7 +1816,8 @@ theorem kineticSplit :
 /-- source_id: MD-4.4-SecondMoment · definition · §4.4 · 印刷p.168 / PDFp.190 -/
 def secondMoment {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 := ∑ i, m i • MolecularDynamics.Chapter04Review.outer (δ i)
 
-/-- source_id: MD-4.4-RotationKinetic · definition · §4.4 · 印刷p.168 / PDFp.190 -/
+/-- source_id: MD-4.4-RotationKinetic · definition · §4.4 · 印刷p.168 / PDFp.190 
+[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅旋转动能trace定义；粒子有限和及两式等价由MD-4.4-RotationTraceIdentity承担。 -/
 def rotationKinetic (R dΘ : MolecularDynamics.Chapter04Review.Mat3) : ℝ := (dΘ*R*dΘᵀ).trace/2
 
 /-- source_id: MD-4.4-RotationTraceIdentity · unnumbered_claim · §4.4 · 印刷p.168 / PDFp.190 -/
@@ -1854,10 +1856,12 @@ theorem rotationSkew :
   simp [Matrix.mul_apply,Matrix.transpose_apply,Fin.sum_univ_three]
   nlinarith [h]
 
-/-- source_id: MD-4.4-SkewMatrix · (4.38) · §4.4 · 印刷p.169 / PDFp.191 -/
+/-- source_id: MD-4.4-SkewMatrix · (4.38) · §4.4 · 印刷p.169 / PDFp.191 
+[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维skew坐标定义；反对称表示存在性由MD-4.4-SkewRepresentation，真实旋转导数的反对称性由MD-4.4-RotationSkew承担。 -/
 def skewMatrix (v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 := !![0,-v 2,v 1; v 2,0,-v 0; -v 1,v 0,0]
 
-/-- source_id: MD-4.4-CrossProduct · definition · §4.4 · 印刷p.169 / PDFp.191 -/
+/-- source_id: MD-4.4-CrossProduct · definition · §4.4 · 印刷p.169 / PDFp.191 
+[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维右手叉积坐标定义；原整条(4.39)的真实轨道导数由MD-4.4-RigidVelocity、全部代数等式由MD-4.4-CrossIdentityFull承担。 -/
 def cross3 (u v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := ![u 1*v 2-u 2*v 1,u 2*v 0-u 0*v 2,u 0*v 1-u 1*v 0]
 
 /-- source_id: MD-4.4-SkewRepresentation · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191 -/
@@ -1877,7 +1881,8 @@ theorem skewRepresentation : ∀ A : MolecularDynamics.Chapter04Review.Mat3, A�
     · simpa [MolecularDynamics.Chapter04Review.skewMatrix] using congrArg (fun B : MolecularDynamics.Chapter04Review.Mat3 => B 1 0) hw
 
 /-- source_id: MD-4.4-CrossMatrix · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191
-[EXTRA] [EXTRA]本条仅首等式的子引理；原式两个等式全部保存在CrossIdentityFull，不把子引理当全部结论。 -/
+[EXTRA] [EXTRA]本条仅首等式的子引理；原式两个等式全部保存在CrossIdentityFull，不把子引理当全部结论。 
+[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅skew(u)v=u×v首等式；原整条双等式由MD-4.4-CrossIdentityFull承担。 -/
 theorem crossMatrix :
   ∀ u v : MolecularDynamics.Chapter04Review.V, MolecularDynamics.Chapter04Review.skewMatrix u *ᵥ v=MolecularDynamics.Chapter04Review.cross3 u v := by
   intro u v
@@ -1885,7 +1890,8 @@ theorem crossMatrix :
   fin_cases i <;> simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
 
 /-- source_id: MD-4.4-RigidVelocity · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191
-[EXTRA] 给定真实正交旋转轨道和定义角速度的skew关系；不是把速度公式当假设。 -/
+[EXTRA] 给定真实正交旋转轨道和定义角速度的skew关系；不是把速度公式当假设。 
+[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅真实旋转轨道的导数等于ω×δ；原段落全部代数等式由MD-4.4-CrossIdentityFull承担。 -/
 theorem rigidVelocity : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (dΘ : MolecularDynamics.Chapter04Review.Mat3) (δ «ω» : MolecularDynamics.Chapter04Review.V) t,
   HasDerivAt Θ dΘ t → Θ t*(Θ t)ᵀ=1 → dΘ*(Θ t)ᵀ=MolecularDynamics.Chapter04Review.skewMatrix «ω» →
     HasDerivAt (fun s => Θ s *ᵥ δ) (MolecularDynamics.Chapter04Review.cross3 «ω» (Θ t *ᵥ δ)) t := by
@@ -1904,7 +1910,8 @@ theorem rigidVelocity : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3
   rw [← hcross,← hs,Matrix.mulVec_mulVec,Matrix.mul_assoc,hi,Matrix.mul_one]
   exact hv
 
-/-- source_id: MD-4.4-InertiaTensor · definition · §4.4 · 印刷p.169 / PDFp.191 -/
+/-- source_id: MD-4.4-InertiaTensor · definition · §4.4 · 印刷p.169 / PDFp.191 
+[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅T的欧氏有限和定义；skew平方关系由MD-4.4-InertiaSkewIdentity，质量旋转动能及ω_b关系由MD-4.4-RotationBodyEnergy承担。 -/
 def inertiaTensor {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 :=
   ∑ i, m i • (MolecularDynamics.Chapter04Review.dot (δ i) (δ i) • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer (δ i))
 
@@ -1916,8 +1923,9 @@ theorem crossIdentityFull : ∀ u v : MolecularDynamics.Chapter04Review.V,
   constructor <;> ext i <;> fin_cases i <;>
     simp [MolecularDynamics.Chapter04Review.skewMatrix,MolecularDynamics.Chapter04Review.cross3,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
 
-/-- source_id: MD-4.4-RotationalEnergy · definition · §4.4 · 印刷p.169 / PDFp.191 -/
-def rotationalEnergy (T : MolecularDynamics.Chapter04Review.Mat3) («ω» : MolecularDynamics.Chapter04Review.V) : ℝ := MolecularDynamics.Chapter04Review.dot «ω» (T *ᵥ «ω»)/2
+/-- source_id: MD-4.4-RotationalEnergy · definition · §4.4 · 印刷p.169 / PDFp.191 
+[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅体角速度ω_b的二次型能量定义；ω_b=Θᵀω及真实旋转粒子能量由MD-4.4-RotationBodyEnergy承担。 -/
+def rotationalEnergy (T : MolecularDynamics.Chapter04Review.Mat3) (ωb : MolecularDynamics.Chapter04Review.V) : ℝ := MolecularDynamics.Chapter04Review.dot ωb (T *ᵥ ωb)/2
 
 /-- source_id: MD-4.4-InertiaSkewIdentity · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191 -/
 theorem inertiaSkewIdentity : ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V),
@@ -1966,16 +1974,32 @@ theorem inertiaTraceCorrected :
   ring
 
 /-- source_id: MD-4.4-DipolarHamiltonian · Example 4.1 · §4.4 · 印刷p.169–170 / PDFp.191–192
-[EXTRA] 所有质量/主惯性矩>0，单位偶极方向为物理约束；N有限。 -/
-def dipolarHamiltonian {N : ℕ} (mass : Fin N → ℝ) (inertia : MolecularDynamics.Chapter04Review.V)
+[EXTRA] 所有质量/主惯性矩>0，单位偶极方向为物理约束；N有限。 
+[EXTRA] 真实物理接口补质量/主惯性正性和每个μ单位长度；πbody明确为体坐标角动量，数值公式不变。 -/
+def dipolarHamiltonian {N : ℕ} (mass : Fin N → ℝ) (inertia : MolecularDynamics.Chapter04Review.V) (_hm : ∀ i, 0 < mass i) (_hI : ∀ j, 0 < inertia j)
     (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.V) → ℝ)
-    (q p μ π : Fin N → MolecularDynamics.Chapter04Review.V) : ℝ :=
-  (∑ i, ∑ j, (π i j)^2/(2*inertia j))+(∑ i, MolecularDynamics.Chapter04Review.dot (p i) (p i)/(2*mass i))+U q μ
+    (q p μ πbody : Fin N → MolecularDynamics.Chapter04Review.V)
+    (_hμ : ∀ i, MolecularDynamics.Chapter04Review.dot (μ i) (μ i)=1) : ℝ :=
+  (∑ i, ∑ j, (πbody i j)^2/(2*inertia j))+(∑ i, MolecularDynamics.Chapter04Review.dot (p i) (p i)/(2*mass i))+U q μ
 
 /-- source_id: MD-4.4-DipolarPairPotential · definition · §4.4 · 印刷p.170 / PDFp.192
-[EXTRA] r=Euclidean距离>0；本条实际pair函数，不声称经验模型准确性。 -/
+[EXTRA] r=Euclidean距离>0；本条实际pair函数，不声称经验模型准确性。 
+[EXTRA] 保留代数核；新增实际非碰撞粒子对q_i−q_j、r_ij=√(r·r)实例和仅i<j的完整系统势能求和，避免任意r与q脱钩。 -/
 def dipolarPairPotential (lj : ℝ → ℝ) (r : ℝ) (q μ ν : MolecularDynamics.Chapter04Review.V) : ℝ :=
   lj r+MolecularDynamics.Chapter04Review.dot μ (((r^3)⁻¹ • (1 : MolecularDynamics.Chapter04Review.Mat3)-(3/r^5) • MolecularDynamics.Chapter04Review.outer q) *ᵥ ν)
+
+def dipolarPairPotential_particles {N : ℕ} (lj : ℝ → ℝ)
+    (q μ : Fin N → MolecularDynamics.Chapter04Review.V) (i j : Fin N)
+    (_hij : i ≠ j) (_hnoncollision : q i ≠ q j) : ℝ :=
+  let r := q i-q j
+  dipolarPairPotential lj (Real.sqrt (MolecularDynamics.Chapter04Review.dot r r)) r (μ i) (μ j)
+
+def dipolarSystemPotential {N : ℕ} (lj : ℝ → ℝ)
+    (q μ : Fin N → MolecularDynamics.Chapter04Review.V)
+    (_hnoncollision : ∀ i j, i ≠ j → q i ≠ q j) : ℝ :=
+  ∑ i, ∑ j ∈ Finset.univ.filter (fun j ↦ i<j),
+    let r := q i-q j
+    dipolarPairPotential lj (Real.sqrt (MolecularDynamics.Chapter04Review.dot r r)) r (μ i) (μ j)
 
 /-- source_id: MD-4.4-DipolarRotationalPrinted · definition · §4.4 · 印刷p.170 / PDFp.192
 [ERRATUM?] p170 Ex4.1 trace动能印刷少1/2；R与T关系亦引用疑误式。 -/
@@ -1983,8 +2007,9 @@ def dipolarRotationalPrinted {N : ℕ} (R : MolecularDynamics.Chapter04Review.Ma
   ∑ i, (dΘ i*R*(dΘ i)ᵀ).trace
 
 /-- source_id: MD-4.4-RigidHamiltonian · definition · §4.4 · 印刷p.170 / PDFp.192
-[EXTRA] M>0、R非奇异是物理资格；正交约束单列在真实ODE关系中；inverse定义不计存在理论。 -/
-def rigidHamiltonian (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (q p : MolecularDynamics.Chapter04Review.V) (Θ mom : MolecularDynamics.Chapter04Review.Mat3) : ℝ :=
+[EXTRA] M>0、R非奇异是物理资格；正交约束单列在真实ODE关系中；inverse定义不计存在理论。 
+[EXTRA] 主接口增加M>0、R可逆及ΘᵀΘ=I的实际受约束域，公式不再将任意矩阵姿态当刚体状态。 -/
+def rigidHamiltonian (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (_hM : 0 < M) (_hR : R.det ≠ 0) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (q p : MolecularDynamics.Chapter04Review.V) (Θ mom : MolecularDynamics.Chapter04Review.Mat3) (_hΘ : Θᵀ*Θ=1) : ℝ :=
   MolecularDynamics.Chapter04Review.dot p p/(2*M)+(mom*R⁻¹*momᵀ).trace/2+U q Θ
 
 /-- source_id: MD-4.4-SecondMomentDiagonal · unnumbered_claim · §4.4 · 印刷p.168 / PDFp.190 -/
@@ -2065,7 +2090,8 @@ def dipolarPotentialSum {N : ℕ} (lj : ℝ → ℝ) (q μ : Fin N → Molecular
   ∑ i, ∑ j, if i < j then
     dipolarPairPotential lj (Real.sqrt (MolecularDynamics.Chapter04Review.dot (q i-q j) (q i-q j))) (q i-q j) (μ i) (μ j) else 0
 
-/-- source_id: MD-4.4-RotationTrajectory · unnumbered_claim · §4.4 · 印刷p.168 / PDFp.190 -/
+/-- source_id: MD-4.4-RotationTrajectory · unnumbered_claim · §4.4 · 印刷p.168 / PDFp.190 
+[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅δ_i(t)=Θ(t)δ_i(0)的真实导数辅助；原段落旋转动能有限和及trace等价由MD-4.4-RotationTraceIdentity承担。 -/
 theorem rotationTrajectory : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (d : MolecularDynamics.Chapter04Review.Mat3) (δ : MolecularDynamics.Chapter04Review.V) t,
   HasDerivAt Θ d t → HasDerivAt (fun s => Θ s *ᵥ δ) (d *ᵥ δ) t := by
   intro Θ d δ t hd
@@ -2083,9 +2109,11 @@ theorem rotationDerivativePrinted : ∀ (Θ : ℝ → MolecularDynamics.Chapter0
     d *ᵥ δ=(d*(Θ t)ᵀ) *ᵥ (d *ᵥ δ) := by
   sorry
 
-/-- source_id: MD-4.4-RigidMatrixRelation · definition · §4.4 · 印刷p.171 / PDFp.193 -/
-def rigidMatrixRelation (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ)
-    (q p : ℝ → MolecularDynamics.Chapter04Review.V) (Θ mom Λ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (I : Set ℝ) : Prop :=
+/-- source_id: MD-4.4-RigidMatrixRelation · definition · §4.4 · 印刷p.171 / PDFp.193 
+[EXTRA] 增加开放时间域、势能联合经典可微、M>0及R可逆，使within导数等于真实时间导数，排除单点域伪运动；姿态正交约束仍逐t保留。 -/
+def rigidMatrixRelation (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (_hM : 0 < M) (_hR : R.det ≠ 0) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter04Review.V) (Θ mom Λ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (I : Set ℝ) (_hI : IsOpen I)
+    (_hU : Differentiable ℝ (fun z : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 ↦ U z.1 z.2)) : Prop :=
   ∀ t ∈ I, HasDerivWithinAt q (M⁻¹ • p t) I t ∧ HasDerivWithinAt Θ (mom t*R⁻¹) I t ∧
     HasDerivWithinAt p (-MolecularDynamics.Chapter04Review.grad (fun x => U x (Θ t)) (q t)) I t ∧
     HasDerivWithinAt mom (-MolecularDynamics.Chapter04Review.matrixGrad (U (q t)) (Θ t)-Θ t*Λ t) I t ∧ (Θ t)ᵀ*Θ t=1
@@ -2601,6 +2629,8 @@ end MD.Ch04
 #print axioms MD.Ch04.inertiaTraceCorrected
 #print axioms MD.Ch04.dipolarHamiltonian
 #print axioms MD.Ch04.dipolarPairPotential
+#print axioms MD.Ch04.dipolarPairPotential_particles
+#print axioms MD.Ch04.dipolarSystemPotential
 #print axioms MD.Ch04.dipolarRotationalPrinted
 #print axioms MD.Ch04.rigidHamiltonian
 #print axioms MD.Ch04.secondMomentDiagonal

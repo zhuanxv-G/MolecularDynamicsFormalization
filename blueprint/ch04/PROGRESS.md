@@ -117,38 +117,38 @@
 | MD-4.3.6-SETTLE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.3.6-LINCSInverse | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT16 | definition / self-contained |
 | MD-4.3.6-LINCSConvergence | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT16 | placeholder / incomplete；缺Banach代数Neumann级数与有限维矩阵逆/逐元素拓扑之间的接口桥接；保留真实有限和逆矩阵极限，不新建一般逆算子理论。 |
-| MD-4.4-WaterPairPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.4-WaterPairPotential | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
 | MD-4.4-TotalMass | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4-CenterMass | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4-RelativePositions | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.4-CenterMass | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
+| MD-4.4-RelativePositions | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
 | MD-4.4-RelativeWeightedZero | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-KineticSplit | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-SecondMoment | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4-RotationKinetic | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4-RotationTraceIdentity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-RotationSkew | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-SkewMatrix | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4-CrossProduct | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4-SkewRepresentation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-CrossMatrix | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-RigidVelocity | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-InertiaTensor | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.4-KineticSplit | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | local_proof / self-contained |
+| MD-4.4-SecondMoment | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
+| MD-4.4-RotationKinetic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
+| MD-4.4-RotationTraceIdentity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | local_proof / self-contained |
+| MD-4.4-RotationSkew | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | local_proof / self-contained |
+| MD-4.4-SkewMatrix | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | definition / self-contained |
+| MD-4.4-CrossProduct | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | definition / self-contained |
+| MD-4.4-SkewRepresentation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | local_proof / self-contained |
+| MD-4.4-CrossMatrix | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | local_proof / self-contained |
+| MD-4.4-RigidVelocity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | local_proof / self-contained |
+| MD-4.4-InertiaTensor | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | definition / self-contained |
 | MD-4.4-CrossIdentityFull | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-RotationalEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.4-RotationalEnergy | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | definition / self-contained |
 | MD-4.4-InertiaSkewIdentity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-InertiaTracePrinted | DRAFT/原页已核 | 已编译/公理已核 | FAIL | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；本地FAIL；待网站/导师裁定。 |
-| MD-4.4-InertiaTraceCorrected | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-DipolarHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4-DipolarPairPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4-DipolarRotationalPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / incomplete |
-| MD-4.4-RigidHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4-SecondMomentDiagonal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-RotationBodyEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-DipolarConstraint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4-DipolarPotentialSum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4-RotationTrajectory | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4-RotationDerivativePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；待网站/导师裁定最后δ点号；不证明疑误版本。 |
-| MD-4.4-RigidMatrixRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.4-InertiaTracePrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | FAIL | 待导师 / EAUDIT18（原返回FAIL保留） | placeholder / incomplete；本地FAIL；待网站/导师裁定。 |
+| MD-4.4-InertiaTraceCorrected | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | local_proof / self-contained |
+| MD-4.4-DipolarHamiltonian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | definition / self-contained |
+| MD-4.4-DipolarPairPotential | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | definition / self-contained |
+| MD-4.4-DipolarRotationalPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT19（原返回FAIL保留） | definition / incomplete |
+| MD-4.4-RigidHamiltonian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | definition / self-contained |
+| MD-4.4-SecondMomentDiagonal | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | local_proof / self-contained |
+| MD-4.4-RotationBodyEnergy | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | local_proof / self-contained |
+| MD-4.4-DipolarConstraint | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | definition / self-contained |
+| MD-4.4-DipolarPotentialSum | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | definition / self-contained |
+| MD-4.4-RotationTrajectory | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | local_proof / self-contained |
+| MD-4.4-RotationDerivativePrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT20（原返回FAIL保留） | placeholder / incomplete；待网站/导师裁定最后δ点号；不证明疑误版本。 |
+| MD-4.4-RigidMatrixRelation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | definition / self-contained |
 | MD-4.4.1-AngularMomentum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.4.1-BodyMomentum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.4.1-AngularInertia | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
@@ -380,3 +380,11 @@ EAUDIT14 §4.3.5：7条落盘，单文件与9项公理通过；未写新证明�
 EAUDIT15 §4.3.5.1：4条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT16 §4.3.6：2条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT17 §4.4：8条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT18 §4.4：8条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT19 §4.4：8条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT20 §4.4：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。

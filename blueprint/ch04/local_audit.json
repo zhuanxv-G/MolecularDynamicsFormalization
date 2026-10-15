@@ -3848,9 +3848,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.waterPairPotential",
@@ -3875,7 +3875,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT17/axioms.log"
     },
     "MD-4.4-TotalMass": {
       "checked": true,
@@ -3914,9 +3914,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.centerMass",
@@ -3941,15 +3941,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT17/axioms.log"
     },
     "MD-4.4-RelativePositions": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.relativePositions",
@@ -3974,7 +3974,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT17/axioms.log"
     },
     "MD-4.4-RelativeWeightedZero": {
       "checked": true,
@@ -4018,9 +4018,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.kineticSplit",
@@ -4052,15 +4052,15 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT17/axioms.log"
     },
     "MD-4.4-SecondMoment": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.secondMoment",
@@ -4085,15 +4085,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT17/axioms.log"
     },
     "MD-4.4-RotationKinetic": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.rotationKinetic",
@@ -4118,15 +4118,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT17/axioms.log"
     },
     "MD-4.4-RotationTraceIdentity": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.rotationTraceIdentity",
@@ -4156,15 +4156,15 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT17/axioms.log"
     },
     "MD-4.4-RotationSkew": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.rotationSkew",
@@ -4196,15 +4196,15 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT17/axioms.log"
     },
     "MD-4.4-SkewMatrix": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.skewMatrix",
@@ -4229,15 +4229,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT18/axioms.log"
     },
     "MD-4.4-CrossProduct": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.cross3",
@@ -4262,15 +4262,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT18/axioms.log"
     },
     "MD-4.4-SkewRepresentation": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.skewRepresentation",
@@ -4302,15 +4302,15 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT18/axioms.log"
     },
     "MD-4.4-CrossMatrix": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.crossMatrix",
@@ -4340,15 +4340,15 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT18/axioms.log"
     },
     "MD-4.4-RigidVelocity": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.rigidVelocity",
@@ -4380,15 +4380,15 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT18/axioms.log"
     },
     "MD-4.4-InertiaTensor": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.inertiaTensor",
@@ -4413,7 +4413,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT18/axioms.log"
     },
     "MD-4.4-CrossIdentityFull": {
       "checked": true,
@@ -4457,16 +4457,16 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.rotationalEnergy",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "704f380d5a21d63a11e5d3b6a7b6e4cd8b8eec7fca6617c0bc7a877a67cefcb2",
-      "block_sha256": "704f380d5a21d63a11e5d3b6a7b6e4cd8b8eec7fca6617c0bc7a877a67cefcb2",
+      "signature_sha256": "91001dfabaa80184603eccaad9e17ae45238942809c18563dd16264473bcae94",
+      "block_sha256": "91001dfabaa80184603eccaad9e17ae45238942809c18563dd16264473bcae94",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4484,7 +4484,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT18/axioms.log"
     },
     "MD-4.4-InertiaSkewIdentity": {
       "checked": true,
@@ -4528,10 +4528,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.inertiaTracePrinted",
@@ -4556,15 +4556,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT18/axioms.log"
     },
     "MD-4.4-InertiaTraceCorrected": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.inertiaTraceCorrected",
@@ -4598,22 +4598,22 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT19/axioms.log"
     },
     "MD-4.4-DipolarHamiltonian": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.dipolarHamiltonian",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "101c5d21f038c3eefc91e45983ed71860b68b0193679a46693c2016b0be0fdbf",
-      "block_sha256": "101c5d21f038c3eefc91e45983ed71860b68b0193679a46693c2016b0be0fdbf",
+      "signature_sha256": "a822dbda628813b511787367e584b4464f2489e5230ed0479849d5d9e5cdee7d",
+      "block_sha256": "a822dbda628813b511787367e584b4464f2489e5230ed0479849d5d9e5cdee7d",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4631,22 +4631,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT19/axioms.log"
     },
     "MD-4.4-DipolarPairPotential": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.dipolarPairPotential",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "7bcebddcd8b3e698a3919fc7ab678d2765669cf32451f271cc053e9f99829863",
-      "block_sha256": "7bcebddcd8b3e698a3919fc7ab678d2765669cf32451f271cc053e9f99829863",
+      "signature_sha256": "2258efedc2511f1da3ff6c18527e6b5612199a52d51a8e3f78209b788dcd8831",
+      "block_sha256": "2258efedc2511f1da3ff6c18527e6b5612199a52d51a8e3f78209b788dcd8831",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4664,17 +4664,17 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT19/axioms.log"
     },
     "MD-4.4-DipolarRotationalPrinted": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch04.dipolarRotationalPrinted",
       "verdict": "NEEDS_HUMAN",
       "explanation": "此处trace和缺1/2，与p168及此页Σπ²/(2I)不一致；且引用错误(4.40)。",
@@ -4697,22 +4697,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT19/axioms.log"
     },
     "MD-4.4-RigidHamiltonian": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.rigidHamiltonian",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "c3b386da36e94c93a07337e0bcbfc592ef36a59bd3145ba24d5bd15aa81a0f5d",
-      "block_sha256": "c3b386da36e94c93a07337e0bcbfc592ef36a59bd3145ba24d5bd15aa81a0f5d",
+      "signature_sha256": "cb91d1d6788d661306c764aa34c71377f2aa08eb4c64e1f33f0feeac77620a0c",
+      "block_sha256": "cb91d1d6788d661306c764aa34c71377f2aa08eb4c64e1f33f0feeac77620a0c",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4730,15 +4730,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT19/axioms.log"
     },
     "MD-4.4-SecondMomentDiagonal": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.secondMomentDiagonal",
@@ -4772,15 +4772,15 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT19/axioms.log"
     },
     "MD-4.4-RotationBodyEnergy": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.rotationBodyEnergy",
@@ -4812,15 +4812,15 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT19/axioms.log"
     },
     "MD-4.4-DipolarConstraint": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.dipolarConstraint",
@@ -4845,15 +4845,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT19/axioms.log"
     },
     "MD-4.4-DipolarPotentialSum": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.dipolarPotentialSum",
@@ -4878,15 +4878,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT20/axioms.log"
     },
     "MD-4.4-RotationTrajectory": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.rotationTrajectory",
@@ -4918,16 +4918,16 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT20/axioms.log"
     },
     "MD-4.4-RotationDerivativePrinted": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.rotationDerivativePrinted",
@@ -4952,22 +4952,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT20/axioms.log"
     },
     "MD-4.4-RigidMatrixRelation": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.rigidMatrixRelation",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "452b2651948d2891859658b69074f55f7c40a81463070ed3b38a95999ca2156d",
-      "block_sha256": "452b2651948d2891859658b69074f55f7c40a81463070ed3b38a95999ca2156d",
+      "signature_sha256": "1f0a6c2c613dc2e4dd6f6b98e666312bc50b99926457b78189bf3678c5a078af",
+      "block_sha256": "1f0a6c2c613dc2e4dd6f6b98e666312bc50b99926457b78189bf3678c5a078af",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4985,7 +4985,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT20/axioms.log"
     },
     "MD-4.4.1-AngularMomentum": {
       "checked": true,

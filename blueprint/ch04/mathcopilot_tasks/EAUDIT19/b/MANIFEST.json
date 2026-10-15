@@ -1,0 +1,74 @@
+{
+  "eaudit": "EAUDIT19",
+  "source_id": "MD-4.4-DipolarHamiltonian",
+  "input_sha256": {
+    "BATCH_EAUDIT19.md": "4ddef80587e4dfb52f546d6db17f95f902149d8d8957a22882b3527a15307252",
+    "Blueprint/Ch04.lean": "0c72e84c2982b43d7b8f3f368d0045dec5e29a3877d8acdee97edf951c750706",
+    "blueprint/ch04/ch04_source.json": "05706bccf28f5a7919ffb51fea6118f177bc62a1bf13b4280a33f0aa3af94d78",
+    "EAUDIT19b_materials": "65ee4acbf70e7f30745f066d1813f3cfa307366bbca2ebb6d01aa35be256d132",
+    "EAUDIT19b_PAGES.pdf": "4764e5738e86cdd9bbd3551398b640fd75603adb2e19391065711e33bf58f4cf"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    191,
+    192
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "de4f5d8532f325c0b34307d29fc101aa5af4dfd0a58a687300e2dde179c13768",
+  "source_block_sha256": "a822dbda628813b511787367e584b4464f2489e5230ed0479849d5d9e5cdee7d",
+  "source_declarations": [
+    "dipolarHamiltonian"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "dipolarHamiltonian",
+      "file_sha256": "0c72e84c2982b43d7b8f3f368d0045dec5e29a3877d8acdee97edf951c750706",
+      "excerpt_sha256": "a822dbda628813b511787367e584b4464f2489e5230ed0479849d5d9e5cdee7d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "mass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "0187ca2f83970ded348f9180fd488f133f05d96d2b2b8568160bd3cb505f7d03"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT19_review.json",
+  "total_task_bytes": 101243
+}

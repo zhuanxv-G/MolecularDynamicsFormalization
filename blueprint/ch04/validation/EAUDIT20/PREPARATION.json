@@ -1,0 +1,33 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT20",
+  "section": "4.4",
+  "source_ids": [
+    "MD-4.4-DipolarPotentialSum",
+    "MD-4.4-RigidMatrixRelation",
+    "MD-4.4-RotationDerivativePrinted",
+    "MD-4.4-RotationTrajectory"
+  ],
+  "reaudit_ids": [
+    "MD-4.4-DipolarPotentialSum",
+    "MD-4.4-RotationTrajectory",
+    "MD-4.4-RigidMatrixRelation"
+  ],
+  "human_ids": [
+    "MD-4.4-RotationDerivativePrinted"
+  ],
+  "old_lean_sha256": "0c72e84c2982b43d7b8f3f368d0045dec5e29a3877d8acdee97edf951c750706",
+  "lean_sha256": "f3465420245b322d156848d99ffd2d9306703d4b4fdbee37ba1fc8cf2587a121",
+  "source_sha256": "eb0e887899dc046d0bc95687d5f2d60e7ac42d8cce13f1ceccebefd012dcec31",
+  "pages": [
+    189,
+    190,
+    191,
+    192,
+    193
+  ],
+  "prior_proof_blocks": {
+    "MD-4.4-RotationTrajectory": "theorem rotationTrajectory : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (d : MolecularDynamics.Chapter04Review.Mat3) (δ : MolecularDynamics.Chapter04Review.V) t,\n  HasDerivAt Θ d t → HasDerivAt (fun s => Θ s *ᵥ δ) (d *ᵥ δ) t := by\n  intro Θ d δ t hd\n  have he : ∀ i, HasDerivAt (fun s => ∑ j, Θ s i j*δ j) (∑ j,d i j*δ j) t := by\n    intro i\n    apply HasDerivAt.fun_sum\n    intro j hj\n    exact (hasDerivAt_pi.mp (hasDerivAt_pi.mp hd i) j).mul_const (δ j)\n  exact hasDerivAt_pi.mpr he",
+    "MD-4.4-RigidMatrixRelation": "def rigidMatrixRelation (M : ℝ) (R : MolecularDynamics.Chapter04Review.Mat3) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ)\n    (q p : ℝ → MolecularDynamics.Chapter04Review.V) (Θ mom Λ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (I : Set ℝ) : Prop :=\n  ∀ t ∈ I, HasDerivWithinAt q (M⁻¹ • p t) I t ∧ HasDerivWithinAt Θ (mom t*R⁻¹) I t ∧\n    HasDerivWithinAt p (-MolecularDynamics.Chapter04Review.grad (fun x => U x (Θ t)) (q t)) I t ∧\n    HasDerivWithinAt mom (-MolecularDynamics.Chapter04Review.matrixGrad (U (q t)) (Θ t)-Θ t*Λ t) I t ∧ (Θ t)ᵀ*Θ t=1"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "eaudit": "EAUDIT18",
+  "source_id": "MD-4.4-RotationalEnergy",
+  "input_sha256": {
+    "BATCH_EAUDIT18.md": "aeedce582c3a50cf547a73fce10bce960ef09eb607305d0993104235b5cddbd1",
+    "Blueprint/Ch04.lean": "9cf896a1fa343f97f6efb31c1a8a0f344d47ac437be4dd9dc41fa06922959fb9",
+    "blueprint/ch04/ch04_source.json": "452589401e7b03fea6c8d6e5a60764c9583fc66b2f706929a653485da96cccf8",
+    "EAUDIT18g_materials": "936b805be861914c20cc3e646af4e1e52f58de52717274e65c99d140c828e238",
+    "EAUDIT18g_PAGES.pdf": "58c68e1a97a6714d6fe40cc551b7f82434b4e6655e683fb9bcf6026511b57ec4"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    191
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "686a7c43cb43bcfc7c330e67a0722274b493a42abc1234e171df8e9d4aff843b",
+  "source_block_sha256": "91001dfabaa80184603eccaad9e17ae45238942809c18563dd16264473bcae94",
+  "source_declarations": [
+    "rotationalEnergy"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "dot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "42cd2bfea54f8e5bac9d349d534139f73e6ae350c473b35f1658b94e0a5dc538"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "rotationalEnergy",
+      "file_sha256": "9cf896a1fa343f97f6efb31c1a8a0f344d47ac437be4dd9dc41fa06922959fb9",
+      "excerpt_sha256": "91001dfabaa80184603eccaad9e17ae45238942809c18563dd16264473bcae94"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT18_review.json",
+  "total_task_bytes": 92018
+}
