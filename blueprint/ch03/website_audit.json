@@ -4153,7 +4153,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH10_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT08",
+    "repair": {
+      "eaudit": "EAUDIT08",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT08/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT08.md": "689bdd73ff8db582215d58c8e2f7bd56bf2dc55435efdcc4a21f5662062a78cb",
+        "Blueprint/Ch03.lean": "2a83d81b8bb55043bd75ee34ce2fa2688e4c581a087cc9d3774d9b657436a3e0",
+        "blueprint/ch03/ch03_source.json": "f6bacfd160c8fbf4255e6737f547dc4ae587ed23ab068d9b4cc60e0b09dd1929"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.3-Yoshida4",
@@ -4206,7 +4218,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH10_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT08",
+    "repair": {
+      "eaudit": "EAUDIT08",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT08/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT08.md": "689bdd73ff8db582215d58c8e2f7bd56bf2dc55435efdcc4a21f5662062a78cb",
+        "Blueprint/Ch03.lean": "2a83d81b8bb55043bd75ee34ce2fa2688e4c581a087cc9d3774d9b657436a3e0",
+        "blueprint/ch03/ch03_source.json": "f6bacfd160c8fbf4255e6737f547dc4ae587ed23ab068d9b4cc60e0b09dd1929"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.3-Yoshida4Structure",
@@ -4259,7 +4283,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH10_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT08",
+    "repair": {
+      "eaudit": "EAUDIT08",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT08/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT08.md": "689bdd73ff8db582215d58c8e2f7bd56bf2dc55435efdcc4a21f5662062a78cb",
+        "Blueprint/Ch03.lean": "2a83d81b8bb55043bd75ee34ce2fa2688e4c581a087cc9d3774d9b657436a3e0",
+        "blueprint/ch03/ch03_source.json": "f6bacfd160c8fbf4255e6737f547dc4ae587ed23ab068d9b4cc60e0b09dd1929"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.3-GeneralSplitting",

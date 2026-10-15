@@ -1,0 +1,29 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT08",
+  "section": "3.3.3",
+  "source_ids": [
+    "MD-3.3.3-Yoshida4",
+    "MD-3.3.3-Yoshida4Structure",
+    "MD-3.3.3-YoshidaRaiseOrder"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.3-YoshidaRaiseOrder",
+    "MD-3.3.3-Yoshida4",
+    "MD-3.3.3-Yoshida4Structure"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "c654c641d62dc10e95781473390e9a7ee09518749d4a3959915be11a00d5f25b",
+  "lean_sha256": "2a83d81b8bb55043bd75ee34ce2fa2688e4c581a087cc9d3774d9b657436a3e0",
+  "source_sha256": "f6bacfd160c8fbf4255e6737f547dc4ae587ed23ab068d9b4cc60e0b09dd1929",
+  "pages": [
+    131,
+    132,
+    133
+  ],
+  "prior_proof_blocks": {
+    "MD-3.3.3-YoshidaRaiseOrder": "theorem yoshidaRaiseOrder :\n  ∀ (n s : ℕ) (f : Q n → Q n) (G Φ : ℝ → Q n → Q n) (D B : Set (Q n)) η,\n    1 ≤ s → ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ (fun hz : ℝ × Q n => G hz.1 hz.2) →\n    IsOpen D → IsCompact B → B ⊆ D → actualFlow f D Φ η →\n    (∀ h z, G (-h) (G h z)=z) → localOrder G Φ B (2*s) →\n    localOrder (yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2) Φ B (2*s+2) := by\n  sorry",
+    "MD-3.3.3-Yoshida4": "def yoshida4 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) : SymplecticCoordinates n → SymplecticCoordinates n :=\n  yoshidaCompose (coordinateVerlet m (textbookPotentialForce U)) (yoshidaCoefficients 1).1 (yoshidaCoefficients 1).2 h",
+    "MD-3.3.3-Yoshida4Structure": "theorem yoshida4Structure :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ), ContDiff ℝ 2 U →\n    (∀ h, IsTextbookSymplecticMap (yoshida4 m U h)) ∧ (∀ h z, yoshida4 m U (-h) (yoshida4 m U h z)=z) := by\n  exact MolecularDynamics.Chapter03Review.yoshida4Structure_proved"
+  }
+}

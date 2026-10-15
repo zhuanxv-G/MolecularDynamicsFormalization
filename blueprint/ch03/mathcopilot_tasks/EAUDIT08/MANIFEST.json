@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT08",
+  "input_sha256": {
+    "BATCH_EAUDIT08.md": "689bdd73ff8db582215d58c8e2f7bd56bf2dc55435efdcc4a21f5662062a78cb",
+    "Blueprint/Ch03.lean": "2a83d81b8bb55043bd75ee34ce2fa2688e4c581a087cc9d3774d9b657436a3e0",
+    "blueprint/ch03/ch03_source.json": "f6bacfd160c8fbf4255e6737f547dc4ae587ed23ab068d9b4cc60e0b09dd1929"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT08a",
+      "source_id": "MD-3.3.3-YoshidaRaiseOrder",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT08/a",
+      "total_bytes": 91452,
+      "manifest_sha256": "93954d92c0eed5ab0221bb6fd23c1a1decadbcf624ffcdd3befd4bd9c90a4a11"
+    },
+    {
+      "subtask": "EAUDIT08b",
+      "source_id": "MD-3.3.3-Yoshida4",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT08/b",
+      "total_bytes": 110789,
+      "manifest_sha256": "5ee1eae33f51178bc252375272bc675b35919690ce3b608859af646c56f4690a"
+    },
+    {
+      "subtask": "EAUDIT08c",
+      "source_id": "MD-3.3.3-Yoshida4Structure",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT08/c",
+      "total_bytes": 94032,
+      "manifest_sha256": "ca104e01ea1e40b3322545e4679429832bd069a3587c43b738545806d1b34d9e"
+    }
+  ]
+}

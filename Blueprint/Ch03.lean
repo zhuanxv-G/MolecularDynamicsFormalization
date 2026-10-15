@@ -659,25 +659,34 @@ theorem yoshidaUnique :
     exact ⟨(yoshidaCancellation s hs).1, (yoshidaCancellation s hs).2.1⟩
 
 /-- source_id: MD-3.3.3-YoshidaRaiseOrder · unnumbered_claim · §3.3.3 · 印刷p.109 / PDFp.131
-[EXTRA] 给定光滑场、G在(h,z)全域C∞、开放D与紧B、实际双向局部流、反步对称和局部阶；实际改阶是结论。 -/
+[EXTRA] 给定光滑场、G在(h,z)全域C∞、开放D与紧B、实际双向局部流、反步对称和局部阶；实际改阶是结论。 
+[EXTRA] 将孤立B上的逐紧集阶改为D内每个紧集的一致阶资格，覆盖移动中间点；结论补新方法在每紧集升阶、光滑及对称，保留递归资格。 -/
 theorem yoshidaRaiseOrder :
   ∀ (n s : ℕ) (f : Q n → Q n) (G Φ : ℝ → Q n → Q n) (D B : Set (Q n)) η,
     1 ≤ s → ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ (fun hz : ℝ × Q n => G hz.1 hz.2) →
     IsOpen D → IsCompact B → B ⊆ D → actualFlow f D Φ η →
-    (∀ h z, G (-h) (G h z)=z) → localOrder G Φ B (2*s) →
-    localOrder (yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2) Φ B (2*s+2) := by
+    (∀ h z, G (-h) (G h z)=z) → (∀ K : Set (Q n), IsCompact K → K ⊆ D → localOrder G Φ K (2*s)) →
+    localOrder (yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2) Φ B (2*s+2) ∧
+    (∀ K : Set (Q n), IsCompact K → K ⊆ D →
+      localOrder (yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2) Φ K (2*s+2)) ∧
+    (∀ h z, yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2 (-h)
+      (yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2 h z)=z) ∧
+    ContDiff ℝ ⊤ (fun hz : ℝ × Q n ↦
+      yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2 hz.1 hz.2) := by
   sorry
 
 /-- source_id: MD-3.3.3-Yoshida4 · Example 3.1 / (3.8) · §3.3.3 · 印刷p.109–110 / PDFp.131–132
-[EXTRA] M为固定对角质量；不假设正反步骤的实际无限时域流存在。 -/
-def yoshida4 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) : SymplecticCoordinates n → SymplecticCoordinates n :=
+[EXTRA] M为固定对角质量；不假设正反步骤的实际无限时域流存在。 
+[EXTRA] 教材算法接口明确正质量与经典可微势；后续结构定理调用使用正式总化辅助组合，证明不新增。 -/
+def yoshida4 {n : ℕ} (m : Fin n → ℝ) (_hm : positiveMass m) (U : Q n → ℝ) (_hU : Differentiable ℝ U) (h : ℝ) : SymplecticCoordinates n → SymplecticCoordinates n :=
   yoshidaCompose (coordinateVerlet m (textbookPotentialForce U)) (yoshidaCoefficients 1).1 (yoshidaCoefficients 1).2 h
 
 /-- source_id: MD-3.3.3-Yoshida4Structure · unnumbered_claim · §3.3.3 · 印刷p.110 / PDFp.132
-[EXTRA] U全域C²；真实kick/drift及三次回文复合。 -/
+[EXTRA] U全域C²；真实kick/drift及三次回文复合。 
+[EXTRA] 依赖小修：原无质量限制的结构定理继续对应正式总化辅助算法；教材受限接口另有正质量/可微资格，原已证结论保留。 -/
 theorem yoshida4Structure :
   ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ), ContDiff ℝ 2 U →
-    (∀ h, IsTextbookSymplecticMap (yoshida4 m U h)) ∧ (∀ h z, yoshida4 m U (-h) (yoshida4 m U h z)=z) := by
+    (∀ h, IsTextbookSymplecticMap (MolecularDynamics.Chapter03Review.yoshida4 m U h)) ∧ (∀ h z, MolecularDynamics.Chapter03Review.yoshida4 m U (-h) (MolecularDynamics.Chapter03Review.yoshida4 m U h z)=z) := by
   exact MolecularDynamics.Chapter03Review.yoshida4Structure_proved
 
 /-- source_id: MD-3.3.3-GeneralSplitting · definition · §3.3.3 · 印刷p.111 / PDFp.133 -/

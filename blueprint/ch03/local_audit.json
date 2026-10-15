@@ -1922,17 +1922,17 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.yoshidaRaiseOrder",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "1ae981665dde4821e59408163599bdd6060477cf6e85b9eb943f76d2a22e0bb7",
-      "block_sha256": "570829270e9d12f44c947c5a79d57cd1b842ba3cfbd64be5c1513d6eef3e0c35",
+      "signature_sha256": "c3bfd0b9b489bb06c392813b33588eaaad57bc2e67088f95435c11caa1978f49",
+      "block_sha256": "722b685d3c9c5fdcff20731d9698b057c74f7cb0e7aacd1e872296d7cf31208b",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -1950,22 +1950,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT08/axioms.log"
     },
     "MD-3.3.3-Yoshida4": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.yoshida4",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "77358eba9875f950dd89b09140473263b1825dafbb9ff43498cafae23e4dd50a",
-      "block_sha256": "77358eba9875f950dd89b09140473263b1825dafbb9ff43498cafae23e4dd50a",
+      "signature_sha256": "c744ccaee8111f0c3c42d7d0b02c3d9afb2152cc6bf3a248dcfdd1f4eb71089e",
+      "block_sha256": "c744ccaee8111f0c3c42d7d0b02c3d9afb2152cc6bf3a248dcfdd1f4eb71089e",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -1983,22 +1983,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT08/axioms.log"
     },
     "MD-3.3.3-Yoshida4Structure": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch03.yoshida4Structure",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "98c5cbdebe7f5b33474347242c9d65187a57845ee5511d9b76e2905d610427ed",
-      "block_sha256": "2b970d34d1366729610678c5d079516bb1d657d6019b02188cb24e3fc4ba9ff5",
+      "signature_sha256": "0dd31ec60155d16e356c5a6c29b9a29a09e76a948d2fea455ba72cb77a23f173",
+      "block_sha256": "bc4590bf72dc0abfa05db1c3780f6233bf20b8cc366bf2dfe1e37bba1560395b",
       "direct_placeholder": false,
       "proof_status": "existing_bridge",
       "documented_priors": [
@@ -2018,7 +2018,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT08/axioms.log"
     },
     "MD-3.3.3-GeneralSplitting": {
       "checked": true,

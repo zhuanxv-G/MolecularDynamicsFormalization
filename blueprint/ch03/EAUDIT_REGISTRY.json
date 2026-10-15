@@ -331,5 +331,47 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT07/INDEX.md"
+  },
+  {
+    "chapter": 3,
+    "eaudit": "EAUDIT08",
+    "section": "3.3.3",
+    "source_ids": [
+      "MD-3.3.3-Yoshida4",
+      "MD-3.3.3-Yoshida4Structure",
+      "MD-3.3.3-YoshidaRaiseOrder"
+    ],
+    "reaudit_ids": [
+      "MD-3.3.3-YoshidaRaiseOrder",
+      "MD-3.3.3-Yoshida4",
+      "MD-3.3.3-Yoshida4Structure"
+    ],
+    "human_ids": [],
+    "lean_sha256": "2a83d81b8bb55043bd75ee34ce2fa2688e4c581a087cc9d3774d9b657436a3e0",
+    "source_sha256": "f6bacfd160c8fbf4255e6737f547dc4ae587ed23ab068d9b4cc60e0b09dd1929",
+    "pages": [
+      131,
+      132,
+      133
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch03.olean",
+        "Blueprint/Ch03.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "2a83d81b8bb55043bd75ee34ce2fa2688e4c581a087cc9d3774d9b657436a3e0",
+      "log_sha256": "6c0cdd13e2b287d3e605d1eeb5f481371c2ca0a43e5ad1848f6579f6d9b344cc"
+    },
+    "axiom_decl_count": 3,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT08/INDEX.md"
   }
 ]
