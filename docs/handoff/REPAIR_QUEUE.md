@@ -2,11 +2,11 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 459；章末验收待完成 [3, 4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 457；章末验收待完成 [3, 4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
-第3章：网站PASS 91 / 已修待复审 4 / 待导师 5 / 修复中 49。
+第3章：网站PASS 90 / 已修待复审 5 / 待导师 5 / 修复中 49。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
@@ -175,12 +175,12 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3-ModifiedConstruction | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT02 |
 | 3 | MD-3.1-AdjointEulerOscillator | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.1-ShadowHamiltonian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.1-EnergyFailure | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 已修待复审 | EAUDIT01 |
-| 3 | MD-3.1-ShadowInvariant | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.1-ShadowEllipses | NEEDS_HUMAN | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待导师；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.1-EnergyFailure | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 3 | MD-3.1-ShadowInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 3 | MD-3.1-ShadowEllipses | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT03 |
 | 3 | MD-3.1-EulerGrowth | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.1-FormalHamiltonian | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 已修待复审 | EAUDIT01 |
-| 3 | MD-3.1-FormalHamiltonianField | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 已修待复审 | EAUDIT01 |
+| 3 | MD-3.1-FormalHamiltonian | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 3 | MD-3.1-FormalHamiltonianField | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
 | 3 | MD-3.2-LieDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.2-ObservableDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
 | 3 | MD-3.2-ObservableSecondDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |

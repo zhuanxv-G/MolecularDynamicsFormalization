@@ -1,0 +1,30 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT03",
+  "section": "3.1",
+  "source_ids": [
+    "MD-3.1-EnergyFailure",
+    "MD-3.1-FormalHamiltonian",
+    "MD-3.1-FormalHamiltonianField",
+    "MD-3.1-ShadowEllipses",
+    "MD-3.1-ShadowInvariant"
+  ],
+  "reaudit_ids": [
+    "MD-3.1-EnergyFailure",
+    "MD-3.1-ShadowInvariant",
+    "MD-3.1-FormalHamiltonian",
+    "MD-3.1-FormalHamiltonianField"
+  ],
+  "human_ids": [
+    "MD-3.1-ShadowEllipses"
+  ],
+  "old_lean_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+  "lean_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+  "source_sha256": "f7f5a427aa4a305de2535b911db615434307c0fcb04debdda1211c573b169d01",
+  "pages": [
+    120,
+    121,
+    122
+  ],
+  "prior_proof_blocks": {}
+}

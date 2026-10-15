@@ -10,12 +10,12 @@
 | MD-3-ModifiedConstruction | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT02 | placeholder / incomplete |
 | MD-3.1-AdjointEulerOscillator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.1-ShadowHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.1-EnergyFailure | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | local_proof / self-contained |
-| MD-3.1-ShadowInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.1-ShadowEllipses | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | placeholder / incomplete；需一般正定二维二次型的轴长/旋转、小扰动连续性及与振子参数的完整对应；本地非PASS不进入证明。 |
+| MD-3.1-EnergyFailure | CORRECTED/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | local_proof / self-contained |
+| MD-3.1-ShadowInvariant | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | existing_bridge / checked+documented priors |
+| MD-3.1-ShadowEllipses | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT03（原返回NEEDS_HUMAN保留） | placeholder / incomplete；需一般正定二维二次型的轴长/旋转、小扰动连续性及与振子参数的完整对应；本地非PASS不进入证明。 |
 | MD-3.1-EulerGrowth | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
-| MD-3.1-FormalHamiltonian | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
-| MD-3.1-FormalHamiltonianField | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
+| MD-3.1-FormalHamiltonian | CORRECTED/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | definition / self-contained |
+| MD-3.1-FormalHamiltonianField | CORRECTED/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | definition / self-contained |
 | MD-3.2-LieDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.2-ObservableDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.2-ObservableSecondDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
@@ -383,3 +383,5 @@
 四条FAIL完整签名修复；能量一般结论已证，构造大定理仍incomplete；原页119/120/122、单文件、完整check/149条公理及4份compact通过；网站复审未提交。旧DELIVERY_VALIDATION只对应原433a13ca版本，新修复验收见本次ACCEPTANCE.json。
 
 EAUDIT02 §3：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT03 §3.1：5条落盘，单文件与5项公理通过；未写新证明；完整check留到章末；网站待复审。

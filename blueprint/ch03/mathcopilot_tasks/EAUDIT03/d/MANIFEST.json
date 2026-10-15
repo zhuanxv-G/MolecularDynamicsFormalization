@@ -1,0 +1,51 @@
+{
+  "eaudit": "EAUDIT03",
+  "source_id": "MD-3.1-FormalHamiltonianField",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "f807c69fb339b31915b672df04d7f81b6d8f623e2123edcad9fa9b0995574862",
+    "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+    "blueprint/ch03/ch03_source.json": "f7f5a427aa4a305de2535b911db615434307c0fcb04debdda1211c573b169d01",
+    "EAUDIT03d_materials": "3037012a476b531f0b48e9cdbc559573a8880aab9d22cafbac5b6f9923cc6d2a",
+    "EAUDIT03d_PAGES.pdf": "be68e544a452ef316b6805021500ec0de917a22f13d2dbf7d50634579bfd7b06"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    122
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "10e1bd70d652ff1de4d30587344e32413f5402bf9e74992c3d454112477a45d4",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinateMatrix",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "formalHamiltonianField",
+      "file_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+      "excerpt_sha256": "a9a01854d07687eb6b32450d52ff370c71b3d4c6e4fe29632ca8323adbe56323"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "name": "textbookHamiltonianVectorField",
+      "file_sha256": "bc9f7688e08676874bd5c50502a5e27fa659e7ff10f116045a4605a42ccfa703",
+      "excerpt_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "textbookJ",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT03_review.json",
+  "total_task_bytes": 111089
+}

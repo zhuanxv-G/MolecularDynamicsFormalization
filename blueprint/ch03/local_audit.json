@@ -111,9 +111,9 @@
     "MD-3.1-EnergyFailure": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.oscillatorEnergyFailure",
@@ -142,16 +142,16 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log",
+      "axiom_log": "blueprint/ch03/validation/EAUDIT03/axioms.log",
       "compiled": true,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json"
     },
     "MD-3.1-ShadowInvariant": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch03.oscillatorShadowInvariant",
@@ -177,17 +177,17 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log",
+      "axiom_log": "blueprint/ch03/validation/EAUDIT03/axioms.log",
       "compiled": true,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json"
     },
     "MD-3.1-ShadowEllipses": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.shadowEllipses",
@@ -211,7 +211,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log",
+      "axiom_log": "blueprint/ch03/validation/EAUDIT03/axioms.log",
       "compiled": true,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json"
     },
@@ -254,9 +254,9 @@
     "MD-3.1-FormalHamiltonian": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.formalHamiltonian",
@@ -285,16 +285,16 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log",
+      "axiom_log": "blueprint/ch03/validation/EAUDIT03/axioms.log",
       "compiled": true,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json"
     },
     "MD-3.1-FormalHamiltonianField": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.formalHamiltonianField",
@@ -323,7 +323,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log",
+      "axiom_log": "blueprint/ch03/validation/EAUDIT03/axioms.log",
       "compiled": true,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json"
     },

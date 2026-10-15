@@ -236,6 +236,9 @@ theorem linearEulerIntegral_continuous (n : ℕ) (b : Q n →L[ℝ] ℝ)
           '    (∀ t ∈ Icc 0 τ, ∀ S,',
           '    (∀ t ∈ Icc 0 τ, ∀ z ∈ Ω, H (Φ (t,z))=H z) ∧\n    (∀ t ∈ Icc 0 τ, ∀ S,'),
           'B','补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。')
+        edits[sid('HamiltonianFlowStructures')].update(
+          source_updates={'extra_assumptions':['Hamiltonian在开放域C²；真实localFlowC1的初值、ODE与局部定义域资格，未假设显式反步。']},
+          comment_corrections={'原场在开放域C¹，真实局部流、反步与局部定义域资格显式。':'Hamiltonian在开放域C²；真实局部C¹流及局部域资格，无显式反步假设。'})
         change('VolumeNotSymplectic',current('VolumeNotSymplectic').replace(
           'ContDiff ℝ 1 G ∧ (∀ z,','ContDiff ℝ 1 G ∧ Function.Injective G ∧\n    (∀ S, MeasurableSet S → volume (G \'\' S)=volume S) ∧ (∀ z,'),
           'B','补真实可测集合体积保存及单射，保留det=1和非辛见证；其余原句明确跨条映射HamiltonianFlowStructures及ProjectionEnergy，不静默删原文。',
@@ -253,6 +256,12 @@ theorem volumeNotSymplectic_symplectic_volume (n : ℕ)
         change('MechanicalReversal',current('MechanicalReversal').replace('(-invMass m z.2, grad U z.1)',
           '-(-invMass m z.2, grad U z.1)'),
           'C','按原页外部负号修复先前转录误读，两行均为−(−M⁻¹p,∇U)，原书此式无误；先前本条ERRATUM判断撤销，第三反演合取保留。')
+        edits[sid('MechanicalReversal')].update(source_updates={'issues':[]},comment_corrections={
+          '[ERRATUM?] p128右端列向量符号与−Rf(Rz)实际计算不符；原文不静默更改。':'原页外部负号核对正确；先前ERRATUM判断因漏读外部负号而撤销，修复日志保留旧注释。'})
+        change('MechanicalReversalCorrect',current('MechanicalReversalCorrect'),'C',
+          '原已证独立机械反转结论保留；更正旧注释：原书展示式正确，先前原书错误判断已撤销。',
+          source_updates={'extra_assumptions':['独立正确机械R反转结论；原印展示式亦正确，原先错误标记撤销。']},
+          comment_corrections={'[EXTRA] [EXTRA]独立正确机械R反转结论；原书错误展示等式仍由MechanicalReversalPrinted保留，不静默更改它。':'[EXTRA] 独立机械R反转结论；原印展示式核对正确，原先错误判断已撤销。'})
         change('ReversedTrajectoryPrinted',current('ReversedTrajectoryPrinted').replace(
           '(reversedField R f (R.mulVec (γ (-t)))) t',
           '(-R.mulVec (f (γ (-t)))) t')+'''

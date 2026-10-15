@@ -7,12 +7,12 @@
 | MD-3-ModifiedConstruction | 97/119 | PASS | 待复审 / EAUDIT02 | incomplete |
 | MD-3.1-AdjointEulerOscillator | 98/120 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.1-ShadowHamiltonian | 98/120 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
-| MD-3.1-EnergyFailure | 98/120 | PASS | 待复审 / EAUDIT01 | self-contained |
-| MD-3.1-ShadowInvariant | 99/121 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
-| MD-3.1-ShadowEllipses | 99/121 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | incomplete |
+| MD-3.1-EnergyFailure | 98/120 | PASS | 待复审 / EAUDIT03 | self-contained |
+| MD-3.1-ShadowInvariant | 99/121 | PASS | 待复审 / EAUDIT03 | checked+documented priors |
+| MD-3.1-ShadowEllipses | 99/121 | NEEDS_HUMAN | 待导师 / EAUDIT03（原返回NEEDS_HUMAN保留） | incomplete |
 | MD-3.1-EulerGrowth | 100/122 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
-| MD-3.1-FormalHamiltonian | 100/122 | PASS | 待复审 / EAUDIT01 | self-contained |
-| MD-3.1-FormalHamiltonianField | 100/122 | PASS | 待复审 / EAUDIT01 | self-contained |
+| MD-3.1-FormalHamiltonian | 100/122 | PASS | 待复审 / EAUDIT03 | self-contained |
+| MD-3.1-FormalHamiltonianField | 100/122 | PASS | 待复审 / EAUDIT03 | self-contained |
 | MD-3.2-LieDerivative | 100/122 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.2-ObservableDerivative | 100–101/122–123 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
 | MD-3.2-ObservableSecondDerivative | 101/123 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
@@ -415,7 +415,7 @@ theorem oscillatorEnergyFailure : ∀ Ω h : ℝ, 0 < Ω → h ≠ 0 →
 
 本地预审：**PASS**。EAUDIT01本地预审：每个Ω>0与非零h的精确能量差、两条例外直线及非守恒见证；完整短证明已验。
 
-网站审计：**待复审 / EAUDIT01**。原文JSON：CORRECTED；未冻结。
+网站审计：**待复审 / EAUDIT03**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch03_deps.txt 的 ReviewDefinitions.lean:3530–3535：oscillatorEnergy Ω(q,p)=(p²+Ω²q²)/2，adjoint 更新为 (q+hp,p−hΩ²(q+hp))；Ch03.lean 的本地映射相同，故对象正确。量词范围有缺项：Ch03.lean:38–43 只要求存在某个 Ω>0、某个 h≠0、某个 z 使能量不同，实际证据固定 Ω=h=1、z=(1,0)。原句讨论给定振子的“typical steps”，一个特定频率、大步长和状态的存在性例子没有覆盖一般非零步长，尤其没有表达任意固定正频率、任意小非零步长的非守恒行为。现命题是真的，但弱于所选原句。正式库 ReviewProofs.lean:4678–4679 使用的 oscillatorEnergyFailure_statement，展开 Statements.lean:4157–4158 后仍只是该固定例子，不会补足一般性。本条无 [EXTRA]、[ERRATUM?]；当前证明及复用证明无 sorry，与语义缺项分别判断。
 
@@ -429,7 +429,7 @@ theorem oscillatorEnergyFailure : ∀ Ω h : ℝ, 0 < Ω → h ≠ 0 →
 
 位置：[Blueprint/Ch03.lean:37](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:37>)（`MD.Ch03.oscillatorEnergyFailure`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -444,7 +444,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 3. 原文证明
 
 > \[\begin{aligned}\widetilde H(Q,P)&=\frac{P^2}{2}+\frac{h\Omega^2PQ}{2}+\frac{\Omega^2Q^2}{2}\\
-> &=\frac12p^2-\frac{h\Omega^2pQ}{2}+\frac{\Omega^2Q^2}{2}\\&=\widetilde H(q,p).\end{aligned}\]
+> &=\frac12p^2-\frac{h\Omega^2}{2}pQ+\frac{\Omega^2Q^2}{2}\\&=\widetilde H(q,p)\end{aligned}\]
 
 原书计算按原页转录。
 
@@ -465,7 +465,7 @@ theorem oscillatorShadowInvariant :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT03**。原文JSON：CORRECTED；未冻结。
 
 已展开本地 oscillatorShadow、oscillatorAdjointEuler 及 Ch03_deps.txt 的 ReviewDefinitions.lean:3530–3534：比较的是同一 (p²+hΩ²pq+Ω²q²)/2 二次型更新前后的值。Ch03.lean:45–47 对所有实 Ω,h 和状态 z 断言相等，正是“conserved quantity”的一步形式，迭代即逐步守恒。恒等式对退化频率和大步长也成立，不需要椭圆正定条件，不能混淆守恒与曲线是否为椭圆。Statements.lean:4159–4160 为同一全称式，ReviewProofs.lean:4681–4684 展开定义后用 ring，没有额外前提。本条无 [EXTRA]、[ERRATUM?]；本条及复用证明无 sorry。
 
@@ -475,13 +475,13 @@ theorem oscillatorShadowInvariant :
 
 位置：[Blueprint/Ch03.lean:70](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:70>)（`MD.Ch03.oscillatorShadowInvariant`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.Chapter03Review.oscillatorShadowInvariant_proved。
 
-签名SHA256：`53220a26b50d31d685a18d6b8ccdad370aaa54c5bf00fa101c196c8eed5a17b6`；原文SHA256：`b6287ea39e929689b1ce3b17227f667357233820fbff5aaee81a8b5c207b0ed0`。
+签名SHA256：`53220a26b50d31d685a18d6b8ccdad370aaa54c5bf00fa101c196c8eed5a17b6`；原文SHA256：`02cb5992663fa9c6b098f09b9c28e4d5f6f2232b23199f9857dc5679fce2bd08`。
 
 ## 1. MD-3.1-ShadowEllipses · unnumbered_claim · 印刷p.99 / PDFp.121
 
@@ -489,7 +489,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 > Recall that the graph of
 > \[\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\]
-> is an ellipse with major and minor axes aligned to the coordinate axes. If $\epsilon$ is a small value, then,
+> is an ellipse with major and minor axes aligned to the coordinate axes. If $\epsilon$ is a small value, then
 > \[\frac{x^2}{a^2}+\frac{y^2}{b^2}+\epsilon xy=1\]
 > will be a slightly rotated ellipse (with slightly different major and minor axes). Thus we can think of the energy surface of the numerical method as being a small perturbation of the ellipse which represents the ‘energy surface’ (energy curve, in this case) of the harmonic oscillator itself.
 
@@ -528,7 +528,7 @@ theorem shadowEllipses :
 
 本地预审：**NEEDS_HUMAN**。Lean同时保留一般a,b,ε二次曲线旋转及轴长连续性、振子正定与线性标准形；“slightly rotated”的角度趋零在a=b退化主轴时不成立，字面定量含义仍需裁定，不能记PASS。
 
-网站审计：**NEEDS_HUMAN（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT03（原返回NEEDS_HUMAN保留）**。原文JSON：CORRECTED；未冻结。
 
 所有相关自定义对象均已在依赖中找到并展开，没有缺失定义。Ch03.lean:52–64 的第一项是 ∀a,b≠0 后 ∃δ>0、∃θ,A,B（均为 ε 的函数），A→|a|、B→|b|，对每个 |ε|<δ 有正半轴和对全部 x,y 成立的实际正交旋转恒等式，确实覆盖一般椭圆及半轴长度的小扰动，不是仅振子特例。第二项展开 oscillatorShadow 得矩阵 [[Ω²,hΩ²/2],[hΩ²/2,1]]；[EXTRA] Ω>0 是正频率约定（数学上 Ω≠0 已足够），|hΩ|<2 正是正定性的必要充分步长条件，合理且未假设结论。L 是真实实线性等价，表达正定二次型标准化。对 E>0，令 x=q、y=p、a=√(2E)/Ω、b=√(2E)、ε=hΩ²/(2E)，一般合取项即给出影子能量水平集和 h→0 的形状扰动，此联系能从现有定义推得，不能据“未统一”报材料不足。真正需要人工裁定的是原书“slightly rotated”含义：签名只断言旋转存在，未要求 θ(ε)→0；当 a²=b² 时原曲线是圆，原始主轴无唯一方向，而微小交叉项选择的轴相对于固定坐标轴可以是45°。需确认作者仅指曲线形状接近，还是在非圆条件下还要求小角度变化。原书未明确，这个原文问题是本条 NEEDS_HUMAN 的唯一原因。本条没有 [ERRATUM?] 标注，疑点已另行记录；有 sorry，只表示证明未完成，与上述签名审计分开判断。
 
@@ -542,13 +542,13 @@ theorem shadowEllipses :
 
 位置：[Blueprint/Ch03.lean:77](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:77>)（`MD.Ch03.shadowEllipses`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：需一般正定二维二次型的轴长/旋转、小扰动连续性及与振子参数的完整对应；本地非PASS不进入证明。
 
-签名SHA256：`2950fb774f3e8755df903baf21f0aa224b009872cd7f24928e3657142a125112`；原文SHA256：`4457c76ad555aa6eeeed74d12df3e97d6998346f36291916327c9f3c861b83b2`。
+签名SHA256：`2950fb774f3e8755df903baf21f0aa224b009872cd7f24928e3657142a125112`；原文SHA256：`476e2bdb4078ef8337f7dad5a18afbc44655831c1be257c239f59306f84e80f3`。
 
 ## 1. MD-3.1-EulerGrowth · unnumbered_claim · 印刷p.100 / PDFp.122
 
@@ -633,7 +633,7 @@ def formalHamiltonian {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 本地预审：**PASS**。EAUDIT01本地预审：显式1≤r，逐系数实际形式Hamiltonian，不断言无限收敛。
 
-网站审计：**待复审 / EAUDIT01**。原文JSON：CORRECTED；未冻结。
+网站审计：**待复审 / EAUDIT03**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch03_deps.txt 的 SymplecticForm.lean:33，SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ，含 q,p 各 n 个坐标；ReviewDefinitions.lean:3536–3538 与 Ch03.lean:92–94 的 formalHamiltonian 定义相同。PowerSeries.mk 是指定次数系数的形式级数构造，而非收敛求和；c0=H(z)，1≤j<r 时 cj=0，j≥r 且 j>0 时 cj=Hj(j,z)。在原文明示 r≥1 的范围内，展开完全正确，也不应在本定义中添加尚未证明的流匹配条件。签名范围却未编码 r≥1：r:ℕ 允许0，且 r=0 时强制丢弃 Hj 0 的常数贡献。JSON context_notation 的 r≥1 不是 Lean 签名约束。按本次要求审计全部假设，这个无约束签名未保留原定义域。FAIL 专指该域约束漏建模，不声称 r≥1 内的公式错误。纯系数构造无需为有意义的形式级数额外要求收敛。本条无 [EXTRA]、[ERRATUM?]；完整 def 无 sorry。
 
@@ -647,7 +647,7 @@ def formalHamiltonian {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 位置：[Blueprint/Ch03.lean:118](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:118>)（`MD.Ch03.formalHamiltonian`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -693,7 +693,7 @@ def formalHamiltonianField {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 本地预审：**PASS**。EAUDIT01本地预审：显式1≤r及H/Hj C∞，真实Fréchet梯度逐坐标系数。
 
-网站审计：**待复审 / EAUDIT01**。原文JSON：CORRECTED；未冻结。
+网站审计：**待复审 / EAUDIT03**。原文JSON：CORRECTED；未冻结。
 
 已沿实际依赖展开：Ch03_deps.txt 的 SymplecticForm.lean:33 给出 (q,p) 排列的 2n 坐标，:39–40 的 textbookJ=[[0,I],[−I,0]]；SplittingError.lean:1921–1924 定义 textbookHamiltonianVectorField H z = textbookJ n *ᵥ (fun i => (fderiv ℝ H z)(Pi.single i 1))，因此在可微资格下位置分量是 ∂H/∂p，动量分量是 −∂H/∂q，符号不是相反约定的 Matrix.J。ReviewDefinitions.lean:3542–3546 与 Ch03.lean:97–102 的定义相同，逐坐标形式级数常数项是 J∇H，正次数 j≥r 是 J∇H^(j)，其余为0。这在光滑、r≥1 的原语境内忠实。签名却既未限制 r≥1，也未限制 H、Hj 可微；标准 fderiv 是不可微点取0的总函数，因此对现签名全部允许的输入，返回对象未必是原文有意义的真实 J∇H。context_notation 不能代替 Lean 参数资格。FAIL 指原阶数域和求导资格未编码，而非正确资格下系数算错。不要求本定义同时证明后文逐项匹配程序。没有 [EXTRA]、[ERRATUM?] 可补足这些资格；完整 def 无 sorry。
 
@@ -707,7 +707,7 @@ def formalHamiltonianField {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 位置：[Blueprint/Ch03.lean:125](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:125>)（`MD.Ch03.formalHamiltonianField`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 

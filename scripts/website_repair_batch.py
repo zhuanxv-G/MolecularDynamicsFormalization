@@ -36,6 +36,10 @@ def prepare(ch, eaudit, section, edits, *, pages, source_only=(), human=None):
         prior_proofs[sid]=old
         text=text.replace(old,code,1)
         start=text.index('source_id: '+sid); stop=text.index('-/',start)
+        for before,after in e.get('comment_corrections',{}).items():
+            comment=text[start:stop];assert before in comment,(sid,before)
+            updated=comment.replace(before,after);text=text[:start]+updated+text[stop:]
+            stop=start+len(updated)
         text=text[:stop]+'\n[EXTRA] '+e['note']+' '+text[stop:]
         decisions[sid]={'category':e['category'],'handling':e['note'],'section':section}
     lean.write_text(text,encoding='utf-8')
@@ -43,7 +47,7 @@ def prepare(ch, eaudit, section, edits, *, pages, source_only=(), human=None):
     for s in sources:
         sid=s['source_id']
         if sid not in touched: continue
-        w=ws[sid]; old=entry_hash(s); changed=[]
+        w=ws[sid]; old=entry_hash(s); changed=[];annotation_corrections={}
         source_pages=[int(x) for x in re.findall(r'\d+',s['pdf_page'])]
         required=set(range(source_pages[0],source_pages[-1]+1))
         assert required<=set(pages), (sid,required,pages)
@@ -53,13 +57,18 @@ def prepare(ch, eaudit, section, edits, *, pages, source_only=(), human=None):
                 if key in proposal and s.get(key)!=proposal[key]:s[key]=proposal[key];changed.append(key)
             s['review_status']='CORRECTED'
         if sid in edits:
+            for key,value in edits[sid].get('source_updates',{}).items():
+                assert key in ('issues','extra_assumptions','excluded_qualitative','context_notation')
+                if s.get(key)!=value:
+                    annotation_corrections[key]={'before':s.get(key),'after':value}
+                    s[key]=value;changed.append(key)
             note='[EXTRA] '+edits[sid]['note']
             if note not in s['extra_assumptions']: s['extra_assumptions'].append(note)
             if 'scope' in edits[sid] and s.get('statement_scope') != edits[sid]['scope']:
                 s['statement_scope']=edits[sid]['scope'];changed.append('statement_scope')
             overrides[sid]={'code':edits[sid]['code'].strip(),'extra_assumptions':s['extra_assumptions']}
         s['source_page_verification']=f'VERIFIED_RENDERED; validation/{eaudit}/SOURCE_PAGE_VERIFICATION.json'
-        s.setdefault('repair_log',[]).append(dict(stage=eaudit+'_LOCAL_REPAIR',timestamp=datetime.now().isoformat(),before_sha256=old,after_sha256=entry_hash(s),changed_fields=changed,raw_return=w.get('json_review_raw_path',w['raw_path']),reason='已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。'))
+        s.setdefault('repair_log',[]).append(dict(stage=eaudit+'_LOCAL_REPAIR',timestamp=datetime.now().isoformat(),before_sha256=old,after_sha256=entry_hash(s),changed_fields=changed,annotation_corrections=annotation_corrections,raw_return=w.get('json_review_raw_path',w['raw_path']),reason='已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。'))
         w['repair']={'eaudit':eaudit,'status':'awaiting_mentor' if sid in human else 'prepared_unverified','signature_changed':sid in edits,'json_review_locally_verified':True}
         if sid in human:
             question=human[sid]; w['repair']['mentor_question']=question;w['needs_category']='原文数学判断'
