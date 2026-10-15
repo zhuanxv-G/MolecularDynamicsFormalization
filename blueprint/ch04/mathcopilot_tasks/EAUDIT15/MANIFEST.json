@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT15",
+  "input_sha256": {
+    "BATCH_EAUDIT15.md": "ad868fbf2209a56130a055673166bf93f23d2027ee02d9bf5f315e958fc6b45e",
+    "Blueprint/Ch04.lean": "2677062c8361f7538ae88c6ae56e8819b1c368401e9549cd0743055547e55d49",
+    "blueprint/ch04/ch04_source.json": "f4a3dfdee7f48e23874d7fb6edfd75d0431590070f6b9b623aba62fb723e479b"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT15a",
+      "source_id": "MD-4.3.5.1-AdjointEuler",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT15/a",
+      "total_bytes": 107266,
+      "manifest_sha256": "dfee2ad6b5444c169905a70f975eb60ef210c01f1c2fa70af25ed4bb60e313de"
+    },
+    {
+      "subtask": "EAUDIT15b",
+      "source_id": "MD-4.3.5.1-ConstrainedComposition",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT15/b",
+      "total_bytes": 111352,
+      "manifest_sha256": "671b2962f0e75f48ec82e74d710de373a7c31174f208ce5c313cee1d39fc261d"
+    },
+    {
+      "subtask": "EAUDIT15c",
+      "source_id": "MD-4.3.5.1-ConstrainedCompositionOrder",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT15/c",
+      "total_bytes": 105942,
+      "manifest_sha256": "e735ff4553232b402815888398d2fd4043c7d8fa39c5208c47f17445c4694c9e"
+    },
+    {
+      "subtask": "EAUDIT15d",
+      "source_id": "MD-4.3.5.1-GeodesicRelation",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT15/d",
+      "total_bytes": 97407,
+      "manifest_sha256": "14176f9f081884622ab504b0d113f309866f65c31d5bf3075c08ea5d9e71a06c"
+    }
+  ]
+}

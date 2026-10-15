@@ -3565,11 +3565,24 @@
     "issues": [],
     "lean_decl": "MD.Ch04.adjointEulerRelation",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留原三式；补非零h、两端余切域上的真实逆步关系等价（对应所选局部逆分支），及正质量/光滑分支上实际ODE的O(h²)局部误差。未把逆映射或误差结论作为资格。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT15_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:58:18.044200",
+        "before_sha256": "5488f6a4d2f415b6e0fc2496bb528d8c0ad38845f40d55035c535e534d5556d5",
+        "after_sha256": "cc526a923d8775b287d6ac7c0f68312baf8b3db341de2f68370545a343b93488",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.5.1-ConstrainedComposition",
@@ -3587,12 +3600,37 @@
     "lean_decl": "MD.Ch04.constrainedComposition",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "给定真实C¹半步分支、C²势与约束，前后位置约束；本条完整拉回形式结论，二阶精度另条。"
+      "U/g为C³，正质量及独立约束；小步长窗口内C¹空间分支资格显式。",
+      "[EXTRA] 分支关系限制小h窗口、C¹空间资格及独立约束，保留辛性；补无约束Euler/伴随退化及单位圆自由运动中与RATTLE/SHAKE位置不同的具体单值近分支实例。二阶精度明确由ConstrainedCompositionOrder承担；C³是本签名实际充分资格。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "statement_scope": "小h光滑分支上的组合辛性、无约束退化及非等价实例；二阶精度子句由MD-4.3.5.1-ConstrainedCompositionOrder承担，原文保留。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT15_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:58:18.044288",
+        "before_sha256": "4ea18f6452a46f96e549fa31150efc9e6f69bbd058d6ca40e58646a3ad3d54ac",
+        "after_sha256": "836ff5b4234046febaf62ef6f145e101920aa518b88d8db23975334d1ce40751",
+        "changed_fields": [
+          "extra_assumptions",
+          "statement_scope"
+        ],
+        "annotation_corrections": {
+          "extra_assumptions": {
+            "before": [
+              "给定真实C¹半步分支、C²势与约束，前后位置约束；本条完整拉回形式结论，二阶精度另条。"
+            ],
+            "after": [
+              "U/g为C³，正质量及独立约束；小步长窗口内C¹空间分支资格显式。",
+              "[EXTRA] 分支关系限制小h窗口、C¹空间资格及独立约束，保留辛性；补无约束Euler/伴随退化及单位圆自由运动中与RATTLE/SHAKE位置不同的具体单值近分支实例。二阶精度明确由ConstrainedCompositionOrder承担；C³是本签名实际充分资格。"
+            ]
+          }
+        },
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.5.1-ConstrainedCompositionOrder",
@@ -3610,12 +3648,26 @@
     "lean_decl": "MD.Ch04.constrainedCompositionOrder",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "真实光滑隐式分支、正质量、C⁴势/约束和一致时间区间；实际局部O(h³)精度。"
+      "真实光滑隐式分支、正质量、C⁴势/约束和一致时间区间；实际局部O(h³)精度。",
+      "[EXTRA] 本条限定二阶局部精度，辛性在ConstrainedComposition同域对应的空间光滑分支中单列；将关系限制实际小h窗口，避免强迫全步长隐式分支存在。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "statement_scope": "组合方法O(h³)局部误差（二阶精度）子句；辛性、退化及非等价实例由MD-4.3.5.1-ConstrainedComposition承担；不冒充全局二阶收敛。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT15_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:58:18.044344",
+        "before_sha256": "9ae5f0f1e7bbf694e287adda8107861fe1dd1891f4f3f1eff5458fe1bb1910af",
+        "after_sha256": "a323d3a95345d5e960bf7b78e98935af2eb807b731c3ea4ecee23340a88c273f",
+        "changed_fields": [
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.5.1-MomentumProjector",
@@ -3680,11 +3732,24 @@
     "issues": [],
     "lean_decl": "MD.Ch04.geodesicRelation",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 补正质量诱导度量∑m_i u_i v_i，并在开放时间、C²约束/轨迹及满秩域上，将质量正交加速度的嵌入测地线方程与真实零势约束ODE及p=Mqdot等价；不声称全局流存在。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT15_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:58:18.044393",
+        "before_sha256": "c576f481f3b375d03feaff63d69584c8d5825762f9fc36af705772eb32645d88",
+        "after_sha256": "2efe1a9a6ca8ae896e2f1f2658fb4d3ab065d6d24d5ff9d6eb5479f6985058b8",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.6-MShakeIteration",

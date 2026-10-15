@@ -1572,7 +1572,8 @@ theorem shakePositionOrder :
       ∀ k ≤ N, ‖qn k-q (k*h)‖ ≤ C*h^2 := by
   sorry
 
-/-- source_id: MD-4.3.5.1-AdjointEuler · definition · §4.3.5.1 · 印刷p.163 / PDFp.185 -/
+/-- source_id: MD-4.3.5.1-AdjointEuler · definition · §4.3.5.1 · 印刷p.163 / PDFp.185 
+[EXTRA] 保留原三式；补非零h、两端余切域上的真实逆步关系等价（对应所选局部逆分支），及正质量/光滑分支上实际ODE的O(h²)局部误差。未把逆映射或误差结论作为资格。 -/
 def adjointEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (half : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
   half=z.2-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
@@ -1580,30 +1581,89 @@ def adjointEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.
   out.2=half+h • F out.1-h • ((textbookConstraintJacobian g out.1)ᵀ *ᵥ μ) ∧
   out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
 
+theorem adjointEuler_inverseRelation (n l : ℕ) (m : Fin n → ℝ)
+    (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (_hh : h ≠ 0)
+    (z out : MolecularDynamics.Chapter04Review.Z n)
+    (_hz : z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g)
+    (_hout : out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g) :
+    (∃ half rho μ, adjointEulerRelation m F g h z out half rho μ) ↔
+      ∃ pbar rho μ, MolecularDynamics.Chapter04Review.projectedEulerRelation m F g (-h) out z pbar rho μ := by
+  sorry
+
+theorem adjointEulerLocalOrder :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (z : MolecularDynamics.Chapter04Review.Z n) (Φ E A : ℝ → MolecularDynamics.Chapter04Review.Z n) (pE pR : ℝ → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoR μR : ℝ → MolecularDynamics.Chapter04Review.Q l),
+    (∀ i, 0 < m i) → ContDiff ℝ 4 U → (∀ j, ContDiff ℝ 4 (g j)) →
+    z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g → (textbookConstraintGram m g z.1).det ≠ 0 →
+    ContDiff ℝ 3 E → ContDiff ℝ 3 A → ContDiff ℝ 3 Φ → E 0=z → A 0=z → Φ 0=z →
+    ContDiff ℝ 2 rhoE → ContDiff ℝ 2 μE → ContDiff ℝ 2 rhoR → ContDiff ℝ 2 μR →
+    μE 0=0 → μR 0=0 →
+    (∃ δ > 0, ∀ h ∈ Ioo (-δ) δ,
+      MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h) (pE h) (rhoE h) (μE h) ∧
+      MolecularDynamics.Chapter04Review.adjointEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (A h) (pR h) (rhoR h) (μR h) ∧
+      HasDerivAt Φ (textbookConstrainedPhaseVectorField m g U (Φ h)) h) →
+    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ‖E h-Φ h‖ ≤ C*h^2 ∧ ‖A h-Φ h‖ ≤ C*h^2 := by
+  sorry
+
 /-- source_id: MD-4.3.5.1-ConstrainedComposition · unnumbered_claim · §4.3.5.1 · 印刷p.163 / PDFp.185
-[EXTRA] 给定真实C¹半步分支、C²势与约束，前后位置约束；本条完整拉回形式结论，二阶精度另条。 -/
+[EXTRA] 给定真实C¹半步分支、C²势与约束，前后位置约束；本条完整拉回形式结论，二阶精度另条。 
+[EXTRA] 分支关系限制小h窗口、C¹空间资格及独立约束，保留辛性；补无约束Euler/伴随退化及单位圆自由运动中与RATTLE/SHAKE位置不同的具体单值近分支实例。二阶精度明确由ConstrainedCompositionOrder承担；C³是本签名实际充分资格。 -/
 theorem constrainedComposition :
   ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
-    (E A : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (pE pA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoA μA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l),
+    (E A : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (pE pA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoA μA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l) (η : ℝ), 0 < η →
     (∀ j, ContDiff ℝ 3 (g j)) → ContDiff ℝ 3 U → (∀ i, 0 < m i) →
-    (∀ h, Differentiable ℝ (E h) ∧ Differentiable ℝ (A h) ∧
-      Differentiable ℝ (pE h) ∧ Differentiable ℝ (pA h) ∧ Differentiable ℝ (rhoE h) ∧
-      Differentiable ℝ (μE h) ∧ Differentiable ℝ (rhoA h) ∧ Differentiable ℝ (μA h)) →
-    (∀ h z, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+    (∀ q ∈ MolecularDynamics.Chapter04Review.constraintSet g, LinearIndependent ℝ (fun j ↦ textbookConstraintGradient (g j) q)) →
+    (∀ h ∈ Ioo (-η) η, ContDiff ℝ 1 (E h) ∧ ContDiff ℝ 1 (A h) ∧
+      ContDiff ℝ 1 (pE h) ∧ ContDiff ℝ 1 (pA h) ∧ ContDiff ℝ 1 (rhoE h) ∧
+      ContDiff ℝ 1 (μE h) ∧ ContDiff ℝ 1 (rhoA h) ∧ ContDiff ℝ 1 (μA h)) →
+    (∀ h ∈ Ioo (-η) η, ∀ z, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
       MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h z) (pE h z) (rhoE h z) (μE h z) ∧
       MolecularDynamics.Chapter04Review.adjointEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (A h z) (pA h z) (rhoA h z) (μA h z)) →
-    ∀ h, MolecularDynamics.Chapter04Review.restrictedSymplectic m g (A (h/2) ∘ E (h/2)) := by
+    ∀ h ∈ Ioo (-η) η, MolecularDynamics.Chapter04Review.restrictedSymplectic m g (A (h/2) ∘ E (h/2)) := by
+  sorry
+
+theorem constrainedComposition_circleExample :
+    let m : Fin 2 → ℝ := fun _ ↦ 1
+    let g : Fin 1 → (Fin 2 → ℝ) → ℝ := fun _ q ↦ (q 0)^2+(q 1)^2-1
+    let F : (Fin 2 → ℝ) → Fin 2 → ℝ := fun _ ↦ 0
+    let z : MolecularDynamics.Chapter04Review.Z 2 := (![1,0],![0,1])
+    let e : MolecularDynamics.Chapter04Review.Z 2 :=
+      (![Real.sqrt 15/4,1/4],![-1/4,Real.sqrt 15/4])
+    let a : MolecularDynamics.Chapter04Review.Z 2 :=
+      (![7/8,Real.sqrt 15/8],![-Real.sqrt 15/8,7/8])
+    let r : MolecularDynamics.Chapter04Review.Z 2 :=
+      (![Real.sqrt 3/2,1/2],![-1/2,Real.sqrt 3/2])
+    ∃ pE pA pR pS ρE μE ρA μA ρR μR ρS ρSnew pSout,
+      MolecularDynamics.Chapter04Review.projectedEulerRelation m F g (1/4) z e pE ρE μE ∧
+      MolecularDynamics.Chapter04Review.adjointEulerRelation m F g (1/4) e a pA ρA μA ∧
+      MolecularDynamics.Chapter04Review.rattleRelation m F g (1/2) z r pR ρR μR ∧
+      MolecularDynamics.Chapter04Review.shakeRelation m F g (1/2) z (r.1,pSout) pS ρS ρSnew ∧
+      a.1 ≠ r.1 := by
+  sorry
+
+theorem constrainedComposition_noConstraints (n : ℕ) (m : Fin n → ℝ)
+    (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) :
+    ((∃ pbar rho μ, MolecularDynamics.Chapter04Review.projectedEulerRelation m F
+      (Fin.elim0 : Fin 0 → MolecularDynamics.Chapter04Review.Q n → ℝ) h z out pbar rho μ) ↔
+      out=(z.1+h • MolecularDynamics.Chapter04Review.invMass m (z.2+h • F z.1),z.2+h • F z.1)) ∧
+    ((∃ half rho μ, MolecularDynamics.Chapter04Review.adjointEulerRelation m F
+      (Fin.elim0 : Fin 0 → MolecularDynamics.Chapter04Review.Q n → ℝ) h z out half rho μ) ↔
+      out=(z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2,
+        z.2+h • F (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2))) := by
   sorry
 
 /-- source_id: MD-4.3.5.1-ConstrainedCompositionOrder · unnumbered_claim · §4.3.5.1 · 印刷p.163 / PDFp.185
-[EXTRA] 真实光滑隐式分支、正质量、C⁴势/约束和一致时间区间；实际局部O(h³)精度。 -/
+[EXTRA] 真实光滑隐式分支、正质量、C⁴势/约束和一致时间区间；实际局部O(h³)精度。 
+[EXTRA] 本条限定二阶局部精度，辛性在ConstrainedComposition同域对应的空间光滑分支中单列；将关系限制实际小h窗口，避免强迫全步长隐式分支存在。 -/
 theorem constrainedCompositionOrder :
   ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
-    (E A : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (pE pA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rhoE muE rhoA muA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l),
+    (E A : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (pE pA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rhoE muE rhoA muA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l) (η : ℝ), 0 < η →
     (∀ i, 0 < m i) → ContDiff ℝ 4 U → (∀ j, ContDiff ℝ 4 (g j)) →
     ContDiff ℝ 3 (Function.uncurry E) → ContDiff ℝ 3 (Function.uncurry A) →
     (∀ z, E 0 z=z ∧ A 0 z=z ∧ muE 0 z=0) →
-    (∀ h z, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+    (∀ h ∈ Ioo (-η) η, ∀ z, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
       MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h z) (pE h z) (rhoE h z) (muE h z) ∧
       MolecularDynamics.Chapter04Review.adjointEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (A h z) (pA h z) (rhoA h z) (muA h z)) →
     ∀ z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g, (textbookConstraintGram m g z.1).det ≠ 0 →
@@ -1649,10 +1709,28 @@ theorem constrainedPotentialFlow :
     simp
   · simpa [u,Matrix.neg_mulVec] using (((hasDerivAt_id t).smul_const u).const_sub z.2)
 
-/-- source_id: MD-4.3.5.1-GeodesicRelation · definition · §4.3.5.1 · 印刷p.164 / PDFp.186 -/
+/-- source_id: MD-4.3.5.1-GeodesicRelation · definition · §4.3.5.1 · 印刷p.164 / PDFp.186 
+[EXTRA] 补正质量诱导度量∑m_i u_i v_i，并在开放时间、C²约束/轨迹及满秩域上，将质量正交加速度的嵌入测地线方程与真实零势约束ODE及p=Mqdot等价；不声称全局流存在。 -/
 def geodesicRelation {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
-    (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) : Prop :=
+    (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) (_hI : IsOpen I) (_hm : ∀ i, 0 < m i)
+    (_hg : ∀ j, ContDiff ℝ 2 (g j)) : Prop :=
   MolecularDynamics.Chapter04Review.constrainedSolution m (fun _ => 0) g q p rho I
+
+def massMetric {n : ℕ} (m : Fin n → ℝ) (u v : Fin n → ℝ) : ℝ :=
+  ∑ i, m i*u i*v i
+
+theorem geodesicRelation_massMetric (n l : ℕ) (m : Fin n → ℝ) (_hm : ∀ i, 0 < m i)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (_hg : ∀ j, ContDiff ℝ 2 (g j)) (I : Set ℝ) (_hI : IsOpen I)
+    (q : ℝ → MolecularDynamics.Chapter04Review.Q n) (_hq : ContDiff ℝ 2 q)
+    (_hc : ∀ t ∈ I, ∀ j, g j (q t)=0)
+    (_hreg : ∀ t ∈ I, LinearIndependent ℝ (fun j ↦ textbookConstraintGradient (g j) (q t))) :
+    (∀ t ∈ I, ∀ ξ : MolecularDynamics.Chapter04Review.Q n,
+      textbookConstraintJacobian g (q t) *ᵥ ξ=0 →
+        massMetric m (deriv (deriv q) t) ξ=0) ↔
+    ∃ p rho, (∀ t ∈ I, p t=fun i ↦ m i*deriv q t i) ∧
+      MolecularDynamics.Chapter04Review.constrainedSolution m (fun _ ↦ 0) g q p rho I := by
+  sorry
 
 /-- source_id: MD-4.3.6-MShakeIteration · definition · §4.3.6 · 印刷p.164 / PDFp.186 -/
 def mShakeIteration {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
@@ -2485,11 +2563,17 @@ end MD.Ch04
 #print axioms MD.Ch04.shakeElimination
 #print axioms MD.Ch04.shakePositionOrder
 #print axioms MD.Ch04.adjointEulerRelation
+#print axioms MD.Ch04.adjointEuler_inverseRelation
+#print axioms MD.Ch04.adjointEulerLocalOrder
 #print axioms MD.Ch04.constrainedComposition
+#print axioms MD.Ch04.constrainedComposition_circleExample
+#print axioms MD.Ch04.constrainedComposition_noConstraints
 #print axioms MD.Ch04.constrainedCompositionOrder
 #print axioms MD.Ch04.momentumProjector
 #print axioms MD.Ch04.constrainedPotentialFlow
 #print axioms MD.Ch04.geodesicRelation
+#print axioms MD.Ch04.massMetric
+#print axioms MD.Ch04.geodesicRelation_massMetric
 #print axioms MD.Ch04.mShakeIteration
 #print axioms MD.Ch04.settleRelation
 #print axioms MD.Ch04.lincsInverse

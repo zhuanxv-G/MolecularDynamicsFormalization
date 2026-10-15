@@ -1303,5 +1303,25 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "4.3.5"
+  },
+  "MD-4.3.5.1-AdjointEuler": {
+    "category": "B",
+    "handling": "保留原三式；补非零h、两端余切域上的真实逆步关系等价（对应所选局部逆分支），及正质量/光滑分支上实际ODE的O(h²)局部误差。未把逆映射或误差结论作为资格。",
+    "section": "4.3.5.1"
+  },
+  "MD-4.3.5.1-ConstrainedComposition": {
+    "category": "B",
+    "handling": "分支关系限制小h窗口、C¹空间资格及独立约束，保留辛性；补无约束Euler/伴随退化及单位圆自由运动中与RATTLE/SHAKE位置不同的具体单值近分支实例。二阶精度明确由ConstrainedCompositionOrder承担；C³是本签名实际充分资格。",
+    "section": "4.3.5.1"
+  },
+  "MD-4.3.5.1-ConstrainedCompositionOrder": {
+    "category": "B",
+    "handling": "本条限定二阶局部精度，辛性在ConstrainedComposition同域对应的空间光滑分支中单列；将关系限制实际小h窗口，避免强迫全步长隐式分支存在。",
+    "section": "4.3.5.1"
+  },
+  "MD-4.3.5.1-GeodesicRelation": {
+    "category": "B",
+    "handling": "补正质量诱导度量∑m_i u_i v_i，并在开放时间、C²约束/轨迹及满秩域上，将质量正交加速度的嵌入测地线方程与真实零势约束ODE及p=Mqdot等价；不声称全局流存在。",
+    "section": "4.3.5.1"
   }
 }

@@ -3506,17 +3506,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.adjointEulerRelation",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "0f12f7e57e094c5b77223b218d0d17c86828db092131a185e154f3d8239da351",
-      "block_sha256": "0f12f7e57e094c5b77223b218d0d17c86828db092131a185e154f3d8239da351",
-      "direct_placeholder": false,
+      "signature_sha256": "39cce245cb3f3efe6d03922559103c32788a1a71333557544b91a70349253e55",
+      "block_sha256": "39cce245cb3f3efe6d03922559103c32788a1a71333557544b91a70349253e55",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -3533,23 +3534,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT15/axioms.log"
     },
     "MD-4.3.5.1-ConstrainedComposition": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.constrainedComposition",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "7275ef5d48bc8f6f384426bf36ba8a966f6e4e0640a3e3c1087fdb8b574a7ec9",
-      "block_sha256": "c0c63295bbf5e5cd5b5a25d469cc211016fccfdfe5a91a67ed222546ed90b1f2",
+      "signature_sha256": "df6e5059c4f83287fbd83726b771e4c4e80b701d743c382b154a2f5cb8df8cd7",
+      "block_sha256": "c14bf3916dabcae37736c32e7e8ceaf9450949d9010003bee26d997e73f40e14",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -3567,23 +3568,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT15/axioms.log"
     },
     "MD-4.3.5.1-ConstrainedCompositionOrder": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.constrainedCompositionOrder",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "254d7cd50a618503bfb6d899041c3a240e78325fd30ae8447fc4852644cabf6d",
-      "block_sha256": "3146f3dfbd3173fb5799648d4dbcced20e971c1477850393c23dc74da1b11242",
+      "signature_sha256": "cf00a18722470f6ef1d843616eb259ba695f4cc784c5240ae2ed3e8fe25f0cb8",
+      "block_sha256": "4e366d88896094f14e4d048f09989f83ce1f5a346e4b13ad5bee7c4d7ac75778",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -3601,7 +3602,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT15/axioms.log"
     },
     "MD-4.3.5.1-MomentumProjector": {
       "checked": true,
@@ -3680,17 +3681,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.geodesicRelation",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "c38acedc52ccaaff16d108b4e5f5d4d879685665e196b7ef09303b085346feb4",
-      "block_sha256": "c38acedc52ccaaff16d108b4e5f5d4d879685665e196b7ef09303b085346feb4",
-      "direct_placeholder": false,
+      "signature_sha256": "b5b046ff38dd349644a5e0ae8e4458f70e5db035ab96844cf3a7369b39bd8803",
+      "block_sha256": "b5b046ff38dd349644a5e0ae8e4458f70e5db035ab96844cf3a7369b39bd8803",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -3707,7 +3709,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT15/axioms.log"
     },
     "MD-4.3.6-MShakeIteration": {
       "checked": true,

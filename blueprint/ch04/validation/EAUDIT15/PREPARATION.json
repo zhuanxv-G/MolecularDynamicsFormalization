@@ -1,0 +1,31 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT15",
+  "section": "4.3.5.1",
+  "source_ids": [
+    "MD-4.3.5.1-AdjointEuler",
+    "MD-4.3.5.1-ConstrainedComposition",
+    "MD-4.3.5.1-ConstrainedCompositionOrder",
+    "MD-4.3.5.1-GeodesicRelation"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.5.1-AdjointEuler",
+    "MD-4.3.5.1-ConstrainedComposition",
+    "MD-4.3.5.1-ConstrainedCompositionOrder",
+    "MD-4.3.5.1-GeodesicRelation"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "4e1874e4d084a889dd84e6add8bb2d0dd5c1ba24eccd8b020c14fa4acf844821",
+  "lean_sha256": "2677062c8361f7538ae88c6ae56e8819b1c368401e9549cd0743055547e55d49",
+  "source_sha256": "f4a3dfdee7f48e23874d7fb6edfd75d0431590070f6b9b623aba62fb723e479b",
+  "pages": [
+    185,
+    186
+  ],
+  "prior_proof_blocks": {
+    "MD-4.3.5.1-AdjointEuler": "def adjointEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (half : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=\n  half=z.2-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧\n  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m half ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧\n  out.2=half+h • F out.1-h • ((textbookConstraintJacobian g out.1)ᵀ *ᵥ μ) ∧\n  out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g",
+    "MD-4.3.5.1-ConstrainedComposition": "theorem constrainedComposition :\n  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (E A : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (pE pA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoA μA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l),\n    (∀ j, ContDiff ℝ 3 (g j)) → ContDiff ℝ 3 U → (∀ i, 0 < m i) →\n    (∀ h, Differentiable ℝ (E h) ∧ Differentiable ℝ (A h) ∧\n      Differentiable ℝ (pE h) ∧ Differentiable ℝ (pA h) ∧ Differentiable ℝ (rhoE h) ∧\n      Differentiable ℝ (μE h) ∧ Differentiable ℝ (rhoA h) ∧ Differentiable ℝ (μA h)) →\n    (∀ h z, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →\n      MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h z) (pE h z) (rhoE h z) (μE h z) ∧\n      MolecularDynamics.Chapter04Review.adjointEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (A h z) (pA h z) (rhoA h z) (μA h z)) →\n    ∀ h, MolecularDynamics.Chapter04Review.restrictedSymplectic m g (A (h/2) ∘ E (h/2)) := by\n  sorry",
+    "MD-4.3.5.1-ConstrainedCompositionOrder": "theorem constrainedCompositionOrder :\n  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (E A : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (pE pA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rhoE muE rhoA muA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l),\n    (∀ i, 0 < m i) → ContDiff ℝ 4 U → (∀ j, ContDiff ℝ 4 (g j)) →\n    ContDiff ℝ 3 (Function.uncurry E) → ContDiff ℝ 3 (Function.uncurry A) →\n    (∀ z, E 0 z=z ∧ A 0 z=z ∧ muE 0 z=0) →\n    (∀ h z, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →\n      MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h z) (pE h z) (rhoE h z) (muE h z) ∧\n      MolecularDynamics.Chapter04Review.adjointEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (A h z) (pA h z) (rhoA h z) (muA h z)) →\n    ∀ z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g, (textbookConstraintGram m g z.1).det ≠ 0 →\n    ∀ Φ : ℝ → MolecularDynamics.Chapter04Review.Z n, ContDiff ℝ 3 Φ → Φ 0=z →\n      (∃ d > 0, ∀ t ∈ Ioo (-d) d, HasDerivAt Φ (textbookConstrainedPhaseVectorField m g U (Φ t)) t) →\n      ∃ C > 0, ∃ d > 0, ∀ h ∈ Ioo 0 d, ‖A (h/2) (E (h/2) z)-Φ h‖ ≤ C*h^3 := by\n  sorry",
+    "MD-4.3.5.1-GeodesicRelation": "def geodesicRelation {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) (I : Set ℝ) : Prop :=\n  MolecularDynamics.Chapter04Review.constrainedSolution m (fun _ => 0) g q p rho I"
+  }
+}
