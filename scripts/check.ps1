@@ -1,5 +1,5 @@
 #Requires -Version 7.0
-param([string]$ReportDirectory)
+param([string]$ReportDirectory, [switch]$PauseChapter06)
 
 $ErrorActionPreference = 'Stop'
 $PSNativeCommandUseErrorActionPreference = $false
@@ -41,6 +41,7 @@ $report = [ordered]@{
     responsible_semantic_review = 'pending'
     failed_phase = $null
     error = $null
+    paused_chapter06 = [bool]$PauseChapter06
 }
 
 function Save-Report {
@@ -184,7 +185,15 @@ try {
     if ($mathlibChanges) { throw 'Actual mathlib checkout has tracked local modifications.' }
 
     $phase = 'lake_build'
-    $null = Invoke-CheckedCommand 'lake_build' $lakeExe @('build')
+    if ($PauseChapter06) {
+        # User 2026-10-14: keep the chapter 6 WIP unverified, including batch 27.
+        # Build the full formal library and every active Blueprint module.
+        $targets = @('build', 'MolecularDynamicsFormalization')
+        $targets += @(1..5 | ForEach-Object { '+Blueprint.Ch{0:00}' -f $_ })
+        $null = Invoke-CheckedCommand 'lake_build' $lakeExe $targets
+    } else {
+        $null = Invoke-CheckedCommand 'lake_build' $lakeExe @('build')
+    }
     $phase = 'scratch'
     $null = Invoke-CheckedCommand 'scratch' $lakeExe @('env', 'lean', 'Scratch.lean')
     $phase = 'axiom_dependencies'
