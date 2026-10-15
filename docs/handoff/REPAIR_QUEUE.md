@@ -2,25 +2,25 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 461；章末验收待完成 [2, 3, 4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 459；章末验收待完成 [2, 3, 4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
-第2章：网站PASS 69 / 已修待复审 73 / 待导师 18 / 修复中 0。
+第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 91 / 已修待复审 4 / 待导师 5 / 修复中 49。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
 |---|---|---|---|---|---|---|
-| 2 | MD-2-HamiltonianODE | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 已修待复审 | EAUDIT01 |
-| 2 | MD-2-Hamiltonian | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 已修待复审 | EAUDIT01 |
-| 2 | MD-2-Euler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
-| 2 | MD-2-OneStep | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 已修待复审 | EAUDIT01 |
+| 2 | MD-2-HamiltonianODE | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
+| 2 | MD-2-Hamiltonian | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
+| 2 | MD-2-Euler | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
+| 2 | MD-2-OneStep | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
 | 2 | MD-2.1-Convergence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.1-Order | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.1-Error | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.1-Thm2.1 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.1.2-SecondDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
+| 2 | MD-2.1.2-SecondDerivative | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
 | 2 | MD-2.1.2-Taylor2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.1.2-Taylor2Order | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2-VerletOrder | FAIL | C | 网站首选路线：直接保留原文(q,v)速度变量，使用已定义velocityVerlet与真实速度场(v,M⁻¹F(q))；正对角质量及C⁴为充分但非最小资格，闭窗连续性为冗余明确限制。未更改正式mechanicalField/verlet，不新增证明。 | 已修待复审 | EAUDIT02 |

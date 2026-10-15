@@ -6,9 +6,9 @@
     "MD-2-HamiltonianODE": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.hamiltonianODE",
@@ -35,7 +35,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT25/axioms.log",
       "block_sha256": "8093d79778be6ddc7fa93e8ac3da3c7318320a26f94508dd6ab666be57f07d13",
       "transitive_placeholder": false,
       "compiled": true,
@@ -44,9 +44,9 @@
     "MD-2-Hamiltonian": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.mechanicalHamiltonian",
@@ -73,7 +73,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT25/axioms.log",
       "block_sha256": "82fcad0fe51c739521d17d9feac49e2bc865ca359863c93aba28e5ee9618ad9e",
       "transitive_placeholder": false,
       "compiled": true,
@@ -82,9 +82,9 @@
     "MD-2-Euler": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.euler",
@@ -106,16 +106,17 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT25/axioms.log",
       "block_sha256": "d972017500dc16cadac7cbc70966761995bf5f94337b248f235b4bf71b73bb3e",
-      "transitive_placeholder": false
+      "transitive_placeholder": false,
+      "compiled": true
     },
     "MD-2-OneStep": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.numericalTrajectory",
@@ -142,7 +143,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT25/axioms.log",
       "block_sha256": "a1826dfbd70b32c0ccd6c531c284176e8cb335675c9ea14c8672ec0d8997058b",
       "transitive_placeholder": false,
       "compiled": true,
@@ -282,9 +283,9 @@
     "MD-2.1.2-SecondDerivative": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.odeSecondDerivative",
@@ -306,9 +307,10 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT25/axioms.log",
       "block_sha256": "d967e9ccd03ec6f795e4b74bee8fd4b981f2649fc71f4af307ed1d0d8ddad470",
-      "transitive_placeholder": false
+      "transitive_placeholder": false,
+      "compiled": true
     },
     "MD-2.1.2-Taylor2": {
       "checked": true,

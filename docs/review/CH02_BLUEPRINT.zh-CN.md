@@ -4,15 +4,15 @@
 
 | source_id | 页码 印刷/PDF | 本地预审 | 网站审计 | 状态 |
 |---|---|---|---|---|
-| MD-2-HamiltonianODE | 53/75 | PASS | 待复审 / EAUDIT01 | self-contained |
-| MD-2-Hamiltonian | 53/75 | PASS | 待复审 / EAUDIT01 | self-contained |
-| MD-2-Euler | 54/76 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
-| MD-2-OneStep | 54/76 | PASS | 待复审 / EAUDIT01 | self-contained |
+| MD-2-HamiltonianODE | 53/75 | PASS | 待复审 / EAUDIT25 | self-contained |
+| MD-2-Hamiltonian | 53/75 | PASS | 待复审 / EAUDIT25 | self-contained |
+| MD-2-Euler | 54/76 | PASS | 待复审 / EAUDIT25 | self-contained |
+| MD-2-OneStep | 54/76 | PASS | 待复审 / EAUDIT25 | self-contained |
 | MD-2.1-Convergence | 55/77 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.1-Order | 55/77 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.1-Error | 56/78 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.1-Thm2.1 | 56/78 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
-| MD-2.1.2-SecondDerivative | 59/81 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
+| MD-2.1.2-SecondDerivative | 59/81 | PASS | 待复审 / EAUDIT25 | self-contained |
 | MD-2.1.2-Taylor2 | 59/81 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.1.2-Taylor2Order | 59/81 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
 | MD-2.2-VerletOrder | 60/82 | PASS | 待复审 / EAUDIT02 | incomplete |
@@ -256,7 +256,7 @@ def hamiltonianODE {n : ℕ} (m : Fin n → ℝ) (_hm : ∀ i, 0 < m i)
 
 本地预审：**PASS**。[EXTRA] EAUDIT01显式固定正对角质量、U/H沿轨道可微、H与真实机械式的全坐标关系；完整q̇=M⁻¹p、ṗ=−∇U及ż=J∇H均保留。I为开时间域，采用环境HasDerivAt；只定义经典轨道关系，不宣称存在或唯一。
 
-网站审计：**待复审 / EAUDIT01**。原文JSON：CORRECTED；未冻结。
+网站审计：**待复审 / EAUDIT25**。原文JSON：CORRECTED；未冻结。
 
 重新读取Ch02.lean第18–20行及Ch02_deps.txt正式定义：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ（第33行），左标签为q、右标签为p；textbookJ=Matrix.fromBlocks 0 1 (-1) 0（第39–40行）；textbookHamiltonianVectorField H z=J *ᵥ (fun i => (fderiv ℝ H z)(Pi.single i 1))（第1921–1925行）。故在H可微处逐分量确为(∂H/∂p,−∂H/∂q)，梯度由标准坐标偏导组成，不是该Pi空间范数诱导的其他梯度；J符号与原书一致。量词为给定n,H,γ,I后∀t∈I要求γ在环境ℝ上有指定导数；没有解存在/唯一性结论，[EXTRA]的逐点关系解释合理。不过H完全任意，没有要求沿γ可微；fderiv在不可微点总化为零，因此可能把原书∇H根本不存在的点当作合法Hamiltonian轨道，缺少梯度存在的前提。完整原句还含固定机械模型的q̇=M⁻¹p、ṗ=−∇U；本接口未提供m,U或H与机械Hamiltonian的关联，不能单凭任意H覆盖该机械子句。采用环境HasDerivAt在开时间域上合适，若I用于闭区间端点则额外约束域外延拓，应明确约定或改用域内导数。本条没有[ERRATUM?]，无证据要求改原书；FAIL为签名与对象范围问题。此def本身无sorry；不据此评价其他依赖证明完成性，未修改或编译工程。
 
@@ -270,7 +270,7 @@ def hamiltonianODE {n : ℕ} (m : Fin n → ℝ) (_hm : ∀ i, 0 < m i)
 
 位置：[Blueprint/Ch02.lean:20](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:20>)（`MD.Ch02.hamiltonianODE`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -309,7 +309,7 @@ def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n)
 
 本地预审：**PASS**。[EXTRA] EAUDIT01显式∀i,0<mᵢ排除奇异M及零除延拓；保持真实PhaseSpace的(q,p)机械Hamiltonian，固定对角质量来自第1章。
 
-网站审计：**待复审 / EAUDIT01**。原文JSON：CORRECTED；未冻结。
+网站审计：**待复审 / EAUDIT25**。原文JSON：CORRECTED；未冻结。
 
 重新展开Ch02.lean第24–25行及Ch02_deps.txt：CoordinateMasses n=Fin n→ℝ（第3513行），没有正性或非零约束；Position和Momentum为EuclideanSpace ℝ (Fin n)，PhaseSpace=Position×Momentum，PotentialEnergy=Position→ℝ（第844–855行）。massHamiltonian=(massSeparableEnergy m U).hamiltonian；massSeparableEnergy=⟨momentumKineticEnergy m,U⟩；momentumKineticEnergy m p=∑i (p i)^2/(2*m i)（第3954–3961行）；SeparableEnergy.hamiltonian state=kinetic state.2+potential state.1（第3485–3486行）。因此(q,p)顺序、1/2、势能加号和固定对角质量在非零质量时准确，函数无额外量化结论。可是签名允许零质量，而原书M⁻¹需要可逆质量矩阵；库第3674–3684行也明确指出奇异矩阵逆约定不能无前提支持逐坐标倒数。缺失可逆性不仅是形式总化，在部分零质量情形还与Lean矩阵逆表达不同。[EXTRA]限制固定对角模型有第1章依据且合理，但不能补足未编码的非零质量前提。本条无[ERRATUM?]，无已确认原书错误；FAIL针对签名适用范围。此def本身没有sorry，与语义判定分开，未认证依赖证明或编译状态。
 
@@ -323,7 +323,7 @@ def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n)
 
 位置：[Blueprint/Ch02.lean:34](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:34>)（`MD.Ch02.mechanicalHamiltonian`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -333,8 +333,8 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 2. 原文陈述
 
-> The simplest scheme is certainly Euler’s method which advances the solution from timestep to timestep by the formula
-> \[\boldsymbol z_{n+1}=\boldsymbol z_n+hf(\boldsymbol z_n).\]
+> The simplest scheme is certainly Euler’s method which advances the solution from timestep to timestep by the formula\textsuperscript{1}
+> \[\boldsymbol z_{n+1}=\boldsymbol z_n+h\boldsymbol f(\boldsymbol z_n).\]
 
 ### 3. 原文证明
 
@@ -359,7 +359,7 @@ def euler {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT25**。原文JSON：CORRECTED；未冻结。
 
 本轮重新核对Ch02.lean第28–29行：euler f h z=z+h • f z。对象为任意实赋范向量空间E，其中特别包含教材相空间；z对应z_n，输出对应z_{n+1}，向量场在旧点z求值、正号和实步长均正确。这里仅用给定f、加法和实标量作用，无需展开Hamiltonian库；未要求f可微、解存在、误差阶或收敛性，原文此公式也没有这些要求。没有量词顺序或结论子句遗漏。赋范结构对纯代数更新并非必要，但覆盖教材对象，属于合理通用接口。本条无[EXTRA]及[ERRATUM?]。本身为无sorry的def；PASS是签名和展开公式的语义判定，不是导入工程编译或证明完成性认证。
 
@@ -369,11 +369,11 @@ def euler {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 位置：[Blueprint/Ch02.lean:39](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:39>)（`MD.Ch02.euler`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`d972017500dc16cadac7cbc70966761995bf5f94337b248f235b4bf71b73bb3e`；原文SHA256：`556ff4e49f4de350844702b3e325099ed4354d027bbfb35b2327f38a68ed5176`。
+签名SHA256：`d972017500dc16cadac7cbc70966761995bf5f94337b248f235b4bf71b73bb3e`；原文SHA256：`a810b02cb61bb5df593f32e112b7f60cb18babe2b751a6bd7b5953dca55c04a8`。
 
 ## 1. MD-2-OneStep · definition · 印刷p.54 / PDFp.76
 
@@ -420,7 +420,7 @@ def oneStepTargetDifference {n : ℕ} {D : Set (SymplecticCoordinates n)}
 
 本地预审：**PASS**。[EXTRA] EAUDIT01在开放正规相空间D排除势能不可微/奇异点；F的已给全时解族与初值/完整机械ODE相联，G作用于同一D，Z关联全部实际n次迭代。oneStepTargetDifference明确目标F_h与G_h的差；原段未规定定量近似质量，未加入虚构误差阶或收敛结论。全时流是此接口的给定模型资格，不是解存在定理。
 
-网站审计：**待复审 / EAUDIT01**。原文JSON：CORRECTED；未冻结。
+网站审计：**待复审 / EAUDIT25**。原文JSON：CORRECTED；未冻结。
 
 本轮重新核对Ch02.lean第32–33行，并在Ch02_deps.txt中检索本条相关接口：numericalTrajectory G h ζ n=(G h)^[n] ζ，其使用标准Function.iterate，零次为ζ，一次为G h ζ，递推下一点为G h作用于当前点。形式参数仅E,G,h,ζ,n，G为任意ℝ→E→E。本条不使用自定义Hamiltonian依赖；正式依赖的补充没有改变其签名。固定原文范围却包括排除势能奇异点的相空间、给定ODE、良定义实际流F_t、初值γ_ζ(0)=ζ、F_t(ζ)=γ_ζ(t)，以及G_h的目标为h时间单位后的流点。该定义没有f、F、解族、合法域或它们的关系，只给出n次迭代，遗漏上述子句。把E选成合法相空间只能处理对象域，仍不能记录目标ODE流。原文未规定定量近似界，故不因缺少误差阶或收敛性判FAIL。[EXTRA]与[ERRATUM?]均无标记，没有原书勘误依据。此def无sorry，但签名遗漏仍为FAIL；未修改或补证明。
 
@@ -434,7 +434,7 @@ def oneStepTargetDifference {n : ℕ} {D : Set (SymplecticCoordinates n)}
 
 位置：[Blueprint/Ch02.lean:44](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:44>)（`MD.Ch02.numericalTrajectory`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -674,7 +674,7 @@ theorem odeSecondDerivative :
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT25**。原文JSON：CORRECTED；未冻结。
 
 PASS。实际读取的 Blueprint/Ch02.lean 附件副本是 /workspace/Ch02.lean；input_sha256 绑定该副本实际字节。Ch02_deps.txt 第2816行展开 MolecularDynamics.Chapter02Review.Q n = Fin n → ℝ，即 n 个实坐标，采用函数空间逐点加法与实标量乘法及有限维范数；它与原文 ℝᵐ 的对象一致（标准有限维范数等价不影响此导数恒等式）。实际签名依次量化 n、f、γ，假设全域 ContDiff ℝ 1 f、全实线 ContDiff ℝ 2 γ 及 ∀t HasDerivAt γ (f (γ t)) t，然后对每个实数时刻断言 deriv γ 的导数为 fderiv ℝ f (γ t) 作用于 f (γ t)。HasDerivAt 的导数唯一性给出 deriv γ = f ∘ γ，链式法则给出原展示式全部等号，并非仅形式相似的自定义导数。fderiv 是实际 Fréchet 导数，在已假设可微的点对应 Jacobian。[EXTRA] γ 全域 C² 合理但冗余：C¹ 向量场和实际可微 ODE 解已足以导出结论，源证明也未使用 hγ；全域 C¹ 与全实线解是强于存在区间版本的明确资格，结论在该资格下忠实表达原公式，不宣称覆盖每个局部解。本条未有 [ERRATUM?]，未发现原公式疑误。正文为链式法则证明且无 sorry/admit；本次没有编译工程，此文本证明状态独立于签名语义判定。
 
@@ -684,11 +684,11 @@ PASS。实际读取的 Blueprint/Ch02.lean 附件副本是 /workspace/Ch02.lean�
 
 位置：[Blueprint/Ch02.lean:95](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:95>)（`MD.Ch02.odeSecondDerivative`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`bedcaaed95d38f1ca0a96e32276b27794c9f081c2dd7a3856d1c0135a1dbe773`；原文SHA256：`f0edac03e3505f2255f4541aa715ea9b136cdefbfbc1b06a1f267e480147d770`。
+签名SHA256：`bedcaaed95d38f1ca0a96e32276b27794c9f081c2dd7a3856d1c0135a1dbe773`；原文SHA256：`5d65431823b07fac594f00acc00c7789c495c9c746c8042af31a2bbf3ab2bc2c`。
 
 ## 1. MD-2.1.2-Taylor2 · Example 2.1 (map) · 印刷p.59 / PDFp.81
 

@@ -7,15 +7,15 @@
 网站整合汇总：网站PASS 108 / 修复中 46 / 待导师 2 / 待复审 4。
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
-| MD-2-HamiltonianODE | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
-| MD-2-Hamiltonian | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
-| MD-2-Euler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2-OneStep | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
+| MD-2-HamiltonianODE | CORRECTED/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT25 | definition / self-contained |
+| MD-2-Hamiltonian | CORRECTED/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT25 | definition / self-contained |
+| MD-2-Euler | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT25 | definition / self-contained |
+| MD-2-OneStep | CORRECTED/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT25 | definition / self-contained |
 | MD-2.1-Convergence | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.1-Order | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.1-Error | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.1-Thm2.1 | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.1.2-SecondDerivative | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
+| MD-2.1.2-SecondDerivative | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT25 | local_proof / self-contained |
 | MD-2.1.2-Taylor2 | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.1.2-Taylor2Order | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；缺一般Taylor方法局部截断误差、数值留域与全局阶桥接；当前库仅一般one-step条件误差定理。 |
 | MD-2.2-VerletOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；缺完整Verlet局部截断误差、稳定性及数值留域推导。 |
@@ -455,3 +455,5 @@ EAUDIT22 §2.5.3：2条落盘，单文件与2项公理通过；未写新证明�
 EAUDIT23 §2.5.4：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT24 §2.5.5：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT25 §章首及2.1原文复核：5条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
