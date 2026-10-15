@@ -4513,11 +4513,24 @@
     ],
     "lean_decl": "MD.Ch03.hardCorePotential",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 原印≤接触也取∞独立忠实定义，并补K+U+U_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:32:10.075381",
+        "before_sha256": "e64d26539d0b11ff060f1a98c4d9e0a3f8250f05a9afd384a2aeb2cf8da89ce2",
+        "after_sha256": "a72e4bf2415aa566a6a56f36258b9049e11a8afc7455743a9d2d4f1669a0d6aa",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH24_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.7.1-PrimitiveSplitting",
@@ -4567,8 +4580,19 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:32:10.077383",
+        "before_sha256": "30de52f42f4e674d52c1e831978ccdd5607ae323c6ccb1fc5e8617b130df1253",
+        "after_sha256": "c5299a5b48e8b2837817ba4fca57b946d990b7b1ce308b474af53c478e8b01c8",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH24_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.7.1-ObstacleReflection",
@@ -4582,16 +4606,31 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "质量=1，u=qc非零；本定义是p+αu的实际函数，能量性质关联ElasticEnergy。"
+      "原文模型：原点固定球与质量1的运动球，两球半径均0.5；接触时‖q_c‖=1，u_⊥=q_c≠0。",
+      "P̄=p−(h/2)∇U(q)，q_c=q+τ_cP̄；α=−2⟨u_⊥,P̄⟩/⟨u_⊥,u_⊥⟩，P̂=P̄+αu_⊥。Lean的第二参数p对应P̄，返回值是P̂而非α。",
+      "该定义实现反射动量；能量守恒性质关联ElasticEnergy。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch03.obstacleReflection",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:32:10.077383",
+        "before_sha256": "00932443d3aee729113ffbc2c311d4a068e0ce02f2f922d1065f6ac0ffbfa31e",
+        "after_sha256": "6a62c7493010823edd1e718de57cec6762e2b3369a89a3a23c07b8d4933710ba",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH24_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.7.1-PrimitiveDefect",
@@ -4604,7 +4643,11 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "沿用原点固定球、运动球质量1、两球半径均0.5的模型；接触点‖q_c‖=1，讨论步内单碰撞0<τ_c<h。",
+      "H(q,p)=‖p‖²/2+U(q)；P̄=p−(h/2)∇U(q)，q_c=q+τ_cP̄，P̂=P̄+αq_c，Q=q_c+(h−τ_c)P̂，P=P̂−(h/2)∇U(Q)。",
+      "公式的P̄是第一次半kick后的动量。Lean形参pbar却是整步初始动量；二者差是否可吸收到O(h²)须检查局部性，不能靠符号名称断定。"
+    ],
     "issues": [
       {
         "code": "NEEDS_HUMAN",
@@ -4614,12 +4657,26 @@
     "lean_decl": "MD.Ch03.primitiveDefect",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "C³势、固定非零qc、真实初末碰撞步族和0<tc(h)<h；O(h²)以小正h的一致界表示。"
+      "C³势、固定非零qc、真实初末碰撞步族和0<tc(h)<h；O(h²)以小正h的一致界表示。",
+      "[EXTRA] 仅小正h、单位接触点及初态趋近接触点的首次单碰撞物理分支；系数使用原书碰前P̄（含半kick），不再用初始p冒充；保留O(h²)余项。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:32:10.077383",
+        "before_sha256": "dfb1721f2443d1e7ad060226b3b72f532896b17291287782cd59c87af45bfb88",
+        "after_sha256": "1c6c6745180860f3f3593fa00c2b9624bf97dd05ba704b657a68007ff25ebdb2",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH24_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.7.1-CollisionDefectZero",
@@ -4658,7 +4715,9 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "保留(ii)tc=h、原primitive末端反射及最后half-kick的真实步族；无碰撞的Verlet局部三阶在第2章已另述。"
+      "原点固定球与质量1的运动球，两球半径均0.5，‖q_c‖=1。情况(i)无碰撞；情况(ii)碰撞只在步末τ_c=h。",
+      "P̄=p−(h/2)∇U(q)，P̂为反射后的动量，最后仍执行P=P̂−(h/2)∇U(Q)。Lean的pbar对应初始p，不是原书P̄。",
+      "保留原书(ii)和primitive末端反射、最后half-kick的真实步族；无碰撞Verlet局部三阶在第2章已另述。末端三阶与同页线性缺陷的冲突保留为ERRATUM?。"
     ],
     "issues": [
       {
@@ -4670,9 +4729,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:32:10.077383",
+        "before_sha256": "357a78ca0fc0587a54cad04e93d9921a7f4f31019df89676047b1156c0f35f03",
+        "after_sha256": "dbaa850f3d7a0cf254458faed4c8556e2e44aa05c074db87938541aba41fc90e",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH24_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.7.2-CollisionQuadraticPath",
@@ -4900,11 +4972,25 @@
     "lean_decl": "MD.Ch03.freeHardSphereHamiltonian",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "正质量下用WithTop ℝ保留有限动能和+∞障碍；沿用p132接触允许的边界，p133≤疑点仍由HardCorePotential保留。"
+      "正质量下用WithTop ℝ保留有限动能和+∞障碍；沿用p132接触允许的边界，p133≤疑点仍由HardCorePotential保留。",
+      "[EXTRA] 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "statement_scope": "原印自由硬球Hamiltonian、非接触弹道ODE；所引动力学中接触弹性反射关系及能量保存由MD-3.7-ElasticReflection和MD-3.7-ElasticEnergy承担。原印≤边界与接触允许物理版本独立命名。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T12:32:10.077383",
+        "before_sha256": "f55cf5b35261a9c39c484a19b2c898c6b94f6cfdb28441cc4e75bb6bc1488191",
+        "after_sha256": "05d01985e08988ec7650ac326964d32d3551b5745f24e3ac7a3c334c90e13605",
+        "changed_fields": [
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH24_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   }
 ]

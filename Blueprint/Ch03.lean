@@ -1630,8 +1630,18 @@ theorem collisionRegularity :
   sorry
 
 /-- source_id: MD-3.7.1-HardCorePotential · definition · §3.7.1 · 印刷p.133 / PDFp.155
-[ERRATUM?] p133括号印刷≤与p132接触等号允许冲突；不静默改成<。 -/
+[ERRATUM?] p133括号印刷≤与p132接触等号允许冲突；不静默改成<。 
+[EXTRA] 原印≤接触也取∞独立忠实定义，并补K+U+U_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。 -/
 def hardCorePotential {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d) : ENNReal :=
+  if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤ else 0
+
+def hardSphereHamiltonianPrinted {N d : ℕ} (m σ : Fin N → ℝ)
+    (_hm : ∀ i, 0 < m i) (U : (Fin N → Position d) → ℝ)
+    (q p : Fin N → Position d) : WithTop ℝ :=
+  if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤
+  else ((∑ i, ‖p i‖^2/(2*m i))+U q : ℝ)
+
+def hardCorePotential_contactAllowed {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d) : ENNReal :=
   @ite ENNReal (q ∈ hardCoreDomain σ) (Classical.propDecidable _) 0 ⊤
 
 /-- source_id: MD-3.7.1-PrimitiveSplitting · definition · §3.7.1 · 印刷p.133 / PDFp.155 -/
@@ -1657,20 +1667,22 @@ def obstacleReflection {d : ℕ} (u p : Position d) : Position d := p- (2*inner 
 
 /-- source_id: MD-3.7.1-PrimitiveDefect · unnumbered_claim · §3.7.1 · 印刷p.134 / PDFp.156
 [EXTRA] C³势、固定非零qc、真实初末碰撞步族和0<tc(h)<h；O(h²)以小正h的一致界表示。
-[NEEDS_HUMAN] 书中P̄与签名初始pbar的差异及通过O(h²)吸收的正则性需要独立审校。 -/
+[NEEDS_HUMAN] 书中P̄与签名初始pbar的差异及通过O(h²)吸收的正则性需要独立审校。 
+[EXTRA] 仅小正h、单位接触点及初态趋近接触点的首次单碰撞物理分支；系数使用原书碰前P̄（含半kick），不再用初始p冒充；保留O(h²)余项。 -/
 theorem primitiveDefect :
   ∀ (d : ℕ) (U : Position d → ℝ) (qc pbar : Position d)
-    (initial final : ℝ → Position d × Position d) (tc : ℝ → ℝ),
-    ContDiff ℝ 3 U → qc ≠ 0 →
-    (∀ h > 0, 0 < tc h ∧ tc h < h ∧
+    (initial final : ℝ → Position d × Position d) (tc : ℝ → ℝ) (Δ : ℝ), 0 < Δ → ContDiff ℝ 3 U → qc ≠ 0 → ‖qc‖=1 →
+    Tendsto (fun h ↦ (initial h).1) (𝓝[>] 0) (𝓝 qc) →
+    (∀ h ∈ Ioo 0 Δ, 0 < tc h ∧ tc h < h ∧
       let F := -gradient U (initial h).1
       let pminus := pbar+(h/2) • F
       (initial h).2=pbar ∧ (initial h).1=qc-tc h • pminus ∧
+      (∀ t ∈ Ioo 0 (tc h), 1 < ‖(initial h).1+t • pminus‖) ∧
       final h=(qc+(h-tc h) • obstacleReflection qc pminus,
         obstacleReflection qc pminus+(h/2) • (-gradient U (qc+(h-tc h) • obstacleReflection qc pminus)))) →
     ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ,
       |((‖(final h).2‖^2/2+U (final h).1)-(‖(initial h).2‖^2/2+U (initial h).1))+
-        (h-2*tc h)*(inner ℝ qc pbar/inner ℝ qc qc)*inner ℝ qc (gradient U qc)| ≤ C*h^2 := by
+        (h-2*tc h)*(inner ℝ qc (pbar+(h/2) • (-gradient U (initial h).1))/inner ℝ qc qc)*inner ℝ qc (gradient U qc)| ≤ C*h^2 := by
   sorry
 
 /-- source_id: MD-3.7.1-CollisionDefectZero · unnumbered_claim · §3.7.1 · 印刷p.134 / PDFp.156 -/
@@ -1770,8 +1782,21 @@ def modifiedCollisionProjection {n : ℕ} (H : SymplecticCoordinates n → ℝ)
   textbookTruncatedHamiltonian H Hj r k h w=textbookTruncatedHamiltonian H Hj r k h z
 
 /-- source_id: MD-3.7.1-FreeHardSphereHamiltonian · definition · §3.7.1 · 印刷p.133 / PDFp.155
-[EXTRA] 正质量下用WithTop ℝ保留有限动能和+∞障碍；沿用p132接触允许的边界，p133≤疑点仍由HardCorePotential保留。 -/
+[EXTRA] 正质量下用WithTop ℝ保留有限动能和+∞障碍；沿用p132接触允许的边界，p133≤疑点仍由HardCorePotential保留。 
+[EXTRA] 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。 -/
 def freeHardSphereHamiltonian {N d : ℕ} (m σ : Fin N → ℝ)
+    (_hm : ∀ i, 0 < m i) (q p : Fin N → Position d) : WithTop ℝ :=
+  if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤
+  else ((∑ i, ‖p i‖^2/(2*m i) : ℝ) : WithTop ℝ)
+
+theorem freeHardSphereHamiltonian_ballistic {N d : ℕ} (m : Fin N → ℝ)
+    (_hm : ∀ i, 0 < m i) (q p : Fin N → Position d) :
+    (∀ t : ℝ, HasDerivAt (fun s ↦ fun i ↦ q i+(s/m i) • p i)
+      (fun i ↦ (m i)⁻¹ • p i) t) ∧
+    (∀ t : ℝ, HasDerivAt (fun _ : ℝ ↦ p) 0 t) := by
+  sorry
+
+def freeHardSphereHamiltonian_contactAllowed {N d : ℕ} (m σ : Fin N → ℝ)
     (q p : Fin N → Position d) : WithTop ℝ :=
   @ite (WithTop ℝ) (q ∈ MolecularDynamics.Chapter03Review.hardCoreDomain σ)
     (Classical.propDecidable _) ((∑ i, ‖p i‖^2/(2*m i) : ℝ) : WithTop ℝ) ⊤
@@ -1934,6 +1959,8 @@ end MD.Ch03
 #print axioms MD.Ch03.collisionComposition
 #print axioms MD.Ch03.collisionRegularity
 #print axioms MD.Ch03.hardCorePotential
+#print axioms MD.Ch03.hardSphereHamiltonianPrinted
+#print axioms MD.Ch03.hardCorePotential_contactAllowed
 #print axioms MD.Ch03.primitiveSplitting
 #print axioms MD.Ch03.primitiveOrder
 #print axioms MD.Ch03.obstacleReflection
@@ -1949,4 +1976,6 @@ end MD.Ch03
 #print axioms MD.Ch03.decoupledOrder
 #print axioms MD.Ch03.modifiedCollisionProjection
 #print axioms MD.Ch03.freeHardSphereHamiltonian
+#print axioms MD.Ch03.freeHardSphereHamiltonian_ballistic
+#print axioms MD.Ch03.freeHardSphereHamiltonian_contactAllowed
 /- END WEBSITE REPAIR AXIOMS -/

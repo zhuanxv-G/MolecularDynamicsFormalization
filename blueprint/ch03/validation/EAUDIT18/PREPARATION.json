@@ -1,0 +1,35 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT18",
+  "section": "3.7.1",
+  "source_ids": [
+    "MD-3.7.1-EndImpactThirdOrderPrinted",
+    "MD-3.7.1-FreeHardSphereHamiltonian",
+    "MD-3.7.1-HardCorePotential",
+    "MD-3.7.1-ObstacleReflection",
+    "MD-3.7.1-PrimitiveDefect",
+    "MD-3.7.1-PrimitiveOrder"
+  ],
+  "reaudit_ids": [
+    "MD-3.7.1-HardCorePotential",
+    "MD-3.7.1-ObstacleReflection",
+    "MD-3.7.1-PrimitiveDefect",
+    "MD-3.7.1-FreeHardSphereHamiltonian"
+  ],
+  "human_ids": [
+    "MD-3.7.1-PrimitiveOrder",
+    "MD-3.7.1-EndImpactThirdOrderPrinted"
+  ],
+  "old_lean_sha256": "cb20e4392ffb494e66795bc4f4ded3b2cefe995d1ed8047e6e55b6df9452025b",
+  "lean_sha256": "9385a3dc5762df984984abee9002ae3f3ccbe0f86082a8caef74b98363b26156",
+  "source_sha256": "ef613c54e765e93e6a4990846567e288fc89f50d7b6a5a6766dc83b02f5983a4",
+  "pages": [
+    155,
+    156
+  ],
+  "prior_proof_blocks": {
+    "MD-3.7.1-HardCorePotential": "def hardCorePotential {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d) : ENNReal :=\n  @ite ENNReal (q ∈ hardCoreDomain σ) (Classical.propDecidable _) 0 ⊤",
+    "MD-3.7.1-PrimitiveDefect": "theorem primitiveDefect :\n  ∀ (d : ℕ) (U : Position d → ℝ) (qc pbar : Position d)\n    (initial final : ℝ → Position d × Position d) (tc : ℝ → ℝ),\n    ContDiff ℝ 3 U → qc ≠ 0 →\n    (∀ h > 0, 0 < tc h ∧ tc h < h ∧\n      let F := -gradient U (initial h).1\n      let pminus := pbar+(h/2) • F\n      (initial h).2=pbar ∧ (initial h).1=qc-tc h • pminus ∧\n      final h=(qc+(h-tc h) • obstacleReflection qc pminus,\n        obstacleReflection qc pminus+(h/2) • (-gradient U (qc+(h-tc h) • obstacleReflection qc pminus)))) →\n    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ,\n      |((‖(final h).2‖^2/2+U (final h).1)-(‖(initial h).2‖^2/2+U (initial h).1))+\n        (h-2*tc h)*(inner ℝ qc pbar/inner ℝ qc qc)*inner ℝ qc (gradient U qc)| ≤ C*h^2 := by\n  sorry",
+    "MD-3.7.1-FreeHardSphereHamiltonian": "def freeHardSphereHamiltonian {N d : ℕ} (m σ : Fin N → ℝ)\n    (q p : Fin N → Position d) : WithTop ℝ :=\n  @ite (WithTop ℝ) (q ∈ MolecularDynamics.Chapter03Review.hardCoreDomain σ)\n    (Classical.propDecidable _) ((∑ i, ‖p i‖^2/(2*m i) : ℝ) : WithTop ℝ) ⊤"
+  }
+}

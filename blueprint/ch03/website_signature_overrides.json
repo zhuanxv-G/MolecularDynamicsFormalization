@@ -245,5 +245,25 @@
       "有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。",
       "[EXTRA] 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。"
     ]
+  },
+  "MD-3.7.1-HardCorePotential": {
+    "code": "def hardCorePotential {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d) : ENNReal :=\n  if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤ else 0\n\ndef hardSphereHamiltonianPrinted {N d : ℕ} (m σ : Fin N → ℝ)\n    (_hm : ∀ i, 0 < m i) (U : (Fin N → Position d) → ℝ)\n    (q p : Fin N → Position d) : WithTop ℝ :=\n  if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤\n  else ((∑ i, ‖p i‖^2/(2*m i))+U q : ℝ)\n\ndef hardCorePotential_contactAllowed {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d) : ENNReal :=\n  @ite ENNReal (q ∈ hardCoreDomain σ) (Classical.propDecidable _) 0 ⊤",
+    "extra_assumptions": [
+      "[EXTRA] 原印≤接触也取∞独立忠实定义，并补K+U+U_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。"
+    ]
+  },
+  "MD-3.7.1-PrimitiveDefect": {
+    "code": "theorem primitiveDefect :\n  ∀ (d : ℕ) (U : Position d → ℝ) (qc pbar : Position d)\n    (initial final : ℝ → Position d × Position d) (tc : ℝ → ℝ) (Δ : ℝ), 0 < Δ → ContDiff ℝ 3 U → qc ≠ 0 → ‖qc‖=1 →\n    Tendsto (fun h ↦ (initial h).1) (𝓝[>] 0) (𝓝 qc) →\n    (∀ h ∈ Ioo 0 Δ, 0 < tc h ∧ tc h < h ∧\n      let F := -gradient U (initial h).1\n      let pminus := pbar+(h/2) • F\n      (initial h).2=pbar ∧ (initial h).1=qc-tc h • pminus ∧\n      (∀ t ∈ Ioo 0 (tc h), 1 < ‖(initial h).1+t • pminus‖) ∧\n      final h=(qc+(h-tc h) • obstacleReflection qc pminus,\n        obstacleReflection qc pminus+(h/2) • (-gradient U (qc+(h-tc h) • obstacleReflection qc pminus)))) →\n    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ,\n      |((‖(final h).2‖^2/2+U (final h).1)-(‖(initial h).2‖^2/2+U (initial h).1))+\n        (h-2*tc h)*(inner ℝ qc (pbar+(h/2) • (-gradient U (initial h).1))/inner ℝ qc qc)*inner ℝ qc (gradient U qc)| ≤ C*h^2 := by\n  sorry",
+    "extra_assumptions": [
+      "C³势、固定非零qc、真实初末碰撞步族和0<tc(h)<h；O(h²)以小正h的一致界表示。",
+      "[EXTRA] 仅小正h、单位接触点及初态趋近接触点的首次单碰撞物理分支；系数使用原书碰前P̄（含半kick），不再用初始p冒充；保留O(h²)余项。"
+    ]
+  },
+  "MD-3.7.1-FreeHardSphereHamiltonian": {
+    "code": "def freeHardSphereHamiltonian {N d : ℕ} (m σ : Fin N → ℝ)\n    (_hm : ∀ i, 0 < m i) (q p : Fin N → Position d) : WithTop ℝ :=\n  if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤\n  else ((∑ i, ‖p i‖^2/(2*m i) : ℝ) : WithTop ℝ)\n\ntheorem freeHardSphereHamiltonian_ballistic {N d : ℕ} (m : Fin N → ℝ)\n    (_hm : ∀ i, 0 < m i) (q p : Fin N → Position d) :\n    (∀ t : ℝ, HasDerivAt (fun s ↦ fun i ↦ q i+(s/m i) • p i)\n      (fun i ↦ (m i)⁻¹ • p i) t) ∧\n    (∀ t : ℝ, HasDerivAt (fun _ : ℝ ↦ p) 0 t) := by\n  sorry\n\ndef freeHardSphereHamiltonian_contactAllowed {N d : ℕ} (m σ : Fin N → ℝ)\n    (q p : Fin N → Position d) : WithTop ℝ :=\n  @ite (WithTop ℝ) (q ∈ MolecularDynamics.Chapter03Review.hardCoreDomain σ)\n    (Classical.propDecidable _) ((∑ i, ‖p i‖^2/(2*m i) : ℝ) : WithTop ℝ) ⊤",
+    "extra_assumptions": [
+      "正质量下用WithTop ℝ保留有限动能和+∞障碍；沿用p132接触允许的边界，p133≤疑点仍由HardCorePotential保留。",
+      "[EXTRA] 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。"
+    ]
   }
 }

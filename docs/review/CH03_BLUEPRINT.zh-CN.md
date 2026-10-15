@@ -137,13 +137,13 @@
 | MD-3.7-ElasticEnergy | 132/154 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.7-CollisionComposition | 132–133/154–155 | PASS | 待复审 / EAUDIT17 | self-contained |
 | MD-3.7-CollisionRegularity | 133/155 | PASS | 待复审 / EAUDIT17 | incomplete |
-| MD-3.7.1-HardCorePotential | 133/155 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | incomplete |
+| MD-3.7.1-HardCorePotential | 133/155 | NEEDS_HUMAN | 待复审 / EAUDIT18 | self-contained |
 | MD-3.7.1-PrimitiveSplitting | 133/155 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
-| MD-3.7.1-PrimitiveOrder | 133–134/155–156 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | incomplete |
-| MD-3.7.1-ObstacleReflection | 134/156 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
-| MD-3.7.1-PrimitiveDefect | 134/156 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | incomplete |
+| MD-3.7.1-PrimitiveOrder | 133–134/155–156 | NEEDS_HUMAN | 待导师 / EAUDIT18（原返回FAIL保留） | incomplete |
+| MD-3.7.1-ObstacleReflection | 134/156 | PASS | 待复审 / EAUDIT18 | self-contained |
+| MD-3.7.1-PrimitiveDefect | 134/156 | NEEDS_HUMAN | 待复审 / EAUDIT18 | incomplete |
 | MD-3.7.1-CollisionDefectZero | 134/156 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
-| MD-3.7.1-EndImpactThirdOrderPrinted | 134/156 | FAIL | FAIL（绑定版本 433a13ca6407） | incomplete |
+| MD-3.7.1-EndImpactThirdOrderPrinted | 134/156 | FAIL | 待导师 / EAUDIT18（原返回FAIL保留） | incomplete |
 | MD-3.7.2-CollisionQuadraticPath | 135/157 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.7.2-CollisionTimeRelation | 135/157 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.7.2-CollisionQuartic | 135/157 | PASS | 网站PASS（绑定版本 433a13ca6407） | checked+documented priors |
@@ -152,7 +152,7 @@
 | MD-3.7.3-PairForceDecoupling | 136/158 | NEEDS_HUMAN | NEEDS_HUMAN（绑定版本 433a13ca6407） | incomplete |
 | MD-3.7.3-DecoupledOrder | 136/158 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | incomplete |
 | MD-3.7.3-ModifiedCollisionProjection | 136/158 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
-| MD-3.7.1-FreeHardSphereHamiltonian | 133/155 | PASS | FAIL（绑定版本 433a13ca6407） | self-contained |
+| MD-3.7.1-FreeHardSphereHamiltonian | 133/155 | PASS | 待复审 / EAUDIT18 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -7439,6 +7439,15 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 ```lean
 def hardCorePotential {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d) : ENNReal :=
+  if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤ else 0
+
+def hardSphereHamiltonianPrinted {N d : ℕ} (m σ : Fin N → ℝ)
+    (_hm : ∀ i, 0 < m i) (U : (Fin N → Position d) → ℝ)
+    (q p : Fin N → Position d) : WithTop ℝ :=
+  if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤
+  else ((∑ i, ‖p i‖^2/(2*m i))+U q : ℝ)
+
+def hardCorePotential_contactAllowed {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d) : ENNReal :=
   @ite ENNReal (q ∈ hardCoreDomain σ) (Classical.propDecidable _) 0 ⊤
 ```
 
@@ -7447,13 +7456,14 @@ def hardCorePotential {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch03.hardCorePotential；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA] 原印≤接触也取∞独立忠实定义，并补K+U+U_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。 | [EXTRA] |
 | 原页核对/疑点 | p133括号印刷≤与p132接触等号允许冲突；不静默改成<。 | [ERRATUM?] |
 
 ### 6. 审计结论
 
 本地预审：**NEEDS_HUMAN**。原页印刷≤把接触归入infinite，但p132准许≥及弹性碰撞接触；定义保持非严格非重叠域在接触为0，需导师裁定边界。
 
-网站审计：**FAIL（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT18**。原文JSON：DRAFT；未冻结。
 
 已展开Ch03_deps.txt:3631–3632的hardCoreDomain：∀i≠j，σ_i+σ_j≤‖q_i−q_j‖。Ch03.lean:1355–1356将属于该闭域的构型势能定义为0，域外为∞，所以实际使用严格重叠<，与本条原句≤在接触面不一致。[ERRATUM?]成立：PDF132页的允许接触和PDF133页的无限势约定存在边界冲突；标注疑误并不能消除签名与原句的差异。本定义还仅表示U_h.s.，不包含所引H_h.s.完整Hamiltonian。没有sorry；FAIL是语义判断。
 
@@ -7463,15 +7473,15 @@ def hardCorePotential {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1634](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1634>)（`MD.Ch03.hardCorePotential`）。
+位置：[Blueprint/Ch03.lean:1635](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1635>)（`MD.Ch03.hardCorePotential`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`a2ffbab5b3630a9022c69246796ab748bbdf96b555cfaf612925697fa8f96314`；原文SHA256：`fb1015d7d4bd24a56797cc52b1fc3e7028c4816f38c6a8812cf72b9323746720`。
+签名SHA256：`a535dec83346ae8c3bcd3c14508404bf1761b6f4b2347dc0a62ccaf3a16fd264`；原文SHA256：`fb1015d7d4bd24a56797cc52b1fc3e7028c4816f38c6a8812cf72b9323746720`。
 
 ## 1. MD-3.7.1-PrimitiveSplitting · definition · 印刷p.133 / PDFp.155
 
@@ -7512,7 +7522,7 @@ def primitiveSplitting {n : ℕ} (U : Q n → ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1638](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1638>)（`MD.Ch03.primitiveSplitting`）。
+位置：[Blueprint/Ch03.lean:1648](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1648>)（`MD.Ch03.primitiveSplitting`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7558,7 +7568,7 @@ theorem primitiveOrder :
 
 本地预审：**NEEDS_HUMAN**。完整有限时间一阶误差保留；原文未指误差度量，跳跃动量不能无条件按同一实时间全相空间比较；长期energy无界的泛称也不是所有势的定理。
 
-网站审计：**FAIL（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT18（原返回FAIL保留）**。原文JSON：DRAFT；未冻结。
 
 已展开Q、Z(2816–2817)、grad(2932)、positiveMass(2948)、invMass(2840)、finiteCollisionTrajectory(4431–4441)、collisionalGlobalOrder(4460–4464)、admissibleCollisionState及freeCollisionFlow(4465–4472)。目标是经θ:ℝ≃oℝ进行O(h)时间移动后的全相空间网格误差，而原文以能量缺陷为论据，且明确包含长期能量误差无界；该结论子句完全未表示。更严重，finiteCollisionTrajectory只要求q在闭区间连续，p的ODE仅在内部非事件点成立，事件时只约束左右极限，不约束p(t)的取值；端点动量也无连续性要求。故它不能保证真实初始状态和右侧轨道一致，签名甚至在无碰撞时为假。有限横截性确有内积<0，单个光滑g则是比多硬球约束窄的模型；C∞可作为充分正则性，但非书中明确必需条件。freeCollisionFlow对每个τ只允许内部事件且要求全局有限碰撞，强于所称固定区间假设。sorry独立存在，不改变这些语义缺陷。
 
@@ -7570,9 +7580,9 @@ theorem primitiveOrder :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch03.lean:1645](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1645>)（`MD.Ch03.primitiveOrder`）。
+位置：[Blueprint/Ch03.lean:1655](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1655>)（`MD.Ch03.primitiveOrder`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -7609,7 +7619,7 @@ def obstacleReflection {d : ℕ} (u p : Position d) : Position d := p- (2*inner 
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT18**。原文JSON：CORRECTED；未冻结。
 
 Position在Ch03_deps.txt:844展开为EuclideanSpace ℝ (Fin d)。obstacleReflection(u,p)=p−[2⟨u,p⟩/⟨u,u⟩]u，输入p对应原文P̄，输出对应P̂；正好将展示α代入P̂=P̄+αu。u=q_c且‖q_c‖=1使分母非零，单位质量对应普通Euclidean内积。定义允许u=0是数学上的总函数延拓，本条只在非零碰撞法向语境解释；不声称由这一个定义证明能量结论。原context已声明这是实际反射函数，因此不将输出向量与α标量混淆。无sorry。
 
@@ -7617,13 +7627,13 @@ Position在Ch03_deps.txt:844展开为EuclideanSpace ℝ (Fin d)。obstacleReflec
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1656](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1656>)（`MD.Ch03.obstacleReflection`）。
+位置：[Blueprint/Ch03.lean:1666](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1666>)（`MD.Ch03.obstacleReflection`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`1f3c57c8c526a81626bae01a7178f5b03ad69ff4a73ec9ace8edbfebd8f27afe`；原文SHA256：`fc181d38f6ad372ef0c56ade55d23cb810b80c045633d654b294c99f745a0ea3`。
+签名SHA256：`1f3c57c8c526a81626bae01a7178f5b03ad69ff4a73ec9ace8edbfebd8f27afe`；原文SHA256：`326b61737b23ca7102424e1199ff5759da8ee18a4d21965e550033321634be2a`。
 
 ## 1. MD-3.7.1-PrimitiveDefect · unnumbered_claim · 印刷p.134 / PDFp.156
 
@@ -7643,17 +7653,18 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ```lean
 theorem primitiveDefect :
   ∀ (d : ℕ) (U : Position d → ℝ) (qc pbar : Position d)
-    (initial final : ℝ → Position d × Position d) (tc : ℝ → ℝ),
-    ContDiff ℝ 3 U → qc ≠ 0 →
-    (∀ h > 0, 0 < tc h ∧ tc h < h ∧
+    (initial final : ℝ → Position d × Position d) (tc : ℝ → ℝ) (Δ : ℝ), 0 < Δ → ContDiff ℝ 3 U → qc ≠ 0 → ‖qc‖=1 →
+    Tendsto (fun h ↦ (initial h).1) (𝓝[>] 0) (𝓝 qc) →
+    (∀ h ∈ Ioo 0 Δ, 0 < tc h ∧ tc h < h ∧
       let F := -gradient U (initial h).1
       let pminus := pbar+(h/2) • F
       (initial h).2=pbar ∧ (initial h).1=qc-tc h • pminus ∧
+      (∀ t ∈ Ioo 0 (tc h), 1 < ‖(initial h).1+t • pminus‖) ∧
       final h=(qc+(h-tc h) • obstacleReflection qc pminus,
         obstacleReflection qc pminus+(h/2) • (-gradient U (qc+(h-tc h) • obstacleReflection qc pminus)))) →
     ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ,
       |((‖(final h).2‖^2/2+U (final h).1)-(‖(initial h).2‖^2/2+U (initial h).1))+
-        (h-2*tc h)*(inner ℝ qc pbar/inner ℝ qc qc)*inner ℝ qc (gradient U qc)| ≤ C*h^2
+        (h-2*tc h)*(inner ℝ qc (pbar+(h/2) • (-gradient U (initial h).1))/inner ℝ qc qc)*inner ℝ qc (gradient U qc)| ≤ C*h^2
 ```
 
 ### 5. 对照表
@@ -7662,13 +7673,14 @@ theorem primitiveDefect :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch03.primitiveDefect；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
 | 原文省略/技术资格 | C³势、固定非零qc、真实初末碰撞步族和0<tc(h)<h；O(h²)以小正h的一致界表示。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 仅小正h、单位接触点及初态趋近接触点的首次单碰撞物理分支；系数使用原书碰前P̄（含半kick），不再用初始p冒充；保留O(h²)余项。 | [EXTRA] |
 | 原页核对/疑点 | 书中P̄与签名初始pbar的差异及通过O(h²)吸收的正则性需要独立审校。 | NEEDS_HUMAN |
 
 ### 6. 审计结论
 
 本地预审：**NEEDS_HUMAN**。原文P̄是第一次half-kick后的动量；旧正式库Prop的pbar则写初始动量，本Blueprint沿用但明确差O(h)，其线性系数对应及一致族资格需审。
 
-网站审计：**FAIL（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT18**。原文JSON：CORRECTED；未冻结。
 
 已展开Position、obstacleReflection及primitiveDefect_statement(4481–4495)，并逐项核对Ch03.lean:1382–1398。C³势、非零q_c及小正h的一致余项是合理的充分正则性设置。原文P̄对应Lean pminus，而Lean pbar对应原文初始p；仅在初始q(h)处梯度局部有界时，pminus−pbar=O(h)，其乘以(h−2tc)的差才为O(h²)。实际前提用隐式等式q=qc−tc[pbar−(h/2)∇U(q)]，没有q(h)→qc、局部有界或合法首次碰撞条件，故允许远处分支；C³不能在无限远保证梯度有界，也不能吸收该差异。把这些步族称为“真实碰撞步族”并不由实际前提支持。以下反例满足所有显示前提并使余项发散；因此不是仅待人工判定。gradient为Euclidean梯度，在一维本例可直接按导数计算；结论失效不依赖任何未知项目定义。该声明含sorry，签名FAIL独立于此。
 
@@ -7680,15 +7692,15 @@ theorem primitiveDefect :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch03.lean:1661](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1661>)（`MD.Ch03.primitiveDefect`）。
+位置：[Blueprint/Ch03.lean:1672](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1672>)（`MD.Ch03.primitiveDefect`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺实际碰撞步族的Taylor展开及一致O(h²)余项；本地非PASS不证明。
 
-签名SHA256：`371fcfb85bd22429ffd3e56a4a4ccf4d082e75a86ce513eb50b3489e119e8a93`；原文SHA256：`5c6c00a2c79108e7fb88c810efbe9963ada6525fb8aad3a29a2a72f7e2f7db4f`。
+签名SHA256：`63a8f2170f0cb1e85e698748078d83bfd8d4349714c161b64f1b2ddf19c6d96b`；原文SHA256：`39a6d66103c6b04e2ffdc9d1ce4bcb4ff84e8f44f8caa8a601d3bc4d1df0208c`。
 
 ## 1. MD-3.7.1-CollisionDefectZero · unnumbered_claim · 印刷p.134 / PDFp.156
 
@@ -7729,7 +7741,7 @@ Ch03_deps.txt:4496–4497及Ch03.lean:1399–1402的结论为(h−2tc)(a/b)c=0�
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch03.lean:1677](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1677>)（`MD.Ch03.collisionDefectZero`）。
+位置：[Blueprint/Ch03.lean:1689](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1689>)（`MD.Ch03.collisionDefectZero`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7781,7 +7793,7 @@ theorem endImpactThirdOrderPrinted :
 
 本地预审：**FAIL**。一维qc=1,pbar=−1,U(q)=q,tc=h给initial=(1+h+h²/2,−1)、final=(1,1)，ΔH=−h−h²/2，绝非O(h³)。
 
-网站审计：**FAIL（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT18（原返回FAIL保留）**。原文JSON：CORRECTED；未冻结。
 
 已展开Position和obstacleReflection，核对Ch03.lean:1404–1420：确实保留tc=h、反射及末尾half-kick，并用∃C,δ正量化O(h³)能量差。但原条范围还包括无碰撞分支，签名完全未表示该子句。末端反射分支本身为假，即使补上原文‖qc‖=1、局部物理入射，也不成立；以下单位球反例直接验证[ERRATUM?]，并非仅由套用步内公式到端点推测。C³是合理充分正则性，qc≠0合理；对所有h>0约束步族比局部误差需要更强。原文“error”的状态/能量解读应明确，但在当前选定能量解读下已有确定反例，因此FAIL。含sorry不作为语义FAIL理由。
 
@@ -7793,15 +7805,15 @@ theorem endImpactThirdOrderPrinted :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch03.lean:1683](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1683>)（`MD.Ch03.endImpactThirdOrderPrinted`）。
+位置：[Blueprint/Ch03.lean:1695](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1695>)（`MD.Ch03.endImpactThirdOrderPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：字面FAIL不证明，等待网站/导师裁定。
 
-签名SHA256：`64e68a34867780adb1d026681f7c26e5058f2da4b6ca719ee66b20af53af5aea`；原文SHA256：`cca0229f90b945a23ac94aa9d2a6cbfef6db46bf02b968b2761bc38da440ce68`。
+签名SHA256：`64e68a34867780adb1d026681f7c26e5058f2da4b6ca719ee66b20af53af5aea`；原文SHA256：`4db5ef073239cd0ea8a79104ac442cc818ce2221d8916e451c99323a600224e4`。
 
 ## 1. MD-3.7.2-CollisionQuadraticPath · (3.18) · 印刷p.135 / PDFp.157
 
@@ -7842,7 +7854,7 @@ def collisionQuadraticPath {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (z : 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1698](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1698>)（`MD.Ch03.collisionQuadraticPath`）。
+位置：[Blueprint/Ch03.lean:1710](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1710>)（`MD.Ch03.collisionQuadraticPath`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7887,7 +7899,7 @@ def collisionTimeRelation {d : ℕ} (a b : ℝ → Position d) (radius t : ℝ) 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1702](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1702>)（`MD.Ch03.collisionTimeRelation`）。
+位置：[Blueprint/Ch03.lean:1714](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1714>)（`MD.Ch03.collisionTimeRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7936,7 +7948,7 @@ theorem collisionQuartic :
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch03.lean:1706](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1706>)（`MD.Ch03.collisionQuartic`）。
+位置：[Blueprint/Ch03.lean:1718](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1718>)（`MD.Ch03.collisionQuartic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -7997,7 +8009,7 @@ def collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (R
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1716](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1716>)（`MD.Ch03.collisionalVerletRelation`）。
+位置：[Blueprint/Ch03.lean:1728](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1728>)（`MD.Ch03.collisionalVerletRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8066,7 +8078,7 @@ theorem collisionalVerletOrder :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch03.lean:1724](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1724>)（`MD.Ch03.collisionalVerletOrder`）。
+位置：[Blueprint/Ch03.lean:1736](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1736>)（`MD.Ch03.collisionalVerletOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8116,7 +8128,7 @@ Ch03.lean:1467–1468展开为对每个实数r有φ(r)=α(r)+β(r)，且deriv α
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1746](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1746>)（`MD.Ch03.pairForceDecoupling`）。
+位置：[Blueprint/Ch03.lean:1758](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1758>)（`MD.Ch03.pairForceDecoupling`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8178,7 +8190,7 @@ theorem decoupledOrder :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch03.lean:1752](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1752>)（`MD.Ch03.decoupledOrder`）。
+位置：[Blueprint/Ch03.lean:1764](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1764>)（`MD.Ch03.decoupledOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8229,7 +8241,7 @@ def modifiedCollisionProjection {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1767](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1767>)（`MD.Ch03.modifiedCollisionProjection`）。
+位置：[Blueprint/Ch03.lean:1779](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1779>)（`MD.Ch03.modifiedCollisionProjection`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8255,6 +8267,18 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ```lean
 def freeHardSphereHamiltonian {N d : ℕ} (m σ : Fin N → ℝ)
+    (_hm : ∀ i, 0 < m i) (q p : Fin N → Position d) : WithTop ℝ :=
+  if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤
+  else ((∑ i, ‖p i‖^2/(2*m i) : ℝ) : WithTop ℝ)
+
+theorem freeHardSphereHamiltonian_ballistic {N d : ℕ} (m : Fin N → ℝ)
+    (_hm : ∀ i, 0 < m i) (q p : Fin N → Position d) :
+    (∀ t : ℝ, HasDerivAt (fun s ↦ fun i ↦ q i+(s/m i) • p i)
+      (fun i ↦ (m i)⁻¹ • p i) t) ∧
+    (∀ t : ℝ, HasDerivAt (fun _ : ℝ ↦ p) 0 t) := by
+  sorry
+
+def freeHardSphereHamiltonian_contactAllowed {N d : ℕ} (m σ : Fin N → ℝ)
     (q p : Fin N → Position d) : WithTop ℝ :=
   @ite (WithTop ℝ) (q ∈ MolecularDynamics.Chapter03Review.hardCoreDomain σ)
     (Classical.propDecidable _) ((∑ i, ‖p i‖^2/(2*m i) : ℝ) : WithTop ℝ) ⊤
@@ -8266,12 +8290,13 @@ def freeHardSphereHamiltonian {N d : ℕ} (m σ : Fin N → ℝ)
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch03.freeHardSphereHamiltonian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | 正质量下用WithTop ℝ保留有限动能和+∞障碍；沿用p132接触允许的边界，p133≤疑点仍由HardCorePotential保留。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 433a13ca6407）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT18**。原文JSON：DRAFT；未冻结。
 
 已展开依赖hardCoreDomain(3631–3632)和Position(844)。WithTop ℝ允许有限实数动能或∞，在正对角质量下Σ‖p_i‖²/(2m_i)正确表示pᵀM⁻¹p/2；但条件是距离≥半径和即取有限值，因此接触面与本页U_h.s.的≤无限势字面约定不一致，复现HardCorePotential的边界差异。[EXTRA]正质量是物理必要条件，不过本定义参数没有附带positiveMass证明，必须限定解释域；注释并非Lean假设。条目范围还包括直线运动和动量跳跃，本定义只给能量函数，无ODE/反射关系，context指向别处条目不能让该定义本身表达该结论。仅定义，无sorry。
 
@@ -8281,12 +8306,12 @@ def freeHardSphereHamiltonian {N d : ℕ} (m σ : Fin N → ℝ)
 
 ### 7. 状态与证明位置
 
-**self-contained**；本地证明状态：definition。
+**incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch03.lean:1774](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1774>)（`MD.Ch03.freeHardSphereHamiltonian`）。
+位置：[Blueprint/Ch03.lean:1787](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1787>)（`MD.Ch03.freeHardSphereHamiltonian`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`fadb0e2e90e8e1cb167c11e28a5682080f67ebb58bed919157cde85d12b87daf`；原文SHA256：`ae4335a974109130bfd88f3867426ab7f881b4598ae1d7a3dd622a69caff4f8f`。
+签名SHA256：`8deece9f75c3889ffba64547c21197eb1b3ba8b0efac5bcfd9c955d83de6eae1`；原文SHA256：`5cd39626ff8b9018476a4377536ce754ad6d48173b60c8d7a0a4a8ef23ed8ea0`。

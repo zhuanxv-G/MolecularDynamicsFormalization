@@ -2,11 +2,11 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 367；章末验收待完成 [3, 4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 359；章末验收待完成 [3, 4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
-第3章：网站PASS 60 / 已修待复审 65 / 待导师 14 / 修复中 10。
+第3章：网站PASS 59 / 已修待复审 69 / 待导师 16 / 修复中 5。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
@@ -305,13 +305,13 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.7-ElasticEnergy | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.7-CollisionComposition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT17 |
 | 3 | MD-3.7-CollisionRegularity | FAIL | A | 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。 | 已修待复审 | EAUDIT17 |
-| 3 | MD-3.7.1-HardCorePotential | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
+| 3 | MD-3.7.1-HardCorePotential | FAIL | C | 原印≤接触也取∞独立忠实定义，并补K+U+U_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。 | 已修待复审 | EAUDIT18 |
 | 3 | MD-3.7.1-PrimitiveSplitting | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.7.1-PrimitiveOrder | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
-| 3 | MD-3.7.1-ObstacleReflection | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.7.1-PrimitiveDefect | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.7.1-PrimitiveOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT18 |
+| 3 | MD-3.7.1-ObstacleReflection | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT18 |
+| 3 | MD-3.7.1-PrimitiveDefect | FAIL | C | 仅小正h、单位接触点及初态趋近接触点的首次单碰撞物理分支；系数使用原书碰前P̄（含半kick），不再用初始p冒充；保留O(h²)余项。 | 已修待复审 | EAUDIT18 |
 | 3 | MD-3.7.1-CollisionDefectZero | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.7.1-EndImpactThirdOrderPrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 3 | MD-3.7.1-EndImpactThirdOrderPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT18 |
 | 3 | MD-3.7.2-CollisionQuadraticPath | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.7.2-CollisionTimeRelation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
 | 3 | MD-3.7.2-CollisionQuartic | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
@@ -320,7 +320,7 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.7.3-PairForceDecoupling | NEEDS_HUMAN | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待导师 | — |
 | 3 | MD-3.7.3-DecoupledOrder | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
 | 3 | MD-3.7.3-ModifiedCollisionProjection | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407）；原文CORRECTED待原页复核 | — |
-| 3 | MD-3.7.1-FreeHardSphereHamiltonian | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
+| 3 | MD-3.7.1-FreeHardSphereHamiltonian | FAIL | C | 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。 | 已修待复审 | EAUDIT18 |
 | 4 | MD-4-LinearField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4-EulerFactor | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
 | 4 | MD-4-ScalarEulerStable | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |

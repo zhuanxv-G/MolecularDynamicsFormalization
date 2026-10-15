@@ -4637,16 +4637,16 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch03.hardCorePotential",
       "verdict": "NEEDS_HUMAN",
       "explanation": "原页印刷≤把接触归入infinite，但p132准许≥及弹性碰撞接触；定义保持非严格非重叠域在接触为0，需导师裁定边界。",
-      "signature_sha256": "a2ffbab5b3630a9022c69246796ab748bbdf96b555cfaf612925697fa8f96314",
-      "block_sha256": "a2ffbab5b3630a9022c69246796ab748bbdf96b555cfaf612925697fa8f96314",
+      "signature_sha256": "a535dec83346ae8c3bcd3c14508404bf1761b6f4b2347dc0a62ccaf3a16fd264",
+      "block_sha256": "a535dec83346ae8c3bcd3c14508404bf1761b6f4b2347dc0a62ccaf3a16fd264",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4664,7 +4664,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT18/axioms.log"
     },
     "MD-3.7.1-PrimitiveSplitting": {
       "checked": true,
@@ -4703,10 +4703,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.primitiveOrder",
@@ -4731,15 +4731,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT18/axioms.log"
     },
     "MD-3.7.1-ObstacleReflection": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch03.obstacleReflection",
@@ -4764,23 +4764,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT18/axioms.log"
     },
     "MD-3.7.1-PrimitiveDefect": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.primitiveDefect",
       "verdict": "NEEDS_HUMAN",
       "explanation": "原文P̄是第一次half-kick后的动量；旧正式库Prop的pbar则写初始动量，本Blueprint沿用但明确差O(h)，其线性系数对应及一致族资格需审。",
-      "signature_sha256": "371fcfb85bd22429ffd3e56a4a4ccf4d082e75a86ce513eb50b3489e119e8a93",
-      "block_sha256": "8a71a5b606b6a122bab610628a428500b95ce3846d09845e7f1d59b0018b401f",
+      "signature_sha256": "63a8f2170f0cb1e85e698748078d83bfd8d4349714c161b64f1b2ddf19c6d96b",
+      "block_sha256": "270d3dd83e1308cfcdb5e3a0da394978908a4771401eff1130f21b4e23af6a4e",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4798,7 +4798,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT18/axioms.log"
     },
     "MD-3.7.1-CollisionDefectZero": {
       "checked": true,
@@ -4839,10 +4839,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.endImpactThirdOrderPrinted",
@@ -4867,7 +4867,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT18/axioms.log"
     },
     "MD-3.7.2-CollisionQuadraticPath": {
       "checked": true,
@@ -5141,17 +5141,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch03.freeHardSphereHamiltonian",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "fadb0e2e90e8e1cb167c11e28a5682080f67ebb58bed919157cde85d12b87daf",
-      "block_sha256": "fadb0e2e90e8e1cb167c11e28a5682080f67ebb58bed919157cde85d12b87daf",
-      "direct_placeholder": false,
+      "signature_sha256": "8deece9f75c3889ffba64547c21197eb1b3ba8b0efac5bcfd9c955d83de6eae1",
+      "block_sha256": "8deece9f75c3889ffba64547c21197eb1b3ba8b0efac5bcfd9c955d83de6eae1",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -5168,7 +5169,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT18/axioms.log"
     }
   }
 }
