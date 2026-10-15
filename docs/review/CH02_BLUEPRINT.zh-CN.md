@@ -152,8 +152,8 @@
 | MD-2.5.2-PartitionedVerlet | 90/112 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.5.2-PartitionedReduction | 91/113 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
 | MD-2.5.2-GeneralEuler | 91/113 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
-| MD-2.5.2-GeneralSymplectic | 91/113 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
-| MD-2.5.2-GeneralVerletSymplectic | 91/113 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
+| MD-2.5.2-GeneralSymplectic | 91/113 | PASS | 待复审 / EAUDIT21 | incomplete |
+| MD-2.5.2-GeneralVerletSymplectic | 91/113 | PASS | 待复审 / EAUDIT21 | incomplete |
 | MD-2.5.3-Newmark | 92/114 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
 | MD-2.5.3-NewmarkReduction | 92/114 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
 | MD-2.5.3-NewmarkDamping | 92/114 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
@@ -8254,7 +8254,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 2. 原文陈述
 
 > To see that it is symplectic, we first note that this is a symmetric composition of the form
-> \[\mathcal K_h=\mathcal G_{h/2}^*\circ\mathcal G_{h/2},\]
+> \[\mathcal K_h=\mathcal G_{h/2}^{\dagger}\circ\mathcal G_{h/2},\]
 > so it is enough to show that this basic method is symplectic.
 
 ### 3. 原文证明
@@ -8284,12 +8284,13 @@ theorem generalSymplectic :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch02.generalSymplectic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | H C²，真实C¹完整求解映射，逐点满足实际隐式关系。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 本条承担基本隐式辛Euler的辛性；同一原句的伴随半步复合、三步关系与对称性由MD-2.5.2-GeneralVerletSymplectic补全，原文不删。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT21**。原文JSON：CORRECTED；未冻结。
 
 正式依赖展开：ReviewDefinitions.lean 第2816–2817行 Q n=Fin n→ℝ，Z n=Q n×Q n，第一分量为位置、第二分量为动量；第2913–2916行 partialQ/partialP 分别是固定另一变量后实际 Fréchet 导数在 Pi.single i 1 上的值，即坐标偏导。本批无 [ERRATUM?]，没有需要修正的原文错误；本次沿用 A 字段而不重做原文审校。 SymplecticForm.lean 第34行 SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；ReviewDefinitions.lean 第2936行 unpack z=(z∘Sum.inl,z∘Sum.inr)，保持(q,p)顺序。SymplecticMaps.lean 第236–240行 textbookJacobian 是 fderiv 的实际坐标矩阵，第272–275行 IsTextbookSymplecticMap G 要求 G C¹ 且逐点 Jacobian 辛；SymplecticForm.lean 第138–139行该条件展开为 AᵀJA=J，第41–42行 J=[0,I;-I,0]，第94–96行对应 Σ(dq_i∧dp_i)。 第1315–1319行 ∀n,H,G,h，在 H C²、G C¹ 和逐点 Euler 关系前提下仅给出 G 辛；该辛性子结论及实际偏导评价点正确。EXTRA 中 H C² 为 Hessian 对称性提供充分资格，G C¹ 使实际拉回与 Jacobian 有意义，逐点关系为真实求解资格；全空间分支是较强范围限定，非全球可解保证，假设可合理使用但非最小条件。缺失条款：本 source_id 的 statement_scope 包含 K_h=G*_{h/2}∘G_{h/2}、对称复合以及由基本方法辛性推出完整 K 辛性；签名无 K、时间步族、伴随、复合或对称结论。AdjointMethods.lean 第1247–1249行实际 textbookAdjointMethod 是负步长映射的逆，需要可逆步长族，不能由单个 G 辛性替代。正文有 sorry，与此缺失条款独立。
 
@@ -8301,9 +8302,9 @@ theorem generalSymplectic :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1524](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1524>)（`MD.Ch02.generalSymplectic`）。
+位置：[Blueprint/Ch02.lean:1525](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1525>)（`MD.Ch02.generalSymplectic`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -8311,7 +8312,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
-签名SHA256：`ce003c2e82c623a7eaf435ec3061f9648c52e57c9dafc8d946e76f82f4661941`；原文SHA256：`8eddc576c4432a6bf8e38507164e2d5fe257b529ffb0e942afc8661db0a0865c`。
+签名SHA256：`ce003c2e82c623a7eaf435ec3061f9648c52e57c9dafc8d946e76f82f4661941`；原文SHA256：`c3381d894f7014510241866066b98cf7bf31dfd4b5244c02e298598d4f8c55ea`。
 
 ## 1. MD-2.5.2-GeneralVerletSymplectic · unnumbered_claim · 印刷p.91 / PDFp.113
 
@@ -8328,10 +8329,21 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 ### 4. Lean陈述
 
 ```lean
-theorem generalVerletSymplectic :
-  ∀ n (H : Z n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n)
-    (p : SymplecticCoordinates n → Q n) h, ContDiff ℝ 2 H → ContDiff ℝ 1 G → ContDiff ℝ 1 p →
-    (∀ z, partitionedVerletRelation H h (unpack z) (unpack (G z)) (p z)) → IsTextbookSymplecticMap G
+theorem generalVerletSymplectic
+    (n : ℕ) (H : Z n → ℝ) (G : ℝ → Equiv.Perm (SymplecticCoordinates n))
+    (δ : ℝ) (_hδ : 0 < δ) (_hH : ContDiff ℝ 2 H)
+    (_hG : ∀ h ∈ Ioo (-δ) δ, ContDiff ℝ 1 (G h))
+    (_hInv : ∀ h ∈ Ioo (-δ) δ, ContDiff ℝ 1 (G h).symm)
+    (_hstep : ∀ h ∈ Ioo (-δ) δ, ∀ z,
+      generalSymplecticEulerRelation H h (unpack z) (unpack (G h z))) :
+    let V : ℝ → Equiv.Perm (SymplecticCoordinates n) :=
+      fun h ↦ (G (h/2)).trans (textbookAdjointMethod G (h/2))
+    (∀ h, (V h : SymplecticCoordinates n → SymplecticCoordinates n) =
+      textbookAdjointMethod G (h/2) ∘ G (h/2)) ∧
+    textbookAdjointMethod V = V ∧
+    (∀ h ∈ Ioo (-δ) δ, IsTextbookSymplecticMap (V h) ∧
+      ∀ z, partitionedVerletRelation H h (unpack z) (unpack (V h z))
+        (unpack (G (h/2) z)).2)
 ```
 
 ### 5. 对照表
@@ -8340,12 +8352,13 @@ theorem generalVerletSymplectic :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch02.generalVerletSymplectic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | H C²，实际C¹中间动量和完整求解映射，满足三步隐式关系。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 以真实可逆且C¹的基本求解族构造伴随半步复合V，补三步关系、V自伴随及辛性；仅δ小步长要求真实Euler关系，全球可逆族明确为条件性[EXTRA]，不宣称一般隐式方程必有全球解。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT21**。原文JSON：DRAFT；未冻结。
 
 正式依赖展开：ReviewDefinitions.lean 第2816–2817行 Q n=Fin n→ℝ，Z n=Q n×Q n，第一分量为位置、第二分量为动量；第2913–2916行 partialQ/partialP 分别是固定另一变量后实际 Fréchet 导数在 Pi.single i 1 上的值，即坐标偏导。本批无 [ERRATUM?]，没有需要修正的原文错误；本次沿用 A 字段而不重做原文审校。 SymplecticForm.lean 第34行 SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；ReviewDefinitions.lean 第2936行 unpack z=(z∘Sum.inl,z∘Sum.inr)，保持(q,p)顺序。SymplecticMaps.lean 第236–240行 textbookJacobian 是 fderiv 的实际坐标矩阵，第272–275行 IsTextbookSymplecticMap G 要求 G C¹ 且逐点 Jacobian 辛；SymplecticForm.lean 第138–139行该条件展开为 AᵀJA=J，第41–42行 J=[0,I;-I,0]，第94–96行对应 Σ(dq_i∧dp_i)。 第1323–1327行 ∀n,H,G,p,h，在 H C²、G C¹、中间动量函数 p C¹ 及逐点三步关系前提下仅给出 G 辛。展开第2919–2922行三步关系后真实对象与符号均正确；p 是每个输入对应的中间动量，非独立初始动量。EXTRA C²/C¹ 是微分计算的充分正则性；p C¹ 为微分隐式中间量提供合理分支资格，可能强于最弱条件。全空间求解资格仅条件性限定分支，未保证存在。缺失条款：原文选取句明确称三步法是 symmetric composition；签名只证明固定 h 的保辛性质，无时间步族、伴随复合等式或对称性。单个步长的保辛性不能表达负步长求逆，更不能替代该原文子句。正文有 sorry，签名 FAIL 不由 sorry 导致。
 
@@ -8357,9 +8370,9 @@ theorem generalVerletSymplectic :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1532](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1532>)（`MD.Ch02.generalVerletSymplectic`）。
+位置：[Blueprint/Ch02.lean:1534](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1534>)（`MD.Ch02.generalVerletSymplectic`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -8367,7 +8380,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
-签名SHA256：`5d0edafec0283bcf200d2396f1bc96e26ce49e5db213898f5445763a681c7d79`；原文SHA256：`e7317e99524970c4ce90250ec089095519d2300f7f93a7fe6f2b091d8a82d962`。
+签名SHA256：`9a8210cf7013af9482bbc843f10fb063c49ac732ec646f021efd05695aba1d82`；原文SHA256：`e7317e99524970c4ce90250ec089095519d2300f7f93a7fe6f2b091d8a82d962`。
 
 ## 1. MD-2.5.3-Newmark · definition · 印刷p.92 / PDFp.114
 
@@ -8410,7 +8423,7 @@ Ch02.lean:1331–1333；已展开 Ch02_deps.txt:2816–2817 的 Q n=Fin n→ℝ�
 
 **incomplete**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1540](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1540>)（`MD.Ch02.bp_newmarkRelation`）。
+位置：[Blueprint/Ch02.lean:1553](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1553>)（`MD.Ch02.bp_newmarkRelation`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8462,7 +8475,7 @@ Ch02.lean:1337–1339全称量化n、m、F、h、z、w，固定σ=1/2、η=0，�
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1546](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1546>)（`MD.Ch02.newmarkReduction`）。
+位置：[Blueprint/Ch02.lean:1559](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1559>)（`MD.Ch02.newmarkReduction`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8516,7 +8529,7 @@ Ch02.lean:1343–1349；Q 2=Fin 2→ℝ，坐标0为q、1为p。量词依次为�
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1552](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1552>)（`MD.Ch02.newmarkDamping`）。
+位置：[Blueprint/Ch02.lean:1565](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1565>)（`MD.Ch02.newmarkDamping`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8575,7 +8588,7 @@ Ch02.lean:1353–1358；以原样沿用json_review中的校正文句为审计对
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1562](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1562>)（`MD.Ch02.newmarkNotSymplectic`）。
+位置：[Blueprint/Ch02.lean:1575](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1575>)（`MD.Ch02.newmarkNotSymplectic`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8626,7 +8639,7 @@ def bp_multiTaylor {n : ℕ} (d : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1570](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1570>)（`MD.Ch02.bp_multiTaylor`）。
+位置：[Blueprint/Ch02.lean:1583](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1583>)（`MD.Ch02.bp_multiTaylor`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8674,7 +8687,7 @@ def tiMethod {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) : Z n →
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1574](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1574>)（`MD.Ch02.tiMethod`）。
+位置：[Blueprint/Ch02.lean:1587](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1587>)（`MD.Ch02.tiMethod`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8730,7 +8743,7 @@ theorem tiForce :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1580](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1580>)（`MD.Ch02.tiForce`）。
+位置：[Blueprint/Ch02.lean:1593](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1593>)（`MD.Ch02.tiForce`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8791,7 +8804,7 @@ theorem tiOrder :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1590](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1590>)（`MD.Ch02.tiOrder`）。
+位置：[Blueprint/Ch02.lean:1603](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1603>)（`MD.Ch02.tiOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 
@@ -8847,7 +8860,7 @@ def beeman {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (qPrev : Q 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch02.lean:1601](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1601>)（`MD.Ch02.beeman`）。
+位置：[Blueprint/Ch02.lean:1614](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1614>)（`MD.Ch02.beeman`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8904,7 +8917,7 @@ theorem beemanOrder : ∀ n (m : Fin n → ℝ) (F : Q n → Q n)
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch02.lean:1611](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1611>)（`MD.Ch02.beemanOrder`）。
+位置：[Blueprint/Ch02.lean:1624](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1624>)（`MD.Ch02.beemanOrder`）。
 
 Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
 

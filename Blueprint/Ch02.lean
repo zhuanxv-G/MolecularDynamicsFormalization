@@ -1520,7 +1520,8 @@ def bp_generalSymplecticEulerRelation {n : ℕ} (H : Z n → ℝ) (h : ℝ) (z w
   w.2 = z.2 - h • partialQ H z.1 w.2 ∧ w.1 = z.1 + h • partialP H z.1 w.2
 
 /-- source_id: MD-2.5.2-GeneralSymplectic · unnumbered_claim · §2.5.2 · 印刷p.91 / PDFp.113
-[EXTRA] H C²，真实C¹完整求解映射，逐点满足实际隐式关系。 -/
+[EXTRA] H C²，真实C¹完整求解映射，逐点满足实际隐式关系。 
+[EXTRA] 本条承担基本隐式辛Euler的辛性；同一原句的伴随半步复合、三步关系与对称性由MD-2.5.2-GeneralVerletSymplectic补全，原文不删。 -/
 theorem generalSymplectic :
   ∀ n (H : Z n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n) h,
     ContDiff ℝ 2 H → ContDiff ℝ 1 G →
@@ -1528,11 +1529,23 @@ theorem generalSymplectic :
   sorry
 
 /-- source_id: MD-2.5.2-GeneralVerletSymplectic · unnumbered_claim · §2.5.2 · 印刷p.91 / PDFp.113
-[EXTRA] H C²，实际C¹中间动量和完整求解映射，满足三步隐式关系。 -/
-theorem generalVerletSymplectic :
-  ∀ n (H : Z n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n)
-    (p : SymplecticCoordinates n → Q n) h, ContDiff ℝ 2 H → ContDiff ℝ 1 G → ContDiff ℝ 1 p →
-    (∀ z, partitionedVerletRelation H h (unpack z) (unpack (G z)) (p z)) → IsTextbookSymplecticMap G := by
+[EXTRA] H C²，实际C¹中间动量和完整求解映射，满足三步隐式关系。 
+[EXTRA] 以真实可逆且C¹的基本求解族构造伴随半步复合V，补三步关系、V自伴随及辛性；仅δ小步长要求真实Euler关系，全球可逆族明确为条件性[EXTRA]，不宣称一般隐式方程必有全球解。 -/
+theorem generalVerletSymplectic
+    (n : ℕ) (H : Z n → ℝ) (G : ℝ → Equiv.Perm (SymplecticCoordinates n))
+    (δ : ℝ) (_hδ : 0 < δ) (_hH : ContDiff ℝ 2 H)
+    (_hG : ∀ h ∈ Ioo (-δ) δ, ContDiff ℝ 1 (G h))
+    (_hInv : ∀ h ∈ Ioo (-δ) δ, ContDiff ℝ 1 (G h).symm)
+    (_hstep : ∀ h ∈ Ioo (-δ) δ, ∀ z,
+      generalSymplecticEulerRelation H h (unpack z) (unpack (G h z))) :
+    let V : ℝ → Equiv.Perm (SymplecticCoordinates n) :=
+      fun h ↦ (G (h/2)).trans (textbookAdjointMethod G (h/2))
+    (∀ h, (V h : SymplecticCoordinates n → SymplecticCoordinates n) =
+      textbookAdjointMethod G (h/2) ∘ G (h/2)) ∧
+    textbookAdjointMethod V = V ∧
+    (∀ h ∈ Ioo (-δ) δ, IsTextbookSymplecticMap (V h) ∧
+      ∀ z, partitionedVerletRelation H h (unpack z) (unpack (V h z))
+        (unpack (G (h/2) z)).2) := by
   sorry
 
 /-- source_id: MD-2.5.3-Newmark · definition · §2.5.3 · 印刷p.92 / PDFp.114

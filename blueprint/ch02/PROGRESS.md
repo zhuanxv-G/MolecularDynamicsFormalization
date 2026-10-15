@@ -155,8 +155,8 @@
 | MD-2.5.2-PartitionedVerlet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.5.2-PartitionedReduction | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；机械H两个实际偏导的坐标计算，随后三步关系消元。 |
 | MD-2.5.2-GeneralEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.5.2-GeneralSymplectic | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；隐式实际Jacobian/楔积抵消；混合Hessian和一般求解接口。 |
-| MD-2.5.2-GeneralVerletSymplectic | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；一般隐式辛Euler的实际证明、伴随求解及半步组合等价；需要完整隐式映射理论。 |
+| MD-2.5.2-GeneralSymplectic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT21 | placeholder / incomplete；隐式实际Jacobian/楔积抵消；混合Hessian和一般求解接口。 |
+| MD-2.5.2-GeneralVerletSymplectic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT21 | placeholder / incomplete；一般隐式辛Euler的实际证明、伴随求解及半步组合等价；需要完整隐式映射理论。 |
 | MD-2.5.3-Newmark | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
 | MD-2.5.3-NewmarkReduction | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书质量因子；旧已证版本是质量修正式，不能直接桥接。 |
 | MD-2.5.3-NewmarkDamping | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；线性振子实际隐式放大矩阵与行列式计算。 |
@@ -447,3 +447,5 @@ EAUDIT18 §2.4.4：4条落盘，单文件与6项公理通过；未写新证明�
 EAUDIT19 §2.4.5：6条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT20 §2.5.1：6条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT21 §2.5.2：2条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。

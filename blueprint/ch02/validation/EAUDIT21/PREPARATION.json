@@ -1,0 +1,25 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT21",
+  "section": "2.5.2",
+  "source_ids": [
+    "MD-2.5.2-GeneralSymplectic",
+    "MD-2.5.2-GeneralVerletSymplectic"
+  ],
+  "reaudit_ids": [
+    "MD-2.5.2-GeneralSymplectic",
+    "MD-2.5.2-GeneralVerletSymplectic"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "ae97a910a15ac5a4e65456d000eea65f2ab0aef2a98ff6d286b9ce0918fd76c3",
+  "lean_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+  "source_sha256": "8fa08590e1558cdaa49448d4322ea086c55da1f5b4a700ee2e68d9bb18cf29ea",
+  "pages": [
+    112,
+    113
+  ],
+  "prior_proof_blocks": {
+    "MD-2.5.2-GeneralSymplectic": "theorem generalSymplectic :\n  ∀ n (H : Z n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n) h,\n    ContDiff ℝ 2 H → ContDiff ℝ 1 G →\n    (∀ z, generalSymplecticEulerRelation H h (unpack z) (unpack (G z))) → IsTextbookSymplecticMap G := by\n  sorry",
+    "MD-2.5.2-GeneralVerletSymplectic": "theorem generalVerletSymplectic :\n  ∀ n (H : Z n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n)\n    (p : SymplecticCoordinates n → Q n) h, ContDiff ℝ 2 H → ContDiff ℝ 1 G → ContDiff ℝ 1 p →\n    (∀ z, partitionedVerletRelation H h (unpack z) (unpack (G z)) (p z)) → IsTextbookSymplecticMap G := by\n  sorry"
+  }
+}

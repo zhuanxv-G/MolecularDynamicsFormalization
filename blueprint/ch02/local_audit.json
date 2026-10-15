@@ -5222,10 +5222,10 @@
     "MD-2.5.2-GeneralSymplectic": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.generalSymplectic",
@@ -5250,22 +5250,23 @@
       "proof_attempts": 0,
       "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT21/axioms.log",
+      "compiled": true
     },
     "MD-2.5.2-GeneralVerletSymplectic": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.generalVerletSymplectic",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "5d0edafec0283bcf200d2396f1bc96e26ce49e5db213898f5445763a681c7d79",
-      "block_sha256": "54b3a5bcec4d3b42a0d654087e5847dfd9c247fc8d6c2cb8ddcbfd8ed718a1bb",
+      "signature_sha256": "9a8210cf7013af9482bbc843f10fb063c49ac732ec646f021efd05695aba1d82",
+      "block_sha256": "ac6df43c2bfe7c77efb3425601857d123b7ebbcc21b23ffc071021e3a47ec69d",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -5283,7 +5284,8 @@
       "proof_attempts": 0,
       "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT21/axioms.log",
+      "compiled": true
     },
     "MD-2.5.3-Newmark": {
       "checked": true,
