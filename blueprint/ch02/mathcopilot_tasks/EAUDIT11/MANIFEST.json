@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT11",
+  "input_sha256": {
+    "BATCH_EAUDIT11.md": "f16521d29e4ab4793f1f332c21833fe01ed589ee50b010d891d5ea93f0a359db",
+    "Blueprint/Ch02.lean": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+    "blueprint/ch02/ch02_source.json": "267dc501c97ac29c24f9b14d2da93ceabd9fd3b5f3b62b7d2b4fd105d8fe88b0"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT11a",
+      "source_id": "MD-2.3.5-ChainRule",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT11/a",
+      "total_bytes": 88288,
+      "manifest_sha256": "b7e1039fae7306574f6a90205358186efab9dfdb45f6a14f42363cff0ac8c486"
+    },
+    {
+      "subtask": "EAUDIT11b",
+      "source_id": "MD-2.3.5-SymplecticComposition",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT11/b",
+      "total_bytes": 89656,
+      "manifest_sha256": "961b06aac6fd4e3c77a1231d59932c5b17b62c8b6c91772a55f3d2bcca9dea49"
+    },
+    {
+      "subtask": "EAUDIT11c",
+      "source_id": "MD-2.3.5-SymplecticInverse",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT11/c",
+      "total_bytes": 90043,
+      "manifest_sha256": "ba51ac8bf0fa8d3c96a8c29f62e8e1ff60af1b24b0f996c271a0db66d70a8fa2"
+    }
+  ]
+}

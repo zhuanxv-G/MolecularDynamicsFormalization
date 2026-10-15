@@ -9250,7 +9250,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT11",
+    "repair": {
+      "eaudit": "EAUDIT11",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT11.md": "f16521d29e4ab4793f1f332c21833fe01ed589ee50b010d891d5ea93f0a359db",
+        "Blueprint/Ch02.lean": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+        "blueprint/ch02/ch02_source.json": "267dc501c97ac29c24f9b14d2da93ceabd9fd3b5f3b62b7d2b4fd105d8fe88b0"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.5-SymplecticComposition",
@@ -9367,7 +9379,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT11",
+    "repair": {
+      "eaudit": "EAUDIT11",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT11.md": "f16521d29e4ab4793f1f332c21833fe01ed589ee50b010d891d5ea93f0a359db",
+        "Blueprint/Ch02.lean": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+        "blueprint/ch02/ch02_source.json": "267dc501c97ac29c24f9b14d2da93ceabd9fd3b5f3b62b7d2b4fd105d8fe88b0"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.5-SymplecticInverse",
@@ -9485,7 +9509,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT11",
+    "repair": {
+      "eaudit": "EAUDIT11",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT11.md": "f16521d29e4ab4793f1f332c21833fe01ed589ee50b010d891d5ea93f0a359db",
+        "Blueprint/Ch02.lean": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+        "blueprint/ch02/ch02_source.json": "267dc501c97ac29c24f9b14d2da93ceabd9fd3b5f3b62b7d2b4fd105d8fe88b0"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.5-GlobalGroupPrinted",
@@ -9604,8 +9640,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT11（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT11",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "非退化局部Jacobian不足推出全球双射；选项：批准另立全球辛微分同胚群／将原文全球可逆及群主张整体登记疑误；现有字面式保持。"
+    }
   },
   {
     "source_id": "MD-2.3.6-SymplecticIntegrator",

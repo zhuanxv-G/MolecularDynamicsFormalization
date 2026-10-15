@@ -1,0 +1,85 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.3.5-ChainRule；原PDF页映射=[101]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT11_review.json，对象含batch=EAUDIT11、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT11.md": "f16521d29e4ab4793f1f332c21833fe01ed589ee50b010d891d5ea93f0a359db",
+  "Blueprint/Ch02.lean": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+  "blueprint/ch02/ch02_source.json": "267dc501c97ac29c24f9b14d2da93ceabd9fd3b5f3b62b7d2b4fd105d8fe88b0",
+  "EAUDIT11a_materials": "5c5deff68e481d0b83b86fd96ba7cb67fc260f244526a58142866bfa927286c5",
+  "EAUDIT11a_PAGES.pdf": "c7192b47a3a6cb5c4eb1678da333f5859c756e8e084fca511eb7686eff5b39e1"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.3.5-ChainRule",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "2.3.5",
+  "printed_page": "79",
+  "pdf_page": "101",
+  "statement_latex": "Let $\\Phi_1$ and $\\Phi_2$ be any pair of symplectic maps. Then\n\\[(\\Phi_1\\circ\\Phi_2)'=\\Phi_1'\\Phi_2',\\]\nby the chain rule,",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$\\Phi_1,\\Phi_2$ 是辛映射；撇号表示映射的 Jacobian。原书省略导数取值点；外导数取值于 $\\Phi_2(z)$ 是链式法则的解释，并非原文新增公式。",
+    "辛映射在 PDF 第100页（印刷78页）定义为保持辛2形式的映射，坐标条件为 $\\Phi^{\\prime T}J\\Phi^\\prime=J$（2.17）。"
+  ],
+  "issues": [
+    {
+      "code": "OMITTED_EVALUATION_POINT",
+      "status": "NEEDS_HUMAN",
+      "detail": "原文Φ₁′Φ₂′未写外导数的Φ₂(z)取值点；Lean用正确链式法则，需审校确认简写约定。"
+    }
+  ],
+  "lean_decl": "MD.Ch02.chainRule",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookJacobian_comp"
+  ],
+  "extra_assumptions": [
+    "两个实际映射在相应点可微；外导数在Φ₂(z)取值，原文简写省略底点。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT11_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:14:51.635235",
+      "before_sha256": "8dab3a87da555b06f844450e241cc54e9900294d98e6c0d6393f7c978515308e",
+      "after_sha256": "26e925f9d79d14410318037ae137589ef81dd8f75855c0208d1acb5f1872cc03",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH18_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean
+```lean
+theorem chainRule {Nc : ℕ}
+    (Φ Ψ : SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (hΦ : Differentiable ℝ Φ) (hΨ : Differentiable ℝ Ψ) (z : SymplecticCoordinates Nc) :
+    textbookJacobian (Φ ∘ Ψ) z = textbookJacobian Φ (Ψ z) * textbookJacobian Ψ z
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinateMatrix
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MolecularDynamics.textbookJacobian
+```lean
+noncomputable def textbookJacobian {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinateMatrix Nc :=
+  LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap
+```

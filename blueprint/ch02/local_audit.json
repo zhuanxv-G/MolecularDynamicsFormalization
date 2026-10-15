@@ -3291,9 +3291,9 @@
     "MD-2.3.5-ChainRule": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.chainRule",
@@ -3319,14 +3319,15 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT11/axioms.log",
+      "compiled": true
     },
     "MD-2.3.5-SymplecticComposition": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.symplecticComposition",
@@ -3352,14 +3353,15 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT11/axioms.log",
+      "compiled": true
     },
     "MD-2.3.5-SymplecticInverse": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.symplecticInverse",
@@ -3385,15 +3387,16 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT11/axioms.log",
+      "compiled": true
     },
     "MD-2.3.5-GlobalGroupPrinted": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.globalGroupPrinted",
@@ -3417,8 +3420,9 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT11/axioms.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
+      "compiled": true
     },
     "MD-2.3.6-SymplecticIntegrator": {
       "checked": true,

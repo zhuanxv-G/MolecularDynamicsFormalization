@@ -101,10 +101,10 @@
 | MD-2.3.4-MatrixCancellation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | existing_bridge / checked+documented priors |
 | MD-2.3.4-FormConstant | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
 | MD-2.3.4-HamiltonSymplectic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | existing_bridge / checked+documented priors |
-| MD-2.3.5-ChainRule | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.3.5-SymplecticComposition | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.3.5-SymplecticInverse | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.3.5-GlobalGroupPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书全球逆断言裁定；正确微分同胚群接口已有。 |
+| MD-2.3.5-ChainRule | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT11 | existing_bridge / checked+documented priors |
+| MD-2.3.5-SymplecticComposition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT11 | existing_bridge / checked+documented priors |
+| MD-2.3.5-SymplecticInverse | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT11 | existing_bridge / checked+documented priors |
+| MD-2.3.5-GlobalGroupPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT11（原返回FAIL保留） | placeholder / incomplete；原书全球逆断言裁定；正确微分同胚群接口已有。 |
 | MD-2.3.6-SymplecticIntegrator | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.3.6-SymplecticEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.3.6-KickDifferential | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；完整步映射Fréchet导数与kick/drift组合的坐标整理。 |
@@ -427,3 +427,5 @@ EAUDIT08 §2.3.2：2条落盘，单文件与3项公理通过；未写新证明�
 EAUDIT09 §2.3.3：5条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT10 §2.3.4：3条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT11 §2.3.5：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。

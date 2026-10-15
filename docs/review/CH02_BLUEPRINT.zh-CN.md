@@ -98,10 +98,10 @@
 | MD-2.3.4-MatrixCancellation | 79/101 | PASS | 待复审 / EAUDIT10 | incomplete |
 | MD-2.3.4-FormConstant | 79/101 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
 | MD-2.3.4-HamiltonSymplectic | 79/101 | PASS | 待复审 / EAUDIT10 | checked+documented priors |
-| MD-2.3.5-ChainRule | 79/101 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
-| MD-2.3.5-SymplecticComposition | 79/101 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
-| MD-2.3.5-SymplecticInverse | 79/101 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
-| MD-2.3.5-GlobalGroupPrinted | 79/101 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
+| MD-2.3.5-ChainRule | 79/101 | PASS | 待复审 / EAUDIT11 | checked+documented priors |
+| MD-2.3.5-SymplecticComposition | 79/101 | PASS | 待复审 / EAUDIT11 | checked+documented priors |
+| MD-2.3.5-SymplecticInverse | 79/101 | PASS | 待复审 / EAUDIT11 | checked+documented priors |
+| MD-2.3.5-GlobalGroupPrinted | 79/101 | NEEDS_HUMAN | 待导师 / EAUDIT11（原返回FAIL保留） | incomplete |
 | MD-2.3.6-SymplecticIntegrator | 80/102 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.3.6-SymplecticEuler | 80/102 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.3.6-KickDifferential | 81/103 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
@@ -5304,7 +5304,7 @@ theorem chainRule {Nc : ℕ}
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT11**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch02_deps.txt：SymplecticForm.lean 第33–41行将 SymplecticCoordinates n 定义为 (Fin n ⊕ Fin n) → ℝ（q 后 p），矩阵为该指标上的实方阵，textbookJ=[[0,I],[-I,0]]；第138–139行 IsTextbookSymplectic A 是 AᵀJA=J。SymplecticMaps.lean 第238–241行 textbookJacobian 是实际 Fréchet 导数 fderiv 的坐标矩阵，第272–274行 IsTextbookSymplecticMap Φ 是 ContDiff ℝ 1 Φ ∧ ∀ z, DΦ(z)ᵀJDΦ(z)=J，不含全球双射。 实际 Ch02.lean 第837–841行对任意 n、Φ、Ψ、全局可微假设及任意 z，断言 D(Φ∘Ψ)(z)=DΦ(Ψ(z))DΨ(z)。对象、复合顺序、矩阵方向与原文链式法则一致；外导数底点 Ψ(z) 是省略取值点的标准展开。未要求辛性是有效加强，包含原文任意两辛映射的全部实例，因为 C¹ 蕴含全局可微；没有添加会排除原文对象的假设。[EXTRA] 可微性合理，但注释“相应点可微”不精确：签名实际要求全局可微，点态最小假设并未使用。结论只有原文链式公式，无遗漏。正文调用 deps 第261–270行的实际链式法则，无直接 sorry；本判定为签名语义审计，未运行 Lean 验证依赖。
 
@@ -5316,13 +5316,13 @@ theorem chainRule {Nc : ℕ}
 
 位置：[Blueprint/Ch02.lean:958](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:958>)（`MD.Ch02.chainRule`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.textbookJacobian_comp。
 
-签名SHA256：`2c11109e0d6a1733ccd5ee761fc8a56fdb9c6944663a296873a98a619a2f6dbc`；原文SHA256：`50672b6d73896bd39ecfcf8016cb40ebdbcfb1f6e65aaa9509b820ef81c45b28`。
+签名SHA256：`2c11109e0d6a1733ccd5ee761fc8a56fdb9c6944663a296873a98a619a2f6dbc`；原文SHA256：`d1cb50e7ecfdee58b558de2da86a182317b016599967236006e547ceaea2f954`。
 
 ## 1. MD-2.3.5-SymplecticComposition · unnumbered_claim · 印刷p.79 / PDFp.101
 
@@ -5334,7 +5334,12 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 原书无独立完整证明（proof_latex=null）。
 
-原书未给独立完整证明。
+原书在结论前给出链式法则和保持辛矩阵的连续等式推导，无独立编号证明；推导记录于 proof_discussion_latex。
+
+原文证明思路：
+
+> By the chain rule, hence
+> \[[(\Phi_1\circ\Phi_2)^\prime]^T J(\Phi_1\circ\Phi_2)^\prime=[\Phi_1^\prime\Phi_2^\prime]^T J\Phi_1^\prime\Phi_2^\prime=\Phi_2^{\prime T}\Phi_1^{\prime T}J\Phi_1^\prime\Phi_2^\prime=\Phi_2^{\prime T}J\Phi_2^\prime=J.\]
 
 ### 4. Lean陈述
 
@@ -5355,7 +5360,7 @@ theorem symplecticComposition {Nc : ℕ}
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT11**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch02_deps.txt：SymplecticForm.lean 第33–41行将 SymplecticCoordinates n 定义为 (Fin n ⊕ Fin n) → ℝ（q 后 p），矩阵为该指标上的实方阵，textbookJ=[[0,I],[-I,0]]；第138–139行 IsTextbookSymplectic A 是 AᵀJA=J。SymplecticMaps.lean 第238–241行 textbookJacobian 是实际 Fréchet 导数 fderiv 的坐标矩阵，第272–274行 IsTextbookSymplecticMap Φ 是 ContDiff ℝ 1 Φ ∧ ∀ z, DΦ(z)ᵀJDΦ(z)=J，不含全球双射。 Ch02.lean 第844–848行对任意 n 及同一空间上的任意 Φ、Ψ，分别假设 C¹ 和逐点辛条件，结论展开为 Φ∘Ψ 为 C¹ 且在每个 z 满足 D(Φ∘Ψ)(z)ᵀJD(Φ∘Ψ)(z)=J。无全球双射或其他隐含额外条件，量词与原文“any pair”一致，全部结论已表达。deps 第303–310行明确在 Ψ(z) 使用 Φ 的辛条件并在 z 使用 Ψ 的辛条件，顺序正确。无 [EXTRA]/[ERRATUM?] 需要修复。正文调用 comp，无直接 sorry；未执行编译，签名判断独立于证明完成性。
 
@@ -5365,13 +5370,13 @@ theorem symplecticComposition {Nc : ℕ}
 
 位置：[Blueprint/Ch02.lean:965](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:965>)（`MD.Ch02.symplecticComposition`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.IsTextbookSymplecticMap.comp。
 
-签名SHA256：`166a2e3618e42474f7aa0f0ee7d89459ba5f7e167df504e6ee7cbdcf8c8ff47d`；原文SHA256：`0c798ea99671a09c2649cca8df721a874140903ea524b96daa2a15cf695cd1c1`。
+签名SHA256：`166a2e3618e42474f7aa0f0ee7d89459ba5f7e167df504e6ee7cbdcf8c8ff47d`；原文SHA256：`80c60d17b7361ac71227d0e295c0952657ee20e4fba2bc021b0b528001478471`。
 
 ## 1. MD-2.3.5-SymplecticInverse · unnumbered_claim · 印刷p.79 / PDFp.101
 
@@ -5404,7 +5409,7 @@ theorem symplecticInverse {Nc : ℕ}
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT11**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch02_deps.txt：SymplecticForm.lean 第33–41行将 SymplecticCoordinates n 定义为 (Fin n ⊕ Fin n) → ℝ（q 后 p），矩阵为该指标上的实方阵，textbookJ=[[0,I],[-I,0]]；第138–139行 IsTextbookSymplectic A 是 AᵀJA=J。SymplecticMaps.lean 第238–241行 textbookJacobian 是实际 Fréchet 导数 fderiv 的坐标矩阵，第272–274行 IsTextbookSymplecticMap Φ 是 ContDiff ℝ 1 Φ ∧ ∀ z, DΦ(z)ᵀJDΦ(z)=J，不含全球双射。 Ch02.lean 第852–855行对任意 n 与 e : Equiv.Perm 给定全局双射。deps 第333–335行 IsTextbookSymplecticEquiv e 展开为 e 为 C¹ 辛映射且 e.symm 为 C¹；结论展开为 e.symm 为 C¹ 辛映射且其逆 e 为 C¹。新增的后一结论已由假设蕴含，是合理加强。第319–331行逆导数公式在 e.symm(z) 取正向导数的矩阵逆，第353–362行逐点用 A⁻¹ 的辛性，忠实表达“给定逆的辛映射，其逆仍辛”。[EXTRA] 全球双射是谈全球逆必要的条件化修复，不能由辛条件推得；逆 C¹ 在有限维 C¹ 且逐点导数可逆、并已知全球双射时由局部逆函数定理自动成立，数学上冗余而实现上合理。故在已明确标注 [EXTRA]、并另条保留原文无条件可逆疑误的范围内 PASS；此条并非原文所有辛映射必可逆的逐字版本。原句 since 后的矩阵等式是论证依据，逆辛结论由实际定义表达，无结论子句遗漏。正文调用 symm，无直接 sorry，未作编译认证。
 
@@ -5416,13 +5421,13 @@ theorem symplecticInverse {Nc : ℕ}
 
 位置：[Blueprint/Ch02.lean:973](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:973>)（`MD.Ch02.symplecticInverse`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.IsTextbookSymplecticEquiv.symm。
 
-签名SHA256：`2694b055598d0580332816e2bc2be4f1a287c770040aa2b56e213e0049179083`；原文SHA256：`30880c4a58754a577bb25c7d2f25e350cfb2bedf3c648882a783eff3c125f668`。
+签名SHA256：`2694b055598d0580332816e2bc2be4f1a287c770040aa2b56e213e0049179083`；原文SHA256：`d44a57afda15a76fa8016122b033001eabeeea0d02721e11b8a6825986089073`。
 
 ## 1. MD-2.3.5-GlobalGroupPrinted · unnumbered_claim · 印刷p.79 / PDFp.101
 
@@ -5455,7 +5460,7 @@ theorem globalGroupPrinted : ∀ n (Φ : SymplecticCoordinates n → SymplecticC
 
 本地预审：**NEEDS_HUMAN**。字面全球逆与逆辛性两个结论保留；不偷偷加入全球双射为假设。
 
-网站审计：**FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT11（原返回FAIL保留）**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch02_deps.txt：SymplecticForm.lean 第33–41行将 SymplecticCoordinates n 定义为 (Fin n ⊕ Fin n) → ℝ（q 后 p），矩阵为该指标上的实方阵，textbookJ=[[0,I],[-I,0]]；第138–139行 IsTextbookSymplectic A 是 AᵀJA=J。SymplecticMaps.lean 第238–241行 textbookJacobian 是实际 Fréchet 导数 fderiv 的坐标矩阵，第272–274行 IsTextbookSymplecticMap Φ 是 ContDiff ℝ 1 Φ ∧ ∀ z, DΦ(z)ᵀJDΦ(z)=J，不含全球双射。 Ch02.lean 第859–862行量词为所有 n、所有 C¹ 辛自映射，推出全球双射及选择逆 Function.invFun Φ 为 C¹ 辛映射。在双射假设成立时 invFun 是真实唯一逆，但辛假设本身不保证双射。[ERRATUM?] 成立，正式谓词确实允许下面 n=1 的光滑反例。这一假命题保留了原书全球可逆性疑误，命题为假本身不等于错误转录；独立的签名忠实性问题是本条 statement_scope 包含原句全部展示主张，而签名没有明示“Jacobian 行列式 ±1”子句，也未给实际群对象/群结构。行列式由 deps 第312–316行可推出更强的逐点 det=1，闭合、单位与逆可另由本批前项及库群构造组合，但这些未成为本声明的完整结论。故按全部结论子句审计 FAIL。deps 第366–382行已经提供由真正全球辛微分同胚构成的 Subgroup 及其复合运算，可用于另列修正版。正文直接 sorry：这单独表示证明未完成，不作为 FAIL 的理由，也不尝试补证。
 
@@ -5469,7 +5474,7 @@ theorem globalGroupPrinted : ∀ n (Φ : SymplecticCoordinates n → SymplecticC
 
 位置：[Blueprint/Ch02.lean:980](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:980>)（`MD.Ch02.globalGroupPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5477,7 +5482,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 停止/继续原因：导师/原文疑点未裁定；不进入新证明。
 
-签名SHA256：`f8b91dae6784ff9437a94d82ddd2bb14959e8005f733036a5474cd2a685dae90`；原文SHA256：`de97cbfc93e31c33430ad7d2d08b01fb13c47390f17e0b85db92c10371b3cb8a`。
+签名SHA256：`f8b91dae6784ff9437a94d82ddd2bb14959e8005f733036a5474cd2a685dae90`；原文SHA256：`2c299acd3e20b8eb2c7f025e5b1b517a9999f830889fd070fadbce8161829381`。
 
 ## 1. MD-2.3.6-SymplecticIntegrator · definition · 印刷p.80 / PDFp.102
 
