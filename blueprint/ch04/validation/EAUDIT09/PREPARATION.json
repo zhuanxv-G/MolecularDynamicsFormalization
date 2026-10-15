@@ -1,0 +1,30 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT09",
+  "section": "4.3.1",
+  "source_ids": [
+    "MD-4.3.1-HessianPullbackCancel",
+    "MD-4.3.1-RestrictedForm",
+    "MD-4.3.1-VariationalFormula"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.1-RestrictedForm",
+    "MD-4.3.1-VariationalFormula",
+    "MD-4.3.1-HessianPullbackCancel"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "03326fa44f5ffe880d8a0a394388e09183058c1accffdb9a1b9de9b3a977c966",
+  "lean_sha256": "e858c14a55ff1b97605047d53ce5494440c06bd901ead267538a8a4d18795d1a",
+  "source_sha256": "58a56d0dadd21fd1ebf11af28b1363ce65ba5741d1a9ff2189a36caaf3991ad2",
+  "pages": [
+    175,
+    176,
+    177,
+    178
+  ],
+  "prior_proof_blocks": {
+    "MD-4.3.1-RestrictedForm": "def restrictedForm {n : ℕ} (chart : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (z u v : MolecularDynamics.Chapter04Review.Z n) : ℝ :=\n  MolecularDynamics.Chapter04Review.phaseForm ((fderiv ℝ chart z) u) ((fderiv ℝ chart z) v)",
+    "MD-4.3.1-VariationalFormula": "theorem variational :\n  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (rho : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l) (z v : MolecularDynamics.Chapter04Review.Z n), ContDiff ℝ 2 U → (∀ j, ContDiff ℝ 2 (g j)) →\n    DifferentiableAt ℝ rho z →\n    (fderiv ℝ (fun x : MolecularDynamics.Chapter04Review.Z n =>\n      (MolecularDynamics.Chapter04Review.invMass m x.2,-MolecularDynamics.Chapter04Review.grad U x.1-(textbookConstraintJacobian g x.1)ᵀ *ᵥ rho x)) z) v =\n      (MolecularDynamics.Chapter04Review.invMass m v.2,-(fderiv ℝ (MolecularDynamics.Chapter04Review.grad U) z.1) v.1-\n        ∑ j, (((fderiv ℝ rho z) v) j • MolecularDynamics.Chapter04Review.grad (g j) z.1+\n          rho z j • (fderiv ℝ (MolecularDynamics.Chapter04Review.grad (g j)) z.1) v.1)) := by\n  sorry",
+    "MD-4.3.1-HessianPullbackCancel": "theorem hessianPullbackCancel {Nc Mc : ℕ}\n    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (U : (Fin Nc → ℝ) → ℝ)\n    (ρ : Fin Mc → E → ℝ) (q : E → Fin Nc → ℝ) (x u v : E)\n    (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 2 (γ j))\n    (hq : DifferentiableAt ℝ q x) (hρ : ∀ j, DifferentiableAt ℝ (ρ j) x)\n    (hconstraint : ∀ j, ∀ᶠ y in 𝓝 x, γ j (q y) = 0) :\n    ∑ i : Fin Nc,\n      ((fderiv ℝ q x) u i * (fderiv ℝ\n        (textbookMultiConstrainedMomentum Finset.univ γ ρ q\n          (fun y => textbookPotentialForce U (q y))) x) v i -\n        (fderiv ℝ (textbookMultiConstrainedMomentum Finset.univ γ ρ q\n          (fun y => textbookPotentialForce U (q y))) x) u i * (fderiv ℝ q x) v i) = 0 := by\n  apply MolecularDynamics.textbookConstrainedAcceleration_pullback_zero <;> assumption"
+  }
+}

@@ -560,6 +560,47 @@ def dipolarSystemPotential {N : ℕ} (lj : ℝ → ℝ)
           '(I : Set ℝ) (_hI : IsOpen I)\n    (_hU : Differentiable ℝ (fun z : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 ↦ U z.1 z.2)) : Prop',1)
         change('RigidMatrixRelation',code,'A','增加开放时间域、势能联合经典可微、M>0及R可逆，使within导数等于真实时间导数，排除单点域伪运动；姿态正交约束仍逐t保留。')
         pages=[189,190,191,192,193]
+    elif section=='4.4.1':
+        change('FreeRigidSolution',current('FreeRigidSolution').replace('(I : Set ℝ) : Prop','(I : Set ℝ) (_hI : IsOpen I) (_hT : T.PosDef) : Prop'),'A','采用开放时间域和正定惯性张量，明确within导数就是实际经典导数；Mathlib标准定义按用户约定直接采信，不再因未复制定义体待人工。')
+        change('RigidInvariants',current('RigidInvariants'),'B','本条仅保留原页的能量与角动量模长守恒，实际Hamiltonian梯度表示/反对称性由RigidPoissonMatrix补全，退化由PoissonDegeneracy原已有声明承担，完整原文保留。',scope='仅能量与角动量模长守恒；同段Hamiltonian表示及结构矩阵反对称性由MD-4.4.1-RigidPoissonMatrix、退化由MD-4.4.1-PoissonDegeneracy承担。')
+        change('RigidPoissonMatrix',current('RigidPoissonMatrix')+'''
+
+def rigidBodyHamiltonian (T : MolecularDynamics.Chapter04Review.Mat3)
+    (mom : MolecularDynamics.Chapter04Review.V) : ℝ :=
+  MolecularDynamics.Chapter04Review.dot mom (T⁻¹ *ᵥ mom)/2
+
+theorem rigidPoissonMatrix_hamiltonian (T : MolecularDynamics.Chapter04Review.Mat3)
+    (_hT : T.PosDef) (mom : MolecularDynamics.Chapter04Review.V) :
+    (rigidPoissonMatrix mom)ᵀ= -rigidPoissonMatrix mom ∧
+    MolecularDynamics.Chapter04Review.eulerRigidField T mom=
+      rigidPoissonMatrix mom *ᵥ MolecularDynamics.Chapter04Review.grad (rigidBodyHamiltonian T) mom := by
+  sorry''','B','保留J定义，补实际二次能量定义、真实fderiv梯度Hamiltonian表示及反对称性；正定惯性是物理充分资格，不预设所求梯度公式。')
+        for k in ['SecondAxisPrinted','ThirdAxisPrinted']:
+            human[sid(k)]='原页第二/第三轴公式的π无下标，不能从标量与向量歧义擅定其为对应分量；选项：保留印刷占位／导师确认π₂、π₃后另列勘误版。当前a参数与原印签名保持，网站指出缺下标解释尚未确定。'
+        change('PrincipalAxisField',current('PrincipalAxisField'),'B','本条为单轴分裂场定义；完整印刷五次轴复合由PrintedSpinStep承担，实际子流的负角与原印正角冲突保留AxisFlowFormal/ExactPlanarRotation待导师。',scope='仅各单轴子向量场的定义；完整印刷五次复合由MD-4.4.1-PrintedSpinStep承担，精确平面子流解释由MD-4.4.1-ExactPlanarRotation单列待导师。')
+        human[sid('AxisFlowFormal')]='标准右手旋转下印刷正角自旋的导数与π×e_iπ_i/I_i反号；例I=(1,1,1),i=1轴,π=(0,1,0)时绕x正角初导数向+z而原向量场向−z。选项：另列负角精确子流／保持正角只作为印刷算法；需导师选择，不改现签名。'
+        human[sid('ExactPlanarRotation')]='本负角精确子流依赖将原页第二/三轴缺下标π解释为π₂、π₃；选项：导师确认该勘误解释／继续只保留印刷歧义。网站未否定负角数学式，但来源解释待定，保持现状。'
+        pages=[193,194,195,196]
+    elif section=='4.4.2':
+        change('DLMPrinted',current('DLMPrinted'),'B','保留N=1字面算法作为单体实例；完整任意N、耦合势、逐阶段重算所有力矩的原算法已由DLMPrintedSystem覆盖，显式跨条目映射，不以单体冒充全系统。',scope='原DLM完整算法的N=1实例；任意N耦合系统的原算法由MD-4.4.2-DLMPrintedSystem承担。')
+        human[sid('DLMMassOnly')]='该定义是带M分母的完整单体修订算法，绑定原句仅q+hp不忠实；例M=2,h=1,U=0,p=e₁时输出位移1/2而原印1。选项：导师确认将它另立质量勘误候选并重绑完整陈述／恢复字面漂移。保留当前签名，不自行采纳原书疑误路线。'
+        change('DriftSpinCommute',current('DriftSpinCommute')+'''
+
+theorem driftSpinCommute_halves (M h : ℝ) (I : MolecularDynamics.Chapter04Review.V)
+    (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) :
+    MolecularDynamics.Chapter04Review.rigidDrift M h=
+      MolecularDynamics.Chapter04Review.rigidDrift M (h/2) ∘ MolecularDynamics.Chapter04Review.rigidDrift M (h/2) ∧
+    (MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘
+      (fun z : MolecularDynamics.Chapter04Review.RBState ↦ (z.1,printedSpinStep I h z.2)) ∘
+      MolecularDynamics.Chapter04Review.rigidDrift M h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2))=
+    (MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ MolecularDynamics.Chapter04Review.rigidDrift M (h/2) ∘
+      (fun z : MolecularDynamics.Chapter04Review.RBState ↦ (z.1,printedSpinStep I h z.2)) ∘
+      MolecularDynamics.Chapter04Review.rigidDrift M (h/2) ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)) := by
+  sorry''','B','保留原交换性证明，并补漂移半步合成与完整Kick/Drift/Spin/Drift/Kick排列恒等式；M=1即字面原算法，新结论暂sorry。')
+        human[sid('DLMStructureFormal')]='本条是质量修订单体结构结论，原文讨论全部刚体及耦合势，且物理子流正负角另有冲突；选项：确认它作为独立质量修订候选／重新绑定字面全系统结构。原字面全系统断言已有DLMPrintedSystemStructure，当前质量修订路线不擅定，保持签名。'
+        change('DLMPrintedStructure',current('DLMPrintedStructure'),'B','本条仅为字面单体辛性实例；原句任意N耦合算法与输入/输出SO(3)域由DLMPrintedSystemStructure承担，不再把rbSymplectic名字当作完整输出约束。',scope='仅N=1字面算法两形式拉回等式；原全系统含SO(3)域的结构断言由MD-4.4.2-DLMPrintedSystemStructure承担。')
+        change('RigidSystemSymplectic',current('RigidSystemSymplectic'),'B','本条仅定义全系统受约束两形式拉回性质，原句算法确实满足该性质由已有DLMPrintedSystemStructure断言，区分性质定义与算法定理。',scope='仅全系统辛性辅助谓词定义；原文算法性质由MD-4.4.2-DLMPrintedSystemStructure承担。')
+        pages=[195,196]
     else:raise ValueError(section)
     run_batches(section,edits,human,pages,refresh)
 

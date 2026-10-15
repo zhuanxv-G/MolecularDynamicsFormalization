@@ -68,9 +68,9 @@
 | MD-4.3-GramInvertible | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
 | MD-4.3-CotangentInvariant | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
 | MD-4.3-ReducedFieldRegularity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
-| MD-4.3.1-RestrictedForm | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.3.1-VariationalFormula | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；待实际梯度、Jacobian乘子有限和的Fréchet链式/乘积展开；未建完整场到流变分理论。 |
-| MD-4.3.1-HessianPullbackCancel | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | existing_bridge / checked+documented priors |
+| MD-4.3.1-RestrictedForm | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | definition / self-contained |
+| MD-4.3.1-VariationalFormula | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | placeholder / incomplete；待实际梯度、Jacobian乘子有限和的Fréchet链式/乘积展开；未建完整场到流变分理论。 |
+| MD-4.3.1-HessianPullbackCancel | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | existing_bridge / checked+documented priors |
 | MD-4.3.1-ConstrainedFlowPullback | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | existing_bridge / checked+documented priors |
 | MD-4.3.2-PositionEulerPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / incomplete |
 | MD-4.3.2-PositionEulerForceConvention | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
@@ -364,3 +364,5 @@ EAUDIT06 §4.2.2：1条落盘，单文件与1项公理通过；未写新证明�
 EAUDIT07 §4.3：8条落盘，单文件与12项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT08 §4.3：6条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT09 §4.3.1：3条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。

@@ -4753,7 +4753,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH10_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT09",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT09.md": "5783d84fe08359ab1a418095a956445690b9635822284cd706adde1a3312c2e2",
+        "Blueprint/Ch04.lean": "e858c14a55ff1b97605047d53ce5494440c06bd901ead267538a8a4d18795d1a",
+        "blueprint/ch04/ch04_source.json": "58a56d0dadd21fd1ebf11af28b1363ce65ba5741d1a9ff2189a36caaf3991ad2"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.1-VariationalFormula",
@@ -4807,7 +4819,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH10_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT09",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT09.md": "5783d84fe08359ab1a418095a956445690b9635822284cd706adde1a3312c2e2",
+        "Blueprint/Ch04.lean": "e858c14a55ff1b97605047d53ce5494440c06bd901ead267538a8a4d18795d1a",
+        "blueprint/ch04/ch04_source.json": "58a56d0dadd21fd1ebf11af28b1363ce65ba5741d1a9ff2189a36caaf3991ad2"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.1-HessianPullbackCancel",
@@ -4894,7 +4918,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH10_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT09",
+    "repair": {
+      "eaudit": "EAUDIT09",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT09.md": "5783d84fe08359ab1a418095a956445690b9635822284cd706adde1a3312c2e2",
+        "Blueprint/Ch04.lean": "e858c14a55ff1b97605047d53ce5494440c06bd901ead267538a8a4d18795d1a",
+        "blueprint/ch04/ch04_source.json": "58a56d0dadd21fd1ebf11af28b1363ce65ba5741d1a9ff2189a36caaf3991ad2"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.1-ConstrainedFlowPullback",

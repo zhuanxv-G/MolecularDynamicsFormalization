@@ -2177,17 +2177,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.restrictedForm",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "1e983e35d8085a61f543fbf1aeba4b8cd104ce562ac919d9d21e30af6cd42d20",
-      "block_sha256": "1e983e35d8085a61f543fbf1aeba4b8cd104ce562ac919d9d21e30af6cd42d20",
-      "direct_placeholder": false,
+      "signature_sha256": "5f48c37bb24f5ffd1b1b7a3db1488c7c65063a0d96c78de6e9a7d3db6ad2e149",
+      "block_sha256": "5f48c37bb24f5ffd1b1b7a3db1488c7c65063a0d96c78de6e9a7d3db6ad2e149",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -2204,23 +2205,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT09/axioms.log"
     },
     "MD-4.3.1-VariationalFormula": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.variational",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "4f4edc163defcbeeedcbf43972fdd2063b0b449869f4baa1724e3a88878a0b8d",
-      "block_sha256": "defc27d60e338116cb65159ca2b83c9c970948eceae60649db10b79d5c9fe3c3",
+      "block_sha256": "ddf8172396277bb08d7dabcec548a3c92bd59be7600538c4f37cc271ea1149ad",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -2238,23 +2239,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT09/axioms.log"
     },
     "MD-4.3.1-HessianPullbackCancel": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.hessianPullbackCancel",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "274ae9386e9b77b16e59447e816e338411e9afce21573449ce82d294b616fa30",
-      "block_sha256": "36e9b851def7fadd69183687a6bb1a8c84f70f74a803dc7ebfddece3b445babe",
-      "direct_placeholder": false,
+      "block_sha256": "749d5e685d46384031c30a840cc1507e0c71baf6f2e5114f6381fe3275b90b14",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.textbookConstrainedAcceleration_pullback_zero"
@@ -2273,7 +2275,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT09/axioms.log"
     },
     "MD-4.3.1-ConstrainedFlowPullback": {
       "checked": true,

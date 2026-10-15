@@ -2,12 +2,12 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 298；章末验收待完成 [4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 294；章末验收待完成 [4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 57 / 已修待复审 72 / 待导师 20 / 修复中 0。
-第4章：网站PASS 73 / 已修待复审 40 / 待导师 11 / 修复中 55。
+第4章：网站PASS 73 / 已修待复审 43 / 待导师 11 / 修复中 52。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
@@ -382,9 +382,9 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 4 | MD-4.3-GramInvertible | FAIL | B | 保留原可逆性充分条件证明，补det≠0下反力乘子唯一可解及明确逆Gram公式；F和φ是给定线性方程数据，不把所求λ作假设。 | 已修待复审 | EAUDIT08 |
 | 4 | MD-4.3-CotangentInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT08 |
 | 4 | MD-4.3-ReducedFieldRegularity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT08 |
-| 4 | MD-4.3.1-RestrictedForm | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 4 | MD-4.3.1-VariationalFormula | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |
-| 4 | MD-4.3.1-HessianPullbackCancel | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 4 | MD-4.3.1-RestrictedForm | FAIL | B | 保留一般拉回定义，并补实际位置/隐藏约束余切流形切空间上限制标准二形式的非退化；正质量、C²、梯度独立为EXTRA正则资格。任意chart本身不声称辛。 | 已修待复审 | EAUDIT09 |
+| 4 | MD-4.3.1-VariationalFormula | FAIL | B | 保留一般场导数公式，新增真实约束曲线的切向变分资格，将Gdq=0与两分量变分方程同一结论合取。新结论暂sorry。 | 已修待复审 | EAUDIT09 |
+| 4 | MD-4.3.1-HessianPullbackCancel | FAIL | B | 保留动量项消去已有证明，补实际时间流/线性变分及合法约束切向量上的完整二形式导数零；位置项由常对角逆质量对称抵消，未把二形式守恒作前提。 | 已修待复审 | EAUDIT09 |
 | 4 | MD-4.3.1-ConstrainedFlowPullback | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.2-PositionEulerPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.2-PositionEulerForceConvention | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |

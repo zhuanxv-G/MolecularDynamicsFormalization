@@ -2131,11 +2131,24 @@
     "issues": [],
     "lean_decl": "MD.Ch04.restrictedForm",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留一般拉回定义，并补实际位置/隐藏约束余切流形切空间上限制标准二形式的非退化；正质量、C²、梯度独立为EXTRA正则资格。任意chart本身不声称辛。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T13:03:16.151063",
+        "before_sha256": "c8dfa43d82a2a29148a302c1834c13b0a0ab91f2e8b912a726600ab40b28becc",
+        "after_sha256": "466e853da56e0eac47a6acb9577221ec1fa87d8730dccf32a8311504e83b1a55",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH10_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.1-VariationalFormula",
@@ -2153,12 +2166,24 @@
     "lean_decl": "MD.Ch04.variational",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "实际Fréchet变分场：U/g C²、乘子ρ(z)可微；切向dg=0由tangentPhase/拉回消去条另保留，不把它漏掉或作无条件全空间结论。"
+      "实际Fréchet变分场：U/g C²、乘子ρ(z)可微；切向dg=0由tangentPhase/拉回消去条另保留，不把它漏掉或作无条件全空间结论。",
+      "[EXTRA] 保留一般场导数公式，新增真实约束曲线的切向变分资格，将Gdq=0与两分量变分方程同一结论合取。新结论暂sorry。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T13:03:16.151063",
+        "before_sha256": "b714f90e885502901876a3db11678d64bb635a6e865dea07ed14fe072e27cb43",
+        "after_sha256": "914a6c2c70f724aa8aed169b3943e03602828aba4e7536c872aaf01993fb43da",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH10_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.1-HessianPullbackCancel",
@@ -2167,23 +2192,40 @@
     "section": "4.3.1",
     "printed_page": "155",
     "pdf_page": "177",
-    "statement_latex": "This follows from the antisymmetry of the wedge product $(\\mathrm dx\\wedge\\mathrm dy=-\\mathrm dy\\wedge\\mathrm dx)$, and the fact that the Hessian matrix of $U$ is symmetric. Therefore\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\sum_{j=1}^{N_c}\\mathrm dq_j\\wedge\\mathrm dp_j=0.\\]",
+    "statement_latex": "This follows from the antisymmetry of the wedge product $(\\mathrm dx\\wedge\\mathrm dy=-\\mathrm dy\\wedge\\mathrm dx)$, and the fact that the Hessian matrix of $U$ is symmetric. Next, note that\n\\[\\sum_{i=1}^{N_c}\\sum_{k=1}^{l}\\mathrm dq_i\\wedge\\lambda_k\\sum_{j=1}^{N_c}(g_k^{\\prime\\prime})_{ij}\\mathrm dq_j=\\sum_{k=1}^{l}\\lambda_k\\sum_{i=1}^{N_c}\\mathrm dq_i\\wedge\\sum_{j=1}^{N_c}(g_k^{\\prime\\prime})_{ij}\\mathrm dq_j=0,\\]\nby the same reasoning, since each of $g_k^{\\prime\\prime}$ is a symmetric matrix. Finally\n\\[\\sum_{i=1}^{N_c}\\sum_{k=1}^{l}[\\mathrm dq_i\\wedge(\\mathrm d\\lambda_k)g_{ki}^{\\prime}]=\\sum_{k=1}^{l}\\left(\\sum_{i=1}^{N_c}g_{ki}^{\\prime}\\mathrm dq_i\\right)\\wedge\\mathrm d\\lambda_k=\\sum_{k=1}^{l}\\mathrm dg_k\\wedge\\mathrm d\\lambda_k=0,\\]\nsince we know that $\\mathrm dg_k=0$ from (4.13). Therefore\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\sum_{j=1}^{N_c}\\mathrm dq_j\\wedge\\mathrm dp_j=0.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "U及各g_k的双撇表示Hessian；质量矩阵常对角，m_i为第i个对角元。完整时间导数还使用本页上半部 Σ_i m_i^{-1} dp_i∧dp_i=0 和Leibniz规则。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.hessianPullbackCancel",
     "reusable_proofs": [
       "MolecularDynamics.textbookConstrainedAcceleration_pullback_zero"
     ],
     "extra_assumptions": [
-      "完整实际C²势/约束、可微乘子和切向位置图；前文各消去项在已证正式库有限和展开中保留。"
+      "完整实际C²势/约束、可微乘子和切向位置图；前文各消去项在已证正式库有限和展开中保留。",
+      "[EXTRA] 保留动量项消去已有证明，补实际时间流/线性变分及合法约束切向量上的完整二形式导数零；位置项由常对角逆质量对称抵消，未把二形式守恒作前提。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT09_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T13:03:16.151063",
+        "before_sha256": "7bf2230f1ff34a04a9e4c4a9a4c34f8cb287ec26ec547a14b56256b88efb592d",
+        "after_sha256": "d849e243847e799656d8abd85f97e46927d65f34a9006e423018c5832435cac2",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH10_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.1-ConstrainedFlowPullback",

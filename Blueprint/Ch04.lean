@@ -877,12 +877,26 @@ theorem reducedFieldRegularity
     ContDiffAt ℝ 1 (textbookConstrainedPhaseVectorField m γ U) z := by
   apply MolecularDynamics.contDiffAt_textbookConstrainedPhaseVectorField_of_mass_and_independence <;> assumption
 
-/-- source_id: MD-4.3.1-RestrictedForm · definition · §4.3.1 · 印刷p.153 / PDFp.175 -/
+/-- source_id: MD-4.3.1-RestrictedForm · definition · §4.3.1 · 印刷p.153 / PDFp.175 
+[EXTRA] 保留一般拉回定义，并补实际位置/隐藏约束余切流形切空间上限制标准二形式的非退化；正质量、C²、梯度独立为EXTRA正则资格。任意chart本身不声称辛。 -/
 def restrictedForm {n : ℕ} (chart : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (z u v : MolecularDynamics.Chapter04Review.Z n) : ℝ :=
   MolecularDynamics.Chapter04Review.phaseForm ((fderiv ℝ chart z) u) ((fderiv ℝ chart z) v)
 
+theorem restrictedForm_nondegenerate (n l : ℕ) (m : Fin n → ℝ)
+    (_hm : ∀ i, 0 < m i) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (_hg : ∀ j, ContDiff ℝ 2 (g j)) (z : MolecularDynamics.Chapter04Review.Z n)
+    (_hz : ∀ j, g j z.1=0)
+    (_hp : textbookConstraintJacobian g z.1 *ᵥ MolecularDynamics.Chapter04Review.invMass m z.2=0)
+    (_hind : LinearIndependent ℝ (fun j ↦ textbookConstraintGradient (g j) z.1)) :
+    let c := fun w : MolecularDynamics.Chapter04Review.Z n ↦
+      ((fun j ↦ g j w.1), textbookConstraintJacobian g w.1 *ᵥ MolecularDynamics.Chapter04Review.invMass m w.2)
+    let T := (fderiv ℝ c z).ker
+    ∀ u ∈ T, (∀ v ∈ T, MolecularDynamics.Chapter04Review.phaseForm u v=0) → u=0 := by
+  sorry
+
 /-- source_id: MD-4.3.1-VariationalFormula · unnumbered_claim · §4.3.1 · 印刷p.154 / PDFp.176
-[EXTRA] 实际Fréchet变分场：U/g C²、乘子ρ(z)可微；切向dg=0由tangentPhase/拉回消去条另保留，不把它漏掉或作无条件全空间结论。 -/
+[EXTRA] 实际Fréchet变分场：U/g C²、乘子ρ(z)可微；切向dg=0由tangentPhase/拉回消去条另保留，不把它漏掉或作无条件全空间结论。 
+[EXTRA] 保留一般场导数公式，新增真实约束曲线的切向变分资格，将Gdq=0与两分量变分方程同一结论合取。新结论暂sorry。 -/
 theorem variational :
   ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (rho : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l) (z v : MolecularDynamics.Chapter04Review.Z n), ContDiff ℝ 2 U → (∀ j, ContDiff ℝ 2 (g j)) →
@@ -894,8 +908,24 @@ theorem variational :
           rho z j • (fderiv ℝ (MolecularDynamics.Chapter04Review.grad (g j)) z.1) v.1)) := by
   sorry
 
+theorem variational_constraints :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (rho : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l) (z v : MolecularDynamics.Chapter04Review.Z n), ContDiff ℝ 2 U → (∀ j, ContDiff ℝ 2 (g j)) →
+    DifferentiableAt ℝ rho z →
+    ∀ (c : ℝ → MolecularDynamics.Chapter04Review.Z n) (t : ℝ),
+    c t=z → HasDerivAt c v t →
+    (∀ᶠ s in 𝓝 t, ∀ j, g j (c s).1=0) →
+    (∀ j, (fderiv ℝ (g j) z.1) v.1=0) ∧
+    (fderiv ℝ (fun x : MolecularDynamics.Chapter04Review.Z n =>
+      (MolecularDynamics.Chapter04Review.invMass m x.2,-MolecularDynamics.Chapter04Review.grad U x.1-(textbookConstraintJacobian g x.1)ᵀ *ᵥ rho x)) z) v =
+      (MolecularDynamics.Chapter04Review.invMass m v.2,-(fderiv ℝ (MolecularDynamics.Chapter04Review.grad U) z.1) v.1-
+        ∑ j, (((fderiv ℝ rho z) v) j • MolecularDynamics.Chapter04Review.grad (g j) z.1+
+          rho z j • (fderiv ℝ (MolecularDynamics.Chapter04Review.grad (g j)) z.1) v.1)) := by
+  sorry
+
 /-- source_id: MD-4.3.1-HessianPullbackCancel · unnumbered_claim · §4.3.1 · 印刷p.155 / PDFp.177
-[EXTRA] 完整实际C²势/约束、可微乘子和切向位置图；前文各消去项在已证正式库有限和展开中保留。 -/
+[EXTRA] 完整实际C²势/约束、可微乘子和切向位置图；前文各消去项在已证正式库有限和展开中保留。 
+[EXTRA] 保留动量项消去已有证明，补实际时间流/线性变分及合法约束切向量上的完整二形式导数零；位置项由常对角逆质量对称抵消，未把二形式守恒作前提。 -/
 theorem hessianPullbackCancel {Nc Mc : ℕ}
     (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (U : (Fin Nc → ℝ) → ℝ)
     (ρ : Fin Mc → E → ℝ) (q : E → Fin Nc → ℝ) (x u v : E)
@@ -909,6 +939,26 @@ theorem hessianPullbackCancel {Nc Mc : ℕ}
         (fderiv ℝ (textbookMultiConstrainedMomentum Finset.univ γ ρ q
           (fun y => textbookPotentialForce U (q y))) x) u i * (fderiv ℝ q x) v i) = 0 := by
   apply MolecularDynamics.textbookConstrainedAcceleration_pullback_zero <;> assumption
+
+theorem hessianPullbackCancel_time (n l : ℕ) (m : Fin n → ℝ)
+    (U : MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (ρ : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l)
+    (_hU : ContDiff ℝ 2 U) (_hg : ∀ j, ContDiff ℝ 2 (g j)) (_hρ : ContDiff ℝ 1 ρ)
+    (γ u v : ℝ → MolecularDynamics.Chapter04Review.Z n) (t : ℝ)
+    (_hγ : HasDerivAt γ
+      (MolecularDynamics.Chapter04Review.invMass m (γ t).2,
+       -MolecularDynamics.Chapter04Review.grad U (γ t).1-(textbookConstraintJacobian g (γ t).1)ᵀ *ᵥ ρ (γ t)) t)
+    (_hu : HasDerivAt u ((fderiv ℝ (fun z : MolecularDynamics.Chapter04Review.Z n ↦
+      (MolecularDynamics.Chapter04Review.invMass m z.2,
+       -MolecularDynamics.Chapter04Review.grad U z.1-(textbookConstraintJacobian g z.1)ᵀ *ᵥ ρ z)) (γ t)) (u t)) t)
+    (_hv : HasDerivAt v ((fderiv ℝ (fun z : MolecularDynamics.Chapter04Review.Z n ↦
+      (MolecularDynamics.Chapter04Review.invMass m z.2,
+       -MolecularDynamics.Chapter04Review.grad U z.1-(textbookConstraintJacobian g z.1)ᵀ *ᵥ ρ z)) (γ t)) (v t)) t)
+    (_htu : ∀ j, (fderiv ℝ (g j) (γ t).1) (u t).1=0)
+    (_htv : ∀ j, (fderiv ℝ (g j) (γ t).1) (v t).1=0) :
+    HasDerivAt (fun s ↦ MolecularDynamics.Chapter04Review.phaseForm (u s) (v s)) 0 t := by
+  sorry
 
 /-- source_id: MD-4.3.1-ConstrainedFlowPullback · unnumbered_claim · §4.3.1 · 印刷p.156 / PDFp.178
 [EXTRA] 给定joint C²的真实流/时间区间、C³约束及C²势、正质量/独立梯度；完整条件见桥接签名，不假设辛性结论。 -/
@@ -2166,8 +2216,11 @@ end MD.Ch04
 #print axioms MD.Ch04.cotangentInvariant
 #print axioms MD.Ch04.reducedFieldRegularity
 #print axioms MD.Ch04.restrictedForm
+#print axioms MD.Ch04.restrictedForm_nondegenerate
 #print axioms MD.Ch04.variational
+#print axioms MD.Ch04.variational_constraints
 #print axioms MD.Ch04.hessianPullbackCancel
+#print axioms MD.Ch04.hessianPullbackCancel_time
 #print axioms MD.Ch04.constrainedFlowPullback
 #print axioms MD.Ch04.positionEulerPrinted
 #print axioms MD.Ch04.positionEulerRelation
