@@ -1,0 +1,33 @@
+{
+  "eaudit": "EAUDIT10",
+  "source_id": "MD-2.3.4-MatrixCancellation",
+  "input_sha256": {
+    "BATCH_EAUDIT10.md": "88d392501476a90e4ab4177bfc557c480b9026ae2f41d787f7d0ee842559f0ac",
+    "Blueprint/Ch02.lean": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+    "blueprint/ch02/ch02_source.json": "c3004151ecf3689729789d2b6dbf813eafea04ce85daa7092a616e1cb9896ae2",
+    "EAUDIT10a_materials": "684b300510c75cc1603ff6efa0cf1270d1498e0e2c703d5dc36239a3ba02bbdb",
+    "EAUDIT10a_PAGES.pdf": "c7192b47a3a6cb5c4eb1678da333f5859c756e8e084fca511eb7686eff5b39e1"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    101
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "b88f37f03e1402e77e14b1489bebf4ce6e08dc4e642530bd912807c724c64906",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinateMatrix",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "textbookJ",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT10_review.json",
+  "total_task_bytes": 87493
+}

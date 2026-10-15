@@ -126,5 +126,12 @@
       "[EXTRA]联合C²实际解族，H C²、Φ0=id，τ>0；体积结论另项HamiltonVolume完整覆盖。",
       "[EXTRA] 补∀t流辛性合取，同时保留det=1和可测集合体积；时间域仍Icc0τ，不额外假称τ>0。已有证明仅将现成流辛性定理与原合取作小修补。"
     ]
+  },
+  "MD-2.3.4-MatrixCancellation": {
+    "code": "theorem matrixCancellation {Nc : ℕ}\n    (S W : SymplecticCoordinateMatrix Nc) (hS : S.IsSymm) :\n    (textbookJ Nc * S * W)ᵀ * textbookJ Nc * W +\n      Wᵀ * textbookJ Nc * (textbookJ Nc * S * W) = 0 := by\n  apply MolecularDynamics.hamiltonian_variational_matrix_cancellation <;> assumption\n\ntheorem matrixCancellation_time {Nc : ℕ}\n    (S W : ℝ → SymplecticCoordinateMatrix Nc) (I : Set ℝ) (t : ℝ)\n    (_hS : (S t).IsSymm)\n    (_hW : HasDerivWithinAt W (textbookJ Nc * S t * W t) I t) :\n    HasDerivWithinAt (fun s ↦ (W s)ᵀ * textbookJ Nc * W s)\n      ((textbookJ Nc * S t * W t)ᵀ * textbookJ Nc * W t +\n        (W t)ᵀ * textbookJ Nc * (textbookJ Nc * S t * W t)) I t ∧\n    HasDerivWithinAt (fun s ↦ (W s)ᵀ * textbookJ Nc * W s) 0 I t := by\n  sorry",
+    "extra_assumptions": [
+      "S对称；任意矩阵W。",
+      "[EXTRA] 保留已证代数消去；补真实时间矩阵曲线、对称S(t)、W′=JSW及完整乘积导数/零导数结论，未以导数结论为前提。"
+    ]
   }
 }

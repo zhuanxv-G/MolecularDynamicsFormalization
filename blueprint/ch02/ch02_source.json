@@ -2751,8 +2751,18 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT10_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:12:48.900009",
+        "before_sha256": "971e10ceaac10e09bc59494a11cb3ba248b59e8d7d863198e20cae77d0051020",
+        "after_sha256": "75ecb0896d2ddc0fd65067bc9bf7a58fe36648799697655cd2a4c5ad0df976f0",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.4-MatrixCancellation",
@@ -2774,12 +2784,23 @@
       "MolecularDynamics.hamiltonian_variational_matrix_cancellation"
     ],
     "extra_assumptions": [
-      "S对称；任意矩阵W。"
+      "S对称；任意矩阵W。",
+      "[EXTRA] 保留已证代数消去；补真实时间矩阵曲线、对称S(t)、W′=JSW及完整乘积导数/零导数结论，未以导数结论为前提。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT10_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:12:48.900009",
+        "before_sha256": "8cbee23d0a77e621b06fa7d21c29169c14b1fab5e43558723f20e230009b0598",
+        "after_sha256": "ecf08d7e93193f9463159a98e6265b99e1dfef45ec2555e5f98250e3bdf90d0a",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.4-FormConstant",
@@ -2829,9 +2850,19 @@
       "[EXTRA]实际解族联合C²；H C²、Φ0=id、τ>0及真实Hamilton ODE。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT10_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:12:48.900009",
+        "before_sha256": "91e63a1cd1482dda0bd203d7e4a3c2ea74ae6f357ab73d09d61605b49d87b4dd",
+        "after_sha256": "177a2fc91707899e1d0f0dbeb3da673a4219d5d49b755828befbf18b694cccde",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.5-ChainRule",

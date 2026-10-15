@@ -1,0 +1,26 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT10",
+  "section": "2.3.4",
+  "source_ids": [
+    "MD-2.3.4-HamiltonSymplectic",
+    "MD-2.3.4-HamiltonVariationalPrinted",
+    "MD-2.3.4-MatrixCancellation"
+  ],
+  "reaudit_ids": [
+    "MD-2.3.4-MatrixCancellation",
+    "MD-2.3.4-HamiltonSymplectic"
+  ],
+  "human_ids": [
+    "MD-2.3.4-HamiltonVariationalPrinted"
+  ],
+  "old_lean_sha256": "3ac0517ef5b88de9e7c9399be6623928bad71940e2a1c29aae19acf38ab5bcf2",
+  "lean_sha256": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+  "source_sha256": "c3004151ecf3689729789d2b6dbf813eafea04ce85daa7092a616e1cb9896ae2",
+  "pages": [
+    101
+  ],
+  "prior_proof_blocks": {
+    "MD-2.3.4-MatrixCancellation": "theorem matrixCancellation {Nc : ℕ}\n    (S W : SymplecticCoordinateMatrix Nc) (hS : S.IsSymm) :\n    (textbookJ Nc * S * W)ᵀ * textbookJ Nc * W +\n      Wᵀ * textbookJ Nc * (textbookJ Nc * S * W) = 0 := by\n  apply MolecularDynamics.hamiltonian_variational_matrix_cancellation <;> assumption"
+  }
+}

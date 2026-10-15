@@ -8818,8 +8818,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT10（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT10",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印W在移动点取Jacobian；选项：批准固定ζ并用联合C²流的正式定理／保留移动点且补完整链式右侧；原印保持，不自行裁定。"
+    }
   },
   {
     "source_id": "MD-2.3.4-MatrixCancellation",
@@ -8900,7 +8907,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT10",
+    "repair": {
+      "eaudit": "EAUDIT10",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT10.md": "88d392501476a90e4ab4177bfc557c480b9026ae2f41d787f7d0ee842559f0ac",
+        "Blueprint/Ch02.lean": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+        "blueprint/ch02/ch02_source.json": "c3004151ecf3689729789d2b6dbf813eafea04ce85daa7092a616e1cb9896ae2"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.4-FormConstant",
@@ -9094,7 +9113,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT10",
+    "repair": {
+      "eaudit": "EAUDIT10",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT10.md": "88d392501476a90e4ab4177bfc557c480b9026ae2f41d787f7d0ee842559f0ac",
+        "Blueprint/Ch02.lean": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+        "blueprint/ch02/ch02_source.json": "c3004151ecf3689729789d2b6dbf813eafea04ce85daa7092a616e1cb9896ae2"
+      }
+    }
   },
   {
     "source_id": "MD-2.3.5-ChainRule",

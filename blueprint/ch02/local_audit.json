@@ -3155,10 +3155,10 @@
     "MD-2.3.4-HamiltonVariationalPrinted": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.hamiltonVariationalPrinted",
@@ -3182,23 +3182,25 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT10/axioms.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
+      "compiled": true
     },
     "MD-2.3.4-MatrixCancellation": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch02.matrixCancellation",
       "verdict": "PASS",
       "explanation": "两个矩阵求和的零式完整；原文中间两等式保留为逐字证明，实际导数结论在FormConstant真实ODE常值条目。",
       "signature_sha256": "b339f782b67e9e3b6bac920332dd7885787a0bda6539a6595eb66356f97594f5",
-      "block_sha256": "24f898dc5b8f6cde9dcc260644a7320e0b99bcd48781ab06675f99658148f180",
-      "direct_placeholder": false,
+      "block_sha256": "aa92fcb38fe9d6318f6eebf42b5040fa3cd9e2fbed66ff63c052c1dab777184b",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.hamiltonian_variational_matrix_cancellation"
@@ -3216,7 +3218,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT10/axioms.log",
+      "compiled": true
     },
     "MD-2.3.4-FormConstant": {
       "checked": true,
@@ -3254,9 +3257,9 @@
     "MD-2.3.4-HamiltonSymplectic": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.hamiltonSymplectic",
@@ -3282,7 +3285,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT10/axioms.log",
+      "compiled": true
     },
     "MD-2.3.5-ChainRule": {
       "checked": true,

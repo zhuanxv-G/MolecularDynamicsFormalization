@@ -408,5 +408,46 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT09/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT10",
+    "section": "2.3.4",
+    "source_ids": [
+      "MD-2.3.4-HamiltonSymplectic",
+      "MD-2.3.4-HamiltonVariationalPrinted",
+      "MD-2.3.4-MatrixCancellation"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.4-MatrixCancellation",
+      "MD-2.3.4-HamiltonSymplectic"
+    ],
+    "human_ids": [
+      "MD-2.3.4-HamiltonVariationalPrinted"
+    ],
+    "lean_sha256": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+    "source_sha256": "c3004151ecf3689729789d2b6dbf813eafea04ce85daa7092a616e1cb9896ae2",
+    "pages": [
+      101
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch02.olean",
+        "Blueprint/Ch02.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "baf45a73d197ed0bacf053ae501f839e0c8e93ace645aba7c4815c4510ba4cf7",
+      "log_sha256": "97a8c98205c186f20e4b8abc89b9b112af41d5c06c0669cd45ab720c5ea5dcd3"
+    },
+    "axiom_decl_count": 4,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT10/INDEX.md"
   }
 ]

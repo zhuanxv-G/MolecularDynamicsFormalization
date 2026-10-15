@@ -912,12 +912,23 @@ theorem hamiltonVariationalPrinted : ∀ n (H : SymplecticCoordinates n → ℝ)
   sorry
 
 /-- source_id: MD-2.3.4-MatrixCancellation · unnumbered_claim · §2.3.4 · 印刷p.79 / PDFp.101
-[EXTRA] S对称；任意矩阵W。 -/
+[EXTRA] S对称；任意矩阵W。 
+[EXTRA] 保留已证代数消去；补真实时间矩阵曲线、对称S(t)、W′=JSW及完整乘积导数/零导数结论，未以导数结论为前提。 -/
 theorem matrixCancellation {Nc : ℕ}
     (S W : SymplecticCoordinateMatrix Nc) (hS : S.IsSymm) :
     (textbookJ Nc * S * W)ᵀ * textbookJ Nc * W +
       Wᵀ * textbookJ Nc * (textbookJ Nc * S * W) = 0 := by
   apply MolecularDynamics.hamiltonian_variational_matrix_cancellation <;> assumption
+
+theorem matrixCancellation_time {Nc : ℕ}
+    (S W : ℝ → SymplecticCoordinateMatrix Nc) (I : Set ℝ) (t : ℝ)
+    (_hS : (S t).IsSymm)
+    (_hW : HasDerivWithinAt W (textbookJ Nc * S t * W t) I t) :
+    HasDerivWithinAt (fun s ↦ (W s)ᵀ * textbookJ Nc * W s)
+      ((textbookJ Nc * S t * W t)ᵀ * textbookJ Nc * W t +
+        (W t)ᵀ * textbookJ Nc * (textbookJ Nc * S t * W t)) I t ∧
+    HasDerivWithinAt (fun s ↦ (W s)ᵀ * textbookJ Nc * W s) 0 I t := by
+  sorry
 
 /-- source_id: MD-2.3.4-FormConstant · unnumbered_claim · §2.3.4 · 印刷p.79 / PDFp.101
 [EXTRA] S(t)逐点对称，W实际满足W′=JSW，闭连通时间窗；这一独立矩阵ODE陈述不把流的变分方程结论作流辛性前提。 -/
