@@ -32,11 +32,11 @@
 | MD-2.2.1-StationaryNotMin | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT03（原返回FAIL保留） | placeholder / incomplete；尚缺具体负动能作用量曲线反例及积分平方严格正证明。 |
 | MD-2.2.2-DiscretePath | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.2.2-DiscreteVelocity | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.2.2-DiscreteAction | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
-| MD-2.2.2-DiscreteStationaryPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
-| MD-2.2.2-DiscreteDerivative | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；有限节点替换对实际离散作用量的Fréchet求导。 |
+| MD-2.2.2-DiscreteAction | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT04（原返回FAIL保留） | definition / incomplete |
+| MD-2.2.2-DiscreteStationaryPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT04 | definition / incomplete |
+| MD-2.2.2-DiscreteDerivative | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | placeholder / incomplete；有限节点替换对实际离散作用量的Fréchet求导。 |
 | MD-2.2.2-DiscreteVerlet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际离散作用量导数及驻值与Störmer式等价。 |
-| MD-2.2.2-Stormer | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.2.2-Stormer | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | definition / self-contained |
 | MD-2.2.2-VelocityVerlet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.2.2-EliminateVelocity | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
 | MD-2.2.2-MomentumVerlet | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
@@ -413,3 +413,5 @@ EAUDIT01：章首3条reaudit FAIL完整修复；原页75–76、单文件、完�
 EAUDIT02 §2.2：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT03 §2.2.1：6条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT04 §2.2.2：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。

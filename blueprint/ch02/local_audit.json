@@ -833,11 +833,11 @@
     "MD-2.2.2-DiscreteAction": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_discreteAction",
       "verdict": "NEEDS_HUMAN",
       "explanation": "一般L的离散求和忠实；机械L字面自相矛盾，需要导师裁定，不能从+U推出后续-U。",
@@ -859,21 +859,22 @@
       "proof_attempts": 0,
       "block_sha256": "894e6b90da81bc361b2a861b2ee67cb3396fb854e9e3438a7fa1236ebf55d7a5",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT04/axioms.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
+      "compiled": true
     },
     "MD-2.2.2-DiscreteStationaryPrinted": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch02.printedDiscreteStationary",
       "verdict": "NEEDS_HUMAN",
       "explanation": "忠实记录字面端点索引，但与固定两端及后文内部节点冲突。",
-      "signature_sha256": "7b1665846f2b2a4d259a1e1dece7d555ba7939241be18910a2536074c613d49e",
+      "signature_sha256": "a647db30cf22e69d782abdb528324ffec53db27bf3426ff307627c0358a344c6",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -889,18 +890,19 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "block_sha256": "7b1665846f2b2a4d259a1e1dece7d555ba7939241be18910a2536074c613d49e",
+      "block_sha256": "a647db30cf22e69d782abdb528324ffec53db27bf3426ff307627c0358a344c6",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT04/axioms.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
+      "compiled": true
     },
     "MD-2.2.2-DiscreteDerivative": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.discreteActionDerivative",
@@ -924,7 +926,7 @@
       "proof_attempts": 3,
       "block_sha256": "47ba452b40b8d518098ad5eb1acf672a2fe4ed008c34b05273160ac298ebf061",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT04/axioms.log",
       "proof_trials": [
         {
           "route": "exact?",
@@ -960,7 +962,8 @@
         "blueprint/ch02/validation/short-search1.log",
         "blueprint/ch02/validation/short-search2.log",
         "blueprint/ch02/validation/short-search3.log"
-      ]
+      ],
+      "compiled": true
     },
     "MD-2.2.2-DiscreteVerlet": {
       "checked": true,
@@ -1033,15 +1036,15 @@
     "MD-2.2.2-Stormer": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_stormerRelation",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "83dc5efda6aaaf94fb398e07b9327a57f25c4b7484392e7ad8e7af72d2d81bab",
+      "signature_sha256": "2476a350b4c0161688cc6ed14e0f0da6592f1e482f355dd467a859ac6e2a0fc8",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -1057,9 +1060,10 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "block_sha256": "83dc5efda6aaaf94fb398e07b9327a57f25c4b7484392e7ad8e7af72d2d81bab",
+      "block_sha256": "2476a350b4c0161688cc6ed14e0f0da6592f1e482f355dd467a859ac6e2a0fc8",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT04/axioms.log",
+      "compiled": true
     },
     "MD-2.2.2-VelocityVerlet": {
       "checked": true,

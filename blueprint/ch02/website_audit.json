@@ -2598,8 +2598,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT04（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原页正文机械L写+U，而展示离散作用量写−U；选项：批准以展示式−U另立修订／保留两种原印并只登记一般L。此处不自行选择符号勘误，原一般定义保持。"
+    }
   },
   {
     "source_id": "MD-2.2.2-DiscreteStationaryPrinted",
@@ -2683,7 +2690,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT04",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT04.md": "8b1ed3dbbbf79613ac454dc469df6993a87ea00e707899bfea3a9909fa997a45",
+        "Blueprint/Ch02.lean": "6424ea9c4b7c3adb9f38c8cad17d12689569961923c99847c0fd43533327a2b1",
+        "blueprint/ch02/ch02_source.json": "04f7c79c88ca4910d36586c311388e415f30ef628558fbba38339aa49765328f"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.2-DiscreteDerivative",
@@ -2794,7 +2813,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT04",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT04.md": "8b1ed3dbbbf79613ac454dc469df6993a87ea00e707899bfea3a9909fa997a45",
+        "Blueprint/Ch02.lean": "6424ea9c4b7c3adb9f38c8cad17d12689569961923c99847c0fd43533327a2b1",
+        "blueprint/ch02/ch02_source.json": "04f7c79c88ca4910d36586c311388e415f30ef628558fbba38339aa49765328f"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.2-DiscreteVerlet",
@@ -2984,7 +3015,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT04",
+    "repair": {
+      "eaudit": "EAUDIT04",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT04.md": "8b1ed3dbbbf79613ac454dc469df6993a87ea00e707899bfea3a9909fa997a45",
+        "Blueprint/Ch02.lean": "6424ea9c4b7c3adb9f38c8cad17d12689569961923c99847c0fd43533327a2b1",
+        "blueprint/ch02/ch02_source.json": "04f7c79c88ca4910d36586c311388e415f30ef628558fbba38339aa49765328f"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.2-VelocityVerlet",

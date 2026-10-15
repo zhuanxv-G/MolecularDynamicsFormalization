@@ -1,0 +1,13 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-o",
+    ".lake/build/lib/lean/Blueprint/Ch02.olean",
+    "Blueprint/Ch02.lean"
+  ],
+  "exit_code": 0,
+  "input_sha256": "6424ea9c4b7c3adb9f38c8cad17d12689569961923c99847c0fd43533327a2b1",
+  "log_sha256": "fecc32eb8873a7505e267591db32f1c3c1f2c3a8595835f611209495734017d6"
+}

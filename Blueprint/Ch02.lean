@@ -250,11 +250,12 @@ def bp_discreteAction {n : ℕ} (L : Q n → Q n → ℝ) (q : ℕ → Q n) (h :
   ∑ k ∈ Finset.range ν, h * L (q k) (discreteVelocity q h k)
 
 /-- source_id: MD-2.2.2-DiscreteStationaryPrinted · definition · §2.2.2 · 印刷p.63–64 / PDFp.85–86
-[ERRATUM?] 原页n=1,…,ν包含右端点，后页说端点固定且只对1,…,ν-1求导。保留字面≤ν，不默改为<ν。 -/
+[ERRATUM?] 原页n=1,…,ν包含右端点，后页说端点固定且只对1,…,ν-1求导。保留字面≤ν，不默改为<ν。 
+[EXTRA] 保留原印0<k≤ν范围和端点疑误；改用HasFDerivAt表达经典零导数，防止不可微处fderiv总化为零；内部节点版本已有独立DiscreteVerlet条目，不裁定端点勘误。 -/
 def printedDiscreteStationary {n : ℕ} (L : Q n → Q n → ℝ)
     (q : ℕ → Q n) (h : ℝ) (ν : ℕ) : Prop :=
   ∀ k, 0 < k → k ≤ ν →
-    fderiv ℝ (fun x => discreteAction L (replaceNode q k x) h ν) (q k) = 0
+    HasFDerivAt (fun x ↦ discreteAction L (replaceNode q k x) h ν) (0 : Q n →L[ℝ] ℝ) (q k)
 
 /-- source_id: MD-2.2.2-DiscreteDerivative · unnumbered_claim · §2.2.2 · 印刷p.64 / PDFp.86
 [EXTRA] 固定正对角质量、实际U可微、h≠0；仅内部节点0<k<ν；沿p.60及p.63展示的-U作用量。 -/
@@ -275,9 +276,10 @@ theorem discreteStationaryVerlet :
       ∀ k, 0 < k → k < ν → stormerRelation m (fun x => -grad U x) h (q (k-1)) (q k) (q (k+1))) := by
   sorry
 
-/-- source_id: MD-2.2.2-Stormer · definition · §2.2.2 · 印刷p.64 / PDFp.86 -/
+/-- source_id: MD-2.2.2-Stormer · definition · §2.2.2 · 印刷p.64 / PDFp.86 
+[EXTRA] 直接使用原文质量乘法形式M(qₙ₊₁−2qₙ+qₙ₋₁)=h²F(qₙ)，避免零质量下逆质量总化造成对象不等价；仅更改Blueprint本条。 -/
 def bp_stormerRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (a b c : Q n) : Prop :=
-  c - (2 : ℝ) • b + a = h^2 • invMass m (F b)
+  mass m (c - (2 : ℝ) • b + a) = h^2 • F b
 
 /-- source_id: MD-2.2.2-VelocityVerlet · definition · §2.2.2 · 印刷p.64 / PDFp.86 -/
 def bp_velocityVerlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z n) : Z n :=

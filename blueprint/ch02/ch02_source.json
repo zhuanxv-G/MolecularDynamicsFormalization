@@ -786,8 +786,18 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:02:34.602086",
+        "before_sha256": "e7620de6366a9c6c56bf9d1456a0538708b7000dfb5b80577c1f37230b39e5e6",
+        "after_sha256": "4c1c54c494ff2624f35b0c07f52ee99b23689cb69f102f35a011413104599943",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH07_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.2.2-DiscreteStationaryPrinted",
@@ -810,11 +820,23 @@
     ],
     "lean_decl": "MD.Ch02.printedDiscreteStationary",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留原印0<k≤ν范围和端点疑误；改用HasFDerivAt表达经典零导数，防止不可微处fderiv总化为零；内部节点版本已有独立DiscreteVerlet条目，不裁定端点勘误。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:02:34.602086",
+        "before_sha256": "6bef9197c9207cc2703475072ff737bf33abc6ed2d626ebb466918ab916b7979",
+        "after_sha256": "8db01bee76c768883e621c73bab2b697c3bad0d560fea82efbe7dd71593962f1",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH07_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.2.2-DiscreteDerivative",
@@ -823,7 +845,7 @@
     "section": "2.2.2",
     "printed_page": "64",
     "pdf_page": "86",
-    "statement_latex": "To calculate the derivative of $\\hat{\\mathcal A}$ with respect to $\\boldsymbol q_n$, $n=1,2,\\ldots,\\nu-1$, note that only a few terms of the discrete action involve this configurational point, thus\n\\[\\frac{\\partial\\hat{\\mathcal A}}{\\partial\\boldsymbol q_n}=\\frac1h[M(\\boldsymbol q_n-\\boldsymbol q_{n-1})-M(\\boldsymbol q_{n+1}-\\boldsymbol q_n)]-\\nabla U(\\boldsymbol q_n)h,\\]",
+    "statement_latex": "To calculate the derivative of $\\hat{\\mathcal A}$ with respect to $\\boldsymbol q_n$, $n=1,2,\\ldots,\\nu-1$, note that only a few terms of the discrete action involve this configurational point, thus\n\\[\\frac{\\partial\\hat{\\mathcal A}}{\\partial\\boldsymbol q_n}=\\frac{\\partial}{\\partial\\boldsymbol q_n}\\left[\\frac{1}{2h}\\left((\\boldsymbol q_n-\\boldsymbol q_{n-1})^TM(\\boldsymbol q_n-\\boldsymbol q_{n-1})+(\\boldsymbol q_{n+1}-\\boldsymbol q_n)^TM(\\boldsymbol q_{n+1}-\\boldsymbol q_n)\\right)-U(\\boldsymbol q_n)h\\right]=\\frac1h[M(\\boldsymbol q_n-\\boldsymbol q_{n-1})-M(\\boldsymbol q_{n+1}-\\boldsymbol q_n)]-\\nabla U(\\boldsymbol q_n)h,\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -835,9 +857,21 @@
       "固定正对角质量、实际U可微、h≠0；仅内部节点0<k<ν；沿p.60及p.63展示的-U作用量。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:02:34.602086",
+        "before_sha256": "96a4006c27b45a2ac3b8c8a9d6c7d7acefc4296638a1c86acc290f9e707e7506",
+        "after_sha256": "ad47b7dc3a89653b9fffce17494cb632dbda61b31ee2eabceac41ebd6f855010",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH07_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.2.2-DiscreteVerlet",
@@ -876,16 +910,30 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "式(2.4)为$M(q_{n+1}-2q_n+q_{n-1})=h^2F(q_n)$；p.93/PDF115再以消元给同一递推。"
+      "式(2.4)在F(q_n)=−∇U(q_n)下写为$M(q_{n+1}-2q_n+q_{n-1})=h^2F(q_n)$；p.93/PDF115重述逆质量形式；从速度Verlet消去速度的说明及计算见p.65/PDF87。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch02.bp_stormerRelation",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 直接使用原文质量乘法形式M(qₙ₊₁−2qₙ+qₙ₋₁)=h²F(qₙ)，避免零质量下逆质量总化造成对象不等价；仅更改Blueprint本条。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT04_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:02:34.602086",
+        "before_sha256": "a6ccd6a16abfc21ccb1521859c24bba19ebc006915784255943630537c3e40c0",
+        "after_sha256": "c4775ec2c8c8173bc44b9271829aa6f24c114de764e52699bac73c68237f2a30",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH07_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.2.2-VelocityVerlet",

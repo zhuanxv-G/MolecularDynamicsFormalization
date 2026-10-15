@@ -1,0 +1,39 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT04",
+  "section": "2.2.2",
+  "source_ids": [
+    "MD-2.2.2-DiscreteAction",
+    "MD-2.2.2-DiscreteDerivative",
+    "MD-2.2.2-DiscreteStationaryPrinted",
+    "MD-2.2.2-Stormer"
+  ],
+  "reaudit_ids": [
+    "MD-2.2.2-DiscreteStationaryPrinted",
+    "MD-2.2.2-DiscreteDerivative",
+    "MD-2.2.2-Stormer"
+  ],
+  "human_ids": [
+    "MD-2.2.2-DiscreteAction"
+  ],
+  "old_lean_sha256": "7745fc6589f48d3d1e889dbd51902322e905ccfcb46844867ac20ff927fa6414",
+  "lean_sha256": "6424ea9c4b7c3adb9f38c8cad17d12689569961923c99847c0fd43533327a2b1",
+  "source_sha256": "04f7c79c88ca4910d36586c311388e415f30ef628558fbba38339aa49765328f",
+  "pages": [
+    85,
+    86,
+    87
+  ],
+  "prior_proof_blocks": {
+    "MD-2.2.2-DiscreteStationaryPrinted": "def printedDiscreteStationary {n : ℕ} (L : Q n → Q n → ℝ)\n    (q : ℕ → Q n) (h : ℝ) (ν : ℕ) : Prop :=\n  ∀ k, 0 < k → k ≤ ν →\n    fderiv ℝ (fun x => discreteAction L (replaceNode q k x) h ν) (q k) = 0",
+    "MD-2.2.2-Stormer": "def bp_stormerRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (a b c : Q n) : Prop :=\n  c - (2 : ℝ) • b + a = h^2 • invMass m (F b)"
+  },
+  "typing_repairs": [
+    {
+      "attempt": 1,
+      "reason": "HasFDerivAt zero CLM scalar needed explicit ℝ annotation; no proof attempt",
+      "old": "HasFDerivAt (fun x ↦ discreteAction L (replaceNode q k x) h ν) 0 (q k)",
+      "new": "HasFDerivAt (fun x ↦ discreteAction L (replaceNode q k x) h ν) (0 : Q n →L[ℝ] ℝ) (q k)"
+    }
+  ]
+}

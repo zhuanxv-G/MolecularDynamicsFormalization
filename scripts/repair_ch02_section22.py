@@ -9,7 +9,7 @@ def run(section):
           'MD-2.2.2-DiscreteStationaryPrinted':dict(category='A',note='保留原印0<k≤ν范围和端点疑误；改用HasFDerivAt表达经典零导数，防止不可微处fderiv总化为零；内部节点版本已有独立DiscreteVerlet条目，不裁定端点勘误。',code='''def printedDiscreteStationary {n : ℕ} (L : Q n → Q n → ℝ)
     (q : ℕ → Q n) (h : ℝ) (ν : ℕ) : Prop :=
   ∀ k, 0 < k → k ≤ ν →
-    HasFDerivAt (fun x ↦ discreteAction L (replaceNode q k x) h ν) 0 (q k)'''),
+    HasFDerivAt (fun x ↦ discreteAction L (replaceNode q k x) h ν) (0 : Q n →L[ℝ] ℝ) (q k)'''),
           'MD-2.2.2-Stormer':dict(category='C',note='直接使用原文质量乘法形式M(qₙ₊₁−2qₙ+qₙ₋₁)=h²F(qₙ)，避免零质量下逆质量总化造成对象不等价；仅更改Blueprint本条。',code='''def bp_stormerRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (a b c : Q n) : Prop :=
   mass m (c - (2 : ℝ) • b + a) = h^2 • F b''')}
         human={'MD-2.2.2-DiscreteAction':'原页正文机械L写+U，而展示离散作用量写−U；选项：批准以展示式−U另立修订／保留两种原印并只登记一般L。此处不自行选择符号勘误，原一般定义保持。'}

@@ -39,5 +39,17 @@
       "驻值以真实一阶变分导数为零定义；展开式相等由FirstVariation条目承担。",
       "[EXTRA] 保留驻值定义，同一source_id补完整积分I=0等价式及自然Euler–Lagrange运动推出驻值的Hamilton原理；C²及a<b是充分资格。新结论只登记sorry陈述，证明留到网站PASS后。"
     ]
+  },
+  "MD-2.2.2-DiscreteStationaryPrinted": {
+    "code": "def printedDiscreteStationary {n : ℕ} (L : Q n → Q n → ℝ)\n    (q : ℕ → Q n) (h : ℝ) (ν : ℕ) : Prop :=\n  ∀ k, 0 < k → k ≤ ν →\n    HasFDerivAt (fun x ↦ discreteAction L (replaceNode q k x) h ν) (0 : Q n →L[ℝ] ℝ) (q k)",
+    "extra_assumptions": [
+      "[EXTRA] 保留原印0<k≤ν范围和端点疑误；改用HasFDerivAt表达经典零导数，防止不可微处fderiv总化为零；内部节点版本已有独立DiscreteVerlet条目，不裁定端点勘误。"
+    ]
+  },
+  "MD-2.2.2-Stormer": {
+    "code": "def bp_stormerRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (a b c : Q n) : Prop :=\n  mass m (c - (2 : ℝ) • b + a) = h^2 • F b",
+    "extra_assumptions": [
+      "[EXTRA] 直接使用原文质量乘法形式M(qₙ₊₁−2qₙ+qₙ₋₁)=h²F(qₙ)，避免零质量下逆质量总化造成对象不等价；仅更改Blueprint本条。"
+    ]
   }
 }

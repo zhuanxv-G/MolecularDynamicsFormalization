@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT04",
+  "input_sha256": {
+    "BATCH_EAUDIT04.md": "8b1ed3dbbbf79613ac454dc469df6993a87ea00e707899bfea3a9909fa997a45",
+    "Blueprint/Ch02.lean": "6424ea9c4b7c3adb9f38c8cad17d12689569961923c99847c0fd43533327a2b1",
+    "blueprint/ch02/ch02_source.json": "04f7c79c88ca4910d36586c311388e415f30ef628558fbba38339aa49765328f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT04a",
+      "source_id": "MD-2.2.2-DiscreteStationaryPrinted",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT04/a",
+      "total_bytes": 101794,
+      "manifest_sha256": "df3fa0418f9943042826fa048518c371ca491a8fc632df791adc050207711f40"
+    },
+    {
+      "subtask": "EAUDIT04b",
+      "source_id": "MD-2.2.2-DiscreteDerivative",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT04/b",
+      "total_bytes": 97131,
+      "manifest_sha256": "7368e6959877149c75c1fa76b0b85e446c6d6f718fb341f443934a50213fc8f1"
+    },
+    {
+      "subtask": "EAUDIT04c",
+      "source_id": "MD-2.2.2-Stormer",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT04/c",
+      "total_bytes": 94498,
+      "manifest_sha256": "e8ebc95f1a0660764b587f445dad54f04f31215dc04ab42d32c1026aadcdfc97"
+    }
+  ]
+}

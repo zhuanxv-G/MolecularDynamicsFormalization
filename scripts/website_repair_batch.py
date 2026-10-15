@@ -90,7 +90,7 @@ def verify(ch,eaudit):
         print(output.decode('utf-8',errors='replace')); raise RuntimeError('Single-file compile failed; repair locally before acceptance')
     ds=declarations(ch);names=[]
     for sid in prep['source_ids']:
-        names.extend(f'MD.Ch{ch:02}.'+m for m in re.findall(r'(?m)^(?:theorem|def)\s+(\w+)',ds[sid]['block']))
+        names.extend(f'MD.Ch{ch:02}.'+m for m in re.findall(r'(?m)^(?:noncomputable\s+)?(?:theorem|def)\s+(\w+)',ds[sid]['block']))
     ap=folder/'CheckAxioms.lean';ap.write_text(f'import Blueprint.Ch{ch:02}\n'+'\n'.join('#print axioms '+n for n in names)+'\n',encoding='utf-8')
     r,log,_=compile_recorded(['lake','env','lean',ap.relative_to(ROOT).as_posix()],ROOT,ap,folder/'axioms.log',folder/'AXIOMS.json')
     assert r['exit_code']==0,log.decode('utf-8',errors='replace')
@@ -101,7 +101,7 @@ def verify(ch,eaudit):
     audit=read(base/'local_audit.json')
     for sid in prep['source_ids']:
         a=audit['items'][sid];d=ds[sid]
-        group_names=[f'MD.Ch{ch:02}.'+m for m in re.findall(r'(?m)^(?:theorem|def)\s+(\w+)',d['block'])]
+        group_names=[f'MD.Ch{ch:02}.'+m for m in re.findall(r'(?m)^(?:noncomputable\s+)?(?:theorem|def)\s+(\w+)',d['block'])]
         group_axioms=sorted({x for name in group_names for x in parsed[name]})
         a.update(signature_sha256=d['signature_sha256'],block_sha256=d['block_sha256'],compiled=True,checked=True,axioms=group_axioms,axiom_log=(folder/'axioms.log').relative_to(ROOT).as_posix(),direct_placeholder='sorry' in d['block'])
         a['final_status']='incomplete' if 'sorryAx' in a['axioms'] or a['direct_placeholder'] else ('checked+documented priors' if a.get('documented_priors') else 'self-contained')

@@ -33,5 +33,25 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "2.2.1"
+  },
+  "MD-2.2.2-DiscreteStationaryPrinted": {
+    "category": "A",
+    "handling": "保留原印0<k≤ν范围和端点疑误；改用HasFDerivAt表达经典零导数，防止不可微处fderiv总化为零；内部节点版本已有独立DiscreteVerlet条目，不裁定端点勘误。",
+    "section": "2.2.2"
+  },
+  "MD-2.2.2-Stormer": {
+    "category": "C",
+    "handling": "直接使用原文质量乘法形式M(qₙ₊₁−2qₙ+qₙ₋₁)=h²F(qₙ)，避免零质量下逆质量总化造成对象不等价；仅更改Blueprint本条。",
+    "section": "2.2.2"
+  },
+  "MD-2.2.2-DiscreteAction": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "2.2.2"
+  },
+  "MD-2.2.2-DiscreteDerivative": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "2.2.2"
   }
 }
