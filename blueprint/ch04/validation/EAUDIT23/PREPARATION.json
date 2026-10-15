@@ -1,0 +1,39 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT23",
+  "section": "4.4.2",
+  "source_ids": [
+    "MD-4.4.2-DLMMassOnly",
+    "MD-4.4.2-DLMPrinted",
+    "MD-4.4.2-DLMPrintedStructure",
+    "MD-4.4.2-DLMStructureFormal",
+    "MD-4.4.2-DriftSpinCommute",
+    "MD-4.4.2-RigidForce",
+    "MD-4.4.2-RigidSystemForce",
+    "MD-4.4.2-RigidTorque"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.2-RigidForce",
+    "MD-4.4.2-RigidTorque",
+    "MD-4.4.2-DLMPrinted",
+    "MD-4.4.2-DriftSpinCommute",
+    "MD-4.4.2-DLMPrintedStructure",
+    "MD-4.4.2-RigidSystemForce"
+  ],
+  "human_ids": [
+    "MD-4.4.2-DLMMassOnly",
+    "MD-4.4.2-DLMStructureFormal"
+  ],
+  "old_lean_sha256": "f1b6644ea3c7486d1a9c9449351593ffd775becd0b8648d57ae5da0919462251",
+  "lean_sha256": "4e1e184a7bae79b49acb5f7c7c46c1aacd898b852ae14cda221b5eafda029af1",
+  "source_sha256": "ccbf9afa9c52ff6735c5ae623458250f90f38ce05458d855552f9d4a386132de",
+  "pages": [
+    195,
+    196
+  ],
+  "prior_proof_blocks": {
+    "MD-4.4.2-DLMPrinted": "def dlmPrinted (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.RBState → MolecularDynamics.Chapter04Review.RBState :=\n  MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ (fun z => (z.1,printedSpinStep I h z.2)) ∘\n    MolecularDynamics.Chapter04Review.rigidDrift 1 h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)",
+    "MD-4.4.2-DriftSpinCommute": "theorem driftSpinCommute : ∀ M h (I : MolecularDynamics.Chapter04Review.V) (z : MolecularDynamics.Chapter04Review.RBState),\n  MolecularDynamics.Chapter04Review.rigidDrift M h (z.1,printedSpinStep I h z.2)=\n    ((MolecularDynamics.Chapter04Review.rigidDrift M h z).1,printedSpinStep I h (MolecularDynamics.Chapter04Review.rigidDrift M h z).2) := by\n  intro M h I z\n  rfl",
+    "MD-4.4.2-DLMPrintedStructure": "theorem dlmPrintedStructure : ∀ (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ),\n  (∀ i, 0 < I i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,\n    MolecularDynamics.Chapter04Review.rbSymplectic (dlmPrinted I U h) := by\n    sorry"
+  }
+}

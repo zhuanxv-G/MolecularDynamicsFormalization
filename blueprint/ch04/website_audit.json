@@ -13064,7 +13064,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH27_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT23",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT23/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT23.md": "5d75422175f2439a60510b75694d35015bf3edd798ed22b0229fe19bc8cb5a3a",
+        "Blueprint/Ch04.lean": "4e1e184a7bae79b49acb5f7c7c46c1aacd898b852ae14cda221b5eafda029af1",
+        "blueprint/ch04/ch04_source.json": "ccbf9afa9c52ff6735c5ae623458250f90f38ce05458d855552f9d4a386132de"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.2-MatrixRot",
@@ -13196,7 +13208,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH27_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT23",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT23/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT23.md": "5d75422175f2439a60510b75694d35015bf3edd798ed22b0229fe19bc8cb5a3a",
+        "Blueprint/Ch04.lean": "4e1e184a7bae79b49acb5f7c7c46c1aacd898b852ae14cda221b5eafda029af1",
+        "blueprint/ch04/ch04_source.json": "ccbf9afa9c52ff6735c5ae623458250f90f38ce05458d855552f9d4a386132de"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.2-DLMPrinted",
@@ -13283,7 +13307,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH27_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT23",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT23/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT23.md": "5d75422175f2439a60510b75694d35015bf3edd798ed22b0229fe19bc8cb5a3a",
+        "Blueprint/Ch04.lean": "4e1e184a7bae79b49acb5f7c7c46c1aacd898b852ae14cda221b5eafda029af1",
+        "blueprint/ch04/ch04_source.json": "ccbf9afa9c52ff6735c5ae623458250f90f38ce05458d855552f9d4a386132de"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.2-DLMMassOnly",
@@ -13336,8 +13372,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH27_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT23（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "该定义是带M分母的完整单体修订算法，绑定原句仅q+hp不忠实；例M=2,h=1,U=0,p=e₁时输出位移1/2而原印1。选项：导师确认将它另立质量勘误候选并重绑完整陈述／恢复字面漂移。保留当前签名，不自行采纳原书疑误路线。"
+    }
   },
   {
     "source_id": "MD-4.4.2-DriftSpinCommute",
@@ -13391,7 +13434,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH27_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT23",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT23/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT23.md": "5d75422175f2439a60510b75694d35015bf3edd798ed22b0229fe19bc8cb5a3a",
+        "Blueprint/Ch04.lean": "4e1e184a7bae79b49acb5f7c7c46c1aacd898b852ae14cda221b5eafda029af1",
+        "blueprint/ch04/ch04_source.json": "ccbf9afa9c52ff6735c5ae623458250f90f38ce05458d855552f9d4a386132de"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.2-DLMStructureFormal",
@@ -13443,8 +13498,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH28_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT23（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "本条是质量修订单体结构结论，原文讨论全部刚体及耦合势，且物理子流正负角另有冲突；选项：确认它作为独立质量修订候选／重新绑定字面全系统结构。原字面全系统断言已有DLMPrintedSystemStructure，当前质量修订路线不擅定，保持签名。"
+    }
   },
   {
     "source_id": "MD-4.4.2-DLMPrintedStructure",
@@ -13497,7 +13559,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH28_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT23",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT23/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT23.md": "5d75422175f2439a60510b75694d35015bf3edd798ed22b0229fe19bc8cb5a3a",
+        "Blueprint/Ch04.lean": "4e1e184a7bae79b49acb5f7c7c46c1aacd898b852ae14cda221b5eafda029af1",
+        "blueprint/ch04/ch04_source.json": "ccbf9afa9c52ff6735c5ae623458250f90f38ce05458d855552f9d4a386132de"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.2-RigidSystemState",
@@ -13634,7 +13708,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH28_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT23",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT23/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT23.md": "5d75422175f2439a60510b75694d35015bf3edd798ed22b0229fe19bc8cb5a3a",
+        "Blueprint/Ch04.lean": "4e1e184a7bae79b49acb5f7c7c46c1aacd898b852ae14cda221b5eafda029af1",
+        "blueprint/ch04/ch04_source.json": "ccbf9afa9c52ff6735c5ae623458250f90f38ce05458d855552f9d4a386132de"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.2-RigidSystemTorque",
@@ -13718,7 +13804,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH28_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT24",
+    "repair": {
+      "eaudit": "EAUDIT24",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT24.md": "68c864c5781d52978f78b801ee86992f15ff1077f20c5246fb2d90abcf6c9952",
+        "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+        "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.2-RigidSystemKick",
@@ -13802,7 +13900,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH28_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT24",
+    "repair": {
+      "eaudit": "EAUDIT24",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT24.md": "68c864c5781d52978f78b801ee86992f15ff1077f20c5246fb2d90abcf6c9952",
+        "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+        "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.2-RigidSystemDriftPrinted",
@@ -14010,7 +14120,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT24",
+    "repair": {
+      "eaudit": "EAUDIT24",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT24.md": "68c864c5781d52978f78b801ee86992f15ff1077f20c5246fb2d90abcf6c9952",
+        "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+        "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.2-SystemDriftSpinCommute",
@@ -14159,7 +14281,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT24",
+    "repair": {
+      "eaudit": "EAUDIT24",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT24.md": "68c864c5781d52978f78b801ee86992f15ff1077f20c5246fb2d90abcf6c9952",
+        "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+        "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+      }
+    }
   },
   {
     "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
@@ -14248,6 +14382,18 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT24",
+    "repair": {
+      "eaudit": "EAUDIT24",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT24.md": "68c864c5781d52978f78b801ee86992f15ff1077f20c5246fb2d90abcf6c9952",
+        "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+        "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+      }
+    }
   }
 ]

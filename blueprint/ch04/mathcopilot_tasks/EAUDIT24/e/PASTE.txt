@@ -1,0 +1,246 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.4.2-DLMPrintedSystemStructure；原PDF页映射=[195, 196]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT24_review.json，对象含batch=EAUDIT24、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT24.md": "68c864c5781d52978f78b801ee86992f15ff1077f20c5246fb2d90abcf6c9952",
+  "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "EAUDIT24e_materials": "44f08e94f0b1faf573616db580c97c25ef15bac02c2e6f7cc4b4eb28ff66b3a1",
+  "EAUDIT24e_PAGES.pdf": "809d51c79c9f5c0160e4df767ec52fb32bdffd30ab43821af1dc9b68b0ad21ef"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4.4.2",
+  "printed_page": "173–174",
+  "pdf_page": "195–196",
+  "statement_latex": "The reliability of these methods is supported by the fact that the combined scheme is a symplectic method in the generalized sense of constrained dynamics.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "此句完整位于PDF195（印刷173）§4.4.2，所指combined scheme是下接PDF196原表的完整N体Kick/Drift/Spin/Kick组合；该页说明逐体执行并由势U产生力与力矩。",
+    "“symplectic”是约束相空间上的保两形式断言；该句没有另行断言全局误差、物理一致性阶数或经验可靠性的量化界。原表的质量及正角Spin疑点应独立记录，不静默改动。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.dlmPrintedSystemStructure",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "C³耦合势和正主惯性矩为明确技术资格；实际全部SO3输入/输出约束及N体两形式在定义内。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT24_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T19:09:07.422859",
+      "before_sha256": "510b4993c7671371f37c889b93ac2e2242c6ccfe3b898f5f68ea991a68b95d12",
+      "after_sha256": "5a2f4b86705f6975c518fddef7547778f7219b85099ecf542d13cad4014a57ee",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT24/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem dlmPrintedSystemStructure : ∀ N (I : Fin N → MolecularDynamics.Chapter04Review.V)
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ),
+  (∀ k i, 0 < I k i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
+    rigidSystemSymplectic (dlmPrintedSystem I U h) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.axisRotation
+```lean
+def axisRotation (i : Fin 3) (φ : ℝ) : Mat3 :=
+  if i=0 then !![1,0,0; 0,Real.cos φ,-Real.sin φ; 0,Real.sin φ,Real.cos φ]
+  else if i=1 then !![Real.cos φ,0,Real.sin φ; 0,1,0; -Real.sin φ,0,Real.cos φ]
+  else !![Real.cos φ,-Real.sin φ,0; Real.sin φ,Real.cos φ,0; 0,0,1]
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.matrixGrad
+```lean
+def matrixGrad (U : Mat3 → ℝ) (Θ : Mat3) : Mat3 :=
+  fun i j => (fderiv ℝ U Θ) (Pi.single i (Pi.single j 1))
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.matrixRot
+```lean
+def matrixRot (A : Mat3) : V := ![A 2 1-A 1 2,A 0 2-A 2 0,A 1 0-A 0 1]
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.rbForm
+```lean
+def rbForm (z u v : RBState) : ℝ :=
+  let ξ := (1/2 : ℝ) • matrixRot (z.2.2ᵀ*u.2.2)
+  let η := (1/2 : ℝ) • matrixRot (z.2.2ᵀ*v.2.2)
+  phaseForm u.1 v.1+dot ξ v.2.1-dot η u.2.1+dot z.2.1 (cross3 ξ η)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.rbTangent
+```lean
+def rbTangent (z v : RBState) : Prop := z.2.2ᵀ*v.2.2+v.2.2ᵀ*z.2.2=0
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.RBState
+```lean
+abbrev RBState := (V × V) × (V × Mat3)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MD.Ch04.axisRotation
+```lean
+def axisRotation (i : Fin 3) (φ : ℝ) : MolecularDynamics.Chapter04Review.Mat3 :=
+  if i=0 then !![1,0,0; 0,Real.cos φ,-Real.sin φ; 0,Real.sin φ,Real.cos φ]
+  else if i=1 then !![Real.cos φ,0,Real.sin φ; 0,1,0; -Real.sin φ,0,Real.cos φ]
+  else !![Real.cos φ,-Real.sin φ,0; Real.sin φ,Real.cos φ,0; 0,0,1]
+```
+### 实际依赖 MD.Ch04.cross3
+```lean
+def cross3 (u v : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := ![u 1*v 2-u 2*v 1,u 2*v 0-u 0*v 2,u 0*v 1-u 1*v 0]
+```
+### 实际依赖 MD.Ch04.dlmPrintedSystem
+```lean
+def dlmPrintedSystem {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.V)
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ) :
+    rigidSystemState N → rigidSystemState N :=
+  rigidSystemKick U (h/2) ∘ rigidSystemSpinPrinted I h ∘
+    rigidSystemDriftPrinted h ∘ rigidSystemKick U (h/2)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.dot
+```lean
+def dot {n : ℕ} (u v : Q n) : ℝ := ∑ i, u i * v i
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.matrixGrad
+```lean
+def matrixGrad (U : Mat3 → ℝ) (Θ : Mat3) : Mat3 :=
+  fun i j => (fderiv ℝ U Θ) (Pi.single i (Pi.single j 1))
+```
+### 实际依赖 MD.Ch04.matrixRot
+```lean
+def matrixRot (A : MolecularDynamics.Chapter04Review.Mat3) : MolecularDynamics.Chapter04Review.V := ![A 2 1-A 1 2,A 0 2-A 2 0,A 1 0-A 0 1]
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.phaseForm
+```lean
+def phaseForm {n : ℕ} (u v : Z n) : ℝ := dot u.1 v.2 - dot v.1 u.2
+```
+### 实际依赖 MD.Ch04.printedSpinAxis
+```lean
+def printedSpinAxis (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (h : ℝ) (s : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3) : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 :=
+  let R := MolecularDynamics.Chapter04Review.axisRotation i (h*s.1 i/I i)
+  (R *ᵥ s.1,s.2*Rᵀ)
+```
+### 实际依赖 MD.Ch04.printedSpinStep
+```lean
+def printedSpinStep (I : MolecularDynamics.Chapter04Review.V) (h : ℝ) : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 → MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 :=
+  printedSpinAxis I 0 (h/2) ∘ printedSpinAxis I 1 (h/2) ∘ printedSpinAxis I 2 h ∘
+    printedSpinAxis I 1 (h/2) ∘ printedSpinAxis I 0 (h/2)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.rbForm
+```lean
+def rbForm (z u v : RBState) : ℝ :=
+  let ξ := (1/2 : ℝ) • matrixRot (z.2.2ᵀ*u.2.2)
+  let η := (1/2 : ℝ) • matrixRot (z.2.2ᵀ*v.2.2)
+  phaseForm u.1 v.1+dot ξ v.2.1-dot η u.2.1+dot z.2.1 (cross3 ξ η)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.rbTangent
+```lean
+def rbTangent (z v : RBState) : Prop := z.2.2ᵀ*v.2.2+v.2.2ᵀ*z.2.2=0
+```
+### 实际依赖 MD.Ch04.rigidSystemDriftPrinted
+```lean
+def rigidSystemDriftPrinted {N : ℕ} (h : ℝ) (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => (((z k).1.1+h • (z k).1.2,(z k).1.2),(z k).2)
+```
+### 实际依赖 MD.Ch04.rigidSystemForce
+```lean
+def rigidSystemForce {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ)
+    (z : rigidSystemState N) (k : Fin N) : MolecularDynamics.Chapter04Review.V :=
+  -MolecularDynamics.Chapter04Review.grad (fun x => U (Function.update (fun j => (z j).1.1) k x) (fun j => (z j).2.2)) (z k).1.1
+```
+### 实际依赖 MD.Ch04.rigidSystemKick
+```lean
+def rigidSystemKick {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ)
+    (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => (((z k).1.1,(z k).1.2+h • rigidSystemForce U z k),
+    ((z k).2.1+h • rigidSystemTorque U z k,(z k).2.2))
+```
+### 实际依赖 MD.Ch04.rigidSystemSpinPrinted
+```lean
+def rigidSystemSpinPrinted {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.V) (h : ℝ)
+    (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => ((z k).1,printedSpinStep (I k) h (z k).2)
+```
+### 实际依赖 MD.Ch04.rigidSystemSymplectic
+```lean
+def rigidSystemSymplectic {N : ℕ} (G : rigidSystemState N → rigidSystemState N) : Prop :=
+  ∀ (z : rigidSystemState N), (∀ k, (z k).2.2ᵀ*(z k).2.2=1 ∧ (z k).2.2.det=1) →
+    (∀ k, (G z k).2.2ᵀ*(G z k).2.2=1 ∧ (G z k).2.2.det=1) ∧
+    ∀ (u v : rigidSystemState N), (∀ k, MolecularDynamics.Chapter04Review.rbTangent (z k) (u k)) → (∀ k, MolecularDynamics.Chapter04Review.rbTangent (z k) (v k)) →
+      (∑ k, MolecularDynamics.Chapter04Review.rbForm (G z k) (((fderiv ℝ G z) u) k) (((fderiv ℝ G z) v) k))=
+        ∑ k, MolecularDynamics.Chapter04Review.rbForm (z k) (u k) (v k)
+```
+### 实际依赖 MD.Ch04.rigidSystemTorque
+```lean
+def rigidSystemTorque {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ)
+    (z : rigidSystemState N) (k : Fin N) : MolecularDynamics.Chapter04Review.V :=
+  -MolecularDynamics.Chapter04Review.matrixRot ((z k).2.2ᵀ * MolecularDynamics.Chapter04Review.matrixGrad
+    (fun A => U (fun j => (z j).1.1) (Function.update (fun j => (z j).2.2) k A)) (z k).2.2)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```

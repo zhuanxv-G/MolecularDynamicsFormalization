@@ -2358,7 +2358,8 @@ def rigidTorque (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.C
 
 /-- source_id: MD-4.4.2-DLMPrinted · definition · §4.4.2 · 印刷p.174 / PDFp.196
 [EXTRA] [EXTRA]本条仅N=1实例；任意N体耦合势与完整算法另由DLMPrintedSystem忠实保存。
-[ERRATUM?] 字面drift缺1/M；正角spin动量符号疑点保留。 -/
+[ERRATUM?] 字面drift缺1/M；正角spin动量符号疑点保留。 
+[EXTRA] 保留N=1字面算法作为单体实例；完整任意N、耦合势、逐阶段重算所有力矩的原算法已由DLMPrintedSystem覆盖，显式跨条目映射，不以单体冒充全系统。 -/
 def dlmPrinted (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.RBState → MolecularDynamics.Chapter04Review.RBState :=
   MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ (fun z => (z.1,printedSpinStep I h z.2)) ∘
     MolecularDynamics.Chapter04Review.rigidDrift 1 h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)
@@ -2369,12 +2370,25 @@ def dlmMassOnly (M : ℝ) (I : MolecularDynamics.Chapter04Review.V) (U : Molecul
   MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ (fun z => (z.1,printedSpinStep I h z.2)) ∘
     MolecularDynamics.Chapter04Review.rigidDrift M h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)
 
-/-- source_id: MD-4.4.2-DriftSpinCommute · unnumbered_claim · §4.4.2 · 印刷p.174 / PDFp.196 -/
+/-- source_id: MD-4.4.2-DriftSpinCommute · unnumbered_claim · §4.4.2 · 印刷p.174 / PDFp.196 
+[EXTRA] 保留原交换性证明，并补漂移半步合成与完整Kick/Drift/Spin/Drift/Kick排列恒等式；M=1即字面原算法，新结论暂sorry。 -/
 theorem driftSpinCommute : ∀ M h (I : MolecularDynamics.Chapter04Review.V) (z : MolecularDynamics.Chapter04Review.RBState),
   MolecularDynamics.Chapter04Review.rigidDrift M h (z.1,printedSpinStep I h z.2)=
     ((MolecularDynamics.Chapter04Review.rigidDrift M h z).1,printedSpinStep I h (MolecularDynamics.Chapter04Review.rigidDrift M h z).2) := by
   intro M h I z
   rfl
+
+theorem driftSpinCommute_halves (M h : ℝ) (I : MolecularDynamics.Chapter04Review.V)
+    (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) :
+    MolecularDynamics.Chapter04Review.rigidDrift M h=
+      MolecularDynamics.Chapter04Review.rigidDrift M (h/2) ∘ MolecularDynamics.Chapter04Review.rigidDrift M (h/2) ∧
+    (MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘
+      (fun z : MolecularDynamics.Chapter04Review.RBState ↦ (z.1,printedSpinStep I h z.2)) ∘
+      MolecularDynamics.Chapter04Review.rigidDrift M h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2))=
+    (MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ MolecularDynamics.Chapter04Review.rigidDrift M (h/2) ∘
+      (fun z : MolecularDynamics.Chapter04Review.RBState ↦ (z.1,printedSpinStep I h z.2)) ∘
+      MolecularDynamics.Chapter04Review.rigidDrift M (h/2) ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)) := by
+  sorry
 
 /-- source_id: MD-4.4.2-DLMStructureFormal · unnumbered_claim · §4.4.2 · 印刷p.173–174 / PDFp.195–196
 [EXTRA] [EXTRA]旧正式库单体质量一致对象单独保留；原任意N体耦合势的算法几何声明另列。 -/
@@ -2388,7 +2402,8 @@ theorem dlmStructure :
   sorry
 
 /-- source_id: MD-4.4.2-DLMPrintedStructure · unnumbered_claim · §4.4.2 · 印刷p.173–174 / PDFp.195–196
-[EXTRA] 明确SO3初态与实际切向量在rbSymplectic定义内；单位质量为原字面drift。 -/
+[EXTRA] 明确SO3初态与实际切向量在rbSymplectic定义内；单位质量为原字面drift。 
+[EXTRA] 本条仅为字面单体辛性实例；原句任意N耦合算法与输入/输出SO(3)域由DLMPrintedSystemStructure承担，不再把rbSymplectic名字当作完整输出约束。 -/
 theorem dlmPrintedStructure : ∀ (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ),
   (∀ i, 0 < I i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
     MolecularDynamics.Chapter04Review.rbSymplectic (dlmPrinted I U h) := by
@@ -2445,7 +2460,8 @@ theorem systemDriftSpinCommute : ∀ N (I : Fin N → MolecularDynamics.Chapter0
   rfl
 
 /-- source_id: MD-4.4.2-RigidSystemSymplectic · definition · §4.4.2 · 印刷p.173–174 / PDFp.195–196
-[EXTRA] [EXTRA]完整N体SO(3)配置、实际切向量和各体rbForm之和；明确包含输出配置约束及真实Fréchet拉回，不假设辛性或以抽象形式替代。 -/
+[EXTRA] [EXTRA]完整N体SO(3)配置、实际切向量和各体rbForm之和；明确包含输出配置约束及真实Fréchet拉回，不假设辛性或以抽象形式替代。 
+[EXTRA] 本条仅定义全系统受约束两形式拉回性质，原句算法确实满足该性质由已有DLMPrintedSystemStructure断言，区分性质定义与算法定理。 -/
 def rigidSystemSymplectic {N : ℕ} (G : rigidSystemState N → rigidSystemState N) : Prop :=
   ∀ (z : rigidSystemState N), (∀ k, (z k).2.2ᵀ*(z k).2.2=1 ∧ (z k).2.2.det=1) →
     (∀ k, (G z k).2.2ᵀ*(G z k).2.2=1 ∧ (G z k).2.2.det=1) ∧
@@ -2681,6 +2697,7 @@ end MD.Ch04
 #print axioms MD.Ch04.dlmPrinted
 #print axioms MD.Ch04.dlmMassOnly
 #print axioms MD.Ch04.driftSpinCommute
+#print axioms MD.Ch04.driftSpinCommute_halves
 #print axioms MD.Ch04.dlmStructure
 #print axioms MD.Ch04.dlmPrintedStructure
 #print axioms MD.Ch04.rigidSystemForce

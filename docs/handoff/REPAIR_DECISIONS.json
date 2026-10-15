@@ -1543,5 +1543,70 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "4.4.1"
+  },
+  "MD-4.4.2-DLMPrinted": {
+    "category": "B",
+    "handling": "保留N=1字面算法作为单体实例；完整任意N、耦合势、逐阶段重算所有力矩的原算法已由DLMPrintedSystem覆盖，显式跨条目映射，不以单体冒充全系统。",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-DriftSpinCommute": {
+    "category": "B",
+    "handling": "保留原交换性证明，并补漂移半步合成与完整Kick/Drift/Spin/Drift/Kick排列恒等式；M=1即字面原算法，新结论暂sorry。",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-DLMPrintedStructure": {
+    "category": "B",
+    "handling": "本条仅为字面单体辛性实例；原句任意N耦合算法与输入/输出SO(3)域由DLMPrintedSystemStructure承担，不再把rbSymplectic名字当作完整输出约束。",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-RigidForce": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-RigidTorque": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-DLMMassOnly": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-DLMStructureFormal": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-RigidSystemForce": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-RigidSystemSymplectic": {
+    "category": "B",
+    "handling": "本条仅定义全系统受约束两形式拉回性质，原句算法确实满足该性质由已有DLMPrintedSystemStructure断言，区分性质定义与算法定理。",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-RigidSystemTorque": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-RigidSystemKick": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-DLMPrintedSystem": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.2"
+  },
+  "MD-4.4.2-DLMPrintedSystemStructure": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.4.2"
   }
 }

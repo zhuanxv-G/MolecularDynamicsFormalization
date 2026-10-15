@@ -1,0 +1,45 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT24",
+  "section": "4.4.2",
+  "source_ids": [
+    "MD-4.4.2-DLMPrintedSystem",
+    "MD-4.4.2-DLMPrintedSystemStructure",
+    "MD-4.4.2-RigidSystemKick",
+    "MD-4.4.2-RigidSystemSymplectic",
+    "MD-4.4.2-RigidSystemTorque"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.2-RigidSystemTorque",
+    "MD-4.4.2-RigidSystemKick",
+    "MD-4.4.2-DLMPrintedSystem",
+    "MD-4.4.2-RigidSystemSymplectic",
+    "MD-4.4.2-DLMPrintedSystemStructure"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "pages": [
+    195,
+    196
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "log_sha256": "de076aadd6e424ef212ee110d5133ba06b0c705fc7ba15b1de74329d0131ae7c"
+  },
+  "axiom_decl_count": 5,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/INDEX.md"
+}

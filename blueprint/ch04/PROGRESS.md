@@ -167,24 +167,24 @@
 | MD-4.4.1-SpinPoissonFormal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；缺动量依赖轴旋转Jacobian与Poisson结构短桥；不搭完整Poisson理论。 |
 | MD-4.4.1-RigidPoissonSkew | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
 | MD-4.4.1-RigidHamiltonianField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4.2-RigidForce | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.4.2-RigidForce | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT23 | definition / self-contained |
 | MD-4.4.2-MatrixRot | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4.2-RigidTorque | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4.2-DLMPrinted | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4.2-DLMMassOnly | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4.2-DriftSpinCommute | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4.2-DLMStructureFormal | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；缺实际旋转约束/Poisson形式及完整kick结构；不搭大型刚体理论。 |
-| MD-4.4.2-DLMPrintedStructure | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；待网站/导师裁定spin符号及结构；不建设新Poisson/刚体理论。 |
+| MD-4.4.2-RigidTorque | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT23 | definition / self-contained |
+| MD-4.4.2-DLMPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT23 | definition / self-contained |
+| MD-4.4.2-DLMMassOnly | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT23（原返回FAIL保留） | definition / self-contained |
+| MD-4.4.2-DriftSpinCommute | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT23 | local_proof / self-contained |
+| MD-4.4.2-DLMStructureFormal | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT23（原返回FAIL保留） | placeholder / incomplete；缺实际旋转约束/Poisson形式及完整kick结构；不搭大型刚体理论。 |
+| MD-4.4.2-DLMPrintedStructure | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT23 | placeholder / incomplete；待网站/导师裁定spin符号及结构；不建设新Poisson/刚体理论。 |
 | MD-4.4.2-RigidSystemState | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4.2-RigidSystemForce | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4.2-RigidSystemTorque | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4.2-RigidSystemKick | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.4.2-RigidSystemForce | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT23 | definition / self-contained |
+| MD-4.4.2-RigidSystemTorque | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT24 | definition / self-contained |
+| MD-4.4.2-RigidSystemKick | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT24 | definition / self-contained |
 | MD-4.4.2-RigidSystemDriftPrinted | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.4.2-RigidSystemSpinPrinted | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4.2-DLMPrintedSystem | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
+| MD-4.4.2-DLMPrintedSystem | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT24 | definition / self-contained |
 | MD-4.4.2-SystemDriftSpinCommute | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
-| MD-4.4.2-RigidSystemSymplectic | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
-| MD-4.4.2-DLMPrintedSystemStructure | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | placeholder / incomplete；原表spin符号与完整旋转余切结构待审；不建设新Poisson/刚体理论，不证明NEEDS_HUMAN。 |
+| MD-4.4.2-RigidSystemSymplectic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT24 | definition / self-contained |
+| MD-4.4.2-DLMPrintedSystemStructure | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT24 | placeholder / incomplete；原表spin符号与完整旋转余切结构待审；不建设新Poisson/刚体理论，不证明NEEDS_HUMAN。 |
 | MD-4.4.1-ExactPlanarRotation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT22（原返回NEEDS_HUMAN保留） | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/ExactPlanarRotation.json。 |
 
 ## 旧100条完整映射
@@ -392,3 +392,7 @@ EAUDIT20 §4.4：4条落盘，单文件与4项公理通过；未写新证明；�
 EAUDIT21 §4.4.1：8条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT22 §4.4.1：6条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT23 §4.4.2：8条落盘，单文件与9项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT24 §4.4.2：5条落盘，单文件与5项公理通过；未写新证明；完整check留到章末；网站待复审。

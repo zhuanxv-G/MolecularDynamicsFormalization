@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT24",
+  "input_sha256": {
+    "BATCH_EAUDIT24.md": "68c864c5781d52978f78b801ee86992f15ff1077f20c5246fb2d90abcf6c9952",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT24a",
+      "source_id": "MD-4.4.2-RigidSystemTorque",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/a",
+      "total_bytes": 92704,
+      "manifest_sha256": "7743d72b2cd39fa687f34975a03e577d13ad0c5dbdf05108ee966db395e3bafd"
+    },
+    {
+      "subtask": "EAUDIT24b",
+      "source_id": "MD-4.4.2-RigidSystemKick",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/b",
+      "total_bytes": 101467,
+      "manifest_sha256": "3d7418259580a27a15d29b372e9d219a245cd4eeab0e68297ccad79f330e465b"
+    },
+    {
+      "subtask": "EAUDIT24c",
+      "source_id": "MD-4.4.2-DLMPrintedSystem",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/c",
+      "total_bytes": 108376,
+      "manifest_sha256": "ab15de8eb6ed3d7da5cccae8c4edee2f8804e819506d5036f73c0261c6d60ff1"
+    },
+    {
+      "subtask": "EAUDIT24d",
+      "source_id": "MD-4.4.2-RigidSystemSymplectic",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/d",
+      "total_bytes": 113062,
+      "manifest_sha256": "a7dc5d3265ec81062bfadee6b23937e79cc866f7a702a7b28e1a40a6d423b9e3"
+    },
+    {
+      "subtask": "EAUDIT24e",
+      "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/e",
+      "total_bytes": 122661,
+      "manifest_sha256": "ceb1c9797b3e8df72ba7014a19d0cb932d54aab63af32c2b927fb7b39b288c6f"
+    }
+  ]
+}

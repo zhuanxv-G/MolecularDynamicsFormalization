@@ -1,0 +1,30 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT24",
+  "section": "4.4.2",
+  "source_ids": [
+    "MD-4.4.2-DLMPrintedSystem",
+    "MD-4.4.2-DLMPrintedSystemStructure",
+    "MD-4.4.2-RigidSystemKick",
+    "MD-4.4.2-RigidSystemSymplectic",
+    "MD-4.4.2-RigidSystemTorque"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.2-RigidSystemTorque",
+    "MD-4.4.2-RigidSystemKick",
+    "MD-4.4.2-DLMPrintedSystem",
+    "MD-4.4.2-RigidSystemSymplectic",
+    "MD-4.4.2-DLMPrintedSystemStructure"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "4e1e184a7bae79b49acb5f7c7c46c1aacd898b852ae14cda221b5eafda029af1",
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "pages": [
+    195,
+    196
+  ],
+  "prior_proof_blocks": {
+    "MD-4.4.2-RigidSystemSymplectic": "def rigidSystemSymplectic {N : ℕ} (G : rigidSystemState N → rigidSystemState N) : Prop :=\n  ∀ (z : rigidSystemState N), (∀ k, (z k).2.2ᵀ*(z k).2.2=1 ∧ (z k).2.2.det=1) →\n    (∀ k, (G z k).2.2ᵀ*(G z k).2.2=1 ∧ (G z k).2.2.det=1) ∧\n    ∀ (u v : rigidSystemState N), (∀ k, MolecularDynamics.Chapter04Review.rbTangent (z k) (u k)) → (∀ k, MolecularDynamics.Chapter04Review.rbTangent (z k) (v k)) →\n      (∑ k, MolecularDynamics.Chapter04Review.rbForm (G z k) (((fderiv ℝ G z) u) k) (((fderiv ℝ G z) v) k))=\n        ∑ k, MolecularDynamics.Chapter04Review.rbForm (z k) (u k) (v k)"
+  }
+}

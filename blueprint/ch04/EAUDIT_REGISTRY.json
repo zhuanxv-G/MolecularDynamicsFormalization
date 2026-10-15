@@ -1063,5 +1063,102 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT22/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT23",
+    "section": "4.4.2",
+    "source_ids": [
+      "MD-4.4.2-DLMMassOnly",
+      "MD-4.4.2-DLMPrinted",
+      "MD-4.4.2-DLMPrintedStructure",
+      "MD-4.4.2-DLMStructureFormal",
+      "MD-4.4.2-DriftSpinCommute",
+      "MD-4.4.2-RigidForce",
+      "MD-4.4.2-RigidSystemForce",
+      "MD-4.4.2-RigidTorque"
+    ],
+    "reaudit_ids": [
+      "MD-4.4.2-RigidForce",
+      "MD-4.4.2-RigidTorque",
+      "MD-4.4.2-DLMPrinted",
+      "MD-4.4.2-DriftSpinCommute",
+      "MD-4.4.2-DLMPrintedStructure",
+      "MD-4.4.2-RigidSystemForce"
+    ],
+    "human_ids": [
+      "MD-4.4.2-DLMMassOnly",
+      "MD-4.4.2-DLMStructureFormal"
+    ],
+    "lean_sha256": "4e1e184a7bae79b49acb5f7c7c46c1aacd898b852ae14cda221b5eafda029af1",
+    "source_sha256": "ccbf9afa9c52ff6735c5ae623458250f90f38ce05458d855552f9d4a386132de",
+    "pages": [
+      195,
+      196
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch04.olean",
+        "Blueprint/Ch04.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "4e1e184a7bae79b49acb5f7c7c46c1aacd898b852ae14cda221b5eafda029af1",
+      "log_sha256": "41e856c62fd0d3508b9fb1b82cc45eb841cb007aa557ccdfaa820d7862cff42a"
+    },
+    "axiom_decl_count": 9,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT23/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT24",
+    "section": "4.4.2",
+    "source_ids": [
+      "MD-4.4.2-DLMPrintedSystem",
+      "MD-4.4.2-DLMPrintedSystemStructure",
+      "MD-4.4.2-RigidSystemKick",
+      "MD-4.4.2-RigidSystemSymplectic",
+      "MD-4.4.2-RigidSystemTorque"
+    ],
+    "reaudit_ids": [
+      "MD-4.4.2-RigidSystemTorque",
+      "MD-4.4.2-RigidSystemKick",
+      "MD-4.4.2-DLMPrintedSystem",
+      "MD-4.4.2-RigidSystemSymplectic",
+      "MD-4.4.2-DLMPrintedSystemStructure"
+    ],
+    "human_ids": [],
+    "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+    "pages": [
+      195,
+      196
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch04.olean",
+        "Blueprint/Ch04.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "log_sha256": "de076aadd6e424ef212ee110d5133ba06b0c705fc7ba15b1de74329d0131ae7c"
+    },
+    "axiom_decl_count": 5,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT24/INDEX.md"
   }
 ]
