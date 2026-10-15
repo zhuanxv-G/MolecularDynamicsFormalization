@@ -12100,7 +12100,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT16",
+    "repair": {
+      "eaudit": "EAUDIT16",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT16/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT16.md": "6a260bc554232fdb3e590f9cc339cd50395e637d2c2cfbba63b1707e855a3a6e",
+        "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+        "blueprint/ch02/ch02_source.json": "877a37d98249eeb03c8a72ffac04427806d779c0608a0bb5cc2469ab125654a2"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.2-CompositionOrder",
@@ -12208,8 +12220,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT16（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT16",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原文typically及高于min的例子未被当前下界覆盖，且局部阶逐点常数不能直接用于移动初值；选项：导师确定通常/确切阶的范围后补邻域一致阶及辛Euler→Verlet严格升阶实例／将本条完整拆分并交叉映射现有Verlet条目。当前签名保持，不能把下界静默当作整句。"
+    }
   },
   {
     "source_id": "MD-2.4.3-HarmonicSplit",

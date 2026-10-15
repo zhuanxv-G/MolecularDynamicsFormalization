@@ -4156,9 +4156,9 @@
     "MD-2.4.2-CompositionSymplectic": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch02.compositionSymplectic",
@@ -4184,15 +4184,16 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT16/axioms.log",
+      "compiled": true
     },
     "MD-2.4.2-CompositionOrder": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.compositionOrder",
@@ -4246,13 +4247,14 @@
       ],
       "stop_reason": "三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT16/axioms.log",
       "proof_failures": 3,
       "attempt_evidence": [
         "blueprint/ch02/validation/short-search1.log",
         "blueprint/ch02/validation/short-search2.log",
         "blueprint/ch02/validation/short-search3.log"
-      ]
+      ],
+      "compiled": true
     },
     "MD-2.4.3-HarmonicSplit": {
       "checked": true,

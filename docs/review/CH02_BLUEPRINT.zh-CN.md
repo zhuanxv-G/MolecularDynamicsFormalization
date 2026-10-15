@@ -123,8 +123,8 @@
 | MD-2.4.1-VerletSymplectic | 85/107 | PASS | 待复审 / EAUDIT14 | checked+documented priors |
 | MD-2.4.1-SymmetricComposition | 85/107 | PASS | 待复审 / EAUDIT14 | checked+documented priors |
 | MD-2.4.1-SymmetricEven | 85/107 | PASS | 待复审 / EAUDIT15 | incomplete |
-| MD-2.4.2-CompositionSymplectic | 85/107 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
-| MD-2.4.2-CompositionOrder | 85/107 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
+| MD-2.4.2-CompositionSymplectic | 85/107 | PASS | 待复审 / EAUDIT16 | checked+documented priors |
+| MD-2.4.2-CompositionOrder | 85/107 | PASS | 待导师 / EAUDIT16（原返回FAIL保留） | incomplete |
 | MD-2.4.3-HarmonicSplit | 85–86/107–108 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.4.4-ImplicitLocal | 86/108 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
 | MD-2.4.4-BackwardEulerSolve | 86/108 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
@@ -6655,9 +6655,9 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 ### 2. 原文陈述
 
-> Starting from two different methods $\mathcal G_{1,h}$ and $\mathcal G_{2,h}$, as long as they are both symplectic methods, we can use the composition of the maps
-> \[\mathcal G_h=\mathcal G_{1,h/2}\circ\mathcal G_{2,h/2}\]
-> as an alternative symplectic integrator.
+> More generally, if we have any two symplectic numerical methods, say $\mathcal G_h^1$ and $\mathcal G_h^2$, then the composition
+> \[\mathcal G_h:=\mathcal G_{h/2}^1\circ\mathcal G_{h/2}^2\]
+> is another symplectic numerical method.
 
 ### 3. 原文证明
 
@@ -6685,7 +6685,7 @@ theorem compositionSymplectic {Nc : ℕ}
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT16**。原文JSON：CORRECTED；未冻结。
 
 已展开 Ch02_deps.txt 中 MolecularDynamics 的正式定义：SymplecticCoordinates Nc = (Fin Nc ⊕ Fin Nc) → ℝ，前半为q、后半为p；textbookJ = [[0,I],[-I,0]]；textbookJacobian Φ z = LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap；IsTextbookSymplectic A 指 Aᵀ J A = J；IsTextbookSymplecticMap Φ 指 ContDiff ℝ 1 Φ 且每点实际Jacobian满足该等式，等价于导数保持Σ dqᵢ∧dpᵢ。textbookComposeMaps G₁ G₂ h 展开为 G₁(h/2) ∘ G₂(h/2)，即先G₂后G₁，半步与原文完全一致。量词依次为任意Nc、两方法族、两族对每个实步长均辛、任意实h，结论是复合在每点辛。未附加全局可逆性；这里辛性为C¹映射的Jacobian条件，足以支持原句复合辛性。无需两方法不同，上一轮恢复的原句为any two。无[EXTRA]或[ERRATUM?]。Ch02.lean 1050–1055的实际声明与本批一致，直接复用 textbookComposeMaps_isSymplectic；依赖该定理展开为 (hG₁(h/2)).comp (hG₂(h/2))。本条无直接sorry，语义PASS不等于已编译验证整个依赖工程。
 
@@ -6695,19 +6695,19 @@ theorem compositionSymplectic {Nc : ℕ}
 
 位置：[Blueprint/Ch02.lean:1191](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1191>)（`MD.Ch02.compositionSymplectic`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.textbookComposeMaps_isSymplectic。
 
-签名SHA256：`2bbd80a45ac37f20d763f1ba15c2b059375a6a490002a88d82eea744fcf92f79`；原文SHA256：`1b7c10a454817cd74d7c5be254c4259bb5e84180e3fd1501f0b4493bc399624a`。
+签名SHA256：`2bbd80a45ac37f20d763f1ba15c2b059375a6a490002a88d82eea744fcf92f79`；原文SHA256：`3ed92f9d0d32415535fcf1ab17ec231260f562d3c4dc71b84b82cbff3c54e577`。
 
 ## 1. MD-2.4.2-CompositionOrder · unnumbered_claim · 印刷p.85 / PDFp.107
 
 ### 2. 原文陈述
 
-> The order of accuracy of the resulting method is typically the minimum of that of the two starting integrators, but as the Verlet method shows, it can be higher in certain instances.
+> The order of this method is typically the minimum of the orders of the two methods involved, but it can be higher, as the example of the Verlet method (constructed by composing symplectic Euler and its adjoint) shows.
 
 ### 3. 原文证明
 
@@ -6737,7 +6737,7 @@ theorem compositionOrder :
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT16（原返回FAIL保留）**。原文JSON：CORRECTED；未冻结。
 
 已展开全部本条自定义对象：Chapter02Review.Q n = Fin n → ℝ，r、s为自然数；F是每个实时间的双射族，假设∀h k z, F h(F k z)=F(h+k)z，因此F 0=id。G₁、G₂是任意方法族，不要求辛；这是阶数估计的合理推广。methodLocalOrder G F r 实为 ∀z, ∃C>0, ∃δ>0, ∀h, |h|<δ → ‖G h z−F h z‖≤C|h|^(r+1)，是每个固定初值的局部截断误差下界，C与δ可依赖z，既非确切阶也非全局误差阶。textbookComposeMaps 展开为G₁(h/2)∘G₂(h/2)。实际量词顺序为n,F,G₁,G₂,r,s，然后流律、两条逐点局部阶假设、G₁稳定假设，结论只有同一逐点局部意义的min r s阶下界。[EXTRA]同一实际流合理，误差传播稳定条件合理作为充分条件，但实际稳定性为∀δ>0 ∃L≥0 ∀|h|<δ ∀u v，与原文未言明的全域空间稳定性及每个有限步长区间要求相比明显更强；证明局部阶通常只需某个小δ，不能称该全部额外强度必要。逐点误差常数不能直接用于随h移动的初值F(h/2)z，若采用通常的误差分解证明，还需补足邻域一致性或另给严格论证；本审计不据此断言定理数学上为假。确定的FAIL理由是全部结论未覆盖：至少min阶仅允许、没有断言或展示严格更高阶的实例；原文明确的Verlet由辛Euler及其伴随复合并达到更高阶未表达，typically也未形式化为任何泛型结论。原文statement_scope覆盖整句，不能以[EXTRA]注释把整句缩成下界定理而仍判完全忠实。无[ERRATUM?]，未发现需要据此修改原书的错误。Ch02.lean 1059–1065与本批签名一致，含直接sorry；证明缺口与上述签名语义FAIL分开。
 
@@ -6751,7 +6751,7 @@ theorem compositionOrder :
 
 位置：[Blueprint/Ch02.lean:1200](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1200>)（`MD.Ch02.compositionOrder`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -6761,7 +6761,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 停止/继续原因：三条本地路线均未获得可接受证明；包括签名展开预算失败，保留完整签名和sorry，具体理论缺项见missing。
 
-签名SHA256：`1bf8eac0f16350ec1e86e8f53adc07374531346781388530bc05dfbd07929fd7`；原文SHA256：`2c49e55e0554aca2d4d2766399eb4a375a5640d17f870b7e9090290761a09167`。
+签名SHA256：`1bf8eac0f16350ec1e86e8f53adc07374531346781388530bc05dfbd07929fd7`；原文SHA256：`fcaa8e06c1c37aa0a32a2204f6b2a49ec28eb94294fca3e055115f3432ab00b1`。
 
 ## 1. MD-2.4.3-HarmonicSplit · definition · 印刷p.85–86 / PDFp.107–108
 

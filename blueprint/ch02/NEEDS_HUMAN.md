@@ -43,3 +43,7 @@
 ## EAUDIT11 原文数学判断（保持现状）
 
 - MD-2.3.5-GlobalGroupPrinted：非退化局部Jacobian不足推出全球双射；选项：批准另立全球辛微分同胚群／将原文全球可逆及群主张整体登记疑误；现有字面式保持。 网站反例：取 n=1，将 z(Sum.inl 0)=q、z(Sum.inr 0)=p。设 a(q)=q+sqrt(1+q²)，b(q)=a′(q)=1+q/sqrt(1+q²)>0，定义 Φ(q,p)=(a(q),p/b(q))。这是 R² 上 C∞ 自映射，其实际导数矩阵为 [[b,0],[-p b′/b²,1/b]]，其中 b′=(1+q²)^(-3/2)，故 det DΦ=1，且对正式 J=[[0,1],[-1,0]] 有 DΦᵀ J DΦ=J，满足展开后的 IsTextbookSymplecticMap。a 是 R 到 (0,∞) 的双射，因此 Φ 的像为 (0,∞)×R，漏掉 (0,0)，不是满射，Function.Bijective Φ 为假。该反例直接匹配正式坐标空间与 C¹ 条件，不依赖缺失定义。; 原返回FAIL保留。
+
+## EAUDIT16 原文数学判断（保持现状）
+
+- MD-2.4.2-CompositionOrder：原文typically及高于min的例子未被当前下界覆盖，且局部阶逐点常数不能直接用于移动初值；选项：导师确定通常/确切阶的范围后补邻域一致阶及辛Euler→Verlet严格升阶实例／将本条完整拆分并交叉映射现有Verlet条目。当前签名保持，不能把下界静默当作整句。 网站反例：缺失结论条款而非已建立的定理反例：原文“but it can be higher, as the example of the Verlet method (constructed by composing symplectic Euler and its adjoint) shows”没有对应Lean结论。min阶下界即使成立，也不能推出存在一对方法使复合确切阶严格高于两者最小确切阶。; 原返回FAIL保留。

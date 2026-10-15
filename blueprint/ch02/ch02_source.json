@@ -3740,7 +3740,7 @@
     "section": "2.4.2",
     "printed_page": "85",
     "pdf_page": "107",
-    "statement_latex": "Starting from two different methods $\\mathcal G_{1,h}$ and $\\mathcal G_{2,h}$, as long as they are both symplectic methods, we can use the composition of the maps\n\\[\\mathcal G_h=\\mathcal G_{1,h/2}\\circ\\mathcal G_{2,h/2}\\]\nas an alternative symplectic integrator.",
+    "statement_latex": "More generally, if we have any two symplectic numerical methods, say $\\mathcal G_h^1$ and $\\mathcal G_h^2$, then the composition\n\\[\\mathcal G_h:=\\mathcal G_{h/2}^1\\circ\\mathcal G_{h/2}^2\\]\nis another symplectic numerical method.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3752,9 +3752,21 @@
     ],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:21:33.143846",
+        "before_sha256": "40e5e3ca3b9ba17cd4883658b78b344af3351c08cc92c867d445798d07f23cec",
+        "after_sha256": "07cabdd9ce3c3dc4e92251e202a037000dcec2b017dbe8ecac6d58f1af44f857",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.2-CompositionOrder",
@@ -3763,7 +3775,7 @@
     "section": "2.4.2",
     "printed_page": "85",
     "pdf_page": "107",
-    "statement_latex": "The order of accuracy of the resulting method is typically the minimum of that of the two starting integrators, but as the Verlet method shows, it can be higher in certain instances.",
+    "statement_latex": "The order of this method is typically the minimum of the orders of the two methods involved, but it can be higher, as the example of the Verlet method (constructed by composing symplectic Euler and its adjoint) shows.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3775,9 +3787,21 @@
       "[EXTRA]两个方法逼近同一实际流；第一个方法1+L|h|稳定；陈述保留至少min阶，允许更高，不把“typically”冒充确切阶相等。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:21:33.143846",
+        "before_sha256": "6da4892773f288400c97fe881f2f59988f69901bb44f8bb90e53d5ea2255b76f",
+        "after_sha256": "e46091f38e4994b7ed7f7dd7edb2abeeaa4e6e493eb627d9eb9760c4b8a97825",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.3-HarmonicSplit",

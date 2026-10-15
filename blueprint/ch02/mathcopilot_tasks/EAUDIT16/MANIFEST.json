@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT16",
+  "input_sha256": {
+    "BATCH_EAUDIT16.md": "6a260bc554232fdb3e590f9cc339cd50395e637d2c2cfbba63b1707e855a3a6e",
+    "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+    "blueprint/ch02/ch02_source.json": "877a37d98249eeb03c8a72ffac04427806d779c0608a0bb5cc2469ab125654a2"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT16a",
+      "source_id": "MD-2.4.2-CompositionSymplectic",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT16/a",
+      "total_bytes": 93551,
+      "manifest_sha256": "d37cce4e1083881cf02ee4cc720dbf0d050df31a6c4a074e80b32f2562236e03"
+    }
+  ]
+}
