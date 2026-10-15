@@ -158,10 +158,10 @@
 | MD-2.5.3-NewmarkReduction | 92/114 | NEEDS_HUMAN | 待导师 / EAUDIT22（原返回FAIL保留） | incomplete |
 | MD-2.5.3-NewmarkDamping | 92/114 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
 | MD-2.5.3-NewmarkNotSymplectic | 92/114 | PASS | 待导师 / EAUDIT22（原返回FAIL保留） | incomplete |
-| MD-2.5.4-MultiTaylor | 92/114 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
-| MD-2.5.4-TIPotential | 92–93/114–115 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
-| MD-2.5.4-TIForce | 93/115 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
-| MD-2.5.4-TIOrder | 93/115 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
+| MD-2.5.4-MultiTaylor | 92/114 | PASS | 待复审 / EAUDIT23 | self-contained |
+| MD-2.5.4-TIPotential | 92–93/114–115 | PASS | 待复审 / EAUDIT23 | self-contained |
+| MD-2.5.4-TIForce | 93/115 | NEEDS_HUMAN | 待导师 / EAUDIT23（原返回FAIL保留） | incomplete |
+| MD-2.5.4-TIOrder | 93/115 | NEEDS_HUMAN | 待导师 / EAUDIT23（原返回FAIL保留） | incomplete |
 | MD-2.5.5-Beeman | 94/116 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
 | MD-2.5.5-BeemanOrder | 94/116 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
 
@@ -8631,7 +8631,7 @@ def bp_multiTaylor {n : ℕ} (d : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT23**。原文JSON：CORRECTED；未冻结。
 
 展开依据：Ch02_deps.txt:2816–2817，Q n=Fin n→ℝ，Z n=Q n×Q n；2930–2931 的 multiTaylor 与 Ch02.lean:1361–1362 的 bp_multiTaylor 同为 Σ_{j=0}^k (h^j/j!)•d j。有限维实向量空间可表示原文一般状态 z（机械相空间可将两组坐标平铺为 Q (2n)，此处 n 是任意向量维数，不要求它同时是机械自由度数）。range(k+1) 包含端点 k；j=0 项正是 d 0，包括 k=0 情形。按上一轮原样保留的记号对应 d 0=z_n、d j=z^{(j)}(t_n)，全部展示项与系数一致。d,h,k 是定义参数，不是断言任意 d 都是解的真实导数；原文高阶导数可由向量场 elementary differentials 计算，是该构造的数据取得说明，没有额外精度结论。此条只定义截断多项式，没有声称证明这种替换或误差阶，故不因缺导数绑定定理判失败。无 EXTRA/ERRATUM。定义无 sorry；这里 PASS 仅针对构造语义。
 
@@ -8641,11 +8641,11 @@ def bp_multiTaylor {n : ℕ} (d : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
 
 位置：[Blueprint/Ch02.lean:1583](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1583>)（`MD.Ch02.bp_multiTaylor`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`27740468243fa6a1f524c2463a62a007b1037313809ff1df52f44133618ce9c2`；原文SHA256：`6aec063f4d2dc3d63bf069350f3afb2d2c1898890dafd7697ab3f77023c85319`。
+签名SHA256：`27740468243fa6a1f524c2463a62a007b1037313809ff1df52f44133618ce9c2`；原文SHA256：`2ea7ae43c935fd252c551c96a3b6ac6952c1a24af326a2e985d39a92c335bbcf`。
 
 ## 1. MD-2.5.4-TIPotential · definition · 印刷p.92–93 / PDFp.114–115
 
@@ -8679,7 +8679,7 @@ def tiMethod {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) : Z n →
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT23**。原文JSON：CORRECTED；未冻结。
 
 展开依据：Ch02_deps.txt:2816–2817、2840、2859–2861、2932–2934。对象 Z n 是位置/动量对；invMass m v 的第 i 分量为 (m i)⁻¹ v i，即固定对角 M⁻¹。grad U q 的第 i 分量是 fderiv ℝ U q 在坐标基 Pi.single i 1 上的值，确为坐标梯度。takahashiPotential=U(q)−h²/24 Σ_i (grad U(q)_i)²/m_i，完整保留原书改势负号及二次型。verlet 展开为 Q=q+h M⁻¹p+(h²/2)M⁻¹F(q)，P=p+(h/2)(F(q)+F(Q))；令 p̂=p+(h/2)F(q) 就逐式等于原书两个半步 kick 和中间 drift。tiMethod 传入 F=−grad tildeU，且改势和步映射使用同一 h，未丢结论子句。质量接口属于本章沿用的固定对角机械模型；并不表示任意非对角质量矩阵。该 def 对任意实 m,U 总化（零质量逆元和不可微点的 fderiv 也有 Lean 默认值），仅在正质量、势能足够可微的教材背景解释为物理方法；它没有对异常输入声称可逆质量或准确性，故定义无需独立 EXTRA 前提。原书下一力式的符号矛盾不使这个如实保留负号的构造失败。无 sorry；不据此认证方法有效四阶。
 
@@ -8689,11 +8689,11 @@ def tiMethod {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) : Z n →
 
 位置：[Blueprint/Ch02.lean:1587](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1587>)（`MD.Ch02.tiMethod`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`69bd41b852a81d5bd6ac731c71c1a2a457d53c8ebd43f25dc7822f06f50e9f6f`；原文SHA256：`a0ea461f97decda00cb852ec037bd6b8519ff9323814de5b38b4c4c43a4cb1ca`。
+签名SHA256：`69bd41b852a81d5bd6ac731c71c1a2a457d53c8ebd43f25dc7822f06f50e9f6f`；原文SHA256：`51102a36eec935fcdbcc96145a81dcdeb3f19a53f38212985eadf0608e942f8f`。
 
 ## 1. MD-2.5.4-TIForce · unnumbered_claim · 印刷p.93 / PDFp.115
 
@@ -8731,7 +8731,7 @@ theorem tiForce :
 
 本地预审：**NEEDS_HUMAN**。原书力与改势符号不一致，未作静默修正。
 
-网站审计：**FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT23（原返回FAIL保留）**。原文JSON：DRAFT；未冻结。
 
 展开依据：Ch02_deps.txt:2816、2840、2932–2934、2948，Ch02.lean:1371–1376。量词覆盖所有 n,m,U,h,q；positiveMass 是逐坐标 m_i>0，ContDiff ℝ 2 U 保证真实二阶导数及 Hessian 对称性；fderiv ℝ (grad U) q 对 invMass m (grad U q) 的作用是 Hess(U)M⁻¹∇U。实际改势含负号，其负梯度必须为 −∇U+(h²/12)Hess(U)M⁻¹∇U，签名却取减号。它逐字保留了原书力式，却与其所调用的实际改势矛盾并成为假定理，因此不能作为可证明的忠实数学陈述通过。ERRATUM? 成立。EXTRA 中 C² 是充分且合理的统一光滑性条件（强于某一点有二阶导数）；正质量保证教材机械质量可逆，但纯代数恒等式只需各质量非零，故是物理上合理而非最弱必要条件。签名体有 sorry，证明状态独立于已经确定的语义失败。
 
@@ -8745,7 +8745,7 @@ theorem tiForce :
 
 位置：[Blueprint/Ch02.lean:1593](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1593>)（`MD.Ch02.tiForce`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -8792,7 +8792,7 @@ theorem tiOrder :
 
 本地预审：**NEEDS_HUMAN**。符号依赖未裁定，保留存在处理器的实际四阶结论。
 
-网站审计：**FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT23（原返回FAIL保留）**。原文JSON：DRAFT；未冻结。
 
 全部使用定义已找到：Q/Z、grad、invMass、verlet、takahashiPotential、solution、mechanicalField、positiveMass 见 Ch02_deps.txt:2816–2817、2840、2859–2861、2932–2934、2941–2948；oneStepIterate/oneStepMaxError 见1444–1463；textbookConjugateMap/textbookProcessedMethod 见 ProcessedMethods 段（用原始行编号1649、1690定位，段中有额外 CR）。solution 是闭区间每点 HasDerivWithinAt γ (f(γ t))，mechanicalField=(M⁻¹p,−∇U(q))，所以是原机械轨迹。HasDerivWithinAt 已蕴含区间内连续，显式 ContinuousOn γ 冗余但合理。处理映射确为 χ_h⁻¹∘B_h∘χ_h，迭代从 γ(0) 开始，等价于先 χ_h 预处理、迭代真实 B_h、再逆变换；误差是网格 0,…,ν 上完整位置/动量乘积范数最大值，不是单步误差。量词 χ 在 γ,τ 之前，C,ν₀ 在其之后，保证统一处理器而允许误差常数依赖轨迹与时间窗，ν₀>0 排除零分母，均合理。正固定对角质量与 U C∞ 是足够光滑的背景条件，C∞ 并非四阶所需最弱条件。失败依据是结论范围与处理器条件：原文还明确说坐标变换后局部误差展开项被消去，签名只有全局四阶界，没有局部五阶缺陷或消项断言；它对任意光滑势能要求整个 Z n 上的 Homeomorph，强于通常在轨迹邻域的变量变换，却完全不要求 χ_h 光滑、随 h 正则或趋于恒等，无法承载所引用的局部误差展开。这个无正则性的全局共轭存在性不能直接等同于原文有效阶陈述。DEPENDENT_ERRATUM 所指来源符号冲突确实存在，但不能只据冲突断言负号版本无有效四阶；下方谐振子计算说明这一限制。这里不声称签名允许的任意不规则 Homeomorph 都不存在；本条 FAIL 已由上述具体缺失条款和不合理强化成立，无须借缺依赖写 NEEDS_HUMAN。定理体为 sorry，未验证其证明。
 
@@ -8806,7 +8806,7 @@ theorem tiOrder :
 
 位置：[Blueprint/Ch02.lean:1603](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1603>)（`MD.Ch02.tiOrder`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 

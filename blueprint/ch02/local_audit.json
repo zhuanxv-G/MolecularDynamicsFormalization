@@ -5458,9 +5458,9 @@
     "MD-2.5.4-MultiTaylor": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_multiTaylor",
@@ -5484,14 +5484,15 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT23/axioms.log",
+      "compiled": true
     },
     "MD-2.5.4-TIPotential": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.tiMethod",
@@ -5515,15 +5516,16 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT23/axioms.log",
+      "compiled": true
     },
     "MD-2.5.4-TIForce": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.tiForce",
@@ -5548,15 +5550,16 @@
       "proof_attempts": 0,
       "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT23/axioms.log",
+      "compiled": true
     },
     "MD-2.5.4-TIOrder": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.tiOrder",
@@ -5581,7 +5584,8 @@
       "proof_attempts": 0,
       "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT23/axioms.log",
+      "compiled": true
     },
     "MD-2.5.5-Beeman": {
       "checked": true,

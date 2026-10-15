@@ -1,0 +1,65 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.5.4-MultiTaylor；原PDF页映射=[114]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT23_review.json，对象含batch=EAUDIT23、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT23.md": "6b5f72430ff25fed17ab6e5dde232e908e7e765f160bbca0e2eeee119a033936",
+  "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+  "blueprint/ch02/ch02_source.json": "1aedcab17afdcf3d81182da16d15493f503e123e002da22ede78bf902ac773d7",
+  "EAUDIT23a_materials": "471648692b43152fdf50d037f5077c48d443dc5cf1018df56dbd1f8c70da8108",
+  "EAUDIT23a_PAGES.pdf": "4e21fb6a0d63e2a7ddc0ed3e3ed3ff50b581f1ac59beab300571f89617d4c55b"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.5.4-MultiTaylor",
+  "kind": "definition",
+  "label": null,
+  "section": "2.5.4",
+  "printed_page": "92",
+  "pdf_page": "114",
+  "statement_latex": "we may approximate a single step by\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+h\\dot{\\boldsymbol z}_n+\\frac{h^2}{2}\\ddot{\\boldsymbol z}_n+\\cdots+\\frac{h^k}{k!}\\boldsymbol z_n^{(k)},\\]\nwhere it is possible to make use of higher order derivatives of the solution in formulating the method. Then using the differential equation, the time derivatives may be replaced by elementary differentials of the vector field.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "原文 z_n 为当前步的状态，h 为步长，k 为截断阶数；点号及 z_n^{(j)} 表示解在当前时刻的时间导数。将公式写成导数数据求和时，须解释 d(0)=z_n、d(j)=z^{(j)}(t_n)，j=1,…,k。原文说明可由微分方程把时间导数替换为向量场的 elementary differentials；此处没有给出误差阶定理。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.bp_multiTaylor",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT23_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:32:38.314404",
+      "before_sha256": "247780ef9a73237bb9338b5723d6a304f72cdde596d14e0006e139ec2b746792",
+      "after_sha256": "59a91d2e52e0dac91043502822730f71ee78860164e8f070223bc86c344d7abf",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH31_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT23/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean
+```lean
+def bp_multiTaylor {n : ℕ} (d : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
+  ∑ j ∈ Finset.range (k+1), (h^j / (Nat.factorial j : ℝ)) • d j
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MD.Ch02.bp_multiTaylor
+```lean
+def bp_multiTaylor {n : ℕ} (d : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
+  ∑ j ∈ Finset.range (k+1), (h^j / (Nat.factorial j : ℝ)) • d j
+```

@@ -15621,7 +15621,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT23",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT23/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT23.md": "6b5f72430ff25fed17ab6e5dde232e908e7e765f160bbca0e2eeee119a033936",
+        "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+        "blueprint/ch02/ch02_source.json": "1aedcab17afdcf3d81182da16d15493f503e123e002da22ede78bf902ac773d7"
+      }
+    }
   },
   {
     "source_id": "MD-2.5.4-TIPotential",
@@ -15735,7 +15747,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT23",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT23/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT23.md": "6b5f72430ff25fed17ab6e5dde232e908e7e765f160bbca0e2eeee119a033936",
+        "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+        "blueprint/ch02/ch02_source.json": "1aedcab17afdcf3d81182da16d15493f503e123e002da22ede78bf902ac773d7"
+      }
+    }
   },
   {
     "source_id": "MD-2.5.4-TIForce",
@@ -15819,8 +15843,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT23（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "负号改势的真实负梯度为加号修正，印刷力式为减号；选项：批准改力为加号／改势为加号并同步方法。现有字面式保持。"
+    }
   },
   {
     "source_id": "MD-2.5.4-TIOrder",
@@ -15904,8 +15935,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT23（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT23",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "有效四阶需先确定改势/力符号，再指定轨迹邻域上光滑近恒等局部处理器及五阶局部缺陷；选项：沿负号改势路线／沿印刷减号力路线。不得直接以力式冲突断言负号改势四阶必假；当前声明保持。"
+    }
   },
   {
     "source_id": "MD-2.5.5-Beeman",

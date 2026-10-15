@@ -1,0 +1,27 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT23",
+  "section": "2.5.4",
+  "source_ids": [
+    "MD-2.5.4-MultiTaylor",
+    "MD-2.5.4-TIForce",
+    "MD-2.5.4-TIOrder",
+    "MD-2.5.4-TIPotential"
+  ],
+  "reaudit_ids": [
+    "MD-2.5.4-MultiTaylor",
+    "MD-2.5.4-TIPotential"
+  ],
+  "human_ids": [
+    "MD-2.5.4-TIForce",
+    "MD-2.5.4-TIOrder"
+  ],
+  "old_lean_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+  "lean_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+  "source_sha256": "1aedcab17afdcf3d81182da16d15493f503e123e002da22ede78bf902ac773d7",
+  "pages": [
+    114,
+    115
+  ],
+  "prior_proof_blocks": {}
+}

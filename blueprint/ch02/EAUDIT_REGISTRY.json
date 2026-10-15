@@ -957,5 +957,49 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": null
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT23",
+    "section": "2.5.4",
+    "source_ids": [
+      "MD-2.5.4-MultiTaylor",
+      "MD-2.5.4-TIForce",
+      "MD-2.5.4-TIOrder",
+      "MD-2.5.4-TIPotential"
+    ],
+    "reaudit_ids": [
+      "MD-2.5.4-MultiTaylor",
+      "MD-2.5.4-TIPotential"
+    ],
+    "human_ids": [
+      "MD-2.5.4-TIForce",
+      "MD-2.5.4-TIOrder"
+    ],
+    "lean_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "source_sha256": "1aedcab17afdcf3d81182da16d15493f503e123e002da22ede78bf902ac773d7",
+    "pages": [
+      114,
+      115
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch02.olean",
+        "Blueprint/Ch02.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+      "log_sha256": "7c13d743aa2540c7c69524eaf4319eb3baf39a2a1b09338afc9d6f4ad3e4c1c4"
+    },
+    "axiom_decl_count": 4,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT23/INDEX.md"
   }
 ]

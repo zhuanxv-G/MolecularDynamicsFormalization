@@ -1,0 +1,64 @@
+{
+  "eaudit": "EAUDIT23",
+  "source_id": "MD-2.5.4-TIPotential",
+  "input_sha256": {
+    "BATCH_EAUDIT23.md": "6b5f72430ff25fed17ab6e5dde232e908e7e765f160bbca0e2eeee119a033936",
+    "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+    "blueprint/ch02/ch02_source.json": "1aedcab17afdcf3d81182da16d15493f503e123e002da22ede78bf902ac773d7",
+    "EAUDIT23b_materials": "2b31b0872ce763c65075cd08595695c28f4676b497cb613dd3bf372cec0666aa",
+    "EAUDIT23b_PAGES.pdf": "ee7e5042c30868f4b905271bc61a0af629ec1ddce74eded43b7ae82d976a2df7"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    114,
+    115
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "165ffdd8569314887453ae7a2c62c815615fbe25af066df44e19b672a53186ba",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Z",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "522e86de81741a525bcd8720e95f1f0a3f1ba51791c5d13cea4bed7e30a1620e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "takahashiPotential",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "7b26d3684750f8343669b62d5e7b95861256ca58c7ffecc0dfed179c3eaf4c06"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "tiMethod",
+      "file_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+      "excerpt_sha256": "69bd41b852a81d5bd6ac731c71c1a2a457d53c8ebd43f25dc7822f06f50e9f6f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "verlet",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "401060069967ba034fd1337efdba9f5ddda707775b16934659f1d861ecc3c84b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT23_review.json",
+  "total_task_bytes": 98578
+}
