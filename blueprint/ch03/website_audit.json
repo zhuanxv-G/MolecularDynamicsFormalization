@@ -53,19 +53,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH01_result.json",
     "repair": {
-      "eaudit": "EAUDIT01",
+      "eaudit": "EAUDIT02",
       "status": "awaiting_reaudit",
-      "signature_changed": true,
+      "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT02/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT01.md": "38081d0e96b320ba30efab2064a7d09661bcc41ee187da17c99a581b20c79848",
+        "BATCH_EAUDIT02.md": "d4497a5e17996d29b4bf72e92a7c2ae634353bbf254ea8aec8fe50df28db4965",
         "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
-        "blueprint/ch03/ch03_source.json": "1ba0463ea10b8998259b4af7f0df6a1a44ffbafd401fd2976f2b07a147bb4385"
+        "blueprint/ch03/ch03_source.json": "08f89cbb5d8c9a3eca2069468c2cc6c309d38c1a76b132e82778f8178ad1e306"
       }
     },
     "needs_category": "材料缺失",
-    "effective_status": "待复审 / EAUDIT01"
+    "effective_status": "待复审 / EAUDIT02"
   },
   {
     "source_id": "MD-3.1-AdjointEulerOscillator",

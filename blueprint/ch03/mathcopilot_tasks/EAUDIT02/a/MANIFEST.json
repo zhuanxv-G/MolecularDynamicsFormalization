@@ -1,0 +1,129 @@
+{
+  "eaudit": "EAUDIT02",
+  "source_id": "MD-3-ModifiedConstruction",
+  "input_sha256": {
+    "BATCH_EAUDIT02.md": "d4497a5e17996d29b4bf72e92a7c2ae634353bbf254ea8aec8fe50df28db4965",
+    "Blueprint/Ch03.lean": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+    "blueprint/ch03/ch03_source.json": "08f89cbb5d8c9a3eca2069468c2cc6c309d38c1a76b132e82778f8178ad1e306",
+    "EAUDIT02a_materials": "437b4addbba3211be64c01307e2bb037a64e3d42bb3f6ae60c7d6791dcce6cbc",
+    "EAUDIT02a_PAGES.pdf": "afa964bf9bebc4943fcd24fef75e46bb74b811b2af506adf69eff2006f512f08"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    119
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "8b8e224192f21478cafa48f3dbd81e54e594e0694c977a6cf95733ea2eef629f",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "IsTextbookSymplectic",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "6642b20035e535f764e24183b8b3fd564c65f367b80a24c79a394d8a4d55056f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "name": "IsTextbookSymplecticMap",
+      "file_sha256": "065943598d7c44b43b135c1c8edee04970b20305a15fdd2ff8d4d46cf6ee18f2",
+      "excerpt_sha256": "7563019e4b4160d2583955860a10898409a2b10b6eb8f48ee27ca77e8efc5c9a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/Statements.lean",
+      "name": "MolecularDynamics.Chapter02Review.hamiltonianSymplectic_statement",
+      "file_sha256": "355e2013e9bed148b2512d8185da38c459db21b2b232b83d29d47d911008a63c",
+      "excerpt_sha256": "7c4efaadc385e32e93b4f9e07a7988ba309e07aa9b5f39f19f848628be90c4e4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "name": "MolecularDynamics.Chapter03Review.modifiedConstruction_statement",
+      "file_sha256": "a00c953a72f2b2e90a58ee21739d49f092104ac3f853db9eec9231a476436b30",
+      "excerpt_sha256": "c171f32a89fbeead0b2fd0f733633ab9f8404627eb7927ac0cf2218c3f15a0ce"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinateMatrix",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "name": "actualFlowNearCompact",
+      "file_sha256": "a00c953a72f2b2e90a58ee21739d49f092104ac3f853db9eec9231a476436b30",
+      "excerpt_sha256": "039a26169a1cc1c7b90ee623bad6d394c1ca6ea4fce4cb3bab6ce6a4f6f7b2d3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "name": "finiteMatching",
+      "file_sha256": "a00c953a72f2b2e90a58ee21739d49f092104ac3f853db9eec9231a476436b30",
+      "excerpt_sha256": "abb9cd9885c80e47f3300b7b21e217d6a83b110a4e6fbe076981b0326bcff108"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/Statements.lean",
+      "name": "hamiltonianSymplectic_statement",
+      "file_sha256": "355e2013e9bed148b2512d8185da38c459db21b2b232b83d29d47d911008a63c",
+      "excerpt_sha256": "7c4efaadc385e32e93b4f9e07a7988ba309e07aa9b5f39f19f848628be90c4e4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "name": "localOrder",
+      "file_sha256": "a00c953a72f2b2e90a58ee21739d49f092104ac3f853db9eec9231a476436b30",
+      "excerpt_sha256": "35fce0c5dc0e426c289a6d68e3e3d5243526e9e4e1567646bc0e3140623e3663"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "name": "modifiedConstruction_statement",
+      "file_sha256": "a00c953a72f2b2e90a58ee21739d49f092104ac3f853db9eec9231a476436b30",
+      "excerpt_sha256": "c171f32a89fbeead0b2fd0f733633ab9f8404627eb7927ac0cf2218c3f15a0ce"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "name": "smoothSymplecticData",
+      "file_sha256": "a00c953a72f2b2e90a58ee21739d49f092104ac3f853db9eec9231a476436b30",
+      "excerpt_sha256": "0564513125f2f8cbb0577788fe1537c597653ebed5f1b8102dde17b544106dc2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "solution",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "4246b13784e62583efb6e55b0aaf0235c08565f8c3c6ec6bf888afa19baaf49b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "name": "textbookHamiltonianVectorField",
+      "file_sha256": "bc9f7688e08676874bd5c50502a5e27fa659e7ff10f116045a4605a42ccfa703",
+      "excerpt_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "textbookJ",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "name": "textbookJacobian",
+      "file_sha256": "065943598d7c44b43b135c1c8edee04970b20305a15fdd2ff8d4d46cf6ee18f2",
+      "excerpt_sha256": "de22cc68d29839d120350e99f4983537ef9e72385df49f475c8e3396754dcdbe"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ModifiedHamiltonianBounds.lean",
+      "name": "textbookTruncatedHamiltonian",
+      "file_sha256": "a4bc3858fbd3e46ff382425fe9d10db2c805ac01dd27f09199a4aefab2cb54d0",
+      "excerpt_sha256": "ae4576437497e7b2a8dde76a400e7f755c31380752cb4ac2abe3b94f50ad8979"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "truncatedFlow",
+      "file_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+      "excerpt_sha256": "580ac76907196f8148b886e2424629abe935d144425e6c5cf6759eb5563d8362"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT02_review.json",
+  "total_task_bytes": 84080
+}

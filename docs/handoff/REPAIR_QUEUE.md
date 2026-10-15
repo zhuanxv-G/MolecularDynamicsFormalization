@@ -172,7 +172,7 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 2 | MD-2.5.4-TIOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT23 |
 | 2 | MD-2.5.5-Beeman | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.5.5-BeemanOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT24 |
-| 3 | MD-3-ModifiedConstruction | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 已修待复审 | EAUDIT01 |
+| 3 | MD-3-ModifiedConstruction | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT02 |
 | 3 | MD-3.1-AdjointEulerOscillator | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.1-ShadowHamiltonian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.1-EnergyFailure | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 已修待复审 | EAUDIT01 |

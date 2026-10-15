@@ -33,9 +33,18 @@
         "raw_return": "blueprint/ch03/mathcopilot_results/BATCH01_result.json",
         "raw_sha256": "120deaa07feab89b86e0bb7ae296ba4fadc1614604f7bb1e18866e1acb26bb97",
         "reason": "原页119/120/122视觉核对后合并A的标点/记号修订；按绑定FAIL补齐四条全部结论/阶数/真实导数资格，不采用未批准数学勘误。"
+      },
+      {
+        "stage": "EAUDIT02_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:56:17.118408",
+        "before_sha256": "8ec25d4f891a8d9a13183996f28ad1b6c4f39de0221b7861bcc5e49ffafe2a84",
+        "after_sha256": "de3b6f6d67ee086cb9b46d092f1f217d63748eec64be2929a346fa0b1ab4dd8c",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH01_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT01/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.1-AdjointEulerOscillator",

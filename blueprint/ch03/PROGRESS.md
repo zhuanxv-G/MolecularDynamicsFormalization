@@ -7,7 +7,7 @@
 网站整合汇总：网站PASS 91 / 修复中 49 / 待导师 5 / 待复审 4。
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
-| MD-3-ModifiedConstruction | DRAFT/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | placeholder / incomplete |
+| MD-3-ModifiedConstruction | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT02 | placeholder / incomplete |
 | MD-3.1-AdjointEulerOscillator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.1-ShadowHamiltonian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.1-EnergyFailure | CORRECTED/原页已核 | 已修/已编译/公理已核 | PASS | 待复审 / EAUDIT01 | local_proof / self-contained |
@@ -381,3 +381,5 @@
 ## 2026-10-13 EAUDIT01检查点
 
 四条FAIL完整签名修复；能量一般结论已证，构造大定理仍incomplete；原页119/120/122、单文件、完整check/149条公理及4份compact通过；网站复审未提交。旧DELIVERY_VALIDATION只对应原433a13ca版本，新修复验收见本次ACCEPTANCE.json。
+
+EAUDIT02 §3：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。

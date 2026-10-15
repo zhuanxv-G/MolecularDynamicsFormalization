@@ -6,10 +6,10 @@
     "MD-3-ModifiedConstruction": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch03.modifiedConstruction",
@@ -38,7 +38,7 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/EAUDIT01-full/chapter_axioms.log",
+      "axiom_log": "blueprint/ch03/validation/EAUDIT02/axioms.log",
       "compiled": true,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json"
     },

@@ -145,4 +145,8 @@ def commit_section(ch,section,eaudits):
     paths += [p.relative_to(ROOT).as_posix() for p in (ROOT/'scripts').glob(f'repair_ch{ch:02}*.py')]
     stage([p for p in paths if (ROOT/p).exists()])
     subprocess.run(['git','commit','-m',f'ch{ch:02} sec{section}: repair website audit signatures and package {", ".join(eaudits)}; no new proofs'],cwd=ROOT,check=True)
-    subprocess.run(['git','push'],cwd=ROOT,check=True)
+    pushed=subprocess.run(['git','push'],cwd=ROOT)
+    if pushed.returncode:
+        # Windows schannel intermittently fails the TLS handshake. One bounded
+        # fallback keeps certificate verification enabled and changes no config.
+        subprocess.run(['git','-c','http.sslBackend=openssl','push'],cwd=ROOT,check=True)

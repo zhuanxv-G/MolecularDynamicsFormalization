@@ -4,7 +4,7 @@
 
 | source_id | 页码 印刷/PDF | 本地预审 | 网站审计 | 状态 |
 |---|---|---|---|---|
-| MD-3-ModifiedConstruction | 97/119 | PASS | 待复审 / EAUDIT01 | incomplete |
+| MD-3-ModifiedConstruction | 97/119 | PASS | 待复审 / EAUDIT02 | incomplete |
 | MD-3.1-AdjointEulerOscillator | 98/120 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.1-ShadowHamiltonian | 98/120 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.1-EnergyFailure | 98/120 | PASS | 待复审 / EAUDIT01 | self-contained |
@@ -262,7 +262,7 @@ theorem modifiedConstruction :
 
 本地预审：**PASS**。EAUDIT01本地预审：两方向完整结论，以真实Hamiltonian流辛性及原修正构造命题合取，不把遗漏结论作前提。
 
-网站审计：**待复审 / EAUDIT01**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT02**。原文JSON：DRAFT；未冻结。
 
 审计依据为Ch03.lean第18–29行和Ch03_deps.txt中对应-- FILE分段的实际定义；本条涉及的项目定义均已找到，没有因定义缺失而保留人工判断。
 对象及辛性：SymplecticForm.lean中的SymplecticCoordinates n实际是(Fin n ⊕ Fin n) → ℝ，分别标记q、p；textbookJ是块矩阵[0,I;-I,0]，IsTextbookSymplectic A实际为Aᵀ*J*A=J。SymplecticMaps.lean中的textbookJacobian是实际Fréchet导数的坐标矩阵；SplittingError.lean中的textbookHamiltonianVectorField H是J乘由实际fderiv计算的梯度，即标准的(∂p H,-∂q H)，不是任意占位向量场。
@@ -280,7 +280,7 @@ sorry单独记录：Ch03.lean中的本声明证明体为sorry。这说明证明�
 
 位置：[Blueprint/Ch03.lean:22](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:22>)（`MD.Ch03.modifiedConstruction`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
