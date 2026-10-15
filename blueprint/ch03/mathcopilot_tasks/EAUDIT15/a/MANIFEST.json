@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT15",
+  "source_id": "MD-3.6.2-FlowReversal",
+  "input_sha256": {
+    "BATCH_EAUDIT15.md": "878923b4229b3635f67a675a7d1acfa7231212f8a1a049f32eada0cfa242e996",
+    "Blueprint/Ch03.lean": "dec75ecbe6e6792177e6d22e5d266e1967216b6ad8cf064baae9cc49221c9ba0",
+    "blueprint/ch03/ch03_source.json": "e4e3d6e4da36047af25d059a111af36af10ce82b5a1f9834947c5c0e2271e326",
+    "EAUDIT15a_materials": "0fc2ac02c975c61035b7a68dd0eb0b89a37e1c42b6bdb448420a07186e49aff2",
+    "EAUDIT15a_PAGES.pdf": "fb8b62a64987e129f97bc051157c72449dcb967cbb09197b98528a2a8aacc420"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    151
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "71c102c11a02cba7250d5e3aecc0bc3e605341f3130e2b9d2ae54218e1b5bcdb",
+  "source_block_sha256": "6333f6cd0fa63c8f3fb18dc13e2f4251907563dfad2147b19d873e03808dc7de",
+  "source_declarations": [
+    "flowReversal"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "linearInvolution",
+      "file_sha256": "dec75ecbe6e6792177e6d22e5d266e1967216b6ad8cf064baae9cc49221c9ba0",
+      "excerpt_sha256": "0d8bf8f9f4975d8fc1013768c46242b3dbc62105108deb3817d8ab7016ed229f"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT15_review.json",
+  "total_task_bytes": 75688
+}

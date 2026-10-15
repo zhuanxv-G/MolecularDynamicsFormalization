@@ -778,5 +778,45 @@
     "category": "A",
     "handling": "补R的坐标矩阵对称资格，与R²=id合起来使Rᵀ=R=R⁻¹，现有经典反演条件才与原字面转置定义等价；该限制显式EXTRA。",
     "section": "3.6.1"
+  },
+  "MD-3.6.2-SymmetricAffineReversible": {
+    "category": "A",
+    "handling": "明确本条是原印省略方法类资格后的受限修复；符号/时间尺度相容仅要求固定f，不对所有无关g全称。保留原书疑误说明。",
+    "section": "3.6.2"
+  },
+  "MD-3.6.2-RKAffine": {
+    "category": "B",
+    "handling": "仅承担普通RK阶段/更新的线性等变；PRK分区修复及对称方法反演另映射PartitionedAffine、SymmetricAffineReversible，原文整句保留。",
+    "section": "3.6.2"
+  },
+  "MD-3.6.2-PartitionedAffine": {
+    "category": "B",
+    "handling": "本条显式仅为保持分区的PRK阶段/更新等变修复；普通RK及有符号相容、对称资格的时间反演推论归RKAffine/SymmetricAffineReversible。保留混合变换错误的Printed导师条目。",
+    "section": "3.6.2"
+  },
+  "MD-3.6.2-FlowReversal": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "3.6.2"
+  },
+  "MD-3.6.2-FlowReversalIdentity": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "3.6.2"
+  },
+  "MD-3.6.2-SymmetricMethod": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "3.6.2"
+  },
+  "MD-3.6.2-AffineInvariant": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "3.6.2"
+  },
+  "MD-3.6.2-PartitionedAffinePrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "3.6.2"
   }
 }

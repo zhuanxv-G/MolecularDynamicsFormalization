@@ -1,0 +1,39 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT15",
+  "section": "3.6.2",
+  "source_ids": [
+    "MD-3.6.2-AffineInvariant",
+    "MD-3.6.2-FlowReversal",
+    "MD-3.6.2-FlowReversalIdentity",
+    "MD-3.6.2-PartitionedAffine",
+    "MD-3.6.2-PartitionedAffinePrinted",
+    "MD-3.6.2-RKAffine",
+    "MD-3.6.2-SymmetricAffineReversible",
+    "MD-3.6.2-SymmetricMethod"
+  ],
+  "reaudit_ids": [
+    "MD-3.6.2-FlowReversal",
+    "MD-3.6.2-FlowReversalIdentity",
+    "MD-3.6.2-SymmetricMethod",
+    "MD-3.6.2-AffineInvariant",
+    "MD-3.6.2-SymmetricAffineReversible",
+    "MD-3.6.2-RKAffine",
+    "MD-3.6.2-PartitionedAffine"
+  ],
+  "human_ids": [
+    "MD-3.6.2-PartitionedAffinePrinted"
+  ],
+  "old_lean_sha256": "a5e2f56cea39e5a1a687b048f1bddd0a9eec433c01cf8365141e796d358aeb23",
+  "lean_sha256": "dec75ecbe6e6792177e6d22e5d266e1967216b6ad8cf064baae9cc49221c9ba0",
+  "source_sha256": "e4e3d6e4da36047af25d059a111af36af10ce82b5a1f9834947c5c0e2271e326",
+  "pages": [
+    151,
+    152
+  ],
+  "prior_proof_blocks": {
+    "MD-3.6.2-SymmetricAffineReversible": "theorem symmetricAffineReversible :\n  ∀ (n : ℕ) (R : Q n ≃L[ℝ] Q n) (f : Q n → Q n)\n    (G : (Q n → Q n) → ℝ → Q n → Q n),\n    (∀ z, R (R z)=z) → (∀ z, f (R z)=-R (f z)) → affineInvariant G →\n    (∀ g h z, G (fun x => -g x) h z=G g (-h) z) →\n    (∀ h z, G f (-h) (G f h z)=z) → reversibleMethod R (G f) := by\n  sorry",
+    "MD-3.6.2-RKAffine": "theorem rkAffine :\n  ∀ (n s : ℕ) (L : Q n ≃L[ℝ] Q n) (f : Q n → Q n)\n    (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ) h z w F,\n    rungeKuttaRelation f A b h z w F →\n      rungeKuttaRelation (transportedField L f) A b h (L z) (L w) (fun i => L (F i)) := by\n  exact MolecularDynamics.Chapter03Review.rkAffine_proved",
+    "MD-3.6.2-PartitionedAffine": "theorem partitionedAffine :\n  ∀ (n s : ℕ) (Lq Lp : Q n ≃L[ℝ] Q n) (fq fp : Z n → Q n)\n    (Aq Ap : Matrix (Fin s) (Fin s) ℝ) (bq bp : Fin s → ℝ) (h : ℝ) (z w : Z n) (Fq Fp : Fin s → Q n),\n    (∀ i, Fq i=fq (z.1+h • ∑ j, Aq i j • Fq j,z.2+h • ∑ j, Ap i j • Fp j)) →\n    (∀ i, Fp i=fp (z.1+h • ∑ j, Aq i j • Fq j,z.2+h • ∑ j, Ap i j • Fp j)) →\n    w=(z.1+h • ∑ i, bq i • Fq i,z.2+h • ∑ i, bp i • Fp i) →\n    (∀ i, Lq (Fq i)=Lq (fq (Lq.symm (Lq z.1+h • ∑ j, Aq i j • Lq (Fq j)),\n      Lp.symm (Lp z.2+h • ∑ j, Ap i j • Lp (Fp j))))) ∧\n    (∀ i, Lp (Fp i)=Lp (fp (Lq.symm (Lq z.1+h • ∑ j, Aq i j • Lq (Fq j)),\n      Lp.symm (Lp z.2+h • ∑ j, Ap i j • Lp (Fp j))))) ∧\n    (Lq w.1,Lp w.2)=(Lq z.1+h • ∑ i, bq i • Lq (Fq i),Lp z.2+h • ∑ i, bp i • Lp (Fp i)) := by\n  intro n s Lq Lp fq fp Aq Ap bq bp h z w Fq Fp hq hp hw\n  have tq : ∀ a : Fin s → ℝ,\n      Lq.symm (Lq z.1+h • ∑ j, a j • Lq (Fq j)) = z.1+h • ∑ j, a j • Fq j := by\n    intro a\n    apply Lq.injective\n    simp\n  have tp : ∀ a : Fin s → ℝ,\n      Lp.symm (Lp z.2+h • ∑ j, a j • Lp (Fp j)) = z.2+h • ∑ j, a j • Fp j := by\n    intro a\n    apply Lp.injective\n    simp\n  refine ⟨?_, ?_, ?_⟩\n  · intro i\n    rw [tq, tp]\n    exact congrArg Lq (hq i)\n  · intro i\n    rw [tq, tp]\n    exact congrArg Lp (hp i)\n  · rw [hw]\n    simp"
+  }
+}

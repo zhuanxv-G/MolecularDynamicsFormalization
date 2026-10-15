@@ -116,15 +116,15 @@
 | MD-3.6.1-MechanicalReversal | DRAFT/原页已核 | 已核/单文件通过/公理已核 | FAIL | 待复审 / EAUDIT14 | placeholder / incomplete；本地FAIL不进入证明；正确机械反转已有正式库证明，原展示式待裁定。 |
 | MD-3.6.1-ReversedTrajectoryPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | FAIL | 待复审 / EAUDIT14 | placeholder / incomplete；字面FAIL不进入证明，等待网站与导师裁定。 |
 | MD-3.6.1-ReversedTrajectory | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/ReversedTrajectory.json。 |
-| MD-3.6.2-FlowReversal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺C¹场ODE唯一性到全时间反向轨道一致的完整桥接；不建设新ODE唯一性理论。 |
-| MD-3.6.2-FlowReversalIdentity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；依赖尚未桥接的完整FlowReversal及实际流唯一性。 |
+| MD-3.6.2-FlowReversal | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT15 | placeholder / incomplete；缺C¹场ODE唯一性到全时间反向轨道一致的完整桥接；不建设新ODE唯一性理论。 |
+| MD-3.6.2-FlowReversalIdentity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT15 | placeholder / incomplete；依赖尚未桥接的完整FlowReversal及实际流唯一性。 |
 | MD-3.6.2-ReversibleMethod | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.6.2-SymmetricMethod | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.6.2-AffineInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.6.2-SymmetricAffineReversible | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；本地非PASS不进入证明；条件化有限代数推论可另审。 |
-| MD-3.6.2-RKAffine | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
-| MD-3.6.2-PartitionedAffinePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 433a13ca6407） | placeholder / incomplete；字面非PASS不证明；正确分块运输另列。 |
-| MD-3.6.2-PartitionedAffine | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 433a13ca6407） | local_proof / self-contained |
+| MD-3.6.2-SymmetricMethod | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT15 | definition / self-contained |
+| MD-3.6.2-AffineInvariant | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT15 | definition / self-contained |
+| MD-3.6.2-SymmetricAffineReversible | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT15 | placeholder / incomplete；本地非PASS不进入证明；条件化有限代数推论可另审。 |
+| MD-3.6.2-RKAffine | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT15 | existing_bridge / checked+documented priors |
+| MD-3.6.2-PartitionedAffinePrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT15（原返回FAIL保留） | placeholder / incomplete；字面非PASS不证明；正确分块运输另列。 |
+| MD-3.6.2-PartitionedAffine | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT15 | local_proof / self-contained |
 | MD-3.6.3-SymplecticNotReversible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/SymplecticNotReversible.json。 |
 | MD-3.6.3-TrapezoidalRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.6.3-TrapezoidalProperties | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺非线性梯形实际解族和非辛Jacobian反例桥接；不建设一般隐式法理论。 |
@@ -407,3 +407,5 @@ EAUDIT12 §3.5：6条落盘，单文件与7项公理通过；未写新证明；�
 EAUDIT13 §3.6：2条落盘，单文件与3项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT14 §3.6.1：4条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT15 §3.6.2：8条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。

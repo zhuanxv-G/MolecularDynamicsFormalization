@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT15",
+  "source_id": "MD-3.6.2-PartitionedAffine",
+  "input_sha256": {
+    "BATCH_EAUDIT15.md": "878923b4229b3635f67a675a7d1acfa7231212f8a1a049f32eada0cfa242e996",
+    "Blueprint/Ch03.lean": "dec75ecbe6e6792177e6d22e5d266e1967216b6ad8cf064baae9cc49221c9ba0",
+    "blueprint/ch03/ch03_source.json": "e4e3d6e4da36047af25d059a111af36af10ce82b5a1f9834947c5c0e2271e326",
+    "EAUDIT15g_materials": "c00c3878054f2923ad26c6e5954f2b43d1f3d3228dc79cebbaa3fc9879cb3011",
+    "EAUDIT15g_PAGES.pdf": "62dfa84e2cf8c67eecff3df6d7e0ce15dce7b4b467d6c429cc6d5234671df81c"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    152
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "708e30db54a1762af2cfc84f838d30063241de10684ef1914fe1d34f3487a994",
+  "source_block_sha256": "12bbada174d13e035f761e038c995fbd31976926b190a21b3dd4953788a1c629",
+  "source_declarations": [
+    "partitionedAffine"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Z",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT15_review.json",
+  "total_task_bytes": 91587
+}

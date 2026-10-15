@@ -40,3 +40,7 @@
 
 - MD-3.4-AnalyticDefect：原文many standard classes没有给出准确方法类及解析邻域资格；选项：指定解析一阶方法类并核定k·h窗口／保留仅有限阶构造并另列指数严格化。需数学判断，不以缺陷结论作前提。 网站反例：已展开Ch03_deps.txt：SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；smoothSymplecticData要求r>0、开放凸D、紧凸B⊆D、H光滑、G(0)=id、联合光滑、Jacobian满足AᵀJA=J、B上真实H流以及局部O(|h|^(r+1))阶。Jacobian是实际fderiv矩阵。truncatedFlow要求Γ(0)=z及[0,h]上的实际ODE；Hamiltonian为H+Σ_{j=r}^k h^j Hj。解析假设、统一C/A/δ先于k、真实流估计均明确，且加入A(k+1)h≤1并另给指数截断。未找到缺失定义；原文many standard classes未界定适用类，需数学判断这些解析及域条件是否足以支持此全域解析系数结论；不能仅据名字或sorry判PASS。analyticBEA含sorry，与此语义判定分开。; 原返回NEEDS_HUMAN保留。
 - MD-3.4-OptimalTruncation：原印指数1/(γh)与γ=1/(De)及现标量优化的γ/h不一致，标量界也不直接给真实缺陷；选项：导师确认指数勘误后与AnalyticDefect连接／原式保留存档。当前不自行确定勘误。 网站反例：缺失实际流差结论及增长/最小化条款。取A=0.1、h_N=1/(0.1 e N)，Lean幂=(1/e)^N；原书指数界则exp(−0.1 e/h_N)=exp(−0.01 e²N)，与Lean率不同；A较大时原书率还会比真实连续最小值快，无法用固定C̃吸收。; 原返回FAIL保留。
+
+## EAUDIT15 原文数学判断（保持现状）
+
+- MD-3.6.2-PartitionedAffinePrinted：不同分区表格一般不对混合q,p的任意线性变换等变；选项：批准仅保持分区Lq,Lp／强制Aq=Ap且bq=bp退化普通RK。原印全称式保持，需导师裁定路线。 网站反例：取 n=s=1，Q1 识别为 ℝ，Z1=ℝ²。h=1，Aq=[0]，Ap=[1]，bq=bp=[1]，f(q,p)=(p,q)，z=(1,0)，唯一阶段 F₀=(1,1)，w=(2,1)。原关系阶段输入为 (1,1)，f(1,1)=(1,1)，输出 (1+1,0+1)=(2,1)，故两个合取项均成立。取 L(q,p)=(p,q)，连续线性等价且 L⁻¹=L；运输场 LfL⁻¹=f。Lz=(0,1)、LF₀=(1,1)、Lw=(1,2)。运输后用同一 Aq,Ap 的阶段输入为 (0,2)，f(0,2)=(2,0)≠(1,1)，且预期输出为 (1,2)。故阶段合取项明确失败。两套权重均为1，反例并非不一致权重造成。; 原返回FAIL保留。

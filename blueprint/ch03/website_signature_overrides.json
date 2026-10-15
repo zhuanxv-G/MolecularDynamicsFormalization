@@ -205,5 +205,25 @@
       "独立正确机械R反转结论；原印展示式亦正确，原先错误标记撤销。",
       "[EXTRA] 原已证独立机械反转结论保留；更正旧注释：原书展示式正确，先前原书错误判断已撤销。"
     ]
+  },
+  "MD-3.6.2-SymmetricAffineReversible": {
+    "code": "theorem symmetricAffineReversible :\n  ∀ (n : ℕ) (R : Q n ≃L[ℝ] Q n) (f : Q n → Q n)\n    (G : (Q n → Q n) → ℝ → Q n → Q n),\n    (∀ z, R (R z)=z) → (∀ z, f (R z)=-R (f z)) → affineInvariant G →\n    (∀ h z, G (fun x => -f x) h z=G f (-h) z) →\n    (∀ h z, G f (-h) (G f h z)=z) → reversibleMethod R (G f) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA]G_{−f}(h)=G_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。",
+      "[EXTRA] 明确本条是原印省略方法类资格后的受限修复；符号/时间尺度相容仅要求固定f，不对所有无关g全称。保留原书疑误说明。"
+    ]
+  },
+  "MD-3.6.2-RKAffine": {
+    "code": "theorem rkAffine :\n  ∀ (n s : ℕ) (L : Q n ≃L[ℝ] Q n) (f : Q n → Q n)\n    (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ) h z w F,\n    rungeKuttaRelation f A b h z w F →\n      rungeKuttaRelation (transportedField L f) A b h (L z) (L w) (fun i => L (F i)) := by\n  exact MolecularDynamics.Chapter03Review.rkAffine_proved",
+    "extra_assumptions": [
+      "[EXTRA] 仅承担普通RK阶段/更新的线性等变；PRK分区修复及对称方法反演另映射PartitionedAffine、SymmetricAffineReversible，原文整句保留。"
+    ]
+  },
+  "MD-3.6.2-PartitionedAffine": {
+    "code": "theorem partitionedAffine :\n  ∀ (n s : ℕ) (Lq Lp : Q n ≃L[ℝ] Q n) (fq fp : Z n → Q n)\n    (Aq Ap : Matrix (Fin s) (Fin s) ℝ) (bq bp : Fin s → ℝ) (h : ℝ) (z w : Z n) (Fq Fp : Fin s → Q n),\n    (∀ i, Fq i=fq (z.1+h • ∑ j, Aq i j • Fq j,z.2+h • ∑ j, Ap i j • Fp j)) →\n    (∀ i, Fp i=fp (z.1+h • ∑ j, Aq i j • Fq j,z.2+h • ∑ j, Ap i j • Fp j)) →\n    w=(z.1+h • ∑ i, bq i • Fq i,z.2+h • ∑ i, bp i • Fp i) →\n    (∀ i, Lq (Fq i)=Lq (fq (Lq.symm (Lq z.1+h • ∑ j, Aq i j • Lq (Fq j)),\n      Lp.symm (Lp z.2+h • ∑ j, Ap i j • Lp (Fp j))))) ∧\n    (∀ i, Lp (Fp i)=Lp (fp (Lq.symm (Lq z.1+h • ∑ j, Aq i j • Lq (Fq j)),\n      Lp.symm (Lp z.2+h • ∑ j, Ap i j • Lp (Fp j))))) ∧\n    (Lq w.1,Lp w.2)=(Lq z.1+h • ∑ i, bq i • Lq (Fq i),Lp z.2+h • ∑ i, bp i • Lp (Fp i)) := by\n  intro n s Lq Lp fq fp Aq Ap bq bp h z w Fq Fp hq hp hw\n  have tq : ∀ a : Fin s → ℝ,\n      Lq.symm (Lq z.1+h • ∑ j, a j • Lq (Fq j)) = z.1+h • ∑ j, a j • Fq j := by\n    intro a\n    apply Lq.injective\n    simp\n  have tp : ∀ a : Fin s → ℝ,\n      Lp.symm (Lp z.2+h • ∑ j, a j • Lp (Fp j)) = z.2+h • ∑ j, a j • Fp j := by\n    intro a\n    apply Lp.injective\n    simp\n  refine ⟨?_, ?_, ?_⟩\n  · intro i\n    rw [tq, tp]\n    exact congrArg Lq (hq i)\n  · intro i\n    rw [tq, tp]\n    exact congrArg Lp (hp i)\n  · rw [hw]\n    simp",
+    "extra_assumptions": [
+      "[EXTRA]正确限定为保持q,p分区的连续线性等价Lq,Lp；不同分区表格不要求混合线性等变。",
+      "[EXTRA] 本条显式仅为保持分区的PRK阶段/更新等变修复；普通RK及有符号相容、对称资格的时间反演推论归RKAffine/SymmetricAffineReversible。保留混合变换错误的Printed导师条目。"
+    ]
   }
 }

@@ -1388,16 +1388,18 @@ def affineInvariant {n : ℕ} (G : (Q n → Q n) → ℝ → Q n → Q n) : Prop
 
 /-- source_id: MD-3.6.2-SymmetricAffineReversible · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152
 [EXTRA] [EXTRA]G_{−f}(h)=G_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。
-[NEEDS_HUMAN] 一般方法需要G_{−f}(h)=G_f(−h)，否则原文蕴含式条件不全。 -/
+[NEEDS_HUMAN] 一般方法需要G_{−f}(h)=G_f(−h)，否则原文蕴含式条件不全。 
+[EXTRA] 明确本条是原印省略方法类资格后的受限修复；符号/时间尺度相容仅要求固定f，不对所有无关g全称。保留原书疑误说明。 -/
 theorem symmetricAffineReversible :
   ∀ (n : ℕ) (R : Q n ≃L[ℝ] Q n) (f : Q n → Q n)
     (G : (Q n → Q n) → ℝ → Q n → Q n),
     (∀ z, R (R z)=z) → (∀ z, f (R z)=-R (f z)) → affineInvariant G →
-    (∀ g h z, G (fun x => -g x) h z=G g (-h) z) →
+    (∀ h z, G (fun x => -f x) h z=G f (-h) z) →
     (∀ h z, G f (-h) (G f h z)=z) → reversibleMethod R (G f) := by
   sorry
 
-/-- source_id: MD-3.6.2-RKAffine · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152 -/
+/-- source_id: MD-3.6.2-RKAffine · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152 
+[EXTRA] 仅承担普通RK阶段/更新的线性等变；PRK分区修复及对称方法反演另映射PartitionedAffine、SymmetricAffineReversible，原文整句保留。 -/
 theorem rkAffine :
   ∀ (n s : ℕ) (L : Q n ≃L[ℝ] Q n) (f : Q n → Q n)
     (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ) h z w F,
@@ -1406,7 +1408,8 @@ theorem rkAffine :
   exact MolecularDynamics.Chapter03Review.rkAffine_proved
 
 /-- source_id: MD-3.6.2-PartitionedAffinePrinted · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152
-[ERRATUM?] PRK一般只对保持分区的分块线性变换等变；任意混合变换的全称可疑。 -/
+[ERRATUM?] PRK一般只对保持分区的分块线性变换等变；任意混合变换的全称可疑。 
+[EXTRA] 本条显式仅为保持分区的PRK阶段/更新等变修复；普通RK及有符号相容、对称资格的时间反演推论归RKAffine/SymmetricAffineReversible。保留混合变换错误的Printed导师条目。 -/
 theorem partitionedAffinePrinted :
   ∀ (n s : ℕ) (L : Z n ≃L[ℝ] Z n) (f : Z n → Z n)
     (Aq Ap : Matrix (Fin s) (Fin s) ℝ) (bq bp : Fin s → ℝ) h z w F,

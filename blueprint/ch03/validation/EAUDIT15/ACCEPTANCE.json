@@ -1,0 +1,52 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT15",
+  "section": "3.6.2",
+  "source_ids": [
+    "MD-3.6.2-AffineInvariant",
+    "MD-3.6.2-FlowReversal",
+    "MD-3.6.2-FlowReversalIdentity",
+    "MD-3.6.2-PartitionedAffine",
+    "MD-3.6.2-PartitionedAffinePrinted",
+    "MD-3.6.2-RKAffine",
+    "MD-3.6.2-SymmetricAffineReversible",
+    "MD-3.6.2-SymmetricMethod"
+  ],
+  "reaudit_ids": [
+    "MD-3.6.2-FlowReversal",
+    "MD-3.6.2-FlowReversalIdentity",
+    "MD-3.6.2-SymmetricMethod",
+    "MD-3.6.2-AffineInvariant",
+    "MD-3.6.2-SymmetricAffineReversible",
+    "MD-3.6.2-RKAffine",
+    "MD-3.6.2-PartitionedAffine"
+  ],
+  "human_ids": [
+    "MD-3.6.2-PartitionedAffinePrinted"
+  ],
+  "lean_sha256": "dec75ecbe6e6792177e6d22e5d266e1967216b6ad8cf064baae9cc49221c9ba0",
+  "source_sha256": "e4e3d6e4da36047af25d059a111af36af10ce82b5a1f9834947c5c0e2271e326",
+  "pages": [
+    151,
+    152
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch03.olean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "dec75ecbe6e6792177e6d22e5d266e1967216b6ad8cf064baae9cc49221c9ba0",
+    "log_sha256": "b8585352ec5ac11b807b798cb5af02d39b07ab19db38b639caa4d3da58c45a9b"
+  },
+  "axiom_decl_count": 8,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT15/INDEX.md"
+}
