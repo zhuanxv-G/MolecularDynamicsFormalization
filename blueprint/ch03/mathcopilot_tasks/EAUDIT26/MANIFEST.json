@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT26",
+  "input_sha256": {
+    "BATCH_EAUDIT26.md": "afb080365405c39ba38c615083deae135ad66cb7df294cccb072bb2c2a22707d",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT26a",
+      "source_id": "MD-3.3.2-VerletHamiltonianParts",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT26/a",
+      "total_bytes": 93662,
+      "manifest_sha256": "29d33f1b9b01bf0a85dd43ff7114ac83d6ee6a58f66a031a2210fd240fb54db7"
+    },
+    {
+      "subtask": "EAUDIT26b",
+      "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT26/b",
+      "total_bytes": 94744,
+      "manifest_sha256": "14344e26c03efcc571f9956605c8e92387c5bf235dae063e8e5fdab338bf69a3"
+    },
+    {
+      "subtask": "EAUDIT26c",
+      "source_id": "MD-3.3.2-VerletModifiedMatching",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT26/c",
+      "total_bytes": 103404,
+      "manifest_sha256": "479017bdc2b689d83f18cd4185222e598c3074fbbf6884d903b3f3fb66c6abcb"
+    },
+    {
+      "subtask": "EAUDIT26d",
+      "source_id": "MD-3.3.2-ModifiedEven",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT26/d",
+      "total_bytes": 102433,
+      "manifest_sha256": "fe2c29749631119e502325df81f29e4d51ab7ceba32f91be708b3caac99abd54"
+    },
+    {
+      "subtask": "EAUDIT26e",
+      "source_id": "MD-3.3.2-Strang",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT26/e",
+      "total_bytes": 78075,
+      "manifest_sha256": "0b4cc9707eaf3bedef011f6b714b8772ca727586450ee13ed49f2d4b5379486c"
+    },
+    {
+      "subtask": "EAUDIT26f",
+      "source_id": "MD-3.3.2-StrangCubic",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT26/f",
+      "total_bytes": 80148,
+      "manifest_sha256": "63abc5fd08f3ab62ecc3c0fb10266224c7cb631e20ef479ca61771f60cf4179c"
+    }
+  ]
+}

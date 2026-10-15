@@ -1,0 +1,34 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT38",
+  "section": "3.7.2",
+  "source_ids": [
+    "MD-3.7.2-CollisionTimeRelation",
+    "MD-3.7.2-CollisionalVerletRelation"
+  ],
+  "reaudit_ids": [
+    "MD-3.7.2-CollisionTimeRelation",
+    "MD-3.7.2-CollisionalVerletRelation"
+  ],
+  "human_ids": [],
+  "lean_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+  "source_sha256": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.7.2-CollisionTimeRelation",
+      "prior_eaudit": "EAUDIT19",
+      "acceptance": "blueprint/ch03/validation/EAUDIT19/ACCEPTANCE.json",
+      "sha256": "69f42e01e5c21827c7b4652064c45d6749f443e11b9692b86c3d62dcdb55b2c0"
+    },
+    {
+      "source_id": "MD-3.7.2-CollisionalVerletRelation",
+      "prior_eaudit": "EAUDIT19",
+      "acceptance": "blueprint/ch03/validation/EAUDIT19/ACCEPTANCE.json",
+      "sha256": "69f42e01e5c21827c7b4652064c45d6749f443e11b9692b86c3d62dcdb55b2c0"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT38/INDEX.md"
+}

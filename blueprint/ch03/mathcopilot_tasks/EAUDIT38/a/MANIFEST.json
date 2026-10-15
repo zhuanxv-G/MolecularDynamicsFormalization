@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT38",
+  "source_id": "MD-3.7.2-CollisionTimeRelation",
+  "input_sha256": {
+    "BATCH_EAUDIT38.md": "679a9510a4014a07e6b06e80370b1f14680b988167d0e9d4ff61d477637ee375",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT38a_materials": "f001bed7f56c8952519cbf73e89c171013683b0f60dc447c7a977cf81d6f1c06",
+    "EAUDIT38a_PAGES.pdf": "4ed01887f62b730fa407cd354c14d0dff8d6a5758a3904c70e1d7b64d8f64f2e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    157
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "4d1ca7704c20a002d4be9b12b0c1ac266f5123b1a3a1f8916aa6b04450583a43",
+  "source_block_sha256": "ee0722ca4ea0c7ace19913f622e7dbfec5b164dd34ddce53a053239921e91384",
+  "source_declarations": [
+    "collisionTimeRelation"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "collisionTimeRelation",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "ee0722ca4ea0c7ace19913f622e7dbfec5b164dd34ddce53a053239921e91384"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT38_review.json",
+  "total_task_bytes": 91360
+}

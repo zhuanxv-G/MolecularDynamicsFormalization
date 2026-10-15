@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT34",
+  "source_id": "MD-3.6.2-SymmetricMethod",
+  "input_sha256": {
+    "BATCH_EAUDIT34.md": "dffe162495468f460c44bcae70f37fdbf3f33fc1baee5d595d2de248a7a6071a",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT34c_materials": "a0c851fc5fbe994e6ca2c4e584c61a335b5bed35c1d0a2410ea1efd7c7333e64",
+    "EAUDIT34c_PAGES.pdf": "62dfa84e2cf8c67eecff3df6d7e0ce15dce7b4b467d6c429cc6d5234671df81c"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    152
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "80c27df96e41dd109e7497e25e8717d167f4108cd0b626e5b0d1f5ca116d0fd4",
+  "source_block_sha256": "57abc58f48d26ec36f020c76c384b86e7ee4927d0a074f99b498d8fbc879f8bd",
+  "source_declarations": [
+    "symmetricMethod"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "symmetricMethod",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "57abc58f48d26ec36f020c76c384b86e7ee4927d0a074f99b498d8fbc879f8bd"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT34_review.json",
+  "total_task_bytes": 89354
+}

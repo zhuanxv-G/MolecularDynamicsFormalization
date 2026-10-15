@@ -2,7 +2,7 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 352；章末验收待完成 [3, 4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 352；章末验收待完成 [4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
@@ -172,40 +172,40 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 2 | MD-2.5.4-TIOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT23 |
 | 2 | MD-2.5.5-Beeman | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.5.5-BeemanOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT24 |
-| 3 | MD-3-ModifiedConstruction | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT02 |
+| 3 | MD-3-ModifiedConstruction | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT22 |
 | 3 | MD-3.1-AdjointEulerOscillator | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.1-ShadowHamiltonian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.1-EnergyFailure | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
-| 3 | MD-3.1-ShadowInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 3 | MD-3.1-EnergyFailure | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT23 |
+| 3 | MD-3.1-ShadowInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT23 |
 | 3 | MD-3.1-ShadowEllipses | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT03 |
 | 3 | MD-3.1-EulerGrowth | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.1-FormalHamiltonian | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
-| 3 | MD-3.1-FormalHamiltonianField | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 3 | MD-3.1-FormalHamiltonian | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT23 |
+| 3 | MD-3.1-FormalHamiltonianField | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT23 |
 | 3 | MD-3.2-LieDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.2-ObservableDerivative | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
+| 3 | MD-3.2-ObservableDerivative | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT24 |
 | 3 | MD-3.2-ObservableSecondDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.2-OperatorExponential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.2-FormalObservable | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.2-FiniteLieTaylor | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT04 |
 | 3 | MD-3.2-FlowCoordinates | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT04 |
-| 3 | MD-3.2-PoissonBracket | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
-| 3 | MD-3.2-PoissonCoordinates | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
-| 3 | MD-3.2-PoissonBilinearity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
-| 3 | MD-3.2-PoissonSkew | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
-| 3 | MD-3.2-PoissonSelf | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
-| 3 | MD-3.2-PoissonJacobi | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT05 |
+| 3 | MD-3.2-PoissonBracket | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT24 |
+| 3 | MD-3.2-PoissonCoordinates | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT24 |
+| 3 | MD-3.2-PoissonBilinearity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT24 |
+| 3 | MD-3.2-PoissonSkew | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT24 |
+| 3 | MD-3.2-PoissonSelf | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT24 |
+| 3 | MD-3.2-PoissonJacobi | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT24 |
 | 3 | MD-3.2-HamiltonianObservableDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.2-HamiltonianLie | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT05 |
+| 3 | MD-3.2-HamiltonianLie | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT24 |
 | 3 | MD-3.2-HamiltonianCoordinateDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.3-HamiltonianLieAdditivity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT06 |
-| 3 | MD-3.3-FormalSplitting | FAIL | B | 同时保留精确形式exp(A+B)及分裂形式expA expB，并用真实Hamiltonian Lie导数的卷积系数实例连接A=L_H1、B=L_H2；仅形式系数，不宣称解析收敛。 | 已修待复审 | EAUDIT06 |
-| 3 | MD-3.3-ExactExponentialCubic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT06 |
+| 3 | MD-3.3-HamiltonianLieAdditivity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
+| 3 | MD-3.3-FormalSplitting | FAIL | B | 同时保留精确形式exp(A+B)及分裂形式expA expB，并用真实Hamiltonian Lie导数的卷积系数实例连接A=L_H1、B=L_H2；仅形式系数，不宣称解析收敛。 | 已修待复审 | EAUDIT25 |
+| 3 | MD-3.3-ExactExponentialCubic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
 | 3 | MD-3.3-ProductExponentialCubic | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.3-DifferenceCommutator | FAIL | B | 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 | 已修待复审 | EAUDIT06 |
-| 3 | MD-3.3-DifferenceCubic | FAIL | B | 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 | 已修待复审 | EAUDIT06 |
+| 3 | MD-3.3-DifferenceCommutator | FAIL | B | 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 | 已修待复审 | EAUDIT25 |
+| 3 | MD-3.3-DifferenceCubic | FAIL | B | 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 | 已修待复审 | EAUDIT25 |
 | 3 | MD-3.3-HamiltonianCommutator | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.3-HamiltonianCommutatorPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.3-LeadingModifiedExponential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT06 |
+| 3 | MD-3.3-LeadingModifiedExponential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
 | 3 | MD-3.3-LeadingShadowHamiltonian | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT06 |
 | 3 | MD-3.3-BCH4 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.3-BCHHamiltonian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
@@ -214,113 +214,113 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.3.1-SymplecticEulerShadow | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.3.1-SymplecticEulerShadowMatching | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.3.2-VerletMaps | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.3.2-VerletHamiltonianParts | FAIL | C | 绑定真实正对角质量、T(p)=pᵀM⁻¹p/2及U(q)，补H1+H2+H3=H；移除任意相空间函数替代机械分解。 | 已修待复审 | EAUDIT07 |
+| 3 | MD-3.3.2-VerletHamiltonianParts | FAIL | C | 绑定真实正对角质量、T(p)=pᵀM⁻¹p/2及U(q)，补H1+H2+H3=H；移除任意相空间函数替代机械分解。 | 已修待复审 | EAUDIT26 |
 | 3 | MD-3.3.2-VerletStructure | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.3.2-VerletModifiedHamiltonian | FAIL | B | 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。 | 已修待复审 | EAUDIT07 |
-| 3 | MD-3.3.2-VerletModifiedMatching | FAIL | B | 保留已列机械特例，新增一般分离T(p),U(q)、真实局部子流、h⁴系数及所有截断匹配；Hamiltonian余项从h⁶起（奇项零），对应端点O(h⁷)，不混同两个余项。新结论暂sorry，未裁定印刷系数是否正确。 | 已修待复审 | EAUDIT07 |
-| 3 | MD-3.3.2-ModifiedEven | FAIL | B | 补一阶log系数A+B并保留全部偶次零，表达至少二阶及Hamiltonian偶性/log奇性；不沿用不同步长log交换的错误推理。 | 已修待复审 | EAUDIT07 |
-| 3 | MD-3.3.2-Strang | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT07 |
+| 3 | MD-3.3.2-VerletModifiedHamiltonian | FAIL | B | 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。 | 已修待复审 | EAUDIT26 |
+| 3 | MD-3.3.2-VerletModifiedMatching | FAIL | B | 保留已列机械特例，新增一般分离T(p),U(q)、真实局部子流、h⁴系数及所有截断匹配；Hamiltonian余项从h⁶起（奇项零），对应端点O(h⁷)，不混同两个余项。新结论暂sorry，未裁定印刷系数是否正确。 | 已修待复审 | EAUDIT26 |
+| 3 | MD-3.3.2-ModifiedEven | FAIL | B | 补一阶log系数A+B并保留全部偶次零，表达至少二阶及Hamiltonian偶性/log奇性；不沿用不同步长log交换的错误推理。 | 已修待复审 | EAUDIT26 |
+| 3 | MD-3.3.2-Strang | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT26 |
 | 3 | MD-3.3.2-DifferentLogsCommute | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT07 |
 | 3 | MD-3.3.2-StrangInverse | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.3.2-StrangCubic | FAIL | B | 补一次系数和全部偶次零，连同原三次公式覆盖完整奇次展开；原已证三次系数保留辅助并重查，新合取暂sorry。 | 已修待复审 | EAUDIT07 |
+| 3 | MD-3.3.2-StrangCubic | FAIL | B | 补一次系数和全部偶次零，连同原三次公式覆盖完整奇次展开；原已证三次系数保留辅助并重查，新合取暂sorry。 | 已修待复审 | EAUDIT26 |
 | 3 | MD-3.3.3-YoshidaComposition | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.3.3-YoshidaCoefficients | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.3.3-YoshidaCancellation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.3.3-YoshidaUnique | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.3.3-YoshidaRaiseOrder | FAIL | A | 将孤立B上的逐紧集阶改为D内每个紧集的一致阶资格，覆盖移动中间点；结论补新方法在每紧集升阶、光滑及对称，保留递归资格。 | 已修待复审 | EAUDIT08 |
-| 3 | MD-3.3.3-Yoshida4 | FAIL | A | 教材算法接口明确正质量与经典可微势；后续结构定理调用使用正式总化辅助组合，证明不新增。 | 已修待复审 | EAUDIT08 |
-| 3 | MD-3.3.3-Yoshida4Structure | PASS | A | 依赖小修：原无质量限制的结构定理继续对应正式总化辅助算法；教材受限接口另有正质量/可微资格，原已证结论保留。 | 已修待复审 | EAUDIT08 |
+| 3 | MD-3.3.3-YoshidaRaiseOrder | FAIL | A | 将孤立B上的逐紧集阶改为D内每个紧集的一致阶资格，覆盖移动中间点；结论补新方法在每紧集升阶、光滑及对称，保留递归资格。 | 已修待复审 | EAUDIT27 |
+| 3 | MD-3.3.3-Yoshida4 | FAIL | A | 教材算法接口明确正质量与经典可微势；后续结构定理调用使用正式总化辅助组合，证明不新增。 | 已修待复审 | EAUDIT27 |
+| 3 | MD-3.3.3-Yoshida4Structure | PASS | A | 依赖小修：原无质量限制的结构定理继续对应正式总化辅助算法；教材受限接口另有正质量/可微资格，原已证结论保留。 | 已修待复审 | EAUDIT27 |
 | 3 | MD-3.3.3-GeneralSplitting | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.3.4-TakahashiPotential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT09 |
+| 3 | MD-3.3.4-TakahashiPotential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT28 |
 | 3 | MD-3.3.4-PotentialDoubleBracket | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.3.4-TakahashiShadow | FAIL | B | 保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。 | 已修待复审 | EAUDIT09 |
+| 3 | MD-3.3.4-TakahashiShadow | FAIL | B | 保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。 | 已修待复审 | EAUDIT28 |
 | 3 | MD-3.3.4-TakahashiProcessor | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.3.4-ProcessorEnergyPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT09 |
 | 3 | MD-3.3.4-TakahashiEffectiveOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT09 |
 | 3 | MD-3.4-ModifiedField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-LeadingModifiedField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-TruncatedHamiltonian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT10 |
+| 3 | MD-3.4-TruncatedHamiltonian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT29 |
 | 3 | MD-3.4-TruncationSmooth | FAIL | B | C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。 | 已修待复审 | EAUDIT21 |
 | 3 | MD-3.4-Thm3.1 | FAIL | B | 本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。 | 已修待复审 | EAUDIT21 |
 | 3 | MD-3.4-CompactLipschitz | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-TruncatedFlow | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT10 |
+| 3 | MD-3.4-TruncatedFlow | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT29 |
 | 3 | MD-3.4-FiniteMatchingConstruction | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-TruncatedConservation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT10 |
-| 3 | MD-3.4-EnergyTelescoping | FAIL | B | 保留已证首行望远镜恒等式；补给定守恒截断步F、真实差η=数值步−F的完整三行等式，不以待证能量差为前提。 | 已修待复审 | EAUDIT10 |
-| 3 | MD-3.4-UniformTruncatedLipschitz | FAIL | B | 保留统一截断Lipschitz定理，补原完整能量差≤LΣ‖η‖≤LAνh^(k+1)链；A为原文缺陷常数重命名，F为所给守恒截断一步。 | 已修待复审 | EAUDIT10 |
-| 3 | MD-3.4-TruncationRemainder | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT10 |
-| 3 | MD-3.4-PhysicalEnergyDrift | FAIL | B | 保留已证实际缺陷和界，新增实际截断流的统一一步匹配误差资格与完整2Ch^r+LAνh^(k+1)结论；不是以能量结论为假设。 | 已修待复审 | EAUDIT11 |
+| 3 | MD-3.4-TruncatedConservation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT29 |
+| 3 | MD-3.4-EnergyTelescoping | FAIL | B | 保留已证首行望远镜恒等式；补给定守恒截断步F、真实差η=数值步−F的完整三行等式，不以待证能量差为前提。 | 已修待复审 | EAUDIT29 |
+| 3 | MD-3.4-UniformTruncatedLipschitz | FAIL | B | 保留统一截断Lipschitz定理，补原完整能量差≤LΣ‖η‖≤LAνh^(k+1)链；A为原文缺陷常数重命名，F为所给守恒截断一步。 | 已修待复审 | EAUDIT29 |
+| 3 | MD-3.4-TruncationRemainder | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT29 |
+| 3 | MD-3.4-PhysicalEnergyDrift | FAIL | B | 保留已证实际缺陷和界，新增实际截断流的统一一步匹配误差资格与完整2Ch^r+LAνh^(k+1)结论；不是以能量结论为假设。 | 已修待复审 | EAUDIT29 |
 | 3 | MD-3.4-PolynomialEnergyRate | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-StepCountPower | FAIL | B | 本条仅承担步数幂次代数辅助；原句的完整能量率由MD-3.4-PolynomialEnergyRate承担，原文不删并显式跨条映射。 | 已修待复审 | EAUDIT11 |
+| 3 | MD-3.4-StepCountPower | FAIL | B | 本条仅承担步数幂次代数辅助；原句的完整能量率由MD-3.4-PolynomialEnergyRate承担，原文不删并显式跨条映射。 | 已修待复审 | EAUDIT29 |
 | 3 | MD-3.4-ArbitraryFiniteTruncation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-AnalyticDefect | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT11 |
 | 3 | MD-3.4-OptimalTruncation | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT11 |
 | 3 | MD-3.4-ExponentialFlat | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-ScalarVerletShadow4 | FAIL | B | 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。 | 已修待复审 | EAUDIT11 |
+| 3 | MD-3.4-ScalarVerletShadow4 | FAIL | B | 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。 | 已修待复审 | EAUDIT30 |
 | 3 | MD-3.4-CommutingEnergy | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT21 |
 | 3 | MD-3.4-CommutingEnergySymmetry | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-EnergySymplecticNoGo | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT21 |
 | 3 | MD-3.5-EqualComponentIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.5-EqualEulerIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.5-LinearEulerIntegral | FAIL | B | 保留已证Euler精确保存；补连续ODE解上真实线性第一积分恒定，覆盖本条原句连续与离散两结论。 | 已修待复审 | EAUDIT12 |
+| 3 | MD-3.5-LinearEulerIntegral | FAIL | B | 保留已证Euler精确保存；补连续ODE解上真实线性第一积分恒定，覆盖本条原句连续与离散两结论。 | 已修待复审 | EAUDIT31 |
 | 3 | MD-3.5-LinearRKIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.5-VerletOscillatorEnergy | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
-| 3 | MD-3.5-MomentumProjection | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
-| 3 | MD-3.5-ProjectionConstraint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
-| 3 | MD-3.5-ProjectionFactor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
+| 3 | MD-3.5-VerletOscillatorEnergy | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT31 |
+| 3 | MD-3.5-MomentumProjection | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT31 |
+| 3 | MD-3.5-ProjectionConstraint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT31 |
+| 3 | MD-3.5-ProjectionFactor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT31 |
 | 3 | MD-3.5-ProjectionEnergy | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.5-KineticZero | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.5-EnergyProjectionRelation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.5-NoHamiltonianAttractor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT12 |
+| 3 | MD-3.5-NoHamiltonianAttractor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT31 |
 | 3 | MD-3.5-LinearContinuousIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.6-HamiltonianFlowStructures | FAIL | B | 补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。 | 已修待复审 | EAUDIT13 |
-| 3 | MD-3.6-VolumeNotSymplectic | FAIL | B | 补真实可测集合体积保存及单射，保留det=1和非辛见证；其余原句明确跨条映射HamiltonianFlowStructures及ProjectionEnergy，不静默删原文。 | 已修待复审 | EAUDIT13 |
+| 3 | MD-3.6-HamiltonianFlowStructures | FAIL | B | 补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。 | 已修待复审 | EAUDIT32 |
+| 3 | MD-3.6-VolumeNotSymplectic | FAIL | B | 补真实可测集合体积保存及单射，保留det=1和非辛见证；其余原句明确跨条映射HamiltonianFlowStructures及ProjectionEnergy，不静默删原文。 | 已修待复审 | EAUDIT32 |
 | 3 | MD-3.6.1-LinearInvolution | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6.1-ReversedFieldPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6.1-MomentumReversal | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.6.1-MechanicalReversal | FAIL | C | 按原页外部负号修复先前转录误读，两行均为−(−M⁻¹p,∇U)，原书此式无误；先前本条ERRATUM判断撤销，第三反演合取保留。 | 已修待复审 | EAUDIT14 |
-| 3 | MD-3.6.1-ReversedTrajectoryPrinted | FAIL | C | 按PDF151真实链式法则写−R f(γ(−t))，另列纯坐标变化Rf(Rz̃)及纯时间反向−f；不以转置reversedField偷换原链式右端。 | 已修待复审 | EAUDIT14 |
-| 3 | MD-3.6.1-ReversedTrajectory | FAIL | A | 补R的坐标矩阵对称资格，与R²=id合起来使Rᵀ=R=R⁻¹，现有经典反演条件才与原字面转置定义等价；该限制显式EXTRA。 | 已修待复审 | EAUDIT14 |
-| 3 | MD-3.6.2-FlowReversal | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT15 |
-| 3 | MD-3.6.2-FlowReversalIdentity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT15 |
+| 3 | MD-3.6.1-MechanicalReversal | FAIL | C | 按原页外部负号修复先前转录误读，两行均为−(−M⁻¹p,∇U)，原书此式无误；先前本条ERRATUM判断撤销，第三反演合取保留。 | 已修待复审 | EAUDIT33 |
+| 3 | MD-3.6.1-ReversedTrajectoryPrinted | FAIL | C | 按PDF151真实链式法则写−R f(γ(−t))，另列纯坐标变化Rf(Rz̃)及纯时间反向−f；不以转置reversedField偷换原链式右端。 | 已修待复审 | EAUDIT33 |
+| 3 | MD-3.6.1-ReversedTrajectory | FAIL | A | 补R的坐标矩阵对称资格，与R²=id合起来使Rᵀ=R=R⁻¹，现有经典反演条件才与原字面转置定义等价；该限制显式EXTRA。 | 已修待复审 | EAUDIT33 |
+| 3 | MD-3.6.2-FlowReversal | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT34 |
+| 3 | MD-3.6.2-FlowReversalIdentity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT34 |
 | 3 | MD-3.6.2-ReversibleMethod | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.6.2-SymmetricMethod | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT15 |
-| 3 | MD-3.6.2-AffineInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT15 |
-| 3 | MD-3.6.2-SymmetricAffineReversible | FAIL | A | 明确本条是原印省略方法类资格后的受限修复；符号/时间尺度相容仅要求固定f，不对所有无关g全称。保留原书疑误说明。 | 已修待复审 | EAUDIT15 |
-| 3 | MD-3.6.2-RKAffine | FAIL | B | 仅承担普通RK阶段/更新的线性等变；PRK分区修复及对称方法反演另映射PartitionedAffine、SymmetricAffineReversible，原文整句保留。 | 已修待复审 | EAUDIT15 |
+| 3 | MD-3.6.2-SymmetricMethod | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT34 |
+| 3 | MD-3.6.2-AffineInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT34 |
+| 3 | MD-3.6.2-SymmetricAffineReversible | FAIL | A | 明确本条是原印省略方法类资格后的受限修复；符号/时间尺度相容仅要求固定f，不对所有无关g全称。保留原书疑误说明。 | 已修待复审 | EAUDIT34 |
+| 3 | MD-3.6.2-RKAffine | FAIL | B | 仅承担普通RK阶段/更新的线性等变；PRK分区修复及对称方法反演另映射PartitionedAffine、SymmetricAffineReversible，原文整句保留。 | 已修待复审 | EAUDIT34 |
 | 3 | MD-3.6.2-PartitionedAffinePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT15 |
-| 3 | MD-3.6.2-PartitionedAffine | FAIL | B | 本条显式仅为保持分区的PRK阶段/更新等变修复；普通RK及有符号相容、对称资格的时间反演推论归RKAffine/SymmetricAffineReversible。保留混合变换错误的Printed导师条目。 | 已修待复审 | EAUDIT15 |
+| 3 | MD-3.6.2-PartitionedAffine | FAIL | B | 本条显式仅为保持分区的PRK阶段/更新等变修复；普通RK及有符号相容、对称资格的时间反演推论归RKAffine/SymmetricAffineReversible。保留混合变换错误的Printed导师条目。 | 已修待复审 | EAUDIT34 |
 | 3 | MD-3.6.3-SymplecticNotReversible | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6.3-TrapezoidalRelation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6.3-TrapezoidalProperties | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6.3-HamiltonianSpectrum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.6.3-SymplecticSpectrum | FAIL | B | 保留一般辛矩阵谱结论；补对称K的实际线性Hamiltonian流exp(tJK)、ODE、辛矩阵及对应倒数/共轭谱实例。 | 已修待复审 | EAUDIT16 |
+| 3 | MD-3.6.3-SymplecticSpectrum | FAIL | B | 保留一般辛矩阵谱结论；补对称K的实际线性Hamiltonian流exp(tJK)、ODE、辛矩阵及对应倒数/共轭谱实例。 | 已修待复审 | EAUDIT35 |
 | 3 | MD-3.6.3-ReversibleSpectrum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.6.3-ConjugateIterates | FAIL | A | 纯迭代恒等式推广到任意类型及真实Equiv，不附拓扑/范数；原Homeomorph已证版本保留辅助，用于拓扑轨道结论。 | 已修待复审 | EAUDIT16 |
-| 3 | MD-3.6.1-MechanicalReversalCorrect | PASS | C | 原已证独立机械反转结论保留；更正旧注释：原书展示式正确，先前原书错误判断已撤销。 | 已修待复审 | EAUDIT14 |
+| 3 | MD-3.6.3-ConjugateIterates | FAIL | A | 纯迭代恒等式推广到任意类型及真实Equiv，不附拓扑/范数；原Homeomorph已证版本保留辅助，用于拓扑轨道结论。 | 已修待复审 | EAUDIT35 |
+| 3 | MD-3.6.1-MechanicalReversalCorrect | PASS | C | 原已证独立机械反转结论保留；更正旧注释：原书展示式正确，先前原书错误判断已撤销。 | 已修待复审 | EAUDIT33 |
 | 3 | MD-3.6.3-ConjugateOrderPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT16 |
 | 3 | MD-3.6.3-ReversibleVolumeFailure | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT16 |
-| 3 | MD-3.7-HardCoreDomain | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT17 |
+| 3 | MD-3.7-HardCoreDomain | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT36 |
 | 3 | MD-3.7-ElasticReflection | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.7-ElasticEnergy | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.7-CollisionComposition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT17 |
-| 3 | MD-3.7-CollisionRegularity | FAIL | A | 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。 | 已修待复审 | EAUDIT17 |
-| 3 | MD-3.7.1-HardCorePotential | FAIL | C | 原印≤接触也取∞独立忠实定义，并补K+U+U_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。 | 已修待复审 | EAUDIT18 |
+| 3 | MD-3.7-CollisionComposition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT36 |
+| 3 | MD-3.7-CollisionRegularity | FAIL | A | 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。 | 已修待复审 | EAUDIT36 |
+| 3 | MD-3.7.1-HardCorePotential | FAIL | C | 原印≤接触也取∞独立忠实定义，并补K+U+U_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。 | 已修待复审 | EAUDIT37 |
 | 3 | MD-3.7.1-PrimitiveSplitting | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.7.1-PrimitiveOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT18 |
-| 3 | MD-3.7.1-ObstacleReflection | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT18 |
-| 3 | MD-3.7.1-PrimitiveDefect | FAIL | C | 仅小正h、单位接触点及初态趋近接触点的首次单碰撞物理分支；系数使用原书碰前P̄（含半kick），不再用初始p冒充；保留O(h²)余项。 | 已修待复审 | EAUDIT18 |
+| 3 | MD-3.7.1-ObstacleReflection | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT37 |
+| 3 | MD-3.7.1-PrimitiveDefect | FAIL | C | 仅小正h、单位接触点及初态趋近接触点的首次单碰撞物理分支；系数使用原书碰前P̄（含半kick），不再用初始p冒充；保留O(h²)余项。 | 已修待复审 | EAUDIT37 |
 | 3 | MD-3.7.1-CollisionDefectZero | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.7.1-EndImpactThirdOrderPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT18 |
 | 3 | MD-3.7.2-CollisionQuadraticPath | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.7.2-CollisionTimeRelation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT19 |
+| 3 | MD-3.7.2-CollisionTimeRelation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT38 |
 | 3 | MD-3.7.2-CollisionQuartic | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.7.2-CollisionalVerletRelation | FAIL | A | 保留给定tc/Rc的更新辅助；补实际粒子二次路径、正质量/半径、F=−∇U的对偶资格、不同粒子对的最早真实接触、唯一单碰撞及该接触面的质量加权弹性反射。Option.none明确无正根；严格tc<hmax及等号else照原印保留，不静默修改算法。 | 已修待复审 | EAUDIT19 |
+| 3 | MD-3.7.2-CollisionalVerletRelation | FAIL | A | 保留给定tc/Rc的更新辅助；补实际粒子二次路径、正质量/半径、F=−∇U的对偶资格、不同粒子对的最早真实接触、唯一单碰撞及该接触面的质量加权弹性反射。Option.none明确无正根；严格tc<hmax及等号else照原印保留，不静默修改算法。 | 已修待复审 | EAUDIT38 |
 | 3 | MD-3.7.2-CollisionalVerletOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT19 |
 | 3 | MD-3.7.3-PairForceDecoupling | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT20 |
 | 3 | MD-3.7.3-DecoupledOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT20 |
-| 3 | MD-3.7.3-ModifiedCollisionProjection | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT20 |
-| 3 | MD-3.7.1-FreeHardSphereHamiltonian | FAIL | C | 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。 | 已修待复审 | EAUDIT18 |
+| 3 | MD-3.7.3-ModifiedCollisionProjection | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT39 |
+| 3 | MD-3.7.1-FreeHardSphereHamiltonian | FAIL | C | 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。 | 已修待复审 | EAUDIT37 |
 | 4 | MD-4-LinearField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4-EulerFactor | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
 | 4 | MD-4-ScalarEulerStable | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |

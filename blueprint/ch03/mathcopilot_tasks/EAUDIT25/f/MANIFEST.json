@@ -1,0 +1,49 @@
+{
+  "eaudit": "EAUDIT25",
+  "source_id": "MD-3.3-LeadingModifiedExponential",
+  "input_sha256": {
+    "BATCH_EAUDIT25.md": "4e3e23a3764e98c43e77eb9a75149456854385488ff7bc230ad9571c844a9d2e",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT25f_materials": "1461855c538cd996495e95cf93899c78ac9d3c498aeee4b66fc2dbc087aa0242",
+    "EAUDIT25f_PAGES.pdf": "e646892c2787a0f1c7df6380f66364d4bc574671ab1efd248b7f754e43e67d99"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    127
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "649fdd50315461d5a9721b7852b95aa8821b119d6c16cbb3b3e3b447fb9fc623",
+  "source_block_sha256": "f425b5b89c8cbc260615c0355f784cfd6e0d29cb768eb78966f7dfd9fe76ff32",
+  "source_declarations": [
+    "leadingModifiedExponential"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "modifiedGenerator",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "af92c6f80ee2d81a630a85f2d022f93235bcab281edf7c100617c1a1e7581807"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalModifiedExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "55d41f49346f83361aed465cc6c4b440cc23a0193de48b95714a8a82a9be7896"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalOperatorExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "df5ff488932635200b6f774d1b89d132afee1211289904ed8d00ab209d015a49"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalZeroConstantExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "d26ff56eaaefb9e58c82a60840356f71541f9ae54b0e147f1c0c84d2134902ad"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT25_review.json",
+  "total_task_bytes": 71755
+}

@@ -1,0 +1,1349 @@
+⚠ [9027/9228] Replayed Blueprint.Ch02
+warning: Blueprint/Ch02.lean:110:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:118:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:146:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:167:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:182:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:191:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:202:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:216:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:233:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:262:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:272:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:336:0: automatically included section variable(s) unused in theorem `MD.Ch02.errorRecursion`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Blueprint/Ch02.lean:351:0: automatically included section variable(s) unused in theorem `MD.Ch02.errorBound`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Blueprint/Ch02.lean:364:0: automatically included section variable(s) unused in theorem `MD.Ch02.consistencyConvergence`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Blueprint/Ch02.lean:416:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:426:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:439:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:451:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:468:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:513:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:554:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:587:73: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch02.lean:622:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:647:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:683:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:692:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:706:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:713:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:727:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:745:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:769:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:803:67: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch02.lean:803:67: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch02.lean:809:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:850:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:862:73: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch02.lean:862:73: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch02.lean:899:60: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch02.lean:903:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:921:70: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch02.lean:923:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:976:57: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch02.lean:980:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1004:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1022:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch02.lean:1033:63: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch02.lean:1033:63: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch02.lean:1043:53: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch02.lean:1053:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1068:63: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch02.lean:1068:63: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch02.lean:1176:73: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch02.lean:1176:73: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch02.lean:1180:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1200:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1219:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1234:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1248:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1257:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1268:0: automatically included section variable(s) unused in theorem `MD.Ch02.conjugateIterates`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Blueprint/Ch02.lean:1271:54: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch02.lean:1274:0: automatically included section variable(s) unused in theorem `MD.Ch02.conjugateLimits`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: Blueprint/Ch02.lean:1297:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: Blueprint/Ch02.lean:1296:49: This simp argument is unused:
+  Function.comp_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [q, F, textbookPositionProjection, textbookSymplecticEuler, textbookMomentumKick, textbookPositionDrift]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch02.lean:1297:9: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch02.lean:1317:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1343:0: automatically included section variable(s) unused in theorem `MD.Ch02.processingIterates`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Blueprint/Ch02.lean:1347:67: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch02.lean:1369:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1397:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1403:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1416:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1430:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1450:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1467:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1486:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1511:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1525:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1534:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1559:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1565:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1575:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1593:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1603:8: declaration uses `sorry`
+warning: Blueprint/Ch02.lean:1624:8: declaration uses `sorry`
+ℹ [9037/9228] Replayed MolecularDynamics.Chapter06.LangevinCausalFlow
+info: MolecularDynamics/Chapter06/LangevinCausalFlow.lean:179:2: Try this:
+  [apply] abel_nf
+ℹ [9046/9228] Replayed MolecularDynamics.Chapter06.LangevinMomentumVariation
+info: MolecularDynamics/Chapter06/LangevinMomentumVariation.lean:76:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [9049/9228] Replayed Blueprint.Ch04
+warning: Blueprint/Ch04.lean:82:2: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch04.lean:87:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:113:63: This simp argument is unused:
+  Matrix.mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, dotProduct, vecHead, vecTail, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:113:89: This simp argument is unused:
+  vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, Matrix.mulVec, dotProduct, vecTail,
+    Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:113:98: This simp argument is unused:
+  vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [K, A, b, MolecularDynamics.Chapter04Review.verletMatrix, Matrix.mulVec, dotProduct, vecHead,
+    Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:160:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:166:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:185:4: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch04.lean:213:4: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch04.lean:288:56: This simp argument is unused:
+  vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecTail]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:288:64: This simp argument is unused:
+  vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecHead]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:290:56: This simp argument is unused:
+  vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecTail]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:290:64: This simp argument is unused:
+  vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct, Fin.sum_univ_two, vecHead]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:370:104: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch04.lean:412:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:453:64: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.impulseMatrix, MolecularDynamics.Chapter04Review.slowMatrix,
+    MolecularDynamics.Chapter04Review.fastMatrix, Matrix.trace, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:477:46: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mul_apply, Fin.sum_univ_two, smul_eq_mul, Nat.cast_add, Nat.cast_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:468:192: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch04.lean:468:192: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch04.lean:477:99: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch04.lean:481:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:489:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:496:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:542:10: This simp argument is unused:
+  Real.norm_eq_abs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [abs_pow, abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ))), hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:542:27: This simp argument is unused:
+  abs_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ))), hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:542:35: This simp argument is unused:
+  abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ)))
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_pow, hk0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:540:122: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch04.lean:563:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:617:73: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch04.lean:642:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:678:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch04.lean:731:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:796:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:829:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:838:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:849:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:861:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1064:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1081:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1101:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1142:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1167:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1182:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1254:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1435:135: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.dot, MolecularDynamics.Chapter04Review.outer,
+    MolecularDynamics.Chapter04Review.skewMatrix, Fin.sum_univ_three, pow_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:1440:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1539:48: This simp argument is unused:
+  Matrix.sub_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.dot, Matrix.smul_mulVec, Matrix.one_mulVec,
+    MolecularDynamics.Chapter04Review.outer, Matrix.mulVec, dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:1539:66: This simp argument is unused:
+  Matrix.smul_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.dot, Matrix.sub_mulVec, Matrix.one_mulVec,
+    MolecularDynamics.Chapter04Review.outer, Matrix.mulVec, dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:1539:85: This simp argument is unused:
+  Matrix.one_mulVec
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MolecularDynamics.Chapter04Review.dot, Matrix.sub_mulVec, Matrix.smul_mulVec,
+    MolecularDynamics.Chapter04Review.outer, Matrix.mulVec, dotProduct, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:1585:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1751:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1759:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1804:32: `ContinuousLinearMap.sum_apply` has been deprecated: Use `_root_.sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `_root_.sum_apply x`).
+warning: Blueprint/Ch04.lean:1804:62: `ContinuousLinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+warning: Blueprint/Ch04.lean:1804:32: `ContinuousLinearMap.sum_apply` has been deprecated: Use `_root_.sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `_root_.sum_apply x`).
+warning: Blueprint/Ch04.lean:1804:62: `ContinuousLinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+warning: Blueprint/Ch04.lean:1804:32: `ContinuousLinearMap.sum_apply` has been deprecated: Use `_root_.sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `_root_.sum_apply x`).
+warning: Blueprint/Ch04.lean:1804:62: `ContinuousLinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+warning: Blueprint/Ch04.lean:1804:32: This simp argument is unused:
+  ContinuousLinearMap.sum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [L, row, ContinuousLinearMap.smul_apply, ContinuousLinearMap.proj_apply, Fin.sum_univ_three,
+    Pi.single_apply, Matrix.mulVec, dotProduct, hs 1 0, hs 2 0, hs 2 1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:1804:62: This simp argument is unused:
+  ContinuousLinearMap.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [L, row, ContinuousLinearMap.sum_apply, ContinuousLinearMap.proj_apply, Fin.sum_univ_three,
+    Pi.single_apply, Matrix.mulVec, dotProduct, hs 1 0, hs 2 0, hs 2 1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:1805:56: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [L, row, ContinuousLinearMap.sum_apply, ContinuousLinearMap.smul_apply, ContinuousLinearMap.proj_apply,
+    Fin.sum_univ_three, Matrix.mulVec, dotProduct, hs 1 0, hs 2 0, hs 2 1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch04.lean:1842:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1853:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1919:8: declaration uses `sorry`
+warning: Blueprint/Ch04.lean:1927:8: declaration uses `sorry`
+ℹ [9094/9228] Replayed MolecularDynamics.Chapter01.TorusDensity
+info: MolecularDynamics/Chapter01/TorusDensity.lean:25:21: Try this:
+  [apply] abel_nf
+info: MolecularDynamics/Chapter01/TorusDensity.lean:68:21: Try this:
+  [apply] abel_nf
+⚠ [9121/9228] Replayed Blueprint.Ch05
+warning: Blueprint/Ch05.lean:48:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:56:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:89:72: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch05.lean:89:72: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch05.lean:105:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:149:0: Definition `MD.Ch05.borelSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+warning: Blueprint/Ch05.lean:329:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:352:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:428:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:449:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:458:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:468:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:484:73: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch05.lean:498:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:514:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:557:67: `SchwartzMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+warning: Blueprint/Ch05.lean:557:89: `SchwartzMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+warning: Blueprint/Ch05.lean:707:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:726:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:757:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:766:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:777:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:792:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:800:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:810:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:821:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:831:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:841:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:861:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:869:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:884:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:926:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:938:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1078:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1085:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1095:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1109:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1127:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1146:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1166:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1174:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1181:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1195:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1210:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1218:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1236:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1249:73: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch05.lean:1249:73: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch05.lean:1253:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1312:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Blueprint/Ch05.lean:1335:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1353:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: Blueprint/Ch05.lean:1403:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: Blueprint/Ch05.lean:1395:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch05.lean:1466:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1494:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Blueprint/Ch05.lean:1573:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Blueprint/Ch05.lean:1590:75: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch05.lean:1590:75: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch05.lean:1642:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1657:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1702:70: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch05.lean:1702:70: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch05.lean:1715:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1797:85: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch05.lean:1798:92: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch05.lean:1805:69: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch05.lean:1830:64: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch05.lean:1797:85: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch05.lean:1798:92: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch05.lean:1805:69: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch05.lean:1830:64: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch05.lean:1794:38: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch05.lean:1794:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch05.lean:1823:66: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch05.lean:1824:66: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch05.lean:1834:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1843:8: declaration uses `sorry`
+warning: Blueprint/Ch05.lean:1852:8: declaration uses `sorry`
+⚠ [9137/9228] Replayed Blueprint.Ch01
+warning: Blueprint/Ch01.lean:205:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:331:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:562:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:591:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:651:31: This simp argument is unused:
+  Pi.pow_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.div_apply, id_eq, Nat.cast_ofNat]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch01.lean:669:35: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch01.lean:672:35: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch01.lean:676:42: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch01.lean:653:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:669:35: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch01.lean:672:35: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch01.lean:676:42: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch01.lean:721:36: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:722:5: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:778:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:829:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:842:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:853:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:936:5: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:960:5: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:961:5: Variable name `hinit` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hinit
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:986:5: Variable name `hQ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:986:21: Variable name `hf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:987:5: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:998:5: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:999:5: Variable name `hQ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1000:5: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1000:52: Variable name `ht₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1001:27: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1002:5: Variable name `hpartial` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hpartial
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1016:5: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1016:40: Variable name `hQ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1017:5: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1017:52: Variable name `ht₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1018:5: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1018:36: Variable name `hf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1019:5: Variable name `hpartial` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hpartial
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1019:49: Variable name `hspeed` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hspeed
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1036:18: Variable name `hU` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hU
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1038:18: Variable name `hU` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hU
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1040:5: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1041:5: Variable name `ht₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1041:26: Variable name `hv₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hv₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1060:5: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1062:36: Variable name `hz` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hz
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1077:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1112:5: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1114:15: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1114:34: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1125:21: This simp argument is unused:
+  smul_eq_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [keplerForce, hq, norm_ne_zero_iff.mpr hq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch01.lean:1172:5: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1172:62: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1173:13: Variable name `hl` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hl
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1187:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1215:17: Variable name `hΩ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hΩ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1215:30: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1226:5: Variable name `hΩ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hΩ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1226:18: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1226:33: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1226:57: Variable name `hθ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hθ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1239:5: Variable name `hΩ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hΩ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1239:18: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1240:5: Variable name `hreg` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hreg
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1241:5: Variable name `hODE` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hODE
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1246:15: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1246:34: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1272:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1282:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1317:5: Variable name `hF` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hF
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1317:32: Variable name `heq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _heq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1335:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1361:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1445:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1504:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1529:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1578:52: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1578:66: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1584:52: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1584:66: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1578:56: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch01.lean:1584:56: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch01.lean:1652:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1663:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1675:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1694:5: Variable name `hu` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hu
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1694:25: Variable name `hv` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hv
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Blueprint/Ch01.lean:1736:8: This simp argument is unused:
+  ContinuousLinearMap.comp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [innerSL_apply_apply, inner_neg_right]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch01.lean:1736:61: This simp argument is unused:
+  inner_neg_right
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ContinuousLinearMap.comp_apply, innerSL_apply_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch01.lean:1787:73: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1787:91: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1788:73: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1788:91: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1789:73: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1789:91: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1849:24: This simp argument is unused:
+  sub_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_eq_add_neg, add_smul, neg_smul, add_assoc, add_comm, add_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch01.lean:1849:70: This simp argument is unused:
+  add_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_smul, sub_eq_add_neg, add_smul, neg_smul, add_comm, add_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Blueprint/Ch01.lean:1857:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1879:55: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1882:55: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1885:55: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch01.lean:1919:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1946:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1957:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:1981:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:2008:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:2019:8: declaration uses `sorry`
+warning: Blueprint/Ch01.lean:2038:8: declaration uses `sorry`
+ℹ [9175/9228] Replayed MolecularDynamics.Chapter06.LangevinMomentumFirstMean
+info: MolecularDynamics/Chapter06/LangevinMomentumFirstMean.lean:53:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9178/9228] Replayed MolecularDynamics.Chapter06.LangevinHamiltonianExpectedDrift
+info: MolecularDynamics/Chapter06/LangevinHamiltonianExpectedDrift.lean:410:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: MolecularDynamics/Chapter06/LangevinHamiltonianExpectedDrift.lean:425:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9184/9228] Replayed MolecularDynamics.Chapter06.LangevinHamiltonianPowerExpectedDrift
+info: MolecularDynamics/Chapter06/LangevinHamiltonianPowerExpectedDrift.lean:202:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: MolecularDynamics/Chapter06/LangevinHamiltonianPowerExpectedDrift.lean:223:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [9228/9228] Built Blueprint.Ch03 (32s)
+warning: Blueprint/Ch03.lean:22:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:77:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:164:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:176:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:200:65: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch03.lean:200:65: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch03.lean:219:58: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch03.lean:219:58: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch03.lean:224:58: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch03.lean:224:58: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch03.lean:251:75: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch03.lean:251:75: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch03.lean:319:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:329:73: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch03.lean:329:73: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch03.lean:331:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:346:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:359:75: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch03.lean:359:75: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch03.lean:378:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:387:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:397:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:409:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:424:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:434:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:453:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:475:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:507:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:514:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:541:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:555:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:561:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:567:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:664:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:704:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:716:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:734:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:748:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:765:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:785:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:804:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:832:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:856:57: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Blueprint/Ch03.lean:856:57: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Blueprint/Ch03.lean:858:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:883:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:899:0: automatically included section variable(s) unused in theorem `MD.Ch03.truncationRemainder`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Blueprint/Ch03.lean:930:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:982:57: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch03.lean:986:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:997:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1018:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1050:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1065:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1104:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1143:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1252:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1279:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1295:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1301:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1321:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1334:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1341:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1348:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1355:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1364:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1373:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1395:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1415:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1457:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1469:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1482:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1490:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1496:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1511:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1521:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1526:0: automatically included section variable(s) unused in theorem `MD.Ch03.conjugateIterates_homeomorph`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Blueprint/Ch03.lean:1529:54: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Blueprint/Ch03.lean:1542:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1550:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1615:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1657:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1674:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1697:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1781:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1809:8: declaration uses `sorry`
+warning: Blueprint/Ch03.lean:1837:8: declaration uses `sorry`
+info: Blueprint/Ch03.lean:1852:0: 'MD.Ch03.modifiedConstruction' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1853:0: 'MD.Ch03.oscillatorAdjointEuler' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1854:0: 'MD.Ch03.oscillatorShadow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1855:0: 'MD.Ch03.oscillatorEnergyFailure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1856:0: 'MD.Ch03.oscillatorShadowInvariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1857:0: 'MD.Ch03.shadowEllipses' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1858:0: 'MD.Ch03.eulerOscillatorGrowth' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1859:0: 'MD.Ch03.formalHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1860:0: 'MD.Ch03.formalHamiltonianField' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1861:0: 'MD.Ch03.textbookLieDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1862:0: 'MD.Ch03.observableDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1863:0: 'MD.Ch03.observableSecondDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1864:0: 'MD.Ch03.formalOperatorExponential' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1865:0: 'MD.Ch03.formalObservable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1866:0: 'MD.Ch03.lieTaylor' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1867:0: 'MD.Ch03.flowCoordinates' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1868:0: 'MD.Ch03.textbookPoissonBracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1869:0: 'MD.Ch03.poissonCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1870:0: 'MD.Ch03.poissonBilinearity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1871:0: 'MD.Ch03.poissonSkew' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1872:0: 'MD.Ch03.poissonSelf' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1873:0: 'MD.Ch03.poissonJacobi' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1874:0: 'MD.Ch03.hamiltonianObservableDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1875:0: 'MD.Ch03.hamiltonianLie_eq_poisson' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1876:0: 'MD.Ch03.hamiltonianCoordinateDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1877:0: 'MD.Ch03.hamiltonianLieAdditivity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1878:0: 'MD.Ch03.formalSplitting' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1879:0: 'MD.Ch03.formalExactSplit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1880:0: 'MD.Ch03.hamiltonianSplittingObservable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1881:0: 'MD.Ch03.hamiltonianExactObservable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1882:0: 'MD.Ch03.exactExponentialCubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1883:0: 'MD.Ch03.productExponentialCubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1884:0: 'MD.Ch03.differenceCommutator' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1885:0: 'MD.Ch03.differenceCommutator_coeff2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1886:0: 'MD.Ch03.differenceCommutator_hamiltonian' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1887:0: 'MD.Ch03.differenceCubic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1888:0: 'MD.Ch03.differenceCubic_coeff3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1889:0: 'MD.Ch03.hamiltonianCommutator' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1890:0: 'MD.Ch03.leadingShadowPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1891:0: 'MD.Ch03.leadingModifiedExponential' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1892:0: 'MD.Ch03.leadingShadowHamiltonian' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1893:0: 'MD.Ch03.bch4' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1894:0: 'MD.Ch03.bchHamiltonian3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1895:0: 'MD.Ch03.bchHamiltonianMatching' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1896:0: 'MD.Ch03.commutingFlows' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1897:0: 'MD.Ch03.symplecticEulerShadow3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1898:0: 'MD.Ch03.symplecticEulerShadowMatching' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1899:0: 'MD.Ch03.verletMaps' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1900:0: 'MD.Ch03.verletHamiltonianParts' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1901:0: 'MD.Ch03.verletHamiltonianParts_sum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1902:0: 'MD.Ch03.verletStructure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1903:0: 'MD.Ch03.verletModifiedH' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1904:0: 'MD.Ch03.verletModifiedMatching' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1905:0: 'MD.Ch03.verletModifiedMatching_general' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1906:0: 'MD.Ch03.modifiedEven' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1907:0: 'MD.Ch03.formalStrang' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1908:0: 'MD.Ch03.differentLogsCommute' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1909:0: 'MD.Ch03.strangInverse' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1910:0: 'MD.Ch03.strangCubic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1911:0: 'MD.Ch03.strangCubic_coeff3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1912:0: 'MD.Ch03.yoshidaCompose' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1913:0: 'MD.Ch03.yoshidaCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1914:0: 'MD.Ch03.yoshidaCancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1915:0: 'MD.Ch03.yoshidaUnique' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1916:0: 'MD.Ch03.yoshidaRaiseOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1917:0: 'MD.Ch03.yoshida4' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1918:0: 'MD.Ch03.yoshida4Structure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1919:0: 'MD.Ch03.generalSplitting' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1920:0: 'MD.Ch03.takahashiImada' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1921:0: 'MD.Ch03.potentialDoubleBracket' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1922:0: 'MD.Ch03.takahashiShadow2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1923:0: 'MD.Ch03.takahashiShadow2_matching' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1924:0: 'MD.Ch03.takahashiProcessor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1925:0: 'MD.Ch03.processorEnergyPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1926:0: 'MD.Ch03.takahashiEffectiveOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1927:0: 'MD.Ch03.formalField' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1928:0: 'MD.Ch03.leadingModifiedField' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1929:0: 'MD.Ch03.truncatedHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1930:0: 'MD.Ch03.truncationSmooth' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1931:0: 'MD.Ch03.truncationSmooth_C1' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1932:0: 'MD.Ch03.theorem31' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1933:0: 'MD.Ch03.compactLipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1934:0: 'MD.Ch03.truncatedFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1935:0: 'MD.Ch03.finiteMatchingConstruction' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1936:0: 'MD.Ch03.truncatedConservation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1937:0: 'MD.Ch03.energyTelescoping' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1938:0: 'MD.Ch03.energyTelescoping_complete' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1939:0: 'MD.Ch03.uniformTruncatedLipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1940:0: 'MD.Ch03.uniformTruncatedLipschitz_chain' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1941:0: 'MD.Ch03.truncationRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1942:0: 'MD.Ch03.physicalEnergyDrift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1943:0: 'MD.Ch03.physicalEnergyDrift_complete' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1944:0: 'MD.Ch03.polynomialEnergyRate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1945:0: 'MD.Ch03.stepCountPower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1946:0: 'MD.Ch03.arbitraryFiniteTruncation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1947:0: 'MD.Ch03.analyticBEA' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1948:0: 'MD.Ch03.optimalTruncation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1949:0: 'MD.Ch03.exponentialFlat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1950:0: 'MD.Ch03.scalarVerletShadow4' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1951:0: 'MD.Ch03.scalarVerletShadow4_matching' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1952:0: 'MD.Ch03.commutingEnergy' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1953:0: 'MD.Ch03.commutingEnergySymmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1954:0: 'MD.Ch03.energySymplecticNoGo' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1955:0: 'MD.Ch03.equalComponentFirstIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1956:0: 'MD.Ch03.equalEulerIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1957:0: 'MD.Ch03.linearEulerIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1958:0: 'MD.Ch03.linearEulerIntegral_continuous' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1959:0: 'MD.Ch03.linearRKIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1960:0: 'MD.Ch03.verletOscillatorEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1961:0: 'MD.Ch03.momentumProjection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1962:0: 'MD.Ch03.projectionConstraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1963:0: 'MD.Ch03.projectionFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1964:0: 'MD.Ch03.projectionEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1965:0: 'MD.Ch03.kineticZero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1966:0: 'MD.Ch03.energyProjectionRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1967:0: 'MD.Ch03.noHamiltonianAttractor' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1968:0: 'MD.Ch03.linearContinuousIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1969:0: 'MD.Ch03.hamiltonianFlowStructures' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1970:0: 'MD.Ch03.volumeNotSymplectic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1971:0: 'MD.Ch03.volumeNotSymplectic_symplectic_volume' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1972:0: 'MD.Ch03.linearInvolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1973:0: 'MD.Ch03.reversedField' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1974:0: 'MD.Ch03.momentumReversal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1975:0: 'MD.Ch03.mechanicalReversalPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1976:0: 'MD.Ch03.reversedTrajectoryPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1977:0: 'MD.Ch03.reversedTrajectoryPrinted_coordinateChange' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1978:0: 'MD.Ch03.reversedTrajectoryPrinted_timeChange' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1979:0: 'MD.Ch03.reversedTrajectory' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1980:0: 'MD.Ch03.flowReversal' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1981:0: 'MD.Ch03.flowReversalIdentity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1982:0: 'MD.Ch03.reversibleMethod' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1983:0: 'MD.Ch03.symmetricMethod' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1984:0: 'MD.Ch03.affineInvariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1985:0: 'MD.Ch03.symmetricAffineReversible' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1986:0: 'MD.Ch03.rkAffine' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1987:0: 'MD.Ch03.partitionedAffinePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1988:0: 'MD.Ch03.partitionedAffine' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1989:0: 'MD.Ch03.symplecticNotReversible' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1990:0: 'MD.Ch03.trapezoidalRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1991:0: 'MD.Ch03.trapezoidalProperties' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1992:0: 'MD.Ch03.hamiltonianSpectrum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1993:0: 'MD.Ch03.symplecticSpectrum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1994:0: 'MD.Ch03.symplecticSpectrum_linearHamiltonian' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1995:0: 'MD.Ch03.reversibleSpectrum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1996:0: 'MD.Ch03.conjugateIterates' depends on axioms: [sorryAx, Quot.sound]
+info: Blueprint/Ch03.lean:1997:0: 'MD.Ch03.conjugateIterates_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1998:0: 'MD.Ch03.mechanicalReversalCorrect' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:1999:0: 'MD.Ch03.conjugateOrderPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2000:0: 'MD.Ch03.reversibleVolumeFailure' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2001:0: 'MD.Ch03.hardCoreDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2002:0: 'MD.Ch03.elasticReflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2003:0: 'MD.Ch03.elasticEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2004:0: 'MD.Ch03.collisionComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2005:0: 'MD.Ch03.collisionRegularity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2006:0: 'MD.Ch03.hardCorePotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2007:0: 'MD.Ch03.hardSphereHamiltonianPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2008:0: 'MD.Ch03.hardCorePotential_contactAllowed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2009:0: 'MD.Ch03.primitiveSplitting' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2010:0: 'MD.Ch03.primitiveOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2011:0: 'MD.Ch03.obstacleReflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2012:0: 'MD.Ch03.primitiveDefect' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2013:0: 'MD.Ch03.collisionDefectZero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2014:0: 'MD.Ch03.endImpactThirdOrderPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2015:0: 'MD.Ch03.collisionQuadraticPath' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2016:0: 'MD.Ch03.collisionTimeRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2017:0: 'MD.Ch03.collisionQuartic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2018:0: 'MD.Ch03.collisionalVerletRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2019:0: 'MD.Ch03.particleQuadraticPath' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2020:0: 'MD.Ch03.particleVerlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2021:0: 'MD.Ch03.particleReflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2022:0: 'MD.Ch03.physicalCVARelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2023:0: 'MD.Ch03.collisionalVerletOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2024:0: 'MD.Ch03.pairForceDecoupling' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2025:0: 'MD.Ch03.decoupledOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2026:0: 'MD.Ch03.modifiedCollisionProjection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2027:0: 'MD.Ch03.freeHardSphereHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2028:0: 'MD.Ch03.freeHardSphereHamiltonian_ballistic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: Blueprint/Ch03.lean:2029:0: 'MD.Ch03.freeHardSphereHamiltonian_contactAllowed' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (9228 jobs).

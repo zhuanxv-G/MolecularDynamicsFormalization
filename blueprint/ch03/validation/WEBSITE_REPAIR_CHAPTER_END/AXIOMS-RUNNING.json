@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/CheckAxioms.lean"
+  ],
+  "input_sha256": "ce9c3b51420f3681e3ea795c808c50fa1d8299d89df979181d2c28d178e5a55a",
+  "parent_pid": 14480,
+  "parent_create_time": 1792039166.709374,
+  "compiler_pid": 19732,
+  "compiler_create_time": 1792039444.0039108,
+  "started_at": "2026-10-15T12:44:04.008487",
+  "status": "completed",
+  "exit_code": 0,
+  "completed_at": "2026-10-15T12:44:22.384253"
+}

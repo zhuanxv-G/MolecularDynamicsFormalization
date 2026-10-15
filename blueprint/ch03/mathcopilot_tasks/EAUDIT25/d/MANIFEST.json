@@ -1,0 +1,75 @@
+{
+  "eaudit": "EAUDIT25",
+  "source_id": "MD-3.3-DifferenceCommutator",
+  "input_sha256": {
+    "BATCH_EAUDIT25.md": "4e3e23a3764e98c43e77eb9a75149456854385488ff7bc230ad9571c844a9d2e",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT25d_materials": "0329bac6654c72cc451c3e6d94e650cf82efd0825481a2236bee38155470aba2",
+    "EAUDIT25d_PAGES.pdf": "395feb007672a81966a97b2db48bc4f8415074295cdefa107046c7e9f913fe86"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    126
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "35967894199c6c6ad61d3569e6cd6209f7d59694089ed0e409c61a9fda3bea70",
+  "source_block_sha256": "a521038b49530e9facf7e5acf6ac29693b04be2c68432ffabbc8b1a3700fabb8",
+  "source_declarations": [
+    "differenceCommutator",
+    "differenceCommutator_coeff2",
+    "differenceCommutator_hamiltonian"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinateMatrix",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "hamiltonianExactObservable",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "478ecf76e4e370869847ff4c21d85871039d86c3d794eeff582120927a39aeb3"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "hamiltonianSplittingObservable",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "605adc43ca64620e6dc292dba03fa773ec10edbf09a55dbc271f198f5aca3065"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalOperatorExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "df5ff488932635200b6f774d1b89d132afee1211289904ed8d00ab209d015a49"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "name": "textbookHamiltonianVectorField",
+      "file_sha256": "bc9f7688e08676874bd5c50502a5e27fa659e7ff10f116045a4605a42ccfa703",
+      "excerpt_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "textbookJ",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "textbookLieDerivative",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "568897e0d038d7a64bb00948ec5045c2014446c16bba7bc93488b691f9d2e415"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT25_review.json",
+  "total_task_bytes": 83626
+}

@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT31",
+  "source_id": "MD-3.5-LinearEulerIntegral",
+  "input_sha256": {
+    "BATCH_EAUDIT31.md": "c8707dc0a2dccbfd607c492fcc6a05360940f10f4e2ab09bbaf590d0aa192a3d",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT31a_materials": "32d7d259c18d149b1593ee55cca9e9aa8ee964bd919be877979cec29756ce7c9",
+    "EAUDIT31a_PAGES.pdf": "be5908cff0528a8ca50bd159f00e801d76fe1f180849fe032faf5182834983bd"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    145
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "bf8cb208c08bf4cba5963fe751328db0a510f19c502a37e67436a22f0d5c6bac",
+  "source_block_sha256": "27a655d593de44af6f52ee6cb6df5855704602a6ab722f7306a62a9ee73090a7",
+  "source_declarations": [
+    "linearEulerIntegral",
+    "linearEulerIntegral_continuous"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT31_review.json",
+  "total_task_bytes": 73637
+}

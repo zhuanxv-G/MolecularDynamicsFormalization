@@ -1,0 +1,89 @@
+{
+  "eaudit": "EAUDIT38",
+  "source_id": "MD-3.7.2-CollisionalVerletRelation",
+  "input_sha256": {
+    "BATCH_EAUDIT38.md": "679a9510a4014a07e6b06e80370b1f14680b988167d0e9d4ff61d477637ee375",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT38b_materials": "dd1b7fa4593bcf31c32c70df09ccef6ead0d18ee97c4d5335a95eb377008d190",
+    "EAUDIT38b_PAGES.pdf": "4ed01887f62b730fa407cd354c14d0dff8d6a5758a3904c70e1d7b64d8f64f2e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    157
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "2986efa56ab2967e1036d7846e7d1f92134c11884986d6026c0a5ac56a7c4909",
+  "source_block_sha256": "940fcfb78fdf24637485d088abede3d7422d4f77872f631d853e62ae7f993089",
+  "source_declarations": [
+    "collisionalVerletRelation",
+    "particleQuadraticPath",
+    "particleVerlet",
+    "particleReflection",
+    "physicalCVARelation"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Z",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "collisionalVerletRelation",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "d08e4b7e5a551a4f22bfb2dd2a2557da1837f578621de5cc298a309cf6b14fe0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "particleQuadraticPath",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "0159b13e45229c37a86c9b43d39986b891644e49c67d5a8020e4f25a8fec26ed"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "particleReflection",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "e3f8187cceca840170c23f21be2396384655545966af900b2bffff282a3610ab"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "particleVerlet",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "c7a6fb71d600e974e9dc9ed6a9afd6de2dcb0df40d93d33fadf88c0cb88317ec"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "physicalCVARelation",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "aaaaef9b8315dc24befe7b93187a6f9b65338f8a93104ed2afc6fc43d66d76b4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "verlet",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "401060069967ba034fd1337efdba9f5ddda707775b16934659f1d861ecc3c84b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT38_review.json",
+  "total_task_bytes": 99583
+}

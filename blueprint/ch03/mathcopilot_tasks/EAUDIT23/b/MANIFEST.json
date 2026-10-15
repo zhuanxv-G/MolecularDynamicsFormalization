@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT23",
+  "source_id": "MD-3.1-ShadowInvariant",
+  "input_sha256": {
+    "BATCH_EAUDIT23.md": "9e8fed0972595f5d3c04782f264561017a03bc4fe9aa7858bb3ab505af93055c",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT23b_materials": "09287486a2a3293bcdd3ae764d494f1f6df83efff288278e6afb9aaf546fad78",
+    "EAUDIT23b_PAGES.pdf": "6b082dfb6825750647404820b258599d53849f09123b09801a640cefb58f586a"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    121
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "10b6a1be116906f383f45dd1efe94d09e76fbade0cb1222379ddf1c50c0d69bd",
+  "source_block_sha256": "e8f06c862e699df4144752ea03b0047e10b9b2bcb38d3086b86654442c288861",
+  "source_declarations": [
+    "oscillatorShadowInvariant"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "oscillatorAdjointEuler",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "0c1bb261811e2f1dde9f82a5327bfb54d18c34d773330c0b0c991d8e2e97d994"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "oscillatorShadow",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "55e1272f00a4662019171c20d999abbc2a18c3c083849be650f11214838f897a"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT23_review.json",
+  "total_task_bytes": 99679
+}

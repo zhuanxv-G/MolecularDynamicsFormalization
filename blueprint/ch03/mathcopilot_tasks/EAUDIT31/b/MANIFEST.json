@@ -1,0 +1,67 @@
+{
+  "eaudit": "EAUDIT31",
+  "source_id": "MD-3.5-VerletOscillatorEnergy",
+  "input_sha256": {
+    "BATCH_EAUDIT31.md": "c8707dc0a2dccbfd607c492fcc6a05360940f10f4e2ab09bbaf590d0aa192a3d",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT31b_materials": "c83e12a666e609546549754ce46b224662dfbe0a17ef560275884c7a2d4b9dbb",
+    "EAUDIT31b_PAGES.pdf": "be5908cff0528a8ca50bd159f00e801d76fe1f180849fe032faf5182834983bd"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    145
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "3a4895c9a7823532f140b8058adfcbeb61e5ceaaff9cc2d198096a1eb5c05fae",
+  "source_block_sha256": "ba4eaa8da110b3cce53172ee0059871ba477a30f5833c6f88ae645f297499ff6",
+  "source_declarations": [
+    "verletOscillatorEnergy"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Z",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "mechanicalEnergy",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "079c953a9952f55770c6040393e028f1fbddfa00eafad3f1cd6d61f26ea03b25"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "name": "oneStepIterate",
+      "file_sha256": "c9bc53727962c962a9420dbfa305ede46e90b38fdded8952b400381f474e3385",
+      "excerpt_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "quadraticKinetic",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "0f8e339d29f2ef435e91de9746aaa1f557b7ccba5e8413ba893e513ace830464"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "verlet",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "401060069967ba034fd1337efdba9f5ddda707775b16934659f1d861ecc3c84b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT31_review.json",
+  "total_task_bytes": 79259
+}

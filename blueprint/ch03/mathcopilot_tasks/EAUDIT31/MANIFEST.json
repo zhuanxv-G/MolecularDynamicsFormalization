@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT31",
+  "input_sha256": {
+    "BATCH_EAUDIT31.md": "c8707dc0a2dccbfd607c492fcc6a05360940f10f4e2ab09bbaf590d0aa192a3d",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT31a",
+      "source_id": "MD-3.5-LinearEulerIntegral",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT31/a",
+      "total_bytes": 73637,
+      "manifest_sha256": "1898fbd084709432c5d8ffb876ef2a451c61aeec48434fdf7c787af5f36e7797"
+    },
+    {
+      "subtask": "EAUDIT31b",
+      "source_id": "MD-3.5-VerletOscillatorEnergy",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT31/b",
+      "total_bytes": 79259,
+      "manifest_sha256": "c1f4fc40ffed8bcbd404cc933ef52f2f333d28a04ef61fc6ee55e1c15c91bb53"
+    },
+    {
+      "subtask": "EAUDIT31c",
+      "source_id": "MD-3.5-MomentumProjection",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT31/c",
+      "total_bytes": 73624,
+      "manifest_sha256": "29c97886ab50809868c9e530d8d83d5c2370c352977548ed489054fdad9e4fa7"
+    },
+    {
+      "subtask": "EAUDIT31d",
+      "source_id": "MD-3.5-ProjectionConstraint",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT31/d",
+      "total_bytes": 72562,
+      "manifest_sha256": "59fb7a0f18920312a0fcb87a1fac7e4b4bd27b08a6532617330398aa08a3f77c"
+    },
+    {
+      "subtask": "EAUDIT31e",
+      "source_id": "MD-3.5-ProjectionFactor",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT31/e",
+      "total_bytes": 82452,
+      "manifest_sha256": "1563a7041921c6239b3b709da3f643935c1254edbd076608b4f3102edda529d4"
+    },
+    {
+      "subtask": "EAUDIT31f",
+      "source_id": "MD-3.5-NoHamiltonianAttractor",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT31/f",
+      "total_bytes": 155625,
+      "manifest_sha256": "5d6eaf73c9b1eed82ed2714c4f98d301192e79353581fdd2a2cd0cd776a5aed7"
+    }
+  ]
+}

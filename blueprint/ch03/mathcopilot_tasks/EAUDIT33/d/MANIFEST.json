@@ -1,0 +1,55 @@
+{
+  "eaudit": "EAUDIT33",
+  "source_id": "MD-3.6.1-MechanicalReversalCorrect",
+  "input_sha256": {
+    "BATCH_EAUDIT33.md": "2658f5ccb6cf1e070c4cec1a6cb0cdbb0e0e5a6d9347b3e42fe41338179d9fe0",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT33d_materials": "b5263f4079816d05da269fcbe8521986d0657f4d03c7970167739018f6d9e683",
+    "EAUDIT33d_PAGES.pdf": "7e9ab365213aaf33a08f4b69c3815f4cdf568190c5bf0a73f2730ac97119f712"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    150
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a8c2600cd5a6bc0b0b445b5d2834a66dd38800c5dd86bc2795c7ed8674530497",
+  "source_block_sha256": "fa448f87ea3e9bc2d21dd6454bfdce5c09a47a703fafc6570746986eaa105497",
+  "source_declarations": [
+    "mechanicalReversalCorrect"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Z",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "mechanicalField",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "dbb61cd8c7949b5c83d59fd94b8cc8a8460d03206b8458ce4ea72f7a673b37ef"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "momentumReversal",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "c5ad7c9b8c323b15d92e604bfa15d702a80d08c4d5f747736ed92fbbe19ea791"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT33_review.json",
+  "total_task_bytes": 89698
+}

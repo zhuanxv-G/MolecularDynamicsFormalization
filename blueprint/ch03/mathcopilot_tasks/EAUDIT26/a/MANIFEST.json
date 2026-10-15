@@ -1,0 +1,68 @@
+{
+  "eaudit": "EAUDIT26",
+  "source_id": "MD-3.3.2-VerletHamiltonianParts",
+  "input_sha256": {
+    "BATCH_EAUDIT26.md": "afb080365405c39ba38c615083deae135ad66cb7df294cccb072bb2c2a22707d",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT26a_materials": "fcc9f6bc157eb94bbc77c1f72c9cfa2dccab613eabdbdd82c710629c72776563",
+    "EAUDIT26a_PAGES.pdf": "65305217553b5037bc25936741b0e6aa1d297671e5712511231850201cc177c4"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    129
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "493bf955938c8b5c6c49fbb5fd1937a4b0c68ca013ce396428ae64074de3ce72",
+  "source_block_sha256": "31e18862b151a8bcb023e69b0a141a140f0046ec2874606abb173b80045c6330",
+  "source_declarations": [
+    "verletHamiltonianParts",
+    "verletHamiltonianParts_sum"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Z",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "positiveMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "b9acc89b85e9b87ac122f258b0bd23cb20efd6ecc4ec0894b39658f630a85d21"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "quadraticKinetic",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "0f8e339d29f2ef435e91de9746aaa1f557b7ccba5e8413ba893e513ace830464"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "unpack",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "9ffee7aec4b9f2b6e25656cb97a2da4749fc7875deb07b5a494f6804b4d77f48"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "verletHamiltonianParts",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "e8fb42cc712c0e26b77b997def6c834f78dcf5964a119ba2d43ccfdae4ebe0fc"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT26_review.json",
+  "total_task_bytes": 93662
+}

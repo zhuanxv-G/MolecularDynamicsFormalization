@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT29",
+  "input_sha256": {
+    "BATCH_EAUDIT29.md": "4ddad64f98223bbeaac8581e6947275c5895de7afd75dce0839206511d84c71c",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT29a",
+      "source_id": "MD-3.4-TruncatedHamiltonian",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT29/a",
+      "total_bytes": 113685,
+      "manifest_sha256": "95f29bb6765c64ebffeafbe4f63f66572db900233b977dfa4f457f2e9c5174f6"
+    },
+    {
+      "subtask": "EAUDIT29b",
+      "source_id": "MD-3.4-TruncatedFlow",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT29/b",
+      "total_bytes": 96810,
+      "manifest_sha256": "568492c0120d9ba0b8f45f03964dc50e0e59e888b555b3e49f9af4b1a8cbc7f2"
+    },
+    {
+      "subtask": "EAUDIT29c",
+      "source_id": "MD-3.4-TruncatedConservation",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT29/c",
+      "total_bytes": 95496,
+      "manifest_sha256": "947e74e97b53b25a61579e4d1ffefce6211abace1d009d2cbc05b319bbf9e900"
+    },
+    {
+      "subtask": "EAUDIT29d",
+      "source_id": "MD-3.4-EnergyTelescoping",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT29/d",
+      "total_bytes": 95256,
+      "manifest_sha256": "32d20160a52e050e9dd791a5db9e4835328a0cf887fbf73b897dbaa2f4ea100d"
+    },
+    {
+      "subtask": "EAUDIT29e",
+      "source_id": "MD-3.4-UniformTruncatedLipschitz",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT29/e",
+      "total_bytes": 96314,
+      "manifest_sha256": "c6185b2b889e94b12ac17af27fa87ec1825f08c97bab7577609512d8132f7394"
+    },
+    {
+      "subtask": "EAUDIT29f",
+      "source_id": "MD-3.4-TruncationRemainder",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT29/f",
+      "total_bytes": 93977,
+      "manifest_sha256": "ff1bdf51053ed6c4b5745027334ec201407cafca2a5627e485283e628b88f8ed"
+    },
+    {
+      "subtask": "EAUDIT29g",
+      "source_id": "MD-3.4-PhysicalEnergyDrift",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT29/g",
+      "total_bytes": 99100,
+      "manifest_sha256": "b429eb4d0332322a6f5af915ec3a5de1f88e031fc8c32eddc8dbad4214c7d15e"
+    },
+    {
+      "subtask": "EAUDIT29h",
+      "source_id": "MD-3.4-StepCountPower",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT29/h",
+      "total_bytes": 90202,
+      "manifest_sha256": "c2deb5931db7bc80c3aaf47f98788e0dd40048e6b3a1e717da9d117162283074"
+    }
+  ]
+}

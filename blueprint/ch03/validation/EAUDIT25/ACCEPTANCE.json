@@ -1,0 +1,66 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT25",
+  "section": "3.3",
+  "source_ids": [
+    "MD-3.3-HamiltonianLieAdditivity",
+    "MD-3.3-FormalSplitting",
+    "MD-3.3-ExactExponentialCubic",
+    "MD-3.3-DifferenceCommutator",
+    "MD-3.3-DifferenceCubic",
+    "MD-3.3-LeadingModifiedExponential"
+  ],
+  "reaudit_ids": [
+    "MD-3.3-HamiltonianLieAdditivity",
+    "MD-3.3-FormalSplitting",
+    "MD-3.3-ExactExponentialCubic",
+    "MD-3.3-DifferenceCommutator",
+    "MD-3.3-DifferenceCubic",
+    "MD-3.3-LeadingModifiedExponential"
+  ],
+  "human_ids": [],
+  "lean_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+  "source_sha256": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.3-HamiltonianLieAdditivity",
+      "prior_eaudit": "EAUDIT06",
+      "acceptance": "blueprint/ch03/validation/EAUDIT06/ACCEPTANCE.json",
+      "sha256": "02aa37664cbc220bc9b235aa55b6b0210390cf3d3a54f0e7beedb1a9c2818e17"
+    },
+    {
+      "source_id": "MD-3.3-FormalSplitting",
+      "prior_eaudit": "EAUDIT06",
+      "acceptance": "blueprint/ch03/validation/EAUDIT06/ACCEPTANCE.json",
+      "sha256": "02aa37664cbc220bc9b235aa55b6b0210390cf3d3a54f0e7beedb1a9c2818e17"
+    },
+    {
+      "source_id": "MD-3.3-ExactExponentialCubic",
+      "prior_eaudit": "EAUDIT06",
+      "acceptance": "blueprint/ch03/validation/EAUDIT06/ACCEPTANCE.json",
+      "sha256": "02aa37664cbc220bc9b235aa55b6b0210390cf3d3a54f0e7beedb1a9c2818e17"
+    },
+    {
+      "source_id": "MD-3.3-DifferenceCommutator",
+      "prior_eaudit": "EAUDIT06",
+      "acceptance": "blueprint/ch03/validation/EAUDIT06/ACCEPTANCE.json",
+      "sha256": "02aa37664cbc220bc9b235aa55b6b0210390cf3d3a54f0e7beedb1a9c2818e17"
+    },
+    {
+      "source_id": "MD-3.3-DifferenceCubic",
+      "prior_eaudit": "EAUDIT06",
+      "acceptance": "blueprint/ch03/validation/EAUDIT06/ACCEPTANCE.json",
+      "sha256": "02aa37664cbc220bc9b235aa55b6b0210390cf3d3a54f0e7beedb1a9c2818e17"
+    },
+    {
+      "source_id": "MD-3.3-LeadingModifiedExponential",
+      "prior_eaudit": "EAUDIT06",
+      "acceptance": "blueprint/ch03/validation/EAUDIT06/ACCEPTANCE.json",
+      "sha256": "02aa37664cbc220bc9b235aa55b6b0210390cf3d3a54f0e7beedb1a9c2818e17"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT25/INDEX.md"
+}

@@ -42,6 +42,9 @@ def finish(ch):
             p=subprocess.run(['pwsh','-NoProfile','-File','scripts/check.ps1','-ReportDirectory',str(report),'-PauseChapter06'],cwd=ROOT,stdout=log,stderr=subprocess.STDOUT)
         assert p.returncode==0,'Chapter full check failed; inspect saved report'
     full=read(report/'CHECK_REPORT.json');assert full['machine_check_status']=='passed' and full['paused_chapter06']
+    from website_repair_delivery import refresh
+    deliveries=refresh(ch)
+    web=read(base/'website_audit.json')
     dump(receipt,dict(chapter=ch,time=datetime.now().isoformat(),lean_sha256=sha(ROOT/f'Blueprint/Ch{ch:02}.lean'),
       source_sha256=sha(base/f'ch{ch:02}_source.json'),axiom_decl_count=len(names),full_check_report=str(report.relative_to(ROOT)/'CHECK_REPORT.json'),
       full_check_report_sha256=sha(report/'CHECK_REPORT.json'),chapter06='paused, Blueprint.Ch06 not compiled; batch27 unverified',website='awaiting user submission',new_proofs='none'))
@@ -58,7 +61,9 @@ def finish(ch):
     stage([f'blueprint/ch{ch:02}/validation/WEBSITE_REPAIR_CHAPTER_END',str(receipt.relative_to(ROOT)).replace('\\','/'),
       f'blueprint/ch{ch:02}/local_audit.json',f'blueprint/ch{ch:02}/WEBSITE_SUMMARY.json',f'blueprint/ch{ch:02}/mathcopilot_tasks/EAUDIT_INDEX.md',
       f'docs/review/CH{ch:02}_BLUEPRINT.zh-CN.md','docs/handoff/REPAIR_QUEUE.md','docs/handoff/CURRENT_STATE.zh-CN.md',
-      'docs/handoff/WORK_LOG.zh-CN.md','scripts/check.ps1','scripts/website_repair_finish.py','scripts/repair_queue.py'])
+      'docs/handoff/WORK_LOG.zh-CN.md','scripts/check.ps1','scripts/website_repair_finish.py','scripts/repair_queue.py',
+      'AGENTS.md','scripts/website_repair_delivery.py',f'blueprint/ch{ch:02}/website_audit.json',f'blueprint/ch{ch:02}/EAUDIT_REGISTRY.json']+
+      [p for e in deliveries for p in (f'blueprint/ch{ch:02}/validation/{e}',f'blueprint/ch{ch:02}/mathcopilot_tasks/{e}')])
     subprocess.run(['git','commit','-m',f'ch{ch:02}: accept website repairs after chapter full check; Ch06 remains paused'],cwd=ROOT,check=True)
     subprocess.run(['git','push'],cwd=ROOT,check=True)
     print('CHAPTER_ACCEPTED',ch,dict(counts),flush=True)

@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT39",
+  "source_id": "MD-3.7.3-ModifiedCollisionProjection",
+  "input_sha256": {
+    "BATCH_EAUDIT39.md": "af1aebfde457adc88f32264249a698e9849175873ddb3c150c20c19ccd773704",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT39a_materials": "9bb14e5dbdfc7449688523303bc4121c3f03423cfd28c5e78d12c5567ebdbb0d",
+    "EAUDIT39a_PAGES.pdf": "b4d02eb4ece989733cfda9c4f4acef4fa237544d82c63deba99a41810a0c6e0a"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    158
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "e3d8ce5d79bdc5b1735b8b9c6a316d8eccb3b776786c6c4eaa58a710aece2915",
+  "source_block_sha256": "1fbc3c7ff340666a5b40aec745cd1b1d9e447e7f33cf7a71c288b190173e94d8",
+  "source_declarations": [
+    "modifiedCollisionProjection"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "modifiedCollisionProjection",
+      "file_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+      "excerpt_sha256": "1fbc3c7ff340666a5b40aec745cd1b1d9e447e7f33cf7a71c288b190173e94d8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ModifiedHamiltonianBounds.lean",
+      "name": "textbookTruncatedHamiltonian",
+      "file_sha256": "a4bc3858fbd3e46ff382425fe9d10db2c805ac01dd27f09199a4aefab2cb54d0",
+      "excerpt_sha256": "ae4576437497e7b2a8dde76a400e7f755c31380752cb4ac2abe3b94f50ad8979"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT39_review.json",
+  "total_task_bytes": 87712
+}

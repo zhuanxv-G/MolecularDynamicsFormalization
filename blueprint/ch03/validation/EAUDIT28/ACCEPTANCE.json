@@ -1,0 +1,34 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT28",
+  "section": "3.3.4",
+  "source_ids": [
+    "MD-3.3.4-TakahashiPotential",
+    "MD-3.3.4-TakahashiShadow"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.4-TakahashiPotential",
+    "MD-3.3.4-TakahashiShadow"
+  ],
+  "human_ids": [],
+  "lean_sha256": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+  "source_sha256": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.3.4-TakahashiPotential",
+      "prior_eaudit": "EAUDIT09",
+      "acceptance": "blueprint/ch03/validation/EAUDIT09/ACCEPTANCE.json",
+      "sha256": "7d134b8d3f6c6c749aea6817e649d4336a982d11c86ca53205551d6c7830d4e4"
+    },
+    {
+      "source_id": "MD-3.3.4-TakahashiShadow",
+      "prior_eaudit": "EAUDIT09",
+      "acceptance": "blueprint/ch03/validation/EAUDIT09/ACCEPTANCE.json",
+      "sha256": "7d134b8d3f6c6c749aea6817e649d4336a982d11c86ca53205551d6c7830d4e4"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT28/INDEX.md"
+}

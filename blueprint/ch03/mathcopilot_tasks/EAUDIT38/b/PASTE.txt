@@ -1,0 +1,186 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.7.2-CollisionalVerletRelation；原PDF页映射=[157]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT38_review.json，对象含batch=EAUDIT38、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT38.md": "679a9510a4014a07e6b06e80370b1f14680b988167d0e9d4ff61d477637ee375",
+  "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+  "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+  "EAUDIT38b_materials": "dd1b7fa4593bcf31c32c70df09ccef6ead0d18ee97c4d5335a95eb377008d190",
+  "EAUDIT38b_PAGES.pdf": "4ed01887f62b730fa407cd354c14d0dff8d6a5758a3904c70e1d7b64d8f64f2e"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.7.2-CollisionalVerletRelation",
+  "kind": "definition",
+  "label": null,
+  "section": "3.7.2",
+  "printed_page": "135",
+  "pdf_page": "157",
+  "statement_latex": "Collisional Verlet Algorithm (CVA) [Single Step]\n[computes $h$ (the timestep) and $(Q,P)$ given a starting point $(q,p)$]\nCalculate $\\tau_c$ the time of next collision from the Verlet paths (quadratics) of (3.18) using collision conditions (3.19).\nIf $\\tau_c<h_{\\max}$, then\n\\[h:=\\tau_c,\\qquad(Q,P):=R_c\\mathcal G_h^{\\mathrm{Verlet}}(q,p)\\]\nelse\n\\[h:=h_{\\max},\\qquad(Q,P):=\\mathcal G_h^{\\mathrm{Verlet}}(q,p).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "实际方法关系保持严格tc<hmax；tc=hmax时原算法不反射，随后顺序/资格疑点保留。"
+  ],
+  "issues": [
+    {
+      "code": "NEEDS_HUMAN",
+      "detail": "tc=hmax边界时原伪代码不反射，之后的二阶陈述排除此边界，不能冒充一般结果。"
+    }
+  ],
+  "lean_decl": "MD.Ch03.collisionalVerletRelation",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "tc>0,hmax>0明示；tc必须是下一接触时刻，求根实现不是数学定理。",
+    "[EXTRA] 保留给定tc/Rc的更新辅助；补实际粒子二次路径、正质量/半径、F=−∇U的对偶资格、不同粒子对的最早真实接触、唯一单碰撞及该接触面的质量加权弹性反射。Option.none明确无正根；严格tc<hmax及等号else照原印保留，不静默修改算法。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT19_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:32:51.271067",
+      "before_sha256": "c056ea91c0fea84656aaf3a74684b747279cb90d7af814de0601ce26d8a2de6c",
+      "after_sha256": "5e40a7efccc458a4e33b62a1189fc87e8865918ee2458509bfce5791e14acaa5",
+      "changed_fields": [],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH25_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (Rc : Z n → Z n)
+    (tc hmax h : ℝ) (z w : Z n) : Prop :=
+  0 < tc ∧ 0 < hmax ∧ h=min tc hmax ∧
+    w=if tc<hmax then Rc (verlet m F h z) else verlet m F h z
+
+def particleQuadraticPath {N d : ℕ} (m : Fin N → ℝ)
+    (F : (Fin N → Position d) → Fin N → Position d)
+    (z : (Fin N → Position d) × (Fin N → Position d)) (t : ℝ) : Fin N → Position d :=
+  fun i ↦ z.1 i+(t/m i) • z.2 i+(t^2/(2*m i)) • F z.1 i
+
+def particleVerlet {N d : ℕ} (m : Fin N → ℝ)
+    (F : (Fin N → Position d) → Fin N → Position d)
+    (h : ℝ) (z : (Fin N → Position d) × (Fin N → Position d)) :=
+  let P := z.2+(h/2) • F z.1
+  let Q := fun i ↦ z.1 i+(h/m i) • P i
+  (Q,P+(h/2) • F Q)
+
+def particleReflection {N d : ℕ} (m : Fin N → ℝ) (i j : Fin N)
+    (z : (Fin N → Position d) × (Fin N → Position d)) :=
+  let u : Fin N → Position d := fun a ↦ if a=i then z.1 i-z.1 j
+    else if a=j then z.1 j-z.1 i else 0
+  let α := -2*(∑ a, inner ℝ (u a) (z.2 a)/m a)/(∑ a, ‖u a‖^2/m a)
+  (z.1,z.2+α • u)
+
+def physicalCVARelation {N d : ℕ} (m σ : Fin N → ℝ)
+    (U : (Fin N → Position d) → ℝ)
+    (F : (Fin N → Position d) → Fin N → Position d)
+    (event : Option (ℝ × (Fin N × Fin N))) (hmax h : ℝ)
+    (z w : (Fin N → Position d) × (Fin N → Position d)) : Prop :=
+  (∀ i, 0 < m i ∧ 0 < σ i) ∧ Differentiable ℝ U ∧
+  (∀ q ξ, fderiv ℝ U q ξ = -∑ i, inner ℝ (F q i) (ξ i)) ∧
+  (∀ i j, i ≠ j → σ i+σ j ≤ ‖z.1 i-z.1 j‖) ∧ 0 < hmax ∧
+  match event with
+  | none =>
+    (∀ t > 0, ∀ i j, i ≠ j → σ i+σ j <
+      ‖particleQuadraticPath m F z t i-particleQuadraticPath m F z t j‖) ∧
+    h=hmax ∧ w=particleVerlet m F h z
+  | some (tc,(i,j)) =>
+    0 < tc ∧ i ≠ j ∧
+    ‖particleQuadraticPath m F z tc i-particleQuadraticPath m F z tc j‖=σ i+σ j ∧
+    (∀ t ∈ Ioo 0 tc, ∀ a b, a ≠ b → σ a+σ b <
+      ‖particleQuadraticPath m F z t a-particleQuadraticPath m F z t b‖) ∧
+    (∀ a b, a ≠ b → (a,b) ≠ (i,j) → (a,b) ≠ (j,i) →
+      σ a+σ b < ‖particleQuadraticPath m F z tc a-particleQuadraticPath m F z tc b‖) ∧
+    h=min tc hmax ∧ w=if tc<hmax then particleReflection m i j (particleVerlet m F h z)
+      else particleVerlet m F h z
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MD.Ch03.collisionalVerletRelation
+```lean
+def collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (Rc : Z n → Z n)
+    (tc hmax h : ℝ) (z w : Z n) : Prop :=
+  0 < tc ∧ 0 < hmax ∧ h=min tc hmax ∧
+    w=if tc<hmax then Rc (verlet m F h z) else verlet m F h z
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.invMass
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+### 实际依赖 MD.Ch03.particleQuadraticPath
+```lean
+def particleQuadraticPath {N d : ℕ} (m : Fin N → ℝ)
+    (F : (Fin N → Position d) → Fin N → Position d)
+    (z : (Fin N → Position d) × (Fin N → Position d)) (t : ℝ) : Fin N → Position d :=
+  fun i ↦ z.1 i+(t/m i) • z.2 i+(t^2/(2*m i)) • F z.1 i
+```
+### 实际依赖 MD.Ch03.particleReflection
+```lean
+def particleReflection {N d : ℕ} (m : Fin N → ℝ) (i j : Fin N)
+    (z : (Fin N → Position d) × (Fin N → Position d)) :=
+  let u : Fin N → Position d := fun a ↦ if a=i then z.1 i-z.1 j
+    else if a=j then z.1 j-z.1 i else 0
+  let α := -2*(∑ a, inner ℝ (u a) (z.2 a)/m a)/(∑ a, ‖u a‖^2/m a)
+  (z.1,z.2+α • u)
+```
+### 实际依赖 MD.Ch03.particleVerlet
+```lean
+def particleVerlet {N d : ℕ} (m : Fin N → ℝ)
+    (F : (Fin N → Position d) → Fin N → Position d)
+    (h : ℝ) (z : (Fin N → Position d) × (Fin N → Position d)) :=
+  let P := z.2+(h/2) • F z.1
+  let Q := fun i ↦ z.1 i+(h/m i) • P i
+  (Q,P+(h/2) • F Q)
+```
+### 实际依赖 MD.Ch03.physicalCVARelation
+```lean
+def physicalCVARelation {N d : ℕ} (m σ : Fin N → ℝ)
+    (U : (Fin N → Position d) → ℝ)
+    (F : (Fin N → Position d) → Fin N → Position d)
+    (event : Option (ℝ × (Fin N × Fin N))) (hmax h : ℝ)
+    (z w : (Fin N → Position d) × (Fin N → Position d)) : Prop :=
+  (∀ i, 0 < m i ∧ 0 < σ i) ∧ Differentiable ℝ U ∧
+  (∀ q ξ, fderiv ℝ U q ξ = -∑ i, inner ℝ (F q i) (ξ i)) ∧
+  (∀ i j, i ≠ j → σ i+σ j ≤ ‖z.1 i-z.1 j‖) ∧ 0 < hmax ∧
+  match event with
+  | none =>
+    (∀ t > 0, ∀ i j, i ≠ j → σ i+σ j <
+      ‖particleQuadraticPath m F z t i-particleQuadraticPath m F z t j‖) ∧
+    h=hmax ∧ w=particleVerlet m F h z
+  | some (tc,(i,j)) =>
+    0 < tc ∧ i ≠ j ∧
+    ‖particleQuadraticPath m F z tc i-particleQuadraticPath m F z tc j‖=σ i+σ j ∧
+    (∀ t ∈ Ioo 0 tc, ∀ a b, a ≠ b → σ a+σ b <
+      ‖particleQuadraticPath m F z t a-particleQuadraticPath m F z t b‖) ∧
+    (∀ a b, a ≠ b → (a,b) ≠ (i,j) → (a,b) ≠ (j,i) →
+      σ a+σ b < ‖particleQuadraticPath m F z tc a-particleQuadraticPath m F z tc b‖) ∧
+    h=min tc hmax ∧ w=if tc<hmax then particleReflection m i j (particleVerlet m F h z)
+      else particleVerlet m F h z
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.verlet
+```lean
+def verlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z n) : Z n :=
+  let qnew := z.1 + h • invMass m z.2 + (h^2/2) • invMass m (F z.1)
+  (qnew, z.2 + (h/2) • (F z.1 + F qnew))
+```

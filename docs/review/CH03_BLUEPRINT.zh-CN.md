@@ -108,7 +108,7 @@
 | MD-3.6-HamiltonianFlowStructures | 127–128/149–150 | PASS | 待复审 / EAUDIT13 | incomplete |
 | MD-3.6-VolumeNotSymplectic | 128/150 | PASS | 待复审 / EAUDIT13 | incomplete |
 | MD-3.6.1-LinearInvolution | 128/150 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
-| MD-3.6.1-ReversedFieldPrinted | 128/150 | NEEDS_HUMAN | 网站PASS（绑定版本 433a13ca6407） | incomplete |
+| MD-3.6.1-ReversedFieldPrinted | 128/150 | NEEDS_HUMAN | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.6.1-MomentumReversal | 128/150 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.6.1-MechanicalReversal | 128/150 | FAIL | 待复审 / EAUDIT14 | incomplete |
 | MD-3.6.1-ReversedTrajectoryPrinted | 128–129/150–151 | FAIL | 待复审 / EAUDIT14 | incomplete |
@@ -326,7 +326,7 @@ def oscillatorAdjointEuler (Ω h : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=
 
 位置：[Blueprint/Ch03.lean:28](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:28>)（`MD.Ch03.oscillatorAdjointEuler`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -371,7 +371,7 @@ Ch03.lean:35 将 z.1=q、z.2=p 代入后，实际定义是 (p²+hΩ²pq+Ω²q²)
 
 位置：[Blueprint/Ch03.lean:33](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:33>)（`MD.Ch03.oscillatorShadow`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -588,7 +588,7 @@ theorem eulerOscillatorGrowth :
 
 位置：[Blueprint/Ch03.lean:93](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:93>)（`MD.Ch03.eulerOscillatorGrowth`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -750,7 +750,7 @@ PASS。已展开 Ch03.lean 中 MD.Ch03.textbookLieDerivative，以及 Ch03_deps.
 
 位置：[Blueprint/Ch03.lean:133](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:133>)（`MD.Ch03.textbookLieDerivative`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -852,7 +852,7 @@ PASS。已展开 MD.Ch03.textbookLieDerivative 和 Ch03_deps.txt 的 -- FILE: Mo
 
 位置：[Blueprint/Ch03.lean:145](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:145>)（`MD.Ch03.observableSecondDerivative`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -900,7 +900,7 @@ PASS。Ch03.lean 实际给出 R 的约束 [Ring R] [Algebra ℝ R]，并将 form
 
 位置：[Blueprint/Ch03.lean:153](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:153>)（`MD.Ch03.formalOperatorExponential`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -954,7 +954,7 @@ PASS，适用范围为本条明示的形式系数定义。已展开 Ch03_deps.tx
 
 位置：[Blueprint/Ch03.lean:157](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:157>)（`MD.Ch03.formalObservable`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1442,7 +1442,7 @@ theorem hamiltonianObservableDerivative
 
 位置：[Blueprint/Ch03.lean:238](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:238>)（`MD.Ch03.hamiltonianObservableDerivative`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1545,7 +1545,7 @@ theorem hamiltonianCoordinateDerivative
 
 位置：[Blueprint/Ch03.lean:254](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:254>)（`MD.Ch03.hamiltonianCoordinateDerivative`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1774,7 +1774,7 @@ theorem productExponentialCubic (A B : R) :
 
 位置：[Blueprint/Ch03.lean:305](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:305>)（`MD.Ch03.productExponentialCubic`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1946,7 +1946,7 @@ theorem hamiltonianCommutator
 
 位置：[Blueprint/Ch03.lean:363](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:363>)（`MD.Ch03.hamiltonianCommutator`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2003,7 +2003,7 @@ theorem leadingShadowPrinted :
 
 位置：[Blueprint/Ch03.lean:378](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:378>)（`MD.Ch03.leadingShadowPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2174,7 +2174,7 @@ theorem bch4 :
 
 位置：[Blueprint/Ch03.lean:409](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:409>)（`MD.Ch03.bch4`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2227,7 +2227,7 @@ def bchHamiltonian3 {n : ℕ} (A B : SymplecticCoordinates n → ℝ) (h : ℝ) 
 
 位置：[Blueprint/Ch03.lean:415](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:415>)（`MD.Ch03.bchHamiltonian3`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2338,7 +2338,7 @@ theorem commutingFlows :
 
 位置：[Blueprint/Ch03.lean:434](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:434>)（`MD.Ch03.commutingFlows`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2388,7 +2388,7 @@ PASS（有限截断定义的语义，不是无限级数收敛或匹配定理的�
 
 位置：[Blueprint/Ch03.lean:446](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:446>)（`MD.Ch03.symplecticEulerShadow3`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2438,7 +2438,7 @@ PASS（在明示[EXTRA]条件下对原文形式展开的有限阶局部解释）
 
 位置：[Blueprint/Ch03.lean:453](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:453>)（`MD.Ch03.symplecticEulerShadowMatching`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2493,7 +2493,7 @@ def verletMaps {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) :
 
 位置：[Blueprint/Ch03.lean:462](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:462>)（`MD.Ch03.verletMaps`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2604,7 +2604,7 @@ theorem verletStructure :
 
 位置：[Blueprint/Ch03.lean:483](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:483>)（`MD.Ch03.verletStructure`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2926,7 +2926,7 @@ theorem strangInverse :
 
 位置：[Blueprint/Ch03.lean:561](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:561>)（`MD.Ch03.strangInverse`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3031,7 +3031,7 @@ Ch03.lean:467的定义展开为G(a h)(G(b h)(G(a h)z))，实际执行次序a,b,a
 
 位置：[Blueprint/Ch03.lean:589](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:589>)（`MD.Ch03.yoshidaCompose`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3076,7 +3076,7 @@ Ch03_deps.txt:3593实际定义yoshidaRoot s=Real.rpow 2 (1/((2*s+1:ℕ):ℝ))，
 
 位置：[Blueprint/Ch03.lean:592](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:592>)（`MD.Ch03.yoshidaCoefficients`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3123,7 +3123,7 @@ theorem yoshidaCancellation :
 
 位置：[Blueprint/Ch03.lean:596](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:596>)（`MD.Ch03.yoshidaCancellation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3172,7 +3172,7 @@ theorem yoshidaUnique :
 
 位置：[Blueprint/Ch03.lean:624](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:624>)（`MD.Ch03.yoshidaUnique`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3392,7 +3392,7 @@ Ch03_deps.txt:3597–3598和Ch03.lean对应定义的foldr展开为T(α₁h)∘U(
 
 位置：[Blueprint/Ch03.lean:693](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:693>)（`MD.Ch03.generalSplitting`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3492,7 +3492,7 @@ theorem potentialDoubleBracket :
 
 位置：[Blueprint/Ch03.lean:704](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:704>)（`MD.Ch03.potentialDoubleBracket`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3607,7 +3607,7 @@ def takahashiProcessor {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ)
 
 位置：[Blueprint/Ch03.lean:728](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:728>)（`MD.Ch03.takahashiProcessor`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3778,7 +3778,7 @@ def formalField {n : ℕ} (f : Q n → Q n) (fj : ℕ → Q n → Q n) (r : ℕ)
 
 位置：[Blueprint/Ch03.lean:759](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:759>)（`MD.Ch03.formalField`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3834,7 +3834,7 @@ actualFlow规定η>0、每个D内初值Φ 0 z=z、双向区间内留D并满足�
 
 位置：[Blueprint/Ch03.lean:765](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:765>)（`MD.Ch03.leadingModifiedField`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4081,7 +4081,7 @@ D开放、B紧凸且包含于D、H在D为C¹；结论给真实存在的正L及B�
 
 位置：[Blueprint/Ch03.lean:819](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:819>)（`MD.Ch03.compactLipschitz`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4182,7 +4182,7 @@ theorem finiteMatchingConstruction :
 
 位置：[Blueprint/Ch03.lean:832](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:832>)（`MD.Ch03.finiteMatchingConstruction`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4542,7 +4542,7 @@ theorem polynomialEnergyRate
 
 位置：[Blueprint/Ch03.lean:955](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:955>)（`MD.Ch03.polynomialEnergyRate`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4648,7 +4648,7 @@ theorem arbitraryFiniteTruncation :
 
 位置：[Blueprint/Ch03.lean:986](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:986>)（`MD.Ch03.arbitraryFiniteTruncation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4823,7 +4823,7 @@ theorem exponentialFlat :
 
 位置：[Blueprint/Ch03.lean:1026](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1026>)（`MD.Ch03.exponentialFlat`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5002,7 +5002,7 @@ K=H̃_h，前提在D逐点{H,K}=0；实际括号为DH(J∇K)，反对称得到{K
 
 位置：[Blueprint/Ch03.lean:1074](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1074>)（`MD.Ch03.commutingEnergySymmetry`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5119,7 +5119,7 @@ theorem equalComponentFirstIntegral :
 
 位置：[Blueprint/Ch03.lean:1117](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1117>)（`MD.Ch03.equalComponentFirstIntegral`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5168,7 +5168,7 @@ theorem equalEulerIntegral :
 
 位置：[Blueprint/Ch03.lean:1132](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1132>)（`MD.Ch03.equalEulerIntegral`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5275,7 +5275,7 @@ theorem linearRKIntegral :
 
 位置：[Blueprint/Ch03.lean:1152](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1152>)（`MD.Ch03.linearRKIntegral`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5511,7 +5511,7 @@ theorem projectionEnergy :
 
 位置：[Blueprint/Ch03.lean:1237](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1237>)（`MD.Ch03.projectionEnergy`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5559,7 +5559,7 @@ theorem kineticZero :
 
 位置：[Blueprint/Ch03.lean:1243](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1243>)（`MD.Ch03.kineticZero`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5607,7 +5607,7 @@ def energyProjectionRelation {n : ℕ} (H : Z n → ℝ) (E : ℝ) (z : Z n) : P
 
 位置：[Blueprint/Ch03.lean:1248](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1248>)（`MD.Ch03.energyProjectionRelation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5713,7 +5713,7 @@ theorem linearContinuousIntegral :
 
 位置：[Blueprint/Ch03.lean:1263](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1263>)（`MD.Ch03.linearContinuousIntegral`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5879,7 +5879,7 @@ def linearInvolution {n : ℕ} (R : Q n →L[ℝ] Q n) : Prop := R.comp R = Cont
 
 位置：[Blueprint/Ch03.lean:1308](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1308>)（`MD.Ch03.linearInvolution`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5923,11 +5923,11 @@ def reversedField {n : ℕ} (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch03.lean:1312](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1312>)（`MD.Ch03.reversedField`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5972,7 +5972,7 @@ def momentumReversal {n : ℕ} (z : Z n) : Z n := (z.1,-z.2)
 
 位置：[Blueprint/Ch03.lean:1316](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1316>)（`MD.Ch03.momentumReversal`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -6297,7 +6297,7 @@ Ch03.lean 和依赖 Chapter03/ReviewDefinitions.lean 中 reversibleMethod 均逐
 
 位置：[Blueprint/Ch03.lean:1381](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1381>)（`MD.Ch03.reversibleMethod`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -6669,7 +6669,7 @@ theorem symplecticNotReversible :
 
 位置：[Blueprint/Ch03.lean:1457](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1457>)（`MD.Ch03.symplecticNotReversible`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -6718,7 +6718,7 @@ def trapezoidalRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop
 
 位置：[Blueprint/Ch03.lean:1465](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1465>)（`MD.Ch03.trapezoidalRelation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -6771,7 +6771,7 @@ theorem trapezoidalProperties :
 
 位置：[Blueprint/Ch03.lean:1469](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1469>)（`MD.Ch03.trapezoidalProperties`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -6825,7 +6825,7 @@ theorem hamiltonianSpectrum :
 
 位置：[Blueprint/Ch03.lean:1482](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1482>)（`MD.Ch03.hamiltonianSpectrum`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -6933,7 +6933,7 @@ complexEigenvalue 展开为实矩阵复化后的非零特征向量方程。IsUni
 
 位置：[Blueprint/Ch03.lean:1511](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1511>)（`MD.Ch03.reversibleSpectrum`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -7241,7 +7241,7 @@ def elasticReflection {n : ℕ} (m : Fin n → ℝ) (u p : Position n) : Positio
 
 位置：[Blueprint/Ch03.lean:1562](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1562>)（`MD.Ch03.elasticReflection`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -7289,7 +7289,7 @@ theorem elasticEnergy :
 
 位置：[Blueprint/Ch03.lean:1566](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1566>)（`MD.Ch03.elasticEnergy`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -7519,7 +7519,7 @@ def primitiveSplitting {n : ℕ} (U : Q n → ℝ)
 
 位置：[Blueprint/Ch03.lean:1650](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1650>)（`MD.Ch03.primitiveSplitting`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -7738,7 +7738,7 @@ Ch03_deps.txt:4496–4497及Ch03.lean:1399–1402的结论为(h−2tc)(a/b)c=0�
 
 位置：[Blueprint/Ch03.lean:1691](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1691>)（`MD.Ch03.collisionDefectZero`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -7851,7 +7851,7 @@ def collisionQuadraticPath {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (z : 
 
 位置：[Blueprint/Ch03.lean:1712](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1712>)（`MD.Ch03.collisionQuadraticPath`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -7945,7 +7945,7 @@ theorem collisionQuartic :
 
 位置：[Blueprint/Ch03.lean:1720](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch03.lean:1720>)（`MD.Ch03.collisionQuartic`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 

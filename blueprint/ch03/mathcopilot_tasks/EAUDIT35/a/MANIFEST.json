@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT35",
+  "source_id": "MD-3.6.3-SymplecticSpectrum",
+  "input_sha256": {
+    "BATCH_EAUDIT35.md": "887bec1193be230efc516dc36c63de079ebf8f10210250300915c202e305fd25",
+    "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
+    "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14",
+    "EAUDIT35a_materials": "fb17850ee25ed17636ad6fec2fdfa5069ac38fed0368b3281216b3c29dd2c2dc",
+    "EAUDIT35a_PAGES.pdf": "202e2cf8cf4af19698031e8737bf08812f4d6d7a89bd16941b878d880fb84c5f"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    153
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "7f1a1633971f6418618ebc1f4ada3a63a7776f61b4295c371e2d23fb97ec6497",
+  "source_block_sha256": "40bfb077e7ebfa572b8c31027167f1f11bd4d674276b6d887f04849bc7e6e898",
+  "source_declarations": [
+    "symplecticSpectrum",
+    "symplecticSpectrum_linearHamiltonian"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinateMatrix",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "complexEigenvalue",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "9ac1e24ae868a52eaf034a6e8872075356d25737115d890e8d3852f984e9d31d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "textbookJ",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT35_review.json",
+  "total_task_bytes": 84873
+}
