@@ -313,5 +313,25 @@
     "category": "A",
     "handling": "保留原除法闭式，频率非零落实为证明参数；U全域经典可微为更新点导数的充分[EXTRA]，未擅加Ω=0延拓。",
     "section": "2.4.3"
+  },
+  "MD-2.4.4-ImplicitLocal": {
+    "category": "B",
+    "handling": "补g_h(U)⊆V，连同原左右逆完整表达局部微分同胚；不声称全域可解。",
+    "section": "2.4.4"
+  },
+  "MD-2.4.4-BackwardEulerSolve": {
+    "category": "B",
+    "handling": "保留残差并补零点与隐式更新等价、给定G满足的映射方程；不假设任意f,h都有唯一解。",
+    "section": "2.4.4"
+  },
+  "MD-2.4.4-Newton": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "2.4.4"
+  },
+  "MD-2.4.4-NewtonQuadratic": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "2.4.4"
   }
 }

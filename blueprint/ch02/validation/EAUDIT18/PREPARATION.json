@@ -1,0 +1,29 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT18",
+  "section": "2.4.4",
+  "source_ids": [
+    "MD-2.4.4-BackwardEulerSolve",
+    "MD-2.4.4-ImplicitLocal",
+    "MD-2.4.4-Newton",
+    "MD-2.4.4-NewtonQuadratic"
+  ],
+  "reaudit_ids": [
+    "MD-2.4.4-ImplicitLocal",
+    "MD-2.4.4-BackwardEulerSolve",
+    "MD-2.4.4-Newton",
+    "MD-2.4.4-NewtonQuadratic"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "ecf0a1a7ab955f36237089109c589c23f597c5cad6babcdc95044c0c66db2f2b",
+  "lean_sha256": "2947ce247280ce606c75c9c9a9a99d95ec396e15f1d09266ac465027cfca9f61",
+  "source_sha256": "2a3124cfeece221ce57b9a6dca6caa21188704f76895db97e9bfed91d4a0617a",
+  "pages": [
+    108,
+    109
+  ],
+  "prior_proof_blocks": {
+    "MD-2.4.4-ImplicitLocal": "theorem implicitLocal : ∀ n (g : ℝ → Q n → Q n) x\n    (A : Q n ≃L[ℝ] Q n), ContDiff ℝ ∞ (Function.uncurry g) →\n    HasFDerivAt (g 0) A.toContinuousLinearMap x →\n    ∃ δ > 0, ∀ h : ℝ, |h| < δ → ∃ U V : Set (Q n),\n      IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ g h x ∈ V ∧\n      ∃ inv : Q n → Q n, ContDiffOn ℝ ∞ inv V ∧\n        (∃ K ≥ 0, ∀ y ∈ V, ‖inv y‖ ≤ K) ∧\n        (∀ y ∈ V, inv y ∈ U ∧ g h (inv y)=y) ∧\n        (∀ y ∈ U, inv (g h y)=y) := by\n  sorry",
+    "MD-2.4.4-BackwardEulerSolve": "def backwardEulerResidual (f : E → E) (h : ℝ) (z w : E) : E := w-z-h • f w"
+  }
+}

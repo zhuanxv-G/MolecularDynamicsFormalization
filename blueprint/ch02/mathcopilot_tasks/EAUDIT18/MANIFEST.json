@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT18",
+  "input_sha256": {
+    "BATCH_EAUDIT18.md": "14ddd1c6f1623de9ec8ee66ef1ae4d47b8b630872b6948e1d5556c17226424aa",
+    "Blueprint/Ch02.lean": "2947ce247280ce606c75c9c9a9a99d95ec396e15f1d09266ac465027cfca9f61",
+    "blueprint/ch02/ch02_source.json": "2a3124cfeece221ce57b9a6dca6caa21188704f76895db97e9bfed91d4a0617a"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT18a",
+      "source_id": "MD-2.4.4-ImplicitLocal",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT18/a",
+      "total_bytes": 91925,
+      "manifest_sha256": "d572b1fe7e032cadbaf75309c414d40d6d86e5b55547c3d9a497c407f7bbae85"
+    },
+    {
+      "subtask": "EAUDIT18b",
+      "source_id": "MD-2.4.4-BackwardEulerSolve",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT18/b",
+      "total_bytes": 91811,
+      "manifest_sha256": "bac29eae620d31beea79565cb33a3b5f05c1edfb7624f2914c903eee41821e5e"
+    },
+    {
+      "subtask": "EAUDIT18c",
+      "source_id": "MD-2.4.4-Newton",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT18/c",
+      "total_bytes": 98635,
+      "manifest_sha256": "1e6fc51b8f34cccf8485b8d8219a13f6dddefe358edd1894b31a04fa0fd65c1d"
+    },
+    {
+      "subtask": "EAUDIT18d",
+      "source_id": "MD-2.4.4-NewtonQuadratic",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT18/d",
+      "total_bytes": 82780,
+      "manifest_sha256": "dae5c7d05ce8ab9839bca65489a9650c0cc029841e41d359a99904d7fa451f9e"
+    }
+  ]
+}

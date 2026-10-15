@@ -4291,17 +4291,17 @@
     "MD-2.4.4-ImplicitLocal": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.implicitLocal",
       "verdict": "PASS",
       "explanation": "步长量词、局部唯一双逆、连续/光滑和有界四类结论保留；没有把足够小步长的可逆性本身作假设。",
-      "signature_sha256": "31ab493f1e53cbe621f52b41dc1901bd8e41326a50976a575851726eb4e33fd1",
-      "block_sha256": "bc8e899f0f70e351e89b57a3ae70438d5b08f868eee0634aac7b234e01494994",
+      "signature_sha256": "24f293fcd42b1624ed6d8f26ff7f4ddb4eb38add0bbb3ad3a6fea3bdc8a785fb",
+      "block_sha256": "614864b5ea2373dc0f2957d60db0c94c4b224a970bd45b1e55ae937c7b25359f",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4319,22 +4319,24 @@
       "proof_attempts": 0,
       "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT18/axioms.log",
+      "compiled": true
     },
     "MD-2.4.4-BackwardEulerSolve": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch02.backwardEulerResidual",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "981366fe0ab214d362e3b9074de486e3b4bd4fcd4de4db7c25334297500a5a78",
-      "block_sha256": "981366fe0ab214d362e3b9074de486e3b4bd4fcd4de4db7c25334297500a5a78",
-      "direct_placeholder": false,
+      "signature_sha256": "540c839eca6f544821099c3c87dec3c268e07e30c2c0758b89d9dd8baab2766a",
+      "block_sha256": "540c839eca6f544821099c3c87dec3c268e07e30c2c0758b89d9dd8baab2766a",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -4350,16 +4352,17 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT18/axioms.log",
+      "compiled": true
     },
     "MD-2.4.4-Newton": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch02.newtonPrinted",
       "verdict": "NEEDS_HUMAN",
       "explanation": "字面双输入更新与标准Newton不同，待裁定索引；定义不证明收敛。",
@@ -4382,15 +4385,16 @@
       "proof_attempts": 0,
       "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT18/axioms.log",
+      "compiled": true
     },
     "MD-2.4.4-NewtonQuadratic": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.newtonQuadratic",
@@ -4415,7 +4419,8 @@
       "proof_attempts": 0,
       "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT18/axioms.log",
+      "compiled": true
     },
     "MD-2.4.4-FrozenNewton": {
       "checked": true,

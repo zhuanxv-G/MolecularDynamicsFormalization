@@ -1214,20 +1214,29 @@ def bp_harmonicAnharmonic (Ω : ℝ) (_hΩ : Ω ≠ 0) (U : ℝ → ℝ) (_hU : 
 
 /-- source_id: MD-2.4.4-ImplicitLocal · unnumbered_claim · §2.4.4 · 印刷p.86 / PDFp.108
 [EXTRA] [EXTRA]g依赖真实步长h；联合C∞，零步实际导数为连续线性同构。
-[EXTRA] [EXTRA]结论为充分小步长的局部逆；缩小有界邻域，不宣称全域有界逆。 -/
+[EXTRA] [EXTRA]结论为充分小步长的局部逆；缩小有界邻域，不宣称全域有界逆。 
+[EXTRA] 补g_h(U)⊆V，连同原左右逆完整表达局部微分同胚；不声称全域可解。 -/
 theorem implicitLocal : ∀ n (g : ℝ → Q n → Q n) x
     (A : Q n ≃L[ℝ] Q n), ContDiff ℝ ∞ (Function.uncurry g) →
     HasFDerivAt (g 0) A.toContinuousLinearMap x →
     ∃ δ > 0, ∀ h : ℝ, |h| < δ → ∃ U V : Set (Q n),
-      IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ g h x ∈ V ∧
+      IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ g h x ∈ V ∧ MapsTo (g h) U V ∧
       ∃ inv : Q n → Q n, ContDiffOn ℝ ∞ inv V ∧
         (∃ K ≥ 0, ∀ y ∈ V, ‖inv y‖ ≤ K) ∧
         (∀ y ∈ V, inv y ∈ U ∧ g h (inv y)=y) ∧
         (∀ y ∈ U, inv (g h y)=y) := by
   sorry
 
-/-- source_id: MD-2.4.4-BackwardEulerSolve · Example 2.6 · §2.4.4 · 印刷p.86 / PDFp.108 -/
+/-- source_id: MD-2.4.4-BackwardEulerSolve · Example 2.6 · §2.4.4 · 印刷p.86 / PDFp.108 
+[EXTRA] 保留残差并补零点与隐式更新等价、给定G满足的映射方程；不假设任意f,h都有唯一解。 -/
 def backwardEulerResidual (f : E → E) (h : ℝ) (z w : E) : E := w-z-h • f w
+
+theorem backwardEulerResidual_zero_iff (f : E → E) (h : ℝ) (z w : E) :
+    backwardEulerResidual f h z w = 0 ↔ w = z + h • f w := by
+  sorry
+
+def backwardEulerMapRelation (f : E → E) (h : ℝ) (G : E → E) : Prop :=
+  ∀ z, G z = z + h • f (G z)
 
 /-- source_id: MD-2.4.4-Newton · definition · §2.4.4 · 印刷p.86–87 / PDFp.108–109
 [ERRATUM?] 原文混用zₙ⁽ᵏ⁾与zₙ₊₁⁽ᵏ⁾；保留两个不同输入，不静默改成相同迭代点。映射可逆也不保证任意近似Jacobian非奇异。 -/

@@ -12470,7 +12470,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT18",
+    "repair": {
+      "eaudit": "EAUDIT18",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT18/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT18.md": "14ddd1c6f1623de9ec8ee66ef1ae4d47b8b630872b6948e1d5556c17226424aa",
+        "Blueprint/Ch02.lean": "2947ce247280ce606c75c9c9a9a99d95ec396e15f1d09266ac465027cfca9f61",
+        "blueprint/ch02/ch02_source.json": "2a3124cfeece221ce57b9a6dca6caa21188704f76895db97e9bfed91d4a0617a"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.4-BackwardEulerSolve",
@@ -12587,7 +12599,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT18",
+    "repair": {
+      "eaudit": "EAUDIT18",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT18/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT18.md": "14ddd1c6f1623de9ec8ee66ef1ae4d47b8b630872b6948e1d5556c17226424aa",
+        "Blueprint/Ch02.lean": "2947ce247280ce606c75c9c9a9a99d95ec396e15f1d09266ac465027cfca9f61",
+        "blueprint/ch02/ch02_source.json": "2a3124cfeece221ce57b9a6dca6caa21188704f76895db97e9bfed91d4a0617a"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.4-Newton",
@@ -12702,7 +12726,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT18",
+    "repair": {
+      "eaudit": "EAUDIT18",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT18/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT18.md": "14ddd1c6f1623de9ec8ee66ef1ae4d47b8b630872b6948e1d5556c17226424aa",
+        "Blueprint/Ch02.lean": "2947ce247280ce606c75c9c9a9a99d95ec396e15f1d09266ac465027cfca9f61",
+        "blueprint/ch02/ch02_source.json": "2a3124cfeece221ce57b9a6dca6caa21188704f76895db97e9bfed91d4a0617a"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.4-NewtonQuadratic",
@@ -12821,7 +12857,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT18",
+    "repair": {
+      "eaudit": "EAUDIT18",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT18/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT18.md": "14ddd1c6f1623de9ec8ee66ef1ae4d47b8b630872b6948e1d5556c17226424aa",
+        "Blueprint/Ch02.lean": "2947ce247280ce606c75c9c9a9a99d95ec396e15f1d09266ac465027cfca9f61",
+        "blueprint/ch02/ch02_source.json": "2a3124cfeece221ce57b9a6dca6caa21188704f76895db97e9bfed91d4a0617a"
+      }
+    }
   },
   {
     "source_id": "MD-2.4.4-FrozenNewton",

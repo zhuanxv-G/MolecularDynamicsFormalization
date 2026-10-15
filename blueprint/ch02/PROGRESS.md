@@ -129,10 +129,10 @@
 | MD-2.4.2-CompositionSymplectic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT16 | existing_bridge / checked+documented priors |
 | MD-2.4.2-CompositionOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT16（原返回FAIL保留） | placeholder / incomplete；组合局部误差分拆、h/2与原流半步群性质的BigO常数合并。 |
 | MD-2.4.3-HarmonicSplit | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
-| MD-2.4.4-ImplicitLocal | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；参数化光滑逆函数定理、连续可逆导数邻域及局部有界光滑逆理论。 |
-| MD-2.4.4-BackwardEulerSolve | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.4.4-Newton | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / incomplete |
-| MD-2.4.4-NewtonQuadratic | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；定量Newton–Kantorovich局部定理、邻域导数逆有界与二阶余项。 |
+| MD-2.4.4-ImplicitLocal | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | placeholder / incomplete；参数化光滑逆函数定理、连续可逆导数邻域及局部有界光滑逆理论。 |
+| MD-2.4.4-BackwardEulerSolve | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | definition / self-contained |
+| MD-2.4.4-Newton | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT18 | definition / incomplete |
+| MD-2.4.4-NewtonQuadratic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | placeholder / incomplete；定量Newton–Kantorovich局部定理、邻域导数逆有界与二阶余项。 |
 | MD-2.4.4-FrozenNewton | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；沿凸球积分/均值范数界、保持邻域与迭代几何界。 |
 | MD-2.4.5-Conjugacy | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.4.5-ConjugateIterates | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
@@ -441,3 +441,5 @@ EAUDIT15 §2.4.1：1条落盘，单文件与1项公理通过；未写新证明�
 EAUDIT16 §2.4.2：2条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT17 §2.4.3：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT18 §2.4.4：4条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。

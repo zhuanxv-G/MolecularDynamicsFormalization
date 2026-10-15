@@ -1,0 +1,33 @@
+{
+  "eaudit": "EAUDIT18",
+  "source_id": "MD-2.4.4-BackwardEulerSolve",
+  "input_sha256": {
+    "BATCH_EAUDIT18.md": "14ddd1c6f1623de9ec8ee66ef1ae4d47b8b630872b6948e1d5556c17226424aa",
+    "Blueprint/Ch02.lean": "2947ce247280ce606c75c9c9a9a99d95ec396e15f1d09266ac465027cfca9f61",
+    "blueprint/ch02/ch02_source.json": "2a3124cfeece221ce57b9a6dca6caa21188704f76895db97e9bfed91d4a0617a",
+    "EAUDIT18b_materials": "c9e2b270069eb8a0e37cb995eac0e8796cdac1b807ff91163d3200991a1c6e76",
+    "EAUDIT18b_PAGES.pdf": "925eaa6464ecbb360491978944ae4f1e49ab66101001da0984467ebb26732223"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    108
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "b397cadedb2ce0f2f6c102baaa99fce2d12a9fa7991ddf9b9223d9510e63bba7",
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "backwardEulerMapRelation",
+      "file_sha256": "2947ce247280ce606c75c9c9a9a99d95ec396e15f1d09266ac465027cfca9f61",
+      "excerpt_sha256": "131d4f0f876634d0d77413261794246ec9a859fdde8a26bcd7ff7256575a84f5"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "backwardEulerResidual",
+      "file_sha256": "2947ce247280ce606c75c9c9a9a99d95ec396e15f1d09266ac465027cfca9f61",
+      "excerpt_sha256": "981366fe0ab214d362e3b9074de486e3b4bd4fcd4de4db7c25334297500a5a78"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT18_review.json",
+  "total_task_bytes": 91811
+}
