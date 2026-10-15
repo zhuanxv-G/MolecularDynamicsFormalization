@@ -1,0 +1,34 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT05",
+  "section": "4.2.1",
+  "source_ids": [
+    "MD-4.2.1-ResonanceEigenPrinted",
+    "MD-4.2.1-ResonanceGrowth",
+    "MD-4.2.1-ResonanceInstability",
+    "MD-4.2.1-ResonanceLinearRate",
+    "MD-4.2.1-ResonanceTaylor"
+  ],
+  "reaudit_ids": [
+    "MD-4.2.1-ResonanceTaylor",
+    "MD-4.2.1-ResonanceInstability",
+    "MD-4.2.1-ResonanceGrowth"
+  ],
+  "human_ids": [
+    "MD-4.2.1-ResonanceEigenPrinted",
+    "MD-4.2.1-ResonanceLinearRate"
+  ],
+  "old_lean_sha256": "9b6ada0e7ec99b0b68b37f14e68e46d2d4cfc2b2d9ced3d7ecedbc714fef54aa",
+  "lean_sha256": "0591e70d7679f9f9348deab6e2db50520be58529af0697fbcfb53281a57c491f",
+  "source_sha256": "75c47c55dc787956976109ea50abde6398ebaee53412691d7bc2649fb00cc68b",
+  "pages": [
+    167,
+    168,
+    169,
+    170
+  ],
+  "prior_proof_blocks": {
+    "MD-4.2.1-ResonanceInstability": "theorem resonanceInstability :\n  ∀ Ω : ℝ, 0 < Ω → ∃ δ > 0,\n  ∀ h ∈ Ioo (Real.pi/Ω-δ) (Real.pi/Ω), MolecularDynamics.Chapter04Review.eigenvalueOutside (MolecularDynamics.Chapter04Review.impulseMatrix Ω h) := by\n  sorry",
+    "MD-4.2.1-ResonanceGrowth": "theorem resonanceGrowth :\n  ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 0 ≠ 0 →\n  Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖) atTop atTop := by\n  intro Ω hΩ z hz\n  have hc : 0 < |(Real.pi/Ω)*z 0| := abs_pos.mpr (mul_ne_zero (div_ne_zero Real.pi_ne_zero (ne_of_gt hΩ)) hz)\n  have hr := resonanceLinearRate Ω hΩ z hz\n  have ht := hr.pos_mul_atTop hc (tendsto_natCast_atTop_atTop (R := ℝ))\n  apply ht.congr'\n  filter_upwards [eventually_gt_atTop (0 : ℕ)] with k hk\n  have hk0 : (k : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hk)\n  exact div_mul_cancel₀ _ hk0"
+  }
+}

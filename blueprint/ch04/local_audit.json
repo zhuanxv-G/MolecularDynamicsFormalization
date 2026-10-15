@@ -921,9 +921,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.fastVerlet",
@@ -948,15 +948,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT04/axioms.log"
     },
     "MD-4.2.1-RESPA": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.respa",
@@ -981,16 +981,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT04/axioms.log"
     },
     "MD-4.2.1-RESPAStructure": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.respaStructure",
@@ -1015,15 +1015,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT04/axioms.log"
     },
     "MD-4.2.1-SlowMatrix": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.slowMatrix",
@@ -1048,22 +1048,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT04/axioms.log"
     },
     "MD-4.2.1-FastMatrix": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.fastMatrix",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "0d473ad72b0101a09508ad66db6100ec9461a6e110f8769e3f3b351bc6b86fdc",
-      "block_sha256": "0d473ad72b0101a09508ad66db6100ec9461a6e110f8769e3f3b351bc6b86fdc",
+      "signature_sha256": "c06170015d63d707e282e34df9135f293ba5d6173fbec92449ed05547085d7d9",
+      "block_sha256": "c06170015d63d707e282e34df9135f293ba5d6173fbec92449ed05547085d7d9",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -1081,7 +1081,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT04/axioms.log"
     },
     "MD-4.2.1-ImpulseMatrix": {
       "checked": true,
@@ -1120,17 +1120,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.impulseDet",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "e55a7a1121f0356d9b35f9a05d76bf656cdce8d5c150f0d720ed00450058719b",
-      "block_sha256": "29d0f55dd51ff451282a650271e975e7707576bec27234c4f3b3088e9c0a2a99",
-      "direct_placeholder": false,
+      "block_sha256": "6a42c05957ae0ef7abbafc8321cc5b76871ce459f540e4491ab627d7d61cf632",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -1152,23 +1153,24 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT04/axioms.log"
     },
     "MD-4.2.1-ImpulseTrace": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.impulseTrace",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "8744a90f21eba6afe67b3ce7d307e5f6e1cf6ed9460f31a5f61216c5b0486c9d",
-      "block_sha256": "a50758d6437b89e8d804d979d14f4c6cb3a659759abbd610c95dd57fa9f17376",
-      "direct_placeholder": false,
+      "block_sha256": "8982e22148672c0434ad44223812b7fa4f07bc8414803dd7526bc3144d958a5d",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -1190,15 +1192,15 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT04/axioms.log"
     },
     "MD-4.2.1-ResonancePower": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.resonancePower",
@@ -1228,16 +1230,16 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT04/axioms.log"
     },
     "MD-4.2.1-ResonanceTaylor": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.resonanceTaylor",
@@ -1262,23 +1264,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT05/axioms.log"
     },
     "MD-4.2.1-ResonanceInstability": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.resonanceInstability",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "5b080c9c3f8865f5479aadc88c4fff9378f549deefc1d9b520d14b5317b711b4",
-      "block_sha256": "1a1fee7f37f67173e366373bddd7e501e9c17c7faf85e58cb38f8afe14bcdbef",
+      "block_sha256": "9793745e01623a78520d9dc36c3130d0397d97c7c8d458a703a561957fe5f8ce",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -1296,16 +1298,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT05/axioms.log"
     },
     "MD-4.2.1-ResonanceEigenPrinted": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.resonanceEigenPrinted",
@@ -1330,7 +1332,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT05/axioms.log"
     },
     "MD-4.2.2-MollifiedAverage": {
       "checked": true,
@@ -1402,9 +1404,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.resonanceLinearRate",
@@ -1438,15 +1440,15 @@
       ],
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT05/axioms.log"
     },
     "MD-4.2.1-ResonanceGrowth": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.resonanceGrowth",
@@ -1476,7 +1478,7 @@
         "blueprint/ch04/validation/short_search/ResonanceGrowth-route1.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT05/axioms.log"
     },
     "MD-4.2.2-MollifiedStructure": {
       "checked": true,

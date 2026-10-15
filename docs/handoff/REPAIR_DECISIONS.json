@@ -1013,5 +1013,70 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "4.1"
+  },
+  "MD-4.2.1-SlowMatrix": {
+    "category": "B",
+    "handling": "本条明确只承担S_h；同一展示中的F_h由MD-4.2.1-FastMatrix承担，原合引文字保留。",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-FastMatrix": {
+    "category": "A",
+    "handling": "F_h使用原Ω≫1模型的非零频率域，防止除零总化；S_h由SlowMatrix承担，原展示不删。",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-ImpulseDet": {
+    "category": "B",
+    "handling": "保留三项行列式证明；补复特征多项式的完整首一二次分解及两根乘积1，重根以两个因子计重，非任取两个单根。",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-ImpulseTrace": {
+    "category": "B",
+    "handling": "保留trace计算，并用同一个完整二次分解绑定按代数重数的两个根及根和，不重复任取同一简单根。",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-FastVerlet": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-RESPA": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-RESPAStructure": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-ResonancePower": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-ResonanceInstability": {
+    "category": "B",
+    "handling": "补共振左邻域完整两实根分解、圆外根及实际指数轨道；δ≤π/Ω明确正步长。旧圆外复根结论保留。",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-ResonanceGrowth": {
+    "category": "B",
+    "handling": "本条明确为发散推论；线性率由MD-4.2.1-ResonanceLinearRate、交替幂公式由MD-4.2.1-ResonancePower承担，原norm振荡疑误在LinearRate待导师，不删句。",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-ResonanceTaylor": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-ResonanceEigenPrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.2.1"
+  },
+  "MD-4.2.1-ResonanceLinearRate": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.2.1"
   }
 }

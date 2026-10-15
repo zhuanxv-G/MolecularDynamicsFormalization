@@ -478,19 +478,22 @@ theorem respaStructure :
     MolecularDynamics.Chapter04Review.symplecticMap (MolecularDynamics.Chapter04Review.respa m US UF r h) ∧ ∀ z, MolecularDynamics.Chapter04Review.respa m US UF r (-h) (MolecularDynamics.Chapter04Review.respa m US UF r h z)=z := by
   sorry
 
-/-- source_id: MD-4.2.1-SlowMatrix · definition · §4.2.1 · 印刷p.146 / PDFp.168 -/
+/-- source_id: MD-4.2.1-SlowMatrix · definition · §4.2.1 · 印刷p.146 / PDFp.168 
+[EXTRA] 本条明确只承担S_h；同一展示中的F_h由MD-4.2.1-FastMatrix承担，原合引文字保留。 -/
 def slowMatrix (h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![1,0; -h,1]
 
 /-- source_id: MD-4.2.1-FastMatrix · definition · §4.2.1 · 印刷p.146 / PDFp.168
-[EXTRA] Ω>0为模型频率；它是精确快振子旋转矩阵，非单个Verlet矩阵。 -/
-def fastMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+[EXTRA] Ω>0为模型频率；它是精确快振子旋转矩阵，非单个Verlet矩阵。 
+[EXTRA] F_h使用原Ω≫1模型的非零频率域，防止除零总化；S_h由SlowMatrix承担，原展示不删。 -/
+def fastMatrix (Ω h : ℝ) (_hΩ : Ω ≠ 0) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![Real.cos (Ω*h),Real.sin (Ω*h)/Ω; -Ω*Real.sin (Ω*h),Real.cos (Ω*h)]
 
 /-- source_id: MD-4.2.1-ImpulseMatrix · definition · §4.2.1 · 印刷p.146 / PDFp.168 -/
 def impulseMatrix (Ω h : ℝ) := MolecularDynamics.Chapter04Review.slowMatrix (h/2) * MolecularDynamics.Chapter04Review.fastMatrix Ω h * MolecularDynamics.Chapter04Review.slowMatrix (h/2)
 
 /-- source_id: MD-4.2.1-ImpulseDet · unnumbered_claim · §4.2.1 · 印刷p.146 / PDFp.168
-[EXTRA] Ω≠0保证所写Fh分母资格；真实S,F,W三个det=1。 -/
+[EXTRA] Ω≠0保证所写Fh分母资格；真实S,F,W三个det=1。 
+[EXTRA] 保留三项行列式证明；补复特征多项式的完整首一二次分解及两根乘积1，重根以两个因子计重，非任取两个单根。 -/
 theorem impulseDet :
   ∀ Ω h : ℝ, Ω ≠ 0 →
   (MolecularDynamics.Chapter04Review.slowMatrix h).det=1 ∧ (MolecularDynamics.Chapter04Review.fastMatrix Ω h).det=1 ∧ (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).det=1 := by
@@ -506,8 +509,16 @@ theorem impulseDet :
     nlinarith [Real.sin_sq_add_cos_sq (Ω*h)]
   exact ⟨hs,hf,by rw [hs2,hf]; norm_num⟩
 
+theorem impulseDet_eigenvalueProduct (Ω h : ℝ) (_hΩ : Ω ≠ 0) :
+    ∃ a b : ℂ, a*b=1 ∧ ∀ ζ : ℂ,
+      (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-
+        (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).map Complex.ofReal).det=
+          (ζ-a)*(ζ-b) := by
+  sorry
+
 /-- source_id: MD-4.2.1-ImpulseTrace · unnumbered_claim · §4.2.1 · 印刷p.146 / PDFp.168
-[EXTRA] Ω≠0；本条完整矩阵trace恒等式，特征值与trace关系需有限谱桥接。 -/
+[EXTRA] Ω≠0；本条完整矩阵trace恒等式，特征值与trace关系需有限谱桥接。 
+[EXTRA] 保留trace计算，并用同一个完整二次分解绑定按代数重数的两个根及根和，不重复任取同一简单根。 -/
 theorem impulseTrace :
   ∀ Ω h : ℝ, Ω ≠ 0 →
   (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).trace=2*Real.cos (h*Ω)-(h/Ω)*Real.sin (h*Ω) := by
@@ -516,6 +527,13 @@ theorem impulseTrace :
     MolecularDynamics.Chapter04Review.fastMatrix, Matrix.trace, Matrix.mul_apply, Fin.sum_univ_two]
   rw [mul_comm h Ω]
   ring
+
+theorem impulseTrace_eigenvalueSum (Ω h : ℝ) (_hΩ : Ω ≠ 0) :
+    ∃ a b : ℂ,
+      a+b=(2*Real.cos (h*Ω)-(h/Ω)*Real.sin (h*Ω) : ℝ) ∧
+      (∀ ζ : ℂ, (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-
+        (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).map Complex.ofReal).det=(ζ-a)*(ζ-b)) := by
+  sorry
 
 /-- source_id: MD-4.2.1-ResonancePower · unnumbered_claim · §4.2.1 · 印刷p.146 / PDFp.168
 [EXTRA] Ω>0；所有自然数k，不止图中有限迭代。 -/
@@ -548,10 +566,22 @@ theorem resonanceTaylor :
   sorry
 
 /-- source_id: MD-4.2.1-ResonanceInstability · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
-[EXTRA] Ω>0；存在左邻域，每个h有真实复谱模>1。 -/
+[EXTRA] Ω>0；存在左邻域，每个h有真实复谱模>1。 
+[EXTRA] 补共振左邻域完整两实根分解、圆外根及实际指数轨道；δ≤π/Ω明确正步长。旧圆外复根结论保留。 -/
 theorem resonanceInstability :
   ∀ Ω : ℝ, 0 < Ω → ∃ δ > 0,
   ∀ h ∈ Ioo (Real.pi/Ω-δ) (Real.pi/Ω), MolecularDynamics.Chapter04Review.eigenvalueOutside (MolecularDynamics.Chapter04Review.impulseMatrix Ω h) := by
+  sorry
+
+theorem resonanceInstability_realSpectrum (Ω : ℝ) (_hΩ : 0 < Ω) :
+    ∃ δ > 0, δ ≤ Real.pi/Ω ∧ ∀ h ∈ Ioo (Real.pi/Ω-δ) (Real.pi/Ω),
+      ∃ a b : ℝ, 1 < max |a| |b| ∧
+        (∀ ζ : ℂ, (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-
+          (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).map Complex.ofReal).det=
+            (ζ-(a:ℂ))*(ζ-(b:ℂ))) ∧
+        (∃ v : Fin 2 → ℝ, v ≠ 0 ∧
+          ((1 < |a| ∧ ∀ k : ℕ, (MolecularDynamics.Chapter04Review.impulseMatrix Ω h)^k *ᵥ v=a^k • v) ∨
+           (1 < |b| ∧ ∀ k : ℕ, (MolecularDynamics.Chapter04Review.impulseMatrix Ω h)^k *ᵥ v=b^k • v))) := by
   sorry
 
 /-- source_id: MD-4.2.1-ResonanceEigenPrinted · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
@@ -607,7 +637,8 @@ theorem resonanceLinearRate : ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 
 
 
 /-- source_id: MD-4.2.1-ResonanceGrowth · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
-[EXTRA] 原泛称增长补q0≠0；q0=0时纯动量轨道模不增长。 -/
+[EXTRA] 原泛称增长补q0≠0；q0=0时纯动量轨道模不增长。 
+[EXTRA] 本条明确为发散推论；线性率由MD-4.2.1-ResonanceLinearRate、交替幂公式由MD-4.2.1-ResonancePower承担，原norm振荡疑误在LinearRate待导师，不删句。 -/
 theorem resonanceGrowth :
   ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 0 ≠ 0 →
   Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖) atTop atTop := by
@@ -2036,10 +2067,13 @@ end MD.Ch04
 #print axioms MD.Ch04.fastMatrix
 #print axioms MD.Ch04.impulseMatrix
 #print axioms MD.Ch04.impulseDet
+#print axioms MD.Ch04.impulseDet_eigenvalueProduct
 #print axioms MD.Ch04.impulseTrace
+#print axioms MD.Ch04.impulseTrace_eigenvalueSum
 #print axioms MD.Ch04.resonancePower
 #print axioms MD.Ch04.resonanceTaylor
 #print axioms MD.Ch04.resonanceInstability
+#print axioms MD.Ch04.resonanceInstability_realSpectrum
 #print axioms MD.Ch04.resonanceEigenPrinted
 #print axioms MD.Ch04.mollifiedAverage
 #print axioms MD.Ch04.mollifiedPotential

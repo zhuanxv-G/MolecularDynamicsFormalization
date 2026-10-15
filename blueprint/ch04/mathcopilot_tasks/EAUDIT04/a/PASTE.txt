@@ -1,0 +1,104 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.2.1-FastVerlet；原PDF页映射=[167]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT04_review.json，对象含batch=EAUDIT04、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT04.md": "8f53d32042d2f79d4339debabd6ac86d3e606921ee4a0903547d13f8af9830f7",
+  "Blueprint/Ch04.lean": "9b6ada0e7ec99b0b68b37f14e68e46d2d4cfc2b2d9ced3d7ecedbc714fef54aa",
+  "blueprint/ch04/ch04_source.json": "7479f5f97ba48e416128dc1fe09550bb1eef5311c6aba28c33b44e7746f02a82",
+  "EAUDIT04a_materials": "a9a044d85f52ec47e0cac87c9c0f009ce3b89970cdf193c67a63af8f6646103a",
+  "EAUDIT04a_PAGES.pdf": "2a006e9cda09a162fbd61d7333fb22d6b19d29e7c92fc3dc54cfd37c37bdcfda"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.2.1-FastVerlet",
+  "kind": "definition",
+  "label": null,
+  "section": "4.2.1",
+  "printed_page": "145",
+  "pdf_page": "167",
+  "statement_latex": "Let $\\mathcal G_h^F$ denote the map associated to the Verlet method for the system without $U_S$, using a stepsize $h$:\n\\[\\mathcal G_h^F=\\mathrm e^{\\frac h2\\mathcal L_{U_F}}\\mathrm e^{h\\mathcal L_K}\\mathrm e^{\\frac h2\\mathcal L_{U_F}},\\]\nwhere $\\mathcal L_K$ is the Lie-derivative corresponding to the kinetic energy component of the Hamiltonian $(K=p^TM^{-1}p/2)$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "Lie指数按实际势kick与质量drift作用解释；复用第2章实际数学映射。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.fastVerlet",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT04_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:53:50.635472",
+      "before_sha256": "b650daedd4e8a64420815333f2ec08bd2cc004af0b0ee92eaa2407e77f4bc4df",
+      "after_sha256": "78e3a52528abea0780653f3fe43744081c79023c26298cf734df932a11e2b113",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH04_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def fastVerlet {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n :=
+  Chapter02Review.verlet m (fun q => -MolecularDynamics.Chapter04Review.grad UF q) h
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MD.Ch04.fastVerlet
+```lean
+def fastVerlet {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n :=
+  Chapter02Review.verlet m (fun q => -MolecularDynamics.Chapter04Review.grad UF q) h
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```

@@ -1,0 +1,48 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT05",
+  "section": "4.2.1",
+  "source_ids": [
+    "MD-4.2.1-ResonanceEigenPrinted",
+    "MD-4.2.1-ResonanceGrowth",
+    "MD-4.2.1-ResonanceInstability",
+    "MD-4.2.1-ResonanceLinearRate",
+    "MD-4.2.1-ResonanceTaylor"
+  ],
+  "reaudit_ids": [
+    "MD-4.2.1-ResonanceTaylor",
+    "MD-4.2.1-ResonanceInstability",
+    "MD-4.2.1-ResonanceGrowth"
+  ],
+  "human_ids": [
+    "MD-4.2.1-ResonanceEigenPrinted",
+    "MD-4.2.1-ResonanceLinearRate"
+  ],
+  "lean_sha256": "0591e70d7679f9f9348deab6e2db50520be58529af0697fbcfb53281a57c491f",
+  "source_sha256": "75c47c55dc787956976109ea50abde6398ebaee53412691d7bc2649fb00cc68b",
+  "pages": [
+    167,
+    168,
+    169,
+    170
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "0591e70d7679f9f9348deab6e2db50520be58529af0697fbcfb53281a57c491f",
+    "log_sha256": "3ac15849f743255652504a31de627bc4e747482699123a996c96684adea76ba8"
+  },
+  "axiom_decl_count": 6,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT05/INDEX.md"
+}

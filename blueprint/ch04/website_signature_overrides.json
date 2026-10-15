@@ -52,5 +52,46 @@
     "extra_assumptions": [
       "[EXTRA] 保留消元公式及其已有证明，补实际相空间场的隐式Euler半步→显式Euler半步关系等价，不静默缩掉组合结论。"
     ]
+  },
+  "MD-4.2.1-SlowMatrix": {
+    "code": "def slowMatrix (h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![1,0; -h,1]",
+    "extra_assumptions": [
+      "[EXTRA] 本条明确只承担S_h；同一展示中的F_h由MD-4.2.1-FastMatrix承担，原合引文字保留。"
+    ]
+  },
+  "MD-4.2.1-FastMatrix": {
+    "code": "def fastMatrix (Ω h : ℝ) (_hΩ : Ω ≠ 0) : Matrix (Fin 2) (Fin 2) ℝ :=\n  !![Real.cos (Ω*h),Real.sin (Ω*h)/Ω; -Ω*Real.sin (Ω*h),Real.cos (Ω*h)]",
+    "extra_assumptions": [
+      "Ω>0为模型频率；它是精确快振子旋转矩阵，非单个Verlet矩阵。",
+      "[EXTRA] F_h使用原Ω≫1模型的非零频率域，防止除零总化；S_h由SlowMatrix承担，原展示不删。"
+    ]
+  },
+  "MD-4.2.1-ImpulseDet": {
+    "code": "theorem impulseDet :\n  ∀ Ω h : ℝ, Ω ≠ 0 →\n  (MolecularDynamics.Chapter04Review.slowMatrix h).det=1 ∧ (MolecularDynamics.Chapter04Review.fastMatrix Ω h).det=1 ∧ (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).det=1 := by\n  intro Ω h hΩ\n  simp only [MolecularDynamics.Chapter04Review.impulseMatrix, Matrix.det_mul]\n  have hs : (MolecularDynamics.Chapter04Review.slowMatrix h).det=1 := by\n    simp [MolecularDynamics.Chapter04Review.slowMatrix, Matrix.det_fin_two]\n  have hs2 : (MolecularDynamics.Chapter04Review.slowMatrix (h/2)).det=1 := by\n    simp [MolecularDynamics.Chapter04Review.slowMatrix, Matrix.det_fin_two]\n  have hf : (MolecularDynamics.Chapter04Review.fastMatrix Ω h).det=1 := by\n    simp [MolecularDynamics.Chapter04Review.fastMatrix, Matrix.det_fin_two]\n    field_simp\n    nlinarith [Real.sin_sq_add_cos_sq (Ω*h)]\n  exact ⟨hs,hf,by rw [hs2,hf]; norm_num⟩\n\ntheorem impulseDet_eigenvalueProduct (Ω h : ℝ) (_hΩ : Ω ≠ 0) :\n    ∃ a b : ℂ, a*b=1 ∧ ∀ ζ : ℂ,\n      (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-\n        (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).map Complex.ofReal).det=\n          (ζ-a)*(ζ-b) := by\n  sorry",
+    "extra_assumptions": [
+      "Ω≠0保证所写Fh分母资格；真实S,F,W三个det=1。",
+      "[EXTRA] 保留三项行列式证明；补复特征多项式的完整首一二次分解及两根乘积1，重根以两个因子计重，非任取两个单根。"
+    ]
+  },
+  "MD-4.2.1-ImpulseTrace": {
+    "code": "theorem impulseTrace :\n  ∀ Ω h : ℝ, Ω ≠ 0 →\n  (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).trace=2*Real.cos (h*Ω)-(h/Ω)*Real.sin (h*Ω) := by\n  intro Ω h hΩ\n  simp [MolecularDynamics.Chapter04Review.impulseMatrix, MolecularDynamics.Chapter04Review.slowMatrix,\n    MolecularDynamics.Chapter04Review.fastMatrix, Matrix.trace, Matrix.mul_apply, Fin.sum_univ_two]\n  rw [mul_comm h Ω]\n  ring\n\ntheorem impulseTrace_eigenvalueSum (Ω h : ℝ) (_hΩ : Ω ≠ 0) :\n    ∃ a b : ℂ,\n      a+b=(2*Real.cos (h*Ω)-(h/Ω)*Real.sin (h*Ω) : ℝ) ∧\n      (∀ ζ : ℂ, (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-\n        (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).map Complex.ofReal).det=(ζ-a)*(ζ-b)) := by\n  sorry",
+    "extra_assumptions": [
+      "Ω≠0；本条完整矩阵trace恒等式，特征值与trace关系需有限谱桥接。",
+      "[EXTRA] 保留trace计算，并用同一个完整二次分解绑定按代数重数的两个根及根和，不重复任取同一简单根。"
+    ]
+  },
+  "MD-4.2.1-ResonanceInstability": {
+    "code": "theorem resonanceInstability :\n  ∀ Ω : ℝ, 0 < Ω → ∃ δ > 0,\n  ∀ h ∈ Ioo (Real.pi/Ω-δ) (Real.pi/Ω), MolecularDynamics.Chapter04Review.eigenvalueOutside (MolecularDynamics.Chapter04Review.impulseMatrix Ω h) := by\n  sorry\n\ntheorem resonanceInstability_realSpectrum (Ω : ℝ) (_hΩ : 0 < Ω) :\n    ∃ δ > 0, δ ≤ Real.pi/Ω ∧ ∀ h ∈ Ioo (Real.pi/Ω-δ) (Real.pi/Ω),\n      ∃ a b : ℝ, 1 < max |a| |b| ∧\n        (∀ ζ : ℂ, (ζ • (1 : Matrix (Fin 2) (Fin 2) ℂ)-\n          (MolecularDynamics.Chapter04Review.impulseMatrix Ω h).map Complex.ofReal).det=\n            (ζ-(a:ℂ))*(ζ-(b:ℂ))) ∧\n        (∃ v : Fin 2 → ℝ, v ≠ 0 ∧\n          ((1 < |a| ∧ ∀ k : ℕ, (MolecularDynamics.Chapter04Review.impulseMatrix Ω h)^k *ᵥ v=a^k • v) ∨\n           (1 < |b| ∧ ∀ k : ℕ, (MolecularDynamics.Chapter04Review.impulseMatrix Ω h)^k *ᵥ v=b^k • v))) := by\n  sorry",
+    "extra_assumptions": [
+      "Ω>0；存在左邻域，每个h有真实复谱模>1。",
+      "[EXTRA] 补共振左邻域完整两实根分解、圆外根及实际指数轨道；δ≤π/Ω明确正步长。旧圆外复根结论保留。"
+    ]
+  },
+  "MD-4.2.1-ResonanceGrowth": {
+    "code": "theorem resonanceGrowth :\n  ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 0 ≠ 0 →\n  Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖) atTop atTop := by\n  intro Ω hΩ z hz\n  have hc : 0 < |(Real.pi/Ω)*z 0| := abs_pos.mpr (mul_ne_zero (div_ne_zero Real.pi_ne_zero (ne_of_gt hΩ)) hz)\n  have hr := resonanceLinearRate Ω hΩ z hz\n  have ht := hr.pos_mul_atTop hc (tendsto_natCast_atTop_atTop (R := ℝ))\n  apply ht.congr'\n  filter_upwards [eventually_gt_atTop (0 : ℕ)] with k hk\n  have hk0 : (k : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hk)\n  exact div_mul_cancel₀ _ hk0",
+    "extra_assumptions": [
+      "原泛称增长补q0≠0；q0=0时纯动量轨道模不增长。",
+      "[EXTRA] 本条明确为发散推论；线性率由MD-4.2.1-ResonanceLinearRate、交替幂公式由MD-4.2.1-ResonancePower承担，原norm振荡疑误在LinearRate待导师，不删句。"
+    ]
   }
 }

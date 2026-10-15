@@ -1,0 +1,74 @@
+{
+  "eaudit": "EAUDIT05",
+  "source_id": "MD-4.2.1-ResonanceInstability",
+  "input_sha256": {
+    "BATCH_EAUDIT05.md": "cc712e690f0180b9c2143f45b0ae058592a467a4c4a9c87e0b67ec0ae283dcdd",
+    "Blueprint/Ch04.lean": "0591e70d7679f9f9348deab6e2db50520be58529af0697fbcfb53281a57c491f",
+    "blueprint/ch04/ch04_source.json": "75c47c55dc787956976109ea50abde6398ebaee53412691d7bc2649fb00cc68b",
+    "EAUDIT05b_materials": "b9a520e84e29ff322839f63820f10cd5b485fe6852a9d7106c562f65e690a3c6",
+    "EAUDIT05b_PAGES.pdf": "114f2ec98bb8ceea194b60b24d306ba143e71cef05f04d9c16a02e4c3654f5ed"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    169
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "6acb857fecb5cdf70b988860d0b0e26b0eee434727331aa314e55eed8b61dea0",
+  "source_block_sha256": "9793745e01623a78520d9dc36c3130d0397d97c7c8d458a703a561957fe5f8ce",
+  "source_declarations": [
+    "resonanceInstability",
+    "resonanceInstability_realSpectrum"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.eigenvalueOutside",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "5c4efea98926d467bb3b5df57229efebcc02fb9c83b35b4a174ebce76c5faed3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.fastMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "0d473ad72b0101a09508ad66db6100ec9461a6e110f8769e3f3b351bc6b86fdc"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.impulseMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "fc6183f60f03decac9b20d341f629e72be3ba6febac4387f76c902130c508756"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.slowMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "4e0bb16f3b5c7b6c1aced7417d0dbab8ca882c12d7f7517d82e8666b1d1c78eb"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "eigenvalueOutside",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "5c4efea98926d467bb3b5df57229efebcc02fb9c83b35b4a174ebce76c5faed3"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "fastMatrix",
+      "file_sha256": "0591e70d7679f9f9348deab6e2db50520be58529af0697fbcfb53281a57c491f",
+      "excerpt_sha256": "c06170015d63d707e282e34df9135f293ba5d6173fbec92449ed05547085d7d9"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "impulseMatrix",
+      "file_sha256": "0591e70d7679f9f9348deab6e2db50520be58529af0697fbcfb53281a57c491f",
+      "excerpt_sha256": "64842efb9c63fea33a0ec905f5f73ca3e9eaddf19da2d68f650e7ddaa93372d3"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "slowMatrix",
+      "file_sha256": "0591e70d7679f9f9348deab6e2db50520be58529af0697fbcfb53281a57c491f",
+      "excerpt_sha256": "4e0bb16f3b5c7b6c1aced7417d0dbab8ca882c12d7f7517d82e8666b1d1c78eb"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT05_review.json",
+  "total_task_bytes": 151410
+}

@@ -2,12 +2,12 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 333；章末验收待完成 [4, 5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 315；章末验收待完成 [4, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 57 / 已修待复审 72 / 待导师 20 / 修复中 0。
-第4章：网站PASS 84 / 已修待复审 16 / 待导师 7 / 修复中 72。
+第4章：网站PASS 80 / 已修待复审 26 / 待导师 10 / 修复中 63。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
@@ -346,22 +346,22 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 4 | MD-4.1-MechanicalMidpoint | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.1-MidpointElimination | FAIL | B | 保留消元公式及其已有证明，补实际相空间场的隐式Euler半步→显式Euler半步关系等价，不静默缩掉组合结论。 | 已修待复审 | EAUDIT03 |
 | 4 | MD-4.2.1-SplitHamiltonian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.2.1-FastVerlet | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.2.1-RESPA | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.2.1-RESPAStructure | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 4 | MD-4.2.1-SlowMatrix | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
-| 4 | MD-4.2.1-FastMatrix | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
+| 4 | MD-4.2.1-FastVerlet | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
+| 4 | MD-4.2.1-RESPA | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
+| 4 | MD-4.2.1-RESPAStructure | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT04 |
+| 4 | MD-4.2.1-SlowMatrix | FAIL | B | 本条明确只承担S_h；同一展示中的F_h由MD-4.2.1-FastMatrix承担，原合引文字保留。 | 已修待复审 | EAUDIT04 |
+| 4 | MD-4.2.1-FastMatrix | FAIL | A | F_h使用原Ω≫1模型的非零频率域，防止除零总化；S_h由SlowMatrix承担，原展示不删。 | 已修待复审 | EAUDIT04 |
 | 4 | MD-4.2.1-ImpulseMatrix | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.2.1-ImpulseDet | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
-| 4 | MD-4.2.1-ImpulseTrace | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.2.1-ResonancePower | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.2.1-ResonanceTaylor | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.2.1-ResonanceInstability | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.2.1-ResonanceEigenPrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 4 | MD-4.2.1-ImpulseDet | FAIL | B | 保留三项行列式证明；补复特征多项式的完整首一二次分解及两根乘积1，重根以两个因子计重，非任取两个单根。 | 已修待复审 | EAUDIT04 |
+| 4 | MD-4.2.1-ImpulseTrace | FAIL | B | 保留trace计算，并用同一个完整二次分解绑定按代数重数的两个根及根和，不重复任取同一简单根。 | 已修待复审 | EAUDIT04 |
+| 4 | MD-4.2.1-ResonancePower | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
+| 4 | MD-4.2.1-ResonanceTaylor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT05 |
+| 4 | MD-4.2.1-ResonanceInstability | FAIL | B | 补共振左邻域完整两实根分解、圆外根及实际指数轨道；δ≤π/Ω明确正步长。旧圆外复根结论保留。 | 已修待复审 | EAUDIT05 |
+| 4 | MD-4.2.1-ResonanceEigenPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT05 |
 | 4 | MD-4.2.2-MollifiedAverage | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.2.2-MollifiedPotential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.2.1-ResonanceLinearRate | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 4 | MD-4.2.1-ResonanceGrowth | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 4 | MD-4.2.1-ResonanceLinearRate | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT05 |
+| 4 | MD-4.2.1-ResonanceGrowth | FAIL | B | 本条明确为发散推论；线性率由MD-4.2.1-ResonanceLinearRate、交替幂公式由MD-4.2.1-ResonancePower承担，原norm振荡疑误在LinearRate待导师，不删句。 | 已修待复审 | EAUDIT05 |
 | 4 | MD-4.2.2-MollifiedStructure | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3-HolonomicRelation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd）；原文CORRECTED待原页复核 | — |
 | 4 | MD-4.3-TimeConstraintDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |

@@ -1,0 +1,59 @@
+{
+  "eaudit": "EAUDIT04",
+  "input_sha256": {
+    "BATCH_EAUDIT04.md": "8f53d32042d2f79d4339debabd6ac86d3e606921ee4a0903547d13f8af9830f7",
+    "Blueprint/Ch04.lean": "9b6ada0e7ec99b0b68b37f14e68e46d2d4cfc2b2d9ced3d7ecedbc714fef54aa",
+    "blueprint/ch04/ch04_source.json": "7479f5f97ba48e416128dc1fe09550bb1eef5311c6aba28c33b44e7746f02a82"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT04a",
+      "source_id": "MD-4.2.1-FastVerlet",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT04/a",
+      "total_bytes": 101858,
+      "manifest_sha256": "a6fe88af03f7887f6dda055389acd4e231167763845d853160ec0e19468f663a"
+    },
+    {
+      "subtask": "EAUDIT04b",
+      "source_id": "MD-4.2.1-RESPA",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT04/b",
+      "total_bytes": 104211,
+      "manifest_sha256": "66747eab085278549bf296f3065c48e2d6958e84ab6c47b973eb18798de7aa6b"
+    },
+    {
+      "subtask": "EAUDIT04c",
+      "source_id": "MD-4.2.1-SlowMatrix",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT04/c",
+      "total_bytes": 77227,
+      "manifest_sha256": "f7c5b8acc5692a3b705e40ae5fb0d26f78c9addea230cfa4c7c70551edcd7306"
+    },
+    {
+      "subtask": "EAUDIT04d",
+      "source_id": "MD-4.2.1-FastMatrix",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT04/d",
+      "total_bytes": 77453,
+      "manifest_sha256": "8a3931c7f1bd467f0a8713fffdf84bb0b8e202ee93a222978966ab0d9aa2fee9"
+    },
+    {
+      "subtask": "EAUDIT04e",
+      "source_id": "MD-4.2.1-ImpulseDet",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT04/e",
+      "total_bytes": 80973,
+      "manifest_sha256": "aa19e387d5f01d06be009ccc9f187952edf1554bd8d3546c99a143642f694dc7"
+    },
+    {
+      "subtask": "EAUDIT04f",
+      "source_id": "MD-4.2.1-ImpulseTrace",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT04/f",
+      "total_bytes": 80999,
+      "manifest_sha256": "ca224ada4181adf50df72d90d2705e6c87c352bb68f0ce2178e8fa9edf8fbce2"
+    },
+    {
+      "subtask": "EAUDIT04g",
+      "source_id": "MD-4.2.1-ResonancePower",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT04/g",
+      "total_bytes": 81134,
+      "manifest_sha256": "1ed6684e28ecf3ab0e192499116f71e44514b5009b28a12a3720b806ffd2b0c6"
+    }
+  ]
+}
