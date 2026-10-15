@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT15",
+  "input_sha256": {
+    "BATCH_EAUDIT15.md": "e7052675eaf5765217446b0d82777469797bb07b569ec8098f51738192402368",
+    "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+    "blueprint/ch02/ch02_source.json": "e59e2adf7e186a6dfd4dc9820269339a6cf4bc0f1b2ff1b2518fbc1771054f29"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT15a",
+      "source_id": "MD-2.4.1-SymmetricEven",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT15/a",
+      "total_bytes": 91554,
+      "manifest_sha256": "9c62df7f96942eaaf3a1220d5b672788cec15e5347ec2d216dd70fbfac2ff61d"
+    }
+  ]
+}

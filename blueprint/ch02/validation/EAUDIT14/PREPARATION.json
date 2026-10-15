@@ -1,0 +1,35 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT14",
+  "section": "2.4.1",
+  "source_ids": [
+    "MD-2.4.1-KineticFlow",
+    "MD-2.4.1-PotentialFlow",
+    "MD-2.4.1-SplitEuler",
+    "MD-2.4.1-Splitting",
+    "MD-2.4.1-SplittingLocal",
+    "MD-2.4.1-SymmetricComposition",
+    "MD-2.4.1-VerletComposition",
+    "MD-2.4.1-VerletSymplectic"
+  ],
+  "reaudit_ids": [
+    "MD-2.4.1-Splitting",
+    "MD-2.4.1-SplittingLocal",
+    "MD-2.4.1-KineticFlow",
+    "MD-2.4.1-PotentialFlow",
+    "MD-2.4.1-SplitEuler",
+    "MD-2.4.1-VerletComposition",
+    "MD-2.4.1-VerletSymplectic",
+    "MD-2.4.1-SymmetricComposition"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+  "lean_sha256": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+  "source_sha256": "32c391f1753c5333dec8c9266792a7205239c8a798a20e5919205de7aceb6270",
+  "pages": [
+    105,
+    106,
+    107
+  ],
+  "prior_proof_blocks": {}
+}

@@ -1,0 +1,57 @@
+{
+  "eaudit": "EAUDIT14",
+  "source_id": "MD-2.4.1-PotentialFlow",
+  "input_sha256": {
+    "BATCH_EAUDIT14.md": "dc806a9202c7234ba009cc897c59b45f9d5db15a40820dafe0fcab203c78e5ab",
+    "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+    "blueprint/ch02/ch02_source.json": "32c391f1753c5333dec8c9266792a7205239c8a798a20e5919205de7aceb6270",
+    "EAUDIT14d_materials": "f22c2c85381cdf7546a6c6f43f309b1a5cfc8e3def2b7467c2110c4ab8cd4868",
+    "EAUDIT14d_PAGES.pdf": "f7480a1b24a69aa034c8a2b42c3b4ba01a9eacc8c014036fced829d48ea3e1e0"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    106
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "5f037b3c8f6700e74ab5cd08c2368b2af3c6973e01a4ec663221f4ed7f36f9c1",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_potentialFlow",
+      "file_sha256": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+      "excerpt_sha256": "4585986b700aacb1b18e7b4d04af5aeea9adf94db997e014cef1ff43d1e1d660"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookMomentumKick",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "140fb611184d1fe410f849925b752e19bca879083ad3b90037363a059820d604"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookPositionProjection",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "e26c2a0065ed4d17a75fd55ee46cc91cdf21abead5097b255cf11154196c56b0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookPotentialForce",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT14_review.json",
+  "total_task_bytes": 85268
+}

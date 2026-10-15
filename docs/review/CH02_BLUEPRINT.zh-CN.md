@@ -113,16 +113,16 @@
 | MD-2.3.7-EulerAdjoint | 82/104 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
 | MD-2.3.7-AdjointSymplecticEuler | 82/104 | PASS | 待复审 / EAUDIT13 | incomplete |
 | MD-2.3.7-AdjointInvolution | 82/104 | PASS | 待复审 / EAUDIT13 | checked+documented priors |
-| MD-2.4.1-Splitting | 83/105 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
+| MD-2.4.1-Splitting | 83/105 | PASS | 待复审 / EAUDIT14 | self-contained |
 | MD-2.4.1-FieldAdd | 83/105 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
-| MD-2.4.1-SplittingLocal | 83/105 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
-| MD-2.4.1-KineticFlow | 83–84/105–106 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
-| MD-2.4.1-PotentialFlow | 84/106 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
-| MD-2.4.1-SplitEuler | 84/106 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
-| MD-2.4.1-VerletComposition | 84–85/106–107 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
-| MD-2.4.1-VerletSymplectic | 85/107 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
-| MD-2.4.1-SymmetricComposition | 85/107 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
-| MD-2.4.1-SymmetricEven | 85/107 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
+| MD-2.4.1-SplittingLocal | 83/105 | PASS | 待复审 / EAUDIT14 | checked+documented priors |
+| MD-2.4.1-KineticFlow | 83–84/105–106 | PASS | 待复审 / EAUDIT14 | self-contained |
+| MD-2.4.1-PotentialFlow | 84/106 | PASS | 待复审 / EAUDIT14 | self-contained |
+| MD-2.4.1-SplitEuler | 84/106 | PASS | 待复审 / EAUDIT14 | checked+documented priors |
+| MD-2.4.1-VerletComposition | 84–85/106–107 | PASS | 待复审 / EAUDIT14 | checked+documented priors |
+| MD-2.4.1-VerletSymplectic | 85/107 | PASS | 待复审 / EAUDIT14 | checked+documented priors |
+| MD-2.4.1-SymmetricComposition | 85/107 | PASS | 待复审 / EAUDIT14 | checked+documented priors |
+| MD-2.4.1-SymmetricEven | 85/107 | PASS | 待复审 / EAUDIT15 | incomplete |
 | MD-2.4.2-CompositionSymplectic | 85/107 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
 | MD-2.4.2-CompositionOrder | 85/107 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
 | MD-2.4.3-HarmonicSplit | 85–86/107–108 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
@@ -6071,7 +6071,9 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 ### 2. 原文陈述
 
-> Suppose that a Hamiltonian $H$ can be split into two parts, i.e. $H=H_1+H_2$, and that the flow maps $\mathcal F_{1,t}$ and $\mathcal F_{2,t}$ are known in closed form for the Hamiltonians $H_1$ and $H_2$, respectively. It is natural to think of using the composition of the flow maps $\mathcal G_h=\mathcal F_{1,h}\circ\mathcal F_{2,h}$ as an approximation to $\mathcal F_h$, the flow map of the combined Hamiltonian $H$.
+> Let $H(\boldsymbol q,\boldsymbol p)=H_1(\boldsymbol q,\boldsymbol p)+H_2(\boldsymbol q,\boldsymbol p)$ have flow map $\mathcal F_h$, and indicate by $\mathcal F_h^1,\mathcal F_h^2$ the flow maps for the systems with Hamiltonians $H_1,H_2$, respectively. The proposal is that the map
+> \[\mathcal G_h=\mathcal F_h^1\circ\mathcal F_h^2\]
+> is an approximation of $\mathcal F_h$.
 
 ### 3. 原文证明
 
@@ -6095,7 +6097,7 @@ def bp_splittingMap {E : Type*} (F₁ F₂ : ℝ → E → E) (h : ℝ) : E → 
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT14**。原文JSON：CORRECTED；未冻结。
 
 Ch02.lean:930完整定义为F₁ h ∘ F₂ h，先作用子流2再子流1，恰为原文组合。任意类型E和映射的接口仅定义组合，不声称任意映射是实际Hamilton流或具有近似阶；实际子流资格属于本条明确的使用上下文。不需要闭式可得性假设。无[EXTRA]或[ERRATUM?]；定义无sorry。
 
@@ -6105,11 +6107,11 @@ Ch02.lean:930完整定义为F₁ h ∘ F₂ h，先作用子流2再子流1，恰
 
 位置：[Blueprint/Ch02.lean:1071](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1071>)（`MD.Ch02.bp_splittingMap`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`65aa410d9cfef1499fdebb01078a0e787060f42cec5c94b97faf218e4e365bd4`；原文SHA256：`fedf951e6d6e32e5334f119974f18a462c581f5b1c08201292db4d66abbe3a5b`。
+签名SHA256：`65aa410d9cfef1499fdebb01078a0e787060f42cec5c94b97faf218e4e365bd4`；原文SHA256：`5476ea1818a4008182671890bb33a1557fdd3ec5c3b8208990ee492cc72e19b6`。
 
 ## 1. MD-2.4.1-FieldAdd · unnumbered_claim · 印刷p.83 / PDFp.105
 
@@ -6170,15 +6172,25 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 3. 原文证明
 
-> We expand the map $\mathcal F_h$ into its Taylor series:
-> \[\mathcal F_h(\boldsymbol u)=\boldsymbol u+hJ\nabla H(\boldsymbol u)+\mathcal O(h^2)=\boldsymbol u+h(J\nabla H_1(\boldsymbol u)+J\nabla H_2(\boldsymbol u))+\mathcal O(h^2).\tag{2.24}\]
-> For the individual maps $\mathcal F_{1,h}$ and $\mathcal F_{2,h}$, we have
-> \[\mathcal F_{1,h}(\boldsymbol u)=\boldsymbol u+hJ\nabla H_1(\boldsymbol u)+\mathcal O(h^2),\qquad\mathcal F_{2,h}(\boldsymbol u)=\boldsymbol u+hJ\nabla H_2(\boldsymbol u)+\mathcal O(h^2).\]
-> Composing the two maps we obtain
-> \[\mathcal F_{1,h}(\mathcal F_{2,h}(\boldsymbol u))=\boldsymbol u+hJ\nabla H_2(\boldsymbol u)+hJ\nabla H_1(\boldsymbol u+hJ\nabla H_2(\boldsymbol u))+\mathcal O(h^2).\]
-> Assuming $H_1$ is twice continuously differentiable, we may expand further in the last term and collect
-> \[\mathcal F_{1,h}(\mathcal F_{2,h}(\boldsymbol u))=\boldsymbol u+h(J\nabla H_2(\boldsymbol u)+J\nabla H_1(\boldsymbol u))+\mathcal O(h^2).\]
-> Thus the splitting method does indeed provide a second order local approximation to the flow map.
+> Expand $\mathcal F_h(\boldsymbol u)$ in a Taylor series:
+> \[\mathcal F_h(\boldsymbol u)=\boldsymbol u+hJ
+> abla H+\mathcal O(h^2)=\boldsymbol u+h(J
+> abla H_1+J
+> abla H_2)+\mathcal O(h^2).\tag{2.24}\]
+> On the other hand,
+> \[\mathcal F_h^1(\boldsymbol u)=\boldsymbol u+hJ
+> abla H_1(\boldsymbol u)+\mathcal O(h^2),\qquad\mathcal F_h^2(\boldsymbol u)=\boldsymbol u+hJ
+> abla H_2(\boldsymbol u)+\mathcal O(h^2).\]
+> Composing the maps we have
+> \[\mathcal F_h^1\circ\mathcal F_h^2(\boldsymbol u)=\boldsymbol u+hJ
+> abla H_2(\boldsymbol u)+hJ
+> abla H_1(\boldsymbol u+hJ
+> abla H_2(\boldsymbol u))+\mathcal O(h^2).\]
+> Assuming $H_1$ is $C^2$, we have
+> \[\mathcal F_h^1\circ\mathcal F_h^2(\boldsymbol u)=\boldsymbol u+h(J
+> abla H_2(\boldsymbol u)+J
+> abla H_1(\boldsymbol u))+\mathcal O(h^2),\]
+> which agrees with the expansion (2.24) of the flow map through the terms of first order. Thus the splitting method does indeed provide a second order local approximation of the flow map.
 
 原书计算按原页转录。
 
@@ -6220,7 +6232,7 @@ theorem splittingLocal {Nc : ℕ}
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT14**。原文JSON：CORRECTED；未冻结。
 
 展开相同实际坐标、J和Fréchet导数后，三组HasDerivWithinAt确实分别给H₁+H₂、H₂、H₁的Hamilton ODE；没有把误差界当作前提。固定u、τ及轨道后存在C>0，再对全部h∈[0,τ]给‖F₁ h(F₂ h u)−F h u‖≤C h²，C允许依赖u和给定数据，不依赖h。初值涵盖全部内层出发点F₂ s u；开放域及留域保证导数正则性可用。H₁,H₂局部C²、紧时间矩形组合连续是合理充分[EXTRA]，比原页显式H₁ C²强，但没有循环假设。有限维函数空间的默认范数为最大范数，与欧氏范数等价，只改变存在常数。τ>0的右侧BigO子句正是正步局部O(h²)；τ=0只给零步等式，不宣称非平凡邻域。second order local approximation在此指局部h²而非全局二阶。无本条[ERRATUM?]。正文复用库定理，无直接sorry；证明完成状态另于签名判断。
 
@@ -6230,21 +6242,23 @@ theorem splittingLocal {Nc : ℕ}
 
 位置：[Blueprint/Ch02.lean:1084](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1084>)（`MD.Ch02.splittingLocal`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.exists_hamiltonian_splitting_localError_bound。
 
-签名SHA256：`29fb43427dbd3c6b6339bd3bf42c619ea08afcf75e4152b355679b556ec098cb`；原文SHA256：`fbb3a0e649b7e623d44f6a03750b474d9c53f1778c68264d36ba68c990a9e3c7`。
+签名SHA256：`29fb43427dbd3c6b6339bd3bf42c619ea08afcf75e4152b355679b556ec098cb`；原文SHA256：`dee78a87e5fe11ca229782739349839b4bc5488b1416708d794a47277bd6eb85`。
 
 ## 1. MD-2.4.1-KineticFlow · Example 2.4 (kinetic) · 印刷p.83–84 / PDFp.105–106
 
 ### 2. 原文陈述
 
-> Let $H_1(\boldsymbol q,\boldsymbol p)=\boldsymbol p^TM^{-1}\boldsymbol p/2$ and $H_2(\boldsymbol q,\boldsymbol p)=U(\boldsymbol q)$, and calculate the flow maps $\mathcal F_{1,h}$ and $\mathcal F_{2,h}$ for these individual Hamiltonians. Since
-> \[\dot{\boldsymbol q}=M^{-1}\boldsymbol p,\qquad\dot{\boldsymbol p}=\boldsymbol0\quad(H_1),\]
-> we find the time-$h$ flow to be
+> Let
+> \[H_1(\boldsymbol q,\boldsymbol p)=\boldsymbol p^TM^{-1}\boldsymbol p/2,\qquad H_2(\boldsymbol q,\boldsymbol p)=U(\boldsymbol q),\]
+> then a splitting method for $H=H_1+H_2$ may be obtained by determining the flow maps for each of the two parts. For $H_1$ we have the differential equations
+> \[\dot{\boldsymbol q}=M^{-1}\boldsymbol p,\qquad\dot{\boldsymbol p}=\boldsymbol0.\]
+> The second equation tells us that $\boldsymbol p$ is constant, so it is fixed at its initial value, whereas the first equation says that $\boldsymbol q$ evolves on a linear path, hence its flow map is
 > \[\boldsymbol Q=\boldsymbol q+hM^{-1}\boldsymbol p,\qquad\boldsymbol P=\boldsymbol p.\]
 
 ### 3. 原文证明
@@ -6297,7 +6311,7 @@ private theorem momentumKick_hasFDerivAt {Nc : ℕ}
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT14**。原文JSON：CORRECTED；未冻结。
 
 展开deps:33坐标及Ch02.lean:969–973本体：Qᵢ=qᵢ+h(mᵢ)⁻¹pᵢ，Pᵢ=pᵢ，等于deps:626的实际漂移定义。固定对角非零质量的上下文中，这正是pᵀM⁻¹p/2的闭式流，时间导数分别为M⁻¹p与0，初值h=0为z。定义允许零质量属于实数逆元总化的代数扩展，并没有断言零质量矩阵具有通常逆矩阵；实际机械解释限于context_notation指定的非零质量。无需为了定义闭式表达式加入命题前提；无[EXTRA]或[ERRATUM?]。定义无sorry，邻接的私有kick导数辅助定理不属于本条声明。
 
@@ -6307,20 +6321,19 @@ private theorem momentumKick_hasFDerivAt {Nc : ℕ}
 
 位置：[Blueprint/Ch02.lean:1110](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1110>)（`MD.Ch02.bp_kineticFlow`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`45ec1b1ed155a265074baa5d648471d195610e565577a13b207ff1ff0711274b`；原文SHA256：`33029da6efc2e09df7a9c573f1b5800d078d5f8d4b41c51ceb6579191b876f5e`。
+签名SHA256：`45ec1b1ed155a265074baa5d648471d195610e565577a13b207ff1ff0711274b`；原文SHA256：`019bcef51908cd9ba06620144ebfb242cf06018393551dab19a84f4f03db24f3`。
 
 ## 1. MD-2.4.1-PotentialFlow · definition · 印刷p.84 / PDFp.106
 
 ### 2. 原文陈述
 
-> On the other hand, for the system with Hamiltonian $H_2$, we have
-> \[\dot{\boldsymbol q}=\boldsymbol0,\qquad\dot{\boldsymbol p}=-\nabla U(\boldsymbol q)\quad(H_2),\]
-> which implies the flow map
-> \[\boldsymbol Q=\boldsymbol q,\qquad\boldsymbol P=\boldsymbol p-h\nabla U(\boldsymbol q).\]
+> Similarly, the flow map of the system with Hamiltonian $H_2=U$ is
+> \[\boldsymbol Q=\boldsymbol q,\qquad\boldsymbol P=\boldsymbol p-h
+> abla U(\boldsymbol q).\]
 
 ### 3. 原文证明
 
@@ -6346,7 +6359,7 @@ def bp_potentialFlow {Nc : ℕ} (U : Q Nc → ℝ)
 
 本地预审：**PASS**。闭式势能子流采用原文实际负梯度，未把任意独立F偷换为给定U的力。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT14**。原文JSON：CORRECTED；未冻结。
 
 展开deps:2816的Q=Fin Nc→ℝ、583–585的力Fᵢ(q)=−(fderiv ℝ U q)(eᵢ)、568–570的位置投影qᵢ=z(inl i)、619–623的kick，得到Qᵢ=qᵢ，Pᵢ=pᵢ−h∂ᵢU(q)，符号及旧位置求值正确。此条定义闭式映射，不是对任意不可微U宣称经典Hamilton ODE存在；在原文梯度存在的资格下，q固定使p沿恒定−∇U(q)线性演化，确为实际子流。fderiv在不可微点的总化是表达式扩展，不增加原文物理断言。无[EXTRA]或[ERRATUM?]；定义无sorry。
 
@@ -6356,19 +6369,20 @@ def bp_potentialFlow {Nc : ℕ} (U : Q Nc → ℝ)
 
 位置：[Blueprint/Ch02.lean:1141](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1141>)（`MD.Ch02.bp_potentialFlow`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`4585986b700aacb1b18e7b4d04af5aeea9adf94db997e014cef1ff43d1e1d660`；原文SHA256：`687623253a4cb7cdec7ed7f17f252f3e939b9427aa94afe7c6ae0df026c2d33f`。
+签名SHA256：`4585986b700aacb1b18e7b4d04af5aeea9adf94db997e014cef1ff43d1e1d660`；原文SHA256：`36e374da48e1fa79855e7937f9132652f2670af7e3a9b40080273707cc80777f`。
 
 ## 1. MD-2.4.1-SplitEuler · unnumbered_claim · 印刷p.84 / PDFp.106
 
 ### 2. 原文陈述
 
-> When these maps are composed, we obtain
-> \[\boldsymbol Q=\boldsymbol q+hM^{-1}\boldsymbol P,\qquad\boldsymbol P=\boldsymbol p-h\nabla U(\boldsymbol q),\]
-> which is the Symplectic Euler method. The reversed composition gives the adjoint Symplectic Euler method (2.22), (2.23).
+> The composition of these maps simplifies to
+> \[\boldsymbol Q=\boldsymbol q+hM^{-1}\boldsymbol P,\qquad\boldsymbol P=\boldsymbol p-h
+> abla U(\boldsymbol q),\]
+> which is precisely the Symplectic Euler method. Similarly, composing the same two maps in the opposite order gives the adjoint Symplectic Euler method.
 
 ### 3. 原文证明
 
@@ -6397,7 +6411,7 @@ theorem splitEuler :
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT14**。原文JSON：CORRECTED；未冻结。
 
 展开deps:2940的splittingMap，确与bp_splittingMap一样为F₁ h ∘ F₂ h。deps:619、626、733给先kick后drift，故P=p+hF(q)=p−h∇U(q)，Q=q+hM⁻¹P。另一结论先drift后kick给Q=q+hM⁻¹p、P=p−h∇U(Q)。deps:1240的伴随为(G(−h))⁻¹；788–811的Equiv本体分别以负步kick/drift为逆，Euler为drift乘kick，1293定义真实伴随，因此其值确为正步kick∘drift。两个结论及任意n,m,U,h量词完整，等式属于代数映射恒等式，不需非零质量或势能正则性；机械流解释仍在通常资格下。无[EXTRA]或[ERRATUM?]。正文无直接sorry；不以库证明名称代替上述展开核验。
 
@@ -6407,28 +6421,38 @@ theorem splitEuler :
 
 位置：[Blueprint/Ch02.lean:1146](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1146>)（`MD.Ch02.splitEuler`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.Chapter02Review.kineticPotentialComposition_proved。
 
-签名SHA256：`cd7672becd691437bfd5157c7463f3203a4474f2ea075d6b0ba7005abebafcf5`；原文SHA256：`19411d435198b03039ed5c97ed222466807528d0ad878435e322bded6ee5e278`。
+签名SHA256：`cd7672becd691437bfd5157c7463f3203a4474f2ea075d6b0ba7005abebafcf5`；原文SHA256：`34396c3afd8d847a2974ddebef18f4685340729defabc5a5adfe1e0322206b3a`。
 
 ## 1. MD-2.4.1-VerletComposition · Example 2.5 (composition) · 印刷p.84–85 / PDFp.106–107
 
 ### 2. 原文陈述
 
-> We compose the Symplectic Euler method $\mathcal G_h$ and its adjoint $\mathcal G_h^*$, in each case using step $h/2$; we define $\mathcal K_h=\mathcal G_{h/2}^*\circ\mathcal G_{h/2}$.
+> For the Symplectic Euler method $\mathcal G_h$ and its adjoint method $\mathcal G_h^\dagger$, consider the composition
+> \[\mathcal K_h:=\mathcal G_{h/2}^\dagger\circ\mathcal G_{h/2}.\]
 
 ### 3. 原文证明
 
-> We obtain
-> \[\bar{\boldsymbol q}=\boldsymbol q+\frac h2M^{-1}\bar{\boldsymbol p},\quad\bar{\boldsymbol p}=\boldsymbol p-\frac h2\nabla U(\boldsymbol q),\]
-> \[\boldsymbol Q=\bar{\boldsymbol q}+\frac h2M^{-1}\bar{\boldsymbol p},\quad\boldsymbol P=\bar{\boldsymbol p}-\frac h2\nabla U(\boldsymbol Q).\]
-> These simplify to
-> \[\bar{\boldsymbol p}=\boldsymbol p-\frac h2\nabla U(\boldsymbol q),\quad\boldsymbol Q=\boldsymbol q+hM^{-1}\bar{\boldsymbol p},\quad\boldsymbol P=\bar{\boldsymbol p}-\frac h2\nabla U(\boldsymbol Q).\]
-> This is the leapfrog/Verlet scheme.
+> Let
+> \[\begin{bmatrix}\bar{\boldsymbol q}\\\bar{\boldsymbol p}\end{bmatrix}=\mathcal G_{h/2}\begin{bmatrix}\boldsymbol q\\\boldsymbol p\end{bmatrix},\]
+> i.e.,
+> \[\bar{\boldsymbol q}=\boldsymbol q+(h/2)M^{-1}\bar{\boldsymbol p},\qquad\bar{\boldsymbol p}=\boldsymbol p-(h/2)
+> abla U(\boldsymbol q).\]
+> and set
+> \[\begin{bmatrix}\boldsymbol Q\\\boldsymbol P\end{bmatrix}=\mathcal G_{h/2}^\dagger\begin{bmatrix}\bar{\boldsymbol q}\\\bar{\boldsymbol p}\end{bmatrix},\]
+> i.e.,
+> \[\boldsymbol Q=\bar{\boldsymbol q}+(h/2)M^{-1}\bar{\boldsymbol p},\qquad\boldsymbol P=\bar{\boldsymbol p}-(h/2)
+> abla U(\boldsymbol Q).\]
+> The composition simplifies to
+> \[\bar{\boldsymbol p}=\boldsymbol p-\frac h2
+> abla U(\boldsymbol q),\qquad\boldsymbol Q=\boldsymbol q+hM^{-1}\bar{\boldsymbol p},\qquad\boldsymbol P=\bar{\boldsymbol p}-\frac h2
+> abla U(\boldsymbol Q).\]
+> This is just the leapfrog/Verlet method in its Hamiltonian form.
 
 原书计算按原页转录。
 
@@ -6453,7 +6477,7 @@ theorem verletComposition :
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT14**。原文JSON：CORRECTED；未冻结。
 
 展开deps:2937–2939的coordinateVerlet为kick(h/2)∘drift(h)∘kick(h/2)，给p̄=p+(h/2)F(q)、Q=q+hM⁻¹p̄、P=p̄+(h/2)F(Q)。F=−∇U，因而完全对应原文三条式及最终Q处的力。deps:2935–2936的pack/unpack保留q,p顺序；2840的invMass逐坐标乘(mᵢ)⁻¹；2859–2861的verlet给Q=q+hM⁻¹p+(h²/2)M⁻¹F(q)、P=p+(h/2)(F(q)+F(Q))，与三段式代数等价。Euler为drift∘kick，真实伴随为kick∘drift，半步连续两次drift合并为全步，故第二等式的作用顺序及h/2正确。全称n,m,U,h,z覆盖全部输入，无缺失结论；任意参数总化是合理代数扩展，不宣称无资格的实际机械流。无[EXTRA]或[ERRATUM?]；正文无直接sorry，未编译。
 
@@ -6463,19 +6487,19 @@ theorem verletComposition :
 
 位置：[Blueprint/Ch02.lean:1155](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1155>)（`MD.Ch02.verletComposition`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.Chapter02Review.verletComposition_proved。
 
-签名SHA256：`96b4965793fb8f0171bff9712a590f272a1b92d60574ac1cd34fa8ccb738b723`；原文SHA256：`af24f78bc6e2954d876fb75b6efefabd321103989030a8cb2207ce542c61e866`。
+签名SHA256：`96b4965793fb8f0171bff9712a590f272a1b92d60574ac1cd34fa8ccb738b723`；原文SHA256：`1e180567b28c3d68e04593b6d83318adb588deb0efb7ab24a1c7250c471e5a62`。
 
 ## 1. MD-2.4.1-VerletSymplectic · unnumbered_claim · 印刷p.85 / PDFp.107
 
 ### 2. 原文陈述
 
-> Hence the leapfrog/Verlet scheme is a composition of two symplectic maps and is itself symplectic.
+> Since we have obtained the method as the composition of two symplectic maps, and the symplectic maps form a group, we know that this method will also be symplectic.
 
 ### 3. 原文证明
 
@@ -6502,7 +6526,7 @@ theorem verletSymplectic :
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT14**。原文JSON：CORRECTED；未冻结。
 
 展开deps:272–274的IsTextbookSymplecticMap，要求完整映射C¹且每一点实际Jacobian满足AᵀJA=J；Jacobian由235–241的真实fderiv坐标矩阵定义，J=[0,I;−I,0]，不是把待证辛性编码为假设。coordinateVerlet为实际kick半步、drift全步、kick半步；U C²使F=−∇U为C¹且力Jacobian对称，kick与对角drift均保持该J，链式法则使完整组合保持J。量词为任意n,m,U,h，在U C²后给全部z处条件。[EXTRA]全局C²为全空间C¹辛映射的合理充分资格；局部版本可弱化但不是当前缺失条款。谓词未要求全局双射，但本实际映射三段各由负步给全局逆，故不遗漏原文组合辛映射的可逆性含义。零质量的代数漂移仍是辛剪切；通常物理解释使用非零质量。无[ERRATUM?]。正文无直接sorry；此处只判签名语义，不作依赖证明可信度认证。
 
@@ -6512,21 +6536,20 @@ theorem verletSymplectic :
 
 位置：[Blueprint/Ch02.lean:1165](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1165>)（`MD.Ch02.verletSymplectic`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.Chapter02Review.verletSymplectic_proved。
 
-签名SHA256：`0a8f68ccc7f058eedc08589def4b33b3bf808480bfe7f18768054ab7ff7ecdfe`；原文SHA256：`dbcc04fecd0feefc5edbf08b78e6a0322cb968d91e9bee8ad56d0c78b45e1f01`。
+签名SHA256：`0a8f68ccc7f058eedc08589def4b33b3bf808480bfe7f18768054ab7ff7ecdfe`；原文SHA256：`6424be6aea56018e9eef97a5eb38bfc415c7fedeb91bb063b221379960ecb88e`。
 
 ## 1. MD-2.4.1-SymmetricComposition · unnumbered_claim · 印刷p.85 / PDFp.107
 
 ### 2. 原文陈述
 
-> In fact we can say even more, since $\mathcal K_h=\mathcal G_{h/2}^*\circ\mathcal G_{h/2}$, we have
-> \[\mathcal K_h^*=[\mathcal G_{h/2}^*\circ\mathcal G_{h/2}]^*=\mathcal G_{h/2}^*\circ\mathcal G_{h/2}=\mathcal K_h,\]
-> which is to say that this method is self-adjoint or symmetric.
+> When we construct a composition of a method with its adjoint method, we see readily that it is symmetric, i.e. self-adjoint, since
+> \[\mathcal K_h^{\dagger}:=[\mathcal G_{h/2}^{\dagger}\circ\mathcal G_{h/2}]^{\dagger}=\mathcal G_{h/2}^{\dagger}\circ\mathcal G_{h/2}=\mathcal K_h.\]
 
 ### 3. 原文证明
 
@@ -6554,7 +6577,7 @@ theorem symmetricComposition {E : Type*}
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT14**。原文JSON：CORRECTED；未冻结。
 
 PASS。已按实际源码展开：Ch02_deps.txt 中 AdjointMethods.lean 的 textbookAdjointMethod G h=(G(-h)).symm；CompositionMethods.lean 的 textbookComposeMethods G₁ G₂ h=G₁(h/2)*G₂(h/2)，其 toMap 定理以 rfl 明确乘法对应 G₁(h/2)∘G₂(h/2)；textbookSymmetricComposition G=textbookComposeMethods (textbookAdjointMethod G) G。因此 K_h=(G_{-h/2})⁻¹∘G_{h/2}，先执行 G 的正半步，再执行其伴随半步，和原文顺序一致。K_h†=(K_{-h})⁻¹=(G_{-h/2})⁻¹∘G_{h/2}=K_h；库中的伴随反序和二次伴随恒等式也实际给出此展开。签名对任意类型 E、任意全实参数可逆族 G 作族相等断言，故覆盖所有 h、所有状态，无缺失结论。原文中 K 的定义由正式定义承载，不必另列等式假设。[EXTRA] 实际可逆性是普通逆映射伴随所需条件，Equiv.Perm 的全局性和全实参数比局部版本强，是合理且明示的形式化范围限制；完整半步组合是原文对象本身。无需光滑性或辛性假设。无 [ERRATUM?]，没有提出原书勘误。证明状态单列：Ch02.lean:1031 引用的库定理在依赖正文中有 unfold/rw 证明，该条及所用伴随/组合恒等式无 sorry；这不是编译验证报告。
 
@@ -6564,19 +6587,19 @@ PASS。已按实际源码展开：Ch02_deps.txt 中 AdjointMethods.lean 的 text
 
 位置：[Blueprint/Ch02.lean:1172](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1172>)（`MD.Ch02.symmetricComposition`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.textbookSymmetricComposition_isSelfAdjoint。
 
-签名SHA256：`6437c3a96d9a1338ae8e1f2ed65b996ec6db99ba0f4b9171da78c60295529f51`；原文SHA256：`1dfb177302eeed94c91ca387e5d7609a7b82e4523ac512de93a3d5fa4a45b8e8`。
+签名SHA256：`6437c3a96d9a1338ae8e1f2ed65b996ec6db99ba0f4b9171da78c60295529f51`；原文SHA256：`fa281acd7d7f48b0270973f8bb69b2059574cde7bb296e58d99717ad6a0bf84a`。
 
 ## 1. MD-2.4.1-SymmetricEven · unnumbered_claim · 印刷p.85 / PDFp.107
 
 ### 2. 原文陈述
 
-> It is easy to show that symmetric discretization schemes must have even order [14, 29].
+> Self-adjoint, or symmetric schemes have unique features; in particular they have even order [164, 227].
 
 ### 3. 原文证明
 
@@ -6608,7 +6631,7 @@ theorem symmetricEven :
 
 本地预审：**PASS**。已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT15**。原文JSON：CORRECTED；未冻结。
 
 PASS。实际展开 Q n=Fin n→ℝ，故对象为任意有限维实状态空间上的可逆步族，n、G、F、自然数 r 的全称量词及假设顺序与批次一致。伴随定义为 G†_h=(G_{-h})⁻¹，G†=G 正是时间反演对称。methodLocalOrder G F r 展开为 ∀z, ∃C>0, ∃δ>0, ∀h∈ℝ, |h|<δ → ‖G_h(z)-F_h(z)‖≤C|h|^(r+1)：双侧步长、逐状态允许不同常数和邻域，指数 r+1 是局部误差对应的方法阶 r，没有把局部误差指数错当方法阶。r 阶成立且 r+1 阶不成立给出有限确切阶；后者是整个逐点命题的否定，即至少有状态无法达到下一阶，并非要求每个状态都恰好同阶。两族联合 C∞ 使该表述等价于首个不恒为零的时间 Taylor 误差项具有次数 r+1；不需解析性，平坦误差满足所有有限阶并被确切阶前提排除。F 的群作用律结合可逆性推出 F₀=id、F_{-h}=F_h⁻¹，因此 F†=F 是冗余但合理的假设；r>0 的误差界在 h=0 还保证 G₀=F₀=id。对称逆关系强迫首个误差项次数为奇数，故结论 Even r 对应原文有限确切方法阶为偶数，全部结论已保留。[EXTRA] 确切阶资格必要：二阶对称法也有一阶上界，精确流则具有任意有限阶；仅以至少 r 阶为前提不能推出 Even r。联合 C∞ 是比有限 Taylor 正则性更强的充分条件，全实参数和全局 Equiv.Perm 是比局部流/局部可逆版本更强的明示范围限制，并非声称所有对称方法必须满足这些强条件。其限制合理，未加入偶数性或等价于结论的前提。无 [ERRATUM?]；原文的 order 按通常确切阶解释，无须认定原书错误。证明状态单列：Ch02.lean:1039 的证明为 sorry，偶数阶尚未形式证明；本次 PASS 仅审核签名语义，不把 sorry 当作语义失败或已获验证。
 
@@ -6618,7 +6641,7 @@ PASS。实际展开 Q n=Fin n→ℝ，故对象为任意有限维实状态空间
 
 位置：[Blueprint/Ch02.lean:1180](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch02.lean:1180>)（`MD.Ch02.symmetricEven`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -6626,7 +6649,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
-签名SHA256：`7fdd81357ed53ab61f61f2e867220dfedf92b659e54f9e95a622834d99a5c869`；原文SHA256：`9866876427127a281c9a45e44391f1c58669c60a9459252734517414dcbe4977`。
+签名SHA256：`7fdd81357ed53ab61f61f2e867220dfedf92b659e54f9e95a622834d99a5c869`；原文SHA256：`8d3bfda8d44e7d29eecf9cbc769713212fea6d9d335d9c4e0570c61321b77fde`。
 
 ## 1. MD-2.4.2-CompositionSymplectic · unnumbered_claim · 印刷p.85 / PDFp.107
 

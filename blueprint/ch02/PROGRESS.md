@@ -116,16 +116,16 @@
 | MD-2.3.7-EulerAdjoint | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
 | MD-2.3.7-AdjointSymplecticEuler | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | definition / self-contained |
 | MD-2.3.7-AdjointInvolution | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | existing_bridge / checked+documented priors |
-| MD-2.4.1-Splitting | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
+| MD-2.4.1-Splitting | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | definition / self-contained |
 | MD-2.4.1-FieldAdd | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.4.1-SplittingLocal | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.4.1-KineticFlow | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.4.1-PotentialFlow | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.4.1-SplitEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.4.1-VerletComposition | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.4.1-VerletSymplectic | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.4.1-SymmetricComposition | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
-| MD-2.4.1-SymmetricEven | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；自伴随局部误差首个非零Taylor系数的奇偶性；需高阶展开及逆映射误差理论。 |
+| MD-2.4.1-SplittingLocal | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | existing_bridge / checked+documented priors |
+| MD-2.4.1-KineticFlow | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | definition / self-contained |
+| MD-2.4.1-PotentialFlow | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | definition / self-contained |
+| MD-2.4.1-SplitEuler | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | existing_bridge / checked+documented priors |
+| MD-2.4.1-VerletComposition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | existing_bridge / checked+documented priors |
+| MD-2.4.1-VerletSymplectic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | existing_bridge / checked+documented priors |
+| MD-2.4.1-SymmetricComposition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | existing_bridge / checked+documented priors |
+| MD-2.4.1-SymmetricEven | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT15 | placeholder / incomplete；自伴随局部误差首个非零Taylor系数的奇偶性；需高阶展开及逆映射误差理论。 |
 | MD-2.4.2-CompositionSymplectic | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
 | MD-2.4.2-CompositionOrder | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；组合局部误差分拆、h/2与原流半步群性质的BigO常数合并。 |
 | MD-2.4.3-HarmonicSplit | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
@@ -433,3 +433,7 @@ EAUDIT11 §2.3.5：4条落盘，单文件与4项公理通过；未写新证明�
 EAUDIT12 §2.3.6：2条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT13 §2.3.7：5条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT14 §2.4.1：8条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT15 §2.4.1：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。

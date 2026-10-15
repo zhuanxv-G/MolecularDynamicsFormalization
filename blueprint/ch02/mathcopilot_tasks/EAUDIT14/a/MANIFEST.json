@@ -1,0 +1,27 @@
+{
+  "eaudit": "EAUDIT14",
+  "source_id": "MD-2.4.1-Splitting",
+  "input_sha256": {
+    "BATCH_EAUDIT14.md": "dc806a9202c7234ba009cc897c59b45f9d5db15a40820dafe0fcab203c78e5ab",
+    "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+    "blueprint/ch02/ch02_source.json": "32c391f1753c5333dec8c9266792a7205239c8a798a20e5919205de7aceb6270",
+    "EAUDIT14a_materials": "9cace400f4ce6f4270b6c344d02b10f16db1566f700b552f4684284c70e8e4e0",
+    "EAUDIT14a_PAGES.pdf": "1c3ba0da68d5a2cb50eb154752c3db2064cec5f6f2d87e21b76ee9fb81325b4e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    105
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "ff510bc63c15e7ad952b377f0d7e99612b94c3fddf7b26bb4fea2db4415821da",
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_splittingMap",
+      "file_sha256": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+      "excerpt_sha256": "65aa410d9cfef1499fdebb01078a0e787060f42cec5c94b97faf218e4e365bd4"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT14_review.json",
+  "total_task_bytes": 89043
+}

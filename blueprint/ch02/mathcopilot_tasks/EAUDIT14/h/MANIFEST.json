@@ -1,0 +1,39 @@
+{
+  "eaudit": "EAUDIT14",
+  "source_id": "MD-2.4.1-SymmetricComposition",
+  "input_sha256": {
+    "BATCH_EAUDIT14.md": "dc806a9202c7234ba009cc897c59b45f9d5db15a40820dafe0fcab203c78e5ab",
+    "Blueprint/Ch02.lean": "63e31bcfe41ad77478876fb5845fb081d8f2c80675e503f33bd78ed8a081c048",
+    "blueprint/ch02/ch02_source.json": "32c391f1753c5333dec8c9266792a7205239c8a798a20e5919205de7aceb6270",
+    "EAUDIT14h_materials": "784225a334d4dac8c17e57f827790a86b59f775a44a9b54df4c3fe2d3196965d",
+    "EAUDIT14h_PAGES.pdf": "055d4826065b9d43a79d4cc0b3f16603757421c56e523042bde5d44fd4ed45e8"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    107
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a537da692655398df910006a6420ebe22eb44380d0d6e4f9aeeb9debdd75f1f8",
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/AdjointMethods.lean",
+      "name": "textbookAdjointMethod",
+      "file_sha256": "4d2ac087bf5067c7ebc61b95e4cf1e90f553b51fc1bba92ca8814b141541647e",
+      "excerpt_sha256": "f5c0b5fb6ce848d19f9d67ee0a70de4319fddae5919f016900b935eb3b44ce8e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/CompositionMethods.lean",
+      "name": "textbookComposeMethods",
+      "file_sha256": "67847f5aa9eed9e165aed3b2da9419c282482b805e9b65f12224da07b5cfde5c",
+      "excerpt_sha256": "af61beb0edbfb9fa40be286f54f12fd94218788adba322123a0d44c0a79d0cd6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/CompositionMethods.lean",
+      "name": "textbookSymmetricComposition",
+      "file_sha256": "67847f5aa9eed9e165aed3b2da9419c282482b805e9b65f12224da07b5cfde5c",
+      "excerpt_sha256": "54afb471d94bb92a2f6ef51d4741cea6263ad4669ad85806ffec9d21061ba8cb"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT14_review.json",
+  "total_task_bytes": 91567
+}

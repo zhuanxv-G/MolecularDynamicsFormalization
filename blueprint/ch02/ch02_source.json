@@ -3393,7 +3393,7 @@
     "section": "2.4.1",
     "printed_page": "83",
     "pdf_page": "105",
-    "statement_latex": "Suppose that a Hamiltonian $H$ can be split into two parts, i.e. $H=H_1+H_2$, and that the flow maps $\\mathcal F_{1,t}$ and $\\mathcal F_{2,t}$ are known in closed form for the Hamiltonians $H_1$ and $H_2$, respectively. It is natural to think of using the composition of the flow maps $\\mathcal G_h=\\mathcal F_{1,h}\\circ\\mathcal F_{2,h}$ as an approximation to $\\mathcal F_h$, the flow map of the combined Hamiltonian $H$.",
+    "statement_latex": "Let $H(\\boldsymbol q,\\boldsymbol p)=H_1(\\boldsymbol q,\\boldsymbol p)+H_2(\\boldsymbol q,\\boldsymbol p)$ have flow map $\\mathcal F_h$, and indicate by $\\mathcal F_h^1,\\mathcal F_h^2$ the flow maps for the systems with Hamiltonians $H_1,H_2$, respectively. The proposal is that the map\n\\[\\mathcal G_h=\\mathcal F_h^1\\circ\\mathcal F_h^2\\]\nis an approximation of $\\mathcal F_h$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3405,9 +3405,21 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:19:46.414902",
+        "before_sha256": "36b43b98e7b04d926a75be3820b903e1ddc5c0574d69fa930ac8be3d19e64387",
+        "after_sha256": "41abf2f7f1fafcb2c6ea11469fac974653a578878d62e45e17c5e018a3b7fdb8",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.1-FieldAdd",
@@ -3442,7 +3454,7 @@
     "printed_page": "83",
     "pdf_page": "105",
     "statement_latex": "For this to be a first order method, we need at least $\\|\\mathcal G_h(\\boldsymbol u)-\\mathcal F_h(\\boldsymbol u)\\|\\le C(\\boldsymbol u)h^2$.",
-    "proof_latex": "We expand the map $\\mathcal F_h$ into its Taylor series:\n\\[\\mathcal F_h(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H(\\boldsymbol u)+\\mathcal O(h^2)=\\boldsymbol u+h(J\\nabla H_1(\\boldsymbol u)+J\\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\tag{2.24}\\]\nFor the individual maps $\\mathcal F_{1,h}$ and $\\mathcal F_{2,h}$, we have\n\\[\\mathcal F_{1,h}(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_1(\\boldsymbol u)+\\mathcal O(h^2),\\qquad\\mathcal F_{2,h}(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u)+\\mathcal O(h^2).\\]\nComposing the two maps we obtain\n\\[\\mathcal F_{1,h}(\\mathcal F_{2,h}(\\boldsymbol u))=\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u)+hJ\\nabla H_1(\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\]\nAssuming $H_1$ is twice continuously differentiable, we may expand further in the last term and collect\n\\[\\mathcal F_{1,h}(\\mathcal F_{2,h}(\\boldsymbol u))=\\boldsymbol u+h(J\\nabla H_2(\\boldsymbol u)+J\\nabla H_1(\\boldsymbol u))+\\mathcal O(h^2).\\]\nThus the splitting method does indeed provide a second order local approximation to the flow map.",
+    "proof_latex": "Expand $\\mathcal F_h(\\boldsymbol u)$ in a Taylor series:\n\\[\\mathcal F_h(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H+\\mathcal O(h^2)=\\boldsymbol u+h(J\nabla H_1+J\nabla H_2)+\\mathcal O(h^2).\\tag{2.24}\\]\nOn the other hand,\n\\[\\mathcal F_h^1(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_1(\\boldsymbol u)+\\mathcal O(h^2),\\qquad\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u)+\\mathcal O(h^2).\\]\nComposing the maps we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u)+hJ\nabla H_1(\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\]\nAssuming $H_1$ is $C^2$, we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+h(J\nabla H_2(\\boldsymbol u)+J\nabla H_1(\\boldsymbol u))+\\mathcal O(h^2),\\]\nwhich agrees with the expansion (2.24) of the flow map through the terms of first order. Thus the splitting method does indeed provide a second order local approximation of the flow map.",
     "proof_note": "原书计算按原页转录。",
     "proof_discussion_latex": null,
     "context_notation": [],
@@ -3455,9 +3467,21 @@
       "实际H及两个子Hamilton局部ODE、初值及留开放域；H₁,H₂ C²，组合在紧时间矩形连续；没有假设待证局部误差。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:19:46.414902",
+        "before_sha256": "f1e383c94d50722ca9de7c4a4e6c6a5f502a0a5af05819f9d387d039573535cc",
+        "after_sha256": "bf174bdb16ddb8510dcb6934acd666a319e8efd2f11d7dd7041ecc0763f102b7",
+        "changed_fields": [
+          "proof_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.1-KineticFlow",
@@ -3466,7 +3490,7 @@
     "section": "2.4.1",
     "printed_page": "83–84",
     "pdf_page": "105–106",
-    "statement_latex": "Let $H_1(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^TM^{-1}\\boldsymbol p/2$ and $H_2(\\boldsymbol q,\\boldsymbol p)=U(\\boldsymbol q)$, and calculate the flow maps $\\mathcal F_{1,h}$ and $\\mathcal F_{2,h}$ for these individual Hamiltonians. Since\n\\[\\dot{\\boldsymbol q}=M^{-1}\\boldsymbol p,\\qquad\\dot{\\boldsymbol p}=\\boldsymbol0\\quad(H_1),\\]\nwe find the time-$h$ flow to be\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p,\\qquad\\boldsymbol P=\\boldsymbol p.\\]",
+    "statement_latex": "Let\n\\[H_1(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^TM^{-1}\\boldsymbol p/2,\\qquad H_2(\\boldsymbol q,\\boldsymbol p)=U(\\boldsymbol q),\\]\nthen a splitting method for $H=H_1+H_2$ may be obtained by determining the flow maps for each of the two parts. For $H_1$ we have the differential equations\n\\[\\dot{\\boldsymbol q}=M^{-1}\\boldsymbol p,\\qquad\\dot{\\boldsymbol p}=\\boldsymbol0.\\]\nThe second equation tells us that $\\boldsymbol p$ is constant, so it is fixed at its initial value, whereas the first equation says that $\\boldsymbol q$ evolves on a linear path, hence its flow map is\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p,\\qquad\\boldsymbol P=\\boldsymbol p.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3478,9 +3502,21 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:19:46.414902",
+        "before_sha256": "c08fe5d8e590cbc6a4afc475f7ab49c7b7f8e13971e68af96a2d437fdb25a1c0",
+        "after_sha256": "1015e30957b256ceea570e068301f743a858b3bd9d54d86c7cd79d8be1e55648",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.1-PotentialFlow",
@@ -3489,7 +3525,7 @@
     "section": "2.4.1",
     "printed_page": "84",
     "pdf_page": "106",
-    "statement_latex": "On the other hand, for the system with Hamiltonian $H_2$, we have\n\\[\\dot{\\boldsymbol q}=\\boldsymbol0,\\qquad\\dot{\\boldsymbol p}=-\\nabla U(\\boldsymbol q)\\quad(H_2),\\]\nwhich implies the flow map\n\\[\\boldsymbol Q=\\boldsymbol q,\\qquad\\boldsymbol P=\\boldsymbol p-h\\nabla U(\\boldsymbol q).\\]",
+    "statement_latex": "Similarly, the flow map of the system with Hamiltonian $H_2=U$ is\n\\[\\boldsymbol Q=\\boldsymbol q,\\qquad\\boldsymbol P=\\boldsymbol p-h\nabla U(\\boldsymbol q).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3501,9 +3537,21 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:19:46.414902",
+        "before_sha256": "040b4dcd226289258bd06eb010961d3c5157182b2ecd377e5a6b76c171788db5",
+        "after_sha256": "725116820e28f0413ef1782402ab6b60fc7b32475bef94db32e3080c9410e13b",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.1-SplitEuler",
@@ -3512,7 +3560,7 @@
     "section": "2.4.1",
     "printed_page": "84",
     "pdf_page": "106",
-    "statement_latex": "When these maps are composed, we obtain\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol P,\\qquad\\boldsymbol P=\\boldsymbol p-h\\nabla U(\\boldsymbol q),\\]\nwhich is the Symplectic Euler method. The reversed composition gives the adjoint Symplectic Euler method (2.22), (2.23).",
+    "statement_latex": "The composition of these maps simplifies to\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol P,\\qquad\\boldsymbol P=\\boldsymbol p-h\nabla U(\\boldsymbol q),\\]\nwhich is precisely the Symplectic Euler method. Similarly, composing the same two maps in the opposite order gives the adjoint Symplectic Euler method.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3524,9 +3572,21 @@
     ],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:19:46.414902",
+        "before_sha256": "5467dab516e1c6ffaa422c157c633664edb5c4c9e06629c644e9cf4651d63952",
+        "after_sha256": "9f19b1fa093092c76c6b723c4507ddc3e68ffa1fee00a73eb72f6614997cc84e",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.1-VerletComposition",
@@ -3535,8 +3595,8 @@
     "section": "2.4.1",
     "printed_page": "84–85",
     "pdf_page": "106–107",
-    "statement_latex": "We compose the Symplectic Euler method $\\mathcal G_h$ and its adjoint $\\mathcal G_h^*$, in each case using step $h/2$; we define $\\mathcal K_h=\\mathcal G_{h/2}^*\\circ\\mathcal G_{h/2}$.",
-    "proof_latex": "We obtain\n\\[\\bar{\\boldsymbol q}=\\boldsymbol q+\\frac h2M^{-1}\\bar{\\boldsymbol p},\\quad\\bar{\\boldsymbol p}=\\boldsymbol p-\\frac h2\\nabla U(\\boldsymbol q),\\]\n\\[\\boldsymbol Q=\\bar{\\boldsymbol q}+\\frac h2M^{-1}\\bar{\\boldsymbol p},\\quad\\boldsymbol P=\\bar{\\boldsymbol p}-\\frac h2\\nabla U(\\boldsymbol Q).\\]\nThese simplify to\n\\[\\bar{\\boldsymbol p}=\\boldsymbol p-\\frac h2\\nabla U(\\boldsymbol q),\\quad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\bar{\\boldsymbol p},\\quad\\boldsymbol P=\\bar{\\boldsymbol p}-\\frac h2\\nabla U(\\boldsymbol Q).\\]\nThis is the leapfrog/Verlet scheme.",
+    "statement_latex": "For the Symplectic Euler method $\\mathcal G_h$ and its adjoint method $\\mathcal G_h^\\dagger$, consider the composition\n\\[\\mathcal K_h:=\\mathcal G_{h/2}^\\dagger\\circ\\mathcal G_{h/2}.\\]",
+    "proof_latex": "Let\n\\[\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix}=\\mathcal G_{h/2}\\begin{bmatrix}\\boldsymbol q\\\\\\boldsymbol p\\end{bmatrix},\\]\ni.e.,\n\\[\\bar{\\boldsymbol q}=\\boldsymbol q+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\bar{\\boldsymbol p}=\\boldsymbol p-(h/2)\nabla U(\\boldsymbol q).\\]\nand set\n\\[\\begin{bmatrix}\\boldsymbol Q\\\\\\boldsymbol P\\end{bmatrix}=\\mathcal G_{h/2}^\\dagger\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix},\\]\ni.e.,\n\\[\\boldsymbol Q=\\bar{\\boldsymbol q}+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-(h/2)\nabla U(\\boldsymbol Q).\\]\nThe composition simplifies to\n\\[\\bar{\\boldsymbol p}=\\boldsymbol p-\\frac h2\nabla U(\\boldsymbol q),\\qquad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-\\frac h2\nabla U(\\boldsymbol Q).\\]\nThis is just the leapfrog/Verlet method in its Hamiltonian form.",
     "proof_note": "原书计算按原页转录。",
     "proof_discussion_latex": null,
     "context_notation": [],
@@ -3547,9 +3607,22 @@
     ],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:19:46.414902",
+        "before_sha256": "9cc16bde6cf373626fb9a369826231cb9149ad6389c66e5c564e395c73952126",
+        "after_sha256": "403eaa92e1a9bdb5e0606b573e751be75ef428bcae341b599f7f59aa4204cdab",
+        "changed_fields": [
+          "statement_latex",
+          "proof_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.1-VerletSymplectic",
@@ -3558,7 +3631,7 @@
     "section": "2.4.1",
     "printed_page": "85",
     "pdf_page": "107",
-    "statement_latex": "Hence the leapfrog/Verlet scheme is a composition of two symplectic maps and is itself symplectic.",
+    "statement_latex": "Since we have obtained the method as the composition of two symplectic maps, and the symplectic maps form a group, we know that this method will also be symplectic.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3572,9 +3645,21 @@
       "U C²；真实完整步映射。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:19:46.414902",
+        "before_sha256": "f6dd866dbdb1ae2a339fb7e23fe40eb7b594dc76ed3177e07dda3b8e6f6c723a",
+        "after_sha256": "063a4814dc32328ed5f10c5157bda0bd6740f26dafca87b2e993afc539453ba2",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.1-SymmetricComposition",
@@ -3583,7 +3668,7 @@
     "section": "2.4.1",
     "printed_page": "85",
     "pdf_page": "107",
-    "statement_latex": "In fact we can say even more, since $\\mathcal K_h=\\mathcal G_{h/2}^*\\circ\\mathcal G_{h/2}$, we have\n\\[\\mathcal K_h^*=[\\mathcal G_{h/2}^*\\circ\\mathcal G_{h/2}]^*=\\mathcal G_{h/2}^*\\circ\\mathcal G_{h/2}=\\mathcal K_h,\\]\nwhich is to say that this method is self-adjoint or symmetric.",
+    "statement_latex": "When we construct a composition of a method with its adjoint method, we see readily that it is symmetric, i.e. self-adjoint, since\n\\[\\mathcal K_h^{\\dagger}:=[\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2}]^{\\dagger}=\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2}=\\mathcal K_h.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3597,9 +3682,21 @@
       "实际可逆步Equiv.Perm；完整伴随半步组合。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:19:46.414902",
+        "before_sha256": "57ccc301c583573ff7fc71a0d1f645e5d3f0f13697c9a48053a328d1633305b1",
+        "after_sha256": "eeee015739db88391b33ecf96e027d229441d6c28f2a04667104a54737055802",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.1-SymmetricEven",
@@ -3608,7 +3705,7 @@
     "section": "2.4.1",
     "printed_page": "85",
     "pdf_page": "107",
-    "statement_latex": "It is easy to show that symmetric discretization schemes must have even order [14, 29].",
+    "statement_latex": "Self-adjoint, or symmetric schemes have unique features; in particular they have even order [164, 227].",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3620,9 +3717,21 @@
       "[EXTRA]r>0为有限确切局部阶：r阶界成立而r+1阶不成立；两族C∞且原流为群，自伴随并实际可逆。原书省略“确切”阶资格，精确流没有有限阶。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT15_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:20:34.172178",
+        "before_sha256": "f8758a94060787b9daae351ed3b1926103129ea1d50c7db9a41688377549af35",
+        "after_sha256": "2e802ae13be63a2448d0e0404f1acc5bbbf90f44dd243205f937e7d917d3b16e",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.2-CompositionSymplectic",

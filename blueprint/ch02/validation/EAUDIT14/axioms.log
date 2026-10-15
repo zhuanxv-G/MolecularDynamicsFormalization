@@ -1,0 +1,8 @@
+'MD.Ch02.bp_kineticFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_potentialFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.splitEuler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_splittingMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.splittingLocal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.symmetricComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.verletComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.verletSymplectic' depends on axioms: [propext, Classical.choice, Quot.sound]
