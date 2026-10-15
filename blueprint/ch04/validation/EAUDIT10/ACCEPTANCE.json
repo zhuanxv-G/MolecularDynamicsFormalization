@@ -1,0 +1,53 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT10",
+  "section": "4.3.2",
+  "source_ids": [
+    "MD-4.3.2-FrozenNewtonConstraint",
+    "MD-4.3.2-FrozenNewtonLinear",
+    "MD-4.3.2-NewtonConstraint",
+    "MD-4.3.2-NewtonQuadratic",
+    "MD-4.3.2-PositionEulerForceConvention",
+    "MD-4.3.2-ProjectionJacobian",
+    "MD-4.3.2-ProjectionResidual",
+    "MD-4.3.2-ProjectionScale"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.2-ProjectionResidual",
+    "MD-4.3.2-ProjectionJacobian",
+    "MD-4.3.2-NewtonConstraint",
+    "MD-4.3.2-NewtonQuadratic",
+    "MD-4.3.2-FrozenNewtonLinear",
+    "MD-4.3.2-ProjectionScale"
+  ],
+  "human_ids": [
+    "MD-4.3.2-PositionEulerForceConvention",
+    "MD-4.3.2-FrozenNewtonConstraint"
+  ],
+  "lean_sha256": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+  "source_sha256": "f7e3f00680ff8323249373fc382bf6dc5cf7f1efe25226f145b326cb6841673a",
+  "pages": [
+    178,
+    179,
+    180
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+    "log_sha256": "aa9a73d63f400f3d6a6c2e44f1b5efa59ac875bc6b9f907322bcee2d36fa8dce"
+  },
+  "axiom_decl_count": 12,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/INDEX.md"
+}

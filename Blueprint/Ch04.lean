@@ -1007,21 +1007,59 @@ theorem hiddenEulerError :
       ‖textbookConstraintJacobian g (out h).1 *ᵥ MolecularDynamics.Chapter04Review.invMass m (out h).2‖ ≤ C*h := by
   sorry
 
-/-- source_id: MD-4.3.2-ProjectionResidual · (4.17) · §4.3.2 · 印刷p.156 / PDFp.178 -/
+/-- source_id: MD-4.3.2-ProjectionResidual · (4.17) · §4.3.2 · 印刷p.156 / PDFp.178 
+[EXTRA] 补真实零残差方程及原印F符号下base、η=h²λ与旧状态的消元等价；不把残差函数冒充已解投影方程。 -/
 def projectionResidual {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=
   fun j => g j (base-MolecularDynamics.Chapter04Review.invMass m ((textbookConstraintJacobian g q)ᵀ *ᵥ η))
 
-/-- source_id: MD-4.3.2-ProjectionJacobian · definition · §4.3.2 · 印刷p.157 / PDFp.179 -/
+def projectionEquation {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  projectionResidual m g q base η=0
+
+theorem projectionResidual_elimination {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (Fprinted : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n)
+    (lam : MolecularDynamics.Chapter04Review.Q l)
+    (_hp : out.2=z.2-h • Fprinted z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ lam))
+    (_hq : out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m out.2) :
+    (out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g) ↔
+      projectionEquation m g z.1
+        (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2-
+          h^2 • MolecularDynamics.Chapter04Review.invMass m (Fprinted z.1)) (h^2 • lam) := by
+  sorry
+
+/-- source_id: MD-4.3.2-ProjectionJacobian · definition · §4.3.2 · 印刷p.157 / PDFp.179 
+[EXTRA] 保留交叉Jacobian定义，并补实际Newton线性方程RΔΛ=r及Δ=η_next−η；Q依赖base−M⁻¹Gᵀη已在R中展开。 -/
 def projectionJacobian {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : Matrix (Fin l) (Fin l) ℝ :=
   textbookConstraintJacobian g (base-MolecularDynamics.Chapter04Review.invMass m ((textbookConstraintJacobian g q)ᵀ *ᵥ η)) *
     textbookInverseMassMatrix m * (textbookConstraintJacobian g q)ᵀ
 
-/-- source_id: MD-4.3.2-NewtonConstraint · (4.18)–(4.19) · §4.3.2 · 印刷p.157 / PDFp.179 -/
+def projectionNewtonIncrement {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n)
+    (η ηnext : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  let Δ := ηnext-η
+  projectionJacobian m g q base η *ᵥ Δ=projectionResidual m g q base η
+
+/-- source_id: MD-4.3.2-NewtonConstraint · (4.18)–(4.19) · §4.3.2 · 印刷p.157 / PDFp.179 
+[EXTRA] 真实Newton主接口加入当前交叉矩阵det≠0；补建议初值0的有限序列且逐步可逆资格显式，不把奇异逆总化当合法迭代。Mathlib逆矩阵按标准含义采信。 -/
 def newtonConstraint {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
-    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l)
+    (_hdet : (MolecularDynamics.Chapter04Review.projectionJacobian m g q base η).det ≠ 0) : MolecularDynamics.Chapter04Review.Q l :=
   η+(MolecularDynamics.Chapter04Review.projectionJacobian m g q base η)⁻¹ *ᵥ MolecularDynamics.Chapter04Review.projectionResidual m g q base η
+
+def newtonConstraintSequence {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (k : ℕ)
+    (_hvalid : ∀ i < k,
+      (MolecularDynamics.Chapter04Review.projectionJacobian m g q base
+        ((MolecularDynamics.Chapter04Review.newtonConstraint m g q base)^[i] 0)).det ≠ 0) :
+    MolecularDynamics.Chapter04Review.Q l :=
+  (MolecularDynamics.Chapter04Review.newtonConstraint m g q base)^[k] 0
 
 /-- source_id: MD-4.3.2-FrozenNewtonConstraint · definition · §4.3.2 · 印刷p.157 / PDFp.179
 [ERRATUM?] R(0)=g′(Qn)M⁻¹Gnᵀ，一般不是GnM⁻¹Gnᵀ；只有Qn=qn或冻结Jacobian到旧位置时相同。 -/
@@ -2226,8 +2264,12 @@ end MD.Ch04
 #print axioms MD.Ch04.positionEulerRelation
 #print axioms MD.Ch04.hiddenEulerError
 #print axioms MD.Ch04.projectionResidual
+#print axioms MD.Ch04.projectionEquation
+#print axioms MD.Ch04.projectionResidual_elimination
 #print axioms MD.Ch04.projectionJacobian
+#print axioms MD.Ch04.projectionNewtonIncrement
 #print axioms MD.Ch04.newtonConstraint
+#print axioms MD.Ch04.newtonConstraintSequence
 #print axioms MD.Ch04.frozenNewtonConstraint
 #print axioms MD.Ch04.newtonQuadratic
 #print axioms MD.Ch04.frozenNewtonLinear

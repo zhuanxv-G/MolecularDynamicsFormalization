@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT10",
+  "input_sha256": {
+    "BATCH_EAUDIT10.md": "42028dfdb2ea0a79584c15d6987ba79bac38c80cd7b20b412260b624ac736ba2",
+    "Blueprint/Ch04.lean": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+    "blueprint/ch04/ch04_source.json": "f7e3f00680ff8323249373fc382bf6dc5cf7f1efe25226f145b326cb6841673a"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT10a",
+      "source_id": "MD-4.3.2-ProjectionResidual",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/a",
+      "total_bytes": 97973,
+      "manifest_sha256": "f410b478e0c8cf24f204b3d5f7639d92adbdbf2a86f84276180c7d930a75ebf9"
+    },
+    {
+      "subtask": "EAUDIT10b",
+      "source_id": "MD-4.3.2-ProjectionJacobian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/b",
+      "total_bytes": 96218,
+      "manifest_sha256": "2ea97b5cffe7120bf3941564ea0266227da01aa89020836c20cfb1466601360c"
+    },
+    {
+      "subtask": "EAUDIT10c",
+      "source_id": "MD-4.3.2-NewtonConstraint",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/c",
+      "total_bytes": 99605,
+      "manifest_sha256": "445ceab364af393e19152216a08435af377b1349f188db99eab722090b4f399e"
+    },
+    {
+      "subtask": "EAUDIT10d",
+      "source_id": "MD-4.3.2-NewtonQuadratic",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/d",
+      "total_bytes": 98281,
+      "manifest_sha256": "54e6651f9621a20d8fc3629f8c64062ea029c461716d298160af0bd28c3f33d7"
+    },
+    {
+      "subtask": "EAUDIT10e",
+      "source_id": "MD-4.3.2-FrozenNewtonLinear",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/e",
+      "total_bytes": 100067,
+      "manifest_sha256": "ec0bbdc9d0c245bed0c72dffa34857c382e4d24d912818349012de9ef6e25aa6"
+    },
+    {
+      "subtask": "EAUDIT10f",
+      "source_id": "MD-4.3.2-ProjectionScale",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/f",
+      "total_bytes": 104405,
+      "manifest_sha256": "7995cf8c6d597ca9cb0f5bd1de6326b1e2b3b9440fcccc8f5bc497a6db26c538"
+    }
+  ]
+}

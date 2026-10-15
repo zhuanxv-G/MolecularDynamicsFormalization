@@ -1,0 +1,41 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT11",
+  "section": "4.3.2",
+  "source_ids": [
+    "MD-4.3.2-FrozenGramPrinted",
+    "MD-4.3.2-NewtonQuadratic"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.2-NewtonQuadratic"
+  ],
+  "human_ids": [
+    "MD-4.3.2-FrozenGramPrinted"
+  ],
+  "lean_sha256": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+  "source_sha256": "54043219301ddf92adbb36fe6729b37396b43d17af3b94bc99f17237ba67d630",
+  "pages": [
+    178,
+    179,
+    180
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch04.olean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+    "log_sha256": "aa9a73d63f400f3d6a6c2e44f1b5efa59ac875bc6b9f907322bcee2d36fa8dce"
+  },
+  "axiom_decl_count": 2,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT11/INDEX.md"
+}

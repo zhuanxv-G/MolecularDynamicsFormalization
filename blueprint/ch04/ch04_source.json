@@ -2298,8 +2298,19 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT10_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T13:03:51.275819",
+        "before_sha256": "d410937b4255f83263599dfb49e275103ee421586089f671ec3b54f1ef80fe93",
+        "after_sha256": "0b0d1cb8bcea0c66aaed9378a006ac90309250c5e1b2052b7be6bb94f659ab5d",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.2-HiddenEulerError",
@@ -2341,11 +2352,24 @@
     "issues": [],
     "lean_decl": "MD.Ch04.projectionResidual",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 补真实零残差方程及原印F符号下base、η=h²λ与旧状态的消元等价；不把残差函数冒充已解投影方程。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT10_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T13:03:51.275819",
+        "before_sha256": "b474c617a6bfcfa75f76f2eb1bb171f04327bbde9c7740071608b37722a3bb6b",
+        "after_sha256": "27a586e15652e6f2a47ab8bf3406c350a82f42c98c60c1b0f545f8e2d112157f",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.2-ProjectionJacobian",
@@ -2364,11 +2388,24 @@
     "issues": [],
     "lean_decl": "MD.Ch04.projectionJacobian",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 保留交叉Jacobian定义，并补实际Newton线性方程RΔΛ=r及Δ=η_next−η；Q依赖base−M⁻¹Gᵀη已在R中展开。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT10_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T13:03:51.275819",
+        "before_sha256": "13c0e7e8bd365099b3d050d938d77894fd2564499ef30a6f6115da6a4e49c9db",
+        "after_sha256": "de81674a30a52dd9be2f949968055a25233916f81d2f3299d79c60ea01090efc",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.2-NewtonConstraint",
@@ -2387,11 +2424,24 @@
     "issues": [],
     "lean_decl": "MD.Ch04.newtonConstraint",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 真实Newton主接口加入当前交叉矩阵det≠0；补建议初值0的有限序列且逐步可逆资格显式，不把奇异逆总化当合法迭代。Mathlib逆矩阵按标准含义采信。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT10_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T13:03:51.275819",
+        "before_sha256": "73cc0d8233bfa39abc6ecc5d8af9bef5f8cf06fab5c9b9dd15a06aabe4ee2e79",
+        "after_sha256": "5eb19aa1d9885152d211e8c332d0ceabdd4780ad78e7c130a6c3b68ffa4d3845",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.2-FrozenNewtonConstraint",
@@ -2405,7 +2455,7 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "固定η0=0处的R作为每步矩阵；但Q(0)=base，不无条件等G(q)M⁻¹G(q)ᵀ；原文所写初始Gram等式另列疑点。"
+      "固定η₀=0处的R作为每步矩阵；Q(0)=base，所以一般R(0)=G(base)M⁻¹G(q)ᵀ；原书仍保留R(0)=G(q)M⁻¹G(q)ᵀ及对称性文字，不将其静默修正。Qₙ=qₙ是充分条件但非必要条件；例如仿射约束的Jacobian恒定时也成立。"
     ],
     "issues": [
       {
@@ -2417,9 +2467,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT10_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T13:03:51.275819",
+        "before_sha256": "849cdb237692c2295c7f451e10d6ded906dc7a782d6e8fc1ee246e5f28aa4106",
+        "after_sha256": "a48d9d72246dedfdead858a088fcca7a059919efe3a4140874dd5028029864cd",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.2-NewtonQuadratic",
@@ -2440,9 +2503,30 @@
       "局部C²约束、真实残差root=0及真实R(root) det≠0；结论给存在邻域/二次界，不假设Newton误差结论。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT10_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T13:03:51.275819",
+        "before_sha256": "420ba5cfe570cb14c03871bfc0bbee53a367425c1a2b10b5320731ffb098c344",
+        "after_sha256": "9e8432a7a285837592185da1e898641f0f3fd2af63f2899a8282a97b789d9742",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EAUDIT11_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:52:56.028825",
+        "before_sha256": "9e8432a7a285837592185da1e898641f0f3fd2af63f2899a8282a97b789d9742",
+        "after_sha256": "5fdb4584a3c25ff65bfb5c06b9e1497585f536fbb8ca49bf93bb6cc2bb77fc1e",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.2-FrozenNewtonLinear",
@@ -2451,11 +2535,20 @@
     "section": "4.3.2",
     "printed_page": "157",
     "pdf_page": "179",
-    "statement_latex": "When $R$ is evaluated only once per step, the asymptotic convergence of Newton’s method is linear, i.e. we have instead\n\\[\\|\\Lambda^{(l+1)}-\\Lambda_*\\|\\le\\widetilde C\\|\\Lambda^{(l)}-\\Lambda_*\\|,\\]\nsufficiently near to the solution.",
+    "statement_latex": "When $R$ is evaluated only once per step, the asymptotic convergence of Newton’s method is linear, i.e. we have instead\n\\[\\|\\Lambda^{(l+1)}-\\Lambda_*\\|\\le\\widehat C\\|\\Lambda^{(l)}-\\Lambda_*\\|,\\]\nsufficiently near to the solution.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "$g$ is the vector of holonomic constraints; $G_n=g^{\\prime}(q_n)$ is its Jacobian at the old position. PDF p.178 / printed p.156, immediately below (4.17).",
+      "$Q_n=q_n+hM^{-1}p_n-h^2M^{-1}F_n$ is the predictor printed below (4.17); retain this minus sign literally. PDF p.178 / printed p.156.",
+      "$\\Lambda=h^2\\lambda_n$ is the scaled vector of constraint multipliers, and $g(Q_n-M^{-1}G_n^T\\Lambda)=0$ is (4.17). PDF p.178 / printed p.156.",
+      "$Q^{(l)}=Q_n-M^{-1}G_n^T\\Lambda^{(l)}$ and $R^{(l)}=g^{\\prime}(Q^{(l)})M^{-1}G_n^T$; $l$ is the iteration index. PDF p.179 / printed p.157, (4.19) and the definition of $R^{(l)}$.",
+      "$M^{-1}$ is the inverse mass matrix; $h$ is the timestep, and the subscript $n$ labels the old timestep. In the Lean signature, $n$ instead denotes the number of position coordinates, $l$ the number of scalar constraints, and $m$ the vector of diagonal masses.",
+      "$\\Lambda_*$ solves (4.17), and $\\Lambda^{(l)}$ is the $l$th iterate. PDF p.179 / printed p.157, the paragraph beginning “When the solution is unique” and the two displayed error estimates.",
+      "$\\widehat C$ is the constant printed in the frozen-iteration linear error bound, and $\\|\\cdot\\|$ is the norm on multiplier errors. The textbook does not specify the norm or explicitly print $\\widehat C<1$ in this displayed formula.",
+      "“When $R$ is evaluated only once per step” refers to the previously described sufficiently small timestep and sufficiently smooth $g^{\\prime}$, with the matrix fixed at the beginning of the timestep. The neighboring Newton discussion assumes a unique solution, sufficiently smooth constraints, and a determinant bounded away from zero. PDF p.179 / printed p.157."
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.frozenNewtonLinear",
     "reusable_proofs": [],
@@ -2463,9 +2556,23 @@
       "[EXTRA]真实冻结映射在root的导数范数<1量化small-step收缩资格；det R0≠0、真实root和C²约束，不无条件声称冻结必收敛。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT10_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T13:03:51.275819",
+        "before_sha256": "60347fca81b24952be92b40e16507f8c39f5a642f38cb9711602412082d707d9",
+        "after_sha256": "2788b8f2488bd2e7bc446f67ce5997dec0c82743002bd1a6067ccc07571ac779",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.2-ProjectionScale",
@@ -2474,11 +2581,21 @@
     "section": "4.3.2",
     "printed_page": "158",
     "pdf_page": "180",
-    "statement_latex": "It is worth noting that $\\Lambda(h)=O(h^2)$, i.e. for small steps $\\Lambda$ will also be small. This justifies the initial guess $\\Lambda^{(0)}=0$.",
+    "statement_latex": "It is worth noting that $\\Lambda(h)=O(h^2)$, i.e. for small steps $\\Lambda$ will also be small. This justifies the initial guess $\\Lambda^{(0)}=0$,",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "$g$ is the vector of holonomic constraints; $G_n=g^{\\prime}(q_n)$ is its Jacobian at the old position. PDF p.178 / printed p.156, immediately below (4.17).",
+      "$Q_n=q_n+hM^{-1}p_n-h^2M^{-1}F_n$ is the predictor printed below (4.17); retain this minus sign literally. PDF p.178 / printed p.156.",
+      "$\\Lambda=h^2\\lambda_n$ is the scaled vector of constraint multipliers, and $g(Q_n-M^{-1}G_n^T\\Lambda)=0$ is (4.17). PDF p.178 / printed p.156.",
+      "$Q^{(l)}=Q_n-M^{-1}G_n^T\\Lambda^{(l)}$ and $R^{(l)}=g^{\\prime}(Q^{(l)})M^{-1}G_n^T$; $l$ is the iteration index. PDF p.179 / printed p.157, (4.19) and the definition of $R^{(l)}$.",
+      "$M^{-1}$ is the inverse mass matrix; $h$ is the timestep, and the subscript $n$ labels the old timestep. In the Lean signature, $n$ instead denotes the number of position coordinates, $l$ the number of scalar constraints, and $m$ the vector of diagonal masses.",
+      "$\\Lambda(h)$ denotes the solution multiplier of (4.17) as the timestep $h$ varies; $O(h^2)$ is its asymptotic size as $h\\to0$, not the size of the unscaled $\\lambda_n$. PDF p.180 / printed p.158, first paragraph; scaling is printed on PDF p.178.",
+      "$\\Lambda^{(0)}=0$ is the initial Newton iterate for a fixed timestep, whereas $\\Lambda(0)=0$ would be the value of a step-dependent root branch at zero step. These are different uses of zero. PDF p.179, (4.18)–(4.19), and PDF p.180, first paragraph.",
+      "The excerpt stops after the initial-guess clause; the actual second sentence continues with “and it also suggests” a smaller timestep if convergence is poor. Its printed comma is preserved at the excerpt boundary. PDF p.180 / printed p.158.",
+      "PDF p.178 explicitly permits violation of the hidden constraint in the discussed method. The conditional Lean estimate assumes an initially compatible cotangent state; this is a declared extra hypothesis, not an assertion that every method step satisfies the hidden constraint exactly."
+    ],
     "issues": [],
     "lean_decl": "MD.Ch04.projectionScale",
     "reusable_proofs": [],
@@ -2486,9 +2603,23 @@
       "给定真实C²选根分支η0=0、正则Gram及初始余切资格；非线性根存在是独立缺项，不把O(h²)结论作假设。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT10_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T13:03:51.275819",
+        "before_sha256": "15c058656a8168c4fc44d45921af69245bcb319141d5236db89702e41f46a5fe",
+        "after_sha256": "b1fbbb40c220d8ae569bbb9a82806b41d6f8d5a4da07e271da4947c9cfc62cca",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.2-FrozenGramPrinted",
@@ -2501,7 +2632,15 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "$g$ is the vector of holonomic constraints; $G_n=g^{\\prime}(q_n)$ is its Jacobian at the old position. PDF p.178 / printed p.156, immediately below (4.17).",
+      "$Q_n=q_n+hM^{-1}p_n-h^2M^{-1}F_n$ is the predictor printed below (4.17); retain this minus sign literally. PDF p.178 / printed p.156.",
+      "$\\Lambda=h^2\\lambda_n$ is the scaled vector of constraint multipliers, and $g(Q_n-M^{-1}G_n^T\\Lambda)=0$ is (4.17). PDF p.178 / printed p.156.",
+      "$Q^{(l)}=Q_n-M^{-1}G_n^T\\Lambda^{(l)}$ and $R^{(l)}=g^{\\prime}(Q^{(l)})M^{-1}G_n^T$; $l$ is the iteration index. PDF p.179 / printed p.157, (4.19) and the definition of $R^{(l)}$.",
+      "$M^{-1}$ is the inverse mass matrix; $h$ is the timestep, and the subscript $n$ labels the old timestep. In the Lean signature, $n$ instead denotes the number of position coordinates, $l$ the number of scalar constraints, and $m$ the vector of diagonal masses.",
+      "$\\Lambda^{(0)}=0$ gives $Q^{(0)}=Q_n$ by (4.19), hence the definition printed on the same page gives $R^{(0)}=g^{\\prime}(Q_n)M^{-1}G_n^T$. This need not equal $G_nM^{-1}G_n^T$. PDF p.179 / printed p.157.",
+      "The textbook actually prints $R^{(0)}=G_nM^{-1}G_n^T$ and then “which is a symmetric matrix”. Both are retained as original text; the inconsistency is reported as [ERRATUM?], not silently corrected. PDF p.179 / printed p.157, immediately after the discussion of factoring the frozen matrix once per timestep."
+    ],
     "issues": [
       {
         "code": "ERRATUM?",
@@ -2512,9 +2651,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT11_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T18:52:56.028922",
+        "before_sha256": "d4938a38c16e4814843d8d529acce09851f2331da805ef40075e23621970c092",
+        "after_sha256": "07e7bcf00d574afbf3c92937eeba9e407736fd2c120ac4f8e3a61d86d4ffaf42",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3.3-ComponentPrinted",

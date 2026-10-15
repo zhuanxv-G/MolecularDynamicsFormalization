@@ -5090,8 +5090,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT10（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT10",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印−hF与现力版本+hF涉及F的符号约定；选项：另名F_printed=−F_force并记显式派生关系／参数化U并批准按−∇U的机械修订。当前不默定原书F含义，保持定义。"
+    }
   },
   {
     "source_id": "MD-4.3.2-HiddenEulerError",
@@ -5197,7 +5204,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT10",
+    "repair": {
+      "eaudit": "EAUDIT10",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT10.md": "42028dfdb2ea0a79584c15d6987ba79bac38c80cd7b20b412260b624ac736ba2",
+        "Blueprint/Ch04.lean": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+        "blueprint/ch04/ch04_source.json": "f7e3f00680ff8323249373fc382bf6dc5cf7f1efe25226f145b326cb6841673a"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.2-ProjectionJacobian",
@@ -5250,7 +5269,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT10",
+    "repair": {
+      "eaudit": "EAUDIT10",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT10.md": "42028dfdb2ea0a79584c15d6987ba79bac38c80cd7b20b412260b624ac736ba2",
+        "Blueprint/Ch04.lean": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+        "blueprint/ch04/ch04_source.json": "f7e3f00680ff8323249373fc382bf6dc5cf7f1efe25226f145b326cb6841673a"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.2-NewtonConstraint",
@@ -5303,7 +5334,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT10",
+    "repair": {
+      "eaudit": "EAUDIT10",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT10.md": "42028dfdb2ea0a79584c15d6987ba79bac38c80cd7b20b412260b624ac736ba2",
+        "Blueprint/Ch04.lean": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+        "blueprint/ch04/ch04_source.json": "f7e3f00680ff8323249373fc382bf6dc5cf7f1efe25226f145b326cb6841673a"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.2-FrozenNewtonConstraint",
@@ -5388,8 +5431,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT10（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT10",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "Λ⁽⁰⁾=0给出的实际交叉Jacobian为G(base)DG(q)ᵀ，未必等旧点Gram或对称；选项：冻结真实交叉矩阵并取消一般对称性／明示近似冻结旧点Gram，或加G(base)=G(q)。涉及书中疑误/算法路线，保持现状。"
+    }
   },
   {
     "source_id": "MD-4.3.2-NewtonQuadratic",
@@ -5470,7 +5520,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "NEEDS_HUMAN（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT11",
+    "repair": {
+      "eaudit": "EAUDIT11",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT11.md": "8a49e5b499c5ff2085ba17516a0c371144474ed8b1d05acc06bc774b447de4ca",
+        "Blueprint/Ch04.lean": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+        "blueprint/ch04/ch04_source.json": "54043219301ddf92adbb36fe6729b37396b43d17af3b94bc99f17237ba67d630"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.2-FrozenNewtonLinear",
@@ -5588,7 +5650,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH12_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT10",
+    "repair": {
+      "eaudit": "EAUDIT10",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT10.md": "42028dfdb2ea0a79584c15d6987ba79bac38c80cd7b20b412260b624ac736ba2",
+        "Blueprint/Ch04.lean": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+        "blueprint/ch04/ch04_source.json": "f7e3f00680ff8323249373fc382bf6dc5cf7f1efe25226f145b326cb6841673a"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.2-ProjectionScale",
@@ -5707,7 +5781,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH12_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "effective_status": "待复审 / EAUDIT10",
+    "repair": {
+      "eaudit": "EAUDIT10",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT10.md": "42028dfdb2ea0a79584c15d6987ba79bac38c80cd7b20b412260b624ac736ba2",
+        "Blueprint/Ch04.lean": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+        "blueprint/ch04/ch04_source.json": "f7e3f00680ff8323249373fc382bf6dc5cf7f1efe25226f145b326cb6841673a"
+      }
+    }
   },
   {
     "source_id": "MD-4.3.2-FrozenGramPrinted",
@@ -5817,8 +5903,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch04/mathcopilot_results/BATCH12_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT11（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT11",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "Λ⁽⁰⁾=0给出的实际交叉Jacobian为G(base)DG(q)ᵀ，未必等旧点Gram或对称；选项：冻结真实交叉矩阵并取消一般对称性／明示近似冻结旧点Gram，或加G(base)=G(q)。涉及书中疑误/算法路线，保持现状。"
+    }
   },
   {
     "source_id": "MD-4.3.3-ComponentPrinted",

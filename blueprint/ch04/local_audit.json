@@ -2349,9 +2349,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.positionEulerRelation",
@@ -2376,7 +2376,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT10/axioms.log"
     },
     "MD-4.3.2-HiddenEulerError": {
       "checked": true,
@@ -2416,17 +2416,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch04.projectionResidual",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "b95035b14226d0c683ddc169850d6e7f327933f99af384df7965f935d81ff5d5",
-      "block_sha256": "b95035b14226d0c683ddc169850d6e7f327933f99af384df7965f935d81ff5d5",
-      "direct_placeholder": false,
+      "signature_sha256": "999e5dbab5c410a987990385d2e801a1ec28762c9e05230d346a692f283f8cca",
+      "block_sha256": "999e5dbab5c410a987990385d2e801a1ec28762c9e05230d346a692f283f8cca",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -2443,22 +2444,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT10/axioms.log"
     },
     "MD-4.3.2-ProjectionJacobian": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.projectionJacobian",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "77b38957fafef6c8777ec345ab159b0b0d3f031a9ce803317d99ab6c121ca6c9",
-      "block_sha256": "77b38957fafef6c8777ec345ab159b0b0d3f031a9ce803317d99ab6c121ca6c9",
+      "signature_sha256": "7aa5e512f9bc9afd80efedbb5d9447203aa6b02e3a87a060a9c50c508f8ce580",
+      "block_sha256": "7aa5e512f9bc9afd80efedbb5d9447203aa6b02e3a87a060a9c50c508f8ce580",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -2476,22 +2477,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT10/axioms.log"
     },
     "MD-4.3.2-NewtonConstraint": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.newtonConstraint",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "1d3a5c5bec7c8eb2d462b401d4557c7432411e39745bf67d9643ceb3c6a6c1f9",
-      "block_sha256": "1d3a5c5bec7c8eb2d462b401d4557c7432411e39745bf67d9643ceb3c6a6c1f9",
+      "signature_sha256": "21ddbd495068bb9dbd33858faa9959777ef488181fe30359d403813fb9622bc9",
+      "block_sha256": "21ddbd495068bb9dbd33858faa9959777ef488181fe30359d403813fb9622bc9",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -2509,17 +2510,17 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT10/axioms.log"
     },
     "MD-4.3.2-FrozenNewtonConstraint": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch04.frozenNewtonConstraint",
       "verdict": "NEEDS_HUMAN",
       "explanation": "定义保留固定实际R(0)版本；原初始Gram和对称性不能当一般已证。",
@@ -2542,16 +2543,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT10/axioms.log"
     },
     "MD-4.3.2-NewtonQuadratic": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.newtonQuadratic",
@@ -2576,16 +2577,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT11/axioms.log"
     },
     "MD-4.3.2-FrozenNewtonLinear": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.frozenNewtonLinear",
@@ -2610,16 +2611,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT10/axioms.log"
     },
     "MD-4.3.2-ProjectionScale": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.projectionScale",
@@ -2644,16 +2645,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT10/axioms.log"
     },
     "MD-4.3.2-FrozenGramPrinted": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch04.frozenGramPrinted",
@@ -2678,7 +2679,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch04\\validation\\section442\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT11/axioms.log"
     },
     "MD-4.3.3-ComponentPrinted": {
       "checked": true,

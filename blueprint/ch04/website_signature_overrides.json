@@ -160,5 +160,23 @@
       "完整实际C²势/约束、可微乘子和切向位置图；前文各消去项在已证正式库有限和展开中保留。",
       "[EXTRA] 保留动量项消去已有证明，补实际时间流/线性变分及合法约束切向量上的完整二形式导数零；位置项由常对角逆质量对称抵消，未把二形式守恒作前提。"
     ]
+  },
+  "MD-4.3.2-ProjectionResidual": {
+    "code": "def projectionResidual {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=\n  fun j => g j (base-MolecularDynamics.Chapter04Review.invMass m ((textbookConstraintJacobian g q)ᵀ *ᵥ η))\n\ndef projectionEquation {n l : ℕ} (m : Fin n → ℝ)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : Prop :=\n  projectionResidual m g q base η=0\n\ntheorem projectionResidual_elimination {n l : ℕ} (m : Fin n → ℝ)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (Fprinted : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)\n    (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n)\n    (lam : MolecularDynamics.Chapter04Review.Q l)\n    (_hp : out.2=z.2-h • Fprinted z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ lam))\n    (_hq : out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m out.2) :\n    (out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g) ↔\n      projectionEquation m g z.1\n        (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2-\n          h^2 • MolecularDynamics.Chapter04Review.invMass m (Fprinted z.1)) (h^2 • lam) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 补真实零残差方程及原印F符号下base、η=h²λ与旧状态的消元等价；不把残差函数冒充已解投影方程。"
+    ]
+  },
+  "MD-4.3.2-ProjectionJacobian": {
+    "code": "def projectionJacobian {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : Matrix (Fin l) (Fin l) ℝ :=\n  textbookConstraintJacobian g (base-MolecularDynamics.Chapter04Review.invMass m ((textbookConstraintJacobian g q)ᵀ *ᵥ η)) *\n    textbookInverseMassMatrix m * (textbookConstraintJacobian g q)ᵀ\n\ndef projectionNewtonIncrement {n l : ℕ} (m : Fin n → ℝ)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q base : MolecularDynamics.Chapter04Review.Q n)\n    (η ηnext : MolecularDynamics.Chapter04Review.Q l) : Prop :=\n  let Δ := ηnext-η\n  projectionJacobian m g q base η *ᵥ Δ=projectionResidual m g q base η",
+    "extra_assumptions": [
+      "[EXTRA] 保留交叉Jacobian定义，并补实际Newton线性方程RΔΛ=r及Δ=η_next−η；Q依赖base−M⁻¹Gᵀη已在R中展开。"
+    ]
+  },
+  "MD-4.3.2-NewtonConstraint": {
+    "code": "def newtonConstraint {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l)\n    (_hdet : (MolecularDynamics.Chapter04Review.projectionJacobian m g q base η).det ≠ 0) : MolecularDynamics.Chapter04Review.Q l :=\n  η+(MolecularDynamics.Chapter04Review.projectionJacobian m g q base η)⁻¹ *ᵥ MolecularDynamics.Chapter04Review.projectionResidual m g q base η\n\ndef newtonConstraintSequence {n l : ℕ} (m : Fin n → ℝ)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q base : MolecularDynamics.Chapter04Review.Q n) (k : ℕ)\n    (_hvalid : ∀ i < k,\n      (MolecularDynamics.Chapter04Review.projectionJacobian m g q base\n        ((MolecularDynamics.Chapter04Review.newtonConstraint m g q base)^[i] 0)).det ≠ 0) :\n    MolecularDynamics.Chapter04Review.Q l :=\n  (MolecularDynamics.Chapter04Review.newtonConstraint m g q base)^[k] 0",
+    "extra_assumptions": [
+      "[EXTRA] 真实Newton主接口加入当前交叉矩阵det≠0；补建议初值0的有限序列且逐步可逆资格显式，不把奇异逆总化当合法迭代。Mathlib逆矩阵按标准含义采信。"
+    ]
   }
 }

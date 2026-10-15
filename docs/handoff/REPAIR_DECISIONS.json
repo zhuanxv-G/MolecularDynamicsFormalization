@@ -1168,5 +1168,50 @@
     "category": "B",
     "handling": "保留动量项消去已有证明，补实际时间流/线性变分及合法约束切向量上的完整二形式导数零；位置项由常对角逆质量对称抵消，未把二形式守恒作前提。",
     "section": "4.3.1"
+  },
+  "MD-4.3.2-ProjectionResidual": {
+    "category": "B",
+    "handling": "补真实零残差方程及原印F符号下base、η=h²λ与旧状态的消元等价；不把残差函数冒充已解投影方程。",
+    "section": "4.3.2"
+  },
+  "MD-4.3.2-ProjectionJacobian": {
+    "category": "B",
+    "handling": "保留交叉Jacobian定义，并补实际Newton线性方程RΔΛ=r及Δ=η_next−η；Q依赖base−M⁻¹Gᵀη已在R中展开。",
+    "section": "4.3.2"
+  },
+  "MD-4.3.2-NewtonConstraint": {
+    "category": "A",
+    "handling": "真实Newton主接口加入当前交叉矩阵det≠0；补建议初值0的有限序列且逐步可逆资格显式，不把奇异逆总化当合法迭代。Mathlib逆矩阵按标准含义采信。",
+    "section": "4.3.2"
+  },
+  "MD-4.3.2-PositionEulerForceConvention": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.3.2"
+  },
+  "MD-4.3.2-FrozenNewtonConstraint": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.3.2"
+  },
+  "MD-4.3.2-NewtonQuadratic": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.3.2"
+  },
+  "MD-4.3.2-FrozenNewtonLinear": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.3.2"
+  },
+  "MD-4.3.2-ProjectionScale": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "4.3.2"
+  },
+  "MD-4.3.2-FrozenGramPrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "4.3.2"
   }
 }

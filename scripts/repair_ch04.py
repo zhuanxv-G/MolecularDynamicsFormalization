@@ -241,13 +241,13 @@ theorem projectionResidual_elimination {n l : ℕ} (m : Fin n → ℝ)
     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (Fprinted : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
     (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n)
-    (λ : MolecularDynamics.Chapter04Review.Q l)
-    (_hp : out.2=z.2-h • Fprinted z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ λ))
+    (lam : MolecularDynamics.Chapter04Review.Q l)
+    (_hp : out.2=z.2-h • Fprinted z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ lam))
     (_hq : out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m out.2) :
     (out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g) ↔
       projectionEquation m g z.1
         (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2-
-          h^2 • MolecularDynamics.Chapter04Review.invMass m (Fprinted z.1)) (h^2 • λ) := by
+          h^2 • MolecularDynamics.Chapter04Review.invMass m (Fprinted z.1)) (h^2 • lam) := by
   sorry''','B','补真实零残差方程及原印F符号下base、η=h²λ与旧状态的消元等价；不把残差函数冒充已解投影方程。')
         change('ProjectionJacobian',current('ProjectionJacobian')+'''
 

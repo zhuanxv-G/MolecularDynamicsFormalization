@@ -1,0 +1,41 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT10",
+  "section": "4.3.2",
+  "source_ids": [
+    "MD-4.3.2-FrozenNewtonConstraint",
+    "MD-4.3.2-FrozenNewtonLinear",
+    "MD-4.3.2-NewtonConstraint",
+    "MD-4.3.2-NewtonQuadratic",
+    "MD-4.3.2-PositionEulerForceConvention",
+    "MD-4.3.2-ProjectionJacobian",
+    "MD-4.3.2-ProjectionResidual",
+    "MD-4.3.2-ProjectionScale"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.2-ProjectionResidual",
+    "MD-4.3.2-ProjectionJacobian",
+    "MD-4.3.2-NewtonConstraint",
+    "MD-4.3.2-NewtonQuadratic",
+    "MD-4.3.2-FrozenNewtonLinear",
+    "MD-4.3.2-ProjectionScale"
+  ],
+  "human_ids": [
+    "MD-4.3.2-PositionEulerForceConvention",
+    "MD-4.3.2-FrozenNewtonConstraint"
+  ],
+  "old_lean_sha256": "e858c14a55ff1b97605047d53ce5494440c06bd901ead267538a8a4d18795d1a",
+  "lean_sha256": "8233247482e16bca6ae7f8bbaf4a54a279f909ab970a027d8f6ccc47ad327fea",
+  "source_sha256": "f7e3f00680ff8323249373fc382bf6dc5cf7f1efe25226f145b326cb6841673a",
+  "pages": [
+    178,
+    179,
+    180
+  ],
+  "prior_proof_blocks": {
+    "MD-4.3.2-ProjectionResidual": "def projectionResidual {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=\n  fun j => g j (base-MolecularDynamics.Chapter04Review.invMass m ((textbookConstraintJacobian g q)ᵀ *ᵥ η))",
+    "MD-4.3.2-ProjectionJacobian": "def projectionJacobian {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : Matrix (Fin l) (Fin l) ℝ :=\n  textbookConstraintJacobian g (base-MolecularDynamics.Chapter04Review.invMass m ((textbookConstraintJacobian g q)ᵀ *ᵥ η)) *\n    textbookInverseMassMatrix m * (textbookConstraintJacobian g q)ᵀ",
+    "MD-4.3.2-NewtonConstraint": "def newtonConstraint {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=\n  η+(MolecularDynamics.Chapter04Review.projectionJacobian m g q base η)⁻¹ *ᵥ MolecularDynamics.Chapter04Review.projectionResidual m g q base η"
+  },
+  "repair_reason": "Rename reserved Lean lambda token to lam."
+}
