@@ -2,10 +2,10 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 547）。
+完成状态：修复进行中（待处理项目/原文审校计数 542）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
-第2章：网站PASS 100 / 已修待复审 18 / 待导师 5 / 修复中 37。
+第2章：网站PASS 98 / 已修待复审 21 / 待导师 6 / 修复中 35。
 第3章：网站PASS 91 / 已修待复审 4 / 待导师 5 / 修复中 49。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
@@ -60,13 +60,13 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 2 | MD-2.2.3-DefectPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT05 |
 | 2 | MD-2.2.3-VerletConsistency | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT05 |
 | 2 | MD-2.2.3-VerletStability | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT05 |
-| 2 | MD-2.2.4-FirstIntegral | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 2 | MD-2.2.4-IntegralPreserved | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
+| 2 | MD-2.2.4-FirstIntegral | FAIL | A | 签名显式开放域与I在D经典可微；不再由不可微处fderiv=0总化值冒充守恒条件。 | 已修待复审 | EAUDIT06 |
+| 2 | MD-2.2.4-IntegralPreserved | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT06 |
 | 2 | MD-2.2.4-EnergyPreserved | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.4-AngularMomentum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.4-IntegralMeanValue | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.4-IntegralLipschitz | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
-| 2 | MD-2.2.4-IntegralErrorPrinted | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |
+| 2 | MD-2.2.4-IntegralLipschitz | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT06 |
+| 2 | MD-2.2.4-IntegralErrorPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT06 |
 | 2 | MD-2.3.1-Divergence | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
 | 2 | MD-2.3.1-Liouville | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35）；原文CORRECTED待原页复核 | — |
 | 2 | MD-2.3.1-HamiltonDivergence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |

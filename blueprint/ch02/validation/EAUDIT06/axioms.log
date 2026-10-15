@@ -1,0 +1,4 @@
+'MD.Ch02.bp_firstIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.integralErrorPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.integralPointwiseBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.firstIntegralPreserved' depends on axioms: [propext, Classical.choice, Quot.sound]

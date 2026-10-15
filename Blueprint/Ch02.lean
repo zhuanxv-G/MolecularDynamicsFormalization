@@ -473,9 +473,10 @@ theorem verletStability :
       ‖verlet m F h z-verlet m F h w‖ ≤ (1+h*C)*‖z-w‖ := by
   sorry
 
-/-- source_id: MD-2.2.4-FirstIntegral · definition · §2.2.4 · 印刷p.70 / PDFp.92 -/
+/-- source_id: MD-2.2.4-FirstIntegral · definition · §2.2.4 · 印刷p.70 / PDFp.92 
+[EXTRA] 签名显式开放域与I在D经典可微；不再由不可微处fderiv=0总化值冒充守恒条件。 -/
 def bp_firstIntegral {n : ℕ} (I : Q n → ℝ) (f : Q n → Q n) (D : Set (Q n)) : Prop :=
-  ∀ z ∈ D, (fderiv ℝ I z) (f z) = 0
+  IsOpen D ∧ DifferentiableOn ℝ I D ∧ ∀ z ∈ D, (fderiv ℝ I z) (f z) = 0
 
 /-- source_id: MD-2.2.4-IntegralPreserved · unnumbered_claim · §2.2.4 · 印刷p.70 / PDFp.92
 [EXTRA] 开放D、可微I、实际解留域及闭时间窗a≤b；包含端点。 -/

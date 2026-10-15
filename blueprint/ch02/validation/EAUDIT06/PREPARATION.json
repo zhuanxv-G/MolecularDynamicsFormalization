@@ -1,0 +1,29 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT06",
+  "section": "2.2.4",
+  "source_ids": [
+    "MD-2.2.4-FirstIntegral",
+    "MD-2.2.4-IntegralErrorPrinted",
+    "MD-2.2.4-IntegralLipschitz",
+    "MD-2.2.4-IntegralPreserved"
+  ],
+  "reaudit_ids": [
+    "MD-2.2.4-FirstIntegral",
+    "MD-2.2.4-IntegralPreserved",
+    "MD-2.2.4-IntegralLipschitz"
+  ],
+  "human_ids": [
+    "MD-2.2.4-IntegralErrorPrinted"
+  ],
+  "old_lean_sha256": "84f74da208a97da20b76b38cac881f50f01ffb0d1fb1e376b9e76d567d4f0ca5",
+  "lean_sha256": "406698a1645967e6dd64bf27d8532953a3073866ed33d93985b1d26f61603802",
+  "source_sha256": "ac002026d2db95a96e9a8b819472d836f75a0a44411c8a1e108b259b677322fc",
+  "pages": [
+    92,
+    93
+  ],
+  "prior_proof_blocks": {
+    "MD-2.2.4-FirstIntegral": "def bp_firstIntegral {n : ℕ} (I : Q n → ℝ) (f : Q n → Q n) (D : Set (Q n)) : Prop :=\n  ∀ z ∈ D, (fderiv ℝ I z) (f z) = 0"
+  }
+}

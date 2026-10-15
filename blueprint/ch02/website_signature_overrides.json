@@ -57,5 +57,11 @@
     "extra_assumptions": [
       "[EXTRA] 显式0<p；本条只登记正自然数阶，属于[EXTRA]整数阶限制；保持统一K、δ及严格0<h<δ，不静默扩大端点。"
     ]
+  },
+  "MD-2.2.4-FirstIntegral": {
+    "code": "def bp_firstIntegral {n : ℕ} (I : Q n → ℝ) (f : Q n → Q n) (D : Set (Q n)) : Prop :=\n  IsOpen D ∧ DifferentiableOn ℝ I D ∧ ∀ z ∈ D, (fderiv ℝ I z) (f z) = 0",
+    "extra_assumptions": [
+      "[EXTRA] 签名显式开放域与I在D经典可微；不再由不可微处fderiv=0总化值冒充守恒条件。"
+    ]
   }
 }

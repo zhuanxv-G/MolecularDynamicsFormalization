@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT06",
+  "input_sha256": {
+    "BATCH_EAUDIT06.md": "5a3114ca9b377a0cf298d53f2cef7be57108f8ed6843daf73f6bbdbe0961fe32",
+    "Blueprint/Ch02.lean": "406698a1645967e6dd64bf27d8532953a3073866ed33d93985b1d26f61603802",
+    "blueprint/ch02/ch02_source.json": "ac002026d2db95a96e9a8b819472d836f75a0a44411c8a1e108b259b677322fc"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT06a",
+      "source_id": "MD-2.2.4-FirstIntegral",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT06/a",
+      "total_bytes": 175679,
+      "manifest_sha256": "28474aa45bc23fa5b3614b917adc4a69659653bd44c1902412a8fa59d72fcc4e"
+    },
+    {
+      "subtask": "EAUDIT06b",
+      "source_id": "MD-2.2.4-IntegralPreserved",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT06/b",
+      "total_bytes": 176418,
+      "manifest_sha256": "0f580d10d0baec38bb0c6f4a7b82897b75ae351f3641633906918ca7beabbf22"
+    },
+    {
+      "subtask": "EAUDIT06c",
+      "source_id": "MD-2.2.4-IntegralLipschitz",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT06/c",
+      "total_bytes": 91680,
+      "manifest_sha256": "79018dc99b9960aaed7eb445df28a9cfb048d81f91a4335aed3f02b56f428d0f"
+    }
+  ]
+}

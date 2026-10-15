@@ -1689,15 +1689,15 @@
     "MD-2.2.4-FirstIntegral": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.bp_firstIntegral",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "a4b67f13739ca66e69d9eb455968e402ecdb5a636a561cbea075a41084978ac6",
+      "signature_sha256": "23889b437f09d2d50eea348f91e938e5c17941215077f457b393fa7fbabb3034",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -1713,16 +1713,17 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "block_sha256": "a4b67f13739ca66e69d9eb455968e402ecdb5a636a561cbea075a41084978ac6",
+      "block_sha256": "23889b437f09d2d50eea348f91e938e5c17941215077f457b393fa7fbabb3034",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT06/axioms.log",
+      "compiled": true
     },
     "MD-2.2.4-IntegralPreserved": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.firstIntegralPreserved",
@@ -1746,12 +1747,13 @@
       "proof_attempts": 2,
       "block_sha256": "e2003b06fb755574b0066b43ff230f4852a2c290f21721e0d3a216850a1ea0bf",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT06/axioms.log",
       "proof_failures": 1,
       "attempt_evidence": [
         "blueprint/ch02/validation/section22-short.log",
         "blueprint/ch02/validation/section22-short2.log"
-      ]
+      ],
+      "compiled": true
     },
     "MD-2.2.4-EnergyPreserved": {
       "checked": true,
@@ -1858,9 +1860,9 @@
     "MD-2.2.4-IntegralLipschitz": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch02.integralPointwiseBound",
@@ -1884,15 +1886,16 @@
       "proof_attempts": 0,
       "block_sha256": "753b4eab15b67cb836a4a8b43d5db6f7cb047bba0dde3c74db7894b962067069",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT06/axioms.log",
+      "compiled": true
     },
     "MD-2.2.4-IntegralErrorPrinted": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.integralErrorPrinted",
@@ -1916,8 +1919,9 @@
       "proof_attempts": 0,
       "block_sha256": "ccbbeac954e1d477c04fe4d11136a06bbdac04c7701c484b1be09a31ac16623e",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT06/axioms.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
+      "compiled": true
     },
     "MD-2.3.1-Divergence": {
       "checked": true,

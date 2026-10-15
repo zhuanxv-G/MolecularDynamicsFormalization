@@ -1,0 +1,20 @@
+{
+  "eaudit": "EAUDIT06",
+  "source_id": "MD-2.2.4-IntegralLipschitz",
+  "input_sha256": {
+    "BATCH_EAUDIT06.md": "5a3114ca9b377a0cf298d53f2cef7be57108f8ed6843daf73f6bbdbe0961fe32",
+    "Blueprint/Ch02.lean": "406698a1645967e6dd64bf27d8532953a3073866ed33d93985b1d26f61603802",
+    "blueprint/ch02/ch02_source.json": "ac002026d2db95a96e9a8b819472d836f75a0a44411c8a1e108b259b677322fc",
+    "EAUDIT06c_materials": "ae2a4a6519c05504df1979841f151c8d0def9170cd979930342a99d7cf080f6f",
+    "EAUDIT06c_PAGES.pdf": "42faf06d4f068483e32e1b60e89ffa0bd34f7830763c53b49a7b9cfbbc1b9b66"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    93
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "9106426fc6ee138ac07fb97062a91692d803491fd673edf933cc5b612fd49aa6",
+  "dependency_excerpts": [],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT06_review.json",
+  "total_task_bytes": 91680
+}

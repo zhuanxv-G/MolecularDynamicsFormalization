@@ -1482,7 +1482,7 @@
     "section": "2.2.4",
     "printed_page": "70",
     "pdf_page": "92",
-    "statement_latex": "Recall that the condition for a given function $I:\\mathbb R^m\\to\\mathbb R$ to be a first integral is that\n\\[\\nabla I(\\boldsymbol z)\\cdot f(\\boldsymbol z)=\\sum_{j=1}^m\\frac{\\partial I}{\\partial z_j}(\\boldsymbol z)f_j(\\boldsymbol z)=0.\\]",
+    "statement_latex": "Recall that the condition for a given function $I:\\mathbb R^m\\to\\mathbb R$ to be a first integral is that\n\\[\\nabla I(\\boldsymbol z)\\cdot f(\\boldsymbol z)=\\sum_{j=1}^m\\frac{\\partial I}{\\partial z_j}(\\boldsymbol z)f_j(\\boldsymbol z)\\equiv 0.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1492,11 +1492,25 @@
     "issues": [],
     "lean_decl": "MD.Ch02.bp_firstIntegral",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 签名显式开放域与I在D经典可微；不再由不可微处fderiv=0总化值冒充守恒条件。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT06_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:09:14.470041",
+        "before_sha256": "fcce7e29bc066942c4954256406ba1c5ee20f07e42fee269c289e5dc5f717a94",
+        "after_sha256": "1a2cbe5494a4f002bc8b5d55336961a5c5d645872e3218bf59f76649167f5368",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.2.4-IntegralPreserved",
@@ -1505,7 +1519,7 @@
     "section": "2.2.4",
     "printed_page": "70",
     "pdf_page": "92",
-    "statement_latex": "It is important in this definition that this is an equivalence that holds everywhere (or at least in some open set in $\\mathbb R^m$), so the statement is not just that $I(\\boldsymbol z(t))=I(\\boldsymbol z(0))$ for some particular trajectory, but, moreover, $I$ is conserved for all nearby initial conditions. The flow map preserves the first integral, thus $I(\\mathcal F_t(\\boldsymbol z))=I(\\boldsymbol z)$.",
+    "statement_latex": "It is important in this definition that this is an equivalence that holds everywhere (or at least in some open set in $\\mathbb R^m$), so the statement is not just that $I(\\boldsymbol z(t))=I(\\boldsymbol z(0))$ for some particular trajectory, but, moreover, $I$ is conserved for all nearby initial conditions. The flow map preserves the first integral, thus $I(\\mathcal F_t(\\boldsymbol z))\\equiv I(\\boldsymbol z)$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1517,9 +1531,21 @@
       "开放D、可微I、实际解留域及闭时间窗a≤b；包含端点。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT06_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:09:14.470041",
+        "before_sha256": "7867e0aac0aadfc660609a64754f2f74f7144a22f8dad4979d02c9757cc72fb0",
+        "after_sha256": "14fe04e4dcc252d15e8eb78bcde269dfe8095f6ff8aae67a58220aa6d1f8e9fa",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.2.4-EnergyPreserved",
@@ -1604,7 +1630,7 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "后句假设∇I在包含解的开放域中有界B；该签名登记统一B版本，点态z*结论由前项承担。"
+      "z_* 为前项均值公式中连接 a、b 的线段上的同一点；当前 integralPointwiseBound 签名登记该点态不等式并携带均值恒等式。下一句才引入开放域上的统一梯度上界 B。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch02.integralPointwiseBound",
@@ -1613,9 +1639,21 @@
       "实际EuclideanSpace ℝ (Fin n)，开放域含线段及C¹；实Fréchet算子范数等于Euclidean梯度范数。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT06_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:09:14.470041",
+        "before_sha256": "4d860d190688baf482203cae3343fe7841adfd50316312ffabae4fb3477d501f",
+        "after_sha256": "f152ba39a6e7a5eedfce42cc9f378e3156e212e1da50be650fe1dda5fba89403",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.2.4-IntegralErrorPrinted",
@@ -1643,8 +1681,18 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT06_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:09:14.470041",
+        "before_sha256": "43a175dcdc349019d01ee6083c61720fd74059d37c3e9667b694101b3268b3bb",
+        "after_sha256": "42c437d07d29af872c5af1b6594b2702c9341848cfd44e262a8bcdc013b7052c",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.1-Divergence",

@@ -55,13 +55,13 @@
 | MD-2.2.3-DefectPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT05（原返回FAIL保留） | placeholder / incomplete；原书位置差疑误裁定及实际余项理论。 |
 | MD-2.2.3-VerletConsistency | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | placeholder / incomplete；实际三阶缺陷、κ连续性及统一余项常数。 |
 | MD-2.2.3-VerletStability | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | placeholder / incomplete；实际Verlet映射的1+hC Lipschitz界，可用半踢漂移组合逐坐标界证明。 |
-| MD-2.2.4-FirstIntegral | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.2.4-IntegralPreserved | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
+| MD-2.2.4-FirstIntegral | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | definition / self-contained |
+| MD-2.2.4-IntegralPreserved | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | local_proof / self-contained |
 | MD-2.2.4-EnergyPreserved | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
 | MD-2.2.4-AngularMomentum | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；短证明3次失败：within导数的tuple投影/Filter接口转换未完成；乘积求导抵消路线及日志已保留。 |
 | MD-2.2.4-IntegralMeanValue | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
-| MD-2.2.4-IntegralLipschitz | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | local_proof / self-contained |
-| MD-2.2.4-IntegralErrorPrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；原书1/2因子裁定；均值与轨迹误差组合。 |
+| MD-2.2.4-IntegralLipschitz | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | local_proof / self-contained |
+| MD-2.2.4-IntegralErrorPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT06（原返回FAIL保留） | placeholder / incomplete；原书1/2因子裁定；均值与轨迹误差组合。 |
 | MD-2.3.1-Divergence | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.3.1-Liouville | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
 | MD-2.3.1-HamiltonDivergence | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
@@ -417,3 +417,5 @@ EAUDIT03 §2.2.1：6条落盘，单文件与8项公理通过；未写新证明�
 EAUDIT04 §2.2.2：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT05 §2.2.3：7条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT06 §2.2.4：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。

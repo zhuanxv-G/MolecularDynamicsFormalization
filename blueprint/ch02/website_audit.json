@@ -4932,7 +4932,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "5a3114ca9b377a0cf298d53f2cef7be57108f8ed6843daf73f6bbdbe0961fe32",
+        "Blueprint/Ch02.lean": "406698a1645967e6dd64bf27d8532953a3073866ed33d93985b1d26f61603802",
+        "blueprint/ch02/ch02_source.json": "ac002026d2db95a96e9a8b819472d836f75a0a44411c8a1e108b259b677322fc"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.4-IntegralPreserved",
@@ -5045,7 +5057,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "5a3114ca9b377a0cf298d53f2cef7be57108f8ed6843daf73f6bbdbe0961fe32",
+        "Blueprint/Ch02.lean": "406698a1645967e6dd64bf27d8532953a3073866ed33d93985b1d26f61603802",
+        "blueprint/ch02/ch02_source.json": "ac002026d2db95a96e9a8b819472d836f75a0a44411c8a1e108b259b677322fc"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.4-EnergyPreserved",
@@ -5400,7 +5424,19 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "5a3114ca9b377a0cf298d53f2cef7be57108f8ed6843daf73f6bbdbe0961fe32",
+        "Blueprint/Ch02.lean": "406698a1645967e6dd64bf27d8532953a3073866ed33d93985b1d26f61603802",
+        "blueprint/ch02/ch02_source.json": "ac002026d2db95a96e9a8b819472d836f75a0a44411c8a1e108b259b677322fc"
+      }
+    }
   },
   {
     "source_id": "MD-2.2.4-IntegralErrorPrinted",
@@ -5483,8 +5519,15 @@
       "lean_modification_commits": [],
       "reasons": []
     },
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT06（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原印KB/(2L)比已给点误差推出的KB/L小一半；选项：批准另立去掉2的修正版／导师提供独立更强误差前提；保持原印和常数，不加倍K、不把积分误差当假设。"
+    }
   },
   {
     "source_id": "MD-2.3.1-Divergence",
