@@ -708,8 +708,13 @@ theorem eulerVolumePrinted : ∀ n (S : Matrix (Fin n) (Fin n) ℝ) h,
       volume ((linearEuler S h).mulVec '' T)=volume T) ↔ (linearEuler S h).det=1 := by
   sorry
 
-/-- source_id: MD-2.3.2-EulerVolumeCounterexample · unnumbered_claim · §2.3.2 · 印刷p.75 / PDFp.97 -/
+/-- source_id: MD-2.3.2-EulerVolumeCounterexample · unnumbered_claim · §2.3.2 · 印刷p.75 / PDFp.97 
+[EXTRA] 强化见证为每个h≠0时|det(I+hS)|≠1，覆盖实际体积不守恒；原桥接只给det≠1，原已证结果完整保留为det_only辅助定理并重查，强化结论暂sorry，不写新证明。 -/
 theorem eulerVolumeCounterexample :
+  ∃ S : Matrix (Fin 2) (Fin 2) ℝ, S.trace = 0 ∧ ∀ h : ℝ, h ≠ 0 → |(linearEuler S h).det| ≠ 1 := by
+  sorry
+
+theorem eulerVolumeCounterexample_det_only :
   ∃ S : Matrix (Fin 2) (Fin 2) ℝ, S.trace = 0 ∧ ∀ h : ℝ, h ≠ 0 → (linearEuler S h).det ≠ 1 := by
   exact MolecularDynamics.Chapter02Review.eulerVolumeCounterexample_proved
 

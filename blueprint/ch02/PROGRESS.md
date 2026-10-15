@@ -75,8 +75,8 @@
 | MD-2.3.1-LJBoundedPeriodic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | placeholder / incomplete；LJ能级闭曲线/非平衡周期轨道理论；能量守恒本身不足以自动得周期。 |
 | MD-2.3.2-LinearDivergence | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；线性流行列式指数公式及体积换元的必要/充分方向。 |
 | MD-2.3.2-LinearEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
-| MD-2.3.2-EulerVolumePrinted | DRAFT/原页已核 | 已编译 | NEEDS_HUMAN | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete |
-| MD-2.3.2-EulerVolumeCounterexample | DRAFT/原页已核 | 已编译 | PASS | FAIL（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | existing_bridge / checked+documented priors |
+| MD-2.3.2-EulerVolumePrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT08（原返回FAIL保留） | placeholder / incomplete |
+| MD-2.3.2-EulerVolumeCounterexample | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
 | MD-2.3.2-AsymmetricEuler | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.3.2-AsymmetricJacobian | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；隐式实际关系的求导、分母非零解导数及2×2矩阵整理。 |
 | MD-2.3.2-AsymmetricArea | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；实际隐式求导；若全局area保持还须单射局部域与换元。 |
@@ -421,3 +421,5 @@ EAUDIT05 §2.2.3：7条落盘，单文件与7项公理通过；未写新证明�
 EAUDIT06 §2.2.4：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT07 §2.3.1：8条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT08 §2.3.2：2条落盘，单文件与3项公理通过；未写新证明；完整check留到章末；网站待复审。

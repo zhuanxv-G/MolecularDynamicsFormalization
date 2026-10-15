@@ -321,5 +321,46 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT07/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT08",
+    "section": "2.3.2",
+    "source_ids": [
+      "MD-2.3.2-EulerVolumeCounterexample",
+      "MD-2.3.2-EulerVolumePrinted"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.2-EulerVolumeCounterexample"
+    ],
+    "human_ids": [
+      "MD-2.3.2-EulerVolumePrinted"
+    ],
+    "lean_sha256": "ddffdb8fd962364416d85bace55249318bf65b48d466adc899ff960d0e73514b",
+    "source_sha256": "d8679d7bda7d52e3843069c1ef8858f85ef116f515b92ad1bd0ba26fae137e2d",
+    "pages": [
+      96,
+      97,
+      98
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch02.olean",
+        "Blueprint/Ch02.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "ddffdb8fd962364416d85bace55249318bf65b48d466adc899ff960d0e73514b",
+      "log_sha256": "335910fbf3fd4ec541eba506f6e8fc11f4020d1dd6dafda6fd92bda05c913459"
+    },
+    "axiom_decl_count": 3,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT08/INDEX.md"
   }
 ]

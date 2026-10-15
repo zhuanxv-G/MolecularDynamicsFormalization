@@ -2365,10 +2365,10 @@
     "MD-2.3.2-EulerVolumePrinted": {
       "checked": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch02.eulerVolumePrinted",
@@ -2392,23 +2392,25 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log",
-      "stop_reason": "导师/原文疑点未裁定；不进入新证明。"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT08/axioms.log",
+      "stop_reason": "导师/原文疑点未裁定；不进入新证明。",
+      "compiled": true
     },
     "MD-2.3.2-EulerVolumeCounterexample": {
       "checked": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch02.eulerVolumeCounterexample",
       "verdict": "PASS",
       "explanation": "二维旋转矩阵tr S=0而det(I+hS)=1+h²，对任意非零h大于1；已证具体反例表达does not in general。",
-      "signature_sha256": "bedba73383ecc2d00eb5664534422e04e8a72c512579815247785f284a1e0414",
-      "block_sha256": "165d7e91d1988449813aa3bdab8f97ca963b7273d16be10500d34d88be346463",
-      "direct_placeholder": false,
+      "signature_sha256": "5ed437e45b448f554317e0dc25a0f3f17993f5209b2924d378e6f93f4f26e4e2",
+      "block_sha256": "857e293c5d115dcad50f5f0439e4a9dd2e027a7fec247af1134bad59dce043e1",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.Chapter02Review.eulerVolumeCounterexample_proved"
@@ -2426,7 +2428,8 @@
       "suggested_fix": null,
       "proof_attempts": 0,
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/EAUDIT01-full/chapter02_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch02/validation/EAUDIT08/axioms.log",
+      "compiled": true
     },
     "MD-2.3.2-AsymmetricEuler": {
       "checked": true,

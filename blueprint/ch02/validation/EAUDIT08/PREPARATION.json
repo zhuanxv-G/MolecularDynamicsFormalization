@@ -1,0 +1,26 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT08",
+  "section": "2.3.2",
+  "source_ids": [
+    "MD-2.3.2-EulerVolumeCounterexample",
+    "MD-2.3.2-EulerVolumePrinted"
+  ],
+  "reaudit_ids": [
+    "MD-2.3.2-EulerVolumeCounterexample"
+  ],
+  "human_ids": [
+    "MD-2.3.2-EulerVolumePrinted"
+  ],
+  "old_lean_sha256": "ca97c510da6cac62d683ba0faf4aff81e656984931a9db2b02fac05ff7ccbc05",
+  "lean_sha256": "ddffdb8fd962364416d85bace55249318bf65b48d466adc899ff960d0e73514b",
+  "source_sha256": "d8679d7bda7d52e3843069c1ef8858f85ef116f515b92ad1bd0ba26fae137e2d",
+  "pages": [
+    96,
+    97,
+    98
+  ],
+  "prior_proof_blocks": {
+    "MD-2.3.2-EulerVolumeCounterexample": "theorem eulerVolumeCounterexample :\n  ∃ S : Matrix (Fin 2) (Fin 2) ℝ, S.trace = 0 ∧ ∀ h : ℝ, h ≠ 0 → (linearEuler S h).det ≠ 1 := by\n  exact MolecularDynamics.Chapter02Review.eulerVolumeCounterexample_proved"
+  }
+}

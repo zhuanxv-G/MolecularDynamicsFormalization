@@ -2136,8 +2136,18 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT08_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:11:05.455581",
+        "before_sha256": "8e8ab857aacdfab0cd75954f948d2c0a5b34df325deef8480309bd86ad220ace",
+        "after_sha256": "7b7d37f0b483e8630c04114de991b670c5fd210d742b722b08618a3a5541423e",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH14_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.2-EulerVolumeCounterexample",
@@ -2156,11 +2166,23 @@
     "reusable_proofs": [
       "MolecularDynamics.Chapter02Review.eulerVolumeCounterexample_proved"
     ],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 强化见证为每个h≠0时|det(I+hS)|≠1，覆盖实际体积不守恒；原桥接只给det≠1，原已证结果完整保留为det_only辅助定理并重查，强化结论暂sorry，不写新证明。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT08_LOCAL_REPAIR",
+        "timestamp": "2026-10-15T11:11:05.455581",
+        "before_sha256": "74abe5377dc3efd2c78649f97975c51ad9250d14996a823b04e8400301b5acdf",
+        "after_sha256": "050cd1a81a05c232a16b4f3e036f4e12c643e8664d00f8759302d8d61a697fa3",
+        "changed_fields": [],
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH14_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.3.2-AsymmetricEuler",

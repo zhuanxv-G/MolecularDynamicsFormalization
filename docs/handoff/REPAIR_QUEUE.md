@@ -2,10 +2,10 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 532）。
+完成状态：修复进行中（待处理项目/原文审校计数 530）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
-第2章：网站PASS 94 / 已修待复审 28 / 待导师 7 / 修复中 31。
+第2章：网站PASS 94 / 已修待复审 29 / 待导师 8 / 修复中 29。
 第3章：网站PASS 91 / 已修待复审 4 / 待导师 5 / 修复中 49。
 第4章：网站PASS 89 / 已修待复审 3 / 待导师 3 / 修复中 84。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
@@ -80,8 +80,8 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 2 | MD-2.3.1-LJBoundedPeriodic | PASS | C | 依赖小修：一般ODE关系改引辅助oscillatorEquation；原显式LJ势、正参数、正位置及全部周期结论逐字保留。 | 已修待复审 | EAUDIT07 |
 | 2 | MD-2.3.2-LinearDivergence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.2-LinearEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.2-EulerVolumePrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 2 | MD-2.3.2-EulerVolumeCounterexample | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
+| 2 | MD-2.3.2-EulerVolumePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT08 |
+| 2 | MD-2.3.2-EulerVolumeCounterexample | FAIL | B | 强化见证为每个h≠0时/det(I+hS)/≠1，覆盖实际体积不守恒；原桥接只给det≠1，原已证结果完整保留为det_only辅助定理并重查，强化结论暂sorry，不写新证明。 | 已修待复审 | EAUDIT08 |
 | 2 | MD-2.3.2-AsymmetricEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.2-AsymmetricJacobian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.2-AsymmetricArea | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
