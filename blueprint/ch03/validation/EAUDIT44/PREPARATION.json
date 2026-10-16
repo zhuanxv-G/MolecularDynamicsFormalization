@@ -1,0 +1,21 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT44",
+  "section": "3.3.4",
+  "source_ids": [
+    "MD-3.3.4-TakahashiShadow"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.4-TakahashiShadow"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "ddb66c26cb4c3d09040658d59f764dc4f1153806a84cbcf202c2828f03ee9e7a",
+  "lean_sha256": "a1a48f827ae36ca6325ec2b19c19195f0d80907a9fdda2945b74606467b2e1ef",
+  "source_sha256": "080d3a84b1b0e5031148af7cb17b016bc327fac0752d00e7ecb838adfebe003d",
+  "pages": [
+    134
+  ],
+  "prior_proof_blocks": {
+    "MD-3.3.4-TakahashiShadow": "def takahashiShadow2 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) (z : Z n) : ℝ :=\n  mechanicalEnergy m U z+h^2/12*((shadowTerms m U z).1-(shadowTerms m U z).2.1)\n\ntheorem takahashiShadow2_matching (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ)\n    (_hm : positiveMass m) (_hU : ContDiff ℝ ⊤ U) (B : Set (SymplecticCoordinates n))\n    (_hB : IsCompact B) :\n    matchesHamiltonian (fun h z ↦ takahashiShadow2 m U h (unpack z))\n      (takahashiImada m U) B 4 ∧\n    (∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ B,\n      |verletModifiedH (fun x ↦ quadraticKinetic m (unpack x).2)\n        (fun x ↦ takahashiPotential m U h (unpack x).1) h z-\n        takahashiShadow2 m U h (unpack z)| ≤ C*h^4) := by\n  sorry"
+  }
+}

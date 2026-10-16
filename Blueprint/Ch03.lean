@@ -714,12 +714,13 @@ theorem potentialDoubleBracket :
   sorry
 
 /-- source_id: MD-3.3.4-TakahashiShadow · definition · §3.3.4 · 印刷p.112 / PDFp.134 
-[EXTRA] 保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。 -/
+[EXTRA] 保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。 
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
 def takahashiShadow2 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) (z : Z n) : ℝ :=
   mechanicalEnergy m U z+h^2/12*((shadowTerms m U z).1-(shadowTerms m U z).2.1)
 
 theorem takahashiShadow2_matching (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ)
-    (_hm : positiveMass m) (_hU : ContDiff ℝ ⊤ U) (B : Set (SymplecticCoordinates n))
+    (_hm : positiveMass m) (_hU : ContDiff ℝ ∞ U) (B : Set (SymplecticCoordinates n))
     (_hB : IsCompact B) :
     matchesHamiltonian (fun h z ↦ takahashiShadow2 m U h (unpack z))
       (takahashiImada m U) B 4 ∧

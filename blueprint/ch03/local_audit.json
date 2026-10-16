@@ -2142,8 +2142,8 @@
       "lean_decl": "MD.Ch03.takahashiShadow2",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "b056a3b91309a54f399ec84bed61aee93ac580f630625862e333234d0d291861",
-      "block_sha256": "b056a3b91309a54f399ec84bed61aee93ac580f630625862e333234d0d291861",
+      "signature_sha256": "9e46fce7daf6b6bbea6223493852f213e61ad9d69909459ff6b614136aae71a9",
+      "block_sha256": "9e46fce7daf6b6bbea6223493852f213e61ad9d69909459ff6b614136aae71a9",
       "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
@@ -2161,7 +2161,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT44/axioms.log"
     },
     "MD-3.3.4-TakahashiProcessor": {
       "checked": true,

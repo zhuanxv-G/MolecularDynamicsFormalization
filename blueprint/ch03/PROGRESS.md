@@ -68,7 +68,7 @@
 | MD-3.3.3-GeneralSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.3.4-TakahashiPotential | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | definition / self-contained |
 | MD-3.3.4-PotentialDoubleBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；需实际机械Hamiltonian的坐标Poisson双括号/梯度接口桥接；当前不存在现成桥接，有限微分路线待处理。 |
-| MD-3.3.4-TakahashiShadow | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | definition / self-contained |
+| MD-3.3.4-TakahashiShadow | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT44 | definition / self-contained |
 | MD-3.3.4-TakahashiProcessor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.3.4-ProcessorEnergyPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | FAIL | 待导师 / EAUDIT09（原返回FAIL保留） | placeholder / incomplete；印刷漏项待裁定；非PASS不证明。 |
 | MD-3.3.4-TakahashiEffectiveOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT09（原返回FAIL保留） | placeholder / incomplete；缺处理器逆、局部展开与实际四阶余项/稳定性的完整理论；本地非PASS不证明。 |
@@ -429,3 +429,5 @@ EAUDIT41 §3.3.1：1条落盘，单文件与1项公理通过；未写新证明�
 EAUDIT42 §3.3.2：1条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT43 §3.3.3：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT44 §3.3.4：1条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。

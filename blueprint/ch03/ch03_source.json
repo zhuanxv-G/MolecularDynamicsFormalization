@@ -2105,7 +2105,8 @@
     "lean_decl": "MD.Ch03.takahashiShadow2",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA] 保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。"
+      "[EXTRA] 保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
@@ -2118,9 +2119,19 @@
         "changed_fields": [],
         "raw_return": "blueprint/ch03/mathcopilot_results/BATCH11_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EAUDIT44_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:38:48.594473",
+        "before_sha256": "c551aa627901f374cffb30244e196c6e6a606d0c2e9bf021ea0e86eb75f13ccd",
+        "after_sha256": "67eb4c9cbada92c3a3f2dd5c0de9bbf71aef7f3c322ef5de27f3d69fd5a169a9",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT44/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.4-TakahashiProcessor",

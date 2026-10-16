@@ -12,8 +12,10 @@ def resume(ch,round_name=None):
     assert report['machine_check_status']=='running' and report['paused_chapter06']
     assert report['source_scan']=='passed' and report['blueprint_scan'] in ('passed','draft_with_placeholders')
     inputs={x['relative_path'].replace('\\','/'):x['sha256'] for x in report['inputs']}
+    blueprint_inputs={f'Blueprint/Ch{k:02}.lean':sha(ROOT/f'Blueprint/Ch{k:02}.lean') for k in range(1,6)}
     def validate():
         for name,digest in inputs.items():assert sha(ROOT/name)==digest,('Changed check input',name)
+        for name,digest in blueprint_inputs.items():assert sha(ROOT/name)==digest,('Changed active Blueprint',name)
     validate()
     original=folder/'INTERRUPTED_CHECK_REPORT.json'
     if not original.exists():shutil.copyfile(path,original)
@@ -24,17 +26,26 @@ def resume(ch,round_name=None):
       'lake_build','scratch','axiom_dependencies','blueprint_fresh_Ch01','blueprint_fresh_Ch02',
       'blueprint_axiom_dependencies','chapter02_axiom_dependencies']
     commands={
+      'lake_build':['build','MolecularDynamicsFormalization']+[f'+Blueprint.Ch{k:02}' for k in range(1,6)],
+      'scratch':['env','lean','Scratch.lean'],
+      'axiom_dependencies':['env','lean','scripts/CheckAxioms.lean'],
+      'blueprint_fresh_Ch01':['env','lean','Blueprint\\Ch01.lean'],
       'blueprint_fresh_Ch02':['env','lean','Blueprint\\Ch02.lean'],
       'blueprint_axiom_dependencies':['env','lean',str(ROOT/'blueprint/ch01/CheckAxioms.lean')],
       'chapter02_axiom_dependencies':['env','lean',str(ROOT/'blueprint/ch02/CheckAxioms.lean')]}
     completed={c['name'] for c in report['checks']}
     assert set(required)-completed<=set(commands)
-    signature=folder/'RESUME_INPUTS.json';dump(signature,dict(inputs=inputs,paused_chapter06=True))
+    signature=folder/'RESUME_INPUTS.json';dump(signature,dict(inputs=inputs,blueprint_inputs=blueprint_inputs,paused_chapter06=True))
     for name in required:
         if name in completed:continue
         reused=False;args=commands[name]
-        for earlier in (2,3):
-            other=ROOT/f'blueprint/ch{earlier:02}/validation/WEBSITE_REPAIR_CHAPTER_END/full-check/CHECK_REPORT.json'
+        earlier_reports=[ROOT/f'blueprint/ch{k:02}/validation/WEBSITE_REPAIR_CHAPTER_END{suffix}/full-check/CHECK_REPORT.json' for k in (2,3) for suffix in ('_CINFTY','')]
+        for other in earlier_reports:
+            # Build depends on every active Blueprint, while the original full
+            # report's input inventory contains only Ch01/02. Never reuse an
+            # old build as evidence for a changed Ch03/04/05.
+            if name not in ('blueprint_fresh_Ch01','blueprint_fresh_Ch02','blueprint_axiom_dependencies','chapter02_axiom_dependencies','axiom_dependencies','scratch'):break
+            if other==path:continue
             if not other.exists():continue
             prior=read(other)
             if prior['machine_check_status']!='passed' or not prior.get('paused_chapter06'):continue
@@ -59,6 +70,7 @@ def resume(ch,round_name=None):
     validate();assert set(required)=={c['name'] for c in report['checks']}
     report.update(machine_check_status='passed',exit_code=0,finished_at=datetime.now().astimezone().isoformat(),
       resumed_from=original.relative_to(ROOT).as_posix(),resumed_original_sha256=sha(original),
+      resumed_blueprint_inputs=blueprint_inputs,
       resume_note='Interrupted original run retained; completed phases reused only with identical full input inventory, command, and log hashes; missing phases checked.')
     dump(path,report);print('RESUMED_FULL_CHECK_PASSED',ch,flush=True)
 

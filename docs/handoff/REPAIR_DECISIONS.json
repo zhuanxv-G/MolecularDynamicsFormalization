@@ -635,8 +635,8 @@
     "section": "3.3.3"
   },
   "MD-3.3.4-TakahashiShadow": {
-    "category": "B",
-    "handling": "保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。",
+    "category": "C",
+    "handling": "C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。",
     "section": "3.3.4"
   },
   "MD-3.3.4-TakahashiPotential": {

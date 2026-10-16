@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT44",
+  "input_sha256": {
+    "BATCH_EAUDIT44.md": "f5c944461d1201b995fa262aac3436a2ab4592e4408bd20ed1f2a0782364f829",
+    "Blueprint/Ch03.lean": "a1a48f827ae36ca6325ec2b19c19195f0d80907a9fdda2945b74606467b2e1ef",
+    "blueprint/ch03/ch03_source.json": "080d3a84b1b0e5031148af7cb17b016bc327fac0752d00e7ecb838adfebe003d"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT44a",
+      "source_id": "MD-3.3.4-TakahashiShadow",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT44/a",
+      "total_bytes": 102424,
+      "manifest_sha256": "fea2214299b5715ee5cbfe009fce302d467ca2ccfed54e011038b1e763923117"
+    }
+  ]
+}
