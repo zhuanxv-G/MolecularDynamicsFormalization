@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT78",
+  "input_sha256": {
+    "BATCH_EAUDIT78.md": "830504b7668bc43b4c9fb32c1ce47ec3b4fc2dee078451c08a271fe78cc74ba8",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT78a",
+      "source_id": "MD-3.6-HamiltonianFlowStructures",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT78/a",
+      "total_bytes": 193805,
+      "manifest_sha256": "54add463fe67a89a3bd359f6bab945a969ef0fea6c4c5833aaaf0f5c83aae6d6"
+    },
+    {
+      "subtask": "EAUDIT78b",
+      "source_id": "MD-3.6-VolumeNotSymplectic",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT78/b",
+      "total_bytes": 91038,
+      "manifest_sha256": "2d7fb2efa8df51b0cd3202acc7259e84d294d4ba040c317752395c124d90c07f"
+    }
+  ]
+}

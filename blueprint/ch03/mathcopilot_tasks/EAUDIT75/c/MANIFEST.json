@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT75",
+  "source_id": "MD-3.4-TruncationSmooth",
+  "input_sha256": {
+    "BATCH_EAUDIT75.md": "82e5d9c2df5958ed2dbf41324fe46ce657d4dab1eae89a2f49b062bd87dc9704",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT75c_materials": "375cbf3e9e160d88a6fd5f65fc98b58e2e9d52aee279a2cd093301b85f787fcf",
+    "EAUDIT75c_PAGES.pdf": "5cb521d35d5998fa3661ad30abd969f9c5f88fd1a97bdbf681643d8b929a5751"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    136
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "010471322b4fe35607a58e3d98c11d00ea58ef8a45bd1c5089a034fe904e9273",
+  "source_block_sha256": "4c59415ac54b2fbf4016bc2f448bd003afdea8294c4cd486cc6071b533530895",
+  "source_declarations": [
+    "truncationSmooth",
+    "truncationSmooth_C1"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/ModifiedHamiltonianBounds.lean",
+      "name": "textbookTruncatedHamiltonian",
+      "file_sha256": "a4bc3858fbd3e46ff382425fe9d10db2c805ac01dd27f09199a4aefab2cb54d0",
+      "excerpt_sha256": "ae4576437497e7b2a8dde76a400e7f755c31380752cb4ac2abe3b94f50ad8979"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT75_review.json",
+  "total_task_bytes": 116798
+}

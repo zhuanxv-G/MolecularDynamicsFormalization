@@ -3819,8 +3819,8 @@
     "kind": "unnumbered_claim",
     "label": null,
     "section": "3.6.1",
-    "printed_page": "128–129",
-    "pdf_page": "150–151",
+    "printed_page": "129",
+    "pdf_page": "151",
     "statement_latex": "For the system $\\mathrm dz/\\mathrm dt=f(\\boldsymbol z)$, a coordinate transformation $\\boldsymbol z\\mapsto\\widetilde{\\boldsymbol z}=R\\boldsymbol z$ results in\n\\[\\frac{\\mathrm d\\widetilde{\\boldsymbol z}}{\\mathrm dt}=R\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=Rf(R^{-1}\\widetilde{\\boldsymbol z})=Rf(R\\widetilde{\\boldsymbol z}),\\]\nsince $R^{-1}=R$. A change of time $t\\mapsto\\tau=-t$ results in\n\\[\\frac{\\mathrm d\\boldsymbol z}{\\mathrm d\\tau}=\\frac{\\mathrm dt}{\\mathrm d\\tau}\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=-f(\\boldsymbol z).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -3851,9 +3851,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch03/mathcopilot_results/BATCH18_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:26:57.974503",
+        "before_sha256": "490ca4b2d1321c08da3c7c887530f09337b41fc2501f2700f85ed80d40ab9561",
+        "after_sha256": "4e30a6e497f57e5206e3acc0f174c6304b48716d6f6e91b8915e573af745c09d",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "128–129",
+            "after": "129"
+          },
+          "pdf_page": {
+            "before": "150–151",
+            "after": "151"
+          }
+        },
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH18_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      150
+    ]
   },
   {
     "source_id": "MD-3.6.1-ReversedTrajectory",

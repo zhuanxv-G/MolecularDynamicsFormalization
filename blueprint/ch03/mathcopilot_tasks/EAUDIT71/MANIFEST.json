@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT71",
+  "input_sha256": {
+    "BATCH_EAUDIT71.md": "e69beecfac1e8ad68a7756837f52fa20a6247430fd1879a150bfdedf154cf238",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT71a",
+      "source_id": "MD-3.3.1-SymplecticEulerShadowMatching",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT71/a",
+      "total_bytes": 102875,
+      "manifest_sha256": "95d10a7602834c07a8905a1cb4d90bc494f1872ae68d76af6bc08eb71be4694d"
+    }
+  ]
+}

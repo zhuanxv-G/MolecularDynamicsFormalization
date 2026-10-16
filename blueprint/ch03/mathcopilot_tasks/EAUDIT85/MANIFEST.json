@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT85",
+  "input_sha256": {
+    "BATCH_EAUDIT85.md": "e6b498656ad8c7f0be8df7520f1c64e57c88907432a88499212c12c0d26328a3",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT85a",
+      "source_id": "MD-3.7.3-ModifiedCollisionProjection",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT85/a",
+      "total_bytes": 87712,
+      "manifest_sha256": "4839b991d365362acb8f29247975b7762145026ec92daa03d06f27b89860588b"
+    }
+  ]
+}

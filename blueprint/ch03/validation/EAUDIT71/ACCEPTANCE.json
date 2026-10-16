@@ -1,0 +1,26 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT71",
+  "section": "3.3.1",
+  "source_ids": [
+    "MD-3.3.1-SymplecticEulerShadowMatching"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.1-SymplecticEulerShadowMatching"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.3.1-SymplecticEulerShadowMatching",
+      "prior_eaudit": "EAUDIT52",
+      "acceptance": "blueprint/ch03/validation/EAUDIT52/ACCEPTANCE.json",
+      "sha256": "5c6855e3e1f18eefda17fe46ed517d0e0e3e571d441e151576f115c9527ab89a"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT71/INDEX.md"
+}

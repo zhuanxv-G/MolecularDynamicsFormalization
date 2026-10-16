@@ -1,0 +1,26 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT85",
+  "section": "3.7.3",
+  "source_ids": [
+    "MD-3.7.3-ModifiedCollisionProjection"
+  ],
+  "reaudit_ids": [
+    "MD-3.7.3-ModifiedCollisionProjection"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.7.3-ModifiedCollisionProjection",
+      "prior_eaudit": "EAUDIT66",
+      "acceptance": "blueprint/ch03/validation/EAUDIT66/ACCEPTANCE.json",
+      "sha256": "9c5051e614a902738e9d407613559717a27ae4efef7638c54a80fffca1b1c202"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT85/INDEX.md"
+}

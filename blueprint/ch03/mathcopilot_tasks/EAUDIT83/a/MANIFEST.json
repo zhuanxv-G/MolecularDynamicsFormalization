@@ -1,0 +1,57 @@
+{
+  "eaudit": "EAUDIT83",
+  "source_id": "MD-3.7.1-HardCorePotential",
+  "input_sha256": {
+    "BATCH_EAUDIT83.md": "17b0b50577cd4ba2d936a21147a73972b4e2f065d7db8aa5d7b24285edff45f6",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT83a_materials": "c8224451352cd7e377749599801dc9f692b6d6d3b9cddf8d7bb057cf6efebd5d",
+    "EAUDIT83a_PAGES.pdf": "926163e1bb68af4369c0d14a9326679cf9d53f792d539b78746cc3338ec64fe9"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    155
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "74a6f55bec02b8d08fc68d8350900aabe3640823b268ccc31bfe0a77aa9ffe0b",
+  "source_block_sha256": "a535dec83346ae8c3bcd3c14508404bf1761b6f4b2347dc0a62ccaf3a16fd264",
+  "source_declarations": [
+    "hardCorePotential",
+    "hardSphereHamiltonianPrinted",
+    "hardCorePotential_contactAllowed"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "hardCoreDomain",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "9217d3afada6a67f32d3266c291b71812acc2552a4d0403cbc3bb4771a315ca5"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "hardCorePotential",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "4050a69c6ea0c7126a6fd0c2837f9d816edcf7f91899c08b3b9232c3e10a394e"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "hardCorePotential_contactAllowed",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "e566b99cc834c95ee2f11246fd5cad40120c9c841f0fa75ddd2afa1166298868"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "hardSphereHamiltonianPrinted",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "7cbfdbbd83e6f00965bc5561df145a5a902ba379718f1d638d8118d15badebd2"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT83_review.json",
+  "total_task_bytes": 89967
+}

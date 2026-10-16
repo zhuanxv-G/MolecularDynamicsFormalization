@@ -1,0 +1,34 @@
+{
+  "eaudit": "EAUDIT79",
+  "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+  "input_sha256": {
+    "BATCH_EAUDIT79.md": "7bcf3292b13a453349db9d10687f9afc5457180357c99194246d953200c457df",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT79b_materials": "0cfa7d2eff903813dc1b181477ea46082ea34041716f111d2f890c846a2af1ee",
+    "EAUDIT79b_PAGES.pdf": "d93e7c0069586b24d0c19b009710716da23903c47b9e7ae1e3cc361ab44a2850"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    150,
+    151
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "8ee048766151e43cd4cf6295c2393c8fab957e987b899320c7a2e3b1ba93fe46",
+  "source_block_sha256": "6efc229f0d84283d2d472371c7f15fc0855df6c4afb49de1c33166f0585d46e0",
+  "source_declarations": [
+    "reversedTrajectoryPrinted",
+    "reversedTrajectoryPrinted_coordinateChange",
+    "reversedTrajectoryPrinted_timeChange"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT79_review.json",
+  "total_task_bytes": 98197
+}

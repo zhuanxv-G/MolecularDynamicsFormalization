@@ -1,0 +1,187 @@
+# EAUDIT67：第3章§3网站修复复审
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3-ModifiedConstruction",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3",
+  "printed_page": "97",
+  "pdf_page": "119",
+  "statement_latex": "We can express the fundamental consequence as follows: not only are Hamiltonian flow maps symplectic, but also near-identity symplectic maps are (in an approximate sense) Hamiltonian flow maps [31]. The fact leads to the existence of a modified (perturbed) Hamiltonian from which the discrete trajectory may be derived (as snapshots of continuous trajectories). In some cases we may derive this perturbed Hamiltonian as an expansion in powers of the stepsize.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "The starting point is that symplectic integrators are symplectic maps that are “near to the identity” since they depend on a parameter (the stepsize $h$) which can be chosen as small as needed, and, if consistent, in the limit $h\\to0$, such a map must tend to the identity map."
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.modifiedConstruction",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "近恒等、光滑、阶r≥1用smoothSymplecticData实际定义表达：开放凸D、紧凸B⊆D、H及(h,z)↦G_h(z)无限可微、G₀=id、逐h辛、实际原始ODE流和局部阶。",
+    "按任意有限截断匹配解释“in an approximate sense”；不将形式无限级数当实际收敛解，不将finiteMatching结论作前提。",
+    "[EXTRA] EAUDIT01补原首句Hamiltonian流辛性为独立完整结论，与原近恒等辛映射修正Hamiltonian有限匹配合取；两个真实项目命题全部量词展开供审校，未把流辛性作构造前提。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT01_LOCAL_PAGE_RECHECK",
+      "timestamp": "2026-10-13T20:57:11.855696",
+      "before_sha256": "6172396c1a8ccaf362e87370db94fbb7b43d3654feaa980c0b88a4a3fd23e237",
+      "after_sha256": "6172396c1a8ccaf362e87370db94fbb7b43d3654feaa980c0b88a4a3fd23e237",
+      "changed_fields": [],
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH01_result.json",
+      "raw_sha256": "120deaa07feab89b86e0bb7ae296ba4fadc1614604f7bb1e18866e1acb26bb97",
+      "reason": "原页119/120/122视觉核对后合并A的标点/记号修订；按绑定FAIL补齐四条全部结论/阶数/真实导数资格，不采用未批准数学勘误。"
+    },
+    {
+      "stage": "EAUDIT02_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:56:17.118408",
+      "before_sha256": "8ec25d4f891a8d9a13183996f28ad1b6c4f39de0221b7861bcc5e49ffafe2a84",
+      "after_sha256": "de3b6f6d67ee086cb9b46d092f1f217d63748eec64be2929a346fa0b1ab4dd8c",
+      "changed_fields": [],
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH01_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem modifiedConstruction :
+  MolecularDynamics.Chapter02Review.hamiltonianSymplectic_statement ∧
+  MolecularDynamics.Chapter03Review.modifiedConstruction_statement := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.IsTextbookSymplectic
+```lean
+def IsTextbookSymplectic {Nc : ℕ} (A : SymplecticCoordinateMatrix Nc) : Prop :=
+  Aᵀ * textbookJ Nc * A = textbookJ Nc
+```
+### 实际依赖 MolecularDynamics.IsTextbookSymplecticMap
+```lean
+def IsTextbookSymplecticMap {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=
+  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.hamiltonianSymplectic_statement
+```lean
+def hamiltonianSymplectic_statement : Prop :=
+  ∀ n (H : SymplecticCoordinates n → ℝ) (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n) τ,
+    ContDiff ℝ 2 H → ContDiff ℝ 1 Φ → (∀ z, Φ (0,z) = z) →
+    (∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s,z)) (textbookHamiltonianVectorField H (Φ (t,z))) t) →
+    ∀ t ∈ Icc 0 τ, IsTextbookSymplecticMap (fun z => Φ (t,z))
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.modifiedConstruction_statement
+```lean
+def modifiedConstruction_statement : Prop :=
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
+      ∀ k ≥ r, finiteMatching H Hj r k D B G
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinateMatrix
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.actualFlowNearCompact
+```lean
+def actualFlowNearCompact {n : ℕ} (f : SymplecticCoordinates n → SymplecticCoordinates n)
+    (D B : Set (SymplecticCoordinates n))
+    (Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) (η : ℝ) : Prop :=
+  0 < η ∧ ∀ z ∈ B, Φ 0 z=z ∧ ∀ t ∈ Ioo (-η) η,
+    Φ t z ∈ D ∧ HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.finiteMatching
+```lean
+def finiteMatching {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+    (Hj : ℕ → SymplecticCoordinates n → ℝ) (r k : ℕ)
+    (D B : Set (SymplecticCoordinates n)) (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) : Prop :=
+  ∃ δ > 0, ∃ A > 0, ∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+    ∀ h ∈ Ioo 0 δ, ∀ z ∈ B, truncatedFlow H Hj r k h z (Γ h z) ∧
+      (∀ t ∈ Icc 0 h, Γ h z t ∈ D) ∧ ‖G h z-Γ h z h‖ ≤ A*h^(k+1)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.hamiltonianSymplectic_statement
+```lean
+def hamiltonianSymplectic_statement : Prop :=
+  ∀ n (H : SymplecticCoordinates n → ℝ) (Φ : ℝ × SymplecticCoordinates n → SymplecticCoordinates n) τ,
+    ContDiff ℝ 2 H → ContDiff ℝ 1 Φ → (∀ z, Φ (0,z) = z) →
+    (∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s,z)) (textbookHamiltonianVectorField H (Φ (t,z))) t) →
+    ∀ t ∈ Icc 0 τ, IsTextbookSymplecticMap (fun z => Φ (t,z))
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.localOrder
+```lean
+def localOrder {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (G Φ : ℝ → E → E) (B : Set E) (r : ℕ) : Prop :=
+  ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ B,
+    ‖G h z-Φ h z‖ ≤ C*|h|^(r+1)
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.modifiedConstruction_statement
+```lean
+def modifiedConstruction_statement : Prop :=
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
+      ∀ k ≥ r, finiteMatching H Hj r k D B G
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.smoothSymplecticData
+```lean
+def smoothSymplecticData {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+    (D B : Set (SymplecticCoordinates n)) (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
+    (r : ℕ) : Prop :=
+  0 < r ∧ IsOpen D ∧ Convex ℝ D ∧ IsCompact B ∧ Convex ℝ B ∧ B ⊆ D ∧
+  ContDiffOn ℝ ⊤ H D ∧
+  (∀ z ∈ D, G 0 z=z) ∧
+  (∃ η > 0, ContDiffOn ℝ ⊤ (fun hz : ℝ × SymplecticCoordinates n => G hz.1 hz.2)
+      (Ioo (-η) η ×ˢ D) ∧
+    (∀ h ∈ Ioo (-η) η, ∀ z ∈ D, IsTextbookSymplectic (textbookJacobian (G h) z)) ∧
+    actualFlowNearCompact (textbookHamiltonianVectorField H) D B Φ η) ∧ localOrder G Φ B r
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.solution
+```lean
+def solution {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (f : E → E) (γ : ℝ → E) (a b : ℝ) : Prop :=
+  ∀ t ∈ Icc a b, HasDerivWithinAt γ (f (γ t)) (Icc a b) t
+```
+### 实际依赖 MolecularDynamics.textbookHamiltonianVectorField
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+### 实际依赖 MolecularDynamics.textbookJ
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### 实际依赖 MolecularDynamics.textbookJacobian
+```lean
+noncomputable def textbookJacobian {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinateMatrix Nc :=
+  LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap
+```
+### 实际依赖 MolecularDynamics.textbookTruncatedHamiltonian
+```lean
+noncomputable def textbookTruncatedHamiltonian (H : E → ℝ) (Hj : ℕ → E → ℝ)
+    (r k : ℕ) (h : ℝ) (z : E) : ℝ :=
+  H z + ∑ j ∈ Finset.Icc r k, h ^ j * Hj j z
+```
+### 实际依赖 MD.Ch03.truncatedFlow
+```lean
+def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)
+    (r k : ℕ) (h : ℝ) (z : SymplecticCoordinates n) (γ : ℝ → SymplecticCoordinates n) : Prop :=
+  γ 0=z ∧ solution (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)) γ 0 h
+```

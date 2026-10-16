@@ -1,0 +1,139 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.3-DifferenceCommutator；原PDF页映射=[126]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT70_review.json，对象含batch=EAUDIT70、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT70.md": "dd1f9336814bd2dfbc1edf9c5ba959b0cdba98c9235e1b7cb51bdf9b40666701",
+  "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "EAUDIT70d_materials": "d989cbc29f263941ddc90945b55bad74a8a79fe2c140c9385d321739f183fb02",
+  "EAUDIT70d_PAGES.pdf": "395feb007672a81966a97b2db48bc4f8415074295cdefa107046c7e9f913fe86"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.3-DifferenceCommutator",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3.3",
+  "printed_page": "104",
+  "pdf_page": "126",
+  "statement_latex": "So the difference is\n\\[e^{hA}e^{hB}-e^{h(A+B)}=\\frac{h^2}{2}[A,B]+O(h^3),\\]\nwhere $[A,B]=AB-BA$ is the commutator of $A$ and $B$.\nFor a splitting method, we have, replacing $A$ by $\\mathcal L_{H_1}$ and $B$ by $\\mathcal L_{H_2}$,\n\\[e^{h\\mathcal L_{H_1}}e^{h\\mathcal L_{H_2}}-e^{h\\mathcal L_H}=\\frac{h^2}{2}[\\mathcal L_{H_1},\\mathcal L_{H_2}]+O(h^3).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$[A,B]=AB-BA$定义合并旧CH03-032；Hamiltonian算子是同一形式代数恒等式的实例；H=H₁+H₂及Lie加法见p.103/PDF125。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.differenceCommutator",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookFormalOperatorDifference_coeff_two"
+  ],
+  "extra_assumptions": [
+    "[EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。",
+    "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT06_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:04:52.365030",
+      "before_sha256": "4900ca0b64dc0c57f28fd88769cd8108b0a8f1ccf3f3b960fb298d8d1825c32a",
+      "after_sha256": "5f854aba91b319dd5c7e87f4fcbab3a3863d6b9bf4910f6a7b59855bda86c328",
+      "changed_fields": [],
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    },
+    {
+      "stage": "EAUDIT40_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:36:10.671141",
+      "before_sha256": "5f854aba91b319dd5c7e87f4fcbab3a3863d6b9bf4910f6a7b59855bda86c328",
+      "after_sha256": "9c13b9b1aee97bbf925dbb24272a4c59287591532cf092534e042a6508933fe5",
+      "changed_fields": [],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT40/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem differenceCommutator (A B : R) :
+    PowerSeries.coeff 0 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
+    PowerSeries.coeff 1 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
+    PowerSeries.coeff 2 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = (1/2 : ℝ) • (A*B-B*A) := by
+  sorry
+
+theorem differenceCommutator_coeff2 (A B : R) :
+    PowerSeries.coeff 2 (textbookFormalOperatorExponential A *
+      textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A + B)) =
+      (1 / 2 : ℝ) • (A * B - B * A) := by
+  apply MolecularDynamics.textbookFormalOperatorDifference_coeff_two <;> assumption
+
+theorem differenceCommutator_hamiltonian (n : ℕ)
+    (A B φ : SymplecticCoordinates n → ℝ)
+    (_hA : ContDiff ℝ ∞ A) (_hB : ContDiff ℝ ∞ B) (_hφ : ContDiff ℝ ∞ φ)
+    (z : SymplecticCoordinates n) :
+    let S := hamiltonianSplittingObservable A B φ z-hamiltonianExactObservable A B φ z
+    PowerSeries.coeff 0 S = 0 ∧ PowerSeries.coeff 1 S = 0 ∧
+    PowerSeries.coeff 2 S = (1/2 : ℝ)*
+      (textbookLieDerivative (textbookHamiltonianVectorField A)
+        (textbookLieDerivative (textbookHamiltonianVectorField B) φ) z -
+       textbookLieDerivative (textbookHamiltonianVectorField B)
+        (textbookLieDerivative (textbookHamiltonianVectorField A) φ) z) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinateMatrix
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MD.Ch03.hamiltonianExactObservable
+```lean
+def hamiltonianExactObservable {n : ℕ}
+    (A B φ : SymplecticCoordinates n → ℝ) (z : SymplecticCoordinates n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun j ↦
+    ((textbookLieDerivative (textbookHamiltonianVectorField (fun x ↦ A x+B x)))^[j] φ) z /
+      (Nat.factorial j : ℝ))
+```
+### 实际依赖 MD.Ch03.hamiltonianSplittingObservable
+```lean
+def hamiltonianSplittingObservable {n : ℕ}
+    (A B φ : SymplecticCoordinates n → ℝ) (z : SymplecticCoordinates n) : PowerSeries ℝ :=
+  PowerSeries.mk (fun k ↦ ∑ i ∈ Finset.range (k+1),
+    ((textbookLieDerivative (textbookHamiltonianVectorField A))^[i]
+      ((textbookLieDerivative (textbookHamiltonianVectorField B))^[k-i] φ)) z /
+      ((Nat.factorial i : ℝ)*(Nat.factorial (k-i) : ℝ)))
+```
+### 实际依赖 MolecularDynamics.textbookFormalOperatorExponential
+```lean
+noncomputable def textbookFormalOperatorExponential (A : R) : PowerSeries R :=
+  PowerSeries.mk (fun n => (1 / (n.factorial : ℝ)) • A ^ n)
+```
+### 实际依赖 MolecularDynamics.textbookHamiltonianVectorField
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+### 实际依赖 MolecularDynamics.textbookJ
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### 实际依赖 MD.Ch03.textbookLieDerivative
+```lean
+noncomputable def textbookLieDerivative (f : E → E) (φ : E → ℝ) (z : E) : ℝ :=
+  (fderiv ℝ φ z) (f z)
+```

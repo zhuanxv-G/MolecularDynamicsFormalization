@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT77",
+  "source_id": "MD-3.5-ProjectionFactor",
+  "input_sha256": {
+    "BATCH_EAUDIT77.md": "519b3eba9a3bb88401c688a5f7a09f2a2ab9d367990e2b1c0f5ef9feeea06067",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT77e_materials": "ced2f7d80ac5943e53c259fda37e47588194adf92b9a1808eaa165693bd8a16a",
+    "EAUDIT77e_PAGES.pdf": "7eaf5c640d43dd8575eb99e142cde1d14fd573e1f4a5a4920e324f5e0a0bb39e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    146
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "ed757a0fcd07d4141dec1720a81580bb9590ddcd24239982df386c6a6b11097a",
+  "source_block_sha256": "0c332bf7251a49f15cdaa20ae47d189f8b46be710ae7a9d532f2ea8b958a9d31",
+  "source_declarations": [
+    "projectionFactor"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "projectionFactor",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "0c332bf7251a49f15cdaa20ae47d189f8b46be710ae7a9d532f2ea8b958a9d31"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT77_review.json",
+  "total_task_bytes": 82452
+}

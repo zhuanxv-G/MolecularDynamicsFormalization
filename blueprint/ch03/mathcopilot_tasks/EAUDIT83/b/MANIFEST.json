@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT83",
+  "source_id": "MD-3.7.1-ObstacleReflection",
+  "input_sha256": {
+    "BATCH_EAUDIT83.md": "17b0b50577cd4ba2d936a21147a73972b4e2f065d7db8aa5d7b24285edff45f6",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT83b_materials": "6262ad5c12e9e3774cfee9e651032d2dda84c0b02256d96f53bc32afb3c8165b",
+    "EAUDIT83b_PAGES.pdf": "1bfb50797ae60c64363b5632971f32afeea81b2cc04ac2e89c962f312ba41c06"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    156
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "2f66055d0dad04e2f7c8afed1c102ca13212e17f28857bb2084af39f5e960208",
+  "source_block_sha256": "1f3c57c8c526a81626bae01a7178f5b03ad69ff4a73ec9ace8edbfebd8f27afe",
+  "source_declarations": [
+    "obstacleReflection"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "obstacleReflection",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "1f3c57c8c526a81626bae01a7178f5b03ad69ff4a73ec9ace8edbfebd8f27afe"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT83_review.json",
+  "total_task_bytes": 82120
+}

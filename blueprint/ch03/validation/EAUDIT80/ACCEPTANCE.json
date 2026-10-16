@@ -1,0 +1,74 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT80",
+  "section": "3.6.2",
+  "source_ids": [
+    "MD-3.6.2-FlowReversal",
+    "MD-3.6.2-FlowReversalIdentity",
+    "MD-3.6.2-SymmetricMethod",
+    "MD-3.6.2-AffineInvariant",
+    "MD-3.6.2-SymmetricAffineReversible",
+    "MD-3.6.2-RKAffine",
+    "MD-3.6.2-PartitionedAffine"
+  ],
+  "reaudit_ids": [
+    "MD-3.6.2-FlowReversal",
+    "MD-3.6.2-FlowReversalIdentity",
+    "MD-3.6.2-SymmetricMethod",
+    "MD-3.6.2-AffineInvariant",
+    "MD-3.6.2-SymmetricAffineReversible",
+    "MD-3.6.2-RKAffine",
+    "MD-3.6.2-PartitionedAffine"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.6.2-FlowReversal",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch03/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "cf6c6775b83dc3c572ced6e63d15084ac3e155501d35118eaac9d928b13c0daa"
+    },
+    {
+      "source_id": "MD-3.6.2-FlowReversalIdentity",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch03/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "cf6c6775b83dc3c572ced6e63d15084ac3e155501d35118eaac9d928b13c0daa"
+    },
+    {
+      "source_id": "MD-3.6.2-SymmetricMethod",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch03/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "cf6c6775b83dc3c572ced6e63d15084ac3e155501d35118eaac9d928b13c0daa"
+    },
+    {
+      "source_id": "MD-3.6.2-AffineInvariant",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch03/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "cf6c6775b83dc3c572ced6e63d15084ac3e155501d35118eaac9d928b13c0daa"
+    },
+    {
+      "source_id": "MD-3.6.2-SymmetricAffineReversible",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch03/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "cf6c6775b83dc3c572ced6e63d15084ac3e155501d35118eaac9d928b13c0daa"
+    },
+    {
+      "source_id": "MD-3.6.2-RKAffine",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch03/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "cf6c6775b83dc3c572ced6e63d15084ac3e155501d35118eaac9d928b13c0daa"
+    },
+    {
+      "source_id": "MD-3.6.2-PartitionedAffine",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch03/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "cf6c6775b83dc3c572ced6e63d15084ac3e155501d35118eaac9d928b13c0daa"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT80/INDEX.md"
+}

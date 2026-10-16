@@ -1,0 +1,95 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.6.1-MechanicalReversalCorrect；原PDF页映射=[150]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT79_review.json，对象含batch=EAUDIT79、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT79.md": "7bcf3292b13a453349db9d10687f9afc5457180357c99194246d953200c457df",
+  "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "EAUDIT79d_materials": "b5263f4079816d05da269fcbe8521986d0657f4d03c7970167739018f6d9e683",
+  "EAUDIT79d_PAGES.pdf": "7e9ab365213aaf33a08f4b69c3815f4cdf568190c5bf0a73f2730ac97119f712"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.6.1-MechanicalReversalCorrect",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3.6.1",
+  "printed_page": "128",
+  "pdf_page": "150",
+  "statement_latex": "Therefore the molecular dynamics Hamiltonian system is time-reversible.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "F=−grad U代入任意位置力版本；泛化不改变机械坐标反转对象。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.mechanicalReversalCorrect",
+  "reusable_proofs": [
+    "MolecularDynamics.Chapter03Review.mechanicalReversal_proved"
+  ],
+  "extra_assumptions": [
+    "独立正确机械R反转结论；原印展示式亦正确，原先错误标记撤销。",
+    "[EXTRA] 原已证独立机械反转结论保留；更正旧注释：原书展示式正确，先前原书错误判断已撤销。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT14_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:25:19.432395",
+      "before_sha256": "1fd870bfd85d1146f22590002dd9be2d9a07d86ace24e5872ae099613d4aa082",
+      "after_sha256": "64b2ab4a38f58ccb28d4ba21a70da5bc47d9ccf163c32a97623f8849032de131",
+      "changed_fields": [
+        "extra_assumptions"
+      ],
+      "annotation_corrections": {
+        "extra_assumptions": {
+          "before": [
+            "[EXTRA]独立正确机械R反转结论；原书错误展示等式仍由MechanicalReversalPrinted保留，不静默更改它。"
+          ],
+          "after": [
+            "独立正确机械R反转结论；原印展示式亦正确，原先错误标记撤销。",
+            "[EXTRA] 原已证独立机械反转结论保留；更正旧注释：原书展示式正确，先前原书错误判断已撤销。"
+          ]
+        }
+      },
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH18_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem mechanicalReversalCorrect :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) z,
+    mechanicalField m F (momentumReversal z)=-momentumReversal (mechanicalField m F z) := by
+  exact MolecularDynamics.Chapter03Review.mechanicalReversal_proved
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.invMass
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.mechanicalField
+```lean
+def mechanicalField {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (z : Z n) : Z n :=
+  (invMass m z.2, F z.1)
+```
+### 实际依赖 MD.Ch03.momentumReversal
+```lean
+def momentumReversal {n : ℕ} (z : Z n) : Z n := (z.1,-z.2)
+```

@@ -1,0 +1,26 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT67",
+  "section": "3",
+  "source_ids": [
+    "MD-3-ModifiedConstruction"
+  ],
+  "reaudit_ids": [
+    "MD-3-ModifiedConstruction"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3-ModifiedConstruction",
+      "prior_eaudit": "EAUDIT48",
+      "acceptance": "blueprint/ch03/validation/EAUDIT48/ACCEPTANCE.json",
+      "sha256": "ddd8be4328e2859239ee6f4043deba0aebb5bf6127a0e91c21187ca44d71a1a4"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT67/INDEX.md"
+}

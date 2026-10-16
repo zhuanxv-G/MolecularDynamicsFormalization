@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT76",
+  "source_id": "MD-3.4-TruncationRemainder",
+  "input_sha256": {
+    "BATCH_EAUDIT76.md": "d19162a8f77bd922cf74522856142df123ba9850136aeb0ad4676e7d1d02b511",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT76b_materials": "9886fb2f3dd25349c8bdca84d6009c614d64daae9a4d24539bd3408f1e274dc7",
+    "EAUDIT76b_PAGES.pdf": "ce685429d3ddea234ee45d3f5fe4f7aa5778af6ba7a086757b93e44a785f6750"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    137
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "19f5f24eec1cd9d4afe37523ce77a5892a823a427de5fd833dcdbaf9eb8d5f09",
+  "source_block_sha256": "65efbb51d66669881876ac0e34351332c1526c134e3fa5ccc49df922af604d5f",
+  "source_declarations": [
+    "truncationRemainder"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/ModifiedHamiltonianBounds.lean",
+      "name": "textbookTruncatedHamiltonian",
+      "file_sha256": "a4bc3858fbd3e46ff382425fe9d10db2c805ac01dd27f09199a4aefab2cb54d0",
+      "excerpt_sha256": "ae4576437497e7b2a8dde76a400e7f755c31380752cb4ac2abe3b94f50ad8979"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT76_review.json",
+  "total_task_bytes": 93977
+}

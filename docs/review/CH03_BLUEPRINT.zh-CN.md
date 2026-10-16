@@ -111,7 +111,7 @@
 | MD-3.6.1-ReversedFieldPrinted | 128/150 | NEEDS_HUMAN | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.6.1-MomentumReversal | 128/150 | PASS | 网站PASS（绑定版本 433a13ca6407） | self-contained |
 | MD-3.6.1-MechanicalReversal | 128/150 | FAIL | 待复审 / EAUDIT14 | incomplete |
-| MD-3.6.1-ReversedTrajectoryPrinted | 128–129/150–151 | FAIL | 待复审 / EAUDIT14 | incomplete |
+| MD-3.6.1-ReversedTrajectoryPrinted | 129/151 | FAIL | 待复审 / EAUDIT14 | incomplete |
 | MD-3.6.1-ReversedTrajectory | 129/151 | PASS | 待复审 / EAUDIT14 | incomplete |
 | MD-3.6.2-FlowReversal | 129/151 | PASS | 待复审 / EAUDIT15 | incomplete |
 | MD-3.6.2-FlowReversalIdentity | 129/151 | PASS | 待复审 / EAUDIT15 | incomplete |
@@ -6049,7 +6049,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`cba982cdf6eb79ab6a3ea33a1a95cd386afcd66fc17c287b8aa47ff67bf266cb`；原文SHA256：`5ac995e02b4126ce8db3e7df1d1f60ed24871d83a10f880b4a7c2f4475ee906d`。
 
-## 1. MD-3.6.1-ReversedTrajectoryPrinted · unnumbered_claim · 印刷p.128–129 / PDFp.150–151
+## 1. MD-3.6.1-ReversedTrajectoryPrinted · unnumbered_claim · 印刷p.129 / PDFp.151
 
 ### 2. 原文陈述
 
@@ -6106,7 +6106,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 缺失/继续路线：字面FAIL不进入证明，等待网站与导师裁定。
 
-签名SHA256：`d2a4e54e0b9f0792665d10d3a4952ec11065ed48276fe5e27e7effe78d49afd1`；原文SHA256：`298fb0693e984a5a743f6cefb0558d7acd4e3b187bd9bebaa22ea291ec4f1e2d`。
+签名SHA256：`d2a4e54e0b9f0792665d10d3a4952ec11065ed48276fe5e27e7effe78d49afd1`；原文SHA256：`6a42be608ea414c0868885c71af19f5e04adb2f92c4243ed9e740facf095c3d0`。
 
 ## 1. MD-3.6.1-ReversedTrajectory · unnumbered_claim · 印刷p.129 / PDFp.151
 

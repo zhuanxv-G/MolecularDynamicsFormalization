@@ -1,0 +1,42 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT82",
+  "section": "3.7",
+  "source_ids": [
+    "MD-3.7-HardCoreDomain",
+    "MD-3.7-CollisionComposition",
+    "MD-3.7-CollisionRegularity"
+  ],
+  "reaudit_ids": [
+    "MD-3.7-HardCoreDomain",
+    "MD-3.7-CollisionComposition",
+    "MD-3.7-CollisionRegularity"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.7-HardCoreDomain",
+      "prior_eaudit": "EAUDIT63",
+      "acceptance": "blueprint/ch03/validation/EAUDIT63/ACCEPTANCE.json",
+      "sha256": "2e2d5d18323f5df802d702b50a54ed3982bd19ac05a481abd5860023219a3185"
+    },
+    {
+      "source_id": "MD-3.7-CollisionComposition",
+      "prior_eaudit": "EAUDIT63",
+      "acceptance": "blueprint/ch03/validation/EAUDIT63/ACCEPTANCE.json",
+      "sha256": "2e2d5d18323f5df802d702b50a54ed3982bd19ac05a481abd5860023219a3185"
+    },
+    {
+      "source_id": "MD-3.7-CollisionRegularity",
+      "prior_eaudit": "EAUDIT47",
+      "acceptance": "blueprint/ch03/validation/EAUDIT47/ACCEPTANCE.json",
+      "sha256": "726fad765af99b1a7b6057b07ef38f3351e90db905fade8527cb217b8ac9a813"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT82/INDEX.md"
+}

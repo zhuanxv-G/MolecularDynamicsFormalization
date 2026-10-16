@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT77",
+  "source_id": "MD-3.5-ProjectionConstraint",
+  "input_sha256": {
+    "BATCH_EAUDIT77.md": "519b3eba9a3bb88401c688a5f7a09f2a2ab9d367990e2b1c0f5ef9feeea06067",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT77d_materials": "29c00ec146fc9dfe6a467378be47f613dc261a0ec18b09fb4c18e5054084b803",
+    "EAUDIT77d_PAGES.pdf": "be5908cff0528a8ca50bd159f00e801d76fe1f180849fe032faf5182834983bd"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    145
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "cb0c79f0ca720e55a1289b3b7b6f918233320b7848338589f0551750dd7ccfe6",
+  "source_block_sha256": "d790d9306c8dadf29727c1f560964850bb233c9138387994716e55953ee9bd90",
+  "source_declarations": [
+    "projectionConstraint"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "projectionConstraint",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "d790d9306c8dadf29727c1f560964850bb233c9138387994716e55953ee9bd90"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT77_review.json",
+  "total_task_bytes": 72562
+}

@@ -1,0 +1,56 @@
+{
+  "eaudit": "EAUDIT72",
+  "source_id": "MD-3.3.2-StrangCubic",
+  "input_sha256": {
+    "BATCH_EAUDIT72.md": "ac5ea31ef4aa8f65e107b518f1220b0449ea5028534d434cd728d2552218c290",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT72f_materials": "56f334f2c88bb106f3d7110b8a84cd41e1877efff7a3cbe53247d473437f9262",
+    "EAUDIT72f_PAGES.pdf": "f34399d1044e1e658617738e4f8202c83fea3ba86648e4066913ca8058cad19e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    130
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "f56afa26bf969cca50818722e0c219d594cbc765e32b34bb318abddc16e71f8e",
+  "source_block_sha256": "c2dff0d6a70c1007ee99683dddebbe3718174e6a5056f552667e81261a209240",
+  "source_declarations": [
+    "strangCubic",
+    "strangCubic_coeff3"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter03Review.commutator",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "3f0d3b51126fc6c38f98553efbc40106e8fce323a9363e4c2cac5d3c6d0d3924"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "commutator",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "3f0d3b51126fc6c38f98553efbc40106e8fce323a9363e4c2cac5d3c6d0d3924"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "formalLog",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "cad8bed3cbcba31778a7042f37611d0a517b35b42cdcfe701968dff5f8af8a76"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "formalStrang",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "5a5308d2a11acae9140a691f24aa00f3314c5242574f4b82dc30b3b95266be01"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalOperatorExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "df5ff488932635200b6f774d1b89d132afee1211289904ed8d00ab209d015a49"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT72_review.json",
+  "total_task_bytes": 80148
+}

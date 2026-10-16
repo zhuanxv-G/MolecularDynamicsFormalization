@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT72",
+  "input_sha256": {
+    "BATCH_EAUDIT72.md": "ac5ea31ef4aa8f65e107b518f1220b0449ea5028534d434cd728d2552218c290",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT72a",
+      "source_id": "MD-3.3.2-VerletHamiltonianParts",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT72/a",
+      "total_bytes": 93662,
+      "manifest_sha256": "8bbed09d784514226cd99e7f91d2e05f9528cdeba15edecc74da92846127caee"
+    },
+    {
+      "subtask": "EAUDIT72b",
+      "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT72/b",
+      "total_bytes": 94744,
+      "manifest_sha256": "d1da7d09bfc2f32e3e6df5e951bdc78f8098adb157aba4bc2b6d6940c290419c"
+    },
+    {
+      "subtask": "EAUDIT72c",
+      "source_id": "MD-3.3.2-VerletModifiedMatching",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT72/c",
+      "total_bytes": 104185,
+      "manifest_sha256": "9fb86b4476743e9ecd907eb989ef2ce652b22c246636351dea7865ded3ab99c5"
+    },
+    {
+      "subtask": "EAUDIT72d",
+      "source_id": "MD-3.3.2-ModifiedEven",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT72/d",
+      "total_bytes": 102433,
+      "manifest_sha256": "fdd09c345ba22b76c0cf3c4c884166468dbb881e2af48c2450d4990d311ef012"
+    },
+    {
+      "subtask": "EAUDIT72e",
+      "source_id": "MD-3.3.2-Strang",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT72/e",
+      "total_bytes": 78075,
+      "manifest_sha256": "209cff47c71b3b679222871b3d34811d4713fe19dbf327882af854e65c866bf7"
+    },
+    {
+      "subtask": "EAUDIT72f",
+      "source_id": "MD-3.3.2-StrangCubic",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT72/f",
+      "total_bytes": 80148,
+      "manifest_sha256": "920186989ddd1e22ad6d0c8f5ff09d6e857ac37350edffa486a0cbb7bf1a1a21"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT76",
+  "input_sha256": {
+    "BATCH_EAUDIT76.md": "d19162a8f77bd922cf74522856142df123ba9850136aeb0ad4676e7d1d02b511",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT76a",
+      "source_id": "MD-3.4-UniformTruncatedLipschitz",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT76/a",
+      "total_bytes": 96314,
+      "manifest_sha256": "0212723f3f35370b99d7f9ffe252985122da9139b5cd6bee06ed77f0a56f40e7"
+    },
+    {
+      "subtask": "EAUDIT76b",
+      "source_id": "MD-3.4-TruncationRemainder",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT76/b",
+      "total_bytes": 93977,
+      "manifest_sha256": "4e07018d85a772ce55565f788d50158d697b113cbcad06c2b193fc36acd56a16"
+    },
+    {
+      "subtask": "EAUDIT76c",
+      "source_id": "MD-3.4-PhysicalEnergyDrift",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT76/c",
+      "total_bytes": 99100,
+      "manifest_sha256": "8f7b4a0bc920b89ef9df8525cd0dfd601471a7dda7bbbd36e41715f09ad34b91"
+    },
+    {
+      "subtask": "EAUDIT76d",
+      "source_id": "MD-3.4-StepCountPower",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT76/d",
+      "total_bytes": 90202,
+      "manifest_sha256": "35821da6ac6502ac9f81ca93c4539127291c75323cdc3ad61f3c0a64273ab5b7"
+    },
+    {
+      "subtask": "EAUDIT76e",
+      "source_id": "MD-3.4-ArbitraryFiniteTruncation",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT76/e",
+      "total_bytes": 98711,
+      "manifest_sha256": "0e79456862914957799ccf75b23ba11eb2ce999c7c183d06fdb47f0ca651d94c"
+    },
+    {
+      "subtask": "EAUDIT76f",
+      "source_id": "MD-3.4-ScalarVerletShadow4",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT76/f",
+      "total_bytes": 209796,
+      "manifest_sha256": "2a790370fd5d531c012059f5f814f056b7e96799aeb8ab63c5c9a3e16204438b"
+    }
+  ]
+}

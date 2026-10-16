@@ -1,0 +1,50 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT83",
+  "section": "3.7.1",
+  "source_ids": [
+    "MD-3.7.1-HardCorePotential",
+    "MD-3.7.1-ObstacleReflection",
+    "MD-3.7.1-PrimitiveDefect",
+    "MD-3.7.1-FreeHardSphereHamiltonian"
+  ],
+  "reaudit_ids": [
+    "MD-3.7.1-HardCorePotential",
+    "MD-3.7.1-ObstacleReflection",
+    "MD-3.7.1-PrimitiveDefect",
+    "MD-3.7.1-FreeHardSphereHamiltonian"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.7.1-HardCorePotential",
+      "prior_eaudit": "EAUDIT64",
+      "acceptance": "blueprint/ch03/validation/EAUDIT64/ACCEPTANCE.json",
+      "sha256": "ccedeb835040607cf7feff7b6655953422fcc7ca735a8e1f03b9ff635998b4f3"
+    },
+    {
+      "source_id": "MD-3.7.1-ObstacleReflection",
+      "prior_eaudit": "EAUDIT64",
+      "acceptance": "blueprint/ch03/validation/EAUDIT64/ACCEPTANCE.json",
+      "sha256": "ccedeb835040607cf7feff7b6655953422fcc7ca735a8e1f03b9ff635998b4f3"
+    },
+    {
+      "source_id": "MD-3.7.1-PrimitiveDefect",
+      "prior_eaudit": "EAUDIT64",
+      "acceptance": "blueprint/ch03/validation/EAUDIT64/ACCEPTANCE.json",
+      "sha256": "ccedeb835040607cf7feff7b6655953422fcc7ca735a8e1f03b9ff635998b4f3"
+    },
+    {
+      "source_id": "MD-3.7.1-FreeHardSphereHamiltonian",
+      "prior_eaudit": "EAUDIT64",
+      "acceptance": "blueprint/ch03/validation/EAUDIT64/ACCEPTANCE.json",
+      "sha256": "ccedeb835040607cf7feff7b6655953422fcc7ca735a8e1f03b9ff635998b4f3"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT83/INDEX.md"
+}

@@ -2,11 +2,21 @@
   "chapter": 3,
   "time": "2026-10-16T09:45:04.858473",
   "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
-  "source_sha256": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
   "axiom_decl_count": 178,
   "full_check_report": "blueprint\\ch03\\validation\\WEBSITE_REPAIR_CHAPTER_END_CINFTY\\full-check\\CHECK_REPORT.json",
   "full_check_report_sha256": "252657d7fb9b2941dd16e4c9e229b57a16dec10cb41ed4bffba8d075f93e6281",
   "chapter06": "paused, Blueprint.Ch06 not compiled; batch27 unverified",
   "website": "awaiting user submission",
-  "new_proofs": "none"
+  "new_proofs": "none",
+  "metadata_refreshes": [
+    {
+      "time": "2026-10-16T10:27:09.778474",
+      "before_source_sha256": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+      "after_source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+      "receipt": "blueprint/ch03/validation/METADATA_REVIEW_20261016.json",
+      "unchanged_lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "full_check": "reused: all Lean files unchanged, only source citation metadata and delivery changed"
+    }
+  ]
 }

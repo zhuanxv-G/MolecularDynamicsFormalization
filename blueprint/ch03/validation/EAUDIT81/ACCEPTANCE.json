@@ -1,0 +1,42 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT81",
+  "section": "3.6.3",
+  "source_ids": [
+    "MD-3.6.3-TrapezoidalProperties",
+    "MD-3.6.3-SymplecticSpectrum",
+    "MD-3.6.3-ConjugateIterates"
+  ],
+  "reaudit_ids": [
+    "MD-3.6.3-TrapezoidalProperties",
+    "MD-3.6.3-SymplecticSpectrum",
+    "MD-3.6.3-ConjugateIterates"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.6.3-TrapezoidalProperties",
+      "prior_eaudit": "EAUDIT62",
+      "acceptance": "blueprint/ch03/validation/EAUDIT62/ACCEPTANCE.json",
+      "sha256": "87c2b9d675dce94c8ed08a230a412e58b81ca9d87ec0b1eba19ac3b3d4fef3de"
+    },
+    {
+      "source_id": "MD-3.6.3-SymplecticSpectrum",
+      "prior_eaudit": "EAUDIT62",
+      "acceptance": "blueprint/ch03/validation/EAUDIT62/ACCEPTANCE.json",
+      "sha256": "87c2b9d675dce94c8ed08a230a412e58b81ca9d87ec0b1eba19ac3b3d4fef3de"
+    },
+    {
+      "source_id": "MD-3.6.3-ConjugateIterates",
+      "prior_eaudit": "EAUDIT62",
+      "acceptance": "blueprint/ch03/validation/EAUDIT62/ACCEPTANCE.json",
+      "sha256": "87c2b9d675dce94c8ed08a230a412e58b81ca9d87ec0b1eba19ac3b3d4fef3de"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT81/INDEX.md"
+}

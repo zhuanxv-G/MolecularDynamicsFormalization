@@ -1,0 +1,50 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT79",
+  "section": "3.6.1",
+  "source_ids": [
+    "MD-3.6.1-MechanicalReversal",
+    "MD-3.6.1-ReversedTrajectoryPrinted",
+    "MD-3.6.1-ReversedTrajectory",
+    "MD-3.6.1-MechanicalReversalCorrect"
+  ],
+  "reaudit_ids": [
+    "MD-3.6.1-MechanicalReversal",
+    "MD-3.6.1-ReversedTrajectoryPrinted",
+    "MD-3.6.1-ReversedTrajectory",
+    "MD-3.6.1-MechanicalReversalCorrect"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.6.1-MechanicalReversal",
+      "prior_eaudit": "EAUDIT60",
+      "acceptance": "blueprint/ch03/validation/EAUDIT60/ACCEPTANCE.json",
+      "sha256": "6c52711d2b267a2a838ce2ea099c0d24be41725a376dcf51847f3c41d65694ab"
+    },
+    {
+      "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+      "prior_eaudit": "EAUDIT60",
+      "acceptance": "blueprint/ch03/validation/EAUDIT60/ACCEPTANCE.json",
+      "sha256": "6c52711d2b267a2a838ce2ea099c0d24be41725a376dcf51847f3c41d65694ab"
+    },
+    {
+      "source_id": "MD-3.6.1-ReversedTrajectory",
+      "prior_eaudit": "EAUDIT60",
+      "acceptance": "blueprint/ch03/validation/EAUDIT60/ACCEPTANCE.json",
+      "sha256": "6c52711d2b267a2a838ce2ea099c0d24be41725a376dcf51847f3c41d65694ab"
+    },
+    {
+      "source_id": "MD-3.6.1-MechanicalReversalCorrect",
+      "prior_eaudit": "EAUDIT60",
+      "acceptance": "blueprint/ch03/validation/EAUDIT60/ACCEPTANCE.json",
+      "sha256": "6c52711d2b267a2a838ce2ea099c0d24be41725a376dcf51847f3c41d65694ab"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT79/INDEX.md"
+}

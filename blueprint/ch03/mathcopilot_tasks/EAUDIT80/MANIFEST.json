@@ -1,0 +1,59 @@
+{
+  "eaudit": "EAUDIT80",
+  "input_sha256": {
+    "BATCH_EAUDIT80.md": "def4d7526ff3a1c33a2ffd818617e93b745fa130e81873ede13026f5432db878",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT80a",
+      "source_id": "MD-3.6.2-FlowReversal",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT80/a",
+      "total_bytes": 75688,
+      "manifest_sha256": "cb621baca0aa86bc55448191aea80a5bfddebd4bc1f9be968cdf6bf98d783576"
+    },
+    {
+      "subtask": "EAUDIT80b",
+      "source_id": "MD-3.6.2-FlowReversalIdentity",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT80/b",
+      "total_bytes": 75636,
+      "manifest_sha256": "556916cc0126854de82412d4dec7a30228df3f9227abf64d731a2f2ae0d6a14b"
+    },
+    {
+      "subtask": "EAUDIT80c",
+      "source_id": "MD-3.6.2-SymmetricMethod",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT80/c",
+      "total_bytes": 89354,
+      "manifest_sha256": "00dca039e8a73c1cedd10f4a7c64baefae6c9a3cd0cc815d4c39b4c23a2e803b"
+    },
+    {
+      "subtask": "EAUDIT80d",
+      "source_id": "MD-3.6.2-AffineInvariant",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT80/d",
+      "total_bytes": 91588,
+      "manifest_sha256": "e9df27233df25a102ecab1af77230ad43756c21e3a3dcd32e4e42a6cd6177fc2"
+    },
+    {
+      "subtask": "EAUDIT80e",
+      "source_id": "MD-3.6.2-SymmetricAffineReversible",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT80/e",
+      "total_bytes": 91435,
+      "manifest_sha256": "c26699635418c39a1795e33f08d425d6fbcf86ff3799ed44e94f9b8740d36d87"
+    },
+    {
+      "subtask": "EAUDIT80f",
+      "source_id": "MD-3.6.2-RKAffine",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT80/f",
+      "total_bytes": 91144,
+      "manifest_sha256": "7e5a34914cfd3f2ee6adb633eb340e117252bb28a3b1eab4513bacc5de68be3e"
+    },
+    {
+      "subtask": "EAUDIT80g",
+      "source_id": "MD-3.6.2-PartitionedAffine",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT80/g",
+      "total_bytes": 91587,
+      "manifest_sha256": "21055631bf6c4e3adaa8c7a3c0ab25c534d173e7fd9f25efbebd4eec260a06a3"
+    }
+  ]
+}

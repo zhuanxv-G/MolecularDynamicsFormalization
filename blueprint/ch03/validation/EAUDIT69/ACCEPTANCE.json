@@ -1,0 +1,82 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT69",
+  "section": "3.2",
+  "source_ids": [
+    "MD-3.2-ObservableDerivative",
+    "MD-3.2-PoissonBracket",
+    "MD-3.2-PoissonCoordinates",
+    "MD-3.2-PoissonBilinearity",
+    "MD-3.2-PoissonSkew",
+    "MD-3.2-PoissonSelf",
+    "MD-3.2-PoissonJacobi",
+    "MD-3.2-HamiltonianLie"
+  ],
+  "reaudit_ids": [
+    "MD-3.2-ObservableDerivative",
+    "MD-3.2-PoissonBracket",
+    "MD-3.2-PoissonCoordinates",
+    "MD-3.2-PoissonBilinearity",
+    "MD-3.2-PoissonSkew",
+    "MD-3.2-PoissonSelf",
+    "MD-3.2-PoissonJacobi",
+    "MD-3.2-HamiltonianLie"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.2-ObservableDerivative",
+      "prior_eaudit": "EAUDIT50",
+      "acceptance": "blueprint/ch03/validation/EAUDIT50/ACCEPTANCE.json",
+      "sha256": "0e47127326cc34475a784b6f34b02e141a257ac0cbfc324a88c9015c6e3e13a6"
+    },
+    {
+      "source_id": "MD-3.2-PoissonBracket",
+      "prior_eaudit": "EAUDIT50",
+      "acceptance": "blueprint/ch03/validation/EAUDIT50/ACCEPTANCE.json",
+      "sha256": "0e47127326cc34475a784b6f34b02e141a257ac0cbfc324a88c9015c6e3e13a6"
+    },
+    {
+      "source_id": "MD-3.2-PoissonCoordinates",
+      "prior_eaudit": "EAUDIT50",
+      "acceptance": "blueprint/ch03/validation/EAUDIT50/ACCEPTANCE.json",
+      "sha256": "0e47127326cc34475a784b6f34b02e141a257ac0cbfc324a88c9015c6e3e13a6"
+    },
+    {
+      "source_id": "MD-3.2-PoissonBilinearity",
+      "prior_eaudit": "EAUDIT50",
+      "acceptance": "blueprint/ch03/validation/EAUDIT50/ACCEPTANCE.json",
+      "sha256": "0e47127326cc34475a784b6f34b02e141a257ac0cbfc324a88c9015c6e3e13a6"
+    },
+    {
+      "source_id": "MD-3.2-PoissonSkew",
+      "prior_eaudit": "EAUDIT50",
+      "acceptance": "blueprint/ch03/validation/EAUDIT50/ACCEPTANCE.json",
+      "sha256": "0e47127326cc34475a784b6f34b02e141a257ac0cbfc324a88c9015c6e3e13a6"
+    },
+    {
+      "source_id": "MD-3.2-PoissonSelf",
+      "prior_eaudit": "EAUDIT50",
+      "acceptance": "blueprint/ch03/validation/EAUDIT50/ACCEPTANCE.json",
+      "sha256": "0e47127326cc34475a784b6f34b02e141a257ac0cbfc324a88c9015c6e3e13a6"
+    },
+    {
+      "source_id": "MD-3.2-PoissonJacobi",
+      "prior_eaudit": "EAUDIT50",
+      "acceptance": "blueprint/ch03/validation/EAUDIT50/ACCEPTANCE.json",
+      "sha256": "0e47127326cc34475a784b6f34b02e141a257ac0cbfc324a88c9015c6e3e13a6"
+    },
+    {
+      "source_id": "MD-3.2-HamiltonianLie",
+      "prior_eaudit": "EAUDIT50",
+      "acceptance": "blueprint/ch03/validation/EAUDIT50/ACCEPTANCE.json",
+      "sha256": "0e47127326cc34475a784b6f34b02e141a257ac0cbfc324a88c9015c6e3e13a6"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT69/INDEX.md"
+}

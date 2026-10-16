@@ -1,0 +1,59 @@
+{
+  "eaudit": "EAUDIT70",
+  "input_sha256": {
+    "BATCH_EAUDIT70.md": "dd1f9336814bd2dfbc1edf9c5ba959b0cdba98c9235e1b7cb51bdf9b40666701",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT70a",
+      "source_id": "MD-3.3-HamiltonianLieAdditivity",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT70/a",
+      "total_bytes": 82775,
+      "manifest_sha256": "1a4a849ee02b1d30878f1bfb64f85337f6e21591518efa8d65a947cc2c11e7f4"
+    },
+    {
+      "subtask": "EAUDIT70b",
+      "source_id": "MD-3.3-FormalSplitting",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT70/b",
+      "total_bytes": 86496,
+      "manifest_sha256": "feecd21d98ee286a49fa98a06d6570a5918ba2b555ef984032d1076f48d6e0f3"
+    },
+    {
+      "subtask": "EAUDIT70c",
+      "source_id": "MD-3.3-ExactExponentialCubic",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT70/c",
+      "total_bytes": 80817,
+      "manifest_sha256": "2155c9666a733ed0dd8bc9edfd93f34e2d7fda6d1dfef90a7ff213ad2acdccfe"
+    },
+    {
+      "subtask": "EAUDIT70d",
+      "source_id": "MD-3.3-DifferenceCommutator",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT70/d",
+      "total_bytes": 84407,
+      "manifest_sha256": "b82794c4d695b8ac91357bcd72556f46af0c4d2501cc58f2640fca63540f6034"
+    },
+    {
+      "subtask": "EAUDIT70e",
+      "source_id": "MD-3.3-DifferenceCubic",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT70/e",
+      "total_bytes": 79031,
+      "manifest_sha256": "40e61e248f44124faf6682126a1a9b9191c5da38bd2bc8ac7d80c7a979915b30"
+    },
+    {
+      "subtask": "EAUDIT70f",
+      "source_id": "MD-3.3-LeadingModifiedExponential",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT70/f",
+      "total_bytes": 71755,
+      "manifest_sha256": "161f88aef3921b611d6c8b912478a2a810c109e9c11e0fd48f942774d7b6a76b"
+    },
+    {
+      "subtask": "EAUDIT70g",
+      "source_id": "MD-3.3-CommutingFlows",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT70/g",
+      "total_bytes": 94331,
+      "manifest_sha256": "698b4c54e9c18e499ffd17cb6d558e8b33687a748880af9c564713f833ed56fb"
+    }
+  ]
+}

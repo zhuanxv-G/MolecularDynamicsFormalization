@@ -1,0 +1,61 @@
+{
+  "eaudit": "EAUDIT73",
+  "source_id": "MD-3.3.3-YoshidaRaiseOrder",
+  "input_sha256": {
+    "BATCH_EAUDIT73.md": "a35aaad6aacdd4a0c0a5cc3e7790e2b93ddf9953799c24f58de1d9b9a64c74fd",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT73a_materials": "6be78547ecb7c0173de4c960d3bee4183c372ec0a81988cda055e4f05e40b765",
+    "EAUDIT73a_PAGES.pdf": "2d7bfecb587a892ae469b3710efb9be7d031e8192b52e00c5b93c0e06ee0f8ef"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    131
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "99a2d6ea0282439b93ed5ac17f2a917bc771b72451091bdc9f6da0e577aa7742",
+  "source_block_sha256": "2c23a43c56175211b20d201d659c1c126ad60a0392228fdc6443b85e6815b69d",
+  "source_declarations": [
+    "yoshidaRaiseOrder"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "name": "actualFlow",
+      "file_sha256": "a00c953a72f2b2e90a58ee21739d49f092104ac3f853db9eec9231a476436b30",
+      "excerpt_sha256": "cb75a494f3dbd443d1820aded2bd01245f6bb284bab13cad5f843c9d30518c23"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/Statements.lean",
+      "name": "localOrder",
+      "file_sha256": "a00c953a72f2b2e90a58ee21739d49f092104ac3f853db9eec9231a476436b30",
+      "excerpt_sha256": "35fce0c5dc0e426c289a6d68e3e3d5243526e9e4e1567646bc0e3140623e3663"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "yoshidaCoefficients",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "d06e66714f0a3b220ea448d5ef241e77ed15bac230997c39b3aaedd6f86276ff"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "yoshidaCompose",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "eeac5c1c96fc6cedf83cddd8df38c715358be84a7a0d3c168b1c5c71ada8f84c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "yoshidaRoot",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "50e2b7601bd13a41de5ce8a28b7b72e28acedf9c4907a921f7b130090ff24038"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT73_review.json",
+  "total_task_bytes": 92437
+}

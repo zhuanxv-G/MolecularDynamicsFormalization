@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT77",
+  "source_id": "MD-3.5-MomentumProjection",
+  "input_sha256": {
+    "BATCH_EAUDIT77.md": "519b3eba9a3bb88401c688a5f7a09f2a2ab9d367990e2b1c0f5ef9feeea06067",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT77c_materials": "2d8739ed8839001c3bfc357bb19ba53903712769b0fc17d72bd7defed4c77264",
+    "EAUDIT77c_PAGES.pdf": "be5908cff0528a8ca50bd159f00e801d76fe1f180849fe032faf5182834983bd"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    145
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "d67bccc91a6f38c83db72f8a16d82530c079879b35788e9d713868f830de0d70",
+  "source_block_sha256": "a03a52012fe644a34ae8388b8bc0789f09d4eea52ba3ad1c64468d5ed61ea0ef",
+  "source_declarations": [
+    "momentumProjection"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Z",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "momentumProjection",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "a03a52012fe644a34ae8388b8bc0789f09d4eea52ba3ad1c64468d5ed61ea0ef"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT77_review.json",
+  "total_task_bytes": 73624
+}

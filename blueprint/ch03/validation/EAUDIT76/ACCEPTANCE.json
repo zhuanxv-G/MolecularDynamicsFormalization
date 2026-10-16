@@ -1,0 +1,66 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT76",
+  "section": "3.4",
+  "source_ids": [
+    "MD-3.4-UniformTruncatedLipschitz",
+    "MD-3.4-TruncationRemainder",
+    "MD-3.4-PhysicalEnergyDrift",
+    "MD-3.4-StepCountPower",
+    "MD-3.4-ArbitraryFiniteTruncation",
+    "MD-3.4-ScalarVerletShadow4"
+  ],
+  "reaudit_ids": [
+    "MD-3.4-UniformTruncatedLipschitz",
+    "MD-3.4-TruncationRemainder",
+    "MD-3.4-PhysicalEnergyDrift",
+    "MD-3.4-StepCountPower",
+    "MD-3.4-ArbitraryFiniteTruncation",
+    "MD-3.4-ScalarVerletShadow4"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.4-UniformTruncatedLipschitz",
+      "prior_eaudit": "EAUDIT57",
+      "acceptance": "blueprint/ch03/validation/EAUDIT57/ACCEPTANCE.json",
+      "sha256": "3362b19cf85d39920e74edda07f118571b5c8ba99eccb178211302995122dff3"
+    },
+    {
+      "source_id": "MD-3.4-TruncationRemainder",
+      "prior_eaudit": "EAUDIT57",
+      "acceptance": "blueprint/ch03/validation/EAUDIT57/ACCEPTANCE.json",
+      "sha256": "3362b19cf85d39920e74edda07f118571b5c8ba99eccb178211302995122dff3"
+    },
+    {
+      "source_id": "MD-3.4-PhysicalEnergyDrift",
+      "prior_eaudit": "EAUDIT57",
+      "acceptance": "blueprint/ch03/validation/EAUDIT57/ACCEPTANCE.json",
+      "sha256": "3362b19cf85d39920e74edda07f118571b5c8ba99eccb178211302995122dff3"
+    },
+    {
+      "source_id": "MD-3.4-StepCountPower",
+      "prior_eaudit": "EAUDIT57",
+      "acceptance": "blueprint/ch03/validation/EAUDIT57/ACCEPTANCE.json",
+      "sha256": "3362b19cf85d39920e74edda07f118571b5c8ba99eccb178211302995122dff3"
+    },
+    {
+      "source_id": "MD-3.4-ArbitraryFiniteTruncation",
+      "prior_eaudit": "EAUDIT57",
+      "acceptance": "blueprint/ch03/validation/EAUDIT57/ACCEPTANCE.json",
+      "sha256": "3362b19cf85d39920e74edda07f118571b5c8ba99eccb178211302995122dff3"
+    },
+    {
+      "source_id": "MD-3.4-ScalarVerletShadow4",
+      "prior_eaudit": "EAUDIT57",
+      "acceptance": "blueprint/ch03/validation/EAUDIT57/ACCEPTANCE.json",
+      "sha256": "3362b19cf85d39920e74edda07f118571b5c8ba99eccb178211302995122dff3"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT76/INDEX.md"
+}

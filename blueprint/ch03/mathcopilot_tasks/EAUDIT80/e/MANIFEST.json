@@ -1,0 +1,49 @@
+{
+  "eaudit": "EAUDIT80",
+  "source_id": "MD-3.6.2-SymmetricAffineReversible",
+  "input_sha256": {
+    "BATCH_EAUDIT80.md": "def4d7526ff3a1c33a2ffd818617e93b745fa130e81873ede13026f5432db878",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT80e_materials": "2f4e3fab1e8278f961e26f9b3bf863993628a905bda57b0276388cf1d326194b",
+    "EAUDIT80e_PAGES.pdf": "62dfa84e2cf8c67eecff3df6d7e0ce15dce7b4b467d6c429cc6d5234671df81c"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    152
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "743ac5a6f6db1fc4f8bb5a830e9a19707b4f43274ae2b58116d02a4b90e4e8a8",
+  "source_block_sha256": "0763571ab4a547dc537de5fd5113d92e10b4dadabad347092ec869af63135142",
+  "source_declarations": [
+    "symmetricAffineReversible"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "affineInvariant",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "93028da20132d9239b3b9c08f7b9a548dbdec86736df9fed2e171339ffbf4bdf"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "reversibleMethod",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "8cd78f1aa3af3cfcb26a44c8e56afdd41a121ac46f0a701cf713ac098b73fce4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "transportedField",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "693dafc52c56c23b5d3e420d6e1641f34698fcfa2d1ba6700b3d0cc53e871c30"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT80_review.json",
+  "total_task_bytes": 91435
+}

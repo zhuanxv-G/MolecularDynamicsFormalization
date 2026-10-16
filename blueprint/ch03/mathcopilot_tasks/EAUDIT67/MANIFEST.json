@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT67",
+  "input_sha256": {
+    "BATCH_EAUDIT67.md": "c2c695e6f78de6ebf3eefb5487aabe1065bd70f2d2100bc8736e9ce67b6f1cd0",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT67a",
+      "source_id": "MD-3-ModifiedConstruction",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT67/a",
+      "total_bytes": 84287,
+      "manifest_sha256": "b1369434b45ca0ee1707e48cc197d743ca66081789bbbf13ba864d7cb34a4d3d"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "chapter": 3,
+  "time": "2026-10-16T10:26:58.003866",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_before_sha256": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "source_after_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "unchanged_lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "verification": "visual inspection of original rendered pages; no Lean source change; reuse accepted compile, axiom and chapter full check",
+  "changes": [
+    {
+      "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+      "fields": {
+        "printed_page": {
+          "before": "128–129",
+          "after": "129"
+        },
+        "pdf_page": {
+          "before": "150–151",
+          "after": "151"
+        }
+      },
+      "source_pages": [
+        151
+      ],
+      "context_pages": [
+        150
+      ]
+    }
+  ],
+  "delivery_complete": true
+}

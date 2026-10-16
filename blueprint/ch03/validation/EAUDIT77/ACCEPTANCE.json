@@ -1,0 +1,66 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT77",
+  "section": "3.5",
+  "source_ids": [
+    "MD-3.5-LinearEulerIntegral",
+    "MD-3.5-VerletOscillatorEnergy",
+    "MD-3.5-MomentumProjection",
+    "MD-3.5-ProjectionConstraint",
+    "MD-3.5-ProjectionFactor",
+    "MD-3.5-NoHamiltonianAttractor"
+  ],
+  "reaudit_ids": [
+    "MD-3.5-LinearEulerIntegral",
+    "MD-3.5-VerletOscillatorEnergy",
+    "MD-3.5-MomentumProjection",
+    "MD-3.5-ProjectionConstraint",
+    "MD-3.5-ProjectionFactor",
+    "MD-3.5-NoHamiltonianAttractor"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.5-LinearEulerIntegral",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch03/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "63e3365f3f90a7a30ab7b7dfc269a58222651733c938bafff87406512de26c7c"
+    },
+    {
+      "source_id": "MD-3.5-VerletOscillatorEnergy",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch03/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "63e3365f3f90a7a30ab7b7dfc269a58222651733c938bafff87406512de26c7c"
+    },
+    {
+      "source_id": "MD-3.5-MomentumProjection",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch03/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "63e3365f3f90a7a30ab7b7dfc269a58222651733c938bafff87406512de26c7c"
+    },
+    {
+      "source_id": "MD-3.5-ProjectionConstraint",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch03/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "63e3365f3f90a7a30ab7b7dfc269a58222651733c938bafff87406512de26c7c"
+    },
+    {
+      "source_id": "MD-3.5-ProjectionFactor",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch03/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "63e3365f3f90a7a30ab7b7dfc269a58222651733c938bafff87406512de26c7c"
+    },
+    {
+      "source_id": "MD-3.5-NoHamiltonianAttractor",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch03/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "63e3365f3f90a7a30ab7b7dfc269a58222651733c938bafff87406512de26c7c"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT77/INDEX.md"
+}

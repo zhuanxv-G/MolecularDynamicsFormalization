@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT77",
+  "input_sha256": {
+    "BATCH_EAUDIT77.md": "519b3eba9a3bb88401c688a5f7a09f2a2ab9d367990e2b1c0f5ef9feeea06067",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT77a",
+      "source_id": "MD-3.5-LinearEulerIntegral",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT77/a",
+      "total_bytes": 73637,
+      "manifest_sha256": "8745a3e84fea9701fda50ece96f962ff6c21f3a3876fd8653da0fe861548bd31"
+    },
+    {
+      "subtask": "EAUDIT77b",
+      "source_id": "MD-3.5-VerletOscillatorEnergy",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT77/b",
+      "total_bytes": 79259,
+      "manifest_sha256": "1b93dd7bfb9ced09f5e60a72983af3723c239b4485c772feb8f9c7b0c2c6f536"
+    },
+    {
+      "subtask": "EAUDIT77c",
+      "source_id": "MD-3.5-MomentumProjection",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT77/c",
+      "total_bytes": 73624,
+      "manifest_sha256": "fdf12f413c4d1cd3a2e858f67dd233df13657fcbd2c44b2ae697543b6ede6cfd"
+    },
+    {
+      "subtask": "EAUDIT77d",
+      "source_id": "MD-3.5-ProjectionConstraint",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT77/d",
+      "total_bytes": 72562,
+      "manifest_sha256": "fbc7964029174a7a006c341ac6b6ca010c6a5f30383fe4e70b9748144b813bb6"
+    },
+    {
+      "subtask": "EAUDIT77e",
+      "source_id": "MD-3.5-ProjectionFactor",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT77/e",
+      "total_bytes": 82452,
+      "manifest_sha256": "b61385ea5db11e4896e5d3d0350b13ed50dcad963705d552035bf8b8a85cc63e"
+    },
+    {
+      "subtask": "EAUDIT77f",
+      "source_id": "MD-3.5-NoHamiltonianAttractor",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT77/f",
+      "total_bytes": 155625,
+      "manifest_sha256": "12fd78075ec1c34e0de65cb394990ed98d412131de57160cc78f9ebff398aa23"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "eaudit": "EAUDIT81",
+  "source_id": "MD-3.6.3-TrapezoidalProperties",
+  "input_sha256": {
+    "BATCH_EAUDIT81.md": "fce53b0092a564f0c0b99cb4f6d906b8493ed49a1ea7a026fec03ba785deba52",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+    "EAUDIT81a_materials": "48806ffce5037e2c148166e9c4688511ebdc120b934a8d2560edb66ecd14529b",
+    "EAUDIT81a_PAGES.pdf": "202e2cf8cf4af19698031e8737bf08812f4d6d7a89bd16941b878d880fb84c5f"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    153
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "c1c0616518549b86b618b3bacee6e27a06e427f628987279958b8a83c5efe744",
+  "source_block_sha256": "c20a38abda184ed775d90b14c08d040d9a3820999cab758866887bc556ebcd18",
+  "source_declarations": [
+    "trapezoidalProperties"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "IsTextbookSymplectic",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "6642b20035e535f764e24183b8b3fd564c65f367b80a24c79a394d8a4d55056f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "name": "IsTextbookSymplecticMap",
+      "file_sha256": "065943598d7c44b43b135c1c8edee04970b20305a15fdd2ff8d4d46cf6ee18f2",
+      "excerpt_sha256": "7563019e4b4160d2583955860a10898409a2b10b6eb8f48ee27ca77e8efc5c9a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinateMatrix",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "linearInvolution",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "0d8bf8f9f4975d8fc1013768c46242b3dbc62105108deb3817d8ab7016ed229f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SplittingError.lean",
+      "name": "textbookHamiltonianVectorField",
+      "file_sha256": "bc9f7688e08676874bd5c50502a5e27fa659e7ff10f116045a4605a42ccfa703",
+      "excerpt_sha256": "b184fb97cd4190870d55ab93460235e5ccef1b4592ee5dc1dbc2c6bb3fb6128a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "textbookJ",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "name": "textbookJacobian",
+      "file_sha256": "065943598d7c44b43b135c1c8edee04970b20305a15fdd2ff8d4d46cf6ee18f2",
+      "excerpt_sha256": "de22cc68d29839d120350e99f4983537ef9e72385df49f475c8e3396754dcdbe"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "trapezoidalRelation",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "094bcfba3c941b7380f25200386a507cef864a0356465e79bfe07a22e8809654"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT81_review.json",
+  "total_task_bytes": 87705
+}
