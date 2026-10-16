@@ -1,0 +1,27 @@
+--- before/Ch01.lean
++++ after/Ch01.lean
+@@ -680,8 +680,14 @@
+ /-- source_id: MD-1.2-ScalarMechanical · definition · printed p.20 / PDF p.43
+ 
+ 
+--/
+-def scalarMechanicalModel (U : ℝ → ℝ) (z : ℝ → ℝ × ℝ) : Prop :=
++[EXTRA] 补E_U(x,v)=v²/2+U(x)，模型以显式能量参数E等于该定义连接；原有导数条件保留。
++-/
++def scalarMechanicalEnergy (U : ℝ → ℝ) (z : ℝ × ℝ) : ℝ :=
++  z.2^2 / 2 + U z.1
++
++/-- E explicitly names this model's prescribed mechanical energy. -/
++def scalarMechanicalModel (U : ℝ → ℝ) (E : ℝ × ℝ → ℝ) (z : ℝ → ℝ × ℝ) : Prop :=
++  E = scalarMechanicalEnergy U ∧
+   ∀ t, DifferentiableAt ℝ U (z t).1 ∧ HasDerivAt z ((z t).2, -deriv U (z t).1) t
+ 
+ /-- source_id: MD-1.2-ScalarQuadrature · unnumbered_claim · printed p.20 / PDF p.43
+@@ -2643,6 +2649,7 @@
+ #print axioms MD.Ch01.harmonicEnergy
+ #print axioms MD.Ch01.harmonicEnergy_eq_massHamiltonian
+ #print axioms MD.Ch01.harmonic_solution
++#print axioms MD.Ch01.scalarMechanicalEnergy
+ #print axioms MD.Ch01.scalarMechanicalModel
+ #print axioms MD.Ch01.scalar_quadrature
+ #print axioms MD.Ch01.uniformLJSystem

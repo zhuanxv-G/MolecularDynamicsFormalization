@@ -1,0 +1,299 @@
+{
+  "batch": "EAUDIT08",
+  "input_sha256": {
+    "BATCH_EAUDIT08.md": "913f33aa197b704b22da52e2bf6f06b557b23367c06f0a77f1a4d1e3006b9e11",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.4-LegendreHamiltonian",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_INVERTIBILITY_INSUFFICIENT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.4-LegendreHamiltonian",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.4",
+          "printed_page": "24",
+          "pdf_page": "47",
+          "statement_latex": "If $\\boldsymbol{M}(\\boldsymbol{q})$ is invertible, the supremum is achieved precisely when\n\\[\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p},\\]\nwhich gives the standard definition of the momentum vector $\\boldsymbol{p}$ in terms of velocities,\n\\[\\boldsymbol{p}=\\frac{\\partial L}{\\partial\\dot{\\boldsymbol{q}}}=\\boldsymbol{M}(\\boldsymbol{q})\\dot{\\boldsymbol{q}},\\]\nand, with $\\boldsymbol{v}=\\boldsymbol{M}^{-1}(\\boldsymbol{q})\\boldsymbol{p}$, the Legendre transformation results in a new function\n\\[H(\\boldsymbol{q},\\boldsymbol{p})\\stackrel{\\mathrm{def}}{=}\\boldsymbol{p}^TM(\\boldsymbol{q})^{-1}\\boldsymbol{p}/2+U(\\boldsymbol{q}).\\]\nThis is precisely the energy function, written in terms of positions and momenta.",
+          "proof_latex": null,
+          "proof_note": "原文仅展示将U(q)从上确界中移出的代数恒等式，未独立证明上界、达到条件及唯一性；该段原文完整保存于proof_discussion_latex。",
+          "context_notation": [
+            "同页Legendre定义：凸函数$g(\\boldsymbol{\\xi}):\\mathbb{R}^m\\to\\mathbb{R}$，$\\widetilde g(\\boldsymbol{\\eta})=\\sup_{\\boldsymbol{\\xi}}(\\boldsymbol{\\eta}^T\\boldsymbol{\\xi}-g(\\boldsymbol{\\xi}))$；印刷p.24/PDF47。",
+            "配置相关质量矩阵来自$\\Phi^{\\prime}(\\boldsymbol{Q})^T\\boldsymbol{M}\\Phi^{\\prime}(\\boldsymbol{Q})$；§1.3印刷p.23/PDF46要求变换Jacobian满秩且所得质量矩阵可逆。在固定正质量的机械背景中，这给出对称正定矩阵；对称性和正定性不是单独由可逆推出。",
+            "$\\boldsymbol{q},\\boldsymbol{v},\\boldsymbol{p}$属于广义配置坐标空间；无约束例为$\\mathbb{R}^{N_c}$，约束参数化可为$\\mathbb{R}^{N_d}$，见印刷p.23/PDF46。$H$是位置和动量中的能量，见印刷p.24/PDF47。"
+          ],
+          "issues": [
+            {
+              "code": "POSSIBLE_ERRATUM",
+              "status": "NEEDS_HUMAN",
+              "detail": "若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。"
+            },
+            {
+              "code": "REUSE_SCOPE_GAP",
+              "status": "open",
+              "detail": "现有定理仅固定正对角m；本条保留任意配置相关M(q)、上界、sup、精确达到条件、动量偏导和能量对应，不能直接调用旧定理覆盖。"
+            },
+            {
+              "code": "INCOMPLETE_PROOF_AS_PROOF",
+              "status": "local_verified",
+              "detail": "PDF47/印刷p.24的计算只将U(q)移出sup，不能独立证明所摘陈述。依本批proof_latex的完整证明约定改为null，原段完整转存proof_discussion_latex。",
+              "receipt": "review.json"
+            },
+            {
+              "code": "CONTEXT_DEPENDENT_INVERTIBILITY",
+              "status": "local_verified",
+              "detail": "原句确实只写可逆，保持原文并标ISSUE；PDF46给出JᵀM_cartJ和满秩机械背景，继承对称正定性。仅以任意矩阵的可逆性解释则错误，不能静默把原句改写为正定性命题。",
+              "receipt": "review.json"
+            },
+            {
+              "code": "GENERALIZED_COORDINATE_DIMENSION",
+              "status": "local_verified",
+              "detail": "PDF46允许R^{N_d}→R^{N_c}的约束参数化；原context_notation一律将广义q、v、p放在R^{N_c}过窄，已修正。",
+              "receipt": "review.json"
+            },
+            {
+              "code": "SOURCE_INVERTIBILITY_INSUFFICIENT",
+              "status": "NEEDS_HUMAN",
+              "detail": "原句仅要求可逆；任意可逆矩阵不足以保证上确界存在、梯度公式及最大化。机械质量背景可提供对称正定，但附件本页未独立声明该条件。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+          "reusable_proofs": [
+            "MolecularDynamics.massHamiltonian_eq_legendre_sup",
+            "MolecularDynamics.legendre_objective_eq_massHamiltonian_iff"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] hPositive : (M q).PosDef；展开p23正物理质量及满秩Jacobian继承的对称正定背景，任意可逆矩阵反例不属于此子类。字面可逆原句保留，配置相关M及全部六项结论不变。"
+          ],
+          "statement_scope": "从“If M(q) is invertible”到“written in terms of positions and momenta.”；前一计算为proof_discussion_latex，前置抽象定义为context_notation；Hamilton方程属于下一条。",
+          "review_status": "NEEDS_HUMAN",
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+          "proof_discussion_latex": "In the case of the Lagrangian $L(\\boldsymbol{q},\\boldsymbol{v})=\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})$ (which we have seen is the formulation of a mechanical system in generalized coordinates) we find\n\\[\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-(\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2-U(\\boldsymbol{q})))=\\sup_{\\boldsymbol{v}}(\\boldsymbol{p}^T\\boldsymbol{v}-\\boldsymbol{v}^TM(\\boldsymbol{q})\\boldsymbol{v}/2)+U(\\boldsymbol{q}).\\]"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_INVERTIBILITY_INSUFFICIENT",
+            "detail": "原句仅要求可逆；任意可逆矩阵不足以保证上确界存在、梯度公式及最大化。机械质量背景可提供对称正定，但附件本页未独立声明该条件。"
+          }
+        ],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            1
+          ],
+          "printed_page": "24",
+          "original_pdf_page": "47",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-01.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "逐项核对任意 n、配置相关 M、实值 U、q/p、IsUnit 和 PosDef。主声明及 _corrected：PASS，六项依次给有上界、sup=H、唯一达到点、全部速度处真实梯度 Mv、逆变换动量、能量对应；PosDef 含实对称性，是合理且已披露的机械背景补充。_literal：字面忠实性 PASS，仅可逆原句及其全部意涵被保留；数学有效性有原书疑误，不能作为任意可逆矩阵定理采信。没有把 sorry 当作失败依据。",
+        "counterexample": "n=1，M(q)=[-1]，p=0，U=0：目标 v²/2 无上界，且 L 的梯度为 -v。另非对称可逆矩阵也不能一般给出梯度 Mv。",
+        "suggested_fix": "原文保留；人工确认继承正物理质量及满秩坐标变换背景。实际使用主声明或 _corrected；literal 明确隔离为待勘误陈述。"
+      }
+    },
+    {
+      "source_id": "MD-1.4-ConvexLegendre",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_REAL_CODOMAIN"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.4-ConvexLegendre",
+          "kind": "definition",
+          "label": null,
+          "section": "1.4",
+          "printed_page": "24",
+          "pdf_page": "47",
+          "statement_latex": "Abstractly, a Legendre transformation of a given convex function $g=g(\\boldsymbol\\xi):\\mathbb R^m\\to\\mathbb R$ is a new function $\\widetilde g=\\widetilde g(\\boldsymbol\\eta):\\mathbb R^m\\to\\mathbb R$ defined by\n\\[\\widetilde g(\\boldsymbol\\eta)=\\sup_{\\boldsymbol\\xi}(\\boldsymbol\\eta^T\\boldsymbol\\xi-g(\\boldsymbol\\xi)),\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "NEEDS_HUMAN",
+              "detail": "原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。"
+            },
+            {
+              "code": "SOURCE_REAL_CODOMAIN",
+              "status": "NEEDS_HUMAN",
+              "detail": "原文确写任意凸 g 的变换为 R 值，可能为 +∞；不可静默改原文。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.legendreTransform",
+          "extra_assumptions": [
+            "值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。"
+          ],
+          "old_ids": [
+            "CH01-079"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_REAL_CODOMAIN",
+            "detail": "原文确写任意凸 g 的变换为 R 值，可能为 +∞；不可静默改原文。"
+          }
+        ],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            2
+          ],
+          "printed_page": "24",
+          "original_pdf_page": "47",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-01.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.legendreTransform",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "legendreTransform 及 _corrected：PASS，任意 n、g:Position n→ℝ、η，EReal 的 iSup 正确实现扩展实共轭；未要求凸性是对所有实函数定义的合理推广，并未声称其处处实值。_literal：忠实性 PASS，ConvexOn univ 的任意 g 对每个 η 有实 IsLUB，正是原书实值断言，但数学上错误。_corrected_b：PASS，固定 η 的 BddAbove 加非空 range 足以推出实 sSup 的 IsLUB；凸性不是此上确界事实所必需。",
+        "counterexample": "n=1，g(θ)=0，η=1，目标为 θ，凸性成立而上确界为 +∞，不存在实 IsLUB。",
+        "suggested_fix": "保留书面 R→R 文本并标疑误；优先使用 EReal 定义，或在每个 η 明确 BddAbove。"
+      }
+    },
+    {
+      "source_id": "MD-1.4-HamiltonEquations",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            3
+          ],
+          "printed_page": "24",
+          "original_pdf_page": "47",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-01.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.hamiltonEquations",
+        "verdict": "PASS",
+        "explanation": "hamiltonEquationsOn：任意 n、实值 H、任意时间集合 I 和 q/p 曲线；对每个 t∈I，要求两个冻结变量偏函数真实可微及 q′=∇pH、p′=-∇qH，符号、求值点及量词正确。时间导数用 HasDerivAt（不是总化 deriv），边界仍要求环境导数，与所披露资格一致。hamiltonEquations 恰为 I=univ。没有把偏导存在或全时间解存在当作自动结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.4-HamiltonLagrangeEquivalence",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            4
+          ],
+          "printed_page": "25",
+          "original_pdf_page": "48",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-04.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.hamiltonlagrangeequivalence",
+        "verdict": "PASS",
+        "explanation": "任意 n、配置相关 M/U、q/v 及开放 I；C² 和逐点对称正定 M 保证 Legendre 可逆及所用偏梯度真实。q′=v 单独为前提；左侧是 d/dt ∇vL=∇qL，右侧以 p(s)=M(q(s))v(s) 同时要求两条 Hamilton 方程，符号和冻结速度/动量位置正确。不是仅常质量特例，未假设待证等价。C²为充分的偏强资格，已披露；关于几何描述偏好的文字是说明而非额外可形式化定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.4-PhaseSpace",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_COORDINATES_AND_POSITIONS"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.4-PhaseSpace",
+          "kind": "definition",
+          "label": null,
+          "section": "1.4",
+          "printed_page": "25",
+          "pdf_page": "48",
+          "statement_latex": "The set of all positions and momenta for which the energy is finite is termed the phase space. The instantaneous state of a molecular system involving many, say N, particles moving in $\\mathbb R^3$ is described by coordinates and positions, i.e., by a point in $\\mathbb R^{6N}$.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "NEEDS_HUMAN",
+              "detail": "p.25原句described by coordinates and positions字面重复位置；前句定义是positions and momenta，Lean按前句定义保留位置×动量，原句不静默改字。"
+            },
+            {
+              "code": "SOURCE_COORDINATES_AND_POSITIONS",
+              "status": "NEEDS_HUMAN",
+              "detail": "原文确为 coordinates and positions，与前后位置和动量的定义冲突；保留疑误，不能自行替换原文。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.finiteEnergyPhaseDomain",
+          "extra_assumptions": [
+            "采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。"
+          ],
+          "old_ids": [
+            "CH01-087",
+            "CH01-088"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_COORDINATES_AND_POSITIONS",
+            "detail": "原文确为 coordinates and positions，与前后位置和动量的定义冲突；保留疑误，不能自行替换原文。"
+          }
+        ],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            5
+          ],
+          "printed_page": "25",
+          "original_pdf_page": "48",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-04.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.finiteEnergyPhaseDomain",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "finiteEnergyPhaseDomain 与 _corrected：PASS，PhaseSpace n=Position n×Momentum n，H:EReal，排除顶和底恰表示有限实能量。_corrected_dimension：PASS，任意 N，包括0，证明的是环境向量空间 PhaseSpace(3*N) 的实维数 6*N，不是断言任意有限能量子集自身为6N维流形。修正版按前句把笔误理解成位置与动量合理；原文笔误仍需人工确认。",
+        "counterexample": "无需数值反例：只记录位置两次不能确定独立动量；固定位置可以对应不同动量和相态。",
+        "suggested_fix": "原文句子保留，人工批准后另行勘误为 positions and momenta；不要把环境维数结论写为任意能量域的维数。"
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

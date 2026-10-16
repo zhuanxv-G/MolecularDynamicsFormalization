@@ -1,0 +1,39 @@
+--- before/Ch01.lean
++++ after/Ch01.lean
+@@ -1832,6 +1832,7 @@
+ /-- source_id: MD-1.6-PeriodicTranslationMomentum · unnumbered_claim · printed p.34 / PDF p.57
+ [EXTRA] 一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。
+ 
++[EXTRA] 键能量补范数，第三定律改对ψ=φ∘|·|在有向差处可微；平移/动量主定理逐字未改。
+ -/
+ theorem periodic_translation_momentum :
+   ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ),
+@@ -1847,12 +1848,12 @@
+       ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i*v a i) = ∑ i, m i*v b i := by
+   sorry
+ 
+-/-- Both endpoint forces of each actual directed periodic bond, including the closing bond. -/
++/-- Both endpoint forces of each norm-based periodic bond, including the closing bond. -/
+ def periodicBondEnergy (φ : ℝ → ℝ) (L : ℝ) (x y : ℝ) (closing : Bool) : ℝ :=
+-  φ (y-x + if closing then L else 0)
++  φ ‖y-x + if closing then L else 0‖
+ 
+ theorem periodic_translation_third_law (φ : ℝ → ℝ) (L x y : ℝ) (closing : Bool)
+-    (hφ : DifferentiableAt ℝ φ (y-x + if closing then L else 0)) :
++    (hφ : DifferentiableAt ℝ (fun s => φ ‖s‖) (y-x + if closing then L else 0)) :
+     -deriv (fun u => periodicBondEnergy φ L u y closing) x =
+       -(-deriv (fun u => periodicBondEnergy φ L x u closing) y) := by
+   have hx := hφ.hasDerivAt.scomp x
+@@ -1860,10 +1861,10 @@
+   have hy := hφ.hasDerivAt.scomp y
+     (((hasDerivAt_id y).sub_const x).add_const (if closing then L else 0))
+   have hx' : deriv (fun u => periodicBondEnergy φ L u y closing) x =
+-      -deriv φ (y-x + if closing then L else 0) := by
++      -deriv (fun s => φ ‖s‖) (y-x + if closing then L else 0) := by
+     simpa [periodicBondEnergy, Function.comp_def] using hx.deriv
+   have hy' : deriv (fun u => periodicBondEnergy φ L x u closing) y =
+-      deriv φ (y-x + if closing then L else 0) := by
++      deriv (fun s => φ ‖s‖) (y-x + if closing then L else 0) := by
+     simpa [periodicBondEnergy, Function.comp_def] using hy.deriv
+   rw [hx',hy']
+ 

@@ -1,21 +1,32 @@
 {
   "chapter": 1,
   "total": 141,
-  "website_pass": 48,
-  "awaiting_reaudit": 93,
-  "awaiting_mentor": 20,
+  "website_pass": 110,
+  "new_reaudit_pass": 62,
+  "prior_website_pass": 48,
+  "locally_repaired_not_resubmitted": 10,
+  "awaiting_mentor": 21,
+  "errata_records": 22,
+  "awaiting_reaudit": 0,
   "repairing": 0,
-  "counts_are_disjoint": false,
-  "mentor_is_subset_of_reaudit": true,
+  "counts_are_disjoint": true,
   "raw_verdicts_preserved": true,
-  "scope": "网站PASS只覆盖明确绑定的原声明；当前双版本或变更待复审",
+  "latest_raw_verdicts": {
+    "PASS": 62,
+    "FAIL": 10,
+    "NEEDS_HUMAN": 21
+  },
+  "scope": "110网站PASS + 10按意见本地修复未再送网站 + 21原书疑误；各版本verdict独立，不把正确修正版整组记未通过",
   "declarations": {
-    "已证或定义": 148,
-    "定义项": 79,
-    "声明总数": 194,
-    "已证定理": 69,
-    "缺大型理论": 30,
-    "原书疑误不证": 13,
-    "时间盒止": 3
-  }
+    "total": 206,
+    "definitions": 90,
+    "proved": 70,
+    "unproved": 46,
+    "unproved_reasons": {
+      "缺大型理论": 30,
+      "原书疑误不证": 13,
+      "时间盒止": 3
+    }
+  },
+  "new_website_packages": 0
 }

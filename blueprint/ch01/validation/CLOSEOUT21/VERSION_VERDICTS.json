@@ -1,0 +1,1387 @@
+{
+  "MD-1.1-Schrodinger": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "schrodingerEquation"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。Q13=EuclideanSpace ℝ (Fin 39)，Φ:ℝ→Q13→ℂ，U为实势；h与13个μ均为正子类型。coordinateDirection是标准坐标向量，secondPartial是在该坐标直线上的二阶实导数；Fin 39索引i经i.val/3取粒子质量，恰好每质量重复三次。时间C¹、每空间坐标C²、时间一阶与空间二阶导数的联合连续性明确保证经典偏导解释，不要求时间二阶或混合偏导。末项与全部t,q的方程逐项相符；没有解存在断言。最新[EXTRA]与签名相符，旧的联合C²文字应标历史。"
+  },
+  "MD-1.1-HardSphere": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "hardSphereModel"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。N个三维粒子，逐粒子正半径和正质量；I开放连通，C⊆I且在I的每点附近至多有该点一个碰撞事件，排除了稠密事件造成的自由运动条件真空化。全时间全粒子对距离≥半径和，位置连续；I\\C上q′=v及v′=0是真实导数。每个C中事件指定不同粒子i,j并接触；正半径保证单位法向有定义。binaryElasticSphereCollision的入射法向符号、两速度的标准质量加权法向冲量、法向反转、碰后分离、动量及动能守恒均一致；所有粒子的实际速度左右极限接入before/after，非碰撞粒子速度不变。[EXTRA]已明确限制为孤立二体无摩擦碰撞，未声称处理同时多碰撞或解存在。"
+  },
+  "MD-1.1.1-MorseMinimum": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "morse_minimum"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。对所有D,a,rₑ>0，势D(1−exp(−a(r−rₑ)))²在r>0非负、在rₑ为零，且r→+∞极限为D，正好给出最小点及井深。二阶导在rₑ为2Da²；固定D>0及rₑ，0<a₁<a₂时2Da₁²<2Da₂²，正确落实曲率控制。rₑ>0保证最小点在径向域内。全部五个合取分句及[EXTRA]都正确；sorry不参与签名判定。"
+  },
+  "MD-1.1.1-LengthBond": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "lengthBond"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。V3为真正三维欧氏空间，输入为两个粒子位置；lengthBond直接代入其欧氏距离，系数k/2与静长r₀无误。k,r₀的签名允许所有实数，是无奇点代数公式的扩展；物理使用中的k>0不被误作已编码的前提，也没有正性或最小值定理。当前源要求的弹簧势公式及[EXTRA]真实位置代入均已覆盖；不要求历史径向辅助函数参与此声明。"
+  },
+  "MD-1.1.1-LJRepulsion": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "lj_repulsion"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN",
+      "lean_statement_verdict": "PASS",
+      "scope": "网站明确通过现有数学子句/定义或限定解释；原书未限定文字仍NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "lj_repulsion_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "lj_repulsion：PASS，对全部ε,σ>0，使用从正距离趋零的𝓝[>]0而非把总函数在0的值当极限，结论正确。lj_repulsion_corrected：PASS，对任意有限实能级E，存在δ>0使所有0<r<δ的势值>E，正是该极限的严格屏障表述。两条均不提供轨迹、数值算法、能量上界、长时间区间或概率模型，因而不能覆盖整段原文的long simulations/well separated/rarely经验断言。修正版没有冒称已推出无条件无碰撞；原文经验量词如何纳入正式结论须人工确定，故条目汇总NEEDS_HUMAN。"
+  },
+  "MD-1.1.1-HeterogeneousLJ": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "heterogeneousLJ"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。N任意，ε、σ均为Fin N×Fin N上的实参数表，q给出每个粒子的真实V3位置；i,j的势为4ε_ij[(σ_ij/‖q_i−q_j‖)^12−(σ_ij/‖q_i−q_j‖)^6]。pairDistance定义正是该欧氏距离。原文未在此声明混合规则、参数表对称性或总势求和，Lean也未额外声称这些。距离零处Lean总除法给出有限扩展值；本条[EXTRA]已明确只在pairDistance>0解释为原势，故不把该扩展当作物理碰撞势。"
+  },
+  "MD-1.1.2-Coulomb": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "coulombPotential"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。C、介电常数和距离是严格正实数子类型，电荷Qᵢ,Qⱼ为任意实数；返回值恰为C QᵢQⱼ/(dielectric·r)。分母严格正且原电荷符号未受限制，[EXTRA]全部落实。此为径向势的定义，原文电荷同号/异号影响作为定性背景，没有把吸引排斥当作已证明的动力学结论。"
+  },
+  "MD-1.1.2-Cutoff": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "smoothCutoff"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。smoothCutoff是修饰后势φ的性质：r_cut>0、φ在正距离域C¹、对所有r>r_cut取零；没有在r=0要求C¹，故不排除Coulomb原点奇性。由于r_cut位于正距离域内部，C¹与右侧恒零还蕴含截断点的函数和一阶导数接零，无须另把边界点写入截零量词。原文没有给出具体开关函数或要求在整个截断半径以下精确等于未修饰Coulomb势；未引入这些额外结论。"
+  },
+  "MD-1.1.2-Yukawa": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "yukawaScreened"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN",
+      "lean_statement_verdict": "PASS",
+      "scope": "网站明确通过现有数学子句/定义或限定解释；原书未限定文字仍NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "yukawaScreened_corrected_a",
+        "verdict": "PASS"
+      },
+      {
+        "name": "yukawaScreened_corrected_b",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "yukawaScreened：字面公式及C、dielectric、r的正子类型PASS；κ按实参数保留，未暗改原书指数。原文称κ为长度，而指数−κr若无量纲则κ应有逆长度量纲，此矛盾需人工确认。yukawaScreened_corrected_a：PASS，κ>0解释为逆屏蔽长度，保留−κr；yukawaScreened_corrected_b：PASS，ℓ>0解释为长度，使用−r/ℓ。两修正版在κ=1/ℓ时一致，电荷仍任意实数，其他正域条件相符。汇总NEEDS_HUMAN来自原书参数称谓与公式的冲突，不来自修正版的代数。"
+  },
+  "MD-1.1.2-AngleBond": {
+    "source_text_verdict": "FAIL",
+    "original_version": {
+      "names": [
+        "angleBondOnDomain"
+      ],
+      "fidelity_verdict": "FAIL",
+      "mathematical_verdict": "FAIL"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "公式在非零两键长上PASS，V3、内积、两范数乘积、arccos及弹簧系数均与原页一致。但当前angleBondModel接受所有三位置，没有非零键长的子类型或前提，context_notation所说“两键长非零”没有落实，也未声明零分母仅是辅助总化扩展。Lean的除零为0会在原书角度未定义的重合构形给出实势，故按完整对象/域要求FAIL。k正也只是物理上下文，并非签名前提；本次不把原书的有向差约定自行换成通常补角约定。"
+  },
+  "MD-1.1.2-GayBerne": {
+    "source_text_verdict": "FAIL",
+    "original_version": {
+      "names": [
+        "gayBerneOnDomain"
+      ],
+      "fidelity_verdict": "FAIL",
+      "mathematical_verdict": "FAIL"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "全部代数展开在原书正常域上PASS：r=q₂−q₁、r̂=‖r‖⁻¹r，ε₁=ε₀/√(1−χ²(u₁·u₂)²)，ε₂=W(...,χ′)，W的两分母和正负号、χ与χ′的定义均一致。但Lean参数u₁,u₂仅为任意V3，不是原书的单位取向；q₁≠q₂、根号内严格正、σₛ/εₛ/μ及各有理式分母非零、Δ≠0均未编码。context_notation已经明确这些域限定，却无相应[EXTRA]总化说明或有效域模型。总除法、Real.sqrt及Real.rpow会对非法参数继续返回值，因此完整域审校FAIL；不以旧库不同公式作为依据。"
+  },
+  "MD-1.2-NewtonCompact": {
+    "source_text_verdict": "FAIL",
+    "original_version": {
+      "names": [
+        "compactNewton"
+      ],
+      "fidelity_verdict": "FAIL",
+      "mathematical_verdict": "FAIL"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "时间一、二阶HasDerivAt确实阻止不可微q被总导数当伪解；massOperator通过Matrix.diagonal逐坐标作用，等式确为M q″=−gradient U。泛化维数n和任意对角实参数可作原式的代数模板，三维粒子物理使用须取n=3N及正质量三次重复。关键缺项是U:Position n→ℝ没有在q t可微的前提，gradient的总化定义仍可在不可微势点返回0，故未完整表达经典Newton力；[EXTRA]只修复了轨迹导数，没有修复势能梯度资格。域审校FAIL。"
+  },
+  "MD-1.2-DegreesFreedom": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "degreesOfFreedom"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。linearizedConstraintDimension仅是线性代数辅助量，等于实线性映射fderiv C q的核的finrank。degreesOfFreedom的q不是任意点，而是C q=c、C在q为C¹、导数满射的可行点子类型；在该正则层由隐函数定理，核正是局部可行方向空间。n为构形维数、r为独立约束数，值为自然数；r=0包含无约束情形。没有把奇异点的线性化核维数冒充真实几何维数。与最新[EXTRA]及下一条局部坐标解释一致。"
+  },
+  "MD-1.2-ConstraintDimension": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "constraintdimension"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。主定理的q子类型明确C¹正则可行点和fderiv满射，保证r≤n；结论degreesOfFreedom+r=n避免自然数减法截断。全部局部图分句已核对：U,V开放、q∈U、φ/ψ为C¹、双向MapsTo及两侧LeftInvOn，使U与V局部微分同胚；C x=c当且仅当φ(x)第二分量为0，给出d维自由坐标的真实层结构。constraintdimension_unconstrained另以Position (3N)上的零个约束给核维数3N，覆盖无约束分句。局部图构造的sorry仅是证明未完成，不使正确签名FAIL。"
+  },
+  "MD-1.2-TotalEnergy": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "particleTotalEnergy"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。N个三维位置q、速度v和粒子质量m，U以完整构形Fin N→V3为自变量；定义恰是Σ_j m_j‖v_j‖²/2+U(q)。此为相空间能量函数定义，v是独立速度变量，不需在本定义中绑定某条轨迹导数。m允许任意实数是该代数式的扩展，物理正质量子域自然包含其中，未声称未加前提的能量正性或守恒。没有漏掉求和粒子或把势能逐粒子重复相加。"
+  },
+  "MD-1.2-PairCancellation": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "paircancellation"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。对任意自然数N和V3值的全有序粒子对力表F，假设对角零及所有i,j反对称，结论全双和为零，恰是全部内力合力抵消。对角零其实由反对称在实向量空间已推出，冗余不改变意义；全双和与无自力的j≠i求和相符。无外力的解释已在前提力表及[EXTRA]中明确，没有把结论净力零预先当假设。"
+  },
+  "MD-1.2-MomentumConservation": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "momentum_conservation"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。N任意，m为与时间无关的实质量，v给三维速度，pᵢ(t)=mᵢ•vᵢ(t)。I开放连通；F为全时间有序粒子对力，逐对反对称以及每个pᵢ的真实导数等于Σ_jF_ij为前提。三个完整结论依次是净内力零、总动量HasDerivAt零、任意a,b∈I的总动量相等；第三个向量等式同时给出三个分量守恒。质量正性不是这条代数守恒推论所必需；未把净力零或守恒偷放到假设中。[EXTRA]全部相符。"
+  },
+  "MD-1.2-HarmonicSolution": {
+    "source_text_verdict": "FAIL",
+    "original_version": {
+      "names": [
+        "harmonic_solution"
+      ],
+      "fidelity_verdict": "FAIL",
+      "mathematical_verdict": "FAIL"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "已写的harmonic_solution本身正确：PASS其动力学、全实时间域、单位质量、初值和位置公式。PhaseSpace第二分量是动量，单位质量下等于速度；mechanicalVectorField的第一分量确为该速度，harmonicFlow第二分量也是位置的真实导数，n=1还原原式。按本任务“全部对象/完整结论”审校，仍有覆盖缺项：所给同source全部声明/依赖没有定义或连接原句的能量E=|v|²/2+Ω²|x|²/2；且只验证所构造的流，不含“任意满足该初值的解都由此公式给出”的唯一性结论。此FAIL是完整覆盖失败，不是现有显式式为假，不涉及sorry。"
+  },
+  "MD-1.2-ScalarMechanical": {
+    "source_text_verdict": "FAIL",
+    "original_version": {
+      "names": [
+        "scalarMechanicalModel"
+      ],
+      "fidelity_verdict": "FAIL",
+      "mathematical_verdict": "FAIL"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "scalarMechanicalModel的动力学部分PASS：任意实势U、实时间相轨迹z，逐时刻要求U在位置可微，HasDerivAt z (v,−U′(x))同时给出真实x′=v及v′=−U′，与单位质量方程相符，最新[EXTRA]也落实。完整条目仍FAIL：原句还定义E(x,ẋ)=ẋ²/2+U(x)，而所给全部当前声明只有ODE谓词；context_notation提到的scalarPotentialEnergy并未给出定义或能量识别，不能把一个名字当成已经形式化。未要求本条之外的局部积分论证或能量守恒定理。"
+  },
+  "MD-1.2-RadialLJForceLiteral": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "radial_lj_force_literal"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "radial_lj_force_literal_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "radial_lj_force_literal：字面忠实性PASS；对象、有限和排除自粒子、正ε/σ、固定i的非碰撞和负梯度Newton前提都相符，但原书力符号与式1.3冲突，故数学陈述需NEEDS_HUMAN，不能仅因其为假而把字面版判转录FAIL。radial_lj_force_literal_corrected：PASS；在相同全部对象、量词与前提下，第一式改为−φ′/r，第二式系数+24ε/σ，符合ljForce实际定义。对r≠0有φ′=24ε/r[(σ/r)^6−2(σ/r)^12]，两修正分句均正确；不需要额外假设a来自某条已存在轨迹。"
+  },
+  "MD-1.2-LJTimeScaling": {
+    "source_text_verdict": "FAIL",
+    "original_version": {
+      "names": [
+        "ljtimescaling"
+      ],
+      "fidelity_verdict": "FAIL",
+      "mathematical_verdict": "FAIL"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "ljtimescaling：PASS。全部正参数、C²非碰撞Q、q(t)=σQ(αt)及α²关系明确；结论是有量纲Newton方程与全τ的单位参数方程双向等价，并给正确时间单位，反向时间覆盖由α>0保证。ljtimescaling_argon：按其实际签名PASS，给|τ−2.17ps|<0.01ps，常数和单位换算正确。但本条最新[EXTRA]明说显式容差0.005ps，实际结论却为0.01ps；且给定精确十进制参数下0.005ps界是假的。故接收材料的[EXTRA]一致性FAIL，不能把0.01当已证明0.005。corrected_json只将说明改成实际成立的0.01ps，不改原书近似或工程。"
+  },
+  "MD-1.3-GeneralizedCoordinates": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "generalized_coordinates"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。Φ:Position k→Position n，J为n×k矩阵；hΦ明确J是q(t)处的真实Fréchet导数，hq明确q的实际速度V。第一结论通过链式法则给d(Φ∘q)/dt=JV；第二结论把massLagrangian的Σ_i m_i v_i²/2−U替换成⟨V,(Jᵀdiag(m)J)V⟩/2−U(Φ(q(t)))，矩阵排列、转置及系数均无误。标准实欧氏内积即原式行列乘积。原文smooth在点态结论中弱化至真实可微、k不必等于n，都是[EXTRA]已说明且成立的推广；本条代数恒等式不需正质量或满秩，正则可逆性由下一条另行处理。"
+  },
+  "MD-1.3-GeneralizedMassRegular": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "generalizedmassregular"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PASS。m给n个坐标质量且逐个严格正，J为n×k矩阵，Injective J.mulVec是满列秩，自动保证k≤n，符合原书约束参数化情形。generalizedMassMatrix实为Jᵀdiag(m)J；对非零v，由Jv≠0有vᵀJᵀMJv=Σ_i m_i(Jv)_i²>0，因此该k×k矩阵可逆。IsUnit正是矩阵环中的可逆性，未预先假设结论；k=0情形亦正常。J作为任意满足满列秩的矩阵推广覆盖真实Jacobian的情形；[EXTRA]正质量及列单射均落实。"
+  },
+  "MD-1.4-ConvexLegendre": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "legendreTransform_literal"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "legendreTransform_corrected",
+        "verdict": "PASS"
+      },
+      {
+        "name": "legendreTransform_corrected_b",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "legendreTransform 及 _corrected：PASS，任意 n、g:Position n→ℝ、η，EReal 的 iSup 正确实现扩展实共轭；未要求凸性是对所有实函数定义的合理推广，并未声称其处处实值。_literal：忠实性 PASS，ConvexOn univ 的任意 g 对每个 η 有实 IsLUB，正是原书实值断言，但数学上错误。_corrected_b：PASS，固定 η 的 BddAbove 加非空 range 足以推出实 sSup 的 IsLUB；凸性不是此上确界事实所必需。"
+  },
+  "MD-1.4-HamiltonEquations": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "hamiltonEquations"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "hamiltonEquationsOn：任意 n、实值 H、任意时间集合 I 和 q/p 曲线；对每个 t∈I，要求两个冻结变量偏函数真实可微及 q′=∇pH、p′=-∇qH，符号、求值点及量词正确。时间导数用 HasDerivAt（不是总化 deriv），边界仍要求环境导数，与所披露资格一致。hamiltonEquations 恰为 I=univ。没有把偏导存在或全时间解存在当作自动结论。"
+  },
+  "MD-1.4-HamiltonLagrangeEquivalence": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "hamiltonlagrangeequivalence"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "任意 n、配置相关 M/U、q/v 及开放 I；C² 和逐点对称正定 M 保证 Legendre 可逆及所用偏梯度真实。q′=v 单独为前提；左侧是 d/dt ∇vL=∇qL，右侧以 p(s)=M(q(s))v(s) 同时要求两条 Hamilton 方程，符号和冻结速度/动量位置正确。不是仅常质量特例，未假设待证等价。C²为充分的偏强资格，已披露；关于几何描述偏好的文字是说明而非额外可形式化定理。"
+  },
+  "MD-1.4-PhaseSpace": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "finiteEnergyPhaseDomain"
+      ],
+      "fidelity_verdict": "原文引文保留；现有Lean为限定解释，非无条件原句",
+      "mathematical_verdict": "NEEDS_HUMAN",
+      "lean_statement_verdict": "PASS",
+      "scope": "网站明确通过现有数学子句/定义或限定解释；原书未限定文字仍NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "finiteEnergyPhaseDomain_corrected",
+        "verdict": "PASS"
+      },
+      {
+        "name": "finiteEnergyPhaseDomain_corrected_dimension",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "finiteEnergyPhaseDomain 与 _corrected：PASS，PhaseSpace n=Position n×Momentum n，H:EReal，排除顶和底恰表示有限实能量。_corrected_dimension：PASS，任意 N，包括0，证明的是环境向量空间 PhaseSpace(3*N) 的实维数 6*N，不是断言任意有限能量子集自身为6N维流形。修正版按前句把笔误理解成位置与动量合理；原文笔误仍需人工确认。",
+    "qualified_model": {
+      "name": "MD.Ch01.finiteEnergyPhaseDomain",
+      "verdict": "PASS",
+      "scope": "网站正文明确限定的解释；不扩展到原书无条件表述"
+    }
+  },
+  "MD-1.5-LocalExistUnique": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "local_exist_unique"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "固定对角质量、开放非奇异配置域 Q，z₀.1∈Q，任意 t₀；力 -∇U 在Q各点 C¹。存在 ε>0、γ(t₀)=z₀、两侧开时间区间上的真实机械积分曲线并留Q；任意共同开放时间域上的同初值解在 t₀ 邻域最终相等，正确表达局部唯一而非全函数相等。CoordinateMasses 只是实函数，未要求正/非零，故这是总化矩阵逆向量场的较广ODE定理；用于物理 Hamilton 模型须另有正质量背景，不能由本条推出零质量物理模型。数学上的局部存在唯一结论仍对该较广定义正确，未增加隐蔽结论。"
+  },
+  "MD-1.5-CompactContinuation": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "compact_continuation"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "aux：正质量、开放Q、C¹力、紧K⊂Q×P、初值在K，hconfine只量化已有局部解，不循环假设全局存在；结论是全实时间解且留K。主条：任意初值、正对角质量、全域C²实势、统一下界以及每个次水平集有界；结论同时含全时间机械解、初值、能量守恒、轨道有界、全局解函数唯一以及含0开区间上的局部解逐点唯一。闭次水平集由连续性给出，有限维闭有界给紧性；动量界由能量和正质量给出。原书p26的能级集在α区间上一致有界正对应次水平集有界，已展开背景，不把仅能量守恒误作普遍位置有界。"
+  },
+  "MD-1.5.1-FlowEnergy": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "flow_energy"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "任意有限维相空间、可微实H、全时间F。hF只含F(0,ξ)=ξ及真实Hamilton ODE，不预设守恒。结论对每个初值和每个实t均为H(F(t,ξ))=H(ξ)；symplecticGradient 的两个偏梯度及负号正确。可微H足以链式求导得到沿轨道导数为零，不必额外C¹。声明数学等号正确，源JSON恢复书面恒等号。"
+  },
+  "MD-1.5.1-HarmonicPhaseFlow": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "harmonicPhaseFlow"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "harmonicPhaseFlow 的两个分量与原式一致，n维共同频率推广合法。总函数本身允许Ω=0，但 harmonicPhaseFlow_solution 明确 hΩ:Ω≠0，结论含初值及单位质量、力 -(Ω²)q 的全时间真实积分曲线；没有声称零频总化式仍满足自由粒子方程。全部 [EXTRA] 已兑现。"
+  },
+  "MD-1.5.1-SpectralSolution": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "spectralsolution"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "任意完备复赋范空间、有穷索引全基 b，A复连续线性、各基向量对应复特征值ν。有限基保证有限维；没有偷换实谱。公式对所有实elapsed time t和初值z，以b.repr z为系数，给复算子流的谱展开。将t实例化为目标时间减t₀即可得到原式；基坐标本身满足初值展开，省去显式t₀是时间平移的等价参数化。complexExponentialFlow 经 restrictScalars ℝ 的算子指数仍是原复线性系统的真实流。"
+  },
+  "MD-1.5.1-BasisCoefficients": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "basis_coefficients"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "任意m、RCLike域、EuclideanSpace 的完整 Fin m 基。basisColumnMatrix i j=b j i 确实以基向量作列；结论同时给矩阵可逆、X(b.repr z)=z以及X⁻¹z=b.repr z，包含可计算坐标及其唯一性依据，实复均覆盖。不要求特征向量性质是此线性代数子命题的合理推广。"
+  },
+  "MD-1.5.1-MatrixExponentialSolution": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "matrixexponentialsolution"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "任意实m×m矩阵A、初值z、实t₀及全时间γ；hγ给真实导数γ′=Aγ，hinit给初值。结论是整个函数等于t↦matrixExponentialFlow A(t-t₀)z。依摘录展开为 exp((t-t₀)•A的连续算子表示)作用于z；有限维矩阵和连续线性算子代数同构保存指数，确为原式e^{A(t-t₀)}z。无对角化或实谱额外假设；本条是任意已给解的表示/唯一性，不单独新增存在结论。"
+  },
+  "MD-1.5.2-FirstIntegral": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "smoothFirstIntegral"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "smoothFirstIntegral 的对象是有限维实欧氏空间上的向量场 f、区域 Q 和实值 I；结论同时要求 Q 上 C∞ 及 IsFirstIntegralOn。后者遍历所有开放时间区间、所有留在 Q 中并满足真实 HasDerivAt 的解，再量化任意两时刻，准确表达所有初值解上的常性，不偷加全局存在。Q 是原文定义的区域化参数；取 univ 即全空间版本。"
+  },
+  "MD-1.5.2-FirstIntegralCriterion": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "firstintegralcriterion"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "对任意完备实赋范空间 E，开放 Q、Q 上局部 C¹ 向量场和可微 J，给出第一积分与每点 dJ(f)=0 的双向等价。完备性、局部 C¹ 和开放域提供从每个初值出发的局部解，从而必要方向不因缺乏解而真空成立；充分方向由链式法则及区间连通性成立。以连续线性微分替代梯度内积是等价且更一般的表达，未把梯度相等式当作额外结论。原文 smooth 类的判据在更弱可微类中仍成立。"
+  },
+  "MD-1.5.2-PlanarGraphReduction": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "planargraphreduction"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "量词覆盖任意平面向量场、区域、第一积分、真实解及区间内基点。hJ 是该点严格微分，hpartial 精确为 y 方向微分非零。结论给出可微图、附近整个水平集与图的双向等价、原轨道在局部时间窗的图表示及第一坐标的约化 ODE，非仅假设了所需结论。条件化签名正确；原句无条件措辞另标 NEEDS_HUMAN。"
+  },
+  "MD-1.5.2-PlanarQuadrature": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "planarquadrature"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "原文句子与第4页相符。hfirst 不是约化结论假设；真实解、区间内基点、C¹ 正则性、y 偏导非零及 x 速度非零均明确。结论给局部 ψ、时间逆 g、g′(0)=f₁、解的局部参数化、积分原函数与 g 双向局部互逆以及整个小时间窗积分恒等式。δ 虽未用于邻域界，仅冗余存在量，不影响正确性。此为非转向点上的分离变量结论，额外非退化资格已披露。"
+  },
+  "MD-1.5.2-ScalarFirstIntegral": {
+    "source_text_verdict": "FAIL",
+    "original_version": {
+      "names": [
+        "scalar_first_integral_and_quadrature"
+      ],
+      "fidelity_verdict": "FAIL",
+      "mathematical_verdict": "FAIL"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "第5页 Example 1.6 转录相符。第一合取对任意 C² 势能证明能量 v²/2+U(x) 为 (v,−U′(x)) 的第一积分；第二合取的积分逆、局部参数化及速度符号均正确，但只量化速度非零点。相较原文“system is therefore integrable”的完整覆盖，缺少真实解在转向点的改用速度坐标求积、平衡点常解及相应重建说明。不是命题本身为假，也不是因 sorry 判 FAIL，而是覆盖不全。"
+  },
+  "MD-1.5.2-KeplerConservedEnergy": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "kepler_energy_angular_integrability"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "第6页整句转录相符。签名三重合取覆盖单位质量非碰撞平面解的能量常性、平面角动量常性，以及含0存在区间的径向—角向重建。massHamiltonian 展开为各动量平方/2减范数倒数；planarAngularMomentum 是 q₀p₁−q₁p₀。重建给 r>0、r′=v、有效势径向 ODE、角积分及位置；ScalarPotentialLocalDescription 覆盖径向非转向、转向及平衡三类，并用初始位置和动量公式联系初值，未将重建当作假设。有效势在 r=0 的总化不影响 r>0 上局部分类。原文可积性按求积与逆函数理解，未额外声称碰撞后的延拓。"
+  },
+  "MD-1.5.2-KeplerAngularMomentum": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "keplerangularmomentum"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "第7页转录相符。任意非碰撞单位质量平面机械解、任意同一开放区间内 s,t，结论 q₀p₁−q₁p₀ 相等。velocityOperator 在单位质量下为恒等，故动量就是速度，与原文 xẏ−yẋ 一致。keplerForce 是径向中心力，力矩为零；这里只专门化原书 Kepler 例，未声称已形式化任意旋转不变势的 Noether 定理。"
+  },
+  "MD-1.5.2-KeplerMomentum": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "keplermomentum"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "第8页转录相符。主声明对每个 q≠0 给非零向心力，正确但单独不足以证明两个坐标分别不是第一积分。[EXTRA] keplermomentum_not_first_integrals 对每个 i∈Fin 2 分别否定坐标动量在整个非碰撞相空间上、对所有真解的常性，补齐原文语义。取初始 q=eᵢ 时该坐标动量导数为−1，因此否定成立；不误称每条轨道的每个分量都变化。"
+  },
+  "MD-1.5.2-KeplerPolarODE": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "keplerpolarode"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "第9页两式转录相符。对任意时间集合 I 和 r,θ,v,omega，左侧完整展开为正半径、r′=v、θ′=omega 及 L=v²/2+r²omega²/2+1/r 的两条 Euler–Lagrange 方程。对速度和半径的偏导分别为 v、r omega²−r⁻²；角动量偏导为 r²omega，角偏导为0。右侧恰给这两式及真实一阶导数，故不是用同义命名掩盖缺失运动方程。context_notation 的“r≠0”可加强精确写为“r>0”，签名本身无误。"
+  },
+  "MD-1.5.2-KeplerRadialReduction": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "keplerradialreduction"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "第10页转录相符。任意极坐标 Euler–Lagrange 真解、任意 t∈I、任意等于当时 r²omega 的 l，结论 v′=−r⁻²+l²/r³。由正半径及 omega=l/r² 代入径向式直接成立。hl 虽是单时刻相等而非全区间常数，已经足够推出本条点态结论；作为固定守恒角动量的应用需再结合上一条在连通时间区间的常性，未虚构全局常性。"
+  },
+  "MD-1.5.2-KeplerFullSolution": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "kepler_full_solution"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "第11页三段原文及角积分转录相符。任意含0非碰撞平面真解产生全区间正半径、径向真导数和有效势方程、连续实角提升的积分表达、位置重建以及初始全相空间公式。ScalarPotentialLocalDescription 展开覆盖每个 t₀ 的非转向积分逆、转向交换坐标积分逆或径向常解；后者包括圆轨道，不误作整个二维轨道静止。θ₀ 与 z(0) 的对应由初始公式给定。声明不单独断言从任意初值构造解/唯一解，但在已有真解语境下完整给出本条求积表示和重建，符合披露的存在区间资格。"
+  },
+  "MD-1.5.2-ActionEnergy": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "actionenergy"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "第12页原文 E=IΩ 相符。对 Ω>0、J≥0 及任意实角 θ，位置 A cosθ、速度 ΩA sinθ，A=√(2J/Ω)，代入 v²/2+Ω²x²/2 得 JΩ。Ω>0 保证 ΩA=√(2JΩ)，与原书速度坐标一致；允许 J=0 的能量等式正确，不需要此处定义非退化角。"
+  },
+  "MD-1.5.2-ActionODE": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "actionode"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "第13页转录相符。Ω>0、J(t)>0，给 J 和 θ 在 t 的真实导数 d、omega；双向等价将重建位置速度的两条谐振子 ODE 精确化为 d=0、omega=−Ω。正 J 保证角坐标非退化且振幅平方根可微，消去二元线性系统合法；原书正号速度与负号角速度一致，没有符号翻转。"
+  },
+  "MD-1.5.2-ActionSolution": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "actionsolution"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "第14页转录相符。Ω>0、全开放区间正 J、J 和实角提升处处可微及重建量满足两条谐振子 ODE，推出任意 s,t∈同一区间的 J(t)=J(s)、θ(t)=θ(s)−Ω(t−s)。区间连通性排除跳支；无需额外假定全局实角定义以外的周期连续选择。s=0 且0在区间内即原书公式；同时保留第一方程的能量常性。"
+  },
+  "MD-1.5.2-HarmonicTorus": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "oscillatorTorusMotion"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "oscillatorTorusMotion 为任意 d、固定实 action 向量 I、频率 Ω、初始模2π角向量定义 (I, θ₀−Ωt)。展开 HarmonicTorus 和 rotation 可核对全部分量，确实保持每个 action 并以负频率旋转；这是原文作用角运动的定义层表示，而非已证明原相空间与该环面的微分同胚。原书“radii |I_j|”在此由固定 action 参数记录，未给额外几何嵌入；当 action 为0时不应由本定义推出原相空间等能层仍有 d 维。作为 definition 审校通过，不能将其引用为无退化条件的坐标变换定理。"
+  },
+  "MD-1.5.2-TorusPeriod": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "torusperiod"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "第16页原文相符。torusperiod 对任意有限 n、频率向量、实 T 和初角，给指定 T 是周期当且仅当每个 ΩⱼT 是2π整数倍；T=0、负T、零频率及 n=0 均正确。[EXTRA] torusQuasiperiodic 明示采用允许共振的有限环面平移表示定义；classification 用存在正周期与其否定给互斥完备二分。该定义比要求有理独立基频的某些惯例更宽，但已披露，结论没有声称非周期必稠密整个 n 维环面。原书按频率比的非形式化措辞在此有整数圈精确判据，不把 classification 的排中律误作独立无共振定理。"
+  },
+  "MD-1.5.2-TorusDense": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "torusdense_literal"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "torusdense_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "torusdense 与 torusdense_corrected 完全量化所有整数向量 k，要求 k·Ω=0 仅有零解；在连续实时间的模2π环面平移下这是全环面稠密的正确条件，不需要离散时间版本的额外常数项。torusdense_literal 只假设无正周期，忠实表达上下文 quasi-periodic 的字面推论，但 n≥3 时为假。分别结论：torusdense PASS；torusdense_literal 原文忠实性 PASS、原书数学 NEEDS_HUMAN；torusdense_corrected PASS。不能因 literal 带 sorry 判签名失败，也不能把修正版正确等同于原书无误。"
+  },
+  "MD-1.5.2-LocalActionAngleReduction": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "local_action_angle_reduction_literal"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "local_action_angle_reduction_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "三个声明均核对：对象为2d维标准实相空间、d个C∞积分、全空间两两 Poisson 括号为零、共同水平集 S 及 S 上每点微分映射满射。symplecticGradient=(∂pH,−∂qH)，canonicalBilinear=dq∧dp，符号自洽。localActionAngle 要求开邻域上的双向光滑逆、保辛微分及全部 Hamilton 向量场被送到(0,Ωᵢ(q))，给局部正则坐标中的角向运动；它未明确规定新 action 就是原 I，属于合适的局部规约表达。主声明与 corrected 的 S 紧且 IsConnected（含非空）加正则性正好提供 Liouville–Arnold 环面资格；同一 e:S≃ₜTᵈ 同时线性化各个积分的流，Ω 的负号可吸收进选择的频率，不要求预指定正频率。literal 去掉紧连通资格而仍要 S≃ₜTᵈ，在非紧或空水平集上为假，但忠实反映原句过强措辞。分别：主声明 PASS；literal 忠实性 PASS、数学 NEEDS_HUMAN；corrected PASS。"
+  },
+  "MD-1.5.3-EquilibriumLinearization": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "equilibriumlinearization"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "任意实完备赋范空间（较原书有限维推广）、f在z₀处C¹、f(z₀)=0，以及任意初始扰动h₀和t₀。结论存在独立的线性曲线δ，δ(t₀)=h₀且δ′=Df(z₀)δ，并给 f(z₀+h)-Df(z₀)h=o(h)。heq使余项不用再减f(z₀)。没有把δ定义成任意非线性轨道减z₀，故Lean正确地区分一阶近似和线性化ODE。A阶段等号转录必须修正，不能据此给正确Lean判FAIL。"
+  },
+  "MD-1.5.3-HartmanGrobmanLiteral": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "hartmangrobmanliteral"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "hartmangrobmanliteral_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "hyperbolic定义用实x/y表示复特征向量，(x≠0∨y≠0)及a≠0正确排除纯虚谱。isFlowOf只含初值和真实ODE，C¹提供唯一性；全局流是已披露的较强技术资格。主 literal：忠实性 PASS，开邻域U/V均含0、φ(0)=0、双向映射和逆关系，φ/ψ均C∞；在整个连接0至t的线性轨道留U期间给F(t,z+φx)=z+φ(e^{tA}x)。其数学真值有原书疑误。_corrected：PASS，完全相同量词、留域条件和公式，仅把坐标正则性改为连续互逆，正确为局部拓扑共轭。没有以“某一对解”代替共同坐标映射。"
+  },
+  "MD-1.5.3-HyperbolicStabilityTransfer": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "hyperbolicstabilitytransfer"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [
+      {
+        "name": "hyperbolicstabilitytransfer_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "两条声明主名和_corrected签名相同，均PASS。量化所有n、C¹ f、平衡z、双曲Df(z)、真实全局流F；结论为非线性平衡与线性指数流原点稳定性的双向等价。stable展开为每ε>0选δ>0，对每个近初值存在该轨道统一B<ε，全部t≥0距离≤B；这准确实现书面严格sup<ε，亦与通常Lyapunov稳定等价（缩小ε可得统一余量）。局部同胚及首次离域论证足以转移稳定性，无需错误的C∞共轭。"
+  },
+  "MD-1.5.3-LinearizedHamiltonian": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "linearizedHamiltonian"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "linearizedHamiltonian定义精确给动量M⁻¹二次型加位置Hessian二次型，各1/2，M为常矩阵。单独定义使用总化fderiv，但field声明同时加M.PosDef、U全域C²及∇U(q*)=0，故Hessian为真实自伴Hessian。field对每个δz要求原Hamilton向量场在(q*,0)的Fréchet导数作用于δz等于该二次Hamilton向量场；这兑现“linearized version”的完整动力学对应，非仅同名函数。C²/正质量及平衡背景充分，未漏负号或交换相空间分量。"
+  },
+  "MD-1.5.3-PositiveHessianQuadratic": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "positivehessianquadratic"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "任意n、一般实矩阵M/K，M.PosDef和K.PosDef包含实对称性。结论IsStrictPotentialMin展开为某R>0内所有非零相点的二次Hamilton值严格高于原点；动量项M⁻¹及位置项K、1/2系数均正确。至少一个分量非零给严格正，故实际上全局严格最小，局部结论充分；零维结论真且无非零点。K是Hessian值的抽象替代，命题是充分条件，不误称必要条件，也不把“strong”误读为统一强凸常数。"
+  },
+  "MD-1.5.3-PositiveHessianMinimum": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "positive_hessian_minimum"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "任意n、实势U全域C²、平衡∇U(q)=0，实全基B、实特征值freq、Injective freq和每项>0，并要求Df(gradient U)q作用于B i等于freq i倍基向量。全部distinct positive eigenvalues经完整基覆盖；C²保证Hessian自伴，虽未给正交基也可由正谱推出正定。IsStrictPotentialMin恰为原书穿孔邻域严格最小，C²及平衡资格来自同节且已披露。特征值互异虽不必要但忠实保留，没有静默削弱或把正频率替代平方特征值。"
+  },
+  "MD-1.6-PeriodicBoundary": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "periodicBoundary"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.periodicBoundary：PASS。对任意 L>0 及 x,y∈ℝ，结论恰为 y=(x−L 若 x>L；x+L 若 x<0；否则 x)。当 x=0 或 x=L 时保持原值，与 moves to the right / exiting to the left 的严格越界相符。它不声称任意大越界经一步后已落入盒内。MD.Ch01.periodicPositionEquivalent：PASS，∃k∈ℤ, y=x+kL 是独立辅助关系；L=0 或 L<0 时该关系仍有定义，但主更新明确只接受正 L。[EXTRA] 对一步更新和辅助等价关系的区分准确。"
+  },
+  "MD-1.6-PeriodicTranslationMomentum": {
+    "source_text_verdict": "FAIL",
+    "original_version": {
+      "names": [
+        "periodic_translation_momentum"
+      ],
+      "fidelity_verdict": "FAIL",
+      "mathematical_verdict": "FAIL"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.periodic_translation_momentum：PASS（签名语义）。N∈ℕ，系统有 N+1 个实坐标；φ:ℝ→ℝ 与 L∈ℝ 任意。真实 U 的 N 个相邻键及闭合键只依赖坐标差，故同时平移不变；可微时沿全1向量的导数为0。对正质量 m、轨迹 q,v、开且预连通的 I，给出的势可微性和逐粒子速度/动量 Newton 导数足以推出总动量导数0及任意 a,b∈I 的总动量相等；全部结论均保留。MD.Ch01.periodicBondEnergy：FAIL（与实际依赖的对应关系），其定义是有向差的 φ 值，没有真实 U 中的范数。MD.Ch01.periodic_translation_third_law：作为这个有向辅助能量的两端力相反定理，签名本身 PASS；hφ 也恰好是有向参数处的可微性。然而，它未针对实际 U 的 φ∘|·| 键作陈述。没有 φ 偶性、键方向/位置资格或替换势的桥接，不能将其认作实际周期链中每条键的第三定律。[EXTRA] 中“真实每条周期键”“含闭合键”的覆盖说法因此不成立。总 verdict=FAIL 源于模型对应错误，不源于 sorry。"
+  },
+  "MD-1.6-RegularLatticeMinimizerLiteral": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "regularlatticeminimizerliteral"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "regularlatticeminimizerliteral_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [
+      {
+        "name": "regularlatticeminimizerliteral_counterexample",
+        "verdict": "PASS"
+      }
+    ],
+    "website_explanation": "MD.Ch01.regularlatticeminimizerliteral：字面意旨保留，但数学疑误 NEEDS_HUMAN。它对任意 N、任意 φ、L>0 及所有实配置 x，在全空间全局最小的前提下断言 ∃a, xᵢ=a+iL/(N+1)，其中 regularLattice 还要求正间距。该签名确实保留了原书无势资格的极强断言，不应因已知反例或 sorry 将“忠实版”判作实现 FAIL。须注意 Lean 进一步选择了周期最近邻、固定标号递增和固定环长间距的解释，不能据此宣称已经处理任意标号重排或任意多维 pair potential。MD.Ch01.regularlatticeminimizerliteral_corrected：PASS。φ 在 (0,∞) 严格凸、L>0、每个 gapsᵢ>0 且 ∑gapsᵢ=L，使 d=L/(N+1)>0。结论是 (N+1)φ(d)≤∑φ(gapsᵢ)，且等号当且仅当全部 gapsᵢ=d；这是有限等权严格 Jensen 的准确陈述，包括 N=0 的单项情形。它是明确改变问题域的合理勘误，不是任意原始配置的无条件结论。MD.Ch01.regularlatticeminimizerliteral_counterexample：PASS。零势下所有 Fin 2 配置能量均为0；常零配置不可能满足间距1/2的有标号 regularLattice。[EXTRA] 为空不能被理解为原命题因此获得凸性或顺序条件。总判 NEEDS_HUMAN，需人工确认原书的隐藏势与配置资格。"
+  },
+  "MD-1.6-PeriodicImages": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "periodicImageEnergy"
+      ],
+      "fidelity_verdict": "原文引文保留；现有Lean为限定解释，非无条件原句",
+      "mathematical_verdict": "NEEDS_HUMAN",
+      "lean_statement_verdict": "PASS",
+      "scope": "网站明确通过现有数学子句/定义或限定解释；原书未限定文字仍NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "periodicImageEnergy",
+        "verdict": "PASS",
+        "scope": "已有三维块/实解公式解释；未新增独立勘误定理"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.periodicImageEnergy：对“将原页 v_i 解释为其对应粒子三维块 L e_i”的解释，签名 PASS。对任意自然数 N、实 L、所有二体项 φᵢⱼ 与三维配置 q，定义恰枚举27个位移和全部无序不同标签对 i<j，逐项计算 φᵢⱼ(qᵢ,qⱼ+L(k,l,m))。N=0 或1时空配对求和为0，忠实于印刷的 i<j；没有擅加 i=j 的自镜像，也没有擅加1/2。构造公式本身可推广到任意 L,q，物理盒长正且坐标位于盒内是书中背景，而非这一定义声称的额外定理。未解决之处是原页把 v_i 定义为全配置重复块，和此处二体参数三维之间存在类型冲突；JSON 的“等价”说明只能给出一种修复解释，不能消除原书符号问题。因此总判 NEEDS_HUMAN，而非声称已逐类型忠实形式化了原公式。",
+    "qualified_model": {
+      "name": "MD.Ch01.periodicImageEnergy",
+      "verdict": "PASS",
+      "scope": "网站正文明确限定的解释；不扩展到原书无条件表述"
+    }
+  },
+  "MD-1.6-MinimumImage": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "minimumImage"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.minimumImage：PASS。L∈ℝ，q,r,image∈V3；存在 k∈ℤ³ 使 image=r+Lk，且对所有 l∈ℤ³ 有 ‖q−image‖≤‖q−(r+Ll)‖。最小性使用≤，允许距离并列；关系自身不含 L>0，但下述完整模型补足。MD.Ch01.minimumImageForce：PASS。对 N 个标签的位置 q、每对标签的选中像 image、二体力回调 pairForce 以及总力 force，要求0<L；对 i≠j 要求对应最小像关系；对每个 i 总力恰为 j≠i 上 pairForce(i,j,qᵢ,imageᵢⱼ) 的和。因此“other”不包括自标签，“only”通过每个其他标签只出现一个选中复制体落实。并未错误断言距离最小者在数学上唯一，也不将并列的所有像一起相加。pairForce 是输入的二体力，原句未给它另一个解析表达式。[EXTRA] 与这两层定义一致。"
+  },
+  "MD-1.6-RhombicLattice": {
+    "source_text_verdict": "FAIL",
+    "original_version": {
+      "names": [
+        "rhombicLatticeOnDomain"
+      ],
+      "fidelity_verdict": "FAIL",
+      "mathematical_verdict": "FAIL"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.rhombicLattice：FAIL（参数域/几何资格）。集合公式 x=k(a,0)+l(b cosθ,b sinθ)，k,l∈ℤ，方向、索引及二维实欧氏对象均正确；旋转/平移选定坐标本身不是问题。缺陷是 a,b,θ 无任何资格，不能保证两条边的长度为正或两个生成方向独立：行列式为 ab sinθ，可能为0。原文及图1.17描述的是二维格，而当前构造连秩0、秩1的退化集合也全部接收。[EXTRA] 为空，不能从“基向量”这个中文名称推入 Lean 中没有的线性无关性。作为一般整数生成集合的辅助定义它是合法的，但作为未加资格的二维 rhombic lattice 完整对应不足。没有把“低温典型”误审为必须额外证明的普遍低温定理。"
+  },
+  "MD-1.6-UnitCell": {
+    "source_text_verdict": "FAIL",
+    "original_version": {
+      "names": [
+        "unitCellOnDomain"
+      ],
+      "fidelity_verdict": "FAIL",
+      "mathematical_verdict": "FAIL"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.unitCellLattice：FAIL（对象域/晶胞资格）。平移公式和存在量词准确编码了以三个生成向量重复 motif 的操作，但 B:Matrix (Fin 3) (Fin 3) ℝ 不是三维基的类型；B 可以奇异或为0。motif:Set V3 也未声明为盒内有限原子排列，甚至允许 motif=整个ℝ³。故定义输出不一定是三维离散原子晶格，不能仅靠 context_notation 的自然语言声称已经落实原书的“within a box”和“each direction”。此构造可保留为平移并集函数；缺失的是作为原书 unit cell 的有效输入资格，而非要求每个晶胞只能有一个原子。[EXTRA] 为空，未提供这些资格。"
+  },
+  "MD-1.6-FCCStacking": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "fccStacking"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.fccStacking：PASS。x∈ℝ³，当且仅当存在任意整数 k，使 z=k√(2/3)，且平面坐标落在 triangularLayer(j/2,j√3/6)，j=k mod3。triangularLayer(u,v) 的点为 (p+r/2+u,r√3/2+v)，p,r∈ℤ，是单位最近邻间距的等边三角点阵。余数0,1,2分别给 A、B、C 三个不同平移类；其顺序每三层重复。设 s=(1/2,√3/6)，则3s=(3/2,√3/2)为底层格向量，所以 C 后回到 A 正合 ABC 堆积；层高√(2/3)与水平孔位偏移共同给单位接触距离。k 可负，正模数的整数余数仍遍历0,1,2，覆盖双向无限晶格。固定尺度、坐标与取向是[EXTRA]明确说明的图示具体实现，并非正文声称给出了这些数值公式。"
+  },
+  "MD-1.6-HCPStacking": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "hcpStacking"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.hcpStacking：PASS。任意整数 k 给定高度 k√(2/3)，j=k mod2∈{0,1}，其平面层为 triangularLayer(j/2,j√3/6)。展开 triangularLayer，A 是零偏移的单位三角层，B 相对 A 偏移 (1/2,√3/6)，该偏移不在底层三角格中，故确为两种不同层；k+2 与 k 的平面位置一致而高度相差2√(2/3)，实现 ABAB。层高及孔位偏移给正确密堆积单位接触尺度。不存在误用三余数造成ABC的问题。[EXTRA]已说明单位化数值来自图示的具体密堆积编码，正文的两层交替信息得到完整保存。"
+  },
+  "MD-1.6.1-MinimumGradientZero": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "minimumgradientzero"
+      ],
+      "fidelity_verdict": "原文引文保留；现有Lean为限定解释，非无条件原句",
+      "mathematical_verdict": "NEEDS_HUMAN",
+      "lean_statement_verdict": "PASS",
+      "scope": "网站明确通过现有数学子句/定义或限定解释；原书未限定文字仍NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "minimumgradientzero_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.minimumgradientzero：在[EXTRA]明示的无约束内点解释下，数学签名 PASS。n∈ℕ，U:EuclideanSpace ℝ (Fin n)→ℝ，q 属于同一空间；DifferentiableAt ℝ U q 与全空间 IsLocalMin U q 足以推出 gradient U q=0。它给必要条件，没有将驻点偷换为充分极小条件；n 维梯度等于0等价于 n 个分量方程，不需另断言这些方程对每个 U 都非线性。MD.Ch01.minimumgradientzero_corrected：PASS，为同一个正确的无约束内点必要条件；其“修正”是解释范围的更正而非新签名。原书“Regardless of boundary”若包括受约束边界极小则过强，现有 Lean 也未覆盖这种解释。[EXTRA]已诚实披露可微、内点及边界限制，但不能据此认定原书无条件原句成立。故源文及总 verdict 保持 NEEDS_HUMAN。",
+    "qualified_model": {
+      "name": "MD.Ch01.minimumgradientzero",
+      "verdict": "PASS",
+      "scope": "网站正文明确限定的解释；不扩展到原书无条件表述"
+    }
+  },
+  "MD-1.6.1-ForceLinearization": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "force_linearization"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.force_linearization：PASS。对任意有限维 n、常实方阵 M、实势 U、qstar，ContDiffAt ℝ 2 U qstar 保证梯度可微，heq 要求平衡梯度为0。相空间为位置×动量的两个相同维欧氏空间，matrixAction 是矩阵的真实线性作用。所列导数将任意(δq,δp)送到(M⁻¹δp,−D(gradient U)(qstar)δq)，完整保留两条线性化运动方程，后者的 D gradient 即 Hessian。第二结论为 gradient U(q)−D(gradient U)(qstar)(q−qstar)=o(‖q−qstar‖)，因此保留原文的平衡点梯度近似且没有把非线性系统和线性系统宣称为全局精确相同。M 不要求正定或可逆，是对取定线性系数 Matrix.inv M 的数学推广；原机械质量矩阵取正定可逆时正好回到正文。该推广与[EXTRA]已披露的一般常 M 一致，不会使这个导数/小o结论失真；不能据此反称奇异 M 是合法机械质量矩阵。"
+  },
+  "MD-1.6.1-MinimumHessianLiteral": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "minimumhessianliteral"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "minimumhessianliteral_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [
+      {
+        "name": "minimumhessianliteral_counterexample",
+        "verdict": "PASS"
+      }
+    ],
+    "website_explanation": "MD.Ch01.minimumhessianliteral：字面忠实性 PASS，但原书数学疑误 NEEDS_HUMAN。对任意 n、U:Position n→ℝ、q，以全局 ContDiff ℝ 2 U 和 IsLocalMin U q 为前提；合取结论确实完整包括 Hessian 的所有 u,v 对称性，以及对所有非零 v 的正定性，没有把正定偷换成半正定。该正定结论在原书资格下不成立，依任务不把忠实版或 sorry 本身判成实现 FAIL。MD.Ch01.minimumhessianliteral_corrected：PASS。相同 C²、全空间局部极小前提下 Hessian 对称且二次型非负，是正确必要条件；仍逐一覆盖所有非零方向，零方向亦自动为0。MD.Ch01.minimumhessianliteral_counterexample：PASS。U(x)=x⁴ 在0有局部极小且二阶导数为0，足以反驳正定；该函数实际甚至是严格全局极小，因而增加“严格极小”也救不了字面版。标量例经一维欧氏空间的标准识别对应 n=1。总判 NEEDS_HUMAN；未因修正版含 sorry 否定其签名。"
+  },
+  "MD-1.6.1-ComplexNormalMode": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "complexnormalmode"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.complexnormalmode：PASS。n∈ℕ，A 是实 n×n 矩阵，η∈ℂⁿ 非零，Ω∈ℝ；前提 A_Cη=(iΩ)η，A_C 是 A 的逐项实到复嵌入。结论先确认 conjugate η 非零，再确认 A_C conjugate η=(−iΩ)conjugate η，实性正是此推论所需；最后对任意 a,b∈ℂ 和任意 t∈ℝ，给出 z(t)=a exp(iΩt)η+b exp(−iΩt)conjugate η 的真实导数为 A_C z(t)。该表述完整覆盖共轭特征对及其复线性组合解，未以零向量充当特征向量，也未把 a,b 限制为实。Ω=0 时共轭解可退化/重合，签名没有多声称其线性独立，故仍正确。A 泛化为任何实矩阵而非限定机械块矩阵，是由同一特征方程导出解公式的有效推广。[EXTRA] 中非零及共轭特征方程均真实出现在声明里。"
+  },
+  "MD-1.6.1-RealNormalMode": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "realnormalmode"
+      ],
+      "fidelity_verdict": "原文引文保留；现有Lean为限定解释，非无条件原句",
+      "mathematical_verdict": "NEEDS_HUMAN",
+      "lean_statement_verdict": "PASS",
+      "scope": "网站明确通过现有数学子句/定义或限定解释；原书未限定文字仍NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "realnormalmode",
+        "verdict": "PASS",
+        "scope": "已有三维块/实解公式解释；未新增独立勘误定理"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "MD.Ch01.realnormalmode：就所陈述的实解公式而言 PASS。对任意实赋范向量空间 E、A:E→L[ℝ]E、Ω,α,β∈ℝ、u,v∈E，只需 Au=−Ωv 和 Av=Ωu，即对所有实 t 得 z′(t)=Az(t)。展开 MolecularDynamics.realNormalMode，z 恰为 α(sin(Ωt)u+cos(Ωt)v)+β(cos(Ωt)u−sin(Ωt)v)，与原式相同；取 u=Re ξ、v=Im ξ 时 hu,hv 正是实矩阵 +iΩ 特征方程的实虚部。不需要额外的非零/独立条件来使这一解公式成立，泛化到赋范空间也合理。需要区分的是：前一条 a,b 为任意复数的 z 不一定为实，不能全部直接“改写”为此 α,β 为实的式子。当前声明没有给出系数约束或取实部的桥接，因此不能把它的 PASS 扩展为已证明原书无条件的复实全族等价。原文若意指真实物理解则正确，但省略了适用范围；依“原书疑误/歧义保留”要求，总判 NEEDS_HUMAN，非把正确的 ODE 声明判成 FAIL。",
+    "qualified_model": {
+      "name": "MD.Ch01.realnormalmode",
+      "verdict": "PASS",
+      "scope": "网站正文明确限定的解释；不扩展到原书无条件表述"
+    }
+  },
+  "MD-1.7-PlanarTrimerModel": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "planarTrimerEnergy"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "平面单位质量三粒子；Fin 3逐项动能及01、12、02三对势均一致。Position 2确为二维欧氏空间；ε=σ=1给出4(r⁻¹²−r⁻⁶)。碰撞点的Lean总函数值仅为延拓，不能解释为物理势。"
+  },
+  "MD-1.7-CentralPairPotential": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "centralPairEnergy"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "Fin N、三维位置和任意径向φ；erase i恰排除自相互作用，有序双和除以2与原式一致。该定义本身无需可微性或φ对称性；若要把φ解释为同一无序对的势，需采用context_notation的对称约定。"
+  },
+  "MD-1.7-CentralPairGradient": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "centralpairgradient"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "全称φ、q、r；q≠r及φ在距离处可微是合法微分资格。两侧均为同一二体势分别对两个位置的欧氏梯度，负号、取值点和结论完整。"
+  },
+  "MD-1.7-CentralMomentum": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "central_momentum"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "任意N、质量、速度、逐对力和开放预连通时间域；逐对力反对称与每个动量的真实导数推出净力为零、总动量真实零导数及任意两时刻相等。结论没有被用作假设。以p=mv编码Newton动量，未另设q不影响这一动量层面的陈述。"
+  },
+  "MD-1.7-CentralAngularMomentum": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "centralangularmomentum"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "已核对derivative和主定理两声明：位置导数为v，动量导数为逐对力和，力反对称且位移叉力为零；cross3三个分量是标准叉积。逐对力矩抵消、角动量真实零导数及任意a,b∈I守恒俱全。[EXTRA]19号要求已落实为主定理的IsPreconnected I与两时刻相等；derivative辅助版不要求连通是合理的。三维结果包含原文平面嵌入。"
+  },
+  "MD-1.7-CenterOfMassMotion": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "centerofmassmotion"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "范围按context_notation只审translation。质量正且总质量正、a∈开放预连通I、q′=v、总动量真实零导数，推出每个t∈I质心为初始质心加(t−a)乘初始质心速度，分母和各求和均正确。旋转断言另交第7条；这里不能将整句的旋转部分视为已证明。"
+  },
+  "MD-1.7-ConstantRotationLiteral": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "constantrotationliteral"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "constantrotationliteral_corrected_a",
+        "verdict": "PASS"
+      },
+      {
+        "name": "constantrotationliteral_corrected_b",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "literal完整编码“r²θ′=ℓ且r>0推出恒角速”，忠实于原书旋转断言，但数学上不成立。corrected_a增加固定正半径后结论正确；corrected_b只作除以正r²的代数推导，正确且更贴近应保留的守恒律。两修正版均未假设所求恒角速。"
+  },
+  "MD-1.7-IsoscelesCoordinates": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "isoscelesCoordinates"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN",
+      "lean_statement_verdict": "PASS",
+      "scope": "网站明确通过现有数学子句/定义或限定解释；原书未限定文字仍NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "isoscelesCoordinates_corrected",
+        "verdict": "PASS"
+      },
+      {
+        "name": "isoscelesCoordinates_corrected_center",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "三个向量分量、Fin 3次序及三维平面嵌入完全吻合。corrected定义数值上与原定义相同；corrected_center的三坐标和为零，单位质量下即质心零。修正的是适用范围而非坐标公式。原段由动量约束导出等腰的暗示不成立，必须由人工保留勘误说明。"
+  },
+  "MD-1.7-IsoscelesEnergyReduction": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "isosceles_energy_reduction"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "x>0使01距离为2x，另两距离为√(x²+y²)；速度坐标取(v,w)后动能为v²+w²/3。uniformLJEnergy用Ioi每对只计一次，等式不是前提。定义的总函数延拓在本x>0域不触及碰撞。"
+  },
+  "MD-1.7-IsoscelesAccessibleRegion": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "isoscelesaccessibleregion"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "全称x,y,v,w,E，仅假设能量等于E；由v²+w²/3≥0推出isoscelesPotential≤E。势的两倍斜边项与底边项完整，无需额外动态或正性前提。"
+  },
+  "MD-1.7-EquilateralTrimerMinimum": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "equilateraltrimerminimum"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "对任意三维非碰撞三点，势≥−3且等号当且仅当全部非同标距离为2^(1/6)。这是原文全局最低势与等边构型的正确精确化；三维三个点仍共面。每对φ+1=(2/r⁶−1)²≥0，等号恰在r⁶=2；未把约1.1225当精确值，未因sorry扣分。"
+  },
+  "MD-1.7-TrimerEnergyLowerBound": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "trimerenergylowerbound"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "任意非碰撞三粒子配置和任意速度，结论是动能加三对势≥−3；动能非负及每对势≥−1给出。与原文E<−3不可达一致；E>0部分按范围交第14条处理。"
+  },
+  "MD-1.7-TrimerSaddle": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "trimersaddle"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "存在正x为全部正共线参数的全局极小，且存在同一个正δ，横向任何足够小非零位移严格增势、纵向任何足够小非零位移严格减势，量词及严格性符合原文。δ可缩至小于x排除u=0。令A=2+2⁻¹²，B=2+2⁻⁶，则共线势=4(Ax⁻¹²−Bx⁻⁶)，唯一极小满足x⁶=2A/B<2；故φ′(x)<0，纵向二阶项φ′(x)y²/x为负，横向二阶项为正。"
+  },
+  "MD-1.7-TrimerEscapeLiteral": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "trimerescapeliteral"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "trimerescapeliteral_corrected",
+        "verdict": "NEEDS_HUMAN"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "literal保留逐粒子范数趋∞的字面解释；签名具真实Newton导数、单位LJ力、全时非碰撞、正能量、零质心/动量/角动量及等腰约束，无循环前提，但逐粒子结论过强。corrected保留全部资格并改为存在固定一对距离趋∞，改动方向合理；此候选的强极限结论尚需独立散射论证，不能由能量非负或现有反例直接认证。"
+  },
+  "MD-1.7.1-ChaosConditions": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "chaosConditions"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "chaosConditions准确为敏感依赖和拓扑传递的合取。敏感依赖依次量化∃ε>0、∀x∈D、∀δ>0、∃y∈D、∃t≥0，近邻及分离不等号正确；ε>0已自动排除y=x。传递用环境开集与D交等价于相对开集形式，起终点都在D。作为两个条件的谓词可用于任意F,D；解释为混沌真实系统时还须外部限定F为流、D不变。原文说at least，不能把本谓词称为混沌的充分必要定义；已有注释明确这只是选定的严格化。"
+  },
+  "MD-1.7.1-TransitivityErgodicityLiteral": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "transitivityergodicityliteral"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "transitivityergodicityliteral_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "literal在连续真实流和不变测度下断言拓扑传递↔测度遍历，忠实表达原句但普遍错误。corrected限制有限满支撑测度，仅断言遍历⇒拓扑传递，方向与条件正确；flowErgodic已含全部时间的测度保持。hf:C¹确保ODE唯一性，由isFlowOf得到群性质，故不缺流合成资格；连续性使开集时间饱和为开可测，有限测度复现可保证正向时间的传递。"
+  },
+  "MD-1.7.1-AnisotropicOscillator": {
+    "source_text_verdict": "PASS",
+    "original_version": {
+      "names": [
+        "anisotropicEnergy"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "PASS"
+    },
+    "corrected_versions": [],
+    "counterexamples": [],
+    "website_explanation": "PDF字形确认κ及κ₀。anisotropicAngular以x/√(x²+y²)代入4c³−3c，与cos3θ一致；参数分别κ₀(1−εc₃/2)、l₀(1+εc₃/2)，势的κ/2及平方和动能全部正确。r>0物理域与r=0总函数延拓已注明，未把数值实验参数或轨迹观察误作全称定理。"
+  },
+  "MD-1.7.2-FlowJacobianLiteral": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "variationalMatrixLiteral"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "variationalMatrixLiteral_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "literal确为fderiv(F t)在F t ξ处的取值，忠实保留PDF的z(t,ξ)取值点；导数作为连续线性算子与欧氏Jacobian矩阵等价。corrected改为在ξ处取值是标准初值变分矩阵。两者为定义，可对任意F作总函数定义；真实流和C¹资格用于后续理论。作为原文变分理论基础有取值点疑误，保留人工裁定。"
+  },
+  "MD-1.7.2-VariationalEquationLiteral": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "variationalequationliteral"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "variationalequationliteral_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "literal完整保留C¹向量场、每个F_t为C¹、真实流初值和时间ODE，以及全部ξ,t上的算子导数；右端复合顺序Df(F_tξ)∘W正确，但原文字面W使方程失效。corrected使用DF_t(ξ)后为正确标准变分方程。C¹向量场和全局真实解以唯一性及局部参数依赖给出所需时间可微性，无需额外假设F联合C²；sorry不构成签名失败。"
+  },
+  "MD-1.7.2-NearbyTrajectoryLiteral": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "nearby_trajectory_literal"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "nearby_trajectory_literal_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "固定t、ξ时以x→ξ的Fréchet小o严格化≈，扰动、基点、线性算子作用顺序均忠实。literal沿用错误取值点，不能成立。corrected改用DF_t(ξ)后正是HasFDerivAt的小o结论；只需每个F_t可微，故未要求真实流是合法推广，不是缺失的必要前提。未声称此结论关于t一致或对长时间有效。"
+  },
+  "MD-1.4-LegendreHamiltonian": {
+    "source_text_verdict": "NEEDS_HUMAN",
+    "original_version": {
+      "names": [
+        "hamiltonian_legendre_transform_literal"
+      ],
+      "fidelity_verdict": "PASS",
+      "mathematical_verdict": "NEEDS_HUMAN"
+    },
+    "corrected_versions": [
+      {
+        "name": "hamiltonian_legendre_transform_corrected",
+        "verdict": "PASS"
+      }
+    ],
+    "counterexamples": [],
+    "website_explanation": "逐项核对任意 n、配置相关 M、实值 U、q/p、IsUnit 和 PosDef。主声明及 _corrected：PASS，六项依次给有上界、sup=H、唯一达到点、全部速度处真实梯度 Mv、逆变换动量、能量对应；PosDef 含实对称性，是合理且已披露的机械背景补充。_literal：字面忠实性 PASS，仅可逆原句及其全部意涵被保留；数学有效性有原书疑误，不能作为任意可逆矩阵定理采信。没有把 sorry 当作失败依据。"
+  }
+}

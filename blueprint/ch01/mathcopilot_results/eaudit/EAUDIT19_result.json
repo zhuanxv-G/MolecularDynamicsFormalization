@@ -1,0 +1,364 @@
+{
+  "batch": "EAUDIT19",
+  "input_sha256": {
+    "BATCH_EAUDIT19.md": "cf031b8e92f9f9aca27363af352806c2c59d22e3909d50dba60d52c6b07996d2",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.6.1-MinimumGradientZero",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_BOUNDARY_MINIMUM_QUALIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.6.1-MinimumGradientZero",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.6.1",
+          "printed_page": "36–37",
+          "pdf_page": "59–60",
+          "statement_latex": "Regardless of the choice of boundary and/or the inclusion of non-pairwise potentials, the minimum of the potential energy occurs where\n\\[\\nabla U=0,\\]\nwhich gives in general a nonlinear system of $N_c$ equations in $N_c$ unknowns to be solved for the position vector $\\boldsymbol q^*$ associated to mechanical equilibrium.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "NEEDS_HUMAN",
+              "detail": "不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。"
+            },
+            {
+              "code": "SOURCE_BOUNDARY_MINIMUM_QUALIFICATION",
+              "status": "NEEDS_HUMAN",
+              "detail": "不受限制的边界/约束极小未必全梯度为0；需明确可微且全空间局部极小（或约束问题的内点）。当前两个声明都仅覆盖这一修正版。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.minimumgradientzero",
+          "extra_assumptions": [
+            "可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。"
+          ],
+          "old_ids": [
+            "CH01-166"
+          ],
+          "source_page_verification": "R4_REVIEW_RENDERED; R4_PAGES.pdf 附件第10,11页；证据见 /workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/page_inventory.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_BOUNDARY_MINIMUM_QUALIFICATION",
+            "stage": "A/C",
+            "detail": "不受限制的边界/约束极小未必全梯度为0；需明确可微且全空间局部极小（或约束问题的内点）。当前两个声明都仅覆盖这一修正版。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              10,
+              11
+            ],
+            "printed_pages": [
+              36,
+              37
+            ],
+            "original_pdf_pages": [
+              59,
+              60
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-3.png",
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-4.png"
+            ],
+            "attachment_content_sha256": {
+              "10": "bd9bdb055c8496e1cd74524b7d52929451135b160642983684b0b5a7ef14e3eb",
+              "11": "d8debce673a36c427fca4acf0244039db918506ba94a9bb7209d9fb91a367e93"
+            },
+            "comparison": "附件第10页印刷36页末的 Regardless ... occurs where、∇U=0，及第11页印刷37页首 which gives ... mechanical equilibrium. 跨页拼接完整一致；non-pairwise 的断行连字符归一化、N_c 下标及 q* 均核对。保留 Regardless of the choice of boundary 的原句，不静默改为内点版本。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 10,
+            "comparison": "minimumgradientzero 与 _corrected 的签名完全相同：对所有 n、全空间实势 U、位置 q，以 q 处可微及全空间 IsLocalMin 为前提，得到标准欧氏梯度为0。无受限可行集，也无 IsLocalMinOn 边界版本。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.minimumgradientzero",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "MD.Ch01.minimumgradientzero：在[EXTRA]明示的无约束内点解释下，数学签名 PASS。n∈ℕ，U:EuclideanSpace ℝ (Fin n)→ℝ，q 属于同一空间；DifferentiableAt ℝ U q 与全空间 IsLocalMin U q 足以推出 gradient U q=0。它给必要条件，没有将驻点偷换为充分极小条件；n 维梯度等于0等价于 n 个分量方程，不需另断言这些方程对每个 U 都非线性。MD.Ch01.minimumgradientzero_corrected：PASS，为同一个正确的无约束内点必要条件；其“修正”是解释范围的更正而非新签名。原书“Regardless of boundary”若包括受约束边界极小则过强，现有 Lean 也未覆盖这种解释。[EXTRA]已诚实披露可微、内点及边界限制，但不能据此认定原书无条件原句成立。故源文及总 verdict 保持 NEEDS_HUMAN。",
+        "counterexample": "U(x)=x，约束域[0,1]；q*=0 是约束全局最小点，但 U′(0)=1。该例反驳原句把边界极小也一概包括的读法，不反驳 IsLocalMin U 0 这个全空间前提下的 Lean 定理，因为此例不满足该前提。另如 U(x)=|x| 在0极小但不可微，也说明常规梯度结论需要可微资格。",
+        "suggested_fix": "保留原文并请人工确定 boundary 是否仅指已吸收进光滑势或周期流形的边界条件。修正表述应明确“在可微势的无约束（或可行域内点）局部极小处”。受约束边界应另用可行方向/法锥或约束驻点条件，不能笼统写切空间全梯度必为0。"
+      }
+    },
+    {
+      "source_id": "MD-1.6.1-ForceLinearization",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              12
+            ],
+            "printed_pages": [
+              37
+            ],
+            "original_pdf_pages": [
+              60
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-4.png"
+            ],
+            "attachment_content_sha256": {
+              "12": "d8debce673a36c427fca4acf0244039db918506ba94a9bb7209d9fb91a367e93"
+            },
+            "comparison": "附件第12页印刷37页中 At the equilibrium point ...，梯度近似式、Then, letting ...、δq=q−q*、平衡点(q*,0)和两个线性化微分方程，逐项与 JSON 相符。特别核对 M^{-1}、力方程负号、Hessian 作用于 δq 的次序及 ≈ 与线性化系统的区分。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 11,
+            "comparison": "已展开 Position、Momentum、PhaseSpace、PotentialEnergy、matrixAction，并核对 force_linearization 的完整合取结论：真实 Hamilton 向量场在(q*,0)的 Fréchet 导数，以及梯度减去 Hessian 线性项为位置增量的小o。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.force_linearization",
+        "verdict": "PASS",
+        "explanation": "MD.Ch01.force_linearization：PASS。对任意有限维 n、常实方阵 M、实势 U、qstar，ContDiffAt ℝ 2 U qstar 保证梯度可微，heq 要求平衡梯度为0。相空间为位置×动量的两个相同维欧氏空间，matrixAction 是矩阵的真实线性作用。所列导数将任意(δq,δp)送到(M⁻¹δp,−D(gradient U)(qstar)δq)，完整保留两条线性化运动方程，后者的 D gradient 即 Hessian。第二结论为 gradient U(q)−D(gradient U)(qstar)(q−qstar)=o(‖q−qstar‖)，因此保留原文的平衡点梯度近似且没有把非线性系统和线性系统宣称为全局精确相同。M 不要求正定或可逆，是对取定线性系数 Matrix.inv M 的数学推广；原机械质量矩阵取正定可逆时正好回到正文。该推广与[EXTRA]已披露的一般常 M 一致，不会使这个导数/小o结论失真；不能据此反称奇异 M 是合法机械质量矩阵。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.6.1-MinimumHessianLiteral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_HESSIAN_DEFINITE_VS_SEMIDEFINITE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.6.1-MinimumHessianLiteral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.6.1",
+          "printed_page": "37",
+          "pdf_page": "60",
+          "statement_latex": "At the minimum of the potential energy, $U''$ is a positive definite symmetric matrix.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "NEEDS_HUMAN",
+              "detail": "局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。"
+            },
+            {
+              "code": "SOURCE_HESSIAN_DEFINITE_VS_SEMIDEFINITE",
+              "status": "NEEDS_HUMAN",
+              "detail": "原文极小条件仅推出 Hessian 半正定，不能推出正定；原书的 positive definite 转录正确但数学需勘误。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.minimumhessianliteral",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-169"
+          ],
+          "source_page_verification": "R4_REVIEW_RENDERED; R4_PAGES.pdf 附件第13页；证据见 /workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/page_inventory.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_HESSIAN_DEFINITE_VS_SEMIDEFINITE",
+            "stage": "A/C",
+            "detail": "原文极小条件仅推出 Hessian 半正定，不能推出正定；原书的 positive definite 转录正确但数学需勘误。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              13
+            ],
+            "printed_pages": [
+              37
+            ],
+            "original_pdf_pages": [
+              60
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-4.png"
+            ],
+            "attachment_content_sha256": {
+              "13": "d8debce673a36c427fca4acf0244039db918506ba94a9bb7209d9fb91a367e93"
+            },
+            "comparison": "附件第13页印刷37页的单句 At the minimum of the potential energy, U″ is a positive definite symmetric matrix. 与 statement_latex 完全相符；原页确实是 positive definite，并非 positive semidefinite。原书疑误须保留。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 12,
+            "comparison": "已分别核对 minimumhessianliteral、_corrected、_counterexample。两向量内积式给对称性；字面版对每个非零 v 要求严格正二次型，修正版只将该不等号改为非负；两版保留 C² 和全空间局部极小。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.minimumhessianliteral",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "MD.Ch01.minimumhessianliteral：字面忠实性 PASS，但原书数学疑误 NEEDS_HUMAN。对任意 n、U:Position n→ℝ、q，以全局 ContDiff ℝ 2 U 和 IsLocalMin U q 为前提；合取结论确实完整包括 Hessian 的所有 u,v 对称性，以及对所有非零 v 的正定性，没有把正定偷换成半正定。该正定结论在原书资格下不成立，依任务不把忠实版或 sorry 本身判成实现 FAIL。MD.Ch01.minimumhessianliteral_corrected：PASS。相同 C²、全空间局部极小前提下 Hessian 对称且二次型非负，是正确必要条件；仍逐一覆盖所有非零方向，零方向亦自动为0。MD.Ch01.minimumhessianliteral_counterexample：PASS。U(x)=x⁴ 在0有局部极小且二阶导数为0，足以反驳正定；该函数实际甚至是严格全局极小，因而增加“严格极小”也救不了字面版。标量例经一维欧氏空间的标准识别对应 n=1。总判 NEEDS_HUMAN；未因修正版含 sorry 否定其签名。",
+        "counterexample": "U(x)=x⁴，q=0，U∈C∞，且 x≠0 时 U(x)>U(0)=0；然而 U″(0)=0，对非零方向 v=1 的 Hessian 二次型为0。该例满足字面版的局部极小与C²前提，却不满足其严格正结论；与摘录的 _counterexample 一致。",
+        "suggested_fix": "保留 literal 为忠实原文并标记 NEEDS_HUMAN；采用所列 _corrected 的对称半正定必要条件作为勘误。若坚持正定，需要另加适当非退化 Hessian/强凸等实质前提，并明确这是新增资格。严格局部极小本身不足以替代这些资格。"
+      }
+    },
+    {
+      "source_id": "MD-1.6.1-ComplexNormalMode",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              14
+            ],
+            "printed_pages": [
+              37
+            ],
+            "original_pdf_pages": [
+              60
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-4.png"
+            ],
+            "attachment_content_sha256": {
+              "14": "d8debce673a36c427fca4acf0244039db918506ba94a9bb7209d9fb91a367e93"
+            },
+            "comparison": "附件第14页印刷37页 Associated to each eigenvalue pair ... 的整段、ξ 与共轭 ξ、两个指数的 ±iΩt、任意复系数 a,b 及句末逗号均与 JSON 相符。原文没有在该复解公式处要求结果为实。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 13,
+            "comparison": "已逐项检查 complexnormalmode 中实矩阵的复化、η非零、+iΩ 特征方程、共轭向量非零、−iΩ 共轭特征方程，以及对所有复系数和所有实时间的 HasDerivAt 结论。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.complexnormalmode",
+        "verdict": "PASS",
+        "explanation": "MD.Ch01.complexnormalmode：PASS。n∈ℕ，A 是实 n×n 矩阵，η∈ℂⁿ 非零，Ω∈ℝ；前提 A_Cη=(iΩ)η，A_C 是 A 的逐项实到复嵌入。结论先确认 conjugate η 非零，再确认 A_C conjugate η=(−iΩ)conjugate η，实性正是此推论所需；最后对任意 a,b∈ℂ 和任意 t∈ℝ，给出 z(t)=a exp(iΩt)η+b exp(−iΩt)conjugate η 的真实导数为 A_C z(t)。该表述完整覆盖共轭特征对及其复线性组合解，未以零向量充当特征向量，也未把 a,b 限制为实。Ω=0 时共轭解可退化/重合，签名没有多声称其线性独立，故仍正确。A 泛化为任何实矩阵而非限定机械块矩阵，是由同一特征方程导出解公式的有效推广。[EXTRA] 中非零及共轭特征方程均真实出现在声明里。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.6.1-RealNormalMode",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_REAL_RECAST_QUALIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.6.1-RealNormalMode",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.6.1",
+          "printed_page": "37",
+          "pdf_page": "60",
+          "statement_latex": "or recast in real form as ($\\alpha,\\beta$ real coefficients):\n\\[\\boldsymbol z(t)=\\alpha[\\sin(\\Omega t)\\operatorname{Re}(\\boldsymbol\\xi)+\\cos(\\Omega t)\\operatorname{Im}(\\boldsymbol\\xi)]+\\beta[\\cos(\\Omega t)\\operatorname{Re}(\\boldsymbol\\xi)-\\sin(\\Omega t)\\operatorname{Im}(\\boldsymbol\\xi)].\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "u=Reξ,v=Imξ，Au=-Ωv、Av=Ωu来自实矩阵复特征向量方程；realNormalMode展开即原式。"
+          ],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_REAL_RECAST_QUALIFICATION",
+              "status": "NEEDS_HUMAN",
+              "detail": "上一原句允许任意复系数 a,b；该全族并不都为实。recast in real form 需说明选取实值解或取复解实/虚部，并给出相应系数关系；当前声明仅验证实公式为解。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.realnormalmode",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-173"
+          ],
+          "source_page_verification": "R4_REVIEW_RENDERED; R4_PAGES.pdf 附件第15页；证据见 /workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/page_inventory.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_REAL_RECAST_QUALIFICATION",
+            "stage": "A/C",
+            "detail": "上一原句允许任意复系数 a,b；该全族并不都为实。recast in real form 需说明选取实值解或取复解实/虚部，并给出相应系数关系；当前声明仅验证实公式为解。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              15
+            ],
+            "printed_pages": [
+              37
+            ],
+            "original_pdf_pages": [
+              60
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-4.png"
+            ],
+            "attachment_content_sha256": {
+              "15": "d8debce673a36c427fca4acf0244039db918506ba94a9bb7209d9fb91a367e93"
+            },
+            "comparison": "附件第15页印刷37页 or recast in real form as (α,β real coefficients): 与完整实式相符。两组括号的 sin/cos 次序、Re ξ 与 Im ξ 的位置以及 β 组中的减号均逐项一致。保留“recast”原词；它与前一段任意复 a,b 的适用范围须人工澄清。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 14,
+            "comparison": "已展开 realNormalMode，核对任意实赋范空间、连续实线性算子、实参数 Ω,α,β、hu:Au=−Ωv、hv:Av=Ωu，以及所有实 t 的解导数。此声明证明实公式确是解，但未显式陈述它与前一条任意复系数公式之间的转换/实值条件。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.realnormalmode",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "MD.Ch01.realnormalmode：就所陈述的实解公式而言 PASS。对任意实赋范向量空间 E、A:E→L[ℝ]E、Ω,α,β∈ℝ、u,v∈E，只需 Au=−Ωv 和 Av=Ωu，即对所有实 t 得 z′(t)=Az(t)。展开 MolecularDynamics.realNormalMode，z 恰为 α(sin(Ωt)u+cos(Ωt)v)+β(cos(Ωt)u−sin(Ωt)v)，与原式相同；取 u=Re ξ、v=Im ξ 时 hu,hv 正是实矩阵 +iΩ 特征方程的实虚部。不需要额外的非零/独立条件来使这一解公式成立，泛化到赋范空间也合理。需要区分的是：前一条 a,b 为任意复数的 z 不一定为实，不能全部直接“改写”为此 α,β 为实的式子。当前声明没有给出系数约束或取实部的桥接，因此不能把它的 PASS 扩展为已证明原书无条件的复实全族等价。原文若意指真实物理解则正确，但省略了适用范围；依“原书疑误/歧义保留”要求，总判 NEEDS_HUMAN，非把正确的 ODE 声明判成 FAIL。",
+        "counterexample": "取 A=[[0,−1],[1,0]]、Ω=1、ξ=(1,−i)；有 Aξ=iξ。前条允许 a=1,b=0，此时 z(0)=ξ=(1,−i)，不是实向量，无法等于任何实 α,β 代入本条实公式在0的值。该例只否定“所有任意复系数解都能原样写成实式”的读法，不否定 realnormalmode。",
+        "suggested_fix": "保留原文，人工确认 recast 指的是实值物理解/实解空间。明确补充：若 w=e^{iΩt}ξ，则本条 z=β Re(w)+α Im(w)；它等于前条取 a=(β−iα)/2、b=(β+iα)/2 的复式，此时 b=conjugate a。也可说明取任意复解的实部得到实解。不要把一般任意 a,b 与实 α,β 的两族直接等同；Ω=0 的退化情况不应额外宣称共轭系数是实值性的无条件必要条件。"
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

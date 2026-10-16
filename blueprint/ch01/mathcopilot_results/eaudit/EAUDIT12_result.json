@@ -1,0 +1,301 @@
+{
+  "batch": "EAUDIT12",
+  "input_sha256": {
+    "BATCH_EAUDIT12.md": "1bbbf91c3dc107097af57da73ca6d01e58c4e81a009ac2cb92974cbb625a329b",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.1.2-Coulomb",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            8
+          ],
+          "book_pdf_pages": "35",
+          "printed_pages": "12",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-08.png"
+          ],
+          "source_check": "附件第8页（书p.12）Coulomb段的英文、CQ_iQ_j/(εr_ij)、ε>0和C正系数说明均对应；没有原页并不存在的导数符号定理。",
+          "covered_lean_declarations": [
+            "MD.Ch01.coulombPotential"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.coulombPotential",
+        "verdict": "PASS",
+        "explanation": "PASS。C、介电常数和距离是严格正实数子类型，电荷Qᵢ,Qⱼ为任意实数；返回值恰为C QᵢQⱼ/(dielectric·r)。分母严格正且原电荷符号未受限制，[EXTRA]全部落实。此为径向势的定义，原文电荷同号/异号影响作为定性背景，没有把吸引排斥当作已证明的动力学结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.1.2-Cutoff",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            9
+          ],
+          "book_pdf_pages": "35",
+          "printed_pages": "12",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-09.png"
+          ],
+          "source_check": "附件第9页（书p.12）cutoff两句逐字对应，严格r>r_cut、at least continuously differentiable、preferably smoother及Exercise 11均保留。",
+          "covered_lean_declarations": [
+            "MD.Ch01.smoothCutoff"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.smoothCutoff",
+        "verdict": "PASS",
+        "explanation": "PASS。smoothCutoff是修饰后势φ的性质：r_cut>0、φ在正距离域C¹、对所有r>r_cut取零；没有在r=0要求C¹，故不排除Coulomb原点奇性。由于r_cut位于正距离域内部，C¹与右侧恒零还蕴含截断点的函数和一阶导数接零，无须另把边界点写入截零量词。原文没有给出具体开关函数或要求在整个截断半径以下精确等于未修饰Coulomb势；未引入这些额外结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.1.2-Yukawa",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_DEBYE_LENGTH_DIMENSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.1.2-Yukawa",
+          "kind": "definition",
+          "label": null,
+          "section": "1.1.2",
+          "printed_page": "12",
+          "pdf_page": "35",
+          "statement_latex": "More accurate treatments of the long range behavior include the use of an exponential term involving the Debye length $\\kappa$ which models screening due to the presence of a polar solvent, in which case the potential is modified to have the form of a Yukawa potential:\n\\[\\varphi_{ij}^{\\mathrm{screened}}(r_{ij})=\\frac{CQ_iQ_j}{\\epsilon r_{ij}}e^{-\\kappa r_{ij}}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "保留原文κ；不把指数改成-r/κ。原文称Debye length但式子以逆长度参数使用，待导师判断。"
+          ],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_DEBYE_LENGTH_DIMENSION",
+              "stage": "A",
+              "field": "statement_latex / context_notation",
+              "detail": "原书同时使用Debye length与exp(−κr)，长度乘长度不能直接作无量纲指数。保留原文，κ究竟应改称逆长度还是将指数改为−r/κ，需人工裁定。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.yukawaScreened",
+          "extra_assumptions": [
+            "[EXTRA] 19号：正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。"
+          ],
+          "old_ids": [
+            "CH01-027"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R1_PAGES.pdf 附件第10页；本次 R1 独立逐页比对；证据目录 .mathcopilot/reviews/ch01_eaudit/R1_evidence/"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_DEBYE_LENGTH_DIMENSION",
+            "stage": "A",
+            "field": "statement_latex / context_notation",
+            "detail": "原书同时使用Debye length与exp(−κr)，长度乘长度不能直接作无量纲指数。保留原文，κ究竟应改称逆长度还是将指数改为−r/κ，需人工裁定。"
+          }
+        ],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            10
+          ],
+          "book_pdf_pages": "35",
+          "printed_pages": "12",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-10.png"
+          ],
+          "source_check": "附件第10页（书p.12）明确印为Debye length κ和exp(−κr_ij)。JSON忠实，不能在原文栏静默换成−r/κ。",
+          "covered_lean_declarations": [
+            "MD.Ch01.yukawaScreened",
+            "MD.Ch01.yukawaScreened_corrected_a",
+            "MD.Ch01.yukawaScreened_corrected_b"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.yukawaScreened",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "yukawaScreened：字面公式及C、dielectric、r的正子类型PASS；κ按实参数保留，未暗改原书指数。原文称κ为长度，而指数−κr若无量纲则κ应有逆长度量纲，此矛盾需人工确认。yukawaScreened_corrected_a：PASS，κ>0解释为逆屏蔽长度，保留−κr；yukawaScreened_corrected_b：PASS，ℓ>0解释为长度，使用−r/ℓ。两修正版在κ=1/ℓ时一致，电荷仍任意实数，其他正域条件相符。汇总NEEDS_HUMAN来自原书参数称谓与公式的冲突，不来自修正版的代数。",
+        "counterexample": null,
+        "suggested_fix": "原文栏保持不变并保留疑误标志。人工在两种已给修正版中选定参数约定；不要同时称κ为长度又把−κr解释为无量纲屏蔽指数。"
+      }
+    },
+    {
+      "source_id": "MD-1.1.2-AngleBond",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION_DUPLICATED_K",
+          "FALSE_DUPLICATION_CONTEXT",
+          "LEAN_ANGLE_NONZERO_DOMAIN_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.1.2-AngleBond",
+          "kind": "definition",
+          "label": null,
+          "section": "1.1.2",
+          "printed_page": "13",
+          "pdf_page": "36",
+          "statement_latex": "When a trio of atoms with labels $i$, $j$, and $k$ admits a pair of length bonds, say $(i,j)$ and $(j,k)$, then an additional three-body term will need to be incorporated:\n\\[\\varphi_{ijk}^{\\mathrm{ang}}=\\frac{k_{ijk}^{\\mathrm{ang}}}{2}(\\theta_{ijk}-\\theta_{ijk}^0)^2,\\]\nwhere the angle $\\theta_{ijk}$ is given in terms of the positions as\n\\[\\theta_{ijk}=\\arccos\\frac{(\\boldsymbol q_i-\\boldsymbol q_j)\\cdot(\\boldsymbol q_j-\\boldsymbol q_k)}{r_{ij}r_{jk}}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "保留原页(qᵢ−qⱼ)·(qⱼ−qₖ)的方向。原文是i, j, and k，未重复k。物理上下文取k>0、两键长非零；当前Lean参数并未强制这些域条件。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "SOURCE_TRANSCRIPTION_DUPLICATED_K",
+              "stage": "A",
+              "field": "statement_latex",
+              "detail": "JSON多写一个k；应转录为with labels i, j, and k admits。"
+            },
+            {
+              "code": "FALSE_DUPLICATION_CONTEXT",
+              "stage": "A",
+              "field": "context_notation[0]",
+              "detail": "原页没有重复and k；删除该错误核页说明。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.angleBondModel",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-028",
+            "CH01-029"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R1_PAGES.pdf 附件第11页；本次 R1 独立逐页比对；证据目录 .mathcopilot/reviews/ch01_eaudit/R1_evidence/"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_TRANSCRIPTION_DUPLICATED_K",
+            "stage": "A",
+            "field": "statement_latex",
+            "detail": "JSON多写一个k；应转录为with labels i, j, and k admits。"
+          },
+          {
+            "code": "FALSE_DUPLICATION_CONTEXT",
+            "stage": "A",
+            "field": "context_notation[0]",
+            "detail": "原页没有重复and k；删除该错误核页说明。"
+          },
+          {
+            "code": "LEAN_ANGLE_NONZERO_DOMAIN_MISSING",
+            "stage": "C",
+            "field": "MD.Ch01.angleBondModel",
+            "detail": "两键非零条件未编码；两点重合时Lean总除法及arccos仍给值，超出原书角度域。"
+          }
+        ],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            11
+          ],
+          "book_pdf_pages": "36",
+          "printed_pages": "13",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-11.png"
+          ],
+          "source_check": "附件第11页（书p.13）实际印为“with labels i, j, and k admits”，只有一个k；JSON的“i,j,k and k”以及context_notation所称重复and k均不符。两条角键公式（尤其(q_i−q_j)·(q_j−q_k)的方向）与原页一致，不能借修转录改公式。",
+          "covered_lean_declarations": [
+            "MD.Ch01.angleBondModel"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.angleBondModel",
+        "verdict": "FAIL",
+        "explanation": "公式在非零两键长上PASS，V3、内积、两范数乘积、arccos及弹簧系数均与原页一致。但当前angleBondModel接受所有三位置，没有非零键长的子类型或前提，context_notation所说“两键长非零”没有落实，也未声明零分母仅是辅助总化扩展。Lean的除零为0会在原书角度未定义的重合构形给出实势，故按完整对象/域要求FAIL。k正也只是物理上下文，并非签名前提；本次不把原书的有向差约定自行换成通常补角约定。",
+        "counterexample": "取k=1、θ₀=0、qᵢ=qⱼ=qₖ=0。原书比值为0/0，角未定义；Lean把除法结果总化为0，Real.arccos 0=π/2，模型返回π²/8。此例说明域不符，不是否定非零键长上的公式。",
+        "suggested_fix": "英文JSON按原页删除多余k，已在corrected_json给出。Lean后续应加两键长正/非零的域谓词或子类型；若保留辅助总函数，明确总化约定并另给在非退化构形域上的模型。此轮不修改工程。"
+      }
+    },
+    {
+      "source_id": "MD-1.1.2-GayBerne",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "LEAN_GAY_BERNE_PHYSICAL_DOMAIN_MISSING"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "LEAN_GAY_BERNE_PHYSICAL_DOMAIN_MISSING",
+            "stage": "C",
+            "field": "MD.Ch01.gayBerneModel及所有gayBerne辅助定义",
+            "detail": "单位取向、非零分离、根号正与非零分母等源上下文条件没有进入类型或前提。"
+          }
+        ],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            12,
+            13
+          ],
+          "book_pdf_pages": "39–40",
+          "printed_pages": "16–17",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-12.png",
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-13.png"
+          ],
+          "source_check": "附件第12–13页（书pp.16–17）逐项核对φ_GB、Δ、ε₁、ε₂、W、χ及χ′：ε_GB确为ε₁ε₂，无ε₂平方；Δ确为‖r‖−σ₀/√W，原页无补加σ₀。χ′指数为1/μ。公式转录忠实。",
+          "covered_lean_declarations": [
+            "MD.Ch01.gayBerneModel"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.gayBerneModel",
+        "verdict": "FAIL",
+        "explanation": "全部代数展开在原书正常域上PASS：r=q₂−q₁、r̂=‖r‖⁻¹r，ε₁=ε₀/√(1−χ²(u₁·u₂)²)，ε₂=W(...,χ′)，W的两分母和正负号、χ与χ′的定义均一致。但Lean参数u₁,u₂仅为任意V3，不是原书的单位取向；q₁≠q₂、根号内严格正、σₛ/εₛ/μ及各有理式分母非零、Δ≠0均未编码。context_notation已经明确这些域限定，却无相应[EXTRA]总化说明或有效域模型。总除法、Real.sqrt及Real.rpow会对非法参数继续返回值，因此完整域审校FAIL；不以旧库不同公式作为依据。",
+        "counterexample": "令全部实参数ε₀=σ₀=σₑ=σₛ=εₑ=εₛ=μ=1，q₁=0，q₂=e₁，u₁=u₂=e₁（单位向量）。则χ=χ′=0、W=1、Δ=1−1=0。原书(σ₀/Δ)的势未定义；Lean以1/0=0返回0。另取非单位u也被当前签名接受。",
+        "suggested_fix": "增加明确的Gay–Berne有效域谓词/子类型，至少覆盖取向单位、分离非零、根号正及所有分母非零，并在该域上提供模型。可保留当前表达式为总化辅助公式；不得把其非法域值当原书物理势，也不得擅加ε₂平方或修改Δ。"
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

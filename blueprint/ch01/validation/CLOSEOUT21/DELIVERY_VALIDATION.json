@@ -1,0 +1,68 @@
+{
+  "status": "local_final_acceptance_passed",
+  "website_pass": 110,
+  "latest_return_counts": {
+    "PASS": 62,
+    "NEEDS_HUMAN": 21,
+    "FAIL": 10
+  },
+  "local_repairs_not_resubmitted": 10,
+  "awaiting_mentor": 21,
+  "errata_records": 22,
+  "repairing": 0,
+  "new_website_packages": 0,
+  "full_check": "passed",
+  "full_check_report_sha256": "82a2b0f8e3679415bae47d297e4893a0e9ab84b80b1a44a63e9270b3fea5843f",
+  "lean_sha256": "68dfa6b8204a51b443eee6127ebc2856e525299ad80fb0480dc45fabb88d1ef4",
+  "source_sha256": "c2236b43528a1eee9f9ab49175dc9a0468056af3e18f831c97e8b26258e81c6e",
+  "formal_library_sorry": 0,
+  "frozen_inputs": 302,
+  "declarations": {
+    "total": 206,
+    "definitions": 90,
+    "proved": 70,
+    "unproved": 46,
+    "unproved_reasons": {
+      "缺大型理论": 30,
+      "原书疑误不证": 13,
+      "时间盒止": 3
+    }
+  },
+  "single_file_compiles": 10,
+  "all_declarations_axiom_checked": 206,
+  "raw_returns_preserved": 93,
+  "mathematical_scope_check": {
+    "existing_declarations_changed": [
+      "compactNewton",
+      "harmonic_solution",
+      "scalarMechanicalModel",
+      "periodicBondEnergy",
+      "periodic_translation_third_law"
+    ],
+    "new_declarations": [
+      "AngleBondValidDomain",
+      "GayBerneValidDomain",
+      "RhombicLatticeValidDomain",
+      "UnitCellValidDomain",
+      "angleBondOnDomain",
+      "gayBerneOnDomain",
+      "harmonicEnergy",
+      "harmonicEnergy_eq_massHamiltonian",
+      "rhombicLatticeOnDomain",
+      "scalarMechanicalEnergy",
+      "unitCellBox",
+      "unitCellOnDomain"
+    ],
+    "existing_unchanged": 189,
+    "lj_time_scaling_theorems_unchanged": true,
+    "periodic_momentum_main_unchanged": true,
+    "downstream_adjustments": []
+  },
+  "heartbeat_end_to_end": "NOT_TESTED",
+  "not_verified": [
+    "修复后网站复审（用户决定不再进行）",
+    "导师裁定",
+    "46项未证陈述"
+  ],
+  "chapter6": "148条已验证检查点f32c2974后暂停；不自动恢复"
+}

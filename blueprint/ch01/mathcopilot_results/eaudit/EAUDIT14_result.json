@@ -1,0 +1,347 @@
+{
+  "batch": "EAUDIT14",
+  "input_sha256": {
+    "BATCH_EAUDIT14.md": "13b7018ec376a19df4f3a57c4174fe53c10199eabe60f14a74b1ecf341392236",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.5.2-FirstIntegral",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_WORD_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.2-FirstIntegral",
+          "kind": "definition",
+          "label": null,
+          "section": "1.5.2",
+          "printed_page": "28",
+          "pdf_page": "51",
+          "statement_latex": "Another term for constant of motion is first integral. In general, if we have a dynamical system $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, a first integral is a smooth function $I(\\boldsymbol z)$ which is constant along solutions, for all values of the initial condition.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "IsFirstIntegralOn量化每条真实曲线及其存在区间，不附加全局存在。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "SOURCE_WORD_MISMATCH",
+              "detail": "原书为 Another term for constant of motion is first integral；JSON 将 constant 改成 constants。应保留原书单数。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.smoothFirstIntegral",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-109"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R3_PAGES.pdf; R3_review.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_WORD_MISMATCH",
+            "detail": "原书为 Another term for constant of motion is first integral；JSON 将 constant 改成 constants。应保留原书单数。"
+          }
+        ],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第1页（印刷页28，原书PDF页51）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第1页逐像素相同；视觉核对依据：r3_evidence/page1.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.smoothFirstIntegral"
+        ],
+        "verdict": "PASS",
+        "explanation": "smoothFirstIntegral 的对象是有限维实欧氏空间上的向量场 f、区域 Q 和实值 I；结论同时要求 Q 上 C∞ 及 IsFirstIntegralOn。后者遍历所有开放时间区间、所有留在 Q 中并满足真实 HasDerivAt 的解，再量化任意两时刻，准确表达所有初值解上的常性，不偷加全局存在。Q 是原文定义的区域化参数；取 univ 即全空间版本。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-FirstIntegralCriterion",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PROOF_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.2-FirstIntegralCriterion",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.5.2",
+          "printed_page": "28",
+          "pdf_page": "51",
+          "statement_latex": "Since this should hold everywhere, the condition for $I$ to be a first integral is that $\\nabla I\\cdot f\\equiv0$.",
+          "proof_latex": "Let $\\boldsymbol z(t):t\\in\\mathbb R$ be a solution, then\n\\[I(\\boldsymbol z(t))\\equiv I(\\boldsymbol z(0))\\Rightarrow0\\equiv\\frac{\\mathrm d}{\\mathrm dt}I(\\boldsymbol z(t))=\\nabla I(\\boldsymbol z(t))\\cdot\\dot{\\boldsymbol z}(t)=\\nabla I(\\boldsymbol z(t))\\cdot f(\\boldsymbol z(t)).\\]",
+          "proof_note": "按渲染原页逐字转录原文论证。",
+          "context_notation": [],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "SOURCE_PROOF_TRANSCRIPTION",
+              "detail": "原页写 Let z(t) : t ∈ ℝ be a solution, then，且链式法则左端使用恒等号 ≡；JSON 改成括号及普通等号。条件的最终符号也是 ≡ 0。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.firstintegralcriterion",
+          "extra_assumptions": [
+            "开放域、f局部C1确保每个初值局部解存在；I可微；微分作用=梯度内积另由firstIntegral_gradient_criterion。"
+          ],
+          "old_ids": [
+            "CH01-110"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R3_PAGES.pdf; R3_review.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PROOF_TRANSCRIPTION",
+            "detail": "原页写 Let z(t) : t ∈ ℝ be a solution, then，且链式法则左端使用恒等号 ≡；JSON 改成括号及普通等号。条件的最终符号也是 ≡ 0。"
+          }
+        ],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第2页（印刷页28，原书PDF页51）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第1页逐像素相同；视觉核对依据：r3_evidence/page1.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.firstintegralcriterion"
+        ],
+        "verdict": "PASS",
+        "explanation": "对任意完备实赋范空间 E，开放 Q、Q 上局部 C¹ 向量场和可微 J，给出第一积分与每点 dJ(f)=0 的双向等价。完备性、局部 C¹ 和开放域提供从每个初值出发的局部解，从而必要方向不因缺乏解而真空成立；充分方向由链式法则及区间连通性成立。以连续线性微分替代梯度内积是等价且更一般的表达，未把梯度相等式当作额外结论。原文 smooth 类的判据在更弱可微类中仍成立。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-PlanarGraphReduction",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_PUNCTUATION",
+          "SOURCE_MISSING_NONDEGENERACY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.2-PlanarGraphReduction",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.5.2",
+          "printed_page": "28",
+          "pdf_page": "51",
+          "statement_latex": "In principle such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:\n\\[\\frac{\\mathrm dx}{\\mathrm dt}=g(x,\\psi(x)).\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "正文前句二维f=(g,h)且第一积分I(x,y)=I0；不把IsFirstIntegralOn当证明目标假设，它是本条原文已有第一积分。"
+          ],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_PUNCTUATION",
+              "detail": "原页为 In principle such an equation，principle 后无逗号。"
+            },
+            {
+              "code": "SOURCE_MISSING_NONDEGENERACY",
+              "detail": "原书未写 ∂I/∂y ≠ 0，不能无条件在每点把水平集写成 y=ψ(x)。保留原文；Lean 显式限定非退化点，是合理的有条件版本。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.planargraphreduction",
+          "extra_assumptions": [
+            "对y偏导非零，真实strict导数，局部时间窗；原文省略隐函数非退化条件。"
+          ],
+          "old_ids": [
+            "CH01-111",
+            "CH01-112"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R3_PAGES.pdf; R3_review.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PUNCTUATION",
+            "detail": "原页为 In principle such an equation，principle 后无逗号。"
+          },
+          {
+            "code": "SOURCE_MISSING_NONDEGENERACY",
+            "detail": "原书未写 ∂I/∂y ≠ 0，不能无条件在每点把水平集写成 y=ψ(x)。保留原文；Lean 显式限定非退化点，是合理的有条件版本。"
+          }
+        ],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第3页（印刷页28，原书PDF页51）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第1页逐像素相同；视觉核对依据：r3_evidence/page1.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.planargraphreduction"
+        ],
+        "verdict": "PASS",
+        "explanation": "量词覆盖任意平面向量场、区域、第一积分、真实解及区间内基点。hJ 是该点严格微分，hpartial 精确为 y 方向微分非零。结论给出可微图、附近整个水平集与图的双向等价、原轨道在局部时间窗的图表示及第一坐标的约化 ODE，非仅假设了所需结论。条件化签名正确；原句无条件措辞另标 NEEDS_HUMAN。",
+        "counterexample": "原句若无非退化条件：J(x,y)=x，水平集 J=0 是竖直线，不能在原点邻域成为 y=ψ(x)；可取 f=(0,1)，J 确为第一积分。",
+        "suggested_fix": "保留原文转录，并在资格说明中明确 ∂J/∂y≠0；退化情形另选坐标或单独处理。"
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-PlanarQuadrature",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXTRA_REGULARITY_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.2-PlanarQuadrature",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.5.2",
+          "printed_page": "28",
+          "pdf_page": "51",
+          "statement_latex": "Such an ordinary differential equation is said to be separable, and theoretically can be solved, given an initial condition, for x as a function of t.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "EXTRA_REGULARITY_MISMATCH",
+              "detail": "extra_assumptions 声称“真实C2”，但 hJ、hf 及 ψ 的签名均仅为 C¹。无需 C²，修正说明。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.planarquadrature",
+          "extra_assumptions": [
+            "正则第一积分图及非转向速度非零；J、f 在基点 C¹，所得 ψ 在基点 C¹；局部积分逆。"
+          ],
+          "old_ids": [
+            "CH01-113"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R3_PAGES.pdf; R3_review.json"
+        },
+        "issues": [
+          {
+            "code": "EXTRA_REGULARITY_MISMATCH",
+            "detail": "extra_assumptions 声称“真实C2”，但 hJ、hf 及 ψ 的签名均仅为 C¹。无需 C²，修正说明。"
+          }
+        ],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第4页（印刷页28，原书PDF页51）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第1页逐像素相同；视觉核对依据：r3_evidence/page1.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.planarquadrature"
+        ],
+        "verdict": "PASS",
+        "explanation": "原文句子与第4页相符。hfirst 不是约化结论假设；真实解、区间内基点、C¹ 正则性、y 偏导非零及 x 速度非零均明确。结论给局部 ψ、时间逆 g、g′(0)=f₁、解的局部参数化、积分原函数与 g 双向局部互逆以及整个小时间窗积分恒等式。δ 虽未用于邻域界，仅冗余存在量，不影响正确性。此为非转向点上的分离变量结论，额外非退化资格已披露。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-ScalarFirstIntegral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "INTEGRABILITY_COVERAGE_GAP"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "INTEGRABILITY_COVERAGE_GAP",
+            "detail": "原文第二句对整个单自由度系统断言可积，而当前第二合取只覆盖 v(t₀)≠0，未覆盖转向点及平衡点；extra_assumptions 已承认限制，但完整结论仍未全部覆盖。"
+          }
+        ],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第5页（印刷页28，原书PDF页51）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第1页逐像素相同；视觉核对依据：r3_evidence/page1.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.scalar_first_integral_and_quadrature"
+        ],
+        "verdict": "FAIL",
+        "explanation": "第5页 Example 1.6 转录相符。第一合取对任意 C² 势能证明能量 v²/2+U(x) 为 (v,−U′(x)) 的第一积分；第二合取的积分逆、局部参数化及速度符号均正确，但只量化速度非零点。相较原文“system is therefore integrable”的完整覆盖，缺少真实解在转向点的改用速度坐标求积、平衡点常解及相应重建说明。不是命题本身为假，也不是因 sorry 判 FAIL，而是覆盖不全。",
+        "counterexample": "U(x)=x，γ(t)=(−t²/2,−t)，t₀=0 是真实转向点，hv₀ 不成立；U(x)=x²/2 的零解也被排除。",
+        "suggested_fix": "保留已有非转向结论，补充速度为零且 U′≠0 时的交换坐标求积、速度和 U′同时为零时的常解分类；或明确将本条目标缩为非转向局部可积性。"
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-KeplerConservedEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第6页（印刷页29，原书PDF页52）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第6页逐像素相同；视觉核对依据：r3_evidence/page6.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.kepler_energy_angular_integrability"
+        ],
+        "verdict": "PASS",
+        "explanation": "第6页整句转录相符。签名三重合取覆盖单位质量非碰撞平面解的能量常性、平面角动量常性，以及含0存在区间的径向—角向重建。massHamiltonian 展开为各动量平方/2减范数倒数；planarAngularMomentum 是 q₀p₁−q₁p₀。重建给 r>0、r′=v、有效势径向 ODE、角积分及位置；ScalarPotentialLocalDescription 覆盖径向非转向、转向及平衡三类，并用初始位置和动量公式联系初值，未将重建当作假设。有效势在 r=0 的总化不影响 r>0 上局部分类。原文可积性按求积与逆函数理解，未额外声称碰撞后的延拓。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-KeplerAngularMomentum",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第7页（印刷页29，原书PDF页52）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第6页逐像素相同；视觉核对依据：r3_evidence/page6.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.keplerangularmomentum"
+        ],
+        "verdict": "PASS",
+        "explanation": "第7页转录相符。任意非碰撞单位质量平面机械解、任意同一开放区间内 s,t，结论 q₀p₁−q₁p₀ 相等。velocityOperator 在单位质量下为恒等，故动量就是速度，与原文 xẏ−yẋ 一致。keplerForce 是径向中心力，力矩为零；这里只专门化原书 Kepler 例，未声称已形式化任意旋转不变势的 Noether 定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-KeplerMomentum",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第8页（印刷页29，原书PDF页52）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第6页逐像素相同；视觉核对依据：r3_evidence/page6.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.keplermomentum",
+          "MD.Ch01.keplermomentum_not_first_integrals"
+        ],
+        "verdict": "PASS",
+        "explanation": "第8页转录相符。主声明对每个 q≠0 给非零向心力，正确但单独不足以证明两个坐标分别不是第一积分。[EXTRA] keplermomentum_not_first_integrals 对每个 i∈Fin 2 分别否定坐标动量在整个非碰撞相空间上、对所有真解的常性，补齐原文语义。取初始 q=eᵢ 时该坐标动量导数为−1，因此否定成立；不误称每条轨道的每个分量都变化。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

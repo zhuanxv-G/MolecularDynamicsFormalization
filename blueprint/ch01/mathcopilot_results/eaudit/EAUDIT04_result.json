@@ -1,0 +1,312 @@
+{
+  "batch": "EAUDIT04",
+  "input_sha256": {
+    "BATCH_EAUDIT04.md": "be86fcad3dd498a796580799cff6479037b9f4f9538cfc05276c8fc3db4994f6",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.5.3-EquilibriumLinearization",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_APPROXIMATION_CHANGED_TO_EQUALITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.3-EquilibriumLinearization",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.5.3",
+          "printed_page": "31",
+          "pdf_page": "54",
+          "statement_latex": "We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\\boldsymbol z^*$ and make use of the fact that $f(\\boldsymbol z)\\approx f(\\boldsymbol z^*)+f'(\\boldsymbol z^*)(\\boldsymbol z-\\boldsymbol z^*)$ for $\\|\\boldsymbol z-\\boldsymbol z^*\\|$ sufficiently small. Since $f(\\boldsymbol z^*)=0$ we have, defining $\\delta\\boldsymbol z:=\\boldsymbol z-\\boldsymbol z^*$,\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}\\approx\\boldsymbol A\\delta\\boldsymbol z,\\qquad\\boldsymbol A=f'(\\boldsymbol z^*).\\]\nThe symbol $\\approx$ is not very precise. In general, the approximation of solutions is only local in time meaning that solutions of the nonlinear system and the linear approximation may diverge. We refer to the system\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}=f'(\\boldsymbol z^*)\\delta\\boldsymbol z\\]\nas the linearization of the system (1.6) around $\\boldsymbol z^*$.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "小o余项将≈精确定义为一阶近似；δ的线性ODE是近似系统，不声称非线性扰动精确满足Aδ。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "SOURCE_APPROXIMATION_CHANGED_TO_EQUALITY",
+              "status": "CORRECTED",
+              "detail": "PDF 第一条扰动方程是 dδz/dt≈Aδz，JSON错误录为等号，并略去后面用等号定义独立线性化系统的段落；这会把非线性扰动误写成精确线性解。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.equilibriumlinearization",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-137",
+            "CH01-138"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_APPROXIMATION_CHANGED_TO_EQUALITY",
+            "detail": "PDF 第一条扰动方程是 dδz/dt≈Aδz，JSON错误录为等号，并略去后面用等号定义独立线性化系统的段落；这会把非线性扰动误写成精确线性解。"
+          }
+        ],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            14
+          ],
+          "printed_page": "31",
+          "original_pdf_page": "54",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-14.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.equilibriumlinearization",
+        "verdict": "PASS",
+        "explanation": "任意实完备赋范空间（较原书有限维推广）、f在z₀处C¹、f(z₀)=0，以及任意初始扰动h₀和t₀。结论存在独立的线性曲线δ，δ(t₀)=h₀且δ′=Df(z₀)δ，并给 f(z₀+h)-Df(z₀)h=o(h)。heq使余项不用再减f(z₀)。没有把δ定义成任意非线性轨道减z₀，故Lean正确地区分一阶近似和线性化ODE。A阶段等号转录必须修正，不能据此给正确Lean判FAIL。",
+        "counterexample": "f(x)=x+x²、z*=0时，真实扰动满足δ′=δ+δ²，一般不等于δ；余项δ²为o(δ)。",
+        "suggested_fix": "原文第一式恢复≈，并保留原书随后独立定义的线性化等号方程；Lean保持现状。"
+      }
+    },
+    {
+      "source_id": "MD-1.5.3-HartmanGrobmanLiteral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_SMOOTH_CONJUGACY_ERRATUM",
+          "SOURCE_PUNCTUATION",
+          "MISSING_SOURCE_HYPERBOLIC_CONTEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.3-HartmanGrobmanLiteral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.5.3",
+          "printed_page": "31–32",
+          "pdf_page": "54–55",
+          "statement_latex": "then one can infer that the solutions of the nonlinear and linear systems are in fact topologically conjugate: if $\\boldsymbol z$ is the solution of the nonlinear system and $\\delta\\boldsymbol z$ is the solution of the linear system, then there is a smooth, invertible map $\\boldsymbol\\Phi$ of $\\mathbb R^m$ defined in a neighborhood of the origin such that\n\\[\\boldsymbol z(t)=\\boldsymbol z^*+\\boldsymbol\\Phi(\\delta\\boldsymbol z(t)).\\]\nThis is referred to as the Hartman-Grobman theorem (for more discussion, see [177], where this result is referred to as the “Linearization Theorem”; a proof may be found in [362]).",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "前页：f在平衡点z*附近C¹，f(z*)=0，A=f′(z*)；双曲是A的全部特征值实部非零。原书smooth invertible保留为数学疑误，修正版仅连续互逆。"
+          ],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "NEEDS_HUMAN",
+              "detail": "原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。"
+            },
+            {
+              "code": "SOURCE_SMOOTH_CONJUGACY_ERRATUM",
+              "status": "NEEDS_HUMAN",
+              "detail": "仅C¹和双曲通常只保证局部拓扑共轭，不保证原书所写smooth invertible。"
+            },
+            {
+              "code": "SOURCE_PUNCTUATION",
+              "status": "NEEDS_HUMAN",
+              "detail": "原书为 “for more discussion, see [177]”，JSON缺逗号。"
+            },
+            {
+              "code": "MISSING_SOURCE_HYPERBOLIC_CONTEXT",
+              "status": "NEEDS_HUMAN",
+              "detail": "截取从then开始，context_notation为空，遗漏前页C¹、平衡及双曲条件，应补上下文，避免无条件解读。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.hartmangrobmanliteral",
+          "extra_assumptions": [
+            "C1全域模型及真实全局流为局部应用的技术资格；共轭在轨迹保持局部域时断言。"
+          ],
+          "old_ids": [
+            "CH01-140"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_SMOOTH_CONJUGACY_ERRATUM",
+            "detail": "仅C¹和双曲通常只保证局部拓扑共轭，不保证原书所写smooth invertible。"
+          },
+          {
+            "code": "SOURCE_PUNCTUATION",
+            "detail": "原书为 “for more discussion, see [177]”，JSON缺逗号。"
+          },
+          {
+            "code": "MISSING_SOURCE_HYPERBOLIC_CONTEXT",
+            "detail": "截取从then开始，context_notation为空，遗漏前页C¹、平衡及双曲条件，应补上下文，避免无条件解读。"
+          }
+        ],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            15,
+            16
+          ],
+          "printed_page": "31–32",
+          "original_pdf_page": "54–55",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-14.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.hartmangrobmanliteral",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "hyperbolic定义用实x/y表示复特征向量，(x≠0∨y≠0)及a≠0正确排除纯虚谱。isFlowOf只含初值和真实ODE，C¹提供唯一性；全局流是已披露的较强技术资格。主 literal：忠实性 PASS，开邻域U/V均含0、φ(0)=0、双向映射和逆关系，φ/ψ均C∞；在整个连接0至t的线性轨道留U期间给F(t,z+φx)=z+φ(e^{tA}x)。其数学真值有原书疑误。_corrected：PASS，完全相同量词、留域条件和公式，仅把坐标正则性改为连续互逆，正确为局部拓扑共轭。没有以“某一对解”代替共同坐标映射。",
+        "counterexample": "一维 f(x)=x+|x|³/(1+x²) 为C²且非C³，f(0)=0、f′(0)=1，增长至多线性故有完备流。若存在literal的C∞互逆局部共轭，时间微分给f(φ(x))=φ′(x)x；由C∞逆可推出f局部C∞，矛盾。",
+        "suggested_fix": "原文smooth保留待人工勘误；使用连续互逆的 _corrected；补录前页双曲定义及C¹平衡点背景。"
+      }
+    },
+    {
+      "source_id": "MD-1.5.3-HyperbolicStabilityTransfer",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            17
+          ],
+          "printed_page": "32",
+          "original_pdf_page": "55",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-16.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.hyperbolicstabilitytransfer",
+        "verdict": "PASS",
+        "explanation": "两条声明主名和_corrected签名相同，均PASS。量化所有n、C¹ f、平衡z、双曲Df(z)、真实全局流F；结论为非线性平衡与线性指数流原点稳定性的双向等价。stable展开为每ε>0选δ>0，对每个近初值存在该轨道统一B<ε，全部t≥0距离≤B；这准确实现书面严格sup<ε，亦与通常Lyapunov稳定等价（缩小ε可得统一余量）。局部同胚及首次离域论证足以转移稳定性，无需错误的C∞共轭。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.3-LinearizedHamiltonian",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_WORDING_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.3-LinearizedHamiltonian",
+          "kind": "definition",
+          "label": null,
+          "section": "1.5.3",
+          "printed_page": "32",
+          "pdf_page": "55",
+          "statement_latex": "If the potential is $C^2$, the linearized version of this system has “kinetic plus potential” form with Hamiltonian\n\\[\\widetilde H=\\frac{\\delta\\boldsymbol p^T\\boldsymbol M^{-1}\\delta\\boldsymbol p}2+\\frac{\\delta\\boldsymbol q^T U''(\\boldsymbol q^*)\\delta\\boldsymbol q}2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "C2使fderiv gradient为真实Hessian；定义只登记该二次Hamiltonian形式。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "SOURCE_WORDING_MISMATCH",
+              "status": "CORRECTED",
+              "detail": "原书为 “If the potential is C², the linearized version of this system has ‘kinetic plus potential’ form with Hamiltonian”，JSON重写为 “then ... is of the same ...”，不是逐字转录。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.linearizedHamiltonian",
+          "extra_assumptions": [
+            "[EXTRA] 19号：保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。"
+          ],
+          "old_ids": [
+            "CH01-146"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_WORDING_MISMATCH",
+            "detail": "原书为 “If the potential is C², the linearized version of this system has ‘kinetic plus potential’ form with Hamiltonian”，JSON重写为 “then ... is of the same ...”，不是逐字转录。"
+          }
+        ],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            18
+          ],
+          "printed_page": "32",
+          "original_pdf_page": "55",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-16.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.linearizedHamiltonian",
+        "verdict": "PASS",
+        "explanation": "linearizedHamiltonian定义精确给动量M⁻¹二次型加位置Hessian二次型，各1/2，M为常矩阵。单独定义使用总化fderiv，但field声明同时加M.PosDef、U全域C²及∇U(q*)=0，故Hessian为真实自伴Hessian。field对每个δz要求原Hamilton向量场在(q*,0)的Fréchet导数作用于δz等于该二次Hamilton向量场；这兑现“linearized version”的完整动力学对应，非仅同名函数。C²/正质量及平衡背景充分，未漏负号或交换相空间分量。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.3-PositiveHessianQuadratic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            19
+          ],
+          "printed_page": "33",
+          "original_pdf_page": "56",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-19.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.positivehessianquadratic",
+        "verdict": "PASS",
+        "explanation": "任意n、一般实矩阵M/K，M.PosDef和K.PosDef包含实对称性。结论IsStrictPotentialMin展开为某R>0内所有非零相点的二次Hamilton值严格高于原点；动量项M⁻¹及位置项K、1/2系数均正确。至少一个分量非零给严格正，故实际上全局严格最小，局部结论充分；零维结论真且无非零点。K是Hessian值的抽象替代，命题是充分条件，不误称必要条件，也不把“strong”误读为统一强凸常数。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.3-PositiveHessianMinimum",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            20
+          ],
+          "printed_page": "33",
+          "original_pdf_page": "56",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-19.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.positive_hessian_minimum",
+        "verdict": "PASS",
+        "explanation": "任意n、实势U全域C²、平衡∇U(q)=0，实全基B、实特征值freq、Injective freq和每项>0，并要求Df(gradient U)q作用于B i等于freq i倍基向量。全部distinct positive eigenvalues经完整基覆盖；C²保证Hessian自伴，虽未给正交基也可由正谱推出正定。IsStrictPotentialMin恰为原书穿孔邻域严格最小，C²及平衡资格来自同节且已披露。特征值互异虽不必要但忠实保留，没有静默削弱或把正频率替代平方特征值。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

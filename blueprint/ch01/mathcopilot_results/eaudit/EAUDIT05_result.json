@@ -1,0 +1,412 @@
+{
+  "batch": "EAUDIT05",
+  "input_sha256": {
+    "BATCH_EAUDIT05.md": "d426a02c936e411940e95a0f0fc7de30b845ee0957638a10cfbfbd473fd84e05",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.2-NewtonCompact",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "LEAN_POTENTIAL_DIFFERENTIABILITY_MISSING"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "LEAN_POTENTIAL_DIFFERENTIABILITY_MISSING",
+            "stage": "C",
+            "field": "MD.Ch01.compactNewton",
+            "detail": "签名只保证曲线有实际一、二阶导数，没有保证U在q t的梯度是实际微分。"
+          }
+        ],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            14
+          ],
+          "book_pdf_pages": "41",
+          "printed_pages": "18",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-14.png"
+          ],
+          "source_check": "附件第14页（书p.18，式1.3）英文、对角质量矩阵、二阶时间导、F(q)=−∇U(q)及编号均忠实；上下文的3N及每质量重复三次来自同页后段。",
+          "covered_lean_declarations": [
+            "MD.Ch01.compactNewton"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.compactNewton",
+        "verdict": "FAIL",
+        "explanation": "时间一、二阶HasDerivAt确实阻止不可微q被总导数当伪解；massOperator通过Matrix.diagonal逐坐标作用，等式确为M q″=−gradient U。泛化维数n和任意对角实参数可作原式的代数模板，三维粒子物理使用须取n=3N及正质量三次重复。关键缺项是U:Position n→ℝ没有在q t可微的前提，gradient的总化定义仍可在不可微势点返回0，故未完整表达经典Newton力；[EXTRA]只修复了轨迹导数，没有修复势能梯度资格。域审校FAIL。",
+        "counterexample": "n=1，m₀=1，U(x)=‖x‖，q(s)=0。q有真实一、二阶零导数，而U在0不可微，Mathlib的fderiv/gradient总化为0，所以compactNewton在任意t成立；原书经典−∇U(0)却未定义。",
+        "suggested_fix": "在compactNewton中加入DifferentiableAt ℝ U (q t)，或用HasFDerivAt明确真实势导数；保留现有时间导数资格。物理粒子特化时再显式给正质量及三坐标重复关系。"
+      }
+    },
+    {
+      "source_id": "MD-1.2-DegreesFreedom",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            15
+          ],
+          "book_pdf_pages": "41",
+          "printed_pages": "18",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-15.png"
+          ],
+          "source_check": "附件第15页（书p.18）自由度定义句（local directions、configurational (position) state、N_d）对应；原页没有直接给导数核定义，后者是已声明的正则层解释。",
+          "covered_lean_declarations": [
+            "MD.Ch01.linearizedConstraintDimension",
+            "MD.Ch01.degreesOfFreedom"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.degreesOfFreedom",
+        "verdict": "PASS",
+        "explanation": "PASS。linearizedConstraintDimension仅是线性代数辅助量，等于实线性映射fderiv C q的核的finrank。degreesOfFreedom的q不是任意点，而是C q=c、C在q为C¹、导数满射的可行点子类型；在该正则层由隐函数定理，核正是局部可行方向空间。n为构形维数、r为独立约束数，值为自然数；r=0包含无约束情形。没有把奇异点的线性化核维数冒充真实几何维数。与最新[EXTRA]及下一条局部坐标解释一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.2-ConstraintDimension",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            16
+          ],
+          "book_pdf_pages": "41",
+          "printed_pages": "18",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-16.png"
+          ],
+          "source_check": "附件第16页（书p.18）无约束N_d=N_c=3N、r个独立约束时N_d=N_c−r两句对应，未将原书independent无条件解释为任意r个方程。",
+          "covered_lean_declarations": [
+            "MD.Ch01.constraintdimension",
+            "MD.Ch01.constraintdimension_unconstrained"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.constraintdimension",
+        "verdict": "PASS",
+        "explanation": "PASS。主定理的q子类型明确C¹正则可行点和fderiv满射，保证r≤n；结论degreesOfFreedom+r=n避免自然数减法截断。全部局部图分句已核对：U,V开放、q∈U、φ/ψ为C¹、双向MapsTo及两侧LeftInvOn，使U与V局部微分同胚；C x=c当且仅当φ(x)第二分量为0，给出d维自由坐标的真实层结构。constraintdimension_unconstrained另以Position (3N)上的零个约束给核维数3N，覆盖无约束分句。局部图构造的sorry仅是证明未完成，不使正确签名FAIL。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.2-TotalEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            17
+          ],
+          "book_pdf_pages": "41",
+          "printed_pages": "18",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-17.png"
+          ],
+          "source_check": "附件第17页（书p.18，式1.4）总能量句、全部位置/速度参数、j=1,…,N有限和、m_j‖q̇_j‖²/2及U相加均相符；JSON用省略号压缩参数列，不改变对象。斜体能量函数和直立能量值的区分来自随后书p.19。",
+          "covered_lean_declarations": [
+            "MD.Ch01.particleTotalEnergy"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.particleTotalEnergy",
+        "verdict": "PASS",
+        "explanation": "PASS。N个三维位置q、速度v和粒子质量m，U以完整构形Fin N→V3为自变量；定义恰是Σ_j m_j‖v_j‖²/2+U(q)。此为相空间能量函数定义，v是独立速度变量，不需在本定义中绑定某条轨迹导数。m允许任意实数是该代数式的扩展，物理正质量子域自然包含其中，未声称未加前提的能量正性或守恒。没有漏掉求和粒子或把势能逐粒子重复相加。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.2-PairCancellation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            18
+          ],
+          "book_pdf_pages": "42",
+          "printed_pages": "19",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-18.png"
+          ],
+          "source_check": "附件第18页（书p.19）“This means that the sum of all the forces will vanish.”逐字对应；其前段明确内部两体作用力exact negative，context_notation准确。",
+          "covered_lean_declarations": [
+            "MD.Ch01.paircancellation"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.paircancellation",
+        "verdict": "PASS",
+        "explanation": "PASS。对任意自然数N和V3值的全有序粒子对力表F，假设对角零及所有i,j反对称，结论全双和为零，恰是全部内力合力抵消。对角零其实由反对称在实向量空间已推出，冗余不改变意义；全双和与无自力的j≠i求和相符。无外力的解释已在前提力表及[EXTRA]中明确，没有把结论净力零预先当假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.2-MomentumConservation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            19
+          ],
+          "book_pdf_pages": "42",
+          "printed_pages": "19",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-19.png"
+          ],
+          "source_check": "附件第19页（书p.19）结论及两步证明逐字核对：dp_i/dt=F_i、Σ_i dp_i/dt=Σ_i F_i=0、p_tot:=Σ_i p_i的三个分量守恒均对应。",
+          "covered_lean_declarations": [
+            "MD.Ch01.momentum_conservation"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.momentum_conservation",
+        "verdict": "PASS",
+        "explanation": "PASS。N任意，m为与时间无关的实质量，v给三维速度，pᵢ(t)=mᵢ•vᵢ(t)。I开放连通；F为全时间有序粒子对力，逐对反对称以及每个pᵢ的真实导数等于Σ_jF_ij为前提。三个完整结论依次是净内力零、总动量HasDerivAt零、任意a,b∈I的总动量相等；第三个向量等式同时给出三个分量守恒。质量正性不是这条代数守恒推论所必需；未把净力零或守恒偷放到假设中。[EXTRA]全部相符。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.2-HarmonicSolution",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXAMPLE_LABEL_MISSING",
+          "LEAN_HARMONIC_ENERGY_OBJECT_UNCOVERED",
+          "LEAN_SOLUTION_CHARACTERIZATION_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.2-HarmonicSolution",
+          "kind": "unnumbered_claim",
+          "label": "Example 1.3",
+          "section": "1.2",
+          "printed_page": "19–20",
+          "pdf_page": "42–43",
+          "statement_latex": "Example 1.3 (Harmonic Oscillator) Consider the system\n\\[\\dot x=v,\\qquad\\dot v=-\\Omega^2x.\\]\nThis system describes the behavior of a particle with unit mass in one dimension, with energy function $E(x,\\dot x)=\\dot x^2/2+\\Omega^2x^2/2$, where its motion is governed by a linear 2nd order equation $\\ddot x+\\Omega^2x=0$. The solution, for given $x(0)=\\xi$, $\\dot x(0)=v(0)=\\eta$, is\n\\[x(t)=\\xi\\cos(\\Omega t)+\\frac\\eta\\Omega\\sin(\\Omega t).\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "harmonicFlow同时给出位置与实际动量/速度；harmonicFlow_zero保证初值。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "EXAMPLE_LABEL_MISSING",
+              "stage": "A",
+              "field": "label",
+              "detail": "原页明确标为Example 1.3 (Harmonic Oscillator)，statement_latex也已转录该标识，但label为null；补为Example 1.3。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.harmonic_solution",
+          "extra_assumptions": [
+            "Ω≠0是原式除法的域条件；n维解按坐标推广，原文为n=1。"
+          ],
+          "old_ids": [
+            "CH01-062",
+            "CH01-063"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R1_PAGES.pdf 附件第20,21页；本次 R1 独立逐页比对；证据目录 .mathcopilot/reviews/ch01_eaudit/R1_evidence/"
+        },
+        "issues": [
+          {
+            "code": "EXAMPLE_LABEL_MISSING",
+            "stage": "A",
+            "field": "label",
+            "detail": "原页明确标为Example 1.3 (Harmonic Oscillator)，statement_latex也已转录该标识，但label为null；补为Example 1.3。"
+          },
+          {
+            "code": "LEAN_HARMONIC_ENERGY_OBJECT_UNCOVERED",
+            "stage": "C",
+            "field": "MD.Ch01.harmonic_solution及所给依赖",
+            "detail": "原句明确给出谐振子能量函数，所给声明没有该能量对象或其与单位质量模型的对应。"
+          },
+          {
+            "code": "LEAN_SOLUTION_CHARACTERIZATION_INCOMPLETE",
+            "stage": "C",
+            "field": "MD.Ch01.harmonic_solution",
+            "detail": "结论只说显式候选是一个解并满足初值，没有对任意同初值解的量化，弱于完整的初值解刻画。"
+          }
+        ],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            20,
+            21
+          ],
+          "book_pdf_pages": "42–43",
+          "printed_pages": "19–20",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-20.png",
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-21.png"
+          ],
+          "source_check": "附件第20–21页（书pp.19–20）Example 1.3的系统、单位质量、E(x,ẋ)=ẋ²/2+Ω²x²/2、二阶方程、初值和显式位置公式均忠实；Ω≠0是JSON已说明的除法域补充。",
+          "covered_lean_declarations": [
+            "MD.Ch01.harmonic_solution"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.harmonic_solution",
+        "verdict": "FAIL",
+        "explanation": "已写的harmonic_solution本身正确：PASS其动力学、全实时间域、单位质量、初值和位置公式。PhaseSpace第二分量是动量，单位质量下等于速度；mechanicalVectorField的第一分量确为该速度，harmonicFlow第二分量也是位置的真实导数，n=1还原原式。按本任务“全部对象/完整结论”审校，仍有覆盖缺项：所给同source全部声明/依赖没有定义或连接原句的能量E=|v|²/2+Ω²|x|²/2；且只验证所构造的流，不含“任意满足该初值的解都由此公式给出”的唯一性结论。此FAIL是完整覆盖失败，不是现有显式式为假，不涉及sorry。",
+        "counterexample": null,
+        "suggested_fix": "保留现有正确解验证；补谐振子能量定义/识别（n=1给原式，n维用范数平方），并补任意同初值机械解等于harmonicFlow的唯一性或完整解刻画。若能量句只作非形式化背景，需明确缩小本条正式覆盖范围。"
+      }
+    },
+    {
+      "source_id": "MD-1.2-ScalarMechanical",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXAMPLE_LABEL_MISSING",
+          "LEAN_SCALAR_ENERGY_OBJECT_UNCOVERED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.2-ScalarMechanical",
+          "kind": "definition",
+          "label": "Example 1.4",
+          "section": "1.2",
+          "printed_page": "20",
+          "pdf_page": "43",
+          "statement_latex": "Example 1.4 (Single Degree of Freedom) Consider a simple system with a single degree of freedom (with unit mass $m=1$ for simplicity) and energy function $E(x,\\dot x)=\\dot x^2/2+U(x)$ (which includes the harmonic oscillator as a special case). The equations of motion are\n\\[\\dot x=v,\\qquad\\dot v=-\\frac{\\partial U}{\\partial x}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "scalarPotentialEnergy U z = z.2²/2+U z.1；定义方程不宣称解存在。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "EXAMPLE_LABEL_MISSING",
+              "stage": "A",
+              "field": "label",
+              "detail": "原页明确标为Example 1.4 (Single Degree of Freedom)，statement_latex也已转录该标识，但label为null；补为Example 1.4。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.scalarMechanicalModel",
+          "extra_assumptions": [
+            "[EXTRA] 19号：沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。"
+          ],
+          "old_ids": [
+            "CH01-064"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R1_PAGES.pdf 附件第22页；本次 R1 独立逐页比对；证据目录 .mathcopilot/reviews/ch01_eaudit/R1_evidence/"
+        },
+        "issues": [
+          {
+            "code": "EXAMPLE_LABEL_MISSING",
+            "stage": "A",
+            "field": "label",
+            "detail": "原页明确标为Example 1.4 (Single Degree of Freedom)，statement_latex也已转录该标识，但label为null；补为Example 1.4。"
+          },
+          {
+            "code": "LEAN_SCALAR_ENERGY_OBJECT_UNCOVERED",
+            "stage": "C",
+            "field": "MD.Ch01.scalarMechanicalModel / context_notation",
+            "detail": "原书明确的能量函数未在同source全部当前声明及依赖中出现；仅文字提及scalarPotentialEnergy不足以完成能量对象覆盖。"
+          }
+        ],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            22
+          ],
+          "book_pdf_pages": "43",
+          "printed_pages": "20",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-22.png"
+          ],
+          "source_check": "附件第22页（书p.20）Example 1.4的开头、m=1、能量E=ẋ²/2+U(x)及两条运动方程均忠实；不把原页后续隐函数论证纳入本条已截取原句。",
+          "covered_lean_declarations": [
+            "MD.Ch01.scalarMechanicalModel"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.scalarMechanicalModel",
+        "verdict": "FAIL",
+        "explanation": "scalarMechanicalModel的动力学部分PASS：任意实势U、实时间相轨迹z，逐时刻要求U在位置可微，HasDerivAt z (v,−U′(x))同时给出真实x′=v及v′=−U′，与单位质量方程相符，最新[EXTRA]也落实。完整条目仍FAIL：原句还定义E(x,ẋ)=ẋ²/2+U(x)，而所给全部当前声明只有ODE谓词；context_notation提到的scalarPotentialEnergy并未给出定义或能量识别，不能把一个名字当成已经形式化。未要求本条之外的局部积分论证或能量守恒定理。",
+        "counterexample": null,
+        "suggested_fix": "补一个与本模型相连的标量能量定义，例如E_U(x,v)=v²/2+U(x)，并在本条声明/依赖中明确展示；保留当前沿轨迹势能可微及真实时间导数条件。"
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

@@ -1,3 +1,9 @@
+# 第1章21号修复队列：全部完成
+
+本轮10项均按网站suggested_fix修复、单文件编译及逐声明公理核验通过（未再送网站）；FAIL修复中0。原FAIL、建议原文及逐项diff保留于website_audit.json的local_repair21与validation/CLOSEOUT21/REPAIRS.json。既有队列仅为历史，不是待执行任务。
+
+---
+
 # 第1章修复队列（19号）
 
 A漏前提/定义域；B漏结论；C对象不忠实；D原书疑误。网站FAIL修复中=0，D保留原文并另立修正版，待导师；当前包由EAUDIT_INDEX管理。

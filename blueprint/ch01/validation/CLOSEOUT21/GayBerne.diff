@@ -1,0 +1,45 @@
+--- before/Ch01.lean
++++ after/Ch01.lean
+@@ -499,6 +499,7 @@
+ /-- source_id: MD-1.1.2-GayBerne · Example 1.2 · printed p.16–17 / PDF p.39–40
+ 
+ 
++[EXTRA] 原公式为总化辅助；有效域落实单位取向、非碰撞、根号严格正、参数及全部分母非零、Δ≠0；ε₂次数和Δ原样保留。
+ -/
+ def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁ u₂ : V3) : ℝ :=
+   let r := q₂ - q₁
+@@ -507,6 +508,25 @@
+   let Δ := ‖r‖ - σ₀ / Real.sqrt (gayBerneW (‖r‖⁻¹ • r) u₁ u₂ χ)
+   let εGB := gayBerneEpsilonOne ε₀ χ u₁ u₂ * gayBerneEpsilonTwo (‖r‖⁻¹ • r) u₁ u₂ χ'
+   4 * εGB * ((σ₀ / Δ)^12 - (σ₀ / Δ)^6)
++
++/-- Effective Gay--Berne domain: all divisions and both square roots are physical. -/
++def GayBerneValidDomain (σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁ u₂ : V3) : Prop :=
++  let r := q₂-q₁
++  let rhat := ‖r‖⁻¹ • r
++  let χ := gayBerneChi σₑ σₛ
++  let χ' := gayBerneChiPrime εₑ εₛ μ
++  ‖u₁‖ = 1 ∧ ‖u₂‖ = 1 ∧ q₁ ≠ q₂ ∧
++  σₛ ≠ 0 ∧ εₛ ≠ 0 ∧ μ ≠ 0 ∧
++  ((σₑ/σₛ)^2+1) ≠ 0 ∧ (1+Real.rpow (εₑ/εₛ) (1/μ)) ≠ 0 ∧
++  (1+χ*inner ℝ u₁ u₂) ≠ 0 ∧ (1-χ*inner ℝ u₁ u₂) ≠ 0 ∧
++  (1+χ'*inner ℝ u₁ u₂) ≠ 0 ∧ (1-χ'*inner ℝ u₁ u₂) ≠ 0 ∧
++  0 < 1-χ^2*(inner ℝ u₁ u₂)^2 ∧ 0 < gayBerneW rhat u₁ u₂ χ ∧
++  (‖r‖-σ₀/Real.sqrt (gayBerneW rhat u₁ u₂ χ)) ≠ 0
++
++def gayBerneOnDomain (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁ u₂ : V3)
++    (_h : GayBerneValidDomain σ₀ σₑ σₛ εₑ εₛ μ q₁ q₂ u₁ u₂) : ℝ :=
++  gayBerneModel ε₀ σ₀ σₑ σₛ εₑ εₛ μ q₁ q₂ u₁ u₂
++
+ 
+ /- END FULL SECTION 1.1 -/
+ 
+@@ -2582,6 +2602,8 @@
+ #print axioms MD.Ch01.angleBondOnDomain
+ #print axioms MD.Ch01.dihedralPotential
+ #print axioms MD.Ch01.gayBerneModel
++#print axioms MD.Ch01.GayBerneValidDomain
++#print axioms MD.Ch01.gayBerneOnDomain
+ #print axioms MD.Ch01.compactNewton
+ #print axioms MD.Ch01.linearizedConstraintDimension
+ #print axioms MD.Ch01.degreesOfFreedom

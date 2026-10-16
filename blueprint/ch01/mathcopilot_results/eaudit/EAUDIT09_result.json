@@ -1,0 +1,301 @@
+{
+  "batch": "EAUDIT09",
+  "input_sha256": {
+    "BATCH_EAUDIT09.md": "58c1fb0669e964c5540f9a666143d76cd20b18b9b1ff908232b3c91fd207ebb1",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.5.1-FlowEnergy",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_RELATION_SYMBOL"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.1-FlowEnergy",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.5.1",
+          "printed_page": "26",
+          "pdf_page": "49",
+          "statement_latex": "The flow map of a Hamiltonian system conserves its Hamiltonian, thus\n\\[H(\\mathcal F_t(\\boldsymbol\\xi))\\equiv H(\\boldsymbol\\xi).\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "SOURCE_RELATION_SYMBOL",
+              "status": "CORRECTED",
+              "detail": "PDF 守恒式使用 ≡，JSON 录为 =；数学同义，但逐字记录应恢复原符号。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.flow_energy",
+          "extra_assumptions": [
+            "H可微及F为真实全局Hamilton流（初值和ODE，不含守恒结论）。"
+          ],
+          "old_ids": [
+            "CH01-101"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_RELATION_SYMBOL",
+            "detail": "PDF 守恒式使用 ≡，JSON 录为 =；数学同义，但逐字记录应恢复原符号。"
+          }
+        ],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            9
+          ],
+          "printed_page": "26",
+          "original_pdf_page": "49",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-08.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.flow_energy",
+        "verdict": "PASS",
+        "explanation": "任意有限维相空间、可微实H、全时间F。hF只含F(0,ξ)=ξ及真实Hamilton ODE，不预设守恒。结论对每个初值和每个实t均为H(F(t,ξ))=H(ξ)；symplecticGradient 的两个偏梯度及负号正确。可微H足以链式求导得到沿轨道导数为零，不必额外C¹。声明数学等号正确，源JSON恢复书面恒等号。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.1-HarmonicPhaseFlow",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_RELATION_SYMBOL",
+          "IMPLICIT_NONZERO_FREQUENCY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.1-HarmonicPhaseFlow",
+          "kind": "definition",
+          "label": null,
+          "section": "1.5.1",
+          "printed_page": "27",
+          "pdf_page": "50",
+          "statement_latex": "for which the solution subject to initial values $q(0)=q_0,p(0)=p_0$ is\n\\[\\begin{pmatrix}q(t)\\\\p(t)\\end{pmatrix}=\\mathcal F_t\\begin{pmatrix}q_0\\\\p_0\\end{pmatrix}\\equiv\\begin{pmatrix}q_0\\cos(\\Omega t)+p_0\\sin(\\Omega t)/\\Omega\\\\-q_0\\Omega\\sin(\\Omega t)+p_0\\cos(\\Omega t)\\end{pmatrix}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "p.26方程q′=p,p′=-Ω²q；公式含除以Ω，Ω≠0为形式化时显式补充的必要资格，非本页直接写出的条件；零频须取极限或另给自由粒子分支。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "SOURCE_RELATION_SYMBOL",
+              "status": "CORRECTED",
+              "detail": "PDF 流映射与显式向量公式之间使用 ≡，JSON 录为 =。"
+            },
+            {
+              "code": "IMPLICIT_NONZERO_FREQUENCY",
+              "status": "CORRECTED",
+              "detail": "原书该页未明写 Ω≠0；公式分母要求非零，现有 context_notation 的“Ω≠0域”应明确为必要补充而非原文直接假设。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.harmonicPhaseFlow",
+          "extra_assumptions": [
+            "[EXTRA] 19号：保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。"
+          ],
+          "old_ids": [
+            "CH01-102"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_RELATION_SYMBOL",
+            "detail": "PDF 流映射与显式向量公式之间使用 ≡，JSON 录为 =。"
+          },
+          {
+            "code": "IMPLICIT_NONZERO_FREQUENCY",
+            "detail": "原书该页未明写 Ω≠0；公式分母要求非零，现有 context_notation 的“Ω≠0域”应明确为必要补充而非原文直接假设。"
+          }
+        ],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            10
+          ],
+          "printed_page": "27",
+          "original_pdf_page": "50",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-10.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.harmonicPhaseFlow",
+        "verdict": "PASS",
+        "explanation": "harmonicPhaseFlow 的两个分量与原式一致，n维共同频率推广合法。总函数本身允许Ω=0，但 harmonicPhaseFlow_solution 明确 hΩ:Ω≠0，结论含初值及单位质量、力 -(Ω²)q 的全时间真实积分曲线；没有声称零频总化式仍满足自由粒子方程。全部 [EXTRA] 已兑现。",
+        "counterexample": "若删去 hΩ，Ω=0 时定义得到(q₀,p₀)常曲线；p₀≠0时q′=0≠p₀。此反例不满足现声明前提。",
+        "suggested_fix": "保持 hΩ；若将来覆盖零频，应另分支定义(q₀+t p₀,p₀)。"
+      }
+    },
+    {
+      "source_id": "MD-1.5.1-SpectralSolution",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_RELATION_SYMBOL"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.1-SpectralSolution",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.5.1",
+          "printed_page": "27",
+          "pdf_page": "50",
+          "statement_latex": "If $\\boldsymbol A$ has a basis of eigenvectors $\\boldsymbol\\eta_i$, $i=1,\\ldots,m$, with corresponding eigenvalues $\\lambda_1,\\lambda_2,\\ldots,\\lambda_m$, then we may write the solution at time $t$ as\n\\[\\boldsymbol z(t)=\\sum_{i=1}^{m}c_i e^{\\lambda_i(t-t_0)}\\boldsymbol\\eta_i\\]\nwhere the coefficients $c_i$ are obtained by solving the equation\n\\[\\boldsymbol z(t_0)\\equiv \\boldsymbol\\xi=\\sum_{i=1}^{m}c_i\\boldsymbol\\eta_i.\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "允许复数特征值，不偷换为实谱。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "SOURCE_RELATION_SYMBOL",
+              "status": "CORRECTED",
+              "detail": "PDF 初值展开 z(t₀)≡ξ=Σcᵢηᵢ，JSON首个关系符号录成 =。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.spectralsolution",
+          "extra_assumptions": [
+            "有限维复数特征基；在公式中以t-t0调用零初时流；coeff=b.repr ξ。"
+          ],
+          "old_ids": [
+            "CH01-103"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_RELATION_SYMBOL",
+            "detail": "PDF 初值展开 z(t₀)≡ξ=Σcᵢηᵢ，JSON首个关系符号录成 =。"
+          }
+        ],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            11
+          ],
+          "printed_page": "27",
+          "original_pdf_page": "50",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-10.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.spectralsolution",
+        "verdict": "PASS",
+        "explanation": "任意完备复赋范空间、有穷索引全基 b，A复连续线性、各基向量对应复特征值ν。有限基保证有限维；没有偷换实谱。公式对所有实elapsed time t和初值z，以b.repr z为系数，给复算子流的谱展开。将t实例化为目标时间减t₀即可得到原式；基坐标本身满足初值展开，省去显式t₀是时间平移的等价参数化。complexExponentialFlow 经 restrictScalars ℝ 的算子指数仍是原复线性系统的真实流。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.1-BasisCoefficients",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_WORDING_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.1-BasisCoefficients",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.5.1",
+          "printed_page": "27",
+          "pdf_page": "50",
+          "statement_latex": "(ii) with our assumption that the $\\{\\boldsymbol\\eta_i\\}$ form a basis, the calculation of the coefficients is always possible, since the matrix $\\boldsymbol X$ whose columns are the eigenvectors will be invertible, that is, the coefficients $c_i$ can be enumerated as the components of a vector $\\boldsymbol c$ which satisfies the square linear system\n\\[\\boldsymbol\\xi=\\boldsymbol X\\boldsymbol c.\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "SOURCE_WORDING_MISMATCH",
+              "status": "CORRECTED",
+              "detail": "PDF 是 “the calculation of the coefficients is always possible”，JSON 写成 “will always be possible”；应逐字恢复。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.basis_coefficients",
+          "extra_assumptions": [
+            "RCLike域包含实/复两种；真实有限基。"
+          ],
+          "old_ids": [
+            "CH01-105"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_WORDING_MISMATCH",
+            "detail": "PDF 是 “the calculation of the coefficients is always possible”，JSON 写成 “will always be possible”；应逐字恢复。"
+          }
+        ],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            12
+          ],
+          "printed_page": "27",
+          "original_pdf_page": "50",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-10.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.basis_coefficients",
+        "verdict": "PASS",
+        "explanation": "任意m、RCLike域、EuclideanSpace 的完整 Fin m 基。basisColumnMatrix i j=b j i 确实以基向量作列；结论同时给矩阵可逆、X(b.repr z)=z以及X⁻¹z=b.repr z，包含可计算坐标及其唯一性依据，实复均覆盖。不要求特征向量性质是此线性代数子命题的合理推广。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.1-MatrixExponentialSolution",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            13
+          ],
+          "printed_page": "27",
+          "original_pdf_page": "50",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-10.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.matrixexponentialsolution",
+        "verdict": "PASS",
+        "explanation": "任意实m×m矩阵A、初值z、实t₀及全时间γ；hγ给真实导数γ′=Aγ，hinit给初值。结论是整个函数等于t↦matrixExponentialFlow A(t-t₀)z。依摘录展开为 exp((t-t₀)•A的连续算子表示)作用于z；有限维矩阵和连续线性算子代数同构保存指数，确为原式e^{A(t-t₀)}z。无对角化或实谱额外假设；本条是任意已给解的表示/唯一性，不单独新增存在结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

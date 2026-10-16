@@ -1,3 +1,4 @@
 # Preserve the received raw return bytes; do not normalize their line endings.
 EAUDIT02_result.json -text whitespace=cr-at-eol,-trailing-space
 EAUDIT03_result.json -text whitespace=cr-at-eol,-trailing-space
+EAUDIT??_result.json -text whitespace=cr-at-eol,-trailing-space

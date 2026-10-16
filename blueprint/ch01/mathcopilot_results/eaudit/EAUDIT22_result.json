@@ -1,0 +1,154 @@
+{
+  "batch": "EAUDIT22",
+  "input_sha256": {
+    "BATCH_EAUDIT22.md": "2584f103d4bf1b752cab6ca7294631e65db6ca55f8e6fd45710e6c406cb87cce",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.7.1-ChaosConditions",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "16–17",
+            "printed_page": "41–42",
+            "pdf_page": "64–65",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.chaosConditions"
+            ],
+            "finding": "chaosConditions准确为敏感依赖和拓扑传递的合取。敏感依赖依次量化∃ε>0、∀x∈D、∀δ>0、∃y∈D、∃t≥0，近邻及分离不等号正确；ε>0已自动排除y=x。传递用环境开集与D交等价于相对开集形式，起终点都在D。作为两个条件的谓词可用于任意F,D；解释为混沌真实系统时还须外部限定F为流、D不变。原文说at least，不能把本谓词称为混沌的充分必要定义；已有注释明确这只是选定的严格化。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.chaosConditions",
+        "verdict": "PASS",
+        "explanation": "chaosConditions准确为敏感依赖和拓扑传递的合取。敏感依赖依次量化∃ε>0、∀x∈D、∀δ>0、∃y∈D、∃t≥0，近邻及分离不等号正确；ε>0已自动排除y=x。传递用环境开集与D交等价于相对开集形式，起终点都在D。作为两个条件的谓词可用于任意F,D；解释为混沌真实系统时还须外部限定F为流、D不变。原文说at least，不能把本谓词称为混沌的充分必要定义；已有注释明确这只是选定的严格化。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7.1-TransitivityErgodicityLiteral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_MATHEMATICAL_ERROR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.7.1-TransitivityErgodicityLiteral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.7.1",
+          "printed_page": "42",
+          "pdf_page": "65",
+          "statement_latex": "We will see later that this concept, which is essentially equivalent to ergodicity, is a crucial component of molecular theories.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_MATHEMATICAL_ERROR",
+              "detail": "literal在连续真实流和不变测度下断言拓扑传递↔测度遍历，忠实表达原句但普遍错误。corrected限制有限满支撑测度，仅断言遍历⇒拓扑传递，方向与条件正确；flowErgodic已含全部时间的测度保持。hf:C¹确保ODE唯一性，由isFlowOf得到群性质，故不缺流合成资格；连续性使开集时间饱和为开可测，有限测度复现可保证正向时间的传递。",
+              "stage": "A/C",
+              "source_preserved": true
+            }
+          ],
+          "lean_decl": "MD.Ch01.transitivityergodicityliteral",
+          "extra_assumptions": [
+            "为表达ergodicity必须引入原文此处未给的不变测度μ；F为连续真实流。"
+          ],
+          "old_ids": [
+            "CH01-186"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_MATHEMATICAL_ERROR",
+            "detail": "literal在连续真实流和不变测度下断言拓扑传递↔测度遍历，忠实表达原句但普遍错误。corrected限制有限满支撑测度，仅断言遍历⇒拓扑传递，方向与条件正确；flowErgodic已含全部时间的测度保持。hf:C¹确保ODE唯一性，由isFlowOf得到群性质，故不缺流合成资格；连续性使开集时间饱和为开可测，有限测度复现可保证正向时间的传递。",
+            "stage": "A/C",
+            "source_preserved": true
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "18",
+            "printed_page": "42",
+            "pdf_page": "65",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.transitivityergodicityliteral",
+              "MD.Ch01.transitivityergodicityliteral_corrected"
+            ],
+            "finding": "literal在连续真实流和不变测度下断言拓扑传递↔测度遍历，忠实表达原句但普遍错误。corrected限制有限满支撑测度，仅断言遍历⇒拓扑传递，方向与条件正确；flowErgodic已含全部时间的测度保持。hf:C¹确保ODE唯一性，由isFlowOf得到群性质，故不缺流合成资格；连续性使开集时间饱和为开可测，有限测度复现可保证正向时间的传递。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.transitivityergodicityliteral",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "literal在连续真实流和不变测度下断言拓扑传递↔测度遍历，忠实表达原句但普遍错误。corrected限制有限满支撑测度，仅断言遍历⇒拓扑传递，方向与条件正确；flowErgodic已含全部时间的测度保持。hf:C¹确保ODE唯一性，由isFlowOf得到群性质，故不缺流合成资格；连续性使开集时间饱和为开可测，有限测度复现可保证正向时间的传递。",
+        "counterexample": "n=1，f=0，F(t,x)=x，μ=0。连续真实流且保持μ；任意可测不变集测度为0，flowErgodic为真；两个不交非空开区间之间无轨道，拓扑传递为假。",
+        "suggested_fix": "保留原文及literal；将修正版与原文版分列并由人工确认勘误。"
+      }
+    },
+    {
+      "source_id": "MD-1.7.1-AnisotropicOscillator",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "19",
+            "printed_page": "42",
+            "pdf_page": "65",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.anisotropicEnergy"
+            ],
+            "finding": "PDF字形确认κ及κ₀。anisotropicAngular以x/√(x²+y²)代入4c³−3c，与cos3θ一致；参数分别κ₀(1−εc₃/2)、l₀(1+εc₃/2)，势的κ/2及平方和动能全部正确。r>0物理域与r=0总函数延拓已注明，未把数值实验参数或轨迹观察误作全称定理。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.anisotropicEnergy",
+        "verdict": "PASS",
+        "explanation": "PDF字形确认κ及κ₀。anisotropicAngular以x/√(x²+y²)代入4c³−3c，与cos3θ一致；参数分别κ₀(1−εc₃/2)、l₀(1+εc₃/2)，势的κ/2及平方和动能全部正确。r>0物理域与r=0总函数延拓已注明，未把数值实验参数或轨迹观察误作全称定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

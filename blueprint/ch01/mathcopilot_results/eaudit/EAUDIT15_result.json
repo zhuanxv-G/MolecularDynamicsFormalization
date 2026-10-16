@@ -1,0 +1,230 @@
+{
+  "batch": "EAUDIT15",
+  "input_sha256": {
+    "BATCH_EAUDIT15.md": "1d4718280dccf642f08f1bad62ece7b81f70d22e3f391dd068a55b74ccf0a8e8",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.5.2-KeplerPolarODE",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第9页（印刷页29，原书PDF页52）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第6页逐像素相同；视觉核对依据：r3_evidence/page6.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.keplerpolarode"
+        ],
+        "verdict": "PASS",
+        "explanation": "第9页两式转录相符。对任意时间集合 I 和 r,θ,v,omega，左侧完整展开为正半径、r′=v、θ′=omega 及 L=v²/2+r²omega²/2+1/r 的两条 Euler–Lagrange 方程。对速度和半径的偏导分别为 v、r omega²−r⁻²；角动量偏导为 r²omega，角偏导为0。右侧恰给这两式及真实一阶导数，故不是用同义命名掩盖缺失运动方程。context_notation 的“r≠0”可加强精确写为“r>0”，签名本身无误。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-KeplerRadialReduction",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第10页（印刷页29，原书PDF页52）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第6页逐像素相同；视觉核对依据：r3_evidence/page6.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.keplerradialreduction"
+        ],
+        "verdict": "PASS",
+        "explanation": "第10页转录相符。任意极坐标 Euler–Lagrange 真解、任意 t∈I、任意等于当时 r²omega 的 l，结论 v′=−r⁻²+l²/r³。由正半径及 omega=l/r² 代入径向式直接成立。hl 虽是单时刻相等而非全区间常数，已经足够推出本条点态结论；作为固定守恒角动量的应用需再结合上一条在连通时间区间的常性，未虚构全局常性。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-KeplerFullSolution",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第11页（印刷页30，原书PDF页53）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第11页逐像素相同；视觉核对依据：r3_evidence/page11.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.kepler_full_solution"
+        ],
+        "verdict": "PASS",
+        "explanation": "第11页三段原文及角积分转录相符。任意含0非碰撞平面真解产生全区间正半径、径向真导数和有效势方程、连续实角提升的积分表达、位置重建以及初始全相空间公式。ScalarPotentialLocalDescription 展开覆盖每个 t₀ 的非转向积分逆、转向交换坐标积分逆或径向常解；后者包括圆轨道，不误作整个二维轨道静止。θ₀ 与 z(0) 的对应由初始公式给定。声明不单独断言从任意初值构造解/唯一解，但在已有真解语境下完整给出本条求积表示和重建，符合披露的存在区间资格。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-ActionEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第12页（印刷页30，原书PDF页53）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第11页逐像素相同；视觉核对依据：r3_evidence/page11.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.actionenergy"
+        ],
+        "verdict": "PASS",
+        "explanation": "第12页原文 E=IΩ 相符。对 Ω>0、J≥0 及任意实角 θ，位置 A cosθ、速度 ΩA sinθ，A=√(2J/Ω)，代入 v²/2+Ω²x²/2 得 JΩ。Ω>0 保证 ΩA=√(2JΩ)，与原书速度坐标一致；允许 J=0 的能量等式正确，不需要此处定义非退化角。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-ActionODE",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第13页（印刷页30，原书PDF页53）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第11页逐像素相同；视觉核对依据：r3_evidence/page11.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.actionode"
+        ],
+        "verdict": "PASS",
+        "explanation": "第13页转录相符。Ω>0、J(t)>0，给 J 和 θ 在 t 的真实导数 d、omega；双向等价将重建位置速度的两条谐振子 ODE 精确化为 d=0、omega=−Ω。正 J 保证角坐标非退化且振幅平方根可微，消去二元线性系统合法；原书正号速度与负号角速度一致，没有符号翻转。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-ActionSolution",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第14页（印刷页30，原书PDF页53）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第11页逐像素相同；视觉核对依据：r3_evidence/page11.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.actionsolution"
+        ],
+        "verdict": "PASS",
+        "explanation": "第14页转录相符。Ω>0、全开放区间正 J、J 和实角提升处处可微及重建量满足两条谐振子 ODE，推出任意 s,t∈同一区间的 J(t)=J(s)、θ(t)=θ(s)−Ω(t−s)。区间连通性排除跳支；无需额外假定全局实角定义以外的周期连续选择。s=0 且0在区间内即原书公式；同时保留第一方程的能量常性。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-HarmonicTorus",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_WORD_AND_PARENTHESES"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.2-HarmonicTorus",
+          "kind": "definition",
+          "label": null,
+          "section": "1.5.2",
+          "printed_page": "30",
+          "pdf_page": "53",
+          "statement_latex": "The simple change of variables $((x_j,v_j)\\to(I_j,\\theta_j))$, applied to each oscillator, would yield equations of motion $\\dot I_j=0$, $\\dot\\theta_j=-\\Omega_j$. This describes a point winding about a $d$-dimensional torus defined by angular rotation frequencies $\\Omega_j$ and radii $|I_j|$ (Fig. 1.14).",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "HarmonicTorus d = Fin d→Real.Angle；角模2π；I为固定action，半径的几何映射不新造定理。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "SOURCE_WORD_AND_PARENTHESES",
+              "detail": "原页为 The simple change of variables ((x_j,v_j)→(I_j,θ_j)), applied ...，JSON 把 simple 改为 same，且遗漏整次变量变换外层括号。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.oscillatorTorusMotion",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-131"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R3_PAGES.pdf; R3_review.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_WORD_AND_PARENTHESES",
+            "detail": "原页为 The simple change of variables ((x_j,v_j)→(I_j,θ_j)), applied ...，JSON 把 simple 改为 same，且遗漏整次变量变换外层括号。"
+          }
+        ],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第15页（印刷页30，原书PDF页53）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第11页逐像素相同；视觉核对依据：r3_evidence/page11.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.oscillatorTorusMotion"
+        ],
+        "verdict": "PASS",
+        "explanation": "oscillatorTorusMotion 为任意 d、固定实 action 向量 I、频率 Ω、初始模2π角向量定义 (I, θ₀−Ωt)。展开 HarmonicTorus 和 rotation 可核对全部分量，确实保持每个 action 并以负频率旋转；这是原文作用角运动的定义层表示，而非已证明原相空间与该环面的微分同胚。原书“radii |I_j|”在此由固定 action 参数记录，未给额外几何嵌入；当 action 为0时不应由本定义推出原相空间等能层仍有 d 维。作为 definition 审校通过，不能将其引用为无退化条件的坐标变换定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-TorusPeriod",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第16页（印刷页30，原书PDF页53）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第11页逐像素相同；视觉核对依据：r3_evidence/page11.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.torusperiod",
+          "MD.Ch01.torusQuasiperiodic",
+          "MD.Ch01.torusperiod_classification"
+        ],
+        "verdict": "PASS",
+        "explanation": "第16页原文相符。torusperiod 对任意有限 n、频率向量、实 T 和初角，给指定 T 是周期当且仅当每个 ΩⱼT 是2π整数倍；T=0、负T、零频率及 n=0 均正确。[EXTRA] torusQuasiperiodic 明示采用允许共振的有限环面平移表示定义；classification 用存在正周期与其否定给互斥完备二分。该定义比要求有理独立基频的某些惯例更宽，但已披露，结论没有声称非周期必稠密整个 n 维环面。原书按频率比的非形式化措辞在此有整数圈精确判据，不把 classification 的排中律误作独立无共振定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

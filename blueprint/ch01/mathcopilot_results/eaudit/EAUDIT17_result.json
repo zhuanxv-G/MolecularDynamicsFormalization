@@ -1,0 +1,631 @@
+{
+  "batch": "EAUDIT17",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "98b04fa61c3c549df392f5214e8d8e21190da8e4e25189974fd7f8d8ed734fd3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.6-PeriodicBoundary",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              1
+            ],
+            "printed_pages": [
+              34
+            ],
+            "original_pdf_pages": [
+              57
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-1.png"
+            ],
+            "attachment_content_sha256": {
+              "1": "a44597a1ac2d102b7c73fd1511c8fa5535e33732c32e84770e66cf8f19b34716"
+            },
+            "comparison": "附件第1页（印刷34页）正文自 If a particle moves 开始的完整句子与 statement_latex 相符：右侧 x=L、更新 x−L；左侧 x=0、更新 x+L；分号、likewise、Fig. 1.15 均核对一致。只有数学排版及空白作通常 LaTeX 归一化，无词句或符号误录。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 1,
+            "comparison": "已逐一核对 periodicBoundary 与 periodicPositionEquivalent。前者用正实数子类型限制盒长，x,y 为实数，以严格不等式选择一次更新；后者是存在整数 k 的位置等价关系，未取代一次更新定义。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.periodicBoundary",
+        "verdict": "PASS",
+        "explanation": "MD.Ch01.periodicBoundary：PASS。对任意 L>0 及 x,y∈ℝ，结论恰为 y=(x−L 若 x>L；x+L 若 x<0；否则 x)。当 x=0 或 x=L 时保持原值，与 moves to the right / exiting to the left 的严格越界相符。它不声称任意大越界经一步后已落入盒内。MD.Ch01.periodicPositionEquivalent：PASS，∃k∈ℤ, y=x+kL 是独立辅助关系；L=0 或 L<0 时该关系仍有定义，但主更新明确只接受正 L。[EXTRA] 对一步更新和辅助等价关系的区分准确。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.6-PeriodicTranslationMomentum",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "C_BOND_ENERGY_NORM_MISMATCH",
+          "JSON_EXTRA_COVERAGE_OVERCLAIM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.6-PeriodicTranslationMomentum",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.6",
+          "printed_page": "34",
+          "pdf_page": "57",
+          "statement_latex": "Periodic boundary conditions allow us to preserve Newton’s third law, the translational symmetry, and thus the conservation of momentum.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "平移不变性推出常向量方向导数零及总内力零；主定理完整陈述总动量守恒。",
+            "当前第三定律辅助声明使用有向键能量 φ(y−x+c)，尚未与真实能量 φ(‖y−x+c‖) 对接。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "C_BOND_ENERGY_NORM_MISMATCH",
+              "status": "OPEN",
+              "detail": "实际 nearestNeighborPotentialEnergy 与 boxPeriodicNearestNeighborPotentialEnergy 对每个键都先取实数范数；periodicBondEnergy 却直接把有符号差传给同一个 φ。当前第三定律只证明另一个能量的第三定律。"
+            },
+            {
+              "code": "JSON_EXTRA_COVERAGE_OVERCLAIM",
+              "status": "OPEN",
+              "detail": "extra_assumptions 声称第三定律覆盖“真实每条周期键”，与摘录的项目定义不符；context_notation 中“翻译不变”也应为“平移不变”。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.periodic_translation_momentum",
+          "extra_assumptions": [
+            "一维 N+1 粒子周期最近邻链；主定理要求正质量、势沿轨迹可微、逐粒子 Newton 导数以及开预连通时间域。",
+            "[审校发现] periodicBondEnergy 未取范数；periodic_translation_third_law 目前仅覆盖该有向辅助能量，不能声称已覆盖实际 U 的全部周期键。"
+          ],
+          "old_ids": [
+            "CH01-155"
+          ],
+          "source_page_verification": "R4_REVIEW_RENDERED; R4_PAGES.pdf 附件第2页；证据见 /workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/page_inventory.json"
+        },
+        "issues": [
+          {
+            "code": "C_BOND_ENERGY_NORM_MISMATCH",
+            "stage": "C",
+            "detail": "实际 nearestNeighborPotentialEnergy 与 boxPeriodicNearestNeighborPotentialEnergy 对每个键都先取实数范数；periodicBondEnergy 却直接把有符号差传给同一个 φ。当前第三定律只证明另一个能量的第三定律。"
+          },
+          {
+            "code": "JSON_EXTRA_COVERAGE_OVERCLAIM",
+            "stage": "A/C",
+            "detail": "extra_assumptions 声称第三定律覆盖“真实每条周期键”，与摘录的项目定义不符；context_notation 中“翻译不变”也应为“平移不变”。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              2
+            ],
+            "printed_pages": [
+              34
+            ],
+            "original_pdf_pages": [
+              57
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-1.png"
+            ],
+            "attachment_content_sha256": {
+              "2": "a44597a1ac2d102b7c73fd1511c8fa5535e33732c32e84770e66cf8f19b34716"
+            },
+            "comparison": "附件第2页（与附件第1页相同的印刷34页）原句 Periodic boundary conditions allow us to preserve Newton’s third law, the translational symmetry, and thus the conservation of momentum. 逐字相符。原文转录无需修改；需更正的是 JSON 对当前第三定律声明与实际周期能量相一致的元数据说法。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 2,
+            "comparison": "主定理的全部平移不变性、常方向导数、逐粒子 Newton 导数、总动量零导数及开连通时间域上的动量相等均已核对。独立第三定律声明实际使用 φ(y−x+c)，而所给真实能量的每一项是 φ(‖y−x+c‖)；c 为 0 或 L。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.periodic_translation_momentum",
+        "verdict": "FAIL",
+        "explanation": "MD.Ch01.periodic_translation_momentum：PASS（签名语义）。N∈ℕ，系统有 N+1 个实坐标；φ:ℝ→ℝ 与 L∈ℝ 任意。真实 U 的 N 个相邻键及闭合键只依赖坐标差，故同时平移不变；可微时沿全1向量的导数为0。对正质量 m、轨迹 q,v、开且预连通的 I，给出的势可微性和逐粒子速度/动量 Newton 导数足以推出总动量导数0及任意 a,b∈I 的总动量相等；全部结论均保留。MD.Ch01.periodicBondEnergy：FAIL（与实际依赖的对应关系），其定义是有向差的 φ 值，没有真实 U 中的范数。MD.Ch01.periodic_translation_third_law：作为这个有向辅助能量的两端力相反定理，签名本身 PASS；hφ 也恰好是有向参数处的可微性。然而，它未针对实际 U 的 φ∘|·| 键作陈述。没有 φ 偶性、键方向/位置资格或替换势的桥接，不能将其认作实际周期链中每条键的第三定律。[EXTRA] 中“真实每条周期键”“含闭合键”的覆盖说法因此不成立。总 verdict=FAIL 源于模型对应错误，不源于 sorry。",
+        "counterexample": "取 N=1、L=1、φ(s)=s、q₀=1、q₁=0。普通键的实际能量为 |q₁−q₀|=1，辅助 periodicBondEnergy φ 1 1 0 false=−1。在 (x,y)=(1,0) 邻域，实际键 E(x,y)=|y−x| 的两端力为 (−1,+1)，辅助键 y−x 的两端力为 (+1,−1)。φ 处处可微，第三定律声明的前提成立，仍不是实际键力。对闭合键也可取 L=1,x=2,y=0，使 L+y−x=−1，出现同样差异。这反驳的是“辅助力等于实际力”的覆盖说法，并不反驳真实 U 的平移不变性或其第三定律。",
+        "suggested_fix": "保留主定理。建议将键能量改为 φ ‖y−x+(if closing then L else 0)‖，并对 ψ(s)=φ ‖s‖ 在该差值处提出可微性，再陈述 ψ 键的两端负偏导相反；也可在非零键长条件下由 φ 在相应非负距离处可微导出。若保留有向辅助定义，须显式以 ψ=φ∘|·| 实例化并给出与实际每一能量项的对应。此处仅提出建议，未修改 Lean。"
+      }
+    },
+    {
+      "source_id": "MD-1.6-RegularLatticeMinimizerLiteral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_MINIMIZER_OVERGENERALIZED",
+          "LITERAL_MODEL_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.6-RegularLatticeMinimizerLiteral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.6",
+          "printed_page": "34",
+          "pdf_page": "57",
+          "statement_latex": "An obvious benefit of using periodic boundary conditions is that, with a uniform pair potential, the energy minimizers are points of a regular lattice; with confining potentials this is unlikely to be the case.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "NEEDS_HUMAN",
+              "detail": "对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。"
+            },
+            {
+              "code": "SOURCE_MINIMIZER_OVERGENERALIZED",
+              "status": "NEEDS_HUMAN",
+              "detail": "原书未限定势的严格凸性、配置的正间距或排序，却声称规则格点是所有能量最小者；零势已给出反例。字面原句必须保留。"
+            },
+            {
+              "code": "LITERAL_MODEL_SCOPE",
+              "status": "NEEDS_HUMAN",
+              "detail": "literal 将原文几何规则格点具体化为一维周期最近邻、按原标签严格递增且间距 L/(N+1) 的 regularLattice；该标号/模型解释不是一般无标号、多维格点命题。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.regularlatticeminimizerliteral",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-157"
+          ],
+          "source_page_verification": "R4_REVIEW_RENDERED; R4_PAGES.pdf 附件第3页；证据见 /workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/page_inventory.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_MINIMIZER_OVERGENERALIZED",
+            "stage": "A/C",
+            "detail": "原书未限定势的严格凸性、配置的正间距或排序，却声称规则格点是所有能量最小者；零势已给出反例。字面原句必须保留。"
+          },
+          {
+            "code": "LITERAL_MODEL_SCOPE",
+            "stage": "C",
+            "detail": "literal 将原文几何规则格点具体化为一维周期最近邻、按原标签严格递增且间距 L/(N+1) 的 regularLattice；该标号/模型解释不是一般无标号、多维格点命题。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              3
+            ],
+            "printed_pages": [
+              34
+            ],
+            "original_pdf_pages": [
+              57
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-1.png"
+            ],
+            "attachment_content_sha256": {
+              "3": "a44597a1ac2d102b7c73fd1511c8fa5535e33732c32e84770e66cf8f19b34716"
+            },
+            "comparison": "附件第3页印刷34页中 An obvious benefit ... 开始的两分句完整相符，包括 uniform pair potential、energy minimizers、regular lattice 及 with confining potentials ... unlikely。保留原书原句，不将严格凸修正版替换到 statement_latex。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 3,
+            "comparison": "已分别审校 regularlatticeminimizerliteral、其 _corrected、其 _counterexample，并展开 regularLattice 与真实周期最近邻能量。字面版的对象为一维有标号的 N+1 粒子；修正版的对象改为 N+1 个正间距且总和 L。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.regularlatticeminimizerliteral",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "MD.Ch01.regularlatticeminimizerliteral：字面意旨保留，但数学疑误 NEEDS_HUMAN。它对任意 N、任意 φ、L>0 及所有实配置 x，在全空间全局最小的前提下断言 ∃a, xᵢ=a+iL/(N+1)，其中 regularLattice 还要求正间距。该签名确实保留了原书无势资格的极强断言，不应因已知反例或 sorry 将“忠实版”判作实现 FAIL。须注意 Lean 进一步选择了周期最近邻、固定标号递增和固定环长间距的解释，不能据此宣称已经处理任意标号重排或任意多维 pair potential。MD.Ch01.regularlatticeminimizerliteral_corrected：PASS。φ 在 (0,∞) 严格凸、L>0、每个 gapsᵢ>0 且 ∑gapsᵢ=L，使 d=L/(N+1)>0。结论是 (N+1)φ(d)≤∑φ(gapsᵢ)，且等号当且仅当全部 gapsᵢ=d；这是有限等权严格 Jensen 的准确陈述，包括 N=0 的单项情形。它是明确改变问题域的合理勘误，不是任意原始配置的无条件结论。MD.Ch01.regularlatticeminimizerliteral_counterexample：PASS。零势下所有 Fin 2 配置能量均为0；常零配置不可能满足间距1/2的有标号 regularLattice。[EXTRA] 为空不能被理解为原命题因此获得凸性或顺序条件。总判 NEEDS_HUMAN，需人工确认原书的隐藏势与配置资格。",
+        "counterexample": "与所附 _counterexample 完全一致：N=1、L=1、φ≡0、x₀=x₁=0。全部配置的周期能量为0，因此 x 为全局最小；regularLattice a (1/2) x 则同时要求 a=0 与 a+1/2=0，矛盾。即使另行要求不碰撞，也可取 x₀=0,x₁=1/3：两周期间距为1/3、2/3，零势仍使其最小但非等间距。",
+        "suggested_fix": "保留 literal 的原书陈述及 NEEDS_HUMAN 标记；将已列 _corrected 明确作为正间距、固定总长、严格凸最近邻势下的独立修正版。若需要回到位置配置，再显式说明有序坐标与 gaps 的桥接、平移及标号约定。不要用修正版默默覆盖原文。"
+      }
+    },
+    {
+      "source_id": "MD-1.6-PeriodicImages",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "A_VECTOR_REPETITION_TRANSCRIPTION",
+          "SOURCE_VECTOR_DIMENSION_AMBIGUITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.6-PeriodicImages",
+          "kind": "definition",
+          "label": null,
+          "section": "1.6",
+          "printed_page": "35",
+          "pdf_page": "58",
+          "statement_latex": "periodic boundary conditions involve an extended potential energy of the form\n\\[U^{\\mathrm{pbc}}(\\boldsymbol q)=\\sum_{klm}\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{ij}(\\boldsymbol q_i,\\boldsymbol q_j+k\\boldsymbol v_1+l\\boldsymbol v_2+m\\boldsymbol v_3),\\]\nwhere $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\\boldsymbol v_i^T=(L\\boldsymbol e_i^T,L\\boldsymbol e_i^T,\\ldots,L\\boldsymbol e_i^T)$, $i=1,2,3$, where $\\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^3$.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "Fin 3 索引减1枚举 −1,0,1；Lean 对单粒子位置加三维位移 L(k,l,m)。",
+            "原页 v_i 的重复块向量记法与二体参数的三维位置有维数疑点；按每粒子取块可解释 Lean，但此解释待人工确认。"
+          ],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "A_VECTOR_REPETITION_TRANSCRIPTION",
+              "status": "NEEDS_HUMAN",
+              "detail": "原页显式列出开头两个 L e_i^T 再接省略号，JSON 只列了一个；数学重复含义未变，但逐字版应恢复。"
+            },
+            {
+              "code": "SOURCE_VECTOR_DIMENSION_AMBIGUITY",
+              "status": "NEEDS_HUMAN",
+              "detail": "原页 v_i^T=(L e_i^T,L e_i^T,…,L e_i^T) 是全配置重复块向量，而二体项的 q_j 是单粒子三维位置。Lean 使用三维块位移，是合理解释但需人工确认。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.periodicImageEnergy",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-158"
+          ],
+          "source_page_verification": "R4_REVIEW_RENDERED; R4_PAGES.pdf 附件第4页；证据见 /workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/page_inventory.json"
+        },
+        "issues": [
+          {
+            "code": "A_VECTOR_REPETITION_TRANSCRIPTION",
+            "stage": "A",
+            "detail": "原页显式列出开头两个 L e_i^T 再接省略号，JSON 只列了一个；数学重复含义未变，但逐字版应恢复。"
+          },
+          {
+            "code": "SOURCE_VECTOR_DIMENSION_AMBIGUITY",
+            "stage": "A/C",
+            "detail": "原页 v_i^T=(L e_i^T,L e_i^T,…,L e_i^T) 是全配置重复块向量，而二体项的 q_j 是单粒子三维位置。Lean 使用三维块位移，是合理解释但需人工确认。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              4
+            ],
+            "printed_pages": [
+              35
+            ],
+            "original_pdf_pages": [
+              58
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-2.png"
+            ],
+            "attachment_content_sha256": {
+              "4": "6c6d1014ff49c91d7e599a911d55c44f89a1b25b6df5fd52cbc024f59bb69a14"
+            },
+            "comparison": "附件第4页印刷35页的 U^pbc 三重像求和、i=1,…,N−1、j=i+1,…,N 及 k,l,m∈{−1,0,1} 的括号条件均一致。原页 v_i^T 右端实际印为 (L e_i^T,L e_i^T,…,L e_i^T)，输入 JSON 把第二个显式 L e_i^T 合并到了省略号，需恢复以满足逐字转录。还应保留并标记原页公式的维数疑点：v_i 被印成重复块的全配置向量，却在 q_j+k v_1+l v_2+m v_3 这个单粒子参数中使用。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 4,
+            "comparison": "periodicImageEnergy 的 φ i j:V3→V3→ℝ，q:Fin N→V3；Fin 3 的值减1逐一给出 −1、0、1，Ioi i 只求和 j>i。实际所加的是单个三维位移 L(k,l,m)，不是重复 N 块的向量。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.periodicImageEnergy",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "MD.Ch01.periodicImageEnergy：对“将原页 v_i 解释为其对应粒子三维块 L e_i”的解释，签名 PASS。对任意自然数 N、实 L、所有二体项 φᵢⱼ 与三维配置 q，定义恰枚举27个位移和全部无序不同标签对 i<j，逐项计算 φᵢⱼ(qᵢ,qⱼ+L(k,l,m))。N=0 或1时空配对求和为0，忠实于印刷的 i<j；没有擅加 i=j 的自镜像，也没有擅加1/2。构造公式本身可推广到任意 L,q，物理盒长正且坐标位于盒内是书中背景，而非这一定义声称的额外定理。未解决之处是原页把 v_i 定义为全配置重复块，和此处二体参数三维之间存在类型冲突；JSON 的“等价”说明只能给出一种修复解释，不能消除原书符号问题。因此总判 NEEDS_HUMAN，而非声称已逐类型忠实形式化了原公式。",
+        "counterexample": "类型见证：若 N=2，按原页重复块的通常含义 v₁∈ℝ⁶，但 qⱼ∈ℝ³；qⱼ+v₁ 没有定义。Lean 的三维位移不存在该类型错误，说明它已选择了按粒子取块的解释，而不是直接复现字面上的全配置加法。",
+        "suggested_fix": "保留原书重复块公式并标记 NEEDS_HUMAN。经人工确认后，可将 v_i 改记为三维 L e_i；或保持全配置平移向量但在二体项中显式取第 j 个三维块。当前 Lean 的27像求和无需因这一原书符号疑点被改成另一种求和。"
+      }
+    },
+    {
+      "source_id": "MD-1.6-MinimumImage",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              5
+            ],
+            "printed_pages": [
+              35
+            ],
+            "original_pdf_pages": [
+              58
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-2.png"
+            ],
+            "attachment_content_sha256": {
+              "5": "6c6d1014ff49c91d7e599a911d55c44f89a1b25b6df5fd52cbc024f59bb69a14"
+            },
+            "comparison": "附件第5页印刷35页的整句 The minimum image convention ... nearest replica of any other atom. 与 JSON 逐字相符，only、nearest、other 三个限制词均保留。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 5,
+            "comparison": "minimumImage 覆盖任意整数三维复制索引及到所有复制体距离的最小性；minimumImageForce 加入 L>0、不同标签、每对一个选中像及擦除自身标签的有限求力和。已同时核对辅助关系和完整求力模型。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.minimumImage",
+        "verdict": "PASS",
+        "explanation": "MD.Ch01.minimumImage：PASS。L∈ℝ，q,r,image∈V3；存在 k∈ℤ³ 使 image=r+Lk，且对所有 l∈ℤ³ 有 ‖q−image‖≤‖q−(r+Ll)‖。最小性使用≤，允许距离并列；关系自身不含 L>0，但下述完整模型补足。MD.Ch01.minimumImageForce：PASS。对 N 个标签的位置 q、每对标签的选中像 image、二体力回调 pairForce 以及总力 force，要求0<L；对 i≠j 要求对应最小像关系；对每个 i 总力恰为 j≠i 上 pairForce(i,j,qᵢ,imageᵢⱼ) 的和。因此“other”不包括自标签，“only”通过每个其他标签只出现一个选中复制体落实。并未错误断言距离最小者在数学上唯一，也不将并列的所有像一起相加。pairForce 是输入的二体力，原句未给它另一个解析表达式。[EXTRA] 与这两层定义一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.6-RhombicLattice",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_TEXT_PUNCTUATION",
+          "C_DEGENERATE_LATTICE_PARAMETERS"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.6-RhombicLattice",
+          "kind": "definition",
+          "label": null,
+          "section": "1.6",
+          "printed_page": "35",
+          "pdf_page": "58",
+          "statement_latex": "In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice with sides of fixed length $n_x,n_y$ and the angle between them ($\\theta$), see Fig. 1.17.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "a=n_x,b=n_y；集合由 (a,0) 与 (b cosθ,b sinθ) 的整数线性组合生成，不声称低温平衡必然如此。",
+            "当前 Lean 未限制正边长和非共线角，尚不能对所有输入称为非退化二维格。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "A_TEXT_PUNCTUATION",
+              "status": "OPEN",
+              "detail": "statement_latex 在 rhombic lattice 后添加了原页没有的逗号。"
+            },
+            {
+              "code": "C_DEGENERATE_LATTICE_PARAMETERS",
+              "status": "OPEN",
+              "detail": "参数没有 a>0、b>0 和 sinθ≠0 等有效二维边长/夹角资格；允许退化成线或一点。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.rhombicLattice",
+          "extra_assumptions": [
+            "[待补形式化资格] 若对应原书非退化二维格，需正边长以及两生成方向线性无关；当前签名没有这些条件。"
+          ],
+          "old_ids": [
+            "CH01-160"
+          ],
+          "source_page_verification": "R4_REVIEW_RENDERED; R4_PAGES.pdf 附件第6页；证据见 /workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/page_inventory.json"
+        },
+        "issues": [
+          {
+            "code": "A_TEXT_PUNCTUATION",
+            "stage": "A",
+            "detail": "statement_latex 在 rhombic lattice 后添加了原页没有的逗号。"
+          },
+          {
+            "code": "C_DEGENERATE_LATTICE_PARAMETERS",
+            "stage": "C",
+            "detail": "参数没有 a>0、b>0 和 sinθ≠0 等有效二维边长/夹角资格；允许退化成线或一点。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              6
+            ],
+            "printed_pages": [
+              35
+            ],
+            "original_pdf_pages": [
+              58
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-2.png"
+            ],
+            "attachment_content_sha256": {
+              "6": "6c6d1014ff49c91d7e599a911d55c44f89a1b25b6df5fd52cbc024f59bb69a14"
+            },
+            "comparison": "附件第6页印刷35页写作 “a rhombic lattice with sides”，lattice 后没有逗号；JSON 多出一个逗号。其余 In 2D、低温典型几何、n_x,n_y、角 θ 及 Fig. 1.17 相符。逐字修正仅删除该逗号，保留原书使用 rhombic 而允许 n_x,n_y 不同的术语。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 6,
+            "comparison": "rhombicLattice 只生成整数基向量组合，a,b,θ 均为任意实数；没有正边长、非共线条件或有效参数子类型。与 JSON 所说“只编码基向量组合”一致，但并未限制它一定是原文的非退化二维格。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.rhombicLattice",
+        "verdict": "FAIL",
+        "explanation": "MD.Ch01.rhombicLattice：FAIL（参数域/几何资格）。集合公式 x=k(a,0)+l(b cosθ,b sinθ)，k,l∈ℤ，方向、索引及二维实欧氏对象均正确；旋转/平移选定坐标本身不是问题。缺陷是 a,b,θ 无任何资格，不能保证两条边的长度为正或两个生成方向独立：行列式为 ab sinθ，可能为0。原文及图1.17描述的是二维格，而当前构造连秩0、秩1的退化集合也全部接收。[EXTRA] 为空，不能从“基向量”这个中文名称推入 Lean 中没有的线性无关性。作为一般整数生成集合的辅助定义它是合法的，但作为未加资格的二维 rhombic lattice 完整对应不足。没有把“低温典型”误审为必须额外证明的普遍低温定理。",
+        "counterexample": "取 a=b=1、θ=0，定义给出 {(k+l,0):k,l∈ℤ}=ℤ×{0}，只是一维格；取 a=b=0 则只有原点。两种参数都被当前签名接受，却不符合图示非退化二维格。",
+        "suggested_fix": "将当前公式保留为一般生成集合的辅助构造，并为其作为二维格的入口增加有效参数资格，例如 a>0、b>0、0<θ<π（或 a>0、b>0、sinθ≠0 并约定角度范围）。无需擅自加 a=b：原书 n_x,n_y 的一般平行四边形用语应保留，是否调整 rhombic 术语另由人工编辑决定。"
+      }
+    },
+    {
+      "source_id": "MD-1.6-UnitCell",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "C_UNITCELL_DOMAIN_UNRESTRICTED",
+          "JSON_CONTEXT_TYPE_OVERCLAIM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.6-UnitCell",
+          "kind": "definition",
+          "label": null,
+          "section": "1.6",
+          "printed_page": "35",
+          "pdf_page": "58",
+          "statement_latex": "The unit cell is a description of the arrangement of atoms within a box; unit cells may be stacked in each direction to describe an atomic lattice.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "B 当前仅为任意实3×3矩阵，motif 当前仅为任意三维点集；定义取它们的整数平移并集。",
+            "要把输入解释为原书的晶胞，尚需基向量独立与有限盒内原子排列等资格；当前 Lean 并未编码。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "C_UNITCELL_DOMAIN_UNRESTRICTED",
+              "status": "OPEN",
+              "detail": "B 的可逆性/列独立以及 motif 的盒内、有限原子资格均未编码；任意输入的整数平移并集不保证为原书的三维原子晶格。"
+            },
+            {
+              "code": "JSON_CONTEXT_TYPE_OVERCLAIM",
+              "status": "OPEN",
+              "detail": "context_notation 中“三基向量矩阵”“盒内点集”超出了实际 Matrix 与 Set 参数所保证的性质。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.unitCellLattice",
+          "extra_assumptions": [
+            "[待补形式化资格] B 可逆/列独立；motif 为指定晶胞内有限原子集。当前签名没有这些条件。"
+          ],
+          "old_ids": [
+            "CH01-162"
+          ],
+          "source_page_verification": "R4_REVIEW_RENDERED; R4_PAGES.pdf 附件第7页；证据见 /workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/page_inventory.json"
+        },
+        "issues": [
+          {
+            "code": "C_UNITCELL_DOMAIN_UNRESTRICTED",
+            "stage": "C",
+            "detail": "B 的可逆性/列独立以及 motif 的盒内、有限原子资格均未编码；任意输入的整数平移并集不保证为原书的三维原子晶格。"
+          },
+          {
+            "code": "JSON_CONTEXT_TYPE_OVERCLAIM",
+            "stage": "A/C",
+            "detail": "context_notation 中“三基向量矩阵”“盒内点集”超出了实际 Matrix 与 Set 参数所保证的性质。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              7
+            ],
+            "printed_pages": [
+              35
+            ],
+            "original_pdf_pages": [
+              58
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-2.png"
+            ],
+            "attachment_content_sha256": {
+              "7": "6c6d1014ff49c91d7e599a911d55c44f89a1b25b6df5fd52cbc024f59bb69a14"
+            },
+            "comparison": "附件第7页印刷35页从 The unit cell is a description ... 到 atomic lattice. 的完整原句逐字一致；分号和 in each direction 均保留。需修正的是 context_notation 把任意矩阵 B 称为“三基向量”、把任意 Set motif 称为“盒内点集”的形式化覆盖说明。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 7,
+            "comparison": "unitCellLattice 对任意实3×3矩阵 B、任意 motif⊆V3，取所有 k∈ℤ³ 与 u∈motif 的 Bk+u。检查了 B.toEuclideanLin 的列向量整数平移含义；未发现任何列独立、motif 有限或 motif 位于晶胞内的前提。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.unitCellLattice",
+        "verdict": "FAIL",
+        "explanation": "MD.Ch01.unitCellLattice：FAIL（对象域/晶胞资格）。平移公式和存在量词准确编码了以三个生成向量重复 motif 的操作，但 B:Matrix (Fin 3) (Fin 3) ℝ 不是三维基的类型；B 可以奇异或为0。motif:Set V3 也未声明为盒内有限原子排列，甚至允许 motif=整个ℝ³。故定义输出不一定是三维离散原子晶格，不能仅靠 context_notation 的自然语言声称已经落实原书的“within a box”和“each direction”。此构造可保留为平移并集函数；缺失的是作为原书 unit cell 的有效输入资格，而非要求每个晶胞只能有一个原子。[EXTRA] 为空，未提供这些资格。",
+        "counterexample": "B=0、motif={0} 时，输出仅{0}，没有三个独立晶格方向。另取 B=I₃、motif=ℝ³，则输出是整个ℝ³，非离散原子晶格，也没有盒内原子排列这一资格。两者均满足当前全部输入类型。",
+        "suggested_fix": "保留一般整数平移并集为辅助构造；在 unit cell 的完整模型中要求 B 的列线性无关（或 det B≠0），并要求 motif 是有限、必要时非空且位于指定晶胞中的原子点集，例如 motif⊆B([0,1)³)。明确边界代表选择即可，无须强制原胞或单原子 motif。"
+      }
+    },
+    {
+      "source_id": "MD-1.6-FCCStacking",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              8
+            ],
+            "printed_pages": [
+              36
+            ],
+            "original_pdf_pages": [
+              59
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-3.png"
+            ],
+            "attachment_content_sha256": {
+              "8": "bd9bdb055c8496e1cd74524b7d52929451135b160642983684b0b5a7ef14e3eb"
+            },
+            "comparison": "附件第8页印刷36页 The fcc lattice ... 原句的 cannonballs、pyramidal structures、periodic stacking、ABCABC...、three hexagonally structured planar layers 及 Fig. 1.18 均相符。省略号的 LaTeX/空白归一化不改变文字或周期次序。图1.18同时核对了三种不同层。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 8,
+            "comparison": "已展开 V3=Position 3 与 triangularLayer，审查全部整数 k 的高度及 k%3 的三种平面偏移，而非只看 fccStacking 名称。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.fccStacking",
+        "verdict": "PASS",
+        "explanation": "MD.Ch01.fccStacking：PASS。x∈ℝ³，当且仅当存在任意整数 k，使 z=k√(2/3)，且平面坐标落在 triangularLayer(j/2,j√3/6)，j=k mod3。triangularLayer(u,v) 的点为 (p+r/2+u,r√3/2+v)，p,r∈ℤ，是单位最近邻间距的等边三角点阵。余数0,1,2分别给 A、B、C 三个不同平移类；其顺序每三层重复。设 s=(1/2,√3/6)，则3s=(3/2,√3/2)为底层格向量，所以 C 后回到 A 正合 ABC 堆积；层高√(2/3)与水平孔位偏移共同给单位接触距离。k 可负，正模数的整数余数仍遍历0,1,2，覆盖双向无限晶格。固定尺度、坐标与取向是[EXTRA]明确说明的图示具体实现，并非正文声称给出了这些数值公式。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

@@ -1,0 +1,368 @@
+{
+  "batch": "EAUDIT20",
+  "input_sha256": {
+    "BATCH_EAUDIT20.md": "902c26a085d478e0c32a81c3d82a8fecb2028b7b0552810d42eff14cb9aa9a47",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.7-PlanarTrimerModel",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "1",
+            "printed_page": "38",
+            "pdf_page": "61",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.planarTrimerEnergy"
+            ],
+            "finding": "平面单位质量三粒子；Fin 3逐项动能及01、12、02三对势均一致。Position 2确为二维欧氏空间；ε=σ=1给出4(r⁻¹²−r⁻⁶)。碰撞点的Lean总函数值仅为延拓，不能解释为物理势。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.planarTrimerEnergy",
+        "verdict": "PASS",
+        "explanation": "平面单位质量三粒子；Fin 3逐项动能及01、12、02三对势均一致。Position 2确为二维欧氏空间；ε=σ=1给出4(r⁻¹²−r⁻⁶)。碰撞点的Lean总函数值仅为延拓，不能解释为物理势。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7-CentralPairPotential",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "2",
+            "printed_page": "38",
+            "pdf_page": "61",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.centralPairEnergy"
+            ],
+            "finding": "Fin N、三维位置和任意径向φ；erase i恰排除自相互作用，有序双和除以2与原式一致。该定义本身无需可微性或φ对称性；若要把φ解释为同一无序对的势，需采用context_notation的对称约定。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.centralPairEnergy",
+        "verdict": "PASS",
+        "explanation": "Fin N、三维位置和任意径向φ；erase i恰排除自相互作用，有序双和除以2与原式一致。该定义本身无需可微性或φ对称性；若要把φ解释为同一无序对的势，需采用context_notation的对称约定。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7-CentralPairGradient",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "3",
+            "printed_page": "38",
+            "pdf_page": "61",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.centralpairgradient"
+            ],
+            "finding": "全称φ、q、r；q≠r及φ在距离处可微是合法微分资格。两侧均为同一二体势分别对两个位置的欧氏梯度，负号、取值点和结论完整。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.centralpairgradient",
+        "verdict": "PASS",
+        "explanation": "全称φ、q、r；q≠r及φ在距离处可微是合法微分资格。两侧均为同一二体势分别对两个位置的欧氏梯度，负号、取值点和结论完整。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7-CentralMomentum",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "4",
+            "printed_page": "39",
+            "pdf_page": "62",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.central_momentum"
+            ],
+            "finding": "任意N、质量、速度、逐对力和开放预连通时间域；逐对力反对称与每个动量的真实导数推出净力为零、总动量真实零导数及任意两时刻相等。结论没有被用作假设。以p=mv编码Newton动量，未另设q不影响这一动量层面的陈述。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.central_momentum",
+        "verdict": "PASS",
+        "explanation": "任意N、质量、速度、逐对力和开放预连通时间域；逐对力反对称与每个动量的真实导数推出净力为零、总动量真实零导数及任意两时刻相等。结论没有被用作假设。以p=mv编码Newton动量，未另设q不影响这一动量层面的陈述。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7-CentralAngularMomentum",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "5",
+            "printed_page": "39",
+            "pdf_page": "62",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.centralangularmomentum_derivative",
+              "MD.Ch01.centralangularmomentum"
+            ],
+            "finding": "已核对derivative和主定理两声明：位置导数为v，动量导数为逐对力和，力反对称且位移叉力为零；cross3三个分量是标准叉积。逐对力矩抵消、角动量真实零导数及任意a,b∈I守恒俱全。[EXTRA]19号要求已落实为主定理的IsPreconnected I与两时刻相等；derivative辅助版不要求连通是合理的。三维结果包含原文平面嵌入。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.centralangularmomentum",
+        "verdict": "PASS",
+        "explanation": "已核对derivative和主定理两声明：位置导数为v，动量导数为逐对力和，力反对称且位移叉力为零；cross3三个分量是标准叉积。逐对力矩抵消、角动量真实零导数及任意a,b∈I守恒俱全。[EXTRA]19号要求已落实为主定理的IsPreconnected I与两时刻相等；derivative辅助版不要求连通是合理的。三维结果包含原文平面嵌入。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7-CenterOfMassMotion",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "6",
+            "printed_page": "39",
+            "pdf_page": "62",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.centerofmassmotion"
+            ],
+            "finding": "范围按context_notation只审translation。质量正且总质量正、a∈开放预连通I、q′=v、总动量真实零导数，推出每个t∈I质心为初始质心加(t−a)乘初始质心速度，分母和各求和均正确。旋转断言另交第7条；这里不能将整句的旋转部分视为已证明。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.centerofmassmotion",
+        "verdict": "PASS",
+        "explanation": "范围按context_notation只审translation。质量正且总质量正、a∈开放预连通I、q′=v、总动量真实零导数，推出每个t∈I质心为初始质心加(t−a)乘初始质心速度，分母和各求和均正确。旋转断言另交第7条；这里不能将整句的旋转部分视为已证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7-ConstantRotationLiteral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_MATHEMATICAL_ERROR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.7-ConstantRotationLiteral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.7",
+          "printed_page": "39",
+          "pdf_page": "62",
+          "statement_latex": "This means that the system will translate and rotate at a constant rate in time.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_MATHEMATICAL_ERROR",
+              "detail": "literal完整编码“r²θ′=ℓ且r>0推出恒角速”，忠实于原书旋转断言，但数学上不成立。corrected_a增加固定正半径后结论正确；corrected_b只作除以正r²的代数推导，正确且更贴近应保留的守恒律。两修正版均未假设所求恒角速。",
+              "stage": "A/C",
+              "source_preserved": true
+            }
+          ],
+          "lean_decl": "MD.Ch01.constantrotationliteral",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-179"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_MATHEMATICAL_ERROR",
+            "detail": "literal完整编码“r²θ′=ℓ且r>0推出恒角速”，忠实于原书旋转断言，但数学上不成立。corrected_a增加固定正半径后结论正确；corrected_b只作除以正r²的代数推导，正确且更贴近应保留的守恒律。两修正版均未假设所求恒角速。",
+            "stage": "A/C",
+            "source_preserved": true
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "7",
+            "printed_page": "39",
+            "pdf_page": "62",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.constantrotationliteral",
+              "MD.Ch01.constantrotationliteral_corrected_a",
+              "MD.Ch01.constantrotationliteral_corrected_b"
+            ],
+            "finding": "literal完整编码“r²θ′=ℓ且r>0推出恒角速”，忠实于原书旋转断言，但数学上不成立。corrected_a增加固定正半径后结论正确；corrected_b只作除以正r²的代数推导，正确且更贴近应保留的守恒律。两修正版均未假设所求恒角速。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.constantrotationliteral",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "literal完整编码“r²θ′=ℓ且r>0推出恒角速”，忠实于原书旋转断言，但数学上不成立。corrected_a增加固定正半径后结论正确；corrected_b只作除以正r²的代数推导，正确且更贴近应保留的守恒律。两修正版均未假设所求恒角速。",
+        "counterexample": "r(t)=√(1+t²)，θ(t)=arctan t，ℓ=1；r²θ′=1，而θ′(0)=1、θ′(1)=1/2。",
+        "suggested_fix": "保留原文及literal；将修正版与原文版分列并由人工确认勘误。"
+      }
+    },
+    {
+      "source_id": "MD-1.7-IsoscelesCoordinates",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_MATHEMATICAL_AMBIGUITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.7-IsoscelesCoordinates",
+          "kind": "definition",
+          "label": null,
+          "section": "1.7",
+          "printed_page": "39",
+          "pdf_page": "62",
+          "statement_latex": "Let us introduce new coordinates in the Lennard-Jones trimer as illustrated in Fig. 1.21, so that the center of mass is fixed at the origin: that is,\n\\[\\boldsymbol q_1=\\begin{bmatrix}x\\\\-y/3\\\\0\\end{bmatrix},\\qquad\\boldsymbol q_2=\\begin{bmatrix}-x\\\\-y/3\\\\0\\end{bmatrix},\\qquad\\boldsymbol q_3=\\begin{bmatrix}0\\\\2y/3\\\\0\\end{bmatrix},\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "单位质量；质心固定及等腰约束是特定对称初值，非所有零角动量三体配置。"
+          ],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_MATHEMATICAL_AMBIGUITY",
+              "detail": "三个向量分量、Fin 3次序及三维平面嵌入完全吻合。corrected定义数值上与原定义相同；corrected_center的三坐标和为零，单位质量下即质心零。修正的是适用范围而非坐标公式。原段由动量约束导出等腰的暗示不成立，必须由人工保留勘误说明。",
+              "stage": "A/C",
+              "source_preserved": true
+            }
+          ],
+          "lean_decl": "MD.Ch01.isoscelesCoordinates",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-180"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_MATHEMATICAL_AMBIGUITY",
+            "detail": "三个向量分量、Fin 3次序及三维平面嵌入完全吻合。corrected定义数值上与原定义相同；corrected_center的三坐标和为零，单位质量下即质心零。修正的是适用范围而非坐标公式。原段由动量约束导出等腰的暗示不成立，必须由人工保留勘误说明。",
+            "stage": "A/C",
+            "source_preserved": true
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "8",
+            "printed_page": "39",
+            "pdf_page": "62",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.isoscelesCoordinates",
+              "MD.Ch01.isoscelesCoordinates_corrected",
+              "MD.Ch01.isoscelesCoordinates_corrected_center"
+            ],
+            "finding": "三个向量分量、Fin 3次序及三维平面嵌入完全吻合。corrected定义数值上与原定义相同；corrected_center的三坐标和为零，单位质量下即质心零。修正的是适用范围而非坐标公式。原段由动量约束导出等腰的暗示不成立，必须由人工保留勘误说明。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.isoscelesCoordinates",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "三个向量分量、Fin 3次序及三维平面嵌入完全吻合。corrected定义数值上与原定义相同；corrected_center的三坐标和为零，单位质量下即质心零。修正的是适用范围而非坐标公式。原段由动量约束导出等腰的暗示不成立，必须由人工保留勘误说明。",
+        "counterexample": "任取非共线不等边三点，平移使和为零，并令全部初速度为零；总动量和角动量皆零，但初始构型仍不等腰。",
+        "suggested_fix": "保留原文及literal；将修正版与原文版分列并由人工确认勘误。"
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

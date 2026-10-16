@@ -1,0 +1,39 @@
+--- before/Ch01.lean
++++ after/Ch01.lean
+@@ -476,10 +476,19 @@
+ /-- source_id: MD-1.1.2-AngleBond · definition · printed p.13 / PDF p.36
+ 
+ 
++[EXTRA] 总化辅助angleBondModel保留；angleBondOnDomain强制两键长严格正，有向差不改。
+ -/
+ def angleBondModel (k θ₀ : ℝ) (qᵢ qⱼ qₖ : V3) : ℝ :=
+   k / 2 * (Real.arccos (inner ℝ (qᵢ-qⱼ) (qⱼ-qₖ) /
+     (‖qᵢ-qⱼ‖ * ‖qⱼ-qₖ‖)) - θ₀)^2
++
++/-- Physical angle domain; both directed bonds have strictly positive length. -/
++def AngleBondValidDomain (qᵢ qⱼ qₖ : V3) : Prop :=
++  0 < ‖qᵢ-qⱼ‖ ∧ 0 < ‖qⱼ-qₖ‖
++
++def angleBondOnDomain (k θ₀ : ℝ) (qᵢ qⱼ qₖ : V3)
++    (_h : AngleBondValidDomain qᵢ qⱼ qₖ) : ℝ := angleBondModel k θ₀ qᵢ qⱼ qₖ
++
+ 
+ /-- source_id: MD-1.1.2-Dihedral · definition · printed p.13 / PDF p.36
+ 
+@@ -2535,6 +2544,7 @@
+ end MD.Ch01
+ 
+ /- CLOSEOUT19: every named declaration, including corrected variants and counterexamples. -/
++
+ #print axioms MD.Ch01.IsNewtonTrajectoryOn
+ #print axioms MD.Ch01.matrixAction
+ #print axioms MD.Ch01.variableMassLagrangian
+@@ -2568,6 +2578,8 @@
+ #print axioms MD.Ch01.yukawaScreened_corrected_a
+ #print axioms MD.Ch01.yukawaScreened_corrected_b
+ #print axioms MD.Ch01.angleBondModel
++#print axioms MD.Ch01.AngleBondValidDomain
++#print axioms MD.Ch01.angleBondOnDomain
+ #print axioms MD.Ch01.dihedralPotential
+ #print axioms MD.Ch01.gayBerneModel
+ #print axioms MD.Ch01.compactNewton

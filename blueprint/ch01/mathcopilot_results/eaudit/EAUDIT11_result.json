@@ -1,0 +1,196 @@
+{
+  "batch": "EAUDIT11",
+  "input_sha256": {
+    "BATCH_EAUDIT11.md": "460dc072b1a0d9d3f8290e831ad443007f96ec13dcf594716aecf77a1a29e35f",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.1.1-MorseMinimum",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            3
+          ],
+          "book_pdf_pages": "31",
+          "printed_pages": "8",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-03.png"
+          ],
+          "source_check": "附件第3页（书p.8）Morse公式及紧随的完整句子对应；原页只定性说a控制曲率，没有二阶导数公式，JSON未把补充计算伪作原文。",
+          "covered_lean_declarations": [
+            "MD.Ch01.morse_minimum"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.morse_minimum",
+        "verdict": "PASS",
+        "explanation": "PASS。对所有D,a,rₑ>0，势D(1−exp(−a(r−rₑ)))²在r>0非负、在rₑ为零，且r→+∞极限为D，正好给出最小点及井深。二阶导在rₑ为2Da²；固定D>0及rₑ，0<a₁<a₂时2Da₁²<2Da₂²，正确落实曲率控制。rₑ>0保证最小点在径向域内。全部五个合取分句及[EXTRA]都正确；sorry不参与签名判定。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.1.1-LengthBond",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            4
+          ],
+          "book_pdf_pages": "32",
+          "printed_pages": "9",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-04.png"
+          ],
+          "source_check": "附件第4页（书p.9）页底段落、H₂⁺、rest-length、k_ij^len/2及(r_ij−r_ij^0)²、r_ij=‖q_i−q_j‖逐项对应。",
+          "covered_lean_declarations": [
+            "MD.Ch01.lengthBond"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.lengthBond",
+        "verdict": "PASS",
+        "explanation": "PASS。V3为真正三维欧氏空间，输入为两个粒子位置；lengthBond直接代入其欧氏距离，系数k/2与静长r₀无误。k,r₀的签名允许所有实数，是无奇点代数公式的扩展；物理使用中的k>0不被误作已编码的前提，也没有正性或最小值定理。当前源要求的弹簧势公式及[EXTRA]真实位置代入均已覆盖；不要求历史径向辅助函数参与此声明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.1.1-LJRepulsion",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "QUALITATIVE_SIMULATION_CLAUSE_UNRESOLVED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.1.1-LJRepulsion",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.1.1",
+          "printed_page": "10–11",
+          "pdf_page": "33–34",
+          "statement_latex": "Because of the strongly repulsive character of short-ranged soft walls in molecular dynamics, i.e., the fact that $\\varphi_{\\mathrm{LJ}}$ tends rapidly to positive infinity as $r\\to0$, the atoms remain well separated in long simulations. The singularity at $r=0$ is therefore rarely encountered in dynamics trajectories, however the presence of the singularity may nonetheless create problems for mathematical analysis, as many theoretical techniques rely on assumed smoothness.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "数学结论是原文r→0极限；长模拟保持分离为定性经验，不升级为有限能量全局无碰撞定理。",
+            "EAUDIT03：精确LJ单侧极限保留；“long simulations/well separated/rarely”尚无算法、时间段和概率频率语义，经验叙述覆盖未完成，供导师裁定，不能推为无条件全局无碰撞。"
+          ],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "QUALITATIVE_SIMULATION_CLAUSE_UNRESOLVED",
+              "stage": "A",
+              "field": "statement_latex / context_notation",
+              "detail": "原书经验句被忠实保留，但long、well separated、rarely没有算法、时间域或频率/概率语义。精确势极限及有限能级屏障都不等于完整经验断言。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.lj_repulsion",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-022"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R1_PAGES.pdf 附件第5,6页；本次 R1 独立逐页比对；证据目录 .mathcopilot/reviews/ch01_eaudit/R1_evidence/"
+        },
+        "issues": [
+          {
+            "code": "QUALITATIVE_SIMULATION_CLAUSE_UNRESOLVED",
+            "stage": "A",
+            "field": "statement_latex / context_notation",
+            "detail": "原书经验句被忠实保留，但long、well separated、rarely没有算法、时间域或频率/概率语义。精确势极限及有限能级屏障都不等于完整经验断言。"
+          }
+        ],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            5,
+            6
+          ],
+          "book_pdf_pages": "33–34",
+          "printed_pages": "10–11",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-05.png",
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-06.png"
+          ],
+          "source_check": "附件第5页末尾至第6页上半段（书pp.10–11）跨页连句完整；rapidly、well separated in long simulations、rarely、dynamics trajectories及分析光滑性说明均忠实。第5页同时给出LJ的4ε[(σ/r)^12−(σ/r)^6]。",
+          "covered_lean_declarations": [
+            "MD.Ch01.lj_repulsion",
+            "MD.Ch01.lj_repulsion_corrected"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.lj_repulsion",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "lj_repulsion：PASS，对全部ε,σ>0，使用从正距离趋零的𝓝[>]0而非把总函数在0的值当极限，结论正确。lj_repulsion_corrected：PASS，对任意有限实能级E，存在δ>0使所有0<r<δ的势值>E，正是该极限的严格屏障表述。两条均不提供轨迹、数值算法、能量上界、长时间区间或概率模型，因而不能覆盖整段原文的long simulations/well separated/rarely经验断言。修正版没有冒称已推出无条件无碰撞；原文经验量词如何纳入正式结论须人工确定，故条目汇总NEEDS_HUMAN。",
+        "counterexample": null,
+        "suggested_fix": "保留原文。人工确认经验句是否作为非形式化背景；若要作轨迹定理，须另行指定动力学/数值算法、能量控制与时间域，再明确结论，不把有限能级屏障直接等同模拟无碰撞。"
+      }
+    },
+    {
+      "source_id": "MD-1.1.1-HeterogeneousLJ",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            7
+          ],
+          "book_pdf_pages": "34",
+          "printed_pages": "11",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-07.png"
+          ],
+          "source_check": "附件第7页（书p.11）下半段的英文、ε_ij与σ_ij、12和6次幂、系数4及距离定义均对应。",
+          "covered_lean_declarations": [
+            "MD.Ch01.heterogeneousLJ"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.heterogeneousLJ",
+        "verdict": "PASS",
+        "explanation": "PASS。N任意，ε、σ均为Fin N×Fin N上的实参数表，q给出每个粒子的真实V3位置；i,j的势为4ε_ij[(σ_ij/‖q_i−q_j‖)^12−(σ_ij/‖q_i−q_j‖)^6]。pairDistance定义正是该欧氏距离。原文未在此声明混合规则、参数表对称性或总势求和，Lean也未额外声称这些。距离零处Lean总除法给出有限扩展值；本条[EXTRA]已明确只在pairDistance>0解释为原势，故不把该扩展当作物理碰撞势。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

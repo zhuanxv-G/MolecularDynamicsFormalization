@@ -1,0 +1,16 @@
+AngleBond: compile and all declaration axioms passed
+GayBerne: compile and all declaration axioms passed
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\blueprint\ch01\validation\CLOSEOUT21\repair21.py", line 216, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\blueprint\ch01\validation\CLOSEOUT21\repair21.py", line 181, in main
+    before=LEAN.read_text(encoding='utf-8-sig');after,sid,note,primary=repair(key,before)
+                                                                       ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\blueprint\ch01\validation\CLOSEOUT21\repair21.py", line 82, in repair
+    s=replace(s,'  massOperator m (deriv (deriv q) t) = -gradient U (q t)','  DifferentiableAt ℝ U (q t) ∧\n  massOperator m (deriv (deriv q) t) = -gradient U (q t)')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\blueprint\ch01\validation\CLOSEOUT21\repair21.py", line 43, in replace
+    assert s.count(a)==1, (a[:80],s.count(a)); return s.replace(a,b,1)
+           ^^^^^^^^^^^^^
+AssertionError: ('  massOperator m (deriv (deriv q) t) = -gradient U (q t)', 2)

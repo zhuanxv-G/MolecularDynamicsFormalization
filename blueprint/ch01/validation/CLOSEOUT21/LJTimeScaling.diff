@@ -1,0 +1,10 @@
+--- before/Ch01.lean
++++ after/Ch01.lean
+@@ -784,6 +784,7 @@
+ /-- source_id: MD-1.2-LJTimeScaling · unnumbered_claim · printed p.21–22 / PDF p.44–45
+ [EXTRA] m,ε,σ,α正；真实C2非碰撞轨迹。
+ 
++[EXTRA] 仅[EXTRA]容差0.005ps改为0.01ps；两个定理逐字未改。
+ -/
+ theorem ljtimescaling :
+   ∀ (N : ℕ) (m ε σ α : ℝ) (Q : ℝ → Fin N → V3),

@@ -1,3 +1,5 @@
+当前仅做第1章交付提交与推送；本地终验已通过，完成后停止，不自动回第6章。
+
 # 21号：第1章网站复审结果整合 + 最后一轮修复（2026-10-16 用户指令；第1章不再送网站）
 
 请先把以下全文写进 AGENTS.md 顶部规则和 docs/handoff/CURRENT_STATE.zh-CN.md 顶部，并同步 heartbeat lean 的接续 prompt（保留 ACTIVE/15分钟/target/去重），然后执行。
@@ -44,7 +46,6 @@
 - FAIL 修复中 = 0；单文件编译、逐条 #print axioms、一次完整 check 通过；正式库 0 sorry。
 - 更新 docs/review/CH01_SUMMARY_FOR_MENTOR.zh-CN.md：用导师能读懂的语言（不出现 sorryAx、checked+documented priors、字节预算等工程术语），给出：网站PASS数、本地按意见修复数、原书疑误数（附勘误清单链接）、已证/未证数及未证原因分类。
 - 提交并 push；CURRENT_STATE 顶部写“第1章最终收口完成，等待用户新指令”，然后停止，不自动回第6章。
-
 
 ---
 

@@ -179,7 +179,7 @@
       "[EXTRA] hPositive : (M q).PosDef；展开p23正物理质量及满秩Jacobian继承的对称正定背景，任意可逆矩阵反例不属于此子类。字面可逆原句保留，配置相关M及全部六项结论不变。"
     ],
     "statement_scope": "从“If M(q) is invertible”到“written in terms of positions and momenta.”；前一计算为proof_discussion_latex，前置抽象定义为context_notation；Hamilton方程属于下一条。",
-    "review_status": "CORRECTED",
+    "review_status": "NEEDS_HUMAN",
     "repair_log": [
       {
         "stage": "LOCAL_DRAFT",
@@ -600,7 +600,7 @@
       "数学结论是原文r→0极限；长模拟保持分离为定性经验，不升级为有限能量全局无碰撞定理。",
       "EAUDIT03：精确LJ单侧极限保留；“long simulations/well separated/rarely”尚无算法、时间段和概率频率语义，经验叙述覆盖未完成，供导师裁定，不能推为无条件全局无碰撞。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [],
     "lean_decl": "MD.Ch01.lj_repulsion",
     "extra_assumptions": [],
@@ -743,7 +743,7 @@
     "context_notation": [
       "保留原文κ；不把指数改成-r/κ。原文称Debye length但式子以逆长度参数使用，待导师判断。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -787,17 +787,25 @@
     "section": "1.1.2",
     "printed_page": "13",
     "pdf_page": "36",
-    "statement_latex": "When a trio of atoms with labels $i,j,k$ and $k$ admits a pair of length bonds, say $(i,j)$ and $(j,k)$, then an additional three-body term will need to be incorporated:\n\\[\\varphi_{ijk}^{\\mathrm{ang}}=\\frac{k_{ijk}^{\\mathrm{ang}}}{2}(\\theta_{ijk}-\\theta_{ijk}^0)^2,\\]\nwhere the angle $\\theta_{ijk}$ is given in terms of the positions as\n\\[\\theta_{ijk}=\\arccos\\frac{(\\boldsymbol q_i-\\boldsymbol q_j)\\cdot(\\boldsymbol q_j-\\boldsymbol q_k)}{r_{ij}r_{jk}}.\\]",
+    "statement_latex": "When a trio of atoms with labels $i$, $j$, and $k$ admits a pair of length bonds, say $(i,j)$ and $(j,k)$, then an additional three-body term will need to be incorporated:\n\\[\\varphi_{ijk}^{\\mathrm{ang}}=\\frac{k_{ijk}^{\\mathrm{ang}}}{2}(\\theta_{ijk}-\\theta_{ijk}^0)^2,\\]\nwhere the angle $\\theta_{ijk}$ is given in terms of the positions as\n\\[\\theta_{ijk}=\\arccos\\frac{(\\boldsymbol q_i-\\boldsymbol q_j)\\cdot(\\boldsymbol q_j-\\boldsymbol q_k)}{r_{ij}r_{jk}}.\\]",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
-      "k正、两键长非零；保留原页(qᵢ-qⱼ)·(qⱼ-qₖ)方向及重复and k。"
+      "总化辅助angleBondModel保留；angleBondOnDomain强制两键长严格正，有向差不改。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
-    "lean_decl": "MD.Ch01.angleBondModel",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "lean_decl": "MD.Ch01.angleBondOnDomain",
+    "extra_assumptions": [
+      "[EXTRA] 总化辅助angleBondModel保留；angleBondOnDomain强制两键长严格正，有向差不改。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21",
+        "reason": "总化辅助angleBondModel保留；angleBondOnDomain强制两键长严格正，有向差不改。",
+        "website": "按网站意见修复；不再送网站"
+      }
+    ],
     "old_ids": [
       "CH01-028",
       "CH01-029"
@@ -838,14 +846,21 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
-      "$\\boldsymbol r=\\boldsymbol q_{12}=\\boldsymbol q_2-\\boldsymbol q_1$；$\\hat{\\boldsymbol r}=\\boldsymbol r/\\|\\boldsymbol r\\|$；两取向单位向量；各根号正、分母非零。",
-      "放大PDF39原页确认εGB=ε1ε2，无平方；旧库gayBerneWell有ε2²，不能桥接，Blueprint保留忠实公式。"
+      "原公式为总化辅助；有效域落实单位取向、非碰撞、根号严格正、参数及全部分母非零、Δ≠0；ε₂次数和Δ原样保留。"
     ],
     "review_status": "DRAFT",
     "issues": [],
-    "lean_decl": "MD.Ch01.gayBerneModel",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "lean_decl": "MD.Ch01.gayBerneOnDomain",
+    "extra_assumptions": [
+      "[EXTRA] 原公式为总化辅助；有效域落实单位取向、非碰撞、根号严格正、参数及全部分母非零、Δ≠0；ε₂次数和Δ原样保留。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21",
+        "reason": "原公式为总化辅助；有效域落实单位取向、非碰撞、根号严格正、参数及全部分母非零、Δ≠0；ε₂次数和Δ原样保留。",
+        "website": "按网站意见修复；不再送网站"
+      }
+    ],
     "old_ids": [
       "CH01-035",
       "CH01-036",
@@ -876,9 +891,16 @@
     "issues": [],
     "lean_decl": "MD.Ch01.compactNewton",
     "extra_assumptions": [
-      "真实二阶可微资格写成HasDerivAt，避免总导数对不可微曲线给伪解。"
+      "真实二阶可微资格写成HasDerivAt，避免总导数对不可微曲线给伪解。",
+      "[EXTRA] 在原有两项真实时间导数资格后增加势能在q(t)处可微。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21",
+        "reason": "在原有两项真实时间导数资格后增加势能在q(t)处可微。",
+        "website": "按网站意见修复；不再送网站"
+      }
+    ],
     "old_ids": [
       "CH01-044",
       "CH01-045",
@@ -1034,7 +1056,7 @@
   {
     "source_id": "MD-1.2-HarmonicSolution",
     "kind": "unnumbered_claim",
-    "label": null,
+    "label": "Example 1.3",
     "section": "1.2",
     "printed_page": "19–20",
     "pdf_page": "42–43",
@@ -1044,13 +1066,20 @@
     "context_notation": [
       "harmonicFlow同时给出位置与实际动量/速度；harmonicFlow_zero保证初值。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.harmonic_solution",
     "extra_assumptions": [
-      "Ω≠0是原式除法的域条件；n维解按坐标推广，原文为n=1。"
+      "Ω≠0是原式除法的域条件；n维解按坐标推广，原文为n=1。",
+      "[EXTRA] 补范数平方能量、与质量Hamiltonian的识别和守恒；复用已有ODE唯一性，短证任意同初值全时间机械解等于显式流（首条路线通过）。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21",
+        "reason": "补范数平方能量、与质量Hamiltonian的识别和守恒；复用已有ODE唯一性，短证任意同初值全时间机械解等于显式流（首条路线通过）。",
+        "website": "按网站意见修复；不再送网站"
+      }
+    ],
     "old_ids": [
       "CH01-062",
       "CH01-063"
@@ -1060,7 +1089,7 @@
   {
     "source_id": "MD-1.2-ScalarMechanical",
     "kind": "definition",
-    "label": null,
+    "label": "Example 1.4",
     "section": "1.2",
     "printed_page": "20",
     "pdf_page": "43",
@@ -1070,11 +1099,12 @@
     "context_notation": [
       "scalarPotentialEnergy U z = z.2²/2+U z.1；定义方程不宣称解存在。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.scalarMechanicalModel",
     "extra_assumptions": [
-      "[EXTRA] 19号：沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。"
+      "[EXTRA] 19号：沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。",
+      "[EXTRA] 补E_U(x,v)=v²/2+U(x)，模型以显式能量参数E等于该定义连接；原有导数条件保留。"
     ],
     "repair_log": [
       {
@@ -1083,6 +1113,18 @@
         "before_signature_sha256": "d577b1c49cbefd9974c120579caf6a2bf559987950854218d5e328d9cb5d2f23",
         "reason": "沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。",
         "original_statement_unchanged": true
+      },
+      {
+        "stage": "CLOSEOUT21",
+        "reason": "补E_U(x,v)=v²/2+U(x)，模型以显式能量参数E等于该定义连接；原有导数条件保留。",
+        "website": "按网站意见修复；不再送网站"
+      },
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "label"
+        ]
       }
     ],
     "old_ids": [
@@ -1150,7 +1192,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -1215,12 +1257,13 @@
     "context_notation": [
       "$R_{ij}=\\|\\boldsymbol Q_i-\\boldsymbol Q_j\\|$；$\\hat\\varphi_{LJ}(R)=4[R^{-12}-R^{-6}]$。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.ljtimescaling",
     "extra_assumptions": [
-      "m,ε,σ,α正；真实C2非碰撞轨迹。",
-      "[EXTRA] 19号：补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。"
+      "m,ε,σ,α正；真实C²非碰撞轨迹。",
+      "[EXTRA] 氩参数m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m；实际ljtimescaling_argon结论采用显式容差0.01ps，非旧说明的0.005ps。给定参数下0.005ps界不成立；原书只写约2.17ps。保留双向缩放和时间单位结论。",
+      "[EXTRA] 本条采用显式容差0.01ps；两个定理保持不变。"
     ],
     "repair_log": [
       {
@@ -1233,6 +1276,11 @@
       {
         "stage": "CLOSEOUT19_NUMERIC_TOLERANCE",
         "reason": "按所列参数真实结果约2.1649606ps；0.005ps容差过紧（初始尝试失败），现明示0.01ps容差并由Lean验证；不改教材2.17ps。"
+      },
+      {
+        "stage": "CLOSEOUT21",
+        "reason": "仅[EXTRA]容差0.005ps改为0.01ps；两个定理逐字未改。",
+        "website": "按网站意见修复；不再送网站"
       }
     ],
     "old_ids": [
@@ -1327,7 +1375,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -1447,7 +1495,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -1662,17 +1710,25 @@
     "section": "1.5.1",
     "printed_page": "26",
     "pdf_page": "49",
-    "statement_latex": "The flow map of a Hamiltonian system conserves its Hamiltonian, thus\n\\[H(\\mathcal F_t(\\boldsymbol\\xi))=H(\\boldsymbol\\xi).\\]",
+    "statement_latex": "The flow map of a Hamiltonian system conserves its Hamiltonian, thus\n\\[H(\\mathcal F_t(\\boldsymbol\\xi))\\equiv H(\\boldsymbol\\xi).\\]",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.flow_energy",
     "extra_assumptions": [
       "H可微及F为真实全局Hamilton流（初值和ODE，不含守恒结论）。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex"
+        ]
+      }
+    ],
     "old_ids": [
       "CH01-101"
     ],
@@ -1685,13 +1741,13 @@
     "section": "1.5.1",
     "printed_page": "27",
     "pdf_page": "50",
-    "statement_latex": "for which the solution subject to initial values $q(0)=q_0,p(0)=p_0$ is\n\\[\\begin{pmatrix}q(t)\\\\p(t)\\end{pmatrix}=\\mathcal F_t\\begin{pmatrix}q_0\\\\p_0\\end{pmatrix}=\\begin{pmatrix}q_0\\cos(\\Omega t)+p_0\\sin(\\Omega t)/\\Omega\\\\-q_0\\Omega\\sin(\\Omega t)+p_0\\cos(\\Omega t)\\end{pmatrix}.\\]",
+    "statement_latex": "for which the solution subject to initial values $q(0)=q_0,p(0)=p_0$ is\n\\[\\begin{pmatrix}q(t)\\\\p(t)\\end{pmatrix}=\\mathcal F_t\\begin{pmatrix}q_0\\\\p_0\\end{pmatrix}\\equiv\\begin{pmatrix}q_0\\cos(\\Omega t)+p_0\\sin(\\Omega t)/\\Omega\\\\-q_0\\Omega\\sin(\\Omega t)+p_0\\cos(\\Omega t)\\end{pmatrix}.\\]",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
-      "p.26方程q′=p,p′=-Ω²q；Ω≠0域；§1.2已有真实解与初值证明。"
+      "p.26方程q′=p,p′=-Ω²q；公式含除以Ω，Ω≠0为形式化时显式补充的必要资格，非本页直接写出的条件；零频须取极限或另给自由粒子分支。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.harmonicPhaseFlow",
     "extra_assumptions": [
@@ -1704,6 +1760,14 @@
         "before_signature_sha256": "776b426f44b6b4ad600a18fcb478090b26fd7b90e0d4f7baa3e28d944814e25c",
         "reason": "保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。",
         "original_statement_unchanged": true
+      },
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex",
+          "context_notation"
+        ]
       }
     ],
     "old_ids": [
@@ -1718,19 +1782,27 @@
     "section": "1.5.1",
     "printed_page": "27",
     "pdf_page": "50",
-    "statement_latex": "If $\\boldsymbol A$ has a basis of eigenvectors $\\boldsymbol\\eta_i$, $i=1,\\ldots,m$, with corresponding eigenvalues $\\lambda_1,\\lambda_2,\\ldots,\\lambda_m$, then we may write the solution at time $t$ as\n\\[\\boldsymbol z(t)=\\sum_{i=1}^{m}c_i e^{\\lambda_i(t-t_0)}\\boldsymbol\\eta_i\\]\nwhere the coefficients $c_i$ are obtained by solving the equation\n\\[\\boldsymbol z(t_0)=\\boldsymbol\\xi=\\sum_{i=1}^{m}c_i\\boldsymbol\\eta_i.\\]",
+    "statement_latex": "If $\\boldsymbol A$ has a basis of eigenvectors $\\boldsymbol\\eta_i$, $i=1,\\ldots,m$, with corresponding eigenvalues $\\lambda_1,\\lambda_2,\\ldots,\\lambda_m$, then we may write the solution at time $t$ as\n\\[\\boldsymbol z(t)=\\sum_{i=1}^{m}c_i e^{\\lambda_i(t-t_0)}\\boldsymbol\\eta_i\\]\nwhere the coefficients $c_i$ are obtained by solving the equation\n\\[\\boldsymbol z(t_0)\\equiv \\boldsymbol\\xi=\\sum_{i=1}^{m}c_i\\boldsymbol\\eta_i.\\]",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
       "允许复数特征值，不偷换为实谱。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.spectralsolution",
     "extra_assumptions": [
       "有限维复数特征基；在公式中以t-t0调用零初时流；coeff=b.repr ξ。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex"
+        ]
+      }
+    ],
     "old_ids": [
       "CH01-103"
     ],
@@ -1743,17 +1815,25 @@
     "section": "1.5.1",
     "printed_page": "27",
     "pdf_page": "50",
-    "statement_latex": "(ii) with our assumption that the $\\{\\boldsymbol\\eta_i\\}$ form a basis, the calculation of the coefficients will always be possible, since the matrix $\\boldsymbol X$ whose columns are the eigenvectors will be invertible, that is, the coefficients $c_i$ can be enumerated as the components of a vector $\\boldsymbol c$ which satisfies the square linear system\n\\[\\boldsymbol\\xi=\\boldsymbol X\\boldsymbol c.\\]",
+    "statement_latex": "(ii) with our assumption that the $\\{\\boldsymbol\\eta_i\\}$ form a basis, the calculation of the coefficients is always possible, since the matrix $\\boldsymbol X$ whose columns are the eigenvectors will be invertible, that is, the coefficients $c_i$ can be enumerated as the components of a vector $\\boldsymbol c$ which satisfies the square linear system\n\\[\\boldsymbol\\xi=\\boldsymbol X\\boldsymbol c.\\]",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.basis_coefficients",
     "extra_assumptions": [
       "RCLike域包含实/复两种；真实有限基。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex"
+        ]
+      }
+    ],
     "old_ids": [
       "CH01-105"
     ],
@@ -1813,17 +1893,25 @@
     "section": "1.5.2",
     "printed_page": "28",
     "pdf_page": "51",
-    "statement_latex": "Another term for constants of motion is first integral. In general, if we have a dynamical system $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, a first integral is a smooth function $I(\\boldsymbol z)$ which is constant along solutions, for all values of the initial condition.",
+    "statement_latex": "Another term for constant of motion is first integral. In general, if we have a dynamical system $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, a first integral is a smooth function $I(\\boldsymbol z)$ which is constant along solutions, for all values of the initial condition.",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
       "IsFirstIntegralOn量化每条真实曲线及其存在区间，不附加全局存在。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.smoothFirstIntegral",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex"
+        ]
+      }
+    ],
     "old_ids": [
       "CH01-109"
     ],
@@ -1836,17 +1924,26 @@
     "section": "1.5.2",
     "printed_page": "28",
     "pdf_page": "51",
-    "statement_latex": "Since this should hold everywhere, the condition for $I$ to be a first integral is that $\\nabla I\\cdot f=0$.",
-    "proof_latex": "Let $\\boldsymbol z(t)$ ($t\\in\\mathbb R$) be a solution, then\n\\[I(\\boldsymbol z(t))=I(\\boldsymbol z(0))\\Rightarrow0=\\frac{\\mathrm d}{\\mathrm dt}I(\\boldsymbol z(t))=\\nabla I(\\boldsymbol z(t))\\cdot\\dot{\\boldsymbol z}(t)=\\nabla I(\\boldsymbol z(t))\\cdot f(\\boldsymbol z(t)).\\]",
+    "statement_latex": "Since this should hold everywhere, the condition for $I$ to be a first integral is that $\\nabla I\\cdot f\\equiv0$.",
+    "proof_latex": "Let $\\boldsymbol z(t):t\\in\\mathbb R$ be a solution, then\n\\[I(\\boldsymbol z(t))\\equiv I(\\boldsymbol z(0))\\Rightarrow0\\equiv\\frac{\\mathrm d}{\\mathrm dt}I(\\boldsymbol z(t))=\\nabla I(\\boldsymbol z(t))\\cdot\\dot{\\boldsymbol z}(t)=\\nabla I(\\boldsymbol z(t))\\cdot f(\\boldsymbol z(t)).\\]",
     "proof_note": "按渲染原页逐字转录原文论证。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.firstintegralcriterion",
     "extra_assumptions": [
       "开放域、f局部C1确保每个初值局部解存在；I可微；微分作用=梯度内积另由firstIntegral_gradient_criterion。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex",
+          "proof_latex"
+        ]
+      }
+    ],
     "old_ids": [
       "CH01-110"
     ],
@@ -1859,19 +1956,27 @@
     "section": "1.5.2",
     "printed_page": "28",
     "pdf_page": "51",
-    "statement_latex": "In principle, such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:\n\\[\\frac{\\mathrm dx}{\\mathrm dt}=g(x,\\psi(x)).\\]",
+    "statement_latex": "In principle such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:\n\\[\\frac{\\mathrm dx}{\\mathrm dt}=g(x,\\psi(x)).\\]",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
       "正文前句二维f=(g,h)且第一积分I(x,y)=I0；不把IsFirstIntegralOn当证明目标假设，它是本条原文已有第一积分。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [],
     "lean_decl": "MD.Ch01.planargraphreduction",
     "extra_assumptions": [
       "对y偏导非零，真实strict导数，局部时间窗；原文省略隐函数非退化条件。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex"
+        ]
+      }
+    ],
     "old_ids": [
       "CH01-111",
       "CH01-112"
@@ -1889,7 +1994,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.planarquadrature",
     "extra_assumptions": [
@@ -1916,13 +2021,26 @@
     "issues": [],
     "lean_decl": "MD.Ch01.scalar_first_integral_and_quadrature",
     "extra_assumptions": [
-      "U C2；开放时间段真实解、积分逆图使用速度非零点；转向点全局拼接不声称已有证明。"
+      "U C2；开放时间段真实解、积分逆图使用速度非零点；转向点全局拼接不声称已有证明。",
+      "[EXTRA] 本条正式覆盖为“能量守恒 + 非转向点局部求积”的部分形式化；转向点换坐标求积、平衡点常解分类和全局拼接列为覆盖缺口，不补理论。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21",
+        "reason": "本条正式覆盖为“能量守恒 + 非转向点局部求积”的部分形式化；转向点换坐标求积、平衡点常解分类和全局拼接列为覆盖缺口，不补理论。",
+        "website": "按网站意见修复；不再送网站"
+      }
+    ],
     "old_ids": [
       "CH01-114"
     ],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+    "statement_scope": "能量守恒 + 非转向点局部求积（部分形式化）",
+    "coverage_gaps": [
+      "转向点换坐标求积",
+      "平衡点常解分类",
+      "全局拼接与完整可积性"
+    ]
   },
   {
     "source_id": "MD-1.5.1-RealSpectralSolution",
@@ -2315,17 +2433,25 @@
     "section": "1.5.2",
     "printed_page": "30",
     "pdf_page": "53",
-    "statement_latex": "The same change of variables $(x_j,v_j)\\to(I_j,\\theta_j)$, applied to each oscillator, would yield equations of motion $\\dot I_j=0$, $\\dot\\theta_j=-\\Omega_j$. This describes a point winding about a $d$-dimensional torus defined by angular rotation frequencies $\\Omega_j$ and radii $|I_j|$ (Fig. 1.14).",
+    "statement_latex": "The simple change of variables $((x_j,v_j)\\to(I_j,\\theta_j))$, applied to each oscillator, would yield equations of motion $\\dot I_j=0$, $\\dot\\theta_j=-\\Omega_j$. This describes a point winding about a $d$-dimensional torus defined by angular rotation frequencies $\\Omega_j$ and radii $|I_j|$ (Fig. 1.14).",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
       "HarmonicTorus d = Fin d→Real.Angle；角模2π；I为固定action，半径的几何映射不新造定理。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.oscillatorTorusMotion",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex"
+        ]
+      }
+    ],
     "old_ids": [
       "CH01-131"
     ],
@@ -2370,11 +2496,11 @@
     "section": "1.5.2",
     "printed_page": "30",
     "pdf_page": "53",
-    "statement_latex": "in the latter case the paths do not “close up” but instead we see the curve gradually fills in the surface of the torus.",
+    "statement_latex": "in the latter case the paths do not “close up” but instead we the curve gradually fills in the surface of the torus.",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -2396,6 +2522,13 @@
         "reason": "另补原句“非周期即充满整个环面”的literal；修正版显式全整数无共振，原有带资格陈述不变。",
         "mentor_default": "全维加无共振",
         "mentor_confirmed": false
+      },
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex"
+        ]
       }
     ],
     "old_ids": [
@@ -2410,11 +2543,11 @@
     "section": "1.5.2",
     "printed_page": "30",
     "pdf_page": "53",
-    "statement_latex": "More generally, one finds occasional examples of nonlinear systems which possess as many independent first integrals as degrees of freedom (satisfying a certain “involution” condition); such systems may be reduced via a coordinate transformation to action-angle variables, i.e. they exhibit tori motion.",
+    "statement_latex": "More generally, one finds occasional examples of nonlinear systems which possesses as many independent first integrals as degrees of freedom (satisfying a certain “involution” condition); such systems may be reduced via coordinate transformation to action-angle variables, i.e. they exhibit tori motion.",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -2436,6 +2569,13 @@
         "reason": "原书无紧性资格的环面推断另记literal；默认紧、连通、非空、正则共同水平集，保留局部正则坐标与全局环面结论。",
         "mentor_default": "批准明确资格",
         "mentor_confirmed": false
+      },
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex"
+        ]
       }
     ],
     "old_ids": [
@@ -2492,17 +2632,25 @@
     "section": "1.5.3",
     "printed_page": "31",
     "pdf_page": "54",
-    "statement_latex": "We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\\boldsymbol z^*$ and make use of the fact that $f(\\boldsymbol z)\\approx f(\\boldsymbol z^*)+f'(\\boldsymbol z^*)(\\boldsymbol z-\\boldsymbol z^*)$ for $\\|\\boldsymbol z-\\boldsymbol z^*\\|$ sufficiently small. Since $f(\\boldsymbol z^*)=0$ we have, defining $\\delta\\boldsymbol z:=\\boldsymbol z-\\boldsymbol z^*$,\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}=\\boldsymbol A\\delta\\boldsymbol z,\\qquad\\boldsymbol A=f'(\\boldsymbol z^*).\\]\nThe symbol $\\approx$ is not very precise.",
+    "statement_latex": "We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\\boldsymbol z^*$ and make use of the fact that $f(\\boldsymbol z)\\approx f(\\boldsymbol z^*)+f'(\\boldsymbol z^*)(\\boldsymbol z-\\boldsymbol z^*)$ for $\\|\\boldsymbol z-\\boldsymbol z^*\\|$ sufficiently small. Since $f(\\boldsymbol z^*)=0$ we have, defining $\\delta\\boldsymbol z:=\\boldsymbol z-\\boldsymbol z^*$,\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}\\approx\\boldsymbol A\\delta\\boldsymbol z,\\qquad\\boldsymbol A=f'(\\boldsymbol z^*).\\]\nThe symbol $\\approx$ is not very precise. In general, the approximation of solutions is only local in time meaning that solutions of the nonlinear system and the linear approximation may diverge. We refer to the system\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}=f'(\\boldsymbol z^*)\\delta\\boldsymbol z\\]\nas the linearization of the system (1.6) around $\\boldsymbol z^*$.",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
       "小o余项将≈精确定义为一阶近似；δ的线性ODE是近似系统，不声称非线性扰动精确满足Aδ。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.equilibriumlinearization",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex"
+        ]
+      }
+    ],
     "old_ids": [
       "CH01-137",
       "CH01-138"
@@ -2539,11 +2687,13 @@
     "section": "1.5.3",
     "printed_page": "31–32",
     "pdf_page": "54–55",
-    "statement_latex": "then one can infer that the solutions of the nonlinear and linear systems are in fact topologically conjugate: if $\\boldsymbol z$ is the solution of the nonlinear system and $\\delta\\boldsymbol z$ is the solution of the linear system, then there is a smooth, invertible map $\\boldsymbol\\Phi$ of $\\mathbb R^m$ defined in a neighborhood of the origin such that\n\\[\\boldsymbol z(t)=\\boldsymbol z^*+\\boldsymbol\\Phi(\\delta\\boldsymbol z(t)).\\]\nThis is referred to as the Hartman-Grobman theorem (for more discussion see [177], where this result is referred to as the “Linearization Theorem”; a proof may be found in [362]).",
+    "statement_latex": "then one can infer that the solutions of the nonlinear and linear systems are in fact topologically conjugate: if $\\boldsymbol z$ is the solution of the nonlinear system and $\\delta\\boldsymbol z$ is the solution of the linear system, then there is a smooth, invertible map $\\boldsymbol\\Phi$ of $\\mathbb R^m$ defined in a neighborhood of the origin such that\n\\[\\boldsymbol z(t)=\\boldsymbol z^*+\\boldsymbol\\Phi(\\delta\\boldsymbol z(t)).\\]\nThis is referred to as the Hartman-Grobman theorem (for more discussion, see [177], where this result is referred to as the “Linearization Theorem”; a proof may be found in [362]).",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
-    "context_notation": [],
-    "review_status": "DRAFT",
+    "context_notation": [
+      "前页：f在平衡点z*附近C¹，f(z*)=0，A=f′(z*)；双曲是A的全部特征值实部非零。原书smooth invertible保留为数学疑误，修正版仅连续互逆。"
+    ],
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -2565,6 +2715,14 @@
         "reason": "C∞可逆坐标替换改为连续互逆局部同胚；保留零点、邻域与留域期间共轭公式。",
         "mentor_default": "同胚勘误",
         "mentor_confirmed": false
+      },
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex",
+          "context_notation"
+        ]
       }
     ],
     "old_ids": [
@@ -2680,13 +2838,13 @@
     "section": "1.5.3",
     "printed_page": "32",
     "pdf_page": "55",
-    "statement_latex": "If the potential is $C^2$, then the linearized version is of the same “kinetic plus potential” form with Hamiltonian\n\\[\\widetilde H=\\frac{\\delta\\boldsymbol p^T\\boldsymbol M^{-1}\\delta\\boldsymbol p}2+\\frac{\\delta\\boldsymbol q^T U''(\\boldsymbol q^*)\\delta\\boldsymbol q}2.\\]",
+    "statement_latex": "If the potential is $C^2$, the linearized version of this system has “kinetic plus potential” form with Hamiltonian\n\\[\\widetilde H=\\frac{\\delta\\boldsymbol p^T\\boldsymbol M^{-1}\\delta\\boldsymbol p}2+\\frac{\\delta\\boldsymbol q^T U''(\\boldsymbol q^*)\\delta\\boldsymbol q}2.\\]",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
       "C2使fderiv gradient为真实Hessian；定义只登记该二次Hamiltonian形式。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.linearizedHamiltonian",
     "extra_assumptions": [
@@ -2699,6 +2857,13 @@
         "before_signature_sha256": "8e7dabd7162e165c02e06ca37d62f6389e0994d7fc2e39cc13f5320b42ed0d62",
         "reason": "保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。",
         "original_statement_unchanged": true
+      },
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex"
+        ]
       }
     ],
     "old_ids": [
@@ -2905,14 +3070,15 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
-      "翻译不变模型作用的常向量方向导数零，使总内力零；动量守恒复用MomentumConservation条目。"
+      "键能量补范数，第三定律改对ψ=φ∘|·|在有向差处可微；平移/动量主定理逐字未改。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
     "lean_decl": "MD.Ch01.periodic_translation_momentum",
     "extra_assumptions": [
       "一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。",
-      "[EXTRA] 19号：完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。"
+      "[EXTRA] 19号：完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。",
+      "[EXTRA] 键能量补范数，第三定律改对ψ=φ∘|·|在有向差处可微；平移/动量主定理逐字未改。"
     ],
     "repair_log": [
       {
@@ -2921,6 +3087,18 @@
         "before_signature_sha256": "d5ab02ba52ab0637f83ae1c9d626b6dea6cde704c7ff34ffdd7dc7e73e6b3ca7",
         "reason": "完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。",
         "original_statement_unchanged": true
+      },
+      {
+        "stage": "CLOSEOUT21",
+        "reason": "键能量补范数，第三定律改对ψ=φ∘|·|在有向差处可微；平移/动量主定理逐字未改。",
+        "website": "按网站意见修复；不再送网站"
+      },
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "context_notation"
+        ]
       }
     ],
     "old_ids": [
@@ -2960,7 +3138,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -2994,17 +3172,27 @@
     "section": "1.6",
     "printed_page": "35",
     "pdf_page": "58",
-    "statement_latex": "periodic boundary conditions involve an extended potential energy of the form\n\\[U^{\\mathrm{pbc}}(\\boldsymbol q)=\\sum_{klm}\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{ij}(\\boldsymbol q_i,\\boldsymbol q_j+k\\boldsymbol v_1+l\\boldsymbol v_2+m\\boldsymbol v_3),\\]\nwhere $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\\boldsymbol v_i^T=(L\\boldsymbol e_i^T,\\ldots,L\\boldsymbol e_i^T)$, $i=1,2,3$, where $\\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^3$.",
+    "statement_latex": "periodic boundary conditions involve an extended potential energy of the form\n\\[U^{\\mathrm{pbc}}(\\boldsymbol q)=\\sum_{klm}\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{ij}(\\boldsymbol q_i,\\boldsymbol q_j+k\\boldsymbol v_1+l\\boldsymbol v_2+m\\boldsymbol v_3),\\]\nwhere $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\\boldsymbol v_i^T=(L\\boldsymbol e_i^T,L\\boldsymbol e_i^T,\\ldots,L\\boldsymbol e_i^T)$, $i=1,2,3$, where $\\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^3$.",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
-      "Fin3索引减1枚举-1,0,1；逐原子3向量加L(k,l,m)，等价全配置向量重复位移。"
+      "Fin 3 索引减1枚举 −1,0,1；Lean 对单粒子位置加三维位移 L(k,l,m)。",
+      "原页 v_i 的重复块向量记法与二体参数的三维位置有维数疑点；按每粒子取块可解释 Lean，但此解释待人工确认。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [],
     "lean_decl": "MD.Ch01.periodicImageEnergy",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex",
+          "context_notation"
+        ]
+      }
+    ],
     "old_ids": [
       "CH01-158"
     ],
@@ -3050,17 +3238,33 @@
     "section": "1.6",
     "printed_page": "35",
     "pdf_page": "58",
-    "statement_latex": "In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice, with sides of fixed length $n_x,n_y$ and the angle between them ($\\theta$), see Fig. 1.17.",
+    "statement_latex": "In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice with sides of fixed length $n_x,n_y$ and the angle between them ($\\theta$), see Fig. 1.17.",
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
-      "a=nx,b=ny；定义只编码基向量Z线性组合，不声称低温平衡一定如此。"
+      "一般整数生成集rhombicLattice保留为辅助；二维格入口增加a>0、b>0、sinθ≠0，不加a=b；下游六角格恒等式无须调整。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
-    "lean_decl": "MD.Ch01.rhombicLattice",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "lean_decl": "MD.Ch01.rhombicLatticeOnDomain",
+    "extra_assumptions": [
+      "[EXTRA] 一般整数生成集rhombicLattice保留为辅助；二维格入口增加a>0、b>0、sinθ≠0，不加a=b；下游六角格恒等式无须调整。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21",
+        "reason": "一般整数生成集rhombicLattice保留为辅助；二维格入口增加a>0、b>0、sinθ≠0，不加a=b；下游六角格恒等式无须调整。",
+        "website": "按网站意见修复；不再送网站"
+      },
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "statement_latex",
+          "context_notation"
+        ]
+      }
+    ],
     "old_ids": [
       "CH01-160"
     ],
@@ -3100,13 +3304,28 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [
-      "B为三基向量矩阵，motif为盒内点集；定义按整数平移重复。"
+      "一般平移并集unitCellLattice保留；晶胞入口要求det B≠0及motif有限非空且位于B([0,1)³)。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "CORRECTED",
     "issues": [],
-    "lean_decl": "MD.Ch01.unitCellLattice",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "lean_decl": "MD.Ch01.unitCellOnDomain",
+    "extra_assumptions": [
+      "[EXTRA] 一般平移并集unitCellLattice保留；晶胞入口要求det B≠0及motif有限非空且位于B([0,1)³)。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT21",
+        "reason": "一般平移并集unitCellLattice保留；晶胞入口要求det B≠0及motif有限非空且位于B([0,1)³)。",
+        "website": "按网站意见修复；不再送网站"
+      },
+      {
+        "stage": "CLOSEOUT21_SOURCE_REVIEW",
+        "reason": "逐字段采纳网站corrected_json转录/元数据，不改Lean数学陈述。",
+        "fields": [
+          "context_notation"
+        ]
+      }
+    ],
     "old_ids": [
       "CH01-162"
     ],
@@ -3169,7 +3388,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -3234,7 +3453,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -3330,7 +3549,7 @@
     "context_notation": [
       "u=Reξ,v=Imξ，Au=-Ωv、Av=Ωu来自实矩阵复特征向量方程；realNormalMode展开即原式。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [],
     "lean_decl": "MD.Ch01.realnormalmode",
     "extra_assumptions": [],
@@ -3502,7 +3721,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -3543,7 +3762,7 @@
     "context_notation": [
       "单位质量；质心固定及等腰约束是特定对称初值，非所有零角动量三体配置。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -3717,7 +3936,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -3781,7 +4000,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -3851,7 +4070,7 @@
     "context_notation": [
       "F为C1真实flow，z(t,ξ)=Ftξ；原文字面在Ftξ处对初值变量微分。"
     ],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -3890,7 +4109,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",
@@ -3928,7 +4147,7 @@
     "proof_latex": null,
     "proof_note": "原书无独立完整证明。",
     "context_notation": [],
-    "review_status": "DRAFT",
+    "review_status": "NEEDS_HUMAN",
     "issues": [
       {
         "code": "ERRATUM?",

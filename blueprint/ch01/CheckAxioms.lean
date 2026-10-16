@@ -1,4 +1,5 @@
 import Blueprint.Ch01
+
 #print axioms MD.Ch01.IsNewtonTrajectoryOn
 #print axioms MD.Ch01.matrixAction
 #print axioms MD.Ch01.variableMassLagrangian
@@ -32,8 +33,12 @@ import Blueprint.Ch01
 #print axioms MD.Ch01.yukawaScreened_corrected_a
 #print axioms MD.Ch01.yukawaScreened_corrected_b
 #print axioms MD.Ch01.angleBondModel
+#print axioms MD.Ch01.AngleBondValidDomain
+#print axioms MD.Ch01.angleBondOnDomain
 #print axioms MD.Ch01.dihedralPotential
 #print axioms MD.Ch01.gayBerneModel
+#print axioms MD.Ch01.GayBerneValidDomain
+#print axioms MD.Ch01.gayBerneOnDomain
 #print axioms MD.Ch01.compactNewton
 #print axioms MD.Ch01.linearizedConstraintDimension
 #print axioms MD.Ch01.degreesOfFreedom
@@ -42,7 +47,10 @@ import Blueprint.Ch01
 #print axioms MD.Ch01.particleTotalEnergy
 #print axioms MD.Ch01.paircancellation
 #print axioms MD.Ch01.momentum_conservation
+#print axioms MD.Ch01.harmonicEnergy
+#print axioms MD.Ch01.harmonicEnergy_eq_massHamiltonian
 #print axioms MD.Ch01.harmonic_solution
+#print axioms MD.Ch01.scalarMechanicalEnergy
 #print axioms MD.Ch01.scalarMechanicalModel
 #print axioms MD.Ch01.scalar_quadrature
 #print axioms MD.Ch01.uniformLJSystem
@@ -145,8 +153,13 @@ import Blueprint.Ch01
 #print axioms MD.Ch01.minimumImage
 #print axioms MD.Ch01.minimumImageForce
 #print axioms MD.Ch01.rhombicLattice
+#print axioms MD.Ch01.RhombicLatticeValidDomain
+#print axioms MD.Ch01.rhombicLatticeOnDomain
 #print axioms MD.Ch01.hexagonal_lattice_two_bases
 #print axioms MD.Ch01.unitCellLattice
+#print axioms MD.Ch01.unitCellBox
+#print axioms MD.Ch01.UnitCellValidDomain
+#print axioms MD.Ch01.unitCellOnDomain
 #print axioms MD.Ch01.fccStacking
 #print axioms MD.Ch01.hcpStacking
 #print axioms MD.Ch01.minimumgradientzero

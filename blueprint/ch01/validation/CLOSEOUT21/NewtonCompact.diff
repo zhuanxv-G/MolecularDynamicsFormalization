@@ -1,0 +1,15 @@
+--- before/Ch01.lean
++++ after/Ch01.lean
+@@ -535,10 +535,12 @@
+ /-- source_id: MD-1.2-NewtonCompact · definition · printed p.18 / PDF p.41
+ [EXTRA] 真实二阶可微资格写成HasDerivAt，避免总导数对不可微曲线给伪解。
+ 
++[EXTRA] 在原有两项真实时间导数资格后增加势能在q(t)处可微。
+ -/
+ def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+     (q : ℝ → Position n) (t : ℝ) : Prop :=
+   HasDerivAt q (deriv q t) t ∧ HasDerivAt (deriv q) (deriv (deriv q) t) t ∧
++  DifferentiableAt ℝ U (q t) ∧
+   massOperator m (deriv (deriv q) t) = -gradient U (q t)
+ 
+ /-- source_id: MD-1.2-DegreesFreedom · definition · printed p.18 / PDF p.41

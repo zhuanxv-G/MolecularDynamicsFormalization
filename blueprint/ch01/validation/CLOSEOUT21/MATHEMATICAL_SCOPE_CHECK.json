@@ -1,0 +1,27 @@
+{
+  "existing_declarations_changed": [
+    "compactNewton",
+    "harmonic_solution",
+    "scalarMechanicalModel",
+    "periodicBondEnergy",
+    "periodic_translation_third_law"
+  ],
+  "new_declarations": [
+    "AngleBondValidDomain",
+    "GayBerneValidDomain",
+    "RhombicLatticeValidDomain",
+    "UnitCellValidDomain",
+    "angleBondOnDomain",
+    "gayBerneOnDomain",
+    "harmonicEnergy",
+    "harmonicEnergy_eq_massHamiltonian",
+    "rhombicLatticeOnDomain",
+    "scalarMechanicalEnergy",
+    "unitCellBox",
+    "unitCellOnDomain"
+  ],
+  "existing_unchanged": 189,
+  "lj_time_scaling_theorems_unchanged": true,
+  "periodic_momentum_main_unchanged": true,
+  "downstream_adjustments": []
+}

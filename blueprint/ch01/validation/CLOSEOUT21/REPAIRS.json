@@ -1,0 +1,254 @@
+[
+  {
+    "key": "AngleBond",
+    "source_id": "MD-1.1.2-AngleBond",
+    "diff_summary": "总化辅助angleBondModel保留；angleBondOnDomain强制两键长严格正，有向差不改。",
+    "suggested_fix": "英文JSON按原页删除多余k，已在corrected_json给出。Lean后续应加两键长正/非零的域谓词或子类型；若保留辅助总函数，明确总化约定并另给在非退化构形域上的模型。此轮不修改工程。",
+    "original_fail": {
+      "lean_decl": "MD.Ch01.angleBondModel",
+      "verdict": "FAIL",
+      "explanation": "公式在非零两键长上PASS，V3、内积、两范数乘积、arccos及弹簧系数均与原页一致。但当前angleBondModel接受所有三位置，没有非零键长的子类型或前提，context_notation所说“两键长非零”没有落实，也未声明零分母仅是辅助总化扩展。Lean的除零为0会在原书角度未定义的重合构形给出实势，故按完整对象/域要求FAIL。k正也只是物理上下文，并非签名前提；本次不把原书的有向差约定自行换成通常补角约定。",
+      "counterexample": "取k=1、θ₀=0、qᵢ=qⱼ=qₖ=0。原书比值为0/0，角未定义；Lean把除法结果总化为0，Real.arccos 0=π/2，模型返回π²/8。此例说明域不符，不是否定非零键长上的公式。",
+      "suggested_fix": "英文JSON按原页删除多余k，已在corrected_json给出。Lean后续应加两键长正/非零的域谓词或子类型；若保留辅助总函数，明确总化约定并另给在非退化构形域上的模型。此轮不修改工程。"
+    },
+    "diff_file": "AngleBond.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch01.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "445c8defc0bbf7bd0f2add996ae4395c46096c1a0a065f94b175f7b1c259df83",
+    "log_sha256": "5b0955a3289b4b92716531bebf91d512c0c1618b9f3ec91b308b7da3f3bb580c",
+    "diff_path": "blueprint/ch01/validation/CLOSEOUT21/AngleBond.diff",
+    "validation_receipt": "blueprint/ch01/validation/CLOSEOUT21/AngleBond.json"
+  },
+  {
+    "key": "GayBerne",
+    "source_id": "MD-1.1.2-GayBerne",
+    "diff_summary": "原公式为总化辅助；有效域落实单位取向、非碰撞、根号严格正、参数及全部分母非零、Δ≠0；ε₂次数和Δ原样保留。",
+    "suggested_fix": "增加明确的Gay–Berne有效域谓词/子类型，至少覆盖取向单位、分离非零、根号正及所有分母非零，并在该域上提供模型。可保留当前表达式为总化辅助公式；不得把其非法域值当原书物理势，也不得擅加ε₂平方或修改Δ。",
+    "original_fail": {
+      "lean_decl": "MD.Ch01.gayBerneModel",
+      "verdict": "FAIL",
+      "explanation": "全部代数展开在原书正常域上PASS：r=q₂−q₁、r̂=‖r‖⁻¹r，ε₁=ε₀/√(1−χ²(u₁·u₂)²)，ε₂=W(...,χ′)，W的两分母和正负号、χ与χ′的定义均一致。但Lean参数u₁,u₂仅为任意V3，不是原书的单位取向；q₁≠q₂、根号内严格正、σₛ/εₛ/μ及各有理式分母非零、Δ≠0均未编码。context_notation已经明确这些域限定，却无相应[EXTRA]总化说明或有效域模型。总除法、Real.sqrt及Real.rpow会对非法参数继续返回值，因此完整域审校FAIL；不以旧库不同公式作为依据。",
+      "counterexample": "令全部实参数ε₀=σ₀=σₑ=σₛ=εₑ=εₛ=μ=1，q₁=0，q₂=e₁，u₁=u₂=e₁（单位向量）。则χ=χ′=0、W=1、Δ=1−1=0。原书(σ₀/Δ)的势未定义；Lean以1/0=0返回0。另取非单位u也被当前签名接受。",
+      "suggested_fix": "增加明确的Gay–Berne有效域谓词/子类型，至少覆盖取向单位、分离非零、根号正及所有分母非零，并在该域上提供模型。可保留当前表达式为总化辅助公式；不得把其非法域值当原书物理势，也不得擅加ε₂平方或修改Δ。"
+    },
+    "diff_file": "GayBerne.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch01.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "b7ae6d5c2ba6cb643cde4a54104118f99f22ffc67094cdf0d470edc2b3d2cdcc",
+    "log_sha256": "ba72158ffbcd35484d31a21f9df938b2c5e014c864fd13927f6e63085df97ad4",
+    "diff_path": "blueprint/ch01/validation/CLOSEOUT21/GayBerne.diff",
+    "validation_receipt": "blueprint/ch01/validation/CLOSEOUT21/GayBerne.json"
+  },
+  {
+    "key": "NewtonCompact",
+    "source_id": "MD-1.2-NewtonCompact",
+    "diff_summary": "在原有两项真实时间导数资格后增加势能在q(t)处可微。",
+    "suggested_fix": "在compactNewton中加入DifferentiableAt ℝ U (q t)，或用HasFDerivAt明确真实势导数；保留现有时间导数资格。物理粒子特化时再显式给正质量及三坐标重复关系。",
+    "original_fail": {
+      "lean_decl": "MD.Ch01.compactNewton",
+      "verdict": "FAIL",
+      "explanation": "时间一、二阶HasDerivAt确实阻止不可微q被总导数当伪解；massOperator通过Matrix.diagonal逐坐标作用，等式确为M q″=−gradient U。泛化维数n和任意对角实参数可作原式的代数模板，三维粒子物理使用须取n=3N及正质量三次重复。关键缺项是U:Position n→ℝ没有在q t可微的前提，gradient的总化定义仍可在不可微势点返回0，故未完整表达经典Newton力；[EXTRA]只修复了轨迹导数，没有修复势能梯度资格。域审校FAIL。",
+      "counterexample": "n=1，m₀=1，U(x)=‖x‖，q(s)=0。q有真实一、二阶零导数，而U在0不可微，Mathlib的fderiv/gradient总化为0，所以compactNewton在任意t成立；原书经典−∇U(0)却未定义。",
+      "suggested_fix": "在compactNewton中加入DifferentiableAt ℝ U (q t)，或用HasFDerivAt明确真实势导数；保留现有时间导数资格。物理粒子特化时再显式给正质量及三坐标重复关系。"
+    },
+    "diff_file": "NewtonCompact.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch01.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "5eaa25fde7b1bb60f24ccfad3aeba248d5a15d8b8929b6e6c0df4adc6c01cd18",
+    "log_sha256": "9a9916c2a1d890f64651fc324f56329b590b15b2118d7a630765de6b6c8d26c9",
+    "diff_path": "blueprint/ch01/validation/CLOSEOUT21/NewtonCompact.diff",
+    "validation_receipt": "blueprint/ch01/validation/CLOSEOUT21/NewtonCompact.json"
+  },
+  {
+    "key": "HarmonicSolution",
+    "source_id": "MD-1.2-HarmonicSolution",
+    "diff_summary": "补范数平方能量、与质量Hamiltonian的识别和守恒；复用已有ODE唯一性，短证任意同初值全时间机械解等于显式流（首条路线通过）。",
+    "suggested_fix": "保留现有正确解验证；补谐振子能量定义/识别（n=1给原式，n维用范数平方），并补任意同初值机械解等于harmonicFlow的唯一性或完整解刻画。若能量句只作非形式化背景，需明确缩小本条正式覆盖范围。",
+    "original_fail": {
+      "lean_decl": "MD.Ch01.harmonic_solution",
+      "verdict": "FAIL",
+      "explanation": "已写的harmonic_solution本身正确：PASS其动力学、全实时间域、单位质量、初值和位置公式。PhaseSpace第二分量是动量，单位质量下等于速度；mechanicalVectorField的第一分量确为该速度，harmonicFlow第二分量也是位置的真实导数，n=1还原原式。按本任务“全部对象/完整结论”审校，仍有覆盖缺项：所给同source全部声明/依赖没有定义或连接原句的能量E=|v|²/2+Ω²|x|²/2；且只验证所构造的流，不含“任意满足该初值的解都由此公式给出”的唯一性结论。此FAIL是完整覆盖失败，不是现有显式式为假，不涉及sorry。",
+      "counterexample": null,
+      "suggested_fix": "保留现有正确解验证；补谐振子能量定义/识别（n=1给原式，n维用范数平方），并补任意同初值机械解等于harmonicFlow的唯一性或完整解刻画。若能量句只作非形式化背景，需明确缩小本条正式覆盖范围。"
+    },
+    "diff_file": "HarmonicSolution.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch01.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "a6b349cc1cd0d5f3d59b737e0c5eb26b46057889413d08004380845b88f0d064",
+    "log_sha256": "3f2b11d957c7c575a7eb46bfc1ef6c2f0f0d42fd5474db4aae9fe9bc778bf701",
+    "diff_path": "blueprint/ch01/validation/CLOSEOUT21/HarmonicSolution.diff",
+    "validation_receipt": "blueprint/ch01/validation/CLOSEOUT21/HarmonicSolution.json"
+  },
+  {
+    "key": "ScalarMechanical",
+    "source_id": "MD-1.2-ScalarMechanical",
+    "diff_summary": "补E_U(x,v)=v²/2+U(x)，模型以显式能量参数E等于该定义连接；原有导数条件保留。",
+    "suggested_fix": "补一个与本模型相连的标量能量定义，例如E_U(x,v)=v²/2+U(x)，并在本条声明/依赖中明确展示；保留当前沿轨迹势能可微及真实时间导数条件。",
+    "original_fail": {
+      "lean_decl": "MD.Ch01.scalarMechanicalModel",
+      "verdict": "FAIL",
+      "explanation": "scalarMechanicalModel的动力学部分PASS：任意实势U、实时间相轨迹z，逐时刻要求U在位置可微，HasDerivAt z (v,−U′(x))同时给出真实x′=v及v′=−U′，与单位质量方程相符，最新[EXTRA]也落实。完整条目仍FAIL：原句还定义E(x,ẋ)=ẋ²/2+U(x)，而所给全部当前声明只有ODE谓词；context_notation提到的scalarPotentialEnergy并未给出定义或能量识别，不能把一个名字当成已经形式化。未要求本条之外的局部积分论证或能量守恒定理。",
+      "counterexample": null,
+      "suggested_fix": "补一个与本模型相连的标量能量定义，例如E_U(x,v)=v²/2+U(x)，并在本条声明/依赖中明确展示；保留当前沿轨迹势能可微及真实时间导数条件。"
+    },
+    "diff_file": "ScalarMechanical.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch01.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "621c520e5b4ff97c79baf989d0520dd7c8793cc289bc410f9eb035ee577675a3",
+    "log_sha256": "b206e9165cdbe1a67184c32d85f45e36ed641428558bb35b5c6e44a5bde7bf89",
+    "diff_path": "blueprint/ch01/validation/CLOSEOUT21/ScalarMechanical.diff",
+    "validation_receipt": "blueprint/ch01/validation/CLOSEOUT21/ScalarMechanical.json"
+  },
+  {
+    "key": "LJTimeScaling",
+    "source_id": "MD-1.2-LJTimeScaling",
+    "diff_summary": "仅[EXTRA]容差0.005ps改为0.01ps；两个定理逐字未改。",
+    "suggested_fix": "把[EXTRA]的容差说明更正为实际签名的0.01ps（corrected_json已给出），保留当前两个正确定理。若坚持0.005ps，须重审输入或目标近似，不能仅把现有定理结论改强。",
+    "original_fail": {
+      "lean_decl": "MD.Ch01.ljtimescaling",
+      "verdict": "FAIL",
+      "explanation": "ljtimescaling：PASS。全部正参数、C²非碰撞Q、q(t)=σQ(αt)及α²关系明确；结论是有量纲Newton方程与全τ的单位参数方程双向等价，并给正确时间单位，反向时间覆盖由α>0保证。ljtimescaling_argon：按其实际签名PASS，给|τ−2.17ps|<0.01ps，常数和单位换算正确。但本条最新[EXTRA]明说显式容差0.005ps，实际结论却为0.01ps；且给定精确十进制参数下0.005ps界是假的。故接收材料的[EXTRA]一致性FAIL，不能把0.01当已证明0.005。corrected_json只将说明改成实际成立的0.01ps，不改原书近似或工程。",
+      "counterexample": "按所给精确十进制输入，τ/ps=(17/550)√4906，平方为64447/13750。精确比较给2.16<τ/ps<433/200=2.165<2.17，因此0.005<|τ/ps−2.17|<0.01；0.005ps界被该唯一氩特化本身否定。",
+      "suggested_fix": "把[EXTRA]的容差说明更正为实际签名的0.01ps（corrected_json已给出），保留当前两个正确定理。若坚持0.005ps，须重审输入或目标近似，不能仅把现有定理结论改强。"
+    },
+    "diff_file": "LJTimeScaling.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch01.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "3a75b3d5f572c37c4c39c7c329e55fa98451b2ac5529d44c197028615a1b05d6",
+    "log_sha256": "7e8552af40b4fb704e035394b7c1d91c1d7201f27b6c0b30ce3c812550d91e42",
+    "diff_path": "blueprint/ch01/validation/CLOSEOUT21/LJTimeScaling.diff",
+    "validation_receipt": "blueprint/ch01/validation/CLOSEOUT21/LJTimeScaling.json"
+  },
+  {
+    "key": "ScalarFirstIntegral",
+    "source_id": "MD-1.5.2-ScalarFirstIntegral",
+    "diff_summary": "本条正式覆盖为“能量守恒 + 非转向点局部求积”的部分形式化；转向点换坐标求积、平衡点常解分类和全局拼接列为覆盖缺口，不补理论。",
+    "suggested_fix": "保留已有非转向结论，补充速度为零且 U′≠0 时的交换坐标求积、速度和 U′同时为零时的常解分类；或明确将本条目标缩为非转向局部可积性。",
+    "original_fail": {
+      "lean_decl": [
+        "MD.Ch01.scalar_first_integral_and_quadrature"
+      ],
+      "verdict": "FAIL",
+      "explanation": "第5页 Example 1.6 转录相符。第一合取对任意 C² 势能证明能量 v²/2+U(x) 为 (v,−U′(x)) 的第一积分；第二合取的积分逆、局部参数化及速度符号均正确，但只量化速度非零点。相较原文“system is therefore integrable”的完整覆盖，缺少真实解在转向点的改用速度坐标求积、平衡点常解及相应重建说明。不是命题本身为假，也不是因 sorry 判 FAIL，而是覆盖不全。",
+      "counterexample": "U(x)=x，γ(t)=(−t²/2,−t)，t₀=0 是真实转向点，hv₀ 不成立；U(x)=x²/2 的零解也被排除。",
+      "suggested_fix": "保留已有非转向结论，补充速度为零且 U′≠0 时的交换坐标求积、速度和 U′同时为零时的常解分类；或明确将本条目标缩为非转向局部可积性。"
+    },
+    "diff_file": "ScalarFirstIntegral.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch01.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "bc463ce02ab0f7dd1c70db2b08e46abff7ebdb6b386cfbc05aad0aa6e659d2da",
+    "log_sha256": "3420f659e2b60699301e7829399c6ec84bf8e3a4624551b7cbbacf2c1b023403",
+    "diff_path": "blueprint/ch01/validation/CLOSEOUT21/ScalarFirstIntegral.diff",
+    "validation_receipt": "blueprint/ch01/validation/CLOSEOUT21/ScalarFirstIntegral.json"
+  },
+  {
+    "key": "PeriodicTranslationMomentum",
+    "source_id": "MD-1.6-PeriodicTranslationMomentum",
+    "diff_summary": "键能量补范数，第三定律改对ψ=φ∘|·|在有向差处可微；平移/动量主定理逐字未改。",
+    "suggested_fix": "保留主定理。建议将键能量改为 φ ‖y−x+(if closing then L else 0)‖，并对 ψ(s)=φ ‖s‖ 在该差值处提出可微性，再陈述 ψ 键的两端负偏导相反；也可在非零键长条件下由 φ 在相应非负距离处可微导出。若保留有向辅助定义，须显式以 ψ=φ∘|·| 实例化并给出与实际每一能量项的对应。此处仅提出建议，未修改 Lean。",
+    "original_fail": {
+      "lean_decl": "MD.Ch01.periodic_translation_momentum",
+      "verdict": "FAIL",
+      "explanation": "MD.Ch01.periodic_translation_momentum：PASS（签名语义）。N∈ℕ，系统有 N+1 个实坐标；φ:ℝ→ℝ 与 L∈ℝ 任意。真实 U 的 N 个相邻键及闭合键只依赖坐标差，故同时平移不变；可微时沿全1向量的导数为0。对正质量 m、轨迹 q,v、开且预连通的 I，给出的势可微性和逐粒子速度/动量 Newton 导数足以推出总动量导数0及任意 a,b∈I 的总动量相等；全部结论均保留。MD.Ch01.periodicBondEnergy：FAIL（与实际依赖的对应关系），其定义是有向差的 φ 值，没有真实 U 中的范数。MD.Ch01.periodic_translation_third_law：作为这个有向辅助能量的两端力相反定理，签名本身 PASS；hφ 也恰好是有向参数处的可微性。然而，它未针对实际 U 的 φ∘|·| 键作陈述。没有 φ 偶性、键方向/位置资格或替换势的桥接，不能将其认作实际周期链中每条键的第三定律。[EXTRA] 中“真实每条周期键”“含闭合键”的覆盖说法因此不成立。总 verdict=FAIL 源于模型对应错误，不源于 sorry。",
+      "counterexample": "取 N=1、L=1、φ(s)=s、q₀=1、q₁=0。普通键的实际能量为 |q₁−q₀|=1，辅助 periodicBondEnergy φ 1 1 0 false=−1。在 (x,y)=(1,0) 邻域，实际键 E(x,y)=|y−x| 的两端力为 (−1,+1)，辅助键 y−x 的两端力为 (+1,−1)。φ 处处可微，第三定律声明的前提成立，仍不是实际键力。对闭合键也可取 L=1,x=2,y=0，使 L+y−x=−1，出现同样差异。这反驳的是“辅助力等于实际力”的覆盖说法，并不反驳真实 U 的平移不变性或其第三定律。",
+      "suggested_fix": "保留主定理。建议将键能量改为 φ ‖y−x+(if closing then L else 0)‖，并对 ψ(s)=φ ‖s‖ 在该差值处提出可微性，再陈述 ψ 键的两端负偏导相反；也可在非零键长条件下由 φ 在相应非负距离处可微导出。若保留有向辅助定义，须显式以 ψ=φ∘|·| 实例化并给出与实际每一能量项的对应。此处仅提出建议，未修改 Lean。"
+    },
+    "diff_file": "PeriodicTranslationMomentum.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch01.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "db851a076b3eaf7dda9904c1a5cbae5745b09fbabb41f01f2b4b14a518ae60c2",
+    "log_sha256": "638f8d461b255f7fde2b6185ffdeffb0fa343da37f5b05626519a5be154bb1a5",
+    "diff_path": "blueprint/ch01/validation/CLOSEOUT21/PeriodicTranslationMomentum.diff",
+    "validation_receipt": "blueprint/ch01/validation/CLOSEOUT21/PeriodicTranslationMomentum.json"
+  },
+  {
+    "key": "RhombicLattice",
+    "source_id": "MD-1.6-RhombicLattice",
+    "diff_summary": "一般整数生成集rhombicLattice保留为辅助；二维格入口增加a>0、b>0、sinθ≠0，不加a=b；下游六角格恒等式无须调整。",
+    "suggested_fix": "将当前公式保留为一般生成集合的辅助构造，并为其作为二维格的入口增加有效参数资格，例如 a>0、b>0、0<θ<π（或 a>0、b>0、sinθ≠0 并约定角度范围）。无需擅自加 a=b：原书 n_x,n_y 的一般平行四边形用语应保留，是否调整 rhombic 术语另由人工编辑决定。",
+    "original_fail": {
+      "lean_decl": "MD.Ch01.rhombicLattice",
+      "verdict": "FAIL",
+      "explanation": "MD.Ch01.rhombicLattice：FAIL（参数域/几何资格）。集合公式 x=k(a,0)+l(b cosθ,b sinθ)，k,l∈ℤ，方向、索引及二维实欧氏对象均正确；旋转/平移选定坐标本身不是问题。缺陷是 a,b,θ 无任何资格，不能保证两条边的长度为正或两个生成方向独立：行列式为 ab sinθ，可能为0。原文及图1.17描述的是二维格，而当前构造连秩0、秩1的退化集合也全部接收。[EXTRA] 为空，不能从“基向量”这个中文名称推入 Lean 中没有的线性无关性。作为一般整数生成集合的辅助定义它是合法的，但作为未加资格的二维 rhombic lattice 完整对应不足。没有把“低温典型”误审为必须额外证明的普遍低温定理。",
+      "counterexample": "取 a=b=1、θ=0，定义给出 {(k+l,0):k,l∈ℤ}=ℤ×{0}，只是一维格；取 a=b=0 则只有原点。两种参数都被当前签名接受，却不符合图示非退化二维格。",
+      "suggested_fix": "将当前公式保留为一般生成集合的辅助构造，并为其作为二维格的入口增加有效参数资格，例如 a>0、b>0、0<θ<π（或 a>0、b>0、sinθ≠0 并约定角度范围）。无需擅自加 a=b：原书 n_x,n_y 的一般平行四边形用语应保留，是否调整 rhombic 术语另由人工编辑决定。"
+    },
+    "diff_file": "RhombicLattice.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch01.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "10a30572ace8d51d415b0d78a17e9dedfeb3f9c34f777188a884e93feb961053",
+    "log_sha256": "10cf8f4fe771649da2863f8507a16631be8013cf2d9705d22c6c7dc162aa8930",
+    "diff_path": "blueprint/ch01/validation/CLOSEOUT21/RhombicLattice.diff",
+    "validation_receipt": "blueprint/ch01/validation/CLOSEOUT21/RhombicLattice.json"
+  },
+  {
+    "key": "UnitCell",
+    "source_id": "MD-1.6-UnitCell",
+    "diff_summary": "一般平移并集unitCellLattice保留；晶胞入口要求det B≠0及motif有限非空且位于B([0,1)³)。",
+    "suggested_fix": "保留一般整数平移并集为辅助构造；在 unit cell 的完整模型中要求 B 的列线性无关（或 det B≠0），并要求 motif 是有限、必要时非空且位于指定晶胞中的原子点集，例如 motif⊆B([0,1)³)。明确边界代表选择即可，无须强制原胞或单原子 motif。",
+    "original_fail": {
+      "lean_decl": "MD.Ch01.unitCellLattice",
+      "verdict": "FAIL",
+      "explanation": "MD.Ch01.unitCellLattice：FAIL（对象域/晶胞资格）。平移公式和存在量词准确编码了以三个生成向量重复 motif 的操作，但 B:Matrix (Fin 3) (Fin 3) ℝ 不是三维基的类型；B 可以奇异或为0。motif:Set V3 也未声明为盒内有限原子排列，甚至允许 motif=整个ℝ³。故定义输出不一定是三维离散原子晶格，不能仅靠 context_notation 的自然语言声称已经落实原书的“within a box”和“each direction”。此构造可保留为平移并集函数；缺失的是作为原书 unit cell 的有效输入资格，而非要求每个晶胞只能有一个原子。[EXTRA] 为空，未提供这些资格。",
+      "counterexample": "B=0、motif={0} 时，输出仅{0}，没有三个独立晶格方向。另取 B=I₃、motif=ℝ³，则输出是整个ℝ³，非离散原子晶格，也没有盒内原子排列这一资格。两者均满足当前全部输入类型。",
+      "suggested_fix": "保留一般整数平移并集为辅助构造；在 unit cell 的完整模型中要求 B 的列线性无关（或 det B≠0），并要求 motif 是有限、必要时非空且位于指定晶胞中的原子点集，例如 motif⊆B([0,1)³)。明确边界代表选择即可，无须强制原胞或单原子 motif。"
+    },
+    "diff_file": "UnitCell.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch01.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "68dfa6b8204a51b443eee6127ebc2856e525299ad80fb0480dc45fabb88d1ef4",
+    "log_sha256": "e3bffc0b8df1d63f3ad71fad56c128c331bdee39a9836324554c0c16d1c7657b",
+    "diff_path": "blueprint/ch01/validation/CLOSEOUT21/UnitCell.diff",
+    "validation_receipt": "blueprint/ch01/validation/CLOSEOUT21/UnitCell.json"
+  }
+]

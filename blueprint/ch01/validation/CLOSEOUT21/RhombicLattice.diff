@@ -1,0 +1,29 @@
+--- before/Ch01.lean
++++ after/Ch01.lean
+@@ -1966,9 +1966,17 @@
+ /-- source_id: MD-1.6-RhombicLattice · definition · printed p.35 / PDF p.58
+ 
+ 
++[EXTRA] 一般整数生成集rhombicLattice保留为辅助；二维格入口增加a>0、b>0、sinθ≠0，不加a=b；下游六角格恒等式无须调整。
+ -/
+ def rhombicLattice (a b θ : ℝ) : Set (Position 2) :=
+   {x | ∃ k l : ℤ, x = WithLp.toLp 2 ![k*a+l*b*Real.cos θ,l*b*Real.sin θ]}
++
++def RhombicLatticeValidDomain (a b θ : ℝ) : Prop :=
++  0 < a ∧ 0 < b ∧ Real.sin θ ≠ 0
++
++def rhombicLatticeOnDomain (a b θ : ℝ) (_h : RhombicLatticeValidDomain a b θ) :
++    Set (Position 2) := rhombicLattice a b θ
++
+ 
+ /-- source_id: MD-1.6-HexagonalLattice · unnumbered_claim · printed p.35 / PDF p.58
+ 
+@@ -2755,6 +2763,8 @@
+ #print axioms MD.Ch01.minimumImage
+ #print axioms MD.Ch01.minimumImageForce
+ #print axioms MD.Ch01.rhombicLattice
++#print axioms MD.Ch01.RhombicLatticeValidDomain
++#print axioms MD.Ch01.rhombicLatticeOnDomain
+ #print axioms MD.Ch01.hexagonal_lattice_two_bases
+ #print axioms MD.Ch01.unitCellLattice
+ #print axioms MD.Ch01.fccStacking

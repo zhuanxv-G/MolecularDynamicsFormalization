@@ -1,0 +1,2932 @@
+{
+  "IsNewtonTrajectoryOn": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 55,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "matrixAction": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 63,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "variableMassLagrangian": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 66,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "variableMassHamiltonian": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 70,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "classicalNewtonInitialValueModel": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 76,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "binaryElasticSphereCollision": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 86,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "lengthBondRadial": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 100,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "theorem_1_1": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 111,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "energy_conservation": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 129,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "newton_iff_euler_lagrange": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 165,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "hamiltonian_legendre_transform": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 206,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "hamiltonian_legendre_transform_literal": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 225,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "hamiltonian_legendre_transform_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 243,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "flow_inverse": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 271,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "schrodingerEquation": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 298,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "newtonInitialValueModel": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 314,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "hardSphereModel": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 330,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "multibodyPotential": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 353,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "morsePotential": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 366,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "morse_minimum": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 372,
+    "status": "incomplete",
+    "sorry_category": "时间盒止",
+    "stop_reason": "既有三次失败时间盒保持，不恢复指数极限/曲率长证明。"
+  },
+  "lengthBond": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 385,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "dispersionPotential": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 391,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "buckinghamPotential": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 397,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "lennardJonesPotential": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 403,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "lj_repulsion": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 409,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "lj_repulsion_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 430,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "heterogeneousLJ": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 440,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "coulombPotential": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 448,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "smoothCutoff": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 455,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "yukawaScreened": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 462,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "yukawaScreened_corrected_a": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 467,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "yukawaScreened_corrected_b": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 472,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "angleBondModel": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 481,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "AngleBondValidDomain": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 486,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "angleBondOnDomain": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 489,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "dihedralPotential": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 497,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "gayBerneModel": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 504,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "GayBerneValidDomain": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 513,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "gayBerneOnDomain": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 526,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "compactNewton": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 540,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "linearizedConstraintDimension": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 551,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "degreesOfFreedom": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 554,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "constraintdimension": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 562,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "constraintdimension_unconstrained": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 576,
+    "status": "incomplete",
+    "sorry_category": "时间盒止",
+    "stop_reason": "零约束导数核维数的同一路线至少3次不匹配；按时间盒保留sorry（signatures01、dual01–03原始日志）。"
+  },
+  "particleTotalEnergy": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 584,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "paircancellation": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 591,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "momentum_conservation": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 616,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "harmonicEnergy": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 648,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "harmonicEnergy_eq_massHamiltonian": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 651,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "harmonic_solution": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 659,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "scalarMechanicalEnergy": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 685,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "scalarMechanicalModel": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 689,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "scalar_quadrature": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 697,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "uniformLJSystem": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 719,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "radial_lj_force_literal": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 726,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "radial_lj_force_literal_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 738,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "lj_coordinate_scaling": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 775,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "ljtimescaling": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 789,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "ljtimescaling_argon": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 860,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "fixedMassLagrangian": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 876,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "generalized_coordinates": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 883,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "generalizedmassregular": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 898,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "legendreTransform": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 913,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "legendreTransform_literal": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 917,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "legendreTransform_corrected": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 923,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "legendreTransform_corrected_b": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 927,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "hamiltonEquationsOn": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 937,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "hamiltonEquations": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 944,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "hamilton_fixed_mass": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 951,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "hamiltonlagrangeequivalence": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 980,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "finiteEnergyPhaseDomain": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 996,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "finiteEnergyPhaseDomain_corrected": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1004,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "finiteEnergyPhaseDomain_corrected_dimension": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1007,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "local_exist_unique": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1016,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "energySurface": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1034,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "energy_bounds": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1040,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "uniform_levels_compact": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1053,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "compact_continuation_aux": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1065,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "compact_continuation": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1074,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "nonconfining": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1093,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "flowMap": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1108,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "flow_energy": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1115,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "harmonicPhaseFlow": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1152,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "harmonicPhaseFlow_solution": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1156,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "spectralsolution": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1168,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "basis_coefficients": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1180,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "matrixexponentialsolution": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1192,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "matrix_exp_series": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1204,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "smoothFirstIntegral": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1212,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "firstintegralcriterion": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1219,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "planargraphreduction": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1230,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "planarquadrature": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1248,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "scalar_first_integral_and_quadrature": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1271,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "realspectralsolution": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1292,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "planarKeplerEnergy": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1306,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "kepler_energy_angular_integrability": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1313,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "keplerangularmomentum": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1346,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "keplermomentum": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1358,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "keplermomentum_not_first_integrals": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1363,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "polarCoordinates": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1373,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "keplerpolarlagrangian": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1379,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "keplerpolarode": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1390,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "polarangularidentity": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1402,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "keplerradialreduction": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1412,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "radialKeplerEnergy": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1423,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "kepler_full_solution": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1429,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "oscillatorActionAngle": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1449,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "actionenergy": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1456,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "actionode": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1466,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "actionsolution": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1479,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "oscillatorTorusMotion": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1496,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "torusperiod": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1503,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "torusQuasiperiodic": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1511,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "torusperiod_classification": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1514,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "torusdense": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1527,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "torusdense_literal": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1534,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "torusdense_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1541,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "local_action_angle_reduction": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1551,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "local_action_angle_reduction_literal": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1566,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "local_action_angle_reduction_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1580,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "equilibriumDefinition": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1598,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "constantequilibrium": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1604,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "equilibriumlinearization": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1613,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "hyperbolic": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1625,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "hartmangrobmanliteral": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1633,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "hartmangrobmanliteral_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1647,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "lyapunovStable": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1664,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "hyperbolicstabilitytransfer": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1673,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "hyperbolicstabilitytransfer_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1681,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "hamilton_equilibrium": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1692,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "strongLocalMinimum": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1713,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "linearizedHamiltonian": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1720,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "linearizedHamiltonian_field": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1724,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "positivehessianquadratic": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1737,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "positive_hessian_minimum": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1774,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "latticePairPotential": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1790,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "unorderedpaircount": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1797,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "nearestNeighborModel": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1806,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "walledChainModel": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1813,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "periodicChainModel": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1820,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "periodicPositionEquivalent": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1827,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "periodicBoundary": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1829,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "periodic_translation_momentum": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1837,
+    "status": "incomplete",
+    "sorry_category": "时间盒止",
+    "stop_reason": "既有三次失败时间盒保持，不恢复Pi空间链式导数长证明。"
+  },
+  "periodicBondEnergy": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1852,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "periodic_translation_third_law": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1855,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "regularLattice": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1875,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "regularlatticeminimizerliteral": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 1882,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "regularlatticeminimizerliteral_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1891,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "regularlatticeminimizerliteral_counterexample": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1930,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "periodicImageEnergy": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1947,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "minimumImage": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1956,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "minimumImageForce": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1960,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "rhombicLattice": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1971,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "RhombicLatticeValidDomain": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1974,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "rhombicLatticeOnDomain": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1977,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "hexagonal_lattice_two_bases": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 1985,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "unitCellLattice": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2011,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "unitCellBox": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2016,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "UnitCellValidDomain": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2019,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "unitCellOnDomain": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2022,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "fccStacking": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2030,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "hcpStacking": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2039,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "minimumgradientzero": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2048,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "minimumgradientzero_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2054,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "force_linearization": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2063,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "minimumhessianliteral": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2090,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "minimumhessianliteral_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2098,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "minimumhessianliteral_counterexample": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2105,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "imaginary_spectrum": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2120,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "complexnormalmode": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2132,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "realnormalmode": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2151,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "planarTrimerEnergy": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2167,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "centralPairEnergy": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2175,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "centralpairgradient": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2182,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "central_momentum": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2203,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "centralangularmomentum_derivative": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2217,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "centralangularmomentum": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2277,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "centerofmassmotion": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2300,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "constantrotationliteral": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2336,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "constantrotationliteral_corrected_a": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2343,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "constantrotationliteral_corrected_b": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2351,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "isoscelesCoordinates": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2362,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "isoscelesCoordinates_corrected": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2366,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "isoscelesCoordinates_corrected_center": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2369,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "isosceles_energy_reduction": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2378,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "isoscelesaccessibleregion": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2415,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "equilateraltrimerminimum": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2423,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "trimerenergylowerbound": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2434,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "collinearTrimer": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2443,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "trimersaddle": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2450,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "trimerescapeliteral": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2461,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "trimerescapeliteral_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2474,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "chaosConditions": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2491,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "transitivityergodicityliteral": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2498,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "transitivityergodicityliteral_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2507,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "anisotropicEnergy": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2519,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "variationalMatrixLiteral": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2527,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "variationalMatrixLiteral_corrected": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2531,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "variationalequationliteral": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2538,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "variationalequationliteral_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2546,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "nearby_trajectory_literal": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2557,
+    "status": "incomplete",
+    "sorry_category": "原书疑误不证",
+    "stop_reason": null
+  },
+  "nearby_trajectory_literal_corrected": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2564,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "singularValues": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2575,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "singularellipsoid": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": true,
+    "transitive_placeholder": true,
+    "line": 2584,
+    "status": "incomplete",
+    "sorry_category": "缺大型理论",
+    "stop_reason": null
+  },
+  "lyapunovExponent": {
+    "kind": "def",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2596,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  },
+  "positivelyapunovgrowth": {
+    "kind": "theorem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "direct_placeholder": false,
+    "transitive_placeholder": false,
+    "line": 2603,
+    "status": "self-contained",
+    "sorry_category": null,
+    "stop_reason": null
+  }
+}

@@ -1,0 +1,10 @@
+--- before/Ch01.lean
++++ after/Ch01.lean
+@@ -1266,6 +1266,7 @@
+ /-- source_id: MD-1.5.2-ScalarFirstIntegral · unnumbered_claim · printed p.28 / PDF p.51
+ [EXTRA] U C2；开放时间段真实解、积分逆图使用速度非零点；转向点全局拼接不声称已有证明。
+ 
++[EXTRA] 本条正式覆盖为“能量守恒 + 非转向点局部求积”的部分形式化；转向点换坐标求积、平衡点常解分类和全局拼接列为覆盖缺口，不补理论。
+ -/
+ theorem scalar_first_integral_and_quadrature :
+   (∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U),

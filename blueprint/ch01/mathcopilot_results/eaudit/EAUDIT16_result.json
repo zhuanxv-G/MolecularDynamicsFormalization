@@ -1,0 +1,145 @@
+{
+  "batch": "EAUDIT16",
+  "input_sha256": {
+    "BATCH_EAUDIT16.md": "7c2f6db4ec1a6a1448c398abdff19eaf992b9dd6c1bbda2bc4be5c05bb18cdb3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.5.2-TorusDense",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_ADDED_WORD",
+          "SOURCE_FALSE_FULL_TORUS_DENSITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.2-TorusDense",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.5.2",
+          "printed_page": "30",
+          "pdf_page": "53",
+          "statement_latex": "in the latter case the paths do not “close up” but instead we the curve gradually fills in the surface of the torus.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_ADDED_WORD",
+              "detail": "原页实印为 but instead we the curve gradually fills in ...，we 后直接换行接 the curve，未出现 see。JSON 自行补入 see；应保留原书语病，不能静默润色。"
+            },
+            {
+              "code": "SOURCE_FALSE_FULL_TORUS_DENSITY",
+              "detail": "非周期/允许共振的准周期不推出在整个高维环面稠密。原文疑误保留；literal 忠实，两个全整数无共振版本数学上正确。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.torusdense",
+          "extra_assumptions": [
+            "高维全整数关系无共振；仅成对频率比无理不足，此为原文quasi-periodic intended meaning的数学资格。"
+          ],
+          "old_ids": [
+            "CH01-133"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R3_PAGES.pdf; R3_review.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_ADDED_WORD",
+            "detail": "原页实印为 but instead we the curve gradually fills in ...，we 后直接换行接 the curve，未出现 see。JSON 自行补入 see；应保留原书语病，不能静默润色。"
+          },
+          {
+            "code": "SOURCE_FALSE_FULL_TORUS_DENSITY",
+            "detail": "非周期/允许共振的准周期不推出在整个高维环面稠密。原文疑误保留；literal 忠实，两个全整数无共振版本数学上正确。"
+          }
+        ],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第17页（印刷页30，原书PDF页53）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第11页逐像素相同；视觉核对依据：r3_evidence/page11.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.torusdense",
+          "MD.Ch01.torusdense_literal",
+          "MD.Ch01.torusdense_corrected"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "torusdense 与 torusdense_corrected 完全量化所有整数向量 k，要求 k·Ω=0 仅有零解；在连续实时间的模2π环面平移下这是全环面稠密的正确条件，不需要离散时间版本的额外常数项。torusdense_literal 只假设无正周期，忠实表达上下文 quasi-periodic 的字面推论，但 n≥3 时为假。分别结论：torusdense PASS；torusdense_literal 原文忠实性 PASS、原书数学 NEEDS_HUMAN；torusdense_corrected PASS。不能因 literal 带 sorry 判签名失败，也不能把修正版正确等同于原书无误。",
+        "counterexample": "n=3，Ω=(1,√2,1+√2)，θ=0。若有正周期，则 T 与 √2T 同为2π整数倍，推出√2为有理数，矛盾。但所有时刻 θ₃−θ₁−θ₂=0（模2π），轨道落在一个真闭二维子环面，故不在三维环面稠密；此例所有成对频率比也都无理。",
+        "suggested_fix": "保留 literal 并标原书疑误；正式稠密性仅引用全整数无共振版本，或将原句结论改为轨道在其闭包子环面中稠密。"
+      }
+    },
+    {
+      "source_id": "MD-1.5.2-LocalActionAngleReduction",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_GRAMMAR_SILENTLY_FIXED",
+          "SOURCE_MISSING_COMPACT_LEVEL"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.5.2-LocalActionAngleReduction",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.5.2",
+          "printed_page": "30",
+          "pdf_page": "53",
+          "statement_latex": "More generally, one finds occasional examples of nonlinear systems which possesses as many independent first integrals as degrees of freedom (satisfying a certain “involution” condition); such systems may be reduced via coordinate transformation to action-angle variables, i.e. they exhibit tori motion.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_GRAMMAR_SILENTLY_FIXED",
+              "detail": "原页为 systems which possesses ...（原书语病），并写 via coordinate transformation，没有 a。JSON 擅自改成 possess 及 via a coordinate transformation。"
+            },
+            {
+              "code": "SOURCE_MISSING_COMPACT_LEVEL",
+              "detail": "独立对合积分可给局部正则规约，但不能无条件得到全局环面。literal 保留原文缺资格结论；原声明及 corrected 明加紧连通正则水平集，合理且正确。IsConnected 按标准含非空，不存在缺少 S.Nonempty 的漏洞。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.local_action_angle_reduction",
+          "extra_assumptions": [
+            "全部积分C∞且Poisson括号两两零；正则共同能量层紧、连通；满秩=独立。"
+          ],
+          "old_ids": [
+            "CH01-134"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R3_PAGES.pdf; R3_review.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_GRAMMAR_SILENTLY_FIXED",
+            "detail": "原页为 systems which possesses ...（原书语病），并写 via coordinate transformation，没有 a。JSON 擅自改成 possess 及 via a coordinate transformation。"
+          },
+          {
+            "code": "SOURCE_MISSING_COMPACT_LEVEL",
+            "detail": "独立对合积分可给局部正则规约，但不能无条件得到全局环面。literal 保留原文缺资格结论；原声明及 corrected 明加紧连通正则水平集，合理且正确。IsConnected 按标准含非空，不存在缺少 S.Nonempty 的漏洞。"
+          }
+        ],
+        "evidence": [
+          "已先行核对 R3_PAGES.pdf 附件第18页（印刷页30，原书PDF页53）的原文与公式，再只读审校本任务摘录的完整声明及项目定义。",
+          "本页渲染与代表页第11页逐像素相同；视觉核对依据：r3_evidence/page11.png。数学排版换行及等价LaTeX写法不算文字改写。",
+          "未读取旧 Ch01.lean/ch01_source.json 作为依据；未修改工程或补证明；以下 verdict 是签名和数学语义审校，不是 Lean 编译或消除 sorry 的报告。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch01.local_action_angle_reduction",
+          "MD.Ch01.local_action_angle_reduction_literal",
+          "MD.Ch01.local_action_angle_reduction_corrected"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "三个声明均核对：对象为2d维标准实相空间、d个C∞积分、全空间两两 Poisson 括号为零、共同水平集 S 及 S 上每点微分映射满射。symplecticGradient=(∂pH,−∂qH)，canonicalBilinear=dq∧dp，符号自洽。localActionAngle 要求开邻域上的双向光滑逆、保辛微分及全部 Hamilton 向量场被送到(0,Ωᵢ(q))，给局部正则坐标中的角向运动；它未明确规定新 action 就是原 I，属于合适的局部规约表达。主声明与 corrected 的 S 紧且 IsConnected（含非空）加正则性正好提供 Liouville–Arnold 环面资格；同一 e:S≃ₜTᵈ 同时线性化各个积分的流，Ω 的负号可吸收进选择的频率，不要求预指定正频率。literal 去掉紧连通资格而仍要 S≃ₜTᵈ，在非紧或空水平集上为假，但忠实反映原句过强措辞。分别：主声明 PASS；literal 忠实性 PASS、数学 NEEDS_HUMAN；corrected PASS。",
+        "counterexample": "d=1，I₀(q,p)=p，c=0。I 光滑，Poisson 自括号为0，微分(vq,vp)↦vp 满射；S={(q,0):q∈ℝ}≃ℝ，非紧，不能同胚于紧圆 T¹。literal 前提全部成立，环面结论失败。",
+        "suggested_fix": "保留 literal 并标疑误；应用主声明或 corrected 时保留紧、连通、正则共同水平集。无需因注释“非空”未单列假设而重复补 Nonempty，因为 IsConnected 已包含它。"
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

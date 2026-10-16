@@ -1,0 +1,257 @@
+{
+  "batch": "EAUDIT21",
+  "input_sha256": {
+    "BATCH_EAUDIT21.md": "fba1b44393ec813e4764e294bcacaaf888d9bee5b94aa3bea5d0a4bb6574bcac",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.7-IsoscelesEnergyReduction",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "9",
+            "printed_page": "39",
+            "pdf_page": "62",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.isosceles_energy_reduction"
+            ],
+            "finding": "x>0使01距离为2x，另两距离为√(x²+y²)；速度坐标取(v,w)后动能为v²+w²/3。uniformLJEnergy用Ioi每对只计一次，等式不是前提。定义的总函数延拓在本x>0域不触及碰撞。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.isosceles_energy_reduction",
+        "verdict": "PASS",
+        "explanation": "x>0使01距离为2x，另两距离为√(x²+y²)；速度坐标取(v,w)后动能为v²+w²/3。uniformLJEnergy用Ioi每对只计一次，等式不是前提。定义的总函数延拓在本x>0域不触及碰撞。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7-IsoscelesAccessibleRegion",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "10",
+            "printed_page": "40",
+            "pdf_page": "63",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.isoscelesaccessibleregion"
+            ],
+            "finding": "全称x,y,v,w,E，仅假设能量等于E；由v²+w²/3≥0推出isoscelesPotential≤E。势的两倍斜边项与底边项完整，无需额外动态或正性前提。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.isoscelesaccessibleregion",
+        "verdict": "PASS",
+        "explanation": "全称x,y,v,w,E，仅假设能量等于E；由v²+w²/3≥0推出isoscelesPotential≤E。势的两倍斜边项与底边项完整，无需额外动态或正性前提。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7-EquilateralTrimerMinimum",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "11",
+            "printed_page": "38",
+            "pdf_page": "61",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.equilateraltrimerminimum"
+            ],
+            "finding": "对任意三维非碰撞三点，势≥−3且等号当且仅当全部非同标距离为2^(1/6)。这是原文全局最低势与等边构型的正确精确化；三维三个点仍共面。每对φ+1=(2/r⁶−1)²≥0，等号恰在r⁶=2；未把约1.1225当精确值，未因sorry扣分。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.equilateraltrimerminimum",
+        "verdict": "PASS",
+        "explanation": "对任意三维非碰撞三点，势≥−3且等号当且仅当全部非同标距离为2^(1/6)。这是原文全局最低势与等边构型的正确精确化；三维三个点仍共面。每对φ+1=(2/r⁶−1)²≥0，等号恰在r⁶=2；未把约1.1225当精确值，未因sorry扣分。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7-TrimerEnergyLowerBound",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "12",
+            "printed_page": "40",
+            "pdf_page": "63",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.trimerenergylowerbound"
+            ],
+            "finding": "任意非碰撞三粒子配置和任意速度，结论是动能加三对势≥−3；动能非负及每对势≥−1给出。与原文E<−3不可达一致；E>0部分按范围交第14条处理。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.trimerenergylowerbound",
+        "verdict": "PASS",
+        "explanation": "任意非碰撞三粒子配置和任意速度，结论是动能加三对势≥−3；动能非负及每对势≥−1给出。与原文E<−3不可达一致；E>0部分按范围交第14条处理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7-TrimerSaddle",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "13–14",
+            "printed_page": "40–41",
+            "pdf_page": "63–64",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.trimersaddle"
+            ],
+            "finding": "存在正x为全部正共线参数的全局极小，且存在同一个正δ，横向任何足够小非零位移严格增势、纵向任何足够小非零位移严格减势，量词及严格性符合原文。δ可缩至小于x排除u=0。令A=2+2⁻¹²，B=2+2⁻⁶，则共线势=4(Ax⁻¹²−Bx⁻⁶)，唯一极小满足x⁶=2A/B<2；故φ′(x)<0，纵向二阶项φ′(x)y²/x为负，横向二阶项为正。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.trimersaddle",
+        "verdict": "PASS",
+        "explanation": "存在正x为全部正共线参数的全局极小，且存在同一个正δ，横向任何足够小非零位移严格增势、纵向任何足够小非零位移严格减势，量词及严格性符合原文。δ可缩至小于x排除u=0。令A=2+2⁻¹²，B=2+2⁻⁶，则共线势=4(Ax⁻¹²−Bx⁻⁶)，唯一极小满足x⁶=2A/B<2；故φ′(x)<0，纵向二阶项φ′(x)y²/x为负，横向二阶项为正。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.7-TrimerEscapeLiteral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_MATHEMATICAL_ERROR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.7-TrimerEscapeLiteral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.7",
+          "printed_page": "40",
+          "pdf_page": "63",
+          "statement_latex": "(When $E>0$, the bodies eventually escape to infinity; $E<-3$ is not attainable.)",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_MATHEMATICAL_ERROR",
+              "detail": "literal保留逐粒子范数趋∞的字面解释；签名具真实Newton导数、单位LJ力、全时非碰撞、正能量、零质心/动量/角动量及等腰约束，无循环前提，但逐粒子结论过强。corrected保留全部资格并改为存在固定一对距离趋∞，改动方向合理；此候选的强极限结论尚需独立散射论证，不能由能量非负或现有反例直接认证。",
+              "stage": "A/C",
+              "source_preserved": true
+            }
+          ],
+          "lean_decl": "MD.Ch01.trimerescapeliteral",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-207"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_MATHEMATICAL_ERROR",
+            "detail": "literal保留逐粒子范数趋∞的字面解释；签名具真实Newton导数、单位LJ力、全时非碰撞、正能量、零质心/动量/角动量及等腰约束，无循环前提，但逐粒子结论过强。corrected保留全部资格并改为存在固定一对距离趋∞，改动方向合理；此候选的强极限结论尚需独立散射论证，不能由能量非负或现有反例直接认证。",
+            "stage": "A/C",
+            "source_preserved": true
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "15",
+            "printed_page": "40",
+            "pdf_page": "63",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.trimerescapeliteral",
+              "MD.Ch01.trimerescapeliteral_corrected"
+            ],
+            "finding": "literal保留逐粒子范数趋∞的字面解释；签名具真实Newton导数、单位LJ力、全时非碰撞、正能量、零质心/动量/角动量及等腰约束，无循环前提，但逐粒子结论过强。corrected保留全部资格并改为存在固定一对距离趋∞，改动方向合理；此候选的强极限结论尚需独立散射论证，不能由能量非负或现有反例直接认证。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.trimerescapeliteral",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "literal保留逐粒子范数趋∞的字面解释；签名具真实Newton导数、单位LJ力、全时非碰撞、正能量、零质心/动量/角动量及等腰约束，无循环前提，但逐粒子结论过强。corrected保留全部资格并改为存在固定一对距离趋∞，改动方向合理；此候选的强极限结论尚需独立散射论证，不能由能量非负或现有反例直接认证。",
+        "counterexample": "在共线不变子系统q₁=(x,0,0)、q₂=(−x,0,0)、q₃=0，取E>0的散射解x′²+2φ(x)+φ(2x)=E。排斥核使x在正转向点反射，得到全实轴非碰撞解，未来x→∞；中心粒子合力和速度恒零，故其范数不趋∞。",
+        "suggested_fix": "保留原文及literal；将修正版与原文版分列并由人工确认勘误。逃逸修正版需提供固定一对距离趋∞的严格论证，不能将无界性替代趋∞。"
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

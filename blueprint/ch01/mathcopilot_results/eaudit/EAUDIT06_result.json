@@ -1,0 +1,175 @@
+{
+  "batch": "EAUDIT06",
+  "input_sha256": {
+    "BATCH_EAUDIT06.md": "7722c7900273e427d25c3f2f6ae867e8c988420e0fc451057e65594ff8568c21",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.2-RadialLJForceLiteral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_LJ_FORCE_SIGN_ERRATUM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.2-RadialLJForceLiteral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.2",
+          "printed_page": "21",
+          "pdf_page": "44",
+          "statement_latex": "The equations of motion are, for $i=1,2,\\ldots,N$, using the chain rule,\n\\[m\\ddot{\\boldsymbol q}_i=\\sum_{j=1,\\ j\\ne i}^{N}\\frac{\\varphi'_{\\mathrm{LJ}}(r_{ij})}{r_{ij}}(\\boldsymbol q_i-\\boldsymbol q_j)\n=-24\\frac\\epsilon\\sigma\\sum_{j=1,\\ j\\ne i}^{N}r_{ij}^{-1}\\left[2\\left(\\frac\\sigma{r_{ij}}\\right)^{13}-\\left(\\frac\\sigma{r_{ij}}\\right)^7\\right](\\boldsymbol q_i-\\boldsymbol q_j).\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_LJ_FORCE_SIGN_ERRATUM",
+              "stage": "A",
+              "field": "statement_latex",
+              "detail": "原页把Newton负梯度力写成了势的正梯度，第一式缺负号，第二式相应应为+24ε/σ。保留字面版并标人工勘误。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.radial_lj_force_literal",
+          "extra_assumptions": [
+            "正ε,σ及非碰撞；hnewton采用式(1.3)负梯度定义，未把字面错误结果放入假设。"
+          ],
+          "old_ids": [
+            "CH01-069"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R1_PAGES.pdf 附件第23页；本次 R1 独立逐页比对；证据目录 .mathcopilot/reviews/ch01_eaudit/R1_evidence/"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_LJ_FORCE_SIGN_ERRATUM",
+            "stage": "A",
+            "field": "statement_latex",
+            "detail": "原页把Newton负梯度力写成了势的正梯度，第一式缺负号，第二式相应应为+24ε/σ。保留字面版并标人工勘误。"
+          }
+        ],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            23
+          ],
+          "book_pdf_pages": "44",
+          "printed_pages": "21",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-23.png"
+          ],
+          "source_check": "附件第23页（书p.21）原页第一力式确实为正Σφ′(r)/r·(q_i−q_j)，第二行为−24ε/σ；JSON准确保留这两个符号。不能在原文转录中静默补负号。",
+          "covered_lean_declarations": [
+            "MD.Ch01.radial_lj_force_literal",
+            "MD.Ch01.radial_lj_force_literal_corrected"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.radial_lj_force_literal",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "radial_lj_force_literal：字面忠实性PASS；对象、有限和排除自粒子、正ε/σ、固定i的非碰撞和负梯度Newton前提都相符，但原书力符号与式1.3冲突，故数学陈述需NEEDS_HUMAN，不能仅因其为假而把字面版判转录FAIL。radial_lj_force_literal_corrected：PASS；在相同全部对象、量词与前提下，第一式改为−φ′/r，第二式系数+24ε/σ，符合ljForce实际定义。对r≠0有φ′=24ε/r[(σ/r)^6−2(σ/r)^12]，两修正分句均正确；不需要额外假设a来自某条已存在轨迹。",
+        "counterexample": "N=2，i=0，m=ε=σ=1，q₀=0、q₁=e₁，a₀=−24e₁（另一加速度任意）。距离1非碰撞，φ′(1)=−24，ljForce(q,0)=−24e₁，故hnewton成立；字面两条右端却都是+24e₁。修正版两右端均为−24e₁。",
+        "suggested_fix": "保留原文及literal声明作为原书疑误记录，由人工确认勘误；正式物理结论选用已给_corrected声明的−φ′/r与+24ε/σ。此轮不补literal的虚假证明。"
+      }
+    },
+    {
+      "source_id": "MD-1.2-LJTimeScaling",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXTRA_TOLERANCE_SIGNATURE_MISMATCH",
+          "EXTRA_STRONGER_TOLERANCE_FALSE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.2-LJTimeScaling",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.2",
+          "printed_page": "21–22",
+          "pdf_page": "44–45",
+          "statement_latex": "Thus we see that if we make the additional time transformation\n\\[\\tau=\\alpha t,\\qquad\\alpha^2=\\frac\\epsilon{m\\sigma^2},\\]\nthen the equations become\n\\[\\frac{\\mathrm d^2\\boldsymbol Q_i}{\\mathrm d\\tau^2}=-\\sum_{j=1,\\ j\\ne i}^{N}\\frac{\\hat\\varphi'_{\\mathrm{LJ}}(R_{ij})}{R_{ij}}(\\boldsymbol Q_i-\\boldsymbol Q_j).\\]\nThis means that a natural choice for the unit of time is\n\\[\\alpha^{-1}=\\sigma\\sqrt{\\frac m\\epsilon}\\approx2.17\\times10^{-12}\\mathrm s.\\]\nBy using the units given here, we may work with a simplified form of the Lennard-Jones system involving unit masses and a parameter-independent potential energy function.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "$R_{ij}=\\|\\boldsymbol Q_i-\\boldsymbol Q_j\\|$；$\\hat\\varphi_{LJ}(R)=4[R^{-12}-R^{-6}]$。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "EXTRA_TOLERANCE_SIGNATURE_MISMATCH",
+              "stage": "A",
+              "field": "extra_assumptions[1]",
+              "detail": "说明承诺0.005ps，但实际ljtimescaling_argon结论是0.01ps；已将JSON说明更正为后者。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.ljtimescaling",
+          "extra_assumptions": [
+            "m,ε,σ,α正；真实C²非碰撞轨迹。",
+            "[EXTRA] 氩参数m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m；实际ljtimescaling_argon结论采用显式容差0.01ps，非旧说明的0.005ps。给定参数下0.005ps界不成立；原书只写约2.17ps。保留双向缩放和时间单位结论。"
+          ],
+          "old_ids": [
+            "CH01-200"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R1_PAGES.pdf 附件第24,25页；本次 R1 独立逐页比对；证据目录 .mathcopilot/reviews/ch01_eaudit/R1_evidence/"
+        },
+        "issues": [
+          {
+            "code": "EXTRA_TOLERANCE_SIGNATURE_MISMATCH",
+            "stage": "A",
+            "field": "extra_assumptions[1]",
+            "detail": "说明承诺0.005ps，但实际ljtimescaling_argon结论是0.01ps；已将JSON说明更正为后者。"
+          },
+          {
+            "code": "EXTRA_STRONGER_TOLERANCE_FALSE",
+            "stage": "C",
+            "field": "MD.Ch01.ljtimescaling_argon对[EXTRA]的覆盖",
+            "detail": "τ的精确值小于2.165ps，所以距2.17ps严格大于0.005ps。当前较弱的0.01ps定理正确，却不能满足所收[EXTRA]。"
+          }
+        ],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            24,
+            25
+          ],
+          "book_pdf_pages": "44–45",
+          "printed_pages": "21–22",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-24.png",
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-25.png"
+          ],
+          "source_check": "附件第24–25页（书pp.21–22）τ=αt、α²=ε/(mσ²)、归一化方程的负号、α⁻¹=σ√(m/ε)≈2.17×10⁻¹²s及收尾句均忠实；氩的三个输入参数见第24页及第25页表。原书没有给0.005ps或0.01ps的误差界。",
+          "covered_lean_declarations": [
+            "MD.Ch01.ljtimescaling",
+            "MD.Ch01.ljtimescaling_argon"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": [
+            "Jacobian arithmetic.real_quadratic.order.compute，精确有理数/二次根式比较，无可选外部后端需求。证书保存在.mathcopilot/reviews/ch01_eaudit/R1_evidence/argon_exact_comparisons.json。",
+            "τ/ps=(17/550)√4906 < 433/200：radical_part_squared=64447/13750，rational_part_squared=187489/40000；反向平方大小证书严格。",
+            "τ/ps=(17/550)√4906 > 54/25：radical_part_squared=64447/13750，rational_part_squared=2916/625；精确比较给GT。这是特定参数的精确验证，不替代一般缩放证明。"
+          ]
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.ljtimescaling",
+        "verdict": "FAIL",
+        "explanation": "ljtimescaling：PASS。全部正参数、C²非碰撞Q、q(t)=σQ(αt)及α²关系明确；结论是有量纲Newton方程与全τ的单位参数方程双向等价，并给正确时间单位，反向时间覆盖由α>0保证。ljtimescaling_argon：按其实际签名PASS，给|τ−2.17ps|<0.01ps，常数和单位换算正确。但本条最新[EXTRA]明说显式容差0.005ps，实际结论却为0.01ps；且给定精确十进制参数下0.005ps界是假的。故接收材料的[EXTRA]一致性FAIL，不能把0.01当已证明0.005。corrected_json只将说明改成实际成立的0.01ps，不改原书近似或工程。",
+        "counterexample": "按所给精确十进制输入，τ/ps=(17/550)√4906，平方为64447/13750。精确比较给2.16<τ/ps<433/200=2.165<2.17，因此0.005<|τ/ps−2.17|<0.01；0.005ps界被该唯一氩特化本身否定。",
+        "suggested_fix": "把[EXTRA]的容差说明更正为实际签名的0.01ps（corrected_json已给出），保留当前两个正确定理。若坚持0.005ps，须重审输入或目标近似，不能仅把现有定理结论改强。"
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

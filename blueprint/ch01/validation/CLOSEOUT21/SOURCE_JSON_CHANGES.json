@@ -1,0 +1,228 @@
+[
+  {
+    "source_id": "MD-1.2-ScalarMechanical",
+    "fields": {
+      "label": {
+        "before": null,
+        "after": "Example 1.4"
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.1-FlowEnergy",
+    "fields": {
+      "statement_latex": {
+        "before": "The flow map of a Hamiltonian system conserves its Hamiltonian, thus\n\\[H(\\mathcal F_t(\\boldsymbol\\xi))=H(\\boldsymbol\\xi).\\]",
+        "after": "The flow map of a Hamiltonian system conserves its Hamiltonian, thus\n\\[H(\\mathcal F_t(\\boldsymbol\\xi))\\equiv H(\\boldsymbol\\xi).\\]"
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.1-HarmonicPhaseFlow",
+    "fields": {
+      "statement_latex": {
+        "before": "for which the solution subject to initial values $q(0)=q_0,p(0)=p_0$ is\n\\[\\begin{pmatrix}q(t)\\\\p(t)\\end{pmatrix}=\\mathcal F_t\\begin{pmatrix}q_0\\\\p_0\\end{pmatrix}=\\begin{pmatrix}q_0\\cos(\\Omega t)+p_0\\sin(\\Omega t)/\\Omega\\\\-q_0\\Omega\\sin(\\Omega t)+p_0\\cos(\\Omega t)\\end{pmatrix}.\\]",
+        "after": "for which the solution subject to initial values $q(0)=q_0,p(0)=p_0$ is\n\\[\\begin{pmatrix}q(t)\\\\p(t)\\end{pmatrix}=\\mathcal F_t\\begin{pmatrix}q_0\\\\p_0\\end{pmatrix}\\equiv\\begin{pmatrix}q_0\\cos(\\Omega t)+p_0\\sin(\\Omega t)/\\Omega\\\\-q_0\\Omega\\sin(\\Omega t)+p_0\\cos(\\Omega t)\\end{pmatrix}.\\]"
+      },
+      "context_notation": {
+        "before": [
+          "p.26方程q′=p,p′=-Ω²q；Ω≠0域；§1.2已有真实解与初值证明。"
+        ],
+        "after": [
+          "p.26方程q′=p,p′=-Ω²q；公式含除以Ω，Ω≠0为形式化时显式补充的必要资格，非本页直接写出的条件；零频须取极限或另给自由粒子分支。"
+        ]
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.1-SpectralSolution",
+    "fields": {
+      "statement_latex": {
+        "before": "If $\\boldsymbol A$ has a basis of eigenvectors $\\boldsymbol\\eta_i$, $i=1,\\ldots,m$, with corresponding eigenvalues $\\lambda_1,\\lambda_2,\\ldots,\\lambda_m$, then we may write the solution at time $t$ as\n\\[\\boldsymbol z(t)=\\sum_{i=1}^{m}c_i e^{\\lambda_i(t-t_0)}\\boldsymbol\\eta_i\\]\nwhere the coefficients $c_i$ are obtained by solving the equation\n\\[\\boldsymbol z(t_0)=\\boldsymbol\\xi=\\sum_{i=1}^{m}c_i\\boldsymbol\\eta_i.\\]",
+        "after": "If $\\boldsymbol A$ has a basis of eigenvectors $\\boldsymbol\\eta_i$, $i=1,\\ldots,m$, with corresponding eigenvalues $\\lambda_1,\\lambda_2,\\ldots,\\lambda_m$, then we may write the solution at time $t$ as\n\\[\\boldsymbol z(t)=\\sum_{i=1}^{m}c_i e^{\\lambda_i(t-t_0)}\\boldsymbol\\eta_i\\]\nwhere the coefficients $c_i$ are obtained by solving the equation\n\\[\\boldsymbol z(t_0)\\equiv \\boldsymbol\\xi=\\sum_{i=1}^{m}c_i\\boldsymbol\\eta_i.\\]"
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.1-BasisCoefficients",
+    "fields": {
+      "statement_latex": {
+        "before": "(ii) with our assumption that the $\\{\\boldsymbol\\eta_i\\}$ form a basis, the calculation of the coefficients will always be possible, since the matrix $\\boldsymbol X$ whose columns are the eigenvectors will be invertible, that is, the coefficients $c_i$ can be enumerated as the components of a vector $\\boldsymbol c$ which satisfies the square linear system\n\\[\\boldsymbol\\xi=\\boldsymbol X\\boldsymbol c.\\]",
+        "after": "(ii) with our assumption that the $\\{\\boldsymbol\\eta_i\\}$ form a basis, the calculation of the coefficients is always possible, since the matrix $\\boldsymbol X$ whose columns are the eigenvectors will be invertible, that is, the coefficients $c_i$ can be enumerated as the components of a vector $\\boldsymbol c$ which satisfies the square linear system\n\\[\\boldsymbol\\xi=\\boldsymbol X\\boldsymbol c.\\]"
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.2-FirstIntegral",
+    "fields": {
+      "statement_latex": {
+        "before": "Another term for constants of motion is first integral. In general, if we have a dynamical system $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, a first integral is a smooth function $I(\\boldsymbol z)$ which is constant along solutions, for all values of the initial condition.",
+        "after": "Another term for constant of motion is first integral. In general, if we have a dynamical system $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$, a first integral is a smooth function $I(\\boldsymbol z)$ which is constant along solutions, for all values of the initial condition."
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.2-FirstIntegralCriterion",
+    "fields": {
+      "statement_latex": {
+        "before": "Since this should hold everywhere, the condition for $I$ to be a first integral is that $\\nabla I\\cdot f=0$.",
+        "after": "Since this should hold everywhere, the condition for $I$ to be a first integral is that $\\nabla I\\cdot f\\equiv0$."
+      },
+      "proof_latex": {
+        "before": "Let $\\boldsymbol z(t)$ ($t\\in\\mathbb R$) be a solution, then\n\\[I(\\boldsymbol z(t))=I(\\boldsymbol z(0))\\Rightarrow0=\\frac{\\mathrm d}{\\mathrm dt}I(\\boldsymbol z(t))=\\nabla I(\\boldsymbol z(t))\\cdot\\dot{\\boldsymbol z}(t)=\\nabla I(\\boldsymbol z(t))\\cdot f(\\boldsymbol z(t)).\\]",
+        "after": "Let $\\boldsymbol z(t):t\\in\\mathbb R$ be a solution, then\n\\[I(\\boldsymbol z(t))\\equiv I(\\boldsymbol z(0))\\Rightarrow0\\equiv\\frac{\\mathrm d}{\\mathrm dt}I(\\boldsymbol z(t))=\\nabla I(\\boldsymbol z(t))\\cdot\\dot{\\boldsymbol z}(t)=\\nabla I(\\boldsymbol z(t))\\cdot f(\\boldsymbol z(t)).\\]"
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.2-PlanarGraphReduction",
+    "fields": {
+      "statement_latex": {
+        "before": "In principle, such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:\n\\[\\frac{\\mathrm dx}{\\mathrm dt}=g(x,\\psi(x)).\\]",
+        "after": "In principle such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:\n\\[\\frac{\\mathrm dx}{\\mathrm dt}=g(x,\\psi(x)).\\]"
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.2-HarmonicTorus",
+    "fields": {
+      "statement_latex": {
+        "before": "The same change of variables $(x_j,v_j)\\to(I_j,\\theta_j)$, applied to each oscillator, would yield equations of motion $\\dot I_j=0$, $\\dot\\theta_j=-\\Omega_j$. This describes a point winding about a $d$-dimensional torus defined by angular rotation frequencies $\\Omega_j$ and radii $|I_j|$ (Fig. 1.14).",
+        "after": "The simple change of variables $((x_j,v_j)\\to(I_j,\\theta_j))$, applied to each oscillator, would yield equations of motion $\\dot I_j=0$, $\\dot\\theta_j=-\\Omega_j$. This describes a point winding about a $d$-dimensional torus defined by angular rotation frequencies $\\Omega_j$ and radii $|I_j|$ (Fig. 1.14)."
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.2-TorusDense",
+    "fields": {
+      "statement_latex": {
+        "before": "in the latter case the paths do not “close up” but instead we see the curve gradually fills in the surface of the torus.",
+        "after": "in the latter case the paths do not “close up” but instead we the curve gradually fills in the surface of the torus."
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.2-LocalActionAngleReduction",
+    "fields": {
+      "statement_latex": {
+        "before": "More generally, one finds occasional examples of nonlinear systems which possess as many independent first integrals as degrees of freedom (satisfying a certain “involution” condition); such systems may be reduced via a coordinate transformation to action-angle variables, i.e. they exhibit tori motion.",
+        "after": "More generally, one finds occasional examples of nonlinear systems which possesses as many independent first integrals as degrees of freedom (satisfying a certain “involution” condition); such systems may be reduced via coordinate transformation to action-angle variables, i.e. they exhibit tori motion."
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.3-EquilibriumLinearization",
+    "fields": {
+      "statement_latex": {
+        "before": "We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\\boldsymbol z^*$ and make use of the fact that $f(\\boldsymbol z)\\approx f(\\boldsymbol z^*)+f'(\\boldsymbol z^*)(\\boldsymbol z-\\boldsymbol z^*)$ for $\\|\\boldsymbol z-\\boldsymbol z^*\\|$ sufficiently small. Since $f(\\boldsymbol z^*)=0$ we have, defining $\\delta\\boldsymbol z:=\\boldsymbol z-\\boldsymbol z^*$,\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}=\\boldsymbol A\\delta\\boldsymbol z,\\qquad\\boldsymbol A=f'(\\boldsymbol z^*).\\]\nThe symbol $\\approx$ is not very precise.",
+        "after": "We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\\boldsymbol z^*$ and make use of the fact that $f(\\boldsymbol z)\\approx f(\\boldsymbol z^*)+f'(\\boldsymbol z^*)(\\boldsymbol z-\\boldsymbol z^*)$ for $\\|\\boldsymbol z-\\boldsymbol z^*\\|$ sufficiently small. Since $f(\\boldsymbol z^*)=0$ we have, defining $\\delta\\boldsymbol z:=\\boldsymbol z-\\boldsymbol z^*$,\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}\\approx\\boldsymbol A\\delta\\boldsymbol z,\\qquad\\boldsymbol A=f'(\\boldsymbol z^*).\\]\nThe symbol $\\approx$ is not very precise. In general, the approximation of solutions is only local in time meaning that solutions of the nonlinear system and the linear approximation may diverge. We refer to the system\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}=f'(\\boldsymbol z^*)\\delta\\boldsymbol z\\]\nas the linearization of the system (1.6) around $\\boldsymbol z^*$."
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.3-HartmanGrobmanLiteral",
+    "fields": {
+      "statement_latex": {
+        "before": "then one can infer that the solutions of the nonlinear and linear systems are in fact topologically conjugate: if $\\boldsymbol z$ is the solution of the nonlinear system and $\\delta\\boldsymbol z$ is the solution of the linear system, then there is a smooth, invertible map $\\boldsymbol\\Phi$ of $\\mathbb R^m$ defined in a neighborhood of the origin such that\n\\[\\boldsymbol z(t)=\\boldsymbol z^*+\\boldsymbol\\Phi(\\delta\\boldsymbol z(t)).\\]\nThis is referred to as the Hartman-Grobman theorem (for more discussion see [177], where this result is referred to as the “Linearization Theorem”; a proof may be found in [362]).",
+        "after": "then one can infer that the solutions of the nonlinear and linear systems are in fact topologically conjugate: if $\\boldsymbol z$ is the solution of the nonlinear system and $\\delta\\boldsymbol z$ is the solution of the linear system, then there is a smooth, invertible map $\\boldsymbol\\Phi$ of $\\mathbb R^m$ defined in a neighborhood of the origin such that\n\\[\\boldsymbol z(t)=\\boldsymbol z^*+\\boldsymbol\\Phi(\\delta\\boldsymbol z(t)).\\]\nThis is referred to as the Hartman-Grobman theorem (for more discussion, see [177], where this result is referred to as the “Linearization Theorem”; a proof may be found in [362])."
+      },
+      "context_notation": {
+        "before": [],
+        "after": [
+          "前页：f在平衡点z*附近C¹，f(z*)=0，A=f′(z*)；双曲是A的全部特征值实部非零。原书smooth invertible保留为数学疑误，修正版仅连续互逆。"
+        ]
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.5.3-LinearizedHamiltonian",
+    "fields": {
+      "statement_latex": {
+        "before": "If the potential is $C^2$, then the linearized version is of the same “kinetic plus potential” form with Hamiltonian\n\\[\\widetilde H=\\frac{\\delta\\boldsymbol p^T\\boldsymbol M^{-1}\\delta\\boldsymbol p}2+\\frac{\\delta\\boldsymbol q^T U''(\\boldsymbol q^*)\\delta\\boldsymbol q}2.\\]",
+        "after": "If the potential is $C^2$, the linearized version of this system has “kinetic plus potential” form with Hamiltonian\n\\[\\widetilde H=\\frac{\\delta\\boldsymbol p^T\\boldsymbol M^{-1}\\delta\\boldsymbol p}2+\\frac{\\delta\\boldsymbol q^T U''(\\boldsymbol q^*)\\delta\\boldsymbol q}2.\\]"
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.6-PeriodicTranslationMomentum",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "翻译不变模型作用的常向量方向导数零，使总内力零；动量守恒复用MomentumConservation条目。"
+        ],
+        "after": [
+          "平移不变性推出常向量方向导数零及总内力零；主定理完整陈述总动量守恒。",
+          "当前第三定律辅助声明使用有向键能量 φ(y−x+c)，尚未与真实能量 φ(‖y−x+c‖) 对接。"
+        ]
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.6-PeriodicImages",
+    "fields": {
+      "statement_latex": {
+        "before": "periodic boundary conditions involve an extended potential energy of the form\n\\[U^{\\mathrm{pbc}}(\\boldsymbol q)=\\sum_{klm}\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{ij}(\\boldsymbol q_i,\\boldsymbol q_j+k\\boldsymbol v_1+l\\boldsymbol v_2+m\\boldsymbol v_3),\\]\nwhere $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\\boldsymbol v_i^T=(L\\boldsymbol e_i^T,\\ldots,L\\boldsymbol e_i^T)$, $i=1,2,3$, where $\\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^3$.",
+        "after": "periodic boundary conditions involve an extended potential energy of the form\n\\[U^{\\mathrm{pbc}}(\\boldsymbol q)=\\sum_{klm}\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{ij}(\\boldsymbol q_i,\\boldsymbol q_j+k\\boldsymbol v_1+l\\boldsymbol v_2+m\\boldsymbol v_3),\\]\nwhere $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\\boldsymbol v_i^T=(L\\boldsymbol e_i^T,L\\boldsymbol e_i^T,\\ldots,L\\boldsymbol e_i^T)$, $i=1,2,3$, where $\\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^3$."
+      },
+      "context_notation": {
+        "before": [
+          "Fin3索引减1枚举-1,0,1；逐原子3向量加L(k,l,m)，等价全配置向量重复位移。"
+        ],
+        "after": [
+          "Fin 3 索引减1枚举 −1,0,1；Lean 对单粒子位置加三维位移 L(k,l,m)。",
+          "原页 v_i 的重复块向量记法与二体参数的三维位置有维数疑点；按每粒子取块可解释 Lean，但此解释待人工确认。"
+        ]
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.6-RhombicLattice",
+    "fields": {
+      "statement_latex": {
+        "before": "In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice, with sides of fixed length $n_x,n_y$ and the angle between them ($\\theta$), see Fig. 1.17.",
+        "after": "In 2D, the typical geometry observed at low temperature is defined by a rhombic lattice with sides of fixed length $n_x,n_y$ and the angle between them ($\\theta$), see Fig. 1.17."
+      },
+      "context_notation": {
+        "before": [
+          "a=nx,b=ny；定义只编码基向量Z线性组合，不声称低温平衡一定如此。"
+        ],
+        "after": [
+          "a=n_x,b=n_y；集合由 (a,0) 与 (b cosθ,b sinθ) 的整数线性组合生成，不声称低温平衡必然如此。",
+          "当前 Lean 未限制正边长和非共线角，尚不能对所有输入称为非退化二维格。"
+        ]
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  },
+  {
+    "source_id": "MD-1.6-UnitCell",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "B为三基向量矩阵，motif为盒内点集；定义按整数平移重复。"
+        ],
+        "after": [
+          "B 当前仅为任意实3×3矩阵，motif 当前仅为任意三维点集；定义取它们的整数平移并集。",
+          "要把输入解释为原书的晶胞，尚需基向量独立与有限盒内原子排列等资格；当前 Lean 并未编码。"
+        ]
+      }
+    },
+    "evidence": "website json_review.corrected_json; raw return retained"
+  }
+]

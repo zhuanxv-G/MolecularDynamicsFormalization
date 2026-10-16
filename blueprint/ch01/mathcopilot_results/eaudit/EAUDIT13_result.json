@@ -1,0 +1,68 @@
+{
+  "batch": "EAUDIT13",
+  "input_sha256": {
+    "BATCH_EAUDIT13.md": "82611ddc13435724f5a5ca8ba74e878f87bc1f4d65fc2692acc4b27b99e34753",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.5-LocalExistUnique",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            6
+          ],
+          "printed_page": "25",
+          "original_pdf_page": "48",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-04.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.local_exist_unique",
+        "verdict": "PASS",
+        "explanation": "固定对角质量、开放非奇异配置域 Q，z₀.1∈Q，任意 t₀；力 -∇U 在Q各点 C¹。存在 ε>0、γ(t₀)=z₀、两侧开时间区间上的真实机械积分曲线并留Q；任意共同开放时间域上的同初值解在 t₀ 邻域最终相等，正确表达局部唯一而非全函数相等。CoordinateMasses 只是实函数，未要求正/非零，故这是总化矩阵逆向量场的较广ODE定理；用于物理 Hamilton 模型须另有正质量背景，不能由本条推出零质量物理模型。数学上的局部存在唯一结论仍对该较广定义正确，未增加隐蔽结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-1.5-CompactContinuation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "pdf": "R2_PAGES.pdf",
+          "attachment_pages": [
+            7,
+            8
+          ],
+          "printed_page": "25–26",
+          "original_pdf_page": "48–49",
+          "method": "对本附件逐页提取文本并核对相应原页渲染；重复书页按同版原页核对，数学式据渲染核验。",
+          "rendered_reference": "R2_evidence/p-04.png",
+          "source_check": "除本条列出的转录差异外，摘录范围内对象、公式、前后语义一致；排版换行、粗体与等价TeX写法按同义排版处理。",
+          "lean_check": "仅审本任务提供的全部声明与项目依赖定义；标准库含义直接采信。未修改工程、补证明或编译；PASS指签名语义审校，不是无sorry证明认证。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.compact_continuation",
+        "verdict": "PASS",
+        "explanation": "aux：正质量、开放Q、C¹力、紧K⊂Q×P、初值在K，hconfine只量化已有局部解，不循环假设全局存在；结论是全实时间解且留K。主条：任意初值、正对角质量、全域C²实势、统一下界以及每个次水平集有界；结论同时含全时间机械解、初值、能量守恒、轨道有界、全局解函数唯一以及含0开区间上的局部解逐点唯一。闭次水平集由连续性给出，有限维闭有界给紧性；动量界由能量和正质量给出。原书p26的能级集在α区间上一致有界正对应次水平集有界，已展开背景，不把仅能量守恒误作普遍位置有界。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

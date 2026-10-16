@@ -1,0 +1,14 @@
+NewtonCompact: compile and all declaration axioms passed
+HarmonicSolution: compile and all declaration axioms passed
+ScalarMechanical: compile and all declaration axioms passed
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\blueprint\ch01\validation\CLOSEOUT21\repair21.py", line 219, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\blueprint\ch01\validation\CLOSEOUT21\repair21.py", line 184, in main
+    before=LEAN.read_text(encoding='utf-8-sig');after,sid,note,primary=repair(key,before)
+                                                                       ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\blueprint\ch01\validation\CLOSEOUT21\repair21.py", line 134, in repair
+    assert '0.005' in s
+           ^^^^^^^^^^^^
+AssertionError

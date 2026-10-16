@@ -1,0 +1,58 @@
+{
+  "batch": "EAUDIT18",
+  "input_sha256": {
+    "BATCH_EAUDIT18.md": "da441af6ac7afe12186011737930b69d439ded0930e064c8a9cab45531a442c6",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.6-HCPStacking",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "file": "/workspace/R4_PAGES.pdf",
+            "actual_file_sha256": "a3504a05147b311794f50adfcec18f3c612088372590ebe2232ef607d2801877",
+            "attachment_pages": [
+              9
+            ],
+            "printed_pages": [
+              36
+            ],
+            "original_pdf_pages": [
+              59
+            ],
+            "rendered_pages": [
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/R4_evidence/book-3.png"
+            ],
+            "attachment_content_sha256": {
+              "9": "bd9bdb055c8496e1cd74524b7d52929451135b160642983684b0b5a7ef14e3eb"
+            },
+            "comparison": "附件第9页印刷36页 Also shown in Fig. 1.18 ... alternates two distinct planar lattices. 完整原句相符，on the other hand 两侧逗号及 two distinct 限定均保留；图1.18右侧确为 A-B-A。"
+          },
+          {
+            "stage": "C",
+            "file": "/workspace/R4_任务.md",
+            "actual_file_sha256": "3d7bd1e94f14f35c8be281397b2b0054128b0a94e9591315be701e6f6ec47489",
+            "section_number": 9,
+            "comparison": "已核对 hcpStacking、V3、triangularLayer 的具体对象，重点检查 k%2 两种不同平移类与每两层重复。",
+            "method": "只读核对任务内完整声明及所摘录的 MolecularDynamics/MD 项目定义；Mathlib 定义按标准含义采信。未读取旧 Ch01/source/BATCH 材料，未改工程，未补证明，未运行 Lean 编译；sorry 不作为签名失败理由。input_sha256 仅按任务逐键逐值回显，并非对旧材料重新验哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.hcpStacking",
+        "verdict": "PASS",
+        "explanation": "MD.Ch01.hcpStacking：PASS。任意整数 k 给定高度 k√(2/3)，j=k mod2∈{0,1}，其平面层为 triangularLayer(j/2,j√3/6)。展开 triangularLayer，A 是零偏移的单位三角层，B 相对 A 偏移 (1/2,√3/6)，该偏移不在底层三角格中，故确为两种不同层；k+2 与 k 的平面位置一致而高度相差2√(2/3)，实现 ABAB。层高及孔位偏移给正确密堆积单位接触尺度。不存在误用三余数造成ABC的问题。[EXTRA]已说明单位化数值来自图示的具体密堆积编码，正文的两层交替信息得到完整保存。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

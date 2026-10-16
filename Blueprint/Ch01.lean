@@ -476,10 +476,19 @@ def yukawaScreened_corrected_b (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
 /-- source_id: MD-1.1.2-AngleBond · definition · printed p.13 / PDF p.36
 
 
+[EXTRA] 总化辅助angleBondModel保留；angleBondOnDomain强制两键长严格正，有向差不改。
 -/
 def angleBondModel (k θ₀ : ℝ) (qᵢ qⱼ qₖ : V3) : ℝ :=
   k / 2 * (Real.arccos (inner ℝ (qᵢ-qⱼ) (qⱼ-qₖ) /
     (‖qᵢ-qⱼ‖ * ‖qⱼ-qₖ‖)) - θ₀)^2
+
+/-- Physical angle domain; both directed bonds have strictly positive length. -/
+def AngleBondValidDomain (qᵢ qⱼ qₖ : V3) : Prop :=
+  0 < ‖qᵢ-qⱼ‖ ∧ 0 < ‖qⱼ-qₖ‖
+
+def angleBondOnDomain (k θ₀ : ℝ) (qᵢ qⱼ qₖ : V3)
+    (_h : AngleBondValidDomain qᵢ qⱼ qₖ) : ℝ := angleBondModel k θ₀ qᵢ qⱼ qₖ
+
 
 /-- source_id: MD-1.1.2-Dihedral · definition · printed p.13 / PDF p.36
 
@@ -490,6 +499,7 @@ def dihedralPotential (k n θ d : ℝ) := k*(1+Real.cos (n*θ-d))
 /-- source_id: MD-1.1.2-GayBerne · Example 1.2 · printed p.16–17 / PDF p.39–40
 
 
+[EXTRA] 原公式为总化辅助；有效域落实单位取向、非碰撞、根号严格正、参数及全部分母非零、Δ≠0；ε₂次数和Δ原样保留。
 -/
 def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁ u₂ : V3) : ℝ :=
   let r := q₂ - q₁
@@ -499,6 +509,25 @@ def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁
   let εGB := gayBerneEpsilonOne ε₀ χ u₁ u₂ * gayBerneEpsilonTwo (‖r‖⁻¹ • r) u₁ u₂ χ'
   4 * εGB * ((σ₀ / Δ)^12 - (σ₀ / Δ)^6)
 
+/-- Effective Gay--Berne domain: all divisions and both square roots are physical. -/
+def GayBerneValidDomain (σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁ u₂ : V3) : Prop :=
+  let r := q₂-q₁
+  let rhat := ‖r‖⁻¹ • r
+  let χ := gayBerneChi σₑ σₛ
+  let χ' := gayBerneChiPrime εₑ εₛ μ
+  ‖u₁‖ = 1 ∧ ‖u₂‖ = 1 ∧ q₁ ≠ q₂ ∧
+  σₛ ≠ 0 ∧ εₛ ≠ 0 ∧ μ ≠ 0 ∧
+  ((σₑ/σₛ)^2+1) ≠ 0 ∧ (1+Real.rpow (εₑ/εₛ) (1/μ)) ≠ 0 ∧
+  (1+χ*inner ℝ u₁ u₂) ≠ 0 ∧ (1-χ*inner ℝ u₁ u₂) ≠ 0 ∧
+  (1+χ'*inner ℝ u₁ u₂) ≠ 0 ∧ (1-χ'*inner ℝ u₁ u₂) ≠ 0 ∧
+  0 < 1-χ^2*(inner ℝ u₁ u₂)^2 ∧ 0 < gayBerneW rhat u₁ u₂ χ ∧
+  (‖r‖-σ₀/Real.sqrt (gayBerneW rhat u₁ u₂ χ)) ≠ 0
+
+def gayBerneOnDomain (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁ u₂ : V3)
+    (_h : GayBerneValidDomain σ₀ σₑ σₛ εₑ εₛ μ q₁ q₂ u₁ u₂) : ℝ :=
+  gayBerneModel ε₀ σ₀ σₑ σₛ εₑ εₛ μ q₁ q₂ u₁ u₂
+
+
 /- END FULL SECTION 1.1 -/
 
 /- BEGIN FULL SECTION 1.2 -/
@@ -506,10 +535,12 @@ def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁
 /-- source_id: MD-1.2-NewtonCompact · definition · printed p.18 / PDF p.41
 [EXTRA] 真实二阶可微资格写成HasDerivAt，避免总导数对不可微曲线给伪解。
 
+[EXTRA] 在原有两项真实时间导数资格后增加势能在q(t)处可微。
 -/
 def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
     (q : ℝ → Position n) (t : ℝ) : Prop :=
   HasDerivAt q (deriv q t) t ∧ HasDerivAt (deriv q) (deriv (deriv q) t) t ∧
+  DifferentiableAt ℝ U (q t) ∧
   massOperator m (deriv (deriv q) t) = -gradient U (q t)
 
 /-- source_id: MD-1.2-DegreesFreedom · definition · printed p.18 / PDF p.41
@@ -612,19 +643,51 @@ theorem momentum_conservation :
 /-- source_id: MD-1.2-HarmonicSolution · unnumbered_claim · printed p.19–20 / PDF p.42–43
 [EXTRA] Ω≠0是原式除法的域条件；n维解按坐标推广，原文为n=1。
 
+[EXTRA] 补范数平方能量、与质量Hamiltonian的识别和守恒；复用已有ODE唯一性，短证任意同初值全时间机械解等于显式流（首条路线通过）。
 -/
+def harmonicEnergy {n : ℕ} (Ω : ℝ) (z : PhaseSpace n) : ℝ :=
+  ‖z.2‖^2 / 2 + Ω^2 * ‖z.1‖^2 / 2
+
+theorem harmonicEnergy_eq_massHamiltonian {n : ℕ} (Ω : ℝ) (z : PhaseSpace n) :
+    harmonicEnergy Ω z = massHamiltonian (fun _ : Fin n => (1 : ℝ))
+      (harmonicPotential Ω) z := by
+  simp [harmonicEnergy, massHamiltonian, massSeparableEnergy,
+    SeparableEnergy.hamiltonian, momentumKineticEnergy, harmonicPotential,
+    nBodyKineticEnergy, EuclideanSpace.real_norm_sq_eq, Finset.sum_div,
+    Finset.mul_sum, mul_div_assoc]
+
 theorem harmonic_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : PhaseSpace n) :
     IsMechanicalSolutionOn (fun _ : Fin n => (1 : ℝ)) (fun q => (-(Ω^2)) • q)
       univ univ (fun t => harmonicFlow Ω t z) ∧
     harmonicFlow Ω 0 z = z ∧
-    ∀ t, (harmonicFlow Ω t z).1 = Real.cos (Ω*t) • z.1 + (Real.sin (Ω*t)/Ω) • z.2 := by
-  exact ⟨harmonicFlow_isMechanicalSolution Ω hΩ z, harmonicFlow_zero Ω z, fun _ => rfl⟩
+    (∀ t, (harmonicFlow Ω t z).1 = Real.cos (Ω*t) • z.1 + (Real.sin (Ω*t)/Ω) • z.2) ∧
+    (∀ t, harmonicEnergy Ω (harmonicFlow Ω t z) = harmonicEnergy Ω z) ∧
+    (∀ γ : ℝ → PhaseSpace n,
+      IsMechanicalSolutionOn (fun _ : Fin n => (1 : ℝ)) (fun q => (-(Ω^2)) • q)
+        univ univ γ → γ 0 = z → ∀ t, γ t = harmonicFlow Ω t z) := by
+  refine ⟨harmonicFlow_isMechanicalSolution Ω hΩ z, harmonicFlow_zero Ω z,
+    (fun _ => rfl), ?_, ?_⟩
+  · intro t
+    simpa only [harmonicEnergy_eq_massHamiltonian] using harmonicFlow_energy Ω hΩ z t
+  · intro γ hγ hinit t
+    have heq := mechanicalSolution_unique_on_preconnected_of_contDiffAt
+      isOpen_univ isPreconnected_univ (mem_univ (0 : ℝ)) hγ
+      (harmonicFlow_isMechanicalSolution Ω hΩ z)
+      (fun s _ => mechanicalVectorField_contDiffAt _ _ (γ s) (by fun_prop))
+      (by simpa using hinit)
+    exact heq (mem_univ t)
 
 /-- source_id: MD-1.2-ScalarMechanical · definition · printed p.20 / PDF p.43
 
 
+[EXTRA] 补E_U(x,v)=v²/2+U(x)，模型以显式能量参数E等于该定义连接；原有导数条件保留。
 -/
-def scalarMechanicalModel (U : ℝ → ℝ) (z : ℝ → ℝ × ℝ) : Prop :=
+def scalarMechanicalEnergy (U : ℝ → ℝ) (z : ℝ × ℝ) : ℝ :=
+  z.2^2 / 2 + U z.1
+
+/-- E explicitly names this model's prescribed mechanical energy. -/
+def scalarMechanicalModel (U : ℝ → ℝ) (E : ℝ × ℝ → ℝ) (z : ℝ → ℝ × ℝ) : Prop :=
+  E = scalarMechanicalEnergy U ∧
   ∀ t, DifferentiableAt ℝ U (z t).1 ∧ HasDerivAt z ((z t).2, -deriv U (z t).1) t
 
 /-- source_id: MD-1.2-ScalarQuadrature · unnumbered_claim · printed p.20 / PDF p.43
@@ -721,6 +784,7 @@ theorem lj_coordinate_scaling (Q : ℝ → V3) (σ t : ℝ) (v a : V3)
 /-- source_id: MD-1.2-LJTimeScaling · unnumbered_claim · printed p.21–22 / PDF p.44–45
 [EXTRA] m,ε,σ,α正；真实C2非碰撞轨迹。
 
+[EXTRA] 仅[EXTRA]容差0.005ps改为0.01ps；两个定理逐字未改。
 -/
 theorem ljtimescaling :
   ∀ (N : ℕ) (m ε σ α : ℝ) (Q : ℝ → Fin N → V3),
@@ -1202,6 +1266,7 @@ theorem planarquadrature :
 /-- source_id: MD-1.5.2-ScalarFirstIntegral · unnumbered_claim · printed p.28 / PDF p.51
 [EXTRA] U C2；开放时间段真实解、积分逆图使用速度非零点；转向点全局拼接不声称已有证明。
 
+[EXTRA] 本条正式覆盖为“能量守恒 + 非转向点局部求积”的部分形式化；转向点换坐标求积、平衡点常解分类和全局拼接列为覆盖缺口，不补理论。
 -/
 theorem scalar_first_integral_and_quadrature :
   (∀ (U : ℝ → ℝ) (hU : ContDiff ℝ 2 U),
@@ -1767,6 +1832,7 @@ def periodicBoundary (L : {x : ℝ // 0 < x}) (x y : ℝ) : Prop :=
 /-- source_id: MD-1.6-PeriodicTranslationMomentum · unnumbered_claim · printed p.34 / PDF p.57
 [EXTRA] 一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。
 
+[EXTRA] 键能量补范数，第三定律改对ψ=φ∘|·|在有向差处可微；平移/动量主定理逐字未改。
 -/
 theorem periodic_translation_momentum :
   ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ),
@@ -1782,12 +1848,12 @@ theorem periodic_translation_momentum :
       ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i*v a i) = ∑ i, m i*v b i := by
   sorry
 
-/-- Both endpoint forces of each actual directed periodic bond, including the closing bond. -/
+/-- Both endpoint forces of each norm-based periodic bond, including the closing bond. -/
 def periodicBondEnergy (φ : ℝ → ℝ) (L : ℝ) (x y : ℝ) (closing : Bool) : ℝ :=
-  φ (y-x + if closing then L else 0)
+  φ ‖y-x + if closing then L else 0‖
 
 theorem periodic_translation_third_law (φ : ℝ → ℝ) (L x y : ℝ) (closing : Bool)
-    (hφ : DifferentiableAt ℝ φ (y-x + if closing then L else 0)) :
+    (hφ : DifferentiableAt ℝ (fun s => φ ‖s‖) (y-x + if closing then L else 0)) :
     -deriv (fun u => periodicBondEnergy φ L u y closing) x =
       -(-deriv (fun u => periodicBondEnergy φ L x u closing) y) := by
   have hx := hφ.hasDerivAt.scomp x
@@ -1795,10 +1861,10 @@ theorem periodic_translation_third_law (φ : ℝ → ℝ) (L x y : ℝ) (closing
   have hy := hφ.hasDerivAt.scomp y
     (((hasDerivAt_id y).sub_const x).add_const (if closing then L else 0))
   have hx' : deriv (fun u => periodicBondEnergy φ L u y closing) x =
-      -deriv φ (y-x + if closing then L else 0) := by
+      -deriv (fun s => φ ‖s‖) (y-x + if closing then L else 0) := by
     simpa [periodicBondEnergy, Function.comp_def] using hx.deriv
   have hy' : deriv (fun u => periodicBondEnergy φ L x u closing) y =
-      deriv φ (y-x + if closing then L else 0) := by
+      deriv (fun s => φ ‖s‖) (y-x + if closing then L else 0) := by
     simpa [periodicBondEnergy, Function.comp_def] using hy.deriv
   rw [hx',hy']
 
@@ -1900,9 +1966,17 @@ def minimumImageForce {N : ℕ} (L : ℝ) (q : Fin N → V3)
 /-- source_id: MD-1.6-RhombicLattice · definition · printed p.35 / PDF p.58
 
 
+[EXTRA] 一般整数生成集rhombicLattice保留为辅助；二维格入口增加a>0、b>0、sinθ≠0，不加a=b；下游六角格恒等式无须调整。
 -/
 def rhombicLattice (a b θ : ℝ) : Set (Position 2) :=
   {x | ∃ k l : ℤ, x = WithLp.toLp 2 ![k*a+l*b*Real.cos θ,l*b*Real.sin θ]}
+
+def RhombicLatticeValidDomain (a b θ : ℝ) : Prop :=
+  0 < a ∧ 0 < b ∧ Real.sin θ ≠ 0
+
+def rhombicLatticeOnDomain (a b θ : ℝ) (_h : RhombicLatticeValidDomain a b θ) :
+    Set (Position 2) := rhombicLattice a b θ
+
 
 /-- source_id: MD-1.6-HexagonalLattice · unnumbered_claim · printed p.35 / PDF p.58
 
@@ -1932,10 +2006,22 @@ theorem hexagonal_lattice_two_bases (a : ℝ) :
 /-- source_id: MD-1.6-UnitCell · definition · printed p.35 / PDF p.58
 
 
+[EXTRA] 一般平移并集unitCellLattice保留；晶胞入口要求det B≠0及motif有限非空且位于B([0,1)³)。
 -/
 def unitCellLattice (B : Matrix (Fin 3) (Fin 3) ℝ) (motif : Set V3) : Set V3 :=
   {q | ∃ k : Fin 3 → ℤ, ∃ u ∈ motif,
     q = B.toEuclideanLin (WithLp.toLp 2 (fun i => (k i : ℝ))) + u}
+
+/-- Half-open cell B([0,1)^3), with boundary representatives fixed by coordinates. -/
+def unitCellBox (B : Matrix (Fin 3) (Fin 3) ℝ) : Set V3 :=
+  B.toEuclideanLin '' {x : V3 | ∀ i, 0 ≤ x i ∧ x i < 1}
+
+def UnitCellValidDomain (B : Matrix (Fin 3) (Fin 3) ℝ) (motif : Set V3) : Prop :=
+  B.det ≠ 0 ∧ motif.Finite ∧ motif.Nonempty ∧ motif ⊆ unitCellBox B
+
+def unitCellOnDomain (B : Matrix (Fin 3) (Fin 3) ℝ) (motif : Set V3)
+    (_h : UnitCellValidDomain B motif) : Set V3 := unitCellLattice B motif
+
 
 /-- source_id: MD-1.6-FCCStacking · definition · printed p.36 / PDF p.59
 [EXTRA] 将图示ABC编码为单位边长等边三角层，层高sqrt(2/3)及偏移由close-packed图示编码，正文未列数值公式。
@@ -2535,6 +2621,7 @@ theorem positivelyapunovgrowth :
 end MD.Ch01
 
 /- CLOSEOUT19: every named declaration, including corrected variants and counterexamples. -/
+
 #print axioms MD.Ch01.IsNewtonTrajectoryOn
 #print axioms MD.Ch01.matrixAction
 #print axioms MD.Ch01.variableMassLagrangian
@@ -2568,8 +2655,12 @@ end MD.Ch01
 #print axioms MD.Ch01.yukawaScreened_corrected_a
 #print axioms MD.Ch01.yukawaScreened_corrected_b
 #print axioms MD.Ch01.angleBondModel
+#print axioms MD.Ch01.AngleBondValidDomain
+#print axioms MD.Ch01.angleBondOnDomain
 #print axioms MD.Ch01.dihedralPotential
 #print axioms MD.Ch01.gayBerneModel
+#print axioms MD.Ch01.GayBerneValidDomain
+#print axioms MD.Ch01.gayBerneOnDomain
 #print axioms MD.Ch01.compactNewton
 #print axioms MD.Ch01.linearizedConstraintDimension
 #print axioms MD.Ch01.degreesOfFreedom
@@ -2578,7 +2669,10 @@ end MD.Ch01
 #print axioms MD.Ch01.particleTotalEnergy
 #print axioms MD.Ch01.paircancellation
 #print axioms MD.Ch01.momentum_conservation
+#print axioms MD.Ch01.harmonicEnergy
+#print axioms MD.Ch01.harmonicEnergy_eq_massHamiltonian
 #print axioms MD.Ch01.harmonic_solution
+#print axioms MD.Ch01.scalarMechanicalEnergy
 #print axioms MD.Ch01.scalarMechanicalModel
 #print axioms MD.Ch01.scalar_quadrature
 #print axioms MD.Ch01.uniformLJSystem
@@ -2681,8 +2775,13 @@ end MD.Ch01
 #print axioms MD.Ch01.minimumImage
 #print axioms MD.Ch01.minimumImageForce
 #print axioms MD.Ch01.rhombicLattice
+#print axioms MD.Ch01.RhombicLatticeValidDomain
+#print axioms MD.Ch01.rhombicLatticeOnDomain
 #print axioms MD.Ch01.hexagonal_lattice_two_bases
 #print axioms MD.Ch01.unitCellLattice
+#print axioms MD.Ch01.unitCellBox
+#print axioms MD.Ch01.UnitCellValidDomain
+#print axioms MD.Ch01.unitCellOnDomain
 #print axioms MD.Ch01.fccStacking
 #print axioms MD.Ch01.hcpStacking
 #print axioms MD.Ch01.minimumgradientzero

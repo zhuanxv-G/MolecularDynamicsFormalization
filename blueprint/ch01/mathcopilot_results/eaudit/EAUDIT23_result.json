@@ -1,0 +1,229 @@
+{
+  "batch": "EAUDIT23",
+  "input_sha256": {
+    "BATCH_EAUDIT23.md": "125cea90a2fcb2d3fb9c1324c09b547a5f66b2f923b87d0593df5771abc5cfe3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.7.2-FlowJacobianLiteral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_MATHEMATICAL_AMBIGUITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.7.2-FlowJacobianLiteral",
+          "kind": "definition",
+          "label": null,
+          "section": "1.7.2",
+          "printed_page": "44",
+          "pdf_page": "67",
+          "statement_latex": "Let a dynamical system $\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z)$ be given in $\\mathbb R^m$ with flow map $F_t:\\mathbb R^m\\to\\mathbb R^m$ which we assume to be continuously differentiable. Let $\\boldsymbol z(t,\\boldsymbol\\xi)$ represent the solution of initial value problem\n\\[\\dot{\\boldsymbol z}=\\boldsymbol f(\\boldsymbol z),\\qquad\\boldsymbol z(0)=\\boldsymbol\\xi.\\]\nWe then compute the $m\\times m$ Jacobian matrix of $F_t(\\boldsymbol z(t,\\boldsymbol\\xi))$:\n\\[\\boldsymbol W(t)=F_t'(\\boldsymbol z(t,\\boldsymbol\\xi))=\\frac{\\partial F_t}{\\partial\\boldsymbol z}(\\boldsymbol z(t,\\boldsymbol\\xi)).\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "F为C1真实flow，z(t,ξ)=Ftξ；原文字面在Ftξ处对初值变量微分。"
+          ],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_MATHEMATICAL_AMBIGUITY",
+              "detail": "literal确为fderiv(F t)在F t ξ处的取值，忠实保留PDF的z(t,ξ)取值点；导数作为连续线性算子与欧氏Jacobian矩阵等价。corrected改为在ξ处取值是标准初值变分矩阵。两者为定义，可对任意F作总函数定义；真实流和C¹资格用于后续理论。作为原文变分理论基础有取值点疑误，保留人工裁定。",
+              "stage": "A/C",
+              "source_preserved": true
+            }
+          ],
+          "lean_decl": "MD.Ch01.variationalMatrixLiteral",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-190",
+            "CH01-191"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_MATHEMATICAL_AMBIGUITY",
+            "detail": "literal确为fderiv(F t)在F t ξ处的取值，忠实保留PDF的z(t,ξ)取值点；导数作为连续线性算子与欧氏Jacobian矩阵等价。corrected改为在ξ处取值是标准初值变分矩阵。两者为定义，可对任意F作总函数定义；真实流和C¹资格用于后续理论。作为原文变分理论基础有取值点疑误，保留人工裁定。",
+            "stage": "A/C",
+            "source_preserved": true
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "20",
+            "printed_page": "44",
+            "pdf_page": "67",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.variationalMatrixLiteral",
+              "MD.Ch01.variationalMatrixLiteral_corrected"
+            ],
+            "finding": "literal确为fderiv(F t)在F t ξ处的取值，忠实保留PDF的z(t,ξ)取值点；导数作为连续线性算子与欧氏Jacobian矩阵等价。corrected改为在ξ处取值是标准初值变分矩阵。两者为定义，可对任意F作总函数定义；真实流和C¹资格用于后续理论。作为原文变分理论基础有取值点疑误，保留人工裁定。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.variationalMatrixLiteral",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "literal确为fderiv(F t)在F t ξ处的取值，忠实保留PDF的z(t,ξ)取值点；导数作为连续线性算子与欧氏Jacobian矩阵等价。corrected改为在ξ处取值是标准初值变分矩阵。两者为定义，可对任意F作总函数定义；真实流和C¹资格用于后续理论。作为原文变分理论基础有取值点疑误，保留人工裁定。",
+        "counterexample": null,
+        "suggested_fix": "保留原文及literal；将修正版与原文版分列并由人工确认勘误。"
+      }
+    },
+    {
+      "source_id": "MD-1.7.2-VariationalEquationLiteral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_MATHEMATICAL_ERROR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.7.2-VariationalEquationLiteral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.7.2",
+          "printed_page": "44–45",
+          "pdf_page": "67–68",
+          "statement_latex": "Differentiating $\\boldsymbol W(t)$ with respect to $t$ and using the differential equation and the chain rule, we have\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\boldsymbol W(t)=\\boldsymbol f'(\\boldsymbol z(t,\\boldsymbol\\xi))\\boldsymbol W(t).\\tag{1.10}\\]\nThe system of Eq. (1.10) is referred to as the system of variational equations corresponding to the dynamical system $\\mathrm d\\boldsymbol z/\\mathrm dt=\\boldsymbol f(\\boldsymbol z)$.",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_MATHEMATICAL_ERROR",
+              "detail": "literal完整保留C¹向量场、每个F_t为C¹、真实流初值和时间ODE，以及全部ξ,t上的算子导数；右端复合顺序Df(F_tξ)∘W正确，但原文字面W使方程失效。corrected使用DF_t(ξ)后为正确标准变分方程。C¹向量场和全局真实解以唯一性及局部参数依赖给出所需时间可微性，无需额外假设F联合C²；sorry不构成签名失败。",
+              "stage": "A/C",
+              "source_preserved": true
+            }
+          ],
+          "lean_decl": "MD.Ch01.variationalequationliteral",
+          "extra_assumptions": [],
+          "old_ids": [
+            "CH01-192"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_MATHEMATICAL_ERROR",
+            "detail": "literal完整保留C¹向量场、每个F_t为C¹、真实流初值和时间ODE，以及全部ξ,t上的算子导数；右端复合顺序Df(F_tξ)∘W正确，但原文字面W使方程失效。corrected使用DF_t(ξ)后为正确标准变分方程。C¹向量场和全局真实解以唯一性及局部参数依赖给出所需时间可微性，无需额外假设F联合C²；sorry不构成签名失败。",
+            "stage": "A/C",
+            "source_preserved": true
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "21–22",
+            "printed_page": "44–45",
+            "pdf_page": "67–68",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.variationalequationliteral",
+              "MD.Ch01.variationalequationliteral_corrected"
+            ],
+            "finding": "literal完整保留C¹向量场、每个F_t为C¹、真实流初值和时间ODE，以及全部ξ,t上的算子导数；右端复合顺序Df(F_tξ)∘W正确，但原文字面W使方程失效。corrected使用DF_t(ξ)后为正确标准变分方程。C¹向量场和全局真实解以唯一性及局部参数依赖给出所需时间可微性，无需额外假设F联合C²；sorry不构成签名失败。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.variationalequationliteral",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "literal完整保留C¹向量场、每个F_t为C¹、真实流初值和时间ODE，以及全部ξ,t上的算子导数；右端复合顺序Df(F_tξ)∘W正确，但原文字面W使方程失效。corrected使用DF_t(ξ)后为正确标准变分方程。C¹向量场和全局真实解以唯一性及局部参数依赖给出所需时间可微性，无需额外假设F联合C²；sorry不构成签名失败。",
+        "counterexample": "取全局完备光滑向量场f(x)=sin x，在ξ=π/2附近F_t(x)=2 arctan(e^t tan(x/2))。t=log2时，字面W=10/17、W′=−198/289，而cos(F_tξ)W=−6/17=−102/289。该局部表达来自全局实轴流，不能误把arctan主值式当所有x上的全局公式。",
+        "suggested_fix": "保留原文及literal；将修正版与原文版分列并由人工确认勘误。"
+      }
+    },
+    {
+      "source_id": "MD-1.7.2-NearbyTrajectoryLiteral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_MATHEMATICAL_ERROR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.7.2-NearbyTrajectoryLiteral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "1.7.2",
+          "printed_page": "45",
+          "pdf_page": "68",
+          "statement_latex": "If we have two solutions started from nearby initial conditions $\\boldsymbol\\xi,\\hat{\\boldsymbol\\xi}$, then their difference is approximated by the solution of the variational equations\n\\[\\boldsymbol z(t,\\hat{\\boldsymbol\\xi})-\\boldsymbol z(t,\\boldsymbol\\xi)\\approx\\boldsymbol W(t)(\\hat{\\boldsymbol\\xi}-\\boldsymbol\\xi).\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [],
+          "review_status": "NEEDS_HUMAN",
+          "issues": [
+            {
+              "code": "SOURCE_MATHEMATICAL_ERROR",
+              "detail": "固定t、ξ时以x→ξ的Fréchet小o严格化≈，扰动、基点、线性算子作用顺序均忠实。literal沿用错误取值点，不能成立。corrected改用DF_t(ξ)后正是HasFDerivAt的小o结论；只需每个F_t可微，故未要求真实流是合法推广，不是缺失的必要前提。未声称此结论关于t一致或对长时间有效。",
+              "stage": "A/C",
+              "source_preserved": true
+            }
+          ],
+          "lean_decl": "MD.Ch01.nearby_trajectory_literal",
+          "extra_assumptions": [
+            "≈严格化为固定t、扰动趋0的Frechet小o；沿用原文字面W。"
+          ],
+          "old_ids": [
+            "CH01-193"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_MATHEMATICAL_ERROR",
+            "detail": "固定t、ξ时以x→ξ的Fréchet小o严格化≈，扰动、基点、线性算子作用顺序均忠实。literal沿用错误取值点，不能成立。corrected改用DF_t(ξ)后正是HasFDerivAt的小o结论；只需每个F_t可微，故未要求真实流是合法推广，不是缺失的必要前提。未声称此结论关于t一致或对长时间有效。",
+            "stage": "A/C",
+            "source_preserved": true
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R5_PAGES.pdf",
+            "attachment_pages": "23",
+            "printed_page": "45",
+            "pdf_page": "68",
+            "finding": "逐句及公式与PDF原页核对一致；换行、数学排版及脚注标记作规范化，不静默改动原书数学陈述。"
+          },
+          {
+            "stage": "C",
+            "basis": "仅使用R5_任务.md本条完整Lean及所摘录项目定义；Mathlib按标准含义。",
+            "declarations": [
+              "MD.Ch01.nearby_trajectory_literal",
+              "MD.Ch01.nearby_trajectory_literal_corrected"
+            ],
+            "finding": "固定t、ξ时以x→ξ的Fréchet小o严格化≈，扰动、基点、线性算子作用顺序均忠实。literal沿用错误取值点，不能成立。corrected改用DF_t(ξ)后正是HasFDerivAt的小o结论；只需每个F_t可微，故未要求真实流是合法推广，不是缺失的必要前提。未声称此结论关于t一致或对长时间有效。",
+            "scope": "只读签名与语义审校；未修改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.nearby_trajectory_literal",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "固定t、ξ时以x→ξ的Fréchet小o严格化≈，扰动、基点、线性算子作用顺序均忠实。literal沿用错误取值点，不能成立。corrected改用DF_t(ξ)后正是HasFDerivAt的小o结论；只需每个F_t可微，故未要求真实流是合法推广，不是缺失的必要前提。未声称此结论关于t一致或对长时间有效。",
+        "counterexample": "取上一条的全局sin流、ξ=π/2、t=log2；真实导数DF_t(ξ)=4/5，字面W=10/17。余项除以扰动趋于4/5−10/17=18/85≠0，故不是小o。",
+        "suggested_fix": "保留原文及literal；将修正版与原文版分列并由人工确认勘误。"
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

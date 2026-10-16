@@ -1,0 +1,685 @@
+Blueprint/Ch01.lean:206:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:225:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:243:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:372:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:562:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:576:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:691:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:720:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:748:31: warning: This simp argument is unused:
+  Pi.pow_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.div_apply, id_eq, Nat.cast_ofNat]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch01.lean:750:22: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:763:27: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:814:31: warning: This simp argument is unused:
+  Pi.pow_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.div_apply, id_eq, Nat.cast_ofNat]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch01.lean:832:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch01.lean:835:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch01.lean:839:42: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch01.lean:816:22: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:832:35: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch01.lean:835:35: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch01.lean:839:42: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch01.lean:893:36: warning: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:894:5: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:910:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:973:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1033:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1046:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1058:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1067:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1164:5: warning: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1188:5: warning: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1189:5: warning: Variable name `hinit` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hinit
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1214:5: warning: Variable name `hQ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1214:21: warning: Variable name `hf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1215:5: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1226:5: warning: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1227:5: warning: Variable name `hQ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1228:5: warning: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1228:52: warning: Variable name `ht₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1229:27: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1230:5: warning: Variable name `hpartial` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hpartial
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1244:5: warning: Variable name `hfirst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfirst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1244:40: warning: Variable name `hQ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1245:5: warning: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1245:52: warning: Variable name `ht₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1246:5: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1246:36: warning: Variable name `hf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1247:5: warning: Variable name `hpartial` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hpartial
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1247:49: warning: Variable name `hspeed` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hspeed
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1264:18: warning: Variable name `hU` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hU
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1266:18: warning: Variable name `hU` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hU
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1268:5: warning: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1269:5: warning: Variable name `ht₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1269:26: warning: Variable name `hv₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hv₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1288:5: warning: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1290:36: warning: Variable name `hz` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hz
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1305:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1340:5: warning: Variable name `hγ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hγ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1342:15: warning: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1342:34: warning: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1353:21: warning: This simp argument is unused:
+  smul_eq_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [keplerForce, hq, norm_ne_zero_iff.mpr hq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch01.lean:1355:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1406:5: warning: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1406:62: warning: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1407:13: warning: Variable name `hl` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hl
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1421:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1449:17: warning: Variable name `hΩ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hΩ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1449:30: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1460:5: warning: Variable name `hΩ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hΩ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1460:18: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1460:33: warning: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1460:57: warning: Variable name `hθ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hθ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1473:5: warning: Variable name `hΩ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hΩ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1473:18: warning: Variable name `hJ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hJ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1474:5: warning: Variable name `hreg` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hreg
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1475:5: warning: Variable name `hODE` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hODE
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1480:15: warning: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1480:34: warning: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1519:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1526:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1533:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1543:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1558:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1572:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1607:5: warning: Variable name `hF` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hF
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1607:32: warning: Variable name `heq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _heq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1625:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1639:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1665:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1673:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1716:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1766:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1828:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1873:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:1883:13: warning: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:1981:52: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:1981:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:1987:52: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:1987:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:1981:56: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch01.lean:1987:56: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch01.lean:2061:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2069:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2085:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Blueprint/Ch01.lean:2091:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2103:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2125:5: warning: Variable name `hu` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hu
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:2125:25: warning: Variable name `hv` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hv
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch01.lean:2167:8: warning: This simp argument is unused:
+  ContinuousLinearMap.comp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [innerSL_apply_apply, inner_neg_right]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch01.lean:2167:61: warning: This simp argument is unused:
+  inner_neg_right
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ContinuousLinearMap.comp_apply, innerSL_apply_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch01.lean:2218:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:2218:91: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:2219:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:2219:91: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:2220:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:2220:91: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:2299:24: warning: This simp argument is unused:
+  sub_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_eq_add_neg, add_smul, neg_smul, add_assoc, add_comm, add_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch01.lean:2299:70: warning: This simp argument is unused:
+  add_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_smul, sub_eq_add_neg, add_smul, neg_smul, add_comm, add_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch01.lean:2307:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2343:75: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:2354:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:2357:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:2360:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch01.lean:2394:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2421:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2432:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2445:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2469:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2478:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2509:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2517:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2528:8: warning: declaration uses `sorry`
+Blueprint/Ch01.lean:2555:8: warning: declaration uses `sorry`
+'MD.Ch01.IsNewtonTrajectoryOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.matrixAction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.variableMassLagrangian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.variableMassHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.classicalNewtonInitialValueModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.binaryElasticSphereCollision' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.lengthBondRadial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.theorem_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.energy_conservation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.newton_iff_euler_lagrange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hamiltonian_legendre_transform' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.hamiltonian_legendre_transform_literal' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.hamiltonian_legendre_transform_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.flow_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.schrodingerEquation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.newtonInitialValueModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hardSphereModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.multibodyPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.morsePotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.morse_minimum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.lengthBond' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.dispersionPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.buckinghamPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.lennardJonesPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.lj_repulsion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.lj_repulsion_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.heterogeneousLJ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.coulombPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.smoothCutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.yukawaScreened' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.yukawaScreened_corrected_a' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.yukawaScreened_corrected_b' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.angleBondModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.AngleBondValidDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.angleBondOnDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.dihedralPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.gayBerneModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.GayBerneValidDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.gayBerneOnDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.compactNewton' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.linearizedConstraintDimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.degreesOfFreedom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.constraintdimension' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.constraintdimension_unconstrained' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.particleTotalEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.paircancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.momentum_conservation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.harmonicEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.harmonicEnergy_eq_massHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.harmonic_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.scalarMechanicalModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.scalar_quadrature' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.uniformLJSystem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.radial_lj_force_literal' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.radial_lj_force_literal_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.lj_coordinate_scaling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.ljtimescaling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.ljtimescaling_argon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.fixedMassLagrangian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.generalized_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.generalizedmassregular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.legendreTransform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.legendreTransform_literal' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.legendreTransform_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.legendreTransform_corrected_b' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hamiltonEquationsOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hamiltonEquations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hamilton_fixed_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hamiltonlagrangeequivalence' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.finiteEnergyPhaseDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.finiteEnergyPhaseDomain_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.finiteEnergyPhaseDomain_corrected_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.local_exist_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.energySurface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.energy_bounds' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.uniform_levels_compact' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.compact_continuation_aux' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.compact_continuation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.nonconfining' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.flowMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.flow_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.harmonicPhaseFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.harmonicPhaseFlow_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.spectralsolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.basis_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.matrixexponentialsolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.matrix_exp_series' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.smoothFirstIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.firstintegralcriterion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.planargraphreduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.planarquadrature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.scalar_first_integral_and_quadrature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.realspectralsolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.planarKeplerEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.kepler_energy_angular_integrability' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.keplerangularmomentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.keplermomentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.keplermomentum_not_first_integrals' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.polarCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.keplerpolarlagrangian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.keplerpolarode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.polarangularidentity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.keplerradialreduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.radialKeplerEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.kepler_full_solution' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.oscillatorActionAngle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.actionenergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.actionode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.actionsolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.oscillatorTorusMotion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.torusperiod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.torusQuasiperiodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.torusperiod_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.torusdense' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.torusdense_literal' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.torusdense_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.local_action_angle_reduction' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.local_action_angle_reduction_literal' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.local_action_angle_reduction_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.equilibriumDefinition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.constantequilibrium' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.equilibriumlinearization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hyperbolic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hartmangrobmanliteral' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.hartmangrobmanliteral_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.lyapunovStable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hyperbolicstabilitytransfer' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.hyperbolicstabilitytransfer_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.hamilton_equilibrium' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.strongLocalMinimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.linearizedHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.linearizedHamiltonian_field' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.positivehessianquadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.positive_hessian_minimum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.latticePairPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.unorderedpaircount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.nearestNeighborModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.walledChainModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.periodicChainModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.periodicPositionEquivalent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.periodicBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.periodic_translation_momentum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.periodicBondEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.periodic_translation_third_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.regularLattice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.regularlatticeminimizerliteral' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.regularlatticeminimizerliteral_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.regularlatticeminimizerliteral_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.periodicImageEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.minimumImage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.minimumImageForce' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.rhombicLattice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hexagonal_lattice_two_bases' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.unitCellLattice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.fccStacking' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.hcpStacking' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.minimumgradientzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.minimumgradientzero_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.force_linearization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.minimumhessianliteral' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.minimumhessianliteral_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.minimumhessianliteral_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.imaginary_spectrum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.complexnormalmode' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.realnormalmode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.planarTrimerEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.centralPairEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.centralpairgradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.central_momentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.centralangularmomentum_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.centralangularmomentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.centerofmassmotion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.constantrotationliteral' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.constantrotationliteral_corrected_a' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.constantrotationliteral_corrected_b' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.isoscelesCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.isoscelesCoordinates_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.isoscelesCoordinates_corrected_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.isosceles_energy_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.isoscelesaccessibleregion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.equilateraltrimerminimum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.trimerenergylowerbound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.collinearTrimer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.trimersaddle' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.trimerescapeliteral' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.trimerescapeliteral_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.chaosConditions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.transitivityergodicityliteral' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.transitivityergodicityliteral_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.anisotropicEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.variationalMatrixLiteral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.variationalMatrixLiteral_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.variationalequationliteral' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.variationalequationliteral_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.nearby_trajectory_literal' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.nearby_trajectory_literal_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.singularValues' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.singularellipsoid' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch01.lyapunovExponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch01.positivelyapunovgrowth' depends on axioms: [propext, Classical.choice, Quot.sound]

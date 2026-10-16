@@ -1,0 +1,128 @@
+{
+  "batch": "EAUDIT10",
+  "input_sha256": {
+    "BATCH_EAUDIT10.md": "ca23496ef049676e0e712de164ab998662c007710f0e138412d8c5cf88455c03",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.1-Schrodinger",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_JOINT_C2_METADATA"
+        ],
+        "corrected_json": {
+          "source_id": "MD-1.1-Schrodinger",
+          "kind": "definition",
+          "label": null,
+          "section": "1.1",
+          "printed_page": "5",
+          "pdf_page": "28",
+          "statement_latex": "The Schrödinger equation itself is a partial differential equation of the following form:\n\\[i\\hbar\\frac{\\partial\\Phi}{\\partial t}=-\\hbar^2\\sum_{j=1}^{13}\\frac{1}{2\\mu_j}\\left(\\frac{\\partial^2\\Phi}{\\partial q_{j,x}^2}+\\frac{\\partial^2\\Phi}{\\partial q_{j,y}^2}+\\frac{\\partial^2\\Phi}{\\partial q_{j,z}^2}\\right)+U_P(q_{1,x},q_{1,y},\\ldots,q_{13,z})\\Phi.\\tag{1.1}\\]",
+          "proof_latex": null,
+          "proof_note": "原书无独立完整证明。",
+          "context_notation": [
+            "$\\Phi:\\mathbb R\\times\\mathbb R^{39}\\to\\mathbb C$；$i^2=-1$；$\\hbar$为Planck常数；$\\mu_j$为第$j$粒子质量；$U_P$为原始原子势能。13粒子来自10电子+3核水分子示例。"
+          ],
+          "review_status": "CORRECTED",
+          "issues": [
+            {
+              "code": "STALE_JOINT_C2_METADATA",
+              "stage": "A",
+              "field": "extra_assumptions[0]",
+              "detail": "第一项仍说时间/位置联合C²；当前签名及后一项[EXTRA]已改为时间一阶、逐空间坐标二阶经典正则性。修正说明，不能把旧C²当当前前提。"
+            }
+          ],
+          "lean_decl": "MD.Ch01.schrodingerEquation",
+          "extra_assumptions": [
+            "正质量及正Planck参数；按经典解解释：每个固定位置的时间截面C¹，每个固定时间的逐空间坐标直线截面C²；时间一阶和逐空间坐标二阶导数联合连续；不声明解存在。",
+            "[EXTRA] 当前签名不要求二阶时间或混合偏导；旧的时间/位置联合C²说明已被替代。"
+          ],
+          "old_ids": [
+            "CH01-001",
+            "CH01-002",
+            "CH01-003",
+            "CH01-004",
+            "CH01-005",
+            "CH01-006"
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R1_PAGES.pdf 附件第1页；本次 R1 独立逐页比对；证据目录 .mathcopilot/reviews/ch01_eaudit/R1_evidence/"
+        },
+        "issues": [
+          {
+            "code": "STALE_JOINT_C2_METADATA",
+            "stage": "A",
+            "field": "extra_assumptions[0]",
+            "detail": "第一项仍说时间/位置联合C²；当前签名及后一项[EXTRA]已改为时间一阶、逐空间坐标二阶经典正则性。修正说明，不能把旧C²当当前前提。"
+          }
+        ],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            1
+          ],
+          "book_pdf_pages": "28",
+          "printed_pages": "5",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-01.png"
+          ],
+          "source_check": "附件第1页（书p.5，式1.1）：英文引句、iℏ、−ℏ²、j=1,…,13、每粒子的x/y/z三项、1/(2μ_j)、U_PΦ及编号均对应。context_notation解码后的LaTeX没有重复转义；历史问题不重复判错。",
+          "covered_lean_declarations": [
+            "MD.Ch01.schrodingerEquation"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.schrodingerEquation",
+        "verdict": "PASS",
+        "explanation": "PASS。Q13=EuclideanSpace ℝ (Fin 39)，Φ:ℝ→Q13→ℂ，U为实势；h与13个μ均为正子类型。coordinateDirection是标准坐标向量，secondPartial是在该坐标直线上的二阶实导数；Fin 39索引i经i.val/3取粒子质量，恰好每质量重复三次。时间C¹、每空间坐标C²、时间一阶与空间二阶导数的联合连续性明确保证经典偏导解释，不要求时间二阶或混合偏导。末项与全部t,q的方程逐项相符；没有解存在断言。最新[EXTRA]与签名相符，旧的联合C²文字应标历史。",
+        "counterexample": null,
+        "suggested_fix": "只在审校后的JSON中更新正则性说明；Lean签名无需修改。"
+      }
+    },
+    {
+      "source_id": "MD-1.1-HardSphere",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "task": "R1_任务.md",
+          "task_file_sha256": "43d183dac383da33b4dd3b41690579dfc37f9326fdd5fe691d371713427243e8",
+          "pdf": "R1_PAGES.pdf",
+          "pdf_file_sha256": "0c4110c0663d28d33fabec08fb1b10750b284e3905ffd5500adadb8f4dae863e",
+          "attachment_pages": [
+            2
+          ],
+          "book_pdf_pages": "30",
+          "printed_pages": "7",
+          "rendered_pages": [
+            ".mathcopilot/reviews/ch01_eaudit/R1_evidence/page-02.png"
+          ],
+          "source_check": "附件第2页（书p.7）正文的hard-sphere段落：impenetrable sphere、perfectly elastic collision（单数）、standard rules、momentum and energy均与JSON一致。",
+          "covered_lean_declarations": [
+            "MD.Ch01.hardSphereModel"
+          ],
+          "scope": "A为原页转录及元数据审校；C为所给全部声明和项目依赖的只读签名语义审校。采信Mathlib标准含义，未检索旧版工程，未编译、未改工程、未补证明；不因sorry判FAIL。json_review.status与audit.verdict分别记录A、C，故可能不同。",
+          "additional_evidence": []
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.hardSphereModel",
+        "verdict": "PASS",
+        "explanation": "PASS。N个三维粒子，逐粒子正半径和正质量；I开放连通，C⊆I且在I的每点附近至多有该点一个碰撞事件，排除了稠密事件造成的自由运动条件真空化。全时间全粒子对距离≥半径和，位置连续；I\\C上q′=v及v′=0是真实导数。每个C中事件指定不同粒子i,j并接触；正半径保证单位法向有定义。binaryElasticSphereCollision的入射法向符号、两速度的标准质量加权法向冲量、法向反转、碰后分离、动量及动能守恒均一致；所有粒子的实际速度左右极限接入before/after，非碰撞粒子速度不变。[EXTRA]已明确限制为孤立二体无摩擦碰撞，未声称处理同时多碰撞或解存在。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch01_eaudit_merged"
+}

@@ -1,0 +1,54 @@
+--- before/Ch01.lean
++++ after/Ch01.lean
+@@ -643,13 +643,39 @@
+ /-- source_id: MD-1.2-HarmonicSolution · unnumbered_claim · printed p.19–20 / PDF p.42–43
+ [EXTRA] Ω≠0是原式除法的域条件；n维解按坐标推广，原文为n=1。
+ 
+--/
++[EXTRA] 补范数平方能量、与质量Hamiltonian的识别和守恒；复用已有ODE唯一性，短证任意同初值全时间机械解等于显式流（首条路线通过）。
++-/
++def harmonicEnergy {n : ℕ} (Ω : ℝ) (z : PhaseSpace n) : ℝ :=
++  ‖z.2‖^2 / 2 + Ω^2 * ‖z.1‖^2 / 2
++
++theorem harmonicEnergy_eq_massHamiltonian {n : ℕ} (Ω : ℝ) (z : PhaseSpace n) :
++    harmonicEnergy Ω z = massHamiltonian (fun _ : Fin n => (1 : ℝ))
++      (harmonicPotential Ω) z := by
++  simp [harmonicEnergy, massHamiltonian, massSeparableEnergy,
++    SeparableEnergy.hamiltonian, momentumKineticEnergy, harmonicPotential,
++    nBodyKineticEnergy, EuclideanSpace.real_norm_sq_eq, Finset.sum_div,
++    Finset.mul_sum, mul_div_assoc]
++
+ theorem harmonic_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : PhaseSpace n) :
+     IsMechanicalSolutionOn (fun _ : Fin n => (1 : ℝ)) (fun q => (-(Ω^2)) • q)
+       univ univ (fun t => harmonicFlow Ω t z) ∧
+     harmonicFlow Ω 0 z = z ∧
+-    ∀ t, (harmonicFlow Ω t z).1 = Real.cos (Ω*t) • z.1 + (Real.sin (Ω*t)/Ω) • z.2 := by
+-  exact ⟨harmonicFlow_isMechanicalSolution Ω hΩ z, harmonicFlow_zero Ω z, fun _ => rfl⟩
++    (∀ t, (harmonicFlow Ω t z).1 = Real.cos (Ω*t) • z.1 + (Real.sin (Ω*t)/Ω) • z.2) ∧
++    (∀ t, harmonicEnergy Ω (harmonicFlow Ω t z) = harmonicEnergy Ω z) ∧
++    (∀ γ : ℝ → PhaseSpace n,
++      IsMechanicalSolutionOn (fun _ : Fin n => (1 : ℝ)) (fun q => (-(Ω^2)) • q)
++        univ univ γ → γ 0 = z → ∀ t, γ t = harmonicFlow Ω t z) := by
++  refine ⟨harmonicFlow_isMechanicalSolution Ω hΩ z, harmonicFlow_zero Ω z,
++    (fun _ => rfl), ?_, ?_⟩
++  · intro t
++    simpa only [harmonicEnergy_eq_massHamiltonian] using harmonicFlow_energy Ω hΩ z t
++  · intro γ hγ hinit t
++    have heq := mechanicalSolution_unique_on_preconnected_of_contDiffAt
++      isOpen_univ isPreconnected_univ (mem_univ (0 : ℝ)) hγ
++      (harmonicFlow_isMechanicalSolution Ω hΩ z)
++      (fun s _ => mechanicalVectorField_contDiffAt _ _ (γ s) (by fun_prop))
++      (by simpa using hinit)
++    exact heq (mem_univ t)
+ 
+ /-- source_id: MD-1.2-ScalarMechanical · definition · printed p.20 / PDF p.43
+ 
+@@ -2614,6 +2640,8 @@
+ #print axioms MD.Ch01.particleTotalEnergy
+ #print axioms MD.Ch01.paircancellation
+ #print axioms MD.Ch01.momentum_conservation
++#print axioms MD.Ch01.harmonicEnergy
++#print axioms MD.Ch01.harmonicEnergy_eq_massHamiltonian
+ #print axioms MD.Ch01.harmonic_solution
+ #print axioms MD.Ch01.scalarMechanicalModel
+ #print axioms MD.Ch01.scalar_quadrature
