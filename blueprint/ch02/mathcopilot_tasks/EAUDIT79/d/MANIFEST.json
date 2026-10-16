@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT79",
+  "source_id": "MD-2.2.3-ExactExpansion",
+  "input_sha256": {
+    "BATCH_EAUDIT79.md": "33ea2d6fe5c51e9c0542d99745f33d1874fee5a69290a9f4c9cefc3baa15e7df",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+    "EAUDIT79d_materials": "e24bd025bfea797c6d34566b15105d5331b7827f6ead1d21786bdc22b2d49adc",
+    "EAUDIT79d_PAGES.pdf": "28e5bb0e6f73a5f9ff14e710679d502ca47454e18c40dadfba4574d7d5c18b1d"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    90
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "468e2b507b68f812408b369ef8a5258dad7379ff1848c63bd0c85ad2d3a0098c",
+  "source_block_sha256": "85940fdc8caa3763a7a7b38eeff8f7608a125a37c13ca0a5a593bc261043c93b",
+  "source_declarations": [
+    "exactExpansion"
+  ],
+  "dependency_excerpts": [],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT79_review.json",
+  "total_task_bytes": 85235
+}

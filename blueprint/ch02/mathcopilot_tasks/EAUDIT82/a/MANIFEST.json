@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT82",
+  "source_id": "MD-2.3.2-EulerVolumeCounterexample",
+  "input_sha256": {
+    "BATCH_EAUDIT82.md": "200338d3e61899c04930d781b2909aabf7ba656dc17d3d25f587a9c2c664d0b4",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+    "EAUDIT82a_materials": "edb23310a68b3e8f8f27c71425c7245d4b5e90e4d2ef9c93623ed0c753c5b21d",
+    "EAUDIT82a_PAGES.pdf": "73316fd6815e6e697e515f6cb736961f4d69dc49f7a6c000997b786321b3f85b"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    97
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "be2750ee3208d710489fd9b52218ff738b3d479f5d5403f8432eaaa73f54d0af",
+  "source_block_sha256": "857e293c5d115dcad50f5f0439e4a9dd2e027a7fec247af1134bad59dce043e1",
+  "source_declarations": [
+    "eulerVolumeCounterexample",
+    "eulerVolumeCounterexample_det_only"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "linearEuler",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "51ec1e50a1aaa095d57c751962cb121b04d12b662f2e1cdbee520777dc1bdbd2"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT82_review.json",
+  "total_task_bytes": 81442
+}

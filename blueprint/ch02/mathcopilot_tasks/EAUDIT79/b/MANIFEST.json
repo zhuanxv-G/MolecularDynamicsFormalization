@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT79",
+  "source_id": "MD-2.2.3-ErrorBound",
+  "input_sha256": {
+    "BATCH_EAUDIT79.md": "33ea2d6fe5c51e9c0542d99745f33d1874fee5a69290a9f4c9cefc3baa15e7df",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+    "EAUDIT79b_materials": "2e23005d855d290d23a8ecd8ed91f0e243b6a1ab5bd213673e994335c6fef031",
+    "EAUDIT79b_PAGES.pdf": "3c63296262a7c97f009eb61f845123c1fd4bdca778cb660ce16b754843c54c03"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    89
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "09f8d1eba0f92cfc03f1b445c9012d37604fcd2801ee1f362e4f56a2582953ea",
+  "source_block_sha256": "99771ec4486a5cfb725e257da79bad6f88f2b046049d4c8d834bd6721c4b5d62",
+  "source_declarations": [
+    "errorBound"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "name": "oneStepIterate",
+      "file_sha256": "c9bc53727962c962a9420dbfa305ede46e90b38fdded8952b400381f474e3385",
+      "excerpt_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT79_review.json",
+  "total_task_bytes": 90240
+}

@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT86",
+  "input_sha256": {
+    "BATCH_EAUDIT86.md": "947294200251d0365668058bdb7782f63eaa04c231477e53f260b66779f3c8ec",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT86a",
+      "source_id": "MD-2.3.6-SymplecticIntegrator",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT86/a",
+      "total_bytes": 91069,
+      "manifest_sha256": "55b94c330453479befd578f9379b3f6742fc2cfefa558773ee8ade12242e4532"
+    },
+    {
+      "subtask": "EAUDIT86b",
+      "source_id": "MD-2.3.6-SymplecticEulerPreserves",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT86/b",
+      "total_bytes": 90085,
+      "manifest_sha256": "3a97da389c6af7bda947c71adbf5d1899b3f556e13bb3ee04fc0683e92b898e9"
+    }
+  ]
+}

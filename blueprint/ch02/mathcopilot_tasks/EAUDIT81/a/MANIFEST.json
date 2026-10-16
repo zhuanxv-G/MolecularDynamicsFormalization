@@ -1,0 +1,50 @@
+{
+  "eaudit": "EAUDIT81",
+  "source_id": "MD-2.3.1-Divergence",
+  "input_sha256": {
+    "BATCH_EAUDIT81.md": "cf2222c8bdaac5819867360c4836d763f816c5ba9424a42de35cc91061ae912b",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+    "EAUDIT81a_materials": "47951b2d1b6ff9339b6a08ca65288e25fc60c3b7d1018ac3b9ce2d75539e7117",
+    "EAUDIT81a_PAGES.pdf": "e4485ec320208aa15736c7c765fd15ecdaaabdd735d00cbfd847cad98bffd949"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    94
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a3df9f96bafb5c5c6694cd6cb07ffc6e1e9b884f1dfd3970283f81976da1c49d",
+  "source_block_sha256": "645967d863c32c141b74348356ac0e8d795ec9bcf7fa93346a7fed83ac311b98",
+  "source_declarations": [
+    "bp_divergence",
+    "divergenceFree"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_divergence",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "06d622e99a994ecf60fe7d1d45dff3588510734972791164d18cd85b150a3416"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "divergenceFree",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "2e2bb49f511e3a1dd346a77e7406744668d87ec366ff9c32561d7bf10d157577"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/LiouvilleVolume.lean",
+      "name": "textbookCoordinateJacobian",
+      "file_sha256": "cc895f16f329a6dd4943c5ab8d72d7d98dd7d683c006aad395c36ed3be5bf37f",
+      "excerpt_sha256": "96dc75035e362b25476b1c4cbfcd553e5349a04a3b5b286bb07fbb14c496afd0"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT81_review.json",
+  "total_task_bytes": 91510
+}

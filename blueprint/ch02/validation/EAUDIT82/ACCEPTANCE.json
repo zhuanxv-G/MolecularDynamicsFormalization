@@ -1,0 +1,26 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT82",
+  "section": "2.3.2",
+  "source_ids": [
+    "MD-2.3.2-EulerVolumeCounterexample"
+  ],
+  "reaudit_ids": [
+    "MD-2.3.2-EulerVolumeCounterexample"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.3.2-EulerVolumeCounterexample",
+      "prior_eaudit": "EAUDIT59",
+      "acceptance": "blueprint/ch02/validation/EAUDIT59/ACCEPTANCE.json",
+      "sha256": "d47f6f5d4e2c38aacf63d096da64e8de181bfd7a44f96f84fc916b6e55df76a7"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT82/INDEX.md"
+}

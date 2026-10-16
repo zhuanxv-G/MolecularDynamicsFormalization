@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT81",
+  "source_id": "MD-2.3.1-LJBoundedPeriodic",
+  "input_sha256": {
+    "BATCH_EAUDIT81.md": "cf2222c8bdaac5819867360c4836d763f816c5ba9424a42de35cc91061ae912b",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+    "EAUDIT81g_materials": "6b0daf7fafcfcdbdbf47926961ab553b0afed477dd16bddf0e536f830a2a10e7",
+    "EAUDIT81g_PAGES.pdf": "711d407e7cb764a15a02943d5838f25d1a09ce813fb1ff1dc34d6258e6a6ab21"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    96
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "ae1e7d2fa92e00b6f4351b9b15b721e6fb56d426594aa7bf17859342d2bcdab8",
+  "source_block_sha256": "c919fb35adda1449f2a4e74c9f33edfbbd2912a56e4ebb99dc8d52bd707f93d1",
+  "source_declarations": [
+    "ljBoundedPeriodic"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "oscillatorEquation",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "275459b19fdeef2475e46c3e0d0b59e865679f2973a18da8cf0730e51471fc1a"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT81_review.json",
+  "total_task_bytes": 162392
+}

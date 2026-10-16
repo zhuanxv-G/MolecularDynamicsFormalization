@@ -47,7 +47,7 @@
 | MD-2.2.3-ErrorBound | 67/89 | PASS | 待复审 / EAUDIT05 | checked+documented priors |
 | MD-2.2.3-ConsistencyConvergence | 67/89 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
 | MD-2.2.3-ScalarVerlet | 67/89 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
-| MD-2.2.3-VerletExpansion | 67–68/89–90 | PASS | 待复审 / EAUDIT05 | incomplete |
+| MD-2.2.3-VerletExpansion | 68/90 | PASS | 待复审 / EAUDIT05 | incomplete |
 | MD-2.2.3-ExactExpansion | 68/90 | PASS | 待复审 / EAUDIT05 | incomplete |
 | MD-2.2.3-DefectPrinted | 68/90 | NEEDS_HUMAN | 待导师 / EAUDIT05（原返回FAIL保留） | incomplete |
 | MD-2.2.3-VerletConsistency | 68/90 | PASS | 待复审 / EAUDIT05 | incomplete |
@@ -68,7 +68,7 @@
 | MD-2.3.1-DeterminantODE | 73/95 | PASS | 待复审 / EAUDIT07 | checked+documented priors |
 | MD-2.3.1-DeterminantExponential | 73/95 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
 | MD-2.3.1-FlowDet | 73/95 | PASS | 待复审 / EAUDIT07 | checked+documented priors |
-| MD-2.3.1-LJOscillator | 73–74/95–96 | PASS | 待复审 / EAUDIT07 | self-contained |
+| MD-2.3.1-LJOscillator | 73/95 | PASS | 待复审 / EAUDIT07 | self-contained |
 | MD-2.3.1-LJBoundedPeriodic | 74/96 | PASS | 待复审 / EAUDIT07 | incomplete |
 | MD-2.3.2-LinearDivergence | 74–75/96–97 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete |
 | MD-2.3.2-LinearEuler | 75/97 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained |
@@ -116,7 +116,7 @@
 | MD-2.4.1-Splitting | 83/105 | PASS | 待复审 / EAUDIT14 | self-contained |
 | MD-2.4.1-FieldAdd | 83/105 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors |
 | MD-2.4.1-SplittingLocal | 83/105 | PASS | 待复审 / EAUDIT14 | checked+documented priors |
-| MD-2.4.1-KineticFlow | 83–84/105–106 | PASS | 待复审 / EAUDIT14 | self-contained |
+| MD-2.4.1-KineticFlow | 83/105 | PASS | 待复审 / EAUDIT14 | self-contained |
 | MD-2.4.1-PotentialFlow | 84/106 | PASS | 待复审 / EAUDIT14 | self-contained |
 | MD-2.4.1-SplitEuler | 84/106 | PASS | 待复审 / EAUDIT14 | checked+documented priors |
 | MD-2.4.1-VerletComposition | 84–85/106–107 | PASS | 待复审 / EAUDIT14 | checked+documented priors |
@@ -125,7 +125,7 @@
 | MD-2.4.1-SymmetricEven | 85/107 | PASS | 待复审 / EAUDIT49 | incomplete |
 | MD-2.4.2-CompositionSymplectic | 85/107 | PASS | 待复审 / EAUDIT16 | checked+documented priors |
 | MD-2.4.2-CompositionOrder | 85/107 | PASS | 待导师 / EAUDIT16（原返回FAIL保留） | incomplete |
-| MD-2.4.3-HarmonicSplit | 85–86/107–108 | PASS | 待复审 / EAUDIT17 | self-contained |
+| MD-2.4.3-HarmonicSplit | 85/107 | PASS | 待复审 / EAUDIT17 | self-contained |
 | MD-2.4.4-ImplicitLocal | 86/108 | PASS | 待复审 / EAUDIT18 | incomplete |
 | MD-2.4.4-BackwardEulerSolve | 86/108 | PASS | 待复审 / EAUDIT18 | incomplete |
 | MD-2.4.4-Newton | 86–87/108–109 | NEEDS_HUMAN | 待复审 / EAUDIT18 | self-contained |
@@ -2501,7 +2501,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`9dfddfbbb443c0d9081db423d421826ecd8f5f7e7993428160be94ceed9c36ce`；原文SHA256：`1c5e4b1f17870a6b8d6ca2cb27a59a164c9699233121d2d3f43bb6823a79ec5f`。
 
-## 1. MD-2.2.3-VerletExpansion · unnumbered_claim · 印刷p.67–68 / PDFp.89–90
+## 1. MD-2.2.3-VerletExpansion · unnumbered_claim · 印刷p.68 / PDFp.90
 
 ### 2. 原文陈述
 
@@ -2554,7 +2554,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 停止/继续原因：缺完整理论或正式库仅有较弱接口；记录missing并继续。
 
-签名SHA256：`154e3215a2cb7cf589ed43fe80580f4d7144044be37e2f4350e2dee587096575`；原文SHA256：`4ce3612789f2ab6e5efb29a35e5f9441cc4174836dd9d19589f0ede0a6baa058`。
+签名SHA256：`154e3215a2cb7cf589ed43fe80580f4d7144044be37e2f4350e2dee587096575`；原文SHA256：`7c878a9cc06bfd2579de57b1be0175e92b4433d8268d6e1e5835dc86d8df370d`。
 
 ## 1. MD-2.2.3-ExactExpansion · unnumbered_claim · 印刷p.68 / PDFp.90
 
@@ -3675,7 +3675,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`1c93333dc885755e368fa75208c49d5d034d430586095343ae1873a7c6fd5874`；原文SHA256：`608fb307a9f8a1a3789bac0426407e01da2df7aa03bfcb2d8be6fb063046c5b3`。
 
-## 1. MD-2.3.1-LJOscillator · Example 2.3 (model) · 印刷p.73–74 / PDFp.95–96
+## 1. MD-2.3.1-LJOscillator · Example 2.3 (model) · 印刷p.73 / PDFp.95
 
 ### 2. 原文陈述
 
@@ -3730,7 +3730,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`1f91db42cd9acee7e62b7ae3aba6f5e8b5e13b75505d5776df7d42883ca22041`；原文SHA256：`47d0d381d850a80ffd6191823fd0cc63019d4c876e99328605d66dffd9008138`。
+签名SHA256：`1f91db42cd9acee7e62b7ae3aba6f5e8b5e13b75505d5776df7d42883ca22041`；原文SHA256：`d99a80ad5c4ae75167dbf80850564acd7d66716058ce3cfa4e28356bbf7fc0e2`。
 
 ## 1. MD-2.3.1-LJBoundedPeriodic · unnumbered_claim · 印刷p.74 / PDFp.96
 
@@ -6250,7 +6250,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`29fb43427dbd3c6b6339bd3bf42c619ea08afcf75e4152b355679b556ec098cb`；原文SHA256：`dee78a87e5fe11ca229782739349839b4bc5488b1416708d794a47277bd6eb85`。
 
-## 1. MD-2.4.1-KineticFlow · Example 2.4 (kinetic) · 印刷p.83–84 / PDFp.105–106
+## 1. MD-2.4.1-KineticFlow · Example 2.4 · 印刷p.83 / PDFp.105
 
 ### 2. 原文陈述
 
@@ -6325,7 +6325,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`45ec1b1ed155a265074baa5d648471d195610e565577a13b207ff1ff0711274b`；原文SHA256：`019bcef51908cd9ba06620144ebfb242cf06018393551dab19a84f4f03db24f3`。
+签名SHA256：`45ec1b1ed155a265074baa5d648471d195610e565577a13b207ff1ff0711274b`；原文SHA256：`1f20883e6aa93515d9d963973d2eeb4f6dbc9ac1528e296705b3fa62bd5a2bf6`。
 
 ## 1. MD-2.4.1-PotentialFlow · definition · 印刷p.84 / PDFp.106
 
@@ -6429,7 +6429,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`cd7672becd691437bfd5157c7463f3203a4474f2ea075d6b0ba7005abebafcf5`；原文SHA256：`34396c3afd8d847a2974ddebef18f4685340729defabc5a5adfe1e0322206b3a`。
 
-## 1. MD-2.4.1-VerletComposition · Example 2.5 (composition) · 印刷p.84–85 / PDFp.106–107
+## 1. MD-2.4.1-VerletComposition · Example 2.5 (Verlet is Symplectic) · 印刷p.84–85 / PDFp.106–107
 
 ### 2. 原文陈述
 
@@ -6493,7 +6493,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 已登记前置证明/定义：MolecularDynamics.Chapter02Review.verletComposition_proved。
 
-签名SHA256：`96b4965793fb8f0171bff9712a590f272a1b92d60574ac1cd34fa8ccb738b723`；原文SHA256：`1e180567b28c3d68e04593b6d83318adb588deb0efb7ab24a1c7250c471e5a62`。
+签名SHA256：`96b4965793fb8f0171bff9712a590f272a1b92d60574ac1cd34fa8ccb738b723`；原文SHA256：`9ce0fa430fb425abeff0c7a1e7c7d1e18fe42e49dd2ef0a435490febc3faffe1`。
 
 ## 1. MD-2.4.1-VerletSymplectic · unnumbered_claim · 印刷p.85 / PDFp.107
 
@@ -6764,7 +6764,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`1bf8eac0f16350ec1e86e8f53adc07374531346781388530bc05dfbd07929fd7`；原文SHA256：`fcaa8e06c1c37aa0a32a2204f6b2a49ec28eb94294fca3e055115f3432ab00b1`。
 
-## 1. MD-2.4.3-HarmonicSplit · definition · 印刷p.85–86 / PDFp.107–108
+## 1. MD-2.4.3-HarmonicSplit · definition · 印刷p.85 / PDFp.107
 
 ### 2. 原文陈述
 
@@ -6815,7 +6815,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`96470ed81c0e238c1cb17dae7e5751d1adb33962d7368c78b38a49f714de4e87`；原文SHA256：`7343886b561fbfe447cf070957365c8a420383f13551ee784547c9a37383e21a`。
+签名SHA256：`96470ed81c0e238c1cb17dae7e5751d1adb33962d7368c78b38a49f714de4e87`；原文SHA256：`1fa3b2474ec98cf1c2a05d178dde9c0f839a57318f09356f4c5555da3aba8854`。
 
 ## 1. MD-2.4.4-ImplicitLocal · unnumbered_claim · 印刷p.86 / PDFp.108
 

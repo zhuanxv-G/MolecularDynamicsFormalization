@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT75",
+  "input_sha256": {
+    "BATCH_EAUDIT75.md": "2a05a7cf80e82d428cc523111e38891cc0b3aff6ab1d6bc036be02c5fd6ca023",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT75a",
+      "source_id": "MD-2.1.2-SecondDerivative",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT75/a",
+      "total_bytes": 79819,
+      "manifest_sha256": "d716a84353758e5886f55c7823db0f6cede2f4c3dfb908fa61c9487405966db6"
+    }
+  ]
+}

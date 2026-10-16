@@ -1,0 +1,66 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT79",
+  "section": "2.2.3",
+  "source_ids": [
+    "MD-2.2.3-Consistency",
+    "MD-2.2.3-ErrorBound",
+    "MD-2.2.3-VerletExpansion",
+    "MD-2.2.3-ExactExpansion",
+    "MD-2.2.3-VerletConsistency",
+    "MD-2.2.3-VerletStability"
+  ],
+  "reaudit_ids": [
+    "MD-2.2.3-Consistency",
+    "MD-2.2.3-ErrorBound",
+    "MD-2.2.3-VerletExpansion",
+    "MD-2.2.3-ExactExpansion",
+    "MD-2.2.3-VerletConsistency",
+    "MD-2.2.3-VerletStability"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.2.3-Consistency",
+      "prior_eaudit": "EAUDIT56",
+      "acceptance": "blueprint/ch02/validation/EAUDIT56/ACCEPTANCE.json",
+      "sha256": "b4b7c19e5c236b307a5c41d3ebfdd763c360cf37cc2ca281c87ddb13bd2c87c1"
+    },
+    {
+      "source_id": "MD-2.2.3-ErrorBound",
+      "prior_eaudit": "EAUDIT56",
+      "acceptance": "blueprint/ch02/validation/EAUDIT56/ACCEPTANCE.json",
+      "sha256": "b4b7c19e5c236b307a5c41d3ebfdd763c360cf37cc2ca281c87ddb13bd2c87c1"
+    },
+    {
+      "source_id": "MD-2.2.3-VerletExpansion",
+      "prior_eaudit": "EAUDIT56",
+      "acceptance": "blueprint/ch02/validation/EAUDIT56/ACCEPTANCE.json",
+      "sha256": "b4b7c19e5c236b307a5c41d3ebfdd763c360cf37cc2ca281c87ddb13bd2c87c1"
+    },
+    {
+      "source_id": "MD-2.2.3-ExactExpansion",
+      "prior_eaudit": "EAUDIT56",
+      "acceptance": "blueprint/ch02/validation/EAUDIT56/ACCEPTANCE.json",
+      "sha256": "b4b7c19e5c236b307a5c41d3ebfdd763c360cf37cc2ca281c87ddb13bd2c87c1"
+    },
+    {
+      "source_id": "MD-2.2.3-VerletConsistency",
+      "prior_eaudit": "EAUDIT56",
+      "acceptance": "blueprint/ch02/validation/EAUDIT56/ACCEPTANCE.json",
+      "sha256": "b4b7c19e5c236b307a5c41d3ebfdd763c360cf37cc2ca281c87ddb13bd2c87c1"
+    },
+    {
+      "source_id": "MD-2.2.3-VerletStability",
+      "prior_eaudit": "EAUDIT56",
+      "acceptance": "blueprint/ch02/validation/EAUDIT56/ACCEPTANCE.json",
+      "sha256": "b4b7c19e5c236b307a5c41d3ebfdd763c360cf37cc2ca281c87ddb13bd2c87c1"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT79/INDEX.md"
+}

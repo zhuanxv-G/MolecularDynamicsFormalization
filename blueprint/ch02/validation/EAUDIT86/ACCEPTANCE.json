@@ -1,0 +1,34 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT86",
+  "section": "2.3.6",
+  "source_ids": [
+    "MD-2.3.6-SymplecticIntegrator",
+    "MD-2.3.6-SymplecticEulerPreserves"
+  ],
+  "reaudit_ids": [
+    "MD-2.3.6-SymplecticIntegrator",
+    "MD-2.3.6-SymplecticEulerPreserves"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.3.6-SymplecticIntegrator",
+      "prior_eaudit": "EAUDIT63",
+      "acceptance": "blueprint/ch02/validation/EAUDIT63/ACCEPTANCE.json",
+      "sha256": "6269cbc2009ae1f0dc8e7b376f8c9ef9ef3b6c4ff325cc9bd56038f0f6e9a7c7"
+    },
+    {
+      "source_id": "MD-2.3.6-SymplecticEulerPreserves",
+      "prior_eaudit": "EAUDIT63",
+      "acceptance": "blueprint/ch02/validation/EAUDIT63/ACCEPTANCE.json",
+      "sha256": "6269cbc2009ae1f0dc8e7b376f8c9ef9ef3b6c4ff325cc9bd56038f0f6e9a7c7"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT86/INDEX.md"
+}

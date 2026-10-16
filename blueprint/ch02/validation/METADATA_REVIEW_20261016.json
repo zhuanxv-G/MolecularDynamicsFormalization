@@ -1,0 +1,106 @@
+{
+  "chapter": 2,
+  "time": "2026-10-16T10:26:18.233207",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_before_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "source_after_sha256": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+  "unchanged_lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "verification": "visual inspection of original rendered pages; no Lean source change; reuse accepted compile, axiom and chapter full check",
+  "changes": [
+    {
+      "source_id": "MD-2.2.3-VerletExpansion",
+      "fields": {
+        "printed_page": {
+          "before": "67–68",
+          "after": "68"
+        },
+        "pdf_page": {
+          "before": "89–90",
+          "after": "90"
+        }
+      },
+      "source_pages": [
+        90
+      ],
+      "context_pages": [
+        89
+      ]
+    },
+    {
+      "source_id": "MD-2.3.1-LJOscillator",
+      "fields": {
+        "printed_page": {
+          "before": "73–74",
+          "after": "73"
+        },
+        "pdf_page": {
+          "before": "95–96",
+          "after": "95"
+        }
+      },
+      "source_pages": [
+        95
+      ],
+      "context_pages": [
+        96
+      ]
+    },
+    {
+      "source_id": "MD-2.4.1-KineticFlow",
+      "fields": {
+        "label": {
+          "before": "Example 2.4 (kinetic)",
+          "after": "Example 2.4"
+        },
+        "printed_page": {
+          "before": "83–84",
+          "after": "83"
+        },
+        "pdf_page": {
+          "before": "105–106",
+          "after": "105"
+        }
+      },
+      "source_pages": [
+        105
+      ],
+      "context_pages": [
+        106
+      ]
+    },
+    {
+      "source_id": "MD-2.4.1-VerletComposition",
+      "fields": {
+        "label": {
+          "before": "Example 2.5 (composition)",
+          "after": "Example 2.5 (Verlet is Symplectic)"
+        }
+      },
+      "source_pages": [
+        106,
+        107
+      ],
+      "context_pages": []
+    },
+    {
+      "source_id": "MD-2.4.3-HarmonicSplit",
+      "fields": {
+        "printed_page": {
+          "before": "85–86",
+          "after": "85"
+        },
+        "pdf_page": {
+          "before": "107–108",
+          "after": "107"
+        }
+      },
+      "source_pages": [
+        107
+      ],
+      "context_pages": [
+        108
+      ]
+    }
+  ],
+  "delivery_complete": true
+}

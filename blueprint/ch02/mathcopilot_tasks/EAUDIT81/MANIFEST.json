@@ -1,0 +1,59 @@
+{
+  "eaudit": "EAUDIT81",
+  "input_sha256": {
+    "BATCH_EAUDIT81.md": "cf2222c8bdaac5819867360c4836d763f816c5ba9424a42de35cc91061ae912b",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT81a",
+      "source_id": "MD-2.3.1-Divergence",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT81/a",
+      "total_bytes": 91510,
+      "manifest_sha256": "b47dfc1cb2f414348b4247fd72c0ce6496d124b157868224d4b40604188e6b61"
+    },
+    {
+      "subtask": "EAUDIT81b",
+      "source_id": "MD-2.3.1-Liouville",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT81/b",
+      "total_bytes": 90934,
+      "manifest_sha256": "e18cb1fe6d1d147bbe8c790faba9dc4ceec321ee799624d3945f9e0e650f4f88"
+    },
+    {
+      "subtask": "EAUDIT81c",
+      "source_id": "MD-2.3.1-HamiltonVolume",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT81/c",
+      "total_bytes": 92169,
+      "manifest_sha256": "dc0e7519255a08eac28fb7695aaf22ff99e775d4109e0b2cc6e26cda58f1d294"
+    },
+    {
+      "subtask": "EAUDIT81d",
+      "source_id": "MD-2.3.1-DeterminantODE",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT81/d",
+      "total_bytes": 89812,
+      "manifest_sha256": "424855ca0d339c46094e0ee1b897d1b574542b6e80910bf22e7f79451b217b9c"
+    },
+    {
+      "subtask": "EAUDIT81e",
+      "source_id": "MD-2.3.1-FlowDet",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT81/e",
+      "total_bytes": 91269,
+      "manifest_sha256": "4318488163e6a3be7b7201c62a56e94735ce5a2cb3e51dfc721d9c5ee2195535"
+    },
+    {
+      "subtask": "EAUDIT81f",
+      "source_id": "MD-2.3.1-LJOscillator",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT81/f",
+      "total_bytes": 179461,
+      "manifest_sha256": "59bfe7b170aeef70679a08ba25698e78011065cffac3da9c696753251055872e"
+    },
+    {
+      "subtask": "EAUDIT81g",
+      "source_id": "MD-2.3.1-LJBoundedPeriodic",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT81/g",
+      "total_bytes": 162392,
+      "manifest_sha256": "64324c7a7843fb9fade082c858e750534613e40b98f610978902d146e22d5d4b"
+    }
+  ]
+}

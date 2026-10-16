@@ -1,0 +1,39 @@
+{
+  "eaudit": "EAUDIT92",
+  "source_id": "MD-2.4.4-BackwardEulerSolve",
+  "input_sha256": {
+    "BATCH_EAUDIT92.md": "e2b4053fdb2561f7184a0a48ae0c059e4bab62250b6de3c12fa86c3673ca080d",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+    "EAUDIT92b_materials": "c3265622df82f3e88812031c1106a94171f39abb5b98871bf66143a4ca06c81f",
+    "EAUDIT92b_PAGES.pdf": "925eaa6464ecbb360491978944ae4f1e49ab66101001da0984467ebb26732223"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    108
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "3b1d4c19e5f14663d9803bf6426bf9b6d0dc802230a462659928d7921ae3a3d5",
+  "source_block_sha256": "540c839eca6f544821099c3c87dec3c268e07e30c2c0758b89d9dd8baab2766a",
+  "source_declarations": [
+    "backwardEulerResidual",
+    "backwardEulerResidual_zero_iff",
+    "backwardEulerMapRelation"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "backwardEulerMapRelation",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "131d4f0f876634d0d77413261794246ec9a859fdde8a26bcd7ff7256575a84f5"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "backwardEulerResidual",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "981366fe0ab214d362e3b9074de486e3b4bd4fcd4de4db7c25334297500a5a78"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT92_review.json",
+  "total_task_bytes": 92076
+}

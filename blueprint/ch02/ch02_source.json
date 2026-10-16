@@ -1332,8 +1332,8 @@
     "kind": "unnumbered_claim",
     "label": null,
     "section": "2.2.3",
-    "printed_page": "67–68",
-    "pdf_page": "89–90",
+    "printed_page": "68",
+    "pdf_page": "90",
     "statement_latex": "Combining terms of like powers of $h$, we have\n\\[P=p+hF+\\frac{h^2}{2}pF'+\\frac{h^3}{4}[F'F+p^2F'']+O(h^4).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -1358,9 +1358,34 @@
         "changed_fields": [],
         "raw_return": "blueprint/ch02/mathcopilot_results/BATCH09_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:26:18.212960",
+        "before_sha256": "5239cec349f8fdf67dda16b9037eb075e6b3e5974f984260071c2738f66681be",
+        "after_sha256": "1da0427b7c25b9138e313fe250a182f5cda9faafd06c22ab0eb0100d73d05202",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "67–68",
+            "after": "68"
+          },
+          "pdf_page": {
+            "before": "89–90",
+            "after": "90"
+          }
+        },
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH09_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      89
+    ]
   },
   {
     "source_id": "MD-2.2.3-ExactExpansion",
@@ -2049,8 +2074,8 @@
     "kind": "definition",
     "label": "Example 2.3 (model)",
     "section": "2.3.1",
-    "printed_page": "73–74",
-    "pdf_page": "95–96",
+    "printed_page": "73",
+    "pdf_page": "95",
     "statement_latex": "A 1-d oscillator with Lennard-Jones potential is described by the equations\n\\[\\dot q=p,\\qquad\\dot p=-\\varphi_{LJ}'(q).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -2075,9 +2100,34 @@
         "changed_fields": [],
         "raw_return": "blueprint/ch02/mathcopilot_results/BATCH13_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:26:18.212960",
+        "before_sha256": "ea47e68106d37f6d8c5110c00ce267f8601a1278587daa315e8580194acca1f1",
+        "after_sha256": "60ecba05da65936dc06761ff09093b1a88d2b424662e9207be9ccb7aef4a97a0",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "73–74",
+            "after": "73"
+          },
+          "pdf_page": {
+            "before": "95–96",
+            "after": "95"
+          }
+        },
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH13_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      96
+    ]
   },
   {
     "source_id": "MD-2.3.1-LJBoundedPeriodic",
@@ -3540,10 +3590,10 @@
   {
     "source_id": "MD-2.4.1-KineticFlow",
     "kind": "definition",
-    "label": "Example 2.4 (kinetic)",
+    "label": "Example 2.4",
     "section": "2.4.1",
-    "printed_page": "83–84",
-    "pdf_page": "105–106",
+    "printed_page": "83",
+    "pdf_page": "105",
     "statement_latex": "Let\n\\[H_1(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^TM^{-1}\\boldsymbol p/2,\\qquad H_2(\\boldsymbol q,\\boldsymbol p)=U(\\boldsymbol q),\\]\nthen a splitting method for $H=H_1+H_2$ may be obtained by determining the flow maps for each of the two parts. For $H_1$ we have the differential equations\n\\[\\dot{\\boldsymbol q}=M^{-1}\\boldsymbol p,\\qquad\\dot{\\boldsymbol p}=\\boldsymbol0.\\]\nThe second equation tells us that $\\boldsymbol p$ is constant, so it is fixed at its initial value, whereas the first equation says that $\\boldsymbol q$ evolves on a linear path, hence its flow map is\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p,\\qquad\\boldsymbol P=\\boldsymbol p.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -3568,9 +3618,39 @@
         ],
         "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:26:18.212960",
+        "before_sha256": "1015e30957b256ceea570e068301f743a858b3bd9d54d86c7cd79d8be1e55648",
+        "after_sha256": "e6fdb34802feac6761387d7e862eaa84b085ae545cd663848898cbb0aeb96772",
+        "changed_fields": [
+          "label",
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "label": {
+            "before": "Example 2.4 (kinetic)",
+            "after": "Example 2.4"
+          },
+          "printed_page": {
+            "before": "83–84",
+            "after": "83"
+          },
+          "pdf_page": {
+            "before": "105–106",
+            "after": "105"
+          }
+        },
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      106
+    ]
   },
   {
     "source_id": "MD-2.4.1-PotentialFlow",
@@ -3645,7 +3725,7 @@
   {
     "source_id": "MD-2.4.1-VerletComposition",
     "kind": "unnumbered_claim",
-    "label": "Example 2.5 (composition)",
+    "label": "Example 2.5 (Verlet is Symplectic)",
     "section": "2.4.1",
     "printed_page": "84–85",
     "pdf_page": "106–107",
@@ -3674,9 +3754,26 @@
         ],
         "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:26:18.212960",
+        "before_sha256": "403eaa92e1a9bdb5e0606b573e751be75ef428bcae341b599f7f59aa4204cdab",
+        "after_sha256": "3898d3f9d96d9cc3902273037038e20223871d0a88804f0def6cfa2f4e5b03bd",
+        "changed_fields": [
+          "label"
+        ],
+        "changes": {
+          "label": {
+            "before": "Example 2.5 (composition)",
+            "after": "Example 2.5 (Verlet is Symplectic)"
+          }
+        },
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
   },
   {
     "source_id": "MD-2.4.1-VerletSymplectic",
@@ -3873,8 +3970,8 @@
     "kind": "definition",
     "label": null,
     "section": "2.4.3",
-    "printed_page": "85–86",
-    "pdf_page": "107–108",
+    "printed_page": "85",
+    "pdf_page": "107",
     "statement_latex": "Some systems can be decomposed into a harmonic (quadratic) part $H_0(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^T M^{-1}\\boldsymbol p/2+\\boldsymbol q^T A\\boldsymbol q/2$ and an anharmonic part $H_1(\\boldsymbol q,\\boldsymbol p)=\\hat U(\\boldsymbol q)$. Then a splitting method can be formulated based on exact solution of the linear system together with “kicks” representing impulses defined by the anharmonic part. For a simple system consisting of a harmonic oscillator $H_0(q,p)=p^2/2+\\Omega^2q^2/2$, such a method can be written\n\\[\\begin{bmatrix}Q\\\\\\hat p\\end{bmatrix}=\\begin{bmatrix}\\cos h\\Omega&\\frac{1}{\\Omega}\\sin h\\Omega\\\\-\\Omega\\sin h\\Omega&\\cos h\\Omega\\end{bmatrix}\\begin{bmatrix}q\\\\p\\end{bmatrix},\\qquad P=\\hat p-h\\hat U'(Q).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -3903,9 +4000,34 @@
         ],
         "raw_return": "blueprint/ch02/mathcopilot_results/BATCH24_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:26:18.212960",
+        "before_sha256": "197b309681a8300f168e16cf194798b9fc56d152bdb657f2914c8b9050a241f3",
+        "after_sha256": "c31f911f4ecf219615256b673242407be5aeca5102f379370cc1b3f0326aba7c",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "85–86",
+            "after": "85"
+          },
+          "pdf_page": {
+            "before": "107–108",
+            "after": "107"
+          }
+        },
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH24_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      108
+    ]
   },
   {
     "source_id": "MD-2.4.4-ImplicitLocal",

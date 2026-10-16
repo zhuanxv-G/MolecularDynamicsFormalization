@@ -1,0 +1,74 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT81",
+  "section": "2.3.1",
+  "source_ids": [
+    "MD-2.3.1-Divergence",
+    "MD-2.3.1-Liouville",
+    "MD-2.3.1-HamiltonVolume",
+    "MD-2.3.1-DeterminantODE",
+    "MD-2.3.1-FlowDet",
+    "MD-2.3.1-LJOscillator",
+    "MD-2.3.1-LJBoundedPeriodic"
+  ],
+  "reaudit_ids": [
+    "MD-2.3.1-Divergence",
+    "MD-2.3.1-Liouville",
+    "MD-2.3.1-HamiltonVolume",
+    "MD-2.3.1-DeterminantODE",
+    "MD-2.3.1-FlowDet",
+    "MD-2.3.1-LJOscillator",
+    "MD-2.3.1-LJBoundedPeriodic"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.3.1-Divergence",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch02/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "53d5db55e8f5f1e80b4fd2c9b6490277ddbd80207f64e68b6fcc16ee7b86defe"
+    },
+    {
+      "source_id": "MD-2.3.1-Liouville",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch02/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "53d5db55e8f5f1e80b4fd2c9b6490277ddbd80207f64e68b6fcc16ee7b86defe"
+    },
+    {
+      "source_id": "MD-2.3.1-HamiltonVolume",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch02/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "53d5db55e8f5f1e80b4fd2c9b6490277ddbd80207f64e68b6fcc16ee7b86defe"
+    },
+    {
+      "source_id": "MD-2.3.1-DeterminantODE",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch02/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "53d5db55e8f5f1e80b4fd2c9b6490277ddbd80207f64e68b6fcc16ee7b86defe"
+    },
+    {
+      "source_id": "MD-2.3.1-FlowDet",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch02/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "53d5db55e8f5f1e80b4fd2c9b6490277ddbd80207f64e68b6fcc16ee7b86defe"
+    },
+    {
+      "source_id": "MD-2.3.1-LJOscillator",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch02/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "53d5db55e8f5f1e80b4fd2c9b6490277ddbd80207f64e68b6fcc16ee7b86defe"
+    },
+    {
+      "source_id": "MD-2.3.1-LJBoundedPeriodic",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch02/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "53d5db55e8f5f1e80b4fd2c9b6490277ddbd80207f64e68b6fcc16ee7b86defe"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT81/INDEX.md"
+}

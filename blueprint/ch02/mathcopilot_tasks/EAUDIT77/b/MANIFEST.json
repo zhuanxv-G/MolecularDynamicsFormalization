@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT77",
+  "source_id": "MD-2.2.1-StationaryAction",
+  "input_sha256": {
+    "BATCH_EAUDIT77.md": "9bd947702fbcf41a448f0f0300c6cc428dc102f72f1e5033d9879646d013bf26",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+    "EAUDIT77b_materials": "3454fdd387f3defcb25bd7eca3c2f61926d7166daf0b16ccaa0eb2d7b7019678",
+    "EAUDIT77b_PAGES.pdf": "69768386379fea568e11d6c8e14b1eb52475be55d47bdbfe6b8987f7acd673a1"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    83,
+    84
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "0e963343499716a4d25e5754d018ccbc238f96d40e6783f35a9429e5f6bb602e",
+  "source_block_sha256": "4985801e8b645535639c0bfeb593a5859b2ce81a256dcbda1559e38146ea2ad4",
+  "source_declarations": [
+    "stationarySmoothAction",
+    "stationarySmoothAction_iff_first_variation",
+    "stationarySmoothAction_hamilton"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "action",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "1c1bcaa2125d7feeca685c25e59c8e6743444feb4b96a93f620d5f16a7746abb"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "stationarySmoothAction",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "5e47ad2b3f039ca3e80fb624e61ffc4a6ac657de6bf25f36cc31f7b4d6ac08c0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "variation",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "2ca72a19c04f16e72aa932b6ee1aa96f75b8edac96d02a233b7e21e576cfe013"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT77_review.json",
+  "total_task_bytes": 113890
+}

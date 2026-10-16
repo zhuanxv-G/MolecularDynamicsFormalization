@@ -12,36 +12,36 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
 |---|---|---|---|---|---|---|
-| 2 | MD-2-HamiltonianODE | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT51 |
-| 2 | MD-2-Hamiltonian | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT51 |
-| 2 | MD-2-Euler | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT51 |
-| 2 | MD-2-OneStep | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT51 |
+| 2 | MD-2-HamiltonianODE | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT74 |
+| 2 | MD-2-Hamiltonian | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT74 |
+| 2 | MD-2-Euler | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT74 |
+| 2 | MD-2-OneStep | FAIL | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT74 |
 | 2 | MD-2.1-Convergence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.1-Order | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.1-Error | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.1-Thm2.1 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.1.2-SecondDerivative | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT52 |
+| 2 | MD-2.1.2-SecondDerivative | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT75 |
 | 2 | MD-2.1.2-Taylor2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.1.2-Taylor2Order | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2-VerletOrder | FAIL | C | 网站首选路线：直接保留原文(q,v)速度变量，使用已定义velocityVerlet与真实速度场(v,M⁻¹F(q))；正对角质量及C⁴为充分但非最小资格，闭窗连续性为冗余明确限制。未更改正式mechanicalField/verlet，不新增证明。 | 已修待复审 | EAUDIT53 |
+| 2 | MD-2.2-VerletOrder | FAIL | C | 网站首选路线：直接保留原文(q,v)速度变量，使用已定义velocityVerlet与真实速度场(v,M⁻¹F(q))；正对角质量及C⁴为充分但非最小资格，闭窗连续性为冗余明确限制。未更改正式mechanicalField/verlet，不新增证明。 | 已修待复审 | EAUDIT76 |
 | 2 | MD-2.2.1-Lagrangian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.1-Admissible | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT03 |
 | 2 | MD-2.2.1-Action | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.1-Variation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.1-FirstVariation | FAIL | B | 保留原三个结论，并补同一个真实点态Taylor余项的紧时间窗统一C/ε/²控制；没有把余项界当作前提，未新增证明。 | 已修待复审 | EAUDIT54 |
+| 2 | MD-2.2.1-FirstVariation | FAIL | B | 保留原三个结论，并补同一个真实点态Taylor余项的紧时间窗统一C/ε/²控制；没有把余项界当作前提，未新增证明。 | 已修待复审 | EAUDIT77 |
 | 2 | MD-2.2.1-TaylorPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.1-StationaryAction | FAIL | B | 保留驻值定义，同一source_id补完整积分I=0等价式及自然Euler–Lagrange运动推出驻值的Hamilton原理；C²及a<b是充分资格。新结论只登记sorry陈述，证明留到网站PASS后。 | 已修待复审 | EAUDIT54 |
+| 2 | MD-2.2.1-StationaryAction | FAIL | B | 保留驻值定义，同一source_id补完整积分I=0等价式及自然Euler–Lagrange运动推出驻值的Hamilton原理；C²及a<b是充分资格。新结论只登记sorry陈述，证明留到网站PASS后。 | 已修待复审 | EAUDIT77 |
 | 2 | MD-2.2.1-Parts | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.1-EulerLagrange | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT54 |
-| 2 | MD-2.2.1-VariationalDerivativePrinted | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT54 |
+| 2 | MD-2.2.1-EulerLagrange | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT77 |
+| 2 | MD-2.2.1-VariationalDerivativePrinted | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT77 |
 | 2 | MD-2.2.1-StationaryNotMin | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT03 |
 | 2 | MD-2.2.2-DiscretePath | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.2-DiscreteVelocity | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.2-DiscreteAction | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT04 |
-| 2 | MD-2.2.2-DiscreteStationaryPrinted | FAIL | A | 保留原印0<k≤ν范围和端点疑误；改用HasFDerivAt表达经典零导数，防止不可微处fderiv总化为零；内部节点版本已有独立DiscreteVerlet条目，不裁定端点勘误。 | 已修待复审 | EAUDIT55 |
-| 2 | MD-2.2.2-DiscreteDerivative | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT55 |
+| 2 | MD-2.2.2-DiscreteStationaryPrinted | FAIL | A | 保留原印0<k≤ν范围和端点疑误；改用HasFDerivAt表达经典零导数，防止不可微处fderiv总化为零；内部节点版本已有独立DiscreteVerlet条目，不裁定端点勘误。 | 已修待复审 | EAUDIT78 |
+| 2 | MD-2.2.2-DiscreteDerivative | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT78 |
 | 2 | MD-2.2.2-DiscreteVerlet | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.2-Stormer | FAIL | C | 直接使用原文质量乘法形式M(qₙ₊₁−2qₙ+qₙ₋₁)=h²F(qₙ)，避免零质量下逆质量总化造成对象不等价；仅更改Blueprint本条。 | 已修待复审 | EAUDIT55 |
+| 2 | MD-2.2.2-Stormer | FAIL | C | 直接使用原文质量乘法形式M(qₙ₊₁−2qₙ+qₙ₋₁)=h²F(qₙ)，避免零质量下逆质量总化造成对象不等价；仅更改Blueprint本条。 | 已修待复审 | EAUDIT78 |
 | 2 | MD-2.2.2-VelocityVerlet | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.2-EliminateVelocity | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.2-MomentumVerlet | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
@@ -49,125 +49,125 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 2 | MD-2.2.2-LeapfrogInit | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.2-LeapfrogReconstruct | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.3-ErrorDifference | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.3-Consistency | FAIL | A | 显式0<p；本条只登记正自然数阶，属于[EXTRA]整数阶限制；保持统一K、δ及严格0<h<δ，不静默扩大端点。 | 已修待复审 | EAUDIT56 |
+| 2 | MD-2.2.3-Consistency | FAIL | A | 显式0<p；本条只登记正自然数阶，属于[EXTRA]整数阶限制；保持统一K、δ及严格0<h<δ，不静默扩大端点。 | 已修待复审 | EAUDIT79 |
 | 2 | MD-2.2.3-Stability | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.3-ErrorRecursion | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.3-ErrorBound | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT56 |
+| 2 | MD-2.2.3-ErrorBound | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT79 |
 | 2 | MD-2.2.3-ConsistencyConvergence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.3-ScalarVerlet | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.3-VerletExpansion | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT56 |
-| 2 | MD-2.2.3-ExactExpansion | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT56 |
+| 2 | MD-2.2.3-VerletExpansion | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT79 |
+| 2 | MD-2.2.3-ExactExpansion | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT79 |
 | 2 | MD-2.2.3-DefectPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT05 |
-| 2 | MD-2.2.3-VerletConsistency | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT56 |
-| 2 | MD-2.2.3-VerletStability | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT56 |
-| 2 | MD-2.2.4-FirstIntegral | FAIL | A | 签名显式开放域与I在D经典可微；不再由不可微处fderiv=0总化值冒充守恒条件。 | 已修待复审 | EAUDIT57 |
-| 2 | MD-2.2.4-IntegralPreserved | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT57 |
+| 2 | MD-2.2.3-VerletConsistency | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT79 |
+| 2 | MD-2.2.3-VerletStability | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT79 |
+| 2 | MD-2.2.4-FirstIntegral | FAIL | A | 签名显式开放域与I在D经典可微；不再由不可微处fderiv=0总化值冒充守恒条件。 | 已修待复审 | EAUDIT80 |
+| 2 | MD-2.2.4-IntegralPreserved | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT80 |
 | 2 | MD-2.2.4-EnergyPreserved | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.4-AngularMomentum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.2.4-IntegralMeanValue | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.2.4-IntegralLipschitz | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT57 |
+| 2 | MD-2.2.4-IntegralLipschitz | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT80 |
 | 2 | MD-2.2.4-IntegralErrorPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT06 |
-| 2 | MD-2.3.1-Divergence | FAIL | B | 保留散度辅助定义，并补经典可微向量场的散度恒零谓词；覆盖原句零条件。 | 已修待复审 | EAUDIT58 |
-| 2 | MD-2.3.1-Liouville | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT58 |
+| 2 | MD-2.3.1-Divergence | FAIL | B | 保留散度辅助定义，并补经典可微向量场的散度恒零谓词；覆盖原句零条件。 | 已修待复审 | EAUDIT81 |
+| 2 | MD-2.3.1-Liouville | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT81 |
 | 2 | MD-2.3.1-HamiltonDivergence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.1-HamiltonVolume | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT58 |
+| 2 | MD-2.3.1-HamiltonVolume | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT81 |
 | 2 | MD-2.3.1-VolumeChange | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.1-VariationalPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT07 |
-| 2 | MD-2.3.1-DeterminantODE | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT58 |
+| 2 | MD-2.3.1-DeterminantODE | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT81 |
 | 2 | MD-2.3.1-DeterminantExponential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.1-FlowDet | FAIL | B | 补全可测集合真实Lebesgue体积结论，保留det=1；显式τ>0对应原[EXTRA]。已有证明仅用两条已证正式结论作合取小修补，无新证明路线。 | 已修待复审 | EAUDIT58 |
-| 2 | MD-2.3.1-LJOscillator | FAIL | C | 本条绑定明确LJ势4ε[(σ/q)^12−(σ/q)^6]、正参数及正位置；原一般势关系另保留为辅助oscillatorEquation。 | 已修待复审 | EAUDIT58 |
-| 2 | MD-2.3.1-LJBoundedPeriodic | PASS | C | 依赖小修：一般ODE关系改引辅助oscillatorEquation；原显式LJ势、正参数、正位置及全部周期结论逐字保留。 | 已修待复审 | EAUDIT58 |
+| 2 | MD-2.3.1-FlowDet | FAIL | B | 补全可测集合真实Lebesgue体积结论，保留det=1；显式τ>0对应原[EXTRA]。已有证明仅用两条已证正式结论作合取小修补，无新证明路线。 | 已修待复审 | EAUDIT81 |
+| 2 | MD-2.3.1-LJOscillator | FAIL | C | 本条绑定明确LJ势4ε[(σ/q)^12−(σ/q)^6]、正参数及正位置；原一般势关系另保留为辅助oscillatorEquation。 | 已修待复审 | EAUDIT81 |
+| 2 | MD-2.3.1-LJBoundedPeriodic | PASS | C | 依赖小修：一般ODE关系改引辅助oscillatorEquation；原显式LJ势、正参数、正位置及全部周期结论逐字保留。 | 已修待复审 | EAUDIT81 |
 | 2 | MD-2.3.2-LinearDivergence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.2-LinearEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.2-EulerVolumePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT08 |
-| 2 | MD-2.3.2-EulerVolumeCounterexample | FAIL | B | 强化见证为每个h≠0时/det(I+hS)/≠1，覆盖实际体积不守恒；原桥接只给det≠1，原已证结果完整保留为det_only辅助定理并重查，强化结论暂sorry，不写新证明。 | 已修待复审 | EAUDIT59 |
+| 2 | MD-2.3.2-EulerVolumeCounterexample | FAIL | B | 强化见证为每个h≠0时/det(I+hS)/≠1，覆盖实际体积不守恒；原桥接只给det≠1，原已证结果完整保留为det_only辅助定理并重查，强化结论暂sorry，不写新证明。 | 已修待复审 | EAUDIT82 |
 | 2 | MD-2.3.2-AsymmetricEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.2-AsymmetricJacobian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.2-AsymmetricArea | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.3-SymplecticMap | FAIL | A | 采用原文经典可微辛映射资格，移除不必要C¹限制；正式库C¹定义保持不变。 | 已修待复审 | EAUDIT60 |
-| 2 | MD-2.3.3-OneForm | FAIL | B | 保留逐点1-form类型，补由系数向量a构造连续线性泛函及α(z)(ξ)=a(z)ᵀξ评价式；新结论暂sorry。 | 已修待复审 | EAUDIT60 |
+| 2 | MD-2.3.3-SymplecticMap | FAIL | A | 采用原文经典可微辛映射资格，移除不必要C¹限制；正式库C¹定义保持不变。 | 已修待复审 | EAUDIT83 |
+| 2 | MD-2.3.3-OneForm | FAIL | B | 保留逐点1-form类型，补由系数向量a构造连续线性泛函及α(z)(ξ)=a(z)ᵀξ评价式；新结论暂sorry。 | 已修待复审 | EAUDIT83 |
 | 2 | MD-2.3.3-Differential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.3-CoordinateDifferentials | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.3-Wedge | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.3-SymplecticForm | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.3-FormSumWedges | FAIL | B | 保留原总楔积等式，补单项J⁽ⁱ⁾矩阵、逐项评价及ΣJ⁽ⁱ⁾=J；全部原结论保留，新补陈述不写证明。 | 已修待复审 | EAUDIT60 |
+| 2 | MD-2.3.3-FormSumWedges | FAIL | B | 保留原总楔积等式，补单项J⁽ⁱ⁾矩阵、逐项评价及ΣJ⁽ⁱ⁾=J；全部原结论保留，新补陈述不写证明。 | 已修待复审 | EAUDIT83 |
 | 2 | MD-2.3.3-GeneralTwoForm | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.3-PullbackOne | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.3-PullbackTwo | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.3-PullbackMatrix | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.3-PreservesForm | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.3-SymplecticIffForm | FAIL | A | 教材定义等价式使用本章经典可微辛谓词；原正式桥接以C¹为定义，不能直接沿用，保留sorry，不宣称已证。 | 已修待复审 | EAUDIT60 |
+| 2 | MD-2.3.3-SymplecticIffForm | FAIL | A | 教材定义等价式使用本章经典可微辛谓词；原正式桥接以C¹为定义，不能直接沿用，保留sorry，不宣称已证。 | 已修待复审 | EAUDIT83 |
 | 2 | MD-2.3.3-SymplecticDet | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.3-HamiltonDet | FAIL | B | 补∀t流辛性合取，同时保留det=1和可测集合体积；时间域仍Icc0τ，不额外假称τ>0。已有证明仅将现成流辛性定理与原合取作小修补。 | 已修待复审 | EAUDIT60 |
+| 2 | MD-2.3.3-HamiltonDet | FAIL | B | 补∀t流辛性合取，同时保留det=1和可测集合体积；时间域仍Icc0τ，不额外假称τ>0。已有证明仅将现成流辛性定理与原合取作小修补。 | 已修待复审 | EAUDIT83 |
 | 2 | MD-2.3.4-Hessian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.4-HessianSymmetry | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.4-HamiltonVariationalPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT10 |
-| 2 | MD-2.3.4-MatrixCancellation | FAIL | B | 保留已证代数消去；补真实时间矩阵曲线、对称S(t)、W′=JSW及完整乘积导数/零导数结论，未以导数结论为前提。 | 已修待复审 | EAUDIT61 |
+| 2 | MD-2.3.4-MatrixCancellation | FAIL | B | 保留已证代数消去；补真实时间矩阵曲线、对称S(t)、W′=JSW及完整乘积导数/零导数结论，未以导数结论为前提。 | 已修待复审 | EAUDIT84 |
 | 2 | MD-2.3.4-FormConstant | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.4-HamiltonSymplectic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT61 |
-| 2 | MD-2.3.5-ChainRule | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT62 |
-| 2 | MD-2.3.5-SymplecticComposition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT62 |
-| 2 | MD-2.3.5-SymplecticInverse | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT62 |
+| 2 | MD-2.3.4-HamiltonSymplectic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT84 |
+| 2 | MD-2.3.5-ChainRule | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT85 |
+| 2 | MD-2.3.5-SymplecticComposition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT85 |
+| 2 | MD-2.3.5-SymplecticInverse | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT85 |
 | 2 | MD-2.3.5-GlobalGroupPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT11 |
-| 2 | MD-2.3.6-SymplecticIntegrator | FAIL | B | 补实际Hamiltonian流、正阶局部一致性及可用正步长域；保辛性质与数值近似资格合取，C²为充分[EXTRA]，未把无关辛映射冒充积分方法。 | 已修待复审 | EAUDIT63 |
+| 2 | MD-2.3.6-SymplecticIntegrator | FAIL | B | 补实际Hamiltonian流、正阶局部一致性及可用正步长域；保辛性质与数值近似资格合取，C²为充分[EXTRA]，未把无关辛映射冒充积分方法。 | 已修待复审 | EAUDIT86 |
 | 2 | MD-2.3.6-SymplecticEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.6-KickDifferential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.3.6-WedgeSelf | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.6-SymplecticEulerPreserves | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT63 |
-| 2 | MD-2.3.7-Adjoint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT64 |
-| 2 | MD-2.3.7-FlowSelfAdjoint | NEEDS_HUMAN | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT64 |
-| 2 | MD-2.3.7-BackwardEuler | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT64 |
+| 2 | MD-2.3.6-SymplecticEulerPreserves | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT86 |
+| 2 | MD-2.3.7-Adjoint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT87 |
+| 2 | MD-2.3.7-FlowSelfAdjoint | NEEDS_HUMAN | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT87 |
+| 2 | MD-2.3.7-BackwardEuler | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT87 |
 | 2 | MD-2.3.7-EulerAdjoint | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.3.7-AdjointSymplecticEuler | FAIL | A | 本条显式正质量及U经典可微，并补原文(Q,P)两条坐标公式；原总化正式辅助Equiv保持，新增坐标陈述暂sorry。Mathlib Flow按用户标准含义直接采信，FlowSelfAdjoint只补材料复审。 | 已修待复审 | EAUDIT64 |
-| 2 | MD-2.3.7-AdjointInvolution | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT64 |
-| 2 | MD-2.4.1-Splitting | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
+| 2 | MD-2.3.7-AdjointSymplecticEuler | FAIL | A | 本条显式正质量及U经典可微，并补原文(Q,P)两条坐标公式；原总化正式辅助Equiv保持，新增坐标陈述暂sorry。Mathlib Flow按用户标准含义直接采信，FlowSelfAdjoint只补材料复审。 | 已修待复审 | EAUDIT87 |
+| 2 | MD-2.3.7-AdjointInvolution | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT87 |
+| 2 | MD-2.4.1-Splitting | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT88 |
 | 2 | MD-2.4.1-FieldAdd | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.4.1-SplittingLocal | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 2 | MD-2.4.1-KineticFlow | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 2 | MD-2.4.1-PotentialFlow | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 2 | MD-2.4.1-SplitEuler | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 2 | MD-2.4.1-VerletComposition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 2 | MD-2.4.1-VerletSymplectic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 2 | MD-2.4.1-SymmetricComposition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 2 | MD-2.4.1-SymmetricEven | PASS | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT66 |
-| 2 | MD-2.4.2-CompositionSymplectic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT67 |
+| 2 | MD-2.4.1-SplittingLocal | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT88 |
+| 2 | MD-2.4.1-KineticFlow | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT88 |
+| 2 | MD-2.4.1-PotentialFlow | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT88 |
+| 2 | MD-2.4.1-SplitEuler | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT88 |
+| 2 | MD-2.4.1-VerletComposition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT88 |
+| 2 | MD-2.4.1-VerletSymplectic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT88 |
+| 2 | MD-2.4.1-SymmetricComposition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT88 |
+| 2 | MD-2.4.1-SymmetricEven | PASS | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT89 |
+| 2 | MD-2.4.2-CompositionSymplectic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT90 |
 | 2 | MD-2.4.2-CompositionOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT16 |
-| 2 | MD-2.4.3-HarmonicSplit | FAIL | A | 保留原除法闭式，频率非零落实为证明参数；U全域经典可微为更新点导数的充分[EXTRA]，未擅加Ω=0延拓。 | 已修待复审 | EAUDIT68 |
-| 2 | MD-2.4.4-ImplicitLocal | FAIL | B | 补g_h(U)⊆V，连同原左右逆完整表达局部微分同胚；不声称全域可解。 | 已修待复审 | EAUDIT69 |
-| 2 | MD-2.4.4-BackwardEulerSolve | FAIL | B | 保留残差并补零点与隐式更新等价、给定G满足的映射方程；不假设任意f,h都有唯一解。 | 已修待复审 | EAUDIT69 |
-| 2 | MD-2.4.4-Newton | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT69 |
-| 2 | MD-2.4.4-NewtonQuadratic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT69 |
+| 2 | MD-2.4.3-HarmonicSplit | FAIL | A | 保留原除法闭式，频率非零落实为证明参数；U全域经典可微为更新点导数的充分[EXTRA]，未擅加Ω=0延拓。 | 已修待复审 | EAUDIT91 |
+| 2 | MD-2.4.4-ImplicitLocal | FAIL | B | 补g_h(U)⊆V，连同原左右逆完整表达局部微分同胚；不声称全域可解。 | 已修待复审 | EAUDIT92 |
+| 2 | MD-2.4.4-BackwardEulerSolve | FAIL | B | 保留残差并补零点与隐式更新等价、给定G满足的映射方程；不假设任意f,h都有唯一解。 | 已修待复审 | EAUDIT92 |
+| 2 | MD-2.4.4-Newton | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT92 |
+| 2 | MD-2.4.4-NewtonQuadratic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT92 |
 | 2 | MD-2.4.4-FrozenNewton | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.4.5-Conjugacy | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.4.5-ConjugateIterates | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT70 |
+| 2 | MD-2.4.5-ConjugateIterates | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT93 |
 | 2 | MD-2.4.5-ConjugateLimits | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT19 |
-| 2 | MD-2.4.5-EulerConjugacy | FAIL | B | 原代数恒等式及证明完整保留；补正质量、连续力资格下的真实Homeomorph见证、双向kick及共轭方向。新结论暂sorry。 | 已修待复审 | EAUDIT70 |
-| 2 | MD-2.4.5-Processing | FAIL | B | 保留预/后处理算法；补实际ODE流与共轭、正低阶s<r、高阶G及低阶B相对同一精确流F的局部阶资格，¬s+1明确低阶而非仅下界；不以共轭误差结论为假设。 | 已修待复审 | EAUDIT70 |
-| 2 | MD-2.4.5-ProcessingIterates | FAIL | B | 本条明确仅承担算法与G迭代的精确恒等式；同一原句的r阶及低阶资格完整归MD-2.4.5-ProcessingOrder，保留原句不删并记录跨条映射。 | 已修待复审 | EAUDIT70 |
-| 2 | MD-2.4.5-ProcessingOrder | FAIL | A | 补正时间窗与低阶B的s阶误差资格及0<s<r；原G高阶假设和两项误差转移结论、已证证明均保留。processingData另给严格低阶的一般方法资格。 | 已修待复审 | EAUDIT70 |
+| 2 | MD-2.4.5-EulerConjugacy | FAIL | B | 原代数恒等式及证明完整保留；补正质量、连续力资格下的真实Homeomorph见证、双向kick及共轭方向。新结论暂sorry。 | 已修待复审 | EAUDIT93 |
+| 2 | MD-2.4.5-Processing | FAIL | B | 保留预/后处理算法；补实际ODE流与共轭、正低阶s<r、高阶G及低阶B相对同一精确流F的局部阶资格，¬s+1明确低阶而非仅下界；不以共轭误差结论为假设。 | 已修待复审 | EAUDIT93 |
+| 2 | MD-2.4.5-ProcessingIterates | FAIL | B | 本条明确仅承担算法与G迭代的精确恒等式；同一原句的r阶及低阶资格完整归MD-2.4.5-ProcessingOrder，保留原句不删并记录跨条映射。 | 已修待复审 | EAUDIT93 |
+| 2 | MD-2.4.5-ProcessingOrder | FAIL | A | 补正时间窗与低阶B的s阶误差资格及0<s<r；原G高阶假设和两项误差转移结论、已证证明均保留。processingData另给严格低阶的一般方法资格。 | 已修待复审 | EAUDIT93 |
 | 2 | MD-2.4.5-EulerEffectiveOrder | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.5.1-RK | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.5.1-RK4 | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT71 |
+| 2 | MD-2.5.1-RK4 | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT94 |
 | 2 | MD-2.5.1-RK4Order | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.5.1-ExplicitRK | PASS | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT50 |
+| 2 | MD-2.5.1-ExplicitRK | PASS | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT94 |
 | 2 | MD-2.5.1-RKSymplectic | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT20 |
 | 2 | MD-2.5.1-GaussFamily | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT20 |
 | 2 | MD-2.5.1-Midpoint | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.5.1-MidpointProperties | FAIL | B | 补一般ODE局部二阶与Hamilton情形局部保辛；显式G0=id及实际方程、开状态域/小步长分支和真实流，移除全步长全初值解要求。C³分支及全域光滑场为充分[EXTRA]；二阶指至少二阶，非每个方程恰二阶。 | 已修待复审 | EAUDIT71 |
+| 2 | MD-2.5.1-MidpointProperties | FAIL | B | 补一般ODE局部二阶与Hamilton情形局部保辛；显式G0=id及实际方程、开状态域/小步长分支和真实流，移除全步长全初值解要求。C³分支及全域光滑场为充分[EXTRA]；二阶指至少二阶，非每个方程恰二阶。 | 已修待复审 | EAUDIT94 |
 | 2 | MD-2.5.1-GaussTwo | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.5.1-GaussTwoOrder | FAIL | A | 改为紧轨迹开邻域U、δ小步长内的真实光滑阶段分支，显式G0=id；补充分细迭代留U，保留全网格四阶。C⁶分支为充分[EXTRA]，未无条件声称任意步长可解。 | 已修待复审 | EAUDIT71 |
+| 2 | MD-2.5.1-GaussTwoOrder | FAIL | A | 改为紧轨迹开邻域U、δ小步长内的真实光滑阶段分支，显式G0=id；补充分细迭代留U，保留全网格四阶。C⁶分支为充分[EXTRA]，未无条件声称任意步长可解。 | 已修待复审 | EAUDIT94 |
 | 2 | MD-2.5.2-PartitionedVerlet | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.5.2-PartitionedReduction | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.5.2-GeneralEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
-| 2 | MD-2.5.2-GeneralSymplectic | FAIL | B | 本条承担基本隐式辛Euler的辛性；同一原句的伴随半步复合、三步关系与对称性由MD-2.5.2-GeneralVerletSymplectic补全，原文不删。 | 已修待复审 | EAUDIT72 |
-| 2 | MD-2.5.2-GeneralVerletSymplectic | FAIL | B | 以真实可逆且C¹的基本求解族构造伴随半步复合V，补三步关系、V自伴随及辛性；仅δ小步长要求真实Euler关系，全球可逆族明确为条件性[EXTRA]，不宣称一般隐式方程必有全球解。 | 已修待复审 | EAUDIT72 |
+| 2 | MD-2.5.2-GeneralSymplectic | FAIL | B | 本条承担基本隐式辛Euler的辛性；同一原句的伴随半步复合、三步关系与对称性由MD-2.5.2-GeneralVerletSymplectic补全，原文不删。 | 已修待复审 | EAUDIT95 |
+| 2 | MD-2.5.2-GeneralVerletSymplectic | FAIL | B | 以真实可逆且C¹的基本求解族构造伴随半步复合V，补三步关系、V自伴随及辛性；仅δ小步长要求真实Euler关系，全球可逆族明确为条件性[EXTRA]，不宣称一般隐式方程必有全球解。 | 已修待复审 | EAUDIT95 |
 | 2 | MD-2.5.3-Newmark | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.5.3-NewmarkReduction | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT22 |
 | 2 | MD-2.5.3-NewmarkDamping | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |
 | 2 | MD-2.5.3-NewmarkNotSymplectic | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT22 |
-| 2 | MD-2.5.4-MultiTaylor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT73 |
-| 2 | MD-2.5.4-TIPotential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT73 |
+| 2 | MD-2.5.4-MultiTaylor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT96 |
+| 2 | MD-2.5.4-TIPotential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT96 |
 | 2 | MD-2.5.4-TIForce | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT23 |
 | 2 | MD-2.5.4-TIOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT23 |
 | 2 | MD-2.5.5-Beeman | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 f24b625cda35） | — |

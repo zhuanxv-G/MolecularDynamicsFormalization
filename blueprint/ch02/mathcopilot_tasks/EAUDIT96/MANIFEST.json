@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT96",
+  "input_sha256": {
+    "BATCH_EAUDIT96.md": "7b45116bcfcc39a2690456e037d91e84553ed51bf145b598fdf65c5fae2b89e6",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT96a",
+      "source_id": "MD-2.5.4-MultiTaylor",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT96/a",
+      "total_bytes": 88998,
+      "manifest_sha256": "597be8b40155d33263cdafb8d8e2964d72343e7485ab2fc61b23b51ae248a74f"
+    },
+    {
+      "subtask": "EAUDIT96b",
+      "source_id": "MD-2.5.4-TIPotential",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT96/b",
+      "total_bytes": 98758,
+      "manifest_sha256": "a0fa36300b4980da9176f1ff4f2586d38dd425e6f4e6b121b8adcd5a957f3185"
+    }
+  ]
+}

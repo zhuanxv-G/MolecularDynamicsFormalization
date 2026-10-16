@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT91",
+  "source_id": "MD-2.4.3-HarmonicSplit",
+  "input_sha256": {
+    "BATCH_EAUDIT91.md": "1f3644d16b873bc1f309024d6881f6defef03fe107fe0e2f97b8749d1597d1d9",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+    "EAUDIT91a_materials": "115630b34515498cc546b76862197c9494b5fc9365dc841b19d4c9243d284e1d",
+    "EAUDIT91a_PAGES.pdf": "97177e5fb6c869d2be5710acc1d225960daad2ca97922e0bb9ec18bf6f120828"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    107,
+    108
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "9c1f2e6a44aeb91122e7a886acf6c36a2d80d0b292569dad9dde7158c99de2d5",
+  "source_block_sha256": "96470ed81c0e238c1cb17dae7e5751d1adb33962d7368c78b38a49f714de4e87",
+  "source_declarations": [
+    "bp_harmonicAnharmonic"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_harmonicAnharmonic",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "96470ed81c0e238c1cb17dae7e5751d1adb33962d7368c78b38a49f714de4e87"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT91_review.json",
+  "total_task_bytes": 106027
+}

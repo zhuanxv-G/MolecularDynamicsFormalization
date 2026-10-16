@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT87",
+  "source_id": "MD-2.3.7-FlowSelfAdjoint",
+  "input_sha256": {
+    "BATCH_EAUDIT87.md": "e73c32cf660031fdc6097eb4fc525d26e2a00e2df6033a00f53b51f22e58dee3",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+    "EAUDIT87b_materials": "3054723970daf439fdd8c0c2834519bd24d2eb505c788b1d5a1b192830a027fc",
+    "EAUDIT87b_PAGES.pdf": "4789416bf3029fd8c55c65ea39941dc530f0f63ff0d68569848674be941bd046"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    104
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "078f2e6a98f054ae7728a861c3b7ad283c2f3e06f4477a2fe2a61f3c49698aa8",
+  "source_block_sha256": "89643d683787d703595fe787719cc9b0a24cd7e3f7d8d11964d39bc357540be0",
+  "source_declarations": [
+    "flowSelfAdjoint"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/AdjointMethods.lean",
+      "name": "textbookAdjointMethod",
+      "file_sha256": "4d2ac087bf5067c7ebc61b95e4cf1e90f553b51fc1bba92ca8814b141541647e",
+      "excerpt_sha256": "f5c0b5fb6ce848d19f9d67ee0a70de4319fddae5919f016900b935eb3b44ce8e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/AdjointMethods.lean",
+      "name": "textbookFlowMethod",
+      "file_sha256": "4d2ac087bf5067c7ebc61b95e4cf1e90f553b51fc1bba92ca8814b141541647e",
+      "excerpt_sha256": "d936b32f6aeb3a1cf9367568b4aff22ee0cb3ac5af30851b88d1bd40170fde0f"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT87_review.json",
+  "total_task_bytes": 90059
+}

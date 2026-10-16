@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT83",
+  "input_sha256": {
+    "BATCH_EAUDIT83.md": "79b34c40c0129c8b9b269b5b9c69229b2ddbe43d1f98369d6f8873dcff9df8b5",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT83a",
+      "source_id": "MD-2.3.3-SymplecticMap",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT83/a",
+      "total_bytes": 96631,
+      "manifest_sha256": "e7e399f2f1ab6cda320e143a9981ce9e99bf1d3dbbb835992821fb4222083e27"
+    },
+    {
+      "subtask": "EAUDIT83b",
+      "source_id": "MD-2.3.3-OneForm",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT83/b",
+      "total_bytes": 95175,
+      "manifest_sha256": "c750f863f1a2e96b6f53ce4366b107f645837725e370525778947ee4119874da"
+    },
+    {
+      "subtask": "EAUDIT83c",
+      "source_id": "MD-2.3.3-FormSumWedges",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT83/c",
+      "total_bytes": 88891,
+      "manifest_sha256": "2809596e65e0e567a0be7e4f63c2aa169d1c476d5c73049e9da978148b350a79"
+    },
+    {
+      "subtask": "EAUDIT83d",
+      "source_id": "MD-2.3.3-SymplecticIffForm",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT83/d",
+      "total_bytes": 88896,
+      "manifest_sha256": "be73c8625108aa964b6e0fdf1f80369b5ff343eeb3c787822a6ca002285f1142"
+    },
+    {
+      "subtask": "EAUDIT83e",
+      "source_id": "MD-2.3.3-HamiltonDet",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT83/e",
+      "total_bytes": 88978,
+      "manifest_sha256": "d5839ec0b49933f3f7a170f0099ccb09954db4bcacc855e37bf887ee9bfa2caa"
+    }
+  ]
+}

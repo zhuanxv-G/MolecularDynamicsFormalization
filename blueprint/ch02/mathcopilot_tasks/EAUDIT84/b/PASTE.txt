@@ -1,0 +1,104 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.3.4-HamiltonSymplectic；原PDF页映射=[101]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT84_review.json，对象含batch=EAUDIT84、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT84.md": "8db78a085c1b7e43c00b459b363a23d0d915347ee2520b58c3461130d67e1531",
+  "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+  "EAUDIT84b_materials": "1e9ac63ae7122cb6260ed6e360e0019fb6bb988c318a879394750349e2a1b749",
+  "EAUDIT84b_PAGES.pdf": "c7192b47a3a6cb5c4eb1678da333f5859c756e8e084fca511eb7686eff5b39e1"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.3.4-HamiltonSymplectic",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "2.3.4",
+  "printed_page": "79",
+  "pdf_page": "101",
+  "statement_latex": "hence\n\\[W^TJW\\equiv W(0)^TJW(0)=J.\\]\nThis proves that the flow map of a Hamiltonian system is a symplectic map.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "原文W移动取值点疑点另项记录；本最终结论以实际固定时刻流映射的Jacobian表达，不假设其变分方程。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.hamiltonSymplectic",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookHamiltonianFlow_isSymplectic_of_jointC2"
+  ],
+  "extra_assumptions": [
+    "[EXTRA]实际解族联合C²；H C²、Φ0=id、τ>0及真实Hamilton ODE。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT10_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:12:48.900009",
+      "before_sha256": "91e63a1cd1482dda0bd203d7e4a3c2ea74ae6f357ab73d09d61605b49d87b4dd",
+      "after_sha256": "177a2fc91707899e1d0f0dbeb3da673a4219d5d49b755828befbf18b694cccde",
+      "changed_fields": [],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH17_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem hamiltonSymplectic {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (hH : ContDiff ℝ 2 H)
+    (Φ : ℝ × SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z))
+      (textbookHamiltonianVectorField H (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) :
+    ∀ t ∈ Icc 0 τ, IsTextbookSymplecticMap (fun z => Φ (t, z)) := by
+  apply MolecularDynamics.textbookHamiltonianFlow_isSymplectic_of_jointC2 <;> assumption
+```
+### 实际依赖 MolecularDynamics.IsTextbookSymplectic
+```lean
+def IsTextbookSymplectic {Nc : ℕ} (A : SymplecticCoordinateMatrix Nc) : Prop :=
+  Aᵀ * textbookJ Nc * A = textbookJ Nc
+```
+### 实际依赖 MolecularDynamics.IsTextbookSymplecticMap
+```lean
+def IsTextbookSymplecticMap {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=
+  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinateMatrix
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MolecularDynamics.textbookHamiltonianVectorField
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+### 实际依赖 MolecularDynamics.textbookJ
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### 实际依赖 MolecularDynamics.textbookJacobian
+```lean
+noncomputable def textbookJacobian {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinateMatrix Nc :=
+  LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap
+```

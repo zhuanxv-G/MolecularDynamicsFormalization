@@ -1,0 +1,61 @@
+{
+  "eaudit": "EAUDIT83",
+  "source_id": "MD-2.3.3-SymplecticMap",
+  "input_sha256": {
+    "BATCH_EAUDIT83.md": "79b34c40c0129c8b9b269b5b9c69229b2ddbe43d1f98369d6f8873dcff9df8b5",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+    "EAUDIT83a_materials": "14f31809c6612b8dced3388f626715677d1de4b952d0dc055a74225a6a46fbe6",
+    "EAUDIT83a_PAGES.pdf": "d436fa771d20d06699a54f6810e064ad794bf398816c6992dd9093cace1e2a08"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    98
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "aa45dc16dc432161bd0f0315db158ee1a7f3cb72408b30ad5f332d7616c69e90",
+  "source_block_sha256": "80dbb39770ac993dd5cb594e430baa155ab460f1eeda988e6f738b609faef2a2",
+  "source_declarations": [
+    "bp_IsSymplecticMap"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "IsTextbookSymplectic",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "6642b20035e535f764e24183b8b3fd564c65f367b80a24c79a394d8a4d55056f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinateMatrix",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_IsSymplecticMap",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "80dbb39770ac993dd5cb594e430baa155ab460f1eeda988e6f738b609faef2a2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "textbookJ",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "name": "textbookJacobian",
+      "file_sha256": "065943598d7c44b43b135c1c8edee04970b20305a15fdd2ff8d4d46cf6ee18f2",
+      "excerpt_sha256": "de22cc68d29839d120350e99f4983537ef9e72385df49f475c8e3396754dcdbe"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT83_review.json",
+  "total_task_bytes": 96631
+}

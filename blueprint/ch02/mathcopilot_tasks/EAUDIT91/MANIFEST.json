@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT91",
+  "input_sha256": {
+    "BATCH_EAUDIT91.md": "1f3644d16b873bc1f309024d6881f6defef03fe107fe0e2f97b8749d1597d1d9",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT91a",
+      "source_id": "MD-2.4.3-HarmonicSplit",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT91/a",
+      "total_bytes": 106027,
+      "manifest_sha256": "8364b74ba9f708f7bc8eef2f33c619d20b6bc60338e67e9cc86b667a8cc9ac49"
+    }
+  ]
+}

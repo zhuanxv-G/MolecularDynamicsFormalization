@@ -1,0 +1,34 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT84",
+  "section": "2.3.4",
+  "source_ids": [
+    "MD-2.3.4-MatrixCancellation",
+    "MD-2.3.4-HamiltonSymplectic"
+  ],
+  "reaudit_ids": [
+    "MD-2.3.4-MatrixCancellation",
+    "MD-2.3.4-HamiltonSymplectic"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.3.4-MatrixCancellation",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch02/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "1a9a90fc461ecbd6b5255e2c438f4130430d37c1edfd7f9353b7350f3895a01a"
+    },
+    {
+      "source_id": "MD-2.3.4-HamiltonSymplectic",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch02/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "1a9a90fc461ecbd6b5255e2c438f4130430d37c1edfd7f9353b7350f3895a01a"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT84/INDEX.md"
+}

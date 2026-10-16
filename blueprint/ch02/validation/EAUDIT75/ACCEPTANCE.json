@@ -1,0 +1,26 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT75",
+  "section": "2.1.2",
+  "source_ids": [
+    "MD-2.1.2-SecondDerivative"
+  ],
+  "reaudit_ids": [
+    "MD-2.1.2-SecondDerivative"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.1.2-SecondDerivative",
+      "prior_eaudit": "EAUDIT52",
+      "acceptance": "blueprint/ch02/validation/EAUDIT52/ACCEPTANCE.json",
+      "sha256": "3d8eb4a7a366652fc9d8b954b50ccace21c25d82dfe1b71a1caf5be3704c4da7"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT75/INDEX.md"
+}
