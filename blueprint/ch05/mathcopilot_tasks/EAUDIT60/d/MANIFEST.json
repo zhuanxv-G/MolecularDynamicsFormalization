@@ -1,0 +1,62 @@
+{
+  "eaudit": "EAUDIT60",
+  "source_id": "MD-5.6-SymplecticEulerEllipse",
+  "input_sha256": {
+    "BATCH_EAUDIT60.md": "783ccb86b14aeb1cde4bc88c37a02c8c4933e22ca39630017fa6e8d0fa13ada9",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "EAUDIT60d_materials": "74f7b964ab9db3861714c86444b0139ade359e17d7f405f7c120816b90e069ec",
+    "EAUDIT60d_PAGES.pdf": "42419909c32835d0d31f3e0f5c337c934074d9b931bad364b67c7e041b69a9d4"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    228
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "78aa89c78e24b069e55c994769ea298101cc29a8f1a7d2233bb142484fbc1fc7",
+  "source_block_sha256": "e104035111ecc9de3437f666790dbdc400e000bb63a3220bd61cae8027e46247",
+  "source_declarations": [
+    "symplecticEulerEllipse",
+    "symplecticEulerEllipse_geometry"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.shadowOscillator",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "06c44db9aad589053b4cac21a3d3b781f2f4058357a4705d3baae85edeb0d79d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.symplecticEuler",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "f2f0472c525a7a7b15497ce85efc86ab1ea3c746f39695bdd05824dc87978295"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "shadowOscillator",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "06c44db9aad589053b4cac21a3d3b781f2f4058357a4705d3baae85edeb0d79d"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "symplecticEuler",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "292e8cb4cb8d115243709a3ce9a9d3d78732dc3b4a2d78616cb0d19e5a78b618"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT60_review.json",
+  "total_task_bytes": 95606
+}

@@ -1,0 +1,82 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT60",
+  "section": "5.6",
+  "source_ids": [
+    "MD-5.6-BackwardEnergyDecay",
+    "MD-5.6-BackwardEulerLimit",
+    "MD-5.6-SymplecticEulerShadow",
+    "MD-5.6-SymplecticEulerEllipse",
+    "MD-5.6-SymplecticEulerDensity",
+    "MD-5.6-Theorem51",
+    "MD-5.6-PerturbationCorrection",
+    "MD-5.6-DenominatorBound"
+  ],
+  "reaudit_ids": [
+    "MD-5.6-BackwardEnergyDecay",
+    "MD-5.6-BackwardEulerLimit",
+    "MD-5.6-SymplecticEulerShadow",
+    "MD-5.6-SymplecticEulerEllipse",
+    "MD-5.6-SymplecticEulerDensity",
+    "MD-5.6-Theorem51",
+    "MD-5.6-PerturbationCorrection",
+    "MD-5.6-DenominatorBound"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.6-BackwardEnergyDecay",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch05/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "e74be8ecdc6d17579b7b50823dc76d6e01a77b0635ca7d30a3a6b05ed040365c"
+    },
+    {
+      "source_id": "MD-5.6-BackwardEulerLimit",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch05/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "e74be8ecdc6d17579b7b50823dc76d6e01a77b0635ca7d30a3a6b05ed040365c"
+    },
+    {
+      "source_id": "MD-5.6-SymplecticEulerShadow",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch05/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "e74be8ecdc6d17579b7b50823dc76d6e01a77b0635ca7d30a3a6b05ed040365c"
+    },
+    {
+      "source_id": "MD-5.6-SymplecticEulerEllipse",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch05/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "e74be8ecdc6d17579b7b50823dc76d6e01a77b0635ca7d30a3a6b05ed040365c"
+    },
+    {
+      "source_id": "MD-5.6-SymplecticEulerDensity",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch05/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "e74be8ecdc6d17579b7b50823dc76d6e01a77b0635ca7d30a3a6b05ed040365c"
+    },
+    {
+      "source_id": "MD-5.6-Theorem51",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch05/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "e74be8ecdc6d17579b7b50823dc76d6e01a77b0635ca7d30a3a6b05ed040365c"
+    },
+    {
+      "source_id": "MD-5.6-PerturbationCorrection",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch05/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "e74be8ecdc6d17579b7b50823dc76d6e01a77b0635ca7d30a3a6b05ed040365c"
+    },
+    {
+      "source_id": "MD-5.6-DenominatorBound",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch05/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "e74be8ecdc6d17579b7b50823dc76d6e01a77b0635ca7d30a3a6b05ed040365c"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT60/INDEX.md"
+}

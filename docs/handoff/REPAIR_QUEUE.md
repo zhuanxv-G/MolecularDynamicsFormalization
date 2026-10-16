@@ -504,13 +504,13 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 5 | MD-5.1-TrajectoryChain | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.1-ActualFlow | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.1-ObservablePullback | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.1-FlowFieldTransport | FAIL | B | 补可观测量g、链式中间式及完整Lie拉回输运等式，保留原向量场输运引理。联合C²与g为C¹标为充分资格。 | 已修待复审 | EAUDIT24 |
+| 5 | MD-5.1-FlowFieldTransport | FAIL | B | 补可观测量g、链式中间式及完整Lie拉回输运等式，保留原向量场输运引理。联合C²与g为C¹标为充分资格。 | 已修待复审 | EAUDIT43 |
 | 5 | MD-5.1-PullbackPDE | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.1-SteadyFirstIntegral | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.1-CoordinatePullback | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.1-SolutionOperator | FAIL | A | 主定义加入实际自治流资格，补G₀g=g接口；e^(tL)作为该实际流拉回的记号，不构造无界算子级数。 | 已修待复审 | EAUDIT24 |
-| 5 | MD-5.1-CoordinateLie | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT24 |
-| 5 | MD-5.1-LiePullbackCommutes | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT24 |
+| 5 | MD-5.1-SolutionOperator | FAIL | A | 主定义加入实际自治流资格，补G₀g=g接口；e^(tL)作为该实际流拉回的记号，不构造无界算子级数。 | 已修待复审 | EAUDIT43 |
+| 5 | MD-5.1-CoordinateLie | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT43 |
+| 5 | MD-5.1-LiePullbackCommutes | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT43 |
 | 5 | MD-5.2.1-DensityOn | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-ProbabilityDensityOn | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-DensityOnNormalization | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
@@ -519,11 +519,11 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 5 | MD-5.2.1-LebesgueClosure | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-BorelSigma | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-DensityProbabilityBounds | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.2.1-DomainL2 | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
-| 5 | MD-5.2.1-L2Norm | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
+| 5 | MD-5.2.1-DomainL2 | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT44 |
+| 5 | MD-5.2.1-L2Norm | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT44 |
 | 5 | MD-5.2.1-L2Inner | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.2.1-L2NormSquare | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
-| 5 | MD-5.2.1-L2Complete | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT25 |
+| 5 | MD-5.2.1-L2NormSquare | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT44 |
+| 5 | MD-5.2.1-L2Complete | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT44 |
 | 5 | MD-5.2.1-L2SymmetricBilinear | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-CompactL2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-DensityAverageOn | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
@@ -531,155 +531,155 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 5 | MD-5.2.1-GaussianL2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-FiniteJumpL2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-NormalizedAverageFormula | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.2.2-MassFraction | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT26 |
-| 5 | MD-5.2.2-MassDerivative | FAIL | B | 保留已证的一阶积分交换，补紧空间域和联合C∞密度下质量函数C∞结论；紧域给各阶局部支配的充分资格，非结论前提。 | 已修待复审 | EAUDIT26 |
-| 5 | MD-5.2.2-OutwardNormal | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT26 |
-| 5 | MD-5.2.2-GeneralFluxBalance | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT26 |
-| 5 | MD-5.2.2-Divergence | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian展示式中散度符号的真实导数迹辅助定义；完整M_f w=−div(wf)由MD-5.2.2-Liouvillian承担。 | 已修待复审 | EAUDIT26 |
-| 5 | MD-5.2.2-Liouvillian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT26 |
-| 5 | MD-5.2.2-LiouvilleEquation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT26 |
-| 5 | MD-5.2.2-LiouvilleProduct | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian乘积法则的静态辅助引理；包含真实输运前提的完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates及MD-5.2.2-LiouvilleEquation承担。 | 已修待复审 | EAUDIT26 |
-| 5 | MD-5.2.2-LieCoordinates | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT27 |
-| 5 | MD-5.2.2-DivergenceCoordinates | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅真实散度的坐标辅助引理；同段完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates承担。 | 已修待复审 | EAUDIT27 |
-| 5 | MD-5.2.2-LiouvilleProductCoordinates | FAIL | B | 保留原坐标乘积法则证明，并以真实自治流、光滑密度和Measure.map输运条件补全部时间导数PDE；不把PDE作前提。 | 已修待复审 | EAUDIT27 |
+| 5 | MD-5.2.2-MassFraction | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT45 |
+| 5 | MD-5.2.2-MassDerivative | FAIL | B | 保留已证的一阶积分交换，补紧空间域和联合C∞密度下质量函数C∞结论；紧域给各阶局部支配的充分资格，非结论前提。 | 已修待复审 | EAUDIT45 |
+| 5 | MD-5.2.2-OutwardNormal | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT45 |
+| 5 | MD-5.2.2-GeneralFluxBalance | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT45 |
+| 5 | MD-5.2.2-Divergence | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian展示式中散度符号的真实导数迹辅助定义；完整M_f w=−div(wf)由MD-5.2.2-Liouvillian承担。 | 已修待复审 | EAUDIT45 |
+| 5 | MD-5.2.2-Liouvillian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT45 |
+| 5 | MD-5.2.2-LiouvilleEquation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT45 |
+| 5 | MD-5.2.2-LiouvilleProduct | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian乘积法则的静态辅助引理；包含真实输运前提的完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates及MD-5.2.2-LiouvilleEquation承担。 | 已修待复审 | EAUDIT45 |
+| 5 | MD-5.2.2-LieCoordinates | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT46 |
+| 5 | MD-5.2.2-DivergenceCoordinates | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅真实散度的坐标辅助引理；同段完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates承担。 | 已修待复审 | EAUDIT46 |
+| 5 | MD-5.2.2-LiouvilleProductCoordinates | FAIL | B | 保留原坐标乘积法则证明，并以真实自治流、光滑密度和Measure.map输运条件补全部时间导数PDE；不把PDE作前提。 | 已修待复审 | EAUDIT46 |
 | 5 | MD-5.2.2-RectangularDomain | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.2.2-FaceFlux | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅矩形单面的无定向通量辅助积分；原句全部面与质量导数结论由MD-5.2.2-BoxFluxBalance，光滑一般域由MD-5.2.2-GeneralFluxBalance承担。 | 已修待复审 | EAUDIT27 |
-| 5 | MD-5.2.2-BoxFluxBalance | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT27 |
-| 5 | MD-5.2.2-BoundaryTerm | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT27 |
-| 5 | MD-5.2.2-TruncatedIntegrationByParts | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT27 |
-| 5 | MD-5.2.2-RapidAdjoint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT27 |
-| 5 | MD-5.2.2-CompactAdjoint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT28 |
-| 5 | MD-5.2.2-MeasurePropagator | FAIL | A | 主接口限定实际自治流；保留一般Measure.map辅助定义，另列由实际初始密度推前得到的点态Liouville演化；ρ(0)是初值，形式指数作记号，不将PDE作为前提。 | 已修待复审 | EAUDIT28 |
+| 5 | MD-5.2.2-FaceFlux | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅矩形单面的无定向通量辅助积分；原句全部面与质量导数结论由MD-5.2.2-BoxFluxBalance，光滑一般域由MD-5.2.2-GeneralFluxBalance承担。 | 已修待复审 | EAUDIT46 |
+| 5 | MD-5.2.2-BoxFluxBalance | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT46 |
+| 5 | MD-5.2.2-BoundaryTerm | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT46 |
+| 5 | MD-5.2.2-TruncatedIntegrationByParts | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT46 |
+| 5 | MD-5.2.2-RapidAdjoint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT46 |
+| 5 | MD-5.2.2-CompactAdjoint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT47 |
+| 5 | MD-5.2.2-MeasurePropagator | FAIL | A | 主接口限定实际自治流；保留一般Measure.map辅助定义，另列由实际初始密度推前得到的点态Liouville演化；ρ(0)是初值，形式指数作记号，不将PDE作为前提。 | 已修待复审 | EAUDIT47 |
 | 5 | MD-5.2.3-HamiltonianDivergence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.2.3-HamiltonianSkewExpression | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT29 |
-| 5 | MD-5.2.3-HamiltonianDensityPropagation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT29 |
-| 5 | MD-5.2.3-MechanicalLiouvillian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT29 |
-| 5 | MD-5.2.3-MechanicalLiouvillianIdentity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT29 |
-| 5 | MD-5.3.1-TestSpace | FAIL | C | 将Cω误编码改为原书C∞（scoped ∞）；只改Blueprint实际测试空间，正式库冻结。 | 已修待复审 | EAUDIT30 |
+| 5 | MD-5.2.3-HamiltonianSkewExpression | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT48 |
+| 5 | MD-5.2.3-HamiltonianDensityPropagation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT48 |
+| 5 | MD-5.2.3-MechanicalLiouvillian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT48 |
+| 5 | MD-5.2.3-MechanicalLiouvillianIdentity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT48 |
+| 5 | MD-5.3.1-TestSpace | FAIL | C | 将Cω误编码改为原书C∞（scoped ∞）；只改Blueprint实际测试空间，正式库冻结。 | 已修待复审 | EAUDIT49 |
 | 5 | MD-5.3.1-SchwartzSpace | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.3.1-GeneralizedFunction | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.3.1-SchwartzFunctional | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.3.1-RegularDistribution | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT30 |
-| 5 | MD-5.3.1-RegularDistributionLinearity | FAIL | C | 将不必要的实解析限制恢复为原书C∞，保留有界性、Schwartz选择及原可积/线性结论；已有证明随本批编译复查。 | 已修待复审 | EAUDIT30 |
+| 5 | MD-5.3.1-RegularDistribution | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT49 |
+| 5 | MD-5.3.1-RegularDistributionLinearity | FAIL | C | 将不必要的实解析限制恢复为原书C∞，保留有界性、Schwartz选择及原可积/线性结论；已有证明随本批编译复查。 | 已修待复审 | EAUDIT49 |
 | 5 | MD-5.3.1-DiracAction | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.3.1-DiracMeasure | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.3.1-DiracApproximation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.3.1-GaussianDelta | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT30 |
-| 5 | MD-5.3.1-DiracEvaluates | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT30 |
-| 5 | MD-5.3.1-GaussianDeltaProbability | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT30 |
-| 5 | MD-5.3.1-GaussianDeltaWeak | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT30 |
-| 5 | MD-5.3.2-WeakStationary | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT31 |
-| 5 | MD-5.3.2-EnsembleAverage | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT31 |
+| 5 | MD-5.3.1-GaussianDelta | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT49 |
+| 5 | MD-5.3.1-DiracEvaluates | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT49 |
+| 5 | MD-5.3.1-GaussianDeltaProbability | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT49 |
+| 5 | MD-5.3.1-GaussianDeltaWeak | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT49 |
+| 5 | MD-5.3.2-WeakStationary | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT50 |
+| 5 | MD-5.3.2-EnsembleAverage | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT50 |
 | 5 | MD-5.3.2-ConvergenceHeuristic | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT08 |
-| 5 | MD-5.3.2-HamiltonianEnergyIntegral | FAIL | B | 补真实Hamiltonian场的−div(u f)=−L_f u及实际解上能量恒定，H为C²、u为C¹、合法闭区间轨道；保留已证L_fH=0，不把散度零/能量守恒当假设。 | 已修待复审 | EAUDIT31 |
+| 5 | MD-5.3.2-HamiltonianEnergyIntegral | FAIL | B | 补真实Hamiltonian场的−div(u f)=−L_f u及实际解上能量恒定，H为C²、u为C¹、合法闭区间轨道；保留已证L_fH=0，不把散度零/能量守恒当假设。 | 已修待复审 | EAUDIT50 |
 | 5 | MD-5.3.2-EnergyDensityInvariant | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.3.2-ShellWeight | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅归一化密度公式中的未归一化指数权因子；完整Z与ρ由MD-5.3.2-ShellPartition及MD-5.3.2-ShellDensity承担。 | 已修待复审 | EAUDIT31 |
-| 5 | MD-5.3.2-ShellPartition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT31 |
-| 5 | MD-5.3.2-ShellDensity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT31 |
+| 5 | MD-5.3.2-ShellWeight | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅归一化密度公式中的未归一化指数权因子；完整Z与ρ由MD-5.3.2-ShellPartition及MD-5.3.2-ShellDensity承担。 | 已修待复审 | EAUDIT50 |
+| 5 | MD-5.3.2-ShellPartition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT50 |
+| 5 | MD-5.3.2-ShellDensity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT50 |
 | 5 | MD-5.3.2-EnergySurface | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.3.2-SurfaceMeasure | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.3.2-MicroRaw | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.3.2-ShellWeakPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT08 |
-| 5 | MD-5.3.2-ShellWeakLimitCorrected | PASS | C | 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | 已修待复审 | EAUDIT31 |
-| 5 | MD-5.3.2-SurfaceAreaFormula | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT31 |
+| 5 | MD-5.3.2-ShellWeakLimitCorrected | PASS | C | 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | 已修待复审 | EAUDIT50 |
+| 5 | MD-5.3.2-SurfaceAreaFormula | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT50 |
 | 5 | MD-5.3.2-NormalField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.3.2-NormalEnergyTaylor | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅正向法线Taylor子引理；以ΔE为变量的逆存在及O(ΔE²)结论由MD-5.3.2-NormalInverseTaylor承担。 | 已修待复审 | EAUDIT32 |
-| 5 | MD-5.3.2-NormalInverseTaylor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT32 |
+| 5 | MD-5.3.2-NormalEnergyTaylor | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅正向法线Taylor子引理；以ΔE为变量的逆存在及O(ΔE²)结论由MD-5.3.2-NormalInverseTaylor承担。 | 已修待复审 | EAUDIT51 |
+| 5 | MD-5.3.2-NormalInverseTaylor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT51 |
 | 5 | MD-5.3.2-PatchShellVolume | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT09 |
 | 5 | MD-5.3.2-WholeShellVolumeLimit | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT09 |
-| 5 | MD-5.3.2-MicroRawInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT32 |
-| 5 | MD-5.3.2-MicroInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT32 |
-| 5 | MD-5.3.2-MicroPartition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT32 |
+| 5 | MD-5.3.2-MicroRawInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT51 |
+| 5 | MD-5.3.2-MicroInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT51 |
+| 5 | MD-5.3.2-MicroPartition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT51 |
 | 5 | MD-5.3.2-ShellPointValuePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT10 |
-| 5 | MD-5.3.2-HarmonicEnergy | FAIL | B | 补非零频率、正能量下能量面椭圆的完整等价式；质量为单位，原定义与坐标顺序保留。 | 已修待复审 | EAUDIT32 |
+| 5 | MD-5.3.2-HarmonicEnergy | FAIL | B | 补非零频率、正能量下能量面椭圆的完整等价式；质量为单位，原定义与坐标顺序保留。 | 已修待复审 | EAUDIT51 |
 | 5 | MD-5.3.2-HarmonicQuadraturePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT10 |
-| 5 | MD-5.3.2-HarmonicPartition | FAIL | B | 保留真实曲面微正则质量终值，补其与正确参数积分的等式及该积分的终值；不更改原印首积分疑误。 | 已修待复审 | EAUDIT32 |
-| 5 | MD-5.3.2-IdealGasEnergy | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT32 |
-| 5 | MD-5.3.2-IdealGasPositionDomain | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅有限位置立方胞辅助域定义；球面半径、位置体积因子和真实微正则分解由MD-5.3.2-IdealGasPartition补全，闭胞边界零测不声称逐点周期识别。 | 已修待复审 | EAUDIT33 |
-| 5 | MD-5.3.2-IdealGasPartition | FAIL | B | 补真实动量(3N−1)维球面S、r=√(2mc)、位置体积(L³)^N及面积/Gamma两项中间分解，保留原终值；不以参数积分作microRaw定义。 | 已修待复审 | EAUDIT33 |
-| 5 | MD-5.3.3-MicroMeasure | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT34 |
-| 5 | MD-5.3.3-MicroProbability | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT34 |
-| 5 | MD-5.3.3-LowerDimensionNull | FAIL | B | 保留紧面子引理，新增无需全能量面紧性的可数紧参数块零测推广，以及正则水平集局部同胚于开ℝ^(n−1)的维数结论（相空间n=2N_d）。环境Lebesgue零测也在本批同列。 | 已修待复审 | EAUDIT34 |
-| 5 | MD-5.3.3-MicroAverage | FAIL | B | 补曲面限制逆梯度积分等式，并以真实对称薄壳积分比极限表达归一化δ配对；紧正则能量带控制尾部，不把δ当普通Lebesgue函数或同测度重命名。 | 已修待复审 | EAUDIT34 |
+| 5 | MD-5.3.2-HarmonicPartition | FAIL | B | 保留真实曲面微正则质量终值，补其与正确参数积分的等式及该积分的终值；不更改原印首积分疑误。 | 已修待复审 | EAUDIT51 |
+| 5 | MD-5.3.2-IdealGasEnergy | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT51 |
+| 5 | MD-5.3.2-IdealGasPositionDomain | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅有限位置立方胞辅助域定义；球面半径、位置体积因子和真实微正则分解由MD-5.3.2-IdealGasPartition补全，闭胞边界零测不声称逐点周期识别。 | 已修待复审 | EAUDIT52 |
+| 5 | MD-5.3.2-IdealGasPartition | FAIL | B | 补真实动量(3N−1)维球面S、r=√(2mc)、位置体积(L³)^N及面积/Gamma两项中间分解，保留原终值；不以参数积分作microRaw定义。 | 已修待复审 | EAUDIT52 |
+| 5 | MD-5.3.3-MicroMeasure | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT53 |
+| 5 | MD-5.3.3-MicroProbability | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT53 |
+| 5 | MD-5.3.3-LowerDimensionNull | FAIL | B | 保留紧面子引理，新增无需全能量面紧性的可数紧参数块零测推广，以及正则水平集局部同胚于开ℝ^(n−1)的维数结论（相空间n=2N_d）。环境Lebesgue零测也在本批同列。 | 已修待复审 | EAUDIT53 |
+| 5 | MD-5.3.3-MicroAverage | FAIL | B | 补曲面限制逆梯度积分等式，并以真实对称薄壳积分比极限表达归一化δ配对；紧正则能量带控制尾部，不把δ当普通Lebesgue函数或同测度重命名。 | 已修待复审 | EAUDIT53 |
 | 5 | MD-5.3.3-AmbientLowerDimensionNull | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.4-TimeAverage | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅式(5.9)有限截断平均因子；无限时间极限存在谓词由MD-5.4-HasTimeAverage承担。 | 已修待复审 | EAUDIT35 |
-| 5 | MD-5.4-HasTimeAverage | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT35 |
-| 5 | MD-5.4-ConservedAverage | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅守恒观测量的有限平均辅助恒等式；第一积分及任意函数复合的无限平均由MD-5.4-ConservedInfiniteAverage承担。 | 已修待复审 | EAUDIT35 |
-| 5 | MD-5.4-ConservedInfiniteAverage | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT35 |
-| 5 | MD-5.4-DoubleWellEnergy | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅双阱势与能量公式定义；非负及强制性由MD-5.4-DoubleWellCoercivity承担。 | 已修待复审 | EAUDIT35 |
+| 5 | MD-5.4-TimeAverage | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅式(5.9)有限截断平均因子；无限时间极限存在谓词由MD-5.4-HasTimeAverage承担。 | 已修待复审 | EAUDIT54 |
+| 5 | MD-5.4-HasTimeAverage | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT54 |
+| 5 | MD-5.4-ConservedAverage | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅守恒观测量的有限平均辅助恒等式；第一积分及任意函数复合的无限平均由MD-5.4-ConservedInfiniteAverage承担。 | 已修待复审 | EAUDIT54 |
+| 5 | MD-5.4-ConservedInfiniteAverage | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT54 |
+| 5 | MD-5.4-DoubleWellEnergy | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅双阱势与能量公式定义；非负及强制性由MD-5.4-DoubleWellCoercivity承担。 | 已修待复审 | EAUDIT54 |
 | 5 | MD-5.4-DoubleWellCoercivity | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.4-DoubleWellDisconnected | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.4-DoubleWellBasin | FAIL | B | 保留左右阱不变性，补全局C∞紧支撑观测量的明确见证：它在两个分离能量分支上分别为0/1，时间平均与真实对称微正则空间平均1/2不等；不把平均不等作前提，也不把不连续全局indicator冒充原光滑观测量。 | 已修待复审 | EAUDIT35 |
-| 5 | MD-5.4.1-UniformMicroErgodic | FAIL | A | 明示C² Hamiltonian、常非退化反对称J生成的实际流、能量保持与正有限正则能量面背景；保留AE后∀可积光滑观测量的原量词顺序。 并恢复C∞而非Cω资格。 | 已修待复审 | EAUDIT36 |
-| 5 | MD-5.4.1-MicroErgodicStandard | FAIL | C | 主接口恢复原句共同AE后∀光滑可积观测量，实际Hamiltonian/概率背景显式；旧∀L¹后AE版本仅保留为标明的替代定义，等价连接在ErgodicTimeEquivalence补列。 并恢复C∞而非Cω资格。 | 已修待复审 | EAUDIT36 |
-| 5 | MD-5.4.1-FlowInvariant | FAIL | A | 按原印精确限定t≠0；真实零时恒等流下等价全时间条件，不对任意Φ默加零时限制。 | 已修待复审 | EAUDIT36 |
-| 5 | MD-5.4.1-SetErgodic | FAIL | A | 集合0/1定义限定概率测度、零时恒等、实际群律及联合可测流，排除任意测度/映射的伪遍历解释。 | 已修待复审 | EAUDIT36 |
-| 5 | MD-5.4.1-InvariantIndicator | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅不变集合内补集indicator逐点恒零辅助引理；无限平均零由MD-5.4.1-InvariantIndicatorAverage承担。 | 已修待复审 | EAUDIT36 |
-| 5 | MD-5.4.1-InvariantIndicatorAverage | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT36 |
-| 5 | MD-5.4.1-ErgodicTimeEquivalence | FAIL | B | 保留标准L¹双向定理，补紧支持概率流上共同AE光滑定义的连接及正概率不变集分支/实际indicator平均，区分原定义与标准替代定义。 | 已修待复审 | EAUDIT36 |
-| 5 | MD-5.4.1-NonergodicSet | FAIL | B | 补中间概率不变集合内真实轨道保持、补集indicator无限平均零及空间平均非零的见证；可用于实际能量面概率流，不把不等式作假设。 | 已修待复审 | EAUDIT36 |
-| 5 | MD-5.4.1-HarmonicFlow | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅原系统推导的辅助解析流；原遍历结论由MD-5.4.1-HarmonicErgodic承担，频率正及能量正按该定理。 | 已修待复审 | EAUDIT37 |
+| 5 | MD-5.4-DoubleWellBasin | FAIL | B | 保留左右阱不变性，补全局C∞紧支撑观测量的明确见证：它在两个分离能量分支上分别为0/1，时间平均与真实对称微正则空间平均1/2不等；不把平均不等作前提，也不把不连续全局indicator冒充原光滑观测量。 | 已修待复审 | EAUDIT54 |
+| 5 | MD-5.4.1-UniformMicroErgodic | FAIL | A | 明示C² Hamiltonian、常非退化反对称J生成的实际流、能量保持与正有限正则能量面背景；保留AE后∀可积光滑观测量的原量词顺序。 并恢复C∞而非Cω资格。 | 已修待复审 | EAUDIT55 |
+| 5 | MD-5.4.1-MicroErgodicStandard | FAIL | C | 主接口恢复原句共同AE后∀光滑可积观测量，实际Hamiltonian/概率背景显式；旧∀L¹后AE版本仅保留为标明的替代定义，等价连接在ErgodicTimeEquivalence补列。 并恢复C∞而非Cω资格。 | 已修待复审 | EAUDIT55 |
+| 5 | MD-5.4.1-FlowInvariant | FAIL | A | 按原印精确限定t≠0；真实零时恒等流下等价全时间条件，不对任意Φ默加零时限制。 | 已修待复审 | EAUDIT55 |
+| 5 | MD-5.4.1-SetErgodic | FAIL | A | 集合0/1定义限定概率测度、零时恒等、实际群律及联合可测流，排除任意测度/映射的伪遍历解释。 | 已修待复审 | EAUDIT55 |
+| 5 | MD-5.4.1-InvariantIndicator | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅不变集合内补集indicator逐点恒零辅助引理；无限平均零由MD-5.4.1-InvariantIndicatorAverage承担。 | 已修待复审 | EAUDIT55 |
+| 5 | MD-5.4.1-InvariantIndicatorAverage | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT55 |
+| 5 | MD-5.4.1-ErgodicTimeEquivalence | FAIL | B | 保留标准L¹双向定理，补紧支持概率流上共同AE光滑定义的连接及正概率不变集分支/实际indicator平均，区分原定义与标准替代定义。 | 已修待复审 | EAUDIT55 |
+| 5 | MD-5.4.1-NonergodicSet | FAIL | B | 补中间概率不变集合内真实轨道保持、补集indicator无限平均零及空间平均非零的见证；可用于实际能量面概率流，不把不等式作假设。 | 已修待复审 | EAUDIT55 |
+| 5 | MD-5.4.1-HarmonicFlow | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅原系统推导的辅助解析流；原遍历结论由MD-5.4.1-HarmonicErgodic承担，频率正及能量正按该定理。 | 已修待复审 | EAUDIT56 |
 | 5 | MD-5.4.1-HarmonicErgodic | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.4.1-TwoOscillatorEnergy | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅两项分能量H₁/H₂定义；总能量分解由MD-5.4.1-TwoOscillatorEnergyDecomposition，分能量不变性由MD-5.4.1-TwoOscillatorTori承担。 | 已修待复审 | EAUDIT37 |
-| 5 | MD-5.4.1-TwoOscillatorFlow | FAIL | B | 保留解析流并补任意初值（包括零分能量退化层）的两个真实分能量不变量，不再只依赖正共同层的Tori结论。原非零频率资格显式。 | 已修待复审 | EAUDIT37 |
+| 5 | MD-5.4.1-TwoOscillatorEnergy | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅两项分能量H₁/H₂定义；总能量分解由MD-5.4.1-TwoOscillatorEnergyDecomposition，分能量不变性由MD-5.4.1-TwoOscillatorTori承担。 | 已修待复审 | EAUDIT56 |
+| 5 | MD-5.4.1-TwoOscillatorFlow | FAIL | B | 保留解析流并补任意初值（包括零分能量退化层）的两个真实分能量不变量，不再只依赖正共同层的Tori结论。原非零频率资格显式。 | 已修待复审 | EAUDIT56 |
 | 5 | MD-5.4.1-TwoOscillatorTori | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
-| 5 | MD-5.4.1-Mixing | FAIL | A | 混合定义在谓词内记录概率参考测度、零时恒等、群律、联合可测实际流；保留AC初始概率与有界连续测试配对。相关已有证明取第二合取后重查。 | 已修待复审 | EAUDIT37 |
+| 5 | MD-5.4.1-Mixing | FAIL | A | 混合定义在谓词内记录概率参考测度、零时恒等、群律、联合可测实际流；保留AC初始概率与有界连续测试配对。相关已有证明取第二合取后重查。 | 已修待复审 | EAUDIT56 |
 | 5 | MD-5.4.1-KAMPersistence | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
 | 5 | MD-5.4.1-AnisotropicPotential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.4.1-AnisotropicAxisPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
-| 5 | MD-5.4.1-TwoOscillatorEnergyDecomposition | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。 | 已修待复审 | EAUDIT37 |
-| 5 | MD-5.4.1-CurveImageDimension | PASS | C | 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | 已修待复审 | EAUDIT37 |
-| 5 | MD-5.4.1-PendulumPotential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT37 |
+| 5 | MD-5.4.1-TwoOscillatorEnergyDecomposition | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。 | 已修待复审 | EAUDIT56 |
+| 5 | MD-5.4.1-CurveImageDimension | PASS | C | 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | 已修待复审 | EAUDIT56 |
+| 5 | MD-5.4.1-PendulumPotential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT56 |
 | 5 | MD-5.4.1-PendulumRegionPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT16 |
 | 5 | MD-5.4.1-AnisotropicInitialCurve | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.4.1-AnisotropicInitialEnergy | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.4.1-InitialSegmentPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT16 |
-| 5 | MD-5.4.1-CircleInitialPoints | FAIL | A | 将实际初值域限定可行能量及原x区间；θ为后条均匀角分布的取样变量，定性样本图像不强化为全样本必然分离。零半径为允许退化；总延拓仅作独立辅助定义。 | 已修待复审 | EAUDIT37 |
-| 5 | MD-5.4.1-CircleInitialLaw | FAIL | A | 均匀圆概率主接口限定可行能量和原x区间，使用归一化角测度推前；c=U为退化Dirac，不默认负能差的sqrt总化初值。 | 已修待复审 | EAUDIT38 |
-| 5 | MD-5.4.1-CircleInitialEnergy | PASS | A | 原能量恒等式保留为正式库总延拓的辅助证明；本条适用前提仍是非负能差，实际取样主接口由CircleInitialPoints/Law限定区间及可行域。 | 已修待复审 | EAUDIT38 |
-| 5 | MD-5.5-Correlation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT39 |
+| 5 | MD-5.4.1-CircleInitialPoints | FAIL | A | 将实际初值域限定可行能量及原x区间；θ为后条均匀角分布的取样变量，定性样本图像不强化为全样本必然分离。零半径为允许退化；总延拓仅作独立辅助定义。 | 已修待复审 | EAUDIT56 |
+| 5 | MD-5.4.1-CircleInitialLaw | FAIL | A | 均匀圆概率主接口限定可行能量和原x区间，使用归一化角测度推前；c=U为退化Dirac，不默认负能差的sqrt总化初值。 | 已修待复审 | EAUDIT57 |
+| 5 | MD-5.4.1-CircleInitialEnergy | PASS | A | 原能量恒等式保留为正式库总延拓的辅助证明；本条适用前提仍是非负能差，实际取样主接口由CircleInitialPoints/Law限定区间及可行域。 | 已修待复审 | EAUDIT57 |
+| 5 | MD-5.5-Correlation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT58 |
 | 5 | MD-5.5-CorrelationPullback | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.5-CorrelationTimePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT17 |
-| 5 | MD-5.5-CorrelationTimeAE | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT39 |
+| 5 | MD-5.5-CorrelationTimeAE | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT58 |
 | 5 | MD-5.5-VelocityCorrelation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.5-PositionTransition | FAIL | C | 恢复相关定义中完整归一化常数k，原k=1未归一化概率计数作为明确实例；位置投影及两个indicator积分均保留。 | 已修待复审 | EAUDIT39 |
+| 5 | MD-5.5-PositionTransition | FAIL | C | 恢复相关定义中完整归一化常数k，原k=1未归一化概率计数作为明确实例；位置投影及两个indicator积分均保留。 | 已修待复审 | EAUDIT58 |
 | 5 | MD-5.5-TransitionProbability | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.5-MeasureDuality | FAIL | B | 保留推前对偶已有证明，补参考概率ν上的非负RN密度r、初始withDensity、演化Measure.map与全部加权配对链；公开ρ/ρ_E的RN解释，不对奇异δ作函数相除。 | 已修待复审 | EAUDIT39 |
-| 5 | MD-5.5-MixingMemoryLoss | PASS | A | 对应补足资格后的weakMixing取第二合取，保持既有证明及原结论；不增加新证明。 | 已修待复审 | EAUDIT39 |
+| 5 | MD-5.5-MeasureDuality | FAIL | B | 保留推前对偶已有证明，补参考概率ν上的非负RN密度r、初始withDensity、演化Measure.map与全部加权配对链；公开ρ/ρ_E的RN解释，不对奇异δ作函数相除。 | 已修待复审 | EAUDIT58 |
+| 5 | MD-5.5-MixingMemoryLoss | PASS | A | 对应补足资格后的weakMixing取第二合取，保持既有证明及原结论；不增加新证明。 | 已修待复审 | EAUDIT58 |
 | 5 | MD-5.5-MixingCorrelationPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT17 |
-| 5 | MD-5.5-MixingCorrelation | FAIL | B | 修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。 | 已修待复审 | EAUDIT39 |
-| 5 | MD-5.5-CenteredCorrelation | FAIL | B | 扩至向量观测量、任意一向量Bochner零均值及相关绝对值趋零，保留旧标量证明辅助；不添加单调衰减。 | 已修待复审 | EAUDIT39 |
-| 5 | MD-5.6-DiscreteAveragePrinted | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT40 |
-| 5 | MD-5.6-DiscreteAverage | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅标准N项平均的独立衍生变体；原印N+1项精确有限统计量由MD-5.6-DiscreteAveragePrinted承担，不宣称两有限值相同。 | 已修待复审 | EAUDIT40 |
-| 5 | MD-5.6-DiscretePropagator | FAIL | A | 离散分布传播主接口显式限定可测G，避免不可测映射的Measure.map零总化被当概率推前。 | 已修待复审 | EAUDIT40 |
-| 5 | MD-5.6-ModifiedField | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT40 |
-| 5 | MD-5.6-ModifiedLiouvillian | FAIL | B | 保留算子线性证明，并新增原文假设的修正模型PDE定义（r≥1），与展开右侧的等价式；仅定义模型及其算子展开，不声称任意空间可微ρ自动满足PDE。 | 已修待复审 | EAUDIT40 |
+| 5 | MD-5.5-MixingCorrelation | FAIL | B | 修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。 | 已修待复审 | EAUDIT58 |
+| 5 | MD-5.5-CenteredCorrelation | FAIL | B | 扩至向量观测量、任意一向量Bochner零均值及相关绝对值趋零，保留旧标量证明辅助；不添加单调衰减。 | 已修待复审 | EAUDIT58 |
+| 5 | MD-5.6-DiscreteAveragePrinted | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT59 |
+| 5 | MD-5.6-DiscreteAverage | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅标准N项平均的独立衍生变体；原印N+1项精确有限统计量由MD-5.6-DiscreteAveragePrinted承担，不宣称两有限值相同。 | 已修待复审 | EAUDIT59 |
+| 5 | MD-5.6-DiscretePropagator | FAIL | A | 离散分布传播主接口显式限定可测G，避免不可测映射的Measure.map零总化被当概率推前。 | 已修待复审 | EAUDIT59 |
+| 5 | MD-5.6-ModifiedField | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT59 |
+| 5 | MD-5.6-ModifiedLiouvillian | FAIL | B | 保留算子线性证明，并新增原文假设的修正模型PDE定义（r≥1），与展开右侧的等价式；仅定义模型及其算子展开，不声称任意空间可微ρ自动满足PDE。 | 已修待复审 | EAUDIT59 |
 | 5 | MD-5.6-ForwardEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.6-ForwardComponentsPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT20 |
-| 5 | MD-5.6-ForwardEnergyGrowth | FAIL | B | 保留能量精确增长率并补原谱结论：两个复特征值恰为1±ih及模√(1+h²)>1，非零步长显式；不替换原两分量疑误。 | 已修待复审 | EAUDIT40 |
-| 5 | MD-5.6-EulerInvariant | FAIL | B | 除离散唯一性再补非Dirac初始概率的离散推前无任何弱概率极限；连续modified模型/稳态/非吸引分别明确绑定EulerLogCorrespondence与ForwardWeakStationary。 | 已修待复审 | EAUDIT40 |
-| 5 | MD-5.6-BackwardEuler | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅隐式Euler的显式解映射定义；完整复谱与模由MD-5.6-BackwardEnergyDecay补列，所有迭代趋零由MD-5.6-BackwardEulerLimit承担。 | 已修待复审 | EAUDIT40 |
-| 5 | MD-5.6-BackwardEnergyDecay | FAIL | B | 保留能量衰减已有证明，补两个完整复特征值及模严格小于1；迭代趋零由BackwardEulerLimit，实际模型由EulerLogCorrespondence/BackwardWeakStationary承担。 | 已修待复审 | EAUDIT41 |
-| 5 | MD-5.6-BackwardEulerLimit | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅所有离散迭代趋零及任意初始概率弱趋Dirac；实际modified流一步对应由MD-5.6-EulerLogCorrespondence，概率弱稳态唯一及连续吸引由MD-5.6-BackwardWeakStationary承担。 | 已修待复审 | EAUDIT41 |
+| 5 | MD-5.6-ForwardEnergyGrowth | FAIL | B | 保留能量精确增长率并补原谱结论：两个复特征值恰为1±ih及模√(1+h²)>1，非零步长显式；不替换原两分量疑误。 | 已修待复审 | EAUDIT59 |
+| 5 | MD-5.6-EulerInvariant | FAIL | B | 除离散唯一性再补非Dirac初始概率的离散推前无任何弱概率极限；连续modified模型/稳态/非吸引分别明确绑定EulerLogCorrespondence与ForwardWeakStationary。 | 已修待复审 | EAUDIT59 |
+| 5 | MD-5.6-BackwardEuler | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅隐式Euler的显式解映射定义；完整复谱与模由MD-5.6-BackwardEnergyDecay补列，所有迭代趋零由MD-5.6-BackwardEulerLimit承担。 | 已修待复审 | EAUDIT59 |
+| 5 | MD-5.6-BackwardEnergyDecay | FAIL | B | 保留能量衰减已有证明，补两个完整复特征值及模严格小于1；迭代趋零由BackwardEulerLimit，实际模型由EulerLogCorrespondence/BackwardWeakStationary承担。 | 已修待复审 | EAUDIT60 |
+| 5 | MD-5.6-BackwardEulerLimit | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅所有离散迭代趋零及任意初始概率弱趋Dirac；实际modified流一步对应由MD-5.6-EulerLogCorrespondence，概率弱稳态唯一及连续吸引由MD-5.6-BackwardWeakStationary承担。 | 已修待复审 | EAUDIT60 |
 | 5 | MD-5.6-SymplecticEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-SymplecticEulerShadow | FAIL | B | 保留一步不变量证明，补稳定区内主对数Hamiltonian=c(h)·二次不变量、c>0、实际矩阵指数Hamiltonian流及其时间h恰为离散步，并给两能量有界域O(h²)比例差；全部k/椭圆由SymplecticEulerEllipse、弱稳态由SymplecticWeakStationary承担。新增模型是显式技术选择，不冒称唯一修正能量。 | 已修待复审 | EAUDIT41 |
-| 5 | MD-5.6-SymplecticEulerEllipse | PASS | B | 保留正定/全部k保持证明，并补正能级椭圆拓扑及零能级单点退化；二次不变量作为modified Hamiltonian的显式固定选择，实际场/流资格见SymplecticWeakStationary，不声称唯一修正能量。 | 已修待复审 | EAUDIT41 |
-| 5 | MD-5.6-SymplecticEulerDensity | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅离散映射的函数能量密度不变；连续modified能量场、概率弱稳态多样与非吸引由MD-5.6-SymplecticWeakStationary承担，原整段保留。 | 已修待复审 | EAUDIT41 |
+| 5 | MD-5.6-SymplecticEulerShadow | FAIL | B | 保留一步不变量证明，补稳定区内主对数Hamiltonian=c(h)·二次不变量、c>0、实际矩阵指数Hamiltonian流及其时间h恰为离散步，并给两能量有界域O(h²)比例差；全部k/椭圆由SymplecticEulerEllipse、弱稳态由SymplecticWeakStationary承担。新增模型是显式技术选择，不冒称唯一修正能量。 | 已修待复审 | EAUDIT60 |
+| 5 | MD-5.6-SymplecticEulerEllipse | PASS | B | 保留正定/全部k保持证明，并补正能级椭圆拓扑及零能级单点退化；二次不变量作为modified Hamiltonian的显式固定选择，实际场/流资格见SymplecticWeakStationary，不声称唯一修正能量。 | 已修待复审 | EAUDIT60 |
+| 5 | MD-5.6-SymplecticEulerDensity | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅离散映射的函数能量密度不变；连续modified能量场、概率弱稳态多样与非吸引由MD-5.6-SymplecticWeakStationary承担，原整段保留。 | 已修待复审 | EAUDIT60 |
 | 5 | MD-5.6-VerletShadow2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-Theorem51 | PASS | C | 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | 已修待复审 | EAUDIT41 |
+| 5 | MD-5.6-Theorem51 | PASS | C | 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | 已修待复审 | EAUDIT60 |
 | 5 | MD-5.6-PerturbationDisplacement | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-PerturbationCorrection | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Theorem5.1右端两个平均组成的校正项定义；完整正则能量族平均误差估计由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT41 |
-| 5 | MD-5.6-DenominatorBound | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅紧能量面横截分母的正下界衍生引理；原光滑与横截资格及完整平均扰动公式由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT41 |
-| 5 | MD-5.6-SmoothDenominatorBound | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅C² H/连续w的横截分母下界一般化衍生引理；原光滑资格及完整公式由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT42 |
-| 5 | MD-5.6-ZeroPerturbation | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅η≡0校正量为零的后果；一般位移定义由MD-5.6-PerturbationDisplacement、完整平均误差由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT42 |
+| 5 | MD-5.6-PerturbationCorrection | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Theorem5.1右端两个平均组成的校正项定义；完整正则能量族平均误差估计由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT60 |
+| 5 | MD-5.6-DenominatorBound | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅紧能量面横截分母的正下界衍生引理；原光滑与横截资格及完整平均扰动公式由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT60 |
+| 5 | MD-5.6-SmoothDenominatorBound | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅C² H/连续w的横截分母下界一般化衍生引理；原光滑资格及完整公式由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT61 |
+| 5 | MD-5.6-ZeroPerturbation | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅η≡0校正量为零的后果；一般位移定义由MD-5.6-PerturbationDisplacement、完整平均误差由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT61 |
 | 5 | MD-5.6-GradientTransverse | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-DynamicalCorrection | PASS | C | 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | 已修待复审 | EAUDIT42 |
+| 5 | MD-5.6-DynamicalCorrection | PASS | C | 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | 已修待复审 | EAUDIT61 |
 | 5 | MD-5.6-ForwardNormDivergence | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT22 |
-| 5 | MD-5.6-WeakStationary | FAIL | C | 仅弱PDE技术谓词，实际使用Blueprint修正后的C∞测试空间；原唯一概率断言由MD-5.6-ForwardWeakStationary承担。 | 已修待复审 | EAUDIT42 |
-| 5 | MD-5.6-WeakAttractor | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅弱概率局部吸引的辅助技术定义；原负吸引性断言由MD-5.6-ForwardWeakStationary承担，不把定义本身当否定结论。 | 已修待复审 | EAUDIT42 |
-| 5 | MD-5.6-EulerLogField | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅单位振子h>0时新增的精确对数场技术模型（h=0总延拓不用作物理解释）；实际一步/ODE对应由MD-5.6-EulerLogCorrespondence，唯一概率稳态由MD-5.6-ForwardWeakStationary承担。 | 已修待复审 | EAUDIT42 |
-| 5 | MD-5.6-EulerLogFlow | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅单位振子h>0新增的精确对数流技术定义；ODE与实际Euler一步的识别由MD-5.6-EulerLogCorrespondence承担，不冒称一般有限截断modified场。 | 已修待复审 | EAUDIT23 |
-| 5 | MD-5.6-EulerLogCorrespondence | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT23 |
-| 5 | MD-5.6-ForwardWeakStationary | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT23 |
-| 5 | MD-5.6-BackwardWeakStationary | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT23 |
-| 5 | MD-5.6-SymplecticWeakStationary | PASS | B | 弱稳态接口使用前条实际一步对应的主对数modified Hamiltonian及其梯度场；函数能量密度、多种概率稳态和非吸引结论齐全，不把未按时间缩放的不变量场冒充数值步的时间h模型。 | 已修待复审 | EAUDIT23 |
+| 5 | MD-5.6-WeakStationary | FAIL | C | 仅弱PDE技术谓词，实际使用Blueprint修正后的C∞测试空间；原唯一概率断言由MD-5.6-ForwardWeakStationary承担。 | 已修待复审 | EAUDIT61 |
+| 5 | MD-5.6-WeakAttractor | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅弱概率局部吸引的辅助技术定义；原负吸引性断言由MD-5.6-ForwardWeakStationary承担，不把定义本身当否定结论。 | 已修待复审 | EAUDIT61 |
+| 5 | MD-5.6-EulerLogField | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅单位振子h>0时新增的精确对数场技术模型（h=0总延拓不用作物理解释）；实际一步/ODE对应由MD-5.6-EulerLogCorrespondence，唯一概率稳态由MD-5.6-ForwardWeakStationary承担。 | 已修待复审 | EAUDIT61 |
+| 5 | MD-5.6-EulerLogFlow | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅单位振子h>0新增的精确对数流技术定义；ODE与实际Euler一步的识别由MD-5.6-EulerLogCorrespondence承担，不冒称一般有限截断modified场。 | 已修待复审 | EAUDIT61 |
+| 5 | MD-5.6-EulerLogCorrespondence | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT61 |
+| 5 | MD-5.6-ForwardWeakStationary | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT62 |
+| 5 | MD-5.6-BackwardWeakStationary | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT62 |
+| 5 | MD-5.6-SymplecticWeakStationary | PASS | B | 弱稳态接口使用前条实际一步对应的主对数modified Hamiltonian及其梯度场；函数能量密度、多种概率稳态和非吸引结论齐全，不把未按时间缩放的不变量场冒充数值步的时间h模型。 | 已修待复审 | EAUDIT62 |

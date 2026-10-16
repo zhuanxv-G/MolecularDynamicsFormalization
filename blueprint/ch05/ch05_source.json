@@ -1817,8 +1817,8 @@
     "kind": "definition",
     "label": null,
     "section": "5.3.1",
-    "printed_page": "188",
-    "pdf_page": "209",
+    "printed_page": "188–189",
+    "pdf_page": "209–210",
     "statement_latex": "If $f$ is a bounded, smooth function on $\\mathbb R^m$, we may define a generalized function $T_f$ by reference to its action on a test function $\\phi\\in\\mathcal T$ via integration:\n\\[T_f(\\phi)=\\int_{\\mathbb R^m}f(z)\\phi(z)d\\omega.\\]\nThis is very like the $L^2$ inner product, but the functions involved do not both need to lie in $L^2$. Nevertheless, we write $T_f(\\phi)=\\langle f,\\phi\\rangle$, as a helpful shorthand.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -1842,9 +1842,31 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "88277dc08a9391e5dac116d37607ba2360a18adfe1f373951961f0aff0047a72",
+        "after_sha256": "f7b0cfb3ad64acdece66dd78027da14648aa1e7eba0899bea60c2ee5fb06a1bf",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "188",
+            "after": "188–189"
+          },
+          "pdf_page": {
+            "before": "209",
+            "after": "209–210"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
   },
   {
     "source_id": "MD-5.3.1-RegularDistributionLinearity",
@@ -2387,8 +2409,8 @@
     "kind": "definition",
     "label": null,
     "section": "5.3.2",
-    "printed_page": "190–191",
-    "pdf_page": "211–212",
+    "printed_page": "190",
+    "pdf_page": "211",
     "statement_latex": "$\\rho_\\varepsilon(\\mathbf q,\\mathbf p)=Z_\\varepsilon^{-1}e^{-(H(\\mathbf q,\\mathbf p)-E)^2/(2\\varepsilon)}$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -2416,9 +2438,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "c2ffdeceaf7665ea44219ecaa8ca90899d9c24e3ced9dd9a1411d0dd0d5273c3",
+        "after_sha256": "5538969862680c6606562d408ef01e392d4073ba0ed048e31b55bf7e18a96191",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "190–191",
+            "after": "190"
+          },
+          "pdf_page": {
+            "before": "211–212",
+            "after": "211"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      212
+    ]
   },
   {
     "source_id": "MD-5.3.2-EnergySurface",
@@ -2757,8 +2804,8 @@
     "kind": "unnumbered_claim",
     "label": null,
     "section": "5.3.2",
-    "printed_page": "192–193",
-    "pdf_page": "213–214",
+    "printed_page": "192",
+    "pdf_page": "213",
     "statement_latex": "$\\Delta V/\\Delta E=\\int_M\\|\\nabla H\\|^{-1}d\\sigma+O(\\Delta E)$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -2787,9 +2834,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH14_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "49e3a9ace344316ee9088e3e49ef97b0c41095a1a1684f3649daa015a654fd55",
+        "after_sha256": "34899a03cd1226fe6d76bb0c5544aabd9f383a308178b2a9d84172f9656fdcf5",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "192–193",
+            "after": "192"
+          },
+          "pdf_page": {
+            "before": "213–214",
+            "after": "213"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH14_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      214
+    ]
   },
   {
     "source_id": "MD-5.3.2-MicroRawInvariant",
@@ -3065,8 +3137,8 @@
     "kind": "definition",
     "label": "Example 5.2",
     "section": "5.3.2",
-    "printed_page": "193–194",
-    "pdf_page": "214–215",
+    "printed_page": "193",
+    "pdf_page": "214",
     "statement_latex": "Example 5.2 Consider a system of $N$ non-interacting particles of mass $m$ moving in periodic boundary conditions within a box of volume $V$. The Hamiltonian is\n\\[H=\\frac1{2m}\\sum_{i=1}^N\\|p_i\\|^2.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -3092,9 +3164,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "08aaa20d109b388bf82f737c2362ee17e0dc4918f73ac0a493996d334b3d2da3",
+        "after_sha256": "41b7bf33318ff9af84771deab4dd4524a6917d65408d77dcfee97147a9b8bdd2",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "193–194",
+            "after": "193"
+          },
+          "pdf_page": {
+            "before": "214–215",
+            "after": "214"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      215
+    ]
   },
   {
     "source_id": "MD-5.3.2-IdealGasPositionDomain",
@@ -3141,8 +3238,8 @@
     "kind": "unnumbered_claim",
     "label": "Example 5.2",
     "section": "5.3.2",
-    "printed_page": "193–194",
-    "pdf_page": "214–215",
+    "printed_page": "194",
+    "pdf_page": "215",
     "statement_latex": "Thus we have\n\\[Z_E=V^N\\frac{m}{\\sqrt{2mE}}A(S)\n=V^N\\frac{\\sqrt m}{\\sqrt{2E}}\\frac{3N\\pi^{3N/2}(2mE)^{(3N-1)/2}}{\\Gamma(3N/2+1)}\n=V^N\\frac{(2\\pi mE)^{3N/2}}{E\\Gamma(3N/2)}.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -3171,9 +3268,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "2320acd02ed5db02c9f3ff7f26c0f57bd5d07c8943b4c402d339d89d63bf29f3",
+        "after_sha256": "0886200657682fd40d737c67cd92ef7cf9ea9c603035822a81fdc053267f5603",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "193–194",
+            "after": "194"
+          },
+          "pdf_page": {
+            "before": "214–215",
+            "after": "215"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      214
+    ]
   },
   {
     "source_id": "MD-5.3.3-MicroMeasure",
@@ -3700,8 +3822,8 @@
     "kind": "definition",
     "label": null,
     "section": "5.4.1",
-    "printed_page": "197–198",
-    "pdf_page": "218–219",
+    "printed_page": "197",
+    "pdf_page": "218",
     "statement_latex": "An invariant set $\\mathcal A$ of the flow is one such that $\\mathcal F_t(\\mathcal A)=\\mathcal A$, for all $t\\ne0$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -3731,17 +3853,42 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "ee1dc646c80095d781f3b4f760aec4dea2c83dbfcbe1f6bbd234f9585d7ce244",
+        "after_sha256": "947129188c45908e10cd511f2a02f7bc7c37887c5802e0fa42352db4d6c634e2",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "197–198",
+            "after": "197"
+          },
+          "pdf_page": {
+            "before": "218–219",
+            "after": "218"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      219
+    ]
   },
   {
     "source_id": "MD-5.4.1-SetErgodic",
     "kind": "definition",
     "label": null,
     "section": "5.4.1",
-    "printed_page": "197–198",
-    "pdf_page": "218–219",
+    "printed_page": "197",
+    "pdf_page": "218",
     "statement_latex": "Alternatively, we may say that a dynamical system as ergodic if the probability measure of any invariant set $\\mathcal A$ of the flow is either 0 or 1.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -3771,9 +3918,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "e7ab4e422df562c2309718a96607a0b27d80799f56ef180d4f08281c94f65ed9",
+        "after_sha256": "a15a3844be49d1aad5da714f52377a944677e1b83da4401c4bd223dd22a30fb6",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "197–198",
+            "after": "197"
+          },
+          "pdf_page": {
+            "before": "218–219",
+            "after": "218"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      219
+    ]
   },
   {
     "source_id": "MD-5.4.1-InvariantIndicator",
@@ -3939,8 +4111,8 @@
     "kind": "definition",
     "label": null,
     "section": "5.4.1",
-    "printed_page": "198–199",
-    "pdf_page": "219–220",
+    "printed_page": "198",
+    "pdf_page": "219",
     "statement_latex": "As a very simple example, the harmonic oscillator is always ergodic on its energy surfaces (i.e. energy curves, in this case).",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -3967,9 +4139,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "fdca99dea8db9d84d40836a2fb27187ab24fe273829ebd13cfc97cc7a558a3f8",
+        "after_sha256": "5a3030ae8bb93801200fb2233fde68f1a7cd4fcde85dfcab16b6e06b4b0d2205",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "198–199",
+            "after": "198"
+          },
+          "pdf_page": {
+            "before": "219–220",
+            "after": "219"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      220
+    ]
   },
   {
     "source_id": "MD-5.4.1-HarmonicErgodic",
@@ -4035,8 +4232,8 @@
     "kind": "definition",
     "label": null,
     "section": "5.4.1",
-    "printed_page": "198–199",
-    "pdf_page": "219–220",
+    "printed_page": "199",
+    "pdf_page": "220",
     "statement_latex": "Because the two systems involving $q_1,p_1$ and $q_2,p_2$ are not coupled in the equations of motion, this system has two invariants $H_1=p_1^2/2+\\Omega_1^2q_1^2/2$ and $H_2=p_2^2/2+\\Omega_2^2q_2^2/2$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -4066,9 +4263,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "ef63113f4bdf0b4d08e2086c72e232d51677fe4150bdbde0a6db4f59b6f1da35",
+        "after_sha256": "12d1f1a63a1ff2e52bee06feed9fbe4fcde06edd47a2f8cf703f29dd1e322cda",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "198–199",
+            "after": "199"
+          },
+          "pdf_page": {
+            "before": "219–220",
+            "after": "220"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      219
+    ]
   },
   {
     "source_id": "MD-5.4.1-TwoOscillatorTori",
@@ -4587,8 +4809,8 @@
     "kind": "definition",
     "label": null,
     "section": "5.5",
-    "printed_page": "203",
-    "pdf_page": "224",
+    "printed_page": "203–204",
+    "pdf_page": "224–225",
     "statement_latex": "Let $a$ and $b$ be mappings from the phase space to the same Euclidean space, and define the temporal correlation of $a$ and $b$ (on the surface of energy $E$) by\n\\[C_{ab}(\\tau)\\stackrel{\\rm def}{=}k\\operatorname{Av}_{H=E}(a(\\mathcal F_t(z))\\cdot b(z))\n=kZ_E^{-1}\\int_{\\Sigma_E}a(\\mathcal F_t(z))\\cdot b(z)\\delta[H-E]d\\omega,\\]\nwhere $k$ is a normalization constant that is often incorporated to ensure that $C_{ab}(0)=1$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -4612,9 +4834,31 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "b0e7d84d451ac23a515ea50386e17290e1043474dad0c07b550624b3e8758f8a",
+        "after_sha256": "1f6fc3ea1eaed9020b7498eff2652fa5546ec2e8cbccf51c7dea4e7b28f81a2a",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "203",
+            "after": "203–204"
+          },
+          "pdf_page": {
+            "before": "224",
+            "after": "224–225"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
   },
   {
     "source_id": "MD-5.5-CorrelationPullback",
@@ -5775,8 +6019,8 @@
     "kind": "unnumbered_claim",
     "label": null,
     "section": "5.6",
-    "printed_page": "209",
-    "pdf_page": "230",
+    "printed_page": "208–209",
+    "pdf_page": "229–230",
     "statement_latex": "$\\widetilde H(q,p)=H(q,p)+\\varepsilon\\eta(q,p)$; $u=\\varepsilon\\eta w/(w\\cdot\\nabla H)$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -5805,9 +6049,31 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH26_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "4609e6648e96bccd8d5ee6afb9468663bac022a53341510920390cd0497d81be",
+        "after_sha256": "168f8600194b9be5e1f1add377d45bf0b358da191bd5ef9efaad762629a5e721",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "209",
+            "after": "208–209"
+          },
+          "pdf_page": {
+            "before": "230",
+            "after": "229–230"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH26_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT22/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
   },
   {
     "source_id": "MD-5.6-GradientTransverse",
@@ -6038,8 +6304,8 @@
     "kind": "definition",
     "label": null,
     "section": "5.6",
-    "printed_page": "207",
-    "pdf_page": "228",
+    "printed_page": "206",
+    "pdf_page": "227",
     "statement_latex": "interpret the numerical method as being approximately equivalent to the solution of a perturbed differential equation",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -6071,9 +6337,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH27_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:28:28.864805",
+        "before_sha256": "6af8baefc37ce4c1f6403d57615063ee7ca44dbd0efd83aecf7e51a3d2ae59ff",
+        "after_sha256": "b0bd9ef66109a880773ee2377b2e29b50e5c1339439ecab99e2d5f73ccc44e5f",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "207",
+            "after": "206"
+          },
+          "pdf_page": {
+            "before": "228",
+            "after": "227"
+          }
+        },
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH27_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT23/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      228
+    ]
   },
   {
     "source_id": "MD-5.6-EulerLogCorrespondence",

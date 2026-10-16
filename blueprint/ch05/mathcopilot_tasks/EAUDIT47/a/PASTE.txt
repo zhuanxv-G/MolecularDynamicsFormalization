@@ -1,0 +1,100 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.2.2-CompactAdjoint；原PDF页映射=[206, 207]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT47_review.json，对象含batch=EAUDIT47、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT47.md": "ba82fdc134ff39bda3b9c37a94d262afccb6e527729ed10c2f774a92e09391ee",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "EAUDIT47a_materials": "4bbe9e82776f37a9105cc35a0a6ee0000cac9b6971f5a46c3575b30749c3d25f",
+  "EAUDIT47a_PAGES.pdf": "d88bd799869a67d8c9c62a473281d70217bb8c92d7b5d98abc6dafc04b33cae3"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.2.2-CompactAdjoint",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.2.2",
+  "printed_page": "185–186",
+  "pdf_page": "206–207",
+  "statement_latex": "$\\langle u,\\mathcal L_fv\\rangle=\\langle M_fu,v\\rangle$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$\\mathcal M_fu=-\\nabla\\cdot(uf)$，$\\mathcal L_fv=f\\cdot\\nabla v$，$\\langle u,v\\rangle=\\int_{\\mathbb R^m}uv\\,d\\omega$。",
+    "原文条件为u,v充分迅速衰减；紧支持C¹是此条另列的形式化特殊版本，并非教材在该处独立陈述的紧支持定理。",
+    "原书在PDF页207用dagger记函数算子形式伴随，未在此识别闭Hilbert算子的定义域。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.liouvillianAdjoint",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]紧支持C¹版本，作为快速衰减完整条目的特殊情形另列；是微分表达式的积分配对，不是闭Hilbert算子伴随的域识别。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT05_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:56:06.691777",
+      "before_sha256": "6f85813ae4bbe1702403964dbb6fead0679daeef6a521b6c563af4d500408a16",
+      "after_sha256": "1281e587ffcd5b53bcad83f0fea496e6eb628be107291064badf47eba00e77d8",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH08_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem liouvillianAdjoint :
+  ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u v : MolecularDynamics.Chapter05Review.E n → ℝ),
+  ContDiff ℝ 1 f → ContDiff ℝ 1 u → ContDiff ℝ 1 v → HasCompactSupport u → HasCompactSupport v →
+  (∫ z,u z*MolecularDynamics.Chapter05Review.lie f v z)=(∫ z,MolecularDynamics.Chapter05Review.liouvillian f u z*v z) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.divergence
+```lean
+def divergence {n : ℕ} (f : E n → E n) (z : E n) : ℝ :=
+  LinearMap.trace ℝ (E n) (fderiv ℝ f z).toLinearMap
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.lie
+```lean
+def lie {n : ℕ} (f : E n → E n) (g : E n → ℝ) (z : E n) := (fderiv ℝ g z) (f z)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.liouvillian
+```lean
+def liouvillian {n : ℕ} (f : E n → E n) (u : E n → ℝ) (z : E n) :=
+  -divergence (fun x => u x • f x) z
+```
+### 实际依赖 MD.Ch05.divergence
+```lean
+def divergence {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (z : MolecularDynamics.Chapter05Review.E n) : ℝ :=
+  LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap
+```
+### 实际依赖 MD.Ch05.lie
+```lean
+def lie {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (g : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) := (fderiv ℝ g z) (f z)
+```
+### 实际依赖 MD.Ch05.liouvillian
+```lean
+def liouvillian {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) :=
+  -MolecularDynamics.Chapter05Review.divergence (fun x => u x • f x) z
+```

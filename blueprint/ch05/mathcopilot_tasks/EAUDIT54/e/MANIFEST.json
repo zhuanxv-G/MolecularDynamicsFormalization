@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT54",
+  "source_id": "MD-5.4-DoubleWellEnergy",
+  "input_sha256": {
+    "BATCH_EAUDIT54.md": "8ddd50bbd56487d4a203724da9721c96541013caf08a09adca8ae38bbe5506c4",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "EAUDIT54e_materials": "8d4ee09251474315e27ea33b39ef62849c4e77147c28750913ae302dac5039fe",
+    "EAUDIT54e_PAGES.pdf": "7add987e31af68550229b1c327c41020a41259b8b6d8f0a2ea4a4a28134d5301"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    217
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "ef20a0b5ab864de222f21fa15a3be5081247fab3b65acd0865c270042f6c10da",
+  "source_block_sha256": "b305bae4c5b6ca337626190bef8ab791839d35b7c9699bf08b88331c690579cc",
+  "source_declarations": [
+    "doubleWellEnergy"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "doubleWellEnergy",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "b305bae4c5b6ca337626190bef8ab791839d35b7c9699bf08b88331c690579cc"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT54_review.json",
+  "total_task_bytes": 156121
+}

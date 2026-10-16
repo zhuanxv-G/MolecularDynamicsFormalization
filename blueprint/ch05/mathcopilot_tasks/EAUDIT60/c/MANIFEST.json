@@ -1,0 +1,102 @@
+{
+  "eaudit": "EAUDIT60",
+  "source_id": "MD-5.6-SymplecticEulerShadow",
+  "input_sha256": {
+    "BATCH_EAUDIT60.md": "783ccb86b14aeb1cde4bc88c37a02c8c4933e22ca39630017fa6e8d0fa13ada9",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "EAUDIT60c_materials": "25f0b2a10005edbb25270336153514460d72f838daf51e61863622c1ec07193f",
+    "EAUDIT60c_PAGES.pdf": "42419909c32835d0d31f3e0f5c337c934074d9b931bad364b67c7e041b69a9d4"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    228
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "83a27f75cbaaadd5d47f6a0b9be808e511ed39b7e8109415976769db9abd306b",
+  "source_block_sha256": "ccf602994106b518676bbfd87d853db77ceba224f967f3af2514cb8a5a44b01e",
+  "source_declarations": [
+    "symplecticEulerShadow",
+    "symplecticEulerLogScale",
+    "symplecticEulerModifiedHamiltonian",
+    "symplecticEulerModifiedFlow",
+    "symplecticEulerShadow_modified_model",
+    "symplecticEulerShadow_modified_scale_order"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.flow",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "cd47fe07b629a7f5aa0bdc126758e9528093d227aaebc2097a541fd177a6a961"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.shadowOscillator",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "06c44db9aad589053b4cac21a3d3b781f2f4058357a4705d3baae85edeb0d79d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.symplecticEuler",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "f2f0472c525a7a7b15497ce85efc86ab1ea3c746f39695bdd05824dc87978295"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "flow",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "shadowOscillator",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "06c44db9aad589053b4cac21a3d3b781f2f4058357a4705d3baae85edeb0d79d"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "symplecticEuler",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "292e8cb4cb8d115243709a3ce9a9d3d78732dc3b4a2d78616cb0d19e5a78b618"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "symplecticEulerLogScale",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "6ce68dfc76660b90dfb8d2f59b7256b25eb8e625d9fefeaa59800a3b1ebf27cc"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "symplecticEulerModifiedFlow",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "31560ddfd031ad0fc529285aa776aee29d58d0738ee76b0a53bf7745c762aad0"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "symplecticEulerModifiedHamiltonian",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "2bf024ce116d970ef30badf64ebc4d6e799ec283a2f3ef731571d45147320099"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/Statements.lean",
+      "name": "symplecticEulerShadow_statement",
+      "file_sha256": "4cbf2629bb9891d244bb751f371064c9a991408cdb5d1a533c61262bd6d1efdc",
+      "excerpt_sha256": "776e7854df5c3d34beefb9a957e28a09dd37e9e507f5877f29e1e132a08d9c6b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT60_review.json",
+  "total_task_bytes": 98252
+}

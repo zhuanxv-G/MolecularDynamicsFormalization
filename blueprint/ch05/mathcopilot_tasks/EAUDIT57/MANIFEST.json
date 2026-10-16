@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT57",
+  "input_sha256": {
+    "BATCH_EAUDIT57.md": "c53ea29632e2d8101ac83ad8684234f8fbfceffbd136c9a1cd3499be349b338e",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT57a",
+      "source_id": "MD-5.4.1-CircleInitialLaw",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT57/a",
+      "total_bytes": 135425,
+      "manifest_sha256": "09bae2ffc378e26de7a8f5b47d5177da3b32d8102e2fe2e288ae5e02067816cf"
+    },
+    {
+      "subtask": "EAUDIT57b",
+      "source_id": "MD-5.4.1-CircleInitialEnergy",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT57/b",
+      "total_bytes": 134448,
+      "manifest_sha256": "9b9161a141fe3ea5eb26f480959a50ac45467d2c66019152442dc016a9857b1a"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT62",
+  "section": "5.6",
+  "source_ids": [
+    "MD-5.6-ForwardWeakStationary",
+    "MD-5.6-BackwardWeakStationary",
+    "MD-5.6-SymplecticWeakStationary"
+  ],
+  "reaudit_ids": [
+    "MD-5.6-ForwardWeakStationary",
+    "MD-5.6-BackwardWeakStationary",
+    "MD-5.6-SymplecticWeakStationary"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.6-ForwardWeakStationary",
+      "prior_eaudit": "EAUDIT23",
+      "acceptance": "blueprint/ch05/validation/EAUDIT23/ACCEPTANCE.json",
+      "sha256": "2f235cf826bb11a2996c41c9c23b4d82de43cbe946dff112622b499e87ecfa14"
+    },
+    {
+      "source_id": "MD-5.6-BackwardWeakStationary",
+      "prior_eaudit": "EAUDIT23",
+      "acceptance": "blueprint/ch05/validation/EAUDIT23/ACCEPTANCE.json",
+      "sha256": "2f235cf826bb11a2996c41c9c23b4d82de43cbe946dff112622b499e87ecfa14"
+    },
+    {
+      "source_id": "MD-5.6-SymplecticWeakStationary",
+      "prior_eaudit": "EAUDIT23",
+      "acceptance": "blueprint/ch05/validation/EAUDIT23/ACCEPTANCE.json",
+      "sha256": "2f235cf826bb11a2996c41c9c23b4d82de43cbe946dff112622b499e87ecfa14"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT62/INDEX.md"
+}

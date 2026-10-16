@@ -1,0 +1,150 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.2.2-RapidAdjoint；原PDF页映射=[206, 207]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT46_review.json，对象含batch=EAUDIT46、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT46.md": "e45b8d67b4c4f4d96f41eb515b6449c047c0425c2b94b6b7e11f88a42bcdfbc1",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "EAUDIT46h_materials": "1619ee6e2cac95691e9fd010fbc4cfc49f279bb745268dc3d7e3aec95e08264c",
+  "EAUDIT46h_PAGES.pdf": "d88bd799869a67d8c9c62a473281d70217bb8c92d7b5d98abc6dafc04b33cae3"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.2.2-RapidAdjoint",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.2.2",
+  "printed_page": "185–186",
+  "pdf_page": "206–207",
+  "statement_latex": "Let $u,v$ be two scalar valued functions in $\\mathbb R^m$ which tend to zero sufficiently rapidly at infinity. By our assumptions that $u$ and $v$ are rapidly decaying we know that $B\\to0$, as $\\ell\\to\\infty$. Taking the limit, we are thus left with the equation\n\\[\\langle u,\\mathcal L_fv\\rangle=-\\sum_i\\int_{\\mathbb R^m}v\\frac{\\partial}{\\partial z_i}(uf_i)\\,d\\omega=\\langle M_fu,v\\rangle.\\]\nWe refer to $M_f$ as the adjoint operator of $\\mathcal L_f$ and we write $M_f=\\mathcal L_f^\\dagger$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$\\mathcal M_f w=-\\nabla\\cdot(wf)$；原页将此算子记为$\\mathcal L_f^\\dagger$。",
+    "$\\mathcal L_fv=\\sum_i f_i\\partial v/\\partial z_i$；$\\langle u,v\\rangle=\\int_{\\mathbb R^m}uv\\,d\\omega$，$d\\omega$为Lebesgue体积。",
+    "$\\mathcal A_\\ell=[-\\ell,\\ell]^m$；$B=\\sum_i\\int_{\\partial\\mathcal A_\\ell}uf_i v\\nu_i\\,d\\sigma$，$\\nu$为外单位法向。",
+    "原书由u,v迅速衰减推出B→0，未在该段明确f的增长约束；此处保留原句，不能视为对任意f已成立的无条件断言。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.rapidAdjoint",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]快速衰减函数用真实SchwartzMap资格；明确混合乘积可积及原证明所用实际B→0条件（任意增长的f下不能仅凭u/v衰减推出）；不是把最终伴随等式作前提。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT04_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:52:37.087651",
+      "before_sha256": "bc6c9af90ba333593807cf428f5720ac0f423f551b3b1a99433f56a025576dad",
+      "after_sha256": "480e487ca24db647c327f8dcdf9652cb0666774ba78dd67c6cc0ddb9da868bf7",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH08_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem rapidAdjoint : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u v : MolecularDynamics.Chapter05Review.schwartzSpace n),
+  0 < n → ContDiff ℝ 1 f →
+  Integrable (fun z => u z*MolecularDynamics.Chapter05Review.lie f v z) volume →
+  Integrable (fun z => MolecularDynamics.Chapter05Review.liouvillian f u z*v z) volume →
+  Tendsto (boxBoundaryTerm f u v) atTop (𝓝 0) →
+  (∫ z,u z*MolecularDynamics.Chapter05Review.lie f v z)=(∫ z,MolecularDynamics.Chapter05Review.liouvillian f u z*v z) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.divergence
+```lean
+def divergence {n : ℕ} (f : E n → E n) (z : E n) : ℝ :=
+  LinearMap.trace ℝ (E n) (fderiv ℝ f z).toLinearMap
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.faceFlux
+```lean
+def faceFlux {n : ℕ} (f : E n → E n) (ρ : E n → ℝ) (a b : E n) (i : Fin n) (side : ℝ) :=
+  ∫ z in boxFace a b i side,ρ z*f z i ∂(hausdorffArea (n-1))
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hausdorffArea
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.lie
+```lean
+def lie {n : ℕ} (f : E n → E n) (g : E n → ℝ) (z : E n) := (fderiv ℝ g z) (f z)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.liouvillian
+```lean
+def liouvillian {n : ℕ} (f : E n → E n) (u : E n → ℝ) (z : E n) :=
+  -divergence (fun x => u x • f x) z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.schwartzSpace
+```lean
+abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
+```
+### 实际依赖 MD.Ch05.boxBoundaryTerm
+```lean
+def boxBoundaryTerm {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u v : MolecularDynamics.Chapter05Review.E n → ℝ) (ell : ℝ) : ℝ :=
+  let a : MolecularDynamics.Chapter05Review.E n := WithLp.toLp 2 (fun _ => -ell)
+  let b : MolecularDynamics.Chapter05Review.E n := WithLp.toLp 2 (fun _ => ell)
+  ∑ i,(MolecularDynamics.Chapter05Review.faceFlux f (fun z => u z*v z) a b i ell-
+    MolecularDynamics.Chapter05Review.faceFlux f (fun z => u z*v z) a b i (-ell))
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.boxFace
+```lean
+def boxFace {n : ℕ} (a b : E n) (i : Fin n) (side : ℝ) := {z : E n | z ∈ rectangle a b ∧ z i=side}
+```
+### 实际依赖 MD.Ch05.divergence
+```lean
+def divergence {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (z : MolecularDynamics.Chapter05Review.E n) : ℝ :=
+  LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap
+```
+### 实际依赖 MD.Ch05.faceFlux
+```lean
+def faceFlux {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) (a b : MolecularDynamics.Chapter05Review.E n) (i : Fin n) (side : ℝ) :=
+  ∫ z in boxFace a b i side,ρ z*f z i ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1))
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hausdorffArea
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+### 实际依赖 MD.Ch05.lie
+```lean
+def lie {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (g : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) := (fderiv ℝ g z) (f z)
+```
+### 实际依赖 MD.Ch05.liouvillian
+```lean
+def liouvillian {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) :=
+  -MolecularDynamics.Chapter05Review.divergence (fun x => u x • f x) z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.rectangle
+```lean
+def rectangle {n : ℕ} (a b : E n) := {z : E n | ∀ i,a i ≤ z i ∧ z i ≤ b i}
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.schwartzSpace
+```lean
+abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
+```

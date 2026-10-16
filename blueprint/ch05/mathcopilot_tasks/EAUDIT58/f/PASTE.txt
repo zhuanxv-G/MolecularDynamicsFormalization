@@ -1,0 +1,146 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.5-MixingCorrelation；原PDF页映射=[226]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT58_review.json，对象含batch=EAUDIT58、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT58.md": "7734343856d57a6d696c771ea0bfe2bac00fbeab33e2cdb48a1a814fe9e8f7ee",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "EAUDIT58f_materials": "3bd93a0ededbeef58dafbbae35e84033a76412393e29f1f6f75c007119c0eaad",
+  "EAUDIT58f_PAGES.pdf": "ebc9ea28c066150f9aab3879587dab6ddcfe1732694b8b7df5e4fe197958d966"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.5-MixingCorrelation",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.5",
+  "printed_page": "205",
+  "pdf_page": "226",
+  "statement_latex": "$\\lim_{t\\to\\infty}C_{ab}(t)=\\operatorname{Av}_{H=E}(a)\\operatorname{Av}_{H=E}(b)$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "\\Sigma_E=\\{z:H(z)=E\\}; \\mathcal F_t 为动力学流。",
+    "\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)\\rho_E(z)\\,d\\omega；\\rho_E\\,d\\omega为参考微正则概率测度。",
+    "C_{ab}(t)=k\\operatorname{Av}_{H=E}(a(\\mathcal F_t(z))\\cdot b(z))；a,b取值于同一Euclidean空间，k为归一化常数（PDF224–225）。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.mixingCorrelation",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]独立修正版右侧保留k，实际AC概率初值的弱mixing条件及有界连续a/b；原参考微正则分布的不变资格明确为MeasurePreserving，保障各时积分可积和常数项不变。未以目标相关极限作假设。",
+    "[EXTRA] 修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT17_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T10:12:25.337909",
+      "before_sha256": "c63baa427b12c7a546b5381271a37c8cef0ee6cd39f771b8f506f4877d4eb99d",
+      "after_sha256": "039d6a6bcf6ef7d14129adacf50d3d3d7ddce296980e886fe04b9b11155007bc",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH23_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem mixingCorrelation :
+  ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k, IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
+  (∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
+    Continuous φ → Bornology.IsBounded (range φ) →
+    Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))) →
+  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+  Tendsto (fun t => k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)) atTop (𝓝 (k*inner ℝ (∫ z,a z ∂μ) (∫ z,b z ∂μ))) := by
+  sorry
+
+theorem mixingCorrelation_scalar :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k, IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
+  (∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
+    Continuous φ → Bornology.IsBounded (range φ) →
+    Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))) →
+  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+  Tendsto (fun t => k*(∫ z,a (Φ t z)*b z ∂μ)) atTop (𝓝 (k*MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b)) := by
+  intro n μ Φ a b k hμ hΦ hm ha hb hba hbb
+  letI := hμ
+  obtain ⟨C,hC,hB⟩ := hbb.exists_pos_norm_le
+  obtain ⟨R,hR,hA⟩ := hba.exists_pos_norm_le
+  have ib : Integrable b μ := Integrable.mono' (integrable_const C)
+    hb.measurable.aestronglyMeasurable (ae_of_all _ (fun z => hB (b z) (mem_range_self z)))
+  have ia : Integrable a μ := Integrable.mono' (integrable_const R)
+    ha.measurable.aestronglyMeasurable (ae_of_all _ (fun z => hA (a z) (mem_range_self z)))
+  have ibound : |∫ z,b z ∂μ| ≤ C := by
+    simpa only [Real.norm_eq_abs,probReal_univ,mul_one] using
+      norm_integral_le_of_norm_le_const (ae_of_all μ (fun z => hB (b z) (mem_range_self z)))
+  let D := C+1
+  let M := (∫ z,b z ∂μ)+D
+  have hM : 0 < M := by dsimp [M,D];linarith [neg_le_of_abs_le ibound]
+  let r (z) := (b z+D)/M
+  have ir : Integrable r μ := (ib.add (integrable_const D)).div_const M
+  have rpos (z) : 0 ≤ r z := by
+    have hx : |b z| ≤ C := by simpa only [Real.norm_eq_abs] using hB (b z) (mem_range_self z)
+    dsimp [r,D]
+    apply div_nonneg _ hM.le
+    linarith [neg_le_of_abs_le hx]
+  have rmass : (∫ z,r z ∂μ)=1 := by
+    dsimp [r]
+    rw [integral_div,integral_add ib (integrable_const D)]
+    simp [integral_const,M,ne_of_gt hM]
+  have ht := hm r a ir rpos rmass ha hba
+  have iap (t : ℝ) : Integrable (fun z => a (Φ t z)) μ :=
+    (hΦ t).integrable_comp_of_integrable ia
+  have ie (t : ℝ) : (∫ z,a (Φ t z) ∂μ)=MolecularDynamics.Chapter05Review.average μ a := by
+    have hh := integral_map (hΦ t).measurable.aemeasurable
+      (show AEStronglyMeasurable a (Measure.map (Φ t) μ) from by rw [(hΦ t).map_eq];exact ia.aestronglyMeasurable)
+    rw [(hΦ t).map_eq] at hh
+    exact hh.symm
+  have ipr (t : ℝ) : Integrable (fun z => a (Φ t z)*r z) μ :=
+    ir.bdd_mul (ha.measurable.comp (hΦ t).measurable).aestronglyMeasurable
+      (ae_of_all _ (fun z => hA (a (Φ t z)) (mem_range_self _)))
+  have heq (t : ℝ) : M*(∫ z,a (Φ t z)*r z ∂μ)-D*MolecularDynamics.Chapter05Review.average μ a=
+      (∫ z,a (Φ t z)*b z ∂μ) := by
+    rw [←ie t,←integral_const_mul,←integral_const_mul,
+      ←integral_sub ((ipr t).const_mul M) ((iap t).const_mul D)]
+    apply integral_congr_ae
+    filter_upwards [] with z
+    dsimp [r]
+    field_simp [ne_of_gt hM] <;> ring
+  have hh := (ht.const_mul M).sub (tendsto_const_nhds : Tendsto
+    (fun _ : ℝ => D*MolecularDynamics.Chapter05Review.average μ a) atTop
+    (𝓝 (D*MolecularDynamics.Chapter05Review.average μ a)))
+  simp_rw [heq] at hh
+  convert hh.const_mul k using 1
+  unfold MolecularDynamics.Chapter05Review.average
+  dsimp [M]
+  ring
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.average
+```lean
+def average {n : ℕ} (μ : Measure (E n)) (g : E n → ℝ) := ∫ z, g z ∂μ
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.average
+```lean
+def average {n : ℕ} (μ : Measure (E n)) (g : E n → ℝ) := ∫ z, g z ∂μ
+```

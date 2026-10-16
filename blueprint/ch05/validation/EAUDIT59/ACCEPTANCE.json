@@ -1,0 +1,82 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT59",
+  "section": "5.6",
+  "source_ids": [
+    "MD-5.6-DiscreteAveragePrinted",
+    "MD-5.6-DiscreteAverage",
+    "MD-5.6-DiscretePropagator",
+    "MD-5.6-ModifiedField",
+    "MD-5.6-ModifiedLiouvillian",
+    "MD-5.6-ForwardEnergyGrowth",
+    "MD-5.6-EulerInvariant",
+    "MD-5.6-BackwardEuler"
+  ],
+  "reaudit_ids": [
+    "MD-5.6-DiscreteAveragePrinted",
+    "MD-5.6-DiscreteAverage",
+    "MD-5.6-DiscretePropagator",
+    "MD-5.6-ModifiedField",
+    "MD-5.6-ModifiedLiouvillian",
+    "MD-5.6-ForwardEnergyGrowth",
+    "MD-5.6-EulerInvariant",
+    "MD-5.6-BackwardEuler"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.6-DiscreteAveragePrinted",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch05/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "2a84964e799605bd9c63d43de2e20e055fc1a31786cd802fa4850a509eea58f9"
+    },
+    {
+      "source_id": "MD-5.6-DiscreteAverage",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch05/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "2a84964e799605bd9c63d43de2e20e055fc1a31786cd802fa4850a509eea58f9"
+    },
+    {
+      "source_id": "MD-5.6-DiscretePropagator",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch05/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "2a84964e799605bd9c63d43de2e20e055fc1a31786cd802fa4850a509eea58f9"
+    },
+    {
+      "source_id": "MD-5.6-ModifiedField",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch05/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "2a84964e799605bd9c63d43de2e20e055fc1a31786cd802fa4850a509eea58f9"
+    },
+    {
+      "source_id": "MD-5.6-ModifiedLiouvillian",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch05/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "2a84964e799605bd9c63d43de2e20e055fc1a31786cd802fa4850a509eea58f9"
+    },
+    {
+      "source_id": "MD-5.6-ForwardEnergyGrowth",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch05/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "2a84964e799605bd9c63d43de2e20e055fc1a31786cd802fa4850a509eea58f9"
+    },
+    {
+      "source_id": "MD-5.6-EulerInvariant",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch05/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "2a84964e799605bd9c63d43de2e20e055fc1a31786cd802fa4850a509eea58f9"
+    },
+    {
+      "source_id": "MD-5.6-BackwardEuler",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch05/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "2a84964e799605bd9c63d43de2e20e055fc1a31786cd802fa4850a509eea58f9"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT59/INDEX.md"
+}

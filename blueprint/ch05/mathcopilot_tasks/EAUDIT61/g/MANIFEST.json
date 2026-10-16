@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT61",
+  "source_id": "MD-5.6-EulerLogFlow",
+  "input_sha256": {
+    "BATCH_EAUDIT61.md": "93f14a61de70741222b48695fd1acf0d4a79243728de1cbbaa08b24fd16940f8",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "EAUDIT61g_materials": "d7488595c2b65d2a54aa4b409befda30deed25e98e1bc2079a02dda08c434592",
+    "EAUDIT61g_PAGES.pdf": "c4fe9c263a39431e7372596c4891d027e89b6a17f4f7fde1f0ab34ac8ee2c1e4"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    227,
+    228
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "89646c3d4ff4f61c27d9d808732a57110dd0c527ee63af6f6760094114289385",
+  "source_block_sha256": "415862cf143ab44d5207a600a38711b44e515aa030cee02acd31004a72121c2e",
+  "source_declarations": [
+    "eulerLogFlow"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "eulerLogFlow",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "415862cf143ab44d5207a600a38711b44e515aa030cee02acd31004a72121c2e"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT61_review.json",
+  "total_task_bytes": 112940
+}

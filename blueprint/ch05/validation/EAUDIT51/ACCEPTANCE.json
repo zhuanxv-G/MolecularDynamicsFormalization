@@ -1,0 +1,82 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT51",
+  "section": "5.3.2",
+  "source_ids": [
+    "MD-5.3.2-NormalEnergyTaylor",
+    "MD-5.3.2-NormalInverseTaylor",
+    "MD-5.3.2-MicroRawInvariant",
+    "MD-5.3.2-MicroInvariant",
+    "MD-5.3.2-MicroPartition",
+    "MD-5.3.2-HarmonicEnergy",
+    "MD-5.3.2-HarmonicPartition",
+    "MD-5.3.2-IdealGasEnergy"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.2-NormalEnergyTaylor",
+    "MD-5.3.2-NormalInverseTaylor",
+    "MD-5.3.2-MicroRawInvariant",
+    "MD-5.3.2-MicroInvariant",
+    "MD-5.3.2-MicroPartition",
+    "MD-5.3.2-HarmonicEnergy",
+    "MD-5.3.2-HarmonicPartition",
+    "MD-5.3.2-IdealGasEnergy"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.3.2-NormalEnergyTaylor",
+      "prior_eaudit": "EAUDIT32",
+      "acceptance": "blueprint/ch05/validation/EAUDIT32/ACCEPTANCE.json",
+      "sha256": "c201463b0cbafc7a69aef2be2e6f8641efd28f41981af773892d09e8a724f2f4"
+    },
+    {
+      "source_id": "MD-5.3.2-NormalInverseTaylor",
+      "prior_eaudit": "EAUDIT32",
+      "acceptance": "blueprint/ch05/validation/EAUDIT32/ACCEPTANCE.json",
+      "sha256": "c201463b0cbafc7a69aef2be2e6f8641efd28f41981af773892d09e8a724f2f4"
+    },
+    {
+      "source_id": "MD-5.3.2-MicroRawInvariant",
+      "prior_eaudit": "EAUDIT32",
+      "acceptance": "blueprint/ch05/validation/EAUDIT32/ACCEPTANCE.json",
+      "sha256": "c201463b0cbafc7a69aef2be2e6f8641efd28f41981af773892d09e8a724f2f4"
+    },
+    {
+      "source_id": "MD-5.3.2-MicroInvariant",
+      "prior_eaudit": "EAUDIT32",
+      "acceptance": "blueprint/ch05/validation/EAUDIT32/ACCEPTANCE.json",
+      "sha256": "c201463b0cbafc7a69aef2be2e6f8641efd28f41981af773892d09e8a724f2f4"
+    },
+    {
+      "source_id": "MD-5.3.2-MicroPartition",
+      "prior_eaudit": "EAUDIT32",
+      "acceptance": "blueprint/ch05/validation/EAUDIT32/ACCEPTANCE.json",
+      "sha256": "c201463b0cbafc7a69aef2be2e6f8641efd28f41981af773892d09e8a724f2f4"
+    },
+    {
+      "source_id": "MD-5.3.2-HarmonicEnergy",
+      "prior_eaudit": "EAUDIT32",
+      "acceptance": "blueprint/ch05/validation/EAUDIT32/ACCEPTANCE.json",
+      "sha256": "c201463b0cbafc7a69aef2be2e6f8641efd28f41981af773892d09e8a724f2f4"
+    },
+    {
+      "source_id": "MD-5.3.2-HarmonicPartition",
+      "prior_eaudit": "EAUDIT32",
+      "acceptance": "blueprint/ch05/validation/EAUDIT32/ACCEPTANCE.json",
+      "sha256": "c201463b0cbafc7a69aef2be2e6f8641efd28f41981af773892d09e8a724f2f4"
+    },
+    {
+      "source_id": "MD-5.3.2-IdealGasEnergy",
+      "prior_eaudit": "EAUDIT32",
+      "acceptance": "blueprint/ch05/validation/EAUDIT32/ACCEPTANCE.json",
+      "sha256": "c201463b0cbafc7a69aef2be2e6f8641efd28f41981af773892d09e8a724f2f4"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT51/INDEX.md"
+}

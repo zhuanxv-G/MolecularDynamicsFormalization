@@ -1,0 +1,145 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.6-SymplecticEulerShadow；原PDF页映射=[228]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT60_review.json，对象含batch=EAUDIT60、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT60.md": "783ccb86b14aeb1cde4bc88c37a02c8c4933e22ca39630017fa6e8d0fa13ada9",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "EAUDIT60c_materials": "25f0b2a10005edbb25270336153514460d72f838daf51e61863622c1ec07193f",
+  "EAUDIT60c_PAGES.pdf": "42419909c32835d0d31f3e0f5c337c934074d9b931bad364b67c7e041b69a9d4"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.6-SymplecticEulerShadow",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.6",
+  "printed_page": "207",
+  "pdf_page": "228",
+  "statement_latex": "the solution through any given initial point remains confined to an ellipse for all $n$ defined by $\\widetilde H_h(q,p)=\\widetilde H_h(q_0,p_0)$, where $\\widetilde H_h$ is the perturbed Hamiltonian defined by the backward error analysis.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.symplecticEulerShadow",
+  "reusable_proofs": [
+    "MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved"
+  ],
+  "extra_assumptions": [
+    "[EXTRA]完整实际二次修正能量的一步保持恒等式；正定椭圆资格及所有n保持另条，不以一步式称全部椭圆结论已证。",
+    "[EXTRA] 保留一步不变量证明，补稳定区内主对数Hamiltonian=c(h)·二次不变量、c>0、实际矩阵指数Hamiltonian流及其时间h恰为离散步，并给两能量有界域O(h²)比例差；全部k/椭圆由SymplecticEulerEllipse、弱稳态由SymplecticWeakStationary承担。新增模型是显式技术选择，不冒称唯一修正能量。"
+  ],
+  "statement_scope": "一步二次不变量与实际主对数modified Hamiltonian/流对应及比例阶次；全部k和椭圆/零退化由MD-5.6-SymplecticEulerEllipse、连续概率稳态/非吸引由MD-5.6-SymplecticWeakStationary承担。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT21_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T10:18:38.392728",
+      "before_sha256": "6fd2893ea91e9289c5b1297d5dd7a8ec07b9428173d7fcbebdc2d36e345fdf1f",
+      "after_sha256": "78f7723c9116fb0ff76aa67e6bb6f46afdb0200735de584e6a34be96c86f30df",
+      "changed_fields": [
+        "statement_scope"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH25_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem symplecticEulerShadow : symplecticEulerShadow_statement := by
+  apply MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved <;> assumption
+
+def symplecticEulerLogScale (h : ℝ) : ℝ :=
+  if h=0 then 1 else (2*Real.arcsin (h/2))/(h*Real.sqrt (1-h^2/4))
+
+def symplecticEulerModifiedHamiltonian (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : ℝ :=
+  symplecticEulerLogScale h*MolecularDynamics.Chapter05Review.shadowOscillator h z
+
+def symplecticEulerModifiedFlow (h t : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) :
+    MolecularDynamics.Chapter05Review.E 2 :=
+  let A : Matrix (Fin 2) (Fin 2) ℝ := symplecticEulerLogScale h • !![-h/2,1;-1,h/2]
+  WithLp.toLp 2 (NormedSpace.exp (t • A) *ᵥ WithLp.ofLp z)
+
+theorem symplecticEulerShadow_modified_model (h : ℝ) (_hh : |h| < 2) :
+    0 < symplecticEulerLogScale h ∧
+    (∀ z,symplecticEulerModifiedFlow h h z=MolecularDynamics.Chapter05Review.symplecticEuler h z) ∧
+    MolecularDynamics.Chapter05Review.flow
+      (fun z : MolecularDynamics.Chapter05Review.E 2 ↦ WithLp.toLp 2
+        ![(gradient (symplecticEulerModifiedHamiltonian h) z) 1,
+          -(gradient (symplecticEulerModifiedHamiltonian h) z) 0])
+      (symplecticEulerModifiedFlow h) := by
+  sorry
+
+theorem symplecticEulerShadow_modified_scale_order (R : ℝ) (_hR : 0 < R) :
+    ∃ C > 0,∃ δ > 0,δ < 2 ∧ ∀ h : ℝ,|h| < δ →
+      ∀ z : MolecularDynamics.Chapter05Review.E 2,‖z‖ ≤ R →
+        |symplecticEulerModifiedHamiltonian h z-MolecularDynamics.Chapter05Review.shadowOscillator h z| ≤ C*h^2 := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.flow
+```lean
+def flow {n : ℕ} (f : E n → E n) (Φ : ℝ → E n → E n) : Prop :=
+  (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
+  ∀ t z, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.shadowOscillator
+```lean
+def shadowOscillator (h : ℝ) (z : E 2) := (z 0^2+z 1^2-h*z 0*z 1)/2
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.symplecticEuler
+```lean
+def symplecticEuler (h : ℝ) (z : E 2) : E 2 := WithLp.toLp 2 ![z 0+h*(z 1-h*z 0),z 1-h*z 0]
+```
+### 实际依赖 MD.Ch05.flow
+```lean
+def flow {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
+  ∀ t z, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.shadowOscillator
+```lean
+def shadowOscillator (h : ℝ) (z : E 2) := (z 0^2+z 1^2-h*z 0*z 1)/2
+```
+### 实际依赖 MD.Ch05.symplecticEuler
+```lean
+def symplecticEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![z 0+h*(z 1-h*z 0),z 1-h*z 0]
+```
+### 实际依赖 MD.Ch05.symplecticEulerLogScale
+```lean
+def symplecticEulerLogScale (h : ℝ) : ℝ :=
+  if h=0 then 1 else (2*Real.arcsin (h/2))/(h*Real.sqrt (1-h^2/4))
+```
+### 实际依赖 MD.Ch05.symplecticEulerModifiedFlow
+```lean
+def symplecticEulerModifiedFlow (h t : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) :
+    MolecularDynamics.Chapter05Review.E 2 :=
+  let A : Matrix (Fin 2) (Fin 2) ℝ := symplecticEulerLogScale h • !![-h/2,1;-1,h/2]
+  WithLp.toLp 2 (NormedSpace.exp (t • A) *ᵥ WithLp.ofLp z)
+```
+### 实际依赖 MD.Ch05.symplecticEulerModifiedHamiltonian
+```lean
+def symplecticEulerModifiedHamiltonian (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : ℝ :=
+  symplecticEulerLogScale h*MolecularDynamics.Chapter05Review.shadowOscillator h z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.symplecticEulerShadow_statement
+```lean
+def symplecticEulerShadow_statement : Prop := ∀ h (z : E 2),
+  shadowOscillator h (symplecticEuler h z)=shadowOscillator h z
+```

@@ -1,0 +1,196 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.3.2-IdealGasPartition；原PDF页映射=[214, 215]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT52_review.json，对象含batch=EAUDIT52、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT52.md": "3372a39feabb5682338ee34cf3a71c23213e3ed4b8e4c390b4871609e35caf60",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "EAUDIT52b_materials": "2ac1a52d768f0f81ae898afcea4fc3a0f9dada3baa6cde2a12910535ae680be8",
+  "EAUDIT52b_PAGES.pdf": "209ad56c0eeeb4c6d175aa3422838e4e2133d6c3ddea5e05a220e2b6cbd8012c"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.3.2-IdealGasPartition",
+  "kind": "unnumbered_claim",
+  "label": "Example 5.2",
+  "section": "5.3.2",
+  "printed_page": "194",
+  "pdf_page": "215",
+  "statement_latex": "Thus we have\n\\[Z_E=V^N\\frac{m}{\\sqrt{2mE}}A(S)\n=V^N\\frac{\\sqrt m}{\\sqrt{2E}}\\frac{3N\\pi^{3N/2}(2mE)^{(3N-1)/2}}{\\Gamma(3N/2+1)}\n=V^N\\frac{(2\\pi mE)^{3N/2}}{E\\Gamma(3N/2)}.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "S为3N维动量空间中半径r=√(2mE)的(3N−1)维球面；A(S)为其面积，Γ为gamma函数，V^N为位置积分体积因子，Z_E为微正则分区函数。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.idealGasPartition",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]正N/m/E/L、有限基本胞V=L³；微正则raw测度在位置胞上实际限制。3N系数是球面积的正确系数，不登记伪造勘误。",
+    "[EXTRA] 补真实动量(3N−1)维球面S、r=√(2mc)、位置体积(L³)^N及面积/Gamma两项中间分解，保留原终值；不以参数积分作microRaw定义。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT10_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:59:03.890531",
+      "before_sha256": "d3eea283bd0f906e565b58044737e7e3a7e5e698d78a7977dab2f96d918c3212",
+      "after_sha256": "2320acd02ed5db02c9f3ff7f26c0f57bd5d07c8943b4c402d339d89d63bf29f3",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    },
+    {
+      "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+      "timestamp": "2026-10-16T10:28:28.864805",
+      "before_sha256": "2320acd02ed5db02c9f3ff7f26c0f57bd5d07c8943b4c402d339d89d63bf29f3",
+      "after_sha256": "0886200657682fd40d737c67cd92ef7cf9ea9c603035822a81fdc053267f5603",
+      "changed_fields": [
+        "printed_page",
+        "pdf_page"
+      ],
+      "changes": {
+        "printed_page": {
+          "before": "193–194",
+          "after": "194"
+        },
+        "pdf_page": {
+          "before": "214–215",
+          "after": "215"
+        }
+      },
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
+      "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+  "review_context_pdf_pages": [
+    214
+  ]
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem idealGasPartition : ∀ (N : ℕ) (m c L : ℝ),0 < N → 0 < m → 0 < c → 0 < L →
+  ((MolecularDynamics.Chapter05Review.microRaw (idealGasEnergy N m) c) (idealGasPositionDomain N L)).toReal=
+    (L^3)^N*Real.rpow (2*Real.pi*m*c) ((3*N : ℝ)/2)/(c*Real.Gamma ((3*N : ℝ)/2)) := by
+  sorry
+
+theorem idealGasPartition_factors (N : ℕ) (m c L : ℝ)
+    (_hN : 0 < N) (_hm : 0 < m) (_hc : 0 < c) (_hL : 0 < L) :
+    let S := Metric.sphere (0 : MolecularDynamics.Chapter05Review.E (3*N)) (Real.sqrt (2*m*c))
+    let A := (MolecularDynamics.Chapter05Review.hausdorffArea (3*N-1) S).toReal
+    let Z := ((MolecularDynamics.Chapter05Review.microRaw (idealGasEnergy N m) c) (idealGasPositionDomain N L)).toReal
+    Z=(L^3)^N*(∫ p in S,m/Real.sqrt (2*m*c)
+      ∂(MolecularDynamics.Chapter05Review.hausdorffArea (3*N-1))) ∧
+    Z=(L^3)^N*(m/Real.sqrt (2*m*c))*A ∧
+    Z=(L^3)^N*(Real.sqrt m/Real.sqrt (2*c))*
+      ((3*N : ℝ)*Real.rpow Real.pi ((3*N : ℝ)/2)*Real.rpow (2*m*c) (((3*N : ℝ)-1)/2)/
+      Real.Gamma ((3*N : ℝ)/2+1)) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.energySurface
+```lean
+def energySurface {n : ℕ} (H : E n → ℝ) (c : ℝ) := {z | H z=c}
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.grad
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hausdorffArea
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.microRaw
+```lean
+def microRaw {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  (surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖grad H z‖⁻¹))
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.surfaceMeasure
+```lean
+def surfaceMeasure {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  (hausdorffArea (n-1)).restrict (energySurface H c)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MD.Ch05.energySurface
+```lean
+def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.grad
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hausdorffArea
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+### 实际依赖 MD.Ch05.idealGasEnergy
+```lean
+def idealGasEnergy (N : ℕ) (m : ℝ) (z : MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
+  (∑ i : Fin (3*N),(z (Fin.natAdd (3*N) i))^2)/(2*m)
+```
+### 实际依赖 MD.Ch05.idealGasPositionDomain
+```lean
+def idealGasPositionDomain (N : ℕ) (L : ℝ) : Set (MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
+  {z | ∀ i : Fin (3*N),z (Fin.castAdd (3*N) i) ∈ Icc (0 : ℝ) L}
+```
+### 实际依赖 MD.Ch05.microRaw
+```lean
+def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
+```
+### 实际依赖 MD.Ch05.surfaceMeasure
+```lean
+def surfaceMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.hausdorffArea (n-1)).restrict (MolecularDynamics.Chapter05Review.energySurface H c)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```

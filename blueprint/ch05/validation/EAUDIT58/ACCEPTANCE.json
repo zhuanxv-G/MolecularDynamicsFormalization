@@ -1,0 +1,74 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT58",
+  "section": "5.5",
+  "source_ids": [
+    "MD-5.5-Correlation",
+    "MD-5.5-CorrelationTimeAE",
+    "MD-5.5-PositionTransition",
+    "MD-5.5-MeasureDuality",
+    "MD-5.5-MixingMemoryLoss",
+    "MD-5.5-MixingCorrelation",
+    "MD-5.5-CenteredCorrelation"
+  ],
+  "reaudit_ids": [
+    "MD-5.5-Correlation",
+    "MD-5.5-CorrelationTimeAE",
+    "MD-5.5-PositionTransition",
+    "MD-5.5-MeasureDuality",
+    "MD-5.5-MixingMemoryLoss",
+    "MD-5.5-MixingCorrelation",
+    "MD-5.5-CenteredCorrelation"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.5-Correlation",
+      "prior_eaudit": "EAUDIT39",
+      "acceptance": "blueprint/ch05/validation/EAUDIT39/ACCEPTANCE.json",
+      "sha256": "642d0bebb43a56b7a9096a537a66ad4da983bdf62c23f6529ea6c913224c595d"
+    },
+    {
+      "source_id": "MD-5.5-CorrelationTimeAE",
+      "prior_eaudit": "EAUDIT39",
+      "acceptance": "blueprint/ch05/validation/EAUDIT39/ACCEPTANCE.json",
+      "sha256": "642d0bebb43a56b7a9096a537a66ad4da983bdf62c23f6529ea6c913224c595d"
+    },
+    {
+      "source_id": "MD-5.5-PositionTransition",
+      "prior_eaudit": "EAUDIT39",
+      "acceptance": "blueprint/ch05/validation/EAUDIT39/ACCEPTANCE.json",
+      "sha256": "642d0bebb43a56b7a9096a537a66ad4da983bdf62c23f6529ea6c913224c595d"
+    },
+    {
+      "source_id": "MD-5.5-MeasureDuality",
+      "prior_eaudit": "EAUDIT39",
+      "acceptance": "blueprint/ch05/validation/EAUDIT39/ACCEPTANCE.json",
+      "sha256": "642d0bebb43a56b7a9096a537a66ad4da983bdf62c23f6529ea6c913224c595d"
+    },
+    {
+      "source_id": "MD-5.5-MixingMemoryLoss",
+      "prior_eaudit": "EAUDIT39",
+      "acceptance": "blueprint/ch05/validation/EAUDIT39/ACCEPTANCE.json",
+      "sha256": "642d0bebb43a56b7a9096a537a66ad4da983bdf62c23f6529ea6c913224c595d"
+    },
+    {
+      "source_id": "MD-5.5-MixingCorrelation",
+      "prior_eaudit": "EAUDIT39",
+      "acceptance": "blueprint/ch05/validation/EAUDIT39/ACCEPTANCE.json",
+      "sha256": "642d0bebb43a56b7a9096a537a66ad4da983bdf62c23f6529ea6c913224c595d"
+    },
+    {
+      "source_id": "MD-5.5-CenteredCorrelation",
+      "prior_eaudit": "EAUDIT39",
+      "acceptance": "blueprint/ch05/validation/EAUDIT39/ACCEPTANCE.json",
+      "sha256": "642d0bebb43a56b7a9096a537a66ad4da983bdf62c23f6529ea6c913224c595d"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT58/INDEX.md"
+}

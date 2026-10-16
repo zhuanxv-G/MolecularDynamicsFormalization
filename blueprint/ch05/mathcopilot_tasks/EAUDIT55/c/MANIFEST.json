@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT55",
+  "source_id": "MD-5.4.1-FlowInvariant",
+  "input_sha256": {
+    "BATCH_EAUDIT55.md": "f046aaa19ae28a72364c1b1668a3c03d0c41d5ccc5b629f1da2e6815720c07a8",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "EAUDIT55c_materials": "9570f514d3c719194ca248135b28c6b9fce8ac06d49cf9712d12e99478ba09b1",
+    "EAUDIT55c_PAGES.pdf": "493f5d7a2bc13c1892d217977625dc2bdaf33ea7413e1bba47aae90174bbaf97"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    218,
+    219
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "cca08bf455eb9439eb909c3d1e7d88956bec803741fa244554b6c1ab9d0f6ac4",
+  "source_block_sha256": "29cf8bedf522689c4dfb2b73e51c60601592b7ae53e6ae7ad7eda9244753564c",
+  "source_declarations": [
+    "flowInvariant"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "flowInvariant",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "29cf8bedf522689c4dfb2b73e51c60601592b7ae53e6ae7ad7eda9244753564c"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT55_review.json",
+  "total_task_bytes": 109054
+}

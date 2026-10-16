@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT55",
+  "input_sha256": {
+    "BATCH_EAUDIT55.md": "f046aaa19ae28a72364c1b1668a3c03d0c41d5ccc5b629f1da2e6815720c07a8",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT55a",
+      "source_id": "MD-5.4.1-UniformMicroErgodic",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT55/a",
+      "total_bytes": 112387,
+      "manifest_sha256": "5b11cd91db339572369cd37bd83f580487cdc60c028983f78e27c0da1e2a0bac"
+    },
+    {
+      "subtask": "EAUDIT55b",
+      "source_id": "MD-5.4.1-MicroErgodicStandard",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT55/b",
+      "total_bytes": 113425,
+      "manifest_sha256": "eae65caa2ae43c355941c0bc8d1f15317373f8a3e1653c38a005ab954e685b20"
+    },
+    {
+      "subtask": "EAUDIT55c",
+      "source_id": "MD-5.4.1-FlowInvariant",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT55/c",
+      "total_bytes": 109054,
+      "manifest_sha256": "d7fec8f19e3848ef889e74f3d0535f8b3c8171a29c4c774c0871c3103357cc54"
+    },
+    {
+      "subtask": "EAUDIT55d",
+      "source_id": "MD-5.4.1-SetErgodic",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT55/d",
+      "total_bytes": 110535,
+      "manifest_sha256": "ed8851ab6972a1128f4372ecfc722d63bedb5f522fa6cc39e3b15f5368d6eb30"
+    },
+    {
+      "subtask": "EAUDIT55e",
+      "source_id": "MD-5.4.1-InvariantIndicator",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT55/e",
+      "total_bytes": 88563,
+      "manifest_sha256": "aa7d6fcbbc549b8ee2e34a83dc5dc58b55381592cc08809e822e9f77e9e0528f"
+    },
+    {
+      "subtask": "EAUDIT55f",
+      "source_id": "MD-5.4.1-InvariantIndicatorAverage",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT55/f",
+      "total_bytes": 89867,
+      "manifest_sha256": "80ee82faa213b5e1884364fed0eb2fccd34d7e38b0b79ddcb8838d9f0cd96098"
+    },
+    {
+      "subtask": "EAUDIT55g",
+      "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT55/g",
+      "total_bytes": 95625,
+      "manifest_sha256": "7aba4479ed5138b33d79d5dbbfbe08d4ccb71c8082fcf1c6c0867e2ad493f256"
+    },
+    {
+      "subtask": "EAUDIT55h",
+      "source_id": "MD-5.4.1-NonergodicSet",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT55/h",
+      "total_bytes": 94086,
+      "manifest_sha256": "1a68e3f1edbfd73c9b462af110be5f62a252e20417c9c02b7bfd4fdea02c21ec"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "eaudit": "EAUDIT61",
+  "source_id": "MD-5.6-EulerLogCorrespondence",
+  "input_sha256": {
+    "BATCH_EAUDIT61.md": "93f14a61de70741222b48695fd1acf0d4a79243728de1cbbaa08b24fd16940f8",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "EAUDIT61h_materials": "79849b72bc998fea81c22bfb548d30fb669b6abb39900867659805949dcc5487",
+    "EAUDIT61h_PAGES.pdf": "c4fe9c263a39431e7372596c4891d027e89b6a17f4f7fde1f0ab34ac8ee2c1e4"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    227,
+    228
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a9be9499ead42f4deac5e2ce36b0bbf1b48f67a7a575c5af4b02cd5846e17827",
+  "source_block_sha256": "92fa3ba698812b45730e858a0c39e30577726d07421cfb1a702af70117affdef",
+  "source_declarations": [
+    "eulerLogCorrespondence"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.backwardEuler",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "9ebbbff4d8ad1e01747c94c32d78795263c06a353952a20c61cf9fe754e8c89a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.forwardEuler",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "ab163ad38485388a261682f609a205f639ab61b81dc26b178c68d93547739d6b"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "backwardEuler",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "91836ae64e2fa2acc19bd45cc9f99ab140184e145610861c21808343b3cf9910"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "eulerLogField",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "7e4ae379eb96a77abaa7fd3418edf4fbbed45e80339fc8ebbe3971b4a26f6258"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "eulerLogFlow",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "415862cf143ab44d5207a600a38711b44e515aa030cee02acd31004a72121c2e"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "forwardEuler",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "64f55bd6fdf57ab45ed088554e3b95cf056126711a64ce08e55e68a7201ffbbd"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT61_review.json",
+  "total_task_bytes": 116949
+}

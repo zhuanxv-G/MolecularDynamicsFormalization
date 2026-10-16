@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT51",
+  "input_sha256": {
+    "BATCH_EAUDIT51.md": "e15d5da91c967ee77b242ffcedbb80e7340ddf72254d53814ca223402c88cb97",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT51a",
+      "source_id": "MD-5.3.2-NormalEnergyTaylor",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT51/a",
+      "total_bytes": 141217,
+      "manifest_sha256": "c4e8be5c0cd1a69eb5e0829a942394d1ab4ceb9c44136b8da0d41eeabebf90d4"
+    },
+    {
+      "subtask": "EAUDIT51b",
+      "source_id": "MD-5.3.2-NormalInverseTaylor",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT51/b",
+      "total_bytes": 141417,
+      "manifest_sha256": "ce9e4bbd0a2e45092ad85c5a24f4200eb17a6bb0040eb9b840f3bc890dfa32c7"
+    },
+    {
+      "subtask": "EAUDIT51c",
+      "source_id": "MD-5.3.2-MicroRawInvariant",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT51/c",
+      "total_bytes": 99384,
+      "manifest_sha256": "f73fb0aa22aa3036b849adde206b76b80e8a666d37cc03e635d335ad6c312399"
+    },
+    {
+      "subtask": "EAUDIT51d",
+      "source_id": "MD-5.3.2-MicroInvariant",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT51/d",
+      "total_bytes": 100222,
+      "manifest_sha256": "7e9f0b332165d931ff08808ad679fd9815e88fee801acceee88e24bced260e3b"
+    },
+    {
+      "subtask": "EAUDIT51e",
+      "source_id": "MD-5.3.2-MicroPartition",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT51/e",
+      "total_bytes": 96694,
+      "manifest_sha256": "aa541ccc81fc6f4bcba2d2b26f3d65cdcb45f699331818395601b361285c829d"
+    },
+    {
+      "subtask": "EAUDIT51f",
+      "source_id": "MD-5.3.2-HarmonicEnergy",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT51/f",
+      "total_bytes": 89483,
+      "manifest_sha256": "937b12bb43fb2351c7de3cb7f79199ed2a53759ca09e21c5f5ca4953b2b2095e"
+    },
+    {
+      "subtask": "EAUDIT51g",
+      "source_id": "MD-5.3.2-HarmonicPartition",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT51/g",
+      "total_bytes": 98127,
+      "manifest_sha256": "289fca536acc5968b35a837dfc74b410dae0a2c7920af6ab1635abe9e3b0fdce"
+    },
+    {
+      "subtask": "EAUDIT51h",
+      "source_id": "MD-5.3.2-IdealGasEnergy",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT51/h",
+      "total_bytes": 96089,
+      "manifest_sha256": "83cf79686c3041d21a59e4113c4cc705fedc56d695188a9e349062eb94dbc097"
+    }
+  ]
+}

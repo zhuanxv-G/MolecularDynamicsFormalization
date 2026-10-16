@@ -1,0 +1,62 @@
+{
+  "eaudit": "EAUDIT59",
+  "source_id": "MD-5.6-EulerInvariant",
+  "input_sha256": {
+    "BATCH_EAUDIT59.md": "f79dc3ea70f394114ca35eaa85f8e7b1e897d29fb604101bffdfaddb39c0fa2f",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "EAUDIT59g_materials": "da8af951b257b2b254dd9f7672ba360dfad82dc12329092d5f30acfc41ce5739",
+    "EAUDIT59g_PAGES.pdf": "42419909c32835d0d31f3e0f5c337c934074d9b931bad364b67c7e041b69a9d4"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    228
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "4204c6950e9822868c6d83d15ef4402a21f8b6ec0dd8a33fa623118c6177e78d",
+  "source_block_sha256": "b19bd8e9015e7a992cd1786158e4556d6c82afbea7815854ca38b89cb058add6",
+  "source_declarations": [
+    "eulerInvariant",
+    "eulerInvariant_no_probability_limit"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.diracMeasure",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "ca96b8fee35ed6961b57860ddb3f8fdd9b5b63ce5ad509cb42e478f84bfa58c9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.forwardEuler",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "ab163ad38485388a261682f609a205f639ab61b81dc26b178c68d93547739d6b"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "diracMeasure",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "f916ccdc411fb3486ad2c4256195bc43de03294ebe5cf76065b5e51f6182c27e"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "forwardEuler",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "64f55bd6fdf57ab45ed088554e3b95cf056126711a64ce08e55e68a7201ffbbd"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT59_review.json",
+  "total_task_bytes": 95350
+}

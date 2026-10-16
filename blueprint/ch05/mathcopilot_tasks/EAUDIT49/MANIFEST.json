@@ -1,0 +1,59 @@
+{
+  "eaudit": "EAUDIT49",
+  "input_sha256": {
+    "BATCH_EAUDIT49.md": "c89920ea228cd66a32ba1177ce9c66d409517eb356efc976392ee2108ec89e7d",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT49a",
+      "source_id": "MD-5.3.1-TestSpace",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT49/a",
+      "total_bytes": 102925,
+      "manifest_sha256": "c2de44653640f4cb7f0ee793a5a58aa38a53c899e22768e4880224b881152858"
+    },
+    {
+      "subtask": "EAUDIT49b",
+      "source_id": "MD-5.3.1-RegularDistribution",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT49/b",
+      "total_bytes": 115534,
+      "manifest_sha256": "dcbea0e3f038be57c396bb84009bffe91d382723fa4f08c6a3328fa341e3fd4c"
+    },
+    {
+      "subtask": "EAUDIT49c",
+      "source_id": "MD-5.3.1-RegularDistributionLinearity",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT49/c",
+      "total_bytes": 105661,
+      "manifest_sha256": "e88d0a2eb91d1f2a6fbcbcb34057bd18b763c95864ded6dd2d13333e53e7d095"
+    },
+    {
+      "subtask": "EAUDIT49d",
+      "source_id": "MD-5.3.1-GaussianDelta",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT49/d",
+      "total_bytes": 83604,
+      "manifest_sha256": "b1759cd40c3ef12cb6589dab763b04cf80bf3af36f72848ca655d663efeb4de9"
+    },
+    {
+      "subtask": "EAUDIT49e",
+      "source_id": "MD-5.3.1-DiracEvaluates",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT49/e",
+      "total_bytes": 87018,
+      "manifest_sha256": "c078fee02254652463aa70486948a54b340ffe1486af336f8e02b101f911be43"
+    },
+    {
+      "subtask": "EAUDIT49f",
+      "source_id": "MD-5.3.1-GaussianDeltaProbability",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT49/f",
+      "total_bytes": 85020,
+      "manifest_sha256": "426e601e09d263df8ecb5ceb153af44daa8f17dc4a206b1e074e1f6310ff13c9"
+    },
+    {
+      "subtask": "EAUDIT49g",
+      "source_id": "MD-5.3.1-GaussianDeltaWeak",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT49/g",
+      "total_bytes": 87495,
+      "manifest_sha256": "5169c2a85726ae397e6572de312f9d23c8b4fe8502ee1cd1ac88e56c5788757f"
+    }
+  ]
+}

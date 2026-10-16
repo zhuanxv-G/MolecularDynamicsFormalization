@@ -1,0 +1,56 @@
+{
+  "eaudit": "EAUDIT50",
+  "source_id": "MD-5.3.2-ShellPartition",
+  "input_sha256": {
+    "BATCH_EAUDIT50.md": "ac8545b26bd259af82f5a0c585bbd564eb184cfd23586a9e83a535c86b3cc534",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "EAUDIT50e_materials": "f2a95fbe89ad5cd3d156a90f51bebfec52b48edf96cdfcd37920d38696cabc04",
+    "EAUDIT50e_PAGES.pdf": "a40d08af32308bd16c12bd7f0aa9be1312aa75637c7669c46ff8ff7a1f59c922"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    211,
+    212
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "8bcdd1bd1a3b1fcf74775a2ac710449ae9b987e286e27aa238615e0d3525380e",
+  "source_block_sha256": "b0c715394bcebcfabe4f0ecd8ee0ab160bd46135b6de20139101d15a02d62708",
+  "source_declarations": [
+    "shellPartition"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.shellWeight",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "d03310eeb85eb835e40b9a6a01053a427fa4e55d7d9489f088293d7697130dd7"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "shellPartition",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "b0c715394bcebcfabe4f0ecd8ee0ab160bd46135b6de20139101d15a02d62708"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "shellWeight",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "62634831989160eeeb3c7b733b24189905c25760cc6036793a64667c418aca8a"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT50_review.json",
+  "total_task_bytes": 115024
+}

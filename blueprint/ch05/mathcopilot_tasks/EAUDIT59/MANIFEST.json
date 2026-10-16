@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT59",
+  "input_sha256": {
+    "BATCH_EAUDIT59.md": "f79dc3ea70f394114ca35eaa85f8e7b1e897d29fb604101bffdfaddb39c0fa2f",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT59a",
+      "source_id": "MD-5.6-DiscreteAveragePrinted",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT59/a",
+      "total_bytes": 95862,
+      "manifest_sha256": "ef9a8dae48a955f1e1f7c725bcadf56efdc3bad83b9b1caf9ebda8feeb6a8487"
+    },
+    {
+      "subtask": "EAUDIT59b",
+      "source_id": "MD-5.6-DiscreteAverage",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT59/b",
+      "total_bytes": 96025,
+      "manifest_sha256": "ec8921c54d5c7eb4e5b437ea9a4cb1bf52c6a0f10e26a9f5e34c22cbeb93f1c1"
+    },
+    {
+      "subtask": "EAUDIT59c",
+      "source_id": "MD-5.6-DiscretePropagator",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT59/c",
+      "total_bytes": 95783,
+      "manifest_sha256": "de189afaf63fa62132a5a712eead5934fee5a11587d835331a8a32eed59c86ee"
+    },
+    {
+      "subtask": "EAUDIT59d",
+      "source_id": "MD-5.6-ModifiedField",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT59/d",
+      "total_bytes": 96751,
+      "manifest_sha256": "d3fa7f12d23d29c6dab1c9cd2f505e1347c0e31279c70682a8642298778f6834"
+    },
+    {
+      "subtask": "EAUDIT59e",
+      "source_id": "MD-5.6-ModifiedLiouvillian",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT59/e",
+      "total_bytes": 104275,
+      "manifest_sha256": "a03fe0a229f530b4785526463adb1bb0828a307b6b74d5e43cd7fb847661b37c"
+    },
+    {
+      "subtask": "EAUDIT59f",
+      "source_id": "MD-5.6-ForwardEnergyGrowth",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT59/f",
+      "total_bytes": 92533,
+      "manifest_sha256": "605d87c09d277bbeefeb4362c623c4df86483b843c6c42c7a942edb2bd7d1e30"
+    },
+    {
+      "subtask": "EAUDIT59g",
+      "source_id": "MD-5.6-EulerInvariant",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT59/g",
+      "total_bytes": 95350,
+      "manifest_sha256": "827efff8a4aba178145096f0a91e630029db548aac5256e7d772a65feeca7c79"
+    },
+    {
+      "subtask": "EAUDIT59h",
+      "source_id": "MD-5.6-BackwardEuler",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT59/h",
+      "total_bytes": 91481,
+      "manifest_sha256": "3ee671d4bb0de20988696a2eb61a54dbb6d86f1aa1cb2b219221791f6c6d2639"
+    }
+  ]
+}

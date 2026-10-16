@@ -1,0 +1,49 @@
+{
+  "eaudit": "EAUDIT50",
+  "source_id": "MD-5.3.2-SurfaceAreaFormula",
+  "input_sha256": {
+    "BATCH_EAUDIT50.md": "ac8545b26bd259af82f5a0c585bbd564eb184cfd23586a9e83a535c86b3cc534",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "EAUDIT50h_materials": "9e0f0edc0bc4ae4793439b7d5a24174727c02739d0cae8c4b0ddc8aa1780a1e7",
+    "EAUDIT50h_PAGES.pdf": "9a0c4ade2784c653baec418c302dbe7bddffc98f874cc67a8fe900320348b75a"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    212
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "31dba8932b58ebfbf83b49fe8b713927a1d5483d08bf418c3c2a36018a71cb2e",
+  "source_block_sha256": "21dac2664d6824cdb8f6f516d691fb298e7c1fbcc4247206ea095dc0d23b4df7",
+  "source_declarations": [
+    "surfaceAreaFormula"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.hausdorffArea",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "hausdorffArea",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT50_review.json",
+  "total_task_bytes": 105336
+}

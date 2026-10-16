@@ -1,0 +1,91 @@
+{
+  "eaudit": "EAUDIT57",
+  "source_id": "MD-5.4.1-CircleInitialLaw",
+  "input_sha256": {
+    "BATCH_EAUDIT57.md": "c53ea29632e2d8101ac83ad8684234f8fbfceffbd136c9a1cd3499be349b338e",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "EAUDIT57a_materials": "4656002949f1144927dd0d25834713a08b713b3b8303337c57d8308950fd5e47",
+    "EAUDIT57a_PAGES.pdf": "728cda519da059b35d6d718cf15378728ce7345f00647800db1ae52363a8849a"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    223
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "4f867f8eac27e73bb10ccfdfbf6cc0f71410dde3b28eb96517cf23985bd51995",
+  "source_block_sha256": "bae8e6144fe460615e4caeab535a75e5b9499641f12ee74b73c62b69cee996e7",
+  "source_declarations": [
+    "circleInitialLaw"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter01Review.anisotropicEnergy",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "438069aac96d69c718610e36a9e82f0b54dc5a64c7fa3bca6a68e8e6384cfee5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.Phase",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "Phase",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "anisotropicAngular",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "61efc1343e97e5be94b44e187a410313ecf1f836c3528dc708db7b590b4d2298"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "anisotropicEnergy",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "438069aac96d69c718610e36a9e82f0b54dc5a64c7fa3bca6a68e8e6384cfee5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "anisotropicParameters",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "dd6f9fbbcdad1568441179a4510863e797db4584740e00aedd226691496390e0"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "anisotropicPotential",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "6b501d55e81b68de2c63857c8285c2c8ba0309cdbbdf8c1387459b8a12923b72"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "circleInitialLaw",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "bae8e6144fe460615e4caeab535a75e5b9499641f12ee74b73c62b69cee996e7"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "circleInitialPoints",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "9d3d7f9dc4c14f8b91d052e3555ff7354d1e8a0b3dc21661eb023e8e7f4f1026"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT57_review.json",
+  "total_task_bytes": 135425
+}

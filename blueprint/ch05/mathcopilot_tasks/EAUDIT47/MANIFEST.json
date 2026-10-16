@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT47",
+  "input_sha256": {
+    "BATCH_EAUDIT47.md": "ba82fdc134ff39bda3b9c37a94d262afccb6e527729ed10c2f774a92e09391ee",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT47a",
+      "source_id": "MD-5.2.2-CompactAdjoint",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT47/a",
+      "total_bytes": 104984,
+      "manifest_sha256": "9a6b4a708c86f09afc2eb17911cf1542ca893d585605a6edd2cddf55755405e1"
+    },
+    {
+      "subtask": "EAUDIT47b",
+      "source_id": "MD-5.2.2-MeasurePropagator",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT47/b",
+      "total_bytes": 86098,
+      "manifest_sha256": "f79e3254fffc2f1357423beac39363c5445c987705528851a5e0a24c5516b833"
+    }
+  ]
+}

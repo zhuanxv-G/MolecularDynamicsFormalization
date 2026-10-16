@@ -63,7 +63,7 @@
 | MD-5.3.1-SchwartzSpace | 188/209 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.3.1-GeneralizedFunction | 188/209 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.3.1-SchwartzFunctional | 188/209 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.3.1-RegularDistribution | 188/209 | PASS | 待复审 / EAUDIT07 | self-contained |
+| MD-5.3.1-RegularDistribution | 188–189/209–210 | PASS | 待复审 / EAUDIT07 | self-contained |
 | MD-5.3.1-RegularDistributionLinearity | 188/209 | PASS | 待复审 / EAUDIT07 | self-contained |
 | MD-5.3.1-DiracAction | 189/210 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.3.1-DiracMeasure | 189/210 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
@@ -79,7 +79,7 @@
 | MD-5.3.2-EnergyDensityInvariant | 190/211 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | incomplete |
 | MD-5.3.2-ShellWeight | 190/211 | PASS | 待复审 / EAUDIT08 | self-contained |
 | MD-5.3.2-ShellPartition | 190–191/211–212 | PASS | 待复审 / EAUDIT08 | self-contained |
-| MD-5.3.2-ShellDensity | 190–191/211–212 | PASS | 待复审 / EAUDIT08 | self-contained |
+| MD-5.3.2-ShellDensity | 190/211 | PASS | 待复审 / EAUDIT08 | self-contained |
 | MD-5.3.2-EnergySurface | 191/212 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.3.2-SurfaceMeasure | 191/212 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.3.2-MicroRaw | 191/212 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
@@ -90,7 +90,7 @@
 | MD-5.3.2-NormalEnergyTaylor | 192/213 | PASS | 待复审 / EAUDIT09 | incomplete |
 | MD-5.3.2-NormalInverseTaylor | 192/213 | PASS | 待复审 / EAUDIT09 | incomplete |
 | MD-5.3.2-PatchShellVolume | 192–193/213–214 | PASS | 待导师 / EAUDIT09（原返回FAIL保留） | incomplete |
-| MD-5.3.2-WholeShellVolumeLimit | 192–193/213–214 | PASS | 待导师 / EAUDIT09（原返回FAIL保留） | incomplete |
+| MD-5.3.2-WholeShellVolumeLimit | 192/213 | PASS | 待导师 / EAUDIT09（原返回FAIL保留） | incomplete |
 | MD-5.3.2-MicroRawInvariant | 193/214 | PASS | 待复审 / EAUDIT09 | incomplete |
 | MD-5.3.2-MicroInvariant | 193/214 | PASS | 待复审 / EAUDIT09 | incomplete |
 | MD-5.3.2-MicroPartition | 193/214 | PASS | 待复审 / EAUDIT10 | self-contained |
@@ -98,9 +98,9 @@
 | MD-5.3.2-HarmonicEnergy | 193/214 | PASS | 待复审 / EAUDIT10 | incomplete |
 | MD-5.3.2-HarmonicQuadraturePrinted | 193/214 | NEEDS_HUMAN | 待导师 / EAUDIT10（原返回FAIL保留） | incomplete |
 | MD-5.3.2-HarmonicPartition | 193/214 | PASS | 待复审 / EAUDIT10 | incomplete |
-| MD-5.3.2-IdealGasEnergy | 193–194/214–215 | PASS | 待复审 / EAUDIT10 | self-contained |
+| MD-5.3.2-IdealGasEnergy | 193/214 | PASS | 待复审 / EAUDIT10 | self-contained |
 | MD-5.3.2-IdealGasPositionDomain | 193–194/214–215 | PASS | 待复审 / EAUDIT10 | self-contained |
-| MD-5.3.2-IdealGasPartition | 193–194/214–215 | PASS | 待复审 / EAUDIT10 | incomplete |
+| MD-5.3.2-IdealGasPartition | 194/215 | PASS | 待复审 / EAUDIT10 | incomplete |
 | MD-5.3.3-MicroMeasure | 194/215 | PASS | 待复审 / EAUDIT11 | self-contained |
 | MD-5.3.3-MicroProbability | 195/216 | PASS | 待复审 / EAUDIT11 | self-contained |
 | MD-5.3.3-LowerDimensionNull | 195/216 | PASS | 待复审 / EAUDIT11 | incomplete |
@@ -116,16 +116,16 @@
 | MD-5.4-DoubleWellBasin | 196/217 | PASS | 待复审 / EAUDIT12 | incomplete |
 | MD-5.4.1-UniformMicroErgodic | 197/218 | NEEDS_HUMAN | 待复审 / EAUDIT13 | self-contained |
 | MD-5.4.1-MicroErgodicStandard | 197/218 | PASS | 待复审 / EAUDIT13 | self-contained |
-| MD-5.4.1-FlowInvariant | 197–198/218–219 | PASS | 待复审 / EAUDIT13 | self-contained |
-| MD-5.4.1-SetErgodic | 197–198/218–219 | PASS | 待复审 / EAUDIT13 | self-contained |
+| MD-5.4.1-FlowInvariant | 197/218 | PASS | 待复审 / EAUDIT13 | self-contained |
+| MD-5.4.1-SetErgodic | 197/218 | PASS | 待复审 / EAUDIT13 | self-contained |
 | MD-5.4.1-InvariantIndicator | 198/219 | PASS | 待复审 / EAUDIT13 | checked+documented priors |
 | MD-5.4.1-InvariantIndicatorAverage | 198/219 | PASS | 待复审 / EAUDIT13 | incomplete |
 | MD-5.4.1-ErgodicTimeEquivalence | 198/219 | PASS | 待复审 / EAUDIT13 | incomplete |
 | MD-5.4.1-NonergodicSet | 198/219 | PASS | 待复审 / EAUDIT13 | incomplete |
-| MD-5.4.1-HarmonicFlow | 198–199/219–220 | PASS | 待复审 / EAUDIT14 | self-contained |
+| MD-5.4.1-HarmonicFlow | 198/219 | PASS | 待复审 / EAUDIT14 | self-contained |
 | MD-5.4.1-HarmonicErgodic | 198/219 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | incomplete |
 | MD-5.4.1-TwoOscillatorEnergy | 198–199/219–220 | PASS | 待复审 / EAUDIT14 | self-contained |
-| MD-5.4.1-TwoOscillatorFlow | 198–199/219–220 | PASS | 待复审 / EAUDIT14 | incomplete |
+| MD-5.4.1-TwoOscillatorFlow | 199/220 | PASS | 待复审 / EAUDIT14 | incomplete |
 | MD-5.4.1-TwoOscillatorTori | 199/220 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | incomplete |
 | MD-5.4.1-Mixing | 199/220 | PASS | 待复审 / EAUDIT14 | self-contained |
 | MD-5.4.1-KAMPersistence | 200/221 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | incomplete |
@@ -141,7 +141,7 @@
 | MD-5.4.1-CircleInitialPoints | 202/223 | PASS | 待复审 / EAUDIT16 | self-contained |
 | MD-5.4.1-CircleInitialLaw | 202/223 | PASS | 待复审 / EAUDIT16 | self-contained |
 | MD-5.4.1-CircleInitialEnergy | 202/223 | PASS | 待复审 / EAUDIT16 | incomplete |
-| MD-5.5-Correlation | 203/224 | PASS | 待复审 / EAUDIT17 | self-contained |
+| MD-5.5-Correlation | 203–204/224–225 | PASS | 待复审 / EAUDIT17 | self-contained |
 | MD-5.5-CorrelationPullback | 204/225 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | checked+documented priors |
 | MD-5.5-CorrelationTimePrinted | 204/225 | NEEDS_HUMAN | 待导师 / EAUDIT17（原返回FAIL保留） | incomplete |
 | MD-5.5-CorrelationTimeAE | 204/225 | PASS | 待复审 / EAUDIT17 | self-contained |
@@ -175,14 +175,14 @@
 | MD-5.6-PerturbationCorrection | 209/230 | PASS | 待复审 / EAUDIT21 | self-contained |
 | MD-5.6-DenominatorBound | 209/230 | PASS | 待复审 / EAUDIT22 | checked+documented priors |
 | MD-5.6-SmoothDenominatorBound | 209/230 | PASS | 待复审 / EAUDIT22 | checked+documented priors |
-| MD-5.6-ZeroPerturbation | 209/230 | PASS | 待复审 / EAUDIT22 | checked+documented priors |
+| MD-5.6-ZeroPerturbation | 208–209/229–230 | PASS | 待复审 / EAUDIT22 | checked+documented priors |
 | MD-5.6-GradientTransverse | 209/230 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.6-DynamicalCorrection | 209/230 | PASS | 待复审 / EAUDIT22 | incomplete |
 | MD-5.6-ForwardNormDivergence | 207/228 | PASS | 待导师 / EAUDIT22（原返回FAIL保留） | self-contained |
 | MD-5.6-WeakStationary | 207/228 | PASS | 待复审 / EAUDIT22 | self-contained |
 | MD-5.6-WeakAttractor | 207/228 | PASS | 待复审 / EAUDIT22 | self-contained |
 | MD-5.6-EulerLogField | 207/228 | PASS | 待复审 / EAUDIT22 | self-contained |
-| MD-5.6-EulerLogFlow | 207/228 | PASS | 待复审 / EAUDIT23 | self-contained |
+| MD-5.6-EulerLogFlow | 206/227 | PASS | 待复审 / EAUDIT23 | self-contained |
 | MD-5.6-EulerLogCorrespondence | 206–207/227–228 | PASS | 待复审 / EAUDIT23 | self-contained |
 | MD-5.6-ForwardWeakStationary | 207/228 | PASS | 待复审 / EAUDIT23 | incomplete |
 | MD-5.6-BackwardWeakStationary | 207/228 | PASS | 待复审 / EAUDIT23 | incomplete |
@@ -3142,7 +3142,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`6424d1e9072feba9f56573a3bcb7dcfc065a0a3f1496b53c10b5380e047a8f4f`；原文SHA256：`2e04c70a3459621c334ad1868e9a24a3d77e16f4a5d5f20a013077ba2ba30c08`。
 
-## 1. MD-5.3.1-RegularDistribution · definition · 印刷p.188 / PDFp.209
+## 1. MD-5.3.1-RegularDistribution · definition · 印刷p.188–189 / PDFp.209–210
 
 ### 2. 原文陈述
 
@@ -3186,7 +3186,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`2b4f489506706c76b07cef60339e49a39cdd3e37b4c5fbfdde2043174652ece7`；原文SHA256：`b296be85d731baffb8c9ee0db19dbfd1067554ef53650f3d7a64637232117685`。
+签名SHA256：`2b4f489506706c76b07cef60339e49a39cdd3e37b4c5fbfdde2043174652ece7`；原文SHA256：`a5aa866b398bac9198911a7bebfbf243caef9ada007cc7e3b779fe3c0a35cbfe`。
 
 ## 1. MD-5.3.1-RegularDistributionLinearity · unnumbered_claim · 印刷p.188 / PDFp.209
 
@@ -3936,7 +3936,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`b0c715394bcebcfabe4f0ecd8ee0ab160bd46135b6de20139101d15a02d62708`；原文SHA256：`cf218f24c10677fa14eece2cd5fb0ea57aa4e384d1c168795c8dccf59fc941f7`。
 
-## 1. MD-5.3.2-ShellDensity · definition · 印刷p.190–191 / PDFp.211–212
+## 1. MD-5.3.2-ShellDensity · definition · 印刷p.190 / PDFp.211
 
 ### 2. 原文陈述
 
@@ -3978,7 +3978,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`2832216b7b14bc8b27730ffa6d5ffc7fbaec8fc160f00179b07ca5ed5180bedd`；原文SHA256：`72de220e3731b01d0dbd51d593b2c76566c4a846a4f49e5ef4b7a5dd809c2647`。
+签名SHA256：`2832216b7b14bc8b27730ffa6d5ffc7fbaec8fc160f00179b07ca5ed5180bedd`；原文SHA256：`e668f0e01f181c9e39d40f3c03d41c99b1612e4aff5b54ab91b0e176d543263a`。
 
 ## 1. MD-5.3.2-EnergySurface · definition · 印刷p.191 / PDFp.212
 
@@ -4499,7 +4499,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`745a3f5783fd19a09c79849333f6a92a52d59f8ff8b68bade9ace488c33eb0a1`；原文SHA256：`75851dbb74816f3e77955b3d2635d94c52dbedcdcc70156a1993aff3d3a70421`。
 
-## 1. MD-5.3.2-WholeShellVolumeLimit · unnumbered_claim · 印刷p.192–193 / PDFp.213–214
+## 1. MD-5.3.2-WholeShellVolumeLimit · unnumbered_claim · 印刷p.192 / PDFp.213
 
 ### 2. 原文陈述
 
@@ -4553,7 +4553,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 缺失/继续路线：缺能量壳层coarea积分接口；不建设大型几何理论。
 
-签名SHA256：`a5853158307a3d4c8f562de5ce3ec3c4beb92ada10c2b0e45a434f1ac1fbba50`；原文SHA256：`2e7f2e3539697c4032c9332864e1497eab13287b157b4c6982c0671cafeaabbb`。
+签名SHA256：`a5853158307a3d4c8f562de5ce3ec3c4beb92ada10c2b0e45a434f1ac1fbba50`；原文SHA256：`9ccea8e649431f5f5e62932e8b7d329dc646fa385424f77433157e80376d7ea1`。
 
 ## 1. MD-5.3.2-MicroRawInvariant · unnumbered_claim · 印刷p.193 / PDFp.214
 
@@ -4921,7 +4921,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`d03f3794eaadffe2cda748a96cbe11c80cf2e047459f8a7d6767e411a9d05352`；原文SHA256：`565c17e472b755b6586ca69c2d510d2ae8501927002689bd4df0854e417178cf`。
 
-## 1. MD-5.3.2-IdealGasEnergy · Example 5.2 · 印刷p.193–194 / PDFp.214–215
+## 1. MD-5.3.2-IdealGasEnergy · Example 5.2 · 印刷p.193 / PDFp.214
 
 ### 2. 原文陈述
 
@@ -4965,7 +4965,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`6f280b1fdaed695c698e5211aeb87aed96e25ab4f956de8f09b20acfc7617a8d`；原文SHA256：`5361d0a3e538fbdc939ff1a4831895984437dca707f83cd165fd294f2da508bc`。
+签名SHA256：`6f280b1fdaed695c698e5211aeb87aed96e25ab4f956de8f09b20acfc7617a8d`；原文SHA256：`cfc521222c1801eae3c3e250f7506902657ccdd61662cc424da52475bcef918c`。
 
 ## 1. MD-5.3.2-IdealGasPositionDomain · definition · 印刷p.193–194 / PDFp.214–215
 
@@ -5018,7 +5018,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`6adb12e2ff24d4c16a954e1dea0eaa26a54bb44205877caad4ee569516080fce`；原文SHA256：`03ccb87223b1e69b3e7f12dda94c4565f1e967d867628c4b7eb5fda9805d75cb`。
 
-## 1. MD-5.3.2-IdealGasPartition · Example 5.2 · 印刷p.193–194 / PDFp.214–215
+## 1. MD-5.3.2-IdealGasPartition · Example 5.2 · 印刷p.194 / PDFp.215
 
 ### 2. 原文陈述
 
@@ -5073,7 +5073,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 缺失/继续路线：缺真实3N球面积、曲面产品测度与微正则权积分桥接；不建设coarea/大型几何理论。
 
-签名SHA256：`83d2b5818032ca68689056e35627eb1693a89aff457baf594c7d4c83d3334fb4`；原文SHA256：`22e54c07454d2a1114b355634d947bcf134edc0ff2c0491aa47baa977d2262b8`。
+签名SHA256：`83d2b5818032ca68689056e35627eb1693a89aff457baf594c7d4c83d3334fb4`；原文SHA256：`3ff945d5568fc9a79f15b191dc0b2813c02e62aaaa089b12eb651be5477bc3c5`。
 
 ## 1. MD-5.3.3-MicroMeasure · definition · 印刷p.194 / PDFp.215
 
@@ -5862,7 +5862,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`a1c677b9f093a6a54d638380f2a73c1d495b2808cf0fb61c0d6298f0714deb14`；原文SHA256：`45d10b5648d2fe2778392d6291ab579ae9fc41671d94e752c24958db267c99b6`。
 
-## 1. MD-5.4.1-FlowInvariant · definition · 印刷p.197–198 / PDFp.218–219
+## 1. MD-5.4.1-FlowInvariant · definition · 印刷p.197 / PDFp.218
 
 ### 2. 原文陈述
 
@@ -5910,9 +5910,9 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`29cf8bedf522689c4dfb2b73e51c60601592b7ae53e6ae7ad7eda9244753564c`；原文SHA256：`9a92d49aecbb54752713e34cd351ef1f661ed3cbe778a84e3317db56d1f890df`。
+签名SHA256：`29cf8bedf522689c4dfb2b73e51c60601592b7ae53e6ae7ad7eda9244753564c`；原文SHA256：`ed321109c0fe0728cc7864391e06b21569dd4773c33a20db0cb73a30a0bde491`。
 
-## 1. MD-5.4.1-SetErgodic · definition · 印刷p.197–198 / PDFp.218–219
+## 1. MD-5.4.1-SetErgodic · definition · 印刷p.197 / PDFp.218
 
 ### 2. 原文陈述
 
@@ -5964,7 +5964,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`ffcdee4dce2bf9b5fc6bb63cbee6d2f92dc5987b9e1e6e40a368672718fa638b`；原文SHA256：`4e7de2b8e17f08053144cdacc800a3b79119f609370bda106e88eba888a0e783`。
+签名SHA256：`ffcdee4dce2bf9b5fc6bb63cbee6d2f92dc5987b9e1e6e40a368672718fa638b`；原文SHA256：`ec2a31556d039548dab3b1e0c517a27948d2b66fb41d512b5039cb12274fa54f`。
 
 ## 1. MD-5.4.1-InvariantIndicator · unnumbered_claim · 印刷p.198 / PDFp.219
 
@@ -6180,7 +6180,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`e26f293f566f92bfbbf18919bc05748a7262c18b26429180ab256d1ba4ebb950`；原文SHA256：`2d14f440c721943b961221682a022b04fc8b77ca364c9f3271d5b4b8d7a64922`。
 
-## 1. MD-5.4.1-HarmonicFlow · definition · 印刷p.198–199 / PDFp.219–220
+## 1. MD-5.4.1-HarmonicFlow · definition · 印刷p.198 / PDFp.219
 
 ### 2. 原文陈述
 
@@ -6230,7 +6230,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`64fc0ef5a63be4217086a8b4dbc3ca023c7eccafbec582e92a6bd68bf0e4ed69`；原文SHA256：`2d59a725e654a81618ba186dd1031719c559a5b7381a3da98da3d57117818b53`。
+签名SHA256：`64fc0ef5a63be4217086a8b4dbc3ca023c7eccafbec582e92a6bd68bf0e4ed69`；原文SHA256：`a1c2697848c7f02e3583eecbbf1bfdab2f0b0f14569dbcf67f9fac7b6a832d70`。
 
 ## 1. MD-5.4.1-HarmonicErgodic · unnumbered_claim · 印刷p.198 / PDFp.219
 
@@ -6332,7 +6332,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`ab0745151619fe658a5e2649baf952b325bee0100a147563a933c303a3768ce2`；原文SHA256：`5e73f3c240ba3f50a721a5b8553f37d1e6e10601f976c2911720e7142cb1bff7`。
 
-## 1. MD-5.4.1-TwoOscillatorFlow · definition · 印刷p.198–199 / PDFp.219–220
+## 1. MD-5.4.1-TwoOscillatorFlow · definition · 印刷p.199 / PDFp.220
 
 ### 2. 原文陈述
 
@@ -6389,7 +6389,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`5dd4a70d74e58409d6735b14db0c9f856eb89e59635e4415c414a1a209353856`；原文SHA256：`ebb55acc3c197dbf6e08d99e79618904b1d959b18127f35e64066f3595bf45f4`。
+签名SHA256：`5dd4a70d74e58409d6735b14db0c9f856eb89e59635e4415c414a1a209353856`；原文SHA256：`8683a1de2a5a5af0d79eb7903381f4786f1e3742b155b09081f54465971da8c2`。
 
 ## 1. MD-5.4.1-TwoOscillatorTori · Example 5.4 · 印刷p.199 / PDFp.220
 
@@ -7185,7 +7185,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`255e8075c188c8bca3560e66409ee974e1c3e95679da0106e4bcade255e4abc9`；原文SHA256：`39be934308c73e49298770dba816359e4e3b70bf6ef06fe6f7ced1558d73ef65`。
 
-## 1. MD-5.5-Correlation · definition · 印刷p.203 / PDFp.224
+## 1. MD-5.5-Correlation · definition · 印刷p.203–204 / PDFp.224–225
 
 ### 2. 原文陈述
 
@@ -7231,7 +7231,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`815a63cef778f82e48485d9b2de2696440d69be928f0e47e8d22a708fa09a10f`；原文SHA256：`60134d3efeb3b9de976d23939100c1b6c37fc4dcc44bb6229a33e373d6b96c70`。
+签名SHA256：`815a63cef778f82e48485d9b2de2696440d69be928f0e47e8d22a708fa09a10f`；原文SHA256：`52aebfd2ed9333b89d65818d994484d44300d85fe7379a51d903aae40448954a`。
 
 ## 1. MD-5.5-CorrelationPullback · unnumbered_claim · 印刷p.204 / PDFp.225
 
@@ -8967,7 +8967,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`ab4215148e7a0a5f14ce3110d403c8b33b231bfb7a9ade041ac13e0f15a7d9bd`；原文SHA256：`930eb113d7a2e614955315f743c47d38b445abf0bbae5ed25d3e0cdec9259c08`。
 
-## 1. MD-5.6-ZeroPerturbation · unnumbered_claim · 印刷p.209 / PDFp.230
+## 1. MD-5.6-ZeroPerturbation · unnumbered_claim · 印刷p.208–209 / PDFp.229–230
 
 ### 2. 原文陈述
 
@@ -9018,7 +9018,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 已登记前置证明/定义：MolecularDynamics.Chapter05Review.zeroPerturbation_proved。
 
-签名SHA256：`729c3a09f3c3bf64dda3a4f304e76c5fa5e823bb65d1766fd7da76f2c67ac1b2`；原文SHA256：`fc31d5473e9d56ce983e97106427bf4228e176630ce33d391f760d291588d092`。
+签名SHA256：`729c3a09f3c3bf64dda3a4f304e76c5fa5e823bb65d1766fd7da76f2c67ac1b2`；原文SHA256：`688cf4789672e3dd412a57feffe8ebbe93e723c0fe6b8ccf3489af4cd5d75225`。
 
 ## 1. MD-5.6-GradientTransverse · unnumbered_claim · 印刷p.209 / PDFp.230
 
@@ -9341,7 +9341,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`7e4ae379eb96a77abaa7fd3418edf4fbbed45e80339fc8ebbe3971b4a26f6258`；原文SHA256：`8bac3e3c6b26220a7c2de48939e7d4cceae4f71cbe768edb5830b70ffafdfe40`。
 
-## 1. MD-5.6-EulerLogFlow · definition · 印刷p.207 / PDFp.228
+## 1. MD-5.6-EulerLogFlow · definition · 印刷p.206 / PDFp.227
 
 ### 2. 原文陈述
 
@@ -9393,7 +9393,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`415862cf143ab44d5207a600a38711b44e515aa030cee02acd31004a72121c2e`；原文SHA256：`385783c4f789715c710b53c1bfb0c0e25abe404042c114ad7f49cc3bac092cf7`。
+签名SHA256：`415862cf143ab44d5207a600a38711b44e515aa030cee02acd31004a72121c2e`；原文SHA256：`79f1f10a6bc62312997846c449586ed7a7dc864dc3f1d450e6724e5a549de83a`。
 
 ## 1. MD-5.6-EulerLogCorrespondence · unnumbered_claim · 印刷p.206–207 / PDFp.227–228
 

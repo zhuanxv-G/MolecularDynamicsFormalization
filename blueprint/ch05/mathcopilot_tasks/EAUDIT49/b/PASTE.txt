@@ -1,0 +1,96 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.3.1-RegularDistribution；原PDF页映射=[209, 210]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT49_review.json，对象含batch=EAUDIT49、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT49.md": "c89920ea228cd66a32ba1177ce9c66d409517eb356efc976392ee2108ec89e7d",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "EAUDIT49b_materials": "22d0dc4b455c22f822d6974da8f58cadcc6ca9612e49c104216728a8b45a545f",
+  "EAUDIT49b_PAGES.pdf": "5bb97a22b480745aea77553d932fa255ba150256ef937c53ed25a8433a9a3b4b"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.3.1-RegularDistribution",
+  "kind": "definition",
+  "label": null,
+  "section": "5.3.1",
+  "printed_page": "188–189",
+  "pdf_page": "209–210",
+  "statement_latex": "If $f$ is a bounded, smooth function on $\\mathbb R^m$, we may define a generalized function $T_f$ by reference to its action on a test function $\\phi\\in\\mathcal T$ via integration:\n\\[T_f(\\phi)=\\int_{\\mathbb R^m}f(z)\\phi(z)d\\omega.\\]\nThis is very like the $L^2$ inner product, but the functions involved do not both need to lie in $L^2$. Nevertheless, we write $T_f(\\phi)=\\langle f,\\phi\\rangle$, as a helpful shorthand.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "实际Lebesgue积分配对；线性泛函性质及有界光滑f下可积性须另证，定义编译未代替这一结论。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.regularDistribution",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT07_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:57:24.308932",
+      "before_sha256": "bb7ea56efbc4935d1abc093fefcd4deaca0cb80b6f15e3d26f260d1e0a727124",
+      "after_sha256": "88277dc08a9391e5dac116d37607ba2360a18adfe1f373951961f0aff0047a72",
+      "changed_fields": [],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    },
+    {
+      "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+      "timestamp": "2026-10-16T10:28:28.864805",
+      "before_sha256": "88277dc08a9391e5dac116d37607ba2360a18adfe1f373951961f0aff0047a72",
+      "after_sha256": "f7b0cfb3ad64acdece66dd78027da14648aa1e7eba0899bea60c2ee5fb06a1bf",
+      "changed_fields": [
+        "printed_page",
+        "pdf_page"
+      ],
+      "changes": {
+        "printed_page": {
+          "before": "188",
+          "after": "188–189"
+        },
+        "pdf_page": {
+          "before": "209",
+          "after": "209–210"
+        }
+      },
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+      "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def regularDistribution {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → ℝ) (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := ∫ z, f z*φ z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.schwartzSpace
+```lean
+abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
+```
+### 实际依赖 MD.Ch05.regularDistribution
+```lean
+def regularDistribution {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → ℝ) (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := ∫ z, f z*φ z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.schwartzSpace
+```lean
+abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
+```

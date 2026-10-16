@@ -1,0 +1,56 @@
+{
+  "eaudit": "EAUDIT49",
+  "source_id": "MD-5.3.1-RegularDistribution",
+  "input_sha256": {
+    "BATCH_EAUDIT49.md": "c89920ea228cd66a32ba1177ce9c66d409517eb356efc976392ee2108ec89e7d",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "EAUDIT49b_materials": "22d0dc4b455c22f822d6974da8f58cadcc6ca9612e49c104216728a8b45a545f",
+    "EAUDIT49b_PAGES.pdf": "5bb97a22b480745aea77553d932fa255ba150256ef937c53ed25a8433a9a3b4b"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    209,
+    210
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "935c8f546e3acbe99cfe2a331c04d7cca4030cee77682e3e314a4cbe68c4f6f2",
+  "source_block_sha256": "2b4f489506706c76b07cef60339e49a39cdd3e37b4c5fbfdde2043174652ece7",
+  "source_declarations": [
+    "regularDistribution"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.schwartzSpace",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "420f2d68754e2508ae8c234dbcfe03973c08a6931c639f4ca4c6def9d0a63c97"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "regularDistribution",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "2b4f489506706c76b07cef60339e49a39cdd3e37b4c5fbfdde2043174652ece7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "schwartzSpace",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "420f2d68754e2508ae8c234dbcfe03973c08a6931c639f4ca4c6def9d0a63c97"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT49_review.json",
+  "total_task_bytes": 115534
+}

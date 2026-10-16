@@ -1,0 +1,50 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT43",
+  "section": "5.1",
+  "source_ids": [
+    "MD-5.1-FlowFieldTransport",
+    "MD-5.1-SolutionOperator",
+    "MD-5.1-CoordinateLie",
+    "MD-5.1-LiePullbackCommutes"
+  ],
+  "reaudit_ids": [
+    "MD-5.1-FlowFieldTransport",
+    "MD-5.1-SolutionOperator",
+    "MD-5.1-CoordinateLie",
+    "MD-5.1-LiePullbackCommutes"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.1-FlowFieldTransport",
+      "prior_eaudit": "EAUDIT24",
+      "acceptance": "blueprint/ch05/validation/EAUDIT24/ACCEPTANCE.json",
+      "sha256": "026fb9fa63879037e12e8c6500592e1a3ba500194fb9849a5de33a23e8620c81"
+    },
+    {
+      "source_id": "MD-5.1-SolutionOperator",
+      "prior_eaudit": "EAUDIT24",
+      "acceptance": "blueprint/ch05/validation/EAUDIT24/ACCEPTANCE.json",
+      "sha256": "026fb9fa63879037e12e8c6500592e1a3ba500194fb9849a5de33a23e8620c81"
+    },
+    {
+      "source_id": "MD-5.1-CoordinateLie",
+      "prior_eaudit": "EAUDIT24",
+      "acceptance": "blueprint/ch05/validation/EAUDIT24/ACCEPTANCE.json",
+      "sha256": "026fb9fa63879037e12e8c6500592e1a3ba500194fb9849a5de33a23e8620c81"
+    },
+    {
+      "source_id": "MD-5.1-LiePullbackCommutes",
+      "prior_eaudit": "EAUDIT24",
+      "acceptance": "blueprint/ch05/validation/EAUDIT24/ACCEPTANCE.json",
+      "sha256": "026fb9fa63879037e12e8c6500592e1a3ba500194fb9849a5de33a23e8620c81"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT43/INDEX.md"
+}

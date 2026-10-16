@@ -1,0 +1,74 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT49",
+  "section": "5.3.1",
+  "source_ids": [
+    "MD-5.3.1-TestSpace",
+    "MD-5.3.1-RegularDistribution",
+    "MD-5.3.1-RegularDistributionLinearity",
+    "MD-5.3.1-GaussianDelta",
+    "MD-5.3.1-DiracEvaluates",
+    "MD-5.3.1-GaussianDeltaProbability",
+    "MD-5.3.1-GaussianDeltaWeak"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.1-TestSpace",
+    "MD-5.3.1-RegularDistribution",
+    "MD-5.3.1-RegularDistributionLinearity",
+    "MD-5.3.1-GaussianDelta",
+    "MD-5.3.1-DiracEvaluates",
+    "MD-5.3.1-GaussianDeltaProbability",
+    "MD-5.3.1-GaussianDeltaWeak"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.3.1-TestSpace",
+      "prior_eaudit": "EAUDIT30",
+      "acceptance": "blueprint/ch05/validation/EAUDIT30/ACCEPTANCE.json",
+      "sha256": "b29f166d5ab3aa90ab46340072057dff18163b0528323322d7b5c5c6b8fe0875"
+    },
+    {
+      "source_id": "MD-5.3.1-RegularDistribution",
+      "prior_eaudit": "EAUDIT30",
+      "acceptance": "blueprint/ch05/validation/EAUDIT30/ACCEPTANCE.json",
+      "sha256": "b29f166d5ab3aa90ab46340072057dff18163b0528323322d7b5c5c6b8fe0875"
+    },
+    {
+      "source_id": "MD-5.3.1-RegularDistributionLinearity",
+      "prior_eaudit": "EAUDIT30",
+      "acceptance": "blueprint/ch05/validation/EAUDIT30/ACCEPTANCE.json",
+      "sha256": "b29f166d5ab3aa90ab46340072057dff18163b0528323322d7b5c5c6b8fe0875"
+    },
+    {
+      "source_id": "MD-5.3.1-GaussianDelta",
+      "prior_eaudit": "EAUDIT30",
+      "acceptance": "blueprint/ch05/validation/EAUDIT30/ACCEPTANCE.json",
+      "sha256": "b29f166d5ab3aa90ab46340072057dff18163b0528323322d7b5c5c6b8fe0875"
+    },
+    {
+      "source_id": "MD-5.3.1-DiracEvaluates",
+      "prior_eaudit": "EAUDIT30",
+      "acceptance": "blueprint/ch05/validation/EAUDIT30/ACCEPTANCE.json",
+      "sha256": "b29f166d5ab3aa90ab46340072057dff18163b0528323322d7b5c5c6b8fe0875"
+    },
+    {
+      "source_id": "MD-5.3.1-GaussianDeltaProbability",
+      "prior_eaudit": "EAUDIT30",
+      "acceptance": "blueprint/ch05/validation/EAUDIT30/ACCEPTANCE.json",
+      "sha256": "b29f166d5ab3aa90ab46340072057dff18163b0528323322d7b5c5c6b8fe0875"
+    },
+    {
+      "source_id": "MD-5.3.1-GaussianDeltaWeak",
+      "prior_eaudit": "EAUDIT30",
+      "acceptance": "blueprint/ch05/validation/EAUDIT30/ACCEPTANCE.json",
+      "sha256": "b29f166d5ab3aa90ab46340072057dff18163b0528323322d7b5c5c6b8fe0875"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT49/INDEX.md"
+}
