@@ -1,0 +1,98 @@
+{
+  "eaudit": "EAUDIT54",
+  "source_id": "MD-3.3.3-Yoshida4",
+  "input_sha256": {
+    "BATCH_EAUDIT54.md": "49e6a92f81ac814816ecf838a890d1c9f2c1b4e889c72c6f246c01cb5c7ef322",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT54b_materials": "9f2a7af64981169042926b1ba7892319910139e109d08c7aef3ab105d2dae111",
+    "EAUDIT54b_PAGES.pdf": "f38495b09034f297d3390791b4fbf68534f4fced35f5a9c1c9d1e9deba8074f9"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    131,
+    132
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "1f9871bfa11ad6047772f4a3d43671998b16882f974c6c95355d032e71f3da98",
+  "source_block_sha256": "c744ccaee8111f0c3c42d7d0b02c3d9afb2152cc6bf3a248dcfdd1f4eb71089e",
+  "source_declarations": [
+    "yoshida4"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "coordinateVerlet",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "0efdffebb2a5499eabcd09eec612be3ee5eeaeae379ac60a1891a7c991973d5a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "positiveMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "b9acc89b85e9b87ac122f258b0bd23cb20efd6ecc4ec0894b39658f630a85d21"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookMomentumKick",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "140fb611184d1fe410f849925b752e19bca879083ad3b90037363a059820d604"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookPositionDrift",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "2cb1c98648cdcff42e0f32a16e159ea1f67f39c35c11b9da21600c85624e4813"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookPositionProjection",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "e26c2a0065ed4d17a75fd55ee46cc91cdf21abead5097b255cf11154196c56b0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookPotentialForce",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "yoshida4",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "c744ccaee8111f0c3c42d7d0b02c3d9afb2152cc6bf3a248dcfdd1f4eb71089e"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "yoshidaCoefficients",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "d06e66714f0a3b220ea448d5ef241e77ed15bac230997c39b3aaedd6f86276ff"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "yoshidaCompose",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "eeac5c1c96fc6cedf83cddd8df38c715358be84a7a0d3c168b1c5c71ada8f84c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "yoshidaRoot",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "50e2b7601bd13a41de5ce8a28b7b72e28acedf9c4907a921f7b130090ff24038"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT54_review.json",
+  "total_task_bytes": 110969
+}

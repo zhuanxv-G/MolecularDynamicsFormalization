@@ -1,0 +1,42 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT54",
+  "section": "3.3.3",
+  "source_ids": [
+    "MD-3.3.3-YoshidaRaiseOrder",
+    "MD-3.3.3-Yoshida4",
+    "MD-3.3.3-Yoshida4Structure"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.3-YoshidaRaiseOrder",
+    "MD-3.3.3-Yoshida4",
+    "MD-3.3.3-Yoshida4Structure"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.3.3-YoshidaRaiseOrder",
+      "prior_eaudit": "EAUDIT43",
+      "acceptance": "blueprint/ch03/validation/EAUDIT43/ACCEPTANCE.json",
+      "sha256": "b10b6d1d4e2c0de9f4e976fc720fed7bf6626bdd12ce6c4dc64e199ba6f3b9db"
+    },
+    {
+      "source_id": "MD-3.3.3-Yoshida4",
+      "prior_eaudit": "EAUDIT27",
+      "acceptance": "blueprint/ch03/validation/EAUDIT27/ACCEPTANCE.json",
+      "sha256": "6521a5998b76b3b5499ad42d77312d3a2ae8519d0c11aca7ba73206c21383fe9"
+    },
+    {
+      "source_id": "MD-3.3.3-Yoshida4Structure",
+      "prior_eaudit": "EAUDIT27",
+      "acceptance": "blueprint/ch03/validation/EAUDIT27/ACCEPTANCE.json",
+      "sha256": "6521a5998b76b3b5499ad42d77312d3a2ae8519d0c11aca7ba73206c21383fe9"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT54/INDEX.md"
+}

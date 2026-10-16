@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT50",
+  "source_id": "MD-3.2-ObservableDerivative",
+  "input_sha256": {
+    "BATCH_EAUDIT50.md": "abf48e7ee3d41bfe9aaa715e59ef77e694328351a0c2a85bc39189fdd3485c5f",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT50a_materials": "af090f8eefb8d04826cddc9417b49be244e8c05eab18f7e6e3246aa7f76edd23",
+    "EAUDIT50a_PAGES.pdf": "8b86a6d726ecff1bfe6e0a7e80750e2588cf305240868824df73210f55d1df6b"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    122,
+    123
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "7b3a322dfa4636026c611f173346976e8ca9bb4d67d8139fa47a9d8d69fe1853",
+  "source_block_sha256": "9b01941be78f9dd92be4991f6784383b7ba76528aa1d16d3b09c8fa1e321a620",
+  "source_declarations": [
+    "observableDerivative"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "textbookLieDerivative",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "568897e0d038d7a64bb00948ec5045c2014446c16bba7bc93488b691f9d2e415"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT50_review.json",
+  "total_task_bytes": 117149
+}

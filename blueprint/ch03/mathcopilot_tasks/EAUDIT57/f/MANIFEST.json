@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT57",
+  "source_id": "MD-3.4-ScalarVerletShadow4",
+  "input_sha256": {
+    "BATCH_EAUDIT57.md": "73220b794f344f19691567dcb7563af3c90e81d18231470edb56aa8f0730dad3",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT57f_materials": "4258391ba31233b1e4a4bc7e25e72c91505d4adb98c4bc208c75e0331ff65305",
+    "EAUDIT57f_PAGES.pdf": "d945dfc2007cb0d2dbc0c95c9dbfeb26e88c6383b4f57e496809ed14d5023002"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    139
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "939b8c90544702214a241c54eb29e7c14ec9d217eec5798968c8ea0edd65f286",
+  "source_block_sha256": "b59736532f701e11e57c39fd2c10642b136957ec48a21af3cb5a60727a794bb6",
+  "source_declarations": [
+    "scalarVerletShadow4",
+    "scalarVerletShadow4_matching"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "scalarVerletShadow4",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "0a044f304059badf4881166f196e4d0e33728eae6c9d1dce50cc77f41c39f1d5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "solution",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "4246b13784e62583efb6e55b0aaf0235c08565f8c3c6ec6bf888afa19baaf49b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT57_review.json",
+  "total_task_bytes": 209796
+}

@@ -1,0 +1,66 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT53",
+  "section": "3.3.2",
+  "source_ids": [
+    "MD-3.3.2-VerletHamiltonianParts",
+    "MD-3.3.2-VerletModifiedHamiltonian",
+    "MD-3.3.2-VerletModifiedMatching",
+    "MD-3.3.2-ModifiedEven",
+    "MD-3.3.2-Strang",
+    "MD-3.3.2-StrangCubic"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.2-VerletHamiltonianParts",
+    "MD-3.3.2-VerletModifiedHamiltonian",
+    "MD-3.3.2-VerletModifiedMatching",
+    "MD-3.3.2-ModifiedEven",
+    "MD-3.3.2-Strang",
+    "MD-3.3.2-StrangCubic"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.3.2-VerletHamiltonianParts",
+      "prior_eaudit": "EAUDIT26",
+      "acceptance": "blueprint/ch03/validation/EAUDIT26/ACCEPTANCE.json",
+      "sha256": "122bc9e2ba4becc3124b7c1cc6b53b29f176aea25c291c99c940d6fad92396bc"
+    },
+    {
+      "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+      "prior_eaudit": "EAUDIT26",
+      "acceptance": "blueprint/ch03/validation/EAUDIT26/ACCEPTANCE.json",
+      "sha256": "122bc9e2ba4becc3124b7c1cc6b53b29f176aea25c291c99c940d6fad92396bc"
+    },
+    {
+      "source_id": "MD-3.3.2-VerletModifiedMatching",
+      "prior_eaudit": "EAUDIT42",
+      "acceptance": "blueprint/ch03/validation/EAUDIT42/ACCEPTANCE.json",
+      "sha256": "5cc5787705df5f73dbdfde6ca52dcbcafdd488b5617707edf3c0fc6d4528cf04"
+    },
+    {
+      "source_id": "MD-3.3.2-ModifiedEven",
+      "prior_eaudit": "EAUDIT26",
+      "acceptance": "blueprint/ch03/validation/EAUDIT26/ACCEPTANCE.json",
+      "sha256": "122bc9e2ba4becc3124b7c1cc6b53b29f176aea25c291c99c940d6fad92396bc"
+    },
+    {
+      "source_id": "MD-3.3.2-Strang",
+      "prior_eaudit": "EAUDIT26",
+      "acceptance": "blueprint/ch03/validation/EAUDIT26/ACCEPTANCE.json",
+      "sha256": "122bc9e2ba4becc3124b7c1cc6b53b29f176aea25c291c99c940d6fad92396bc"
+    },
+    {
+      "source_id": "MD-3.3.2-StrangCubic",
+      "prior_eaudit": "EAUDIT26",
+      "acceptance": "blueprint/ch03/validation/EAUDIT26/ACCEPTANCE.json",
+      "sha256": "122bc9e2ba4becc3124b7c1cc6b53b29f176aea25c291c99c940d6fad92396bc"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT53/INDEX.md"
+}

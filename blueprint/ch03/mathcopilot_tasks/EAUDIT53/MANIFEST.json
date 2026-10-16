@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT53",
+  "input_sha256": {
+    "BATCH_EAUDIT53.md": "8ac3838f9ed4bdf3dce906b1dfd76828d9700e8233ab86e4175cb2cd8f707923",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT53a",
+      "source_id": "MD-3.3.2-VerletHamiltonianParts",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT53/a",
+      "total_bytes": 93662,
+      "manifest_sha256": "9dd88054c5d6b07d14f89c0a1715f2f2372a2ecb0c201dd7d545600f62f563c0"
+    },
+    {
+      "subtask": "EAUDIT53b",
+      "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT53/b",
+      "total_bytes": 94744,
+      "manifest_sha256": "8cac3d83245ac93a437df284f1901b36dcaf996ca7a935dd34691869e3509de4"
+    },
+    {
+      "subtask": "EAUDIT53c",
+      "source_id": "MD-3.3.2-VerletModifiedMatching",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT53/c",
+      "total_bytes": 104185,
+      "manifest_sha256": "79b97e8a9756059908081cd96a5809f4af4779d6f537d397c0e38f2b85aa14ca"
+    },
+    {
+      "subtask": "EAUDIT53d",
+      "source_id": "MD-3.3.2-ModifiedEven",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT53/d",
+      "total_bytes": 102433,
+      "manifest_sha256": "4966f85a89a2c4274e4740ff26fdf2c2f1f9d3b87111f77f501bc2e259ce2dc5"
+    },
+    {
+      "subtask": "EAUDIT53e",
+      "source_id": "MD-3.3.2-Strang",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT53/e",
+      "total_bytes": 78075,
+      "manifest_sha256": "fbe2d1fe0e84dcc783e38e6bd9c60af5ca80bf80aa598c8d8f049b96f5a3d39f"
+    },
+    {
+      "subtask": "EAUDIT53f",
+      "source_id": "MD-3.3.2-StrangCubic",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT53/f",
+      "total_bytes": 80148,
+      "manifest_sha256": "2e37005d50371f3c2b9f954a147a58854f779d33f5fb6ef66391faa443bbac5c"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT51",
+  "section": "3.3",
+  "source_ids": [
+    "MD-3.3-HamiltonianLieAdditivity",
+    "MD-3.3-FormalSplitting",
+    "MD-3.3-ExactExponentialCubic",
+    "MD-3.3-DifferenceCommutator",
+    "MD-3.3-DifferenceCubic",
+    "MD-3.3-LeadingModifiedExponential",
+    "MD-3.3-CommutingFlows"
+  ],
+  "reaudit_ids": [
+    "MD-3.3-HamiltonianLieAdditivity",
+    "MD-3.3-FormalSplitting",
+    "MD-3.3-ExactExponentialCubic",
+    "MD-3.3-DifferenceCommutator",
+    "MD-3.3-DifferenceCubic",
+    "MD-3.3-LeadingModifiedExponential",
+    "MD-3.3-CommutingFlows"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.3-HamiltonianLieAdditivity",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch03/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "a7800362ee644bee73fc2a07d4fef5e5afa0b4068f2c0c4d9ffa281d8eba6c1b"
+    },
+    {
+      "source_id": "MD-3.3-FormalSplitting",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch03/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "a7800362ee644bee73fc2a07d4fef5e5afa0b4068f2c0c4d9ffa281d8eba6c1b"
+    },
+    {
+      "source_id": "MD-3.3-ExactExponentialCubic",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch03/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "a7800362ee644bee73fc2a07d4fef5e5afa0b4068f2c0c4d9ffa281d8eba6c1b"
+    },
+    {
+      "source_id": "MD-3.3-DifferenceCommutator",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch03/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "570d2172c6ee70dc9b3dc0818a2f10f803cc3e8baf7f74d00b8e981bcaafd412"
+    },
+    {
+      "source_id": "MD-3.3-DifferenceCubic",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch03/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "a7800362ee644bee73fc2a07d4fef5e5afa0b4068f2c0c4d9ffa281d8eba6c1b"
+    },
+    {
+      "source_id": "MD-3.3-LeadingModifiedExponential",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch03/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "a7800362ee644bee73fc2a07d4fef5e5afa0b4068f2c0c4d9ffa281d8eba6c1b"
+    },
+    {
+      "source_id": "MD-3.3-CommutingFlows",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch03/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "570d2172c6ee70dc9b3dc0818a2f10f803cc3e8baf7f74d00b8e981bcaafd412"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT51/INDEX.md"
+}

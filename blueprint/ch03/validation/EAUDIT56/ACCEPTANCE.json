@@ -1,0 +1,82 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT56",
+  "section": "3.4",
+  "source_ids": [
+    "MD-3.4-LeadingModifiedField",
+    "MD-3.4-TruncatedHamiltonian",
+    "MD-3.4-TruncationSmooth",
+    "MD-3.4-Thm3.1",
+    "MD-3.4-TruncatedFlow",
+    "MD-3.4-FiniteMatchingConstruction",
+    "MD-3.4-TruncatedConservation",
+    "MD-3.4-EnergyTelescoping"
+  ],
+  "reaudit_ids": [
+    "MD-3.4-LeadingModifiedField",
+    "MD-3.4-TruncatedHamiltonian",
+    "MD-3.4-TruncationSmooth",
+    "MD-3.4-Thm3.1",
+    "MD-3.4-TruncatedFlow",
+    "MD-3.4-FiniteMatchingConstruction",
+    "MD-3.4-TruncatedConservation",
+    "MD-3.4-EnergyTelescoping"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.4-LeadingModifiedField",
+      "prior_eaudit": "EAUDIT45",
+      "acceptance": "blueprint/ch03/validation/EAUDIT45/ACCEPTANCE.json",
+      "sha256": "f1b9385d32808f16721ee1eff029dec135f9db2f380df5e3b6102793e0c4127c"
+    },
+    {
+      "source_id": "MD-3.4-TruncatedHamiltonian",
+      "prior_eaudit": "EAUDIT29",
+      "acceptance": "blueprint/ch03/validation/EAUDIT29/ACCEPTANCE.json",
+      "sha256": "e53e6f4e3eb8f2751f77fd3f522d68246a8df09250102a1226fe2f7d6657f3cf"
+    },
+    {
+      "source_id": "MD-3.4-TruncationSmooth",
+      "prior_eaudit": "EAUDIT45",
+      "acceptance": "blueprint/ch03/validation/EAUDIT45/ACCEPTANCE.json",
+      "sha256": "f1b9385d32808f16721ee1eff029dec135f9db2f380df5e3b6102793e0c4127c"
+    },
+    {
+      "source_id": "MD-3.4-Thm3.1",
+      "prior_eaudit": "EAUDIT45",
+      "acceptance": "blueprint/ch03/validation/EAUDIT45/ACCEPTANCE.json",
+      "sha256": "f1b9385d32808f16721ee1eff029dec135f9db2f380df5e3b6102793e0c4127c"
+    },
+    {
+      "source_id": "MD-3.4-TruncatedFlow",
+      "prior_eaudit": "EAUDIT29",
+      "acceptance": "blueprint/ch03/validation/EAUDIT29/ACCEPTANCE.json",
+      "sha256": "e53e6f4e3eb8f2751f77fd3f522d68246a8df09250102a1226fe2f7d6657f3cf"
+    },
+    {
+      "source_id": "MD-3.4-FiniteMatchingConstruction",
+      "prior_eaudit": "EAUDIT45",
+      "acceptance": "blueprint/ch03/validation/EAUDIT45/ACCEPTANCE.json",
+      "sha256": "f1b9385d32808f16721ee1eff029dec135f9db2f380df5e3b6102793e0c4127c"
+    },
+    {
+      "source_id": "MD-3.4-TruncatedConservation",
+      "prior_eaudit": "EAUDIT29",
+      "acceptance": "blueprint/ch03/validation/EAUDIT29/ACCEPTANCE.json",
+      "sha256": "e53e6f4e3eb8f2751f77fd3f522d68246a8df09250102a1226fe2f7d6657f3cf"
+    },
+    {
+      "source_id": "MD-3.4-EnergyTelescoping",
+      "prior_eaudit": "EAUDIT29",
+      "acceptance": "blueprint/ch03/validation/EAUDIT29/ACCEPTANCE.json",
+      "sha256": "e53e6f4e3eb8f2751f77fd3f522d68246a8df09250102a1226fe2f7d6657f3cf"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT56/INDEX.md"
+}

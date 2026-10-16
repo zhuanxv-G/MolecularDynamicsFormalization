@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT51",
+  "source_id": "MD-3.3-DifferenceCubic",
+  "input_sha256": {
+    "BATCH_EAUDIT51.md": "dd02d2d868da5454a668e722a05a0abcb975a163a73e74ebc9f99706e300f8f2",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT51e_materials": "58ed6cb258b97af9bce3d5088abe802229013b2a8cff3a29cd6478cdf8941e7c",
+    "EAUDIT51e_PAGES.pdf": "395feb007672a81966a97b2db48bc4f8415074295cdefa107046c7e9f913fe86"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    126
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "71615429e7dacccba442bd04269bf3931b6d33de75c5e4a1156a5e112334f846",
+  "source_block_sha256": "0a2230356bc8cf8dd9660f8aaaa3cc00ef8844aad541797a006926c3be854a7e",
+  "source_declarations": [
+    "differenceCubic",
+    "differenceCubic_coeff3"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalOperatorExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "df5ff488932635200b6f774d1b89d132afee1211289904ed8d00ab209d015a49"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT51_review.json",
+  "total_task_bytes": 79031
+}

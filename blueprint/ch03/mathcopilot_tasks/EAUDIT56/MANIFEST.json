@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT56",
+  "input_sha256": {
+    "BATCH_EAUDIT56.md": "cce0f6b4cb83514818e30c21c05ea23ab62e427e853c8005d8f2cc93e9be64b7",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT56a",
+      "source_id": "MD-3.4-LeadingModifiedField",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT56/a",
+      "total_bytes": 100523,
+      "manifest_sha256": "28f6fb4d3736f10ffcb80cad2143a3b35c99a8981b7ddf17681d84b107a889e6"
+    },
+    {
+      "subtask": "EAUDIT56b",
+      "source_id": "MD-3.4-TruncatedHamiltonian",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT56/b",
+      "total_bytes": 113685,
+      "manifest_sha256": "4276d3a0d4ac16e7bef82b2f14e1f7abaf89521589313e9e4190f30fa16248cd"
+    },
+    {
+      "subtask": "EAUDIT56c",
+      "source_id": "MD-3.4-TruncationSmooth",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT56/c",
+      "total_bytes": 116798,
+      "manifest_sha256": "91b7eef5a1a4893458ce25a8cbc670b46dc1740506f8e626705771a6bc8bb05d"
+    },
+    {
+      "subtask": "EAUDIT56d",
+      "source_id": "MD-3.4-Thm3.1",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT56/d",
+      "total_bytes": 143478,
+      "manifest_sha256": "02dd353ebbe716a8176d6113f4abd83a300d212bad77e029fbfc44cb58b277f5"
+    },
+    {
+      "subtask": "EAUDIT56e",
+      "source_id": "MD-3.4-TruncatedFlow",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT56/e",
+      "total_bytes": 96810,
+      "manifest_sha256": "9a985d677d355753c8eaa5cbf98956ffdf5a5c1b18758702f07f026216e1fe45"
+    },
+    {
+      "subtask": "EAUDIT56f",
+      "source_id": "MD-3.4-FiniteMatchingConstruction",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT56/f",
+      "total_bytes": 101682,
+      "manifest_sha256": "69e1cdf48ddf22fe65c53dc1255a2680ea2c1ae9d69da0a455e1894d5b1e7f79"
+    },
+    {
+      "subtask": "EAUDIT56g",
+      "source_id": "MD-3.4-TruncatedConservation",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT56/g",
+      "total_bytes": 95496,
+      "manifest_sha256": "9455da7a5aba96975a8bbe8f9ea887305e624fe4aec6424128aac28b1428498a"
+    },
+    {
+      "subtask": "EAUDIT56h",
+      "source_id": "MD-3.4-EnergyTelescoping",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT56/h",
+      "total_bytes": 95256,
+      "manifest_sha256": "87986522d20eefd37edf2b6c05a042c5331ca4ea9383bde5577a25cb04740f1a"
+    }
+  ]
+}

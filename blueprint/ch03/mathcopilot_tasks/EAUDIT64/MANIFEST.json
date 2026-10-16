@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT64",
+  "input_sha256": {
+    "BATCH_EAUDIT64.md": "cee71d7fdf3c9bd4d972438a6a8452f1dc11c04d4caa5850ce1c48af255f7bbe",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT64a",
+      "source_id": "MD-3.7.1-HardCorePotential",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT64/a",
+      "total_bytes": 89967,
+      "manifest_sha256": "362a371f2b9588cd645c45c39a76dc96e230520aaaee8c1fea41d8cd5d69217a"
+    },
+    {
+      "subtask": "EAUDIT64b",
+      "source_id": "MD-3.7.1-ObstacleReflection",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT64/b",
+      "total_bytes": 82120,
+      "manifest_sha256": "269aa3b916dc8496e85f93a4b85977f915c8c10c30b2d55efb3646d9a08eccf5"
+    },
+    {
+      "subtask": "EAUDIT64c",
+      "source_id": "MD-3.7.1-PrimitiveDefect",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT64/c",
+      "total_bytes": 83709,
+      "manifest_sha256": "097ac2a9e04d39575b350c3ba4a37c7138a60ab7300826e73b16ea5b5206d703"
+    },
+    {
+      "subtask": "EAUDIT64d",
+      "source_id": "MD-3.7.1-FreeHardSphereHamiltonian",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT64/d",
+      "total_bytes": 90675,
+      "manifest_sha256": "1b2b950c754926266a3f45142d6117dd640cc7721f63989dc6dd494bbd646cfa"
+    }
+  ]
+}

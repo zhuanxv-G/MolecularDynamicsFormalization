@@ -1,0 +1,73 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.4-TruncationRemainder；原PDF页映射=[137]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT57_review.json，对象含batch=EAUDIT57、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT57.md": "73220b794f344f19691567dcb7563af3c90e81d18231470edb56aa8f0730dad3",
+  "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "EAUDIT57b_materials": "9886fb2f3dd25349c8bdca84d6009c614d64daae9a4d24539bd3408f1e274dc7",
+  "EAUDIT57b_PAGES.pdf": "ce685429d3ddea234ee45d3f5fe4f7aa5778af6ba7a086757b93e44a785f6750"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.4-TruncationRemainder",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3.4",
+  "printed_page": "115",
+  "pdf_page": "137",
+  "statement_latex": "Next observe that\n\\[H=\\bar H_k-h^rH_{(r)}-h^{r+1}H_{(r+1)}-\\cdots-h^kH_{(k)}=\\bar H_k+O(h^r).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "固定r,k；实际有限式(3.11)，非无穷级数；绝对值即ℝ范数。",
+    "原书(3.11)用bar H_k表示有限截断；PDF137局部与tilde H_k混用，疑为排版/记号疑误，需明确按同一截断函数解释，保留原印记号。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.truncationRemainder",
+  "reusable_proofs": [
+    "MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder"
+  ],
+  "extra_assumptions": [
+    "各有限系数在紧B连续；0≤h≤1；统一正C由紧性推出，未供应所需余项界。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT10_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:19:30.682664",
+      "before_sha256": "7eaf7fad1a97fd4946b4e6c23d6291c90cbd917439269f43fa35be083f89919d",
+      "after_sha256": "77a8ad31e894ddfc8294ef150eef0226e49503b43775bbdb3a92a0a90cd2eb97",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH13_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem truncationRemainder
+    (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (B : Set E) (hB : IsCompact B)
+    (hHj : ∀ j ∈ Finset.Icc r k, ContinuousOn (Hj j) B) :
+    ∃ C : ℝ, 0 < C ∧ ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B,
+      ‖textbookTruncatedHamiltonian H Hj r k h z - H z‖ ≤ C * h ^ r := by
+  apply MolecularDynamics.exists_uniform_textbookTruncatedHamiltonian_remainder <;> assumption
+```
+### 实际依赖 MolecularDynamics.textbookTruncatedHamiltonian
+```lean
+noncomputable def textbookTruncatedHamiltonian (H : E → ℝ) (Hj : ℕ → E → ℝ)
+    (r k : ℕ) (h : ℝ) (z : E) : ℝ :=
+  H z + ∑ j ∈ Finset.Icc r k, h ^ j * Hj j z
+```

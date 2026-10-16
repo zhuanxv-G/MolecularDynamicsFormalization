@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT57",
+  "source_id": "MD-3.4-UniformTruncatedLipschitz",
+  "input_sha256": {
+    "BATCH_EAUDIT57.md": "73220b794f344f19691567dcb7563af3c90e81d18231470edb56aa8f0730dad3",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT57a_materials": "83c548be8c58314c2079c62d38f480d8f3ce17332e45de8764cbdcef0f03e876",
+    "EAUDIT57a_PAGES.pdf": "ce685429d3ddea234ee45d3f5fe4f7aa5778af6ba7a086757b93e44a785f6750"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    137
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "d4c10d0cbbe91376df2591c6871bfde67be494cac3161992d5fbebd32833390b",
+  "source_block_sha256": "e467d2515b8f43129776386f39805a87212b4c99ef82b35489ec394d26bd6d5e",
+  "source_declarations": [
+    "uniformTruncatedLipschitz",
+    "uniformTruncatedLipschitz_chain"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "name": "oneStepIterate",
+      "file_sha256": "c9bc53727962c962a9420dbfa305ede46e90b38fdded8952b400381f474e3385",
+      "excerpt_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/ModifiedHamiltonianBounds.lean",
+      "name": "textbookTruncatedHamiltonian",
+      "file_sha256": "a4bc3858fbd3e46ff382425fe9d10db2c805ac01dd27f09199a4aefab2cb54d0",
+      "excerpt_sha256": "ae4576437497e7b2a8dde76a400e7f755c31380752cb4ac2abe3b94f50ad8979"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT57_review.json",
+  "total_task_bytes": 96314
+}

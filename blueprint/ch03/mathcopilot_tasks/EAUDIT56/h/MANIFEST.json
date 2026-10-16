@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT56",
+  "source_id": "MD-3.4-EnergyTelescoping",
+  "input_sha256": {
+    "BATCH_EAUDIT56.md": "cce0f6b4cb83514818e30c21c05ea23ab62e427e853c8005d8f2cc93e9be64b7",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT56h_materials": "d7183feb0aab82d73000ccdf2b16433978c477a84757a35e6027f1bcd075bb3c",
+    "EAUDIT56h_PAGES.pdf": "ce685429d3ddea234ee45d3f5fe4f7aa5778af6ba7a086757b93e44a785f6750"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    137
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "47eec4c3b11f89749aea884aa200127327593ca02584e869a088fb9d78448324",
+  "source_block_sha256": "fa0cbb651e5cd8f078e01c8ddef77cc5256a3e3a276d571bc57c9a7ee0e93c24",
+  "source_declarations": [
+    "energyTelescoping",
+    "energyTelescoping_complete"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "name": "oneStepIterate",
+      "file_sha256": "c9bc53727962c962a9420dbfa305ede46e90b38fdded8952b400381f474e3385",
+      "excerpt_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT56_review.json",
+  "total_task_bytes": 95256
+}

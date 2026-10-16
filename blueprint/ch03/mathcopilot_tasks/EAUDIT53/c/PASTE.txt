@@ -1,0 +1,215 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.3.2-VerletModifiedMatching；原PDF页映射=[129]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT53_review.json，对象含batch=EAUDIT53、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT53.md": "8ac3838f9ed4bdf3dce906b1dfd76828d9700e8233ab86e4175cb2cd8f707923",
+  "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "EAUDIT53c_materials": "ac1209db9e77b53958943679a2b2e449f26c0d44a183ba97a54f7afe8f095c2c",
+  "EAUDIT53c_PAGES.pdf": "65305217553b5037bc25936741b0e6aa1d297671e5712511231850201cc177c4"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.3.2-VerletModifiedMatching",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3.3.2",
+  "printed_page": "107",
+  "pdf_page": "129",
+  "statement_latex": "In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH lemma gives",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "完整印刷h²,h⁴展开见同页VerletModifiedHamiltonian；本条不静默换成另一种Verlet或改h²系数。"
+  ],
+  "issues": [
+    {
+      "code": "NEEDS_HUMAN",
+      "detail": "与速度/位置Verlet的组合次序共同核对h²,h⁴系数；原文Hamiltonian O(h⁶)与实际匹配阶也需裁定。"
+    }
+  ],
+  "lean_decl": "MD.Ch03.verletModifiedMatching",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "正对角质量、U全域C∞、紧初值B；完整印刷h⁴截断实际O(h⁶)端点匹配为额外严格化。",
+    "[EXTRA] 保留已列机械特例，新增一般分离T(p),U(q)、真实局部子流、h⁴系数及所有截断匹配；Hamiltonian余项从h⁶起（奇项零），对应端点O(h⁷)，不混同两个余项。新结论暂sorry，未裁定印刷系数是否正确。",
+    "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT07_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:15:22.765671",
+      "before_sha256": "42b5a580bd6a41b2ecb6ac6bf3879597e7ac2cfa3e2b9324b67bf300762b9ed9",
+      "after_sha256": "73b7f9ae7ac0d6ad3aee77c79dac138ae121348051e4f3b5fed4a9d3495bff37",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    },
+    {
+      "stage": "EAUDIT42_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:37:29.483494",
+      "before_sha256": "73b7f9ae7ac0d6ad3aee77c79dac138ae121348051e4f3b5fed4a9d3495bff37",
+      "after_sha256": "d7f342444f77d324e4af12a08a871a86bda03f05822773171e1dc025ea8f9c6b",
+      "changed_fields": [],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT42/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem verletModifiedMatching :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),
+    positiveMass m → ContDiff ℝ ∞ U → IsCompact B →
+    matchesHamiltonian (verletModifiedH (fun z => quadraticKinetic m (unpack z).2) (fun z => U (unpack z).1))
+      (coordinateVerlet m (textbookPotentialForce U)) B 5 := by
+  sorry
+
+theorem verletModifiedMatching_general (n : ℕ) (T U : Q n → ℝ)
+    (D B : Set (SymplecticCoordinates n)) (Φ Ψ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
+    (η : ℝ) (_hT : ContDiff ℝ ∞ T) (_hU : ContDiff ℝ ∞ U)
+    (_hD : IsOpen D) (_hB : IsCompact B) (_hBD : B ⊆ D)
+    (_hΦ : actualFlow (textbookHamiltonianVectorField (fun z ↦ T (unpack z).2)) D Φ η)
+    (_hΨ : actualFlow (textbookHamiltonianVectorField (fun z ↦ U (unpack z).1)) D Ψ η) :
+    let Tp := fun z : SymplecticCoordinates n ↦ T (unpack z).2
+    let Uq := fun z : SymplecticCoordinates n ↦ U (unpack z).1
+    let G := fun h ↦ Ψ (h/2) ∘ Φ h ∘ Ψ (h/2)
+    matchesHamiltonian (verletModifiedH Tp Uq) G B 6 ∧
+    (∃ Hj : ℕ → SymplecticCoordinates n → ℝ,
+      (∀ j, ContDiffOn ℝ ∞ (Hj j) D) ∧
+      (∀ z ∈ D, Hj 0 z = Tp z+Uq z) ∧
+      (∀ z ∈ D, Hj 2 z =
+        (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq) z-
+          textbookPoissonBracket Uq (textbookPoissonBracket Uq Tp) z/2)/12) ∧
+      (∀ z ∈ D, Hj 4 z =
+        (-textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/6+
+          textbookPoissonBracket Uq (textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/3-
+          textbookPoissonBracket Uq (textbookPoissonBracket Uq (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/4+
+          textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Uq (textbookPoissonBracket Uq Tp))) z)/120) ∧
+      (∀ j z, Hj (2*j+1) z = 0) ∧
+      ∀ k ≥ 6, matchesHamiltonian (fun h z ↦ ∑ j ∈ Finset.range k, h^j*Hj j z) G B k) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinateMatrix
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.actualFlow
+```lean
+def actualFlow {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (f : E → E) (D : Set E) (Φ : ℝ → E → E) (η : ℝ) : Prop :=
+  0 < η ∧ ∀ z ∈ D, Φ 0 z=z ∧ ∀ t ∈ Ioo (-η) η,
+    Φ t z ∈ D ∧ HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.coordinateVerlet
+```lean
+def coordinateVerlet {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) :
+    SymplecticCoordinates n → SymplecticCoordinates n :=
+  textbookMomentumKick F (h/2) ∘ textbookPositionDrift m h ∘ textbookMomentumKick F (h/2)
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.matchesHamiltonian
+```lean
+def matchesHamiltonian {n : ℕ} (K : ℝ → SymplecticCoordinates n → ℝ)
+    (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) (B : Set (SymplecticCoordinates n)) (p : ℕ) : Prop :=
+  ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+    ∀ h ∈ Ioo 0 δ, ∀ z ∈ B, Γ h z 0=z ∧ solution (textbookHamiltonianVectorField (K h)) (Γ h z) 0 h ∧
+      ‖G h z-Γ h z h‖ ≤ C*h^(p+1)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.positiveMass
+```lean
+def positiveMass {n : ℕ} (m : Fin n → ℝ) : Prop := ∀ i, 0 < m i
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.quadraticKinetic
+```lean
+def quadraticKinetic {n : ℕ} (m : Fin n → ℝ) (p : Q n) : ℝ := (∑ i, p i^2/m i)/2
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.solution
+```lean
+def solution {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (f : E → E) (γ : ℝ → E) (a b : ℝ) : Prop :=
+  ∀ t ∈ Icc a b, HasDerivWithinAt γ (f (γ t)) (Icc a b) t
+```
+### 实际依赖 MolecularDynamics.textbookHamiltonianVectorField
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+### 实际依赖 MolecularDynamics.textbookJ
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### 实际依赖 MolecularDynamics.textbookMomentumKick
+```lean
+noncomputable def textbookMomentumKick {Nc : ℕ}
+    (F : (Fin Nc → ℝ) → (Fin Nc → ℝ)) (h : ℝ)
+    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
+  Sum.elim (fun i => z (Sum.inl i))
+    (fun i => z (Sum.inr i) + h * F (textbookPositionProjection Nc z) i)
+```
+### 实际依赖 MD.Ch03.textbookPoissonBracket
+```lean
+noncomputable def textbookPoissonBracket (F G : SymplecticCoordinates Nc → ℝ)
+    (z : SymplecticCoordinates Nc) : ℝ :=
+  (fderiv ℝ F z) (textbookHamiltonianVectorField G z)
+```
+### 实际依赖 MolecularDynamics.textbookPositionDrift
+```lean
+noncomputable def textbookPositionDrift {Nc : ℕ} (m : Fin Nc → ℝ) (h : ℝ)
+    (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
+  Sum.elim (fun i => z (Sum.inl i) + h * (m i)⁻¹ * z (Sum.inr i))
+    (fun i => z (Sum.inr i))
+```
+### 实际依赖 MolecularDynamics.textbookPositionProjection
+```lean
+noncomputable def textbookPositionProjection (Nc : ℕ) :
+    SymplecticCoordinates Nc →L[ℝ] (Fin Nc → ℝ) :=
+  ContinuousLinearMap.pi fun i => ContinuousLinearMap.proj (Sum.inl i)
+```
+### 实际依赖 MolecularDynamics.textbookPotentialForce
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.unpack
+```lean
+def unpack {n : ℕ} (z : SymplecticCoordinates n) : Z n := (z ∘ Sum.inl, z ∘ Sum.inr)
+```
+### 实际依赖 MD.Ch03.verletModifiedH
+```lean
+def verletModifiedH {n : ℕ} (T U : SymplecticCoordinates n → ℝ) (h : ℝ) (z : SymplecticCoordinates n) : ℝ :=
+  T z+U z+h^2/12*(textbookPoissonBracket T (textbookPoissonBracket T U) z-
+    textbookPoissonBracket U (textbookPoissonBracket U T) z/2)+h^4/120*(
+      -textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T U))) z/6+
+      textbookPoissonBracket U (textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T U))) z/3-
+      textbookPoissonBracket U (textbookPoissonBracket U (textbookPoissonBracket T (textbookPoissonBracket T U))) z/4+
+      textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket U (textbookPoissonBracket U T))) z)
+```

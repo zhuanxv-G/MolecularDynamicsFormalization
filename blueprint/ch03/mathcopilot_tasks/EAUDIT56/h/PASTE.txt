@@ -1,0 +1,90 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.4-EnergyTelescoping；原PDF页映射=[137]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT56_review.json，对象含batch=EAUDIT56、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT56.md": "cce0f6b4cb83514818e30c21c05ea23ab62e427e853c8005d8f2cc93e9be64b7",
+  "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "EAUDIT56h_materials": "d7183feb0aab82d73000ccdf2b16433978c477a84757a35e6027f1bcd075bb3c",
+  "EAUDIT56h_PAGES.pdf": "ce685429d3ddea234ee45d3f5fe4f7aa5778af6ba7a086757b93e44a785f6750"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.4-EnergyTelescoping",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3.4",
+  "printed_page": "115",
+  "pdf_page": "137",
+  "statement_latex": "Now\n\\[\\begin{aligned}\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\boldsymbol z_{n+1})-\\bar H_k(\\boldsymbol z_n)\\\\\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\boldsymbol z_{n+1})-\\widetilde H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n))\\\\\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n)+\\boldsymbol\\eta_n)-\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n)).\\end{aligned}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "第一行是任意K的真实迭代有限和恒等式；第二、三行由同页独立TruncatedConservation与FiniteMatchingConstruction代入，并非本条额外假设能量守恒。",
+    "原书(3.11)用bar H_k表示有限截断；PDF137局部与tilde H_k混用，疑为排版/记号疑误，需明确按同一截断函数解释，保留原印记号。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.energyTelescoping",
+  "reusable_proofs": [
+    "MolecularDynamics.oneStep_energy_telescoping"
+  ],
+  "extra_assumptions": [
+    "[EXTRA] 保留已证首行望远镜恒等式；补给定守恒截断步F、真实差η=数值步−F的完整三行等式，不以待证能量差为前提。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT10_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:19:30.682664",
+      "before_sha256": "de20b055edb615e0a109296cd43aa689beb65c85269bb2f60b9283eee92db62d",
+      "after_sha256": "ea1214c8822564237ccdc8bb6d84befa5db0cdaccaf54fe75f4d60fcaf4f64e0",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH13_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem energyTelescoping {E : Type*} (K : E → ℝ)
+    (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
+    ∑ i ∈ Finset.range n, (K (oneStepIterate G h z₀ (i + 1)) -
+      K (oneStepIterate G h z₀ i)) = K (oneStepIterate G h z₀ n) - K z₀ := by
+  apply MolecularDynamics.oneStep_energy_telescoping <;> assumption
+
+theorem energyTelescoping_complete (K : E → ℝ) (G : ℝ → E → E)
+    (F : E → E) (h : ℝ) (z₀ : E) (n : ℕ)
+    (_hconserve : ∀ i < n, K (F (oneStepIterate G h z₀ i))=K (oneStepIterate G h z₀ i)) :
+    let z := oneStepIterate G h z₀
+    let η := fun i ↦ z (i+1)-F (z i)
+    K (z n)-K z₀ = ∑ i ∈ Finset.range n, (K (z (i+1))-K (z i)) ∧
+    (∑ i ∈ Finset.range n, (K (z (i+1))-K (z i))) =
+      ∑ i ∈ Finset.range n, (K (z (i+1))-K (F (z i))) ∧
+    (∑ i ∈ Finset.range n, (K (z (i+1))-K (F (z i)))) =
+      ∑ i ∈ Finset.range n, (K (F (z i)+η i)-K (F (z i))) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.oneStepIterate
+```lean
+noncomputable def oneStepIterate (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) : E :=
+  (G h)^[n] z₀
+
+@[simp] theorem oneStepIterate_zero (G : ℝ → E → E) (h : ℝ) (z₀ : E) :
+    oneStepIterate G h z₀ 0 = z₀ := rfl
+
+@[simp] theorem oneStepIterate_succ (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
+    oneStepIterate G h z₀ (n + 1) = G h (oneStepIterate G h z₀ n) :=
+  Function.iterate_succ_apply' _ _ _
+```

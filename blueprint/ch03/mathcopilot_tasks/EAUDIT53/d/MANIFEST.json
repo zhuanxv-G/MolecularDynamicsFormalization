@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT53",
+  "source_id": "MD-3.3.2-ModifiedEven",
+  "input_sha256": {
+    "BATCH_EAUDIT53.md": "8ac3838f9ed4bdf3dce906b1dfd76828d9700e8233ab86e4175cb2cd8f707923",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT53d_materials": "f9f7a25ca3248e275a4f4b8ca08576d5beb94d924f203effffccda511ad74ae0",
+    "EAUDIT53d_PAGES.pdf": "96cbcea1e199d6a7764703b6af6a67613af772897d864ad183d052b9234322f1"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    129,
+    130
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "d0e0f491116fe5dc8e2eb2d59ec1f73813bbd192d2c4036fb3393b63cc690935",
+  "source_block_sha256": "6e236bde93bbe491690de32762d16d7160ce6f03542813feec5040273db7ad08",
+  "source_declarations": [
+    "modifiedEven"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/ReviewDefinitions.lean",
+      "name": "formalLog",
+      "file_sha256": "19defa2b145928cab64bcfcaecf180355a479ca8b726b5a97f8a60f6ea8bfba6",
+      "excerpt_sha256": "cad8bed3cbcba31778a7042f37611d0a517b35b42cdcfe701968dff5f8af8a76"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "formalStrang",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "5a5308d2a11acae9140a691f24aa00f3314c5242574f4b82dc30b3b95266be01"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalOperatorExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "df5ff488932635200b6f774d1b89d132afee1211289904ed8d00ab209d015a49"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT53_review.json",
+  "total_task_bytes": 102433
+}

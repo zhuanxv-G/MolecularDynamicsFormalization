@@ -1,0 +1,85 @@
+{
+  "eaudit": "EAUDIT55",
+  "source_id": "MD-3.3.4-TakahashiPotential",
+  "input_sha256": {
+    "BATCH_EAUDIT55.md": "7de8a37c763eafee23f71c9fe316ca531ed6c62189858411fb6f171d7ec351d2",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT55a_materials": "a78c3226415087546cd8e9af81e6f2f4ca7c35671c29f0a7f8f183113783fe74",
+    "EAUDIT55a_PAGES.pdf": "5b43a42cd4d367c9919b16fbac1855fbee89ebc4bef0cc11c9a18e42f3edcac8"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    134
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "f63c47747fd5d5b6cb5578cf63590e3f6bbf53326c581d776ee68ffbac6a3476",
+  "source_block_sha256": "e44113bb5fc9ef8d9578fd4320dffc378f34761c4207d2debe031d15c60b9d71",
+  "source_declarations": [
+    "takahashiImada"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "coordinateVerlet",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "0efdffebb2a5499eabcd09eec612be3ee5eeaeae379ac60a1891a7c991973d5a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "522e86de81741a525bcd8720e95f1f0a3f1ba51791c5d13cea4bed7e30a1620e"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "takahashiImada",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "e44113bb5fc9ef8d9578fd4320dffc378f34761c4207d2debe031d15c60b9d71"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "takahashiPotential",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "7b26d3684750f8343669b62d5e7b95861256ca58c7ffecc0dfed179c3eaf4c06"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookMomentumKick",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "140fb611184d1fe410f849925b752e19bca879083ad3b90037363a059820d604"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookPositionDrift",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "2cb1c98648cdcff42e0f32a16e159ea1f67f39c35c11b9da21600c85624e4813"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookPositionProjection",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "e26c2a0065ed4d17a75fd55ee46cc91cdf21abead5097b255cf11154196c56b0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookPotentialForce",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT55_review.json",
+  "total_task_bytes": 91516
+}

@@ -1,0 +1,33 @@
+{
+  "eaudit": "EAUDIT62",
+  "source_id": "MD-3.6.3-ConjugateIterates",
+  "input_sha256": {
+    "BATCH_EAUDIT62.md": "81f9d007cb66917675b8a15161a5cb37289248bcbcf6269e37d707c8cc84ff5d",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT62c_materials": "7f802cce84488e3d6b2742233ca53ea8f2d286d78735b72d2b77605fcd7f9b23",
+    "EAUDIT62c_PAGES.pdf": "de8e87a45c04181e752bf584fc85a38ed97899120d8c452ba877aab281dbd96d"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    153,
+    154
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "dd694b3456ebfe8e3290cde0c68a75a380cb930c43b65545d195ac8ff16a5b06",
+  "source_block_sha256": "0495c3c31bf850b6da0bba368f729326d271077cd13831c85a2830fff6ee4565",
+  "source_declarations": [
+    "conjugateIterates",
+    "conjugateIterates_homeomorph"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ProcessedMethods.lean",
+      "name": "textbookConjugateMap",
+      "file_sha256": "789126e91c8dc6b98160f2cb3fda025efacb1be31c6842e3784a0b6e2325fcdb",
+      "excerpt_sha256": "691a91929f16607bebfb35c4f6a7795fdf4c2394df70674264320b0ac7487e54"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT62_review.json",
+  "total_task_bytes": 107589
+}

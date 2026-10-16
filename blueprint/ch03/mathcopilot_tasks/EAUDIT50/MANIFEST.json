@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT50",
+  "input_sha256": {
+    "BATCH_EAUDIT50.md": "abf48e7ee3d41bfe9aaa715e59ef77e694328351a0c2a85bc39189fdd3485c5f",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT50a",
+      "source_id": "MD-3.2-ObservableDerivative",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT50/a",
+      "total_bytes": 117149,
+      "manifest_sha256": "25f4ebc1a83fab5c54d9c88782c0431349e14017950bb5cce25dd8c448c623a6"
+    },
+    {
+      "subtask": "EAUDIT50b",
+      "source_id": "MD-3.2-PoissonBracket",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT50/b",
+      "total_bytes": 96061,
+      "manifest_sha256": "68b3601e4f1ca6f9ca943ecf86e6b0601eb136235673f926af9d15c3736d57ac"
+    },
+    {
+      "subtask": "EAUDIT50c",
+      "source_id": "MD-3.2-PoissonCoordinates",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT50/c",
+      "total_bytes": 96046,
+      "manifest_sha256": "49b9ace13269e5e62658d8a6e65842a7b0578d60b065ed9f0ee235b430047f16"
+    },
+    {
+      "subtask": "EAUDIT50d",
+      "source_id": "MD-3.2-PoissonBilinearity",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT50/d",
+      "total_bytes": 96495,
+      "manifest_sha256": "94da3522c2310ff21a87f7498a5ca2ef1a046d8c599820028c7799812329d229"
+    },
+    {
+      "subtask": "EAUDIT50e",
+      "source_id": "MD-3.2-PoissonSkew",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT50/e",
+      "total_bytes": 95592,
+      "manifest_sha256": "1fdb0398279bd300f6f939607f663ee67bda86cc6b862def15a4166fcebe3f84"
+    },
+    {
+      "subtask": "EAUDIT50f",
+      "source_id": "MD-3.2-PoissonSelf",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT50/f",
+      "total_bytes": 95528,
+      "manifest_sha256": "e3eb7e07388ec693447a7b7a7cf2a16d406ad12e904106641f189aabde6d8856"
+    },
+    {
+      "subtask": "EAUDIT50g",
+      "source_id": "MD-3.2-PoissonJacobi",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT50/g",
+      "total_bytes": 95956,
+      "manifest_sha256": "7db74c32d73609ddfc078a87e5496590bb0001f72537c8cb60c9621a733cf1f6"
+    },
+    {
+      "subtask": "EAUDIT50h",
+      "source_id": "MD-3.2-HamiltonianLie",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT50/h",
+      "total_bytes": 96233,
+      "manifest_sha256": "701203a27ecc46475c0d5076ca0290fae6f70010a0964a58c0491d8bb85cf8f6"
+    }
+  ]
+}

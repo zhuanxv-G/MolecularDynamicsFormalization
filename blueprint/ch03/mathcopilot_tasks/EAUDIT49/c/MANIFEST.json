@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT49",
+  "source_id": "MD-3.1-FormalHamiltonian",
+  "input_sha256": {
+    "BATCH_EAUDIT49.md": "df02e772c3ef432aeddd4d4a49dbc529075081f74ca624b9e4b9caec14f1b8ac",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT49c_materials": "61bad689c0e7a5f91e16a84643097c116f26d2f965b10c9f382cff3971e5ba13",
+    "EAUDIT49c_PAGES.pdf": "be68e544a452ef316b6805021500ec0de917a22f13d2dbf7d50634579bfd7b06"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    122
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "10f3ce38b4202d8b32e87a2e867e90ce8037c59c9d4440dc47c8059ff849315d",
+  "source_block_sha256": "968ef43849d596e70b5a3ba0cc8293716d4f8e9bd7b4aef18bf9d2244ab64ab1",
+  "source_declarations": [
+    "formalHamiltonian"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "formalHamiltonian",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "968ef43849d596e70b5a3ba0cc8293716d4f8e9bd7b4aef18bf9d2244ab64ab1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT49_review.json",
+  "total_task_bytes": 109258
+}

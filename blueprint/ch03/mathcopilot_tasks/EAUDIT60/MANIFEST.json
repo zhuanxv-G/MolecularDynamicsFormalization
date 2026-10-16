@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT60",
+  "input_sha256": {
+    "BATCH_EAUDIT60.md": "780d2045aa36a24c9fe8cd87588f7b290579209f5d3e2cbc7d00a83f66dadb9e",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT60a",
+      "source_id": "MD-3.6.1-MechanicalReversal",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT60/a",
+      "total_bytes": 90299,
+      "manifest_sha256": "c7a9ad9e123039936ef50bf16dd93804efa2980cf42b6092aeb1336d8d53cf02"
+    },
+    {
+      "subtask": "EAUDIT60b",
+      "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT60/b",
+      "total_bytes": 97244,
+      "manifest_sha256": "6a881adc8055d385c038b460f1b3463e89f1e62d13358306805fa74a901c90bb"
+    },
+    {
+      "subtask": "EAUDIT60c",
+      "source_id": "MD-3.6.1-ReversedTrajectory",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT60/c",
+      "total_bytes": 75505,
+      "manifest_sha256": "c816352fd06493f2ae8698558834059f2d49ae528c8f8e7c28f4ebe23bd25241"
+    },
+    {
+      "subtask": "EAUDIT60d",
+      "source_id": "MD-3.6.1-MechanicalReversalCorrect",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT60/d",
+      "total_bytes": 89698,
+      "manifest_sha256": "5a66d33f7d795533aca9bd4192c95fb6ea36effe2bd93492f13924d2279520bb"
+    }
+  ]
+}

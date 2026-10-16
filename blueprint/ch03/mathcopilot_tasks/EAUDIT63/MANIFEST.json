@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT63",
+  "input_sha256": {
+    "BATCH_EAUDIT63.md": "e4d053fa28631073e53e2992fdd05e8efa906218163b6cd2a4cc0d9f01790e96",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT63a",
+      "source_id": "MD-3.7-HardCoreDomain",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT63/a",
+      "total_bytes": 100739,
+      "manifest_sha256": "a878f0801189adda84c4bc731bc22cb6ca073ebfd36c431ea3d94a320e4a3073"
+    },
+    {
+      "subtask": "EAUDIT63b",
+      "source_id": "MD-3.7-CollisionComposition",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT63/b",
+      "total_bytes": 115150,
+      "manifest_sha256": "a329f995d117e15d6f5e7b8f82fecf0b34381e44fee2e58f540c414711a3a88b"
+    }
+  ]
+}

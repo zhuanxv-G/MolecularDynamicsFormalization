@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT61",
+  "source_id": "MD-3.6.2-SymmetricMethod",
+  "input_sha256": {
+    "BATCH_EAUDIT61.md": "55e9c920112d72bc0bc20a9589fcbb8fc64ce94dd6fbc09e6204ecbaf23f296c",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT61c_materials": "a0c851fc5fbe994e6ca2c4e584c61a335b5bed35c1d0a2410ea1efd7c7333e64",
+    "EAUDIT61c_PAGES.pdf": "62dfa84e2cf8c67eecff3df6d7e0ce15dce7b4b467d6c429cc6d5234671df81c"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    152
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "df9eb580136187de0e114f401ea289d25abd6c0c170eadf52d2afa975b1ee150",
+  "source_block_sha256": "57abc58f48d26ec36f020c76c384b86e7ee4927d0a074f99b498d8fbc879f8bd",
+  "source_declarations": [
+    "symmetricMethod"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch03.lean",
+      "name": "symmetricMethod",
+      "file_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "excerpt_sha256": "57abc58f48d26ec36f020c76c384b86e7ee4927d0a074f99b498d8fbc879f8bd"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT61_review.json",
+  "total_task_bytes": 89354
+}

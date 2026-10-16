@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT62",
+  "input_sha256": {
+    "BATCH_EAUDIT62.md": "81f9d007cb66917675b8a15161a5cb37289248bcbcf6269e37d707c8cc84ff5d",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT62a",
+      "source_id": "MD-3.6.3-TrapezoidalProperties",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT62/a",
+      "total_bytes": 87705,
+      "manifest_sha256": "9b29194e979adb4c203b5ec0b610125a2927f945ee7ba9e36013db9b510fe645"
+    },
+    {
+      "subtask": "EAUDIT62b",
+      "source_id": "MD-3.6.3-SymplecticSpectrum",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT62/b",
+      "total_bytes": 84873,
+      "manifest_sha256": "cfb70c006d8895d5b3c014e028242ebba50f8dfb9bdd8ae36f461f4061bd40c5"
+    },
+    {
+      "subtask": "EAUDIT62c",
+      "source_id": "MD-3.6.3-ConjugateIterates",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT62/c",
+      "total_bytes": 107589,
+      "manifest_sha256": "af6dce3096bb5ee7afdb179fec2564df98f4b1271e5c8665e7be54c2c2dae6b6"
+    }
+  ]
+}

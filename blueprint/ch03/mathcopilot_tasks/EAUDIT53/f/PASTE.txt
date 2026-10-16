@@ -1,0 +1,101 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.3.2-StrangCubic；原PDF页映射=[130]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT53_review.json，对象含batch=EAUDIT53、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT53.md": "8ac3838f9ed4bdf3dce906b1dfd76828d9700e8233ab86e4175cb2cd8f707923",
+  "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "EAUDIT53f_materials": "56f334f2c88bb106f3d7110b8a84cd41e1877efff7a3cbe53247d473437f9262",
+  "EAUDIT53f_PAGES.pdf": "f34399d1044e1e658617738e4f8202c83fea3ba86648e4066913ca8058cad19e"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.3.2-StrangCubic",
+  "kind": "unnumbered_claim",
+  "label": "(3.6)–(3.7)",
+  "section": "3.3.2",
+  "printed_page": "108",
+  "pdf_page": "130",
+  "statement_latex": "\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(t(X+Y)+t^3\\widetilde Z_{[3]}+\\cdots),\\tag{3.6}\\]\nwhere\n\\[\\widetilde Z_{[3]}=\\frac1{12}[Y,[Y,X]]-\\frac1{24}[X,[X,Y]].\\tag{3.7}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$X,Y$为非交换形式生成元；[A,B]=AB−BA；签名直接为真实formalLog三次系数。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.strangCubic",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] 补一次系数和全部偶次零，连同原三次公式覆盖完整奇次展开；原已证三次系数保留辅助并重查，新合取暂sorry。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT07_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:15:22.765671",
+      "before_sha256": "fb259abd48b9ce38baba28d9424a29f9960572f5a64657fcdbf8028dae246d07",
+      "after_sha256": "4d11be381b7c40a6d24acdbcbba354ab3bc3a066dba50c25ea2791f50d172d09",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH09_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem strangCubic :
+  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),
+    PowerSeries.coeff 1 (formalLog (formalStrang A B))=A+B ∧
+    (∀ j : ℕ, PowerSeries.coeff (2*j) (formalLog (formalStrang A B))=0) ∧
+    PowerSeries.coeff 3 (formalLog (formalStrang A B))=
+      (1/12:ℝ) • commutator B (commutator B A)-(1/24:ℝ) • commutator A (commutator A B) := by
+  sorry
+
+theorem strangCubic_coeff3 :
+  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),
+    PowerSeries.coeff 3 (formalLog (formalStrang A B))=
+      (1/12:ℝ) • commutator B (commutator B A)-(1/24:ℝ) • commutator A (commutator A B) := by
+  intro R _ _ A B
+  norm_num [formalLog, formalStrang, textbookFormalOperatorExponential,
+    PowerSeries.coeff_mk, PowerSeries.coeff_mul, Finset.Nat.antidiagonal_succ,
+    Nat.factorial_succ, pow_succ, Finset.sum_Icc_succ_top, MolecularDynamics.Chapter03Review.commutator,
+    mul_add, add_mul, mul_sub, sub_mul, smul_mul_assoc, mul_smul_comm,
+    smul_add, smul_sub, smul_smul]
+  simp only [mul_assoc]
+  module
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.commutator
+```lean
+def commutator {R : Type*} [Ring R] (A B : R) : R := A*B-B*A
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.commutator
+```lean
+def commutator {R : Type*} [Ring R] (A B : R) : R := A*B-B*A
+```
+### 实际依赖 MolecularDynamics.Chapter03Review.formalLog
+```lean
+def formalLog {R : Type*} [Ring R] [Algebra ℝ R] (P : PowerSeries R) : PowerSeries R :=
+  PowerSeries.mk (fun n => ∑ j ∈ Finset.Icc 1 n,
+    ((-1 : ℝ)^(j+1)/(j:ℝ)) • PowerSeries.coeff n ((P-1)^j))
+```
+### 实际依赖 MD.Ch03.formalStrang
+```lean
+def formalStrang {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R :=
+  textbookFormalOperatorExponential ((1/2 : ℝ) • A) * textbookFormalOperatorExponential B *
+    textbookFormalOperatorExponential ((1/2 : ℝ) • A)
+```
+### 实际依赖 MolecularDynamics.textbookFormalOperatorExponential
+```lean
+noncomputable def textbookFormalOperatorExponential (A : R) : PowerSeries R :=
+  PowerSeries.mk (fun n => (1 / (n.factorial : ℝ)) • A ^ n)
+```

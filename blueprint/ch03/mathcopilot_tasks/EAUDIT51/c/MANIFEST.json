@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT51",
+  "source_id": "MD-3.3-ExactExponentialCubic",
+  "input_sha256": {
+    "BATCH_EAUDIT51.md": "dd02d2d868da5454a668e722a05a0abcb975a163a73e74ebc9f99706e300f8f2",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+    "EAUDIT51c_materials": "1e4a43c2c6a1683b0778132fcdc4c610ebdc5b48a76bf25b62f726ff117b4926",
+    "EAUDIT51c_PAGES.pdf": "2a99d9a2bc86297f843cffbdf45abd3ef1b2d43f4640084f59480fe0fde69f01"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    125
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "bf0fd35f9170e95436094baad9a69efcdd2be48a52a73140c1ed3ad6432df0c7",
+  "source_block_sha256": "121cc7a01c0bbd1654a1cd85a1775ffde6c82f447897a57961d1c9a317aa6790",
+  "source_declarations": [
+    "exactExponentialCubic"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter03/FormalOperatorSeries.lean",
+      "name": "textbookFormalOperatorExponential",
+      "file_sha256": "c0da38f93dd3a5e566a610800a6207482e1a445ef84b9978a3008298c8f5395a",
+      "excerpt_sha256": "df5ff488932635200b6f774d1b89d132afee1211289904ed8d00ab209d015a49"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT51_review.json",
+  "total_task_bytes": 80817
+}

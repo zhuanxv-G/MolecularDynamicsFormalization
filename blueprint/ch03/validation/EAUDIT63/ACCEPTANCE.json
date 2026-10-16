@@ -1,0 +1,34 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT63",
+  "section": "3.7",
+  "source_ids": [
+    "MD-3.7-HardCoreDomain",
+    "MD-3.7-CollisionComposition"
+  ],
+  "reaudit_ids": [
+    "MD-3.7-HardCoreDomain",
+    "MD-3.7-CollisionComposition"
+  ],
+  "human_ids": [],
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-3.7-HardCoreDomain",
+      "prior_eaudit": "EAUDIT36",
+      "acceptance": "blueprint/ch03/validation/EAUDIT36/ACCEPTANCE.json",
+      "sha256": "ad82c5d8fbdef7ad7ec7841b332a2784097fcbe59b33a50310db16c1e54ac4f5"
+    },
+    {
+      "source_id": "MD-3.7-CollisionComposition",
+      "prior_eaudit": "EAUDIT36",
+      "acceptance": "blueprint/ch03/validation/EAUDIT36/ACCEPTANCE.json",
+      "sha256": "ad82c5d8fbdef7ad7ec7841b332a2784097fcbe59b33a50310db16c1e54ac4f5"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT63/INDEX.md"
+}

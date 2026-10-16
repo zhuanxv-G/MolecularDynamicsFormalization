@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT58",
+  "input_sha256": {
+    "BATCH_EAUDIT58.md": "6b1562a3f112c1e1f78110a590f2584c2ae71f98331e875890c3d7abe9f1f202",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT58a",
+      "source_id": "MD-3.5-LinearEulerIntegral",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT58/a",
+      "total_bytes": 73637,
+      "manifest_sha256": "8c3cf1f8392cc0369758f1483c7ebafd6238fb9a57aa15b526e2d12bfe36295b"
+    },
+    {
+      "subtask": "EAUDIT58b",
+      "source_id": "MD-3.5-VerletOscillatorEnergy",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT58/b",
+      "total_bytes": 79259,
+      "manifest_sha256": "03f1f23e233fb8054da03aab7006bf33c4b115acf3afa3b26da332930fae704f"
+    },
+    {
+      "subtask": "EAUDIT58c",
+      "source_id": "MD-3.5-MomentumProjection",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT58/c",
+      "total_bytes": 73624,
+      "manifest_sha256": "a747a65f47abdffff59edaf5282994e71aaff5328b10e7de1ecc8a537813d5c9"
+    },
+    {
+      "subtask": "EAUDIT58d",
+      "source_id": "MD-3.5-ProjectionConstraint",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT58/d",
+      "total_bytes": 72562,
+      "manifest_sha256": "0a1773307a38293d5d3ec3fed8531f65fdb237a860b39331cf4ee1986344609d"
+    },
+    {
+      "subtask": "EAUDIT58e",
+      "source_id": "MD-3.5-ProjectionFactor",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT58/e",
+      "total_bytes": 82452,
+      "manifest_sha256": "852b73304fac89b560f9492e0e8832726558c38822cd07e9b1adc926a8cdc3da"
+    },
+    {
+      "subtask": "EAUDIT58f",
+      "source_id": "MD-3.5-NoHamiltonianAttractor",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT58/f",
+      "total_bytes": 155625,
+      "manifest_sha256": "c994dbf3c8f3859dcf563bf56955b737112d1a94822bee33372db70509298f3a"
+    }
+  ]
+}

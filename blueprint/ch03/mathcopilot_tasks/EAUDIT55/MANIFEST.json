@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT55",
+  "input_sha256": {
+    "BATCH_EAUDIT55.md": "7de8a37c763eafee23f71c9fe316ca531ed6c62189858411fb6f171d7ec351d2",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT55a",
+      "source_id": "MD-3.3.4-TakahashiPotential",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT55/a",
+      "total_bytes": 91516,
+      "manifest_sha256": "895cdb440fbfff2127d9933b5be2aaa196222da3416b94f71f4b1dc09f85ec72"
+    },
+    {
+      "subtask": "EAUDIT55b",
+      "source_id": "MD-3.3.4-TakahashiShadow",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT55/b",
+      "total_bytes": 102424,
+      "manifest_sha256": "b8a20a605c37ffc9e4c2a0b42c305db965f7014d9b44f5c86dfab50f27627687"
+    }
+  ]
+}

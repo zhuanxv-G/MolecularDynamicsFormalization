@@ -1,0 +1,75 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-3.3-DifferenceCubic；原PDF页映射=[126]。必须实际写入 /workspace/.mathcopilot/reviews/ch03_eaudit/EAUDIT51_review.json，对象含batch=EAUDIT51、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT51.md": "dd02d2d868da5454a668e722a05a0abcb975a163a73e74ebc9f99706e300f8f2",
+  "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "EAUDIT51e_materials": "58ed6cb258b97af9bce3d5088abe802229013b2a8cff3a29cd6478cdf8941e7c",
+  "EAUDIT51e_PAGES.pdf": "395feb007672a81966a97b2db48bc4f8415074295cdefa107046c7e9f913fe86"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-3.3-DifferenceCubic",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "3.3",
+  "printed_page": "104",
+  "pdf_page": "126",
+  "statement_latex": "\\[e^{hA}e^{hB}-e^{h(A+B)}=\\frac{h^2}{2}(AB-BA)+\\frac{h^3}{6}(2AB^2+2A^2B-BA^2-BAB-B^2A-ABA)+O(h^4).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "同页差值展示式的三次系数；二次系数见DifferenceCommutator，不省略整个差式的另一子句。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch03.differenceCubic",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookFormalOperatorDifference_coeff_three"
+  ],
+  "extra_assumptions": [
+    "[EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT06_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:04:52.365030",
+      "before_sha256": "44337cc431d89a0f2b37d6726ee5296e7ca3e32d5ecc05a3232fc630b814cae4",
+      "after_sha256": "b397765fcccf71c5a35f7247f0b46248386591d514f3e0644904c2a283726041",
+      "changed_fields": [],
+      "raw_return": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem differenceCubic (A B : R) :
+    PowerSeries.coeff 0 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
+    PowerSeries.coeff 1 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
+    PowerSeries.coeff 2 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = (1/2 : ℝ) • (A*B-B*A) ∧
+    PowerSeries.coeff 3 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = (1 / 6 : ℝ) • ((2 : ℝ) • (A * B ^ 2) + (2 : ℝ) • (A ^ 2 * B) -
+        B * A ^ 2 - B * A * B - B ^ 2 * A - A * B * A) := by
+  sorry
+
+theorem differenceCubic_coeff3 (A B : R) :
+    PowerSeries.coeff 3 (textbookFormalOperatorExponential A *
+      textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A + B)) =
+      (1 / 6 : ℝ) • ((2 : ℝ) • (A * B ^ 2) + (2 : ℝ) • (A ^ 2 * B) -
+        B * A ^ 2 - B * A * B - B ^ 2 * A - A * B * A) := by
+  apply MolecularDynamics.textbookFormalOperatorDifference_coeff_three <;> assumption
+```
+### 实际依赖 MolecularDynamics.textbookFormalOperatorExponential
+```lean
+noncomputable def textbookFormalOperatorExponential (A : R) : PowerSeries R :=
+  PowerSeries.mk (fun n => (1 / (n.factorial : ℝ)) • A ^ n)
+```
