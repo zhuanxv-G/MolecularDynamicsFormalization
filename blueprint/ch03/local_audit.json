@@ -1411,8 +1411,8 @@
       "lean_decl": "MD.Ch03.symplecticEulerShadowMatching",
       "verdict": "NEEDS_HUMAN",
       "explanation": "h³截断只通常支持局部O(h⁵)，完整匹配和状态/算子次序需要独立审校；保留完整签名但不提前证明。",
-      "signature_sha256": "9ddd1bbd45328fe6da271d07d21956dc45b48cb1bec173e0161ce1483c8776fd",
-      "block_sha256": "5c479e24f926b6958bc860c8505e5a0c1255db123963ebe81e27d1ce14122e24",
+      "signature_sha256": "61e638bb838c136c2c894056f42bf32c1875c1f30892a2eba80c95e4abc86b91",
+      "block_sha256": "c8a74ed23f773aa682c8720688c9f0766b2a36346f9b867e8393f1b96d551671",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -1430,7 +1430,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT41/axioms.log"
     },
     "MD-3.3.2-VerletMaps": {
       "checked": true,

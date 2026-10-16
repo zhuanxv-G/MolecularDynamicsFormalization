@@ -1892,5 +1892,41 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT40/INDEX.md"
+  },
+  {
+    "chapter": 3,
+    "eaudit": "EAUDIT41",
+    "section": "3.3.1",
+    "source_ids": [
+      "MD-3.3.1-SymplecticEulerShadowMatching"
+    ],
+    "reaudit_ids": [
+      "MD-3.3.1-SymplecticEulerShadowMatching"
+    ],
+    "human_ids": [],
+    "lean_sha256": "318d44d1a47f56b44c64d81dff571b252d6a591d744f59de56cf736f59549534",
+    "source_sha256": "2bf0317e7cab32699488229836bd3dd484cdbf08029110799a2918e3428f9ebc",
+    "pages": [
+      128
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch03.olean",
+        "Blueprint/Ch03.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "318d44d1a47f56b44c64d81dff571b252d6a591d744f59de56cf736f59549534",
+      "log_sha256": "e482faa31026f02d463e684358f07c3f91c5c027e28567e1a0de9ac8e26fec92"
+    },
+    "axiom_decl_count": 1,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT41/INDEX.md"
   }
 ]

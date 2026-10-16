@@ -6,7 +6,7 @@
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
-第3章：网站PASS 56 / 已修待复审 73 / 待导师 20 / 修复中 0。
+第3章：网站PASS 55 / 已修待复审 74 / 待导师 20 / 修复中 0。
 第4章：网站PASS 42 / 已修待复审 110 / 待导师 27 / 修复中 0。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
@@ -212,7 +212,7 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.3-BCHHamiltonianMatching | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT06 |
 | 3 | MD-3.3-CommutingFlows | PASS | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT40 |
 | 3 | MD-3.3.1-SymplecticEulerShadow | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.3.1-SymplecticEulerShadowMatching | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
+| 3 | MD-3.3.1-SymplecticEulerShadowMatching | PASS | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT41 |
 | 3 | MD-3.3.2-VerletMaps | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.3.2-VerletHamiltonianParts | FAIL | C | 绑定真实正对角质量、T(p)=pᵀM⁻¹p/2及U(q)，补H1+H2+H3=H；移除任意相空间函数替代机械分解。 | 已修待复审 | EAUDIT26 |
 | 3 | MD-3.3.2-VerletStructure | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |

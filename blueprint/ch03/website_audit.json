@@ -3138,7 +3138,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH07_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT41",
+    "repair": {
+      "eaudit": "EAUDIT41",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT41/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT41.md": "a081e1bb99f0c89bef6b48f03f86dd762e947898cd8eed83477e75516698a8a1",
+        "Blueprint/Ch03.lean": "318d44d1a47f56b44c64d81dff571b252d6a591d744f59de56cf736f59549534",
+        "blueprint/ch03/ch03_source.json": "2bf0317e7cab32699488229836bd3dd484cdbf08029110799a2918e3428f9ebc"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.2-VerletMaps",

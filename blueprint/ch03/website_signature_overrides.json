@@ -279,5 +279,12 @@
       "光滑Hamiltonian、开放域及三个真实局部流；|h|<η/2保证复合时间在所给流的定义区间。",
       "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ]
+  },
+  "MD-3.3.1-SymplecticEulerShadowMatching": {
+    "code": "theorem symplecticEulerShadowMatching :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),\n    positiveMass m → ContDiff ℝ ∞ U → IsCompact B →\n    matchesHamiltonian (fun h z => symplecticEulerShadow3 m U h (unpack z))\n      (textbookSymplecticEuler m U) B 4 := by\n  sorry",
+    "extra_assumptions": [
+      "正对角质量、U全域C∞、紧初值集B；截断h³的实际局部流端点O(h⁵)为额外严格化。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+    ]
   }
 }

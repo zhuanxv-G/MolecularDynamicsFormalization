@@ -451,10 +451,11 @@ def symplecticEulerShadow3 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : 
 
 /-- source_id: MD-3.3.1-SymplecticEulerShadowMatching · unnumbered_claim · §3.3.1 · 印刷p.106 / PDFp.128
 [EXTRA] 正对角质量、U全域C∞、紧初值集B；截断h³的实际局部流端点O(h⁵)为额外严格化。
-[NEEDS_HUMAN] 原文只写Hamiltonian O(h⁴)，实际端点O(h⁵)解释与数值坐标顺序待审。 -/
+[NEEDS_HUMAN] 原文只写Hamiltonian O(h⁴)，实际端点O(h⁵)解释与数值坐标顺序待审。 
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
 theorem symplecticEulerShadowMatching :
   ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),
-    positiveMass m → ContDiff ℝ ⊤ U → IsCompact B →
+    positiveMass m → ContDiff ℝ ∞ U → IsCompact B →
     matchesHamiltonian (fun h z => symplecticEulerShadow3 m U h (unpack z))
       (textbookSymplecticEuler m U) B 4 := by
   sorry

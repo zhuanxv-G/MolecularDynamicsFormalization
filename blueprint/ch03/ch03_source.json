@@ -1411,12 +1411,24 @@
     "lean_decl": "MD.Ch03.symplecticEulerShadowMatching",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "正对角质量、U全域C∞、紧初值集B；截断h³的实际局部流端点O(h⁵)为额外严格化。"
+      "正对角质量、U全域C∞、紧初值集B；截断h³的实际局部流端点O(h⁵)为额外严格化。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT41_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:36:50.397597",
+        "before_sha256": "e0de91710efc9ccff65cd35bc2835c4a6bf79e46972f5bd964defd1a1edfe62d",
+        "after_sha256": "5aa56fbb27920459630cde305d462a9c2c093f8a5d8f8d41b88bb88a85a6f348",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH07_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT41/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.2-VerletMaps",

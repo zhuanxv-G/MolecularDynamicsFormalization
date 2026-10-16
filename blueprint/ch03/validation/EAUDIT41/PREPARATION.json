@@ -1,0 +1,21 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT41",
+  "section": "3.3.1",
+  "source_ids": [
+    "MD-3.3.1-SymplecticEulerShadowMatching"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.1-SymplecticEulerShadowMatching"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "c30856b2e53c97b4da281bb09225b43f5adef709603ffb2c6af4e54e1a9b937a",
+  "lean_sha256": "318d44d1a47f56b44c64d81dff571b252d6a591d744f59de56cf736f59549534",
+  "source_sha256": "2bf0317e7cab32699488229836bd3dd484cdbf08029110799a2918e3428f9ebc",
+  "pages": [
+    128
+  ],
+  "prior_proof_blocks": {
+    "MD-3.3.1-SymplecticEulerShadowMatching": "theorem symplecticEulerShadowMatching :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),\n    positiveMass m → ContDiff ℝ ⊤ U → IsCompact B →\n    matchesHamiltonian (fun h z => symplecticEulerShadow3 m U h (unpack z))\n      (textbookSymplecticEuler m U) B 4 := by\n  sorry"
+  }
+}
