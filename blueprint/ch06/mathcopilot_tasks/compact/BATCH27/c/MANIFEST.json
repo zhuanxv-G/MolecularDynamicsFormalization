@@ -1,0 +1,43 @@
+{
+  "batch": "BATCH27",
+  "subtask": "BATCH27c",
+  "source_ids": [
+    "MD-6.3.7-DiffusionTrace"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 264,
+      "printed_page": 243
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e954a4cc328c69279d1fc786267a03e8ac6280b82d026fddcf5399e3bf54d200",
+  "lean_sha256": "c46634d49462f2518b53f0230506084783237f0ab80b8d497c952654a405d8d4",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "c46634d49462f2518b53f0230506084783237f0ab80b8d497c952654a405d8d4",
+    "blueprint/ch06/ch06_source.json": "e954a4cc328c69279d1fc786267a03e8ac6280b82d026fddcf5399e3bf54d200",
+    "BATCH27c_PAGES.pdf": "2a556d2718fdeec241bd7b885b5a27deef955e0c27b9cd58ba49111408d87961",
+    "signature_sha256": "3a563c5cca4925446906d939b1344addc9b495f53f47660112a445d059e86195"
+  },
+  "signature_sha256": "3a563c5cca4925446906d939b1344addc9b495f53f47660112a445d059e86195",
+  "definition_excerpts": [],
+  "paste_plus_pdf_bytes": 92357,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3636,
+      "sha256": "76e541ddd7f11f66d061ecb573eb334e6545a02aedd1f35d4493b878aee11e9c"
+    },
+    "BATCH27c_PAGES.pdf": {
+      "bytes": 88721,
+      "sha256": "2a556d2718fdeec241bd7b885b5a27deef955e0c27b9cd58ba49111408d87961"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 93975
+}

@@ -136,6 +136,22 @@
 | MD-6.3.3-Figure64Frequencies | 238/259 | PASS | 待网站审计 | self-contained |
 | MD-6.3.3-Figure65Frequencies | 238/259 | PASS | 待网站审计 | self-contained |
 | MD-6.3.3-BathForceWeakLimitMeaning | 237–238/258–259 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.3.4-OverdampedLimit | 240/261 | PASS | 待网站审计 | incomplete |
+| MD-6.3.5-ScalarGenerator | 240/261 | PASS | 待网站审计 | self-contained |
+| MD-6.3.5-GeneratorExpectation | 240/261 | PASS | 待网站审计 | incomplete |
+| MD-6.3.6-PolynomialSmooth | 241/262 | PASS | 待网站审计 | self-contained |
+| MD-6.3.6-DensityExpectation | 241/262 | PASS | 待网站审计 | incomplete |
+| MD-6.3.6-ScalarForward | 242/263 | PASS | 待网站审计 | self-contained |
+| MD-6.3.6-FPDriftAdjoint | 241–242/262–263 | PASS | 待网站审计 | self-contained |
+| MD-6.3.6-FPDiffusionPrinted | 242/263 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.3.6-FPAdjointCompact | 242/263 | PASS | 待网站审计 | self-contained |
+| MD-6.3.6-FPPolynomialAdjoint | 241–242/262–263 | PASS | 待网站审计 | incomplete |
+| MD-6.3.6-FPEquation | 242/263 | PASS | 待网站审计 | incomplete |
+| MD-6.3.6-ZeroNoise | 242/263 | PASS | 待网站审计 | self-contained |
+| MD-6.3.7-VectorIto | 243/264 | PASS | 待网站审计 | incomplete |
+| MD-6.3.7-VectorForward | 243/264 | PASS | 待网站审计 | self-contained |
+| MD-6.3.7-DiffusionTrace | 243/264 | PASS | 待网站审计 | self-contained |
+| MD-6.3.7-VectorFPEquation | 243/264 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -171,6 +187,10 @@
   原“sufficient high frequency/typically”没有给频率序列、归一化、热浴初值法则及白噪声弱收敛资格，不能声明任意热浴自动满足δ极限。
 - MD-6.3.3-BathForceWeakLimitMeaning：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
   原many choices没有给热浴初值法则/频率条件/拓扑；此处f像Wiener process、下页f(t)作为Wiener increment还存在力与积分过程的类型疑问。
+- MD-6.3.6-FPDiffusionPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  原页两次IBP后仍打印负号；正确应正号，且(6.39)最终算子已经使用正号。
+- MD-6.3.6-FPPolynomialAdjoint：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  原只给函数值尾部增长而未约束导数；完整IBP及边界消失需技术资格，已全部明示，不静默添加。
 
 ## 1. MD-6.1.1-Microcanonical · definition · 印刷p.214 / PDFp.235
 
@@ -6767,3 +6787,825 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 缺失/继续路线：缺精确热浴初始化/谱条件及white-force或integrated-force极限解释；保留疑误，不建大型弱收敛理论。
 
 签名SHA256：`ea1f56337c045b1b5bacf253a8bf51504e8fe21dea4181a96105df7b11d5850b`；原文SHA256：`4cf52cc6ba01a1cb134c1a9ff69e9d8509bcc40403152110dc8f5e2090d49210`。
+
+## 1. MD-6.3.4-OverdampedLimit · unnumbered_claim · 印刷p.240 / PDFp.261
+
+### 2. 原文陈述
+
+> This is also sometimes referred to as Brownian dynamics or Smoluchowski dynamics. The transition from Langevin to Brownian dynamics is typically referred to as the “Kramers to Smoluchowski limit.”
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem overdampedLimit : ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (B : ℝ≥0 → Ω → (Fin n → ℝ)) (m : Fin n → ℝ)
+    (U : (Fin n → ℝ) → ℝ) (β : ℝ) (x0 : (Fin n → ℝ) × (Fin n → ℝ))
+    (X : ℝ → ℝ → Ω → ((Fin n → ℝ) × (Fin n → ℝ))) (q : ℝ → Ω → (Fin n → ℝ)),
+  textbookIsWienerVector B P → (∀ i, 0 < m i) → ContDiff ℝ ∞ U →
+  textbookUnitPeriodicPotential U → 0 < β →
+  (∀ γ : ℝ, 0 < γ → MolecularDynamics.Chapter06Review.langevinMassSDE P
+    (fun t sample ↦ B t.toNNReal sample) (X γ) m U γ β⁻¹ x0) →
+  MolecularDynamics.Chapter06Review.brownianMassSDE P (fun t sample ↦ B t.toNNReal sample) q m U 1 β⁻¹ x0.1 →
+  ∀ T : ℝ, 0 < T → ∀ f : (Fin n → ℝ) → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun γ : ℝ ↦ ∫ sample, f (X γ (γ*T) sample).1 ∂P) atTop
+      (𝓝 (∫ sample, f (q T sample) ∂P))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.overdampedLimit；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]全部正对角质量、正β、光滑周期U，原热浴路径模型；高γ需按γT观察，完整任意有界连续检验弱极限，没有把极限本身作前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1275](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1275>)（`MD.Ch06.overdampedLimit`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺一般正质量Kramers–Smoluchowski极限理论；不恢复封存长证明，不建设大型理论。
+
+签名SHA256：`7539429a651a4e51c5c986e40c912b8eaabff0817bdb919f5ef4e68e55b1dcae`；原文SHA256：`8cdfa1061634376f78ab6991519a1f5c4f232c5ac24b4d57a3b200bf248c273a`。
+
+## 1. MD-6.3.5-ScalarGenerator · (6.38) · 印刷p.240 / PDFp.261
+
+### 2. 原文陈述
+
+> where $\mathcal L$ is a linear operator, called the generator of the stochastic process, defined by
+> \[\mathcal L=a(x)\frac d{dx}+\tfrac12 b^2(x)\frac{d^2}{dx^2}.\tag{6.38}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def scalarGenerator (a b f : ℝ → ℝ) (x : ℝ) : ℝ := a x*deriv f x + b x^2/2*deriv (deriv f) x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.scalarGenerator；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1290](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1290>)（`MD.Ch06.scalarGenerator`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0bf9ab9fe315d138ab99dad97d866e1cbf0ec9fc9f8e20343b0267c79369c0d5`；原文SHA256：`ff57a69a580823de150ec96e9e9d789772a23c43a3e45d6d55f8642f5741e7eb`。
+
+## 1. MD-6.3.5-GeneratorExpectation · (6.37) · 印刷p.240 / PDFp.261
+
+### 2. 原文陈述
+
+> Then, taking the expectation of the Itô-Doeblin formula (6.17) we find
+> \[\mathbb E\{d\phi(X)\}=\mathbb E\{\phi'(X)a(X)\}dt+\tfrac12\mathbb E\{\phi''(X)b(X)^2\}dt
+> =\mathbb E\{(\mathcal L\phi)(X)\}dt.\tag{6.37}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem generatorExpectation :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W X : ℝ → Ω → ℝ) (a b φ : ℝ → ℝ) (x0 : ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X (fun x _ ↦ a x) (fun x _ ↦ b x) x0 →
+  ContDiff ℝ 1 a → ContDiff ℝ 1 b → ContDiff ℝ 2 φ → MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun t sample ↦ deriv φ (X t sample)*b (X t sample)) →
+  (∀ t : ℝ, 0 ≤ t → Integrable (fun sample ↦ MolecularDynamics.Chapter06Review.scalarGenerator a b φ (X t sample)) P) →
+  ContinuousOn (fun t ↦ ∫ sample, MolecularDynamics.Chapter06Review.scalarGenerator a b φ (X t sample) ∂P) (Ici 0) →
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) →
+  Measurable (Function.uncurry X) →
+  (∀ T : ℝ, 0 ≤ T → Integrable
+    (fun w : ℝ × Ω ↦ |MolecularDynamics.Chapter06Review.scalarGenerator a b φ (X w.1 w.2)|)
+    ((volume.restrict (Icc 0 T)).prod P)) →
+  ∀ t : ℝ, 0 < t → HasDerivAt (fun s ↦ ∫ sample, φ (X s sample) ∂P)
+    (∫ sample, MolecularDynamics.Chapter06Review.scalarGenerator a b φ (X t sample) ∂P) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.generatorExpectation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实严格SDE、C²φ、适应平方可积资格、Lφ实际可积且时间期望连续；完整期望时间导数，不只定义L。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA]自然Wiener历史适应、联合可测X、C¹a/b及Lφ在每个有限时间×样本上的绝对可积资格，保证实际Fubini；有符号期望连续不自动蕴含此资格。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1295](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1295>)（`MD.Ch06.generatorExpectation`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺Ito链式法则与期望求导/鞅零均值完整桥接。
+
+签名SHA256：`4053d0f49330c822edaeb038e97320b7086f6e8058d521cca617d12567e09798`；原文SHA256：`e904551d1b8437ca11431dc116cf18f8adec8385f5c257ef1a8e9a9838f63027`。
+
+## 1. MD-6.3.6-PolynomialSmooth · definition · 印刷p.241 / PDFp.262
+
+### 2. 原文陈述
+
+> This condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future purposes we define the space of functions which are $C^\infty$ smooth and satisfy the polynomial growth restriction by $C_P^\infty$:
+> \[C_P^\infty\stackrel{\mathrm{def}}=\{\phi\in C^\infty\mid\exists r\in\mathbb N:\phi(x)=O(|x|^r),\ x\to\pm\infty\}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def polynomialSmooth (f : ℝ → ℝ) : Prop :=
+  ContDiff ℝ ∞ f ∧ ∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |f x| ≤ C*(1+|x|)^r
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.polynomialSmooth；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1313](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1313>)（`MD.Ch06.polynomialSmooth`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`ae41aa78d0fc6b70af0a0c355b696c5f5c72c19f64b5b32fb89f331528a610f6`；原文SHA256：`76863e6e53c7eb3d13ebfb1bcf9c3cc79c9229124ff4a9a8a0282b3cd7e0c355`。
+
+## 1. MD-6.3.6-DensityExpectation · unnumbered_claim · 印刷p.241 / PDFp.262
+
+### 2. 原文陈述
+
+> For any $\phi\in C_P^\infty$, the expectation with respect to $\rho(x,t)$ is well defined and we have
+> \[\mathbb E\phi(X(t))=\langle\phi,\rho\rangle=\int_{-\infty}^{+\infty}\phi(x)\rho(x,t)dx.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem densityExpectation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (X : Ω → ℝ) (ρ φ : ℝ → ℝ),
+  HasLaw X (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ x))) P →
+  (∀ x, 0 ≤ ρ x) → Measurable ρ → MolecularDynamics.Chapter06Review.polynomialSmooth φ →
+  (∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∀ x, ρ x ≤ C*Real.exp (-c*|x|)) →
+  Integrable (fun sample ↦ φ (X sample)) P ∧
+    (∫ sample, φ (X sample) ∂P)=(∫ x, φ x*ρ x)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.densityExpectation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实非负可测density与全局指数尾界；完整可积与积分law等式，不预置这些结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1318](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1318>)（`MD.Ch06.densityExpectation`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺多项式乘指数尾积分及withDensity实积分的完整打包桥接。
+
+签名SHA256：`d432bd6c1cccf9f7e007a1782419e79a89b52ad595f70cd0081daaab9313706b`；原文SHA256：`82d70ee3bc3adb7a51939edf66e02e3124a07b11c5e5a185a7ca18e70b2780ec`。
+
+## 1. MD-6.3.6-ScalarForward · definition · 印刷p.242 / PDFp.263
+
+### 2. 原文陈述
+
+> In the case at hand the adjoint is
+> \[\mathcal L^*\rho=-(a(x)\rho)_x+\tfrac12(b^2(x)\rho)_{xx},\]
+> which we shall refer to as the Kolmogorov operator.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def scalarForward (a b ρ : ℝ → ℝ) (x : ℝ) : ℝ :=
+  -deriv (fun z ↦ a z*ρ z) x + deriv (deriv (fun z ↦ b z^2*ρ z)) x/2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.scalarForward；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1328](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1328>)（`MD.Ch06.scalarForward`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`6178ede8590f4d53818b0d1142a6d6276703d817ade32e469966ed46315b15bd`；原文SHA256：`5275d143f883bba640fc7600b90f935c1963bf8a4a56232ed11367cc4637533a`。
+
+## 1. MD-6.3.6-FPDriftAdjoint · unnumbered_claim · 印刷p.241–242 / PDFp.262–263
+
+### 2. 原文陈述
+
+> First, we find
+> \[\int_{-\infty}^{+\infty}a(x)\phi'(x)\rho(x,t)dx=[\phi(x)a(x)\rho(x,t)]_{-\infty}^{+\infty}-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx
+> =-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem fpDriftAdjoint :
+  ∀ (a ρ φ : ℝ → ℝ),
+  ContDiff ℝ 1 a → ContDiff ℝ 1 ρ → ContDiff ℝ 1 φ →
+  HasCompactSupport φ → (∫ x, a x*deriv φ x*ρ x) = ∫ x, φ x*(-deriv (fun z ↦ a z*ρ z) x)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.fpDriftAdjoint；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]当前完整紧支撑C¹检验桥接；原指数尾和多项式检验的全域版本在FPPolynomialAdjoint保留，不将紧支撑特例计为原全部检验已证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:1333](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1333>)（`MD.Ch06.fpDriftAdjoint`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/FPDriftAdjoint.json；blueprint/ch06/validation/short_search/route-5acf7a3cb19e25f6a904.lean；blueprint/ch06/validation/short_search/route-5acf7a3cb19e25f6a904.log。
+
+签名SHA256：`662b99240ac521be7f9bec9c1496c338696f19f1699532d278b46784bf143528`；原文SHA256：`0e693f1dc25b29c245246b0f9872ab62da372ec592eadb67b1ffd75a10fe767c`。
+
+## 1. MD-6.3.6-FPDiffusionPrinted · unnumbered_claim · 印刷p.242 / PDFp.263
+
+### 2. 原文陈述
+
+> With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,
+> \[\int_{-\infty}^{+\infty}b^2(x)\phi''(x)\rho(x,t)dx=-\int_{-\infty}^{+\infty}\phi(x)(b^2(x)\rho)_{xx}dx.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem fpDiffusionPrinted : ∀ (b ρ φ : ℝ → ℝ),
+  ContDiff ℝ 2 b → ContDiff ℝ 2 ρ → ContDiff ℝ 2 φ → HasCompactSupport φ →
+  (∫ x, b x^2*deriv (deriv φ) x*ρ x)=
+    -(∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.fpDiffusionPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 原页两次IBP后仍打印负号；正确应正号，且(6.39)最终算子已经使用正号。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1353](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1353>)（`MD.Ch06.fpDiffusionPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：不证明错误负号；正号完整伴随式另批保留。
+
+签名SHA256：`e3054ef15edf9b7a625d6d50b25eded1fdfc693b1d2c0c80664c36a4b1f9ea23`；原文SHA256：`ef08a1f4c1e199c41ac3d7d7f90f79caa8ed2c446276afdf54c41fe3c220ebb2`。
+
+## 1. MD-6.3.6-FPAdjointCompact · unnumbered_claim · 印刷p.242 / PDFp.263
+
+### 2. 原文陈述
+
+> where the operator appearing on the right hand side is the adjoint $\mathcal L^*$ of the generator of the stochastic process, satisfying the relation
+> \[\langle\mathcal L\phi,\rho\rangle=\langle\phi,\mathcal L^*\rho\rangle.\]
+> In the case at hand the adjoint is
+> \[\mathcal L^*\rho=-(a(x)\rho)_x+\tfrac12(b^2(x)\rho)_{xx};\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem fpAdjointCompact :
+  ∀ (a b ρ φ : ℝ → ℝ),
+  ContDiff ℝ 2 a → ContDiff ℝ 2 b → ContDiff ℝ 2 ρ → ContDiff ℝ 2 φ →
+  HasCompactSupport φ → (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x) = ∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.fpAdjointCompact；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]紧支撑C²检验的完整正号伴随恒等；多项式检验及指数尾版本另条保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:1361](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1361>)（`MD.Ch06.fpAdjointCompact`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/FPAdjointCompact.json；blueprint/ch06/validation/short_search/route-7ecec0f471f1e7191767.lean；blueprint/ch06/validation/short_search/route-7ecec0f471f1e7191767.log。
+
+签名SHA256：`1bae3346ca17baa6c628256014b86e6cec426817d72b39c7e3dbc811eba2f546`；原文SHA256：`4925e1f35326ea0a10f003b0d82923875052d31f94b34b46a30d93f92383653d`。
+
+## 1. MD-6.3.6-FPPolynomialAdjoint · unnumbered_claim · 印刷p.241–242 / PDFp.262–263
+
+### 2. 原文陈述
+
+> We assume that $\rho$ is $C^\infty$ for all $t$ and that the density tends to zero exponentially fast as $x\to\pm\infty$, whereas $a$ and $b$ are $C^\infty$ functions which grow at most polynomially fast in these limits.
+> \[\langle\mathcal L\phi,\rho\rangle=\langle\phi,\mathcal L^*\rho\rangle.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem fpPolynomialAdjoint : ∀ (a b ρ φ : ℝ → ℝ),
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ ρ → ContDiff ℝ ∞ φ →
+  (∀ f ∈ ({a,b,φ} : Set (ℝ → ℝ)), ∀ k : ℕ, k ≤ 2 →
+    ∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |iteratedDeriv k f x| ≤ C*(1+|x|)^r) →
+  (∀ k : ℕ, k ≤ 2 → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∀ x,
+    |iteratedDeriv k ρ x| ≤ C*Real.exp (-c*|x|)) →
+  (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x)=
+    (∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.fpPolynomialAdjoint；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原C∞P值增长不足以控制所有IBP边界；明确一、二阶a,b,φ多项式增长及ρ导数指数尾，保存整个非紧支撑真实积分恒等。 | [EXTRA] |
+| 原页核对/疑点 | 原只给函数值尾部增长而未约束导数；完整IBP及边界消失需技术资格，已全部明示，不静默添加。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1413](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1413>)（`MD.Ch06.fpPolynomialAdjoint`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺完整指数尾IBP打包；不以边界通量消失本身作假设。
+
+签名SHA256：`b86cee8f0e52b1e0f38e52252226f09f80113fc3b14fa6671b44ce09d1ca8a2d`；原文SHA256：`d1720be233eaa984c2878f7c330727f4a4e6077ba719293e5a352212df1696c3`。
+
+## 1. MD-6.3.6-FPEquation · unnumbered_claim · 印刷p.242 / PDFp.263
+
+### 2. 原文陈述
+
+> If this is to hold for all test functions $\phi$, we must have
+> \[\frac{\partial\rho}{\partial t}=-\frac\partial{\partial x}(a(x)\rho)+\frac12\frac{\partial^2}{\partial x^2}(b^2(x)\rho).\]
+> The Fokker-Planck equation may be written in the compact form
+> \[\frac{\partial\rho}{\partial t}=\mathcal L^*\rho.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem fpEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ) (x0 : ℝ) (ρ : ℝ → ℝ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P →
+  strictScalarSDE P W X (fun x _ ↦ a x) (fun x _ ↦ b x) x0 →
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ (Function.uncurry ρ) →
+  (∀ t : ℝ, 0 < t → (∀ x, 0 ≤ ρ t x) ∧
+    HasLaw (X t) (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ t x))) P) →
+  (∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |a x|+|b x| ≤ C*(1+|x|)^r) →
+  (∀ lo hi : ℝ, 0 < lo → lo ≤ hi → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧
+    ∀ t ∈ Icc lo hi, ∀ x, |ρ t x|+|deriv (fun s ↦ ρ s x) t| ≤ C*Real.exp (-c*|x|)) →
+  ∀ t x : ℝ, 0 < t → deriv (fun s ↦ ρ s x) t=MolecularDynamics.Chapter06Review.scalarForward a b (ρ t) x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.fpEquation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际严格SDE与其真实平滑非负密度law、局部一致指数尾可求导资格；没有把弱PDE或所求点态PDE当假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1425](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1425>)（`MD.Ch06.fpEquation`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺一般Ito鞅期望、真实law到弱方程与测试函数基本引理完整桥接。
+
+签名SHA256：`8fa9e446ddff6acaa48b4d43a785c9f297890828cdefd34b17948a52e0446777`；原文SHA256：`a9d6376fb3e35e2fbcfb3bda807ab845ae18b97a42c0a4cb7360a66c2d887b89`。
+
+## 1. MD-6.3.6-ZeroNoise · unnumbered_claim · 印刷p.242 / PDFp.263
+
+### 2. 原文陈述
+
+> In case $b\equiv0$, the SDE becomes an ordinary differential equation. Then the generator $\mathcal L$ becomes simply the Lie derivative, and its adjoint is just the Liouvillian.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem zeroNoise :
+  ∀ (a f ρ : ℝ → ℝ) (x : ℝ),
+  MolecularDynamics.Chapter06Review.scalarGenerator a (fun _ ↦ 0) f x=a x*deriv f x ∧
+    MolecularDynamics.Chapter06Review.scalarForward a (fun _ ↦ 0) ρ x = -deriv (fun z ↦ a z*ρ z) x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.zeroNoise；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:1439](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1439>)（`MD.Ch06.zeroNoise`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/ZeroNoise.json；blueprint/ch06/validation/short_search/route-00227e1c5a6a696ca1c5.lean；blueprint/ch06/validation/short_search/route-00227e1c5a6a696ca1c5.log。
+
+签名SHA256：`541ca630d8b5a90ea6abc398dc5a8871d9c31e24266f6a0d55f11447dc9c9eca`；原文SHA256：`88257bc84559a32e2dd4635a183bb700698b2f6b52d1466a49d460902ef7cb6f`。
+
+## 1. MD-6.3.7-VectorIto · (6.40)–(6.41) · 印刷p.243 / PDFp.264
+
+### 2. 原文陈述
+
+> If $\phi$ is a scalar valued function of $\mathbb R^m$, and $Z(t)$ is the solution of the SDE system
+> \[dZ=a(Z)dt+B dW;\tag{6.39}\]
+> where $a$ is a function in $\mathbb R^m$ and $B$ is a constant matrix, then we have
+> \[d\phi(Z(t))=\nabla\phi\cdot[adt+B dW]+\tfrac12dW^TB^T\phi''B dW;\tag{6.40}\]
+> \[d\phi(Z(t))=\nabla\phi\cdot[adt+B dW]+\tfrac12\operatorname{Tr}(B^T\phi''B)dt.\tag{6.41}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem vectorIto : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → (Fin n → ℝ)) (B : Matrix (Fin n) (Fin r) ℝ)
+    (x0 : Fin n → ℝ) (φ : (Fin n → ℝ) → ℝ),
+  textbookIsWienerVector (fun t sample ↦ W t sample) P →
+  strictVectorSDE P W X (fun x _ ↦ a x) (fun _ _ ↦ B) x0 → ContDiff ℝ 2 φ →
+  (∀ j, MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P (fun t sample ↦ W t sample j)
+    (fun t sample ↦ fderiv ℝ φ (X t sample) (fun i ↦ B i j))) →
+  ∀ T : ℝ, 0 ≤ T → ∃ integrals : Fin r → Ω → ℝ,
+    (∀ j, strictItoIntegral P (fun t sample ↦ W t sample j)
+      (fun t sample ↦ fderiv ℝ φ (X t sample) (fun i ↦ B i j)) T (integrals j)) ∧
+    (∀ᵐ sample ∂P, φ (X T sample)-φ x0-
+      (∫ s in 0..T, MolecularDynamics.Chapter06Review.vectorGenerator a B φ (X s sample))=∑ j, integrals j sample)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.vectorIto；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]按本节实际常矩阵B范围；真实全部坐标严格Ito积分与Hessian/trace完整校正，未缩成仅漂移定义。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1450](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1450>)（`MD.Ch06.vectorIto`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺一般多维Ito公式完整桥接。
+
+签名SHA256：`5a92ac3e1cfa3504e5aa829a5e1dcdf5a33ac5b7860952b9b7a7c82f96a937b3`；原文SHA256：`f6415af1d8d51dcbea005d029f4b6208b756020aa5ff663f7b8b9e823f8c2993`。
+
+## 1. MD-6.3.7-VectorForward · definition · 印刷p.243 / PDFp.264
+
+### 2. 原文陈述
+
+> In the multivariate case, the density is a function of the vector describing a state of the system $z$ and $t$, and is governed by the partial differential equation
+> \[\frac{\partial\rho}{\partial t}=-\nabla\cdot(a(z)\rho(z))+\tfrac12\operatorname{Tr}(B^T\rho''B).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def vectorForward {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
+    (B : Matrix (Fin n) (Fin r) ℝ) (ρ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.vectorForward a B ρ x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.vectorForward；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1466](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1466>)（`MD.Ch06.vectorForward`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`3c32b95ff440aa9dcf309c1d6d8aac9f60a684947ab3a4fd235df7fc5760a661`；原文SHA256：`f79357adbeec12dccede87bdbf83e01361e6cab125bb086299563789cb391b8d`。
+
+## 1. MD-6.3.7-DiffusionTrace · unnumbered_claim · 印刷p.243 / PDFp.264
+
+### 2. 原文陈述
+
+> The second order “diffusion” term in this expression may be expanded as
+> \[\operatorname{Tr}(B^T\rho''B)=\sum_{i=1}^m\sum_{j=1}^m(BB^T)_{ij}\frac{\partial^2\rho}{\partial z_i\partial z_j}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem diffusionTrace :
+  ∀ {n r : ℕ} (B : Matrix (Fin n) (Fin r) ℝ)
+    (H : Matrix (Fin n) (Fin n) ℝ),
+  Matrix.trace (B.transpose*H*B)=∑ i : Fin n, ∑ j : Fin n, (B*B.transpose) i j*H i j
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.diffusionTrace；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:1471](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1471>)（`MD.Ch06.diffusionTrace`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/DiffusionTrace.json；blueprint/ch06/validation/short_search/route-00227e1c5a6a696ca1c5.lean；blueprint/ch06/validation/short_search/route-00227e1c5a6a696ca1c5.log。
+
+签名SHA256：`3a563c5cca4925446906d939b1344addc9b495f53f47660112a445d059e86195`；原文SHA256：`6fd6fe50e34f495de34fba1d03ccdf44951081c290b32b4476ec535c1ac1d94f`。
+
+## 1. MD-6.3.7-VectorFPEquation · unnumbered_claim · 印刷p.243 / PDFp.264
+
+### 2. 原文陈述
+
+> In the multivariate case, the density is a function of the vector describing a state of the system $z$ and $t$, and is governed by the partial differential equation
+> \[\frac{\partial\rho}{\partial t}=-\nabla\cdot(a(z)\rho(z))+\tfrac12\operatorname{Tr}(B^T\rho''B).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem vectorFPEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → (Fin n → ℝ)) (B : Matrix (Fin n) (Fin r) ℝ)
+    (x0 : Fin n → ℝ) (ρ : ℝ → (Fin n → ℝ) → ℝ),
+  textbookIsWienerVector (fun t sample ↦ W t sample) P →
+  strictVectorSDE P W X (fun x _ ↦ a x) (fun _ _ ↦ B) x0 →
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ (Function.uncurry ρ) →
+  (∀ t : ℝ, 0 < t → (∀ x, 0 ≤ ρ t x) ∧ HasLaw (X t) (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ t x))) P) →
+  (∃ C : ℝ, 0 ≤ C ∧ ∃ k : ℕ, ∀ x, ‖a x‖ ≤ C*(1+‖x‖)^k) →
+  (∀ lo hi : ℝ, 0 < lo → lo ≤ hi → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧
+    ∀ t ∈ Icc lo hi, ∀ x, |ρ t x|+|deriv (fun s ↦ ρ s x) t| ≤ C*Real.exp (-c*‖x‖)) →
+  ∀ t x, 0 < t → deriv (fun s ↦ ρ s x) t=vectorForward a B (ρ t) x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.vectorFPEquation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实多维Wiener、严格SDE、完整非负密度law、光滑和局部尾部求导资格；没有将弱PDE结论作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1490](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1490>)（`MD.Ch06.vectorFPEquation`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺多维Ito/鞅期望及真实law到强Fokker–Planck完整桥接。
+
+签名SHA256：`20762283d7a02abcf53c00abac2f3c6c7b3834e1d5ca267e8b06fab1aa81dada`；原文SHA256：`6767878675a034158b2cbbc0c3fcc3c8b91fee729846b8ad2a2bb338dbe6b25f`。

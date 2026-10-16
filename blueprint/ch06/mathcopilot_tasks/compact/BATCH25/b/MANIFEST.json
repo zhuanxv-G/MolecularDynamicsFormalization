@@ -1,0 +1,56 @@
+{
+  "batch": "BATCH25",
+  "subtask": "BATCH25b",
+  "source_ids": [
+    "MD-6.3.6-DensityExpectation"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 262,
+      "printed_page": 241
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "e954a4cc328c69279d1fc786267a03e8ac6280b82d026fddcf5399e3bf54d200",
+  "lean_sha256": "c46634d49462f2518b53f0230506084783237f0ab80b8d497c952654a405d8d4",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "c46634d49462f2518b53f0230506084783237f0ab80b8d497c952654a405d8d4",
+    "blueprint/ch06/ch06_source.json": "e954a4cc328c69279d1fc786267a03e8ac6280b82d026fddcf5399e3bf54d200",
+    "BATCH25b_PAGES.pdf": "38bed5a39d43f6f50611854b9d21fa3ea1fa4ee60789f4d1f8642da254ea4a7b",
+    "signature_sha256": "d432bd6c1cccf9f7e007a1782419e79a89b52ad595f70cd0081daaab9313706b"
+  },
+  "signature_sha256": "d432bd6c1cccf9f7e007a1782419e79a89b52ad595f70cd0081daaab9313706b",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "polynomialSmooth",
+      "code_sha256": "ae41aa78d0fc6b70af0a0c355b696c5f5c72c19f64b5b32fb89f331528a610f6"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "polynomialSmooth",
+      "code_sha256": "ae41aa78d0fc6b70af0a0c355b696c5f5c72c19f64b5b32fb89f331528a610f6"
+    }
+  ],
+  "paste_plus_pdf_bytes": 86956,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4552,
+      "sha256": "a9902b1d011be09bb846eddb5eccb36c791587490f8f6a979c8ada0367a2cec8"
+    },
+    "BATCH25b_PAGES.pdf": {
+      "bytes": 82404,
+      "sha256": "38bed5a39d43f6f50611854b9d21fa3ea1fa4ee60789f4d1f8642da254ea4a7b"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 89054
+}

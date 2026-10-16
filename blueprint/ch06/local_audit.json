@@ -32,9 +32,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.microcanonical": [
           "propext",
@@ -72,9 +72,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.entropy": [
           "propext",
@@ -112,7 +112,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/IndependentPartition.json",
         "blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f.lean",
@@ -123,7 +123,7 @@
         "blueprint/ch06/validation/short_search/route-728b04679336ed7f4fb8.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.independentPartition": [
           "propext",
@@ -161,14 +161,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/EntropyAdditivity.json",
         "blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f-EntropyAdditivity.lean",
         "blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f-EntropyAdditivity.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.entropyAdditivity": [
           "propext",
@@ -206,7 +206,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/EntropyEquilibrium.json",
         "blueprint/ch06/validation/short_search/route-5ef1c8e7ce0e96b2b37f.lean",
@@ -217,7 +217,7 @@
         "blueprint/ch06/validation/short_search/route-728b04679336ed7f4fb8.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.entropyEquilibrium": [
           "propext",
@@ -255,9 +255,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.temperature": [
           "propext",
@@ -295,9 +295,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.inverseThermal": [
           "propext",
@@ -336,9 +336,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathBoltzmannPrinted": [
           "propext",
@@ -377,14 +377,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/LogTemperature.json",
         "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-LogTemperature.lean",
         "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-LogTemperature.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.logTemperature": [
           "propext",
@@ -422,14 +422,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/BathMeanValue.json",
         "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-BathMeanValue.lean",
         "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d-BathMeanValue.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathMeanValue": [
           "propext",
@@ -468,7 +468,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/BathTaylorEstimate.json",
         "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.lean",
@@ -479,7 +479,7 @@
         "blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathTaylorEstimate": [
           "propext",
@@ -518,7 +518,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/BoltzmannConstantSlope.json",
         "blueprint/ch06/validation/short_search/route-63f461cde5430de5158d.lean",
@@ -529,7 +529,7 @@
         "blueprint/ch06/validation/short_search/route-821fdcc697b71d8aabe7-BoltzmannConstantSlope.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.boltzmannConstantSlope": [
           "propext",
@@ -568,9 +568,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.canonicalCDFPrinted": [
           "propext",
@@ -609,9 +609,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.canonicalEnergyDensity": [
           "propext",
@@ -649,9 +649,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.entropyFunctional": [
           "propext",
@@ -689,9 +689,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.constrainedEntropyModel": [
           "propext",
@@ -730,9 +730,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.entropyFirstVariation": [
           "propext",
@@ -772,9 +772,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.entropyVariation": [
           "propext",
@@ -813,9 +813,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.canonicalDensity": [
           "propext",
@@ -853,9 +853,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.massHamiltonian": [
           "propext",
@@ -894,9 +894,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.partitionMass": [
           "propext",
@@ -936,9 +936,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.partitionDomain": [
           "propext",
@@ -978,9 +978,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.finiteDomainPrinted": [
           "propext",
@@ -1021,9 +1021,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.periodicPartitionBridge": [
           "propext",
@@ -1062,9 +1062,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.confiningPartition": [
           "propext",
@@ -1104,9 +1104,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.lennardJonesNonintegrable": [
           "propext",
@@ -1145,14 +1145,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/LennardJonesConfinement.json",
         "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean",
         "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.lennardJonesConfinement": [
           "propext",
@@ -1192,9 +1192,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.periodicWeightIntegrable": [
           "propext",
@@ -1234,9 +1234,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.periodicPartitionPositive": [
           "propext",
@@ -1274,9 +1274,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.polynomialObservable": [
           "propext",
@@ -1314,9 +1314,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.canonicalAveragePrinted": [
           "propext",
@@ -1354,9 +1354,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.canonicalAverage": [
           "propext",
@@ -1396,9 +1396,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.canonicalAverageOne": [
           "propext",
@@ -1437,9 +1437,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.equipartition": [
           "propext",
@@ -1479,9 +1479,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.configTemperature": [
           "propext",
@@ -1522,9 +1522,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.proposition61": [
           "propext",
@@ -1564,9 +1564,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.weightedFluxZero": [
           "propext",
@@ -1606,9 +1606,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.canonicalDivergenceIdentity": [
           "propext",
@@ -1647,9 +1647,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.temperatureChoiceDerivatives": [
           "propext",
@@ -1690,9 +1690,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.periodicBoundaryCancellation": [
           "propext",
@@ -1730,9 +1730,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.meanEnergyConstraint": [
           "propext",
@@ -1770,14 +1770,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/DensityNormalization.json",
         "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean",
         "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.densityNormalization": [
           "propext",
@@ -1816,9 +1816,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.partitionInversePrinted": [
           "propext",
@@ -1859,9 +1859,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.weightedFluxIdentity": [
           "propext",
@@ -1900,9 +1900,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.virialTemperature": [
           "propext",
@@ -1941,14 +1941,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/VirialFieldNotPeriodic.json",
         "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean",
         "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.virialFieldNotPeriodic": [
           "propext",
@@ -1986,14 +1986,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/DensityPositive.json",
         "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean",
         "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.densityPositive": [
           "propext",
@@ -2031,14 +2031,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/KineticWeightFactorization.json",
         "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.lean",
         "blueprint/ch06/validation/short_search/route-d40b3f4fd3ccd485fb75.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.kineticWeightFactorization": [
           "propext",
@@ -2076,7 +2076,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/EnergySupportObstruction.json",
         "blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa.lean",
@@ -2085,7 +2085,7 @@
         "blueprint/ch06/validation/short_search/route-e376a5d7554bdd36faa1.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.energySupportObstruction": [
           "propext",
@@ -2123,7 +2123,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 2,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/CanonicalSamplingObstruction.json",
         "blueprint/ch06/validation/short_search/route-f5828f06cbca3e82f48d.lean",
@@ -2132,7 +2132,7 @@
         "blueprint/ch06/validation/short_search/route-a87b3720393dd5836898.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.canonicalSamplingObstruction": [
           "propext",
@@ -2170,9 +2170,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.rademacherJumps": [
           "propext",
@@ -2210,9 +2210,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.randomWalk": [
           "propext",
@@ -2250,14 +2250,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/WalkRecurrence.json",
         "blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WalkRecurrence.lean",
         "blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WalkRecurrence.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.walkRecurrence": [
           "propext",
@@ -2295,14 +2295,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/WalkInitial.json",
         "blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WalkInitial.lean",
         "blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WalkInitial.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.walkInitial": [
           "propext",
@@ -2341,9 +2341,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.walkVariance": [
           "propext",
@@ -2382,9 +2382,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.diffusiveWalk": [
           "propext",
@@ -2422,9 +2422,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.interpolatedWalk": [
           "propext",
@@ -2462,9 +2462,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.walkIncrement": [
           "propext",
@@ -2503,9 +2503,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.walkGridMoments": [
           "propext",
@@ -2545,9 +2545,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.interpolatedWalkMean": [
           "propext",
@@ -2587,9 +2587,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.walkDiffusion": [
           "propext",
@@ -2628,9 +2628,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.wienerVector": [
           "propext",
@@ -2668,14 +2668,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/WienerIncrement.json",
         "blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WienerIncrement.lean",
         "blueprint/ch06/validation/short_search/route-9446ca055a5d0555f9aa-WienerIncrement.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.wienerIncrement": [
           "propext",
@@ -2714,9 +2714,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.wienerContinuousVersion": [
           "propext",
@@ -2756,9 +2756,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.wienerNondifferentiable": [
           "propext",
@@ -2799,9 +2799,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.wienerFutureCompletedHistory": [
           "propext",
@@ -2841,9 +2841,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.gridWienerIncrementLaw": [
           "propext",
@@ -2883,9 +2883,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.gridIncrementIndependent": [
           "propext",
@@ -2925,9 +2925,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.wienerContinuousPathEval": [
           "propext",
@@ -2967,9 +2967,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.wienerContinuousPathMeasurable": [
           "propext",
@@ -3008,9 +3008,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.coarseMarkovPrinted": [
           "propext",
@@ -3049,9 +3049,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.stateMarkovMeaning": [
           "propext",
@@ -3090,9 +3090,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.riemannTags": [
           "propext",
@@ -3131,9 +3131,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.itoLeftSum": [
           "propext",
@@ -3171,9 +3171,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.strictItoIntegral": [
           "propext",
@@ -3211,9 +3211,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.weakItoAlias": [
           "propext",
@@ -3251,9 +3251,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.stratonovichSum": [
           "propext",
@@ -3293,9 +3293,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.selfItoFiniteIdentity": [
           "propext",
@@ -3335,9 +3335,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.proposition62": [
           "propext",
@@ -3375,9 +3375,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.meanSquareConvergence": [
           "propext",
@@ -3415,9 +3415,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.wienerMidpointSum": [
           "propext",
@@ -3458,9 +3458,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.gaussianIncrementMean": [
           "propext",
@@ -3500,9 +3500,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.gaussianIncrementSecond": [
           "propext",
@@ -3542,9 +3542,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.gaussianIncrementFourth": [
           "propext",
@@ -3584,9 +3584,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.quadraticMeanSquareError": [
           "propext",
@@ -3626,9 +3626,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.selfItoIntegral": [
           "propext",
@@ -3668,9 +3668,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.selfStratonovichIntegral": [
           "propext",
@@ -3710,9 +3710,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.proposition63": [
           "propext",
@@ -3752,9 +3752,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.quadraticSumExpectation": [
           "propext",
@@ -3794,9 +3794,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.selfItoLimitL2": [
           "propext",
@@ -3836,9 +3836,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.selfItoSumsL2": [
           "propext",
@@ -3878,9 +3878,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.midpointSumsL2": [
           "propext",
@@ -3918,9 +3918,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.deterministicIntegralProcess": [
           "propext",
@@ -3959,9 +3959,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.deterministicStrobePrinted": [
           "propext",
@@ -4001,9 +4001,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.deterministicStrobeCorrected": [
           "propext",
@@ -4042,9 +4042,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.stochasticDifferentialIntegral": [
           "propext",
@@ -4082,9 +4082,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.biasedWalk": [
           "propext",
@@ -4122,14 +4122,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/BiasedWalkSum.json",
         "blueprint/ch06/validation/short_search/route-06636de27bc57a2be2e5.lean",
         "blueprint/ch06/validation/short_search/route-06636de27bc57a2be2e5.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.biasedWalkSum": [
           "propext",
@@ -4167,9 +4167,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.strictScalarSDE": [
           "propext",
@@ -4207,9 +4207,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.strictVectorSDE": [
           "propext",
@@ -4248,9 +4248,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.scalarItoFormula": [
           "propext",
@@ -4290,9 +4290,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.diffusiveTaylorPrinted": [
           "propext",
@@ -4332,9 +4332,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.timeItoFormula": [
           "propext",
@@ -4374,9 +4374,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.biasedWalkDiffusion": [
           "propext",
@@ -4415,9 +4415,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.strictOUProcess": [
           "propext",
@@ -4456,9 +4456,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.ouIntegratingFactor": [
           "propext",
@@ -4497,14 +4497,14 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 1,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/OUVarianceIntegral.json",
         "blueprint/ch06/validation/short_search/route-543a7dc5f8033bdf79a6.lean",
         "blueprint/ch06/validation/short_search/route-543a7dc5f8033bdf79a6.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.ouVarianceIntegral": [
           "propext",
@@ -4543,9 +4543,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.ouLawPrinted": [
           "propext",
@@ -4585,9 +4585,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.ouLawCorrect": [
           "propext",
@@ -4627,9 +4627,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.ouGibbsLimit": [
           "propext",
@@ -4668,9 +4668,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.momentumOU": [
           "propext",
@@ -4708,9 +4708,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.gibbsGaussianDensity": [
           "propext",
@@ -4748,9 +4748,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathHamiltonian": [
           "propext",
@@ -4789,9 +4789,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathHamiltonEquations": [
           "propext",
@@ -4830,9 +4830,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathFrequency": [
           "propext",
@@ -4871,9 +4871,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathOscillatorSolution": [
           "propext",
@@ -4913,7 +4913,7 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 3,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "attempt_evidence": [
         "blueprint/ch06/validation/short_search/BathConvolutionIBP.json",
         "blueprint/ch06/validation/short_search/route-443fbba50c2658150ea7.lean",
@@ -4924,7 +4924,7 @@
         "blueprint/ch06/validation/short_search/route-bc9cd241bd99b102153f.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathConvolutionIBP": [
           "propext",
@@ -4963,9 +4963,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathForce": [
           "propext",
@@ -5003,9 +5003,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathForcePrinted": [
           "propext",
@@ -5043,9 +5043,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.memoryKernel": [
           "propext",
@@ -5084,9 +5084,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathReduction": [
           "propext",
@@ -5126,9 +5126,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathReductionPrinted": [
           "propext",
@@ -5167,9 +5167,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.memoryKernelDeltaMeaning": [
           "propext",
@@ -5207,9 +5207,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.scalarLangevin": [
           "propext",
@@ -5247,9 +5247,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.langevinMassSDE": [
           "propext",
@@ -5287,9 +5287,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.variableFriction": [
           "propext",
@@ -5327,9 +5327,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.particleDiagonalFriction": [
           "propext",
@@ -5367,9 +5367,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.brownianMassSDE": [
           "propext",
@@ -5407,9 +5407,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.frequencyMemoryKernel": [
           "propext",
@@ -5447,9 +5447,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.figure64Frequencies": [
           "propext",
@@ -5487,9 +5487,9 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.figure65Frequencies": [
           "propext",
@@ -5527,12 +5527,688 @@
       "counterexample": null,
       "suggested_fix": null,
       "proof_attempts": 0,
-      "compile_evidence": "blueprint/ch06/validation/batch27-resume1-COMPILE.json",
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch06\\validation\\section633-resume1\\chapter_axioms.log",
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
       "declaration_axioms": {
         "MD.Ch06.bathForceWeakLimitMeaning": [
           "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.4-OverdampedLimit": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext",
+        "sorryAx"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.overdampedLimit",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "7539429a651a4e51c5c986e40c912b8eaabff0817bdb919f5ef4e68e55b1dcae",
+      "block_sha256": "f119f17dd998066175ebf7dc8b5f73637ebfae6cfc360cfdee06e4f29daa11ab",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺一般正质量Kramers–Smoluchowski极限理论；不恢复封存长证明，不建设大型理论。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.overdampedLimit；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.overdampedLimit": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.5-ScalarGenerator": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.scalarGenerator",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "0bf9ab9fe315d138ab99dad97d866e1cbf0ec9fc9f8e20343b0267c79369c0d5",
+      "block_sha256": "0bf9ab9fe315d138ab99dad97d866e1cbf0ec9fc9f8e20343b0267c79369c0d5",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.scalarGenerator；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.scalarGenerator": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.5-GeneratorExpectation": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext",
+        "sorryAx"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.generatorExpectation",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "4053d0f49330c822edaeb038e97320b7086f6e8058d521cca617d12567e09798",
+      "block_sha256": "891dada2ee2f95cc510ba532599bcd24faf44e8309b0e2630488af3c82b6347c",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺Ito链式法则与期望求导/鞅零均值完整桥接。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.generatorExpectation；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.generatorExpectation": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.6-PolynomialSmooth": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.polynomialSmooth",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "ae41aa78d0fc6b70af0a0c355b696c5f5c72c19f64b5b32fb89f331528a610f6",
+      "block_sha256": "ae41aa78d0fc6b70af0a0c355b696c5f5c72c19f64b5b32fb89f331528a610f6",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.polynomialSmooth；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.polynomialSmooth": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.6-DensityExpectation": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext",
+        "sorryAx"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.densityExpectation",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "d432bd6c1cccf9f7e007a1782419e79a89b52ad595f70cd0081daaab9313706b",
+      "block_sha256": "39d9690c8e880053cb64a68ea981140b5f62a15ecadbcb4f3f1368973549f117",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺多项式乘指数尾积分及withDensity实积分的完整打包桥接。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.densityExpectation；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.densityExpectation": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.6-ScalarForward": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.scalarForward",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "6178ede8590f4d53818b0d1142a6d6276703d817ade32e469966ed46315b15bd",
+      "block_sha256": "6178ede8590f4d53818b0d1142a6d6276703d817ade32e469966ed46315b15bd",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.scalarForward；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.scalarForward": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.6-FPDriftAdjoint": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.fpDriftAdjoint",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "662b99240ac521be7f9bec9c1496c338696f19f1699532d278b46784bf143528",
+      "block_sha256": "d0de1443678f4d2256134ed6af7fa37b2872936cc82c90d2dd7888ccf1242bdf",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.fpDriftAdjoint；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/FPDriftAdjoint.json",
+        "blueprint/ch06/validation/short_search/route-5acf7a3cb19e25f6a904.lean",
+        "blueprint/ch06/validation/short_search/route-5acf7a3cb19e25f6a904.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.fpDriftAdjoint": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.6-FPDiffusionPrinted": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext",
+        "sorryAx"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.fpDiffusionPrinted",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "e3054ef15edf9b7a625d6d50b25eded1fdfc693b1d2c0c80664c36a4b1f9ea23",
+      "block_sha256": "5e18d7137eef2c5c4deaf71460aec2abdb562de0ec5a13a6542e4abea408df06",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "不证明错误负号；正号完整伴随式另批保留。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.fpDiffusionPrinted；定义体/完整签名见上",
+          "note": "字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.fpDiffusionPrinted": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.6-FPAdjointCompact": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.fpAdjointCompact",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "1bae3346ca17baa6c628256014b86e6cec426817d72b39c7e3dbc811eba2f546",
+      "block_sha256": "6b40a4f386743fefee713608f67c4b23f9a126947e708dc686aff301c716700e",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.fpAdjointCompact；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/FPAdjointCompact.json",
+        "blueprint/ch06/validation/short_search/route-7ecec0f471f1e7191767.lean",
+        "blueprint/ch06/validation/short_search/route-7ecec0f471f1e7191767.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.fpAdjointCompact": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.6-FPPolynomialAdjoint": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext",
+        "sorryAx"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.fpPolynomialAdjoint",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "b86cee8f0e52b1e0f38e52252226f09f80113fc3b14fa6671b44ce09d1ca8a2d",
+      "block_sha256": "69fcfa1622cab37291501cb5087d65a72505fb2d8d2cd89359d4ce4bb6710d5f",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺完整指数尾IBP打包；不以边界通量消失本身作假设。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.fpPolynomialAdjoint；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.fpPolynomialAdjoint": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.6-FPEquation": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext",
+        "sorryAx"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.fpEquation",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "8fa9e446ddff6acaa48b4d43a785c9f297890828cdefd34b17948a52e0446777",
+      "block_sha256": "c45546bf4b8fa4e6adbc709ef68c71e7aad58e4e64f93c89a9c5d972265cccfa",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺一般Ito鞅期望、真实law到弱方程与测试函数基本引理完整桥接。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.fpEquation；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.fpEquation": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.6-ZeroNoise": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.zeroNoise",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "541ca630d8b5a90ea6abc398dc5a8871d9c31e24266f6a0d55f11447dc9c9eca",
+      "block_sha256": "ccc39e0526f8e5dbc49f054077239086ef0bd658b735e9f8fdcbd8d3b01d103e",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.zeroNoise；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/ZeroNoise.json",
+        "blueprint/ch06/validation/short_search/route-00227e1c5a6a696ca1c5.lean",
+        "blueprint/ch06/validation/short_search/route-00227e1c5a6a696ca1c5.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.zeroNoise": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.7-VectorIto": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext",
+        "sorryAx"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.vectorIto",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "5a92ac3e1cfa3504e5aa829a5e1dcdf5a33ac5b7860952b9b7a7c82f96a937b3",
+      "block_sha256": "b5f742aeef6f9da6d99702f244761676fc9f4646bd3d0513abcb94a34b9dfcbe",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺一般多维Ito公式完整桥接。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.vectorIto；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.vectorIto": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.7-VectorForward": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.vectorForward",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "3c32b95ff440aa9dcf309c1d6d8aac9f60a684947ab3a4fd235df7fc5760a661",
+      "block_sha256": "3c32b95ff440aa9dcf309c1d6d8aac9f60a684947ab3a4fd235df7fc5760a661",
+      "direct_placeholder": false,
+      "proof_status": "definition",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.vectorForward；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.vectorForward": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.7-DiffusionTrace": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "final_status": "self-contained",
+      "lean_decl": "MD.Ch06.diffusionTrace",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "3a563c5cca4925446906d939b1344addc9b495f53f47660112a445d059e86195",
+      "block_sha256": "bf1ed1629ddb386e8b9c1ce6994d430ba119a0ac5e651bdaeede7d8b69dd1295",
+      "direct_placeholder": false,
+      "proof_status": "local_proof",
+      "documented_priors": [],
+      "missing": null,
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.diffusionTrace；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 1,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "attempt_evidence": [
+        "blueprint/ch06/validation/short_search/DiffusionTrace.json",
+        "blueprint/ch06/validation/short_search/route-00227e1c5a6a696ca1c5.lean",
+        "blueprint/ch06/validation/short_search/route-00227e1c5a6a696ca1c5.log"
+      ],
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.diffusionTrace": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    "MD-6.3.7-VectorFPEquation": {
+      "checked": true,
+      "compiled": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext",
+        "sorryAx"
+      ],
+      "final_status": "incomplete",
+      "lean_decl": "MD.Ch06.vectorFPEquation",
+      "verdict": "PASS",
+      "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+      "signature_sha256": "20762283d7a02abcf53c00abac2f3c6c7b3834e1d5ca267e8b06fab1aa81dada",
+      "block_sha256": "f735d02089e4601eed55a0e3a80a3014ab2937b3150c7847a4d896edf573f274",
+      "direct_placeholder": true,
+      "proof_status": "placeholder",
+      "documented_priors": [],
+      "missing": "缺多维Ito/鞅期望及真实law到强Fokker–Planck完整桥接。",
+      "website_audit": "待网站审计",
+      "correspondence": [
+        {
+          "source": "原文完整数学对象和展示式",
+          "lean": "MD.Ch06.vectorFPEquation；定义体/完整签名见上",
+          "note": "一致；逐条技术条件见[EXTRA]"
+        }
+      ],
+      "counterexample": null,
+      "suggested_fix": null,
+      "proof_attempts": 0,
+      "compile_evidence": "blueprint/ch06/validation/batch29-final-COMPILE.json",
+      "transitive_placeholder": false,
+      "axiom_log": "blueprint\\ch06\\validation\\section634-637-final\\chapter_axioms.log",
+      "declaration_axioms": {
+        "MD.Ch06.vectorFPEquation": [
+          "propext",
+          "sorryAx",
           "Classical.choice",
           "Quot.sound"
         ]

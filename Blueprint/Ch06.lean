@@ -1270,4 +1270,235 @@ def bathForceWeakLimitMeaning {A : Type*} [MeasurableSpace A] (P : Measure A)
     Tendsto (fun k ↦ ∫ sample, f (forcePaths k T sample) ∂P) atTop
       (𝓝 (∫ sample, f (wienerPaths T sample) ∂P))
 
+/-- source_id: MD-6.3.4-OverdampedLimit · unnumbered_claim · §6.3.4 · 印刷p.240 / PDFp.261
+[EXTRA] [EXTRA]全部正对角质量、正β、光滑周期U，原热浴路径模型；高γ需按γT观察，完整任意有界连续检验弱极限，没有把极限本身作前提。 -/
+theorem overdampedLimit : ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (B : ℝ≥0 → Ω → (Fin n → ℝ)) (m : Fin n → ℝ)
+    (U : (Fin n → ℝ) → ℝ) (β : ℝ) (x0 : (Fin n → ℝ) × (Fin n → ℝ))
+    (X : ℝ → ℝ → Ω → ((Fin n → ℝ) × (Fin n → ℝ))) (q : ℝ → Ω → (Fin n → ℝ)),
+  textbookIsWienerVector B P → (∀ i, 0 < m i) → ContDiff ℝ ∞ U →
+  textbookUnitPeriodicPotential U → 0 < β →
+  (∀ γ : ℝ, 0 < γ → MolecularDynamics.Chapter06Review.langevinMassSDE P
+    (fun t sample ↦ B t.toNNReal sample) (X γ) m U γ β⁻¹ x0) →
+  MolecularDynamics.Chapter06Review.brownianMassSDE P (fun t sample ↦ B t.toNNReal sample) q m U 1 β⁻¹ x0.1 →
+  ∀ T : ℝ, 0 < T → ∀ f : (Fin n → ℝ) → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun γ : ℝ ↦ ∫ sample, f (X γ (γ*T) sample).1 ∂P) atTop
+      (𝓝 (∫ sample, f (q T sample) ∂P)) := by
+  sorry
+
+/-- source_id: MD-6.3.5-ScalarGenerator · (6.38) · §6.3.5 · 印刷p.240 / PDFp.261 -/
+def scalarGenerator (a b f : ℝ → ℝ) (x : ℝ) : ℝ := a x*deriv f x + b x^2/2*deriv (deriv f) x
+
+/-- source_id: MD-6.3.5-GeneratorExpectation · (6.37) · §6.3.5 · 印刷p.240 / PDFp.261
+[EXTRA] [EXTRA]真实严格SDE、C²φ、适应平方可积资格、Lφ实际可积且时间期望连续；完整期望时间导数，不只定义L。
+[EXTRA] [EXTRA]自然Wiener历史适应、联合可测X、C¹a/b及Lφ在每个有限时间×样本上的绝对可积资格，保证实际Fubini；有符号期望连续不自动蕴含此资格。 -/
+theorem generatorExpectation :
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (W X : ℝ → Ω → ℝ) (a b φ : ℝ → ℝ) (x0 : ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X (fun x _ ↦ a x) (fun x _ ↦ b x) x0 →
+  ContDiff ℝ 1 a → ContDiff ℝ 1 b → ContDiff ℝ 2 φ → MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun t sample ↦ deriv φ (X t sample)*b (X t sample)) →
+  (∀ t : ℝ, 0 ≤ t → Integrable (fun sample ↦ MolecularDynamics.Chapter06Review.scalarGenerator a b φ (X t sample)) P) →
+  ContinuousOn (fun t ↦ ∫ sample, MolecularDynamics.Chapter06Review.scalarGenerator a b φ (X t sample) ∂P) (Ici 0) →
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) →
+  Measurable (Function.uncurry X) →
+  (∀ T : ℝ, 0 ≤ T → Integrable
+    (fun w : ℝ × Ω ↦ |MolecularDynamics.Chapter06Review.scalarGenerator a b φ (X w.1 w.2)|)
+    ((volume.restrict (Icc 0 T)).prod P)) →
+  ∀ t : ℝ, 0 < t → HasDerivAt (fun s ↦ ∫ sample, φ (X s sample) ∂P)
+    (∫ sample, MolecularDynamics.Chapter06Review.scalarGenerator a b φ (X t sample) ∂P) t := by
+  sorry
+
+/-- source_id: MD-6.3.6-PolynomialSmooth · definition · §6.3.6 · 印刷p.241 / PDFp.262 -/
+def polynomialSmooth (f : ℝ → ℝ) : Prop :=
+  ContDiff ℝ ∞ f ∧ ∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |f x| ≤ C*(1+|x|)^r
+
+/-- source_id: MD-6.3.6-DensityExpectation · unnumbered_claim · §6.3.6 · 印刷p.241 / PDFp.262
+[EXTRA] [EXTRA]真实非负可测density与全局指数尾界；完整可积与积分law等式，不预置这些结论。 -/
+theorem densityExpectation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (X : Ω → ℝ) (ρ φ : ℝ → ℝ),
+  HasLaw X (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ x))) P →
+  (∀ x, 0 ≤ ρ x) → Measurable ρ → MolecularDynamics.Chapter06Review.polynomialSmooth φ →
+  (∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∀ x, ρ x ≤ C*Real.exp (-c*|x|)) →
+  Integrable (fun sample ↦ φ (X sample)) P ∧
+    (∫ sample, φ (X sample) ∂P)=(∫ x, φ x*ρ x) := by
+  sorry
+
+/-- source_id: MD-6.3.6-ScalarForward · definition · §6.3.6 · 印刷p.242 / PDFp.263 -/
+def scalarForward (a b ρ : ℝ → ℝ) (x : ℝ) : ℝ :=
+  -deriv (fun z ↦ a z*ρ z) x + deriv (deriv (fun z ↦ b z^2*ρ z)) x/2
+
+/-- source_id: MD-6.3.6-FPDriftAdjoint · unnumbered_claim · §6.3.6 · 印刷p.241–242 / PDFp.262–263
+[EXTRA] [EXTRA]当前完整紧支撑C¹检验桥接；原指数尾和多项式检验的全域版本在FPPolynomialAdjoint保留，不将紧支撑特例计为原全部检验已证。 -/
+theorem fpDriftAdjoint :
+  ∀ (a ρ φ : ℝ → ℝ),
+  ContDiff ℝ 1 a → ContDiff ℝ 1 ρ → ContDiff ℝ 1 φ →
+  HasCompactSupport φ → (∫ x, a x*deriv φ x*ρ x) = ∫ x, φ x*(-deriv (fun z ↦ a z*ρ z) x) := by
+  intro a ρ φ ha hρ hφ hc
+  have hg : ContDiff ℝ 1 (fun x ↦ a x*ρ x) := ha.mul hρ
+  have hi1 : Integrable (fun x ↦ (a x*ρ x)*deriv φ x) :=
+    (hg.continuous.mul hφ.continuous_deriv_one).integrable_of_hasCompactSupport hc.deriv.mul_left
+  have hi2 : Integrable (fun x ↦ deriv (fun z ↦ a z*ρ z) x*φ x) :=
+    (hg.continuous_deriv_one.mul hφ.continuous).integrable_of_hasCompactSupport hc.mul_left
+  have hi3 : Integrable (fun x ↦ (a x*ρ x)*φ x) :=
+    (hg.continuous.mul hφ.continuous).integrable_of_hasCompactSupport hc.mul_left
+  have he := MeasureTheory.integral_mul_deriv_eq_deriv_mul_of_integrable
+    (u := fun x ↦ a x*ρ x) (v := φ)
+    (fun x _ ↦ (hg.differentiable_one x).hasDerivAt)
+    (fun x _ ↦ (hφ.differentiable_one x).hasDerivAt) hi1 hi2 hi3
+  simpa only [Pi.mul_apply, mul_comm, mul_left_comm, mul_assoc, mul_neg, integral_neg] using he
+
+/-- source_id: MD-6.3.6-FPDiffusionPrinted · unnumbered_claim · §6.3.6 · 印刷p.242 / PDFp.263
+[ERRATUM?] 原页两次IBP后仍打印负号；正确应正号，且(6.39)最终算子已经使用正号。 -/
+theorem fpDiffusionPrinted : ∀ (b ρ φ : ℝ → ℝ),
+  ContDiff ℝ 2 b → ContDiff ℝ 2 ρ → ContDiff ℝ 2 φ → HasCompactSupport φ →
+  (∫ x, b x^2*deriv (deriv φ) x*ρ x)=
+    -(∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x) := by
+  sorry
+
+/-- source_id: MD-6.3.6-FPAdjointCompact · unnumbered_claim · §6.3.6 · 印刷p.242 / PDFp.263
+[EXTRA] [EXTRA]紧支撑C²检验的完整正号伴随恒等；多项式检验及指数尾版本另条保留。 -/
+theorem fpAdjointCompact :
+  ∀ (a b ρ φ : ℝ → ℝ),
+  ContDiff ℝ 2 a → ContDiff ℝ 2 b → ContDiff ℝ 2 ρ → ContDiff ℝ 2 φ →
+  HasCompactSupport φ → (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x) = ∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x := by
+  intro a b ρ φ ha hb hρ hφ hc
+  have ha1 : ContDiff ℝ 1 a := ha.of_le (by norm_num)
+  have hρ1 : ContDiff ℝ 1 ρ := hρ.of_le (by norm_num)
+  have hφ1 : ContDiff ℝ 1 φ := hφ.of_le (by norm_num)
+  have hG : ContDiff ℝ 2 (fun x ↦ b x^2*ρ x) := (hb.pow 2).mul hρ
+  have hG1 : ContDiff ℝ 1 (fun x ↦ b x^2*ρ x) := hG.of_le (by norm_num)
+  have ibp : ∀ (g f : ℝ → ℝ), ContDiff ℝ 1 g → ContDiff ℝ 1 f → HasCompactSupport f →
+      (∫ x, g x*deriv f x)=-(∫ x, deriv g x*f x) := by
+    intro g f hg hf hs
+    have he := fpDriftAdjoint g (fun _ ↦ 1) f hg contDiff_const hf hs
+    simpa only [mul_one, mul_neg, integral_neg, mul_comm] using he
+  have hh1 := ibp (fun x ↦ b x^2*ρ x) (deriv φ) hG1 hφ.deriv' hc.deriv
+  have hh2 := ibp (deriv (fun x ↦ b x^2*ρ x)) φ hG.deriv' hφ1 hc
+  have hdiff : (∫ x, (b x^2*ρ x)*deriv (deriv φ) x)=
+      (∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x) := by
+    rw [hh1, hh2, neg_neg]
+    congr 1
+    funext x
+    ring
+  have hD := fpDriftAdjoint a ρ φ ha1 hρ1 hφ1 hc
+  have hiA : Integrable (fun x ↦ a x*deriv φ x*ρ x) :=
+    ((ha.continuous.mul hφ1.continuous_deriv_one).mul hρ.continuous).integrable_of_hasCompactSupport hc.deriv.mul_left.mul_right
+  have hiB : Integrable (fun x ↦ (b x^2*ρ x)*deriv (deriv φ) x) :=
+    (hG.continuous.mul hφ.deriv'.continuous_deriv_one).integrable_of_hasCompactSupport hc.deriv.deriv.mul_left
+  have hiC : Integrable (fun x ↦ φ x*(-deriv (fun z ↦ a z*ρ z) x)) :=
+    (hφ.continuous.mul (ha1.mul hρ1).continuous_deriv_one.neg).integrable_of_hasCompactSupport hc.mul_right
+  have hiE : Integrable (fun x ↦ φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x) :=
+    (hφ.continuous.mul hG.deriv'.continuous_deriv_one).integrable_of_hasCompactSupport hc.mul_right
+  have hleft : (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x)=
+      (∫ x, a x*deriv φ x*ρ x)+(1/2 : ℝ)*(∫ x, (b x^2*ρ x)*deriv (deriv φ) x) := by
+    rw [← integral_const_mul, ← integral_add hiA (hiB.const_mul (1/2))]
+    apply integral_congr_ae
+    filter_upwards [] with x
+    dsimp [MolecularDynamics.Chapter06Review.scalarGenerator]
+    ring
+  have hright : (∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x)=
+      (∫ x, φ x*(-deriv (fun z ↦ a z*ρ z) x))+
+        (1/2 : ℝ)*(∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x) := by
+    rw [← integral_const_mul, ← integral_add hiC (hiE.const_mul (1/2))]
+    apply integral_congr_ae
+    filter_upwards [] with x
+    dsimp [MolecularDynamics.Chapter06Review.scalarForward]
+    ring
+  rw [hleft, hright, hD, hdiff]
+
+/-- source_id: MD-6.3.6-FPPolynomialAdjoint · unnumbered_claim · §6.3.6 · 印刷p.241–242 / PDFp.262–263
+[EXTRA] [EXTRA]原C∞P值增长不足以控制所有IBP边界；明确一、二阶a,b,φ多项式增长及ρ导数指数尾，保存整个非紧支撑真实积分恒等。
+[ERRATUM?] 原只给函数值尾部增长而未约束导数；完整IBP及边界消失需技术资格，已全部明示，不静默添加。 -/
+theorem fpPolynomialAdjoint : ∀ (a b ρ φ : ℝ → ℝ),
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ ρ → ContDiff ℝ ∞ φ →
+  (∀ f ∈ ({a,b,φ} : Set (ℝ → ℝ)), ∀ k : ℕ, k ≤ 2 →
+    ∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |iteratedDeriv k f x| ≤ C*(1+|x|)^r) →
+  (∀ k : ℕ, k ≤ 2 → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∀ x,
+    |iteratedDeriv k ρ x| ≤ C*Real.exp (-c*|x|)) →
+  (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x)=
+    (∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x) := by
+  sorry
+
+/-- source_id: MD-6.3.6-FPEquation · unnumbered_claim · §6.3.6 · 印刷p.242 / PDFp.263
+[EXTRA] [EXTRA]实际严格SDE与其真实平滑非负密度law、局部一致指数尾可求导资格；没有把弱PDE或所求点态PDE当假设。 -/
+theorem fpEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ) (x0 : ℝ) (ρ : ℝ → ℝ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P →
+  strictScalarSDE P W X (fun x _ ↦ a x) (fun x _ ↦ b x) x0 →
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ (Function.uncurry ρ) →
+  (∀ t : ℝ, 0 < t → (∀ x, 0 ≤ ρ t x) ∧
+    HasLaw (X t) (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ t x))) P) →
+  (∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |a x|+|b x| ≤ C*(1+|x|)^r) →
+  (∀ lo hi : ℝ, 0 < lo → lo ≤ hi → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧
+    ∀ t ∈ Icc lo hi, ∀ x, |ρ t x|+|deriv (fun s ↦ ρ s x) t| ≤ C*Real.exp (-c*|x|)) →
+  ∀ t x : ℝ, 0 < t → deriv (fun s ↦ ρ s x) t=MolecularDynamics.Chapter06Review.scalarForward a b (ρ t) x := by
+  sorry
+
+/-- source_id: MD-6.3.6-ZeroNoise · unnumbered_claim · §6.3.6 · 印刷p.242 / PDFp.263 -/
+theorem zeroNoise :
+  ∀ (a f ρ : ℝ → ℝ) (x : ℝ),
+  MolecularDynamics.Chapter06Review.scalarGenerator a (fun _ ↦ 0) f x=a x*deriv f x ∧
+    MolecularDynamics.Chapter06Review.scalarForward a (fun _ ↦ 0) ρ x = -deriv (fun z ↦ a z*ρ z) x := by
+  intro a f ρ x
+  constructor
+  · simp [MolecularDynamics.Chapter06Review.scalarGenerator]
+  · simp [MolecularDynamics.Chapter06Review.scalarForward]
+
+/-- source_id: MD-6.3.7-VectorIto · (6.40)–(6.41) · §6.3.7 · 印刷p.243 / PDFp.264
+[EXTRA] [EXTRA]按本节实际常矩阵B范围；真实全部坐标严格Ito积分与Hessian/trace完整校正，未缩成仅漂移定义。 -/
+theorem vectorIto : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → (Fin n → ℝ)) (B : Matrix (Fin n) (Fin r) ℝ)
+    (x0 : Fin n → ℝ) (φ : (Fin n → ℝ) → ℝ),
+  textbookIsWienerVector (fun t sample ↦ W t sample) P →
+  strictVectorSDE P W X (fun x _ ↦ a x) (fun _ _ ↦ B) x0 → ContDiff ℝ 2 φ →
+  (∀ j, MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P (fun t sample ↦ W t sample j)
+    (fun t sample ↦ fderiv ℝ φ (X t sample) (fun i ↦ B i j))) →
+  ∀ T : ℝ, 0 ≤ T → ∃ integrals : Fin r → Ω → ℝ,
+    (∀ j, strictItoIntegral P (fun t sample ↦ W t sample j)
+      (fun t sample ↦ fderiv ℝ φ (X t sample) (fun i ↦ B i j)) T (integrals j)) ∧
+    (∀ᵐ sample ∂P, φ (X T sample)-φ x0-
+      (∫ s in 0..T, MolecularDynamics.Chapter06Review.vectorGenerator a B φ (X s sample))=∑ j, integrals j sample) := by
+  sorry
+
+/-- source_id: MD-6.3.7-VectorForward · definition · §6.3.7 · 印刷p.243 / PDFp.264 -/
+def vectorForward {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
+    (B : Matrix (Fin n) (Fin r) ℝ) (ρ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.vectorForward a B ρ x
+
+/-- source_id: MD-6.3.7-DiffusionTrace · unnumbered_claim · §6.3.7 · 印刷p.243 / PDFp.264 -/
+theorem diffusionTrace :
+  ∀ {n r : ℕ} (B : Matrix (Fin n) (Fin r) ℝ)
+    (H : Matrix (Fin n) (Fin n) ℝ),
+  Matrix.trace (B.transpose*H*B)=∑ i : Fin n, ∑ j : Fin n, (B*B.transpose) i j*H i j := by
+  intro n r B H
+  rw [Matrix.trace_mul_cycle B.transpose H B, Matrix.trace_mul_cycle B B.transpose H]
+  simp only [Matrix.trace, Matrix.diag, Matrix.mul_apply, Matrix.transpose_apply,
+    Finset.mul_sum, Finset.sum_mul]
+  apply Finset.sum_congr rfl
+  intro i hi
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl
+  intro j hj
+  apply Finset.sum_congr rfl
+  intro k hk
+  ring
+
+/-- source_id: MD-6.3.7-VectorFPEquation · unnumbered_claim · §6.3.7 · 印刷p.243 / PDFp.264
+[EXTRA] [EXTRA]真实多维Wiener、严格SDE、完整非负密度law、光滑和局部尾部求导资格；没有将弱PDE结论作假设。 -/
+theorem vectorFPEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → (Fin n → ℝ)) (B : Matrix (Fin n) (Fin r) ℝ)
+    (x0 : Fin n → ℝ) (ρ : ℝ → (Fin n → ℝ) → ℝ),
+  textbookIsWienerVector (fun t sample ↦ W t sample) P →
+  strictVectorSDE P W X (fun x _ ↦ a x) (fun _ _ ↦ B) x0 →
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ (Function.uncurry ρ) →
+  (∀ t : ℝ, 0 < t → (∀ x, 0 ≤ ρ t x) ∧ HasLaw (X t) (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ t x))) P) →
+  (∃ C : ℝ, 0 ≤ C ∧ ∃ k : ℕ, ∀ x, ‖a x‖ ≤ C*(1+‖x‖)^k) →
+  (∀ lo hi : ℝ, 0 < lo → lo ≤ hi → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧
+    ∀ t ∈ Icc lo hi, ∀ x, |ρ t x|+|deriv (fun s ↦ ρ s x) t| ≤ C*Real.exp (-c*‖x‖)) →
+  ∀ t x, 0 < t → deriv (fun s ↦ ρ s x) t=vectorForward a B (ρ t) x := by
+  sorry
+
 end MD.Ch06

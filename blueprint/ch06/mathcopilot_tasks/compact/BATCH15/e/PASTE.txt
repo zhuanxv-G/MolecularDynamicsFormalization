@@ -1,8 +1,8 @@
 仅以本PASTE及附件为准，忽略网站/workspace旧版本。Mathlib标准定义按固定v4.34.0的标准数学含义采信。
 本子任务batch=BATCH15e；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH15e_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "dafdd4d7db76c1396ccce95d1ba9b0760484fa4f87ecf4b2a0625d2b43284cb0",
-  "blueprint/ch06/ch06_source.json": "9baedc4ec28558df8d7bfd8f9a86ff4013dcfa246c490b6354b069f256312d61",
+  "Blueprint/Ch06.lean": "c46634d49462f2518b53f0230506084783237f0ab80b8d497c952654a405d8d4",
+  "blueprint/ch06/ch06_source.json": "e954a4cc328c69279d1fc786267a03e8ac6280b82d026fddcf5399e3bf54d200",
   "BATCH15e_PAGES.pdf": "2bc45681e6b66ad0f59f09b24f0df386723914a6693f92744b51efed502d6106",
   "signature_sha256": "084feedf246a52c94ccc46a2bfefd0c520341340317c05a3663cdb63e99c2188"
 }

@@ -3223,5 +3223,422 @@
     "review_status": "DRAFT",
     "repair_log": [],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.4-OverdampedLimit",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.4",
+    "printed_page": "240",
+    "pdf_page": "261",
+    "statement_latex": "This is also sometimes referred to as Brownian dynamics or Smoluchowski dynamics. The transition from Langevin to Brownian dynamics is typically referred to as the “Kramers to Smoluchowski limit.”",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.overdampedLimit",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]全部正对角质量、正β、光滑周期U，原热浴路径模型；高γ需按γT观察，完整任意有界连续检验弱极限，没有把极限本身作前提。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.5-ScalarGenerator",
+    "kind": "definition",
+    "label": "(6.38)",
+    "section": "6.3.5",
+    "printed_page": "240",
+    "pdf_page": "261",
+    "statement_latex": "where $\\mathcal L$ is a linear operator, called the generator of the stochastic process, defined by\n\\[\\mathcal L=a(x)\\frac d{dx}+\\tfrac12 b^2(x)\\frac{d^2}{dx^2}.\\tag{6.38}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "真实一、二阶导数及1/2系数，C²资格在应用定理给出。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.scalarGenerator",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.5-GeneratorExpectation",
+    "kind": "unnumbered_claim",
+    "label": "(6.37)",
+    "section": "6.3.5",
+    "printed_page": "240",
+    "pdf_page": "261",
+    "statement_latex": "Then, taking the expectation of the Itô-Doeblin formula (6.17) we find\n\\[\\mathbb E\\{d\\phi(X)\\}=\\mathbb E\\{\\phi'(X)a(X)\\}dt+\\tfrac12\\mathbb E\\{\\phi''(X)b(X)^2\\}dt\n=\\mathbb E\\{(\\mathcal L\\phi)(X)\\}dt.\\tag{6.37}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.generatorExpectation",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实严格SDE、C²φ、适应平方可积资格、Lφ实际可积且时间期望连续；完整期望时间导数，不只定义L。",
+      "[EXTRA]自然Wiener历史适应、联合可测X、C¹a/b及Lφ在每个有限时间×样本上的绝对可积资格，保证实际Fubini；有符号期望连续不自动蕴含此资格。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.6-PolynomialSmooth",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.6",
+    "printed_page": "241",
+    "pdf_page": "262",
+    "statement_latex": "This condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future purposes we define the space of functions which are $C^\\infty$ smooth and satisfy the polynomial growth restriction by $C_P^\\infty$:\n\\[C_P^\\infty\\stackrel{\\mathrm{def}}=\\{\\phi\\in C^\\infty\\mid\\exists r\\in\\mathbb N:\\phi(x)=O(|x|^r),\\ x\\to\\pm\\infty\\}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "真实函数值的多项式增长；不擅自增加所有阶导数也有多项式增长。全域(1+|x|)^r界等价于尾部O加连续紧集界。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.polynomialSmooth",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "original_page_recheck",
+        "reason": "按原PDF逐字恢复引文，原草稿的For future reference不在原页。",
+        "evidence": "source_pages/p262.png; source_pages/p263.png; visual check 2026-10-16",
+        "before": {
+          "statement_latex": "For future reference we define the space of functions which are $C^\\infty$ smooth and satisfy the polynomial growth restriction by $C_P^\\infty$:\n\\[C_P^\\infty=\\{\\phi\\in C^\\infty\\mid\\exists r\\in\\mathbb N:\\phi(x)=O(|x|^r),\\ x\\to\\pm\\infty\\}.\\]"
+        },
+        "after": {
+          "statement_latex": "This condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future purposes we define the space of functions which are $C^\\infty$ smooth and satisfy the polynomial growth restriction by $C_P^\\infty$:\n\\[C_P^\\infty\\stackrel{\\mathrm{def}}=\\{\\phi\\in C^\\infty\\mid\\exists r\\in\\mathbb N:\\phi(x)=O(|x|^r),\\ x\\to\\pm\\infty\\}.\\]"
+        },
+        "website": "待网站审计"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.6-DensityExpectation",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.6",
+    "printed_page": "241",
+    "pdf_page": "262",
+    "statement_latex": "For any $\\phi\\in C_P^\\infty$, the expectation with respect to $\\rho(x,t)$ is well defined and we have\n\\[\\mathbb E\\phi(X(t))=\\langle\\phi,\\rho\\rangle=\\int_{-\\infty}^{+\\infty}\\phi(x)\\rho(x,t)dx.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.densityExpectation",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实非负可测density与全局指数尾界；完整可积与积分law等式，不预置这些结论。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.6-ScalarForward",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.6",
+    "printed_page": "242",
+    "pdf_page": "263",
+    "statement_latex": "In the case at hand the adjoint is\n\\[\\mathcal L^*\\rho=-(a(x)\\rho)_x+\\tfrac12(b^2(x)\\rho)_{xx},\\]\nwhich we shall refer to as the Kolmogorov operator.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "完整正号diffusion伴随算子；PDE从law推导另条，不计定义已证PDE。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.scalarForward",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "original_page_recheck",
+        "reason": "原页无编号；(6.39)属于后页多维SDE，不是此标量伴随算子。",
+        "evidence": "source_pages/p262.png; source_pages/p263.png; visual check 2026-10-16",
+        "before": {
+          "label": "(6.39)",
+          "statement_latex": "As this holds for any function $\\phi$ in the appropriate space, we may obtain an equation for the time evolution of $\\rho$:\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\frac\\partial{\\partial x}(a(x)\\rho)+\\frac12\\frac{\\partial^2}{\\partial x^2}(b^2(x)\\rho).\\tag{6.39}\\]"
+        },
+        "after": {
+          "label": null,
+          "statement_latex": "In the case at hand the adjoint is\n\\[\\mathcal L^*\\rho=-(a(x)\\rho)_x+\\tfrac12(b^2(x)\\rho)_{xx},\\]\nwhich we shall refer to as the Kolmogorov operator."
+        },
+        "website": "待网站审计"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.6-FPDriftAdjoint",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.6",
+    "printed_page": "241–242",
+    "pdf_page": "262–263",
+    "statement_latex": "First, we find\n\\[\\int_{-\\infty}^{+\\infty}a(x)\\phi'(x)\\rho(x,t)dx=[\\phi(x)a(x)\\rho(x,t)]_{-\\infty}^{+\\infty}-\\int_{-\\infty}^{+\\infty}\\phi(x)(a(x)\\rho(x,t))_x dx\n=-\\int_{-\\infty}^{+\\infty}\\phi(x)(a(x)\\rho(x,t))_x dx.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.fpDriftAdjoint",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]当前完整紧支撑C¹检验桥接；原指数尾和多项式检验的全域版本在FPPolynomialAdjoint保留，不将紧支撑特例计为原全部检验已证。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.6-FPDiffusionPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.6",
+    "printed_page": "242",
+    "pdf_page": "263",
+    "statement_latex": "With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho)_{xx}dx.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原页两次IBP后仍打印负号；正确应正号，且(6.39)最终算子已经使用正号。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.fpDiffusionPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "original_page_recheck",
+        "reason": "保留原书错误负号；恢复原页引导句，不用转述替代原引文。",
+        "evidence": "source_pages/p262.png; source_pages/p263.png; visual check 2026-10-16",
+        "before": {
+          "statement_latex": "Using two integrations by parts gives\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho(x,t))_{xx}dx.\\]"
+        },
+        "after": {
+          "statement_latex": "With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho)_{xx}dx.\\]"
+        },
+        "website": "待网站审计"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.6-FPAdjointCompact",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.6",
+    "printed_page": "242",
+    "pdf_page": "263",
+    "statement_latex": "where the operator appearing on the right hand side is the adjoint $\\mathcal L^*$ of the generator of the stochastic process, satisfying the relation\n\\[\\langle\\mathcal L\\phi,\\rho\\rangle=\\langle\\phi,\\mathcal L^*\\rho\\rangle.\\]\nIn the case at hand the adjoint is\n\\[\\mathcal L^*\\rho=-(a(x)\\rho)_x+\\tfrac12(b^2(x)\\rho)_{xx};\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.fpAdjointCompact",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]紧支撑C²检验的完整正号伴随恒等；多项式检验及指数尾版本另条保留。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.6-FPPolynomialAdjoint",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.6",
+    "printed_page": "241–242",
+    "pdf_page": "262–263",
+    "statement_latex": "We assume that $\\rho$ is $C^\\infty$ for all $t$ and that the density tends to zero exponentially fast as $x\\to\\pm\\infty$, whereas $a$ and $b$ are $C^\\infty$ functions which grow at most polynomially fast in these limits.\n\\[\\langle\\mathcal L\\phi,\\rho\\rangle=\\langle\\phi,\\mathcal L^*\\rho\\rangle.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原只给函数值尾部增长而未约束导数；完整IBP及边界消失需技术资格，已全部明示，不静默添加。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.fpPolynomialAdjoint",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]原C∞P值增长不足以控制所有IBP边界；明确一、二阶a,b,φ多项式增长及ρ导数指数尾，保存整个非紧支撑真实积分恒等。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.6-FPEquation",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.6",
+    "printed_page": "242",
+    "pdf_page": "263",
+    "statement_latex": "If this is to hold for all test functions $\\phi$, we must have\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\frac\\partial{\\partial x}(a(x)\\rho)+\\frac12\\frac{\\partial^2}{\\partial x^2}(b^2(x)\\rho).\\]\nThe Fokker-Planck equation may be written in the compact form\n\\[\\frac{\\partial\\rho}{\\partial t}=\\mathcal L^*\\rho.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.fpEquation",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]实际严格SDE与其真实平滑非负密度law、局部一致指数尾可求导资格；没有把弱PDE或所求点态PDE当假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.6-ZeroNoise",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.6",
+    "printed_page": "242",
+    "pdf_page": "263",
+    "statement_latex": "In case $b\\equiv0$, the SDE becomes an ordinary differential equation. Then the generator $\\mathcal L$ becomes simply the Lie derivative, and its adjoint is just the Liouvillian.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.zeroNoise",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.7-VectorIto",
+    "kind": "unnumbered_claim",
+    "label": "(6.40)–(6.41)",
+    "section": "6.3.7",
+    "printed_page": "243",
+    "pdf_page": "264",
+    "statement_latex": "If $\\phi$ is a scalar valued function of $\\mathbb R^m$, and $Z(t)$ is the solution of the SDE system\n\\[dZ=a(Z)dt+B dW;\\tag{6.39}\\]\nwhere $a$ is a function in $\\mathbb R^m$ and $B$ is a constant matrix, then we have\n\\[d\\phi(Z(t))=\\nabla\\phi\\cdot[adt+B dW]+\\tfrac12dW^TB^T\\phi''B dW;\\tag{6.40}\\]\n\\[d\\phi(Z(t))=\\nabla\\phi\\cdot[adt+B dW]+\\tfrac12\\operatorname{Tr}(B^T\\phi''B)dt.\\tag{6.41}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.vectorIto",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]按本节实际常矩阵B范围；真实全部坐标严格Ito积分与Hessian/trace完整校正，未缩成仅漂移定义。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.7-VectorForward",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.7",
+    "printed_page": "243",
+    "pdf_page": "264",
+    "statement_latex": "In the multivariate case, the density is a function of the vector describing a state of the system $z$ and $t$, and is governed by the partial differential equation\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\nabla\\cdot(a(z)\\rho(z))+\\tfrac12\\operatorname{Tr}(B^T\\rho''B).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "原本节常矩阵B实际完整负散度+正1/2二阶扩散；PDE从真实law推出另条。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.vectorForward",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.7-DiffusionTrace",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.7",
+    "printed_page": "243",
+    "pdf_page": "264",
+    "statement_latex": "The second order “diffusion” term in this expression may be expanded as\n\\[\\operatorname{Tr}(B^T\\rho''B)=\\sum_{i=1}^m\\sum_{j=1}^m(BB^T)_{ij}\\frac{\\partial^2\\rho}{\\partial z_i\\partial z_j}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.diffusionTrace",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.7-VectorFPEquation",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.7",
+    "printed_page": "243",
+    "pdf_page": "264",
+    "statement_latex": "In the multivariate case, the density is a function of the vector describing a state of the system $z$ and $t$, and is governed by the partial differential equation\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\nabla\\cdot(a(z)\\rho(z))+\\tfrac12\\operatorname{Tr}(B^T\\rho''B).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.vectorFPEquation",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实多维Wiener、严格SDE、完整非负密度law、光滑和局部尾部求导资格；没有将弱PDE结论作假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   }
 ]
