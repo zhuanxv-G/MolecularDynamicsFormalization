@@ -1,3 +1,8 @@
+第1章收口完成，等待用户提交第1章 EAUDIT 复审包（见 EAUDIT_INDEX.md）
+
+本地交付与推送已完成；只确认等待状态。用户提交新网站返回件后按绑定快照规则登记，不自行启动下一章；第6章暂停，不进入第7章。完整证据见blueprint/ch01/validation/CLOSEOUT19/DELIVERY_VALIDATION.json。
+
+---
 # 当前接续：用户2026-10-16第19号指令
 
 唯一任务第1章收口；先读AGENTS/CURRENT_STATE顶部与WORK_LOG最新，固定版本复用CLOSEOUT19编译收据。第6章WIP e1f19ef8暂停；第2–5章终验93d2d3e5和正式库冻结，不进入第7章。
