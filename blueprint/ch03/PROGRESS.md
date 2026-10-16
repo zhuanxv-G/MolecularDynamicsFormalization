@@ -139,7 +139,7 @@
 | MD-3.7-ElasticReflection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.7-ElasticEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
 | MD-3.7-CollisionComposition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
-| MD-3.7-CollisionRegularity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | placeholder / incomplete；缺有限事件gluedCollision索引稳定与各段ODE光滑性/一侧极限的完整桥接；不建设完整混合动力系统理论。 |
+| MD-3.7-CollisionRegularity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT47 | placeholder / incomplete；缺有限事件gluedCollision索引稳定与各段ODE光滑性/一侧极限的完整桥接；不建设完整混合动力系统理论。 |
 | MD-3.7.1-HardCorePotential | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT18 | definition / incomplete |
 | MD-3.7.1-PrimitiveSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.7.1-PrimitiveOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT18（原返回FAIL保留） | placeholder / incomplete；缺碰撞事件稳定性与非光滑全局误差理论；不建设大型理论。 |
@@ -435,3 +435,5 @@ EAUDIT44 §3.3.4：1条落盘，单文件与2项公理通过；未写新证明�
 EAUDIT45 §3.4：6条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT46 §3.6.3：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT47 §3.7：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。

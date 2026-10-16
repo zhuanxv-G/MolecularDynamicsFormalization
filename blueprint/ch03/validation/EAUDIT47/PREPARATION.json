@@ -1,0 +1,21 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT47",
+  "section": "3.7",
+  "source_ids": [
+    "MD-3.7-CollisionRegularity"
+  ],
+  "reaudit_ids": [
+    "MD-3.7-CollisionRegularity"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "6e69113a2911e4da7c96e7112cb168f8190e348c8b75d126eabf28e603ca1a22",
+  "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "source_sha256": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291",
+  "pages": [
+    155
+  ],
+  "prior_proof_blocks": {
+    "MD-3.7-CollisionRegularity": "theorem collisionRegularity :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) (g : Q n → ℝ)\n    (times : ℕ → ℝ) (segments : ℕ → ℝ → Z n) ν,\n    positiveMass m → ContDiff ℝ ⊤ F → ContDiff ℝ 1 g →\n    (∀ j < ν, grad g (segments j (times (j+1))).1 ≠ 0 ∧\n      (∑ i, grad g (segments j (times (j+1))).1 i *\n        (segments j (times (j+1))).2 i/m i) < 0) →\n    (∀ j ≤ ν, ∀ t ∈ Icc (times j) (times (j+1)), 0 ≤ g (segments j t).1) →\n    concatenatedCollisionSegments m F g times segments ν →\n    (∀ j < ν, (segments j (times (j+1))).2 ≠ (segments (j+1) (times (j+1))).2) ∧\n    ContinuousOn (fun t => (gluedCollision times segments ν t).1) (Icc (times 0) (times (ν+1))) ∧\n    (∀ j ≤ ν, ∀ t ∈ Ioo (times j) (times (j+1)),\n      ContDiffAt ℝ ⊤ (gluedCollision times segments ν) t) ∧\n    (∀ j < ν, Tendsto (fun t => (gluedCollision times segments ν t).2)\n      (𝓝[<] (times (j+1))) (𝓝 ((segments j (times (j+1))).2)) ∧\n      Tendsto (fun t => (gluedCollision times segments ν t).2)\n      (𝓝[>] (times (j+1))) (𝓝 ((segments (j+1) (times (j+1))).2))) := by\n  sorry"
+  }
+}

@@ -840,8 +840,8 @@
     "section": "3.6.3"
   },
   "MD-3.7-CollisionRegularity": {
-    "category": "A",
-    "handling": "补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。",
+    "category": "C",
+    "handling": "C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。",
     "section": "3.7"
   },
   "MD-3.7-HardCoreDomain": {

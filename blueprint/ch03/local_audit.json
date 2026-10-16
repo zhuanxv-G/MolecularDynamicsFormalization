@@ -4612,8 +4612,8 @@
       "lean_decl": "MD.Ch03.collisionRegularity",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "146f3e1aa9a98dfd2b1559427c928cb99e6292d9ec390f8dfdda4bd460ace932",
-      "block_sha256": "74aef4b9f67840244c002331f63a8c563d9e21f98f6b2f89fe728750b5c30ede",
+      "signature_sha256": "ebb9341a26f098b46f3f60d614d6210ce4732bafa0197638861bc47f2597b6cb",
+      "block_sha256": "2fc05e351eee73b213caea825ec2228c4018c7f2e39313c290a9bcc5d0b6a2ca",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4631,7 +4631,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT47/axioms.log"
     },
     "MD-3.7.1-HardCorePotential": {
       "checked": true,

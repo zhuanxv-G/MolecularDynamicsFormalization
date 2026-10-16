@@ -4709,7 +4709,8 @@
     "reusable_proofs": [],
     "extra_assumptions": [
       "有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。",
-      "[EXTRA] 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。"
+      "[EXTRA] 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
@@ -4723,9 +4724,19 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EAUDIT47_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:40:48.522316",
+        "before_sha256": "9d32b5a04ac10a340512f4312fc5a52af5ed09f76be51adfb5c10461d3f58342",
+        "after_sha256": "9ad77ac332f19fffc089edbb3b2f8d4af6e7be6b765b2c278bb65732c9c590a8",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT47/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.7.1-HardCorePotential",

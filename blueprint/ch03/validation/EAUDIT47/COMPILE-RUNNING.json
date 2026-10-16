@@ -1,0 +1,19 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-o",
+    ".lake/build/lib/lean/Blueprint/Ch03.olean",
+    "Blueprint/Ch03.lean"
+  ],
+  "input_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+  "parent_pid": 19540,
+  "parent_create_time": 1792114529.2885408,
+  "compiler_pid": 18672,
+  "compiler_create_time": 1792114848.8044024,
+  "started_at": "2026-10-16T09:40:48.797141",
+  "status": "completed",
+  "exit_code": 0,
+  "completed_at": "2026-10-16T09:41:15.778724"
+}

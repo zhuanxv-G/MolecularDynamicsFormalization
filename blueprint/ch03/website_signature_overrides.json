@@ -246,10 +246,11 @@
     ]
   },
   "MD-3.7-CollisionRegularity": {
-    "code": "theorem collisionRegularity :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) (g : Q n → ℝ)\n    (times : ℕ → ℝ) (segments : ℕ → ℝ → Z n) ν,\n    positiveMass m → ContDiff ℝ ⊤ F → ContDiff ℝ 1 g →\n    (∀ j < ν, grad g (segments j (times (j+1))).1 ≠ 0 ∧\n      (∑ i, grad g (segments j (times (j+1))).1 i *\n        (segments j (times (j+1))).2 i/m i) < 0) →\n    (∀ j ≤ ν, ∀ t ∈ Icc (times j) (times (j+1)), 0 ≤ g (segments j t).1) →\n    concatenatedCollisionSegments m F g times segments ν →\n    (∀ j < ν, (segments j (times (j+1))).2 ≠ (segments (j+1) (times (j+1))).2) ∧\n    ContinuousOn (fun t => (gluedCollision times segments ν t).1) (Icc (times 0) (times (ν+1))) ∧\n    (∀ j ≤ ν, ∀ t ∈ Ioo (times j) (times (j+1)),\n      ContDiffAt ℝ ⊤ (gluedCollision times segments ν) t) ∧\n    (∀ j < ν, Tendsto (fun t => (gluedCollision times segments ν t).2)\n      (𝓝[<] (times (j+1))) (𝓝 ((segments j (times (j+1))).2)) ∧\n      Tendsto (fun t => (gluedCollision times segments ν t).2)\n      (𝓝[>] (times (j+1))) (𝓝 ((segments (j+1) (times (j+1))).2))) := by\n  sorry",
+    "code": "theorem collisionRegularity :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) (g : Q n → ℝ)\n    (times : ℕ → ℝ) (segments : ℕ → ℝ → Z n) ν,\n    positiveMass m → ContDiff ℝ ∞ F → ContDiff ℝ 1 g →\n    (∀ j < ν, grad g (segments j (times (j+1))).1 ≠ 0 ∧\n      (∑ i, grad g (segments j (times (j+1))).1 i *\n        (segments j (times (j+1))).2 i/m i) < 0) →\n    (∀ j ≤ ν, ∀ t ∈ Icc (times j) (times (j+1)), 0 ≤ g (segments j t).1) →\n    concatenatedCollisionSegments m F g times segments ν →\n    (∀ j < ν, (segments j (times (j+1))).2 ≠ (segments (j+1) (times (j+1))).2) ∧\n    ContinuousOn (fun t => (gluedCollision times segments ν t).1) (Icc (times 0) (times (ν+1))) ∧\n    (∀ j ≤ ν, ∀ t ∈ Ioo (times j) (times (j+1)),\n      ContDiffAt ℝ ⊤ (gluedCollision times segments ν) t) ∧\n    (∀ j < ν, Tendsto (fun t => (gluedCollision times segments ν t).2)\n      (𝓝[<] (times (j+1))) (𝓝 ((segments j (times (j+1))).2)) ∧\n      Tendsto (fun t => (gluedCollision times segments ν t).2)\n      (𝓝[>] (times (j+1))) (𝓝 ((segments (j+1) (times (j+1))).2))) := by\n  sorry",
     "extra_assumptions": [
       "有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。",
-      "[EXTRA] 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。"
+      "[EXTRA] 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ]
   },
   "MD-3.7.1-HardCorePotential": {

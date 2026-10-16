@@ -1624,11 +1624,12 @@ termination_by times.length
 
 /-- source_id: MD-3.7-CollisionRegularity · unnumbered_claim · §3.7 · 印刷p.133 / PDFp.155
 [EXTRA] 有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。 
-[EXTRA] 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。 -/
+[EXTRA] 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。 
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
 theorem collisionRegularity :
   ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) (g : Q n → ℝ)
     (times : ℕ → ℝ) (segments : ℕ → ℝ → Z n) ν,
-    positiveMass m → ContDiff ℝ ⊤ F → ContDiff ℝ 1 g →
+    positiveMass m → ContDiff ℝ ∞ F → ContDiff ℝ 1 g →
     (∀ j < ν, grad g (segments j (times (j+1))).1 ≠ 0 ∧
       (∑ i, grad g (segments j (times (j+1))).1 i *
         (segments j (times (j+1))).2 i/m i) < 0) →

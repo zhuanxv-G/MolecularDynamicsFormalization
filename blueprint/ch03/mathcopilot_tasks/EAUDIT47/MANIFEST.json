@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT47",
+  "input_sha256": {
+    "BATCH_EAUDIT47.md": "c5eaf9624d68196884b3327093da018ded9c8ff7c600e8b89b8deb93d9cc9c6e",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "a10137c61025b3c3dec428cdb7061b2379de4d92713ab5caece1a1022efbd291"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT47a",
+      "source_id": "MD-3.7-CollisionRegularity",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT47/a",
+      "total_bytes": 93261,
+      "manifest_sha256": "498d0460a5b50826c8a970084d9e808149176d3984bd19782ce1faa7744a4c6e"
+    }
+  ]
+}
