@@ -2,13 +2,13 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 85；章末验收待完成 [5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 58；章末验收待完成 [5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 51 / 已修待复审 78 / 待导师 20 / 修复中 0。
 第4章：网站PASS 42 / 已修待复审 110 / 待导师 27 / 修复中 0。
-第5章：网站PASS 67 / 已修待复审 65 / 待导师 6 / 修复中 45。
+第5章：网站PASS 66 / 已修待复审 78 / 待导师 9 / 修复中 30。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
 |---|---|---|---|---|---|---|
@@ -610,24 +610,24 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 5 | MD-5.4-DoubleWellCoercivity | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.4-DoubleWellDisconnected | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.4-DoubleWellBasin | FAIL | B | 保留左右阱不变性，补全局C∞紧支撑观测量的明确见证：它在两个分离能量分支上分别为0/1，时间平均与真实对称微正则空间平均1/2不等；不把平均不等作前提，也不把不连续全局indicator冒充原光滑观测量。 | 已修待复审 | EAUDIT12 |
-| 5 | MD-5.4.1-UniformMicroErgodic | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.4.1-MicroErgodicStandard | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.4.1-FlowInvariant | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.4.1-SetErgodic | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.4.1-InvariantIndicator | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.4.1-InvariantIndicatorAverage | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.4.1-ErgodicTimeEquivalence | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.4.1-NonergodicSet | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.4.1-HarmonicFlow | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.4.1-UniformMicroErgodic | FAIL | A | 明示C² Hamiltonian、常非退化反对称J生成的实际流、能量保持与正有限正则能量面背景；保留AE后∀可积光滑观测量的原量词顺序。 并恢复C∞而非Cω资格。 | 已修待复审 | EAUDIT13 |
+| 5 | MD-5.4.1-MicroErgodicStandard | FAIL | C | 主接口恢复原句共同AE后∀光滑可积观测量，实际Hamiltonian/概率背景显式；旧∀L¹后AE版本仅保留为标明的替代定义，等价连接在ErgodicTimeEquivalence补列。 并恢复C∞而非Cω资格。 | 已修待复审 | EAUDIT13 |
+| 5 | MD-5.4.1-FlowInvariant | FAIL | A | 按原印精确限定t≠0；真实零时恒等流下等价全时间条件，不对任意Φ默加零时限制。 | 已修待复审 | EAUDIT13 |
+| 5 | MD-5.4.1-SetErgodic | FAIL | A | 集合0/1定义限定概率测度、零时恒等、实际群律及联合可测流，排除任意测度/映射的伪遍历解释。 | 已修待复审 | EAUDIT13 |
+| 5 | MD-5.4.1-InvariantIndicator | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅不变集合内补集indicator逐点恒零辅助引理；无限平均零由MD-5.4.1-InvariantIndicatorAverage承担。 | 已修待复审 | EAUDIT13 |
+| 5 | MD-5.4.1-InvariantIndicatorAverage | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT13 |
+| 5 | MD-5.4.1-ErgodicTimeEquivalence | FAIL | B | 保留标准L¹双向定理，补紧支持概率流上共同AE光滑定义的连接及正概率不变集分支/实际indicator平均，区分原定义与标准替代定义。 | 已修待复审 | EAUDIT13 |
+| 5 | MD-5.4.1-NonergodicSet | FAIL | B | 补中间概率不变集合内真实轨道保持、补集indicator无限平均零及空间平均非零的见证；可用于实际能量面概率流，不把不等式作假设。 | 已修待复审 | EAUDIT13 |
+| 5 | MD-5.4.1-HarmonicFlow | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅原系统推导的辅助解析流；原遍历结论由MD-5.4.1-HarmonicErgodic承担，频率正及能量正按该定理。 | 已修待复审 | EAUDIT14 |
 | 5 | MD-5.4.1-HarmonicErgodic | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.4.1-TwoOscillatorEnergy | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
-| 5 | MD-5.4.1-TwoOscillatorFlow | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.4.1-TwoOscillatorTori | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 5 | MD-5.4.1-Mixing | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复 | — |
-| 5 | MD-5.4.1-KAMPersistence | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复 | — |
+| 5 | MD-5.4.1-TwoOscillatorEnergy | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅两项分能量H₁/H₂定义；总能量分解由MD-5.4.1-TwoOscillatorEnergyDecomposition，分能量不变性由MD-5.4.1-TwoOscillatorTori承担。 | 已修待复审 | EAUDIT14 |
+| 5 | MD-5.4.1-TwoOscillatorFlow | FAIL | B | 保留解析流并补任意初值（包括零分能量退化层）的两个真实分能量不变量，不再只依赖正共同层的Tori结论。原非零频率资格显式。 | 已修待复审 | EAUDIT14 |
+| 5 | MD-5.4.1-TwoOscillatorTori | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
+| 5 | MD-5.4.1-Mixing | FAIL | A | 混合定义在谓词内记录概率参考测度、零时恒等、群律、联合可测实际流；保留AC初始概率与有界连续测试配对。相关已有证明取第二合取后重查。 | 已修待复审 | EAUDIT14 |
+| 5 | MD-5.4.1-KAMPersistence | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
 | 5 | MD-5.4.1-AnisotropicPotential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.4.1-AnisotropicAxisPrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.4.1-TwoOscillatorEnergyDecomposition | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.4.1-AnisotropicAxisPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
+| 5 | MD-5.4.1-TwoOscillatorEnergyDecomposition | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。 | 已修待复审 | EAUDIT14 |
 | 5 | MD-5.4.1-CurveImageDimension | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.4.1-PendulumPotential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
 | 5 | MD-5.4.1-PendulumRegionPrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |

@@ -1217,29 +1217,56 @@ theorem doubleWellBasin_average_witness (c : ℝ) (_hc : c ∈ Ioo (0 : ℝ) 1)
   sorry
 
 /-- source_id: MD-5.4.1-UniformMicroErgodic · Definition 5.1 · §5.4.1 · 印刷p.197 / PDFp.218
-[EXTRA] [EXTRA]沿用前文光滑可观测量且明确µ可积，避免给不存在空间平均的函数套等式；AE采用真实µ_E零测资格。 -/
-def uniformMicroErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+[EXTRA] [EXTRA]沿用前文光滑可观测量且明确µ可积，避免给不存在空间平均的函数套等式；AE采用真实µ_E零测资格。 
+[EXTRA] 明示C² Hamiltonian、常非退化反对称J生成的实际流、能量保持与正有限正则能量面背景；保留AE后∀可积光滑观测量的原量词顺序。 并恢复C∞而非Cω资格。 -/
+def uniformMicroErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (_hf : MolecularDynamics.Chapter05Review.flow f Φ)
+    (_hreg : MolecularDynamics.Chapter05Review.regularEnergy H c)
+    (_hH : ContDiff ℝ 2 H) (_hE : ∀ t z,H (Φ t z)=H z)
+    (_hHam : ∃ J : Matrix (Fin n) (Fin n) ℝ,Jᵀ= -J ∧ J.det ≠ 0 ∧
+      ∀ z,f z=WithLp.toLp 2 (J *ᵥ WithLp.ofLp (gradient H z))) : Prop :=
+
   ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c,∀ g : MolecularDynamics.Chapter05Review.E n → ℝ,
-    ContDiff ℝ ⊤ g → Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →
+    ContDiff ℝ ∞ g → Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →
       MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)
 
 /-- source_id: MD-5.4.1-MicroErgodicStandard · definition · §5.4.1 · 印刷p.197 / PDFp.218
-[EXTRA] [EXTRA]标准每个L¹可观测量各自AE初值版本，和原字面共满测集版本分开；不声称两者已等价。 -/
-def microErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+[EXTRA] [EXTRA]标准每个L¹可观测量各自AE初值版本，和原字面共满测集版本分开；不声称两者已等价。 
+[EXTRA] 主接口恢复原句共同AE后∀光滑可积观测量，实际Hamiltonian/概率背景显式；旧∀L¹后AE版本仅保留为标明的替代定义，等价连接在ErgodicTimeEquivalence补列。 并恢复C∞而非Cω资格。 -/
+def microErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (_hf : MolecularDynamics.Chapter05Review.flow f Φ)
+    (_hreg : MolecularDynamics.Chapter05Review.regularEnergy H c)
+    (_hH : ContDiff ℝ 2 H) (_hE : ∀ t z,H (Φ t z)=H z)
+    (_hHam : ∃ J : Matrix (Fin n) (Fin n) ℝ,Jᵀ= -J ∧ J.det ≠ 0 ∧
+      ∀ z,f z=WithLp.toLp 2 (J *ᵥ WithLp.ofLp (gradient H z))) : Prop :=
+
+  ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c,∀ g : MolecularDynamics.Chapter05Review.E n → ℝ,
+    ContDiff ℝ ∞ g → Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →
+      MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)
+
+def microErgodic_L1_alternative {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
   ∀ g : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →
     ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c, MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)
 
 /-- source_id: MD-5.4.1-FlowInvariant · definition · §5.4.1 · 印刷p.197–198 / PDFp.218–219
-[EXTRA] [EXTRA]原t≠0；真实流的零时刻恒等自动补上t=0，因而用实际全实时间集合像不变性。仅给定的真实流可解释为动力系统不变性。 -/
-def flowInvariant {X : Type*} (Φ : ℝ → X → X) (A : Set X) : Prop := ∀ t, Φ t '' A=A
+[EXTRA] [EXTRA]原t≠0；真实流的零时刻恒等自动补上t=0，因而用实际全实时间集合像不变性。仅给定的真实流可解释为动力系统不变性。 
+[EXTRA] 按原印精确限定t≠0；真实零时恒等流下等价全时间条件，不对任意Φ默加零时限制。 -/
+def flowInvariant {X : Type*} (Φ : ℝ → X → X) (A : Set X) : Prop := ∀ t,t ≠ 0 → Φ t '' A=A
 
 /-- source_id: MD-5.4.1-SetErgodic · definition · §5.4.1 · 印刷p.197–198 / PDFp.218–219
-[EXTRA] [EXTRA]明示集合可测和实际概率测度背景；原“as ergodic”字面保留，不在逐字JSON中默改为“is”。 -/
-def setErgodic {X : Type*} [MeasurableSpace X] (μ : Measure X) (Φ : ℝ → X → X) : Prop :=
+[EXTRA] [EXTRA]明示集合可测和实际概率测度背景；原“as ergodic”字面保留，不在逐字JSON中默改为“is”。 
+[EXTRA] 集合0/1定义限定概率测度、零时恒等、实际群律及联合可测流，排除任意测度/映射的伪遍历解释。 -/
+def setErgodic {X : Type*} [MeasurableSpace X] (μ : Measure X) (Φ : ℝ → X → X)
+    (_hμ : IsProbabilityMeasure μ) (_h0 : ∀ z,Φ 0 z=z)
+    (_hgrp : ∀ s t z,Φ (s+t) z=Φ s (Φ t z))
+    (_hjoint : Measurable (Function.uncurry Φ)) : Prop :=
   ∀ A : Set X, MeasurableSet A → MolecularDynamics.Chapter05Review.flowInvariant Φ A → μ A=0 ∨ μ A=1
 
 /-- source_id: MD-5.4.1-InvariantIndicator · unnumbered_claim · §5.4.1 · 印刷p.198 / PDFp.219
-[EXTRA] [EXTRA]原φ是可达空间内A的补集示性函数，实际Measure支撑空间限定时可用ambient Aᶜ示性函数；本条保留沿轨道逐点为零，完整无限时间平均另条。 -/
+[EXTRA] [EXTRA]原φ是可达空间内A的补集示性函数，实际Measure支撑空间限定时可用ambient Aᶜ示性函数；本条保留沿轨道逐点为零，完整无限时间平均另条。 
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅不变集合内补集indicator逐点恒零辅助引理；无限平均零由MD-5.4.1-InvariantIndicatorAverage承担。 -/
 theorem invariantIndicator {X : Type*} (Φ : ℝ → X → X) (A : Set X)
     (h : MolecularDynamics.Chapter05Review.flowInvariant Φ A) (z : X) (hz : z ∈ A) (t : ℝ) :
     Aᶜ.indicator (fun _ => (1 : ℝ)) (Φ t z)=0 := by
@@ -1252,7 +1279,8 @@ theorem invariantIndicatorAverage {X : Type*} (Φ : ℝ → X → X) (A : Set X)
   sorry
 
 /-- source_id: MD-5.4.1-ErgodicTimeEquivalence · unnumbered_claim · §5.4.1 · 印刷p.198 / PDFp.219
-[EXTRA] [EXTRA]完整全实时间可测流、概率保持、群律及L¹资格；对应标准每观测量AE版本，未将原共满测集量词交换当无条件事实。 -/
+[EXTRA] [EXTRA]完整全实时间可测流、概率保持、群律及L¹资格；对应标准每观测量AE版本，未将原共满测集量词交换当无条件事实。 
+[EXTRA] 保留标准L¹双向定理，补紧支持概率流上共同AE光滑定义的连接及正概率不变集分支/实际indicator平均，区分原定义与标准替代定义。 -/
 theorem ergodicTimeAverage :
   ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ,
   IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
@@ -1262,15 +1290,55 @@ theorem ergodicTimeAverage :
     ∀ᵐ z ∂μ, MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.average μ g)) := by
   sorry
 
-/-- source_id: MD-5.4.1-NonergodicSet · unnumbered_claim · §5.4.1 · 印刷p.198 / PDFp.219 -/
+theorem ergodicTimeAverage_common_smooth (n : ℕ)
+    (μ : Measure (MolecularDynamics.Chapter05Review.E n))
+    (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (_hμ : IsProbabilityMeasure μ) (_hpres : ∀ t,MeasurePreserving (Φ t) μ μ)
+    (_h0 : ∀ z,Φ 0 z=z) (_hgrp : ∀ s t z,Φ (s+t) z=Φ s (Φ t z))
+    (_hΦ : Continuous (Function.uncurry Φ))
+    (_hK : ∃ K : Set (MolecularDynamics.Chapter05Review.E n),IsCompact K ∧ μ Kᶜ=0) :
+    (MolecularDynamics.Chapter05Review.setErgodic μ Φ ↔
+      ∀ᵐ z ∂μ,∀ g : MolecularDynamics.Chapter05Review.E n → ℝ,
+        ContDiff ℝ ∞ g → Integrable g μ →
+          MolecularDynamics.Chapter05Review.hasTimeAverage (fun t ↦ Φ t z) g
+            (MolecularDynamics.Chapter05Review.average μ g)) := by
+  sorry
+
+theorem ergodicTimeAverage_positive_invariant (n : ℕ)
+    (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ
+    (_hμ : IsProbabilityMeasure μ) (_h0 : ∀ z,Φ 0 z=z)
+    (_hgrp : ∀ s t z,Φ (s+t) z=Φ s (Φ t z))
+    (_herg : MolecularDynamics.Chapter05Review.setErgodic μ Φ)
+    (A : Set (MolecularDynamics.Chapter05Review.E n)) (_hA : MeasurableSet A)
+    (_hinv : MolecularDynamics.Chapter05Review.flowInvariant Φ A) (_hpos : 0 < μ A) :
+    μ A=1 ∧ (∀ z ∈ A,∀ t,Φ t z ∈ A) ∧
+    (∀ z ∈ A,MolecularDynamics.Chapter05Review.hasTimeAverage (fun t ↦ Φ t z)
+      (Aᶜ.indicator (fun _ ↦ (1 : ℝ))) 0) := by
+  sorry
+
+/-- source_id: MD-5.4.1-NonergodicSet · unnumbered_claim · §5.4.1 · 印刷p.198 / PDFp.219 
+[EXTRA] 补中间概率不变集合内真实轨道保持、补集indicator无限平均零及空间平均非零的见证；可用于实际能量面概率流，不把不等式作假设。 -/
 theorem nonergodicSet :
   ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ,
   IsProbabilityMeasure μ → (¬MolecularDynamics.Chapter05Review.setErgodic μ Φ ↔
     ∃ A : Set (MolecularDynamics.Chapter05Review.E n),MeasurableSet A ∧ MolecularDynamics.Chapter05Review.flowInvariant Φ A ∧ 0 < μ A ∧ μ A < 1) := by
   sorry
 
+theorem nonergodicSet_average_witness (n : ℕ)
+    (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ
+    (_hμ : IsProbabilityMeasure μ) (_h0 : ∀ z,Φ 0 z=z)
+    (_hgrp : ∀ s t z,Φ (s+t) z=Φ s (Φ t z))
+    (A : Set (MolecularDynamics.Chapter05Review.E n)) (_hA : MeasurableSet A)
+    (_hinv : MolecularDynamics.Chapter05Review.flowInvariant Φ A) (_hpos : 0 < μ A) (_hlt : μ A < 1) :
+    (∀ z ∈ A,∀ t,Φ t z ∈ A) ∧
+    (∀ z ∈ A,MolecularDynamics.Chapter05Review.hasTimeAverage (fun t ↦ Φ t z)
+      (Aᶜ.indicator (fun _ ↦ (1 : ℝ))) 0) ∧
+    MolecularDynamics.Chapter05Review.average μ (Aᶜ.indicator (fun _ ↦ (1 : ℝ))) ≠ 0 := by
+  sorry
+
 /-- source_id: MD-5.4.1-HarmonicFlow · definition · §5.4.1 · 印刷p.198–199 / PDFp.219–220
-[EXTRA] [EXTRA]真实解析振子流，用于完整遍历命题；Ω>0使用资格另条。 -/
+[EXTRA] [EXTRA]真实解析振子流，用于完整遍历命题；Ω>0使用资格另条。 
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅原系统推导的辅助解析流；原遍历结论由MD-5.4.1-HarmonicErgodic承担，频率正及能量正按该定理。 -/
 def harmonicFlow (Ω t : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=
   WithLp.toLp 2 ![z 0*Real.cos (Ω*t)+z 1/Ω*Real.sin (Ω*t),
     z 1*Real.cos (Ω*t)-Ω*z 0*Real.sin (Ω*t)]
@@ -1281,17 +1349,24 @@ theorem harmonicErgodic : ∀ Ω c : ℝ,0 < Ω → 0 < c →
   MolecularDynamics.Chapter05Review.microErgodic (harmonicEnergy Ω) c (harmonicFlow Ω) := by
   sorry
 
-/-- source_id: MD-5.4.1-TwoOscillatorEnergy · Example 5.4 · §5.4.1 · 印刷p.198–199 / PDFp.219–220 -/
+/-- source_id: MD-5.4.1-TwoOscillatorEnergy · Example 5.4 · §5.4.1 · 印刷p.198–199 / PDFp.219–220 
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅两项分能量H₁/H₂定义；总能量分解由MD-5.4.1-TwoOscillatorEnergyDecomposition，分能量不变性由MD-5.4.1-TwoOscillatorTori承担。 -/
 def twoOscillatorEnergy (Ω : Fin 2 → ℝ) (i : Fin 2) (z : MolecularDynamics.Chapter05Review.E 4) :=
   (z (Fin.natAdd 2 i))^2/2+(Ω i)^2*(z (Fin.castAdd 2 i))^2/2
 
 /-- source_id: MD-5.4.1-TwoOscillatorFlow · definition · §5.4.1 · 印刷p.198–199 / PDFp.219–220
-[EXTRA] [EXTRA]明确相空间排列(q1,q2,p1,p2)和真实两个振子流；非零频率资格另条。 -/
+[EXTRA] [EXTRA]明确相空间排列(q1,q2,p1,p2)和真实两个振子流；非零频率资格另条。 
+[EXTRA] 保留解析流并补任意初值（包括零分能量退化层）的两个真实分能量不变量，不再只依赖正共同层的Tori结论。原非零频率资格显式。 -/
 def twoOscillatorFlow (Ω : Fin 2 → ℝ) (t : ℝ) (z : MolecularDynamics.Chapter05Review.E 4) : MolecularDynamics.Chapter05Review.E 4 :=
   WithLp.toLp 2 ![z 0*Real.cos (Ω 0*t)+z 2/(Ω 0)*Real.sin (Ω 0*t),
     z 1*Real.cos (Ω 1*t)+z 3/(Ω 1)*Real.sin (Ω 1*t),
     z 2*Real.cos (Ω 0*t)-Ω 0*z 0*Real.sin (Ω 0*t),
     z 3*Real.cos (Ω 1*t)-Ω 1*z 1*Real.sin (Ω 1*t)]
+
+theorem twoOscillatorFlow_invariants (Ω : Fin 2 → ℝ) (_hΩ : ∀ i,Ω i ≠ 0)
+    (z : MolecularDynamics.Chapter05Review.E 4) (t : ℝ) (i : Fin 2) :
+    twoOscillatorEnergy Ω i (twoOscillatorFlow Ω t z)=twoOscillatorEnergy Ω i z := by
+  sorry
 
 /-- source_id: MD-5.4.1-TwoOscillatorTori · Example 5.4 · §5.4.1 · 印刷p.199 / PDFp.220
 [EXTRA] [EXTRA]正分能量、非零频率；“填满”解释为实际轨道稠密，非有限时间覆盖；原总能量面分解包括一个分能量为0的退化圆，不能只以正分能量2-tori穷尽整个集合。 -/
@@ -1306,8 +1381,11 @@ theorem twoOscillatorTori : ∀ (Ω : Fin 2 → ℝ) (c : Fin 2 → ℝ),
   sorry
 
 /-- source_id: MD-5.4.1-Mixing · definition · §5.4.1 · 印刷p.199 / PDFp.220
-[EXTRA] [EXTRA]实际不变参考测度上的AC概率初值、有界连续测试函数；参考测度是μ，可取微正则测度；避免旧density r谓词暗中以Lebesgue可积替代微正则可积。 -/
+[EXTRA] [EXTRA]实际不变参考测度上的AC概率初值、有界连续测试函数；参考测度是μ，可取微正则测度；避免旧density r谓词暗中以Lebesgue可积替代微正则可积。 
+[EXTRA] 混合定义在谓词内记录概率参考测度、零时恒等、群律、联合可测实际流；保留AC初始概率与有界连续测试配对。相关已有证明取第二合取后重查。 -/
 def weakMixing {n : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  (IsProbabilityMeasure μ ∧ (∀ z,Φ 0 z=z) ∧
+    (∀ s t z,Φ (s+t) z=Φ s (Φ t z)) ∧ Measurable (Function.uncurry Φ)) ∧
   ∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ,Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
   Continuous φ → Bornology.IsBounded (range φ) →
   Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))
@@ -1341,7 +1419,8 @@ theorem anisotropicAxisPrinted : ∀ (κ l ε : ℝ) (z : ℝ → MolecularDynam
   sorry
 
 /-- source_id: MD-5.4.1-TwoOscillatorEnergyDecomposition · unnumbered_claim · §5.4.1 · 印刷p.199 / PDFp.220
-[EXTRA] [EXTRA]包括c_i=0的退化边界；原“all such 2-tori”字面忽略零分能量层，完整全能量面分解不能遗漏这些层。 -/
+[EXTRA] [EXTRA]包括c_i=0的退化边界；原“all such 2-tori”字面忽略零分能量层，完整全能量面分解不能遗漏这些层。 
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。 -/
 theorem twoOscillatorEnergyDecomposition : ∀ (Ω : Fin 2 → ℝ) (E : ℝ) (z : MolecularDynamics.Chapter05Review.E 4),
   ((∑ i,twoOscillatorEnergy Ω i z)=E) ↔
   ∃ c : Fin 2 → ℝ,(∀ i,0 ≤ c i) ∧ (∑ i,c i)=E ∧ (∀ i,twoOscillatorEnergy Ω i z=c i) := by
@@ -1499,7 +1578,7 @@ theorem mixingMemoryLoss : ∀ n (μ : Measure (MolecularDynamics.Chapter05Revie
       simpa only [Function.comp_def] using (hΦ t).integrable_comp_of_integrable hi
     rw [integral_sub (hp t) hip,he]
   simp_rw [heq]
-  simpa only [sub_self] using (hm β φ hβ hβpos hβmass hφ hb).sub (tendsto_const_nhds : Tendsto (fun _ : ℝ => MolecularDynamics.Chapter05Review.average μ φ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ)))
+  simpa only [sub_self] using (hm.2 β φ hβ hβpos hβmass hφ hb).sub (tendsto_const_nhds : Tendsto (fun _ : ℝ => MolecularDynamics.Chapter05Review.average μ φ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ)))
 
 /-- source_id: MD-5.5-MixingCorrelationPrinted · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
 [EXTRA] [EXTRA]明确概率测度及有界连续函数；k任意，字面版不改最终右侧。 -/
@@ -1581,7 +1660,7 @@ theorem centeredCorrelation : ∀ n (μ : Measure (MolecularDynamics.Chapter05Re
   (MolecularDynamics.Chapter05Review.average μ a=0 ∨ MolecularDynamics.Chapter05Review.average μ b=0) →
   Tendsto (fun t => |k*(∫ z,a (Φ t z)*b z ∂μ)|) atTop (𝓝 0) := by
   intro n μ Φ a b k hμ hΦ hm ha hb hba hbb hzero
-  have ht := mixingCorrelation n μ Φ a b k hμ hΦ hm ha hb hba hbb
+  have ht := mixingCorrelation n μ Φ a b k hμ hΦ hm.2 ha hb hba hbb
   have hl : k*MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b=0 := by
     rcases hzero with h | h <;> rw [h] <;> ring
   rw [hl] at ht
@@ -2159,16 +2238,21 @@ end MD.Ch05
 #print axioms MD.Ch05.doubleWellBasin_average_witness
 #print axioms MD.Ch05.uniformMicroErgodic
 #print axioms MD.Ch05.microErgodic
+#print axioms MD.Ch05.microErgodic_L1_alternative
 #print axioms MD.Ch05.flowInvariant
 #print axioms MD.Ch05.setErgodic
 #print axioms MD.Ch05.invariantIndicator
 #print axioms MD.Ch05.invariantIndicatorAverage
 #print axioms MD.Ch05.ergodicTimeAverage
+#print axioms MD.Ch05.ergodicTimeAverage_common_smooth
+#print axioms MD.Ch05.ergodicTimeAverage_positive_invariant
 #print axioms MD.Ch05.nonergodicSet
+#print axioms MD.Ch05.nonergodicSet_average_witness
 #print axioms MD.Ch05.harmonicFlow
 #print axioms MD.Ch05.harmonicErgodic
 #print axioms MD.Ch05.twoOscillatorEnergy
 #print axioms MD.Ch05.twoOscillatorFlow
+#print axioms MD.Ch05.twoOscillatorFlow_invariants
 #print axioms MD.Ch05.twoOscillatorTori
 #print axioms MD.Ch05.weakMixing
 #print axioms MD.Ch05.kam

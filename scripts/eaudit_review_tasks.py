@@ -65,7 +65,8 @@ def build(ch,eaudit,section,sids):
  reader=PdfReader(pdf);subtasks=[];output=f'/workspace/.mathcopilot/reviews/ch{ch:02}_eaudit/{eaudit}_review.json'
  for j,sid in enumerate(sids):
   label=eaudit+chr(97+j);folder=task/chr(97+j);folder.mkdir(exist_ok=True)
-  ns=[int(n) for n in re.findall(r'\d+',indexed[sid]['pdf_page'])];nums=list(range(ns[0],ns[-1]+1))
+  ns=[int(n) for n in re.findall(r'\d+',indexed[sid]['pdf_page'])]
+  nums=sorted(set(range(ns[0],ns[-1]+1))|set(indexed[sid].get('review_context_pdf_pages',[])))
   writer=PdfWriter()
   for p in nums:writer.add_page(reader.pages[p-1])
   crop=folder/(label+'_PAGES.pdf')

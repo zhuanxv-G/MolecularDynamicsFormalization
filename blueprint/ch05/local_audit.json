@@ -3884,16 +3884,16 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "lean_decl": "MD.Ch05.uniformMicroErgodic",
       "verdict": "NEEDS_HUMAN",
       "explanation": "字面量词记录共满测集上的∀光滑可观测量；不静默交换∀g与AEz。原“低维例外”的表述不等价于一般零测集合；标准逐可观测量AE版本另条。",
-      "signature_sha256": "da9b8bd5013041e6a5bae1e5d641a3654b19d79bd51764c962fd65b559f85ba9",
-      "block_sha256": "da9b8bd5013041e6a5bae1e5d641a3654b19d79bd51764c962fd65b559f85ba9",
+      "signature_sha256": "e23fd8fa35be992b98721cf0051fd68091710f971c0a1d8143e6bccd3d05d246",
+      "block_sha256": "e23fd8fa35be992b98721cf0051fd68091710f971c0a1d8143e6bccd3d05d246",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -3911,22 +3911,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT13/axioms.log"
     },
     "MD-5.4.1-MicroErgodicStandard": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.microErgodic",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "2af7a1147f5204e72e7413abdb59506c09fcf42a1c3e7f7c160d5e253bebef9e",
-      "block_sha256": "2af7a1147f5204e72e7413abdb59506c09fcf42a1c3e7f7c160d5e253bebef9e",
+      "signature_sha256": "a1c677b9f093a6a54d638380f2a73c1d495b2808cf0fb61c0d6298f0714deb14",
+      "block_sha256": "a1c677b9f093a6a54d638380f2a73c1d495b2808cf0fb61c0d6298f0714deb14",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -3944,22 +3944,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT13/axioms.log"
     },
     "MD-5.4.1-FlowInvariant": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.flowInvariant",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "c872138ed37e6d98aea5ab2af25f6aeebf241f5136e0a5af0623a48cc0f6b13e",
-      "block_sha256": "c872138ed37e6d98aea5ab2af25f6aeebf241f5136e0a5af0623a48cc0f6b13e",
+      "signature_sha256": "29cf8bedf522689c4dfb2b73e51c60601592b7ae53e6ae7ad7eda9244753564c",
+      "block_sha256": "29cf8bedf522689c4dfb2b73e51c60601592b7ae53e6ae7ad7eda9244753564c",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -3977,22 +3977,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT13/axioms.log"
     },
     "MD-5.4.1-SetErgodic": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.setErgodic",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "118ba102be7cbf1a1fe38b1aef55bcccba7fb7d2d90cc7c396cc86277d938056",
-      "block_sha256": "118ba102be7cbf1a1fe38b1aef55bcccba7fb7d2d90cc7c396cc86277d938056",
+      "signature_sha256": "ffcdee4dce2bf9b5fc6bb63cbee6d2f92dc5987b9e1e6e40a368672718fa638b",
+      "block_sha256": "ffcdee4dce2bf9b5fc6bb63cbee6d2f92dc5987b9e1e6e40a368672718fa638b",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4010,15 +4010,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT13/axioms.log"
     },
     "MD-5.4.1-InvariantIndicator": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch05.invariantIndicator",
@@ -4045,16 +4045,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT13/axioms.log"
     },
     "MD-5.4.1-InvariantIndicatorAverage": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.invariantIndicatorAverage",
@@ -4079,23 +4079,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT13/axioms.log"
     },
     "MD-5.4.1-ErgodicTimeEquivalence": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.ergodicTimeAverage",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "c5ad461fd818ac25347023aad6247e65aa2fa2e9dbbb4e89817010d0cb0689c0",
-      "block_sha256": "91492957c41531a947f97810ac264aa84a56bb821595c21c0cf7492a0def8bc2",
+      "block_sha256": "e2dfb7e52e61e6c76d39d78aca4484e2fb63729824278a89f95ff6bdacffc12e",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4113,23 +4113,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT13/axioms.log"
     },
     "MD-5.4.1-NonergodicSet": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.nonergodicSet",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "e26f293f566f92bfbbf18919bc05748a7262c18b26429180ab256d1ba4ebb950",
-      "block_sha256": "7a662c157179fb40aad94c317c1d33c92e977b039f73a54101a60b18272e073f",
+      "block_sha256": "de5934aa8baa4459543d74572fd2cc50cde514e4a48aa6dc31c6eef481f7f8c6",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4147,15 +4147,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT13/axioms.log"
     },
     "MD-5.4.1-HarmonicFlow": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.harmonicFlow",
@@ -4180,7 +4180,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT14/axioms.log"
     },
     "MD-5.4.1-HarmonicErgodic": {
       "checked": true,
@@ -4220,9 +4220,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.twoOscillatorEnergy",
@@ -4247,23 +4247,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT14/axioms.log"
     },
     "MD-5.4.1-TwoOscillatorFlow": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.twoOscillatorFlow",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "c128a4fd2e0f5fad8a3fdebc90d779961388bbca3f328bec4708ed782344fb77",
-      "block_sha256": "c128a4fd2e0f5fad8a3fdebc90d779961388bbca3f328bec4708ed782344fb77",
-      "direct_placeholder": false,
+      "signature_sha256": "5dd4a70d74e58409d6735b14db0c9f856eb89e59635e4415c414a1a209353856",
+      "block_sha256": "5dd4a70d74e58409d6735b14db0c9f856eb89e59635e4415c414a1a209353856",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -4280,16 +4281,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT14/axioms.log"
     },
     "MD-5.4.1-TwoOscillatorTori": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.twoOscillatorTori",
@@ -4314,22 +4315,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT14/axioms.log"
     },
     "MD-5.4.1-Mixing": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.weakMixing",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "db07c204413cad7ed14d71e2ab496f8897bdb0f23c4482b53c32d5145974b445",
-      "block_sha256": "db07c204413cad7ed14d71e2ab496f8897bdb0f23c4482b53c32d5145974b445",
+      "signature_sha256": "29fe045b0c6af3966dd3f1a057a78757f1f855d63d7e9096267c1607ab823b2b",
+      "block_sha256": "29fe045b0c6af3966dd3f1a057a78757f1f855d63d7e9096267c1607ab823b2b",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4347,16 +4348,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT14/axioms.log"
     },
     "MD-5.4.1-KAMPersistence": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.kam",
@@ -4381,7 +4382,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT14/axioms.log"
     },
     "MD-5.4.1-AnisotropicPotential": {
       "checked": true,
@@ -4420,10 +4421,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.anisotropicAxisPrinted",
@@ -4448,16 +4449,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT14/axioms.log"
     },
     "MD-5.4.1-TwoOscillatorEnergyDecomposition": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.twoOscillatorEnergyDecomposition",
@@ -4482,7 +4483,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT14/axioms.log"
     },
     "MD-5.4.1-CurveImageDimension": {
       "checked": true,

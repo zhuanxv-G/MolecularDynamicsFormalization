@@ -1,0 +1,217 @@
+{
+  "eaudit": "EAUDIT13",
+  "source_id": "MD-5.4.1-UniformMicroErgodic",
+  "input_sha256": {
+    "BATCH_EAUDIT13.md": "89097ba8581c14c4728c84c2c2dfc54d0a467b74145d3576de4f64ee72e70fff",
+    "Blueprint/Ch05.lean": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+    "blueprint/ch05/ch05_source.json": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441",
+    "EAUDIT13a_materials": "d5e16fdea95a771db74e48a1c2c337ce7784f4ab506c6d164fdc03630b0f42a2",
+    "EAUDIT13a_PAGES.pdf": "b35688a5ab65980aab75c35192d795f05248cd55f21b9bfab8b553fe0db87e51"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    218
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "12aa98c46b6337a2d073c4cbbf530e88513ddd017d0de6d1bb261632409b8bd6",
+  "source_block_sha256": "e23fd8fa35be992b98721cf0051fd68091710f971c0a1d8143e6bccd3d05d246",
+  "source_declarations": [
+    "uniformMicroErgodic"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.average",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.energySurface",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "4a489aacb7ba56caf0c623137a4bd613859a0cda5df7b7491a952224b6bdd7e2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.flow",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "cd47fe07b629a7f5aa0bdc126758e9528093d227aaebc2097a541fd177a6a961"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.grad",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "2b02b79e903c41eb476fa11e97dc6ad10bd20c99b33fe437c813ade44b68008e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.hasTimeAverage",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "3a84d89218000dca32631769bf1ebfc63a09da3f40c918acc4eb71b5dc4268e3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.hausdorffArea",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.microAverage",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "0d111aab3294cc72fb0b2982dbcdefb5161fdfd2127067a213ad9462b634f2fd"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.microMeasure",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "28734254a3a2b03e6fa5b4fe8f4c294a583f82b4faf83225ac6040932f7eea57"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.microRaw",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "e2519ffdb9c766be3aa33bf35315ba208cdd69d5e3f6a7b4ce760272b2665ace"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.regularEnergy",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "bbc98d09426b79221523a11252820c7e52504e6c6a88e7b27bc7047eb0a13af2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.surfaceMeasure",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "996815cfebda44b199d5a4a8b5cbedf428cc398393464a7fc3c383e3cf3f9fcd"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.timeAverage",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "average",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "energySurface",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "8189ac2bd8835f55284bfd828dd82ee167a402ac72cb4e2ef6d887d7bb657b8d"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "flow",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "522e86de81741a525bcd8720e95f1f0a3f1ba51791c5d13cea4bed7e30a1620e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "85d1654c3905d13fe56fe56e9cfad2796ca9c56a6fceba8596a551e567d342a3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "2b02b79e903c41eb476fa11e97dc6ad10bd20c99b33fe437c813ade44b68008e"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "hasTimeAverage",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "b80cdcc652eb14ff8b264b8b07c801373ce82dbfa974b87d30902141c668bf01"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "hausdorffArea",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "microAverage",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "f71e52af87f2937399a70a709f9b5c51ed0bce2e36e86622a217b41701490c90"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "microMeasure",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "bcb522f51322c0b449c0aa9aa11a5099d165226ce7bff92c79935a4fe950c67a"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "microRaw",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "9980d8764eb598570212c61af756e2b083c7a6fee909b4e181a53afd6276c8fb"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "regularEnergy",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "bbc98d09426b79221523a11252820c7e52504e6c6a88e7b27bc7047eb0a13af2"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "surfaceMeasure",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "02e29ee26669b0aa73fa8341b87c5cde1604df252964f1c6b15652199194442c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "name": "textbookConstraintGradient",
+      "file_sha256": "890274c6144406ad066b0a624cf08e3b95995c17b495545de8c3c05f260d4e44",
+      "excerpt_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "timeAverage",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "uniformMicroErgodic",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "e23fd8fa35be992b98721cf0051fd68091710f971c0a1d8143e6bccd3d05d246"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT13_review.json",
+  "total_task_bytes": 112387
+}

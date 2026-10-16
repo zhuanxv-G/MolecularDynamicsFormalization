@@ -312,7 +312,9 @@ theorem measureDuality_RN (n : ℕ)
         scalar=current('CenteredCorrelation').replace('theorem centeredCorrelation','theorem centeredCorrelation_scalar',1).replace('using mixingCorrelation ', 'using mixingCorrelation_scalar ')
         # The original proof invokes the scalar correlation theorem and the
         # mixing property; select the qualified predicate's second conjunct.
-        scalar=scalar.replace('mixingCorrelation n','mixingCorrelation_scalar n').replace(' hΦ hm ', ' hΦ hm.2 ')
+        scalar=scalar.replace('mixingCorrelation n','mixingCorrelation_scalar n').replace(
+          'have ht := mixingCorrelation_scalar n μ Φ a b k hμ hΦ hm ',
+          'have ht := mixingCorrelation_scalar n μ Φ a b k hμ hΦ hm.2 ')
         vector=ds[sid('CenteredCorrelation')]['statement'].replace('∀ n (μ','∀ n d (μ',1)
         vector=vector.replace('(a b : MolecularDynamics.Chapter05Review.E n → ℝ)','(a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d)',1)
         vector=vector.replace('MolecularDynamics.Chapter05Review.average μ a=0 ∨ MolecularDynamics.Chapter05Review.average μ b=0','(∫ z,a z ∂μ)=0 ∨ (∫ z,b z ∂μ)=0')

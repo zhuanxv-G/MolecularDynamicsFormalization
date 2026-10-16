@@ -580,5 +580,118 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/INDEX.md"
+  },
+  {
+    "chapter": 5,
+    "eaudit": "EAUDIT13",
+    "section": "5.4.1",
+    "source_ids": [
+      "MD-5.4.1-ErgodicTimeEquivalence",
+      "MD-5.4.1-FlowInvariant",
+      "MD-5.4.1-InvariantIndicator",
+      "MD-5.4.1-InvariantIndicatorAverage",
+      "MD-5.4.1-MicroErgodicStandard",
+      "MD-5.4.1-NonergodicSet",
+      "MD-5.4.1-SetErgodic",
+      "MD-5.4.1-UniformMicroErgodic"
+    ],
+    "reaudit_ids": [
+      "MD-5.4.1-UniformMicroErgodic",
+      "MD-5.4.1-MicroErgodicStandard",
+      "MD-5.4.1-FlowInvariant",
+      "MD-5.4.1-SetErgodic",
+      "MD-5.4.1-InvariantIndicator",
+      "MD-5.4.1-InvariantIndicatorAverage",
+      "MD-5.4.1-ErgodicTimeEquivalence",
+      "MD-5.4.1-NonergodicSet"
+    ],
+    "human_ids": [],
+    "lean_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+    "source_sha256": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441",
+    "pages": [
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch05.olean",
+        "Blueprint/Ch05.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "log_sha256": "6052bdee5b4199fdc556048e8d36449f36ed3e397977ea4e14330efdfa15f418"
+    },
+    "axiom_decl_count": 12,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT13/INDEX.md"
+  },
+  {
+    "chapter": 5,
+    "eaudit": "EAUDIT14",
+    "section": "5.4.1",
+    "source_ids": [
+      "MD-5.4.1-AnisotropicAxisPrinted",
+      "MD-5.4.1-HarmonicFlow",
+      "MD-5.4.1-KAMPersistence",
+      "MD-5.4.1-Mixing",
+      "MD-5.4.1-TwoOscillatorEnergy",
+      "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+      "MD-5.4.1-TwoOscillatorFlow",
+      "MD-5.4.1-TwoOscillatorTori"
+    ],
+    "reaudit_ids": [
+      "MD-5.4.1-HarmonicFlow",
+      "MD-5.4.1-TwoOscillatorEnergy",
+      "MD-5.4.1-TwoOscillatorFlow",
+      "MD-5.4.1-Mixing",
+      "MD-5.4.1-TwoOscillatorEnergyDecomposition"
+    ],
+    "human_ids": [
+      "MD-5.4.1-TwoOscillatorTori",
+      "MD-5.4.1-KAMPersistence",
+      "MD-5.4.1-AnisotropicAxisPrinted"
+    ],
+    "lean_sha256": "a101cbc5aa200e0dc4e902f9e6ed3f511dbe1517088c2db78c7cc4c5d84f645f",
+    "source_sha256": "4c7de844910ad09e5f2e54c24bbd3f0af731aa94840fd3cafdfbda9b8d6bb0c8",
+    "pages": [
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch05.olean",
+        "Blueprint/Ch05.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "a101cbc5aa200e0dc4e902f9e6ed3f511dbe1517088c2db78c7cc4c5d84f645f",
+      "log_sha256": "dab11230641c3ab354521c2be4452f4825396312d26c0e6cce0239727b44c79e"
+    },
+    "axiom_decl_count": 9,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT14/INDEX.md"
   }
 ]

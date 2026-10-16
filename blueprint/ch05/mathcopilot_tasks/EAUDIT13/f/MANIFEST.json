@@ -1,0 +1,61 @@
+{
+  "eaudit": "EAUDIT13",
+  "source_id": "MD-5.4.1-InvariantIndicatorAverage",
+  "input_sha256": {
+    "BATCH_EAUDIT13.md": "89097ba8581c14c4728c84c2c2dfc54d0a467b74145d3576de4f64ee72e70fff",
+    "Blueprint/Ch05.lean": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+    "blueprint/ch05/ch05_source.json": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441",
+    "EAUDIT13f_materials": "d6b203cfdc40602a8fb901a7970b451221a49fadd5ceeac830bdbd08bdd5cf9f",
+    "EAUDIT13f_PAGES.pdf": "e6f4ddb5402ba287211506e0b10f69000be6c2c0ebd8bb8e70ee66182c14c71e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    219
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "8e94cf1ecc4a68e33c63ced91eaf3edc4c171cbb6fc6d9d6676d786c2fc33ba1",
+  "source_block_sha256": "a204ef7bf093c91ca44448b75fade0c472ccb7148362e50e1f8d2760bbfffb3c",
+  "source_declarations": [
+    "invariantIndicatorAverage"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.flowInvariant",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "c872138ed37e6d98aea5ab2af25f6aeebf241f5136e0a5af0623a48cc0f6b13e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.hasTimeAverage",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "3a84d89218000dca32631769bf1ebfc63a09da3f40c918acc4eb71b5dc4268e3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.timeAverage",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "flowInvariant",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "29cf8bedf522689c4dfb2b73e51c60601592b7ae53e6ae7ad7eda9244753564c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "hasTimeAverage",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "b80cdcc652eb14ff8b264b8b07c801373ce82dbfa974b87d30902141c668bf01"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "timeAverage",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT13_review.json",
+  "total_task_bytes": 89867
+}

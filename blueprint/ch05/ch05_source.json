@@ -3602,21 +3602,38 @@
     "section": "5.4.1",
     "printed_page": "197",
     "pdf_page": "218",
-    "statement_latex": "Definition 5.1 A Hamiltonian system is said to be ergodic on an energy surface $\\Sigma_E$ (microcanonically ergodic) if, for almost all trajectories $\\tau$ emanating from initial conditions on $\\Sigma_E$, and for any observable $g$, the following holds $\\bar g=\\operatorname{Av}_{H=E}(g)$, where $\\bar g$ is defined in (5.9). By “almost all” we mean that there could be a low-dimensional subset for which the trajectory averages fail to equal the space averages.",
+    "statement_latex": "Definition 5.1 A Hamiltonian system is said to be ergodic on an energy surface $\\Sigma_E$ (microcanonically ergodic) if, for almost all trajectories $\\Gamma$ emanating from initial conditions on $\\Sigma_E$, and for any observable $g$, the following holds $\\bar g_\\Gamma=\\operatorname{Av}_{H=E}(g)$, where $\\bar g_\\Gamma$ is defined in (5.9). By “almost all” we mean that there could be a low-dimensional subset for which the trajectory averages fail to equal the space averages.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "$\\Gamma=\\{z(t):t\\in[0,\\infty)\\}$ 是轨道；$\\bar g_\\Gamma$ 按(5.9)定义（PDF216/印刷195）；$\\operatorname{Av}_{H=E}$ 是微正则概率空间平均；$\\Sigma_E=\\{H=E\\}$。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.uniformMicroErgodic",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]沿用前文光滑可观测量且明确µ可积，避免给不存在空间平均的函数套等式；AE采用真实µ_E零测资格。"
+      "[EXTRA]沿用前文光滑可观测量且明确µ可积，避免给不存在空间平均的函数套等式；AE采用真实µ_E零测资格。",
+      "[EXTRA] 明示C² Hamiltonian、常非退化反对称J生成的实际流、能量保持与正有限正则能量面背景；保留AE后∀可积光滑观测量的原量词顺序。 并恢复C∞而非Cω资格。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT13_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:07.827007",
+        "before_sha256": "a2b2c38363c2a889664487ef530712f8be737c53d130bf147f4943197bc104c3",
+        "after_sha256": "e23a7e46e6d1ff435ad4ffd4a3d92bcdd7cd54628887e022156abd0f2fc703b0",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-MicroErgodicStandard",
@@ -3625,21 +3642,38 @@
     "section": "5.4.1",
     "printed_page": "197",
     "pdf_page": "218",
-    "statement_latex": "for almost all trajectories $\\tau$ emanating from initial conditions on $\\Sigma_E$, and for any observable $g$, $\\bar g=\\operatorname{Av}_{H=E}(g)$.",
+    "statement_latex": "for almost all trajectories $\\Gamma$ emanating from initial conditions on $\\Sigma_E$, and for any observable $g$, $\\bar g_\\Gamma=\\operatorname{Av}_{H=E}(g)$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "本句摘自Definition 5.1；原文先“almost all trajectories”，再“any observable”；$\\Gamma$ 和 $\\bar g_\\Gamma$ 同(5.9)，PDF216。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.microErgodic",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]标准每个L¹可观测量各自AE初值版本，和原字面共满测集版本分开；不声称两者已等价。"
+      "[EXTRA]标准每个L¹可观测量各自AE初值版本，和原字面共满测集版本分开；不声称两者已等价。",
+      "[EXTRA] 主接口恢复原句共同AE后∀光滑可积观测量，实际Hamiltonian/概率背景显式；旧∀L¹后AE版本仅保留为标明的替代定义，等价连接在ErgodicTimeEquivalence补列。 并恢复C∞而非Cω资格。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT13_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:07.827007",
+        "before_sha256": "9a6af3fffa0acf5ec55899d8df51812ec8db0dbbdc6ec02b957a3e63cf891ae9",
+        "after_sha256": "61f880427038b991fb1d97b2520969e6dbbeb9b037a72af8eb107d247087528f",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-FlowInvariant",
@@ -3648,21 +3682,38 @@
     "section": "5.4.1",
     "printed_page": "197–198",
     "pdf_page": "218–219",
-    "statement_latex": "An invariant set $A$ of the flow is one such that $\\mathcal F_t(A)=A$, for all $t\\ne0$.",
+    "statement_latex": "An invariant set $\\mathcal A$ of the flow is one such that $\\mathcal F_t(\\mathcal A)=\\mathcal A$, for all $t\\ne0$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "$\\mathcal F_t$ 是流映射，$\\mathcal F_t(\\mathcal A)$ 是集合像；真实流有 $\\mathcal F_0=\\mathrm{id}$。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.flowInvariant",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]原t≠0；真实流的零时刻恒等自动补上t=0，因而用实际全实时间集合像不变性。仅给定的真实流可解释为动力系统不变性。"
+      "[EXTRA]原t≠0；真实流的零时刻恒等自动补上t=0，因而用实际全实时间集合像不变性。仅给定的真实流可解释为动力系统不变性。",
+      "[EXTRA] 按原印精确限定t≠0；真实零时恒等流下等价全时间条件，不对任意Φ默加零时限制。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT13_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:07.827007",
+        "before_sha256": "d98bc3be1b1ba853702aeae81fd1a0450e6c2d29e6856df4ad4a05a80058a75d",
+        "after_sha256": "ee1dc646c80095d781f3b4f760aec4dea2c83dbfcbe1f6bbd234f9585d7ce244",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-SetErgodic",
@@ -3671,21 +3722,38 @@
     "section": "5.4.1",
     "printed_page": "197–198",
     "pdf_page": "218–219",
-    "statement_latex": "Alternatively, we may say that a dynamical system as ergodic if the probability measure of any invariant set $A$ of the flow is either 0 or 1.",
+    "statement_latex": "Alternatively, we may say that a dynamical system as ergodic if the probability measure of any invariant set $\\mathcal A$ of the flow is either 0 or 1.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "$\\mathcal A$ 是流的不变集合，概率测度取值0或1；不变性公式及 $t\\ne0$ 都在PDF218。原书“as ergodic”原样保留。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.setErgodic",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]明示集合可测和实际概率测度背景；原“as ergodic”字面保留，不在逐字JSON中默改为“is”。"
+      "[EXTRA]明示集合可测和实际概率测度背景；原“as ergodic”字面保留，不在逐字JSON中默改为“is”。",
+      "[EXTRA] 集合0/1定义限定概率测度、零时恒等、实际群律及联合可测流，排除任意测度/映射的伪遍历解释。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT13_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:07.827007",
+        "before_sha256": "9269f853dbe0f2d862ebb572a7920d286124299f2f2eedab08f568a87ff4b67f",
+        "after_sha256": "e7ab4e422df562c2309718a96607a0b27d80799f56ef180d4f08281c94f65ed9",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-InvariantIndicator",
@@ -3694,23 +3762,41 @@
     "section": "5.4.1",
     "printed_page": "198",
     "pdf_page": "219",
-    "statement_latex": "Then for any trajectory starting in $A$, we have that the average of $\\phi$ along $\\tau$ vanishes, i.e. $\\bar\\phi=\\lim_{T\\to\\infty}T^{-1}\\int_0^T\\phi(z(t))dt=0$, since $A$ is an invariant set.",
+    "statement_latex": "Then for any trajectory starting in $\\mathcal A$, we have that the average of $\\chi$ along $\\Gamma$ vanishes, i.e. $\\bar\\chi_\\Gamma=\\lim_{\\tau\\to\\infty}\\tau^{-1}\\int_0^\\tau\\chi(z(t))dt=0$, since $\\mathcal A$ is an invariant set.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "PDF218–219：$\\chi(z)=0$ 若 $z\\in\\mathcal A$，$\\chi(z)=1$ 若 $z\\in\\Sigma_E\\setminus\\mathcal A$；初值在 $\\mathcal A$；$\\Gamma$ 是该轨道，$\\tau$ 为平均时长。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.invariantIndicator",
     "reusable_proofs": [
       "MolecularDynamics.Chapter05Review.invariantIndicator_proved"
     ],
     "extra_assumptions": [
-      "[EXTRA]原φ是可达空间内A的补集示性函数，实际Measure支撑空间限定时可用ambient Aᶜ示性函数；本条保留沿轨道逐点为零，完整无限时间平均另条。"
+      "[EXTRA]原φ是可达空间内A的补集示性函数，实际Measure支撑空间限定时可用ambient Aᶜ示性函数；本条保留沿轨道逐点为零，完整无限时间平均另条。",
+      "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅不变集合内补集indicator逐点恒零辅助引理；无限平均零由MD-5.4.1-InvariantIndicatorAverage承担。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "statement_scope": "仅不变集合内补集indicator逐点恒零辅助引理；无限平均零由MD-5.4.1-InvariantIndicatorAverage承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT13_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:07.827007",
+        "before_sha256": "5d22a5edf9f1260740d646395163004b8818dd14b957e276c6897817dd0f39d6",
+        "after_sha256": "0c31e86c3e13d7bbf12ce5ed91a43a03426ea997ebc943c50bab2323d5bb5e4d",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-InvariantIndicatorAverage",
@@ -3719,21 +3805,35 @@
     "section": "5.4.1",
     "printed_page": "198",
     "pdf_page": "219",
-    "statement_latex": "$\\bar\\phi=\\lim_{T\\to\\infty}T^{-1}\\int_0^T\\phi(z(t))dt=0$, since $A$ is an invariant set.",
+    "statement_latex": "$\\bar\\chi_\\Gamma=\\lim_{\\tau\\to\\infty}\\tau^{-1}\\int_0^\\tau\\chi(z(t))dt=0$, since $\\mathcal A$ is an invariant set.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "保留真实无限时间平均，不仅逐点补集indicator为0；书中该indicator不一定光滑，需要L¹观测量资格，未用它默证共AE光滑定义的等价性。"
+      "PDF218–219：$\\chi$ 是 $\\Sigma_E\\setminus\\mathcal A$ 的示性函数；本结论的初值在不变集合 $\\mathcal A$；$\\Gamma$ 是该轨道，$\\tau$ 为平均时长。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch05.invariantIndicatorAverage",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT13_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:07.827007",
+        "before_sha256": "f09db311058fddea09c12e82d6a36fcea81fd4f6f8ba127daa6b9494c785691f",
+        "after_sha256": "324c6358675e41c486dc5c16e44e45c8dc999279d16da6493793761030301efc",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
@@ -3742,21 +3842,38 @@
     "section": "5.4.1",
     "printed_page": "198",
     "pdf_page": "219",
-    "statement_latex": "If we assume the system is ergodic, we must have $\\operatorname{Pr}(\\Sigma_E\\setminus A)=0$, thus $\\operatorname{Pr}(A)=1$. Since, according to the definition, equality of time and space averages is allowed to fail only on a set of probability measure zero, we have that either $\\operatorname{Pr}(A)=0$ or $\\operatorname{Pr}(A)=1$.",
+    "statement_latex": "If we assume the system is ergodic, we must have $\\operatorname{Pr}(\\Sigma_E\\setminus\\mathcal A)=0$, thus $\\operatorname{Pr}(\\mathcal A)=1$. Since, according to the definition, equality of time and space averages is allowed to fail only on a set of probability measure zero, we have that either $\\operatorname{Pr}(\\mathcal A)=0$ or $\\operatorname{Pr}(\\mathcal A)=1$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "PDF218–219：$\\mathcal A$ 不变，$\\chi=1_{\\Sigma_E\\setminus\\mathcal A}$；其空间平均为 $\\operatorname{Pr}(\\Sigma_E\\setminus\\mathcal A)$，在 $\\mathcal A$ 中的轨道平均为零。原书先写补集概率为0，最后才分辨 $\\operatorname{Pr}(\\mathcal A)=0$ 的情形；应用AE等式推出补集概率为0须先有 $\\operatorname{Pr}(\\mathcal A)>0$，这里仅记录而不改原句。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.ergodicTimeAverage",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]完整全实时间可测流、概率保持、群律及L¹资格；对应标准每观测量AE版本，未将原共满测集量词交换当无条件事实。"
+      "[EXTRA]完整全实时间可测流、概率保持、群律及L¹资格；对应标准每观测量AE版本，未将原共满测集量词交换当无条件事实。",
+      "[EXTRA] 保留标准L¹双向定理，补紧支持概率流上共同AE光滑定义的连接及正概率不变集分支/实际indicator平均，区分原定义与标准替代定义。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT13_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:07.828007",
+        "before_sha256": "ec8ddcefd5f505e431f9b421e33d182a7505f9da7c6bfc3beadbc2c6321a052b",
+        "after_sha256": "9d7da121a29567760a54ac5e617bf6b4effded8b54d02c861e7f869bffa2bbfd",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-NonergodicSet",
@@ -3765,21 +3882,37 @@
     "section": "5.4.1",
     "printed_page": "198",
     "pdf_page": "219",
-    "statement_latex": "If a system is not ergodic, then there will be an invariant set $A$ whose probability measure is strictly between zero and one. The trajectories emanating from this set are unable to explore the entire energy surface and the corresponding trajectory averages will, at least for some observables, be different than the spatial average of that observable.",
+    "statement_latex": "If a system is not ergodic, then there will be an invariant set $\\mathcal A$ whose probability measure is strictly between zero and one. The trajectories emanating from this set are unable to explore the entire energy surface and the corresponding trajectory averages will, at least for some observables, be different than the spatial average of that observable.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "实际集合遍历性的逻辑等价；严格中间概率完整保留，不把不变集合的存在假设作结论。"
+      "$\\mathcal A$ 是能量面 $\\Sigma_E$ 中的不变集合，$0<\\operatorname{Pr}(\\mathcal A)<1$；该段还声称轨道受困及某些可观测量的时间平均异于空间平均。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch05.nonergodicSet",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 补中间概率不变集合内真实轨道保持、补集indicator无限平均零及空间平均非零的见证；可用于实际能量面概率流，不把不等式作假设。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT13_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:07.828007",
+        "before_sha256": "d6bdbdaa608bc426b38e0ab0b7b45372118680bc9287d57b5c50a0dc86f28465",
+        "after_sha256": "f594e66dc086376cc944a417fae8c3c021e676f22fdffbc75c77900f6934db5d",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-HarmonicFlow",
@@ -3797,12 +3930,26 @@
     "lean_decl": "MD.Ch05.harmonicFlow",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]真实解析振子流，用于完整遍历命题；Ω>0使用资格另条。"
+      "[EXTRA]真实解析振子流，用于完整遍历命题；Ω>0使用资格另条。",
+      "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅原系统推导的辅助解析流；原遍历结论由MD-5.4.1-HarmonicErgodic承担，频率正及能量正按该定理。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "statement_scope": "仅原系统推导的辅助解析流；原遍历结论由MD-5.4.1-HarmonicErgodic承担，频率正及能量正按该定理。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:37.070895",
+        "before_sha256": "6c39216b29aca6e3b47a219733d4e5d6361a73120aa122eceebc549820b92b5b",
+        "after_sha256": "fdca99dea8db9d84d40836a2fb27187ab24fe273829ebd13cfc97cc7a558a3f8",
+        "changed_fields": [
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-HarmonicErgodic",
@@ -3842,11 +3989,26 @@
     "issues": [],
     "lean_decl": "MD.Ch05.twoOscillatorEnergy",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "extra_assumptions": [
+      "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅两项分能量H₁/H₂定义；总能量分解由MD-5.4.1-TwoOscillatorEnergyDecomposition，分能量不变性由MD-5.4.1-TwoOscillatorTori承担。"
+    ],
+    "statement_scope": "仅两项分能量H₁/H₂定义；总能量分解由MD-5.4.1-TwoOscillatorEnergyDecomposition，分能量不变性由MD-5.4.1-TwoOscillatorTori承担。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:37.070895",
+        "before_sha256": "b98ebc78935c46a75a5c738acaf39dcaf7ec09f3b9b25e8972f2ed593415f64a",
+        "after_sha256": "258e4c3a8744c62c99246e9dcf235ee912119a2d0c2b3090e6c50eb265a6bfe1",
+        "changed_fields": [
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-TwoOscillatorFlow",
@@ -3855,21 +4017,38 @@
     "section": "5.4.1",
     "printed_page": "198–199",
     "pdf_page": "219–220",
-    "statement_latex": "Because the two systems involving $q_1,p_1$ and $q_2,p_2$ are not coupled in the equations of motion, this system has two invariants $H_1$ and $H_2$.",
+    "statement_latex": "Because the two systems involving $q_1,p_1$ and $q_2,p_2$ are not coupled in the equations of motion, this system has two invariants $H_1=p_1^2/2+\\Omega_1^2q_1^2/2$ and $H_2=p_2^2/2+\\Omega_2^2q_2^2/2$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "本句承接Example 5.4；Ω₁、Ω₂为非零参数；H₁、H₂为对应两个无耦合子系统的分能量。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.twoOscillatorFlow",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]明确相空间排列(q1,q2,p1,p2)和真实两个振子流；非零频率资格另条。"
+      "[EXTRA]明确相空间排列(q1,q2,p1,p2)和真实两个振子流；非零频率资格另条。",
+      "[EXTRA] 保留解析流并补任意初值（包括零分能量退化层）的两个真实分能量不变量，不再只依赖正共同层的Tori结论。原非零频率资格显式。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:37.070895",
+        "before_sha256": "da881e325b703a642176c7b6710a014e6c7d60402162b6e84767b75ab1627436",
+        "after_sha256": "ef63113f4bdf0b4d08e2086c72e232d51677fe4150bdbde0a6db4f59b6f1da35",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-TwoOscillatorTori",
@@ -3891,8 +4070,19 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:37.070895",
+        "before_sha256": "934768bad1b8aa319b30bd618f356ed15394fc4b85ea331f1c1619dc32245139",
+        "after_sha256": "f14bd8edbd73058764208d18ea3da429ba55cf3d9b071144a94acfa76369afcc",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-Mixing",
@@ -3910,12 +4100,24 @@
     "lean_decl": "MD.Ch05.weakMixing",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]实际不变参考测度上的AC概率初值、有界连续测试函数；参考测度是μ，可取微正则测度；避免旧density r谓词暗中以Lebesgue可积替代微正则可积。"
+      "[EXTRA]实际不变参考测度上的AC概率初值、有界连续测试函数；参考测度是μ，可取微正则测度；避免旧density r谓词暗中以Lebesgue可积替代微正则可积。",
+      "[EXTRA] 混合定义在谓词内记录概率参考测度、零时恒等、群律、联合可测实际流；保留AC初始概率与有界连续测试配对。相关已有证明取第二合取后重查。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:37.070895",
+        "before_sha256": "59e3cf2aaeef819acde67366c80351cdd160c9049256e1461abf68037a224c1f",
+        "after_sha256": "db0eb975725b316611365b25d5a83156a55ba4626a531ef1502efeaf6541d9a2",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-KAMPersistence",
@@ -3937,8 +4139,19 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:37.070895",
+        "before_sha256": "71d1ec453baa3d75ceb255f6ce1e941dd368b51be2f05dc30a2373dda695e9ea",
+        "after_sha256": "c955ffe3949178c4fd38741684117445bfa4a7eb10d87a9c6728dbc9ee917ce3",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-AnisotropicPotential",
@@ -3974,7 +4187,10 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "U 为第1章各向异性振子势：c₃=4(x/r)³−3x/r，κ=κ₀(1−εc₃/2)，l=l₀(1+εc₃/2)，U=κ(r−l)²/2，r=√(x²+y²)；经典角度表达限定 r>0。",
+      "单位质量下速度对应动量。原书径向力理由及保证探索整个能量面的措辞按原样保留，数学疑误见 issues。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.anisotropicAxisPrinted",
     "reusable_proofs": [],
@@ -3982,9 +4198,22 @@
       "[EXTRA]用第1章实际各向异性势陈述全真实轨道上的轴不变义务；κ/l正及全时间可微轨道，不把轴不变结论作假设。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:37.070895",
+        "before_sha256": "b5fa1e72b138187bbb32a02e18b603639f783cbd939ee104610f369553e3a3c5",
+        "after_sha256": "dfccfff1302d453a3de420345e142e7c8fa63626f7588dc2b4be2abf2e662cd4",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
@@ -3997,17 +4226,35 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "相空间坐标顺序(q₁,q₂,p₁,p₂)，H_i=p_i²/2+Ω_i²q_i²/2，H=H₁+H₂；原语境 Ω₁,Ω₂≠0。",
+      "原文 such 2-tori 指前文 E₁,E₂>0 的层；E_i=0 的退化层未被原句字面涵盖，保留该原书疑误。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.twoOscillatorEnergyDecomposition",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]包括c_i=0的退化边界；原“all such 2-tori”字面忽略零分能量层，完整全能量面分解不能遗漏这些层。"
+      "[EXTRA]包括c_i=0的退化边界；原“all such 2-tori”字面忽略零分能量层，完整全能量面分解不能遗漏这些层。",
+      "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "statement_scope": "仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT14_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:01:37.070895",
+        "before_sha256": "4dd9174a2898578d9d9b5a6e6f2731fee76e4a8eb129408e7dabc33f3f0cd0c4",
+        "after_sha256": "f11cf2bb64db234e2066399a6596c354d045dfdbca9d05eb9174138ded367248",
+        "changed_fields": [
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-CurveImageDimension",

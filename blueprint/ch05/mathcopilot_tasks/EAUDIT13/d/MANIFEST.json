@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT13",
+  "source_id": "MD-5.4.1-SetErgodic",
+  "input_sha256": {
+    "BATCH_EAUDIT13.md": "89097ba8581c14c4728c84c2c2dfc54d0a467b74145d3576de4f64ee72e70fff",
+    "Blueprint/Ch05.lean": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+    "blueprint/ch05/ch05_source.json": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441",
+    "EAUDIT13d_materials": "f8fb5809901cbeca4a57d1ca949915a36d1dab365336be5b9d85024770aafb3b",
+    "EAUDIT13d_PAGES.pdf": "493f5d7a2bc13c1892d217977625dc2bdaf33ea7413e1bba47aae90174bbaf97"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    218,
+    219
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "670d7bb8d2ce167e18027e63ab746eac07830cd3bd81d1a12d48efcdc8a428b2",
+  "source_block_sha256": "ffcdee4dce2bf9b5fc6bb63cbee6d2f92dc5987b9e1e6e40a368672718fa638b",
+  "source_declarations": [
+    "setErgodic"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.flowInvariant",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "c872138ed37e6d98aea5ab2af25f6aeebf241f5136e0a5af0623a48cc0f6b13e"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "flowInvariant",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "29cf8bedf522689c4dfb2b73e51c60601592b7ae53e6ae7ad7eda9244753564c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "setErgodic",
+      "file_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+      "excerpt_sha256": "ffcdee4dce2bf9b5fc6bb63cbee6d2f92dc5987b9e1e6e40a368672718fa638b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT13_review.json",
+  "total_task_bytes": 109582
+}

@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT14",
+  "source_id": "MD-5.4.1-TwoOscillatorEnergy",
+  "input_sha256": {
+    "BATCH_EAUDIT14.md": "3231a89c0c218fe426bca498565dbccdcba83a426307507fb675ccbcfcb6a1e8",
+    "Blueprint/Ch05.lean": "a101cbc5aa200e0dc4e902f9e6ed3f511dbe1517088c2db78c7cc4c5d84f645f",
+    "blueprint/ch05/ch05_source.json": "4c7de844910ad09e5f2e54c24bbd3f0af731aa94840fd3cafdfbda9b8d6bb0c8",
+    "EAUDIT14b_materials": "e3e07d6532a740a8dcb02349ed9daf6e6332b1550146b54154b6e2f946ddf582",
+    "EAUDIT14b_PAGES.pdf": "d12bff63daceb32f499847db1182d87f28c0de5bcda9d6c6ff694de02d41ebfd"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    219,
+    220
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "02a315c1ad522349140c589135272d00bfc2a77d0f6ca0cb560eab120d58e3b1",
+  "source_block_sha256": "ab0745151619fe658a5e2649baf952b325bee0100a147563a933c303a3768ce2",
+  "source_declarations": [
+    "twoOscillatorEnergy"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "twoOscillatorEnergy",
+      "file_sha256": "a101cbc5aa200e0dc4e902f9e6ed3f511dbe1517088c2db78c7cc4c5d84f645f",
+      "excerpt_sha256": "ab0745151619fe658a5e2649baf952b325bee0100a147563a933c303a3768ce2"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT14_review.json",
+  "total_task_bytes": 208676
+}

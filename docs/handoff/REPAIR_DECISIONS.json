@@ -1993,5 +1993,85 @@
     "category": "B",
     "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
     "section": "5.4"
+  },
+  "MD-5.4.1-UniformMicroErgodic": {
+    "category": "A",
+    "handling": "明示C² Hamiltonian、常非退化反对称J生成的实际流、能量保持与正有限正则能量面背景；保留AE后∀可积光滑观测量的原量词顺序。 并恢复C∞而非Cω资格。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-MicroErgodicStandard": {
+    "category": "C",
+    "handling": "主接口恢复原句共同AE后∀光滑可积观测量，实际Hamiltonian/概率背景显式；旧∀L¹后AE版本仅保留为标明的替代定义，等价连接在ErgodicTimeEquivalence补列。 并恢复C∞而非Cω资格。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-FlowInvariant": {
+    "category": "A",
+    "handling": "按原印精确限定t≠0；真实零时恒等流下等价全时间条件，不对任意Φ默加零时限制。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-SetErgodic": {
+    "category": "A",
+    "handling": "集合0/1定义限定概率测度、零时恒等、实际群律及联合可测流，排除任意测度/映射的伪遍历解释。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-InvariantIndicator": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅不变集合内补集indicator逐点恒零辅助引理；无限平均零由MD-5.4.1-InvariantIndicatorAverage承担。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-ErgodicTimeEquivalence": {
+    "category": "B",
+    "handling": "保留标准L¹双向定理，补紧支持概率流上共同AE光滑定义的连接及正概率不变集分支/实际indicator平均，区分原定义与标准替代定义。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-NonergodicSet": {
+    "category": "B",
+    "handling": "补中间概率不变集合内真实轨道保持、补集indicator无限平均零及空间平均非零的见证；可用于实际能量面概率流，不把不等式作假设。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-InvariantIndicatorAverage": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-HarmonicFlow": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅原系统推导的辅助解析流；原遍历结论由MD-5.4.1-HarmonicErgodic承担，频率正及能量正按该定理。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-TwoOscillatorEnergy": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅两项分能量H₁/H₂定义；总能量分解由MD-5.4.1-TwoOscillatorEnergyDecomposition，分能量不变性由MD-5.4.1-TwoOscillatorTori承担。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-TwoOscillatorFlow": {
+    "category": "B",
+    "handling": "保留解析流并补任意初值（包括零分能量退化层）的两个真实分能量不变量，不再只依赖正共同层的Tori结论。原非零频率资格显式。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-TwoOscillatorEnergyDecomposition": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-Mixing": {
+    "category": "A",
+    "handling": "混合定义在谓词内记录概率参考测度、零时恒等、群律、联合可测实际流；保留AC初始概率与有界连续测试配对。相关已有证明取第二合取后重查。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-TwoOscillatorTori": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-KAMPersistence": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-AnisotropicAxisPrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.4.1"
   }
 }

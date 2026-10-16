@@ -1,0 +1,46 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT14",
+  "section": "5.4.1",
+  "source_ids": [
+    "MD-5.4.1-AnisotropicAxisPrinted",
+    "MD-5.4.1-HarmonicFlow",
+    "MD-5.4.1-KAMPersistence",
+    "MD-5.4.1-Mixing",
+    "MD-5.4.1-TwoOscillatorEnergy",
+    "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+    "MD-5.4.1-TwoOscillatorFlow",
+    "MD-5.4.1-TwoOscillatorTori"
+  ],
+  "reaudit_ids": [
+    "MD-5.4.1-HarmonicFlow",
+    "MD-5.4.1-TwoOscillatorEnergy",
+    "MD-5.4.1-TwoOscillatorFlow",
+    "MD-5.4.1-Mixing",
+    "MD-5.4.1-TwoOscillatorEnergyDecomposition"
+  ],
+  "human_ids": [
+    "MD-5.4.1-TwoOscillatorTori",
+    "MD-5.4.1-KAMPersistence",
+    "MD-5.4.1-AnisotropicAxisPrinted"
+  ],
+  "old_lean_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+  "lean_sha256": "97db6cf90e240dd0a66e630e73a4917ef3dd885e296a2534ed61390a664c7ec9",
+  "source_sha256": "4c7de844910ad09e5f2e54c24bbd3f0af731aa94840fd3cafdfbda9b8d6bb0c8",
+  "pages": [
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224
+  ],
+  "prior_proof_blocks": {
+    "MD-5.4.1-HarmonicFlow": "def harmonicFlow (Ω t : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=\n  WithLp.toLp 2 ![z 0*Real.cos (Ω*t)+z 1/Ω*Real.sin (Ω*t),\n    z 1*Real.cos (Ω*t)-Ω*z 0*Real.sin (Ω*t)]",
+    "MD-5.4.1-TwoOscillatorEnergy": "def twoOscillatorEnergy (Ω : Fin 2 → ℝ) (i : Fin 2) (z : MolecularDynamics.Chapter05Review.E 4) :=\n  (z (Fin.natAdd 2 i))^2/2+(Ω i)^2*(z (Fin.castAdd 2 i))^2/2",
+    "MD-5.4.1-TwoOscillatorFlow": "def twoOscillatorFlow (Ω : Fin 2 → ℝ) (t : ℝ) (z : MolecularDynamics.Chapter05Review.E 4) : MolecularDynamics.Chapter05Review.E 4 :=\n  WithLp.toLp 2 ![z 0*Real.cos (Ω 0*t)+z 2/(Ω 0)*Real.sin (Ω 0*t),\n    z 1*Real.cos (Ω 1*t)+z 3/(Ω 1)*Real.sin (Ω 1*t),\n    z 2*Real.cos (Ω 0*t)-Ω 0*z 0*Real.sin (Ω 0*t),\n    z 3*Real.cos (Ω 1*t)-Ω 1*z 1*Real.sin (Ω 1*t)]",
+    "MD-5.4.1-TwoOscillatorEnergyDecomposition": "theorem twoOscillatorEnergyDecomposition : ∀ (Ω : Fin 2 → ℝ) (E : ℝ) (z : MolecularDynamics.Chapter05Review.E 4),\n  ((∑ i,twoOscillatorEnergy Ω i z)=E) ↔\n  ∃ c : Fin 2 → ℝ,(∀ i,0 ≤ c i) ∧ (∑ i,c i)=E ∧ (∀ i,twoOscillatorEnergy Ω i z=c i) := by\n  sorry",
+    "MD-5.4.1-Mixing": "def weakMixing {n : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=\n  ∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ,Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →\n  Continuous φ → Bornology.IsBounded (range φ) →\n  Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))"
+  }
+}

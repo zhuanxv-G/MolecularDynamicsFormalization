@@ -1,0 +1,47 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT13",
+  "section": "5.4.1",
+  "source_ids": [
+    "MD-5.4.1-ErgodicTimeEquivalence",
+    "MD-5.4.1-FlowInvariant",
+    "MD-5.4.1-InvariantIndicator",
+    "MD-5.4.1-InvariantIndicatorAverage",
+    "MD-5.4.1-MicroErgodicStandard",
+    "MD-5.4.1-NonergodicSet",
+    "MD-5.4.1-SetErgodic",
+    "MD-5.4.1-UniformMicroErgodic"
+  ],
+  "reaudit_ids": [
+    "MD-5.4.1-UniformMicroErgodic",
+    "MD-5.4.1-MicroErgodicStandard",
+    "MD-5.4.1-FlowInvariant",
+    "MD-5.4.1-SetErgodic",
+    "MD-5.4.1-InvariantIndicator",
+    "MD-5.4.1-InvariantIndicatorAverage",
+    "MD-5.4.1-ErgodicTimeEquivalence",
+    "MD-5.4.1-NonergodicSet"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
+  "lean_sha256": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
+  "source_sha256": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441",
+  "pages": [
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224
+  ],
+  "prior_proof_blocks": {
+    "MD-5.4.1-UniformMicroErgodic": "def uniformMicroErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=\n  ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c,∀ g : MolecularDynamics.Chapter05Review.E n → ℝ,\n    ContDiff ℝ ⊤ g → Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →\n      MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)",
+    "MD-5.4.1-MicroErgodicStandard": "def microErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=\n  ∀ g : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →\n    ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c, MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)",
+    "MD-5.4.1-FlowInvariant": "def flowInvariant {X : Type*} (Φ : ℝ → X → X) (A : Set X) : Prop := ∀ t, Φ t '' A=A",
+    "MD-5.4.1-SetErgodic": "def setErgodic {X : Type*} [MeasurableSpace X] (μ : Measure X) (Φ : ℝ → X → X) : Prop :=\n  ∀ A : Set X, MeasurableSet A → MolecularDynamics.Chapter05Review.flowInvariant Φ A → μ A=0 ∨ μ A=1",
+    "MD-5.4.1-InvariantIndicator": "theorem invariantIndicator {X : Type*} (Φ : ℝ → X → X) (A : Set X)\n    (h : MolecularDynamics.Chapter05Review.flowInvariant Φ A) (z : X) (hz : z ∈ A) (t : ℝ) :\n    Aᶜ.indicator (fun _ => (1 : ℝ)) (Φ t z)=0 := by\n  apply MolecularDynamics.Chapter05Review.invariantIndicator_proved <;> assumption",
+    "MD-5.4.1-ErgodicTimeEquivalence": "theorem ergodicTimeAverage :\n  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ,\n  IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →\n  (∀ z,Φ 0 z=z) → (∀ s t z,Φ (s+t) z=Φ s (Φ t z)) →\n  Measurable (Function.uncurry Φ) →\n  (MolecularDynamics.Chapter05Review.setErgodic μ Φ ↔ ∀ g : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable g μ →\n    ∀ᵐ z ∂μ, MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.average μ g)) := by\n  sorry",
+    "MD-5.4.1-NonergodicSet": "theorem nonergodicSet :\n  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ,\n  IsProbabilityMeasure μ → (¬MolecularDynamics.Chapter05Review.setErgodic μ Φ ↔\n    ∃ A : Set (MolecularDynamics.Chapter05Review.E n),MeasurableSet A ∧ MolecularDynamics.Chapter05Review.flowInvariant Φ A ∧ 0 < μ A ∧ μ A < 1) := by\n  sorry"
+  }
+}

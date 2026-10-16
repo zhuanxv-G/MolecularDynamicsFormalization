@@ -117,24 +117,24 @@
 | MD-5.4-DoubleWellCoercivity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
 | MD-5.4-DoubleWellDisconnected | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
 | MD-5.4-DoubleWellBasin | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT12 | local_proof / self-contained |
-| MD-5.4.1-UniformMicroErgodic | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / incomplete |
-| MD-5.4.1-MicroErgodicStandard | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.4.1-FlowInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.4.1-SetErgodic | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.4.1-InvariantIndicator | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
-| MD-5.4.1-InvariantIndicatorAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/InvariantIndicatorAverage.timebox.json。 |
-| MD-5.4.1-ErgodicTimeEquivalence | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；Mathlib存在离散Birkhoff/Ergodic基础，但缺本章连续时间积分平均与集合遍历性等价的接口；不建设大型遍历理论。 |
-| MD-5.4.1-NonergodicSet | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/NonergodicSet.timebox.json。 |
-| MD-5.4.1-HarmonicFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
+| MD-5.4.1-UniformMicroErgodic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT13 | definition / incomplete |
+| MD-5.4.1-MicroErgodicStandard | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | definition / self-contained |
+| MD-5.4.1-FlowInvariant | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | definition / self-contained |
+| MD-5.4.1-SetErgodic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | definition / self-contained |
+| MD-5.4.1-InvariantIndicator | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | existing_bridge / checked+documented priors |
+| MD-5.4.1-InvariantIndicatorAverage | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/InvariantIndicatorAverage.timebox.json。 |
+| MD-5.4.1-ErgodicTimeEquivalence | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | placeholder / incomplete；Mathlib存在离散Birkhoff/Ergodic基础，但缺本章连续时间积分平均与集合遍历性等价的接口；不建设大型遍历理论。 |
+| MD-5.4.1-NonergodicSet | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT13 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/NonergodicSet.timebox.json。 |
+| MD-5.4.1-HarmonicFlow | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | definition / self-contained |
 | MD-5.4.1-HarmonicErgodic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺椭圆曲面测度识别与连续时间圆周轨道平均桥接，不建设大型遍历/几何理论。 |
-| MD-5.4.1-TwoOscillatorEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.4.1-TwoOscillatorFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.4.1-TwoOscillatorTori | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺完整椭圆乘积拓扑、Kronecker稠密及正测度不变子域桥接；不建设新的连续遍历理论。 |
-| MD-5.4.1-Mixing | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.4.1-KAMPersistence | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺当前有限维Hamiltonian KAM/Nash–Moser及不变环面持久化理论；按用户要求不建设。 |
+| MD-5.4.1-TwoOscillatorEnergy | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | definition / self-contained |
+| MD-5.4.1-TwoOscillatorFlow | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | definition / self-contained |
+| MD-5.4.1-TwoOscillatorTori | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | placeholder / incomplete；缺完整椭圆乘积拓扑、Kronecker稠密及正测度不变子域桥接；不建设新的连续遍历理论。 |
+| MD-5.4.1-Mixing | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | definition / self-contained |
+| MD-5.4.1-KAMPersistence | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | placeholder / incomplete；缺当前有限维Hamiltonian KAM/Nash–Moser及不变环面持久化理论；按用户要求不建设。 |
 | MD-5.4.1-AnisotropicPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.4.1-AnisotropicAxisPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；原各向异性力/轴不变说法需语义裁定；不证明，不恢复第1章。 |
-| MD-5.4.1-TwoOscillatorEnergyDecomposition | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/TwoOscillatorEnergyDecomposition.timebox.json。 |
+| MD-5.4.1-AnisotropicAxisPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT14（原返回FAIL保留） | placeholder / incomplete；原各向异性力/轴不变说法需语义裁定；不证明，不恢复第1章。 |
+| MD-5.4.1-TwoOscillatorEnergyDecomposition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/TwoOscillatorEnergyDecomposition.timebox.json。 |
 | MD-5.4.1-CurveImageDimension | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CurveImageDimension.timebox.json。 |
 | MD-5.4.1-PendulumPotential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.4.1-PendulumRegionPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；一般圆盘并集说法及边界/轨道覆盖解释需原页语义裁定，不证明。 |
@@ -365,3 +365,7 @@ EAUDIT10 §5.3.2：8条落盘，单文件与11项公理通过；未写新证明�
 EAUDIT11 §5.3.3：4条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT12 §5.4：6条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT13 §5.4.1：8条落盘，单文件与12项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT14 §5.4.1：8条落盘，单文件与9项公理通过；未写新证明；完整check留到章末；网站待复审。
