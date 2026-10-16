@@ -1,0 +1,82 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT87",
+  "section": "4.4.1",
+  "source_ids": [
+    "MD-4.4.1-AngularMomentum",
+    "MD-4.4.1-BodyMomentum",
+    "MD-4.4.1-AngularInertia",
+    "MD-4.4.1-EulerRigidField",
+    "MD-4.4.1-FreeRigidSolution",
+    "MD-4.4.1-RigidInvariants",
+    "MD-4.4.1-RigidPoissonMatrix",
+    "MD-4.4.1-PoissonDegeneracy"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.1-AngularMomentum",
+    "MD-4.4.1-BodyMomentum",
+    "MD-4.4.1-AngularInertia",
+    "MD-4.4.1-EulerRigidField",
+    "MD-4.4.1-FreeRigidSolution",
+    "MD-4.4.1-RigidInvariants",
+    "MD-4.4.1-RigidPoissonMatrix",
+    "MD-4.4.1-PoissonDegeneracy"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.4.1-AngularMomentum",
+      "prior_eaudit": "EAUDIT65",
+      "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+      "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+    },
+    {
+      "source_id": "MD-4.4.1-BodyMomentum",
+      "prior_eaudit": "EAUDIT65",
+      "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+      "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+    },
+    {
+      "source_id": "MD-4.4.1-AngularInertia",
+      "prior_eaudit": "EAUDIT65",
+      "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+      "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+    },
+    {
+      "source_id": "MD-4.4.1-EulerRigidField",
+      "prior_eaudit": "EAUDIT65",
+      "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+      "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+    },
+    {
+      "source_id": "MD-4.4.1-FreeRigidSolution",
+      "prior_eaudit": "EAUDIT65",
+      "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+      "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+    },
+    {
+      "source_id": "MD-4.4.1-RigidInvariants",
+      "prior_eaudit": "EAUDIT65",
+      "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+      "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+    },
+    {
+      "source_id": "MD-4.4.1-RigidPoissonMatrix",
+      "prior_eaudit": "EAUDIT65",
+      "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+      "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+    },
+    {
+      "source_id": "MD-4.4.1-PoissonDegeneracy",
+      "prior_eaudit": "EAUDIT65",
+      "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+      "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT87/INDEX.md"
+}

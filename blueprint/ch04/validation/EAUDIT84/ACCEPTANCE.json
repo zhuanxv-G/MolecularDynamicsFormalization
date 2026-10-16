@@ -1,0 +1,82 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT84",
+  "section": "4.4",
+  "source_ids": [
+    "MD-4.4-SkewMatrix",
+    "MD-4.4-CrossProduct",
+    "MD-4.4-SkewRepresentation",
+    "MD-4.4-CrossMatrix",
+    "MD-4.4-RigidVelocity",
+    "MD-4.4-InertiaTensor",
+    "MD-4.4-RotationalEnergy",
+    "MD-4.4-InertiaTraceCorrected"
+  ],
+  "reaudit_ids": [
+    "MD-4.4-SkewMatrix",
+    "MD-4.4-CrossProduct",
+    "MD-4.4-SkewRepresentation",
+    "MD-4.4-CrossMatrix",
+    "MD-4.4-RigidVelocity",
+    "MD-4.4-InertiaTensor",
+    "MD-4.4-RotationalEnergy",
+    "MD-4.4-InertiaTraceCorrected"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.4-SkewMatrix",
+      "prior_eaudit": "EAUDIT62",
+      "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+      "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+    },
+    {
+      "source_id": "MD-4.4-CrossProduct",
+      "prior_eaudit": "EAUDIT62",
+      "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+      "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+    },
+    {
+      "source_id": "MD-4.4-SkewRepresentation",
+      "prior_eaudit": "EAUDIT62",
+      "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+      "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+    },
+    {
+      "source_id": "MD-4.4-CrossMatrix",
+      "prior_eaudit": "EAUDIT62",
+      "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+      "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+    },
+    {
+      "source_id": "MD-4.4-RigidVelocity",
+      "prior_eaudit": "EAUDIT62",
+      "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+      "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+    },
+    {
+      "source_id": "MD-4.4-InertiaTensor",
+      "prior_eaudit": "EAUDIT62",
+      "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+      "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+    },
+    {
+      "source_id": "MD-4.4-RotationalEnergy",
+      "prior_eaudit": "EAUDIT62",
+      "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+      "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+    },
+    {
+      "source_id": "MD-4.4-InertiaTraceCorrected",
+      "prior_eaudit": "EAUDIT62",
+      "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+      "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT84/INDEX.md"
+}

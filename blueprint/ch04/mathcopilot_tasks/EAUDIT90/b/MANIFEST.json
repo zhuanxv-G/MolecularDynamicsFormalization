@@ -1,0 +1,79 @@
+{
+  "eaudit": "EAUDIT90",
+  "source_id": "MD-4.4.2-RigidTorque",
+  "input_sha256": {
+    "BATCH_EAUDIT90.md": "887941e7e6cbda4ece9e7c2f01bf564a1ab1b23a408244644f67e62e0fcc993b",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT90b_materials": "e7ebf5a6a54c2d5f69e6676aeff318d0151dbcef873d4f922ea1a8f4a96b92b1",
+    "EAUDIT90b_PAGES.pdf": "04a8091de5488531bda15bae6d122724c7b3b401651b5f293b814610b58ddda9"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    195
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "eba11dd2d2402fd8c432d8d6ffbb9bc62ec2e9f041bb1610b79645a089b6d439",
+  "source_block_sha256": "ee445fca16a1eae48e4b7d264d4c196512185971010f48ab6b046c1919a460d3",
+  "source_declarations": [
+    "rigidTorque"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.matrixGrad",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "5822cb49001178b45dd7bffd6a7d898fd2363c6fc27a1bef62825eac4f9cd3dc"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.matrixRot",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "ab9f11e23fc59b93005c1c3e9410579b3ff0f97c7fe2dd45ceb5ba6b4d5c2ad7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "matrixGrad",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "5822cb49001178b45dd7bffd6a7d898fd2363c6fc27a1bef62825eac4f9cd3dc"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "matrixRot",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "2ba19fcfb7d1665f2fc4d73cfedb0e0bf6226f93938b899cf151cb30ff3f3619"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "rigidTorque",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "ee445fca16a1eae48e4b7d264d4c196512185971010f48ab6b046c1919a460d3"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT90_review.json",
+  "total_task_bytes": 92303
+}

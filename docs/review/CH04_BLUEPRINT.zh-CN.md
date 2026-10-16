@@ -42,11 +42,11 @@
 | MD-4.2.1-ResonanceInstability | 147/169 | PASS | 待复审 / EAUDIT05 | incomplete |
 | MD-4.2.1-ResonanceEigenPrinted | 147/169 | NEEDS_HUMAN | 待导师 / EAUDIT05（原返回FAIL保留） | incomplete |
 | MD-4.2.2-MollifiedAverage | 149/171 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.2.2-MollifiedPotential | 149/171 | PASS | 待复审 / EAUDIT06 | self-contained |
+| MD-4.2.2-MollifiedPotential | 148–149/170–171 | PASS | 待复审 / EAUDIT06 | self-contained |
 | MD-4.2.1-ResonanceLinearRate | 147/169 | PASS | 待导师 / EAUDIT05（原返回FAIL保留） | self-contained |
 | MD-4.2.1-ResonanceGrowth | 147/169 | PASS | 待复审 / EAUDIT05 | self-contained |
 | MD-4.2.2-MollifiedStructure | 149/171 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | incomplete |
-| MD-4.3-HolonomicRelation | 150/172 | PASS | 待复审 / EAUDIT07 | self-contained |
+| MD-4.3-HolonomicRelation | 149–150/171–172 | PASS | 待复审 / EAUDIT07 | self-contained |
 | MD-4.3-TimeConstraintDerivative | 150/172 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.3-ConstrainedSolution | 152/174 | PASS | 待复审 / EAUDIT07 | self-contained |
 | MD-4.3-ConstraintSet | 152/174 | PASS | 待复审 / EAUDIT46 | incomplete |
@@ -93,12 +93,12 @@
 | MD-4.3.4-CotangentHidden | 159/181 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | checked+documented priors |
 | MD-4.3.4-CotangentRegularity | 160/182 | PASS | 待复审 / EAUDIT13 | checked+documented priors |
 | MD-4.3.4-CotangentPullback | 160/182 | PASS | 待复审 / EAUDIT13 | checked+documented priors |
-| MD-4.3.4-GramProjectedEuler | 160/182 | PASS | 待复审 / EAUDIT13 | checked+documented priors |
+| MD-4.3.4-GramProjectedEuler | 159/181 | PASS | 待复审 / EAUDIT13 | checked+documented priors |
 | MD-4.3.5-SHAKEPositionPrinted | 161/183 | NEEDS_HUMAN | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.3.5-SHAKEPositionMass | 161/183 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | self-contained |
 | MD-4.3.5-SHAKEPhase | 161/183 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.3.5-RATTLE | 161/183 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.3.5-ConstrainedOrders | 161–162/183–184 | PASS | 待复审 / EAUDIT14 | incomplete |
+| MD-4.3.5-ConstrainedOrders | 161/183 | PASS | 待复审 / EAUDIT14 | incomplete |
 | MD-4.3.5-RATTLESymplectic | 162/184 | PASS | 待复审 / EAUDIT14 | incomplete |
 | MD-4.3.5-StaggeredConstraint | 162/184 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | self-contained |
 | MD-4.3.5-SHAKERATTLEEquivalence | 162/184 | PASS | 待导师 / EAUDIT14（原返回FAIL保留） | incomplete |
@@ -114,7 +114,7 @@
 | MD-4.3.6-SETTLE | 165/187 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.3.6-LINCSInverse | 165/187 | PASS | 待复审 / EAUDIT16 | self-contained |
 | MD-4.3.6-LINCSConvergence | 165/187 | PASS | 待复审 / EAUDIT16 | incomplete |
-| MD-4.4-WaterPairPotential | 167/189 | PASS | 待复审 / EAUDIT17 | self-contained |
+| MD-4.4-WaterPairPotential | 166–167/188–189 | PASS | 待复审 / EAUDIT17 | self-contained |
 | MD-4.4-TotalMass | 167/189 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.4-CenterMass | 167/189 | PASS | 待复审 / EAUDIT17 | self-contained |
 | MD-4.4-RelativePositions | 167/189 | PASS | 待复审 / EAUDIT17 | self-contained |
@@ -138,7 +138,7 @@
 | MD-4.4-DipolarHamiltonian | 169–170/191–192 | PASS | 待复审 / EAUDIT19 | self-contained |
 | MD-4.4-DipolarPairPotential | 170/192 | PASS | 待复审 / EAUDIT19 | self-contained |
 | MD-4.4-DipolarRotationalPrinted | 170/192 | NEEDS_HUMAN | 待导师 / EAUDIT19（原返回FAIL保留） | self-contained |
-| MD-4.4-RigidHamiltonian | 170/192 | PASS | 待复审 / EAUDIT19 | self-contained |
+| MD-4.4-RigidHamiltonian | 170–171/192–193 | PASS | 待复审 / EAUDIT19 | self-contained |
 | MD-4.4-SecondMomentDiagonal | 168/190 | PASS | 待复审 / EAUDIT19 | self-contained |
 | MD-4.4-RotationBodyEnergy | 169/191 | PASS | 待复审 / EAUDIT19 | self-contained |
 | MD-4.4-DipolarConstraint | 170/192 | PASS | 待复审 / EAUDIT19 | self-contained |
@@ -157,7 +157,7 @@
 | MD-4.4.1-AxisRotation | 173–174/195–196 | PASS | 待复审 / EAUDIT22 | self-contained |
 | MD-4.4.1-SecondAxisPrinted | 173/195 | NEEDS_HUMAN | 待导师 / EAUDIT22（原返回NEEDS_HUMAN保留） | self-contained |
 | MD-4.4.1-ThirdAxisPrinted | 173/195 | NEEDS_HUMAN | 待导师 / EAUDIT22（原返回NEEDS_HUMAN保留） | self-contained |
-| MD-4.4.1-PrincipalAxisField | 173/195 | PASS | 待复审 / EAUDIT22 | self-contained |
+| MD-4.4.1-PrincipalAxisField | 172/194 | PASS | 待复审 / EAUDIT22 | self-contained |
 | MD-4.4.2-PrintedSpinAxis | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.4.2-PrintedSpinStep | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.4.1-AxisFlowFormal | 173/195 | NEEDS_HUMAN | 待导师 / EAUDIT22（原返回FAIL保留） | incomplete |
@@ -180,8 +180,8 @@
 | MD-4.4.2-RigidSystemSpinPrinted | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
 | MD-4.4.2-DLMPrintedSystem | 174/196 | PASS | 待复审 / EAUDIT24 | self-contained |
 | MD-4.4.2-SystemDriftSpinCommute | 174/196 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | self-contained |
-| MD-4.4.2-RigidSystemSymplectic | 173–174/195–196 | PASS | 待复审 / EAUDIT24 | self-contained |
-| MD-4.4.2-DLMPrintedSystemStructure | 173–174/195–196 | NEEDS_HUMAN | 待复审 / EAUDIT24 | incomplete |
+| MD-4.4.2-RigidSystemSymplectic | 173/195 | PASS | 待复审 / EAUDIT24 | self-contained |
+| MD-4.4.2-DLMPrintedSystemStructure | 173/195 | NEEDS_HUMAN | 待复审 / EAUDIT24 | incomplete |
 | MD-4.4.1-ExactPlanarRotation | 173/195 | PASS | 待导师 / EAUDIT22（原返回NEEDS_HUMAN保留） | incomplete |
 
 ## 需要导师判断的问题
@@ -2191,7 +2191,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`98420d95ae66762e0ec997d05f0e289f04d58569cb8ec8b54e5c32d81ce15c08`；原文SHA256：`3978a3812eb2bfa22836cbe7319fdaaa9b40bbce5352911885db04edefbc4e8f`。
 
-## 1. MD-4.2.2-MollifiedPotential · definition · 印刷p.149 / PDFp.171
+## 1. MD-4.2.2-MollifiedPotential · definition · 印刷p.148–149 / PDFp.170–171
 
 ### 2. 原文陈述
 
@@ -2236,7 +2236,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`7a639dfabaaaa5022aefe6a96444e2ff6727fd9e04bf66baabcd9879ca365539`；原文SHA256：`4ceadc2faf5b3206cdb4ae28cbded32e7badd1ac52334d7c038fb73787cfeab1`。
+签名SHA256：`7a639dfabaaaa5022aefe6a96444e2ff6727fd9e04bf66baabcd9879ca365539`；原文SHA256：`05dedeb53aa2e1c6ebfecf815ee218490a3232d36e1a94f4c8b0782f0ff4038e`。
 
 ## 1. MD-4.2.1-ResonanceLinearRate · unnumbered_claim · 印刷p.147 / PDFp.169
 
@@ -2402,7 +2402,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`c888250b6e4e206b92153d5c4b8e3be242c306acc46160dcb4c50a522517e9c4`；原文SHA256：`783f68f12d7dad05b4aa84255eb0e8e4ca179c7e2ab99f221d23ff01ab12b87a`。
 
-## 1. MD-4.3-HolonomicRelation · (4.3) · 印刷p.150 / PDFp.172
+## 1. MD-4.3-HolonomicRelation · (4.3) · 印刷p.149–150 / PDFp.171–172
 
 ### 2. 原文陈述
 
@@ -2446,7 +2446,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`0fa4cca16676fd6a93cfb364fa06a0c4b15a535d5f7925ccc0194e32fbf5a353`；原文SHA256：`db33523d91a21430ffe917b4410af9cc5614c8eb2967838b84aa6d13d3bd5a30`。
+签名SHA256：`0fa4cca16676fd6a93cfb364fa06a0c4b15a535d5f7925ccc0194e32fbf5a353`；原文SHA256：`a1e63de872ec8376bed135300b1cb069b43f86174b225abfc6f78abfe9c74eda`。
 
 ## 1. MD-4.3-TimeConstraintDerivative · unnumbered_claim · 印刷p.150 / PDFp.172
 
@@ -5131,7 +5131,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`0f5dcef73bb05b95c22f6bd11f018b97c58fdd4a9c709b8ec4258a655494fe3b`；原文SHA256：`75dd2f8c92e27ced8b632ac5a21da94bcbd29d42caa8892080ec3f7ece88d19d`。
 
-## 1. MD-4.3.4-GramProjectedEuler · unnumbered_claim · 印刷p.160 / PDFp.182
+## 1. MD-4.3.4-GramProjectedEuler · unnumbered_claim · 印刷p.159 / PDFp.181
 
 ### 2. 原文陈述
 
@@ -5206,7 +5206,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 已登记前置证明/定义：MolecularDynamics.textbookGramProjectedEulerChart_hiddenConstraint_and_pullback。
 
-签名SHA256：`86dd36692d7077dc6d5980f05bc9b24b3865c95a3b3b630d622f32da017441ea`；原文SHA256：`31da9093845dfe2df6f8e4cc7270c36b7d1e316cca0a6743d69cea550e55fd2f`。
+签名SHA256：`86dd36692d7077dc6d5980f05bc9b24b3865c95a3b3b630d622f32da017441ea`；原文SHA256：`ad09ec81acb5a4fd5a89893ce30ac15a56d469f35d4c5f3d55a1121fa7207306`。
 
 ## 1. MD-4.3.5-SHAKEPositionPrinted · definition · 印刷p.161 / PDFp.183
 
@@ -5415,7 +5415,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`7ea31e799562d4c514948c68d20a1bea91363d5031346dd0c97ddc93a5db0361`；原文SHA256：`a773339005f22a6161845f73172e68575d1dc2b1702a22dca5790ff121fe6f98`。
 
-## 1. MD-4.3.5-ConstrainedOrders · unnumbered_claim · 印刷p.161–162 / PDFp.183–184
+## 1. MD-4.3.5-ConstrainedOrders · unnumbered_claim · 印刷p.161 / PDFp.183
 
 ### 2. 原文陈述
 
@@ -5477,7 +5477,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 缺失/继续路线：缺实际约束ODE与隐式分支的高阶Taylor/一致误差理论；不建设大型收敛理论。
 
-签名SHA256：`0eb651c0b0d2579c8f8e289002aab1f3554ccd61075a04d5edab31ed1e3a52fe`；原文SHA256：`88b47f8e1a704a5b450dbe40b1afbfeba49f263f864e1942b2385119d1357c9b`。
+签名SHA256：`0eb651c0b0d2579c8f8e289002aab1f3554ccd61075a04d5edab31ed1e3a52fe`；原文SHA256：`8c546c3cc6efd5354656d0e4f5a6fbbe2aa65d7eae76cb29d2a87f17de02c8e5`。
 
 ## 1. MD-4.3.5-RATTLESymplectic · unnumbered_claim · 印刷p.162 / PDFp.184
 
@@ -6355,7 +6355,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`b4aaefdc84beb9218743f26fc668e1fcfc0a631a466ff15b38d1ca300e2eb504`；原文SHA256：`eee6854a6a5f9f448c0b9d82ef07039e05f132ecdc1401eb8410e6de4604b2cf`。
 
-## 1. MD-4.4-WaterPairPotential · definition · 印刷p.167 / PDFp.189
+## 1. MD-4.4-WaterPairPotential · definition · 印刷p.166–167 / PDFp.188–189
 
 ### 2. 原文陈述
 
@@ -6402,7 +6402,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`9543a62516549cb97cf1fe25e5977b5fbea43273cc75907ff863919bc3b51ae6`；原文SHA256：`114ab440d7307f316ec68f3de3a1fe2271fd8e4ffadd56e0abdeeae75faeee20`。
+签名SHA256：`9543a62516549cb97cf1fe25e5977b5fbea43273cc75907ff863919bc3b51ae6`；原文SHA256：`4f99582c6b7b5ef186cb7178345f911bd57adedb98c01b09d0bec424e940fddf`。
 
 ## 1. MD-4.4-TotalMass · definition · 印刷p.167 / PDFp.189
 
@@ -7554,7 +7554,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`cdf9b42ef7c2625343788a4d063cd850e43ebc11887a1440a67fd63c18ee8141`；原文SHA256：`7b173478e64ae9fff8dcc611be35f5bad65f16959e100ce2d10050f2659ba88c`。
 
-## 1. MD-4.4-RigidHamiltonian · definition · 印刷p.170 / PDFp.192
+## 1. MD-4.4-RigidHamiltonian · definition · 印刷p.170–171 / PDFp.192–193
 
 ### 2. 原文陈述
 
@@ -7605,7 +7605,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`cb91d1d6788d661306c764aa34c71377f2aa08eb4c64e1f33f0feeac77620a0c`；原文SHA256：`abc51f7744fa2cbac3231ef4de41437de6e28663152d2ecb7d3c4573376c5770`。
+签名SHA256：`cb91d1d6788d661306c764aa34c71377f2aa08eb4c64e1f33f0feeac77620a0c`；原文SHA256：`b5860af53ab60b9501a48bdff5cb092c91fffeaac42d82594a4546d110019e2a`。
 
 ## 1. MD-4.4-SecondMomentDiagonal · unnumbered_claim · 印刷p.168 / PDFp.190
 
@@ -8402,7 +8402,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`642db6e8da2780e1f01daab49efd7dcb398f421992cdc146fad35b68ab331936`；原文SHA256：`1d71806d6df3cfcc8f5d64dd4e8a73f7ce8982b6858446de506abad3dec5af0e`。
+签名SHA256：`642db6e8da2780e1f01daab49efd7dcb398f421992cdc146fad35b68ab331936`；原文SHA256：`df66458eb891bf352c498c1f5c8420c9aeea66c1844e623819fd5a0aae40c43c`。
 
 ## 1. MD-4.4.1-SecondAxisPrinted · definition · 印刷p.173 / PDFp.195
 
@@ -8502,7 +8502,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`9f62cb41d60fc6743b64eae2e2f3fd7369f53721832521cc460bbc284a4ff0ff`；原文SHA256：`4c48cbca8d56562a22ee685e6d4efa862866c8bdc873a831f6b2580490ed7204`。
 
-## 1. MD-4.4.1-PrincipalAxisField · definition · 印刷p.173 / PDFp.195
+## 1. MD-4.4.1-PrincipalAxisField · definition · 印刷p.172 / PDFp.194
 
 ### 2. 原文陈述
 
@@ -8551,7 +8551,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`a5bfd652c51afa5df14021112b0bd6a4c2528ae3f95254ecb7ed112c7f0d9798`；原文SHA256：`14b0111b41bf13656134549f514a7a617ee034eceba2d5e385dda8bb7b7dda82`。
+签名SHA256：`a5bfd652c51afa5df14021112b0bd6a4c2528ae3f95254ecb7ed112c7f0d9798`；原文SHA256：`030a8a0d6db82f99f854ddb48a5b41e00238dca89d3e0a3a18d28111a523759d`。
 
 ## 1. MD-4.4.2-PrintedSpinAxis · definition · 印刷p.174 / PDFp.196
 
@@ -9651,7 +9651,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 签名SHA256：`937a1cbceb50dea52e90a9d779bcfa6c466458e614adeb2d284f294fc992cbd8`；原文SHA256：`312b189f63a0a8d0f8f117b257e930b32265b4ae92e2f10dc50eb4873a73d809`。
 
-## 1. MD-4.4.2-RigidSystemSymplectic · definition · 印刷p.173–174 / PDFp.195–196
+## 1. MD-4.4.2-RigidSystemSymplectic · unnumbered_claim · 印刷p.173 / PDFp.195
 
 ### 2. 原文陈述
 
@@ -9702,9 +9702,9 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`4b691e8c936de6e911c4c7cfa4a64f7e8df0aaa55c2366358b224ac221303a5c`；原文SHA256：`cade019641fedee350269af15b5c959206140f429f7ae262d5b1dedd126e2eb8`。
+签名SHA256：`4b691e8c936de6e911c4c7cfa4a64f7e8df0aaa55c2366358b224ac221303a5c`；原文SHA256：`281acfeff665c1ef749b4ffb1a06fa1765f3b9c2147d39e5c31a0c9d46eb8bdf`。
 
-## 1. MD-4.4.2-DLMPrintedSystemStructure · unnumbered_claim · 印刷p.173–174 / PDFp.195–196
+## 1. MD-4.4.2-DLMPrintedSystemStructure · unnumbered_claim · 印刷p.173 / PDFp.195
 
 ### 2. 原文陈述
 
@@ -9752,7 +9752,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 缺失/继续路线：原表spin符号与完整旋转余切结构待审；不建设新Poisson/刚体理论，不证明NEEDS_HUMAN。
 
-签名SHA256：`98f9f60538a6931bde3f5e271ed92faf44a27d2385b1e8e433b5691dcfceb90e`；原文SHA256：`1932389d706da4d2b0a1f0f4cdf2a15349330ce21896b371be184431bbc23e1b`。
+签名SHA256：`98f9f60538a6931bde3f5e271ed92faf44a27d2385b1e8e433b5691dcfceb90e`；原文SHA256：`95a36d8dbc539d39f04bdd973852bc7bf097e7147546964ae9ccc2323644c369`。
 
 ## 1. MD-4.4.1-ExactPlanarRotation · unnumbered_claim · 印刷p.173 / PDFp.195
 

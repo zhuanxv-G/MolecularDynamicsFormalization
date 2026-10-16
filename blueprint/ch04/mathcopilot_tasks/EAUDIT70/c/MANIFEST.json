@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT70",
+  "source_id": "MD-4.1-ImplicitModulus",
+  "input_sha256": {
+    "BATCH_EAUDIT70.md": "a1920a75dc809b01ede7336d1116d7d7784a54ce4b99c30507ed034b4e307707",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT70c_materials": "c9e1999f3b43b0dcf52c64814879b5135637affabc1a1fe849272f5a62d4a3f0",
+    "EAUDIT70c_PAGES.pdf": "ddd3456e00062f4e9cd461c6e9400ddcbe9de0338a3b4c16185f287e37531a0d"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    164
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "7e362acf0917b0b1e64e3dfa08ab943c899c08fc9d9f4e6e95a111408d9f8acb",
+  "source_block_sha256": "32f52b38affa481694f65efa6f8d3e3f69027c8ebadb65d6e44072ac6dcc8843",
+  "source_declarations": [
+    "implicitModulus",
+    "implicitModulus_iterates"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.implicitFactor",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "implicitFactor",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT70_review.json",
+  "total_task_bytes": 77984
+}

@@ -1,0 +1,82 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT90",
+  "section": "4.4.2",
+  "source_ids": [
+    "MD-4.4.2-RigidForce",
+    "MD-4.4.2-RigidTorque",
+    "MD-4.4.2-DLMPrinted",
+    "MD-4.4.2-DriftSpinCommute",
+    "MD-4.4.2-DLMPrintedStructure",
+    "MD-4.4.2-RigidSystemForce",
+    "MD-4.4.2-RigidSystemTorque",
+    "MD-4.4.2-RigidSystemKick"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.2-RigidForce",
+    "MD-4.4.2-RigidTorque",
+    "MD-4.4.2-DLMPrinted",
+    "MD-4.4.2-DriftSpinCommute",
+    "MD-4.4.2-DLMPrintedStructure",
+    "MD-4.4.2-RigidSystemForce",
+    "MD-4.4.2-RigidSystemTorque",
+    "MD-4.4.2-RigidSystemKick"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.4.2-RigidForce",
+      "prior_eaudit": "EAUDIT67",
+      "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+      "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+    },
+    {
+      "source_id": "MD-4.4.2-RigidTorque",
+      "prior_eaudit": "EAUDIT67",
+      "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+      "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+    },
+    {
+      "source_id": "MD-4.4.2-DLMPrinted",
+      "prior_eaudit": "EAUDIT67",
+      "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+      "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+    },
+    {
+      "source_id": "MD-4.4.2-DriftSpinCommute",
+      "prior_eaudit": "EAUDIT67",
+      "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+      "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+    },
+    {
+      "source_id": "MD-4.4.2-DLMPrintedStructure",
+      "prior_eaudit": "EAUDIT67",
+      "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+      "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemForce",
+      "prior_eaudit": "EAUDIT67",
+      "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+      "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemTorque",
+      "prior_eaudit": "EAUDIT67",
+      "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+      "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemKick",
+      "prior_eaudit": "EAUDIT67",
+      "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+      "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT90/INDEX.md"
+}

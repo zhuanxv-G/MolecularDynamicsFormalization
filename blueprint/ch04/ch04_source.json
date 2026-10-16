@@ -1326,8 +1326,8 @@
     "kind": "definition",
     "label": null,
     "section": "4.2.2",
-    "printed_page": "149",
-    "pdf_page": "171",
+    "printed_page": "148–149",
+    "pdf_page": "170–171",
     "statement_latex": "Effectively, one replaces $U_S(q)$ wherever it appears within the MTS method by a modified potential function $\\overline U(q)\\stackrel{\\mathrm{def}}=U_S(\\mathcal A(q))$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -1351,9 +1351,31 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch04/mathcopilot_results/BATCH06_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:27:39.596806",
+        "before_sha256": "4589d4398d07e1085ad65b347d8fdac9fa3a8bf854f980256086b459ee9e6ca1",
+        "after_sha256": "065eca83f7d71887547de3c877be1e838c88c602efb7284f6acb5c66f502fc70",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "149",
+            "after": "148–149"
+          },
+          "pdf_page": {
+            "before": "171",
+            "after": "170–171"
+          }
+        },
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH06_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
   },
   {
     "source_id": "MD-4.2.1-ResonanceLinearRate",
@@ -1469,8 +1491,8 @@
     "kind": "definition",
     "label": "(4.3)",
     "section": "4.3",
-    "printed_page": "150",
-    "pdf_page": "172",
+    "printed_page": "149–150",
+    "pdf_page": "171–172",
     "statement_latex": "In this section we consider holonomic constraints which may be expressed in terms of positions only, and perhaps time, i.e.\n\\[g(q,t)=0.\\tag{4.3}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -1494,9 +1516,31 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch04/mathcopilot_results/BATCH07_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:27:39.596806",
+        "before_sha256": "bddc34d38be1737798357c75b117c9ad60c773472aef27ca9c4bad0dcb2a81c7",
+        "after_sha256": "ab0db084c0a07874ac703ed25460f009d2202840a827f3ef34a4aaaf479973a7",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "150",
+            "after": "149–150"
+          },
+          "pdf_page": {
+            "before": "172",
+            "after": "171–172"
+          }
+        },
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH07_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
   },
   {
     "source_id": "MD-4.3-TimeConstraintDerivative",
@@ -3176,8 +3220,8 @@
     "kind": "unnumbered_claim",
     "label": null,
     "section": "4.3.4",
-    "printed_page": "160",
-    "pdf_page": "182",
+    "printed_page": "159",
+    "pdf_page": "181",
     "statement_latex": "The demonstration that the method is symplectic can be seen as a consequence of the following lemma.",
     "proof_latex": null,
     "proof_note": "所引句位于印刷第159页；方法的三段二形式论证在印刷第160页，未另列独立完整定理证明。",
@@ -3212,9 +3256,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch04/mathcopilot_results/BATCH15_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:27:39.597807",
+        "before_sha256": "13d99b6bd2e5cb1a67bfc1b2e6083720f0be7ecf4417d2dd886b34ad17818564",
+        "after_sha256": "4ffa22629e37c40a1918777d79ccf34020115c921dbf64bbcd96f5c706b88d14",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "160",
+            "after": "159"
+          },
+          "pdf_page": {
+            "before": "182",
+            "after": "181"
+          }
+        },
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH15_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      182
+    ]
   },
   {
     "source_id": "MD-4.3.5-SHAKEPositionPrinted",
@@ -3327,8 +3396,8 @@
     "kind": "unnumbered_claim",
     "label": null,
     "section": "4.3.5",
-    "printed_page": "161–162",
-    "pdf_page": "183–184",
+    "printed_page": "161",
+    "pdf_page": "183",
     "statement_latex": "The projected symplectic constrained method (4.20)–(4.24) is only first order accurate. We forego providing a detailed proof of this fact, but note that it could be demonstrated using standard methods [164]. There are several constraint-preserving, second-order alternatives which generalize the Störmer-Verlet scheme. One of these is the SHAKE method [322]. The symmetry suggests that this will be second order.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -3358,9 +3427,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:27:39.597807",
+        "before_sha256": "63050ff359bff656aeb81e274fba78bad693a16cc416b1223a2132ab052b52fa",
+        "after_sha256": "03da96c8eb451d48a104ff34d3ffcc2d64fe725b52374f23c5198a2c428413ba",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "161–162",
+            "after": "161"
+          },
+          "pdf_page": {
+            "before": "183–184",
+            "after": "183"
+          }
+        },
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      184
+    ]
   },
   {
     "source_id": "MD-4.3.5-RATTLESymplectic",
@@ -3885,8 +3979,8 @@
     "kind": "definition",
     "label": null,
     "section": "4.4",
-    "printed_page": "167",
-    "pdf_page": "189",
+    "printed_page": "166–167",
+    "pdf_page": "188–189",
     "statement_latex": "The potential energy for the interaction of a pair of such molecules, the sets of whose charge sites are denoted by $A$ and $B$, takes the form\n\\[\\varphi^{\\rm water-water}=\\sum_{i\\in A}\\sum_{j\\in B}\\frac{k_1Q_iQ_j}{r_{ij}}+\\frac{k_2}{r_{OO}^{12}}-\\frac{k_3}{r_{OO}^{6}},\\]\nwhere $r_{OO}$ represents the distance between the oxygen atoms of the two molecules, and $k_1,k_2,k_3$ are positive constants.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -3915,9 +4009,31 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:27:39.597807",
+        "before_sha256": "cf9c173ab5940ce267532d1af0983043efa8349c38deaab8505920944e937a39",
+        "after_sha256": "9a08913c13fd0333d724f7b8bc9cca7e8b9b872d21dce3494f8ea3f5ee97b178",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "167",
+            "after": "166–167"
+          },
+          "pdf_page": {
+            "before": "189",
+            "after": "188–189"
+          }
+        },
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
   },
   {
     "source_id": "MD-4.4-TotalMass",
@@ -4750,8 +4866,8 @@
     "kind": "definition",
     "label": null,
     "section": "4.4",
-    "printed_page": "170",
-    "pdf_page": "192",
+    "printed_page": "170–171",
+    "pdf_page": "192–193",
     "statement_latex": "The Hamiltonian is (for a single rigid body):\n\\[H_{\\rm RB}=\\frac{\\|p_{\\rm cm}\\|^2}{2M}+\\frac{\\operatorname{Tr}[\\Pi R^{-1}\\Pi^T]}2+U(q_{\\rm cm},\\Theta),\\]\nsubject to the orthogonality constraint $\\Theta^T\\Theta=I$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -4781,9 +4897,31 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:27:39.597807",
+        "before_sha256": "deb2d942164212529ce06422826e81280efd430536d1a07763a18a317cc4d6c3",
+        "after_sha256": "af3bebb4c6dfa8ac6801b4f4b6bfc71ed2f5e1fdd7546e94f82f97166208ddcd",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "170",
+            "after": "170–171"
+          },
+          "pdf_page": {
+            "before": "192",
+            "after": "192–193"
+          }
+        },
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
   },
   {
     "source_id": "MD-4.4-SecondMomentDiagonal",
@@ -5369,7 +5507,7 @@
     "source_id": "MD-4.4.1-AxisRotation",
     "kind": "definition",
     "label": null,
-    "section": "4.4.1",
+    "section": "4.4.1; 4.4.2",
     "printed_page": "173–174",
     "pdf_page": "195–196",
     "statement_latex": "Each of these is, it turns out, easily integrated as a planar rotation (see Exercise 7). The notation $\\Theta^x(\\phi)$ refers to a rotation around the x-axis by an angle $\\phi$, that is\n\\[\\Theta^x(\\phi)=\\begin{bmatrix}1&0&0\\\\0&\\cos(\\phi)&-\\sin(\\phi)\\\\0&\\sin(\\phi)&\\cos(\\phi)\\end{bmatrix},\\]\nwith corresponding formulae for $\\Theta^y$ and $\\Theta^z$.",
@@ -5399,9 +5537,26 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:27:39.597807",
+        "before_sha256": "f5d416463e8e975f69206a07ef3ee92a15b062d7c1c9c9bbe275e0fee86d2c3d",
+        "after_sha256": "e2a39150e5539b58aa84be3f0a2f1189bd05c5e17510b5aeb83d09e7e117d482",
+        "changed_fields": [
+          "section"
+        ],
+        "changes": {
+          "section": {
+            "before": "4.4.1",
+            "after": "4.4.1; 4.4.2"
+          }
+        },
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT22/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
   },
   {
     "source_id": "MD-4.4.1-SecondAxisPrinted",
@@ -5486,8 +5641,8 @@
     "kind": "definition",
     "label": null,
     "section": "4.4.1",
-    "printed_page": "173",
-    "pdf_page": "195",
+    "printed_page": "172",
+    "pdf_page": "194",
     "statement_latex": "If $T$ is a diagonal matrix, $T=\\operatorname{diag}(I_1,I_2,I_3)$, then we split the Euler equations and approximate the solution by successive rotations around the three axes of inertia,",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -5524,9 +5679,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:27:39.597807",
+        "before_sha256": "1e9b4b8025c9d2e73b7df4e010e0fed36eb336ba66b490f65b607d9d94b96602",
+        "after_sha256": "41bc804261bd3befd3db1da8b045c5a8743181514c5f6167fd6980eba5ef0b09",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "173",
+            "after": "172"
+          },
+          "pdf_page": {
+            "before": "195",
+            "after": "194"
+          }
+        },
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT22/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      195
+    ]
   },
   {
     "source_id": "MD-4.4.2-PrintedSpinAxis",
@@ -6251,11 +6431,11 @@
   },
   {
     "source_id": "MD-4.4.2-RigidSystemSymplectic",
-    "kind": "definition",
+    "kind": "unnumbered_claim",
     "label": null,
     "section": "4.4.2",
-    "printed_page": "173–174",
-    "pdf_page": "195–196",
+    "printed_page": "173",
+    "pdf_page": "195",
     "statement_latex": "the combined scheme is a symplectic method in the generalized sense of constrained dynamics.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -6286,17 +6466,47 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:27:39.597807",
+        "before_sha256": "63f474987e633bd34686954c6d118354d6d01d32214ddb10dec0dd9dd22fd1e3",
+        "after_sha256": "54f0d407df02c115aaa1d52393d75ee3603c4fd5c4de02c9a1fbd0d5ed64cba0",
+        "changed_fields": [
+          "kind",
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "kind": {
+            "before": "definition",
+            "after": "unnumbered_claim"
+          },
+          "printed_page": {
+            "before": "173–174",
+            "after": "173"
+          },
+          "pdf_page": {
+            "before": "195–196",
+            "after": "195"
+          }
+        },
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT24/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      196
+    ]
   },
   {
     "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
     "kind": "unnumbered_claim",
     "label": null,
     "section": "4.4.2",
-    "printed_page": "173–174",
-    "pdf_page": "195–196",
+    "printed_page": "173",
+    "pdf_page": "195",
     "statement_latex": "The reliability of these methods is supported by the fact that the combined scheme is a symplectic method in the generalized sense of constrained dynamics.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
@@ -6325,9 +6535,34 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+        "timestamp": "2026-10-16T10:27:39.597807",
+        "before_sha256": "5a2f4b86705f6975c518fddef7547778f7219b85099ecf542d13cad4014a57ee",
+        "after_sha256": "89847cd01e0c326cc44c906340f62766cd53352f2d181833063422204d2b852d",
+        "changed_fields": [
+          "printed_page",
+          "pdf_page"
+        ],
+        "changes": {
+          "printed_page": {
+            "before": "173–174",
+            "after": "173"
+          },
+          "pdf_page": {
+            "before": "195–196",
+            "after": "195"
+          }
+        },
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
+        "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT24/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+    "review_context_pdf_pages": [
+      196
+    ]
   },
   {
     "source_id": "MD-4.4.1-ExactPlanarRotation",

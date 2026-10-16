@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT72",
+  "input_sha256": {
+    "BATCH_EAUDIT72.md": "511fd9102e7258e3d8c3ac601db31489a4cb658e9ca8788a9c7b6cc061a2e176",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT72a",
+      "source_id": "MD-4.2.1-ResonanceInstability",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT72/a",
+      "total_bytes": 151410,
+      "manifest_sha256": "5510ff1bf624b240f3b43a155fa1f362f3afbe80603d1613a2bbff0aabf061b3"
+    },
+    {
+      "subtask": "EAUDIT72b",
+      "source_id": "MD-4.2.1-ResonanceGrowth",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT72/b",
+      "total_bytes": 150365,
+      "manifest_sha256": "0500ae4b34f6aece0474262fcbc06e0a0d484b9c6bbb6d31a054fb5abb5d405a"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT81",
+  "section": "4.3.5.1",
+  "source_ids": [
+    "MD-4.3.5.1-AdjointEuler",
+    "MD-4.3.5.1-ConstrainedComposition",
+    "MD-4.3.5.1-ConstrainedCompositionOrder",
+    "MD-4.3.5.1-GeodesicRelation"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.5.1-AdjointEuler",
+    "MD-4.3.5.1-ConstrainedComposition",
+    "MD-4.3.5.1-ConstrainedCompositionOrder",
+    "MD-4.3.5.1-GeodesicRelation"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.3.5.1-AdjointEuler",
+      "prior_eaudit": "EAUDIT59",
+      "acceptance": "blueprint/ch04/validation/EAUDIT59/ACCEPTANCE.json",
+      "sha256": "d7a6f1597e9490e62b00b62fd23b60867a8bd64c35d1148649586a110151d838"
+    },
+    {
+      "source_id": "MD-4.3.5.1-ConstrainedComposition",
+      "prior_eaudit": "EAUDIT59",
+      "acceptance": "blueprint/ch04/validation/EAUDIT59/ACCEPTANCE.json",
+      "sha256": "d7a6f1597e9490e62b00b62fd23b60867a8bd64c35d1148649586a110151d838"
+    },
+    {
+      "source_id": "MD-4.3.5.1-ConstrainedCompositionOrder",
+      "prior_eaudit": "EAUDIT59",
+      "acceptance": "blueprint/ch04/validation/EAUDIT59/ACCEPTANCE.json",
+      "sha256": "d7a6f1597e9490e62b00b62fd23b60867a8bd64c35d1148649586a110151d838"
+    },
+    {
+      "source_id": "MD-4.3.5.1-GeodesicRelation",
+      "prior_eaudit": "EAUDIT59",
+      "acceptance": "blueprint/ch04/validation/EAUDIT59/ACCEPTANCE.json",
+      "sha256": "d7a6f1597e9490e62b00b62fd23b60867a8bd64c35d1148649586a110151d838"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT81/INDEX.md"
+}

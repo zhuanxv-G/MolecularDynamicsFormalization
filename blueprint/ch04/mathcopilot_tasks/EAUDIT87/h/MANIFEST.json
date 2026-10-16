@@ -1,0 +1,73 @@
+{
+  "eaudit": "EAUDIT87",
+  "source_id": "MD-4.4.1-PoissonDegeneracy",
+  "input_sha256": {
+    "BATCH_EAUDIT87.md": "b732d059b9c45baf72f00889b67d1618e68048cd3c76cbc1649a3242043ab9c0",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT87h_materials": "fd5b694e08e92cde703c56ed407e0bb8a9a21cb16c9a5713fce9752f3ae8b9a0",
+    "EAUDIT87h_PAGES.pdf": "df365706ffa0c2c7c1393c5c1720c09d051587a52f9a651c941ca012fee65908"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    194
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "549c5dc5b24613b132ff82afbbad61f78cd483ed01c0b7a97d49c0cecab68a83",
+  "source_block_sha256": "dafa42a6431cebd97b55827deb353ec22eb1e9c02338639bed928038d6aca90b",
+  "source_declarations": [
+    "poissonDegeneracy"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.rigidPoissonMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "73890f6046a9248537431ec112519cf0e14332bc931dfdf146099ee97e6170da"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.skewMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "2a9ce22411b192f40702811ed441f42477221fbe13c32f50bf28b888707d896b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "rigidPoissonMatrix",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "46642526f17aa3f35a0b3f110b878aef8909d1693214a9209c24781e588044d8"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "skewMatrix",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "239f5666392b7eb19bbe2b0476fc1b88d530419ade96153b90c6f75f167d1824"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT87_review.json",
+  "total_task_bytes": 86039
+}

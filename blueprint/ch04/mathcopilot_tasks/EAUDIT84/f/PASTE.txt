@@ -1,0 +1,107 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.4-InertiaTensor；原PDF页映射=[191]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT84_review.json，对象含batch=EAUDIT84、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT84.md": "c39fbe8e44ea8ae7d12d72cc8902989b30b3e211b4eca47b425401cdfba1a750",
+  "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "EAUDIT84f_materials": "094c444322bbf4d9a2e6a08be542930cfaad89ae4613a619de8702661a0df36d",
+  "EAUDIT84f_PAGES.pdf": "58c68e1a97a6714d6fe40cc551b7f82434b4e6655e683fb9bcf6026511b57ec4"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.4-InertiaTensor",
+  "kind": "definition",
+  "label": null,
+  "section": "4.4",
+  "printed_page": "169",
+  "pdf_page": "191",
+  "statement_latex": "$K_{\\rm rot}=\\frac12\\omega_b^TT\\omega_b$, where the matrix $T=-\\sum_{i=1}^Nm_i\\operatorname{skew}(\\delta_i(0))^2$ is referred to as the moment of inertia tensor or simply the inertia tensor and can be written as\n\\[T=\\sum_{i=1}^Nm_i[\\|\\delta_i(0)\\|^2I-\\delta_i(0)\\delta_i(0)^T].\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "PDF190–191（印刷168–169）：δ_i(0)为固定参考相对位置，m_i为质量；ω_b=Θ^Tω称为体角速度。",
+    "PDF191（印刷169）：T=-∑_i m_i skew(δ_i(0))^2；矩阵平方指矩阵乘法，I为3×3单位矩阵，||δ_i(0)||为欧氏范数，T称为惯性张量。",
+    "所引原文同时包含K_rot=(1/2)ω_b^T T ω_b及T的两种表达式；仅定义有限和不表达这些等价结论。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.inertiaTensor",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅T的欧氏有限和定义；skew平方关系由MD-4.4-InertiaSkewIdentity，质量旋转动能及ω_b关系由MD-4.4-RotationBodyEnergy承担。"
+  ],
+  "statement_scope": "仅T的欧氏有限和定义；skew平方关系由MD-4.4-InertiaSkewIdentity，质量旋转动能及ω_b关系由MD-4.4-RotationBodyEnergy承担。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT18_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T19:02:01.119994",
+      "before_sha256": "6435fa3bb2e74c1a706a5dc6d71d066451f09fc4630138887008784edf01a371",
+      "after_sha256": "bc773cefc86fe2f10a58360344c6b8f1a31bf2e6546ab71772c13f9457657044",
+      "changed_fields": [
+        "context_notation",
+        "statement_scope"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH21_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def inertiaTensor {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 :=
+  ∑ i, m i • (MolecularDynamics.Chapter04Review.dot (δ i) (δ i) • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer (δ i))
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.dot
+```lean
+def dot {n : ℕ} (u v : Q n) : ℝ := ∑ i, u i * v i
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.outer
+```lean
+def outer (v : V) : Mat3 := fun i j => v i*v j
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.dot
+```lean
+def dot {n : ℕ} (u v : Q n) : ℝ := ∑ i, u i * v i
+```
+### 实际依赖 MD.Ch04.inertiaTensor
+```lean
+def inertiaTensor {N : ℕ} (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.Mat3 :=
+  ∑ i, m i • (MolecularDynamics.Chapter04Review.dot (δ i) (δ i) • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.outer (δ i))
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.outer
+```lean
+def outer (v : V) : Mat3 := fun i j => v i*v j
+```

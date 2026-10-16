@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT90",
+  "input_sha256": {
+    "BATCH_EAUDIT90.md": "887941e7e6cbda4ece9e7c2f01bf564a1ab1b23a408244644f67e62e0fcc993b",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT90a",
+      "source_id": "MD-4.4.2-RigidForce",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT90/a",
+      "total_bytes": 93042,
+      "manifest_sha256": "1894e2802e49063810c352ea6dd759aeb2837ddc359bebd2b1f38c74dbe91bcd"
+    },
+    {
+      "subtask": "EAUDIT90b",
+      "source_id": "MD-4.4.2-RigidTorque",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT90/b",
+      "total_bytes": 92303,
+      "manifest_sha256": "99429fe2212b67792ab53c2ae06ed180ffe13a9d647058ed0d29517f2ad26d80"
+    },
+    {
+      "subtask": "EAUDIT90c",
+      "source_id": "MD-4.4.2-DLMPrinted",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT90/c",
+      "total_bytes": 108473,
+      "manifest_sha256": "817b07f6456de9eb45727d34d3972895de4bd2d707b4a5e730a22bc0e3d083b0"
+    },
+    {
+      "subtask": "EAUDIT90d",
+      "source_id": "MD-4.4.2-DriftSpinCommute",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT90/d",
+      "total_bytes": 107494,
+      "manifest_sha256": "56d7e0af20b10b5f245fb0a6bebccab0c7783cc5f59fc13c8dfe76ca821cdc91"
+    },
+    {
+      "subtask": "EAUDIT90e",
+      "source_id": "MD-4.4.2-DLMPrintedStructure",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT90/e",
+      "total_bytes": 122181,
+      "manifest_sha256": "85367426414eb425b8aabac73d7589ff63588d7e19744c09ce9a225f56e1cf67"
+    },
+    {
+      "subtask": "EAUDIT90f",
+      "source_id": "MD-4.4.2-RigidSystemForce",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT90/f",
+      "total_bytes": 93351,
+      "manifest_sha256": "015359d22bb46e24c4bd94ec3264a59dd2cef091f404ad9eff62f777e4c8bc1b"
+    },
+    {
+      "subtask": "EAUDIT90g",
+      "source_id": "MD-4.4.2-RigidSystemTorque",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT90/g",
+      "total_bytes": 92704,
+      "manifest_sha256": "33e7a97d89dabed77addece392ab1377051f3b9449443ace379c7f8628aaafd4"
+    },
+    {
+      "subtask": "EAUDIT90h",
+      "source_id": "MD-4.4.2-RigidSystemKick",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT90/h",
+      "total_bytes": 101467,
+      "manifest_sha256": "f9ec3ab2c9656e382131c6b0b02866e293df01001311c9e83cf2ef0235eee496"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT88",
+  "section": "4.4.1",
+  "source_ids": [
+    "MD-4.4.1-PrincipalAxisField"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.1-PrincipalAxisField"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.4.1-PrincipalAxisField",
+      "prior_eaudit": "EAUDIT66",
+      "acceptance": "blueprint/ch04/validation/EAUDIT66/ACCEPTANCE.json",
+      "sha256": "680bbeb0b3ddd276168161a832e50d8360c1250640c0b4de6041d26ec1517e80"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT88/INDEX.md"
+}

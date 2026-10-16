@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT89",
+  "source_id": "MD-4.4.1-AxisRotation",
+  "input_sha256": {
+    "BATCH_EAUDIT89.md": "4aeda4c28598d05a9eb680c07b3be485bd3a2a8b6f20291ddbc6ead514fec45c",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT89a_materials": "bb9f71f703d7123fdfb63f7692895c9c68e41630c34f422914f892f95bd42248",
+    "EAUDIT89a_PAGES.pdf": "809d51c79c9f5c0160e4df767ec52fb32bdffd30ab43821af1dc9b68b0ad21ef"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    195,
+    196
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "aaba82f9c9e193233b2bf1b459f08ab52ff96b3a72479b32c6ce6dd29ec4f7a4",
+  "source_block_sha256": "642db6e8da2780e1f01daab49efd7dcb398f421992cdc146fad35b68ab331936",
+  "source_declarations": [
+    "axisRotation"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Mat3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "axisRotation",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "642db6e8da2780e1f01daab49efd7dcb398f421992cdc146fad35b68ab331936"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT89_review.json",
+  "total_task_bytes": 106179
+}

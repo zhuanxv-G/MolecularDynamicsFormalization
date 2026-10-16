@@ -1,0 +1,100 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.2.1-ResonanceGrowth；原PDF页映射=[169]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT72_review.json，对象含batch=EAUDIT72、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT72.md": "511fd9102e7258e3d8c3ac601db31489a4cb658e9ca8788a9c7b6cc061a2e176",
+  "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "EAUDIT72b_materials": "b641fdb6326fc4bfac124c782aa89a422fed4aef912de528abddaa9da57be066",
+  "EAUDIT72b_PAGES.pdf": "114f2ec98bb8ceea194b60b24d306ba143e71cef05f04d9c16a02e4c3654f5ed"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.2.1-ResonanceGrowth",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4.2.1",
+  "printed_page": "147",
+  "pdf_page": "169",
+  "statement_latex": "and the norm of the solution will oscillate and grow linearly with $n$ as $n\\to\\infty$. This is the simplest type of linear resonance present in multiple timestepping.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "PDF p.168（印刷p.146）：状态列向量为(q,p)ᵀ；Ω≫1是模型背景。此处代数结论适用于任意Ω>0，不需要定量大频率门槛。",
+    "S_h=[[1,0],[-h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}，快子系统在内步趋零时采用精确流，不是一次Verlet更新。",
+    "λ₁、λ₂是W_h的两个复特征根，按代数重数计；det(W_h)=1，μ(h)=Tr(W_h)=2cos(hΩ)−(h/Ω)sin(hΩ)。",
+    "本句承接PDF p.168的W_h^n公式，固定h=π/Ω且z₀=(q₀,p₀)ᵀ：z_n=(−1)^n(q₀,p₀−nhq₀)ᵀ。线性增长需要q₀≠0；q₀=0时范数恒定。",
+    "原句norm ... oscillate照录保留；交替的是解的整体符号，范数一般没有交替振荡。Lean Fin 2→ℝ采用Pi最大范数；仅范数趋无穷没有表达所引句子的线性增长率。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.resonanceGrowth",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "原泛称增长补q0≠0；q0=0时纯动量轨道模不增长。",
+    "[EXTRA] 本条明确为发散推论；线性率由MD-4.2.1-ResonanceLinearRate、交替幂公式由MD-4.2.1-ResonancePower承担，原norm振荡疑误在LinearRate待导师，不删句。"
+  ],
+  "statement_scope": "仅非零q初值轨道发散推论；完整线性率见MD-4.2.1-ResonanceLinearRate，带(-1)^k的精确幂见MD-4.2.1-ResonancePower，norm振荡措辞待导师。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT05_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:54:42.701512",
+      "before_sha256": "0d22e0146acf39de613a40c19d79cb5bb4fac67d9f194b92f44667b2dd20551e",
+      "after_sha256": "c3a725db50f0a0333cd8452142501a2563f60671687d6d344059edfeda5ab2d3",
+      "changed_fields": [
+        "context_notation",
+        "statement_scope"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH05_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem resonanceGrowth :
+  ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 0 ≠ 0 →
+  Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖) atTop atTop := by
+  intro Ω hΩ z hz
+  have hc : 0 < |(Real.pi/Ω)*z 0| := abs_pos.mpr (mul_ne_zero (div_ne_zero Real.pi_ne_zero (ne_of_gt hΩ)) hz)
+  have hr := resonanceLinearRate Ω hΩ z hz
+  have ht := hr.pos_mul_atTop hc (tendsto_natCast_atTop_atTop (R := ℝ))
+  apply ht.congr'
+  filter_upwards [eventually_gt_atTop (0 : ℕ)] with k hk
+  have hk0 : (k : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hk)
+  exact div_mul_cancel₀ _ hk0
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.fastMatrix
+```lean
+def fastMatrix (Ω h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![Real.cos (Ω*h),Real.sin (Ω*h)/Ω; -Ω*Real.sin (Ω*h),Real.cos (Ω*h)]
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.impulseMatrix
+```lean
+def impulseMatrix (Ω h : ℝ) := slowMatrix (h/2) * fastMatrix Ω h * slowMatrix (h/2)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.slowMatrix
+```lean
+def slowMatrix (h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![1,0; -h,1]
+```
+### 实际依赖 MD.Ch04.fastMatrix
+```lean
+def fastMatrix (Ω h : ℝ) (_hΩ : Ω ≠ 0) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![Real.cos (Ω*h),Real.sin (Ω*h)/Ω; -Ω*Real.sin (Ω*h),Real.cos (Ω*h)]
+```
+### 实际依赖 MD.Ch04.impulseMatrix
+```lean
+def impulseMatrix (Ω h : ℝ) := MolecularDynamics.Chapter04Review.slowMatrix (h/2) * MolecularDynamics.Chapter04Review.fastMatrix Ω h * MolecularDynamics.Chapter04Review.slowMatrix (h/2)
+```
+### 实际依赖 MD.Ch04.slowMatrix
+```lean
+def slowMatrix (h : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![1,0; -h,1]
+```

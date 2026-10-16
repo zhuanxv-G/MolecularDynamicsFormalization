@@ -3682,5 +3682,1299 @@
     "new_proofs": "none",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT68/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT69",
+    "section": "4",
+    "source_ids": [
+      "MD-4-EulerFactor",
+      "MD-4-EulerImaginaryGrowth",
+      "MD-4-SymplecticEulerCharacteristic",
+      "MD-4-VerletStability",
+      "MD-4-OscillatorSpectrum",
+      "MD-4-SymplecticEulerRoots",
+      "MD-4-SymplecticEulerUnitRoots",
+      "MD-4-SymplecticEulerStability"
+    ],
+    "reaudit_ids": [
+      "MD-4-EulerFactor",
+      "MD-4-EulerImaginaryGrowth",
+      "MD-4-SymplecticEulerCharacteristic",
+      "MD-4-VerletStability",
+      "MD-4-OscillatorSpectrum",
+      "MD-4-SymplecticEulerRoots",
+      "MD-4-SymplecticEulerUnitRoots",
+      "MD-4-SymplecticEulerStability"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4-EulerFactor",
+        "prior_eaudit": "EAUDIT47",
+        "acceptance": "blueprint/ch04/validation/EAUDIT47/ACCEPTANCE.json",
+        "sha256": "c821f7d928e9d17572b7101b6d665f81aef1a49293172d4cb6cdb4542c61cd5e"
+      },
+      {
+        "source_id": "MD-4-EulerImaginaryGrowth",
+        "prior_eaudit": "EAUDIT47",
+        "acceptance": "blueprint/ch04/validation/EAUDIT47/ACCEPTANCE.json",
+        "sha256": "c821f7d928e9d17572b7101b6d665f81aef1a49293172d4cb6cdb4542c61cd5e"
+      },
+      {
+        "source_id": "MD-4-SymplecticEulerCharacteristic",
+        "prior_eaudit": "EAUDIT47",
+        "acceptance": "blueprint/ch04/validation/EAUDIT47/ACCEPTANCE.json",
+        "sha256": "c821f7d928e9d17572b7101b6d665f81aef1a49293172d4cb6cdb4542c61cd5e"
+      },
+      {
+        "source_id": "MD-4-VerletStability",
+        "prior_eaudit": "EAUDIT47",
+        "acceptance": "blueprint/ch04/validation/EAUDIT47/ACCEPTANCE.json",
+        "sha256": "c821f7d928e9d17572b7101b6d665f81aef1a49293172d4cb6cdb4542c61cd5e"
+      },
+      {
+        "source_id": "MD-4-OscillatorSpectrum",
+        "prior_eaudit": "EAUDIT47",
+        "acceptance": "blueprint/ch04/validation/EAUDIT47/ACCEPTANCE.json",
+        "sha256": "c821f7d928e9d17572b7101b6d665f81aef1a49293172d4cb6cdb4542c61cd5e"
+      },
+      {
+        "source_id": "MD-4-SymplecticEulerRoots",
+        "prior_eaudit": "EAUDIT47",
+        "acceptance": "blueprint/ch04/validation/EAUDIT47/ACCEPTANCE.json",
+        "sha256": "c821f7d928e9d17572b7101b6d665f81aef1a49293172d4cb6cdb4542c61cd5e"
+      },
+      {
+        "source_id": "MD-4-SymplecticEulerUnitRoots",
+        "prior_eaudit": "EAUDIT47",
+        "acceptance": "blueprint/ch04/validation/EAUDIT47/ACCEPTANCE.json",
+        "sha256": "c821f7d928e9d17572b7101b6d665f81aef1a49293172d4cb6cdb4542c61cd5e"
+      },
+      {
+        "source_id": "MD-4-SymplecticEulerStability",
+        "prior_eaudit": "EAUDIT47",
+        "acceptance": "blueprint/ch04/validation/EAUDIT47/ACCEPTANCE.json",
+        "sha256": "c821f7d928e9d17572b7101b6d665f81aef1a49293172d4cb6cdb4542c61cd5e"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT69/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT70",
+    "section": "4.1",
+    "source_ids": [
+      "MD-4.1-PrintedImplicitRelation",
+      "MD-4.1-ImplicitFactor",
+      "MD-4.1-ImplicitModulus",
+      "MD-4.1-ModifiedFrequencyLimit",
+      "MD-4.1-MidpointElimination"
+    ],
+    "reaudit_ids": [
+      "MD-4.1-PrintedImplicitRelation",
+      "MD-4.1-ImplicitFactor",
+      "MD-4.1-ImplicitModulus",
+      "MD-4.1-ModifiedFrequencyLimit",
+      "MD-4.1-MidpointElimination"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.1-PrintedImplicitRelation",
+        "prior_eaudit": "EAUDIT48",
+        "acceptance": "blueprint/ch04/validation/EAUDIT48/ACCEPTANCE.json",
+        "sha256": "b9bc4d1ddf9675b7dbbe84bac9d0284ea6436bbbb204e80cc80d160f5a7832dc"
+      },
+      {
+        "source_id": "MD-4.1-ImplicitFactor",
+        "prior_eaudit": "EAUDIT48",
+        "acceptance": "blueprint/ch04/validation/EAUDIT48/ACCEPTANCE.json",
+        "sha256": "b9bc4d1ddf9675b7dbbe84bac9d0284ea6436bbbb204e80cc80d160f5a7832dc"
+      },
+      {
+        "source_id": "MD-4.1-ImplicitModulus",
+        "prior_eaudit": "EAUDIT48",
+        "acceptance": "blueprint/ch04/validation/EAUDIT48/ACCEPTANCE.json",
+        "sha256": "b9bc4d1ddf9675b7dbbe84bac9d0284ea6436bbbb204e80cc80d160f5a7832dc"
+      },
+      {
+        "source_id": "MD-4.1-ModifiedFrequencyLimit",
+        "prior_eaudit": "EAUDIT48",
+        "acceptance": "blueprint/ch04/validation/EAUDIT48/ACCEPTANCE.json",
+        "sha256": "b9bc4d1ddf9675b7dbbe84bac9d0284ea6436bbbb204e80cc80d160f5a7832dc"
+      },
+      {
+        "source_id": "MD-4.1-MidpointElimination",
+        "prior_eaudit": "EAUDIT48",
+        "acceptance": "blueprint/ch04/validation/EAUDIT48/ACCEPTANCE.json",
+        "sha256": "b9bc4d1ddf9675b7dbbe84bac9d0284ea6436bbbb204e80cc80d160f5a7832dc"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT70/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT71",
+    "section": "4.2.1",
+    "source_ids": [
+      "MD-4.2.1-FastVerlet",
+      "MD-4.2.1-RESPA",
+      "MD-4.2.1-SlowMatrix",
+      "MD-4.2.1-FastMatrix",
+      "MD-4.2.1-ImpulseDet",
+      "MD-4.2.1-ImpulseTrace",
+      "MD-4.2.1-ResonancePower",
+      "MD-4.2.1-ResonanceTaylor"
+    ],
+    "reaudit_ids": [
+      "MD-4.2.1-FastVerlet",
+      "MD-4.2.1-RESPA",
+      "MD-4.2.1-SlowMatrix",
+      "MD-4.2.1-FastMatrix",
+      "MD-4.2.1-ImpulseDet",
+      "MD-4.2.1-ImpulseTrace",
+      "MD-4.2.1-ResonancePower",
+      "MD-4.2.1-ResonanceTaylor"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.2.1-FastVerlet",
+        "prior_eaudit": "EAUDIT49",
+        "acceptance": "blueprint/ch04/validation/EAUDIT49/ACCEPTANCE.json",
+        "sha256": "59f1581357f939292257d1fe2d3fc11351d5948c470b8b061059e191a8703184"
+      },
+      {
+        "source_id": "MD-4.2.1-RESPA",
+        "prior_eaudit": "EAUDIT49",
+        "acceptance": "blueprint/ch04/validation/EAUDIT49/ACCEPTANCE.json",
+        "sha256": "59f1581357f939292257d1fe2d3fc11351d5948c470b8b061059e191a8703184"
+      },
+      {
+        "source_id": "MD-4.2.1-SlowMatrix",
+        "prior_eaudit": "EAUDIT49",
+        "acceptance": "blueprint/ch04/validation/EAUDIT49/ACCEPTANCE.json",
+        "sha256": "59f1581357f939292257d1fe2d3fc11351d5948c470b8b061059e191a8703184"
+      },
+      {
+        "source_id": "MD-4.2.1-FastMatrix",
+        "prior_eaudit": "EAUDIT49",
+        "acceptance": "blueprint/ch04/validation/EAUDIT49/ACCEPTANCE.json",
+        "sha256": "59f1581357f939292257d1fe2d3fc11351d5948c470b8b061059e191a8703184"
+      },
+      {
+        "source_id": "MD-4.2.1-ImpulseDet",
+        "prior_eaudit": "EAUDIT49",
+        "acceptance": "blueprint/ch04/validation/EAUDIT49/ACCEPTANCE.json",
+        "sha256": "59f1581357f939292257d1fe2d3fc11351d5948c470b8b061059e191a8703184"
+      },
+      {
+        "source_id": "MD-4.2.1-ImpulseTrace",
+        "prior_eaudit": "EAUDIT49",
+        "acceptance": "blueprint/ch04/validation/EAUDIT49/ACCEPTANCE.json",
+        "sha256": "59f1581357f939292257d1fe2d3fc11351d5948c470b8b061059e191a8703184"
+      },
+      {
+        "source_id": "MD-4.2.1-ResonancePower",
+        "prior_eaudit": "EAUDIT49",
+        "acceptance": "blueprint/ch04/validation/EAUDIT49/ACCEPTANCE.json",
+        "sha256": "59f1581357f939292257d1fe2d3fc11351d5948c470b8b061059e191a8703184"
+      },
+      {
+        "source_id": "MD-4.2.1-ResonanceTaylor",
+        "prior_eaudit": "EAUDIT49",
+        "acceptance": "blueprint/ch04/validation/EAUDIT49/ACCEPTANCE.json",
+        "sha256": "59f1581357f939292257d1fe2d3fc11351d5948c470b8b061059e191a8703184"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT71/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT72",
+    "section": "4.2.1",
+    "source_ids": [
+      "MD-4.2.1-ResonanceInstability",
+      "MD-4.2.1-ResonanceGrowth"
+    ],
+    "reaudit_ids": [
+      "MD-4.2.1-ResonanceInstability",
+      "MD-4.2.1-ResonanceGrowth"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.2.1-ResonanceInstability",
+        "prior_eaudit": "EAUDIT50",
+        "acceptance": "blueprint/ch04/validation/EAUDIT50/ACCEPTANCE.json",
+        "sha256": "dfe8448131951f5f68b00bdef4a6e78461f8aa319bea9e6feb5ebfb544c345cc"
+      },
+      {
+        "source_id": "MD-4.2.1-ResonanceGrowth",
+        "prior_eaudit": "EAUDIT50",
+        "acceptance": "blueprint/ch04/validation/EAUDIT50/ACCEPTANCE.json",
+        "sha256": "dfe8448131951f5f68b00bdef4a6e78461f8aa319bea9e6feb5ebfb544c345cc"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT72/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT73",
+    "section": "4.2.2",
+    "source_ids": [
+      "MD-4.2.2-MollifiedPotential"
+    ],
+    "reaudit_ids": [
+      "MD-4.2.2-MollifiedPotential"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.2.2-MollifiedPotential",
+        "prior_eaudit": "EAUDIT51",
+        "acceptance": "blueprint/ch04/validation/EAUDIT51/ACCEPTANCE.json",
+        "sha256": "f6d9d542dc43fefd873f666e838c5eb206146d766c67a29f012f1cdc4da82a5f"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT73/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT74",
+    "section": "4.3",
+    "source_ids": [
+      "MD-4.3-HolonomicRelation",
+      "MD-4.3-ConstrainedSolution",
+      "MD-4.3-ConstraintSet",
+      "MD-4.3-ConstraintJacobian",
+      "MD-4.3-JacobianActualDerivative",
+      "MD-4.3-FlexiblePendulumHamiltonian",
+      "MD-4.3-ConstrainedPendulum",
+      "MD-4.3-ReactionMultiplier"
+    ],
+    "reaudit_ids": [
+      "MD-4.3-HolonomicRelation",
+      "MD-4.3-ConstrainedSolution",
+      "MD-4.3-ConstraintSet",
+      "MD-4.3-ConstraintJacobian",
+      "MD-4.3-JacobianActualDerivative",
+      "MD-4.3-FlexiblePendulumHamiltonian",
+      "MD-4.3-ConstrainedPendulum",
+      "MD-4.3-ReactionMultiplier"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.3-HolonomicRelation",
+        "prior_eaudit": "EAUDIT52",
+        "acceptance": "blueprint/ch04/validation/EAUDIT52/ACCEPTANCE.json",
+        "sha256": "1e376439e1f47c482bd01935a595543c13ad2a6a2cd3e8c0f257b9db38fe228c"
+      },
+      {
+        "source_id": "MD-4.3-ConstrainedSolution",
+        "prior_eaudit": "EAUDIT52",
+        "acceptance": "blueprint/ch04/validation/EAUDIT52/ACCEPTANCE.json",
+        "sha256": "1e376439e1f47c482bd01935a595543c13ad2a6a2cd3e8c0f257b9db38fe228c"
+      },
+      {
+        "source_id": "MD-4.3-ConstraintSet",
+        "prior_eaudit": "EAUDIT46",
+        "acceptance": "blueprint/ch04/validation/EAUDIT46/ACCEPTANCE.json",
+        "sha256": "d8559353ac84406e0430fcdbb0cec7e55747a4a90e52decbc8747fe8962b033d"
+      },
+      {
+        "source_id": "MD-4.3-ConstraintJacobian",
+        "prior_eaudit": "EAUDIT52",
+        "acceptance": "blueprint/ch04/validation/EAUDIT52/ACCEPTANCE.json",
+        "sha256": "1e376439e1f47c482bd01935a595543c13ad2a6a2cd3e8c0f257b9db38fe228c"
+      },
+      {
+        "source_id": "MD-4.3-JacobianActualDerivative",
+        "prior_eaudit": "EAUDIT52",
+        "acceptance": "blueprint/ch04/validation/EAUDIT52/ACCEPTANCE.json",
+        "sha256": "1e376439e1f47c482bd01935a595543c13ad2a6a2cd3e8c0f257b9db38fe228c"
+      },
+      {
+        "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+        "prior_eaudit": "EAUDIT52",
+        "acceptance": "blueprint/ch04/validation/EAUDIT52/ACCEPTANCE.json",
+        "sha256": "1e376439e1f47c482bd01935a595543c13ad2a6a2cd3e8c0f257b9db38fe228c"
+      },
+      {
+        "source_id": "MD-4.3-ConstrainedPendulum",
+        "prior_eaudit": "EAUDIT52",
+        "acceptance": "blueprint/ch04/validation/EAUDIT52/ACCEPTANCE.json",
+        "sha256": "1e376439e1f47c482bd01935a595543c13ad2a6a2cd3e8c0f257b9db38fe228c"
+      },
+      {
+        "source_id": "MD-4.3-ReactionMultiplier",
+        "prior_eaudit": "EAUDIT52",
+        "acceptance": "blueprint/ch04/validation/EAUDIT52/ACCEPTANCE.json",
+        "sha256": "1e376439e1f47c482bd01935a595543c13ad2a6a2cd3e8c0f257b9db38fe228c"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT74/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT75",
+    "section": "4.3",
+    "source_ids": [
+      "MD-4.3-ReactionBalance",
+      "MD-4.3-GramPositive",
+      "MD-4.3-GramInvertible",
+      "MD-4.3-CotangentInvariant",
+      "MD-4.3-ReducedFieldRegularity"
+    ],
+    "reaudit_ids": [
+      "MD-4.3-ReactionBalance",
+      "MD-4.3-GramPositive",
+      "MD-4.3-GramInvertible",
+      "MD-4.3-CotangentInvariant",
+      "MD-4.3-ReducedFieldRegularity"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.3-ReactionBalance",
+        "prior_eaudit": "EAUDIT52",
+        "acceptance": "blueprint/ch04/validation/EAUDIT52/ACCEPTANCE.json",
+        "sha256": "1e376439e1f47c482bd01935a595543c13ad2a6a2cd3e8c0f257b9db38fe228c"
+      },
+      {
+        "source_id": "MD-4.3-GramPositive",
+        "prior_eaudit": "EAUDIT53",
+        "acceptance": "blueprint/ch04/validation/EAUDIT53/ACCEPTANCE.json",
+        "sha256": "918e552effd6ead77de654e3483283f43b343d3a8f79d2ff9c855a4274c0d419"
+      },
+      {
+        "source_id": "MD-4.3-GramInvertible",
+        "prior_eaudit": "EAUDIT53",
+        "acceptance": "blueprint/ch04/validation/EAUDIT53/ACCEPTANCE.json",
+        "sha256": "918e552effd6ead77de654e3483283f43b343d3a8f79d2ff9c855a4274c0d419"
+      },
+      {
+        "source_id": "MD-4.3-CotangentInvariant",
+        "prior_eaudit": "EAUDIT53",
+        "acceptance": "blueprint/ch04/validation/EAUDIT53/ACCEPTANCE.json",
+        "sha256": "918e552effd6ead77de654e3483283f43b343d3a8f79d2ff9c855a4274c0d419"
+      },
+      {
+        "source_id": "MD-4.3-ReducedFieldRegularity",
+        "prior_eaudit": "EAUDIT53",
+        "acceptance": "blueprint/ch04/validation/EAUDIT53/ACCEPTANCE.json",
+        "sha256": "918e552effd6ead77de654e3483283f43b343d3a8f79d2ff9c855a4274c0d419"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT75/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT76",
+    "section": "4.3.1",
+    "source_ids": [
+      "MD-4.3.1-RestrictedForm",
+      "MD-4.3.1-VariationalFormula",
+      "MD-4.3.1-HessianPullbackCancel"
+    ],
+    "reaudit_ids": [
+      "MD-4.3.1-RestrictedForm",
+      "MD-4.3.1-VariationalFormula",
+      "MD-4.3.1-HessianPullbackCancel"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.3.1-RestrictedForm",
+        "prior_eaudit": "EAUDIT54",
+        "acceptance": "blueprint/ch04/validation/EAUDIT54/ACCEPTANCE.json",
+        "sha256": "09acefffc7393862734bb962c1072900e65615a391d07f98245bcfb06661de99"
+      },
+      {
+        "source_id": "MD-4.3.1-VariationalFormula",
+        "prior_eaudit": "EAUDIT54",
+        "acceptance": "blueprint/ch04/validation/EAUDIT54/ACCEPTANCE.json",
+        "sha256": "09acefffc7393862734bb962c1072900e65615a391d07f98245bcfb06661de99"
+      },
+      {
+        "source_id": "MD-4.3.1-HessianPullbackCancel",
+        "prior_eaudit": "EAUDIT54",
+        "acceptance": "blueprint/ch04/validation/EAUDIT54/ACCEPTANCE.json",
+        "sha256": "09acefffc7393862734bb962c1072900e65615a391d07f98245bcfb06661de99"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT76/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT77",
+    "section": "4.3.2",
+    "source_ids": [
+      "MD-4.3.2-ProjectionResidual",
+      "MD-4.3.2-ProjectionJacobian",
+      "MD-4.3.2-NewtonConstraint",
+      "MD-4.3.2-NewtonQuadratic",
+      "MD-4.3.2-FrozenNewtonLinear",
+      "MD-4.3.2-ProjectionScale"
+    ],
+    "reaudit_ids": [
+      "MD-4.3.2-ProjectionResidual",
+      "MD-4.3.2-ProjectionJacobian",
+      "MD-4.3.2-NewtonConstraint",
+      "MD-4.3.2-NewtonQuadratic",
+      "MD-4.3.2-FrozenNewtonLinear",
+      "MD-4.3.2-ProjectionScale"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.3.2-ProjectionResidual",
+        "prior_eaudit": "EAUDIT55",
+        "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+        "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+      },
+      {
+        "source_id": "MD-4.3.2-ProjectionJacobian",
+        "prior_eaudit": "EAUDIT55",
+        "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+        "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+      },
+      {
+        "source_id": "MD-4.3.2-NewtonConstraint",
+        "prior_eaudit": "EAUDIT55",
+        "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+        "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+      },
+      {
+        "source_id": "MD-4.3.2-NewtonQuadratic",
+        "prior_eaudit": "EAUDIT55",
+        "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+        "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+      },
+      {
+        "source_id": "MD-4.3.2-FrozenNewtonLinear",
+        "prior_eaudit": "EAUDIT55",
+        "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+        "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+      },
+      {
+        "source_id": "MD-4.3.2-ProjectionScale",
+        "prior_eaudit": "EAUDIT55",
+        "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+        "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT77/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT78",
+    "section": "4.3.3",
+    "source_ids": [
+      "MD-4.3.3-ComponentPrinted",
+      "MD-4.3.3-ComponentConstraintStep",
+      "MD-4.3.3-ComponentSweep"
+    ],
+    "reaudit_ids": [
+      "MD-4.3.3-ComponentPrinted",
+      "MD-4.3.3-ComponentConstraintStep",
+      "MD-4.3.3-ComponentSweep"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.3.3-ComponentPrinted",
+        "prior_eaudit": "EAUDIT56",
+        "acceptance": "blueprint/ch04/validation/EAUDIT56/ACCEPTANCE.json",
+        "sha256": "acc33188357eba41f2f636861658d2b9f1f4b0c4588789130a6e490054b71613"
+      },
+      {
+        "source_id": "MD-4.3.3-ComponentConstraintStep",
+        "prior_eaudit": "EAUDIT56",
+        "acceptance": "blueprint/ch04/validation/EAUDIT56/ACCEPTANCE.json",
+        "sha256": "acc33188357eba41f2f636861658d2b9f1f4b0c4588789130a6e490054b71613"
+      },
+      {
+        "source_id": "MD-4.3.3-ComponentSweep",
+        "prior_eaudit": "EAUDIT56",
+        "acceptance": "blueprint/ch04/validation/EAUDIT56/ACCEPTANCE.json",
+        "sha256": "acc33188357eba41f2f636861658d2b9f1f4b0c4588789130a6e490054b71613"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT78/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT79",
+    "section": "4.3.4",
+    "source_ids": [
+      "MD-4.3.4-Lemma41",
+      "MD-4.3.4-ProjectedEulerPullback",
+      "MD-4.3.4-CotangentMultiplier",
+      "MD-4.3.4-CotangentProjection",
+      "MD-4.3.4-CotangentRegularity",
+      "MD-4.3.4-CotangentPullback",
+      "MD-4.3.4-GramProjectedEuler"
+    ],
+    "reaudit_ids": [
+      "MD-4.3.4-Lemma41",
+      "MD-4.3.4-ProjectedEulerPullback",
+      "MD-4.3.4-CotangentMultiplier",
+      "MD-4.3.4-CotangentProjection",
+      "MD-4.3.4-CotangentRegularity",
+      "MD-4.3.4-CotangentPullback",
+      "MD-4.3.4-GramProjectedEuler"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.3.4-Lemma41",
+        "prior_eaudit": "EAUDIT57",
+        "acceptance": "blueprint/ch04/validation/EAUDIT57/ACCEPTANCE.json",
+        "sha256": "97ee6199ec891a907c4b1ca5699ca8d09a41b6da7738041a08f16d286b219497"
+      },
+      {
+        "source_id": "MD-4.3.4-ProjectedEulerPullback",
+        "prior_eaudit": "EAUDIT57",
+        "acceptance": "blueprint/ch04/validation/EAUDIT57/ACCEPTANCE.json",
+        "sha256": "97ee6199ec891a907c4b1ca5699ca8d09a41b6da7738041a08f16d286b219497"
+      },
+      {
+        "source_id": "MD-4.3.4-CotangentMultiplier",
+        "prior_eaudit": "EAUDIT57",
+        "acceptance": "blueprint/ch04/validation/EAUDIT57/ACCEPTANCE.json",
+        "sha256": "97ee6199ec891a907c4b1ca5699ca8d09a41b6da7738041a08f16d286b219497"
+      },
+      {
+        "source_id": "MD-4.3.4-CotangentProjection",
+        "prior_eaudit": "EAUDIT57",
+        "acceptance": "blueprint/ch04/validation/EAUDIT57/ACCEPTANCE.json",
+        "sha256": "97ee6199ec891a907c4b1ca5699ca8d09a41b6da7738041a08f16d286b219497"
+      },
+      {
+        "source_id": "MD-4.3.4-CotangentRegularity",
+        "prior_eaudit": "EAUDIT57",
+        "acceptance": "blueprint/ch04/validation/EAUDIT57/ACCEPTANCE.json",
+        "sha256": "97ee6199ec891a907c4b1ca5699ca8d09a41b6da7738041a08f16d286b219497"
+      },
+      {
+        "source_id": "MD-4.3.4-CotangentPullback",
+        "prior_eaudit": "EAUDIT57",
+        "acceptance": "blueprint/ch04/validation/EAUDIT57/ACCEPTANCE.json",
+        "sha256": "97ee6199ec891a907c4b1ca5699ca8d09a41b6da7738041a08f16d286b219497"
+      },
+      {
+        "source_id": "MD-4.3.4-GramProjectedEuler",
+        "prior_eaudit": "EAUDIT57",
+        "acceptance": "blueprint/ch04/validation/EAUDIT57/ACCEPTANCE.json",
+        "sha256": "97ee6199ec891a907c4b1ca5699ca8d09a41b6da7738041a08f16d286b219497"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT79/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT80",
+    "section": "4.3.5",
+    "source_ids": [
+      "MD-4.3.5-ConstrainedOrders",
+      "MD-4.3.5-RATTLESymplectic"
+    ],
+    "reaudit_ids": [
+      "MD-4.3.5-ConstrainedOrders",
+      "MD-4.3.5-RATTLESymplectic"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.3.5-ConstrainedOrders",
+        "prior_eaudit": "EAUDIT58",
+        "acceptance": "blueprint/ch04/validation/EAUDIT58/ACCEPTANCE.json",
+        "sha256": "4d0b65023dfe9665850cc38ae4e963c16330b35cf1c9fa7c6ead4d37457679ed"
+      },
+      {
+        "source_id": "MD-4.3.5-RATTLESymplectic",
+        "prior_eaudit": "EAUDIT58",
+        "acceptance": "blueprint/ch04/validation/EAUDIT58/ACCEPTANCE.json",
+        "sha256": "4d0b65023dfe9665850cc38ae4e963c16330b35cf1c9fa7c6ead4d37457679ed"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT80/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT81",
+    "section": "4.3.5.1",
+    "source_ids": [
+      "MD-4.3.5.1-AdjointEuler",
+      "MD-4.3.5.1-ConstrainedComposition",
+      "MD-4.3.5.1-ConstrainedCompositionOrder",
+      "MD-4.3.5.1-GeodesicRelation"
+    ],
+    "reaudit_ids": [
+      "MD-4.3.5.1-AdjointEuler",
+      "MD-4.3.5.1-ConstrainedComposition",
+      "MD-4.3.5.1-ConstrainedCompositionOrder",
+      "MD-4.3.5.1-GeodesicRelation"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.3.5.1-AdjointEuler",
+        "prior_eaudit": "EAUDIT59",
+        "acceptance": "blueprint/ch04/validation/EAUDIT59/ACCEPTANCE.json",
+        "sha256": "d7a6f1597e9490e62b00b62fd23b60867a8bd64c35d1148649586a110151d838"
+      },
+      {
+        "source_id": "MD-4.3.5.1-ConstrainedComposition",
+        "prior_eaudit": "EAUDIT59",
+        "acceptance": "blueprint/ch04/validation/EAUDIT59/ACCEPTANCE.json",
+        "sha256": "d7a6f1597e9490e62b00b62fd23b60867a8bd64c35d1148649586a110151d838"
+      },
+      {
+        "source_id": "MD-4.3.5.1-ConstrainedCompositionOrder",
+        "prior_eaudit": "EAUDIT59",
+        "acceptance": "blueprint/ch04/validation/EAUDIT59/ACCEPTANCE.json",
+        "sha256": "d7a6f1597e9490e62b00b62fd23b60867a8bd64c35d1148649586a110151d838"
+      },
+      {
+        "source_id": "MD-4.3.5.1-GeodesicRelation",
+        "prior_eaudit": "EAUDIT59",
+        "acceptance": "blueprint/ch04/validation/EAUDIT59/ACCEPTANCE.json",
+        "sha256": "d7a6f1597e9490e62b00b62fd23b60867a8bd64c35d1148649586a110151d838"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT81/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT82",
+    "section": "4.3.6",
+    "source_ids": [
+      "MD-4.3.6-LINCSInverse",
+      "MD-4.3.6-LINCSConvergence"
+    ],
+    "reaudit_ids": [
+      "MD-4.3.6-LINCSInverse",
+      "MD-4.3.6-LINCSConvergence"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.3.6-LINCSInverse",
+        "prior_eaudit": "EAUDIT60",
+        "acceptance": "blueprint/ch04/validation/EAUDIT60/ACCEPTANCE.json",
+        "sha256": "eee94a9bc064f6e59ca226d290804d5c8dd264a4bb4bea86bc672ef3880692c1"
+      },
+      {
+        "source_id": "MD-4.3.6-LINCSConvergence",
+        "prior_eaudit": "EAUDIT60",
+        "acceptance": "blueprint/ch04/validation/EAUDIT60/ACCEPTANCE.json",
+        "sha256": "eee94a9bc064f6e59ca226d290804d5c8dd264a4bb4bea86bc672ef3880692c1"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT82/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT83",
+    "section": "4.4",
+    "source_ids": [
+      "MD-4.4-WaterPairPotential",
+      "MD-4.4-CenterMass",
+      "MD-4.4-RelativePositions",
+      "MD-4.4-KineticSplit",
+      "MD-4.4-SecondMoment",
+      "MD-4.4-RotationKinetic",
+      "MD-4.4-RotationTraceIdentity",
+      "MD-4.4-RotationSkew"
+    ],
+    "reaudit_ids": [
+      "MD-4.4-WaterPairPotential",
+      "MD-4.4-CenterMass",
+      "MD-4.4-RelativePositions",
+      "MD-4.4-KineticSplit",
+      "MD-4.4-SecondMoment",
+      "MD-4.4-RotationKinetic",
+      "MD-4.4-RotationTraceIdentity",
+      "MD-4.4-RotationSkew"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.4-WaterPairPotential",
+        "prior_eaudit": "EAUDIT61",
+        "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+        "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+      },
+      {
+        "source_id": "MD-4.4-CenterMass",
+        "prior_eaudit": "EAUDIT61",
+        "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+        "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+      },
+      {
+        "source_id": "MD-4.4-RelativePositions",
+        "prior_eaudit": "EAUDIT61",
+        "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+        "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+      },
+      {
+        "source_id": "MD-4.4-KineticSplit",
+        "prior_eaudit": "EAUDIT61",
+        "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+        "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+      },
+      {
+        "source_id": "MD-4.4-SecondMoment",
+        "prior_eaudit": "EAUDIT61",
+        "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+        "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+      },
+      {
+        "source_id": "MD-4.4-RotationKinetic",
+        "prior_eaudit": "EAUDIT61",
+        "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+        "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+      },
+      {
+        "source_id": "MD-4.4-RotationTraceIdentity",
+        "prior_eaudit": "EAUDIT61",
+        "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+        "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+      },
+      {
+        "source_id": "MD-4.4-RotationSkew",
+        "prior_eaudit": "EAUDIT61",
+        "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+        "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT83/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT84",
+    "section": "4.4",
+    "source_ids": [
+      "MD-4.4-SkewMatrix",
+      "MD-4.4-CrossProduct",
+      "MD-4.4-SkewRepresentation",
+      "MD-4.4-CrossMatrix",
+      "MD-4.4-RigidVelocity",
+      "MD-4.4-InertiaTensor",
+      "MD-4.4-RotationalEnergy",
+      "MD-4.4-InertiaTraceCorrected"
+    ],
+    "reaudit_ids": [
+      "MD-4.4-SkewMatrix",
+      "MD-4.4-CrossProduct",
+      "MD-4.4-SkewRepresentation",
+      "MD-4.4-CrossMatrix",
+      "MD-4.4-RigidVelocity",
+      "MD-4.4-InertiaTensor",
+      "MD-4.4-RotationalEnergy",
+      "MD-4.4-InertiaTraceCorrected"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.4-SkewMatrix",
+        "prior_eaudit": "EAUDIT62",
+        "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+        "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+      },
+      {
+        "source_id": "MD-4.4-CrossProduct",
+        "prior_eaudit": "EAUDIT62",
+        "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+        "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+      },
+      {
+        "source_id": "MD-4.4-SkewRepresentation",
+        "prior_eaudit": "EAUDIT62",
+        "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+        "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+      },
+      {
+        "source_id": "MD-4.4-CrossMatrix",
+        "prior_eaudit": "EAUDIT62",
+        "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+        "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+      },
+      {
+        "source_id": "MD-4.4-RigidVelocity",
+        "prior_eaudit": "EAUDIT62",
+        "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+        "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+      },
+      {
+        "source_id": "MD-4.4-InertiaTensor",
+        "prior_eaudit": "EAUDIT62",
+        "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+        "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+      },
+      {
+        "source_id": "MD-4.4-RotationalEnergy",
+        "prior_eaudit": "EAUDIT62",
+        "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+        "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+      },
+      {
+        "source_id": "MD-4.4-InertiaTraceCorrected",
+        "prior_eaudit": "EAUDIT62",
+        "acceptance": "blueprint/ch04/validation/EAUDIT62/ACCEPTANCE.json",
+        "sha256": "91522eadab014e50bb007b1bcc5ebf71630d75fafd584e61a52147ee1c52b811"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT84/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT85",
+    "section": "4.4",
+    "source_ids": [
+      "MD-4.4-DipolarHamiltonian",
+      "MD-4.4-DipolarPairPotential",
+      "MD-4.4-RigidHamiltonian",
+      "MD-4.4-SecondMomentDiagonal",
+      "MD-4.4-RotationBodyEnergy",
+      "MD-4.4-DipolarConstraint",
+      "MD-4.4-DipolarPotentialSum",
+      "MD-4.4-RotationTrajectory"
+    ],
+    "reaudit_ids": [
+      "MD-4.4-DipolarHamiltonian",
+      "MD-4.4-DipolarPairPotential",
+      "MD-4.4-RigidHamiltonian",
+      "MD-4.4-SecondMomentDiagonal",
+      "MD-4.4-RotationBodyEnergy",
+      "MD-4.4-DipolarConstraint",
+      "MD-4.4-DipolarPotentialSum",
+      "MD-4.4-RotationTrajectory"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.4-DipolarHamiltonian",
+        "prior_eaudit": "EAUDIT63",
+        "acceptance": "blueprint/ch04/validation/EAUDIT63/ACCEPTANCE.json",
+        "sha256": "96f7282b0c2aabdd19e310c73f573c577254548c8e33994be380d971520455d6"
+      },
+      {
+        "source_id": "MD-4.4-DipolarPairPotential",
+        "prior_eaudit": "EAUDIT63",
+        "acceptance": "blueprint/ch04/validation/EAUDIT63/ACCEPTANCE.json",
+        "sha256": "96f7282b0c2aabdd19e310c73f573c577254548c8e33994be380d971520455d6"
+      },
+      {
+        "source_id": "MD-4.4-RigidHamiltonian",
+        "prior_eaudit": "EAUDIT63",
+        "acceptance": "blueprint/ch04/validation/EAUDIT63/ACCEPTANCE.json",
+        "sha256": "96f7282b0c2aabdd19e310c73f573c577254548c8e33994be380d971520455d6"
+      },
+      {
+        "source_id": "MD-4.4-SecondMomentDiagonal",
+        "prior_eaudit": "EAUDIT63",
+        "acceptance": "blueprint/ch04/validation/EAUDIT63/ACCEPTANCE.json",
+        "sha256": "96f7282b0c2aabdd19e310c73f573c577254548c8e33994be380d971520455d6"
+      },
+      {
+        "source_id": "MD-4.4-RotationBodyEnergy",
+        "prior_eaudit": "EAUDIT63",
+        "acceptance": "blueprint/ch04/validation/EAUDIT63/ACCEPTANCE.json",
+        "sha256": "96f7282b0c2aabdd19e310c73f573c577254548c8e33994be380d971520455d6"
+      },
+      {
+        "source_id": "MD-4.4-DipolarConstraint",
+        "prior_eaudit": "EAUDIT63",
+        "acceptance": "blueprint/ch04/validation/EAUDIT63/ACCEPTANCE.json",
+        "sha256": "96f7282b0c2aabdd19e310c73f573c577254548c8e33994be380d971520455d6"
+      },
+      {
+        "source_id": "MD-4.4-DipolarPotentialSum",
+        "prior_eaudit": "EAUDIT63",
+        "acceptance": "blueprint/ch04/validation/EAUDIT63/ACCEPTANCE.json",
+        "sha256": "96f7282b0c2aabdd19e310c73f573c577254548c8e33994be380d971520455d6"
+      },
+      {
+        "source_id": "MD-4.4-RotationTrajectory",
+        "prior_eaudit": "EAUDIT63",
+        "acceptance": "blueprint/ch04/validation/EAUDIT63/ACCEPTANCE.json",
+        "sha256": "96f7282b0c2aabdd19e310c73f573c577254548c8e33994be380d971520455d6"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT85/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT86",
+    "section": "4.4",
+    "source_ids": [
+      "MD-4.4-RigidMatrixRelation"
+    ],
+    "reaudit_ids": [
+      "MD-4.4-RigidMatrixRelation"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.4-RigidMatrixRelation",
+        "prior_eaudit": "EAUDIT64",
+        "acceptance": "blueprint/ch04/validation/EAUDIT64/ACCEPTANCE.json",
+        "sha256": "8ab1e919664eafa0ad8040549911c30ad37c65aecf3006ca5857de2d1e89912c"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT86/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT87",
+    "section": "4.4.1",
+    "source_ids": [
+      "MD-4.4.1-AngularMomentum",
+      "MD-4.4.1-BodyMomentum",
+      "MD-4.4.1-AngularInertia",
+      "MD-4.4.1-EulerRigidField",
+      "MD-4.4.1-FreeRigidSolution",
+      "MD-4.4.1-RigidInvariants",
+      "MD-4.4.1-RigidPoissonMatrix",
+      "MD-4.4.1-PoissonDegeneracy"
+    ],
+    "reaudit_ids": [
+      "MD-4.4.1-AngularMomentum",
+      "MD-4.4.1-BodyMomentum",
+      "MD-4.4.1-AngularInertia",
+      "MD-4.4.1-EulerRigidField",
+      "MD-4.4.1-FreeRigidSolution",
+      "MD-4.4.1-RigidInvariants",
+      "MD-4.4.1-RigidPoissonMatrix",
+      "MD-4.4.1-PoissonDegeneracy"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.4.1-AngularMomentum",
+        "prior_eaudit": "EAUDIT65",
+        "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+        "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+      },
+      {
+        "source_id": "MD-4.4.1-BodyMomentum",
+        "prior_eaudit": "EAUDIT65",
+        "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+        "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+      },
+      {
+        "source_id": "MD-4.4.1-AngularInertia",
+        "prior_eaudit": "EAUDIT65",
+        "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+        "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+      },
+      {
+        "source_id": "MD-4.4.1-EulerRigidField",
+        "prior_eaudit": "EAUDIT65",
+        "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+        "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+      },
+      {
+        "source_id": "MD-4.4.1-FreeRigidSolution",
+        "prior_eaudit": "EAUDIT65",
+        "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+        "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+      },
+      {
+        "source_id": "MD-4.4.1-RigidInvariants",
+        "prior_eaudit": "EAUDIT65",
+        "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+        "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+      },
+      {
+        "source_id": "MD-4.4.1-RigidPoissonMatrix",
+        "prior_eaudit": "EAUDIT65",
+        "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+        "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+      },
+      {
+        "source_id": "MD-4.4.1-PoissonDegeneracy",
+        "prior_eaudit": "EAUDIT65",
+        "acceptance": "blueprint/ch04/validation/EAUDIT65/ACCEPTANCE.json",
+        "sha256": "826723edf0273cb4fb481d30e42608bf9a8cb5277a72cfc8700c104beac8a7aa"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT87/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT88",
+    "section": "4.4.1",
+    "source_ids": [
+      "MD-4.4.1-PrincipalAxisField"
+    ],
+    "reaudit_ids": [
+      "MD-4.4.1-PrincipalAxisField"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.4.1-PrincipalAxisField",
+        "prior_eaudit": "EAUDIT66",
+        "acceptance": "blueprint/ch04/validation/EAUDIT66/ACCEPTANCE.json",
+        "sha256": "680bbeb0b3ddd276168161a832e50d8360c1250640c0b4de6041d26ec1517e80"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT88/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT89",
+    "section": "4.4.1; 4.4.2",
+    "source_ids": [
+      "MD-4.4.1-AxisRotation"
+    ],
+    "reaudit_ids": [
+      "MD-4.4.1-AxisRotation"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.4.1-AxisRotation",
+        "prior_eaudit": "EAUDIT66",
+        "acceptance": "blueprint/ch04/validation/EAUDIT66/ACCEPTANCE.json",
+        "sha256": "680bbeb0b3ddd276168161a832e50d8360c1250640c0b4de6041d26ec1517e80"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT89/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT90",
+    "section": "4.4.2",
+    "source_ids": [
+      "MD-4.4.2-RigidForce",
+      "MD-4.4.2-RigidTorque",
+      "MD-4.4.2-DLMPrinted",
+      "MD-4.4.2-DriftSpinCommute",
+      "MD-4.4.2-DLMPrintedStructure",
+      "MD-4.4.2-RigidSystemForce",
+      "MD-4.4.2-RigidSystemTorque",
+      "MD-4.4.2-RigidSystemKick"
+    ],
+    "reaudit_ids": [
+      "MD-4.4.2-RigidForce",
+      "MD-4.4.2-RigidTorque",
+      "MD-4.4.2-DLMPrinted",
+      "MD-4.4.2-DriftSpinCommute",
+      "MD-4.4.2-DLMPrintedStructure",
+      "MD-4.4.2-RigidSystemForce",
+      "MD-4.4.2-RigidSystemTorque",
+      "MD-4.4.2-RigidSystemKick"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.4.2-RigidForce",
+        "prior_eaudit": "EAUDIT67",
+        "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+        "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+      },
+      {
+        "source_id": "MD-4.4.2-RigidTorque",
+        "prior_eaudit": "EAUDIT67",
+        "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+        "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+      },
+      {
+        "source_id": "MD-4.4.2-DLMPrinted",
+        "prior_eaudit": "EAUDIT67",
+        "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+        "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+      },
+      {
+        "source_id": "MD-4.4.2-DriftSpinCommute",
+        "prior_eaudit": "EAUDIT67",
+        "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+        "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+      },
+      {
+        "source_id": "MD-4.4.2-DLMPrintedStructure",
+        "prior_eaudit": "EAUDIT67",
+        "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+        "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+      },
+      {
+        "source_id": "MD-4.4.2-RigidSystemForce",
+        "prior_eaudit": "EAUDIT67",
+        "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+        "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+      },
+      {
+        "source_id": "MD-4.4.2-RigidSystemTorque",
+        "prior_eaudit": "EAUDIT67",
+        "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+        "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+      },
+      {
+        "source_id": "MD-4.4.2-RigidSystemKick",
+        "prior_eaudit": "EAUDIT67",
+        "acceptance": "blueprint/ch04/validation/EAUDIT67/ACCEPTANCE.json",
+        "sha256": "c38cdf6907c2b11bda40d96b705a720fdf33f6d786ee7f385f314e3eb440576f"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT90/INDEX.md"
+  },
+  {
+    "chapter": 4,
+    "eaudit": "EAUDIT91",
+    "section": "4.4.2",
+    "source_ids": [
+      "MD-4.4.2-DLMPrintedSystem",
+      "MD-4.4.2-RigidSystemSymplectic",
+      "MD-4.4.2-DLMPrintedSystemStructure"
+    ],
+    "reaudit_ids": [
+      "MD-4.4.2-DLMPrintedSystem",
+      "MD-4.4.2-RigidSystemSymplectic",
+      "MD-4.4.2-DLMPrintedSystemStructure"
+    ],
+    "human_ids": [],
+    "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-4.4.2-DLMPrintedSystem",
+        "prior_eaudit": "EAUDIT68",
+        "acceptance": "blueprint/ch04/validation/EAUDIT68/ACCEPTANCE.json",
+        "sha256": "c5a9e82def99a23a9c5213824f1ef350f7afe5711329474eee789ab4e7fc7656"
+      },
+      {
+        "source_id": "MD-4.4.2-RigidSystemSymplectic",
+        "prior_eaudit": "EAUDIT68",
+        "acceptance": "blueprint/ch04/validation/EAUDIT68/ACCEPTANCE.json",
+        "sha256": "c5a9e82def99a23a9c5213824f1ef350f7afe5711329474eee789ab4e7fc7656"
+      },
+      {
+        "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+        "prior_eaudit": "EAUDIT68",
+        "acceptance": "blueprint/ch04/validation/EAUDIT68/ACCEPTANCE.json",
+        "sha256": "c5a9e82def99a23a9c5213824f1ef350f7afe5711329474eee789ab4e7fc7656"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT91/INDEX.md"
   }
 ]

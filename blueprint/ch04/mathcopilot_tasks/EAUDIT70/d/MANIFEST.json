@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT70",
+  "source_id": "MD-4.1-ModifiedFrequencyLimit",
+  "input_sha256": {
+    "BATCH_EAUDIT70.md": "a1920a75dc809b01ede7336d1116d7d7784a54ce4b99c30507ed034b4e307707",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT70d_materials": "72f91901525ef87f8ec0c616384c3a3d14fb9b3af25dc05a25832302b773c78e",
+    "EAUDIT70d_PAGES.pdf": "9a863fd70728c092d43992f4899e5083496c33bf435e5b3ebe623642cd77dbbb"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    165
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "9f629f351b12d8ee8c74a31a924977887b0094696dbe1b4a9b0561417acca2f8",
+  "source_block_sha256": "f11ad70e0249ffb2bf85b664f12a06171ebd8cb187d96796f31bb9d9c26d3f78",
+  "source_declarations": [
+    "modifiedFrequencyLimit",
+    "midpointFrequencyRatio",
+    "modifiedFrequencyRatio_limits"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.modifiedFrequency",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "7f35e3d4a099f36fba0a73208681ef375d76b7dec0515105db6b32fa6481d7d2"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "midpointFrequencyRatio",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "f5717a981bb0e4b1ffbdd93a45b9bd5cf85356732351d9f9528daba0478b05c5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "modifiedFrequency",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "7f35e3d4a099f36fba0a73208681ef375d76b7dec0515105db6b32fa6481d7d2"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT70_review.json",
+  "total_task_bytes": 144778
+}

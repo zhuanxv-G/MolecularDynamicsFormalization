@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT78",
+  "input_sha256": {
+    "BATCH_EAUDIT78.md": "8e817add0260ab810885bb7da9993b1e586ba71c0dc8c95d68196ebfd6ed89f5",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT78a",
+      "source_id": "MD-4.3.3-ComponentPrinted",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT78/a",
+      "total_bytes": 100588,
+      "manifest_sha256": "bb101c5a40ee22264419dc6ae32c9976ded280a9efb06a7e85925b6e90398c04"
+    },
+    {
+      "subtask": "EAUDIT78b",
+      "source_id": "MD-4.3.3-ComponentConstraintStep",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT78/b",
+      "total_bytes": 100531,
+      "manifest_sha256": "888f344ffad96288167eb6e2600fc98cf8e3e7e23b1c1126e373a0136d6787bd"
+    },
+    {
+      "subtask": "EAUDIT78c",
+      "source_id": "MD-4.3.3-ComponentSweep",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT78/c",
+      "total_bytes": 107565,
+      "manifest_sha256": "dbac51c715ab1dfaa4f7ee90708117928ae1642a42881b156672fd9d29536e8e"
+    }
+  ]
+}

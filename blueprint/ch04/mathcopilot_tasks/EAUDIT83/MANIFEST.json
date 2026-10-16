@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT83",
+  "input_sha256": {
+    "BATCH_EAUDIT83.md": "aa0b4541c270d222feb95e62f1e4f07b4aef0e10df8915cf11b631cd80678206",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT83a",
+      "source_id": "MD-4.4-WaterPairPotential",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT83/a",
+      "total_bytes": 232766,
+      "manifest_sha256": "6c6fc75f112e4890117e82c3a0063b15acd848c69204243e6b44b163ee993f4d"
+    },
+    {
+      "subtask": "EAUDIT83b",
+      "source_id": "MD-4.4-CenterMass",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT83/b",
+      "total_bytes": 139308,
+      "manifest_sha256": "a44fe9380beaf9bbbf52b3b83391c85e4c93cd6eb09b1e45530dceaef4f8ac07"
+    },
+    {
+      "subtask": "EAUDIT83c",
+      "source_id": "MD-4.4-RelativePositions",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT83/c",
+      "total_bytes": 140580,
+      "manifest_sha256": "110340c37582b79fb9f677731d17d91d7245c3af703bbf7ee52cdaf587d88781"
+    },
+    {
+      "subtask": "EAUDIT83d",
+      "source_id": "MD-4.4-KineticSplit",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT83/d",
+      "total_bytes": 142304,
+      "manifest_sha256": "54ff45fc6eee23ac27310357160305bca48bbcba29cac1592b14aee41f580353"
+    },
+    {
+      "subtask": "EAUDIT83e",
+      "source_id": "MD-4.4-SecondMoment",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT83/e",
+      "total_bytes": 148119,
+      "manifest_sha256": "e4cb191f72fd376b304d14ac68de191f5cff06f9bf07f4a4ca78ce845390dc07"
+    },
+    {
+      "subtask": "EAUDIT83f",
+      "source_id": "MD-4.4-RotationKinetic",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT83/f",
+      "total_bytes": 146672,
+      "manifest_sha256": "6f3046a8f65837d4e6565aff8309b0d8ef12231a3e3b3039276a86a6602a5d4e"
+    },
+    {
+      "subtask": "EAUDIT83g",
+      "source_id": "MD-4.4-RotationTraceIdentity",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT83/g",
+      "total_bytes": 152107,
+      "manifest_sha256": "ef56a974d37d0e41de844b24ccb6922743571f1e04106682daa7b3d4d66bc65b"
+    },
+    {
+      "subtask": "EAUDIT83h",
+      "source_id": "MD-4.4-RotationSkew",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT83/h",
+      "total_bytes": 154626,
+      "manifest_sha256": "86c3f24593633a305d22a750a81e61dd7ef6f298d7dba6322c58dcc04e9ee5e4"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "eaudit": "EAUDIT69",
+  "source_id": "MD-4-EulerImaginaryGrowth",
+  "input_sha256": {
+    "BATCH_EAUDIT69.md": "686fe257c41b546a6d59f4d4afcbdaf5deb4fd5c41658345dc5baf2be2449158",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT69b_materials": "e4fb4d62d3af68533fc9b39a6ccb8b8a882a6f66255cead3c22ed4bedcbd77f2",
+    "EAUDIT69b_PAGES.pdf": "6f95aca8b0b9a1cf6513e61abb0da46ee2b32aac37550a800bc4fe601db85615"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    162
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "6e0d5900ec89dcfac3af325b16ef2decc594d5aaadf8d81e135ff988391b42cc",
+  "source_block_sha256": "a2f2f6031628622543aa25b40340af742c76587f25ffe8ed22cf46c554db4dd8",
+  "source_declarations": [
+    "eulerImaginaryGrowth",
+    "eulerImaginaryGrowth_rate"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.eulerFactor",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "945ea42f3215592b72949d649a29895ead3dffa8d8f1eb1579fc65b319b273b2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.oscillatorMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "563f0b30632a7fc6ce0df63f1cd289f4d29deb503b43f0ab60cdad3278c0ab9e"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "eulerFactor",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "945ea42f3215592b72949d649a29895ead3dffa8d8f1eb1579fc65b319b273b2"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "oscillatorMatrix",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "563f0b30632a7fc6ce0df63f1cd289f4d29deb503b43f0ab60cdad3278c0ab9e"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT69_review.json",
+  "total_task_bytes": 79520
+}

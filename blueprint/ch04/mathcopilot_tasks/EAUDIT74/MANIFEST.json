@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT74",
+  "input_sha256": {
+    "BATCH_EAUDIT74.md": "dbf1584c1ee91fc7f08fea212d4805abdfb45dd4102dc258fbe76bb07f1e18b8",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT74a",
+      "source_id": "MD-4.3-HolonomicRelation",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT74/a",
+      "total_bytes": 113980,
+      "manifest_sha256": "ff368ee306d288db65f11d2f65d82de9382de702fa84f4d5dea5213a29aae83e"
+    },
+    {
+      "subtask": "EAUDIT74b",
+      "source_id": "MD-4.3-ConstrainedSolution",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT74/b",
+      "total_bytes": 105306,
+      "manifest_sha256": "e03a327122bd453d619c89400063a78e7eabfcd19a956ed97d2f7b3916640d62"
+    },
+    {
+      "subtask": "EAUDIT74c",
+      "source_id": "MD-4.3-ConstraintSet",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT74/c",
+      "total_bytes": 98973,
+      "manifest_sha256": "f90b557449a13009164fd55c9c38715aae359cc1166ee2b19589ed2dd24f4918"
+    },
+    {
+      "subtask": "EAUDIT74d",
+      "source_id": "MD-4.3-ConstraintJacobian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT74/d",
+      "total_bytes": 98743,
+      "manifest_sha256": "6c57d9f2d2c3d8eff0d3652001d0a60410952c131f56202fef8eb6ee36c52f3d"
+    },
+    {
+      "subtask": "EAUDIT74e",
+      "source_id": "MD-4.3-JacobianActualDerivative",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT74/e",
+      "total_bytes": 100504,
+      "manifest_sha256": "b695627e6df674c2e32141c34637d0e958b742951225b2a8e096a9708d74199b"
+    },
+    {
+      "subtask": "EAUDIT74f",
+      "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT74/f",
+      "total_bytes": 79314,
+      "manifest_sha256": "f1c1efe98bfc79c10034325aa9992a26f7f97406e617c88eddaabd43c5caf3b4"
+    },
+    {
+      "subtask": "EAUDIT74g",
+      "source_id": "MD-4.3-ConstrainedPendulum",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT74/g",
+      "total_bytes": 131744,
+      "manifest_sha256": "65e5fd460f5b889deda6a818bac7e508c74cbcb08cb3bfff79c735dbf51843a0"
+    },
+    {
+      "subtask": "EAUDIT74h",
+      "source_id": "MD-4.3-ReactionMultiplier",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT74/h",
+      "total_bytes": 96505,
+      "manifest_sha256": "3c5b17010f9f820dc3abb374813d9aeebed35d7afa10c94d86aed3dcd7fe1c39"
+    }
+  ]
+}

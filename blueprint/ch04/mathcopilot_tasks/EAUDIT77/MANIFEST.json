@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT77",
+  "input_sha256": {
+    "BATCH_EAUDIT77.md": "06caa46c2d66436619cbffb1721044240d8e77a6ed091ea8b651c901006f68c5",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT77a",
+      "source_id": "MD-4.3.2-ProjectionResidual",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT77/a",
+      "total_bytes": 97973,
+      "manifest_sha256": "9013ca3fc1a62e3eb22164f3fbe36fbe76d399467ab8fb46ef61e8ccf68c2298"
+    },
+    {
+      "subtask": "EAUDIT77b",
+      "source_id": "MD-4.3.2-ProjectionJacobian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT77/b",
+      "total_bytes": 96218,
+      "manifest_sha256": "dcc413dd2e26f3f2a52d850d68a9ebf0fef1e8f9d80b08796ad33b685e3255d6"
+    },
+    {
+      "subtask": "EAUDIT77c",
+      "source_id": "MD-4.3.2-NewtonConstraint",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT77/c",
+      "total_bytes": 99605,
+      "manifest_sha256": "ee3f3476b538825b75f554894eaf7d14a0f0e2932364ac7d1e297920a55fe9c2"
+    },
+    {
+      "subtask": "EAUDIT77d",
+      "source_id": "MD-4.3.2-NewtonQuadratic",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT77/d",
+      "total_bytes": 98841,
+      "manifest_sha256": "6d0bf5a35e978255086288ab524fc7f2f2ce639c9a747b7f10b3ad5a8395806a"
+    },
+    {
+      "subtask": "EAUDIT77e",
+      "source_id": "MD-4.3.2-FrozenNewtonLinear",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT77/e",
+      "total_bytes": 100067,
+      "manifest_sha256": "b1fc50d0dedf6cfc7386e2f013e55337e80b0e0a091eb7a9a59b82f5b257fe8d"
+    },
+    {
+      "subtask": "EAUDIT77f",
+      "source_id": "MD-4.3.2-ProjectionScale",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT77/f",
+      "total_bytes": 104405,
+      "manifest_sha256": "92def52f982afbddc0dcf65282eb5b0176f245ca05c389d4dd6963c2f2ed4ab4"
+    }
+  ]
+}

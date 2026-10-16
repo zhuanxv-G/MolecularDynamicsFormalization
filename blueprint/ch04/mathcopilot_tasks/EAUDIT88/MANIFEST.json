@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT88",
+  "input_sha256": {
+    "BATCH_EAUDIT88.md": "42b47d1dc35e5d20887852b90ce28b4e16e2b76a5c061aedf6189ec17b7b9b9f",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT88a",
+      "source_id": "MD-4.4.1-PrincipalAxisField",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT88/a",
+      "total_bytes": 99730,
+      "manifest_sha256": "1aeb00e8a941b79855b706621fb8eaccdff62b174478900ff52fa0bc9e6d6b5d"
+    }
+  ]
+}

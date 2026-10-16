@@ -1,0 +1,198 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.4.2-DLMPrintedSystem；原PDF页映射=[196]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT91_review.json，对象含batch=EAUDIT91、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT91.md": "48ef0a654f8841259876140f91ad018f59389adfb9b718b85a4515a9d0793703",
+  "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "EAUDIT91a_materials": "f37923d17064297457d04ee0fb7ede8d6ddeec5f4759a7caf4a39be72240b5ce",
+  "EAUDIT91a_PAGES.pdf": "542aeeb0a5d55750dd691f4145116004567b0c7bb0ff32365b276650a2609850"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.4.2-DLMPrintedSystem",
+  "kind": "definition",
+  "label": null,
+  "section": "4.4.2",
+  "printed_page": "174",
+  "pdf_page": "196",
+  "statement_latex": "DLM Rigid Body Molecular Dynamics Step\n1. “Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k;\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]\n2. “Drift”: step forward a whole step in positions\n\\[q^k:=q^k+hp^k.\\]\n3. “Spin”: update the rotational state of the kth rigid body by the sequence of steps\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^z(h\\pi_3^k/I_3);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T.\\]\n4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F^k$ and torques $\\tau^k$ evaluated at the current $q,\\Theta$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "PDF195（印刷173）规定：每个刚体的 q^k 是质心位置，p^k 是线动量，π^k 是体坐标角动量，Θ^k 是3×3旋转矩阵；对每个刚体执行该步骤。π_i^k 表示第i分量，I_1,I_2,I_3 是当前刚体的主惯性矩；Lean中各体惯性可分别取 I k。",
+    "力与力矩使用上标k：\\(F^k=-\\partial U/\\partial q^k\\)，\\(\\tau^k=-\\operatorname{rot}((\\Theta^k)^T\\,\\partial U/\\partial\\Theta^k)\\)。U可依赖所有刚体的位置和方向。首次kick使用当前输入构型的力/力矩，末kick在更新后的全部q,Θ处重新求值，不冻结旧力/力矩。",
+    "PDF196（印刷174）定义 \\(\\operatorname{rot}(A)=\\operatorname{skew}^{-1}(A-A^T)\\)。其分量为 \\((A_{32}-A_{23},A_{13}-A_{31},A_{21}-A_{12})\\)。这里原书分量从1起编号，Lean Fin 3从0起编号。",
+    "PDF196步骤3后的记号说明：\\(\\Theta^x(\\phi)=\\begin{pmatrix}1&0&0\\\\0&\\cos\\phi&-\\sin\\phi\\\\0&\\sin\\phi&\\cos\\phi\\end{pmatrix}\\)，Θ^y、Θ^z有对应的绕轴旋转公式。这确定了原表的正角主动旋转约定；五个角度均用各子步执行时的当前π^k计算。",
+    "保留原表q^k:=q^k+hp^k以及正角π^k:=Θπ^k、Θ^k:=Θ^kΘ^T，不补1/M_k、不改为负角。[ERRATUM?]针对与物理运动方程的一致性；这些疑误本身不能推出该映射不辛。"
+  ],
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "完整原表的缺质量drift与正角spin疑点保持；编译定义不代表正确辛性。"
+    }
+  ],
+  "lean_decl": "MD.Ch04.dlmPrintedSystem",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT24_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T19:09:07.422606",
+      "before_sha256": "c51495f9c2acdbdcad6da932e22c97d058b017c3fe25e2a3e931c6b067f540b2",
+      "after_sha256": "a026443cc83f04fecff9d7054aeac581b2dc2df66c1da03dfec1bc353be0410f",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT24/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def dlmPrintedSystem {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.V)
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ) :
+    rigidSystemState N → rigidSystemState N :=
+  rigidSystemKick U (h/2) ∘ rigidSystemSpinPrinted I h ∘
+    rigidSystemDriftPrinted h ∘ rigidSystemKick U (h/2)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.axisRotation
+```lean
+def axisRotation (i : Fin 3) (φ : ℝ) : Mat3 :=
+  if i=0 then !![1,0,0; 0,Real.cos φ,-Real.sin φ; 0,Real.sin φ,Real.cos φ]
+  else if i=1 then !![Real.cos φ,0,Real.sin φ; 0,1,0; -Real.sin φ,0,Real.cos φ]
+  else !![Real.cos φ,-Real.sin φ,0; Real.sin φ,Real.cos φ,0; 0,0,1]
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.matrixGrad
+```lean
+def matrixGrad (U : Mat3 → ℝ) (Θ : Mat3) : Mat3 :=
+  fun i j => (fderiv ℝ U Θ) (Pi.single i (Pi.single j 1))
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.matrixRot
+```lean
+def matrixRot (A : Mat3) : V := ![A 2 1-A 1 2,A 0 2-A 2 0,A 1 0-A 0 1]
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MD.Ch04.axisRotation
+```lean
+def axisRotation (i : Fin 3) (φ : ℝ) : MolecularDynamics.Chapter04Review.Mat3 :=
+  if i=0 then !![1,0,0; 0,Real.cos φ,-Real.sin φ; 0,Real.sin φ,Real.cos φ]
+  else if i=1 then !![Real.cos φ,0,Real.sin φ; 0,1,0; -Real.sin φ,0,Real.cos φ]
+  else !![Real.cos φ,-Real.sin φ,0; Real.sin φ,Real.cos φ,0; 0,0,1]
+```
+### 实际依赖 MD.Ch04.dlmPrintedSystem
+```lean
+def dlmPrintedSystem {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.V)
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ) :
+    rigidSystemState N → rigidSystemState N :=
+  rigidSystemKick U (h/2) ∘ rigidSystemSpinPrinted I h ∘
+    rigidSystemDriftPrinted h ∘ rigidSystemKick U (h/2)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.matrixGrad
+```lean
+def matrixGrad (U : Mat3 → ℝ) (Θ : Mat3) : Mat3 :=
+  fun i j => (fderiv ℝ U Θ) (Pi.single i (Pi.single j 1))
+```
+### 实际依赖 MD.Ch04.matrixRot
+```lean
+def matrixRot (A : MolecularDynamics.Chapter04Review.Mat3) : MolecularDynamics.Chapter04Review.V := ![A 2 1-A 1 2,A 0 2-A 2 0,A 1 0-A 0 1]
+```
+### 实际依赖 MD.Ch04.printedSpinAxis
+```lean
+def printedSpinAxis (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (h : ℝ) (s : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3) : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 :=
+  let R := MolecularDynamics.Chapter04Review.axisRotation i (h*s.1 i/I i)
+  (R *ᵥ s.1,s.2*Rᵀ)
+```
+### 实际依赖 MD.Ch04.printedSpinStep
+```lean
+def printedSpinStep (I : MolecularDynamics.Chapter04Review.V) (h : ℝ) : MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 → MolecularDynamics.Chapter04Review.V × MolecularDynamics.Chapter04Review.Mat3 :=
+  printedSpinAxis I 0 (h/2) ∘ printedSpinAxis I 1 (h/2) ∘ printedSpinAxis I 2 h ∘
+    printedSpinAxis I 1 (h/2) ∘ printedSpinAxis I 0 (h/2)
+```
+### 实际依赖 MD.Ch04.rigidSystemDriftPrinted
+```lean
+def rigidSystemDriftPrinted {N : ℕ} (h : ℝ) (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => (((z k).1.1+h • (z k).1.2,(z k).1.2),(z k).2)
+```
+### 实际依赖 MD.Ch04.rigidSystemForce
+```lean
+def rigidSystemForce {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ)
+    (z : rigidSystemState N) (k : Fin N) : MolecularDynamics.Chapter04Review.V :=
+  -MolecularDynamics.Chapter04Review.grad (fun x => U (Function.update (fun j => (z j).1.1) k x) (fun j => (z j).2.2)) (z k).1.1
+```
+### 实际依赖 MD.Ch04.rigidSystemKick
+```lean
+def rigidSystemKick {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ)
+    (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => (((z k).1.1,(z k).1.2+h • rigidSystemForce U z k),
+    ((z k).2.1+h • rigidSystemTorque U z k,(z k).2.2))
+```
+### 实际依赖 MD.Ch04.rigidSystemSpinPrinted
+```lean
+def rigidSystemSpinPrinted {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.V) (h : ℝ)
+    (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => ((z k).1,printedSpinStep (I k) h (z k).2)
+```
+### 实际依赖 MD.Ch04.rigidSystemTorque
+```lean
+def rigidSystemTorque {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ)
+    (z : rigidSystemState N) (k : Fin N) : MolecularDynamics.Chapter04Review.V :=
+  -MolecularDynamics.Chapter04Review.matrixRot ((z k).2.2ᵀ * MolecularDynamics.Chapter04Review.matrixGrad
+    (fun A => U (fun j => (z j).1.1) (Function.update (fun j => (z j).2.2) k A)) (z k).2.2)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```

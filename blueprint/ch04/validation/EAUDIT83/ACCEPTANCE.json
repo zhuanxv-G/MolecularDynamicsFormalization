@@ -1,0 +1,82 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT83",
+  "section": "4.4",
+  "source_ids": [
+    "MD-4.4-WaterPairPotential",
+    "MD-4.4-CenterMass",
+    "MD-4.4-RelativePositions",
+    "MD-4.4-KineticSplit",
+    "MD-4.4-SecondMoment",
+    "MD-4.4-RotationKinetic",
+    "MD-4.4-RotationTraceIdentity",
+    "MD-4.4-RotationSkew"
+  ],
+  "reaudit_ids": [
+    "MD-4.4-WaterPairPotential",
+    "MD-4.4-CenterMass",
+    "MD-4.4-RelativePositions",
+    "MD-4.4-KineticSplit",
+    "MD-4.4-SecondMoment",
+    "MD-4.4-RotationKinetic",
+    "MD-4.4-RotationTraceIdentity",
+    "MD-4.4-RotationSkew"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.4-WaterPairPotential",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+    },
+    {
+      "source_id": "MD-4.4-CenterMass",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+    },
+    {
+      "source_id": "MD-4.4-RelativePositions",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+    },
+    {
+      "source_id": "MD-4.4-KineticSplit",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+    },
+    {
+      "source_id": "MD-4.4-SecondMoment",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+    },
+    {
+      "source_id": "MD-4.4-RotationKinetic",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+    },
+    {
+      "source_id": "MD-4.4-RotationTraceIdentity",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+    },
+    {
+      "source_id": "MD-4.4-RotationSkew",
+      "prior_eaudit": "EAUDIT61",
+      "acceptance": "blueprint/ch04/validation/EAUDIT61/ACCEPTANCE.json",
+      "sha256": "dae1b97c024e73d30afdaa1293a66f1ab1490633de128bb1d1ad7393115d46a8"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT83/INDEX.md"
+}

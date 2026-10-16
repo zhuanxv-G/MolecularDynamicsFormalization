@@ -1,0 +1,34 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT80",
+  "section": "4.3.5",
+  "source_ids": [
+    "MD-4.3.5-ConstrainedOrders",
+    "MD-4.3.5-RATTLESymplectic"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.5-ConstrainedOrders",
+    "MD-4.3.5-RATTLESymplectic"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.3.5-ConstrainedOrders",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch04/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "4d0b65023dfe9665850cc38ae4e963c16330b35cf1c9fa7c6ead4d37457679ed"
+    },
+    {
+      "source_id": "MD-4.3.5-RATTLESymplectic",
+      "prior_eaudit": "EAUDIT58",
+      "acceptance": "blueprint/ch04/validation/EAUDIT58/ACCEPTANCE.json",
+      "sha256": "4d0b65023dfe9665850cc38ae4e963c16330b35cf1c9fa7c6ead4d37457679ed"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT80/INDEX.md"
+}

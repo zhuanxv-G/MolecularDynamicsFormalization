@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT82",
+  "source_id": "MD-4.3.6-LINCSConvergence",
+  "input_sha256": {
+    "BATCH_EAUDIT82.md": "3ea9d1d5ae11fede80c877b2e2f302c3c8ae58cca31868a7c882cc204b89ebed",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT82b_materials": "d04b7777fb17543d68b817de8922fe4de3808b834de243cf4104e4468991c4fd",
+    "EAUDIT82b_PAGES.pdf": "142f63b3856f43e37b342cb67cde6b8619943c5dec79c0ccd7bc64409ea9d42c"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    187
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "c65c1ed3a205968d38604b853a8f863e59e8adcd84cad51f6752d8b3aa9040c6",
+  "source_block_sha256": "873e2b7bf84c8f3764997b87314d571cb399cb5546a4f27018b3e2ecc52887f5",
+  "source_declarations": [
+    "lincsConvergence"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.lincsInverse",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "4e3ca7cb84d0e3233bbe9e8055d9f7a343a30b1fd2983b3c72983d2536e809aa"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "lincsInverse",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "4e3ca7cb84d0e3233bbe9e8055d9f7a343a30b1fd2983b3c72983d2536e809aa"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT82_review.json",
+  "total_task_bytes": 75632
+}

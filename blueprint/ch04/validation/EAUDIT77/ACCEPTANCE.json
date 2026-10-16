@@ -1,0 +1,66 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT77",
+  "section": "4.3.2",
+  "source_ids": [
+    "MD-4.3.2-ProjectionResidual",
+    "MD-4.3.2-ProjectionJacobian",
+    "MD-4.3.2-NewtonConstraint",
+    "MD-4.3.2-NewtonQuadratic",
+    "MD-4.3.2-FrozenNewtonLinear",
+    "MD-4.3.2-ProjectionScale"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.2-ProjectionResidual",
+    "MD-4.3.2-ProjectionJacobian",
+    "MD-4.3.2-NewtonConstraint",
+    "MD-4.3.2-NewtonQuadratic",
+    "MD-4.3.2-FrozenNewtonLinear",
+    "MD-4.3.2-ProjectionScale"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.3.2-ProjectionResidual",
+      "prior_eaudit": "EAUDIT55",
+      "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+      "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+    },
+    {
+      "source_id": "MD-4.3.2-ProjectionJacobian",
+      "prior_eaudit": "EAUDIT55",
+      "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+      "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+    },
+    {
+      "source_id": "MD-4.3.2-NewtonConstraint",
+      "prior_eaudit": "EAUDIT55",
+      "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+      "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+    },
+    {
+      "source_id": "MD-4.3.2-NewtonQuadratic",
+      "prior_eaudit": "EAUDIT55",
+      "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+      "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+    },
+    {
+      "source_id": "MD-4.3.2-FrozenNewtonLinear",
+      "prior_eaudit": "EAUDIT55",
+      "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+      "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+    },
+    {
+      "source_id": "MD-4.3.2-ProjectionScale",
+      "prior_eaudit": "EAUDIT55",
+      "acceptance": "blueprint/ch04/validation/EAUDIT55/ACCEPTANCE.json",
+      "sha256": "bf848598e0fe4be92f08f438e75d641f0dba4e0b211631bf6043ccc1a6350622"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT77/INDEX.md"
+}

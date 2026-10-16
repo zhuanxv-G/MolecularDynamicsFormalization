@@ -322,183 +322,183 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.7.3-ModifiedCollisionProjection | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT85 |
 | 3 | MD-3.7.1-FreeHardSphereHamiltonian | FAIL | C | 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。 | 已修待复审 | EAUDIT83 |
 | 4 | MD-4-LinearField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4-EulerFactor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT47 |
+| 4 | MD-4-EulerFactor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT69 |
 | 4 | MD-4-ScalarEulerStable | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4-EulerRegion | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4-OscillatorMatrix | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4-EulerImaginaryGrowth | FAIL | B | 保留已证趋无穷，并补精确指数率r>1和实际实振子Euler轨道的加权范数等式；矩阵完整复谱已由MD-4-OscillatorSpectrum单列承担，原ω=Ω。非零步长/频率为[EXTRA]资格，新结论暂sorry。 | 已修待复审 | EAUDIT47 |
+| 4 | MD-4-EulerImaginaryGrowth | FAIL | B | 保留已证趋无穷，并补精确指数率r>1和实际实振子Euler轨道的加权范数等式；矩阵完整复谱已由MD-4-OscillatorSpectrum单列承担，原ω=Ω。非零步长/频率为[EXTRA]资格，新结论暂sorry。 | 已修待复审 | EAUDIT69 |
 | 4 | MD-4-SymplecticEulerMatrix | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4-SymplecticEulerCharacteristic | FAIL | B | 本条仅为特征多项式辅助计算；原完整两个复根（含零/负判别式及重根）已由MD-4-SymplecticEulerRoots明确承担，跨条目范围写明，保留原文。 | 已修待复审 | EAUDIT47 |
+| 4 | MD-4-SymplecticEulerCharacteristic | FAIL | B | 本条仅为特征多项式辅助计算；原完整两个复根（含零/负判别式及重根）已由MD-4-SymplecticEulerRoots明确承担，跨条目范围写明，保留原文。 | 已修待复审 | EAUDIT69 |
 | 4 | MD-4-PRKThreshold | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT01 |
-| 4 | MD-4-VerletStability | FAIL | A | 本条明确是严格稳定内区间的修订版本，另补h=0分支；原印含端点结论保留MD-4-VerletBoundaryPrinted待导师，不宣称与原句等价。 | 已修待复审 | EAUDIT47 |
+| 4 | MD-4-VerletStability | FAIL | A | 本条明确是严格稳定内区间的修订版本，另补h=0分支；原印含端点结论保留MD-4-VerletBoundaryPrinted待导师，不宣称与原句等价。 | 已修待复审 | EAUDIT69 |
 | 4 | MD-4-SymplecticEulerBoundaryPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT01 |
 | 4 | MD-4-VerletBoundaryPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT01 |
-| 4 | MD-4-OscillatorSpectrum | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT47 |
-| 4 | MD-4-SymplecticEulerRoots | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT47 |
-| 4 | MD-4-SymplecticEulerUnitRoots | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT47 |
-| 4 | MD-4-SymplecticEulerStability | FAIL | B | 明确为修订稳定内区间结论；补超阈值实谱恰为一内一外非零实根、真实指数增长轨道及正步长稳定集合上确界2/Ω。原端点错误单列保留，未新增证明。 | 已修待复审 | EAUDIT47 |
-| 4 | MD-4.1-PrintedImplicitRelation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT48 |
+| 4 | MD-4-OscillatorSpectrum | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT69 |
+| 4 | MD-4-SymplecticEulerRoots | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT69 |
+| 4 | MD-4-SymplecticEulerUnitRoots | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT69 |
+| 4 | MD-4-SymplecticEulerStability | FAIL | B | 明确为修订稳定内区间结论；补超阈值实谱恰为一内一外非零实根、真实指数增长轨道及正步长稳定集合上确界2/Ω。原端点错误单列保留，未新增证明。 | 已修待复审 | EAUDIT69 |
+| 4 | MD-4.1-PrintedImplicitRelation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT70 |
 | 4 | MD-4.1-ActualMidpointRelation | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT03 |
-| 4 | MD-4.1-ImplicitFactor | FAIL | B | 保留因子并补线性场iΩz的印刷隐式更新等价式；分母实部1不需额外非零假设，新定理暂sorry。 | 已修待复审 | EAUDIT48 |
-| 4 | MD-4.1-ImplicitModulus | FAIL | B | 增加任意步长的标量迭代范数保持，准确对应当前线性振子模态；不扩大到任意线性系统。原模长证明保留。 | 已修待复审 | EAUDIT48 |
+| 4 | MD-4.1-ImplicitFactor | FAIL | B | 保留因子并补线性场iΩz的印刷隐式更新等价式；分母实部1不需额外非零假设，新定理暂sorry。 | 已修待复审 | EAUDIT70 |
+| 4 | MD-4.1-ImplicitModulus | FAIL | B | 增加任意步长的标量迭代范数保持，准确对应当前线性振子模态；不扩大到任意线性系统。原模长证明保留。 | 已修待复审 | EAUDIT70 |
 | 4 | MD-4.1-PrintedModifiedFrequency | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT03 |
-| 4 | MD-4.1-ModifiedFrequencyLimit | FAIL | B | 补x=hΩ的频率比零点极限1与正无穷极限0及实际频率桥接，保留旧h→0证明；新结论不作证明。 | 已修待复审 | EAUDIT48 |
+| 4 | MD-4.1-ModifiedFrequencyLimit | FAIL | B | 补x=hΩ的频率比零点极限1与正无穷极限0及实际频率桥接，保留旧h→0证明；新结论不作证明。 | 已修待复审 | EAUDIT70 |
 | 4 | MD-4.1-MechanicalMidpoint | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.1-MidpointElimination | FAIL | B | 保留消元公式及其已有证明，补实际相空间场的隐式Euler半步→显式Euler半步关系等价，不静默缩掉组合结论。 | 已修待复审 | EAUDIT48 |
+| 4 | MD-4.1-MidpointElimination | FAIL | B | 保留消元公式及其已有证明，补实际相空间场的隐式Euler半步→显式Euler半步关系等价，不静默缩掉组合结论。 | 已修待复审 | EAUDIT70 |
 | 4 | MD-4.2.1-SplitHamiltonian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.2.1-FastVerlet | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT49 |
-| 4 | MD-4.2.1-RESPA | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT49 |
+| 4 | MD-4.2.1-FastVerlet | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT71 |
+| 4 | MD-4.2.1-RESPA | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT71 |
 | 4 | MD-4.2.1-RESPAStructure | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT04 |
-| 4 | MD-4.2.1-SlowMatrix | FAIL | B | 本条明确只承担S_h；同一展示中的F_h由MD-4.2.1-FastMatrix承担，原合引文字保留。 | 已修待复审 | EAUDIT49 |
-| 4 | MD-4.2.1-FastMatrix | FAIL | A | F_h使用原Ω≫1模型的非零频率域，防止除零总化；S_h由SlowMatrix承担，原展示不删。 | 已修待复审 | EAUDIT49 |
+| 4 | MD-4.2.1-SlowMatrix | FAIL | B | 本条明确只承担S_h；同一展示中的F_h由MD-4.2.1-FastMatrix承担，原合引文字保留。 | 已修待复审 | EAUDIT71 |
+| 4 | MD-4.2.1-FastMatrix | FAIL | A | F_h使用原Ω≫1模型的非零频率域，防止除零总化；S_h由SlowMatrix承担，原展示不删。 | 已修待复审 | EAUDIT71 |
 | 4 | MD-4.2.1-ImpulseMatrix | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.2.1-ImpulseDet | FAIL | B | 保留三项行列式证明；补复特征多项式的完整首一二次分解及两根乘积1，重根以两个因子计重，非任取两个单根。 | 已修待复审 | EAUDIT49 |
-| 4 | MD-4.2.1-ImpulseTrace | FAIL | B | 保留trace计算，并用同一个完整二次分解绑定按代数重数的两个根及根和，不重复任取同一简单根。 | 已修待复审 | EAUDIT49 |
-| 4 | MD-4.2.1-ResonancePower | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT49 |
-| 4 | MD-4.2.1-ResonanceTaylor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT49 |
-| 4 | MD-4.2.1-ResonanceInstability | FAIL | B | 补共振左邻域完整两实根分解、圆外根及实际指数轨道；δ≤π/Ω明确正步长。旧圆外复根结论保留。 | 已修待复审 | EAUDIT50 |
+| 4 | MD-4.2.1-ImpulseDet | FAIL | B | 保留三项行列式证明；补复特征多项式的完整首一二次分解及两根乘积1，重根以两个因子计重，非任取两个单根。 | 已修待复审 | EAUDIT71 |
+| 4 | MD-4.2.1-ImpulseTrace | FAIL | B | 保留trace计算，并用同一个完整二次分解绑定按代数重数的两个根及根和，不重复任取同一简单根。 | 已修待复审 | EAUDIT71 |
+| 4 | MD-4.2.1-ResonancePower | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT71 |
+| 4 | MD-4.2.1-ResonanceTaylor | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT71 |
+| 4 | MD-4.2.1-ResonanceInstability | FAIL | B | 补共振左邻域完整两实根分解、圆外根及实际指数轨道；δ≤π/Ω明确正步长。旧圆外复根结论保留。 | 已修待复审 | EAUDIT72 |
 | 4 | MD-4.2.1-ResonanceEigenPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT05 |
 | 4 | MD-4.2.2-MollifiedAverage | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.2.2-MollifiedPotential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT51 |
+| 4 | MD-4.2.2-MollifiedPotential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT73 |
 | 4 | MD-4.2.1-ResonanceLinearRate | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT05 |
-| 4 | MD-4.2.1-ResonanceGrowth | FAIL | B | 本条明确为发散推论；线性率由MD-4.2.1-ResonanceLinearRate、交替幂公式由MD-4.2.1-ResonancePower承担，原norm振荡疑误在LinearRate待导师，不删句。 | 已修待复审 | EAUDIT50 |
+| 4 | MD-4.2.1-ResonanceGrowth | FAIL | B | 本条明确为发散推论；线性率由MD-4.2.1-ResonanceLinearRate、交替幂公式由MD-4.2.1-ResonancePower承担，原norm振荡疑误在LinearRate待导师，不删句。 | 已修待复审 | EAUDIT72 |
 | 4 | MD-4.2.2-MollifiedStructure | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3-HolonomicRelation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT52 |
+| 4 | MD-4.3-HolonomicRelation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT74 |
 | 4 | MD-4.3-TimeConstraintDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3-ConstrainedSolution | FAIL | A | 教材主接口固定F=−∇U、正质量、经典可微U/g及开时间域上真实导数；任意位置力/within总化接口改名保留辅助，不冒充教材机械系统。 | 已修待复审 | EAUDIT52 |
-| 4 | MD-4.3-ConstraintSet | FAIL | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT46 |
+| 4 | MD-4.3-ConstrainedSolution | FAIL | A | 教材主接口固定F=−∇U、正质量、经典可微U/g及开时间域上真实导数；任意位置力/within总化接口改名保留辅助，不冒充教材机械系统。 | 已修待复审 | EAUDIT74 |
+| 4 | MD-4.3-ConstraintSet | FAIL | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT74 |
 | 4 | MD-4.3-CotangentSet | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3-ConstraintJacobian | FAIL | B | 在同一source_id补原句真正的标量约束合并向量函数；Jacobian作为相邻(4.8)记号辅助保留，两对象明确。 | 已修待复审 | EAUDIT52 |
-| 4 | MD-4.3-JacobianActualDerivative | FAIL | B | 保留Jacobian实际导数桥接已有证明，补实际曲线、邻域约束恒零及ODE速度的求导结论，完整包含Gqdot=0与隐藏GMinvp=0。 | 已修待复审 | EAUDIT52 |
+| 4 | MD-4.3-ConstraintJacobian | FAIL | B | 在同一source_id补原句真正的标量约束合并向量函数；Jacobian作为相邻(4.8)记号辅助保留，两对象明确。 | 已修待复审 | EAUDIT74 |
+| 4 | MD-4.3-JacobianActualDerivative | FAIL | B | 保留Jacobian实际导数桥接已有证明，补实际曲线、邻域约束恒零及ODE速度的求导结论，完整包含Gqdot=0与隐藏GMinvp=0。 | 已修待复审 | EAUDIT74 |
 | 4 | MD-4.3-ConstraintDegrees | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3-FlexiblePendulumHamiltonian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT52 |
+| 4 | MD-4.3-FlexiblePendulumHamiltonian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT74 |
 | 4 | MD-4.3-RestraintPotential | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3-RestraintForcePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT07 |
-| 4 | MD-4.3-ConstrainedPendulum | FAIL | A | 增加开时间域，保证within导数确为经典运动导数，排除单点域任意导数的伪运动。 | 已修待复审 | EAUDIT52 |
+| 4 | MD-4.3-ConstrainedPendulum | FAIL | A | 增加开时间域，保证within导数确为经典运动导数，排除单点域任意导数的伪运动。 | 已修待复审 | EAUDIT74 |
 | 4 | MD-4.3-ConstraintCurvature | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3-ReactionMultiplier | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT52 |
-| 4 | MD-4.3-ReactionBalance | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT52 |
-| 4 | MD-4.3-GramPositive | FAIL | B | 仅为正质量/梯度独立推出正定的充分条件辅助；原句可解且唯一的完整乘子结论由MD-4.3-GramInvertible补全，原文不删。 | 已修待复审 | EAUDIT53 |
-| 4 | MD-4.3-GramInvertible | FAIL | B | 保留原可逆性充分条件证明，补det≠0下反力乘子唯一可解及明确逆Gram公式；F和φ是给定线性方程数据，不把所求λ作假设。 | 已修待复审 | EAUDIT53 |
-| 4 | MD-4.3-CotangentInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT53 |
-| 4 | MD-4.3-ReducedFieldRegularity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT53 |
-| 4 | MD-4.3.1-RestrictedForm | FAIL | B | 保留一般拉回定义，并补实际位置/隐藏约束余切流形切空间上限制标准二形式的非退化；正质量、C²、梯度独立为EXTRA正则资格。任意chart本身不声称辛。 | 已修待复审 | EAUDIT54 |
-| 4 | MD-4.3.1-VariationalFormula | FAIL | B | 保留一般场导数公式，新增真实约束曲线的切向变分资格，将Gdq=0与两分量变分方程同一结论合取。新结论暂sorry。 | 已修待复审 | EAUDIT54 |
-| 4 | MD-4.3.1-HessianPullbackCancel | FAIL | B | 保留动量项消去已有证明，补实际时间流/线性变分及合法约束切向量上的完整二形式导数零；位置项由常对角逆质量对称抵消，未把二形式守恒作前提。 | 已修待复审 | EAUDIT54 |
+| 4 | MD-4.3-ReactionMultiplier | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT74 |
+| 4 | MD-4.3-ReactionBalance | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT75 |
+| 4 | MD-4.3-GramPositive | FAIL | B | 仅为正质量/梯度独立推出正定的充分条件辅助；原句可解且唯一的完整乘子结论由MD-4.3-GramInvertible补全，原文不删。 | 已修待复审 | EAUDIT75 |
+| 4 | MD-4.3-GramInvertible | FAIL | B | 保留原可逆性充分条件证明，补det≠0下反力乘子唯一可解及明确逆Gram公式；F和φ是给定线性方程数据，不把所求λ作假设。 | 已修待复审 | EAUDIT75 |
+| 4 | MD-4.3-CotangentInvariant | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT75 |
+| 4 | MD-4.3-ReducedFieldRegularity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT75 |
+| 4 | MD-4.3.1-RestrictedForm | FAIL | B | 保留一般拉回定义，并补实际位置/隐藏约束余切流形切空间上限制标准二形式的非退化；正质量、C²、梯度独立为EXTRA正则资格。任意chart本身不声称辛。 | 已修待复审 | EAUDIT76 |
+| 4 | MD-4.3.1-VariationalFormula | FAIL | B | 保留一般场导数公式，新增真实约束曲线的切向变分资格，将Gdq=0与两分量变分方程同一结论合取。新结论暂sorry。 | 已修待复审 | EAUDIT76 |
+| 4 | MD-4.3.1-HessianPullbackCancel | FAIL | B | 保留动量项消去已有证明，补实际时间流/线性变分及合法约束切向量上的完整二形式导数零；位置项由常对角逆质量对称抵消，未把二形式守恒作前提。 | 已修待复审 | EAUDIT76 |
 | 4 | MD-4.3.1-ConstrainedFlowPullback | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.2-PositionEulerPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.2-PositionEulerForceConvention | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT10 |
 | 4 | MD-4.3.2-HiddenEulerError | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3.2-ProjectionResidual | FAIL | B | 补真实零残差方程及原印F符号下base、η=h²λ与旧状态的消元等价；不把残差函数冒充已解投影方程。 | 已修待复审 | EAUDIT55 |
-| 4 | MD-4.3.2-ProjectionJacobian | FAIL | B | 保留交叉Jacobian定义，并补实际Newton线性方程RΔΛ=r及Δ=η_next−η；Q依赖base−M⁻¹Gᵀη已在R中展开。 | 已修待复审 | EAUDIT55 |
-| 4 | MD-4.3.2-NewtonConstraint | FAIL | A | 真实Newton主接口加入当前交叉矩阵det≠0；补建议初值0的有限序列且逐步可逆资格显式，不把奇异逆总化当合法迭代。Mathlib逆矩阵按标准含义采信。 | 已修待复审 | EAUDIT55 |
+| 4 | MD-4.3.2-ProjectionResidual | FAIL | B | 补真实零残差方程及原印F符号下base、η=h²λ与旧状态的消元等价；不把残差函数冒充已解投影方程。 | 已修待复审 | EAUDIT77 |
+| 4 | MD-4.3.2-ProjectionJacobian | FAIL | B | 保留交叉Jacobian定义，并补实际Newton线性方程RΔΛ=r及Δ=η_next−η；Q依赖base−M⁻¹Gᵀη已在R中展开。 | 已修待复审 | EAUDIT77 |
+| 4 | MD-4.3.2-NewtonConstraint | FAIL | A | 真实Newton主接口加入当前交叉矩阵det≠0；补建议初值0的有限序列且逐步可逆资格显式，不把奇异逆总化当合法迭代。Mathlib逆矩阵按标准含义采信。 | 已修待复审 | EAUDIT77 |
 | 4 | MD-4.3.2-FrozenNewtonConstraint | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT10 |
-| 4 | MD-4.3.2-NewtonQuadratic | NEEDS_HUMAN | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT55 |
-| 4 | MD-4.3.2-FrozenNewtonLinear | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT55 |
-| 4 | MD-4.3.2-ProjectionScale | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT55 |
+| 4 | MD-4.3.2-NewtonQuadratic | NEEDS_HUMAN | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT77 |
+| 4 | MD-4.3.2-FrozenNewtonLinear | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT77 |
+| 4 | MD-4.3.2-ProjectionScale | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT77 |
 | 4 | MD-4.3.2-FrozenGramPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT11 |
-| 4 | MD-4.3.3-ComponentPrinted | FAIL | A | 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。 | 已修待复审 | EAUDIT56 |
-| 4 | MD-4.3.3-ComponentConstraintStep | FAIL | A | 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。 | 已修待复审 | EAUDIT56 |
-| 4 | MD-4.3.3-ComponentSweep | FAIL | B | 保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。 | 已修待复审 | EAUDIT56 |
+| 4 | MD-4.3.3-ComponentPrinted | FAIL | A | 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。 | 已修待复审 | EAUDIT78 |
+| 4 | MD-4.3.3-ComponentConstraintStep | FAIL | A | 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。 | 已修待复审 | EAUDIT78 |
+| 4 | MD-4.3.3-ComponentSweep | FAIL | B | 保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。 | 已修待复审 | EAUDIT78 |
 | 4 | MD-4.3.4-ProjectedEulerPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.4-ProjectedEulerRelation | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT13 |
-| 4 | MD-4.3.4-Lemma41 | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT57 |
+| 4 | MD-4.3.4-Lemma41 | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT79 |
 | 4 | MD-4.3.4-MultiMomentumPullback | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3.4-ProjectedEulerPullback | FAIL | B | 原总拉回等式已有证明保留；同条补Q/Pbar与q/Pbar、q/Pbar与q/p的两条实际微分二形式中间等式，逐句覆盖原证明链。 | 已修待复审 | EAUDIT57 |
-| 4 | MD-4.3.4-CotangentMultiplier | FAIL | A | Gram构造限定det≠0，并补Aμ=GDp及真实投影隐藏约束；这是(4.23–24)推导的受限构造，不用值函数替代方程。 | 已修待复审 | EAUDIT57 |
-| 4 | MD-4.3.4-CotangentProjection | FAIL | A | 主声明忠实为任意μ的印刷投影等式；Gram专项实现独立命名且加可逆资格，隐藏约束由CotangentMultiplier补全，不暗中求解任意原式乘子。 | 已修待复审 | EAUDIT57 |
+| 4 | MD-4.3.4-ProjectedEulerPullback | FAIL | B | 原总拉回等式已有证明保留；同条补Q/Pbar与q/Pbar、q/Pbar与q/p的两条实际微分二形式中间等式，逐句覆盖原证明链。 | 已修待复审 | EAUDIT79 |
+| 4 | MD-4.3.4-CotangentMultiplier | FAIL | A | Gram构造限定det≠0，并补Aμ=GDp及真实投影隐藏约束；这是(4.23–24)推导的受限构造，不用值函数替代方程。 | 已修待复审 | EAUDIT79 |
+| 4 | MD-4.3.4-CotangentProjection | FAIL | A | 主声明忠实为任意μ的印刷投影等式；Gram专项实现独立命名且加可逆资格，隐藏约束由CotangentMultiplier补全，不暗中求解任意原式乘子。 | 已修待复审 | EAUDIT79 |
 | 4 | MD-4.3.4-CotangentHidden | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3.4-CotangentRegularity | FAIL | B | 本条显式仅为专项投影C¹正则性辅助；所引完整限制二形式等式已由MD-4.3.4-CotangentPullback承担并含真实邻域位置约束，不重复冒充同一结论。 | 已修待复审 | EAUDIT57 |
-| 4 | MD-4.3.4-CotangentPullback | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT57 |
-| 4 | MD-4.3.4-GramProjectedEuler | FAIL | C | 教材包装全部固定a=−h，对应原印−hF的特殊参数；任意a几何推广作为独立辅助保留，原已证apply仅参数实例化。未把a=h物理修订暗作原印；不声称隐式分支存在或全局微分同胚。 | 已修待复审 | EAUDIT57 |
+| 4 | MD-4.3.4-CotangentRegularity | FAIL | B | 本条显式仅为专项投影C¹正则性辅助；所引完整限制二形式等式已由MD-4.3.4-CotangentPullback承担并含真实邻域位置约束，不重复冒充同一结论。 | 已修待复审 | EAUDIT79 |
+| 4 | MD-4.3.4-CotangentPullback | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT79 |
+| 4 | MD-4.3.4-GramProjectedEuler | FAIL | C | 教材包装全部固定a=−h，对应原印−hF的特殊参数；任意a几何推广作为独立辅助保留，原已证apply仅参数实例化。未把a=h物理修订暗作原印；不声称隐式分支存在或全局微分同胚。 | 已修待复审 | EAUDIT79 |
 | 4 | MD-4.3.5-SHAKEPositionPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.5-SHAKEPositionMass | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
 | 4 | MD-4.3.5-SHAKEPhase | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.5-RATTLE | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3.5-ConstrainedOrders | FAIL | B | 保留局部一致性辅助，补真实光滑正则求解分支及紧时间精确轨道上的全局Euler一阶/RATTLE二阶，并给无约束振子一阶下界表达only first order。SHAKE位置阶专归SHAKEPositionOrder，其质量勘误路线待导师；原文不删。 | 已修待复审 | EAUDIT58 |
-| 4 | MD-4.3.5-RATTLESymplectic | FAIL | A | 改为正质量、C²势/约束、余切域满秩的开放邻域C¹求解分支上真实拉回辛性；不假设全局隐式单值法，不声称分支存在。 | 已修待复审 | EAUDIT58 |
+| 4 | MD-4.3.5-ConstrainedOrders | FAIL | B | 保留局部一致性辅助，补真实光滑正则求解分支及紧时间精确轨道上的全局Euler一阶/RATTLE二阶，并给无约束振子一阶下界表达only first order。SHAKE位置阶专归SHAKEPositionOrder，其质量勘误路线待导师；原文不删。 | 已修待复审 | EAUDIT80 |
+| 4 | MD-4.3.5-RATTLESymplectic | FAIL | A | 改为正质量、C²势/约束、余切域满秩的开放邻域C¹求解分支上真实拉回辛性；不假设全局隐式单值法，不声称分支存在。 | 已修待复审 | EAUDIT80 |
 | 4 | MD-4.3.5-StaggeredConstraint | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
 | 4 | MD-4.3.5-SHAKERATTLEEquivalence | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
 | 4 | MD-4.3.5-SHAKEElimination | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
 | 4 | MD-4.3.5-SHAKEPositionOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT14 |
-| 4 | MD-4.3.5.1-AdjointEuler | FAIL | B | 保留原三式；补非零h、两端余切域上的真实逆步关系等价（对应所选局部逆分支），及正质量/光滑分支上实际ODE的O(h²)局部误差。未把逆映射或误差结论作为资格。 | 已修待复审 | EAUDIT59 |
-| 4 | MD-4.3.5.1-ConstrainedComposition | FAIL | B | 分支关系限制小h窗口、C¹空间资格及独立约束，保留辛性；补无约束Euler/伴随退化及单位圆自由运动中与RATTLE/SHAKE位置不同的具体单值近分支实例。二阶精度明确由ConstrainedCompositionOrder承担；C³是本签名实际充分资格。 | 已修待复审 | EAUDIT59 |
-| 4 | MD-4.3.5.1-ConstrainedCompositionOrder | FAIL | B | 本条限定二阶局部精度，辛性在ConstrainedComposition同域对应的空间光滑分支中单列；将关系限制实际小h窗口，避免强迫全步长隐式分支存在。 | 已修待复审 | EAUDIT59 |
+| 4 | MD-4.3.5.1-AdjointEuler | FAIL | B | 保留原三式；补非零h、两端余切域上的真实逆步关系等价（对应所选局部逆分支），及正质量/光滑分支上实际ODE的O(h²)局部误差。未把逆映射或误差结论作为资格。 | 已修待复审 | EAUDIT81 |
+| 4 | MD-4.3.5.1-ConstrainedComposition | FAIL | B | 分支关系限制小h窗口、C¹空间资格及独立约束，保留辛性；补无约束Euler/伴随退化及单位圆自由运动中与RATTLE/SHAKE位置不同的具体单值近分支实例。二阶精度明确由ConstrainedCompositionOrder承担；C³是本签名实际充分资格。 | 已修待复审 | EAUDIT81 |
+| 4 | MD-4.3.5.1-ConstrainedCompositionOrder | FAIL | B | 本条限定二阶局部精度，辛性在ConstrainedComposition同域对应的空间光滑分支中单列；将关系限制实际小h窗口，避免强迫全步长隐式分支存在。 | 已修待复审 | EAUDIT81 |
 | 4 | MD-4.3.5.1-MomentumProjector | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.5.1-ConstrainedPotentialFlow | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3.5.1-GeodesicRelation | FAIL | B | 补正质量诱导度量∑m_i u_i v_i，并在开放时间、C²约束/轨迹及满秩域上，将质量正交加速度的嵌入测地线方程与真实零势约束ODE及p=Mqdot等价；不声称全局流存在。 | 已修待复审 | EAUDIT59 |
+| 4 | MD-4.3.5.1-GeodesicRelation | FAIL | B | 补正质量诱导度量∑m_i u_i v_i，并在开放时间、C²约束/轨迹及满秩域上，将质量正交加速度的嵌入测地线方程与真实零势约束ODE及p=Mqdot等价；不声称全局流存在。 | 已修待复审 | EAUDIT81 |
 | 4 | MD-4.3.6-MShakeIteration | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.3.6-SETTLE | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.3.6-LINCSInverse | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT60 |
-| 4 | MD-4.3.6-LINCSConvergence | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT60 |
-| 4 | MD-4.4-WaterPairPotential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT61 |
+| 4 | MD-4.3.6-LINCSInverse | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT82 |
+| 4 | MD-4.3.6-LINCSConvergence | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT82 |
+| 4 | MD-4.4-WaterPairPotential | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT83 |
 | 4 | MD-4.4-TotalMass | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4-CenterMass | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT61 |
-| 4 | MD-4.4-RelativePositions | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅q_i=q_cm+δ_i的相对位置定义；加权零和由MD-4.4-RelativeWeightedZero承担。 | 已修待复审 | EAUDIT61 |
+| 4 | MD-4.4-CenterMass | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT83 |
+| 4 | MD-4.4-RelativePositions | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅q_i=q_cm+δ_i的相对位置定义；加权零和由MD-4.4-RelativeWeightedZero承担。 | 已修待复审 | EAUDIT83 |
 | 4 | MD-4.4-RelativeWeightedZero | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4-KineticSplit | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT61 |
-| 4 | MD-4.4-SecondMoment | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT61 |
-| 4 | MD-4.4-RotationKinetic | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅旋转动能trace定义；粒子有限和及两式等价由MD-4.4-RotationTraceIdentity承担。 | 已修待复审 | EAUDIT61 |
-| 4 | MD-4.4-RotationTraceIdentity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT61 |
-| 4 | MD-4.4-RotationSkew | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT61 |
-| 4 | MD-4.4-SkewMatrix | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维skew坐标定义；反对称表示存在性由MD-4.4-SkewRepresentation，真实旋转导数的反对称性由MD-4.4-RotationSkew承担。 | 已修待复审 | EAUDIT62 |
-| 4 | MD-4.4-CrossProduct | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维右手叉积坐标定义；原整条(4.39)的真实轨道导数由MD-4.4-RigidVelocity、全部代数等式由MD-4.4-CrossIdentityFull承担。 | 已修待复审 | EAUDIT62 |
-| 4 | MD-4.4-SkewRepresentation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT62 |
-| 4 | MD-4.4-CrossMatrix | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅skew(u)v=u×v首等式；原整条双等式由MD-4.4-CrossIdentityFull承担。 | 已修待复审 | EAUDIT62 |
-| 4 | MD-4.4-RigidVelocity | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅真实旋转轨道的导数等于ω×δ；原段落全部代数等式由MD-4.4-CrossIdentityFull承担。 | 已修待复审 | EAUDIT62 |
-| 4 | MD-4.4-InertiaTensor | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅T的欧氏有限和定义；skew平方关系由MD-4.4-InertiaSkewIdentity，质量旋转动能及ω_b关系由MD-4.4-RotationBodyEnergy承担。 | 已修待复审 | EAUDIT62 |
+| 4 | MD-4.4-KineticSplit | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT83 |
+| 4 | MD-4.4-SecondMoment | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT83 |
+| 4 | MD-4.4-RotationKinetic | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅旋转动能trace定义；粒子有限和及两式等价由MD-4.4-RotationTraceIdentity承担。 | 已修待复审 | EAUDIT83 |
+| 4 | MD-4.4-RotationTraceIdentity | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT83 |
+| 4 | MD-4.4-RotationSkew | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT83 |
+| 4 | MD-4.4-SkewMatrix | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维skew坐标定义；反对称表示存在性由MD-4.4-SkewRepresentation，真实旋转导数的反对称性由MD-4.4-RotationSkew承担。 | 已修待复审 | EAUDIT84 |
+| 4 | MD-4.4-CrossProduct | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅三维右手叉积坐标定义；原整条(4.39)的真实轨道导数由MD-4.4-RigidVelocity、全部代数等式由MD-4.4-CrossIdentityFull承担。 | 已修待复审 | EAUDIT84 |
+| 4 | MD-4.4-SkewRepresentation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT84 |
+| 4 | MD-4.4-CrossMatrix | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅skew(u)v=u×v首等式；原整条双等式由MD-4.4-CrossIdentityFull承担。 | 已修待复审 | EAUDIT84 |
+| 4 | MD-4.4-RigidVelocity | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅真实旋转轨道的导数等于ω×δ；原段落全部代数等式由MD-4.4-CrossIdentityFull承担。 | 已修待复审 | EAUDIT84 |
+| 4 | MD-4.4-InertiaTensor | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅T的欧氏有限和定义；skew平方关系由MD-4.4-InertiaSkewIdentity，质量旋转动能及ω_b关系由MD-4.4-RotationBodyEnergy承担。 | 已修待复审 | EAUDIT84 |
 | 4 | MD-4.4-CrossIdentityFull | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4-RotationalEnergy | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅体角速度ω_b的二次型能量定义；ω_b=Θᵀω及真实旋转粒子能量由MD-4.4-RotationBodyEnergy承担。 | 已修待复审 | EAUDIT62 |
+| 4 | MD-4.4-RotationalEnergy | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅体角速度ω_b的二次型能量定义；ω_b=Θᵀω及真实旋转粒子能量由MD-4.4-RotationBodyEnergy承担。 | 已修待复审 | EAUDIT84 |
 | 4 | MD-4.4-InertiaSkewIdentity | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.4-InertiaTracePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT18 |
-| 4 | MD-4.4-InertiaTraceCorrected | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT62 |
-| 4 | MD-4.4-DipolarHamiltonian | FAIL | A | 真实物理接口补质量/主惯性正性和每个μ单位长度；πbody明确为体坐标角动量，数值公式不变。 | 已修待复审 | EAUDIT63 |
-| 4 | MD-4.4-DipolarPairPotential | FAIL | B | 保留代数核；新增实际非碰撞粒子对q_i−q_j、r_ij=√(r·r)实例和仅i<j的完整系统势能求和，避免任意r与q脱钩。 | 已修待复审 | EAUDIT63 |
+| 4 | MD-4.4-InertiaTraceCorrected | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT84 |
+| 4 | MD-4.4-DipolarHamiltonian | FAIL | A | 真实物理接口补质量/主惯性正性和每个μ单位长度；πbody明确为体坐标角动量，数值公式不变。 | 已修待复审 | EAUDIT85 |
+| 4 | MD-4.4-DipolarPairPotential | FAIL | B | 保留代数核；新增实际非碰撞粒子对q_i−q_j、r_ij=√(r·r)实例和仅i<j的完整系统势能求和，避免任意r与q脱钩。 | 已修待复审 | EAUDIT85 |
 | 4 | MD-4.4-DipolarRotationalPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT19 |
-| 4 | MD-4.4-RigidHamiltonian | FAIL | A | 主接口增加M>0、R可逆及ΘᵀΘ=I的实际受约束域，公式不再将任意矩阵姿态当刚体状态。 | 已修待复审 | EAUDIT63 |
-| 4 | MD-4.4-SecondMomentDiagonal | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT63 |
-| 4 | MD-4.4-RotationBodyEnergy | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT63 |
-| 4 | MD-4.4-DipolarConstraint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT63 |
-| 4 | MD-4.4-DipolarPotentialSum | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT63 |
-| 4 | MD-4.4-RotationTrajectory | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅δ_i(t)=Θ(t)δ_i(0)的真实导数辅助；原段落旋转动能有限和及trace等价由MD-4.4-RotationTraceIdentity承担。 | 已修待复审 | EAUDIT63 |
+| 4 | MD-4.4-RigidHamiltonian | FAIL | A | 主接口增加M>0、R可逆及ΘᵀΘ=I的实际受约束域，公式不再将任意矩阵姿态当刚体状态。 | 已修待复审 | EAUDIT85 |
+| 4 | MD-4.4-SecondMomentDiagonal | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT85 |
+| 4 | MD-4.4-RotationBodyEnergy | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT85 |
+| 4 | MD-4.4-DipolarConstraint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT85 |
+| 4 | MD-4.4-DipolarPotentialSum | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT85 |
+| 4 | MD-4.4-RotationTrajectory | FAIL | B | 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅δ_i(t)=Θ(t)δ_i(0)的真实导数辅助；原段落旋转动能有限和及trace等价由MD-4.4-RotationTraceIdentity承担。 | 已修待复审 | EAUDIT85 |
 | 4 | MD-4.4-RotationDerivativePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT20 |
-| 4 | MD-4.4-RigidMatrixRelation | FAIL | A | 增加开放时间域、势能联合经典可微、M>0及R可逆，使within导数等于真实时间导数，排除单点域伪运动；姿态正交约束仍逐t保留。 | 已修待复审 | EAUDIT64 |
-| 4 | MD-4.4.1-AngularMomentum | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 4 | MD-4.4.1-BodyMomentum | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 4 | MD-4.4.1-AngularInertia | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 4 | MD-4.4.1-EulerRigidField | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 4 | MD-4.4.1-FreeRigidSolution | NEEDS_HUMAN | A | 采用开放时间域和正定惯性张量，明确within导数就是实际经典导数；Mathlib标准定义按用户约定直接采信，不再因未复制定义体待人工。 | 已修待复审 | EAUDIT65 |
-| 4 | MD-4.4.1-RigidInvariants | FAIL | B | 本条仅保留原页的能量与角动量模长守恒，实际Hamiltonian梯度表示/反对称性由RigidPoissonMatrix补全，退化由PoissonDegeneracy原已有声明承担，完整原文保留。 | 已修待复审 | EAUDIT65 |
-| 4 | MD-4.4.1-RigidPoissonMatrix | FAIL | B | 保留J定义，补实际二次能量定义、真实fderiv梯度Hamiltonian表示及反对称性；正定惯性是物理充分资格，不预设所求梯度公式。 | 已修待复审 | EAUDIT65 |
-| 4 | MD-4.4.1-PoissonDegeneracy | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT65 |
-| 4 | MD-4.4.1-AxisRotation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT66 |
+| 4 | MD-4.4-RigidMatrixRelation | FAIL | A | 增加开放时间域、势能联合经典可微、M>0及R可逆，使within导数等于真实时间导数，排除单点域伪运动；姿态正交约束仍逐t保留。 | 已修待复审 | EAUDIT86 |
+| 4 | MD-4.4.1-AngularMomentum | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT87 |
+| 4 | MD-4.4.1-BodyMomentum | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT87 |
+| 4 | MD-4.4.1-AngularInertia | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT87 |
+| 4 | MD-4.4.1-EulerRigidField | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT87 |
+| 4 | MD-4.4.1-FreeRigidSolution | NEEDS_HUMAN | A | 采用开放时间域和正定惯性张量，明确within导数就是实际经典导数；Mathlib标准定义按用户约定直接采信，不再因未复制定义体待人工。 | 已修待复审 | EAUDIT87 |
+| 4 | MD-4.4.1-RigidInvariants | FAIL | B | 本条仅保留原页的能量与角动量模长守恒，实际Hamiltonian梯度表示/反对称性由RigidPoissonMatrix补全，退化由PoissonDegeneracy原已有声明承担，完整原文保留。 | 已修待复审 | EAUDIT87 |
+| 4 | MD-4.4.1-RigidPoissonMatrix | FAIL | B | 保留J定义，补实际二次能量定义、真实fderiv梯度Hamiltonian表示及反对称性；正定惯性是物理充分资格，不预设所求梯度公式。 | 已修待复审 | EAUDIT87 |
+| 4 | MD-4.4.1-PoissonDegeneracy | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT87 |
+| 4 | MD-4.4.1-AxisRotation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT89 |
 | 4 | MD-4.4.1-SecondAxisPrinted | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT22 |
 | 4 | MD-4.4.1-ThirdAxisPrinted | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT22 |
-| 4 | MD-4.4.1-PrincipalAxisField | FAIL | B | 本条为单轴分裂场定义；完整印刷五次轴复合由PrintedSpinStep承担，实际子流的负角与原印正角冲突保留AxisFlowFormal/ExactPlanarRotation待导师。 | 已修待复审 | EAUDIT66 |
+| 4 | MD-4.4.1-PrincipalAxisField | FAIL | B | 本条为单轴分裂场定义；完整印刷五次轴复合由PrintedSpinStep承担，实际子流的负角与原印正角冲突保留AxisFlowFormal/ExactPlanarRotation待导师。 | 已修待复审 | EAUDIT88 |
 | 4 | MD-4.4.2-PrintedSpinAxis | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.4.2-PrintedSpinStep | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.4.1-AxisFlowFormal | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT22 |
 | 4 | MD-4.4.1-SpinPoissonFormal | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.4.1-RigidPoissonSkew | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.4.1-RigidHamiltonianField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4.2-RigidForce | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT67 |
+| 4 | MD-4.4.2-RigidForce | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT90 |
 | 4 | MD-4.4.2-MatrixRot | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4.2-RigidTorque | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT67 |
-| 4 | MD-4.4.2-DLMPrinted | FAIL | B | 保留N=1字面算法作为单体实例；完整任意N、耦合势、逐阶段重算所有力矩的原算法已由DLMPrintedSystem覆盖，显式跨条目映射，不以单体冒充全系统。 | 已修待复审 | EAUDIT67 |
+| 4 | MD-4.4.2-RigidTorque | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT90 |
+| 4 | MD-4.4.2-DLMPrinted | FAIL | B | 保留N=1字面算法作为单体实例；完整任意N、耦合势、逐阶段重算所有力矩的原算法已由DLMPrintedSystem覆盖，显式跨条目映射，不以单体冒充全系统。 | 已修待复审 | EAUDIT90 |
 | 4 | MD-4.4.2-DLMMassOnly | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT23 |
-| 4 | MD-4.4.2-DriftSpinCommute | FAIL | B | 保留原交换性证明，并补漂移半步合成与完整Kick/Drift/Spin/Drift/Kick排列恒等式；M=1即字面原算法，新结论暂sorry。 | 已修待复审 | EAUDIT67 |
+| 4 | MD-4.4.2-DriftSpinCommute | FAIL | B | 保留原交换性证明，并补漂移半步合成与完整Kick/Drift/Spin/Drift/Kick排列恒等式；M=1即字面原算法，新结论暂sorry。 | 已修待复审 | EAUDIT90 |
 | 4 | MD-4.4.2-DLMStructureFormal | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT23 |
-| 4 | MD-4.4.2-DLMPrintedStructure | FAIL | B | 本条仅为字面单体辛性实例；原句任意N耦合算法与输入/输出SO(3)域由DLMPrintedSystemStructure承担，不再把rbSymplectic名字当作完整输出约束。 | 已修待复审 | EAUDIT67 |
+| 4 | MD-4.4.2-DLMPrintedStructure | FAIL | B | 本条仅为字面单体辛性实例；原句任意N耦合算法与输入/输出SO(3)域由DLMPrintedSystemStructure承担，不再把rbSymplectic名字当作完整输出约束。 | 已修待复审 | EAUDIT90 |
 | 4 | MD-4.4.2-RigidSystemState | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4.2-RigidSystemForce | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT67 |
-| 4 | MD-4.4.2-RigidSystemTorque | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT67 |
-| 4 | MD-4.4.2-RigidSystemKick | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT67 |
+| 4 | MD-4.4.2-RigidSystemForce | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT90 |
+| 4 | MD-4.4.2-RigidSystemTorque | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT90 |
+| 4 | MD-4.4.2-RigidSystemKick | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT90 |
 | 4 | MD-4.4.2-RigidSystemDriftPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
 | 4 | MD-4.4.2-RigidSystemSpinPrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4.2-DLMPrintedSystem | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT68 |
+| 4 | MD-4.4.2-DLMPrintedSystem | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT91 |
 | 4 | MD-4.4.2-SystemDriftSpinCommute | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 fd88a08d64fd） | — |
-| 4 | MD-4.4.2-RigidSystemSymplectic | FAIL | B | 本条仅定义全系统受约束两形式拉回性质，原句算法确实满足该性质由已有DLMPrintedSystemStructure断言，区分性质定义与算法定理。 | 已修待复审 | EAUDIT68 |
-| 4 | MD-4.4.2-DLMPrintedSystemStructure | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT68 |
+| 4 | MD-4.4.2-RigidSystemSymplectic | FAIL | B | 本条仅定义全系统受约束两形式拉回性质，原句算法确实满足该性质由已有DLMPrintedSystemStructure断言，区分性质定义与算法定理。 | 已修待复审 | EAUDIT91 |
+| 4 | MD-4.4.2-DLMPrintedSystemStructure | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT91 |
 | 4 | MD-4.4.1-ExactPlanarRotation | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT22 |
 | 5 | MD-5.1-LieDerivative | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.1-TrajectoryChain | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |

@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT69",
+  "source_id": "MD-4-OscillatorSpectrum",
+  "input_sha256": {
+    "BATCH_EAUDIT69.md": "686fe257c41b546a6d59f4d4afcbdaf5deb4fd5c41658345dc5baf2be2449158",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT69e_materials": "a8b205bfdf3e59a4eb0de8e4edd46f8e4266c4028d3c3398ab23d08a71b5bea4",
+    "EAUDIT69e_PAGES.pdf": "6f95aca8b0b9a1cf6513e61abb0da46ee2b32aac37550a800bc4fe601db85615"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    162
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "26f7add1b9be1914a5b81c099fcce637bbf5b8397e6cfc09d05d47eafbb5c341",
+  "source_block_sha256": "63d75aadf450d5226849f7fb23e1b6c51c304bf036dc089bb149937d3dd7a240",
+  "source_declarations": [
+    "oscillatorSpectrum"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.oscillatorMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "563f0b30632a7fc6ce0df63f1cd289f4d29deb503b43f0ab60cdad3278c0ab9e"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "oscillatorMatrix",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "563f0b30632a7fc6ce0df63f1cd289f4d29deb503b43f0ab60cdad3278c0ab9e"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT69_review.json",
+  "total_task_bytes": 78164
+}

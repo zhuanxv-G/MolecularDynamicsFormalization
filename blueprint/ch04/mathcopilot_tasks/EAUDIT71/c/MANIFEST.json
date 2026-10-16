@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT71",
+  "source_id": "MD-4.2.1-SlowMatrix",
+  "input_sha256": {
+    "BATCH_EAUDIT71.md": "bbbcf476a5e5487518dbec00eb9a22b564bb82ddedc1e25b0973e7d1cc3480ae",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT71c_materials": "cd0e6f1f54a5d938770552ba2e3f4fc9e4369de140f0ebc8813ef98020f0b790",
+    "EAUDIT71c_PAGES.pdf": "12ec4e91c0e5ebe482c55a2f0d8f55d71595b3c4a37690e76f56c9b0b940509b"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    168
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "45ca8290e8935b866bc9d30f0fad1e53e106c88cef6decce82884b56e0461857",
+  "source_block_sha256": "4e0bb16f3b5c7b6c1aced7417d0dbab8ca882c12d7f7517d82e8666b1d1c78eb",
+  "source_declarations": [
+    "slowMatrix"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "slowMatrix",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "4e0bb16f3b5c7b6c1aced7417d0dbab8ca882c12d7f7517d82e8666b1d1c78eb"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT71_review.json",
+  "total_task_bytes": 77227
+}

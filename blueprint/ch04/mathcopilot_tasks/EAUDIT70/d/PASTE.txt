@@ -1,0 +1,86 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.1-ModifiedFrequencyLimit；原PDF页映射=[165]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT70_review.json，对象含batch=EAUDIT70、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT70.md": "a1920a75dc809b01ede7336d1116d7d7784a54ce4b99c30507ed034b4e307707",
+  "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "EAUDIT70d_materials": "72f91901525ef87f8ec0c616384c3a3d14fb9b3af25dc05a25832302b773c78e",
+  "EAUDIT70d_PAGES.pdf": "9a863fd70728c092d43992f4899e5083496c33bf435e5b3ebe623642cd77dbbb"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.1-ModifiedFrequencyLimit",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4.1",
+  "printed_page": "143",
+  "pdf_page": "165",
+  "statement_latex": "The figure shows that the frequency is only well approximated in case $h\\Omega$ is sufficiently small. For $h\\Omega\\gg1$ the frequency is highly modified.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "printedModifiedFrequency复log支对应需另审；本条采用实连续相位。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.modifiedFrequencyLimit",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]将small-h准确表达为连续实相位2 atan(hΩ/2)/h沿非零h→0趋Ω；不声称此极限自动给耦合系统准确度。",
+    "[EXTRA] 补x=hΩ的频率比零点极限1与正无穷极限0及实际频率桥接，保留旧h→0证明；新结论不作证明。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT03_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:52:31.915585",
+      "before_sha256": "2c94950bbc719eebd3d2cce8be281f398ce7ec3895cea6d311c145f1f3948fcc",
+      "after_sha256": "1362866f9af48f81977137c54b6c841993c3ab123f1399ad9bbf071b08faa5c4",
+      "changed_fields": [],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem modifiedFrequencyLimit :
+  ∀ Ω : ℝ, Tendsto (MolecularDynamics.Chapter04Review.modifiedFrequency Ω) (nhdsWithin 0 ({0}ᶜ)) (𝓝 Ω) := by
+  intro Ω
+  have hd : HasDerivAt (fun h : ℝ => 2*Real.arctan (h*Ω/2)) Ω 0 := by
+    convert (((hasDerivAt_id (0 : ℝ)).mul_const Ω).div_const 2).arctan.const_mul 2 using 1 <;> norm_num <;> ring
+  convert hd.tendsto_slope_zero using 1
+  funext t
+  simp [MolecularDynamics.Chapter04Review.modifiedFrequency,smul_eq_mul,div_eq_mul_inv]
+  ring
+
+def midpointFrequencyRatio (x : ℝ) : ℝ := 2*Real.arctan (x/2)/x
+
+theorem modifiedFrequencyRatio_limits :
+    Tendsto midpointFrequencyRatio (nhdsWithin 0 ({0}ᶜ)) (𝓝 1) ∧
+    Tendsto midpointFrequencyRatio atTop (𝓝 0) ∧
+    (∀ Ω h : ℝ, h*Ω ≠ 0 →
+      MolecularDynamics.Chapter04Review.modifiedFrequency Ω h/Ω=midpointFrequencyRatio (h*Ω)) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.modifiedFrequency
+```lean
+def modifiedFrequency (Ω h : ℝ) : ℝ := 2*Real.arctan (h*Ω/2)/h
+```
+### 实际依赖 MD.Ch04.midpointFrequencyRatio
+```lean
+def midpointFrequencyRatio (x : ℝ) : ℝ := 2*Real.arctan (x/2)/x
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.modifiedFrequency
+```lean
+def modifiedFrequency (Ω h : ℝ) : ℝ := 2*Real.arctan (h*Ω/2)/h
+```

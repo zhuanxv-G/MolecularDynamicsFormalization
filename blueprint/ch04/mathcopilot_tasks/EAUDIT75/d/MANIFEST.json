@@ -1,0 +1,61 @@
+{
+  "eaudit": "EAUDIT75",
+  "source_id": "MD-4.3-CotangentInvariant",
+  "input_sha256": {
+    "BATCH_EAUDIT75.md": "a09522f0b0c1d3dbf8662ea9a5cd7d2aa163f23ceb1164c3d749300e70f08f6a",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT75d_materials": "0b9abfe1e74121fe2e4f2c313a854ef25ccc9133f695e2dc4e1d31ed28b81718",
+    "EAUDIT75d_PAGES.pdf": "e89721099a30b5ae2285ff33ed8f91a16a1e36c4e0b7f3b9a72e9afaaa3b3001"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    175
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "4ddfc4a683d4a35321c50186d328dbed64478c7e78bf6c7c83e50d662cf760a5",
+  "source_block_sha256": "bfcb5e2f884405600078cd2115a39c2a45ff266043e8377dca44fd930b44dc6b",
+  "source_declarations": [
+    "cotangentInvariant"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedReaction.lean",
+      "name": "textbookConstrainedReactionMultiplier",
+      "file_sha256": "0c6b2231827c5d5493751eea65c67f7aeaed5dd511e5bca2f1bb533598e53789",
+      "excerpt_sha256": "4c098d46a566eaa7cea8265004a6f811bb0204f83c65edf2d10f5b1d34a177e5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedReaction.lean",
+      "name": "textbookConstraintCurvature",
+      "file_sha256": "0c6b2231827c5d5493751eea65c67f7aeaed5dd511e5bca2f1bb533598e53789",
+      "excerpt_sha256": "221e918cc4812b05f61a8e9808ecbe226b291802ba2669726730ad1adbc3c454"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "name": "textbookConstraintGradient",
+      "file_sha256": "890274c6144406ad066b0a624cf08e3b95995c17b495545de8c3c05f260d4e44",
+      "excerpt_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "name": "textbookConstraintGram",
+      "file_sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce",
+      "excerpt_sha256": "f9d0691a77a4664150d234c00a3129e9c83be39d8b1787031a5684ce26cba140"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "name": "textbookConstraintJacobian",
+      "file_sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce",
+      "excerpt_sha256": "8cf31fc6e8fc4d97e435434cd3ff311cd4bdc6e77b6c39dac71331c66249f03a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "name": "textbookInverseMassMatrix",
+      "file_sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce",
+      "excerpt_sha256": "9e7434aa6e315ddbe11e2a45e46a9d927661975aa91274386af7c31412a7c330"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT75_review.json",
+  "total_task_bytes": 98171
+}

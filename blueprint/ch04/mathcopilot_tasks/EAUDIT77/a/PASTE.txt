@@ -1,0 +1,145 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.3.2-ProjectionResidual；原PDF页映射=[178]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT77_review.json，对象含batch=EAUDIT77、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT77.md": "06caa46c2d66436619cbffb1721044240d8e77a6ed091ea8b651c901006f68c5",
+  "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "EAUDIT77a_materials": "4fef22791d44032e58e04872b06054bbf51835ececfd58abfea4b2a359493e2d",
+  "EAUDIT77a_PAGES.pdf": "e4588b93b31987db4428193ec21385549b9455feaa738ab74c05899c3872e51a"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.3.2-ProjectionResidual",
+  "kind": "definition",
+  "label": "(4.17)",
+  "section": "4.3.2",
+  "printed_page": "156",
+  "pdf_page": "178",
+  "statement_latex": "To solve the Eqs. (4.14)–(4.16), insert the second in the first and the first then in the third to obtain the simplified equation\n\\[g(Q_n-M^{-1}G_n^T\\Lambda)=0,\\tag{4.17}\\]\nwhere\n\\[Q_n=q_n+hM^{-1}p_n-h^2M^{-1}F_n,\\qquad G_n=g'(q_n),\\qquad\\Lambda=h^2\\lambda_n.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "q为旧位置，base为所给Qn，η=Λ；关系只定义残差，不宣称非线性根存在。Fn符号原式已单列，不用一个任意base假装完成动量消元证明。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.projectionResidual",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] 补真实零残差方程及原印F符号下base、η=h²λ与旧状态的消元等价；不把残差函数冒充已解投影方程。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT10_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T13:03:51.275819",
+      "before_sha256": "b474c617a6bfcfa75f76f2eb1bb171f04327bbde9c7740071608b37722a3bb6b",
+      "after_sha256": "27a586e15652e6f2a47ab8bf3406c350a82f42c98c60c1b0f545f8e2d112157f",
+      "changed_fields": [],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def projectionResidual {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=
+  fun j => g j (base-MolecularDynamics.Chapter04Review.invMass m ((textbookConstraintJacobian g q)ᵀ *ᵥ η))
+
+def projectionEquation {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  projectionResidual m g q base η=0
+
+theorem projectionResidual_elimination {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (Fprinted : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n)
+    (lam : MolecularDynamics.Chapter04Review.Q l)
+    (_hp : out.2=z.2-h • Fprinted z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ lam))
+    (_hq : out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m out.2) :
+    (out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g) ↔
+      projectionEquation m g z.1
+        (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2-
+          h^2 • MolecularDynamics.Chapter04Review.invMass m (Fprinted z.1)) (h^2 • lam) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.constraintSet
+```lean
+def constraintSet {n l : ℕ} (g : Fin l → Q n → ℝ) : Set (Q n) := {q | ∀ j, g j q=0}
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.invMass
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MD.Ch04.constraintSet
+```lean
+def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.invMass
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.invMass
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+### 实际依赖 MD.Ch04.projectionEquation
+```lean
+def projectionEquation {n l : ℕ} (m : Fin n → ℝ)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  projectionResidual m g q base η=0
+```
+### 实际依赖 MD.Ch04.projectionResidual
+```lean
+def projectionResidual {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=
+  fun j => g j (base-MolecularDynamics.Chapter04Review.invMass m ((textbookConstraintJacobian g q)ᵀ *ᵥ η))
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintJacobian
+```lean
+noncomputable def textbookConstraintJacobian {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Matrix (Fin Mc) (Fin Nc) ℝ :=
+  fun j i => textbookConstraintGradient (γ j) q i
+```

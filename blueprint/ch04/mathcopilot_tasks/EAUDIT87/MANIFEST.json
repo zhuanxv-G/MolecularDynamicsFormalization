@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT87",
+  "input_sha256": {
+    "BATCH_EAUDIT87.md": "b732d059b9c45baf72f00889b67d1618e68048cd3c76cbc1649a3242043ab9c0",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT87a",
+      "source_id": "MD-4.4.1-AngularMomentum",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT87/a",
+      "total_bytes": 88995,
+      "manifest_sha256": "711aff2469f9a02ab053aa486c95512e9184d18f82cca076ee4e7eaed1d555ed"
+    },
+    {
+      "subtask": "EAUDIT87b",
+      "source_id": "MD-4.4.1-BodyMomentum",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT87/b",
+      "total_bytes": 88743,
+      "manifest_sha256": "1b3a65c58116c0dd3e4869c6bd7ddb8824eeb131528bf5fe1b1f02de84f6582d"
+    },
+    {
+      "subtask": "EAUDIT87c",
+      "source_id": "MD-4.4.1-AngularInertia",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT87/c",
+      "total_bytes": 98276,
+      "manifest_sha256": "5c235df136006ea00a557d84f99138c9da765d800f18e238a4ab5196877b6f5c"
+    },
+    {
+      "subtask": "EAUDIT87d",
+      "source_id": "MD-4.4.1-EulerRigidField",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT87/d",
+      "total_bytes": 85614,
+      "manifest_sha256": "a20c0bbf545915eb1890e0367446e946edf5f3d72d6634d651f7c99b20222ac7"
+    },
+    {
+      "subtask": "EAUDIT87e",
+      "source_id": "MD-4.4.1-FreeRigidSolution",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT87/e",
+      "total_bytes": 87047,
+      "manifest_sha256": "b36ced1f0dc64cb91d20575a7f0fb6496132b5f3e0929f32f6ca34b2fb9d38ef"
+    },
+    {
+      "subtask": "EAUDIT87f",
+      "source_id": "MD-4.4.1-RigidInvariants",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT87/f",
+      "total_bytes": 94425,
+      "manifest_sha256": "7555e9716ec052e346b758816ab6a4aace2c652801cd522256bcced1c4213e49"
+    },
+    {
+      "subtask": "EAUDIT87g",
+      "source_id": "MD-4.4.1-RigidPoissonMatrix",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT87/g",
+      "total_bytes": 92786,
+      "manifest_sha256": "7ec8e6aabce790e92003167a393062389560578c60359e006769f9b2d0262b77"
+    },
+    {
+      "subtask": "EAUDIT87h",
+      "source_id": "MD-4.4.1-PoissonDegeneracy",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT87/h",
+      "total_bytes": 86039,
+      "manifest_sha256": "877924e63258ec083776c70950b1aec7106fb81d996e784ffff951ae6c0c9995"
+    }
+  ]
+}

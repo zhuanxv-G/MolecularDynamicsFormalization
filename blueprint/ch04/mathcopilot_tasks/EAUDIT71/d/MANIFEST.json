@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT71",
+  "source_id": "MD-4.2.1-FastMatrix",
+  "input_sha256": {
+    "BATCH_EAUDIT71.md": "bbbcf476a5e5487518dbec00eb9a22b564bb82ddedc1e25b0973e7d1cc3480ae",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT71d_materials": "271b8755bc90a17f457569aee91ee520fe2ee6905675e16e922cb6a613a3cc82",
+    "EAUDIT71d_PAGES.pdf": "12ec4e91c0e5ebe482c55a2f0d8f55d71595b3c4a37690e76f56c9b0b940509b"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    168
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "1c011d5052fd3c8b0019c36ff74074b2aa997c962968a98bc8f23dee73f11960",
+  "source_block_sha256": "c06170015d63d707e282e34df9135f293ba5d6173fbec92449ed05547085d7d9",
+  "source_declarations": [
+    "fastMatrix"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "fastMatrix",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "c06170015d63d707e282e34df9135f293ba5d6173fbec92449ed05547085d7d9"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT71_review.json",
+  "total_task_bytes": 77453
+}

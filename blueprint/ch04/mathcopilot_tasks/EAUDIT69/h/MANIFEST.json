@@ -1,0 +1,74 @@
+{
+  "eaudit": "EAUDIT69",
+  "source_id": "MD-4-SymplecticEulerStability",
+  "input_sha256": {
+    "BATCH_EAUDIT69.md": "686fe257c41b546a6d59f4d4afcbdaf5deb4fd5c41658345dc5baf2be2449158",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+    "EAUDIT69h_materials": "32027bac59f069aa95e4f8f6b11f64c4d18b5ee8492da883ffc99b81baa4be04",
+    "EAUDIT69h_PAGES.pdf": "6f95aca8b0b9a1cf6513e61abb0da46ee2b32aac37550a800bc4fe601db85615"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    162
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "45190fd4a3a8ac12e133e11a849300c0b46a2e9727df12e91d78f77f1e0d66e2",
+  "source_block_sha256": "bb2fa538780480440dae9f9aeefeede9419bb9251d2cfbe48e51735f859a06cd",
+  "source_declarations": [
+    "symplecticEulerStability",
+    "symplecticEulerStability_complete"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.eigenvalueOutside",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "5c4efea98926d467bb3b5df57229efebcc02fb9c83b35b4a174ebce76c5faed3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.matrixStable",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "dfbed950168921b593ebe039dc22139bf0ae582c770a62d29984251b5ac71af3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.symplecticEulerMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "bbda75ade1595aa85e225b144694e2c996f0fca307394537ff36da64e954171a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.verletMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "4e9fc4cbc25adb9ad1b2edf9385c1df342cda16290b266ee31306eacbfc2d899"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "eigenvalueOutside",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "5c4efea98926d467bb3b5df57229efebcc02fb9c83b35b4a174ebce76c5faed3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "matrixStable",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "dfbed950168921b593ebe039dc22139bf0ae582c770a62d29984251b5ac71af3"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "symplecticEulerMatrix",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "bbda75ade1595aa85e225b144694e2c996f0fca307394537ff36da64e954171a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "verletMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "4e9fc4cbc25adb9ad1b2edf9385c1df342cda16290b266ee31306eacbfc2d899"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT69_review.json",
+  "total_task_bytes": 85458
+}
