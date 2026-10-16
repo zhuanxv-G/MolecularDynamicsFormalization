@@ -1,0 +1,21 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT46",
+  "section": "3.6.3",
+  "source_ids": [
+    "MD-3.6.3-TrapezoidalProperties"
+  ],
+  "reaudit_ids": [
+    "MD-3.6.3-TrapezoidalProperties"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "4aa703951c796378eae80048977869a1799b4c5d7f9dd713f42800649309a758",
+  "lean_sha256": "6e69113a2911e4da7c96e7112cb168f8190e348c8b75d126eabf28e603ca1a22",
+  "source_sha256": "2d6a9d1a279ecc99c2c2368430b49fb88c9b91065189efad0d239faf7565b956",
+  "pages": [
+    153
+  ],
+  "prior_proof_blocks": {
+    "MD-3.6.3-TrapezoidalProperties": "theorem trapezoidalProperties :\n  (∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) h z w,\n    linearInvolution R → (∀ x, f (R x)=-R (f x)) → trapezoidalRelation f h z w →\n    trapezoidalRelation f h (R w) (R z)) ∧\n  ∃ (n : ℕ) (H : SymplecticCoordinates n → ℝ)\n    (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) (h : ℝ),\n    ContDiff ℝ ⊤ H ∧ ContDiff ℝ 1 (G h) ∧\n    (∀ z, G h z=z+(h/2) • (textbookHamiltonianVectorField H z+textbookHamiltonianVectorField H (G h z))) ∧\n    ¬ IsTextbookSymplecticMap (G h) := by\n  sorry"
+  }
+}

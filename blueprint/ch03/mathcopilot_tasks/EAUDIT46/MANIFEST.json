@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT46",
+  "input_sha256": {
+    "BATCH_EAUDIT46.md": "8d17b4ad256192ea50d3815f8b7e165ae1ab4869a7e85cb8eac14635e953a3ab",
+    "Blueprint/Ch03.lean": "6e69113a2911e4da7c96e7112cb168f8190e348c8b75d126eabf28e603ca1a22",
+    "blueprint/ch03/ch03_source.json": "2d6a9d1a279ecc99c2c2368430b49fb88c9b91065189efad0d239faf7565b956"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT46a",
+      "source_id": "MD-3.6.3-TrapezoidalProperties",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT46/a",
+      "total_bytes": 87705,
+      "manifest_sha256": "64b61600fe79d21d46d73ecd345e5e2e19188af324913146db7b01a3e2513084"
+    }
+  ]
+}

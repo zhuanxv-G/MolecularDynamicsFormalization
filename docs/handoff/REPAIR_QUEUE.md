@@ -6,7 +6,7 @@
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
-第3章：网站PASS 52 / 已修待复审 77 / 待导师 20 / 修复中 0。
+第3章：网站PASS 51 / 已修待复审 78 / 待导师 20 / 修复中 0。
 第4章：网站PASS 42 / 已修待复审 110 / 待导师 27 / 修复中 0。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
@@ -292,7 +292,7 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.6.2-PartitionedAffine | FAIL | B | 本条显式仅为保持分区的PRK阶段/更新等变修复；普通RK及有符号相容、对称资格的时间反演推论归RKAffine/SymmetricAffineReversible。保留混合变换错误的Printed导师条目。 | 已修待复审 | EAUDIT34 |
 | 3 | MD-3.6.3-SymplecticNotReversible | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6.3-TrapezoidalRelation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.6.3-TrapezoidalProperties | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
+| 3 | MD-3.6.3-TrapezoidalProperties | PASS | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT46 |
 | 3 | MD-3.6.3-HamiltonianSpectrum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.6.3-SymplecticSpectrum | FAIL | B | 保留一般辛矩阵谱结论；补对称K的实际线性Hamiltonian流exp(tJK)、ODE、辛矩阵及对应倒数/共轭谱实例。 | 已修待复审 | EAUDIT35 |
 | 3 | MD-3.6.3-ReversibleSpectrum | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |

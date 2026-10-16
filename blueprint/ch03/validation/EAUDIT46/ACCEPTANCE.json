@@ -1,0 +1,36 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT46",
+  "section": "3.6.3",
+  "source_ids": [
+    "MD-3.6.3-TrapezoidalProperties"
+  ],
+  "reaudit_ids": [
+    "MD-3.6.3-TrapezoidalProperties"
+  ],
+  "human_ids": [],
+  "lean_sha256": "6e69113a2911e4da7c96e7112cb168f8190e348c8b75d126eabf28e603ca1a22",
+  "source_sha256": "2d6a9d1a279ecc99c2c2368430b49fb88c9b91065189efad0d239faf7565b956",
+  "pages": [
+    153
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch03.olean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "6e69113a2911e4da7c96e7112cb168f8190e348c8b75d126eabf28e603ca1a22",
+    "log_sha256": "06a054df78f929d60c7af02c3352b29d1891b85e61bf784e1caba50ba2324326"
+  },
+  "axiom_decl_count": 1,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT46/INDEX.md"
+}

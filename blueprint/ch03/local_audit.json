@@ -4200,8 +4200,8 @@
       "lean_decl": "MD.Ch03.trapezoidalProperties",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "454f9121cbe7bfda17ae66186b7d4cd4c48217d2825e1f97dbcbaf3fa5875455",
-      "block_sha256": "0c57515fe0918be6eda6eefb952ec4721a18d3aba12c2d7d7e7c988dd038cbfe",
+      "signature_sha256": "36d5e7d5db795e8c97057b78a119587eff937ad0b790ea73ce2ce0672c94d456",
+      "block_sha256": "c20a38abda184ed775d90b14c08d040d9a3820999cab758866887bc556ebcd18",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4219,7 +4219,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT46/axioms.log"
     },
     "MD-3.6.3-HamiltonianSpectrum": {
       "checked": true,

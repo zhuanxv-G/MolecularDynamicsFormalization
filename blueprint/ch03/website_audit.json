@@ -9231,7 +9231,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH21_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT46",
+    "repair": {
+      "eaudit": "EAUDIT46",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT46/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT46.md": "8d17b4ad256192ea50d3815f8b7e165ae1ab4869a7e85cb8eac14635e953a3ab",
+        "Blueprint/Ch03.lean": "6e69113a2911e4da7c96e7112cb168f8190e348c8b75d126eabf28e603ca1a22",
+        "blueprint/ch03/ch03_source.json": "2d6a9d1a279ecc99c2c2368430b49fb88c9b91065189efad0d239faf7565b956"
+      }
+    }
   },
   {
     "source_id": "MD-3.6.3-HamiltonianSpectrum",

@@ -127,7 +127,7 @@
 | MD-3.6.2-PartitionedAffine | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT15 | local_proof / self-contained |
 | MD-3.6.3-SymplecticNotReversible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/SymplecticNotReversible.json。 |
 | MD-3.6.3-TrapezoidalRelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
-| MD-3.6.3-TrapezoidalProperties | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺非线性梯形实际解族和非辛Jacobian反例桥接；不建设一般隐式法理论。 |
+| MD-3.6.3-TrapezoidalProperties | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT46 | placeholder / incomplete；缺非线性梯形实际解族和非辛Jacobian反例桥接；不建设一般隐式法理论。 |
 | MD-3.6.3-HamiltonianSpectrum | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺Hamiltonian矩阵复谱及转置相似性桥接；字面证明需审，不证明非PASS。 |
 | MD-3.6.3-SymplecticSpectrum | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT16 | placeholder / incomplete；缺辛矩阵非退化、逆转置相似及复谱桥接；不建设新的完整谱理论。 |
 | MD-3.6.3-ReversibleSpectrum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | placeholder / incomplete；缺有限矩阵可逆相似和共轭复特征向量运输桥接；不建设完整谱理论。 |
@@ -433,3 +433,5 @@ EAUDIT43 §3.3.3：1条落盘，单文件与1项公理通过；未写新证明�
 EAUDIT44 §3.3.4：1条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT45 §3.4：6条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT46 §3.6.3：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。

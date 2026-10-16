@@ -4295,12 +4295,24 @@
     "lean_decl": "MD.Ch03.trapezoidalProperties",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "完整实际隐式G与C¹Jacobian资格，不用求解存在作为结论前提。"
+      "完整实际隐式G与C¹Jacobian资格，不用求解存在作为结论前提。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT46_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:40:10.328476",
+        "before_sha256": "b98434709f81240dc75df83f4385bf50bb833c39adb7244062c4d491138a5bc2",
+        "after_sha256": "252c8cd527e8af5fc1aed7a06632d2b9b244c645c745768a2e31208efd77ec21",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT46/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.6.3-HamiltonianSpectrum",

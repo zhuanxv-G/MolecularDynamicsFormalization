@@ -1477,14 +1477,15 @@ theorem symplecticNotReversible :
 def trapezoidalRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop := w=z+(h/2) • (f z+f w)
 
 /-- source_id: MD-3.6.3-TrapezoidalProperties · unnumbered_claim · §3.6.3 · 印刷p.131 / PDFp.153
-[EXTRA] 完整实际隐式G与C¹Jacobian资格，不用求解存在作为结论前提。 -/
+[EXTRA] 完整实际隐式G与C¹Jacobian资格，不用求解存在作为结论前提。 
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
 theorem trapezoidalProperties :
   (∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) h z w,
     linearInvolution R → (∀ x, f (R x)=-R (f x)) → trapezoidalRelation f h z w →
     trapezoidalRelation f h (R w) (R z)) ∧
   ∃ (n : ℕ) (H : SymplecticCoordinates n → ℝ)
     (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) (h : ℝ),
-    ContDiff ℝ ⊤ H ∧ ContDiff ℝ 1 (G h) ∧
+    ContDiff ℝ ∞ H ∧ ContDiff ℝ 1 (G h) ∧
     (∀ z, G h z=z+(h/2) • (textbookHamiltonianVectorField H z+textbookHamiltonianVectorField H (G h z))) ∧
     ¬ IsTextbookSymplecticMap (G h) := by
   sorry
