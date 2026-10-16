@@ -57,6 +57,12 @@ if (ROOT/'scripts/local_compile.py').exists():
     paths.append('scripts/local_compile.py')
 if (ROOT/'scripts/local_preflight.py').exists():
     paths.append('scripts/local_preflight.py')
+if (ROOT/'scripts/local_section_check.py').exists():
+    paths.append('scripts/local_section_check.py')
+if ch==6 and 'ch06_source_rechecks' in sys.modules:
+    paths.append('scripts/ch06_source_rechecks.py')
+if ch==6 and (ROOT/'scripts/local_advance_ch06.py').exists():
+    paths.append('scripts/local_advance_ch06.py')
 if (ROOT/f'scripts/ch{ch:02}_short_candidates.py').exists():
     paths.append(f'scripts/ch{ch:02}_short_candidates.py')
 if ch==5:

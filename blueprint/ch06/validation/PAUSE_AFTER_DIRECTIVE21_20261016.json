@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-16T22:33:08.251299",
+  "status": "paused",
+  "chapter_complete": false,
+  "authorization": "用户在另一执行聊天新下达第21号：第6章当前批次到最近已验证检查点提交后暂停",
+  "instruction_thread": "01a14515-c7c4-7780-8bbd-4aecb0991d02",
+  "records": 148,
+  "statuses": {
+    "self-contained": 70,
+    "checked+documented priors": 27,
+    "incomplete": 51
+  },
+  "new_short_proofs": [
+    "ZeroNoise",
+    "DiffusionTrace",
+    "FPDriftAdjoint",
+    "FPAdjointCompact"
+  ],
+  "source_sha256": "e954a4cc328c69279d1fc786267a03e8ac6280b82d026fddcf5399e3bf54d200",
+  "lean_sha256": "c46634d49462f2518b53f0230506084783237f0ab80b8d497c952654a405d8d4",
+  "validation_folder": "blueprint/ch06/validation/section634-637-final",
+  "section638_activated": false,
+  "checkpoint_commit_owner": "active directive21 chat; no concurrent staging from this chat"
+}

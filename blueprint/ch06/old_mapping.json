@@ -64,20 +64,20 @@
     "CH06-062": "MD-6.3.3-BathForceWeakLimitMeaning",
     "CH06-063": "MD-6.3.3-MassLangevin",
     "CH06-064": "MD-6.3.3-ParticleDiagonalFriction",
-    "CH06-065": "MD-6.3.4-BrownianMassModel"
+    "CH06-065": "MD-6.3.4-OverdampedLimit",
+    "CH06-067": "MD-6.3.5-ScalarGenerator",
+    "CH06-066": "MD-6.3.5-GeneratorExpectation",
+    "CH06-068": "MD-6.3.6-DensityExpectation",
+    "CH06-072": "MD-6.3.6-FPEquation",
+    "CH06-069": "MD-6.3.6-FPPolynomialAdjoint",
+    "CH06-070": "MD-6.3.6-FPPolynomialAdjoint",
+    "CH06-071": "MD-6.3.6-FPPolynomialAdjoint",
+    "CH06-073": "MD-6.3.6-ZeroNoise",
+    "CH06-074": "MD-6.3.7-VectorIto",
+    "CH06-075": "MD-6.3.7-VectorFPEquation",
+    "CH06-076": "MD-6.3.7-DiffusionTrace"
   },
   "pending": [
-    "CH06-066",
-    "CH06-067",
-    "CH06-068",
-    "CH06-069",
-    "CH06-070",
-    "CH06-071",
-    "CH06-072",
-    "CH06-073",
-    "CH06-074",
-    "CH06-075",
-    "CH06-076",
     "CH06-077",
     "CH06-078",
     "CH06-079",
@@ -394,7 +394,47 @@
       "MD-6.3.3-ParticleDiagonalFriction"
     ],
     "CH06-065": [
-      "MD-6.3.4-BrownianMassModel"
+      "MD-6.3.4-BrownianMassModel",
+      "MD-6.3.4-OverdampedLimit"
+    ],
+    "CH06-067": [
+      "MD-6.3.5-ScalarGenerator"
+    ],
+    "CH06-066": [
+      "MD-6.3.5-GeneratorExpectation"
+    ],
+    "CH06-068": [
+      "MD-6.3.6-PolynomialSmooth",
+      "MD-6.3.6-DensityExpectation"
+    ],
+    "CH06-072": [
+      "MD-6.3.6-ScalarForward",
+      "MD-6.3.6-FPEquation"
+    ],
+    "CH06-069": [
+      "MD-6.3.6-FPDriftAdjoint",
+      "MD-6.3.6-FPPolynomialAdjoint"
+    ],
+    "CH06-070": [
+      "MD-6.3.6-FPDiffusionPrinted",
+      "MD-6.3.6-FPPolynomialAdjoint"
+    ],
+    "CH06-071": [
+      "MD-6.3.6-FPAdjointCompact",
+      "MD-6.3.6-FPPolynomialAdjoint"
+    ],
+    "CH06-073": [
+      "MD-6.3.6-ZeroNoise"
+    ],
+    "CH06-074": [
+      "MD-6.3.7-VectorIto"
+    ],
+    "CH06-075": [
+      "MD-6.3.7-VectorForward",
+      "MD-6.3.7-VectorFPEquation"
+    ],
+    "CH06-076": [
+      "MD-6.3.7-DiffusionTrace"
     ]
   }
 }

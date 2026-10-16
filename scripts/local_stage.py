@@ -8,10 +8,13 @@ def canonical(p):
     return p
 def stage(paths,allow_ch01_return=False):
     entries=subprocess.check_output(['git','ls-files','--stage'],cwd=ROOT,text=True).splitlines()
+    # Resolve directory arguments once. For explicit checkpoint file lists the
+    # old nested loop performed millions of Windows filesystem stat calls.
+    owned_directories=[x.rstrip('/')+'/' for x in paths if (ROOT/x).is_dir()]
     removals=[]
     for e in entries:
         meta,p=e.split('\t',1)
-        owned=any(p.startswith(x.rstrip('/')+'/') for x in paths if (ROOT/x).is_dir())
+        owned=any(p.startswith(prefix) for prefix in owned_directories)
         if canonical(p)!=p or (owned and not (ROOT/p).exists()):removals.append('0 '+'0'*40+'\t'+p+'\0')
     if removals:subprocess.run(['git','-c','core.ignorecase=false','update-index','-z','--index-info'],cwd=ROOT,input=''.join(removals).encode(),check=True)
     files=[]

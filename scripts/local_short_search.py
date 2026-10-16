@@ -53,7 +53,7 @@ if ch==6:
     header=header.replace('open Set Filter Matrix MeasureTheory MolecularDynamics',
         'open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics')
     header=header.replace('open scoped BigOperators Topology ContDiff InnerProductSpace ENNReal',
-        'open scoped BigOperators Topology ContDiff InnerProductSpace ENNReal NNReal')
+        'open scoped BigOperators Topology ContDiff InnerProductSpace ENNReal NNReal Matrix.Norms.L2Operator')
 def compile_group(group,label):
     text=header+background+'\n\n';ranges={}
     for key,(r,proof,_) in group.items():
@@ -71,7 +71,7 @@ def compile_group(group,label):
     from local_compile import compile_recorded
     result,output,reused=compile_recorded(['lake','env','lean',str(src.relative_to(ROOT))],ROOT,src,log,receipt,reuse_failure=True)
     return src,log,result['exit_code'],ranges,output.decode('utf-8',errors='replace')
-label=hashlib.sha256('-'.join(k+str(len(v[2])+1) for k,v in pending.items()).encode()).hexdigest()[:20]
+label=hashlib.sha256((header+background+'-'.join(k+str(len(v[2])+1)+v[1] for k,v in pending.items())).encode()).hexdigest()[:20]
 src,log,code,ranges,out=compile_group(pending,label)
 def save(key,source,rawlog,exit_code):
     r,proof,routes=pending[key]

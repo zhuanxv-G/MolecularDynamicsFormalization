@@ -225,3 +225,143 @@ proofs['KernelDuality']='''intro D _ K μ t f hμ hK hf hi
   rw [Measure.comp_eq_comp_const_apply]
   apply Kernel.integral_comp
   simpa only [← Measure.comp_eq_comp_const_apply] using hi'''
+
+proofs['LieBracketProperties']='''intro n u v w a b hu hv hw
+  have hb : ∀ (u v : (Fin n → ℝ) → (Fin n → ℝ)),
+      MolecularDynamics.Chapter06Review.lieBracket u v=VectorField.lieBracket ℝ u v :=
+    fun u v ↦ rfl
+  simp_rw [hb]
+  refine ⟨?_,?_,?_,?_⟩
+  · funext x
+    rw [VectorField.lieBracket_add_left ((hu x).const_smul a) ((hv x).const_smul b),
+      VectorField.lieBracket_const_smul_left (hu x),
+      VectorField.lieBracket_const_smul_left (hv x)]
+  · funext x
+    rw [VectorField.lieBracket_add_right ((hv x).const_smul a) ((hw x).const_smul b),
+      VectorField.lieBracket_const_smul_right (hv x),
+      VectorField.lieBracket_const_smul_right (hw x)]
+  · funext x
+    exact VectorField.lieBracket_swap
+  · exact VectorField.lieBracket_self'''
+
+proofs['FPDriftAdjoint']='''intro a ρ φ ha hρ hφ hc
+  have hg : ContDiff ℝ 1 (fun x ↦ a x*ρ x) := ha.mul hρ
+  have hi1 : Integrable (fun x ↦ (a x*ρ x)*deriv φ x) :=
+    (hg.continuous.mul hφ.continuous_deriv_one).integrable_of_hasCompactSupport hc.deriv.mul_left
+  have hi2 : Integrable (fun x ↦ deriv (fun z ↦ a z*ρ z) x*φ x) :=
+    (hg.continuous_deriv_one.mul hφ.continuous).integrable_of_hasCompactSupport hc.mul_left
+  have hi3 : Integrable (fun x ↦ (a x*ρ x)*φ x) :=
+    (hg.continuous.mul hφ.continuous).integrable_of_hasCompactSupport hc.mul_left
+  have he := MeasureTheory.integral_mul_deriv_eq_deriv_mul_of_integrable
+    (u := fun x ↦ a x*ρ x) (v := φ)
+    (fun x _ ↦ (hg.differentiable_one x).hasDerivAt)
+    (fun x _ ↦ (hφ.differentiable_one x).hasDerivAt) hi1 hi2 hi3
+  simpa only [Pi.mul_apply, mul_comm, mul_left_comm, mul_assoc, mul_neg, integral_neg] using he'''
+
+proofs['FPAdjointCompact']='''intro a b ρ φ ha hb hρ hφ hc
+  have ha1 : ContDiff ℝ 1 a := ha.of_le (by norm_num)
+  have hρ1 : ContDiff ℝ 1 ρ := hρ.of_le (by norm_num)
+  have hφ1 : ContDiff ℝ 1 φ := hφ.of_le (by norm_num)
+  have hG : ContDiff ℝ 2 (fun x ↦ b x^2*ρ x) := (hb.pow 2).mul hρ
+  have hG1 : ContDiff ℝ 1 (fun x ↦ b x^2*ρ x) := hG.of_le (by norm_num)
+  have ibp : ∀ (g f : ℝ → ℝ), ContDiff ℝ 1 g → ContDiff ℝ 1 f → HasCompactSupport f →
+      (∫ x, g x*deriv f x)=-(∫ x, deriv g x*f x) := by
+    intro g f hg hf hs
+    have he := fpDriftAdjoint g (fun _ ↦ 1) f hg contDiff_const hf hs
+    simpa only [mul_one, mul_neg, integral_neg, mul_comm] using he
+  have hh1 := ibp (fun x ↦ b x^2*ρ x) (deriv φ) hG1 hφ.deriv' hc.deriv
+  have hh2 := ibp (deriv (fun x ↦ b x^2*ρ x)) φ hG.deriv' hφ1 hc
+  have hdiff : (∫ x, (b x^2*ρ x)*deriv (deriv φ) x)=
+      (∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x) := by
+    rw [hh1, hh2, neg_neg]
+    congr 1
+    funext x
+    ring
+  have hD := fpDriftAdjoint a ρ φ ha1 hρ1 hφ1 hc
+  have hiA : Integrable (fun x ↦ a x*deriv φ x*ρ x) :=
+    ((ha.continuous.mul hφ1.continuous_deriv_one).mul hρ.continuous).integrable_of_hasCompactSupport hc.deriv.mul_left.mul_right
+  have hiB : Integrable (fun x ↦ (b x^2*ρ x)*deriv (deriv φ) x) :=
+    (hG.continuous.mul hφ.deriv'.continuous_deriv_one).integrable_of_hasCompactSupport hc.deriv.deriv.mul_left
+  have hiC : Integrable (fun x ↦ φ x*(-deriv (fun z ↦ a z*ρ z) x)) :=
+    (hφ.continuous.mul (ha1.mul hρ1).continuous_deriv_one.neg).integrable_of_hasCompactSupport hc.mul_right
+  have hiE : Integrable (fun x ↦ φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x) :=
+    (hφ.continuous.mul hG.deriv'.continuous_deriv_one).integrable_of_hasCompactSupport hc.mul_right
+  have hleft : (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x)=
+      (∫ x, a x*deriv φ x*ρ x)+(1/2 : ℝ)*(∫ x, (b x^2*ρ x)*deriv (deriv φ) x) := by
+    rw [← integral_const_mul, ← integral_add hiA (hiB.const_mul (1/2))]
+    apply integral_congr_ae
+    filter_upwards [] with x
+    dsimp [MolecularDynamics.Chapter06Review.scalarGenerator]
+    ring
+  have hright : (∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x)=
+      (∫ x, φ x*(-deriv (fun z ↦ a z*ρ z) x))+
+        (1/2 : ℝ)*(∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x) := by
+    rw [← integral_const_mul, ← integral_add hiC (hiE.const_mul (1/2))]
+    apply integral_congr_ae
+    filter_upwards [] with x
+    dsimp [MolecularDynamics.Chapter06Review.scalarForward]
+    ring
+  rw [hleft, hright, hD, hdiff]'''
+
+proofs['HamiltonianPowerMomentumDerivative']='''intro n U l z hl
+  let S : ℝ := ∑ i, z.2 i^2
+  have he : ∀ t : ℝ, textbookLangevinHamiltonian U (z.1,(1+t) • z.2)=
+      (1+t)^2*S/2+U z.1 := by
+    intro t
+    simp only [textbookLangevinHamiltonian, Pi.smul_apply, smul_eq_mul, mul_pow,
+      ← Finset.mul_sum]
+    rfl
+  have hd : HasDerivAt (fun t : ℝ ↦ ((1+t)^2*S/2+U z.1)^l)
+      ((l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*S) 0 := by
+    convert! (((((hasDerivAt_id (0 : ℝ)).const_add 1).pow 2).mul_const S).div_const 2 |>.add_const (U z.1)).pow l using 1 <;>
+      simp [textbookLangevinHamiltonian, S] <;> ring
+  constructor
+  · simpa only [textbookLangevinHamiltonianPower, he] using hd
+  · change (l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*S=
+      2*(l : ℝ)*textbookLangevinHamiltonian U z^l-
+        2*(l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*U z.1
+    rw [show textbookLangevinHamiltonian U z^l=
+      textbookLangevinHamiltonian U z^(l-1)*textbookLangevinHamiltonian U z by
+      rw [← pow_succ, Nat.sub_add_cancel hl]]
+    dsimp [textbookLangevinHamiltonian, S]
+    ring'''
+
+proofs['LyapunovYoungBounds']='''intro l n Umax hl hU
+  have hlpos : (0 : ℝ) < l := by exact_mod_cast (lt_of_lt_of_le Nat.zero_lt_one hl)
+  let A1 : ℝ := (l : ℝ)*((l : ℝ)+(n : ℝ)-1)
+  let A2 : ℝ := 2*(l : ℝ)*Umax
+  let A3 : ℝ := 2*(l : ℝ)*((l : ℝ)-1)+(n : ℝ)*l
+  let A : ℝ := max 0 (max A1 (max A2 A3))
+  let ε : ℝ := (l : ℝ)/2
+  have hε : 0 < ε := by dsimp [ε]; positivity
+  have hA : 0 ≤ A := le_max_left _ _
+  let M : ℝ := max 1 (A/ε)
+  have hM : 0 ≤ M := le_trans zero_le_one (le_max_left _ _)
+  have hAM : A ≤ ε*M := by
+    have hd : A/ε ≤ M := le_max_right _ _
+    simpa only [mul_comm] using (div_le_iff₀ hε).mp hd
+  let C : ℝ := A*M^(l-1)+1
+  have hC : 0 < C := by dsimp [C]; positivity
+  have hbound : ∀ H : ℝ, 1 ≤ H → A*H^(l-1) ≤ ε*H^l+C := by
+    intro H hH
+    have hH0 : 0 ≤ H := le_trans zero_le_one hH
+    by_cases h : M ≤ H
+    · have hAH := hAM.trans (mul_le_mul_of_nonneg_left h hε.le)
+      calc
+        _ ≤ (ε*H)*H^(l-1) := mul_le_mul_of_nonneg_right hAH (pow_nonneg hH0 _)
+        _ = ε*(H^(l-1)*H) := by ring
+        _ = ε*H^l := by rw [← pow_succ, Nat.sub_add_cancel hl]
+        _ ≤ ε*H^l+C := le_add_of_nonneg_right hC.le
+    · have hpow := pow_le_pow_left₀ hH0 (le_of_lt (lt_of_not_ge h)) (l-1)
+      have hb := mul_le_mul_of_nonneg_left hpow hA
+      have hp : 0 ≤ ε*H^l := mul_nonneg hε.le (pow_nonneg hH0 _)
+      dsimp [C]
+      linarith
+  have h1 : A1 ≤ A := (le_max_left _ _).trans (le_max_right _ _)
+  have h2 : A2 ≤ A := (le_max_left _ _).trans ((le_max_right _ _).trans (le_max_right _ _))
+  have h3 : A3 ≤ A := (le_max_right _ _).trans ((le_max_right _ _).trans (le_max_right _ _))
+  refine ⟨C,C,hC,hC,fun H hH ↦ ?_⟩
+  have hp : 0 ≤ H^(l-1) := pow_nonneg (le_trans zero_le_one hH) _
+  exact ⟨(mul_le_mul_of_nonneg_right h1 hp).trans (hbound H hH),
+    (mul_le_mul_of_nonneg_right h2 hp).trans (hbound H hH),
+    (mul_le_mul_of_nonneg_right h3 hp).trans (hbound H hH)⟩'''

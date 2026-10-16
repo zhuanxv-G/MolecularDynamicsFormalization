@@ -1,0 +1,37 @@
+{
+  "evidence": "source_pages/p262.png; source_pages/p263.png; visual check 2026-10-16",
+  "items": [
+    {
+      "key": "ScalarForward",
+      "fields": {
+        "label": null,
+        "statement_latex": "In the case at hand the adjoint is\n\\[\\mathcal L^*\\rho=-(a(x)\\rho)_x+\\tfrac12(b^2(x)\\rho)_{xx},\\]\nwhich we shall refer to as the Kolmogorov operator."
+      },
+      "reason": "原页无编号；(6.39)属于后页多维SDE，不是此标量伴随算子。",
+      "before": {
+        "label": "(6.39)",
+        "statement_latex": "As this holds for any function $\\phi$ in the appropriate space, we may obtain an equation for the time evolution of $\\rho$:\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\frac\\partial{\\partial x}(a(x)\\rho)+\\frac12\\frac{\\partial^2}{\\partial x^2}(b^2(x)\\rho).\\tag{6.39}\\]"
+      }
+    },
+    {
+      "key": "PolynomialSmooth",
+      "fields": {
+        "statement_latex": "This condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future purposes we define the space of functions which are $C^\\infty$ smooth and satisfy the polynomial growth restriction by $C_P^\\infty$:\n\\[C_P^\\infty\\stackrel{\\mathrm{def}}=\\{\\phi\\in C^\\infty\\mid\\exists r\\in\\mathbb N:\\phi(x)=O(|x|^r),\\ x\\to\\pm\\infty\\}.\\]"
+      },
+      "reason": "按原PDF逐字恢复引文，原草稿的For future reference不在原页。",
+      "before": {
+        "statement_latex": "For future reference we define the space of functions which are $C^\\infty$ smooth and satisfy the polynomial growth restriction by $C_P^\\infty$:\n\\[C_P^\\infty=\\{\\phi\\in C^\\infty\\mid\\exists r\\in\\mathbb N:\\phi(x)=O(|x|^r),\\ x\\to\\pm\\infty\\}.\\]"
+      }
+    },
+    {
+      "key": "FPDiffusionPrinted",
+      "fields": {
+        "statement_latex": "With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho)_{xx}dx.\\]"
+      },
+      "reason": "保留原书错误负号；恢复原页引导句，不用转述替代原引文。",
+      "before": {
+        "statement_latex": "Using two integrations by parts gives\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho(x,t))_{xx}dx.\\]"
+      }
+    }
+  ]
+}

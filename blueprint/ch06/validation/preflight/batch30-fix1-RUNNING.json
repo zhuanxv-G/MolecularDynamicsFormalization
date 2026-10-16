@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint\\ch06\\validation\\preflight\\batch30-fix1.lean"
+  ],
+  "input_sha256": "fa57b0be032cf4a028adee9768435a34d4227c7582f6f10e033ebf176054bafd",
+  "parent_pid": 24844,
+  "parent_create_time": 1792159417.336052,
+  "compiler_pid": 26836,
+  "compiler_create_time": 1792159418.24525,
+  "started_at": "2026-10-16T22:03:38.250942",
+  "status": "completed",
+  "exit_code": 0,
+  "completed_at": "2026-10-16T22:09:40.769709"
+}

@@ -32,3 +32,8 @@ blueprint/ch01/mathcopilot_results/integration20261011/** -text whitespace=cr-at
 blueprint/ch01/mathcopilot_results/review.json -text whitespace=cr-at-eol,-trailing-space
 blueprint/ch01/website_audit.json -text whitespace=cr-at-eol,-trailing-space
 blueprint/ch01/processed_returns.json -text whitespace=cr-at-eol,-trailing-space
+
+# Preserve exact Chapter 6 source, audit, packet and compiler evidence bytes.
+blueprint/ch06/** -text whitespace=cr-at-eol,-trailing-space
+Blueprint/Ch06.lean -text whitespace=cr-at-eol
+docs/review/CH06_BLUEPRINT.zh-CN.md -text whitespace=cr-at-eol,-trailing-space

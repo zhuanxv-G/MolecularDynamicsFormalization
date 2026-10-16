@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro a ρ φ ha hρ hφ hc\n  have hg : ContDiff ℝ 1 (fun x ↦ a x*ρ x) := ha.mul hρ\n  have hi1 : Integrable (fun x ↦ (a x*ρ x)*deriv φ x) :=\n    (hg.continuous.mul hφ.continuous_deriv_one).integrable_of_hasCompactSupport hc.deriv.mul_left\n  have hi2 : Integrable (fun x ↦ deriv (fun z ↦ a z*ρ z) x*φ x) :=\n    (hg.continuous_deriv_one.mul hφ.continuous).integrable_of_hasCompactSupport hc.mul_left\n  have hi3 : Integrable (fun x ↦ (a x*ρ x)*φ x) :=\n    (hg.continuous.mul hφ.continuous).integrable_of_hasCompactSupport hc.mul_left\n  have he := MeasureTheory.integral_mul_deriv_eq_deriv_mul_of_integrable\n    (u := fun x ↦ a x*ρ x) (v := φ)\n    (fun x _ ↦ (hg.differentiable_one x).hasDerivAt)\n    (fun x _ ↦ (hφ.differentiable_one x).hasDerivAt) hi1 hi2 hi3\n  simpa only [Pi.mul_apply, mul_comm, mul_left_comm, mul_assoc, mul_neg, integral_neg] using he",
+    "source": "blueprint/ch06/validation/short_search/route-5acf7a3cb19e25f6a904.lean",
+    "log": "blueprint/ch06/validation/short_search/route-5acf7a3cb19e25f6a904.log",
+    "source_sha256": "516c0a61841ce73525131dc462c039673c0f13842ea85fa44f64c862dc6b7aa9",
+    "log_sha256": "55d3a4f08c533f0e2d2415965aaa11a9378472a03935f3c064e1344ca2da532f"
+  }
+]

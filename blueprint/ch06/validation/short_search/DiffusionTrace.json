@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n r B H\n  rw [Matrix.trace_mul_cycle B.transpose H B, Matrix.trace_mul_cycle B B.transpose H]\n  simp only [Matrix.trace, Matrix.diag, Matrix.mul_apply, Matrix.transpose_apply,\n    Finset.mul_sum, Finset.sum_mul]\n  apply Finset.sum_congr rfl\n  intro i hi\n  rw [Finset.sum_comm]\n  apply Finset.sum_congr rfl\n  intro j hj\n  apply Finset.sum_congr rfl\n  intro k hk\n  ring",
+    "source": "blueprint/ch06/validation/short_search/route-00227e1c5a6a696ca1c5.lean",
+    "log": "blueprint/ch06/validation/short_search/route-00227e1c5a6a696ca1c5.log",
+    "source_sha256": "618ec91ead550b7ee7d2b1f95ef5ce5d81119829632f51aed984b0e3eee986d7",
+    "log_sha256": "b400fa3dadb2164be584c7e1bb4469566d2004df64055f11b932a775b5d3b978"
+  }
+]
