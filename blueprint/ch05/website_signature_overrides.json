@@ -1,0 +1,15 @@
+{
+  "MD-5.1-FlowFieldTransport": {
+    "code": "theorem flowFieldTransport :\n  ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ,\n  MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) → ∀ t z,\n    (fderiv ℝ (Φ t) z) (f z)=f (Φ t z) := by\n  sorry\n\ntheorem flowFieldTransport_observable (n : ℕ)\n    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (_hf : MolecularDynamics.Chapter05Review.flow f Φ)\n    (_hΦ : ContDiff ℝ 2 (Function.uncurry Φ))\n    (g : MolecularDynamics.Chapter05Review.E n → ℝ) (_hg : ContDiff ℝ 1 g) (t : ℝ)\n    (z : MolecularDynamics.Chapter05Review.E n) :\n    MolecularDynamics.Chapter05Review.lie f (MolecularDynamics.Chapter05Review.pullback Φ g t) z=\n      (fderiv ℝ g (Φ t z)) ((fderiv ℝ (Φ t) z) (f z)) ∧\n    (fderiv ℝ g (Φ t z)) ((fderiv ℝ (Φ t) z) (f z))=\n      (fderiv ℝ g (Φ t z)) (f (Φ t z)) ∧\n    MolecularDynamics.Chapter05Review.lie f (MolecularDynamics.Chapter05Review.pullback Φ g t) z=\n      MolecularDynamics.Chapter05Review.lie f g (Φ t z) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA]实际自治流群律、联合C²光滑；本条保存中间输运恒等式DFt(z)f(z)=f(Ft(z))，完整PDE另条。",
+      "[EXTRA] 补可观测量g、链式中间式及完整Lie拉回输运等式，保留原向量场输运引理。联合C²与g为C¹标为充分资格。"
+    ]
+  },
+  "MD-5.1-SolutionOperator": {
+    "code": "def solutionOperator {n : ℕ}\n    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (_hf : MolecularDynamics.Chapter05Review.flow f Φ) (t : ℝ)\n    (g : MolecularDynamics.Chapter05Review.E n → ℝ) :=\n  MolecularDynamics.Chapter05Review.pullback Φ g t\n\ntheorem solutionOperator_initial {n : ℕ}\n    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (hf : MolecularDynamics.Chapter05Review.flow f Φ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) :\n    solutionOperator f Φ hf 0 g=g := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 主定义加入实际自治流资格，补G₀g=g接口；e^(tL)作为该实际流拉回的记号，不构造无界算子级数。"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT01",
+  "section": "5.1",
+  "source_ids": [
+    "MD-5.1-CoordinateLie",
+    "MD-5.1-FlowFieldTransport",
+    "MD-5.1-LiePullbackCommutes",
+    "MD-5.1-SolutionOperator"
+  ],
+  "reaudit_ids": [
+    "MD-5.1-FlowFieldTransport",
+    "MD-5.1-SolutionOperator",
+    "MD-5.1-CoordinateLie",
+    "MD-5.1-LiePullbackCommutes"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286",
+  "lean_sha256": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+  "source_sha256": "821d42d5ede245528a8aa9f16687479d9aaa662af9946774fd2abe80b41929c7",
+  "pages": [
+    201,
+    202
+  ],
+  "prior_proof_blocks": {
+    "MD-5.1-FlowFieldTransport": "theorem flowFieldTransport :\n  ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ,\n  MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) → ∀ t z,\n    (fderiv ℝ (Φ t) z) (f z)=f (Φ t z) := by\n  sorry",
+    "MD-5.1-SolutionOperator": "def solutionOperator {X : Type*} (Φ : ℝ → X → X) (t : ℝ) (g : X → ℝ) := MolecularDynamics.Chapter05Review.pullback Φ g t"
+  }
+}

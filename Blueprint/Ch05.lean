@@ -44,11 +44,27 @@ def flow {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynam
 def pullback {X : Type*} (Φ : ℝ → X → X) (g : X → ℝ) (t : ℝ) (z : X) := g (Φ t z)
 
 /-- source_id: MD-5.1-FlowFieldTransport · unnumbered_claim · §5.1 · 印刷p.181 / PDFp.202
-[EXTRA] [EXTRA]实际自治流群律、联合C²光滑；本条保存中间输运恒等式DFt(z)f(z)=f(Ft(z))，完整PDE另条。 -/
+[EXTRA] [EXTRA]实际自治流群律、联合C²光滑；本条保存中间输运恒等式DFt(z)f(z)=f(Ft(z))，完整PDE另条。 
+[EXTRA] 补可观测量g、链式中间式及完整Lie拉回输运等式，保留原向量场输运引理。联合C²与g为C¹标为充分资格。 -/
 theorem flowFieldTransport :
   ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ,
   MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) → ∀ t z,
     (fderiv ℝ (Φ t) z) (f z)=f (Φ t z) := by
+  sorry
+
+theorem flowFieldTransport_observable (n : ℕ)
+    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (_hf : MolecularDynamics.Chapter05Review.flow f Φ)
+    (_hΦ : ContDiff ℝ 2 (Function.uncurry Φ))
+    (g : MolecularDynamics.Chapter05Review.E n → ℝ) (_hg : ContDiff ℝ 1 g) (t : ℝ)
+    (z : MolecularDynamics.Chapter05Review.E n) :
+    MolecularDynamics.Chapter05Review.lie f (MolecularDynamics.Chapter05Review.pullback Φ g t) z=
+      (fderiv ℝ g (Φ t z)) ((fderiv ℝ (Φ t) z) (f z)) ∧
+    (fderiv ℝ g (Φ t z)) ((fderiv ℝ (Φ t) z) (f z))=
+      (fderiv ℝ g (Φ t z)) (f (Φ t z)) ∧
+    MolecularDynamics.Chapter05Review.lie f (MolecularDynamics.Chapter05Review.pullback Φ g t) z=
+      MolecularDynamics.Chapter05Review.lie f g (Φ t z) := by
   sorry
 
 /-- source_id: MD-5.1-PullbackPDE · unnumbered_claim · §5.1 · 印刷p.181 / PDFp.202
@@ -88,8 +104,21 @@ theorem coordinatePullback {n : ℕ} (Φ : ℝ → MolecularDynamics.Chapter05Re
     MolecularDynamics.Chapter05Review.pullback Φ (fun x => x i) t z=Φ t z i := by
   apply MolecularDynamics.Chapter05Review.coordinatePullback_proved <;> assumption
 
-/-- source_id: MD-5.1-SolutionOperator · definition · §5.1 · 印刷p.181 / PDFp.202 -/
-def solutionOperator {X : Type*} (Φ : ℝ → X → X) (t : ℝ) (g : X → ℝ) := MolecularDynamics.Chapter05Review.pullback Φ g t
+/-- source_id: MD-5.1-SolutionOperator · definition · §5.1 · 印刷p.181 / PDFp.202 
+[EXTRA] 主定义加入实际自治流资格，补G₀g=g接口；e^(tL)作为该实际流拉回的记号，不构造无界算子级数。 -/
+def solutionOperator {n : ℕ}
+    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (_hf : MolecularDynamics.Chapter05Review.flow f Φ) (t : ℝ)
+    (g : MolecularDynamics.Chapter05Review.E n → ℝ) :=
+  MolecularDynamics.Chapter05Review.pullback Φ g t
+
+theorem solutionOperator_initial {n : ℕ}
+    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (hf : MolecularDynamics.Chapter05Review.flow f Φ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) :
+    solutionOperator f Φ hf 0 g=g := by
+  sorry
 
 /-- source_id: MD-5.1-CoordinateLie · unnumbered_claim · §5.1 · 印刷p.181 / PDFp.202 -/
 theorem coordinateLie : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (z : MolecularDynamics.Chapter05Review.E n) (i : Fin n),
@@ -1861,3 +1890,190 @@ theorem symplecticWeakStationary : ∀ h : ℝ,|h| < 2 →
   sorry
 
 end MD.Ch05
+
+/- BEGIN WEBSITE REPAIR AXIOMS -/
+#print axioms MD.Ch05.lie
+#print axioms MD.Ch05.trajectoryChain
+#print axioms MD.Ch05.flow
+#print axioms MD.Ch05.pullback
+#print axioms MD.Ch05.flowFieldTransport
+#print axioms MD.Ch05.flowFieldTransport_observable
+#print axioms MD.Ch05.pullbackPDE
+#print axioms MD.Ch05.steadyFirstIntegral
+#print axioms MD.Ch05.coordinatePullback
+#print axioms MD.Ch05.solutionOperator
+#print axioms MD.Ch05.solutionOperator_initial
+#print axioms MD.Ch05.coordinateLie
+#print axioms MD.Ch05.liePullbackCommutes
+#print axioms MD.Ch05.densityOn
+#print axioms MD.Ch05.probabilityDensityOn
+#print axioms MD.Ch05.densityOnNormalization
+#print axioms MD.Ch05.densityProbability
+#print axioms MD.Ch05.densityMeasureOn
+#print axioms MD.Ch05.lebesgueClosure
+#print axioms MD.Ch05.borelSigma
+#print axioms MD.Ch05.densityProbabilityBounds
+#print axioms MD.Ch05.domainL2Norm
+#print axioms MD.Ch05.domainL2Inner
+#print axioms MD.Ch05.domainL2NormSquare
+#print axioms MD.Ch05.domainL2Complete
+#print axioms MD.Ch05.domainL2SymmetricBilinear
+#print axioms MD.Ch05.compactL2
+#print axioms MD.Ch05.densityAverageOn
+#print axioms MD.Ch05.closedSupport
+#print axioms MD.Ch05.gaussianL2
+#print axioms MD.Ch05.finiteJumpL2
+#print axioms MD.Ch05.normalizedAverageFormula
+#print axioms MD.Ch05.massFraction
+#print axioms MD.Ch05.massDerivative
+#print axioms MD.Ch05.outwardNormalFor
+#print axioms MD.Ch05.generalFluxBalance
+#print axioms MD.Ch05.divergence
+#print axioms MD.Ch05.liouvillian
+#print axioms MD.Ch05.liouvilleEquation
+#print axioms MD.Ch05.liouvilleProduct
+#print axioms MD.Ch05.lieCoordinates
+#print axioms MD.Ch05.divergenceCoordinates
+#print axioms MD.Ch05.liouvilleProductCoordinates
+#print axioms MD.Ch05.rectangularDomain
+#print axioms MD.Ch05.faceFlux
+#print axioms MD.Ch05.fluxBalance
+#print axioms MD.Ch05.boxBoundaryTerm
+#print axioms MD.Ch05.truncatedIntegrationByParts
+#print axioms MD.Ch05.rapidAdjoint
+#print axioms MD.Ch05.liouvillianAdjoint
+#print axioms MD.Ch05.measurePropagator
+#print axioms MD.Ch05.hamiltonianDivergence
+#print axioms MD.Ch05.hamiltonianSkewExpression
+#print axioms MD.Ch05.hamiltonianDensityPropagation
+#print axioms MD.Ch05.mechanicalLiouvillian
+#print axioms MD.Ch05.mechanicalLiouvillianIdentity
+#print axioms MD.Ch05.testSpace
+#print axioms MD.Ch05.schwartzTestSpace
+#print axioms MD.Ch05.generalizedFunction
+#print axioms MD.Ch05.schwartzFunctional
+#print axioms MD.Ch05.regularDistribution
+#print axioms MD.Ch05.regularDistributionLinearity
+#print axioms MD.Ch05.diracAction
+#print axioms MD.Ch05.diracMeasure
+#print axioms MD.Ch05.diracApproximation
+#print axioms MD.Ch05.gaussianDelta
+#print axioms MD.Ch05.diracEvaluates
+#print axioms MD.Ch05.gaussianDeltaProbability
+#print axioms MD.Ch05.gaussianDeltaWeak
+#print axioms MD.Ch05.weakStationary
+#print axioms MD.Ch05.ensembleAverageOn
+#print axioms MD.Ch05.convergenceHeuristic
+#print axioms MD.Ch05.hamiltonianEnergyIntegral
+#print axioms MD.Ch05.energyDensityInvariant
+#print axioms MD.Ch05.shellWeight
+#print axioms MD.Ch05.shellPartition
+#print axioms MD.Ch05.shellDensity
+#print axioms MD.Ch05.energySurface
+#print axioms MD.Ch05.surfaceMeasure
+#print axioms MD.Ch05.microRaw
+#print axioms MD.Ch05.shellWeakPrinted
+#print axioms MD.Ch05.shellWeakLimit
+#print axioms MD.Ch05.surfaceAreaFormula
+#print axioms MD.Ch05.normalField
+#print axioms MD.Ch05.normalEnergyTaylor
+#print axioms MD.Ch05.normalInverseTaylor
+#print axioms MD.Ch05.patchShellVolume
+#print axioms MD.Ch05.shellVolumeLimit
+#print axioms MD.Ch05.microRawInvariant
+#print axioms MD.Ch05.microInvariant
+#print axioms MD.Ch05.microPartition
+#print axioms MD.Ch05.shellWeakPairing
+#print axioms MD.Ch05.harmonicEnergy
+#print axioms MD.Ch05.harmonicQuadraturePrinted
+#print axioms MD.Ch05.harmonicPartition
+#print axioms MD.Ch05.idealGasEnergy
+#print axioms MD.Ch05.idealGasPositionDomain
+#print axioms MD.Ch05.idealGasPartition
+#print axioms MD.Ch05.microMeasure
+#print axioms MD.Ch05.microProbability
+#print axioms MD.Ch05.lowerDimensionNull
+#print axioms MD.Ch05.microAverage
+#print axioms MD.Ch05.ambientLowerDimensionNull
+#print axioms MD.Ch05.timeAverage
+#print axioms MD.Ch05.hasTimeAverage
+#print axioms MD.Ch05.conservedAverage
+#print axioms MD.Ch05.conservedInfiniteAverage
+#print axioms MD.Ch05.doubleWellEnergy
+#print axioms MD.Ch05.doubleWellCoercivity
+#print axioms MD.Ch05.doubleWellDisconnected
+#print axioms MD.Ch05.doubleWellBasin
+#print axioms MD.Ch05.uniformMicroErgodic
+#print axioms MD.Ch05.microErgodic
+#print axioms MD.Ch05.flowInvariant
+#print axioms MD.Ch05.setErgodic
+#print axioms MD.Ch05.invariantIndicator
+#print axioms MD.Ch05.invariantIndicatorAverage
+#print axioms MD.Ch05.ergodicTimeAverage
+#print axioms MD.Ch05.nonergodicSet
+#print axioms MD.Ch05.harmonicFlow
+#print axioms MD.Ch05.harmonicErgodic
+#print axioms MD.Ch05.twoOscillatorEnergy
+#print axioms MD.Ch05.twoOscillatorFlow
+#print axioms MD.Ch05.twoOscillatorTori
+#print axioms MD.Ch05.weakMixing
+#print axioms MD.Ch05.kam
+#print axioms MD.Ch05.anisotropicPotential
+#print axioms MD.Ch05.anisotropicAxisPrinted
+#print axioms MD.Ch05.twoOscillatorEnergyDecomposition
+#print axioms MD.Ch05.curveImageDimension
+#print axioms MD.Ch05.pendulumPotential
+#print axioms MD.Ch05.pendulumRegionPrinted
+#print axioms MD.Ch05.anisotropicInitialCurve
+#print axioms MD.Ch05.anisotropicInitialEnergy
+#print axioms MD.Ch05.initialSegmentPrinted
+#print axioms MD.Ch05.circleInitialPoints
+#print axioms MD.Ch05.circleInitialLaw
+#print axioms MD.Ch05.circleInitialEnergy
+#print axioms MD.Ch05.correlation
+#print axioms MD.Ch05.correlationPullback
+#print axioms MD.Ch05.correlationTimePrinted
+#print axioms MD.Ch05.correlationTime
+#print axioms MD.Ch05.velocityCorrelation
+#print axioms MD.Ch05.positionTransition
+#print axioms MD.Ch05.transitionProbability
+#print axioms MD.Ch05.measureDuality
+#print axioms MD.Ch05.mixingMemoryLoss
+#print axioms MD.Ch05.mixingCorrelationPrinted
+#print axioms MD.Ch05.mixingCorrelation
+#print axioms MD.Ch05.centeredCorrelation
+#print axioms MD.Ch05.discreteAveragePrinted
+#print axioms MD.Ch05.discreteAverage
+#print axioms MD.Ch05.discretePropagator
+#print axioms MD.Ch05.modifiedField
+#print axioms MD.Ch05.modifiedLiouvillian
+#print axioms MD.Ch05.forwardEuler
+#print axioms MD.Ch05.forwardComponentsPrinted
+#print axioms MD.Ch05.forwardEnergyGrowth
+#print axioms MD.Ch05.eulerInvariant
+#print axioms MD.Ch05.backwardEuler
+#print axioms MD.Ch05.backwardEnergyDecay
+#print axioms MD.Ch05.backwardEulerLimit
+#print axioms MD.Ch05.symplecticEuler
+#print axioms MD.Ch05.symplecticEulerShadow
+#print axioms MD.Ch05.symplecticEulerEllipse
+#print axioms MD.Ch05.symplecticEulerDensity
+#print axioms MD.Ch05.verletShadow2
+#print axioms MD.Ch05.theorem51
+#print axioms MD.Ch05.perturbationDisplacement
+#print axioms MD.Ch05.perturbationCorrection
+#print axioms MD.Ch05.denominatorBound
+#print axioms MD.Ch05.smoothDenominatorBound
+#print axioms MD.Ch05.zeroPerturbation
+#print axioms MD.Ch05.gradientTransverse
+#print axioms MD.Ch05.dynamicalCorrection
+#print axioms MD.Ch05.forwardNormDivergence
+#print axioms MD.Ch05.weakStationaryModel
+#print axioms MD.Ch05.weakAttractor
+#print axioms MD.Ch05.eulerLogField
+#print axioms MD.Ch05.eulerLogFlow
+#print axioms MD.Ch05.eulerLogCorrespondence
+#print axioms MD.Ch05.forwardWeakStationary
+#print axioms MD.Ch05.backwardWeakStationary
+#print axioms MD.Ch05.symplecticWeakStationary
+/- END WEBSITE REPAIR AXIOMS -/

@@ -1,0 +1,45 @@
+[
+  {
+    "chapter": 5,
+    "eaudit": "EAUDIT01",
+    "section": "5.1",
+    "source_ids": [
+      "MD-5.1-CoordinateLie",
+      "MD-5.1-FlowFieldTransport",
+      "MD-5.1-LiePullbackCommutes",
+      "MD-5.1-SolutionOperator"
+    ],
+    "reaudit_ids": [
+      "MD-5.1-FlowFieldTransport",
+      "MD-5.1-SolutionOperator",
+      "MD-5.1-CoordinateLie",
+      "MD-5.1-LiePullbackCommutes"
+    ],
+    "human_ids": [],
+    "lean_sha256": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+    "source_sha256": "821d42d5ede245528a8aa9f16687479d9aaa662af9946774fd2abe80b41929c7",
+    "pages": [
+      201,
+      202
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch05.olean",
+        "Blueprint/Ch05.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+      "log_sha256": "5f58bf6d6cb49955c713db96bc3a692187a51a6d1554678b5cd2309377150b03"
+    },
+    "axiom_decl_count": 6,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT01/INDEX.md"
+  }
+]

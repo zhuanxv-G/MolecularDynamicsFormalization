@@ -275,7 +275,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH01_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT01",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "e0c7c2f5b967376ef9a3ed326f34dd0a52983d400ca10d2e9883e5f8ed738c9e",
+        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+        "blueprint/ch05/ch05_source.json": "821d42d5ede245528a8aa9f16687479d9aaa662af9946774fd2abe80b41929c7"
+      }
+    }
   },
   {
     "source_id": "MD-5.1-PullbackPDE",
@@ -492,7 +504,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH02_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT01",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "e0c7c2f5b967376ef9a3ed326f34dd0a52983d400ca10d2e9883e5f8ed738c9e",
+        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+        "blueprint/ch05/ch05_source.json": "821d42d5ede245528a8aa9f16687479d9aaa662af9946774fd2abe80b41929c7"
+      }
+    }
   },
   {
     "source_id": "MD-5.1-CoordinateLie",
@@ -573,7 +597,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH02_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT01",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "e0c7c2f5b967376ef9a3ed326f34dd0a52983d400ca10d2e9883e5f8ed738c9e",
+        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+        "blueprint/ch05/ch05_source.json": "821d42d5ede245528a8aa9f16687479d9aaa662af9946774fd2abe80b41929c7"
+      }
+    }
   },
   {
     "source_id": "MD-5.1-LiePullbackCommutes",
@@ -657,7 +693,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH02_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT01",
+    "repair": {
+      "eaudit": "EAUDIT01",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT01.md": "e0c7c2f5b967376ef9a3ed326f34dd0a52983d400ca10d2e9883e5f8ed738c9e",
+        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+        "blueprint/ch05/ch05_source.json": "821d42d5ede245528a8aa9f16687479d9aaa662af9946774fd2abe80b41929c7"
+      }
+    }
   },
   {
     "source_id": "MD-5.2.1-DensityOn",

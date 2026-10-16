@@ -1,0 +1,74 @@
+{
+  "eaudit": "EAUDIT01",
+  "source_id": "MD-5.1-FlowFieldTransport",
+  "input_sha256": {
+    "BATCH_EAUDIT01.md": "e0c7c2f5b967376ef9a3ed326f34dd0a52983d400ca10d2e9883e5f8ed738c9e",
+    "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+    "blueprint/ch05/ch05_source.json": "821d42d5ede245528a8aa9f16687479d9aaa662af9946774fd2abe80b41929c7",
+    "EAUDIT01a_materials": "a2cf3c8cffbee1fd2ca5062edb9ee648a35a2a4f2763ad5b8832bf56f4f23596",
+    "EAUDIT01a_PAGES.pdf": "f5529345212c38244e3d176827f6c91bd6cd972b7b3078df2858c3b324606022"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    202
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "325cb63d03e35ecc66bfc16490ba5fb26a60e3c91bc4e1067594c0d2dbca5ba6",
+  "source_block_sha256": "8b6554f9f382dd465f54b1d50d7ba4ac7a89c389b00ecd688cb49ba57ce857ae",
+  "source_declarations": [
+    "flowFieldTransport",
+    "flowFieldTransport_observable"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.flow",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "cd47fe07b629a7f5aa0bdc126758e9528093d227aaebc2097a541fd177a6a961"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.lie",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "6535744b913bb6f850c290344fb7d4a36f3647f43500d689c3a8228a92a2f8a8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.pullback",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "01eb19a48ae4e19a25031fc06f858585c16c6871cb882b49bf8ae9cc9bcb8810"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "flow",
+      "file_sha256": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+      "excerpt_sha256": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "lie",
+      "file_sha256": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+      "excerpt_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "pullback",
+      "file_sha256": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+      "excerpt_sha256": "01eb19a48ae4e19a25031fc06f858585c16c6871cb882b49bf8ae9cc9bcb8810"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT01_review.json",
+  "total_task_bytes": 97194
+}

@@ -11,13 +11,13 @@
 | MD-5.1-TrajectoryChain | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
 | MD-5.1-ActualFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.1-ObservablePullback | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.1-FlowFieldTransport | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/FlowFieldTransport.json。 |
+| MD-5.1-FlowFieldTransport | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT01 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/FlowFieldTransport.json。 |
 | MD-5.1-PullbackPDE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证，不建设一般输运PDE适定性理论。 |
 | MD-5.1-SteadyFirstIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
 | MD-5.1-CoordinatePullback | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
-| MD-5.1-SolutionOperator | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.1-CoordinateLie | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.1-LiePullbackCommutes | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证。 |
+| MD-5.1-SolutionOperator | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT01 | definition / self-contained |
+| MD-5.1-CoordinateLie | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT01 | local_proof / self-contained |
+| MD-5.1-LiePullbackCommutes | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT01 | placeholder / incomplete；所需FlowFieldTransport短桥已失败3条路线并停止；本条保留sorry，不以含sorryAx的引理伪造已证。 |
 | MD-5.2.1-DensityOn | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.2.1-ProbabilityDensityOn | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.2.1-DensityOnNormalization | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
@@ -341,3 +341,5 @@
 - p.179–181/PDF200–202：引言的宏观/微观建模动机、参考教材推荐，以及iL与量子记号的物理解释为定性背景；Lie导数、流、PDE、第一积分和坐标投影的数学内容保留。
 - p.200–203/PDF221–224：Examples 5.5–5.6的轨迹图、100 million steps、可达域数值边界/视觉混合均为有限模拟观察；保留其动力学背景及KAM引用，不升级为精确遍历/混合定理。
 - p.207–208/PDF228–229：Example5.7关于trimer轨道、100000步、两个步长的填色与边界overspill是数值观察；不提升为已证明混沌/遍历或精确modified方程。
+
+EAUDIT01 §5.1：4条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。

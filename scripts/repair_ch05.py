@@ -183,11 +183,12 @@ theorem microAverage_surface_and_delta_limit (n : ℕ) (_hn : 0 < n)
 theorem doubleWellBasin_average_witness (c : ℝ) (_hc : c ∈ Ioo (0 : ℝ) 1)
     (z : ℝ → MolecularDynamics.Chapter05Review.E 2) (_hz : Continuous z)
     (_hE : ∀ t,doubleWellEnergy (z t)=c) :
-    let g := fun x : MolecularDynamics.Chapter05Review.E 2 ↦ if 0 < x 0 then (1 : ℝ) else 0
-    MolecularDynamics.Chapter05Review.microAverage doubleWellEnergy c g=1/2 ∧
-    MolecularDynamics.Chapter05Review.hasTimeAverage z g (g (z 0)) ∧
-    g (z 0) ≠ MolecularDynamics.Chapter05Review.microAverage doubleWellEnergy c g := by
-  sorry''','B','保留左右阱不变性，补可测有界右阱indicator的明确时间平均与对称真实微正则空间平均1/2不等见证；不预设最终平均不等。此处观测量明确为indicator（原句many quantities）。')
+    ∃ g : MolecularDynamics.Chapter05Review.E 2 → ℝ,ContDiff ℝ ∞ g ∧ HasCompactSupport g ∧
+      (∀ x,doubleWellEnergy x=c → g x=if 0 < x 0 then (1 : ℝ) else 0) ∧
+      MolecularDynamics.Chapter05Review.microAverage doubleWellEnergy c g=1/2 ∧
+      MolecularDynamics.Chapter05Review.hasTimeAverage z g (g (z 0)) ∧
+      g (z 0) ≠ MolecularDynamics.Chapter05Review.microAverage doubleWellEnergy c g := by
+  sorry''','B','保留左右阱不变性，补全局C∞紧支撑观测量的明确见证：它在两个分离能量分支上分别为0/1，时间平均与真实对称微正则空间平均1/2不等；不把平均不等作前提，也不把不连续全局indicator冒充原光滑观测量。')
         pages=[216,217,218]
     elif section=='5.4.1':
         qualifications='''
@@ -250,7 +251,12 @@ theorem nonergodicSet_average_witness (n : ℕ)
   sorry''','B','补中间概率不变集合内真实轨道保持、补集indicator无限平均零及空间平均非零的见证；可用于实际能量面概率流，不把不等式作假设。')
         scope('HarmonicFlow','仅原系统推导的辅助解析流；原遍历结论由MD-5.4.1-HarmonicErgodic承担，频率正及能量正按该定理。')
         scope('TwoOscillatorEnergy','仅两项分能量H₁/H₂定义；总能量分解由MD-5.4.1-TwoOscillatorEnergyDecomposition，分能量不变性由MD-5.4.1-TwoOscillatorTori承担。')
-        scope('TwoOscillatorFlow','仅实际两振子解析流辅助定义；两分能量保持由MD-5.4.1-TwoOscillatorTori的正共同能量层结论承担，退化层范围在EnergyDecomposition与待导师原句中明列。')
+        change('TwoOscillatorFlow',current('TwoOscillatorFlow')+'''
+
+theorem twoOscillatorFlow_invariants (Ω : Fin 2 → ℝ) (_hΩ : ∀ i,Ω i ≠ 0)
+    (z : MolecularDynamics.Chapter05Review.E 4) (t : ℝ) (i : Fin 2) :
+    twoOscillatorEnergy Ω i (twoOscillatorFlow Ω t z)=twoOscillatorEnergy Ω i z := by
+  sorry''','B','保留解析流并补任意初值（包括零分能量退化层）的两个真实分能量不变量，不再只依赖正共同层的Tori结论。原非零频率资格显式。')
         human[sid('TwoOscillatorTori')]='原句称整个正总能量面是正分能量二维环面之并，遗漏一个分能量为零的圆层；选项：导师确认补退化圆层/原点后重述／现条仅标正层特例并另列原印疑误。当前正层/稠密与非遍历签名保持。'
         scope('TwoOscillatorEnergyDecomposition','仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。')
         change('Mixing',current('Mixing').replace(' : Prop :=', ''' : Prop :=
@@ -369,7 +375,34 @@ theorem backwardEnergyDecay_spectrum (h : ℝ) (_hh : h ≠ 0) :
     1/Real.sqrt (1+h^2) < 1 := by
   sorry''','B','保留能量衰减已有证明，补两个完整复特征值及模严格小于1；迭代趋零由BackwardEulerLimit，实际模型由EulerLogCorrespondence/BackwardWeakStationary承担。',scope='能量衰减与复谱/模；全部离散迭代趋零由MD-5.6-BackwardEulerLimit，连续模型对应和稳态由MD-5.6-EulerLogCorrespondence/BackwardWeakStationary承担。')
         scope('BackwardEulerLimit','仅所有离散迭代趋零及任意初始概率弱趋Dirac；实际modified流一步对应由MD-5.6-EulerLogCorrespondence，概率弱稳态唯一及连续吸引由MD-5.6-BackwardWeakStationary承担。')
-        scope('SymplecticEulerShadow','仅一步二次不变量辅助恒等式；全部k及合法稳定区椭圆/零退化由MD-5.6-SymplecticEulerEllipse，连续能量场稳态由MD-5.6-SymplecticWeakStationary承担。')
+        change('SymplecticEulerShadow',current('SymplecticEulerShadow')+'''
+
+def symplecticEulerLogScale (h : ℝ) : ℝ :=
+  if h=0 then 1 else (2*Real.arcsin (h/2))/(h*Real.sqrt (1-h^2/4))
+
+def symplecticEulerModifiedHamiltonian (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : ℝ :=
+  symplecticEulerLogScale h*MolecularDynamics.Chapter05Review.shadowOscillator h z
+
+def symplecticEulerModifiedFlow (h t : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) :
+    MolecularDynamics.Chapter05Review.E 2 :=
+  let A : Matrix (Fin 2) (Fin 2) ℝ := symplecticEulerLogScale h • !![-h/2,1;-1,h/2]
+  WithLp.toLp 2 (NormedSpace.exp (t • A) *ᵥ WithLp.ofLp z)
+
+theorem symplecticEulerShadow_modified_model (h : ℝ) (_hh : |h| < 2) :
+    0 < symplecticEulerLogScale h ∧
+    (∀ z,symplecticEulerModifiedFlow h h z=MolecularDynamics.Chapter05Review.symplecticEuler h z) ∧
+    MolecularDynamics.Chapter05Review.flow
+      (fun z : MolecularDynamics.Chapter05Review.E 2 ↦ WithLp.toLp 2
+        ![(gradient (symplecticEulerModifiedHamiltonian h) z) 1,
+          -(gradient (symplecticEulerModifiedHamiltonian h) z) 0])
+      (symplecticEulerModifiedFlow h) := by
+  sorry
+
+theorem symplecticEulerShadow_modified_scale_order (R : ℝ) (_hR : 0 < R) :
+    ∃ C > 0,∃ δ > 0,δ < 2 ∧ ∀ h : ℝ,|h| < δ →
+      ∀ z : MolecularDynamics.Chapter05Review.E 2,‖z‖ ≤ R →
+        |symplecticEulerModifiedHamiltonian h z-MolecularDynamics.Chapter05Review.shadowOscillator h z| ≤ C*h^2 := by
+  sorry''','B','保留一步不变量证明，补稳定区内主对数Hamiltonian=c(h)·二次不变量、c>0、实际矩阵指数Hamiltonian流及其时间h恰为离散步，并给两能量有界域O(h²)比例差；全部k/椭圆由SymplecticEulerEllipse、弱稳态由SymplecticWeakStationary承担。新增模型是显式技术选择，不冒称唯一修正能量。',scope='一步二次不变量与实际主对数modified Hamiltonian/流对应及比例阶次；全部k和椭圆/零退化由MD-5.6-SymplecticEulerEllipse、连续概率稳态/非吸引由MD-5.6-SymplecticWeakStationary承担。')
         change('SymplecticEulerEllipse',current('SymplecticEulerEllipse')+'''
 
 theorem symplecticEulerEllipse_geometry (h : ℝ) (_hh : |h| < 2) :
@@ -379,6 +412,8 @@ theorem symplecticEulerEllipse_geometry (h : ℝ) (_hh : |h| < 2) :
         ↥(Metric.sphere (0 : MolecularDynamics.Chapter05Review.E 2) 1))) := by
   sorry''','B','保留正定/全部k保持证明，并补正能级椭圆拓扑及零能级单点退化；二次不变量作为modified Hamiltonian的显式固定选择，实际场/流资格见SymplecticWeakStationary，不声称唯一修正能量。')
         scope('SymplecticEulerDensity','仅离散映射的函数能量密度不变；连续modified能量场、概率弱稳态多样与非吸引由MD-5.6-SymplecticWeakStationary承担，原整段保留。')
+        code=current('SymplecticWeakStationary').replace('MolecularDynamics.Chapter05Review.shadowOscillator h','symplecticEulerModifiedHamiltonian h')
+        change('SymplecticWeakStationary',code,'B','弱稳态接口使用前条实际一步对应的主对数modified Hamiltonian及其梯度场；函数能量密度、多种概率稳态和非吸引结论齐全，不把未按时间缩放的不变量场冒充数值步的时间h模型。')
         scope('PerturbationCorrection','仅Theorem5.1右端两个平均组成的校正项定义；完整正则能量族平均误差估计由MD-5.6-Theorem51承担。')
         scope('DenominatorBound','仅紧能量面横截分母的正下界衍生引理；原光滑与横截资格及完整平均扰动公式由MD-5.6-Theorem51承担。')
         scope('SmoothDenominatorBound','仅C² H/连续w的横截分母下界一般化衍生引理；原光滑资格及完整公式由MD-5.6-Theorem51承担。')

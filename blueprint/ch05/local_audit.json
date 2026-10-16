@@ -141,17 +141,17 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.flowFieldTransport",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "e5231ca58f9dc6b3ba1d99969c090d9e5a139230cad45f4e3e93e80a96a7121a",
-      "block_sha256": "bad55183a9895a6b65ad5af4896756510e5678c24e148496498d05b398cad4de",
+      "block_sha256": "8b6554f9f382dd465f54b1d50d7ba4ac7a89c389b00ecd688cb49ba57ce857ae",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -178,7 +178,7 @@
         "blueprint/ch05/validation/short_search/route-a62427897b1bc14d6e97.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT01/axioms.log"
     },
     "MD-5.1-PullbackPDE": {
       "checked": true,
@@ -293,17 +293,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.solutionOperator",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "e2c6c1d6e6a46a560b295325352e0e12c173517d094d400cb0118249ea6afbde",
-      "block_sha256": "e2c6c1d6e6a46a560b295325352e0e12c173517d094d400cb0118249ea6afbde",
-      "direct_placeholder": false,
+      "signature_sha256": "c230ab6f90b77acafae84ffb156e2accc89e53470783dd18b9d2b09af4854382",
+      "block_sha256": "c230ab6f90b77acafae84ffb156e2accc89e53470783dd18b9d2b09af4854382",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -320,15 +321,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT01/axioms.log"
     },
     "MD-5.1-CoordinateLie": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.coordinateLie",
@@ -358,16 +359,16 @@
         "blueprint/ch05/validation/short_search/route-f1a939afe7f0f9c8af2f-CoordinateLie.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT01/axioms.log"
     },
     "MD-5.1-LiePullbackCommutes": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.liePullbackCommutes",
@@ -392,7 +393,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT01/axioms.log"
     },
     "MD-5.2.1-DensityOn": {
       "checked": true,
