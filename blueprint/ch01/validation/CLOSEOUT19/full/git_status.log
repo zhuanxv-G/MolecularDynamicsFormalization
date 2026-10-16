@@ -1,0 +1,101 @@
+ M AGENTS.md
+ M Blueprint/Ch01.lean
+ M blueprint/ch01/CheckAxioms.lean
+ M blueprint/ch01/NEEDS_HUMAN.md
+ M blueprint/ch01/PROGRESS.md
+ M blueprint/ch01/WEBSITE_SUMMARY.json
+ M blueprint/ch01/ch01_source.json
+ M blueprint/ch01/local_audit.json
+ M blueprint/ch01/website_audit.json
+ M blueprint/ch02/validation/EAUDIT01/finalize-run.log
+ M blueprint/ch03/validation/section37-commit.log
+ M blueprint/ch04/validation/section442-commit-retry.log
+ M blueprint/ch05/validation/section56-commit.log
+ M blueprint/ch06/PROGRESS.md
+ M blueprint/ch06/local_audit.json
+ M docs/handoff/LOCAL_PIPELINE.md
+ M docs/review/CH01_BLUEPRINT.zh-CN.md
+ M docs/review/CH06_BLUEPRINT.zh-CN.md
+?? blueprint/ch01/REPAIR_QUEUE.md
+?? blueprint/ch01/closeout/__pycache__/
+?? blueprint/ch01/closeout/add_context_errata.py
+?? blueprint/ch01/closeout/add_errata.py
+?? blueprint/ch01/closeout/delivery.py
+?? blueprint/ch01/closeout/repair_signatures.py
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT04/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT05/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT06/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT07/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT08/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT09/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT10/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT11/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT12/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT13/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT14/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT15/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT16/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT17/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT18/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT19/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT20/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT21/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT22/
+?? blueprint/ch01/mathcopilot_tasks/EAUDIT23/
+?? blueprint/ch01/validation/CLOSEOUT19/AXIOM_DECLARATIONS.json
+?? blueprint/ch01/validation/CLOSEOUT19/DECLARATION_COUNTS.json
+?? blueprint/ch01/validation/CLOSEOUT19/DECLARATION_STATUS.json
+?? blueprint/ch01/validation/CLOSEOUT19/ERRATA_RECORDS.json
+?? blueprint/ch01/validation/CLOSEOUT19/FROZEN_INPUTS.json
+?? blueprint/ch01/validation/CLOSEOUT19/HEARTBEAT_UPDATE.json
+?? blueprint/ch01/validation/CLOSEOUT19/LITERAL_SIGNATURE_PRESERVATION.json
+?? blueprint/ch01/validation/CLOSEOUT19/PENDING_SOURCE_IDS.json
+?? blueprint/ch01/validation/CLOSEOUT19/SIGNATURE_REPAIRS.json
+?? blueprint/ch01/validation/CLOSEOUT19/dual01-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT19/dual01.json
+?? blueprint/ch01/validation/CLOSEOUT19/dual02-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT19/dual02.json
+?? blueprint/ch01/validation/CLOSEOUT19/dual03-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT19/dual03.json
+?? blueprint/ch01/validation/CLOSEOUT19/dual04-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT19/dual04.json
+?? blueprint/ch01/validation/CLOSEOUT19/dual05-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT19/dual05.json
+?? blueprint/ch01/validation/CLOSEOUT19/final-single-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT19/final-single.json
+?? blueprint/ch01/validation/CLOSEOUT19/full/
+?? blueprint/ch01/validation/CLOSEOUT19/signatures01-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT19/signatures01.json
+?? blueprint/ch01/validation/CLOSEOUT19/source_pages/
+?? blueprint/ch02/validation/repair_20261014/
+?? blueprint/ch03/validation/EAUDIT01-full-RUNNING.json
+?? blueprint/ch03/validation/repair_20261014/
+?? blueprint/ch04/validation/repair_20261014/
+?? blueprint/ch05/validation/repair_20261014/
+?? blueprint/ch06/validation/PAUSE_CONFIRMED_20261016.json
+?? blueprint/ch06/validation/SECTION633_ACCEPTANCE_20261016.json
+?? blueprint/ch06/validation/preflight/batch30-RUNNING.json
+?? blueprint/ch06/validation/preflight/batch30.json
+?? blueprint/ch06/validation/preflight/batch30.lean
+?? blueprint/ch06/validation/section633-resume1/LOCAL_CHECK_REPORT.json
+?? docs/review/CH01_ERRATA.zh-CN.md
+?? docs/review/check-full06/
+?? output/
+?? scripts/__pycache__/
+?? scripts/ch06_section635.py
+?? scripts/ch06_section636.py
+?? scripts/ch06_section638.py
+?? scripts/ch06_section641.py
+?? scripts/ch06_section641b.py
+?? scripts/ch06_section642.py
+?? scripts/ch06_section643.py
+?? scripts/ch06_section643b.py
+?? scripts/ch06_section644.py
+?? scripts/ch06_section644b.py
+?? scripts/ch06_section644c.py
+?? scripts/ch06_section644d.py
+?? scripts/ch06_section644e.py
+?? scripts/ch06_section644f.py
+?? scripts/ch06_section645.py
+?? scripts/export_ch01_review_pdf.py
+?? tmp/

@@ -1,0 +1,4 @@
+# Current review inputs bind their exact bytes, including Windows newlines.
+EAUDIT0[4-9]/** -text whitespace=cr-at-eol,-trailing-space
+EAUDIT1[0-9]/** -text whitespace=cr-at-eol,-trailing-space
+EAUDIT2[0-3]/** -text whitespace=cr-at-eol,-trailing-space

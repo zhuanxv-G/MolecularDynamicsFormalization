@@ -8,6 +8,12 @@ def stage():
     candidates=subprocess.check_output(['git','ls-files','--modified','--others','--exclude-standard'],cwd=ROOT,text=True,encoding='utf-8').splitlines()
     exact={'AGENTS.md','Blueprint/Ch01.lean','docs/handoff/CURRENT_STATE.zh-CN.md','docs/handoff/WORK_LOG.zh-CN.md','docs/handoff/RESUME_PROMPT.zh-CN.md','docs/handoff/LEAN_HEARTBEAT_UPDATE.json','docs/handoff/LOCAL_PIPELINE.md','docs/review/CH01_BLUEPRINT.zh-CN.md','docs/review/CH01_ERRATA.zh-CN.md','docs/review/CH01_SUMMARY_FOR_MENTOR.zh-CN.md'}
     paths=sorted({canonical(x) for x in candidates if (x in exact or x.startswith('blueprint/ch01/')) and '__pycache__' not in x and not x.endswith('.pyc') and (ROOT/x).is_file()})
+    # Logs are intentionally ignored globally.  Explicit evidence and manifests
+    # must still be committed, and restaged after scoped byte-preserving attributes.
+    explicit=[p.relative_to(ROOT).as_posix() for p in (ROOT/'blueprint/ch01/validation/CLOSEOUT19').rglob('*') if p.is_file()]
+    for n in range(4,24):explicit += [p.relative_to(ROOT).as_posix() for p in (ROOT/f'blueprint/ch01/mathcopilot_tasks/EAUDIT{n:02}').rglob('*') if p.is_file()]
+    explicit += ['blueprint/ch01/mathcopilot_results/eaudit/EAUDIT02_result.json','blueprint/ch01/mathcopilot_results/eaudit/EAUDIT03_result.json']
+    paths=sorted(set(paths)|set(explicit))
     assert all('\n' not in x and '\0' not in x for x in paths)
     tracked=subprocess.check_output(['git','ls-files','--stage'],cwd=ROOT,text=True).splitlines()
     removals=[]
