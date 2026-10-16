@@ -1,0 +1,41 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT18",
+  "section": "5.3.2",
+  "source_ids": [
+    "MD-5.3.2-WeakStationary"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.2-WeakStationary"
+  ],
+  "human_ids": [],
+  "lean_sha256": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+  "source_sha256": "46434d6c191d0c67f4e18c5829d9b93230261247ec15ff3236627af4ac71376c",
+  "pages": [
+    210,
+    211,
+    212,
+    213,
+    214,
+    215
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch05.olean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+    "log_sha256": "7d2173c516d60468630dd845a8bbf03001933dc404f5e2eb09e94ce5c0977870"
+  },
+  "axiom_decl_count": 1,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT18/INDEX.md"
+}

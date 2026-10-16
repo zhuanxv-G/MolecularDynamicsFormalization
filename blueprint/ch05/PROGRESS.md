@@ -75,7 +75,7 @@
 | MD-5.3.1-DiracEvaluates | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | local_proof / self-contained |
 | MD-5.3.1-GaussianDeltaProbability | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | local_proof / self-contained |
 | MD-5.3.1-GaussianDeltaWeak | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | local_proof / self-contained |
-| MD-5.3.2-WeakStationary | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT15 | definition / self-contained |
+| MD-5.3.2-WeakStationary | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT18 | definition / self-contained |
 | MD-5.3.2-EnsembleAverage | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | definition / self-contained |
 | MD-5.3.2-ConvergenceHeuristic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT08（原返回FAIL保留） | placeholder / incomplete；原收敛推断需要独立语义裁定及补充收敛资格；当前不证明。 |
 | MD-5.3.2-HamiltonianEnergyIntegral | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
@@ -375,3 +375,5 @@ EAUDIT15 §5.3.2：1条落盘，单文件与1项公理通过；未写新证明�
 EAUDIT16 §5.4.1：7条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT17 §5.5：8条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT18 §5.3.2：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。

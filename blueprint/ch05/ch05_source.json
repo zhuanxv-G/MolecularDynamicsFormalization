@@ -2144,9 +2144,19 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EAUDIT18_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:16:48.094524",
+        "before_sha256": "82ce6441d4aeb19724444dcbffd451e7bf808f6c7025c9bbf52c0e781b2da7b4",
+        "after_sha256": "760b30e17d0786b9d95259909d59c7028ca8c25b211f7e910d9d9b3bec1724d4",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.2-EnsembleAverage",

@@ -568,7 +568,7 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 5 | MD-5.3.1-DiracEvaluates | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT07 |
 | 5 | MD-5.3.1-GaussianDeltaProbability | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT07 |
 | 5 | MD-5.3.1-GaussianDeltaWeak | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT07 |
-| 5 | MD-5.3.2-WeakStationary | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT15 |
+| 5 | MD-5.3.2-WeakStationary | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT18 |
 | 5 | MD-5.3.2-EnsembleAverage | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT08 |
 | 5 | MD-5.3.2-ConvergenceHeuristic | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT08 |
 | 5 | MD-5.3.2-HamiltonianEnergyIntegral | FAIL | B | 补真实Hamiltonian场的−div(u f)=−L_f u及实际解上能量恒定，H为C²、u为C¹、合法闭区间轨道；保留已证L_fH=0，不把散度零/能量守恒当假设。 | 已修待复审 | EAUDIT08 |
