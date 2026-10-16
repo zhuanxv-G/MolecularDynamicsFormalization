@@ -1,0 +1,44 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT02",
+  "section": "5.2.1",
+  "source_ids": [
+    "MD-5.2.1-DomainL2",
+    "MD-5.2.1-L2Complete",
+    "MD-5.2.1-L2Norm",
+    "MD-5.2.1-L2NormSquare"
+  ],
+  "reaudit_ids": [
+    "MD-5.2.1-DomainL2",
+    "MD-5.2.1-L2Norm",
+    "MD-5.2.1-L2NormSquare",
+    "MD-5.2.1-L2Complete"
+  ],
+  "human_ids": [],
+  "lean_sha256": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+  "source_sha256": "50cfd1c64928c10c6f3764c16f12cf642134a63b84c0cdee3f7d8a40e113bff8",
+  "pages": [
+    203,
+    204,
+    205
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch05.olean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+    "log_sha256": "5f58bf6d6cb49955c713db96bc3a692187a51a6d1554678b5cd2309377150b03"
+  },
+  "axiom_decl_count": 3,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT02/INDEX.md"
+}

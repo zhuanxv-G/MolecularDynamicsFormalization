@@ -2,13 +2,13 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 173；章末验收待完成 [5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 169；章末验收待完成 [5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 51 / 已修待复审 78 / 待导师 20 / 修复中 0。
 第4章：网站PASS 42 / 已修待复审 110 / 待导师 27 / 修复中 0。
-第5章：网站PASS 106 / 已修待复审 4 / 待导师 0 / 修复中 73。
+第5章：网站PASS 102 / 已修待复审 8 / 待导师 0 / 修复中 73。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
 |---|---|---|---|---|---|---|
@@ -519,11 +519,11 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 5 | MD-5.2.1-LebesgueClosure | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-BorelSigma | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-DensityProbabilityBounds | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.2.1-DomainL2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.1-L2Norm | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.2.1-DomainL2 | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT02 |
+| 5 | MD-5.2.1-L2Norm | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT02 |
 | 5 | MD-5.2.1-L2Inner | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.2.1-L2NormSquare | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.1-L2Complete | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.2.1-L2NormSquare | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT02 |
+| 5 | MD-5.2.1-L2Complete | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT02 |
 | 5 | MD-5.2.1-L2SymmetricBilinear | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-CompactL2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-DensityAverageOn | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |

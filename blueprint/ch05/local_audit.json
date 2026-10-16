@@ -677,11 +677,7 @@
     "MD-5.2.1-DomainL2": {
       "checked": true,
       "compiled": true,
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
+      "axioms": [],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.domainL2",
       "verdict": "PASS",
@@ -705,15 +701,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT02/axioms.log"
     },
     "MD-5.2.1-L2Norm": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.domainL2Norm",
@@ -738,7 +734,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT02/axioms.log"
     },
     "MD-5.2.1-L2Inner": {
       "checked": true,
@@ -777,9 +773,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.domainL2NormSquare",
@@ -809,15 +805,15 @@
         "blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT02/axioms.log"
     },
     "MD-5.2.1-L2Complete": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.domainL2Complete",
@@ -847,7 +843,7 @@
         "blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT02/axioms.log"
     },
     "MD-5.2.1-L2SymmetricBilinear": {
       "checked": true,

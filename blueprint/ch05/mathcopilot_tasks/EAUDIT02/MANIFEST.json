@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT02",
+  "input_sha256": {
+    "BATCH_EAUDIT02.md": "c74a91216a5db26287681b6ce415d1837ab607f9d6cf43f5deaa517e9137540d",
+    "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
+    "blueprint/ch05/ch05_source.json": "50cfd1c64928c10c6f3764c16f12cf642134a63b84c0cdee3f7d8a40e113bff8"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT02a",
+      "source_id": "MD-5.2.1-DomainL2",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT02/a",
+      "total_bytes": 96326,
+      "manifest_sha256": "f98dc3e271f5040a011b40ef885ca47fad0030da3fc1ea384f79cd3dbb4422e2"
+    },
+    {
+      "subtask": "EAUDIT02b",
+      "source_id": "MD-5.2.1-L2Norm",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT02/b",
+      "total_bytes": 96500,
+      "manifest_sha256": "616dc91ca6b58d94b34f3dd2532270c04215da18b49ad36cbc5c1fa0071f1bd6"
+    },
+    {
+      "subtask": "EAUDIT02c",
+      "source_id": "MD-5.2.1-L2NormSquare",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT02/c",
+      "total_bytes": 97092,
+      "manifest_sha256": "4b08650c6b252cbfac2c79d4a5010d436154ef2d4adf90bd1293a5c28f4df1cb"
+    },
+    {
+      "subtask": "EAUDIT02d",
+      "source_id": "MD-5.2.1-L2Complete",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT02/d",
+      "total_bytes": 96336,
+      "manifest_sha256": "fd6720953f7eb1fce0886821b419b92c950e5c548a26cbffa5f99fa156d72655"
+    }
+  ]
+}

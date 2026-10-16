@@ -23,11 +23,11 @@
 | MD-5.2.1-LebesgueClosure | 182/203 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.2.1-BorelSigma | 182/203 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.2.1-DensityProbabilityBounds | 183/204 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.2.1-DomainL2 | 183/204 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.2.1-L2Norm | 183/204 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
+| MD-5.2.1-DomainL2 | 183/204 | PASS | 待复审 / EAUDIT02 | self-contained |
+| MD-5.2.1-L2Norm | 183/204 | PASS | 待复审 / EAUDIT02 | self-contained |
 | MD-5.2.1-L2Inner | 183/204 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.2.1-L2NormSquare | 183/204 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.2.1-L2Complete | 183/204 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
+| MD-5.2.1-L2NormSquare | 183/204 | PASS | 待复审 / EAUDIT02 | self-contained |
+| MD-5.2.1-L2Complete | 183/204 | PASS | 待复审 / EAUDIT02 | self-contained |
 | MD-5.2.1-L2SymmetricBilinear | 183/204 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.2.1-CompactL2 | 183/204 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.2.1-DensityAverageOn | 184/205 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
@@ -1142,7 +1142,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 2. 原文陈述
 
-> The set of functions from $D\subset\mathbb R^m$ to $\mathbb R$ which satisfy $\int_D\rho^2(z)\,d\omega<\infty$ is referred to as the space $L^2(D)$.
+> The set of functions from $\mathcal D\subset\mathbb R^m$ to $\mathbb R$ which satisfy (5.3) is referred to as the space $L^2(\mathcal D)$.
 
 ### 3. 原文证明
 
@@ -1167,7 +1167,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT02**。原文JSON：CORRECTED；未冻结。
 
 本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.204（印刷 p.183）式(5.3)及 L²(𝒟) 定义，对应 Ch05.lean:171 的 domainL2 n D := Lp ℝ 2 (volume.restrict D)。E n 是欧氏 ℝⁿ，volume 是 Lebesgue 测度，restriction 保留一般 D；Lp ℝ 2 表示相对于该限制测度可测且平方可积的实函数的 a.e. 等价类，正是标准 L²(D)。维数/域作为任意参数未缩小原文范围。[EXTRA]可测资格与 a.e. 商使原书的范数/内积正定，是合理且必要的标准严谨化，不是额外动力学条件。原书没有明写商空间这一点仍明确记录；没有静默改写原文。该声明为定义，不涉及 sorry；无 [ERRATUM?] 标记。
 
@@ -1177,17 +1177,17 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 位置：[Blueprint/Ch05.lean:200](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:200>)（`MD.Ch05.domainL2`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`无`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`0d715d1b5e97defffa21b24bd2903ff6b078caec04c7e482bf65004e6cca124c`；原文SHA256：`10ae9561349dad4a979e41e473822e2447330a46a4a8af03d530bcd8700187aa`。
+签名SHA256：`0d715d1b5e97defffa21b24bd2903ff6b078caec04c7e482bf65004e6cca124c`；原文SHA256：`e8cc878ea443222830f2c72a3000f940536e6bc631425a294d7a30d09865ca9b`。
 
 ## 1. MD-5.2.1-L2Norm · definition · 印刷p.183 / PDFp.204
 
 ### 2. 原文陈述
 
-> we define the $L^2(D)$ norm by $\|\rho\|_{L^2(D)}\stackrel{\rm def}{=}[\int_D\rho^2(z)\,d\omega]^{1/2}$.
+> we define the $L^2(\mathcal D)$ norm by $\|\phi\|_{L^2(\mathcal D)}\stackrel{\rm def}{=}[\int_{\mathcal D}\phi^2(z)\,d\omega]^{1/2}$.
 
 ### 3. 原文证明
 
@@ -1211,7 +1211,7 @@ def domainL2Norm {n : ℕ} {D : Set (MolecularDynamics.Chapter05Review.E n)} (g 
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT02**。原文JSON：CORRECTED；未冻结。
 
 本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.204（印刷 p.183）的平方积分开方定义对应 Ch05.lean:174 的 domainL2Norm g := ‖g‖。展开 domainL2 为 Lp ℝ 2 (volume.restrict D) 后，标准 Lp 范数就是 (∫D |g(z)|² dω)^(1/2)，而实数 |g|²=g²，故与原公式完全一致；Lp 成员保证平方可积且范数有限，a.e. 代表选择不影响结果。n、D 为任意隐式参数，g 为任意 L²(D) 元素；无需另加可积性假设。这里判定定义的数学语义，不把仅定义 ‖g‖ 当成独立桥接定理已经经过本轮编译验证。定义无 sorry，无额外假设或 [ERRATUM?] 标记。
 
@@ -1221,11 +1221,11 @@ def domainL2Norm {n : ℕ} {D : Set (MolecularDynamics.Chapter05Review.E n)} (g 
 
 位置：[Blueprint/Ch05.lean:203](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:203>)（`MD.Ch05.domainL2Norm`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`2ea5a2d7007015fe3646c8d6804cb808a031d0e7e1f1f3ae3981c123e6116776`；原文SHA256：`bbae12d61f657592c62ec0c22cf791f83e549a8fb09951edc723ea7127070509`。
+签名SHA256：`2ea5a2d7007015fe3646c8d6804cb808a031d0e7e1f1f3ae3981c123e6116776`；原文SHA256：`5e78f6a27f8f59cd7b2a3a0603fa2dd97748cca689ec89b70e90f07645d68544`。
 
 ## 1. MD-5.2.1-L2Inner · definition · 印刷p.183 / PDFp.204
 
@@ -1276,7 +1276,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 2. 原文陈述
 
-> Thus $\|\rho\|_{L^2(D)}^2=\langle\rho,\rho\rangle_{L^2(D)}$.
+> Thus $\|\phi\|_{L^2(\mathcal D)}^2=\langle\phi,\phi\rangle_{L^2(\mathcal D)}$.
 
 ### 3. 原文证明
 
@@ -1301,7 +1301,7 @@ theorem domainL2NormSquare : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT02**。原文JSON：CORRECTED；未冻结。
 
 本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.204（印刷 p.183）的 ‖φ‖²=⟨φ,φ⟩对应 Ch05.lean:181–185：∀n,D,g∈domainL2 n D，domainL2Norm g^2=domainL2Inner g g。展开前述两个定义后为 ‖g‖²=∫D g(z)g(z)，与原结论全部一致，未加假设或替换对象。量词完整、AE 商处理沿用标准 L²。证明体使用标准实内积范数恒等式及 L2.inner_def，没有 sorry；签名语义判定与证明状态分别记录，本轮未运行 Lean 编译。无 [ERRATUM?] 标记。
 
@@ -1311,19 +1311,19 @@ theorem domainL2NormSquare : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E
 
 位置：[Blueprint/Ch05.lean:210](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:210>)（`MD.Ch05.domainL2NormSquare`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/L2NormSquare.json；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.lean；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log。
 
-签名SHA256：`fb866d12914ca47dfefd21332593236ec8d330aefda7321c7f68a63067804c8d`；原文SHA256：`48a1c19f1edee248201e6daebb42ca2aaa47bdb830ae026114d2fe5cd5e99522`。
+签名SHA256：`fb866d12914ca47dfefd21332593236ec8d330aefda7321c7f68a63067804c8d`；原文SHA256：`2dff63e1921d480378c35149d4183cd109f5508a7937a40bf99330819d2bf691`。
 
 ## 1. MD-5.2.1-L2Complete · unnumbered_claim · 印刷p.183 / PDFp.204
 
 ### 2. 原文陈述
 
-> This is a real Hilbert space or complete inner product space.
+> This is a real Hilbert space or complete inner product space in which, for any $\phi,\psi\in L^2(\mathcal D)$, the inner product is defined by $\langle\phi,\psi\rangle_{L^2(\mathcal D)}\stackrel{\rm def}{=}\int_{\mathcal D}\phi(z)\psi(z)\,d\omega$.
 
 ### 3. 原文证明
 
@@ -1349,7 +1349,7 @@ theorem domainL2Complete : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT02**。原文JSON：CORRECTED；未冻结。
 
 本轮依据用户补充规则直接采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义，不要求在项目依赖摘录中寻找 Mathlib 定义体。项目自定义 E 已在 Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段展开为 EuclideanSpace ℝ (Fin n)；本批 MD.Ch05 的自定义定义按哈希绑定的附件声明展开。PDF p.204（印刷 p.183）称 L²(D) 为实 Hilbert/完备内积空间。Ch05.lean:189–192 对任意 n、D 和任意序列 u:ℕ→domainL2 n D，断言 CauchySeq u → ∃v，Tendsto u atTop (𝓝 v)，准确表达每个柯西序列在该空间内收敛。标准 Lp ℝ 2 已具有实内积空间结构，其内积由 domainL2Inner 的积分定义给出；度量空间中顺序完备与完备等价，因此未漏掉 Hilbert 子句，也不需要重复声明已有实例。[EXTRA]在 AE 商上讨论完备内积空间合理且必要：不取商时非零的零测集指示函数可有零范数，不能成为正定内积空间。证明体无 sorry；本轮未编译，语义 PASS 不冒称完成新的证明检查。无 [ERRATUM?] 标记。
 
@@ -1359,13 +1359,13 @@ theorem domainL2Complete : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n
 
 位置：[Blueprint/Ch05.lean:218](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:218>)（`MD.Ch05.domainL2Complete`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/L2Complete.json；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.lean；blueprint/ch05/validation/short_search/route-feabf35b719e6458f825.log。
 
-签名SHA256：`bad5b576ee5f24f9e5489c13b9602cb5bd38e1b0ac6f7ab01d18aeedbc759a2f`；原文SHA256：`8ad31a215f4fdb2da5f8d916671698f2e7bacdb539af1ee2669b239a95a95a4b`。
+签名SHA256：`bad5b576ee5f24f9e5489c13b9602cb5bd38e1b0ac6f7ab01d18aeedbc759a2f`；原文SHA256：`5521d5ef300650ab602786a5505bb57cc7c139b0b91cbfa9a46599a95956b53a`。
 
 ## 1. MD-5.2.1-L2SymmetricBilinear · unnumbered_claim · 印刷p.183 / PDFp.204
 
