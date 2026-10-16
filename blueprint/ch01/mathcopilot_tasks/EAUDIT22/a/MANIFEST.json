@@ -1,0 +1,50 @@
+{
+  "eaudit": "EAUDIT22",
+  "source_id": "MD-1.7.1-ChaosConditions",
+  "input_sha256": {
+    "BATCH_EAUDIT22.md": "2584f103d4bf1b752cab6ca7294631e65db6ca55f8e6fd45710e6c406cb87cce",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT22a_materials": "b8eb12cdf344c60e5e4d847bdcddd29291b6c59705cbed0892e8e1f092582d4d",
+    "EAUDIT22a_PAGES.pdf": "14978d0b18599fbc9612c7672882a74d6e0749d61940e562e9c2478813c439a9"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    64,
+    65
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "93e77613d87c26f93034b6d2c365e40f7691961750a21e6d55d5e0f2fdac73c4",
+  "source_block_sha256": "34e9d710995eac86f326c4d564caa834eb61ae3f1b8aded8bf789c8e3db8a820",
+  "source_declarations": [
+    "chaosConditions"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "chaosConditions",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "34e9d710995eac86f326c4d564caa834eb61ae3f1b8aded8bf789c8e3db8a820"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "sensitiveDependence",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "0b97fccc733e3c5ebe61131941f4d9517a08027da6816ed3494a5df68a5ad788"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "topologicalTransitivity",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "f36155c00c7aaedf0bf29a8a7498022748df17bd0d11950fce7e8aa6aff10443"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT22_review.json",
+  "total_task_bytes": 101036
+}

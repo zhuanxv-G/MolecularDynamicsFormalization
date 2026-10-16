@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-1.6-PeriodicBoundary",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "98b04fa61c3c549df392f5214e8d8e21190da8e4e25189974fd7f8d8ed734fd3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT17a_materials": "4973f2282af6e045dae1acaeb1c4521636427e2eefdf3043eea6cff9c715bc91",
+    "EAUDIT17a_PAGES.pdf": "9306fad95817e3a20c5dc6aeaffe0187838027de2292108925ffd9809b6da7e3"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    57
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "aba3bf12a48b57bd0e8f1dbeab8c905b0889c05fd67a3e1df4adc47c0afb81e0",
+  "source_block_sha256": "1bb5d40a1addef282e5112daa35a340b035b603a54974f0239413d0aab594b77",
+  "source_declarations": [
+    "periodicPositionEquivalent",
+    "periodicBoundary"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "periodicBoundary",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "464d1fe718f17b405c39049a72f9ef4a140952728b728a73e20c9bfba0f2a875"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "periodicPositionEquivalent",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "f5481082c27ce4f9435c806d9c471fa5893d157e86acaf3cd06b43c878561786"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 158946
+}

@@ -1,0 +1,65 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.6-HCPStacking；原PDF页映射=[59]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT18_review.json，对象含batch=EAUDIT18、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT18.md": "da441af6ac7afe12186011737930b69d439ded0930e064c8a9cab45531a442c6",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT18a_materials": "480608d36dd11792be80b07f4158da27d08252e0fe06927e72eee2c46016b57c",
+  "EAUDIT18a_PAGES.pdf": "83ce8abe9c1a0e0ffae4851fba0b9f4c1c64d9c5420209ad76cf79aa6b789ab4"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.6-HCPStacking",
+  "kind": "definition",
+  "label": null,
+  "section": "1.6",
+  "printed_page": "36",
+  "pdf_page": "59",
+  "statement_latex": "Also shown in Fig. 1.18 is the hcp lattice, which, on the other hand, alternates two distinct planar lattices.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.hcpStacking",
+  "extra_assumptions": [
+    "图示AB两个三角层，单位化层高及偏移是具体close-packed图示编码。"
+  ],
+  "old_ids": [
+    "CH01-165"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def hcpStacking : Set V3 :=
+  {x | ∃ k : ℤ, let j := k % 2
+    x 2 = k*Real.sqrt (2/3) ∧
+      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)}
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```
+### 实际依赖 MD.Ch01.hcpStacking
+```lean
+def hcpStacking : Set V3 :=
+  {x | ∃ k : ℤ, let j := k % 2
+    x 2 = k*Real.sqrt (2/3) ∧
+      WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)}
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.triangularLayer
+```lean
+def triangularLayer (u v : ℝ) : Set (Position 2) :=
+  {x | ∃ k l : ℤ, x = WithLp.toLp 2 ![k+l/2+u,l*Real.sqrt 3/2+v]}
+```

@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT15",
+  "source_id": "MD-1.5.2-KeplerPolarODE",
+  "input_sha256": {
+    "BATCH_EAUDIT15.md": "1d4718280dccf642f08f1bad62ece7b81f70d22e3f391dd068a55b74ccf0a8e8",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT15a_materials": "78fb050bd13838e154ddac7c1bf3868148c43507505beef091f86ead0961ce68",
+    "EAUDIT15a_PAGES.pdf": "c80e3c40be3b24040d96a7c20e082454d370fd5375e1b8877fabad8e8a2d94b2"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    52
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "30b09966c00c9c072de13d6233425dd1596bc6e75f690d920df6d771d9c65a53",
+  "source_block_sha256": "c953b52263f1ad2337e218a0ca3df9bbc3cb309cdd1595435598efe9d761b668",
+  "source_declarations": [
+    "keplerpolarode"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/KeplerPolarDynamics.lean",
+      "name": "IsKeplerPolarEulerLagrangeOn",
+      "file_sha256": "cf75bbe5342875a5cac3f8496edc68883cedf65fbebcff33953c5479886c2ecb",
+      "excerpt_sha256": "3bef7f4cc32a30a58583bc47900e1114a83f01d92c52ef71a975a20201454946"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/KeplerPolarDynamics.lean",
+      "name": "keplerPolarScalarLagrangian",
+      "file_sha256": "cf75bbe5342875a5cac3f8496edc68883cedf65fbebcff33953c5479886c2ecb",
+      "excerpt_sha256": "1772bd7c1fec33583e6f8df7f800172aa58805d95dd0cf85cccd3c9e4af9cb00"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT15_review.json",
+  "total_task_bytes": 61709
+}

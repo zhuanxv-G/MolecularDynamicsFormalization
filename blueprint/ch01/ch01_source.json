@@ -193,6 +193,16 @@
         "before_sha256": "90466e97aa683c26b7f6b28282787edd8e31694292a61eae92dec3b5e0a55a00",
         "after_sha256": "74fc6dc31aa1662b1e9633e94242e829c00e40357f07e1aa3941c699f6c895e8",
         "reason": "原页PDF46–47已重新视觉核对；不完整sup计算移入proof_discussion，修正广义坐标维数，显式展开继承的正定背景。原语句不改，旧签名和全部返回件保留。"
+      },
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "hamiltonian_legendre_transform_corrected"
+        ],
+        "reason": "新增仅可逆的原文字面版；修正版继承正定质量背景并保留上界、精确上确界、唯一达到点、动量梯度与能量全部结论。",
+        "mentor_default": "继承机械质量正定背景",
+        "mentor_confirmed": false
       }
     ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
@@ -255,7 +265,8 @@
     ],
     "lean_decl": "MD.Ch01.schrodingerEquation",
     "extra_assumptions": [
-      "正质量及正Planck参数；按经典解解释，Φ在时间/位置联合C2，保证总导数算子表示实际偏导数；不声明解存在。"
+      "正质量及正Planck参数；按经典解解释，Φ在时间/位置联合C2，保证总导数算子表示实际偏导数；不声明解存在。",
+      "[EXTRA] 19号：按EAUDIT02新返回，将联合全域C²改为连续时间一阶/逐空间坐标二阶经典导数；不要求二阶时间或混合偏导。"
     ],
     "repair_log": [
       {
@@ -267,6 +278,13 @@
         "raw_return": "blueprint/ch01/mathcopilot_results/BATCH02_result.json",
         "raw_sha256": "f42249abe5a3dedc7bee7a55d8ef6043c8b1e758d58f77a92cff033e10d267ac",
         "reason": "PDF28–30视觉核对；Newton补回原页第i个核的遗漏词；Schrodinger提案当前字段已一致，保留已有文本；原书数学不改。Newton/HardSphere签名按网站FAIL加强模型资格及补全动力学；其余条目不改。"
+      },
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "A",
+        "before_signature_sha256": "d42ffb3b09f6a38dba4cd6ed88a79c7b5c434d0d091cbac0599d1b1e186a14d0",
+        "reason": "按EAUDIT02新返回，将联合全域C²改为连续时间一阶/逐空间坐标二阶经典导数；不要求二阶时间或混合偏导。",
+        "original_statement_unchanged": true
       }
     ],
     "old_ids": [
@@ -596,6 +614,16 @@
         "raw_return": "blueprint/ch01/mathcopilot_results/BATCH03_result.json",
         "raw_sha256": "5a2eea461e6d03d433d23ed6bdd5870a8da8192b9f0da86bbe0ade99cff9a565",
         "reason": "原PDF31–34逐页视觉核对；长度键删除原多出的the；两条签名补全部曲率/粒子距离；两条补真实依赖；LJ经验语义待导师。"
+      },
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "lj_repulsion_corrected"
+        ],
+        "reason": "保留已证单侧极限；把可严格陈述的内容写成任意有限能级对应正距离屏障，不声称数值模拟rarely的概率。",
+        "mentor_default": "定性登记",
+        "mentor_confirmed": false
       }
     ],
     "old_ids": [
@@ -653,8 +681,18 @@
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.coulombPotential",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] 19号：正C、介电常数与距离落实到子类型；电荷仍可正负，未另造吸引排斥结论。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "A",
+        "before_signature_sha256": "c99bf55a6e57b945f6a8e304f44b235c6cf0a763db160d917d8a8cab01f7f35c",
+        "reason": "正C、介电常数与距离落实到子类型；电荷仍可正负，未另造吸引排斥结论。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-024",
       "CH01-025"
@@ -675,8 +713,18 @@
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.smoothCutoff",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] 19号：C¹只要求正距离域，保留严格r_cut<r截零及正截断半径。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "A",
+        "before_signature_sha256": "126ddf4c90c49f42cef51a781adcf940e4c1d22e13be9be5cc2146c0d61e5236",
+        "reason": "C¹只要求正距离域，保留严格r_cut<r截零及正截断半径。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-026"
     ],
@@ -704,8 +752,29 @@
       }
     ],
     "lean_decl": "MD.Ch01.yukawaScreened",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] 19号：正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "A",
+        "before_signature_sha256": "2e3930687eb550ee87abfa8443816b2c0cfa18f7b4f0abe91f247ed90ec298a1",
+        "reason": "正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。",
+        "original_statement_unchanged": true
+      },
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "yukawaScreened_corrected_a",
+          "yukawaScreened_corrected_b"
+        ],
+        "reason": "a保留−κr但把κ解释为逆屏蔽长度；b若保留Debye length称谓则用−r/ℓ。正参数为物理域补充。",
+        "mentor_default": "保留指数并改称逆长度",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-027"
     ],
@@ -836,9 +905,18 @@
     "issues": [],
     "lean_decl": "MD.Ch01.degreesOfFreedom",
     "extra_assumptions": [
-      "在可微约束C局部正则层中以导数核维数表示；无约束取零约束。"
+      "在可微约束C局部正则层中以导数核维数表示；无约束取零约束。",
+      "[EXTRA] 19号：只对C¹正则约束层的可行点定义自由度；原核维数更名为线性化辅助量，下一条补真实局部坐标等价。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "C",
+        "before_signature_sha256": "cc1528b64168788fe6cc74e5a01fd1a0eb941ca19a083e56410a22665a16e8aa",
+        "reason": "只对C¹正则约束层的可行点定义自由度；原核维数更名为线性化辅助量，下一条补真实局部坐标等价。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-051"
     ],
@@ -859,9 +937,18 @@
     "issues": [],
     "lean_decl": "MD.Ch01.constraintdimension",
     "extra_assumptions": [
-      "约束映射可微，独立约束=导数满射；n=Nc，r≤n由满射推出。"
+      "约束映射可微，独立约束=导数满射；n=Nc，r≤n由满射推出。",
+      "[EXTRA] 19号：保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "C",
+        "before_signature_sha256": "36fd5fab4eec12dceb32579dd6e71c53ab91205e336ff309bcfde361b2d71fe5",
+        "reason": "保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-052"
     ],
@@ -986,8 +1073,18 @@
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.scalarMechanicalModel",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] 19号：沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "A",
+        "before_signature_sha256": "d577b1c49cbefd9974c120579caf6a2bf559987950854218d5e328d9cb5d2f23",
+        "reason": "沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-064"
     ],
@@ -1065,7 +1162,18 @@
     "extra_assumptions": [
       "正ε,σ及非碰撞；hnewton采用式(1.3)负梯度定义，未把字面错误结果放入假设。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "radial_lj_force_literal_corrected"
+        ],
+        "reason": "第一式补负梯度负号，第二式外系数由−24ε/σ改为+24ε/σ；其余对象和量词不变。",
+        "mentor_default": "按负梯度符号勘误",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-069"
     ],
@@ -1111,9 +1219,22 @@
     "issues": [],
     "lean_decl": "MD.Ch01.ljtimescaling",
     "extra_assumptions": [
-      "m,ε,σ,α正；真实C2非碰撞轨迹。"
+      "m,ε,σ,α正；真实C2非碰撞轨迹。",
+      "[EXTRA] 19号：补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "B",
+        "before_signature_sha256": "d844f266c9dadfd3edc5fb0953420de365fb2b7bacc83eb96bb08b4ad7573d05",
+        "reason": "补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。",
+        "original_statement_unchanged": true
+      },
+      {
+        "stage": "CLOSEOUT19_NUMERIC_TOLERANCE",
+        "reason": "按所列参数真实结果约2.1649606ps；0.005ps容差过紧（初始尝试失败），现明示0.01ps容差并由Lean验证；不改教材2.17ps。"
+      }
+    ],
     "old_ids": [
       "CH01-200"
     ],
@@ -1218,7 +1339,19 @@
     "extra_assumptions": [
       "值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "legendreTransform_corrected",
+          "legendreTransform_corrected_b"
+        ],
+        "reason": "新增原书“任意凸函数的变换处处实值”的literal陈述；默认EReal扩展实数，并给有界时实值备选。",
+        "mentor_default": "EReal推广",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-079"
     ],
@@ -1240,8 +1373,18 @@
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.hamiltonEquations",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] 19号：沿轨迹两偏函数真实可微，补时间域版；全时间名称保留作univ特例。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "A",
+        "before_signature_sha256": "3358b59456367c6d5b6e6fb83ec1d77f3189382a11f99b725d6a94f23b135003",
+        "reason": "沿轨迹两偏函数真实可微，补时间域版；全时间名称保留作univ特例。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-084"
     ],
@@ -1316,7 +1459,18 @@
     "extra_assumptions": [
       "采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "finiteEnergyPhaseDomain_corrected"
+        ],
+        "reason": "有限能量位置×动量定义保留；把后句coordinates and positions按前句解释为位置与动量，并显式核验6N维。",
+        "mentor_default": "依前句读作位置与动量",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-087",
       "CH01-088"
@@ -1440,9 +1594,18 @@
     "issues": [],
     "lean_decl": "MD.Ch01.compact_continuation",
     "extra_assumptions": [
-      "共同紧集包含于开放非奇异域；hconfine仅关于既有局部解，不假设全局解；力C1和固定对角机械模型。"
+      "共同紧集包含于开放非奇异域；hconfine仅关于既有局部解，不假设全局解；力C1和固定对角机械模型。",
+      "[EXTRA] 19号：主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "B",
+        "before_signature_sha256": "7ea8154dad2e317dbddab71b20dca89cd20f62c9fcaf8b71cdd7d6158f84cb15",
+        "reason": "主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-095"
     ],
@@ -1531,8 +1694,18 @@
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.harmonicPhaseFlow",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] 19号：保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "B",
+        "before_signature_sha256": "776b426f44b6b4ad600a18fcb478090b26fd7b90e0d4f7baa3e28d944814e25c",
+        "reason": "保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-102"
     ],
@@ -1860,9 +2033,18 @@
     "issues": [],
     "lean_decl": "MD.Ch01.keplermomentum",
     "extra_assumptions": [
-      "q≠0；单位质量。"
+      "q≠0；单位质量。",
+      "[EXTRA] 19号：保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "B",
+        "before_signature_sha256": "d43c3215bd604a58ab74a73418f766ebf14eca2c8ce9ccc5215e781907157abc",
+        "reason": "保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-201"
     ],
@@ -2164,9 +2346,18 @@
     "issues": [],
     "lean_decl": "MD.Ch01.torusperiod",
     "extra_assumptions": [
-      "给定周期T；每频率×T为整数圈是精确共振条件；原句没有单独定义commensurate。"
+      "给定周期T；每频率×T为整数圈是精确共振条件；原句没有单独定义commensurate。",
+      "[EXTRA] 19号：保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "B",
+        "before_signature_sha256": "a25ea00a01329ea3cff5f79fb6440cf8fc0602776f273a638116d4d562ef7842",
+        "reason": "保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-132"
     ],
@@ -2195,7 +2386,18 @@
     "extra_assumptions": [
       "高维全整数关系无共振；仅成对频率比无理不足，此为原文quasi-periodic intended meaning的数学资格。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "torusdense_corrected"
+        ],
+        "reason": "另补原句“非周期即充满整个环面”的literal；修正版显式全整数无共振，原有带资格陈述不变。",
+        "mentor_default": "全维加无共振",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-133"
     ],
@@ -2224,7 +2426,18 @@
     "extra_assumptions": [
       "全部积分C∞且Poisson括号两两零；正则共同能量层紧、连通；满秩=独立。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "local_action_angle_reduction_corrected"
+        ],
+        "reason": "原书无紧性资格的环面推断另记literal；默认紧、连通、非空、正则共同水平集，保留局部正则坐标与全局环面结论。",
+        "mentor_default": "批准明确资格",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-134"
     ],
@@ -2342,7 +2555,18 @@
     "extra_assumptions": [
       "C1全域模型及真实全局流为局部应用的技术资格；共轭在轨迹保持局部域时断言。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "hartmangrobmanliteral_corrected"
+        ],
+        "reason": "C∞可逆坐标替换改为连续互逆局部同胚；保留零点、邻域与留域期间共轭公式。",
+        "mentor_default": "同胚勘误",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-140"
     ],
@@ -2388,7 +2612,18 @@
     "extra_assumptions": [
       "C1及真实全局流；stable谓词的统一界<ε与原文严格sup形式等价。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "hyperbolicstabilitytransfer_corrected"
+        ],
+        "reason": "显式独立登记以拓扑共轭为依据的稳定性转移，不调用光滑literal。",
+        "mentor_default": "采用拓扑共轭推论",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-142"
     ],
@@ -2454,8 +2689,18 @@
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.linearizedHamiltonian",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] 19号：保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "B",
+        "before_signature_sha256": "8e7dabd7162e165c02e06ca37d62f6389e0994d7fc2e39cc13f5320b42ed0d62",
+        "reason": "保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-146"
     ],
@@ -2632,8 +2877,18 @@
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.periodicBoundary",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] 19号：原等价关系另名辅助；主定义逐字表达正盒长下右越界减L、左越界加L、否则不变的一步更新，不伪称任意大越界一步即可落盒。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "C",
+        "before_signature_sha256": "2fd68f7d5f14e976fd6bd0b8f4edee8dbe7b3486388dadc2e11d3f1b8e91bce9",
+        "reason": "原等价关系另名辅助；主定义逐字表达正盒长下右越界减L、左越界加L、否则不变的一步更新，不伪称任意大越界一步即可落盒。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-154"
     ],
@@ -2656,9 +2911,18 @@
     "issues": [],
     "lean_decl": "MD.Ch01.periodic_translation_momentum",
     "extra_assumptions": [
-      "一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。"
+      "一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。",
+      "[EXTRA] 19号：完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "B",
+        "before_signature_sha256": "d5ab02ba52ab0637f83ae1c9d626b6dea6cde704c7ff34ffdd7dc7e73e6b3ca7",
+        "reason": "完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-155"
     ],
@@ -2706,7 +2970,18 @@
     ],
     "lean_decl": "MD.Ch01.regularlatticeminimizerliteral",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "regularlatticeminimizerliteral_corrected"
+        ],
+        "reason": "改为一维周期有序粒子的正间距和L固定、严格凸最近邻势；Jensen给等间距最小且仅等间距等号。",
+        "mentor_default": "批准严格凸正间距版本",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-157"
     ],
@@ -2751,8 +3026,18 @@
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.minimumImage",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] 19号：最近像关系留作辅助；完整模型以L>0、不同原子标签及每对选中复制体唯一参与求力落实only限定（同距可任选）。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "B",
+        "before_signature_sha256": "0d4c0dbca82f99ca89d3aceb7b4915dae48547cc5d1e058ab9e4c200a8737f1f",
+        "reason": "最近像关系留作辅助；完整模型以L>0、不同原子标签及每对选中复制体唯一参与求力落实only限定（同距可任选）。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-159"
     ],
@@ -2896,7 +3181,18 @@
     "extra_assumptions": [
       "可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "minimumgradientzero_corrected"
+        ],
+        "reason": "显式标为无约束内点极小的必要条件，保留已证桥接；不扩展到约束边界。",
+        "mentor_default": "无约束内点版本",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-166"
     ],
@@ -2948,7 +3244,18 @@
     ],
     "lean_decl": "MD.Ch01.minimumhessianliteral",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "minimumhessianliteral_corrected"
+        ],
+        "reason": "正定改为半正定；仍保留Hessian对称性及所有非零方向。",
+        "mentor_default": "半正定勘误",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-169"
     ],
@@ -2993,8 +3300,18 @@
     "review_status": "DRAFT",
     "issues": [],
     "lean_decl": "MD.Ch01.complexnormalmode",
-    "extra_assumptions": [],
-    "repair_log": [],
+    "extra_assumptions": [
+      "[EXTRA] 19号：增加η非零及共轭η非零、−iΩ特征方程，保留所有系数的原复解公式；不以零向量冒充特征向量。"
+    ],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "B",
+        "before_signature_sha256": "f78173634b1da94b8fecc486c3945af183f2b47e266a2a3d92fac187f45918e9",
+        "reason": "增加η非零及共轭η非零、−iΩ特征方程，保留所有系数的原复解公式；不以零向量冒充特征向量。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-172"
     ],
@@ -3132,9 +3449,18 @@
     "issues": [],
     "lean_decl": "MD.Ch01.centralangularmomentum",
     "extra_assumptions": [
-      "真实位置和动量导数；反对称内力和沿位移方向中心力。"
+      "真实位置和动量导数；反对称内力和沿位移方向中心力。",
+      "[EXTRA] 19号：保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_SIGNATURE_REPAIR",
+        "category": "B",
+        "before_signature_sha256": "30852325e4b4740d5979546aae4fd76e2f91c34a107f70325e9b13c2c4301e45",
+        "reason": "保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。",
+        "original_statement_unchanged": true
+      }
+    ],
     "old_ids": [
       "CH01-177"
     ],
@@ -3186,7 +3512,19 @@
     ],
     "lean_decl": "MD.Ch01.constantrotationliteral",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "constantrotationliteral_corrected_a",
+          "constantrotationliteral_corrected_b"
+        ],
+        "reason": "a增加恒定正半径才推恒角速；默认b保留角动量守恒并明确θ′=ℓ/r²。",
+        "mentor_default": "角动量守恒与变角速",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-179"
     ],
@@ -3215,7 +3553,18 @@
     ],
     "lean_decl": "MD.Ch01.isoscelesCoordinates",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "isoscelesCoordinates_corrected"
+        ],
+        "reason": "把三坐标公式作为主动选取的对称子模型，证明其质心为零；不把零总动量/角动量推出等腰。",
+        "mentor_default": "明确选择等腰对称子模型",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-180"
     ],
@@ -3378,7 +3727,18 @@
     ],
     "lean_decl": "MD.Ch01.trimerescapeliteral",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "trimerescapeliteral_corrected"
+        ],
+        "reason": "把every body逐粒子逃逸改为至少一对粒子分离的候选陈述；全部动力学、正能量、零质心/角动量资格保留。",
+        "mentor_default": "另立系统分离命题待审",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-207"
     ],
@@ -3433,7 +3793,18 @@
     "extra_assumptions": [
       "为表达ergodicity必须引入原文此处未给的不变测度μ；F为连续真实流。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "transitivityergodicityliteral_corrected"
+        ],
+        "reason": "改为有限、满支撑不变测度下的遍历性⇒拓扑传递单向结论。",
+        "mentor_default": "另立满支撑测度下的单向结果",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-186"
     ],
@@ -3490,7 +3861,18 @@
     ],
     "lean_decl": "MD.Ch01.variationalMatrixLiteral",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "variationalMatrixLiteral_corrected"
+        ],
+        "reason": "DF_t取值点从F_t(ξ)改为初值ξ。",
+        "mentor_default": "批准另立",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-190",
       "CH01-191"
@@ -3518,7 +3900,18 @@
     ],
     "lean_decl": "MD.Ch01.variationalequationliteral",
     "extra_assumptions": [],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "variationalequationliteral_corrected"
+        ],
+        "reason": "采用W(t)=DF_t(ξ)，保留C¹向量场及真实流资格。",
+        "mentor_default": "批准另立",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-192"
     ],
@@ -3547,7 +3940,18 @@
     "extra_assumptions": [
       "≈严格化为固定t、扰动趋0的Frechet小o；沿用原文字面W。"
     ],
-    "repair_log": [],
+    "repair_log": [
+      {
+        "stage": "CLOSEOUT19_DUAL_VERSION",
+        "original_statement_unchanged": true,
+        "corrected_names": [
+          "nearby_trajectory_literal_corrected"
+        ],
+        "reason": "线性化在初值ξ处取DF_t，固定t的余项为o(扰动)。",
+        "mentor_default": "批准另立",
+        "mentor_confirmed": false
+      }
+    ],
     "old_ids": [
       "CH01-193"
     ],

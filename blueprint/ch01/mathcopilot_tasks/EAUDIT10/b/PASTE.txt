@@ -1,0 +1,106 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.1-HardSphere；原PDF页映射=[30]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT10_review.json，对象含batch=EAUDIT10、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT10.md": "ca23496ef049676e0e712de164ab998662c007710f0e138412d8c5cf88455c03",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT10b_materials": "7a61ae6ded30d8b52c55c4cb536ae6be221a4beee66d6642f6155d34c63e1a19",
+  "EAUDIT10b_PAGES.pdf": "65c039cd4937580fa2f0c8e5e84e1076bedc6b46640cb416db3bfd1a781d8997"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.1-HardSphere",
+  "kind": "definition",
+  "label": null,
+  "section": "1.1",
+  "printed_page": "7",
+  "pdf_page": "30",
+  "statement_latex": "The simplest model for a molecular interaction potential is the hard-sphere model. We assume that each atom is an impenetrable sphere which interacts with other atoms via perfectly elastic collision with the atoms transferring, according to standard rules, momentum and energy to one another during the collisions.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [],
+  "review_status": "APPROVED",
+  "issues": [],
+  "lean_decl": "MD.Ch01.hardSphereModel",
+  "extra_assumptions": [
+    "[历史签名，EAUDIT02已替换] 只编码不可穿透与完全弹性守恒关系；原文未指定碰撞散射规则，此定义不唯一决定碰撞后速度。",
+    "[EXTRA] EAUDIT02：以标准无摩擦孤立二体弹性碰撞展开standard rules；同时多接触需另有规则。碰撞时刻在整个开放时间域局部孤立，排除稠密事件集使动力学真空化；全粒子对全时间不可穿透；位置连续，碰撞外真实自由运动；实际速度左右极限接入法向冲量、法向速度反转、碰后分离及全部动量/动能守恒。旧只含瞬时必要守恒关系的说明为历史版本。"
+  ],
+  "old_ids": [
+    "CH01-010"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; 2026-10-13 PDF30; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def hardSphereModel {N : ℕ} (R m : Fin N → ℝ) (I C : Set ℝ)
+    (q v before after : ℝ → Fin N → V3) (pair : ℝ → Fin N × Fin N) : Prop :=
+  (∀ i, 0 < R i ∧ 0 < m i) ∧ IsOpen I ∧ IsPreconnected I ∧ C ⊆ I ∧
+  (∀ t ∈ I, ∃ δ > 0, ∀ s ∈ I, |s - t| < δ → s ∈ C → s = t) ∧
+  (∀ t ∈ I, ∀ i j, i ≠ j → R i + R j ≤ dist (q t i) (q t j)) ∧
+  (∀ i, ContinuousOn (fun t => q t i) I) ∧
+  (∀ t ∈ I \ C, ∀ i,
+    HasDerivAt (fun s => q s i) (v t i) t ∧
+    HasDerivAt (fun s => v s i) (0 : V3) t) ∧
+  (∀ t ∈ C,
+    let i := (pair t).1
+    let j := (pair t).2
+    i ≠ j ∧
+    binaryElasticSphereCollision (R i) (R j) (m i) (m j)
+      (q t i) (q t j) (before t i) (before t j) (after t i) (after t j) ∧
+    (∀ k, Tendsto (fun s => v s k) (𝓝[I ∩ Iio t] t) (𝓝 (before t k)) ∧
+      Tendsto (fun s => v s k) (𝓝[I ∩ Ioi t] t) (𝓝 (after t k))) ∧
+    (∀ k, k ≠ i → k ≠ j → after t k = before t k))
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```
+### 实际依赖 MD.Ch01.binaryElasticSphereCollision
+```lean
+def binaryElasticSphereCollision (R₁ R₂ m₁ m₂ : ℝ)
+    (q₁ q₂ v₁ v₂ w₁ w₂ : V3) : Prop :=
+  dist q₁ q₂ = R₁ + R₂ ∧
+  let normal := (‖q₂ - q₁‖⁻¹) • (q₂ - q₁)
+  0 ≤ inner ℝ (v₁ - v₂) normal ∧
+  w₁ = v₁ - (2 * m₂ / (m₁ + m₂) * inner ℝ (v₁ - v₂) normal) • normal ∧
+  w₂ = v₂ + (2 * m₁ / (m₁ + m₂) * inner ℝ (v₁ - v₂) normal) • normal ∧
+  inner ℝ (w₁ - w₂) normal = -inner ℝ (v₁ - v₂) normal ∧
+  inner ℝ (w₂ - w₁) normal ≥ 0 ∧
+  m₁ • v₁ + m₂ • v₂ = m₁ • w₁ + m₂ • w₂ ∧
+  m₁ * ‖v₁‖^2 / 2 + m₂ * ‖v₂‖^2 / 2 =
+    m₁ * ‖w₁‖^2 / 2 + m₂ * ‖w₂‖^2 / 2
+
+-- EAUDIT03: original radial profile retained as an auxiliary.
+```
+### 实际依赖 MD.Ch01.hardSphereModel
+```lean
+def hardSphereModel {N : ℕ} (R m : Fin N → ℝ) (I C : Set ℝ)
+    (q v before after : ℝ → Fin N → V3) (pair : ℝ → Fin N × Fin N) : Prop :=
+  (∀ i, 0 < R i ∧ 0 < m i) ∧ IsOpen I ∧ IsPreconnected I ∧ C ⊆ I ∧
+  (∀ t ∈ I, ∃ δ > 0, ∀ s ∈ I, |s - t| < δ → s ∈ C → s = t) ∧
+  (∀ t ∈ I, ∀ i j, i ≠ j → R i + R j ≤ dist (q t i) (q t j)) ∧
+  (∀ i, ContinuousOn (fun t => q t i) I) ∧
+  (∀ t ∈ I \ C, ∀ i,
+    HasDerivAt (fun s => q s i) (v t i) t ∧
+    HasDerivAt (fun s => v s i) (0 : V3) t) ∧
+  (∀ t ∈ C,
+    let i := (pair t).1
+    let j := (pair t).2
+    i ≠ j ∧
+    binaryElasticSphereCollision (R i) (R j) (m i) (m j)
+      (q t i) (q t j) (before t i) (before t j) (after t i) (after t j) ∧
+    (∀ k, Tendsto (fun s => v s k) (𝓝[I ∩ Iio t] t) (𝓝 (before t k)) ∧
+      Tendsto (fun s => v s k) (𝓝[I ∩ Ioi t] t) (𝓝 (after t k))) ∧
+    (∀ k, k ≠ i → k ≠ j → after t k = before t k))
+```

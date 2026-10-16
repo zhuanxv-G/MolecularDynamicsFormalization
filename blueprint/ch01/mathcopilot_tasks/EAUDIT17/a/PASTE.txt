@@ -1,0 +1,56 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.6-PeriodicBoundary；原PDF页映射=[57]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT17_review.json，对象含batch=EAUDIT17、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT17.md": "98b04fa61c3c549df392f5214e8d8e21190da8e4e25189974fd7f8d8ed734fd3",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT17a_materials": "4973f2282af6e045dae1acaeb1c4521636427e2eefdf3043eea6cff9c715bc91",
+  "EAUDIT17a_PAGES.pdf": "9306fad95817e3a20c5dc6aeaffe0187838027de2292108925ffd9809b6da7e3"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.6-PeriodicBoundary",
+  "kind": "definition",
+  "label": null,
+  "section": "1.6",
+  "printed_page": "34",
+  "pdf_page": "57",
+  "statement_latex": "If a particle moves to the right of $x=L$ we simply shift its position to $x-L$; likewise any particle exiting to the left of $x=0$ has its position shifted to $x+L$ (see Fig. 1.15).",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "周期位置等价类：x与x+kL，k∈Z；实际越界wrap代表选择原文只给左右各一步。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.periodicBoundary",
+  "extra_assumptions": [
+    "[EXTRA] 19号：原等价关系另名辅助；主定义逐字表达正盒长下右越界减L、左越界加L、否则不变的一步更新，不伪称任意大越界一步即可落盒。"
+  ],
+  "old_ids": [
+    "CH01-154"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def periodicPositionEquivalent (L : ℝ) (x y : ℝ) : Prop := ∃ k : ℤ, y = x + k*L
+
+def periodicBoundary (L : {x : ℝ // 0 < x}) (x y : ℝ) : Prop :=
+  y = if L.val < x then x-L.val else if x < 0 then x+L.val else x
+```
+### 实际依赖 MD.Ch01.periodicBoundary
+```lean
+def periodicBoundary (L : {x : ℝ // 0 < x}) (x y : ℝ) : Prop :=
+  y = if L.val < x then x-L.val else if x < 0 then x+L.val else x
+```
+### 实际依赖 MD.Ch01.periodicPositionEquivalent
+```lean
+def periodicPositionEquivalent (L : ℝ) (x y : ℝ) : Prop := ∃ k : ℤ, y = x + k*L
+```

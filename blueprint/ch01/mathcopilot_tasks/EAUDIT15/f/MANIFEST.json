@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT15",
+  "source_id": "MD-1.5.2-ActionSolution",
+  "input_sha256": {
+    "BATCH_EAUDIT15.md": "1d4718280dccf642f08f1bad62ece7b81f70d22e3f391dd068a55b74ccf0a8e8",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT15f_materials": "79d6be9eb9eab5980ac7ccdd80e170733f6d8a8c8cff845f871ee1ee6ae6badf",
+    "EAUDIT15f_PAGES.pdf": "c723004d95af2c0c6dbb4d2d71b10513ee6dddd56e0706ac2813bbb3e91e9f27"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    53
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "4e98f010ee71f75ee2a30f5382ed13bb71000eecfa52bdcbf3a6c785082efabd",
+  "source_block_sha256": "45a7507bb10423dc53b4c4ee68ff827e7c294309357b36b5928f35b9a1eaa901",
+  "source_declarations": [
+    "actionsolution"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/HarmonicActionAngle.lean",
+      "name": "harmonicActionAmplitude",
+      "file_sha256": "7625ca1bcc62ea12e2214aea7df958fcd7d32e61715ba54661e26896ec4e0720",
+      "excerpt_sha256": "05ab432e1080ce6d14b14818e922a1a4f4613cc47b72b43b76f728e67690d706"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/HarmonicActionAngle.lean",
+      "name": "harmonicActionPosition",
+      "file_sha256": "7625ca1bcc62ea12e2214aea7df958fcd7d32e61715ba54661e26896ec4e0720",
+      "excerpt_sha256": "680542198af347c122bebe22c261c66f4df9160bed507b0a06508d5a52b95d81"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/HarmonicActionAngle.lean",
+      "name": "harmonicActionVelocity",
+      "file_sha256": "7625ca1bcc62ea12e2214aea7df958fcd7d32e61715ba54661e26896ec4e0720",
+      "excerpt_sha256": "dd76fb69e1095731764286aca782b48033e5a9867e01c1cd9161683897a0aef9"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT15_review.json",
+  "total_task_bytes": 67681
+}

@@ -1,0 +1,135 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.7-CentralAngularMomentum；原PDF页映射=[62]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT20_review.json，对象含batch=EAUDIT20、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT20.md": "902c26a085d478e0c32a81c3d82a8fecb2028b7b0552810d42eff14cb9aa9a47",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT20e_materials": "69d1cd01a1cf6a72ebcc91e1e7556fdbc842c7ecdb36d05cf509ee062369d847",
+  "EAUDIT20e_PAGES.pdf": "3e5ac456cf3fa34fb49e236ed8cd559c3d8d6d4e10cdf9315482c9179c5516ae"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.7-CentralAngularMomentum",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.7",
+  "printed_page": "39",
+  "pdf_page": "62",
+  "statement_latex": "Moreover, viewing the $\\boldsymbol q_i$ as vectors in $\\mathbb R^3$ (with 0 as their third component),\n\\[\\boldsymbol q_i\\times\\frac\\partial{\\partial\\boldsymbol q_i}U_{ij}(\\boldsymbol q_i,\\boldsymbol q_j)=-\\boldsymbol q_j\\times\\frac\\partial{\\partial\\boldsymbol q_j}U_{ij}(\\boldsymbol q_i,\\boldsymbol q_j),\\]\nwhich implies\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\sum_{i=1}^N\\boldsymbol q_i\\times(m_i\\dot{\\boldsymbol q}_i)=0,\\]\nand tells us that the total angular momentum is also conserved.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "cross3为欧氏3D叉积；原文平面嵌入是特例，当前一般3D。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.centralangularmomentum",
+  "extra_assumptions": [
+    "真实位置和动量导数；反对称内力和沿位移方向中心力。",
+    "[EXTRA] 19号：保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。"
+  ],
+  "old_ids": [
+    "CH01-177"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem centralangularmomentum_derivative :
+  ∀ (N : ℕ) (m : Fin N → ℝ) (q v : ℝ → Fin N → V3)
+    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t) →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →
+    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →
+    (∀ t ∈ I, ∀ i j, cross3 (q t i-q t j) (F t i j) = 0) →
+    (∀ t ∈ I, ∀ i j, cross3 (q t i) (F t i j) = -cross3 (q t j) (F t j i)) ∧
+    ∀ t ∈ I, HasDerivAt (fun s => ∑ i, cross3 (q s i) (m i • v s i)) 0 t := by
+  intro N m q v F I _ hq hp hanti hcenter
+  have hsub (u v w : V3) : cross3 (u-v) w = cross3 u w-cross3 v w := by
+    ext k; fin_cases k <;> simp [cross3] <;> ring
+  have hneg (u w : V3) : cross3 u (-w) = -cross3 u w := by
+    ext k; fin_cases k <;> simp [cross3] <;> ring
+  have ht (t : ℝ) (h : t ∈ I) (i j : Fin N) :
+      cross3 (q t i) (F t i j) = -cross3 (q t j) (F t j i) := by
+    have hc := hcenter t h i j
+    rw [hsub] at hc
+    rw [hanti t h j i,hneg,neg_neg]
+    exact sub_eq_zero.mp hc
+  have hcross (u w : ℝ → V3) (du dw : V3) (t : ℝ)
+      (hu : HasDerivAt u du t) (hw : HasDerivAt w dw t) :
+      HasDerivAt (fun s => cross3 (u s) (w s)) (cross3 du (w t)+cross3 (u t) dw) t := by
+    have huc (k : Fin 3) : HasDerivAt (fun s => u s k) (du k) t :=
+      (PiLp.proj (p := 2) (β := fun _ : Fin 3 => ℝ) k).hasFDerivAt.comp_hasDerivAt t hu
+    have hwc (k : Fin 3) : HasDerivAt (fun s => w s k) (dw k) t :=
+      (PiLp.proj (p := 2) (β := fun _ : Fin 3 => ℝ) k).hasFDerivAt.comp_hasDerivAt t hw
+    have hc (k : Fin 3) : HasDerivAt (fun s => cross3 (u s) (w s) k)
+        ((cross3 du (w t)+cross3 (u t) dw) k) t := by
+      fin_cases k
+      · convert! ((huc 1).mul (hwc 2)).sub ((huc 2).mul (hwc 1)) using 1 <;> simp [cross3] <;> ring
+      · convert! ((huc 2).mul (hwc 0)).sub ((huc 0).mul (hwc 2)) using 1 <;> simp [cross3] <;> ring
+      · convert! ((huc 0).mul (hwc 1)).sub ((huc 1).mul (hwc 0)) using 1 <;> simp [cross3] <;> ring
+    let b : Fin 3 → V3 := fun k => WithLp.toLp 2 (Pi.single k 1)
+    have hre (z : V3) : (∑ k, z k • b k) = z := by
+      ext k; fin_cases k <;> simp [b,Fin.sum_univ_three]
+    have hh := HasDerivAt.fun_sum (u := Finset.univ) (fun k _ => (hc k).smul_const (b k))
+    simpa only [hre] using hh
+  have hself (a : ℝ) (u : V3) : cross3 u (a • u) = 0 := by
+    ext k; fin_cases k <;> simp [cross3] <;> ring
+  have hsum (u : V3) (f : Fin N → V3) : cross3 u (∑ j,f j) = ∑ j,cross3 u (f j) := by
+    ext k; fin_cases k <;> simp [cross3,Finset.mul_sum,Finset.sum_sub_distrib]
+  refine ⟨ht,?_⟩
+  intro t h
+  have hz : (∑ i, ∑ j,cross3 (q t i) (F t i j)) = 0 := by
+    apply paircancellation N (fun i j => cross3 (q t i) (F t i j))
+    · intro i
+      ext k
+      have he := congrArg (fun u : V3 => u k) (ht t h i i)
+      simp only [PiLp.neg_apply] at he
+      change (cross3 (q t i) (F t i i)) k = 0
+      linarith
+    · exact ht t h
+  have hd (i : Fin N) : HasDerivAt (fun s => cross3 (q s i) (m i • v s i))
+      (∑ j,cross3 (q t i) (F t i j)) t := by
+    simpa only [hself,zero_add,hsum] using hcross (fun s => q s i) (fun s => m i • v s i)
+      (v t i) (∑ j,F t i j) t (hq t h i) (hp t h i)
+  have hh := HasDerivAt.fun_sum (u := Finset.univ) (fun i _ => hd i)
+  rwa [hz] at hh
+
+theorem centralangularmomentum :
+  ∀ (N : ℕ) (m : Fin N → ℝ) (q v : ℝ → Fin N → V3)
+    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I → IsPreconnected I →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t) →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →
+    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →
+    (∀ t ∈ I, ∀ i j, cross3 (q t i-q t j) (F t i j) = 0) →
+    (∀ t ∈ I, ∀ i j, cross3 (q t i) (F t i j) = -cross3 (q t j) (F t j i)) ∧
+    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, cross3 (q s i) (m i • v s i)) 0 t) ∧
+    ∀ a ∈ I, ∀ b ∈ I, (∑ i, cross3 (q a i) (m i • v a i)) =
+      ∑ i, cross3 (q b i) (m i • v b i) := by
+  intro N m q v F I hI hc hq hp ha hf
+  obtain ⟨ht,hd⟩ := centralangularmomentum_derivative N m q v F I hI hq hp ha hf
+  refine ⟨ht,hd,?_⟩
+  intro a ha b hb
+  exact hI.is_const_of_deriv_eq_zero hc
+    (fun t ht => (hd t ht).differentiableAt.differentiableWithinAt)
+    (fun t ht => (hd t ht).deriv) ha hb
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.cross3
+```lean
+def cross3 (u v : V3) : V3 := WithLp.toLp 2
+  ![u 1*v 2-u 2*v 1,u 2*v 0-u 0*v 2,u 0*v 1-u 1*v 0]
+```

@@ -1,0 +1,64 @@
+{
+  "eaudit": "EAUDIT21",
+  "source_ids": [
+    "MD-1.7-IsoscelesEnergyReduction",
+    "MD-1.7-IsoscelesAccessibleRegion",
+    "MD-1.7-EquilateralTrimerMinimum",
+    "MD-1.7-TrimerEnergyLowerBound",
+    "MD-1.7-TrimerSaddle",
+    "MD-1.7-TrimerEscapeLiteral"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT21.md": "fba1b44393ec813e4764e294bcacaaf888d9bee5b94aa3bea5d0a4bb6574bcac",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT21a",
+      "source_id": "MD-1.7-IsoscelesEnergyReduction",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/a",
+      "total_bytes": 91933,
+      "manifest_sha256": "a67a1eb2de6f33a01ce6c0ad0443fc7da66b93f68ebeb40c14f38d91f382e3ab"
+    },
+    {
+      "subtask": "EAUDIT21b",
+      "source_id": "MD-1.7-IsoscelesAccessibleRegion",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/b",
+      "total_bytes": 201578,
+      "manifest_sha256": "b5bb31d5c2d896b8421164f887497f8dbeee1477f4121782e17b2af50fa95533"
+    },
+    {
+      "subtask": "EAUDIT21c",
+      "source_id": "MD-1.7-EquilateralTrimerMinimum",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/c",
+      "total_bytes": 89529,
+      "manifest_sha256": "b0475543c1e2e1ec00250b8f3d216b73d20b58f5582dedead0d38936a3d48f02"
+    },
+    {
+      "subtask": "EAUDIT21d",
+      "source_id": "MD-1.7-TrimerEnergyLowerBound",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/d",
+      "total_bytes": 202364,
+      "manifest_sha256": "ec89169b5e188bdb36f88f300bf6e260b3cd9be144731ed09a3e9702fd75a5b8"
+    },
+    {
+      "subtask": "EAUDIT21e",
+      "source_id": "MD-1.7-TrimerSaddle",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/e",
+      "total_bytes": 225223,
+      "manifest_sha256": "c28db39ac12cc0eeea67a84b1a3afad76f1724cf095abbae2bf0059070db070a"
+    },
+    {
+      "subtask": "EAUDIT21f",
+      "source_id": "MD-1.7-TrimerEscapeLiteral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/f",
+      "total_bytes": 205618,
+      "manifest_sha256": "1aa785f203db43e2f1675685f8851e56b26f76a0d2a662ca67d09a7dcd65b577"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.7"
+}

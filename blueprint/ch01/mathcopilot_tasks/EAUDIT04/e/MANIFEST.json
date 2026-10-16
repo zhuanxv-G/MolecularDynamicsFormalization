@@ -1,0 +1,49 @@
+{
+  "eaudit": "EAUDIT04",
+  "source_id": "MD-1.5.3-PositiveHessianQuadratic",
+  "input_sha256": {
+    "BATCH_EAUDIT04.md": "be86fcad3dd498a796580799cff6479037b9f4f9538cfc05276c8fc3db4994f6",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT04e_materials": "0ca78420cd73d30e7e76c093a2604b897f9f0dcd85cd9e01f17b1f9d552b4e10",
+    "EAUDIT04e_PAGES.pdf": "82b8b29a93fb9d67e8677a5aaebdc752376bc032e6297513f6e934ab476042cb"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    56
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "72cb8b1f0de2eed612f73da17e8e001422531d12eb6b724907a3f98eb73fdd5e",
+  "source_block_sha256": "26b5c1d46535e21d19390324c0858b80d53e8e2ec4a34d8f89cb9d1f83484241",
+  "source_declarations": [
+    "positivehessianquadratic"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/PotentialBarriers.lean",
+      "name": "IsStrictPotentialMin",
+      "file_sha256": "80a6f060970407ea1953cf53938c1da46dc380ef1f7eb9a53b033d34c09b99e6",
+      "excerpt_sha256": "738930bd1b1b8e51fbfe3b3987abdc9674ce75b022a5ea06c3e287726edbc451"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Momentum",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PhaseSpace",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "daa02c2c07383d89b526c2336a494ea2279c29eb9ade168bef41013e54ebff7f"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT04_review.json",
+  "total_task_bytes": 92772
+}

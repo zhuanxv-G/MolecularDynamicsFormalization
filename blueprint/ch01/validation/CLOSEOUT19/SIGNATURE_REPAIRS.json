@@ -1,0 +1,116 @@
+[
+  {
+    "source_id": "MD-1.1-Schrodinger",
+    "category": "A",
+    "note": "按EAUDIT02新返回，将联合全域C²改为连续时间一阶/逐空间坐标二阶经典导数；不要求二阶时间或混合偏导。",
+    "before": "d42ffb3b09f6a38dba4cd6ed88a79c7b5c434d0d091cbac0599d1b1e186a14d0"
+  },
+  {
+    "source_id": "MD-1.1.2-Coulomb",
+    "category": "A",
+    "note": "正C、介电常数与距离落实到子类型；电荷仍可正负，未另造吸引排斥结论。",
+    "before": "c99bf55a6e57b945f6a8e304f44b235c6cf0a763db160d917d8a8cab01f7f35c"
+  },
+  {
+    "source_id": "MD-1.1.2-Cutoff",
+    "category": "A",
+    "note": "C¹只要求正距离域，保留严格r_cut<r截零及正截断半径。",
+    "before": "126ddf4c90c49f42cef51a781adcf940e4c1d22e13be9be5cc2146c0d61e5236"
+  },
+  {
+    "source_id": "MD-1.1.2-Yukawa",
+    "category": "A",
+    "note": "正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。",
+    "before": "2e3930687eb550ee87abfa8443816b2c0cfa18f7b4f0abe91f247ed90ec298a1"
+  },
+  {
+    "source_id": "MD-1.2-DegreesFreedom",
+    "category": "C",
+    "note": "只对C¹正则约束层的可行点定义自由度；原核维数更名为线性化辅助量，下一条补真实局部坐标等价。",
+    "before": "cc1528b64168788fe6cc74e5a01fd1a0eb941ca19a083e56410a22665a16e8aa"
+  },
+  {
+    "source_id": "MD-1.2-ConstraintDimension",
+    "category": "C",
+    "note": "保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。",
+    "before": "36fd5fab4eec12dceb32579dd6e71c53ab91205e336ff309bcfde361b2d71fe5"
+  },
+  {
+    "source_id": "MD-1.2-ScalarMechanical",
+    "category": "A",
+    "note": "沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。",
+    "before": "d577b1c49cbefd9974c120579caf6a2bf559987950854218d5e328d9cb5d2f23"
+  },
+  {
+    "source_id": "MD-1.2-LJTimeScaling",
+    "category": "B",
+    "note": "补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。",
+    "before": "d844f266c9dadfd3edc5fb0953420de365fb2b7bacc83eb96bb08b4ad7573d05"
+  },
+  {
+    "source_id": "MD-1.4-HamiltonEquations",
+    "category": "A",
+    "note": "沿轨迹两偏函数真实可微，补时间域版；全时间名称保留作univ特例。",
+    "before": "3358b59456367c6d5b6e6fb83ec1d77f3189382a11f99b725d6a94f23b135003"
+  },
+  {
+    "source_id": "MD-1.5-CompactContinuation",
+    "category": "B",
+    "note": "主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。",
+    "before": "7ea8154dad2e317dbddab71b20dca89cd20f62c9fcaf8b71cdd7d6158f84cb15"
+  },
+  {
+    "source_id": "MD-1.5.1-HarmonicPhaseFlow",
+    "category": "B",
+    "note": "保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。",
+    "before": "776b426f44b6b4ad600a18fcb478090b26fd7b90e0d4f7baa3e28d944814e25c"
+  },
+  {
+    "source_id": "MD-1.5.2-KeplerMomentum",
+    "category": "B",
+    "note": "保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。",
+    "before": "d43c3215bd604a58ab74a73418f766ebf14eca2c8ce9ccc5215e781907157abc"
+  },
+  {
+    "source_id": "MD-1.5.2-TorusPeriod",
+    "category": "B",
+    "note": "保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。",
+    "before": "a25ea00a01329ea3cff5f79fb6440cf8fc0602776f273a638116d4d562ef7842"
+  },
+  {
+    "source_id": "MD-1.5.3-LinearizedHamiltonian",
+    "category": "B",
+    "note": "保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。",
+    "before": "8e7dabd7162e165c02e06ca37d62f6389e0994d7fc2e39cc13f5320b42ed0d62"
+  },
+  {
+    "source_id": "MD-1.6-PeriodicBoundary",
+    "category": "C",
+    "note": "原等价关系另名辅助；主定义逐字表达正盒长下右越界减L、左越界加L、否则不变的一步更新，不伪称任意大越界一步即可落盒。",
+    "before": "2fd68f7d5f14e976fd6bd0b8f4edee8dbe7b3486388dadc2e11d3f1b8e91bce9"
+  },
+  {
+    "source_id": "MD-1.6-PeriodicTranslationMomentum",
+    "category": "B",
+    "note": "完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。",
+    "before": "d5ab02ba52ab0637f83ae1c9d626b6dea6cde704c7ff34ffdd7dc7e73e6b3ca7"
+  },
+  {
+    "source_id": "MD-1.6-MinimumImage",
+    "category": "B",
+    "note": "最近像关系留作辅助；完整模型以L>0、不同原子标签及每对选中复制体唯一参与求力落实only限定（同距可任选）。",
+    "before": "0d4c0dbca82f99ca89d3aceb7b4915dae48547cc5d1e058ab9e4c200a8737f1f"
+  },
+  {
+    "source_id": "MD-1.6.1-ComplexNormalMode",
+    "category": "B",
+    "note": "增加η非零及共轭η非零、−iΩ特征方程，保留所有系数的原复解公式；不以零向量冒充特征向量。",
+    "before": "f78173634b1da94b8fecc486c3945af183f2b47e266a2a3d92fac187f45918e9"
+  },
+  {
+    "source_id": "MD-1.7-CentralAngularMomentum",
+    "category": "B",
+    "note": "保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。",
+    "before": "30852325e4b4740d5979546aae4fd76e2f91c34a107f70325e9b13c2c4301e45"
+  }
+]

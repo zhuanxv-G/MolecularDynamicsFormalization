@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT11",
+  "input_sha256": {
+    "BATCH_EAUDIT11.md": "460dc072b1a0d9d3f8290e831ad443007f96ec13dcf594716aecf77a1a29e35f",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT11a",
+      "source_id": "MD-1.1.1-MorseMinimum",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT11/a",
+      "total_bytes": 83005,
+      "manifest_sha256": "1733ee4c4d56862632c1d3ada8a0bee9577c33b30de72cf6f5f30e572752a7eb"
+    },
+    {
+      "subtask": "EAUDIT11b",
+      "source_id": "MD-1.1.1-LengthBond",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT11/b",
+      "total_bytes": 145993,
+      "manifest_sha256": "6604d1963a26913ec626f973f08cb4d1b25714daf4bec70dcfa43a8d6c8d80f2"
+    },
+    {
+      "subtask": "EAUDIT11c",
+      "source_id": "MD-1.1.1-LJRepulsion",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT11/c",
+      "total_bytes": 143625,
+      "manifest_sha256": "6db24876506961e47c3c57284c72e8d25226979caf48a59613074b04a67346c0"
+    },
+    {
+      "subtask": "EAUDIT11d",
+      "source_id": "MD-1.1.1-HeterogeneousLJ",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT11/d",
+      "total_bytes": 135977,
+      "manifest_sha256": "7ca3139dfb27d60b713f2e0214174ba4e2da7ec13ff2bddb0bebf586f810878e"
+    }
+  ]
+}

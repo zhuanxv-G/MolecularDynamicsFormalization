@@ -1,0 +1,87 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+原文版为忠实转录，修正版为勘误版本，请分别审校。原书疑误的原文定理保留sorry不证；不要将其真假/占位状态误判为修正版的语义FAIL。原文JSON逐字摘录不因新增修正版而改写。
+
+本条MD-1.5.3-HyperbolicStabilityTransfer；原PDF页映射=[55]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT04_review.json，对象含batch=EAUDIT04、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT04.md": "be86fcad3dd498a796580799cff6479037b9f4f9538cfc05276c8fc3db4994f6",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT04c_materials": "7f67e6083c4b84a3b76fe633569bbe2dc3ab7a7292671a901de2eee049cf7ebc",
+  "EAUDIT04c_PAGES.pdf": "8c58ddf6b8a3383d2022cbdb995d1330b1171810ce03c5306c40cce252da81db"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.5.3-HyperbolicStabilityTransfer",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.5.3",
+  "printed_page": "32",
+  "pdf_page": "55",
+  "statement_latex": "The Hartman-Grobman theorem clearly implies that the stability of a given hyperbolic equilibrium point $\\boldsymbol z^*$ of a nonlinear system can be inferred from the stability of the origin for the linearization of the system around $\\boldsymbol z^*$.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.hyperbolicstabilitytransfer",
+  "extra_assumptions": [
+    "C1及真实全局流；stable谓词的统一界<ε与原文严格sup形式等价。"
+  ],
+  "old_ids": [
+    "CH01-142"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem hyperbolicstabilitytransfer :
+  ∀ (n : ℕ) (f : Position n → Position n) (z : Position n)
+    (F : ℝ → Position n → Position n), ContDiff ℝ 1 f → f z = 0 →
+    hyperbolic (fderiv ℝ f z) → isFlowOf f F →
+    (stable F z ↔ stable (fun t x => linearExponentialFlow (fderiv ℝ f z) t x) 0) := by
+  sorry
+
+/-- 修正版，对应原文 MD-1.5.3-HyperbolicStabilityTransfer，改动：显式独立登记以拓扑共轭为依据的稳定性转移，不调用光滑literal。 -/
+theorem hyperbolicstabilitytransfer_corrected :
+  ∀ (n : ℕ) (f : Position n → Position n) (z : Position n)
+    (F : ℝ → Position n → Position n), ContDiff ℝ 1 f → f z = 0 →
+    hyperbolic (fderiv ℝ f z) → isFlowOf f F →
+    (stable F z ↔ stable (fun t x => linearExponentialFlow (fderiv ℝ f z) t x) 0) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MD.Ch01.hyperbolic
+```lean
+def hyperbolic {n : ℕ} (A : Position n →L[ℝ] Position n) : Prop :=
+  ∀ (a b : ℝ) (x y : Position n), (x ≠ 0 ∨ y ≠ 0) →
+    A x = a • x - b • y → A y = b • x + a • y → a ≠ 0
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.isFlowOf
+```lean
+def isFlowOf {n : ℕ} (f : Position n → Position n) (F : ℝ → Position n → Position n) : Prop :=
+  (∀ x, F 0 x = x) ∧ ∀ x t, HasDerivAt (fun s => F s x) (f (F t x)) t
+```
+### 实际依赖 MolecularDynamics.linearExponentialFlow
+```lean
+noncomputable def linearExponentialFlow (A : E →L[ℝ] E) (t : ℝ) (z : E) : E :=
+  NormedSpace.exp (t • A) z
+
+omit [CompleteSpace E] in @[simp] theorem linearExponentialFlow_zero (A : E →L[ℝ] E) (z : E) :
+    linearExponentialFlow A 0 z = z := by
+  simp [linearExponentialFlow]
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.stable
+```lean
+def stable {n : ℕ} (F : ℝ → Position n → Position n) (z : Position n) : Prop :=
+  ∀ ε > 0, ∃ δ > 0, ∀ x, dist x z < δ →
+    ∃ B : ℝ, B < ε ∧ ∀ t ≥ 0, dist (F t x) z ≤ B
+```

@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-1.6-RegularLatticeMinimizerLiteral",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "98b04fa61c3c549df392f5214e8d8e21190da8e4e25189974fd7f8d8ed734fd3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT17c_materials": "ae6cf61ab026b7e0203d7a9e69dbcd3dea12d4b8144efdc03458bfc2d70c9b51",
+    "EAUDIT17c_PAGES.pdf": "962923a29ed05a9a9b36ab2097c30547ce5122330d3c4be5323deff71f1d1292"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    57
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "49b458cab686e80bcd411ce2cfa233e76d5f7da08a2bbf332709c615e240638f",
+  "source_block_sha256": "56d0a527b77e36fb8422ad68ffac490a012760aead783b4bb10fcdf2332f8978",
+  "source_declarations": [
+    "regularlatticeminimizerliteral",
+    "regularlatticeminimizerliteral_corrected",
+    "regularlatticeminimizerliteral_counterexample"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/LatticePairPotential.lean",
+      "name": "boxPeriodicNearestNeighborPotentialEnergy",
+      "file_sha256": "fe3d94e8c07979e08da619c1866823e34bbe7f1ce732d92ff5f2c4a002df972a",
+      "excerpt_sha256": "35076032c1b82ba28db2f7a842d40f31117e33fc6234dd06e5faa8691793f180"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LatticePairPotential.lean",
+      "name": "nearestNeighborPotentialEnergy",
+      "file_sha256": "fe3d94e8c07979e08da619c1866823e34bbe7f1ce732d92ff5f2c4a002df972a",
+      "excerpt_sha256": "752c733ab09eca5d8eaa6926424eac40d639bdbd2d096e01033e3a337b5c7a22"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "regularLattice",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "5c57ad73285c41ec056d8fdeba5d06b241bb8090f1b202bac1fc2af9c2250632"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 162570
+}

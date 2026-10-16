@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT15",
+  "source_id": "MD-1.5.2-KeplerRadialReduction",
+  "input_sha256": {
+    "BATCH_EAUDIT15.md": "1d4718280dccf642f08f1bad62ece7b81f70d22e3f391dd068a55b74ccf0a8e8",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT15b_materials": "17c81dfc39002eb61f97f62e9f3c5f0ad2014cd20ce66c959b5c708cf7359534",
+    "EAUDIT15b_PAGES.pdf": "6960809ace522a5703e373ec905ea1e64665aaad7b11fccb95494099890aa220"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    52
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "86f3332a889067bd58b3029bd2560d8133f73518c2f9cca5746fa38e7af83fae",
+  "source_block_sha256": "6f44edba02511cbc7550e75f8a7e3bb0a561f1d809e09e5c7239aefc22cc91b6",
+  "source_declarations": [
+    "keplerradialreduction"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/KeplerPolarDynamics.lean",
+      "name": "IsKeplerPolarEulerLagrangeOn",
+      "file_sha256": "cf75bbe5342875a5cac3f8496edc68883cedf65fbebcff33953c5479886c2ecb",
+      "excerpt_sha256": "3bef7f4cc32a30a58583bc47900e1114a83f01d92c52ef71a975a20201454946"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/KeplerPolarDynamics.lean",
+      "name": "keplerPolarScalarLagrangian",
+      "file_sha256": "cf75bbe5342875a5cac3f8496edc68883cedf65fbebcff33953c5479886c2ecb",
+      "excerpt_sha256": "1772bd7c1fec33583e6f8df7f800172aa58805d95dd0cf85cccd3c9e4af9cb00"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT15_review.json",
+  "total_task_bytes": 61640
+}

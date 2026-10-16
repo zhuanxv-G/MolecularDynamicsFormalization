@@ -74,3 +74,10 @@
 - MD-1.7.1-TransitivityErgodicityLiteral：如何裁定拓扑传递与遍历性的字面等价？选项：仅保留疑误 / 另立满支撑测度下的单向结果。
 - MD-1.7.2-VariationalEquationLiteral：是否另立标准变分矩阵W(t)=DF_t(ζ)的勘误版本？选项：批准另立 / 保留字面疑误。
 - MD-1.7.2-NearbyTrajectoryLiteral：是否把导数取值点另行勘误为DF_t(ζ)？选项：批准另立 / 保留字面疑误。
+
+
+
+
+## 19号双版本现行入口
+
+原有9项选项保留；本轮涵盖全部source标记疑误及相关推论，共20条。现行原文/修正版名称、状态、默认选项与人工核查点见[CH01_ERRATA.zh-CN.md](../../docs/review/CH01_ERRATA.zh-CN.md)。默认选项不是导师批准。

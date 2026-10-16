@@ -1,0 +1,46 @@
+{
+  "eaudit": "EAUDIT08",
+  "source_id": "MD-1.4-ConvexLegendre",
+  "input_sha256": {
+    "BATCH_EAUDIT08.md": "913f33aa197b704b22da52e2bf6f06b557b23367c06f0a77f1a4d1e3006b9e11",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT08b_materials": "7b1933bed7e870a03ef2c0cb75f8b9af8bacd025cb3ae43ed4fbe1118cac9446",
+    "EAUDIT08b_PAGES.pdf": "fa74ad1639d99f1955db2bd9447bf2dba8f51eaa51c0ab0c7e595c3bc9b7db7c"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    47
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "01f85037054cb0b1da92fe9f59b2694cb65b393c67bbae072a90d693c606d39d",
+  "source_block_sha256": "7b8215fccc5f00974d339fad4fb08484244e8a5cde14dfac9a25a0b4d3f7e05f",
+  "source_declarations": [
+    "legendreTransform",
+    "legendreTransform_literal",
+    "legendreTransform_corrected",
+    "legendreTransform_corrected_b"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "legendreTransform",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "80ba9bfdafb6ce32e8e31a4455aee8eac961de0c2ee3d59347cfe5b97d07b0f4"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "legendreTransform_corrected",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "8f1c9bdf8976aaaf0a0f3ed9906ad486dad18b7bed30f8a16b102ba02fb1222d"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT08_review.json",
+  "total_task_bytes": 80712
+}

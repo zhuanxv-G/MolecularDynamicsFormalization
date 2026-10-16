@@ -1,0 +1,72 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.4-HamiltonLagrangeEquivalence；原PDF页映射=[48]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT08_review.json，对象含batch=EAUDIT08、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT08.md": "913f33aa197b704b22da52e2bf6f06b557b23367c06f0a77f1a4d1e3006b9e11",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT08d_materials": "a9885b5a2b3c0cc21bc549bee143d2d37b035eab4f013e22b6ebbc9f73018af2",
+  "EAUDIT08d_PAGES.pdf": "3a45ff15a0633aae1665ccceb1024838601b8540cf71a8e77d4ccf50c0baef95"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.4-HamiltonLagrangeEquivalence",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.4",
+  "printed_page": "25",
+  "pdf_page": "48",
+  "statement_latex": "More generally, for molecular models, the Hamiltonian and Lagrangian formulations are interchangeable, but the use of the Hamiltonian form is preferred for allowing simplified description of the geometric character of the solutions of the system as we discuss in Chaps. 2–4.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.hamiltonlagrangeequivalence",
+  "extra_assumptions": [
+    "一般配置相关M C2、U C2、M逐点正定；轨迹q′=v真实且时间域开放。"
+  ],
+  "old_ids": [
+    "CH01-086"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem hamiltonlagrangeequivalence :
+  ∀ (n : ℕ) (M : Position n → Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (q v : ℝ → Position n) (I : Set ℝ),
+    IsOpen I → ContDiff ℝ 2 M → ContDiff ℝ 2 U →
+    (∀ x, (M x).PosDef) → (∀ t ∈ I, HasDerivAt q (v t) t) →
+    ((∀ t ∈ I, HasDerivAt (fun s => gradient (quadraticL M U (q s)) (v s))
+      (gradient (fun x => quadraticL M U x (v t)) (q t)) t) ↔
+    ∀ t ∈ I, let p := fun s => (M (q s)).toEuclideanLin (v s)
+      HasDerivAt q (gradient (quadraticH M U (q t)) (p t)) t ∧
+      HasDerivAt p (-gradient (fun x => quadraticH M U x (p t)) (q t)) t) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.PotentialEnergy
+```lean
+abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.quadraticH
+```lean
+def quadraticH {n : ℕ} (M : Position n → Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (q p : Position n) :=
+  inner ℝ p ((M q)⁻¹.toEuclideanLin p)/2+U q
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.quadraticL
+```lean
+def quadraticL {n : ℕ} (M : Position n → Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (q v : Position n) :=
+  inner ℝ v ((M q).toEuclideanLin v)/2-U q
+```

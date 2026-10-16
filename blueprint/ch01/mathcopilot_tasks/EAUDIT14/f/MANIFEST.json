@@ -1,0 +1,169 @@
+{
+  "eaudit": "EAUDIT14",
+  "source_id": "MD-1.5.2-KeplerConservedEnergy",
+  "input_sha256": {
+    "BATCH_EAUDIT14.md": "13b7018ec376a19df4f3a57c4174fe53c10199eabe60f14a74b1ecf341392236",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT14f_materials": "68a6fe9a907d3e8c9e82d3cb66f2c655e4cbd1a38f9cfe51e5598f34e79b1ba3",
+    "EAUDIT14f_PAGES.pdf": "ac16e7a1e39bbecc7168e2f84e45f5b8a9efd8ec596e9e460d41ca6b80a8566e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    52
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "81a15e6b248510cedecfa8e62018896cea15ab9fad949a4f7f457b0f85e794c7",
+  "source_block_sha256": "c672155c75559eefc9403bcefb26de0b6d1a870bd30b0c0217ec11752e7fcc05",
+  "source_declarations": [
+    "kepler_energy_angular_integrability"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "name": "CoordinateMasses",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "50939e8d47d2aea37f48a71423ee3ae48b297b19ba4394b17b02a93c1f4510a4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Force",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "96d8a4c978b42ab5868278a8f9c5f164d431ef08f24baf04a0c1fcab21d713f0"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Hamiltonian",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "a398413ee2b70ba99a5495f0910809accbc2695165ffa883d4e42750984770aa"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ScalarLocalIVP.lean",
+      "name": "HasScalarQuadratureRepresentation",
+      "file_sha256": "779a4bb9f543fc0c897a034c4dff93dfed153561738ee3db5819c3c9ce7338b5",
+      "excerpt_sha256": "4042f8778dc5f6c897d86439ff558aaddf068369e02162bab2caf1181b4a210c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "name": "IsMechanicalSolutionOn",
+      "file_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+      "excerpt_sha256": "57e22f321cfe8f54c9731f68f4200374e8b3b05c735ff5a01296226dda617030"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "KineticEnergy",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "ce8dd0203270efb25964788dba313da42a3bf609ff0325f4a0d556b01a136bbc"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "MassMatrix",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "98dc2589cf902b088edd39fbacfd5ceaeb43e0ec8cd3609f562eac8091e9df77"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Momentum",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PhaseSpace",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "daa02c2c07383d89b526c2336a494ea2279c29eb9ade168bef41013e54ebff7f"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PotentialEnergy",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "043ad8ba46ea4ec31839daabf34e8017edbc3d00188fad3366e80af19ddc6116"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ScalarLocalIVP.lean",
+      "name": "ScalarPotentialLocalDescription",
+      "file_sha256": "779a4bb9f543fc0c897a034c4dff93dfed153561738ee3db5819c3c9ce7338b5",
+      "excerpt_sha256": "a1a9fdbe4e0ace4ef09eb5dd9ae140d9502c062e5d7ac3bb2cc166b7821ccebc"
+    },
+    {
+      "path": "MolecularDynamics/BasicDefinitions.lean",
+      "name": "SeparableEnergy",
+      "file_sha256": "db3ebc5216f3f4beeae14397b2997e23195edff7f370f0343a2cd727e5d46ff6",
+      "excerpt_sha256": "6bf2960568b2b56611bf9dd10a9cb8f8f6905fdd0e79578faeac900b6b6b9a66"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Velocity",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "22e67e3397d83abd0c1c1aeaa28366555c9f365d02734f9df1fd443624636cf1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "name": "diagonalMassMatrix",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "56c215aa345f33da76588c37690a0b34fd6c467f706ccbb6c832962abd41e7db"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Kepler.lean",
+      "name": "keplerForce",
+      "file_sha256": "9c98710e9118f810927240ba2b0887872bf9e88641418471bbc13b5ae1c424cf",
+      "excerpt_sha256": "a19763d061ca871990157ab20dcb95e075507630d59046e89e63496a00718650"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Kepler.lean",
+      "name": "keplerPotential",
+      "file_sha256": "9c98710e9118f810927240ba2b0887872bf9e88641418471bbc13b5ae1c424cf",
+      "excerpt_sha256": "21e7fa9daeeccf6c06a7463b43a92f145677de88570bc215b9f0549b7dbe33e2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Hamiltonian.lean",
+      "name": "massHamiltonian",
+      "file_sha256": "5c62cc4b16f7c3eddf8d2cfc2a1868acd8e991fc20f5c667dd170fc3fa58c54e",
+      "excerpt_sha256": "70b034e13f78388bab20440e5876d5f3e992d5f3fbfb043d54e1e0b03adfacd8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Hamiltonian.lean",
+      "name": "massSeparableEnergy",
+      "file_sha256": "5c62cc4b16f7c3eddf8d2cfc2a1868acd8e991fc20f5c667dd170fc3fa58c54e",
+      "excerpt_sha256": "33718d2a21e67a31862f8f0b45422f1f31940e8530a2a8d287002281b296ad0b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "name": "mechanicalVectorField",
+      "file_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+      "excerpt_sha256": "36242d31adc1ee6a6edb451265a0838c3eebc158a8fa6ed8b06960f6f4dc15ea"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Hamiltonian.lean",
+      "name": "momentumKineticEnergy",
+      "file_sha256": "5c62cc4b16f7c3eddf8d2cfc2a1868acd8e991fc20f5c667dd170fc3fa58c54e",
+      "excerpt_sha256": "4e71db829a489e634754bf3038fa5bbe64065f2f6a9f709220f17f5240c5c2aa"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/PlanarAngularMomentum.lean",
+      "name": "planarAngularMomentum",
+      "file_sha256": "676f52823522352f343d770cb24d079824d0b927216ff33e03cb85578019ea4c",
+      "excerpt_sha256": "c54d6a01b3f8595874f5eb14889ccb4c94e2cff2b0f33cc86608c040c9ff11e1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/SeparableQuadrature.lean",
+      "name": "separableTimePrimitive",
+      "file_sha256": "435e218a6dacc6ee234f5c1b9caf154d96a125c182c57ed8227355b4a0586923",
+      "excerpt_sha256": "7584cf5ff6aed313b2413420b02990bc4752cb4d3583dffe3d61997f730d7486"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "name": "velocityOperator",
+      "file_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+      "excerpt_sha256": "715cd487c9efc9fe4ffaa4f5b65e0178109869a91e2adb9f649fed6c888b96d5"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT14_review.json",
+  "total_task_bytes": 73880
+}

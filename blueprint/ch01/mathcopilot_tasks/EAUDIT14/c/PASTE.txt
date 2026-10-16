@@ -1,0 +1,65 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.5.2-PlanarGraphReduction；原PDF页映射=[51]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT14_review.json，对象含batch=EAUDIT14、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT14.md": "13b7018ec376a19df4f3a57c4174fe53c10199eabe60f14a74b1ecf341392236",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT14c_materials": "dec73810632d24e65a56f501d3a3811bbb9ce098ff7e97fd309ff46dbddba46b",
+  "EAUDIT14c_PAGES.pdf": "40849ec245321802b83a49da58bc757e5b800d07bdffc9a7da1ad456fb4cec7d"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.5.2-PlanarGraphReduction",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.5.2",
+  "printed_page": "28",
+  "pdf_page": "51",
+  "statement_latex": "In principle, such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:\n\\[\\frac{\\mathrm dx}{\\mathrm dt}=g(x,\\psi(x)).\\]",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "正文前句二维f=(g,h)且第一积分I(x,y)=I0；不把IsFirstIntegralOn当证明目标假设，它是本条原文已有第一积分。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.planargraphreduction",
+  "extra_assumptions": [
+    "对y偏导非零，真实strict导数，局部时间窗；原文省略隐函数非退化条件。"
+  ],
+  "old_ids": [
+    "CH01-111",
+    "CH01-112"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem planargraphreduction :
+  ∀ (f : ℝ × ℝ → ℝ × ℝ)
+    (Q : Set (ℝ × ℝ)) (J : ℝ × ℝ → ℝ) (a b t₀ : ℝ) (γ : ℝ → ℝ × ℝ)
+    (hfirst : IsFirstIntegralOn f Q J)
+    (hQ : ∀ t ∈ Ioo a b, γ t ∈ Q)
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ (f (γ t)) t) (ht₀ : t₀ ∈ Ioo a b)
+    (L : (ℝ × ℝ) →L[ℝ] ℝ) (hJ : HasStrictFDerivAt J L (γ t₀))
+    (hpartial : L (0, 1) ≠ 0),
+    ∃ ψ : ℝ → ℝ, ψ (γ t₀).1 = (γ t₀).2 ∧ DifferentiableAt ℝ ψ (γ t₀).1 ∧
+      (∀ᶠ v in 𝓝 (γ t₀), J v = J (γ t₀) ↔ ψ v.1 = v.2) ∧
+      (∀ᶠ t in 𝓝 t₀, (γ t).2 = ψ (γ t).1 ∧
+        HasDerivAt (fun u => (γ u).1) ((f ((γ t).1, ψ (γ t).1)).1) t) := by
+  exact @MolecularDynamics.planarFirstIntegral_localGraph_reduction
+```
+### 实际依赖 MolecularDynamics.IsFirstIntegralOn
+```lean
+def IsFirstIntegralOn (f : E → E) (Q : Set E) (J : E → ℝ) : Prop :=
+  ∀ (a b : ℝ) (γ : ℝ → E),
+    (∀ t ∈ Ioo a b, γ t ∈ Q) →
+    (∀ t ∈ Ioo a b, HasDerivAt γ (f (γ t)) t) →
+    ∀ s ∈ Ioo a b, ∀ t ∈ Ioo a b, J (γ s) = J (γ t)
+```

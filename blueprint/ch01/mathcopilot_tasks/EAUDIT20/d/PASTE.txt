@@ -1,0 +1,60 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.7-CentralMomentum；原PDF页映射=[62]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT20_review.json，对象含batch=EAUDIT20、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT20.md": "902c26a085d478e0c32a81c3d82a8fecb2028b7b0552810d42eff14cb9aa9a47",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT20d_materials": "f7e97b293961202e07844fb497ec023895e958170eba9dc90c0f612ad3f65c78",
+  "EAUDIT20d_PAGES.pdf": "bd16097f011e61cfacb0ad457ce3444ff13f8fb4a6cbf5639fcf114d620dbb2e"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.7-CentralMomentum",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.7",
+  "printed_page": "39",
+  "pdf_page": "62",
+  "statement_latex": "and so, for central forces,\n\\[\\sum_{i=1}^N m_i\\ddot{\\boldsymbol q}_i=0,\\]\nwhich expresses the constancy of the momentum.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "∑mᵢq̈ᵢ=0为PairCancellation及IsMechanicalSolutionOn的组合；bridge结论对每坐标守恒即整个向量守恒。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.central_momentum",
+  "extra_assumptions": [
+    "真实Newton动量导数、逐对作用反对称、开放连通时间域；pᵢ=mᵢvᵢ。净力零为结论，未用作前提。"
+  ],
+  "old_ids": [
+    "CH01-176"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem central_momentum :
+  ∀ (N : ℕ) (m : Fin N → ℝ) (v : ℝ → Fin N → V3)
+    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I → IsPreconnected I →
+    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →
+    (∀ t ∈ I, (∑ i, ∑ j, F t i j) = 0) ∧
+    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i • v s i) 0 t) ∧
+    ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i • v a i) = ∑ i, m i • v b i := by
+  exact @momentum_conservation
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```

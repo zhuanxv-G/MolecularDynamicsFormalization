@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT06",
+  "source_ids": [
+    "MD-1.2-RadialLJForceLiteral",
+    "MD-1.2-LJTimeScaling"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT06.md": "7722c7900273e427d25c3f2f6ae867e8c988420e0fc451057e65594ff8568c21",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT06/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT06a",
+      "source_id": "MD-1.2-RadialLJForceLiteral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT06/a",
+      "total_bytes": 85666,
+      "manifest_sha256": "81d10d3b0c4e8e722b5a4863ea40078aa689e85bd4a26fcd462dee332cef49d5"
+    },
+    {
+      "subtask": "EAUDIT06b",
+      "source_id": "MD-1.2-LJTimeScaling",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT06/b",
+      "total_bytes": 146943,
+      "manifest_sha256": "d988c9c99f65ce95b929410b85c1ca09664a46e88f202bc31242b15ff6cd8e39"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.2"
+}

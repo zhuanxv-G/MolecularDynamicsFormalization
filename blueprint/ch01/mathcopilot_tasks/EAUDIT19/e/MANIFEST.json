@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT19",
+  "source_id": "MD-1.6.1-RealNormalMode",
+  "input_sha256": {
+    "BATCH_EAUDIT19.md": "cf031b8e92f9f9aca27363af352806c2c59d22e3909d50dba60d52c6b07996d2",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT19e_materials": "ad79c0aedf8852b706b64fd756d9b5ca1b073fb7de18471f021aba67c4617e6f",
+    "EAUDIT19e_PAGES.pdf": "82f34582a5166ec2010a998fedcdad5a75aed656fe0e6984f9e8e57355b48505"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    60
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "7d32d59e12dd7c451271d8f91b3c97e86e434c80bdcdbe6ffbbaf5e7b1dd0e18",
+  "source_block_sha256": "078d7d6d3790942a18066d226229fd1f0bf0f85650c2c83d1f21f9601f9bdc89",
+  "source_declarations": [
+    "realnormalmode"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/NormalModes.lean",
+      "name": "realNormalMode",
+      "file_sha256": "4bef7628ccd8043acf84b69e40ba962f6450431ab9f082c230318a89e8d24357",
+      "excerpt_sha256": "bc3418ab2ae40b80713eb853a0a1e46e4a7561d352cc42e05429687ec628a539"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT19_review.json",
+  "total_task_bytes": 128830
+}

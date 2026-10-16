@@ -1,0 +1,95 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.2-NewtonCompact；原PDF页映射=[41]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT05_review.json，对象含batch=EAUDIT05、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT05.md": "d426a02c936e411940e95a0f0fc7de30b845ee0957638a10cfbfbd473fd84e05",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT05a_materials": "4eb20d801f80c6f1a47976b5d9aac2a66659ebbbc8a304bb646a5f66179c9448",
+  "EAUDIT05a_PAGES.pdf": "43b029e8657c38dc1ae0552ccbd308f47f80f7cb07e6ea42fc8f5864d6c16927"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.2-NewtonCompact",
+  "kind": "definition",
+  "label": null,
+  "section": "1.2",
+  "printed_page": "18",
+  "pdf_page": "41",
+  "statement_latex": "In this book, we shall frequently use a compact, vectorial notation, where $\\boldsymbol q$ and $\\dot{\\boldsymbol q}$ represent vectors of the positions and velocities, and $\\boldsymbol M$ is a diagonal mass matrix, so the equations of motion (1.2) become\n\\[\\boldsymbol M\\frac{\\mathrm d^2}{\\mathrm dt^2}\\boldsymbol q=\\boldsymbol F(\\boldsymbol q)=-\\nabla U(\\boldsymbol q).\\tag{1.3}\\]",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "$N_c=3N$；$\\boldsymbol M=\\operatorname{diag}(m_1,m_1,m_1,\\ldots,m_N,m_N,m_N)$；一维时$N_c=N$。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.compactNewton",
+  "extra_assumptions": [
+    "真实二阶可微资格写成HasDerivAt，避免总导数对不可微曲线给伪解。"
+  ],
+  "old_ids": [
+    "CH01-044",
+    "CH01-045",
+    "CH01-046",
+    "CH01-047",
+    "CH01-048",
+    "CH01-049",
+    "CH01-050"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (q : ℝ → Position n) (t : ℝ) : Prop :=
+  HasDerivAt q (deriv q t) t ∧ HasDerivAt (deriv q) (deriv (deriv q) t) t ∧
+  massOperator m (deriv (deriv q) t) = -gradient U (q t)
+```
+### 实际依赖 MolecularDynamics.CoordinateMasses
+```lean
+abbrev CoordinateMasses (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.MassMatrix
+```lean
+abbrev MassMatrix (n : ℕ) := Matrix (Fin n) (Fin n) ℝ
+```
+### 实际依赖 MolecularDynamics.Momentum
+```lean
+abbrev Momentum (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.PotentialEnergy
+```lean
+abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
+```
+### 实际依赖 MolecularDynamics.Velocity
+```lean
+abbrev Velocity (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MD.Ch01.compactNewton
+```lean
+def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (q : ℝ → Position n) (t : ℝ) : Prop :=
+  HasDerivAt q (deriv q t) t ∧ HasDerivAt (deriv q) (deriv (deriv q) t) t ∧
+  massOperator m (deriv (deriv q) t) = -gradient U (q t)
+```
+### 实际依赖 MolecularDynamics.diagonalMassMatrix
+```lean
+def diagonalMassMatrix {n : ℕ} (masses : CoordinateMasses n) : MassMatrix n :=
+  Matrix.diagonal masses
+```
+### 实际依赖 MolecularDynamics.massOperator
+```lean
+noncomputable def massOperator {n : ℕ} (μ : CoordinateMasses n) :
+    Velocity n →L[ℝ] Momentum n :=
+  (Matrix.toEuclideanLin (diagonalMassMatrix μ)).toContinuousLinearMap
+```

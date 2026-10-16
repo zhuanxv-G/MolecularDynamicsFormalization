@@ -1,0 +1,54 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.5.3-EquilibriumLinearization；原PDF页映射=[54]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT04_review.json，对象含batch=EAUDIT04、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT04.md": "be86fcad3dd498a796580799cff6479037b9f4f9538cfc05276c8fc3db4994f6",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT04a_materials": "0b1a0b09dd468fcf03a11ff40f66d362833014f87740fd1ae36fe00be5f1bf7e",
+  "EAUDIT04a_PAGES.pdf": "825053c15a046991a4cfecc1f127b13a3b21b3f60383d8c4f8245162e3b8bd05"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.5.3-EquilibriumLinearization",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.5.3",
+  "printed_page": "31",
+  "pdf_page": "54",
+  "statement_latex": "We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\\boldsymbol z^*$ and make use of the fact that $f(\\boldsymbol z)\\approx f(\\boldsymbol z^*)+f'(\\boldsymbol z^*)(\\boldsymbol z-\\boldsymbol z^*)$ for $\\|\\boldsymbol z-\\boldsymbol z^*\\|$ sufficiently small. Since $f(\\boldsymbol z^*)=0$ we have, defining $\\delta\\boldsymbol z:=\\boldsymbol z-\\boldsymbol z^*$,\n\\[\\frac{\\mathrm d\\delta\\boldsymbol z}{\\mathrm dt}=\\boldsymbol A\\delta\\boldsymbol z,\\qquad\\boldsymbol A=f'(\\boldsymbol z^*).\\]\nThe symbol $\\approx$ is not very precise.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "小o余项将≈精确定义为一阶近似；δ的线性ODE是近似系统，不声称非线性扰动精确满足Aδ。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.equilibriumlinearization",
+  "extra_assumptions": [],
+  "old_ids": [
+    "CH01-137",
+    "CH01-138"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem equilibriumlinearization :
+  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] (f : E → E) (z₀ h₀ : E) (t₀ : ℝ)
+    (hF : ContDiffAt ℝ 1 f z₀) (heq : f z₀ = 0),
+    ∃ δ : ℝ → E, δ t₀ = h₀ ∧
+      (∀ t, HasDerivAt δ ((fderiv ℝ f z₀) (δ t)) t) ∧
+      (equilibriumLinearizationRemainder f z₀ (fderiv ℝ f z₀)) =o[𝓝 0] (fun h : E => h) := by
+  exact @MolecularDynamics.equilibrium_linearized_IVP
+```
+### 实际依赖 MolecularDynamics.equilibriumLinearizationRemainder
+```lean
+def equilibriumLinearizationRemainder (f : E → E) (z₀ : E) (A : E →L[ℝ] E) (h : E) : E :=
+  f (z₀ + h) - A h
+```

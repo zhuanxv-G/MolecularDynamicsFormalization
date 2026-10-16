@@ -1,0 +1,79 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_id": "MD-1.3-GeneralizedCoordinates",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "8048e87bd55f7051afece85135c484bd7141e890c2db3d84e2846958183bbce3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT07a_materials": "047af626541a770d1bf4d2ea9f06c55517aac5088e14904a200cc2c94db88a60",
+    "EAUDIT07a_PAGES.pdf": "07b0f6401494c834243e98caa1e67b101cec756ec4d17c4655e012ee9941c326"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    46
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "db514cdfc978278ef83c4289311e78d8f8a859d03d0406eb1af170921144b698",
+  "source_block_sha256": "e58eed02febfb6be9133e4da4a62aceaafee2cabbe7831a79d13383ec8fc0c04",
+  "source_declarations": [
+    "generalized_coordinates"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "name": "CoordinateMasses",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "50939e8d47d2aea37f48a71423ee3ae48b297b19ba4394b17b02a93c1f4510a4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "MassMatrix",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "98dc2589cf902b088edd39fbacfd5ceaeb43e0ec8cd3609f562eac8091e9df77"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PotentialEnergy",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "043ad8ba46ea4ec31839daabf34e8017edbc3d00188fad3366e80af19ddc6116"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Velocity",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "22e67e3397d83abd0c1c1aeaa28366555c9f365d02734f9df1fd443624636cf1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "name": "diagonalMassMatrix",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "56c215aa345f33da76588c37690a0b34fd6c467f706ccbb6c832962abd41e7db"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/GeneralizedCoordinates.lean",
+      "name": "generalizedMassMatrix",
+      "file_sha256": "6652226b2dcd4f973be3aa0c1b3b880d9605838b5282aa1672356204f1aef955",
+      "excerpt_sha256": "547713adc56b7e9860d158001944be888193995239e8e60a28b81e373a87d1e8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Lagrangian.lean",
+      "name": "massLagrangian",
+      "file_sha256": "3be1e4d92e1f85a7c24250e72d01e7491620d988de32e513fa3f557a3f24be78",
+      "excerpt_sha256": "bdef61d4a05c2c245f82e01b8f03d8d3745da53e56816306c91adca59dde269b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "name": "nBodyKineticEnergy",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "af191effccc69cca71016191d27b051505bbd5ef1bdf49f095904846eb91ac21"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT07_review.json",
+  "total_task_bytes": 92464
+}

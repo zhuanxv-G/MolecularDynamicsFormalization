@@ -1,0 +1,51 @@
+{
+  "eaudit": "EAUDIT20",
+  "source_id": "MD-1.7-IsoscelesCoordinates",
+  "input_sha256": {
+    "BATCH_EAUDIT20.md": "902c26a085d478e0c32a81c3d82a8fecb2028b7b0552810d42eff14cb9aa9a47",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT20h_materials": "42d5e43842cba934af20675f5c2f0ab63f311d65bf531d164fe1c128f2e4fb9e",
+    "EAUDIT20h_PAGES.pdf": "ddc411b14e22b6026243b1098050fb60312c088374e2fc0c40f4d3f2a307e824"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    62
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "7ae2f9dee0f5ec7fba02fa686f11f53306f5d583c5b5bb3051bf9459064e8165",
+  "source_block_sha256": "4fa9fe7ed455149eab55160ca9f50a62e838d910c9e2d575b809f270191cf6d8",
+  "source_declarations": [
+    "isoscelesCoordinates",
+    "isoscelesCoordinates_corrected",
+    "isoscelesCoordinates_corrected_center"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "V3",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "630b28f8663e80b13763ae51544e5ef63ff46b6c99936a04ab13fd586892a08c"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "isoscelesCoordinates",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "014f8a0c9bd208733d5e2eb8b1108250f274b4d8729f5a29be923ebae5646fa2"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "isoscelesCoordinates_corrected",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "5d91753a4f22a947035b052d6e00b35d02b653a08f53d6024a68958d6982dd95"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT20_review.json",
+  "total_task_bytes": 89806
+}

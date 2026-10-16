@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT09",
+  "source_id": "MD-1.5.1-SpectralSolution",
+  "input_sha256": {
+    "BATCH_EAUDIT09.md": "58c1fb0669e964c5540f9a666143d76cd20b18b9b1ff908232b3c91fd207ebb1",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT09c_materials": "cb8bfdb1605ea1f8bcbfe2886bca9b06ad46f780080f97177f6536400f4b7b8e",
+    "EAUDIT09c_PAGES.pdf": "20dc12032dce35d6bd657bbd3128b6bf521b8f4ec3652076a986f0ca9f76ad49"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    50
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "3278b952b6459d62d7916966f50005bcc9c5d5c86fe45cd576367cda58483533",
+  "source_block_sha256": "54d9a2c3c80b962ac872a570408d7bb8462c83f3dff1290b301a5493b17d2c8f",
+  "source_declarations": [
+    "spectralsolution"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/ComplexSpectralFlow.lean",
+      "name": "complexExponentialFlow",
+      "file_sha256": "f8d1952fa9cebf6c100c24a6595a8edadc9a932e3a53f905132eb297a0fd552e",
+      "excerpt_sha256": "a54c55aa709d41e2a7aae2f8da65605131352e97e9d4fedb2be272ed0eb9a326"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LinearFlow.lean",
+      "name": "linearExponentialFlow",
+      "file_sha256": "fb2fa6db4936e40275468b34e871212c1423e55e532ad3afb715aa360e192228",
+      "excerpt_sha256": "e2fdc1dae6cf73a5c0a70f711a32d44216387ecdc165b18e1ff9a841b73ca82a"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT09_review.json",
+  "total_task_bytes": 86309
+}

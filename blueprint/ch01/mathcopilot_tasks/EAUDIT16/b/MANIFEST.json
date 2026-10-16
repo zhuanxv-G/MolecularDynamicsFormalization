@@ -1,0 +1,81 @@
+{
+  "eaudit": "EAUDIT16",
+  "source_id": "MD-1.5.2-LocalActionAngleReduction",
+  "input_sha256": {
+    "BATCH_EAUDIT16.md": "7c2f6db4ec1a6a1448c398abdff19eaf992b9dd6c1bbda2bc4be5c05bb18cdb3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT16b_materials": "c780b8df509e7d27219121883ca0d2cb458713a0a063991159c9a1e43b542634",
+    "EAUDIT16b_PAGES.pdf": "05cbb98e1fc2ce5def427a3689f11d8d06e8389dbb911a25e49fc3584b39be46"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    53
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "bd298acb6ef130eecf545773fa56735c006ed6de57c94d2ae8fb828d2067f8fa",
+  "source_block_sha256": "14d983fa1ea6c8b05929b6e5701d7e38426000f1218c6f3fbb162a5b6f38b124",
+  "source_declarations": [
+    "local_action_angle_reduction",
+    "local_action_angle_reduction_literal",
+    "local_action_angle_reduction_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/HarmonicTorus.lean",
+      "name": "HarmonicTorus",
+      "file_sha256": "fc68cda8e36d3a7d4c3cbbba67252f7cf5b7f0f8a7615a1d33ea32f567c42189",
+      "excerpt_sha256": "d1172dcfc2b8766b3fe4aed0b088fcfb3b0d1162b6d9d7aa3edfb134dbf56fb7"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Momentum",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PhaseSpace",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "daa02c2c07383d89b526c2336a494ea2279c29eb9ade168bef41013e54ebff7f"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "canonicalBilinear",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "cc18df77e4a1aae25c608215caaa44980ede33ef06dd924fc6ecff472dace629"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/HarmonicTorus.lean",
+      "name": "harmonicTorusRotation",
+      "file_sha256": "fc68cda8e36d3a7d4c3cbbba67252f7cf5b7f0f8a7615a1d33ea32f567c42189",
+      "excerpt_sha256": "a2de5d5cf94b9156efcc35514f414ac7299c266809d0be6e3749c5eef60010f7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "localActionAngle",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "c52a567d3c55afcef691f91f5469f60fec1613a5d14ab7a7ea59d7c8f844f1d1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "poissonBracket",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "3b8d1979c3027664c2a7e32f228e3df4cfac5519981c38729f4ed6e23db92656"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "symplecticGradient",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "796f200453ab6be4a0713e7096dd87a7cf7b1e6a9828d80239b5edf614b1a10e"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT16_review.json",
+  "total_task_bytes": 73532
+}

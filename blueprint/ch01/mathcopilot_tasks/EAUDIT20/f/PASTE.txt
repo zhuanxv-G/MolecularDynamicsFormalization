@@ -1,0 +1,82 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.7-CenterOfMassMotion；原PDF页映射=[62]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT20_review.json，对象含batch=EAUDIT20、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT20.md": "902c26a085d478e0c32a81c3d82a8fecb2028b7b0552810d42eff14cb9aa9a47",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT20f_materials": "93ded09c4ac1673c17af6ed42e64d014918fcd816cd60c1fcc3c8319c57a795c",
+  "EAUDIT20f_PAGES.pdf": "934cfc76fe0a79520ccc7a8aa4d5001893e0964e82566b1b88781a4ea534f333"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.7-CenterOfMassMotion",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.7",
+  "printed_page": "39",
+  "pdf_page": "62",
+  "statement_latex": "This means that the system will translate and rotate at a constant rate in time.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "本条仅translation；rotation字面部分分开保留下一条。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.centerofmassmotion",
+  "extra_assumptions": [
+    "质量正、总质量正、真实位置导数、连通时间域；平移部分据已得总动量守恒。"
+  ],
+  "old_ids": [
+    "CH01-178"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem centerofmassmotion :
+  ∀ (N : ℕ) (m : Fin N → ℝ) (q v : ℝ → Fin N → V3)
+    (I : Set ℝ) (a : ℝ), IsOpen I → IsPreconnected I → a ∈ I →
+    (∀ i, 0 < m i) → 0 < ∑ i, m i →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t) →
+    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i • v s i) 0 t) →
+    ∀ t ∈ I,
+      (∑ i, m i)⁻¹ • (∑ i, m i • q t i) =
+        (∑ i, m i)⁻¹ • (∑ i, m i • q a i) +
+          (t-a) • ((∑ i, m i)⁻¹ • (∑ i, m i • v a i)) := by
+  intro N m q v I a ho hi ha hm hM hq hp
+  let P := ∑ i, m i • v a i
+  have hPc (t : ℝ) (ht : t ∈ I) : (∑ i, m i • v t i) = P :=
+    ho.is_const_of_deriv_eq_zero hi
+      (fun s hs => (hp s hs).differentiableAt.differentiableWithinAt)
+      (fun s hs => (hp s hs).deriv) ht ha
+  have hQ (t : ℝ) (ht : t ∈ I) : HasDerivAt (fun s => ∑ i, m i • q s i) P t := by
+    have hh := HasDerivAt.fun_sum (u := Finset.univ) (fun i _ => (hq t ht i).const_smul (m i))
+    rwa [hPc t ht] at hh
+  have hR (t : ℝ) (ht : t ∈ I) : HasDerivAt (fun s => (∑ i, m i • q s i)-s • P) 0 t := by
+    simpa only [one_smul, sub_self, id_eq] using (hQ t ht).fun_sub ((hasDerivAt_id t).smul_const P)
+  intro t ht
+  have hc := ho.is_const_of_deriv_eq_zero hi
+    (fun s hs => (hR s hs).differentiableAt.differentiableWithinAt)
+    (fun s hs => (hR s hs).deriv) ht ha
+  have he : (∑ i, m i • q t i) = (∑ i, m i • q a i)+(t-a) • P := by
+    calc
+      _ = ((∑ i, m i • q a i)-a • P)+t • P := (sub_eq_iff_eq_add).mp hc
+      _ = _ := by simp [sub_smul, sub_eq_add_neg, add_smul, neg_smul, add_assoc, add_comm, add_left_comm]
+  have hh := congrArg (fun u => (∑ i,m i)⁻¹ • u) he
+  simpa [P, smul_add, smul_smul, mul_comm] using hh
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```

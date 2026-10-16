@@ -1,0 +1,74 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.2-ConstraintDimension；原PDF页映射=[41]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT05_review.json，对象含batch=EAUDIT05、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT05.md": "d426a02c936e411940e95a0f0fc7de30b845ee0957638a10cfbfbd473fd84e05",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT05c_materials": "c645027072e87b34877e00d86c44db1030e59b1ba3595263b7a7858a54afa509",
+  "EAUDIT05c_PAGES.pdf": "a9392fcfd5998ceae4a7698484db0c862de4b1aa7e5ffc4166480aa571f72db3"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.2-ConstraintDimension",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.2",
+  "printed_page": "18",
+  "pdf_page": "41",
+  "statement_latex": "For the N-body system in $\\mathbb R^3$ without additional constraints there are $N_d=N_c=3N$ degrees of freedom. If $r$ independent constraints are present the number of degrees of freedom is $N_d=N_c-r$.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.constraintdimension",
+  "extra_assumptions": [
+    "约束映射可微，独立约束=导数满射；n=Nc，r≤n由满射推出。",
+    "[EXTRA] 19号：保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。"
+  ],
+  "old_ids": [
+    "CH01-052"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem constraintdimension {n r : ℕ} (C : Position n → Position r) (c : Position r)
+    (q : {x : Position n // C x = c ∧ ContDiffAt ℝ 1 C x ∧
+      Function.Surjective (fderiv ℝ C x)}) :
+    degreesOfFreedom C c q + r = n ∧
+    ∃ (U : Set (Position n)) (V : Set (Position (degreesOfFreedom C c q) × Position r))
+      (φ : Position n → Position (degreesOfFreedom C c q) × Position r)
+      (ψ : Position (degreesOfFreedom C c q) × Position r → Position n),
+      IsOpen U ∧ IsOpen V ∧ q.val ∈ U ∧
+      ContDiffOn ℝ 1 φ U ∧ ContDiffOn ℝ 1 ψ V ∧
+      MapsTo φ U V ∧ MapsTo ψ V U ∧ LeftInvOn ψ φ U ∧ LeftInvOn φ ψ V ∧
+      (∀ x ∈ U, C x = c ↔ (φ x).2 = 0) := by
+  sorry
+
+/-- Unconstrained three-dimensional N-particle specialization, not a geometry assumption. -/
+theorem constraintdimension_unconstrained (N : ℕ) :
+    linearizedConstraintDimension (fun _ : Position (3*N) => (0 : Position 0)) 0 = 3*N := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MD.Ch01.degreesOfFreedom
+```lean
+def degreesOfFreedom {n r : ℕ} (C : Position n → Position r) (c : Position r)
+    (q : {x : Position n // C x = c ∧ ContDiffAt ℝ 1 C x ∧
+      Function.Surjective (fderiv ℝ C x)}) : ℕ := linearizedConstraintDimension C q.val
+```
+### 实际依赖 MD.Ch01.linearizedConstraintDimension
+```lean
+def linearizedConstraintDimension {n r : ℕ} (C : Position n → Position r) (q : Position n) :=
+  Module.finrank ℝ (LinearMap.ker (fderiv ℝ C q).toLinearMap)
+```

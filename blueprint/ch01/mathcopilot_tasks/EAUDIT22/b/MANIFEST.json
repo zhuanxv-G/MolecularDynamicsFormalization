@@ -1,0 +1,50 @@
+{
+  "eaudit": "EAUDIT22",
+  "source_id": "MD-1.7.1-TransitivityErgodicityLiteral",
+  "input_sha256": {
+    "BATCH_EAUDIT22.md": "2584f103d4bf1b752cab6ca7294631e65db6ca55f8e6fd45710e6c406cb87cce",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT22b_materials": "004a5602043cda9fe816a1d56f5618839a1b584433a409b3d380c4dc0e42cd99",
+    "EAUDIT22b_PAGES.pdf": "c7accc2e53c96fca0b63c8a4baeb5590bac4adab0aa7003cb11d4aad6acb41fb"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    65
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "6acb0cc55d880f5246556db15974acd58a7b46a8fe26e03116b981ed662ec48a",
+  "source_block_sha256": "4d0d55f262c9614137e8dc70fc048b1c1f32c87a85cf713b9b413ba960e03539",
+  "source_declarations": [
+    "transitivityergodicityliteral",
+    "transitivityergodicityliteral_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "flowErgodic",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "fbd06f286b9351d180e80cedc84f3a36328ac8f40f7373af44e8a4159777dd5c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "isFlowOf",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "370720a77d39ad748a8f21d7a5a250b30a9612fc51d2723dae957443af723fa3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "topologicalTransitivity",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "f36155c00c7aaedf0bf29a8a7498022748df17bd0d11950fce7e8aa6aff10443"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT22_review.json",
+  "total_task_bytes": 82912
+}

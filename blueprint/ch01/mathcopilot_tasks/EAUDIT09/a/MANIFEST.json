@@ -1,0 +1,49 @@
+{
+  "eaudit": "EAUDIT09",
+  "source_id": "MD-1.5.1-FlowEnergy",
+  "input_sha256": {
+    "BATCH_EAUDIT09.md": "58c1fb0669e964c5540f9a666143d76cd20b18b9b1ff908232b3c91fd207ebb1",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT09a_materials": "2068ca93534f36b7211bb79e3afbbb45a79dd5f14ef65c330a0559439b57af7e",
+    "EAUDIT09a_PAGES.pdf": "16061786c01c2aaad1fec67705bd8882432bec6089e4ec6f3c28810aa81a1b25"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    49
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "65997b5539a78d9915e6b3d670ea0da352dcc537454cfbf37146d53996bcc847",
+  "source_block_sha256": "e2a70faeaabb5074dc0533573775a72097cbb5111c1c3d4a1a5cc4ce2f63925d",
+  "source_declarations": [
+    "flow_energy"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Momentum",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PhaseSpace",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "daa02c2c07383d89b526c2336a494ea2279c29eb9ade168bef41013e54ebff7f"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "symplecticGradient",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "796f200453ab6be4a0713e7096dd87a7cf7b1e6a9828d80239b5edf614b1a10e"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT09_review.json",
+  "total_task_bytes": 86100
+}

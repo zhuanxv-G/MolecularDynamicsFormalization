@@ -1,0 +1,99 @@
+# 第1章修复队列（19号）
+
+A漏前提/定义域；B漏结论；C对象不忠实；D原书疑误。网站FAIL修复中=0，D保留原文并另立修正版，待导师；当前包由EAUDIT_INDEX管理。
+
+| source_id | 历史网站判定 | 类别 | 处理 | 状态 |
+|---|---|---|---|---|
+| MD-1.4-LegendreHamiltonian | PASS | D | 新增仅可逆的原文字面版；修正版继承正定质量背景并保留上界、精确上确界、唯一达到点、动量梯度与能量全部结论。 | 已修待复审/待导师 |
+| MD-1.1-Schrodinger | NEEDS_HUMAN | A | 按EAUDIT02新返回，将联合全域C²改为连续时间一阶/逐空间坐标二阶经典导数；不要求二阶时间或混合偏导。 | 已修待复审 |
+| MD-1.1-HardSphere | FAIL | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.1.1-MorseMinimum | FAIL | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.1.1-LengthBond | FAIL | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.1.1-LJRepulsion | FAIL | D | 保留已证单侧极限；把可严格陈述的内容写成任意有限能级对应正距离屏障，不声称数值模拟rarely的概率。 | 已修待复审/待导师 |
+| MD-1.1.1-HeterogeneousLJ | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.1.2-Coulomb | FAIL | A | 正C、介电常数与距离落实到子类型；电荷仍可正负，未另造吸引排斥结论。 | 已修待复审 |
+| MD-1.1.2-Cutoff | FAIL | A | C¹只要求正距离域，保留严格r_cut<r截零及正截断半径。 | 已修待复审 |
+| MD-1.1.2-Yukawa | FAIL | D | a保留−κr但把κ解释为逆屏蔽长度；b若保留Debye length称谓则用−r/ℓ。正参数为物理域补充。 | 已修待复审/待导师 |
+| MD-1.1.2-AngleBond | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.1.2-GayBerne | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.2-NewtonCompact | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.2-DegreesFreedom | FAIL | C | 只对C¹正则约束层的可行点定义自由度；原核维数更名为线性化辅助量，下一条补真实局部坐标等价。 | 已修待复审 |
+| MD-1.2-ConstraintDimension | FAIL | C | 保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。 | 已修待复审 |
+| MD-1.2-TotalEnergy | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.2-PairCancellation | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.2-MomentumConservation | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.2-HarmonicSolution | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.2-ScalarMechanical | FAIL | A | 沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。 | 已修待复审 |
+| MD-1.2-RadialLJForceLiteral | FAIL | D | 第一式补负梯度负号，第二式外系数由−24ε/σ改为+24ε/σ；其余对象和量词不变。 | 已修待复审/待导师 |
+| MD-1.2-LJTimeScaling | FAIL | B | 补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。 | 已修待复审 |
+| MD-1.3-GeneralizedCoordinates | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.3-GeneralizedMassRegular | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.4-ConvexLegendre | NEEDS_HUMAN | D | 新增原书“任意凸函数的变换处处实值”的literal陈述；默认EReal扩展实数，并给有界时实值备选。 | 已修待复审/待导师 |
+| MD-1.4-HamiltonEquations | FAIL | A | 沿轨迹两偏函数真实可微，补时间域版；全时间名称保留作univ特例。 | 已修待复审 |
+| MD-1.4-HamiltonLagrangeEquivalence | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.4-PhaseSpace | PASS | D | 有限能量位置×动量定义保留；把后句coordinates and positions按前句解释为位置与动量，并显式核验6N维。 | 已修待复审/待导师 |
+| MD-1.5-LocalExistUnique | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5-CompactContinuation | FAIL | B | 主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。 | 已修待复审 |
+| MD-1.5.1-FlowEnergy | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.1-HarmonicPhaseFlow | FAIL | B | 保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。 | 已修待复审 |
+| MD-1.5.1-SpectralSolution | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.1-BasisCoefficients | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.1-MatrixExponentialSolution | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-FirstIntegral | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-FirstIntegralCriterion | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-PlanarGraphReduction | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-PlanarQuadrature | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-ScalarFirstIntegral | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-KeplerConservedEnergy | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-KeplerAngularMomentum | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-KeplerMomentum | FAIL | B | 保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。 | 已修待复审 |
+| MD-1.5.2-KeplerPolarODE | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-KeplerRadialReduction | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-KeplerFullSolution | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-ActionEnergy | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-ActionODE | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-ActionSolution | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-HarmonicTorus | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.2-TorusPeriod | FAIL | B | 保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。 | 已修待复审 |
+| MD-1.5.2-TorusDense | NEEDS_HUMAN | D | 另补原句“非周期即充满整个环面”的literal；修正版显式全整数无共振，原有带资格陈述不变。 | 已修待复审/待导师 |
+| MD-1.5.2-LocalActionAngleReduction | NEEDS_HUMAN | D | 原书无紧性资格的环面推断另记literal；默认紧、连通、非空、正则共同水平集，保留局部正则坐标与全局环面结论。 | 已修待复审/待导师 |
+| MD-1.5.3-EquilibriumLinearization | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.3-HartmanGrobmanLiteral | NEEDS_HUMAN | D | C∞可逆坐标替换改为连续互逆局部同胚；保留零点、邻域与留域期间共轭公式。 | 已修待复审/待导师 |
+| MD-1.5.3-HyperbolicStabilityTransfer | NEEDS_HUMAN | D | 显式独立登记以拓扑共轭为依据的稳定性转移，不调用光滑literal。 | 已修待复审/待导师 |
+| MD-1.5.3-LinearizedHamiltonian | FAIL | B | 保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。 | 已修待复审 |
+| MD-1.5.3-PositiveHessianQuadratic | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.5.3-PositiveHessianMinimum | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.6-PeriodicBoundary | FAIL | C | 原等价关系另名辅助；主定义逐字表达正盒长下右越界减L、左越界加L、否则不变的一步更新，不伪称任意大越界一步即可落盒。 | 已修待复审 |
+| MD-1.6-PeriodicTranslationMomentum | FAIL | B | 完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。 | 已修待复审 |
+| MD-1.6-RegularLatticeMinimizerLiteral | NEEDS_HUMAN | D | 改为一维周期有序粒子的正间距和L固定、严格凸最近邻势；Jensen给等间距最小且仅等间距等号。 | 已修待复审/待导师 |
+| MD-1.6-PeriodicImages | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.6-MinimumImage | FAIL | B | 最近像关系留作辅助；完整模型以L>0、不同原子标签及每对选中复制体唯一参与求力落实only限定（同距可任选）。 | 已修待复审 |
+| MD-1.6-RhombicLattice | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.6-UnitCell | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.6-FCCStacking | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.6-HCPStacking | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.6.1-MinimumGradientZero | NEEDS_HUMAN | D | 显式标为无约束内点极小的必要条件，保留已证桥接；不扩展到约束边界。 | 已修待复审/待导师 |
+| MD-1.6.1-ForceLinearization | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.6.1-MinimumHessianLiteral | FAIL | D | 正定改为半正定；仍保留Hessian对称性及所有非零方向。 | 已修待复审/待导师 |
+| MD-1.6.1-ComplexNormalMode | FAIL | B | 增加η非零及共轭η非零、−iΩ特征方程，保留所有系数的原复解公式；不以零向量冒充特征向量。 | 已修待复审 |
+| MD-1.6.1-RealNormalMode | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7-PlanarTrimerModel | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7-CentralPairPotential | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7-CentralPairGradient | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7-CentralMomentum | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7-CentralAngularMomentum | FAIL | B | 保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。 | 已修待复审 |
+| MD-1.7-CenterOfMassMotion | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7-ConstantRotationLiteral | FAIL | D | a增加恒定正半径才推恒角速；默认b保留角动量守恒并明确θ′=ℓ/r²。 | 已修待复审/待导师 |
+| MD-1.7-IsoscelesCoordinates | NEEDS_HUMAN | D | 把三坐标公式作为主动选取的对称子模型，证明其质心为零；不把零总动量/角动量推出等腰。 | 已修待复审/待导师 |
+| MD-1.7-IsoscelesEnergyReduction | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7-IsoscelesAccessibleRegion | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7-EquilateralTrimerMinimum | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7-TrimerEnergyLowerBound | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7-TrimerSaddle | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7-TrimerEscapeLiteral | NEEDS_HUMAN | D | 把every body逐粒子逃逸改为至少一对粒子分离的候选陈述；全部动力学、正能量、零质心/角动量资格保留。 | 已修待复审/待导师 |
+| MD-1.7.1-ChaosConditions | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7.1-TransitivityErgodicityLiteral | NEEDS_HUMAN | D | 改为有限、满支撑不变测度下的遍历性⇒拓扑传递单向结论。 补C¹向量场资格，确保完整经典流的局部唯一性和流律。 | 已修待复审/待导师 |
+| MD-1.7.1-AnisotropicOscillator | NEEDS_HUMAN | B（材料） | 补完整当前声明与实际定义闭包，保持原文；待网站独立复审 | 已修待复审 |
+| MD-1.7.2-FlowJacobianLiteral | PASS | D | DF_t取值点从F_t(ξ)改为初值ξ。 | 已修待复审/待导师 |
+| MD-1.7.2-VariationalEquationLiteral | NEEDS_HUMAN | D | 采用W(t)=DF_t(ξ)，保留C¹向量场及真实流资格。 | 已修待复审/待导师 |
+| MD-1.7.2-NearbyTrajectoryLiteral | NEEDS_HUMAN | D | 线性化在初值ξ处取DF_t，固定t的余项为o(扰动)。 | 已修待复审/待导师 |

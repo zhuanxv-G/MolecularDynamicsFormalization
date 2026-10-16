@@ -1,0 +1,57 @@
+{
+  "eaudit": "EAUDIT06",
+  "source_id": "MD-1.2-LJTimeScaling",
+  "input_sha256": {
+    "BATCH_EAUDIT06.md": "7722c7900273e427d25c3f2f6ae867e8c988420e0fc451057e65594ff8568c21",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT06b_materials": "e1189e98a35565da7042a8a59882b9d8f76bb5369af39a3e03b68e24f9c09e54",
+    "EAUDIT06b_PAGES.pdf": "99f5669f37cb80c9627078d86c294b38f780d09cd7ae13e08420c4fd1359480d"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    44,
+    45
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "107aaacc07c624b981da731d924af9f015b8db89ac247b83620a66cc9914dd57",
+  "source_block_sha256": "f06cf95bf2529635fdda2a6343a0eb8723cdbd4e02b3b1a89bc82e76b46ff08a",
+  "source_declarations": [
+    "ljtimescaling",
+    "ljtimescaling_argon"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "V3",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "630b28f8663e80b13763ae51544e5ef63ff46b6c99936a04ab13fd586892a08c"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "lennardJonesPotential",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "c59ecc0fa91ade5d874e80ef3f97928193bd26f8212127cea8b0cc3d03d4a91b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "ljForce",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "7df8fb8d03e7336bcf137755ae24999ec96a3e37acd511be61c4c8aa6707809d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "pairDistance",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "0f8d667de4b6d0e3b2bef25b84edfb3328b495785048bd9007031434c477d2d7"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT06_review.json",
+  "total_task_bytes": 146943
+}

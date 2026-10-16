@@ -1,0 +1,59 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.6.1-RealNormalMode；原PDF页映射=[60]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT19_review.json，对象含batch=EAUDIT19、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT19.md": "cf031b8e92f9f9aca27363af352806c2c59d22e3909d50dba60d52c6b07996d2",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT19e_materials": "ad79c0aedf8852b706b64fd756d9b5ca1b073fb7de18471f021aba67c4617e6f",
+  "EAUDIT19e_PAGES.pdf": "82f34582a5166ec2010a998fedcdad5a75aed656fe0e6984f9e8e57355b48505"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.6.1-RealNormalMode",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.6.1",
+  "printed_page": "37",
+  "pdf_page": "60",
+  "statement_latex": "or recast in real form as ($\\alpha,\\beta$ real coefficients):\n\\[\\boldsymbol z(t)=\\alpha[\\sin(\\Omega t)\\operatorname{Re}(\\boldsymbol\\xi)+\\cos(\\Omega t)\\operatorname{Im}(\\boldsymbol\\xi)]+\\beta[\\cos(\\Omega t)\\operatorname{Re}(\\boldsymbol\\xi)-\\sin(\\Omega t)\\operatorname{Im}(\\boldsymbol\\xi)].\\]",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "u=Reξ,v=Imξ，Au=-Ωv、Av=Ωu来自实矩阵复特征向量方程；realNormalMode展开即原式。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.realnormalmode",
+  "extra_assumptions": [],
+  "old_ids": [
+    "CH01-173"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem realnormalmode :
+  ∀ {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (A : E →L[ℝ] E) (Ω α β : ℝ) (u v : E)
+    (hu : A u = -Ω • v) (hv : A v = Ω • u) (t : ℝ),
+    HasDerivAt (realNormalMode Ω α β u v)
+      (A (realNormalMode Ω α β u v t)) t := by
+  exact @MolecularDynamics.hasDerivAt_realNormalMode
+
+/- END FULL SECTION 1.6 -/
+
+/- BEGIN FULL SECTION 1.7 -/
+```
+### 实际依赖 MolecularDynamics.realNormalMode
+```lean
+def realNormalMode {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (Ω α β : ℝ) (u v : E) (t : ℝ) : E :=
+  α • (Real.sin (Ω * t) • u + Real.cos (Ω * t) • v) +
+    β • (Real.cos (Ω * t) • u - Real.sin (Ω * t) • v)
+```

@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT20",
+  "input_sha256": {
+    "BATCH_EAUDIT20.md": "902c26a085d478e0c32a81c3d82a8fecb2028b7b0552810d42eff14cb9aa9a47",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT20a",
+      "source_id": "MD-1.7-PlanarTrimerModel",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/a",
+      "total_bytes": 89056,
+      "manifest_sha256": "f73b8656bb70d14dbf79996fc67f66d4c22c1fca26a166f35e0fcbc9abd0b76b"
+    },
+    {
+      "subtask": "EAUDIT20b",
+      "source_id": "MD-1.7-CentralPairPotential",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/b",
+      "total_bytes": 89014,
+      "manifest_sha256": "1872a925aad1fb2e4884a3670628720d8fdc247d92d7fd35ccbbe2b95d8f37be"
+    },
+    {
+      "subtask": "EAUDIT20c",
+      "source_id": "MD-1.7-CentralPairGradient",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/c",
+      "total_bytes": 88710,
+      "manifest_sha256": "844e1efc19a918ee2fe5b9fa6f53453a793bd02fae98bee22f298924a0166e84"
+    },
+    {
+      "subtask": "EAUDIT20d",
+      "source_id": "MD-1.7-CentralMomentum",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/d",
+      "total_bytes": 88021,
+      "manifest_sha256": "30fec7807c7e583a70ed9985d5c38d0525bf3ae2673e6f9f40ba9e7f3f1e623f"
+    },
+    {
+      "subtask": "EAUDIT20e",
+      "source_id": "MD-1.7-CentralAngularMomentum",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/e",
+      "total_bytes": 92995,
+      "manifest_sha256": "421cbdaedeff88b87c9a3c78d861b28e55f24f6d11c0afedcd6e4955be7afb11"
+    },
+    {
+      "subtask": "EAUDIT20f",
+      "source_id": "MD-1.7-CenterOfMassMotion",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/f",
+      "total_bytes": 89174,
+      "manifest_sha256": "e1b1f6206a0af6126071500bbd6ac373e1beb704d8f1a612fc92e7339dafd8da"
+    },
+    {
+      "subtask": "EAUDIT20g",
+      "source_id": "MD-1.7-ConstantRotationLiteral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/g",
+      "total_bytes": 87995,
+      "manifest_sha256": "9737917bed6725d1959aaeb2d0aa2e7e579b086f47fefa122cbaf76ff64eb6f0"
+    },
+    {
+      "subtask": "EAUDIT20h",
+      "source_id": "MD-1.7-IsoscelesCoordinates",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/h",
+      "total_bytes": 89806,
+      "manifest_sha256": "13d37068039991c389d015dc4ec69d7920a961c48e6a79a205325f992c902781"
+    }
+  ]
+}

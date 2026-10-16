@@ -1,0 +1,79 @@
+{
+  "eaudit": "EAUDIT10",
+  "source_id": "MD-1.1-Schrodinger",
+  "input_sha256": {
+    "BATCH_EAUDIT10.md": "ca23496ef049676e0e712de164ab998662c007710f0e138412d8c5cf88455c03",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT10a_materials": "2448c805edf8e0cde547bf19261585b3354e92807ffa2fa6bcab523f713a7d69",
+    "EAUDIT10a_PAGES.pdf": "074f89d1695538812fe7cd7cfb5274d96116b10cce2dc1c3749b9adea9dd404b"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    28
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "310b5b236fd8ed9dc0580d5d5e82ac35e311664252f606f9109b61c857be4315",
+  "source_block_sha256": "3ea7647ace370de700d97b55fc75915ac0ab979b376bdb334aaf64ce4489a982",
+  "source_declarations": [
+    "schrodingerEquation"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "Q13",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "026910f56229a382715dc22618a54af2c93308758f3890e7a95dd6596e6f5da2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "coordinateDirection",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "8182e15172331967b50c8dc6a10daccdef9caf7f91b74beb0448af6f62ff3452"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "planckConstant",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "afd0274164a21f4d054df4801aedc510ef6d2fa4e918b38f8d13da6063aa22ea"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "primitivePotential",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "60b63914c30f81413a284a703ba50e5dae15f156d5393432529cfe7ebfcec8e4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "quantumMass",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "da87bceea39b06320091c040d8f0a2bf90f840b52b7506c43a1730fc1e955e9d"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "schrodingerEquation",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "b1daa9d2d11dc00543132a131e46aab19291b913f80deee30697abb95c913936"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "secondPartial",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "b5abc39a6e400e93c21a0bd5d809f6624a3ced287eeabdcbd7a2289403d07cd6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "waveFunction",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "9f454369744986924a26c7ceb37086e0e99f6560bbd3f659a77569b19a2a9140"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT10_review.json",
+  "total_task_bytes": 85437
+}

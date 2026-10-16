@@ -1,0 +1,149 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.2-LJTimeScaling；原PDF页映射=[44, 45]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT06_review.json，对象含batch=EAUDIT06、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT06.md": "7722c7900273e427d25c3f2f6ae867e8c988420e0fc451057e65594ff8568c21",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT06b_materials": "e1189e98a35565da7042a8a59882b9d8f76bb5369af39a3e03b68e24f9c09e54",
+  "EAUDIT06b_PAGES.pdf": "99f5669f37cb80c9627078d86c294b38f780d09cd7ae13e08420c4fd1359480d"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.2-LJTimeScaling",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.2",
+  "printed_page": "21–22",
+  "pdf_page": "44–45",
+  "statement_latex": "Thus we see that if we make the additional time transformation\n\\[\\tau=\\alpha t,\\qquad\\alpha^2=\\frac\\epsilon{m\\sigma^2},\\]\nthen the equations become\n\\[\\frac{\\mathrm d^2\\boldsymbol Q_i}{\\mathrm d\\tau^2}=-\\sum_{j=1,\\ j\\ne i}^{N}\\frac{\\hat\\varphi'_{\\mathrm{LJ}}(R_{ij})}{R_{ij}}(\\boldsymbol Q_i-\\boldsymbol Q_j).\\]\nThis means that a natural choice for the unit of time is\n\\[\\alpha^{-1}=\\sigma\\sqrt{\\frac m\\epsilon}\\approx2.17\\times10^{-12}\\mathrm s.\\]\nBy using the units given here, we may work with a simplified form of the Lennard-Jones system involving unit masses and a parameter-independent potential energy function.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "$R_{ij}=\\|\\boldsymbol Q_i-\\boldsymbol Q_j\\|$；$\\hat\\varphi_{LJ}(R)=4[R^{-12}-R^{-6}]$。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.ljtimescaling",
+  "extra_assumptions": [
+    "m,ε,σ,α正；真实C2非碰撞轨迹。",
+    "[EXTRA] 19号：补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。"
+  ],
+  "old_ids": [
+    "CH01-200"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem ljtimescaling :
+  ∀ (N : ℕ) (m ε σ α : ℝ) (Q : ℝ → Fin N → V3),
+    0 < m → 0 < ε → 0 < σ → 0 < α → α^2=ε/(m*σ^2) →
+    (∀ i, ContDiff ℝ 2 (fun t => Q t i)) →
+    (∀ t i j, i ≠ j → Q t i ≠ Q t j) →
+    (((∀ t i, m • deriv (deriv (fun s => σ • Q (α*s) i)) t =
+      ljForce ε σ (fun j => σ • Q (α*t) j) i) ↔
+    ∀ τ i, deriv (deriv (fun s => Q s i)) τ = ljForce 1 1 (Q τ) i)) ∧
+    α⁻¹ = σ * Real.sqrt (m / ε) := by
+  intro N m ε σ α Q hm he hs ha hscale hQ hnc
+  have hfirst (i : Fin N) (t : ℝ) :
+      deriv (fun s => σ • Q (α*s) i) t = (σ*α) • deriv (fun s => Q s i) (α*t) := by
+    have hd := ((hQ i).differentiable (by norm_num) (α*t)).hasDerivAt.scomp t
+      ((hasDerivAt_id t).const_mul α)
+    simpa [Function.comp_def, Pi.smul_def, smul_smul] using (hd.const_smul σ).deriv
+  have hsecond (i : Fin N) (t : ℝ) :
+      deriv (deriv (fun s => σ • Q (α*s) i)) t =
+        (σ*α^2) • deriv (deriv (fun s => Q s i)) (α*t) := by
+    have hf : deriv (fun s => σ • Q (α*s) i) = fun s => (σ*α) • deriv (fun s => Q s i) (α*s) :=
+      funext (hfirst i)
+    rw [hf]
+    have hQi : ContDiff ℝ (1+1) (fun s => Q s i) := hQ i
+    have hd := (hQi.deriv'.differentiable (by norm_num) (α*t)).hasDerivAt.scomp t
+      ((hasDerivAt_id t).const_mul α)
+    simpa [Function.comp_def, Pi.smul_def, smul_smul,pow_two,mul_assoc] using (hd.const_smul (σ*α)).deriv
+  have hphi (e s r : ℝ) (hr : r ≠ 0) :
+      deriv (Chapter01Review.lennardJonesPotential e s) r =
+        (24*e/r)*((s/r)^6-2*(s/r)^12) := by
+    have hx := (hasDerivAt_const r s).div (hasDerivAt_id r) hr
+    have hd := ((hx.pow 12).sub (hx.pow 6)).const_mul (4*e)
+    convert hd.deriv using 1
+    · rfl
+    · simp only [Pi.div_apply, Pi.pow_apply, id_eq, Nat.cast_ofNat]
+      norm_num only [Nat.reduceSub]
+      field_simp [hr] <;> ring
+  have hforce (t : ℝ) (i : Fin N) :
+      ljForce ε σ (fun j => σ • Q t j) i = (ε/σ) • ljForce 1 1 (Q t) i := by
+    unfold ljForce
+    rw [Finset.smul_sum]
+    apply Finset.sum_congr rfl
+    intro j hj
+    have hij : i ≠ j := (Finset.mem_erase.mp hj).1.symm
+    have hr : 0 < ‖Q t i-Q t j‖ := norm_pos_iff.mpr (sub_ne_zero.mpr (hnc t i j hij))
+    have hd : pairDistance (σ • Q t i) (σ • Q t j) = σ * pairDistance (Q t i) (Q t j) := by
+      simp [pairDistance,← smul_sub,norm_smul,Real.norm_eq_abs,abs_of_pos hs]
+    change (-deriv (Chapter01Review.lennardJonesPotential ε σ) (pairDistance (σ • Q t i) (σ • Q t j)) / pairDistance (σ • Q t i) (σ • Q t j)) • (σ • Q t i - σ • Q t j) = _
+    rw [hphi _ _ _ (by rw [hd]; exact ne_of_gt (mul_pos hs hr)),hphi 1 1 (pairDistance (Q t i) (Q t j)) (ne_of_gt hr),hd]
+    rw [← smul_sub,smul_smul,smul_smul]
+    congr 1
+    dsimp [pairDistance]
+    field_simp [hs.ne',hr.ne'] <;> ring
+  have hcoeff : m*(σ*α^2) = ε/σ := by
+    rw [hscale]
+    field_simp [hs.ne',hm.ne'] <;> ring
+  have hunit : α⁻¹ = σ*Real.sqrt (m/ε) := by
+    apply (sq_eq_sq₀ (inv_nonneg.mpr ha.le) (mul_nonneg hs.le (Real.sqrt_nonneg _))).mp
+    rw [mul_pow,Real.sq_sqrt (div_nonneg hm.le he.le),inv_pow,hscale]
+    field_simp [hm.ne',hs.ne',he.ne'] <;> ring
+  refine ⟨?_,hunit⟩
+  constructor
+  · intro h τ i
+    have hh := h (τ/α) i
+    rw [hsecond,hforce,smul_smul,hcoeff] at hh
+    have ht : α*(τ/α) = τ := by field_simp [ha.ne']
+    rw [ht] at hh
+    have hc := congrArg (fun v : V3 => (σ/ε) • v) hh
+    simpa [smul_smul,div_eq_mul_inv,hs.ne',he.ne',mul_assoc,mul_comm,mul_left_comm] using hc
+  · intro h t i
+    rw [hsecond,hforce,smul_smul,hcoeff,h (α*t) i]
+
+/- Argon SI specialization: the printed approximation uses an explicit 0.01 ps tolerance. -/
+theorem ljtimescaling_argon :
+    |(3.4 / 10^10 : ℝ) * Real.sqrt ((6.69 / 10^26) / (1.65 / 10^21)) -
+      2.17 / 10^12| < 0.01 / 10^12 := by
+  have hs := Real.sq_sqrt (show (0 : ℝ) ≤ (6.69 / 10^26) / (1.65 / 10^21) by norm_num)
+  have hp := Real.sqrt_nonneg ((6.69 / 10^26 : ℝ) / (1.65 / 10^21))
+  rw [abs_lt]
+  constructor <;> nlinarith
+
+/- END FULL SECTION 1.2 -/
+
+/- BEGIN FULL SECTION 1.3 -/
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```
+### 实际依赖 MD.Ch01.lennardJonesPotential
+```lean
+def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.ljForce
+```lean
+def ljForce {N : ℕ} (ε σ : ℝ) (q : Fin N → V3) (i : Fin N) : V3 :=
+  ∑ j ∈ Finset.univ.erase i,
+    (-deriv (lennardJonesPotential ε σ) (pairDistance (q i) (q j)) /
+      pairDistance (q i) (q j)) • (q i-q j)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.pairDistance
+```lean
+def pairDistance (qᵢ qⱼ : V3) := ‖qᵢ-qⱼ‖
+```

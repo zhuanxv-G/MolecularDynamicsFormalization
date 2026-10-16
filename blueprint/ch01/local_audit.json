@@ -5,7 +5,7 @@
     "MD-1.1-Schrodinger": {
       "lean_decl": "MD.Ch01.schrodingerEquation",
       "verdict": "PASS",
-      "explanation": "13粒子39坐标及逐质量系数完全保留；联合C2显式登记为经典解技术资格，排除以不可微函数总导数的默认零值冒充PDE。",
+      "explanation": "19号本地签名预审：按EAUDIT02新返回，将联合全域C²改为连续时间一阶/逐空间坐标二阶经典导数；不要求二阶时间或混合偏导。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -33,23 +33,33 @@
           "source": "原文未显式量化的技术资格",
           "lean": "正质量及正Planck参数；按经典解解释，Φ在时间/位置联合C2，保证总导数算子表示实际偏导数；不声明解存在。",
           "note": "[EXTRA]"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.schrodingerEquation",
+          "note": "按EAUDIT02新返回，将联合全域C²改为连续时间一阶/逐空间坐标二阶经典导数；不要求二阶时间或混合偏导。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.schrodingerEquation",
+          "note": "按EAUDIT02新返回，将联合全域C²改为连续时间一阶/逐空间坐标二阶经典导数；不要求二阶时间或混合偏导。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "definition",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "待复审 / EAUDIT02",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "d42ffb3b09f6a38dba4cd6ed88a79c7b5c434d0d091cbac0599d1b1e186a14d0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "3ea7647ace370de700d97b55fc75915ac0ab979b376bdb334aaf64ce4489a982",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -63,7 +73,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "3ea7647ace370de700d97b55fc75915ac0ab979b376bdb334aaf64ce4489a982",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1-NewtonModel": {
       "lean_decl": "MD.Ch01.newtonInitialValueModel",
@@ -101,13 +114,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "f612fc316f7d92b90d51925a4517af0a0ae4a8f1ac8553260f8feffee11b1aff",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -123,7 +136,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "f612fc316f7d92b90d51925a4517af0a0ae4a8f1ac8553260f8feffee11b1aff",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1-HardSphere": {
       "lean_decl": "MD.Ch01.hardSphereModel",
@@ -156,13 +172,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "7c8d21c4f7ce5a11c3a06a846aff4dc1c68af07b31de30905e9bb69d08daa2a9",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -176,7 +192,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "7c8d21c4f7ce5a11c3a06a846aff4dc1c68af07b31de30905e9bb69d08daa2a9",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.1-Multibody": {
       "lean_decl": "MD.Ch01.multibodyPotential",
@@ -209,13 +228,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "14a629971804bc42ff3c6e5d969ff08795c915c3ce9f86db6b1754bc3a299965",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -229,7 +248,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "14a629971804bc42ff3c6e5d969ff08795c915c3ce9f86db6b1754bc3a299965",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.1-Morse": {
       "lean_decl": "MD.Ch01.morsePotential",
@@ -257,13 +279,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "69f3f1b2e57792d4b8e571938af9ac343007494a69e059c2f3cc842bbb78d7ee",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -277,7 +299,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "69f3f1b2e57792d4b8e571938af9ac343007494a69e059c2f3cc842bbb78d7ee",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.1-MorseMinimum": {
       "lean_decl": "MD.Ch01.morse_minimum",
@@ -323,14 +348,14 @@
       "proof_failures": 3,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "7dadf76aa36348bfb5d4753ff19593fc2fdfb909c0186ebad7c9e6c1e78b1c10",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -344,7 +369,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "56d933ec570130f37429486c790b1ac5cc4abda7a55894ba4ffebfa8d4a4cbda",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.1-LengthBond": {
       "lean_decl": "MD.Ch01.lengthBond",
@@ -377,13 +405,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "d5a5e9fa38e5484f1a21f332abe704cd409e6de2b19e5890e7ea080e9ce76f53",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -399,7 +427,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "d5a5e9fa38e5484f1a21f332abe704cd409e6de2b19e5890e7ea080e9ce76f53",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.1-Dispersion": {
       "lean_decl": "MD.Ch01.dispersionPotential",
@@ -427,13 +458,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "919b6add4a110f807000c50b2d29b67741b31fdee6b861ddc391f93f7faf2f43",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -447,7 +478,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "919b6add4a110f807000c50b2d29b67741b31fdee6b861ddc391f93f7faf2f43",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.1-Buckingham": {
       "lean_decl": "MD.Ch01.buckinghamPotential",
@@ -475,13 +509,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "fe661b6bad850b9c0dd6b801add0345ee27c838ce6578d471ba4e72edf28cf71",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -495,7 +529,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "fe661b6bad850b9c0dd6b801add0345ee27c838ce6578d471ba4e72edf28cf71",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.1-LennardJones": {
       "lean_decl": "MD.Ch01.lennardJonesPotential",
@@ -523,13 +560,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "c59ecc0fa91ade5d874e80ef3f97928193bd26f8212127cea8b0cc3d03d4a91b",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -543,12 +580,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "c59ecc0fa91ade5d874e80ef3f97928193bd26f8212127cea8b0cc3d03d4a91b",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.1-LJRepulsion": {
       "lean_decl": "MD.Ch01.lj_repulsion",
-      "verdict": "PASS",
-      "explanation": "原文明示数学论据是r→0正无穷极限；长模拟well-separated为定性经验，放上下文。旧CH01-198严格有限能量无碰撞命题未在原文给出，单独登记excluded_qualitative。",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "有限能量的精确轨道和长时间数值模拟的经验频率是不同命题；缺算法、步长、时间窗和概率模型。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -578,13 +618,13 @@
       "proof_failures": 2,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "a54df37fd50ba09697d5aeb8f871996449b24346498eae4238ec618f30fb6144",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -598,7 +638,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "ed50027c58c23037bb7eb30cbadbc29bab1700f14af9f32e2b0f6a6aace4420a",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.1-HeterogeneousLJ": {
       "lean_decl": "MD.Ch01.heterogeneousLJ",
@@ -626,13 +669,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "52b91099ddd48b107a2b6e520de963b729bc69c43867ef7de9a64c6c104bb125",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -646,12 +689,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "52b91099ddd48b107a2b6e520de963b729bc69c43867ef7de9a64c6c104bb125",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.2-Coulomb": {
       "lean_decl": "MD.Ch01.coulombPotential",
       "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "19号本地签名预审：正C、介电常数与距离落实到子类型；电荷仍可正负，未另造吸引排斥结论。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -664,23 +710,33 @@
           "source": "\\[\\varphi_{ij}^{\\mathrm{Coulomb}}(r_{ij})=\\frac{CQ_iQ_j}{\\epsilon r_{ij}},\\]",
           "lean": "MD.Ch01.coulombPotential，完整展开陈述见上一行及第4段",
           "note": "一致"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.coulombPotential",
+          "note": "正C、介电常数与距离落实到子类型；电荷仍可正负，未另造吸引排斥结论。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.coulombPotential",
+          "note": "正C、介电常数与距离落实到子类型；电荷仍可正负，未另造吸引排斥结论。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "definition",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "c99bf55a6e57b945f6a8e304f44b235c6cf0a763db160d917d8a8cab01f7f35c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "7d4552086bcc0064f2b07135e6b9b8dee7ae6e644430ca687790e2912dfecd70",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -694,12 +750,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "7d4552086bcc0064f2b07135e6b9b8dee7ae6e644430ca687790e2912dfecd70",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.2-Cutoff": {
       "lean_decl": "MD.Ch01.smoothCutoff",
       "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "19号本地签名预审：C¹只要求正距离域，保留严格r_cut<r截零及正截断半径。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -707,23 +766,33 @@
           "source": "原文对象、量词、前提与完整定义/结论（见第2段逐字引用）",
           "lean": "def smoothCutoff (φ : ℝ → ℝ) (r_cut : ℝ) : Prop :=\n  ContDiff ℝ 1 φ ∧ ∀ r, r_cut < r → φ r = 0",
           "note": "一致"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.smoothCutoff",
+          "note": "C¹只要求正距离域，保留严格r_cut<r截零及正截断半径。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.smoothCutoff",
+          "note": "C¹只要求正距离域，保留严格r_cut<r截零及正截断半径。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "definition",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "126ddf4c90c49f42cef51a781adcf940e4c1d22e13be9be5cc2146c0d61e5236",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "ec2264822884c7351c0b6f248d16e025a0fc8095f9898d9b3a47997ae66e79f1",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -737,12 +806,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "ec2264822884c7351c0b6f248d16e025a0fc8095f9898d9b3a47997ae66e79f1",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.2-Yukawa": {
       "lean_decl": "MD.Ch01.yukawaScreened",
-      "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "原文称κ为长度，但无量纲指数−κr通常要求κ为逆长度。Lean实数类型不携带量纲，此疑点必须文字核查。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -760,11 +832,21 @@
           "source": "exp(-κr)",
           "lean": "Real.exp (-κ * r)",
           "note": "一致；κ称屏蔽长度的量纲疑点见原文issues"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.yukawaScreened; MD.Ch01.yukawaScreened_corrected_a; MD.Ch01.yukawaScreened_corrected_b",
+          "note": "正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.yukawaScreened; MD.Ch01.yukawaScreened_corrected_a; MD.Ch01.yukawaScreened_corrected_b",
+          "note": "正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "definition",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
@@ -773,13 +855,13 @@
         "原文κ称Debye length，但e^{-κr}的量纲通常对应逆长度；本定义保留字面公式。"
       ],
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "2e3930687eb550ee87abfa8443816b2c0cfa18f7b4f0abe91f247ed90ec298a1",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "8de24fbad54cfb6b4d9190a5ac59d93369ce439b86c4541dbe4138f0939f460b",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -793,7 +875,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "8de24fbad54cfb6b4d9190a5ac59d93369ce439b86c4541dbe4138f0939f460b",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.2-AngleBond": {
       "lean_decl": "MD.Ch01.angleBondModel",
@@ -821,13 +906,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "d27b7eed4005272ea7ad565b091134ab4cdae5f057ade28898476085cde62457",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -844,7 +929,10 @@
           "context_notation"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "d27b7eed4005272ea7ad565b091134ab4cdae5f057ade28898476085cde62457",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.2-Dihedral": {
       "lean_decl": "MD.Ch01.dihedralPotential",
@@ -872,13 +960,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "e205c138e66f0f194f170f5ac749439eb113cf4628d6f9fb812cbb86faf67cd0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -892,7 +980,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "e205c138e66f0f194f170f5ac749439eb113cf4628d6f9fb812cbb86faf67cd0",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.1.2-GayBerne": {
       "lean_decl": "MD.Ch01.gayBerneModel",
@@ -932,13 +1023,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
-      "signature_sha256": "d932c5f5ca37d31eaf3ae07646dc058b169b5e8645c47a77920d2e7317847dcf",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "7e61d682ce8ae7b295ddd7357ab9c4ccd5f586b0dd684280f5fa6d8152df9e7a",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -952,7 +1043,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "7e61d682ce8ae7b295ddd7357ab9c4ccd5f586b0dd684280f5fa6d8152df9e7a",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-Thm1.1": {
       "lean_decl": "MD.Ch01.theorem_1_1",
@@ -993,12 +1087,15 @@
       "signature_sha256": "05ed1f54ee881d97a6b9acb5ecb6908b9eb7b5aed6f08b62e4b073d8db1e2e44",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
+      "block_sha256": "5bda1615e8bbd567ca0f8aa751c4ac3427c155def55ff3b7e5082139dbbb3472",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-EnergyConservation": {
       "lean_decl": "MD.Ch01.energy_conservation",
@@ -1042,12 +1139,15 @@
       "signature_sha256": "f127edcebe32563ae5ff4f88df5cda69ff6ede9ecfe10bed2ee5a4dd7dc9051e",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
+      "block_sha256": "6248be0fe2c4efb39886c46b77fdd0f365168624a80be1861cc29876aeb9c4ed",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.3-NewtonEulerLagrange": {
       "lean_decl": "MD.Ch01.newton_iff_euler_lagrange",
@@ -1097,17 +1197,20 @@
       "signature_sha256": "27fd7e1251d62b07011dfeab02b981ad825d1b4c505a630e04a75d5f5eabaf9f",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
+      "block_sha256": "a134ec4c80cff1c9f1457d71bd527954a6c9e9b9593c987d0895b62a33560f36",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.4-LegendreHamiltonian": {
       "lean_decl": "MD.Ch01.hamiltonian_legendre_transform",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "旧仅可逆签名确有负质量及非对称反例；新hPositive展开继承背景并保留配置相关矩阵和全部六项结论；待EAUDIT01独立语义审校。",
+      "explanation": "任意可逆矩阵不足以保证凹二次目标有最大值；需继承机械质量的对称正定背景。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "旧签名反例n=1,M=−1,U=p=0及非对称2×2矩阵；当前hPositive排除此类，不作为新签名反例。",
       "suggested_fix": "导师裁定是否继承凸性/对称正定背景；当前不静默添加。",
       "correspondence": [
@@ -1130,20 +1233,23 @@
       "proof_status": "placeholder",
       "website_audit": "网站PASS（绑定版本 09ff185182a8）",
       "checked": true,
-      "missing": "一般配置相关对称正定矩阵Legendre上确界理论未补证明；保持sorry。",
+      "missing": "缺一般配置相关正定矩阵Legendre上确界及梯度桥接；不恢复大型理论。",
       "signature_sha256": "8984b424bda4e94c2b24840a70e9d037b29364c8b234b017e6e6cbef7dbeae7d",
       "direct_placeholder": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "source_questions": [
         "若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。"
-      ]
+      ],
+      "block_sha256": "7a05ae763088c5ba09be457be66e6cce46258a8e3c9bb5f4494df1fca3885a69",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.1-FlowInverse": {
       "lean_decl": "MD.Ch01.flow_inverse",
@@ -1187,12 +1293,15 @@
       "signature_sha256": "0612c669694cac25394cc94c88490c2844c0ae68af39ec6306d4ab0952450ee4",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log"
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
+      "block_sha256": "3d0f9688b1328645dec836c60836b28a08909bdf7486ba27e75899887d01ffaf",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-NewtonCompact": {
       "lean_decl": "MD.Ch01.compactNewton",
@@ -1225,13 +1334,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "8a151b6d08e1dcf54a81eb6e37cc4f5d4a0c70974fe14ed3a0068ed089894eb2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -1245,12 +1354,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "8a151b6d08e1dcf54a81eb6e37cc4f5d4a0c70974fe14ed3a0068ed089894eb2",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-DegreesFreedom": {
       "lean_decl": "MD.Ch01.degreesOfFreedom",
       "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "19号本地签名预审：只对C¹正则约束层的可行点定义自由度；原核维数更名为线性化辅助量，下一条补真实局部坐标等价。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -1263,23 +1375,33 @@
           "source": "原文未显式量化的技术资格",
           "lean": "在可微约束C局部正则层中以导数核维数表示；无约束取零约束。",
           "note": "[EXTRA]"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.linearizedConstraintDimension; MD.Ch01.degreesOfFreedom",
+          "note": "只对C¹正则约束层的可行点定义自由度；原核维数更名为线性化辅助量，下一条补真实局部坐标等价。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.linearizedConstraintDimension; MD.Ch01.degreesOfFreedom",
+          "note": "只对C¹正则约束层的可行点定义自由度；原核维数更名为线性化辅助量，下一条补真实局部坐标等价。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "definition",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "cc1528b64168788fe6cc74e5a01fd1a0eb941ca19a083e56410a22665a16e8aa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "b2f427b5fd081969b7d65d08751805a30938c3a270380d1d04181979fd77f7e1",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -1293,12 +1415,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "b2f427b5fd081969b7d65d08751805a30938c3a270380d1d04181979fd77f7e1",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-ConstraintDimension": {
       "lean_decl": "MD.Ch01.constraintdimension",
       "verdict": "PASS",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。",
+      "explanation": "19号本地签名预审：保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -1311,23 +1436,34 @@
           "source": "原文未显式量化的技术资格",
           "lean": "约束映射可微，独立约束=导数满射；n=Nc，r≤n由满射推出。",
           "note": "[EXTRA]"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.constraintdimension; MD.Ch01.constraintdimension_unconstrained",
+          "note": "保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.constraintdimension; MD.Ch01.constraintdimension_unconstrained",
+          "note": "保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "local_proof",
+      "proof_status": "placeholder",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
-      "missing": null,
+      "missing": "缺完成本条全部结论的已验证证明；一般正则层/动力学/谱或测度桥接未建；本轮只修签名，不把子结果冒充整条。",
       "checked": true,
-      "direct_placeholder": false,
+      "direct_placeholder": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
-      "signature_sha256": "36fd5fab4eec12dceb32579dd6e71c53ab91205e336ff309bcfde361b2d71fe5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "final_status": "incomplete",
+      "signature_sha256": "bf72ca1ca591525ad9e5c34bb559ec2654749ff2b0e2815863cdf57e34b5fc40",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -1341,7 +1477,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "1dd0b5901399d2bb515edc3345831146e3b4e5ed04c3ceafe8d15c2d5b0d2c07",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-TotalEnergy": {
       "lean_decl": "MD.Ch01.particleTotalEnergy",
@@ -1369,13 +1508,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "2a72404f4a7daaaaec384f15625586a8dd1eaf4db3a8703f5078972fc6be343a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -1391,7 +1530,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "2a72404f4a7daaaaec384f15625586a8dd1eaf4db3a8703f5078972fc6be343a",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-PairCancellation": {
       "lean_decl": "MD.Ch01.paircancellation",
@@ -1419,13 +1561,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "5f3cc22f225bd72c6107d3754e0fa2bd3b934d4d1ef1ca63cd4ad699e0f6c0e4",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -1439,7 +1581,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "29d987792bd81ab3593d0a90d3b48b745e0f72019e703f57cf6590373c9b4bd0",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-MomentumConservation": {
       "lean_decl": "MD.Ch01.momentum_conservation",
@@ -1481,13 +1626,13 @@
       "proof_failures": 1,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "fd873a2e83db51de11e8d05b470b5e74d2474acf19129a966bf20f5fa471444e",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -1501,7 +1646,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "3a261676b3c265a971ebb6b84025933756927abf08786929b704dc9206573458",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-HarmonicSolution": {
       "lean_decl": "MD.Ch01.harmonic_solution",
@@ -1536,13 +1684,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "5c422857804bd00c609a866f1999af61bce74ca798fd824794b6a186a234485a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -1556,12 +1704,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "4041fe7b651b0a5cfe50654eac32910e9d5492f2fb5509882931eb4fd4a0f6c7",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-ScalarMechanical": {
       "lean_decl": "MD.Ch01.scalarMechanicalModel",
       "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "19号本地签名预审：沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -1574,23 +1725,33 @@
           "source": "\\[\\dot x=v,\\qquad\\dot v=-\\frac{\\partial U}{\\partial x}.\\]",
           "lean": "MD.Ch01.scalarMechanicalModel，完整展开陈述见上一行及第4段",
           "note": "一致"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.scalarMechanicalModel",
+          "note": "沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.scalarMechanicalModel",
+          "note": "沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "definition",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "d577b1c49cbefd9974c120579caf6a2bf559987950854218d5e328d9cb5d2f23",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "f55fa268f870e0128fc4d1c952c4424fa5ad229470f5e9484051eca7106f7b78",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -1604,7 +1765,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "f55fa268f870e0128fc4d1c952c4424fa5ad229470f5e9484051eca7106f7b78",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-ScalarQuadrature": {
       "lean_decl": "MD.Ch01.scalar_quadrature",
@@ -1650,14 +1814,14 @@
       "direct_placeholder": true,
       "proof_stop_reason": "missing_large_theory",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "50a0eee424c06aa3aaf074f2eb2eb0d1d46bfa909e895c3a599979254970f59c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -1671,7 +1835,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "5b702434728480f937f0f405847d54cfedce1eac5ecf2bf8119d27fea7b3f481",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-UniformLJSystem": {
       "lean_decl": "MD.Ch01.uniformLJSystem",
@@ -1699,13 +1866,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "641c1d0411aadc0b3626ddbcb66f694076074b08516266c596507e95712b2427",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -1719,12 +1886,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "641c1d0411aadc0b3626ddbcb66f694076074b08516266c596507e95712b2427",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-RadialLJForceLiteral": {
       "lean_decl": "MD.Ch01.radial_lj_force_literal",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "保留两条印刷等式，但由负梯度Newton不能推出；须导师裁定勘误，当前不证明假陈述。",
+      "explanation": "Newton力为−∇U；印刷式把径向势梯度当成力，两个等号均反号。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "首个等式缺负号；所印次行实际为势的正梯度，不同于此前Newton负梯度。",
       "suggested_fix": null,
       "correspondence": [
@@ -1748,21 +1918,21 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
-      "missing": null,
+      "missing": "原书疑误原文版保留sorry，不用于证明修正版。",
       "checked": true,
       "direct_placeholder": true,
       "source_questions": [
         "首个等式缺负号；所印次行实际为势的正梯度，不同于此前Newton负梯度。"
       ],
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "2ba089514613094c530f1baf44a9df9f2b048212d0ae1f0c1a6ec71ecd33934b",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -1776,7 +1946,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "bd7dca3c4e67632494f453f99cedcfaef17c2393c45b4a18172fbf07cc4e07de",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-LJCoordinateScaling": {
       "lean_decl": "MD.Ch01.lj_coordinate_scaling",
@@ -1814,13 +1987,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "d073c5f6bc3743abc42e40d868513e00f94eeb4283caacadd8fdabe5a7e4de74",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -1834,12 +2007,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "0cc6003a81ba1c1255732181c0e37ba057030d052d0b3f40a7e0e2d765e49c19",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.2-LJTimeScaling": {
       "lean_decl": "MD.Ch01.ljtimescaling",
       "verdict": "PASS",
-      "explanation": "修正旧遗漏后，保留真实时间二阶缩放双向等价及单位时间α⁻¹=σ√(m/ε)；原文数值近似不作为形式化精度定理。",
+      "explanation": "19号本地签名预审：补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -1867,11 +2043,21 @@
           "source": "原文未显式量化的技术资格",
           "lean": "m,ε,σ,α正；真实C2非碰撞轨迹。",
           "note": "[EXTRA]"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.ljtimescaling; MD.Ch01.ljtimescaling_argon",
+          "note": "补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.ljtimescaling; MD.Ch01.ljtimescaling_argon",
+          "note": "补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 3,
-      "proof_status": "local_proof",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
@@ -1879,13 +2065,13 @@
       "proof_failures": 2,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "d844f266c9dadfd3edc5fb0953420de365fb2b7bacc83eb96bb08b4ad7573d05",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -1899,7 +2085,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "f06cf95bf2529635fdda2a6343a0eb8723cdbd4e02b3b1a89bc82e76b46ff08a",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.3-Lagrangian": {
       "lean_decl": "MD.Ch01.fixedMassLagrangian",
@@ -1928,12 +2117,12 @@
       "signature_sha256": "ce6d17f1da31241a86bd471c89e2f670db238659115ed1a6c8c9a6edd84e5b5f",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -1947,7 +2136,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "ce6d17f1da31241a86bd471c89e2f670db238659115ed1a6c8c9a6edd84e5b5f",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.3-GeneralizedCoordinates": {
       "lean_decl": "MD.Ch01.generalized_coordinates",
@@ -1984,12 +2176,12 @@
       "signature_sha256": "bb0ed63d16db6eaed7010deaebaa91e722050a21d83ce1c1813d98b1d2e88eb2",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2003,7 +2195,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "e58eed02febfb6be9133e4da4a62aceaafee2cabbe7831a79d13383ec8fc0c04",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.3-GeneralizedMassRegular": {
       "lean_decl": "MD.Ch01.generalizedmassregular",
@@ -2034,12 +2229,12 @@
       "signature_sha256": "2a56bbd90d4156b27564e3969bbf34ff82400c8407a6a90b47f1e8f863d19695",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2053,12 +2248,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "e204359fdde00e2f7fd5d7df974e529f43d4093bf505f89af7d5a05dbfab2d58",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.4-ConvexLegendre": {
       "lean_decl": "MD.Ch01.legendreTransform",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "原文sup可非有限。EReal是显式[EXTRA]值域修复，不能宣称逐字的R值对象已经PASS。",
+      "explanation": "凸性不能保证共轭函数每一点有限；实数sSup在无上界时的总化值不能充当真实上确界。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。",
       "suggested_fix": null,
       "correspondence": [
@@ -2082,20 +2280,21 @@
       "proof_attempts": 0,
       "proof_status": "definition",
       "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
-      "missing": null,
+      "missing": "原书疑误原文版保留sorry，不用于证明修正版。",
       "checked": true,
-      "direct_placeholder": false,
+      "direct_placeholder": true,
       "source_questions": [
         "原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。"
       ],
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
-      "signature_sha256": "80ba9bfdafb6ce32e8e31a4455aee8eac961de0c2ee3d59347cfe5b97d07b0f4",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "7b8215fccc5f00974d339fad4fb08484244e8a5cde14dfac9a25a0b4d3f7e05f",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2109,12 +2308,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "7b8215fccc5f00974d339fad4fb08484244e8a5cde14dfac9a25a0b4d3f7e05f",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.4-HamiltonEquations": {
       "lean_decl": "MD.Ch01.hamiltonEquations",
       "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "19号本地签名预审：沿轨迹两偏函数真实可微，补时间域版；全时间名称保留作univ特例。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -2127,23 +2329,33 @@
           "source": "\\[\\dot{\\boldsymbol q}=\\frac{\\partial H}{\\partial\\boldsymbol p},\\qquad\\dot{\\boldsymbol p}=-\\frac{\\partial H}{\\partial\\boldsymbol q}.\\]",
           "lean": "MD.Ch01.hamiltonEquations，完整展开陈述见上一行及第4段",
           "note": "一致"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.hamiltonEquationsOn; MD.Ch01.hamiltonEquations",
+          "note": "沿轨迹两偏函数真实可微，补时间域版；全时间名称保留作univ特例。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.hamiltonEquationsOn; MD.Ch01.hamiltonEquations",
+          "note": "沿轨迹两偏函数真实可微，补时间域版；全时间名称保留作univ特例。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "definition",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "3358b59456367c6d5b6e6fb83ec1d77f3189382a11f99b725d6a94f23b135003",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "7cea954fd747652c751c8cba9ec69c51adea831c82ac8edc675b62ddeea11a47",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -2157,7 +2369,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "7cea954fd747652c751c8cba9ec69c51adea831c82ac8edc675b62ddeea11a47",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.4-HamiltonFixedMass": {
       "lean_decl": "MD.Ch01.hamilton_fixed_mass",
@@ -2199,13 +2414,13 @@
       "proof_failures": 1,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "a450ef3c6930ce3f7c3a4574cad99ae52b07658e332a2b72f5ef49665351a703",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2219,7 +2434,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "c93d15aa8dc9ca75e84db1845d140330ba850aa902ce37db35d9a116e213ea03",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.4-HamiltonLagrangeEquivalence": {
       "lean_decl": "MD.Ch01.hamiltonlagrangeequivalence",
@@ -2248,14 +2466,14 @@
       "direct_placeholder": true,
       "proof_stop_reason": "missing_large_theory",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "d4374a73f13763ab7bc20eb390d3b4b5f69969cd233377d5b7d4fdfe3a54984a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2269,12 +2487,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "4ff5680fca5777c1361f440d3c80d2bcb6cdbd7b520673e2f283d5e8763113e3",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.4-PhaseSpace": {
       "lean_decl": "MD.Ch01.finiteEnergyPhaseDomain",
-      "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "后句重复位置，疑为positions/momenta文字笔误；前句定义及R^{6N}支持位置×动量解释。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -2300,13 +2521,13 @@
         "p.25原句described by coordinates and positions字面重复位置；前句定义是positions and momenta，Lean按前句定义保留位置×动量，原句不静默改字。"
       ],
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "c22f176d7814c340bf356c062250e3dbbb041be67e53f86c64e1091363abe1e2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "d1f7468aa59ad146b644c787f3bf49009b6e63a1c571b661771c9868635ab621",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2320,7 +2541,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "d1f7468aa59ad146b644c787f3bf49009b6e63a1c571b661771c9868635ab621",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5-LocalExistUnique": {
       "lean_decl": "MD.Ch01.local_exist_unique",
@@ -2350,13 +2574,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "49acf65ae08367a0cbf6ddbe868826b11d6f6dcf201d5c94fc3e9647a7b14733",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2370,7 +2594,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "91b093805f3bd7ba71848912a9467b8cc49bdfec3626a7f43e8fb2b9b91dd9ac",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5-EnergySurface": {
       "lean_decl": "MD.Ch01.energySurface",
@@ -2393,13 +2620,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "12b75b736185d7b5a1308a7bf3e350fcbf4db3df70f54c76d883f8853a5792a1",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2413,7 +2640,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "12b75b736185d7b5a1308a7bf3e350fcbf4db3df70f54c76d883f8853a5792a1",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5-EnergyBounds": {
       "lean_decl": "MD.Ch01.energy_bounds",
@@ -2447,14 +2677,14 @@
       "direct_placeholder": true,
       "proof_stop_reason": "missing_large_theory",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "48f0743912bc342304d45a32c4dbed24983db86fc10dae1d9706709a7ab3bae4",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2468,7 +2698,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "ff7d536eab0a1318228de62026c1b3901744c60f13e3ac9f219a3899d2a08554",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5-UniformLevelsCompact": {
       "lean_decl": "MD.Ch01.uniform_levels_compact",
@@ -2497,14 +2730,14 @@
       "direct_placeholder": true,
       "proof_stop_reason": "missing_large_theory",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "ab85043a046750bbd284aa1a6e93956dc6551b6e73c38e954689420e224ca8fa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2518,12 +2751,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "4faab2749fad6a75f81d67f896250792132dfca4188590c8217bfb016e80f2d3",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5-CompactContinuation": {
       "lean_decl": "MD.Ch01.compact_continuation",
       "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "19号本地签名预审：主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。",
       "counterexample": null,
       "suggested_fix": "缺双向紧集留域延拓与反向系统拼接；旧正式库只供未来延拓，未尝试用其冒充全时间结论。",
       "correspondence": [
@@ -2536,6 +2772,16 @@
           "source": "原文未显式量化的技术资格",
           "lean": "共同紧集包含于开放非奇异域；hconfine仅关于既有局部解，不假设全局解；力C1和固定对角机械模型。",
           "note": "[EXTRA]"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.compact_continuation_aux; MD.Ch01.compact_continuation",
+          "note": "主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.compact_continuation_aux; MD.Ch01.compact_continuation",
+          "note": "主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。"
         }
       ],
       "documented_priors": [],
@@ -2547,14 +2793,14 @@
       "direct_placeholder": true,
       "proof_stop_reason": "missing_large_theory",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
-      "signature_sha256": "7ea8154dad2e317dbddab71b20dca89cd20f62c9fcaf8b71cdd7d6158f84cb15",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "9a857f17a0605295ca0920bd6c08b077507965fc0cea1a13f6fcecb020163fc6",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -2571,7 +2817,10 @@
           "pdf_page"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "a1d006fa0adfb9bb4e4b0002d63175b2669b581b86893015102a26d45604616a",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5-Nonconfining": {
       "lean_decl": "MD.Ch01.nonconfining",
@@ -2596,13 +2845,13 @@
       "proof_failures": 0,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "d204a699974456eb9ec95b244fee306ff7f9b405c186adcca42ad8d1e49adee9",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2616,7 +2865,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "e64bbcd74b45174ab2f388194aa9bc8f73fe711e2832c8276a61ce68a70d9a3d",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.1-FlowMap": {
       "lean_decl": "MD.Ch01.flowMap",
@@ -2644,13 +2896,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "edddadfd1b5441375cba553b5e182764b0096cb2cccc4a7641119b17cd1ec5fa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2664,7 +2916,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "edddadfd1b5441375cba553b5e182764b0096cb2cccc4a7641119b17cd1ec5fa",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.1-FlowEnergy": {
       "lean_decl": "MD.Ch01.flow_energy",
@@ -2706,13 +2961,13 @@
       "proof_failures": 2,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "4262397bd20d756f26764f5318bd4df4ba0297b1cfe3a689c4048b24e13e43b5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2726,12 +2981,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "e2a70faeaabb5074dc0533573775a72097cbb5111c1c3d4a1a5cc4ce2f63925d",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.1-HarmonicPhaseFlow": {
       "lean_decl": "MD.Ch01.harmonicPhaseFlow",
       "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "19号本地签名预审：保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -2744,23 +3002,33 @@
           "source": "\\[\\begin{pmatrix}q(t)\\\\p(t)\\end{pmatrix}=\\mathcal F_t\\begin{pmatrix}q_0\\\\p_0\\end{pmatrix}=\\begin{pmatrix}q_0\\cos(\\Omega t)+p_0\\sin(\\Omega t)/\\Omega\\\\-q_0\\Omega\\sin(\\Omega t)+p_0\\cos(\\Omega t)\\end{pmatrix}.\\]",
           "lean": "MD.Ch01.harmonicPhaseFlow，完整展开陈述见上一行及第4段",
           "note": "一致"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.harmonicPhaseFlow; MD.Ch01.harmonicPhaseFlow_solution",
+          "note": "保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.harmonicPhaseFlow; MD.Ch01.harmonicPhaseFlow_solution",
+          "note": "保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "definition",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "776b426f44b6b4ad600a18fcb478090b26fd7b90e0d4f7baa3e28d944814e25c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "5c56d74bb593d578dc58c0b4b6bc9137bc5e50b4b207cf01db5fcd8742619f12",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -2776,7 +3044,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "5c56d74bb593d578dc58c0b4b6bc9137bc5e50b4b207cf01db5fcd8742619f12",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.1-SpectralSolution": {
       "lean_decl": "MD.Ch01.spectralsolution",
@@ -2811,13 +3082,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "ff84311253515b59f80c74ba0da7985d0d325a4d36809c93b7f5f6d68f286578",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2833,7 +3104,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "54d9a2c3c80b962ac872a570408d7bb8462c83f3dff1290b301a5493b17d2c8f",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.1-BasisCoefficients": {
       "lean_decl": "MD.Ch01.basis_coefficients",
@@ -2868,13 +3142,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "80ffe19bcdde4581a1c74c0508767eef524420ae1ac489745b42fb893b31e5b9",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2890,7 +3164,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "fd3a05dd4f7aa271b4feaf40f3c31488809c326de408f956ab83bc90b0af7649",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.1-MatrixExponentialSolution": {
       "lean_decl": "MD.Ch01.matrixexponentialsolution",
@@ -2920,13 +3197,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "c9a3b1f43c8f58ecc707375bb9b1e81aa72e5d4c07632ddb9683a8206c968d57",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -2940,7 +3217,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "530ece2074b808c1f4d751fd530a02e40edbb1906de255acd595e4a54d792d60",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.1-MatrixExpSeries": {
       "lean_decl": "MD.Ch01.matrix_exp_series",
@@ -2970,13 +3250,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "fb900b26924a18d46060d5875605027bc4a3322b0dc9f23a75c30ec87e57fb4c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -2992,7 +3272,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "b917cd9f22ca94e164e54e6e3f0ee5a4b80eb2c853d5cde8b969151b95ddd19a",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-FirstIntegral": {
       "lean_decl": "MD.Ch01.smoothFirstIntegral",
@@ -3015,13 +3298,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "10db090c14a36cee754816add2c96465c4fb221685c489d463298e1bdbff5929",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3037,7 +3320,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "10db090c14a36cee754816add2c96465c4fb221685c489d463298e1bdbff5929",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-FirstIntegralCriterion": {
       "lean_decl": "MD.Ch01.firstintegralcriterion",
@@ -3067,13 +3353,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "d87fec693d9510335030c79e0c82208a53049a95c987ecb781c5f5310bbc4b9c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3091,7 +3377,10 @@
           "proof_note"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "5f52cd67da5274eae2a43c7301d63e6cec2c9734a5bd62ed60ed93ac8370a926",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-PlanarGraphReduction": {
       "lean_decl": "MD.Ch01.planargraphreduction",
@@ -3126,13 +3415,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "0edd0b6555c6f14aa6b2d10577b1ac64d85a30d161d09d650f2a6bf7f7cbeac5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3148,7 +3437,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "11e4728ebc2db2343042207d98d7d8efee6ff75c89d39296e2536bfef84fd201",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-PlanarQuadrature": {
       "lean_decl": "MD.Ch01.planarquadrature",
@@ -3178,13 +3470,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "7584b8d18fcd6dbfd6ba769c57e289669bb218ca0f3b71e8a1089392041a83f2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3198,7 +3490,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "f755895e6cf81e01f32c8f5f541afcbb3470ee886aa4952ed5763b67000c9e5d",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-ScalarFirstIntegral": {
       "lean_decl": "MD.Ch01.scalar_first_integral_and_quadrature",
@@ -3239,13 +3534,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "63b284f743535a2234c249a20fdbd7f70717696366f587013b79502b212fbe0f",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3259,7 +3554,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "cc832f66ea558f9f6f2a863cf5d8ae9b7f00df22cd78f12b8954a5b4273d0707",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.1-RealSpectralSolution": {
       "lean_decl": "MD.Ch01.realspectralsolution",
@@ -3284,13 +3582,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "00c678b364325008ccae73fb2a1c722cd649c6a1129e6166ae3b413936465eff",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3304,7 +3602,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "bbe4d519f767358eb48f9a26a3b2e65eb58d69a93aeb44b76fb1d58f83d1202f",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-KeplerEnergy": {
       "lean_decl": "MD.Ch01.planarKeplerEnergy",
@@ -3327,13 +3628,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "a4f616ae5b6d421f4321b2ee6d4aa3ba1ac4ea50b4926a11bb4bbc77b5405701",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3347,7 +3648,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "a4f616ae5b6d421f4321b2ee6d4aa3ba1ac4ea50b4926a11bb4bbc77b5405701",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-KeplerConservedEnergy": {
       "lean_decl": "MD.Ch01.kepler_energy_angular_integrability",
@@ -3389,14 +3693,14 @@
       "direct_placeholder": true,
       "proof_stop_reason": "missing_large_theory",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "3723211145a5dbab95d41c2d9ac02d2da1a214bf26040615e96c441de16f67ab",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3410,7 +3714,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "c672155c75559eefc9403bcefb26de0b6d1a870bd30b0c0217ec11752e7fcc05",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-KeplerAngularMomentum": {
       "lean_decl": "MD.Ch01.keplerangularmomentum",
@@ -3435,13 +3742,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "066fd4d97d6e409f1154855420d95458472725b59242d9711f87e0d68e972964",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3455,12 +3762,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "864ee15b37c070a16e6757c167e65363c81fbb9984d783ba3f70f9baf201bd72",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-KeplerMomentum": {
       "lean_decl": "MD.Ch01.keplermomentum",
       "verdict": "PASS",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。",
+      "explanation": "19号本地签名预审：保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -3473,25 +3783,36 @@
           "source": "原文未显式量化的技术资格",
           "lean": "q≠0；单位质量。",
           "note": "[EXTRA]"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.keplermomentum; MD.Ch01.keplermomentum_not_first_integrals",
+          "note": "保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.keplermomentum; MD.Ch01.keplermomentum_not_first_integrals",
+          "note": "保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 1,
-      "proof_status": "local_proof",
+      "proof_status": "placeholder",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
-      "missing": null,
+      "missing": "缺完成本条全部结论的已验证证明；一般正则层/动力学/谱或测度桥接未建；本轮只修签名，不把子结果冒充整条。",
       "checked": true,
-      "direct_placeholder": false,
+      "direct_placeholder": true,
       "proof_failures": 0,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "signature_sha256": "d43c3215bd604a58ab74a73418f766ebf14eca2c8ce9ccc5215e781907157abc",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -3505,7 +3826,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "ac1d7ed2a5cb8f272c8b3b24a0b94ea42730dedeaf4e271f2df33f3a601f81f5",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-PolarCoordinates": {
       "lean_decl": "MD.Ch01.polarCoordinates",
@@ -3528,13 +3852,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "5d713cf1e588029238a91fe47d67943454908227b194de4e9c468a66a6517201",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3548,7 +3872,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "5d713cf1e588029238a91fe47d67943454908227b194de4e9c468a66a6517201",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-KeplerPolarLagrangian": {
       "lean_decl": "MD.Ch01.keplerpolarlagrangian",
@@ -3578,13 +3905,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "35cdcc81e66b0ceed46f77d1b18b19defc050655639648123c59a7cb9544afee",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3598,7 +3925,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "84bd762d27891a5bf1957595c82283539017f294299a4b11b6d1cde173938518",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-KeplerPolarODE": {
       "lean_decl": "MD.Ch01.keplerpolarode",
@@ -3628,13 +3958,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "dcc18b9ce744fc7847c4eddc34d66a2114e29da6a819b472fca69aa1f7d2d99c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3648,7 +3978,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "c953b52263f1ad2337e218a0ca3df9bbc3cb309cdd1595435598efe9d761b668",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-PolarAngularIdentity": {
       "lean_decl": "MD.Ch01.polarangularidentity",
@@ -3678,13 +4011,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "c59b3f04e695215296d3562c18d3cff1f9f0a155be77069341b5b1e9255b7d0c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3698,7 +4031,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "f6073da786cdb13510c2138b63c2440004f90c5d07d21ef7a867c1136fd6d744",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-KeplerRadialReduction": {
       "lean_decl": "MD.Ch01.keplerradialreduction",
@@ -3728,13 +4064,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "2f1f7de480ab7a320345d2398387ca945af24d9587452346b2335b20d67f69b5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3748,7 +4084,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "6f44edba02511cbc7550e75f8a7e3bb0a561f1d809e09e5c7239aefc22cc91b6",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-KeplerRadialEnergy": {
       "lean_decl": "MD.Ch01.radialKeplerEnergy",
@@ -3776,13 +4115,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "5b2fe00e0e32e32594cd86bc65e0bb4fe295aefe49ec5d43c35a6652207b7f52",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3798,7 +4137,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "5b2fe00e0e32e32594cd86bc65e0bb4fe295aefe49ec5d43c35a6652207b7f52",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-KeplerFullSolution": {
       "lean_decl": "MD.Ch01.kepler_full_solution",
@@ -3832,14 +4174,14 @@
       "direct_placeholder": true,
       "proof_stop_reason": "missing_large_theory",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "b736f12cb9a0c91f105f04a31bb1fad390242ec28c4d296e0749dd6e2047af80",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3853,7 +4195,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "ebf19422671dffc4c1ffa2b9623a5fae06352e7dc57adbb7294771d006b48b7c",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-ActionAngleCoordinates": {
       "lean_decl": "MD.Ch01.oscillatorActionAngle",
@@ -3881,13 +4226,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "a13c58d8970ebd9cacf1340729b6262f1cb76a8a1a646f64f157c96dac118be0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -3901,7 +4246,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "a13c58d8970ebd9cacf1340729b6262f1cb76a8a1a646f64f157c96dac118be0",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-ActionEnergy": {
       "lean_decl": "MD.Ch01.actionenergy",
@@ -3931,13 +4279,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "488418347167cc5e893bf82d39a86bf3210b6a11326cae715b33deab431f270c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -3951,7 +4299,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "b8405605159ec29a173eff9eb97951e9d5eb68437a69396d02c555af1a3e2423",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-ActionODE": {
       "lean_decl": "MD.Ch01.actionode",
@@ -3981,13 +4332,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "6ca2dcc15d95aaf419a6352ad4677078adc1c2565c9dcef76f08c01db6e33561",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4001,7 +4352,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "566fb1b13bbabe92771a37c59d9e434f56b2daf4d035d0a8b3c8e89c30cd314f",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-ActionSolution": {
       "lean_decl": "MD.Ch01.actionsolution",
@@ -4031,13 +4385,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "b67a95e3dd2bd903eb6e8dfce22b7f39b01784aa4c22faa59be6e7912214ac92",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4051,7 +4405,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "45a7507bb10423dc53b4c4ee68ff827e7c294309357b36b5928f35b9a1eaa901",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-HarmonicTorus": {
       "lean_decl": "MD.Ch01.oscillatorTorusMotion",
@@ -4074,13 +4431,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "b0f61f4316e8686907db43bccab9f55c4b6db91541663ddc402a185e02c74b39",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4096,12 +4453,15 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "b0f61f4316e8686907db43bccab9f55c4b6db91541663ddc402a185e02c74b39",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-TorusPeriod": {
       "lean_decl": "MD.Ch01.torusperiod",
       "verdict": "PASS",
-      "explanation": "展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。",
+      "explanation": "19号本地签名预审：保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -4114,25 +4474,35 @@
           "source": "原文未显式量化的技术资格",
           "lean": "给定周期T；每频率×T为整数圈是精确共振条件；原句没有单独定义commensurate。",
           "note": "[EXTRA]"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.torusperiod; MD.Ch01.torusQuasiperiodic; MD.Ch01.torusperiod_classification",
+          "note": "保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.torusperiod; MD.Ch01.torusQuasiperiodic; MD.Ch01.torusperiod_classification",
+          "note": "保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。"
         }
       ],
       "documented_priors": [
         "MolecularDynamics/Chapter01/HarmonicTorus.lean:harmonicTorusRotation_periodic_iff_integer"
       ],
       "proof_attempts": 0,
-      "proof_status": "existing_bridge",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "a25ea00a01329ea3cff5f79fb6440cf8fc0602776f273a638116d4d562ef7842",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -4146,12 +4516,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "125925839484b446387259d3a303bcf5a22c1ac0d07c58de42c968488c23cca1",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-TorusDense": {
       "lean_decl": "MD.Ch01.torusdense",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。",
+      "explanation": "高维准周期运动可能只在真子环面稠密；无正周期不等于全维无共振。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "原文用ratio of frequencies描述高维填满环面，未区分准周期子环面与全维整数无共振；须导师明确。",
       "suggested_fix": "一般d维Kronecker稠密轨道理论；正式库仅二维无理比。",
       "correspondence": [
@@ -4170,21 +4543,21 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
-      "missing": "一般d维Kronecker稠密轨道理论；正式库仅二维无理比。",
+      "missing": "缺一般d维Kronecker稠密定理；不建设大型理论。",
       "checked": true,
       "direct_placeholder": true,
       "source_questions": [
         "原文用ratio of frequencies描述高维填满环面，未区分准周期子环面与全维整数无共振；须导师明确。"
       ],
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "27a825a57883a095395c7b934ed6f4141224599f072b92897a92ed4619ab4749",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4200,12 +4573,15 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "115bdde5531cac164b652a5fa37ff4e0ff620eaad33e0616251b4dcbba6f2727",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.2-LocalActionAngleReduction": {
       "lean_decl": "MD.Ch01.local_action_angle_reduction",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "完整保留局部坐标规约及全局环面运动，额外紧/连通资格逐条登记；原文未说这些限制，需导师裁定。",
+      "explanation": "独立对合第一积分只给局部正则结构；非紧共同水平集未必为环面。IsConnected含非空。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。",
       "suggested_fix": "一般Liouville–Arnold/Carathéodory–Jacobi–Lie理论；全局环面子句需另行裁定补齐。",
       "correspondence": [
@@ -4224,21 +4600,21 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
-      "missing": "一般Liouville–Arnold/Carathéodory–Jacobi–Lie理论；全局环面子句需另行裁定补齐。",
+      "missing": "缺一般Liouville–Arnold与局部辛坐标理论；不建设大型理论。",
       "checked": true,
       "direct_placeholder": true,
       "source_questions": [
         "local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。"
       ],
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "292f63a4a0d94ea8b112efca38fc15956e0509df47d115823a074a83e0ae1da0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4254,7 +4630,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "14d983fa1ea6c8b05929b6e5701d7e38426000f1218c6f3fbb162a5b6f38b124",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-Equilibrium": {
       "lean_decl": "MD.Ch01.equilibriumDefinition",
@@ -4277,13 +4656,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "141a89e2511dc27eace19b732a1d39e8ea93bbd19ec1282c63915e2f75a01fef",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4299,7 +4678,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "141a89e2511dc27eace19b732a1d39e8ea93bbd19ec1282c63915e2f75a01fef",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-ConstantEquilibrium": {
       "lean_decl": "MD.Ch01.constantequilibrium",
@@ -4324,13 +4706,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "8210a7182751f099cf927b6e6000849d35cfe5692d0ed248167b56d276fcf730",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4346,7 +4728,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "342d41bed705a66014e9cd2cd63a0f2e8db80960a5e94efda9760bad2401948c",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-EquilibriumLinearization": {
       "lean_decl": "MD.Ch01.equilibriumlinearization",
@@ -4376,13 +4761,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "9e395ce3adf80218f8f296b3c61191d5be6a93d353cd69a4a5d87b9c3a5a8ba1",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4398,7 +4783,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "61a13483d35539b61f5ad4b299920d271b04588d33443ced62bf69df90e008a7",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-Hyperbolic": {
       "lean_decl": "MD.Ch01.hyperbolic",
@@ -4421,13 +4809,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "2b31f8c5bbdaf84838f4b989287b6bf3a2bd10ebab44f610d279990588e5e960",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4444,12 +4832,15 @@
           "pdf_page"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "2b31f8c5bbdaf84838f4b989287b6bf3a2bd10ebab44f610d279990588e5e960",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-HartmanGrobmanLiteral": {
       "lean_decl": "MD.Ch01.hartmangrobmanliteral",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。",
+      "explanation": "C¹双曲系统的一般Hartman–Grobman结论为拓扑共轭，不保证C∞线性化。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。",
       "suggested_fix": "一般Hartman–Grobman理论；光滑共轭字面断言需导师勘误。",
       "correspondence": [
@@ -4473,21 +4864,21 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
-      "missing": "一般Hartman–Grobman理论；光滑共轭字面断言需导师勘误。",
+      "missing": "缺一般Hartman–Grobman局部拓扑共轭；不建设大型理论。",
       "checked": true,
       "direct_placeholder": true,
       "source_questions": [
         "原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。"
       ],
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "7cf7fcae847fc852f5d8a3ca5873ef9e6b6bbd4ccb9d7bf312aaf7dce7d48336",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4501,7 +4892,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "8c248e9917016d0ae8774f1dce3fe0bedcdcd66968a0d82463778f18d09824c9",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-LyapunovStability": {
       "lean_decl": "MD.Ch01.lyapunovStable",
@@ -4534,13 +4928,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "bdda3cb8c61ab23e0a00944c089fe5be2be10adcb3a3a25ff7e0bf3172dc725a",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4554,12 +4948,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "bdda3cb8c61ab23e0a00944c089fe5be2be10adcb3a3a25ff7e0bf3172dc725a",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-HyperbolicStabilityTransfer": {
       "lean_decl": "MD.Ch01.hyperbolicstabilitytransfer",
-      "verdict": "PASS",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "结论本身是标准推论，但原证明链不能依赖原书过强的光滑共轭。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": null,
       "suggested_fix": "缺一般Hartman–Grobman局部拓扑共轭和稳定/不稳定转移；不调用仍含sorry的smooth字面条目。",
       "correspondence": [
@@ -4578,19 +4975,19 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
-      "missing": "缺一般Hartman–Grobman局部拓扑共轭和稳定/不稳定转移；不调用仍含sorry的smooth字面条目。",
+      "missing": "缺一般拓扑共轭及留域稳定性转移桥接；不依赖literal。",
       "checked": true,
       "direct_placeholder": true,
       "proof_stop_reason": "missing_large_theory",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "06ab4a57f9709625a41dab12ca4132adf2070af3b10c4d1616f369179fe4cebe",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4604,7 +5001,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "6ba7bc808a75f111f25feea46cbd3d12c879fe33b986dcba8aa71c7c278f498c",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-HamiltonEquilibrium": {
       "lean_decl": "MD.Ch01.hamilton_equilibrium",
@@ -4639,13 +5039,13 @@
       "proof_failures": 0,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "9133a27389b16c1e021593df7203554ce713574c87b018f57275959139c69585",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4659,7 +5059,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "fc74ce9d07481ec2515c06cd27bd7147ee028fdc7c84257c7d01e7cdc8a4dca3",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-StrongLocalMinimum": {
       "lean_decl": "MD.Ch01.strongLocalMinimum",
@@ -4687,13 +5090,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "a7cbfba9e102dfb0c19186aedd6ea2f4a56d98b0af23d5ff94cf978c1462f626",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4707,12 +5110,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "a7cbfba9e102dfb0c19186aedd6ea2f4a56d98b0af23d5ff94cf978c1462f626",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-LinearizedHamiltonian": {
       "lean_decl": "MD.Ch01.linearizedHamiltonian",
       "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "19号本地签名预审：保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -4725,23 +5131,34 @@
           "source": "\\[\\widetilde H=\\frac{\\delta\\boldsymbol p^T\\boldsymbol M^{-1}\\delta\\boldsymbol p}2+\\frac{\\delta\\boldsymbol q^T U''(\\boldsymbol q^*)\\delta\\boldsymbol q}2.\\]",
           "lean": "MD.Ch01.linearizedHamiltonian，完整展开陈述见上一行及第4段",
           "note": "一致"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.linearizedHamiltonian; MD.Ch01.linearizedHamiltonian_field",
+          "note": "保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.linearizedHamiltonian; MD.Ch01.linearizedHamiltonian_field",
+          "note": "保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "definition",
+      "proof_status": "placeholder",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
-      "missing": null,
+      "missing": "缺完成本条全部结论的已验证证明；一般正则层/动力学/谱或测度桥接未建；本轮只修签名，不把子结果冒充整条。",
       "checked": true,
-      "direct_placeholder": false,
+      "direct_placeholder": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
-      "signature_sha256": "8e7dabd7162e165c02e06ca37d62f6389e0994d7fc2e39cc13f5320b42ed0d62",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "final_status": "incomplete",
+      "signature_sha256": "82d0407d6a7c88a17ee4dd6ce127772bc087d4e829c77b95bc12a342cc3454ee",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -4757,7 +5174,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "82d0407d6a7c88a17ee4dd6ce127772bc087d4e829c77b95bc12a342cc3454ee",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-PositiveHessianQuadratic": {
       "lean_decl": "MD.Ch01.positivehessianquadratic",
@@ -4787,13 +5207,13 @@
       "proof_failures": 2,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "8889033bfeeb03c2a087cd0924e4ce598e79cbb1fba715090ed84a22c1182857",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4807,7 +5227,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "26b5c1d46535e21d19390324c0858b80d53e8e2ec4a34d8f89cb9d1f83484241",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.5.3-PositiveHessianMinimum": {
       "lean_decl": "MD.Ch01.positive_hessian_minimum",
@@ -4846,14 +5269,14 @@
       "direct_placeholder": true,
       "proof_stop_reason": "missing_large_theory",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "9595dc9ac6090cbcd9df50e0c03b268fbe43d76f5684d786f0d93eef593200be",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -4867,7 +5290,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "164dbc230bdfb57bef8247af68baf409004d483930578701ea21d0366e8c4ba1",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-UniformPairLattice": {
       "lean_decl": "MD.Ch01.latticePairPotential",
@@ -4896,12 +5322,12 @@
       "signature_sha256": "ae335e0a22b2ae9f67606b88170b09a0fb08e6f370b60f738e806e087bcc5fdb",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -4915,7 +5341,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "ae335e0a22b2ae9f67606b88170b09a0fb08e6f370b60f738e806e087bcc5fdb",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-UnorderedPairCount": {
       "lean_decl": "MD.Ch01.unorderedpaircount",
@@ -4939,12 +5368,12 @@
       "signature_sha256": "5d6f86a7e51bdfb3056ed8ae47c2985be3249f8a229c56bd8ddaedd61e199be7",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "proof_failures": 1,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "external_review": {
@@ -4960,7 +5389,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "4a074f4eb06861dab5667c915d92d38af4fe2f0ce6951a35b2e240eff3c07d20",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-NearestNeighbor": {
       "lean_decl": "MD.Ch01.nearestNeighborModel",
@@ -4989,12 +5421,12 @@
       "signature_sha256": "c9f9dabf3d9ad9e94ab3219c95f25b7ba08b83c89a0e700797229382f5292c5c",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -5008,7 +5440,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "c9f9dabf3d9ad9e94ab3219c95f25b7ba08b83c89a0e700797229382f5292c5c",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-WalledChain": {
       "lean_decl": "MD.Ch01.walledChainModel",
@@ -5037,12 +5472,12 @@
       "signature_sha256": "6aa702191c74f535264b934fcadfa137368b23646f8f55c39ddda748cb5c38ec",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -5058,7 +5493,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "6aa702191c74f535264b934fcadfa137368b23646f8f55c39ddda748cb5c38ec",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-PeriodicChain": {
       "lean_decl": "MD.Ch01.periodicChainModel",
@@ -5087,12 +5525,12 @@
       "signature_sha256": "5d20e7645218c8dacee1094cef2db10fc2cca6ffe99113eaec2a6837c893522b",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -5106,12 +5544,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "5d20e7645218c8dacee1094cef2db10fc2cca6ffe99113eaec2a6837c893522b",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-PeriodicBoundary": {
       "lean_decl": "MD.Ch01.periodicBoundary",
       "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "19号本地签名预审：原等价关系另名辅助；主定义逐字表达正盒长下右越界减L、左越界加L、否则不变的一步更新，不伪称任意大越界一步即可落盒。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -5119,23 +5560,33 @@
           "source": "原文对象、量词、前提与完整定义/结论（见第2段逐字引用）",
           "lean": "def periodicBoundary (L : ℝ) (x y : ℝ) : Prop := ∃ k : ℤ, y = x + k*L",
           "note": "一致"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.periodicPositionEquivalent; MD.Ch01.periodicBoundary",
+          "note": "原等价关系另名辅助；主定义逐字表达正盒长下右越界减L、左越界加L、否则不变的一步更新，不伪称任意大越界一步即可落盒。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.periodicPositionEquivalent; MD.Ch01.periodicBoundary",
+          "note": "原等价关系另名辅助；主定义逐字表达正盒长下右越界减L、左越界加L、否则不变的一步更新，不伪称任意大越界一步即可落盒。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "definition",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
-      "signature_sha256": "2fd68f7d5f14e976fd6bd0b8f4edee8dbe7b3486388dadc2e11d3f1b8e91bce9",
+      "signature_sha256": "1bb5d40a1addef282e5112daa35a340b035b603a54974f0239413d0aab594b77",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -5149,12 +5600,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "1bb5d40a1addef282e5112daa35a340b035b603a54974f0239413d0aab594b77",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-PeriodicTranslationMomentum": {
       "lean_decl": "MD.Ch01.periodic_translation_momentum",
       "verdict": "PASS",
-      "explanation": "补齐全平移不变、净力零真实导数与动量守恒；Newton第三定律为相邻差值势的反向partial，CentralPairGradient另条编码，不把动量结论当假设。",
+      "explanation": "19号本地签名预审：完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。",
       "counterexample": null,
       "suggested_fix": "三次失败已止：Pi空间拓扑与实际HasDerivAt链式法则实例不能统一；平移不变已有正式证明，完整方向导数及动量桥接未通过。",
       "correspondence": [
@@ -5177,6 +5631,16 @@
           "source": "原文未显式量化的技术资格",
           "lean": "一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。",
           "note": "[EXTRA]"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.periodic_translation_momentum; MD.Ch01.periodicBondEnergy; MD.Ch01.periodic_translation_third_law",
+          "note": "完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.periodic_translation_momentum; MD.Ch01.periodicBondEnergy; MD.Ch01.periodic_translation_third_law",
+          "note": "完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。"
         }
       ],
       "documented_priors": [],
@@ -5188,13 +5652,13 @@
       "signature_sha256": "d5ab02ba52ab0637f83ae1c9d626b6dea6cde704c7ff34ffdd7dc7e73e6b3ca7",
       "direct_placeholder": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "proof_stop_reason": "three_failed_attempts",
       "proof_failures": 3,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
@@ -5211,7 +5675,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "357a078b8caf5f74da91aab7250ee8002362e4c91da09722f76af687a18db71b",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-RegularLattice": {
       "lean_decl": "MD.Ch01.regularLattice",
@@ -5235,12 +5702,12 @@
       "signature_sha256": "5c57ad73285c41ec056d8fdeba5d06b241bb8090f1b202bac1fc2af9c2250632",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -5254,12 +5721,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "5c57ad73285c41ec056d8fdeba5d06b241bb8090f1b202bac1fc2af9c2250632",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-RegularLatticeMinimizerLiteral": {
       "lean_decl": "MD.Ch01.regularlatticeminimizerliteral",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。",
+      "explanation": "任意uniform pair potential不保证晶格最小；还缺排序、盒域和势的凸性等资格。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。",
       "suggested_fix": "原文需限定势和配置域；不可证明字面假命题。",
       "correspondence": [
@@ -5273,18 +5743,18 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
-      "missing": "原文需限定势和配置域；不可证明字面假命题。",
+      "missing": "原书疑误原文版保留sorry，不用于证明修正版。",
       "checked": true,
       "signature_sha256": "8fdbdc2a4957dad46d9a05f062fed7fb6361468a585fe4e5f82077cb55832254",
       "direct_placeholder": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "source_questions": [
         "对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。"
       ],
@@ -5301,7 +5771,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "56d0a527b77e36fb8422ad68ffac490a012760aead783b4bb10fcdf2332f8978",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-PeriodicImages": {
       "lean_decl": "MD.Ch01.periodicImageEnergy",
@@ -5330,12 +5803,12 @@
       "signature_sha256": "d11ddd7273009acde9e63933f2d89f102183fc42e5012ee63a3ee9455b446d1f",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5352,12 +5825,15 @@
           "context_notation"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "d11ddd7273009acde9e63933f2d89f102183fc42e5012ee63a3ee9455b446d1f",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-MinimumImage": {
       "lean_decl": "MD.Ch01.minimumImage",
       "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "19号本地签名预审：最近像关系留作辅助；完整模型以L>0、不同原子标签及每对选中复制体唯一参与求力落实only限定（同距可任选）。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -5365,23 +5841,33 @@
           "source": "原文对象、量词、前提与完整定义/结论（见第2段逐字引用）",
           "lean": "def minimumImage (L : ℝ) (q r image : V3) : Prop :=\n  ∃ k : Fin 3 → ℤ, image = r + WithLp.toLp 2 (fun i => L*k i) ∧\n    ∀ l : Fin 3 → ℤ, ‖q-image‖ ≤ ‖q-(r+WithLp.toLp 2 (fun i => L*l i))‖",
           "note": "一致"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.minimumImage; MD.Ch01.minimumImageForce",
+          "note": "最近像关系留作辅助；完整模型以L>0、不同原子标签及每对选中复制体唯一参与求力落实only限定（同距可任选）。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.minimumImage; MD.Ch01.minimumImageForce",
+          "note": "最近像关系留作辅助；完整模型以L>0、不同原子标签及每对选中复制体唯一参与求力落实only限定（同距可任选）。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 0,
-      "proof_status": "definition",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
-      "signature_sha256": "0d4c0dbca82f99ca89d3aceb7b4915dae48547cc5d1e058ab9e4c200a8737f1f",
+      "signature_sha256": "34fa21a25f18b1e1f1d948c616392c01ef186392a5629d761da120d7733932fb",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -5395,7 +5881,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "34fa21a25f18b1e1f1d948c616392c01ef186392a5629d761da120d7733932fb",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-RhombicLattice": {
       "lean_decl": "MD.Ch01.rhombicLattice",
@@ -5419,12 +5908,12 @@
       "signature_sha256": "fc67364985cec87986905ec2031bb5b4a475a1e2b1d178a1ffbf45c9d75d27f7",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5440,7 +5929,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "fc67364985cec87986905ec2031bb5b4a475a1e2b1d178a1ffbf45c9d75d27f7",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-HexagonalLattice": {
       "lean_decl": "MD.Ch01.hexagonal_lattice_two_bases",
@@ -5464,12 +5956,12 @@
       "signature_sha256": "a5364b427f844c956623d44050946c40918c4ab5e5f17dd3ee164d7bdbe8a316",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "proof_failures": 2,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "external_review": {
@@ -5488,7 +5980,10 @@
           "context_notation"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "f001eaee541f68bfb346485a6210311f5f87cf80fe7aad91293b5b74969615be",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-UnitCell": {
       "lean_decl": "MD.Ch01.unitCellLattice",
@@ -5512,12 +6007,12 @@
       "signature_sha256": "b1f1abd72173af6d190a93a70e797d9809259371e7b8c688315e0389a42dd341",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5531,7 +6026,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "b1f1abd72173af6d190a93a70e797d9809259371e7b8c688315e0389a42dd341",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-FCCStacking": {
       "lean_decl": "MD.Ch01.fccStacking",
@@ -5560,12 +6058,12 @@
       "signature_sha256": "fa9be10cf431caafd34a4ec44e2fb67dd7a89d650174ed3a861caf17a6843825",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "final_status": "self-contained",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5579,7 +6077,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "fa9be10cf431caafd34a4ec44e2fb67dd7a89d650174ed3a861caf17a6843825",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6-HCPStacking": {
       "lean_decl": "MD.Ch01.hcpStacking",
@@ -5608,12 +6109,12 @@
       "signature_sha256": "0d005924214051cf078e70c98cf6e02c30873194b02d86d30c076ba7c3d70903",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "final_status": "self-contained",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5627,12 +6128,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "0d005924214051cf078e70c98cf6e02c30873194b02d86d30c076ba7c3d70903",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6.1-MinimumGradientZero": {
       "lean_decl": "MD.Ch01.minimumgradientzero",
-      "verdict": "PASS",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "约束边界极小一般不能推出全梯度为零；原上下文若含边界须区分可行方向。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -5663,12 +6167,12 @@
       "signature_sha256": "c088338166995b06263d18fa56b99498e42d9707f380a2d80fa54f799c888096",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "source_questions": [
         "不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。"
       ],
@@ -5685,7 +6189,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "9e1b274c785f8c97d8b5e0c6483f038c7520951ffb32cbfa75ae2798c0fc4ea5",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6.1-ForceLinearization": {
       "lean_decl": "MD.Ch01.force_linearization",
@@ -5731,12 +6238,12 @@
       "signature_sha256": "beea36b5e2e1b8731777f2bd6d6dd4a029fe7242b579a955db637315b0979ab7",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "proof_failures": 2,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "external_review": {
@@ -5752,12 +6259,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "2fa8aee07e3a41f7989675f56284c0f47fd404317ac889d5c6ccb5c27af95fbe",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6.1-MinimumHessianLiteral": {
       "lean_decl": "MD.Ch01.minimumhessianliteral",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。",
+      "explanation": "局部极小只能推出Hessian半正定，严格极小也不能保证非退化。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。",
       "suggested_fix": "字面假命题，不证明；正定需非退化额外假设，不能静默补。",
       "correspondence": [
@@ -5771,18 +6281,18 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
-      "missing": "字面假命题，不证明；正定需非退化额外假设，不能静默补。",
+      "missing": "缺一般C²二阶必要条件及Hessian对称/双线性形式桥接；原文不证。",
       "checked": true,
       "signature_sha256": "dcaac8ffe7ea38166591d02b0298d672e8f00b53b94c49589f7b902e828a3252",
       "direct_placeholder": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "source_questions": [
         "局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。"
       ],
@@ -5799,7 +6309,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "e5cff2c637a664ed097d99047c9da0069745c9c6e75d92fa4dfebd185a7f6f6e",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6.1-ImaginarySpectrum": {
       "lean_decl": "MD.Ch01.imaginary_spectrum",
@@ -5838,13 +6351,13 @@
       "signature_sha256": "81330665ea9d2c1e74c0a3414872053dd8999b596bb79453db2c3ca82e0b06a3",
       "direct_placeholder": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "proof_stop_reason": "missing_large_theory",
       "external_review": {
         "reported_verdict": "PASS",
@@ -5861,12 +6374,15 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "2c8fd02af6d176dc5079d56aa8e001a586ed9f9855f7a830f7707bc3603619f1",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6.1-ComplexNormalMode": {
       "lean_decl": "MD.Ch01.complexnormalmode",
       "verdict": "PASS",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，证明尚未完成。",
+      "explanation": "19号本地签名预审：增加η非零及共轭η非零、−iΩ特征方程，保留所有系数的原复解公式；不以零向量冒充特征向量。",
       "counterexample": null,
       "suggested_fix": "三次失败已止：Pi复空间的连续线性作用与实时间导数/复标量作用接口不统一；数学共轭模式论证与现有实模式证明不能冒充此签名。",
       "correspondence": [
@@ -5879,6 +6395,16 @@
           "source": "\\[\\boldsymbol z(t)=ae^{i\\Omega t}\\boldsymbol\\xi+be^{-i\\Omega t}\\overline{\\boldsymbol\\xi},\\]",
           "lean": "MD.Ch01.complexnormalmode，完整展开陈述见上一行及第4段",
           "note": "一致"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.complexnormalmode",
+          "note": "增加η非零及共轭η非零、−iΩ特征方程，保留所有系数的原复解公式；不以零向量冒充特征向量。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.complexnormalmode",
+          "note": "增加η非零及共轭η非零、−iΩ特征方程，保留所有系数的原复解公式；不以零向量冒充特征向量。"
         }
       ],
       "documented_priors": [],
@@ -5887,16 +6413,16 @@
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": "三次失败已止：Pi复空间的连续线性作用与实时间导数/复标量作用接口不统一；数学共轭模式论证与现有实模式证明不能冒充此签名。",
       "checked": true,
-      "signature_sha256": "f78173634b1da94b8fecc486c3945af183f2b47e266a2a3d92fac187f45918e9",
+      "signature_sha256": "12cf6d7a8a16eb24672fa3e4da5b672129c176c983e43591e6a0b3345e7afe47",
       "direct_placeholder": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "proof_stop_reason": "three_failed_attempts",
       "proof_failures": 3,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
@@ -5913,7 +6439,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "7e7d4c04f373f895c74628d74a97969d3791b16877418e4e258d401d55ea93b2",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.6.1-RealNormalMode": {
       "lean_decl": "MD.Ch01.realnormalmode",
@@ -5944,12 +6473,12 @@
       "signature_sha256": "cfd9081469533a64abc73b90f6f6a18137e97f99f9fbd0c2856027c27d68a5cc",
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -5963,7 +6492,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "078d7d6d3790942a18066d226229fd1f0bf0f85650c2c83d1f21f9601f9bdc89",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-PlanarTrimerModel": {
       "lean_decl": "MD.Ch01.planarTrimerEnergy",
@@ -5991,13 +6523,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "a1424278c96f14209f949c9bf5283c0ce106c0cd09fe1c9ab59f1c9e9b89d439",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6011,7 +6543,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "a1424278c96f14209f949c9bf5283c0ce106c0cd09fe1c9ab59f1c9e9b89d439",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-CentralPairPotential": {
       "lean_decl": "MD.Ch01.centralPairEnergy",
@@ -6039,13 +6574,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "8ecfcc8e514861a9e595ae42f204cd13b14a1e7df4b05df03b2998cf715897fa",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6059,7 +6594,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "8ecfcc8e514861a9e595ae42f204cd13b14a1e7df4b05df03b2998cf715897fa",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-CentralPairGradient": {
       "lean_decl": "MD.Ch01.centralpairgradient",
@@ -6094,13 +6632,13 @@
       "proof_failures": 1,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "e5f770dd43cbf8f1709b38d8969502f418537db8e874202ba2538e28428da17d",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6114,7 +6652,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "4191f1ffc55853bfb1071bdd69737ee1b352d72714b7984ffb93a72ea8a03723",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-CentralMomentum": {
       "lean_decl": "MD.Ch01.central_momentum",
@@ -6149,13 +6690,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "7eb95c56098bf26ccf9d8c283c92358e91005f987895f2c2f4e2563aaa82a0e8",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6169,12 +6710,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "2ac6a93eb2f644d8b6f774c5dba77745252b7729d297f64d683505828ef85580",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-CentralAngularMomentum": {
       "lean_decl": "MD.Ch01.centralangularmomentum",
       "verdict": "PASS",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。",
+      "explanation": "19号本地签名预审：保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -6202,11 +6746,21 @@
           "source": "原文未显式量化的技术资格",
           "lean": "真实位置和动量导数；反对称内力和沿位移方向中心力。",
           "note": "[EXTRA]"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.centralangularmomentum_derivative; MD.Ch01.centralangularmomentum",
+          "note": "保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。"
+        },
+        {
+          "source": "网站指出缺项及原文完整子句",
+          "lean": "MD.Ch01.centralangularmomentum_derivative; MD.Ch01.centralangularmomentum",
+          "note": "保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。"
         }
       ],
       "documented_priors": [],
       "proof_attempts": 1,
-      "proof_status": "local_proof",
+      "proof_status": "local_proof_or_definition",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
       "missing": null,
       "checked": true,
@@ -6214,13 +6768,13 @@
       "proof_failures": 0,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "30852325e4b4740d5979546aae4fd76e2f91c34a107f70325e9b13c2c4301e45",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "d459fc1b7213a473cbed1a714a37fffbbcb13f8bcb5907b19113156fbc491fb1",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -6234,7 +6788,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "e4a0655894b09d243084984d07175b549c6c3e836e2dbd8b8752613de7d2095f",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-CenterOfMassMotion": {
       "lean_decl": "MD.Ch01.centerofmassmotion",
@@ -6264,13 +6821,13 @@
       "proof_failures": 1,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "912a483400c1d20ff375306a83ed30c736f6ab128e28c6d83b1bea011f25f3fc",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6284,12 +6841,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "a9057d53a38d178707bb88b1e1d1b19f14f2bc8af609ebdda480def441ac0278",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-ConstantRotationLiteral": {
       "lean_decl": "MD.Ch01.constantrotationliteral",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。",
+      "explanation": "守恒的是角动量，转动惯量或半径可变时角速度可变。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "r(t)=sqrt(1+t²)、θ(t)=arctan t、ℓ=1；r²θ′≡1但θ′(0)=1、θ′(1)=1/2。解析反例，未作为Lean证明提交。",
       "suggested_fix": "字面推论假，需导师裁定为定性旋转描述或修正为角动量守恒。",
       "correspondence": [
@@ -6303,21 +6863,21 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "FAIL（绑定版本 09ff185182a8）",
-      "missing": "字面推论假，需导师裁定为定性旋转描述或修正为角动量守恒。",
+      "missing": "原书疑误原文版保留sorry，不用于证明修正版。",
       "checked": true,
       "direct_placeholder": true,
       "source_questions": [
         "角动量常数不推出角速度常数；中心运动r变时θ̇=ℓ/r²。例r(t)=sqrt(1+t²),θ(t)=arctan t,ℓ=1。"
       ],
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "4978f2b0879e4ff879a8feae7732fa39580efd2c1844ff9980b7fe17908e5ac8",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "FAIL",
         "binding": "BOUND",
@@ -6331,12 +6891,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "ae3fbcf6a223abe64642f0eccbe851bcee6adc11dd869a008bfdba255eb75a4f",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-IsoscelesCoordinates": {
       "lean_decl": "MD.Ch01.isoscelesCoordinates",
-      "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "零平动、零角动量不强迫任意三角形等腰；必须额外选择对称初态及证明对称性保持。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -6362,13 +6925,13 @@
         "同段“零平动/角动量→等腰”一般过强；这里只定义明确给定的对称配置，不把任意零动量当等腰。"
       ],
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "014f8a0c9bd208733d5e2eb8b1108250f274b4d8729f5a29be923ebae5646fa2",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "4fa9fe7ed455149eab55160ca9f50a62e838d910c9e2d575b809f270191cf6d8",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6382,7 +6945,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "4fa9fe7ed455149eab55160ca9f50a62e838d910c9e2d575b809f270191cf6d8",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-IsoscelesEnergyReduction": {
       "lean_decl": "MD.Ch01.isosceles_energy_reduction",
@@ -6417,13 +6983,13 @@
       "proof_failures": 1,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "417859f5938271eae37f67a791d4938799f2be3a2bef0047963ae7e7238abae3",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6437,7 +7003,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "ff0ac5e16794c4a6f6624fccb17877288a2a1c287270c808ee3e76e9133ac597",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-IsoscelesAccessibleRegion": {
       "lean_decl": "MD.Ch01.isoscelesaccessibleregion",
@@ -6467,13 +7036,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "ae398a605be574261cb71d961c6dd1721d44bd6ffd76f1acf301d858cf842948",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6487,7 +7056,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "ac45e78f57763b1bd8311c2770c9546b2c361d37cb5896944d31bca005414ba1",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-EquilateralTrimerMinimum": {
       "lean_decl": "MD.Ch01.equilateraltrimerminimum",
@@ -6533,14 +7105,14 @@
       "proof_failures": 3,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "fb69960d5eb865aec275bc6f869a1a1c0721bc91fba26125fa34e680ef6249da",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6554,7 +7126,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "6ffa8686bb4bd16df92aba3dc03823f799b9492bf55720819606e9873af67c65",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-TrimerEnergyLowerBound": {
       "lean_decl": "MD.Ch01.trimerenergylowerbound",
@@ -6579,13 +7154,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "signature_sha256": "6d6a854ca3b5cf682a82aa55fb199c08d8a2e13aa6953266b5235af1f7ae31e0",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6599,7 +7174,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "d4199e95d39c09f4a00568792a2cab93dda4da2c50ec2d00f8255204434b6051",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-CollinearTrimer": {
       "lean_decl": "MD.Ch01.collinearTrimer",
@@ -6622,13 +7200,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "944dc17d687e3b2f437d424f20cac055feadf45c35170ac00b283c91a2c1d8d8",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -6642,7 +7220,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "944dc17d687e3b2f437d424f20cac055feadf45c35170ac00b283c91a2c1d8d8",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-TrimerSaddle": {
       "lean_decl": "MD.Ch01.trimersaddle",
@@ -6671,14 +7252,14 @@
       "direct_placeholder": true,
       "proof_stop_reason": "missing_large_theory",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "b74f65429906510e4dd2e07a48842d3e0df115c79f15c13a45c2fbc75595a88c",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6694,12 +7275,15 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "8aa377f317b5698440a5c59ae4ed0919afba2e929f5b43ffc4c29d2215694bf6",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7-TrimerEscapeLiteral": {
       "lean_decl": "MD.Ch01.trimerescapeliteral",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。",
+      "explanation": "总能量正并不直接推出每个粒子相对固定原点趋于无穷；系统分离与逐粒子逃逸不同。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "every body逃逸字面过强：取等腰退化为共线y≡0，q₁=(x,0,0)、q₂=(-x,0,0)、q₃=0，中心粒子合力零，质心/动量/角动量均零；x>1的外向正能量解使外侧两粒子逃逸而中心始终固定。需裁定是否改为至少一对分离。",
       "suggested_fix": "全局三体散射/逃逸理论；字面every body与至少一对分离的差距不能冒充完整证明。",
       "correspondence": [
@@ -6713,21 +7297,21 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
-      "missing": "全局三体散射/逃逸理论；字面every body与至少一对分离的差距不能冒充完整证明。",
+      "missing": "缺全局三体散射/分离理论；候选修正也尚未经导师确认。",
       "checked": true,
       "direct_placeholder": true,
       "source_questions": [
         "every body逃逸字面过强：取等腰退化为共线y≡0，q₁=(x,0,0)、q₂=(-x,0,0)、q₃=0，中心粒子合力零，质心/动量/角动量均零；x>1的外向正能量解使外侧两粒子逃逸而中心始终固定。需裁定是否改为至少一对分离。"
       ],
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "ea9645ff0cda2db0c6439cbbe76937f88ad178b6da4600adca70cd6692ce3719",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6741,7 +7325,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "091a1b7dd68a8661f23cecb6acf930d0a4d6ef0ebd4165aecd988a254b9b9815",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7.1-ChaosConditions": {
       "lean_decl": "MD.Ch01.chaosConditions",
@@ -6774,13 +7361,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
-      "final_status": "incomplete",
+      "final_status": "self-contained",
       "signature_sha256": "34e9d710995eac86f326c4d564caa834eb61ae3f1b8aded8bf789c8e3db8a820",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6794,12 +7381,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "34e9d710995eac86f326c4d564caa834eb61ae3f1b8aded8bf789c8e3db8a820",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7.1-TransitivityErgodicityLiteral": {
       "lean_decl": "MD.Ch01.transitivityergodicityliteral",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。",
+      "explanation": "拓扑传递依赖拓扑，遍历性依赖选定不变测度；一般不能直接等价。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "拓扑传递和给定测度遍历通常不等价；μ=0时identity流遍历为真而传递为假。非退化概率测度也需进一步限定。",
       "suggested_fix": "字面等价不成立；不通过新增结论前提修补。",
       "correspondence": [
@@ -6818,21 +7408,21 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
-      "missing": "字面等价不成立；不通过新增结论前提修补。",
+      "missing": "缺由连续时间遍历性到满支撑正向拓扑传递的测度理论桥接。",
       "checked": true,
       "direct_placeholder": true,
       "source_questions": [
         "拓扑传递和给定测度遍历通常不等价；μ=0时identity流遍历为真而传递为假。非退化概率测度也需进一步限定。"
       ],
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "531503278d13a5715e5ae9d10a833daa55906758606f68df0eb6c9685e39d332",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6846,7 +7436,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "4d0d55f262c9614137e8dc70fc048b1c1f32c87a85cf713b9b413ba960e03539",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7.1-AnisotropicOscillator": {
       "lean_decl": "MD.Ch01.anisotropicEnergy",
@@ -6879,13 +7472,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "438069aac96d69c718610e36a9e82f0b54dc5a64c7fa3bca6a68e8e6384cfee5",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -6899,12 +7492,15 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "438069aac96d69c718610e36a9e82f0b54dc5a64c7fa3bca6a68e8e6384cfee5",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7.2-FlowJacobianLiteral": {
       "lean_decl": "MD.Ch01.variationalMatrixLiteral",
-      "verdict": "PASS",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "对初值求导的Jacobian应在初值取值；把演化后位置再次代入是复合了不同取值点。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": null,
       "suggested_fix": null,
       "correspondence": [
@@ -6935,13 +7531,13 @@
         "标准变分矩阵应为DξFt(ξ)，原文把取值点写Ftξ；忠实保留字面定义，后续两条不静默改。"
       ],
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
-      "signature_sha256": "35ee9ba26a07fe69ec85e6030a2eceb5f66be3543165f3ab65d57e3be9bb1152",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "signature_sha256": "e9dc8f79072b670c287c027779f8968e264c0eee73a9293ac81cc65b08fb8f2c",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -6958,12 +7554,15 @@
           "context_notation"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "e9dc8f79072b670c287c027779f8968e264c0eee73a9293ac81cc65b08fb8f2c",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7.2-VariationalEquationLiteral": {
       "lean_decl": "MD.Ch01.variationalequationliteral",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "逐项核对展开后的陈述、真实定义、量词及[EXTRA]；原文疑点保留，待导师裁定。",
+      "explanation": "原W的取值点多复合一次F_t，时间微分产生额外链式项，不满足标准变分方程。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "标准W应在ξ处取DFt。取全局光滑完备流f(x)=sin x，在ξ=π/2附近Ft(x)=2 arctan(e^t tan(x/2))；t=log 2时字面W=10/17，W′=-198/289，而f′(Ftξ)W=-6/17=-102/289，不相等。",
       "suggested_fix": "需导师确认取值点勘误；修正后一般非线性参数导数交换亦需理论，常系数已有证明不足。",
       "correspondence": [
@@ -6982,21 +7581,21 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
-      "missing": "需导师确认取值点勘误；修正后一般非线性参数导数交换亦需理论，常系数已有证明不足。",
+      "missing": "缺一般非线性流对初值的可微依赖及参数/时间微分交换；常系数定理范围不足。",
       "checked": true,
       "direct_placeholder": true,
       "source_questions": [
         "标准W应在ξ处取DFt。取全局光滑完备流f(x)=sin x，在ξ=π/2附近Ft(x)=2 arctan(e^t tan(x/2))；t=log 2时字面W=10/17，W′=-198/289，而f′(Ftξ)W=-6/17=-102/289，不相等。"
       ],
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "95313b0a359c9f17a6463aa3ab039a28f0e1c299aba348caf32d9102c0e18020",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -7012,12 +7611,15 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "9bc766d1302e61512c41b08849f5fd3075cd1ed04f08e44c906bf9a68353ce39",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7.2-NearbyTrajectoryLiteral": {
       "lean_decl": "MD.Ch01.nearby_trajectory_literal",
       "verdict": "NEEDS_HUMAN",
-      "explanation": "逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。",
+      "explanation": "错误取值点的导数通常与真实DF_t(ξ)不同，差额线性项不是小o。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。",
       "counterexample": "同一全局sin流在ξ=π/2,t=log 2时DFt(ξ)=4/5，字面DFt(Ftξ)=10/17；差额线性项不为小o。须导师裁定取值点，当前不静默修正。",
       "suggested_fix": "等待导师判断W取值点勘误，修正版由可微定义直接推出。",
       "correspondence": [
@@ -7041,21 +7643,21 @@
       "proof_attempts": 0,
       "proof_status": "placeholder",
       "website_audit": "NEEDS_HUMAN（绑定版本 09ff185182a8）",
-      "missing": "等待导师判断W取值点勘误，修正版由可微定义直接推出。",
+      "missing": "原书疑误原文版保留sorry，不用于证明修正版。",
       "checked": true,
       "direct_placeholder": true,
       "source_questions": [
         "同一全局sin流在ξ=π/2,t=log 2时DFt(ξ)=4/5，字面DFt(Ftξ)=10/17；差额线性项不为小o。须导师裁定取值点，当前不静默修正。"
       ],
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "d1f80a5cd42bd35d4c33c163c9ec111b7a1309fc538e23d7ff33c942f0edf950",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "NEEDS_HUMAN",
         "binding": "BOUND",
@@ -7071,7 +7673,10 @@
           "statement_latex"
         ],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "c9ea1dbf4ab174338d9c479f9a3a6e7b5b914b169318c8b1a062c2f8ce1cf560",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7.2-SingularValues": {
       "lean_decl": "MD.Ch01.singularValues",
@@ -7099,13 +7704,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "461b57878face0a9b20cd3d8760a51f56fd8ef6a228c62f09bddfdae02f5f5ea",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -7119,7 +7724,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "461b57878face0a9b20cd3d8760a51f56fd8ef6a228c62f09bddfdae02f5f5ea",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7.2-SingularEllipsoid": {
       "lean_decl": "MD.Ch01.singularellipsoid",
@@ -7148,14 +7756,14 @@
       "direct_placeholder": true,
       "proof_stop_reason": "missing_large_theory",
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "signature_sha256": "84b2bbd8bf39ec1a24583dae4f84a7e04498c505f4b01d1546f402b738186e59",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -7169,7 +7777,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "0bc9025bfb4c08c1a679f06677cd57c7875ab87521de15280577d7ec2f033516",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7.2-LyapunovExponents": {
       "lean_decl": "MD.Ch01.lyapunovExponent",
@@ -7207,13 +7818,13 @@
       "checked": true,
       "direct_placeholder": false,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "86eed3b7aaf421fd3a4bf022cb5f0ae6b6ab3ebe0b7d63b2585ffdd45e150c2e",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -7227,7 +7838,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "86eed3b7aaf421fd3a4bf022cb5f0ae6b6ab3ebe0b7d63b2585ffdd45e150c2e",
+      "compiled": true,
+      "transitive_placeholder": false
     },
     "MD-1.7.2-PositiveLyapunovGrowth": {
       "lean_decl": "MD.Ch01.positivelyapunovgrowth",
@@ -7262,13 +7876,13 @@
       "proof_failures": 1,
       "attempt_evidence": "blueprint/ch01/proof_attempts.json",
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "signature_sha256": "46bb7832d6e5c152a0f779d8d437c44499c4ac9306c1275066ff764e0cd0a725",
-      "axiom_log": "blueprint\\ch01\\validation\\EAUDIT03-full\\blueprint_axiom_dependencies.log",
+      "axiom_log": "blueprint/ch01/validation/CLOSEOUT19/final-single.log",
       "external_review": {
         "reported_verdict": "PASS",
         "binding": "BOUND",
@@ -7282,7 +7896,10 @@
         },
         "proposed_fields": [],
         "bound_version": "09ff185182a8"
-      }
+      },
+      "block_sha256": "976c73fc26b79600d49d425874e125c3bb2e4000db48c991a8f50f02b7f718ba",
+      "compiled": true,
+      "transitive_placeholder": false
     }
   }
 }

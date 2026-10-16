@@ -1,0 +1,94 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.6-PeriodicTranslationMomentum；原PDF页映射=[57]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT17_review.json，对象含batch=EAUDIT17、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT17.md": "98b04fa61c3c549df392f5214e8d8e21190da8e4e25189974fd7f8d8ed734fd3",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT17b_materials": "41cbf9631181f0f63a72fc5c5dd4d45842becaf7f0f4707cf9508483bb7ea254",
+  "EAUDIT17b_PAGES.pdf": "9d6fadb5205bb27ba46643a2d1da5ef867376fac4f147f5f10890daae1b323e6"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.6-PeriodicTranslationMomentum",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.6",
+  "printed_page": "34",
+  "pdf_page": "57",
+  "statement_latex": "Periodic boundary conditions allow us to preserve Newton’s third law, the translational symmetry, and thus the conservation of momentum.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "翻译不变模型作用的常向量方向导数零，使总内力零；动量守恒复用MomentumConservation条目。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.periodic_translation_momentum",
+  "extra_assumptions": [
+    "一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。",
+    "[EXTRA] 19号：完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。"
+  ],
+  "old_ids": [
+    "CH01-155"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem periodic_translation_momentum :
+  ∀ (N : ℕ) (φ : ℝ → ℝ) (L : ℝ),
+    let U := boxPeriodicNearestNeighborPotentialEnergy φ L
+    (∀ q c, U (fun i => q i+c) = U q) ∧
+    (∀ q, DifferentiableAt ℝ U q → fderiv ℝ U q (fun _ => 1) = 0) ∧
+    ∀ (m : Fin (N+1) → ℝ) (q v : ℝ → Fin (N+1) → ℝ) (I : Set ℝ),
+      IsOpen I → IsPreconnected I → (∀ i, 0 < m i) →
+      (∀ t ∈ I, DifferentiableAt ℝ U (q t)) →
+      (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t ∧
+        HasDerivAt (fun s => m i*v s i) (-fderiv ℝ U (q t) (Pi.single i 1)) t) →
+      (∀ t ∈ I, HasDerivAt (fun s => ∑ i, m i*v s i) 0 t) ∧
+      ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i*v a i) = ∑ i, m i*v b i := by
+  sorry
+
+/-- Both endpoint forces of each actual directed periodic bond, including the closing bond. -/
+def periodicBondEnergy (φ : ℝ → ℝ) (L : ℝ) (x y : ℝ) (closing : Bool) : ℝ :=
+  φ (y-x + if closing then L else 0)
+
+theorem periodic_translation_third_law (φ : ℝ → ℝ) (L x y : ℝ) (closing : Bool)
+    (hφ : DifferentiableAt ℝ φ (y-x + if closing then L else 0)) :
+    -deriv (fun u => periodicBondEnergy φ L u y closing) x =
+      -(-deriv (fun u => periodicBondEnergy φ L x u closing) y) := by
+  have hx := hφ.hasDerivAt.scomp x
+    (((hasDerivAt_const x y).sub (hasDerivAt_id x)).add_const (if closing then L else 0))
+  have hy := hφ.hasDerivAt.scomp y
+    (((hasDerivAt_id y).sub_const x).add_const (if closing then L else 0))
+  have hx' : deriv (fun u => periodicBondEnergy φ L u y closing) x =
+      -deriv φ (y-x + if closing then L else 0) := by
+    simpa [periodicBondEnergy, Function.comp_def] using hx.deriv
+  have hy' : deriv (fun u => periodicBondEnergy φ L x u closing) y =
+      deriv φ (y-x + if closing then L else 0) := by
+    simpa [periodicBondEnergy, Function.comp_def] using hy.deriv
+  rw [hx',hy']
+```
+### 实际依赖 MolecularDynamics.boxPeriodicNearestNeighborPotentialEnergy
+```lean
+noncomputable def boxPeriodicNearestNeighborPotentialEnergy {N : ℕ}
+    (φ : ℝ → ℝ) (L : ℝ) (x : Fin (N + 1) → ℝ) : ℝ :=
+  nearestNeighborPotentialEnergy φ x + φ ‖L + x 0 - x (Fin.last N)‖
+```
+### 实际依赖 MolecularDynamics.nearestNeighborPotentialEnergy
+```lean
+noncomputable def nearestNeighborPotentialEnergy {N : ℕ}
+    (φ : ℝ → ℝ) (x : Fin (N + 1) → ℝ) : ℝ :=
+  ∑ i : Fin N, φ ‖x i.succ - x i.castSucc‖
+```
+### 实际依赖 MD.Ch01.periodicBondEnergy
+```lean
+def periodicBondEnergy (φ : ℝ → ℝ) (L : ℝ) (x y : ℝ) (closing : Bool) : ℝ :=
+  φ (y-x + if closing then L else 0)
+```

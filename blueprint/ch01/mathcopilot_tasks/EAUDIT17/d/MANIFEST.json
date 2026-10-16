@@ -1,0 +1,49 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-1.6-PeriodicImages",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "98b04fa61c3c549df392f5214e8d8e21190da8e4e25189974fd7f8d8ed734fd3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT17d_materials": "180fbccb9a69b810d15685d08b141c59e71cdb593fe953ffdb46f6f1d49aef45",
+    "EAUDIT17d_PAGES.pdf": "85d21a8c3c60b90b455fd91167d1aea5646850e83671cb54a38b86c406fa21cb"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    58
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "661cd892ddf01f886a3c258d39614fe54159deff1cea1930d7041e5ffce1c946",
+  "source_block_sha256": "d11ddd7273009acde9e63933f2d89f102183fc42e5012ee63a3ee9455b446d1f",
+  "source_declarations": [
+    "periodicImageEnergy"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "V3",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "630b28f8663e80b13763ae51544e5ef63ff46b6c99936a04ab13fd586892a08c"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "periodicImageEnergy",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "d11ddd7273009acde9e63933f2d89f102183fc42e5012ee63a3ee9455b446d1f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "twoBodyTerms",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "416223ce6c800dba844e0583414cd10e5b00151ad28a98bd1d4902ffb2975560"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 152332
+}

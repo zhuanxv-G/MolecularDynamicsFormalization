@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT14",
+  "source_id": "MD-1.5.2-FirstIntegralCriterion",
+  "input_sha256": {
+    "BATCH_EAUDIT14.md": "13b7018ec376a19df4f3a57c4174fe53c10199eabe60f14a74b1ecf341392236",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT14b_materials": "044801a0746ca376f6c8c6586df0e7d677b2cb79b825f8efb7f8b437555f817b",
+    "EAUDIT14b_PAGES.pdf": "05adafd482dd538f2c5c5a9252df7a0c5704dea7a643048cd12b66dddc2560b5"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    51
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "e0b3907c47d981cb5f709880934eb63f52fc8cc15c51670912ea3fe031716b25",
+  "source_block_sha256": "5f52cd67da5274eae2a43c7301d63e6cec2c9734a5bd62ed60ed93ac8370a926",
+  "source_declarations": [
+    "firstintegralcriterion"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/FirstIntegrals.lean",
+      "name": "IsFirstIntegralOn",
+      "file_sha256": "51838782e66b7ee38209ca095e4a79b786581293a7499ceb66d3a4b6b9189720",
+      "excerpt_sha256": "6d1077185708ca25ff63bfb6842c610547c408bbfc016b4f39e1712854265fdb"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT14_review.json",
+  "total_task_bytes": 76371
+}

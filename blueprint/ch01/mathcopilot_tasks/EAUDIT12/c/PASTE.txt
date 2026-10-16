@@ -1,0 +1,82 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+原文版为忠实转录，修正版为勘误版本，请分别审校。原书疑误的原文定理保留sorry不证；不要将其真假/占位状态误判为修正版的语义FAIL。原文JSON逐字摘录不因新增修正版而改写。
+
+本条MD-1.1.2-Yukawa；原PDF页映射=[35]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT12_review.json，对象含batch=EAUDIT12、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT12.md": "1bbbf91c3dc107097af57da73ca6d01e58c4e81a009ac2cb92974cbb625a329b",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT12c_materials": "1356afb0b1580ad89582a4e9e046af9e05fc6a334c30192066c6b64a18904682",
+  "EAUDIT12c_PAGES.pdf": "4fbfe871dea6ee201a3dd31eac9d44d07bf7993d6f1f7187607587c32963bea8"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.1.2-Yukawa",
+  "kind": "definition",
+  "label": null,
+  "section": "1.1.2",
+  "printed_page": "12",
+  "pdf_page": "35",
+  "statement_latex": "More accurate treatments of the long range behavior include the use of an exponential term involving the Debye length $\\kappa$ which models screening due to the presence of a polar solvent, in which case the potential is modified to have the form of a Yukawa potential:\n\\[\\varphi_{ij}^{\\mathrm{screened}}(r_{ij})=\\frac{CQ_iQ_j}{\\epsilon r_{ij}}e^{-\\kappa r_{ij}}.\\]",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "保留原文κ；不把指数改成-r/κ。原文称Debye length但式子以逆长度参数使用，待导师判断。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "status": "NEEDS_HUMAN",
+      "detail": "原文κ称Debye length，但e^{-κr}的量纲通常对应逆长度；本定义保留字面公式。"
+    }
+  ],
+  "lean_decl": "MD.Ch01.yukawaScreened",
+  "extra_assumptions": [
+    "[EXTRA] 19号：正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。"
+  ],
+  "old_ids": [
+    "CH01-027"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def yukawaScreened (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
+    (dielectric : {x : ℝ // 0 < x}) (κ : ℝ) (r : {x : ℝ // 0 < x}) : ℝ :=
+  C.val * Qᵢ * Qⱼ / (dielectric.val * r.val) * Real.exp (-κ * r.val)
+
+/-- 修正版，对应原文 MD-1.1.2-Yukawa，改动：a保留−κr但把κ解释为逆屏蔽长度；b若保留Debye length称谓则用−r/ℓ。正参数为物理域补充。 -/
+def yukawaScreened_corrected_a (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
+    (dielectric κ r : {x : ℝ // 0 < x}) : ℝ :=
+  C.val*Qᵢ*Qⱼ/(dielectric.val*r.val)*Real.exp (-κ.val*r.val)
+
+/-- 修正版，对应原文 MD-1.1.2-Yukawa，改动：若参数称Debye长度，指数应为−r/ℓ。 -/
+def yukawaScreened_corrected_b (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
+    (dielectric ℓ r : {x : ℝ // 0 < x}) : ℝ :=
+  C.val*Qᵢ*Qⱼ/(dielectric.val*r.val)*Real.exp (-r.val/ℓ.val)
+```
+### 实际依赖 MD.Ch01.yukawaScreened
+```lean
+def yukawaScreened (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
+    (dielectric : {x : ℝ // 0 < x}) (κ : ℝ) (r : {x : ℝ // 0 < x}) : ℝ :=
+  C.val * Qᵢ * Qⱼ / (dielectric.val * r.val) * Real.exp (-κ * r.val)
+```
+### 实际依赖 MD.Ch01.yukawaScreened_corrected_a
+```lean
+def yukawaScreened_corrected_a (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
+    (dielectric κ r : {x : ℝ // 0 < x}) : ℝ :=
+  C.val*Qᵢ*Qⱼ/(dielectric.val*r.val)*Real.exp (-κ.val*r.val)
+```
+### 实际依赖 MD.Ch01.yukawaScreened_corrected_b
+```lean
+def yukawaScreened_corrected_b (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
+    (dielectric ℓ r : {x : ℝ // 0 < x}) : ℝ :=
+  C.val*Qᵢ*Qⱼ/(dielectric.val*r.val)*Real.exp (-r.val/ℓ.val)
+```

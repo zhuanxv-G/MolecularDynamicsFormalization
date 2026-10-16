@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-1.6-RhombicLattice",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "98b04fa61c3c549df392f5214e8d8e21190da8e4e25189974fd7f8d8ed734fd3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT17f_materials": "326607cb8a5a2eb5f971d94e0c6f2dcc71ce384e94bda8fbb3b9c9480c1bc805",
+    "EAUDIT17f_PAGES.pdf": "05ddd542da24ee54339e924b9b866dce953b2a372b0fb3110b2efb6f68e9e27f"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    58
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "367d2e11649c75113acc6225e02ea403bd4233eb90f62f5fb8ebbcab119a596d",
+  "source_block_sha256": "fc67364985cec87986905ec2031bb5b4a475a1e2b1d178a1ffbf45c9d75d27f7",
+  "source_declarations": [
+    "rhombicLattice"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "rhombicLattice",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "fc67364985cec87986905ec2031bb5b4a475a1e2b1d178a1ffbf45c9d75d27f7"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 150820
+}

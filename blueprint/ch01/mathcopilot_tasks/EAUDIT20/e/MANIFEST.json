@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT20",
+  "source_id": "MD-1.7-CentralAngularMomentum",
+  "input_sha256": {
+    "BATCH_EAUDIT20.md": "902c26a085d478e0c32a81c3d82a8fecb2028b7b0552810d42eff14cb9aa9a47",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT20e_materials": "69d1cd01a1cf6a72ebcc91e1e7556fdbc842c7ecdb36d05cf509ee062369d847",
+    "EAUDIT20e_PAGES.pdf": "3e5ac456cf3fa34fb49e236ed8cd559c3d8d6d4e10cdf9315482c9179c5516ae"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    62
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a7abb42166b3c10698875af23bfd30d27403adfbe41021994228b6c8ac5fd998",
+  "source_block_sha256": "e4a0655894b09d243084984d07175b549c6c3e836e2dbd8b8752613de7d2095f",
+  "source_declarations": [
+    "centralangularmomentum_derivative",
+    "centralangularmomentum"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "V3",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "630b28f8663e80b13763ae51544e5ef63ff46b6c99936a04ab13fd586892a08c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "cross3",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "05f48d82959df5b926d029c1e1dba9c9e8b5ee61eaa9386cfcb18bff0eee7c0c"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT20_review.json",
+  "total_task_bytes": 92995
+}

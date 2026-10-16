@@ -1,0 +1,56 @@
+{
+  "eaudit": "EAUDIT19",
+  "source_ids": [
+    "MD-1.6.1-MinimumGradientZero",
+    "MD-1.6.1-ForceLinearization",
+    "MD-1.6.1-MinimumHessianLiteral",
+    "MD-1.6.1-ComplexNormalMode",
+    "MD-1.6.1-RealNormalMode"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT19.md": "cf031b8e92f9f9aca27363af352806c2c59d22e3909d50dba60d52c6b07996d2",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT19a",
+      "source_id": "MD-1.6.1-MinimumGradientZero",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/a",
+      "total_bytes": 237793,
+      "manifest_sha256": "498b583458fc1175fe74284711c0ab13ce1655248a37058b49203e649e999557"
+    },
+    {
+      "subtask": "EAUDIT19b",
+      "source_id": "MD-1.6.1-ForceLinearization",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/b",
+      "total_bytes": 131676,
+      "manifest_sha256": "63e33ff221a8620a106e3483d4efe918ad7a4462e7fc1967b9396eae4eaeeadd"
+    },
+    {
+      "subtask": "EAUDIT19c",
+      "source_id": "MD-1.6.1-MinimumHessianLiteral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/c",
+      "total_bytes": 130173,
+      "manifest_sha256": "db3b6e9fde092a95a9c4c0b37842d744de7c056338ad1e97c58f511be484976e"
+    },
+    {
+      "subtask": "EAUDIT19d",
+      "source_id": "MD-1.6.1-ComplexNormalMode",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/d",
+      "total_bytes": 128728,
+      "manifest_sha256": "b61cc2b2e94ba66d3e2a4908b6e0b37e53b5d2dacaceb698a2146a0088ba384f"
+    },
+    {
+      "subtask": "EAUDIT19e",
+      "source_id": "MD-1.6.1-RealNormalMode",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/e",
+      "total_bytes": 128830,
+      "manifest_sha256": "8440b5bee67e9588578855323ea67dd4149248076465e4ce0a18b8ab61ffa0ac"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.6.1"
+}

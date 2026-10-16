@@ -1,0 +1,68 @@
+{
+  "eaudit": "EAUDIT04",
+  "source_id": "MD-1.5.3-LinearizedHamiltonian",
+  "input_sha256": {
+    "BATCH_EAUDIT04.md": "be86fcad3dd498a796580799cff6479037b9f4f9538cfc05276c8fc3db4994f6",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT04d_materials": "938b814e859afc4efa5f8e3e3fe8cd0bd02ef02227959ff71a9eebb5a6d535c9",
+    "EAUDIT04d_PAGES.pdf": "45889111f46826180e26ee0845984f856fe7ed2230d2a09ad152f12ee936358c"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    55
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "87725bd76f3ee92fc342ada99f1321a30823ebfafc434078e3ccb171770d86fd",
+  "source_block_sha256": "82d0407d6a7c88a17ee4dd6ce127772bc087d4e829c77b95bc12a342cc3454ee",
+  "source_declarations": [
+    "linearizedHamiltonian",
+    "linearizedHamiltonian_field"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Momentum",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PhaseSpace",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "daa02c2c07383d89b526c2336a494ea2279c29eb9ade168bef41013e54ebff7f"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PotentialEnergy",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "043ad8ba46ea4ec31839daabf34e8017edbc3d00188fad3366e80af19ddc6116"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "linearizedHamiltonian",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "8e7dabd7162e165c02e06ca37d62f6389e0994d7fc2e39cc13f5320b42ed0d62"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "matrixAction",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "08dc285ebeaad08fd9f4790f1300bd74aaddd2f0ad54e22d165f11f6146be158"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "symplecticGradient",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "796f200453ab6be4a0713e7096dd87a7cf7b1e6a9828d80239b5edf614b1a10e"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT04_review.json",
+  "total_task_bytes": 98781
+}

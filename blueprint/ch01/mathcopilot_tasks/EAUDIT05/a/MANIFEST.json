@@ -1,0 +1,79 @@
+{
+  "eaudit": "EAUDIT05",
+  "source_id": "MD-1.2-NewtonCompact",
+  "input_sha256": {
+    "BATCH_EAUDIT05.md": "d426a02c936e411940e95a0f0fc7de30b845ee0957638a10cfbfbd473fd84e05",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT05a_materials": "4eb20d801f80c6f1a47976b5d9aac2a66659ebbbc8a304bb646a5f66179c9448",
+    "EAUDIT05a_PAGES.pdf": "43b029e8657c38dc1ae0552ccbd308f47f80f7cb07e6ea42fc8f5864d6c16927"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    41
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "7b9a8772f113e7e42f800041f08b7ffdcd11620e0ec91bcc6dae4d9b8d6485b6",
+  "source_block_sha256": "8a151b6d08e1dcf54a81eb6e37cc4f5d4a0c70974fe14ed3a0068ed089894eb2",
+  "source_declarations": [
+    "compactNewton"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "name": "CoordinateMasses",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "50939e8d47d2aea37f48a71423ee3ae48b297b19ba4394b17b02a93c1f4510a4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "MassMatrix",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "98dc2589cf902b088edd39fbacfd5ceaeb43e0ec8cd3609f562eac8091e9df77"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Momentum",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PotentialEnergy",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "043ad8ba46ea4ec31839daabf34e8017edbc3d00188fad3366e80af19ddc6116"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Velocity",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "22e67e3397d83abd0c1c1aeaa28366555c9f365d02734f9df1fd443624636cf1"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "compactNewton",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "8a151b6d08e1dcf54a81eb6e37cc4f5d4a0c70974fe14ed3a0068ed089894eb2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "name": "diagonalMassMatrix",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "56c215aa345f33da76588c37690a0b34fd6c467f706ccbb6c832962abd41e7db"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "name": "massOperator",
+      "file_sha256": "2867aa94d87c65afa6869d2f3bc552f828de797862e4ab334fd480044b535538",
+      "excerpt_sha256": "544a0df334ecbed51b5345a2603421d4e22e4da5a7da49a17376aebbd54fa187"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT05_review.json",
+  "total_task_bytes": 118255
+}

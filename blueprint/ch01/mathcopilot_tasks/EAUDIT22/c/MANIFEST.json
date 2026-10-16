@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT22",
+  "source_id": "MD-1.7.1-AnisotropicOscillator",
+  "input_sha256": {
+    "BATCH_EAUDIT22.md": "2584f103d4bf1b752cab6ca7294631e65db6ca55f8e6fd45710e6c406cb87cce",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT22c_materials": "0aa1ff4bcd601425044fb10d0700728dcf0b729eb6bc287a880c1fbbb8ca5c1f",
+    "EAUDIT22c_PAGES.pdf": "f160c6c402167077703596aae4d799574b4175000b464d30918ca3a17ce12c73"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    65
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "6a29ba060854016ad61480051e5cb19fae06a20d54ae11c293b5bb7e7d4a6a46",
+  "source_block_sha256": "438069aac96d69c718610e36a9e82f0b54dc5a64c7fa3bca6a68e8e6384cfee5",
+  "source_declarations": [
+    "anisotropicEnergy"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "anisotropicAngular",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "61efc1343e97e5be94b44e187a410313ecf1f836c3528dc708db7b590b4d2298"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "anisotropicEnergy",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "438069aac96d69c718610e36a9e82f0b54dc5a64c7fa3bca6a68e8e6384cfee5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "anisotropicParameters",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "dd6f9fbbcdad1568441179a4510863e797db4584740e00aedd226691496390e0"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT22_review.json",
+  "total_task_bytes": 81411
+}

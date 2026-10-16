@@ -1,0 +1,80 @@
+{
+  "eaudit": "EAUDIT14",
+  "source_ids": [
+    "MD-1.5.2-FirstIntegral",
+    "MD-1.5.2-FirstIntegralCriterion",
+    "MD-1.5.2-PlanarGraphReduction",
+    "MD-1.5.2-PlanarQuadrature",
+    "MD-1.5.2-ScalarFirstIntegral",
+    "MD-1.5.2-KeplerConservedEnergy",
+    "MD-1.5.2-KeplerAngularMomentum",
+    "MD-1.5.2-KeplerMomentum"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT14.md": "13b7018ec376a19df4f3a57c4174fe53c10199eabe60f14a74b1ecf341392236",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT14a",
+      "source_id": "MD-1.5.2-FirstIntegral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/a",
+      "total_bytes": 76822,
+      "manifest_sha256": "658d185db42fb40636bcade2b37ca3be48f11faddfff289b20e5e833b713abcf"
+    },
+    {
+      "subtask": "EAUDIT14b",
+      "source_id": "MD-1.5.2-FirstIntegralCriterion",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/b",
+      "total_bytes": 76371,
+      "manifest_sha256": "b1f88b0b706136c00bf8d292b2a70b61a349c7a9cf5f033257eea13d10658bff"
+    },
+    {
+      "subtask": "EAUDIT14c",
+      "source_id": "MD-1.5.2-PlanarGraphReduction",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/c",
+      "total_bytes": 76828,
+      "manifest_sha256": "bf2e74c15de7b29187e0ac3a97e569c697b85894fdca365c7e4d44eb7f7b8879"
+    },
+    {
+      "subtask": "EAUDIT14d",
+      "source_id": "MD-1.5.2-PlanarQuadrature",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/d",
+      "total_bytes": 77347,
+      "manifest_sha256": "6a7c06b12476e0eaf590ecd24e2dc009bfad103807ad9b44b9aaeba143c5d93e"
+    },
+    {
+      "subtask": "EAUDIT14e",
+      "source_id": "MD-1.5.2-ScalarFirstIntegral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/e",
+      "total_bytes": 78301,
+      "manifest_sha256": "e08a5694b508b5a032d258acc430347ae5386a559c69ec8c9674b365f23afe48"
+    },
+    {
+      "subtask": "EAUDIT14f",
+      "source_id": "MD-1.5.2-KeplerConservedEnergy",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/f",
+      "total_bytes": 73880,
+      "manifest_sha256": "1a9dc8765042bc0ebf2f6e41c39634f0436d3b0cd4d28b33b641cf4c833197b2"
+    },
+    {
+      "subtask": "EAUDIT14g",
+      "source_id": "MD-1.5.2-KeplerAngularMomentum",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/g",
+      "total_bytes": 66215,
+      "manifest_sha256": "7a49ac784f1a7403bd7190236e96632d4fbe720161bdf9bb294a2410aecfc14f"
+    },
+    {
+      "subtask": "EAUDIT14h",
+      "source_id": "MD-1.5.2-KeplerMomentum",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/h",
+      "total_bytes": 65890,
+      "manifest_sha256": "a9651e5e892380c4097a02c28408c128fd3b45846dc3b3139fd1b7376a66e727"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.5.2"
+}

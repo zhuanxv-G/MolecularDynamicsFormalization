@@ -1,0 +1,78 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+原文版为忠实转录，修正版为勘误版本，请分别审校。原书疑误的原文定理保留sorry不证；不要将其真假/占位状态误判为修正版的语义FAIL。原文JSON逐字摘录不因新增修正版而改写。
+
+本条MD-1.7-IsoscelesCoordinates；原PDF页映射=[62]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT20_review.json，对象含batch=EAUDIT20、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT20.md": "902c26a085d478e0c32a81c3d82a8fecb2028b7b0552810d42eff14cb9aa9a47",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT20h_materials": "42d5e43842cba934af20675f5c2f0ab63f311d65bf531d164fe1c128f2e4fb9e",
+  "EAUDIT20h_PAGES.pdf": "ddc411b14e22b6026243b1098050fb60312c088374e2fc0c40f4d3f2a307e824"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.7-IsoscelesCoordinates",
+  "kind": "definition",
+  "label": null,
+  "section": "1.7",
+  "printed_page": "39",
+  "pdf_page": "62",
+  "statement_latex": "Let us introduce new coordinates in the Lennard-Jones trimer as illustrated in Fig. 1.21, so that the center of mass is fixed at the origin: that is,\n\\[\\boldsymbol q_1=\\begin{bmatrix}x\\\\-y/3\\\\0\\end{bmatrix},\\qquad\\boldsymbol q_2=\\begin{bmatrix}-x\\\\-y/3\\\\0\\end{bmatrix},\\qquad\\boldsymbol q_3=\\begin{bmatrix}0\\\\2y/3\\\\0\\end{bmatrix},\\]",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "单位质量；质心固定及等腰约束是特定对称初值，非所有零角动量三体配置。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "status": "NEEDS_HUMAN",
+      "detail": "同段“零平动/角动量→等腰”一般过强；这里只定义明确给定的对称配置，不把任意零动量当等腰。"
+    }
+  ],
+  "lean_decl": "MD.Ch01.isoscelesCoordinates",
+  "extra_assumptions": [],
+  "old_ids": [
+    "CH01-180"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def isoscelesCoordinates (x y : ℝ) : Fin 3 → V3 :=
+  ![WithLp.toLp 2 ![x,-y/3,0],WithLp.toLp 2 ![-x,-y/3,0],WithLp.toLp 2 ![0,2*y/3,0]]
+
+/-- 修正版，对应原文 MD-1.7-IsoscelesCoordinates，改动：把三坐标公式作为主动选取的对称子模型，证明其质心为零；不把零总动量/角动量推出等腰。 -/
+def isoscelesCoordinates_corrected (x y : ℝ) : Fin 3 → V3 :=
+  ![WithLp.toLp 2 ![x,-y/3,0],WithLp.toLp 2 ![-x,-y/3,0],WithLp.toLp 2 ![0,2*y/3,0]]
+
+theorem isoscelesCoordinates_corrected_center (x y : ℝ) :
+    (∑ i : Fin 3, isoscelesCoordinates_corrected x y i) = 0 := by
+  ext k
+  fin_cases k <;> simp [isoscelesCoordinates_corrected,Fin.sum_univ_three] <;> ring
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```
+### 实际依赖 MD.Ch01.isoscelesCoordinates
+```lean
+def isoscelesCoordinates (x y : ℝ) : Fin 3 → V3 :=
+  ![WithLp.toLp 2 ![x,-y/3,0],WithLp.toLp 2 ![-x,-y/3,0],WithLp.toLp 2 ![0,2*y/3,0]]
+```
+### 实际依赖 MD.Ch01.isoscelesCoordinates_corrected
+```lean
+def isoscelesCoordinates_corrected (x y : ℝ) : Fin 3 → V3 :=
+  ![WithLp.toLp 2 ![x,-y/3,0],WithLp.toLp 2 ![-x,-y/3,0],WithLp.toLp 2 ![0,2*y/3,0]]
+```

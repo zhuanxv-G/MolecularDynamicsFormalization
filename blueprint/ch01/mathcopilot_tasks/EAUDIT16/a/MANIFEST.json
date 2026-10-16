@@ -1,0 +1,39 @@
+{
+  "eaudit": "EAUDIT16",
+  "source_id": "MD-1.5.2-TorusDense",
+  "input_sha256": {
+    "BATCH_EAUDIT16.md": "7c2f6db4ec1a6a1448c398abdff19eaf992b9dd6c1bbda2bc4be5c05bb18cdb3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT16a_materials": "74e15907673d6b954779aade0417b387ba5705b5f028112c787442b1d976a07e",
+    "EAUDIT16a_PAGES.pdf": "108655a122545a30e099867973fbe0fae5efa29805d282e58a3787fa58a9b2dd"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    53
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a3bcd3f2a9bd350c4702b29fb17bf66bc587eebdd959bbb8982771599631aed6",
+  "source_block_sha256": "115bdde5531cac164b652a5fa37ff4e0ff620eaad33e0616251b4dcbba6f2727",
+  "source_declarations": [
+    "torusdense",
+    "torusdense_literal",
+    "torusdense_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/HarmonicTorus.lean",
+      "name": "HarmonicTorus",
+      "file_sha256": "fc68cda8e36d3a7d4c3cbbba67252f7cf5b7f0f8a7615a1d33ea32f567c42189",
+      "excerpt_sha256": "d1172dcfc2b8766b3fe4aed0b088fcfb3b0d1162b6d9d7aa3edfb134dbf56fb7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/HarmonicTorus.lean",
+      "name": "harmonicTorusRotation",
+      "file_sha256": "fc68cda8e36d3a7d4c3cbbba67252f7cf5b7f0f8a7615a1d33ea32f567c42189",
+      "excerpt_sha256": "a2de5d5cf94b9156efcc35514f414ac7299c266809d0be6e3749c5eef60010f7"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT16_review.json",
+  "total_task_bytes": 68015
+}

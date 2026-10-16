@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT05",
+  "source_id": "MD-1.2-ConstraintDimension",
+  "input_sha256": {
+    "BATCH_EAUDIT05.md": "d426a02c936e411940e95a0f0fc7de30b845ee0957638a10cfbfbd473fd84e05",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT05c_materials": "c645027072e87b34877e00d86c44db1030e59b1ba3595263b7a7858a54afa509",
+    "EAUDIT05c_PAGES.pdf": "a9392fcfd5998ceae4a7698484db0c862de4b1aa7e5ffc4166480aa571f72db3"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    41
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "89d2288b187c9ca9c6b48e0bf9473c444542719aa5b49a5d96570851eb78ff45",
+  "source_block_sha256": "1dd0b5901399d2bb515edc3345831146e3b4e5ed04c3ceafe8d15c2d5b0d2c07",
+  "source_declarations": [
+    "constraintdimension",
+    "constraintdimension_unconstrained"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "degreesOfFreedom",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "856832b00e8ffb5987666669d0d4b0b8c71124d6b2d7a4a8cc2c15e353fb5600"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "linearizedConstraintDimension",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "35ec475c8bd4d6b87c9eec9da76c836cf881bc040a51d1621d608cddbfe9f387"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT05_review.json",
+  "total_task_bytes": 116354
+}

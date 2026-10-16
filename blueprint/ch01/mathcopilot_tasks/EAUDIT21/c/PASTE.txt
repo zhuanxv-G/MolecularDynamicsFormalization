@@ -1,0 +1,68 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.7-EquilateralTrimerMinimum；原PDF页映射=[61]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT21_review.json，对象含batch=EAUDIT21、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT21.md": "fba1b44393ec813e4764e294bcacaaf888d9bee5b94aa3bea5d0a4bb6574bcac",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT21c_materials": "bff2f3a95db71918f25b1a95b2b7a2f374e10b98ba26612cae18938662890da1",
+  "EAUDIT21c_PAGES.pdf": "415fb542e4157554aedfe855ebccd6f34a8a8f782ddbc13549e2215c575b2710"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.7-EquilateralTrimerMinimum",
+  "kind": "unnumbered_claim",
+  "label": "Example 1.8 (Planar Lennard-Jones Trimer)",
+  "section": "1.7",
+  "printed_page": "38",
+  "pdf_page": "61",
+  "statement_latex": "The global minimum of this simple system must be radially symmetric. Placing the atoms at the vertices of an equilateral triangle, we have\n\\[U=3\\hat\\varphi_{\\mathrm{LJ}}(r),\\]\nwhere $r$ is the length of a side. This is minimized when $r=2^{1/6}\\approx1.1225$.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.equilateraltrimerminimum",
+  "extra_assumptions": [
+    "单位LJ；非碰撞配置。"
+  ],
+  "old_ids": [
+    "CH01-203"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem equilateraltrimerminimum :
+  ∀ q : Fin 3 → V3, (∀ i j, i ≠ j → q i ≠ q j) →
+    -3 ≤ uniformLJEnergy 1 1 q ∧
+    (uniformLJEnergy 1 1 q = -3 ↔
+      ∀ i j, i ≠ j → pairDistance (q i) (q j) = Real.rpow 2 (1/6)) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```
+### 实际依赖 MD.Ch01.lennardJonesPotential
+```lean
+def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.pairDistance
+```lean
+def pairDistance (qᵢ qⱼ : V3) := ‖qᵢ-qⱼ‖
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.uniformLJEnergy
+```lean
+def uniformLJEnergy {N : ℕ} (ε σ : ℝ) (q : Fin N → V3) :=
+  ∑ i, ∑ j ∈ Finset.Ioi i, lennardJonesPotential ε σ (pairDistance (q i) (q j))
+```

@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT05",
+  "source_id": "MD-1.2-ScalarMechanical",
+  "input_sha256": {
+    "BATCH_EAUDIT05.md": "d426a02c936e411940e95a0f0fc7de30b845ee0957638a10cfbfbd473fd84e05",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT05h_materials": "07157979b5140dc53361f8ea07f2a9261640410f407fd0090fc71ed44a5cff7d",
+    "EAUDIT05h_PAGES.pdf": "a94b7ff754ba5541a84e129c06953457ab4fd209eb605330066b7a19a385c007"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    43
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "5a8cb7062fb8f1b6368daa69adf5dec0e33d65e57cfa888e8b3b4c2456332d1a",
+  "source_block_sha256": "f55fa268f870e0128fc4d1c952c4424fa5ad229470f5e9484051eca7106f7b78",
+  "source_declarations": [
+    "scalarMechanicalModel"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "scalarMechanicalModel",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "f55fa268f870e0128fc4d1c952c4424fa5ad229470f5e9484051eca7106f7b78"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT05_review.json",
+  "total_task_bytes": 57607
+}

@@ -1,0 +1,80 @@
+{
+  "eaudit": "EAUDIT15",
+  "source_ids": [
+    "MD-1.5.2-KeplerPolarODE",
+    "MD-1.5.2-KeplerRadialReduction",
+    "MD-1.5.2-KeplerFullSolution",
+    "MD-1.5.2-ActionEnergy",
+    "MD-1.5.2-ActionODE",
+    "MD-1.5.2-ActionSolution",
+    "MD-1.5.2-HarmonicTorus",
+    "MD-1.5.2-TorusPeriod"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT15.md": "1d4718280dccf642f08f1bad62ece7b81f70d22e3f391dd068a55b74ccf0a8e8",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT15a",
+      "source_id": "MD-1.5.2-KeplerPolarODE",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/a",
+      "total_bytes": 61709,
+      "manifest_sha256": "0e3bbc2f64fa6a145ff821fadd46e2108c7ac86c320ed3f8ae3adca4d44f310e"
+    },
+    {
+      "subtask": "EAUDIT15b",
+      "source_id": "MD-1.5.2-KeplerRadialReduction",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/b",
+      "total_bytes": 61640,
+      "manifest_sha256": "0af4834e1a677c3ea5f0e0051a386db6ae5addbbedead75138c511b59382ed8a"
+    },
+    {
+      "subtask": "EAUDIT15c",
+      "source_id": "MD-1.5.2-KeplerFullSolution",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/c",
+      "total_bytes": 75112,
+      "manifest_sha256": "718a03461e837cc411919b43c626b2cd8a4a7550383d6d46767acedca4ba46a0"
+    },
+    {
+      "subtask": "EAUDIT15d",
+      "source_id": "MD-1.5.2-ActionEnergy",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/d",
+      "total_bytes": 67548,
+      "manifest_sha256": "329f4445b56a53010003bae212447b4f1a4ede7121f3240737c6449210f58658"
+    },
+    {
+      "subtask": "EAUDIT15e",
+      "source_id": "MD-1.5.2-ActionODE",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/e",
+      "total_bytes": 67371,
+      "manifest_sha256": "5b9f233e6d6973d9f222d552f23ba8d9051adf24a7b98b6ba82a6c7a1e338fca"
+    },
+    {
+      "subtask": "EAUDIT15f",
+      "source_id": "MD-1.5.2-ActionSolution",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/f",
+      "total_bytes": 67681,
+      "manifest_sha256": "cc89cb0371824d74d40eabfb515c25a43a56331721805aa5481ca573881c35bb"
+    },
+    {
+      "subtask": "EAUDIT15g",
+      "source_id": "MD-1.5.2-HarmonicTorus",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/g",
+      "total_bytes": 67315,
+      "manifest_sha256": "a08c6d2599521676ee8d761a2e42e63205ffcd4477eac16af8a053b5369da678"
+    },
+    {
+      "subtask": "EAUDIT15h",
+      "source_id": "MD-1.5.2-TorusPeriod",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/h",
+      "total_bytes": 68207,
+      "manifest_sha256": "e9647035c743729d94256c009c74ebf070b88304953fb53f714caf639eead1b4"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.5.2"
+}

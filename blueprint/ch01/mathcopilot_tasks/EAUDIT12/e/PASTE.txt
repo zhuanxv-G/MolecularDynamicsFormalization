@@ -1,0 +1,103 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.1.2-GayBerne；原PDF页映射=[39, 40]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT12_review.json，对象含batch=EAUDIT12、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT12.md": "1bbbf91c3dc107097af57da73ca6d01e58c4e81a009ac2cb92974cbb625a329b",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT12e_materials": "71f31f01b40425950fa40fe11cd1eee51f2aa5e1be8edf95f427f7427041a1de",
+  "EAUDIT12e_PAGES.pdf": "01b13cd332c9384176a801b9e4ceed3fc96cb07ba0928e03a69ad32264fee29c"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.1.2-GayBerne",
+  "kind": "definition",
+  "label": "Example 1.2",
+  "section": "1.1.2",
+  "printed_page": "16–17",
+  "pdf_page": "39–40",
+  "statement_latex": "The potential energy may be written as\n\\[\\varphi_{\\mathrm{GB}}(\\boldsymbol q_1,\\boldsymbol q_2,\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)=4\\epsilon_{\\mathrm{GB}}\\left[\\left(\\frac{\\sigma_0}{\\Delta}\\right)^{12}-\\left(\\frac{\\sigma_0}{\\Delta}\\right)^6\\right],\\]\n\\[\\epsilon_{\\mathrm{GB}}(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)=\\epsilon_1(\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)\\epsilon_2(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2),\\]\nwith\n\\[\\Delta(\\boldsymbol r,\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)=\\|\\boldsymbol r\\|-\\sigma_0/\\sqrt{W(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2,\\chi)},\\]\n\\[\\epsilon_1(\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)=\\epsilon_0[1-\\chi^2(\\hat{\\boldsymbol u}_1\\cdot\\hat{\\boldsymbol u}_2)^2]^{-1/2},\\qquad\\epsilon_2(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2)=W(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2,\\chi'),\\]\nand\n\\[W(\\hat{\\boldsymbol r},\\hat{\\boldsymbol u}_1,\\hat{\\boldsymbol u}_2,\\chi)\\stackrel{\\mathrm{def}}=1-\\frac\\chi2\\left[\\frac{(\\hat{\\boldsymbol r}\\cdot(\\hat{\\boldsymbol u}_1+\\hat{\\boldsymbol u}_2))^2}{1+\\chi\\hat{\\boldsymbol u}_1\\cdot\\hat{\\boldsymbol u}_2}+\\frac{(\\hat{\\boldsymbol r}\\cdot(\\hat{\\boldsymbol u}_1-\\hat{\\boldsymbol u}_2))^2}{1-\\chi\\hat{\\boldsymbol u}_1\\cdot\\hat{\\boldsymbol u}_2}\\right].\\]\nFinally\n\\[\\chi=\\frac{[\\sigma_e/\\sigma_s]^2-1}{[\\sigma_e/\\sigma_s]^2+1},\\qquad\\chi'=\\frac{1-[\\epsilon_e/\\epsilon_s]^{1/\\mu}}{1+[\\epsilon_e/\\epsilon_s]^{1/\\mu}}.\\]",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "$\\boldsymbol r=\\boldsymbol q_{12}=\\boldsymbol q_2-\\boldsymbol q_1$；$\\hat{\\boldsymbol r}=\\boldsymbol r/\\|\\boldsymbol r\\|$；两取向单位向量；各根号正、分母非零。",
+    "放大PDF39原页确认εGB=ε1ε2，无平方；旧库gayBerneWell有ε2²，不能桥接，Blueprint保留忠实公式。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.gayBerneModel",
+  "extra_assumptions": [],
+  "old_ids": [
+    "CH01-035",
+    "CH01-036",
+    "CH01-037",
+    "CH01-038",
+    "CH01-039",
+    "CH01-040",
+    "CH01-041",
+    "CH01-042",
+    "CH01-043"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁ u₂ : V3) : ℝ :=
+  let r := q₂ - q₁
+  let χ := gayBerneChi σₑ σₛ
+  let χ' := gayBerneChiPrime εₑ εₛ μ
+  let Δ := ‖r‖ - σ₀ / Real.sqrt (gayBerneW (‖r‖⁻¹ • r) u₁ u₂ χ)
+  let εGB := gayBerneEpsilonOne ε₀ χ u₁ u₂ * gayBerneEpsilonTwo (‖r‖⁻¹ • r) u₁ u₂ χ'
+  4 * εGB * ((σ₀ / Δ)^12 - (σ₀ / Δ)^6)
+
+/- END FULL SECTION 1.1 -/
+
+/- BEGIN FULL SECTION 1.2 -/
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.gayBerneChi
+```lean
+def gayBerneChi (σₑ σₛ : ℝ) := ((σₑ/σₛ)^2-1)/((σₑ/σₛ)^2+1)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.gayBerneChiPrime
+```lean
+def gayBerneChiPrime (εₑ εₛ μ : ℝ) :=
+  (1-Real.rpow (εₑ/εₛ) (1/μ))/(1+Real.rpow (εₑ/εₛ) (1/μ))
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.gayBerneEpsilonOne
+```lean
+def gayBerneEpsilonOne (ε₀ χ : ℝ) (u₁ u₂ : V3) :=
+  ε₀ / Real.sqrt (1-χ^2*(inner ℝ u₁ u₂)^2)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.gayBerneEpsilonTwo
+```lean
+def gayBerneEpsilonTwo (r u₁ u₂ : V3) (χ' : ℝ) := gayBerneW r u₁ u₂ χ'
+```
+### 实际依赖 MD.Ch01.gayBerneModel
+```lean
+def gayBerneModel (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u₁ u₂ : V3) : ℝ :=
+  let r := q₂ - q₁
+  let χ := gayBerneChi σₑ σₛ
+  let χ' := gayBerneChiPrime εₑ εₛ μ
+  let Δ := ‖r‖ - σ₀ / Real.sqrt (gayBerneW (‖r‖⁻¹ • r) u₁ u₂ χ)
+  let εGB := gayBerneEpsilonOne ε₀ χ u₁ u₂ * gayBerneEpsilonTwo (‖r‖⁻¹ • r) u₁ u₂ χ'
+  4 * εGB * ((σ₀ / Δ)^12 - (σ₀ / Δ)^6)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.gayBerneW
+```lean
+def gayBerneW (r u₁ u₂ : V3) (χ : ℝ) :=
+  1 - χ/2 * ((inner ℝ r (u₁+u₂))^2/(1+χ*inner ℝ u₁ u₂) +
+    (inner ℝ r (u₁-u₂))^2/(1-χ*inner ℝ u₁ u₂))
+```

@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT16",
+  "source_ids": [
+    "MD-1.5.2-TorusDense",
+    "MD-1.5.2-LocalActionAngleReduction"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT16.md": "7c2f6db4ec1a6a1448c398abdff19eaf992b9dd6c1bbda2bc4be5c05bb18cdb3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT16/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT16a",
+      "source_id": "MD-1.5.2-TorusDense",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT16/a",
+      "total_bytes": 68015,
+      "manifest_sha256": "4a33e30ea600ebe23337ad120fb67b241817842627bcbd7396a1314fbb2c7b1c"
+    },
+    {
+      "subtask": "EAUDIT16b",
+      "source_id": "MD-1.5.2-LocalActionAngleReduction",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT16/b",
+      "total_bytes": 73532,
+      "manifest_sha256": "6c12188c03e4bd956ce2910f2cb9eaca4658a78b3108f97c865ab43d26ad386e"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.5.2"
+}

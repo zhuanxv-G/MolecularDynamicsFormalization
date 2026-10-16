@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT09",
+  "source_id": "MD-1.5.1-BasisCoefficients",
+  "input_sha256": {
+    "BATCH_EAUDIT09.md": "58c1fb0669e964c5540f9a666143d76cd20b18b9b1ff908232b3c91fd207ebb1",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT09d_materials": "ef532c503672e214923f4862e4bc7d0006f895cbebd590afa6ee8497ca0d77b2",
+    "EAUDIT09d_PAGES.pdf": "257409652721ae58f7223523f13d90c2b5a6211fd81b67556c6d9bce0e842673"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    50
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "013cb74593c96e32b0eecdcdcb738ca09d799484efffe34bde380fc836bb91c6",
+  "source_block_sha256": "fd3a05dd4f7aa271b4feaf40f3c31488809c326de408f956ab83bc90b0af7649",
+  "source_declarations": [
+    "basis_coefficients"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/BasisMatrix.lean",
+      "name": "basisColumnMatrix",
+      "file_sha256": "3bdf3d414cb4196cfe87b644786e2b1f29166952ea61ab8bd28f7ebd44a1c4df",
+      "excerpt_sha256": "a8093132a12913835e9c2de553df8c80b7feb683ab4124a0ae551cc54f9333ad"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT09_review.json",
+  "total_task_bytes": 84878
+}

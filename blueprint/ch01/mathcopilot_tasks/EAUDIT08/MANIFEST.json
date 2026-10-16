@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT08",
+  "input_sha256": {
+    "BATCH_EAUDIT08.md": "913f33aa197b704b22da52e2bf6f06b557b23367c06f0a77f1a4d1e3006b9e11",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT08a",
+      "source_id": "MD-1.4-LegendreHamiltonian",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT08/a",
+      "total_bytes": 88142,
+      "manifest_sha256": "cd5837b79cf707003c38cab4d2b7a269724d5a2b0dd56380647858c9cd3132ef"
+    },
+    {
+      "subtask": "EAUDIT08b",
+      "source_id": "MD-1.4-ConvexLegendre",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT08/b",
+      "total_bytes": 80712,
+      "manifest_sha256": "96033a4c3a0f48b2f84f35137ebd24c5d43922745f0ca946ac1e245bafac78f7"
+    },
+    {
+      "subtask": "EAUDIT08c",
+      "source_id": "MD-1.4-HamiltonEquations",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT08/c",
+      "total_bytes": 80299,
+      "manifest_sha256": "fed780f49f0862022f7146d7a59e0e1f57ad16d8498ff53c0ab60d2ca79c894b"
+    },
+    {
+      "subtask": "EAUDIT08d",
+      "source_id": "MD-1.4-HamiltonLagrangeEquivalence",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT08/d",
+      "total_bytes": 93371,
+      "manifest_sha256": "c6f3bbc97913c8decfcb5d5525dd5ea744e0832a1060c2c44ebead185ac3960f"
+    },
+    {
+      "subtask": "EAUDIT08e",
+      "source_id": "MD-1.4-PhaseSpace",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT08/e",
+      "total_bytes": 94247,
+      "manifest_sha256": "de63e7e08c63bdb925223d3424872536de13a427e5f08c383958253b7174d753"
+    }
+  ]
+}

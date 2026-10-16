@@ -1,0 +1,39 @@
+{
+  "eaudit": "EAUDIT19",
+  "source_id": "MD-1.6.1-MinimumGradientZero",
+  "input_sha256": {
+    "BATCH_EAUDIT19.md": "cf031b8e92f9f9aca27363af352806c2c59d22e3909d50dba60d52c6b07996d2",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT19a_materials": "5c2d7fa4180b8596965acc19513103deea01f447b66a75827fd622073a42b90a",
+    "EAUDIT19a_PAGES.pdf": "5ec5d6ba0d1f9fa49b42446a9e89443e588444d9dc85f876eafd923128b43dba"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    59,
+    60
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "2ec3afdd9829e069a9647d58ff375f6a716d94f44bdc97246c674453070b056e",
+  "source_block_sha256": "9e1b274c785f8c97d8b5e0c6483f038c7520951ffb32cbfa75ae2798c0fc4ea5",
+  "source_declarations": [
+    "minimumgradientzero",
+    "minimumgradientzero_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PotentialEnergy",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "043ad8ba46ea4ec31839daabf34e8017edbc3d00188fad3366e80af19ddc6116"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT19_review.json",
+  "total_task_bytes": 237793
+}

@@ -1,0 +1,50 @@
+{
+  "eaudit": "EAUDIT23",
+  "source_id": "MD-1.7.2-NearbyTrajectoryLiteral",
+  "input_sha256": {
+    "BATCH_EAUDIT23.md": "125cea90a2fcb2d3fb9c1324c09b547a5f66b2f923b87d0593df5771abc5cfe3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT23c_materials": "cb6854f9b9c09b67f8ee2869d4f029a22047bf334bc5461d3bd36afbe5f1dfea",
+    "EAUDIT23c_PAGES.pdf": "2127dc00b769a43386131ad10959b2ed553c49e09deb2de38b29ec74f65a77ad"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    68
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "9824193f308da0143c5589995f902be64ba24312038aa3a621bd21b8d19bc8aa",
+  "source_block_sha256": "c9ea1dbf4ab174338d9c479f9a3a6e7b5b914b169318c8b1a062c2f8ce1cf560",
+  "source_declarations": [
+    "nearby_trajectory_literal",
+    "nearby_trajectory_literal_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "differentiableFlow",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "797d9afffe7ecb1281dc47f2a9a5baf1ebad3c902ca4fa603512ba1b2ed653b4"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "variationalMatrixLiteral",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "35ee9ba26a07fe69ec85e6030a2eceb5f66be3543165f3ab65d57e3be9bb1152"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "variationalMatrixLiteral_corrected",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "7e1e1443e08db85a2ce94a979e348c0f77507eb7745015307db286ec0c6ae513"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT23_review.json",
+  "total_task_bytes": 117871
+}

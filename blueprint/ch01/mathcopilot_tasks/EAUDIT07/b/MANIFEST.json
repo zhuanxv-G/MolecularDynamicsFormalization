@@ -1,0 +1,49 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_id": "MD-1.3-GeneralizedMassRegular",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "8048e87bd55f7051afece85135c484bd7141e890c2db3d84e2846958183bbce3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT07b_materials": "90cf2fb546f03941d719cc367bedb49543210f6f9520cee4fba35d2b8b4cd9ed",
+    "EAUDIT07b_PAGES.pdf": "b0f7859d00c14a87d2cf7551f20917020a4858176e6c28c53e777b39d1070f6a"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    46
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "9c874f0c20355a9c7d5d223fa8856f46860c813f1cf7a5ae3ee78ddc28050768",
+  "source_block_sha256": "e204359fdde00e2f7fd5d7df974e529f43d4093bf505f89af7d5a05dbfab2d58",
+  "source_declarations": [
+    "generalizedmassregular"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "name": "CoordinateMasses",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "50939e8d47d2aea37f48a71423ee3ae48b297b19ba4394b17b02a93c1f4510a4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "MassMatrix",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "98dc2589cf902b088edd39fbacfd5ceaeb43e0ec8cd3609f562eac8091e9df77"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "name": "diagonalMassMatrix",
+      "file_sha256": "45a16307a724348917d8bd9f9eab47cd1a74ec54ba32b468a0e8ead670432696",
+      "excerpt_sha256": "56c215aa345f33da76588c37690a0b34fd6c467f706ccbb6c832962abd41e7db"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/GeneralizedCoordinates.lean",
+      "name": "generalizedMassMatrix",
+      "file_sha256": "6652226b2dcd4f973be3aa0c1b3b880d9605838b5282aa1672356204f1aef955",
+      "excerpt_sha256": "547713adc56b7e9860d158001944be888193995239e8e60a28b81e373a87d1e8"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT07_review.json",
+  "total_task_bytes": 89344
+}

@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT18",
+  "source_ids": [
+    "MD-1.6-HCPStacking"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT18.md": "da441af6ac7afe12186011737930b69d439ded0930e064c8a9cab45531a442c6",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT18/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT18a",
+      "source_id": "MD-1.6-HCPStacking",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT18/a",
+      "total_bytes": 187457,
+      "manifest_sha256": "860ae385eb41373ef7b1170b21581fd8839d05ac0de1b45f14a44437515f11ca"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.6"
+}

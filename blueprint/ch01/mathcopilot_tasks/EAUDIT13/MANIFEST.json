@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT13",
+  "input_sha256": {
+    "BATCH_EAUDIT13.md": "82611ddc13435724f5a5ca8ba74e878f87bc1f4d65fc2692acc4b27b99e34753",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT13a",
+      "source_id": "MD-1.5-LocalExistUnique",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT13/a",
+      "total_bytes": 97678,
+      "manifest_sha256": "74614f9328e8d2e591588e13db734789bd7a01072fefa73c879cfe8265f7420e"
+    },
+    {
+      "subtask": "EAUDIT13b",
+      "source_id": "MD-1.5-CompactContinuation",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT13/b",
+      "total_bytes": 111854,
+      "manifest_sha256": "3d5817e73f076f759893d2ae9b9801e1fae895fbb9425d39d331e9047ea90756"
+    }
+  ]
+}

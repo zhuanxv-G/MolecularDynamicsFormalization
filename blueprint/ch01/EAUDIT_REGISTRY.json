@@ -85,5 +85,1075 @@
     "formal_library": "unchanged",
     "curvature_proof": "incomplete; full statement retained",
     "lj_empirical_choice": "awaiting mentor"
+  },
+  {
+    "closeout": "19",
+    "current_packages": [
+      {
+        "eaudit": "EAUDIT04",
+        "source_ids": [
+          "MD-1.5.3-EquilibriumLinearization",
+          "MD-1.5.3-HartmanGrobmanLiteral",
+          "MD-1.5.3-HyperbolicStabilityTransfer",
+          "MD-1.5.3-LinearizedHamiltonian",
+          "MD-1.5.3-PositiveHessianQuadratic",
+          "MD-1.5.3-PositiveHessianMinimum"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT04.md": "be86fcad3dd498a796580799cff6479037b9f4f9538cfc05276c8fc3db4994f6",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT04a",
+            "source_id": "MD-1.5.3-EquilibriumLinearization",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/a",
+            "total_bytes": 153408,
+            "manifest_sha256": "1e19095c88b4bb0778d2b6107733e47f73c130d8b3109428be967520853bd5f1"
+          },
+          {
+            "subtask": "EAUDIT04b",
+            "source_id": "MD-1.5.3-HartmanGrobmanLiteral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/b",
+            "total_bytes": 176842,
+            "manifest_sha256": "8f410d9ad72f6fe8157c3bb051412946252885326cd09b15c1791fd27268d134"
+          },
+          {
+            "subtask": "EAUDIT04c",
+            "source_id": "MD-1.5.3-HyperbolicStabilityTransfer",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/c",
+            "total_bytes": 98493,
+            "manifest_sha256": "e29f245db70deac2bcf72801248e39b3ee2fc37f8127d1e98e22a1f507571c5d"
+          },
+          {
+            "subtask": "EAUDIT04d",
+            "source_id": "MD-1.5.3-LinearizedHamiltonian",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/d",
+            "total_bytes": 98781,
+            "manifest_sha256": "8809fade6dd1d5ebf8820346f167b06cebb26fc54f7aac3471df59d6443b0a4b"
+          },
+          {
+            "subtask": "EAUDIT04e",
+            "source_id": "MD-1.5.3-PositiveHessianQuadratic",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/e",
+            "total_bytes": 92772,
+            "manifest_sha256": "6e28b861d804651b85664a2678ad6d86b94f4994fa12a0bb6f9dcc5847929d74"
+          },
+          {
+            "subtask": "EAUDIT04f",
+            "source_id": "MD-1.5.3-PositiveHessianMinimum",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/f",
+            "total_bytes": 91235,
+            "manifest_sha256": "1f7649210778830b6d08b434329aa332ec5de035030aba96232e31f1bdfdc95b"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.5.3"
+      },
+      {
+        "eaudit": "EAUDIT05",
+        "source_ids": [
+          "MD-1.2-NewtonCompact",
+          "MD-1.2-DegreesFreedom",
+          "MD-1.2-ConstraintDimension",
+          "MD-1.2-TotalEnergy",
+          "MD-1.2-PairCancellation",
+          "MD-1.2-MomentumConservation",
+          "MD-1.2-HarmonicSolution",
+          "MD-1.2-ScalarMechanical"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT05.md": "d426a02c936e411940e95a0f0fc7de30b845ee0957638a10cfbfbd473fd84e05",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT05a",
+            "source_id": "MD-1.2-NewtonCompact",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/a",
+            "total_bytes": 118255,
+            "manifest_sha256": "a25906236d1925f75eca236f5d6df9b9cf5336839e544a5ef44669b1ded93322"
+          },
+          {
+            "subtask": "EAUDIT05b",
+            "source_id": "MD-1.2-DegreesFreedom",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/b",
+            "total_bytes": 115715,
+            "manifest_sha256": "5c295012c515aa94e686e303b6da3d1c4bbda753dbd57d74cbeab68b0196f4ab"
+          },
+          {
+            "subtask": "EAUDIT05c",
+            "source_id": "MD-1.2-ConstraintDimension",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/c",
+            "total_bytes": 116354,
+            "manifest_sha256": "ea00b906f8381a66dbfec9a882db1b15d24ca78eeccb439bee19ff282431be75"
+          },
+          {
+            "subtask": "EAUDIT05d",
+            "source_id": "MD-1.2-TotalEnergy",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/d",
+            "total_bytes": 115138,
+            "manifest_sha256": "1155d2a580d942d59c5368c3d0124334092929feddc74dce41b28d012500720b"
+          },
+          {
+            "subtask": "EAUDIT05e",
+            "source_id": "MD-1.2-PairCancellation",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/e",
+            "total_bytes": 79453,
+            "manifest_sha256": "47ea0364ca3ceb2a7faabd89da4ea5c4cd42618d0789e75fd30577107dfb2220"
+          },
+          {
+            "subtask": "EAUDIT05f",
+            "source_id": "MD-1.2-MomentumConservation",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/f",
+            "total_bytes": 80414,
+            "manifest_sha256": "fe2b64d371dd3cee130af388422d48f1cb2a634302bf8971825b108b77b9d913"
+          },
+          {
+            "subtask": "EAUDIT05g",
+            "source_id": "MD-1.2-HarmonicSolution",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/g",
+            "total_bytes": 91865,
+            "manifest_sha256": "80d9476328bf431387f27f805453bb0cdc75e7a0a3500880dc9add05d8989550"
+          },
+          {
+            "subtask": "EAUDIT05h",
+            "source_id": "MD-1.2-ScalarMechanical",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/h",
+            "total_bytes": 57607,
+            "manifest_sha256": "420f11329f7ede4681ad069a0f6e7a6f29f2822745d360575703cd53bb6b67ac"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.2"
+      },
+      {
+        "eaudit": "EAUDIT06",
+        "source_ids": [
+          "MD-1.2-RadialLJForceLiteral",
+          "MD-1.2-LJTimeScaling"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT06.md": "7722c7900273e427d25c3f2f6ae867e8c988420e0fc451057e65594ff8568c21",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT06/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT06a",
+            "source_id": "MD-1.2-RadialLJForceLiteral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT06/a",
+            "total_bytes": 85666,
+            "manifest_sha256": "81d10d3b0c4e8e722b5a4863ea40078aa689e85bd4a26fcd462dee332cef49d5"
+          },
+          {
+            "subtask": "EAUDIT06b",
+            "source_id": "MD-1.2-LJTimeScaling",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT06/b",
+            "total_bytes": 146943,
+            "manifest_sha256": "d988c9c99f65ce95b929410b85c1ca09664a46e88f202bc31242b15ff6cd8e39"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.2"
+      },
+      {
+        "eaudit": "EAUDIT07",
+        "source_ids": [
+          "MD-1.3-GeneralizedCoordinates",
+          "MD-1.3-GeneralizedMassRegular"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT07.md": "8048e87bd55f7051afece85135c484bd7141e890c2db3d84e2846958183bbce3",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT07/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT07a",
+            "source_id": "MD-1.3-GeneralizedCoordinates",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT07/a",
+            "total_bytes": 92464,
+            "manifest_sha256": "a9b041ba6054a7f7f43fcca9da23c6d896863f4e926dba837f76e7c95dd78f3d"
+          },
+          {
+            "subtask": "EAUDIT07b",
+            "source_id": "MD-1.3-GeneralizedMassRegular",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT07/b",
+            "total_bytes": 89344,
+            "manifest_sha256": "ef7a2df097ec89ab42801661e4741d8664681e42fae750b0da948a1af4ed7e59"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.3"
+      },
+      {
+        "eaudit": "EAUDIT08",
+        "source_ids": [
+          "MD-1.4-LegendreHamiltonian",
+          "MD-1.4-ConvexLegendre",
+          "MD-1.4-HamiltonEquations",
+          "MD-1.4-HamiltonLagrangeEquivalence",
+          "MD-1.4-PhaseSpace"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT08.md": "913f33aa197b704b22da52e2bf6f06b557b23367c06f0a77f1a4d1e3006b9e11",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT08/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT08a",
+            "source_id": "MD-1.4-LegendreHamiltonian",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT08/a",
+            "total_bytes": 88142,
+            "manifest_sha256": "cd5837b79cf707003c38cab4d2b7a269724d5a2b0dd56380647858c9cd3132ef"
+          },
+          {
+            "subtask": "EAUDIT08b",
+            "source_id": "MD-1.4-ConvexLegendre",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT08/b",
+            "total_bytes": 80712,
+            "manifest_sha256": "96033a4c3a0f48b2f84f35137ebd24c5d43922745f0ca946ac1e245bafac78f7"
+          },
+          {
+            "subtask": "EAUDIT08c",
+            "source_id": "MD-1.4-HamiltonEquations",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT08/c",
+            "total_bytes": 80299,
+            "manifest_sha256": "fed780f49f0862022f7146d7a59e0e1f57ad16d8498ff53c0ab60d2ca79c894b"
+          },
+          {
+            "subtask": "EAUDIT08d",
+            "source_id": "MD-1.4-HamiltonLagrangeEquivalence",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT08/d",
+            "total_bytes": 93371,
+            "manifest_sha256": "c6f3bbc97913c8decfcb5d5525dd5ea744e0832a1060c2c44ebead185ac3960f"
+          },
+          {
+            "subtask": "EAUDIT08e",
+            "source_id": "MD-1.4-PhaseSpace",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT08/e",
+            "total_bytes": 94247,
+            "manifest_sha256": "de63e7e08c63bdb925223d3424872536de13a427e5f08c383958253b7174d753"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.4"
+      },
+      {
+        "eaudit": "EAUDIT09",
+        "source_ids": [
+          "MD-1.5.1-FlowEnergy",
+          "MD-1.5.1-HarmonicPhaseFlow",
+          "MD-1.5.1-SpectralSolution",
+          "MD-1.5.1-BasisCoefficients",
+          "MD-1.5.1-MatrixExponentialSolution"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT09.md": "58c1fb0669e964c5540f9a666143d76cd20b18b9b1ff908232b3c91fd207ebb1",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT09a",
+            "source_id": "MD-1.5.1-FlowEnergy",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/a",
+            "total_bytes": 86100,
+            "manifest_sha256": "ceebdac6336098dffd325a210aa5716eaef2604a67687968fac003d814d445ff"
+          },
+          {
+            "subtask": "EAUDIT09b",
+            "source_id": "MD-1.5.1-HarmonicPhaseFlow",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/b",
+            "total_bytes": 90039,
+            "manifest_sha256": "17049b6d58f49bcbc8f3b2c32f775b37d240ba8b1f49a3655f1de6aaf8ff8e81"
+          },
+          {
+            "subtask": "EAUDIT09c",
+            "source_id": "MD-1.5.1-SpectralSolution",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/c",
+            "total_bytes": 86309,
+            "manifest_sha256": "074d35c9617ea0364f8bf9d9e4b93ddc24ce5941f896da3d2da607160ff9ad61"
+          },
+          {
+            "subtask": "EAUDIT09d",
+            "source_id": "MD-1.5.1-BasisCoefficients",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/d",
+            "total_bytes": 84878,
+            "manifest_sha256": "e6e3667fa0111c5f17d49ede3f1cae3ab28db8347cf96c89fde4d957f8feb150"
+          },
+          {
+            "subtask": "EAUDIT09e",
+            "source_id": "MD-1.5.1-MatrixExponentialSolution",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/e",
+            "total_bytes": 85685,
+            "manifest_sha256": "124e4c1dec6604927e8daffddf0b0a8c8007e3db06bab2bc82d4795e64424a83"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.5.1"
+      },
+      {
+        "eaudit": "EAUDIT10",
+        "source_ids": [
+          "MD-1.1-Schrodinger",
+          "MD-1.1-HardSphere"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT10.md": "ca23496ef049676e0e712de164ab998662c007710f0e138412d8c5cf88455c03",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT10/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT10a",
+            "source_id": "MD-1.1-Schrodinger",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT10/a",
+            "total_bytes": 85437,
+            "manifest_sha256": "465227cf05d107df6488afdc3e6aced19d6e1f80f3896a862eed387a565eff14"
+          },
+          {
+            "subtask": "EAUDIT10b",
+            "source_id": "MD-1.1-HardSphere",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT10/b",
+            "total_bytes": 51151,
+            "manifest_sha256": "66a167c5c2883ffed357459c009cc4809add66900e0afacab55c1f7a8ff60eb8"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.1"
+      },
+      {
+        "eaudit": "EAUDIT11",
+        "source_ids": [
+          "MD-1.1.1-MorseMinimum",
+          "MD-1.1.1-LengthBond",
+          "MD-1.1.1-LJRepulsion",
+          "MD-1.1.1-HeterogeneousLJ"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT11.md": "460dc072b1a0d9d3f8290e831ad443007f96ec13dcf594716aecf77a1a29e35f",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT11/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT11a",
+            "source_id": "MD-1.1.1-MorseMinimum",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT11/a",
+            "total_bytes": 83005,
+            "manifest_sha256": "1733ee4c4d56862632c1d3ada8a0bee9577c33b30de72cf6f5f30e572752a7eb"
+          },
+          {
+            "subtask": "EAUDIT11b",
+            "source_id": "MD-1.1.1-LengthBond",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT11/b",
+            "total_bytes": 145993,
+            "manifest_sha256": "6604d1963a26913ec626f973f08cb4d1b25714daf4bec70dcfa43a8d6c8d80f2"
+          },
+          {
+            "subtask": "EAUDIT11c",
+            "source_id": "MD-1.1.1-LJRepulsion",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT11/c",
+            "total_bytes": 143625,
+            "manifest_sha256": "6db24876506961e47c3c57284c72e8d25226979caf48a59613074b04a67346c0"
+          },
+          {
+            "subtask": "EAUDIT11d",
+            "source_id": "MD-1.1.1-HeterogeneousLJ",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT11/d",
+            "total_bytes": 135977,
+            "manifest_sha256": "7ca3139dfb27d60b713f2e0214174ba4e2da7ec13ff2bddb0bebf586f810878e"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.1.1"
+      },
+      {
+        "eaudit": "EAUDIT12",
+        "source_ids": [
+          "MD-1.1.2-Coulomb",
+          "MD-1.1.2-Cutoff",
+          "MD-1.1.2-Yukawa",
+          "MD-1.1.2-AngleBond",
+          "MD-1.1.2-GayBerne"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT12.md": "1bbbf91c3dc107097af57da73ca6d01e58c4e81a009ac2cb92974cbb625a329b",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT12/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT12a",
+            "source_id": "MD-1.1.2-Coulomb",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT12/a",
+            "total_bytes": 145076,
+            "manifest_sha256": "3c4049abb4aa3c9d64d2ebffcdd637708cdd71061dccdcfe03a3df6c4da42077"
+          },
+          {
+            "subtask": "EAUDIT12b",
+            "source_id": "MD-1.1.2-Cutoff",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT12/b",
+            "total_bytes": 144640,
+            "manifest_sha256": "580166e5964611e2037b2732c2ea0880114484b04897e941e4c707ca40e9e158"
+          },
+          {
+            "subtask": "EAUDIT12c",
+            "source_id": "MD-1.1.2-Yukawa",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT12/c",
+            "total_bytes": 147346,
+            "manifest_sha256": "33ba3cfb4d71da8ee4122c62d709ed357b51c836e031fa2ece3b1df2108a4bcf"
+          },
+          {
+            "subtask": "EAUDIT12d",
+            "source_id": "MD-1.1.2-AngleBond",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT12/d",
+            "total_bytes": 107307,
+            "manifest_sha256": "d032014988106437ec76c9733279372240111822f42975934b6950a6df8d58a9"
+          },
+          {
+            "subtask": "EAUDIT12e",
+            "source_id": "MD-1.1.2-GayBerne",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT12/e",
+            "total_bytes": 192659,
+            "manifest_sha256": "484d46229b5aa552ce61518566365f6c8809f3c6224eb6ba695bf8bebc6ca732"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.1.2"
+      },
+      {
+        "eaudit": "EAUDIT13",
+        "source_ids": [
+          "MD-1.5-LocalExistUnique",
+          "MD-1.5-CompactContinuation"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT13.md": "82611ddc13435724f5a5ca8ba74e878f87bc1f4d65fc2692acc4b27b99e34753",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT13/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT13a",
+            "source_id": "MD-1.5-LocalExistUnique",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT13/a",
+            "total_bytes": 97678,
+            "manifest_sha256": "74614f9328e8d2e591588e13db734789bd7a01072fefa73c879cfe8265f7420e"
+          },
+          {
+            "subtask": "EAUDIT13b",
+            "source_id": "MD-1.5-CompactContinuation",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT13/b",
+            "total_bytes": 111854,
+            "manifest_sha256": "3d5817e73f076f759893d2ae9b9801e1fae895fbb9425d39d331e9047ea90756"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.5"
+      },
+      {
+        "eaudit": "EAUDIT14",
+        "source_ids": [
+          "MD-1.5.2-FirstIntegral",
+          "MD-1.5.2-FirstIntegralCriterion",
+          "MD-1.5.2-PlanarGraphReduction",
+          "MD-1.5.2-PlanarQuadrature",
+          "MD-1.5.2-ScalarFirstIntegral",
+          "MD-1.5.2-KeplerConservedEnergy",
+          "MD-1.5.2-KeplerAngularMomentum",
+          "MD-1.5.2-KeplerMomentum"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT14.md": "13b7018ec376a19df4f3a57c4174fe53c10199eabe60f14a74b1ecf341392236",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT14a",
+            "source_id": "MD-1.5.2-FirstIntegral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/a",
+            "total_bytes": 76822,
+            "manifest_sha256": "658d185db42fb40636bcade2b37ca3be48f11faddfff289b20e5e833b713abcf"
+          },
+          {
+            "subtask": "EAUDIT14b",
+            "source_id": "MD-1.5.2-FirstIntegralCriterion",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/b",
+            "total_bytes": 76371,
+            "manifest_sha256": "b1f88b0b706136c00bf8d292b2a70b61a349c7a9cf5f033257eea13d10658bff"
+          },
+          {
+            "subtask": "EAUDIT14c",
+            "source_id": "MD-1.5.2-PlanarGraphReduction",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/c",
+            "total_bytes": 76828,
+            "manifest_sha256": "bf2e74c15de7b29187e0ac3a97e569c697b85894fdca365c7e4d44eb7f7b8879"
+          },
+          {
+            "subtask": "EAUDIT14d",
+            "source_id": "MD-1.5.2-PlanarQuadrature",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/d",
+            "total_bytes": 77347,
+            "manifest_sha256": "6a7c06b12476e0eaf590ecd24e2dc009bfad103807ad9b44b9aaeba143c5d93e"
+          },
+          {
+            "subtask": "EAUDIT14e",
+            "source_id": "MD-1.5.2-ScalarFirstIntegral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/e",
+            "total_bytes": 78301,
+            "manifest_sha256": "e08a5694b508b5a032d258acc430347ae5386a559c69ec8c9674b365f23afe48"
+          },
+          {
+            "subtask": "EAUDIT14f",
+            "source_id": "MD-1.5.2-KeplerConservedEnergy",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/f",
+            "total_bytes": 73880,
+            "manifest_sha256": "1a9dc8765042bc0ebf2f6e41c39634f0436d3b0cd4d28b33b641cf4c833197b2"
+          },
+          {
+            "subtask": "EAUDIT14g",
+            "source_id": "MD-1.5.2-KeplerAngularMomentum",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/g",
+            "total_bytes": 66215,
+            "manifest_sha256": "7a49ac784f1a7403bd7190236e96632d4fbe720161bdf9bb294a2410aecfc14f"
+          },
+          {
+            "subtask": "EAUDIT14h",
+            "source_id": "MD-1.5.2-KeplerMomentum",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT14/h",
+            "total_bytes": 65890,
+            "manifest_sha256": "a9651e5e892380c4097a02c28408c128fd3b45846dc3b3139fd1b7376a66e727"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.5.2"
+      },
+      {
+        "eaudit": "EAUDIT15",
+        "source_ids": [
+          "MD-1.5.2-KeplerPolarODE",
+          "MD-1.5.2-KeplerRadialReduction",
+          "MD-1.5.2-KeplerFullSolution",
+          "MD-1.5.2-ActionEnergy",
+          "MD-1.5.2-ActionODE",
+          "MD-1.5.2-ActionSolution",
+          "MD-1.5.2-HarmonicTorus",
+          "MD-1.5.2-TorusPeriod"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT15.md": "1d4718280dccf642f08f1bad62ece7b81f70d22e3f391dd068a55b74ccf0a8e8",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT15a",
+            "source_id": "MD-1.5.2-KeplerPolarODE",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/a",
+            "total_bytes": 61709,
+            "manifest_sha256": "0e3bbc2f64fa6a145ff821fadd46e2108c7ac86c320ed3f8ae3adca4d44f310e"
+          },
+          {
+            "subtask": "EAUDIT15b",
+            "source_id": "MD-1.5.2-KeplerRadialReduction",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/b",
+            "total_bytes": 61640,
+            "manifest_sha256": "0af4834e1a677c3ea5f0e0051a386db6ae5addbbedead75138c511b59382ed8a"
+          },
+          {
+            "subtask": "EAUDIT15c",
+            "source_id": "MD-1.5.2-KeplerFullSolution",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/c",
+            "total_bytes": 75112,
+            "manifest_sha256": "718a03461e837cc411919b43c626b2cd8a4a7550383d6d46767acedca4ba46a0"
+          },
+          {
+            "subtask": "EAUDIT15d",
+            "source_id": "MD-1.5.2-ActionEnergy",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/d",
+            "total_bytes": 67548,
+            "manifest_sha256": "329f4445b56a53010003bae212447b4f1a4ede7121f3240737c6449210f58658"
+          },
+          {
+            "subtask": "EAUDIT15e",
+            "source_id": "MD-1.5.2-ActionODE",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/e",
+            "total_bytes": 67371,
+            "manifest_sha256": "5b9f233e6d6973d9f222d552f23ba8d9051adf24a7b98b6ba82a6c7a1e338fca"
+          },
+          {
+            "subtask": "EAUDIT15f",
+            "source_id": "MD-1.5.2-ActionSolution",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/f",
+            "total_bytes": 67681,
+            "manifest_sha256": "cc89cb0371824d74d40eabfb515c25a43a56331721805aa5481ca573881c35bb"
+          },
+          {
+            "subtask": "EAUDIT15g",
+            "source_id": "MD-1.5.2-HarmonicTorus",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/g",
+            "total_bytes": 67315,
+            "manifest_sha256": "a08c6d2599521676ee8d761a2e42e63205ffcd4477eac16af8a053b5369da678"
+          },
+          {
+            "subtask": "EAUDIT15h",
+            "source_id": "MD-1.5.2-TorusPeriod",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT15/h",
+            "total_bytes": 68207,
+            "manifest_sha256": "e9647035c743729d94256c009c74ebf070b88304953fb53f714caf639eead1b4"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.5.2"
+      },
+      {
+        "eaudit": "EAUDIT16",
+        "source_ids": [
+          "MD-1.5.2-TorusDense",
+          "MD-1.5.2-LocalActionAngleReduction"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT16.md": "7c2f6db4ec1a6a1448c398abdff19eaf992b9dd6c1bbda2bc4be5c05bb18cdb3",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT16/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT16a",
+            "source_id": "MD-1.5.2-TorusDense",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT16/a",
+            "total_bytes": 68015,
+            "manifest_sha256": "4a33e30ea600ebe23337ad120fb67b241817842627bcbd7396a1314fbb2c7b1c"
+          },
+          {
+            "subtask": "EAUDIT16b",
+            "source_id": "MD-1.5.2-LocalActionAngleReduction",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT16/b",
+            "total_bytes": 73532,
+            "manifest_sha256": "6c12188c03e4bd956ce2910f2cb9eaca4658a78b3108f97c865ab43d26ad386e"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.5.2"
+      },
+      {
+        "eaudit": "EAUDIT17",
+        "source_ids": [
+          "MD-1.6-PeriodicBoundary",
+          "MD-1.6-PeriodicTranslationMomentum",
+          "MD-1.6-RegularLatticeMinimizerLiteral",
+          "MD-1.6-PeriodicImages",
+          "MD-1.6-MinimumImage",
+          "MD-1.6-RhombicLattice",
+          "MD-1.6-UnitCell",
+          "MD-1.6-FCCStacking"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT17.md": "98b04fa61c3c549df392f5214e8d8e21190da8e4e25189974fd7f8d8ed734fd3",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT17a",
+            "source_id": "MD-1.6-PeriodicBoundary",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/a",
+            "total_bytes": 158946,
+            "manifest_sha256": "c4f4c64a789e9dd7d7902d870e30349ff32172c699e30bb85d17deb0182efcbe"
+          },
+          {
+            "subtask": "EAUDIT17b",
+            "source_id": "MD-1.6-PeriodicTranslationMomentum",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/b",
+            "total_bytes": 161607,
+            "manifest_sha256": "4065b20f264078372976a36f09a198a744972395d5327a2f14945e6158e01670"
+          },
+          {
+            "subtask": "EAUDIT17c",
+            "source_id": "MD-1.6-RegularLatticeMinimizerLiteral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/c",
+            "total_bytes": 162570,
+            "manifest_sha256": "ad5827b26ed1a9bdf4a3ac810e519441ad829a8f512eaf2b0fb91354bdc096f4"
+          },
+          {
+            "subtask": "EAUDIT17d",
+            "source_id": "MD-1.6-PeriodicImages",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/d",
+            "total_bytes": 152332,
+            "manifest_sha256": "255655e3e697eef065bd5c22ff140e00a4b1ff771fac66c8e4d005a96fdaee80"
+          },
+          {
+            "subtask": "EAUDIT17e",
+            "source_id": "MD-1.6-MinimumImage",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/e",
+            "total_bytes": 152550,
+            "manifest_sha256": "5237fa81974bd81ebb5d2091f50bb5421018b4e099b1dff7d888c9acc67c1683"
+          },
+          {
+            "subtask": "EAUDIT17f",
+            "source_id": "MD-1.6-RhombicLattice",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/f",
+            "total_bytes": 150820,
+            "manifest_sha256": "80e2e216de713c7396d846d5f2dd35d256d3ec022c5d01fd43ec131c1475a825"
+          },
+          {
+            "subtask": "EAUDIT17g",
+            "source_id": "MD-1.6-UnitCell",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/g",
+            "total_bytes": 151270,
+            "manifest_sha256": "438f4b1670bf3eba2afcd4ca7ba5120e850b624324838965f1a708e214e2e5f4"
+          },
+          {
+            "subtask": "EAUDIT17h",
+            "source_id": "MD-1.6-FCCStacking",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/h",
+            "total_bytes": 187637,
+            "manifest_sha256": "bbc91b7320b4a06940026ca5c45fe1dd801be3f4f8fb38161ac8d5b2da371519"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.6"
+      },
+      {
+        "eaudit": "EAUDIT18",
+        "source_ids": [
+          "MD-1.6-HCPStacking"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT18.md": "da441af6ac7afe12186011737930b69d439ded0930e064c8a9cab45531a442c6",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT18/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT18a",
+            "source_id": "MD-1.6-HCPStacking",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT18/a",
+            "total_bytes": 187457,
+            "manifest_sha256": "860ae385eb41373ef7b1170b21581fd8839d05ac0de1b45f14a44437515f11ca"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.6"
+      },
+      {
+        "eaudit": "EAUDIT19",
+        "source_ids": [
+          "MD-1.6.1-MinimumGradientZero",
+          "MD-1.6.1-ForceLinearization",
+          "MD-1.6.1-MinimumHessianLiteral",
+          "MD-1.6.1-ComplexNormalMode",
+          "MD-1.6.1-RealNormalMode"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT19.md": "cf031b8e92f9f9aca27363af352806c2c59d22e3909d50dba60d52c6b07996d2",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT19a",
+            "source_id": "MD-1.6.1-MinimumGradientZero",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/a",
+            "total_bytes": 237793,
+            "manifest_sha256": "498b583458fc1175fe74284711c0ab13ce1655248a37058b49203e649e999557"
+          },
+          {
+            "subtask": "EAUDIT19b",
+            "source_id": "MD-1.6.1-ForceLinearization",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/b",
+            "total_bytes": 131676,
+            "manifest_sha256": "63e33ff221a8620a106e3483d4efe918ad7a4462e7fc1967b9396eae4eaeeadd"
+          },
+          {
+            "subtask": "EAUDIT19c",
+            "source_id": "MD-1.6.1-MinimumHessianLiteral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/c",
+            "total_bytes": 130173,
+            "manifest_sha256": "db3b6e9fde092a95a9c4c0b37842d744de7c056338ad1e97c58f511be484976e"
+          },
+          {
+            "subtask": "EAUDIT19d",
+            "source_id": "MD-1.6.1-ComplexNormalMode",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/d",
+            "total_bytes": 128728,
+            "manifest_sha256": "b61cc2b2e94ba66d3e2a4908b6e0b37e53b5d2dacaceb698a2146a0088ba384f"
+          },
+          {
+            "subtask": "EAUDIT19e",
+            "source_id": "MD-1.6.1-RealNormalMode",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT19/e",
+            "total_bytes": 128830,
+            "manifest_sha256": "8440b5bee67e9588578855323ea67dd4149248076465e4ce0a18b8ab61ffa0ac"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.6.1"
+      },
+      {
+        "eaudit": "EAUDIT20",
+        "source_ids": [
+          "MD-1.7-PlanarTrimerModel",
+          "MD-1.7-CentralPairPotential",
+          "MD-1.7-CentralPairGradient",
+          "MD-1.7-CentralMomentum",
+          "MD-1.7-CentralAngularMomentum",
+          "MD-1.7-CenterOfMassMotion",
+          "MD-1.7-ConstantRotationLiteral",
+          "MD-1.7-IsoscelesCoordinates"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT20.md": "902c26a085d478e0c32a81c3d82a8fecb2028b7b0552810d42eff14cb9aa9a47",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT20a",
+            "source_id": "MD-1.7-PlanarTrimerModel",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/a",
+            "total_bytes": 89056,
+            "manifest_sha256": "f73b8656bb70d14dbf79996fc67f66d4c22c1fca26a166f35e0fcbc9abd0b76b"
+          },
+          {
+            "subtask": "EAUDIT20b",
+            "source_id": "MD-1.7-CentralPairPotential",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/b",
+            "total_bytes": 89014,
+            "manifest_sha256": "1872a925aad1fb2e4884a3670628720d8fdc247d92d7fd35ccbbe2b95d8f37be"
+          },
+          {
+            "subtask": "EAUDIT20c",
+            "source_id": "MD-1.7-CentralPairGradient",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/c",
+            "total_bytes": 88710,
+            "manifest_sha256": "844e1efc19a918ee2fe5b9fa6f53453a793bd02fae98bee22f298924a0166e84"
+          },
+          {
+            "subtask": "EAUDIT20d",
+            "source_id": "MD-1.7-CentralMomentum",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/d",
+            "total_bytes": 88021,
+            "manifest_sha256": "30fec7807c7e583a70ed9985d5c38d0525bf3ae2673e6f9f40ba9e7f3f1e623f"
+          },
+          {
+            "subtask": "EAUDIT20e",
+            "source_id": "MD-1.7-CentralAngularMomentum",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/e",
+            "total_bytes": 92995,
+            "manifest_sha256": "421cbdaedeff88b87c9a3c78d861b28e55f24f6d11c0afedcd6e4955be7afb11"
+          },
+          {
+            "subtask": "EAUDIT20f",
+            "source_id": "MD-1.7-CenterOfMassMotion",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/f",
+            "total_bytes": 89174,
+            "manifest_sha256": "e1b1f6206a0af6126071500bbd6ac373e1beb704d8f1a612fc92e7339dafd8da"
+          },
+          {
+            "subtask": "EAUDIT20g",
+            "source_id": "MD-1.7-ConstantRotationLiteral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/g",
+            "total_bytes": 87995,
+            "manifest_sha256": "9737917bed6725d1959aaeb2d0aa2e7e579b086f47fefa122cbaf76ff64eb6f0"
+          },
+          {
+            "subtask": "EAUDIT20h",
+            "source_id": "MD-1.7-IsoscelesCoordinates",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT20/h",
+            "total_bytes": 89806,
+            "manifest_sha256": "13d37068039991c389d015dc4ec69d7920a961c48e6a79a205325f992c902781"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.7"
+      },
+      {
+        "eaudit": "EAUDIT21",
+        "source_ids": [
+          "MD-1.7-IsoscelesEnergyReduction",
+          "MD-1.7-IsoscelesAccessibleRegion",
+          "MD-1.7-EquilateralTrimerMinimum",
+          "MD-1.7-TrimerEnergyLowerBound",
+          "MD-1.7-TrimerSaddle",
+          "MD-1.7-TrimerEscapeLiteral"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT21.md": "fba1b44393ec813e4764e294bcacaaf888d9bee5b94aa3bea5d0a4bb6574bcac",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT21a",
+            "source_id": "MD-1.7-IsoscelesEnergyReduction",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/a",
+            "total_bytes": 91933,
+            "manifest_sha256": "a67a1eb2de6f33a01ce6c0ad0443fc7da66b93f68ebeb40c14f38d91f382e3ab"
+          },
+          {
+            "subtask": "EAUDIT21b",
+            "source_id": "MD-1.7-IsoscelesAccessibleRegion",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/b",
+            "total_bytes": 201578,
+            "manifest_sha256": "b5bb31d5c2d896b8421164f887497f8dbeee1477f4121782e17b2af50fa95533"
+          },
+          {
+            "subtask": "EAUDIT21c",
+            "source_id": "MD-1.7-EquilateralTrimerMinimum",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/c",
+            "total_bytes": 89529,
+            "manifest_sha256": "b0475543c1e2e1ec00250b8f3d216b73d20b58f5582dedead0d38936a3d48f02"
+          },
+          {
+            "subtask": "EAUDIT21d",
+            "source_id": "MD-1.7-TrimerEnergyLowerBound",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/d",
+            "total_bytes": 202364,
+            "manifest_sha256": "ec89169b5e188bdb36f88f300bf6e260b3cd9be144731ed09a3e9702fd75a5b8"
+          },
+          {
+            "subtask": "EAUDIT21e",
+            "source_id": "MD-1.7-TrimerSaddle",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/e",
+            "total_bytes": 225223,
+            "manifest_sha256": "c28db39ac12cc0eeea67a84b1a3afad76f1724cf095abbae2bf0059070db070a"
+          },
+          {
+            "subtask": "EAUDIT21f",
+            "source_id": "MD-1.7-TrimerEscapeLiteral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT21/f",
+            "total_bytes": 205618,
+            "manifest_sha256": "1aa785f203db43e2f1675685f8851e56b26f76a0d2a662ca67d09a7dcd65b577"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.7"
+      },
+      {
+        "eaudit": "EAUDIT22",
+        "source_ids": [
+          "MD-1.7.1-ChaosConditions",
+          "MD-1.7.1-TransitivityErgodicityLiteral",
+          "MD-1.7.1-AnisotropicOscillator"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT22.md": "2584f103d4bf1b752cab6ca7294631e65db6ca55f8e6fd45710e6c406cb87cce",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT22/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT22a",
+            "source_id": "MD-1.7.1-ChaosConditions",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT22/a",
+            "total_bytes": 101036,
+            "manifest_sha256": "0bef11ea162dd6dd81d2242e4c9152cf413fb11756934fbb96c906edb0a3fbd1"
+          },
+          {
+            "subtask": "EAUDIT22b",
+            "source_id": "MD-1.7.1-TransitivityErgodicityLiteral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT22/b",
+            "total_bytes": 82912,
+            "manifest_sha256": "f84be8e76242347f0f1754be04a31ace1b5545f261785efed43db0762e9f87b3"
+          },
+          {
+            "subtask": "EAUDIT22c",
+            "source_id": "MD-1.7.1-AnisotropicOscillator",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT22/c",
+            "total_bytes": 81411,
+            "manifest_sha256": "43c4d0d2b1843475503643a4aa8e5d93cad5b7a8c44e530a48f6ce51dfbb406b"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.7.1"
+      },
+      {
+        "eaudit": "EAUDIT23",
+        "source_ids": [
+          "MD-1.7.2-FlowJacobianLiteral",
+          "MD-1.7.2-VariationalEquationLiteral",
+          "MD-1.7.2-NearbyTrajectoryLiteral"
+        ],
+        "input_sha256": {
+          "BATCH_EAUDIT23.md": "125cea90a2fcb2d3fb9c1324c09b547a5f66b2f923b87d0593df5771abc5cfe3",
+          "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+          "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+        },
+        "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT23/INDEX.md",
+        "subtasks": [
+          {
+            "subtask": "EAUDIT23a",
+            "source_id": "MD-1.7.2-FlowJacobianLiteral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT23/a",
+            "total_bytes": 220275,
+            "manifest_sha256": "c9e656334a65a8242ebd5905bb14f3a45cd1e137e6ddb38da2f519e323707fe2"
+          },
+          {
+            "subtask": "EAUDIT23b",
+            "source_id": "MD-1.7.2-VariationalEquationLiteral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT23/b",
+            "total_bytes": 252937,
+            "manifest_sha256": "08ab48d5e5c47f4340c66d9153badd77c5563920e2ee9e4562fe99167eab5803"
+          },
+          {
+            "subtask": "EAUDIT23c",
+            "source_id": "MD-1.7.2-NearbyTrajectoryLiteral",
+            "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT23/c",
+            "total_bytes": 117871,
+            "manifest_sha256": "d38956c9423db8eed69822b93c8ab6c58619a3e49203fd3d629e649b91a2f13a"
+          }
+        ],
+        "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+        "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+        "section": "1.7.2"
+      }
+    ],
+    "website_reaudit": "awaiting user submission"
   }
 ]

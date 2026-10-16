@@ -1,0 +1,64 @@
+{
+  "eaudit": "EAUDIT04",
+  "source_ids": [
+    "MD-1.5.3-EquilibriumLinearization",
+    "MD-1.5.3-HartmanGrobmanLiteral",
+    "MD-1.5.3-HyperbolicStabilityTransfer",
+    "MD-1.5.3-LinearizedHamiltonian",
+    "MD-1.5.3-PositiveHessianQuadratic",
+    "MD-1.5.3-PositiveHessianMinimum"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT04.md": "be86fcad3dd498a796580799cff6479037b9f4f9538cfc05276c8fc3db4994f6",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT04a",
+      "source_id": "MD-1.5.3-EquilibriumLinearization",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/a",
+      "total_bytes": 153408,
+      "manifest_sha256": "1e19095c88b4bb0778d2b6107733e47f73c130d8b3109428be967520853bd5f1"
+    },
+    {
+      "subtask": "EAUDIT04b",
+      "source_id": "MD-1.5.3-HartmanGrobmanLiteral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/b",
+      "total_bytes": 176842,
+      "manifest_sha256": "8f410d9ad72f6fe8157c3bb051412946252885326cd09b15c1791fd27268d134"
+    },
+    {
+      "subtask": "EAUDIT04c",
+      "source_id": "MD-1.5.3-HyperbolicStabilityTransfer",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/c",
+      "total_bytes": 98493,
+      "manifest_sha256": "e29f245db70deac2bcf72801248e39b3ee2fc37f8127d1e98e22a1f507571c5d"
+    },
+    {
+      "subtask": "EAUDIT04d",
+      "source_id": "MD-1.5.3-LinearizedHamiltonian",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/d",
+      "total_bytes": 98781,
+      "manifest_sha256": "8809fade6dd1d5ebf8820346f167b06cebb26fc54f7aac3471df59d6443b0a4b"
+    },
+    {
+      "subtask": "EAUDIT04e",
+      "source_id": "MD-1.5.3-PositiveHessianQuadratic",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/e",
+      "total_bytes": 92772,
+      "manifest_sha256": "6e28b861d804651b85664a2678ad6d86b94f4994fa12a0bb6f9dcc5847929d74"
+    },
+    {
+      "subtask": "EAUDIT04f",
+      "source_id": "MD-1.5.3-PositiveHessianMinimum",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT04/f",
+      "total_bytes": 91235,
+      "manifest_sha256": "1f7649210778830b6d08b434329aa332ec5de035030aba96232e31f1bdfdc95b"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.5.3"
+}

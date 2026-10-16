@@ -1,0 +1,64 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.6-PeriodicImages；原PDF页映射=[58]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT17_review.json，对象含batch=EAUDIT17、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT17.md": "98b04fa61c3c549df392f5214e8d8e21190da8e4e25189974fd7f8d8ed734fd3",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT17d_materials": "180fbccb9a69b810d15685d08b141c59e71cdb593fe953ffdb46f6f1d49aef45",
+  "EAUDIT17d_PAGES.pdf": "85d21a8c3c60b90b455fd91167d1aea5646850e83671cb54a38b86c406fa21cb"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.6-PeriodicImages",
+  "kind": "definition",
+  "label": null,
+  "section": "1.6",
+  "printed_page": "35",
+  "pdf_page": "58",
+  "statement_latex": "periodic boundary conditions involve an extended potential energy of the form\n\\[U^{\\mathrm{pbc}}(\\boldsymbol q)=\\sum_{klm}\\sum_{i=1}^{N-1}\\sum_{j=i+1}^{N}\\varphi_{ij}(\\boldsymbol q_i,\\boldsymbol q_j+k\\boldsymbol v_1+l\\boldsymbol v_2+m\\boldsymbol v_3),\\]\nwhere $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\\boldsymbol v_i^T=(L\\boldsymbol e_i^T,\\ldots,L\\boldsymbol e_i^T)$, $i=1,2,3$, where $\\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^3$.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "Fin3索引减1枚举-1,0,1；逐原子3向量加L(k,l,m)，等价全配置向量重复位移。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.periodicImageEnergy",
+  "extra_assumptions": [],
+  "old_ids": [
+    "CH01-158"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def periodicImageEnergy {N : ℕ} (L : ℝ) (φ : Fin N → Fin N → twoBodyTerms)
+    (q : Fin N → V3) :=
+  ∑ k : Fin 3, ∑ l : Fin 3, ∑ m : Fin 3, ∑ i, ∑ j ∈ Finset.Ioi i,
+    φ i j (q i) (q j + WithLp.toLp 2 ![L*((k.val:ℝ)-1),L*((l.val:ℝ)-1),L*((m.val:ℝ)-1)])
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```
+### 实际依赖 MD.Ch01.periodicImageEnergy
+```lean
+def periodicImageEnergy {N : ℕ} (L : ℝ) (φ : Fin N → Fin N → twoBodyTerms)
+    (q : Fin N → V3) :=
+  ∑ k : Fin 3, ∑ l : Fin 3, ∑ m : Fin 3, ∑ i, ∑ j ∈ Finset.Ioi i,
+    φ i j (q i) (q j + WithLp.toLp 2 ![L*((k.val:ℝ)-1),L*((l.val:ℝ)-1),L*((m.val:ℝ)-1)])
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.twoBodyTerms
+```lean
+abbrev twoBodyTerms := V3 → V3 → ℝ
+```

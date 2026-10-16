@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT22",
+  "input_sha256": {
+    "BATCH_EAUDIT22.md": "2584f103d4bf1b752cab6ca7294631e65db6ca55f8e6fd45710e6c406cb87cce",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT22a",
+      "source_id": "MD-1.7.1-ChaosConditions",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT22/a",
+      "total_bytes": 101036,
+      "manifest_sha256": "0bef11ea162dd6dd81d2242e4c9152cf413fb11756934fbb96c906edb0a3fbd1"
+    },
+    {
+      "subtask": "EAUDIT22b",
+      "source_id": "MD-1.7.1-TransitivityErgodicityLiteral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT22/b",
+      "total_bytes": 82912,
+      "manifest_sha256": "f84be8e76242347f0f1754be04a31ace1b5545f261785efed43db0762e9f87b3"
+    },
+    {
+      "subtask": "EAUDIT22c",
+      "source_id": "MD-1.7.1-AnisotropicOscillator",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT22/c",
+      "total_bytes": 81411,
+      "manifest_sha256": "43c4d0d2b1843475503643a4aa8e5d93cad5b7a8c44e530a48f6ce51dfbb406b"
+    }
+  ]
+}

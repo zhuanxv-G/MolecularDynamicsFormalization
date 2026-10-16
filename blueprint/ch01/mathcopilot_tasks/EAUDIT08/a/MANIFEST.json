@@ -1,0 +1,69 @@
+{
+  "eaudit": "EAUDIT08",
+  "source_id": "MD-1.4-LegendreHamiltonian",
+  "input_sha256": {
+    "BATCH_EAUDIT08.md": "913f33aa197b704b22da52e2bf6f06b557b23367c06f0a77f1a4d1e3006b9e11",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT08a_materials": "114657f7168d0a20935a535b2e2817a0aa18aa1db9128fc61b98ac2a7ee0ee18",
+    "EAUDIT08a_PAGES.pdf": "94a047bdf1626303cc2a5393a2bdc9e36bbd5a279b03a2dd0b6fb37300911be2"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    47
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "fcfba0dbf9d3627820b816501e5f64682e5a6982a1db388ec1f1c52b4a1d0199",
+  "source_block_sha256": "7a05ae763088c5ba09be457be66e6cce46258a8e3c9bb5f4494df1fca3885a69",
+  "source_declarations": [
+    "hamiltonian_legendre_transform",
+    "hamiltonian_legendre_transform_literal",
+    "hamiltonian_legendre_transform_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Momentum",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PotentialEnergy",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "043ad8ba46ea4ec31839daabf34e8017edbc3d00188fad3366e80af19ddc6116"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Velocity",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "22e67e3397d83abd0c1c1aeaa28366555c9f365d02734f9df1fd443624636cf1"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "matrixAction",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "08dc285ebeaad08fd9f4790f1300bd74aaddd2f0ad54e22d165f11f6146be158"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "variableMassHamiltonian",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "ed6cfeb8e0be7e26c75c70cdf37aaa95dc638a6739b04eca0fbd72c2e4864d9b"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "variableMassLagrangian",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "f977a889ef6725f2e1419ba916da37e9714a459fe4a8a893459361beb03b6090"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT08_review.json",
+  "total_task_bytes": 88142
+}

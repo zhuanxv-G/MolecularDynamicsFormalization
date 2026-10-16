@@ -1,0 +1,55 @@
+{
+  "eaudit": "EAUDIT21",
+  "source_id": "MD-1.7-EquilateralTrimerMinimum",
+  "input_sha256": {
+    "BATCH_EAUDIT21.md": "fba1b44393ec813e4764e294bcacaaf888d9bee5b94aa3bea5d0a4bb6574bcac",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT21c_materials": "bff2f3a95db71918f25b1a95b2b7a2f374e10b98ba26612cae18938662890da1",
+    "EAUDIT21c_PAGES.pdf": "415fb542e4157554aedfe855ebccd6f34a8a8f782ddbc13549e2215c575b2710"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    61
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "60d31b82778e889cfd6428c971772daa2b104e48a873d847e86c4e666d2d2544",
+  "source_block_sha256": "6ffa8686bb4bd16df92aba3dc03823f799b9492bf55720819606e9873af67c65",
+  "source_declarations": [
+    "equilateraltrimerminimum"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "V3",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "630b28f8663e80b13763ae51544e5ef63ff46b6c99936a04ab13fd586892a08c"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "lennardJonesPotential",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "c59ecc0fa91ade5d874e80ef3f97928193bd26f8212127cea8b0cc3d03d4a91b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "pairDistance",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "0f8d667de4b6d0e3b2bef25b84edfb3328b495785048bd9007031434c477d2d7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "uniformLJEnergy",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "c53f44af2ff7e8483bd9155aa36d7d654152995d9d5db53b4081463afb7f4b74"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT21_review.json",
+  "total_task_bytes": 89529
+}

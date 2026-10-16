@@ -1,0 +1,56 @@
+{
+  "eaudit": "EAUDIT04",
+  "source_id": "MD-1.5.3-HyperbolicStabilityTransfer",
+  "input_sha256": {
+    "BATCH_EAUDIT04.md": "be86fcad3dd498a796580799cff6479037b9f4f9538cfc05276c8fc3db4994f6",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT04c_materials": "7f67e6083c4b84a3b76fe633569bbe2dc3ab7a7292671a901de2eee049cf7ebc",
+    "EAUDIT04c_PAGES.pdf": "8c58ddf6b8a3383d2022cbdb995d1330b1171810ce03c5306c40cce252da81db"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    55
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "1bdd4ed5365e1a50e75de82d22072b2508741b79be89627088b3f59159d5fd6a",
+  "source_block_sha256": "6ba7bc808a75f111f25feea46cbd3d12c879fe33b986dcba8aa71c7c278f498c",
+  "source_declarations": [
+    "hyperbolicstabilitytransfer",
+    "hyperbolicstabilitytransfer_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "hyperbolic",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "2b31f8c5bbdaf84838f4b989287b6bf3a2bd10ebab44f610d279990588e5e960"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "isFlowOf",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "370720a77d39ad748a8f21d7a5a250b30a9612fc51d2723dae957443af723fa3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LinearFlow.lean",
+      "name": "linearExponentialFlow",
+      "file_sha256": "fb2fa6db4936e40275468b34e871212c1423e55e532ad3afb715aa360e192228",
+      "excerpt_sha256": "e2fdc1dae6cf73a5c0a70f711a32d44216387ecdc165b18e1ff9a841b73ca82a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/Statements.lean",
+      "name": "stable",
+      "file_sha256": "1f07a32b494f3c03e15368c27fa84261feba1493151ea1ff76085e230e2ec8f4",
+      "excerpt_sha256": "ce0d51e464ccc2e50f34693766ac8f9b630e30267afa55eded6bfb0be0f72b21"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT04_review.json",
+  "total_task_bytes": 98493
+}

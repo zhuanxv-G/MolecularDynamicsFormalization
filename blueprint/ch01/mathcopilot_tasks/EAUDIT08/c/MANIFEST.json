@@ -1,0 +1,56 @@
+{
+  "eaudit": "EAUDIT08",
+  "source_id": "MD-1.4-HamiltonEquations",
+  "input_sha256": {
+    "BATCH_EAUDIT08.md": "913f33aa197b704b22da52e2bf6f06b557b23367c06f0a77f1a4d1e3006b9e11",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT08c_materials": "aff1e33ee5972bd0c55b5cb5bd49950e0ed167d53e25da198733b7933bfd679e",
+    "EAUDIT08c_PAGES.pdf": "8d9cbd4f05e4c46d9c689efcf88e69dd50f20116a19dc1a3fa17d4ab1c5c2731"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    47
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "b5278ce1aea3f43a88dbb93166317b1307f9e2784bac6d1d22def5fd6e379faa",
+  "source_block_sha256": "7cea954fd747652c751c8cba9ec69c51adea831c82ac8edc675b62ddeea11a47",
+  "source_declarations": [
+    "hamiltonEquationsOn",
+    "hamiltonEquations"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Momentum",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "PhaseSpace",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "daa02c2c07383d89b526c2336a494ea2279c29eb9ade168bef41013e54ebff7f"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "hamiltonEquations",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "e5fe8e5bb871f1716971bd54364a7284401778b75cfb67d391c9960c1ac7978a"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "hamiltonEquationsOn",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "34b97ae02d3714fa196938c79ab4fc5c0814dce337c8010104ed03df8a7eb4eb"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT08_review.json",
+  "total_task_bytes": 80299
+}

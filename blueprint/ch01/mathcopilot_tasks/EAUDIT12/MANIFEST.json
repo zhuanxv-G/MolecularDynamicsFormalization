@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT12",
+  "input_sha256": {
+    "BATCH_EAUDIT12.md": "1bbbf91c3dc107097af57da73ca6d01e58c4e81a009ac2cb92974cbb625a329b",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT12a",
+      "source_id": "MD-1.1.2-Coulomb",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT12/a",
+      "total_bytes": 145076,
+      "manifest_sha256": "3c4049abb4aa3c9d64d2ebffcdd637708cdd71061dccdcfe03a3df6c4da42077"
+    },
+    {
+      "subtask": "EAUDIT12b",
+      "source_id": "MD-1.1.2-Cutoff",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT12/b",
+      "total_bytes": 144640,
+      "manifest_sha256": "580166e5964611e2037b2732c2ea0880114484b04897e941e4c707ca40e9e158"
+    },
+    {
+      "subtask": "EAUDIT12c",
+      "source_id": "MD-1.1.2-Yukawa",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT12/c",
+      "total_bytes": 147346,
+      "manifest_sha256": "33ba3cfb4d71da8ee4122c62d709ed357b51c836e031fa2ece3b1df2108a4bcf"
+    },
+    {
+      "subtask": "EAUDIT12d",
+      "source_id": "MD-1.1.2-AngleBond",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT12/d",
+      "total_bytes": 107307,
+      "manifest_sha256": "d032014988106437ec76c9733279372240111822f42975934b6950a6df8d58a9"
+    },
+    {
+      "subtask": "EAUDIT12e",
+      "source_id": "MD-1.1.2-GayBerne",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT12/e",
+      "total_bytes": 192659,
+      "manifest_sha256": "484d46229b5aa552ce61518566365f6c8809f3c6224eb6ba695bf8bebc6ca732"
+    }
+  ]
+}

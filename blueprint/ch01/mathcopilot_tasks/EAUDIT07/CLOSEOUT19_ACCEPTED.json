@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_ids": [
+    "MD-1.3-GeneralizedCoordinates",
+    "MD-1.3-GeneralizedMassRegular"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "8048e87bd55f7051afece85135c484bd7141e890c2db3d84e2846958183bbce3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT07/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT07a",
+      "source_id": "MD-1.3-GeneralizedCoordinates",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT07/a",
+      "total_bytes": 92464,
+      "manifest_sha256": "a9b041ba6054a7f7f43fcca9da23c6d896863f4e926dba837f76e7c95dd78f3d"
+    },
+    {
+      "subtask": "EAUDIT07b",
+      "source_id": "MD-1.3-GeneralizedMassRegular",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT07/b",
+      "total_bytes": 89344,
+      "manifest_sha256": "ef7a2df097ec89ab42801661e4741d8664681e42fae750b0da948a1af4ed7e59"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.3"
+}

@@ -1,0 +1,14 @@
+{
+  "automation_id": "lean-2",
+  "original_id": "lean",
+  "original_missing": true,
+  "status": "ACTIVE",
+  "schedule": "每15分钟",
+  "target_thread_id": "01a10bc0-bc8d-7043-8df9-21a6b0bde09a",
+  "execution_thread_id": "01a142f7-aea6-7353-812f-bea83d00a504",
+  "resume_state_sha256": "bac5a48645c8ad9f3bd70fcf12e1da183a7d8ffcffd33cfa3287804537864c50",
+  "prompt": "监测用户2026-10-16第19号指令：当前唯一任务为第1章收口及原文/修正版双版本。先把第6章批27保存WIP检查点后暂停；第2–5章沿用终验93d2d3e5保持不动；不进入第7章。正式库MolecularDynamics/字节冻结、0 sorry。完整指令见工程AGENTS.md顶部及docs/handoff/CH01_CLOSEOUT_DIRECTIVE_20261016.zh-CN.md。\n\n每次唤醒先简短读取C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization下AGENTS.md、docs/handoff/CURRENT_STATE.zh-CN.md顶部及WORK_LOG最新条目，再用wait_threads(timeoutMs:0)核对执行聊天resume_state.json 中的现行执行聊天（当前为01a142f7-aea6-7353-812f-bea83d00a504）。只做状态核对及授权的额度恢复接续，不写工程共享文件、不运行Lean或构建、不操作Git、不操作或轮询MathCopilot。第1章先登记EAUDIT02/03及EAUDIT01-return-registration：旧/workspace文件干扰引起的哈希不一致记需复审，不记FAIL。修复21条FAIL、补62条待复审的现行包；原书疑误保留Literal签名及sorry，新增_corrected独立声明、可行反例和完整CH01_ERRATA；同一路线三次失败即止，大型理论仅写sorry陈述。最终单文件/逐条公理及一次完整check、导师总结、现行EAUDIT_INDEX、commit+push，完成后停止，不自动返回第6章。\n\n运行或已有排队消息时安静，不发送不打断。任务完成、等待用户/网站结果、审批待处理或用户暂停/取消时，不自动继续。含糊状态只读read_thread核对；notLoaded不能单独认定额度中断。只有最新未完成轮明确usage limit/quota/rate limit或可信检查点记此次额度中断，才检查get_usage_limits；额度不可用时等待，禁止购买、重置、切换账号或模型。非额度连接故障首次通知，不擅自重启。\n\n额度已恢复、任务未完成且原执行聊天仍停止时，发送前再核对一次状态。仅向原执行聊天发送：按用户2026-10-16第19号指令继续第1章收口，先读AGENTS/CURRENT_STATE顶部、WORK_LOG最新和blueprint/ch01/PROGRESS.md及现有收据；先保存第6章批27 WIP并暂停。登记EAUDIT返回、修FAIL、补原文与修正版和勘误、现行EAUDIT包及导师总结；复用通过证据，完整check仅章末一次；第2–5章和正式库冻结，不进入第7章；完成commit+push后停止，等待用户提交第1章复审包。保留现有模型设置。\n\n沿用C:\\Users\\ustc\\.codex\\automations\\lean\\resume_state.json原去重记录：目标、失败轮ID、发送时间和结果；每失败轮最多成功发送一次，两次自动发送至少相隔30分钟。同章同检查点连续3次无进展中断则停发并通知。含糊发送先核对接续消息/新一轮，禁止盲目重发。发送后一次compact snapshot确认运行，区分配置保存、已发送和确认运行；未端到端实测不声称自动恢复成功。heartbeat保持ACTIVE、原15分钟频率及原target。状态无变化或不可行动保持安静，只在确认恢复、完成、新失败或必须用户介入时通知。CURRENT_STATE写第1章收口完成且EAUDIT_INDEX齐全时停止发送，等待新指令。",
+  "configuration_sha256": "ff4bec147bf2df1a8031a492a84ac2b7fefe5ebe0259fc9600b1418018a6ec76",
+  "dedup_record_preserved": true,
+  "automatic_resume_end_to_end": "NOT_TESTED"
+}

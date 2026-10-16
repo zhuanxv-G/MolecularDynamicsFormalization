@@ -1,0 +1,66 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.1.1-HeterogeneousLJ；原PDF页映射=[34]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT11_review.json，对象含batch=EAUDIT11、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT11.md": "460dc072b1a0d9d3f8290e831ad443007f96ec13dcf594716aecf77a1a29e35f",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT11d_materials": "c1e0738e8f857b6b72b0aef2f978e369403e458196fd73804aa5b4d04e62064b",
+  "EAUDIT11d_PAGES.pdf": "7df529baee1d3178ae51dde57f80ef0a5758d1662f0e7573ab712037cb0e6f40"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.1.1-HeterogeneousLJ",
+  "kind": "definition",
+  "label": null,
+  "section": "1.1.1",
+  "printed_page": "11",
+  "pdf_page": "34",
+  "statement_latex": "When there are many atoms of different types, the parameters of the potential will depend on this, so we obtain contributions to the total potential energy of the form\n\\[\\varphi_{ij}^{\\mathrm{LJ}}(r_{ij})=4\\epsilon_{ij}\\left[\\left(\\frac{\\sigma_{ij}}{r_{ij}}\\right)^{12}-\\left(\\frac{\\sigma_{ij}}{r_{ij}}\\right)^6\\right],\\]\nwhere $r_{ij}=\\|\\boldsymbol q_i-\\boldsymbol q_j\\|$.",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.heterogeneousLJ",
+  "extra_assumptions": [
+    "[EXTRA] EAUDIT03补真实V3和pairDistance=‖qᵢ−qⱼ‖；总函数公式对应域为pairDistance>0，零距离的总化取值不解释为物理势。"
+  ],
+  "old_ids": [
+    "CH01-023"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
+    (q : Fin N → V3) (i j : Fin N) :=
+  lennardJonesPotential (ε i j) (σ i j) (pairDistance (q i) (q j))
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.V3
+```lean
+abbrev V3 := Position 3
+```
+### 实际依赖 MD.Ch01.heterogeneousLJ
+```lean
+def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
+    (q : Fin N → V3) (i j : Fin N) :=
+  lennardJonesPotential (ε i j) (σ i j) (pairDistance (q i) (q j))
+```
+### 实际依赖 MD.Ch01.lennardJonesPotential
+```lean
+def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.pairDistance
+```lean
+def pairDistance (qᵢ qⱼ : V3) := ‖qᵢ-qⱼ‖
+```

@@ -1,0 +1,40 @@
+{
+  "eaudit": "EAUDIT23",
+  "source_ids": [
+    "MD-1.7.2-FlowJacobianLiteral",
+    "MD-1.7.2-VariationalEquationLiteral",
+    "MD-1.7.2-NearbyTrajectoryLiteral"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT23.md": "125cea90a2fcb2d3fb9c1324c09b547a5f66b2f923b87d0593df5771abc5cfe3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT23/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT23a",
+      "source_id": "MD-1.7.2-FlowJacobianLiteral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT23/a",
+      "total_bytes": 220275,
+      "manifest_sha256": "c9e656334a65a8242ebd5905bb14f3a45cd1e137e6ddb38da2f519e323707fe2"
+    },
+    {
+      "subtask": "EAUDIT23b",
+      "source_id": "MD-1.7.2-VariationalEquationLiteral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT23/b",
+      "total_bytes": 252937,
+      "manifest_sha256": "08ab48d5e5c47f4340c66d9153badd77c5563920e2ee9e4562fe99167eab5803"
+    },
+    {
+      "subtask": "EAUDIT23c",
+      "source_id": "MD-1.7.2-NearbyTrajectoryLiteral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT23/c",
+      "total_bytes": 117871,
+      "manifest_sha256": "d38956c9423db8eed69822b93c8ab6c58619a3e49203fd3d629e649b91a2f13a"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.7.2"
+}

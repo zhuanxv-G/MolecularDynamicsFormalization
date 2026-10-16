@@ -1,0 +1,57 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.6.1-ComplexNormalMode；原PDF页映射=[60]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT19_review.json，对象含batch=EAUDIT19、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT19.md": "cf031b8e92f9f9aca27363af352806c2c59d22e3909d50dba60d52c6b07996d2",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT19d_materials": "24c8830f4f795c65494455541f8acf7f77b0028326285af27ea26ecbda76063b",
+  "EAUDIT19d_PAGES.pdf": "f2b4ab16c33b91cd2e1235de2d6ec37906b7f5d2aca41533f8120880a98f25c4"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.6.1-ComplexNormalMode",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.6.1",
+  "printed_page": "37",
+  "pdf_page": "60",
+  "statement_latex": "Associated to each eigenvalue pair we have a pair of complex conjugate eigenvectors $\\boldsymbol\\xi,\\overline{\\boldsymbol\\xi}$ and also a pair of solutions which can be written in the complex form\n\\[\\boldsymbol z(t)=ae^{i\\Omega t}\\boldsymbol\\xi+be^{-i\\Omega t}\\overline{\\boldsymbol\\xi},\\]\n($a,b$ complex coefficients),",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "实A确保共轭模式；两个解的复线性组合，未强迫结果为实。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.complexnormalmode",
+  "extra_assumptions": [
+    "[EXTRA] 19号：增加η非零及共轭η非零、−iΩ特征方程，保留所有系数的原复解公式；不以零向量冒充特征向量。"
+  ],
+  "old_ids": [
+    "CH01-172"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem complexnormalmode :
+  ∀ (n : ℕ) (A : Matrix (Fin n) (Fin n) ℝ) (η : Fin n → ℂ) (Ω : ℝ),
+    η ≠ 0 → (A.map (algebraMap ℝ ℂ)).mulVec η = (Complex.I * Ω) • η →
+    (fun i => star (η i)) ≠ 0 ∧
+    (A.map (algebraMap ℝ ℂ)).mulVec (fun i => star (η i)) =
+      (-Complex.I * Ω) • (fun i => star (η i)) ∧
+    ∀ a b : ℂ, ∀ t : ℝ,
+      HasDerivAt (fun s : ℝ =>
+        a • (Complex.exp (Complex.I*Ω*s) • η) +
+          b • (Complex.exp (-Complex.I*Ω*s) • (fun i => star (η i))))
+        ((A.map (algebraMap ℝ ℂ)).mulVec
+          (a • (Complex.exp (Complex.I*Ω*t) • η) +
+            b • (Complex.exp (-Complex.I*Ω*t) • (fun i => star (η i))))) t := by
+  sorry
+```

@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT12",
+  "source_id": "MD-1.1.2-Cutoff",
+  "input_sha256": {
+    "BATCH_EAUDIT12.md": "1bbbf91c3dc107097af57da73ca6d01e58c4e81a009ac2cb92974cbb625a329b",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT12b_materials": "8792e84ce4376c7dc685a2d9d53b35e96eb8de873af5cabdbcca17859f3f88bc",
+    "EAUDIT12b_PAGES.pdf": "d52b53c162cfb1e6193c00f18585183c3d8e9bd4d971a2073af40f9d9b51de7d"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    35
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "de7448a9e6cbd44ea01494df1bdea45e86044f4fd937d806def9de170f867081",
+  "source_block_sha256": "ec2264822884c7351c0b6f248d16e025a0fc8095f9898d9b3a47997ae66e79f1",
+  "source_declarations": [
+    "smoothCutoff"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "smoothCutoff",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "ec2264822884c7351c0b6f248d16e025a0fc8095f9898d9b3a47997ae66e79f1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT12_review.json",
+  "total_task_bytes": 144640
+}

@@ -1,0 +1,56 @@
+{
+  "eaudit": "EAUDIT09",
+  "source_ids": [
+    "MD-1.5.1-FlowEnergy",
+    "MD-1.5.1-HarmonicPhaseFlow",
+    "MD-1.5.1-SpectralSolution",
+    "MD-1.5.1-BasisCoefficients",
+    "MD-1.5.1-MatrixExponentialSolution"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT09.md": "58c1fb0669e964c5540f9a666143d76cd20b18b9b1ff908232b3c91fd207ebb1",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT09a",
+      "source_id": "MD-1.5.1-FlowEnergy",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/a",
+      "total_bytes": 86100,
+      "manifest_sha256": "ceebdac6336098dffd325a210aa5716eaef2604a67687968fac003d814d445ff"
+    },
+    {
+      "subtask": "EAUDIT09b",
+      "source_id": "MD-1.5.1-HarmonicPhaseFlow",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/b",
+      "total_bytes": 90039,
+      "manifest_sha256": "17049b6d58f49bcbc8f3b2c32f775b37d240ba8b1f49a3655f1de6aaf8ff8e81"
+    },
+    {
+      "subtask": "EAUDIT09c",
+      "source_id": "MD-1.5.1-SpectralSolution",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/c",
+      "total_bytes": 86309,
+      "manifest_sha256": "074d35c9617ea0364f8bf9d9e4b93ddc24ce5941f896da3d2da607160ff9ad61"
+    },
+    {
+      "subtask": "EAUDIT09d",
+      "source_id": "MD-1.5.1-BasisCoefficients",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/d",
+      "total_bytes": 84878,
+      "manifest_sha256": "e6e3667fa0111c5f17d49ede3f1cae3ab28db8347cf96c89fde4d957f8feb150"
+    },
+    {
+      "subtask": "EAUDIT09e",
+      "source_id": "MD-1.5.1-MatrixExponentialSolution",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT09/e",
+      "total_bytes": 85685,
+      "manifest_sha256": "124e4c1dec6604927e8daffddf0b0a8c8007e3db06bab2bc82d4795e64424a83"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.5.1"
+}

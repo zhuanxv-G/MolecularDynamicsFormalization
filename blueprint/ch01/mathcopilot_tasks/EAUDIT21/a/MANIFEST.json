@@ -1,0 +1,73 @@
+{
+  "eaudit": "EAUDIT21",
+  "source_id": "MD-1.7-IsoscelesEnergyReduction",
+  "input_sha256": {
+    "BATCH_EAUDIT21.md": "fba1b44393ec813e4764e294bcacaaf888d9bee5b94aa3bea5d0a4bb6574bcac",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT21a_materials": "ea38932d9b073db20c3a99ea4ffe5a5bc9b3b0a95cee28bfbba9ee81dd1b16d9",
+    "EAUDIT21a_PAGES.pdf": "eb09a52f78ba780d885157d822a6783bb5caf416a987ab6f5889a3a5657ebece"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    62
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a445504e7194679d0c315f6f3ded4a267d001f5a620c265cd0ea07a3600b7a58",
+  "source_block_sha256": "ff0ac5e16794c4a6f6624fccb17877288a2a1c287270c808ee3e76e9133ac597",
+  "source_declarations": [
+    "isosceles_energy_reduction"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "V3",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "630b28f8663e80b13763ae51544e5ef63ff46b6c99936a04ab13fd586892a08c"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "isoscelesCoordinates",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "014f8a0c9bd208733d5e2eb8b1108250f274b4d8729f5a29be923ebae5646fa2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "isoscelesEnergy",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "d39c559bafab76eef58d1815883b66a73555b1ae2d9f4b2249388dd41d5aa131"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "isoscelesPotential",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "e495f85a925bf8228bdc6beac9f735c0793ccd793030656f75776c7ceb1da31f"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "lennardJonesPotential",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "c59ecc0fa91ade5d874e80ef3f97928193bd26f8212127cea8b0cc3d03d4a91b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "pairDistance",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "0f8d667de4b6d0e3b2bef25b84edfb3328b495785048bd9007031434c477d2d7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "uniformLJEnergy",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "c53f44af2ff7e8483bd9155aa36d7d654152995d9d5db53b4081463afb7f4b74"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT21_review.json",
+  "total_task_bytes": 91933
+}

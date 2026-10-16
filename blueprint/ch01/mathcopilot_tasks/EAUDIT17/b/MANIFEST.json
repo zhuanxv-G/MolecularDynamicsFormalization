@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-1.6-PeriodicTranslationMomentum",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "98b04fa61c3c549df392f5214e8d8e21190da8e4e25189974fd7f8d8ed734fd3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT17b_materials": "41cbf9631181f0f63a72fc5c5dd4d45842becaf7f0f4707cf9508483bb7ea254",
+    "EAUDIT17b_PAGES.pdf": "9d6fadb5205bb27ba46643a2d1da5ef867376fac4f147f5f10890daae1b323e6"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    57
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a9789fd15dca6a4b2e2556c54b9e76cdb8441358842e85c7225ca37ba81a2ebc",
+  "source_block_sha256": "357a078b8caf5f74da91aab7250ee8002362e4c91da09722f76af687a18db71b",
+  "source_declarations": [
+    "periodic_translation_momentum",
+    "periodicBondEnergy",
+    "periodic_translation_third_law"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter01/LatticePairPotential.lean",
+      "name": "boxPeriodicNearestNeighborPotentialEnergy",
+      "file_sha256": "fe3d94e8c07979e08da619c1866823e34bbe7f1ce732d92ff5f2c4a002df972a",
+      "excerpt_sha256": "35076032c1b82ba28db2f7a842d40f31117e33fc6234dd06e5faa8691793f180"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LatticePairPotential.lean",
+      "name": "nearestNeighborPotentialEnergy",
+      "file_sha256": "fe3d94e8c07979e08da619c1866823e34bbe7f1ce732d92ff5f2c4a002df972a",
+      "excerpt_sha256": "752c733ab09eca5d8eaa6926424eac40d639bdbd2d096e01033e3a337b5c7a22"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "periodicBondEnergy",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "225db851b81b8c2baf77d40e66698108b3ba13e106c229dab134fe80db632bf8"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 161607
+}

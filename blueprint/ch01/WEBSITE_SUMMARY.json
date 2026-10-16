@@ -1,15 +1,21 @@
 {
-  "website_pass": 49,
-  "repairing": 21,
-  "awaiting_mentor": 9,
-  "awaiting_reaudit": 62,
   "chapter": 1,
   "total": 141,
-  "bound": 141,
-  "raw_audit_counts": {
-    "NEEDS_HUMAN": 66,
-    "FAIL": 26,
-    "PASS": 49
-  },
-  "json_review_policy": "first round"
+  "website_pass": 48,
+  "awaiting_reaudit": 93,
+  "awaiting_mentor": 20,
+  "repairing": 0,
+  "counts_are_disjoint": false,
+  "mentor_is_subset_of_reaudit": true,
+  "raw_verdicts_preserved": true,
+  "scope": "网站PASS只覆盖明确绑定的原声明；当前双版本或变更待复审",
+  "declarations": {
+    "已证或定义": 148,
+    "定义项": 79,
+    "声明总数": 194,
+    "已证定理": 69,
+    "缺大型理论": 30,
+    "原书疑误不证": 13,
+    "时间盒止": 3
+  }
 }

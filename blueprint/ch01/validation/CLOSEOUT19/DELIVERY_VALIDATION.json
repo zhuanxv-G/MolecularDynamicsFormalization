@@ -1,0 +1,680 @@
+{
+  "total_source_ids": 141,
+  "website_pass": 48,
+  "awaiting_reaudit": 93,
+  "repairing": 0,
+  "errata_entries": 20,
+  "axiom_declarations": 194,
+  "frozen_source_files": 302,
+  "frozen_ch02_05_lean_and_json": true,
+  "current_batches": 20,
+  "current_packets": 93,
+  "max_packet_bytes": 252937,
+  "dependency_file_hash_checks": 419,
+  "original_page_pixel_checks": "PASS",
+  "raw_return_sha256": {
+    "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT02_result.json": "69a00f47cb89d20598f5b7eee8ee237358c7a2396af66d5040433b2d80b02e8e",
+    "blueprint/ch01/mathcopilot_results/eaudit/EAUDIT03_result.json": "2c4ed424f8168adf21868ef9d4fc03634583dbbc5e5e6b66856c9092591eba9d"
+  },
+  "literal_signatures_preserved": true,
+  "all_flagged_errata_covered": true,
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "full_check": "passed",
+  "full_check_sha256": "e3b79d836b15f4164887ba122afe29fe80d9dc530da073c3572bbf422ce32563",
+  "website_new_reaudit": "NOT_SUBMITTED",
+  "mentor_review": "PENDING",
+  "packets": [
+    {
+      "source_id": "MD-1.5.3-EquilibriumLinearization",
+      "eaudit": "EAUDIT04",
+      "total_bytes": 153408,
+      "paste_sha256": "4d463368a536f126b5daeae989c1a198fb6dc8c9d7cd2493a092a16a295dcaca",
+      "manifest_sha256": "1e19095c88b4bb0778d2b6107733e47f73c130d8b3109428be967520853bd5f1"
+    },
+    {
+      "source_id": "MD-1.5.3-HartmanGrobmanLiteral",
+      "eaudit": "EAUDIT04",
+      "total_bytes": 176842,
+      "paste_sha256": "4186cbef06d71c574ab17ac8f78cdd6f6a76b9546639444be5ba7bd9019a3e49",
+      "manifest_sha256": "8f410d9ad72f6fe8157c3bb051412946252885326cd09b15c1791fd27268d134"
+    },
+    {
+      "source_id": "MD-1.5.3-HyperbolicStabilityTransfer",
+      "eaudit": "EAUDIT04",
+      "total_bytes": 98493,
+      "paste_sha256": "1bdd4ed5365e1a50e75de82d22072b2508741b79be89627088b3f59159d5fd6a",
+      "manifest_sha256": "e29f245db70deac2bcf72801248e39b3ee2fc37f8127d1e98e22a1f507571c5d"
+    },
+    {
+      "source_id": "MD-1.5.3-LinearizedHamiltonian",
+      "eaudit": "EAUDIT04",
+      "total_bytes": 98781,
+      "paste_sha256": "87725bd76f3ee92fc342ada99f1321a30823ebfafc434078e3ccb171770d86fd",
+      "manifest_sha256": "8809fade6dd1d5ebf8820346f167b06cebb26fc54f7aac3471df59d6443b0a4b"
+    },
+    {
+      "source_id": "MD-1.5.3-PositiveHessianQuadratic",
+      "eaudit": "EAUDIT04",
+      "total_bytes": 92772,
+      "paste_sha256": "72cb8b1f0de2eed612f73da17e8e001422531d12eb6b724907a3f98eb73fdd5e",
+      "manifest_sha256": "6e28b861d804651b85664a2678ad6d86b94f4994fa12a0bb6f9dcc5847929d74"
+    },
+    {
+      "source_id": "MD-1.5.3-PositiveHessianMinimum",
+      "eaudit": "EAUDIT04",
+      "total_bytes": 91235,
+      "paste_sha256": "07468af2b4a66f7bd06bcdef68410da24a5fa6ec292146378a1a38f9aa5db2c5",
+      "manifest_sha256": "1f7649210778830b6d08b434329aa332ec5de035030aba96232e31f1bdfdc95b"
+    },
+    {
+      "source_id": "MD-1.2-NewtonCompact",
+      "eaudit": "EAUDIT05",
+      "total_bytes": 118255,
+      "paste_sha256": "7b9a8772f113e7e42f800041f08b7ffdcd11620e0ec91bcc6dae4d9b8d6485b6",
+      "manifest_sha256": "a25906236d1925f75eca236f5d6df9b9cf5336839e544a5ef44669b1ded93322"
+    },
+    {
+      "source_id": "MD-1.2-DegreesFreedom",
+      "eaudit": "EAUDIT05",
+      "total_bytes": 115715,
+      "paste_sha256": "f34ad61034c744a3b59a9f151569ee0cf94bccd14b0827c6966c63e38c4d283b",
+      "manifest_sha256": "5c295012c515aa94e686e303b6da3d1c4bbda753dbd57d74cbeab68b0196f4ab"
+    },
+    {
+      "source_id": "MD-1.2-ConstraintDimension",
+      "eaudit": "EAUDIT05",
+      "total_bytes": 116354,
+      "paste_sha256": "89d2288b187c9ca9c6b48e0bf9473c444542719aa5b49a5d96570851eb78ff45",
+      "manifest_sha256": "ea00b906f8381a66dbfec9a882db1b15d24ca78eeccb439bee19ff282431be75"
+    },
+    {
+      "source_id": "MD-1.2-TotalEnergy",
+      "eaudit": "EAUDIT05",
+      "total_bytes": 115138,
+      "paste_sha256": "f8625330d3d6111cfce413890aa3a4185f20802629f0655566c58bb826a9ef1f",
+      "manifest_sha256": "1155d2a580d942d59c5368c3d0124334092929feddc74dce41b28d012500720b"
+    },
+    {
+      "source_id": "MD-1.2-PairCancellation",
+      "eaudit": "EAUDIT05",
+      "total_bytes": 79453,
+      "paste_sha256": "f895f6647562b2f5e1ae2ecfecf7215c126de4f86c01d6580fac8faa3830391a",
+      "manifest_sha256": "47ea0364ca3ceb2a7faabd89da4ea5c4cd42618d0789e75fd30577107dfb2220"
+    },
+    {
+      "source_id": "MD-1.2-MomentumConservation",
+      "eaudit": "EAUDIT05",
+      "total_bytes": 80414,
+      "paste_sha256": "3c2ead6453c0310254bdfe2f63aa2e10bedbe671b5c84caa0c2933247171ffa6",
+      "manifest_sha256": "fe2b64d371dd3cee130af388422d48f1cb2a634302bf8971825b108b77b9d913"
+    },
+    {
+      "source_id": "MD-1.2-HarmonicSolution",
+      "eaudit": "EAUDIT05",
+      "total_bytes": 91865,
+      "paste_sha256": "789a43cc0bd2d32158007d389c6177426dd87b79af6c36f4b93d31e2af975f64",
+      "manifest_sha256": "80d9476328bf431387f27f805453bb0cdc75e7a0a3500880dc9add05d8989550"
+    },
+    {
+      "source_id": "MD-1.2-ScalarMechanical",
+      "eaudit": "EAUDIT05",
+      "total_bytes": 57607,
+      "paste_sha256": "5a8cb7062fb8f1b6368daa69adf5dec0e33d65e57cfa888e8b3b4c2456332d1a",
+      "manifest_sha256": "420f11329f7ede4681ad069a0f6e7a6f29f2822745d360575703cd53bb6b67ac"
+    },
+    {
+      "source_id": "MD-1.2-RadialLJForceLiteral",
+      "eaudit": "EAUDIT06",
+      "total_bytes": 85666,
+      "paste_sha256": "f3228016c310067e6a8e58190c5d92066e7d4c3f8466e0b3a4d9ae3c06baf9f7",
+      "manifest_sha256": "81d10d3b0c4e8e722b5a4863ea40078aa689e85bd4a26fcd462dee332cef49d5"
+    },
+    {
+      "source_id": "MD-1.2-LJTimeScaling",
+      "eaudit": "EAUDIT06",
+      "total_bytes": 146943,
+      "paste_sha256": "107aaacc07c624b981da731d924af9f015b8db89ac247b83620a66cc9914dd57",
+      "manifest_sha256": "d988c9c99f65ce95b929410b85c1ca09664a46e88f202bc31242b15ff6cd8e39"
+    },
+    {
+      "source_id": "MD-1.3-GeneralizedCoordinates",
+      "eaudit": "EAUDIT07",
+      "total_bytes": 92464,
+      "paste_sha256": "db514cdfc978278ef83c4289311e78d8f8a859d03d0406eb1af170921144b698",
+      "manifest_sha256": "a9b041ba6054a7f7f43fcca9da23c6d896863f4e926dba837f76e7c95dd78f3d"
+    },
+    {
+      "source_id": "MD-1.3-GeneralizedMassRegular",
+      "eaudit": "EAUDIT07",
+      "total_bytes": 89344,
+      "paste_sha256": "9c874f0c20355a9c7d5d223fa8856f46860c813f1cf7a5ae3ee78ddc28050768",
+      "manifest_sha256": "ef7a2df097ec89ab42801661e4741d8664681e42fae750b0da948a1af4ed7e59"
+    },
+    {
+      "source_id": "MD-1.4-LegendreHamiltonian",
+      "eaudit": "EAUDIT08",
+      "total_bytes": 88142,
+      "paste_sha256": "fcfba0dbf9d3627820b816501e5f64682e5a6982a1db388ec1f1c52b4a1d0199",
+      "manifest_sha256": "cd5837b79cf707003c38cab4d2b7a269724d5a2b0dd56380647858c9cd3132ef"
+    },
+    {
+      "source_id": "MD-1.4-ConvexLegendre",
+      "eaudit": "EAUDIT08",
+      "total_bytes": 80712,
+      "paste_sha256": "01f85037054cb0b1da92fe9f59b2694cb65b393c67bbae072a90d693c606d39d",
+      "manifest_sha256": "96033a4c3a0f48b2f84f35137ebd24c5d43922745f0ca946ac1e245bafac78f7"
+    },
+    {
+      "source_id": "MD-1.4-HamiltonEquations",
+      "eaudit": "EAUDIT08",
+      "total_bytes": 80299,
+      "paste_sha256": "b5278ce1aea3f43a88dbb93166317b1307f9e2784bac6d1d22def5fd6e379faa",
+      "manifest_sha256": "fed780f49f0862022f7146d7a59e0e1f57ad16d8498ff53c0ab60d2ca79c894b"
+    },
+    {
+      "source_id": "MD-1.4-HamiltonLagrangeEquivalence",
+      "eaudit": "EAUDIT08",
+      "total_bytes": 93371,
+      "paste_sha256": "b0558696f7aea965fcf11d4db4a33e0a4979e3f6e58d10d28691b456a201a7f6",
+      "manifest_sha256": "c6f3bbc97913c8decfcb5d5525dd5ea744e0832a1060c2c44ebead185ac3960f"
+    },
+    {
+      "source_id": "MD-1.4-PhaseSpace",
+      "eaudit": "EAUDIT08",
+      "total_bytes": 94247,
+      "paste_sha256": "b1e2d002c63c737c89aea9b31544a2888188053b3be5f0034f5d1f8c885895ff",
+      "manifest_sha256": "de63e7e08c63bdb925223d3424872536de13a427e5f08c383958253b7174d753"
+    },
+    {
+      "source_id": "MD-1.5.1-FlowEnergy",
+      "eaudit": "EAUDIT09",
+      "total_bytes": 86100,
+      "paste_sha256": "65997b5539a78d9915e6b3d670ea0da352dcc537454cfbf37146d53996bcc847",
+      "manifest_sha256": "ceebdac6336098dffd325a210aa5716eaef2604a67687968fac003d814d445ff"
+    },
+    {
+      "source_id": "MD-1.5.1-HarmonicPhaseFlow",
+      "eaudit": "EAUDIT09",
+      "total_bytes": 90039,
+      "paste_sha256": "678cc9a9458144943ce68777e29ce0673bb4b932efdf8a69f7a2b5110af2fc3a",
+      "manifest_sha256": "17049b6d58f49bcbc8f3b2c32f775b37d240ba8b1f49a3655f1de6aaf8ff8e81"
+    },
+    {
+      "source_id": "MD-1.5.1-SpectralSolution",
+      "eaudit": "EAUDIT09",
+      "total_bytes": 86309,
+      "paste_sha256": "3278b952b6459d62d7916966f50005bcc9c5d5c86fe45cd576367cda58483533",
+      "manifest_sha256": "074d35c9617ea0364f8bf9d9e4b93ddc24ce5941f896da3d2da607160ff9ad61"
+    },
+    {
+      "source_id": "MD-1.5.1-BasisCoefficients",
+      "eaudit": "EAUDIT09",
+      "total_bytes": 84878,
+      "paste_sha256": "013cb74593c96e32b0eecdcdcb738ca09d799484efffe34bde380fc836bb91c6",
+      "manifest_sha256": "e6e3667fa0111c5f17d49ede3f1cae3ab28db8347cf96c89fde4d957f8feb150"
+    },
+    {
+      "source_id": "MD-1.5.1-MatrixExponentialSolution",
+      "eaudit": "EAUDIT09",
+      "total_bytes": 85685,
+      "paste_sha256": "e9b64da9916673c03a14c3a2817c1c91c2f52f38268f0a80b165e3668240318b",
+      "manifest_sha256": "124e4c1dec6604927e8daffddf0b0a8c8007e3db06bab2bc82d4795e64424a83"
+    },
+    {
+      "source_id": "MD-1.1-Schrodinger",
+      "eaudit": "EAUDIT10",
+      "total_bytes": 85437,
+      "paste_sha256": "310b5b236fd8ed9dc0580d5d5e82ac35e311664252f606f9109b61c857be4315",
+      "manifest_sha256": "465227cf05d107df6488afdc3e6aced19d6e1f80f3896a862eed387a565eff14"
+    },
+    {
+      "source_id": "MD-1.1-HardSphere",
+      "eaudit": "EAUDIT10",
+      "total_bytes": 51151,
+      "paste_sha256": "26ca3684c118414ce75cb240a5bfbc4427f9d0ba1b186e2d127646113ffd4bbc",
+      "manifest_sha256": "66a167c5c2883ffed357459c009cc4809add66900e0afacab55c1f7a8ff60eb8"
+    },
+    {
+      "source_id": "MD-1.1.1-MorseMinimum",
+      "eaudit": "EAUDIT11",
+      "total_bytes": 83005,
+      "paste_sha256": "2488e166ce8c15a4bfd53c9324d19b1df2bc531a46c8edaa898361d6b67d6651",
+      "manifest_sha256": "1733ee4c4d56862632c1d3ada8a0bee9577c33b30de72cf6f5f30e572752a7eb"
+    },
+    {
+      "source_id": "MD-1.1.1-LengthBond",
+      "eaudit": "EAUDIT11",
+      "total_bytes": 145993,
+      "paste_sha256": "46058117db8edc0a3dc9123ee083798d5650c7e6443418f7a3e334a49aee72c7",
+      "manifest_sha256": "6604d1963a26913ec626f973f08cb4d1b25714daf4bec70dcfa43a8d6c8d80f2"
+    },
+    {
+      "source_id": "MD-1.1.1-LJRepulsion",
+      "eaudit": "EAUDIT11",
+      "total_bytes": 143625,
+      "paste_sha256": "0467a1854f47b56ecc0859f611e5d2c0ceef72760cd1a927aac8b6951f326795",
+      "manifest_sha256": "6db24876506961e47c3c57284c72e8d25226979caf48a59613074b04a67346c0"
+    },
+    {
+      "source_id": "MD-1.1.1-HeterogeneousLJ",
+      "eaudit": "EAUDIT11",
+      "total_bytes": 135977,
+      "paste_sha256": "f222262d1f95d057106ea478ed052b642ba494d19b7ab8e6616b6b4ecb78d6a1",
+      "manifest_sha256": "7ca3139dfb27d60b713f2e0214174ba4e2da7ec13ff2bddb0bebf586f810878e"
+    },
+    {
+      "source_id": "MD-1.1.2-Coulomb",
+      "eaudit": "EAUDIT12",
+      "total_bytes": 145076,
+      "paste_sha256": "fcde323e49511d45278c9009f75a73625167fd050a4c06b24666b78cfcfa86b3",
+      "manifest_sha256": "3c4049abb4aa3c9d64d2ebffcdd637708cdd71061dccdcfe03a3df6c4da42077"
+    },
+    {
+      "source_id": "MD-1.1.2-Cutoff",
+      "eaudit": "EAUDIT12",
+      "total_bytes": 144640,
+      "paste_sha256": "de7448a9e6cbd44ea01494df1bdea45e86044f4fd937d806def9de170f867081",
+      "manifest_sha256": "580166e5964611e2037b2732c2ea0880114484b04897e941e4c707ca40e9e158"
+    },
+    {
+      "source_id": "MD-1.1.2-Yukawa",
+      "eaudit": "EAUDIT12",
+      "total_bytes": 147346,
+      "paste_sha256": "e73017fdd8666d0779756d88e8fb818218ca93194a059895454cc8d922923f64",
+      "manifest_sha256": "33ba3cfb4d71da8ee4122c62d709ed357b51c836e031fa2ece3b1df2108a4bcf"
+    },
+    {
+      "source_id": "MD-1.1.2-AngleBond",
+      "eaudit": "EAUDIT12",
+      "total_bytes": 107307,
+      "paste_sha256": "0ebac6ece363eb263a44ea180c16ca02fb6950e75423999c30c86d5a19327f2b",
+      "manifest_sha256": "d032014988106437ec76c9733279372240111822f42975934b6950a6df8d58a9"
+    },
+    {
+      "source_id": "MD-1.1.2-GayBerne",
+      "eaudit": "EAUDIT12",
+      "total_bytes": 192659,
+      "paste_sha256": "761e8d2c5763985ee457cfaea4dfc3b4af6de2e86ecc29fe2cd5fcbad736e343",
+      "manifest_sha256": "484d46229b5aa552ce61518566365f6c8809f3c6224eb6ba695bf8bebc6ca732"
+    },
+    {
+      "source_id": "MD-1.5-LocalExistUnique",
+      "eaudit": "EAUDIT13",
+      "total_bytes": 97678,
+      "paste_sha256": "14d1c7521eb72be975423c641c098641f39e8e9ee3575af409d7f3a34e6a1169",
+      "manifest_sha256": "74614f9328e8d2e591588e13db734789bd7a01072fefa73c879cfe8265f7420e"
+    },
+    {
+      "source_id": "MD-1.5-CompactContinuation",
+      "eaudit": "EAUDIT13",
+      "total_bytes": 111854,
+      "paste_sha256": "5f84e48e455c75af7b1807b31d675bbad66865b0e13d1a079bb39a403a72bd3e",
+      "manifest_sha256": "3d5817e73f076f759893d2ae9b9801e1fae895fbb9425d39d331e9047ea90756"
+    },
+    {
+      "source_id": "MD-1.5.2-FirstIntegral",
+      "eaudit": "EAUDIT14",
+      "total_bytes": 76822,
+      "paste_sha256": "33dfb7f1760c1febb0e5c900c402a0aa2c7e3ecf5bcf672ef789a464a30e98e6",
+      "manifest_sha256": "658d185db42fb40636bcade2b37ca3be48f11faddfff289b20e5e833b713abcf"
+    },
+    {
+      "source_id": "MD-1.5.2-FirstIntegralCriterion",
+      "eaudit": "EAUDIT14",
+      "total_bytes": 76371,
+      "paste_sha256": "e0b3907c47d981cb5f709880934eb63f52fc8cc15c51670912ea3fe031716b25",
+      "manifest_sha256": "b1f88b0b706136c00bf8d292b2a70b61a349c7a9cf5f033257eea13d10658bff"
+    },
+    {
+      "source_id": "MD-1.5.2-PlanarGraphReduction",
+      "eaudit": "EAUDIT14",
+      "total_bytes": 76828,
+      "paste_sha256": "9bdbba79f7bc4b6fa3ee1a126e68712e7584266c0c9eb137391023af847b77c0",
+      "manifest_sha256": "bf2e74c15de7b29187e0ac3a97e569c697b85894fdca365c7e4d44eb7f7b8879"
+    },
+    {
+      "source_id": "MD-1.5.2-PlanarQuadrature",
+      "eaudit": "EAUDIT14",
+      "total_bytes": 77347,
+      "paste_sha256": "9f65b01d4c38d70d436f217b12e7fdf31f3cd06c6883500ab18a38cd6a0fa2a2",
+      "manifest_sha256": "6a7c06b12476e0eaf590ecd24e2dc009bfad103807ad9b44b9aaeba143c5d93e"
+    },
+    {
+      "source_id": "MD-1.5.2-ScalarFirstIntegral",
+      "eaudit": "EAUDIT14",
+      "total_bytes": 78301,
+      "paste_sha256": "650a17de7cf5653e3b2e08621c6e73e843ffeea31985fe83e7224e7ebbeafc16",
+      "manifest_sha256": "e08a5694b508b5a032d258acc430347ae5386a559c69ec8c9674b365f23afe48"
+    },
+    {
+      "source_id": "MD-1.5.2-KeplerConservedEnergy",
+      "eaudit": "EAUDIT14",
+      "total_bytes": 73880,
+      "paste_sha256": "81a15e6b248510cedecfa8e62018896cea15ab9fad949a4f7f457b0f85e794c7",
+      "manifest_sha256": "1a9dc8765042bc0ebf2f6e41c39634f0436d3b0cd4d28b33b641cf4c833197b2"
+    },
+    {
+      "source_id": "MD-1.5.2-KeplerAngularMomentum",
+      "eaudit": "EAUDIT14",
+      "total_bytes": 66215,
+      "paste_sha256": "bdff8d6c014e7faca0587ab003ad807f79961d259e3c2ac5a659612364af1e16",
+      "manifest_sha256": "7a49ac784f1a7403bd7190236e96632d4fbe720161bdf9bb294a2410aecfc14f"
+    },
+    {
+      "source_id": "MD-1.5.2-KeplerMomentum",
+      "eaudit": "EAUDIT14",
+      "total_bytes": 65890,
+      "paste_sha256": "278ac10f0ca1775decd5367ee038469e9396381105e9de9543aff52ca8a84bf9",
+      "manifest_sha256": "a9651e5e892380c4097a02c28408c128fd3b45846dc3b3139fd1b7376a66e727"
+    },
+    {
+      "source_id": "MD-1.5.2-KeplerPolarODE",
+      "eaudit": "EAUDIT15",
+      "total_bytes": 61709,
+      "paste_sha256": "30b09966c00c9c072de13d6233425dd1596bc6e75f690d920df6d771d9c65a53",
+      "manifest_sha256": "0e3bbc2f64fa6a145ff821fadd46e2108c7ac86c320ed3f8ae3adca4d44f310e"
+    },
+    {
+      "source_id": "MD-1.5.2-KeplerRadialReduction",
+      "eaudit": "EAUDIT15",
+      "total_bytes": 61640,
+      "paste_sha256": "86f3332a889067bd58b3029bd2560d8133f73518c2f9cca5746fa38e7af83fae",
+      "manifest_sha256": "0af4834e1a677c3ea5f0e0051a386db6ae5addbbedead75138c511b59382ed8a"
+    },
+    {
+      "source_id": "MD-1.5.2-KeplerFullSolution",
+      "eaudit": "EAUDIT15",
+      "total_bytes": 75112,
+      "paste_sha256": "c58c29dba391701e8f40f1b883b6bd106a4583970dbc4b7694d0f5d647268596",
+      "manifest_sha256": "718a03461e837cc411919b43c626b2cd8a4a7550383d6d46767acedca4ba46a0"
+    },
+    {
+      "source_id": "MD-1.5.2-ActionEnergy",
+      "eaudit": "EAUDIT15",
+      "total_bytes": 67548,
+      "paste_sha256": "42b7b859e679f34af43583720066081327f3f9b7f8211fb866bb3505c83489dd",
+      "manifest_sha256": "329f4445b56a53010003bae212447b4f1a4ede7121f3240737c6449210f58658"
+    },
+    {
+      "source_id": "MD-1.5.2-ActionODE",
+      "eaudit": "EAUDIT15",
+      "total_bytes": 67371,
+      "paste_sha256": "867ab924ce8b77bc914de9ed37b59aabdc9e5c29ab04cb6115742235d28072a7",
+      "manifest_sha256": "5b9f233e6d6973d9f222d552f23ba8d9051adf24a7b98b6ba82a6c7a1e338fca"
+    },
+    {
+      "source_id": "MD-1.5.2-ActionSolution",
+      "eaudit": "EAUDIT15",
+      "total_bytes": 67681,
+      "paste_sha256": "4e98f010ee71f75ee2a30f5382ed13bb71000eecfa52bdcbf3a6c785082efabd",
+      "manifest_sha256": "cc89cb0371824d74d40eabfb515c25a43a56331721805aa5481ca573881c35bb"
+    },
+    {
+      "source_id": "MD-1.5.2-HarmonicTorus",
+      "eaudit": "EAUDIT15",
+      "total_bytes": 67315,
+      "paste_sha256": "fe32f94d597a9fd6659442c6f884af6121988f983137f119c47634b05c83a81c",
+      "manifest_sha256": "a08c6d2599521676ee8d761a2e42e63205ffcd4477eac16af8a053b5369da678"
+    },
+    {
+      "source_id": "MD-1.5.2-TorusPeriod",
+      "eaudit": "EAUDIT15",
+      "total_bytes": 68207,
+      "paste_sha256": "911e26018ca51a8ceb4fc90ec5c7e1bf38707262b9c54b1659423b98f20917d8",
+      "manifest_sha256": "e9647035c743729d94256c009c74ebf070b88304953fb53f714caf639eead1b4"
+    },
+    {
+      "source_id": "MD-1.5.2-TorusDense",
+      "eaudit": "EAUDIT16",
+      "total_bytes": 68015,
+      "paste_sha256": "a3bcd3f2a9bd350c4702b29fb17bf66bc587eebdd959bbb8982771599631aed6",
+      "manifest_sha256": "4a33e30ea600ebe23337ad120fb67b241817842627bcbd7396a1314fbb2c7b1c"
+    },
+    {
+      "source_id": "MD-1.5.2-LocalActionAngleReduction",
+      "eaudit": "EAUDIT16",
+      "total_bytes": 73532,
+      "paste_sha256": "bd298acb6ef130eecf545773fa56735c006ed6de57c94d2ae8fb828d2067f8fa",
+      "manifest_sha256": "6c12188c03e4bd956ce2910f2cb9eaca4658a78b3108f97c865ab43d26ad386e"
+    },
+    {
+      "source_id": "MD-1.6-PeriodicBoundary",
+      "eaudit": "EAUDIT17",
+      "total_bytes": 158946,
+      "paste_sha256": "aba3bf12a48b57bd0e8f1dbeab8c905b0889c05fd67a3e1df4adc47c0afb81e0",
+      "manifest_sha256": "c4f4c64a789e9dd7d7902d870e30349ff32172c699e30bb85d17deb0182efcbe"
+    },
+    {
+      "source_id": "MD-1.6-PeriodicTranslationMomentum",
+      "eaudit": "EAUDIT17",
+      "total_bytes": 161607,
+      "paste_sha256": "a9789fd15dca6a4b2e2556c54b9e76cdb8441358842e85c7225ca37ba81a2ebc",
+      "manifest_sha256": "4065b20f264078372976a36f09a198a744972395d5327a2f14945e6158e01670"
+    },
+    {
+      "source_id": "MD-1.6-RegularLatticeMinimizerLiteral",
+      "eaudit": "EAUDIT17",
+      "total_bytes": 162570,
+      "paste_sha256": "49b458cab686e80bcd411ce2cfa233e76d5f7da08a2bbf332709c615e240638f",
+      "manifest_sha256": "ad5827b26ed1a9bdf4a3ac810e519441ad829a8f512eaf2b0fb91354bdc096f4"
+    },
+    {
+      "source_id": "MD-1.6-PeriodicImages",
+      "eaudit": "EAUDIT17",
+      "total_bytes": 152332,
+      "paste_sha256": "661cd892ddf01f886a3c258d39614fe54159deff1cea1930d7041e5ffce1c946",
+      "manifest_sha256": "255655e3e697eef065bd5c22ff140e00a4b1ff771fac66c8e4d005a96fdaee80"
+    },
+    {
+      "source_id": "MD-1.6-MinimumImage",
+      "eaudit": "EAUDIT17",
+      "total_bytes": 152550,
+      "paste_sha256": "a411a48ca1d5c342ec8808d1704403499fe28633714fca76f934eeb5395bf69a",
+      "manifest_sha256": "5237fa81974bd81ebb5d2091f50bb5421018b4e099b1dff7d888c9acc67c1683"
+    },
+    {
+      "source_id": "MD-1.6-RhombicLattice",
+      "eaudit": "EAUDIT17",
+      "total_bytes": 150820,
+      "paste_sha256": "367d2e11649c75113acc6225e02ea403bd4233eb90f62f5fb8ebbcab119a596d",
+      "manifest_sha256": "80e2e216de713c7396d846d5f2dd35d256d3ec022c5d01fd43ec131c1475a825"
+    },
+    {
+      "source_id": "MD-1.6-UnitCell",
+      "eaudit": "EAUDIT17",
+      "total_bytes": 151270,
+      "paste_sha256": "461338b37858e1fdc635d0c7db9db68c560ba089dbf27188d5ef11d5794f9f98",
+      "manifest_sha256": "438f4b1670bf3eba2afcd4ca7ba5120e850b624324838965f1a708e214e2e5f4"
+    },
+    {
+      "source_id": "MD-1.6-FCCStacking",
+      "eaudit": "EAUDIT17",
+      "total_bytes": 187637,
+      "paste_sha256": "810fd7d435b2fbca3fe5942c18d4f8d45982a8be6d49668025e41f1287c92d9d",
+      "manifest_sha256": "bbc91b7320b4a06940026ca5c45fe1dd801be3f4f8fb38161ac8d5b2da371519"
+    },
+    {
+      "source_id": "MD-1.6-HCPStacking",
+      "eaudit": "EAUDIT18",
+      "total_bytes": 187457,
+      "paste_sha256": "ffa6696a7e684c545134f043348b6b5b5bff7f590521c6468477a478f61f8484",
+      "manifest_sha256": "860ae385eb41373ef7b1170b21581fd8839d05ac0de1b45f14a44437515f11ca"
+    },
+    {
+      "source_id": "MD-1.6.1-MinimumGradientZero",
+      "eaudit": "EAUDIT19",
+      "total_bytes": 237793,
+      "paste_sha256": "2ec3afdd9829e069a9647d58ff375f6a716d94f44bdc97246c674453070b056e",
+      "manifest_sha256": "498b583458fc1175fe74284711c0ab13ce1655248a37058b49203e649e999557"
+    },
+    {
+      "source_id": "MD-1.6.1-ForceLinearization",
+      "eaudit": "EAUDIT19",
+      "total_bytes": 131676,
+      "paste_sha256": "77642d8d8d3d6dc641f13ec1c6c31d9cb652930fc414a325cb4a9f989e234e79",
+      "manifest_sha256": "63e33ff221a8620a106e3483d4efe918ad7a4462e7fc1967b9396eae4eaeeadd"
+    },
+    {
+      "source_id": "MD-1.6.1-MinimumHessianLiteral",
+      "eaudit": "EAUDIT19",
+      "total_bytes": 130173,
+      "paste_sha256": "5d12792a78a7a9aaeb626da2ada6c9a16e2e91146c838a91f50b3b066dd8af2b",
+      "manifest_sha256": "db3b6e9fde092a95a9c4c0b37842d744de7c056338ad1e97c58f511be484976e"
+    },
+    {
+      "source_id": "MD-1.6.1-ComplexNormalMode",
+      "eaudit": "EAUDIT19",
+      "total_bytes": 128728,
+      "paste_sha256": "439118a9a8da4b7ac6be450e892f4685a2250c078c7b231b32913f7dc781fbd2",
+      "manifest_sha256": "b61cc2b2e94ba66d3e2a4908b6e0b37e53b5d2dacaceb698a2146a0088ba384f"
+    },
+    {
+      "source_id": "MD-1.6.1-RealNormalMode",
+      "eaudit": "EAUDIT19",
+      "total_bytes": 128830,
+      "paste_sha256": "7d32d59e12dd7c451271d8f91b3c97e86e434c80bdcdbe6ffbbaf5e7b1dd0e18",
+      "manifest_sha256": "8440b5bee67e9588578855323ea67dd4149248076465e4ce0a18b8ab61ffa0ac"
+    },
+    {
+      "source_id": "MD-1.7-PlanarTrimerModel",
+      "eaudit": "EAUDIT20",
+      "total_bytes": 89056,
+      "paste_sha256": "5defccd6aae65f461292d08a325f8d4784fa6104683ec5efce2dd7a61bbe80b3",
+      "manifest_sha256": "f73b8656bb70d14dbf79996fc67f66d4c22c1fca26a166f35e0fcbc9abd0b76b"
+    },
+    {
+      "source_id": "MD-1.7-CentralPairPotential",
+      "eaudit": "EAUDIT20",
+      "total_bytes": 89014,
+      "paste_sha256": "7bd953ca8ca7f333d28dd2b252974938551b0b9d8c45d381db1027e69985ad25",
+      "manifest_sha256": "1872a925aad1fb2e4884a3670628720d8fdc247d92d7fd35ccbbe2b95d8f37be"
+    },
+    {
+      "source_id": "MD-1.7-CentralPairGradient",
+      "eaudit": "EAUDIT20",
+      "total_bytes": 88710,
+      "paste_sha256": "6566e48ef1f22b071e8ed77a75cb519966562e551670c7ea0b646f82751f3197",
+      "manifest_sha256": "844e1efc19a918ee2fe5b9fa6f53453a793bd02fae98bee22f298924a0166e84"
+    },
+    {
+      "source_id": "MD-1.7-CentralMomentum",
+      "eaudit": "EAUDIT20",
+      "total_bytes": 88021,
+      "paste_sha256": "8ca45b6caae9017685c94ba873c68666f49cc1bd73a11726119eaedf110a3226",
+      "manifest_sha256": "30fec7807c7e583a70ed9985d5c38d0525bf3ae2673e6f9f40ba9e7f3f1e623f"
+    },
+    {
+      "source_id": "MD-1.7-CentralAngularMomentum",
+      "eaudit": "EAUDIT20",
+      "total_bytes": 92995,
+      "paste_sha256": "a7abb42166b3c10698875af23bfd30d27403adfbe41021994228b6c8ac5fd998",
+      "manifest_sha256": "421cbdaedeff88b87c9a3c78d861b28e55f24f6d11c0afedcd6e4955be7afb11"
+    },
+    {
+      "source_id": "MD-1.7-CenterOfMassMotion",
+      "eaudit": "EAUDIT20",
+      "total_bytes": 89174,
+      "paste_sha256": "9c7b7c4cfb64228b3ca32d5ee8335e2b88e44b99e61270581abd3fec7ffae17a",
+      "manifest_sha256": "e1b1f6206a0af6126071500bbd6ac373e1beb704d8f1a612fc92e7339dafd8da"
+    },
+    {
+      "source_id": "MD-1.7-ConstantRotationLiteral",
+      "eaudit": "EAUDIT20",
+      "total_bytes": 87995,
+      "paste_sha256": "aa5c6e6d8df0f376724b9015158d08706aed0311e1a4d01d6b0b12af6a8cba7b",
+      "manifest_sha256": "9737917bed6725d1959aaeb2d0aa2e7e579b086f47fefa122cbaf76ff64eb6f0"
+    },
+    {
+      "source_id": "MD-1.7-IsoscelesCoordinates",
+      "eaudit": "EAUDIT20",
+      "total_bytes": 89806,
+      "paste_sha256": "7ae2f9dee0f5ec7fba02fa686f11f53306f5d583c5b5bb3051bf9459064e8165",
+      "manifest_sha256": "13d37068039991c389d015dc4ec69d7920a961c48e6a79a205325f992c902781"
+    },
+    {
+      "source_id": "MD-1.7-IsoscelesEnergyReduction",
+      "eaudit": "EAUDIT21",
+      "total_bytes": 91933,
+      "paste_sha256": "a445504e7194679d0c315f6f3ded4a267d001f5a620c265cd0ea07a3600b7a58",
+      "manifest_sha256": "a67a1eb2de6f33a01ce6c0ad0443fc7da66b93f68ebeb40c14f38d91f382e3ab"
+    },
+    {
+      "source_id": "MD-1.7-IsoscelesAccessibleRegion",
+      "eaudit": "EAUDIT21",
+      "total_bytes": 201578,
+      "paste_sha256": "f1dd6164bbb6f90ad9f7176962971ea3acb562db16862f89de1503be5f576961",
+      "manifest_sha256": "b5bb31d5c2d896b8421164f887497f8dbeee1477f4121782e17b2af50fa95533"
+    },
+    {
+      "source_id": "MD-1.7-EquilateralTrimerMinimum",
+      "eaudit": "EAUDIT21",
+      "total_bytes": 89529,
+      "paste_sha256": "60d31b82778e889cfd6428c971772daa2b104e48a873d847e86c4e666d2d2544",
+      "manifest_sha256": "b0475543c1e2e1ec00250b8f3d216b73d20b58f5582dedead0d38936a3d48f02"
+    },
+    {
+      "source_id": "MD-1.7-TrimerEnergyLowerBound",
+      "eaudit": "EAUDIT21",
+      "total_bytes": 202364,
+      "paste_sha256": "03af204109a7acd3122610e16108b053e16b9026c95bea348d8ff06952173a47",
+      "manifest_sha256": "ec89169b5e188bdb36f88f300bf6e260b3cd9be144731ed09a3e9702fd75a5b8"
+    },
+    {
+      "source_id": "MD-1.7-TrimerSaddle",
+      "eaudit": "EAUDIT21",
+      "total_bytes": 225223,
+      "paste_sha256": "870010fb03f8326877497be41e3d8a325f2dd631a474e5e8657efffc79e4ed04",
+      "manifest_sha256": "c28db39ac12cc0eeea67a84b1a3afad76f1724cf095abbae2bf0059070db070a"
+    },
+    {
+      "source_id": "MD-1.7-TrimerEscapeLiteral",
+      "eaudit": "EAUDIT21",
+      "total_bytes": 205618,
+      "paste_sha256": "7a27786aca70d7fce285f39fd554fe8eb60dbeea9f1e90eb8c049b768e61d565",
+      "manifest_sha256": "1aa785f203db43e2f1675685f8851e56b26f76a0d2a662ca67d09a7dcd65b577"
+    },
+    {
+      "source_id": "MD-1.7.1-ChaosConditions",
+      "eaudit": "EAUDIT22",
+      "total_bytes": 101036,
+      "paste_sha256": "93e77613d87c26f93034b6d2c365e40f7691961750a21e6d55d5e0f2fdac73c4",
+      "manifest_sha256": "0bef11ea162dd6dd81d2242e4c9152cf413fb11756934fbb96c906edb0a3fbd1"
+    },
+    {
+      "source_id": "MD-1.7.1-TransitivityErgodicityLiteral",
+      "eaudit": "EAUDIT22",
+      "total_bytes": 82912,
+      "paste_sha256": "6acb0cc55d880f5246556db15974acd58a7b46a8fe26e03116b981ed662ec48a",
+      "manifest_sha256": "f84be8e76242347f0f1754be04a31ace1b5545f261785efed43db0762e9f87b3"
+    },
+    {
+      "source_id": "MD-1.7.1-AnisotropicOscillator",
+      "eaudit": "EAUDIT22",
+      "total_bytes": 81411,
+      "paste_sha256": "6a29ba060854016ad61480051e5cb19fae06a20d54ae11c293b5bb7e7d4a6a46",
+      "manifest_sha256": "43c4d0d2b1843475503643a4aa8e5d93cad5b7a8c44e530a48f6ce51dfbb406b"
+    },
+    {
+      "source_id": "MD-1.7.2-FlowJacobianLiteral",
+      "eaudit": "EAUDIT23",
+      "total_bytes": 220275,
+      "paste_sha256": "a3326572218aa22f0fef8e987e4be2ff05635c9c6d137f5f3c051c0f6b1ad619",
+      "manifest_sha256": "c9e656334a65a8242ebd5905bb14f3a45cd1e137e6ddb38da2f519e323707fe2"
+    },
+    {
+      "source_id": "MD-1.7.2-VariationalEquationLiteral",
+      "eaudit": "EAUDIT23",
+      "total_bytes": 252937,
+      "paste_sha256": "f718af4a6fbc24851f3e2ac9bfe584a084234a555f060bb93581933415341661",
+      "manifest_sha256": "08ab48d5e5c47f4340c66d9153badd77c5563920e2ee9e4562fe99167eab5803"
+    },
+    {
+      "source_id": "MD-1.7.2-NearbyTrajectoryLiteral",
+      "eaudit": "EAUDIT23",
+      "total_bytes": 117871,
+      "paste_sha256": "9824193f308da0143c5589995f902be64ba24312038aa3a621bd21b8d19bc8aa",
+      "manifest_sha256": "d38956c9423db8eed69822b93c8ab6c58619a3e49203fd3d629e649b91a2f13a"
+    }
+  ]
+}

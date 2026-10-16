@@ -1,0 +1,99 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.3-GeneralizedCoordinates；原PDF页映射=[46]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT07_review.json，对象含batch=EAUDIT07、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT07.md": "8048e87bd55f7051afece85135c484bd7141e890c2db3d84e2846958183bbce3",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT07a_materials": "047af626541a770d1bf4d2ea9f06c55517aac5088e14904a200cc2c94db88a60",
+  "EAUDIT07a_PAGES.pdf": "07b0f6401494c834243e98caa1e67b101cec756ec4d17c4655e012ee9941c326"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.3-GeneralizedCoordinates",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.3",
+  "printed_page": "23",
+  "pdf_page": "46",
+  "statement_latex": "When we introduce a smooth change of variables $\\boldsymbol q=\\boldsymbol\\Phi(\\boldsymbol Q)$, where $\\boldsymbol\\Phi:\\mathbb R^{N_c}\\to\\mathbb R^{N_c}$, this induces a corresponding transformation of the velocity vector by\n\\[\\dot{\\boldsymbol q}=\\boldsymbol\\Phi'(\\boldsymbol Q)\\dot{\\boldsymbol Q},\\]\nwhere $\\boldsymbol\\Phi'$ is the $N_c\\times N_c$ Jacobian matrix of $\\boldsymbol\\Phi$. Then the Lagrangian of the system is transformed to\n\\[\\widetilde L=\\frac{\\dot{\\boldsymbol Q}^{T}\\boldsymbol\\Phi'(\\boldsymbol Q)^{T}\\boldsymbol M\\boldsymbol\\Phi'(\\boldsymbol Q)\\dot{\\boldsymbol Q}}2-U(\\boldsymbol\\Phi(\\boldsymbol Q)),\\]",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [
+    "J=Φ′(Q)真实Frechet导数；generalizedMassMatrix=JᵀMJ；后段允许k=Nd≤Nc参数化约束流形。"
+  ],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.generalized_coordinates",
+  "extra_assumptions": [
+    "原文smooth可在本结论弱化至点态真实可微；k可小于n，含原文约束推广。"
+  ],
+  "old_ids": [
+    "CH01-074",
+    "CH01-075",
+    "CH01-076",
+    "CH01-077"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem generalized_coordinates {n k : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) (Φ : Position k → Position n)
+    (J : Matrix (Fin n) (Fin k) ℝ) (q : ℝ → Position k) (V : Velocity k) (t : ℝ)
+    (hΦ : HasFDerivAt Φ J.toEuclideanLin.toContinuousLinearMap (q t))
+    (hq : HasDerivAt q V t) :
+    HasDerivAt (fun s => Φ (q s)) (J.toEuclideanLin V) t ∧
+    massLagrangian m U (Φ (q t)) (J.toEuclideanLin V) =
+      inner ℝ V ((generalizedMassMatrix m J).toEuclideanLin V) / 2 - U (Φ (q t)) := by
+  exact ⟨hasDerivAt_coordinateChange Φ J q V t hΦ hq,
+    massLagrangian_coordinateChange m U Φ J (q t) V⟩
+```
+### 实际依赖 MolecularDynamics.CoordinateMasses
+```lean
+abbrev CoordinateMasses (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.MassMatrix
+```lean
+abbrev MassMatrix (n : ℕ) := Matrix (Fin n) (Fin n) ℝ
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.PotentialEnergy
+```lean
+abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
+```
+### 实际依赖 MolecularDynamics.Velocity
+```lean
+abbrev Velocity (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.diagonalMassMatrix
+```lean
+def diagonalMassMatrix {n : ℕ} (masses : CoordinateMasses n) : MassMatrix n :=
+  Matrix.diagonal masses
+```
+### 实际依赖 MolecularDynamics.generalizedMassMatrix
+```lean
+noncomputable def generalizedMassMatrix {n k : ℕ} (m : CoordinateMasses n)
+    (J : Matrix (Fin n) (Fin k) ℝ) : MassMatrix k :=
+  J.transpose * diagonalMassMatrix m * J
+```
+### 实际依赖 MolecularDynamics.massLagrangian
+```lean
+noncomputable def massLagrangian {n : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) (q : Position n) (v : Velocity n) : ℝ :=
+  nBodyKineticEnergy m v - U q
+```
+### 实际依赖 MolecularDynamics.nBodyKineticEnergy
+```lean
+noncomputable def nBodyKineticEnergy {n : ℕ} (masses : CoordinateMasses n)
+    (velocity : Velocity n) : ℝ :=
+  ∑ i, masses i * (velocity i) ^ 2 / 2
+```

@@ -1,0 +1,80 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_ids": [
+    "MD-1.6-PeriodicBoundary",
+    "MD-1.6-PeriodicTranslationMomentum",
+    "MD-1.6-RegularLatticeMinimizerLiteral",
+    "MD-1.6-PeriodicImages",
+    "MD-1.6-MinimumImage",
+    "MD-1.6-RhombicLattice",
+    "MD-1.6-UnitCell",
+    "MD-1.6-FCCStacking"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "98b04fa61c3c549df392f5214e8d8e21190da8e4e25189974fd7f8d8ed734fd3",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT17a",
+      "source_id": "MD-1.6-PeriodicBoundary",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/a",
+      "total_bytes": 158946,
+      "manifest_sha256": "c4f4c64a789e9dd7d7902d870e30349ff32172c699e30bb85d17deb0182efcbe"
+    },
+    {
+      "subtask": "EAUDIT17b",
+      "source_id": "MD-1.6-PeriodicTranslationMomentum",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/b",
+      "total_bytes": 161607,
+      "manifest_sha256": "4065b20f264078372976a36f09a198a744972395d5327a2f14945e6158e01670"
+    },
+    {
+      "subtask": "EAUDIT17c",
+      "source_id": "MD-1.6-RegularLatticeMinimizerLiteral",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/c",
+      "total_bytes": 162570,
+      "manifest_sha256": "ad5827b26ed1a9bdf4a3ac810e519441ad829a8f512eaf2b0fb91354bdc096f4"
+    },
+    {
+      "subtask": "EAUDIT17d",
+      "source_id": "MD-1.6-PeriodicImages",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/d",
+      "total_bytes": 152332,
+      "manifest_sha256": "255655e3e697eef065bd5c22ff140e00a4b1ff771fac66c8e4d005a96fdaee80"
+    },
+    {
+      "subtask": "EAUDIT17e",
+      "source_id": "MD-1.6-MinimumImage",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/e",
+      "total_bytes": 152550,
+      "manifest_sha256": "5237fa81974bd81ebb5d2091f50bb5421018b4e099b1dff7d888c9acc67c1683"
+    },
+    {
+      "subtask": "EAUDIT17f",
+      "source_id": "MD-1.6-RhombicLattice",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/f",
+      "total_bytes": 150820,
+      "manifest_sha256": "80e2e216de713c7396d846d5f2dd35d256d3ec022c5d01fd43ec131c1475a825"
+    },
+    {
+      "subtask": "EAUDIT17g",
+      "source_id": "MD-1.6-UnitCell",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/g",
+      "total_bytes": 151270,
+      "manifest_sha256": "438f4b1670bf3eba2afcd4ca7ba5120e850b624324838965f1a708e214e2e5f4"
+    },
+    {
+      "subtask": "EAUDIT17h",
+      "source_id": "MD-1.6-FCCStacking",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT17/h",
+      "total_bytes": 187637,
+      "manifest_sha256": "bbc91b7320b4a06940026ca5c45fe1dd801be3f4f8fb38161ac8d5b2da371519"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.6"
+}

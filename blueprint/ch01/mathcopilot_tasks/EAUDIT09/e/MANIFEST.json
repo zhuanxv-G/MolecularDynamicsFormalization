@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT09",
+  "source_id": "MD-1.5.1-MatrixExponentialSolution",
+  "input_sha256": {
+    "BATCH_EAUDIT09.md": "58c1fb0669e964c5540f9a666143d76cd20b18b9b1ff908232b3c91fd207ebb1",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT09e_materials": "6a12cd57e6d049e179e69769cb60500389de4fe15e873380a8166defb15ae6d0",
+    "EAUDIT09e_PAGES.pdf": "b773009f6b73dbcbf02bb4f201e5763b680465daa5d53fcc0a374c07b4c58460"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    50
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "e9b64da9916673c03a14c3a2817c1c91c2f52f38268f0a80b165e3668240318b",
+  "source_block_sha256": "530ece2074b808c1f4d751fd530a02e40edbb1906de255acd595e4a54d792d60",
+  "source_declarations": [
+    "matrixexponentialsolution"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LinearFlow.lean",
+      "name": "linearExponentialFlow",
+      "file_sha256": "fb2fa6db4936e40275468b34e871212c1423e55e532ad3afb715aa360e192228",
+      "excerpt_sha256": "e2fdc1dae6cf73a5c0a70f711a32d44216387ecdc165b18e1ff9a841b73ca82a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/MatrixFlow.lean",
+      "name": "matrixExponentialFlow",
+      "file_sha256": "055b277396664fe170dc6b1494af832809a64c4fd7a4814b3e2e0adb753a65d6",
+      "excerpt_sha256": "8107d646c89fc29824245dc3f7c880ad5b2a525884abe9ee152b9927959f8130"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT09_review.json",
+  "total_task_bytes": 85685
+}

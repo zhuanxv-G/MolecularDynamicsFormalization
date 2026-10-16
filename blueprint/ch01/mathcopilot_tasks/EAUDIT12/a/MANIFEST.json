@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT12",
+  "source_id": "MD-1.1.2-Coulomb",
+  "input_sha256": {
+    "BATCH_EAUDIT12.md": "1bbbf91c3dc107097af57da73ca6d01e58c4e81a009ac2cb92974cbb625a329b",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT12a_materials": "b6efaa38bfd5bff500e99c1b6aee0bd41e629ae810ac2727722d62369911302b",
+    "EAUDIT12a_PAGES.pdf": "15aba94ce9b9c819b88b6a7e03350a8db64f14541c5a5ad823c8cba2f76fe84d"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    35
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "fcde323e49511d45278c9009f75a73625167fd050a4c06b24666b78cfcfa86b3",
+  "source_block_sha256": "7d4552086bcc0064f2b07135e6b9b8dee7ae6e644430ca687790e2912dfecd70",
+  "source_declarations": [
+    "coulombPotential"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "coulombPotential",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "7d4552086bcc0064f2b07135e6b9b8dee7ae6e644430ca687790e2912dfecd70"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT12_review.json",
+  "total_task_bytes": 145076
+}

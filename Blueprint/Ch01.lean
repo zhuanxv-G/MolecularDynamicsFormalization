@@ -25,6 +25,7 @@ import MolecularDynamics.Chapter01.EnergyConservation
 import MolecularDynamics.Chapter01.Lagrangian
 import MolecularDynamics.Chapter01.LegendreTransform
 import MolecularDynamics.Chapter01.GlobalFlow
+import Mathlib.Analysis.Convex.Jensen
 
 /-!
 Chapter 1 body: 141 draft statements for independent semantic review.
@@ -190,7 +191,7 @@ theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
       ext i
       exact congrFun hnewton.1 i
 
-/-- source_id: MD-1.4-LegendreHamiltonian · unnumbered claim · printed p.24 / PDF p.47
+/-- source_id: MD-1.4-LegendreHamiltonian · unnumbered claim · printed p.24 / PDF p.47 【原书疑误】
 Original: The Legendre supremum is attained precisely at M(q)⁻¹p and yields H(q,p).
 [ERRATUM?] The literal invertibility premise alone does not imply a bounded objective:
 M = -1, U = 0, p = 0 gives v²/2. Convexity/positive definiteness may be inherited
@@ -203,6 +204,43 @@ diagonal library theorem cannot establish this signature. This draft is unproved
 The conjuncts keep boundedness, supremum, exact maximizing velocity, momentum
 gradient, and the energy identity after the inverse-velocity substitution. -/
 theorem hamiltonian_legendre_transform {n : ℕ}
+    (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)
+    (q : Position n) (p : Momentum n) (hM : IsUnit (M q))
+    (hPositive : (M q).PosDef) :
+    BddAbove (range (fun v : Velocity n =>
+      inner ℝ p v - variableMassLagrangian M U q v)) ∧
+    sSup (range (fun v : Velocity n => inner ℝ p v - variableMassLagrangian M U q v)) =
+      variableMassHamiltonian M U q p ∧
+    (∀ v : Velocity n, inner ℝ p v - variableMassLagrangian M U q v =
+      variableMassHamiltonian M U q p ↔ v = matrixAction (M q)⁻¹ p) ∧
+    (∀ v : Velocity n, HasGradientAt (variableMassLagrangian M U q)
+      (matrixAction (M q) v) v) ∧
+    p = matrixAction (M q) (matrixAction (M q)⁻¹ p) ∧
+    variableMassHamiltonian M U q p =
+      inner ℝ (matrixAction (M q)⁻¹ p)
+        (matrixAction (M q) (matrixAction (M q)⁻¹ p)) / 2 + U q := by
+  sorry
+
+/-- 修正版，对应原文 MD-1.4-LegendreHamiltonian，改动：新增仅可逆的原文字面版；修正版继承正定质量背景并保留上界、精确上确界、唯一达到点、动量梯度与能量全部结论。 -/
+theorem hamiltonian_legendre_transform_literal {n : ℕ}
+    (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)
+    (q : Position n) (p : Momentum n) (hM : IsUnit (M q)) :
+    BddAbove (range (fun v : Velocity n =>
+      inner ℝ p v - variableMassLagrangian M U q v)) ∧
+    sSup (range (fun v : Velocity n => inner ℝ p v - variableMassLagrangian M U q v)) =
+      variableMassHamiltonian M U q p ∧
+    (∀ v : Velocity n, inner ℝ p v - variableMassLagrangian M U q v =
+      variableMassHamiltonian M U q p ↔ v = matrixAction (M q)⁻¹ p) ∧
+    (∀ v : Velocity n, HasGradientAt (variableMassLagrangian M U q)
+      (matrixAction (M q) v) v) ∧
+    p = matrixAction (M q) (matrixAction (M q)⁻¹ p) ∧
+    variableMassHamiltonian M U q p =
+      inner ℝ (matrixAction (M q)⁻¹ p)
+        (matrixAction (M q) (matrixAction (M q)⁻¹ p)) / 2 + U q := by
+  sorry
+
+/-- 修正版，对应原文 MD-1.4-LegendreHamiltonian，改动：显式继承对称正定机械质量背景。 -/
+theorem hamiltonian_legendre_transform_corrected {n : ℕ}
     (M : Position n → Matrix (Fin n) (Fin n) ℝ) (U : PotentialEnergy n)
     (q : Position n) (p : Momentum n) (hM : IsUnit (M q))
     (hPositive : (M q).PosDef) :
@@ -259,7 +297,10 @@ theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 -/
 def schrodingerEquation (h : planckConstant) (μ : quantumMass)
     (U : primitivePotential) (Φ : waveFunction) : Prop :=
-  ContDiff ℝ 2 (Function.uncurry Φ) ∧
+  (∀ q, ContDiff ℝ 1 (fun t => Φ t q)) ∧
+  (∀ t q (i : Fin 39), ContDiff ℝ 2 (fun s : ℝ => Φ t (q + s • coordinateDirection i))) ∧
+  Continuous (fun tq : ℝ × Q13 => deriv (fun t => Φ t tq.2) tq.1) ∧
+  (∀ i, Continuous (fun tq : ℝ × Q13 => secondPartial (Φ tq.1) tq.2 i)) ∧
   ∀ t q, Complex.I * (h.val : ℂ) * deriv (fun s => Φ s q) t =
     -(h.val : ℂ)^2 * ∑ i : Fin 39,
       secondPartial (Φ t) q i / (2 * (μ ⟨i.val / 3, by omega⟩).val : ℂ) +
@@ -361,7 +402,7 @@ def buckinghamPotential (A B C r : ℝ) := A * Real.exp (-B*r) - C/r^6
 -/
 def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6)
 
-/-- source_id: MD-1.1.1-LJRepulsion · unnumbered_claim · printed p.10–11 / PDF p.33–34
+/-- source_id: MD-1.1.1-LJRepulsion · unnumbered_claim · printed p.10–11 / PDF p.33–34 【原书疑误】
 
 
 -/
@@ -385,6 +426,13 @@ theorem lj_repulsion :
   unfold lennardJonesPotential
   ring
 
+/-- 修正版，对应原文 MD-1.1.1-LJRepulsion，改动：保留已证单侧极限；把可严格陈述的内容写成任意有限能级对应正距离屏障，不声称数值模拟rarely的概率。 -/
+theorem lj_repulsion_corrected (ε σ : ℝ) (hε : 0 < ε) (hσ : 0 < σ) (E : ℝ) :
+    ∃ δ > 0, ∀ r ∈ Ioo 0 δ, E < lennardJonesPotential ε σ r := by
+  have h := (lj_repulsion ε σ hε hσ).eventually (eventually_gt_atTop E)
+  obtain ⟨δ,hδ,hh⟩ := mem_nhdsGT_iff_exists_Ioo_subset.mp h
+  exact ⟨δ,hδ,fun r hr => hh hr⟩
+
 /-- source_id: MD-1.1.1-HeterogeneousLJ · definition · printed p.11 / PDF p.34
 
 
@@ -397,21 +445,33 @@ def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
 
 
 -/
-def coulombPotential (C Qᵢ Qⱼ dielectric r : ℝ) := C*Qᵢ*Qⱼ/(dielectric*r)
+def coulombPotential (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
+    (dielectric r : {x : ℝ // 0 < x}) : ℝ := C.val*Qᵢ*Qⱼ/(dielectric.val*r.val)
 
 /-- source_id: MD-1.1.2-Cutoff · definition · printed p.12 / PDF p.35
 
 
 -/
 def smoothCutoff (φ : ℝ → ℝ) (r_cut : ℝ) : Prop :=
-  ContDiff ℝ 1 φ ∧ ∀ r, r_cut < r → φ r = 0
+  0 < r_cut ∧ ContDiffOn ℝ 1 φ (Ioi 0) ∧ ∀ r, r_cut < r → φ r = 0
 
-/-- source_id: MD-1.1.2-Yukawa · definition · printed p.12 / PDF p.35
+/-- source_id: MD-1.1.2-Yukawa · definition · printed p.12 / PDF p.35 【原书疑误】
 
 [ERRATUM?] 原文κ称Debye length，但e^{-κr}的量纲通常对应逆长度；本定义保留字面公式。
 -/
-def yukawaScreened (C Qᵢ Qⱼ dielectric κ r : ℝ) : ℝ :=
-  C * Qᵢ * Qⱼ / (dielectric * r) * Real.exp (-κ * r)
+def yukawaScreened (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
+    (dielectric : {x : ℝ // 0 < x}) (κ : ℝ) (r : {x : ℝ // 0 < x}) : ℝ :=
+  C.val * Qᵢ * Qⱼ / (dielectric.val * r.val) * Real.exp (-κ * r.val)
+
+/-- 修正版，对应原文 MD-1.1.2-Yukawa，改动：a保留−κr但把κ解释为逆屏蔽长度；b若保留Debye length称谓则用−r/ℓ。正参数为物理域补充。 -/
+def yukawaScreened_corrected_a (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
+    (dielectric κ r : {x : ℝ // 0 < x}) : ℝ :=
+  C.val*Qᵢ*Qⱼ/(dielectric.val*r.val)*Real.exp (-κ.val*r.val)
+
+/-- 修正版，对应原文 MD-1.1.2-Yukawa，改动：若参数称Debye长度，指数应为−r/ℓ。 -/
+def yukawaScreened_corrected_b (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
+    (dielectric ℓ r : {x : ℝ // 0 < x}) : ℝ :=
+  C.val*Qᵢ*Qⱼ/(dielectric.val*r.val)*Real.exp (-r.val/ℓ.val)
 
 /-- source_id: MD-1.1.2-AngleBond · definition · printed p.13 / PDF p.36
 
@@ -456,23 +516,35 @@ def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 [EXTRA] 在可微约束C局部正则层中以导数核维数表示；无约束取零约束。
 
 -/
-def degreesOfFreedom {n r : ℕ} (C : Position n → Position r) (q : Position n) :=
+/- Linear algebra auxiliary; geometric validity is stated by constraintdimension. -/
+def linearizedConstraintDimension {n r : ℕ} (C : Position n → Position r) (q : Position n) :=
   Module.finrank ℝ (LinearMap.ker (fderiv ℝ C q).toLinearMap)
+
+def degreesOfFreedom {n r : ℕ} (C : Position n → Position r) (c : Position r)
+    (q : {x : Position n // C x = c ∧ ContDiffAt ℝ 1 C x ∧
+      Function.Surjective (fderiv ℝ C x)}) : ℕ := linearizedConstraintDimension C q.val
 
 /-- source_id: MD-1.2-ConstraintDimension · unnumbered_claim · printed p.18 / PDF p.41
 [EXTRA] 约束映射可微，独立约束=导数满射；n=Nc，r≤n由满射推出。
 
 -/
-theorem constraintdimension :
-  ∀ (n r : ℕ) (C : Position n → Position r) (q : Position n),
-    DifferentiableAt ℝ C q → Function.Surjective (fderiv ℝ C q) →
-    degreesOfFreedom C q + r = n := by
-  intro n r C q _ hs
-  have hrange : LinearMap.range (fderiv ℝ C q).toLinearMap = ⊤ :=
-    LinearMap.range_eq_top.mpr hs
-  have h := (fderiv ℝ C q).toLinearMap.finrank_range_add_finrank_ker
-  rw [hrange] at h
-  simpa [degreesOfFreedom, Position, finrank_euclideanSpace, Nat.add_comm] using h
+theorem constraintdimension {n r : ℕ} (C : Position n → Position r) (c : Position r)
+    (q : {x : Position n // C x = c ∧ ContDiffAt ℝ 1 C x ∧
+      Function.Surjective (fderiv ℝ C x)}) :
+    degreesOfFreedom C c q + r = n ∧
+    ∃ (U : Set (Position n)) (V : Set (Position (degreesOfFreedom C c q) × Position r))
+      (φ : Position n → Position (degreesOfFreedom C c q) × Position r)
+      (ψ : Position (degreesOfFreedom C c q) × Position r → Position n),
+      IsOpen U ∧ IsOpen V ∧ q.val ∈ U ∧
+      ContDiffOn ℝ 1 φ U ∧ ContDiffOn ℝ 1 ψ V ∧
+      MapsTo φ U V ∧ MapsTo ψ V U ∧ LeftInvOn ψ φ U ∧ LeftInvOn φ ψ V ∧
+      (∀ x ∈ U, C x = c ↔ (φ x).2 = 0) := by
+  sorry
+
+/-- Unconstrained three-dimensional N-particle specialization, not a geometry assumption. -/
+theorem constraintdimension_unconstrained (N : ℕ) :
+    linearizedConstraintDimension (fun _ : Position (3*N) => (0 : Position 0)) 0 = 3*N := by
+  sorry
 
 /-- source_id: MD-1.2-TotalEnergy · definition · printed p.18 / PDF p.41
 
@@ -553,7 +625,7 @@ theorem harmonic_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : PhaseSpace 
 
 -/
 def scalarMechanicalModel (U : ℝ → ℝ) (z : ℝ → ℝ × ℝ) : Prop :=
-  ∀ t, HasDerivAt z ((z t).2, -deriv U (z t).1) t
+  ∀ t, DifferentiableAt ℝ U (z t).1 ∧ HasDerivAt z ((z t).2, -deriv U (z t).1) t
 
 /-- source_id: MD-1.2-ScalarQuadrature · unnumbered_claim · printed p.20 / PDF p.43
 [EXTRA] U光滑使原文smooth solutions和联合隐函数成立；η≠0保留原文非转向前提。
@@ -584,7 +656,7 @@ theorem scalar_quadrature (U : ℝ → ℝ) (hU : ContDiff ℝ ∞ U)
 def uniformLJSystem {N : ℕ} (m ε σ : ℝ) (q v : Fin N → V3) : ℝ :=
   (∑ i, m * ‖v i‖^2 / 2) + uniformLJEnergy ε σ q
 
-/-- source_id: MD-1.2-RadialLJForceLiteral · unnumbered_claim · printed p.21 / PDF p.44
+/-- source_id: MD-1.2-RadialLJForceLiteral · unnumbered_claim · printed p.21 / PDF p.44 【原书疑误】
 [EXTRA] 正ε,σ及非碰撞；hnewton采用式(1.3)负梯度定义，未把字面错误结果放入假设。
 [ERRATUM?] 首个等式缺负号；所印次行实际为势的正梯度，不同于此前Newton负梯度。
 -/
@@ -598,6 +670,40 @@ theorem radial_lj_force_literal {N : ℕ} (m ε σ : ℝ)
     m • a i = (-24 * ε / σ) • (∑ j ∈ Finset.univ.erase i,
       (‖q i-q j‖⁻¹ * (2 * (σ / ‖q i-q j‖)^13 - (σ / ‖q i-q j‖)^7)) • (q i-q j)) := by
   sorry
+
+/-- 修正版，对应原文 MD-1.2-RadialLJForceLiteral，改动：第一式补负梯度负号，第二式外系数由−24ε/σ改为+24ε/σ；其余对象和量词不变。 -/
+theorem radial_lj_force_literal_corrected {N : ℕ} (m ε σ : ℝ)
+    (q : Fin N → V3) (a : Fin N → V3) (i : Fin N)
+    (hε : 0 < ε) (hσ : 0 < σ)
+    (hnc : ∀ j, i ≠ j → q i ≠ q j)
+    (hnewton : m • a i = ljForce ε σ q i) :
+    m • a i = ∑ j ∈ Finset.univ.erase i,
+      (-deriv (lennardJonesPotential ε σ) ‖q i-q j‖ / ‖q i-q j‖) • (q i-q j) ∧
+    m • a i = (24 * ε / σ) • (∑ j ∈ Finset.univ.erase i,
+      (‖q i-q j‖⁻¹ * (2 * (σ / ‖q i-q j‖)^13 - (σ / ‖q i-q j‖)^7)) • (q i-q j)) := by
+  have hphi (r : ℝ) (hr : r ≠ 0) :
+      deriv (Chapter01Review.lennardJonesPotential ε σ) r =
+        (24*ε/r)*((σ/r)^6-2*(σ/r)^12) := by
+    have hx := (hasDerivAt_const r σ).div (hasDerivAt_id r) hr
+    have hd := ((hx.pow 12).sub (hx.pow 6)).const_mul (4*ε)
+    convert hd.deriv using 1
+    · rfl
+    · simp only [Pi.div_apply, Pi.pow_apply, id_eq, Nat.cast_ofNat]
+      norm_num only [Nat.reduceSub]
+      field_simp [hr] <;> ring
+  constructor
+  · exact hnewton
+  · rw [hnewton]
+    unfold ljForce
+    rw [Finset.smul_sum]
+    apply Finset.sum_congr rfl
+    intro j hj
+    have hij : i ≠ j := (Finset.mem_erase.mp hj).1.symm
+    have hr : ‖q i-q j‖ ≠ 0 := norm_ne_zero_iff.mpr (sub_ne_zero.mpr (hnc j hij))
+    change (-deriv (Chapter01Review.lennardJonesPotential ε σ) ‖q i-q j‖ / ‖q i-q j‖) • (q i-q j) = _
+    rw [hphi _ hr,smul_smul]
+    congr 1
+    field_simp [hr,hσ.ne'] <;> ring
 
 /-- source_id: MD-1.2-LJCoordinateScaling · unnumbered_claim · printed p.21 / PDF p.44
 [EXTRA] σ>0使范数缩放无绝对值；实际一阶/二阶导数资格。
@@ -686,6 +792,15 @@ theorem ljtimescaling :
   · intro h t i
     rw [hsecond,hforce,smul_smul,hcoeff,h (α*t) i]
 
+/- Argon SI specialization: the printed approximation uses an explicit 0.01 ps tolerance. -/
+theorem ljtimescaling_argon :
+    |(3.4 / 10^10 : ℝ) * Real.sqrt ((6.69 / 10^26) / (1.65 / 10^21)) -
+      2.17 / 10^12| < 0.01 / 10^12 := by
+  have hs := Real.sq_sqrt (show (0 : ℝ) ≤ (6.69 / 10^26) / (1.65 / 10^21) by norm_num)
+  have hp := Real.sqrt_nonneg ((6.69 / 10^26 : ℝ) / (1.65 / 10^21))
+  rw [abs_lt]
+  constructor <;> nlinarith
+
 /- END FULL SECTION 1.2 -/
 
 /- BEGIN FULL SECTION 1.3 -/
@@ -727,20 +842,43 @@ theorem generalizedmassregular :
 
 /- BEGIN FULL SECTION 1.4 -/
 
-/-- source_id: MD-1.4-ConvexLegendre · definition · printed p.24 / PDF p.47
+/-- source_id: MD-1.4-ConvexLegendre · definition · printed p.24 / PDF p.47 【原书疑误】
 [EXTRA] 值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。
 [ERRATUM?] 原文给任意凸g却称共轭R值；g=0,η≠0时上确界+∞。Blueprint保留sup定义并显式扩展值域，须导师裁定是否接受。
 -/
 def legendreTransform {n : ℕ} (g : Position n → ℝ) (η : Position n) : EReal :=
   ⨆ θ : Position n, ((inner ℝ η θ - g θ : ℝ) : EReal)
 
+/-- 修正版，对应原文 MD-1.4-ConvexLegendre，改动：新增原书“任意凸函数的变换处处实值”的literal陈述；默认EReal扩展实数，并给有界时实值备选。 -/
+theorem legendreTransform_literal {n : ℕ} (g : Position n → ℝ)
+    (hg : ConvexOn ℝ univ g) :
+    ∀ η : Position n, ∃ r : ℝ, IsLUB (Set.range (fun θ => inner ℝ η θ - g θ)) r := by
+  sorry
+
+/-- 修正版，对应原文 MD-1.4-ConvexLegendre，改动：允许上确界为+∞。 -/
+def legendreTransform_corrected {n : ℕ} (g : Position n → ℝ) (η : Position n) : EReal :=
+  ⨆ θ : Position n, ((inner ℝ η θ - g θ : ℝ) : EReal)
+
+/-- 修正版，对应原文 MD-1.4-ConvexLegendre，改动：实值版显式要求有上界。 -/
+theorem legendreTransform_corrected_b {n : ℕ} (g : Position n → ℝ) (η : Position n)
+    (hb : BddAbove (Set.range (fun θ => inner ℝ η θ - g θ))) :
+    IsLUB (Set.range (fun θ => inner ℝ η θ - g θ))
+      (sSup (Set.range (fun θ => inner ℝ η θ - g θ))) := by
+  exact isLUB_csSup (Set.range_nonempty _) hb
+
 /-- source_id: MD-1.4-HamiltonEquations · definition · printed p.24 / PDF p.47
 
 
 -/
-def hamiltonEquations {n : ℕ} (H : PhaseSpace n → ℝ) (q p : ℝ → Position n) : Prop :=
-  ∀ t, HasDerivAt q (gradient (fun v => H (q t,v)) (p t)) t ∧
+def hamiltonEquationsOn {n : ℕ} (H : PhaseSpace n → ℝ)
+    (I : Set ℝ) (q p : ℝ → Position n) : Prop :=
+  ∀ t ∈ I, DifferentiableAt ℝ (fun v => H (q t,v)) (p t) ∧
+    DifferentiableAt ℝ (fun x => H (x,p t)) (q t) ∧
+    HasDerivAt q (gradient (fun v => H (q t,v)) (p t)) t ∧
     HasDerivAt p (-gradient (fun x => H (x,p t)) (q t)) t
+
+def hamiltonEquations {n : ℕ} (H : PhaseSpace n → ℝ) (q p : ℝ → Position n) : Prop :=
+  hamiltonEquationsOn H univ q p
 
 /-- source_id: MD-1.4-HamiltonFixedMass · unnumbered_claim · printed p.24 / PDF p.47
 [EXTRA] 常质量矩阵M对称正定，来自机械模型满秩坐标变换；U真实可微。
@@ -787,7 +925,7 @@ theorem hamiltonlagrangeequivalence :
       HasDerivAt p (-gradient (fun x => quadraticH M U x (p t)) (q t)) t) := by
   sorry
 
-/-- source_id: MD-1.4-PhaseSpace · definition · printed p.25 / PDF p.48
+/-- source_id: MD-1.4-PhaseSpace · definition · printed p.25 / PDF p.48 【原书疑误】
 [EXTRA] 采用扩展实值H以明确排除奇异无穷能量；PhaseSpace n底层是位置×动量，n=3N。
 [ERRATUM?] p.25原句described by coordinates and positions字面重复位置；前句定义是positions and momenta，Lean按前句定义保留位置×动量，原句不静默改字。
 -/
@@ -797,6 +935,15 @@ def finiteEnergyPhaseDomain {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseS
 /- END FULL SECTION 1.4 -/
 
 /- BEGIN FULL SECTION 1.5 -/
+
+/-- 修正版，对应原文 MD-1.4-PhaseSpace，改动：有限能量位置×动量定义保留；把后句coordinates and positions按前句解释为位置与动量，并显式核验6N维。 -/
+def finiteEnergyPhaseDomain_corrected {n : ℕ} (H : PhaseSpace n → EReal) : Set (PhaseSpace n) :=
+  {z | H z ≠ ⊤ ∧ H z ≠ ⊥}
+
+theorem finiteEnergyPhaseDomain_corrected_dimension (N : ℕ) :
+    Module.finrank ℝ (PhaseSpace (3*N)) = 6*N := by
+  simp [PhaseSpace,Position,Momentum]
+  omega
 
 /-- source_id: MD-1.5-LocalExistUnique · unnumbered_claim · printed p.25 / PDF p.48
 [EXTRA] generic初值解释为开放非奇异域中的合法初值；力C1是原文存在唯一性背景。固定对角质量模型。
@@ -850,13 +997,29 @@ theorem uniform_levels_compact {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 [EXTRA] 共同紧集包含于开放非奇异域；hconfine仅关于既有局部解，不假设全局解；力C1和固定对角机械模型。
 
 -/
-theorem compact_continuation {n : ℕ} (m : CoordinateMasses n) (F : Force n)
+/- General confinement helper retained separately from the Hamiltonian result. -/
+theorem compact_continuation_aux {n : ℕ} (m : CoordinateMasses n) (F : Force n)
     (Q : Set (Position n)) (K : Set (PhaseSpace n)) (z₀ : PhaseSpace n)
-    (hQ : IsOpen Q) (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 F q)
+    (hm : ∀ i, 0 < m i) (hQ : IsOpen Q) (hreg : ∀ q ∈ Q, ContDiffAt ℝ 1 F q)
     (hK : IsCompact K) (hKQ : ∀ z ∈ K, z.1 ∈ Q) (hz : z₀ ∈ K)
     (hconfine : ∀ a b γ, 0 ∈ Ioo a b → IsMechanicalSolutionOn m F Q (Ioo a b) γ →
       γ 0 = z₀ → ∀ t ∈ Ioo a b, γ t ∈ K) :
     ∃ γ, IsMechanicalSolutionOn m F Q univ γ ∧ γ 0 = z₀ ∧ ∀ t, γ t ∈ K := by
+  sorry
+
+theorem compact_continuation {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
+    (z₀ : PhaseSpace n) (hm : ∀ i, 0 < m i) (hU : ContDiff ℝ 2 U)
+    (hlower : ∃ b : ℝ, ∀ q, b ≤ U q)
+    (hconfine : ∀ E : ℝ, Bornology.IsBounded {q : Position n | U q ≤ E}) :
+    ∃ γ : ℝ → PhaseSpace n,
+      IsMechanicalSolutionOn m (fun q => -gradient U q) univ univ γ ∧ γ 0 = z₀ ∧
+      (∀ t, massHamiltonian m U (γ t) = massHamiltonian m U z₀) ∧
+      Bornology.IsBounded (Set.range γ) ∧
+      (∀ η : ℝ → PhaseSpace n,
+        IsMechanicalSolutionOn m (fun q => -gradient U q) univ univ η → η 0 = z₀ → η = γ) ∧
+      (∀ a b η, 0 ∈ Ioo a b →
+        IsMechanicalSolutionOn m (fun q => -gradient U q) univ (Ioo a b) η → η 0 = z₀ →
+        ∀ t ∈ Ioo a b, η t = γ t) := by
   sorry
 
 /-- source_id: MD-1.5-Nonconfining · unnumbered_claim · printed p.26 / PDF p.49
@@ -925,6 +1088,14 @@ theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)
 def harmonicPhaseFlow {n : ℕ} (Ω t : ℝ) (z : PhaseSpace n) : PhaseSpace n :=
   (Real.cos (Ω*t) • z.1 + (Real.sin (Ω*t)/Ω) • z.2,
     (-Ω*Real.sin (Ω*t)) • z.1 + Real.cos (Ω*t) • z.2)
+
+theorem harmonicPhaseFlow_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : PhaseSpace n) :
+    harmonicPhaseFlow Ω 0 z = z ∧
+    IsMechanicalSolutionOn (fun _ : Fin n => (1 : ℝ))
+      (fun q => (-(Ω^2)) • q) univ univ (fun t => harmonicPhaseFlow Ω t z) := by
+  constructor
+  · simp [harmonicPhaseFlow]
+  · exact harmonicFlow_isMechanicalSolution Ω hΩ z
 
 /-- source_id: MD-1.5.1-SpectralSolution · unnumbered_claim · printed p.27 / PDF p.50
 [EXTRA] 有限维复数特征基；在公式中以t-t0调用零初时流；coeff=b.repr ξ。
@@ -1124,6 +1295,12 @@ theorem keplermomentum :
   intro q hq
   simp [keplerForce, smul_eq_zero, hq, norm_ne_zero_iff.mpr hq]
 
+theorem keplermomentum_not_first_integrals :
+    ∀ i : Fin 2, ¬ IsFirstIntegralOn
+      (mechanicalVectorField (fun _ : Fin 2 => (1 : ℝ)) keplerForce)
+      {z : PhaseSpace 2 | z.1 ≠ 0} (fun z : PhaseSpace 2 => z.2 i) := by
+  sorry
+
 /-- source_id: MD-1.5.2-PolarCoordinates · definition · printed p.29 / PDF p.52
 
 
@@ -1265,7 +1442,20 @@ theorem torusperiod :
       ∀ j, ∃ k : ℤ, (k : ℝ) * (2 * Real.pi) = Ω j * T := by
   exact @MolecularDynamics.harmonicTorusRotation_periodic_iff_integer
 
-/-- source_id: MD-1.5.2-TorusDense · unnumbered_claim · printed p.30 / PDF p.53
+/-- Finite-dimensional torus translation: a quasiperiodic representation allows resonances. -/
+def torusQuasiperiodic {n : ℕ} (γ : ℝ → HarmonicTorus n) : Prop :=
+  ∃ (Ω : Fin n → ℝ) (θ : HarmonicTorus n), γ = fun t => harmonicTorusRotation Ω t θ
+
+theorem torusperiod_classification {n : ℕ} (Ω : Fin n → ℝ) (θ : HarmonicTorus n) :
+    (∃ T > 0, Function.Periodic (fun t => harmonicTorusRotation Ω t θ) T) ∨
+    (torusQuasiperiodic (fun t => harmonicTorusRotation Ω t θ) ∧
+      ¬ ∃ T > 0, Function.Periodic (fun t => harmonicTorusRotation Ω t θ) T) := by
+  classical
+  by_cases h : ∃ T > 0, Function.Periodic (fun t => harmonicTorusRotation Ω t θ) T
+  · exact Or.inl h
+  · exact Or.inr ⟨⟨Ω,θ,rfl⟩,h⟩
+
+/-- source_id: MD-1.5.2-TorusDense · unnumbered_claim · printed p.30 / PDF p.53 【原书疑误】
 [EXTRA] 高维全整数关系无共振；仅成对频率比无理不足，此为原文quasi-periodic intended meaning的数学资格。
 [ERRATUM?] 原文用ratio of frequencies描述高维填满环面，未区分准周期子环面与全维整数无共振；须导师明确。
 -/
@@ -1275,11 +1465,54 @@ theorem torusdense :
     ∀ θ : HarmonicTorus n, DenseRange (fun t : ℝ => harmonicTorusRotation Ω t θ) := by
   sorry
 
-/-- source_id: MD-1.5.2-LocalActionAngleReduction · unnumbered_claim · printed p.30 / PDF p.53
+/-- 修正版，对应原文 MD-1.5.2-TorusDense，改动：另补原句“非周期即充满整个环面”的literal；修正版显式全整数无共振，原有带资格陈述不变。 -/
+theorem torusdense_literal :
+    ∀ (n : ℕ) (Ω : Fin n → ℝ) (θ : HarmonicTorus n),
+      (¬ ∃ T > 0, Function.Periodic (fun t => harmonicTorusRotation Ω t θ) T) →
+      DenseRange (fun t : ℝ => harmonicTorusRotation Ω t θ) := by
+  sorry
+
+/-- 修正版，对应原文 MD-1.5.2-TorusDense，改动：明确全整数无共振资格。 -/
+theorem torusdense_corrected :
+  ∀ (n : ℕ) (Ω : Fin n → ℝ),
+    (∀ k : Fin n → ℤ, (∑ i, (k i : ℝ)*Ω i) = 0 → ∀ i, k i = 0) →
+    ∀ θ : HarmonicTorus n, DenseRange (fun t : ℝ => harmonicTorusRotation Ω t θ) := by
+  sorry
+
+/-- source_id: MD-1.5.2-LocalActionAngleReduction · unnumbered_claim · printed p.30 / PDF p.53 【原书疑误】
 [EXTRA] 全部积分C∞且Poisson括号两两零；正则共同能量层紧、连通；满秩=独立。
 [ERRATUM?] local canonical action-angle与全局torus motion不同；本条只保留局部规约，原文最后tori motion需额外紧共同能量层假设。
 -/
 theorem local_action_angle_reduction :
+  ∀ (d : ℕ) (I : Fin d → PhaseSpace d → ℝ) (c : Fin d → ℝ),
+    (∀ i, ContDiff ℝ ∞ (I i)) →
+    (∀ i j z, poissonBracket (I i) (I j) z = 0) →
+    let S := {z : PhaseSpace d | ∀ i, I i z = c i}
+    IsCompact S → IsConnected S →
+    (∀ z ∈ S, Function.Surjective
+      (fun v : PhaseSpace d => fun i => fderiv ℝ (I i) z v)) →
+    localActionAngle I S ∧ ∃ e : S ≃ₜ HarmonicTorus d,
+      ∀ i, ∃ Ω : Fin d → ℝ, ∀ (γ : ℝ → PhaseSpace d)
+        (hγ : ∀ t, γ t ∈ S ∧ HasDerivAt γ (symplecticGradient (I i) (γ t)) t),
+        ∀ t, e ⟨γ t, (hγ t).1⟩ = harmonicTorusRotation Ω t (e ⟨γ 0, (hγ 0).1⟩) := by
+  sorry
+
+/-- 修正版，对应原文 MD-1.5.2-LocalActionAngleReduction，改动：原书无紧性资格的环面推断另记literal；默认紧、连通、非空、正则共同水平集，保留局部正则坐标与全局环面结论。 -/
+theorem local_action_angle_reduction_literal :
+  ∀ (d : ℕ) (I : Fin d → PhaseSpace d → ℝ) (c : Fin d → ℝ),
+    (∀ i, ContDiff ℝ ∞ (I i)) →
+    (∀ i j z, poissonBracket (I i) (I j) z = 0) →
+    let S := {z : PhaseSpace d | ∀ i, I i z = c i}
+    (∀ z ∈ S, Function.Surjective
+      (fun v : PhaseSpace d => fun i => fderiv ℝ (I i) z v)) →
+    localActionAngle I S ∧ ∃ e : S ≃ₜ HarmonicTorus d,
+      ∀ i, ∃ Ω : Fin d → ℝ, ∀ (γ : ℝ → PhaseSpace d)
+        (hγ : ∀ t, γ t ∈ S ∧ HasDerivAt γ (symplecticGradient (I i) (γ t)) t),
+        ∀ t, e ⟨γ t, (hγ t).1⟩ = harmonicTorusRotation Ω t (e ⟨γ 0, (hγ 0).1⟩) := by
+  sorry
+
+/-- 修正版，对应原文 MD-1.5.2-LocalActionAngleReduction，改动：紧连通非空正则共同水平集。 -/
+theorem local_action_angle_reduction_corrected :
   ∀ (d : ℕ) (I : Fin d → PhaseSpace d → ℝ) (c : Fin d → ℝ),
     (∀ i, ContDiff ℝ ∞ (I i)) →
     (∀ i j z, poissonBracket (I i) (I j) z = 0) →
@@ -1328,7 +1561,7 @@ def hyperbolic {n : ℕ} (A : Position n →L[ℝ] Position n) : Prop :=
   ∀ (a b : ℝ) (x y : Position n), (x ≠ 0 ∨ y ≠ 0) →
     A x = a • x - b • y → A y = b • x + a • y → a ≠ 0
 
-/-- source_id: MD-1.5.3-HartmanGrobmanLiteral · unnumbered_claim · printed p.31–32 / PDF p.54–55
+/-- source_id: MD-1.5.3-HartmanGrobmanLiteral · unnumbered_claim · printed p.31–32 / PDF p.54–55 【原书疑误】
 [EXTRA] C1全域模型及真实全局流为局部应用的技术资格；共轭在轨迹保持局部域时断言。
 [ERRATUM?] 原文smooth invertible强于常见Hartman–Grobman的homeomorphism，C1仅双曲不保证光滑共轭。
 -/
@@ -1345,6 +1578,20 @@ theorem hartmangrobmanliteral :
         F t (z+φ x) = z+φ (linearExponentialFlow (fderiv ℝ f z) t x) := by
   sorry
 
+/-- 修正版，对应原文 MD-1.5.3-HartmanGrobmanLiteral，改动：C∞可逆坐标替换改为连续互逆局部同胚；保留零点、邻域与留域期间共轭公式。 -/
+theorem hartmangrobmanliteral_corrected :
+  ∀ (n : ℕ) (f : Position n → Position n) (z : Position n)
+    (F : ℝ → Position n → Position n),
+    ContDiff ℝ 1 f → f z = 0 → hyperbolic (fderiv ℝ f z) → isFlowOf f F →
+    ∃ (U V : Set (Position n)) (φ ψ : Position n → Position n),
+      IsOpen U ∧ IsOpen V ∧ 0 ∈ U ∧ 0 ∈ V ∧ φ 0 = 0 ∧
+      ContinuousOn φ U ∧ ContinuousOn ψ V ∧
+      MapsTo φ U V ∧ MapsTo ψ V U ∧ LeftInvOn ψ φ U ∧ LeftInvOn φ ψ V ∧
+      ∀ x ∈ U, ∀ t : ℝ,
+        (∀ s ∈ uIcc 0 t, linearExponentialFlow (fderiv ℝ f z) s x ∈ U) →
+        F t (z+φ x) = z+φ (linearExponentialFlow (fderiv ℝ f z) t x) := by
+  sorry
+
 /-- source_id: MD-1.5.3-LyapunovStability · definition · printed p.32 / PDF p.55
 [EXTRA] ε,δ正按Lyapunov容差惯例；有界性避免Lean实数总sup的未界伪结论。
 
@@ -1354,11 +1601,19 @@ def lyapunovStable {n : ℕ} (F : ℝ → Position n → Position n) (z : Positi
     BddAbove (range (fun t : Set.Ici (0 : ℝ) => ‖F t x-z‖)) ∧
     sSup (range (fun t : Set.Ici (0 : ℝ) => ‖F t x-z‖)) < ε
 
-/-- source_id: MD-1.5.3-HyperbolicStabilityTransfer · unnumbered_claim · printed p.32 / PDF p.55
+/-- source_id: MD-1.5.3-HyperbolicStabilityTransfer · unnumbered_claim · printed p.32 / PDF p.55 【原书疑误】
 [EXTRA] C1及真实全局流；stable谓词的统一界<ε与原文严格sup形式等价。
 
 -/
 theorem hyperbolicstabilitytransfer :
+  ∀ (n : ℕ) (f : Position n → Position n) (z : Position n)
+    (F : ℝ → Position n → Position n), ContDiff ℝ 1 f → f z = 0 →
+    hyperbolic (fderiv ℝ f z) → isFlowOf f F →
+    (stable F z ↔ stable (fun t x => linearExponentialFlow (fderiv ℝ f z) t x) 0) := by
+  sorry
+
+/-- 修正版，对应原文 MD-1.5.3-HyperbolicStabilityTransfer，改动：显式独立登记以拓扑共轭为依据的稳定性转移，不调用光滑literal。 -/
+theorem hyperbolicstabilitytransfer_corrected :
   ∀ (n : ℕ) (f : Position n → Position n) (z : Position n)
     (F : ℝ → Position n → Position n), ContDiff ℝ 1 f → f z = 0 →
     hyperbolic (fderiv ℝ f z) → isFlowOf f F →
@@ -1400,6 +1655,15 @@ def strongLocalMinimum {n : ℕ} (U : PotentialEnergy n) (qstar : Position n) : 
 def linearizedHamiltonian {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
     (U : PotentialEnergy n) (qstar : Position n) (δq δp : Position n) : ℝ :=
   inner ℝ δp (matrixAction M⁻¹ δp)/2 + inner ℝ δq (fderiv ℝ (gradient U) qstar δq)/2
+
+theorem linearizedHamiltonian_field {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
+    (U : PotentialEnergy n) (qstar : Position n) (hM : M.PosDef)
+    (hU : ContDiff ℝ 2 U) (heq : gradient U qstar = 0) :
+    ∀ δz : PhaseSpace n,
+      fderiv ℝ (symplecticGradient (fun z : PhaseSpace n =>
+        inner ℝ z.2 (matrixAction M⁻¹ z.2)/2 + U z.1)) (qstar,0) δz =
+      symplecticGradient (fun z : PhaseSpace n => linearizedHamiltonian M U qstar z.1 z.2) δz := by
+  sorry
 
 /-- source_id: MD-1.5.3-PositiveHessianQuadratic · unnumbered_claim · printed p.33 / PDF p.56
 [EXTRA] M正定，K=U″对称正定；一般矩阵。
@@ -1495,7 +1759,10 @@ def periodicChainModel {N : ℕ} (φ : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) →
 
 
 -/
-def periodicBoundary (L : ℝ) (x y : ℝ) : Prop := ∃ k : ℤ, y = x + k*L
+def periodicPositionEquivalent (L : ℝ) (x y : ℝ) : Prop := ∃ k : ℤ, y = x + k*L
+
+def periodicBoundary (L : {x : ℝ // 0 < x}) (x y : ℝ) : Prop :=
+  y = if L.val < x then x-L.val else if x < 0 then x+L.val else x
 
 /-- source_id: MD-1.6-PeriodicTranslationMomentum · unnumbered_claim · printed p.34 / PDF p.57
 [EXTRA] 一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。
@@ -1515,6 +1782,26 @@ theorem periodic_translation_momentum :
       ∀ a ∈ I, ∀ b ∈ I, (∑ i, m i*v a i) = ∑ i, m i*v b i := by
   sorry
 
+/-- Both endpoint forces of each actual directed periodic bond, including the closing bond. -/
+def periodicBondEnergy (φ : ℝ → ℝ) (L : ℝ) (x y : ℝ) (closing : Bool) : ℝ :=
+  φ (y-x + if closing then L else 0)
+
+theorem periodic_translation_third_law (φ : ℝ → ℝ) (L x y : ℝ) (closing : Bool)
+    (hφ : DifferentiableAt ℝ φ (y-x + if closing then L else 0)) :
+    -deriv (fun u => periodicBondEnergy φ L u y closing) x =
+      -(-deriv (fun u => periodicBondEnergy φ L x u closing) y) := by
+  have hx := hφ.hasDerivAt.scomp x
+    (((hasDerivAt_const x y).sub (hasDerivAt_id x)).add_const (if closing then L else 0))
+  have hy := hφ.hasDerivAt.scomp y
+    (((hasDerivAt_id y).sub_const x).add_const (if closing then L else 0))
+  have hx' : deriv (fun u => periodicBondEnergy φ L u y closing) x =
+      -deriv φ (y-x + if closing then L else 0) := by
+    simpa [periodicBondEnergy, Function.comp_def] using hx.deriv
+  have hy' : deriv (fun u => periodicBondEnergy φ L x u closing) y =
+      deriv φ (y-x + if closing then L else 0) := by
+    simpa [periodicBondEnergy, Function.comp_def] using hy.deriv
+  rw [hx',hy']
+
 /-- source_id: MD-1.6-RegularLattice · definition · printed p.34 / PDF p.57
 
 
@@ -1522,7 +1809,7 @@ theorem periodic_translation_momentum :
 def regularLattice {N : ℕ} (a δ : ℝ) (x : Fin N → ℝ) : Prop :=
   0 < δ ∧ ∀ i, x i = a + i.val*δ
 
-/-- source_id: MD-1.6-RegularLatticeMinimizerLiteral · unnumbered_claim · printed p.34 / PDF p.57
+/-- source_id: MD-1.6-RegularLatticeMinimizerLiteral · unnumbered_claim · printed p.34 / PDF p.57 【原书疑误】
 
 [ERRATUM?] 对任意uniform φ断言规则格点极小不成立：φ=0时任何非均匀位置都最小；还缺势凸性、排斥、顺序/域资格。
 -/
@@ -1533,6 +1820,59 @@ theorem regularlatticeminimizerliteral :
       boxPeriodicNearestNeighborPotentialEnergy φ L y) →
     ∃ a : ℝ, regularLattice a (L/(N+1)) x := by
   sorry
+
+/-- 修正版，对应原文 MD-1.6-RegularLatticeMinimizerLiteral，改动：改为一维周期有序粒子的正间距和L固定、严格凸最近邻势；Jensen给等间距最小且仅等间距等号。 -/
+theorem regularlatticeminimizerliteral_corrected (N : ℕ) (φ : ℝ → ℝ)
+    (L : ℝ) (hL : 0 < L) (hφ : StrictConvexOn ℝ (Ioi 0) φ) :
+    let d := L / (N+1)
+    ∀ gaps : Fin (N+1) → ℝ, (∀ i, 0 < gaps i) → (∑ i, gaps i) = L →
+      (N+1 : ℝ) * φ d ≤ ∑ i, φ (gaps i) ∧
+      ((∑ i, φ (gaps i)) = (N+1 : ℝ) * φ d ↔ ∀ i, gaps i = d) := by
+  dsimp only
+  intro gaps hg hs
+  have hc : 0 < (N+1 : ℝ) := by positivity
+  have hw : (∑ _ : Fin (N+1), (N+1 : ℝ)⁻¹) = 1 := by
+    simp [Nat.cast_add, Nat.cast_one, hc.ne']
+  have hm : (∑ i, (N+1 : ℝ)⁻¹ * gaps i) = L/(N+1) := by
+    rw [← Finset.mul_sum,hs]
+    ring
+  have hv : (∑ i, (N+1 : ℝ)⁻¹ * φ (gaps i)) = (∑ i,φ (gaps i))/(N+1) := by
+    rw [← Finset.mul_sum]
+    ring
+  have hpos : ∀ i ∈ (Finset.univ : Finset (Fin (N+1))), 0 < (N+1 : ℝ)⁻¹ :=
+    fun _ _ => inv_pos.mpr hc
+  have hmem : ∀ i ∈ (Finset.univ : Finset (Fin (N+1))), gaps i ∈ Ioi (0 : ℝ) :=
+    fun i _ => hg i
+  have hi := hφ.convexOn.map_sum_le (fun i hi => (hpos i hi).le) hw hmem
+  have he := hφ.map_sum_eq_iff hpos hw hmem
+  simp only [smul_eq_mul] at hi he
+  rw [hm,hv] at hi he
+  refine ⟨?_,?_⟩
+  · simpa [mul_comm] using (le_div_iff₀ hc).mp hi
+  · constructor
+    · intro hh
+      have hh' : φ (L/(N+1)) = (∑ i,φ (gaps i))/(N+1) := by
+        apply (eq_div_iff hc.ne').mpr
+        nlinarith
+      exact fun i => he.mp hh' i (Finset.mem_univ i)
+    · intro hh
+      have hh' : φ (L/(N+1)) = (∑ i,φ (gaps i))/(N+1) :=
+        he.mpr (by simpa using hh)
+      have := (eq_div_iff hc.ne').mp hh'
+      nlinarith
+
+theorem regularlatticeminimizerliteral_counterexample :
+    (∀ x y : Fin 2 → ℝ,
+      boxPeriodicNearestNeighborPotentialEnergy (fun _ => 0) 1 x ≤
+      boxPeriodicNearestNeighborPotentialEnergy (fun _ => 0) 1 y) ∧
+    ¬ ∃ a : ℝ, regularLattice a (1/2) (fun _ : Fin 2 => 0) := by
+  constructor
+  · intro x y; simp [boxPeriodicNearestNeighborPotentialEnergy,nearestNeighborPotentialEnergy]
+  · rintro ⟨a,ha⟩
+    have h0 := ha.2 (0 : Fin 2)
+    have h1 := ha.2 (1 : Fin 2)
+    norm_num at h0 h1
+    linarith
 
 /-- source_id: MD-1.6-PeriodicImages · definition · printed p.35 / PDF p.58
 
@@ -1550,6 +1890,12 @@ def periodicImageEnergy {N : ℕ} (L : ℝ) (φ : Fin N → Fin N → twoBodyTer
 def minimumImage (L : ℝ) (q r image : V3) : Prop :=
   ∃ k : Fin 3 → ℤ, image = r + WithLp.toLp 2 (fun i => L*k i) ∧
     ∀ l : Fin 3 → ℤ, ‖q-image‖ ≤ ‖q-(r+WithLp.toLp 2 (fun i => L*l i))‖
+
+def minimumImageForce {N : ℕ} (L : ℝ) (q : Fin N → V3)
+    (image : Fin N → Fin N → V3) (pairForce : Fin N → Fin N → V3 → V3 → V3)
+    (force : Fin N → V3) : Prop :=
+  0 < L ∧ (∀ i j, i ≠ j → minimumImage L (q i) (q j) (image i j)) ∧
+    ∀ i, force i = ∑ j ∈ Finset.univ.erase i, pairForce i j (q i) (image i j)
 
 /-- source_id: MD-1.6-RhombicLattice · definition · printed p.35 / PDF p.58
 
@@ -1609,11 +1955,17 @@ def hcpStacking : Set V3 :=
     x 2 = k*Real.sqrt (2/3) ∧
       WithLp.toLp 2 ![x 0,x 1] ∈ triangularLayer ((j:ℝ)/2) ((j:ℝ)*Real.sqrt 3/6)}
 
-/-- source_id: MD-1.6.1-MinimumGradientZero · unnumbered_claim · printed p.36–37 / PDF p.59–60
+/-- source_id: MD-1.6.1-MinimumGradientZero · unnumbered_claim · printed p.36–37 / PDF p.59–60 【原书疑误】
 [EXTRA] 可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。
 [ERRATUM?] 不限定内点及可微时，Regardless of boundary的全梯度零过强；显式[EXTRA]内点解释。
 -/
 theorem minimumgradientzero :
+  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n),
+    DifferentiableAt ℝ U q → IsLocalMin U q → gradient U q = 0 := by
+  exact MolecularDynamics.Chapter01Review.minimumGradientZero_proved
+
+/-- 修正版，对应原文 MD-1.6.1-MinimumGradientZero，改动：显式标为无约束内点极小的必要条件，保留已证桥接；不扩展到约束边界。 -/
+theorem minimumgradientzero_corrected :
   ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n),
     DifferentiableAt ℝ U q → IsLocalMin U q → gradient U q = 0 := by
   exact MolecularDynamics.Chapter01Review.minimumGradientZero_proved
@@ -1645,7 +1997,7 @@ theorem force_linearization {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
   · have h := hasFDerivAt_iff_isLittleO.mp hg.hasFDerivAt
     simpa only [heq, sub_zero] using h
 
-/-- source_id: MD-1.6.1-MinimumHessianLiteral · unnumbered_claim · printed p.37 / PDF p.60
+/-- source_id: MD-1.6.1-MinimumHessianLiteral · unnumbered_claim · printed p.37 / PDF p.60 【原书疑误】
 
 [ERRATUM?] 局部极小Hessian仅半正定；U(x)=x^4在0为严格极小但二阶导数0。
 -/
@@ -1655,6 +2007,25 @@ theorem minimumhessianliteral :
     (∀ u v, inner ℝ u (fderiv ℝ (gradient U) q v) = inner ℝ v (fderiv ℝ (gradient U) q u)) ∧
     ∀ v : Position n, v ≠ 0 → 0 < inner ℝ v (fderiv ℝ (gradient U) q v) := by
   sorry
+
+/-- 修正版，对应原文 MD-1.6.1-MinimumHessianLiteral，改动：正定改为半正定；仍保留Hessian对称性及所有非零方向。 -/
+theorem minimumhessianliteral_corrected :
+  ∀ (n : ℕ) (U : PotentialEnergy n) (q : Position n), ContDiff ℝ 2 U →
+    IsLocalMin U q →
+    (∀ u v, inner ℝ u (fderiv ℝ (gradient U) q v) = inner ℝ v (fderiv ℝ (gradient U) q u)) ∧
+    ∀ v : Position n, v ≠ 0 → 0 ≤ inner ℝ v (fderiv ℝ (gradient U) q v) := by
+  sorry
+
+theorem minimumhessianliteral_counterexample :
+    IsLocalMin (fun x : ℝ => x^4) 0 ∧ deriv (deriv (fun x : ℝ => x^4)) 0 = 0 := by
+  constructor
+  · change ∀ᶠ x in 𝓝 (0 : ℝ), (0 : ℝ)^4 ≤ x^4
+    exact Filter.Eventually.of_forall (fun x => by norm_num only [zero_pow]; positivity)
+  · have hd : deriv (fun x : ℝ => x^4) = fun x => 4*x^3 := by
+      funext x
+      convert ((hasDerivAt_id x).pow 4).deriv using 1 <;> simp
+    rw [hd]
+    simpa using (((hasDerivAt_id (0 : ℝ)).pow 3).const_mul 4).deriv
 
 /-- source_id: MD-1.6.1-ImaginarySpectrum · unnumbered_claim · printed p.37 / PDF p.60
 [EXTRA] M和Hessian K正定；复谱实虚向量编码。
@@ -1674,7 +2045,10 @@ theorem imaginary_spectrum :
 -/
 theorem complexnormalmode :
   ∀ (n : ℕ) (A : Matrix (Fin n) (Fin n) ℝ) (η : Fin n → ℂ) (Ω : ℝ),
-    (A.map (algebraMap ℝ ℂ)).mulVec η = (Complex.I * Ω) • η →
+    η ≠ 0 → (A.map (algebraMap ℝ ℂ)).mulVec η = (Complex.I * Ω) • η →
+    (fun i => star (η i)) ≠ 0 ∧
+    (A.map (algebraMap ℝ ℂ)).mulVec (fun i => star (η i)) =
+      (-Complex.I * Ω) • (fun i => star (η i)) ∧
     ∀ a b : ℂ, ∀ t : ℝ,
       HasDerivAt (fun s : ℝ =>
         a • (Complex.exp (Complex.I*Ω*s) • η) +
@@ -1754,7 +2128,7 @@ theorem central_momentum :
 [EXTRA] 真实位置和动量导数；反对称内力和沿位移方向中心力。
 
 -/
-theorem centralangularmomentum :
+theorem centralangularmomentum_derivative :
   ∀ (N : ℕ) (m : Fin N → ℝ) (q v : ℝ → Fin N → V3)
     (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I →
     (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t) →
@@ -1814,6 +2188,25 @@ theorem centralangularmomentum :
   have hh := HasDerivAt.fun_sum (u := Finset.univ) (fun i _ => hd i)
   rwa [hz] at hh
 
+theorem centralangularmomentum :
+  ∀ (N : ℕ) (m : Fin N → ℝ) (q v : ℝ → Fin N → V3)
+    (F : ℝ → Fin N → Fin N → V3) (I : Set ℝ), IsOpen I → IsPreconnected I →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => q s i) (v t i) t) →
+    (∀ t ∈ I, ∀ i, HasDerivAt (fun s => m i • v s i) (∑ j, F t i j) t) →
+    (∀ t ∈ I, ∀ i j, F t i j = -F t j i) →
+    (∀ t ∈ I, ∀ i j, cross3 (q t i-q t j) (F t i j) = 0) →
+    (∀ t ∈ I, ∀ i j, cross3 (q t i) (F t i j) = -cross3 (q t j) (F t j i)) ∧
+    (∀ t ∈ I, HasDerivAt (fun s => ∑ i, cross3 (q s i) (m i • v s i)) 0 t) ∧
+    ∀ a ∈ I, ∀ b ∈ I, (∑ i, cross3 (q a i) (m i • v a i)) =
+      ∑ i, cross3 (q b i) (m i • v b i) := by
+  intro N m q v F I hI hc hq hp ha hf
+  obtain ⟨ht,hd⟩ := centralangularmomentum_derivative N m q v F I hI hq hp ha hf
+  refine ⟨ht,hd,?_⟩
+  intro a ha b hb
+  exact hI.is_const_of_deriv_eq_zero hc
+    (fun t ht => (hd t ht).differentiableAt.differentiableWithinAt)
+    (fun t ht => (hd t ht).deriv) ha hb
+
 /-- source_id: MD-1.7-CenterOfMassMotion · unnumbered_claim · printed p.39 / PDF p.62
 [EXTRA] 质量正、总质量正、真实位置导数、连通时间域；平移部分据已得总动量守恒。
 
@@ -1850,7 +2243,7 @@ theorem centerofmassmotion :
   have hh := congrArg (fun u => (∑ i,m i)⁻¹ • u) he
   simpa [P, smul_add, smul_smul, mul_comm] using hh
 
-/-- source_id: MD-1.7-ConstantRotationLiteral · unnumbered_claim · printed p.39 / PDF p.62
+/-- source_id: MD-1.7-ConstantRotationLiteral · unnumbered_claim · printed p.39 / PDF p.62 【原书疑误】
 
 [ERRATUM?] 角动量常数不推出角速度常数；中心运动r变时θ̇=ℓ/r²。例r(t)=sqrt(1+t²),θ(t)=arctan t,ℓ=1。
 -/
@@ -1860,12 +2253,37 @@ theorem constantrotationliteral :
     ∃ freq : ℝ, ∀ t, deriv θ t = freq := by
   sorry
 
-/-- source_id: MD-1.7-IsoscelesCoordinates · definition · printed p.39 / PDF p.62
+/-- 修正版，对应原文 MD-1.7-ConstantRotationLiteral，改动：a增加恒定正半径才推恒角速；默认b保留角动量守恒并明确θ′=ℓ/r²。 -/
+theorem constantrotationliteral_corrected_a (R ℓ : ℝ) (θ : ℝ → ℝ)
+    (hR : 0 < R) (h : ∀ t, R^2 * deriv θ t = ℓ) :
+    ∃ freq : ℝ, ∀ t, deriv θ t = freq := by
+  refine ⟨ℓ/R^2,fun t => ?_⟩
+  apply (eq_div_iff (pow_ne_zero 2 hR.ne')).mpr
+  simpa [mul_comm] using h t
+
+/-- 修正版，对应原文 MD-1.7-ConstantRotationLiteral，改动：角速度随半径变化。 -/
+theorem constantrotationliteral_corrected_b (r θ : ℝ → ℝ) (ℓ : ℝ)
+    (h : ∀ t, 0 < r t ∧ (r t)^2 * deriv θ t = ℓ) :
+    ∀ t, deriv θ t = ℓ/(r t)^2 := by
+  intro t
+  apply (eq_div_iff (pow_ne_zero 2 (h t).1.ne')).mpr
+  simpa [mul_comm] using (h t).2
+
+/-- source_id: MD-1.7-IsoscelesCoordinates · definition · printed p.39 / PDF p.62 【原书疑误】
 
 [ERRATUM?] 同段“零平动/角动量→等腰”一般过强；这里只定义明确给定的对称配置，不把任意零动量当等腰。
 -/
 def isoscelesCoordinates (x y : ℝ) : Fin 3 → V3 :=
   ![WithLp.toLp 2 ![x,-y/3,0],WithLp.toLp 2 ![-x,-y/3,0],WithLp.toLp 2 ![0,2*y/3,0]]
+
+/-- 修正版，对应原文 MD-1.7-IsoscelesCoordinates，改动：把三坐标公式作为主动选取的对称子模型，证明其质心为零；不把零总动量/角动量推出等腰。 -/
+def isoscelesCoordinates_corrected (x y : ℝ) : Fin 3 → V3 :=
+  ![WithLp.toLp 2 ![x,-y/3,0],WithLp.toLp 2 ![-x,-y/3,0],WithLp.toLp 2 ![0,2*y/3,0]]
+
+theorem isoscelesCoordinates_corrected_center (x y : ℝ) :
+    (∑ i : Fin 3, isoscelesCoordinates_corrected x y i) = 0 := by
+  ext k
+  fin_cases k <;> simp [isoscelesCoordinates_corrected,Fin.sum_univ_three] <;> ring
 
 /-- source_id: MD-1.7-IsoscelesEnergyReduction · unnumbered_claim · printed p.39 / PDF p.62
 [EXTRA] 单位质量及x>0保证q1-q2距离为2x，未以所求能量等式为假设。
@@ -1950,7 +2368,7 @@ theorem trimersaddle :
     ∀ y : ℝ, 0 < |y| → |y| < δ → isoscelesPotential x y < isoscelesPotential x 0 := by
   sorry
 
-/-- source_id: MD-1.7-TrimerEscapeLiteral · unnumbered_claim · printed p.40 / PDF p.63
+/-- source_id: MD-1.7-TrimerEscapeLiteral · unnumbered_claim · printed p.40 / PDF p.63 【原书疑误】
 
 [ERRATUM?] every body逃逸字面过强：取等腰退化为共线y≡0，q₁=(x,0,0)、q₂=(-x,0,0)、q₃=0，中心粒子合力零，质心/动量/角动量均零；x>1的外向正能量解使外侧两粒子逃逸而中心始终固定。需裁定是否改为至少一对分离。
 -/
@@ -1966,6 +2384,19 @@ theorem trimerescapeliteral :
     ∀ i : Fin 3, Tendsto (fun t => ‖q t i‖) atTop atTop := by
   sorry
 
+/-- 修正版，对应原文 MD-1.7-TrimerEscapeLiteral，改动：把every body逐粒子逃逸改为至少一对粒子分离的候选陈述；全部动力学、正能量、零质心/角动量资格保留。 -/
+theorem trimerescapeliteral_corrected :
+  ∀ (q v : ℝ → Fin 3 → V3) (E : ℝ), 0 < E →
+    (∀ t i j, i ≠ j → q t i ≠ q t j) →
+    (∀ t, (∑ i, q t i) = 0 ∧ (∑ i, v t i) = 0 ∧
+      (∑ i, cross3 (q t i) (v t i)) = 0 ∧
+      ∃ x > 0, ∃ y, q t = isoscelesCoordinates x y) →
+    (∀ t i, HasDerivAt (fun s => q s i) (v t i) t ∧
+      HasDerivAt (fun s => v s i) (ljForce 1 1 (q t) i) t) →
+    (∀ t, (∑ i, ‖v t i‖^2/2)+uniformLJEnergy 1 1 (q t) = E) →
+    ∃ i j : Fin 3, i ≠ j ∧ Tendsto (fun t => dist (q t i) (q t j)) atTop atTop := by
+  sorry
+
 /-- source_id: MD-1.7.1-ChaosConditions · definition · printed p.41–42 / PDF p.64–65
 [EXTRA] 敏感依赖以固定可见分离量ε、任意δ近邻的标准量词解释；原文说明without being entirely formal，未指定这个严格ε/δ版本。
 [EXTRA] topologicalTransitivity使用相对开集和非负时间，D须流不变才能解释为相域。
@@ -1974,7 +2405,7 @@ theorem trimerescapeliteral :
 def chaosConditions {n : ℕ} (F : ℝ → Position n → Position n) (D : Set (Position n)) : Prop :=
   sensitiveDependence F D ∧ topologicalTransitivity F D
 
-/-- source_id: MD-1.7.1-TransitivityErgodicityLiteral · unnumbered_claim · printed p.42 / PDF p.65
+/-- source_id: MD-1.7.1-TransitivityErgodicityLiteral · unnumbered_claim · printed p.42 / PDF p.65 【原书疑误】
 [EXTRA] 为表达ergodicity必须引入原文此处未给的不变测度μ；F为连续真实流。
 [ERRATUM?] 拓扑传递和给定测度遍历通常不等价；μ=0时identity流遍历为真而传递为假。非退化概率测度也需进一步限定。
 -/
@@ -1986,6 +2417,15 @@ theorem transitivityergodicityliteral :
     (topologicalTransitivity F univ ↔ flowErgodic F μ) := by
   sorry
 
+/-- 修正版，对应原文 MD-1.7.1-TransitivityErgodicityLiteral，改动：改为有限、满支撑不变测度下的遍历性⇒拓扑传递单向结论。 -/
+theorem transitivityergodicityliteral_corrected {n : ℕ}
+    (f : Position n → Position n) (F : ℝ → Position n → Position n)
+    (μ : Measure (Position n)) [IsFiniteMeasure μ]
+    (hf : ContDiff ℝ 1 f) (hflow : isFlowOf f F) (hcont : Continuous (Function.uncurry F))
+    (hfull : ∀ U : Set (Position n), IsOpen U → U.Nonempty → μ U ≠ 0)
+    (he : flowErgodic F μ) : topologicalTransitivity F univ := by
+  sorry
+
 /-- source_id: MD-1.7.1-AnisotropicOscillator · Example 1.9 (Anisotropic Oscillator) · printed p.42 / PDF p.65
 [EXTRA] 定义在r=0用Lean总函数延拓，物理域r>0。
 
@@ -1994,14 +2434,18 @@ def anisotropicEnergy (κ₀ l₀ ε x y v w : ℝ) :=
   let p := anisotropicParameters κ₀ l₀ ε (anisotropicAngular x y)
   (v^2+w^2)/2+p.1/2*(Real.sqrt (x^2+y^2)-p.2)^2
 
-/-- source_id: MD-1.7.2-FlowJacobianLiteral · definition · printed p.44 / PDF p.67
+/-- source_id: MD-1.7.2-FlowJacobianLiteral · definition · printed p.44 / PDF p.67 【原书疑误】
 
 [ERRATUM?] 标准变分矩阵应为DξFt(ξ)，原文把取值点写Ftξ；忠实保留字面定义，后续两条不静默改。
 -/
 def variationalMatrixLiteral {n : ℕ} (F : ℝ → Position n → Position n)
     (ξ : Position n) (t : ℝ) := fderiv ℝ (F t) (F t ξ)
 
-/-- source_id: MD-1.7.2-VariationalEquationLiteral · unnumbered_claim · printed p.44–45 / PDF p.67–68
+/-- 修正版，对应原文 MD-1.7.2-FlowJacobianLiteral，改动：DF_t取值点从F_t(ξ)改为初值ξ。 -/
+def variationalMatrixLiteral_corrected {n : ℕ} (F : ℝ → Position n → Position n)
+    (ξ : Position n) (t : ℝ) := fderiv ℝ (F t) ξ
+
+/-- source_id: MD-1.7.2-VariationalEquationLiteral · unnumbered_claim · printed p.44–45 / PDF p.67–68 【原书疑误】
 
 [ERRATUM?] 标准W应在ξ处取DFt。取全局光滑完备流f(x)=sin x，在ξ=π/2附近Ft(x)=2 arctan(e^t tan(x/2))；t=log 2时字面W=10/17，W′=-198/289，而f′(Ftξ)W=-6/17=-102/289，不相等。
 -/
@@ -2012,7 +2456,15 @@ theorem variationalequationliteral :
       ((fderiv ℝ f (F t ξ)).comp (variationalMatrixLiteral F ξ t)) t := by
   sorry
 
-/-- source_id: MD-1.7.2-NearbyTrajectoryLiteral · unnumbered_claim · printed p.45 / PDF p.68
+/-- 修正版，对应原文 MD-1.7.2-VariationalEquationLiteral，改动：采用W(t)=DF_t(ξ)，保留C¹向量场及真实流资格。 -/
+theorem variationalequationliteral_corrected :
+  ∀ (n : ℕ) (f : Position n → Position n) (F : ℝ → Position n → Position n),
+    ContDiff ℝ 1 f → differentiableFlow F → isFlowOf f F →
+    ∀ ξ t, HasDerivAt (fun s => variationalMatrixLiteral_corrected F ξ s)
+      ((fderiv ℝ f (F t ξ)).comp (variationalMatrixLiteral_corrected F ξ t)) t := by
+  sorry
+
+/-- source_id: MD-1.7.2-NearbyTrajectoryLiteral · unnumbered_claim · printed p.45 / PDF p.68 【原书疑误】
 [EXTRA] ≈严格化为固定t、扰动趋0的Frechet小o；沿用原文字面W。
 [ERRATUM?] 同一全局sin流在ξ=π/2,t=log 2时DFt(ξ)=4/5，字面DFt(Ftξ)=10/17；差额线性项不为小o。须导师裁定取值点，当前不静默修正。
 -/
@@ -2021,6 +2473,14 @@ theorem nearby_trajectory_literal :
     ∀ t ξ, (fun x => F t x-F t ξ-variationalMatrixLiteral F ξ t (x-ξ))
       =o[𝓝 ξ] (fun x => x-ξ) := by
   sorry
+
+/-- 修正版，对应原文 MD-1.7.2-NearbyTrajectoryLiteral，改动：线性化在初值ξ处取DF_t，固定t的余项为o(扰动)。 -/
+theorem nearby_trajectory_literal_corrected :
+  ∀ (n : ℕ) (F : ℝ → Position n → Position n), differentiableFlow F →
+    ∀ t ξ, (fun x => F t x-F t ξ-variationalMatrixLiteral_corrected F ξ t (x-ξ))
+      =o[𝓝 ξ] (fun x => x-ξ) := by
+  intro n F hF t ξ
+  exact ((hF t).differentiable (by norm_num) ξ).hasFDerivAt.isLittleO
 
 /-- source_id: MD-1.7.2-SingularValues · definition · printed p.45 / PDF p.68
 [EXTRA] 用存在正交特征基刻画谱关系；不是以要证明的椭球图像结论为假设。
@@ -2073,3 +2533,199 @@ theorem positivelyapunovgrowth :
 /- END FULL SECTION 1.7 -/
 
 end MD.Ch01
+
+/- CLOSEOUT19: every named declaration, including corrected variants and counterexamples. -/
+#print axioms MD.Ch01.IsNewtonTrajectoryOn
+#print axioms MD.Ch01.matrixAction
+#print axioms MD.Ch01.variableMassLagrangian
+#print axioms MD.Ch01.variableMassHamiltonian
+#print axioms MD.Ch01.classicalNewtonInitialValueModel
+#print axioms MD.Ch01.binaryElasticSphereCollision
+#print axioms MD.Ch01.lengthBondRadial
+#print axioms MD.Ch01.theorem_1_1
+#print axioms MD.Ch01.energy_conservation
+#print axioms MD.Ch01.newton_iff_euler_lagrange
+#print axioms MD.Ch01.hamiltonian_legendre_transform
+#print axioms MD.Ch01.hamiltonian_legendre_transform_literal
+#print axioms MD.Ch01.hamiltonian_legendre_transform_corrected
+#print axioms MD.Ch01.flow_inverse
+#print axioms MD.Ch01.schrodingerEquation
+#print axioms MD.Ch01.newtonInitialValueModel
+#print axioms MD.Ch01.hardSphereModel
+#print axioms MD.Ch01.multibodyPotential
+#print axioms MD.Ch01.morsePotential
+#print axioms MD.Ch01.morse_minimum
+#print axioms MD.Ch01.lengthBond
+#print axioms MD.Ch01.dispersionPotential
+#print axioms MD.Ch01.buckinghamPotential
+#print axioms MD.Ch01.lennardJonesPotential
+#print axioms MD.Ch01.lj_repulsion
+#print axioms MD.Ch01.lj_repulsion_corrected
+#print axioms MD.Ch01.heterogeneousLJ
+#print axioms MD.Ch01.coulombPotential
+#print axioms MD.Ch01.smoothCutoff
+#print axioms MD.Ch01.yukawaScreened
+#print axioms MD.Ch01.yukawaScreened_corrected_a
+#print axioms MD.Ch01.yukawaScreened_corrected_b
+#print axioms MD.Ch01.angleBondModel
+#print axioms MD.Ch01.dihedralPotential
+#print axioms MD.Ch01.gayBerneModel
+#print axioms MD.Ch01.compactNewton
+#print axioms MD.Ch01.linearizedConstraintDimension
+#print axioms MD.Ch01.degreesOfFreedom
+#print axioms MD.Ch01.constraintdimension
+#print axioms MD.Ch01.constraintdimension_unconstrained
+#print axioms MD.Ch01.particleTotalEnergy
+#print axioms MD.Ch01.paircancellation
+#print axioms MD.Ch01.momentum_conservation
+#print axioms MD.Ch01.harmonic_solution
+#print axioms MD.Ch01.scalarMechanicalModel
+#print axioms MD.Ch01.scalar_quadrature
+#print axioms MD.Ch01.uniformLJSystem
+#print axioms MD.Ch01.radial_lj_force_literal
+#print axioms MD.Ch01.radial_lj_force_literal_corrected
+#print axioms MD.Ch01.lj_coordinate_scaling
+#print axioms MD.Ch01.ljtimescaling
+#print axioms MD.Ch01.ljtimescaling_argon
+#print axioms MD.Ch01.fixedMassLagrangian
+#print axioms MD.Ch01.generalized_coordinates
+#print axioms MD.Ch01.generalizedmassregular
+#print axioms MD.Ch01.legendreTransform
+#print axioms MD.Ch01.legendreTransform_literal
+#print axioms MD.Ch01.legendreTransform_corrected
+#print axioms MD.Ch01.legendreTransform_corrected_b
+#print axioms MD.Ch01.hamiltonEquationsOn
+#print axioms MD.Ch01.hamiltonEquations
+#print axioms MD.Ch01.hamilton_fixed_mass
+#print axioms MD.Ch01.hamiltonlagrangeequivalence
+#print axioms MD.Ch01.finiteEnergyPhaseDomain
+#print axioms MD.Ch01.finiteEnergyPhaseDomain_corrected
+#print axioms MD.Ch01.finiteEnergyPhaseDomain_corrected_dimension
+#print axioms MD.Ch01.local_exist_unique
+#print axioms MD.Ch01.energySurface
+#print axioms MD.Ch01.energy_bounds
+#print axioms MD.Ch01.uniform_levels_compact
+#print axioms MD.Ch01.compact_continuation_aux
+#print axioms MD.Ch01.compact_continuation
+#print axioms MD.Ch01.nonconfining
+#print axioms MD.Ch01.flowMap
+#print axioms MD.Ch01.flow_energy
+#print axioms MD.Ch01.harmonicPhaseFlow
+#print axioms MD.Ch01.harmonicPhaseFlow_solution
+#print axioms MD.Ch01.spectralsolution
+#print axioms MD.Ch01.basis_coefficients
+#print axioms MD.Ch01.matrixexponentialsolution
+#print axioms MD.Ch01.matrix_exp_series
+#print axioms MD.Ch01.smoothFirstIntegral
+#print axioms MD.Ch01.firstintegralcriterion
+#print axioms MD.Ch01.planargraphreduction
+#print axioms MD.Ch01.planarquadrature
+#print axioms MD.Ch01.scalar_first_integral_and_quadrature
+#print axioms MD.Ch01.realspectralsolution
+#print axioms MD.Ch01.planarKeplerEnergy
+#print axioms MD.Ch01.kepler_energy_angular_integrability
+#print axioms MD.Ch01.keplerangularmomentum
+#print axioms MD.Ch01.keplermomentum
+#print axioms MD.Ch01.keplermomentum_not_first_integrals
+#print axioms MD.Ch01.polarCoordinates
+#print axioms MD.Ch01.keplerpolarlagrangian
+#print axioms MD.Ch01.keplerpolarode
+#print axioms MD.Ch01.polarangularidentity
+#print axioms MD.Ch01.keplerradialreduction
+#print axioms MD.Ch01.radialKeplerEnergy
+#print axioms MD.Ch01.kepler_full_solution
+#print axioms MD.Ch01.oscillatorActionAngle
+#print axioms MD.Ch01.actionenergy
+#print axioms MD.Ch01.actionode
+#print axioms MD.Ch01.actionsolution
+#print axioms MD.Ch01.oscillatorTorusMotion
+#print axioms MD.Ch01.torusperiod
+#print axioms MD.Ch01.torusQuasiperiodic
+#print axioms MD.Ch01.torusperiod_classification
+#print axioms MD.Ch01.torusdense
+#print axioms MD.Ch01.torusdense_literal
+#print axioms MD.Ch01.torusdense_corrected
+#print axioms MD.Ch01.local_action_angle_reduction
+#print axioms MD.Ch01.local_action_angle_reduction_literal
+#print axioms MD.Ch01.local_action_angle_reduction_corrected
+#print axioms MD.Ch01.equilibriumDefinition
+#print axioms MD.Ch01.constantequilibrium
+#print axioms MD.Ch01.equilibriumlinearization
+#print axioms MD.Ch01.hyperbolic
+#print axioms MD.Ch01.hartmangrobmanliteral
+#print axioms MD.Ch01.hartmangrobmanliteral_corrected
+#print axioms MD.Ch01.lyapunovStable
+#print axioms MD.Ch01.hyperbolicstabilitytransfer
+#print axioms MD.Ch01.hyperbolicstabilitytransfer_corrected
+#print axioms MD.Ch01.hamilton_equilibrium
+#print axioms MD.Ch01.strongLocalMinimum
+#print axioms MD.Ch01.linearizedHamiltonian
+#print axioms MD.Ch01.linearizedHamiltonian_field
+#print axioms MD.Ch01.positivehessianquadratic
+#print axioms MD.Ch01.positive_hessian_minimum
+#print axioms MD.Ch01.latticePairPotential
+#print axioms MD.Ch01.unorderedpaircount
+#print axioms MD.Ch01.nearestNeighborModel
+#print axioms MD.Ch01.walledChainModel
+#print axioms MD.Ch01.periodicChainModel
+#print axioms MD.Ch01.periodicPositionEquivalent
+#print axioms MD.Ch01.periodicBoundary
+#print axioms MD.Ch01.periodic_translation_momentum
+#print axioms MD.Ch01.periodicBondEnergy
+#print axioms MD.Ch01.periodic_translation_third_law
+#print axioms MD.Ch01.regularLattice
+#print axioms MD.Ch01.regularlatticeminimizerliteral
+#print axioms MD.Ch01.regularlatticeminimizerliteral_corrected
+#print axioms MD.Ch01.regularlatticeminimizerliteral_counterexample
+#print axioms MD.Ch01.periodicImageEnergy
+#print axioms MD.Ch01.minimumImage
+#print axioms MD.Ch01.minimumImageForce
+#print axioms MD.Ch01.rhombicLattice
+#print axioms MD.Ch01.hexagonal_lattice_two_bases
+#print axioms MD.Ch01.unitCellLattice
+#print axioms MD.Ch01.fccStacking
+#print axioms MD.Ch01.hcpStacking
+#print axioms MD.Ch01.minimumgradientzero
+#print axioms MD.Ch01.minimumgradientzero_corrected
+#print axioms MD.Ch01.force_linearization
+#print axioms MD.Ch01.minimumhessianliteral
+#print axioms MD.Ch01.minimumhessianliteral_corrected
+#print axioms MD.Ch01.minimumhessianliteral_counterexample
+#print axioms MD.Ch01.imaginary_spectrum
+#print axioms MD.Ch01.complexnormalmode
+#print axioms MD.Ch01.realnormalmode
+#print axioms MD.Ch01.planarTrimerEnergy
+#print axioms MD.Ch01.centralPairEnergy
+#print axioms MD.Ch01.centralpairgradient
+#print axioms MD.Ch01.central_momentum
+#print axioms MD.Ch01.centralangularmomentum_derivative
+#print axioms MD.Ch01.centralangularmomentum
+#print axioms MD.Ch01.centerofmassmotion
+#print axioms MD.Ch01.constantrotationliteral
+#print axioms MD.Ch01.constantrotationliteral_corrected_a
+#print axioms MD.Ch01.constantrotationliteral_corrected_b
+#print axioms MD.Ch01.isoscelesCoordinates
+#print axioms MD.Ch01.isoscelesCoordinates_corrected
+#print axioms MD.Ch01.isoscelesCoordinates_corrected_center
+#print axioms MD.Ch01.isosceles_energy_reduction
+#print axioms MD.Ch01.isoscelesaccessibleregion
+#print axioms MD.Ch01.equilateraltrimerminimum
+#print axioms MD.Ch01.trimerenergylowerbound
+#print axioms MD.Ch01.collinearTrimer
+#print axioms MD.Ch01.trimersaddle
+#print axioms MD.Ch01.trimerescapeliteral
+#print axioms MD.Ch01.trimerescapeliteral_corrected
+#print axioms MD.Ch01.chaosConditions
+#print axioms MD.Ch01.transitivityergodicityliteral
+#print axioms MD.Ch01.transitivityergodicityliteral_corrected
+#print axioms MD.Ch01.anisotropicEnergy
+#print axioms MD.Ch01.variationalMatrixLiteral
+#print axioms MD.Ch01.variationalMatrixLiteral_corrected
+#print axioms MD.Ch01.variationalequationliteral
+#print axioms MD.Ch01.variationalequationliteral_corrected
+#print axioms MD.Ch01.nearby_trajectory_literal
+#print axioms MD.Ch01.nearby_trajectory_literal_corrected
+#print axioms MD.Ch01.singularValues
+#print axioms MD.Ch01.singularellipsoid
+#print axioms MD.Ch01.lyapunovExponent
+#print axioms MD.Ch01.positivelyapunovgrowth

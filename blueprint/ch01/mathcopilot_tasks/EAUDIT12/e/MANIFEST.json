@@ -1,0 +1,74 @@
+{
+  "eaudit": "EAUDIT12",
+  "source_id": "MD-1.1.2-GayBerne",
+  "input_sha256": {
+    "BATCH_EAUDIT12.md": "1bbbf91c3dc107097af57da73ca6d01e58c4e81a009ac2cb92974cbb625a329b",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+    "EAUDIT12e_materials": "71f31f01b40425950fa40fe11cd1eee51f2aa5e1be8edf95f427f7427041a1de",
+    "EAUDIT12e_PAGES.pdf": "01b13cd332c9384176a801b9e4ceed3fc96cb07ba0928e03a69ad32264fee29c"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    39,
+    40
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "761e8d2c5763985ee457cfaea4dfc3b4af6de2e86ecc29fe2cd5fcbad736e343",
+  "source_block_sha256": "7e61d682ce8ae7b295ddd7357ab9c4ccd5f586b0dd684280f5fa6d8152df9e7a",
+  "source_declarations": [
+    "gayBerneModel"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "V3",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "630b28f8663e80b13763ae51544e5ef63ff46b6c99936a04ab13fd586892a08c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "gayBerneChi",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "678f0a8c312edce3f823c26123125055278cc1adc3e5038917e95686b0a244f9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "gayBerneChiPrime",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "c96d9e7abea2b9f456c007b3972ae6d8d42d03c5724718f2374755f8c9819de3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "gayBerneEpsilonOne",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "4e804a96ff8e50fecea874458999451150282f23db250b80d243d9f071c305c9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "gayBerneEpsilonTwo",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "17a623f9f971aa2b70882531f86cf36f960586c0299173258aef44ec5728505c"
+    },
+    {
+      "path": "Blueprint/Ch01.lean",
+      "name": "gayBerneModel",
+      "file_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "excerpt_sha256": "d932c5f5ca37d31eaf3ae07646dc058b169b5e8645c47a77920d2e7317847dcf"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "gayBerneW",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "feeb8884cb8ed185a162f3a84d8b4d111e471f597eaeff09c8e179433ce0a260"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT12_review.json",
+  "total_task_bytes": 192659
+}

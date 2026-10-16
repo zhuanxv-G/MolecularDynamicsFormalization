@@ -1,0 +1,90 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-1.5.1-FlowEnergy；原PDF页映射=[49]。必须实际写入 /workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT09_review.json，对象含batch=EAUDIT09、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT09.md": "58c1fb0669e964c5540f9a666143d76cd20b18b9b1ff908232b3c91fd207ebb1",
+  "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "EAUDIT09a_materials": "2068ca93534f36b7211bb79e3afbbb45a79dd5f14ef65c330a0559439b57af7e",
+  "EAUDIT09a_PAGES.pdf": "16061786c01c2aaad1fec67705bd8882432bec6089e4ec6f3c28810aa81a1b25"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-1.5.1-FlowEnergy",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "1.5.1",
+  "printed_page": "26",
+  "pdf_page": "49",
+  "statement_latex": "The flow map of a Hamiltonian system conserves its Hamiltonian, thus\n\\[H(\\mathcal F_t(\\boldsymbol\\xi))=H(\\boldsymbol\\xi).\\]",
+  "proof_latex": null,
+  "proof_note": "原书无独立完整证明。",
+  "context_notation": [],
+  "review_status": "DRAFT",
+  "issues": [],
+  "lean_decl": "MD.Ch01.flow_energy",
+  "extra_assumptions": [
+    "H可微及F为真实全局Hamilton流（初值和ODE，不含守恒结论）。"
+  ],
+  "old_ids": [
+    "CH01-101"
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)
+    (F : ℝ → PhaseSpace n → PhaseSpace n) (hH : Differentiable ℝ H)
+    (hF : ∀ ξ, F 0 ξ = ξ ∧ ∀ t, HasDerivAt (fun s => F s ξ) (symplecticGradient H (F t ξ)) t) :
+    ∀ ξ t, H (F t ξ) = H ξ := by
+  intro ξ t
+  have hd (s : ℝ) : HasDerivAt (fun u => H (F u ξ)) 0 s := by
+    let z := F s ξ
+    let A := fderiv ℝ H z
+    have hA : HasFDerivAt H A z := (hH z).hasFDerivAt
+    have hq := hA.comp z.1 ((hasFDerivAt_id (𝕜 := ℝ) z.1).prodMk (hasFDerivAt_const (𝕜 := ℝ) z.2 z.1))
+    have hp := hA.comp z.2 ((hasFDerivAt_const (𝕜 := ℝ) z.1 z.2).prodMk (hasFDerivAt_id (𝕜 := ℝ) z.2))
+    simp only [Function.comp_def, id_eq] at hq hp
+    let gq := gradient (fun q => H (q,z.2)) z.1
+    let gp := gradient (fun p => H (z.1,p)) z.2
+    have eqQ (v : Position n) : A (v,0) = inner ℝ gq v := by
+      rw [inner_gradient_left, hq.fderiv]
+      rfl
+    have eqP (v : Position n) : A (0,v) = inner ℝ gp v := by
+      rw [inner_gradient_left, hp.fderiv]
+      rfl
+    have hz : A (symplecticGradient H z) = 0 := by
+      change A (gp,-gq) = 0
+      have he : (gp,-gq) = (gp,0)+(0,-gq) := by simp
+      rw [he, map_add, eqQ, eqP, inner_neg_right, real_inner_comm gq gp]
+      ring
+    have hh := hA.comp_hasDerivAt s ((hF ξ).2 s)
+    have he : A (symplecticGradient H (F s ξ)) = 0 := hz
+    rw [he] at hh
+    simpa only [Function.comp_def] using hh
+  have hc := is_const_of_deriv_eq_zero (fun s => (hd s).differentiableAt)
+    (fun s => (hd s).deriv) t 0
+  simpa [(hF ξ).1] using hc
+```
+### 实际依赖 MolecularDynamics.Momentum
+```lean
+abbrev Momentum (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.PhaseSpace
+```lean
+abbrev PhaseSpace (n : ℕ) := Position n × Momentum n
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.symplecticGradient
+```lean
+def symplecticGradient {d : ℕ} (H : PhaseSpace d → ℝ) (z : PhaseSpace d) : PhaseSpace d :=
+  (gradient (fun p => H (z.1,p)) z.2, -gradient (fun q => H (q,z.2)) z.1)
+```

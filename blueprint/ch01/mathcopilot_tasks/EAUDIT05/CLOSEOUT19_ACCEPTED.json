@@ -1,0 +1,80 @@
+{
+  "eaudit": "EAUDIT05",
+  "source_ids": [
+    "MD-1.2-NewtonCompact",
+    "MD-1.2-DegreesFreedom",
+    "MD-1.2-ConstraintDimension",
+    "MD-1.2-TotalEnergy",
+    "MD-1.2-PairCancellation",
+    "MD-1.2-MomentumConservation",
+    "MD-1.2-HarmonicSolution",
+    "MD-1.2-ScalarMechanical"
+  ],
+  "input_sha256": {
+    "BATCH_EAUDIT05.md": "d426a02c936e411940e95a0f0fc7de30b845ee0957638a10cfbfbd473fd84e05",
+    "Blueprint/Ch01.lean": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+    "blueprint/ch01/ch01_source.json": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+  },
+  "task_index": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/INDEX.md",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT05a",
+      "source_id": "MD-1.2-NewtonCompact",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/a",
+      "total_bytes": 118255,
+      "manifest_sha256": "a25906236d1925f75eca236f5d6df9b9cf5336839e544a5ef44669b1ded93322"
+    },
+    {
+      "subtask": "EAUDIT05b",
+      "source_id": "MD-1.2-DegreesFreedom",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/b",
+      "total_bytes": 115715,
+      "manifest_sha256": "5c295012c515aa94e686e303b6da3d1c4bbda753dbd57d74cbeab68b0196f4ab"
+    },
+    {
+      "subtask": "EAUDIT05c",
+      "source_id": "MD-1.2-ConstraintDimension",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/c",
+      "total_bytes": 116354,
+      "manifest_sha256": "ea00b906f8381a66dbfec9a882db1b15d24ca78eeccb439bee19ff282431be75"
+    },
+    {
+      "subtask": "EAUDIT05d",
+      "source_id": "MD-1.2-TotalEnergy",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/d",
+      "total_bytes": 115138,
+      "manifest_sha256": "1155d2a580d942d59c5368c3d0124334092929feddc74dce41b28d012500720b"
+    },
+    {
+      "subtask": "EAUDIT05e",
+      "source_id": "MD-1.2-PairCancellation",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/e",
+      "total_bytes": 79453,
+      "manifest_sha256": "47ea0364ca3ceb2a7faabd89da4ea5c4cd42618d0789e75fd30577107dfb2220"
+    },
+    {
+      "subtask": "EAUDIT05f",
+      "source_id": "MD-1.2-MomentumConservation",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/f",
+      "total_bytes": 80414,
+      "manifest_sha256": "fe2b64d371dd3cee130af388422d48f1cb2a634302bf8971825b108b77b9d913"
+    },
+    {
+      "subtask": "EAUDIT05g",
+      "source_id": "MD-1.2-HarmonicSolution",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/g",
+      "total_bytes": 91865,
+      "manifest_sha256": "80d9476328bf431387f27f805453bb0cdc75e7a0a3500880dc9add05d8989550"
+    },
+    {
+      "subtask": "EAUDIT05h",
+      "source_id": "MD-1.2-ScalarMechanical",
+      "path": "blueprint/ch01/mathcopilot_tasks/EAUDIT05/h",
+      "total_bytes": 57607,
+      "manifest_sha256": "420f11329f7ede4681ad069a0f6e7a6f29f2822745d360575703cd53bb6b67ac"
+    }
+  ],
+  "lean_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+  "source_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+  "section": "1.2"
+}
