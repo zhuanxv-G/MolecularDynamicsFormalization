@@ -219,5 +219,12 @@
       "H C²，实际C¹中间动量和完整求解映射，满足三步隐式关系。",
       "[EXTRA] 以真实可逆且C¹的基本求解族构造伴随半步复合V，补三步关系、V自伴随及辛性；仅δ小步长要求真实Euler关系，全球可逆族明确为条件性[EXTRA]，不宣称一般隐式方程必有全球解。"
     ]
+  },
+  "MD-2.4.1-SymmetricEven": {
+    "code": "theorem symmetricEven :\n  ∀ n (G F : ℝ → Equiv.Perm (Q n)) r,\n    0 < r → textbookAdjointMethod G = G → textbookAdjointMethod F = F →\n    (∀ h k z, F h (F k z) = F (h+k) z) →\n    ContDiff ℝ ∞ (fun x : ℝ × Q n => G x.1 x.2) →\n    ContDiff ℝ ∞ (fun x : ℝ × Q n => F x.1 x.2) →\n    methodLocalOrder (fun h => G h) (fun h => F h) r →\n    (¬ methodLocalOrder (fun h => G h) (fun h => F h) (r+1)) → Even r := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA]r>0为有限确切局部阶：r阶界成立而r+1阶不成立；两族C∞且原流为群，自伴随并实际可逆。原书省略“确切”阶资格，精确流没有有限阶。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+    ]
   }
 }

@@ -2,7 +2,7 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 177；章末验收待完成 [5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 177；章末验收待完成 [2, 5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
@@ -130,7 +130,7 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 2 | MD-2.4.1-VerletComposition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT40 |
 | 2 | MD-2.4.1-VerletSymplectic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT40 |
 | 2 | MD-2.4.1-SymmetricComposition | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT40 |
-| 2 | MD-2.4.1-SymmetricEven | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT41 |
+| 2 | MD-2.4.1-SymmetricEven | PASS | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT49 |
 | 2 | MD-2.4.2-CompositionSymplectic | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT42 |
 | 2 | MD-2.4.2-CompositionOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT16 |
 | 2 | MD-2.4.3-HarmonicSplit | FAIL | A | 保留原除法闭式，频率非零落实为证明参数；U全域经典可微为更新点导数的充分[EXTRA]，未擅加Ω=0延拓。 | 已修待复审 | EAUDIT43 |

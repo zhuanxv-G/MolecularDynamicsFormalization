@@ -56,9 +56,8 @@ def finish(ch,round_name=None):
     (ROOT/f'docs/review/CH{ch:02}_BLUEPRINT.zh-CN.md').write_text(render_document(ch),encoding='utf-8')
     report=folder/'full-check'
     if (report/'CHECK_REPORT.json').exists() and read(report/'CHECK_REPORT.json')['machine_check_status']=='running':
-        assert round_name is None,'Resume the recorded variant check explicitly; do not overwrite its evidence.'
         from resume_website_full_check import resume
-        resume(ch)
+        resume(ch,round_name)
     if not (report/'CHECK_REPORT.json').exists():
         with (folder/'full-check-driver.log').open('wb') as log:
             p=subprocess.run(['pwsh','-NoProfile','-File','scripts/check.ps1','-ReportDirectory',str(report),'-PauseChapter06'],cwd=ROOT,stdout=log,stderr=subprocess.STDOUT)
@@ -85,11 +84,13 @@ def finish(ch,round_name=None):
       f'docs/review/CH{ch:02}_BLUEPRINT.zh-CN.md','docs/handoff/REPAIR_QUEUE.md','docs/handoff/CURRENT_STATE.zh-CN.md',
       'docs/handoff/WORK_LOG.zh-CN.md','scripts/check.ps1','scripts/website_repair_finish.py','scripts/repair_queue.py',
       'AGENTS.md','scripts/website_repair_delivery.py',f'blueprint/ch{ch:02}/website_audit.json',f'blueprint/ch{ch:02}/EAUDIT_REGISTRY.json']+
-      [p for e in deliveries for p in (f'blueprint/ch{ch:02}/validation/{e}',f'blueprint/ch{ch:02}/mathcopilot_tasks/{e}')])
+      [p for e in deliveries for p in (f'blueprint/ch{ch:02}/validation/{e}',f'blueprint/ch{ch:02}/mathcopilot_tasks/{e}')]+
+      [p.relative_to(ROOT).as_posix() for p in (base/'validation').glob('WEBSITE_REPAIR_CHAPTER_ACCEPTANCE_PRE_*.json')]+
+      ['scripts/repair_cinfty.py','scripts/resume_website_full_check.py'])
     subprocess.run(['git','commit','-m',f'ch{ch:02}: accept website repairs after chapter full check; Ch06 remains paused'],cwd=ROOT,check=True)
     subprocess.run(['git','push'],cwd=ROOT,check=True)
     print('CHAPTER_ACCEPTED',ch,dict(counts),flush=True)
 
 if __name__=='__main__':
     import sys
-    finish(int(sys.argv[1]))
+    finish(int(sys.argv[1]),sys.argv[2] if len(sys.argv)>2 else None)

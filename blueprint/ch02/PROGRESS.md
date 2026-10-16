@@ -125,7 +125,7 @@
 | MD-2.4.1-VerletComposition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | existing_bridge / checked+documented priors |
 | MD-2.4.1-VerletSymplectic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | existing_bridge / checked+documented priors |
 | MD-2.4.1-SymmetricComposition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT14 | existing_bridge / checked+documented priors |
-| MD-2.4.1-SymmetricEven | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT15 | placeholder / incomplete；自伴随局部误差首个非零Taylor系数的奇偶性；需高阶展开及逆映射误差理论。 |
+| MD-2.4.1-SymmetricEven | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT49 | placeholder / incomplete；自伴随局部误差首个非零Taylor系数的奇偶性；需高阶展开及逆映射误差理论。 |
 | MD-2.4.2-CompositionSymplectic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT16 | existing_bridge / checked+documented priors |
 | MD-2.4.2-CompositionOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT16（原返回FAIL保留） | placeholder / incomplete；组合局部误差分拆、h/2与原流半步群性质的BigO常数合并。 |
 | MD-2.4.3-HarmonicSplit | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
@@ -457,3 +457,5 @@ EAUDIT23 §2.5.4：4条落盘，单文件与4项公理通过；未写新证明�
 EAUDIT24 §2.5.5：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT25 §章首及2.1原文复核：5条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT49 §2.4.1：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。

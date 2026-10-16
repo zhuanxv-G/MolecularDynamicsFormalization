@@ -3768,7 +3768,8 @@
     "lean_decl": "MD.Ch02.symmetricEven",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]r>0为有限确切局部阶：r阶界成立而r+1阶不成立；两族C∞且原流为群，自伴随并实际可逆。原书省略“确切”阶资格，精确流没有有限阶。"
+      "[EXTRA]r>0为有限确切局部阶：r阶界成立而r+1阶不成立；两族C∞且原流为群，自伴随并实际可逆。原书省略“确切”阶资格，精确流没有有限阶。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "CORRECTED",
@@ -3783,9 +3784,19 @@
         ],
         "raw_return": "blueprint/ch02/mathcopilot_results/BATCH22_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EAUDIT49_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:21:30.155366",
+        "before_sha256": "2e802ae13be63a2448d0e0404f1acc5bbbf90f44dd243205f937e7d917d3b16e",
+        "after_sha256": "749bc2f5c88a434ea1d8e894bbfc0fbfb233976ad6e8fdf99ddf602d1f125136",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch02/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT49/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-2.4.2-CompositionSymplectic",

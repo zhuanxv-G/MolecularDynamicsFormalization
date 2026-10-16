@@ -1176,13 +1176,14 @@ theorem symmetricComposition {E : Type*}
   apply MolecularDynamics.textbookSymmetricComposition_isSelfAdjoint <;> assumption
 
 /-- source_id: MD-2.4.1-SymmetricEven · unnumbered_claim · §2.4.1 · 印刷p.85 / PDFp.107
-[EXTRA] [EXTRA]r>0为有限确切局部阶：r阶界成立而r+1阶不成立；两族C∞且原流为群，自伴随并实际可逆。原书省略“确切”阶资格，精确流没有有限阶。 -/
+[EXTRA] [EXTRA]r>0为有限确切局部阶：r阶界成立而r+1阶不成立；两族C∞且原流为群，自伴随并实际可逆。原书省略“确切”阶资格，精确流没有有限阶。 
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
 theorem symmetricEven :
   ∀ n (G F : ℝ → Equiv.Perm (Q n)) r,
     0 < r → textbookAdjointMethod G = G → textbookAdjointMethod F = F →
     (∀ h k z, F h (F k z) = F (h+k) z) →
-    ContDiff ℝ ⊤ (fun x : ℝ × Q n => G x.1 x.2) →
-    ContDiff ℝ ⊤ (fun x : ℝ × Q n => F x.1 x.2) →
+    ContDiff ℝ ∞ (fun x : ℝ × Q n => G x.1 x.2) →
+    ContDiff ℝ ∞ (fun x : ℝ × Q n => F x.1 x.2) →
     methodLocalOrder (fun h => G h) (fun h => F h) r →
     (¬ methodLocalOrder (fun h => G h) (fun h => F h) (r+1)) → Even r := by
   sorry
@@ -1632,3 +1633,185 @@ theorem beemanOrder : ∀ n (m : Fin n → ℝ) (F : Q n → Q n)
   sorry
 
 end MD.Ch02
+
+/- BEGIN WEBSITE REPAIR AXIOMS -/
+#print axioms MD.Ch02.hamiltonianODE
+#print axioms MD.Ch02.mechanicalHamiltonian
+#print axioms MD.Ch02.euler
+#print axioms MD.Ch02.numericalTrajectory
+#print axioms MD.Ch02.numericalIterate
+#print axioms MD.Ch02.oneStepTargetDifference
+#print axioms MD.Ch02.convergence
+#print axioms MD.Ch02.order
+#print axioms MD.Ch02.maximumError
+#print axioms MD.Ch02.theorem_2_1
+#print axioms MD.Ch02.odeSecondDerivative
+#print axioms MD.Ch02.taylorSecond
+#print axioms MD.Ch02.taylor2Order
+#print axioms MD.Ch02.verletOrder
+#print axioms MD.Ch02.bp_mechanicalL
+#print axioms MD.Ch02.admissibleSmooth
+#print axioms MD.Ch02.bp_action
+#print axioms MD.Ch02.bp_variation
+#print axioms MD.Ch02.firstVariation
+#print axioms MD.Ch02.taylorPrinted
+#print axioms MD.Ch02.stationarySmoothAction
+#print axioms MD.Ch02.stationarySmoothAction_iff_first_variation
+#print axioms MD.Ch02.stationarySmoothAction_hamilton
+#print axioms MD.Ch02.firstVariationParts
+#print axioms MD.Ch02.hamiltonPrinciple
+#print axioms MD.Ch02.printedVariationalDerivative
+#print axioms MD.Ch02.stationaryNotMinimum
+#print axioms MD.Ch02.finiteDiscretePath
+#print axioms MD.Ch02.bp_discreteVelocity
+#print axioms MD.Ch02.bp_discreteAction
+#print axioms MD.Ch02.printedDiscreteStationary
+#print axioms MD.Ch02.discreteActionDerivative
+#print axioms MD.Ch02.discreteStationaryVerlet
+#print axioms MD.Ch02.bp_stormerRelation
+#print axioms MD.Ch02.bp_velocityVerlet
+#print axioms MD.Ch02.velocityVerletStormer
+#print axioms MD.Ch02.bp_verlet
+#print axioms MD.Ch02.bp_leapfrog
+#print axioms MD.Ch02.bp_leapfrogInitialize
+#print axioms MD.Ch02.bp_leapfrogReconstruct
+#print axioms MD.Ch02.errorDifference
+#print axioms MD.Ch02.consistency
+#print axioms MD.Ch02.stability
+#print axioms MD.Ch02.errorRecursion
+#print axioms MD.Ch02.errorBound
+#print axioms MD.Ch02.consistencyConvergence
+#print axioms MD.Ch02.bp_scalarVerlet
+#print axioms MD.Ch02.verletExpansion
+#print axioms MD.Ch02.exactExpansion
+#print axioms MD.Ch02.defectPrinted
+#print axioms MD.Ch02.verletConsistency
+#print axioms MD.Ch02.verletStability
+#print axioms MD.Ch02.bp_firstIntegral
+#print axioms MD.Ch02.firstIntegralPreserved
+#print axioms MD.Ch02.energyPreserved
+#print axioms MD.Ch02.centralAngularMomentum
+#print axioms MD.Ch02.integralMeanValue
+#print axioms MD.Ch02.integralPointwiseBound
+#print axioms MD.Ch02.integralErrorPrinted
+#print axioms MD.Ch02.bp_divergence
+#print axioms MD.Ch02.divergenceFree
+#print axioms MD.Ch02.liouville
+#print axioms MD.Ch02.hamiltonDivergence
+#print axioms MD.Ch02.hamiltonVolume
+#print axioms MD.Ch02.volumeChange
+#print axioms MD.Ch02.variationalPrinted
+#print axioms MD.Ch02.determinantODE
+#print axioms MD.Ch02.determinantExponential
+#print axioms MD.Ch02.flowDet
+#print axioms MD.Ch02.ljOscillatorEquation
+#print axioms MD.Ch02.oscillatorEquation
+#print axioms MD.Ch02.ljBoundedPeriodic
+#print axioms MD.Ch02.linearDivergence
+#print axioms MD.Ch02.bp_linearEuler
+#print axioms MD.Ch02.eulerVolumePrinted
+#print axioms MD.Ch02.eulerVolumeCounterexample
+#print axioms MD.Ch02.eulerVolumeCounterexample_det_only
+#print axioms MD.Ch02.bp_asymmetricEulerRelation
+#print axioms MD.Ch02.asymmetricDet
+#print axioms MD.Ch02.asymmetricArea
+#print axioms MD.Ch02.bp_IsSymplecticMap
+#print axioms MD.Ch02.oneFormFamily
+#print axioms MD.Ch02.oneFormOfCoefficients
+#print axioms MD.Ch02.oneFormOfCoefficients_apply
+#print axioms MD.Ch02.bp_differential
+#print axioms MD.Ch02.coordinateDifferentials
+#print axioms MD.Ch02.bp_wedge
+#print axioms MD.Ch02.bp_symplecticForm
+#print axioms MD.Ch02.formSumWedges
+#print axioms MD.Ch02.symplecticComponentMatrix
+#print axioms MD.Ch02.formSumWedges_components
+#print axioms MD.Ch02.coefficientTwoForm
+#print axioms MD.Ch02.bp_pullbackOne
+#print axioms MD.Ch02.bp_pullbackTwo
+#print axioms MD.Ch02.pullbackMatrix
+#print axioms MD.Ch02.bp_preservesTwoForm
+#print axioms MD.Ch02.symplecticIffForm
+#print axioms MD.Ch02.symplecticIffForm_C1
+#print axioms MD.Ch02.symplecticDet
+#print axioms MD.Ch02.hamiltonDet
+#print axioms MD.Ch02.bp_hessian
+#print axioms MD.Ch02.hessianSymmetry
+#print axioms MD.Ch02.hamiltonVariationalPrinted
+#print axioms MD.Ch02.matrixCancellation
+#print axioms MD.Ch02.matrixCancellation_time
+#print axioms MD.Ch02.formConstant
+#print axioms MD.Ch02.hamiltonSymplectic
+#print axioms MD.Ch02.chainRule
+#print axioms MD.Ch02.symplecticComposition
+#print axioms MD.Ch02.symplecticInverse
+#print axioms MD.Ch02.globalGroupPrinted
+#print axioms MD.Ch02.bp_symplecticIntegrator
+#print axioms MD.Ch02.bp_symplecticEuler
+#print axioms MD.Ch02.kickDifferential
+#print axioms MD.Ch02.wedgeSelf
+#print axioms MD.Ch02.symplecticEulerPreserves
+#print axioms MD.Ch02.bp_adjoint
+#print axioms MD.Ch02.flowSelfAdjoint
+#print axioms MD.Ch02.bp_backwardEulerRelation
+#print axioms MD.Ch02.eulerAdjoint
+#print axioms MD.Ch02.bp_adjointSymplecticEuler
+#print axioms MD.Ch02.bp_adjointSymplecticEuler_coordinates
+#print axioms MD.Ch02.adjointInvolution
+#print axioms MD.Ch02.bp_splittingMap
+#print axioms MD.Ch02.fieldAdd
+#print axioms MD.Ch02.splittingLocal
+#print axioms MD.Ch02.bp_kineticFlow
+#print axioms MD.Ch02.bp_potentialFlow
+#print axioms MD.Ch02.splitEuler
+#print axioms MD.Ch02.verletComposition
+#print axioms MD.Ch02.verletSymplectic
+#print axioms MD.Ch02.symmetricComposition
+#print axioms MD.Ch02.symmetricEven
+#print axioms MD.Ch02.compositionSymplectic
+#print axioms MD.Ch02.compositionOrder
+#print axioms MD.Ch02.bp_harmonicAnharmonic
+#print axioms MD.Ch02.implicitLocal
+#print axioms MD.Ch02.backwardEulerResidual
+#print axioms MD.Ch02.backwardEulerResidual_zero_iff
+#print axioms MD.Ch02.backwardEulerMapRelation
+#print axioms MD.Ch02.newtonPrinted
+#print axioms MD.Ch02.newtonQuadratic
+#print axioms MD.Ch02.frozenNewton
+#print axioms MD.Ch02.bp_conjugateMap
+#print axioms MD.Ch02.conjugateIterates
+#print axioms MD.Ch02.conjugateLimits
+#print axioms MD.Ch02.eulerConjugacy
+#print axioms MD.Ch02.eulerConjugacy_homeomorph
+#print axioms MD.Ch02.bp_processedIterate
+#print axioms MD.Ch02.processingData
+#print axioms MD.Ch02.processingIterates
+#print axioms MD.Ch02.processingOrder
+#print axioms MD.Ch02.eulerEffectiveOrder
+#print axioms MD.Ch02.bp_rungeKuttaRelation
+#print axioms MD.Ch02.bp_rk4
+#print axioms MD.Ch02.rk4Order
+#print axioms MD.Ch02.explicitRK
+#print axioms MD.Ch02.rkSymplectic
+#print axioms MD.Ch02.gaussFamily
+#print axioms MD.Ch02.bp_midpointRelation
+#print axioms MD.Ch02.midpointProperties
+#print axioms MD.Ch02.midpointProperties_generalODE
+#print axioms MD.Ch02.gaussTwoData
+#print axioms MD.Ch02.gaussTwoOrder
+#print axioms MD.Ch02.bp_partitionedVerletRelation
+#print axioms MD.Ch02.partitionedReduction
+#print axioms MD.Ch02.bp_generalSymplecticEulerRelation
+#print axioms MD.Ch02.generalSymplectic
+#print axioms MD.Ch02.generalVerletSymplectic
+#print axioms MD.Ch02.bp_newmarkRelation
+#print axioms MD.Ch02.newmarkReduction
+#print axioms MD.Ch02.newmarkDamping
+#print axioms MD.Ch02.newmarkNotSymplectic
+#print axioms MD.Ch02.bp_multiTaylor
+#print axioms MD.Ch02.tiMethod
+#print axioms MD.Ch02.tiForce
+#print axioms MD.Ch02.tiOrder
+#print axioms MD.Ch02.beeman
+#print axioms MD.Ch02.beemanOrder
+/- END WEBSITE REPAIR AXIOMS -/

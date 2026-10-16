@@ -4187,8 +4187,8 @@
       "lean_decl": "MD.Ch02.symmetricEven",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "7fdd81357ed53ab61f61f2e867220dfedf92b659e54f9e95a622834d99a5c869",
-      "block_sha256": "2bb41afabe4e893055554df42c814e3b7f556faff7c234c3f91939a9180d46c9",
+      "signature_sha256": "76ed566ac73d56e763ea631b32003e5c33b31563b3eee848134e769608a7dd9e",
+      "block_sha256": "2e0a82b8898153b946d68aef56b0a1200785d5d73ad56feb8c2db230b7384317",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4206,7 +4206,7 @@
       "proof_attempts": 0,
       "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT49/axioms.log",
       "compiled": true
     },
     "MD-2.4.2-CompositionSymplectic": {

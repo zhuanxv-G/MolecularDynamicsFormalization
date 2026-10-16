@@ -1,0 +1,21 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT49",
+  "section": "2.4.1",
+  "source_ids": [
+    "MD-2.4.1-SymmetricEven"
+  ],
+  "reaudit_ids": [
+    "MD-2.4.1-SymmetricEven"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
+  "lean_sha256": "a57e7252bc7183e0becd0e4d2664fceff6c9ee5ed8828ffbce5d29e5292dec57",
+  "source_sha256": "9c3e3c9be266616084e69c601f5ec3402d5fa61f06af846de09f5cf04e0ddaa5",
+  "pages": [
+    107
+  ],
+  "prior_proof_blocks": {
+    "MD-2.4.1-SymmetricEven": "theorem symmetricEven :\n  ∀ n (G F : ℝ → Equiv.Perm (Q n)) r,\n    0 < r → textbookAdjointMethod G = G → textbookAdjointMethod F = F →\n    (∀ h k z, F h (F k z) = F (h+k) z) →\n    ContDiff ℝ ⊤ (fun x : ℝ × Q n => G x.1 x.2) →\n    ContDiff ℝ ⊤ (fun x : ℝ × Q n => F x.1 x.2) →\n    methodLocalOrder (fun h => G h) (fun h => F h) r →\n    (¬ methodLocalOrder (fun h => G h) (fun h => F h) (r+1)) → Even r := by\n  sorry"
+  }
+}

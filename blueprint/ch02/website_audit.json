@@ -12058,19 +12058,18 @@
       "reasons": []
     },
     "needs_category": "材料缺失",
-    "effective_status": "待复审 / EAUDIT15",
+    "effective_status": "待复审 / EAUDIT49",
     "repair": {
-      "eaudit": "EAUDIT41",
+      "eaudit": "EAUDIT49",
       "status": "awaiting_reaudit",
-      "signature_changed": false,
+      "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT41/INDEX.md",
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT49/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT41.md": "edc6cc981abe7e5f8b0514dab049e3e81eeab1fac58a3b573eb0e37207e1d3e3",
-        "Blueprint/Ch02.lean": "8bc23ce837a00f6eb4f0016772dfdc3c2c6a1b6bc90eb94f7aaea4d335d8d197",
-        "blueprint/ch02/ch02_source.json": "10f90fddb40e783f4e751e72f65920f27e069e6b07a8dcaf780ead433b2e0b50"
-      },
-      "prior_eaudit": "EAUDIT15"
+        "BATCH_EAUDIT49.md": "b90b1cef23103197710312a2d3a4ab259dc902c7163986a4c5678409aa727f88",
+        "Blueprint/Ch02.lean": "a57e7252bc7183e0becd0e4d2664fceff6c9ee5ed8828ffbce5d29e5292dec57",
+        "blueprint/ch02/ch02_source.json": "9c3e3c9be266616084e69c601f5ec3402d5fa61f06af846de09f5cf04e0ddaa5"
+      }
     }
   },
   {
