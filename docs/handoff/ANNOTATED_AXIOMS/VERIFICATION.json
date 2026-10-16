@@ -1,0 +1,38 @@
+{
+  "time": "2026-10-16T10:53:34.288290",
+  "unchanged_chapter_lean_sha256": {
+    "2": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "3": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "4": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "5": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8"
+  },
+  "axioms": {
+    "MD.Ch02.textbookWedgeOneForms_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MD.Ch02.momentumKickDerivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MD.Ch02.momentumKick_hasFDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MD.Ch04.rigidSystemState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MD.Ch05.domainL2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "compile_receipt_sha256": "28654250fa6d15af2e532d58a2b467a4c2eb48ff16ff3b6f85c521ca08a915c3",
+  "reason": "Attributed declarations were compiled previously, but omitted from old regex-generated axiom/name inventories; no chapter Lean source or proof changed."
+}

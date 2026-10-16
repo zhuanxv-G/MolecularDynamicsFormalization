@@ -6,7 +6,7 @@ from integrate_website_returns import ROOT,read,dump,sha
 from eaudit_review_tasks import build,declarations
 from local_stage import stage
 
-def refresh(ch, *, commit=False):
+def refresh(ch, *, commit=False, force_ids=()):
     base=ROOT/f'blueprint/ch{ch:02}';web=read(base/'website_audit.json')
     lean=ROOT/f'Blueprint/Ch{ch:02}.lean';source=base/f'ch{ch:02}_source.json'
     before=(sha(lean),sha(source));ds=declarations(ch)
@@ -17,7 +17,7 @@ def refresh(ch, *, commit=False):
         mf=base/'mathcopilot_tasks'/e/'MANIFEST.json'
         packet=next((s for s in read(mf)['subtasks'] if s['source_id']==sid),None) if mf.exists() else None
         pm=read(ROOT/packet['path']/'MANIFEST.json') if packet else {}
-        if pm.get('source_block_sha256')==ds[sid]['block_sha256'] and pm.get('input_sha256',{}).get(f'Blueprint/Ch{ch:02}.lean')==before[0] and pm.get('input_sha256',{}).get(f'blueprint/ch{ch:02}/ch{ch:02}_source.json')==before[1]:continue
+        if sid not in force_ids and pm.get('source_block_sha256')==ds[sid]['block_sha256'] and pm.get('input_sha256',{}).get(f'Blueprint/Ch{ch:02}.lean')==before[0] and pm.get('input_sha256',{}).get(f'blueprint/ch{ch:02}/ch{ch:02}_source.json')==before[1]:continue
         records.append(w)
     if not records:return []
     existing=[int(p.name[6:]) for p in (base/'mathcopilot_tasks').glob('EAUDIT[0-9][0-9]')]

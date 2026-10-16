@@ -6,6 +6,9 @@ from pypdf import PdfReader,PdfWriter
 from integrate_website_returns import ROOT,sha,read,dump
 from build_mathcopilot_compact import definitions,referenced
 
+def declaration_names(text):
+ return re.findall(r'(?m)^(?:@\[[^\]\n]+\]\s*)*(?:(?:noncomputable|private|protected)\s+)*(?:theorem|lemma|def|abbrev)\s+(\w+)',text)
+
 def declarations(ch):
  text=(ROOT/f'Blueprint/Ch{ch:02}.lean').read_text(encoding='utf-8-sig')
  marks=list(re.finditer(r'/-- source_id:\s*([^\s·]+)[\s\S]*?-/',text));out={}
@@ -83,7 +86,7 @@ def build(ch,eaudit,section,sids):
     '必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。\ninput_sha256：\n'+json.dumps(hashes,ensure_ascii=False,indent=2)+'\n\n')
   paste=folder/'PASTE.txt';paste.write_text(prompt+materials[sid],encoding='utf-8');mp=folder/'MANIFEST.json'
   m=dict(eaudit=eaudit,source_id=sid,input_sha256=hashes,source_pdf_sha256=expected,pdf_page_mapping=nums,
-    crop_pixel_identity='PASS',paste_sha256=sha(paste),source_block_sha256=ds[sid]['block_sha256'],source_declarations=re.findall(r'(?m)^(?:noncomputable\s+)?(?:theorem|def)\s+(\w+)',ds[sid]['block']),dependency_excerpts=excerpts[sid],expected_output=output)
+    crop_pixel_identity='PASS',paste_sha256=sha(paste),source_block_sha256=ds[sid]['block_sha256'],source_declarations=declaration_names(ds[sid]['block']),dependency_excerpts=excerpts[sid],expected_output=output)
   for _ in range(4):m['total_task_bytes']=paste.stat().st_size+crop.stat().st_size+(mp.stat().st_size if mp.exists() else 0);dump(mp,m)
   total=sum(p.stat().st_size for p in folder.iterdir() if p.is_file());assert total==m['total_task_bytes']<256000,(label,total)
   subtasks.append(dict(subtask=label,source_id=sid,path=folder.relative_to(ROOT).as_posix(),total_bytes=total,manifest_sha256=sha(mp)))

@@ -610,7 +610,7 @@ def run_batches(section,edits,human,pages,refresh=()):
     edits={k:v for k,v in edits.items() if not handled(k)}
     human={k:v for k,v in human.items() if not handled(k)}
     source_only=[s['source_id'] for s in sources if s['section']==section and s['source_id'] not in edits and s['source_id'] not in human and
-      (s['source_id'] in refresh or (web[s['source_id']]['json_review']['status']=='CORRECTED' and not web[s['source_id']].get('repair',{}).get('json_review_locally_verified')) or
+      ((s['source_id'] in refresh and not handled(s['source_id'])) or (web[s['source_id']]['json_review']['status']=='CORRECTED' and not web[s['source_id']].get('repair',{}).get('json_review_locally_verified')) or
        (web[s['source_id']]['returned_audit']['verdict']=='NEEDS_HUMAN' and web[s['source_id']].get('needs_category')!='原文数学判断'))]
     touched=set(edits)|set(human)|set(source_only);ids=[s['source_id'] for s in sources if s['source_id'] in touched]
     if not ids:return

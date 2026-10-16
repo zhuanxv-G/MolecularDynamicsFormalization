@@ -18,12 +18,12 @@ from ch01_full_tools import declarations
 ROOT = Path(__file__).resolve().parents[1]
 TASKS = ROOT / 'blueprint/ch01/mathcopilot_tasks'
 COMMAND = re.compile(
-    r'(?m)^(?:(?:noncomputable|private|protected|unsafe|partial) +)*'
+    r'(?m)^(?:@\[[^\]\n]+\]\s*)*(?:(?:noncomputable|private|protected|unsafe|partial) +)*'
     r'(?:def|abbrev|structure|class|theorem|lemma|instance|namespace|end|'
     r'open|variable|local|set_option|attribute|notation|scoped|#\w+)\b'
 )
 DEFINITION = re.compile(
-    r'(?m)^(?:(?:noncomputable|private|protected) +)*'
+    r'(?m)^(?:@\[[^\]\n]+\]\s*)*(?:(?:noncomputable|private|protected) +)*'
     r'(?:def|abbrev|structure|class) +([\w.\u2080-\u2089]+)'
 )
 

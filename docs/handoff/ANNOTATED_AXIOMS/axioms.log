@@ -1,0 +1,7 @@
+'MD.Ch02.textbookWedgeOneForms_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch04.rigidSystemState' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch05.domainL2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'_private.Blueprint.Ch02.0.MD.Ch02.momentumKickDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+PRIVATE_AX MD.Ch02.momentumKickDerivative|_private.Blueprint.Ch02.0.MD.Ch02.momentumKickDerivative|propext,Classical.choice,Quot.sound
+'_private.Blueprint.Ch02.0.MD.Ch02.momentumKick_hasFDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+PRIVATE_AX MD.Ch02.momentumKick_hasFDerivAt|_private.Blueprint.Ch02.0.MD.Ch02.momentumKick_hasFDerivAt|propext,Classical.choice,Quot.sound

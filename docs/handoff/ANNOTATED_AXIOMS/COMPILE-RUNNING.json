@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "docs/handoff/ANNOTATED_AXIOMS/CheckAxioms.lean"
+  ],
+  "input_sha256": "ddbc1e1a7aec155b99bca98f49699787b6f6aca068fd21880f93cf1d0606be36",
+  "parent_pid": 3288,
+  "parent_create_time": 1792119194.905362,
+  "compiler_pid": 18600,
+  "compiler_create_time": 1792119195.268309,
+  "started_at": "2026-10-16T10:53:15.271330",
+  "status": "completed",
+  "exit_code": 0,
+  "completed_at": "2026-10-16T10:53:34.287290"
+}

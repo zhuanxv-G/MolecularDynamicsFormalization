@@ -2,7 +2,7 @@
 import re,subprocess
 from datetime import datetime
 from integrate_website_returns import ROOT,read,dump,sha
-from eaudit_review_tasks import declarations,render_document
+from eaudit_review_tasks import declarations,declaration_names,render_document
 from local_compile import compile_recorded
 from repair_queue import render
 from local_stage import stage
@@ -17,7 +17,7 @@ def finish(ch,round_name=None):
     folder=base/('validation/WEBSITE_REPAIR_CHAPTER_END'+('_'+round_name if round_name else ''));folder.mkdir(parents=True,exist_ok=True)
     ds=declarations(ch);names=[];groups={}
     for sid,d in ds.items():
-        groups[sid]=[f'MD.Ch{ch:02}.'+n for n in re.findall(r'(?m)^(?:noncomputable\s+)?(?:theorem|def)\s+(\w+)',d['block'])]
+        groups[sid]=[f'MD.Ch{ch:02}.'+n for n in declaration_names(d['block'])]
         names+=groups[sid]
     assert len(names)==len(set(names))
     ap=folder/'CheckAxioms.lean';ap.write_text(f'import Blueprint.Ch{ch:02}\n'+'\n'.join('#print axioms '+n for n in names)+'\n',encoding='utf-8')

@@ -2795,7 +2795,14 @@
       "proof_attempts": 0,
       "transitive_placeholder": false,
       "axiom_log": "blueprint/ch02/validation/WEBSITE_REPAIR_CHAPTER_END_CINFTY/axioms.log",
-      "compiled": true
+      "compiled": true,
+      "axiom_supplement": {
+        "log": "docs/handoff/ANNOTATED_AXIOMS/axioms.log",
+        "sha256": "6dab7280abcd0d154f0eb338726cf37463a39d592ecaaf5024dfb957e4f9389c",
+        "declarations": [
+          "MD.Ch02.textbookWedgeOneForms_apply"
+        ]
+      }
     },
     "MD-2.3.3-SymplecticForm": {
       "checked": true,
@@ -4005,7 +4012,15 @@
       "proof_attempts": 0,
       "transitive_placeholder": false,
       "axiom_log": "blueprint/ch02/validation/WEBSITE_REPAIR_CHAPTER_END_CINFTY/axioms.log",
-      "compiled": true
+      "compiled": true,
+      "axiom_supplement": {
+        "log": "docs/handoff/ANNOTATED_AXIOMS/axioms.log",
+        "sha256": "6dab7280abcd0d154f0eb338726cf37463a39d592ecaaf5024dfb957e4f9389c",
+        "declarations": [
+          "MD.Ch02.momentumKickDerivative",
+          "MD.Ch02.momentumKick_hasFDerivAt"
+        ]
+      }
     },
     "MD-2.4.1-PotentialFlow": {
       "checked": true,

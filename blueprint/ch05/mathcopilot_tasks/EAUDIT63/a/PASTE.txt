@@ -1,0 +1,71 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.2.1-DomainL2；原PDF页映射=[204]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT63_review.json，对象含batch=EAUDIT63、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT63.md": "1f6aa7d566a837631e870d0db9c6da297e23df8c9f2fffe77acb6cc5d49685c5",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+  "EAUDIT63a_materials": "075ba72e9714ac5169f91075680396c301d88dd6b7dc86364fa268c1e29fc83a",
+  "EAUDIT63a_PAGES.pdf": "a98b55857f2fce491560cdb1daf04bbb261fe6525671b2abac7faeb12dcdf9fb"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.2.1-DomainL2",
+  "kind": "definition",
+  "label": null,
+  "section": "5.2.1",
+  "printed_page": "183",
+  "pdf_page": "204",
+  "statement_latex": "The set of functions from $\\mathcal D\\subset\\mathbb R^m$ to $\\mathbb R$ which satisfy (5.3) is referred to as the space $L^2(\\mathcal D)$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "PDF p.204，式(5.3)：$\\int_{\\mathcal D}\\phi^2(z)\\,d\\omega<\\infty$；原书此处使用 $\\phi$，不是 $\\rho$。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.domainL2",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]Mathlib Lp使用Lebesgue可测函数的AE等价类；书中未写商空间，若不取AE类，所谓范数可能为0而原始函数非零。保留一般D；透明别名复用实际Lp的实例。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT02_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:51:26.481234",
+      "before_sha256": "5b14d53d3ecc891cdc6c25e192ddadefd31f6c9e9dbb3fadeb974646c89c474d",
+      "after_sha256": "db07d8909315a28443eb49c5c8d8134ca979dedfb8226a961d9736a703db2b01",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH04_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+@[reducible] def domainL2 (n : ℕ) (D : Set (MolecularDynamics.Chapter05Review.E n)) := Lp ℝ 2 (volume.restrict D)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MD.Ch05.domainL2
+```lean
+@[reducible] def domainL2 (n : ℕ) (D : Set (MolecularDynamics.Chapter05Review.E n)) := Lp ℝ 2 (volume.restrict D)
+```

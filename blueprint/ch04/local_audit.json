@@ -5878,7 +5878,11 @@
     "MD-4.4.2-RigidSystemState": {
       "checked": true,
       "compiled": true,
-      "axioms": [],
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch04.rigidSystemState",
       "verdict": "PASS",
@@ -5902,7 +5906,14 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch04/validation/WEBSITE_REPAIR_CHAPTER_END_CINFTY/axioms.log"
+      "axiom_log": "blueprint/ch04/validation/WEBSITE_REPAIR_CHAPTER_END_CINFTY/axioms.log",
+      "axiom_supplement": {
+        "log": "docs/handoff/ANNOTATED_AXIOMS/axioms.log",
+        "sha256": "6dab7280abcd0d154f0eb338726cf37463a39d592ecaaf5024dfb957e4f9389c",
+        "declarations": [
+          "MD.Ch04.rigidSystemState"
+        ]
+      }
     },
     "MD-4.4.2-RigidSystemForce": {
       "checked": true,

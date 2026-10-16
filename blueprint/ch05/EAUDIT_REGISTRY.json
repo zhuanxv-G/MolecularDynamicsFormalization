@@ -3663,5 +3663,56 @@
     "new_proofs": "none",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT62/INDEX.md"
+  },
+  {
+    "chapter": 5,
+    "eaudit": "EAUDIT63",
+    "section": "5.2.1",
+    "source_ids": [
+      "MD-5.2.1-DomainL2",
+      "MD-5.2.1-L2Norm",
+      "MD-5.2.1-L2NormSquare",
+      "MD-5.2.1-L2Complete"
+    ],
+    "reaudit_ids": [
+      "MD-5.2.1-DomainL2",
+      "MD-5.2.1-L2Norm",
+      "MD-5.2.1-L2NormSquare",
+      "MD-5.2.1-L2Complete"
+    ],
+    "human_ids": [],
+    "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "source_sha256": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-5.2.1-DomainL2",
+        "prior_eaudit": "EAUDIT44",
+        "acceptance": "blueprint/ch05/validation/EAUDIT44/ACCEPTANCE.json",
+        "sha256": "29ab3c4248d496b1f8c03ddf7bd818a7033bf035378be02627e9b68f94d204c3"
+      },
+      {
+        "source_id": "MD-5.2.1-L2Norm",
+        "prior_eaudit": "EAUDIT44",
+        "acceptance": "blueprint/ch05/validation/EAUDIT44/ACCEPTANCE.json",
+        "sha256": "29ab3c4248d496b1f8c03ddf7bd818a7033bf035378be02627e9b68f94d204c3"
+      },
+      {
+        "source_id": "MD-5.2.1-L2NormSquare",
+        "prior_eaudit": "EAUDIT44",
+        "acceptance": "blueprint/ch05/validation/EAUDIT44/ACCEPTANCE.json",
+        "sha256": "29ab3c4248d496b1f8c03ddf7bd818a7033bf035378be02627e9b68f94d204c3"
+      },
+      {
+        "source_id": "MD-5.2.1-L2Complete",
+        "prior_eaudit": "EAUDIT44",
+        "acceptance": "blueprint/ch05/validation/EAUDIT44/ACCEPTANCE.json",
+        "sha256": "29ab3c4248d496b1f8c03ddf7bd818a7033bf035378be02627e9b68f94d204c3"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT63/INDEX.md",
+    "axiom_supplement": "docs/handoff/ANNOTATED_AXIOMS/VERIFICATION.json"
   }
 ]

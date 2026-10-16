@@ -3,7 +3,7 @@
   "time": "2026-10-16T10:24:17.915687",
   "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
   "source_sha256": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
-  "axiom_decl_count": 216,
+  "axiom_decl_count": 217,
   "full_check_report": "blueprint\\ch05\\validation\\WEBSITE_REPAIR_CHAPTER_END\\full-check\\CHECK_REPORT.json",
   "full_check_report_sha256": "8402b7ae12b58a437870a6d93f868f47ead8ad20de767a86cd83c768c5a0d44d",
   "chapter06": "paused, Blueprint.Ch06 not compiled; batch27 unverified",
@@ -18,5 +18,6 @@
       "unchanged_lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
       "full_check": "reused: all Lean files unchanged, only source citation metadata and delivery changed"
     }
-  ]
+  ],
+  "axiom_supplement": "docs/handoff/ANNOTATED_AXIOMS/VERIFICATION.json"
 }

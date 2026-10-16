@@ -1,0 +1,67 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT92",
+  "section": "4.4.2",
+  "source_ids": [
+    "MD-4.4.2-RigidSystemForce",
+    "MD-4.4.2-RigidSystemTorque",
+    "MD-4.4.2-RigidSystemKick",
+    "MD-4.4.2-DLMPrintedSystem",
+    "MD-4.4.2-RigidSystemSymplectic",
+    "MD-4.4.2-DLMPrintedSystemStructure"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.2-RigidSystemForce",
+    "MD-4.4.2-RigidSystemTorque",
+    "MD-4.4.2-RigidSystemKick",
+    "MD-4.4.2-DLMPrintedSystem",
+    "MD-4.4.2-RigidSystemSymplectic",
+    "MD-4.4.2-DLMPrintedSystemStructure"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.4.2-RigidSystemForce",
+      "prior_eaudit": "EAUDIT90",
+      "acceptance": "blueprint/ch04/validation/EAUDIT90/ACCEPTANCE.json",
+      "sha256": "71cd63f393bf3d2bf2fafec22a5ef7bb09d29022c182142b5403f67ec2040378"
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemTorque",
+      "prior_eaudit": "EAUDIT90",
+      "acceptance": "blueprint/ch04/validation/EAUDIT90/ACCEPTANCE.json",
+      "sha256": "71cd63f393bf3d2bf2fafec22a5ef7bb09d29022c182142b5403f67ec2040378"
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemKick",
+      "prior_eaudit": "EAUDIT90",
+      "acceptance": "blueprint/ch04/validation/EAUDIT90/ACCEPTANCE.json",
+      "sha256": "71cd63f393bf3d2bf2fafec22a5ef7bb09d29022c182142b5403f67ec2040378"
+    },
+    {
+      "source_id": "MD-4.4.2-DLMPrintedSystem",
+      "prior_eaudit": "EAUDIT91",
+      "acceptance": "blueprint/ch04/validation/EAUDIT91/ACCEPTANCE.json",
+      "sha256": "511cd6ed2f024b9fd4fda60e37e0c068f3884ca90f5ced323e0694f01e371deb"
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemSymplectic",
+      "prior_eaudit": "EAUDIT91",
+      "acceptance": "blueprint/ch04/validation/EAUDIT91/ACCEPTANCE.json",
+      "sha256": "511cd6ed2f024b9fd4fda60e37e0c068f3884ca90f5ced323e0694f01e371deb"
+    },
+    {
+      "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+      "prior_eaudit": "EAUDIT91",
+      "acceptance": "blueprint/ch04/validation/EAUDIT91/ACCEPTANCE.json",
+      "sha256": "511cd6ed2f024b9fd4fda60e37e0c068f3884ca90f5ced323e0694f01e371deb"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT92/INDEX.md",
+  "axiom_supplement": "docs/handoff/ANNOTATED_AXIOMS/VERIFICATION.json"
+}

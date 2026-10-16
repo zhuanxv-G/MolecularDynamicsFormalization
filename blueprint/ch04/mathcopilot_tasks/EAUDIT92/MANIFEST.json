@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT92",
+  "input_sha256": {
+    "BATCH_EAUDIT92.md": "ae1e2bacaf54c17f6c6eccfad9d1da8d2ad8165c0f25fd395e3e353e60bdfe4b",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT92a",
+      "source_id": "MD-4.4.2-RigidSystemForce",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT92/a",
+      "total_bytes": 94630,
+      "manifest_sha256": "2424079986e40031c9b516a8a143db1828c8e71d57e5adf027bc14c624370029"
+    },
+    {
+      "subtask": "EAUDIT92b",
+      "source_id": "MD-4.4.2-RigidSystemTorque",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT92/b",
+      "total_bytes": 93983,
+      "manifest_sha256": "699f1e63f1ddf73496e21017dde7a1001b8d705fdb064866c656b4d69f7405c9"
+    },
+    {
+      "subtask": "EAUDIT92c",
+      "source_id": "MD-4.4.2-RigidSystemKick",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT92/c",
+      "total_bytes": 102746,
+      "manifest_sha256": "4828432a62e7964a426f559ad3afdbfa6661add0dd8be8804c4e581603105ff2"
+    },
+    {
+      "subtask": "EAUDIT92d",
+      "source_id": "MD-4.4.2-DLMPrintedSystem",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT92/d",
+      "total_bytes": 109655,
+      "manifest_sha256": "8f05ad73d8c4eb4b41fa271ed5bfbc39000bb105fbadcef9c554dcfa7fb3a667"
+    },
+    {
+      "subtask": "EAUDIT92e",
+      "source_id": "MD-4.4.2-RigidSystemSymplectic",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT92/e",
+      "total_bytes": 115013,
+      "manifest_sha256": "78178a1f4e5afa72f04f1846438f446ce3a78a73a358ad5651b296310f627d76"
+    },
+    {
+      "subtask": "EAUDIT92f",
+      "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT92/f",
+      "total_bytes": 124484,
+      "manifest_sha256": "15aaefd9c94ca3d7af6665f8a51eca1c2a05fb5ce59b2c7e67cb7017b390ec93"
+    }
+  ]
+}

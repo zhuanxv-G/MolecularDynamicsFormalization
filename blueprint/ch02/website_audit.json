@@ -11315,17 +11315,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT14",
     "repair": {
-      "eaudit": "EAUDIT88",
+      "eaudit": "EAUDIT97",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT88/INDEX.md",
+      "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT97/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT88.md": "51d4b566bcb5f5bd2b104b67b555ebd45b57a24b3f868c861fa5950ccc1bb2a1",
+        "BATCH_EAUDIT97.md": "487492ee5ca801358aa7c3d2ac7fc1c5129bb84e0adebadf494f06b32cbde562",
         "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
         "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
       },
-      "prior_eaudit": "EAUDIT65",
+      "prior_eaudit": "EAUDIT88",
       "metadata_locally_verified": true
     }
   },

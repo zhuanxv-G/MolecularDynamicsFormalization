@@ -1,0 +1,34 @@
+{
+  "2": {
+    "source_ids": [
+      "MD-2.4.1-KineticFlow"
+    ],
+    "batches": [
+      "EAUDIT97"
+    ]
+  },
+  "4": {
+    "source_ids": [
+      "MD-4.4.2-RigidSystemForce",
+      "MD-4.4.2-RigidSystemTorque",
+      "MD-4.4.2-RigidSystemKick",
+      "MD-4.4.2-DLMPrintedSystem",
+      "MD-4.4.2-RigidSystemSymplectic",
+      "MD-4.4.2-DLMPrintedSystemStructure"
+    ],
+    "batches": [
+      "EAUDIT92"
+    ]
+  },
+  "5": {
+    "source_ids": [
+      "MD-5.2.1-DomainL2",
+      "MD-5.2.1-L2Norm",
+      "MD-5.2.1-L2NormSquare",
+      "MD-5.2.1-L2Complete"
+    ],
+    "batches": [
+      "EAUDIT63"
+    ]
+  }
+}

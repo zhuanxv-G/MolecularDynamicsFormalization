@@ -677,7 +677,11 @@
     "MD-5.2.1-DomainL2": {
       "checked": true,
       "compiled": true,
-      "axioms": [],
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.domainL2",
       "verdict": "PASS",
@@ -701,7 +705,14 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch05/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch05/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log",
+      "axiom_supplement": {
+        "log": "docs/handoff/ANNOTATED_AXIOMS/axioms.log",
+        "sha256": "6dab7280abcd0d154f0eb338726cf37463a39d592ecaaf5024dfb957e4f9389c",
+        "declarations": [
+          "MD.Ch05.domainL2"
+        ]
+      }
     },
     "MD-5.2.1-L2Norm": {
       "checked": true,

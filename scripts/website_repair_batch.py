@@ -8,7 +8,7 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 from integrate_website_returns import ROOT, read, dump, sha, display
-from eaudit_review_tasks import declarations, build, render_document
+from eaudit_review_tasks import declarations, declaration_names, build, render_document
 from local_compile import compile_recorded
 from repair_queue import render as render_queue
 
@@ -17,7 +17,7 @@ def entry_hash(s):
 
 def axiom_footer(ch,text):
     text=re.sub(r'\n/- BEGIN WEBSITE REPAIR AXIOMS -/[\s\S]*?/- END WEBSITE REPAIR AXIOMS -/\s*$', '', text)
-    names=re.findall(r'(?m)^(?:noncomputable\s+)?(?:theorem|def)\s+(\w+)',text)
+    names=declaration_names(text)
     assert len(names)==len(set(names))
     return text.rstrip()+'\n\n/- BEGIN WEBSITE REPAIR AXIOMS -/\n'+''.join(f'#print axioms MD.Ch{ch:02}.{n}\n' for n in names)+'/- END WEBSITE REPAIR AXIOMS -/\n'
 
@@ -121,7 +121,7 @@ def verify(ch,eaudit):
         print(output.decode('utf-8',errors='replace')); raise RuntimeError('Single-file compile failed; repair locally before acceptance')
     ds=declarations(ch);names=[]
     for sid in prep['source_ids']:
-        names.extend(f'MD.Ch{ch:02}.'+m for m in re.findall(r'(?m)^(?:noncomputable\s+)?(?:theorem|def)\s+(\w+)',ds[sid]['block']))
+        names.extend(f'MD.Ch{ch:02}.'+m for m in declaration_names(ds[sid]['block']))
     ap=folder/'CheckAxioms.lean';ap.write_text(f'import Blueprint.Ch{ch:02}\n'+'\n'.join('#print axioms '+n for n in names)+'\n',encoding='utf-8')
     if '/- BEGIN WEBSITE REPAIR AXIOMS -/' in lean.read_text(encoding='utf-8'):
         log=output
