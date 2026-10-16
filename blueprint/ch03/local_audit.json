@@ -1931,8 +1931,8 @@
       "lean_decl": "MD.Ch03.yoshidaRaiseOrder",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "c3bfd0b9b489bb06c392813b33588eaaad57bc2e67088f95435c11caa1978f49",
-      "block_sha256": "722b685d3c9c5fdcff20731d9698b057c74f7cb0e7aacd1e872296d7cf31208b",
+      "signature_sha256": "557b5a0c1ee5253429ede4b21d1f60b8a044fdcff1e021a08456eff9983e01de",
+      "block_sha256": "2c23a43c56175211b20d201d659c1c126ad60a0392228fdc6443b85e6815b69d",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -1950,7 +1950,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT43/axioms.log"
     },
     "MD-3.3.3-Yoshida4": {
       "checked": true,

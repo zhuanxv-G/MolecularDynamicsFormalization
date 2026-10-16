@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT43",
+  "input_sha256": {
+    "BATCH_EAUDIT43.md": "434fca63fb01104c23c7bd2570d7e49a154a1b687f5af5270b4e64f083ce60b3",
+    "Blueprint/Ch03.lean": "ddb66c26cb4c3d09040658d59f764dc4f1153806a84cbcf202c2828f03ee9e7a",
+    "blueprint/ch03/ch03_source.json": "c82cbc1073ce2091bb527c6b649ef4c0a0761083f2deced2c71bd6648f9c4cdd"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT43a",
+      "source_id": "MD-3.3.3-YoshidaRaiseOrder",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT43/a",
+      "total_bytes": 92437,
+      "manifest_sha256": "09ff89dc6f6917b00856cb98b72a9203e60683af12344e682888cb08cf3a49c9"
+    }
+  ]
+}

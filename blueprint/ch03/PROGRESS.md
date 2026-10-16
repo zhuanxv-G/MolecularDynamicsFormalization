@@ -62,7 +62,7 @@
 | MD-3.3.3-YoshidaCoefficients | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
 | MD-3.3.3-YoshidaCancellation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
 | MD-3.3.3-YoshidaUnique | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | local_proof / self-contained |
-| MD-3.3.3-YoshidaRaiseOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | placeholder / incomplete；缺完整非交换BCH/奇性到实际局部余项改阶桥接；属大型理论，不建设。 |
+| MD-3.3.3-YoshidaRaiseOrder | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT43 | placeholder / incomplete；缺完整非交换BCH/奇性到实际局部余项改阶桥接；属大型理论，不建设。 |
 | MD-3.3.3-Yoshida4 | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | definition / self-contained |
 | MD-3.3.3-Yoshida4Structure | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
 | MD-3.3.3-GeneralSplitting | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | definition / self-contained |
@@ -427,3 +427,5 @@ EAUDIT40 §3.3：2条落盘，单文件与4项公理通过；未写新证明；�
 EAUDIT41 §3.3.1：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT42 §3.3.2：1条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT43 §3.3.3：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。

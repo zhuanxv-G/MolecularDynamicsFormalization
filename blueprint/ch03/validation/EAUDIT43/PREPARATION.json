@@ -1,0 +1,21 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT43",
+  "section": "3.3.3",
+  "source_ids": [
+    "MD-3.3.3-YoshidaRaiseOrder"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.3-YoshidaRaiseOrder"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "e59239845f8d8f91b6846943010db9abffe5f3ccfaee4ad91c6c4fb775b500b1",
+  "lean_sha256": "ddb66c26cb4c3d09040658d59f764dc4f1153806a84cbcf202c2828f03ee9e7a",
+  "source_sha256": "c82cbc1073ce2091bb527c6b649ef4c0a0761083f2deced2c71bd6648f9c4cdd",
+  "pages": [
+    131
+  ],
+  "prior_proof_blocks": {
+    "MD-3.3.3-YoshidaRaiseOrder": "theorem yoshidaRaiseOrder :\n  ∀ (n s : ℕ) (f : Q n → Q n) (G Φ : ℝ → Q n → Q n) (D B : Set (Q n)) η,\n    1 ≤ s → ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ (fun hz : ℝ × Q n => G hz.1 hz.2) →\n    IsOpen D → IsCompact B → B ⊆ D → actualFlow f D Φ η →\n    (∀ h z, G (-h) (G h z)=z) → (∀ K : Set (Q n), IsCompact K → K ⊆ D → localOrder G Φ K (2*s)) →\n    localOrder (yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2) Φ B (2*s+2) ∧\n    (∀ K : Set (Q n), IsCompact K → K ⊆ D →\n      localOrder (yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2) Φ K (2*s+2)) ∧\n    (∀ h z, yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2 (-h)\n      (yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2 h z)=z) ∧\n    ContDiff ℝ ⊤ (fun hz : ℝ × Q n ↦\n      yoshidaCompose G (yoshidaCoefficients s).1 (yoshidaCoefficients s).2 hz.1 hz.2) := by\n  sorry"
+  }
+}

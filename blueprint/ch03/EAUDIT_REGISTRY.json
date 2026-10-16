@@ -1964,5 +1964,41 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT42/INDEX.md"
+  },
+  {
+    "chapter": 3,
+    "eaudit": "EAUDIT43",
+    "section": "3.3.3",
+    "source_ids": [
+      "MD-3.3.3-YoshidaRaiseOrder"
+    ],
+    "reaudit_ids": [
+      "MD-3.3.3-YoshidaRaiseOrder"
+    ],
+    "human_ids": [],
+    "lean_sha256": "ddb66c26cb4c3d09040658d59f764dc4f1153806a84cbcf202c2828f03ee9e7a",
+    "source_sha256": "c82cbc1073ce2091bb527c6b649ef4c0a0761083f2deced2c71bd6648f9c4cdd",
+    "pages": [
+      131
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch03.olean",
+        "Blueprint/Ch03.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "ddb66c26cb4c3d09040658d59f764dc4f1153806a84cbcf202c2828f03ee9e7a",
+      "log_sha256": "71038805aebd10938a5944381001ef5b8f48c6585c94dabbd9407da8614aa79b"
+    },
+    "axiom_decl_count": 1,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT43/INDEX.md"
   }
 ]
