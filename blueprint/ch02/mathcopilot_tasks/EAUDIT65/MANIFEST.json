@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT65",
+  "input_sha256": {
+    "BATCH_EAUDIT65.md": "691cf77fda4ac58cf30785fb4f4f9fad9f082fa132a6ebdd02674496ed537990",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT65a",
+      "source_id": "MD-2.4.1-Splitting",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT65/a",
+      "total_bytes": 89230,
+      "manifest_sha256": "218ea2067e2def9888ba3a0f712e0955c860f6622fae5e0ac7a7d135ed297cfa"
+    },
+    {
+      "subtask": "EAUDIT65b",
+      "source_id": "MD-2.4.1-SplittingLocal",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT65/b",
+      "total_bytes": 93268,
+      "manifest_sha256": "5c204a1c3eb930863b2263d3f035539806b556f5c633f13ee219e1c567f1f8d2"
+    },
+    {
+      "subtask": "EAUDIT65c",
+      "source_id": "MD-2.4.1-KineticFlow",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT65/c",
+      "total_bytes": 102831,
+      "manifest_sha256": "ae784f365f614220b48bb2f6688029762cf13421a539fd98aeb53f68974665e4"
+    },
+    {
+      "subtask": "EAUDIT65d",
+      "source_id": "MD-2.4.1-PotentialFlow",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT65/d",
+      "total_bytes": 85456,
+      "manifest_sha256": "56a754758eb6be52971847346b9e0ab5a790aff01fb32971bff808834b350a6e"
+    },
+    {
+      "subtask": "EAUDIT65e",
+      "source_id": "MD-2.4.1-SplitEuler",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT65/e",
+      "total_bytes": 90444,
+      "manifest_sha256": "4f63ad0b22a2a42d01d5a98bbe1450eb214dff951b724a9dc635cb0a68f5882e"
+    },
+    {
+      "subtask": "EAUDIT65f",
+      "source_id": "MD-2.4.1-VerletComposition",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT65/f",
+      "total_bytes": 105080,
+      "manifest_sha256": "e83e784eb576f85b6bd1cfda98411634fac3be41b5d6af794da8e4ab8e0ae283"
+    },
+    {
+      "subtask": "EAUDIT65g",
+      "source_id": "MD-2.4.1-VerletSymplectic",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT65/g",
+      "total_bytes": 96556,
+      "manifest_sha256": "5db44f4d39d7c0cbced2345231c873ac632bb79c908d91ddc24104e09186ccbb"
+    },
+    {
+      "subtask": "EAUDIT65h",
+      "source_id": "MD-2.4.1-SymmetricComposition",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT65/h",
+      "total_bytes": 91850,
+      "manifest_sha256": "084db7d75e6567b3fb55c248445412185cad855311a115ddf93349d299b65c41"
+    }
+  ]
+}

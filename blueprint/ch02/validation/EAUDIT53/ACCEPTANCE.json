@@ -1,0 +1,26 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT53",
+  "section": "2.2",
+  "source_ids": [
+    "MD-2.2-VerletOrder"
+  ],
+  "reaudit_ids": [
+    "MD-2.2-VerletOrder"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.2-VerletOrder",
+      "prior_eaudit": "EAUDIT28",
+      "acceptance": "blueprint/ch02/validation/EAUDIT28/ACCEPTANCE.json",
+      "sha256": "4b1c61995adc332e55a26e3324aa15742e4329aa4bafc2fac17ccef7abd86624"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT53/INDEX.md"
+}

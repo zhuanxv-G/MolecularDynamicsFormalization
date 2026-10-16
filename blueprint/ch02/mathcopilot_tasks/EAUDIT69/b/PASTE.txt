@@ -1,0 +1,73 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.4.4-BackwardEulerSolve；原PDF页映射=[108]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT69_review.json，对象含batch=EAUDIT69、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT69.md": "0f1cde54a1ca2b4f6937d9ec92624e7b954dcec46f0d59fa9f9c69ce9527541d",
+  "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "EAUDIT69b_materials": "c3265622df82f3e88812031c1106a94171f39abb5b98871bf66143a4ca06c81f",
+  "EAUDIT69b_PAGES.pdf": "925eaa6464ecbb360491978944ae4f1e49ab66101001da0984467ebb26732223"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.4.4-BackwardEulerSolve",
+  "kind": "definition",
+  "label": "Example 2.6",
+  "section": "2.4.4",
+  "printed_page": "86",
+  "pdf_page": "108",
+  "statement_latex": "The Backward Euler method,\n\\[\\boldsymbol z_{n+1}=\\boldsymbol z_n+hf(\\boldsymbol z_{n+1}),\\]\nis an example of an implicit method. The calculation of a timestep involves solving a system of equations of the form\n\\[g(\\boldsymbol w)\\equiv\\boldsymbol w-\\boldsymbol z_n-hf(\\boldsymbol w)=\\boldsymbol0.\\]\nThe map $\\mathcal G_t$ is defined implicitly by the equation\n\\[\\mathcal G_h(\\boldsymbol z)=\\boldsymbol z+hf(\\mathcal G_h(\\boldsymbol z)).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "零点即隐式步关系；没有断言每个f/h存在唯一零点。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.backwardEulerResidual",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] 保留残差并补零点与隐式更新等价、给定G满足的映射方程；不假设任意f,h都有唯一解。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT18_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:23:27.796691",
+      "before_sha256": "d6e44b9e34019f5de5282ce4e97e5893907632c40ab6502db4672fc50f24e3bd",
+      "after_sha256": "461513a0583c44d7f6207ca54e245b8e3629fe98636dc83120a64fb0cf191fe1",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH25_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def backwardEulerResidual (f : E → E) (h : ℝ) (z w : E) : E := w-z-h • f w
+
+theorem backwardEulerResidual_zero_iff (f : E → E) (h : ℝ) (z w : E) :
+    backwardEulerResidual f h z w = 0 ↔ w = z + h • f w := by
+  sorry
+
+def backwardEulerMapRelation (f : E → E) (h : ℝ) (G : E → E) : Prop :=
+  ∀ z, G z = z + h • f (G z)
+```
+### 实际依赖 MD.Ch02.backwardEulerMapRelation
+```lean
+def backwardEulerMapRelation (f : E → E) (h : ℝ) (G : E → E) : Prop :=
+  ∀ z, G z = z + h • f (G z)
+```
+### 实际依赖 MD.Ch02.backwardEulerResidual
+```lean
+def backwardEulerResidual (f : E → E) (h : ℝ) (z w : E) : E := w-z-h • f w
+```

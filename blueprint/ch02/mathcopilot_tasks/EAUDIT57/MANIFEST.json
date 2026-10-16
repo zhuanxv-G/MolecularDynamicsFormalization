@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT57",
+  "input_sha256": {
+    "BATCH_EAUDIT57.md": "446dd8108c5d285fd710ff9c22a2f5cae7f1d5570f3c23c2eea1703fd4a78ab9",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT57a",
+      "source_id": "MD-2.2.4-FirstIntegral",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT57/a",
+      "total_bytes": 175867,
+      "manifest_sha256": "605ee7d466e521350b01888a4d6cf1ebcf2f02364f3ef440b42b2f9cb45a22a7"
+    },
+    {
+      "subtask": "EAUDIT57b",
+      "source_id": "MD-2.2.4-IntegralPreserved",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT57/b",
+      "total_bytes": 177300,
+      "manifest_sha256": "6b000f0fdfd622b731d809842775f6c8022a7e72760fd7972b908e024f0dce54"
+    },
+    {
+      "subtask": "EAUDIT57c",
+      "source_id": "MD-2.2.4-IntegralLipschitz",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT57/c",
+      "total_bytes": 92077,
+      "manifest_sha256": "4907e84e66821fb91b2f69b695e709b7b05a02d288e49d535eef1ea3f2b777e8"
+    }
+  ]
+}

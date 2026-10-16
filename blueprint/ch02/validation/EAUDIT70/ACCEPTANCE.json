@@ -1,0 +1,58 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT70",
+  "section": "2.4.5",
+  "source_ids": [
+    "MD-2.4.5-ConjugateIterates",
+    "MD-2.4.5-EulerConjugacy",
+    "MD-2.4.5-Processing",
+    "MD-2.4.5-ProcessingIterates",
+    "MD-2.4.5-ProcessingOrder"
+  ],
+  "reaudit_ids": [
+    "MD-2.4.5-ConjugateIterates",
+    "MD-2.4.5-EulerConjugacy",
+    "MD-2.4.5-Processing",
+    "MD-2.4.5-ProcessingIterates",
+    "MD-2.4.5-ProcessingOrder"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.4.5-ConjugateIterates",
+      "prior_eaudit": "EAUDIT45",
+      "acceptance": "blueprint/ch02/validation/EAUDIT45/ACCEPTANCE.json",
+      "sha256": "8d882e942e9c7e899032ccce8a55e58b6675c0ae20348e7a2e7430d49f82f425"
+    },
+    {
+      "source_id": "MD-2.4.5-EulerConjugacy",
+      "prior_eaudit": "EAUDIT45",
+      "acceptance": "blueprint/ch02/validation/EAUDIT45/ACCEPTANCE.json",
+      "sha256": "8d882e942e9c7e899032ccce8a55e58b6675c0ae20348e7a2e7430d49f82f425"
+    },
+    {
+      "source_id": "MD-2.4.5-Processing",
+      "prior_eaudit": "EAUDIT45",
+      "acceptance": "blueprint/ch02/validation/EAUDIT45/ACCEPTANCE.json",
+      "sha256": "8d882e942e9c7e899032ccce8a55e58b6675c0ae20348e7a2e7430d49f82f425"
+    },
+    {
+      "source_id": "MD-2.4.5-ProcessingIterates",
+      "prior_eaudit": "EAUDIT45",
+      "acceptance": "blueprint/ch02/validation/EAUDIT45/ACCEPTANCE.json",
+      "sha256": "8d882e942e9c7e899032ccce8a55e58b6675c0ae20348e7a2e7430d49f82f425"
+    },
+    {
+      "source_id": "MD-2.4.5-ProcessingOrder",
+      "prior_eaudit": "EAUDIT45",
+      "acceptance": "blueprint/ch02/validation/EAUDIT45/ACCEPTANCE.json",
+      "sha256": "8d882e942e9c7e899032ccce8a55e58b6675c0ae20348e7a2e7430d49f82f425"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT70/INDEX.md"
+}

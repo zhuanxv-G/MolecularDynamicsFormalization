@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT66",
+  "input_sha256": {
+    "BATCH_EAUDIT66.md": "3174267860a1676a4f3b77b64399fbda1474c7692be22e7266055e3fab46ee89",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT66a",
+      "source_id": "MD-2.4.1-SymmetricEven",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT66/a",
+      "total_bytes": 92535,
+      "manifest_sha256": "5feb9e3f5c2b60647fb2133fe2b0c0a6ee2f556e9a18e319ada7588b9a3af8a0"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT67",
+  "section": "2.4.2",
+  "source_ids": [
+    "MD-2.4.2-CompositionSymplectic"
+  ],
+  "reaudit_ids": [
+    "MD-2.4.2-CompositionSymplectic"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.4.2-CompositionSymplectic",
+      "prior_eaudit": "EAUDIT42",
+      "acceptance": "blueprint/ch02/validation/EAUDIT42/ACCEPTANCE.json",
+      "sha256": "70d438dc5a1bf9f3b8108e339c01e01fb582db2d558e2ffc05aada0879c765d7"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT67/INDEX.md"
+}

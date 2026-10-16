@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT58",
+  "source_id": "MD-2.3.1-DeterminantODE",
+  "input_sha256": {
+    "BATCH_EAUDIT58.md": "fd093ab08363bd1a6297b27b9e6a1d11e55380a69689b1e9dd2b0104447a85a0",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "EAUDIT58d_materials": "b78fb93e9f6e5e23d2cd926d21fa8003ee2f973b054a921a7734261f611d5552",
+    "EAUDIT58d_PAGES.pdf": "f45529e2da12b5257d560edf6ff98850a9bf1b29bb387a2379ce61597c65b588"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    95
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "3754250764d4eddc67f28d60d38d3c0fa33b37f727ff774d657c2c0c91ef5f0e",
+  "source_block_sha256": "8046d3fbc745cb8d2feb8c033ee9eb27c5408b4f1f151bc1b46f11bd0aa30eef",
+  "source_declarations": [
+    "determinantODE"
+  ],
+  "dependency_excerpts": [],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT58_review.json",
+  "total_task_bytes": 89812
+}

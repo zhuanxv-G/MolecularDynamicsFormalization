@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT57",
+  "source_id": "MD-2.2.4-IntegralPreserved",
+  "input_sha256": {
+    "BATCH_EAUDIT57.md": "446dd8108c5d285fd710ff9c22a2f5cae7f1d5570f3c23c2eea1703fd4a78ab9",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "EAUDIT57b_materials": "6a4e7a90714f251ff5b13acd96464d514d9c5f11a88b84bc2464190d6e3fef80",
+    "EAUDIT57b_PAGES.pdf": "a382a81eea61d10bdb795a04d9ce94632011e8c07972eb62962e04cfed250a17"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    92
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "9199d6cc54a3106df9e81386770a25a780d6b4340306e0102e4febf7bb8bc5be",
+  "source_block_sha256": "e2003b06fb755574b0066b43ff230f4852a2c290f21721e0d3a216850a1ea0bf",
+  "source_declarations": [
+    "firstIntegralPreserved"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "firstIntegral",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d0a3c8854a08df4c9146e836a0bdc54c489c24ce0ae31043ad5e24a31cadc472"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "solution",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "4246b13784e62583efb6e55b0aaf0235c08565f8c3c6ec6bf888afa19baaf49b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT57_review.json",
+  "total_task_bytes": 177300
+}

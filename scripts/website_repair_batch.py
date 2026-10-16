@@ -174,7 +174,7 @@ def commit_section(ch,section,eaudits):
         if tracked.returncode:
             paths += [p.parent.relative_to(ROOT).as_posix(),f'blueprint/ch{ch:02}/mathcopilot_tasks/{p.parent.name}']
     paths += [p.relative_to(ROOT).as_posix() for p in (ROOT/'scripts').glob(f'repair_ch{ch:02}*.py')]
-    paths += [p for p in ('scripts/repair_cinfty.py','scripts/resume_website_full_check.py') if (ROOT/p).exists()]
+    paths += [p for p in ('scripts/repair_cinfty.py','scripts/resume_website_full_check.py','scripts/repair_all_remaining.py') if (ROOT/p).exists()]
     paths += [p.relative_to(ROOT).as_posix() for p in (ROOT/f'blueprint/ch{ch:02}/validation').glob('WEBSITE_REPAIR_CHAPTER_ACCEPTANCE_PRE_*.json')]
     stage([p for p in paths if (ROOT/p).exists()])
     subprocess.run(['git','commit','-m',f'ch{ch:02} sec{section}: repair website audit signatures and package {", ".join(eaudits)}; no new proofs'],cwd=ROOT,check=True)

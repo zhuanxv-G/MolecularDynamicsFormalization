@@ -1,0 +1,34 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT73",
+  "section": "2.5.4",
+  "source_ids": [
+    "MD-2.5.4-MultiTaylor",
+    "MD-2.5.4-TIPotential"
+  ],
+  "reaudit_ids": [
+    "MD-2.5.4-MultiTaylor",
+    "MD-2.5.4-TIPotential"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.5.4-MultiTaylor",
+      "prior_eaudit": "EAUDIT48",
+      "acceptance": "blueprint/ch02/validation/EAUDIT48/ACCEPTANCE.json",
+      "sha256": "166af671098711743324b87671583797bc2fc9994fee4df2c07674d638cbc5ca"
+    },
+    {
+      "source_id": "MD-2.5.4-TIPotential",
+      "prior_eaudit": "EAUDIT48",
+      "acceptance": "blueprint/ch02/validation/EAUDIT48/ACCEPTANCE.json",
+      "sha256": "166af671098711743324b87671583797bc2fc9994fee4df2c07674d638cbc5ca"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT73/INDEX.md"
+}

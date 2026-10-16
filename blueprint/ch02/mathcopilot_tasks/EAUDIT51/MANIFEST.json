@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT51",
+  "input_sha256": {
+    "BATCH_EAUDIT51.md": "caf93c56adfa512099b1b48c0b6faa7f48ba7337d69a403c1b0b768ddc8af21f",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT51a",
+      "source_id": "MD-2-HamiltonianODE",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT51/a",
+      "total_bytes": 101089,
+      "manifest_sha256": "840ae92740e63a911b2a31765104871798b866157a2c78a480124c3d01b946db"
+    },
+    {
+      "subtask": "EAUDIT51b",
+      "source_id": "MD-2-Hamiltonian",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT51/b",
+      "total_bytes": 102108,
+      "manifest_sha256": "c0c46872fb33c7c81fd81f4e6a97189ae4621ff2a46705d43b0451a0f02f8f4b"
+    },
+    {
+      "subtask": "EAUDIT51c",
+      "source_id": "MD-2-Euler",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT51/c",
+      "total_bytes": 127303,
+      "manifest_sha256": "6c04b155784b58d5a5ba076779bec303d4d74ce9cfcd333f06c0d56e7bb0ab21"
+    },
+    {
+      "subtask": "EAUDIT51d",
+      "source_id": "MD-2-OneStep",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT51/d",
+      "total_bytes": 135406,
+      "manifest_sha256": "c56029551ba23b64c90040174c6e0c05519bf53acffece8be62ffe12aadc4886"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT54",
+  "source_id": "MD-2.2.1-VariationalDerivativePrinted",
+  "input_sha256": {
+    "BATCH_EAUDIT54.md": "3ca4a34b4209870ff40710db60f2c3ced4c7baca400b562c365a67e90e68d68a",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "EAUDIT54d_materials": "840d7d6bc8083b6dd4585f480f5f32d85787392bf13e40697fd62b6a2f8a7c09",
+    "EAUDIT54d_PAGES.pdf": "919b0752bf6364180a8718cd71d2cde563eef71ab200ed2dd44b55f8b9a8e7f9"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    84
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "8465afbb3c70bd0c6cbab5ac31a5168f9c03cabf38f145fed436016741251013",
+  "source_block_sha256": "ca49b5bcf458f8bd2458e4b0792e577bc2433a43fcf9db99968ad7997724b6a1",
+  "source_declarations": [
+    "printedVariationalDerivative"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "printedVariationalDerivative",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "ca49b5bcf458f8bd2458e4b0792e577bc2433a43fcf9db99968ad7997724b6a1"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT54_review.json",
+  "total_task_bytes": 93162
+}

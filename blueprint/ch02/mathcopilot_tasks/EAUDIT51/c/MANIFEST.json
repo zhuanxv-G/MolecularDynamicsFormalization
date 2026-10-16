@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT51",
+  "source_id": "MD-2-Euler",
+  "input_sha256": {
+    "BATCH_EAUDIT51.md": "caf93c56adfa512099b1b48c0b6faa7f48ba7337d69a403c1b0b768ddc8af21f",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "EAUDIT51c_materials": "63e4b8560e149946fbc110e122190b20732bd1dadccad080341350f655a52c9e",
+    "EAUDIT51c_PAGES.pdf": "850edea9c80f1379bb4baf295cfcc0e4cda271c7203a91ab1c028cc8e7f0fc78"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    76
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "487a67cee14b679c7a5fa6524548a9727be2fd6502741b0248384f6339a21061",
+  "source_block_sha256": "d972017500dc16cadac7cbc70966761995bf5f94337b248f235b4bf71b73bb3e",
+  "source_declarations": [
+    "euler"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "euler",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "d972017500dc16cadac7cbc70966761995bf5f94337b248f235b4bf71b73bb3e"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT51_review.json",
+  "total_task_bytes": 127303
+}

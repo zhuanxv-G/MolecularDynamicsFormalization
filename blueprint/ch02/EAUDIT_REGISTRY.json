@@ -2169,5 +2169,1011 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT50/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT51",
+    "section": "2",
+    "source_ids": [
+      "MD-2-HamiltonianODE",
+      "MD-2-Hamiltonian",
+      "MD-2-Euler",
+      "MD-2-OneStep"
+    ],
+    "reaudit_ids": [
+      "MD-2-HamiltonianODE",
+      "MD-2-Hamiltonian",
+      "MD-2-Euler",
+      "MD-2-OneStep"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2-HamiltonianODE",
+        "prior_eaudit": "EAUDIT26",
+        "acceptance": "blueprint/ch02/validation/EAUDIT26/ACCEPTANCE.json",
+        "sha256": "b5d9508569b3a916d0474ac2fc709817cbe38e59e5da97d9add13c01735a02a9"
+      },
+      {
+        "source_id": "MD-2-Hamiltonian",
+        "prior_eaudit": "EAUDIT26",
+        "acceptance": "blueprint/ch02/validation/EAUDIT26/ACCEPTANCE.json",
+        "sha256": "b5d9508569b3a916d0474ac2fc709817cbe38e59e5da97d9add13c01735a02a9"
+      },
+      {
+        "source_id": "MD-2-Euler",
+        "prior_eaudit": "EAUDIT26",
+        "acceptance": "blueprint/ch02/validation/EAUDIT26/ACCEPTANCE.json",
+        "sha256": "b5d9508569b3a916d0474ac2fc709817cbe38e59e5da97d9add13c01735a02a9"
+      },
+      {
+        "source_id": "MD-2-OneStep",
+        "prior_eaudit": "EAUDIT26",
+        "acceptance": "blueprint/ch02/validation/EAUDIT26/ACCEPTANCE.json",
+        "sha256": "b5d9508569b3a916d0474ac2fc709817cbe38e59e5da97d9add13c01735a02a9"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT51/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT52",
+    "section": "2.1.2",
+    "source_ids": [
+      "MD-2.1.2-SecondDerivative"
+    ],
+    "reaudit_ids": [
+      "MD-2.1.2-SecondDerivative"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.1.2-SecondDerivative",
+        "prior_eaudit": "EAUDIT27",
+        "acceptance": "blueprint/ch02/validation/EAUDIT27/ACCEPTANCE.json",
+        "sha256": "86af0a080aafc91657d8c6e8ff64db9f6830ee631253b3dc6008118fa0e6a339"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT52/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT53",
+    "section": "2.2",
+    "source_ids": [
+      "MD-2.2-VerletOrder"
+    ],
+    "reaudit_ids": [
+      "MD-2.2-VerletOrder"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.2-VerletOrder",
+        "prior_eaudit": "EAUDIT28",
+        "acceptance": "blueprint/ch02/validation/EAUDIT28/ACCEPTANCE.json",
+        "sha256": "4b1c61995adc332e55a26e3324aa15742e4329aa4bafc2fac17ccef7abd86624"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT53/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT54",
+    "section": "2.2.1",
+    "source_ids": [
+      "MD-2.2.1-FirstVariation",
+      "MD-2.2.1-StationaryAction",
+      "MD-2.2.1-EulerLagrange",
+      "MD-2.2.1-VariationalDerivativePrinted"
+    ],
+    "reaudit_ids": [
+      "MD-2.2.1-FirstVariation",
+      "MD-2.2.1-StationaryAction",
+      "MD-2.2.1-EulerLagrange",
+      "MD-2.2.1-VariationalDerivativePrinted"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.2.1-FirstVariation",
+        "prior_eaudit": "EAUDIT29",
+        "acceptance": "blueprint/ch02/validation/EAUDIT29/ACCEPTANCE.json",
+        "sha256": "28a8824c21daac13dc8500ffa1ae3e113ac870d53fbde11c37cb5628e414101e"
+      },
+      {
+        "source_id": "MD-2.2.1-StationaryAction",
+        "prior_eaudit": "EAUDIT29",
+        "acceptance": "blueprint/ch02/validation/EAUDIT29/ACCEPTANCE.json",
+        "sha256": "28a8824c21daac13dc8500ffa1ae3e113ac870d53fbde11c37cb5628e414101e"
+      },
+      {
+        "source_id": "MD-2.2.1-EulerLagrange",
+        "prior_eaudit": "EAUDIT29",
+        "acceptance": "blueprint/ch02/validation/EAUDIT29/ACCEPTANCE.json",
+        "sha256": "28a8824c21daac13dc8500ffa1ae3e113ac870d53fbde11c37cb5628e414101e"
+      },
+      {
+        "source_id": "MD-2.2.1-VariationalDerivativePrinted",
+        "prior_eaudit": "EAUDIT29",
+        "acceptance": "blueprint/ch02/validation/EAUDIT29/ACCEPTANCE.json",
+        "sha256": "28a8824c21daac13dc8500ffa1ae3e113ac870d53fbde11c37cb5628e414101e"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT54/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT55",
+    "section": "2.2.2",
+    "source_ids": [
+      "MD-2.2.2-DiscreteStationaryPrinted",
+      "MD-2.2.2-DiscreteDerivative",
+      "MD-2.2.2-Stormer"
+    ],
+    "reaudit_ids": [
+      "MD-2.2.2-DiscreteStationaryPrinted",
+      "MD-2.2.2-DiscreteDerivative",
+      "MD-2.2.2-Stormer"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.2.2-DiscreteStationaryPrinted",
+        "prior_eaudit": "EAUDIT30",
+        "acceptance": "blueprint/ch02/validation/EAUDIT30/ACCEPTANCE.json",
+        "sha256": "d63f0a5687da3ffb1acefc60be098f38a0f14dbca2cb6aa9b724bbd72217b7ad"
+      },
+      {
+        "source_id": "MD-2.2.2-DiscreteDerivative",
+        "prior_eaudit": "EAUDIT30",
+        "acceptance": "blueprint/ch02/validation/EAUDIT30/ACCEPTANCE.json",
+        "sha256": "d63f0a5687da3ffb1acefc60be098f38a0f14dbca2cb6aa9b724bbd72217b7ad"
+      },
+      {
+        "source_id": "MD-2.2.2-Stormer",
+        "prior_eaudit": "EAUDIT30",
+        "acceptance": "blueprint/ch02/validation/EAUDIT30/ACCEPTANCE.json",
+        "sha256": "d63f0a5687da3ffb1acefc60be098f38a0f14dbca2cb6aa9b724bbd72217b7ad"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT55/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT56",
+    "section": "2.2.3",
+    "source_ids": [
+      "MD-2.2.3-Consistency",
+      "MD-2.2.3-ErrorBound",
+      "MD-2.2.3-VerletExpansion",
+      "MD-2.2.3-ExactExpansion",
+      "MD-2.2.3-VerletConsistency",
+      "MD-2.2.3-VerletStability"
+    ],
+    "reaudit_ids": [
+      "MD-2.2.3-Consistency",
+      "MD-2.2.3-ErrorBound",
+      "MD-2.2.3-VerletExpansion",
+      "MD-2.2.3-ExactExpansion",
+      "MD-2.2.3-VerletConsistency",
+      "MD-2.2.3-VerletStability"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.2.3-Consistency",
+        "prior_eaudit": "EAUDIT31",
+        "acceptance": "blueprint/ch02/validation/EAUDIT31/ACCEPTANCE.json",
+        "sha256": "5fee3a7c16b032ac19baaa907ec2e0967fab2fe5bfaa773bc28c315edb5b8227"
+      },
+      {
+        "source_id": "MD-2.2.3-ErrorBound",
+        "prior_eaudit": "EAUDIT31",
+        "acceptance": "blueprint/ch02/validation/EAUDIT31/ACCEPTANCE.json",
+        "sha256": "5fee3a7c16b032ac19baaa907ec2e0967fab2fe5bfaa773bc28c315edb5b8227"
+      },
+      {
+        "source_id": "MD-2.2.3-VerletExpansion",
+        "prior_eaudit": "EAUDIT31",
+        "acceptance": "blueprint/ch02/validation/EAUDIT31/ACCEPTANCE.json",
+        "sha256": "5fee3a7c16b032ac19baaa907ec2e0967fab2fe5bfaa773bc28c315edb5b8227"
+      },
+      {
+        "source_id": "MD-2.2.3-ExactExpansion",
+        "prior_eaudit": "EAUDIT31",
+        "acceptance": "blueprint/ch02/validation/EAUDIT31/ACCEPTANCE.json",
+        "sha256": "5fee3a7c16b032ac19baaa907ec2e0967fab2fe5bfaa773bc28c315edb5b8227"
+      },
+      {
+        "source_id": "MD-2.2.3-VerletConsistency",
+        "prior_eaudit": "EAUDIT31",
+        "acceptance": "blueprint/ch02/validation/EAUDIT31/ACCEPTANCE.json",
+        "sha256": "5fee3a7c16b032ac19baaa907ec2e0967fab2fe5bfaa773bc28c315edb5b8227"
+      },
+      {
+        "source_id": "MD-2.2.3-VerletStability",
+        "prior_eaudit": "EAUDIT31",
+        "acceptance": "blueprint/ch02/validation/EAUDIT31/ACCEPTANCE.json",
+        "sha256": "5fee3a7c16b032ac19baaa907ec2e0967fab2fe5bfaa773bc28c315edb5b8227"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT56/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT57",
+    "section": "2.2.4",
+    "source_ids": [
+      "MD-2.2.4-FirstIntegral",
+      "MD-2.2.4-IntegralPreserved",
+      "MD-2.2.4-IntegralLipschitz"
+    ],
+    "reaudit_ids": [
+      "MD-2.2.4-FirstIntegral",
+      "MD-2.2.4-IntegralPreserved",
+      "MD-2.2.4-IntegralLipschitz"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.2.4-FirstIntegral",
+        "prior_eaudit": "EAUDIT32",
+        "acceptance": "blueprint/ch02/validation/EAUDIT32/ACCEPTANCE.json",
+        "sha256": "5ce086d52fa7895885781d72ca7319fe38e03aed742d25e7d19f6a03055e9d5f"
+      },
+      {
+        "source_id": "MD-2.2.4-IntegralPreserved",
+        "prior_eaudit": "EAUDIT32",
+        "acceptance": "blueprint/ch02/validation/EAUDIT32/ACCEPTANCE.json",
+        "sha256": "5ce086d52fa7895885781d72ca7319fe38e03aed742d25e7d19f6a03055e9d5f"
+      },
+      {
+        "source_id": "MD-2.2.4-IntegralLipschitz",
+        "prior_eaudit": "EAUDIT32",
+        "acceptance": "blueprint/ch02/validation/EAUDIT32/ACCEPTANCE.json",
+        "sha256": "5ce086d52fa7895885781d72ca7319fe38e03aed742d25e7d19f6a03055e9d5f"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT57/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT58",
+    "section": "2.3.1",
+    "source_ids": [
+      "MD-2.3.1-Divergence",
+      "MD-2.3.1-Liouville",
+      "MD-2.3.1-HamiltonVolume",
+      "MD-2.3.1-DeterminantODE",
+      "MD-2.3.1-FlowDet",
+      "MD-2.3.1-LJOscillator",
+      "MD-2.3.1-LJBoundedPeriodic"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.1-Divergence",
+      "MD-2.3.1-Liouville",
+      "MD-2.3.1-HamiltonVolume",
+      "MD-2.3.1-DeterminantODE",
+      "MD-2.3.1-FlowDet",
+      "MD-2.3.1-LJOscillator",
+      "MD-2.3.1-LJBoundedPeriodic"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.3.1-Divergence",
+        "prior_eaudit": "EAUDIT33",
+        "acceptance": "blueprint/ch02/validation/EAUDIT33/ACCEPTANCE.json",
+        "sha256": "2e6336df1dde31ee855e318bdf0f98b910f02ebaedde9f1731984628fa79e3c1"
+      },
+      {
+        "source_id": "MD-2.3.1-Liouville",
+        "prior_eaudit": "EAUDIT33",
+        "acceptance": "blueprint/ch02/validation/EAUDIT33/ACCEPTANCE.json",
+        "sha256": "2e6336df1dde31ee855e318bdf0f98b910f02ebaedde9f1731984628fa79e3c1"
+      },
+      {
+        "source_id": "MD-2.3.1-HamiltonVolume",
+        "prior_eaudit": "EAUDIT33",
+        "acceptance": "blueprint/ch02/validation/EAUDIT33/ACCEPTANCE.json",
+        "sha256": "2e6336df1dde31ee855e318bdf0f98b910f02ebaedde9f1731984628fa79e3c1"
+      },
+      {
+        "source_id": "MD-2.3.1-DeterminantODE",
+        "prior_eaudit": "EAUDIT33",
+        "acceptance": "blueprint/ch02/validation/EAUDIT33/ACCEPTANCE.json",
+        "sha256": "2e6336df1dde31ee855e318bdf0f98b910f02ebaedde9f1731984628fa79e3c1"
+      },
+      {
+        "source_id": "MD-2.3.1-FlowDet",
+        "prior_eaudit": "EAUDIT33",
+        "acceptance": "blueprint/ch02/validation/EAUDIT33/ACCEPTANCE.json",
+        "sha256": "2e6336df1dde31ee855e318bdf0f98b910f02ebaedde9f1731984628fa79e3c1"
+      },
+      {
+        "source_id": "MD-2.3.1-LJOscillator",
+        "prior_eaudit": "EAUDIT33",
+        "acceptance": "blueprint/ch02/validation/EAUDIT33/ACCEPTANCE.json",
+        "sha256": "2e6336df1dde31ee855e318bdf0f98b910f02ebaedde9f1731984628fa79e3c1"
+      },
+      {
+        "source_id": "MD-2.3.1-LJBoundedPeriodic",
+        "prior_eaudit": "EAUDIT33",
+        "acceptance": "blueprint/ch02/validation/EAUDIT33/ACCEPTANCE.json",
+        "sha256": "2e6336df1dde31ee855e318bdf0f98b910f02ebaedde9f1731984628fa79e3c1"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT58/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT59",
+    "section": "2.3.2",
+    "source_ids": [
+      "MD-2.3.2-EulerVolumeCounterexample"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.2-EulerVolumeCounterexample"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.3.2-EulerVolumeCounterexample",
+        "prior_eaudit": "EAUDIT34",
+        "acceptance": "blueprint/ch02/validation/EAUDIT34/ACCEPTANCE.json",
+        "sha256": "0bc0dd30983d737e8805297c9db5a3ff51193467a35e80ab6f488326419f3971"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT59/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT60",
+    "section": "2.3.3",
+    "source_ids": [
+      "MD-2.3.3-SymplecticMap",
+      "MD-2.3.3-OneForm",
+      "MD-2.3.3-FormSumWedges",
+      "MD-2.3.3-SymplecticIffForm",
+      "MD-2.3.3-HamiltonDet"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.3-SymplecticMap",
+      "MD-2.3.3-OneForm",
+      "MD-2.3.3-FormSumWedges",
+      "MD-2.3.3-SymplecticIffForm",
+      "MD-2.3.3-HamiltonDet"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.3.3-SymplecticMap",
+        "prior_eaudit": "EAUDIT35",
+        "acceptance": "blueprint/ch02/validation/EAUDIT35/ACCEPTANCE.json",
+        "sha256": "ded8a2cd1e41356c384ab91e31ea50d46bb2cf39b56042fe166b5dd8d040f6c9"
+      },
+      {
+        "source_id": "MD-2.3.3-OneForm",
+        "prior_eaudit": "EAUDIT35",
+        "acceptance": "blueprint/ch02/validation/EAUDIT35/ACCEPTANCE.json",
+        "sha256": "ded8a2cd1e41356c384ab91e31ea50d46bb2cf39b56042fe166b5dd8d040f6c9"
+      },
+      {
+        "source_id": "MD-2.3.3-FormSumWedges",
+        "prior_eaudit": "EAUDIT35",
+        "acceptance": "blueprint/ch02/validation/EAUDIT35/ACCEPTANCE.json",
+        "sha256": "ded8a2cd1e41356c384ab91e31ea50d46bb2cf39b56042fe166b5dd8d040f6c9"
+      },
+      {
+        "source_id": "MD-2.3.3-SymplecticIffForm",
+        "prior_eaudit": "EAUDIT35",
+        "acceptance": "blueprint/ch02/validation/EAUDIT35/ACCEPTANCE.json",
+        "sha256": "ded8a2cd1e41356c384ab91e31ea50d46bb2cf39b56042fe166b5dd8d040f6c9"
+      },
+      {
+        "source_id": "MD-2.3.3-HamiltonDet",
+        "prior_eaudit": "EAUDIT35",
+        "acceptance": "blueprint/ch02/validation/EAUDIT35/ACCEPTANCE.json",
+        "sha256": "ded8a2cd1e41356c384ab91e31ea50d46bb2cf39b56042fe166b5dd8d040f6c9"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT60/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT61",
+    "section": "2.3.4",
+    "source_ids": [
+      "MD-2.3.4-MatrixCancellation",
+      "MD-2.3.4-HamiltonSymplectic"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.4-MatrixCancellation",
+      "MD-2.3.4-HamiltonSymplectic"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.3.4-MatrixCancellation",
+        "prior_eaudit": "EAUDIT36",
+        "acceptance": "blueprint/ch02/validation/EAUDIT36/ACCEPTANCE.json",
+        "sha256": "bc3e64309f67690dae2b1126682e2fa91c45f129673323cde170e40633ff0924"
+      },
+      {
+        "source_id": "MD-2.3.4-HamiltonSymplectic",
+        "prior_eaudit": "EAUDIT36",
+        "acceptance": "blueprint/ch02/validation/EAUDIT36/ACCEPTANCE.json",
+        "sha256": "bc3e64309f67690dae2b1126682e2fa91c45f129673323cde170e40633ff0924"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT61/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT62",
+    "section": "2.3.5",
+    "source_ids": [
+      "MD-2.3.5-ChainRule",
+      "MD-2.3.5-SymplecticComposition",
+      "MD-2.3.5-SymplecticInverse"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.5-ChainRule",
+      "MD-2.3.5-SymplecticComposition",
+      "MD-2.3.5-SymplecticInverse"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.3.5-ChainRule",
+        "prior_eaudit": "EAUDIT37",
+        "acceptance": "blueprint/ch02/validation/EAUDIT37/ACCEPTANCE.json",
+        "sha256": "f1198a6994cbddd01161d2a5a7a36f07424061eb880f5c68ab6b990cd09fa3cf"
+      },
+      {
+        "source_id": "MD-2.3.5-SymplecticComposition",
+        "prior_eaudit": "EAUDIT37",
+        "acceptance": "blueprint/ch02/validation/EAUDIT37/ACCEPTANCE.json",
+        "sha256": "f1198a6994cbddd01161d2a5a7a36f07424061eb880f5c68ab6b990cd09fa3cf"
+      },
+      {
+        "source_id": "MD-2.3.5-SymplecticInverse",
+        "prior_eaudit": "EAUDIT37",
+        "acceptance": "blueprint/ch02/validation/EAUDIT37/ACCEPTANCE.json",
+        "sha256": "f1198a6994cbddd01161d2a5a7a36f07424061eb880f5c68ab6b990cd09fa3cf"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT62/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT63",
+    "section": "2.3.6",
+    "source_ids": [
+      "MD-2.3.6-SymplecticIntegrator",
+      "MD-2.3.6-SymplecticEulerPreserves"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.6-SymplecticIntegrator",
+      "MD-2.3.6-SymplecticEulerPreserves"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.3.6-SymplecticIntegrator",
+        "prior_eaudit": "EAUDIT38",
+        "acceptance": "blueprint/ch02/validation/EAUDIT38/ACCEPTANCE.json",
+        "sha256": "88bf046251899fdcde826108c89e3ee9a5997f627aa5751c7b45c12098e3f1d2"
+      },
+      {
+        "source_id": "MD-2.3.6-SymplecticEulerPreserves",
+        "prior_eaudit": "EAUDIT38",
+        "acceptance": "blueprint/ch02/validation/EAUDIT38/ACCEPTANCE.json",
+        "sha256": "88bf046251899fdcde826108c89e3ee9a5997f627aa5751c7b45c12098e3f1d2"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT63/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT64",
+    "section": "2.3.7",
+    "source_ids": [
+      "MD-2.3.7-Adjoint",
+      "MD-2.3.7-FlowSelfAdjoint",
+      "MD-2.3.7-BackwardEuler",
+      "MD-2.3.7-AdjointSymplecticEuler",
+      "MD-2.3.7-AdjointInvolution"
+    ],
+    "reaudit_ids": [
+      "MD-2.3.7-Adjoint",
+      "MD-2.3.7-FlowSelfAdjoint",
+      "MD-2.3.7-BackwardEuler",
+      "MD-2.3.7-AdjointSymplecticEuler",
+      "MD-2.3.7-AdjointInvolution"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.3.7-Adjoint",
+        "prior_eaudit": "EAUDIT39",
+        "acceptance": "blueprint/ch02/validation/EAUDIT39/ACCEPTANCE.json",
+        "sha256": "69bb7fc0936a3476f1109add94c27451fd82b9e03a270367949ea225788fbec7"
+      },
+      {
+        "source_id": "MD-2.3.7-FlowSelfAdjoint",
+        "prior_eaudit": "EAUDIT39",
+        "acceptance": "blueprint/ch02/validation/EAUDIT39/ACCEPTANCE.json",
+        "sha256": "69bb7fc0936a3476f1109add94c27451fd82b9e03a270367949ea225788fbec7"
+      },
+      {
+        "source_id": "MD-2.3.7-BackwardEuler",
+        "prior_eaudit": "EAUDIT39",
+        "acceptance": "blueprint/ch02/validation/EAUDIT39/ACCEPTANCE.json",
+        "sha256": "69bb7fc0936a3476f1109add94c27451fd82b9e03a270367949ea225788fbec7"
+      },
+      {
+        "source_id": "MD-2.3.7-AdjointSymplecticEuler",
+        "prior_eaudit": "EAUDIT39",
+        "acceptance": "blueprint/ch02/validation/EAUDIT39/ACCEPTANCE.json",
+        "sha256": "69bb7fc0936a3476f1109add94c27451fd82b9e03a270367949ea225788fbec7"
+      },
+      {
+        "source_id": "MD-2.3.7-AdjointInvolution",
+        "prior_eaudit": "EAUDIT39",
+        "acceptance": "blueprint/ch02/validation/EAUDIT39/ACCEPTANCE.json",
+        "sha256": "69bb7fc0936a3476f1109add94c27451fd82b9e03a270367949ea225788fbec7"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT64/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT65",
+    "section": "2.4.1",
+    "source_ids": [
+      "MD-2.4.1-Splitting",
+      "MD-2.4.1-SplittingLocal",
+      "MD-2.4.1-KineticFlow",
+      "MD-2.4.1-PotentialFlow",
+      "MD-2.4.1-SplitEuler",
+      "MD-2.4.1-VerletComposition",
+      "MD-2.4.1-VerletSymplectic",
+      "MD-2.4.1-SymmetricComposition"
+    ],
+    "reaudit_ids": [
+      "MD-2.4.1-Splitting",
+      "MD-2.4.1-SplittingLocal",
+      "MD-2.4.1-KineticFlow",
+      "MD-2.4.1-PotentialFlow",
+      "MD-2.4.1-SplitEuler",
+      "MD-2.4.1-VerletComposition",
+      "MD-2.4.1-VerletSymplectic",
+      "MD-2.4.1-SymmetricComposition"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.4.1-Splitting",
+        "prior_eaudit": "EAUDIT40",
+        "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+        "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+      },
+      {
+        "source_id": "MD-2.4.1-SplittingLocal",
+        "prior_eaudit": "EAUDIT40",
+        "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+        "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+      },
+      {
+        "source_id": "MD-2.4.1-KineticFlow",
+        "prior_eaudit": "EAUDIT40",
+        "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+        "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+      },
+      {
+        "source_id": "MD-2.4.1-PotentialFlow",
+        "prior_eaudit": "EAUDIT40",
+        "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+        "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+      },
+      {
+        "source_id": "MD-2.4.1-SplitEuler",
+        "prior_eaudit": "EAUDIT40",
+        "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+        "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+      },
+      {
+        "source_id": "MD-2.4.1-VerletComposition",
+        "prior_eaudit": "EAUDIT40",
+        "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+        "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+      },
+      {
+        "source_id": "MD-2.4.1-VerletSymplectic",
+        "prior_eaudit": "EAUDIT40",
+        "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+        "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+      },
+      {
+        "source_id": "MD-2.4.1-SymmetricComposition",
+        "prior_eaudit": "EAUDIT40",
+        "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+        "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT65/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT66",
+    "section": "2.4.1",
+    "source_ids": [
+      "MD-2.4.1-SymmetricEven"
+    ],
+    "reaudit_ids": [
+      "MD-2.4.1-SymmetricEven"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.4.1-SymmetricEven",
+        "prior_eaudit": "EAUDIT49",
+        "acceptance": "blueprint/ch02/validation/EAUDIT49/ACCEPTANCE.json",
+        "sha256": "a1af1d43911ed6d4f8024af7e86f6654e829d0d15df1705f02eb2a92954a4af1"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT66/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT67",
+    "section": "2.4.2",
+    "source_ids": [
+      "MD-2.4.2-CompositionSymplectic"
+    ],
+    "reaudit_ids": [
+      "MD-2.4.2-CompositionSymplectic"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.4.2-CompositionSymplectic",
+        "prior_eaudit": "EAUDIT42",
+        "acceptance": "blueprint/ch02/validation/EAUDIT42/ACCEPTANCE.json",
+        "sha256": "70d438dc5a1bf9f3b8108e339c01e01fb582db2d558e2ffc05aada0879c765d7"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT67/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT68",
+    "section": "2.4.3",
+    "source_ids": [
+      "MD-2.4.3-HarmonicSplit"
+    ],
+    "reaudit_ids": [
+      "MD-2.4.3-HarmonicSplit"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.4.3-HarmonicSplit",
+        "prior_eaudit": "EAUDIT43",
+        "acceptance": "blueprint/ch02/validation/EAUDIT43/ACCEPTANCE.json",
+        "sha256": "913523ced2c914777f4a1429a67a56d64ecfe84c4d2d8962e4a1c6629c509e2f"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT68/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT69",
+    "section": "2.4.4",
+    "source_ids": [
+      "MD-2.4.4-ImplicitLocal",
+      "MD-2.4.4-BackwardEulerSolve",
+      "MD-2.4.4-Newton",
+      "MD-2.4.4-NewtonQuadratic"
+    ],
+    "reaudit_ids": [
+      "MD-2.4.4-ImplicitLocal",
+      "MD-2.4.4-BackwardEulerSolve",
+      "MD-2.4.4-Newton",
+      "MD-2.4.4-NewtonQuadratic"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.4.4-ImplicitLocal",
+        "prior_eaudit": "EAUDIT44",
+        "acceptance": "blueprint/ch02/validation/EAUDIT44/ACCEPTANCE.json",
+        "sha256": "7a16ee17d87866b7135c97576105e3bd778fc81ba742c306b992102c8b068556"
+      },
+      {
+        "source_id": "MD-2.4.4-BackwardEulerSolve",
+        "prior_eaudit": "EAUDIT44",
+        "acceptance": "blueprint/ch02/validation/EAUDIT44/ACCEPTANCE.json",
+        "sha256": "7a16ee17d87866b7135c97576105e3bd778fc81ba742c306b992102c8b068556"
+      },
+      {
+        "source_id": "MD-2.4.4-Newton",
+        "prior_eaudit": "EAUDIT44",
+        "acceptance": "blueprint/ch02/validation/EAUDIT44/ACCEPTANCE.json",
+        "sha256": "7a16ee17d87866b7135c97576105e3bd778fc81ba742c306b992102c8b068556"
+      },
+      {
+        "source_id": "MD-2.4.4-NewtonQuadratic",
+        "prior_eaudit": "EAUDIT44",
+        "acceptance": "blueprint/ch02/validation/EAUDIT44/ACCEPTANCE.json",
+        "sha256": "7a16ee17d87866b7135c97576105e3bd778fc81ba742c306b992102c8b068556"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT69/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT70",
+    "section": "2.4.5",
+    "source_ids": [
+      "MD-2.4.5-ConjugateIterates",
+      "MD-2.4.5-EulerConjugacy",
+      "MD-2.4.5-Processing",
+      "MD-2.4.5-ProcessingIterates",
+      "MD-2.4.5-ProcessingOrder"
+    ],
+    "reaudit_ids": [
+      "MD-2.4.5-ConjugateIterates",
+      "MD-2.4.5-EulerConjugacy",
+      "MD-2.4.5-Processing",
+      "MD-2.4.5-ProcessingIterates",
+      "MD-2.4.5-ProcessingOrder"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.4.5-ConjugateIterates",
+        "prior_eaudit": "EAUDIT45",
+        "acceptance": "blueprint/ch02/validation/EAUDIT45/ACCEPTANCE.json",
+        "sha256": "8d882e942e9c7e899032ccce8a55e58b6675c0ae20348e7a2e7430d49f82f425"
+      },
+      {
+        "source_id": "MD-2.4.5-EulerConjugacy",
+        "prior_eaudit": "EAUDIT45",
+        "acceptance": "blueprint/ch02/validation/EAUDIT45/ACCEPTANCE.json",
+        "sha256": "8d882e942e9c7e899032ccce8a55e58b6675c0ae20348e7a2e7430d49f82f425"
+      },
+      {
+        "source_id": "MD-2.4.5-Processing",
+        "prior_eaudit": "EAUDIT45",
+        "acceptance": "blueprint/ch02/validation/EAUDIT45/ACCEPTANCE.json",
+        "sha256": "8d882e942e9c7e899032ccce8a55e58b6675c0ae20348e7a2e7430d49f82f425"
+      },
+      {
+        "source_id": "MD-2.4.5-ProcessingIterates",
+        "prior_eaudit": "EAUDIT45",
+        "acceptance": "blueprint/ch02/validation/EAUDIT45/ACCEPTANCE.json",
+        "sha256": "8d882e942e9c7e899032ccce8a55e58b6675c0ae20348e7a2e7430d49f82f425"
+      },
+      {
+        "source_id": "MD-2.4.5-ProcessingOrder",
+        "prior_eaudit": "EAUDIT45",
+        "acceptance": "blueprint/ch02/validation/EAUDIT45/ACCEPTANCE.json",
+        "sha256": "8d882e942e9c7e899032ccce8a55e58b6675c0ae20348e7a2e7430d49f82f425"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT70/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT71",
+    "section": "2.5.1",
+    "source_ids": [
+      "MD-2.5.1-RK4",
+      "MD-2.5.1-MidpointProperties",
+      "MD-2.5.1-GaussTwoOrder"
+    ],
+    "reaudit_ids": [
+      "MD-2.5.1-RK4",
+      "MD-2.5.1-MidpointProperties",
+      "MD-2.5.1-GaussTwoOrder"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.5.1-RK4",
+        "prior_eaudit": "EAUDIT46",
+        "acceptance": "blueprint/ch02/validation/EAUDIT46/ACCEPTANCE.json",
+        "sha256": "dab031509a04623d73f91b61a186e6292ab8b1b7f0c7a4402bc950f67bdc3c2e"
+      },
+      {
+        "source_id": "MD-2.5.1-MidpointProperties",
+        "prior_eaudit": "EAUDIT46",
+        "acceptance": "blueprint/ch02/validation/EAUDIT46/ACCEPTANCE.json",
+        "sha256": "dab031509a04623d73f91b61a186e6292ab8b1b7f0c7a4402bc950f67bdc3c2e"
+      },
+      {
+        "source_id": "MD-2.5.1-GaussTwoOrder",
+        "prior_eaudit": "EAUDIT46",
+        "acceptance": "blueprint/ch02/validation/EAUDIT46/ACCEPTANCE.json",
+        "sha256": "dab031509a04623d73f91b61a186e6292ab8b1b7f0c7a4402bc950f67bdc3c2e"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT71/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT72",
+    "section": "2.5.2",
+    "source_ids": [
+      "MD-2.5.2-GeneralSymplectic",
+      "MD-2.5.2-GeneralVerletSymplectic"
+    ],
+    "reaudit_ids": [
+      "MD-2.5.2-GeneralSymplectic",
+      "MD-2.5.2-GeneralVerletSymplectic"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.5.2-GeneralSymplectic",
+        "prior_eaudit": "EAUDIT47",
+        "acceptance": "blueprint/ch02/validation/EAUDIT47/ACCEPTANCE.json",
+        "sha256": "94b8fdadfd040322b009f5183e2da980a3fd6e346d13171e4449ff4c8c0df4dd"
+      },
+      {
+        "source_id": "MD-2.5.2-GeneralVerletSymplectic",
+        "prior_eaudit": "EAUDIT47",
+        "acceptance": "blueprint/ch02/validation/EAUDIT47/ACCEPTANCE.json",
+        "sha256": "94b8fdadfd040322b009f5183e2da980a3fd6e346d13171e4449ff4c8c0df4dd"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT72/INDEX.md"
+  },
+  {
+    "chapter": 2,
+    "eaudit": "EAUDIT73",
+    "section": "2.5.4",
+    "source_ids": [
+      "MD-2.5.4-MultiTaylor",
+      "MD-2.5.4-TIPotential"
+    ],
+    "reaudit_ids": [
+      "MD-2.5.4-MultiTaylor",
+      "MD-2.5.4-TIPotential"
+    ],
+    "human_ids": [],
+    "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "kind": "delivery-only refresh; all source_id declarations included",
+    "reused_local_checks": [
+      {
+        "source_id": "MD-2.5.4-MultiTaylor",
+        "prior_eaudit": "EAUDIT48",
+        "acceptance": "blueprint/ch02/validation/EAUDIT48/ACCEPTANCE.json",
+        "sha256": "166af671098711743324b87671583797bc2fc9994fee4df2c07674d638cbc5ca"
+      },
+      {
+        "source_id": "MD-2.5.4-TIPotential",
+        "prior_eaudit": "EAUDIT48",
+        "acceptance": "blueprint/ch02/validation/EAUDIT48/ACCEPTANCE.json",
+        "sha256": "166af671098711743324b87671583797bc2fc9994fee4df2c07674d638cbc5ca"
+      }
+    ],
+    "new_proofs": "none",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT73/INDEX.md"
   }
 ]

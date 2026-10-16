@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT58",
+  "source_id": "MD-2.3.1-FlowDet",
+  "input_sha256": {
+    "BATCH_EAUDIT58.md": "fd093ab08363bd1a6297b27b9e6a1d11e55380a69689b1e9dd2b0104447a85a0",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "EAUDIT58e_materials": "367a49937ce6f4ae2c22c4c3896ddabb6c24c568694019b2151e626d1a159258",
+    "EAUDIT58e_PAGES.pdf": "f45529e2da12b5257d560edf6ff98850a9bf1b29bb387a2379ce61597c65b588"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    95
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "7f50170e6c40b209f2d05279868b99b5a7cc0dab7e4676466b46c1544de05bac",
+  "source_block_sha256": "7b0817f1b70801fa3d57fcd1e2b02090f8f8be6605c599de041aae25812ded53",
+  "source_declarations": [
+    "flowDet"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/LiouvilleVolume.lean",
+      "name": "textbookCoordinateJacobian",
+      "file_sha256": "cc895f16f329a6dd4943c5ab8d72d7d98dd7d683c006aad395c36ed3be5bf37f",
+      "excerpt_sha256": "96dc75035e362b25476b1c4cbfcd553e5349a04a3b5b286bb07fbb14c496afd0"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT58_review.json",
+  "total_task_bytes": 91269
+}

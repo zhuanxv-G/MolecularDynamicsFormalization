@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT54",
+  "input_sha256": {
+    "BATCH_EAUDIT54.md": "3ca4a34b4209870ff40710db60f2c3ced4c7baca400b562c365a67e90e68d68a",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT54a",
+      "source_id": "MD-2.2.1-FirstVariation",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT54/a",
+      "total_bytes": 106569,
+      "manifest_sha256": "bb772fc184038f4c8164a5ec67d1b65e747697ffa5f792eac7640a8b29837d6f"
+    },
+    {
+      "subtask": "EAUDIT54b",
+      "source_id": "MD-2.2.1-StationaryAction",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT54/b",
+      "total_bytes": 113890,
+      "manifest_sha256": "a9d0263e8bc369179ce7cd092a1b80724b2b6cb00d24eb1244fae49e7bac197d"
+    },
+    {
+      "subtask": "EAUDIT54c",
+      "source_id": "MD-2.2.1-EulerLagrange",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT54/c",
+      "total_bytes": 94790,
+      "manifest_sha256": "a46f1e86461db61e9680377c3ffb8a1e24b6b3a70353c1eb9c93753b42d53b7f"
+    },
+    {
+      "subtask": "EAUDIT54d",
+      "source_id": "MD-2.2.1-VariationalDerivativePrinted",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT54/d",
+      "total_bytes": 93162,
+      "manifest_sha256": "2699957e22e1d3591a22fcda4b17153b2314d430ee618b99648f0c83e2f4c77c"
+    }
+  ]
+}

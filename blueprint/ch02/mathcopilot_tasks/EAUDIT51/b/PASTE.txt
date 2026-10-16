@@ -1,0 +1,127 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2-Hamiltonian；原PDF页映射=[75]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT51_review.json，对象含batch=EAUDIT51、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT51.md": "caf93c56adfa512099b1b48c0b6faa7f48ba7337d69a403c1b0b768ddc8af21f",
+  "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "EAUDIT51b_materials": "72489ab30ac535bc964720be75ada25d6dc1af8337bcc27b3427b1c3359516ae",
+  "EAUDIT51b_PAGES.pdf": "65128384afa8dcfd84b08436999320e0a81fc13f5a837b4b2cb3b88f93641468"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2-Hamiltonian",
+  "kind": "definition",
+  "label": null,
+  "section": "2",
+  "printed_page": "53",
+  "pdf_page": "75",
+  "statement_latex": "and $H=\\boldsymbol p^T\\boldsymbol M^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$ is the Hamiltonian.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$\\boldsymbol M$为第1章§1.2中固定的对角质量矩阵；$\\boldsymbol q,\\boldsymbol p\\in\\mathbb R^n$，此处$n$对应原书配置坐标数$N_c$。",
+    "第1章PDF41/印刷18明确写M is a diagonal mass matrix，并在三维N粒子情形写$\\boldsymbol M=\\operatorname{diag}(m_1,m_1,m_1,\\ldots,m_N,m_N,m_N)$；本条原式使用$\\boldsymbol M^{-1}$。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.mechanicalHamiltonian",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "固定对角质量的机械模型来自第1章；一般非对角矩阵不纳入此复用接口。",
+    "[EXTRA] EAUDIT01显式∀i,0<mᵢ排除奇异M及零除延拓；保持真实PhaseSpace的(q,p)机械Hamiltonian，固定对角质量来自第1章。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT01_LOCAL_PAGE_RECHECK",
+      "timestamp": "2026-10-14T11:18:25.414579",
+      "before_sha256": "9582ae8e070d8e8590851645f60a3c7ee8ca7618c0ec81610c8862d58d94746c",
+      "after_sha256": "bb20a32ed3bdf6d77ea089d706eb8a7be476eb4c5aa46b151eb8d2f68fbb4168",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH01_result.json",
+      "raw_sha256": "f90487ad39a9d4bdb1451ba630cc3fe6108d2c96fcdb5b248c53271bad69c447",
+      "reason": "重新视觉核对PDF75–76后合并第一轮A排印修订；C以已绑定reaudit为准，补齐经典梯度、可逆质量及完整流/单步域关联；不采用未批准数学更正。"
+    },
+    {
+      "stage": "EAUDIT25_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:38:36.845458",
+      "before_sha256": "01c3ed89700e80cb6e9a0956e7ce3bf2300009183a90502bbc1527eeed78854f",
+      "after_sha256": "e0a6a314ffd98e506718c1c550faf4356f5eed978ece9d2965bd5a6de20010f6",
+      "changed_fields": [],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH01_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT25/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n)
+    (_hm : ∀ i, 0 < m i) (U : PotentialEnergy n) : PhaseSpace n → ℝ :=
+  massHamiltonian m U
+```
+### 实际依赖 MolecularDynamics.CoordinateMasses
+```lean
+abbrev CoordinateMasses (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Hamiltonian
+```lean
+abbrev Hamiltonian (n : ℕ) := PhaseSpace n → ℝ
+```
+### 实际依赖 MolecularDynamics.KineticEnergy
+```lean
+abbrev KineticEnergy (n : ℕ) := Momentum n → ℝ
+```
+### 实际依赖 MolecularDynamics.Momentum
+```lean
+abbrev Momentum (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.PhaseSpace
+```lean
+abbrev PhaseSpace (n : ℕ) := Position n × Momentum n
+```
+### 实际依赖 MolecularDynamics.Position
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.PotentialEnergy
+```lean
+abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
+```
+### 实际依赖 MolecularDynamics.SeparableEnergy
+```lean
+structure SeparableEnergy (n : ℕ) where
+  kinetic : KineticEnergy n
+  potential : PotentialEnergy n
+```
+### 实际依赖 MolecularDynamics.massHamiltonian
+```lean
+noncomputable def massHamiltonian {n : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) : Hamiltonian n := (massSeparableEnergy m U).hamiltonian
+```
+### 实际依赖 MolecularDynamics.massSeparableEnergy
+```lean
+noncomputable def massSeparableEnergy {n : ℕ} (m : CoordinateMasses n)
+    (U : PotentialEnergy n) : SeparableEnergy n := ⟨momentumKineticEnergy m, U⟩
+```
+### 实际依赖 MD.Ch02.mechanicalHamiltonian
+```lean
+def mechanicalHamiltonian {n : ℕ} (m : CoordinateMasses n)
+    (_hm : ∀ i, 0 < m i) (U : PotentialEnergy n) : PhaseSpace n → ℝ :=
+  massHamiltonian m U
+```
+### 实际依赖 MolecularDynamics.momentumKineticEnergy
+```lean
+noncomputable def momentumKineticEnergy {n : ℕ} (m : CoordinateMasses n)
+    (p : Momentum n) : ℝ := ∑ i, (p i)^2 / (2 * m i)
+```

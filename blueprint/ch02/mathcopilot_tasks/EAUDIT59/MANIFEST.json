@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT59",
+  "input_sha256": {
+    "BATCH_EAUDIT59.md": "3a2adb1b48c46421e669c74438b4e03b579f346332d3c1a7307a0ea3e1d8c2d0",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT59a",
+      "source_id": "MD-2.3.2-EulerVolumeCounterexample",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT59/a",
+      "total_bytes": 81442,
+      "manifest_sha256": "1ea8a0e6e1701e6a07fa4fe2157f8c2256b7f640c11794e7bc9b1c28d0183948"
+    }
+  ]
+}

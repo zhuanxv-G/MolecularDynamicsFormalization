@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT66",
+  "source_id": "MD-2.4.1-SymmetricEven",
+  "input_sha256": {
+    "BATCH_EAUDIT66.md": "3174267860a1676a4f3b77b64399fbda1474c7692be22e7266055e3fab46ee89",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "EAUDIT66a_materials": "8f045d15b0f60f86941d8fa0202ad6f3db6788a9601e9c7b34f2098a4909cde5",
+    "EAUDIT66a_PAGES.pdf": "055d4826065b9d43a79d4cc0b3f16603757421c56e523042bde5d44fd4ed45e8"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    107
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "aaf366f0205e3cfa26989db395f178648874eaa43f6620f7001722b4976f9574",
+  "source_block_sha256": "2e0a82b8898153b946d68aef56b0a1200785d5d73ad56feb8c2db230b7384317",
+  "source_declarations": [
+    "symmetricEven"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/Statements.lean",
+      "name": "methodLocalOrder",
+      "file_sha256": "355e2013e9bed148b2512d8185da38c459db21b2b232b83d29d47d911008a63c",
+      "excerpt_sha256": "045303cd875ec03be1a92b89c14b2c05830dec92b4f71f2f6ddb72e98111cfc0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/AdjointMethods.lean",
+      "name": "textbookAdjointMethod",
+      "file_sha256": "4d2ac087bf5067c7ebc61b95e4cf1e90f553b51fc1bba92ca8814b141541647e",
+      "excerpt_sha256": "f5c0b5fb6ce848d19f9d67ee0a70de4319fddae5919f016900b935eb3b44ce8e"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT66_review.json",
+  "total_task_bytes": 92535
+}

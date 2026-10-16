@@ -1,0 +1,47 @@
+{
+  "reason": "Reload corrected-json merge guard before chapter3; chapter2 field diff confirmed no scope/content regression. Stop only orchestration parent, retain native full check if still alive.",
+  "driver_pid": 14660,
+  "children": [
+    {
+      "pid": 13788,
+      "created": 1792114244.0618196,
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "scripts/check.ps1",
+        "-ReportDirectory",
+        "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\blueprint\\ch02\\validation\\WEBSITE_REPAIR_CHAPTER_END_CINFTY\\full-check",
+        "-PauseChapter06"
+      ]
+    },
+    {
+      "pid": 12188,
+      "created": 1792114463.440838,
+      "command": [
+        "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+        "env",
+        "lean",
+        "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\blueprint\\ch01\\CheckAxioms.lean"
+      ]
+    },
+    {
+      "pid": 18148,
+      "created": 1792114463.4554968,
+      "command": [
+        "C:\\Users\\ustc\\.elan\\toolchains\\leanprover--lean4---v4.34.0\\bin\\lake.exe",
+        "env",
+        "lean",
+        "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\blueprint\\ch01\\CheckAxioms.lean"
+      ]
+    },
+    {
+      "pid": 12372,
+      "created": 1792114464.7904272,
+      "command": [
+        "lean",
+        "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\blueprint\\ch01\\CheckAxioms.lean"
+      ]
+    }
+  ]
+}

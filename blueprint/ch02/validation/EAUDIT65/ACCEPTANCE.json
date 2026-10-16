@@ -1,0 +1,82 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT65",
+  "section": "2.4.1",
+  "source_ids": [
+    "MD-2.4.1-Splitting",
+    "MD-2.4.1-SplittingLocal",
+    "MD-2.4.1-KineticFlow",
+    "MD-2.4.1-PotentialFlow",
+    "MD-2.4.1-SplitEuler",
+    "MD-2.4.1-VerletComposition",
+    "MD-2.4.1-VerletSymplectic",
+    "MD-2.4.1-SymmetricComposition"
+  ],
+  "reaudit_ids": [
+    "MD-2.4.1-Splitting",
+    "MD-2.4.1-SplittingLocal",
+    "MD-2.4.1-KineticFlow",
+    "MD-2.4.1-PotentialFlow",
+    "MD-2.4.1-SplitEuler",
+    "MD-2.4.1-VerletComposition",
+    "MD-2.4.1-VerletSymplectic",
+    "MD-2.4.1-SymmetricComposition"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.4.1-Splitting",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+    },
+    {
+      "source_id": "MD-2.4.1-SplittingLocal",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+    },
+    {
+      "source_id": "MD-2.4.1-KineticFlow",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+    },
+    {
+      "source_id": "MD-2.4.1-PotentialFlow",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+    },
+    {
+      "source_id": "MD-2.4.1-SplitEuler",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+    },
+    {
+      "source_id": "MD-2.4.1-VerletComposition",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+    },
+    {
+      "source_id": "MD-2.4.1-VerletSymplectic",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+    },
+    {
+      "source_id": "MD-2.4.1-SymmetricComposition",
+      "prior_eaudit": "EAUDIT40",
+      "acceptance": "blueprint/ch02/validation/EAUDIT40/ACCEPTANCE.json",
+      "sha256": "6edd9b4475d662fab62ee35893bb7f07f3e99e8a6def9c697a469d04456ee037"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT65/INDEX.md"
+}

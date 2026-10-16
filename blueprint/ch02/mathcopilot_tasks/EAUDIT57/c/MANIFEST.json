@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT57",
+  "source_id": "MD-2.2.4-IntegralLipschitz",
+  "input_sha256": {
+    "BATCH_EAUDIT57.md": "446dd8108c5d285fd710ff9c22a2f5cae7f1d5570f3c23c2eea1703fd4a78ab9",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "EAUDIT57c_materials": "817cb318425b6bdeb3817162188a98e698e5aade95f5d8704f0b8a678c9e914c",
+    "EAUDIT57c_PAGES.pdf": "42faf06d4f068483e32e1b60e89ffa0bd34f7830763c53b49a7b9cfbbc1b9b66"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    93
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "b7728788d1f4c52492cb9c43b3237ef1afda672974bb557a0c63917449a7d127",
+  "source_block_sha256": "753b4eab15b67cb836a4a8b43d5db6f7cb047bba0dde3c74db7894b962067069",
+  "source_declarations": [
+    "integralPointwiseBound"
+  ],
+  "dependency_excerpts": [],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT57_review.json",
+  "total_task_bytes": 92077
+}

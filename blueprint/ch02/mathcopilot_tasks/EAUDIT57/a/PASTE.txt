@@ -1,0 +1,67 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.2.4-FirstIntegral；原PDF页映射=[92]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT57_review.json，对象含batch=EAUDIT57、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT57.md": "446dd8108c5d285fd710ff9c22a2f5cae7f1d5570f3c23c2eea1703fd4a78ab9",
+  "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "EAUDIT57a_materials": "b2af3d108ef2e09e6a92d9a50d46d1577c20e67d46f1c01df811c7bf3bae98b9",
+  "EAUDIT57a_PAGES.pdf": "a382a81eea61d10bdb795a04d9ce94632011e8c07972eb62962e04cfed250a17"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.2.4-FirstIntegral",
+  "kind": "definition",
+  "label": null,
+  "section": "2.2.4",
+  "printed_page": "70",
+  "pdf_page": "92",
+  "statement_latex": "Recall that the condition for a given function $I:\\mathbb R^m\\to\\mathbb R$ to be a first integral is that\n\\[\\nabla I(\\boldsymbol z)\\cdot f(\\boldsymbol z)=\\sum_{j=1}^m\\frac{\\partial I}{\\partial z_j}(\\boldsymbol z)f_j(\\boldsymbol z)\\equiv 0.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "条件在整个开放域D处处成立；I实际可微，f为给定向量场。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch02.bp_firstIntegral",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] 签名显式开放域与I在D经典可微；不再由不可微处fderiv=0总化值冒充守恒条件。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT06_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:09:14.470041",
+      "before_sha256": "fcce7e29bc066942c4954256406ba1c5ee20f07e42fee269c289e5dc5f717a94",
+      "after_sha256": "1a2cbe5494a4f002bc8b5d55336961a5c5d645872e3218bf59f76649167f5368",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH11_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def bp_firstIntegral {n : ℕ} (I : Q n → ℝ) (f : Q n → Q n) (D : Set (Q n)) : Prop :=
+  IsOpen D ∧ DifferentiableOn ℝ I D ∧ ∀ z ∈ D, (fderiv ℝ I z) (f z) = 0
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MD.Ch02.bp_firstIntegral
+```lean
+def bp_firstIntegral {n : ℕ} (I : Q n → ℝ) (f : Q n → Q n) (D : Set (Q n)) : Prop :=
+  IsOpen D ∧ DifferentiableOn ℝ I D ∧ ∀ z ∈ D, (fderiv ℝ I z) (f z) = 0
+```

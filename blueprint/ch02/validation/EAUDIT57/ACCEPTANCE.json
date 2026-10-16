@@ -1,0 +1,42 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT57",
+  "section": "2.2.4",
+  "source_ids": [
+    "MD-2.2.4-FirstIntegral",
+    "MD-2.2.4-IntegralPreserved",
+    "MD-2.2.4-IntegralLipschitz"
+  ],
+  "reaudit_ids": [
+    "MD-2.2.4-FirstIntegral",
+    "MD-2.2.4-IntegralPreserved",
+    "MD-2.2.4-IntegralLipschitz"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.2.4-FirstIntegral",
+      "prior_eaudit": "EAUDIT32",
+      "acceptance": "blueprint/ch02/validation/EAUDIT32/ACCEPTANCE.json",
+      "sha256": "5ce086d52fa7895885781d72ca7319fe38e03aed742d25e7d19f6a03055e9d5f"
+    },
+    {
+      "source_id": "MD-2.2.4-IntegralPreserved",
+      "prior_eaudit": "EAUDIT32",
+      "acceptance": "blueprint/ch02/validation/EAUDIT32/ACCEPTANCE.json",
+      "sha256": "5ce086d52fa7895885781d72ca7319fe38e03aed742d25e7d19f6a03055e9d5f"
+    },
+    {
+      "source_id": "MD-2.2.4-IntegralLipschitz",
+      "prior_eaudit": "EAUDIT32",
+      "acceptance": "blueprint/ch02/validation/EAUDIT32/ACCEPTANCE.json",
+      "sha256": "5ce086d52fa7895885781d72ca7319fe38e03aed742d25e7d19f6a03055e9d5f"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT57/INDEX.md"
+}

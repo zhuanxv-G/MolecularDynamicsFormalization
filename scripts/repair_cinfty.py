@@ -9,6 +9,7 @@ from repair_queue import render
 def run(ch):
     assert ch in (2,3,4)
     base=ROOT/f'blueprint/ch{ch:02}';sources=read(base/f'ch{ch:02}_source.json')
+    resume_prepared(ch)
     web={w['source_id']:w for w in read(base/'website_audit.json')};ds=declarations(ch)
     by_section={}
     for s in sources:
@@ -37,6 +38,15 @@ def run(ch):
             prepare(ch,e,sec,edits,pages=sorted(pages));verify(ch,e);eaudits.append(e)
         commit_section(ch,sec+' CINF',eaudits)
     render()
+
+def resume_prepared(ch):
+    base=ROOT/f'blueprint/ch{ch:02}'
+    pending={w['repair']['eaudit'] for w in read(base/'website_audit.json')
+      if w.get('repair',{}).get('status')=='prepared_unverified'}
+    for e in sorted(pending):
+        folder=base/'validation'/e
+        assert not (folder/'ACCEPTANCE.json').exists(),'Partial registration after acceptance: inspect exact receipt, do not duplicate it.'
+        prep=read(folder/'PREPARATION.json');verify(ch,e);commit_section(ch,prep['section']+' resumed',[e])
 
 if __name__=='__main__':
     import sys

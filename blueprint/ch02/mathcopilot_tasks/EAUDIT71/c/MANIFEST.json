@@ -1,0 +1,73 @@
+{
+  "eaudit": "EAUDIT71",
+  "source_id": "MD-2.5.1-GaussTwoOrder",
+  "input_sha256": {
+    "BATCH_EAUDIT71.md": "ba1a23f76e27f2eb7edf564cf58400607a615eff4539a871a4b385c604723039",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "EAUDIT71c_materials": "60b631ef09066c7467f667d527936230530aac741f5769f26be4bba25057bdca",
+    "EAUDIT71c_PAGES.pdf": "630559e2a9d9854fb89bf26ce02337478295540f02ceebf64707a848a4e2f042"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    112
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "6645e215205ae36cf3d8e9d51d0bc4f84b47d6b468c0b5abf6adaeeea8f7a98d",
+  "source_block_sha256": "7ea4016cb31f311ace0647c838523ca973ec594922b5582035866d91c7bff01e",
+  "source_declarations": [
+    "gaussTwoOrder"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "compactTrajectory",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "6d4ebffdfb47b9a03e62490e3d6326ac6e80126ec4e908179bac64c61531baef"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "gaussTwoCoefficients",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "154046d9c13af8dd33657eebe7c8a36e500ba370101a1a2cb5a42e8c83f37ca9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "globalOrder",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "120c2723578250096e3e60aa53a4849f231da7dde46ea2a70d56598775596621"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "name": "oneStepIterate",
+      "file_sha256": "c9bc53727962c962a9420dbfa305ede46e90b38fdded8952b400381f474e3385",
+      "excerpt_sha256": "a55817d34199fa9b19067b089d9d3824b0163bb816d2d29442f1ef9c936b972d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/OneStepConvergence.lean",
+      "name": "oneStepMaxError",
+      "file_sha256": "c9bc53727962c962a9420dbfa305ede46e90b38fdded8952b400381f474e3385",
+      "excerpt_sha256": "a2e0304f877b1bcc275c037c80f553a53265a01a518b5109bd0a07449b85bc5a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "rungeKuttaRelation",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "21946921d4e723662275b0032fd24e7ccfdb6685fb64b337a8c69c1444cc89ae"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "solution",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "4246b13784e62583efb6e55b0aaf0235c08565f8c3c6ec6bf888afa19baaf49b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT71_review.json",
+  "total_task_bytes": 86042
+}

@@ -1,0 +1,120 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.5.2-GeneralSymplectic；原PDF页映射=[113]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT72_review.json，对象含batch=EAUDIT72、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT72.md": "e03a629cfad991cb98e07cd65beaa03b26069b8740ee844718dac21a9e0e6829",
+  "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "EAUDIT72a_materials": "ce6eabbabaafeb71e8620250ff24987a67ccfd0d0842f6f70f2b76a8314a88c3",
+  "EAUDIT72a_PAGES.pdf": "a783ea7b203af838c3e8a00b9c51efee0d24351cda5287a5ffdfb54aa624ee1a"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.5.2-GeneralSymplectic",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "2.5.2",
+  "printed_page": "91",
+  "pdf_page": "113",
+  "statement_latex": "To see that it is symplectic, we first note that this is a symmetric composition of the form\n\\[\\mathcal K_h=\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2},\\]\nso it is enough to show that this basic method is symplectic.",
+  "proof_latex": "Taking differentials of (2.30) defining $\\mathcal G_h$ and then wedge products and summing, we have\n\\[\\sum_i dQ_i\\wedge dP_i=\\sum_i dq_i\\wedge dP_i+h\\sum_i\\sum_j H_{p_iq_j}dq_j\\wedge dP_i+h\\sum_i\\sum_j H_{p_ip_j}dP_j\\wedge dP_i.\\]\nThe last term on the right vanishes by equality of mixed partials and the antisymmetry of the wedge product. On the other hand, using (2.29), we obtain, by similar means,\n\\[\\sum_i dq_i\\wedge dP_i=\\sum_i dq_i\\wedge dp_i-h\\sum_i\\sum_j H_{q_ip_j}dq_i\\wedge dP_j.\\]\nRelabelling the indices in the sum and using our previous work results in\n\\[\\sum_i dQ_i\\wedge dP_i=\\sum_i dq_i\\wedge dp_i,\\]\nimplying that the method is symplectic.",
+  "proof_note": "原书计算按原页转录。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch02.generalSymplectic",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "H C²，真实C¹完整求解映射，逐点满足实际隐式关系。",
+    "[EXTRA] 本条承担基本隐式辛Euler的辛性；同一原句的伴随半步复合、三步关系与对称性由MD-2.5.2-GeneralVerletSymplectic补全，原文不删。"
+  ],
+  "statement_scope": "基本隐式辛Euler的辛性子结论；所引原句的半步伴随复合、三步对应及对称辛性归MD-2.5.2-GeneralVerletSymplectic。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT21_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:29:29.340383",
+      "before_sha256": "05543a12c6101687f9590ea88b7506409638990c85368ef8f6e705f7d075bf28",
+      "after_sha256": "f3a57be1c092b4a56a8a5cd3424a8e73be28fd40492797d5014917efbdc2a252",
+      "changed_fields": [
+        "statement_latex",
+        "statement_scope"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH29_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem generalSymplectic :
+  ∀ n (H : Z n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n) h,
+    ContDiff ℝ 2 H → ContDiff ℝ 1 G →
+    (∀ z, generalSymplecticEulerRelation H h (unpack z) (unpack (G z))) → IsTextbookSymplecticMap G := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.IsTextbookSymplectic
+```lean
+def IsTextbookSymplectic {Nc : ℕ} (A : SymplecticCoordinateMatrix Nc) : Prop :=
+  Aᵀ * textbookJ Nc * A = textbookJ Nc
+```
+### 实际依赖 MolecularDynamics.IsTextbookSymplecticMap
+```lean
+def IsTextbookSymplecticMap {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=
+  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinateMatrix
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.generalSymplecticEulerRelation
+```lean
+def generalSymplecticEulerRelation {n : ℕ} (H : Z n → ℝ) (h : ℝ) (z w : Z n) : Prop :=
+  w.2 = z.2 - h • partialQ H z.1 w.2 ∧ w.1 = z.1 + h • partialP H z.1 w.2
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.partialP
+```lean
+def partialP {n : ℕ} (H : Z n → ℝ) (q p : Q n) : Q n :=
+  fun i => (fderiv ℝ (fun x => H (q,x)) p) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.partialQ
+```lean
+def partialQ {n : ℕ} (H : Z n → ℝ) (q p : Q n) : Q n :=
+  fun i => (fderiv ℝ (fun x => H (x,p)) q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.textbookJ
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### 实际依赖 MolecularDynamics.textbookJacobian
+```lean
+noncomputable def textbookJacobian {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinateMatrix Nc :=
+  LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.unpack
+```lean
+def unpack {n : ℕ} (z : SymplecticCoordinates n) : Z n := (z ∘ Sum.inl, z ∘ Sum.inr)
+```

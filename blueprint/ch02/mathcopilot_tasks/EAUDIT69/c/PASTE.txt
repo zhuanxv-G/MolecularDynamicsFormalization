@@ -1,0 +1,69 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-2.4.4-Newton；原PDF页映射=[108, 109]。必须实际写入 /workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT69_review.json，对象含batch=EAUDIT69、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT69.md": "0f1cde54a1ca2b4f6937d9ec92624e7b954dcec46f0d59fa9f9c69ce9527541d",
+  "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "EAUDIT69c_materials": "26dd8bbde6b45e5fd4e8d8f668c727319fecb4e651b10f10ede4668ab9163900",
+  "EAUDIT69c_PAGES.pdf": "2c11d0c9694a4f70d33b20b1f1f683cd7bea23d6f3d2d3c3d5f2ba27f4339874"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-2.4.4-Newton",
+  "kind": "definition",
+  "label": null,
+  "section": "2.4.4",
+  "printed_page": "86–87",
+  "pdf_page": "108–109",
+  "statement_latex": "Solving the system may then proceed, from an initial guess $\\boldsymbol z_{n+1}^{(0)}$ by use of Newton’s method:\n\\[\\boldsymbol z_{n+1}^{(k+1)}=\\boldsymbol z_{n+1}^{(k)}-[J^{(k)}]^{-1}(g(\\boldsymbol z_n^{(k)})-\\boldsymbol\\tau_n),\\]\nwhere $J^{(k)}$ is the Jacobian matrix of the mapping $g$ evaluated at $\\boldsymbol z_n^{(k)}$, or else an approximation of this Jacobian (assumed to be nonsingular due to the invertibility of the mapping). The iteration may be recast in the form\n\\[\\boldsymbol b_k=-(g(\\boldsymbol z_n^{(k)})-\\boldsymbol\\tau_n),\\quad J^{(k)}\\Delta\\boldsymbol z_k=\\boldsymbol b_k,\\quad\\boldsymbol z_{n+1}^{(k+1)}=\\boldsymbol z_{n+1}^{(k)}+\\Delta\\boldsymbol z_k.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "status": "NEEDS_HUMAN",
+      "detail": "原文混用zₙ⁽ᵏ⁾与zₙ₊₁⁽ᵏ⁾；保留两个不同输入，不静默改成相同迭代点。映射可逆也不保证任意近似Jacobian非奇异。"
+    }
+  ],
+  "lean_decl": "MD.Ch02.newtonPrinted",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT18_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T11:23:27.796691",
+      "before_sha256": "aa4ef780d7a76ba628fceae6bb46cdee39bcd0fc43aa381f5b9275229fe1ae50",
+      "after_sha256": "bd36e2d3405c08f2a27023649fb68d3778fa00294f620bdb794238fd8fecff35",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "raw_return": "blueprint/ch02/mathcopilot_results/BATCH25_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def newtonPrinted {n : ℕ} (g : Q n → Q n) (τ xNext xPrev : Q n)
+    (J : Q n ≃L[ℝ] Q n) : Q n := xNext-J.symm (g xPrev-τ)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MD.Ch02.newtonPrinted
+```lean
+def newtonPrinted {n : ℕ} (g : Q n → Q n) (τ xNext xPrev : Q n)
+    (J : Q n ≃L[ℝ] Q n) : Q n := xNext-J.symm (g xPrev-τ)
+```

@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT72",
+  "input_sha256": {
+    "BATCH_EAUDIT72.md": "e03a629cfad991cb98e07cd65beaa03b26069b8740ee844718dac21a9e0e6829",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT72a",
+      "source_id": "MD-2.5.2-GeneralSymplectic",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT72/a",
+      "total_bytes": 95669,
+      "manifest_sha256": "5ca310cd8e337ee9b10efb31ea7739d28de14d95f91e2a69cd12674e0e5b31d7"
+    },
+    {
+      "subtask": "EAUDIT72b",
+      "source_id": "MD-2.5.2-GeneralVerletSymplectic",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT72/b",
+      "total_bytes": 96674,
+      "manifest_sha256": "4ab3f379070944c2c113641856872cf128c7d3efe7a165033eaf24fb82c6ca8c"
+    }
+  ]
+}

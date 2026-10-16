@@ -1,0 +1,56 @@
+{
+  "eaudit": "EAUDIT65",
+  "source_id": "MD-2.4.1-KineticFlow",
+  "input_sha256": {
+    "BATCH_EAUDIT65.md": "691cf77fda4ac58cf30785fb4f4f9fad9f082fa132a6ebdd02674496ed537990",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+    "EAUDIT65c_materials": "471bc4c65c48a154fe23a987b0c52623d33aa831020e1211f529bed7a98a8689",
+    "EAUDIT65c_PAGES.pdf": "2a5e86b6c1859dac054374f7e6e4fea30c3b20dbc2a4476c73c6db6807e2b652"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    105,
+    106
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "f59cf1ede97f288d55bc8c0ffc40588ed34bdf1ab51711b59cf00fe42e85e966",
+  "source_block_sha256": "45ec1b1ed155a265074baa5d648471d195610e565577a13b207ff1ff0711274b",
+  "source_declarations": [
+    "bp_kineticFlow"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "name": "SymplecticCoordinates",
+      "file_sha256": "4cf114eac62b22bd82f391589b5e1a20171174a4cbedef6fd7154b3c43f38979",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "bp_kineticFlow",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "caa8e573a807a15024defc2e08133003416f58de5ecfeee084f6389cb66c739f"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "name": "momentumKickDerivative",
+      "file_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "excerpt_sha256": "a13abe38d69315ea18b87725ffed8dccaa698eeeb8ac37debbf17efb82fc004a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookMomentumKick",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "140fb611184d1fe410f849925b752e19bca879083ad3b90037363a059820d604"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookPositionProjection",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "e26c2a0065ed4d17a75fd55ee46cc91cdf21abead5097b255cf11154196c56b0"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch02_eaudit/EAUDIT65_review.json",
+  "total_task_bytes": 102831
+}

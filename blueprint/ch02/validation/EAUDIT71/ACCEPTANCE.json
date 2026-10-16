@@ -1,0 +1,42 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT71",
+  "section": "2.5.1",
+  "source_ids": [
+    "MD-2.5.1-RK4",
+    "MD-2.5.1-MidpointProperties",
+    "MD-2.5.1-GaussTwoOrder"
+  ],
+  "reaudit_ids": [
+    "MD-2.5.1-RK4",
+    "MD-2.5.1-MidpointProperties",
+    "MD-2.5.1-GaussTwoOrder"
+  ],
+  "human_ids": [],
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-2.5.1-RK4",
+      "prior_eaudit": "EAUDIT46",
+      "acceptance": "blueprint/ch02/validation/EAUDIT46/ACCEPTANCE.json",
+      "sha256": "dab031509a04623d73f91b61a186e6292ab8b1b7f0c7a4402bc950f67bdc3c2e"
+    },
+    {
+      "source_id": "MD-2.5.1-MidpointProperties",
+      "prior_eaudit": "EAUDIT46",
+      "acceptance": "blueprint/ch02/validation/EAUDIT46/ACCEPTANCE.json",
+      "sha256": "dab031509a04623d73f91b61a186e6292ab8b1b7f0c7a4402bc950f67bdc3c2e"
+    },
+    {
+      "source_id": "MD-2.5.1-GaussTwoOrder",
+      "prior_eaudit": "EAUDIT46",
+      "acceptance": "blueprint/ch02/validation/EAUDIT46/ACCEPTANCE.json",
+      "sha256": "dab031509a04623d73f91b61a186e6292ab8b1b7f0c7a4402bc950f67bdc3c2e"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch02/mathcopilot_tasks/EAUDIT71/INDEX.md"
+}
