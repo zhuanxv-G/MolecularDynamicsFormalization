@@ -134,10 +134,10 @@
 | MD-6.3.3-VariableFriction | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
 | MD-6.3.3-ParticleDiagonalFriction | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
 | MD-6.3.4-BrownianMassModel | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
-| MD-6.3.3-FrequencyMemoryKernel | DRAFT/原页已核 | 待编译 | PASS | 待网站审计 | definition / incomplete |
-| MD-6.3.3-Figure64Frequencies | DRAFT/原页已核 | 待编译 | PASS | 待网站审计 | definition / incomplete |
-| MD-6.3.3-Figure65Frequencies | DRAFT/原页已核 | 待编译 | PASS | 待网站审计 | definition / incomplete |
-| MD-6.3.3-BathForceWeakLimitMeaning | DRAFT/原页已核 | 待编译 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；缺精确热浴初始化/谱条件及white-force或integrated-force极限解释；保留疑误，不建大型弱收敛理论。 |
+| MD-6.3.3-FrequencyMemoryKernel | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-Figure64Frequencies | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-Figure65Frequencies | DRAFT/原页已核 | 已编译/待公理 | PASS | 待网站审计 | definition / incomplete |
+| MD-6.3.3-BathForceWeakLimitMeaning | DRAFT/原页已核 | 已编译/待公理 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；缺精确热浴初始化/谱条件及white-force或integrated-force极限解释；保留疑误，不建大型弱收敛理论。 |
 
 ## 旧126条完整映射
 

@@ -171,3 +171,57 @@ proofs={
   simp only [sub_self, mul_zero, Real.cos_zero, one_mul, sub_zero] at he
   linarith''',
 }
+
+proofs.update({
+'ZeroNoise':'''intro a f ρ x
+  constructor
+  · simp [MolecularDynamics.Chapter06Review.scalarGenerator]
+  · simp [MolecularDynamics.Chapter06Review.scalarForward]''',
+'DiffusionTrace':'''intro n r B H
+  rw [Matrix.trace_mul_cycle B.transpose H B, Matrix.trace_mul_cycle B B.transpose H]
+  simp only [Matrix.trace, Matrix.diag, Matrix.mul_apply, Matrix.transpose_apply,
+    Finset.mul_sum, Finset.sum_mul]
+  apply Finset.sum_congr rfl
+  intro i hi
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl
+  intro j hj
+  apply Finset.sum_congr rfl
+  intro k hk
+  ring''',
+'FiniteEvolutionRecurrence':'''intro k matrix initial n
+  simp only [MolecularDynamics.Chapter06Review.finiteEvolution, pow_succ]
+  exact (Matrix.vecMul_vecMul initial (matrix^n) matrix).symm''',
+'StochasticEntryBound':'''intro k matrix h i j
+  rw [← h.2 i]
+  exact Finset.single_le_sum (fun k _ ↦ h.1 i k) (Finset.mem_univ j)''',
+'ExampleStochastic':'''constructor
+  · intro i j
+    fin_cases i <;> fin_cases j <;> norm_num [finiteChainExample]
+  · intro i
+    fin_cases i <;> norm_num [finiteChainExample, Fin.sum_univ_succ]''',
+})
+
+proofs['ExampleNotIrreducible']='''have hz : ∀ n : ℕ,
+      (finiteChainExample^n) (1 : Fin 5) 0=0 ∧
+      (finiteChainExample^n) (3 : Fin 5) 0=0 ∧
+      (finiteChainExample^n) (4 : Fin 5) 0=0 := by
+    intro n
+    induction n with
+    | zero => norm_num
+    | succ n ih =>
+      rw [pow_succ']
+      norm_num [Matrix.mul_apply, Fin.sum_univ_succ, finiteChainExample,
+        ih.1, ih.2.1, ih.2.2]
+  intro h
+  obtain ⟨n,hn⟩ := h (1 : Fin 5) (0 : Fin 5)
+  rw [(hz n).1] at hn
+  linarith'''
+
+proofs['KernelDuality']='''intro D _ K μ t f hμ hK hf hi
+  letI : IsProbabilityMeasure μ := hμ
+  letI : IsMarkovKernel (K t) := hK
+  unfold MolecularDynamics.Chapter06Review.kernelEvolution MolecularDynamics.Chapter06Review.kernelAverage at *
+  rw [Measure.comp_eq_comp_const_apply]
+  apply Kernel.integral_comp
+  simpa only [← Measure.comp_eq_comp_const_apply] using hi'''

@@ -12,8 +12,14 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "d31cb383ee6ab34c8d538add9e14281e951e25f15de153961259d81610c255cf",
+  "source_json_sha256": "9baedc4ec28558df8d7bfd8f9a86ff4013dcfa246c490b6354b069f256312d61",
   "lean_sha256": "dafdd4d7db76c1396ccce95d1ba9b0760484fa4f87ecf4b2a0625d2b43284cb0",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "dafdd4d7db76c1396ccce95d1ba9b0760484fa4f87ecf4b2a0625d2b43284cb0",
+    "blueprint/ch06/ch06_source.json": "9baedc4ec28558df8d7bfd8f9a86ff4013dcfa246c490b6354b069f256312d61",
+    "BATCH08a_PAGES.pdf": "50b24288ad6dc732574a895361be77e0c6a3a88ce443558be0e410f128182628",
+    "signature_sha256": "d89f812b12f2bb741bb4ad9cb472a01db16c91b5fd02508471ca35aa82e6523f"
+  },
   "signature_sha256": "d89f812b12f2bb741bb4ad9cb472a01db16c91b5fd02508471ca35aa82e6523f",
   "definition_excerpts": [
     {
@@ -83,11 +89,11 @@
       "code_sha256": "1e61717a0b74e0e8ed51cc375e6a9744cd172c7cd2229e5e6dfdde4bff45f92a"
     }
   ],
-  "paste_plus_pdf_bytes": 81217,
+  "paste_plus_pdf_bytes": 82038,
   "files": {
     "PASTE.txt": {
-      "bytes": 6146,
-      "sha256": "d68bbed5ad21f52cf2799694da51ef818c1d97cd31a038ad8f96aa2d2ee65d75"
+      "bytes": 6967,
+      "sha256": "aa8a0aa827468297ab565ab8c898e4d0633353b652bf0f77c87222affdd13747"
     },
     "BATCH08a_PAGES.pdf": {
       "bytes": 75071,
@@ -100,5 +106,5 @@
     "pdf_rendered_pixel_equality_dpi": 72,
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 85125
+  "total_task_bytes": 86364
 }

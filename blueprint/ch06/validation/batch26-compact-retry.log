@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 201, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 197, in main
+    p.generate();sync_attempts(args.chapter,p);render(args.chapter,p);landing(args.chapter,p,args.batch,args.step)
+    ^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 121, in generate_with_old_links
+    raw_generate()
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 88, in generate
+    # A transparent type alias can carry an inline attribute. Preserve it
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 165, in packages
+    previous=json.loads(evidence.read_text(encoding='utf-8')) if evidence.exists() else {}
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\Lib\site-packages\pymupdf\__init__.py", line 6545, in save
+    mupdf.pdf_save_document(pdf, filename, opts)
+  File "D:\anaconda\Lib\site-packages\pymupdf\mupdf.py", line 57790, in pdf_save_document
+    return _mupdf.pdf_save_document(doc, filename, opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pymupdf.mupdf.FzErrorSystem: code=2: cannot remove file 'C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\blueprint\ch06\mathcopilot_tasks\compact\BATCH05\c\BATCH05c_PAGES.pdf': Permission denied

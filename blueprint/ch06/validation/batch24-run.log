@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 181, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 175, in main
+    p=pipeline(args.chapter)
+      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 16, in pipeline
+    text=text.replace('160',str(len(__import__(f'ch{ch:02}_data').OLD_ROWS)))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\ch06_data.py", line 38, in <module>
+    import ch06_section633
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\ch06_section633.py", line 11, in <module>
+    where $Q$ and $P$ represent the position and momentum of the distinguished particle and $\{q_i,p_i\}$ are the positions and momenta of the particles of the bath, $\mu_i$ giving the mass of the $i$th light particle.''',physical_bath_definition('bathHamiltonian'),kind='definition',context=['重粒子质量1；全部轻粒子质量μi>0，k>0；真实k项耦合Hamiltonian。'],extra=['[EXTRA]显式k>0及全部μi>0，避免零质量/零热浴大小的总化除法冒充物理模型。'])
+                                                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\ch06_section633.py", line 7, in physical_bath_definition
+    assert '(μ q0 p0 : V k)' in code
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -38,6 +38,15 @@ import ch06_section632
 import ch06_section633
 import ch06_section633b
 import ch06_section633c
+import json
+_transcription=BASE/'source_transcription_fixes.json'
+if _transcription.exists():
+    for _sid,_fix in json.loads(_transcription.read_text(encoding='utf-8'))['items'].items():
+        _r=next(r for r in RECORDS if r['source_id']==_sid)
+        assert _r['statement_latex'] in (_fix['before'],_fix['after']),_sid
+        _r['statement_latex']=_fix['after']
+        _r['repair_log'].append(dict(date=_fix['date'],action='local_original_page_transcription',
+            reason=_fix['reason'],evidence='source_transcription_fixes.json; PDF258/259',website='待网站审计'))
 from blueprint_source import apply_saved_routes
 from ch06_short_candidates import proofs as short_candidates
 apply_saved_routes(6,RECORDS,[key for key in short_candidates if any(r['source_id'].endswith('-'+key) for r in RECORDS)])

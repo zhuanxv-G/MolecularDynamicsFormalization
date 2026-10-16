@@ -76,6 +76,20 @@ def pipeline(ch):
                     if (folder/'PASTE.txt').stat().st_size+pdfout.stat().st_size+8192<256000:break
             size=(folder/'PASTE.txt').stat().st_size+pdfout.stat().st_size""")
     text=text.replace("pdf_rendered_pixel_equality='PASS',website_acceptance", "pdf_rendered_pixel_equality='PASS',pdf_rendered_pixel_equality_dpi=render_dpi,website_acceptance")
+    if ch==6:
+        text=text.replace('仅返回JSON数组，每个source_id恰一次，字段：',
+            '用代码写入JSON对象(batch,input_sha256,items)，哈希按本PASTE开头逐项原样回显；items中每个source_id恰一次，字段：')
+        text=text.replace("size=(folder/'PASTE.txt').stat().st_size+pdfout.stat().st_size", """compact_inputs={f'Blueprint/Ch06.lean':sha(ROOT/'Blueprint/Ch06.lean'),
+                'blueprint/ch06/ch06_source.json':sha(BASE/'ch06_source.json'),
+                task+'_PAGES.pdf':sha(pdfout),'signature_sha256':ds[sid]['signature_sha256']}
+            prefix=('仅以本PASTE及附件为准，忽略网站/workspace旧版本。Mathlib标准定义按固定v4.34.0的标准数学含义采信。'
+                +f'\\n本子任务batch={task}；实际写入 /workspace/.mathcopilot/reviews/ch06/{task}_review.json。'
+                +'写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：\\n'
+                +json.dumps(compact_inputs,ensure_ascii=False,indent=2)+'\\n\\n')
+            (folder/'PASTE.txt').write_text(prefix+text,encoding='utf-8')
+            size=(folder/'PASTE.txt').stat().st_size+pdfout.stat().st_size""")
+        text=text.replace("signature_sha256=ds[sid]['signature_sha256'],definition_excerpts=",
+            "input_sha256=compact_inputs,signature_sha256=ds[sid]['signature_sha256'],definition_excerpts=")
     text=text.replace('compact子任务（输入+PDF字节）', 'compact子任务（PASTE+PDF+MANIFEST字节）')
     # A qualified project identifier must select its real namespace, rather than
     # disappear because the excerpt index originally had only bare-name keys.
@@ -130,7 +144,34 @@ def pipeline(ch):
             # Preserve all literal, corrected and derived parts of a split row.
             mapping['all_source_ids_by_old_id']=links
             m.dump(path,mapping)
+            if ch==6:
+                code=(ROOT/'Blueprint/Ch06.lean').read_text(encoding='utf-8')
+                clean=re.sub(r'(?s)/-.*?-/', '', code)
+                declared=re.findall(r'(?m)^(?:noncomputable )?(?:def|abbrev|theorem|lemma) (\w+)',clean)
+                assert len(declared)==len(set(declared))
+                (m.BASE/'CheckAxioms.lean').write_text('import Blueprint.Ch06\n\n'+
+                    '\n'.join('#print axioms MD.Ch06.'+name for name in declared)+'\n',encoding='utf-8')
         m.generate=generate_with_old_links
+    if ch==6:
+        primary_checked=m.checked
+        def checked_with_auxiliaries(log):
+            primary_checked(log)
+            outputs=Path(log).read_text(encoding='utf-8-sig')
+            audit=json.loads((m.BASE/'local_audit.json').read_text(encoding='utf-8'))
+            for sid,decl in m.declarations().items():
+                row=audit['items'][sid];individual={}
+                clean=re.sub(r'(?s)/-.*?-/', '', decl['block'])
+                for name in re.findall(r'(?m)^(?:noncomputable )?(?:def|abbrev|theorem|lemma) (\w+)',clean):
+                    qualified='MD.Ch06.'+name
+                    found=re.search("'"+re.escape(qualified)+r"' (?:depends on axioms:\s*\[([^\]]*)\]|does not depend on any axioms)",outputs)
+                    assert found,'Missing auxiliary axiom output '+qualified
+                    individual[qualified]=[] if found.group(1) is None else [a.strip() for a in found.group(1).split(',') if a.strip()]
+                row['declaration_axioms']=individual
+                row['axioms']=sorted({a for axioms in individual.values() for a in axioms})
+                row['transitive_placeholder']='sorryAx' in row['axioms'] and not row['direct_placeholder']
+                row['final_status']='incomplete' if 'sorryAx' in row['axioms'] or row['verdict']!='PASS' else ('checked+documented priors' if row['documented_priors'] else 'self-contained')
+            m.dump(m.BASE/'local_audit.json',audit)
+        m.checked=checked_with_auxiliaries
     return m
 def render(ch,p):
     source=(ROOT/'scripts/render_ch02_blueprint.py').read_text(encoding='utf-8')
@@ -168,6 +209,29 @@ def compile_batch(ch,p,batch):
     if previous.get('exit_code')==0 and previous.get('input_sha256')==input_sha and log.exists() and previous.get('log_sha256')==p.sha(log):
         print('Reused passed single-file evidence:',batch)
     else:
+        # A preflight checks the entire serialized future file, not a weakened
+        # fragment. Reuse only identical bytes and intact source/log evidence.
+        for candidate in (folder/'preflight').glob('*.json'):
+            if candidate.stem.endswith('-RUNNING'):continue
+            saved=json.loads(candidate.read_text(encoding='utf-8'))
+            source=candidate.with_suffix('.lean');raw=candidate.with_suffix('.log')
+            if (saved.get('exit_code')==0 and saved.get('input_sha256')==input_sha
+                and source.exists() and raw.exists() and p.sha(source)==input_sha
+                and p.sha(raw)==saved.get('log_sha256')):
+                log.write_bytes(raw.read_bytes())
+                p.dump(evidence,dict(saved,reused_from=candidate.relative_to(ROOT).as_posix(),
+                    canonical_source=f'Blueprint/Ch{ch:02}.lean',
+                    reuse_basis='identical full source bytes; original compiler source, receipt and raw log retained',
+                    decl_blocks={sid:d['block_sha256'] for sid,d in p.declarations().items()}))
+                print('Reused identical complete preflight:',candidate.name)
+                break
+        else:
+            candidate=None
+        if candidate is not None:
+            audit=json.loads((p.BASE/'local_audit.json').read_text(encoding='utf-8'))
+            for item in audit['items'].values():item.update(compiled=True,compile_evidence=evidence.relative_to(ROOT).as_posix())
+            p.dump(p.BASE/'local_audit.json',audit)
+            return
         command=['lake','env','lean',f'Blueprint/Ch{ch:02}.lean']
         from local_compile import compile_recorded
         receipt,output,reused=compile_recorded(command,ROOT,ROOT/f'Blueprint/Ch{ch:02}.lean',log,evidence,reuse_failure=True)

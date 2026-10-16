@@ -1,0 +1,98 @@
+Blueprint/Ch06.lean:40:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Blueprint/Ch06.lean:41:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Blueprint/Ch06.lean:76:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:116:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:148:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:173:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:184:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:204:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:213:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:226:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:243:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:251:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:307:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:311:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:321:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:377:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:414:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:439:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:517:36: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+Blueprint/Ch06.lean:556:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:578:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:587:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:597:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:637:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:645:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:660:90: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch06.lean:660:90: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch06.lean:667:57: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:674:62: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:682:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:689:74: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:693:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:714:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:760:72: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:770:69: warning: Variable name `P` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _P
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Blueprint/Ch06.lean:786:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:793:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:810:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:819:72: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:844:59: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch06.lean:868:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:878:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:938:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:952:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:961:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:975:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:1002:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:1030:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:1040:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:1049:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:1075:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:1090:8: warning: declaration uses `sorry`
+Blueprint/Ch06.lean:1100:8: warning: declaration uses `sorry`

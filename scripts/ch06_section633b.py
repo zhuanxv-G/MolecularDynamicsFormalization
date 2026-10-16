@@ -17,10 +17,10 @@ def complete_constant_mass_model(name):
  return code.replace(': Prop :=',': Prop :=\n  '+guards,1)
 add('BathReduction','6.3.3',237,[60],r'''Introducing this formula in (6.23), we obtain a reduced system
 \[\dot Q=P;\tag{6.27}\quad\dot P=-U'(Q)-k^{-1}\sum_{i=1}^k(Q-q_i);\tag{6.28}\]
-\[=-U'(Q)+f(t)-\int_0^t\eta(t-s)P(s)ds.\tag{6.29}\]''',proposition('bathReduction_statement','bathReduction'),extra=['[EXTRA]保留全部原Hamilton ODE与初值、正质量、真实卷积，按导出正k⁻¹合力；不将约化等式作前提。'],missing='缺受迫振子解及卷积IBP的完整组合桥接；不恢复封存长证明。')
-add('BathReductionPrinted','6.3.3',237,[60,61],r'''\[\dot P=-U'(Q)+f(t)-\int_0^t\eta(t-s)P(s)ds.\tag{6.29}\]
+\[=-U'(Q)+f(t)-\int_0^t\psi(t-s)P(s)ds.\tag{6.29}\]''',proposition('bathReduction_statement','bathReduction'),extra=['[EXTRA]保留全部原Hamilton ODE与初值、正质量、真实卷积，按导出正k⁻¹合力；不将约化等式作前提。'],missing='缺受迫振子解及卷积IBP的完整组合桥接；不恢复封存长证明。')
+add('BathReductionPrinted','6.3.3',237,[60,61],r'''\[\dot P=-U'(Q)+f(t)-\int_0^t\psi(t-s)P(s)ds.\tag{6.29}\]
 \[f(t)=-k^{-1}\sum_{i=1}^k[\cos(\Omega_i t)q_i(0)+\Omega_i^{-1}\sin(\Omega_i t)p_i(0)/\mu_i-\cos(\Omega_i t)Q(0)].\]''',proposition('bathReductionPrinted_statement','bathReductionPrinted'),verdict='NEEDS_HUMAN',issues=['原负f与+f约化式符号冲突；保留完整字面卷积方程。'],missing='不证明符号疑误；网站/导师待裁定。')
-add('MemoryKernelDeltaMeaning','6.3.3',238,[62],r'''If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\eta$ by a Dirac delta function scaled by a positive coefficient $\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs
+add('MemoryKernelDeltaMeaning','6.3.3',238,[62],r'''If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\psi$ by a Dirac delta function scaled by a positive coefficient $\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs
 \[dQ=Pdt;\tag{6.30}\quad dP=-U'(Q)dt+\sigma dW-\gamma Pdt.\tag{6.31}\]''',
 '''def memoryKernelDeltaMeaning (masses : (k : ℕ) → (Fin k → ℝ)) (γ : ℝ) : Prop :=
   0 < γ ∧ ∀ f : ℝ → ℝ, ContDiff ℝ ∞ f → HasCompactSupport f →

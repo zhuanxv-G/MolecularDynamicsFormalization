@@ -1,0 +1,64 @@
+BathConvolutionIBP failed route 2
+: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-5e0dea2d51bfa663c3fc.lean:425:69: warning: Variable name `P` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _P
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+blueprint\ch06\validation\short_search\route-5e0dea2d51bfa663c3fc.lean:437:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-5e0dea2d51bfa663c3fc.lean:442:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-5e0dea2d51bfa663c3fc.lean:455:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-5e0dea2d51bfa663c3fc.lean:462:72: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-5e0dea2d51bfa663c3fc.lean:481:59: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+blueprint\ch06\validation\short_search\route-5e0dea2d51bfa663c3fc.lean:591:36: error: unsolved goals
+case e'_8
+Q P : ℝ → ℝ
+Ω t : ℝ
+hQ : ContDiff ℝ 1 Q
+hP : ∀ (s : ℝ), deriv Q s = P s
+ht : 0 ≤ t
+hPc : Continuous P
+s : ℝ
+⊢ (fun u => Real.cos (Ω * t - Ω * u)) = fun x => Real.cos (Ω * ((fun x => t) - id) x)
+
+case e'_9
+Q P : ℝ → ℝ
+Ω t : ℝ
+hQ : ContDiff ℝ 1 Q
+hP : ∀ (s : ℝ), deriv Q s = P s
+ht : 0 ≤ t
+hPc : Continuous P
+s : ℝ
+⊢ Ω * Real.sin (Ω * t - Ω * s) = Ω * Real.sin (Ω * ((fun x => t) - id) s)
+blueprint\ch06\validation\short_search\route-5e0dea2d51bfa663c3fc.lean:596:4: error: Type mismatch: After simplification, term
+  HasDerivAt.smul hc hqd
+ has type
+  HasDerivAt ((fun u => Real.cos (Ω * (t - u))) * Q) (Real.cos (Ω * (t - s)) * P s + Ω * Real.sin (Ω * (t - s)) * Q s) s
+but is expected to have type
+  HasDerivAt (fun u => Real.cos (Ω * (t - u)) * Q u) (Ω * Real.sin (Ω * (t - s)) * Q s + Real.cos (Ω * (t - s)) * P s) s
+

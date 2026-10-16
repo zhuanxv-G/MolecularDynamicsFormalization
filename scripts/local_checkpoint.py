@@ -55,6 +55,8 @@ if (ROOT/'scripts/local_short_search.py').exists():
     paths.append('scripts/local_short_search.py')
 if (ROOT/'scripts/local_compile.py').exists():
     paths.append('scripts/local_compile.py')
+if (ROOT/'scripts/local_preflight.py').exists():
+    paths.append('scripts/local_preflight.py')
 if (ROOT/f'scripts/ch{ch:02}_short_candidates.py').exists():
     paths.append(f'scripts/ch{ch:02}_short_candidates.py')
 if ch==5:
@@ -70,7 +72,16 @@ if ch==4 and (ROOT/'scripts/ch04_table_text.py').exists():
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_section*.py') if x.stem in sys.modules]
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_short_search*.py')]
 paths += [x.relative_to(ROOT).as_posix() for x in (ROOT/'scripts').glob(f'ch{ch:02}_bracket_search*.py')]
-stage(paths)
+# Keep old dirty commit-driver logs and inactive plans outside the checkpoint.
+# Actual compiler logs and receipts remain included and hash-checked.
+owned=[]
+for relative in paths:
+    if relative==f'blueprint/ch{ch:02}':
+        owned.extend(x.relative_to(ROOT).as_posix() for x in (ROOT/relative).rglob('*')
+            if x.is_file() and not ('-commit' in x.name and x.suffix=='.log')
+            and not x.name.startswith('INACTIVE_DRAFT_PLAN_'))
+    else:owned.append(relative)
+stage(owned)
 subprocess.run(['git','commit','-m',f'ch{ch:02} sec{section}: faithful local blueprint and checked checkpoint'],cwd=ROOT,check=True)
 subprocess.run(['git','push','-u','origin',f'chapter{ch:02}-blueprint'],cwd=ROOT,check=True)
 commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()

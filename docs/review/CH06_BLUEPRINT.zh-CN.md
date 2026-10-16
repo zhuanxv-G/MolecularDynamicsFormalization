@@ -6095,7 +6095,7 @@ Lean编译/公理检查：本轮待验证；公理：`未检查`。
 
 ### 2. 原文陈述
 
-> \[\eta(t)=k^{-1}\sum_{i=1}^k\cos(\Omega_i(t)).\]
+> \[\psi(t)=k^{-1}\sum_{i=1}^k\cos(\Omega_i(t)).\]
 
 ### 3. 原文证明
 
@@ -6133,7 +6133,7 @@ Lean编译/公理检查：本轮待验证；公理：`未检查`。
 
 直接占位：无直接sorry；传递占位：未验证。
 
-签名SHA256：`eb3e3ac5bc830686b94cf8770e8c1e99fef2f43e11f2c9dc41f06468cfbfab52`；原文SHA256：`5a2090ca21b2cc5fea63c3d505b9088982ff70de450fba5f50045370b457006b`。
+签名SHA256：`eb3e3ac5bc830686b94cf8770e8c1e99fef2f43e11f2c9dc41f06468cfbfab52`；原文SHA256：`51c6334fe9ca515666975971c54c970e53ae3df79561276a9a5a31d3d309c2a7`。
 
 ## 1. MD-6.3.3-BathReduction · unnumbered_claim · 印刷p.237 / PDFp.258
 
@@ -6141,7 +6141,7 @@ Lean编译/公理检查：本轮待验证；公理：`未检查`。
 
 > Introducing this formula in (6.23), we obtain a reduced system
 > \[\dot Q=P;\tag{6.27}\quad\dot P=-U'(Q)-k^{-1}\sum_{i=1}^k(Q-q_i);\tag{6.28}\]
-> \[=-U'(Q)+f(t)-\int_0^t\eta(t-s)P(s)ds.\tag{6.29}\]
+> \[=-U'(Q)+f(t)-\int_0^t\psi(t-s)P(s)ds.\tag{6.29}\]
 
 ### 3. 原文证明
 
@@ -6188,13 +6188,13 @@ Lean编译/公理检查：本轮待验证；公理：`未检查`。
 
 缺失/继续路线：缺受迫振子解及卷积IBP的完整组合桥接；不恢复封存长证明。
 
-签名SHA256：`69547bb3c474a1b5c02c3fa9ffad785de7812d736127828c7fe6bce8042eb647`；原文SHA256：`683fba7c6b34c5e66837d4a1482b427abb6bfa56849c66526ed4b02aed90506c`。
+签名SHA256：`69547bb3c474a1b5c02c3fa9ffad785de7812d736127828c7fe6bce8042eb647`；原文SHA256：`52e7aba551c342ea2da647aa7deccf6a7b7c2c530dbfe0a97514085b2bb1de76`。
 
 ## 1. MD-6.3.3-BathReductionPrinted · unnumbered_claim · 印刷p.237 / PDFp.258
 
 ### 2. 原文陈述
 
-> \[\dot P=-U'(Q)+f(t)-\int_0^t\eta(t-s)P(s)ds.\tag{6.29}\]
+> \[\dot P=-U'(Q)+f(t)-\int_0^t\psi(t-s)P(s)ds.\tag{6.29}\]
 > \[f(t)=-k^{-1}\sum_{i=1}^k[\cos(\Omega_i t)q_i(0)+\Omega_i^{-1}\sin(\Omega_i t)p_i(0)/\mu_i-\cos(\Omega_i t)Q(0)].\]
 
 ### 3. 原文证明
@@ -6242,13 +6242,13 @@ Lean编译/公理检查：本轮待验证；公理：`未检查`。
 
 缺失/继续路线：不证明符号疑误；网站/导师待裁定。
 
-签名SHA256：`66c6d3b2864bab4f9e15eb8a3509bb675dbe8fe8b260bbd08e286de1d9c5c7c2`；原文SHA256：`7a4a80d9aee90554e5f1d13cfca4897f47305ef4112d2e3cd07a6a5fd050c985`。
+签名SHA256：`66c6d3b2864bab4f9e15eb8a3509bb675dbe8fe8b260bbd08e286de1d9c5c7c2`；原文SHA256：`b1a4e2580ae323ab0e3699432cd17147264927924a87409738d62a7d1686a16f`。
 
 ## 1. MD-6.3.3-MemoryKernelDeltaMeaning · definition · 印刷p.238 / PDFp.259
 
 ### 2. 原文陈述
 
-> If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\eta$ by a Dirac delta function scaled by a positive coefficient $\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs
+> If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\psi$ by a Dirac delta function scaled by a positive coefficient $\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs
 > \[dQ=Pdt;\tag{6.30}\quad dP=-U'(Q)dt+\sigma dW-\gamma Pdt.\tag{6.31}\]
 
 ### 3. 原文证明
@@ -6292,7 +6292,7 @@ Lean编译/公理检查：本轮待验证；公理：`未检查`。
 
 缺失/继续路线：缺具体热浴谱/初值法则、白噪声极限及严格Langevin导出理论；原书也明确略去，不建设。
 
-签名SHA256：`c4190aa91c728c5ba207ac3c84893552108b0fe6e62ca5909aea968e21695076`；原文SHA256：`8e65aacfccf6bf19698d050d98436003f75c68f64b5c3ffa1ced786778367ca1`。
+签名SHA256：`c4190aa91c728c5ba207ac3c84893552108b0fe6e62ca5909aea968e21695076`；原文SHA256：`540933ca2861960207145418b51e89d8e077e538b0d8907eb4d65f788cf077b9`。
 
 ## 1. MD-6.3.3-ScalarLangevin · definition · 印刷p.238 / PDFp.259
 
@@ -6570,7 +6570,7 @@ Lean编译/公理检查：本轮待验证；公理：`未检查`。
 
 ### 2. 原文陈述
 
-> \[\eta(t)=k^{-1}\sum_{i=1}^k\cos(\Omega_i(t)).\]
+> \[\psi(t)=k^{-1}\sum_{i=1}^k\cos(\Omega_i(t)).\]
 
 ### 3. 原文证明
 
@@ -6608,13 +6608,13 @@ Lean编译/公理检查：本轮待验证；公理：`未检查`。
 
 直接占位：无直接sorry；传递占位：未验证。
 
-签名SHA256：`403da5b4675484e5d1d57ef2875c7755db29a0ebe45263ad7703a2594ca08f39`；原文SHA256：`291d29f2dd1d81d37ee391096aa5d2b5abed7c6bb3ad8f48c26b2ec1a2a80bbf`。
+签名SHA256：`403da5b4675484e5d1d57ef2875c7755db29a0ebe45263ad7703a2594ca08f39`；原文SHA256：`0475159526d0faa4185b805907741eb021530e1067b666353d6096dabc17bb6e`。
 
 ## 1. MD-6.3.3-Figure64Frequencies · Fig. 6.4 · 印刷p.238 / PDFp.259
 
 ### 2. 原文陈述
 
-> Fig. 6.4 The memory kernel $\eta$ is shown for three different sets of frequencies $\Omega_i$. Blue: $k=400$, $\Omega_i=0.01i$; red: $k=1,000$, $\Omega_i\sim U[0,1]$; green: $k=1,000$, $\Omega_i=10\widehat\Omega_i$, where $\widehat\Omega_i\sim U[0,1]$.
+> Fig. 6.4 The memory kernel $\psi$ is shown for three different sets of frequencies $\Omega_i$. Blue: $k=400$, $\Omega_i=0.01i$; red: $k=1,000$, $\Omega_i\sim U[0,1]$; green: $k=1,000$, $\Omega_i=10\widehat\Omega_i$, where $\widehat\Omega_i\sim U[0,1]$.
 
 ### 3. 原文证明
 
@@ -6655,13 +6655,13 @@ Lean编译/公理检查：本轮待验证；公理：`未检查`。
 
 直接占位：无直接sorry；传递占位：未验证。
 
-签名SHA256：`4594c84ecb0eb1de0c8aa0da7c4363f25cd965d3ed3e792680b54d3dc0c74ec9`；原文SHA256：`4e43b44f737de6bdf71fd4bd0c52ff4c4b3d81d18e76428fd2d2681a36efcd36`。
+签名SHA256：`4594c84ecb0eb1de0c8aa0da7c4363f25cd965d3ed3e792680b54d3dc0c74ec9`；原文SHA256：`a4bde3f38ad87a441beecc8f020eb56686a6f11750c2e5cc71b38c390c39ff02`。
 
 ## 1. MD-6.3.3-Figure65Frequencies · Fig. 6.5 · 印刷p.238 / PDFp.259
 
 ### 2. 原文陈述
 
-> Fig. 6.5 The memory kernels $\eta$ are shown for various choices of $\Omega_i^{(k)}$. Left: $\Omega_i^{(k)}=i/\sqrt k$, $k=5^2,10^2,\ldots,35^2$; center: $\Omega_i=\sqrt k\widehat\Omega_i$, $\widehat\Omega_i\sim U[0,1]$, $k=10,20,\ldots,100$; right: $\Omega_i=k\widehat\Omega_i$, $\widehat\Omega_i\sim U[0,1]$, $k=10,20,\ldots,100$. In each case the red curve indicates the largest value of $k$ considered, whereas green indicates the smallest value.
+> Fig. 6.5 The memory kernels $\psi$ are shown for various choices of $\Omega_i^{(k)}$. Left: $\Omega_i^{(k)}=i/\sqrt k$, $k=5^2,10^2,\ldots,35^2$; center: $\Omega_i=\sqrt k\widehat\Omega_i$, $\widehat\Omega_i\sim U[0,1]$, $k=10,20,\ldots,100$; right: $\Omega_i=k\widehat\Omega_i$, $\widehat\Omega_i\sim U[0,1]$, $k=10,20,\ldots,100$. In each case the red curve indicates the largest value of $k$ considered, whereas green indicates the smallest value.
 
 ### 3. 原文证明
 
@@ -6707,7 +6707,7 @@ Lean编译/公理检查：本轮待验证；公理：`未检查`。
 
 直接占位：无直接sorry；传递占位：未验证。
 
-签名SHA256：`8e39f9dd83a21c1472ba2f2952dc0c95e4f6e8af0fa3cae4229ef08cf1651f8d`；原文SHA256：`ba9806113069b5f27826694cc5f4cac8c6b4bac8c55ad7247ad3f85853f494f2`。
+签名SHA256：`8e39f9dd83a21c1472ba2f2952dc0c95e4f6e8af0fa3cae4229ef08cf1651f8d`；原文SHA256：`d6bbe6032a421182fe248e8d147f10ddb010f102ae07fdf18bf20fc8db5b2f7e`。
 
 ## 1. MD-6.3.3-BathForceWeakLimitMeaning · definition · 印刷p.237–238 / PDFp.258–259
 

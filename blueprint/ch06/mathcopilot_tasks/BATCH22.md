@@ -1,7 +1,7 @@
 # BATCH22 第6章A原文审校 + C只读语义审计
 
 A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
-仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+用代码写入JSON对象(batch,input_sha256,items)，哈希按本PASTE开头逐项原样回显；items中每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
 
 Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；compact材料是审阅摘录，不是独立Lean工程。
 
@@ -14,7 +14,7 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   "section": "6.3.3",
   "printed_page": "238",
   "pdf_page": "259",
-  "statement_latex": "Fig. 6.4 The memory kernel $\\eta$ is shown for three different sets of frequencies $\\Omega_i$. Blue: $k=400$, $\\Omega_i=0.01i$; red: $k=1,000$, $\\Omega_i\\sim U[0,1]$; green: $k=1,000$, $\\Omega_i=10\\widehat\\Omega_i$, where $\\widehat\\Omega_i\\sim U[0,1]$.",
+  "statement_latex": "Fig. 6.4 The memory kernel $\\psi$ is shown for three different sets of frequencies $\\Omega_i$. Blue: $k=400$, $\\Omega_i=0.01i$; red: $k=1,000$, $\\Omega_i\\sim U[0,1]$; green: $k=1,000$, $\\Omega_i=10\\widehat\\Omega_i$, where $\\widehat\\Omega_i\\sim U[0,1]$.",
   "proof_latex": null,
   "proof_note": "原书未给独立完整证明。",
   "proof_discussion_latex": null,
@@ -27,7 +27,15 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-16",
+      "action": "local_original_page_transcription",
+      "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+      "evidence": "source_transcription_fixes.json; PDF258/259",
+      "website": "待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -48,7 +56,7 @@ def figure64Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
   "section": "6.3.3",
   "printed_page": "238",
   "pdf_page": "259",
-  "statement_latex": "Fig. 6.5 The memory kernels $\\eta$ are shown for various choices of $\\Omega_i^{(k)}$. Left: $\\Omega_i^{(k)}=i/\\sqrt k$, $k=5^2,10^2,\\ldots,35^2$; center: $\\Omega_i=\\sqrt k\\widehat\\Omega_i$, $\\widehat\\Omega_i\\sim U[0,1]$, $k=10,20,\\ldots,100$; right: $\\Omega_i=k\\widehat\\Omega_i$, $\\widehat\\Omega_i\\sim U[0,1]$, $k=10,20,\\ldots,100$. In each case the red curve indicates the largest value of $k$ considered, whereas green indicates the smallest value.",
+  "statement_latex": "Fig. 6.5 The memory kernels $\\psi$ are shown for various choices of $\\Omega_i^{(k)}$. Left: $\\Omega_i^{(k)}=i/\\sqrt k$, $k=5^2,10^2,\\ldots,35^2$; center: $\\Omega_i=\\sqrt k\\widehat\\Omega_i$, $\\widehat\\Omega_i\\sim U[0,1]$, $k=10,20,\\ldots,100$; right: $\\Omega_i=k\\widehat\\Omega_i$, $\\widehat\\Omega_i\\sim U[0,1]$, $k=10,20,\\ldots,100$. In each case the red curve indicates the largest value of $k$ considered, whereas green indicates the smallest value.",
   "proof_latex": null,
   "proof_note": "原书未给独立完整证明。",
   "proof_discussion_latex": null,
@@ -63,7 +71,15 @@ def figure64Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-16",
+      "action": "local_original_page_transcription",
+      "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+      "evidence": "source_transcription_fixes.json; PDF258/259",
+      "website": "待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

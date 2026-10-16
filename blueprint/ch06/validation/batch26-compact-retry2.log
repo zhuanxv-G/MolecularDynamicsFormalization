@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 203, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 199, in main
+    p.generate();sync_attempts(args.chapter,p);render(args.chapter,p);landing(args.chapter,p,args.batch,args.step)
+    ^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 123, in generate_with_old_links
+    raw_generate()
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 88, in generate
+    def namespace_index(paths):
+    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 156, in packages
+    checkpoint=old.split('|')[-3].strip()
+                                          
+  File "D:\anaconda\Lib\site-packages\pymupdf\__init__.py", line 4295, in close
+    raise ValueError("document closed")
+ValueError: document closed

@@ -1,7 +1,7 @@
 # BATCH21 第6章A原文审校 + C只读语义审计
 
 A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
-仅返回JSON数组，每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+用代码写入JSON对象(batch,input_sha256,items)，哈希按本PASTE开头逐项原样回显；items中每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
 
 Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；compact材料是审阅摘录，不是独立Lean工程。
 
@@ -14,7 +14,7 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   "section": "6.3.3",
   "printed_page": "237",
   "pdf_page": "258",
-  "statement_latex": "Introducing this formula in (6.23), we obtain a reduced system\n\\[\\dot Q=P;\\tag{6.27}\\quad\\dot P=-U'(Q)-k^{-1}\\sum_{i=1}^k(Q-q_i);\\tag{6.28}\\]\n\\[=-U'(Q)+f(t)-\\int_0^t\\eta(t-s)P(s)ds.\\tag{6.29}\\]",
+  "statement_latex": "Introducing this formula in (6.23), we obtain a reduced system\n\\[\\dot Q=P;\\tag{6.27}\\quad\\dot P=-U'(Q)-k^{-1}\\sum_{i=1}^k(Q-q_i);\\tag{6.28}\\]\n\\[=-U'(Q)+f(t)-\\int_0^t\\psi(t-s)P(s)ds.\\tag{6.29}\\]",
   "proof_latex": null,
   "proof_note": "原书未给独立完整证明。",
   "proof_discussion_latex": null,
@@ -27,7 +27,15 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-16",
+      "action": "local_original_page_transcription",
+      "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+      "evidence": "source_transcription_fixes.json; PDF258/259",
+      "website": "待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -52,7 +60,7 @@ theorem bathReduction :
   "section": "6.3.3",
   "printed_page": "237",
   "pdf_page": "258",
-  "statement_latex": "\\[\\dot P=-U'(Q)+f(t)-\\int_0^t\\eta(t-s)P(s)ds.\\tag{6.29}\\]\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
+  "statement_latex": "\\[\\dot P=-U'(Q)+f(t)-\\int_0^t\\psi(t-s)P(s)ds.\\tag{6.29}\\]\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
   "proof_latex": null,
   "proof_note": "原书未给独立完整证明。",
   "proof_discussion_latex": null,
@@ -68,7 +76,15 @@ theorem bathReduction :
   "extra_assumptions": [],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-16",
+      "action": "local_original_page_transcription",
+      "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+      "evidence": "source_transcription_fixes.json; PDF258/259",
+      "website": "待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -93,7 +109,7 @@ theorem bathReductionPrinted :
   "section": "6.3.3",
   "printed_page": "238",
   "pdf_page": "259",
-  "statement_latex": "If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\\eta$ by a Dirac delta function scaled by a positive coefficient $\\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs\n\\[dQ=Pdt;\\tag{6.30}\\quad dP=-U'(Q)dt+\\sigma dW-\\gamma Pdt.\\tag{6.31}\\]",
+  "statement_latex": "If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\\psi$ by a Dirac delta function scaled by a positive coefficient $\\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs\n\\[dQ=Pdt;\\tag{6.30}\\quad dP=-U'(Q)dt+\\sigma dW-\\gamma Pdt.\\tag{6.31}\\]",
   "proof_latex": null,
   "proof_note": "原书未给独立完整证明。",
   "proof_discussion_latex": null,
@@ -111,7 +127,15 @@ theorem bathReductionPrinted :
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-16",
+      "action": "local_original_page_transcription",
+      "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+      "evidence": "source_transcription_fixes.json; PDF258/259",
+      "website": "待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -296,7 +320,7 @@ def particleDiagonalFriction {N : ℕ} (γ : Fin N → (Fin (N*3) → ℝ) → �
   "section": "6.3.3",
   "printed_page": "237",
   "pdf_page": "258",
-  "statement_latex": "\\[\\eta(t)=k^{-1}\\sum_{i=1}^k\\cos(\\Omega_i(t)).\\]",
+  "statement_latex": "\\[\\psi(t)=k^{-1}\\sum_{i=1}^k\\cos(\\Omega_i(t)).\\]",
   "proof_latex": null,
   "proof_note": "原书未给独立完整证明。",
   "proof_discussion_latex": null,
@@ -309,7 +333,15 @@ def particleDiagonalFriction {N : ℕ} (γ : Fin N → (Fin (N*3) → ℝ) → �
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-16",
+      "action": "local_original_page_transcription",
+      "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+      "evidence": "source_transcription_fixes.json; PDF258/259",
+      "website": "待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

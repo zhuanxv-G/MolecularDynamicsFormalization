@@ -1,13 +1,13 @@
 """Inactive draft: the complete plotted frequency families and missing weak-force qualifications."""
 from ch06_data import add,NS
-add('FrequencyMemoryKernel','6.3.3',237,[61],r'''\[\eta(t)=k^{-1}\sum_{i=1}^k\cos(\Omega_i(t)).\]''','''def frequencyMemoryKernel {k : ℕ} (Ω : Fin k → ℝ) (t : ℝ) : ℝ :=
+add('FrequencyMemoryKernel','6.3.3',237,[61],r'''\[\psi(t)=k^{-1}\sum_{i=1}^k\cos(\Omega_i(t)).\]''','''def frequencyMemoryKernel {k : ℕ} (Ω : Fin k → ℝ) (t : ℝ) : ℝ :=
   (k : ℝ)⁻¹*∑ i, Real.cos (Ω i*t)''',kind='definition',extra=['[EXTRA]以实际给定频率直接表达原核，方便记录图6.4/6.5全部数值族；k>0用于物理解释，有限函数定义不计δ极限已证。'])
-add('Figure64Frequencies','6.3.3',238,[61,62],r'''Fig. 6.4 The memory kernel $\eta$ is shown for three different sets of frequencies $\Omega_i$. Blue: $k=400$, $\Omega_i=0.01i$; red: $k=1,000$, $\Omega_i\sim U[0,1]$; green: $k=1,000$, $\Omega_i=10\widehat\Omega_i$, where $\widehat\Omega_i\sim U[0,1]$.''','''def figure64Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
+add('Figure64Frequencies','6.3.3',238,[61,62],r'''Fig. 6.4 The memory kernel $\psi$ is shown for three different sets of frequencies $\Omega_i$. Blue: $k=400$, $\Omega_i=0.01i$; red: $k=1,000$, $\Omega_i\sim U[0,1]$; green: $k=1,000$, $\Omega_i=10\widehat\Omega_i$, where $\widehat\Omega_i\sim U[0,1]$.''','''def figure64Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
     (blue : Fin 400 → ℝ) (red green : Fin 1000 → A → ℝ) : Prop :=
   (∀ i, blue i=(1/100 : ℝ)*(i.val+1)) ∧
   (∀ i, HasLaw (red i) (volume.restrict (Icc (0 : ℝ) 1)) P) ∧
   ∀ i, HasLaw (fun sample ↦ green i sample/10) (volume.restrict (Icc (0 : ℝ) 1)) P''',kind='definition',label='Fig. 6.4',extra=['[EXTRA]Fin下标val+1恢复原i=1,…,k；长度1区间限制Lebesgue测度是U[0,1]，记录原边际law，未擅加原未明说的独立性。green/10完整表示10×Uniform频率。图中核使用前条实际频率求和定义。'])
-add('Figure65Frequencies','6.3.3',238,[62],r'''Fig. 6.5 The memory kernels $\eta$ are shown for various choices of $\Omega_i^{(k)}$. Left: $\Omega_i^{(k)}=i/\sqrt k$, $k=5^2,10^2,\ldots,35^2$; center: $\Omega_i=\sqrt k\widehat\Omega_i$, $\widehat\Omega_i\sim U[0,1]$, $k=10,20,\ldots,100$; right: $\Omega_i=k\widehat\Omega_i$, $\widehat\Omega_i\sim U[0,1]$, $k=10,20,\ldots,100$. In each case the red curve indicates the largest value of $k$ considered, whereas green indicates the smallest value.''','''def figure65Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
+add('Figure65Frequencies','6.3.3',238,[62],r'''Fig. 6.5 The memory kernels $\psi$ are shown for various choices of $\Omega_i^{(k)}$. Left: $\Omega_i^{(k)}=i/\sqrt k$, $k=5^2,10^2,\ldots,35^2$; center: $\Omega_i=\sqrt k\widehat\Omega_i$, $\widehat\Omega_i\sim U[0,1]$, $k=10,20,\ldots,100$; right: $\Omega_i=k\widehat\Omega_i$, $\widehat\Omega_i\sim U[0,1]$, $k=10,20,\ldots,100$. In each case the red curve indicates the largest value of $k$ considered, whereas green indicates the smallest value.''','''def figure65Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
     (left : (k : ℕ) → Fin k → ℝ) (center right : (k : ℕ) → Fin k → A → ℝ) : Prop :=
   (∀ j ∈ Finset.range 7, ∀ i : Fin ((5*(j+1))^2),
     left ((5*(j+1))^2) i=(i.val+1 : ℝ)/Real.sqrt ((5*(j+1))^2 : ℕ)) ∧

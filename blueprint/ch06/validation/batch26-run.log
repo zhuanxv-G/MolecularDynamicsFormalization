@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 181, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 177, in main
+    p.generate();sync_attempts(args.chapter,p);render(args.chapter,p);landing(args.chapter,p,args.batch,args.step)
+    ^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 101, in generate_with_old_links
+    raw_generate()
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 88, in generate
+    name=match.group(1)
+^^^^^^^^^^^^
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_blueprint.py", line 155, in packages
+    print('Single-file Lean passed:',batch)
+               ^^^^^^^^^^^
+AssertionError: ('BATCH21c', 310996)

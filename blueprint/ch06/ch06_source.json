@@ -2853,7 +2853,7 @@
     "section": "6.3.3",
     "printed_page": "237",
     "pdf_page": "258",
-    "statement_latex": "\\[\\eta(t)=k^{-1}\\sum_{i=1}^k\\cos(\\Omega_i(t)).\\]",
+    "statement_latex": "\\[\\psi(t)=k^{-1}\\sum_{i=1}^k\\cos(\\Omega_i(t)).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -2868,7 +2868,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "local_original_page_transcription",
+        "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+        "evidence": "source_transcription_fixes.json; PDF258/259",
+        "website": "待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -2878,7 +2886,7 @@
     "section": "6.3.3",
     "printed_page": "237",
     "pdf_page": "258",
-    "statement_latex": "Introducing this formula in (6.23), we obtain a reduced system\n\\[\\dot Q=P;\\tag{6.27}\\quad\\dot P=-U'(Q)-k^{-1}\\sum_{i=1}^k(Q-q_i);\\tag{6.28}\\]\n\\[=-U'(Q)+f(t)-\\int_0^t\\eta(t-s)P(s)ds.\\tag{6.29}\\]",
+    "statement_latex": "Introducing this formula in (6.23), we obtain a reduced system\n\\[\\dot Q=P;\\tag{6.27}\\quad\\dot P=-U'(Q)-k^{-1}\\sum_{i=1}^k(Q-q_i);\\tag{6.28}\\]\n\\[=-U'(Q)+f(t)-\\int_0^t\\psi(t-s)P(s)ds.\\tag{6.29}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -2891,7 +2899,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "local_original_page_transcription",
+        "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+        "evidence": "source_transcription_fixes.json; PDF258/259",
+        "website": "待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -2901,7 +2917,7 @@
     "section": "6.3.3",
     "printed_page": "237",
     "pdf_page": "258",
-    "statement_latex": "\\[\\dot P=-U'(Q)+f(t)-\\int_0^t\\eta(t-s)P(s)ds.\\tag{6.29}\\]\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
+    "statement_latex": "\\[\\dot P=-U'(Q)+f(t)-\\int_0^t\\psi(t-s)P(s)ds.\\tag{6.29}\\]\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -2917,7 +2933,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "local_original_page_transcription",
+        "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+        "evidence": "source_transcription_fixes.json; PDF258/259",
+        "website": "待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -2927,7 +2951,7 @@
     "section": "6.3.3",
     "printed_page": "238",
     "pdf_page": "259",
-    "statement_latex": "If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\\eta$ by a Dirac delta function scaled by a positive coefficient $\\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs\n\\[dQ=Pdt;\\tag{6.30}\\quad dP=-U'(Q)dt+\\sigma dW-\\gamma Pdt.\\tag{6.31}\\]",
+    "statement_latex": "If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\\psi$ by a Dirac delta function scaled by a positive coefficient $\\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs\n\\[dQ=Pdt;\\tag{6.30}\\quad dP=-U'(Q)dt+\\sigma dW-\\gamma Pdt.\\tag{6.31}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -2945,7 +2969,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "local_original_page_transcription",
+        "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+        "evidence": "source_transcription_fixes.json; PDF258/259",
+        "website": "待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -3076,7 +3108,7 @@
     "section": "6.3.3",
     "printed_page": "237",
     "pdf_page": "258",
-    "statement_latex": "\\[\\eta(t)=k^{-1}\\sum_{i=1}^k\\cos(\\Omega_i(t)).\\]",
+    "statement_latex": "\\[\\psi(t)=k^{-1}\\sum_{i=1}^k\\cos(\\Omega_i(t)).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3089,7 +3121,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "local_original_page_transcription",
+        "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+        "evidence": "source_transcription_fixes.json; PDF258/259",
+        "website": "待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -3099,7 +3139,7 @@
     "section": "6.3.3",
     "printed_page": "238",
     "pdf_page": "259",
-    "statement_latex": "Fig. 6.4 The memory kernel $\\eta$ is shown for three different sets of frequencies $\\Omega_i$. Blue: $k=400$, $\\Omega_i=0.01i$; red: $k=1,000$, $\\Omega_i\\sim U[0,1]$; green: $k=1,000$, $\\Omega_i=10\\widehat\\Omega_i$, where $\\widehat\\Omega_i\\sim U[0,1]$.",
+    "statement_latex": "Fig. 6.4 The memory kernel $\\psi$ is shown for three different sets of frequencies $\\Omega_i$. Blue: $k=400$, $\\Omega_i=0.01i$; red: $k=1,000$, $\\Omega_i\\sim U[0,1]$; green: $k=1,000$, $\\Omega_i=10\\widehat\\Omega_i$, where $\\widehat\\Omega_i\\sim U[0,1]$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3112,7 +3152,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "local_original_page_transcription",
+        "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+        "evidence": "source_transcription_fixes.json; PDF258/259",
+        "website": "待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -3122,7 +3170,7 @@
     "section": "6.3.3",
     "printed_page": "238",
     "pdf_page": "259",
-    "statement_latex": "Fig. 6.5 The memory kernels $\\eta$ are shown for various choices of $\\Omega_i^{(k)}$. Left: $\\Omega_i^{(k)}=i/\\sqrt k$, $k=5^2,10^2,\\ldots,35^2$; center: $\\Omega_i=\\sqrt k\\widehat\\Omega_i$, $\\widehat\\Omega_i\\sim U[0,1]$, $k=10,20,\\ldots,100$; right: $\\Omega_i=k\\widehat\\Omega_i$, $\\widehat\\Omega_i\\sim U[0,1]$, $k=10,20,\\ldots,100$. In each case the red curve indicates the largest value of $k$ considered, whereas green indicates the smallest value.",
+    "statement_latex": "Fig. 6.5 The memory kernels $\\psi$ are shown for various choices of $\\Omega_i^{(k)}$. Left: $\\Omega_i^{(k)}=i/\\sqrt k$, $k=5^2,10^2,\\ldots,35^2$; center: $\\Omega_i=\\sqrt k\\widehat\\Omega_i$, $\\widehat\\Omega_i\\sim U[0,1]$, $k=10,20,\\ldots,100$; right: $\\Omega_i=k\\widehat\\Omega_i$, $\\widehat\\Omega_i\\sim U[0,1]$, $k=10,20,\\ldots,100$. In each case the red curve indicates the largest value of $k$ considered, whereas green indicates the smallest value.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3137,7 +3185,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "local_original_page_transcription",
+        "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+        "evidence": "source_transcription_fixes.json; PDF258/259",
+        "website": "待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
