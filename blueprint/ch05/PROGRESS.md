@@ -155,7 +155,7 @@
 | MD-5.5-MixingMemoryLoss | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | local_proof / self-contained |
 | MD-5.5-MixingCorrelationPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT17（原返回FAIL保留） | placeholder / incomplete；原遗漏k待裁定，不证明；正确极限另条。 |
 | MD-5.5-MixingCorrelation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | local_proof / self-contained |
-| MD-5.5-CenteredCorrelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
+| MD-5.5-CenteredCorrelation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | local_proof / self-contained |
 | MD-5.6-DiscreteAveragePrinted | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.6-DiscreteAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.6-DiscretePropagator | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
@@ -377,3 +377,5 @@ EAUDIT16 §5.4.1：7条落盘，单文件与8项公理通过；未写新证明�
 EAUDIT17 §5.5：8条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT18 §5.3.2：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT19 §5.5：1条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。

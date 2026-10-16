@@ -1,0 +1,38 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT19",
+  "section": "5.5",
+  "source_ids": [
+    "MD-5.5-CenteredCorrelation"
+  ],
+  "reaudit_ids": [
+    "MD-5.5-CenteredCorrelation"
+  ],
+  "human_ids": [],
+  "lean_sha256": "2de1b1e1e2d9d2e855163d66c10400d1bc299b9dfab8697acf55a2b6d3ef896f",
+  "source_sha256": "42ca95f021a1fd12a63f35841b2f837be74a5f1ca81b9040ad12bac340c01d07",
+  "pages": [
+    224,
+    225,
+    226
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch05.olean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "2de1b1e1e2d9d2e855163d66c10400d1bc299b9dfab8697acf55a2b6d3ef896f",
+    "log_sha256": "ed101ed7db5a5a70bfa84e3a0e94be0e3ecfea332b4707cfcb1d946dbe8e9973"
+  },
+  "axiom_decl_count": 2,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT19/INDEX.md"
+}

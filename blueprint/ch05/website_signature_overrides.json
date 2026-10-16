@@ -307,5 +307,12 @@
       "[EXTRA]独立修正版右侧保留k，实际AC概率初值的弱mixing条件及有界连续a/b；原参考微正则分布的不变资格明确为MeasurePreserving，保障各时积分可积和常数项不变。未以目标相关极限作假设。",
       "[EXTRA] 修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。"
     ]
+  },
+  "MD-5.5-CenteredCorrelation": {
+    "code": "theorem centeredCorrelation : ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k,IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) → weakMixing μ Φ →\n  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →\n  ((∫ z,a z ∂μ)=0 ∨ (∫ z,b z ∂μ)=0) →\n  Tendsto (fun t => |k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)|) atTop (𝓝 0) := by\n  sorry\n\ntheorem centeredCorrelation_scalar : ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k,IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) → weakMixing μ Φ →\n  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →\n  (MolecularDynamics.Chapter05Review.average μ a=0 ∨ MolecularDynamics.Chapter05Review.average μ b=0) →\n  Tendsto (fun t => |k*(∫ z,a (Φ t z)*b z ∂μ)|) atTop (𝓝 0) := by\n  intro n μ Φ a b k hμ hΦ hm ha hb hba hbb hzero\n  have ht := mixingCorrelation_scalar n μ Φ a b k hμ hΦ hm.2 ha hb hba hbb\n  have hl : k*MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b=0 := by\n    rcases hzero with h | h <;> rw [h] <;> ring\n  rw [hl] at ht\n  simpa only [abs_zero] using ht.abs",
+    "extra_assumptions": [
+      "[EXTRA]概率测度/有界连续资格，k仍保留；由实际混合相关式推导的绝对值结论，不只保留未中心化极限。",
+      "[EXTRA] 扩至向量观测量、任意一向量Bochner零均值及相关绝对值趋零，保留旧标量证明辅助；不添加单调衰减。"
+    ]
   }
 }

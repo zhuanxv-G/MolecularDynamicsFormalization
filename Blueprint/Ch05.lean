@@ -1695,8 +1695,16 @@ theorem mixingCorrelation_scalar :
   ring
 
 /-- source_id: MD-5.5-CenteredCorrelation · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
-[EXTRA] [EXTRA]概率测度/有界连续资格，k仍保留；由实际混合相关式推导的绝对值结论，不只保留未中心化极限。 -/
-theorem centeredCorrelation : ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+[EXTRA] [EXTRA]概率测度/有界连续资格，k仍保留；由实际混合相关式推导的绝对值结论，不只保留未中心化极限。 
+[EXTRA] 扩至向量观测量、任意一向量Bochner零均值及相关绝对值趋零，保留旧标量证明辅助；不添加单调衰减。 -/
+theorem centeredCorrelation : ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k,IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) → weakMixing μ Φ →
+  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+  ((∫ z,a z ∂μ)=0 ∨ (∫ z,b z ∂μ)=0) →
+  Tendsto (fun t => |k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)|) atTop (𝓝 0) := by
+  sorry
+
+theorem centeredCorrelation_scalar : ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
     (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k,IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) → weakMixing μ Φ →
   Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
   (MolecularDynamics.Chapter05Review.average μ a=0 ∨ MolecularDynamics.Chapter05Review.average μ b=0) →
@@ -2325,6 +2333,7 @@ end MD.Ch05
 #print axioms MD.Ch05.mixingCorrelation
 #print axioms MD.Ch05.mixingCorrelation_scalar
 #print axioms MD.Ch05.centeredCorrelation
+#print axioms MD.Ch05.centeredCorrelation_scalar
 #print axioms MD.Ch05.discreteAveragePrinted
 #print axioms MD.Ch05.discreteAverage
 #print axioms MD.Ch05.discretePropagator

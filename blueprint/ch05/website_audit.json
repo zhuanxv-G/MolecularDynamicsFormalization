@@ -12211,7 +12211,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH23_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT19",
+    "repair": {
+      "eaudit": "EAUDIT19",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT19/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT19.md": "3d8381ec196a51fb5a1c74eccc49a8a3ff2903409ed61719f9b444e4232458ba",
+        "Blueprint/Ch05.lean": "2de1b1e1e2d9d2e855163d66c10400d1bc299b9dfab8697acf55a2b6d3ef896f",
+        "blueprint/ch05/ch05_source.json": "42ca95f021a1fd12a63f35841b2f837be74a5f1ca81b9040ad12bac340c01d07"
+      }
+    }
   },
   {
     "source_id": "MD-5.6-DiscreteAveragePrinted",

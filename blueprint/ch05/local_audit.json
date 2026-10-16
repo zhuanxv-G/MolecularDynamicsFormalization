@@ -5182,17 +5182,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.centeredCorrelation",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "39c6b541f68791c55aa90796aac01557445629e695ce52f498cb8432f0821baf",
-      "block_sha256": "c1f6746061b8d0b6af675f9ee87b08372324bf063b660c95560e83feacc0db42",
-      "direct_placeholder": false,
+      "signature_sha256": "ec00f2a017ccb4ded05a929e91f6411cea8caa2ede2182841c13814958d4d79f",
+      "block_sha256": "c472a7e68f1e531f7d26aec7b3e28ea10a029e9640acbaa9a0f0dd8d8e7f012a",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -5214,7 +5215,7 @@
         "blueprint/ch05/validation/short_search/route-17122b90950be22759f3.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT19/axioms.log"
     },
     "MD-5.6-DiscreteAveragePrinted": {
       "checked": true,

@@ -4972,17 +4972,35 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "\\Sigma_E=\\{z:H(z)=E\\}; \\mathcal F_t 为动力学流。",
+      "\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)\\rho_E(z)\\,d\\omega；\\rho_E\\,d\\omega为参考微正则概率测度。",
+      "C_{ab}(t)=k\\operatorname{Av}_{H=E}(a(\\mathcal F_t(z))\\cdot b(z))；a,b取值于同一Euclidean空间，k为归一化常数（PDF224–225）。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.centeredCorrelation",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]概率测度/有界连续资格，k仍保留；由实际混合相关式推导的绝对值结论，不只保留未中心化极限。"
+      "[EXTRA]概率测度/有界连续资格，k仍保留；由实际混合相关式推导的绝对值结论，不只保留未中心化极限。",
+      "[EXTRA] 扩至向量观测量、任意一向量Bochner零均值及相关绝对值趋零，保留旧标量证明辅助；不添加单调衰减。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT19_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:17:28.130216",
+        "before_sha256": "97df576dbb0b3cb8cd081843994e48542e7f98888ddcff7636f04740a4a9e493",
+        "after_sha256": "a8ca89f3bd592860993a3c081b504deff9d4cb4da4317366a536b21a8329bd0b",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.6-DiscreteAveragePrinted",

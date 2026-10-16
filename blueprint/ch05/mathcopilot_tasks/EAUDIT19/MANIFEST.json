@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT19",
+  "input_sha256": {
+    "BATCH_EAUDIT19.md": "3d8381ec196a51fb5a1c74eccc49a8a3ff2903409ed61719f9b444e4232458ba",
+    "Blueprint/Ch05.lean": "2de1b1e1e2d9d2e855163d66c10400d1bc299b9dfab8697acf55a2b6d3ef896f",
+    "blueprint/ch05/ch05_source.json": "42ca95f021a1fd12a63f35841b2f837be74a5f1ca81b9040ad12bac340c01d07"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT19a",
+      "source_id": "MD-5.5-CenteredCorrelation",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT19/a",
+      "total_bytes": 90940,
+      "manifest_sha256": "1f05265d4f1724c0292c3e404b2ab937e15c09c8f43f64c97e0455a1a38612f4"
+    }
+  ]
+}

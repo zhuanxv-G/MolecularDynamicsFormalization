@@ -1,0 +1,23 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT19",
+  "section": "5.5",
+  "source_ids": [
+    "MD-5.5-CenteredCorrelation"
+  ],
+  "reaudit_ids": [
+    "MD-5.5-CenteredCorrelation"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+  "lean_sha256": "2de1b1e1e2d9d2e855163d66c10400d1bc299b9dfab8697acf55a2b6d3ef896f",
+  "source_sha256": "42ca95f021a1fd12a63f35841b2f837be74a5f1ca81b9040ad12bac340c01d07",
+  "pages": [
+    224,
+    225,
+    226
+  ],
+  "prior_proof_blocks": {
+    "MD-5.5-CenteredCorrelation": "theorem centeredCorrelation : ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k,IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) → weakMixing μ Φ →\n  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →\n  (MolecularDynamics.Chapter05Review.average μ a=0 ∨ MolecularDynamics.Chapter05Review.average μ b=0) →\n  Tendsto (fun t => |k*(∫ z,a (Φ t z)*b z ∂μ)|) atTop (𝓝 0) := by\n  intro n μ Φ a b k hμ hΦ hm ha hb hba hbb hzero\n  have ht := mixingCorrelation_scalar n μ Φ a b k hμ hΦ hm.2 ha hb hba hbb\n  have hl : k*MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b=0 := by\n    rcases hzero with h | h <;> rw [h] <;> ring\n  rw [hl] at ht\n  simpa only [abs_zero] using ht.abs"
+  }
+}
