@@ -1,3 +1,6 @@
+当前进展：第6章批27 WIP检查点e1f19ef8已保存并暂停；第1章单文件/194项公理已通过初验，20项双版本与21项FAIL签名处理已落盘。最终快照补查、93项复审包和唯一章末完整check尚待完成。
+下一步：读取blueprint/ch01/validation/CLOSEOUT19/final-single.json；不重复启动活跃编译；通过后生成现行EAUDIT包、导师总结并章末check。
+
 # 19号：第1章收口 + 原文/修正版双版本（2026-10-16 用户指令，覆盖此前“第1章暂停/低优先级”）
 
 请先把以下全文写进 AGENTS.md 顶部规则和 docs/handoff/CURRENT_STATE.zh-CN.md 顶部，并同步 heartbeat lean 的接续 prompt（保留 ACTIVE/15分钟/target/去重），然后再开始执行。

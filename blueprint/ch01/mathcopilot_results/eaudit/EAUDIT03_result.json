@@ -1,0 +1,312 @@
+{
+  "batch": "EAUDIT03",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+    "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+    "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+    "EAUDIT03b_materials": "d8267c72a4d0476583ada7fac0f36561041d14bc7477f72ca4e9f2fc029d877d",
+    "EAUDIT03b_PAGES.pdf": "b2738dbcef27e46cc1d969f980e6a2bb57a80ca855e138de2c3d654d8355e868",
+    "EAUDIT03c_materials": "fd8eb8f88fca3426a91af455a8213dfe40d098483c6b49f7891508bcfcb8cc9b",
+    "EAUDIT03c_PAGES.pdf": "f241851b617f12fe99382a115987a3e6022d875b434c0fc319227147497d2d08",
+    "EAUDIT03d_materials": "32d088386129cbe7694e6329d68117390aca48beb6fee44ca0a760ab1513a07f",
+    "EAUDIT03d_PAGES.pdf": "690e407c1bd2342d7389783a68cbfa80d4be512f59d65fba945b0702245d908a",
+    "EAUDIT03a_materials": "301d2d551a6c4423ceab390698aed046f9ed93d471b43b549cc68dedaea72dec",
+    "EAUDIT03a_PAGES.pdf": "b2738dbcef27e46cc1d969f980e6a2bb57a80ca855e138de2c3d654d8355e868"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.1.1-MorseMinimum",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "INPUT_VERSION_CONFLICT",
+          "DECLARED_INPUT_NOT_AVAILABLE"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "INPUT_VERSION_CONFLICT",
+            "explanation": "附件内原文JSON逐字审校通过；但本地Ch01.lean及ch01_source.json不是声明哈希对应版本，不能将附件审计认定为该工程版本审计。未修改原JSON。"
+          },
+          {
+            "code": "DECLARED_INPUT_NOT_AVAILABLE",
+            "explanation": "未找到声明路径BATCH_EAUDIT03.md、Blueprint/Ch01.lean、blueprint/ch01/ch01_source.json或EAUDIT03b_materials；本地同名/扁平化候选明确单独记录，未冒充声明版本。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "result": "APPROVED",
+            "source": "/workspace/EAUDIT03b_PAGES.pdf",
+            "pdf_page": 31,
+            "extracted_pdf_page": 1,
+            "printed_page": 8,
+            "rendered_page": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT03_morse_pdf31.png",
+            "explanation": "实际渲染并视觉核对：statement_latex与页末原句逐字一致（换行及数学排版规范化），section=1.1.1、无编号、label=null及页码正确。原页确有Morse公式；无独立完整证明，无二阶导数公式，无参数正性显式声明。原句及原书判断均保留。"
+          },
+          {
+            "stage": "A",
+            "field": "context_notation / extra_assumptions",
+            "explanation": "context_notation表示原文的定性曲率说明；EXTRA单独表示形式化展开，二者不矛盾。D,a,rₑ正及井深的极限解释属于建模补充，不是逐字原文。repair_log及其哈希、VERIFIED_RENDERED外部记录本次未独立验证，不作为证据。"
+          },
+          {
+            "stage": "C",
+            "source": "attached complete Lean signature and dependency",
+            "result": "PASS",
+            "explanation": "语义审计覆盖附件给出的全部合取结论；不代表Lean编译或无sorry认证。"
+          },
+          {
+            "stage": "version_check",
+            "declared_sha256": {
+              "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+              "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+              "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+              "EAUDIT03b_materials": "d8267c72a4d0476583ada7fac0f36561041d14bc7477f72ca4e9f2fc029d877d",
+              "EAUDIT03b_PAGES.pdf": "b2738dbcef27e46cc1d969f980e6a2bb57a80ca855e138de2c3d654d8355e868"
+            },
+            "observed_candidate_sha256": {
+              "Blueprint/Ch01.lean": "91615288602dee2928553f6c291d40cf3669afdf8ba11ee4b5c53362e8db9240",
+              "blueprint/ch01/ch01_source.json": "4fc9fe79886fe39cd1c3c71ffa01ca45915bb8240d03f81adc8ee5076c41e695",
+              "EAUDIT03b_PAGES.pdf": "b2738dbcef27e46cc1d969f980e6a2bb57a80ca855e138de2c3d654d8355e868"
+            },
+            "attachment_sha256": "1234ce9f17a4b8e9da9baeb44fe53e217ae405237cb23ea5cbf3dc9f10772309",
+            "explanation": "PDF哈希匹配；扁平化Lean和JSON候选哈希均不匹配；其余声明输入无可核实完整文件。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.morse_minimum",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "附件签名本身的只读完整语义审计为PASS，但无法确认声明哈希对应实际工程，故工程总体结论NEEDS_HUMAN。真实依赖为实值函数φ(r)=D(1-exp(-a(r-rₑ)))²，与原页公式一致。D,a,rₑ在ℝ中全称量化并显式假设正性；物理距离取r>0，rₑ>0保证极小点属于该域。非负性及φ(rₑ)=0共同表达全局最小值位于rₑ，不只是驻点；原句未要求显式唯一性结论。Tendsto沿实数atTop趋于D，与最小值0共同表达向无穷远解离的井深D，并非与r=0值之差。a>0使指数趋零；D>0保证井深为正。deriv(deriv φ)是在全实数上定义的光滑函数的通常二阶导数，rₑ为正域内点，不存在边界导数问题；所写2Da²确为该点二阶导数，表达势能的局部曲率。最后一项对a₁,a₂全称量化，0<a₁<a₂隐含a₂>0，固定外层D>0及rₑ，严格比较2Da₁²与2Da₂²，确实表达a控制曲率。内层a₁,a₂不使用外层a并非缺项。曲率公式及严格单调性不是教材逐字结论，已明确标为EXTRA且没有回填statement_latex。参数正性属于合理但必须保留披露的补充约定；不将原书理解为无条件任意实参数断言。本地/workspace/Ch01.lean:279的签名只有非负性、零值及极限，缺少上述两项曲率结论，正文含sorry。因此本地候选对原句完整语义覆盖为FAIL（CURVATURE_CLAUSE_MISSING），不能用附件完整签名掩盖它。未编辑工程、未补证明、未运行Lean检查。",
+        "counterexample": null,
+        "suggested_fix": "无需修改已逐字核对的原句或附件完整签名。先确认并提供/同步声明哈希对应的实际工程版本，再对该版本进行审计；若以本地候选为准，应另行授权工程修复并纳入已披露的两项曲率结论。本次仅报告缺项及版本冲突，不作工程修改。"
+      }
+    },
+    {
+      "source_id": "MD-1.1.1-LengthBond",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "INPUT_VERSION_CONFLICT",
+          "DECLARED_INPUT_NOT_AVAILABLE",
+          "PARAMETER_DOMAIN_UNRESTRICTED"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "INPUT_VERSION_CONFLICT",
+            "explanation": "A逐字审校通过，附件C语义审计通过；但本地Lean和JSON候选哈希均不同于声明版本，不能认证声明工程。"
+          },
+          {
+            "code": "DECLARED_INPUT_NOT_AVAILABLE",
+            "explanation": "未找到声明路径的BATCH_EAUDIT03.md、Blueprint/Ch01.lean、blueprint/ch01/ch01_source.json、EAUDIT03c_materials完整文件，materials哈希不能独立核实。"
+          },
+          {
+            "code": "PARAMETER_DOMAIN_UNRESTRICTED",
+            "explanation": "context_notation所写k>0没有在附件定义中作为限制；定义本身允许任意实k、r₀。原页未显式写参数正性，故不修改原文，正刚度/非负静长只作为建模约定披露。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "result": "APPROVED",
+            "source": "/workspace/EAUDIT03c_PAGES.pdf",
+            "pdf_page": 32,
+            "extracted_pdf_page": 1,
+            "printed_page": 9,
+            "rendered_page": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT03_length_pdf32.png",
+            "explanation": "实际渲染并视觉逐字核对，文字与公式一致（仅换行及数学排版规范化）；原文确为with given rest-length，无the。H₂⁺、len上下标、1/2、平方和距离定义均正确；无编号或独立证明。原书化学称谓和定性判断原样保留，未据外部常识改写。"
+          },
+          {
+            "stage": "A",
+            "field": "extra_assumptions / repair_log",
+            "explanation": "三维位置代入属于已披露的形式化选择，不是新增教材结论。lengthBondRadial的保留只在EXTRA中声明，附件未给其完整定义，本次不能独立确认存在性或实现。repair_log及外部SOURCE_PAGE_VERIFICATION未独立核实，不作为本次证据。"
+          },
+          {
+            "stage": "C",
+            "result": "PASS",
+            "source": "attachment complete definition and actual dependencies",
+            "explanation": "只读语义审计，无编译或无sorry认证；全部定义表达式及域已审查。"
+          },
+          {
+            "stage": "version_check",
+            "declared_sha256": {
+              "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+              "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+              "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+              "EAUDIT03c_materials": "fd8eb8f88fca3426a91af455a8213dfe40d098483c6b49f7891508bcfcb8cc9b",
+              "EAUDIT03c_PAGES.pdf": "f241851b617f12fe99382a115987a3e6022d875b434c0fc319227147497d2d08"
+            },
+            "observed_candidate_sha256": {
+              "Ch01.lean": "91615288602dee2928553f6c291d40cf3669afdf8ba11ee4b5c53362e8db9240",
+              "ch01_source.json": "4fc9fe79886fe39cd1c3c71ffa01ca45915bb8240d03f81adc8ee5076c41e695",
+              "EAUDIT03c_PAGES.pdf": "f241851b617f12fe99382a115987a3e6022d875b434c0fc319227147497d2d08"
+            },
+            "attachment_sha256": "34df456bed4a5a5c7cfcc648a9980272c0c39a09c1ff4894e9cba2ca6be44c92",
+            "explanation": "PDF完全匹配；扁平化Lean/JSON不是声明版本。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.lengthBond",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "附件定义的公式语义PASS，声明工程版本总体NEEDS_HUMAN。Position 3=EuclideanSpace ℝ (Fin 3)，V3确为真实三维欧氏空间，范数是欧氏距离，非任意抽象距离或坐标逐点范数。k、r₀在ℝ中，qᵢ、qⱼ在V3中为定义参数，任取这些参数均返回实数；固定粒子对的下标由两个位置及对应k、r₀参数承载。k/2*(‖qᵢ-qⱼ‖-r₀)^2与教材两个公式代入后完全一致，括号、符号、系数均正确。距离自动非负，允许重合粒子；原式没有排除重合，公式也无奇点。该项是定义，没有待证明的全称命题、极小值、力、不可断裂或强度比较结论；前置英文是建模动机，定义不证明实际化学键强弱或不可断裂。允许任意实参数是代数公式的保守扩展；若将context_notation的k>0或rest-length的物理非负性当作类型保证，当前定义不保证它们，必须另行注明有效参数域。三维限制与分子位置语境吻合并由EXTRA披露。附件未提供lengthBondRadial，不能认定该辅助定义已核实。实际本地/workspace/Ch01.lean:289仍为def lengthBond (k r₀ r : ℝ)，是径向剖面，不能独立表达r=‖qᵢ-qⱼ‖；若以该本地版本主定义覆盖完整原文，则C为FAIL（PARTICLE_DISTANCE_BINDING_MISSING），这与附件位置定义不同。未修改工程或补证明。",
+        "counterexample": {
+          "scope": "parameter-domain guarantee only; not a counterexample to the displayed algebraic formula",
+          "example": "k=-1，r₀=0，qᵢ=(1,0,0)，qⱼ=(0,0,0)时定义给出-1/2；故签名本身不保证正刚度或非负弹簧能。r₀<0同样被类型允许。"
+        },
+        "suggested_fix": "确认并同步声明哈希对应版本后再认证工程；保持教材原文。物理使用处明确k>0及r₀≥0（若采用该约定），不将其伪称为本页显式假设。核实EXTRA声明的lengthBondRadial。若以旧本地版本为准，另行修复粒子位置/距离绑定；本次只报告不编辑。"
+      }
+    },
+    {
+      "source_id": "MD-1.1.1-HeterogeneousLJ",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "INPUT_VERSION_CONFLICT",
+          "DECLARED_INPUT_NOT_AVAILABLE"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "INPUT_VERSION_CONFLICT",
+            "explanation": "A逐字审校APPROVED；附件C公式语义PASS，但本地扁平化Lean/JSON哈希不匹配声明版本，不能认证声明工程。"
+          },
+          {
+            "code": "DECLARED_INPUT_NOT_AVAILABLE",
+            "explanation": "未找到声明路径BATCH_EAUDIT03.md、Blueprint/Ch01.lean、blueprint/ch01/ch01_source.json或EAUDIT03d_materials完整文件；materials哈希无法独立核实。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "result": "APPROVED",
+            "source": "/workspace/EAUDIT03d_PAGES.pdf",
+            "pdf_page": 34,
+            "extracted_pdf_page": 1,
+            "printed_page": 11,
+            "rendered_page": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT03_heterogeneous_pdf34.png",
+            "explanation": "实际渲染并逐字视觉核对：英文正文、LJ上标、ij下标、4ε系数、12和6次幂、减号及rᵢⱼ=‖qᵢ−qⱼ‖一致；仅换行和排版规范化。section=1.1.1、无编号、无独立证明均正确。随后图像提示句不属于所选定义，不构成漏掉数学结论。原页奇点、经验性轨迹判断及图注不属于本条，未改写原书判断。"
+          },
+          {
+            "stage": "A",
+            "field": "extra_assumptions / provenance",
+            "explanation": "三维实欧氏空间与正距离有效域是明确披露的形式化约定；原段未显式列参数正性、对称性、类型集合或混合规则。repair_log和外部VERIFIED_RENDERED记录未独立验证，不作为本次证据。"
+          },
+          {
+            "stage": "C",
+            "result": "PASS",
+            "scope": "附件完整定义及给出的依赖；本地主定义公式也相同。只读语义审计，不是Lean编译/无sorry认证。"
+          },
+          {
+            "stage": "version_check",
+            "declared_sha256": {
+              "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+              "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+              "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+              "EAUDIT03d_materials": "32d088386129cbe7694e6329d68117390aca48beb6fee44ca0a760ab1513a07f",
+              "EAUDIT03d_PAGES.pdf": "690e407c1bd2342d7389783a68cbfa80d4be512f59d65fba945b0702245d908a"
+            },
+            "observed_candidate_sha256": {
+              "/workspace/Ch01.lean": "91615288602dee2928553f6c291d40cf3669afdf8ba11ee4b5c53362e8db9240",
+              "/workspace/ch01_source.json": "4fc9fe79886fe39cd1c3c71ffa01ca45915bb8240d03f81adc8ee5076c41e695",
+              "/workspace/EAUDIT03d_PAGES.pdf": "690e407c1bd2342d7389783a68cbfa80d4be512f59d65fba945b0702245d908a",
+              "/workspace/.mathcopilot/attachments/c30fbdfa-ee59-4f5b-b931-6735be0dc841/01-paste-1.txt": "54ee165b73abc6f77bbccbab56ecacec168bafde0261d945eb7a725ec3ce043f"
+            },
+            "explanation": "PDF哈希匹配；本地Lean/JSON候选哈希不匹配；附件文件哈希只标识本次附件，不替代materials声明哈希。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.heterogeneousLJ",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "附件定义的完整公式语义PASS；声明工程版本认证NEEDS_HUMAN。Position 3=EuclideanSpace ℝ (Fin 3)，V3是真实三维实欧氏空间，pairDistance是欧氏范数‖qᵢ−qⱼ‖。N隐式任取自然数，ε、σ是Fin N×Fin N上的实参数表，q是所有粒子位置；i、j为任意有效指标，返回实数。展开后恰为4εᵢⱼ[(σᵢⱼ/‖qᵢ−qⱼ‖)^12−(σᵢⱼ/‖qᵢ−qⱼ‖)^6]。N=0时无指标可供实例化，不产生虚构粒子。没有总能量求和结论；原文仅说contributions，单对势定义已覆盖。参数可按原子类型选择，但签名本身不强制同类型共享参数、对称性、混合规则或ε、σ正性；原段也未写这些约束，不能附会为已证性质。i=j及不同指标的重合位置都允许，Lean实数除零总化使该势值为0；这不是教材奇点的物理解释。已披露EXTRA将物理对应限制到pairDistance>0，该域内公式完全匹配；i≠j单独不足以保证距离正。若把此定义无条件解释为所有配置的物理势则失败，必须保留有效域约定。三维限制已披露。此条为定义，无额外极限、非负性、排斥性质、经验轨迹或总能量结论需要证明；无需补证明。实际本地Ch01.lean:337–339主定义与附件一致，但整文件版本哈希不同，不能用局部一致性认证声明工程。未编辑工程或运行Lean检查。",
+        "counterexample": {
+          "scope": "仅反驳零距离物理解释，不反驳已披露正距离域上的代数公式",
+          "example": "N=2，εᵢⱼ=σᵢⱼ=1，q₀=q₁=0，i=0、j=1：pairDistance=0，Lean总化定义给0；教材势在r=0有奇点，r→0⁺时趋于+∞。因此i≠j不替代无碰撞条件。"
+        },
+        "suggested_fix": "保持已核对原文及附件公式；确认/同步声明哈希对应工程后再认证。继续明确正距离物理有效域，使用处需pairDistance>0或无碰撞配置；参数正性、类型一致性及对称性若后续结论需要，应另行明确，不伪称本段显式结论。本次不修改工程、不补证明。"
+      }
+    },
+    {
+      "source_id": "MD-1.1.1-Multibody",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A_VERBATIM_REVIEW",
+            "source": "/workspace/EAUDIT03a_PAGES.pdf",
+            "excerpt_pdf_page": 1,
+            "original_pdf_page": 31,
+            "printed_page": 8,
+            "render": "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT03_multibody_pdf31.png",
+            "finding": "已实际提取文字并视觉核对渲染原页。英文句子、2-body/3-body/4-body及and/or、U的三个下标与2/3/4个位置变量、坐标顺序x/y/z和R³均一致；换行、展示公式环境和boldsymbol为排版编码差异，无需修正原文。"
+          },
+          {
+            "source": "附件原文JSON",
+            "finding": "kind=definition、section=1.1.1、printed_page=8、pdf_page=31与原页相符。本摘段无独立完整证明，proof_latex=null恰当。后续物理解释不在本条冻结摘录范围内。"
+          },
+          {
+            "source": "extra_assumptions",
+            "finding": "严格递增不同粒子组是已披露的额外计数约定，不冒充原文；EXTRA的V3/Position和求和依赖仅补材料，不改变statement_latex。repair_log与source_page_verification保留为输入元数据，本次未认证其未提供的历史记录文件。"
+          },
+          {
+            "stage": "INPUT_PROVENANCE",
+            "supplied_input_sha256": {
+              "BATCH_EAUDIT03.md": "7dc2d799978aa9f38abbcfcd205eefc6efb09998618f66141b85d177fe89e530",
+              "Blueprint/Ch01.lean": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+              "blueprint/ch01/ch01_source.json": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+              "EAUDIT03a_materials": "301d2d551a6c4423ceab390698aed046f9ed93d471b43b549cc68dedaea72dec",
+              "EAUDIT03a_PAGES.pdf": "b2738dbcef27e46cc1d969f980e6a2bb57a80ca855e138de2c3d654d8355e868"
+            },
+            "attachment_path": "/workspace/.mathcopilot/attachments/a80dde02-2c98-4648-9c4a-9a0e809eca32/01-paste-1.txt",
+            "attachment_sha256": "7107160a883fcab3d16c78833d5ed213e795fd1698291aae2d365a55b539d167",
+            "observed_files": [
+              {
+                "input_name": "Blueprint/Ch01.lean",
+                "physical_path": "/workspace/Ch01.lean",
+                "expected_sha256": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+                "observed_sha256": "91615288602dee2928553f6c291d40cf3669afdf8ba11ee4b5c53362e8db9240",
+                "matches": false,
+                "path_note": "PDF为精确对应文件；其余为工作区同名候选快照，不是附件所列逻辑路径。"
+              },
+              {
+                "input_name": "blueprint/ch01/ch01_source.json",
+                "physical_path": "/workspace/ch01_source.json",
+                "expected_sha256": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+                "observed_sha256": "4fc9fe79886fe39cd1c3c71ffa01ca45915bb8240d03f81adc8ee5076c41e695",
+                "matches": false,
+                "path_note": "PDF为精确对应文件；其余为工作区同名候选快照，不是附件所列逻辑路径。"
+              },
+              {
+                "input_name": "EAUDIT03a_PAGES.pdf",
+                "physical_path": "/workspace/EAUDIT03a_PAGES.pdf",
+                "expected_sha256": "b2738dbcef27e46cc1d969f980e6a2bb57a80ca855e138de2c3d654d8355e868",
+                "observed_sha256": "b2738dbcef27e46cc1d969f980e6a2bb57a80ca855e138de2c3d654d8355e868",
+                "matches": true,
+                "path_note": "PDF为精确对应文件；其余为工作区同名候选快照，不是附件所列逻辑路径。"
+              }
+            ],
+            "unavailable_inputs": [
+              "/workspace/BATCH_EAUDIT03.md",
+              "/workspace/Blueprint/Ch01.lean",
+              "/workspace/blueprint/ch01/ch01_source.json",
+              "/workspace/EAUDIT03a_materials"
+            ],
+            "finding": "PDF精确哈希匹配。两个本地候选整文件与附件声明的版本哈希不同，但本条statement_latex与Lean定义正文逐字符一致；已报告候选版本差异，未用其替换附件快照。batch/materials未提供，声明哈希不能独立复算。Position的真实定义另已核对/workspace/Lean/MolecularDynamics/Notation.lean:11；V3本地声明未找到，采用附件明确给出的依赖，不能据此认证整份依赖工程。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.multibodyPotential",
+        "verdict": "PASS",
+        "explanation": "C只读完整语义审计的PASS限定于附件冻结的完整定义及显式给出的依赖，不表示整份工程已通过编译或输入集合哈希已复现。对象与量词：隐式N为任意自然数，标签为Fin N，q:Fin N→V3；U₂/U₃/U₄分别接受2/3/4个标签和对应的2/3/4个位置，返回ℝ。这是任意给定参数的函数定义，无隐藏的存在性结论，也不声称任意物理势能均可这样分解。域：附件Position n=EuclideanSpace ℝ (Fin n)，V3=Position 3，故q_i是真实三维实欧氏向量；Position与本地Notation.lean的定义一致。完整输出：三个有限求和相加，逐项对应二体、三体、四体贡献，每个U标签及其q标签配对正确；无遗漏成分、额外一体项或额外数值系数。原文and/or可通过令不使用的成分函数恒为零表示；N不足相应体数时该级为空和，N=0亦合法，源段落未排除这些边界。EXTRA逐项审计：Finset.Ioi使索引依次满足i<j、i<j<k、i<j<k<l，排除重复标签并只取每个不同标签组的唯一递增代表。这是原文未指定、JSON与Lean注释已披露的计数约定；按此约定无重复计数，无需阶乘归一化，也无需U具有对称性。此约定不保证任意重标号下的置换不变性，原摘录也未要求这一结论。有限N及Fin N是有限粒子系统的标签实现；V3/Position别名是三维坐标实现，均没有偷换成标量域。未引入连续性、可微性、对称性或特定物理函数形式；源摘录亦未要求这些性质。原书“In the most common situations”是模型适用性描述，本def没有伪装成普遍分解定理或经验事实的证明。未擅自修正原书的数学判断。本条是定义，没有未覆盖的待证结论。附件两份完整定义一致，正文与本地Ch01.lean第260–267行一致。依赖审计依据及版本限制已在evidence中说明。未运行Lean编译、未修改工程、未添加证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ]
+}

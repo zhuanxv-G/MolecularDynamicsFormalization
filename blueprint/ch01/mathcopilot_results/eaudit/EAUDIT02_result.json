@@ -1,0 +1,110 @@
+{
+  "batch": "EAUDIT02",
+  "input_sha256": {
+    "BATCH_EAUDIT02.md": "3aeaf2432904580ecab2e1a39be694f41175684237dbef914b3f365a410345c1",
+    "Blueprint/Ch01.lean": "9b764387ada4d953562a25990456c387f1fb43e51bcde09a6a62badb19da0b4c",
+    "blueprint/ch01/ch01_source.json": "cf91a6af51bd962f05687a14801f5dc3a64384d2b44df20a626872110f66a04e",
+    "EAUDIT02a_materials": "a39bf5f066f094fefe937e09d5989155f3d18da16d8fc76c5f885d9d03473373",
+    "EAUDIT02a_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582",
+    "EAUDIT02b_materials": "7a437c9a52c92fcd3a9b782daee8863008b93f7b23eb9a80b42e8d10aa199e51",
+    "EAUDIT02b_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582",
+    "EAUDIT02c_materials": "87ca1940b6a88cd2cd346703a6d46ddfe1fc9007ce194f62f3f9d522b972b415",
+    "EAUDIT02c_PAGES.pdf": "a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582"
+  },
+  "items": [
+    {
+      "source_id": "MD-1.1-Schrodinger",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_HBAR_NOMENCLATURE_AMBIGUITY"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "SOURCE_HBAR_NOMENCLATURE_AMBIGUITY",
+            "location": "原PDF p.28 / 印刷p.5，式(1.1)后的符号说明；context_notation[0]",
+            "detail": "原页确实使用ℏ，并称其为Planck’s constant；JSON忠实保留了这一称谓。通常ℏ指约化Planck常数h/(2π)，与通常记为h的Planck常数不同。原书这里可能省略了reduced这一限定，也可能混用了称谓；单凭本页不能确定作者意图。依要求保留原文及公式，不擅自把ℏ换成h或把原文说明改为约化常数。",
+            "status": "NEEDS_HUMAN",
+            "suggested_action": "人工确认原书的常数约定；如需补充标准约定，另加审校注释并保留原文，不静默修订statement_latex或context_notation。",
+            "evidence": [
+              "/workspace/EAUDIT02a_PAGES.pdf，第1页",
+              "/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT02_a_page1.png",
+              "[Fermilab Holometer FAQ：ℏ=h/(2π)](https://holometer.fnal.gov/faq.html)"
+            ]
+          }
+        ],
+        "evidence": [
+          "A先于C完成：直接读取EAUDIT02a_PAGES.pdf三页文本，并渲染、查看第1页原页图像。该PDF的实际SHA-256与输入值a087738fdbc2e3ecd0026be4e4a71796d3fe703da28ff036d74b980a51960582一致。第1页的pdftotext -layout输出与工作区原书PDF第28页输出逐字节相同，页眉印刷页码为5。",
+          "statement_latex的引导句与原页逐字一致；公式的iℏ、时间一阶偏导、负号、ℏ²、j=1至13、1/(2μ_j)、x/y/z三个空间二阶偏导、U_P的坐标实参、乘Φ、句点及编号(1.1)均一致。LaTeX分式和省略号属于忠实排版转换，没有新增或漏掉公式项。",
+          "source_id为项目索引；kind=definition对应介绍并给出方程的段落，没有定理或命题标题；label=null合理，(1.1)已作为公式编号保留；section=1.1、printed_page=5及pdf_page=28正确。",
+          "proof_latex=null及proof_note正确：原段没有独立证明，也没有解存在性、唯一性或可求解性的断言。其后有关计算复杂度和Born–Oppenheimer近似的论述不属于本条方程定义。",
+          "context_notation中的13粒子=10电子+3核、每个粒子三个坐标、空间39维、复值波函数、i²=-1、第j粒子质量和原始原子势能均有原页依据；将时间加入函数类型ℝ×ℝ³⁹→ℂ是对时间依赖PDE的上下文显式化，原页没有逐字声明这个完整函数类型。",
+          "当前JSON解码后的context_notation中数学命令均为单个反斜杠，未发现尚存的重复转义；原JSON的CONTEXT_LATEX_OVERESCAPED项属于已有修复记录，不作为本次未解决的问题。review_status、repair_log、old_ids及source_page_verification是历史元数据；未把历史收据或VERIFIED_RENDERED标记当成本次视觉核对的替代。",
+          "原书常数称谓疑点保留。标准ℏ与h的关系由[Fermilab官方FAQ](https://holometer.fnal.gov/faq.html)明确给出；将本页称谓判断为可能的省略或混用是本次审校推断，并非已证实的原书公式错误。corrected_json=null表示没有需要自动替换的确定性转录修订。",
+          "C的版本对象是附件给出的当前完整MD.Ch01.schrodingerEquation及全部实际辅助定义摘录，按所给命名空间解析。工作区Ch01.lean、ch01_source.json和BATCH02.md属于不同哈希的旧本，未拿它们替换指定Blueprint/Ch01.lean、blueprint/ch01/ch01_source.json或BATCH_EAUDIT02.md。指定的三个共享键及EAUDIT02a_materials哈希按用户值回显，未声称已对未落盘的对应完整材料独立核验字节哈希。",
+          "实际定义依据：ReviewDefinitions.lean:15 Q13、:16 waveFunction、:18 planckConstant、:19 quantumMass、:20 primitivePotential、:21 coordinateDirection、:23 secondPartial；Notation.lean:13 Position；Blueprint/Ch01.lean:257起为当前方程。上述项目定义均来自本次附件，不再沿用旧返回中五个辅助定义未提供的判断。",
+          "固定标准库语义只读核对：本地Mathlib v4.34.0副本的Deriv/Basic.lean:153定义deriv=fderiv作用于1，缺导数时取0；ContDiff/Defs.lean:1068是全域连续Fréchet可微至指定阶；InnerProductSpace/PiL2.lean:114把EuclideanSpace定义为PiLp 2；Normed/Lp/PiLp.lean:141确认WithLp.toLp不改变坐标值。该副本lean-toolchain为v4.34.0，lake-manifest.json的Mathlib inputRev为v4.34.0。",
+          "已查看/workspace/share/Documents与/workspace/share/Lean，两处为空。本次只读审校工程声明和定义，未修改工程、未补Lean证明、未运行Lean编译；不以sorry或证明完成度判断签名。C的FAIL依据是完整谓词的正则性加强。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.schrodingerEquation",
+        "verdict": "FAIL",
+        "explanation": "对象逐项：planckConstant={h:ℝ // 0<h}，h.val是正实参数；quantumMass=Fin 13→{m:ℝ // 0<m}，给出13个正实粒子质量。Q13=Position 39=EuclideanSpace ℝ (Fin 39)，与按原页所列坐标顺序表示的ℝ³⁹相同；waveFunction=ℝ→Q13→ℂ，Function.uncurry Φ的域为ℝ×Q13，值域为ℂ。primitivePotential=Q13→ℝ，为不依赖时间的实势能；其类型保留势能在方程中的输入输出角色，但不自行断言某个具体函数具有电子排斥或电子—核吸引的物理形式。原段未给具体势能公式，因此不额外要求它满足某个未提供的力场定义。空间偏导逐项：WithLp.toLp 2保持坐标值；coordinateDirection i在第i坐标为1、其他坐标为0。因此对g_i(s)=Φ(t,q+s e_i)，secondPartial (Φ t) q i=deriv (deriv g_i) 0，正是沿该坐标在q处的二阶偏导，没有把二阶导误写成一阶导，也没有遗漏基点平移。当前联合C²条件足以使两个deriv都表示真实导数，避免Mathlib缺导数时返回0的默认值。索引及算子逐项：以原页顺序(q₁,x,q₁,y,q₁,z,…,q₁₃,z)解释Fin 39，i.val=3r+k对应第r+1粒子的方向k=0,1,2；i.val/3=r，且0≤r≤12，故μ索引合法并在同一粒子的三个方向重复同一质量。39项求和恰好重组为j=1,…,13的三个二阶空间偏导之和。Complex.I、正实参数的复数嵌入、时间切片deriv、负的h²系数、复数分母2μ、实势能的复数嵌入及其乘Φ均与原式一致；正质量保证分母非零。域及量词逐项：这是以h、μ、U、Φ为参数的Prop定义，没有另一个待证定理结论，也没有∃Φ。∀t q量化所有实时间和所有39维配置，包括碰撞点；原页未明确给时间区间、边界条件、初值或非碰撞域，本签名也未声明解存在。若后来给U_P指定碰撞处发散的具体物理势，则Q13→ℝ及全配置量词需要另行人工核实适用域；本次不能从原页未提供的具体势能公式断定此处已有域错误。[EXTRA]逐项：正质量与正Planck参数是物理背景的合理显式化；类型中的正性确实实现了该项。以某个正参数形式写通用方程不构成对物理常数数值的确定，也不消除A中ℏ称谓待确认的事项。只定义解满足的谓词而不声明解存在，符合原段。联合全域C²确实实现了所声明的额外正则性，并足以处理经典偏导，但强于原式需要的时间一阶、空间二阶偏导；它还要求二阶时间及时间—空间混合导数。称作经典解并不自动赋予这些额外导数。完整结论判定：在预先限定的联合C²函数类中，方程部分语义正确；但完整谓词包含C²这一额外合取项，作为原式所有经典解的精确等义定义会排除合法解。下面在签名本身允许的U=0情形给出满足原PDE且具有连续时间一阶及空间二阶偏导、却没有二阶时间导数的显式反例。因此原式到当前完整谓词的方向不成立，精确签名审计判FAIL。若项目有意只研究联合C²解子类，须明确这一范围，而不能把该子类定义报告为原式全部经典解的等义形式。此判断与sorry无关，不声称工程编译失败。",
+        "counterexample": "取任意h>0（故也可固定为书中物理参数），13个μ_j均为1，U(q)=0，令α=h/2，x=q₁,x，定义Φ(t,q)=Σ_{n=1}^∞ n⁻⁴ cos(nx) exp(−iαn²t)。该级数及时间一阶、空间一阶和二阶导数级数的项分别受n⁻⁴、αn⁻²、n⁻³、n⁻²控制，故在全部(t,q)上一致绝对收敛，所需偏导存在且连续；其余38个空间坐标的导数均为0。逐项微分得∂tΦ=−iαΣ n⁻²cos(nx)exp(−iαn²t)，∂x²Φ=−Σ n⁻²cos(nx)exp(−iαn²t)，于是ih∂tΦ=−(h²/2)∂x²Φ，正好满足原式及Lean的方程合取项。然而在q=0处，令F(t)=∂tΦ(t,0)，则t>0时[Im F(t)−Im F(0)]/t=(α/t)Σ n⁻²[1−cos(αn²t)]。每项非负；限制到1/√(αt)≤n≤√2/√(αt)，括号≥1−cos1>0，n⁻²≥αt/2，且该区间在充分小t时至少有(√2−1)/(2√(αt))个整数。因此差商≥[(1−cos1)(√2−1)α^(3/2)/4]t⁻¹/²→+∞。F在0不可微，二阶时间导数不存在，故ContDiff ℝ 2 (Function.uncurry Φ)为假。该反例展示正则性加强，未声称它是某个未提供的具体水分子势能的物理解，也没有借助数值拟合。",
+        "suggested_fix": "不修改原书公式。若目标是忠实表达原式的经典解谓词，应以时间切片的一阶可微性、每个空间坐标切片的二阶可微性及所需偏导的连续性取代额外的联合全域C²，并保留同一方程和坐标/质量对应；不要只删正则性条件，因为Mathlib的deriv在不可微处会返回0。若项目有意采用更强的联合C²解子类，则在定义名或明确的范围说明中标明这一限制，并将其与原式的陈述层区分后重新审计。ℏ的物理称谓保留原文并待人工确认；若随后绑定有奇点的具体势能，再按其真实定义域限定配置量词。"
+      }
+    },
+    {
+      "source_id": "MD-1.1-NewtonModel",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "顺序A→C：先读取EAUDIT02b_PAGES.pdf全部三页并渲染、目视核对第2页，之后展开本次附件所列当前完整签名和项目实际定义。第1/2/3页分别对应原PDF28/29/30、印刷5/6/7；本条在第2页，即原PDF29、印刷6。实际PDF哈希与输入值一致。视觉证据：/workspace/.mathcopilot/reviews/ch01_eaudit/EAUDIT02_b_page2.png。",
+          "逐字核对statement_latex：where the forces…至written out as与原页一致；两次第i个核均已保留；N-atom、atomic mass及m_i正确。式(1.2)的x/y/z三坐标、每项质量m_i、时间二阶导数、三个负号、势能对对应坐标的偏导、逗号、末句点及编号均一致。公式后关于必须在同一指定时刻给所有原子的位置和速度的句子完整，没有缺词或改变结论。",
+          "kind=definition是方程/模型介绍的索引分类，并非原书带标题的定义；label=null与没有独立定义标签一致，方程编号已在statement_latex保留。section=1.1、printed_page=6、pdf_page=29正确；proof_latex=null及proof_note与没有独立证明一致。source_id与lean_decl为项目绑定字段。",
+          "context_notation逐项：印刷6页首明确U=U_BO仅依赖核位置；n=3N及每粒子质量重复三次由N个原子的三坐标及式(1.2)同一m_i推出，是忠实的展平约定。原文后续允许以经验势近似U_BO，故该上下文不应解释为Lean参数U已通过某个电子问题被证明等于精确BO势。",
+          "extra_assumptions第一项的通用n维版本只是辅助；第二项标明的精确N*3维、重复质量、正质量、开放连通且含初始时刻的时间域、沿轨迹的势能可微性均在当前定义中得到落实。沿轨迹可微应精确理解为每个轨迹位置处U关于全部位置变量Fréchet可微，而非仅复合函数U∘q关于时间可微。该项是模型资格，不能转录为原书逐字假设。",
+          "review_status=CORRECTED、issues中的SOURCE_WORD_OMISSION、repair_log、old_ids、source_page_verification均是已有修复/来源元数据；当前文本已含第二次$i$th，不再报告未解决的遗漏。未独立验证历史收据、时间戳及before/after哈希，不把历史标记当成本次核对证据。没有发现本条原书数学疑误或确定性转录错误；corrected_json=null表示不需要另给替换JSON。",
+          "C的绑定对象为本次附件中的当前完整MD.Ch01.newtonInitialValueModel及全部实际依赖摘录：Blueprint/Ch01.lean:54、75、270，ParticleCoordinates.lean:20、25、28，LocalTrajectories.lean:18，NBody.lean:19、22，Notation.lean:13–15、18、21。旧FAIL仅作历史材料，不代替当前定义。",
+          "版本边界：工作区根目录Ch01.lean实际哈希91615288602dee2928553f6c291d40cf3669afdf8ba11ee4b5c53362e8db9240，ch01_source.json实际哈希4fc9fe79886fe39cd1c3c71ffa01ca45915bb8240d03f81adc8ee5076c41e695，均不同于指定共享键对应版本；未用这些旧文件覆盖或推翻附件当前定义。三个指定共享键与已有EAUDIT02_review.json完全相同，允许合并。input_sha256全部按用户值回显；没有宣称未落盘的BATCH_EAUDIT02.md、Blueprint/Ch01.lean、blueprint/ch01/ch01_source.json或EAUDIT02b_materials已独立通过字节哈希核验。",
+          "固定标准库只读核对：本地Mathlib副本路径/workspace/.mathcopilot/reviews/T2_T5_9baf87f_20261003/source/MolecularDynamicsFormalization-9baf87f89d07138a95bfbfe1f37d45dd54946cf7/.lake/packages/mathlib；项目lean-toolchain=v4.34.0，lake-manifest的mathlib inputRev=v4.34.0。Gradient/Basic.lean:84、148确认gradient由fderiv经实内积对偶表示，DifferentiableAt.hasGradientAt保证真实梯度；Deriv/Basic.lean:153、433确认deriv及HasDerivAt.deriv；Logic/Equiv/Fin/Basic.lean:332确认finProdFinEquiv映射(i,a)到a+3*i；InnerProductSpace/PiL2.lean:1242–1247确认toEuclideanLin为标准正交坐标中的矩阵线性映射。",
+          "share/Documents和share/Lean已查看，均无共享文件。本次审校没有修改工程、没有补证明、没有运行Lean编译；PASS为所提供完整签名在声明的经典模型资格下的语义审计，不是工程编译报告，不以sorry判定。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.newtonInitialValueModel",
+        "verdict": "PASS",
+        "explanation": "对象/域：N:ℕ为粒子数，m:Fin N→ℝ给每粒子一个质量；位置、初位置、初速度属于EuclideanSpace ℝ (Fin (N*3))，速度和动量别名使用同一坐标空间。U:Position(N*3)→ℝ是不显含时间的实势能，Q是允许的位置集合，I是实时间集合，q:ℝ→Position(N*3)是全域函数但运动要求只施于I，t₀为同一初始时刻。没有声称U来自已形式化的BO求解、没有给出某个具体经验力场。坐标/质量：particleCoordinateEquiv N 3=finProdFinEquiv将(i,a)映射到3*i+a；coordinateMassesOfParticles将三个坐标均赋质量m i。diagonalMassMatrix=Matrix.diagonal，massOperator是其欧氏线性映射，故每坐标作用为m i乘加速度，未出现质量平方、逆质量或异粒子质量。量词/前提：展开后依次要求所有展平坐标质量>0；IsOpen I；IsPreconnected I；t₀∈I；∀t∈I，U在q t处DifferentiableAt ℝ；∀t∈I，q t∈Q且q与deriv q均有HasDerivAt见证并满足质量算子乘二阶导数=−gradient U(q t)；最后q t₀=q₀与HasDerivAt q v₀ t₀。初值是整向量等式，覆盖所有粒子及所有三坐标；真实导数见证使deriv q t₀=v₀。非空性来自t₀∈I，实直线上的非空开放预连通集合是开放区间（可无界），故指定时刻位于方程有效域内且q₀∈Q由轨迹条件推出。时间导数：两层HasDerivAt保证一阶和二阶时间导数真实存在；没有把不可微处默认取零当作运动解。开放I保证I内每点有完整时间邻域，q在I外的任意延拓不改变这些局部导数。空间导数：DifferentiableAt ℝ U(q t)在有限维实内积空间给真实gradient，其坐标恰为原式各偏导；质量算子等式逐坐标就是式(1.2)三条方程。[EXTRA]逐项判断：N*3和重复质量是原三维N原子模型的精确实现；正质量是核质量物理背景的明确资格；包含t₀的开放连通时间域是局部经典初值问题的明确域约定，原页未逐字规定开放/连通；势能在轨迹位置Fréchet可微是明确的经典势能资格，强于仅有各偏导而不具有全微分的病态情况，但没有要求U全域C¹/C²、没有要求q全域C²，也没有添加不必要的二阶时间连续性。以上额外资格已明示，应在此资格范围内解读PASS，不把其报告为没有任何资格的任意分量偏导方程的全体解。Q无需在签名中全域开放，因U是全空间函数且要求轨迹点处真实全空间微分；若未来使用仅定义在Q或含奇点的势能，需要另行核对其延拓/局部定义，不属于当前已提供定义的失败。N=0允许空坐标退化模型，原页没有明写N>0，不影响N≥1的物理实例。结论类型：本声明是Prop定义，不是存在性/唯一性定理，没有∃q或声称初值必定产生唯一运动；与原文强调初值必需而未在此段证明解存在唯一相符。旧FAIL的三个核心缺口均已修复：t₀现在必须属于非空时间域，U的真实梯度有资格保证，N*3及逐粒子重复质量成为本声明实际约束。因此在明确标注的经典局部初值模型范围内判PASS，与sorry无关。",
+        "counterexample": null,
+        "suggested_fix": "当前签名无需修复。保留[EXTRA]及其范围说明；文档宜把“势能沿轨迹可微”明确写成“∀t∈I，U在q(t)处关于全部位置变量Fréchet可微”，避免误读为仅U∘q关于时间可微。不要由该Prop定义推断解存在、唯一，或无资格的全部分量偏导解与其等价。旧反例I=∅或t₀∉I均已被排除，不再沿用旧FAIL。"
+      }
+    },
+    {
+      "source_id": "MD-1.1-HardSphere",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已读取EAUDIT02c_PAGES.pdf全部三页文本，并视觉核对第3页（原PDF30、印刷7）；statement_latex两句逐字一致，忽略排版换行；原书确实使用单数collision，未擅改为collisions。",
+          "kind=definition、label=null、section=1.1、printed_page=7、pdf_page=30匹配原页；原段没有独立证明，proof_latex=null与proof_note合理；没有必须补入的原文符号，context_notation=[]合理。",
+          "历史[EXTRA]明确标为历史；新增[EXTRA]是形式化选择，不能作为原书逐字陈述或自动等价依据。repair_log、old_ids、source_page_verification作为既有溯源信息保留；本次未独立认证其历史日志中的文件。",
+          "本次仅审查原文JSON，不回写源JSON；corrected_json=null表示无逐字修订。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch01.hardSphereModel",
+        "verdict": "FAIL",
+        "explanation": "C：分开审查附件所给修复签名与本地实际文件。共享结果中的三个版本键与本任务给定键完全相同，可以合并；这些键是用户提供的快照标识，并不意味着本地同名文件具有对应哈希。\n版本限制：未找到指定路径Blueprint/Ch01.lean、blueprint/ch01/ch01_source.json、BATCH_EAUDIT02.md及所给ReviewDefinitions.lean。实际/workspace/Ch01.lean哈希91615288602dee2928553f6c291d40cf3669afdf8ba11ee4b5c53362e8db9240，第250行仍是旧瞬时守恒定义；/workspace/ch01_source.json哈希4fc9fe79886fe39cd1c3c71ffa01ca45915bb8240d03f81adc8ee5076c41e695。这些是不同版本，不能冒充附件绑定版本。修复已落入工程及V3的实际名称解析需NEEDS_HUMAN认证。本地Notation.lean第11行支持Position n=EuclideanSpace ℝ (Fin n)，但未找到实际V3声明。\n对象/域：附件中N:ℕ、Fin N为有限原子指标，R,m为固定正半径与质量；按附件V3→Position 3→EuclideanSpace ℝ (Fin 3)，对象为欧氏三维。I是开放且预连通时间域，C⊆I；q,v,before,after在全ℝ上定义而只在I内受约束；pair在全ℝ上定义而只在C使用。N=0和I=∅未排除，谓词可以真空成立；原文未给非空资格，不单凭此判FAIL，但应说明。\n量词/前提：全i正资格；全t∈I全不同i,j距离下界；全i位置在I连续；全t∈I\\C全i位置导数=v及速度导数=0。局部隔离条件对I每个点成立，因此不只是C内每个事件孤立，还排除I内部任何碰撞聚点；允许在I边界累积。它避免以稠密C掏空自由运动条件，但比原文更强。\n碰撞结论：全t∈C选一对不同指标，在接触距离R_i+R_j时使用before/after；全k实际速度的左右极限等于对应before/after，其他粒子左右速度相等。I开放保证碰撞点两侧确有时间域；C局部隔离和自由运动、q连续将极限速度接到邻侧轨迹。未要求v(t,k)本身等于任一侧速度，碰撞点速度值完全自由。\nbinaryElasticSphereCollision：在正半径、正质量及接触下，法向从q₁指向q₂且非零；入射条件inner(v₁-v₂,n)≥0符号正确。两个质量系数2m₂/(m₁+m₂)、2m₁/(m₁+m₂)及相反冲量正确；法向反转与分离不等式正确。总动量和动能的m‖v‖²/2正确，且由更新式可推出，显式重复无错误。允许零入射的擦碰或静止接触，因此C不是精确的非零冲量事件集合；原书没有给事件集合定义。\n[EXTRA]逐项：固定正质量/半径是合理物理资格；开放连通I是局部研究域选择；无摩擦孤立二体更新是standard rules的一种合理具体化，但原段没有规定只适用单对碰撞；每个事件最多一对速度改变是实质限制，甚至排除同一时刻空间分离的两对独立二体碰撞，并非仅需另设多接触规则。局部无聚点是假设而非原文结论；全对全时间不可穿透、连续位置、碰外自由运动为硬球模型的合理补全；接入左右极限、冲量与守恒修复了旧定义的大部分缺失。旧只编码必要条件的历史说明不适用于修复签名。\n判定：实际可读取的旧工程定义仍有明确穿透反例，故FAIL。附件修复签名可作为局部无累积、每时刻至多一对更新的无摩擦二体轨迹谓词；旧反例对它不成立。若要求与原文完整一般模型等价，则单对限制不充分覆盖原文，必须改名限定或补全。若把v解释为每个时刻的实际速度，则碰撞点任意值也是缺口；若明确速度只按碰外值和左右极限解释，则该点值缺口可用约定解决，不是轨迹穿透反例。是否接受这些[EXTRA]限制需人工确认。未因sorry判FAIL，未修改工程、补证明或声称已编译绑定签名。",
+        "counterexample": "实际旧工程反例：R₁=R₂=m₁=m₂=1，q₁=0、q₂=2e₁，v₁=w₁=e₁、v₂=w₂=−e₁。正资格、接触、动量0和动能1满足旧谓词；按碰后速度运动会立即使距离2−2t<2。此反例不满足附件修复谓词。\n附件修复的碰撞点值自由示例：N=2，R=m=1，I=(−1,1)，C={0}，q₁(t)=−(1+|t|)e₁，q₂(t)=(1+|t|)e₁。t<0取v₁=e₁,v₂=−e₁；t>0取v₁=−e₁,v₂=e₁；before(0)=(e₁,−e₁)，after(0)=(−e₁,e₁)，pair(0)=(0,1)。全部附件条件成立，即使任意设置v(0,0)=100e₁,v(0,1)=0。该点总动量为100e₁、动能5000，而两侧动量0、动能1。它不否定以左右速度定义的守恒，只否定未限定的v全时刻为实际速度及全时刻能量守恒解释。\n覆盖性示例：取四个单位质量/半径球，第一对沿y=0直线使用上述轨迹，第二对沿y=10直线使用同样轨迹；两对在t=0独立同时弹性反弹，交叉对距离始终≥10。四个粒子都有非零速度跳跃；任何单一pair(0)都迫使其余两个after=before，故附件谓词拒绝这个无多接触、符合原文硬球规则的轨迹。",
+        "suggested_fix": "先提供对应给定哈希的实际工程文件及V3解析证据，不将旧本地文件视为修复版本。保留原书文字。若使用现有修复定义，明确名称/文档为局部无累积且每时刻至多一对更新的无摩擦硬球模型，并让人工确认这一范围；若覆盖一般模型，将pair改为同一时刻的无交叠碰撞对集合，各对应用二体更新，参与多接触的粒子另设规则。明确v在碰撞点采用右连续约定（例如v t k=after t k），或明确只使用碰外v及左右极限计算实际守恒量；不要声称原文已经给出这些约定。"
+      }
+    }
+  ]
+}
