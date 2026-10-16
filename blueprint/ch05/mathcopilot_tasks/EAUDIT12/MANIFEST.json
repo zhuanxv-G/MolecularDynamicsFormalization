@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT12",
+  "input_sha256": {
+    "BATCH_EAUDIT12.md": "b1e3f977ab4c2e416761159b570ad32d18c3b848ad1737a8a580a95747080ec5",
+    "Blueprint/Ch05.lean": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
+    "blueprint/ch05/ch05_source.json": "c4a00d697df9499304c1f4854b70c49483950c6175c8559ef4dbd204f917d31e"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT12a",
+      "source_id": "MD-5.4-TimeAverage",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/a",
+      "total_bytes": 98332,
+      "manifest_sha256": "be221d533ed6d84496e7afeb068cba966b50918a944424c78a3ba230ed81f969"
+    },
+    {
+      "subtask": "EAUDIT12b",
+      "source_id": "MD-5.4-HasTimeAverage",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/b",
+      "total_bytes": 98900,
+      "manifest_sha256": "5e0ef69cfa4ed4e46aed08da6800bf69d8d7380fea4870390119bca6f3c00b2b"
+    },
+    {
+      "subtask": "EAUDIT12c",
+      "source_id": "MD-5.4-ConservedAverage",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/c",
+      "total_bytes": 181387,
+      "manifest_sha256": "42a235f7127574ef8b89020deb0ec9dd9fe879778844b27a0f83a19efbae69b5"
+    },
+    {
+      "subtask": "EAUDIT12d",
+      "source_id": "MD-5.4-ConservedInfiniteAverage",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/d",
+      "total_bytes": 182471,
+      "manifest_sha256": "238c52d184bbfe2a5ea5ebf3cfe786554b39a955d0a23db0def6a2a42390af69"
+    },
+    {
+      "subtask": "EAUDIT12e",
+      "source_id": "MD-5.4-DoubleWellEnergy",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/e",
+      "total_bytes": 156121,
+      "manifest_sha256": "2b1b13d770b79e24f57355af504a955149a9d8074223ee6b69288bfcb454fe4f"
+    },
+    {
+      "subtask": "EAUDIT12f",
+      "source_id": "MD-5.4-DoubleWellBasin",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/f",
+      "total_bytes": 170694,
+      "manifest_sha256": "c45df8217afaa708b239f0530c61be5a005762214ba5ca79e1b13e29a95c58fe"
+    }
+  ]
+}

@@ -1963,5 +1963,35 @@
     "category": "B",
     "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
     "section": "5.3.3"
+  },
+  "MD-5.4-TimeAverage": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅式(5.9)有限截断平均因子；无限时间极限存在谓词由MD-5.4-HasTimeAverage承担。",
+    "section": "5.4"
+  },
+  "MD-5.4-ConservedAverage": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅守恒观测量的有限平均辅助恒等式；第一积分及任意函数复合的无限平均由MD-5.4-ConservedInfiniteAverage承担。",
+    "section": "5.4"
+  },
+  "MD-5.4-DoubleWellEnergy": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅双阱势与能量公式定义；非负及强制性由MD-5.4-DoubleWellCoercivity承担。",
+    "section": "5.4"
+  },
+  "MD-5.4-DoubleWellBasin": {
+    "category": "B",
+    "handling": "保留左右阱不变性，补全局C∞紧支撑观测量的明确见证：它在两个分离能量分支上分别为0/1，时间平均与真实对称微正则空间平均1/2不等；不把平均不等作前提，也不把不连续全局indicator冒充原光滑观测量。",
+    "section": "5.4"
+  },
+  "MD-5.4-HasTimeAverage": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.4"
+  },
+  "MD-5.4-ConservedInfiniteAverage": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.4"
   }
 }

@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT12",
+  "source_id": "MD-5.4-TimeAverage",
+  "input_sha256": {
+    "BATCH_EAUDIT12.md": "b1e3f977ab4c2e416761159b570ad32d18c3b848ad1737a8a580a95747080ec5",
+    "Blueprint/Ch05.lean": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
+    "blueprint/ch05/ch05_source.json": "c4a00d697df9499304c1f4854b70c49483950c6175c8559ef4dbd204f917d31e",
+    "EAUDIT12a_materials": "3986fa3172c170954a7fe61d4fcb100c1bca95346adced037cf0116f4288ff24",
+    "EAUDIT12a_PAGES.pdf": "ad76d019954f1f113fd9a180f502967b8fc539f074731653d3dba0ff55da0214"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    216
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "458e352785d1d0c6f74f737839d106292e30396f35999c47faea272fb433b4d1",
+  "source_block_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86",
+  "source_declarations": [
+    "timeAverage"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "timeAverage",
+      "file_sha256": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
+      "excerpt_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT12_review.json",
+  "total_task_bytes": 98332
+}

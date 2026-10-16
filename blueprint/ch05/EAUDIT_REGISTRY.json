@@ -532,5 +532,53 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/INDEX.md"
+  },
+  {
+    "chapter": 5,
+    "eaudit": "EAUDIT12",
+    "section": "5.4",
+    "source_ids": [
+      "MD-5.4-ConservedAverage",
+      "MD-5.4-ConservedInfiniteAverage",
+      "MD-5.4-DoubleWellBasin",
+      "MD-5.4-DoubleWellEnergy",
+      "MD-5.4-HasTimeAverage",
+      "MD-5.4-TimeAverage"
+    ],
+    "reaudit_ids": [
+      "MD-5.4-TimeAverage",
+      "MD-5.4-HasTimeAverage",
+      "MD-5.4-ConservedAverage",
+      "MD-5.4-ConservedInfiniteAverage",
+      "MD-5.4-DoubleWellEnergy",
+      "MD-5.4-DoubleWellBasin"
+    ],
+    "human_ids": [],
+    "lean_sha256": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
+    "source_sha256": "c4a00d697df9499304c1f4854b70c49483950c6175c8559ef4dbd204f917d31e",
+    "pages": [
+      216,
+      217,
+      218
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch05.olean",
+        "Blueprint/Ch05.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
+      "log_sha256": "038ae5ce379fef944f111ad9d223da71763dd7129a06eb67d924ba0f03ec6269"
+    },
+    "axiom_decl_count": 7,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/INDEX.md"
   }
 ]

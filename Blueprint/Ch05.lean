@@ -1096,7 +1096,8 @@ theorem ambientLowerDimensionNull : ∀ n d (g : MolecularDynamics.Chapter05Revi
   d < n → ContDiff ℝ 1 g → IsCompact K → volume (g '' K)=0 := by
   sorry
 
-/-- source_id: MD-5.4-TimeAverage · definition · §5.4 · 印刷p.195 / PDFp.216 -/
+/-- source_id: MD-5.4-TimeAverage · definition · §5.4 · 印刷p.195 / PDFp.216 
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅式(5.9)有限截断平均因子；无限时间极限存在谓词由MD-5.4-HasTimeAverage承担。 -/
 def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
 
 /-- source_id: MD-5.4-HasTimeAverage · definition · §5.4 · 印刷p.195 / PDFp.216 -/
@@ -1104,7 +1105,8 @@ def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop 
   Tendsto (MolecularDynamics.Chapter05Review.timeAverage z g) atTop (𝓝 a)
 
 /-- source_id: MD-5.4-ConservedAverage · unnumbered_claim · §5.4 · 印刷p.196–197 / PDFp.217–218
-[EXTRA] [EXTRA]任意真实轨道和已给出的第一积分守恒值；有限T≠0平均等于其值，T→∞结论另条，不把有限式称无限极限已经检查。 -/
+[EXTRA] [EXTRA]任意真实轨道和已给出的第一积分守恒值；有限T≠0平均等于其值，T→∞结论另条，不把有限式称无限极限已经检查。 
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅守恒观测量的有限平均辅助恒等式；第一积分及任意函数复合的无限平均由MD-5.4-ConservedInfiniteAverage承担。 -/
 theorem conservedAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ)
     (h : ∀ t,g (z t)=a) (T : ℝ) (hT : T ≠ 0) : MolecularDynamics.Chapter05Review.timeAverage z g T=a := by
   apply MolecularDynamics.Chapter05Review.conservedAverage_proved <;> assumption
@@ -1121,7 +1123,8 @@ theorem conservedInfiniteAverage {X : Type*} (z : ℝ → X) (I : X → ℝ) (r 
     exact MolecularDynamics.Chapter05Review.conservedAverage_proved z g (g (z 0)) hg T (ne_of_gt hT)
   exact ⟨hm I hI,hm (r ∘ I) (fun t => by simp only [Function.comp_apply,hI])⟩
 
-/-- source_id: MD-5.4-DoubleWellEnergy · Example 5.3 · §5.4 · 印刷p.196 / PDFp.217 -/
+/-- source_id: MD-5.4-DoubleWellEnergy · Example 5.3 · §5.4 · 印刷p.196 / PDFp.217 
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅双阱势与能量公式定义；非负及强制性由MD-5.4-DoubleWellCoercivity承担。 -/
 def doubleWellEnergy (z : MolecularDynamics.Chapter05Review.E 2) : ℝ := (z 1)^2/2+(1-(z 0)^2)^2
 
 /-- source_id: MD-5.4-DoubleWellCoercivity · unnumbered_claim · §5.4 · 印刷p.196 / PDFp.217
@@ -1173,7 +1176,8 @@ theorem doubleWellDisconnected : ∀ c ∈ Ioo (0 : ℝ) 1,
   nlinarith [sq_nonneg (z 1),hc.2]
 
 /-- source_id: MD-5.4-DoubleWellBasin · unnumbered_claim · §5.4 · 印刷p.196 / PDFp.217
-[EXTRA] [EXTRA]实际连续且守恒的轨道；保持左右basin全部结论；“许多平均不近似总平均”是定性后果，未编造数值误差界。 -/
+[EXTRA] [EXTRA]实际连续且守恒的轨道；保持左右basin全部结论；“许多平均不近似总平均”是定性后果，未编造数值误差界。 
+[EXTRA] 保留左右阱不变性，补全局C∞紧支撑观测量的明确见证：它在两个分离能量分支上分别为0/1，时间平均与真实对称微正则空间平均1/2不等；不把平均不等作前提，也不把不连续全局indicator冒充原光滑观测量。 -/
 theorem doubleWellBasin : ∀ (z : ℝ → MolecularDynamics.Chapter05Review.E 2) c,
   Continuous z → c ∈ Ioo (0 : ℝ) 1 → (∀ t,doubleWellEnergy (z t)=c) →
   ∀ t,((z 0) 0 > 0 ∧ (z t) 0 > 0) ∨ ((z 0) 0 < 0 ∧ (z t) 0 < 0) := by
@@ -1201,6 +1205,16 @@ theorem doubleWellBasin : ∀ (z : ℝ → MolecularDynamics.Chapter05Review.E 2
     have hpos : 0 < q t := lt_of_le_of_ne (le_of_not_gt ht) (Ne.symm (hn t))
     obtain ⟨s,hs⟩ := intermediate_value_univ 0 t hq (show (0 : ℝ) ∈ Icc (q 0) (q t) from ⟨hneg.le,hpos.le⟩)
     exact hn s hs
+
+theorem doubleWellBasin_average_witness (c : ℝ) (_hc : c ∈ Ioo (0 : ℝ) 1)
+    (z : ℝ → MolecularDynamics.Chapter05Review.E 2) (_hz : Continuous z)
+    (_hE : ∀ t,doubleWellEnergy (z t)=c) :
+    ∃ g : MolecularDynamics.Chapter05Review.E 2 → ℝ,ContDiff ℝ ∞ g ∧ HasCompactSupport g ∧
+      (∀ x,doubleWellEnergy x=c → g x=if 0 < x 0 then (1 : ℝ) else 0) ∧
+      MolecularDynamics.Chapter05Review.microAverage doubleWellEnergy c g=1/2 ∧
+      MolecularDynamics.Chapter05Review.hasTimeAverage z g (g (z 0)) ∧
+      g (z 0) ≠ MolecularDynamics.Chapter05Review.microAverage doubleWellEnergy c g := by
+  sorry
 
 /-- source_id: MD-5.4.1-UniformMicroErgodic · Definition 5.1 · §5.4.1 · 印刷p.197 / PDFp.218
 [EXTRA] [EXTRA]沿用前文光滑可观测量且明确µ可积，避免给不存在空间平均的函数套等式；AE采用真实µ_E零测资格。 -/
@@ -2142,6 +2156,7 @@ end MD.Ch05
 #print axioms MD.Ch05.doubleWellCoercivity
 #print axioms MD.Ch05.doubleWellDisconnected
 #print axioms MD.Ch05.doubleWellBasin
+#print axioms MD.Ch05.doubleWellBasin_average_witness
 #print axioms MD.Ch05.uniformMicroErgodic
 #print axioms MD.Ch05.microErgodic
 #print axioms MD.Ch05.flowInvariant

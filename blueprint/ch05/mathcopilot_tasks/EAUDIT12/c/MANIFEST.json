@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT12",
+  "source_id": "MD-5.4-ConservedAverage",
+  "input_sha256": {
+    "BATCH_EAUDIT12.md": "b1e3f977ab4c2e416761159b570ad32d18c3b848ad1737a8a580a95747080ec5",
+    "Blueprint/Ch05.lean": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
+    "blueprint/ch05/ch05_source.json": "c4a00d697df9499304c1f4854b70c49483950c6175c8559ef4dbd204f917d31e",
+    "EAUDIT12c_materials": "f203cdefec2e3e843aa2a7bc7f4d93ffae377c0db946c606c6da4668deefb1d7",
+    "EAUDIT12c_PAGES.pdf": "1348a88e2661056fd0e74f5ca825489b16999ad99bb292f3bc7ec75cd12841d1"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    217,
+    218
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "4fae2b68ed6cc569a6781602ec22a5f429726d50dbc51d6a2428c9e4dc47edec",
+  "source_block_sha256": "552be704274760c68e92d4cf19fb073f6191d18bc2a3e4fe62340a94a63b1455",
+  "source_declarations": [
+    "conservedAverage"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.timeAverage",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "timeAverage",
+      "file_sha256": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
+      "excerpt_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT12_review.json",
+  "total_task_bytes": 181387
+}

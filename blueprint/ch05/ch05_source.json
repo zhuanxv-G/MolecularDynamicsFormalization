@@ -3331,21 +3331,39 @@
     "section": "5.4",
     "printed_page": "195",
     "pdf_page": "216",
-    "statement_latex": "Given an autonomous system of differential equations $\\dot z=f(z)$ in $\\mathbb R^m$, and a trajectory $\\tau=\\{z(t)\\mid t\\in[0,\\infty)\\}$, let $g=g(z)$ be any smooth scalar valued function of $z$ (an observable) and define (assuming it exists) the infinite time average of $g$ along $\\tau$ by\n\\[\\bar g=\\lim_{T\\to\\infty}\\frac1T\\int_0^T g(z(t))dt.\\tag{5.9}\\]",
+    "statement_latex": "Given an autonomous system of differential equations $\\dot z=f(z)$ in $\\mathbb R^m$, and a trajectory $\\Gamma=\\{z(t)\\mid t\\in[0,\\infty)\\}$, let $g=g(z)$ be any smooth scalar valued function of $z$ (an observable) and define (assuming it exists) the infinite time average of $g$ along $\\Gamma$ by\n\\[\\bar g_\\Gamma=\\lim_{\\tau\\to\\infty}\\tau^{-1}\\int_0^\\tau g(z(t))dt.\\tag{5.9}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "真实0..T区间积分；T>0及极限存在意义另条，T=0总化值不赋予平均意义。"
+      "真实0..T区间积分；T>0及极限存在意义另条，T=0总化值不赋予平均意义。",
+      "原PDF式(5.9)使用 Γ 表示轨道、τ 表示截断时间、ḡ_Γ 表示依赖轨道的平均；Lean 用 z 和 T 表示相应对象。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch05.timeAverage",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "extra_assumptions": [
+      "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅式(5.9)有限截断平均因子；无限时间极限存在谓词由MD-5.4-HasTimeAverage承担。"
+    ],
+    "statement_scope": "仅式(5.9)有限截断平均因子；无限时间极限存在谓词由MD-5.4-HasTimeAverage承担。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:00:27.167822",
+        "before_sha256": "6fc82c38dcd5991add90b39dae3ee0371cfb24a9692acb7a3078691af54ffe3d",
+        "after_sha256": "7b8c750bd3f2c5621d88d3e051a4128ee82e394b2b76161b92f93aa5579cfe0b",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation",
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4-HasTimeAverage",
@@ -3354,21 +3372,36 @@
     "section": "5.4",
     "printed_page": "195",
     "pdf_page": "216",
-    "statement_latex": "define (assuming it exists) the infinite time average of $g$ along $\\tau$ by $\\bar g=\\lim_{T\\to\\infty}T^{-1}\\int_0^Tg(z(t))dt$.",
+    "statement_latex": "define (assuming it exists) the infinite time average of $g$ along $\\Gamma$ by $\\bar g_\\Gamma=\\lim_{\\tau\\to\\infty}\\tau^{-1}\\int_0^\\tau g(z(t))dt$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "真实Tendsto atTop；定义未声称所有轨道或所有可观测量必有极限。"
+      "真实Tendsto atTop；定义未声称所有轨道或所有可观测量必有极限。",
+      "原PDF式(5.9)使用 Γ 表示轨道、τ 表示截断时间、ḡ_Γ 表示依赖轨道的平均；Lean 用 z 和 T 表示相应对象。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch05.hasTimeAverage",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:00:27.167822",
+        "before_sha256": "c8a31f2ee8ca2b2bcfd04bf695e1a8bac182ab3566b99d020c95c447524dd1f9",
+        "after_sha256": "0c7e958c69cff78f4e6ea9a8a901776292f123b85d6d0a51064ccc4338229cee",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4-ConservedAverage",
@@ -3388,12 +3421,26 @@
       "MolecularDynamics.Chapter05Review.conservedAverage_proved"
     ],
     "extra_assumptions": [
-      "[EXTRA]任意真实轨道和已给出的第一积分守恒值；有限T≠0平均等于其值，T→∞结论另条，不把有限式称无限极限已经检查。"
+      "[EXTRA]任意真实轨道和已给出的第一积分守恒值；有限T≠0平均等于其值，T→∞结论另条，不把有限式称无限极限已经检查。",
+      "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅守恒观测量的有限平均辅助恒等式；第一积分及任意函数复合的无限平均由MD-5.4-ConservedInfiniteAverage承担。"
     ],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "statement_scope": "仅守恒观测量的有限平均辅助恒等式；第一积分及任意函数复合的无限平均由MD-5.4-ConservedInfiniteAverage承担。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:00:27.167822",
+        "before_sha256": "6fd3927d311cea313272eefb3829838f5dd7dc28d361691ae6e7e59485608b3f",
+        "after_sha256": "19e5e0d419bf9055dd5b9080e01a07a31fc3ef17c1a02426ba64f46eb59436ba",
+        "changed_fields": [
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4-ConservedInfiniteAverage",
@@ -3402,7 +3449,7 @@
     "section": "5.4",
     "printed_page": "196–197",
     "pdf_page": "217–218",
-    "statement_latex": "the energy itself is a conserved quantity along trajectories, and its average is therefore a function of the initial condition. The average of this conserved quantity (and any other quantity that depends upon it) will be dependent on the choice of initial condition.",
+    "statement_latex": "Considering any conservative system, we know that the energy itself is a conserved quantity along trajectories, and its average is therefore a function of the initial condition. More generally, if a given system has a first integral (conserved quantity) $I=I(z)$, different from the energy, which is preserved along trajectories, then the average of this conserved quantity (and any other quantity that depends upon it) will be dependent on the choice of initial condition.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3414,9 +3461,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:00:27.167822",
+        "before_sha256": "9848fd92290ef4a1d82f52ea0ce6c57e51505fd4f2e53c5c34f28a913004d071",
+        "after_sha256": "fdf737e3485af2284363a1b16aa9e58b68a9d246f1a3143bb69c6c0f685eedfb",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4-DoubleWellEnergy",
@@ -3435,11 +3495,26 @@
     "issues": [],
     "lean_decl": "MD.Ch05.doubleWellEnergy",
     "reusable_proofs": [],
-    "extra_assumptions": [],
-    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "extra_assumptions": [
+      "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅双阱势与能量公式定义；非负及强制性由MD-5.4-DoubleWellCoercivity承担。"
+    ],
+    "statement_scope": "仅双阱势与能量公式定义；非负及强制性由MD-5.4-DoubleWellCoercivity承担。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:00:27.167822",
+        "before_sha256": "0c4ab3d62e6282d23bcaaf660e9490cff9742226a4a40ffed37409723f2598ad",
+        "after_sha256": "024826b63c66dd7ed2f0fcb3cece4fbf14ffdfce13837d1250091b3327019431",
+        "changed_fields": [
+          "statement_scope"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4-DoubleWellCoercivity",
@@ -3501,12 +3576,24 @@
     "lean_decl": "MD.Ch05.doubleWellBasin",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]实际连续且守恒的轨道；保持左右basin全部结论；“许多平均不近似总平均”是定性后果，未编造数值误差界。"
+      "[EXTRA]实际连续且守恒的轨道；保持左右basin全部结论；“许多平均不近似总平均”是定性后果，未编造数值误差界。",
+      "[EXTRA] 保留左右阱不变性，补全局C∞紧支撑观测量的明确见证：它在两个分离能量分支上分别为0/1，时间平均与真实对称微正则空间平均1/2不等；不把平均不等作前提，也不把不连续全局indicator冒充原光滑观测量。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT12_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:00:27.167822",
+        "before_sha256": "7019cce51d3be57047537b750df34b56f800f156325072ded1a649fc0cdf350e",
+        "after_sha256": "99fd1b841721c03b023a1fa3eeeab8844b4bd66f90408fa86654ece1696165cc",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH17_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-UniformMicroErgodic",
