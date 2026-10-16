@@ -1,3 +1,11 @@
+第1章最终收口完成，等待用户新指令
+
+本轮已提交推送且全部本地验收通过。只确认等待状态，不自动回第6章，不生成或提交新网站包；只有用户明确新指令才开始新的数学工作。完整证据见blueprint/ch01/validation/CLOSEOUT21/DELIVERY_VALIDATION.json；导师摘要和勘误清单见docs/review/CH01_SUMMARY_FOR_MENTOR.zh-CN.md及CH01_ERRATA.zh-CN.md。
+
+---
+
+## 历史接续提示（冲突处以以上完成终态为准）
+
 # 当前接续：用户2026-10-16第21号指令
 
 唯一任务第1章最终收口；完整指令见AGENTS.md及CURRENT_STATE顶部、blueprint/ch01/validation/CLOSEOUT21/USER_INSTRUCTION.zh-CN.md。第6章当前批次到最近已验证检查点提交后暂停，第2–5章与正式库冻结，不进入第7章。登记93条返回，按网站意见修10条、逐条编译及公理检查、唯一章末完整check；不再送网站，不生成EAUDIT包。补勘误与导师总结，commit+push后写完成终态并停止，不自动回第6章。
