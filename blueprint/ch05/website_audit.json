@@ -3676,7 +3676,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH08_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT05",
+    "repair": {
+      "eaudit": "EAUDIT05",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT05.md": "70e4b97a3e3fb75b6c6498335bf78e859e6c62b55759bf4914493fd8a9b266ad",
+        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+        "blueprint/ch05/ch05_source.json": "79a58aae3caefb4758abc593137cc8b627d2cfce7e32d2a869e3a2ed6a44e978"
+      }
+    }
   },
   {
     "source_id": "MD-5.2.2-MeasurePropagator",
@@ -3763,7 +3775,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH08_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT05",
+    "repair": {
+      "eaudit": "EAUDIT05",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT05.md": "70e4b97a3e3fb75b6c6498335bf78e859e6c62b55759bf4914493fd8a9b266ad",
+        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+        "blueprint/ch05/ch05_source.json": "79a58aae3caefb4758abc593137cc8b627d2cfce7e32d2a869e3a2ed6a44e978"
+      }
+    }
   },
   {
     "source_id": "MD-5.2.3-HamiltonianDivergence",

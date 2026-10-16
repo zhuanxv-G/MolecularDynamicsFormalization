@@ -53,5 +53,11 @@
       "[EXTRA]矩形单个面上ρfi的真实Hausdorff面积积分；正负法向由上下两个面的组合体现。",
       "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅矩形单面的无定向通量辅助积分；原句全部面与质量导数结论由MD-5.2.2-BoxFluxBalance，光滑一般域由MD-5.2.2-GeneralFluxBalance承担。"
     ]
+  },
+  "MD-5.2.2-MeasurePropagator": {
+    "code": "def measurePropagator {n : ℕ}\n    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (_hf : MolecularDynamics.Chapter05Review.flow f Φ) (t : ℝ)\n    (μ : Measure (MolecularDynamics.Chapter05Review.E n)) := Measure.map (Φ t) μ\n\ndef measurePropagator_general {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=\n  Measure.map (Φ t) μ\n\ntheorem measurePropagator_density_evolution : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ),\n  IsOpen D → ContDiffOn ℝ 1 f D → MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) →\n  (∀ t,Φ t '' D=D) → ContDiffOn ℝ 1 (Function.uncurry ρ) (Set.univ ×ˢ D) →\n  (∀ t,probabilityDensityOn D (ρ t)) →\n  (∀ t,densityMeasureOn D (ρ t)=MolecularDynamics.Chapter05Review.measurePropagator Φ t (densityMeasureOn D (ρ 0))) →\n  ∀ t z,z ∈ D → HasDerivAt (fun s => ρ s z) (MolecularDynamics.Chapter05Review.liouvillian f (ρ t) z) t := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 主接口限定实际自治流；保留一般Measure.map辅助定义，另列由实际初始密度推前得到的点态Liouville演化；ρ(0)是初值，形式指数作记号，不将PDE作为前提。"
+    ]
   }
 }

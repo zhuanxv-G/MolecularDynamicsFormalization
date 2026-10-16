@@ -522,9 +522,24 @@ theorem liouvillianAdjoint :
   (∫ z,u z*MolecularDynamics.Chapter05Review.lie f v z)=(∫ z,MolecularDynamics.Chapter05Review.liouvillian f u z*v z) := by
   sorry
 
-/-- source_id: MD-5.2.2-MeasurePropagator · definition · §5.2.2 · 印刷p.186 / PDFp.207 -/
-def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=
+/-- source_id: MD-5.2.2-MeasurePropagator · definition · §5.2.2 · 印刷p.186 / PDFp.207 
+[EXTRA] 主接口限定实际自治流；保留一般Measure.map辅助定义，另列由实际初始密度推前得到的点态Liouville演化；ρ(0)是初值，形式指数作记号，不将PDE作为前提。 -/
+def measurePropagator {n : ℕ}
+    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (_hf : MolecularDynamics.Chapter05Review.flow f Φ) (t : ℝ)
+    (μ : Measure (MolecularDynamics.Chapter05Review.E n)) := Measure.map (Φ t) μ
+
+def measurePropagator_general {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=
   Measure.map (Φ t) μ
+
+theorem measurePropagator_density_evolution : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ),
+  IsOpen D → ContDiffOn ℝ 1 f D → MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) →
+  (∀ t,Φ t '' D=D) → ContDiffOn ℝ 1 (Function.uncurry ρ) (Set.univ ×ˢ D) →
+  (∀ t,probabilityDensityOn D (ρ t)) →
+  (∀ t,densityMeasureOn D (ρ t)=MolecularDynamics.Chapter05Review.measurePropagator Φ t (densityMeasureOn D (ρ 0))) →
+  ∀ t z,z ∈ D → HasDerivAt (fun s => ρ s z) (MolecularDynamics.Chapter05Review.liouvillian f (ρ t) z) t := by
+  sorry
 
 /-- source_id: MD-5.2.3-HamiltonianDivergence · unnumbered_claim · §5.2.3 · 印刷p.186 / PDFp.207
 [EXTRA] [EXTRA]固定正式库的实际规范坐标、Jacobian及C² Hamiltonian；保留任意H，既有证明由真实Hessian对称性推出散度零。 -/
@@ -1967,6 +1982,8 @@ end MD.Ch05
 #print axioms MD.Ch05.rapidAdjoint
 #print axioms MD.Ch05.liouvillianAdjoint
 #print axioms MD.Ch05.measurePropagator
+#print axioms MD.Ch05.measurePropagator_general
+#print axioms MD.Ch05.measurePropagator_density_evolution
 #print axioms MD.Ch05.hamiltonianDivergence
 #print axioms MD.Ch05.hamiltonianSkewExpression
 #print axioms MD.Ch05.hamiltonianDensityPropagation

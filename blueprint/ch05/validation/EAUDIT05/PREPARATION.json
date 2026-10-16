@@ -1,0 +1,25 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT05",
+  "section": "5.2.2",
+  "source_ids": [
+    "MD-5.2.2-CompactAdjoint",
+    "MD-5.2.2-MeasurePropagator"
+  ],
+  "reaudit_ids": [
+    "MD-5.2.2-CompactAdjoint",
+    "MD-5.2.2-MeasurePropagator"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
+  "lean_sha256": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+  "source_sha256": "79a58aae3caefb4758abc593137cc8b627d2cfce7e32d2a869e3a2ed6a44e978",
+  "pages": [
+    205,
+    206,
+    207
+  ],
+  "prior_proof_blocks": {
+    "MD-5.2.2-MeasurePropagator": "def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=\n  Measure.map (Φ t) μ"
+  }
+}

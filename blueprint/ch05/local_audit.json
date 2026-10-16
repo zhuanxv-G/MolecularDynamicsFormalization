@@ -1716,10 +1716,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.liouvillianAdjoint",
@@ -1744,23 +1744,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT05/axioms.log"
     },
     "MD-5.2.2-MeasurePropagator": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.measurePropagator",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f",
-      "block_sha256": "eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f",
-      "direct_placeholder": false,
+      "signature_sha256": "6d5e77250290b4a679dcd626d3b663dc8c60175ce92fc2c3ee5178376648bbd2",
+      "block_sha256": "6d5e77250290b4a679dcd626d3b663dc8c60175ce92fc2c3ee5178376648bbd2",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -1777,7 +1778,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT05/axioms.log"
     },
     "MD-5.2.3-HamiltonianDivergence": {
       "checked": true,
