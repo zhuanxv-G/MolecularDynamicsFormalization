@@ -1,0 +1,21 @@
+{
+  "chapter": 2,
+  "eaudit": "EAUDIT50",
+  "section": "2.5.1",
+  "source_ids": [
+    "MD-2.5.1-ExplicitRK"
+  ],
+  "reaudit_ids": [
+    "MD-2.5.1-ExplicitRK"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "a57e7252bc7183e0becd0e4d2664fceff6c9ee5ed8828ffbce5d29e5292dec57",
+  "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+  "source_sha256": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f",
+  "pages": [
+    111
+  ],
+  "prior_proof_blocks": {
+    "MD-2.5.1-ExplicitRK": "theorem explicitRK :\n  ∀ s (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ),\n    (∀ i j, i ≤ j → A i j = 0) → (∑ i, b i) = 1 →\n    ∃ (H : SymplecticCoordinates 1 → ℝ) (G : SymplecticCoordinates 1 → SymplecticCoordinates 1)\n      (stages : SymplecticCoordinates 1 → Fin s → SymplecticCoordinates 1) (h : ℝ),\n      ContDiff ℝ ⊤ H ∧ 0 < h ∧\n      (∀ z, (∀ i, stages z i = textbookHamiltonianVectorField H (z+h • ∑ j, A i j • stages z j)) ∧\n        G z = z+h • ∑ i, b i • stages z i) ∧ ¬ IsTextbookSymplecticMap G := by\n  sorry"
+  }
+}

@@ -1400,13 +1400,14 @@ theorem rk4Order :
   sorry
 
 /-- source_id: MD-2.5.1-ExplicitRK · unnumbered_claim · §2.5.1 · 印刷p.89 / PDFp.111
-[EXTRA] [EXTRA]一致性∑bᵢ=1排除全零权重恒等映射；“不辛”解释为存在光滑Hamilton模型与实际阶段/步映射不辛，不宣称每个具体H均不辛。 -/
+[EXTRA] [EXTRA]一致性∑bᵢ=1排除全零权重恒等映射；“不辛”解释为存在光滑Hamilton模型与实际阶段/步映射不辛，不宣称每个具体H均不辛。 
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
 theorem explicitRK :
   ∀ s (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ),
     (∀ i j, i ≤ j → A i j = 0) → (∑ i, b i) = 1 →
     ∃ (H : SymplecticCoordinates 1 → ℝ) (G : SymplecticCoordinates 1 → SymplecticCoordinates 1)
       (stages : SymplecticCoordinates 1 → Fin s → SymplecticCoordinates 1) (h : ℝ),
-      ContDiff ℝ ⊤ H ∧ 0 < h ∧
+      ContDiff ℝ ∞ H ∧ 0 < h ∧
       (∀ z, (∀ i, stages z i = textbookHamiltonianVectorField H (z+h • ∑ j, A i j • stages z j)) ∧
         G z = z+h • ∑ i, b i • stages z i) ∧ ¬ IsTextbookSymplecticMap G := by
   sorry

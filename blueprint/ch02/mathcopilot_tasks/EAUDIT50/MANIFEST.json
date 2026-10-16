@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT50",
+  "input_sha256": {
+    "BATCH_EAUDIT50.md": "ba4c545af526a0b94f53aaa2fb8217ad197a8b11d06fd9d71b78182c3356252f",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "072e631ad839276f4e23c274aff8b01d92e76caa652df28ef86fddaf8d545a9f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT50a",
+      "source_id": "MD-2.5.1-ExplicitRK",
+      "path": "blueprint/ch02/mathcopilot_tasks/EAUDIT50/a",
+      "total_bytes": 127416,
+      "manifest_sha256": "9dd2c2fa0526721cdc00991f5109f8f8cb3dcaa033f913338c5fb9b8c1454c81"
+    }
+  ]
+}

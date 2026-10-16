@@ -145,7 +145,7 @@
 | MD-2.5.1-RK | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
 | MD-2.5.1-RK4 | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | definition / self-contained |
 | MD-2.5.1-RK4Order | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | placeholder / incomplete；一般RK树阶条件/实际四阶Taylor展开及局部误差、稳定性、数值留域的全局阶桥接。 |
-| MD-2.5.1-ExplicitRK | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | placeholder / incomplete；已有证明仅系数条件不可能；普适必要性及实际RK反例构造尚缺，不能把系数lemma当完整结论。 |
+| MD-2.5.1-ExplicitRK | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT50 | placeholder / incomplete；已有证明仅系数条件不可能；普适必要性及实际RK反例构造尚缺，不能把系数lemma当完整结论。 |
 | MD-2.5.1-RKSymplectic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT20（原返回FAIL保留） | placeholder / incomplete；实际RK楔积充分性与不可约必要性理论。 |
 | MD-2.5.1-GaussFamily | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT20（原返回FAIL保留） | placeholder / incomplete；大型Gauss配点构造、正交多项式根/对称性及偶数阶逆步理论；当前库无完整理论。 |
 | MD-2.5.1-Midpoint | DRAFT/原页已核 | 已编译 | PASS | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | definition / self-contained |
@@ -459,3 +459,5 @@ EAUDIT24 §2.5.5：1条落盘，单文件与1项公理通过；未写新证明�
 EAUDIT25 §章首及2.1原文复核：5条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT49 §2.4.1：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT50 §2.5.1：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。

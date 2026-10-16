@@ -4930,8 +4930,8 @@
       "lean_decl": "MD.Ch02.explicitRK",
       "verdict": "PASS",
       "explanation": "已逐项比对原文对象、实际定义、量词、前提和完整结论；技术前提见[EXTRA]。",
-      "signature_sha256": "5a30063ac9980cf1a98331a2e8702c70a6f18f78e3fcdb98c692f21962487757",
-      "block_sha256": "187b41722db9b238dd15c42df391392108c1ce6b25008fdebb3552255104f63d",
+      "signature_sha256": "906593c655be4f09b25eb64dd8c65ff876bf50b8d0cf00d8714e4862bb431fda",
+      "block_sha256": "711715f9f9e93916847c99ef3812b8df3a9397eb8de6b97a1d73dee51c0e656d",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4949,7 +4949,7 @@
       "proof_attempts": 0,
       "stop_reason": "缺完整理论或正式库仅有较弱接口；记录missing并继续。",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch02/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log",
+      "axiom_log": "blueprint/ch02/validation/EAUDIT50/axioms.log",
       "compiled": true
     },
     "MD-2.5.1-RKSymplectic": {
