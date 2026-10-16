@@ -44,9 +44,10 @@
     ]
   },
   "MD-3.3-DifferenceCommutator": {
-    "code": "theorem differenceCommutator (A B : R) :\n    PowerSeries.coeff 0 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧\n    PowerSeries.coeff 1 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧\n    PowerSeries.coeff 2 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = (1/2 : ℝ) • (A*B-B*A) := by\n  sorry\n\ntheorem differenceCommutator_coeff2 (A B : R) :\n    PowerSeries.coeff 2 (textbookFormalOperatorExponential A *\n      textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A + B)) =\n      (1 / 2 : ℝ) • (A * B - B * A) := by\n  apply MolecularDynamics.textbookFormalOperatorDifference_coeff_two <;> assumption\n\ntheorem differenceCommutator_hamiltonian (n : ℕ)\n    (A B φ : SymplecticCoordinates n → ℝ)\n    (_hA : ContDiff ℝ ⊤ A) (_hB : ContDiff ℝ ⊤ B) (_hφ : ContDiff ℝ ⊤ φ)\n    (z : SymplecticCoordinates n) :\n    let S := hamiltonianSplittingObservable A B φ z-hamiltonianExactObservable A B φ z\n    PowerSeries.coeff 0 S = 0 ∧ PowerSeries.coeff 1 S = 0 ∧\n    PowerSeries.coeff 2 S = (1/2 : ℝ)*\n      (textbookLieDerivative (textbookHamiltonianVectorField A)\n        (textbookLieDerivative (textbookHamiltonianVectorField B) φ) z -\n       textbookLieDerivative (textbookHamiltonianVectorField B)\n        (textbookLieDerivative (textbookHamiltonianVectorField A) φ) z) := by\n  sorry",
+    "code": "theorem differenceCommutator (A B : R) :\n    PowerSeries.coeff 0 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧\n    PowerSeries.coeff 1 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧\n    PowerSeries.coeff 2 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = (1/2 : ℝ) • (A*B-B*A) := by\n  sorry\n\ntheorem differenceCommutator_coeff2 (A B : R) :\n    PowerSeries.coeff 2 (textbookFormalOperatorExponential A *\n      textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A + B)) =\n      (1 / 2 : ℝ) • (A * B - B * A) := by\n  apply MolecularDynamics.textbookFormalOperatorDifference_coeff_two <;> assumption\n\ntheorem differenceCommutator_hamiltonian (n : ℕ)\n    (A B φ : SymplecticCoordinates n → ℝ)\n    (_hA : ContDiff ℝ ∞ A) (_hB : ContDiff ℝ ∞ B) (_hφ : ContDiff ℝ ∞ φ)\n    (z : SymplecticCoordinates n) :\n    let S := hamiltonianSplittingObservable A B φ z-hamiltonianExactObservable A B φ z\n    PowerSeries.coeff 0 S = 0 ∧ PowerSeries.coeff 1 S = 0 ∧\n    PowerSeries.coeff 2 S = (1/2 : ℝ)*\n      (textbookLieDerivative (textbookHamiltonianVectorField A)\n        (textbookLieDerivative (textbookHamiltonianVectorField B) φ) z -\n       textbookLieDerivative (textbookHamiltonianVectorField B)\n        (textbookLieDerivative (textbookHamiltonianVectorField A) φ) z) := by\n  sorry",
     "extra_assumptions": [
-      "[EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。"
+      "[EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ]
   },
   "MD-3.3-DifferenceCubic": {
@@ -270,6 +271,13 @@
     "extra_assumptions": [
       "tc>0,hmax>0明示；tc必须是下一接触时刻，求根实现不是数学定理。",
       "[EXTRA] 保留给定tc/Rc的更新辅助；补实际粒子二次路径、正质量/半径、F=−∇U的对偶资格、不同粒子对的最早真实接触、唯一单碰撞及该接触面的质量加权弹性反射。Option.none明确无正根；严格tc<hmax及等号else照原印保留，不静默修改算法。"
+    ]
+  },
+  "MD-3.3-CommutingFlows": {
+    "code": "theorem commutingFlows :\n  ∀ (n : ℕ) (A B : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))\n    (Φ Ψ Χ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,\n    IsOpen D → ContDiffOn ℝ ∞ A D → ContDiffOn ℝ ∞ B D →\n    (∀ z ∈ D, textbookPoissonBracket A B z=0) →\n    actualFlow (textbookHamiltonianVectorField A) D Φ η → actualFlow (textbookHamiltonianVectorField B) D Ψ η →\n    actualFlow (textbookHamiltonianVectorField (fun z => A z+B z)) D Χ η →\n    ∀ z ∈ D, ∀ h ∈ Ioo (-η/2) (η/2), Φ h (Ψ h z)=Χ h z := by\n  sorry",
+    "extra_assumptions": [
+      "光滑Hamiltonian、开放域及三个真实局部流；|h|<η/2保证复合时间在所给流的定义区间。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ]
   }
 }

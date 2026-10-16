@@ -60,7 +60,7 @@ def prepare(ch, eaudit, section, edits, *, pages, source_only=(), human=None):
         source_pages=[int(x) for x in re.findall(r'\d+',s['pdf_page'])]
         required=set(range(source_pages[0],source_pages[-1]+1))
         assert required<=set(pages), (sid,required,pages)
-        if w['json_review']['status']=='CORRECTED':
+        if w['json_review']['status']=='CORRECTED' and not w.get('repair',{}).get('json_review_locally_verified'):
             proposal=w['json_review'].get('corrected_json') or {}
             for key in ('statement_latex','proof_latex','proof_note','proof_discussion_latex','context_notation','statement_scope'):
                 if key in proposal and s.get(key)!=proposal[key]:s[key]=proposal[key];changed.append(key)

@@ -2431,19 +2431,18 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "待复审 / EAUDIT06",
+    "effective_status": "待复审 / EAUDIT40",
     "repair": {
-      "eaudit": "EAUDIT25",
+      "eaudit": "EAUDIT40",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT25/INDEX.md",
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT40/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT25.md": "4e3e23a3764e98c43e77eb9a75149456854385488ff7bc230ad9571c844a9d2e",
-        "Blueprint/Ch03.lean": "b9eb39a937c2965fd59b2364fcc9d3531bf075fcaa70f6e3477cbc6fbaa7a1d1",
-        "blueprint/ch03/ch03_source.json": "bf2529e682648e99816767f43c39d8ef12c57de2e9e2151ff471cc329cb0fa14"
-      },
-      "prior_eaudit": "EAUDIT06"
+        "BATCH_EAUDIT40.md": "417cbf3760860319afede47d5e568ef5f40bea81e0b7981350032fe386604660",
+        "Blueprint/Ch03.lean": "c30856b2e53c97b4da281bb09225b43f5adef709603ffb2c6af4e54e1a9b937a",
+        "blueprint/ch03/ch03_source.json": "4f9644336ad21a7272b44d11dc6d8ab214f6ca867c9110adff0276514f103864"
+      }
     }
   },
   {
@@ -3017,7 +3016,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch03/mathcopilot_results/BATCH06_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 433a13ca6407）"
+    "effective_status": "待复审 / EAUDIT40",
+    "repair": {
+      "eaudit": "EAUDIT40",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT40/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT40.md": "417cbf3760860319afede47d5e568ef5f40bea81e0b7981350032fe386604660",
+        "Blueprint/Ch03.lean": "c30856b2e53c97b4da281bb09225b43f5adef709603ffb2c6af4e54e1a9b937a",
+        "blueprint/ch03/ch03_source.json": "4f9644336ad21a7272b44d11dc6d8ab214f6ca867c9110adff0276514f103864"
+      }
+    }
   },
   {
     "source_id": "MD-3.3.1-SymplecticEulerShadow",

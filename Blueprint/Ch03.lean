@@ -315,7 +315,8 @@ theorem productExponentialCubic (A B : R) :
     textbookFormalOperatorProduct_coeff_three A B⟩
 
 /-- source_id: MD-3.3-DifferenceCommutator · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 
-[EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 -/
+[EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
 theorem differenceCommutator (A B : R) :
     PowerSeries.coeff 0 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
     PowerSeries.coeff 1 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
@@ -330,7 +331,7 @@ theorem differenceCommutator_coeff2 (A B : R) :
 
 theorem differenceCommutator_hamiltonian (n : ℕ)
     (A B φ : SymplecticCoordinates n → ℝ)
-    (_hA : ContDiff ℝ ⊤ A) (_hB : ContDiff ℝ ⊤ B) (_hφ : ContDiff ℝ ⊤ φ)
+    (_hA : ContDiff ℝ ∞ A) (_hB : ContDiff ℝ ∞ B) (_hφ : ContDiff ℝ ∞ φ)
     (z : SymplecticCoordinates n) :
     let S := hamiltonianSplittingObservable A B φ z-hamiltonianExactObservable A B φ z
     PowerSeries.coeff 0 S = 0 ∧ PowerSeries.coeff 1 S = 0 ∧
@@ -430,11 +431,12 @@ theorem bchHamiltonianMatching :
   sorry
 
 /-- source_id: MD-3.3-CommutingFlows · unnumbered_claim · §3.3 · 印刷p.106 / PDFp.128
-[EXTRA] 光滑Hamiltonian、开放域及三个真实局部流；|h|<η/2保证复合时间在所给流的定义区间。 -/
+[EXTRA] 光滑Hamiltonian、开放域及三个真实局部流；|h|<η/2保证复合时间在所给流的定义区间。 
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
 theorem commutingFlows :
   ∀ (n : ℕ) (A B : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))
     (Φ Ψ Χ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
-    IsOpen D → ContDiffOn ℝ ⊤ A D → ContDiffOn ℝ ⊤ B D →
+    IsOpen D → ContDiffOn ℝ ∞ A D → ContDiffOn ℝ ∞ B D →
     (∀ z ∈ D, textbookPoissonBracket A B z=0) →
     actualFlow (textbookHamiltonianVectorField A) D Φ η → actualFlow (textbookHamiltonianVectorField B) D Ψ η →
     actualFlow (textbookHamiltonianVectorField (fun z => A z+B z)) D Χ η →

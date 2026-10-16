@@ -1034,7 +1034,8 @@
       "MolecularDynamics.textbookFormalOperatorDifference_coeff_two"
     ],
     "extra_assumptions": [
-      "[EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。"
+      "[EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
@@ -1047,9 +1048,19 @@
         "changed_fields": [],
         "raw_return": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EAUDIT40_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:36:10.671141",
+        "before_sha256": "5f854aba91b319dd5c7e87f4fcbab3a3863d6b9bf4910f6a7b59855bda86c328",
+        "after_sha256": "9c13b9b1aee97bbf925dbb24272a4c59287591532cf092534e042a6508933fe5",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT40/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3-DifferenceCubic",
@@ -1333,12 +1344,24 @@
     "lean_decl": "MD.Ch03.commutingFlows",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "光滑Hamiltonian、开放域及三个真实局部流；|h|<η/2保证复合时间在所给流的定义区间。"
+      "光滑Hamiltonian、开放域及三个真实局部流；|h|<η/2保证复合时间在所给流的定义区间。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT40_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:36:10.671141",
+        "before_sha256": "143afd104188e5996c3f44516fbf0fb38d9931aa6e0ac01f7f333a587d749143",
+        "after_sha256": "4f7b3e13606370fb84460b7f3fabbddff8e4a8ab980f4e74468af7814518b7da",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH06_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT40/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.3.1-SymplecticEulerShadow",

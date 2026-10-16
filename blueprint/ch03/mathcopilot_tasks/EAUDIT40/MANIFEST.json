@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT40",
+  "input_sha256": {
+    "BATCH_EAUDIT40.md": "417cbf3760860319afede47d5e568ef5f40bea81e0b7981350032fe386604660",
+    "Blueprint/Ch03.lean": "c30856b2e53c97b4da281bb09225b43f5adef709603ffb2c6af4e54e1a9b937a",
+    "blueprint/ch03/ch03_source.json": "4f9644336ad21a7272b44d11dc6d8ab214f6ca867c9110adff0276514f103864"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT40a",
+      "source_id": "MD-3.3-DifferenceCommutator",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT40/a",
+      "total_bytes": 84407,
+      "manifest_sha256": "69e047ab3d5168f7aa0af38774eedd35531db5ba6e23cd7ee66c4b4cf730225b"
+    },
+    {
+      "subtask": "EAUDIT40b",
+      "source_id": "MD-3.3-CommutingFlows",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT40/b",
+      "total_bytes": 94331,
+      "manifest_sha256": "fe67a82649911e0abbf407dc5164bee1c844bef4dfd8292cdb5a689d5de70c9e"
+    }
+  ]
+}

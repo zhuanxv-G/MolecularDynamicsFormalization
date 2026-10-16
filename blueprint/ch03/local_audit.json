@@ -1033,7 +1033,7 @@
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "bb65fabc7757c2eec384f04e28fa9091e63e0333878b968e88e451aeb5232562",
-      "block_sha256": "a521038b49530e9facf7e5acf6ac29693b04be2c68432ffabbc8b1a3700fabb8",
+      "block_sha256": "43f9618cf1b42a13513ce34788d07ba86d7844034fcc446cab34db64f14d1873",
       "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
@@ -1053,7 +1053,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT40/axioms.log"
     },
     "MD-3.3-DifferenceCubic": {
       "checked": true,
@@ -1344,8 +1344,8 @@
       "lean_decl": "MD.Ch03.commutingFlows",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "51e5c49cfcbcaba5532e4047cd713ea6ab26b460c24b9b35a0d790d0fd7fcf42",
-      "block_sha256": "dcd1b0f5e8e90a448af4475d766a8e44c7a6c2397758fc0a40fb71d6899276c5",
+      "signature_sha256": "9be71bebfc5c65b62348469c3ed33cb4ef648e13507694444f3fe9387d14dbca",
+      "block_sha256": "f32d73b726e5074382f4c16a5f4b63e6b4baa8afa56741432f5a147edf76f747",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -1363,7 +1363,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT40/axioms.log"
     },
     "MD-3.3.1-SymplecticEulerShadow": {
       "checked": true,

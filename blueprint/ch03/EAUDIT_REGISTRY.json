@@ -1853,5 +1853,44 @@
     "new_proofs": "none",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT39/INDEX.md"
+  },
+  {
+    "chapter": 3,
+    "eaudit": "EAUDIT40",
+    "section": "3.3",
+    "source_ids": [
+      "MD-3.3-CommutingFlows",
+      "MD-3.3-DifferenceCommutator"
+    ],
+    "reaudit_ids": [
+      "MD-3.3-DifferenceCommutator",
+      "MD-3.3-CommutingFlows"
+    ],
+    "human_ids": [],
+    "lean_sha256": "c30856b2e53c97b4da281bb09225b43f5adef709603ffb2c6af4e54e1a9b937a",
+    "source_sha256": "4f9644336ad21a7272b44d11dc6d8ab214f6ca867c9110adff0276514f103864",
+    "pages": [
+      126,
+      128
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch03.olean",
+        "Blueprint/Ch03.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "c30856b2e53c97b4da281bb09225b43f5adef709603ffb2c6af4e54e1a9b937a",
+      "log_sha256": "a5c250ea12653b84ce7a1a9f26efdaca3a46f917b7f4d64ab58fa371d04ece06"
+    },
+    "axiom_decl_count": 4,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT40/INDEX.md"
   }
 ]
