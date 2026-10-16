@@ -1040,7 +1040,8 @@ theorem microProbability : ∀ n (H : MolecularDynamics.Chapter05Review.E n → 
     exact ⟨bot_le,(measure_mono (subset_univ A)).trans_eq hu⟩
 
 /-- source_id: MD-5.3.3-LowerDimensionNull · unnumbered_claim · §5.3.3 · 印刷p.195 / PDFp.216
-[EXTRA] [EXTRA]低维光滑参数化的紧像、正则C¹能量面，维数严格小于能量面；未将任意“拓扑低维集合”自动视为零测。 -/
+[EXTRA] [EXTRA]低维光滑参数化的紧像、正则C¹能量面，维数严格小于能量面；未将任意“拓扑低维集合”自动视为零测。 
+[EXTRA] 保留紧面子引理，新增无需全能量面紧性的可数紧参数块零测推广，以及正则水平集局部同胚于开ℝ^(n−1)的维数结论（相空间n=2N_d）。环境Lebesgue零测也在本批同列。 -/
 theorem lowerDimensionNull :
   ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n)
     (K : Set (MolecularDynamics.Chapter05Review.E d)), d+1 < n → ContDiff ℝ 1 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
@@ -1048,8 +1049,46 @@ theorem lowerDimensionNull :
     g '' K ⊆ MolecularDynamics.Chapter05Review.energySurface H c → (MolecularDynamics.Chapter05Review.microMeasure H c) (g '' K)=0 := by
   sorry
 
-/-- source_id: MD-5.3.3-MicroAverage · definition · §5.3.3 · 印刷p.195 / PDFp.216 -/
+theorem lowerDimensionNull_countable (n d : ℕ)
+    (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ)
+    (g : ℕ → MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n)
+    (K : ℕ → Set (MolecularDynamics.Chapter05Review.E d)) (_hd : d+1 < n)
+    (_hH : ContDiff ℝ 1 H)
+    (_hreg : ∀ z,MolecularDynamics.Chapter05Review.energySurface H c z →
+      MolecularDynamics.Chapter05Review.grad H z ≠ 0)
+    (_hblocks : ∀ k,ContDiff ℝ 1 (g k) ∧ IsCompact (K k) ∧
+      g k '' K k ⊆ MolecularDynamics.Chapter05Review.energySurface H c) :
+    (MolecularDynamics.Chapter05Review.microMeasure H c) (⋃ k,g k '' K k)=0 ∧
+      volume (⋃ k,g k '' K k)=0 := by
+  sorry
+
+theorem lowerDimensionNull_level_dimension (n : ℕ) (_hn : 0 < n)
+    (H : MolecularDynamics.Chapter05Review.E n → ℝ) (_hH : ContDiff ℝ 1 H)
+    (c : ℝ) (_hreg : ∀ z,H z=c → MolecularDynamics.Chapter05Review.grad H z ≠ 0) :
+    ∀ z,H z=c → ∃ U : Set (MolecularDynamics.Chapter05Review.E n),
+      IsOpen U ∧ z ∈ U ∧ ∃ V : Set (MolecularDynamics.Chapter05Review.E (n-1)),
+      IsOpen V ∧ Nonempty (V ≃ₜ ↥(MolecularDynamics.Chapter05Review.energySurface H c ∩ U)) := by
+  sorry
+
+/-- source_id: MD-5.3.3-MicroAverage · definition · §5.3.3 · 印刷p.195 / PDFp.216 
+[EXTRA] 补曲面限制逆梯度积分等式，并以真实对称薄壳积分比极限表达归一化δ配对；紧正则能量带控制尾部，不把δ当普通Lebesgue函数或同测度重命名。 -/
 def microAverage {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) := MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.microMeasure H c) g
+
+theorem microAverage_surface_and_delta_limit (n : ℕ) (_hn : 0 < n)
+    (H : MolecularDynamics.Chapter05Review.E n → ℝ) (_hH : ContDiff ℝ 2 H)
+    (c : ℝ) (_hreg : MolecularDynamics.Chapter05Review.regularEnergy H c)
+    (_hband : ∃ δ > 0,IsCompact {z | |H z-c| ≤ δ} ∧
+      ∀ z,|H z-c| ≤ δ → MolecularDynamics.Chapter05Review.grad H z ≠ 0)
+    (φ : MolecularDynamics.Chapter05Review.E n → ℝ) (_hφ : ContDiff ℝ ∞ φ)
+    (_hc : HasCompactSupport φ) :
+    microAverage H c φ=(MolecularDynamics.Chapter05Review.microPartition H c)⁻¹*
+      (∫ z in MolecularDynamics.Chapter05Review.energySurface H c,
+        φ z/‖MolecularDynamics.Chapter05Review.grad H z‖
+        ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1))) ∧
+    Tendsto (fun ε : ℝ ↦
+      (∫ z in {z | |H z-c| < ε},φ z)/
+      (volume {z | |H z-c| < ε}).toReal) (𝓝[>] 0) (𝓝 (microAverage H c φ)) := by
+  sorry
 
 /-- source_id: MD-5.3.3-AmbientLowerDimensionNull · unnumbered_claim · §5.3.3 · 印刷p.195 / PDFp.216
 [EXTRA] [EXTRA]以低维C¹参数化的紧像实现原“lower order objects”，保留实际ambient Lebesgue volume结论，不与ΣE上的奇异微正则测度混同；非任意拓扑低维集合。 -/
@@ -2090,7 +2129,10 @@ end MD.Ch05
 #print axioms MD.Ch05.microMeasure
 #print axioms MD.Ch05.microProbability
 #print axioms MD.Ch05.lowerDimensionNull
+#print axioms MD.Ch05.lowerDimensionNull_countable
+#print axioms MD.Ch05.lowerDimensionNull_level_dimension
 #print axioms MD.Ch05.microAverage
+#print axioms MD.Ch05.microAverage_surface_and_delta_limit
 #print axioms MD.Ch05.ambientLowerDimensionNull
 #print axioms MD.Ch05.timeAverage
 #print axioms MD.Ch05.hasTimeAverage

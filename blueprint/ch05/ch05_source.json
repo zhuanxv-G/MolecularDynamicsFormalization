@@ -3162,7 +3162,7 @@
     "section": "5.3.3",
     "printed_page": "194",
     "pdf_page": "215",
-    "statement_latex": "Let $d\\mu_E=Z_E^{-1}\\|\\nabla H\\|^{-1}d\\sigma$. We refer to this as the microcanonical probability density and write, for an “appropriate” set $A$, $\\operatorname{Pr}(A)=\\mu_E(A)=\\int_A d\\mu_E$. The only requirement for this to make sense is that the set $A$ be a measurable subset of the $H=E$ energy surface, i.e. that it be possible to compute its surface area.",
+    "statement_latex": "Let $d\\mu_E=Z_E^{-1}\\|\\nabla H\\|^{-1}d\\sigma$. We refer to this as the microcanonical probability density and write, for an “appropriate” set $\\mathcal A$, $\\operatorname{Pr}(\\mathcal A)=\\mu_E(\\mathcal A)=\\int_{\\mathcal A} d\\mu_E$. The only requirement for this to make sense is that the set $\\mathcal A$ be a measurable subset of the $H=E$ energy surface, i.e. that it be possible to compute its surface area.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3174,9 +3174,22 @@
       "[EXTRA]总raw质量正且有限是使用概率意义的必要资格；定义用实际ENNReal标量归一化，不把无穷总质量逆值0解释成概率测度。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT11_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:59:47.094333",
+        "before_sha256": "ea3e3ee3a7a9e80d22dcb8fb31f791aa49c08ad652172c7b69f62ada3e930b55",
+        "after_sha256": "97a645e208f2bdf09531812467476986f3a8af7c5250c33b2f070d48d475700a",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.3-MicroProbability",
@@ -3185,7 +3198,7 @@
     "section": "5.3.3",
     "printed_page": "195",
     "pdf_page": "216",
-    "statement_latex": "We have the standard properties of a probability function: $0\\leq\\operatorname{Pr}(A)\\leq1$ for all measurable sets $A$; $\\operatorname{Pr}(\\Sigma_E)=1$.",
+    "statement_latex": "We have the standard properties of a probability function: $0\\leq\\operatorname{Pr}(\\mathcal A)\\leq1$ for all measurable sets $\\mathcal A$; $\\operatorname{Pr}(\\Sigma_E)=1$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -3197,9 +3210,22 @@
       "[EXTRA]原H光滑背景及正有限总质量明示；ΣE总概率1也保留，不仅证明ambient univ质量1。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT11_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:59:47.094333",
+        "before_sha256": "aa5334141b9def888ce3e5ee4e861fdd8502dde90928672fcce01c8b0966f253",
+        "after_sha256": "3a124022f49be0b8128afe5c7c9416f2ec1620ba3c275303160a1bee839fbf6a",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.3-LowerDimensionNull",
@@ -3217,12 +3243,24 @@
     "lean_decl": "MD.Ch05.lowerDimensionNull",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]低维光滑参数化的紧像、正则C¹能量面，维数严格小于能量面；未将任意“拓扑低维集合”自动视为零测。"
+      "[EXTRA]低维光滑参数化的紧像、正则C¹能量面，维数严格小于能量面；未将任意“拓扑低维集合”自动视为零测。",
+      "[EXTRA] 保留紧面子引理，新增无需全能量面紧性的可数紧参数块零测推广，以及正则水平集局部同胚于开ℝ^(n−1)的维数结论（相空间n=2N_d）。环境Lebesgue零测也在本批同列。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT11_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:59:47.094333",
+        "before_sha256": "5f6e1c75c04a88778e013afcaee78058e0e0a72b648c0bced19878846979a332",
+        "after_sha256": "f625570e130cfe766eca6bbc30c8c44f323c6273723b4e8113393dcaff30e77a",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.3-MicroAverage",
@@ -3231,21 +3269,37 @@
     "section": "5.3.3",
     "printed_page": "195",
     "pdf_page": "216",
-    "statement_latex": "As we mentioned in motivating the microcanonical distribution, we could alternatively view microcanonical averages as integrals with respect to the singular measure on the ambient space $D$ defined by $\\mu_Ed\\omega'=Z_E^{-1}\\delta[H-E]d\\omega$. Regardless of which formulation is adopted, we may use the probability measure to compute expectations (averages) of (suitable) functions defined on the phase space. We write such an expectation as\n\\[\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)d\\mu_E=\\int_Dg(z)\\mu_Ed\\omega'.\\]\nAs shorthand, where the underlying space and probability density are assumed, one may write such an average more simply as $\\operatorname{Av}_{H=E}(g)=\\langle g\\rangle$.",
+    "statement_latex": "As we mentioned in motivating the microcanonical distribution, we could alternatively view microcanonical averages as integrals with respect to the singular measure on the ambient space $\\mathcal D$ defined by $\\rho'_Ed\\omega=Z_E^{-1}\\delta[H-E]d\\omega$. Regardless of which formulation is adopted, we may use the probability measure to compute expectations (averages) of (suitable) functions defined on the phase space. We write such an expectation as\n\\[\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)d\\mu_E=\\int_{\\mathcal D}g(z)\\rho'_Ed\\omega.\\]\nAs shorthand, where the underlying space and probability density are assumed, one may write such an average more simply as $\\operatorname{Av}_{H=E}(g)=\\langle g\\rangle$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "实际归一化奇异测度上的积分；δ[H−E]是分布记号，面积/δ两描述的识别是未证明的coarea义务，不称普通Lebesgue密度。"
+      "原书ρ'_E dω=Z_E^{-1}δ[H−E]dω；δ为Dirac delta记号，dω为全部坐标和动量所定义欧氏空间的体积元；𝒟为环境相空间。实际Lean采用归一化奇异测度上的积分；面积/δ两描述的识别仍为coarea义务。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch05.microAverage",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 补曲面限制逆梯度积分等式，并以真实对称薄壳积分比极限表达归一化δ配对；紧正则能量带控制尾部，不把δ当普通Lebesgue函数或同测度重命名。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT11_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:59:47.094333",
+        "before_sha256": "0d29f1ea0f1598c966a83dd8aa0ba70929926c814996bf987e4b94835f14d552",
+        "after_sha256": "d2f862a709b0928e4859f8cc91d7151d372c8dc20534ad0c1384dff2489b16a2",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.3-AmbientLowerDimensionNull",

@@ -1,0 +1,43 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT11",
+  "section": "5.3.3",
+  "source_ids": [
+    "MD-5.3.3-LowerDimensionNull",
+    "MD-5.3.3-MicroAverage",
+    "MD-5.3.3-MicroMeasure",
+    "MD-5.3.3-MicroProbability"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.3-MicroMeasure",
+    "MD-5.3.3-MicroProbability",
+    "MD-5.3.3-LowerDimensionNull",
+    "MD-5.3.3-MicroAverage"
+  ],
+  "human_ids": [],
+  "lean_sha256": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
+  "source_sha256": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512",
+  "pages": [
+    215,
+    216
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch05.olean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
+    "log_sha256": "a9dba4f2433a2c6bab50b557da254ff00bfd1ffd67007f6591e297c9e6f106c7"
+  },
+  "axiom_decl_count": 7,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/INDEX.md"
+}

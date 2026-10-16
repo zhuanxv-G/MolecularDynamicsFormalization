@@ -3416,9 +3416,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.microMeasure",
@@ -3443,15 +3443,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT11/axioms.log"
     },
     "MD-5.3.3-MicroProbability": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.microProbability",
@@ -3485,23 +3485,23 @@
       ],
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT11/axioms.log"
     },
     "MD-5.3.3-LowerDimensionNull": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.lowerDimensionNull",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "b7b6e15c358aa337581a7b5a761e7f8a110c0e419378e0bb7eb37d591eb2dd25",
-      "block_sha256": "5a349a64d13836f5cb6fa9c62427b808a9a8a2d604a0f0ce7871bd558be7de4a",
+      "block_sha256": "42dfb8f236b8e822be09446b037f53f1998794ffc2bc4253ffa674eeeccf8b46",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -3519,23 +3519,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT11/axioms.log"
     },
     "MD-5.3.3-MicroAverage": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.microAverage",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "f71e52af87f2937399a70a709f9b5c51ed0bce2e36e86622a217b41701490c90",
-      "block_sha256": "f71e52af87f2937399a70a709f9b5c51ed0bce2e36e86622a217b41701490c90",
-      "direct_placeholder": false,
+      "signature_sha256": "64fcb97a25b4ee0ba7eaf7225e1d6de4b8e65d2e295843009403c0b58c1c2331",
+      "block_sha256": "64fcb97a25b4ee0ba7eaf7225e1d6de4b8e65d2e295843009403c0b58c1c2331",
+      "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
       "missing": null,
@@ -3552,7 +3553,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT11/axioms.log"
     },
     "MD-5.3.3-AmbientLowerDimensionNull": {
       "checked": true,

@@ -132,5 +132,18 @@
       "[EXTRA]正N/m/E/L、有限基本胞V=L³；微正则raw测度在位置胞上实际限制。3N系数是球面积的正确系数，不登记伪造勘误。",
       "[EXTRA] 补真实动量(3N−1)维球面S、r=√(2mc)、位置体积(L³)^N及面积/Gamma两项中间分解，保留原终值；不以参数积分作microRaw定义。"
     ]
+  },
+  "MD-5.3.3-LowerDimensionNull": {
+    "code": "theorem lowerDimensionNull :\n  ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n)\n    (K : Set (MolecularDynamics.Chapter05Review.E d)), d+1 < n → ContDiff ℝ 1 H → MolecularDynamics.Chapter05Review.regularEnergy H c →\n    ContDiff ℝ 1 g → IsCompact K →\n    g '' K ⊆ MolecularDynamics.Chapter05Review.energySurface H c → (MolecularDynamics.Chapter05Review.microMeasure H c) (g '' K)=0 := by\n  sorry\n\ntheorem lowerDimensionNull_countable (n d : ℕ)\n    (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ)\n    (g : ℕ → MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n)\n    (K : ℕ → Set (MolecularDynamics.Chapter05Review.E d)) (_hd : d+1 < n)\n    (_hH : ContDiff ℝ 1 H)\n    (_hreg : ∀ z,MolecularDynamics.Chapter05Review.energySurface H c z →\n      MolecularDynamics.Chapter05Review.grad H z ≠ 0)\n    (_hblocks : ∀ k,ContDiff ℝ 1 (g k) ∧ IsCompact (K k) ∧\n      g k '' K k ⊆ MolecularDynamics.Chapter05Review.energySurface H c) :\n    (MolecularDynamics.Chapter05Review.microMeasure H c) (⋃ k,g k '' K k)=0 ∧\n      volume (⋃ k,g k '' K k)=0 := by\n  sorry\n\ntheorem lowerDimensionNull_level_dimension (n : ℕ) (_hn : 0 < n)\n    (H : MolecularDynamics.Chapter05Review.E n → ℝ) (_hH : ContDiff ℝ 1 H)\n    (c : ℝ) (_hreg : ∀ z,H z=c → MolecularDynamics.Chapter05Review.grad H z ≠ 0) :\n    ∀ z,H z=c → ∃ U : Set (MolecularDynamics.Chapter05Review.E n),\n      IsOpen U ∧ z ∈ U ∧ ∃ V : Set (MolecularDynamics.Chapter05Review.E (n-1)),\n      IsOpen V ∧ Nonempty (V ≃ₜ ↥(MolecularDynamics.Chapter05Review.energySurface H c ∩ U)) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA]低维光滑参数化的紧像、正则C¹能量面，维数严格小于能量面；未将任意“拓扑低维集合”自动视为零测。",
+      "[EXTRA] 保留紧面子引理，新增无需全能量面紧性的可数紧参数块零测推广，以及正则水平集局部同胚于开ℝ^(n−1)的维数结论（相空间n=2N_d）。环境Lebesgue零测也在本批同列。"
+    ]
+  },
+  "MD-5.3.3-MicroAverage": {
+    "code": "def microAverage {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) := MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.microMeasure H c) g\n\ntheorem microAverage_surface_and_delta_limit (n : ℕ) (_hn : 0 < n)\n    (H : MolecularDynamics.Chapter05Review.E n → ℝ) (_hH : ContDiff ℝ 2 H)\n    (c : ℝ) (_hreg : MolecularDynamics.Chapter05Review.regularEnergy H c)\n    (_hband : ∃ δ > 0,IsCompact {z | |H z-c| ≤ δ} ∧\n      ∀ z,|H z-c| ≤ δ → MolecularDynamics.Chapter05Review.grad H z ≠ 0)\n    (φ : MolecularDynamics.Chapter05Review.E n → ℝ) (_hφ : ContDiff ℝ ∞ φ)\n    (_hc : HasCompactSupport φ) :\n    microAverage H c φ=(MolecularDynamics.Chapter05Review.microPartition H c)⁻¹*\n      (∫ z in MolecularDynamics.Chapter05Review.energySurface H c,\n        φ z/‖MolecularDynamics.Chapter05Review.grad H z‖\n        ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1))) ∧\n    Tendsto (fun ε : ℝ ↦\n      (∫ z in {z | |H z-c| < ε},φ z)/\n      (volume {z | |H z-c| < ε}).toReal) (𝓝[>] 0) (𝓝 (microAverage H c φ)) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 补曲面限制逆梯度积分等式，并以真实对称薄壳积分比极限表达归一化δ配对；紧正则能量带控制尾部，不把δ当普通Lebesgue函数或同测度重命名。"
+    ]
   }
 }

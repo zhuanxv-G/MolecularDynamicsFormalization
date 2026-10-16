@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT11",
+  "input_sha256": {
+    "BATCH_EAUDIT11.md": "5ad5d79e1fdfd174a1e5d23ce8e2073bda4d23de25bb8025054651dd4bf06a67",
+    "Blueprint/Ch05.lean": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
+    "blueprint/ch05/ch05_source.json": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT11a",
+      "source_id": "MD-5.3.3-MicroMeasure",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/a",
+      "total_bytes": 94581,
+      "manifest_sha256": "ccf30f2f7f16ebe6c3cf5d7cdc6211bb006450feba6b730c7c12a0b493b25985"
+    },
+    {
+      "subtask": "EAUDIT11b",
+      "source_id": "MD-5.3.3-MicroProbability",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/b",
+      "total_bytes": 108445,
+      "manifest_sha256": "a46ad86ee874236a17db73e16fbe99637fff618c9f377b0622f62f73229a7ad7"
+    },
+    {
+      "subtask": "EAUDIT11c",
+      "source_id": "MD-5.3.3-LowerDimensionNull",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/c",
+      "total_bytes": 110615,
+      "manifest_sha256": "dbf00e628c616077359149cca6fd74d33b96559e91fe665ef05aff54696e6152"
+    },
+    {
+      "subtask": "EAUDIT11d",
+      "source_id": "MD-5.3.3-MicroAverage",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/d",
+      "total_bytes": 112564,
+      "manifest_sha256": "106aaba40a1a9d27af4c6eb51d65a7bd851454d9fcff2b3896ad3e674eec87a1"
+    }
+  ]
+}

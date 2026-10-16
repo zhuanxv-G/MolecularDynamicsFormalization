@@ -1,0 +1,187 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.3.3-LowerDimensionNull；原PDF页映射=[216]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT11_review.json，对象含batch=EAUDIT11、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT11.md": "5ad5d79e1fdfd174a1e5d23ce8e2073bda4d23de25bb8025054651dd4bf06a67",
+  "Blueprint/Ch05.lean": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
+  "blueprint/ch05/ch05_source.json": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512",
+  "EAUDIT11c_materials": "aad2bf1e56cae6a3f56f51bf791e9befebf668d135b0df788834ff990616a723",
+  "EAUDIT11c_PAGES.pdf": "ad76d019954f1f113fd9a180f502967b8fc539f074731653d3dba0ff55da0214"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.3.3-LowerDimensionNull",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.3.3",
+  "printed_page": "195",
+  "pdf_page": "216",
+  "statement_latex": "We also note that lower order objects such as a point or a curve in $\\mathbb R^2$, or a surface in $\\mathbb R^3$, have zero measure with respect to Lebesgue measure for the ambient space. Similarly, for a Hamiltonian system with $N_d$ degrees of freedom, the energy surface is of dimension $2N_d-1$ and the probability measure of sets of lower dimension than this will vanish.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.lowerDimensionNull",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]低维光滑参数化的紧像、正则C¹能量面，维数严格小于能量面；未将任意“拓扑低维集合”自动视为零测。",
+    "[EXTRA] 保留紧面子引理，新增无需全能量面紧性的可数紧参数块零测推广，以及正则水平集局部同胚于开ℝ^(n−1)的维数结论（相空间n=2N_d）。环境Lebesgue零测也在本批同列。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT11_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:59:47.094333",
+      "before_sha256": "5f6e1c75c04a88778e013afcaee78058e0e0a72b648c0bced19878846979a332",
+      "after_sha256": "f625570e130cfe766eca6bbc30c8c44f323c6273723b4e8113393dcaff30e77a",
+      "changed_fields": [],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem lowerDimensionNull :
+  ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n)
+    (K : Set (MolecularDynamics.Chapter05Review.E d)), d+1 < n → ContDiff ℝ 1 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
+    ContDiff ℝ 1 g → IsCompact K →
+    g '' K ⊆ MolecularDynamics.Chapter05Review.energySurface H c → (MolecularDynamics.Chapter05Review.microMeasure H c) (g '' K)=0 := by
+  sorry
+
+theorem lowerDimensionNull_countable (n d : ℕ)
+    (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ)
+    (g : ℕ → MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n)
+    (K : ℕ → Set (MolecularDynamics.Chapter05Review.E d)) (_hd : d+1 < n)
+    (_hH : ContDiff ℝ 1 H)
+    (_hreg : ∀ z,MolecularDynamics.Chapter05Review.energySurface H c z →
+      MolecularDynamics.Chapter05Review.grad H z ≠ 0)
+    (_hblocks : ∀ k,ContDiff ℝ 1 (g k) ∧ IsCompact (K k) ∧
+      g k '' K k ⊆ MolecularDynamics.Chapter05Review.energySurface H c) :
+    (MolecularDynamics.Chapter05Review.microMeasure H c) (⋃ k,g k '' K k)=0 ∧
+      volume (⋃ k,g k '' K k)=0 := by
+  sorry
+
+theorem lowerDimensionNull_level_dimension (n : ℕ) (_hn : 0 < n)
+    (H : MolecularDynamics.Chapter05Review.E n → ℝ) (_hH : ContDiff ℝ 1 H)
+    (c : ℝ) (_hreg : ∀ z,H z=c → MolecularDynamics.Chapter05Review.grad H z ≠ 0) :
+    ∀ z,H z=c → ∃ U : Set (MolecularDynamics.Chapter05Review.E n),
+      IsOpen U ∧ z ∈ U ∧ ∃ V : Set (MolecularDynamics.Chapter05Review.E (n-1)),
+      IsOpen V ∧ Nonempty (V ≃ₜ ↥(MolecularDynamics.Chapter05Review.energySurface H c ∩ U)) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.energySurface
+```lean
+def energySurface {n : ℕ} (H : E n → ℝ) (c : ℝ) := {z | H z=c}
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.grad
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hausdorffArea
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.microMeasure
+```lean
+def microMeasure {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  ((microRaw H c) univ)⁻¹ • microRaw H c
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.microRaw
+```lean
+def microRaw {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  (surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖grad H z‖⁻¹))
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.regularEnergy
+```lean
+def regularEnergy {n : ℕ} (H : E n → ℝ) (c : ℝ) : Prop :=
+  (energySurface H c).Nonempty ∧ IsCompact (energySurface H c) ∧
+  (∀ z ∈ energySurface H c, grad H z ≠ 0) ∧
+  0 < (microRaw H c) univ ∧ (microRaw H c) univ < ∞
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.surfaceMeasure
+```lean
+def surfaceMeasure {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  (hausdorffArea (n-1)).restrict (energySurface H c)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MD.Ch05.energySurface
+```lean
+def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.grad
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hausdorffArea
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+### 实际依赖 MD.Ch05.microMeasure
+```lean
+def microMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  ((MolecularDynamics.Chapter05Review.microRaw H c) univ)⁻¹ • MolecularDynamics.Chapter05Review.microRaw H c
+```
+### 实际依赖 MD.Ch05.microRaw
+```lean
+def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.regularEnergy
+```lean
+def regularEnergy {n : ℕ} (H : E n → ℝ) (c : ℝ) : Prop :=
+  (energySurface H c).Nonempty ∧ IsCompact (energySurface H c) ∧
+  (∀ z ∈ energySurface H c, grad H z ≠ 0) ∧
+  0 < (microRaw H c) univ ∧ (microRaw H c) univ < ∞
+```
+### 实际依赖 MD.Ch05.surfaceMeasure
+```lean
+def surfaceMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.hausdorffArea (n-1)).restrict (MolecularDynamics.Chapter05Review.energySurface H c)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```

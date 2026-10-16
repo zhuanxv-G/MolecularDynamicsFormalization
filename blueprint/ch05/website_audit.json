@@ -8007,7 +8007,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT11",
+    "repair": {
+      "eaudit": "EAUDIT11",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT11.md": "5ad5d79e1fdfd174a1e5d23ce8e2073bda4d23de25bb8025054651dd4bf06a67",
+        "Blueprint/Ch05.lean": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
+        "blueprint/ch05/ch05_source.json": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.3-MicroProbability",
@@ -8090,7 +8102,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT11",
+    "repair": {
+      "eaudit": "EAUDIT11",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT11.md": "5ad5d79e1fdfd174a1e5d23ce8e2073bda4d23de25bb8025054651dd4bf06a67",
+        "Blueprint/Ch05.lean": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
+        "blueprint/ch05/ch05_source.json": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.3-LowerDimensionNull",
@@ -8143,7 +8167,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT11",
+    "repair": {
+      "eaudit": "EAUDIT11",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT11.md": "5ad5d79e1fdfd174a1e5d23ce8e2073bda4d23de25bb8025054651dd4bf06a67",
+        "Blueprint/Ch05.lean": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
+        "blueprint/ch05/ch05_source.json": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.3-MicroAverage",
@@ -8227,7 +8263,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT11",
+    "repair": {
+      "eaudit": "EAUDIT11",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT11.md": "5ad5d79e1fdfd174a1e5d23ce8e2073bda4d23de25bb8025054651dd4bf06a67",
+        "Blueprint/Ch05.lean": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
+        "blueprint/ch05/ch05_source.json": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.3-AmbientLowerDimensionNull",

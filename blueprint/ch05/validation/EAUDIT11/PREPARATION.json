@@ -1,0 +1,29 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT11",
+  "section": "5.3.3",
+  "source_ids": [
+    "MD-5.3.3-LowerDimensionNull",
+    "MD-5.3.3-MicroAverage",
+    "MD-5.3.3-MicroMeasure",
+    "MD-5.3.3-MicroProbability"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.3-MicroMeasure",
+    "MD-5.3.3-MicroProbability",
+    "MD-5.3.3-LowerDimensionNull",
+    "MD-5.3.3-MicroAverage"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
+  "lean_sha256": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
+  "source_sha256": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512",
+  "pages": [
+    215,
+    216
+  ],
+  "prior_proof_blocks": {
+    "MD-5.3.3-LowerDimensionNull": "theorem lowerDimensionNull :\n  ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n)\n    (K : Set (MolecularDynamics.Chapter05Review.E d)), d+1 < n → ContDiff ℝ 1 H → MolecularDynamics.Chapter05Review.regularEnergy H c →\n    ContDiff ℝ 1 g → IsCompact K →\n    g '' K ⊆ MolecularDynamics.Chapter05Review.energySurface H c → (MolecularDynamics.Chapter05Review.microMeasure H c) (g '' K)=0 := by\n  sorry",
+    "MD-5.3.3-MicroAverage": "def microAverage {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (g : MolecularDynamics.Chapter05Review.E n → ℝ) := MolecularDynamics.Chapter05Review.average (MolecularDynamics.Chapter05Review.microMeasure H c) g"
+  }
+}
