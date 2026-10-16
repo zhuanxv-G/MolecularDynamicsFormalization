@@ -1,0 +1,62 @@
+{
+  "authorization": "用户：第一章已经弄完了，继续第六章",
+  "accepted_head": "296a941bb13325da9eccdcb0a2a6a8ebceeacfeb",
+  "chapter1_delivery_sha256": "81208d9b19a621b03b117e1d96e3165cf2d754f25cb165a34b087869a11dd0f8",
+  "accepted_committed_ch01_changes": [
+    {
+      "path": "Blueprint/Ch01.lean",
+      "before_sha256": "4f79d783cb077c7b3724683d691e616b4d54ac4a16c322cbdab14196b9fb0fb3",
+      "accepted_sha256": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae"
+    },
+    {
+      "path": "blueprint/ch01/CheckAxioms.lean",
+      "before_sha256": "ca0fb98e4f4953f324022cf2a97f1ca59d14f4016c78453bca78770968358373",
+      "accepted_sha256": "3a9c8fd8b128b76e86ab76ed48aa412d9f3ef8789eb5e46ff405d82289c72ad7"
+    },
+    {
+      "path": "blueprint/ch01/PROGRESS.md",
+      "before_sha256": "7d619018c649182f1285bef9692ee7aba8a923b365b6acc57d90021c3b864c2f",
+      "accepted_sha256": "ed4704d92461bd7672743c9eb0a4f1944744d412ef51090f53b4172e9ff6adf0"
+    },
+    {
+      "path": "blueprint/ch01/ch01_source.json",
+      "before_sha256": "7381359ceaa49a185a5356dceeeac071fbcbd20b4e5ebc02a08779aa6c751051",
+      "accepted_sha256": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f"
+    },
+    {
+      "path": "blueprint/ch01/local_audit.json",
+      "before_sha256": "7d31def186fee3be7b16359b966717235e3695908c8ff33d9cc0d227efaec463",
+      "accepted_sha256": "4015622de59cf748574891ce1413127c541d0f6854f3719a4c120bc080b1b03f"
+    },
+    {
+      "path": "docs/review/CH01_BLUEPRINT.zh-CN.md",
+      "before_sha256": "25908b51acb36060464f45f39a74a34f9f1553489ace1f42f1e4b24b341afb51",
+      "accepted_sha256": "2739f091f3bfdfca7e49d8181ebdd0883482f25cb978cc4f85e48119d5759142"
+    },
+    {
+      "path": "blueprint/ch01/website_audit.json",
+      "before_sha256": "c9c645c5fc339d2924deecfae5bcd669d367824060982443b20ff3278dbe3e86",
+      "accepted_sha256": "237c12aeeeea2067f0c4c351554174fa43260ab449f2f2c98d1221ae9c41431f"
+    },
+    {
+      "path": "blueprint/ch01/WEBSITE_SUMMARY.json",
+      "before_sha256": "e0563f9ad8af415125658352f22209c5d46673509d348285a9f42d3a7c2def2d",
+      "accepted_sha256": "ba0db3aba5d8d969e91c41a7a58f8aa1d83b2c9b8c212c4b98605403a975e7a8"
+    },
+    {
+      "path": "blueprint/ch01/NEEDS_HUMAN.md",
+      "before_sha256": "cbccdd7e1941947ee2b4a0659a8beb374f4e2de068dba8ca364cde16453d68cc",
+      "accepted_sha256": "59d6b047a6896c2dc4fed50e2eaad7063ba3204ad7d103dd1e0688f3528a6297"
+    },
+    {
+      "path": "blueprint/ch01/EAUDIT_REGISTRY.json",
+      "before_sha256": "82c531bf7a0e172ffae4e12780001049b7d899dc3f98691e1e7f96eea56286e5",
+      "accepted_sha256": "6a5f4f6ad46094d38b55d921f6e1fc40d5a76745d9a1e665c64f4671eb3f6b4c"
+    }
+  ],
+  "reused_ch06_section633_acceptance_sha256": "086af41260e015e0e69a59ee07332860ca97269c7eb9d77c32782d01467b8b02",
+  "formal_library": "unchanged",
+  "scope": "Chapter6 local steps only; Chapters1-5 frozen; no Chapter7",
+  "next": "Activate section635 (8 entries); full preflight28 already passed; do not repeat identical checks.",
+  "heartbeat": "not modified or claimed tested by this resume script"
+}

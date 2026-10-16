@@ -1,0 +1,23 @@
+{
+  "section": "6.3.3",
+  "records": 132,
+  "status": "local_section_checked",
+  "reports": {
+    "CHECK_REPORT.json": "f876fd0c6aee9de3a01bfca8de59ebcabfa883b47f3874063466518eadd864a5",
+    "LOCAL_CHECK_REPORT.json": "fccabfc0c767807f3ae8f386c2f307843f795333c130d97db20204860c6d5943"
+  },
+  "inputs": {
+    "Blueprint/Ch06.lean": "dafdd4d7db76c1396ccce95d1ba9b0760484fa4f87ecf4b2a0625d2b43284cb0",
+    "blueprint/ch06/CheckAxioms.lean": "f298a1080b6d61402cc4e77ec8622c7d7e813d3dadf407e5ee4e90b93fe09197",
+    "blueprint/ch06/ch06_source.json": "9baedc4ec28558df8d7bfd8f9a86ff4013dcfa246c490b6354b069f256312d61"
+  },
+  "final_status_counts": {
+    "self-contained": 62,
+    "incomplete": 43,
+    "checked+documented priors": 27
+  },
+  "website": "待网站审计",
+  "chapter_complete": false,
+  "concurrent_directive_commit": "e1f19ef8ad16a449170e51ef43d5967a162a913b",
+  "next_action": "Do not overwrite the other active task. Human priority clarification pending."
+}

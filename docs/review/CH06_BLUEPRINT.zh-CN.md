@@ -116,25 +116,25 @@
 | MD-6.3.2-OUGibbsLimit | 235/256 | PASS | 待网站审计 | incomplete |
 | MD-6.3.2-MomentumOU | 235/256 | PASS | 待网站审计 | self-contained |
 | MD-6.3.2-GibbsGaussianDensity | 235/256 | PASS | 待网站审计 | self-contained |
-| MD-6.3.3-BathHamiltonian | 236/257 | PASS | 待网站审计 | incomplete |
+| MD-6.3.3-BathHamiltonian | 236/257 | PASS | 待网站审计 | self-contained |
 | MD-6.3.3-BathHamiltonEquations | 236/257 | PASS | 待网站审计 | incomplete |
-| MD-6.3.3-BathFrequency | 237/258 | PASS | 待网站审计 | incomplete |
+| MD-6.3.3-BathFrequency | 237/258 | PASS | 待网站审计 | self-contained |
 | MD-6.3.3-BathOscillatorSolution | 236–237/257–258 | PASS | 待网站审计 | incomplete |
 | MD-6.3.3-BathConvolutionIBP | 237/258 | PASS | 待网站审计 | incomplete |
-| MD-6.3.3-BathForce | 237/258 | PASS | 待网站审计 | incomplete |
+| MD-6.3.3-BathForce | 237/258 | PASS | 待网站审计 | self-contained |
 | MD-6.3.3-BathForcePrinted | 237/258 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-6.3.3-MemoryKernel | 237/258 | PASS | 待网站审计 | incomplete |
+| MD-6.3.3-MemoryKernel | 237/258 | PASS | 待网站审计 | self-contained |
 | MD-6.3.3-BathReduction | 237/258 | PASS | 待网站审计 | incomplete |
 | MD-6.3.3-BathReductionPrinted | 237/258 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-6.3.3-MemoryKernelDeltaMeaning | 238/259 | NEEDS_HUMAN | 待网站审计 | incomplete |
-| MD-6.3.3-ScalarLangevin | 238/259 | PASS | 待网站审计 | incomplete |
-| MD-6.3.3-MassLangevin | 239/260 | PASS | 待网站审计 | incomplete |
-| MD-6.3.3-VariableFriction | 239/260 | PASS | 待网站审计 | incomplete |
-| MD-6.3.3-ParticleDiagonalFriction | 239/260 | PASS | 待网站审计 | incomplete |
-| MD-6.3.4-BrownianMassModel | 240/261 | PASS | 待网站审计 | incomplete |
-| MD-6.3.3-FrequencyMemoryKernel | 237/258 | PASS | 待网站审计 | incomplete |
-| MD-6.3.3-Figure64Frequencies | 238/259 | PASS | 待网站审计 | incomplete |
-| MD-6.3.3-Figure65Frequencies | 238/259 | PASS | 待网站审计 | incomplete |
+| MD-6.3.3-ScalarLangevin | 238/259 | PASS | 待网站审计 | self-contained |
+| MD-6.3.3-MassLangevin | 239/260 | PASS | 待网站审计 | self-contained |
+| MD-6.3.3-VariableFriction | 239/260 | PASS | 待网站审计 | self-contained |
+| MD-6.3.3-ParticleDiagonalFriction | 239/260 | PASS | 待网站审计 | self-contained |
+| MD-6.3.4-BrownianMassModel | 240/261 | PASS | 待网站审计 | self-contained |
+| MD-6.3.3-FrequencyMemoryKernel | 237/258 | PASS | 待网站审计 | self-contained |
+| MD-6.3.3-Figure64Frequencies | 238/259 | PASS | 待网站审计 | self-contained |
+| MD-6.3.3-Figure65Frequencies | 238/259 | PASS | 待网站审计 | self-contained |
 | MD-6.3.3-BathForceWeakLimitMeaning | 237–238/258–259 | NEEDS_HUMAN | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
@@ -210,7 +210,7 @@ def microcanonical {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ)
 
 位置：[Blueprint/Ch06.lean:24](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:24>)（`MD.Ch06.microcanonical`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -253,7 +253,7 @@ def entropy (kB : ℝ) (Z : ℝ → ℝ) (E : ℝ) : ℝ := kB * Real.log (Z E)
 
 位置：[Blueprint/Ch06.lean:28](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:28>)（`MD.Ch06.entropy`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -303,7 +303,7 @@ theorem independentPartition :
 
 位置：[Blueprint/Ch06.lean:32](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:32>)（`MD.Ch06.independentPartition`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -351,7 +351,7 @@ theorem entropyAdditivity :
 
 位置：[Blueprint/Ch06.lean:49](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:49>)（`MD.Ch06.entropyAdditivity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -403,7 +403,7 @@ theorem entropyEquilibrium :
 
 位置：[Blueprint/Ch06.lean:58](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:58>)（`MD.Ch06.entropyEquilibrium`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -448,7 +448,7 @@ def temperature (S : ℝ → ℝ) (E : ℝ) : ℝ := (MolecularDynamics.Chapter0
 
 位置：[Blueprint/Ch06.lean:68](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:68>)（`MD.Ch06.temperature`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -492,7 +492,7 @@ def inverseThermal (kB T : ℝ) : ℝ := (kB * T)⁻¹
 
 位置：[Blueprint/Ch06.lean:71](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:71>)（`MD.Ch06.inverseThermal`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -544,7 +544,7 @@ theorem bathBoltzmannPrinted : ∀ (S : ℝ → ℝ) (energy kB β : ℝ),
 
 位置：[Blueprint/Ch06.lean:76](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:76>)（`MD.Ch06.bathBoltzmannPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -594,7 +594,7 @@ theorem logTemperature : ∀ (kB : ℝ) (Z : ℝ → ℝ) (energy : ℝ),
 
 位置：[Blueprint/Ch06.lean:86](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:86>)（`MD.Ch06.logTemperature`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -642,7 +642,7 @@ theorem bathMeanValue : ∀ (S : ℝ → ℝ) (energy s : ℝ),
 
 位置：[Blueprint/Ch06.lean:102](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:102>)（`MD.Ch06.bathMeanValue`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -690,7 +690,7 @@ theorem bathTaylorEstimate :
 
 位置：[Blueprint/Ch06.lean:116](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:116>)（`MD.Ch06.bathTaylorEstimate`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -740,7 +740,7 @@ theorem boltzmannConstantSlope : ∀ (S : ℝ → ℝ) (energy kB β : ℝ),
 
 位置：[Blueprint/Ch06.lean:124](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:124>)（`MD.Ch06.boltzmannConstantSlope`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -791,7 +791,7 @@ theorem canonicalCDFPrinted : ∀ (ZA ZB : ℝ → ℝ) (energy α : ℝ),
 
 位置：[Blueprint/Ch06.lean:148](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:148>)（`MD.Ch06.canonicalCDFPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -836,7 +836,7 @@ def canonicalEnergyDensity (Z : ℝ → ℝ) (β E : ℝ) : ℝ :=
 
 位置：[Blueprint/Ch06.lean:156](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:156>)（`MD.Ch06.canonicalEnergyDensity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -881,7 +881,7 @@ def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 位置：[Blueprint/Ch06.lean:160](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:160>)（`MD.Ch06.entropyFunctional`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -930,7 +930,7 @@ def constrainedEntropyModel {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 位置：[Blueprint/Ch06.lean:164](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:164>)（`MD.Ch06.constrainedEntropyModel`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -982,7 +982,7 @@ theorem entropyFirstVariation :
 
 位置：[Blueprint/Ch06.lean:173](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:173>)（`MD.Ch06.entropyFirstVariation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1038,7 +1038,7 @@ theorem entropyVariation :
 
 位置：[Blueprint/Ch06.lean:184](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:184>)（`MD.Ch06.entropyVariation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1086,7 +1086,7 @@ def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 位置：[Blueprint/Ch06.lean:195](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:195>)（`MD.Ch06.canonicalDensity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1129,7 +1129,7 @@ def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : M
 
 位置：[Blueprint/Ch06.lean:199](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:199>)（`MD.Ch06.massHamiltonian`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1178,7 +1178,7 @@ theorem partitionMass :
 
 位置：[Blueprint/Ch06.lean:204](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:204>)（`MD.Ch06.partitionMass`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1231,7 +1231,7 @@ theorem partitionDomain : ∀ {n : ℕ}
 
 位置：[Blueprint/Ch06.lean:213](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:213>)（`MD.Ch06.partitionDomain`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1279,7 +1279,7 @@ theorem finiteDomainPrinted : ∀ {n : ℕ} (Q : Set (MolecularDynamics.Chapter0
 
 位置：[Blueprint/Ch06.lean:226](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:226>)（`MD.Ch06.finiteDomainPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1329,7 +1329,7 @@ theorem periodicPartitionBridge {N : ℕ}
 
 位置：[Blueprint/Ch06.lean:234](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:234>)（`MD.Ch06.periodicPartitionBridge`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1379,7 +1379,7 @@ theorem confiningPartition :
 
 位置：[Blueprint/Ch06.lean:243](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:243>)（`MD.Ch06.confiningPartition`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1426,7 +1426,7 @@ theorem lennardJonesNonintegrable : ∀ β : ℝ, 0 < β →
 
 位置：[Blueprint/Ch06.lean:251](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:251>)（`MD.Ch06.lennardJonesNonintegrable`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1472,7 +1472,7 @@ theorem lennardJonesConfinement : ∀ ε : ℝ, 0 < ε → ∃ C : ℝ,
 
 位置：[Blueprint/Ch06.lean:257](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:257>)（`MD.Ch06.lennardJonesConfinement`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1521,7 +1521,7 @@ theorem periodicWeightIntegrable {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 位置：[Blueprint/Ch06.lean:269](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:269>)（`MD.Ch06.periodicWeightIntegrable`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1568,7 +1568,7 @@ theorem periodicPartitionPositive {N : ℕ}
 
 位置：[Blueprint/Ch06.lean:278](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:278>)（`MD.Ch06.periodicPartitionPositive`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1616,7 +1616,7 @@ def polynomialObservable {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ)
 
 位置：[Blueprint/Ch06.lean:285](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:285>)（`MD.Ch06.polynomialObservable`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1663,7 +1663,7 @@ def canonicalAveragePrinted {Nc : ℕ} (H : SymplecticCoordinates Nc → ℝ) (�
 
 位置：[Blueprint/Ch06.lean:290](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:290>)（`MD.Ch06.canonicalAveragePrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1711,7 +1711,7 @@ noncomputable def canonicalAverage {Nc : ℕ}
 
 位置：[Blueprint/Ch06.lean:297](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:297>)（`MD.Ch06.canonicalAverage`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1757,7 +1757,7 @@ theorem canonicalAverageOne {Nc : ℕ}
 
 位置：[Blueprint/Ch06.lean:303](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:303>)（`MD.Ch06.canonicalAverageOne`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1814,7 +1814,7 @@ theorem equipartition :
 
 位置：[Blueprint/Ch06.lean:311](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:311>)（`MD.Ch06.equipartition`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1868,7 +1868,7 @@ theorem configTemperature :
 
 位置：[Blueprint/Ch06.lean:321](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:321>)（`MD.Ch06.configTemperature`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1939,7 +1939,7 @@ theorem proposition61 {Nc : ℕ}
 
 位置：[Blueprint/Ch06.lean:334](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:334>)（`MD.Ch06.proposition61`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -1993,7 +1993,7 @@ theorem weightedFluxZero {Nc : ℕ}
 
 位置：[Blueprint/Ch06.lean:350](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:350>)（`MD.Ch06.weightedFluxZero`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2047,7 +2047,7 @@ theorem canonicalDivergenceIdentity {Nc : ℕ}
 
 位置：[Blueprint/Ch06.lean:363](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:363>)（`MD.Ch06.canonicalDivergenceIdentity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2100,7 +2100,7 @@ theorem temperatureChoiceDerivatives :
 
 位置：[Blueprint/Ch06.lean:377](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:377>)（`MD.Ch06.temperatureChoiceDerivatives`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2150,7 +2150,7 @@ theorem periodicBoundaryCancellation {Nc : ℕ}
 
 位置：[Blueprint/Ch06.lean:388](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:388>)（`MD.Ch06.periodicBoundaryCancellation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2198,7 +2198,7 @@ def meanEnergyConstraint {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 位置：[Blueprint/Ch06.lean:397](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:397>)（`MD.Ch06.meanEnergyConstraint`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2244,7 +2244,7 @@ theorem densityNormalization : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure
 
 位置：[Blueprint/Ch06.lean:403](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:403>)（`MD.Ch06.densityNormalization`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2301,7 +2301,7 @@ theorem partitionInversePrinted : ∀ {n : ℕ}
 
 位置：[Blueprint/Ch06.lean:414](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:414>)（`MD.Ch06.partitionInversePrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2352,7 +2352,7 @@ theorem weightedFluxIdentity {Nc : ℕ}
 
 位置：[Blueprint/Ch06.lean:428](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:428>)（`MD.Ch06.weightedFluxIdentity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2408,7 +2408,7 @@ theorem virialTemperature : ∀ {n : ℕ} (hn : 0 < n)
 
 位置：[Blueprint/Ch06.lean:439](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:439>)（`MD.Ch06.virialTemperature`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2454,7 +2454,7 @@ theorem virialFieldNotPeriodic : ∀ {n : ℕ} (i : Fin n) (q : Fin n → ℝ),
 
 位置：[Blueprint/Ch06.lean:454](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:454>)（`MD.Ch06.virialFieldNotPeriodic`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2502,7 +2502,7 @@ theorem densityPositive : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 位置：[Blueprint/Ch06.lean:462](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:462>)（`MD.Ch06.densityPositive`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2553,7 +2553,7 @@ theorem kineticWeightFactorization : ∀ {n : ℕ}
 
 位置：[Blueprint/Ch06.lean:471](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:471>)（`MD.Ch06.kineticWeightFactorization`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2602,7 +2602,7 @@ theorem energySupportObstruction :
 
 位置：[Blueprint/Ch06.lean:487](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:487>)（`MD.Ch06.energySupportObstruction`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2654,7 +2654,7 @@ theorem canonicalSamplingObstruction : ∀ {n : ℕ}
 
 位置：[Blueprint/Ch06.lean:501](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:501>)（`MD.Ch06.canonicalSamplingObstruction`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2704,7 +2704,7 @@ def rademacherJumps {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 位置：[Blueprint/Ch06.lean:530](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:530>)（`MD.Ch06.rademacherJumps`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2751,7 +2751,7 @@ def randomWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sampl
 
 位置：[Blueprint/Ch06.lean:537](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:537>)（`MD.Ch06.randomWalk`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2796,7 +2796,7 @@ theorem walkRecurrence :
 
 位置：[Blueprint/Ch06.lean:541](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:541>)（`MD.Ch06.walkRecurrence`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2841,7 +2841,7 @@ theorem walkInitial : ∀ {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (samp
 
 位置：[Blueprint/Ch06.lean:549](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:549>)（`MD.Ch06.walkInitial`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2892,7 +2892,7 @@ theorem walkVariance :
 
 位置：[Blueprint/Ch06.lean:556](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:556>)（`MD.Ch06.walkVariance`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2939,7 +2939,7 @@ def diffusiveWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt : ℝ) : ℕ → Ω 
 
 位置：[Blueprint/Ch06.lean:563](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:563>)（`MD.Ch06.diffusiveWalk`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2985,7 +2985,7 @@ def interpolatedWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt t : ℝ) (sample 
 
 位置：[Blueprint/Ch06.lean:567](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:567>)（`MD.Ch06.interpolatedWalk`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3029,7 +3029,7 @@ def walkIncrement {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sa
 
 位置：[Blueprint/Ch06.lean:573](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:573>)（`MD.Ch06.walkIncrement`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3077,7 +3077,7 @@ theorem walkGridMoments :
 
 位置：[Blueprint/Ch06.lean:578](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:578>)（`MD.Ch06.walkGridMoments`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3128,7 +3128,7 @@ theorem interpolatedWalkMean : ∀ {Ω : Type*} [MeasurableSpace Ω]
 
 位置：[Blueprint/Ch06.lean:587](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:587>)（`MD.Ch06.interpolatedWalkMean`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3188,7 +3188,7 @@ theorem walkDiffusion :
 
 位置：[Blueprint/Ch06.lean:597](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:597>)（`MD.Ch06.walkDiffusion`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3236,7 +3236,7 @@ def wienerVector {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 位置：[Blueprint/Ch06.lean:613](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:613>)（`MD.Ch06.wienerVector`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3285,7 +3285,7 @@ theorem wienerIncrement :
 
 位置：[Blueprint/Ch06.lean:619](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:619>)（`MD.Ch06.wienerIncrement`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3333,7 +3333,7 @@ theorem wienerContinuousVersion :
 
 位置：[Blueprint/Ch06.lean:637](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:637>)（`MD.Ch06.wienerContinuousVersion`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3382,7 +3382,7 @@ theorem wienerNondifferentiable :
 
 位置：[Blueprint/Ch06.lean:645](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:645>)（`MD.Ch06.wienerNondifferentiable`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3432,7 +3432,7 @@ theorem wienerFutureCompletedHistory
 
 位置：[Blueprint/Ch06.lean:654](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:654>)（`MD.Ch06.wienerFutureCompletedHistory`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3479,7 +3479,7 @@ theorem gridWienerIncrementLaw {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω
 
 位置：[Blueprint/Ch06.lean:664](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:664>)（`MD.Ch06.gridWienerIncrementLaw`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3526,7 +3526,7 @@ theorem gridIncrementIndependent {Ω : Type*} [MeasurableSpace Ω] {P : Measure 
 
 位置：[Blueprint/Ch06.lean:671](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:671>)（`MD.Ch06.gridIncrementIndependent`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3574,7 +3574,7 @@ theorem wienerContinuousPathEval {Nc : ℕ} {Ω : Type*}
 
 位置：[Blueprint/Ch06.lean:678](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:678>)（`MD.Ch06.wienerContinuousPathEval`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3621,7 +3621,7 @@ theorem wienerContinuousPathMeasurable {Nc : ℕ} {Ω : Type*} [MeasurableSpace 
 
 位置：[Blueprint/Ch06.lean:686](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:686>)（`MD.Ch06.wienerContinuousPathMeasurable`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3674,7 +3674,7 @@ theorem coarseMarkovPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω]
 
 位置：[Blueprint/Ch06.lean:693](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:693>)（`MD.Ch06.coarseMarkovPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3724,7 +3724,7 @@ def stateMarkovMeaning {Ω : Type*} [MeasurableSpace Ω]
 
 位置：[Blueprint/Ch06.lean:705](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:705>)（`MD.Ch06.stateMarkovMeaning`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3773,7 +3773,7 @@ theorem riemannTags : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → ℕ → �
 
 位置：[Blueprint/Ch06.lean:714](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:714>)（`MD.Ch06.riemannTags`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3821,7 +3821,7 @@ def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (samp
 
 位置：[Blueprint/Ch06.lean:722](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:722>)（`MD.Ch06.itoLeftSum`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3872,7 +3872,7 @@ def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 位置：[Blueprint/Ch06.lean:728](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:728>)（`MD.Ch06.strictItoIntegral`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3919,7 +3919,7 @@ def weakItoAlias {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 位置：[Blueprint/Ch06.lean:736](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:736>)（`MD.Ch06.weakItoAlias`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -3967,7 +3967,7 @@ def stratonovichSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) 
 
 位置：[Blueprint/Ch06.lean:741](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:741>)（`MD.Ch06.stratonovichSum`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4016,7 +4016,7 @@ theorem selfItoFiniteIdentity {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 
 位置：[Blueprint/Ch06.lean:747](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:747>)（`MD.Ch06.selfItoFiniteIdentity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4088,7 +4088,7 @@ theorem proposition62 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 位置：[Blueprint/Ch06.lean:756](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:756>)（`MD.Ch06.proposition62`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4137,7 +4137,7 @@ def meanSquareConvergence {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 位置：[Blueprint/Ch06.lean:764](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:764>)（`MD.Ch06.meanSquareConvergence`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4181,7 +4181,7 @@ noncomputable def wienerMidpointSum {Ω : Type*} [MeasurableSpace Ω] {P : Measu
 
 位置：[Blueprint/Ch06.lean:770](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:770>)（`MD.Ch06.wienerMidpointSum`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4227,7 +4227,7 @@ theorem gaussianIncrementMean {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 
 位置：[Blueprint/Ch06.lean:776](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:776>)（`MD.Ch06.gaussianIncrementMean`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4275,7 +4275,7 @@ theorem gaussianIncrementSecond {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 
 位置：[Blueprint/Ch06.lean:783](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:783>)（`MD.Ch06.gaussianIncrementSecond`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4323,7 +4323,7 @@ theorem gaussianIncrementFourth {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 
 位置：[Blueprint/Ch06.lean:790](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:790>)（`MD.Ch06.gaussianIncrementFourth`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4374,7 +4374,7 @@ theorem quadraticMeanSquareError {Ω : Type*} [MeasurableSpace Ω] {P : Measure 
 
 位置：[Blueprint/Ch06.lean:797](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:797>)（`MD.Ch06.quadraticMeanSquareError`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4424,7 +4424,7 @@ theorem selfItoIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : 
 
 位置：[Blueprint/Ch06.lean:805](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:805>)（`MD.Ch06.selfItoIntegral`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4478,7 +4478,7 @@ theorem selfStratonovichIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure 
 
 位置：[Blueprint/Ch06.lean:814](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:814>)（`MD.Ch06.selfStratonovichIntegral`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4530,7 +4530,7 @@ theorem proposition63 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 位置：[Blueprint/Ch06.lean:823](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:823>)（`MD.Ch06.proposition63`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4578,7 +4578,7 @@ theorem quadraticSumExpectation {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 
 位置：[Blueprint/Ch06.lean:834](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:834>)（`MD.Ch06.quadraticSumExpectation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4625,7 +4625,7 @@ theorem selfItoLimitL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 位置：[Blueprint/Ch06.lean:841](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:841>)（`MD.Ch06.selfItoLimitL2`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4672,7 +4672,7 @@ theorem selfItoSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 位置：[Blueprint/Ch06.lean:848](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:848>)（`MD.Ch06.selfItoSumsL2`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4719,7 +4719,7 @@ theorem midpointSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 位置：[Blueprint/Ch06.lean:855](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:855>)（`MD.Ch06.midpointSumsL2`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4767,7 +4767,7 @@ def deterministicIntegralProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure 
 
 位置：[Blueprint/Ch06.lean:862](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:862>)（`MD.Ch06.deterministicIntegralProcess`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4815,7 +4815,7 @@ theorem deterministicStrobePrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : 
 
 位置：[Blueprint/Ch06.lean:868](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:868>)（`MD.Ch06.deterministicStrobePrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4866,7 +4866,7 @@ theorem deterministicStrobeCorrected : ∀ {Ω : Type*} [MeasurableSpace Ω] (P 
 
 位置：[Blueprint/Ch06.lean:878](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:878>)（`MD.Ch06.deterministicStrobeCorrected`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4913,7 +4913,7 @@ def stochasticDifferentialIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measur
 
 位置：[Blueprint/Ch06.lean:888](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:888>)（`MD.Ch06.stochasticDifferentialIntegral`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -4961,7 +4961,7 @@ def biasedWalk {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ → Ω → ℝ)
 
 位置：[Blueprint/Ch06.lean:894](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:894>)（`MD.Ch06.biasedWalk`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5008,7 +5008,7 @@ theorem biasedWalkSum : ∀ {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ �
 
 位置：[Blueprint/Ch06.lean:901](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:901>)（`MD.Ch06.biasedWalkSum`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5060,7 +5060,7 @@ def strictScalarSDE {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 位置：[Blueprint/Ch06.lean:915](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:915>)（`MD.Ch06.strictScalarSDE`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5116,7 +5116,7 @@ def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure �
 
 位置：[Blueprint/Ch06.lean:924](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:924>)（`MD.Ch06.strictVectorSDE`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5175,7 +5175,7 @@ theorem scalarItoFormula :
 
 位置：[Blueprint/Ch06.lean:938](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:938>)（`MD.Ch06.scalarItoFormula`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5224,7 +5224,7 @@ theorem diffusiveTaylorPrinted : ∀ (φ : ℝ → ℝ) (x a b : ℝ), ContDiff 
 
 位置：[Blueprint/Ch06.lean:952](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:952>)（`MD.Ch06.diffusiveTaylorPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5280,7 +5280,7 @@ theorem timeItoFormula :
 
 位置：[Blueprint/Ch06.lean:961](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:961>)（`MD.Ch06.timeItoFormula`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5342,7 +5342,7 @@ theorem biasedWalkDiffusion : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure
 
 位置：[Blueprint/Ch06.lean:975](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:975>)（`MD.Ch06.biasedWalkDiffusion`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5391,7 +5391,7 @@ def strictOUProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 位置：[Blueprint/Ch06.lean:996](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:996>)（`MD.Ch06.strictOUProcess`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5446,7 +5446,7 @@ theorem ouIntegratingFactor :
 
 位置：[Blueprint/Ch06.lean:1002](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1002>)（`MD.Ch06.ouIntegratingFactor`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5493,7 +5493,7 @@ theorem ouVarianceIntegral : ∀ (γ T : ℝ), 0 < γ → 0 ≤ T →
 
 位置：[Blueprint/Ch06.lean:1012](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1012>)（`MD.Ch06.ouVarianceIntegral`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5545,7 +5545,7 @@ theorem ouLawPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 位置：[Blueprint/Ch06.lean:1030](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1030>)（`MD.Ch06.ouLawPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5595,7 +5595,7 @@ theorem ouLawCorrect :
 
 位置：[Blueprint/Ch06.lean:1040](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1040>)（`MD.Ch06.ouLawCorrect`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5648,7 +5648,7 @@ theorem ouGibbsLimit :
 
 位置：[Blueprint/Ch06.lean:1049](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1049>)（`MD.Ch06.ouGibbsLimit`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5699,7 +5699,7 @@ def momentumOU {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 位置：[Blueprint/Ch06.lean:1059](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1059>)（`MD.Ch06.momentumOU`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5743,7 +5743,7 @@ def gibbsGaussianDensity (θ m u : ℝ) : ℝ :=
 
 位置：[Blueprint/Ch06.lean:1065](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1065>)（`MD.Ch06.gibbsGaussianDensity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -5785,13 +5785,13 @@ def bathHamiltonian {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Rev
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1070](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1070>)（`MD.Ch06.bathHamiltonian`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`27d16196dcd4634eebace3aad49a7c08e163bf9da3afe96c7e8f278fa2bb8e5c`；原文SHA256：`6fab21e6c1e5d272fa63080c7272da831f81000500362d1b20b233c5ee754e5d`。
 
@@ -5841,9 +5841,9 @@ theorem bathHamiltonEquations :
 
 位置：[Blueprint/Ch06.lean:1075](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1075>)（`MD.Ch06.bathHamiltonEquations`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：有sorry；传递占位：未验证。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：待真实Fréchet有限和导数桥接；不恢复封存长证明。
 
@@ -5882,13 +5882,13 @@ def bathFrequency {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Revie
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1086](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1086>)（`MD.Ch06.bathFrequency`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`f0ea80751f0a429588bb931b70788d0b9c9d35b58bfc63ec00c1105cc98b7da8`；原文SHA256：`c56571a41f958087372b3530932f7307323d61760c17bd2c212b78bcccb85873`。
 
@@ -5936,9 +5936,9 @@ theorem bathOscillatorSolution : ∀ (Q q : ℝ → ℝ) (k : ℕ) (μ p0 t : �
 
 位置：[Blueprint/Ch06.lean:1090](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1090>)（`MD.Ch06.bathOscillatorSolution`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：有sorry；传递占位：未验证。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺现成受迫振子变常数解完整桥接；不恢复封存证明。
 
@@ -5987,9 +5987,9 @@ theorem bathConvolutionIBP :
 
 位置：[Blueprint/Ch06.lean:1101](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1101>)（`MD.Ch06.bathConvolutionIBP`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：有sorry；传递占位：未验证。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：三条短证明路线失败，停止该条；保存证据见validation/short_search/BathConvolutionIBP.json。
 
@@ -6034,13 +6034,13 @@ def bathForce {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V 
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1111](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1111>)（`MD.Ch06.bathForce`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`780766e859402d141d92d20fb5d6c21b2518071d80dfd5e96b0707871713e9f8`；原文SHA256：`05dfc388a3580bc1fd8aaafd657929f20ab41b393725261e1ce394f5a24c1a2c`。
 
@@ -6083,9 +6083,9 @@ def bathForcePrinted {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Re
 
 位置：[Blueprint/Ch06.lean:1118](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1118>)（`MD.Ch06.bathForcePrinted`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：保留字面负号，导师/网站待裁定；完整两种约化陈述下一批保留。
 
@@ -6125,13 +6125,13 @@ def memoryKernel {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1122](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1122>)（`MD.Ch06.memoryKernel`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`eb3e3ac5bc830686b94cf8770e8c1e99fef2f43e11f2c9dc41f06468cfbfab52`；原文SHA256：`51c6334fe9ca515666975971c54c970e53ae3df79561276a9a5a31d3d309c2a7`。
 
@@ -6182,9 +6182,9 @@ theorem bathReduction :
 
 位置：[Blueprint/Ch06.lean:1127](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1127>)（`MD.Ch06.bathReduction`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：有sorry；传递占位：未验证。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺受迫振子解及卷积IBP的完整组合桥接；不恢复封存长证明。
 
@@ -6236,9 +6236,9 @@ theorem bathReductionPrinted :
 
 位置：[Blueprint/Ch06.lean:1140](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1140>)（`MD.Ch06.bathReductionPrinted`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：有sorry；传递占位：未验证。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：不证明符号疑误；网站/导师待裁定。
 
@@ -6286,9 +6286,9 @@ def memoryKernelDeltaMeaning (masses : (k : ℕ) → (Fin k → ℝ)) (γ : ℝ)
 
 位置：[Blueprint/Ch06.lean:1154](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1154>)（`MD.Ch06.memoryKernelDeltaMeaning`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺具体热浴谱/初值法则、白噪声极限及严格Langevin导出理论；原书也明确略去，不建设。
 
@@ -6338,13 +6338,13 @@ def scalarLangevin {Ω : Type*} [MeasurableSpace Ω] (law : Measure Ω)
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1162](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1162>)（`MD.Ch06.scalarLangevin`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`513cc664075076bec0f05ee77c622478cfe1cc0668188523fd7528a526a4f860`；原文SHA256：`d60949f70c76ce29c58d2ea4809127fba1e080ca5ac225b48da1333d7d891f18`。
 
@@ -6394,13 +6394,13 @@ def langevinMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1176](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1176>)（`MD.Ch06.langevinMassSDE`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`0908ce127d1dfa95f334506332b69c4f8910529c3357a04b73c11254ee3ac432`；原文SHA256：`0f97321c5ef0522f1021acb04d065418214d307d5a0d03bebc3815049a60130d`。
 
@@ -6457,13 +6457,13 @@ def variableFriction {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure 
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1193](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1193>)（`MD.Ch06.variableFriction`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`9f07c0d1189e93bb43d6a6e98ce5777518e8884055301f64c7a428d68c8cf730`；原文SHA256：`0a00ecc16b172e3806d6d01c2adc70569228f089e33cbf5038e13db581f3c77f`。
 
@@ -6502,13 +6502,13 @@ def particleDiagonalFriction {N : ℕ} (γ : Fin N → (Fin (N*3) → ℝ) → �
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1213](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1213>)（`MD.Ch06.particleDiagonalFriction`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`60b45ca2196fcc3785d057cb7fc9a28c49707e53de6604c3a920865fba485a35`；原文SHA256：`d7b036e4ba26c778ae49a34d8511a3756a4562fbb3598f723ba06a2c9e4e58e6`。
 
@@ -6556,13 +6556,13 @@ def brownianMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1219](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1219>)（`MD.Ch06.brownianMassSDE`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`1475743c139ef10f100a62f901c0410fc2cc4fe2799b3615d1ec3ab1a5e0a7af`；原文SHA256：`dc6701671e98a54893d8e625dcf6f95dbf47d704281545ff5908aa3fa6058438`。
 
@@ -6600,13 +6600,13 @@ def frequencyMemoryKernel {k : ℕ} (Ω : Fin k → ℝ) (t : ℝ) : ℝ :=
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1231](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1231>)（`MD.Ch06.frequencyMemoryKernel`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`403da5b4675484e5d1d57ef2875c7755db29a0ebe45263ad7703a2594ca08f39`；原文SHA256：`0475159526d0faa4185b805907741eb021530e1067b666353d6096dabc17bb6e`。
 
@@ -6647,13 +6647,13 @@ def figure64Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1236](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1236>)（`MD.Ch06.figure64Frequencies`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`4594c84ecb0eb1de0c8aa0da7c4363f25cd965d3ed3e792680b54d3dc0c74ec9`；原文SHA256：`a4bde3f38ad87a441beecc8f020eb56686a6f11750c2e5cc71b38c390c39ff02`。
 
@@ -6699,13 +6699,13 @@ def figure65Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
 
 ### 7. 状态与证明位置
 
-**incomplete**；本地证明状态：definition。
+**self-contained**；本地证明状态：definition。
 
 位置：[Blueprint/Ch06.lean:1244](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1244>)（`MD.Ch06.figure65Frequencies`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`8e39f9dd83a21c1472ba2f2952dc0c95e4f6e8af0fa3cae4229ef08cf1651f8d`；原文SHA256：`d6bbe6032a421182fe248e8d147f10ddb010f102ae07fdf18bf20fc8db5b2f7e`。
 
@@ -6760,9 +6760,9 @@ def bathForceWeakLimitMeaning {A : Type*} [MeasurableSpace A] (P : Measure A)
 
 位置：[Blueprint/Ch06.lean:1258](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1258>)（`MD.Ch06.bathForceWeakLimitMeaning`）。
 
-Lean编译/公理检查：本轮待验证；公理：`未检查`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
-直接占位：无直接sorry；传递占位：未验证。
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺精确热浴初始化/谱条件及white-force或integrated-force极限解释；保留疑误，不建大型弱收敛理论。
 
