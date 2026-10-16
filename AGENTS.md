@@ -1,5 +1,21 @@
 # 项目接续与形式化约定
 
+当前任务：继续完成第6章本地流程（印刷211–258 / PDF232–279）；第2–5章沿用已完成修复验收，不进入第7章。
+下一步：复用批26的128条编译证据，从WIP 6b822a9a524f续接132条；批27无结果且原进程已结束，保留记录，以新收据完成检查后继续§6.3.4–6.4.5。
+
+## 当前最高优先级范围（用户2026-10-16新指令）
+
+- 恢复第6章本地①–⑤流程；第2–5章审核修复已完成，不重新展开修复队列。第1章按原规则暂停；MolecularDynamics/正式库字节冻结、0 sorry；不进入第7章。
+- 每批≤8条及时落盘并单文件Lean编译；每节完整scripts/check.ps1、逐条#print axioms、七段文档及commit+push。沿用Lean/Mathlib v4.34.0。
+- 仅本地PASS条目证明：现成正式桥接→短证明；三条失败路线或缺大型理论即sorry+缺项继续。Thm6.1/6.2/Prop6.4没有整条现成桥接则sorry；不恢复封存断点或长证明。
+- 保留完整对象、量词、前提及全部结论；EXTRA/ERRATUM?明确，禁True、P→P、结论作假设、admit、新axiom/unsafe。JSON/旧映射/模板C/compact/完整版BATCH/INDEX齐全；每个PASTE+原页PDF+MANIFEST合计<256000字节，只生成不提交网站。
+- 网站未审写待网站审计，含sorryAx必须incomplete；最终状态仅self-contained / checked+documented priors / incomplete。每检查点更新PROGRESS、LOCAL_PIPELINE及WORK_LOG≤3行，复用已通过证据，保留未提交半成品及其他任务文件。
+- 全部本地流程完成后更新CURRENT_STATE终态并停止于第6章；已完成第2–5章EAUDIT网站复审与导师判断仍待用户处理。
+
+## 历史交接（暂停第6章及停止推进已被本次新指令覆盖）
+
+# 项目接续与形式化约定
+
 第2–5章修复完成，等待用户提交 EAUDIT 复审包（见各章 mathcopilot_tasks/EAUDIT*/INDEX.md）
 下一步：停止本轮推进，只确认完成状态；等待用户明确新指令。第6章仍暂停，不进入第7章。
 

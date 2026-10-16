@@ -1,0 +1,129 @@
+{
+  "authorization": "用户2026-10-16：第2–5章审核已完成，继续完成第6章",
+  "accepted_head": "93d2d3e5eab867436824e635aa4c66a85e85d646",
+  "accepted_repair_delivery_sha256": "1869a3502062b9569d57470c061cfcb2964b73be8f770e2b2b39e996ca227de7",
+  "previous_baseline_sha256": "4813c720ed97fee313e794a39c6a8c5e097f79ce7441d718c1be71e20860bf78",
+  "accepted_committed_repairs": [
+    {
+      "path": "blueprint/ch02/PROGRESS.md",
+      "before_sha256": "a7481a3efa2e62e7899d1662740cf57bbe2aec71cad65274d2ec62238eacd2a5",
+      "accepted_sha256": "77553af49d8993ad1a434a36ff5a3b968ea9d10ee576ee7e08b775508cafb911"
+    },
+    {
+      "path": "blueprint/ch03/NEEDS_HUMAN.md",
+      "before_sha256": "bec0564159838b6bc7f79d1bbd5d84fbab97bf535e23b97e4650edbedfa30e95",
+      "accepted_sha256": "59eec10a25df3f628c4b8dacc44e3ad5e890abb60b60be99fddcfd03c703e4c1"
+    },
+    {
+      "path": "blueprint/ch03/local_audit.json",
+      "before_sha256": "8d83b3e5ca4ac324d21f583c399e7451e0116465b2ca4ff5805f02c186652141",
+      "accepted_sha256": "7be0b5ed6390733f4cc3c23648d7c9045382f68af1a6ef3c8a55ba268ffc96e4"
+    },
+    {
+      "path": "blueprint/ch03/WEBSITE_SUMMARY.json",
+      "before_sha256": "8ef90b121ce34ac09e3d366a2ef93cdff90c8475132be8a719c4dd11a51c2982",
+      "accepted_sha256": "3abbd52f23c51924f86241de8219ad2715dda10c229c8cbaf063968d0587508a"
+    },
+    {
+      "path": "blueprint/ch02/local_audit.json",
+      "before_sha256": "0c22d7dcc85e26448ed348509c001f1aca282e65ed856d9ab980fdb2767dd321",
+      "accepted_sha256": "f3a57d56775ed90452a07af8e13e69d359f557404bb03ee9311031398f752deb"
+    },
+    {
+      "path": "blueprint/ch02/WEBSITE_SUMMARY.json",
+      "before_sha256": "6ac66634d3f75b8d6fd223f51bc166f7ee8ea57a50c7cc54f13ab0b7bea3c5f4",
+      "accepted_sha256": "56d7e2bf108f736648fbfe6c5c8753a4135aed60cfbd891819534e0a286e8137"
+    },
+    {
+      "path": "docs/review/CH03_BLUEPRINT.zh-CN.md",
+      "before_sha256": "1abc25fa0a095e591a3913242b506b78cdc2c9009a84b1b5dcef548751c035ca",
+      "accepted_sha256": "288731c067224b5503d9f24f3ae3beed69718d5538fb17380df49b16034918c2"
+    },
+    {
+      "path": "blueprint/ch02/NEEDS_HUMAN.md",
+      "before_sha256": "3aa5ef62407b961cec746127d9cfa92eca16edbf63f85295abe7d51285e6f82e",
+      "accepted_sha256": "5328916b55530c131dfc67fab46032f80965ba60aaec70c5b4ae32d21e41c08b"
+    },
+    {
+      "path": "blueprint/ch03/PROGRESS.md",
+      "before_sha256": "28f48a02cf648848718f47c83753bc39a4d800fbbb0713c22a0416f9f770397c",
+      "accepted_sha256": "c61a14ab6c9e92b037a372b4dde8039e9fe400135d79a45d6ff6198f18e18114"
+    },
+    {
+      "path": "blueprint/ch02/website_audit.json",
+      "before_sha256": "41a952d21db5ab3dbaf6187b01542c960cb3eff23ece1e884d29213a6dd155d1",
+      "accepted_sha256": "f7cd528eef876d4a5231d4ba93f980eba16b1b2b2074c7039df29e1985c3213d"
+    },
+    {
+      "path": "blueprint/ch03/website_audit.json",
+      "before_sha256": "8dcbb948fa5949a1abd073a10b4e9ffc6cac0f77783e2a31e674b454ca266ffb",
+      "accepted_sha256": "10a572edc5b6eb3e2f5a83b4e2fe40d6e65df217ada70222dcc927e1ea769588"
+    },
+    {
+      "path": "docs/review/CH02_BLUEPRINT.zh-CN.md",
+      "before_sha256": "019b049d2aa46d5d6135aa843c4d78b8983033684a698ad64ebd8b96d20a96b2",
+      "accepted_sha256": "2684d9bea47cd0c2e9d28cd33cb388d1db7381d67060520b4dc802f792d8c97c"
+    },
+    {
+      "path": "blueprint/ch03/SOURCE_REVIEW_QUEUE.json",
+      "before_sha256": "93139c90490d0b5e31aca416405aabbe3edac46d6c653196239f6b18695d3181",
+      "accepted_sha256": "b2b8f0bc6af5b7427acb2b205b165765c78019d122a5c722d5a1d992acda9a81"
+    },
+    {
+      "path": "blueprint/ch02/SOURCE_REVIEW_QUEUE.json",
+      "before_sha256": "3a2d64f318ec0d044eeb58f75cd2dd13b877933fd20250eeca3e59c3c8b3b5f7",
+      "accepted_sha256": "193f2343f2b40b1e912cd67675d6b1ec0fc40e0f597e9ff9e474e75bf20a50f7"
+    },
+    {
+      "path": "blueprint/ch03/ch03_source.json",
+      "before_sha256": "1ba0463ea10b8998259b4af7f0df6a1a44ffbafd401fd2976f2b07a147bb4385",
+      "accepted_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+    },
+    {
+      "path": "Blueprint/Ch03.lean",
+      "before_sha256": "e7e73ce97e8e062c6046162a012b1f6b980bff3420725af6dcfad12ad0a1d301",
+      "accepted_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+    },
+    {
+      "path": "blueprint/ch03/website_signature_overrides.json",
+      "before_sha256": "fb0dfaf840705ebd5b8807d20ddcab23ea5e6414626226d09e7b8d0f6c95185f",
+      "accepted_sha256": "d7a318df71f1c1a1c00a9a9f2c4e8e2a141117398d90d4f72ec318314c3a5c82"
+    },
+    {
+      "path": "blueprint/ch03/EAUDIT_REGISTRY.json",
+      "before_sha256": "4fbec1388c23f4550097bd03116c7bb8cad7005f27a95d585e54747852839f04",
+      "accepted_sha256": "92270c013511c561aca3c4faf45da5c5ecb6ae33ad9c21be7503917585217fbb"
+    },
+    {
+      "path": "blueprint/ch02/website_signature_overrides.json",
+      "before_sha256": "839736701e9978f5c16820e6ed10e087c9b12f9a5f9284e2c7aa80d72f83c843",
+      "accepted_sha256": "89c4d4eb11863cba37a2dddecddd27daa8d56fe6ba08687798b9938244158d8d"
+    },
+    {
+      "path": "blueprint/ch02/ch02_source.json",
+      "before_sha256": "1669ab8d23d93508b02ae4352a94315080a169c35df038891bbed6adcaf1cbf0",
+      "accepted_sha256": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+    },
+    {
+      "path": "Blueprint/Ch02.lean",
+      "before_sha256": "24f728085e058546c4a32b4229d5c7ec328a746f5f53b59aaf7ca1b8d2062e89",
+      "accepted_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+    },
+    {
+      "path": "scripts/eaudit_review_tasks.py",
+      "before_sha256": "6a171966d4115081b9bd0f2e6873e674dfaff2c3e1df1215f2a5a7555c54ccc7",
+      "accepted_sha256": "2bacd41e4273ca5507ffbc263a878a2ff19aa41fc0ce95774cffe195ea41f4ef"
+    },
+    {
+      "path": "blueprint/ch02/EAUDIT_REGISTRY.json",
+      "before_sha256": "62110f3f54d6e21d2270f6b3b5067f4a893159523cf75ef82a50c2ce9a144c76",
+      "accepted_sha256": "bda949c07ab652fc1a17ab63cdf4fb3b2a4544cc4177ac6a2227f887c0321b8f"
+    }
+  ],
+  "formal_library_hashes": "unchanged",
+  "chapter6_wip": "6b822a9a524f",
+  "last_passed_batch": 26,
+  "next": "batch27 has no result and its recorded parent/compiler are gone; preserve record and compile a new receipt",
+  "sealed_proofs": "never restored",
+  "heartbeat": "not changed by this script"
+}
