@@ -1,0 +1,86 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-5.5-MeasureDuality",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
+    "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+    "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1",
+    "EAUDIT17d_materials": "2caafada6431a3e82e895c3842cfb0d2693b046f59f512d1ebeaa40bf261a9a1",
+    "EAUDIT17d_PAGES.pdf": "ebc9ea28c066150f9aab3879587dab6ddcfe1732694b8b7df5e4fe197958d966"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    226
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "8c8aa2bd30d8ac81d59e44d870fc6a322ff44ab9f8bd07770f4887a9d02b9f3b",
+  "source_block_sha256": "80ac8b48df928d9c0887c55a721fbfcfafa7aa0cb13601b1a0acac5c4eea9c10",
+  "source_declarations": [
+    "measureDuality",
+    "measureDuality_RN"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.average",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.flow",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "cd47fe07b629a7f5aa0bdc126758e9528093d227aaebc2097a541fd177a6a961"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.measurePropagator",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.pullback",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "01eb19a48ae4e19a25031fc06f858585c16c6871cb882b49bf8ae9cc9bcb8810"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "average",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "flow",
+      "file_sha256": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+      "excerpt_sha256": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "measurePropagator",
+      "file_sha256": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+      "excerpt_sha256": "b2962c03ba350ecdddd91826f1ff6e9f40c6c272cf5548d130e2c3263c9575bc"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "pullback",
+      "file_sha256": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+      "excerpt_sha256": "01eb19a48ae4e19a25031fc06f858585c16c6871cb882b49bf8ae9cc9bcb8810"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 93268
+}

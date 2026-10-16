@@ -1,0 +1,50 @@
+{
+  "eaudit": "EAUDIT17",
+  "source_id": "MD-5.5-MixingCorrelation",
+  "input_sha256": {
+    "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
+    "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+    "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1",
+    "EAUDIT17f_materials": "3bd93a0ededbeef58dafbbae35e84033a76412393e29f1f6f75c007119c0eaad",
+    "EAUDIT17f_PAGES.pdf": "ebc9ea28c066150f9aab3879587dab6ddcfe1732694b8b7df5e4fe197958d966"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    226
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "2f262a477ecbf951543edd262be0897e29aa4358bfa84a09f4770520520a44e9",
+  "source_block_sha256": "dc5ae5114fa42fe9dad69ed5e3e246979f4d357e367e0b20c7ed9f51ff9ebb4f",
+  "source_declarations": [
+    "mixingCorrelation",
+    "mixingCorrelation_scalar"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.average",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "average",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT17_review.json",
+  "total_task_bytes": 93027
+}

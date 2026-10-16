@@ -4791,9 +4791,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.correlation",
@@ -4818,7 +4818,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT17/axioms.log"
     },
     "MD-5.5-CorrelationPullback": {
       "checked": true,
@@ -4859,10 +4859,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.correlationTimePrinted",
@@ -4887,15 +4887,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT17/axioms.log"
     },
     "MD-5.5-CorrelationTimeAE": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.correlationTime",
@@ -4925,7 +4925,7 @@
         "blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c-CorrelationTimeAE.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT17/axioms.log"
     },
     "MD-5.5-VelocityCorrelation": {
       "checked": true,
@@ -4964,16 +4964,16 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.positionTransition",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "e82271d91489c105b711170808c7f4ff318971b4657f18c7bb0f6410cc29ad59",
-      "block_sha256": "e82271d91489c105b711170808c7f4ff318971b4657f18c7bb0f6410cc29ad59",
+      "signature_sha256": "e4cd9f98a6330fae7071d566113d5866351a20fcc69e8c73d72aaa92da6906be",
+      "block_sha256": "e4cd9f98a6330fae7071d566113d5866351a20fcc69e8c73d72aaa92da6906be",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4991,7 +4991,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT17/axioms.log"
     },
     "MD-5.5-TransitionProbability": {
       "checked": true,
@@ -5030,17 +5030,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.measureDuality",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "e1f4340fe612f13a811e7d9d410ec38e6c12ed84815bc2f33f28d1a7bb96360e",
-      "block_sha256": "8db8defc2077d91955a3b8a2037c93e580d13b9d58e7ad286bbb84c980f9fed9",
-      "direct_placeholder": false,
+      "block_sha256": "80ac8b48df928d9c0887c55a721fbfcfafa7aa0cb13601b1a0acac5c4eea9c10",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -5062,22 +5063,22 @@
         "blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c-MeasureDuality.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT17/axioms.log"
     },
     "MD-5.5-MixingMemoryLoss": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.mixingMemoryLoss",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "cb6699e53899d0ef5c696bd9c486e76fb94027407df323a23f1870ebc7517305",
-      "block_sha256": "c4c7fac862d192a155738f0a53db70293be90584b1e2548266db28dd1b74be27",
+      "block_sha256": "71c539ef54bb3289872879d3c73a9fb37473a4a3b779e23daee7af4507ba43f3",
       "direct_placeholder": false,
       "proof_status": "local_proof",
       "documented_priors": [],
@@ -5102,16 +5103,16 @@
         "blueprint/ch05/validation/short_search/route-17122b90950be22759f3.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT17/axioms.log"
     },
     "MD-5.5-MixingCorrelationPrinted": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.mixingCorrelationPrinted",
@@ -5136,23 +5137,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT17/axioms.log"
     },
     "MD-5.5-MixingCorrelation": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.mixingCorrelation",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "960f40a6206125d552e41c32eaf38e1ecbc03eb9bbf77cbc72df687b11865c3a",
-      "block_sha256": "d1ab02592ab1c74e8454e20a727a4cfa4f7debfc9f35f59ade338174ef736e64",
-      "direct_placeholder": false,
+      "signature_sha256": "4f0bf54927b671cbc18e958ec05ed75dd95dc0d7f7b750c1b6a64347401ceb39",
+      "block_sha256": "dc5ae5114fa42fe9dad69ed5e3e246979f4d357e367e0b20c7ed9f51ff9ebb4f",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -5174,7 +5176,7 @@
         "blueprint/ch05/validation/short_search/route-2c40a967f0b88bc4091c-MixingCorrelation.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT17/axioms.log"
     },
     "MD-5.5-CenteredCorrelation": {
       "checked": true,

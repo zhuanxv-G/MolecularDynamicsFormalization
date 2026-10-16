@@ -789,5 +789,58 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/INDEX.md"
+  },
+  {
+    "chapter": 5,
+    "eaudit": "EAUDIT17",
+    "section": "5.5",
+    "source_ids": [
+      "MD-5.5-Correlation",
+      "MD-5.5-CorrelationTimeAE",
+      "MD-5.5-CorrelationTimePrinted",
+      "MD-5.5-MeasureDuality",
+      "MD-5.5-MixingCorrelation",
+      "MD-5.5-MixingCorrelationPrinted",
+      "MD-5.5-MixingMemoryLoss",
+      "MD-5.5-PositionTransition"
+    ],
+    "reaudit_ids": [
+      "MD-5.5-Correlation",
+      "MD-5.5-CorrelationTimeAE",
+      "MD-5.5-PositionTransition",
+      "MD-5.5-MeasureDuality",
+      "MD-5.5-MixingMemoryLoss",
+      "MD-5.5-MixingCorrelation"
+    ],
+    "human_ids": [
+      "MD-5.5-CorrelationTimePrinted",
+      "MD-5.5-MixingCorrelationPrinted"
+    ],
+    "lean_sha256": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+    "source_sha256": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1",
+    "pages": [
+      224,
+      225,
+      226
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch05.olean",
+        "Blueprint/Ch05.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+      "log_sha256": "7d2173c516d60468630dd845a8bbf03001933dc404f5e2eb09e94ce5c0977870"
+    },
+    "axiom_decl_count": 10,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md"
   }
 ]

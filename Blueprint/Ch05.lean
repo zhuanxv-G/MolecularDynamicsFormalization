@@ -1542,9 +1542,11 @@ theorem correlationTime :
 def velocityCorrelation {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
     (v : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (t : ℝ) := MolecularDynamics.Chapter05Review.correlation μ Φ v v 1 t/MolecularDynamics.Chapter05Review.correlation μ Φ v v 1 0
 
-/-- source_id: MD-5.5-PositionTransition · definition · §5.5 · 印刷p.204 / PDFp.225 -/
+/-- source_id: MD-5.5-PositionTransition · definition · §5.5 · 印刷p.204 / PDFp.225 
+[EXTRA] 恢复相关定义中完整归一化常数k，原k=1未归一化概率计数作为明确实例；位置投影及两个indicator积分均保留。 -/
 def positionTransition {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
-    (π : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (A B : Set (MolecularDynamics.Chapter05Review.E d)) (t : ℝ) :=
+    (π : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (A B : Set (MolecularDynamics.Chapter05Review.E d)) (k t : ℝ) :=
+  k*
   (∫ z,((B.indicator (fun _ => (1 : ℝ))) (π (Φ t z)))*
     ((A.indicator (fun _ => (1 : ℝ))) (π z)) ∂μ)
 
@@ -1555,7 +1557,8 @@ def transitionProbability {n : ℕ} (μ : Measure (MolecularDynamics.Chapter05Re
   (μ (A ∩ (Φ t) ⁻¹' B)).toReal/(μ A).toReal
 
 /-- source_id: MD-5.5-MeasureDuality · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
-[EXTRA] [EXTRA]演化密度用真实Measure.map，微正则ρE的比值应理解为对参考奇异测度的Radon–Nikodym密度；不当普通Lebesgue密度相除。明确可测及map下可积，不将最终等式作前提。 -/
+[EXTRA] [EXTRA]演化密度用真实Measure.map，微正则ρE的比值应理解为对参考奇异测度的Radon–Nikodym密度；不当普通Lebesgue密度相除。明确可测及map下可积，不将最终等式作前提。 
+[EXTRA] 保留推前对偶已有证明，补参考概率ν上的非负RN密度r、初始withDensity、演化Measure.map与全部加权配对链；公开ρ/ρ_E的RN解释，不对奇异δ作函数相除。 -/
 theorem measureDuality :
   ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ (φ : MolecularDynamics.Chapter05Review.E n → ℝ) t,
   Measurable (Φ t) → Integrable φ (MolecularDynamics.Chapter05Review.measurePropagator Φ t μ) →
@@ -1563,8 +1566,24 @@ theorem measureDuality :
   intro n μ Φ φ t hm hi
   exact integral_map hm.aemeasurable hi.aestronglyMeasurable
 
+theorem measureDuality_RN (n : ℕ)
+    (ν : Measure (MolecularDynamics.Chapter05Review.E n)) (_hν : IsProbabilityMeasure ν)
+    (r : MolecularDynamics.Chapter05Review.E n → ℝ) (_hr : Integrable r ν)
+    (_hrpos : ∀ z,0 ≤ r z) (_hrmass : (∫ z,r z ∂ν)=1)
+    (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (t : ℝ) (_hΦ : Measurable (Φ t))
+    (φ : MolecularDynamics.Chapter05Review.E n → ℝ) (_hc : Continuous φ)
+    (_hb : Bornology.IsBounded (range φ)) :
+    let μ₀ := ν.withDensity (fun z ↦ ENNReal.ofReal (r z))
+    MolecularDynamics.Chapter05Review.average (Measure.map (Φ t) μ₀) φ=
+      MolecularDynamics.Chapter05Review.average μ₀ (MolecularDynamics.Chapter05Review.pullback Φ φ t) ∧
+    MolecularDynamics.Chapter05Review.average μ₀ (MolecularDynamics.Chapter05Review.pullback Φ φ t)=
+      ∫ z,φ (Φ t z)*r z ∂ν := by
+  sorry
+
 /-- source_id: MD-5.5-MixingMemoryLoss · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
-[EXTRA] [EXTRA]β是对实际参考概率测度的非负密度；原bounded在真实假设中保留，可积明确保障所有密度配对。可测参考测度保持保障常数项积分，φ有界连续；最终memory loss未作假设。 -/
+[EXTRA] [EXTRA]β是对实际参考概率测度的非负密度；原bounded在真实假设中保留，可积明确保障所有密度配对。可测参考测度保持保障常数项积分，φ有界连续；最终memory loss未作假设。 
+[EXTRA] 对应补足资格后的weakMixing取第二合取，保持既有证明及原结论；不增加新证明。 -/
 theorem mixingMemoryLoss : ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ (β φ : MolecularDynamics.Chapter05Review.E n → ℝ),
   IsProbabilityMeasure μ → weakMixing μ Φ → Integrable β μ → Bornology.IsBounded (range β) → (∀ z,0 ≤ β z) →
   (∫ z,β z ∂μ)=1 → Continuous φ → Bornology.IsBounded (range φ) →
@@ -1593,7 +1612,8 @@ theorem mixingMemoryLoss : ∀ n (μ : Measure (MolecularDynamics.Chapter05Revie
   simpa only [sub_self] using (hm.2 β φ hβ hβpos hβmass hφ hb).sub (tendsto_const_nhds : Tendsto (fun _ : ℝ => MolecularDynamics.Chapter05Review.average μ φ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ)))
 
 /-- source_id: MD-5.5-MixingCorrelationPrinted · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
-[EXTRA] [EXTRA]明确概率测度及有界连续函数；k任意，字面版不改最终右侧。 -/
+[EXTRA] [EXTRA]明确概率测度及有界连续函数；k任意，字面版不改最终右侧。 
+[EXTRA] 修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。 -/
 theorem mixingCorrelationPrinted :
   ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ
     (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k, IsProbabilityMeasure μ → weakMixing μ Φ → Continuous a → Continuous b →
@@ -1604,6 +1624,16 @@ theorem mixingCorrelationPrinted :
 /-- source_id: MD-5.5-MixingCorrelation · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
 [EXTRA] [EXTRA]独立修正版右侧保留k，实际AC概率初值的弱mixing条件及有界连续a/b；原参考微正则分布的不变资格明确为MeasurePreserving，保障各时积分可积和常数项不变。未以目标相关极限作假设。 -/
 theorem mixingCorrelation :
+  ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k, IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
+  (∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
+    Continuous φ → Bornology.IsBounded (range φ) →
+    Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))) →
+  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+  Tendsto (fun t => k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)) atTop (𝓝 (k*inner ℝ (∫ z,a z ∂μ) (∫ z,b z ∂μ))) := by
+  sorry
+
+theorem mixingCorrelation_scalar :
   ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
     (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k, IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
   (∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
@@ -1672,7 +1702,7 @@ theorem centeredCorrelation : ∀ n (μ : Measure (MolecularDynamics.Chapter05Re
   (MolecularDynamics.Chapter05Review.average μ a=0 ∨ MolecularDynamics.Chapter05Review.average μ b=0) →
   Tendsto (fun t => |k*(∫ z,a (Φ t z)*b z ∂μ)|) atTop (𝓝 0) := by
   intro n μ Φ a b k hμ hΦ hm ha hb hba hbb hzero
-  have ht := mixingCorrelation n μ Φ a b k hμ hΦ hm.2 ha hb hba hbb
+  have ht := mixingCorrelation_scalar n μ Φ a b k hμ hΦ hm.2 ha hb hba hbb
   have hl : k*MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b=0 := by
     rcases hzero with h | h <;> rw [h] <;> ring
   rw [hl] at ht
@@ -2289,9 +2319,11 @@ end MD.Ch05
 #print axioms MD.Ch05.positionTransition
 #print axioms MD.Ch05.transitionProbability
 #print axioms MD.Ch05.measureDuality
+#print axioms MD.Ch05.measureDuality_RN
 #print axioms MD.Ch05.mixingMemoryLoss
 #print axioms MD.Ch05.mixingCorrelationPrinted
 #print axioms MD.Ch05.mixingCorrelation
+#print axioms MD.Ch05.mixingCorrelation_scalar
 #print axioms MD.Ch05.centeredCorrelation
 #print axioms MD.Ch05.discreteAveragePrinted
 #print axioms MD.Ch05.discreteAverage

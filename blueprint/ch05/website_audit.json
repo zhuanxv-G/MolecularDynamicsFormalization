@@ -11223,7 +11223,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT17",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
+        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
+      }
+    }
   },
   {
     "source_id": "MD-5.5-CorrelationPullback",
@@ -11366,8 +11378,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT17（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原any trajectory超过通常遍历性的AE结论；例能量面内零测异常轨道不由AE排除。选项：导师确认原any改AE（已有CorrelationTimeAE）／另增明确全点动力学资格。保持原印签名，不能把目标等式作资格。"
+    }
   },
   {
     "source_id": "MD-5.5-CorrelationTimeAE",
@@ -11467,7 +11486,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT17",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
+        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
+      }
+    }
   },
   {
     "source_id": "MD-5.5-VelocityCorrelation",
@@ -11612,7 +11643,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT17",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
+        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
+      }
+    }
   },
   {
     "source_id": "MD-5.5-TransitionProbability",
@@ -11758,7 +11801,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT17",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
+        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
+      }
+    }
   },
   {
     "source_id": "MD-5.5-MixingMemoryLoss",
@@ -11852,7 +11907,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH23_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT17",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
+        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
+      }
+    }
   },
   {
     "source_id": "MD-5.5-MixingCorrelationPrinted",
@@ -11942,8 +12009,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH23_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT17（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原极限漏相关归一化k，取常数a=b=1,k=2，左极限2而右1。选项：导师确认补回k／明确k=1特例，另需向量观测量完整范围。保持原印签名，修订版MixingCorrelation独立保留。"
+    }
   },
   {
     "source_id": "MD-5.5-MixingCorrelation",
@@ -12034,7 +12108,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH23_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT17",
+    "repair": {
+      "eaudit": "EAUDIT17",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
+        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
+        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
+      }
+    }
   },
   {
     "source_id": "MD-5.5-CenteredCorrelation",

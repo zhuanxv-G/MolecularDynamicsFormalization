@@ -4591,9 +4591,20 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:12:25.337909",
+        "before_sha256": "843180caf62584a602f05b76853dd503b07db2ff0e1277b08bba8daa28a5eba2",
+        "after_sha256": "b0e7d84d451ac23a515ea50386e17290e1043474dad0c07b550624b3e8758f8a",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.5-CorrelationPullback",
@@ -4625,7 +4636,7 @@
     "section": "5.5",
     "printed_page": "204",
     "pdf_page": "225",
-    "statement_latex": "If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $H=E$ energy surface:\n\\[C_{a,b}(t)=k\\lim_{T\\to\\infty}\\frac1T\\int_0^T a(z(s+t))\\cdot b(z(s))ds.\\]",
+    "statement_latex": "If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $H=E$ energy surface:\n\\[C_{a,b}(t)=k\\lim_{\\tau\\to\\infty}\\frac1\\tau\\int_0^{\\tau} a(z(s+t))\\cdot b(z(s))ds.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -4637,9 +4648,22 @@
       "[EXTRA]真实能量面/微正则测度、标准遍历先验及给定lag相关可积资格；原字面全能量初值只作为待裁定义务，不能当本地PASS。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:12:25.337909",
+        "before_sha256": "e3ba5c23cd4dab2e793068fd1450ce04c0c4e217b97f39554c650662a95f774e",
+        "after_sha256": "39168f62da62847eab2153297e59c13076904514828444861b823a88f0c08629",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.5-CorrelationTimeAE",
@@ -4648,11 +4672,13 @@
     "section": "5.5",
     "printed_page": "204",
     "pdf_page": "225",
-    "statement_latex": "$C_{a,b}(t)=k\\lim_{T\\to\\infty}T^{-1}\\int_0^T a(z(s+t))\\cdot b(z(s))ds$.",
+    "statement_latex": "If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $H=E$ energy surface:\n\\[C_{a,b}(t)=k\\lim_{\\tau\\to\\infty}\\frac1\\tau\\int_0^{\\tau} a(z(s+t))\\cdot b(z(s))ds.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "原书字面为any trajectory；本条Lean是明确的几乎处处修订版，不可将AE当作逐字原文。对每个给定t有AE集合，未断言同一满测集同时适用所有t。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.correlationTime",
     "reusable_proofs": [],
@@ -4660,9 +4686,23 @@
       "[EXTRA]按本章标准遍历结论修正为对给定lag逐次AE初值；保留真实时间积分、向量内积、可积性和flow群律，原any字面另条。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:12:25.337909",
+        "before_sha256": "e5b0bda8269eee8e13e48a9f0874b4c20e855d97aeaf7ee9ebe5d2216bac0b27",
+        "after_sha256": "74ac292cf095d33d99c99325620b7578fe0663fb941b2b69ab48ac138ce47517",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.5-VelocityCorrelation",
@@ -4699,16 +4739,32 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "π是实际位置投影，配置集合在相空间上的逆像；真实指标乘积平均，不把状态点概率误作首次到达时间。"
+      "π是实际位置投影，配置集合在相空间上的逆像；真实指标乘积平均，不把状态点概率误作首次到达时间。",
+      "原T_AB=C_{1_B,1_A}继承C定义的k；当前Lean无k，仅对应k=1。随后概率公式暗示未归一化指标相关，应公开该解释，不能默认为逐字相同。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch05.positionTransition",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 恢复相关定义中完整归一化常数k，原k=1未归一化概率计数作为明确实例；位置投影及两个indicator积分均保留。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:12:25.337909",
+        "before_sha256": "481fe546111d291d2900febed8892dc56823d0fdaed3f90668bdaee58a094896",
+        "after_sha256": "8a509ba2a289dae0102da9ffda473929823695b6d77f3dec9745120d21c16209",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.5-TransitionProbability",
@@ -4740,7 +4796,7 @@
     "section": "5.5",
     "printed_page": "205",
     "pdf_page": "226",
-    "statement_latex": "\\[\\int_{\\Sigma_E}\\phi(z)\\rho(z;t)d\\omega\n=\\int_{\\Sigma_E}\\phi(z)e^{t\\mathcal L^*}\\rho(z,0)d\\omega\n=\\int_{\\Sigma_E}[e^{t\\mathcal L}\\phi(z)]\\rho(z,0)d\\omega\n=\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))\\rho(z;0)d\\omega\n=\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))\\frac{\\rho(z;0)}{\\rho_E(z)}\\rho_E(z)d\\omega.\\tag{5.10}\\]",
+    "statement_latex": "\\[\\int_{\\Sigma_E}\\phi(z)\\rho(z;t)d\\omega\n=\\int_{\\Sigma_E}\\phi(z)e^{t\\mathcal L^\\dagger}\\rho(z,0)d\\omega\n=\\int_{\\Sigma_E}[e^{t\\mathcal L}\\phi(z)]\\rho(z,0)d\\omega\n=\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))\\rho(z,0)d\\omega\n=\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))\\frac{\\rho(z,0)}{\\rho_E(z)}\\rho_E(z)d\\omega.\\tag{5.10}\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -4749,12 +4805,26 @@
     "lean_decl": "MD.Ch05.measureDuality",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]演化密度用真实Measure.map，微正则ρE的比值应理解为对参考奇异测度的Radon–Nikodym密度；不当普通Lebesgue密度相除。明确可测及map下可积，不将最终等式作前提。"
+      "[EXTRA]演化密度用真实Measure.map，微正则ρE的比值应理解为对参考奇异测度的Radon–Nikodym密度；不当普通Lebesgue密度相除。明确可测及map下可积，不将最终等式作前提。",
+      "[EXTRA] 保留推前对偶已有证明，补参考概率ν上的非负RN密度r、初始withDensity、演化Measure.map与全部加权配对链；公开ρ/ρ_E的RN解释，不对奇异δ作函数相除。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:12:25.337909",
+        "before_sha256": "da2d37934e10d51e12e127abc50ee4f03ae7d349da4fa93f326bf508c3d53e73",
+        "after_sha256": "7686dc288fa58c0bb87ce8138afac385b9d96c59a141db44d5d5ecbaf9cdd09d",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.5-MixingMemoryLoss",
@@ -4763,21 +4833,42 @@
     "section": "5.5",
     "printed_page": "205",
     "pdf_page": "226",
-    "statement_latex": "We assume $\\beta(z)\\stackrel{\\rm def}{=}\\rho(z;0)/\\rho_E(z)$ is bounded on $\\Sigma_E$, and moreover $\\operatorname{Av}_{H=E}(\\beta)=1$ (i.e., the initial density is a probability density on the energy surface), and that the system is mixing. Then the integral (5.10) is well defined and we may view it as a two-point correlation function of $\\phi$ and $\\beta$. By the mixing property it must converge to $\\int_{\\Sigma_E}\\phi(z)\\rho_Ed\\omega$, thus the average value of $\\phi$ is ultimately independent of the initial conditions. We have\n\\[\\lim_{t\\to\\infty}\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))(\\beta(z)-1)\\rho_Ed\\omega=0.\\]",
+    "statement_latex": "We assume $\\psi(z)\\stackrel{\\rm def}{=}\\rho(z;0)/\\rho_E(z)$ is bounded on $\\Sigma_E$, and moreover $\\operatorname{Av}_{H=E}(\\psi)=\\int_{\\Sigma_E}\\frac{\\rho(z;0)}{\\rho_E(z)}\\rho_E(z)\\,d\\omega=1$ (i.e., the initial density is a probability density on the energy surface), and that the system is mixing. Then the integral (5.10) is well defined and we may view it as a two-point correlation function of $\\phi$ and $\\psi$. By the mixing property it must converge to $\\int_{\\Sigma_E}\\phi(z)\\rho_Ed\\omega$, thus the average value of $\\phi$ is ultimately independent of the initial conditions. We have\n\\[\\lim_{t\\to\\infty}\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))(\\psi(z)-1)\\rho_Ed\\omega=0.\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "\\Sigma_E=\\{z:H(z)=E\\}; \\mathcal F_t 为动力学流。",
+      "\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)\\rho_E(z)\\,d\\omega；\\rho_E\\,d\\omega为参考微正则概率测度。",
+      "C_{ab}(t)=k\\operatorname{Av}_{H=E}(a(\\mathcal F_t(z))\\cdot b(z))；a,b取值于同一Euclidean空间，k为归一化常数（PDF224–225）。",
+      "\\psi(z)\\stackrel{\\rm def}{=}\\rho(z;0)/\\rho_E(z)；Lean中的β对应原书ψ；对奇异能量面参考测度，应理解为相对密度。",
+      "(5.10): \\int_{\\Sigma_E}\\phi(z)\\rho(z;t)d\\omega=\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))\\rho(z;0)d\\omega=\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))\\psi(z)\\rho_E(z)d\\omega。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.mixingMemoryLoss",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]β是对实际参考概率测度的非负密度；原bounded在真实假设中保留，可积明确保障所有密度配对。可测参考测度保持保障常数项积分，φ有界连续；最终memory loss未作假设。"
+      "[EXTRA]β是对实际参考概率测度的非负密度；原bounded在真实假设中保留，可积明确保障所有密度配对。可测参考测度保持保障常数项积分，φ有界连续；最终memory loss未作假设。",
+      "[EXTRA] 对应补足资格后的weakMixing取第二合取，保持既有证明及原结论；不增加新证明。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:12:25.337909",
+        "before_sha256": "833989a1958c9fbfcff2d534b2e73052d5738fac4ee87b579d0210988128e9c1",
+        "after_sha256": "479eaa61bc831271549dd3e69fffeb9d196b4a33f02c837e7a8fbdf4a10fbeae",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.5-MixingCorrelationPrinted",
@@ -4790,7 +4881,11 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "\\Sigma_E=\\{z:H(z)=E\\}; \\mathcal F_t 为动力学流。",
+      "\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)\\rho_E(z)\\,d\\omega；\\rho_E\\,d\\omega为参考微正则概率测度。",
+      "C_{ab}(t)=k\\operatorname{Av}_{H=E}(a(\\mathcal F_t(z))\\cdot b(z))；a,b取值于同一Euclidean空间，k为归一化常数（PDF224–225）。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.mixingCorrelationPrinted",
     "reusable_proofs": [],
@@ -4798,9 +4893,22 @@
       "[EXTRA]明确概率测度及有界连续函数；k任意，字面版不改最终右侧。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:12:25.337909",
+        "before_sha256": "58163b5207ec55f18443eb02e2bc09c7744c366ed67dfca0601efed16d6060e3",
+        "after_sha256": "173b30840334dcfc3642601ee4b6f45dabd354b0140e95dfb4b7ea7106bb3ef9",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.5-MixingCorrelation",
@@ -4813,17 +4921,35 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "\\Sigma_E=\\{z:H(z)=E\\}; \\mathcal F_t 为动力学流。",
+      "\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)\\rho_E(z)\\,d\\omega；\\rho_E\\,d\\omega为参考微正则概率测度。",
+      "C_{ab}(t)=k\\operatorname{Av}_{H=E}(a(\\mathcal F_t(z))\\cdot b(z))；a,b取值于同一Euclidean空间，k为归一化常数（PDF224–225）。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.mixingCorrelation",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]独立修正版右侧保留k，实际AC概率初值的弱mixing条件及有界连续a/b；原参考微正则分布的不变资格明确为MeasurePreserving，保障各时积分可积和常数项不变。未以目标相关极限作假设。"
+      "[EXTRA]独立修正版右侧保留k，实际AC概率初值的弱mixing条件及有界连续a/b；原参考微正则分布的不变资格明确为MeasurePreserving，保障各时积分可积和常数项不变。未以目标相关极限作假设。",
+      "[EXTRA] 修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT17_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:12:25.337909",
+        "before_sha256": "c63baa427b12c7a546b5381271a37c8cef0ee6cd39f771b8f506f4877d4eb99d",
+        "after_sha256": "039d6a6bcf6ef7d14129adacf50d3d3d7ddce296980e886fe04b9b11155007bc",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH23_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.5-CenteredCorrelation",

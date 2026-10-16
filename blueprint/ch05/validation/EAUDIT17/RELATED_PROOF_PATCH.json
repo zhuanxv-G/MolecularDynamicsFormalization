@@ -1,0 +1,7 @@
+{
+  "source_id": "MD-5.5-CenteredCorrelation",
+  "attempt": 3,
+  "before": "have ht := mixingCorrelation n μ Φ a b k hμ hΦ hm.2",
+  "after": "have ht := mixingCorrelation_scalar n μ Φ a b k hμ hΦ hm.2",
+  "reason": "Vector correlation is now primary; route retained scalar proof to retained scalar auxiliary. No new proof; this is the third small repair of this existing proof."
+}

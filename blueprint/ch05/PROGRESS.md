@@ -144,17 +144,17 @@
 | MD-5.4.1-CircleInitialPoints | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT16 | definition / self-contained |
 | MD-5.4.1-CircleInitialLaw | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT16 | definition / self-contained |
 | MD-5.4.1-CircleInitialEnergy | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT16 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CircleInitialEnergy.timebox.json。 |
-| MD-5.5-Correlation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
+| MD-5.5-Correlation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
 | MD-5.5-CorrelationPullback | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
-| MD-5.5-CorrelationTimePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；原any与AE的量词冲突待裁定，不证明。 |
-| MD-5.5-CorrelationTimeAE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
+| MD-5.5-CorrelationTimePrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT17（原返回FAIL保留） | placeholder / incomplete；原any与AE的量词冲突待裁定，不证明。 |
+| MD-5.5-CorrelationTimeAE | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | local_proof / self-contained |
 | MD-5.5-VelocityCorrelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.5-PositionTransition | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
+| MD-5.5-PositionTransition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | definition / self-contained |
 | MD-5.5-TransitionProbability | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.5-MeasureDuality | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.5-MixingMemoryLoss | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.5-MixingCorrelationPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；原遗漏k待裁定，不证明；正确极限另条。 |
-| MD-5.5-MixingCorrelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
+| MD-5.5-MeasureDuality | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | local_proof / self-contained |
+| MD-5.5-MixingMemoryLoss | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | local_proof / self-contained |
+| MD-5.5-MixingCorrelationPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT17（原返回FAIL保留） | placeholder / incomplete；原遗漏k待裁定，不证明；正确极限另条。 |
+| MD-5.5-MixingCorrelation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | local_proof / self-contained |
 | MD-5.5-CenteredCorrelation | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
 | MD-5.6-DiscreteAveragePrinted | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.6-DiscreteAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
@@ -373,3 +373,5 @@ EAUDIT14 §5.4.1：8条落盘，单文件与9项公理通过；未写新证明�
 EAUDIT15 §5.3.2：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT16 §5.4.1：7条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT17 §5.5：8条落盘，单文件与10项公理通过；未写新证明；完整check留到章末；网站待复审。

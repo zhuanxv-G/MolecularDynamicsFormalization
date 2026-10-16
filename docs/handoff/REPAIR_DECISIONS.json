@@ -2108,5 +2108,45 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "5.4.1"
+  },
+  "MD-5.5-PositionTransition": {
+    "category": "C",
+    "handling": "恢复相关定义中完整归一化常数k，原k=1未归一化概率计数作为明确实例；位置投影及两个indicator积分均保留。",
+    "section": "5.5"
+  },
+  "MD-5.5-MeasureDuality": {
+    "category": "B",
+    "handling": "保留推前对偶已有证明，补参考概率ν上的非负RN密度r、初始withDensity、演化Measure.map与全部加权配对链；公开ρ/ρ_E的RN解释，不对奇异δ作函数相除。",
+    "section": "5.5"
+  },
+  "MD-5.5-MixingMemoryLoss": {
+    "category": "A",
+    "handling": "对应补足资格后的weakMixing取第二合取，保持既有证明及原结论；不增加新证明。",
+    "section": "5.5"
+  },
+  "MD-5.5-MixingCorrelation": {
+    "category": "B",
+    "handling": "修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。",
+    "section": "5.5"
+  },
+  "MD-5.5-Correlation": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.5"
+  },
+  "MD-5.5-CorrelationTimePrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.5"
+  },
+  "MD-5.5-CorrelationTimeAE": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.5"
+  },
+  "MD-5.5-MixingCorrelationPrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.5"
   }
 }

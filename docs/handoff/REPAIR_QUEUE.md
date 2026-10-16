@@ -2,13 +2,13 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 51；章末验收待完成 [5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 38；章末验收待完成 [5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 51 / 已修待复审 78 / 待导师 20 / 修复中 0。
 第4章：网站PASS 42 / 已修待复审 110 / 待导师 27 / 修复中 0。
-第5章：网站PASS 63 / 已修待复审 83 / 待导师 11 / 修复中 26。
+第5章：网站PASS 60 / 已修待复审 89 / 待导师 13 / 修复中 21。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
 |---|---|---|---|---|---|---|
@@ -637,17 +637,17 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 5 | MD-5.4.1-CircleInitialPoints | FAIL | A | 将实际初值域限定可行能量及原x区间；θ为后条均匀角分布的取样变量，定性样本图像不强化为全样本必然分离。零半径为允许退化；总延拓仅作独立辅助定义。 | 已修待复审 | EAUDIT16 |
 | 5 | MD-5.4.1-CircleInitialLaw | FAIL | A | 均匀圆概率主接口限定可行能量和原x区间，使用归一化角测度推前；c=U为退化Dirac，不默认负能差的sqrt总化初值。 | 已修待复审 | EAUDIT16 |
 | 5 | MD-5.4.1-CircleInitialEnergy | PASS | A | 原能量恒等式保留为正式库总延拓的辅助证明；本条适用前提仍是非负能差，实际取样主接口由CircleInitialPoints/Law限定区间及可行域。 | 已修待复审 | EAUDIT16 |
-| 5 | MD-5.5-Correlation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.5-Correlation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT17 |
 | 5 | MD-5.5-CorrelationPullback | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.5-CorrelationTimePrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.5-CorrelationTimeAE | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.5-CorrelationTimePrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT17 |
+| 5 | MD-5.5-CorrelationTimeAE | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT17 |
 | 5 | MD-5.5-VelocityCorrelation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.5-PositionTransition | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.5-PositionTransition | FAIL | C | 恢复相关定义中完整归一化常数k，原k=1未归一化概率计数作为明确实例；位置投影及两个indicator积分均保留。 | 已修待复审 | EAUDIT17 |
 | 5 | MD-5.5-TransitionProbability | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.5-MeasureDuality | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.5-MixingMemoryLoss | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.5-MixingCorrelationPrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.5-MixingCorrelation | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.5-MeasureDuality | FAIL | B | 保留推前对偶已有证明，补参考概率ν上的非负RN密度r、初始withDensity、演化Measure.map与全部加权配对链；公开ρ/ρ_E的RN解释，不对奇异δ作函数相除。 | 已修待复审 | EAUDIT17 |
+| 5 | MD-5.5-MixingMemoryLoss | PASS | A | 对应补足资格后的weakMixing取第二合取，保持既有证明及原结论；不增加新证明。 | 已修待复审 | EAUDIT17 |
+| 5 | MD-5.5-MixingCorrelationPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT17 |
+| 5 | MD-5.5-MixingCorrelation | FAIL | B | 修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。 | 已修待复审 | EAUDIT17 |
 | 5 | MD-5.5-CenteredCorrelation | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
 | 5 | MD-5.6-DiscreteAveragePrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
 | 5 | MD-5.6-DiscreteAverage | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
