@@ -1967,16 +1967,16 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.testSpace",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "d18b0e81156df07d12955bf5ee7295546fc07bc65a193169967124397be23ee9",
-      "block_sha256": "d18b0e81156df07d12955bf5ee7295546fc07bc65a193169967124397be23ee9",
+      "signature_sha256": "784b6c51341eea9e2f4730af05c9d432b93334bc7aef25bb9b90a73067b141ac",
+      "block_sha256": "784b6c51341eea9e2f4730af05c9d432b93334bc7aef25bb9b90a73067b141ac",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -1994,7 +1994,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT07/axioms.log"
     },
     "MD-5.3.1-SchwartzSpace": {
       "checked": true,
@@ -2099,9 +2099,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.regularDistribution",
@@ -2126,22 +2126,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT07/axioms.log"
     },
     "MD-5.3.1-RegularDistributionLinearity": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.regularDistributionLinearity",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "6737b6d5653f0a89496f1669961d3da9d2d1c8dce06e99f20eaaa78ec7ca6cf0",
-      "block_sha256": "fb74b04ca8736b0a358ab09e586a377c351ddf562d7f0573b72bd58b8cb8061a",
+      "signature_sha256": "f667dc833db976ec78a4e0cb18f212a033fa1db592320bddcb564b2e78f3ccbf",
+      "block_sha256": "0c748c25d8c8f71e085ae6e9967457c4a0a42e04f82f795f00a35c3d403c67d2",
       "direct_placeholder": false,
       "proof_status": "local_proof",
       "documented_priors": [],
@@ -2166,7 +2166,7 @@
         "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-RegularDistributionLinearity.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT07/axioms.log"
     },
     "MD-5.3.1-DiracAction": {
       "checked": true,
@@ -2278,9 +2278,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.gaussianDelta",
@@ -2305,15 +2305,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT07/axioms.log"
     },
     "MD-5.3.1-DiracEvaluates": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.diracEvaluates",
@@ -2343,15 +2343,15 @@
         "blueprint/ch05/validation/short_search/route-da0371dc1bfcb14e64db-DiracEvaluates.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT07/axioms.log"
     },
     "MD-5.3.1-GaussianDeltaProbability": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.gaussianDeltaProbability",
@@ -2383,15 +2383,15 @@
         "blueprint/ch05/validation/short_search/route-f1710e94750679035b16.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT07/axioms.log"
     },
     "MD-5.3.1-GaussianDeltaWeak": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.gaussianDeltaWeak",
@@ -2425,7 +2425,7 @@
         "blueprint/ch05/validation/short_search/route-33c5dbbce20c4dd4890b.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT07/axioms.log"
     },
     "MD-5.3.2-WeakStationary": {
       "checked": true,

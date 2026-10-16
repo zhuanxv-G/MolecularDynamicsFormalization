@@ -62,19 +62,19 @@
 | MD-5.2.3-HamiltonianDensityPropagation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | placeholder / incomplete；缺当前全实时间实际流的Jacobian/change-of-variables与受限密度测度输运桥接；保留完整陈述，不建设新的连续性PDE理论。 |
 | MD-5.2.3-MechanicalLiouvillian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | definition / self-contained |
 | MD-5.2.3-MechanicalLiouvillianIdentity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/MechanicalLiouvillianIdentity.json。 |
-| MD-5.3.1-TestSpace | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
+| MD-5.3.1-TestSpace | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
 | MD-5.3.1-SchwartzSpace | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.3.1-GeneralizedFunction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.3.1-SchwartzFunctional | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.1-RegularDistribution | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.1-RegularDistributionLinearity | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
+| MD-5.3.1-RegularDistribution | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
+| MD-5.3.1-RegularDistributionLinearity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | local_proof / self-contained |
 | MD-5.3.1-DiracAction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.3.1-DiracMeasure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.3.1-DiracApproximation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.3.1-GaussianDelta | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.1-DiracEvaluates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.3.1-GaussianDeltaProbability | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.3.1-GaussianDeltaWeak | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
+| MD-5.3.1-GaussianDelta | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
+| MD-5.3.1-DiracEvaluates | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | local_proof / self-contained |
+| MD-5.3.1-GaussianDeltaProbability | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | local_proof / self-contained |
+| MD-5.3.1-GaussianDeltaWeak | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | local_proof / self-contained |
 | MD-5.3.2-WeakStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.3.2-EnsembleAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.3.2-ConvergenceHeuristic | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；原收敛推断需要独立语义裁定及补充收敛资格；当前不证明。 |
@@ -353,3 +353,5 @@ EAUDIT04 §5.2.2：8条落盘，单文件与9项公理通过；未写新证明�
 EAUDIT05 §5.2.2：2条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT06 §5.2.3：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT07 §5.3.1：7条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。

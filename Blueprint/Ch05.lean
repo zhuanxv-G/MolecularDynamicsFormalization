@@ -585,8 +585,9 @@ theorem mechanicalLiouvillianIdentity : ∀ n (m : Fin n → ℝ) (U : Molecular
     MolecularDynamics.Chapter05Review.mechanicalLiouvillian m (fun q => -gradient U q) u z := by
   sorry
 
-/-- source_id: MD-5.3.1-TestSpace · definition · §5.3.1 · 印刷p.188 / PDFp.209 -/
-def testSpace (n : ℕ) := {φ : MolecularDynamics.Chapter05Review.E n → ℝ // ContDiff ℝ ⊤ φ ∧ HasCompactSupport φ}
+/-- source_id: MD-5.3.1-TestSpace · definition · §5.3.1 · 印刷p.188 / PDFp.209 
+[EXTRA] 将Cω误编码改为原书C∞（scoped ∞）；只改Blueprint实际测试空间，正式库冻结。 -/
+def testSpace (n : ℕ) := {φ : MolecularDynamics.Chapter05Review.E n → ℝ // ContDiff ℝ ∞ φ ∧ HasCompactSupport φ}
 
 /-- source_id: MD-5.3.1-SchwartzSpace · definition · §5.3.1 · 印刷p.188 / PDFp.209
 [EXTRA] [EXTRA]Mathlib实际SchwartzMap以全阶Fréchet导数及多项式权界编码快速衰减；使用其既有空间，未把名称当任意类型。 -/
@@ -603,9 +604,10 @@ def schwartzFunctional (n : ℕ) := (MolecularDynamics.Chapter05Review.schwartzS
 def regularDistribution {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → ℝ) (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := ∫ z, f z*φ z
 
 /-- source_id: MD-5.3.1-RegularDistributionLinearity · unnumbered_claim · §5.3.1 · 印刷p.188 / PDFp.209
-[EXTRA] [EXTRA]原有界光滑f及明确选择的Schwartz测试空间；可积与完整线性两个结论都保留，不把可积作结论假设。 -/
+[EXTRA] [EXTRA]原有界光滑f及明确选择的Schwartz测试空间；可积与完整线性两个结论都保留，不把可积作结论假设。 
+[EXTRA] 将不必要的实解析限制恢复为原书C∞，保留有界性、Schwartz选择及原可积/线性结论；已有证明随本批编译复查。 -/
 theorem regularDistributionLinearity : ∀ n (f : MolecularDynamics.Chapter05Review.E n → ℝ),
-  ContDiff ℝ ⊤ f → (∃ C : ℝ,∀ z,|f z| ≤ C) →
+  ContDiff ℝ ∞ f → (∃ C : ℝ,∀ z,|f z| ≤ C) →
   (∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,Integrable (fun z => f z*φ z) volume) ∧
   (∀ (φ ψ : MolecularDynamics.Chapter05Review.schwartzSpace n) (a b : ℝ),
     MolecularDynamics.Chapter05Review.regularDistribution f (a • φ+b • ψ)=a*MolecularDynamics.Chapter05Review.regularDistribution f φ+b*MolecularDynamics.Chapter05Review.regularDistribution f ψ) := by

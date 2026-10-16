@@ -1,0 +1,98 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.3.1-RegularDistributionLinearity；原PDF页映射=[209]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT07_review.json，对象含batch=EAUDIT07、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
+  "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+  "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5",
+  "EAUDIT07c_materials": "b8672f38a47ae5cd281772940f05ac147d46829f7d7697f5e319aa11dea81cab",
+  "EAUDIT07c_PAGES.pdf": "9e546fff7f4b2e201b5b96065e89c9ff5019d798895575f56ce1e09636c537c2"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.3.1-RegularDistributionLinearity",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.3.1",
+  "printed_page": "188",
+  "pdf_page": "209",
+  "statement_latex": "If $f$ is a bounded, smooth function on $\\mathbb R^m$, we may define a generalized function $T_f$ by reference to its action on a test function $\\phi\\in\\mathcal T$ via integration: $T_f(\\phi)=\\int_{\\mathbb R^m}f(z)\\phi(z)d\\omega$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.regularDistributionLinearity",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]原有界光滑f及明确选择的Schwartz测试空间；可积与完整线性两个结论都保留，不把可积作结论假设。",
+    "[EXTRA] 将不必要的实解析限制恢复为原书C∞，保留有界性、Schwartz选择及原可积/线性结论；已有证明随本批编译复查。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT07_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:57:24.308932",
+      "before_sha256": "0fd41af0f8f39405a594fdc30a02bf80cc5e31a3a47060861838d7ff2d795f5f",
+      "after_sha256": "c441d60331f1c7260438916f13f224529e97bdee2c02776f960916ca252b14a3",
+      "changed_fields": [],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem regularDistributionLinearity : ∀ n (f : MolecularDynamics.Chapter05Review.E n → ℝ),
+  ContDiff ℝ ∞ f → (∃ C : ℝ,∀ z,|f z| ≤ C) →
+  (∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,Integrable (fun z => f z*φ z) volume) ∧
+  (∀ (φ ψ : MolecularDynamics.Chapter05Review.schwartzSpace n) (a b : ℝ),
+    MolecularDynamics.Chapter05Review.regularDistribution f (a • φ+b • ψ)=a*MolecularDynamics.Chapter05Review.regularDistribution f φ+b*MolecularDynamics.Chapter05Review.regularDistribution f ψ) := by
+  intro n f hf hb
+  obtain ⟨C,hC⟩ := hb
+  have hi : ∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,
+      Integrable (fun z => f z*φ z) volume := by
+    intro φ
+    apply Integrable.mono' (φ.integrable.norm.mul_const C)
+    · exact hf.continuous.measurable.aestronglyMeasurable.mul φ.continuous.measurable.aestronglyMeasurable
+    · filter_upwards [] with z
+      simpa only [norm_mul,Real.norm_eq_abs,mul_comm] using mul_le_mul_of_nonneg_right (hC z) (abs_nonneg (φ z))
+  refine ⟨hi,?_⟩
+  intro φ ψ a b
+  simp only [MolecularDynamics.Chapter05Review.regularDistribution,SchwartzMap.add_apply,SchwartzMap.smul_apply,smul_eq_mul]
+  simp_rw [mul_add,← mul_assoc,mul_comm (f _) a,mul_comm (f _) b]
+  simp_rw [mul_assoc]
+  rw [integral_add ((hi φ).const_mul a) ((hi ψ).const_mul b),integral_const_mul,integral_const_mul]
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.regularDistribution
+```lean
+def regularDistribution {n : ℕ} (f : E n → ℝ) (φ : schwartzSpace n) := ∫ z, f z*φ z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.schwartzSpace
+```lean
+abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
+```
+### 实际依赖 MD.Ch05.regularDistribution
+```lean
+def regularDistribution {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → ℝ) (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := ∫ z, f z*φ z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.schwartzSpace
+```lean
+abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
+```

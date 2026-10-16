@@ -59,5 +59,18 @@
     "extra_assumptions": [
       "[EXTRA] 主接口限定实际自治流；保留一般Measure.map辅助定义，另列由实际初始密度推前得到的点态Liouville演化；ρ(0)是初值，形式指数作记号，不将PDE作为前提。"
     ]
+  },
+  "MD-5.3.1-TestSpace": {
+    "code": "def testSpace (n : ℕ) := {φ : MolecularDynamics.Chapter05Review.E n → ℝ // ContDiff ℝ ∞ φ ∧ HasCompactSupport φ}",
+    "extra_assumptions": [
+      "[EXTRA] 将Cω误编码改为原书C∞（scoped ∞）；只改Blueprint实际测试空间，正式库冻结。"
+    ]
+  },
+  "MD-5.3.1-RegularDistributionLinearity": {
+    "code": "theorem regularDistributionLinearity : ∀ n (f : MolecularDynamics.Chapter05Review.E n → ℝ),\n  ContDiff ℝ ∞ f → (∃ C : ℝ,∀ z,|f z| ≤ C) →\n  (∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,Integrable (fun z => f z*φ z) volume) ∧\n  (∀ (φ ψ : MolecularDynamics.Chapter05Review.schwartzSpace n) (a b : ℝ),\n    MolecularDynamics.Chapter05Review.regularDistribution f (a • φ+b • ψ)=a*MolecularDynamics.Chapter05Review.regularDistribution f φ+b*MolecularDynamics.Chapter05Review.regularDistribution f ψ) := by\n  intro n f hf hb\n  obtain ⟨C,hC⟩ := hb\n  have hi : ∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,\n      Integrable (fun z => f z*φ z) volume := by\n    intro φ\n    apply Integrable.mono' (φ.integrable.norm.mul_const C)\n    · exact hf.continuous.measurable.aestronglyMeasurable.mul φ.continuous.measurable.aestronglyMeasurable\n    · filter_upwards [] with z\n      simpa only [norm_mul,Real.norm_eq_abs,mul_comm] using mul_le_mul_of_nonneg_right (hC z) (abs_nonneg (φ z))\n  refine ⟨hi,?_⟩\n  intro φ ψ a b\n  simp only [MolecularDynamics.Chapter05Review.regularDistribution,SchwartzMap.add_apply,SchwartzMap.smul_apply,smul_eq_mul]\n  simp_rw [mul_add,← mul_assoc,mul_comm (f _) a,mul_comm (f _) b]\n  simp_rw [mul_assoc]\n  rw [integral_add ((hi φ).const_mul a) ((hi ψ).const_mul b),integral_const_mul,integral_const_mul]",
+    "extra_assumptions": [
+      "[EXTRA]原有界光滑f及明确选择的Schwartz测试空间；可积与完整线性两个结论都保留，不把可积作结论假设。",
+      "[EXTRA] 将不必要的实解析限制恢复为原书C∞，保留有界性、Schwartz选择及原可积/线性结论；已有证明随本批编译复查。"
+    ]
   }
 }

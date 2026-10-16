@@ -1,0 +1,115 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.3.1-GaussianDeltaWeak；原PDF页映射=[210]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT07_review.json，对象含batch=EAUDIT07、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
+  "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+  "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5",
+  "EAUDIT07g_materials": "620e4fb579af97431248bebc518cf3c78965599e9e54f6e37d73adbe6d7d7d6a",
+  "EAUDIT07g_PAGES.pdf": "e99499eade00aab93da5721c72d0ab13de618efba14ee2277b5793133762e12e"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.3.1-GaussianDeltaWeak",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.3.1",
+  "printed_page": "189",
+  "pdf_page": "210",
+  "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\varepsilon\\pi}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.gaussianDeltaWeak",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]明确选择有界连续测试函数的实际概率弱极限；原“suitable test”以此资格实现，Schwartz测试也适用。全空间Gaussian没有收缩support，不用上一条support假设套用。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT07_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:57:24.308932",
+      "before_sha256": "a3cf004e1b687c4d119ea4126608b44d3287c3adeee46aa24428dd02f20e5427",
+      "after_sha256": "853ac0244308e9f43f40535c31e81e52128406ca8dd6bbf28d6fef5a720c57b5",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem gaussianDeltaWeak : ∀ φ : ℝ → ℝ,Continuous φ → Bornology.IsBounded (range φ) →
+  Tendsto (fun ε : ℝ => ∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x) (𝓝[>] 0) (𝓝 (φ 0)) := by
+  intro φ hφ hb
+  have hg := gaussianDeltaProbability 1 (by norm_num)
+  obtain ⟨C,hC,hBC⟩ := hb.exists_pos_norm_le
+  have ht : Tendsto (fun ε : ℝ => ∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (𝓝[>] 0) (𝓝 (φ 0)) := by
+    have hc := tendsto_integral_filter_of_dominated_convergence
+      (fun x : ℝ => C*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (F:=fun ε x => φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (f:=fun x => φ 0*MolecularDynamics.Chapter05Review.gaussianDelta 1 x)
+      (Filter.Eventually.of_forall (fun ε => by
+        apply Continuous.aestronglyMeasurable
+        unfold MolecularDynamics.Chapter05Review.gaussianDelta
+        fun_prop))
+      (Filter.Eventually.of_forall (fun ε => ae_of_all _ (fun x => by
+        simpa only [norm_mul,Real.norm_eq_abs,abs_of_nonneg (hg.1 x)] using
+          mul_le_mul_of_nonneg_right (hBC (φ (Real.sqrt ε*x)) (mem_range_self _)) (hg.1 x))))
+      (hg.2.1.const_mul C) (ae_of_all _ (fun x => by
+        have hs : Tendsto (fun ε : ℝ => Real.sqrt ε*x) (𝓝[>] 0) (𝓝 0) := by
+          simpa using! ((Real.continuous_sqrt.tendsto 0).mono_left inf_le_left).mul_const x
+        exact (hφ.tendsto 0 |>.comp hs).mul_const _))
+    simpa only [integral_const_mul,hg.2.2,mul_one] using hc
+  apply tendsto_congr' _ |>.2 ht
+  filter_upwards [self_mem_nhdsWithin] with ε hε
+  have hεpos : 0 < ε := hε
+  have hspos : 0 < Real.sqrt ε := Real.sqrt_pos.2 hεpos
+  have hs0 : Real.sqrt ε ≠ 0 := ne_of_gt hspos
+  have hpoint (x : ℝ) : Real.sqrt ε*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x)=
+      MolecularDynamics.Chapter05Review.gaussianDelta 1 x := by
+    unfold MolecularDynamics.Chapter05Review.gaussianDelta
+    rw [mul_pow,Real.sq_sqrt hεpos.le]
+    have hexp : -(ε*x^2)/(2*ε)= -x^2/2 := by field_simp
+    rw [hexp,Real.sqrt_mul (by positivity : 0 ≤ 2*Real.pi)]
+    simp only [mul_one]
+    field_simp
+  calc
+    (∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x)=
+      Real.sqrt ε*(∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x)) := by
+        change (∫ x,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x)=Real.sqrt ε*(∫ x,(fun y => φ y*MolecularDynamics.Chapter05Review.gaussianDelta ε y) (Real.sqrt ε*x))
+        have hchange : (∫ x : ℝ,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta ε (Real.sqrt ε*x))=
+            (Real.sqrt ε)⁻¹*(∫ x : ℝ,φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x) := by
+          simpa only [smul_eq_mul,abs_of_pos (inv_pos.mpr hspos)] using!
+            (Measure.integral_comp_mul_left (fun x : ℝ => φ x*MolecularDynamics.Chapter05Review.gaussianDelta ε x) (Real.sqrt ε))
+        rw [hchange]
+        field_simp
+    _ = ∫ x,φ (Real.sqrt ε*x)*MolecularDynamics.Chapter05Review.gaussianDelta 1 x := by
+      rw [←integral_const_mul]
+      apply integral_congr_ae
+      filter_upwards [] with x
+      rw [←hpoint]
+      ring
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.gaussianDelta
+```lean
+def gaussianDelta (ε z : ℝ) := Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε)
+```
+### 实际依赖 MD.Ch05.gaussianDelta
+```lean
+def gaussianDelta (ε z : ℝ) := Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε)
+```

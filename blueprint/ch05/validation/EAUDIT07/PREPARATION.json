@@ -1,0 +1,35 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT07",
+  "section": "5.3.1",
+  "source_ids": [
+    "MD-5.3.1-DiracEvaluates",
+    "MD-5.3.1-GaussianDelta",
+    "MD-5.3.1-GaussianDeltaProbability",
+    "MD-5.3.1-GaussianDeltaWeak",
+    "MD-5.3.1-RegularDistribution",
+    "MD-5.3.1-RegularDistributionLinearity",
+    "MD-5.3.1-TestSpace"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.1-TestSpace",
+    "MD-5.3.1-RegularDistribution",
+    "MD-5.3.1-RegularDistributionLinearity",
+    "MD-5.3.1-GaussianDelta",
+    "MD-5.3.1-DiracEvaluates",
+    "MD-5.3.1-GaussianDeltaProbability",
+    "MD-5.3.1-GaussianDeltaWeak"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+  "lean_sha256": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+  "source_sha256": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5",
+  "pages": [
+    209,
+    210
+  ],
+  "prior_proof_blocks": {
+    "MD-5.3.1-TestSpace": "def testSpace (n : ℕ) := {φ : MolecularDynamics.Chapter05Review.E n → ℝ // ContDiff ℝ ⊤ φ ∧ HasCompactSupport φ}",
+    "MD-5.3.1-RegularDistributionLinearity": "theorem regularDistributionLinearity : ∀ n (f : MolecularDynamics.Chapter05Review.E n → ℝ),\n  ContDiff ℝ ⊤ f → (∃ C : ℝ,∀ z,|f z| ≤ C) →\n  (∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,Integrable (fun z => f z*φ z) volume) ∧\n  (∀ (φ ψ : MolecularDynamics.Chapter05Review.schwartzSpace n) (a b : ℝ),\n    MolecularDynamics.Chapter05Review.regularDistribution f (a • φ+b • ψ)=a*MolecularDynamics.Chapter05Review.regularDistribution f φ+b*MolecularDynamics.Chapter05Review.regularDistribution f ψ) := by\n  intro n f hf hb\n  obtain ⟨C,hC⟩ := hb\n  have hi : ∀ φ : MolecularDynamics.Chapter05Review.schwartzSpace n,\n      Integrable (fun z => f z*φ z) volume := by\n    intro φ\n    apply Integrable.mono' (φ.integrable.norm.mul_const C)\n    · exact hf.continuous.measurable.aestronglyMeasurable.mul φ.continuous.measurable.aestronglyMeasurable\n    · filter_upwards [] with z\n      simpa only [norm_mul,Real.norm_eq_abs,mul_comm] using mul_le_mul_of_nonneg_right (hC z) (abs_nonneg (φ z))\n  refine ⟨hi,?_⟩\n  intro φ ψ a b\n  simp only [MolecularDynamics.Chapter05Review.regularDistribution,SchwartzMap.add_apply,SchwartzMap.smul_apply,smul_eq_mul]\n  simp_rw [mul_add,← mul_assoc,mul_comm (f _) a,mul_comm (f _) b]\n  simp_rw [mul_assoc]\n  rw [integral_add ((hi φ).const_mul a) ((hi ψ).const_mul b),integral_const_mul,integral_const_mul]"
+  }
+}

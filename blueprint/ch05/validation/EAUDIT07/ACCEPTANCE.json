@@ -1,0 +1,49 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT07",
+  "section": "5.3.1",
+  "source_ids": [
+    "MD-5.3.1-DiracEvaluates",
+    "MD-5.3.1-GaussianDelta",
+    "MD-5.3.1-GaussianDeltaProbability",
+    "MD-5.3.1-GaussianDeltaWeak",
+    "MD-5.3.1-RegularDistribution",
+    "MD-5.3.1-RegularDistributionLinearity",
+    "MD-5.3.1-TestSpace"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.1-TestSpace",
+    "MD-5.3.1-RegularDistribution",
+    "MD-5.3.1-RegularDistributionLinearity",
+    "MD-5.3.1-GaussianDelta",
+    "MD-5.3.1-DiracEvaluates",
+    "MD-5.3.1-GaussianDeltaProbability",
+    "MD-5.3.1-GaussianDeltaWeak"
+  ],
+  "human_ids": [],
+  "lean_sha256": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+  "source_sha256": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5",
+  "pages": [
+    209,
+    210
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch05.olean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+    "log_sha256": "a984a593c8f30ad14dc4b7db1667a61b16e208400eb90fa0aff5936a2f1b8537"
+  },
+  "axiom_decl_count": 7,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md"
+}

@@ -1,0 +1,92 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.3.1-DiracEvaluates；原PDF页映射=[210]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT07_review.json，对象含batch=EAUDIT07、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
+  "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+  "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5",
+  "EAUDIT07e_materials": "37c27b9f2531b2ab4ad6cff720fe5c30c57f9bc365f7ed6ada6206c83cfbff1e",
+  "EAUDIT07e_PAGES.pdf": "e99499eade00aab93da5721c72d0ab13de618efba14ee2277b5793133762e12e"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.3.1-DiracEvaluates",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.3.1",
+  "printed_page": "189",
+  "pdf_page": "210",
+  "statement_latex": "$\\langle\\delta,\\phi\\rangle=\\int\\delta(z)\\phi(z)d\\omega=\\phi(0)$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "形式积分以真实Dirac测度实现；不是给δ(z)定义普通Lebesgue函数。",
+    "φ∈𝒯；上文 PDF209／印刷188页列出可选测试空间 C_c^∞(ℝ^m) 与 Schwartz 空间 𝒮(ℝ^m)，此条 Lean 选择后者；dω 为欧氏空间体积积分记号，δ 处的积分为分布配对的形式写法。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.diracEvaluates",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT07_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:57:24.308932",
+      "before_sha256": "945575ce2975c939b7e9dc22b07ec1ab27dd38dcb3889a06cdbe5c6f0f918d95",
+      "after_sha256": "c86ee6d608307f67672c2c2101cedf87805f08994f00aeaae54a435af11719e2",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem diracEvaluates : ∀ n (φ : MolecularDynamics.Chapter05Review.schwartzSpace n),
+  (∫ z,φ z ∂(MolecularDynamics.Chapter05Review.diracMeasure n))=MolecularDynamics.Chapter05Review.diracAction φ := by
+  intro n φ
+  simp [MolecularDynamics.Chapter05Review.diracMeasure,MolecularDynamics.Chapter05Review.diracAction]
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.diracAction
+```lean
+def diracAction {n : ℕ} (φ : schwartzSpace n) := φ 0
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.diracMeasure
+```lean
+def diracMeasure (n : ℕ) : Measure (E n) := Measure.dirac 0
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.schwartzSpace
+```lean
+abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
+```
+### 实际依赖 MD.Ch05.diracAction
+```lean
+def diracAction {n : ℕ} (φ : MolecularDynamics.Chapter05Review.schwartzSpace n) := φ 0
+```
+### 实际依赖 MD.Ch05.diracMeasure
+```lean
+def diracMeasure (n : ℕ) : Measure (MolecularDynamics.Chapter05Review.E n) := Measure.dirac 0
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.schwartzSpace
+```lean
+abbrev schwartzSpace (n : ℕ) := SchwartzMap (E n) ℝ
+```

@@ -1724,11 +1724,24 @@
     "issues": [],
     "lean_decl": "MD.Ch05.testSpace",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 将Cω误编码改为原书C∞（scoped ∞）；只改Blueprint实际测试空间，正式库冻结。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:57:24.308932",
+        "before_sha256": "3025fabb512c2d3501e542f4dab5dc643d4df7e51433dfc9956f8cfeeaef6692",
+        "after_sha256": "cb27a1acc178e78b65d3c98d2041b444a26dd3bf734f5f5c3d683684ad39cf15",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.1-SchwartzSpace",
@@ -1818,9 +1831,20 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:57:24.308932",
+        "before_sha256": "bb7ea56efbc4935d1abc093fefcd4deaca0cb80b6f15e3d26f260d1e0a727124",
+        "after_sha256": "88277dc08a9391e5dac116d37607ba2360a18adfe1f373951961f0aff0047a72",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.1-RegularDistributionLinearity",
@@ -1838,12 +1862,24 @@
     "lean_decl": "MD.Ch05.regularDistributionLinearity",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]原有界光滑f及明确选择的Schwartz测试空间；可积与完整线性两个结论都保留，不把可积作结论假设。"
+      "[EXTRA]原有界光滑f及明确选择的Schwartz测试空间；可积与完整线性两个结论都保留，不把可积作结论假设。",
+      "[EXTRA] 将不必要的实解析限制恢复为原书C∞，保留有界性、Schwartz选择及原可积/线性结论；已有证明随本批编译复查。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:57:24.308932",
+        "before_sha256": "0fd41af0f8f39405a594fdc30a02bf80cc5e31a3a47060861838d7ff2d795f5f",
+        "after_sha256": "c441d60331f1c7260438916f13f224529e97bdee2c02776f960916ca252b14a3",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.1-DiracAction",
@@ -1921,7 +1957,7 @@
     "section": "5.3.1",
     "printed_page": "189",
     "pdf_page": "210",
-    "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\pi\\varepsilon}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
+    "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\varepsilon\\pi}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1933,9 +1969,22 @@
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:57:24.308932",
+        "before_sha256": "e1421336f82a2c6bba8b950588d14e2f98ca018fbac418da9bee6c6cec1eae16",
+        "after_sha256": "af7ae2daf1cae4f65bd826ade53e31b14041698bba82d454572c3ab11dbbd720",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.1-DiracEvaluates",
@@ -1949,16 +1998,30 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "形式积分以真实Dirac测度实现；不是给δ(z)定义普通Lebesgue函数。"
+      "形式积分以真实Dirac测度实现；不是给δ(z)定义普通Lebesgue函数。",
+      "φ∈𝒯；上文 PDF209／印刷188页列出可选测试空间 C_c^∞(ℝ^m) 与 Schwartz 空间 𝒮(ℝ^m)，此条 Lean 选择后者；dω 为欧氏空间体积积分记号，δ 处的积分为分布配对的形式写法。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch05.diracEvaluates",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:57:24.308932",
+        "before_sha256": "945575ce2975c939b7e9dc22b07ec1ab27dd38dcb3889a06cdbe5c6f0f918d95",
+        "after_sha256": "c86ee6d608307f67672c2c2101cedf87805f08994f00aeaae54a435af11719e2",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.1-GaussianDeltaProbability",
@@ -1967,7 +2030,7 @@
     "section": "5.3.1",
     "printed_page": "189",
     "pdf_page": "210",
-    "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\pi\\varepsilon}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
+    "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\varepsilon\\pi}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1979,9 +2042,22 @@
       "[EXTRA]ε>0，完整真实概率密度资格另列；定义没有替代归一化证明。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:57:24.308932",
+        "before_sha256": "f442228c15bccaa64f44fad09ef947e9b256c2786bc39f09306fe9c2b878c131",
+        "after_sha256": "415fc0540e926753a920692744d5acc2edfadaef92aa4f4ed01a23e6b3b7b3eb",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.1-GaussianDeltaWeak",
@@ -1990,7 +2066,7 @@
     "section": "5.3.1",
     "printed_page": "189",
     "pdf_page": "210",
-    "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension, $d_\\varepsilon=(2\\pi\\varepsilon)^{-1/2}\\exp(-z^2/(2\\varepsilon))$.",
+    "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\varepsilon\\pi}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -2002,9 +2078,22 @@
       "[EXTRA]明确选择有界连续测试函数的实际概率弱极限；原“suitable test”以此资格实现，Schwartz测试也适用。全空间Gaussian没有收缩support，不用上一条support假设套用。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT07_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:57:24.308932",
+        "before_sha256": "a3cf004e1b687c4d119ea4126608b44d3287c3adeee46aa24428dd02f20e5427",
+        "after_sha256": "853ac0244308e9f43f40535c31e81e52128406ca8dd6bbf28d6fef5a720c57b5",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.2-WeakStationary",

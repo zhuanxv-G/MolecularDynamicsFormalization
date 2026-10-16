@@ -4309,7 +4309,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
+        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.1-SchwartzSpace",
@@ -4555,7 +4567,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
+        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.1-RegularDistributionLinearity",
@@ -4609,7 +4633,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
+        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.1-DiracAction",
@@ -4860,7 +4896,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
+        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.1-DiracEvaluates",
@@ -4945,7 +4993,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
+        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.1-GaussianDeltaProbability",
@@ -5029,7 +5089,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
+        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.1-GaussianDeltaWeak",
@@ -5116,7 +5188,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT07",
+    "repair": {
+      "eaudit": "EAUDIT07",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
+        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.2-WeakStationary",

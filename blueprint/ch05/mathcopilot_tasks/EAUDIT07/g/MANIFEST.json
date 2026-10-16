@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT07",
+  "source_id": "MD-5.3.1-GaussianDeltaWeak",
+  "input_sha256": {
+    "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
+    "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+    "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5",
+    "EAUDIT07g_materials": "620e4fb579af97431248bebc518cf3c78965599e9e54f6e37d73adbe6d7d7d6a",
+    "EAUDIT07g_PAGES.pdf": "e99499eade00aab93da5721c72d0ab13de618efba14ee2277b5793133762e12e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    210
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "8092bf84f4141bd956b99ebcbe7e6300d4054a33f9a032478053e202837bb4b4",
+  "source_block_sha256": "9a87f26329b4c78394e9b3dce73d85050cdbeb58d8ed09d86c7933f1d3f697c7",
+  "source_declarations": [
+    "gaussianDeltaWeak"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.gaussianDelta",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "91ff5dcad7079462d8c3230b452ee845e1df53f79ed8998eb4e33f42f27fc513"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "gaussianDelta",
+      "file_sha256": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+      "excerpt_sha256": "91ff5dcad7079462d8c3230b452ee845e1df53f79ed8998eb4e33f42f27fc513"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT07_review.json",
+  "total_task_bytes": 87495
+}
