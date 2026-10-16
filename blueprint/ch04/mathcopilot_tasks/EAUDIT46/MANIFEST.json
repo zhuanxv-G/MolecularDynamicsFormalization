@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT46",
+  "input_sha256": {
+    "BATCH_EAUDIT46.md": "3bc5c2f9f2350f2a6413d606867aa21c477885c9fb68488fa2a5bb381c617244",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT46a",
+      "source_id": "MD-4.3-ConstraintSet",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT46/a",
+      "total_bytes": 98973,
+      "manifest_sha256": "2698ca8fbc4a9dd65b0f4edfe66e6c7eb5228cddc99d5dd43dec2ff441997633"
+    }
+  ]
+}

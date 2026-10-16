@@ -1090,8 +1090,8 @@
     "section": "4.3"
   },
   "MD-4.3-ConstraintSet": {
-    "category": "B",
-    "handling": "零点集合定义保留；补C∞及满秩的真实局部光滑坐标正规形，零点集对应l个坐标为零，即余维l嵌入流形资格；l≤n及正则性均标EXTRA，新结论暂sorry。",
+    "category": "C",
+    "handling": "C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。",
     "section": "4.3"
   },
   "MD-4.3-ConstraintJacobian": {

@@ -701,17 +701,18 @@ def constrainedSolution_generalForce {n l : ℕ} (m : Fin n → ℝ) (F : Molecu
 
 /-- source_id: MD-4.3-ConstraintSet · definition · §4.3 · 印刷p.152 / PDFp.174
 [EXTRA] 定义仅集合；称为光滑流形需要独立梯度/正则值资格，未构造抽象流形。 
-[EXTRA] 零点集合定义保留；补C∞及满秩的真实局部光滑坐标正规形，零点集对应l个坐标为零，即余维l嵌入流形资格；l≤n及正则性均标EXTRA，新结论暂sorry。 -/
+[EXTRA] 零点集合定义保留；补C∞及满秩的真实局部光滑坐标正规形，零点集对应l个坐标为零，即余维l嵌入流形资格；l≤n及正则性均标EXTRA，新结论暂sorry。 
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
 def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}
 
 theorem constraintSet_regularLevel (n l : ℕ) (_hln : l ≤ n)
     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
-    (_hg : ∀ j, ContDiff ℝ ⊤ (g j))
+    (_hg : ∀ j, ContDiff ℝ ∞ (g j))
     (q : MolecularDynamics.Chapter04Review.Q n) (_hq : q ∈ constraintSet g)
     (_hregular : Function.Surjective (fderiv ℝ (fun x j ↦ g j x) q)) :
     ∃ A B : Set (MolecularDynamics.Chapter04Review.Q n), IsOpen A ∧ IsOpen B ∧ q ∈ A ∧ 0 ∈ B ∧
       ∃ φ ψ : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n,
-        ContDiffOn ℝ ⊤ φ A ∧ ContDiffOn ℝ ⊤ ψ B ∧ φ q=0 ∧
+        ContDiffOn ℝ ∞ φ A ∧ ContDiffOn ℝ ∞ ψ B ∧ φ q=0 ∧
         MapsTo φ A B ∧ MapsTo ψ B A ∧
         (∀ x ∈ A, ψ (φ x)=x) ∧ (∀ y ∈ B, φ (ψ y)=y) ∧
         (∀ x ∈ A, x ∈ constraintSet g ↔ ∀ j : Fin l, φ x (Fin.castLE _hln j)=0) := by

@@ -1574,7 +1574,8 @@
     "reusable_proofs": [],
     "extra_assumptions": [
       "定义仅集合；称为光滑流形需要独立梯度/正则值资格，未构造抽象流形。",
-      "[EXTRA] 零点集合定义保留；补C∞及满秩的真实局部光滑坐标正规形，零点集对应l个坐标为零，即余维l嵌入流形资格；l≤n及正则性均标EXTRA，新结论暂sorry。"
+      "[EXTRA] 零点集合定义保留；补C∞及满秩的真实局部光滑坐标正规形，零点集对应l个坐标为零，即余维l嵌入流形资格；l≤n及正则性均标EXTRA，新结论暂sorry。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
@@ -1588,9 +1589,19 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch04/mathcopilot_results/BATCH07_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EAUDIT46_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:45:33.373516",
+        "before_sha256": "0a50905b46c803f3683604e6776c80d5ba596658d618679e3903ded1bf267b97",
+        "after_sha256": "5de56d43990526888872bb04c1676b2a3c6128a1304e1c66bdbcb39a4193c10a",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch04/mathcopilot_results/BATCH07_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT46/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-4.3-CotangentSet",

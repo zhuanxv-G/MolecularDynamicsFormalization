@@ -1635,8 +1635,8 @@
       "lean_decl": "MD.Ch04.constraintSet",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "9ff94d728c5db6e85f84c7f2641007bb95746bd62a22bcd13b098f3434c11d15",
-      "block_sha256": "9ff94d728c5db6e85f84c7f2641007bb95746bd62a22bcd13b098f3434c11d15",
+      "signature_sha256": "0b5691883ac8f4baf7e34ee61aee4744329cbfd7cd70f618873efd85dcef00e7",
+      "block_sha256": "0b5691883ac8f4baf7e34ee61aee4744329cbfd7cd70f618873efd85dcef00e7",
       "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
@@ -1654,7 +1654,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch04/validation/batch29-fixed-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch04/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch04/validation/EAUDIT46/axioms.log"
     },
     "MD-4.3-CotangentSet": {
       "checked": true,

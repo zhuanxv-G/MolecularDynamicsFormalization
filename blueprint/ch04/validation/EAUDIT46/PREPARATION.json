@@ -1,0 +1,21 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT46",
+  "section": "4.3",
+  "source_ids": [
+    "MD-4.3-ConstraintSet"
+  ],
+  "reaudit_ids": [
+    "MD-4.3-ConstraintSet"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+  "pages": [
+    174
+  ],
+  "prior_proof_blocks": {
+    "MD-4.3-ConstraintSet": "def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}\n\ntheorem constraintSet_regularLevel (n l : ℕ) (_hln : l ≤ n)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (_hg : ∀ j, ContDiff ℝ ⊤ (g j))\n    (q : MolecularDynamics.Chapter04Review.Q n) (_hq : q ∈ constraintSet g)\n    (_hregular : Function.Surjective (fderiv ℝ (fun x j ↦ g j x) q)) :\n    ∃ A B : Set (MolecularDynamics.Chapter04Review.Q n), IsOpen A ∧ IsOpen B ∧ q ∈ A ∧ 0 ∈ B ∧\n      ∃ φ ψ : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n,\n        ContDiffOn ℝ ⊤ φ A ∧ ContDiffOn ℝ ⊤ ψ B ∧ φ q=0 ∧\n        MapsTo φ A B ∧ MapsTo ψ B A ∧\n        (∀ x ∈ A, ψ (φ x)=x) ∧ (∀ y ∈ B, φ (ψ y)=y) ∧\n        (∀ x ∈ A, x ∈ constraintSet g ↔ ∀ j : Fin l, φ x (Fin.castLE _hln j)=0) := by\n  sorry"
+  }
+}

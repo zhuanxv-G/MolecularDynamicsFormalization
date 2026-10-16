@@ -52,7 +52,7 @@
 | MD-4.3-HolonomicRelation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
 | MD-4.3-TimeConstraintDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | local_proof / self-contained |
 | MD-4.3-ConstrainedSolution | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
-| MD-4.3-ConstraintSet | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
+| MD-4.3-ConstraintSet | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT46 | definition / self-contained |
 | MD-4.3-CotangentSet | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 fd88a08d64fd41ccdf0275379f551900977af72e2ec1ce6ab6151e2ae0335b61） | definition / self-contained |
 | MD-4.3-ConstraintJacobian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
 | MD-4.3-JacobianActualDerivative | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | existing_bridge / checked+documented priors |
@@ -396,3 +396,5 @@ EAUDIT22 §4.4.1：6条落盘，单文件与6项公理通过；未写新证明�
 EAUDIT23 §4.4.2：8条落盘，单文件与9项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT24 §4.4.2：5条落盘，单文件与5项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT46 §4.3：1条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。

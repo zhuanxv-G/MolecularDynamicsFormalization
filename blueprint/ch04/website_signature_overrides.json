@@ -101,10 +101,11 @@
     ]
   },
   "MD-4.3-ConstraintSet": {
-    "code": "def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}\n\ntheorem constraintSet_regularLevel (n l : ℕ) (_hln : l ≤ n)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (_hg : ∀ j, ContDiff ℝ ⊤ (g j))\n    (q : MolecularDynamics.Chapter04Review.Q n) (_hq : q ∈ constraintSet g)\n    (_hregular : Function.Surjective (fderiv ℝ (fun x j ↦ g j x) q)) :\n    ∃ A B : Set (MolecularDynamics.Chapter04Review.Q n), IsOpen A ∧ IsOpen B ∧ q ∈ A ∧ 0 ∈ B ∧\n      ∃ φ ψ : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n,\n        ContDiffOn ℝ ⊤ φ A ∧ ContDiffOn ℝ ⊤ ψ B ∧ φ q=0 ∧\n        MapsTo φ A B ∧ MapsTo ψ B A ∧\n        (∀ x ∈ A, ψ (φ x)=x) ∧ (∀ y ∈ B, φ (ψ y)=y) ∧\n        (∀ x ∈ A, x ∈ constraintSet g ↔ ∀ j : Fin l, φ x (Fin.castLE _hln j)=0) := by\n  sorry",
+    "code": "def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}\n\ntheorem constraintSet_regularLevel (n l : ℕ) (_hln : l ≤ n)\n    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (_hg : ∀ j, ContDiff ℝ ∞ (g j))\n    (q : MolecularDynamics.Chapter04Review.Q n) (_hq : q ∈ constraintSet g)\n    (_hregular : Function.Surjective (fderiv ℝ (fun x j ↦ g j x) q)) :\n    ∃ A B : Set (MolecularDynamics.Chapter04Review.Q n), IsOpen A ∧ IsOpen B ∧ q ∈ A ∧ 0 ∈ B ∧\n      ∃ φ ψ : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n,\n        ContDiffOn ℝ ∞ φ A ∧ ContDiffOn ℝ ∞ ψ B ∧ φ q=0 ∧\n        MapsTo φ A B ∧ MapsTo ψ B A ∧\n        (∀ x ∈ A, ψ (φ x)=x) ∧ (∀ y ∈ B, φ (ψ y)=y) ∧\n        (∀ x ∈ A, x ∈ constraintSet g ↔ ∀ j : Fin l, φ x (Fin.castLE _hln j)=0) := by\n  sorry",
     "extra_assumptions": [
       "定义仅集合；称为光滑流形需要独立梯度/正则值资格，未构造抽象流形。",
-      "[EXTRA] 零点集合定义保留；补C∞及满秩的真实局部光滑坐标正规形，零点集对应l个坐标为零，即余维l嵌入流形资格；l≤n及正则性均标EXTRA，新结论暂sorry。"
+      "[EXTRA] 零点集合定义保留；补C∞及满秩的真实局部光滑坐标正规形，零点集对应l个坐标为零，即余维l嵌入流形资格；l≤n及正则性均标EXTRA，新结论暂sorry。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ]
   },
   "MD-4.3-ConstraintJacobian": {
