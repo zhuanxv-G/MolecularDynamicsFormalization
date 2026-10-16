@@ -156,40 +156,40 @@
 | MD-5.5-MixingCorrelationPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT17（原返回FAIL保留） | placeholder / incomplete；原遗漏k待裁定，不证明；正确极限另条。 |
 | MD-5.5-MixingCorrelation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT17 | local_proof / self-contained |
 | MD-5.5-CenteredCorrelation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT19 | local_proof / self-contained |
-| MD-5.6-DiscreteAveragePrinted | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-DiscreteAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-DiscretePropagator | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-ModifiedField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-ModifiedLiouvillian | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
+| MD-5.6-DiscreteAveragePrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | definition / self-contained |
+| MD-5.6-DiscreteAverage | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | definition / self-contained |
+| MD-5.6-DiscretePropagator | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | definition / self-contained |
+| MD-5.6-ModifiedField | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | definition / self-contained |
+| MD-5.6-ModifiedLiouvillian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | local_proof / self-contained |
 | MD-5.6-ForwardEuler | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-ForwardComponentsPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；原两分量说法需裁定，不证明；范数增长修正版另条。 |
-| MD-5.6-ForwardEnergyGrowth | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.6-EulerInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.6-BackwardEuler | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-BackwardEnergyDecay | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.6-BackwardEulerLimit | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
+| MD-5.6-ForwardComponentsPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT20（原返回FAIL保留） | placeholder / incomplete；原两分量说法需裁定，不证明；范数增长修正版另条。 |
+| MD-5.6-ForwardEnergyGrowth | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | local_proof / self-contained |
+| MD-5.6-EulerInvariant | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT20 | local_proof / self-contained |
+| MD-5.6-BackwardEuler | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT21 | definition / self-contained |
+| MD-5.6-BackwardEnergyDecay | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT21 | local_proof / self-contained |
+| MD-5.6-BackwardEulerLimit | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT21 | local_proof / self-contained |
 | MD-5.6-SymplecticEuler | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-SymplecticEulerShadow | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
-| MD-5.6-SymplecticEulerEllipse | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
-| MD-5.6-SymplecticEulerDensity | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/SymplecticEulerDensity.json。 |
+| MD-5.6-SymplecticEulerShadow | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT21 | existing_bridge / checked+documented priors |
+| MD-5.6-SymplecticEulerEllipse | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT21 | existing_bridge / checked+documented priors |
+| MD-5.6-SymplecticEulerDensity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT21 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/SymplecticEulerDensity.json。 |
 | MD-5.6-VerletShadow2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-Theorem51 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺实际曲面扰动/coarea、微正则加权测度渐近与平均商展开；用户禁止建设大型微正则理论，保留完整sorry。 |
+| MD-5.6-Theorem51 | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT21 | placeholder / incomplete；缺实际曲面扰动/coarea、微正则加权测度渐近与平均商展开；用户禁止建设大型微正则理论，保留完整sorry。 |
 | MD-5.6-PerturbationDisplacement | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-PerturbationCorrection | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-DenominatorBound | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
-| MD-5.6-SmoothDenominatorBound | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
-| MD-5.6-ZeroPerturbation | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
+| MD-5.6-PerturbationCorrection | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT21 | definition / self-contained |
+| MD-5.6-DenominatorBound | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT22 | existing_bridge / checked+documented priors |
+| MD-5.6-SmoothDenominatorBound | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT22 | existing_bridge / checked+documented priors |
+| MD-5.6-ZeroPerturbation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT22 | existing_bridge / checked+documented priors |
 | MD-5.6-GradientTransverse | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.6-DynamicalCorrection | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；依赖未建立的完整曲面扰动/coarea平均误差定理；不建设大型理论。 |
-| MD-5.6-ForwardNormDivergence | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.6-WeakStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-WeakAttractor | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-EulerLogField | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-EulerLogFlow | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.6-EulerLogCorrespondence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.6-ForwardWeakStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺弱stationarity到连续流不变的输运/测试函数桥接及概率弱邻域的非吸引论证；不建设大型PDE理论。 |
-| MD-5.6-BackwardWeakStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺弱stationarity到连续流不变的真实输运桥接和概率弱拓扑吸引论证；不建设大型PDE理论。 |
-| MD-5.6-SymplecticWeakStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺真实弱Liouville测试函数变换、归一能量密度构造及全部稳态的弱邻域非吸引论证；保留完整三项，不建设大型算子/输运理论。 |
+| MD-5.6-DynamicalCorrection | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT22 | placeholder / incomplete；依赖未建立的完整曲面扰动/coarea平均误差定理；不建设大型理论。 |
+| MD-5.6-ForwardNormDivergence | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT22（原返回FAIL保留） | local_proof / self-contained |
+| MD-5.6-WeakStationary | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT22 | definition / self-contained |
+| MD-5.6-WeakAttractor | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT22 | definition / self-contained |
+| MD-5.6-EulerLogField | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT22 | definition / self-contained |
+| MD-5.6-EulerLogFlow | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT23 | definition / self-contained |
+| MD-5.6-EulerLogCorrespondence | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT23 | local_proof / self-contained |
+| MD-5.6-ForwardWeakStationary | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT23 | placeholder / incomplete；缺弱stationarity到连续流不变的输运/测试函数桥接及概率弱邻域的非吸引论证；不建设大型PDE理论。 |
+| MD-5.6-BackwardWeakStationary | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT23 | placeholder / incomplete；缺弱stationarity到连续流不变的真实输运桥接和概率弱拓扑吸引论证；不建设大型PDE理论。 |
+| MD-5.6-SymplecticWeakStationary | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT23 | placeholder / incomplete；缺真实弱Liouville测试函数变换、归一能量密度构造及全部稳态的弱邻域非吸引论证；保留完整三项，不建设大型算子/输运理论。 |
 
 ## 旧86条完整映射
 
@@ -379,3 +379,11 @@ EAUDIT17 §5.5：8条落盘，单文件与10项公理通过；未写新证明；
 EAUDIT18 §5.3.2：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT19 §5.5：1条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT20 §5.6：8条落盘，单文件与12项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT21 §5.6：8条落盘，单文件与15项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT22 §5.6：8条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT23 §5.6：5条落盘，单文件与5项公理通过；未写新证明；完整check留到章末；网站待复审。

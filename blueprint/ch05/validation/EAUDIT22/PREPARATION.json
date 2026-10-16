@@ -1,0 +1,45 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT22",
+  "section": "5.6",
+  "source_ids": [
+    "MD-5.6-DenominatorBound",
+    "MD-5.6-DynamicalCorrection",
+    "MD-5.6-EulerLogField",
+    "MD-5.6-ForwardNormDivergence",
+    "MD-5.6-SmoothDenominatorBound",
+    "MD-5.6-WeakAttractor",
+    "MD-5.6-WeakStationary",
+    "MD-5.6-ZeroPerturbation"
+  ],
+  "reaudit_ids": [
+    "MD-5.6-DenominatorBound",
+    "MD-5.6-SmoothDenominatorBound",
+    "MD-5.6-ZeroPerturbation",
+    "MD-5.6-DynamicalCorrection",
+    "MD-5.6-WeakStationary",
+    "MD-5.6-WeakAttractor",
+    "MD-5.6-EulerLogField"
+  ],
+  "human_ids": [
+    "MD-5.6-ForwardNormDivergence"
+  ],
+  "old_lean_sha256": "58e2a7e0281aba00df6c8de24fedd428afc464fc81cf7ce1fd0acd60175adaf5",
+  "lean_sha256": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
+  "source_sha256": "58db1ce94fb1358d3263ccbe4ee71356070e296e5a215a3d1e7c58a28b8053ff",
+  "pages": [
+    227,
+    228,
+    229,
+    230
+  ],
+  "prior_proof_blocks": {
+    "MD-5.6-DenominatorBound": "theorem denominatorBound {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) c\n    (hK : IsCompact (MolecularDynamics.Chapter05Review.energySurface H c))\n    (hc : ContinuousOn (fun z => |inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z)|) (MolecularDynamics.Chapter05Review.energySurface H c))\n    (hn : ∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z) ≠ 0) :\n    ∃ a > 0,∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,a ≤ |inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z)| := by\n  apply MolecularDynamics.Chapter05Review.denominatorBound_proved <;> assumption",
+    "MD-5.6-SmoothDenominatorBound": "theorem smoothDenominatorBound {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) c\n    (hK : IsCompact (MolecularDynamics.Chapter05Review.energySurface H c)) (hH : ContDiff ℝ 2 H) (hw : Continuous w)\n    (hn : ∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z) ≠ 0) :\n    ∃ a > 0,∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,a ≤ |inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z)| := by\n  apply MolecularDynamics.Chapter05Review.smoothDenominatorBound_proved <;> assumption",
+    "MD-5.6-ZeroPerturbation": "theorem zeroPerturbation {n : ℕ} (H g : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) c ε :\n    MolecularDynamics.Chapter05Review.perturbationCorrection H (fun _ => 0) g w c ε=0 := by\n  apply MolecularDynamics.Chapter05Review.zeroPerturbation_proved <;> assumption",
+    "MD-5.6-WeakStationary": "def weakStationaryModel {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (μ : Measure (MolecularDynamics.Chapter05Review.E n)) : Prop :=\n  MolecularDynamics.Chapter05Review.weakStationary f μ",
+    "MD-5.6-WeakAttractor": "def weakAttractor {n : ℕ} (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (μ : Measure (MolecularDynamics.Chapter05Review.E n)) : Prop :=\n  ∃ m : ℕ,∃ ψ : Fin m → MolecularDynamics.Chapter05Review.E n → ℝ,∃ ε > 0,\n    (∀ i,Continuous (ψ i) ∧ Bornology.IsBounded (range (ψ i))) ∧\n    ∀ ν : Measure (MolecularDynamics.Chapter05Review.E n),IsProbabilityMeasure ν →\n      (∀ i,|(∫ z,ψ i z ∂ν)-(∫ z,ψ i z ∂μ)| < ε) →\n      ∀ φ : MolecularDynamics.Chapter05Review.E n → ℝ,Continuous φ → Bornology.IsBounded (range φ) →\n        Tendsto (fun t => ∫ z,φ (Φ t z) ∂ν) atTop (𝓝 (∫ z,φ z ∂μ))",
+    "MD-5.6-EulerLogField": "def eulerLogField (backward : Bool) (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=\n  let a := (if backward then -1 else 1)*Real.log (1+h^2)/(2*h)\n  let b := Real.arctan h/h\n  WithLp.toLp 2 ![a*z 0+b*z 1,a*z 1-b*z 0]",
+    "MD-5.6-DynamicalCorrection": "theorem dynamicalCorrection :\n  ∀ n d (H η : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) c t,\n    0 < n → ContDiff ℝ ⊤ H → ContDiff ℝ ⊤ η → ContDiff ℝ ⊤ w →\n    ContDiff ℝ ⊤ a → ContDiff ℝ ⊤ b → ContDiff ℝ ⊤ (Φ t) → MolecularDynamics.Chapter05Review.regularEnergy H c →\n    (∃ δ > 0, ∃ K : Set (MolecularDynamics.Chapter05Review.E n), IsCompact K ∧ MolecularDynamics.Chapter05Review.energySurface H c ⊆ K ∧\n      (∀ z ∈ K,inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z) ≠ 0) ∧\n      ∀ ε ∈ Ioo (-δ) δ,MolecularDynamics.Chapter05Review.regularEnergy (fun z => H z+ε*η z) c ∧\n        MolecularDynamics.Chapter05Review.energySurface (fun z => H z+ε*η z) c ⊆ K) →\n    let g := fun z => inner ℝ (a (Φ t z)) (b z)\n    ∃ C > 0, ∃ δ > 0, ∀ ε ∈ Ioo (-δ) δ,\n      |MolecularDynamics.Chapter05Review.microAverage H c g-MolecularDynamics.Chapter05Review.microAverage (fun z => H z+ε*η z) c g-\n        MolecularDynamics.Chapter05Review.perturbationCorrection H η g w c ε| ≤ C*ε^2 := by\n  sorry"
+  }
+}

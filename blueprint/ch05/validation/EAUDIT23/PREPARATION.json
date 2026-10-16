@@ -1,0 +1,33 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT23",
+  "section": "5.6",
+  "source_ids": [
+    "MD-5.6-BackwardWeakStationary",
+    "MD-5.6-EulerLogCorrespondence",
+    "MD-5.6-EulerLogFlow",
+    "MD-5.6-ForwardWeakStationary",
+    "MD-5.6-SymplecticWeakStationary"
+  ],
+  "reaudit_ids": [
+    "MD-5.6-EulerLogFlow",
+    "MD-5.6-EulerLogCorrespondence",
+    "MD-5.6-ForwardWeakStationary",
+    "MD-5.6-BackwardWeakStationary",
+    "MD-5.6-SymplecticWeakStationary"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "pages": [
+    227,
+    228,
+    229,
+    230
+  ],
+  "prior_proof_blocks": {
+    "MD-5.6-SymplecticWeakStationary": "theorem symplecticWeakStationary : ∀ h : ℝ,|h| < 2 →\n  let f := fun z : MolecularDynamics.Chapter05Review.E 2 => WithLp.toLp 2\n    ![(gradient (MolecularDynamics.Chapter05Review.shadowOscillator h) z) 1,-(gradient (MolecularDynamics.Chapter05Review.shadowOscillator h) z) 0]\n  ∀ Φ : ℝ → MolecularDynamics.Chapter05Review.E 2 → MolecularDynamics.Chapter05Review.E 2,MolecularDynamics.Chapter05Review.flow f Φ →\n    (∀ r : ℝ → ℝ,MolecularDynamics.Chapter05Review.probabilityDensity (fun z => r (MolecularDynamics.Chapter05Review.shadowOscillator h z)) →\n      weakStationary f (MolecularDynamics.Chapter05Review.densityMeasure (fun z => r (MolecularDynamics.Chapter05Review.shadowOscillator h z)))) ∧\n    (∃ μ ν : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ ∧ IsProbabilityMeasure ν ∧\n      μ ≠ ν ∧ weakStationary f μ ∧ weakStationary f ν) ∧\n    (∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ → weakStationary f μ → ¬weakAttractor Φ μ) := by\n  sorry",
+    "MD-5.6-EulerLogFlow": "def eulerLogFlow (backward : Bool) (h t : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=\n  let a := (if backward then -1 else 1)*Real.log (1+h^2)/(2*h)\n  let b := Real.arctan h/h\n  Real.exp (a*t) • WithLp.toLp 2 ![z 0*Real.cos (b*t)+z 1*Real.sin (b*t),\n    z 1*Real.cos (b*t)-z 0*Real.sin (b*t)]"
+  }
+}

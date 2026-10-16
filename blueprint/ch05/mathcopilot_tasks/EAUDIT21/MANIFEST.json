@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT21",
+  "input_sha256": {
+    "BATCH_EAUDIT21.md": "9989d190d0b63e57303ce146d11bcff1c8b5436da43a0d3684a23bb13a77ddc3",
+    "Blueprint/Ch05.lean": "58e2a7e0281aba00df6c8de24fedd428afc464fc81cf7ce1fd0acd60175adaf5",
+    "blueprint/ch05/ch05_source.json": "29a5e1cc5bf249700a0689f50574895d395059cd7dd463af9b25c08af8e2726e"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT21a",
+      "source_id": "MD-5.6-BackwardEuler",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/a",
+      "total_bytes": 91481,
+      "manifest_sha256": "54474e84d7f42e1c80e916d8ffee50886b62bf493f154b11b34bbf5c605df922"
+    },
+    {
+      "subtask": "EAUDIT21b",
+      "source_id": "MD-5.6-BackwardEnergyDecay",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/b",
+      "total_bytes": 92993,
+      "manifest_sha256": "6240290a69fc5094ee9090ab2147276c3056c6f4298ad04e609b6fdbf86520ba"
+    },
+    {
+      "subtask": "EAUDIT21c",
+      "source_id": "MD-5.6-BackwardEulerLimit",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/c",
+      "total_bytes": 94504,
+      "manifest_sha256": "f4fb20095dd0742766f656c26809388f068a7b8dd874db00adb15c80d8ee68fc"
+    },
+    {
+      "subtask": "EAUDIT21d",
+      "source_id": "MD-5.6-SymplecticEulerShadow",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/d",
+      "total_bytes": 98252,
+      "manifest_sha256": "03355f398f7b2ae6885c836f251e9460dc739ae2d3fd4a88fb69b04f3fee6d59"
+    },
+    {
+      "subtask": "EAUDIT21e",
+      "source_id": "MD-5.6-SymplecticEulerEllipse",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/e",
+      "total_bytes": 95606,
+      "manifest_sha256": "be089af736a607ca26ba54dd48e2e2885873536365d124e3dfecec8753e5dc6f"
+    },
+    {
+      "subtask": "EAUDIT21f",
+      "source_id": "MD-5.6-SymplecticEulerDensity",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/f",
+      "total_bytes": 95950,
+      "manifest_sha256": "b04e4dedaa2ab8c5897e9163290772bf34d9f67c9045168e616556de345a5386"
+    },
+    {
+      "subtask": "EAUDIT21g",
+      "source_id": "MD-5.6-Theorem51",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/g",
+      "total_bytes": 165824,
+      "manifest_sha256": "a180b1c4334554ce28e85339dffafabfd4b0171eb5e16d10967aee67cd3666e3"
+    },
+    {
+      "subtask": "EAUDIT21h",
+      "source_id": "MD-5.6-PerturbationCorrection",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/h",
+      "total_bytes": 110605,
+      "manifest_sha256": "cb876f502f930db486c731c9582f01187d8115a33a5bbdb773133f8d59d8df86"
+    }
+  ]
+}

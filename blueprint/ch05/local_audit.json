@@ -5221,9 +5221,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.discreteAveragePrinted",
@@ -5248,15 +5248,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT20/axioms.log"
     },
     "MD-5.6-DiscreteAverage": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.discreteAverage",
@@ -5281,22 +5281,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT20/axioms.log"
     },
     "MD-5.6-DiscretePropagator": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.discretePropagator",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "a12b2494fef7adf796484da43dac7b0bd4a8c523485a7e34962ff6b6bf02c129",
-      "block_sha256": "a12b2494fef7adf796484da43dac7b0bd4a8c523485a7e34962ff6b6bf02c129",
+      "signature_sha256": "c0a1c5e9fcce7e6f88f7689f746dbee177f3d4b3ab52a74b08379dab00e6501d",
+      "block_sha256": "c0a1c5e9fcce7e6f88f7689f746dbee177f3d4b3ab52a74b08379dab00e6501d",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -5314,15 +5314,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT20/axioms.log"
     },
     "MD-5.6-ModifiedField": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.modifiedField",
@@ -5347,23 +5347,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT20/axioms.log"
     },
     "MD-5.6-ModifiedLiouvillian": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.modifiedLiouvillian",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "c351294eccb67b789401a193740a3be16ff2274cf0aeefd240e6d91861f7aa55",
-      "block_sha256": "2741b135c8d1afc86f1e0e9d39d3c644d3b0bc3b99bbe048c490f676f5dd0380",
-      "direct_placeholder": false,
+      "block_sha256": "d4998bc283eee321bd64995de8d9d9c9db348f8c9d6329aa5baed45c0f8d3c33",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -5387,7 +5388,7 @@
         "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-ModifiedLiouvillian.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT20/axioms.log"
     },
     "MD-5.6-ForwardEuler": {
       "checked": true,
@@ -5426,10 +5427,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.forwardComponentsPrinted",
@@ -5454,23 +5455,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT20/axioms.log"
     },
     "MD-5.6-ForwardEnergyGrowth": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.forwardEnergyGrowth",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "85639857a59ec8ebe2053c8aff1bb721c48d1de5c66575927793e163f540675a",
-      "block_sha256": "cfa691d7883035e3308f9090152691c910dc75e0398779d77f6958d4b9d0af02",
-      "direct_placeholder": false,
+      "block_sha256": "d07cefc798b37425c49d693a468976beae457c2988e2bb5a23108640f9c41090",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -5492,23 +5494,24 @@
         "blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT20/axioms.log"
     },
     "MD-5.6-EulerInvariant": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.eulerInvariant",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "15ca0c0e3adad3b577d75921a3824232e58be4926d6d96ccc722aaa542079a9f",
-      "block_sha256": "1f6f239a319d4ca6885e1f0ca2a6462530e688c47b6a718d743fbdb2e35a9c80",
-      "direct_placeholder": false,
+      "block_sha256": "b19bd8e9015e7a992cd1786158e4556d6c82afbea7815854ca38b89cb058add6",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -5534,15 +5537,15 @@
         "blueprint/ch05/validation/short_search/route-9e433ea80e78ceed9cf1.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT20/axioms.log"
     },
     "MD-5.6-BackwardEuler": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.backwardEuler",
@@ -5567,23 +5570,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT21/axioms.log"
     },
     "MD-5.6-BackwardEnergyDecay": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.backwardEnergyDecay",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "e349ff625c028a03046d3253ddf50b1cd98475300d71485478d4070c02754d15",
-      "block_sha256": "c74c319777b6766663cf41a030251a15f306f276f8b7ac8b4ce56909edafd9d7",
-      "direct_placeholder": false,
+      "block_sha256": "66e241abb3e52adb02f5a4d180ed36d22682900d636b108766fbd3391f574a4c",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -5605,15 +5609,15 @@
         "blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc-BackwardEnergyDecay.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT21/axioms.log"
     },
     "MD-5.6-BackwardEulerLimit": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.backwardEulerLimit",
@@ -5645,7 +5649,7 @@
         "blueprint/ch05/validation/short_search/route-f38e99753e68db768821-BackwardEulerLimit.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT21/axioms.log"
     },
     "MD-5.6-SymplecticEuler": {
       "checked": true,
@@ -5684,17 +5688,18 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.symplecticEulerShadow",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "0a303638187c8067db465bf7c71b1df73133b5fbe610e19da4741367c27839ce",
-      "block_sha256": "2174faf75ec5d878c2c311a38f5c37ba25427302abe78e27e43a213c1176ee52",
-      "direct_placeholder": false,
+      "block_sha256": "ccf602994106b518676bbfd87d853db77ceba224f967f3af2514cb8a5a44b01e",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved"
@@ -5713,23 +5718,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT21/axioms.log"
     },
     "MD-5.6-SymplecticEulerEllipse": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "checked+documented priors",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.symplecticEulerEllipse",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "f45b2ffc07e7e1f7005e8f0e7f036dca9d74f32c7024d133d03ce6bcaa2adce8",
-      "block_sha256": "bd25f586364b0b7677d4af2be6255ba3509374d484fa5c890bc98669e3576aab",
-      "direct_placeholder": false,
+      "block_sha256": "e104035111ecc9de3437f666790dbdc400e000bb63a3220bd61cae8027e46247",
+      "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
         "MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved"
@@ -5755,16 +5761,16 @@
         "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-SymplecticEulerEllipse.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT21/axioms.log"
     },
     "MD-5.6-SymplecticEulerDensity": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.symplecticEulerDensity",
@@ -5800,7 +5806,7 @@
         "blueprint/ch05/validation/short_search/route-f38e99753e68db768821.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT21/axioms.log"
     },
     "MD-5.6-VerletShadow2": {
       "checked": true,
@@ -5839,17 +5845,17 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.theorem51",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "a43119fd163cbd8b7a3daa5f3f0ecf99cbe7c34beb3e9560c31f6cff5c570734",
-      "block_sha256": "7d8b880fcc92e5353b33ba2c95747f20eed4cf24fe8d65a08a9355cdedd58951",
+      "signature_sha256": "0e9c24b24f07dddcb5b2cf2d02caf04c61ba3df50f6273da600cb4eb213aba67",
+      "block_sha256": "7f09562899a1dac9e8c7f310f1d399a2d6488e7250da42802f4fc05401151f84",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -5867,7 +5873,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT21/axioms.log"
     },
     "MD-5.6-PerturbationDisplacement": {
       "checked": true,
@@ -5906,9 +5912,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.perturbationCorrection",
@@ -5933,15 +5939,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT21/axioms.log"
     },
     "MD-5.6-DenominatorBound": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch05.denominatorBound",
@@ -5968,15 +5974,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT22/axioms.log"
     },
     "MD-5.6-SmoothDenominatorBound": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch05.smoothDenominatorBound",
@@ -6003,15 +6009,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT22/axioms.log"
     },
     "MD-5.6-ZeroPerturbation": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "checked+documented priors",
       "lean_decl": "MD.Ch05.zeroPerturbation",
@@ -6038,7 +6044,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT22/axioms.log"
     },
     "MD-5.6-GradientTransverse": {
       "checked": true,
@@ -6082,17 +6088,17 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.dynamicalCorrection",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "053d27fab5b62d559e697e875ae2d00a4250a1d88bbc498104f1e5fcbdc18f39",
-      "block_sha256": "b6cd59a7c960de608948c866c7967595af99dd826be99401a54d8c550f82cced",
+      "signature_sha256": "d29f3688227077edd2f94c37fe403bd3ebd5553d0324d4cb73afc263a2c07401",
+      "block_sha256": "99777057d59abb59e0b747a52c3fa3208daf69b9b77ec032a916bb8432146fb0",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -6110,15 +6116,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT22/axioms.log"
     },
     "MD-5.6-ForwardNormDivergence": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.forwardNormDivergence",
@@ -6148,22 +6154,22 @@
         "blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-ForwardNormDivergence.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT22/axioms.log"
     },
     "MD-5.6-WeakStationary": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.weakStationaryModel",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "1c050fada6949efc8af477f9d6222c4263885698433695bf174d178ef0cfeb8c",
-      "block_sha256": "1c050fada6949efc8af477f9d6222c4263885698433695bf174d178ef0cfeb8c",
+      "signature_sha256": "0d49adcda65ce2bf00df99efb2110ce699dadeea9d12fef6a9b3d7dbe4b0fc3c",
+      "block_sha256": "0d49adcda65ce2bf00df99efb2110ce699dadeea9d12fef6a9b3d7dbe4b0fc3c",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -6181,15 +6187,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT22/axioms.log"
     },
     "MD-5.6-WeakAttractor": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.weakAttractor",
@@ -6214,15 +6220,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT22/axioms.log"
     },
     "MD-5.6-EulerLogField": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.eulerLogField",
@@ -6247,15 +6253,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT22/axioms.log"
     },
     "MD-5.6-EulerLogFlow": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.eulerLogFlow",
@@ -6280,15 +6286,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT23/axioms.log"
     },
     "MD-5.6-EulerLogCorrespondence": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.eulerLogCorrespondence",
@@ -6322,16 +6328,16 @@
         "blueprint/ch05/validation/short_search/route-f38e99753e68db768821-EulerLogCorrespondence.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT23/axioms.log"
     },
     "MD-5.6-ForwardWeakStationary": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.forwardWeakStationary",
@@ -6356,16 +6362,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT23/axioms.log"
     },
     "MD-5.6-BackwardWeakStationary": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.backwardWeakStationary",
@@ -6390,23 +6396,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT23/axioms.log"
     },
     "MD-5.6-SymplecticWeakStationary": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.symplecticWeakStationary",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "630dc4a39591620ff94069ede7c76f5983629b20b7afc471c74361b6e7ed0dd3",
-      "block_sha256": "0aae684eef537aac95118511498189bfa308eb6993210c46fac6f86bfa6102b9",
+      "signature_sha256": "ecde663c8c34422a3d79fac62705d7f146c0000e473555456f771f2012b60af3",
+      "block_sha256": "dca963f422773d5802ff74e549961550508284ba451250bf5a0c9d3853f06e85",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -6424,7 +6430,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT23/axioms.log"
     }
   }
 }

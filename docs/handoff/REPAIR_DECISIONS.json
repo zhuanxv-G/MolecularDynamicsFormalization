@@ -2153,5 +2153,150 @@
     "category": "B",
     "handling": "扩至向量观测量、任意一向量Bochner零均值及相关绝对值趋零，保留旧标量证明辅助；不添加单调衰减。",
     "section": "5.5"
+  },
+  "MD-5.6-DiscreteAverage": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅标准N项平均的独立衍生变体；原印N+1项精确有限统计量由MD-5.6-DiscreteAveragePrinted承担，不宣称两有限值相同。",
+    "section": "5.6"
+  },
+  "MD-5.6-DiscretePropagator": {
+    "category": "A",
+    "handling": "离散分布传播主接口显式限定可测G，避免不可测映射的Measure.map零总化被当概率推前。",
+    "section": "5.6"
+  },
+  "MD-5.6-ModifiedLiouvillian": {
+    "category": "B",
+    "handling": "保留算子线性证明，并新增原文假设的修正模型PDE定义（r≥1），与展开右侧的等价式；仅定义模型及其算子展开，不声称任意空间可微ρ自动满足PDE。",
+    "section": "5.6"
+  },
+  "MD-5.6-ForwardEnergyGrowth": {
+    "category": "B",
+    "handling": "保留能量精确增长率并补原谱结论：两个复特征值恰为1±ih及模√(1+h²)>1，非零步长显式；不替换原两分量疑误。",
+    "section": "5.6"
+  },
+  "MD-5.6-EulerInvariant": {
+    "category": "B",
+    "handling": "除离散唯一性再补非Dirac初始概率的离散推前无任何弱概率极限；连续modified模型/稳态/非吸引分别明确绑定EulerLogCorrespondence与ForwardWeakStationary。",
+    "section": "5.6"
+  },
+  "MD-5.6-DiscreteAveragePrinted": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.6"
+  },
+  "MD-5.6-ModifiedField": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.6"
+  },
+  "MD-5.6-ForwardComponentsPrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.6"
+  },
+  "MD-5.6-BackwardEuler": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅隐式Euler的显式解映射定义；完整复谱与模由MD-5.6-BackwardEnergyDecay补列，所有迭代趋零由MD-5.6-BackwardEulerLimit承担。",
+    "section": "5.6"
+  },
+  "MD-5.6-BackwardEnergyDecay": {
+    "category": "B",
+    "handling": "保留能量衰减已有证明，补两个完整复特征值及模严格小于1；迭代趋零由BackwardEulerLimit，实际模型由EulerLogCorrespondence/BackwardWeakStationary承担。",
+    "section": "5.6"
+  },
+  "MD-5.6-BackwardEulerLimit": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅所有离散迭代趋零及任意初始概率弱趋Dirac；实际modified流一步对应由MD-5.6-EulerLogCorrespondence，概率弱稳态唯一及连续吸引由MD-5.6-BackwardWeakStationary承担。",
+    "section": "5.6"
+  },
+  "MD-5.6-SymplecticEulerShadow": {
+    "category": "B",
+    "handling": "保留一步不变量证明，补稳定区内主对数Hamiltonian=c(h)·二次不变量、c>0、实际矩阵指数Hamiltonian流及其时间h恰为离散步，并给两能量有界域O(h²)比例差；全部k/椭圆由SymplecticEulerEllipse、弱稳态由SymplecticWeakStationary承担。新增模型是显式技术选择，不冒称唯一修正能量。",
+    "section": "5.6"
+  },
+  "MD-5.6-SymplecticEulerEllipse": {
+    "category": "B",
+    "handling": "保留正定/全部k保持证明，并补正能级椭圆拓扑及零能级单点退化；二次不变量作为modified Hamiltonian的显式固定选择，实际场/流资格见SymplecticWeakStationary，不声称唯一修正能量。",
+    "section": "5.6"
+  },
+  "MD-5.6-SymplecticEulerDensity": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅离散映射的函数能量密度不变；连续modified能量场、概率弱稳态多样与非吸引由MD-5.6-SymplecticWeakStationary承担，原整段保留。",
+    "section": "5.6"
+  },
+  "MD-5.6-PerturbationCorrection": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Theorem5.1右端两个平均组成的校正项定义；完整正则能量族平均误差估计由MD-5.6-Theorem51承担。",
+    "section": "5.6"
+  },
+  "MD-5.6-Theorem51": {
+    "category": "C",
+    "handling": "恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。",
+    "section": "5.6"
+  },
+  "MD-5.6-DenominatorBound": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅紧能量面横截分母的正下界衍生引理；原光滑与横截资格及完整平均扰动公式由MD-5.6-Theorem51承担。",
+    "section": "5.6"
+  },
+  "MD-5.6-SmoothDenominatorBound": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅C² H/连续w的横截分母下界一般化衍生引理；原光滑资格及完整公式由MD-5.6-Theorem51承担。",
+    "section": "5.6"
+  },
+  "MD-5.6-ZeroPerturbation": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅η≡0校正量为零的后果；一般位移定义由MD-5.6-PerturbationDisplacement、完整平均误差由MD-5.6-Theorem51承担。",
+    "section": "5.6"
+  },
+  "MD-5.6-WeakStationary": {
+    "category": "C",
+    "handling": "仅弱PDE技术谓词，实际使用Blueprint修正后的C∞测试空间；原唯一概率断言由MD-5.6-ForwardWeakStationary承担。",
+    "section": "5.6"
+  },
+  "MD-5.6-WeakAttractor": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅弱概率局部吸引的辅助技术定义；原负吸引性断言由MD-5.6-ForwardWeakStationary承担，不把定义本身当否定结论。",
+    "section": "5.6"
+  },
+  "MD-5.6-EulerLogField": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅单位振子h>0时新增的精确对数场技术模型（h=0总延拓不用作物理解释）；实际一步/ODE对应由MD-5.6-EulerLogCorrespondence，唯一概率稳态由MD-5.6-ForwardWeakStationary承担。",
+    "section": "5.6"
+  },
+  "MD-5.6-DynamicalCorrection": {
+    "category": "C",
+    "handling": "恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。",
+    "section": "5.6"
+  },
+  "MD-5.6-ForwardNormDivergence": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.6"
+  },
+  "MD-5.6-SymplecticWeakStationary": {
+    "category": "B",
+    "handling": "弱稳态接口使用前条实际一步对应的主对数modified Hamiltonian及其梯度场；函数能量密度、多种概率稳态和非吸引结论齐全，不把未按时间缩放的不变量场冒充数值步的时间h模型。",
+    "section": "5.6"
+  },
+  "MD-5.6-EulerLogFlow": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅单位振子h>0新增的精确对数流技术定义；ODE与实际Euler一步的识别由MD-5.6-EulerLogCorrespondence承担，不冒称一般有限截断modified场。",
+    "section": "5.6"
+  },
+  "MD-5.6-EulerLogCorrespondence": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.6"
+  },
+  "MD-5.6-ForwardWeakStationary": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.6"
+  },
+  "MD-5.6-BackwardWeakStationary": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.6"
   }
 }

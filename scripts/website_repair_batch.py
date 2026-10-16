@@ -1,5 +1,6 @@
 """Small, explicit signature/source repairs; no automatic mathematical choices."""
 import copy
+import shutil
 import hashlib
 import json
 import re
@@ -105,6 +106,16 @@ def verify(ch,eaudit):
     base=ROOT/f'blueprint/ch{ch:02}';folder=base/'validation'/eaudit;prep=read(folder/'PREPARATION.json')
     lean=ROOT/f'Blueprint/Ch{ch:02}.lean';assert prep['lean_sha256']==sha(lean)
     target=f'.lake/build/lib/lean/Blueprint/Ch{ch:02}.olean';(ROOT/target).parent.mkdir(parents=True,exist_ok=True)
+    # JSON-only batches can reuse the same complete chapter compilation. Keep
+    # the originating receipt and log hash, and never call this a fresh run.
+    if not (folder/'COMPILE.json').exists() and not (folder/'COMPILE-RUNNING.json').exists():
+        for previous in sorted((base/'validation').glob('EAUDIT[0-9][0-9]/COMPILE.json'),reverse=True):
+            saved=read(previous);log=previous.parent/'single-file.log'
+            if saved.get('exit_code')==0 and saved.get('input_sha256')==sha(lean) and log.exists() and saved.get('log_sha256')==sha(log):
+                shutil.copyfile(log,folder/'single-file.log')
+                dump(folder/'COMPILE.json',dict(saved,reused_from=previous.relative_to(ROOT).as_posix(),
+                  reuse_rule='identical whole Lean chapter hash; fixed frozen project imports; source JSON only'))
+                break
     record,output,reused=compile_recorded(['lake','env','lean','-o',target,f'Blueprint/Ch{ch:02}.lean'],ROOT,lean,folder/'single-file.log',folder/'COMPILE.json')
     if record['exit_code']:
         print(output.decode('utf-8',errors='replace')); raise RuntimeError('Single-file compile failed; repair locally before acceptance')

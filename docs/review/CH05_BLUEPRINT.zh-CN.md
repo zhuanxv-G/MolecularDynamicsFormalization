@@ -153,40 +153,40 @@
 | MD-5.5-MixingCorrelationPrinted | 205/226 | NEEDS_HUMAN | 待导师 / EAUDIT17（原返回FAIL保留） | incomplete |
 | MD-5.5-MixingCorrelation | 205/226 | PASS | 待复审 / EAUDIT17 | incomplete |
 | MD-5.5-CenteredCorrelation | 205/226 | PASS | 待复审 / EAUDIT19 | incomplete |
-| MD-5.6-DiscreteAveragePrinted | 206/227 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-DiscreteAverage | 206/227 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-DiscretePropagator | 206/227 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-ModifiedField | 206/227 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-ModifiedLiouvillian | 206/227 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
+| MD-5.6-DiscreteAveragePrinted | 206/227 | PASS | 待复审 / EAUDIT20 | self-contained |
+| MD-5.6-DiscreteAverage | 206/227 | PASS | 待复审 / EAUDIT20 | self-contained |
+| MD-5.6-DiscretePropagator | 206/227 | PASS | 待复审 / EAUDIT20 | self-contained |
+| MD-5.6-ModifiedField | 206/227 | PASS | 待复审 / EAUDIT20 | self-contained |
+| MD-5.6-ModifiedLiouvillian | 206/227 | PASS | 待复审 / EAUDIT20 | incomplete |
 | MD-5.6-ForwardEuler | 206–207/227–228 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-ForwardComponentsPrinted | 207/228 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | incomplete |
-| MD-5.6-ForwardEnergyGrowth | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-EulerInvariant | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-BackwardEuler | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-BackwardEnergyDecay | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-BackwardEulerLimit | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
+| MD-5.6-ForwardComponentsPrinted | 207/228 | NEEDS_HUMAN | 待导师 / EAUDIT20（原返回FAIL保留） | incomplete |
+| MD-5.6-ForwardEnergyGrowth | 207/228 | PASS | 待复审 / EAUDIT20 | incomplete |
+| MD-5.6-EulerInvariant | 207/228 | PASS | 待复审 / EAUDIT20 | incomplete |
+| MD-5.6-BackwardEuler | 207/228 | PASS | 待复审 / EAUDIT21 | self-contained |
+| MD-5.6-BackwardEnergyDecay | 207/228 | PASS | 待复审 / EAUDIT21 | incomplete |
+| MD-5.6-BackwardEulerLimit | 207/228 | PASS | 待复审 / EAUDIT21 | self-contained |
 | MD-5.6-SymplecticEuler | 207/228 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-SymplecticEulerShadow | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | checked+documented priors |
-| MD-5.6-SymplecticEulerEllipse | 207/228 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | checked+documented priors |
-| MD-5.6-SymplecticEulerDensity | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | incomplete |
+| MD-5.6-SymplecticEulerShadow | 207/228 | PASS | 待复审 / EAUDIT21 | incomplete |
+| MD-5.6-SymplecticEulerEllipse | 207/228 | PASS | 待复审 / EAUDIT21 | incomplete |
+| MD-5.6-SymplecticEulerDensity | 207/228 | PASS | 待复审 / EAUDIT21 | incomplete |
 | MD-5.6-VerletShadow2 | 208/229 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-Theorem51 | 208–209/229–230 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | incomplete |
+| MD-5.6-Theorem51 | 208–209/229–230 | PASS | 待复审 / EAUDIT21 | incomplete |
 | MD-5.6-PerturbationDisplacement | 209/230 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-PerturbationCorrection | 209/230 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-DenominatorBound | 209/230 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | checked+documented priors |
-| MD-5.6-SmoothDenominatorBound | 209/230 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | checked+documented priors |
-| MD-5.6-ZeroPerturbation | 209/230 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | checked+documented priors |
+| MD-5.6-PerturbationCorrection | 209/230 | PASS | 待复审 / EAUDIT21 | self-contained |
+| MD-5.6-DenominatorBound | 209/230 | PASS | 待复审 / EAUDIT22 | checked+documented priors |
+| MD-5.6-SmoothDenominatorBound | 209/230 | PASS | 待复审 / EAUDIT22 | checked+documented priors |
+| MD-5.6-ZeroPerturbation | 209/230 | PASS | 待复审 / EAUDIT22 | checked+documented priors |
 | MD-5.6-GradientTransverse | 209/230 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-DynamicalCorrection | 209/230 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | incomplete |
-| MD-5.6-ForwardNormDivergence | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-WeakStationary | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-WeakAttractor | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-EulerLogField | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-EulerLogFlow | 207/228 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-EulerLogCorrespondence | 206–207/227–228 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.6-ForwardWeakStationary | 207/228 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | incomplete |
-| MD-5.6-BackwardWeakStationary | 207/228 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | incomplete |
-| MD-5.6-SymplecticWeakStationary | 207/228 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | incomplete |
+| MD-5.6-DynamicalCorrection | 209/230 | PASS | 待复审 / EAUDIT22 | incomplete |
+| MD-5.6-ForwardNormDivergence | 207/228 | PASS | 待导师 / EAUDIT22（原返回FAIL保留） | self-contained |
+| MD-5.6-WeakStationary | 207/228 | PASS | 待复审 / EAUDIT22 | self-contained |
+| MD-5.6-WeakAttractor | 207/228 | PASS | 待复审 / EAUDIT22 | self-contained |
+| MD-5.6-EulerLogField | 207/228 | PASS | 待复审 / EAUDIT22 | self-contained |
+| MD-5.6-EulerLogFlow | 207/228 | PASS | 待复审 / EAUDIT23 | self-contained |
+| MD-5.6-EulerLogCorrespondence | 206–207/227–228 | PASS | 待复审 / EAUDIT23 | self-contained |
+| MD-5.6-ForwardWeakStationary | 207/228 | PASS | 待复审 / EAUDIT23 | incomplete |
+| MD-5.6-BackwardWeakStationary | 207/228 | PASS | 待复审 / EAUDIT23 | incomplete |
+| MD-5.6-SymplecticWeakStationary | 207/228 | PASS | 待复审 / EAUDIT23 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -7826,8 +7826,8 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 ### 2. 原文陈述
 
-> If $z_n$ represents the approximation to $z(t_n)$, then we might attempt to estimate $\bar g$ by
-> \[\bar g\approx\lim_{n\to\infty}n^{-1}\sum_{k=0}^ng(z_k).\]
+> If $z_n$ represents the approximation to $z(t_n)$, then we might attempt to estimate $\bar g_\Gamma$ by
+> \[\bar g_\Gamma\approx\lim_{n\to\infty}n^{-1}\sum_{k=0}^ng(z_k).\]
 
 ### 3. 原文证明
 
@@ -7852,7 +7852,7 @@ def discreteAveragePrinted {X : Type*} (G : X → X) (g : X → ℝ) (z : X) (N 
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT20**。原文JSON：CORRECTED；未冻结。
 
 本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。依赖MolecularDynamics/Chapter05/ReviewDefinitions.lean（Ch05_deps.txt:5393–5394）的项目定义及附件声明均为(N:ℝ)⁻¹∑_{k∈range(N+1)}g(G^[k]z)。标准range与iterate给出k=0,…,N及从z出发的自治数值轨道，任意X、G、实值g、z与N均为定义参数；不需要额外可测性。与PDF227／印刷206原式被取极限的有限统计量完全对应，保留n+1项除n。按definition及context_notation的范围，本定义不宣称无限极限存在、算法遍历或平均等于bar g_Gamma；原文“might attempt”“approximately”不被改成无条件定理。N=0的总化逆元只扩展定义，不赋予统计含义。无[EXTRA]或字面[ERRATUM?]标签；此处不将端点计数差异擅自判为原书错误。它是def，未涉及sorry证明。
 
@@ -7860,19 +7860,19 @@ def discreteAveragePrinted {X : Type*} (G : X → X) (g : X → ℝ) (z : X) (N 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:1720](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1720>)（`MD.Ch05.discreteAveragePrinted`）。
+位置：[Blueprint/Ch05.lean:1721](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1721>)（`MD.Ch05.discreteAveragePrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`edc02c582356d411074ef73c979c162b2965be59a2f846ba53df88835b8093c6`；原文SHA256：`1347a44a45c46d47e345343e34abb7d75388037e8a8b39cd93f2dd06df6fb9ac`。
+签名SHA256：`edc02c582356d411074ef73c979c162b2965be59a2f846ba53df88835b8093c6`；原文SHA256：`10522d85b5080627b2544ac8258449d99c3139fced3ba7f854076143dea33bba`。
 
 ## 1. MD-5.6-DiscreteAverage · definition · 印刷p.206 / PDFp.227
 
 ### 2. 原文陈述
 
-> $\bar g\approx\lim_{n\to\infty}n^{-1}\sum_{k=0}^ng(z_k)$.
+> $\bar g_\Gamma\approx\lim_{n\to\infty}n^{-1}\sum_{k=0}^ng(z_k)$.
 
 ### 3. 原文证明
 
@@ -7893,12 +7893,13 @@ def discreteAverage {X : Type*} (G : X → X) (g : X → ℝ) (z : X) (N : ℕ) 
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.discreteAverage；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]标准n项平均修正版，另列不覆盖原n+1项；n=0总化除法不赋予统计平均意义。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅标准N项平均的独立衍生变体；原印N+1项精确有限统计量由MD-5.6-DiscreteAveragePrinted承担，不宣称两有限值相同。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT20**。原文JSON：CORRECTED；未冻结。
 
 本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。依赖ReviewDefinitions.lean:5395–5396展开为(N:ℝ)⁻¹∑_{k∈range N}g(G^[k]z)，只含k=0,…,N−1；任意参数的有限统计量与PDF227／印刷206原式相差g(G^[N]z)/N（N>0）。[EXTRA]明确说明标准n项变体另列，是合理衍生定义，但不是使原文n+1项变为n项的额外假设，也没有有限统计量相等的结论。故按本条声明的原句及展示式范围仍FAIL；这不是Mathlib定义缺失，也不是sorry问题。未见字面[ERRATUM?]标签；不静默修改原式。
 
@@ -7910,19 +7911,19 @@ def discreteAverage {X : Type*} (G : X → X) (g : X → ℝ) (z : X) (N : ℕ) 
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:1725](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1725>)（`MD.Ch05.discreteAverage`）。
+位置：[Blueprint/Ch05.lean:1726](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1726>)（`MD.Ch05.discreteAverage`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`fdcc5948ae3fed936f5021f20827975fff94ad20075d138dbcde0e3ea54d40a2`；原文SHA256：`4e47300a41a1b815f84e0c88adb7d48f9530fdd70f1a428aba6f306deb37c775`。
+签名SHA256：`fdcc5948ae3fed936f5021f20827975fff94ad20075d138dbcde0e3ea54d40a2`；原文SHA256：`83ae0fc51b6df6b083d817361d73102f1853f1950e271cc27f9b0e7543566310`。
 
 ## 1. MD-5.6-DiscretePropagator · definition · 印刷p.206 / PDFp.227
 
 ### 2. 原文陈述
 
-> In a similar way, a numerical method $z_{n+1}=F_h(z_n)$ induces an effective distributional propagator.
+> In a similar way, a numerical method $z_{n+1}=\mathcal F_h(z_n)$ induces an effective distributional propagator.
 
 ### 3. 原文证明
 
@@ -7933,7 +7934,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ### 4. Lean陈述
 
 ```lean
-def discretePropagator {X : Type*} [MeasurableSpace X] (G : X → X) (μ : Measure X) := Measure.map G μ
+def discretePropagator {X : Type*} [MeasurableSpace X] (G : X → X) (_hG : Measurable G) (μ : Measure X) := Measure.map G μ
 ```
 
 ### 5. 对照表
@@ -7941,12 +7942,13 @@ def discretePropagator {X : Type*} [MeasurableSpace X] (G : X → X) (μ : Measu
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.discretePropagator；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 离散分布传播主接口显式限定可测G，避免不可测映射的Measure.map零总化被当概率推前。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT20**。原文JSON：CORRECTED；未冻结。
 
 本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。项目定义ReviewDefinitions.lean:5397及附件声明确实展开为Measure.map G μ，无其他包装条件。按标准Measure.map语义，可测或μ几乎处处可测G的分布推前解释正确，但声明任意G:X→X，只具有MeasurableSpace X，缺少AEMeasurable G μ资格；在不几乎处处可测的分支map总化为零测度，不能代表概率分布传播。概率资格并非对一般测度推前定义的必要条件；真正缺失的是映射可测资格。原句PDF227／印刷206说数值方法诱导分布传播，这需要该资格（常用连续数值更新自然满足）。没有[EXTRA]可测性假设；无字面[ERRATUM?]标签。FAIL依据标准数学意义下的资格缺失，不依据标准库源码是否提供；此处是def而非sorry证明。
 
@@ -7958,20 +7960,20 @@ def discretePropagator {X : Type*} [MeasurableSpace X] (G : X → X) (μ : Measu
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:1729](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1729>)（`MD.Ch05.discretePropagator`）。
+位置：[Blueprint/Ch05.lean:1731](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1731>)（`MD.Ch05.discretePropagator`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`a12b2494fef7adf796484da43dac7b0bd4a8c523485a7e34962ff6b6bf02c129`；原文SHA256：`01f89c3ee8691693f30e78c1f1984a68239782cee7616c593680c1aed8b163c9`。
+签名SHA256：`c0a1c5e9fcce7e6f88f7689f746dbee177f3d4b3ab52a74b08379dab00e6501d`；原文SHA256：`69a9fcc4f88e367687ddbf5511100c5c0492742c0b32e84e277b229b373f7aa1`。
 
 ## 1. MD-5.6-ModifiedField · definition · 印刷p.206 / PDFp.227
 
 ### 2. 原文陈述
 
 > One way to understand this propagator is to interpret the numerical method as being approximately equivalent to the solution of a perturbed differential equation
-> \[\frac{dz}{dt}=f(z)+h^rf^{(r)}(z)=\widetilde f_h(z).\]
+> \[\frac{dz}{dt}=f(z)+h^rf_{(r)}(z)\equiv\widetilde f_h(z).\]
 > The perturbation term may be viewed as the finite truncation of the perturbative expansion obtained from the backward error analysis using the methods of the previous chapter. ($r$ is the order of the numerical method.)
 
 ### 3. 原文证明
@@ -7996,7 +7998,7 @@ def modifiedField {n : ℕ} (f fr : MolecularDynamics.Chapter05Review.E n → Mo
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT20**。原文JSON：CORRECTED；未冻结。
 
 本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。项目E在ReviewDefinitions.lean:5315定义为EuclideanSpace ℝ (Fin n)，按标准数学意义即实n维欧氏空间；modifiedField在:5398及附件声明逐点为f(z)+h^r fr(z)。参数f/fr为该空间向量场，h:ℝ、r:ℕ；标量乘法确实表示原文h^r f_(r)，没有把fr解释为r阶导数或任意形式级数。PDF227／印刷206中的有限截断向量场得到忠实表达。定义可允许h=0或r=0，未声称所有此类参数来自某个给定阶数算法；“r为方法阶数”及近似模型资格属于原文上下文。context_notation已明确近似与余项控制不是定义的推论，不假设无限展开收敛。没有新增限制、[EXTRA]或字面[ERRATUM?]标签；它是def，未涉及sorry证明。
 
@@ -8004,13 +8006,13 @@ def modifiedField {n : ℕ} (f fr : MolecularDynamics.Chapter05Review.E n → Mo
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:1732](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1732>)（`MD.Ch05.modifiedField`）。
+位置：[Blueprint/Ch05.lean:1734](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1734>)（`MD.Ch05.modifiedField`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`67c4c75cefc5818edc68e74db29a0fc04367c12bf7107db29af8eac99553f5a4`；原文SHA256：`da837d8dec2e85553c9bff423737084596345332a315f0c71403f8aaab6db9bb`。
+签名SHA256：`67c4c75cefc5818edc68e74db29a0fc04367c12bf7107db29af8eac99553f5a4`；原文SHA256：`a223efac92b4bcd586d8921557afa6725a456f012a70268b46cd2c848d152922`。
 
 ## 1. MD-5.6-ModifiedLiouvillian · unnumbered_claim · 印刷p.206 / PDFp.227
 
@@ -8018,7 +8020,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 > Let us assume that the perturbed equation is a realistic model for the numerical solutions, then define the evolving density by
 > \[\frac{\partial\rho}{\partial t}=\mathcal L_{\widetilde f}^{*}\rho
-> \stackrel{\rm def}{=}\mathcal L_f^*\rho+h^r\mathcal L_{f^{(r)}}^*\rho.\]
+> \stackrel{\rm def}{\equiv}\mathcal L_f^{\dagger}\rho+h^r\mathcal L_{f_{(r)}}^{\dagger}\rho.\]
 
 ### 3. 原文证明
 
@@ -8041,12 +8043,13 @@ theorem modifiedLiouvillian :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.modifiedLiouvillian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]实际Fréchet导数和trace，可微f/fr/u资格；只证微分表达式对场线性，不声称余项密度误差已受控。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留算子线性证明，并新增原文假设的修正模型PDE定义（r≥1），与展开右侧的等价式；仅定义模型及其算子展开，不声称任意空间可微ρ自动满足PDE。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT20**。原文JSON：CORRECTED；未冻结。
 
 本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。项目定义ReviewDefinitions.lean:5315、5333–5336、5398全部已展开：E为ℝⁿ，divergence V(z)=trace(DV(z))，liouvillian f u(z)=−div(u f)(z)，modifiedField=f+h^r fr。标准Fréchet导数和trace给出真实伴随Liouville微分表达式。量词是对任意n,f,fr,u,h,r，先假设f/fr/u全局可微，再对每个z断言算子线性，次序正确；[EXTRA]可微性是合理且充分的经典微分资格，全局条件强于逐点所需，但不是假设结论。算子线性部分忠实且正确；然而PDF227／印刷206所引完整展示式还定义时变密度partial_t rho=L_tilde f^dagger rho，本签名没有rho(t,z)、时间导数或满足演化模型的条件/定义，仅取静态u，遗漏该子句。因statement_scope覆盖整句及展示式，仍FAIL；[EXTRA]披露只证线性不能使完整演化定义自动包含于签名。无字面[ERRATUM?]标签。当前声明证明体未见直接sorry；此观察不代表本轮编译或证明依赖闭包检查，且不改变签名审计。
 
@@ -8056,17 +8059,17 @@ theorem modifiedLiouvillian :
 
 ### 7. 状态与证明位置
 
-**self-contained**；本地证明状态：local_proof。
+**incomplete**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:1736](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1736>)（`MD.Ch05.modifiedLiouvillian`）。
+位置：[Blueprint/Ch05.lean:1739](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1739>)（`MD.Ch05.modifiedLiouvillian`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/ModifiedLiouvillian.json；blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc.lean；blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc.log；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-ModifiedLiouvillian.lean；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-ModifiedLiouvillian.log。
 
-签名SHA256：`c351294eccb67b789401a193740a3be16ff2274cf0aeefd240e6d91861f7aa55`；原文SHA256：`f2c3f859dbcfcda50ec526f459088592e803fa33a5c156821da75b54ac4e4b45`。
+签名SHA256：`c351294eccb67b789401a193740a3be16ff2274cf0aeefd240e6d91861f7aa55`；原文SHA256：`05674ca35d083e3ec270cbe2349f5f8bd4904b69be526dc9071a034b9a365dcd`。
 
 ## 1. MD-5.6-ForwardEuler · definition · 印刷p.206–207 / PDFp.227–228
 
@@ -8106,7 +8109,7 @@ def forwardEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : Molecul
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:1762](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1762>)（`MD.Ch05.forwardEuler`）。
+位置：[Blueprint/Ch05.lean:1783](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1783>)（`MD.Ch05.forwardEuler`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8145,7 +8148,7 @@ theorem forwardComponentsPrinted : ∀ h : ℝ,h ≠ 0 → ∀ z : MolecularDyna
 
 本地预审：**NEEDS_HUMAN**。[ERRATUM?]外扩旋转只能推出范数增长，两个单独分量会振荡；例如h=1的八步角周期中可反复出现分量0，不能静默以范数替代原两分量结论。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT20（原返回FAIL保留）**。原文JSON：DRAFT；未冻结。
 
 本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。ReviewDefinitions.lean:5315、5401展开后，对象为实际欧氏平面的A_h=[[1,h],[−h,1]]迭代。量词为所有非零实h、所有非零初值z；两个Tendsto atTop atTop按标准意义分别要求每个坐标绝对值最终超过任意实阈值。[EXTRA]h≠0、z≠0对增长是合理必要资格，绝对值解释也明确，但两坐标各自趋于+∞仍有反例，故原书疑误能够确定，不需NEEDS_HUMAN。PDF228／印刷207的谱外扩子句亦未单独表达；特征值模大于1可导致范数发散，不保证每个坐标绝对值发散。不存在字面[ERRATUM?]标签，但应明确保留原句并报告此疑误。附件中本声明证明体直接含sorry；反例与遗漏子句是FAIL依据，sorry另记，不能混淆。
 
@@ -8157,9 +8160,9 @@ theorem forwardComponentsPrinted : ∀ h : ℝ,h ≠ 0 → ∀ z : MolecularDyna
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:1766](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1766>)（`MD.Ch05.forwardComponentsPrinted`）。
+位置：[Blueprint/Ch05.lean:1787](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1787>)（`MD.Ch05.forwardComponentsPrinted`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -8193,12 +8196,13 @@ theorem forwardEnergyGrowth : ∀ (h : ℝ) (z : MolecularDynamics.Chapter05Revi
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.forwardEnergyGrowth；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]实际有限步能量增长恒等式，作为原谱外扩的直接代数后果另列；本式允许h=0，渐近发散需h≠0和非原点。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留能量精确增长率并补原谱结论：两个复特征值恰为1±ih及模√(1+h²)>1，非零步长显式；不替换原两分量疑误。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT20**。原文JSON：DRAFT；未冻结。
 
 本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05_deps.txt中展开。ReviewDefinitions.lean:5315、5401已展开，标准iterate和平方运算使当前签名对任意实h、z∈ℝ²、k∈ℕ断言‖A_h^k z‖²=(1+h²)^k‖z‖²。它是正确有限步恒等式，不需要h≠0或z≠0；[EXTRA]说明其作为谱外扩的代数后果另列，数学上合理。可是本source_id的statement_latex与statement_scope对应PDF228／印刷207的“特征值在单位圆外”，签名没有复特征值或严格模界，不能把另列恒等式视作已形式化完整谱子句。h=0时恒等式仍成立而严格谱子句不成立；通常正步长的上下文资格若要形式化谱结论，应明确提供。FAIL是原条范围不匹配，并非当前恒等式本身有反例、标准EuclideanSpace不明或Mathlib定义未提供。无字面[ERRATUM?]标签；原谱句在非零步长下正确。附件中当前证明体未见直接sorry；未执行编译或依赖闭包检查，证明状态与此签名判定分开。
 
@@ -8208,13 +8212,13 @@ theorem forwardEnergyGrowth : ∀ (h : ℝ) (z : MolecularDynamics.Chapter05Revi
 
 ### 7. 状态与证明位置
 
-**self-contained**；本地证明状态：local_proof。
+**incomplete**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:1773](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1773>)（`MD.Ch05.forwardEnergyGrowth`）。
+位置：[Blueprint/Ch05.lean:1795](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1795>)（`MD.Ch05.forwardEnergyGrowth`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/ForwardEnergyGrowth.json；blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.lean；blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc-ForwardEnergyGrowth.log。
 
@@ -8224,7 +8228,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 2. 原文陈述
 
-> This means that with the single exception $\rho(q,p;0)=\delta[q]\delta[p]$ there is no limiting (invariant) distribution for Forward Euler. To put it another way, the only solution, in the weak sense, of $\mathcal L_{\widetilde f}^*\rho=0$ is the point distribution $\delta[q]\delta[p]$, and this solution is not “asymptotically stable.”
+> This means that with the single exception $\rho(q,p;0)=\delta[q]\delta[p]$ there is no limiting (invariant) distribution for Forward Euler. To put it another way, the only solution, in the weak sense, of $\mathcal L_{\widetilde f}^{\dagger}\rho=0$ is the point distribution $\delta[q]\delta[p]$, and this solution is not “asymptotically stable.”
 
 ### 3. 原文证明
 
@@ -8246,12 +8250,13 @@ theorem eulerInvariant :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.eulerInvariant；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]真实Forward Euler映射的不变概率测度，h≠0；一般modified微分方程的弱稳态并非自动等同离散不变测度，原记号作为解释而非未经证明的算子识别。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 除离散唯一性再补非Dirac初始概率的离散推前无任何弱概率极限；连续modified模型/稳态/非吸引分别明确绑定EulerLogCorrespondence与ForwardWeakStationary。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT20**。原文JSON：CORRECTED；未冻结。
 
 复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 项目 forwardEuler（Ch05_deps.txt:5401）展开为 G_h(q,p)=(q+hp,p−hq)，diracMeasure 2（5347）=δ_(0,0)。Ch05.lean:1490–1493 的量词为 ∀h≠0、∀概率 μ，不变性是前提，结论仅 μ=δ0；这忠实表达离散不变概率的唯一性，δ0 确为该映射不动点测度。h≠0 必要，因为 h=0 时所有概率测度都不变；归一化与原文“distribution”作概率分布解释相符。但所引原文另外断言一般初始分布不存在概率极限、modified Liouville 方程的弱稳态唯一性、δ0 非渐近稳定性。当前签名没有这些条款，也没有指定 modified 场及对应关系。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。修复涉及的项目 weakStationary 已在 Ch05_deps.txt:5349–5350 展开：对每个 testSpace n 测试函数要求 lie f φ 可积且其积分为0；testSpace n（5342）是 C∞ 紧支实函数，lie f φ z（5317）=(fderiv ℝ φ z)(f z)。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。
 
@@ -8261,17 +8266,17 @@ theorem eulerInvariant :
 
 ### 7. 状态与证明位置
 
-**self-contained**；本地证明状态：local_proof。
+**incomplete**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:1790](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1790>)（`MD.Ch05.eulerInvariant`）。
+位置：[Blueprint/Ch05.lean:1821](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1821>)（`MD.Ch05.eulerInvariant`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/EulerInvariant.json；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.lean；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.log；blueprint/ch05/validation/short_search/route-f38e99753e68db768821.lean；blueprint/ch05/validation/short_search/route-f38e99753e68db768821.log；blueprint/ch05/validation/short_search/route-9e433ea80e78ceed9cf1.lean；blueprint/ch05/validation/short_search/route-9e433ea80e78ceed9cf1.log。
 
-签名SHA256：`15ca0c0e3adad3b577d75921a3824232e58be4926d6d96ccc722aaa542079a9f`；原文SHA256：`820bdc3c6de957bb7c5b542a65d911c1aa7e51b0533189db36f87d756c25503c`。
+签名SHA256：`15ca0c0e3adad3b577d75921a3824232e58be4926d6d96ccc722aaa542079a9f`；原文SHA256：`a6c48d647703ce7d70b0268b8c01c27ef26621bfcd82268120e4a8ec15b6b2bd`。
 
 ## 1. MD-5.6-BackwardEuler · definition · 印刷p.207 / PDFp.228
 
@@ -8298,12 +8303,13 @@ def backwardEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : Molecu
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.backwardEuler；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]解出的实际二维线性更新，分母1+h²恒正；收缩需h≠0，h=0恒等映射不收缩。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅隐式Euler的显式解映射定义；完整复谱与模由MD-5.6-BackwardEnergyDecay补列，所有迭代趋零由MD-5.6-BackwardEulerLimit承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT21**。原文JSON：DRAFT；未冻结。
 
 复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 MD.Ch05.backwardEuler（Ch05.lean:1521–1522）与项目库 backwardEuler（Ch05_deps.txt:5399–5400）均展开为 B_h(q,p)=((q+hp)/(1+h²),(p−hq)/(1+h²))。1+h² 恒正，故这是原页 q′=q+hp′、p′=p−hq′ 的唯一解，定义部分完整忠实，定义本身无需 h≠0。但是本 JSON statement 同时包含两个特征值严格位于单位圆内和所有递推解趋原点；单独的 def 没有陈述这些结论。注释中的 [EXTRA] h≠0 是收缩结论所需的合理限制，却不是此 def 的假设或定理子句。源文未明写该资格，须公开说明 h=0 例外，不能按全实步长宣称严格收缩。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。
 
@@ -8315,13 +8321,13 @@ def backwardEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : Molecu
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:1821](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1821>)（`MD.Ch05.backwardEuler`）。
+位置：[Blueprint/Ch05.lean:1862](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1862>)（`MD.Ch05.backwardEuler`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`91836ae64e2fa2acc19bd45cc9f99ab140184e145610861c21808343b3cf9910`；原文SHA256：`685f012f90fb728a2d932342338472858795ad1975877bd6e78725116fd1e3c2`。
+签名SHA256：`91836ae64e2fa2acc19bd45cc9f99ab140184e145610861c21808343b3cf9910`；原文SHA256：`89f1651161a20f8fa248a5495bb8efc8a2841408991554f4b02533060ef31f1a`。
 
 ## 1. MD-5.6-BackwardEnergyDecay · unnumbered_claim · 印刷p.207 / PDFp.228
 
@@ -8349,12 +8355,13 @@ theorem backwardEnergyDecay : ∀ (h : ℝ) (z : MolecularDynamics.Chapter05Revi
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.backwardEnergyDecay；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]真实有限步平方范数代数恒等式另列；全轨道趋原点及测度弱极限另保留。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留能量衰减已有证明，补两个完整复特征值及模严格小于1；迭代趋零由BackwardEulerLimit，实际模型由EulerLogCorrespondence/BackwardWeakStationary承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT21**。原文JSON：DRAFT；未冻结。
 
 复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 库 backwardEuler（Ch05_deps.txt:5399–5400）是 B_h(q,p)=((q+hp)/(1+h²),(p−hq)/(1+h²))。Ch05.lean:1526–1528 签名为 ∀h∈ℝ、∀z∈ℝ²、∀k∈ℕ，‖B_h^k z‖²=(1+h²)^(−k)‖z‖²；Lean 的 (1+h²)⁻¹^k 即 ((1+h²)⁻¹)^k。这是正确的全部有限步平方范数恒等式，包括 h=0 与 k=0，但所引原文是两个特征值严格位于单位圆内以及所有轨道趋原点。签名没有这两个结论，也没有严格衰减所需 h≠0 的资格。[EXTRA] 中有限步代数恒等式不是额外数学假设，而是对结论的缩减。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。
 
@@ -8364,23 +8371,23 @@ theorem backwardEnergyDecay : ∀ (h : ℝ) (z : MolecularDynamics.Chapter05Revi
 
 ### 7. 状态与证明位置
 
-**self-contained**；本地证明状态：local_proof。
+**incomplete**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:1826](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1826>)（`MD.Ch05.backwardEnergyDecay`）。
+位置：[Blueprint/Ch05.lean:1868](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1868>)（`MD.Ch05.backwardEnergyDecay`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/BackwardEnergyDecay.json；blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc-BackwardEnergyDecay.lean；blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc-BackwardEnergyDecay.log。
 
-签名SHA256：`e349ff625c028a03046d3253ddf50b1cd98475300d71485478d4070c02754d15`；原文SHA256：`fafc5fb3f5983ed0436d30c73b40c2b442ba2a9e16230d046f879994774e7a32`。
+签名SHA256：`e349ff625c028a03046d3253ddf50b1cd98475300d71485478d4070c02754d15`；原文SHA256：`ab028323f57c98757f5599221bcbcb3c3efa85510d2c9ec487abf5fabf36537c`。
 
 ## 1. MD-5.6-BackwardEulerLimit · unnumbered_claim · 印刷p.207 / PDFp.228
 
 ### 2. 原文陈述
 
-> all solutions of the recurrence relation tend to the origin with increasing $n$ (the origin is an attractive equilibrium point). In this case, all densities evolve toward the Dirac distribution centered at the origin: $\delta[q]\delta[p]$. The only (distributional) solution of $\mathcal L_{\widetilde f}^*\rho=0$ is again $\delta[q]\delta[p]$, which in this case is attractive.
+> all solutions of the recurrence relation tend to the origin with increasing $n$ (the origin is an attractive equilibrium point). In this case, all densities evolve toward the Dirac distribution centered at the origin: $\delta[q]\delta[p]$. The only (distributional) solution of $\mathcal L_{\widetilde f}\rho=0$ is again $\delta[q]\delta[p]$, which in this case is attractive.
 
 ### 3. 原文证明
 
@@ -8405,12 +8412,13 @@ theorem backwardEulerLimit :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.backwardEulerLimit；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]h≠0及实际任意初始概率测度；全轨道收缩与对每个有界连续测试函数的弱趋Dirac两个结论，非普通密度逐点收敛。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅所有离散迭代趋零及任意初始概率弱趋Dirac；实际modified流一步对应由MD-5.6-EulerLogCorrespondence，概率弱稳态唯一及连续吸引由MD-5.6-BackwardWeakStationary承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT21**。原文JSON：CORRECTED；未冻结。
 
 复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 库 backwardEuler（Ch05_deps.txt:5399–5400）展开为 B_h(q,p)=((q+hp)/(1+h²),(p−hq)/(1+h²))。Ch05.lean:1545–1551 的量词和两个结论正确：对每个 h≠0，所有初值轨道趋0；对每个初始概率 μ、每个有界连续实 φ，∫φ(B_h^k z)dμ→φ(0)。有限概率测度与有界连续测试函数保证这些积分可积，Bochner 积分的不可积取0约定不会虚化结论；这确为全体概率推前的弱趋 δ0，合理涵盖所有初始密度及奇异概率。全轨道收缩和概率弱吸引子结论均正确，h≠0 必要。但引文末句关于明确 modified Liouville 方程的 distributional 稳态唯一性没有出现在签名中；离散弱极限也没有单独识别原文相关连续模型。概率归一化是对“distributional”在概率语境的合理限定，不能扩充成任意未归一化广义分布的唯一性。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。修复涉及的项目 weakStationary 已在 Ch05_deps.txt:5349–5350 展开：对每个 testSpace n 测试函数要求 lie f φ 可积且其积分为0；testSpace n（5342）是 C∞ 紧支实函数，lie f φ z（5317）=(fderiv ℝ φ z)(f z)。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。
 
@@ -8422,15 +8430,15 @@ theorem backwardEulerLimit :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:1845](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1845>)（`MD.Ch05.backwardEulerLimit`）。
+位置：[Blueprint/Ch05.lean:1898](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1898>)（`MD.Ch05.backwardEulerLimit`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/BackwardEulerLimit.json；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.lean；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.log；blueprint/ch05/validation/short_search/route-f38e99753e68db768821-BackwardEulerLimit.lean；blueprint/ch05/validation/short_search/route-f38e99753e68db768821-BackwardEulerLimit.log。
 
-签名SHA256：`c7c8655d454df1fba6395d3a2f35258d35e7e935a6983b1a85945a67edb34832`；原文SHA256：`86d69c769121ff2f85ec1a490400de54ca7d9a9b77efc2752a50bd3d6abb8766`。
+签名SHA256：`c7c8655d454df1fba6395d3a2f35258d35e7e935a6983b1a85945a67edb34832`；原文SHA256：`d414d5761d1270c475b1a1926d66da160a03cabefd7537637302ea954560149a`。
 
 ## 1. MD-5.6-SymplecticEuler · definition · 印刷p.207 / PDFp.228
 
@@ -8468,7 +8476,7 @@ def symplecticEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : Mole
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:1885](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1885>)（`MD.Ch05.symplecticEuler`）。
+位置：[Blueprint/Ch05.lean:1938](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1938>)（`MD.Ch05.symplecticEuler`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8500,12 +8508,13 @@ theorem symplecticEulerShadow : symplecticEulerShadow_statement
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.symplecticEulerShadow；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]完整实际二次修正能量的一步保持恒等式；正定椭圆资格及所有n保持另条，不以一步式称全部椭圆结论已证。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留一步不变量证明，补稳定区内主对数Hamiltonian=c(h)·二次不变量、c>0、实际矩阵指数Hamiltonian流及其时间h恰为离散步，并给两能量有界域O(h²)比例差；全部k/椭圆由SymplecticEulerEllipse、弱稳态由SymplecticWeakStationary承担。新增模型是显式技术选择，不冒称唯一修正能量。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT21**。原文JSON：DRAFT；未冻结。
 
 复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 Ch05.lean:1589 的 symplecticEulerShadow_statement 来自项目 Statements.lean（Ch05_deps.txt:5601–5602），完整展开为 ∀h∈ℝ、∀z∈ℝ²，Q_h(S_h z)=Q_h(z)。库定义（5402–5403）为 S_h(q,p)=((1−h²)q+hp,p−hq)，Q_h(q,p)=(q²+p²−hqp)/2。一步保持确实成立并可用于归纳，但签名没有原句的所有 n 迭代保持、椭圆资格及与 backward error analysis 的 Hamiltonian 识别。h 无限制时，能量保持不意味着水平集是椭圆。[EXTRA] 将几何和全迭代另列属于缩减覆盖范围，不是本定理新增前提。原文未明确稳定步长和原点退化情况，应显式注释疑误而不改动原引文。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。
 
@@ -8515,17 +8524,17 @@ theorem symplecticEulerShadow : symplecticEulerShadow_statement
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：existing_bridge。
+**incomplete**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch05.lean:1889](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1889>)（`MD.Ch05.symplecticEulerShadow`）。
+位置：[Blueprint/Ch05.lean:1943](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1943>)（`MD.Ch05.symplecticEulerShadow`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved。
 
-签名SHA256：`0a303638187c8067db465bf7c71b1df73133b5fbe610e19da4741367c27839ce`；原文SHA256：`0e0f8e0f43d37eac4ee1049f61bee7db478b9e1a94c84ccd668e36fb3663e02c`。
+签名SHA256：`0a303638187c8067db465bf7c71b1df73133b5fbe610e19da4741367c27839ce`；原文SHA256：`32b2244824161cf598e86e76d0393c291ed0e2316c21cf2840ffaef0db4fa1c6`。
 
 ## 1. MD-5.6-SymplecticEulerEllipse · unnumbered_claim · 印刷p.207 / PDFp.228
 
@@ -8555,24 +8564,25 @@ theorem symplecticEulerEllipse : ∀ h : ℝ,|h| < 2 →
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.symplecticEulerEllipse；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]稳定条件\|h\|<2；原不加资格的椭圆说法在\|h\|≥2失败。本条保留正定/紧性和所有迭代保持；0能量是退化点。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 保留正定/全部k保持证明，并补正能级椭圆拓扑及零能级单点退化；二次不变量作为modified Hamiltonian的显式固定选择，实际场/流资格见SymplecticWeakStationary，不声称唯一修正能量。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT21**。原文JSON：DRAFT；未冻结。
 
 复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 Ch05_deps.txt:5402–5403 展开 S_h(q,p)=((1−h²)q+hp,p−hq)，Q_h(q,p)=(q²+p²−hqp)/2。Ch05.lean:1594–1600 的顺序是 ∀h、|h|<2，然后合取：所有非零 z 的 Q_h(z)>0；对所有实 c，{Q_h≤c} 紧；对所有 z、所有非负整数 k，Q_h(S_h^k z)=Q_h(z)。在已展开的实际二次型下，令 u=(q+p)/√2、v=(q−p)/√2，则 Q_h=((2−h)u²+(2+h)v²)/4。两个系数均正，非零初值的正能量水平集确为椭圆，零初值水平集为原点；因此几何含义与全部离散迭代约束都已覆盖，无需额外寻找 Mathlib 的 IsCompact 或 EuclideanSpace 定义。[EXTRA] |h|<2 必要且合理，紧性是正确的加强子句；c<0 时子水平集为空仍紧。原书未限定步长的椭圆说法在 h=±2 退化、|h|>2 不定，且初值0本来只能给退化点；该疑误的数学判断明确成立，条目已公开作资格补充。证明状态单独记录：本声明文本不含 sorry；本轮未编译 Lean，也未据此声明完成传递依赖的公理审计。
 
 ### 7. 状态与证明位置
 
-**checked+documented priors**；本地证明状态：existing_bridge。
+**incomplete**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch05.lean:1894](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1894>)（`MD.Ch05.symplecticEulerEllipse`）。
+位置：[Blueprint/Ch05.lean:1976](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1976>)（`MD.Ch05.symplecticEulerEllipse`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
-直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/SymplecticEulerEllipse.json；blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc.lean；blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc.log；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-SymplecticEulerEllipse.lean；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-SymplecticEulerEllipse.log。
 
@@ -8584,7 +8594,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 2. 原文陈述
 
-> This implies that a density which is a function of $\widetilde H_h$ will remain invariant under the associated Liouville equation. There are many solutions of $\mathcal L_{\widetilde f}^*\rho=0$, none of which is attractive.
+> This implies that a density which is a function of $\widetilde H_h$ will remain invariant under the associated Liouville equation. There are many solutions of $\mathcal L_{\widetilde f}^{\dagger}\rho=0$, none of which is attractive.
 
 ### 3. 原文证明
 
@@ -8608,12 +8618,13 @@ theorem symplecticEulerDensity :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.symplecticEulerDensity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]真实离散映射MeasurePreserving、不变二次能量、实际概率密度r∘Htilde；完整弱Liouville稳态及非吸引另条，所有r都可归一不能自动推出。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅离散映射的函数能量密度不变；连续modified能量场、概率弱稳态多样与非吸引由MD-5.6-SymplecticWeakStationary承担，原整段保留。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT21**。原文JSON：CORRECTED；未冻结。
 
 复审采用用户指定的 Lean 4.34.0 / Mathlib v4.34.0 标准数学含义：EuclideanSpace ℝ (Fin 2) 是二维欧氏相空间，WithLp.toLp 2 只是相同坐标的欧氏空间包装，volume 是 Lebesgue 测度，MeasurePreserving G μ μ 表示 G 可测且 Measure.map G μ=μ，IsProbabilityMeasure 表示总质量为1，Function.iterate 表示非负整数次迭代，Tendsto 表示相应拓扑/滤子的收敛，integral 是 Bochner 积分。不要求 Ch05_deps.txt 提供这些 Mathlib 定义体。项目定义已展开：Ch05_deps.txt:5315 的 MolecularDynamics.Chapter05Review.E n=EuclideanSpace ℝ (Fin n)。 Ch05_deps.txt:5402–5403 展开 S_h(q,p)=((1−h²)q+hp,p−hq)，Q_h(q,p)=(q²+p²−hqp)/2。density（5323–5324）展开为可测、逐点非负、Lebesgue 可积；probabilityDensity（5325）再加积分=1；densityMeasure（5326）=volume.withDensity (fun z => ENNReal.ofReal (ρ z))，在非负密度下正是 ρ(z)dz。Ch05.lean:1642–1648 的签名次序为 ∀h、|h|<2、∀r，若 ρ=r∘Q_h 是概率密度，则 S_h 对 ρdz 测度保持。ρ 可测可积归一化是合理概率资格；不需要 r 本身连续，未把不可积 r 误作概率。S_h 的行列式为1且保持 Q_h，故所述离散不变性正确。然而引文要求 associated Liouville equation 的稳态、许多稳态以及没有任何稳态吸引；签名没有这些条款，也未识别对应的 modified 连续场/流。[EXTRA] 稳定资格合理，但改述成离散 MeasurePreserving 并将其它结论放到另条并不能完成当前全文范围。原文范围采用 BATCH25.md 的 statement_latex 及 statement_scope（本条所引原句及公式），因此 [EXTRA] 中“另条保留”只说明拆分意图，不能自动补足当前签名的结论。修复涉及的项目 weakStationary 已在 Ch05_deps.txt:5349–5350 展开：对每个 testSpace n 测试函数要求 lie f φ 可积且其积分为0；testSpace n（5342）是 C∞ 紧支实函数，lie f φ z（5317）=(fderiv ℝ φ z)(f z)。证明状态单独记录：本声明文本含 sorry，未完成证明不改变上述签名语义判定。
 
@@ -8625,9 +8636,9 @@ theorem symplecticEulerDensity :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:1942](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1942>)（`MD.Ch05.symplecticEulerDensity`）。
+位置：[Blueprint/Ch05.lean:2032](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2032>)（`MD.Ch05.symplecticEulerDensity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -8637,7 +8648,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 已登记前置证明/定义：MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved。
 
-签名SHA256：`6935d002971887df8189535a9ca3861e7e7a7f2cb0c7a16cf37bedea654050ce`；原文SHA256：`74a1ed810e40570330048a5f8dc4c5577a79b00c9f52938b007d1bd7f2cac627`。
+签名SHA256：`6935d002971887df8189535a9ca3861e7e7a7f2cb0c7a16cf37bedea654050ce`；原文SHA256：`c0cd99d88727d70b08f4ef677564667859a7e21705a0d4580eec78c735d34110`。
 
 ## 1. MD-5.6-VerletShadow2 · definition · 印刷p.208 / PDFp.229
 
@@ -8680,7 +8691,7 @@ def verletShadow2 {n : ℕ} (m : Fin n → ℝ) (U : MolecularDynamics.Chapter05
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:1950](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1950>)（`MD.Ch05.verletShadow2`）。
+位置：[Blueprint/Ch05.lean:2040](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2040>)（`MD.Ch05.verletShadow2`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8708,7 +8719,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ```lean
 theorem theorem51 :
   ∀ n (H η g : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) c,
-    0 < n → ContDiff ℝ ⊤ H → ContDiff ℝ ⊤ η → ContDiff ℝ ⊤ g → ContDiff ℝ ⊤ w →
+    0 < n → ContDiff ℝ ∞ H → ContDiff ℝ ∞ η → ContDiff ℝ ∞ g → ContDiff ℝ ∞ w →
     MolecularDynamics.Chapter05Review.regularEnergy H c → (∀ z ∈ MolecularDynamics.Chapter05Review.energySurface H c,inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z) ≠ 0) →
     (∃ δ > 0, ∃ K : Set (MolecularDynamics.Chapter05Review.E n), IsCompact K ∧
       ∀ ε ∈ Ioo (-δ) δ, MolecularDynamics.Chapter05Review.regularEnergy (fun z => H z+ε*η z) c ∧
@@ -8725,12 +8736,13 @@ theorem theorem51 :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.theorem51；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]实际C∞和regularEnergy含梯度非零及raw总质量有限正；补统一紧能量带与其上分母不为零，量化完整O(ε²)平均差。不只陈述分母下界，不将校正关系作前提。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT21**。原文JSON：DRAFT；未冻结。
 
 本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。microAverage H c g=∫g dμ_H,c，其中 μ_H,c=((microRaw H c) univ)⁻¹ • microRaw H c；microRaw=(hausdorffArea(n−1)|_{H=c}).withDensity(ofReal(‖∇H‖⁻¹))；hausdorffArea(d)=(vol(B_ℝᵈ(0,1))/2ᵈ) • hausdorffMeasure(d)。欧氏体积、Hausdorff测度、限制、密度和积分均按标准含义理解；固定面积归一因子在概率归一后消去，故为原文 dσ/‖∇H‖ 的微正则平均。regularEnergy 明列能量面非空、紧、梯度非零及 raw 总质量正且有限。同段 divergence f z=trace(Df(z))；perturbationDisplacement=(εη/⟨w,∇H⟩) • w；perturbationCorrection=Av_{H+εη=c}(div(g u))−Av_{H+εη=c}(g)Av_{H+εη=c}(div u)。这是整个 div(g u)，并未漏掉 g div u。先固定 n>0、H、η、g、w、c，再取 C>0、δ>0，最后对所有 |ε|<δ 给出 |Av_H(g)−Av_{H+εη}(g)−correction(ε)|≤Cε²。因此量词顺序、两种能量面上的平均、两项校正的符号及 O(ε²) 全部保留；推广到一般正维欧氏空间不需要额外 Hamiltonian 动力学假设。C∞ 是明确的光滑版本。[EXTRA] 中非空和正有限质量是归一平均资格，横截 w 已蕴含原能量面梯度非零；整个小参数族统一包含于紧 K，且 K 上原分母非零，是较强但合理的局部一致资格，防止远处新分支并提供一致余项控制，并非仅由每张面分别紧自动推出。它没有将校正等式或误差结论放入假设。PASS 是对已披露额外资格下原关系的忠实签名判断；证明体仍为 sorry，coarea 等证明义务未因此完成，二者不混同。无 [ERRATUM?] 标签，也未改写原书公式。
 
@@ -8738,15 +8750,15 @@ theorem theorem51 :
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:1957](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1957>)（`MD.Ch05.theorem51`）。
+位置：[Blueprint/Ch05.lean:2048](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2048>)（`MD.Ch05.theorem51`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺实际曲面扰动/coarea、微正则加权测度渐近与平均商展开；用户禁止建设大型微正则理论，保留完整sorry。
 
-签名SHA256：`a43119fd163cbd8b7a3daa5f3f0ecf99cbe7c34beb3e9560c31f6cff5c570734`；原文SHA256：`aab734577ea65224315f2170dc7396968d39617a31c9879144a59c0a2feefda0`。
+签名SHA256：`0e9c24b24f07dddcb5b2cf2d02caf04c61ba3df50f6273da600cb4eb213aba67`；原文SHA256：`aab734577ea65224315f2170dc7396968d39617a31c9879144a59c0a2feefda0`。
 
 ## 1. MD-5.6-PerturbationDisplacement · definition · 印刷p.209 / PDFp.230
 
@@ -8785,7 +8797,7 @@ def perturbationDisplacement {n : ℕ} (H η : MolecularDynamics.Chapter05Review
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:1971](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1971>)（`MD.Ch05.perturbationDisplacement`）。
+位置：[Blueprint/Ch05.lean:2062](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2062>)（`MD.Ch05.perturbationDisplacement`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -8820,12 +8832,13 @@ def perturbationCorrection {n : ℕ} (H η g : MolecularDynamics.Chapter05Review
 | 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.perturbationCorrection；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Theorem5.1右端两个平均组成的校正项定义；完整正则能量族平均误差估计由MD-5.6-Theorem51承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT21**。原文JSON：DRAFT；未冻结。
 
 本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。microAverage H c g=∫g dμ_H,c，其中 μ_H,c=((microRaw H c) univ)⁻¹ • microRaw H c；microRaw=(hausdorffArea(n−1)|_{H=c}).withDensity(ofReal(‖∇H‖⁻¹))；hausdorffArea(d)=(vol(B_ℝᵈ(0,1))/2ᵈ) • hausdorffMeasure(d)。欧氏体积、Hausdorff测度、限制、密度和积分均按标准含义理解；固定面积归一因子在概率归一后消去，故为原文 dσ/‖∇H‖ 的微正则平均。regularEnergy 明列能量面非空、紧、梯度非零及 raw 总质量正且有限。同段 divergence f z=trace(Df(z))；perturbationDisplacement=(εη/⟨w,∇H⟩) • w；perturbationCorrection=Av_{H+εη=c}(div(g u))−Av_{H+εη=c}(g)Av_{H+εη=c}(div u)。这是整个 div(g u)，并未漏掉 g div u。右端校正量作为定义是准确的。但本条 statement_latex 与 statement_scope 引用整条平均差等式及 O(ε²)；指定 lean_decl 只返回标量，没有平均差或误差界的结论，没有对 ε→0 的量化关系。context_notation 已承认定义不是完整定理，另一个条目 theorem51 具有所缺关系，仍不能把本条指定声明当作整条关系。FAIL 的唯一理由是这一原文范围与声明范围的缺失，绝非 Mathlib 定义缺失、积分含义不明或数学公式反例。无 [ERRATUM?]；定义无 sorry。
 
@@ -8835,13 +8848,13 @@ def perturbationCorrection {n : ℕ} (H η g : MolecularDynamics.Chapter05Review
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:1975](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1975>)（`MD.Ch05.perturbationCorrection`）。
+位置：[Blueprint/Ch05.lean:2067](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2067>)（`MD.Ch05.perturbationCorrection`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`d581f9ec25f7e413734f9eb08393276fedc1549963510f36ae61f481fd41cfdb`；原文SHA256：`12b0f235a3a53b0d73870f3f7c2b2a6b71d1bb110ebe6b7e8407f5dd31e72450`。
+签名SHA256：`d581f9ec25f7e413734f9eb08393276fedc1549963510f36ae61f481fd41cfdb`；原文SHA256：`181f8c9d3c8729fdc1a7e82ef97a01330a763898846b9755680d376c8537a432`。
 
 ## 1. MD-5.6-DenominatorBound · unnumbered_claim · 印刷p.209 / PDFp.230
 
@@ -8871,12 +8884,13 @@ theorem denominatorBound {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n �
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.denominatorBound；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]单独保留紧集上实际连续绝对分母的正下界，是完整定理的基础后果，不替代完整校正关系。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅紧能量面横截分母的正下界衍生引理；原光滑与横截资格及完整平均扰动公式由MD-5.6-Theorem51承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT22**。原文JSON：DRAFT；未冻结。
 
 本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。附件声明逐一固定 H、w、c，要求 energySurface 紧、|⟨w,∇H⟩| 在其上连续、处处非零，推出存在与 z 无关的 a>0 使全能量面上 a≤|⟨w,∇H⟩|。展开 ReviewProofs 段的 denominatorBound_proved 后，确实是紧集上正连续函数的正下界；空面时结论真空成立。[EXTRA] 说明这是衍生引理，紧性与连续性对该结论是合理资格；只要求标量连续而不要求光滑 H、w 是有效的一般化，本身不是数学错误。但当前 statement_scope 的原句描述的是 arbitrary smooth w 的横截假设，不是独立正下界结论；当前声明也没有保留 smooth w 条款，因而对所引原句完整范围判 FAIL。不能把此 FAIL 解释为正下界定理为假，更不能解释为 Mathlib 语义未提供。无 [ERRATUM?]；附件和依赖的展示证明均无 sorry，本轮不编译、不补证明。
 
@@ -8888,15 +8902,15 @@ theorem denominatorBound {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n �
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch05.lean:1983](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1983>)（`MD.Ch05.denominatorBound`）。
+位置：[Blueprint/Ch05.lean:2076](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2076>)（`MD.Ch05.denominatorBound`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.Chapter05Review.denominatorBound_proved。
 
-签名SHA256：`7f4c915036d152be41af9cc10e484ae2f225f6662888d53bd5268700750cb316`；原文SHA256：`3d1fa38b69f87b0ee682696a6729bc9eb2fc3f6e609aa6cd78c6c724a766d8d4`。
+签名SHA256：`7f4c915036d152be41af9cc10e484ae2f225f6662888d53bd5268700750cb316`；原文SHA256：`f828b59cd89c7d2808035b1c06bedcdf002fd6f5fe50365a619a4f9009e446e9`。
 
 ## 1. MD-5.6-SmoothDenominatorBound · unnumbered_claim · 印刷p.209 / PDFp.230
 
@@ -8925,12 +8939,13 @@ theorem smoothDenominatorBound {n : ℕ} (H : MolecularDynamics.Chapter05Review.
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.smoothDenominatorBound；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]由C² H、连续w自动得到实际连续分母和紧性下界；正式已证特殊后果，不当完整微正则扰动定理。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅C² H/连续w的横截分母下界一般化衍生引理；原光滑资格及完整公式由MD-5.6-Theorem51承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT22**。原文JSON：DRAFT；未冻结。
 
 本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。附件声明固定 H、w、c，要求紧能量面、C² H、Continuous w、横截，推出统一 a>0 的绝对分母下界。项目 ReviewProofs 段的 smoothDenominatorBound_proved 展开为 ∇H 连续、内积与绝对值连续，再用前一正下界引理，数学含义正确。[EXTRA] 的 C²/连续资格足够且合理；使用比 C∞ 更弱的假设是有效的一般化，不单独构成数学错误。但当前原句与 statement_scope 仍是 smooth w 的横截假设，并没有独立声称该下界；当前声明未完整保留所引对象的光滑资格。因此 FAIL 是严格原文对应范围的差异，不是连续梯度证明失败或 Mathlib 定义体缺失。无 [ERRATUM?]；附件与依赖的展示证明无 sorry，本轮不编译、不补证明。
 
@@ -8942,15 +8957,15 @@ theorem smoothDenominatorBound {n : ℕ} (H : MolecularDynamics.Chapter05Review.
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch05.lean:1992](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:1992>)（`MD.Ch05.smoothDenominatorBound`）。
+位置：[Blueprint/Ch05.lean:2086](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2086>)（`MD.Ch05.smoothDenominatorBound`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.Chapter05Review.smoothDenominatorBound_proved。
 
-签名SHA256：`ab4215148e7a0a5f14ce3110d403c8b33b231bfb7a9ade041ac13e0f15a7d9bd`；原文SHA256：`119331d0591d818e37e4f5727a81b75be8e6ed5dbb40865892470c3cbf46d3ae`。
+签名SHA256：`ab4215148e7a0a5f14ce3110d403c8b33b231bfb7a9ade041ac13e0f15a7d9bd`；原文SHA256：`930eb113d7a2e614955315f743c47d38b445abf0bbae5ed25d3e0cdec9259c08`。
 
 ## 1. MD-5.6-ZeroPerturbation · unnumbered_claim · 印刷p.209 / PDFp.230
 
@@ -8977,12 +8992,13 @@ theorem zeroPerturbation {n : ℕ} (H g : MolecularDynamics.Chapter05Review.E n 
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.zeroPerturbation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]η恒0时实际校正函数为0的直接后果；不将零扰动特例冒充任意η的平均误差定理。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅η≡0校正量为零的后果；一般位移定义由MD-5.6-PerturbationDisplacement、完整平均误差由MD-5.6-Theorem51承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT22**。原文JSON：CORRECTED；未冻结。
 
 本轮按补充规则直接采信 Lean4.34.0/Mathlibv4.34.0 的标准定义；未要求 Ch05_deps.txt 提供 Mathlib 定义体。项目自定义已在 Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 段展开：E n=EuclideanSpace ℝ (Fin n)，Phase n=E n×E n，grad H=gradient H，energySurface H c={z | H z=c}。microAverage H c g=∫g dμ_H,c，其中 μ_H,c=((microRaw H c) univ)⁻¹ • microRaw H c；microRaw=(hausdorffArea(n−1)|_{H=c}).withDensity(ofReal(‖∇H‖⁻¹))；hausdorffArea(d)=(vol(B_ℝᵈ(0,1))/2ᵈ) • hausdorffMeasure(d)。欧氏体积、Hausdorff测度、限制、密度和积分均按标准含义理解；固定面积归一因子在概率归一后消去，故为原文 dσ/‖∇H‖ 的微正则平均。regularEnergy 明列能量面非空、紧、梯度非零及 raw 总质量正且有限。同段 divergence f z=trace(Df(z))；perturbationDisplacement=(εη/⟨w,∇H⟩) • w；perturbationCorrection=Av_{H+εη=c}(div(g u))−Av_{H+εη=c}(g)Av_{H+εη=c}(div u)。这是整个 div(g u)，并未漏掉 g div u。附件声明固定 H、g、w、c、ε，仅对 η≡0 给出校正量为0。ReviewProofs 段的 zeroPerturbation_proved 先得到 u≡0，再令两种散度与相应积分为0；无须额外可积性或非零分母假设，因为零向量场的导数及零函数积分按标准含义均为0。[EXTRA] 的 η=0 是已披露的合理特例，但本条 statement_latex/statement_scope 引用任意 η 下 Htilde=H+εη 与 u 的定义；当前签名并未陈述这两个一般公式，只给校正量的零扰动后果。所以严格原文对应 FAIL，零扰动引理本身正确，失败与 Mathlib 缺少定义体无关。无 [ERRATUM?]；展示证明无 sorry，本轮不编译、不补证明。
 
@@ -8994,15 +9010,15 @@ theorem zeroPerturbation {n : ℕ} (H g : MolecularDynamics.Chapter05Review.E n 
 
 **checked+documented priors**；本地证明状态：existing_bridge。
 
-位置：[Blueprint/Ch05.lean:2000](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2000>)（`MD.Ch05.zeroPerturbation`）。
+位置：[Blueprint/Ch05.lean:2095](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2095>)（`MD.Ch05.zeroPerturbation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 已登记前置证明/定义：MolecularDynamics.Chapter05Review.zeroPerturbation_proved。
 
-签名SHA256：`729c3a09f3c3bf64dda3a4f304e76c5fa5e823bb65d1766fd7da76f2c67ac1b2`；原文SHA256：`f9c1ebda332b6cbe54c4a7324db78a7bb77c94ecb57d22c22ac90a4363a3795b`。
+签名SHA256：`729c3a09f3c3bf64dda3a4f304e76c5fa5e823bb65d1766fd7da76f2c67ac1b2`；原文SHA256：`fc31d5473e9d56ce983e97106427bf4228e176630ce33d391f760d291588d092`。
 
 ## 1. MD-5.6-GradientTransverse · unnumbered_claim · 印刷p.209 / PDFp.230
 
@@ -9044,7 +9060,7 @@ theorem gradientTransverse :
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:2006](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2006>)（`MD.Ch05.gradientTransverse`）。
+位置：[Blueprint/Ch05.lean:2101](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2101>)（`MD.Ch05.gradientTransverse`）。
 
 Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
 
@@ -9071,8 +9087,8 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 ```lean
 theorem dynamicalCorrection :
   ∀ n d (H η : MolecularDynamics.Chapter05Review.E n → ℝ) (w : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) c t,
-    0 < n → ContDiff ℝ ⊤ H → ContDiff ℝ ⊤ η → ContDiff ℝ ⊤ w →
-    ContDiff ℝ ⊤ a → ContDiff ℝ ⊤ b → ContDiff ℝ ⊤ (Φ t) → MolecularDynamics.Chapter05Review.regularEnergy H c →
+    0 < n → ContDiff ℝ ∞ H → ContDiff ℝ ∞ η → ContDiff ℝ ∞ w →
+    ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ (Φ t) → MolecularDynamics.Chapter05Review.regularEnergy H c →
     (∃ δ > 0, ∃ K : Set (MolecularDynamics.Chapter05Review.E n), IsCompact K ∧ MolecularDynamics.Chapter05Review.energySurface H c ⊆ K ∧
       (∀ z ∈ K,inner ℝ (w z) (MolecularDynamics.Chapter05Review.grad H z) ≠ 0) ∧
       ∀ ε ∈ Ioo (-δ) δ,MolecularDynamics.Chapter05Review.regularEnergy (fun z => H z+ε*η z) c ∧
@@ -9089,12 +9105,13 @@ theorem dynamicalCorrection :
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.dynamicalCorrection；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]固定lag的真实光滑pullback观测量及统一紧正则能量带；H参数改变时flow本身改变所导致的额外误差未自动忽略。本条完整平均校正关系不以结论为前提。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT22**。原文JSON：DRAFT；未冻结。
 
 C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。 microAverage=对归一化 microRaw 积分；microRaw=能量面上归一化Hausdorff面积乘 ‖gradient H‖⁻¹；regularEnergy 包含非空、紧性、梯度非零和原始质量正且有限。perturbationCorrection 在 Hε=H+εη 上计算 Av(div(gu))−Av(g)Av(div u)，u=εηw/(w·∇H)，divergence=实际导数矩阵迹。固定 n,d,H,η,w,a,b,Φ,c,t 后，先假设光滑性与统一紧正则能量带，后存在 C,δ 对全部小 ε 给 O(ε²) 界，符号和两项均与 PDF230 的定理5.1相符。g=⟨a∘Φ_t,b⟩正是固定lag平稳相关的被积函数。[EXTRA]统一紧带/横截性和正则性是合理的局部扰动技术条件；C、δ可依赖lag，没有宣称对t一致。Φ_t无需满足ODE即可作为光滑pullback；本条只覆盖同一观测量的测度校正，未覆盖随H变化的流误差，已在EXTRA明确限定。无ERRATUM标签；签名通过，正文仍有sorry，本审计不等于证明验证。 补充积分语义核对：在统一紧K及非零横截分母的假设下，g、u及两个散度在能量面上光滑且有界；regularEnergy确保原始质量正且有限，归一化microMeasure为概率。因此这里的Bochner积分并非借不可积时默认0得到空洞结论。Hausdorff面积的仅依赖维数的正常数在归一化平均中抵消。
 
@@ -9102,21 +9119,21 @@ C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯�
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:2015](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2015>)（`MD.Ch05.dynamicalCorrection`）。
+位置：[Blueprint/Ch05.lean:2111](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2111>)（`MD.Ch05.dynamicalCorrection`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：依赖未建立的完整曲面扰动/coarea平均误差定理；不建设大型理论。
 
-签名SHA256：`053d27fab5b62d559e697e875ae2d00a4250a1d88bbc498104f1e5fcbdc18f39`；原文SHA256：`28ec420df7621486c5a10e05a8931d6678346104c3507fdf7d20968ff927041a`。
+签名SHA256：`d29f3688227077edd2f94c37fe403bd3ebd5553d0324d4cb73afc263a2c07401`；原文SHA256：`28ec420df7621486c5a10e05a8931d6678346104c3507fdf7d20968ff927041a`。
 
 ## 1. MD-5.6-ForwardNormDivergence · unnumbered_claim · 印刷p.207 / PDFp.228
 
 ### 2. 原文陈述
 
-> the eigenvalues of the propagation matrix are outside the unit disk. Thus both solution components tend to infinity unless $(q_0,p_0)=(0,0)$.
+> and we see that the eigenvalues of the propagation matrix are outside the unit disk. Thus both solution components tend to infinity unless $(q_0,p_0)=(0,0)$.
 
 ### 3. 原文证明
 
@@ -9142,7 +9159,7 @@ theorem forwardNormDivergence : ∀ h : ℝ,h ≠ 0 → ∀ z : MolecularDynamic
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待导师 / EAUDIT22（原返回FAIL保留）**。原文JSON：CORRECTED；未冻结。
 
 C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。 Lean只给非零步长、非零初值下欧氏范数趋于+∞，既没有特征值位于单位圆外的结论，也没有原文“两分量趋于无穷”的结论。[EXTRA]h≠0必要，非原点对应原文例外；修正为范数发散在数学上正确，但不能作为原句全部结论的忠实形式化。没有显式ERRATUM标签，必须明确登记原书疑误。此定理正文未见sorry，但证明存在不消除语义偏差。 复审仍判FAIL的原因是与原书结论的绑定差异，而非Mathlib范数或Tendsto含义不明。[EXTRA]已明确承认是独立修正，修正合理不等于原句语义相同。
 
@@ -9154,21 +9171,21 @@ C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯�
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:2031](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2031>)（`MD.Ch05.forwardNormDivergence`）。
+位置：[Blueprint/Ch05.lean:2127](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2127>)（`MD.Ch05.forwardNormDivergence`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/ForwardNormDivergence.json；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-ForwardNormDivergence.lean；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0-ForwardNormDivergence.log。
 
-签名SHA256：`f2b7906566e930a6499bb021646523ff381bca791939f013706440b13069adf5`；原文SHA256：`03c41e60bc8b632a1fbb9758ea8c51062898709a2243ed981ade7dfb6c36c5bb`。
+签名SHA256：`f2b7906566e930a6499bb021646523ff381bca791939f013706440b13069adf5`；原文SHA256：`a450a1ef0a27dea88f213e3c9ec16d8b7fb45c16da228a61b0bc29aa1e0e942c`。
 
 ## 1. MD-5.6-WeakStationary · definition · 印刷p.207 / PDFp.228
 
 ### 2. 原文陈述
 
-> the only solution, in the weak sense, of $\mathcal L_{\widetilde f}^{*}\rho=0$ is the point distribution $\delta[q]\delta[p]$.
+> the only solution, in the weak sense, of $\mathcal L_{\widetilde f}^{\dagger}\rho=0$ is the point distribution $\delta[q]\delta[p]$.
 
 ### 3. 原文证明
 
@@ -9180,7 +9197,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ```lean
 def weakStationaryModel {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (μ : Measure (MolecularDynamics.Chapter05Review.E n)) : Prop :=
-  MolecularDynamics.Chapter05Review.weakStationary f μ
+  weakStationary f μ
 ```
 
 ### 5. 对照表
@@ -9189,12 +9206,13 @@ def weakStationaryModel {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n →
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.weakStationaryModel；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]复用§5.3.2已经定义的真实弱Liouville稳态：所有C∞紧支测试函数的Lie导数可积且配对为零，允许Dirac等奇异概率；与离散Measure.map不变分别陈述，不从名称推出等价。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 仅弱PDE技术谓词，实际使用Blueprint修正后的C∞测试空间；原唯一概率断言由MD-5.6-ForwardWeakStationary承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT22**。原文JSON：CORRECTED；未冻结。
 
 C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。weakStationary f μ 展开为：对每个 ContDiff ℝ ⊤ 且 HasCompactSupport 的实值测试函数 φ，lie f φ 可积且积分为零；lie f φ(z)=(fderiv ℝ φ z)(f z)。diracMeasure 2=Measure.dirac 0。这是真正弱Liouville方程，不是离散不变性。 weakStationaryModel仅为上述一般谓词的别名，没有指定Forward Euler的modified场，也未断言δ₀为解或其唯一性。[EXTRA]测试函数解释合理，但不补足原文的唯一解断言；源条目标为definition不能改变其statement_latex实际是一条唯一性断言。 复审确认该弱方程谓词本身含义正确；FAIL仅针对当前source_id完整唯一性引文与仅作谓词别名的声明不相符，并不否定该辅助定义的数学意义。所有项目自定义依赖均已找到。
 
@@ -9206,13 +9224,13 @@ C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯�
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:2052](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2052>)（`MD.Ch05.weakStationaryModel`）。
+位置：[Blueprint/Ch05.lean:2149](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2149>)（`MD.Ch05.weakStationaryModel`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`1c050fada6949efc8af477f9d6222c4263885698433695bf174d178ef0cfeb8c`；原文SHA256：`aca6c0ae741a758a50e12644141df1e6748fe5040ce1431d095da03d9422e361`。
+签名SHA256：`0d49adcda65ce2bf00df99efb2110ce699dadeea9d12fef6a9b3d7dbe4b0fc3c`；原文SHA256：`6e87df5dcd3fc1bbbd703e516952cfe09f05e6dde8a21bea4ea7268eefbc22b0`。
 
 ## 1. MD-5.6-WeakAttractor · definition · 印刷p.207 / PDFp.228
 
@@ -9244,12 +9262,13 @@ def weakAttractor {n : ℕ} (Φ : ℝ → MolecularDynamics.Chapter05Review.E n 
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.weakAttractor；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]“attractive”取概率弱拓扑中某邻域内所有初值概率的有界连续测试函数收敛；邻域以有限测试族和正ε明确，不把个别轨道收敛当全密度吸引。此为三个后续结论共用的技术定义；不添加已收敛或已不变的前提。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅弱概率局部吸引的辅助技术定义；原负吸引性断言由MD-5.6-ForwardWeakStationary承担，不把定义本身当否定结论。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT22**。原文JSON：CORRECTED；未冻结。
 
 C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。weakAttractor 展开为存在有限个有界连续测试函数及 ε>0，使该弱邻域中每个概率测度 ν、每个有界连续 φ 都满足 ∫φ(Φ_t z)dν→∫φdμ。此为局部弱吸引，未同时定义Lyapunov稳定性；非吸引足以否定渐近稳定。 当前声明仅定义正的吸引谓词，既没有Forward Euler实例，也没有否定该谓词。[EXTRA]邻域与测试量词安排正确，可作辅助定义；不等于原文“this solution is not asymptotically stable”这个负断言。 概率ν和实际连续logarithmic流的有界连续测试积分均可积；不能因Bochner积分的总化而拒绝该实例。FAIL仍来自原负断言未出现在此定义中，而非对标准弱收敛含义有疑问。
 
@@ -9261,19 +9280,19 @@ C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯�
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:2057](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2057>)（`MD.Ch05.weakAttractor`）。
+位置：[Blueprint/Ch05.lean:2155](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2155>)（`MD.Ch05.weakAttractor`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`040ea486b068cfae0a47aa94bad3a7d54312d34bd0dfa380ef1f599a5dde608c`；原文SHA256：`9461c44fd26bdad6265d79242e296af00dd6fb2b25211ed8ed43459f13049e8f`。
+签名SHA256：`040ea486b068cfae0a47aa94bad3a7d54312d34bd0dfa380ef1f599a5dde608c`；原文SHA256：`3d46aecc81ed826c5feb86807cff8438cd5d967336ca111496f7b6559cecdda9`。
 
 ## 1. MD-5.6-EulerLogField · definition · 印刷p.207 / PDFp.228
 
 ### 2. 原文陈述
 
-> the only solution, in the weak sense, of $\mathcal L_{\widetilde f}^{*}\rho=0$ is the point distribution $\delta[q]\delta[p]$.
+> the only solution, in the weak sense, of $\mathcal L_{\widetilde f}^{\dagger}\rho=0$ is the point distribution $\delta[q]\delta[p]$.
 
 ### 3. 原文证明
 
@@ -9296,12 +9315,13 @@ def eulerLogField (backward : Bool) (h : ℝ) (z : MolecularDynamics.Chapter05Re
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.eulerLogField；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]单位振子Euler的实际实线性logarithmic modified场；取h>0时正/负径向率分别对应前/后Euler，旋转率arctan(h)/h。真实模型的一步对应及ODE资格另条，定义本身不证明无限BEA展开收敛。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅单位振子h>0时新增的精确对数场技术模型（h=0总延拓不用作物理解释）；实际一步/ODE对应由MD-5.6-EulerLogCorrespondence，唯一概率稳态由MD-5.6-ForwardWeakStationary承担。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT22**。原文JSON：CORRECTED；未冻结。
 
 C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。设 α=±log(1+h²)/(2h)，β=arctan(h)/h。eulerLogField=(αq+βp,αp−βq)，eulerLogFlow=e^(αt)(q cos(βt)+p sin(βt),p cos(βt)−q sin(βt))。forwardEuler=(q+hp,p−hq)，backwardEuler=((q+hp)/(1+h²),(p−hq)/(1+h²))，均已在依赖原定义中核对。weakStationary f μ 展开为：对每个 ContDiff ℝ ⊤ 且 HasCompactSupport 的实值测试函数 φ，lie f φ 可积且积分为零；lie f φ(z)=(fderiv ℝ φ z)(f z)。diracMeasure 2=Measure.dirac 0。这是真正弱Liouville方程，不是离散不变性。 场定义本身是正确的单位振子精确logarithmic模型；h>0的限定在后续对应定理中，h=0时Lean除法给零场，不能理解为h→0的物理极限。[EXTRA]模型选择合理且未声称BEA级数收敛。但绑定引文是弱稳态唯一性，当前def未给出任一弱稳态或唯一性结论。 复审确认h>0时该具体场选择合理；定义正确与原文唯一解断言缺失分别记录。FAIL不取决于Real.log、Real.arctan或WithLp.toLp的定义体是否收录。
 
@@ -9313,13 +9333,13 @@ C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯�
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:2067](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2067>)（`MD.Ch05.eulerLogField`）。
+位置：[Blueprint/Ch05.lean:2166](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2166>)（`MD.Ch05.eulerLogField`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`7e4ae379eb96a77abaa7fd3418edf4fbbed45e80339fc8ebbe3971b4a26f6258`；原文SHA256：`9dcacf036e677eaf41eddd9f93dba41410c9bccd567aa8ef4547833bf4403678`。
+签名SHA256：`7e4ae379eb96a77abaa7fd3418edf4fbbed45e80339fc8ebbe3971b4a26f6258`；原文SHA256：`8bac3e3c6b26220a7c2de48939e7d4cceae4f71cbe768edb5830b70ffafdfe40`。
 
 ## 1. MD-5.6-EulerLogFlow · definition · 印刷p.207 / PDFp.228
 
@@ -9349,12 +9369,13 @@ def eulerLogFlow (backward : Bool) (h t : ℝ) (z : MolecularDynamics.Chapter05R
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.eulerLogFlow；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]为两种实际线性modified场写出完整连续时间指数旋转流；不是把任意算法的有限截断当精确解。只有本单位线性振子的对应作为独立待证明义务。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅单位振子h>0新增的精确对数流技术定义；ODE与实际Euler一步的识别由MD-5.6-EulerLogCorrespondence承担，不冒称一般有限截断modified场。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT23**。原文JSON：CORRECTED；未冻结。
 
 C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。设 α=±log(1+h²)/(2h)，β=arctan(h)/h。eulerLogField=(αq+βp,αp−βq)，eulerLogFlow=e^(αt)(q cos(βt)+p sin(βt),p cos(βt)−q sin(βt))。forwardEuler=(q+hp,p−hq)，backwardEuler=((q+hp)/(1+h²),(p−hq)/(1+h²))，均已在依赖原定义中核对。 显式流在h≠0时给选定logarithmic场的真实解，但当前def无ODE、一时步对应、误差界或一般r阶方法的量词。原句是一般数值方法由有限截断perturbed equation近似解释；[EXTRA]特意限定单位线性振子虽合理，却明显缩小来源语义。h=0的除法总化使此定义为恒等流，并不恢复振子的零步长极限。 复审确认指数旋转函数确为所选场的流，其性质由显式公式可检查；FAIL指当前来源的一般方法解释与该特例辅助定义的语义绑定，不能把函数定义当成一般近似关系的陈述。
 
@@ -9366,19 +9387,19 @@ C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯�
 
 **self-contained**；本地证明状态：definition。
 
-位置：[Blueprint/Ch05.lean:2074](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2074>)（`MD.Ch05.eulerLogFlow`）。
+位置：[Blueprint/Ch05.lean:2174](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2174>)（`MD.Ch05.eulerLogFlow`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`415862cf143ab44d5207a600a38711b44e515aa030cee02acd31004a72121c2e`；原文SHA256：`4de63b922379265adf2b0ae96d77f0b4097ce54d725dab28e994581018d0184a`。
+签名SHA256：`415862cf143ab44d5207a600a38711b44e515aa030cee02acd31004a72121c2e`；原文SHA256：`385783c4f789715c710b53c1bfb0c0e25abe404042c114ad7f49cc3bac092cf7`。
 
 ## 1. MD-5.6-EulerLogCorrespondence · unnumbered_claim · 印刷p.206–207 / PDFp.227–228
 
 ### 2. 原文陈述
 
-> Let us assume that the perturbed equation is a realistic model for the numerical solutions. Applying Forward Euler to the harmonic oscillator, we have $q_{n+1}=q_n+hp_n$, $p_{n+1}=p_n-hq_n$. As an alternative, consider the Backward Euler method: $q_{n+1}=q_n+hp_{n+1}$, $p_{n+1}=p_n-hq_{n+1}$.
+> Let us assume that the perturbed equation is a realistic model for the numerical solutions, then define the evolving density by $\frac{\partial\rho}{\partial t}=\mathcal L_{\widetilde f}^{\dagger}\rho\overset{\mathrm{def}}{=}\mathcal L_f^{\dagger}\rho+h^r\mathcal L_{f_{(r)}}^{\dagger}\rho$. […] Applying Forward Euler to the harmonic oscillator, we have $q_{n+1}=q_n+hp_n$, $p_{n+1}=p_n-hq_n$. […] As an alternative, consider the Backward Euler method: $q_{n+1}=q_n+hp_{n+1}$, $p_{n+1}=p_n-hq_{n+1}$.
 
 ### 3. 原文证明
 
@@ -9407,7 +9428,7 @@ theorem eulerLogCorrespondence : ∀ h : ℝ,0 < h →
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT23**。原文JSON：CORRECTED；未冻结。
 
 C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。设 α=±log(1+h²)/(2h)，β=arctan(h)/h。eulerLogField=(αq+βp,αp−βq)，eulerLogFlow=e^(αt)(q cos(βt)+p sin(βt),p cos(βt)−q sin(βt))。forwardEuler=(q+hp,p−hq)，backwardEuler=((q+hp)/(1+h²),(p−hq)/(1+h²))，均已在依赖原定义中核对。 h>0后对每个初值z同时断言两种一时步等式，另对每个Bool、初值和所有实t断言HasDerivAt，导数为场作用于当前流点。取exp(αh)=√(1+h²)或其倒数，cos(arctan h)=1/√(1+h²)，sin(arctan h)=h/√(1+h²)，恰得到前后Euler两组更新。时间零值和群律也由所定义指数旋转式成立，非随意命名流。[EXTRA]正步长与选择实logarithmic模型合理，原文中假设模型真实被此特例的更强精确对应替代，不作一般BEA收敛推论。该绑定确实覆盖两种更新；不把周围密度误差讨论增入本条。正文未见sorry；这里只审签名，不运行Lean检查。 两组Euler递推在依赖中分别是显式更新和隐式更新解出的有理映射；后一组等式等价于原书隐式递推，因为1+h²>0。新增全部时间ODE结论是合理加强，不是额外假设；原文模型真实性假设未被循环用作更新等式或ODE的前提。
 
@@ -9415,21 +9436,21 @@ C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯�
 
 **self-contained**；本地证明状态：local_proof。
 
-位置：[Blueprint/Ch05.lean:2082](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2082>)（`MD.Ch05.eulerLogCorrespondence`）。
+位置：[Blueprint/Ch05.lean:2182](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2182>)（`MD.Ch05.eulerLogCorrespondence`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/EulerLogCorrespondence.json；blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc.lean；blueprint/ch05/validation/short_search/route-9d95e6b781c63e5760fc.log；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.lean；blueprint/ch05/validation/short_search/route-52d35e0aa70a9fcc5ec0.log；blueprint/ch05/validation/short_search/route-f38e99753e68db768821-EulerLogCorrespondence.lean；blueprint/ch05/validation/short_search/route-f38e99753e68db768821-EulerLogCorrespondence.log。
 
-签名SHA256：`d5efbd160eca4d3ac86f2f1a25ce173645057647f59644e2b3e539fa77795e0c`；原文SHA256：`c53050b9ac5688787ceef288869aed6d51143d3193908537954fae634fd2aead`。
+签名SHA256：`d5efbd160eca4d3ac86f2f1a25ce173645057647f59644e2b3e539fa77795e0c`；原文SHA256：`3f7a033d382ecf715d9b37c3140fb798df566d7fe227bdb7e09590ca59eb425c`。
 
 ## 1. MD-5.6-ForwardWeakStationary · unnumbered_claim · 印刷p.207 / PDFp.228
 
 ### 2. 原文陈述
 
-> To put it another way, the only solution, in the weak sense, of $\mathcal L_{\widetilde f}^{*}\rho=0$ is the point distribution $\delta[q]\delta[p]$, and this solution is not “asymptotically stable.”
+> To put it another way, the only solution, in the weak sense, of $\mathcal L_{\widetilde f}^{\dagger}\rho=0$ is the point distribution $\delta[q]\delta[p]$, and this solution is not “asymptotically stable.”
 
 ### 3. 原文证明
 
@@ -9458,7 +9479,7 @@ theorem forwardWeakStationary : ∀ h : ℝ,0 < h →
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT23**。原文JSON：CORRECTED；未冻结。
 
 C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。weakStationary f μ 展开为：对每个 ContDiff ℝ ⊤ 且 HasCompactSupport 的实值测试函数 φ，lie f φ 可积且积分为零；lie f φ(z)=(fderiv ℝ φ z)(f z)。diracMeasure 2=Measure.dirac 0。这是真正弱Liouville方程，不是离散不变性。设 α=±log(1+h²)/(2h)，β=arctan(h)/h。eulerLogField=(αq+βp,αp−βq)，eulerLogFlow=e^(αt)(q cos(βt)+p sin(βt),p cos(βt)−q sin(βt))。forwardEuler=(q+hp,p−hq)，backwardEuler=((q+hp)/(1+h²),(p−hq)/(1+h²))，均已在依赖原定义中核对。weakAttractor 展开为存在有限个有界连续测试函数及 ε>0，使该弱邻域中每个概率测度 ν、每个有界连续 φ 都满足 ∫φ(Φ_t z)dν→∫φdμ。此为局部弱吸引，未同时定义Lyapunov稳定性；非吸引足以否定渐近稳定。 对每个h>0，α>0，声明依次包含δ₀弱稳态、所有概率弱稳态唯一性、δ₀非局部弱吸引，三项对应原文全部实质结论。概率归一化是“distribution”在此密度语境中的合理明确化；不解释为所有未归一化Schwartz分布（否则零分布与任意倍δ₀会反驳原文唯一性）。向外螺旋流的有限概率稳态只能集中原点；任意弱邻域内可取靠近原点的非零Dirac，其半径e^(αt)增长，用φ(z)=1/(1+‖z‖²)检验即不收敛至φ(0)=1，所以非吸引足以否定渐近稳定。[EXTRA]场选择、正h、概率弱拓扑均合理，未将离散map不变性替换弱PDE。正文为sorry；签名PASS不代表已证。 本条无缺失的项目定义：未限定命名空间的weakStationary解析到MD.Ch05本地定义，它与依赖中的Chapter05Review.weakStationary有相同测试空间、可积性和零配对条件。weakAttractor及eulerLogField/eulerLogFlow均在当前Lean附件内已展开。有限概率条件排除零测度及非单位倍Dirac，属于原文分布语境的合理补足。
 
@@ -9466,15 +9487,15 @@ C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯�
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:2134](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2134>)（`MD.Ch05.forwardWeakStationary`）。
+位置：[Blueprint/Ch05.lean:2234](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2234>)（`MD.Ch05.forwardWeakStationary`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺弱stationarity到连续流不变的输运/测试函数桥接及概率弱邻域的非吸引论证；不建设大型PDE理论。
 
-签名SHA256：`a5409f77c168e9980cc4d79b92282ad78e5f60aa739d7d88ccd8b00e48d37467`；原文SHA256：`c3c960bf3cba3b2e67fe2a61eec356eef483e2709247a902d95950e6c56b52c9`。
+签名SHA256：`a5409f77c168e9980cc4d79b92282ad78e5f60aa739d7d88ccd8b00e48d37467`；原文SHA256：`c1b084e7f97f15bf375fdd874d7321e44c983f699d42909513f1c876282d5958`。
 
 ## 1. MD-5.6-BackwardWeakStationary · unnumbered_claim · 印刷p.207 / PDFp.228
 
@@ -9509,7 +9530,7 @@ theorem backwardWeakStationary : ∀ h : ℝ,0 < h →
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT23**。原文JSON：DRAFT；未冻结。
 
 版本绑定：本次材料逐字节 SHA256 与上一轮三个附件一致；仅依据此绑定版本审计，不采纳其他旧工程文件。按补充规则，Mathlib v4.34.0 的标准定义直接采信，gradient 是欧氏内积对应的梯度，volume 是标准 Lebesgue 测度，不要求 Ch05_deps.txt 收录其定义体。项目自定义已展开：Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段，E 2=EuclideanSpace ℝ (Fin 2)，坐标0、1分别是q、p；diracMeasure 2=Measure.dirac 0；testSpace 2 为 C∞ 紧支持实函数；lie f φ z=(fderiv ℝ φ z)(f z)。签名中的 MD.Ch05.weakStationary 由绑定 Blueprint/Ch05.lean 698–700行展开为：每个上述测试函数的 Lie 导数可积且对 μ 的积分为0，与依赖中的同名弱稳态定义一致，实现分布意义的 Liouville 稳态。weakAttractor（1757–1764行）展开为存在有限个有界连续测试函数及正 ε 所定义的概率弱拓扑邻域，使其中所有初始概率在全部有界连续测试函数下随实时间 t→+∞ 收敛到 μ；m=0 允许全局吸引。以上可积资格避免利用 Bochner 积分不可积时取0制造假稳态。本条 eulerLogField true h（1767–1771行）是 f(q,p)=(aq+bp,ap−bq)，a=−log(1+h²)/(2h)，b=arctan(h)/h；eulerLogFlow true h（1774–1779行）是 exp(at) 乘 [[cos(bt),sin(bt)],[−sin(bt),cos(bt)]]。h>0 保证 a<0，且时刻h的映射等于依赖 backwardEuler 的 ((q+hp)/(1+h²),(p−hq)/(1+h²))。签名1843–1848行依次给出 Dirac 是弱稳态、任意概率弱稳态只能是此 Dirac、此 Dirac 对上述真实连续流弱吸引，完整保留 PDF228/印刷207 后向 Euler 段末的唯一性和吸引性。光滑线性场的弱稳态概率可由流保持解释，收缩流对所有初始概率的有界连续测试积分都趋于原点取值，因此这三项相互一致；没有把离散单步不变性或个别轨道趋零当作分布吸引结论。[EXTRA] 正h符合前进步长且排除h=0；概率归一化符合原书密度上下文，若不限定概率则0及cδ也满足线性弱方程，故该资格必要且合理；实际对数场精确嵌入本例后向 Euler 更新，公开选择此模型合理，未对任意有限阶 modified 场额外声称唯一性。对象、量词顺序和两个原文结论都忠实。无 [ERRATUM?] 标记，无须更正原文。结论为签名语义 PASS；证明体仍含 sorry，证明未完成，与此语义判定分开，本轮不写证明也不声称 Lean 证明已验证。
 
@@ -9517,9 +9538,9 @@ theorem backwardWeakStationary : ∀ h : ℝ,0 < h →
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:2143](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2143>)（`MD.Ch05.backwardWeakStationary`）。
+位置：[Blueprint/Ch05.lean:2243](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2243>)（`MD.Ch05.backwardWeakStationary`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -9544,10 +9565,10 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 ```lean
 theorem symplecticWeakStationary : ∀ h : ℝ,|h| < 2 →
   let f := fun z : MolecularDynamics.Chapter05Review.E 2 => WithLp.toLp 2
-    ![(gradient (MolecularDynamics.Chapter05Review.shadowOscillator h) z) 1,-(gradient (MolecularDynamics.Chapter05Review.shadowOscillator h) z) 0]
+    ![(gradient (symplecticEulerModifiedHamiltonian h) z) 1,-(gradient (symplecticEulerModifiedHamiltonian h) z) 0]
   ∀ Φ : ℝ → MolecularDynamics.Chapter05Review.E 2 → MolecularDynamics.Chapter05Review.E 2,MolecularDynamics.Chapter05Review.flow f Φ →
-    (∀ r : ℝ → ℝ,MolecularDynamics.Chapter05Review.probabilityDensity (fun z => r (MolecularDynamics.Chapter05Review.shadowOscillator h z)) →
-      weakStationary f (MolecularDynamics.Chapter05Review.densityMeasure (fun z => r (MolecularDynamics.Chapter05Review.shadowOscillator h z)))) ∧
+    (∀ r : ℝ → ℝ,MolecularDynamics.Chapter05Review.probabilityDensity (fun z => r (symplecticEulerModifiedHamiltonian h z)) →
+      weakStationary f (MolecularDynamics.Chapter05Review.densityMeasure (fun z => r (symplecticEulerModifiedHamiltonian h z)))) ∧
     (∃ μ ν : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ ∧ IsProbabilityMeasure ν ∧
       μ ≠ ν ∧ weakStationary f μ ∧ weakStationary f ν) ∧
     (∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ → weakStationary f μ → ¬weakAttractor Φ μ)
@@ -9559,12 +9580,13 @@ theorem symplecticWeakStationary : ∀ h : ℝ,|h| < 2 →
 |---|---|---|
 | 原文完整数学对象和展示式 | MD.Ch05.symplecticWeakStationary；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
 | 原文省略/技术资格 | [EXTRA]稳定区\|h\|<2下的真实二次modified Hamiltonian、Hamilton场及其实际全时间flow；保留能量函数密度弱稳态、至少两个不同概率稳态、全部概率稳态非吸引三项，不以单步能量保持替代。能量的正比例因子仅重参数化时间，不改变稳态/吸引命题。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA] 弱稳态接口使用前条实际一步对应的主对数modified Hamiltonian及其梯度场；函数能量密度、多种概率稳态和非吸引结论齐全，不把未按时间缩放的不变量场冒充数值步的时间h模型。 | [EXTRA] |
 
 ### 6. 审计结论
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT23**。原文JSON：DRAFT；未冻结。
 
 版本绑定：本次材料逐字节 SHA256 与上一轮三个附件一致；仅依据此绑定版本审计，不采纳其他旧工程文件。按补充规则，Mathlib v4.34.0 的标准定义直接采信，gradient 是欧氏内积对应的梯度，volume 是标准 Lebesgue 测度，不要求 Ch05_deps.txt 收录其定义体。项目自定义已展开：Ch05_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean 分段，E 2=EuclideanSpace ℝ (Fin 2)，坐标0、1分别是q、p；diracMeasure 2=Measure.dirac 0；testSpace 2 为 C∞ 紧支持实函数；lie f φ z=(fderiv ℝ φ z)(f z)。签名中的 MD.Ch05.weakStationary 由绑定 Blueprint/Ch05.lean 698–700行展开为：每个上述测试函数的 Lie 导数可积且对 μ 的积分为0，与依赖中的同名弱稳态定义一致，实现分布意义的 Liouville 稳态。weakAttractor（1757–1764行）展开为存在有限个有界连续测试函数及正 ε 所定义的概率弱拓扑邻域，使其中所有初始概率在全部有界连续测试函数下随实时间 t→+∞ 收敛到 μ；m=0 允许全局吸引。以上可积资格避免利用 Bochner 积分不可积时取0制造假稳态。本条另用的项目定义均已展开：依赖5320–5326行 flow f Φ 要求 Φ 0=id、全部实时间的群律及每条轨迹在每个时刻的导数为 f(Φ t z)；density 要求可测、逐点非负及 Lebesgue 可积，probabilityDensity 再要求积分1，densityMeasure=volume.withDensity(ENNReal.ofReal∘ρ)，所以其对象确为概率测度。依赖5403行 shadowOscillator h(q,p)=(q²+p²−hqp)/2。采信标准 gradient 后，其梯度实际为(q−hp/2,p−hq/2)，签名里的 f 实际为(p−hq/2,−q+hp/2)，是此二次式的规范 Hamilton 场，散度为0且保持该能量。依赖5402行 symplecticEuler 的更新为(q+h(p−hq),p−hq)，同样保持此二次式。|h|<2 时二次型正定；其精确 logarithmic modified Hamiltonian 可取 c(h)·shadowOscillator h，其中 c(h)=2 asin(h/2)/(h sqrt(1−h²/4))，h=0 取连续值1，在整个稳定区为正。因此签名使用的 Hamilton 场与精确连续嵌入场只差正时间缩放，能量函数密度的类别、弱稳态及吸引/非吸引结论一致。1852–1861行的量词顺序是先任意h及稳定区资格，定义f，再任意满足真实全时间 flow 的Φ，结论共有三项：(1)全部 r:ℝ→ℝ，只要 r∘shadowOscillator 是概率密度，其对应测度就满足弱PDE稳态；此处不需要额外假设r可微，沿流能量不变且体积保持足以保证任意此类可测密度不变，Lie导数对紧支测试函数可积；(2)存在两个不同概率弱稳态，例如原点Dirac和归一化 exp(−shadowOscillator) 密度，凸组合还给出无限多，忠实于 many solutions；(3)每个概率弱稳态对该真实Φ都非弱吸引，包含奇异稳态，忠实于 none ... attractive。对于任意目标稳态μ，选不同稳态σ，(1−ε)μ+εσ可任意接近μ且仍由流保持，某个有界连续测试函数区分两者，所以其轨道不能收敛到μ；这直接核对了该弱邻域吸引定义的否定，而不只诉诸单步能量保持。光滑线性Hamilton场有真实全时间唯一流，flow前提也没有令结论空泛。[EXTRA] 稳定区是原文 ellipse 背景必要的适用资格，h=±2退化、|h|>2为双曲；概率密度归一化合理；明确真实Hamilton场、全时间流和正比例时间缩放均不偷加最终结论。对象、全部量词、假设及三项结论忠实于 PDF228/印刷207 的两句话。无 [ERRATUM?] 标签；原文省略稳定区的地方已由公开 [EXTRA] 限定，没有静默改书。结论为签名语义 PASS；原先因 Mathlib gradient 定义体未收录而保留的 NEEDS_HUMAN 已按补充规则撤销。证明体仍含 sorry，证明未完成，本轮没有修改附件或补证明。
 
@@ -9572,12 +9594,12 @@ theorem symplecticWeakStationary : ∀ h : ℝ,|h| < 2 →
 
 **incomplete**；本地证明状态：placeholder。
 
-位置：[Blueprint/Ch05.lean:2152](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2152>)（`MD.Ch05.symplecticWeakStationary`）。
+位置：[Blueprint/Ch05.lean:2253](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:2253>)（`MD.Ch05.symplecticWeakStationary`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺真实弱Liouville测试函数变换、归一能量密度构造及全部稳态的弱邻域非吸引论证；保留完整三项，不建设大型算子/输运理论。
 
-签名SHA256：`630dc4a39591620ff94069ede7c76f5983629b20b7afc471c74361b6e7ed0dd3`；原文SHA256：`55f1b98784d4a498c58771cee9548eee6c72b6fbb2dcfce8997f28a0a68777ac`。
+签名SHA256：`ecde663c8c34422a3d79fac62705d7f146c0000e473555456f771f2012b60af3`；原文SHA256：`55f1b98784d4a498c58771cee9548eee6c72b6fbb2dcfce8997f28a0a68777ac`。

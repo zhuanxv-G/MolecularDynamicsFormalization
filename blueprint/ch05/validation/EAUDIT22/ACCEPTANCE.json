@@ -1,0 +1,54 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT22",
+  "section": "5.6",
+  "source_ids": [
+    "MD-5.6-DenominatorBound",
+    "MD-5.6-DynamicalCorrection",
+    "MD-5.6-EulerLogField",
+    "MD-5.6-ForwardNormDivergence",
+    "MD-5.6-SmoothDenominatorBound",
+    "MD-5.6-WeakAttractor",
+    "MD-5.6-WeakStationary",
+    "MD-5.6-ZeroPerturbation"
+  ],
+  "reaudit_ids": [
+    "MD-5.6-DenominatorBound",
+    "MD-5.6-SmoothDenominatorBound",
+    "MD-5.6-ZeroPerturbation",
+    "MD-5.6-DynamicalCorrection",
+    "MD-5.6-WeakStationary",
+    "MD-5.6-WeakAttractor",
+    "MD-5.6-EulerLogField"
+  ],
+  "human_ids": [
+    "MD-5.6-ForwardNormDivergence"
+  ],
+  "lean_sha256": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
+  "source_sha256": "58db1ce94fb1358d3263ccbe4ee71356070e296e5a215a3d1e7c58a28b8053ff",
+  "pages": [
+    227,
+    228,
+    229,
+    230
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch05.olean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
+    "log_sha256": "5a50add7ba4b31bddfc8c65758dabc7b4673f2f13db437ce95f5fc029b5ee5f2"
+  },
+  "axiom_decl_count": 8,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/INDEX.md"
+}

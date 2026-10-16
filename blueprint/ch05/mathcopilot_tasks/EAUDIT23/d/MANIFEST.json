@@ -1,0 +1,91 @@
+{
+  "eaudit": "EAUDIT23",
+  "source_id": "MD-5.6-BackwardWeakStationary",
+  "input_sha256": {
+    "BATCH_EAUDIT23.md": "e2777c8f477638c1f5d4e8ddbd39c82f036567be1781895b4d8eb8ae747d7b36",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT23d_materials": "0ca918b4ef6946ce91e0cd032c4c11e5ad0f9994013861f603e7d3a07ea6826d",
+    "EAUDIT23d_PAGES.pdf": "42419909c32835d0d31f3e0f5c337c934074d9b931bad364b67c7e041b69a9d4"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    228
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "ca1360897c27fb47ecf5a388868ce42c225e35f41aa014989dfce93a6841304a",
+  "source_block_sha256": "d2b3b1538f8c2c18f3d58863be3d5671893aae350779748e447387a287d26869",
+  "source_declarations": [
+    "backwardWeakStationary"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.diracMeasure",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "ca96b8fee35ed6961b57860ddb3f8fdd9b5b63ce5ad509cb42e478f84bfa58c9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.lie",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "6535744b913bb6f850c290344fb7d4a36f3647f43500d689c3a8228a92a2f8a8"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "diracMeasure",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "f916ccdc411fb3486ad2c4256195bc43de03294ebe5cf76065b5e51f6182c27e"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "eulerLogField",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "7e4ae379eb96a77abaa7fd3418edf4fbbed45e80339fc8ebbe3971b4a26f6258"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "eulerLogFlow",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "415862cf143ab44d5207a600a38711b44e515aa030cee02acd31004a72121c2e"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "lie",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "testSpace",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "784b6c51341eea9e2f4730af05c9d432b93334bc7aef25bb9b90a73067b141ac"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "weakAttractor",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "040ea486b068cfae0a47aa94bad3a7d54312d34bd0dfa380ef1f599a5dde608c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "weakStationary",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "5c456db7b0565dea9eb5b0d80e8149d5c0881860ed040d429dfe323577899eeb"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT23_review.json",
+  "total_task_bytes": 96125
+}

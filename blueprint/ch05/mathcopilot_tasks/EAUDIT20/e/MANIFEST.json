@@ -1,0 +1,93 @@
+{
+  "eaudit": "EAUDIT20",
+  "source_id": "MD-5.6-ModifiedLiouvillian",
+  "input_sha256": {
+    "BATCH_EAUDIT20.md": "702c7aa558ae74393a03aec1a350186fd473293f5318743d980eea6dcfe71609",
+    "Blueprint/Ch05.lean": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
+    "blueprint/ch05/ch05_source.json": "dcb0bf1a73710ce33502eec44758e19d996669a950b14a3901796bdf252fb4f9",
+    "EAUDIT20e_materials": "831f79dd85d61fb4bba11a8e740718c15ebd73ae717f217dc9457e09b4a19f8e",
+    "EAUDIT20e_PAGES.pdf": "fcf728ec28fcb6ad0529e0db98e311ee0e6ce79612814b2cf0b6d3354d230a74"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    227
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "7247537f648579333fe99bf5e1755bb760eff9ab7d4a3045be3c70409fe4f050",
+  "source_block_sha256": "d4998bc283eee321bd64995de8d9d9c9db348f8c9d6329aa5baed45c0f8d3c33",
+  "source_declarations": [
+    "modifiedLiouvillian",
+    "modifiedDensityEquation",
+    "modifiedLiouvillian_model_equivalence"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.divergence",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "dadd38091a1232e6bbd2460766d10afb82a44329b5f562152debdcd372b86255"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.lie",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "6535744b913bb6f850c290344fb7d4a36f3647f43500d689c3a8228a92a2f8a8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.liouvillian",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "db65bb7d048a7bb3083fcb5511c923eeec5534e5b66d837e1840d49f73dbfa32"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.modifiedField",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "9a9f20ccdf610b0080b91655c726c50dc6b03a3d90358bba3f22a9d55e1fc297"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "divergence",
+      "file_sha256": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
+      "excerpt_sha256": "ae0663325774e959009a1539ffd2ca1d15d645ff9af486a72942ee6115dd91a2"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "lie",
+      "file_sha256": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
+      "excerpt_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "liouvillian",
+      "file_sha256": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
+      "excerpt_sha256": "c00935b07e671ad9103bce966765d39374e8f4cbcc05a50f0b1ca0c40a9db1f8"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "modifiedDensityEquation",
+      "file_sha256": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
+      "excerpt_sha256": "fc95a97ccffa82b4daa26b306c489117d2e059c48f3938a40b05ff7bded04400"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "modifiedField",
+      "file_sha256": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
+      "excerpt_sha256": "67c4c75cefc5818edc68e74db29a0fc04367c12bf7107db29af8eac99553f5a4"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT20_review.json",
+  "total_task_bytes": 104275
+}

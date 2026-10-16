@@ -1,0 +1,59 @@
+{
+  "eaudit": "EAUDIT22",
+  "input_sha256": {
+    "BATCH_EAUDIT22.md": "0568146c0171aef4bc67a7e342dce9c4424ea19a9649fe0e6121e593ee0e01fc",
+    "Blueprint/Ch05.lean": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
+    "blueprint/ch05/ch05_source.json": "58db1ce94fb1358d3263ccbe4ee71356070e296e5a215a3d1e7c58a28b8053ff"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT22a",
+      "source_id": "MD-5.6-DenominatorBound",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/a",
+      "total_bytes": 100888,
+      "manifest_sha256": "86bbb2c5c15c6e09e2b47b26593d20dae5827035f96adfff777634e51f14c66f"
+    },
+    {
+      "subtask": "EAUDIT22b",
+      "source_id": "MD-5.6-SmoothDenominatorBound",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/b",
+      "total_bytes": 100805,
+      "manifest_sha256": "e96cc6cbb8f4a810c9b061c21422013e176d519b498780edeae4c53e6964217c"
+    },
+    {
+      "subtask": "EAUDIT22c",
+      "source_id": "MD-5.6-ZeroPerturbation",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/c",
+      "total_bytes": 111022,
+      "manifest_sha256": "574ba45eabea7485320fde373864285ce096f7d1c0e74462c24c87938e94668c"
+    },
+    {
+      "subtask": "EAUDIT22d",
+      "source_id": "MD-5.6-DynamicalCorrection",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/d",
+      "total_bytes": 113252,
+      "manifest_sha256": "ff84ba908959b4990c3c67909e19c2b8507be71e92e6715f37d0a41094a26984"
+    },
+    {
+      "subtask": "EAUDIT22e",
+      "source_id": "MD-5.6-WeakStationary",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/e",
+      "total_bytes": 93820,
+      "manifest_sha256": "2ddcdc5d8f4228c7da09c07ffa17dc114e7125e2ca4e09f1f3994b71b0e9e755"
+    },
+    {
+      "subtask": "EAUDIT22f",
+      "source_id": "MD-5.6-WeakAttractor",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/f",
+      "total_bytes": 92807,
+      "manifest_sha256": "92c0678e1bb4414dda50cc3d07a3d567028f10bb278622acb987646d0a3840bd"
+    },
+    {
+      "subtask": "EAUDIT22g",
+      "source_id": "MD-5.6-EulerLogField",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/g",
+      "total_bytes": 92041,
+      "manifest_sha256": "32446e62a83c6ee364856443c7bf0c9ea3fe4e65b7bbf5c5d00a852a86ccc092"
+    }
+  ]
+}

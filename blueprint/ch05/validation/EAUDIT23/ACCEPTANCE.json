@@ -1,0 +1,47 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT23",
+  "section": "5.6",
+  "source_ids": [
+    "MD-5.6-BackwardWeakStationary",
+    "MD-5.6-EulerLogCorrespondence",
+    "MD-5.6-EulerLogFlow",
+    "MD-5.6-ForwardWeakStationary",
+    "MD-5.6-SymplecticWeakStationary"
+  ],
+  "reaudit_ids": [
+    "MD-5.6-EulerLogFlow",
+    "MD-5.6-EulerLogCorrespondence",
+    "MD-5.6-ForwardWeakStationary",
+    "MD-5.6-BackwardWeakStationary",
+    "MD-5.6-SymplecticWeakStationary"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "pages": [
+    227,
+    228,
+    229,
+    230
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch05.olean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "log_sha256": "828124fe4b077e6eb5efb06671b2f6dbb213781424c4482b8bdc2f79b069c6ba"
+  },
+  "axiom_decl_count": 5,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT23/INDEX.md"
+}

@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT20",
+  "source_id": "MD-5.6-DiscretePropagator",
+  "input_sha256": {
+    "BATCH_EAUDIT20.md": "702c7aa558ae74393a03aec1a350186fd473293f5318743d980eea6dcfe71609",
+    "Blueprint/Ch05.lean": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
+    "blueprint/ch05/ch05_source.json": "dcb0bf1a73710ce33502eec44758e19d996669a950b14a3901796bdf252fb4f9",
+    "EAUDIT20c_materials": "bce12e6a161f113ab6b4bd88f93fa1fbf4efd2891d7c9348a8ecaafb1b2436e6",
+    "EAUDIT20c_PAGES.pdf": "fcf728ec28fcb6ad0529e0db98e311ee0e6ce79612814b2cf0b6d3354d230a74"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    227
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "ba8bbc089ffcd66ed11d429c2cffe27ce813bcd9f91b727e194faa863a4daf35",
+  "source_block_sha256": "c0a1c5e9fcce7e6f88f7689f746dbee177f3d4b3ab52a74b08379dab00e6501d",
+  "source_declarations": [
+    "discretePropagator"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "discretePropagator",
+      "file_sha256": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
+      "excerpt_sha256": "c0a1c5e9fcce7e6f88f7689f746dbee177f3d4b3ab52a74b08379dab00e6501d"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT20_review.json",
+  "total_task_bytes": 95783
+}

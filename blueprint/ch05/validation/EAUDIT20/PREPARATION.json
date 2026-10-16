@@ -1,0 +1,43 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT20",
+  "section": "5.6",
+  "source_ids": [
+    "MD-5.6-DiscreteAverage",
+    "MD-5.6-DiscreteAveragePrinted",
+    "MD-5.6-DiscretePropagator",
+    "MD-5.6-EulerInvariant",
+    "MD-5.6-ForwardComponentsPrinted",
+    "MD-5.6-ForwardEnergyGrowth",
+    "MD-5.6-ModifiedField",
+    "MD-5.6-ModifiedLiouvillian"
+  ],
+  "reaudit_ids": [
+    "MD-5.6-DiscreteAveragePrinted",
+    "MD-5.6-DiscreteAverage",
+    "MD-5.6-DiscretePropagator",
+    "MD-5.6-ModifiedField",
+    "MD-5.6-ModifiedLiouvillian",
+    "MD-5.6-ForwardEnergyGrowth",
+    "MD-5.6-EulerInvariant"
+  ],
+  "human_ids": [
+    "MD-5.6-ForwardComponentsPrinted"
+  ],
+  "old_lean_sha256": "2de1b1e1e2d9d2e855163d66c10400d1bc299b9dfab8697acf55a2b6d3ef896f",
+  "lean_sha256": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
+  "source_sha256": "dcb0bf1a73710ce33502eec44758e19d996669a950b14a3901796bdf252fb4f9",
+  "pages": [
+    227,
+    228,
+    229,
+    230
+  ],
+  "prior_proof_blocks": {
+    "MD-5.6-DiscreteAverage": "def discreteAverage {X : Type*} (G : X → X) (g : X → ℝ) (z : X) (N : ℕ) :=\n  (N : ℝ)⁻¹*∑ k ∈ Finset.range N,g (G^[k] z)",
+    "MD-5.6-DiscretePropagator": "def discretePropagator {X : Type*} [MeasurableSpace X] (G : X → X) (μ : Measure X) := Measure.map G μ",
+    "MD-5.6-ModifiedLiouvillian": "theorem modifiedLiouvillian :\n  ∀ n (f fr : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ) h r,\n  Differentiable ℝ f → Differentiable ℝ fr → Differentiable ℝ u → ∀ z,\n  MolecularDynamics.Chapter05Review.liouvillian (MolecularDynamics.Chapter05Review.modifiedField f fr h r) u z=MolecularDynamics.Chapter05Review.liouvillian f u z+h^r*MolecularDynamics.Chapter05Review.liouvillian fr u z := by\n  intro n f fr u h r hf hfr hu z\n  have hx : DifferentiableAt ℝ (MolecularDynamics.Chapter05Review.modifiedField f fr h r) z :=\n    (hf z).add ((hfr z).const_smul (h^r))\n  rw [liouvilleProduct n _ u z hx (hu z),liouvilleProduct n f u z (hf z) (hu z),\n    liouvilleProduct n fr u z (hfr z) (hu z)]\n  have hd : MolecularDynamics.Chapter05Review.divergence (MolecularDynamics.Chapter05Review.modifiedField f fr h r) z=\n      MolecularDynamics.Chapter05Review.divergence f z+(h^r)*MolecularDynamics.Chapter05Review.divergence fr z := by\n    unfold MolecularDynamics.Chapter05Review.divergence MolecularDynamics.Chapter05Review.modifiedField\n    change LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n)\n      (fderiv ℝ (f+(h^r) • fr) z).toLinearMap=_\n    rw [((hf z).hasFDerivAt.add ((hfr z).hasFDerivAt.const_smul (h^r))).fderiv]\n    change LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n)\n      ((fderiv ℝ f z).toLinearMap+(h^r) • (fderiv ℝ fr z).toLinearMap)=_\n    simp only [map_add,map_smul,smul_eq_mul]\n  have hl : MolecularDynamics.Chapter05Review.lie (MolecularDynamics.Chapter05Review.modifiedField f fr h r) u z=\n      MolecularDynamics.Chapter05Review.lie f u z+(h^r)*MolecularDynamics.Chapter05Review.lie fr u z := by\n    simp [MolecularDynamics.Chapter05Review.lie,MolecularDynamics.Chapter05Review.modifiedField,\n      map_add,map_smul,smul_eq_mul]\n  rw [hd,hl]\n  ring",
+    "MD-5.6-ForwardEnergyGrowth": "theorem forwardEnergyGrowth : ∀ (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) (k : ℕ),\n  (((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z) 0)^2+(((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z) 1)^2=\n    (1+h^2)^k*((z 0)^2+(z 1)^2) := by\n  intro h z k\n  have hs (x : MolecularDynamics.Chapter05Review.E 2) :\n      (MolecularDynamics.Chapter05Review.forwardEuler h x 0)^2+\n        (MolecularDynamics.Chapter05Review.forwardEuler h x 1)^2=(1+h^2)*((x 0)^2+(x 1)^2) := by\n    simp [MolecularDynamics.Chapter05Review.forwardEuler]\n    ring\n  induction k with\n  | zero => simp\n  | succ k ih =>\n    rw [Function.iterate_succ_apply',hs,ih,pow_succ]\n    ring",
+    "MD-5.6-EulerInvariant": "theorem eulerInvariant :\n  ∀ h : ℝ, h ≠ 0 → ∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),\n  IsProbabilityMeasure μ → MeasurePreserving (MolecularDynamics.Chapter05Review.forwardEuler h) μ μ → μ=MolecularDynamics.Chapter05Review.diracMeasure 2 := by\n  intro h hh μ hμ hΦ\n  letI := hμ\n  have heq : ∀ᵐ z ∂μ,z=(0 : MolecularDynamics.Chapter05Review.E 2) := by\n    filter_upwards [hΦ.conservative.ae_frequently_mem_of_mem_nhds] with z hz\n    by_contra hn\n    have hs : 0 < (z 0)^2+(z 1)^2 := by\n      have hs' : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hn) _\n      rw [EuclideanSpace.norm_sq_eq] at hs'\n      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using hs'\n    have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]\n    have ht := (tendsto_pow_atTop_atTop_of_one_lt hp).atTop_mul_const hs\n    have hret := hz (Metric.ball 0 (‖z‖+1))\n      (Metric.isOpen_ball.mem_nhds (by simp [Metric.mem_ball,dist_zero_right]))\n    obtain ⟨k,hk,hlarge⟩ := (hret.and_eventually\n      (ht.eventually (eventually_ge_atTop ((‖z‖+1)^2+1)))).exists\n    have hen : ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖^2=\n        (1+h^2)^k*((z 0)^2+(z 1)^2) := by\n      rw [EuclideanSpace.norm_sq_eq]\n      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using forwardEnergyGrowth h z k\n    rw [←hen] at hlarge\n    rw [Metric.mem_ball,dist_zero_right] at hk\n    nlinarith [norm_nonneg ((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z),norm_nonneg z]\n  have hm : Measure.map (fun z : MolecularDynamics.Chapter05Review.E 2 => z) μ =\n      Measure.map (fun _ : MolecularDynamics.Chapter05Review.E 2 => (0 : MolecularDynamics.Chapter05Review.E 2)) μ := Measure.map_congr heq\n  simpa [MolecularDynamics.Chapter05Review.diracMeasure,Measure.map_id,Measure.map_const] using hm"
+  }
+}

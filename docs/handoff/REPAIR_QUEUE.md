@@ -2,13 +2,13 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 36；章末验收待完成 [5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 0；章末验收待完成 [5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 51 / 已修待复审 78 / 待导师 20 / 修复中 0。
 第4章：网站PASS 42 / 已修待复审 110 / 待导师 27 / 修复中 0。
-第5章：网站PASS 60 / 已修待复审 90 / 待导师 13 / 修复中 20。
+第5章：网站PASS 51 / 已修待复审 117 / 待导师 15 / 修复中 0。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
 |---|---|---|---|---|---|---|
@@ -649,37 +649,37 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 5 | MD-5.5-MixingCorrelationPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT17 |
 | 5 | MD-5.5-MixingCorrelation | FAIL | B | 修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。 | 已修待复审 | EAUDIT17 |
 | 5 | MD-5.5-CenteredCorrelation | FAIL | B | 扩至向量观测量、任意一向量Bochner零均值及相关绝对值趋零，保留旧标量证明辅助；不添加单调衰减。 | 已修待复审 | EAUDIT19 |
-| 5 | MD-5.6-DiscreteAveragePrinted | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-DiscreteAverage | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-DiscretePropagator | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-ModifiedField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-ModifiedLiouvillian | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.6-DiscreteAveragePrinted | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT20 |
+| 5 | MD-5.6-DiscreteAverage | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅标准N项平均的独立衍生变体；原印N+1项精确有限统计量由MD-5.6-DiscreteAveragePrinted承担，不宣称两有限值相同。 | 已修待复审 | EAUDIT20 |
+| 5 | MD-5.6-DiscretePropagator | FAIL | A | 离散分布传播主接口显式限定可测G，避免不可测映射的Measure.map零总化被当概率推前。 | 已修待复审 | EAUDIT20 |
+| 5 | MD-5.6-ModifiedField | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT20 |
+| 5 | MD-5.6-ModifiedLiouvillian | FAIL | B | 保留算子线性证明，并新增原文假设的修正模型PDE定义（r≥1），与展开右侧的等价式；仅定义模型及其算子展开，不声称任意空间可微ρ自动满足PDE。 | 已修待复审 | EAUDIT20 |
 | 5 | MD-5.6-ForwardEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-ForwardComponentsPrinted | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 5 | MD-5.6-ForwardEnergyGrowth | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
-| 5 | MD-5.6-EulerInvariant | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-BackwardEuler | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
-| 5 | MD-5.6-BackwardEnergyDecay | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
-| 5 | MD-5.6-BackwardEulerLimit | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.6-ForwardComponentsPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT20 |
+| 5 | MD-5.6-ForwardEnergyGrowth | FAIL | B | 保留能量精确增长率并补原谱结论：两个复特征值恰为1±ih及模√(1+h²)>1，非零步长显式；不替换原两分量疑误。 | 已修待复审 | EAUDIT20 |
+| 5 | MD-5.6-EulerInvariant | FAIL | B | 除离散唯一性再补非Dirac初始概率的离散推前无任何弱概率极限；连续modified模型/稳态/非吸引分别明确绑定EulerLogCorrespondence与ForwardWeakStationary。 | 已修待复审 | EAUDIT20 |
+| 5 | MD-5.6-BackwardEuler | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅隐式Euler的显式解映射定义；完整复谱与模由MD-5.6-BackwardEnergyDecay补列，所有迭代趋零由MD-5.6-BackwardEulerLimit承担。 | 已修待复审 | EAUDIT21 |
+| 5 | MD-5.6-BackwardEnergyDecay | FAIL | B | 保留能量衰减已有证明，补两个完整复特征值及模严格小于1；迭代趋零由BackwardEulerLimit，实际模型由EulerLogCorrespondence/BackwardWeakStationary承担。 | 已修待复审 | EAUDIT21 |
+| 5 | MD-5.6-BackwardEulerLimit | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅所有离散迭代趋零及任意初始概率弱趋Dirac；实际modified流一步对应由MD-5.6-EulerLogCorrespondence，概率弱稳态唯一及连续吸引由MD-5.6-BackwardWeakStationary承担。 | 已修待复审 | EAUDIT21 |
 | 5 | MD-5.6-SymplecticEuler | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-SymplecticEulerShadow | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
-| 5 | MD-5.6-SymplecticEulerEllipse | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-SymplecticEulerDensity | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.6-SymplecticEulerShadow | FAIL | B | 保留一步不变量证明，补稳定区内主对数Hamiltonian=c(h)·二次不变量、c>0、实际矩阵指数Hamiltonian流及其时间h恰为离散步，并给两能量有界域O(h²)比例差；全部k/椭圆由SymplecticEulerEllipse、弱稳态由SymplecticWeakStationary承担。新增模型是显式技术选择，不冒称唯一修正能量。 | 已修待复审 | EAUDIT21 |
+| 5 | MD-5.6-SymplecticEulerEllipse | PASS | B | 保留正定/全部k保持证明，并补正能级椭圆拓扑及零能级单点退化；二次不变量作为modified Hamiltonian的显式固定选择，实际场/流资格见SymplecticWeakStationary，不声称唯一修正能量。 | 已修待复审 | EAUDIT21 |
+| 5 | MD-5.6-SymplecticEulerDensity | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅离散映射的函数能量密度不变；连续modified能量场、概率弱稳态多样与非吸引由MD-5.6-SymplecticWeakStationary承担，原整段保留。 | 已修待复审 | EAUDIT21 |
 | 5 | MD-5.6-VerletShadow2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-Theorem51 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
+| 5 | MD-5.6-Theorem51 | PASS | C | 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | 已修待复审 | EAUDIT21 |
 | 5 | MD-5.6-PerturbationDisplacement | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-PerturbationCorrection | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复 | — |
-| 5 | MD-5.6-DenominatorBound | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 5 | MD-5.6-SmoothDenominatorBound | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复 | — |
-| 5 | MD-5.6-ZeroPerturbation | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.6-PerturbationCorrection | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Theorem5.1右端两个平均组成的校正项定义；完整正则能量族平均误差估计由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT21 |
+| 5 | MD-5.6-DenominatorBound | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅紧能量面横截分母的正下界衍生引理；原光滑与横截资格及完整平均扰动公式由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT22 |
+| 5 | MD-5.6-SmoothDenominatorBound | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅C² H/连续w的横截分母下界一般化衍生引理；原光滑资格及完整公式由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT22 |
+| 5 | MD-5.6-ZeroPerturbation | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅η≡0校正量为零的后果；一般位移定义由MD-5.6-PerturbationDisplacement、完整平均误差由MD-5.6-Theorem51承担。 | 已修待复审 | EAUDIT22 |
 | 5 | MD-5.6-GradientTransverse | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-DynamicalCorrection | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-ForwardNormDivergence | FAIL | D（初筛，未确认） | 核对是否需数学判断；确认后仅登记NEEDS_HUMAN | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-WeakStationary | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-WeakAttractor | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-EulerLogField | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-EulerLogFlow | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-EulerLogCorrespondence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-ForwardWeakStationary | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.6-BackwardWeakStationary | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.6-SymplecticWeakStationary | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
+| 5 | MD-5.6-DynamicalCorrection | PASS | C | 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 | 已修待复审 | EAUDIT22 |
+| 5 | MD-5.6-ForwardNormDivergence | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT22 |
+| 5 | MD-5.6-WeakStationary | FAIL | C | 仅弱PDE技术谓词，实际使用Blueprint修正后的C∞测试空间；原唯一概率断言由MD-5.6-ForwardWeakStationary承担。 | 已修待复审 | EAUDIT22 |
+| 5 | MD-5.6-WeakAttractor | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅弱概率局部吸引的辅助技术定义；原负吸引性断言由MD-5.6-ForwardWeakStationary承担，不把定义本身当否定结论。 | 已修待复审 | EAUDIT22 |
+| 5 | MD-5.6-EulerLogField | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅单位振子h>0时新增的精确对数场技术模型（h=0总延拓不用作物理解释）；实际一步/ODE对应由MD-5.6-EulerLogCorrespondence，唯一概率稳态由MD-5.6-ForwardWeakStationary承担。 | 已修待复审 | EAUDIT22 |
+| 5 | MD-5.6-EulerLogFlow | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅单位振子h>0新增的精确对数流技术定义；ODE与实际Euler一步的识别由MD-5.6-EulerLogCorrespondence承担，不冒称一般有限截断modified场。 | 已修待复审 | EAUDIT23 |
+| 5 | MD-5.6-EulerLogCorrespondence | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT23 |
+| 5 | MD-5.6-ForwardWeakStationary | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT23 |
+| 5 | MD-5.6-BackwardWeakStationary | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT23 |
+| 5 | MD-5.6-SymplecticWeakStationary | PASS | B | 弱稳态接口使用前条实际一步对应的主对数modified Hamiltonian及其梯度场；函数能量密度、多种概率稳态和非吸引结论齐全，不把未按时间缩放的不变量场冒充数值步的时间h模型。 | 已修待复审 | EAUDIT23 |

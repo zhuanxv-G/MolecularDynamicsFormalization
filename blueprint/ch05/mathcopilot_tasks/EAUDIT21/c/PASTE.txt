@@ -1,0 +1,113 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.6-BackwardEulerLimit；原PDF页映射=[228]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT21_review.json，对象含batch=EAUDIT21、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT21.md": "9989d190d0b63e57303ce146d11bcff1c8b5436da43a0d3684a23bb13a77ddc3",
+  "Blueprint/Ch05.lean": "58e2a7e0281aba00df6c8de24fedd428afc464fc81cf7ce1fd0acd60175adaf5",
+  "blueprint/ch05/ch05_source.json": "29a5e1cc5bf249700a0689f50574895d395059cd7dd463af9b25c08af8e2726e",
+  "EAUDIT21c_materials": "dd36d3a14fafb6915658bd397c322f4ed53c04deec18860ba05df69aa78a765f",
+  "EAUDIT21c_PAGES.pdf": "42419909c32835d0d31f3e0f5c337c934074d9b931bad364b67c7e041b69a9d4"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.6-BackwardEulerLimit",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.6",
+  "printed_page": "207",
+  "pdf_page": "228",
+  "statement_latex": "all solutions of the recurrence relation tend to the origin with increasing $n$ (the origin is an attractive equilibrium point). In this case, all densities evolve toward the Dirac distribution centered at the origin: $\\delta[q]\\delta[p]$. The only (distributional) solution of $\\mathcal L_{\\widetilde f}\\rho=0$ is again $\\delta[q]\\delta[p]$, which in this case is attractive.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.backwardEulerLimit",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]h≠0及实际任意初始概率测度；全轨道收缩与对每个有界连续测试函数的弱趋Dirac两个结论，非普通密度逐点收敛。",
+    "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅所有离散迭代趋零及任意初始概率弱趋Dirac；实际modified流一步对应由MD-5.6-EulerLogCorrespondence，概率弱稳态唯一及连续吸引由MD-5.6-BackwardWeakStationary承担。"
+  ],
+  "statement_scope": "仅所有离散迭代趋零及任意初始概率弱趋Dirac；实际modified流一步对应由MD-5.6-EulerLogCorrespondence，概率弱稳态唯一及连续吸引由MD-5.6-BackwardWeakStationary承担。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT21_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T10:18:38.392728",
+      "before_sha256": "8e353e10cfab2df0bfc678304ee8e28b2a786a53f5d9a2d0a241aed35e73407e",
+      "after_sha256": "27401cd7fa4c7f1aaebcbf5178373b8542db1e43d7f4027e84184c51008ff06f",
+      "changed_fields": [
+        "statement_latex",
+        "statement_scope"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH25_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem backwardEulerLimit :
+  ∀ h : ℝ,h ≠ 0 →
+  (∀ z : MolecularDynamics.Chapter05Review.E 2,Tendsto (fun k : ℕ => (MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) atTop (𝓝 0)) ∧
+  ∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ → ∀ φ : MolecularDynamics.Chapter05Review.E 2 → ℝ,
+    Continuous φ → Bornology.IsBounded (range φ) →
+    Tendsto (fun k : ℕ => ∫ z,φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) ∂μ) atTop (𝓝 (φ 0)) := by
+  intro h hh
+  have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]
+  have hc : Continuous (MolecularDynamics.Chapter05Review.backwardEuler h) := by
+    unfold MolecularDynamics.Chapter05Review.backwardEuler
+    fun_prop
+  have hz (z : MolecularDynamics.Chapter05Review.E 2) :
+      Tendsto (fun k : ℕ => (MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) atTop (𝓝 0) := by
+    apply tendsto_zero_iff_norm_tendsto_zero.mpr
+    have he (k : ℕ) : ‖(MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z‖^2=
+        (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2) := by
+      rw [EuclideanSpace.norm_sq_eq]
+      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using backwardEnergyDecay h z k
+    have hs : Tendsto (fun k : ℕ => (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2)) atTop (𝓝 0) := by
+      simpa only [zero_mul] using (tendsto_pow_atTop_nhds_zero_of_lt_one
+        (inv_nonneg.mpr (by positivity : 0 ≤ 1+h^2)) ((inv_lt_one₀ (by positivity)).mpr hp)).mul_const ((z 0)^2+(z 1)^2)
+    convert (Real.continuous_sqrt.tendsto 0).comp hs using 1
+    · funext k
+      simp only [Function.comp_apply]
+      rw [←he,Real.sqrt_sq (norm_nonneg _)]
+    · simp
+  refine ⟨hz,?_⟩
+  intro μ hμ φ hφ hb
+  letI := hμ
+  obtain ⟨C,hC,hB⟩ := hb.exists_pos_norm_le
+  have hd := tendsto_integral_filter_of_dominated_convergence
+    (μ:=μ) (fun _ : MolecularDynamics.Chapter05Review.E 2 => C)
+    (F:=fun k z => φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z))
+    (f:=fun _ => φ 0)
+    (Eventually.of_forall (fun k => (hφ.comp (hc.iterate k)).measurable.aestronglyMeasurable))
+    (Eventually.of_forall (fun k => ae_of_all μ (fun z => hB (φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z)) (mem_range_self _))))
+    (integrable_const C) (ae_of_all μ (fun z => (hφ.tendsto 0).comp (hz z)))
+  simpa using hd
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.backwardEuler
+```lean
+def backwardEuler (h : ℝ) (z : E 2) : E 2 :=
+  WithLp.toLp 2 ![(z 0+h*z 1)/(1+h^2),(z 1-h*z 0)/(1+h^2)]
+```
+### 实际依赖 MD.Ch05.backwardEuler
+```lean
+def backwardEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 :=
+  WithLp.toLp 2 ![(z 0+h*z 1)/(1+h^2),(z 1-h*z 0)/(1+h^2)]
+```
