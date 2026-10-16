@@ -1,0 +1,73 @@
+{
+  "eaudit": "EAUDIT06",
+  "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+  "input_sha256": {
+    "BATCH_EAUDIT06.md": "00e463bff971ca0447b5b48397305936a2e5f9b59e17a71b013bd3ea47513997",
+    "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+    "blueprint/ch05/ch05_source.json": "a35b90dec1eb8c068412e36be8b1b3ccf18ec6b12be16d4bc8a52cc59b847dd9",
+    "EAUDIT06a_materials": "df95af9a336e6b9e5e842edea61912237aa44548730ea0490ba3694abbb9b55f",
+    "EAUDIT06a_PAGES.pdf": "376e46aedd6a08b1bec7ebdf1a421ed8a225b4cfd2ccb7bcd97ae61b3fbe49de"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    207
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "48cf5c1ffb7ed5f30c325e83acc099f11eb22f93dcdd0b3600d1935a69ac73a1",
+  "source_block_sha256": "4e49e2249b7135d5074b18a2d2257381f19b62b2ac56780fd9e5ab38e42e61f2",
+  "source_declarations": [
+    "hamiltonianSkewExpression"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.divergence",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "dadd38091a1232e6bbd2460766d10afb82a44329b5f562152debdcd372b86255"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.lie",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "6535744b913bb6f850c290344fb7d4a36f3647f43500d689c3a8228a92a2f8a8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.liouvillian",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "db65bb7d048a7bb3083fcb5511c923eeec5534e5b66d837e1840d49f73dbfa32"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "divergence",
+      "file_sha256": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+      "excerpt_sha256": "ae0663325774e959009a1539ffd2ca1d15d645ff9af486a72942ee6115dd91a2"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "lie",
+      "file_sha256": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+      "excerpt_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "liouvillian",
+      "file_sha256": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+      "excerpt_sha256": "c00935b07e671ad9103bce966765d39374e8f4cbcc05a50f0b1ca0c40a9db1f8"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT06_review.json",
+  "total_task_bytes": 81030
+}

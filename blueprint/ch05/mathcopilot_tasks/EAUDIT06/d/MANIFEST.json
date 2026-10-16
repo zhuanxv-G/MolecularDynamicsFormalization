@@ -1,0 +1,73 @@
+{
+  "eaudit": "EAUDIT06",
+  "source_id": "MD-5.2.3-MechanicalLiouvillianIdentity",
+  "input_sha256": {
+    "BATCH_EAUDIT06.md": "00e463bff971ca0447b5b48397305936a2e5f9b59e17a71b013bd3ea47513997",
+    "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+    "blueprint/ch05/ch05_source.json": "a35b90dec1eb8c068412e36be8b1b3ccf18ec6b12be16d4bc8a52cc59b847dd9",
+    "EAUDIT06d_materials": "c92a9ee0f250561579ad03272eacd57e110a37fe59b29d7868792b289fbccaea",
+    "EAUDIT06d_PAGES.pdf": "cc7af8a5f68feb6109ce6a61a8418cff99f3003eccb4f22b4ec0554f037bd430"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    208
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "97a609c46a70adc306e4565a80d43124e2bbd7fe9dde5bc1e4b436ef81da74be",
+  "source_block_sha256": "50fbab07a1664ce9127d1cf164d217be62b10760fc141ca5bc887530a7515837",
+  "source_declarations": [
+    "mechanicalLiouvillianIdentity"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.Phase",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.hamiltonianField",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "4f05d76990caeba1ebe6bb44db6a853798fc2c13442b61c83c53f2406a82b648"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.mechanicalLiouvillian",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "91cc8f180b1459ed9f385913a6705d0bc456e3f7264c9d3e54e04ab79be9f48d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "Phase",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "hamiltonianField",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "4f05d76990caeba1ebe6bb44db6a853798fc2c13442b61c83c53f2406a82b648"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "mechanicalLiouvillian",
+      "file_sha256": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+      "excerpt_sha256": "1d6f6e14697b5860080ae941ca3a32f9df29a9ab6b6d0f7d96b46d8dd53a49b2"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT06_review.json",
+  "total_task_bytes": 104787
+}

@@ -3930,7 +3930,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH09_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "00e463bff971ca0447b5b48397305936a2e5f9b59e17a71b013bd3ea47513997",
+        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+        "blueprint/ch05/ch05_source.json": "a35b90dec1eb8c068412e36be8b1b3ccf18ec6b12be16d4bc8a52cc59b847dd9"
+      }
+    }
   },
   {
     "source_id": "MD-5.2.3-HamiltonianDensityPropagation",
@@ -4018,7 +4030,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH09_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "00e463bff971ca0447b5b48397305936a2e5f9b59e17a71b013bd3ea47513997",
+        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+        "blueprint/ch05/ch05_source.json": "a35b90dec1eb8c068412e36be8b1b3ccf18ec6b12be16d4bc8a52cc59b847dd9"
+      }
+    }
   },
   {
     "source_id": "MD-5.2.3-MechanicalLiouvillian",
@@ -4115,7 +4139,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH09_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "00e463bff971ca0447b5b48397305936a2e5f9b59e17a71b013bd3ea47513997",
+        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+        "blueprint/ch05/ch05_source.json": "a35b90dec1eb8c068412e36be8b1b3ccf18ec6b12be16d4bc8a52cc59b847dd9"
+      }
+    }
   },
   {
     "source_id": "MD-5.2.3-MechanicalLiouvillianIdentity",
@@ -4206,7 +4242,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH09_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT06",
+    "repair": {
+      "eaudit": "EAUDIT06",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT06.md": "00e463bff971ca0447b5b48397305936a2e5f9b59e17a71b013bd3ea47513997",
+        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+        "blueprint/ch05/ch05_source.json": "a35b90dec1eb8c068412e36be8b1b3ccf18ec6b12be16d4bc8a52cc59b847dd9"
+      }
+    }
   },
   {
     "source_id": "MD-5.3.1-TestSpace",

@@ -55,10 +55,10 @@
 | MD-5.2.2-CompactAdjoint | 185–186/206–207 | PASS | 待复审 / EAUDIT05 | incomplete |
 | MD-5.2.2-MeasurePropagator | 186/207 | PASS | 待复审 / EAUDIT05 | incomplete |
 | MD-5.2.3-HamiltonianDivergence | 186/207 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | checked+documented priors |
-| MD-5.2.3-HamiltonianSkewExpression | 186/207 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.2.3-HamiltonianDensityPropagation | 187/208 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | incomplete |
-| MD-5.2.3-MechanicalLiouvillian | 187/208 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
-| MD-5.2.3-MechanicalLiouvillianIdentity | 187/208 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | incomplete |
+| MD-5.2.3-HamiltonianSkewExpression | 186/207 | PASS | 待复审 / EAUDIT06 | self-contained |
+| MD-5.2.3-HamiltonianDensityPropagation | 187/208 | PASS | 待复审 / EAUDIT06 | incomplete |
+| MD-5.2.3-MechanicalLiouvillian | 187/208 | PASS | 待复审 / EAUDIT06 | self-contained |
+| MD-5.2.3-MechanicalLiouvillianIdentity | 187/208 | PASS | 待复审 / EAUDIT06 | incomplete |
 | MD-5.3.1-TestSpace | 188/209 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.3.1-SchwartzSpace | 188/209 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
 | MD-5.3.1-GeneralizedFunction | 188/209 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | self-contained |
@@ -2751,7 +2751,7 @@ Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.
 
 ### 2. 原文陈述
 
-> From the above we know that for a smooth scalar function $u=u(z)$, $\mathcal L_f^*u=-\nabla\cdot(uf)=-f\cdot\nabla u-u\nabla\cdot f$. The term $\nabla\cdot f$ vanishes for $f=J\nabla H$. Thus we have $\mathcal L_f^*u=-f\cdot\nabla u=-\mathcal L_fu$. If this holds for all smooth $u$, we write $\mathcal L_f^*=-\mathcal L_f$.
+> From the above we know that for a smooth scalar function $u=u(z)$, $\mathcal L_f^\daggeru=-\nabla\cdot(uf)=-f\cdot\nabla u-u\nabla\cdot f$. The term $\nabla\cdot f$ vanishes for $f=J\nabla H$. Thus we have $\mathcal L_f^\daggeru=-f\cdot\nabla u=-\mathcal L_fu$. If this holds for all smooth $u$, we write $\mathcal L_f^\dagger=-\mathcal L_f$.
 
 ### 3. 原文证明
 
@@ -2779,7 +2779,7 @@ theorem hamiltonianSkewExpression :
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT06**。原文JSON：CORRECTED；未冻结。
 
 PASS：ReviewDefinitions.lean 中 E n=EuclideanSpace ℝ (Fin n)，lie f u z=Du(z)[f(z)]，divergence f z=trace(Df(z))，liouvillian f u z=−div(u f)(z)，不是未解释的占位符。先任取 n,f,u，再要求 f,u 全局可微及各点 div f=0，最后对所有 z 断言 −div(u f)=−Du[f]；展开乘积法则即原书两项式中第二项消失。对全部 u 的量化保留形式算子等式；Hamiltonian 特例由上一条的零散度结论提供。[EXTRA]一般零散度场是合理推广，可微是 smooth 的较弱充分条件；不声称已构造 Hilbert 空间闭算子伴随，无需追加算子定义域。无 [ERRATUM?]。本声明本体无 sorry，使用 liouvilleProduct；证明完成状态与签名忠实性分开，本次未编译。
 
@@ -2789,20 +2789,20 @@ PASS：ReviewDefinitions.lean 中 E n=EuclideanSpace ℝ (Fin n)，lie f u z=Du(
 
 位置：[Blueprint/Ch05.lean:554](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:554>)（`MD.Ch05.hamiltonianSkewExpression`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/HamiltonianSkewExpression.json；blueprint/ch05/validation/short_search/route-48445423d170860a93a5.lean；blueprint/ch05/validation/short_search/route-48445423d170860a93a5.log。
 
-签名SHA256：`cab991399fa77dda0a3b3af688b9b470e5a484bdae2cd6050987fa62f02917c6`；原文SHA256：`138ae27eaef21913ef7929294b508f8379e354865fdf8f4effc9b46f37f6204b`。
+签名SHA256：`cab991399fa77dda0a3b3af688b9b470e5a484bdae2cd6050987fa62f02917c6`；原文SHA256：`f2ab0d1a891bdb1a811e14f7dab886d5252a0f512f11aa2cbe8569bb3c288433`。
 
 ## 1. MD-5.2.3-HamiltonianDensityPropagation · unnumbered_claim · 印刷p.187 / PDFp.208
 
 ### 2. 原文陈述
 
-> An important consequence of the skew symmetry of $\mathcal L_f$ for a divergence-free system is that the propagator $e^{t\mathcal L_f^*}$ preserves the integral over the whole phase space, i.e.
-> \[\int_D e^{t\mathcal L_f^*}\rho(z)d\omega=\int_D e^{-t\mathcal L_f}\rho(z)d\omega=\int_D\rho(\mathcal F_{-t}(z))d\omega=\int_D\rho(z)d\omega,\]
+> An important consequence of the skew symmetry of $\mathcal L_f$ for a divergence-free system is that the propagator $e^{t\mathcal L_f^\dagger}$ preserves the integral over the whole phase space, i.e.
+> \[\int_D e^{t\mathcal L_f^\dagger}\rho(z)d\omega=\int_D e^{-t\mathcal L_f}\rho(z)d\omega=\int_D\rho(\mathcal F_{-t}(z))d\omega=\int_D\rho(z)d\omega,\]
 > since we can view $\mathcal F_{-t}(z)$ as a change of variables by a volume-preserving map.
 
 ### 3. 原文证明
@@ -2834,7 +2834,7 @@ theorem hamiltonianDensityPropagation : ∀ n (D : Set (MolecularDynamics.Chapte
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT06**。原文JSON：CORRECTED；未冻结。
 
 PASS：依赖 ReviewDefinitions.lean 的 flow 展开为 Φ₀=id、Φₛ₊ₜ=Φₛ∘Φₜ 和对每一初值所有时间满足 dΦₜ(z)/dt=f(Φₜ(z))；measurePropagator Φ t μ=Measure.map (Φ t) μ。Ch05.lean:112–114 的 densityOn D ρ 展开为 D 零可测、ρ 对受限 volume 几乎处处可测、域上逐点非负及 IntegrableOn；:136–137 的 densityMeasureOn=(volume.restrict D).withDensity (ofReal∘ρ)。量词任取 n,D,f,Φ,ρ，在 C¹ f、联合 C² 流、全空间零散度、全部时间 D 流不变下，对每一实 t 断言积分保持及 ρ∘Φ₋ₜ 的密度测度恰等于正向推送。流群律给出逆映射 Φ₋ₜ；Liouville Jacobian 方程由零散度推出体积保持，没有把体积保持当假设。原文两种算子指数以逆时拉回和正时测度推送解释，等式链实质保留。[EXTRA]可测可积及不变域是换元必需资格；联合 C² 是足够但偏强的技术条件，全时间流明确限制为已存在的全局流，不宣称任意光滑场都完备。无 [ERRATUM?]。声明本体含 sorry，语义 PASS 不代表证明完成。
 
@@ -2844,20 +2844,20 @@ PASS：依赖 ReviewDefinitions.lean 的 flow 展开为 Φ₀=id、Φₛ₊ₜ=�
 
 位置：[Blueprint/Ch05.lean:564](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:564>)（`MD.Ch05.hamiltonianDensityPropagation`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 缺失/继续路线：缺当前全实时间实际流的Jacobian/change-of-variables与受限密度测度输运桥接；保留完整陈述，不建设新的连续性PDE理论。
 
-签名SHA256：`e078f8383de3978b9346486137990466426c5cbc6fc3c6408e259e126d06dbce`；原文SHA256：`e74fa815f3ab81b068d3e96e98fec0250088ee2832b87f893761b5d00708eab1`。
+签名SHA256：`e078f8383de3978b9346486137990466426c5cbc6fc3c6408e259e126d06dbce`；原文SHA256：`bf39354c91ab17d3012c76815eb0521d48926fc867ff4c67f2c0820f0bd3342a`。
 
 ## 1. MD-5.2.3-MechanicalLiouvillian · definition · 印刷p.187 / PDFp.208
 
 ### 2. 原文陈述
 
 > The Liouvillian of a Hamiltonian system with $N_c$ degrees of freedom and a Hamiltonian of the form $H=\sum_{i=1}^{N_c}p_i^2/(2m_i)+U(q_1,\ldots,q_{N_c})$ can be written
-> \[\mathcal L_H^*=-\sum_{i=1}^{N_c}m_i^{-1}p_i\frac{\partial}{\partial q_i}-\sum_{i=1}^{N_c}F_i\frac{\partial}{\partial p_i},\]
+> \[\mathcal L_H^\dagger=-\sum_{i=1}^{N_c}m_i^{-1}p_i\frac{\partial}{\partial q_i}-\sum_{i=1}^{N_c}F_i\frac{\partial}{\partial p_i},\]
 > where $F_i=-\partial U/\partial q_i$.
 
 ### 3. 原文证明
@@ -2884,7 +2884,7 @@ def mechanicalLiouvillian {n : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.C
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT06**。原文JSON：CORRECTED；未冻结。
 
 PASS：依赖 ReviewDefinitions.lean 的 Phase n=E n×E n，顺序为 (q,p)，其中 E 为真正 EuclideanSpace。本定义及依赖同名定义均为 −Du(q,p)[(p_i/m_i)_i,F(q)]；有限维导数线性展开给出 −Σ_i(p_i/m_i)∂q_i u−Σ_i F_i(q)∂p_i u，符号与原书一致。定义任取 m,F,u,z，是坐标表达式的参数化；F=−∇U、机械 Hamiltonian 到该表达式的对应由本批 mechanicalLiouvillianIdentity 补足，不能将本定义单独理解为已经证明任意 F 来自势。context_notation 中这段是审计解释而非教材记号，应移至 repair_log。m=0 或 u 不可微时 Lean 总化仍有值，但教材的物理应用取正质量、可微测试函数，资格在配套 identity 中给出；定义的总化不改变这些合格对象的表达式。无 [EXTRA]/[ERRATUM?]。这是定义，本体无 sorry，不承担证明义务。
 
@@ -2894,17 +2894,19 @@ PASS：依赖 ReviewDefinitions.lean 的 Phase n=E n×E n，顺序为 (q,p)，�
 
 位置：[Blueprint/Ch05.lean:574](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:574>)（`MD.Ch05.mechanicalLiouvillian`）。
 
-Lean编译/公理检查：已验证；公理：`propext, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-签名SHA256：`1d6f6e14697b5860080ae941ca3a32f9df29a9ab6b6d0f7d96b46d8dd53a49b2`；原文SHA256：`4e890bd1d805f3011dd2c755b7d6941748bfc389b48b86bba3d679b478b5a7af`。
+签名SHA256：`1d6f6e14697b5860080ae941ca3a32f9df29a9ab6b6d0f7d96b46d8dd53a49b2`；原文SHA256：`2dee1719f50f813a67db89b9f0f08e4d0598fbe7ce2aba55fa81c53abb37c931`。
 
 ## 1. MD-5.2.3-MechanicalLiouvillianIdentity · unnumbered_claim · 印刷p.187 / PDFp.208
 
 ### 2. 原文陈述
 
-> The Liouvillian of a Hamiltonian system with $N_c$ degrees of freedom and a Hamiltonian of the form $H=\sum_{i=1}^{N_c}p_i^2/(2m_i)+U(q_1,\ldots,q_{N_c})$ can be written $\mathcal L_H^*=-\sum_i m_i^{-1}p_i\partial_{q_i}-\sum_iF_i\partial_{p_i}$, where $F_i=-\partial U/\partial q_i$.
+> The Liouvillian of a Hamiltonian system with $N_c$ degrees of freedom and a Hamiltonian of the form $H=\sum_{i=1}^{N_c}p_i^2/(2m_i)+U(q_1,\ldots,q_{N_c})$ can be written
+> \[\mathcal L_H^\dagger=-\sum_{i=1}^{N_c}m_i^{-1}p_i\frac{\partial}{\partial q_i}-\sum_{i=1}^{N_c}F_i\frac{\partial}{\partial p_i},\]
+> where $F_i=-\partial U/\partial q_i$.
 
 ### 3. 原文证明
 
@@ -2934,7 +2936,7 @@ theorem mechanicalLiouvillianIdentity : ∀ n (m : Fin n → ℝ) (U : Molecular
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）**。原文JSON：DRAFT；未冻结。
+网站审计：**待复审 / EAUDIT06**。原文JSON：CORRECTED；未冻结。
 
 PASS：ReviewDefinitions.lean 中 hamiltonianField H(q,p)=(∇p H(q,p),−∇q H(q,p))；mechanicalLiouvillian m F u(q,p)=−Du(q,p)[(p/m,F(q))]，E/Phase 分别为欧氏空间及其 q,p 乘积。签名先任取 n,m,U，给出逐坐标正质量及 C² 势，再任取全局可微 u 和全部 z；H=Σ p_i²/(2m_i)+U(q) 保留任意势、全部动量位置坐标。展开梯度得到 (p/m,−∇U)，因此两侧正是原书 Liouvillian 的负 Lie 坐标表达式。这里不另构造积分伴随，但 Hamiltonian 散度为零和上一条形式伴随表达式给出该解释；不遗漏原书的 F_i=−∂U/∂q_i。[EXTRA]质量正性是物理质量的合理资格，非零已足够代数求导；C² 势强于本等式单独所需的 C¹，却与本节零散度/光滑 Hamiltonian 相容，不假设结论。无 [ERRATUM?]。声明本体含 sorry；签名 PASS 不代表已证明。
 
@@ -2944,7 +2946,7 @@ PASS：ReviewDefinitions.lean 中 hamiltonianField H(q,p)=(∇p H(q,p),−∇q H
 
 位置：[Blueprint/Ch05.lean:580](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch05.lean:580>)（`MD.Ch05.mechanicalLiouvillianIdentity`）。
 
-Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choice, Quot.sound`。
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
 
 直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
@@ -2952,7 +2954,7 @@ Lean编译/公理检查：已验证；公理：`propext, sorryAx, Classical.choi
 
 本地路线尝试3次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch05/validation/short_search/MechanicalLiouvillianIdentity.json；blueprint/ch05/validation/short_search/route-70d450c0f05847bfe59c.lean；blueprint/ch05/validation/short_search/route-70d450c0f05847bfe59c.log；blueprint/ch05/validation/short_search/route-8c8b43e0c506554da10b.lean；blueprint/ch05/validation/short_search/route-8c8b43e0c506554da10b.log；blueprint/ch05/validation/short_search/route-d1e5338b087cdf4fe649.lean；blueprint/ch05/validation/short_search/route-d1e5338b087cdf4fe649.log。
 
-签名SHA256：`5ea33ebcbe6c9ac0768ece2ec5f0b92f0eeb64c292bc00b462c5db56287386e8`；原文SHA256：`4cc2fb343b911af601a048142558a5d46179a5182eb6f0b1d4b31e9de592173e`。
+签名SHA256：`5ea33ebcbe6c9ac0768ece2ec5f0b92f0eeb64c292bc00b462c5db56287386e8`；原文SHA256：`7244a7f6fef69c823b5754822bc5a771affc561bf1c832a09c9795ff87debe1c`。
 
 ## 1. MD-5.3.1-TestSpace · definition · 印刷p.188 / PDFp.209
 

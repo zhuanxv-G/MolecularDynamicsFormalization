@@ -1569,7 +1569,7 @@
     "section": "5.2.3",
     "printed_page": "186",
     "pdf_page": "207",
-    "statement_latex": "From the above we know that for a smooth scalar function $u=u(z)$, $\\mathcal L_f^*u=-\\nabla\\cdot(uf)=-f\\cdot\\nabla u-u\\nabla\\cdot f$. The term $\\nabla\\cdot f$ vanishes for $f=J\\nabla H$. Thus we have $\\mathcal L_f^*u=-f\\cdot\\nabla u=-\\mathcal L_fu$. If this holds for all smooth $u$, we write $\\mathcal L_f^*=-\\mathcal L_f$.",
+    "statement_latex": "From the above we know that for a smooth scalar function $u=u(z)$, $\\mathcal L_f^\\daggeru=-\\nabla\\cdot(uf)=-f\\cdot\\nabla u-u\\nabla\\cdot f$. The term $\\nabla\\cdot f$ vanishes for $f=J\\nabla H$. Thus we have $\\mathcal L_f^\\daggeru=-f\\cdot\\nabla u=-\\mathcal L_fu$. If this holds for all smooth $u$, we write $\\mathcal L_f^\\dagger=-\\mathcal L_f$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1581,9 +1581,22 @@
       "[EXTRA]本条保留任意零散度场的实际表达式；Hamiltonian散度零另以正式库桥接；原书的skew-adjoint用语只作形式积分伴随记号，未声称已构造闭算子及其Hilbert空间定义域。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT06_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:56:45.362027",
+        "before_sha256": "0bfa6a60ca51404b73d1cc331420c350d58b14475683b32b4024a7e366fcb947",
+        "after_sha256": "0436e3160e5ea19aaa49dd82753faae592b472e50a24332b0502897fe258977b",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH09_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.2.3-HamiltonianDensityPropagation",
@@ -1592,7 +1605,7 @@
     "section": "5.2.3",
     "printed_page": "187",
     "pdf_page": "208",
-    "statement_latex": "An important consequence of the skew symmetry of $\\mathcal L_f$ for a divergence-free system is that the propagator $e^{t\\mathcal L_f^*}$ preserves the integral over the whole phase space, i.e.\n\\[\\int_D e^{t\\mathcal L_f^*}\\rho(z)d\\omega=\\int_D e^{-t\\mathcal L_f}\\rho(z)d\\omega=\\int_D\\rho(\\mathcal F_{-t}(z))d\\omega=\\int_D\\rho(z)d\\omega,\\]\nsince we can view $\\mathcal F_{-t}(z)$ as a change of variables by a volume-preserving map.",
+    "statement_latex": "An important consequence of the skew symmetry of $\\mathcal L_f$ for a divergence-free system is that the propagator $e^{t\\mathcal L_f^\\dagger}$ preserves the integral over the whole phase space, i.e.\n\\[\\int_D e^{t\\mathcal L_f^\\dagger}\\rho(z)d\\omega=\\int_D e^{-t\\mathcal L_f}\\rho(z)d\\omega=\\int_D\\rho(\\mathcal F_{-t}(z))d\\omega=\\int_D\\rho(z)d\\omega,\\]\nsince we can view $\\mathcal F_{-t}(z)$ as a change of variables by a volume-preserving map.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1604,9 +1617,22 @@
       "[EXTRA]一般Lebesgue可测且流不变的相空间D；实际C²自治流，明确域的资格。体积保持是需要推出的中间结论，未作为结论假设；算子exp记号解释为实际pullback/map。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT06_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:56:45.362027",
+        "before_sha256": "6dabf21009f2d7efa0b77b229ce4a53d6e0e7cd9172193abbbe45347051447cb",
+        "after_sha256": "b6103327bde5940a1bd8ccc5f904adeded4a165ba3040f391d8e123fdc8c1ac3",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH09_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.2.3-MechanicalLiouvillian",
@@ -1615,21 +1641,35 @@
     "section": "5.2.3",
     "printed_page": "187",
     "pdf_page": "208",
-    "statement_latex": "The Liouvillian of a Hamiltonian system with $N_c$ degrees of freedom and a Hamiltonian of the form $H=\\sum_{i=1}^{N_c}p_i^2/(2m_i)+U(q_1,\\ldots,q_{N_c})$ can be written\n\\[\\mathcal L_H^*=-\\sum_{i=1}^{N_c}m_i^{-1}p_i\\frac{\\partial}{\\partial q_i}-\\sum_{i=1}^{N_c}F_i\\frac{\\partial}{\\partial p_i},\\]\nwhere $F_i=-\\partial U/\\partial q_i$.",
+    "statement_latex": "The Liouvillian of a Hamiltonian system with $N_c$ degrees of freedom and a Hamiltonian of the form $H=\\sum_{i=1}^{N_c}p_i^2/(2m_i)+U(q_1,\\ldots,q_{N_c})$ can be written\n\\[\\mathcal L_H^\\dagger=-\\sum_{i=1}^{N_c}m_i^{-1}p_i\\frac{\\partial}{\\partial q_i}-\\sum_{i=1}^{N_c}F_i\\frac{\\partial}{\\partial p_i},\\]\nwhere $F_i=-\\partial U/\\partial q_i$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "实际相空间Fréchet导数沿(p/m,F)方向的负值，是上述坐标偏导求和；完整原H触发到该表达式的对应另条。"
+      "$q_i,p_i$ 为位置、动量坐标，$m_i$ 为质量；$U=U(q_1,\\ldots,q_{N_c})$，$F_i=-\\partial U/\\partial q_i$。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch05.mechanicalLiouvillian",
     "reusable_proofs": [],
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT06_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:56:45.362027",
+        "before_sha256": "0f077433c70fef345d5940592e84f367a1256361b6ed4f7f8f01c5e4debb91bb",
+        "after_sha256": "0c0ededbb1abb491b7988def395cb42fa026deb64debc638e8f55addcd11850b",
+        "changed_fields": [
+          "statement_latex",
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH09_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.2.3-MechanicalLiouvillianIdentity",
@@ -1638,7 +1678,7 @@
     "section": "5.2.3",
     "printed_page": "187",
     "pdf_page": "208",
-    "statement_latex": "The Liouvillian of a Hamiltonian system with $N_c$ degrees of freedom and a Hamiltonian of the form $H=\\sum_{i=1}^{N_c}p_i^2/(2m_i)+U(q_1,\\ldots,q_{N_c})$ can be written $\\mathcal L_H^*=-\\sum_i m_i^{-1}p_i\\partial_{q_i}-\\sum_iF_i\\partial_{p_i}$, where $F_i=-\\partial U/\\partial q_i$.",
+    "statement_latex": "The Liouvillian of a Hamiltonian system with $N_c$ degrees of freedom and a Hamiltonian of the form $H=\\sum_{i=1}^{N_c}p_i^2/(2m_i)+U(q_1,\\ldots,q_{N_c})$ can be written\n\\[\\mathcal L_H^\\dagger=-\\sum_{i=1}^{N_c}m_i^{-1}p_i\\frac{\\partial}{\\partial q_i}-\\sum_{i=1}^{N_c}F_i\\frac{\\partial}{\\partial p_i},\\]\nwhere $F_i=-\\partial U/\\partial q_i$.",
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
@@ -1650,9 +1690,22 @@
       "[EXTRA]正的固定物理质量及C²势；任意实际可微u与完整q,p，保留一般U，不仅二次势；此处为Hamiltonian场的实际负Lie表达式，形式伴随由散度/积分资格另条。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT06_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:56:45.362027",
+        "before_sha256": "c4b4563c0427b0eb349b42730466fb8b8910840bf937e808c0bf335e50ed63ad",
+        "after_sha256": "cb73f67f03c5398f0da25e8556902428333ee56c0403b31c77bca45821ab882e",
+        "changed_fields": [
+          "statement_latex"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH09_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.3.1-TestSpace",

@@ -58,10 +58,10 @@
 | MD-5.2.2-CompactAdjoint | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CompactAdjoint.timebox.json。 |
 | MD-5.2.2-MeasurePropagator | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT05 | definition / self-contained |
 | MD-5.2.3-HamiltonianDivergence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
-| MD-5.2.3-HamiltonianSkewExpression | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.2.3-HamiltonianDensityPropagation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺当前全实时间实际流的Jacobian/change-of-variables与受限密度测度输运桥接；保留完整陈述，不建设新的连续性PDE理论。 |
-| MD-5.2.3-MechanicalLiouvillian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.2.3-MechanicalLiouvillianIdentity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/MechanicalLiouvillianIdentity.json。 |
+| MD-5.2.3-HamiltonianSkewExpression | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | local_proof / self-contained |
+| MD-5.2.3-HamiltonianDensityPropagation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | placeholder / incomplete；缺当前全实时间实际流的Jacobian/change-of-variables与受限密度测度输运桥接；保留完整陈述，不建设新的连续性PDE理论。 |
+| MD-5.2.3-MechanicalLiouvillian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | definition / self-contained |
+| MD-5.2.3-MechanicalLiouvillianIdentity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT06 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/MechanicalLiouvillianIdentity.json。 |
 | MD-5.3.1-TestSpace | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.3.1-SchwartzSpace | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.3.1-GeneralizedFunction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
@@ -351,3 +351,5 @@ EAUDIT03 §5.2.2：8条落盘，单文件与9项公理通过；未写新证明�
 EAUDIT04 §5.2.2：8条落盘，单文件与9项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT05 §5.2.2：2条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT06 §5.2.3：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。

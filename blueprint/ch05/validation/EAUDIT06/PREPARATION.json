@@ -1,0 +1,26 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT06",
+  "section": "5.2.3",
+  "source_ids": [
+    "MD-5.2.3-HamiltonianDensityPropagation",
+    "MD-5.2.3-HamiltonianSkewExpression",
+    "MD-5.2.3-MechanicalLiouvillian",
+    "MD-5.2.3-MechanicalLiouvillianIdentity"
+  ],
+  "reaudit_ids": [
+    "MD-5.2.3-HamiltonianSkewExpression",
+    "MD-5.2.3-HamiltonianDensityPropagation",
+    "MD-5.2.3-MechanicalLiouvillian",
+    "MD-5.2.3-MechanicalLiouvillianIdentity"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+  "lean_sha256": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
+  "source_sha256": "a35b90dec1eb8c068412e36be8b1b3ccf18ec6b12be16d4bc8a52cc59b847dd9",
+  "pages": [
+    207,
+    208
+  ],
+  "prior_proof_blocks": {}
+}
