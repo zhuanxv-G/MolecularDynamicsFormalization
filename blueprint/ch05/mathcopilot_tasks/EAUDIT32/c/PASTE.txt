@@ -1,0 +1,168 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.3.2-MicroRawInvariant；原PDF页映射=[214]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT32_review.json，对象含batch=EAUDIT32、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT32.md": "3717f630d2959eff7dea8509489c8d8c92313d02bc086a9490e497d91683bdad",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "EAUDIT32c_materials": "2905dbf6a8807440a8474360c53f5cc2d0f80b655cf60d37d5e7cc927852b9c3",
+  "EAUDIT32c_PAGES.pdf": "c2bf544766c57bb9fee5b175bdbcf4cd7cbf4b5f9847b1508f0a4d84204dcf79"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.3.2-MicroRawInvariant",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.3.2",
+  "printed_page": "193",
+  "pdf_page": "214",
+  "statement_latex": "As both volume and energy are invariant under the Hamiltonian flow, $\\mu(M)$ must be invariant under the flow, thus $\\mu(\\mathcal F_t(M))=\\mu(M)$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "PDF 214（印刷193）：μ(M)=∫_M‖∇H‖⁻¹dσ 是未归一化测度；M⊂Σ_E；𝓕_t是Hamiltonian流，正文调用体积及能量保持。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.microRawInvariant",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]原正文调用的实际全流、体积与能量保持先验明确写出；需要推出的是曲面加权raw测度保持，未把该结论作前提。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT09_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:58:34.669281",
+      "before_sha256": "ccdbdc942cc2bbe4f43aee14877737661d74869c97496d3f6d1829ddcc4a5d5b",
+      "after_sha256": "c01ce9fbe162ed337a13f4c139368b15bac324f4c27b319ba277f7486aa54b19",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH14_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem microRawInvariant : ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ,
+  ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c → MolecularDynamics.Chapter05Review.flow f Φ →
+  ContDiff ℝ 2 (Function.uncurry Φ) →
+  (∀ t,MeasurePreserving (Φ t) volume volume) → (∀ t z,H (Φ t z)=H z) →
+  ∀ t,MeasurePreserving (Φ t) (MolecularDynamics.Chapter05Review.microRaw H c) (MolecularDynamics.Chapter05Review.microRaw H c) ∧
+    ∀ M,MeasurableSet M → (MolecularDynamics.Chapter05Review.microRaw H c) (Φ t '' M)=(MolecularDynamics.Chapter05Review.microRaw H c) M := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.energySurface
+```lean
+def energySurface {n : ℕ} (H : E n → ℝ) (c : ℝ) := {z | H z=c}
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.flow
+```lean
+def flow {n : ℕ} (f : E n → E n) (Φ : ℝ → E n → E n) : Prop :=
+  (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
+  ∀ t z, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.grad
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hausdorffArea
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.microRaw
+```lean
+def microRaw {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  (surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖grad H z‖⁻¹))
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.regularEnergy
+```lean
+def regularEnergy {n : ℕ} (H : E n → ℝ) (c : ℝ) : Prop :=
+  (energySurface H c).Nonempty ∧ IsCompact (energySurface H c) ∧
+  (∀ z ∈ energySurface H c, grad H z ≠ 0) ∧
+  0 < (microRaw H c) univ ∧ (microRaw H c) univ < ∞
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.surfaceMeasure
+```lean
+def surfaceMeasure {n : ℕ} (H : E n → ℝ) (c : ℝ) : Measure (E n) :=
+  (hausdorffArea (n-1)).restrict (energySurface H c)
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MD.Ch05.energySurface
+```lean
+def energySurface {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := {z | H z=c}
+```
+### 实际依赖 MD.Ch05.flow
+```lean
+def flow {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
+  ∀ t z, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.grad
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hausdorffArea
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+### 实际依赖 MD.Ch05.microRaw
+```lean
+def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.regularEnergy
+```lean
+def regularEnergy {n : ℕ} (H : E n → ℝ) (c : ℝ) : Prop :=
+  (energySurface H c).Nonempty ∧ IsCompact (energySurface H c) ∧
+  (∀ z ∈ energySurface H c, grad H z ≠ 0) ∧
+  0 < (microRaw H c) univ ∧ (microRaw H c) univ < ∞
+```
+### 实际依赖 MD.Ch05.surfaceMeasure
+```lean
+def surfaceMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (MolecularDynamics.Chapter05Review.hausdorffArea (n-1)).restrict (MolecularDynamics.Chapter05Review.energySurface H c)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```

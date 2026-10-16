@@ -1,0 +1,50 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT34",
+  "section": "5.3.3",
+  "source_ids": [
+    "MD-5.3.3-MicroMeasure",
+    "MD-5.3.3-MicroProbability",
+    "MD-5.3.3-LowerDimensionNull",
+    "MD-5.3.3-MicroAverage"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.3-MicroMeasure",
+    "MD-5.3.3-MicroProbability",
+    "MD-5.3.3-LowerDimensionNull",
+    "MD-5.3.3-MicroAverage"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.3.3-MicroMeasure",
+      "prior_eaudit": "EAUDIT11",
+      "acceptance": "blueprint/ch05/validation/EAUDIT11/ACCEPTANCE.json",
+      "sha256": "2dda474cf5c1bf0976356fa20edd3ac08fe2ee79756f4cdceef18b5decedc452"
+    },
+    {
+      "source_id": "MD-5.3.3-MicroProbability",
+      "prior_eaudit": "EAUDIT11",
+      "acceptance": "blueprint/ch05/validation/EAUDIT11/ACCEPTANCE.json",
+      "sha256": "2dda474cf5c1bf0976356fa20edd3ac08fe2ee79756f4cdceef18b5decedc452"
+    },
+    {
+      "source_id": "MD-5.3.3-LowerDimensionNull",
+      "prior_eaudit": "EAUDIT11",
+      "acceptance": "blueprint/ch05/validation/EAUDIT11/ACCEPTANCE.json",
+      "sha256": "2dda474cf5c1bf0976356fa20edd3ac08fe2ee79756f4cdceef18b5decedc452"
+    },
+    {
+      "source_id": "MD-5.3.3-MicroAverage",
+      "prior_eaudit": "EAUDIT11",
+      "acceptance": "blueprint/ch05/validation/EAUDIT11/ACCEPTANCE.json",
+      "sha256": "2dda474cf5c1bf0976356fa20edd3ac08fe2ee79756f4cdceef18b5decedc452"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT34/INDEX.md"
+}

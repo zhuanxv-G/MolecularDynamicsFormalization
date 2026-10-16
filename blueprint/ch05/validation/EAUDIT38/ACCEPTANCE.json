@@ -1,0 +1,34 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT38",
+  "section": "5.4.1",
+  "source_ids": [
+    "MD-5.4.1-CircleInitialLaw",
+    "MD-5.4.1-CircleInitialEnergy"
+  ],
+  "reaudit_ids": [
+    "MD-5.4.1-CircleInitialLaw",
+    "MD-5.4.1-CircleInitialEnergy"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.4.1-CircleInitialLaw",
+      "prior_eaudit": "EAUDIT16",
+      "acceptance": "blueprint/ch05/validation/EAUDIT16/ACCEPTANCE.json",
+      "sha256": "343a6126a258d02448f26791613e342235f13863c1d83c35593c822d3f51533a"
+    },
+    {
+      "source_id": "MD-5.4.1-CircleInitialEnergy",
+      "prior_eaudit": "EAUDIT16",
+      "acceptance": "blueprint/ch05/validation/EAUDIT16/ACCEPTANCE.json",
+      "sha256": "343a6126a258d02448f26791613e342235f13863c1d83c35593c822d3f51533a"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT38/INDEX.md"
+}

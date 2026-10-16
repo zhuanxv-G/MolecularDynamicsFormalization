@@ -1,0 +1,66 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT35",
+  "section": "5.4",
+  "source_ids": [
+    "MD-5.4-TimeAverage",
+    "MD-5.4-HasTimeAverage",
+    "MD-5.4-ConservedAverage",
+    "MD-5.4-ConservedInfiniteAverage",
+    "MD-5.4-DoubleWellEnergy",
+    "MD-5.4-DoubleWellBasin"
+  ],
+  "reaudit_ids": [
+    "MD-5.4-TimeAverage",
+    "MD-5.4-HasTimeAverage",
+    "MD-5.4-ConservedAverage",
+    "MD-5.4-ConservedInfiniteAverage",
+    "MD-5.4-DoubleWellEnergy",
+    "MD-5.4-DoubleWellBasin"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.4-TimeAverage",
+      "prior_eaudit": "EAUDIT12",
+      "acceptance": "blueprint/ch05/validation/EAUDIT12/ACCEPTANCE.json",
+      "sha256": "f69aa52d4a892dce7716cc8fef6af0cf709b61eb536f687fd4f68391ae1ce4fa"
+    },
+    {
+      "source_id": "MD-5.4-HasTimeAverage",
+      "prior_eaudit": "EAUDIT12",
+      "acceptance": "blueprint/ch05/validation/EAUDIT12/ACCEPTANCE.json",
+      "sha256": "f69aa52d4a892dce7716cc8fef6af0cf709b61eb536f687fd4f68391ae1ce4fa"
+    },
+    {
+      "source_id": "MD-5.4-ConservedAverage",
+      "prior_eaudit": "EAUDIT12",
+      "acceptance": "blueprint/ch05/validation/EAUDIT12/ACCEPTANCE.json",
+      "sha256": "f69aa52d4a892dce7716cc8fef6af0cf709b61eb536f687fd4f68391ae1ce4fa"
+    },
+    {
+      "source_id": "MD-5.4-ConservedInfiniteAverage",
+      "prior_eaudit": "EAUDIT12",
+      "acceptance": "blueprint/ch05/validation/EAUDIT12/ACCEPTANCE.json",
+      "sha256": "f69aa52d4a892dce7716cc8fef6af0cf709b61eb536f687fd4f68391ae1ce4fa"
+    },
+    {
+      "source_id": "MD-5.4-DoubleWellEnergy",
+      "prior_eaudit": "EAUDIT12",
+      "acceptance": "blueprint/ch05/validation/EAUDIT12/ACCEPTANCE.json",
+      "sha256": "f69aa52d4a892dce7716cc8fef6af0cf709b61eb536f687fd4f68391ae1ce4fa"
+    },
+    {
+      "source_id": "MD-5.4-DoubleWellBasin",
+      "prior_eaudit": "EAUDIT12",
+      "acceptance": "blueprint/ch05/validation/EAUDIT12/ACCEPTANCE.json",
+      "sha256": "f69aa52d4a892dce7716cc8fef6af0cf709b61eb536f687fd4f68391ae1ce4fa"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT35/INDEX.md"
+}

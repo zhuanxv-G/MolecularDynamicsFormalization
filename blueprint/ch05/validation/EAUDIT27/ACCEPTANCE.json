@@ -1,0 +1,82 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT27",
+  "section": "5.2.2",
+  "source_ids": [
+    "MD-5.2.2-LieCoordinates",
+    "MD-5.2.2-DivergenceCoordinates",
+    "MD-5.2.2-LiouvilleProductCoordinates",
+    "MD-5.2.2-FaceFlux",
+    "MD-5.2.2-BoxFluxBalance",
+    "MD-5.2.2-BoundaryTerm",
+    "MD-5.2.2-TruncatedIntegrationByParts",
+    "MD-5.2.2-RapidAdjoint"
+  ],
+  "reaudit_ids": [
+    "MD-5.2.2-LieCoordinates",
+    "MD-5.2.2-DivergenceCoordinates",
+    "MD-5.2.2-LiouvilleProductCoordinates",
+    "MD-5.2.2-FaceFlux",
+    "MD-5.2.2-BoxFluxBalance",
+    "MD-5.2.2-BoundaryTerm",
+    "MD-5.2.2-TruncatedIntegrationByParts",
+    "MD-5.2.2-RapidAdjoint"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.2.2-LieCoordinates",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch05/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "aaf8a84f5b28f21697e7c6fe9c52b20e833bbc063ad34bacc1acc723f1fb4281"
+    },
+    {
+      "source_id": "MD-5.2.2-DivergenceCoordinates",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch05/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "aaf8a84f5b28f21697e7c6fe9c52b20e833bbc063ad34bacc1acc723f1fb4281"
+    },
+    {
+      "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch05/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "aaf8a84f5b28f21697e7c6fe9c52b20e833bbc063ad34bacc1acc723f1fb4281"
+    },
+    {
+      "source_id": "MD-5.2.2-FaceFlux",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch05/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "aaf8a84f5b28f21697e7c6fe9c52b20e833bbc063ad34bacc1acc723f1fb4281"
+    },
+    {
+      "source_id": "MD-5.2.2-BoxFluxBalance",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch05/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "aaf8a84f5b28f21697e7c6fe9c52b20e833bbc063ad34bacc1acc723f1fb4281"
+    },
+    {
+      "source_id": "MD-5.2.2-BoundaryTerm",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch05/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "aaf8a84f5b28f21697e7c6fe9c52b20e833bbc063ad34bacc1acc723f1fb4281"
+    },
+    {
+      "source_id": "MD-5.2.2-TruncatedIntegrationByParts",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch05/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "aaf8a84f5b28f21697e7c6fe9c52b20e833bbc063ad34bacc1acc723f1fb4281"
+    },
+    {
+      "source_id": "MD-5.2.2-RapidAdjoint",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch05/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "aaf8a84f5b28f21697e7c6fe9c52b20e833bbc063ad34bacc1acc723f1fb4281"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/INDEX.md"
+}

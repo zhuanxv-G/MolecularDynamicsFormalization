@@ -1,0 +1,50 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT25",
+  "section": "5.2.1",
+  "source_ids": [
+    "MD-5.2.1-DomainL2",
+    "MD-5.2.1-L2Norm",
+    "MD-5.2.1-L2NormSquare",
+    "MD-5.2.1-L2Complete"
+  ],
+  "reaudit_ids": [
+    "MD-5.2.1-DomainL2",
+    "MD-5.2.1-L2Norm",
+    "MD-5.2.1-L2NormSquare",
+    "MD-5.2.1-L2Complete"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.2.1-DomainL2",
+      "prior_eaudit": "EAUDIT02",
+      "acceptance": "blueprint/ch05/validation/EAUDIT02/ACCEPTANCE.json",
+      "sha256": "7a5ea5aa756fbde41b5b8d1c8b92c9d6b0fb450a07deb844843bf0c65e230d93"
+    },
+    {
+      "source_id": "MD-5.2.1-L2Norm",
+      "prior_eaudit": "EAUDIT02",
+      "acceptance": "blueprint/ch05/validation/EAUDIT02/ACCEPTANCE.json",
+      "sha256": "7a5ea5aa756fbde41b5b8d1c8b92c9d6b0fb450a07deb844843bf0c65e230d93"
+    },
+    {
+      "source_id": "MD-5.2.1-L2NormSquare",
+      "prior_eaudit": "EAUDIT02",
+      "acceptance": "blueprint/ch05/validation/EAUDIT02/ACCEPTANCE.json",
+      "sha256": "7a5ea5aa756fbde41b5b8d1c8b92c9d6b0fb450a07deb844843bf0c65e230d93"
+    },
+    {
+      "source_id": "MD-5.2.1-L2Complete",
+      "prior_eaudit": "EAUDIT02",
+      "acceptance": "blueprint/ch05/validation/EAUDIT02/ACCEPTANCE.json",
+      "sha256": "7a5ea5aa756fbde41b5b8d1c8b92c9d6b0fb450a07deb844843bf0c65e230d93"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT25/INDEX.md"
+}

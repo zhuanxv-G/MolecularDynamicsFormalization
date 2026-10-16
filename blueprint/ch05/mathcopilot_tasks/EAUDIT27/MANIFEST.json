@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT27",
+  "input_sha256": {
+    "BATCH_EAUDIT27.md": "7fa418c6ac2dbf8aae8b23bcc2844ba7b911c69fd667fc02fa217aac77b051da",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT27a",
+      "source_id": "MD-5.2.2-LieCoordinates",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/a",
+      "total_bytes": 91774,
+      "manifest_sha256": "059365660c2b2fd0d78b802521d2176f5fb673e9db3b4aeaa40d2161106b63ea"
+    },
+    {
+      "subtask": "EAUDIT27b",
+      "source_id": "MD-5.2.2-DivergenceCoordinates",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/b",
+      "total_bytes": 92411,
+      "manifest_sha256": "5012f255e58c47cf190c00a9563b56af6c55ab7b179dbbac30fc406054f42f69"
+    },
+    {
+      "subtask": "EAUDIT27c",
+      "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/c",
+      "total_bytes": 98403,
+      "manifest_sha256": "bdd7157934b88b3712bcae8f914b3b2575fda58c204890e3912d023c727b1df9"
+    },
+    {
+      "subtask": "EAUDIT27d",
+      "source_id": "MD-5.2.2-FaceFlux",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/d",
+      "total_bytes": 86724,
+      "manifest_sha256": "928e5fe85f298067fc6dfa351b4244bbf0a6f84f6fca127336f5367c2165734f"
+    },
+    {
+      "subtask": "EAUDIT27e",
+      "source_id": "MD-5.2.2-BoxFluxBalance",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/e",
+      "total_bytes": 94298,
+      "manifest_sha256": "682e1140888833835fcb3789907aaac666e99ccbdaba97570e884a68c42c2620"
+    },
+    {
+      "subtask": "EAUDIT27f",
+      "source_id": "MD-5.2.2-BoundaryTerm",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/f",
+      "total_bytes": 94820,
+      "manifest_sha256": "cbf4272487523428ca5d5396fa5ca841111818bba9f1f8542c9db94843a32d78"
+    },
+    {
+      "subtask": "EAUDIT27g",
+      "source_id": "MD-5.2.2-TruncatedIntegrationByParts",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/g",
+      "total_bytes": 99235,
+      "manifest_sha256": "0f0e8670dec25d4e01498b35ff2c7b6eeb9bb4628f406e6a890609468d2ad7fc"
+    },
+    {
+      "subtask": "EAUDIT27h",
+      "source_id": "MD-5.2.2-RapidAdjoint",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/h",
+      "total_bytes": 110810,
+      "manifest_sha256": "c9a879835c982353f11fe1579533b49271337b02afb91aa967e5c0de777aef7c"
+    }
+  ]
+}

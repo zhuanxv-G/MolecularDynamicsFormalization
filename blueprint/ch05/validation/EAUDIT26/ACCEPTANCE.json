@@ -1,0 +1,82 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT26",
+  "section": "5.2.2",
+  "source_ids": [
+    "MD-5.2.2-MassFraction",
+    "MD-5.2.2-MassDerivative",
+    "MD-5.2.2-OutwardNormal",
+    "MD-5.2.2-GeneralFluxBalance",
+    "MD-5.2.2-Divergence",
+    "MD-5.2.2-Liouvillian",
+    "MD-5.2.2-LiouvilleEquation",
+    "MD-5.2.2-LiouvilleProduct"
+  ],
+  "reaudit_ids": [
+    "MD-5.2.2-MassFraction",
+    "MD-5.2.2-MassDerivative",
+    "MD-5.2.2-OutwardNormal",
+    "MD-5.2.2-GeneralFluxBalance",
+    "MD-5.2.2-Divergence",
+    "MD-5.2.2-Liouvillian",
+    "MD-5.2.2-LiouvilleEquation",
+    "MD-5.2.2-LiouvilleProduct"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.2.2-MassFraction",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch05/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "4613138d3a52a47e9967491e0e21d894405764e7b37231d51d500f56eee21ed9"
+    },
+    {
+      "source_id": "MD-5.2.2-MassDerivative",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch05/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "4613138d3a52a47e9967491e0e21d894405764e7b37231d51d500f56eee21ed9"
+    },
+    {
+      "source_id": "MD-5.2.2-OutwardNormal",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch05/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "4613138d3a52a47e9967491e0e21d894405764e7b37231d51d500f56eee21ed9"
+    },
+    {
+      "source_id": "MD-5.2.2-GeneralFluxBalance",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch05/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "4613138d3a52a47e9967491e0e21d894405764e7b37231d51d500f56eee21ed9"
+    },
+    {
+      "source_id": "MD-5.2.2-Divergence",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch05/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "4613138d3a52a47e9967491e0e21d894405764e7b37231d51d500f56eee21ed9"
+    },
+    {
+      "source_id": "MD-5.2.2-Liouvillian",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch05/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "4613138d3a52a47e9967491e0e21d894405764e7b37231d51d500f56eee21ed9"
+    },
+    {
+      "source_id": "MD-5.2.2-LiouvilleEquation",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch05/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "4613138d3a52a47e9967491e0e21d894405764e7b37231d51d500f56eee21ed9"
+    },
+    {
+      "source_id": "MD-5.2.2-LiouvilleProduct",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch05/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "4613138d3a52a47e9967491e0e21d894405764e7b37231d51d500f56eee21ed9"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT26/INDEX.md"
+}

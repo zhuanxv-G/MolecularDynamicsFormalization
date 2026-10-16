@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT30",
+  "source_id": "MD-5.3.1-GaussianDelta",
+  "input_sha256": {
+    "BATCH_EAUDIT30.md": "77804973aefeabd39fcd2622f536af1ee04f9759ddb4e7ee337a7c8886dc8b57",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT30d_materials": "865606bed03d6a0eac590669370c424cfea13f15e82a3eed4f5d0bed9a3079ac",
+    "EAUDIT30d_PAGES.pdf": "e99499eade00aab93da5721c72d0ab13de618efba14ee2277b5793133762e12e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    210
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "bc846616491a39a6ff2bfc18ec3519b5d4c1afa5e166b8e294acca2f4c27c087",
+  "source_block_sha256": "91ff5dcad7079462d8c3230b452ee845e1df53f79ed8998eb4e33f42f27fc513",
+  "source_declarations": [
+    "gaussianDelta"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "gaussianDelta",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "91ff5dcad7079462d8c3230b452ee845e1df53f79ed8998eb4e33f42f27fc513"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT30_review.json",
+  "total_task_bytes": 83604
+}

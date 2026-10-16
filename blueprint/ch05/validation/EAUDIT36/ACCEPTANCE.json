@@ -1,0 +1,82 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT36",
+  "section": "5.4.1",
+  "source_ids": [
+    "MD-5.4.1-UniformMicroErgodic",
+    "MD-5.4.1-MicroErgodicStandard",
+    "MD-5.4.1-FlowInvariant",
+    "MD-5.4.1-SetErgodic",
+    "MD-5.4.1-InvariantIndicator",
+    "MD-5.4.1-InvariantIndicatorAverage",
+    "MD-5.4.1-ErgodicTimeEquivalence",
+    "MD-5.4.1-NonergodicSet"
+  ],
+  "reaudit_ids": [
+    "MD-5.4.1-UniformMicroErgodic",
+    "MD-5.4.1-MicroErgodicStandard",
+    "MD-5.4.1-FlowInvariant",
+    "MD-5.4.1-SetErgodic",
+    "MD-5.4.1-InvariantIndicator",
+    "MD-5.4.1-InvariantIndicatorAverage",
+    "MD-5.4.1-ErgodicTimeEquivalence",
+    "MD-5.4.1-NonergodicSet"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.4.1-UniformMicroErgodic",
+      "prior_eaudit": "EAUDIT13",
+      "acceptance": "blueprint/ch05/validation/EAUDIT13/ACCEPTANCE.json",
+      "sha256": "1d924b057147fcd590bcaf46fef21d2d91a60b0a59a39460c834870b21649a5e"
+    },
+    {
+      "source_id": "MD-5.4.1-MicroErgodicStandard",
+      "prior_eaudit": "EAUDIT13",
+      "acceptance": "blueprint/ch05/validation/EAUDIT13/ACCEPTANCE.json",
+      "sha256": "1d924b057147fcd590bcaf46fef21d2d91a60b0a59a39460c834870b21649a5e"
+    },
+    {
+      "source_id": "MD-5.4.1-FlowInvariant",
+      "prior_eaudit": "EAUDIT13",
+      "acceptance": "blueprint/ch05/validation/EAUDIT13/ACCEPTANCE.json",
+      "sha256": "1d924b057147fcd590bcaf46fef21d2d91a60b0a59a39460c834870b21649a5e"
+    },
+    {
+      "source_id": "MD-5.4.1-SetErgodic",
+      "prior_eaudit": "EAUDIT13",
+      "acceptance": "blueprint/ch05/validation/EAUDIT13/ACCEPTANCE.json",
+      "sha256": "1d924b057147fcd590bcaf46fef21d2d91a60b0a59a39460c834870b21649a5e"
+    },
+    {
+      "source_id": "MD-5.4.1-InvariantIndicator",
+      "prior_eaudit": "EAUDIT13",
+      "acceptance": "blueprint/ch05/validation/EAUDIT13/ACCEPTANCE.json",
+      "sha256": "1d924b057147fcd590bcaf46fef21d2d91a60b0a59a39460c834870b21649a5e"
+    },
+    {
+      "source_id": "MD-5.4.1-InvariantIndicatorAverage",
+      "prior_eaudit": "EAUDIT13",
+      "acceptance": "blueprint/ch05/validation/EAUDIT13/ACCEPTANCE.json",
+      "sha256": "1d924b057147fcd590bcaf46fef21d2d91a60b0a59a39460c834870b21649a5e"
+    },
+    {
+      "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+      "prior_eaudit": "EAUDIT13",
+      "acceptance": "blueprint/ch05/validation/EAUDIT13/ACCEPTANCE.json",
+      "sha256": "1d924b057147fcd590bcaf46fef21d2d91a60b0a59a39460c834870b21649a5e"
+    },
+    {
+      "source_id": "MD-5.4.1-NonergodicSet",
+      "prior_eaudit": "EAUDIT13",
+      "acceptance": "blueprint/ch05/validation/EAUDIT13/ACCEPTANCE.json",
+      "sha256": "1d924b057147fcd590bcaf46fef21d2d91a60b0a59a39460c834870b21649a5e"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT36/INDEX.md"
+}

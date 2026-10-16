@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT35",
+  "source_id": "MD-5.4-HasTimeAverage",
+  "input_sha256": {
+    "BATCH_EAUDIT35.md": "1a115cd77fc0d7c56fb7f68c989c5e7cd4019cb3518e18b3248b745dfb4aa0ff",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT35b_materials": "c9c9ebca0339a1a56c687863688b924f4b61746735fc286ddce7f11bfcfd648d",
+    "EAUDIT35b_PAGES.pdf": "ad76d019954f1f113fd9a180f502967b8fc539f074731653d3dba0ff55da0214"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    216
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "3dd9ac60b958c92dd5edc45aecce040507800b547ddea43634eea6756a0535c2",
+  "source_block_sha256": "b80cdcc652eb14ff8b264b8b07c801373ce82dbfa974b87d30902141c668bf01",
+  "source_declarations": [
+    "hasTimeAverage"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.timeAverage",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "hasTimeAverage",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "b80cdcc652eb14ff8b264b8b07c801373ce82dbfa974b87d30902141c668bf01"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "timeAverage",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT35_review.json",
+  "total_task_bytes": 98900
+}

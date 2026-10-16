@@ -1,0 +1,59 @@
+{
+  "eaudit": "EAUDIT39",
+  "input_sha256": {
+    "BATCH_EAUDIT39.md": "1809cd032d37c72764ba41b6af97178432212335ab2bdfcfb9f825843029e4fd",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT39a",
+      "source_id": "MD-5.5-Correlation",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/a",
+      "total_bytes": 173078,
+      "manifest_sha256": "b14bb44952770270705361c13d27f2baf79fe09e6c369f187c72ea6dd3542f45"
+    },
+    {
+      "subtask": "EAUDIT39b",
+      "source_id": "MD-5.5-CorrelationTimeAE",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/b",
+      "total_bytes": 111642,
+      "manifest_sha256": "fea16c8f9d6eb7e5e405fb8f9145162936ac8bd10ea9fb5ac37539816f5ede46"
+    },
+    {
+      "subtask": "EAUDIT39c",
+      "source_id": "MD-5.5-PositionTransition",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/c",
+      "total_bytes": 107647,
+      "manifest_sha256": "ece035e73f7a9aecc41a9c9dbe3c7a9994f8823ae0f56171072dbc37895b5e14"
+    },
+    {
+      "subtask": "EAUDIT39d",
+      "source_id": "MD-5.5-MeasureDuality",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/d",
+      "total_bytes": 93268,
+      "manifest_sha256": "9414cca4f0978c598420f9581013a3e798694876fc600a981286bb8eac42f58b"
+    },
+    {
+      "subtask": "EAUDIT39e",
+      "source_id": "MD-5.5-MixingMemoryLoss",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/e",
+      "total_bytes": 92236,
+      "manifest_sha256": "d11a55ec0141350f6742baa4e26c585d57087c4adb0c214ced174348e883d8e3"
+    },
+    {
+      "subtask": "EAUDIT39f",
+      "source_id": "MD-5.5-MixingCorrelation",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/f",
+      "total_bytes": 93027,
+      "manifest_sha256": "50a49af2345ac266ad9132e120549bca82fece65dda4cfac9301132bfd3ed481"
+    },
+    {
+      "subtask": "EAUDIT39g",
+      "source_id": "MD-5.5-CenteredCorrelation",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/g",
+      "total_bytes": 90940,
+      "manifest_sha256": "b83dd447093594ede40bdf05f936a7b70b1c677bf34b7155f1de056cea872962"
+    }
+  ]
+}

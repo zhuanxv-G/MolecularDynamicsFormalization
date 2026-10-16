@@ -1,0 +1,85 @@
+{
+  "eaudit": "EAUDIT39",
+  "source_id": "MD-5.5-CorrelationTimeAE",
+  "input_sha256": {
+    "BATCH_EAUDIT39.md": "1809cd032d37c72764ba41b6af97178432212335ab2bdfcfb9f825843029e4fd",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT39b_materials": "3bc81c42a343b8a00424e2c7ee3f0541c02328cffd7d6ac412b26739e7806ff6",
+    "EAUDIT39b_PAGES.pdf": "d338755d09f94778ab15f0dc37ba58bc9f1bd69825c4d0439ce564f088990bde"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    225
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "c84294af8d71565f8eaa0caf2f524a17ce850af639c259f6043d0b18ab81d8f8",
+  "source_block_sha256": "6709cf93daa81da2d87f1f5936a9de3dae7d2c486b8f8ad1adc2d361af3eb0cc",
+  "source_declarations": [
+    "correlationTime"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.average",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.correlation",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "707447738b4ff3c29316db05c8adf4be751d2befc474d8f736d34019cee8b7d8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.hasTimeAverage",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "3a84d89218000dca32631769bf1ebfc63a09da3f40c918acc4eb71b5dc4268e3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.timeAverage",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "average",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "correlation",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "815a63cef778f82e48485d9b2de2696440d69be928f0e47e8d22a708fa09a10f"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "hasTimeAverage",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "b80cdcc652eb14ff8b264b8b07c801373ce82dbfa974b87d30902141c668bf01"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "timeAverage",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "608476752f7d450dd149bfa93440844c54d74575f36e5c500e6028fe43646c86"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT39_review.json",
+  "total_task_bytes": 111642
+}

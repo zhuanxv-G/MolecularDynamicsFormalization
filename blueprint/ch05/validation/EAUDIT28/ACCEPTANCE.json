@@ -1,0 +1,34 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT28",
+  "section": "5.2.2",
+  "source_ids": [
+    "MD-5.2.2-CompactAdjoint",
+    "MD-5.2.2-MeasurePropagator"
+  ],
+  "reaudit_ids": [
+    "MD-5.2.2-CompactAdjoint",
+    "MD-5.2.2-MeasurePropagator"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.2.2-CompactAdjoint",
+      "prior_eaudit": "EAUDIT05",
+      "acceptance": "blueprint/ch05/validation/EAUDIT05/ACCEPTANCE.json",
+      "sha256": "fd8378a7f7121f213dc175cb82987350937ab073dc2de38efd99ec2ba6422ca7"
+    },
+    {
+      "source_id": "MD-5.2.2-MeasurePropagator",
+      "prior_eaudit": "EAUDIT05",
+      "acceptance": "blueprint/ch05/validation/EAUDIT05/ACCEPTANCE.json",
+      "sha256": "fd8378a7f7121f213dc175cb82987350937ab073dc2de38efd99ec2ba6422ca7"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT28/INDEX.md"
+}

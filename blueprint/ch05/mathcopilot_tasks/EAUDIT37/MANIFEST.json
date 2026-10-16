@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT37",
+  "input_sha256": {
+    "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT37a",
+      "source_id": "MD-5.4.1-HarmonicFlow",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/a",
+      "total_bytes": 208468,
+      "manifest_sha256": "3543e4879c7af6ebb4d3a70efeec951174ce5e87c782bdbe89426f9b46fd2825"
+    },
+    {
+      "subtask": "EAUDIT37b",
+      "source_id": "MD-5.4.1-TwoOscillatorEnergy",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/b",
+      "total_bytes": 208676,
+      "manifest_sha256": "c7ea34ea006da069eb722a73566732727891c8a3bea84046fc8b9a5161b537ec"
+    },
+    {
+      "subtask": "EAUDIT37c",
+      "source_id": "MD-5.4.1-TwoOscillatorFlow",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/c",
+      "total_bytes": 209764,
+      "manifest_sha256": "acf6ed39e4e6c40bc6da30a2fb0e552e7f47be8c0c63a43e4b9af552dba670c4"
+    },
+    {
+      "subtask": "EAUDIT37d",
+      "source_id": "MD-5.4.1-Mixing",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/d",
+      "total_bytes": 191942,
+      "manifest_sha256": "e4e16b0f7ef0d0172ad3ba996867bdd60f8ad0e11029af14da8cf6eaa9b6a61c"
+    },
+    {
+      "subtask": "EAUDIT37e",
+      "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/e",
+      "total_bytes": 190573,
+      "manifest_sha256": "a4c51f61f84e0145e20e6b4edd9bcc5a408813346244b61bce0dc480948f0d65"
+    },
+    {
+      "subtask": "EAUDIT37f",
+      "source_id": "MD-5.4.1-CurveImageDimension",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/f",
+      "total_bytes": 132138,
+      "manifest_sha256": "4cb2b1d421ee5ee4ff3f6d9f6ec5cd41722de5e703d444254d90f43dcddc64f0"
+    },
+    {
+      "subtask": "EAUDIT37g",
+      "source_id": "MD-5.4.1-PendulumPotential",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/g",
+      "total_bytes": 72972,
+      "manifest_sha256": "49201c6f7d1b6e2653756184ecb85f5e8bf83231ede76788e732e50199e96610"
+    },
+    {
+      "subtask": "EAUDIT37h",
+      "source_id": "MD-5.4.1-CircleInitialPoints",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/h",
+      "total_bytes": 135939,
+      "manifest_sha256": "e20ad90629f88bb632519323a8aba6ddff8b0b61c45e35077daf1510a6a7645f"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "eaudit": "EAUDIT41",
+  "source_id": "MD-5.6-BackwardEnergyDecay",
+  "input_sha256": {
+    "BATCH_EAUDIT41.md": "c8cff48c6002433f1f074b43f709953e4d6f0694550756422bd836095f69b1fb",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT41a_materials": "990bb384a389f57812e5fe59f7639a63534b7f148671f5441da7d070eae9d8fb",
+    "EAUDIT41a_PAGES.pdf": "42419909c32835d0d31f3e0f5c337c934074d9b931bad364b67c7e041b69a9d4"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    228
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "c427b979a0ca72abfc103ec5833835f2c5a2358f3134864cd48a9f18fa14d3fd",
+  "source_block_sha256": "66e241abb3e52adb02f5a4d180ed36d22682900d636b108766fbd3391f574a4c",
+  "source_declarations": [
+    "backwardEnergyDecay",
+    "backwardEnergyDecay_spectrum"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.backwardEuler",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "9ebbbff4d8ad1e01747c94c32d78795263c06a353952a20c61cf9fe754e8c89a"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "backwardEuler",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "91836ae64e2fa2acc19bd45cc9f99ab140184e145610861c21808343b3cf9910"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT41_review.json",
+  "total_task_bytes": 92993
+}

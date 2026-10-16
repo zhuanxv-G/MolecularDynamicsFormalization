@@ -1,0 +1,73 @@
+{
+  "eaudit": "EAUDIT30",
+  "source_id": "MD-5.3.1-DiracEvaluates",
+  "input_sha256": {
+    "BATCH_EAUDIT30.md": "77804973aefeabd39fcd2622f536af1ee04f9759ddb4e7ee337a7c8886dc8b57",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT30e_materials": "37c27b9f2531b2ab4ad6cff720fe5c30c57f9bc365f7ed6ada6206c83cfbff1e",
+    "EAUDIT30e_PAGES.pdf": "e99499eade00aab93da5721c72d0ab13de618efba14ee2277b5793133762e12e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    210
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "b2f382043552854578aaebdf8765d5e9076551f0b49400fa0da2a1baae96c8eb",
+  "source_block_sha256": "965537acd99cae52d6b43ffc089718bf489700afdd1587e0a0b40190e11cafe8",
+  "source_declarations": [
+    "diracEvaluates"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.diracAction",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "d033476ed9d7c76ece72d2eea52ccfff5bc59f62d3d77526ea2485d6ecb919bb"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.diracMeasure",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "ca96b8fee35ed6961b57860ddb3f8fdd9b5b63ce5ad509cb42e478f84bfa58c9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.schwartzSpace",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "420f2d68754e2508ae8c234dbcfe03973c08a6931c639f4ca4c6def9d0a63c97"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "diracAction",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "1e72febc5ef2f17e63683102e939d5448c87591e78cfa38ab4dbdd7d316edd86"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "diracMeasure",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "f916ccdc411fb3486ad2c4256195bc43de03294ebe5cf76065b5e51f6182c27e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "schwartzSpace",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "420f2d68754e2508ae8c234dbcfe03973c08a6931c639f4ca4c6def9d0a63c97"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT30_review.json",
+  "total_task_bytes": 87018
+}

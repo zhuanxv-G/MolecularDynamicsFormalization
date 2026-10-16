@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT30",
+  "source_id": "MD-5.3.1-GaussianDeltaProbability",
+  "input_sha256": {
+    "BATCH_EAUDIT30.md": "77804973aefeabd39fcd2622f536af1ee04f9759ddb4e7ee337a7c8886dc8b57",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT30f_materials": "493dfea2a53d3ac5710538c1520ed4e01f16a9df556dcc71a446d078b4b12361",
+    "EAUDIT30f_PAGES.pdf": "e99499eade00aab93da5721c72d0ab13de618efba14ee2277b5793133762e12e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    210
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "de566f3aac35bf91c3a9ebabb239f94688fc012d33bc1555cf39715cf996cf19",
+  "source_block_sha256": "4cfc0bd8345e4d3ed0b4c28a48044f1a5b4d15c62d469fd7a4975a52cc46ea7d",
+  "source_declarations": [
+    "gaussianDeltaProbability"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.gaussianDelta",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "91ff5dcad7079462d8c3230b452ee845e1df53f79ed8998eb4e33f42f27fc513"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "gaussianDelta",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "91ff5dcad7079462d8c3230b452ee845e1df53f79ed8998eb4e33f42f27fc513"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT30_review.json",
+  "total_task_bytes": 85020
+}

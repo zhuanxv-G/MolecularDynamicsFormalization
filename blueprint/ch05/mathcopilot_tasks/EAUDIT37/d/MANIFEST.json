@@ -1,0 +1,55 @@
+{
+  "eaudit": "EAUDIT37",
+  "source_id": "MD-5.4.1-Mixing",
+  "input_sha256": {
+    "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT37d_materials": "5ac1d6d3b3e90c9bc20cf295de5dcb7ce47780f74b65a8b5b5da53ad6c754427",
+    "EAUDIT37d_PAGES.pdf": "aff00db3da681a5f907d625110201d40926a081f52921705aa92f80c84bbf325"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    220
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "be05177fd2c51d054f7fe6456a351002c5e81c6cea54e09c1898baea3e53515e",
+  "source_block_sha256": "29fe045b0c6af3966dd3f1a057a78757f1f855d63d7e9096267c1607ab823b2b",
+  "source_declarations": [
+    "weakMixing"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.average",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "average",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "486be0ed296530c072f5ef5abab325bde299504f13e39a37b351563198e4baff"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "weakMixing",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "29fe045b0c6af3966dd3f1a057a78757f1f855d63d7e9096267c1607ab823b2b"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT37_review.json",
+  "total_task_bytes": 191942
+}

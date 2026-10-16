@@ -1,0 +1,66 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT42",
+  "section": "5.6",
+  "source_ids": [
+    "MD-5.6-SmoothDenominatorBound",
+    "MD-5.6-ZeroPerturbation",
+    "MD-5.6-DynamicalCorrection",
+    "MD-5.6-WeakStationary",
+    "MD-5.6-WeakAttractor",
+    "MD-5.6-EulerLogField"
+  ],
+  "reaudit_ids": [
+    "MD-5.6-SmoothDenominatorBound",
+    "MD-5.6-ZeroPerturbation",
+    "MD-5.6-DynamicalCorrection",
+    "MD-5.6-WeakStationary",
+    "MD-5.6-WeakAttractor",
+    "MD-5.6-EulerLogField"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.6-SmoothDenominatorBound",
+      "prior_eaudit": "EAUDIT22",
+      "acceptance": "blueprint/ch05/validation/EAUDIT22/ACCEPTANCE.json",
+      "sha256": "0de8d5e04eb1a2adce06d4b81bb29c130c0574126a59a80d5b4a4d009fedf387"
+    },
+    {
+      "source_id": "MD-5.6-ZeroPerturbation",
+      "prior_eaudit": "EAUDIT22",
+      "acceptance": "blueprint/ch05/validation/EAUDIT22/ACCEPTANCE.json",
+      "sha256": "0de8d5e04eb1a2adce06d4b81bb29c130c0574126a59a80d5b4a4d009fedf387"
+    },
+    {
+      "source_id": "MD-5.6-DynamicalCorrection",
+      "prior_eaudit": "EAUDIT22",
+      "acceptance": "blueprint/ch05/validation/EAUDIT22/ACCEPTANCE.json",
+      "sha256": "0de8d5e04eb1a2adce06d4b81bb29c130c0574126a59a80d5b4a4d009fedf387"
+    },
+    {
+      "source_id": "MD-5.6-WeakStationary",
+      "prior_eaudit": "EAUDIT22",
+      "acceptance": "blueprint/ch05/validation/EAUDIT22/ACCEPTANCE.json",
+      "sha256": "0de8d5e04eb1a2adce06d4b81bb29c130c0574126a59a80d5b4a4d009fedf387"
+    },
+    {
+      "source_id": "MD-5.6-WeakAttractor",
+      "prior_eaudit": "EAUDIT22",
+      "acceptance": "blueprint/ch05/validation/EAUDIT22/ACCEPTANCE.json",
+      "sha256": "0de8d5e04eb1a2adce06d4b81bb29c130c0574126a59a80d5b4a4d009fedf387"
+    },
+    {
+      "source_id": "MD-5.6-EulerLogField",
+      "prior_eaudit": "EAUDIT22",
+      "acceptance": "blueprint/ch05/validation/EAUDIT22/ACCEPTANCE.json",
+      "sha256": "0de8d5e04eb1a2adce06d4b81bb29c130c0574126a59a80d5b4a4d009fedf387"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/INDEX.md"
+}

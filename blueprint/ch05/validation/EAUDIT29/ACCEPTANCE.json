@@ -1,0 +1,50 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT29",
+  "section": "5.2.3",
+  "source_ids": [
+    "MD-5.2.3-HamiltonianSkewExpression",
+    "MD-5.2.3-HamiltonianDensityPropagation",
+    "MD-5.2.3-MechanicalLiouvillian",
+    "MD-5.2.3-MechanicalLiouvillianIdentity"
+  ],
+  "reaudit_ids": [
+    "MD-5.2.3-HamiltonianSkewExpression",
+    "MD-5.2.3-HamiltonianDensityPropagation",
+    "MD-5.2.3-MechanicalLiouvillian",
+    "MD-5.2.3-MechanicalLiouvillianIdentity"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+      "prior_eaudit": "EAUDIT06",
+      "acceptance": "blueprint/ch05/validation/EAUDIT06/ACCEPTANCE.json",
+      "sha256": "599095795fbf46844b730970d0153f1d264e58570f6974a25aa61170f62ae010"
+    },
+    {
+      "source_id": "MD-5.2.3-HamiltonianDensityPropagation",
+      "prior_eaudit": "EAUDIT06",
+      "acceptance": "blueprint/ch05/validation/EAUDIT06/ACCEPTANCE.json",
+      "sha256": "599095795fbf46844b730970d0153f1d264e58570f6974a25aa61170f62ae010"
+    },
+    {
+      "source_id": "MD-5.2.3-MechanicalLiouvillian",
+      "prior_eaudit": "EAUDIT06",
+      "acceptance": "blueprint/ch05/validation/EAUDIT06/ACCEPTANCE.json",
+      "sha256": "599095795fbf46844b730970d0153f1d264e58570f6974a25aa61170f62ae010"
+    },
+    {
+      "source_id": "MD-5.2.3-MechanicalLiouvillianIdentity",
+      "prior_eaudit": "EAUDIT06",
+      "acceptance": "blueprint/ch05/validation/EAUDIT06/ACCEPTANCE.json",
+      "sha256": "599095795fbf46844b730970d0153f1d264e58570f6974a25aa61170f62ae010"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT29/INDEX.md"
+}

@@ -1,0 +1,50 @@
+{
+  "eaudit": "EAUDIT26",
+  "source_id": "MD-5.2.2-MassDerivative",
+  "input_sha256": {
+    "BATCH_EAUDIT26.md": "6044c4bffc0dd36b4d3752a3be6f3e77311b45a0014f3926f1384fba7be8ffe7",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT26b_materials": "5d2ee0981abc209fbedcf4e18caa508690bced542fc4dad8c51ea6a9accd0168",
+    "EAUDIT26b_PAGES.pdf": "451f8446f0e1752e955cd22211bc720f79998f5df0fc0c281ac7498ef56604d6"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    205
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "8a408f1da4d0bd5663acd4afc6784d6c878d3e2b326d3ae8ac1ee7c3b7009393",
+  "source_block_sha256": "d442321d3ae7a9382a1336dfdf11885f12daabfc39d319d8f73c67d31e35312f",
+  "source_declarations": [
+    "massDerivative",
+    "massDerivative_smooth"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.massFraction",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "e7227b3fbcaeb0a946935e7ca13bbcd50e497f52e10c6f731406cbb7957fdea6"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "massFraction",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "8a45edcc76b079b6fbce81f30afc89ceb4ffc340f492ad695bddfa870f2966e5"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT26_review.json",
+  "total_task_bytes": 86598
+}

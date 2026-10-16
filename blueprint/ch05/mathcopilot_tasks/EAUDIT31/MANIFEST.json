@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT31",
+  "input_sha256": {
+    "BATCH_EAUDIT31.md": "947604185b3b69783e3545693f7724f425a69eecd9aa7308754eaf5a2df65e5d",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT31a",
+      "source_id": "MD-5.3.2-WeakStationary",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/a",
+      "total_bytes": 103291,
+      "manifest_sha256": "e86f1637d738f7be57f40af3888f7ecbfc642d8f5845f22e7ea95be1f383817e"
+    },
+    {
+      "subtask": "EAUDIT31b",
+      "source_id": "MD-5.3.2-EnsembleAverage",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/b",
+      "total_bytes": 89739,
+      "manifest_sha256": "6192111f8e854ec99c207a9466012638e06d29ca079e33c84590df16e703f635"
+    },
+    {
+      "subtask": "EAUDIT31c",
+      "source_id": "MD-5.3.2-HamiltonianEnergyIntegral",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/c",
+      "total_bytes": 93617,
+      "manifest_sha256": "68ce14186a51f612e706d6c6366aec6efb553295bcb724e137c181694b3bbd31"
+    },
+    {
+      "subtask": "EAUDIT31d",
+      "source_id": "MD-5.3.2-ShellWeight",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/d",
+      "total_bytes": 89343,
+      "manifest_sha256": "7cdf14811b743c74bcbcb27ee13f8bb10e8b0d9f412f102ce17d23410a7ef5b3"
+    },
+    {
+      "subtask": "EAUDIT31e",
+      "source_id": "MD-5.3.2-ShellPartition",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/e",
+      "total_bytes": 115024,
+      "manifest_sha256": "545122d944195bb6518b88640db15e34e2cd523dde55f24920502ed29e18d67e"
+    },
+    {
+      "subtask": "EAUDIT31f",
+      "source_id": "MD-5.3.2-ShellDensity",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/f",
+      "total_bytes": 115949,
+      "manifest_sha256": "ec96f3795d61da361d56b9046c9f4f02e11591deeadac560ee48c6588e26f511"
+    },
+    {
+      "subtask": "EAUDIT31g",
+      "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/g",
+      "total_bytes": 120173,
+      "manifest_sha256": "7ce8cb51a16d43761e435ff5ea4fed8d51e0bbc31e9b3ea292d11645fcc145e1"
+    },
+    {
+      "subtask": "EAUDIT31h",
+      "source_id": "MD-5.3.2-SurfaceAreaFormula",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/h",
+      "total_bytes": 105336,
+      "manifest_sha256": "e1c6d088700138110a36a016b0f465f37595a33a3f3e50d8c194be6bca0ed57d"
+    }
+  ]
+}

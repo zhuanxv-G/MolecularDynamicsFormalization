@@ -1,0 +1,82 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT37",
+  "section": "5.4.1",
+  "source_ids": [
+    "MD-5.4.1-HarmonicFlow",
+    "MD-5.4.1-TwoOscillatorEnergy",
+    "MD-5.4.1-TwoOscillatorFlow",
+    "MD-5.4.1-Mixing",
+    "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+    "MD-5.4.1-CurveImageDimension",
+    "MD-5.4.1-PendulumPotential",
+    "MD-5.4.1-CircleInitialPoints"
+  ],
+  "reaudit_ids": [
+    "MD-5.4.1-HarmonicFlow",
+    "MD-5.4.1-TwoOscillatorEnergy",
+    "MD-5.4.1-TwoOscillatorFlow",
+    "MD-5.4.1-Mixing",
+    "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+    "MD-5.4.1-CurveImageDimension",
+    "MD-5.4.1-PendulumPotential",
+    "MD-5.4.1-CircleInitialPoints"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.4.1-HarmonicFlow",
+      "prior_eaudit": "EAUDIT14",
+      "acceptance": "blueprint/ch05/validation/EAUDIT14/ACCEPTANCE.json",
+      "sha256": "c53ff2f72444ae1be1f6de7b78551da5987b08090f01c0aee485b81f451e4054"
+    },
+    {
+      "source_id": "MD-5.4.1-TwoOscillatorEnergy",
+      "prior_eaudit": "EAUDIT14",
+      "acceptance": "blueprint/ch05/validation/EAUDIT14/ACCEPTANCE.json",
+      "sha256": "c53ff2f72444ae1be1f6de7b78551da5987b08090f01c0aee485b81f451e4054"
+    },
+    {
+      "source_id": "MD-5.4.1-TwoOscillatorFlow",
+      "prior_eaudit": "EAUDIT14",
+      "acceptance": "blueprint/ch05/validation/EAUDIT14/ACCEPTANCE.json",
+      "sha256": "c53ff2f72444ae1be1f6de7b78551da5987b08090f01c0aee485b81f451e4054"
+    },
+    {
+      "source_id": "MD-5.4.1-Mixing",
+      "prior_eaudit": "EAUDIT14",
+      "acceptance": "blueprint/ch05/validation/EAUDIT14/ACCEPTANCE.json",
+      "sha256": "c53ff2f72444ae1be1f6de7b78551da5987b08090f01c0aee485b81f451e4054"
+    },
+    {
+      "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+      "prior_eaudit": "EAUDIT14",
+      "acceptance": "blueprint/ch05/validation/EAUDIT14/ACCEPTANCE.json",
+      "sha256": "c53ff2f72444ae1be1f6de7b78551da5987b08090f01c0aee485b81f451e4054"
+    },
+    {
+      "source_id": "MD-5.4.1-CurveImageDimension",
+      "prior_eaudit": "EAUDIT16",
+      "acceptance": "blueprint/ch05/validation/EAUDIT16/ACCEPTANCE.json",
+      "sha256": "343a6126a258d02448f26791613e342235f13863c1d83c35593c822d3f51533a"
+    },
+    {
+      "source_id": "MD-5.4.1-PendulumPotential",
+      "prior_eaudit": "EAUDIT16",
+      "acceptance": "blueprint/ch05/validation/EAUDIT16/ACCEPTANCE.json",
+      "sha256": "343a6126a258d02448f26791613e342235f13863c1d83c35593c822d3f51533a"
+    },
+    {
+      "source_id": "MD-5.4.1-CircleInitialPoints",
+      "prior_eaudit": "EAUDIT16",
+      "acceptance": "blueprint/ch05/validation/EAUDIT16/ACCEPTANCE.json",
+      "sha256": "343a6126a258d02448f26791613e342235f13863c1d83c35593c822d3f51533a"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/INDEX.md"
+}

@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT42",
+  "source_id": "MD-5.6-WeakAttractor",
+  "input_sha256": {
+    "BATCH_EAUDIT42.md": "c5227e2bccf487c132fd61906af6c6a96c0a5e30ba6d58e6312428e6f9146928",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT42e_materials": "cb2f1b7715778c56f7b6995cdcc657b426a729b459bc73f264b95bde439a85fb",
+    "EAUDIT42e_PAGES.pdf": "42419909c32835d0d31f3e0f5c337c934074d9b931bad364b67c7e041b69a9d4"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    228
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "cfeba87668f22ff200eafc3cd811b3e0ce4362d8257470f8de50c11a9ca24736",
+  "source_block_sha256": "040ea486b068cfae0a47aa94bad3a7d54312d34bd0dfa380ef1f599a5dde608c",
+  "source_declarations": [
+    "weakAttractor"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "weakAttractor",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "040ea486b068cfae0a47aa94bad3a7d54312d34bd0dfa380ef1f599a5dde608c"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT42_review.json",
+  "total_task_bytes": 92807
+}

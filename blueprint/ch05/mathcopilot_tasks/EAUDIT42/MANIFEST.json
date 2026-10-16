@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT42",
+  "input_sha256": {
+    "BATCH_EAUDIT42.md": "c5227e2bccf487c132fd61906af6c6a96c0a5e30ba6d58e6312428e6f9146928",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT42a",
+      "source_id": "MD-5.6-SmoothDenominatorBound",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/a",
+      "total_bytes": 100805,
+      "manifest_sha256": "e4ea73e5af64c15423316fed8e77d8ba62c819711be8dcc9801106d31cc7aa1d"
+    },
+    {
+      "subtask": "EAUDIT42b",
+      "source_id": "MD-5.6-ZeroPerturbation",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/b",
+      "total_bytes": 111022,
+      "manifest_sha256": "0010510771007ae331f293c0d53b3b0a1c6a93e3cd586fca282d2ac16ef245ba"
+    },
+    {
+      "subtask": "EAUDIT42c",
+      "source_id": "MD-5.6-DynamicalCorrection",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/c",
+      "total_bytes": 113252,
+      "manifest_sha256": "bf88850e7d1c2d3348b7c37bd113cdda78e534793230f8278f2ebf86351a3055"
+    },
+    {
+      "subtask": "EAUDIT42d",
+      "source_id": "MD-5.6-WeakStationary",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/d",
+      "total_bytes": 93820,
+      "manifest_sha256": "3faf40dcf1f990d7f0e91274716217cd79de3481b49d1a21e024ed2d9012fbd2"
+    },
+    {
+      "subtask": "EAUDIT42e",
+      "source_id": "MD-5.6-WeakAttractor",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/e",
+      "total_bytes": 92807,
+      "manifest_sha256": "2135377b99099e9db1cc2158929849bf930e214e8e7d418f8c8e2f3640297018"
+    },
+    {
+      "subtask": "EAUDIT42f",
+      "source_id": "MD-5.6-EulerLogField",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/f",
+      "total_bytes": 92041,
+      "manifest_sha256": "30605926cdb9e2e04ff7fc530f2c023277fa00921f54f89236a59ae439066d7b"
+    }
+  ]
+}

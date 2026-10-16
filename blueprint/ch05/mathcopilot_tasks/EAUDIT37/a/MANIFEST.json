@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT37",
+  "source_id": "MD-5.4.1-HarmonicFlow",
+  "input_sha256": {
+    "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT37a_materials": "ec7487296fc9e7a82c9c82957be05ee2635934d243ee7a8841f18b44a15a3c7e",
+    "EAUDIT37a_PAGES.pdf": "d12bff63daceb32f499847db1182d87f28c0de5bcda9d6c6ff694de02d41ebfd"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    219,
+    220
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "0fd80e1a402236034064e1f494d67a498e3b865cadc3721fc41884c6376e664e",
+  "source_block_sha256": "64fc0ef5a63be4217086a8b4dbc3ca023c7eccafbec582e92a6bd68bf0e4ed69",
+  "source_declarations": [
+    "harmonicFlow"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "harmonicFlow",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "64fc0ef5a63be4217086a8b4dbc3ca023c7eccafbec582e92a6bd68bf0e4ed69"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT37_review.json",
+  "total_task_bytes": 208468
+}

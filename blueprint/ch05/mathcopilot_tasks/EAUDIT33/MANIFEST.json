@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT33",
+  "input_sha256": {
+    "BATCH_EAUDIT33.md": "a3f171def0829ef0dc2aa8ad893f2243d98f57caf2e0e69a1d092279e869291d",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT33a",
+      "source_id": "MD-5.3.2-IdealGasPositionDomain",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT33/a",
+      "total_bytes": 95900,
+      "manifest_sha256": "499aa2b1bf7b6d5f55981855b89120d3449219ced133c446c5ca1917a9085e8e"
+    },
+    {
+      "subtask": "EAUDIT33b",
+      "source_id": "MD-5.3.2-IdealGasPartition",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT33/b",
+      "total_bytes": 105264,
+      "manifest_sha256": "eef421f12dba0a916c98e1555d8360ef8ec050f1ef2a667dffc7b7401079052e"
+    }
+  ]
+}

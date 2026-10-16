@@ -277,16 +277,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT01",
     "repair": {
-      "eaudit": "EAUDIT01",
+      "eaudit": "EAUDIT24",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT24/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT01.md": "e0c7c2f5b967376ef9a3ed326f34dd0a52983d400ca10d2e9883e5f8ed738c9e",
-        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
-        "blueprint/ch05/ch05_source.json": "821d42d5ede245528a8aa9f16687479d9aaa662af9946774fd2abe80b41929c7"
-      }
+        "BATCH_EAUDIT24.md": "d3e6d22c7cf7519cec7e3bee6e6222f9eb54c8e6d7b1ba4ab8e61c2c3d7ef5e7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT01"
     }
   },
   {
@@ -506,16 +507,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT01",
     "repair": {
-      "eaudit": "EAUDIT01",
+      "eaudit": "EAUDIT24",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT24/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT01.md": "e0c7c2f5b967376ef9a3ed326f34dd0a52983d400ca10d2e9883e5f8ed738c9e",
-        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
-        "blueprint/ch05/ch05_source.json": "821d42d5ede245528a8aa9f16687479d9aaa662af9946774fd2abe80b41929c7"
-      }
+        "BATCH_EAUDIT24.md": "d3e6d22c7cf7519cec7e3bee6e6222f9eb54c8e6d7b1ba4ab8e61c2c3d7ef5e7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT01"
     }
   },
   {
@@ -599,16 +601,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT01",
     "repair": {
-      "eaudit": "EAUDIT01",
+      "eaudit": "EAUDIT24",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT24/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT01.md": "e0c7c2f5b967376ef9a3ed326f34dd0a52983d400ca10d2e9883e5f8ed738c9e",
-        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
-        "blueprint/ch05/ch05_source.json": "821d42d5ede245528a8aa9f16687479d9aaa662af9946774fd2abe80b41929c7"
-      }
+        "BATCH_EAUDIT24.md": "d3e6d22c7cf7519cec7e3bee6e6222f9eb54c8e6d7b1ba4ab8e61c2c3d7ef5e7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT01"
     }
   },
   {
@@ -695,16 +698,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT01",
     "repair": {
-      "eaudit": "EAUDIT01",
+      "eaudit": "EAUDIT24",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT01/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT24/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT01.md": "e0c7c2f5b967376ef9a3ed326f34dd0a52983d400ca10d2e9883e5f8ed738c9e",
-        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
-        "blueprint/ch05/ch05_source.json": "821d42d5ede245528a8aa9f16687479d9aaa662af9946774fd2abe80b41929c7"
-      }
+        "BATCH_EAUDIT24.md": "d3e6d22c7cf7519cec7e3bee6e6222f9eb54c8e6d7b1ba4ab8e61c2c3d7ef5e7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT01"
     }
   },
   {
@@ -1228,16 +1232,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT02",
     "repair": {
-      "eaudit": "EAUDIT02",
+      "eaudit": "EAUDIT25",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT02/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT25/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT02.md": "c74a91216a5db26287681b6ce415d1837ab607f9d6cf43f5deaa517e9137540d",
-        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
-        "blueprint/ch05/ch05_source.json": "50cfd1c64928c10c6f3764c16f12cf642134a63b84c0cdee3f7d8a40e113bff8"
-      }
+        "BATCH_EAUDIT25.md": "ee7d4cd6eac0a0277c668283f02f8e136975fb6b6d1a6784ba2714c066e0d54f",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT02"
     }
   },
   {
@@ -1326,16 +1331,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT02",
     "repair": {
-      "eaudit": "EAUDIT02",
+      "eaudit": "EAUDIT25",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT02/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT25/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT02.md": "c74a91216a5db26287681b6ce415d1837ab607f9d6cf43f5deaa517e9137540d",
-        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
-        "blueprint/ch05/ch05_source.json": "50cfd1c64928c10c6f3764c16f12cf642134a63b84c0cdee3f7d8a40e113bff8"
-      }
+        "BATCH_EAUDIT25.md": "ee7d4cd6eac0a0277c668283f02f8e136975fb6b6d1a6784ba2714c066e0d54f",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT02"
     }
   },
   {
@@ -1480,16 +1486,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT02",
     "repair": {
-      "eaudit": "EAUDIT02",
+      "eaudit": "EAUDIT25",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT02/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT25/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT02.md": "c74a91216a5db26287681b6ce415d1837ab607f9d6cf43f5deaa517e9137540d",
-        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
-        "blueprint/ch05/ch05_source.json": "50cfd1c64928c10c6f3764c16f12cf642134a63b84c0cdee3f7d8a40e113bff8"
-      }
+        "BATCH_EAUDIT25.md": "ee7d4cd6eac0a0277c668283f02f8e136975fb6b6d1a6784ba2714c066e0d54f",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT02"
     }
   },
   {
@@ -1578,16 +1585,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT02",
     "repair": {
-      "eaudit": "EAUDIT02",
+      "eaudit": "EAUDIT25",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT02/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT25/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT02.md": "c74a91216a5db26287681b6ce415d1837ab607f9d6cf43f5deaa517e9137540d",
-        "Blueprint/Ch05.lean": "8a424d34d52db40845453f2923d9dab689e312530818b6fca88909dc2a9bb9c8",
-        "blueprint/ch05/ch05_source.json": "50cfd1c64928c10c6f3764c16f12cf642134a63b84c0cdee3f7d8a40e113bff8"
-      }
+        "BATCH_EAUDIT25.md": "ee7d4cd6eac0a0277c668283f02f8e136975fb6b6d1a6784ba2714c066e0d54f",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT02"
     }
   },
   {
@@ -2060,16 +2068,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT03",
     "repair": {
-      "eaudit": "EAUDIT03",
+      "eaudit": "EAUDIT26",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT26/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
-        "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
-        "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66"
-      }
+        "BATCH_EAUDIT26.md": "6044c4bffc0dd36b4d3752a3be6f3e77311b45a0014f3926f1384fba7be8ffe7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT03"
     }
   },
   {
@@ -2158,16 +2167,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT03",
     "repair": {
-      "eaudit": "EAUDIT03",
+      "eaudit": "EAUDIT26",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT26/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
-        "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
-        "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66"
-      }
+        "BATCH_EAUDIT26.md": "6044c4bffc0dd36b4d3752a3be6f3e77311b45a0014f3926f1384fba7be8ffe7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT03"
     }
   },
   {
@@ -2253,16 +2263,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT03",
     "repair": {
-      "eaudit": "EAUDIT03",
+      "eaudit": "EAUDIT26",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT26/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
-        "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
-        "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66"
-      }
+        "BATCH_EAUDIT26.md": "6044c4bffc0dd36b4d3752a3be6f3e77311b45a0014f3926f1384fba7be8ffe7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT03"
     }
   },
   {
@@ -2351,16 +2362,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT03",
     "repair": {
-      "eaudit": "EAUDIT03",
+      "eaudit": "EAUDIT26",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT26/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
-        "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
-        "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66"
-      }
+        "BATCH_EAUDIT26.md": "6044c4bffc0dd36b4d3752a3be6f3e77311b45a0014f3926f1384fba7be8ffe7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT03"
     }
   },
   {
@@ -2449,16 +2461,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT03",
     "repair": {
-      "eaudit": "EAUDIT03",
+      "eaudit": "EAUDIT26",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT26/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
-        "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
-        "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66"
-      }
+        "BATCH_EAUDIT26.md": "6044c4bffc0dd36b4d3752a3be6f3e77311b45a0014f3926f1384fba7be8ffe7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT03"
     }
   },
   {
@@ -2544,16 +2557,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT03",
     "repair": {
-      "eaudit": "EAUDIT03",
+      "eaudit": "EAUDIT26",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT26/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
-        "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
-        "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66"
-      }
+        "BATCH_EAUDIT26.md": "6044c4bffc0dd36b4d3752a3be6f3e77311b45a0014f3926f1384fba7be8ffe7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT03"
     }
   },
   {
@@ -2639,16 +2653,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT03",
     "repair": {
-      "eaudit": "EAUDIT03",
+      "eaudit": "EAUDIT26",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT26/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
-        "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
-        "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66"
-      }
+        "BATCH_EAUDIT26.md": "6044c4bffc0dd36b4d3752a3be6f3e77311b45a0014f3926f1384fba7be8ffe7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT03"
     }
   },
   {
@@ -2734,16 +2749,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT03",
     "repair": {
-      "eaudit": "EAUDIT03",
+      "eaudit": "EAUDIT26",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT26/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
-        "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
-        "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66"
-      }
+        "BATCH_EAUDIT26.md": "6044c4bffc0dd36b4d3752a3be6f3e77311b45a0014f3926f1384fba7be8ffe7",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT03"
     }
   },
   {
@@ -2831,16 +2847,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT04",
     "repair": {
-      "eaudit": "EAUDIT04",
+      "eaudit": "EAUDIT27",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT04.md": "6452b8e09c6a2fe4ba67c8aa654ea830fad3a4b1461df3cef7b53668f7ce79ce",
-        "Blueprint/Ch05.lean": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
-        "blueprint/ch05/ch05_source.json": "ff5dc952dfa0c448947a87365d46eb1f49731550bb3990c143fadbcea02d540f"
-      }
+        "BATCH_EAUDIT27.md": "7fa418c6ac2dbf8aae8b23bcc2844ba7b911c69fd667fc02fa217aac77b051da",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT04"
     }
   },
   {
@@ -2928,16 +2945,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT04",
     "repair": {
-      "eaudit": "EAUDIT04",
+      "eaudit": "EAUDIT27",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT04.md": "6452b8e09c6a2fe4ba67c8aa654ea830fad3a4b1461df3cef7b53668f7ce79ce",
-        "Blueprint/Ch05.lean": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
-        "blueprint/ch05/ch05_source.json": "ff5dc952dfa0c448947a87365d46eb1f49731550bb3990c143fadbcea02d540f"
-      }
+        "BATCH_EAUDIT27.md": "7fa418c6ac2dbf8aae8b23bcc2844ba7b911c69fd667fc02fa217aac77b051da",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT04"
     }
   },
   {
@@ -3025,16 +3043,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT04",
     "repair": {
-      "eaudit": "EAUDIT04",
+      "eaudit": "EAUDIT27",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT04.md": "6452b8e09c6a2fe4ba67c8aa654ea830fad3a4b1461df3cef7b53668f7ce79ce",
-        "Blueprint/Ch05.lean": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
-        "blueprint/ch05/ch05_source.json": "ff5dc952dfa0c448947a87365d46eb1f49731550bb3990c143fadbcea02d540f"
-      }
+        "BATCH_EAUDIT27.md": "7fa418c6ac2dbf8aae8b23bcc2844ba7b911c69fd667fc02fa217aac77b051da",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT04"
     }
   },
   {
@@ -3180,16 +3199,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT04",
     "repair": {
-      "eaudit": "EAUDIT04",
+      "eaudit": "EAUDIT27",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT04.md": "6452b8e09c6a2fe4ba67c8aa654ea830fad3a4b1461df3cef7b53668f7ce79ce",
-        "Blueprint/Ch05.lean": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
-        "blueprint/ch05/ch05_source.json": "ff5dc952dfa0c448947a87365d46eb1f49731550bb3990c143fadbcea02d540f"
-      }
+        "BATCH_EAUDIT27.md": "7fa418c6ac2dbf8aae8b23bcc2844ba7b911c69fd667fc02fa217aac77b051da",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT04"
     }
   },
   {
@@ -3280,16 +3300,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT04",
     "repair": {
-      "eaudit": "EAUDIT04",
+      "eaudit": "EAUDIT27",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT04.md": "6452b8e09c6a2fe4ba67c8aa654ea830fad3a4b1461df3cef7b53668f7ce79ce",
-        "Blueprint/Ch05.lean": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
-        "blueprint/ch05/ch05_source.json": "ff5dc952dfa0c448947a87365d46eb1f49731550bb3990c143fadbcea02d540f"
-      }
+        "BATCH_EAUDIT27.md": "7fa418c6ac2dbf8aae8b23bcc2844ba7b911c69fd667fc02fa217aac77b051da",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT04"
     }
   },
   {
@@ -3378,16 +3399,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT04",
     "repair": {
-      "eaudit": "EAUDIT04",
+      "eaudit": "EAUDIT27",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT04.md": "6452b8e09c6a2fe4ba67c8aa654ea830fad3a4b1461df3cef7b53668f7ce79ce",
-        "Blueprint/Ch05.lean": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
-        "blueprint/ch05/ch05_source.json": "ff5dc952dfa0c448947a87365d46eb1f49731550bb3990c143fadbcea02d540f"
-      }
+        "BATCH_EAUDIT27.md": "7fa418c6ac2dbf8aae8b23bcc2844ba7b911c69fd667fc02fa217aac77b051da",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT04"
     }
   },
   {
@@ -3475,16 +3497,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT04",
     "repair": {
-      "eaudit": "EAUDIT04",
+      "eaudit": "EAUDIT27",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT04.md": "6452b8e09c6a2fe4ba67c8aa654ea830fad3a4b1461df3cef7b53668f7ce79ce",
-        "Blueprint/Ch05.lean": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
-        "blueprint/ch05/ch05_source.json": "ff5dc952dfa0c448947a87365d46eb1f49731550bb3990c143fadbcea02d540f"
-      }
+        "BATCH_EAUDIT27.md": "7fa418c6ac2dbf8aae8b23bcc2844ba7b911c69fd667fc02fa217aac77b051da",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT04"
     }
   },
   {
@@ -3579,16 +3602,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT04",
     "repair": {
-      "eaudit": "EAUDIT04",
+      "eaudit": "EAUDIT27",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT04/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT27/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT04.md": "6452b8e09c6a2fe4ba67c8aa654ea830fad3a4b1461df3cef7b53668f7ce79ce",
-        "Blueprint/Ch05.lean": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
-        "blueprint/ch05/ch05_source.json": "ff5dc952dfa0c448947a87365d46eb1f49731550bb3990c143fadbcea02d540f"
-      }
+        "BATCH_EAUDIT27.md": "7fa418c6ac2dbf8aae8b23bcc2844ba7b911c69fd667fc02fa217aac77b051da",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT04"
     }
   },
   {
@@ -3678,16 +3702,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT05",
     "repair": {
-      "eaudit": "EAUDIT05",
+      "eaudit": "EAUDIT28",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT28/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT05.md": "70e4b97a3e3fb75b6c6498335bf78e859e6c62b55759bf4914493fd8a9b266ad",
-        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
-        "blueprint/ch05/ch05_source.json": "79a58aae3caefb4758abc593137cc8b627d2cfce7e32d2a869e3a2ed6a44e978"
-      }
+        "BATCH_EAUDIT28.md": "56b2a239d2071ffa59ddda37f51e775a60c7b6f619bc6372435b057329704a88",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT05"
     }
   },
   {
@@ -3777,16 +3802,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT05",
     "repair": {
-      "eaudit": "EAUDIT05",
+      "eaudit": "EAUDIT28",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT05/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT28/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT05.md": "70e4b97a3e3fb75b6c6498335bf78e859e6c62b55759bf4914493fd8a9b266ad",
-        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
-        "blueprint/ch05/ch05_source.json": "79a58aae3caefb4758abc593137cc8b627d2cfce7e32d2a869e3a2ed6a44e978"
-      }
+        "BATCH_EAUDIT28.md": "56b2a239d2071ffa59ddda37f51e775a60c7b6f619bc6372435b057329704a88",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT05"
     }
   },
   {
@@ -3932,16 +3958,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT06",
     "repair": {
-      "eaudit": "EAUDIT06",
+      "eaudit": "EAUDIT29",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT29/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT06.md": "00e463bff971ca0447b5b48397305936a2e5f9b59e17a71b013bd3ea47513997",
-        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
-        "blueprint/ch05/ch05_source.json": "a35b90dec1eb8c068412e36be8b1b3ccf18ec6b12be16d4bc8a52cc59b847dd9"
-      }
+        "BATCH_EAUDIT29.md": "560dd9e842af77c4df9997c92b497d3457102c036a7463e04dcfaf055747b54a",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT06"
     }
   },
   {
@@ -4032,16 +4059,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT06",
     "repair": {
-      "eaudit": "EAUDIT06",
+      "eaudit": "EAUDIT29",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT29/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT06.md": "00e463bff971ca0447b5b48397305936a2e5f9b59e17a71b013bd3ea47513997",
-        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
-        "blueprint/ch05/ch05_source.json": "a35b90dec1eb8c068412e36be8b1b3ccf18ec6b12be16d4bc8a52cc59b847dd9"
-      }
+        "BATCH_EAUDIT29.md": "560dd9e842af77c4df9997c92b497d3457102c036a7463e04dcfaf055747b54a",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT06"
     }
   },
   {
@@ -4141,16 +4169,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT06",
     "repair": {
-      "eaudit": "EAUDIT06",
+      "eaudit": "EAUDIT29",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT29/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT06.md": "00e463bff971ca0447b5b48397305936a2e5f9b59e17a71b013bd3ea47513997",
-        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
-        "blueprint/ch05/ch05_source.json": "a35b90dec1eb8c068412e36be8b1b3ccf18ec6b12be16d4bc8a52cc59b847dd9"
-      }
+        "BATCH_EAUDIT29.md": "560dd9e842af77c4df9997c92b497d3457102c036a7463e04dcfaf055747b54a",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT06"
     }
   },
   {
@@ -4244,16 +4273,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT06",
     "repair": {
-      "eaudit": "EAUDIT06",
+      "eaudit": "EAUDIT29",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT06/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT29/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT06.md": "00e463bff971ca0447b5b48397305936a2e5f9b59e17a71b013bd3ea47513997",
-        "Blueprint/Ch05.lean": "9a2296fdcdf73982a5eb5da864b81cc04387e9418dba001c5f791eb6f5661a38",
-        "blueprint/ch05/ch05_source.json": "a35b90dec1eb8c068412e36be8b1b3ccf18ec6b12be16d4bc8a52cc59b847dd9"
-      }
+        "BATCH_EAUDIT29.md": "560dd9e842af77c4df9997c92b497d3457102c036a7463e04dcfaf055747b54a",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT06"
     }
   },
   {
@@ -4311,16 +4341,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT07",
     "repair": {
-      "eaudit": "EAUDIT07",
+      "eaudit": "EAUDIT30",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT30/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
-        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
-        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
-      }
+        "BATCH_EAUDIT30.md": "77804973aefeabd39fcd2622f536af1ee04f9759ddb4e7ee337a7c8886dc8b57",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT07"
     }
   },
   {
@@ -4569,16 +4600,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT07",
     "repair": {
-      "eaudit": "EAUDIT07",
+      "eaudit": "EAUDIT30",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT30/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
-        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
-        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
-      }
+        "BATCH_EAUDIT30.md": "77804973aefeabd39fcd2622f536af1ee04f9759ddb4e7ee337a7c8886dc8b57",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT07"
     }
   },
   {
@@ -4635,16 +4667,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT07",
     "repair": {
-      "eaudit": "EAUDIT07",
+      "eaudit": "EAUDIT30",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT30/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
-        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
-        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
-      }
+        "BATCH_EAUDIT30.md": "77804973aefeabd39fcd2622f536af1ee04f9759ddb4e7ee337a7c8886dc8b57",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT07"
     }
   },
   {
@@ -4898,16 +4931,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT07",
     "repair": {
-      "eaudit": "EAUDIT07",
+      "eaudit": "EAUDIT30",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT30/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
-        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
-        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
-      }
+        "BATCH_EAUDIT30.md": "77804973aefeabd39fcd2622f536af1ee04f9759ddb4e7ee337a7c8886dc8b57",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT07"
     }
   },
   {
@@ -4995,16 +5029,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT07",
     "repair": {
-      "eaudit": "EAUDIT07",
+      "eaudit": "EAUDIT30",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT30/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
-        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
-        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
-      }
+        "BATCH_EAUDIT30.md": "77804973aefeabd39fcd2622f536af1ee04f9759ddb4e7ee337a7c8886dc8b57",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT07"
     }
   },
   {
@@ -5091,16 +5126,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT07",
     "repair": {
-      "eaudit": "EAUDIT07",
+      "eaudit": "EAUDIT30",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT30/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
-        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
-        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
-      }
+        "BATCH_EAUDIT30.md": "77804973aefeabd39fcd2622f536af1ee04f9759ddb4e7ee337a7c8886dc8b57",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT07"
     }
   },
   {
@@ -5190,16 +5226,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT07",
     "repair": {
-      "eaudit": "EAUDIT07",
+      "eaudit": "EAUDIT30",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT30/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT07.md": "a10ad26aa3cd5d73ef1f979120d9eedbd584938b7a4bef53bfbdd4acd3eee466",
-        "Blueprint/Ch05.lean": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
-        "blueprint/ch05/ch05_source.json": "af23a28e0db36ecd37d434c09e3d2d2a9d4c42c3aa25e2582d640cea6b7312a5"
-      }
+        "BATCH_EAUDIT30.md": "77804973aefeabd39fcd2622f536af1ee04f9759ddb4e7ee337a7c8886dc8b57",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT07"
     }
   },
   {
@@ -5307,16 +5344,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT18",
     "repair": {
-      "eaudit": "EAUDIT18",
+      "eaudit": "EAUDIT31",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT18/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT18.md": "6f2697e4e6c04dfda38e64dbd121b320a0e2b5139b0da71cd2cf0413084a3453",
-        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
-        "blueprint/ch05/ch05_source.json": "46434d6c191d0c67f4e18c5829d9b93230261247ec15ff3236627af4ac71376c"
-      }
+        "BATCH_EAUDIT31.md": "947604185b3b69783e3545693f7724f425a69eecd9aa7308754eaf5a2df65e5d",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT18"
     }
   },
   {
@@ -5416,16 +5454,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT08",
     "repair": {
-      "eaudit": "EAUDIT08",
+      "eaudit": "EAUDIT31",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT08/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT08.md": "10702fcc5baec0a597e14f44344a1fed10cdb7bbcfcfa7d0f8ec7352e70cb0b6",
-        "Blueprint/Ch05.lean": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
-        "blueprint/ch05/ch05_source.json": "52bef0989f284df6fd9fa8a63e9cfad88afeb43c1e03fa4f6ae1b3b4203762cb"
-      }
+        "BATCH_EAUDIT31.md": "947604185b3b69783e3545693f7724f425a69eecd9aa7308754eaf5a2df65e5d",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT08"
     }
   },
   {
@@ -5636,16 +5675,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT08",
     "repair": {
-      "eaudit": "EAUDIT08",
+      "eaudit": "EAUDIT31",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT08/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT08.md": "10702fcc5baec0a597e14f44344a1fed10cdb7bbcfcfa7d0f8ec7352e70cb0b6",
-        "Blueprint/Ch05.lean": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
-        "blueprint/ch05/ch05_source.json": "52bef0989f284df6fd9fa8a63e9cfad88afeb43c1e03fa4f6ae1b3b4203762cb"
-      }
+        "BATCH_EAUDIT31.md": "947604185b3b69783e3545693f7724f425a69eecd9aa7308754eaf5a2df65e5d",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT08"
     }
   },
   {
@@ -5802,16 +5842,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT08",
     "repair": {
-      "eaudit": "EAUDIT08",
+      "eaudit": "EAUDIT31",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT08/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT08.md": "10702fcc5baec0a597e14f44344a1fed10cdb7bbcfcfa7d0f8ec7352e70cb0b6",
-        "Blueprint/Ch05.lean": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
-        "blueprint/ch05/ch05_source.json": "52bef0989f284df6fd9fa8a63e9cfad88afeb43c1e03fa4f6ae1b3b4203762cb"
-      }
+        "BATCH_EAUDIT31.md": "947604185b3b69783e3545693f7724f425a69eecd9aa7308754eaf5a2df65e5d",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT08"
     }
   },
   {
@@ -5912,16 +5953,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT08",
     "repair": {
-      "eaudit": "EAUDIT08",
+      "eaudit": "EAUDIT31",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT08/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT08.md": "10702fcc5baec0a597e14f44344a1fed10cdb7bbcfcfa7d0f8ec7352e70cb0b6",
-        "Blueprint/Ch05.lean": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
-        "blueprint/ch05/ch05_source.json": "52bef0989f284df6fd9fa8a63e9cfad88afeb43c1e03fa4f6ae1b3b4203762cb"
-      }
+        "BATCH_EAUDIT31.md": "947604185b3b69783e3545693f7724f425a69eecd9aa7308754eaf5a2df65e5d",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT08"
     }
   },
   {
@@ -6027,16 +6069,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT08",
     "repair": {
-      "eaudit": "EAUDIT08",
+      "eaudit": "EAUDIT31",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT08/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT08.md": "10702fcc5baec0a597e14f44344a1fed10cdb7bbcfcfa7d0f8ec7352e70cb0b6",
-        "Blueprint/Ch05.lean": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
-        "blueprint/ch05/ch05_source.json": "52bef0989f284df6fd9fa8a63e9cfad88afeb43c1e03fa4f6ae1b3b4203762cb"
-      }
+        "BATCH_EAUDIT31.md": "947604185b3b69783e3545693f7724f425a69eecd9aa7308754eaf5a2df65e5d",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT08"
     }
   },
   {
@@ -6386,16 +6429,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT09",
     "repair": {
-      "eaudit": "EAUDIT09",
+      "eaudit": "EAUDIT31",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT09.md": "3b50f9b7479ec2410fbd63b771db6bc7f9db83f8c4400f9824f00b6942c3f5b6",
-        "Blueprint/Ch05.lean": "aeec9886e5bcd40333d95a514852afdb95218836d2d4e24a586ffb5a619361e6",
-        "blueprint/ch05/ch05_source.json": "9111ec6dd7a0efa7bce1d17cbb7ce87f7d51b92b300cd195509e13e680ad1f98"
-      }
+        "BATCH_EAUDIT31.md": "947604185b3b69783e3545693f7724f425a69eecd9aa7308754eaf5a2df65e5d",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT09"
     }
   },
   {
@@ -6488,16 +6532,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT09",
     "repair": {
-      "eaudit": "EAUDIT09",
+      "eaudit": "EAUDIT31",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT09.md": "3b50f9b7479ec2410fbd63b771db6bc7f9db83f8c4400f9824f00b6942c3f5b6",
-        "Blueprint/Ch05.lean": "aeec9886e5bcd40333d95a514852afdb95218836d2d4e24a586ffb5a619361e6",
-        "blueprint/ch05/ch05_source.json": "9111ec6dd7a0efa7bce1d17cbb7ce87f7d51b92b300cd195509e13e680ad1f98"
-      }
+        "BATCH_EAUDIT31.md": "947604185b3b69783e3545693f7724f425a69eecd9aa7308754eaf5a2df65e5d",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT09"
     }
   },
   {
@@ -6606,16 +6651,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT09",
     "repair": {
-      "eaudit": "EAUDIT09",
+      "eaudit": "EAUDIT32",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT32/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT09.md": "3b50f9b7479ec2410fbd63b771db6bc7f9db83f8c4400f9824f00b6942c3f5b6",
-        "Blueprint/Ch05.lean": "aeec9886e5bcd40333d95a514852afdb95218836d2d4e24a586ffb5a619361e6",
-        "blueprint/ch05/ch05_source.json": "9111ec6dd7a0efa7bce1d17cbb7ce87f7d51b92b300cd195509e13e680ad1f98"
-      }
+        "BATCH_EAUDIT32.md": "3717f630d2959eff7dea8509489c8d8c92313d02bc086a9490e497d91683bdad",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT09"
     }
   },
   {
@@ -6706,16 +6752,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT09",
     "repair": {
-      "eaudit": "EAUDIT09",
+      "eaudit": "EAUDIT32",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT32/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT09.md": "3b50f9b7479ec2410fbd63b771db6bc7f9db83f8c4400f9824f00b6942c3f5b6",
-        "Blueprint/Ch05.lean": "aeec9886e5bcd40333d95a514852afdb95218836d2d4e24a586ffb5a619361e6",
-        "blueprint/ch05/ch05_source.json": "9111ec6dd7a0efa7bce1d17cbb7ce87f7d51b92b300cd195509e13e680ad1f98"
-      }
+        "BATCH_EAUDIT32.md": "3717f630d2959eff7dea8509489c8d8c92313d02bc086a9490e497d91683bdad",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT09"
     }
   },
   {
@@ -7002,16 +7049,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT09",
     "repair": {
-      "eaudit": "EAUDIT09",
+      "eaudit": "EAUDIT32",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT32/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT09.md": "3b50f9b7479ec2410fbd63b771db6bc7f9db83f8c4400f9824f00b6942c3f5b6",
-        "Blueprint/Ch05.lean": "aeec9886e5bcd40333d95a514852afdb95218836d2d4e24a586ffb5a619361e6",
-        "blueprint/ch05/ch05_source.json": "9111ec6dd7a0efa7bce1d17cbb7ce87f7d51b92b300cd195509e13e680ad1f98"
-      }
+        "BATCH_EAUDIT32.md": "3717f630d2959eff7dea8509489c8d8c92313d02bc086a9490e497d91683bdad",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT09"
     }
   },
   {
@@ -7101,16 +7149,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT09",
     "repair": {
-      "eaudit": "EAUDIT09",
+      "eaudit": "EAUDIT32",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT32/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT09.md": "3b50f9b7479ec2410fbd63b771db6bc7f9db83f8c4400f9824f00b6942c3f5b6",
-        "Blueprint/Ch05.lean": "aeec9886e5bcd40333d95a514852afdb95218836d2d4e24a586ffb5a619361e6",
-        "blueprint/ch05/ch05_source.json": "9111ec6dd7a0efa7bce1d17cbb7ce87f7d51b92b300cd195509e13e680ad1f98"
-      }
+        "BATCH_EAUDIT32.md": "3717f630d2959eff7dea8509489c8d8c92313d02bc086a9490e497d91683bdad",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT09"
     }
   },
   {
@@ -7199,16 +7248,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT10",
     "repair": {
-      "eaudit": "EAUDIT10",
+      "eaudit": "EAUDIT32",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT32/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT10.md": "71aeaa88d20f0fbc6d1ddc0daa1beea8b93b61d2b0114708da25c4d62e54a7d9",
-        "Blueprint/Ch05.lean": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
-        "blueprint/ch05/ch05_source.json": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62"
-      }
+        "BATCH_EAUDIT32.md": "3717f630d2959eff7dea8509489c8d8c92313d02bc086a9490e497d91683bdad",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT10"
     }
   },
   {
@@ -7398,16 +7448,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT10",
     "repair": {
-      "eaudit": "EAUDIT10",
+      "eaudit": "EAUDIT32",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT32/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT10.md": "71aeaa88d20f0fbc6d1ddc0daa1beea8b93b61d2b0114708da25c4d62e54a7d9",
-        "Blueprint/Ch05.lean": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
-        "blueprint/ch05/ch05_source.json": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62"
-      }
+        "BATCH_EAUDIT32.md": "3717f630d2959eff7dea8509489c8d8c92313d02bc086a9490e497d91683bdad",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT10"
     }
   },
   {
@@ -7602,16 +7653,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT10",
     "repair": {
-      "eaudit": "EAUDIT10",
+      "eaudit": "EAUDIT32",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT32/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT10.md": "71aeaa88d20f0fbc6d1ddc0daa1beea8b93b61d2b0114708da25c4d62e54a7d9",
-        "Blueprint/Ch05.lean": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
-        "blueprint/ch05/ch05_source.json": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62"
-      }
+        "BATCH_EAUDIT32.md": "3717f630d2959eff7dea8509489c8d8c92313d02bc086a9490e497d91683bdad",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT10"
     }
   },
   {
@@ -7706,16 +7758,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT10",
     "repair": {
-      "eaudit": "EAUDIT10",
+      "eaudit": "EAUDIT32",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT32/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT10.md": "71aeaa88d20f0fbc6d1ddc0daa1beea8b93b61d2b0114708da25c4d62e54a7d9",
-        "Blueprint/Ch05.lean": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
-        "blueprint/ch05/ch05_source.json": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62"
-      }
+        "BATCH_EAUDIT32.md": "3717f630d2959eff7dea8509489c8d8c92313d02bc086a9490e497d91683bdad",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT10"
     }
   },
   {
@@ -7808,16 +7861,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT10",
     "repair": {
-      "eaudit": "EAUDIT10",
+      "eaudit": "EAUDIT33",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT33/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT10.md": "71aeaa88d20f0fbc6d1ddc0daa1beea8b93b61d2b0114708da25c4d62e54a7d9",
-        "Blueprint/Ch05.lean": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
-        "blueprint/ch05/ch05_source.json": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62"
-      }
+        "BATCH_EAUDIT33.md": "a3f171def0829ef0dc2aa8ad893f2243d98f57caf2e0e69a1d092279e869291d",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT10"
     }
   },
   {
@@ -7914,16 +7968,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT10",
     "repair": {
-      "eaudit": "EAUDIT10",
+      "eaudit": "EAUDIT33",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT33/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT10.md": "71aeaa88d20f0fbc6d1ddc0daa1beea8b93b61d2b0114708da25c4d62e54a7d9",
-        "Blueprint/Ch05.lean": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
-        "blueprint/ch05/ch05_source.json": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62"
-      }
+        "BATCH_EAUDIT33.md": "a3f171def0829ef0dc2aa8ad893f2243d98f57caf2e0e69a1d092279e869291d",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT10"
     }
   },
   {
@@ -8009,16 +8064,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT11",
     "repair": {
-      "eaudit": "EAUDIT11",
+      "eaudit": "EAUDIT34",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT34/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT11.md": "5ad5d79e1fdfd174a1e5d23ce8e2073bda4d23de25bb8025054651dd4bf06a67",
-        "Blueprint/Ch05.lean": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
-        "blueprint/ch05/ch05_source.json": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512"
-      }
+        "BATCH_EAUDIT34.md": "fd08d4ea1a4e9d4cb0f4d6e81b86e7d096649199b02a27aa4d19906ac9cd7a74",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT11"
     }
   },
   {
@@ -8104,16 +8160,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT11",
     "repair": {
-      "eaudit": "EAUDIT11",
+      "eaudit": "EAUDIT34",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT34/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT11.md": "5ad5d79e1fdfd174a1e5d23ce8e2073bda4d23de25bb8025054651dd4bf06a67",
-        "Blueprint/Ch05.lean": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
-        "blueprint/ch05/ch05_source.json": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512"
-      }
+        "BATCH_EAUDIT34.md": "fd08d4ea1a4e9d4cb0f4d6e81b86e7d096649199b02a27aa4d19906ac9cd7a74",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT11"
     }
   },
   {
@@ -8169,16 +8226,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT11",
     "repair": {
-      "eaudit": "EAUDIT11",
+      "eaudit": "EAUDIT34",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT34/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT11.md": "5ad5d79e1fdfd174a1e5d23ce8e2073bda4d23de25bb8025054651dd4bf06a67",
-        "Blueprint/Ch05.lean": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
-        "blueprint/ch05/ch05_source.json": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512"
-      }
+        "BATCH_EAUDIT34.md": "fd08d4ea1a4e9d4cb0f4d6e81b86e7d096649199b02a27aa4d19906ac9cd7a74",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT11"
     }
   },
   {
@@ -8265,16 +8323,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT11",
     "repair": {
-      "eaudit": "EAUDIT11",
+      "eaudit": "EAUDIT34",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT11/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT34/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT11.md": "5ad5d79e1fdfd174a1e5d23ce8e2073bda4d23de25bb8025054651dd4bf06a67",
-        "Blueprint/Ch05.lean": "c7dae36eaa78ce26fde5d11d0bc92e5458fe533239a57cd50e053358f9546b8d",
-        "blueprint/ch05/ch05_source.json": "d09f6c08cfec169dd861cc93b93151ee6b016fae6382b457f6cdc18402242512"
-      }
+        "BATCH_EAUDIT34.md": "fd08d4ea1a4e9d4cb0f4d6e81b86e7d096649199b02a27aa4d19906ac9cd7a74",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT11"
     }
   },
   {
@@ -8420,16 +8479,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT12",
     "repair": {
-      "eaudit": "EAUDIT12",
+      "eaudit": "EAUDIT35",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT35/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT12.md": "b1e3f977ab4c2e416761159b570ad32d18c3b848ad1737a8a580a95747080ec5",
-        "Blueprint/Ch05.lean": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
-        "blueprint/ch05/ch05_source.json": "c4a00d697df9499304c1f4854b70c49483950c6175c8559ef4dbd204f917d31e"
-      }
+        "BATCH_EAUDIT35.md": "1a115cd77fc0d7c56fb7f68c989c5e7cd4019cb3518e18b3248b745dfb4aa0ff",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT12"
     }
   },
   {
@@ -8522,16 +8582,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT12",
     "repair": {
-      "eaudit": "EAUDIT12",
+      "eaudit": "EAUDIT35",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT35/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT12.md": "b1e3f977ab4c2e416761159b570ad32d18c3b848ad1737a8a580a95747080ec5",
-        "Blueprint/Ch05.lean": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
-        "blueprint/ch05/ch05_source.json": "c4a00d697df9499304c1f4854b70c49483950c6175c8559ef4dbd204f917d31e"
-      }
+        "BATCH_EAUDIT35.md": "1a115cd77fc0d7c56fb7f68c989c5e7cd4019cb3518e18b3248b745dfb4aa0ff",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT12"
     }
   },
   {
@@ -8587,16 +8648,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT12",
     "repair": {
-      "eaudit": "EAUDIT12",
+      "eaudit": "EAUDIT35",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT35/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT12.md": "b1e3f977ab4c2e416761159b570ad32d18c3b848ad1737a8a580a95747080ec5",
-        "Blueprint/Ch05.lean": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
-        "blueprint/ch05/ch05_source.json": "c4a00d697df9499304c1f4854b70c49483950c6175c8559ef4dbd204f917d31e"
-      }
+        "BATCH_EAUDIT35.md": "1a115cd77fc0d7c56fb7f68c989c5e7cd4019cb3518e18b3248b745dfb4aa0ff",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT12"
     }
   },
   {
@@ -8687,16 +8749,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT12",
     "repair": {
-      "eaudit": "EAUDIT12",
+      "eaudit": "EAUDIT35",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT35/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT12.md": "b1e3f977ab4c2e416761159b570ad32d18c3b848ad1737a8a580a95747080ec5",
-        "Blueprint/Ch05.lean": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
-        "blueprint/ch05/ch05_source.json": "c4a00d697df9499304c1f4854b70c49483950c6175c8559ef4dbd204f917d31e"
-      }
+        "BATCH_EAUDIT35.md": "1a115cd77fc0d7c56fb7f68c989c5e7cd4019cb3518e18b3248b745dfb4aa0ff",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT12"
     }
   },
   {
@@ -8752,16 +8815,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT12",
     "repair": {
-      "eaudit": "EAUDIT12",
+      "eaudit": "EAUDIT35",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT35/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT12.md": "b1e3f977ab4c2e416761159b570ad32d18c3b848ad1737a8a580a95747080ec5",
-        "Blueprint/Ch05.lean": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
-        "blueprint/ch05/ch05_source.json": "c4a00d697df9499304c1f4854b70c49483950c6175c8559ef4dbd204f917d31e"
-      }
+        "BATCH_EAUDIT35.md": "1a115cd77fc0d7c56fb7f68c989c5e7cd4019cb3518e18b3248b745dfb4aa0ff",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT12"
     }
   },
   {
@@ -8923,16 +8987,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT12",
     "repair": {
-      "eaudit": "EAUDIT12",
+      "eaudit": "EAUDIT35",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT12/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT35/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT12.md": "b1e3f977ab4c2e416761159b570ad32d18c3b848ad1737a8a580a95747080ec5",
-        "Blueprint/Ch05.lean": "dd9c9a71f39f3bc9613f51a0b9a691ef9b9498ab31ef72681dd5f2f56cb2b644",
-        "blueprint/ch05/ch05_source.json": "c4a00d697df9499304c1f4854b70c49483950c6175c8559ef4dbd204f917d31e"
-      }
+        "BATCH_EAUDIT35.md": "1a115cd77fc0d7c56fb7f68c989c5e7cd4019cb3518e18b3248b745dfb4aa0ff",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT12"
     }
   },
   {
@@ -9021,16 +9086,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT13",
     "repair": {
-      "eaudit": "EAUDIT13",
+      "eaudit": "EAUDIT36",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT36/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT13.md": "89097ba8581c14c4728c84c2c2dfc54d0a467b74145d3576de4f64ee72e70fff",
-        "Blueprint/Ch05.lean": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
-        "blueprint/ch05/ch05_source.json": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441"
-      }
+        "BATCH_EAUDIT36.md": "26f0ccb4192652d7574ee9d0a0362a9c7d90fd3a3057cabb7ae4714e4358c268",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT13"
     }
   },
   {
@@ -9119,16 +9185,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT13",
     "repair": {
-      "eaudit": "EAUDIT13",
+      "eaudit": "EAUDIT36",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT36/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT13.md": "89097ba8581c14c4728c84c2c2dfc54d0a467b74145d3576de4f64ee72e70fff",
-        "Blueprint/Ch05.lean": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
-        "blueprint/ch05/ch05_source.json": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441"
-      }
+        "BATCH_EAUDIT36.md": "26f0ccb4192652d7574ee9d0a0362a9c7d90fd3a3057cabb7ae4714e4358c268",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT13"
     }
   },
   {
@@ -9219,16 +9286,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT13",
     "repair": {
-      "eaudit": "EAUDIT13",
+      "eaudit": "EAUDIT36",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT36/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT13.md": "89097ba8581c14c4728c84c2c2dfc54d0a467b74145d3576de4f64ee72e70fff",
-        "Blueprint/Ch05.lean": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
-        "blueprint/ch05/ch05_source.json": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441"
-      }
+        "BATCH_EAUDIT36.md": "26f0ccb4192652d7574ee9d0a0362a9c7d90fd3a3057cabb7ae4714e4358c268",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT13"
     }
   },
   {
@@ -9319,16 +9387,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT13",
     "repair": {
-      "eaudit": "EAUDIT13",
+      "eaudit": "EAUDIT36",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT36/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT13.md": "89097ba8581c14c4728c84c2c2dfc54d0a467b74145d3576de4f64ee72e70fff",
-        "Blueprint/Ch05.lean": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
-        "blueprint/ch05/ch05_source.json": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441"
-      }
+        "BATCH_EAUDIT36.md": "26f0ccb4192652d7574ee9d0a0362a9c7d90fd3a3057cabb7ae4714e4358c268",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT13"
     }
   },
   {
@@ -9419,16 +9488,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT13",
     "repair": {
-      "eaudit": "EAUDIT13",
+      "eaudit": "EAUDIT36",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT36/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT13.md": "89097ba8581c14c4728c84c2c2dfc54d0a467b74145d3576de4f64ee72e70fff",
-        "Blueprint/Ch05.lean": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
-        "blueprint/ch05/ch05_source.json": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441"
-      }
+        "BATCH_EAUDIT36.md": "26f0ccb4192652d7574ee9d0a0362a9c7d90fd3a3057cabb7ae4714e4358c268",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT13"
     }
   },
   {
@@ -9515,16 +9585,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT13",
     "repair": {
-      "eaudit": "EAUDIT13",
+      "eaudit": "EAUDIT36",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT36/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT13.md": "89097ba8581c14c4728c84c2c2dfc54d0a467b74145d3576de4f64ee72e70fff",
-        "Blueprint/Ch05.lean": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
-        "blueprint/ch05/ch05_source.json": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441"
-      }
+        "BATCH_EAUDIT36.md": "26f0ccb4192652d7574ee9d0a0362a9c7d90fd3a3057cabb7ae4714e4358c268",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT13"
     }
   },
   {
@@ -9615,16 +9686,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT13",
     "repair": {
-      "eaudit": "EAUDIT13",
+      "eaudit": "EAUDIT36",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT36/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT13.md": "89097ba8581c14c4728c84c2c2dfc54d0a467b74145d3576de4f64ee72e70fff",
-        "Blueprint/Ch05.lean": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
-        "blueprint/ch05/ch05_source.json": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441"
-      }
+        "BATCH_EAUDIT36.md": "26f0ccb4192652d7574ee9d0a0362a9c7d90fd3a3057cabb7ae4714e4358c268",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT13"
     }
   },
   {
@@ -9711,16 +9783,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT13",
     "repair": {
-      "eaudit": "EAUDIT13",
+      "eaudit": "EAUDIT36",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT13/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT36/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT13.md": "89097ba8581c14c4728c84c2c2dfc54d0a467b74145d3576de4f64ee72e70fff",
-        "Blueprint/Ch05.lean": "9897b35f8117dff50bffcb1052547fee6d0eb211bab782c9e4031b7c1762bc7d",
-        "blueprint/ch05/ch05_source.json": "b0b0a738fa41abec6760d6599d7b901e2d057c5726abdff959b9c0f1ef314441"
-      }
+        "BATCH_EAUDIT36.md": "26f0ccb4192652d7574ee9d0a0362a9c7d90fd3a3057cabb7ae4714e4358c268",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT13"
     }
   },
   {
@@ -9804,16 +9877,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT14",
     "repair": {
-      "eaudit": "EAUDIT14",
+      "eaudit": "EAUDIT37",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT14/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT14.md": "3231a89c0c218fe426bca498565dbccdcba83a426307507fb675ccbcfcb6a1e8",
-        "Blueprint/Ch05.lean": "a101cbc5aa200e0dc4e902f9e6ed3f511dbe1517088c2db78c7cc4c5d84f645f",
-        "blueprint/ch05/ch05_source.json": "4c7de844910ad09e5f2e54c24bbd3f0af731aa94840fd3cafdfbda9b8d6bb0c8"
-      }
+        "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT14"
     }
   },
   {
@@ -9922,16 +9996,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT14",
     "repair": {
-      "eaudit": "EAUDIT14",
+      "eaudit": "EAUDIT37",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT14/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT14.md": "3231a89c0c218fe426bca498565dbccdcba83a426307507fb675ccbcfcb6a1e8",
-        "Blueprint/Ch05.lean": "a101cbc5aa200e0dc4e902f9e6ed3f511dbe1517088c2db78c7cc4c5d84f645f",
-        "blueprint/ch05/ch05_source.json": "4c7de844910ad09e5f2e54c24bbd3f0af731aa94840fd3cafdfbda9b8d6bb0c8"
-      }
+        "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT14"
     }
   },
   {
@@ -10019,16 +10094,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT14",
     "repair": {
-      "eaudit": "EAUDIT14",
+      "eaudit": "EAUDIT37",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT14/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT14.md": "3231a89c0c218fe426bca498565dbccdcba83a426307507fb675ccbcfcb6a1e8",
-        "Blueprint/Ch05.lean": "a101cbc5aa200e0dc4e902f9e6ed3f511dbe1517088c2db78c7cc4c5d84f645f",
-        "blueprint/ch05/ch05_source.json": "4c7de844910ad09e5f2e54c24bbd3f0af731aa94840fd3cafdfbda9b8d6bb0c8"
-      }
+        "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT14"
     }
   },
   {
@@ -10149,16 +10225,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT14",
     "repair": {
-      "eaudit": "EAUDIT14",
+      "eaudit": "EAUDIT37",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT14/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT14.md": "3231a89c0c218fe426bca498565dbccdcba83a426307507fb675ccbcfcb6a1e8",
-        "Blueprint/Ch05.lean": "a101cbc5aa200e0dc4e902f9e6ed3f511dbe1517088c2db78c7cc4c5d84f645f",
-        "blueprint/ch05/ch05_source.json": "4c7de844910ad09e5f2e54c24bbd3f0af731aa94840fd3cafdfbda9b8d6bb0c8"
-      }
+        "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT14"
     }
   },
   {
@@ -10464,16 +10541,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT14",
     "repair": {
-      "eaudit": "EAUDIT14",
+      "eaudit": "EAUDIT37",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT14/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT14.md": "3231a89c0c218fe426bca498565dbccdcba83a426307507fb675ccbcfcb6a1e8",
-        "Blueprint/Ch05.lean": "a101cbc5aa200e0dc4e902f9e6ed3f511dbe1517088c2db78c7cc4c5d84f645f",
-        "blueprint/ch05/ch05_source.json": "4c7de844910ad09e5f2e54c24bbd3f0af731aa94840fd3cafdfbda9b8d6bb0c8"
-      }
+        "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT14"
     }
   },
   {
@@ -10529,16 +10607,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT16",
     "repair": {
-      "eaudit": "EAUDIT16",
+      "eaudit": "EAUDIT37",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
-        "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
-        "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4"
-      }
+        "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT16"
     }
   },
   {
@@ -10628,16 +10707,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT16",
     "repair": {
-      "eaudit": "EAUDIT16",
+      "eaudit": "EAUDIT37",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
-        "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
-        "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4"
-      }
+        "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT16"
     }
   },
   {
@@ -10992,16 +11072,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT16",
     "repair": {
-      "eaudit": "EAUDIT16",
+      "eaudit": "EAUDIT37",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT37/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
-        "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
-        "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4"
-      }
+        "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT16"
     }
   },
   {
@@ -11057,16 +11138,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT16",
     "repair": {
-      "eaudit": "EAUDIT16",
+      "eaudit": "EAUDIT38",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT38/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
-        "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
-        "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4"
-      }
+        "BATCH_EAUDIT38.md": "83e99376bd5d871b716d162554a8c8a61acbda7236ca0f902795f40cb4eb9993",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT16"
     }
   },
   {
@@ -11122,16 +11204,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT16",
     "repair": {
-      "eaudit": "EAUDIT16",
+      "eaudit": "EAUDIT38",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT38/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
-        "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
-        "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4"
-      }
+        "BATCH_EAUDIT38.md": "83e99376bd5d871b716d162554a8c8a61acbda7236ca0f902795f40cb4eb9993",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT16"
     }
   },
   {
@@ -11225,16 +11308,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT17",
     "repair": {
-      "eaudit": "EAUDIT17",
+      "eaudit": "EAUDIT39",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
-        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
-        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
-      }
+        "BATCH_EAUDIT39.md": "1809cd032d37c72764ba41b6af97178432212335ab2bdfcfb9f825843029e4fd",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT17"
     }
   },
   {
@@ -11488,16 +11572,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT17",
     "repair": {
-      "eaudit": "EAUDIT17",
+      "eaudit": "EAUDIT39",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
-        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
-        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
-      }
+        "BATCH_EAUDIT39.md": "1809cd032d37c72764ba41b6af97178432212335ab2bdfcfb9f825843029e4fd",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT17"
     }
   },
   {
@@ -11645,16 +11730,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT17",
     "repair": {
-      "eaudit": "EAUDIT17",
+      "eaudit": "EAUDIT39",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
-        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
-        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
-      }
+        "BATCH_EAUDIT39.md": "1809cd032d37c72764ba41b6af97178432212335ab2bdfcfb9f825843029e4fd",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT17"
     }
   },
   {
@@ -11803,16 +11889,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT17",
     "repair": {
-      "eaudit": "EAUDIT17",
+      "eaudit": "EAUDIT39",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
-        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
-        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
-      }
+        "BATCH_EAUDIT39.md": "1809cd032d37c72764ba41b6af97178432212335ab2bdfcfb9f825843029e4fd",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT17"
     }
   },
   {
@@ -11909,16 +11996,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT17",
     "repair": {
-      "eaudit": "EAUDIT17",
+      "eaudit": "EAUDIT39",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
-        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
-        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
-      }
+        "BATCH_EAUDIT39.md": "1809cd032d37c72764ba41b6af97178432212335ab2bdfcfb9f825843029e4fd",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT17"
     }
   },
   {
@@ -12110,16 +12198,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT17",
     "repair": {
-      "eaudit": "EAUDIT17",
+      "eaudit": "EAUDIT39",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT17/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT17.md": "5d063d9b8cd1f0720a1d48ed70725cfa5a2a2837bafb642fdbcc77cd595d8220",
-        "Blueprint/Ch05.lean": "cebb83d463aa657ae436e7bd92acd8f32c82c63b0b463ffb87907c92cdaa2c3f",
-        "blueprint/ch05/ch05_source.json": "70f22f2d6f559eb04bd959a75a2604fc6a5971699ccde0f477d1698020611df1"
-      }
+        "BATCH_EAUDIT39.md": "1809cd032d37c72764ba41b6af97178432212335ab2bdfcfb9f825843029e4fd",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT17"
     }
   },
   {
@@ -12213,16 +12302,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT19",
     "repair": {
-      "eaudit": "EAUDIT19",
+      "eaudit": "EAUDIT39",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT19/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT39/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT19.md": "3d8381ec196a51fb5a1c74eccc49a8a3ff2903409ed61719f9b444e4232458ba",
-        "Blueprint/Ch05.lean": "2de1b1e1e2d9d2e855163d66c10400d1bc299b9dfab8697acf55a2b6d3ef896f",
-        "blueprint/ch05/ch05_source.json": "42ca95f021a1fd12a63f35841b2f837be74a5f1ca81b9040ad12bac340c01d07"
-      }
+        "BATCH_EAUDIT39.md": "1809cd032d37c72764ba41b6af97178432212335ab2bdfcfb9f825843029e4fd",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT19"
     }
   },
   {
@@ -12307,16 +12397,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT20",
     "repair": {
-      "eaudit": "EAUDIT20",
+      "eaudit": "EAUDIT40",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT40/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT20.md": "702c7aa558ae74393a03aec1a350186fd473293f5318743d980eea6dcfe71609",
-        "Blueprint/Ch05.lean": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
-        "blueprint/ch05/ch05_source.json": "dcb0bf1a73710ce33502eec44758e19d996669a950b14a3901796bdf252fb4f9"
-      }
+        "BATCH_EAUDIT40.md": "3933086d7edba4124d6634bb38d871ba7bafd71b09dbf70339287d5fe39d4b03",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT20"
     }
   },
   {
@@ -12402,16 +12493,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT20",
     "repair": {
-      "eaudit": "EAUDIT20",
+      "eaudit": "EAUDIT40",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT40/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT20.md": "702c7aa558ae74393a03aec1a350186fd473293f5318743d980eea6dcfe71609",
-        "Blueprint/Ch05.lean": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
-        "blueprint/ch05/ch05_source.json": "dcb0bf1a73710ce33502eec44758e19d996669a950b14a3901796bdf252fb4f9"
-      }
+        "BATCH_EAUDIT40.md": "3933086d7edba4124d6634bb38d871ba7bafd71b09dbf70339287d5fe39d4b03",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT20"
     }
   },
   {
@@ -12496,16 +12588,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT20",
     "repair": {
-      "eaudit": "EAUDIT20",
+      "eaudit": "EAUDIT40",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT40/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT20.md": "702c7aa558ae74393a03aec1a350186fd473293f5318743d980eea6dcfe71609",
-        "Blueprint/Ch05.lean": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
-        "blueprint/ch05/ch05_source.json": "dcb0bf1a73710ce33502eec44758e19d996669a950b14a3901796bdf252fb4f9"
-      }
+        "BATCH_EAUDIT40.md": "3933086d7edba4124d6634bb38d871ba7bafd71b09dbf70339287d5fe39d4b03",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT20"
     }
   },
   {
@@ -12589,16 +12682,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT20",
     "repair": {
-      "eaudit": "EAUDIT20",
+      "eaudit": "EAUDIT40",
       "status": "awaiting_reaudit",
       "signature_changed": false,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT40/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT20.md": "702c7aa558ae74393a03aec1a350186fd473293f5318743d980eea6dcfe71609",
-        "Blueprint/Ch05.lean": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
-        "blueprint/ch05/ch05_source.json": "dcb0bf1a73710ce33502eec44758e19d996669a950b14a3901796bdf252fb4f9"
-      }
+        "BATCH_EAUDIT40.md": "3933086d7edba4124d6634bb38d871ba7bafd71b09dbf70339287d5fe39d4b03",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT20"
     }
   },
   {
@@ -12682,16 +12776,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT20",
     "repair": {
-      "eaudit": "EAUDIT20",
+      "eaudit": "EAUDIT40",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT40/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT20.md": "702c7aa558ae74393a03aec1a350186fd473293f5318743d980eea6dcfe71609",
-        "Blueprint/Ch05.lean": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
-        "blueprint/ch05/ch05_source.json": "dcb0bf1a73710ce33502eec44758e19d996669a950b14a3901796bdf252fb4f9"
-      }
+        "BATCH_EAUDIT40.md": "3933086d7edba4124d6634bb38d871ba7bafd71b09dbf70339287d5fe39d4b03",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT20"
     }
   },
   {
@@ -12862,16 +12957,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT20",
     "repair": {
-      "eaudit": "EAUDIT20",
+      "eaudit": "EAUDIT40",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT40/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT20.md": "702c7aa558ae74393a03aec1a350186fd473293f5318743d980eea6dcfe71609",
-        "Blueprint/Ch05.lean": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
-        "blueprint/ch05/ch05_source.json": "dcb0bf1a73710ce33502eec44758e19d996669a950b14a3901796bdf252fb4f9"
-      }
+        "BATCH_EAUDIT40.md": "3933086d7edba4124d6634bb38d871ba7bafd71b09dbf70339287d5fe39d4b03",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT20"
     }
   },
   {
@@ -12956,16 +13052,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT20",
     "repair": {
-      "eaudit": "EAUDIT20",
+      "eaudit": "EAUDIT40",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT20/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT40/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT20.md": "702c7aa558ae74393a03aec1a350186fd473293f5318743d980eea6dcfe71609",
-        "Blueprint/Ch05.lean": "343e75e4dc2c121a9d32d0f41da062cd3c81610819bca22da3a41fc1a8f052e8",
-        "blueprint/ch05/ch05_source.json": "dcb0bf1a73710ce33502eec44758e19d996669a950b14a3901796bdf252fb4f9"
-      }
+        "BATCH_EAUDIT40.md": "3933086d7edba4124d6634bb38d871ba7bafd71b09dbf70339287d5fe39d4b03",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT20"
     }
   },
   {
@@ -13024,16 +13121,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT21",
     "repair": {
-      "eaudit": "EAUDIT21",
+      "eaudit": "EAUDIT40",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT40/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT21.md": "9989d190d0b63e57303ce146d11bcff1c8b5436da43a0d3684a23bb13a77ddc3",
-        "Blueprint/Ch05.lean": "58e2a7e0281aba00df6c8de24fedd428afc464fc81cf7ce1fd0acd60175adaf5",
-        "blueprint/ch05/ch05_source.json": "29a5e1cc5bf249700a0689f50574895d395059cd7dd463af9b25c08af8e2726e"
-      }
+        "BATCH_EAUDIT40.md": "3933086d7edba4124d6634bb38d871ba7bafd71b09dbf70339287d5fe39d4b03",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT21"
     }
   },
   {
@@ -13092,16 +13190,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT21",
     "repair": {
-      "eaudit": "EAUDIT21",
+      "eaudit": "EAUDIT41",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT21.md": "9989d190d0b63e57303ce146d11bcff1c8b5436da43a0d3684a23bb13a77ddc3",
-        "Blueprint/Ch05.lean": "58e2a7e0281aba00df6c8de24fedd428afc464fc81cf7ce1fd0acd60175adaf5",
-        "blueprint/ch05/ch05_source.json": "29a5e1cc5bf249700a0689f50574895d395059cd7dd463af9b25c08af8e2726e"
-      }
+        "BATCH_EAUDIT41.md": "c8cff48c6002433f1f074b43f709953e4d6f0694550756422bd836095f69b1fb",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT21"
     }
   },
   {
@@ -13186,16 +13285,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT21",
     "repair": {
-      "eaudit": "EAUDIT21",
+      "eaudit": "EAUDIT41",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT21.md": "9989d190d0b63e57303ce146d11bcff1c8b5436da43a0d3684a23bb13a77ddc3",
-        "Blueprint/Ch05.lean": "58e2a7e0281aba00df6c8de24fedd428afc464fc81cf7ce1fd0acd60175adaf5",
-        "blueprint/ch05/ch05_source.json": "29a5e1cc5bf249700a0689f50574895d395059cd7dd463af9b25c08af8e2726e"
-      }
+        "BATCH_EAUDIT41.md": "c8cff48c6002433f1f074b43f709953e4d6f0694550756422bd836095f69b1fb",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT21"
     }
   },
   {
@@ -13311,16 +13411,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT21",
     "repair": {
-      "eaudit": "EAUDIT21",
+      "eaudit": "EAUDIT41",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT21.md": "9989d190d0b63e57303ce146d11bcff1c8b5436da43a0d3684a23bb13a77ddc3",
-        "Blueprint/Ch05.lean": "58e2a7e0281aba00df6c8de24fedd428afc464fc81cf7ce1fd0acd60175adaf5",
-        "blueprint/ch05/ch05_source.json": "29a5e1cc5bf249700a0689f50574895d395059cd7dd463af9b25c08af8e2726e"
-      }
+        "BATCH_EAUDIT41.md": "c8cff48c6002433f1f074b43f709953e4d6f0694550756422bd836095f69b1fb",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT21"
     }
   },
   {
@@ -13380,16 +13481,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT21",
     "repair": {
-      "eaudit": "EAUDIT21",
+      "eaudit": "EAUDIT41",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT21.md": "9989d190d0b63e57303ce146d11bcff1c8b5436da43a0d3684a23bb13a77ddc3",
-        "Blueprint/Ch05.lean": "58e2a7e0281aba00df6c8de24fedd428afc464fc81cf7ce1fd0acd60175adaf5",
-        "blueprint/ch05/ch05_source.json": "29a5e1cc5bf249700a0689f50574895d395059cd7dd463af9b25c08af8e2726e"
-      }
+        "BATCH_EAUDIT41.md": "c8cff48c6002433f1f074b43f709953e4d6f0694550756422bd836095f69b1fb",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT21"
     }
   },
   {
@@ -13476,16 +13578,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT21",
     "repair": {
-      "eaudit": "EAUDIT21",
+      "eaudit": "EAUDIT41",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT21.md": "9989d190d0b63e57303ce146d11bcff1c8b5436da43a0d3684a23bb13a77ddc3",
-        "Blueprint/Ch05.lean": "58e2a7e0281aba00df6c8de24fedd428afc464fc81cf7ce1fd0acd60175adaf5",
-        "blueprint/ch05/ch05_source.json": "29a5e1cc5bf249700a0689f50574895d395059cd7dd463af9b25c08af8e2726e"
-      }
+        "BATCH_EAUDIT41.md": "c8cff48c6002433f1f074b43f709953e4d6f0694550756422bd836095f69b1fb",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT21"
     }
   },
   {
@@ -13590,16 +13693,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT21",
     "repair": {
-      "eaudit": "EAUDIT21",
+      "eaudit": "EAUDIT41",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT21.md": "9989d190d0b63e57303ce146d11bcff1c8b5436da43a0d3684a23bb13a77ddc3",
-        "Blueprint/Ch05.lean": "58e2a7e0281aba00df6c8de24fedd428afc464fc81cf7ce1fd0acd60175adaf5",
-        "blueprint/ch05/ch05_source.json": "29a5e1cc5bf249700a0689f50574895d395059cd7dd463af9b25c08af8e2726e"
-      }
+        "BATCH_EAUDIT41.md": "c8cff48c6002433f1f074b43f709953e4d6f0694550756422bd836095f69b1fb",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT21"
     }
   },
   {
@@ -13704,16 +13808,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT21",
     "repair": {
-      "eaudit": "EAUDIT21",
+      "eaudit": "EAUDIT41",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT21/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT21.md": "9989d190d0b63e57303ce146d11bcff1c8b5436da43a0d3684a23bb13a77ddc3",
-        "Blueprint/Ch05.lean": "58e2a7e0281aba00df6c8de24fedd428afc464fc81cf7ce1fd0acd60175adaf5",
-        "blueprint/ch05/ch05_source.json": "29a5e1cc5bf249700a0689f50574895d395059cd7dd463af9b25c08af8e2726e"
-      }
+        "BATCH_EAUDIT41.md": "c8cff48c6002433f1f074b43f709953e4d6f0694550756422bd836095f69b1fb",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT21"
     }
   },
   {
@@ -13767,16 +13872,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT22",
     "repair": {
-      "eaudit": "EAUDIT22",
+      "eaudit": "EAUDIT41",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT22.md": "0568146c0171aef4bc67a7e342dce9c4424ea19a9649fe0e6121e593ee0e01fc",
-        "Blueprint/Ch05.lean": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
-        "blueprint/ch05/ch05_source.json": "58db1ce94fb1358d3263ccbe4ee71356070e296e5a215a3d1e7c58a28b8053ff"
-      }
+        "BATCH_EAUDIT41.md": "c8cff48c6002433f1f074b43f709953e4d6f0694550756422bd836095f69b1fb",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT22"
     }
   },
   {
@@ -13830,16 +13936,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT22",
     "repair": {
-      "eaudit": "EAUDIT22",
+      "eaudit": "EAUDIT42",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT22.md": "0568146c0171aef4bc67a7e342dce9c4424ea19a9649fe0e6121e593ee0e01fc",
-        "Blueprint/Ch05.lean": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
-        "blueprint/ch05/ch05_source.json": "58db1ce94fb1358d3263ccbe4ee71356070e296e5a215a3d1e7c58a28b8053ff"
-      }
+        "BATCH_EAUDIT42.md": "c5227e2bccf487c132fd61906af6c6a96c0a5e30ba6d58e6312428e6f9146928",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT22"
     }
   },
   {
@@ -13925,16 +14032,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT22",
     "repair": {
-      "eaudit": "EAUDIT22",
+      "eaudit": "EAUDIT42",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT22.md": "0568146c0171aef4bc67a7e342dce9c4424ea19a9649fe0e6121e593ee0e01fc",
-        "Blueprint/Ch05.lean": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
-        "blueprint/ch05/ch05_source.json": "58db1ce94fb1358d3263ccbe4ee71356070e296e5a215a3d1e7c58a28b8053ff"
-      }
+        "BATCH_EAUDIT42.md": "c5227e2bccf487c132fd61906af6c6a96c0a5e30ba6d58e6312428e6f9146928",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT22"
     }
   },
   {
@@ -14039,16 +14147,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT22",
     "repair": {
-      "eaudit": "EAUDIT22",
+      "eaudit": "EAUDIT42",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT22.md": "0568146c0171aef4bc67a7e342dce9c4424ea19a9649fe0e6121e593ee0e01fc",
-        "Blueprint/Ch05.lean": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
-        "blueprint/ch05/ch05_source.json": "58db1ce94fb1358d3263ccbe4ee71356070e296e5a215a3d1e7c58a28b8053ff"
-      }
+        "BATCH_EAUDIT42.md": "c5227e2bccf487c132fd61906af6c6a96c0a5e30ba6d58e6312428e6f9146928",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT22"
     }
   },
   {
@@ -14235,16 +14344,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT22",
     "repair": {
-      "eaudit": "EAUDIT22",
+      "eaudit": "EAUDIT42",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT22.md": "0568146c0171aef4bc67a7e342dce9c4424ea19a9649fe0e6121e593ee0e01fc",
-        "Blueprint/Ch05.lean": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
-        "blueprint/ch05/ch05_source.json": "58db1ce94fb1358d3263ccbe4ee71356070e296e5a215a3d1e7c58a28b8053ff"
-      }
+        "BATCH_EAUDIT42.md": "c5227e2bccf487c132fd61906af6c6a96c0a5e30ba6d58e6312428e6f9146928",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT22"
     }
   },
   {
@@ -14332,16 +14442,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT22",
     "repair": {
-      "eaudit": "EAUDIT22",
+      "eaudit": "EAUDIT42",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT22.md": "0568146c0171aef4bc67a7e342dce9c4424ea19a9649fe0e6121e593ee0e01fc",
-        "Blueprint/Ch05.lean": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
-        "blueprint/ch05/ch05_source.json": "58db1ce94fb1358d3263ccbe4ee71356070e296e5a215a3d1e7c58a28b8053ff"
-      }
+        "BATCH_EAUDIT42.md": "c5227e2bccf487c132fd61906af6c6a96c0a5e30ba6d58e6312428e6f9146928",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT22"
     }
   },
   {
@@ -14431,16 +14542,17 @@
     "needs_category": "材料缺失",
     "effective_status": "待复审 / EAUDIT22",
     "repair": {
-      "eaudit": "EAUDIT22",
+      "eaudit": "EAUDIT42",
       "status": "awaiting_reaudit",
       "signature_changed": true,
       "json_review_locally_verified": true,
-      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT22/INDEX.md",
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT42/INDEX.md",
       "input_sha256": {
-        "BATCH_EAUDIT22.md": "0568146c0171aef4bc67a7e342dce9c4424ea19a9649fe0e6121e593ee0e01fc",
-        "Blueprint/Ch05.lean": "335553afe379ccefe66ad4162d46a0b0b273491554d008364ee118a51a333baf",
-        "blueprint/ch05/ch05_source.json": "58db1ce94fb1358d3263ccbe4ee71356070e296e5a215a3d1e7c58a28b8053ff"
-      }
+        "BATCH_EAUDIT42.md": "c5227e2bccf487c132fd61906af6c6a96c0a5e30ba6d58e6312428e6f9146928",
+        "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+        "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+      },
+      "prior_eaudit": "EAUDIT22"
     }
   },
   {

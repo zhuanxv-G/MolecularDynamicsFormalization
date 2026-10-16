@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT24",
+  "input_sha256": {
+    "BATCH_EAUDIT24.md": "d3e6d22c7cf7519cec7e3bee6e6222f9eb54c8e6d7b1ba4ab8e61c2c3d7ef5e7",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT24a",
+      "source_id": "MD-5.1-FlowFieldTransport",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT24/a",
+      "total_bytes": 97194,
+      "manifest_sha256": "2b388e0133018cecbdde9647506899449f413a81a014db5d59cb23ef355aaac5"
+    },
+    {
+      "subtask": "EAUDIT24b",
+      "source_id": "MD-5.1-SolutionOperator",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT24/b",
+      "total_bytes": 96150,
+      "manifest_sha256": "a9c5441b805acd02f736c9b99c876dbf5a271fdb61220afce6eb9ea738f2d819"
+    },
+    {
+      "subtask": "EAUDIT24c",
+      "source_id": "MD-5.1-CoordinateLie",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT24/c",
+      "total_bytes": 93966,
+      "manifest_sha256": "a5fa6e9544e69eff3b01fa190c535c57a99b427bccd180381f58724bdd15690d"
+    },
+    {
+      "subtask": "EAUDIT24d",
+      "source_id": "MD-5.1-LiePullbackCommutes",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT24/d",
+      "total_bytes": 96397,
+      "manifest_sha256": "83b5f435aaf296c3051620e00223d36ddba9a9609fd615fc38dc54173257d5f0"
+    }
+  ]
+}

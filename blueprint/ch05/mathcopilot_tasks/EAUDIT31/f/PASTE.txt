@@ -1,0 +1,86 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.3.2-ShellDensity；原PDF页映射=[211, 212]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT31_review.json，对象含batch=EAUDIT31、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT31.md": "947604185b3b69783e3545693f7724f425a69eecd9aa7308754eaf5a2df65e5d",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "EAUDIT31f_materials": "21fce7d174509625bea5994a1e00affda7a1248f0f6b75938895d4067b62d5c9",
+  "EAUDIT31f_PAGES.pdf": "a40d08af32308bd16c12bd7f0aa9be1312aa75637c7669c46ff8ff7a1f59c922"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.3.2-ShellDensity",
+  "kind": "definition",
+  "label": null,
+  "section": "5.3.2",
+  "printed_page": "190–191",
+  "pdf_page": "211–212",
+  "statement_latex": "$\\rho_\\varepsilon(\\mathbf q,\\mathbf p)=Z_\\varepsilon^{-1}e^{-(H(\\mathbf q,\\mathbf p)-E)^2/(2\\varepsilon)}$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$\\varepsilon>0$，E 为可达能级，$\\mathbf z=(\\mathbf q,\\mathbf p)$；归一化因子由实际全相空间指数权的积分确定。原文在后续句子登记 H 的充分增长/可积资格。",
+    "ρ_ε 已除一次 $Z_\\varepsilon$；原有对后文 (5.8) 若再除一次须单列字面疑误的提示予以保留。本条只审计 PDF p.211 的密度定义，不处理 (5.8) 的其他 source_id。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.shellDensity",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT08_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:58:05.599147",
+      "before_sha256": "fe4def89a217921af24d01f5c4eeded8faed076ff2c76288c7474b1900261095",
+      "after_sha256": "c2ffdeceaf7665ea44219ecaa8ca90899d9c24e3ced9dd9a1411d0dd0d5273c3",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def shellDensity {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := MolecularDynamics.Chapter05Review.shellWeight H c ε z/MolecularDynamics.Chapter05Review.shellPartition H c ε
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.shellPartition
+```lean
+def shellPartition {n : ℕ} (H : E n → ℝ) (c ε : ℝ) := ∫ z,shellWeight H c ε z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.shellWeight
+```lean
+def shellWeight {n : ℕ} (H : E n → ℝ) (c ε : ℝ) (z : E n) := Real.exp (-(H z-c)^2/(2*ε))
+```
+### 实际依赖 MD.Ch05.shellDensity
+```lean
+def shellDensity {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := MolecularDynamics.Chapter05Review.shellWeight H c ε z/MolecularDynamics.Chapter05Review.shellPartition H c ε
+```
+### 实际依赖 MD.Ch05.shellPartition
+```lean
+def shellPartition {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) := ∫ z,MolecularDynamics.Chapter05Review.shellWeight H c ε z
+```
+### 实际依赖 MD.Ch05.shellWeight
+```lean
+def shellWeight {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := Real.exp (-(H z-c)^2/(2*ε))
+```

@@ -1,0 +1,55 @@
+{
+  "eaudit": "EAUDIT29",
+  "source_id": "MD-5.2.3-MechanicalLiouvillian",
+  "input_sha256": {
+    "BATCH_EAUDIT29.md": "560dd9e842af77c4df9997c92b497d3457102c036a7463e04dcfaf055747b54a",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT29c_materials": "2219d04abea1e057184b0cd0c500ad2cd363e5cec20ff8e7938c045a664f25fe",
+    "EAUDIT29c_PAGES.pdf": "cc7af8a5f68feb6109ce6a61a8418cff99f3003eccb4f22b4ec0554f037bd430"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    208
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "60fa872a0a13a72d2cb36454e27202d94b8fc5a49238494c5ef1abd77a715090",
+  "source_block_sha256": "1d6f6e14697b5860080ae941ca3a32f9df29a9ab6b6d0f7d96b46d8dd53a49b2",
+  "source_declarations": [
+    "mechanicalLiouvillian"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.Phase",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "Phase",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "mechanicalLiouvillian",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "1d6f6e14697b5860080ae941ca3a32f9df29a9ab6b6d0f7d96b46d8dd53a49b2"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT29_review.json",
+  "total_task_bytes": 102786
+}

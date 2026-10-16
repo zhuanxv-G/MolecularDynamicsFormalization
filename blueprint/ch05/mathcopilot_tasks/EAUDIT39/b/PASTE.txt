@@ -1,0 +1,116 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.5-CorrelationTimeAE；原PDF页映射=[225]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT39_review.json，对象含batch=EAUDIT39、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT39.md": "1809cd032d37c72764ba41b6af97178432212335ab2bdfcfb9f825843029e4fd",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "EAUDIT39b_materials": "3bc81c42a343b8a00424e2c7ee3f0541c02328cffd7d6ac412b26739e7806ff6",
+  "EAUDIT39b_PAGES.pdf": "d338755d09f94778ab15f0dc37ba58bc9f1bd69825c4d0439ce564f088990bde"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.5-CorrelationTimeAE",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.5",
+  "printed_page": "204",
+  "pdf_page": "225",
+  "statement_latex": "If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $H=E$ energy surface:\n\\[C_{a,b}(t)=k\\lim_{\\tau\\to\\infty}\\frac1\\tau\\int_0^{\\tau} a(z(s+t))\\cdot b(z(s))ds.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "原书字面为any trajectory；本条Lean是明确的几乎处处修订版，不可将AE当作逐字原文。对每个给定t有AE集合，未断言同一满测集同时适用所有t。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.correlationTime",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]按本章标准遍历结论修正为对给定lag逐次AE初值；保留真实时间积分、向量内积、可积性和flow群律，原any字面另条。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT17_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T10:12:25.337909",
+      "before_sha256": "e5b0bda8269eee8e13e48a9f0874b4c20e855d97aeaf7ee9ebe5d2216bac0b27",
+      "after_sha256": "74ac292cf095d33d99c99325620b7578fe0663fb941b2b69ab48ac138ce47517",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem correlationTime :
+  ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t,
+  (∀ z,Φ 0 z=z) → (∀ s u z,Φ (s+u) z=Φ s (Φ u z)) →
+  (∀ g : MolecularDynamics.Chapter05Review.E n → ℝ,Integrable g μ → ∀ᵐ z ∂μ, MolecularDynamics.Chapter05Review.hasTimeAverage (fun s => Φ s z) g (MolecularDynamics.Chapter05Review.average μ g)) →
+  Integrable (fun z => inner ℝ (a (Φ t z)) (b z)) μ →
+  ∀ᵐ z ∂μ,Tendsto (fun T => k*T⁻¹*(∫ s in (0 : ℝ)..T,inner ℝ (a (Φ (s+t) z)) (b (Φ s z))))
+    atTop (𝓝 (MolecularDynamics.Chapter05Review.correlation μ Φ a b k t)) := by
+  intro n d μ Φ a b k t h0 hg he hi
+  filter_upwards [he (fun z => inner ℝ (a (Φ t z)) (b z)) hi] with z hz
+  unfold MolecularDynamics.Chapter05Review.hasTimeAverage MolecularDynamics.Chapter05Review.timeAverage at hz
+  have hh := hz.const_mul k
+  have ht (s : ℝ) : Φ (s+t) z=Φ t (Φ s z) := by rw [add_comm,hg]
+  simpa only [MolecularDynamics.Chapter05Review.average,MolecularDynamics.Chapter05Review.correlation,ht,mul_assoc] using hh
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.average
+```lean
+def average {n : ℕ} (μ : Measure (E n)) (g : E n → ℝ) := ∫ z, g z ∂μ
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.correlation
+```lean
+def correlation {n d : ℕ} (μ : Measure (E n)) (Φ : ℝ → E n → E n)
+    (a b : E n → E d) (k t : ℝ) := k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hasTimeAverage
+```lean
+def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop :=
+  Tendsto (timeAverage z g) atTop (𝓝 a)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.timeAverage
+```lean
+def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.average
+```lean
+def average {n : ℕ} (μ : Measure (E n)) (g : E n → ℝ) := ∫ z, g z ∂μ
+```
+### 实际依赖 MD.Ch05.correlation
+```lean
+def correlation {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (k t : ℝ) := k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)
+```
+### 实际依赖 MD.Ch05.hasTimeAverage
+```lean
+def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop :=
+  Tendsto (MolecularDynamics.Chapter05Review.timeAverage z g) atTop (𝓝 a)
+```
+### 实际依赖 MD.Ch05.timeAverage
+```lean
+def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
+```

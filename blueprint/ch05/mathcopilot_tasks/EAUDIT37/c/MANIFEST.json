@@ -1,0 +1,51 @@
+{
+  "eaudit": "EAUDIT37",
+  "source_id": "MD-5.4.1-TwoOscillatorFlow",
+  "input_sha256": {
+    "BATCH_EAUDIT37.md": "cd4c486b1923d945993b474d4cb18d0b3cce517e805ad11c0e4d65b3a9dde6c8",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT37c_materials": "17c0bd84c23f8c0de5005e2af864343426e39c066ac50238aa088a9666bef9f2",
+    "EAUDIT37c_PAGES.pdf": "d12bff63daceb32f499847db1182d87f28c0de5bcda9d6c6ff694de02d41ebfd"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    219,
+    220
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "be5420ca5196e413bfc79e5b85a16ba4e13b676dcc32eb4178a2e804f836abae",
+  "source_block_sha256": "5dd4a70d74e58409d6735b14db0c9f856eb89e59635e4415c414a1a209353856",
+  "source_declarations": [
+    "twoOscillatorFlow",
+    "twoOscillatorFlow_invariants"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "twoOscillatorEnergy",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "ab0745151619fe658a5e2649baf952b325bee0100a147563a933c303a3768ce2"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "twoOscillatorFlow",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "c128a4fd2e0f5fad8a3fdebc90d779961388bbca3f328bec4708ed782344fb77"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT37_review.json",
+  "total_task_bytes": 209764
+}

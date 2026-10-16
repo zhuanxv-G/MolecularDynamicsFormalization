@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT33",
+  "source_id": "MD-5.3.2-IdealGasPositionDomain",
+  "input_sha256": {
+    "BATCH_EAUDIT33.md": "a3f171def0829ef0dc2aa8ad893f2243d98f57caf2e0e69a1d092279e869291d",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+    "EAUDIT33a_materials": "68508bf1aa5af9140a6dfbc4fee0dc8562424fe39d6e8505dc0da9f9114938e9",
+    "EAUDIT33a_PAGES.pdf": "209ad56c0eeeb4c6d175aa3422838e4e2133d6c3ddea5e05a220e2b6cbd8012c"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    214,
+    215
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "c5d3541c0e600b3bf50a95e30b45295e51c83263f91ecea2464295c29560ba86",
+  "source_block_sha256": "6adb12e2ff24d4c16a954e1dea0eaa26a54bb44205877caad4ee569516080fce",
+  "source_declarations": [
+    "idealGasPositionDomain"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "idealGasPositionDomain",
+      "file_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "excerpt_sha256": "6adb12e2ff24d4c16a954e1dea0eaa26a54bb44205877caad4ee569516080fce"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT33_review.json",
+  "total_task_bytes": 95900
+}

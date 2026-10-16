@@ -1,0 +1,38 @@
+{
+  "eaudit": "EAUDIT29",
+  "input_sha256": {
+    "BATCH_EAUDIT29.md": "560dd9e842af77c4df9997c92b497d3457102c036a7463e04dcfaf055747b54a",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT29a",
+      "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT29/a",
+      "total_bytes": 81030,
+      "manifest_sha256": "9c3bc3499692d8863be3e472700d4976d8aa36c2157e78553a22eed9bdc87941"
+    },
+    {
+      "subtask": "EAUDIT29b",
+      "source_id": "MD-5.2.3-HamiltonianDensityPropagation",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT29/b",
+      "total_bytes": 106649,
+      "manifest_sha256": "16f72f1712f9b1a55faf6ce899b9e93a99e8c0752c2fe07f7ff4088ad0cc6504"
+    },
+    {
+      "subtask": "EAUDIT29c",
+      "source_id": "MD-5.2.3-MechanicalLiouvillian",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT29/c",
+      "total_bytes": 102786,
+      "manifest_sha256": "c3e7f3874a3d37bb72a84dec36a441eeb0d469302289280561bed60d772ebb19"
+    },
+    {
+      "subtask": "EAUDIT29d",
+      "source_id": "MD-5.2.3-MechanicalLiouvillianIdentity",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT29/d",
+      "total_bytes": 104787,
+      "manifest_sha256": "1042a46a1857f79c369940616c8be694e9378dffc847c544576ad95202d61fee"
+    }
+  ]
+}

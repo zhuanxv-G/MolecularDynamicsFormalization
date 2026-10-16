@@ -1,0 +1,125 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.3.2-HamiltonianEnergyIntegral；原PDF页映射=[211]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT31_review.json，对象含batch=EAUDIT31、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT31.md": "947604185b3b69783e3545693f7724f425a69eecd9aa7308754eaf5a2df65e5d",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "EAUDIT31c_materials": "6fd01eda4d812078104dfe87dde8473409b16d9dec0edbb03ef5ccf45f324175",
+  "EAUDIT31c_PAGES.pdf": "11eb8f15b0d380dadd4f0427fc195613bd7c241ce15e60b3bad88689572fd847"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.3.2-HamiltonianEnergyIntegral",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.3.2",
+  "printed_page": "190",
+  "pdf_page": "211",
+  "statement_latex": "In the case of a Hamiltonian system, we know that $\\mathcal L_f^\\dagger=-\\mathcal L_f$, and, moreover, $\\mathcal L_fH=0$, so that $H$ is a first integral.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$f=J\\nabla H$ 为自治 Hamiltonian 向量场，$\\mathcal L_f u=D u[f]$，$\\mathcal L_f^\\dagger u=-\\nabla\\cdot(u f)$；Hamiltonian 场散度为零给出 $\\mathcal L_f^\\dagger=-\\mathcal L_f$。",
+    "本条范围包括伴随算子关系、$\\mathcal L_fH=0$ 和能量第一积分含义。第一积分指 H 沿实际 Hamiltonian 轨道恒定，不仅是一个对总化 fderiv 的形式等式。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.hamiltonianEnergyIntegral",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson",
+    "MolecularDynamics.textbookPoissonBracket_self"
+  ],
+  "extra_assumptions": [
+    "[EXTRA] 补真实Hamiltonian场的−div(u f)=−L_f u及实际解上能量恒定，H为C²、u为C¹、合法闭区间轨道；保留已证L_fH=0，不把散度零/能量守恒当假设。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT08_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:58:05.599147",
+      "before_sha256": "f1321865fc311f1855b3d94e522682dd171c803ce6cd1e98bb12b117717c0e1a",
+      "after_sha256": "d145f44a3641e13a73a6e7cf369e11466147a793aa55b0a8e3ca4c73ca46a02e",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem hamiltonianEnergyIntegral {Nc : ℕ} (H : MolecularDynamics.SymplecticCoordinates Nc → ℝ) (z : MolecularDynamics.SymplecticCoordinates Nc) :
+  MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H) H z=0 := by
+  rw [MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson]
+  exact MolecularDynamics.textbookPoissonBracket_self H z
+
+theorem hamiltonianEnergyIntegral_full (k : ℕ)
+    (H u : MolecularDynamics.SymplecticCoordinates k → ℝ)
+    (_hH : ContDiff ℝ 2 H) (_hu : ContDiff ℝ 1 u)
+    (z : MolecularDynamics.SymplecticCoordinates k)
+    (γ : ℝ → MolecularDynamics.SymplecticCoordinates k) (a b : ℝ) (_hab : a ≤ b)
+    (_hγ : ∀ t ∈ Icc a b,HasDerivWithinAt γ
+      (MolecularDynamics.textbookHamiltonianVectorField H (γ t)) (Icc a b) t) :
+    -(LinearMap.trace ℝ (MolecularDynamics.SymplecticCoordinates k)
+      (fderiv ℝ (fun x ↦ u x • MolecularDynamics.textbookHamiltonianVectorField H x) z).toLinearMap)=
+        -MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H) u z ∧
+    (∀ t ∈ Icc a b,H (γ t)=H (γ a)) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MolecularDynamics.textbookHamiltonianVectorField
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+### 实际依赖 MolecularDynamics.textbookLieDerivative
+```lean
+noncomputable def textbookLieDerivative (f : E → E) (φ : E → ℝ) (z : E) : ℝ :=
+  (fderiv ℝ φ z) (f z)
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinateMatrix
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### 实际依赖 MolecularDynamics.SymplecticCoordinates
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### 实际依赖 MolecularDynamics.textbookHamiltonianVectorField
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+### 实际依赖 MolecularDynamics.textbookJ
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### 实际依赖 MolecularDynamics.textbookLieDerivative
+```lean
+noncomputable def textbookLieDerivative (f : E → E) (φ : E → ℝ) (z : E) : ℝ :=
+  (fderiv ℝ φ z) (f z)
+```

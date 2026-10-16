@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT41",
+  "input_sha256": {
+    "BATCH_EAUDIT41.md": "c8cff48c6002433f1f074b43f709953e4d6f0694550756422bd836095f69b1fb",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT41a",
+      "source_id": "MD-5.6-BackwardEnergyDecay",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/a",
+      "total_bytes": 92993,
+      "manifest_sha256": "634e4c5b6c5de000d477c670d69ab344d7f0985f80fc4f13a944d5dd43d7cf49"
+    },
+    {
+      "subtask": "EAUDIT41b",
+      "source_id": "MD-5.6-BackwardEulerLimit",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/b",
+      "total_bytes": 94504,
+      "manifest_sha256": "2a325029e7fff00340b15bc2f7f5521de0892afc58b18046d6211c9969b9b4f7"
+    },
+    {
+      "subtask": "EAUDIT41c",
+      "source_id": "MD-5.6-SymplecticEulerShadow",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/c",
+      "total_bytes": 98252,
+      "manifest_sha256": "e9b5ccb7ee9db9236a8a4ca7fae258de46ce1607f7a65a1ef47e09339542956f"
+    },
+    {
+      "subtask": "EAUDIT41d",
+      "source_id": "MD-5.6-SymplecticEulerEllipse",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/d",
+      "total_bytes": 95606,
+      "manifest_sha256": "a10e730b0c72e75d8bc550361f03f8936ab2ff1de2538dbe2fb87a314d862eb8"
+    },
+    {
+      "subtask": "EAUDIT41e",
+      "source_id": "MD-5.6-SymplecticEulerDensity",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/e",
+      "total_bytes": 95950,
+      "manifest_sha256": "21045b35fc9bcba499285b177a2829497e04d0e617f6fcc48424689ee815cd71"
+    },
+    {
+      "subtask": "EAUDIT41f",
+      "source_id": "MD-5.6-Theorem51",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/f",
+      "total_bytes": 165824,
+      "manifest_sha256": "1c164dea78da162396e9ae361a7634e074273b34b372790ceab717596a0e7057"
+    },
+    {
+      "subtask": "EAUDIT41g",
+      "source_id": "MD-5.6-PerturbationCorrection",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/g",
+      "total_bytes": 110605,
+      "manifest_sha256": "5d61c145dc6cd443c5546764ffc4e899b13a68cc0a95f79bdfff933b38319ba6"
+    },
+    {
+      "subtask": "EAUDIT41h",
+      "source_id": "MD-5.6-DenominatorBound",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT41/h",
+      "total_bytes": 100888,
+      "manifest_sha256": "010d75fee5947ae9f962f8af85ac91e899d6bd7ed96efb1d11b78ef5d2cc4c8a"
+    }
+  ]
+}

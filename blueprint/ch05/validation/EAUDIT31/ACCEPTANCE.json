@@ -1,0 +1,82 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT31",
+  "section": "5.3.2",
+  "source_ids": [
+    "MD-5.3.2-WeakStationary",
+    "MD-5.3.2-EnsembleAverage",
+    "MD-5.3.2-HamiltonianEnergyIntegral",
+    "MD-5.3.2-ShellWeight",
+    "MD-5.3.2-ShellPartition",
+    "MD-5.3.2-ShellDensity",
+    "MD-5.3.2-ShellWeakLimitCorrected",
+    "MD-5.3.2-SurfaceAreaFormula"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.2-WeakStationary",
+    "MD-5.3.2-EnsembleAverage",
+    "MD-5.3.2-HamiltonianEnergyIntegral",
+    "MD-5.3.2-ShellWeight",
+    "MD-5.3.2-ShellPartition",
+    "MD-5.3.2-ShellDensity",
+    "MD-5.3.2-ShellWeakLimitCorrected",
+    "MD-5.3.2-SurfaceAreaFormula"
+  ],
+  "human_ids": [],
+  "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "source_sha256": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-5.3.2-WeakStationary",
+      "prior_eaudit": "EAUDIT18",
+      "acceptance": "blueprint/ch05/validation/EAUDIT18/ACCEPTANCE.json",
+      "sha256": "91d8bbe35c3cf32009ccbf828ee863566333c9dcc868a9d5dc9f07da4f27347d"
+    },
+    {
+      "source_id": "MD-5.3.2-EnsembleAverage",
+      "prior_eaudit": "EAUDIT08",
+      "acceptance": "blueprint/ch05/validation/EAUDIT08/ACCEPTANCE.json",
+      "sha256": "da38d7152bcdf1ec10ec54cd22a3091675486b24e1cf383617c115a20c0bf3f7"
+    },
+    {
+      "source_id": "MD-5.3.2-HamiltonianEnergyIntegral",
+      "prior_eaudit": "EAUDIT08",
+      "acceptance": "blueprint/ch05/validation/EAUDIT08/ACCEPTANCE.json",
+      "sha256": "da38d7152bcdf1ec10ec54cd22a3091675486b24e1cf383617c115a20c0bf3f7"
+    },
+    {
+      "source_id": "MD-5.3.2-ShellWeight",
+      "prior_eaudit": "EAUDIT08",
+      "acceptance": "blueprint/ch05/validation/EAUDIT08/ACCEPTANCE.json",
+      "sha256": "da38d7152bcdf1ec10ec54cd22a3091675486b24e1cf383617c115a20c0bf3f7"
+    },
+    {
+      "source_id": "MD-5.3.2-ShellPartition",
+      "prior_eaudit": "EAUDIT08",
+      "acceptance": "blueprint/ch05/validation/EAUDIT08/ACCEPTANCE.json",
+      "sha256": "da38d7152bcdf1ec10ec54cd22a3091675486b24e1cf383617c115a20c0bf3f7"
+    },
+    {
+      "source_id": "MD-5.3.2-ShellDensity",
+      "prior_eaudit": "EAUDIT08",
+      "acceptance": "blueprint/ch05/validation/EAUDIT08/ACCEPTANCE.json",
+      "sha256": "da38d7152bcdf1ec10ec54cd22a3091675486b24e1cf383617c115a20c0bf3f7"
+    },
+    {
+      "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+      "prior_eaudit": "EAUDIT09",
+      "acceptance": "blueprint/ch05/validation/EAUDIT09/ACCEPTANCE.json",
+      "sha256": "10bca6fc145dd5414dd8f07f8c24e36d4b23d374c25128d54939c9d3ed99747e"
+    },
+    {
+      "source_id": "MD-5.3.2-SurfaceAreaFormula",
+      "prior_eaudit": "EAUDIT09",
+      "acceptance": "blueprint/ch05/validation/EAUDIT09/ACCEPTANCE.json",
+      "sha256": "10bca6fc145dd5414dd8f07f8c24e36d4b23d374c25128d54939c9d3ed99747e"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT31/INDEX.md"
+}

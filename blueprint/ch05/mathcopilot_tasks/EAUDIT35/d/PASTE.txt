@@ -1,0 +1,83 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.4-ConservedInfiniteAverage；原PDF页映射=[217, 218]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT35_review.json，对象含batch=EAUDIT35、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT35.md": "1a115cd77fc0d7c56fb7f68c989c5e7cd4019cb3518e18b3248b745dfb4aa0ff",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "EAUDIT35d_materials": "8c12bfd1fd45d48b7fe36d2391876094d75f0d1ed68e9719b73f98a73f491034",
+  "EAUDIT35d_PAGES.pdf": "1348a88e2661056fd0e74f5ca825489b16999ad99bb292f3bc7ec75cd12841d1"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.4-ConservedInfiniteAverage",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.4",
+  "printed_page": "196–197",
+  "pdf_page": "217–218",
+  "statement_latex": "Considering any conservative system, we know that the energy itself is a conserved quantity along trajectories, and its average is therefore a function of the initial condition. More generally, if a given system has a first integral (conserved quantity) $I=I(z)$, different from the energy, which is preserved along trajectories, then the average of this conserved quantity (and any other quantity that depends upon it) will be dependent on the choice of initial condition.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "保留第一积分及任意依赖它的量两个无限平均结论；不只保留有限时间积分。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.conservedInfiniteAverage",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT12_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T10:00:27.167822",
+      "before_sha256": "9848fd92290ef4a1d82f52ea0ce6c57e51505fd4f2e53c5c34f28a913004d071",
+      "after_sha256": "fdf737e3485af2284363a1b16aa9e58b68a9d246f1a3143bb69c6c0f685eedfb",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH17_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem conservedInfiniteAverage {X : Type*} (z : ℝ → X) (I : X → ℝ) (r : ℝ → ℝ)
+    (hI : ∀ t,I (z t)=I (z 0)) :
+  MolecularDynamics.Chapter05Review.hasTimeAverage z I (I (z 0)) ∧
+    MolecularDynamics.Chapter05Review.hasTimeAverage z (r ∘ I) (r (I (z 0))) := by
+  have hm (g : X → ℝ) (hg : ∀ t,g (z t)=g (z 0)) :
+      MolecularDynamics.Chapter05Review.hasTimeAverage z g (g (z 0)) := by
+    apply tendsto_congr' _ |>.2 tendsto_const_nhds
+    filter_upwards [eventually_gt_atTop (0 : ℝ)] with T hT
+    exact MolecularDynamics.Chapter05Review.conservedAverage_proved z g (g (z 0)) hg T (ne_of_gt hT)
+  exact ⟨hm I hI,hm (r ∘ I) (fun t => by simp only [Function.comp_apply,hI])⟩
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hasTimeAverage
+```lean
+def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop :=
+  Tendsto (timeAverage z g) atTop (𝓝 a)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.timeAverage
+```lean
+def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
+```
+### 实际依赖 MD.Ch05.hasTimeAverage
+```lean
+def hasTimeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (a : ℝ) : Prop :=
+  Tendsto (MolecularDynamics.Chapter05Review.timeAverage z g) atTop (𝓝 a)
+```
+### 实际依赖 MD.Ch05.timeAverage
+```lean
+def timeAverage {X : Type*} (z : ℝ → X) (g : X → ℝ) (T : ℝ) := T⁻¹*(∫ t in (0 : ℝ)..T,g (z t))
+```

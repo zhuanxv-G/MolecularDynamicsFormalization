@@ -1,0 +1,105 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.2.2-MassDerivative；原PDF页映射=[205]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT26_review.json，对象含batch=EAUDIT26、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT26.md": "6044c4bffc0dd36b4d3752a3be6f3e77311b45a0014f3926f1384fba7be8ffe7",
+  "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+  "blueprint/ch05/ch05_source.json": "04ac3a4bfed718d58c3930ee1bd1e865bd159bc26a64c349393b59837b8cfc2f",
+  "EAUDIT26b_materials": "5d2ee0981abc209fbedcf4e18caa508690bced542fc4dad8c51ea6a9accd0168",
+  "EAUDIT26b_PAGES.pdf": "451f8446f0e1752e955cd22211bc720f79998f5df0fc0c281ac7498ef56604d6"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.2.2-MassDerivative",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.2.2",
+  "printed_page": "184",
+  "pdf_page": "205",
+  "statement_latex": "which may be viewed as a smooth function of time. On the one hand\n\\[\\frac{d\\nu}{dt}=\\int_\\mathcal A\\frac{\\partial\\rho(z,t)}{\\partial t}\\,d\\omega,\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.massDerivative",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]明确参数微分与积分交换所需的可积支配界、邻域逐点可微及可积性；不假设已交换的导数等式。",
+    "[EXTRA] 保留已证的一阶积分交换，补紧空间域和联合C∞密度下质量函数C∞结论；紧域给各阶局部支配的充分资格，非结论前提。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT03_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:52:07.490546",
+      "before_sha256": "443b1092f472da07f2fa725ec34a2f50298f35a2b2f8dfb24279ed505c563c07",
+      "after_sha256": "09bfad1afc7bf4a093757320e89f2e7ab4f7a7e68e13eeff8cb3ff5ff62ecdc0",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH06_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem massDerivative :
+  ∀ n (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (A : Set (MolecularDynamics.Chapter05Review.E n)) t,
+  MeasurableSet A → (∀ s,IntegrableOn (ρ s) A) →
+  (∃ δ > 0, ∃ b : MolecularDynamics.Chapter05Review.E n → ℝ, IntegrableOn b A ∧
+    (∀ s ∈ Ioo (t-δ) (t+δ), ∀ z ∈ A, HasDerivAt (fun u => ρ u z) (deriv (fun u => ρ u z) s) s ∧
+      |deriv (fun u => ρ u z) s| ≤ b z)) →
+  HasDerivAt (MolecularDynamics.Chapter05Review.massFraction ρ A) (∫ z in A,deriv (fun u => ρ u z) t) t := by
+  intro n ρ A t hA hint hloc
+  obtain ⟨δ,hδ,b,hb,hlocal⟩ := hloc
+  have ht : t ∈ Ioo (t-δ) (t+δ) := ⟨by linarith,by linarith⟩
+  have hm : AEStronglyMeasurable (fun z => deriv (fun u => ρ u z) t) (volume.restrict A) := by
+    apply aestronglyMeasurable_of_tendsto_ae (𝓝[≠] (0 : ℝ))
+      (f := fun h z => h⁻¹*(ρ (t+h) z-ρ t z))
+    · intro h
+      exact ((hint (t+h)).aestronglyMeasurable.sub (hint t).aestronglyMeasurable).const_mul _
+    · filter_upwards [ae_restrict_mem hA] with z hz
+      simpa only [smul_eq_mul] using (hlocal t ht z hz).1.tendsto_slope_zero
+  have he := hasDerivAt_integral_of_dominated_loc_of_deriv_le
+    (μ := volume.restrict A) (F := ρ) (F' := fun s z => deriv (fun u => ρ u z) s)
+    (bound := b) (Ioo_mem_nhds (by linarith) (by linarith))
+    (Filter.Eventually.of_forall (fun s => (hint s).aestronglyMeasurable)) (hint t) hm
+    ((ae_restrict_mem hA).mono (fun z hz s hs => by
+      simpa only [Real.norm_eq_abs] using (hlocal s hs z hz).2)) hb
+    ((ae_restrict_mem hA).mono (fun z hz s hs => (hlocal s hs z hz).1))
+  simpa only [MolecularDynamics.Chapter05Review.massFraction] using! he.2
+
+theorem massDerivative_smooth (n : ℕ)
+    (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ)
+    (A : Set (MolecularDynamics.Chapter05Review.E n))
+    (_hA : MeasurableSet A) (_hc : IsCompact A)
+    (_hρ : ContDiff ℝ ∞ (Function.uncurry ρ)) :
+    ContDiff ℝ ∞ (MolecularDynamics.Chapter05Review.massFraction ρ A) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.massFraction
+```lean
+def massFraction {n : ℕ} (ρ : ℝ → E n → ℝ) (A : Set (E n)) (t : ℝ) := ∫ z in A,ρ t z
+```
+### 实际依赖 MD.Ch05.massFraction
+```lean
+def massFraction {n : ℕ} (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (A : Set (MolecularDynamics.Chapter05Review.E n)) (t : ℝ) := ∫ z in A,ρ t z
+```
