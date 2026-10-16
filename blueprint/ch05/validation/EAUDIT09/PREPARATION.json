@@ -1,0 +1,42 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT09",
+  "section": "5.3.2",
+  "source_ids": [
+    "MD-5.3.2-MicroInvariant",
+    "MD-5.3.2-MicroRawInvariant",
+    "MD-5.3.2-NormalEnergyTaylor",
+    "MD-5.3.2-NormalInverseTaylor",
+    "MD-5.3.2-PatchShellVolume",
+    "MD-5.3.2-ShellWeakLimitCorrected",
+    "MD-5.3.2-SurfaceAreaFormula",
+    "MD-5.3.2-WholeShellVolumeLimit"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.2-ShellWeakLimitCorrected",
+    "MD-5.3.2-SurfaceAreaFormula",
+    "MD-5.3.2-NormalEnergyTaylor",
+    "MD-5.3.2-NormalInverseTaylor",
+    "MD-5.3.2-MicroRawInvariant",
+    "MD-5.3.2-MicroInvariant"
+  ],
+  "human_ids": [
+    "MD-5.3.2-PatchShellVolume",
+    "MD-5.3.2-WholeShellVolumeLimit"
+  ],
+  "old_lean_sha256": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+  "lean_sha256": "aeec9886e5bcd40333d95a514852afdb95218836d2d4e24a586ffb5a619361e6",
+  "source_sha256": "9111ec6dd7a0efa7bce1d17cbb7ce87f7d51b92b300cd195509e13e680ad1f98",
+  "pages": [
+    210,
+    211,
+    212,
+    213,
+    214,
+    215
+  ],
+  "prior_proof_blocks": {
+    "MD-5.3.2-NormalEnergyTaylor": "theorem normalEnergyTaylor :\n  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) z,\n  ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.grad H z ≠ 0 → ∃ C > 0, ∃ δ > 0, ∀ s : ℝ, |s| < δ →\n    |H (z+s • MolecularDynamics.Chapter05Review.normalField H z)-H z-s*‖MolecularDynamics.Chapter05Review.grad H z‖| ≤ C*s^2 := by\n  sorry",
+    "MD-5.3.2-ShellWeakLimitCorrected": "theorem shellWeakLimit :\n  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,\n  0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c → (∃ z,H z=c) →\n  (∃ δ > 0, IsCompact {z | |H z-c| ≤ δ} ∧ (∀ ε ∈ Ioo 0 δ,\n    Integrable (MolecularDynamics.Chapter05Review.shellWeight H c ε) volume ∧ 0 < MolecularDynamics.Chapter05Review.shellPartition H c ε)) →\n  ∀ φ : MolecularDynamics.Chapter05Review.testSpace n, Tendsto (fun ε => ∫ z,φ.1 z*MolecularDynamics.Chapter05Review.shellDensity H c ε z)\n    (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microAverage H c φ.1)) := by\n  sorry"
+  }
+}

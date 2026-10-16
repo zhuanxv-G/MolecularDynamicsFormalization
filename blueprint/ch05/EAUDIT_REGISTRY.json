@@ -321,5 +321,173 @@
     "full_check": "deferred to chapter end",
     "website": "awaiting user submission",
     "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT07/INDEX.md"
+  },
+  {
+    "chapter": 5,
+    "eaudit": "EAUDIT08",
+    "section": "5.3.2",
+    "source_ids": [
+      "MD-5.3.2-ConvergenceHeuristic",
+      "MD-5.3.2-EnsembleAverage",
+      "MD-5.3.2-HamiltonianEnergyIntegral",
+      "MD-5.3.2-ShellDensity",
+      "MD-5.3.2-ShellPartition",
+      "MD-5.3.2-ShellWeakPrinted",
+      "MD-5.3.2-ShellWeight",
+      "MD-5.3.2-WeakStationary"
+    ],
+    "reaudit_ids": [
+      "MD-5.3.2-WeakStationary",
+      "MD-5.3.2-EnsembleAverage",
+      "MD-5.3.2-HamiltonianEnergyIntegral",
+      "MD-5.3.2-ShellWeight",
+      "MD-5.3.2-ShellPartition",
+      "MD-5.3.2-ShellDensity"
+    ],
+    "human_ids": [
+      "MD-5.3.2-ConvergenceHeuristic",
+      "MD-5.3.2-ShellWeakPrinted"
+    ],
+    "lean_sha256": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+    "source_sha256": "52bef0989f284df6fd9fa8a63e9cfad88afeb43c1e03fa4f6ae1b3b4203762cb",
+    "pages": [
+      210,
+      211,
+      212,
+      213,
+      214,
+      215
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch05.olean",
+        "Blueprint/Ch05.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+      "log_sha256": "8870d65a5511b46a4ca317b4aa0a0a6f31c72b27836bc83f529e8f20725fa32a"
+    },
+    "axiom_decl_count": 9,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT08/INDEX.md"
+  },
+  {
+    "chapter": 5,
+    "eaudit": "EAUDIT09",
+    "section": "5.3.2",
+    "source_ids": [
+      "MD-5.3.2-MicroInvariant",
+      "MD-5.3.2-MicroRawInvariant",
+      "MD-5.3.2-NormalEnergyTaylor",
+      "MD-5.3.2-NormalInverseTaylor",
+      "MD-5.3.2-PatchShellVolume",
+      "MD-5.3.2-ShellWeakLimitCorrected",
+      "MD-5.3.2-SurfaceAreaFormula",
+      "MD-5.3.2-WholeShellVolumeLimit"
+    ],
+    "reaudit_ids": [
+      "MD-5.3.2-ShellWeakLimitCorrected",
+      "MD-5.3.2-SurfaceAreaFormula",
+      "MD-5.3.2-NormalEnergyTaylor",
+      "MD-5.3.2-NormalInverseTaylor",
+      "MD-5.3.2-MicroRawInvariant",
+      "MD-5.3.2-MicroInvariant"
+    ],
+    "human_ids": [
+      "MD-5.3.2-PatchShellVolume",
+      "MD-5.3.2-WholeShellVolumeLimit"
+    ],
+    "lean_sha256": "aeec9886e5bcd40333d95a514852afdb95218836d2d4e24a586ffb5a619361e6",
+    "source_sha256": "9111ec6dd7a0efa7bce1d17cbb7ce87f7d51b92b300cd195509e13e680ad1f98",
+    "pages": [
+      210,
+      211,
+      212,
+      213,
+      214,
+      215
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch05.olean",
+        "Blueprint/Ch05.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "aeec9886e5bcd40333d95a514852afdb95218836d2d4e24a586ffb5a619361e6",
+      "log_sha256": "74748ef1d61e8a72597c0ac1486bbd53983e6f5cdb5783e11fa6eef925feae4a"
+    },
+    "axiom_decl_count": 8,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/INDEX.md"
+  },
+  {
+    "chapter": 5,
+    "eaudit": "EAUDIT10",
+    "section": "5.3.2",
+    "source_ids": [
+      "MD-5.3.2-HarmonicEnergy",
+      "MD-5.3.2-HarmonicPartition",
+      "MD-5.3.2-HarmonicQuadraturePrinted",
+      "MD-5.3.2-IdealGasEnergy",
+      "MD-5.3.2-IdealGasPartition",
+      "MD-5.3.2-IdealGasPositionDomain",
+      "MD-5.3.2-MicroPartition",
+      "MD-5.3.2-ShellPointValuePrinted"
+    ],
+    "reaudit_ids": [
+      "MD-5.3.2-MicroPartition",
+      "MD-5.3.2-HarmonicEnergy",
+      "MD-5.3.2-HarmonicPartition",
+      "MD-5.3.2-IdealGasEnergy",
+      "MD-5.3.2-IdealGasPositionDomain",
+      "MD-5.3.2-IdealGasPartition"
+    ],
+    "human_ids": [
+      "MD-5.3.2-ShellPointValuePrinted",
+      "MD-5.3.2-HarmonicQuadraturePrinted"
+    ],
+    "lean_sha256": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
+    "source_sha256": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62",
+    "pages": [
+      210,
+      211,
+      212,
+      213,
+      214,
+      215
+    ],
+    "single_file_compile": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-o",
+        ".lake/build/lib/lean/Blueprint/Ch05.olean",
+        "Blueprint/Ch05.lean"
+      ],
+      "exit_code": 0,
+      "input_sha256": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
+      "log_sha256": "0a827e904c8d7fb42ef85479a408dffb5782b9b9c445a7c560a479e552f74f31"
+    },
+    "axiom_decl_count": 11,
+    "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+    "new_proofs": "none",
+    "full_check": "deferred to chapter end",
+    "website": "awaiting user submission",
+    "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/INDEX.md"
   }
 ]

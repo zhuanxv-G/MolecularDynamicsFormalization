@@ -1823,5 +1823,125 @@
     "category": "B",
     "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
     "section": "5.3.1"
+  },
+  "MD-5.3.2-WeakStationary": {
+    "category": "C",
+    "handling": "Blueprint弱稳态接口实际量化修正后的全部C∞紧支撑测试函数，避免冻结正式库中的Cω测试类型；不修改正式库。",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-HamiltonianEnergyIntegral": {
+    "category": "B",
+    "handling": "补真实Hamiltonian场的−div(u f)=−L_f u及实际解上能量恒定，H为C²、u为C¹、合法闭区间轨道；保留已证L_fH=0，不把散度零/能量守恒当假设。",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-ShellWeight": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅归一化密度公式中的未归一化指数权因子；完整Z与ρ由MD-5.3.2-ShellPartition及MD-5.3.2-ShellDensity承担。",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-EnsembleAverage": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-ConvergenceHeuristic": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-ShellPartition": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-ShellDensity": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-ShellWeakPrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-NormalEnergyTaylor": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅正向法线Taylor子引理；以ΔE为变量的逆存在及O(ΔE²)结论由MD-5.3.2-NormalInverseTaylor承担。",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-ShellWeakLimitCorrected": {
+    "category": "C",
+    "handling": "恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-SurfaceAreaFormula": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-NormalInverseTaylor": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-PatchShellVolume": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-WholeShellVolumeLimit": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-MicroRawInvariant": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-MicroInvariant": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-HarmonicEnergy": {
+    "category": "B",
+    "handling": "补非零频率、正能量下能量面椭圆的完整等价式；质量为单位，原定义与坐标顺序保留。",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-HarmonicPartition": {
+    "category": "B",
+    "handling": "保留真实曲面微正则质量终值，补其与正确参数积分的等式及该积分的终值；不更改原印首积分疑误。",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-IdealGasPositionDomain": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅有限位置立方胞辅助域定义；球面半径、位置体积因子和真实微正则分解由MD-5.3.2-IdealGasPartition补全，闭胞边界零测不声称逐点周期识别。",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-IdealGasPartition": {
+    "category": "B",
+    "handling": "补真实动量(3N−1)维球面S、r=√(2mc)、位置体积(L³)^N及面积/Gamma两项中间分解，保留原终值；不以参数积分作microRaw定义。",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-MicroPartition": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-ShellPointValuePrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-HarmonicQuadraturePrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.3.2"
+  },
+  "MD-5.3.2-IdealGasEnergy": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.3.2"
   }
 }

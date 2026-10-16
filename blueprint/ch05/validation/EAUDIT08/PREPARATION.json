@@ -1,0 +1,43 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT08",
+  "section": "5.3.2",
+  "source_ids": [
+    "MD-5.3.2-ConvergenceHeuristic",
+    "MD-5.3.2-EnsembleAverage",
+    "MD-5.3.2-HamiltonianEnergyIntegral",
+    "MD-5.3.2-ShellDensity",
+    "MD-5.3.2-ShellPartition",
+    "MD-5.3.2-ShellWeakPrinted",
+    "MD-5.3.2-ShellWeight",
+    "MD-5.3.2-WeakStationary"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.2-WeakStationary",
+    "MD-5.3.2-EnsembleAverage",
+    "MD-5.3.2-HamiltonianEnergyIntegral",
+    "MD-5.3.2-ShellWeight",
+    "MD-5.3.2-ShellPartition",
+    "MD-5.3.2-ShellDensity"
+  ],
+  "human_ids": [
+    "MD-5.3.2-ConvergenceHeuristic",
+    "MD-5.3.2-ShellWeakPrinted"
+  ],
+  "old_lean_sha256": "466556f2b8e01c9311bb9a809e449ddff13190451bf79edb0e57569d6317277c",
+  "lean_sha256": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+  "source_sha256": "52bef0989f284df6fd9fa8a63e9cfad88afeb43c1e03fa4f6ae1b3b4203762cb",
+  "pages": [
+    210,
+    211,
+    212,
+    213,
+    214,
+    215
+  ],
+  "prior_proof_blocks": {
+    "MD-5.3.2-WeakStationary": "def weakStationary {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (μ : Measure (MolecularDynamics.Chapter05Review.E n)) : Prop :=\n  ∀ φ : MolecularDynamics.Chapter05Review.testSpace n, Integrable (MolecularDynamics.Chapter05Review.lie f φ.1) μ ∧ (∫ z,MolecularDynamics.Chapter05Review.lie f φ.1 z ∂μ)=0",
+    "MD-5.3.2-HamiltonianEnergyIntegral": "theorem hamiltonianEnergyIntegral {Nc : ℕ} (H : MolecularDynamics.SymplecticCoordinates Nc → ℝ) (z : MolecularDynamics.SymplecticCoordinates Nc) :\n  MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H) H z=0 := by\n  rw [MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson]\n  exact MolecularDynamics.textbookPoissonBracket_self H z",
+    "MD-5.3.2-ShellWeight": "def shellWeight {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := Real.exp (-(H z-c)^2/(2*ε))"
+  }
+}

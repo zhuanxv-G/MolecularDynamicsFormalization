@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT09",
+  "input_sha256": {
+    "BATCH_EAUDIT09.md": "3b50f9b7479ec2410fbd63b771db6bc7f9db83f8c4400f9824f00b6942c3f5b6",
+    "Blueprint/Ch05.lean": "aeec9886e5bcd40333d95a514852afdb95218836d2d4e24a586ffb5a619361e6",
+    "blueprint/ch05/ch05_source.json": "9111ec6dd7a0efa7bce1d17cbb7ce87f7d51b92b300cd195509e13e680ad1f98"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT09a",
+      "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/a",
+      "total_bytes": 120173,
+      "manifest_sha256": "9beeb78c18f15732d893aa4e58692f21d671f85a2c4f36b23c2b90c1502c6be1"
+    },
+    {
+      "subtask": "EAUDIT09b",
+      "source_id": "MD-5.3.2-SurfaceAreaFormula",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/b",
+      "total_bytes": 105336,
+      "manifest_sha256": "6fc95f920316b1ecdd69f4003a2b7a00daa932aa73c61565b3b232b03c50afed"
+    },
+    {
+      "subtask": "EAUDIT09c",
+      "source_id": "MD-5.3.2-NormalEnergyTaylor",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/c",
+      "total_bytes": 141217,
+      "manifest_sha256": "88c2453cfff3f4e0b7632a3dda2de56feee1a9d026d495cbb4adbf1eed062e72"
+    },
+    {
+      "subtask": "EAUDIT09d",
+      "source_id": "MD-5.3.2-NormalInverseTaylor",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/d",
+      "total_bytes": 141417,
+      "manifest_sha256": "9c39a18259b3a29b5aabf7d059b3a625d1e99becc4a0fc1e30bce7d34ed3de65"
+    },
+    {
+      "subtask": "EAUDIT09e",
+      "source_id": "MD-5.3.2-MicroRawInvariant",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/e",
+      "total_bytes": 99384,
+      "manifest_sha256": "af14e5c830c12146e997a3a1b30078319d3378ea4ca77f8f0f88fd59f08bd610"
+    },
+    {
+      "subtask": "EAUDIT09f",
+      "source_id": "MD-5.3.2-MicroInvariant",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT09/f",
+      "total_bytes": 100222,
+      "manifest_sha256": "79f92259c8ff9f4881dc3ffae4db215529196ceb7b9be0ab8b9ddda6b08bd9ae"
+    }
+  ]
+}

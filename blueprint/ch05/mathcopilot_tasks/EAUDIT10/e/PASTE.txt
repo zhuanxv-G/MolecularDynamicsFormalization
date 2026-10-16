@@ -1,0 +1,74 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.3.2-IdealGasPositionDomain；原PDF页映射=[214, 215]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT10_review.json，对象含batch=EAUDIT10、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT10.md": "71aeaa88d20f0fbc6d1ddc0daa1beea8b93b61d2b0114708da25c4d62e54a7d9",
+  "Blueprint/Ch05.lean": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
+  "blueprint/ch05/ch05_source.json": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62",
+  "EAUDIT10e_materials": "68508bf1aa5af9140a6dfbc4fee0dc8562424fe39d6e8505dc0da9f9114938e9",
+  "EAUDIT10e_PAGES.pdf": "209ad56c0eeeb4c6d175aa3422838e4e2133d6c3ddea5e05a220e2b6cbd8012c"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.3.2-IdealGasPositionDomain",
+  "kind": "definition",
+  "label": null,
+  "section": "5.3.2",
+  "printed_page": "193–194",
+  "pdf_page": "214–215",
+  "statement_latex": "$Z_E=V^N\\int_S(m/r)d\\sigma$, where $S$ is the $3N-1$ dimensional sphere in $3N$ dimensions of radius $r=\\sqrt{2mE}$, and $d\\sigma$ is the surface area element on this sphere. $V^N$ is the contribution due to integration over positions.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "Z_E=μ(Σ_E)为微正则分区函数，N为三维粒子数，V为周期盒体积，m为质量，E为能量；S位于3N维动量空间。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.idealGasPositionDomain",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]选择边长L的三维立方基本胞，V=L³；实际位置域有限，不能对无限全位置空间积分再声称分区函数有限。周期边界的基本胞面零测度识别未证明。",
+    "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅有限位置立方胞辅助域定义；球面半径、位置体积因子和真实微正则分解由MD-5.3.2-IdealGasPartition补全，闭胞边界零测不声称逐点周期识别。"
+  ],
+  "statement_scope": "仅有限位置立方胞辅助域定义；球面半径、位置体积因子和真实微正则分解由MD-5.3.2-IdealGasPartition补全，闭胞边界零测不声称逐点周期识别。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT10_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:59:03.890531",
+      "before_sha256": "1f7d380cc6c4127627f6fa65882028aad4cc903e0a7bf8261f44c65d77103642",
+      "after_sha256": "65983f592b1079ffd54abcf0326c2a78a06fbcc99eea870002c6517cf9c341fb",
+      "changed_fields": [
+        "context_notation",
+        "statement_scope"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def idealGasPositionDomain (N : ℕ) (L : ℝ) : Set (MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
+  {z | ∀ i : Fin (3*N),z (Fin.castAdd (3*N) i) ∈ Icc (0 : ℝ) L}
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MD.Ch05.idealGasPositionDomain
+```lean
+def idealGasPositionDomain (N : ℕ) (L : ℝ) : Set (MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
+  {z | ∀ i : Fin (3*N),z (Fin.castAdd (3*N) i) ∈ Icc (0 : ℝ) L}
+```

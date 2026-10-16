@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT10",
+  "input_sha256": {
+    "BATCH_EAUDIT10.md": "71aeaa88d20f0fbc6d1ddc0daa1beea8b93b61d2b0114708da25c4d62e54a7d9",
+    "Blueprint/Ch05.lean": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
+    "blueprint/ch05/ch05_source.json": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT10a",
+      "source_id": "MD-5.3.2-MicroPartition",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/a",
+      "total_bytes": 96694,
+      "manifest_sha256": "6150b79d53da4eb413fa346d3223e770c536c130898824ab577f98e82c69e03d"
+    },
+    {
+      "subtask": "EAUDIT10b",
+      "source_id": "MD-5.3.2-HarmonicEnergy",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/b",
+      "total_bytes": 89483,
+      "manifest_sha256": "d734dd5a39c079987e8a90ff7eb6e6b7cbd0e5d8372e65d5d0ae0d917df463c8"
+    },
+    {
+      "subtask": "EAUDIT10c",
+      "source_id": "MD-5.3.2-HarmonicPartition",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/c",
+      "total_bytes": 98127,
+      "manifest_sha256": "e31e792afcd02490bc5ddd4e135ac9f4e5381c04f1fbcd893ce43fa6f6c10b89"
+    },
+    {
+      "subtask": "EAUDIT10d",
+      "source_id": "MD-5.3.2-IdealGasEnergy",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/d",
+      "total_bytes": 95136,
+      "manifest_sha256": "267dcd551fd62e858aff0896346bcae961e4598d6662e706e5b4d47021de1e46"
+    },
+    {
+      "subtask": "EAUDIT10e",
+      "source_id": "MD-5.3.2-IdealGasPositionDomain",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/e",
+      "total_bytes": 95900,
+      "manifest_sha256": "a4079ffa9f022b05b1387e5c1fc3303e99e94f843e2339d9ffbc1523b8c52a20"
+    },
+    {
+      "subtask": "EAUDIT10f",
+      "source_id": "MD-5.3.2-IdealGasPartition",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/f",
+      "total_bytes": 105264,
+      "manifest_sha256": "52aa949b4fd1e3e4939800d873d190da4b393bf35be0273215bf9f18bae43f90"
+    }
+  ]
+}

@@ -75,35 +75,35 @@
 | MD-5.3.1-DiracEvaluates | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | local_proof / self-contained |
 | MD-5.3.1-GaussianDeltaProbability | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | local_proof / self-contained |
 | MD-5.3.1-GaussianDeltaWeak | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | local_proof / self-contained |
-| MD-5.3.2-WeakStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.2-EnsembleAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.2-ConvergenceHeuristic | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；原收敛推断需要独立语义裁定及补充收敛资格；当前不证明。 |
-| MD-5.3.2-HamiltonianEnergyIntegral | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
+| MD-5.3.2-WeakStationary | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | definition / self-contained |
+| MD-5.3.2-EnsembleAverage | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | definition / self-contained |
+| MD-5.3.2-ConvergenceHeuristic | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT08（原返回FAIL保留） | placeholder / incomplete；原收敛推断需要独立语义裁定及补充收敛资格；当前不证明。 |
+| MD-5.3.2-HamiltonianEnergyIntegral | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | existing_bridge / checked+documented priors |
 | MD-5.3.2-EnergyDensityInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；待第一积分链式法则与实际Measure.map/withDensity桥接；不建设新的测度输运理论。 |
-| MD-5.3.2-ShellWeight | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.2-ShellPartition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.2-ShellDensity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
+| MD-5.3.2-ShellWeight | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | definition / self-contained |
+| MD-5.3.2-ShellPartition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | definition / self-contained |
+| MD-5.3.2-ShellDensity | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT08 | definition / self-contained |
 | MD-5.3.2-EnergySurface | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.3.2-SurfaceMeasure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.3.2-MicroRaw | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.2-ShellWeakPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；重复归一化疑误未裁定；coarea及真实弱极限理论不建设，保留sorry。 |
-| MD-5.3.2-ShellWeakLimitCorrected | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺coarea、正则紧曲面的壳层积分渐近及概率弱收敛接口；遵用户要求不建设大型理论。 |
-| MD-5.3.2-SurfaceAreaFormula | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺一般单射浸入的Hausdorff面积公式接口；不建设面积/coarea理论。 |
+| MD-5.3.2-ShellWeakPrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT08（原返回FAIL保留） | placeholder / incomplete；重复归一化疑误未裁定；coarea及真实弱极限理论不建设，保留sorry。 |
+| MD-5.3.2-ShellWeakLimitCorrected | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | placeholder / incomplete；缺coarea、正则紧曲面的壳层积分渐近及概率弱收敛接口；遵用户要求不建设大型理论。 |
+| MD-5.3.2-SurfaceAreaFormula | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | placeholder / incomplete；缺一般单射浸入的Hausdorff面积公式接口；不建设面积/coarea理论。 |
 | MD-5.3.2-NormalField | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.2-NormalEnergyTaylor | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/NormalEnergyTaylor.json。 |
-| MD-5.3.2-NormalInverseTaylor | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；所需法线二阶Taylor短桥已失败3条路线并停止；本条还缺实际C²局部逆与统一ΔE余项桥接，保留全部正反向结论，不以含sorryAx的依赖冒称已证。 |
-| MD-5.3.2-PatchShellVolume | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺一般曲面片法线管的几何Jacobian、面积/coarea及统一误差接口；不建设大型几何理论。 |
-| MD-5.3.2-WholeShellVolumeLimit | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺能量壳层coarea积分接口；不建设大型几何理论。 |
-| MD-5.3.2-MicroRawInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺由体积/能量保持到真实曲面加权测度的coarea桥；不建设大型几何理论。 |
-| MD-5.3.2-MicroInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺真实coarea及曲面测度保持接口；不建设大型理论。 |
-| MD-5.3.2-MicroPartition | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.2-ShellPointValuePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / incomplete；需裁定原分布点值的类别错误；不伪造等式证明。 |
-| MD-5.3.2-HarmonicEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.2-HarmonicQuadraturePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；原上界疑误需裁定，局部曲面参数化尚缺接口。 |
-| MD-5.3.2-HarmonicPartition | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺椭圆真实Hausdorff面积/coarea及加权曲面积分桥接，不建设大型几何理论。 |
-| MD-5.3.2-IdealGasEnergy | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.2-IdealGasPositionDomain | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.3.2-IdealGasPartition | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺真实3N球面积、曲面产品测度与微正则权积分桥接；不建设coarea/大型几何理论。 |
+| MD-5.3.2-NormalEnergyTaylor | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | placeholder / incomplete；三条短证明路线失败，停止该条；保存证据见validation/short_search/NormalEnergyTaylor.json。 |
+| MD-5.3.2-NormalInverseTaylor | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | placeholder / incomplete；所需法线二阶Taylor短桥已失败3条路线并停止；本条还缺实际C²局部逆与统一ΔE余项桥接，保留全部正反向结论，不以含sorryAx的依赖冒称已证。 |
+| MD-5.3.2-PatchShellVolume | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT09（原返回FAIL保留） | placeholder / incomplete；缺一般曲面片法线管的几何Jacobian、面积/coarea及统一误差接口；不建设大型几何理论。 |
+| MD-5.3.2-WholeShellVolumeLimit | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待导师 / EAUDIT09（原返回FAIL保留） | placeholder / incomplete；缺能量壳层coarea积分接口；不建设大型几何理论。 |
+| MD-5.3.2-MicroRawInvariant | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | placeholder / incomplete；缺由体积/能量保持到真实曲面加权测度的coarea桥；不建设大型几何理论。 |
+| MD-5.3.2-MicroInvariant | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT09 | placeholder / incomplete；缺真实coarea及曲面测度保持接口；不建设大型理论。 |
+| MD-5.3.2-MicroPartition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | definition / self-contained |
+| MD-5.3.2-ShellPointValuePrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT10（原返回FAIL保留） | definition / incomplete；需裁定原分布点值的类别错误；不伪造等式证明。 |
+| MD-5.3.2-HarmonicEnergy | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | definition / self-contained |
+| MD-5.3.2-HarmonicQuadraturePrinted | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT10（原返回FAIL保留） | placeholder / incomplete；原上界疑误需裁定，局部曲面参数化尚缺接口。 |
+| MD-5.3.2-HarmonicPartition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | placeholder / incomplete；缺椭圆真实Hausdorff面积/coarea及加权曲面积分桥接，不建设大型几何理论。 |
+| MD-5.3.2-IdealGasEnergy | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | definition / self-contained |
+| MD-5.3.2-IdealGasPositionDomain | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | definition / self-contained |
+| MD-5.3.2-IdealGasPartition | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT10 | placeholder / incomplete；缺真实3N球面积、曲面产品测度与微正则权积分桥接；不建设coarea/大型几何理论。 |
 | MD-5.3.3-MicroMeasure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.3.3-MicroProbability | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
 | MD-5.3.3-LowerDimensionNull | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺Hausdorff维数/光滑图像到真实曲面加权测度零集的接口；不建设大型几何理论。 |
@@ -355,3 +355,9 @@ EAUDIT05 §5.2.2：2条落盘，单文件与4项公理通过；未写新证明�
 EAUDIT06 §5.2.3：4条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT07 §5.3.1：7条落盘，单文件与7项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT08 §5.3.2：8条落盘，单文件与9项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT09 §5.3.2：8条落盘，单文件与8项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT10 §5.3.2：8条落盘，单文件与11项公理通过；未写新证明；完整check留到章末；网站待复审。

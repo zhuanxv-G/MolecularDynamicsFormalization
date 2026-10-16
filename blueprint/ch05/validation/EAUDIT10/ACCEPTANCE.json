@@ -1,0 +1,56 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT10",
+  "section": "5.3.2",
+  "source_ids": [
+    "MD-5.3.2-HarmonicEnergy",
+    "MD-5.3.2-HarmonicPartition",
+    "MD-5.3.2-HarmonicQuadraturePrinted",
+    "MD-5.3.2-IdealGasEnergy",
+    "MD-5.3.2-IdealGasPartition",
+    "MD-5.3.2-IdealGasPositionDomain",
+    "MD-5.3.2-MicroPartition",
+    "MD-5.3.2-ShellPointValuePrinted"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.2-MicroPartition",
+    "MD-5.3.2-HarmonicEnergy",
+    "MD-5.3.2-HarmonicPartition",
+    "MD-5.3.2-IdealGasEnergy",
+    "MD-5.3.2-IdealGasPositionDomain",
+    "MD-5.3.2-IdealGasPartition"
+  ],
+  "human_ids": [
+    "MD-5.3.2-ShellPointValuePrinted",
+    "MD-5.3.2-HarmonicQuadraturePrinted"
+  ],
+  "lean_sha256": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
+  "source_sha256": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62",
+  "pages": [
+    210,
+    211,
+    212,
+    213,
+    214,
+    215
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch05.olean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
+    "log_sha256": "0a827e904c8d7fb42ef85479a408dffb5782b9b9c445a7c560a479e552f74f31"
+  },
+  "axiom_decl_count": 11,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT10/INDEX.md"
+}

@@ -72,5 +72,65 @@
       "[EXTRA]原有界光滑f及明确选择的Schwartz测试空间；可积与完整线性两个结论都保留，不把可积作结论假设。",
       "[EXTRA] 将不必要的实解析限制恢复为原书C∞，保留有界性、Schwartz选择及原可积/线性结论；已有证明随本批编译复查。"
     ]
+  },
+  "MD-5.3.2-WeakStationary": {
+    "code": "def weakStationary {n : ℕ}\n    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)\n    (μ : Measure (MolecularDynamics.Chapter05Review.E n)) : Prop :=\n  ∀ φ : testSpace n,Integrable (MolecularDynamics.Chapter05Review.lie f φ.1) μ ∧\n    (∫ z,MolecularDynamics.Chapter05Review.lie f φ.1 z ∂μ)=0",
+    "extra_assumptions": [
+      "[EXTRA]真实测度对实际测试Lie导数的零配对实现弱方程，来自形式伴随；不是把不可微分布当普通密度求导。用全空间上的测度表达，包括受限D的测度。",
+      "[EXTRA] Blueprint弱稳态接口实际量化修正后的全部C∞紧支撑测试函数，避免冻结正式库中的Cω测试类型；不修改正式库。"
+    ]
+  },
+  "MD-5.3.2-HamiltonianEnergyIntegral": {
+    "code": "theorem hamiltonianEnergyIntegral {Nc : ℕ} (H : MolecularDynamics.SymplecticCoordinates Nc → ℝ) (z : MolecularDynamics.SymplecticCoordinates Nc) :\n  MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H) H z=0 := by\n  rw [MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson]\n  exact MolecularDynamics.textbookPoissonBracket_self H z\n\ntheorem hamiltonianEnergyIntegral_full (k : ℕ)\n    (H u : MolecularDynamics.SymplecticCoordinates k → ℝ)\n    (_hH : ContDiff ℝ 2 H) (_hu : ContDiff ℝ 1 u)\n    (z : MolecularDynamics.SymplecticCoordinates k)\n    (γ : ℝ → MolecularDynamics.SymplecticCoordinates k) (a b : ℝ) (_hab : a ≤ b)\n    (_hγ : ∀ t ∈ Icc a b,HasDerivWithinAt γ\n      (MolecularDynamics.textbookHamiltonianVectorField H (γ t)) (Icc a b) t) :\n    -(LinearMap.trace ℝ (MolecularDynamics.SymplecticCoordinates k)\n      (fderiv ℝ (fun x ↦ u x • MolecularDynamics.textbookHamiltonianVectorField H x) z).toLinearMap)=\n        -MolecularDynamics.textbookLieDerivative (MolecularDynamics.textbookHamiltonianVectorField H) u z ∧\n    (∀ t ∈ Icc a b,H (γ t)=H (γ a)) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 补真实Hamiltonian场的−div(u f)=−L_f u及实际解上能量恒定，H为C²、u为C¹、合法闭区间轨道；保留已证L_fH=0，不把散度零/能量守恒当假设。"
+    ]
+  },
+  "MD-5.3.2-ShellWeight": {
+    "code": "def shellWeight {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := Real.exp (-(H z-c)^2/(2*ε))",
+    "extra_assumptions": [
+      "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅归一化密度公式中的未归一化指数权因子；完整Z与ρ由MD-5.3.2-ShellPartition及MD-5.3.2-ShellDensity承担。"
+    ]
+  },
+  "MD-5.3.2-ShellWeakLimitCorrected": {
+    "code": "theorem shellWeakLimit :\n  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,\n  0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c → (∃ z,H z=c) →\n  (∃ δ > 0, IsCompact {z | |H z-c| ≤ δ} ∧ (∀ ε ∈ Ioo 0 δ,\n    Integrable (MolecularDynamics.Chapter05Review.shellWeight H c ε) volume ∧ 0 < MolecularDynamics.Chapter05Review.shellPartition H c ε)) →\n  ∀ φ : MD.Ch05.testSpace n, Tendsto (fun ε => ∫ z,φ.1 z*MolecularDynamics.Chapter05Review.shellDensity H c ε z)\n    (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microAverage H c φ.1)) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA]独立修正版：不再对已归一化ρ_ε重复除Zε；可达非空正则能量、C²、紧带及小ε权可积/分母正，全部明示。采用D=ℝ^m；不覆盖附加其他守恒约束的情形。",
+      "[EXTRA] 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。"
+    ]
+  },
+  "MD-5.3.2-NormalEnergyTaylor": {
+    "code": "theorem normalEnergyTaylor :\n  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) z,\n  ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.grad H z ≠ 0 → ∃ C > 0, ∃ δ > 0, ∀ s : ℝ, |s| < δ →\n    |H (z+s • MolecularDynamics.Chapter05Review.normalField H z)-H z-s*‖MolecularDynamics.Chapter05Review.grad H z‖| ≤ C*s^2 := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA]本条写正向实际C²局部Taylor余项O(ξ²)，原ΔE参数与反向ξ展开另条；非零梯度用于局部逆坐标，未以正向式替代所有结论。",
+      "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅正向法线Taylor子引理；以ΔE为变量的逆存在及O(ΔE²)结论由MD-5.3.2-NormalInverseTaylor承担。"
+    ]
+  },
+  "MD-5.3.2-HarmonicEnergy": {
+    "code": "def harmonicEnergy (Ω : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) := (z 1)^2/2+Ω^2*(z 0)^2/2\n\ntheorem harmonicEnergy_ellipse (Ω c : ℝ) (_hΩ : Ω ≠ 0) (_hc : 0 < c)\n    (z : MolecularDynamics.Chapter05Review.E 2) :\n    harmonicEnergy Ω z=c ↔\n      (z 0/(Real.sqrt (2*c)/|Ω|))^2+(z 1/Real.sqrt (2*c))^2=1 := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA] 补非零频率、正能量下能量面椭圆的完整等价式；质量为单位，原定义与坐标顺序保留。"
+    ]
+  },
+  "MD-5.3.2-HarmonicPartition": {
+    "code": "theorem harmonicPartition : ∀ Ω c : ℝ,0 < Ω → 0 < c →\n  MolecularDynamics.Chapter05Review.microPartition (harmonicEnergy Ω) c=2*Real.pi/Ω := by\n  sorry\n\ntheorem harmonicPartition_quadrature (Ω c : ℝ) (_hΩ : 0 < Ω) (_hc : 0 < c) :\n    MolecularDynamics.Chapter05Review.microPartition (harmonicEnergy Ω) c=\n      4*(∫ q in (0 : ℝ)..Real.sqrt (2*c)/Ω,1/Real.sqrt (2*c-Ω^2*q^2)) ∧\n    4*(∫ q in (0 : ℝ)..Real.sqrt (2*c)/Ω,1/Real.sqrt (2*c-Ω^2*q^2))=2*Real.pi/Ω := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA]正频率和正能量；是真实Hausdorff加权测度的分区函数，不把参数积分写成定义冒充面积识别。",
+      "[EXTRA] 保留真实曲面微正则质量终值，补其与正确参数积分的等式及该积分的终值；不更改原印首积分疑误。"
+    ]
+  },
+  "MD-5.3.2-IdealGasPositionDomain": {
+    "code": "def idealGasPositionDomain (N : ℕ) (L : ℝ) : Set (MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=\n  {z | ∀ i : Fin (3*N),z (Fin.castAdd (3*N) i) ∈ Icc (0 : ℝ) L}",
+    "extra_assumptions": [
+      "[EXTRA]选择边长L的三维立方基本胞，V=L³；实际位置域有限，不能对无限全位置空间积分再声称分区函数有限。周期边界的基本胞面零测度识别未证明。",
+      "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅有限位置立方胞辅助域定义；球面半径、位置体积因子和真实微正则分解由MD-5.3.2-IdealGasPartition补全，闭胞边界零测不声称逐点周期识别。"
+    ]
+  },
+  "MD-5.3.2-IdealGasPartition": {
+    "code": "theorem idealGasPartition : ∀ (N : ℕ) (m c L : ℝ),0 < N → 0 < m → 0 < c → 0 < L →\n  ((MolecularDynamics.Chapter05Review.microRaw (idealGasEnergy N m) c) (idealGasPositionDomain N L)).toReal=\n    (L^3)^N*Real.rpow (2*Real.pi*m*c) ((3*N : ℝ)/2)/(c*Real.Gamma ((3*N : ℝ)/2)) := by\n  sorry\n\ntheorem idealGasPartition_factors (N : ℕ) (m c L : ℝ)\n    (_hN : 0 < N) (_hm : 0 < m) (_hc : 0 < c) (_hL : 0 < L) :\n    let S := Metric.sphere (0 : MolecularDynamics.Chapter05Review.E (3*N)) (Real.sqrt (2*m*c))\n    let A := (MolecularDynamics.Chapter05Review.hausdorffArea (3*N-1) S).toReal\n    let Z := ((MolecularDynamics.Chapter05Review.microRaw (idealGasEnergy N m) c) (idealGasPositionDomain N L)).toReal\n    Z=(L^3)^N*(∫ p in S,m/Real.sqrt (2*m*c)\n      ∂(MolecularDynamics.Chapter05Review.hausdorffArea (3*N-1))) ∧\n    Z=(L^3)^N*(m/Real.sqrt (2*m*c))*A ∧\n    Z=(L^3)^N*(Real.sqrt m/Real.sqrt (2*c))*\n      ((3*N : ℝ)*Real.rpow Real.pi ((3*N : ℝ)/2)*Real.rpow (2*m*c) (((3*N : ℝ)-1)/2)/\n      Real.Gamma ((3*N : ℝ)/2+1)) := by\n  sorry",
+    "extra_assumptions": [
+      "[EXTRA]正N/m/E/L、有限基本胞V=L³；微正则raw测度在位置胞上实际限制。3N系数是球面积的正确系数，不登记伪造勘误。",
+      "[EXTRA] 补真实动量(3N−1)维球面S、r=√(2mc)、位置体积(L³)^N及面积/Gamma两项中间分解，保留原终值；不以参数积分作microRaw定义。"
+    ]
   }
 }

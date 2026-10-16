@@ -1,0 +1,49 @@
+{
+  "eaudit": "EAUDIT08",
+  "source_id": "MD-5.3.2-EnsembleAverage",
+  "input_sha256": {
+    "BATCH_EAUDIT08.md": "10702fcc5baec0a597e14f44344a1fed10cdb7bbcfcfa7d0f8ec7352e70cb0b6",
+    "Blueprint/Ch05.lean": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+    "blueprint/ch05/ch05_source.json": "52bef0989f284df6fd9fa8a63e9cfad88afeb43c1e03fa4f6ae1b3b4203762cb",
+    "EAUDIT08b_materials": "47585ae8db3b58b986069c7d3d3fc03cbc0332103c5bb4434b75e91d4c3d6763",
+    "EAUDIT08b_PAGES.pdf": "11eb8f15b0d380dadd4f0427fc195613bd7c241ce15e60b3bad88689572fd847"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    211
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "986015c267ae6ba78b8ad0ab0415c08acf58e403e85f24d4704a61c7c7175e47",
+  "source_block_sha256": "633381b35f124d05862b9929354532a53166755b62bd20a1c28f8bd146dae8d6",
+  "source_declarations": [
+    "ensembleAverageOn"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "densityAverageOn",
+      "file_sha256": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+      "excerpt_sha256": "d1318fce9f64601f8a64d2558db41fef14c5bb0efc16f33206264b8c0067bafb"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "ensembleAverageOn",
+      "file_sha256": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+      "excerpt_sha256": "633381b35f124d05862b9929354532a53166755b62bd20a1c28f8bd146dae8d6"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT08_review.json",
+  "total_task_bytes": 89739
+}

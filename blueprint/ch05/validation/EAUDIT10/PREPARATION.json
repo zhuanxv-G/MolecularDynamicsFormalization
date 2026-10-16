@@ -1,0 +1,44 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT10",
+  "section": "5.3.2",
+  "source_ids": [
+    "MD-5.3.2-HarmonicEnergy",
+    "MD-5.3.2-HarmonicPartition",
+    "MD-5.3.2-HarmonicQuadraturePrinted",
+    "MD-5.3.2-IdealGasEnergy",
+    "MD-5.3.2-IdealGasPartition",
+    "MD-5.3.2-IdealGasPositionDomain",
+    "MD-5.3.2-MicroPartition",
+    "MD-5.3.2-ShellPointValuePrinted"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.2-MicroPartition",
+    "MD-5.3.2-HarmonicEnergy",
+    "MD-5.3.2-HarmonicPartition",
+    "MD-5.3.2-IdealGasEnergy",
+    "MD-5.3.2-IdealGasPositionDomain",
+    "MD-5.3.2-IdealGasPartition"
+  ],
+  "human_ids": [
+    "MD-5.3.2-ShellPointValuePrinted",
+    "MD-5.3.2-HarmonicQuadraturePrinted"
+  ],
+  "old_lean_sha256": "aeec9886e5bcd40333d95a514852afdb95218836d2d4e24a586ffb5a619361e6",
+  "lean_sha256": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
+  "source_sha256": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62",
+  "pages": [
+    210,
+    211,
+    212,
+    213,
+    214,
+    215
+  ],
+  "prior_proof_blocks": {
+    "MD-5.3.2-HarmonicEnergy": "def harmonicEnergy (Ω : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) := (z 1)^2/2+Ω^2*(z 0)^2/2",
+    "MD-5.3.2-HarmonicPartition": "theorem harmonicPartition : ∀ Ω c : ℝ,0 < Ω → 0 < c →\n  MolecularDynamics.Chapter05Review.microPartition (harmonicEnergy Ω) c=2*Real.pi/Ω := by\n  sorry",
+    "MD-5.3.2-IdealGasPositionDomain": "def idealGasPositionDomain (N : ℕ) (L : ℝ) : Set (MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=\n  {z | ∀ i : Fin (3*N),z (Fin.castAdd (3*N) i) ∈ Icc (0 : ℝ) L}",
+    "MD-5.3.2-IdealGasPartition": "theorem idealGasPartition : ∀ (N : ℕ) (m c L : ℝ),0 < N → 0 < m → 0 < c → 0 < L →\n  ((MolecularDynamics.Chapter05Review.microRaw (idealGasEnergy N m) c) (idealGasPositionDomain N L)).toReal=\n    (L^3)^N*Real.rpow (2*Real.pi*m*c) ((3*N : ℝ)/2)/(c*Real.Gamma ((3*N : ℝ)/2)) := by\n  sorry"
+  }
+}

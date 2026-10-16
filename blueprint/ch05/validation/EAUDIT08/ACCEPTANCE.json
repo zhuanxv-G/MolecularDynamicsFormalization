@@ -1,0 +1,56 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT08",
+  "section": "5.3.2",
+  "source_ids": [
+    "MD-5.3.2-ConvergenceHeuristic",
+    "MD-5.3.2-EnsembleAverage",
+    "MD-5.3.2-HamiltonianEnergyIntegral",
+    "MD-5.3.2-ShellDensity",
+    "MD-5.3.2-ShellPartition",
+    "MD-5.3.2-ShellWeakPrinted",
+    "MD-5.3.2-ShellWeight",
+    "MD-5.3.2-WeakStationary"
+  ],
+  "reaudit_ids": [
+    "MD-5.3.2-WeakStationary",
+    "MD-5.3.2-EnsembleAverage",
+    "MD-5.3.2-HamiltonianEnergyIntegral",
+    "MD-5.3.2-ShellWeight",
+    "MD-5.3.2-ShellPartition",
+    "MD-5.3.2-ShellDensity"
+  ],
+  "human_ids": [
+    "MD-5.3.2-ConvergenceHeuristic",
+    "MD-5.3.2-ShellWeakPrinted"
+  ],
+  "lean_sha256": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+  "source_sha256": "52bef0989f284df6fd9fa8a63e9cfad88afeb43c1e03fa4f6ae1b3b4203762cb",
+  "pages": [
+    210,
+    211,
+    212,
+    213,
+    214,
+    215
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch05.olean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+    "log_sha256": "8870d65a5511b46a4ca317b4aa0a0a6f31c72b27836bc83f529e8f20725fa32a"
+  },
+  "axiom_decl_count": 9,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT08/INDEX.md"
+}

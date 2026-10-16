@@ -1,0 +1,14 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-o",
+    ".lake/build/lib/lean/Blueprint/Ch05.olean",
+    "Blueprint/Ch05.lean"
+  ],
+  "exit_code": 0,
+  "input_sha256": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
+  "log_sha256": "0a827e904c8d7fb42ef85479a408dffb5782b9b9c445a7c560a479e552f74f31",
+  "mode": "same compiler invocation as single-file compile; persistent chapter #print axioms footer"
+}

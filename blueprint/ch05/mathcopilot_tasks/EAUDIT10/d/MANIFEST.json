@@ -1,0 +1,44 @@
+{
+  "eaudit": "EAUDIT10",
+  "source_id": "MD-5.3.2-IdealGasEnergy",
+  "input_sha256": {
+    "BATCH_EAUDIT10.md": "71aeaa88d20f0fbc6d1ddc0daa1beea8b93b61d2b0114708da25c4d62e54a7d9",
+    "Blueprint/Ch05.lean": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
+    "blueprint/ch05/ch05_source.json": "5b0132223e54ca653365050e5d7ed3d06a541642e79fe6477011b9fbf2a2fb62",
+    "EAUDIT10d_materials": "349ea6ee33be1d0dd97117270a195133f321b898f61b91d16f61eda0bf15d01a",
+    "EAUDIT10d_PAGES.pdf": "209ad56c0eeeb4c6d175aa3422838e4e2133d6c3ddea5e05a220e2b6cbd8012c"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    214,
+    215
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "7daa0664cc8a4d7c1e1790cfd925548e655295a8430e3dca05dca5dbfdd3efd4",
+  "source_block_sha256": "6f280b1fdaed695c698e5211aeb87aed96e25ab4f956de8f09b20acfc7617a8d",
+  "source_declarations": [
+    "idealGasEnergy"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "idealGasEnergy",
+      "file_sha256": "8f83989d337b4e37c2b01dbafeee89fda0bb6ddb7a9ada866e153d8d04bc988d",
+      "excerpt_sha256": "6f280b1fdaed695c698e5211aeb87aed96e25ab4f956de8f09b20acfc7617a8d"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT10_review.json",
+  "total_task_bytes": 95136
+}

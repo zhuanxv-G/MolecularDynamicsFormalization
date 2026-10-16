@@ -1,0 +1,78 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.3.2-ShellPartition；原PDF页映射=[211, 212]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT08_review.json，对象含batch=EAUDIT08、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT08.md": "10702fcc5baec0a597e14f44344a1fed10cdb7bbcfcfa7d0f8ec7352e70cb0b6",
+  "Blueprint/Ch05.lean": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+  "blueprint/ch05/ch05_source.json": "52bef0989f284df6fd9fa8a63e9cfad88afeb43c1e03fa4f6ae1b3b4203762cb",
+  "EAUDIT08e_materials": "f2a95fbe89ad5cd3d156a90f51bebfec52b48edf96cdfcd37920d38696cabc04",
+  "EAUDIT08e_PAGES.pdf": "a40d08af32308bd16c12bd7f0aa9be1312aa75637c7669c46ff8ff7a1f59c922"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.3.2-ShellPartition",
+  "kind": "definition",
+  "label": null,
+  "section": "5.3.2",
+  "printed_page": "190–191",
+  "pdf_page": "211–212",
+  "statement_latex": "We assume that $H$ tends to infinity sufficiently rapidly as $\\|\\mathbf z\\|\\to\\infty$ so that the exponential decays sufficiently rapidly (and thus the total integral exists) and take $Z_\\varepsilon$ to be a normalization factor that insures that we have, for each $\\varepsilon$, a well defined probability density function.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$\\mathbf z=(\\mathbf q,\\mathbf p)$，$\\varepsilon>0$；上一段的指数权为 $w_\\varepsilon=e^{-(H-E)^2/(2\\varepsilon)}$，归一化要求确定 $Z_\\varepsilon=\\int_{\\mathbb R^m}w_\\varepsilon\\,d\\omega$。",
+    "此全相空间表达沿用原文 H 充分增长以保证总积分存在的语境。可积性及 $0<Z_\\varepsilon<\\infty$ 是实际概率使用资格；总化积分定义不自动提供资格证明。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.shellPartition",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT08_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:58:05.599147",
+      "before_sha256": "22e657a2c453f27d5f059bb49aaa4825b09fabb4d88f98d30533c65305d72493",
+      "after_sha256": "db8a69333c977bd041fb9e98a50d44ebeea7043f61b5d76b22ba05944033925e",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def shellPartition {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) := ∫ z,MolecularDynamics.Chapter05Review.shellWeight H c ε z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.shellWeight
+```lean
+def shellWeight {n : ℕ} (H : E n → ℝ) (c ε : ℝ) (z : E n) := Real.exp (-(H z-c)^2/(2*ε))
+```
+### 实际依赖 MD.Ch05.shellPartition
+```lean
+def shellPartition {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) := ∫ z,MolecularDynamics.Chapter05Review.shellWeight H c ε z
+```
+### 实际依赖 MD.Ch05.shellWeight
+```lean
+def shellWeight {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c ε : ℝ) (z : MolecularDynamics.Chapter05Review.E n) := Real.exp (-(H z-c)^2/(2*ε))
+```

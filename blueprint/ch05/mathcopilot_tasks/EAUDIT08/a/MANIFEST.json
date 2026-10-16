@@ -1,0 +1,62 @@
+{
+  "eaudit": "EAUDIT08",
+  "source_id": "MD-5.3.2-WeakStationary",
+  "input_sha256": {
+    "BATCH_EAUDIT08.md": "10702fcc5baec0a597e14f44344a1fed10cdb7bbcfcfa7d0f8ec7352e70cb0b6",
+    "Blueprint/Ch05.lean": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+    "blueprint/ch05/ch05_source.json": "52bef0989f284df6fd9fa8a63e9cfad88afeb43c1e03fa4f6ae1b3b4203762cb",
+    "EAUDIT08a_materials": "3facb6acd8d9beda89a36f26d913c2488418d88397832cc960ac3fb1a47b75df",
+    "EAUDIT08a_PAGES.pdf": "5067a6075d9b2bf45bf9d1e23e506fdbc5ffd719b7b4774eef6c27c7514a9ceb"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    210,
+    211
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "e51f264d0b0f2bef9737e303f09f31c9c93732de96726ae189d6b256bb562b60",
+  "source_block_sha256": "5c456db7b0565dea9eb5b0d80e8149d5c0881860ed040d429dfe323577899eeb",
+  "source_declarations": [
+    "weakStationary"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.lie",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "6535744b913bb6f850c290344fb7d4a36f3647f43500d689c3a8228a92a2f8a8"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "lie",
+      "file_sha256": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+      "excerpt_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "testSpace",
+      "file_sha256": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+      "excerpt_sha256": "784b6c51341eea9e2f4730af05c9d432b93334bc7aef25bb9b90a73067b141ac"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "weakStationary",
+      "file_sha256": "b637ea8b8e3be621c374973bf72a2d5d3fa7b3bcd5adb7a605ad3acfabb7641f",
+      "excerpt_sha256": "5c456db7b0565dea9eb5b0d80e8149d5c0881860ed040d429dfe323577899eeb"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT08_review.json",
+  "total_task_bytes": 102171
+}
