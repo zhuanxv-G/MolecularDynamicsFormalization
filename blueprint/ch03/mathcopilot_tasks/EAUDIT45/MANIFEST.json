@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT45",
+  "input_sha256": {
+    "BATCH_EAUDIT45.md": "24e142a9640a7d23d5973d10e1914a937386ba397489f109ffd5ee6f12c1f25a",
+    "Blueprint/Ch03.lean": "4aa703951c796378eae80048977869a1799b4c5d7f9dd713f42800649309a758",
+    "blueprint/ch03/ch03_source.json": "e67856728724b48f5c098102c46e4ded281b44727213eea1d17999881942b981"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT45a",
+      "source_id": "MD-3.4-LeadingModifiedField",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT45/a",
+      "total_bytes": 100523,
+      "manifest_sha256": "0d866fd48b36c4cc8a3f1e6f63257ac96bf9801e3ae4e0ac17ff9e876143c669"
+    },
+    {
+      "subtask": "EAUDIT45b",
+      "source_id": "MD-3.4-TruncationSmooth",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT45/b",
+      "total_bytes": 116798,
+      "manifest_sha256": "abd7e69f6e0b4d1ae23ae1c5fede39f0a60f870e8ad887441854c60c79ab4c8c"
+    },
+    {
+      "subtask": "EAUDIT45c",
+      "source_id": "MD-3.4-Thm3.1",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT45/c",
+      "total_bytes": 143478,
+      "manifest_sha256": "3182cd72bfef9fb54dae5e7e44102bba9ef7d997d201d59265e1ca33491ad8cf"
+    },
+    {
+      "subtask": "EAUDIT45d",
+      "source_id": "MD-3.4-FiniteMatchingConstruction",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT45/d",
+      "total_bytes": 101682,
+      "manifest_sha256": "3a2daa8ebe6cb19ca8cbd539250433891f8c8819d648b842b8f6c69910121529"
+    },
+    {
+      "subtask": "EAUDIT45e",
+      "source_id": "MD-3.4-ArbitraryFiniteTruncation",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT45/e",
+      "total_bytes": 98711,
+      "manifest_sha256": "5973591eb70d39f5ce96cd07e5cc5bb98b284822d6e9de714d78aa3d66cf552b"
+    },
+    {
+      "subtask": "EAUDIT45f",
+      "source_id": "MD-3.4-ScalarVerletShadow4",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT45/f",
+      "total_bytes": 209796,
+      "manifest_sha256": "1fca4f31ee7b4dacdbd70b751aa1afe827d8339a7b931cd7c1a069643736a884"
+    }
+  ]
+}

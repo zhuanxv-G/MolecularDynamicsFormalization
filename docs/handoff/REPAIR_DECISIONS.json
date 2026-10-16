@@ -655,13 +655,13 @@
     "section": "3.3.4"
   },
   "MD-3.4-TruncationSmooth": {
-    "category": "B",
-    "handling": "C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。",
+    "category": "C",
+    "handling": "C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。",
     "section": "3.4"
   },
   "MD-3.4-Thm3.1": {
-    "category": "B",
-    "handling": "本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。",
+    "category": "C",
+    "handling": "C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。",
     "section": "3.4"
   },
   "MD-3.4-EnergyTelescoping": {
@@ -705,8 +705,8 @@
     "section": "3.4"
   },
   "MD-3.4-ScalarVerletShadow4": {
-    "category": "B",
-    "handling": "有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。",
+    "category": "C",
+    "handling": "C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。",
     "section": "3.4"
   },
   "MD-3.4-AnalyticDefect": {
@@ -1618,5 +1618,20 @@
     "category": "C",
     "handling": "C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。",
     "section": "3.3.1"
+  },
+  "MD-3.4-LeadingModifiedField": {
+    "category": "C",
+    "handling": "C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。",
+    "section": "3.4"
+  },
+  "MD-3.4-FiniteMatchingConstruction": {
+    "category": "C",
+    "handling": "C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。",
+    "section": "3.4"
+  },
+  "MD-3.4-ArbitraryFiniteTruncation": {
+    "category": "C",
+    "handling": "C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。",
+    "section": "3.4"
   }
 }

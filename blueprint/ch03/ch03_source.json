@@ -2277,12 +2277,24 @@
     "lean_decl": "MD.Ch03.leadingModifiedField",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "r>0、全域C∞的f及(h,z)↦G_h、开放D与紧B及真实双向局部流；局部r阶条件。"
+      "r>0、全域C∞的f及(h,z)↦G_h、开放D与紧B及真实双向局部流；局部r阶条件。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT45_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:39:30.646379",
+        "before_sha256": "b196639cbd01ffc9df1be1b302dd070a3f6e8e2bf802a38950a789b00210d233",
+        "after_sha256": "e9ef5d948888b7f2176010fb24890f9947a6888250d0e41c15054d817d17f89c",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT45/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.4-TruncatedHamiltonian",
@@ -2341,7 +2353,8 @@
     ],
     "extra_assumptions": [
       "系数在D上C∞，主结论C∞暂sorry；原C¹结论的既有证明作为独立辅助重查。",
-      "[EXTRA] C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。"
+      "[EXTRA] C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "CORRECTED",
@@ -2384,9 +2397,19 @@
         },
         "raw_return": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EAUDIT45_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:39:30.646379",
+        "before_sha256": "738688aff517f5e4a6051c65f4e4dc7de660689a0f2d87fbd1eec3f3f06a3564",
+        "after_sha256": "dca5256bca51938ff326dedbec09cb463aebdcb5c4d9dbea863dcb4346ac2629",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT45/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.4-Thm3.1",
@@ -2408,7 +2431,8 @@
     "reusable_proofs": [],
     "extra_assumptions": [
       "r>0,k≥r；开放凸D、紧凸B⊆D，H和Hj在D上C∞；给定相邻构造条目产出的真实有限匹配。",
-      "[EXTRA] 本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。"
+      "[EXTRA] 本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "Theorem3.1中给定有限截断匹配后的能量估计；构造Hj及全截断存在性由MD-3.4-FiniteMatchingConstruction、MD-3.4-ArbitraryFiniteTruncation覆盖，原文保留。",
     "review_status": "CORRECTED",
@@ -2475,9 +2499,19 @@
         },
         "raw_return": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EAUDIT45_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:39:30.646379",
+        "before_sha256": "e6d0d5ef09b648d668973450949dac8fdaeaaa14492fc428795e951903b162b1",
+        "after_sha256": "3e89ecb5cf300ec47487881082c7d19a4839e10e98e0f94276b293cd46d64939",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT45/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.4-CompactLipschitz",
@@ -2561,12 +2595,24 @@
     "lean_decl": "MD.Ch03.finiteMatchingConstruction",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "smoothSymplecticData与原书构造上下文相同；保留任意k的真实finiteMatching为结论，不当作前提。"
+      "smoothSymplecticData与原书构造上下文相同；保留任意k的真实finiteMatching为结论，不当作前提。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT45_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:39:30.646379",
+        "before_sha256": "6e6c7ac7777cb5a8db67d4c390c97b209fca4d95b32b88ca1fc39367cc3ca4b7",
+        "after_sha256": "304de5117837c8f6c87d2997ce1fc34e386954d7a7b46e1c1ad387998c315978",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT45/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.4-TruncatedConservation",
@@ -2866,12 +2912,24 @@
     "lean_decl": "MD.Ch03.arbitraryFiniteTruncation",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "smoothSymplecticData保持全部Hamiltonian/近恒等辛/compact条件；完整∀k匹配作为结论，没有把它当作前提。"
+      "smoothSymplecticData保持全部Hamiltonian/近恒等辛/compact条件；完整∀k匹配作为结论，没有把它当作前提。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT45_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:39:30.646379",
+        "before_sha256": "86583387a72c192eebe4d8e52afd1270e52ef14356e3ff6a7288cc70d7d7de9f",
+        "after_sha256": "e4f02d684926af6a854134884f02fade9d0315af67d8e941b4f38f24871cc133",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH13_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT45/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.4-AnalyticDefect",
@@ -3007,7 +3065,8 @@
     "lean_decl": "MD.Ch03.scalarVerletShadow4",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。"
+      "[EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "CORRECTED",
@@ -3021,9 +3080,19 @@
         "annotation_corrections": {},
         "raw_return": "blueprint/ch03/mathcopilot_results/BATCH14_result.json",
         "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      },
+      {
+        "stage": "EAUDIT45_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T09:39:30.646379",
+        "before_sha256": "4e8c062b7b955ade6f531b8432fba74ae5e52183ee108657b56cc523cd8b5636",
+        "after_sha256": "32b90fe1e8497066198760ff87f4426ace8bbb5a0555c957855aea684dc9ba6f",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch03/mathcopilot_results/BATCH14_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
       }
     ],
-    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT45/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-3.4-CommutingEnergy",

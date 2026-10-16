@@ -118,17 +118,19 @@
     ]
   },
   "MD-3.4-TruncationSmooth": {
-    "code": "theorem truncationSmooth (H : E → ℝ) (Hj : ℕ → E → ℝ)\n    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ ⊤ H D)\n    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ ⊤ (Hj j) D) :\n    ContDiffOn ℝ ⊤ (textbookTruncatedHamiltonian H Hj r k h) D := by\n  sorry\n\ntheorem truncationSmooth_C1 (H : E → ℝ) (Hj : ℕ → E → ℝ)\n    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ 1 H D)\n    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :\n    ContDiffOn ℝ 1 (textbookTruncatedHamiltonian H Hj r k h) D := by\n  apply MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian <;> assumption",
+    "code": "theorem truncationSmooth (H : E → ℝ) (Hj : ℕ → E → ℝ)\n    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ ∞ H D)\n    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ ∞ (Hj j) D) :\n    ContDiffOn ℝ ∞ (textbookTruncatedHamiltonian H Hj r k h) D := by\n  sorry\n\ntheorem truncationSmooth_C1 (H : E → ℝ) (Hj : ℕ → E → ℝ)\n    (r k : ℕ) (h : ℝ) (D : Set E) (hH : ContDiffOn ℝ 1 H D)\n    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :\n    ContDiffOn ℝ 1 (textbookTruncatedHamiltonian H Hj r k h) D := by\n  apply MolecularDynamics.contDiffOn_textbookTruncatedHamiltonian <;> assumption",
     "extra_assumptions": [
       "系数在D上C∞，主结论C∞暂sorry；原C¹结论的既有证明作为独立辅助重查。",
-      "[EXTRA] C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。"
+      "[EXTRA] C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ]
   },
   "MD-3.4-Thm3.1": {
-    "code": "theorem theorem31 (n r k : ℕ)\n    (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)\n    (D B : Set (SymplecticCoordinates n)) (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)\n    (_hr : 0 < r) (_hrk : r ≤ k) (_hD : IsOpen D) (_hconvD : Convex ℝ D)\n    (_hB : IsCompact B) (_hconvB : Convex ℝ B) (_hBD : B ⊆ D)\n    (_hH : ContDiffOn ℝ ⊤ H D) (_hHj : ∀ j, ContDiffOn ℝ ⊤ (Hj j) D)\n    (_hmatching : finiteMatching H Hj r k D B G) :\n    ∀ T > 0, ∃ M > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z₀ ∈ B, ∀ ν : ℕ,\n      (∀ i ≤ ν, oneStepIterate G h z₀ i ∈ B) →\n      (ν:ℝ)*h*h^(k-r) ≤ T →\n      ‖H (oneStepIterate G h z₀ ν)-H z₀‖ ≤ M*h^r := by\n  sorry",
+    "code": "theorem theorem31 (n r k : ℕ)\n    (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)\n    (D B : Set (SymplecticCoordinates n)) (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)\n    (_hr : 0 < r) (_hrk : r ≤ k) (_hD : IsOpen D) (_hconvD : Convex ℝ D)\n    (_hB : IsCompact B) (_hconvB : Convex ℝ B) (_hBD : B ⊆ D)\n    (_hH : ContDiffOn ℝ ∞ H D) (_hHj : ∀ j, ContDiffOn ℝ ∞ (Hj j) D)\n    (_hmatching : finiteMatching H Hj r k D B G) :\n    ∀ T > 0, ∃ M > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z₀ ∈ B, ∀ ν : ℕ,\n      (∀ i ≤ ν, oneStepIterate G h z₀ i ∈ B) →\n      (ν:ℝ)*h*h^(k-r) ≤ T →\n      ‖H (oneStepIterate G h z₀ ν)-H z₀‖ ≤ M*h^r := by\n  sorry",
     "extra_assumptions": [
       "r>0,k≥r；开放凸D、紧凸B⊆D，H和Hj在D上C∞；给定相邻构造条目产出的真实有限匹配。",
-      "[EXTRA] 本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。"
+      "[EXTRA] 本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ]
   },
   "MD-3.4-EnergyTelescoping": {
@@ -159,9 +161,10 @@
     ]
   },
   "MD-3.4-ScalarVerletShadow4": {
-    "code": "def scalarVerletShadow4 (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ :=\n  let p := z.2; let q := z.1\n  p^2/2+U q+h^2/24*(2*p^2*deriv (deriv U) q-(deriv U q)^2)+h^4*(\n    p^4*iteratedDeriv 4 U q/720-p^2*deriv U q*iteratedDeriv 3 U q/120-\n    (deriv U q)^2*iteratedDeriv 2 U q/240-p^2*((iteratedDeriv 2 U q)^2+deriv U q*iteratedDeriv 3 U q)/60)\n\ntheorem scalarVerletShadow4_matching (U : ℝ → ℝ) (_hU : ContDiff ℝ ⊤ U)\n    (B : Set (ℝ × ℝ)) (_hB : IsCompact B) :\n    ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → (ℝ × ℝ) → ℝ → (ℝ × ℝ),\n      ∀ h ∈ Ioo 0 δ, ∀ z ∈ B, Γ h z 0=z ∧\n        solution (fun x : ℝ × ℝ ↦\n          (deriv (fun p ↦ scalarVerletShadow4 U h (x.1,p)) x.2,\n           -deriv (fun q ↦ scalarVerletShadow4 U h (q,x.2)) x.1)) (Γ h z) 0 h ∧\n        ‖(let P := z.2-(h/2)*deriv U z.1\n           let Q := z.1+h*P\n           (Q,P-(h/2)*deriv U Q))-Γ h z h‖ ≤ C*h^7 := by\n  sorry",
+    "code": "def scalarVerletShadow4 (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ :=\n  let p := z.2; let q := z.1\n  p^2/2+U q+h^2/24*(2*p^2*deriv (deriv U) q-(deriv U q)^2)+h^4*(\n    p^4*iteratedDeriv 4 U q/720-p^2*deriv U q*iteratedDeriv 3 U q/120-\n    (deriv U q)^2*iteratedDeriv 2 U q/240-p^2*((iteratedDeriv 2 U q)^2+deriv U q*iteratedDeriv 3 U q)/60)\n\ntheorem scalarVerletShadow4_matching (U : ℝ → ℝ) (_hU : ContDiff ℝ ∞ U)\n    (B : Set (ℝ × ℝ)) (_hB : IsCompact B) :\n    ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → (ℝ × ℝ) → ℝ → (ℝ × ℝ),\n      ∀ h ∈ Ioo 0 δ, ∀ z ∈ B, Γ h z 0=z ∧\n        solution (fun x : ℝ × ℝ ↦\n          (deriv (fun p ↦ scalarVerletShadow4 U h (x.1,p)) x.2,\n           -deriv (fun q ↦ scalarVerletShadow4 U h (q,x.2)) x.1)) (Γ h z) 0 h ∧\n        ‖(let P := z.2-(h/2)*deriv U z.1\n           let Q := z.1+h*P\n           (Q,P-(h/2)*deriv U Q))-Γ h z h‖ ≤ C*h^7 := by\n  sorry",
     "extra_assumptions": [
-      "[EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。"
+      "[EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ]
   },
   "MD-3.5-LinearEulerIntegral": {
@@ -287,6 +290,27 @@
     "code": "theorem symplecticEulerShadowMatching :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),\n    positiveMass m → ContDiff ℝ ∞ U → IsCompact B →\n    matchesHamiltonian (fun h z => symplecticEulerShadow3 m U h (unpack z))\n      (textbookSymplecticEuler m U) B 4 := by\n  sorry",
     "extra_assumptions": [
       "正对角质量、U全域C∞、紧初值集B；截断h³的实际局部流端点O(h⁵)为额外严格化。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+    ]
+  },
+  "MD-3.4-LeadingModifiedField": {
+    "code": "theorem leadingModifiedField :\n  ∀ (n r : ℕ) (f : Q n → Q n) (G Φ : ℝ → Q n → Q n) (D B : Set (Q n)) η,\n    0 < r → ContDiff ℝ ∞ f → ContDiff ℝ ∞ (fun hz : ℝ × Q n => G hz.1 hz.2) →\n    IsOpen D → IsCompact B → B ⊆ D → actualFlow f D Φ η → localOrder G Φ B r →\n    ∃ fr : Q n → Q n, ContDiffOn ℝ ∞ fr D ∧\n      (∀ z ∈ B, Tendsto (fun h => (h^(r+1))⁻¹ • (G h z-Φ h z)) (𝓝[≠] 0) (𝓝 (fr z))) ∧\n      ∃ Γ : ℝ → Q n → ℝ → Q n, ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z ∈ B,\n        Γ h z 0=z ∧ solution (fun x => f x+h^r • fr x) (Γ h z) 0 h ∧\n          ‖G h z-Γ h z h‖ ≤ C*h^(r+2) := by\n  sorry",
+    "extra_assumptions": [
+      "r>0、全域C∞的f及(h,z)↦G_h、开放D与紧B及真实双向局部流；局部r阶条件。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+    ]
+  },
+  "MD-3.4-FiniteMatchingConstruction": {
+    "code": "theorem finiteMatchingConstruction :\n  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))\n    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),\n    smoothSymplecticData H D B G Φ r →\n    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ∞ (Hj j) D) ∧\n      ∀ k ≥ r, finiteMatching H Hj r k D B G := by\n  sorry",
+    "extra_assumptions": [
+      "smoothSymplecticData与原书构造上下文相同；保留任意k的真实finiteMatching为结论，不当作前提。",
+      "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+    ]
+  },
+  "MD-3.4-ArbitraryFiniteTruncation": {
+    "code": "theorem arbitraryFiniteTruncation :\n  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))\n    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),\n    smoothSymplecticData H D B G Φ r →\n    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ∞ (Hj j) D) ∧\n      ∀ k ≥ r, finiteMatching H Hj r k D B G := by\n  sorry",
+    "extra_assumptions": [
+      "smoothSymplecticData保持全部Hamiltonian/近恒等辛/compact条件；完整∀k匹配作为结论，没有把它当作前提。",
       "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
     ]
   }

@@ -6,7 +6,7 @@
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
-第3章：网站PASS 55 / 已修待复审 74 / 待导师 20 / 修复中 0。
+第3章：网站PASS 52 / 已修待复审 77 / 待导师 20 / 修复中 0。
 第4章：网站PASS 42 / 已修待复审 110 / 待导师 27 / 修复中 0。
 第5章：网站PASS 108 / 已修待复审 0 / 待导师 0 / 修复中 75。
 
@@ -238,13 +238,13 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.3.4-ProcessorEnergyPrinted | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT09 |
 | 3 | MD-3.3.4-TakahashiEffectiveOrder | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT09 |
 | 3 | MD-3.4-ModifiedField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-LeadingModifiedField | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
+| 3 | MD-3.4-LeadingModifiedField | PASS | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT45 |
 | 3 | MD-3.4-TruncatedHamiltonian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT29 |
-| 3 | MD-3.4-TruncationSmooth | FAIL | B | C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。 | 已修待复审 | EAUDIT21 |
-| 3 | MD-3.4-Thm3.1 | FAIL | B | 本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。 | 已修待复审 | EAUDIT21 |
+| 3 | MD-3.4-TruncationSmooth | FAIL | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT45 |
+| 3 | MD-3.4-Thm3.1 | FAIL | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT45 |
 | 3 | MD-3.4-CompactLipschitz | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-TruncatedFlow | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT29 |
-| 3 | MD-3.4-FiniteMatchingConstruction | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
+| 3 | MD-3.4-FiniteMatchingConstruction | PASS | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT45 |
 | 3 | MD-3.4-TruncatedConservation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT29 |
 | 3 | MD-3.4-EnergyTelescoping | FAIL | B | 保留已证首行望远镜恒等式；补给定守恒截断步F、真实差η=数值步−F的完整三行等式，不以待证能量差为前提。 | 已修待复审 | EAUDIT29 |
 | 3 | MD-3.4-UniformTruncatedLipschitz | FAIL | B | 保留统一截断Lipschitz定理，补原完整能量差≤LΣ‖η‖≤LAνh^(k+1)链；A为原文缺陷常数重命名，F为所给守恒截断一步。 | 已修待复审 | EAUDIT29 |
@@ -252,11 +252,11 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.4-PhysicalEnergyDrift | FAIL | B | 保留已证实际缺陷和界，新增实际截断流的统一一步匹配误差资格与完整2Ch^r+LAνh^(k+1)结论；不是以能量结论为假设。 | 已修待复审 | EAUDIT29 |
 | 3 | MD-3.4-PolynomialEnergyRate | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-StepCountPower | FAIL | B | 本条仅承担步数幂次代数辅助；原句的完整能量率由MD-3.4-PolynomialEnergyRate承担，原文不删并显式跨条映射。 | 已修待复审 | EAUDIT29 |
-| 3 | MD-3.4-ArbitraryFiniteTruncation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
+| 3 | MD-3.4-ArbitraryFiniteTruncation | PASS | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT45 |
 | 3 | MD-3.4-AnalyticDefect | NEEDS_HUMAN | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT11 |
 | 3 | MD-3.4-OptimalTruncation | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT11 |
 | 3 | MD-3.4-ExponentialFlat | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
-| 3 | MD-3.4-ScalarVerletShadow4 | FAIL | B | 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。 | 已修待复审 | EAUDIT30 |
+| 3 | MD-3.4-ScalarVerletShadow4 | FAIL | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT45 |
 | 3 | MD-3.4-CommutingEnergy | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT21 |
 | 3 | MD-3.4-CommutingEnergySymmetry | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.4-EnergySymplecticNoGo | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT21 |

@@ -2310,8 +2310,8 @@
       "lean_decl": "MD.Ch03.leadingModifiedField",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "3fabfdfb5a2468c0ff11bb7938bbc51fc698c8e610b988fa531c8332b5f65bb2",
-      "block_sha256": "3d19d054aae349ad8aafaf5e6daf2654760a6b075de390543e7f288aa2b0a753",
+      "signature_sha256": "cce9cbcde842b4cc0c355f8845c00069e5eb342222758def84b54017d19188d5",
+      "block_sha256": "810ab36d0270a87309e4dae67b6474af2ce452f8f683b247239a8175af719db1",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -2329,7 +2329,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT45/axioms.log"
     },
     "MD-3.4-TruncatedHamiltonian": {
       "checked": true,
@@ -2377,8 +2377,8 @@
       "lean_decl": "MD.Ch03.truncationSmooth",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "03938cf2c6790feabec3f3504330c48cf3276c174479ac0191d00ed79dca1212",
-      "block_sha256": "c4831c746d426690f4616b2c88964a7b055a98a1a9c8c26025ae15a000365951",
+      "signature_sha256": "86376d02bf1e35957bacdace88b85c2d2fbbe0a280f9d98ed4a6d55fe0c2828f",
+      "block_sha256": "4c59415ac54b2fbf4016bc2f448bd003afdea8294c4cd486cc6071b533530895",
       "direct_placeholder": true,
       "proof_status": "existing_bridge",
       "documented_priors": [
@@ -2398,7 +2398,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT45/axioms.log"
     },
     "MD-3.4-Thm3.1": {
       "checked": true,
@@ -2413,8 +2413,8 @@
       "lean_decl": "MD.Ch03.theorem31",
       "verdict": "NEEDS_HUMAN",
       "explanation": "完整构造/匹配/长时间能量结论均未假设；但原文给定H̃_k，本签名以存在H_j重建它，量词严格化及截断轨道资格仍需导师裁定，不宣称已证原书定理。",
-      "signature_sha256": "a6e6f54bc86be635e64db961aa579fa546c721baf0d8b1bc14616c31383a517a",
-      "block_sha256": "54e43c42de23e69d12a9abb4970c62d7a998d9d75a88ba442a565558f9d0dbe6",
+      "signature_sha256": "f77df7113effab647d78481f9f70d29ebf53c166eef43991c21ed5b5dc2b6a58",
+      "block_sha256": "8473823e13c198daaff075e1a369cfdb8da3ef59e4a75694c0b4c03a0b88d9d4",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -2432,7 +2432,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT45/axioms.log"
     },
     "MD-3.4-CompactLipschitz": {
       "checked": true,
@@ -2515,8 +2515,8 @@
       "lean_decl": "MD.Ch03.finiteMatchingConstruction",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "06f9ddd7d45146c5af5fef80bf10d581735889fb98b8839a21060e35d2686751",
-      "block_sha256": "bbc9abb9458abaaa442ac528d6bc444ad3a507feae0b1ee5aedc35e7a04d693a",
+      "signature_sha256": "bde822955ed8b0feb24b7255435800ffb32ff79af36651fad656ea27456d8363",
+      "block_sha256": "d43eb4d7d27e72e5a8fdefdb8a16959f8b4ecbc49eea3a17eb835ad121f5f80e",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -2534,7 +2534,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT45/axioms.log"
     },
     "MD-3.4-TruncatedConservation": {
       "checked": true,
@@ -2798,8 +2798,8 @@
       "lean_decl": "MD.Ch03.arbitraryFiniteTruncation",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "bf65ee5b2fd33a8df49269b926fe720182b07b8cf7f79eb8b9d85112715c8206",
-      "block_sha256": "e8c88ad6f44c28159ccb0898d1965aae6b4f6098eff540eb7ddaef878383c87b",
+      "signature_sha256": "a5928a5ea1f0e63674177ac8d01da9c2c352bb72b3987fc9e9fd5eb0886b25b9",
+      "block_sha256": "55bf9e0607ad080bcd6d9e08d8bde05f3f4f13d38f45b4dbb96b760c70379c2f",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -2817,7 +2817,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT45/axioms.log"
     },
     "MD-3.4-AnalyticDefect": {
       "checked": true,
@@ -2938,8 +2938,8 @@
       "lean_decl": "MD.Ch03.scalarVerletShadow4",
       "verdict": "NEEDS_HUMAN",
       "explanation": "有限式定义忠实保留；原文modified energy的O(h⁶)真实性需完整Verlet BCH匹配，不能只凭定义记为已证。",
-      "signature_sha256": "a1771664dfc6430937aba6ba81cd22899b0e2f8ac17af526aa9132e426522d82",
-      "block_sha256": "a1771664dfc6430937aba6ba81cd22899b0e2f8ac17af526aa9132e426522d82",
+      "signature_sha256": "b59736532f701e11e57c39fd2c10642b136957ec48a21af3cb5a60727a794bb6",
+      "block_sha256": "b59736532f701e11e57c39fd2c10642b136957ec48a21af3cb5a60727a794bb6",
       "direct_placeholder": true,
       "proof_status": "definition",
       "documented_priors": [],
@@ -2957,7 +2957,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT45/axioms.log"
     },
     "MD-3.4-CommutingEnergy": {
       "checked": true,

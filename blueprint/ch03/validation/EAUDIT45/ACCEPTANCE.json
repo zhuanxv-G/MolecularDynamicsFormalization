@@ -1,0 +1,50 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT45",
+  "section": "3.4",
+  "source_ids": [
+    "MD-3.4-ArbitraryFiniteTruncation",
+    "MD-3.4-FiniteMatchingConstruction",
+    "MD-3.4-LeadingModifiedField",
+    "MD-3.4-ScalarVerletShadow4",
+    "MD-3.4-Thm3.1",
+    "MD-3.4-TruncationSmooth"
+  ],
+  "reaudit_ids": [
+    "MD-3.4-LeadingModifiedField",
+    "MD-3.4-TruncationSmooth",
+    "MD-3.4-Thm3.1",
+    "MD-3.4-FiniteMatchingConstruction",
+    "MD-3.4-ArbitraryFiniteTruncation",
+    "MD-3.4-ScalarVerletShadow4"
+  ],
+  "human_ids": [],
+  "lean_sha256": "4aa703951c796378eae80048977869a1799b4c5d7f9dd713f42800649309a758",
+  "source_sha256": "e67856728724b48f5c098102c46e4ded281b44727213eea1d17999881942b981",
+  "pages": [
+    135,
+    136,
+    137,
+    138,
+    139
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch03.olean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "4aa703951c796378eae80048977869a1799b4c5d7f9dd713f42800649309a758",
+    "log_sha256": "240881ad1d175bf7d316db969862cc47135bc0afaf8fb87fa831c999cf98c99c"
+  },
+  "axiom_decl_count": 8,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch03/mathcopilot_tasks/EAUDIT45/INDEX.md"
+}
