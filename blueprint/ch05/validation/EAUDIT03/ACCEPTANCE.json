@@ -1,0 +1,52 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT03",
+  "section": "5.2.2",
+  "source_ids": [
+    "MD-5.2.2-Divergence",
+    "MD-5.2.2-GeneralFluxBalance",
+    "MD-5.2.2-LiouvilleEquation",
+    "MD-5.2.2-LiouvilleProduct",
+    "MD-5.2.2-Liouvillian",
+    "MD-5.2.2-MassDerivative",
+    "MD-5.2.2-MassFraction",
+    "MD-5.2.2-OutwardNormal"
+  ],
+  "reaudit_ids": [
+    "MD-5.2.2-MassFraction",
+    "MD-5.2.2-MassDerivative",
+    "MD-5.2.2-OutwardNormal",
+    "MD-5.2.2-GeneralFluxBalance",
+    "MD-5.2.2-Divergence",
+    "MD-5.2.2-Liouvillian",
+    "MD-5.2.2-LiouvilleEquation",
+    "MD-5.2.2-LiouvilleProduct"
+  ],
+  "human_ids": [],
+  "lean_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+  "source_sha256": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66",
+  "pages": [
+    205,
+    206,
+    207
+  ],
+  "single_file_compile": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "-o",
+      ".lake/build/lib/lean/Blueprint/Ch05.olean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+    "log_sha256": "018ab5846e55772a55223bce357ddea5bb18b45cf1fafcc605ef203906c6297d"
+  },
+  "axiom_decl_count": 9,
+  "existing_proofs": "all current declaration bodies rechecked by full single-file compile",
+  "new_proofs": "none",
+  "full_check": "deferred to chapter end",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/INDEX.md"
+}

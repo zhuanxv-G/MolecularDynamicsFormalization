@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT03",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
+    "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+    "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT03a",
+      "source_id": "MD-5.2.2-MassFraction",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/a",
+      "total_bytes": 84259,
+      "manifest_sha256": "35ab2ee5dbe5cbb911654c81374de6c70b8e7e15a14f88b63fbcb06757028548"
+    },
+    {
+      "subtask": "EAUDIT03b",
+      "source_id": "MD-5.2.2-MassDerivative",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/b",
+      "total_bytes": 86598,
+      "manifest_sha256": "c5d21b8659f999b0df00da81717f5503bea8427acb5d9af922414a950ba1e417"
+    },
+    {
+      "subtask": "EAUDIT03c",
+      "source_id": "MD-5.2.2-OutwardNormal",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/c",
+      "total_bytes": 87957,
+      "manifest_sha256": "6263d05408cb7b83d262908d3f64c6e1c00a5b442b993526e20410244e2fb42e"
+    },
+    {
+      "subtask": "EAUDIT03d",
+      "source_id": "MD-5.2.2-GeneralFluxBalance",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/d",
+      "total_bytes": 96132,
+      "manifest_sha256": "feed65b75b2b03a11b44d2deafbd0dd6d8902315270a94f42ca7c4e77e8416ce"
+    },
+    {
+      "subtask": "EAUDIT03e",
+      "source_id": "MD-5.2.2-Divergence",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/e",
+      "total_bytes": 90991,
+      "manifest_sha256": "15218f00ce86c50956cd8ae19b0b76fca1b66fd94fb10ee7a5321c6a4fb0d0ae"
+    },
+    {
+      "subtask": "EAUDIT03f",
+      "source_id": "MD-5.2.2-Liouvillian",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/f",
+      "total_bytes": 91917,
+      "manifest_sha256": "75a0de2e745c3f8f21a0bd249da682d04f9b68f7c32787b26811635e663874fe"
+    },
+    {
+      "subtask": "EAUDIT03g",
+      "source_id": "MD-5.2.2-LiouvilleEquation",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/g",
+      "total_bytes": 97113,
+      "manifest_sha256": "54b3a7ce36bab459fecd169bd49c70776ee935338cf317dd6f01df19789e53ee"
+    },
+    {
+      "subtask": "EAUDIT03h",
+      "source_id": "MD-5.2.2-LiouvilleProduct",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT03/h",
+      "total_bytes": 95061,
+      "manifest_sha256": "d3b558c17762a46aca7cca57323dc5ddc3be5df2f85f0ad595980c5fca4ce1a3"
+    }
+  ]
+}

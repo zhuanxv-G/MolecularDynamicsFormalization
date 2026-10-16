@@ -1,0 +1,103 @@
+{
+  "eaudit": "EAUDIT03",
+  "source_id": "MD-5.2.2-LiouvilleEquation",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
+    "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+    "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66",
+    "EAUDIT03g_materials": "dae8bc5e55acc8b34321e8bc4617fff4cfad94c916a551c1b6afa5e550934f66",
+    "EAUDIT03g_PAGES.pdf": "103859842bd32416d6ab78b9bd8756a29227b3064b93ad4155b97906b51fa3fb"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    206
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "131e4f0a88045a18fece9c1805610424f9f9875aeb9898ccb5f53c951dfae806",
+  "source_block_sha256": "85e631789e4d1df2d24b8bd10c0124fddd44da75b8bcbd85be94227c3ed8d3ce",
+  "source_declarations": [
+    "liouvilleEquation"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.divergence",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "dadd38091a1232e6bbd2460766d10afb82a44329b5f562152debdcd372b86255"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.flow",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "cd47fe07b629a7f5aa0bdc126758e9528093d227aaebc2097a541fd177a6a961"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.liouvillian",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "db65bb7d048a7bb3083fcb5511c923eeec5534e5b66d837e1840d49f73dbfa32"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.measurePropagator",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "densityMeasureOn",
+      "file_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+      "excerpt_sha256": "5314dd5226170b725353d384e15bc27680da60e39b5dc61a57c7c3a9c4dcf3f7"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "densityOn",
+      "file_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+      "excerpt_sha256": "98b8e21182a24882ee9eeff0d0cc09baa4f2803ca20f42f2e4a7a32f2aeabd80"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "divergence",
+      "file_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+      "excerpt_sha256": "ae0663325774e959009a1539ffd2ca1d15d645ff9af486a72942ee6115dd91a2"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "flow",
+      "file_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+      "excerpt_sha256": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "liouvillian",
+      "file_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+      "excerpt_sha256": "c00935b07e671ad9103bce966765d39374e8f4cbcc05a50f0b1ca0c40a9db1f8"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "measurePropagator",
+      "file_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+      "excerpt_sha256": "eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "probabilityDensityOn",
+      "file_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+      "excerpt_sha256": "805015f8d69ea57c33a45b089fff62b97c4dd2105fa515fdc524ba00b61da552"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT03_review.json",
+  "total_task_bytes": 97113
+}

@@ -1,0 +1,73 @@
+{
+  "eaudit": "EAUDIT03",
+  "source_id": "MD-5.2.2-LiouvilleProduct",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
+    "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+    "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66",
+    "EAUDIT03h_materials": "c1fff67eaf13f191fdbfba810e6b9ec3ad31d422f6b054995a11b51c6069cb34",
+    "EAUDIT03h_PAGES.pdf": "103859842bd32416d6ab78b9bd8756a29227b3064b93ad4155b97906b51fa3fb"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    206
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "6e8daa1f7a376744acfc29b46e61013e4971e28a3b72f69781cec42ff703dfdf",
+  "source_block_sha256": "590dc2e466e501be5ac1bb9155dae0f1d613b35889ed9e929ea17445c340cc1d",
+  "source_declarations": [
+    "liouvilleProduct"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.divergence",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "dadd38091a1232e6bbd2460766d10afb82a44329b5f562152debdcd372b86255"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.lie",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "6535744b913bb6f850c290344fb7d4a36f3647f43500d689c3a8228a92a2f8a8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.liouvillian",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "db65bb7d048a7bb3083fcb5511c923eeec5534e5b66d837e1840d49f73dbfa32"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "divergence",
+      "file_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+      "excerpt_sha256": "ae0663325774e959009a1539ffd2ca1d15d645ff9af486a72942ee6115dd91a2"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "lie",
+      "file_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+      "excerpt_sha256": "0684392412c84cacdec9c590f59e55fa11729b1be3ec126251217014993b7e6c"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "liouvillian",
+      "file_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+      "excerpt_sha256": "c00935b07e671ad9103bce966765d39374e8f4cbcc05a50f0b1ca0c40a9db1f8"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT03_review.json",
+  "total_task_bytes": 95061
+}

@@ -1678,5 +1678,85 @@
     "category": "B",
     "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
     "section": "5.2.1"
+  },
+  "MD-5.2.2-MassDerivative": {
+    "category": "B",
+    "handling": "保留已证的一阶积分交换，补紧空间域和联合C∞密度下质量函数C∞结论；紧域给各阶局部支配的充分资格，非结论前提。",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-Divergence": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian展示式中散度符号的真实导数迹辅助定义；完整M_f w=−div(wf)由MD-5.2.2-Liouvillian承担。",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-LiouvilleProduct": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian乘积法则的静态辅助引理；包含真实输运前提的完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates及MD-5.2.2-LiouvilleEquation承担。",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-MassFraction": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-OutwardNormal": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-GeneralFluxBalance": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-Liouvillian": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-LiouvilleEquation": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-DivergenceCoordinates": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅真实散度的坐标辅助引理；同段完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates承担。",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-LiouvilleProductCoordinates": {
+    "category": "B",
+    "handling": "保留原坐标乘积法则证明，并以真实自治流、光滑密度和Measure.map输运条件补全部时间导数PDE；不把PDE作前提。",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-FaceFlux": {
+    "category": "B",
+    "handling": "显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅矩形单面的无定向通量辅助积分；原句全部面与质量导数结论由MD-5.2.2-BoxFluxBalance，光滑一般域由MD-5.2.2-GeneralFluxBalance承担。",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-LieCoordinates": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-BoxFluxBalance": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-BoundaryTerm": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-TruncatedIntegrationByParts": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.2.2"
+  },
+  "MD-5.2.2-RapidAdjoint": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.2.2"
   }
 }

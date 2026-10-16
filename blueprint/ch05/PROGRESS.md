@@ -38,23 +38,23 @@
 | MD-5.2.1-GaussianL2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
 | MD-5.2.1-FiniteJumpL2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
 | MD-5.2.1-NormalizedAverageFormula | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.2.2-MassFraction | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.2.2-MassDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.2.2-OutwardNormal | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.2.2-GeneralFluxBalance | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺真实Hausdorff曲面通量的散度定理与一般光滑输运密度桥接；不建设大型几何/PDE理论。 |
-| MD-5.2.2-Divergence | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.2.2-Liouvillian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.2.2-LiouvilleEquation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺一般密度输运到逐点连续性方程的曲面/测度变换桥接；不建设大型输运理论。 |
-| MD-5.2.2-LiouvilleProduct | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.2.2-LieCoordinates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.2.2-DivergenceCoordinates | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
-| MD-5.2.2-LiouvilleProductCoordinates | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | local_proof / self-contained |
+| MD-5.2.2-MassFraction | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | definition / self-contained |
+| MD-5.2.2-MassDerivative | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | local_proof / self-contained |
+| MD-5.2.2-OutwardNormal | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | definition / self-contained |
+| MD-5.2.2-GeneralFluxBalance | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | placeholder / incomplete；缺真实Hausdorff曲面通量的散度定理与一般光滑输运密度桥接；不建设大型几何/PDE理论。 |
+| MD-5.2.2-Divergence | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | definition / self-contained |
+| MD-5.2.2-Liouvillian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | definition / self-contained |
+| MD-5.2.2-LiouvilleEquation | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | placeholder / incomplete；缺一般密度输运到逐点连续性方程的曲面/测度变换桥接；不建设大型输运理论。 |
+| MD-5.2.2-LiouvilleProduct | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT03 | local_proof / self-contained |
+| MD-5.2.2-LieCoordinates | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | local_proof / self-contained |
+| MD-5.2.2-DivergenceCoordinates | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | local_proof / self-contained |
+| MD-5.2.2-LiouvilleProductCoordinates | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | local_proof / self-contained |
 | MD-5.2.2-RectangularDomain | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.2.2-FaceFlux | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.2.2-BoxFluxBalance | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺矩形Hausdorff分面散度定理与密度输运桥接；不建设大型几何理论。 |
-| MD-5.2.2-BoundaryTerm | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
-| MD-5.2.2-TruncatedIntegrationByParts | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺矩形散度/分面分部积分桥接；不建设新曲面积分理论。 |
-| MD-5.2.2-RapidAdjoint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；缺矩形分部积分、扩域积分极限与真实边界项消失桥接；不建设大型曲面/输运理论。 |
+| MD-5.2.2-FaceFlux | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | definition / self-contained |
+| MD-5.2.2-BoxFluxBalance | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | placeholder / incomplete；缺矩形Hausdorff分面散度定理与密度输运桥接；不建设大型几何理论。 |
+| MD-5.2.2-BoundaryTerm | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | definition / self-contained |
+| MD-5.2.2-TruncatedIntegrationByParts | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | placeholder / incomplete；缺矩形散度/分面分部积分桥接；不建设新曲面积分理论。 |
+| MD-5.2.2-RapidAdjoint | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT04 | placeholder / incomplete；缺矩形分部积分、扩域积分极限与真实边界项消失桥接；不建设大型曲面/输运理论。 |
 | MD-5.2.2-CompactAdjoint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | placeholder / incomplete；本节2小时时间盒已到；不再启动短证明，保留sorry并继续。证据见validation/short_search/CompactAdjoint.timebox.json。 |
 | MD-5.2.2-MeasurePropagator | DRAFT/原页已核 | 已编译/公理已核 | PASS | FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | definition / self-contained |
 | MD-5.2.3-HamiltonianDivergence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286） | existing_bridge / checked+documented priors |
@@ -345,3 +345,7 @@
 EAUDIT01 §5.1：4条落盘，单文件与6项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT02 §5.2.1：4条落盘，单文件与3项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT03 §5.2.2：8条落盘，单文件与9项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT04 §5.2.2：8条落盘，单文件与9项公理通过；未写新证明；完整check留到章末；网站待复审。

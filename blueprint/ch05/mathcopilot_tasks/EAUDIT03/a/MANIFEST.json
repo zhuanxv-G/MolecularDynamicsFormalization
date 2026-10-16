@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT03",
+  "source_id": "MD-5.2.2-MassFraction",
+  "input_sha256": {
+    "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
+    "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+    "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66",
+    "EAUDIT03a_materials": "068e8b4449762c3f9a431b418031ef271a42d79d22ec0976a151b9e7b2122879",
+    "EAUDIT03a_PAGES.pdf": "451f8446f0e1752e955cd22211bc720f79998f5df0fc0c281ac7498ef56604d6"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    205
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "a07bb8cad52be0c974d034c1c49bdc542d0032d35b4f25fca72c2cba61896550",
+  "source_block_sha256": "8a45edcc76b079b6fbce81f30afc89ceb4ffc340f492ad695bddfa870f2966e5",
+  "source_declarations": [
+    "massFraction"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "massFraction",
+      "file_sha256": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+      "excerpt_sha256": "8a45edcc76b079b6fbce81f30afc89ceb4ffc340f492ad695bddfa870f2966e5"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT03_review.json",
+  "total_task_bytes": 84259
+}

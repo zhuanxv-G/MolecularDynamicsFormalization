@@ -318,7 +318,8 @@ theorem normalizedAverageFormula : ∀ n (D : Set (MolecularDynamics.Chapter05Re
 def massFraction {n : ℕ} (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (A : Set (MolecularDynamics.Chapter05Review.E n)) (t : ℝ) := ∫ z in A,ρ t z
 
 /-- source_id: MD-5.2.2-MassDerivative · unnumbered_claim · §5.2.2 · 印刷p.184 / PDFp.205
-[EXTRA] [EXTRA]明确参数微分与积分交换所需的可积支配界、邻域逐点可微及可积性；不假设已交换的导数等式。 -/
+[EXTRA] [EXTRA]明确参数微分与积分交换所需的可积支配界、邻域逐点可微及可积性；不假设已交换的导数等式。 
+[EXTRA] 保留已证的一阶积分交换，补紧空间域和联合C∞密度下质量函数C∞结论；紧域给各阶局部支配的充分资格，非结论前提。 -/
 theorem massDerivative :
   ∀ n (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (A : Set (MolecularDynamics.Chapter05Review.E n)) t,
   MeasurableSet A → (∀ s,IntegrableOn (ρ s) A) →
@@ -345,6 +346,14 @@ theorem massDerivative :
     ((ae_restrict_mem hA).mono (fun z hz s hs => (hlocal s hs z hz).1))
   simpa only [MolecularDynamics.Chapter05Review.massFraction] using! he.2
 
+theorem massDerivative_smooth (n : ℕ)
+    (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ)
+    (A : Set (MolecularDynamics.Chapter05Review.E n))
+    (_hA : MeasurableSet A) (_hc : IsCompact A)
+    (_hρ : ContDiff ℝ ∞ (Function.uncurry ρ)) :
+    ContDiff ℝ ∞ (MolecularDynamics.Chapter05Review.massFraction ρ A) := by
+  sorry
+
 /-- source_id: MD-5.2.2-OutwardNormal · definition · §5.2.2 · 印刷p.184 / PDFp.205
 [EXTRA] [EXTRA]通过局部真实光滑定义函数r的负侧表示域，并由实际梯度定义正向单位法线。这里采用C²光滑边界资格；矩形的角点另条以分面公式保存，不假设边界通量恒等式。 -/
 def outwardNormalFor {n : ℕ} (A : Set (MolecularDynamics.Chapter05Review.E n)) (ν : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
@@ -368,7 +377,8 @@ theorem generalFluxBalance : ∀ n (D A : Set (MolecularDynamics.Chapter05Review
   sorry
 
 /-- source_id: MD-5.2.2-Divergence · definition · §5.2.2 · 印刷p.185 / PDFp.206
-[EXTRA] [EXTRA]实际Fréchet导数的线性迹，等价坐标偏导和需要标准有限维接口；不以任意矩阵命名Jacobian。 -/
+[EXTRA] [EXTRA]实际Fréchet导数的线性迹，等价坐标偏导和需要标准有限维接口；不以任意矩阵命名Jacobian。 
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian展示式中散度符号的真实导数迹辅助定义；完整M_f w=−div(wf)由MD-5.2.2-Liouvillian承担。 -/
 def divergence {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (z : MolecularDynamics.Chapter05Review.E n) : ℝ :=
   LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap
 
@@ -387,7 +397,8 @@ theorem liouvilleEquation : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E 
   sorry
 
 /-- source_id: MD-5.2.2-LiouvilleProduct · unnumbered_claim · §5.2.2 · 印刷p.185 / PDFp.206
-[EXTRA] [EXTRA]明确ρ和f在z的真实可微性；原全部坐标乘积展开由线性迹与Df/ρ链式规则表达。 -/
+[EXTRA] [EXTRA]明确ρ和f在z的真实可微性；原全部坐标乘积展开由线性迹与Df/ρ链式规则表达。 
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian乘积法则的静态辅助引理；包含真实输运前提的完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates及MD-5.2.2-LiouvilleEquation承担。 -/
 theorem liouvilleProduct :
   ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) z,
   DifferentiableAt ℝ f z → DifferentiableAt ℝ ρ z →
@@ -417,7 +428,8 @@ theorem lieCoordinates : ∀ n (f : MolecularDynamics.Chapter05Review.E n → Mo
   simpa only [map_sum,map_smul,smul_eq_mul,OrthonormalBasis.coe_toBasis_repr_apply,EuclideanSpace.basisFun_repr,OrthonormalBasis.coe_toBasis] using h
 
 /-- source_id: MD-5.2.2-DivergenceCoordinates · unnumbered_claim · §5.2.2 · 印刷p.185 / PDFp.206
-[EXTRA] [EXTRA]实际可微向量场的导数迹等于所有坐标对角偏导之和；和LiouvilleProduct共同保留原完整展开，不将任意矩阵命名为Jacobian。 -/
+[EXTRA] [EXTRA]实际可微向量场的导数迹等于所有坐标对角偏导之和；和LiouvilleProduct共同保留原完整展开，不将任意矩阵命名为Jacobian。 
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅真实散度的坐标辅助引理；同段完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates承担。 -/
 theorem divergenceCoordinates : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) z,
   DifferentiableAt ℝ f z → MolecularDynamics.Chapter05Review.divergence f z=
     ∑ i,(fderiv ℝ (fun x => f x i) z) (EuclideanSpace.basisFun (Fin n) ℝ i) := by
@@ -433,7 +445,8 @@ theorem divergenceCoordinates : ∀ n (f : MolecularDynamics.Chapter05Review.E n
   rfl
 
 /-- source_id: MD-5.2.2-LiouvilleProductCoordinates · unnumbered_claim · §5.2.2 · 印刷p.185 / PDFp.206
-[EXTRA] [EXTRA]实际点可微性；保存原整个有限求和右侧，连续性PDE左侧的时间导数由LiouvilleEquation完整条目保留。 -/
+[EXTRA] [EXTRA]实际点可微性；保存原整个有限求和右侧，连续性PDE左侧的时间导数由LiouvilleEquation完整条目保留。 
+[EXTRA] 保留原坐标乘积法则证明，并以真实自治流、光滑密度和Measure.map输运条件补全部时间导数PDE；不把PDE作前提。 -/
 theorem liouvilleProductCoordinates : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) z,
   DifferentiableAt ℝ f z → DifferentiableAt ℝ ρ z →
   MolecularDynamics.Chapter05Review.liouvillian f ρ z=-(∑ i : Fin n,(ρ z*(fderiv ℝ (fun x => f x i) z) (EuclideanSpace.basisFun (Fin n) ℝ i)+
@@ -443,12 +456,21 @@ theorem liouvilleProductCoordinates : ∀ n (f : MolecularDynamics.Chapter05Revi
   rw [Finset.sum_add_distrib,← Finset.mul_sum]
   ring
 
+theorem liouvilleProductCoordinates_evolution : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ),
+  IsOpen D → ContDiffOn ℝ 1 f D → MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) →
+  (∀ t,Φ t '' D=D) → ContDiffOn ℝ 1 (Function.uncurry ρ) (Set.univ ×ˢ D) →
+  (∀ t,probabilityDensityOn D (ρ t)) →
+  (∀ t,densityMeasureOn D (ρ t)=MolecularDynamics.Chapter05Review.measurePropagator Φ t (densityMeasureOn D (ρ 0))) →
+  ∀ t z,z ∈ D → HasDerivAt (fun s => ρ s z) (-(∑ i : Fin n,(ρ t z*(fderiv ℝ (fun x ↦ f x i) z) (EuclideanSpace.basisFun (Fin n) ℝ i)+f z i*(fderiv ℝ (ρ t) z) (EuclideanSpace.basisFun (Fin n) ℝ i)))) t := by
+  sorry
+
 /-- source_id: MD-5.2.2-RectangularDomain · definition · §5.2.2 · 印刷p.184 / PDFp.205
 [EXTRA] [EXTRA]明确书中矩形例子；不把一般区域的边界通量声明缩成仅矩形。 -/
 def rectangularDomain {n : ℕ} (a b : MolecularDynamics.Chapter05Review.E n) := MolecularDynamics.Chapter05Review.rectangle a b
 
 /-- source_id: MD-5.2.2-FaceFlux · definition · §5.2.2 · 印刷p.184 / PDFp.205
-[EXTRA] [EXTRA]矩形单个面上ρfi的真实Hausdorff面积积分；正负法向由上下两个面的组合体现。 -/
+[EXTRA] [EXTRA]矩形单个面上ρfi的真实Hausdorff面积积分；正负法向由上下两个面的组合体现。 
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅矩形单面的无定向通量辅助积分；原句全部面与质量导数结论由MD-5.2.2-BoxFluxBalance，光滑一般域由MD-5.2.2-GeneralFluxBalance承担。 -/
 def faceFlux {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) (a b : MolecularDynamics.Chapter05Review.E n) (i : Fin n) (side : ℝ) :=
   ∫ z in boxFace a b i side,ρ z*f z i ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1))
 
@@ -1926,6 +1948,7 @@ end MD.Ch05
 #print axioms MD.Ch05.normalizedAverageFormula
 #print axioms MD.Ch05.massFraction
 #print axioms MD.Ch05.massDerivative
+#print axioms MD.Ch05.massDerivative_smooth
 #print axioms MD.Ch05.outwardNormalFor
 #print axioms MD.Ch05.generalFluxBalance
 #print axioms MD.Ch05.divergence
@@ -1935,6 +1958,7 @@ end MD.Ch05
 #print axioms MD.Ch05.lieCoordinates
 #print axioms MD.Ch05.divergenceCoordinates
 #print axioms MD.Ch05.liouvilleProductCoordinates
+#print axioms MD.Ch05.liouvilleProductCoordinates_evolution
 #print axioms MD.Ch05.rectangularDomain
 #print axioms MD.Ch05.faceFlux
 #print axioms MD.Ch05.fluxBalance

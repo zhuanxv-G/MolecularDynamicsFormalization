@@ -1,0 +1,180 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.2.2-GeneralFluxBalance；原PDF页映射=[205]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT03_review.json，对象含batch=EAUDIT03、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT03.md": "2cd5299dfaf3a47f2ad69e1dfde7358817a03a02e8f6940c223883a1dc9ad4a2",
+  "Blueprint/Ch05.lean": "efb25d2d5a3662340732156e3c59a82cec9e99887cb47df857d29468b95f7a11",
+  "blueprint/ch05/ch05_source.json": "7071057fdefedd3243c62142f6b5dc174657344a3ae72fd2ed83b996aee9fa66",
+  "EAUDIT03d_materials": "a9fd75a71037f0749cc65dd87bb66c348bfdbb72d65663b4944a1fbd04b90ed0",
+  "EAUDIT03d_PAGES.pdf": "451f8446f0e1752e955cd22211bc720f79998f5df0fc0c281ac7498ef56604d6"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.2.2-GeneralFluxBalance",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.2.2",
+  "printed_page": "184",
+  "pdf_page": "205",
+  "statement_latex": "this same rate of change may be written as the negative of the particle flux over the boundary of $\\mathcal A$:\n\\[\\frac{d\\nu}{dt}=-\\int_{\\partial \\mathcal A}f\\cdot n\\,\\rho(z,t)\\,d\\sigma,\\]\nUsing the divergence theorem, we may rewrite the latter quantity as a volume integral:\n\\[\\frac{d\\nu}{dt}=-\\int_\\mathcal A\\nabla\\cdot(f(z)\\rho(z,t))\\,d\\omega.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch05.generalFluxBalance",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]保留一般开放流不变相空间D，A闭包在D内，实际受限密度Measure.map条件及光滑有界域/真实法线资格；不要求ρ在D外光滑或归一化。两个原通量与散度结论都保存。矩形分面版本另列，未用单一区域计算替代此条。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT03_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:52:07.491444",
+      "before_sha256": "d4b2da305ef8dcd06e8a61e297fac7f5601a75e44bec9617389fe8d125dbdba8",
+      "after_sha256": "fc9c8313df1b67884e091a58b8fbd31ec41c946bd73caef7fa90c4b29b59655f",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH06_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem generalFluxBalance : ∀ n (D A : Set (MolecularDynamics.Chapter05Review.E n)) (ν f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+  (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ),
+  0 < n → IsOpen D → IsOpen A → closure A ⊆ D → Bornology.IsBounded A → outwardNormalFor A ν →
+  ContDiffOn ℝ 1 f D → MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) → (∀ t,Φ t '' D=D) →
+  ContDiffOn ℝ 1 (Function.uncurry ρ) (Set.univ ×ˢ D) → (∀ t,probabilityDensityOn D (ρ t)) →
+  (∀ t,densityMeasureOn D (ρ t)=MolecularDynamics.Chapter05Review.measurePropagator Φ t (densityMeasureOn D (ρ 0))) →
+  ∀ t,HasDerivAt (MolecularDynamics.Chapter05Review.massFraction ρ A)
+    (-(∫ z in frontier A,(inner ℝ (f z) (ν z))*ρ t z ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1)))) t ∧
+    (∫ z in A,MolecularDynamics.Chapter05Review.divergence (fun x => ρ t x • f x) z)=
+      ∫ z in frontier A,(inner ℝ (f z) (ν z))*ρ t z ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1)) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.divergence
+```lean
+def divergence {n : ℕ} (f : E n → E n) (z : E n) : ℝ :=
+  LinearMap.trace ℝ (E n) (fderiv ℝ f z).toLinearMap
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.flow
+```lean
+def flow {n : ℕ} (f : E n → E n) (Φ : ℝ → E n → E n) : Prop :=
+  (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
+  ∀ t z, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.grad
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hausdorffArea
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.massFraction
+```lean
+def massFraction {n : ℕ} (ρ : ℝ → E n → ℝ) (A : Set (E n)) (t : ℝ) := ∫ z in A,ρ t z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.measurePropagator
+```lean
+def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=
+  Measure.map (Φ t) μ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MD.Ch05.densityMeasureOn
+```lean
+def densityMeasureOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (volume.restrict D).withDensity (fun z => ENNReal.ofReal (ρ z))
+```
+### 实际依赖 MD.Ch05.densityOn
+```lean
+def densityOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Prop :=
+  NullMeasurableSet D volume ∧ AEMeasurable ρ (volume.restrict D) ∧
+    (∀ z ∈ D,0 ≤ ρ z) ∧ IntegrableOn ρ D
+```
+### 实际依赖 MD.Ch05.divergence
+```lean
+def divergence {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (z : MolecularDynamics.Chapter05Review.E n) : ℝ :=
+  LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap
+```
+### 实际依赖 MD.Ch05.flow
+```lean
+def flow {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
+  ∀ t z, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.grad
+```lean
+def grad {n : ℕ} (H : E n → ℝ) (z : E n) := gradient H z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.hausdorffArea
+```lean
+def hausdorffArea (d : ℕ) {n : ℕ} : Measure (E n) :=
+  ENNReal.ofReal ((volume (Metric.ball (0 : E d) 1)).toReal/(2 : ℝ)^d) •
+    Measure.hausdorffMeasure (d : ℝ)
+```
+### 实际依赖 MD.Ch05.massFraction
+```lean
+def massFraction {n : ℕ} (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (A : Set (MolecularDynamics.Chapter05Review.E n)) (t : ℝ) := ∫ z in A,ρ t z
+```
+### 实际依赖 MD.Ch05.measurePropagator
+```lean
+def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=
+  Measure.map (Φ t) μ
+```
+### 实际依赖 MD.Ch05.outwardNormalFor
+```lean
+def outwardNormalFor {n : ℕ} (A : Set (MolecularDynamics.Chapter05Review.E n)) (ν : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  ∀ z ∈ frontier A,∃ O : Set (MolecularDynamics.Chapter05Review.E n),∃ r : MolecularDynamics.Chapter05Review.E n → ℝ,
+    IsOpen O ∧ z ∈ O ∧ ContDiffOn ℝ 2 r O ∧
+    (∀ x ∈ O,x ∈ A ↔ r x < 0) ∧ MolecularDynamics.Chapter05Review.grad r z ≠ 0 ∧
+    ν z=‖MolecularDynamics.Chapter05Review.grad r z‖⁻¹ • MolecularDynamics.Chapter05Review.grad r z
+```
+### 实际依赖 MD.Ch05.probabilityDensityOn
+```lean
+def probabilityDensityOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Prop :=
+  densityOn D ρ ∧ (∫ z in D,ρ z)=1
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```

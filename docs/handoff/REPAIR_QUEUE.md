@@ -2,13 +2,13 @@
 
 当前任务：修复第2–5章网站审计问题；第6章暂停，不进入第7章。
 修复顺序：第2→3→4→5章，每章按节，每批≤8条；不写新证明。
-完成状态：修复进行中（待处理项目/原文审校计数 169；章末验收待完成 [5]）。
+完成状态：修复进行中（待处理项目/原文审校计数 147；章末验收待完成 [5]）。
 A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初筛D不代表已转导师。网站PASS只覆盖其绑定快照。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 51 / 已修待复审 78 / 待导师 20 / 修复中 0。
 第4章：网站PASS 42 / 已修待复审 110 / 待导师 27 / 修复中 0。
-第5章：网站PASS 102 / 已修待复审 8 / 待导师 0 / 修复中 73。
+第5章：网站PASS 92 / 已修待复审 24 / 待导师 0 / 修复中 67。
 
 | 章 | source_id | 网站判定 | 问题类别 | 处理方式 | 状态 | EAUDIT批次 |
 |---|---|---|---|---|---|---|
@@ -531,23 +531,23 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 5 | MD-5.2.1-GaussianL2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-FiniteJumpL2 | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
 | 5 | MD-5.2.1-NormalizedAverageFormula | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.2.2-MassFraction | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-MassDerivative | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-OutwardNormal | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-GeneralFluxBalance | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-Divergence | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-Liouvillian | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-LiouvilleEquation | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-LiouvilleProduct | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-LieCoordinates | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-DivergenceCoordinates | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-LiouvilleProductCoordinates | FAIL | B（初筛，未确认） | 补全结论；跨条目才显式缩范围并追加repair_log | 待分类/修复；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.2.2-MassFraction | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 5 | MD-5.2.2-MassDerivative | FAIL | B | 保留已证的一阶积分交换，补紧空间域和联合C∞密度下质量函数C∞结论；紧域给各阶局部支配的充分资格，非结论前提。 | 已修待复审 | EAUDIT03 |
+| 5 | MD-5.2.2-OutwardNormal | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 5 | MD-5.2.2-GeneralFluxBalance | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 5 | MD-5.2.2-Divergence | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian展示式中散度符号的真实导数迹辅助定义；完整M_f w=−div(wf)由MD-5.2.2-Liouvillian承担。 | 已修待复审 | EAUDIT03 |
+| 5 | MD-5.2.2-Liouvillian | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 5 | MD-5.2.2-LiouvilleEquation | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT03 |
+| 5 | MD-5.2.2-LiouvilleProduct | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian乘积法则的静态辅助引理；包含真实输运前提的完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates及MD-5.2.2-LiouvilleEquation承担。 | 已修待复审 | EAUDIT03 |
+| 5 | MD-5.2.2-LieCoordinates | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
+| 5 | MD-5.2.2-DivergenceCoordinates | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅真实散度的坐标辅助引理；同段完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates承担。 | 已修待复审 | EAUDIT04 |
+| 5 | MD-5.2.2-LiouvilleProductCoordinates | FAIL | B | 保留原坐标乘积法则证明，并以真实自治流、光滑密度和Measure.map输运条件补全部时间导数PDE；不把PDE作前提。 | 已修待复审 | EAUDIT04 |
 | 5 | MD-5.2.2-RectangularDomain | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |
-| 5 | MD-5.2.2-FaceFlux | FAIL | C（初筛，未确认） | 核对对象与网站路线；需选择则待导师 | 待分类/修复；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-BoxFluxBalance | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-BoundaryTerm | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-TruncatedIntegrationByParts | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
-| 5 | MD-5.2.2-RapidAdjoint | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
+| 5 | MD-5.2.2-FaceFlux | FAIL | B | 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅矩形单面的无定向通量辅助积分；原句全部面与质量导数结论由MD-5.2.2-BoxFluxBalance，光滑一般域由MD-5.2.2-GeneralFluxBalance承担。 | 已修待复审 | EAUDIT04 |
+| 5 | MD-5.2.2-BoxFluxBalance | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
+| 5 | MD-5.2.2-BoundaryTerm | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
+| 5 | MD-5.2.2-TruncatedIntegrationByParts | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
+| 5 | MD-5.2.2-RapidAdjoint | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT04 |
 | 5 | MD-5.2.2-CompactAdjoint | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a）；原文CORRECTED待原页复核 | — |
 | 5 | MD-5.2.2-MeasurePropagator | FAIL | A（初筛，未确认） | 补前提/定义域并标[EXTRA] | 待分类/修复；原文CORRECTED待原页复核 | — |
 | 5 | MD-5.2.3-HamiltonianDivergence | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 e9c5ec7b563a） | — |

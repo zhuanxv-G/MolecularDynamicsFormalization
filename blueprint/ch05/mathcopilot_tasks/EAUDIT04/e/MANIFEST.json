@@ -1,0 +1,145 @@
+{
+  "eaudit": "EAUDIT04",
+  "source_id": "MD-5.2.2-BoxFluxBalance",
+  "input_sha256": {
+    "BATCH_EAUDIT04.md": "6452b8e09c6a2fe4ba67c8aa654ea830fad3a4b1461df3cef7b53668f7ce79ce",
+    "Blueprint/Ch05.lean": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
+    "blueprint/ch05/ch05_source.json": "ff5dc952dfa0c448947a87365d46eb1f49731550bb3990c143fadbcea02d540f",
+    "EAUDIT04e_materials": "a3bd25f149b14584bb8dc8b97f4391e70b6875a0027cb761cb4de8861bfcf3b2",
+    "EAUDIT04e_PAGES.pdf": "451f8446f0e1752e955cd22211bc720f79998f5df0fc0c281ac7498ef56604d6"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    205
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "fa73f3624438a2fac34d88fbc4df9b8b8fd5915f89e73f2175d887d6cbfa8437",
+  "source_block_sha256": "7666ec7a7ac70ed4720315b77c5d10c951d7f5ed7128dfdca6c74a335455bdef",
+  "source_declarations": [
+    "fluxBalance"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.densityMeasure",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "0c1862948c96055705abf13fab30d11ff0404c481476b29077db20458fa6cb70"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.divergence",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "dadd38091a1232e6bbd2460766d10afb82a44329b5f562152debdcd372b86255"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.flow",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "cd47fe07b629a7f5aa0bdc126758e9528093d227aaebc2097a541fd177a6a961"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.hausdorffArea",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.massFraction",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "e7227b3fbcaeb0a946935e7ca13bbcd50e497f52e10c6f731406cbb7957fdea6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.measurePropagator",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.probabilityDensity",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "ec7111064a60d4e0ffb4738f7e5dfc539785ac2942850786ec72672a204a5e2f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/Statements.lean",
+      "name": "boxFace",
+      "file_sha256": "4cbf2629bb9891d244bb751f371064c9a991408cdb5d1a533c61262bd6d1efdc",
+      "excerpt_sha256": "a7ccfc09d94cc466595d455e459cddbcc5c6c68af6f6aaec888193afd2f768b4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "density",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "cb24f1ce958a8a1e95b72fdcf4783440869a7e892f6e1482e9123c8154016f86"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "densityMeasure",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "0c1862948c96055705abf13fab30d11ff0404c481476b29077db20458fa6cb70"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "divergence",
+      "file_sha256": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
+      "excerpt_sha256": "ae0663325774e959009a1539ffd2ca1d15d645ff9af486a72942ee6115dd91a2"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "faceFlux",
+      "file_sha256": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
+      "excerpt_sha256": "4ee3e7409c3916541a2d33fc26dedbd9a69a7dc825fe2466f8c6e9099eb303bc"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "flow",
+      "file_sha256": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
+      "excerpt_sha256": "46dd6bdf99871cab9c761b8d78d4d62dc74c03c80d2755a604b83fafa6edb74c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "hausdorffArea",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "massFraction",
+      "file_sha256": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
+      "excerpt_sha256": "8a45edcc76b079b6fbce81f30afc89ceb4ffc340f492ad695bddfa870f2966e5"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "measurePropagator",
+      "file_sha256": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
+      "excerpt_sha256": "eb7822eaa16317f3d2be67b2063f706df1a914f352ecfbb586c382b8fdb8bd8f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "probabilityDensity",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "ec7111064a60d4e0ffb4738f7e5dfc539785ac2942850786ec72672a204a5e2f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/Statements.lean",
+      "name": "rectangle",
+      "file_sha256": "4cbf2629bb9891d244bb751f371064c9a991408cdb5d1a533c61262bd6d1efdc",
+      "excerpt_sha256": "8c59b744aa1b68636918fe3c0c0d94b28a7372978da22e1596edf7d137a99e5a"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT04_review.json",
+  "total_task_bytes": 94055
+}

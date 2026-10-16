@@ -1,0 +1,140 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.2.2-LiouvilleProductCoordinates；原PDF页映射=[206]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT04_review.json，对象含batch=EAUDIT04、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT04.md": "6452b8e09c6a2fe4ba67c8aa654ea830fad3a4b1461df3cef7b53668f7ce79ce",
+  "Blueprint/Ch05.lean": "f93e828d488681522a3dfe6d763eb1338fd202789847f5775966c20f567690bf",
+  "blueprint/ch05/ch05_source.json": "ff5dc952dfa0c448947a87365d46eb1f49731550bb3990c143fadbcea02d540f",
+  "EAUDIT04c_materials": "628daddffac192011b43990742e10654561c8bcc8f4a33851fda95b5d23bab88",
+  "EAUDIT04c_PAGES.pdf": "103859842bd32416d6ab78b9bd8756a29227b3064b93ad4155b97906b51fa3fb"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "5.2.2",
+  "printed_page": "185",
+  "pdf_page": "206",
+  "statement_latex": "An alternative form for the continuity equation is:\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\sum_i\\left(\\rho\\frac{\\partial f_i}{\\partial z_i}+f_i\\frac{\\partial\\rho}{\\partial z_i}\\right).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "ρ(z;t)是随向量场f输运的光滑概率密度；f_i为f的坐标分量，求和遍历所有空间坐标。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.liouvilleProductCoordinates",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]实际点可微性；保存原整个有限求和右侧，连续性PDE左侧的时间导数由LiouvilleEquation完整条目保留。",
+    "[EXTRA] 保留原坐标乘积法则证明，并以真实自治流、光滑密度和Measure.map输运条件补全部时间导数PDE；不把PDE作前提。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT04_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T09:52:37.087651",
+      "before_sha256": "7b3f75ef0830fb0e8c433ee907bb97a48b5ad768dec9b4f467505add38269c2d",
+      "after_sha256": "fb1da6db885b36f93ef38df66fe8104e54da177b0d31ed5a25564e05dfe86da2",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH07_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem liouvilleProductCoordinates : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) z,
+  DifferentiableAt ℝ f z → DifferentiableAt ℝ ρ z →
+  MolecularDynamics.Chapter05Review.liouvillian f ρ z=-(∑ i : Fin n,(ρ z*(fderiv ℝ (fun x => f x i) z) (EuclideanSpace.basisFun (Fin n) ℝ i)+
+    f z i*(fderiv ℝ ρ z) (EuclideanSpace.basisFun (Fin n) ℝ i))) := by
+  intro n f ρ z hf hρ
+  rw [liouvilleProduct n f ρ z hf hρ,divergenceCoordinates n f z hf,lieCoordinates n f ρ z]
+  rw [Finset.sum_add_distrib,← Finset.mul_sum]
+  ring
+
+theorem liouvilleProductCoordinates_evolution : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ),
+  IsOpen D → ContDiffOn ℝ 1 f D → MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) →
+  (∀ t,Φ t '' D=D) → ContDiffOn ℝ 1 (Function.uncurry ρ) (Set.univ ×ˢ D) →
+  (∀ t,probabilityDensityOn D (ρ t)) →
+  (∀ t,densityMeasureOn D (ρ t)=MolecularDynamics.Chapter05Review.measurePropagator Φ t (densityMeasureOn D (ρ 0))) →
+  ∀ t z,z ∈ D → HasDerivAt (fun s => ρ s z) (-(∑ i : Fin n,(ρ t z*(fderiv ℝ (fun x ↦ f x i) z) (EuclideanSpace.basisFun (Fin n) ℝ i)+f z i*(fderiv ℝ (ρ t) z) (EuclideanSpace.basisFun (Fin n) ℝ i)))) t := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.divergence
+```lean
+def divergence {n : ℕ} (f : E n → E n) (z : E n) : ℝ :=
+  LinearMap.trace ℝ (E n) (fderiv ℝ f z).toLinearMap
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.flow
+```lean
+def flow {n : ℕ} (f : E n → E n) (Φ : ℝ → E n → E n) : Prop :=
+  (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
+  ∀ t z, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.liouvillian
+```lean
+def liouvillian {n : ℕ} (f : E n → E n) (u : E n → ℝ) (z : E n) :=
+  -divergence (fun x => u x • f x) z
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.measurePropagator
+```lean
+def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=
+  Measure.map (Φ t) μ
+```
+### 实际依赖 MD.Ch05.densityMeasureOn
+```lean
+def densityMeasureOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  (volume.restrict D).withDensity (fun z => ENNReal.ofReal (ρ z))
+```
+### 实际依赖 MD.Ch05.densityOn
+```lean
+def densityOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Prop :=
+  NullMeasurableSet D volume ∧ AEMeasurable ρ (volume.restrict D) ∧
+    (∀ z ∈ D,0 ≤ ρ z) ∧ IntegrableOn ρ D
+```
+### 实际依赖 MD.Ch05.divergence
+```lean
+def divergence {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (z : MolecularDynamics.Chapter05Review.E n) : ℝ :=
+  LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap
+```
+### 实际依赖 MD.Ch05.flow
+```lean
+def flow {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
+  ∀ t z, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```
+### 实际依赖 MD.Ch05.liouvillian
+```lean
+def liouvillian {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) :=
+  -MolecularDynamics.Chapter05Review.divergence (fun x => u x • f x) z
+```
+### 实际依赖 MD.Ch05.measurePropagator
+```lean
+def measurePropagator {X : Type*} [MeasurableSpace X] (Φ : ℝ → X → X) (t : ℝ) (μ : Measure X) :=
+  Measure.map (Φ t) μ
+```
+### 实际依赖 MD.Ch05.probabilityDensityOn
+```lean
+def probabilityDensityOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) : Prop :=
+  densityOn D ρ ∧ (∫ z in D,ρ z)=1
+```

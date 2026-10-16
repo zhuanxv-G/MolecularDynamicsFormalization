@@ -56,7 +56,7 @@ theorem massDerivative_smooth (n : ℕ)
         scope('DivergenceCoordinates','仅真实散度的坐标辅助引理；同段完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates承担。')
         statement=ds['MD-5.2.2-LiouvilleEquation']['statement'].replace('theorem liouvilleEquation','theorem liouvilleProductCoordinates_evolution',1)
         statement=statement.replace('(MolecularDynamics.Chapter05Review.liouvillian f (ρ t) z)',
-          '(-(∑ i : Fin n,ρ t z*(fderiv ℝ (fun x ↦ f x i) z) (EuclideanSpace.basisFun (Fin n) ℝ i)+f z i*(fderiv ℝ (ρ t) z) (EuclideanSpace.basisFun (Fin n) ℝ i)))')
+          '(-(∑ i : Fin n,(ρ t z*(fderiv ℝ (fun x ↦ f x i) z) (EuclideanSpace.basisFun (Fin n) ℝ i)+f z i*(fderiv ℝ (ρ t) z) (EuclideanSpace.basisFun (Fin n) ℝ i))))')
         change('LiouvilleProductCoordinates',current('LiouvilleProductCoordinates')+'\n\n'+statement+' := by\n  sorry','B','保留原坐标乘积法则证明，并以真实自治流、光滑密度和Measure.map输运条件补全部时间导数PDE；不把PDE作前提。')
         scope('FaceFlux','仅矩形单面的无定向通量辅助积分；原句全部面与质量导数结论由MD-5.2.2-BoxFluxBalance，光滑一般域由MD-5.2.2-GeneralFluxBalance承担。')
         old=current('MeasurePropagator').replace('def measurePropagator','def measurePropagator_general',1)

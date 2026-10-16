@@ -1109,9 +1109,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.massFraction",
@@ -1136,23 +1136,24 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT03/axioms.log"
     },
     "MD-5.2.2-MassDerivative": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.massDerivative",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "425b05eb60566208850913e895ba84dcc003ccc2de80d5212049a32f0bc9bef5",
-      "block_sha256": "ece73ea9b92d3148eb922549ea90f3be216e00fefedf0d9431fe42b2f8865e5a",
-      "direct_placeholder": false,
+      "block_sha256": "d442321d3ae7a9382a1336dfdf11885f12daabfc39d319d8f73c67d31e35312f",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -1176,15 +1177,15 @@
         "blueprint/ch05/validation/short_search/route-a34cdecca1ffaaa9443b.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT03/axioms.log"
     },
     "MD-5.2.2-OutwardNormal": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.outwardNormalFor",
@@ -1209,16 +1210,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT03/axioms.log"
     },
     "MD-5.2.2-GeneralFluxBalance": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.generalFluxBalance",
@@ -1243,15 +1244,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT03/axioms.log"
     },
     "MD-5.2.2-Divergence": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.divergence",
@@ -1276,15 +1277,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT03/axioms.log"
     },
     "MD-5.2.2-Liouvillian": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.liouvillian",
@@ -1309,16 +1310,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT03/axioms.log"
     },
     "MD-5.2.2-LiouvilleEquation": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.liouvilleEquation",
@@ -1343,15 +1344,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT03/axioms.log"
     },
     "MD-5.2.2-LiouvilleProduct": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.liouvilleProduct",
@@ -1385,15 +1386,15 @@
         "blueprint/ch05/validation/short_search/route-c7ba962b98f330fb04e1.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT03/axioms.log"
     },
     "MD-5.2.2-LieCoordinates": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.lieCoordinates",
@@ -1425,15 +1426,15 @@
         "blueprint/ch05/validation/short_search/route-1525bae73a739536b80b-LieCoordinates.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT04/axioms.log"
     },
     "MD-5.2.2-DivergenceCoordinates": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.divergenceCoordinates",
@@ -1467,23 +1468,24 @@
         "blueprint/ch05/validation/short_search/route-d7aa9b44d094a4ba1bd2.log"
       ],
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT04/axioms.log"
     },
     "MD-5.2.2-LiouvilleProductCoordinates": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
-      "final_status": "self-contained",
+      "final_status": "incomplete",
       "lean_decl": "MD.Ch05.liouvilleProductCoordinates",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
       "signature_sha256": "c3eeeada7b7eeb8574ef9e8c9c85195eb90425b72d6c1c9873360a5a675e9491",
-      "block_sha256": "3d9153028208c78d4b58872b3079d1c26d91ded6c5e5a122832c397f2f4ce1a5",
-      "direct_placeholder": false,
+      "block_sha256": "4189001d475d31911cb1982be82162bde7d72161a63b0a9770fe0d5d669a3564",
+      "direct_placeholder": true,
       "proof_status": "local_proof",
       "documented_priors": [],
       "missing": null,
@@ -1507,7 +1509,7 @@
       ],
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT04/axioms.log"
     },
     "MD-5.2.2-RectangularDomain": {
       "checked": true,
@@ -1546,9 +1548,9 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.faceFlux",
@@ -1573,16 +1575,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT04/axioms.log"
     },
     "MD-5.2.2-BoxFluxBalance": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.fluxBalance",
@@ -1607,15 +1609,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT04/axioms.log"
     },
     "MD-5.2.2-BoundaryTerm": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.boxBoundaryTerm",
@@ -1640,16 +1642,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT04/axioms.log"
     },
     "MD-5.2.2-TruncatedIntegrationByParts": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.truncatedIntegrationByParts",
@@ -1674,16 +1676,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT04/axioms.log"
     },
     "MD-5.2.2-RapidAdjoint": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.rapidAdjoint",
@@ -1708,7 +1710,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT04/axioms.log"
     },
     "MD-5.2.2-CompactAdjoint": {
       "checked": true,
