@@ -1,0 +1,208 @@
+{
+  "eaudit": "EAUDIT36",
+  "source_id": "MD-4.3.5-ConstrainedOrders",
+  "input_sha256": {
+    "BATCH_EAUDIT36.md": "85272db90622fb58287d2e13b7a489183505cc3f6ee57c64274c431eba9770f3",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+    "EAUDIT36a_materials": "8af4bda180ede14ac34123f250563dbe64d84b55619ceb09462cd9a7ac63ca23",
+    "EAUDIT36a_PAGES.pdf": "b7dd22cfa12378ca19279e3a604ffb649cb48b56acaf81b00ab262ed644e5c88"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    183,
+    184
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "6437ae33785827b0525d692fcb83e641aff58a040abc90c8794ed21281b1c5fe",
+  "source_block_sha256": "f03be5aadc03818c4bc9377cb41251958cd97863ddea299ebd44e65b2a0c23c7",
+  "source_declarations": [
+    "constrainedOrders",
+    "constrainedOrders_global",
+    "constrainedOrders_firstOrderSharp"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Z",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.constraintSet",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "2e79d4c756f2694539f7d083fed247c692ce3d3bda173e8f5f2d28b1db104e75"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.cotangentSet",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "f8d9057c2187c15ac7e07a280b2a7396f6f618446952cce832f8efadb5fc0e22"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.grad",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "85d1654c3905d13fe56fe56e9cfad2796ca9c56a6fceba8596a551e567d342a3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.invMass",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.projectedEulerRelation",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "0fb5a5d603c0be6326e8d9afb5065d36d0b6bc4600b6c6c7275598a2937287e9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.rattleRelation",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "0f20e3084562ef8906700fbc8ee7eef811918d2ded445a78a56b95fb7bc585af"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.symplecticEulerMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "bbda75ade1595aa85e225b144694e2c996f0fca307394537ff36da64e954171a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Z",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Z",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "constraintSet",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "cdf79d75391f33efa0755e8d854ddd746cd6dd405774d165dbeceec30e6680ef"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "cotangentSet",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "40e7180d99f1f147fe03e78d3829e54c268a89796c7a4bd766ce2d2d38084b46"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "522e86de81741a525bcd8720e95f1f0a3f1ba51791c5d13cea4bed7e30a1620e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "grad",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "85d1654c3905d13fe56fe56e9cfad2796ca9c56a6fceba8596a551e567d342a3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "projectedEulerRelation",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "0e914ee040edbce7b75e8bac681dacecd3e4437df2981688a0291858e8692891"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "rattleRelation",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "7ea31e799562d4c514948c68d20a1bea91363d5031346dd0c97ddc93a5db0361"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "symplecticEulerMatrix",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "bbda75ade1595aa85e225b144694e2c996f0fca307394537ff36da64e954171a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedReactionRegularity.lean",
+      "name": "textbookConstrainedPhaseVectorField",
+      "file_sha256": "a552a5d4469975d129720c14ec90bdf14743ae3494440952f0d1a79c8ba212ac",
+      "excerpt_sha256": "fd40c0790fdc9f6a5f4ed29294de1e8004958762f47a54a3f4c13539ca585b87"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedReaction.lean",
+      "name": "textbookConstrainedReactionMultiplier",
+      "file_sha256": "0c6b2231827c5d5493751eea65c67f7aeaed5dd511e5bca2f1bb533598e53789",
+      "excerpt_sha256": "4c098d46a566eaa7cea8265004a6f811bb0204f83c65edf2d10f5b1d34a177e5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedReaction.lean",
+      "name": "textbookConstraintCurvature",
+      "file_sha256": "0c6b2231827c5d5493751eea65c67f7aeaed5dd511e5bca2f1bb533598e53789",
+      "excerpt_sha256": "221e918cc4812b05f61a8e9808ecbe226b291802ba2669726730ad1adbc3c454"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "name": "textbookConstraintGradient",
+      "file_sha256": "890274c6144406ad066b0a624cf08e3b95995c17b495545de8c3c05f260d4e44",
+      "excerpt_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "name": "textbookConstraintGram",
+      "file_sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce",
+      "excerpt_sha256": "f9d0691a77a4664150d234c00a3129e9c83be39d8b1787031a5684ce26cba140"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "name": "textbookConstraintJacobian",
+      "file_sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce",
+      "excerpt_sha256": "8cf31fc6e8fc4d97e435434cd3ff311cd4bdc6e77b6c39dac71331c66249f03a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "name": "textbookInverseMassMatrix",
+      "file_sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce",
+      "excerpt_sha256": "9e7434aa6e315ddbe11e2a45e46a9d927661975aa91274386af7c31412a7c330"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookPotentialForce",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT36_review.json",
+  "total_task_bytes": 132520
+}

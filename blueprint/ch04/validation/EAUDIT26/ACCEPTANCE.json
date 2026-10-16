@@ -1,0 +1,58 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT26",
+  "section": "4.1",
+  "source_ids": [
+    "MD-4.1-PrintedImplicitRelation",
+    "MD-4.1-ImplicitFactor",
+    "MD-4.1-ImplicitModulus",
+    "MD-4.1-ModifiedFrequencyLimit",
+    "MD-4.1-MidpointElimination"
+  ],
+  "reaudit_ids": [
+    "MD-4.1-PrintedImplicitRelation",
+    "MD-4.1-ImplicitFactor",
+    "MD-4.1-ImplicitModulus",
+    "MD-4.1-ModifiedFrequencyLimit",
+    "MD-4.1-MidpointElimination"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.1-PrintedImplicitRelation",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch04/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "641db617c53521ad7e59e4c5f0a5c6dcc784b1804794a2eb576035f9a73ea4bf"
+    },
+    {
+      "source_id": "MD-4.1-ImplicitFactor",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch04/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "641db617c53521ad7e59e4c5f0a5c6dcc784b1804794a2eb576035f9a73ea4bf"
+    },
+    {
+      "source_id": "MD-4.1-ImplicitModulus",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch04/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "641db617c53521ad7e59e4c5f0a5c6dcc784b1804794a2eb576035f9a73ea4bf"
+    },
+    {
+      "source_id": "MD-4.1-ModifiedFrequencyLimit",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch04/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "641db617c53521ad7e59e4c5f0a5c6dcc784b1804794a2eb576035f9a73ea4bf"
+    },
+    {
+      "source_id": "MD-4.1-MidpointElimination",
+      "prior_eaudit": "EAUDIT03",
+      "acceptance": "blueprint/ch04/validation/EAUDIT03/ACCEPTANCE.json",
+      "sha256": "641db617c53521ad7e59e4c5f0a5c6dcc784b1804794a2eb576035f9a73ea4bf"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT26/INDEX.md"
+}

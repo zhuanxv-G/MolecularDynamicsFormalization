@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT33",
+  "input_sha256": {
+    "BATCH_EAUDIT33.md": "7d63d6de2877535d775532b4115b02dd4e50750f88c14a1bf19035ce42c7e826",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT33a",
+      "source_id": "MD-4.3.2-ProjectionResidual",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT33/a",
+      "total_bytes": 97973,
+      "manifest_sha256": "c23cc3d4166c47d0ca00a46587b55f482c872a272cca5bf94fe689b032c3ca01"
+    },
+    {
+      "subtask": "EAUDIT33b",
+      "source_id": "MD-4.3.2-ProjectionJacobian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT33/b",
+      "total_bytes": 96218,
+      "manifest_sha256": "1c931fb241d7d8deb3c151ad3d8f2d9ac6dfe6c5bbe1cc385dbd10d0abb6b3c7"
+    },
+    {
+      "subtask": "EAUDIT33c",
+      "source_id": "MD-4.3.2-NewtonConstraint",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT33/c",
+      "total_bytes": 99605,
+      "manifest_sha256": "ab02e14f12643665b50c0af76013aa2675a5636a153042a94b9d051f9a0e173b"
+    },
+    {
+      "subtask": "EAUDIT33d",
+      "source_id": "MD-4.3.2-NewtonQuadratic",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT33/d",
+      "total_bytes": 98841,
+      "manifest_sha256": "4bf3dfb0e5618e527cc38a2712c48e81f38be50912b05edfededeaee15f551d6"
+    },
+    {
+      "subtask": "EAUDIT33e",
+      "source_id": "MD-4.3.2-FrozenNewtonLinear",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT33/e",
+      "total_bytes": 100067,
+      "manifest_sha256": "cdf3e362dad28f341b6ef9fc19e5b6cd294e7afee5f35f41c8520828c734272d"
+    },
+    {
+      "subtask": "EAUDIT33f",
+      "source_id": "MD-4.3.2-ProjectionScale",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT33/f",
+      "total_bytes": 104405,
+      "manifest_sha256": "a636e2cd9af0132b496451af278813e53dab3ab2ec58e62df1a2c935c37795d2"
+    }
+  ]
+}

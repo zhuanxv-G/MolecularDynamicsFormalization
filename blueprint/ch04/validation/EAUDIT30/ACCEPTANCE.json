@@ -1,0 +1,82 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT30",
+  "section": "4.3",
+  "source_ids": [
+    "MD-4.3-HolonomicRelation",
+    "MD-4.3-ConstrainedSolution",
+    "MD-4.3-ConstraintSet",
+    "MD-4.3-ConstraintJacobian",
+    "MD-4.3-JacobianActualDerivative",
+    "MD-4.3-FlexiblePendulumHamiltonian",
+    "MD-4.3-ConstrainedPendulum",
+    "MD-4.3-ReactionMultiplier"
+  ],
+  "reaudit_ids": [
+    "MD-4.3-HolonomicRelation",
+    "MD-4.3-ConstrainedSolution",
+    "MD-4.3-ConstraintSet",
+    "MD-4.3-ConstraintJacobian",
+    "MD-4.3-JacobianActualDerivative",
+    "MD-4.3-FlexiblePendulumHamiltonian",
+    "MD-4.3-ConstrainedPendulum",
+    "MD-4.3-ReactionMultiplier"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.3-HolonomicRelation",
+      "prior_eaudit": "EAUDIT07",
+      "acceptance": "blueprint/ch04/validation/EAUDIT07/ACCEPTANCE.json",
+      "sha256": "c344b5c3f6a95aab039474a09cd48c191735ccff681dffd718d493ae787ecd34"
+    },
+    {
+      "source_id": "MD-4.3-ConstrainedSolution",
+      "prior_eaudit": "EAUDIT07",
+      "acceptance": "blueprint/ch04/validation/EAUDIT07/ACCEPTANCE.json",
+      "sha256": "c344b5c3f6a95aab039474a09cd48c191735ccff681dffd718d493ae787ecd34"
+    },
+    {
+      "source_id": "MD-4.3-ConstraintSet",
+      "prior_eaudit": "EAUDIT07",
+      "acceptance": "blueprint/ch04/validation/EAUDIT07/ACCEPTANCE.json",
+      "sha256": "c344b5c3f6a95aab039474a09cd48c191735ccff681dffd718d493ae787ecd34"
+    },
+    {
+      "source_id": "MD-4.3-ConstraintJacobian",
+      "prior_eaudit": "EAUDIT07",
+      "acceptance": "blueprint/ch04/validation/EAUDIT07/ACCEPTANCE.json",
+      "sha256": "c344b5c3f6a95aab039474a09cd48c191735ccff681dffd718d493ae787ecd34"
+    },
+    {
+      "source_id": "MD-4.3-JacobianActualDerivative",
+      "prior_eaudit": "EAUDIT07",
+      "acceptance": "blueprint/ch04/validation/EAUDIT07/ACCEPTANCE.json",
+      "sha256": "c344b5c3f6a95aab039474a09cd48c191735ccff681dffd718d493ae787ecd34"
+    },
+    {
+      "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+      "prior_eaudit": "EAUDIT07",
+      "acceptance": "blueprint/ch04/validation/EAUDIT07/ACCEPTANCE.json",
+      "sha256": "c344b5c3f6a95aab039474a09cd48c191735ccff681dffd718d493ae787ecd34"
+    },
+    {
+      "source_id": "MD-4.3-ConstrainedPendulum",
+      "prior_eaudit": "EAUDIT07",
+      "acceptance": "blueprint/ch04/validation/EAUDIT07/ACCEPTANCE.json",
+      "sha256": "c344b5c3f6a95aab039474a09cd48c191735ccff681dffd718d493ae787ecd34"
+    },
+    {
+      "source_id": "MD-4.3-ReactionMultiplier",
+      "prior_eaudit": "EAUDIT08",
+      "acceptance": "blueprint/ch04/validation/EAUDIT08/ACCEPTANCE.json",
+      "sha256": "066cc576d33bff05d2098735b9ec3a5b34a0bbce688cb6e2996b570f042114f5"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT30/INDEX.md"
+}

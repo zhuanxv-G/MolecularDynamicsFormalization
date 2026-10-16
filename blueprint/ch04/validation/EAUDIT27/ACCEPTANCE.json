@@ -1,0 +1,82 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT27",
+  "section": "4.2.1",
+  "source_ids": [
+    "MD-4.2.1-FastVerlet",
+    "MD-4.2.1-RESPA",
+    "MD-4.2.1-SlowMatrix",
+    "MD-4.2.1-FastMatrix",
+    "MD-4.2.1-ImpulseDet",
+    "MD-4.2.1-ImpulseTrace",
+    "MD-4.2.1-ResonancePower",
+    "MD-4.2.1-ResonanceTaylor"
+  ],
+  "reaudit_ids": [
+    "MD-4.2.1-FastVerlet",
+    "MD-4.2.1-RESPA",
+    "MD-4.2.1-SlowMatrix",
+    "MD-4.2.1-FastMatrix",
+    "MD-4.2.1-ImpulseDet",
+    "MD-4.2.1-ImpulseTrace",
+    "MD-4.2.1-ResonancePower",
+    "MD-4.2.1-ResonanceTaylor"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.2.1-FastVerlet",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch04/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "bb84c29cbce64c9cc23cf45cb1d9398e3b9dc04b8da8133b2877213c6eb9d40d"
+    },
+    {
+      "source_id": "MD-4.2.1-RESPA",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch04/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "bb84c29cbce64c9cc23cf45cb1d9398e3b9dc04b8da8133b2877213c6eb9d40d"
+    },
+    {
+      "source_id": "MD-4.2.1-SlowMatrix",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch04/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "bb84c29cbce64c9cc23cf45cb1d9398e3b9dc04b8da8133b2877213c6eb9d40d"
+    },
+    {
+      "source_id": "MD-4.2.1-FastMatrix",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch04/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "bb84c29cbce64c9cc23cf45cb1d9398e3b9dc04b8da8133b2877213c6eb9d40d"
+    },
+    {
+      "source_id": "MD-4.2.1-ImpulseDet",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch04/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "bb84c29cbce64c9cc23cf45cb1d9398e3b9dc04b8da8133b2877213c6eb9d40d"
+    },
+    {
+      "source_id": "MD-4.2.1-ImpulseTrace",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch04/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "bb84c29cbce64c9cc23cf45cb1d9398e3b9dc04b8da8133b2877213c6eb9d40d"
+    },
+    {
+      "source_id": "MD-4.2.1-ResonancePower",
+      "prior_eaudit": "EAUDIT04",
+      "acceptance": "blueprint/ch04/validation/EAUDIT04/ACCEPTANCE.json",
+      "sha256": "bb84c29cbce64c9cc23cf45cb1d9398e3b9dc04b8da8133b2877213c6eb9d40d"
+    },
+    {
+      "source_id": "MD-4.2.1-ResonanceTaylor",
+      "prior_eaudit": "EAUDIT05",
+      "acceptance": "blueprint/ch04/validation/EAUDIT05/ACCEPTANCE.json",
+      "sha256": "031a3dcfacd45d4b10865d36f78203445123294b49470cb124ffbbd7f3fa5ae3"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT27/INDEX.md"
+}

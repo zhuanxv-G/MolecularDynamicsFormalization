@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT25",
+  "input_sha256": {
+    "BATCH_EAUDIT25.md": "3baae632f673025b9c93334034171016a5382aac6ab86e86e3bb26e10223746f",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT25a",
+      "source_id": "MD-4-EulerFactor",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT25/a",
+      "total_bytes": 91928,
+      "manifest_sha256": "9ef7a4b8bffb60812f571c44223dbd59aac9d55199df2c5ba0262e4049ceba47"
+    },
+    {
+      "subtask": "EAUDIT25b",
+      "source_id": "MD-4-EulerImaginaryGrowth",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT25/b",
+      "total_bytes": 79520,
+      "manifest_sha256": "89aa9420de9fd6a97195383b8091d9ba2c47ceee821380e9da2b9b810dff54c6"
+    },
+    {
+      "subtask": "EAUDIT25c",
+      "source_id": "MD-4-SymplecticEulerCharacteristic",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT25/c",
+      "total_bytes": 77593,
+      "manifest_sha256": "7c19a8cebe1524674435025ae34f45067c7aadd04067f42ed77058b56682e8dc"
+    },
+    {
+      "subtask": "EAUDIT25d",
+      "source_id": "MD-4-VerletStability",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT25/d",
+      "total_bytes": 125917,
+      "manifest_sha256": "b905a8b8c6e9a84efcda145355ace01cd7b1e67f6deb22cb369040ff888dddf6"
+    },
+    {
+      "subtask": "EAUDIT25e",
+      "source_id": "MD-4-OscillatorSpectrum",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT25/e",
+      "total_bytes": 78164,
+      "manifest_sha256": "5f5dab96e578a828439ff76f72a7b009bd42ab3be99658875a69671f759c5916"
+    },
+    {
+      "subtask": "EAUDIT25f",
+      "source_id": "MD-4-SymplecticEulerRoots",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT25/f",
+      "total_bytes": 78617,
+      "manifest_sha256": "94c5f9cdd2cc42ab6fe9d99461b20091a84115702b771d5bdf83019d41e47d9e"
+    },
+    {
+      "subtask": "EAUDIT25g",
+      "source_id": "MD-4-SymplecticEulerUnitRoots",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT25/g",
+      "total_bytes": 77527,
+      "manifest_sha256": "98eb7eac0556f1adf2558aa04bc2cfa7548a590e2dacdbf66abf8d97cc107762"
+    },
+    {
+      "subtask": "EAUDIT25h",
+      "source_id": "MD-4-SymplecticEulerStability",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT25/h",
+      "total_bytes": 85458,
+      "manifest_sha256": "5c0535aef1534e06afbcca64679d05cdb578c5a07e7d45700e20a14e795f372e"
+    }
+  ]
+}

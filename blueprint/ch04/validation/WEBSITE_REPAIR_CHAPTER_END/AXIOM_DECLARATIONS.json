@@ -1,0 +1,1170 @@
+{
+  "MD.Ch04.linearField": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.eulerFactor": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.scalarEulerStable": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.eulerStabilityRegion": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.oscillatorMatrix": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.eulerImaginaryGrowth": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.eulerImaginaryGrowth_rate": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.symplecticEulerMatrix": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.symplecticEulerCharacteristic": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.prkThreshold": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.verletStability": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.verletStability_zero": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.symplecticEulerBoundaryPrinted": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.verletBoundaryPrinted": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.oscillatorSpectrum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.symplecticEulerRoots": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.symplecticEulerUnitRoots": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.symplecticEulerStability": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.symplecticEulerStability_complete": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.printedImplicitRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.actualMidpointRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.implicitFactor": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.implicitFactor_update": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.implicitModulus": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.implicitModulus_iterates": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.printedModifiedFrequency": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.modifiedFrequencyLimit": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.midpointFrequencyRatio": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.modifiedFrequencyRatio_limits": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.mechanicalMidpointRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.midpointElimination": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.midpointEulerHalfSteps": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.splitHamiltonian": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.fastVerlet": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.respa": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.respaStructure": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.slowMatrix": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.fastMatrix": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.impulseMatrix": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.impulseDet": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.impulseDet_eigenvalueProduct": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.impulseTrace": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.impulseTrace_eigenvalueSum": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.resonancePower": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.resonanceTaylor": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.resonanceInstability": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.resonanceInstability_realSpectrum": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.resonanceEigenPrinted": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.mollifiedAverage": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.mollifiedPotential": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.resonanceLinearRate": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.resonanceGrowth": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.mollifiedStructure": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.holonomicRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.timeConstraintDerivative": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedSolution": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedSolution_generalForce": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constraintSet": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constraintSet_regularLevel": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.cotangentSet": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constraintJacobian": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.combineConstraints": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.jacobianActualDerivative": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.jacobianActualDerivative_curve": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constraintDegrees": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.flexiblePendulumHamiltonian": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.restraintPotential": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.restraintForcePrinted": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedPendulum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constraintCurvature": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.reactionMultiplier": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.reactionBalance": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.gramPositive": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.gramInvertible": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.gramInvertible_multiplier": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.cotangentInvariant": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.reducedFieldRegularity": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.restrictedForm": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.restrictedForm_nondegenerate": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.variational": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.variational_constraints": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.hessianPullbackCancel": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.hessianPullbackCancel_time": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedFlowPullback": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.positionEulerPrinted": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.positionEulerRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.hiddenEulerError": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.projectionResidual": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.projectionEquation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.projectionResidual_elimination": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.projectionJacobian": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.projectionNewtonIncrement": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.newtonConstraint": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.newtonConstraintSequence": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.frozenNewtonConstraint": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.newtonQuadratic": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.frozenNewtonLinear": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.projectionScale": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.frozenGramPrinted": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.componentPrinted": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.componentConstraintStep": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.componentSweep": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.componentPrintedDelta": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.componentPrintedTrajectory": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.componentPrintedIteration": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.componentPrintedStop": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.projectedEulerPrinted": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.projectedEulerRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.lemma41": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.multiMomentumPullback": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.projectedEulerPullback": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.projectedEulerPullback_intermediate": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.cotangentMultiplier": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.cotangentMultiplier_hidden": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.cotangentProjection": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.cotangentProjection_gram": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.cotangentHidden": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.cotangentRegularity": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.cotangentPullback": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.gramProjectedEuler": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.gramProjectedEuler_general": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.shakePositionPrinted": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.shakePositionRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.shakeRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rattleRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedOrders": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedOrders_global": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedOrders_firstOrderSharp": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rattleSymplectic": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.staggeredConstraintRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.shakeRattlePositions": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.shakeElimination": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.shakePositionOrder": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.adjointEulerRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.adjointEuler_inverseRelation": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.adjointEulerLocalOrder": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedComposition": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedComposition_circleExample": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedComposition_noConstraints": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedCompositionOrder": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.momentumProjector": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.constrainedPotentialFlow": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.geodesicRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.massMetric": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.geodesicRelation_massMetric": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.mShakeIteration": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.settleRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.lincsInverse": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.lincsConvergence": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.waterPairPotential": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.totalMass": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.centerMass": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.relativePositions": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.relativeWeightedZero": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.kineticSplit": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.secondMoment": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rotationKinetic": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rotationTraceIdentity": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rotationSkew": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.skewMatrix": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.cross3": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.skewRepresentation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.crossMatrix": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidVelocity": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.inertiaTensor": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.crossIdentityFull": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rotationalEnergy": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.inertiaSkewIdentity": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.inertiaTracePrinted": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.inertiaTraceCorrected": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dipolarHamiltonian": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dipolarPairPotential": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dipolarPairPotential_particles": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dipolarSystemPotential": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dipolarRotationalPrinted": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidHamiltonian": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.secondMomentDiagonal": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rotationBodyEnergy": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dipolarConstraint": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dipolarPotentialSum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rotationTrajectory": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rotationDerivativePrinted": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidMatrixRelation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.angularMomentum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.bodyMomentum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.angularInertia": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.eulerRigidField": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.freeRigidSolution": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidInvariants": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidPoissonMatrix": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidBodyHamiltonian": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidPoissonMatrix_hamiltonian": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.poissonDegeneracy": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.axisRotation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.secondAxisPrinted": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.thirdAxisPrinted": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.principalAxisField": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.printedSpinAxis": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.printedSpinStep": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.axisFlow": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.spinPoisson": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidPoissonSkew": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidHamiltonianField": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidForce": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.matrixRot": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidTorque": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dlmPrinted": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dlmMassOnly": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.driftSpinCommute": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.driftSpinCommute_halves": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dlmStructure": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dlmPrintedStructure": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidSystemForce": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidSystemTorque": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidSystemKick": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidSystemDriftPrinted": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidSystemSpinPrinted": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dlmPrintedSystem": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.systemDriftSpinCommute": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.rigidSystemSymplectic": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.dlmPrintedSystemStructure": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "MD.Ch04.exactPlanarRotation": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

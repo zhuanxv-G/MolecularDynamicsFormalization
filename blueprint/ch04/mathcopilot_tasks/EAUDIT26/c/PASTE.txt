@@ -1,0 +1,79 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.1-ImplicitModulus；原PDF页映射=[164]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT26_review.json，对象含batch=EAUDIT26、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT26.md": "9748f42e72926a009c0d10d72dc9949d22914e0e4eb0390904519e4e27e381ed",
+  "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "EAUDIT26c_materials": "c9e1999f3b43b0dcf52c64814879b5135637affabc1a1fe849272f5a62d4a3f0",
+  "EAUDIT26c_PAGES.pdf": "ddd3456e00062f4e9cd461c6e9400ddcbe9de0338a3b4c16185f287e37531a0d"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.1-ImplicitModulus",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4.1",
+  "printed_page": "142",
+  "pdf_page": "164",
+  "statement_latex": "For all real $\\Omega$, we find\n\\[\\left|\\frac{1+ih\\Omega/2}{1-ih\\Omega/2}\\right|=1.\\]\nThis indicates that the Implicit Midpoint method has no stability threshold for the stepsize when solving a linear system!",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch04.implicitModulus",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "只保留本段纯虚线性振子对象；不扩成任意不稳定线性系统的有界性。",
+    "[EXTRA] 增加任意步长的标量迭代范数保持，准确对应当前线性振子模态；不扩大到任意线性系统。原模长证明保留。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT03_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:52:31.915585",
+      "before_sha256": "c387ecd515fe9fc15e624613052d82f8db93f0191f143eb7fff0a601f2805c3f",
+      "after_sha256": "c32ba6090fc753c66b44495b750f1006a56bcda0cba0ba8ec30fff80d72a9747",
+      "changed_fields": [],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem implicitModulus :
+  ∀ Ω h : ℝ, ‖MolecularDynamics.Chapter04Review.implicitFactor Ω h‖=1 := by
+  intro Ω h
+  rw [MolecularDynamics.Chapter04Review.implicitFactor,norm_div]
+  have he : (1+Complex.I*((h*Ω/2 : ℝ) : ℂ)) = star (1-Complex.I*((h*Ω/2 : ℝ) : ℂ)) := by simp
+  rw [he,norm_star]
+  apply div_self
+  intro hn
+  have hz := norm_eq_zero.mp hn
+  have hr := congrArg Complex.re hz
+  norm_num at hr
+
+theorem implicitModulus_iterates (Ω h : ℝ) (z : ℂ) (k : ℕ) :
+    ‖(MolecularDynamics.Chapter04Review.implicitFactor Ω h)^k*z‖=‖z‖ := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.implicitFactor
+```lean
+def implicitFactor (Ω h : ℝ) : ℂ :=
+  (1+Complex.I*(h*Ω/2 : ℝ))/(1-Complex.I*(h*Ω/2 : ℝ))
+```
+### 实际依赖 MD.Ch04.implicitFactor
+```lean
+def implicitFactor (Ω h : ℝ) : ℂ :=
+  (1+Complex.I*(h*Ω/2 : ℝ))/(1-Complex.I*(h*Ω/2 : ℝ))
+```

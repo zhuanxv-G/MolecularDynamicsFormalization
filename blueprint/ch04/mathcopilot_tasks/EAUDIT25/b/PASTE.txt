@@ -1,0 +1,96 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4-EulerImaginaryGrowth；原PDF页映射=[162]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT25_review.json，对象含batch=EAUDIT25、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT25.md": "3baae632f673025b9c93334034171016a5382aac6ab86e86e3bb26e10223746f",
+  "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "EAUDIT25b_materials": "e4fb4d62d3af68533fc9b39a6ccb8b8a882a6f66255cead3c22ed4bedcbd77f2",
+  "EAUDIT25b_PAGES.pdf": "6f95aca8b0b9a1cf6513e61abb0da46ee2b32aac37550a800bc4fe601db85615"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4-EulerImaginaryGrowth",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4",
+  "printed_page": "140",
+  "pdf_page": "162",
+  "statement_latex": "The eigenvalues are $\\pm i\\omega$. The stability condition always fails to hold and, for Euler’s method, $z_n$ grows exponentially rapidly away from the equilibrium point.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "原页从Ω改用ω；矩阵的完整±iΩ谱另列，不由增长结论替代。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.eulerImaginaryGrowth",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "h≠0、Ω≠0、复标量非零初值；只证明此线性振荡例，不声称所有非线性Hamiltonian平衡点都有纯虚谱。",
+    "[EXTRA] 保留已证趋无穷，并补精确指数率r>1和实际实振子Euler轨道的加权范数等式；矩阵完整复谱已由MD-4-OscillatorSpectrum单列承担，原ω=Ω。非零步长/频率为[EXTRA]资格，新结论暂sorry。"
+  ],
+  "statement_scope": "本条覆盖Euler的标量/实轨道指数增长；振子完整谱由MD-4-OscillatorSpectrum承担，未删原句。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT01_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:50:14.632895",
+      "before_sha256": "e38c2acd14c0910a188d09e1ce551823aa5a2deb9f4c7e8df81fc2d9339bb69d",
+      "after_sha256": "cd75303a71ce523965f1b6e04f2cea0852cc4e9be8e0b9887fbc7e0d39f302c3",
+      "changed_fields": [
+        "statement_scope"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH01_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT01/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem eulerImaginaryGrowth :
+  ∀ h Ω : ℝ, h ≠ 0 → Ω ≠ 0 → ∀ z : ℂ, z ≠ 0 →
+    Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.eulerFactor h (Complex.I*Ω))^k*z‖) atTop atTop := by
+  intro h Ω hh hΩ z hz
+  have hs : ‖MolecularDynamics.Chapter04Review.eulerFactor h (Complex.I*Ω)‖^2=1+(h*Ω)^2 := by
+    simp_all [MolecularDynamics.Chapter04Review.eulerFactor, Complex.sq_norm, Complex.normSq_apply]
+    ring
+  have hp : 0 < (h*Ω)^2 := sq_pos_of_ne_zero (mul_ne_zero hh hΩ)
+  have hg : 1 < ‖MolecularDynamics.Chapter04Review.eulerFactor h (Complex.I*Ω)‖ := by
+    nlinarith [norm_nonneg (MolecularDynamics.Chapter04Review.eulerFactor h (Complex.I*Ω))]
+  have ht := (tendsto_pow_atTop_atTop_of_one_lt hg).atTop_mul_const (norm_pos_iff.mpr hz)
+  simpa [norm_mul, norm_pow] using ht
+
+theorem eulerImaginaryGrowth_rate (h Ω : ℝ) (_hh : h ≠ 0) (_hΩ : Ω ≠ 0) :
+    let r := Real.sqrt (1+(h*Ω)^2)
+    1 < r ∧ (∀ (z : ℂ) (k : ℕ),
+      ‖(MolecularDynamics.Chapter04Review.eulerFactor h (Complex.I*Ω))^k*z‖=r^k*‖z‖) ∧
+    (∀ (v : Fin 2 → ℝ) (k : ℕ),
+      let w := (1+h • MolecularDynamics.Chapter04Review.oscillatorMatrix Ω)^k *ᵥ v
+      Real.sqrt (Ω^2*(w 0)^2+(w 1)^2)=
+        r^k*Real.sqrt (Ω^2*(v 0)^2+(v 1)^2)) := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.eulerFactor
+```lean
+def eulerFactor (h : ℝ) (rho : ℂ) : ℂ := 1 + (h : ℂ) * rho
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.oscillatorMatrix
+```lean
+def oscillatorMatrix (Ω : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![0,1; -Ω^2,0]
+```
+### 实际依赖 MD.Ch04.eulerFactor
+```lean
+def eulerFactor (h : ℝ) (rho : ℂ) : ℂ := 1 + (h : ℂ) * rho
+```
+### 实际依赖 MD.Ch04.oscillatorMatrix
+```lean
+def oscillatorMatrix (Ω : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := !![0,1; -Ω^2,0]
+```

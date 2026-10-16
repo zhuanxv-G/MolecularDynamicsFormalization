@@ -1,0 +1,119 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.4-KineticSplit；原PDF页映射=[189]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT39_review.json，对象含batch=EAUDIT39、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT39.md": "bc33409a60cf6a3341f08c8ac4487792d60cab32f6c100fe68c4082c940827c4",
+  "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "EAUDIT39d_materials": "3aa5c84cebf532aa7849d9d0495c8f2df4c99dc007b5a730faed6720e3cc5576",
+  "EAUDIT39d_PAGES.pdf": "f1219880c00a6167d11a6be101dc034b59bc8e5b86c18b247baf701b8716a3a6"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.4-KineticSplit",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4.4",
+  "printed_page": "167",
+  "pdf_page": "189",
+  "statement_latex": "Thus the kinetic energy becomes\n\\[K=\\frac12\\sum_{i=1}^Nm_i\\|\\dot q_{\\rm cm}\\|^2+\\sum_{i=1}^Nm_i\\dot q_{\\rm cm}\\cdot\\dot\\delta_i+\\frac12\\sum_{i=1}^Nm_i\\|\\dot\\delta_i\\|^2\n=\\frac M2\\|\\dot q_{\\rm cm}\\|^2+\\frac12\\sum_{i=1}^Nm_i\\|\\dot\\delta_i\\|^2,\\]\nwhere we have used the fact that $\\sum_{i=1}^Nm_i\\delta_i\\equiv0$, hence that the time derivative also vanishes, in order to remove the middle term.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "点号表示时间导数；M=∑_{i=1}^N m_i，∑m_i δ_i恒为零；原文将两项分别记为K_trans和K_rot。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.kineticSplit",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT17_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T19:01:02.573552",
+      "before_sha256": "b048541b91b64bb5a56898e8c3f13735551d3327565b17288a7ff170b375888a",
+      "after_sha256": "9933d7a2d5b8f2e8d377daa725c0f29f7cf05ba8ec7eee52409c5900d9ff0949",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem kineticSplit :
+  ∀ N (m : Fin N → ℝ) (v : MolecularDynamics.Chapter04Review.V) (w : Fin N → MolecularDynamics.Chapter04Review.V),
+  (∑ i, m i • w i)=0 →
+    (∑ i, m i*MolecularDynamics.Chapter04Review.dot (v+w i) (v+w i))/2=MolecularDynamics.Chapter04Review.totalMass m*MolecularDynamics.Chapter04Review.dot v v/2+(∑ i,m i*MolecularDynamics.Chapter04Review.dot (w i) (w i))/2 := by
+  intro N m v w hz
+  have h0 := congrFun hz 0
+  have h1 := congrFun hz 1
+  have h2 := congrFun hz 2
+  simp only [Finset.sum_apply,Pi.smul_apply,smul_eq_mul,Pi.zero_apply] at h0 h1 h2
+  have he : ∀ i, MolecularDynamics.Chapter04Review.dot (v+w i) (v+w i)=
+      MolecularDynamics.Chapter04Review.dot v v+2*MolecularDynamics.Chapter04Review.dot v (w i)+MolecularDynamics.Chapter04Review.dot (w i) (w i) := by
+    intro i
+    simp [MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three]
+    ring
+  have ht : ∀ a : Fin 3, (∑ i, m i*(v a*w i a))=v a*∑ i,m i*w i a := by
+    intro a
+    rw [Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro i hi
+    ring
+  have hc : ∑ i, m i*MolecularDynamics.Chapter04Review.dot v (w i)=0 := by
+    simp only [MolecularDynamics.Chapter04Review.dot,Fin.sum_univ_three,mul_add,Finset.sum_add_distrib]
+    rw [ht 0,ht 1,ht 2,h0,h1,h2]
+    ring
+  simp_rw [he,mul_add,Finset.sum_add_distrib]
+  rw [← Finset.sum_mul]
+  have hx : (∑ i, m i*(2*MolecularDynamics.Chapter04Review.dot v (w i)))=0 := by
+    rw [show (∑ i, m i*(2*MolecularDynamics.Chapter04Review.dot v (w i)))=2*∑ i,m i*MolecularDynamics.Chapter04Review.dot v (w i) by rw [Finset.mul_sum]; apply Finset.sum_congr rfl; intro i hi; ring,hc,mul_zero]
+  rw [hx]
+  simp [MolecularDynamics.Chapter04Review.totalMass]
+  ring
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.dot
+```lean
+def dot {n : ℕ} (u v : Q n) : ℝ := ∑ i, u i * v i
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.totalMass
+```lean
+def totalMass {N : ℕ} (m : Fin N → ℝ) : ℝ := ∑ i, m i
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.dot
+```lean
+def dot {n : ℕ} (u v : Q n) : ℝ := ∑ i, u i * v i
+```
+### 实际依赖 MD.Ch04.totalMass
+```lean
+def totalMass {N : ℕ} (m : Fin N → ℝ) : ℝ := ∑ i, m i
+```

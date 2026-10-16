@@ -1,0 +1,58 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT31",
+  "section": "4.3",
+  "source_ids": [
+    "MD-4.3-ReactionBalance",
+    "MD-4.3-GramPositive",
+    "MD-4.3-GramInvertible",
+    "MD-4.3-CotangentInvariant",
+    "MD-4.3-ReducedFieldRegularity"
+  ],
+  "reaudit_ids": [
+    "MD-4.3-ReactionBalance",
+    "MD-4.3-GramPositive",
+    "MD-4.3-GramInvertible",
+    "MD-4.3-CotangentInvariant",
+    "MD-4.3-ReducedFieldRegularity"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.3-ReactionBalance",
+      "prior_eaudit": "EAUDIT08",
+      "acceptance": "blueprint/ch04/validation/EAUDIT08/ACCEPTANCE.json",
+      "sha256": "066cc576d33bff05d2098735b9ec3a5b34a0bbce688cb6e2996b570f042114f5"
+    },
+    {
+      "source_id": "MD-4.3-GramPositive",
+      "prior_eaudit": "EAUDIT08",
+      "acceptance": "blueprint/ch04/validation/EAUDIT08/ACCEPTANCE.json",
+      "sha256": "066cc576d33bff05d2098735b9ec3a5b34a0bbce688cb6e2996b570f042114f5"
+    },
+    {
+      "source_id": "MD-4.3-GramInvertible",
+      "prior_eaudit": "EAUDIT08",
+      "acceptance": "blueprint/ch04/validation/EAUDIT08/ACCEPTANCE.json",
+      "sha256": "066cc576d33bff05d2098735b9ec3a5b34a0bbce688cb6e2996b570f042114f5"
+    },
+    {
+      "source_id": "MD-4.3-CotangentInvariant",
+      "prior_eaudit": "EAUDIT08",
+      "acceptance": "blueprint/ch04/validation/EAUDIT08/ACCEPTANCE.json",
+      "sha256": "066cc576d33bff05d2098735b9ec3a5b34a0bbce688cb6e2996b570f042114f5"
+    },
+    {
+      "source_id": "MD-4.3-ReducedFieldRegularity",
+      "prior_eaudit": "EAUDIT08",
+      "acceptance": "blueprint/ch04/validation/EAUDIT08/ACCEPTANCE.json",
+      "sha256": "066cc576d33bff05d2098735b9ec3a5b34a0bbce688cb6e2996b570f042114f5"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT31/INDEX.md"
+}

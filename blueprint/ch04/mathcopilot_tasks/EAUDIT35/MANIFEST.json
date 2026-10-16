@@ -1,0 +1,59 @@
+{
+  "eaudit": "EAUDIT35",
+  "input_sha256": {
+    "BATCH_EAUDIT35.md": "1341f0dfd0bef2c44c196c230e6e070f0cad8b51fe4cf7796b451999919891cb",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT35a",
+      "source_id": "MD-4.3.4-Lemma41",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT35/a",
+      "total_bytes": 109882,
+      "manifest_sha256": "4304615df3a2709aa15b00de73e784ca3bb37d193a580e88b8a0deb2b496e992"
+    },
+    {
+      "subtask": "EAUDIT35b",
+      "source_id": "MD-4.3.4-ProjectedEulerPullback",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT35/b",
+      "total_bytes": 96611,
+      "manifest_sha256": "4a76ee991859415f2ce242bdb9d373c93fb5b8c34279ac9af9840ee4ad005549"
+    },
+    {
+      "subtask": "EAUDIT35c",
+      "source_id": "MD-4.3.4-CotangentMultiplier",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT35/c",
+      "total_bytes": 104388,
+      "manifest_sha256": "c6e023886a26bd62cabe37d3c653413b365c8b7f3c8c1e03365b2c9efcf94517"
+    },
+    {
+      "subtask": "EAUDIT35d",
+      "source_id": "MD-4.3.4-CotangentProjection",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT35/d",
+      "total_bytes": 103344,
+      "manifest_sha256": "25a37fc2bf15b08c91c4972f2f090f6351461725364458a43a6a827283958c2c"
+    },
+    {
+      "subtask": "EAUDIT35e",
+      "source_id": "MD-4.3.4-CotangentRegularity",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT35/e",
+      "total_bytes": 91183,
+      "manifest_sha256": "a3674779d64f9f4a61fc3e152e4cb3ca39bf29304e30f9626bfe900f08fc7939"
+    },
+    {
+      "subtask": "EAUDIT35f",
+      "source_id": "MD-4.3.4-CotangentPullback",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT35/f",
+      "total_bytes": 93766,
+      "manifest_sha256": "2b39ada25cb175880645bca19a6ecc87e561ec1e8cce4a507fbab36e39626ad6"
+    },
+    {
+      "subtask": "EAUDIT35g",
+      "source_id": "MD-4.3.4-GramProjectedEuler",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT35/g",
+      "total_bytes": 100781,
+      "manifest_sha256": "94487a0ac79dc75f03798aaa95c90706d9be4cd364c257fdc45e6b568ee970fd"
+    }
+  ]
+}

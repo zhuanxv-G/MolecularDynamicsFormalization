@@ -1,0 +1,76 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.4.1-AxisRotation；原PDF页映射=[195, 196]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT44_review.json，对象含batch=EAUDIT44、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT44.md": "59a24e2220ec0338e6c661c209c7fbf7c63393b5551b52586b1800907f0d7b93",
+  "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "EAUDIT44a_materials": "7d6b4e4ee3d170c4114b6b69b97e0b65594077dae4a0b7dcf717390159cb29d8",
+  "EAUDIT44a_PAGES.pdf": "809d51c79c9f5c0160e4df767ec52fb32bdffd30ab43821af1dc9b68b0ad21ef"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.4.1-AxisRotation",
+  "kind": "definition",
+  "label": null,
+  "section": "4.4.1",
+  "printed_page": "173–174",
+  "pdf_page": "195–196",
+  "statement_latex": "Each of these is, it turns out, easily integrated as a planar rotation (see Exercise 7). The notation $\\Theta^x(\\phi)$ refers to a rotation around the x-axis by an angle $\\phi$, that is\n\\[\\Theta^x(\\phi)=\\begin{bmatrix}1&0&0\\\\0&\\cos(\\phi)&-\\sin(\\phi)\\\\0&\\sin(\\phi)&\\cos(\\phi)\\end{bmatrix},\\]\nwith corresponding formulae for $\\Theta^y$ and $\\Theta^z$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "右手主动轴旋转；原书使用上标Θ^x、Θ^y、Θ^z；Fin 3的0,1,2对应书1,2,3。",
+    "平面旋转句在§4.4.1 PDF195；旋转矩阵定义在§4.4.2 PDF196。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.axisRotation",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT22_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T19:06:47.837950",
+      "before_sha256": "67600283bd49520a46abeda6d1244110a66a8489e81de7ef7db957c0bf3e5836",
+      "after_sha256": "f5d416463e8e975f69206a07ef3ee92a15b062d7c1c9c9bbe275e0fee86d2c3d",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT22/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def axisRotation (i : Fin 3) (φ : ℝ) : MolecularDynamics.Chapter04Review.Mat3 :=
+  if i=0 then !![1,0,0; 0,Real.cos φ,-Real.sin φ; 0,Real.sin φ,Real.cos φ]
+  else if i=1 then !![Real.cos φ,0,Real.sin φ; 0,1,0; -Real.sin φ,0,Real.cos φ]
+  else !![Real.cos φ,-Real.sin φ,0; Real.sin φ,Real.cos φ,0; 0,0,1]
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MD.Ch04.axisRotation
+```lean
+def axisRotation (i : Fin 3) (φ : ℝ) : MolecularDynamics.Chapter04Review.Mat3 :=
+  if i=0 then !![1,0,0; 0,Real.cos φ,-Real.sin φ; 0,Real.sin φ,Real.cos φ]
+  else if i=1 then !![Real.cos φ,0,Real.sin φ; 0,1,0; -Real.sin φ,0,Real.cos φ]
+  else !![Real.cos φ,-Real.sin φ,0; Real.sin φ,Real.cos φ,0; 0,0,1]
+```

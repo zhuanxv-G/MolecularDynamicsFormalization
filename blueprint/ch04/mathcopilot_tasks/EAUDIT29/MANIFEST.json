@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT29",
+  "input_sha256": {
+    "BATCH_EAUDIT29.md": "7930c1e09066e2d8ce830955621796a2ce5a5d743e9a5f4fc9249f0d2a55f77f",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT29a",
+      "source_id": "MD-4.2.2-MollifiedPotential",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT29/a",
+      "total_bytes": 103432,
+      "manifest_sha256": "82e44c8330848b4c92ed7d324d4ec67b058738862a924f42637803b1b405f8ba"
+    }
+  ]
+}

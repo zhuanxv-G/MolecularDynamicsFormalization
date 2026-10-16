@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT31",
+  "input_sha256": {
+    "BATCH_EAUDIT31.md": "f54d1d24f66da7b973f7a12ff997546ccafd8131447ee5f6772fbe3b819ebec3",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT31a",
+      "source_id": "MD-4.3-ReactionBalance",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT31/a",
+      "total_bytes": 96687,
+      "manifest_sha256": "12f9e0e80eaf8503f001c1666ff9773e4db4dadfd65f30fc67df2c54990d6dcf"
+    },
+    {
+      "subtask": "EAUDIT31b",
+      "source_id": "MD-4.3-GramPositive",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT31/b",
+      "total_bytes": 95157,
+      "manifest_sha256": "0ffbdf67e2a89ad0da1db1c28480ef7cc92259e71fef1333ee1e3254841e0ef8"
+    },
+    {
+      "subtask": "EAUDIT31c",
+      "source_id": "MD-4.3-GramInvertible",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT31/c",
+      "total_bytes": 99147,
+      "manifest_sha256": "cdaa1456bce0b0056a3a8273ee7627456ab6c3ac686e5e1c2c09b17ed0512097"
+    },
+    {
+      "subtask": "EAUDIT31d",
+      "source_id": "MD-4.3-CotangentInvariant",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT31/d",
+      "total_bytes": 98171,
+      "manifest_sha256": "32bc044d7b8bd47cd7f5619e69b00d2c37e6a0afc4eea8f8d4c64afd359ff598"
+    },
+    {
+      "subtask": "EAUDIT31e",
+      "source_id": "MD-4.3-ReducedFieldRegularity",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT31/e",
+      "total_bytes": 98752,
+      "manifest_sha256": "d2ee0a5bab1bd041d607514527365375b5f4796d0236b95bbd73ac47340bffa6"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "eaudit": "EAUDIT29",
+  "source_id": "MD-4.2.2-MollifiedPotential",
+  "input_sha256": {
+    "BATCH_EAUDIT29.md": "7930c1e09066e2d8ce830955621796a2ce5a5d743e9a5f4fc9249f0d2a55f77f",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+    "EAUDIT29a_materials": "df0f4d5219a01a171600903a448d001c70b96a053930cf7bd4f9730a13f6f408",
+    "EAUDIT29a_PAGES.pdf": "f4f9ac2e206ca4239f45c561eb5fc9591eae896db5caf247142bf313faeb441e"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    171
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "045f0f9fc1b60d088991fb69e5ad6350cc82ac3e326f17b61bd02213c59bdfb5",
+  "source_block_sha256": "7a639dfabaaaa5022aefe6a96444e2ff6727fd9e04bf66baabcd9879ca365539",
+  "source_declarations": [
+    "mollifiedPotential"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "mollifiedPotential",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "7a639dfabaaaa5022aefe6a96444e2ff6727fd9e04bf66baabcd9879ca365539"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT29_review.json",
+  "total_task_bytes": 103432
+}

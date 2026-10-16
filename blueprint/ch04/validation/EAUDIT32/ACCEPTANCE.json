@@ -1,0 +1,42 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT32",
+  "section": "4.3.1",
+  "source_ids": [
+    "MD-4.3.1-RestrictedForm",
+    "MD-4.3.1-VariationalFormula",
+    "MD-4.3.1-HessianPullbackCancel"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.1-RestrictedForm",
+    "MD-4.3.1-VariationalFormula",
+    "MD-4.3.1-HessianPullbackCancel"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.3.1-RestrictedForm",
+      "prior_eaudit": "EAUDIT09",
+      "acceptance": "blueprint/ch04/validation/EAUDIT09/ACCEPTANCE.json",
+      "sha256": "ab1da457b24404034e7697993ec06e5a6020c43ff9713c9bf8d68e28fb8f0745"
+    },
+    {
+      "source_id": "MD-4.3.1-VariationalFormula",
+      "prior_eaudit": "EAUDIT09",
+      "acceptance": "blueprint/ch04/validation/EAUDIT09/ACCEPTANCE.json",
+      "sha256": "ab1da457b24404034e7697993ec06e5a6020c43ff9713c9bf8d68e28fb8f0745"
+    },
+    {
+      "source_id": "MD-4.3.1-HessianPullbackCancel",
+      "prior_eaudit": "EAUDIT09",
+      "acceptance": "blueprint/ch04/validation/EAUDIT09/ACCEPTANCE.json",
+      "sha256": "ab1da457b24404034e7697993ec06e5a6020c43ff9713c9bf8d68e28fb8f0745"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT32/INDEX.md"
+}

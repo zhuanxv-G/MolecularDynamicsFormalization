@@ -1,0 +1,61 @@
+{
+  "eaudit": "EAUDIT28",
+  "source_id": "MD-4.2.1-ResonanceGrowth",
+  "input_sha256": {
+    "BATCH_EAUDIT28.md": "8a9410c0ae4ac32384956f3f7cd4d5f7fcac90ac0eb06747c8e03aad98e79d68",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+    "EAUDIT28b_materials": "b641fdb6326fc4bfac124c782aa89a422fed4aef912de528abddaa9da57be066",
+    "EAUDIT28b_PAGES.pdf": "114f2ec98bb8ceea194b60b24d306ba143e71cef05f04d9c16a02e4c3654f5ed"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    169
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "cbcde6e125399777ce7744171a7fb824e7f0254b4deeb05a4e0936c2c1d96236",
+  "source_block_sha256": "36f1f2d7d3beeea070d92a2a61e78e64727835b1384d62e8eef55bc7b25a2970",
+  "source_declarations": [
+    "resonanceGrowth"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.fastMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "0d473ad72b0101a09508ad66db6100ec9461a6e110f8769e3f3b351bc6b86fdc"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.impulseMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "fc6183f60f03decac9b20d341f629e72be3ba6febac4387f76c902130c508756"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.slowMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "4e0bb16f3b5c7b6c1aced7417d0dbab8ca882c12d7f7517d82e8666b1d1c78eb"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "fastMatrix",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "c06170015d63d707e282e34df9135f293ba5d6173fbec92449ed05547085d7d9"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "impulseMatrix",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "64842efb9c63fea33a0ec905f5f73ca3e9eaddf19da2d68f650e7ddaa93372d3"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "slowMatrix",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "4e0bb16f3b5c7b6c1aced7417d0dbab8ca882c12d7f7517d82e8666b1d1c78eb"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT28_review.json",
+  "total_task_bytes": 150365
+}

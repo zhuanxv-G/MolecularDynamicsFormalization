@@ -1,0 +1,55 @@
+{
+  "eaudit": "EAUDIT43",
+  "source_id": "MD-4.4.1-AngularMomentum",
+  "input_sha256": {
+    "BATCH_EAUDIT43.md": "737edcda68abd86c5643e67155d706c8f06774384ed72955434f7f8eece4e042",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+    "EAUDIT43a_materials": "77ae250582582d6ef9bf3a9a4e422d742c511771b7c99ac75966029f67b6a449",
+    "EAUDIT43a_PAGES.pdf": "c703fecc788997c44a2ad36a3aa11cc168c8537dba3f962442edfc6cb27bb04d"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    193
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "c1aab2653a2cfa0b51cda8b819a57c336e6590969070ad626fe29a612a8d4f49",
+  "source_block_sha256": "692942caaa9748abc706f8212beddd6e8c5518a18f3587d66d0867036c29a1ae",
+  "source_declarations": [
+    "angularMomentum"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.cross3",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "482e275d45f901379b4e5bc7b76d0c76d5a6d4e033a454340d968594bd131931"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "V",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "angularMomentum",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "692942caaa9748abc706f8212beddd6e8c5518a18f3587d66d0867036c29a1ae"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "cross3",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "0a5cca048815d451f60fad8066cd7ce02646180304182fb2b95e13a5462cfa50"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT43_review.json",
+  "total_task_bytes": 88995
+}

@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT25",
+  "source_id": "MD-4-SymplecticEulerUnitRoots",
+  "input_sha256": {
+    "BATCH_EAUDIT25.md": "3baae632f673025b9c93334034171016a5382aac6ab86e86e3bb26e10223746f",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+    "EAUDIT25g_materials": "171e95b0905a8c9c200a65d105d32d6a2d9dfc13619af9da5e5fd136fed25786",
+    "EAUDIT25g_PAGES.pdf": "6f95aca8b0b9a1cf6513e61abb0da46ee2b32aac37550a800bc4fe601db85615"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    162
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "0fa1e4adf5897189ca1169f0e31f1007b932d6713d5600817b42832ef1ce6b2b",
+  "source_block_sha256": "b134dc18e1bfbcb5a7b8b6418c60557fa578b3a50f25dd1f35b830abfe982afa",
+  "source_declarations": [
+    "symplecticEulerUnitRoots"
+  ],
+  "dependency_excerpts": [],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT25_review.json",
+  "total_task_bytes": 77527
+}

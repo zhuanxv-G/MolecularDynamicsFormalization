@@ -1,0 +1,34 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT44",
+  "section": "4.4.1",
+  "source_ids": [
+    "MD-4.4.1-AxisRotation",
+    "MD-4.4.1-PrincipalAxisField"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.1-AxisRotation",
+    "MD-4.4.1-PrincipalAxisField"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.4.1-AxisRotation",
+      "prior_eaudit": "EAUDIT22",
+      "acceptance": "blueprint/ch04/validation/EAUDIT22/ACCEPTANCE.json",
+      "sha256": "517a975327a1734abdeeb9ca24d09e8741b78bf37e313c6cbe18c7e8f0d3b243"
+    },
+    {
+      "source_id": "MD-4.4.1-PrincipalAxisField",
+      "prior_eaudit": "EAUDIT22",
+      "acceptance": "blueprint/ch04/validation/EAUDIT22/ACCEPTANCE.json",
+      "sha256": "517a975327a1734abdeeb9ca24d09e8741b78bf37e313c6cbe18c7e8f0d3b243"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT44/INDEX.md"
+}

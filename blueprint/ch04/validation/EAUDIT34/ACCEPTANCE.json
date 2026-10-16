@@ -1,0 +1,42 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT34",
+  "section": "4.3.3",
+  "source_ids": [
+    "MD-4.3.3-ComponentPrinted",
+    "MD-4.3.3-ComponentConstraintStep",
+    "MD-4.3.3-ComponentSweep"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.3-ComponentPrinted",
+    "MD-4.3.3-ComponentConstraintStep",
+    "MD-4.3.3-ComponentSweep"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.3.3-ComponentPrinted",
+      "prior_eaudit": "EAUDIT12",
+      "acceptance": "blueprint/ch04/validation/EAUDIT12/ACCEPTANCE.json",
+      "sha256": "27f3482138d5c164ea5665ca4ca491dc28a51fcaff27c9e1b54d6bcc579a7495"
+    },
+    {
+      "source_id": "MD-4.3.3-ComponentConstraintStep",
+      "prior_eaudit": "EAUDIT12",
+      "acceptance": "blueprint/ch04/validation/EAUDIT12/ACCEPTANCE.json",
+      "sha256": "27f3482138d5c164ea5665ca4ca491dc28a51fcaff27c9e1b54d6bcc579a7495"
+    },
+    {
+      "source_id": "MD-4.3.3-ComponentSweep",
+      "prior_eaudit": "EAUDIT12",
+      "acceptance": "blueprint/ch04/validation/EAUDIT12/ACCEPTANCE.json",
+      "sha256": "27f3482138d5c164ea5665ca4ca491dc28a51fcaff27c9e1b54d6bcc579a7495"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT34/INDEX.md"
+}

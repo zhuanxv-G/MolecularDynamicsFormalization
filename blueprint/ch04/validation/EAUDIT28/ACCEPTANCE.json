@@ -1,0 +1,34 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT28",
+  "section": "4.2.1",
+  "source_ids": [
+    "MD-4.2.1-ResonanceInstability",
+    "MD-4.2.1-ResonanceGrowth"
+  ],
+  "reaudit_ids": [
+    "MD-4.2.1-ResonanceInstability",
+    "MD-4.2.1-ResonanceGrowth"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.2.1-ResonanceInstability",
+      "prior_eaudit": "EAUDIT05",
+      "acceptance": "blueprint/ch04/validation/EAUDIT05/ACCEPTANCE.json",
+      "sha256": "031a3dcfacd45d4b10865d36f78203445123294b49470cb124ffbbd7f3fa5ae3"
+    },
+    {
+      "source_id": "MD-4.2.1-ResonanceGrowth",
+      "prior_eaudit": "EAUDIT05",
+      "acceptance": "blueprint/ch04/validation/EAUDIT05/ACCEPTANCE.json",
+      "sha256": "031a3dcfacd45d4b10865d36f78203445123294b49470cb124ffbbd7f3fa5ae3"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT28/INDEX.md"
+}

@@ -1,0 +1,73 @@
+{
+  "eaudit": "EAUDIT31",
+  "source_id": "MD-4.3-ReducedFieldRegularity",
+  "input_sha256": {
+    "BATCH_EAUDIT31.md": "f54d1d24f66da7b973f7a12ff997546ccafd8131447ee5f6772fbe3b819ebec3",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+    "EAUDIT31e_materials": "7441f3c520e801ee7df2a99e876f8dd688c8ecc4502b9ac286cd4fcc24a3b507",
+    "EAUDIT31e_PAGES.pdf": "e89721099a30b5ae2285ff33ed8f91a16a1e36c4e0b7f3b9a72e9afaaa3b3001"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    175
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "43e7dffa43976e337f8ff2bcbb9fb6ba49d20be61a3126cee72f65050a7b0a21",
+  "source_block_sha256": "6829af4aa92f4711f10e04eddd4095bb95a74b15f38c19e9a1f3e61eb0e0dfda",
+  "source_declarations": [
+    "reducedFieldRegularity"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedReactionRegularity.lean",
+      "name": "textbookConstrainedPhaseVectorField",
+      "file_sha256": "a552a5d4469975d129720c14ec90bdf14743ae3494440952f0d1a79c8ba212ac",
+      "excerpt_sha256": "fd40c0790fdc9f6a5f4ed29294de1e8004958762f47a54a3f4c13539ca585b87"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedReaction.lean",
+      "name": "textbookConstrainedReactionMultiplier",
+      "file_sha256": "0c6b2231827c5d5493751eea65c67f7aeaed5dd511e5bca2f1bb533598e53789",
+      "excerpt_sha256": "4c098d46a566eaa7cea8265004a6f811bb0204f83c65edf2d10f5b1d34a177e5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedReaction.lean",
+      "name": "textbookConstraintCurvature",
+      "file_sha256": "0c6b2231827c5d5493751eea65c67f7aeaed5dd511e5bca2f1bb533598e53789",
+      "excerpt_sha256": "221e918cc4812b05f61a8e9808ecbe226b291802ba2669726730ad1adbc3c454"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "name": "textbookConstraintGradient",
+      "file_sha256": "890274c6144406ad066b0a624cf08e3b95995c17b495545de8c3c05f260d4e44",
+      "excerpt_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "name": "textbookConstraintGram",
+      "file_sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce",
+      "excerpt_sha256": "f9d0691a77a4664150d234c00a3129e9c83be39d8b1787031a5684ce26cba140"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "name": "textbookConstraintJacobian",
+      "file_sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce",
+      "excerpt_sha256": "8cf31fc6e8fc4d97e435434cd3ff311cd4bdc6e77b6c39dac71331c66249f03a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "name": "textbookInverseMassMatrix",
+      "file_sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce",
+      "excerpt_sha256": "9e7434aa6e315ddbe11e2a45e46a9d927661975aa91274386af7c31412a7c330"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "name": "textbookPotentialForce",
+      "file_sha256": "454a76bcd3ab735b842444c571e4c6dde6c4b9646ad89f78a545891ecf652b61",
+      "excerpt_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT31_review.json",
+  "total_task_bytes": 98752
+}

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint/ch01/CheckAxioms.lean"
+  ],
+  "exit_code": 15,
+  "input_sha256": "f0747959c1216932c7a100486cdb627ff3da60319bc40414161961d8103e60d5",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

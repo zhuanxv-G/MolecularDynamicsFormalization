@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT30",
+  "source_id": "MD-4.3-ConstrainedPendulum",
+  "input_sha256": {
+    "BATCH_EAUDIT30.md": "c3abe5e1370ab25f6276e4e14e1ad39d32ac2eed2f8f97b8293718d4a11b45d8",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+    "EAUDIT30g_materials": "2aeef3e6a75adae0eb91fdb1294d3ebebabc7cef1922f29404828003d3153312",
+    "EAUDIT30g_PAGES.pdf": "e6d368e5ba44be82105f6f6c188dff5837f2800cddbcf9e0b4e5cbc7c12e9ab7"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    173
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "7d7d8370a8306691f45bc8f27edd6ac70ce74eee39bb6f7989638eaab5d6fbde",
+  "source_block_sha256": "c275e55d4e44b170f9aa63eebd8700df29fd72e03975252f45f5232991ecc864",
+  "source_declarations": [
+    "constrainedPendulum"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "constrainedPendulum",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "c275e55d4e44b170f9aa63eebd8700df29fd72e03975252f45f5232991ecc864"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT30_review.json",
+  "total_task_bytes": 131744
+}

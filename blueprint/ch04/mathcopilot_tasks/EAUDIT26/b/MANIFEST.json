@@ -1,0 +1,32 @@
+{
+  "eaudit": "EAUDIT26",
+  "source_id": "MD-4.1-ImplicitFactor",
+  "input_sha256": {
+    "BATCH_EAUDIT26.md": "9748f42e72926a009c0d10d72dc9949d22914e0e4eb0390904519e4e27e381ed",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+    "EAUDIT26b_materials": "2b81dace981087fd11b5f2fc4105d44a82abe5c8d47acb86267338a7fb4d28df",
+    "EAUDIT26b_PAGES.pdf": "ddd3456e00062f4e9cd461c6e9400ddcbe9de0338a3b4c16185f287e37531a0d"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    164
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "fbf5063e8dd6fc834834c10bb6e67b359e48b5ecd486d15d8b9e868731a18285",
+  "source_block_sha256": "3b8b91de288d02c43d1d4919f40ba314bba2dca54f68e93415d125e939c612ba",
+  "source_declarations": [
+    "implicitFactor",
+    "implicitFactor_update"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "implicitFactor",
+      "file_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+      "excerpt_sha256": "d9d832e64c8fd7e95b1ef56e4db0959bb2032e82cdb926cac765b30b10075255"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT26_review.json",
+  "total_task_bytes": 76974
+}

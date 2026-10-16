@@ -1,0 +1,60 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4-EulerFactor；原PDF页映射=[161]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT25_review.json，对象含batch=EAUDIT25、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT25.md": "3baae632f673025b9c93334034171016a5382aac6ab86e86e3bb26e10223746f",
+  "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "EAUDIT25a_materials": "3a9bd627f5c22234a297675b29d96d7bdfb11002097e073b9819836d9f7bcdec",
+  "EAUDIT25a_PAGES.pdf": "d7ce7e64bd0cad21810da9d6c4d863ecf7f5940bbfc8183b02545185428fa885"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4-EulerFactor",
+  "kind": "definition",
+  "label": null,
+  "section": "4",
+  "printed_page": "139",
+  "pdf_page": "161",
+  "statement_latex": "Here $\\lambda$, hence $u$ may in general be complex. Then one applies the numerical method directly to the scalar equation. For example Euler’s method yields\n\\[u_{n+1}=(1+h\\lambda)u_n.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "标量连续方程u′=λu，h实数；迭代因子1+hλ。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.eulerFactor",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT01_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:50:14.632895",
+      "before_sha256": "3f56776b4edb0eac94b200e044683d6f274d0e3a17ea0a6cdb7b6a466fa92e1a",
+      "after_sha256": "7514951db15bc3bd244b66a94298fe22ee922267b1575cd9916fc56ad79958cf",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH01_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT01/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def eulerFactor (h : ℝ) (rho : ℂ) : ℂ := 1 + (h : ℂ) * rho
+```
+### 实际依赖 MD.Ch04.eulerFactor
+```lean
+def eulerFactor (h : ℝ) (rho : ℂ) : ℂ := 1 + (h : ℂ) * rho
+```

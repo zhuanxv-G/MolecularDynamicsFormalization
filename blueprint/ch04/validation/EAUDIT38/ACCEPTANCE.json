@@ -1,0 +1,34 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT38",
+  "section": "4.3.6",
+  "source_ids": [
+    "MD-4.3.6-LINCSInverse",
+    "MD-4.3.6-LINCSConvergence"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.6-LINCSInverse",
+    "MD-4.3.6-LINCSConvergence"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.3.6-LINCSInverse",
+      "prior_eaudit": "EAUDIT16",
+      "acceptance": "blueprint/ch04/validation/EAUDIT16/ACCEPTANCE.json",
+      "sha256": "88be77f28ef892cf0488ff2742b6ed9a62d09ba3121d0ef2a4c3c2ef16dbe547"
+    },
+    {
+      "source_id": "MD-4.3.6-LINCSConvergence",
+      "prior_eaudit": "EAUDIT16",
+      "acceptance": "blueprint/ch04/validation/EAUDIT16/ACCEPTANCE.json",
+      "sha256": "88be77f28ef892cf0488ff2742b6ed9a62d09ba3121d0ef2a4c3c2ef16dbe547"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT38/INDEX.md"
+}

@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT38",
+  "input_sha256": {
+    "BATCH_EAUDIT38.md": "9133d7b56fac36f4a22ed994da08e58148a5c2f7f970e6aa52095dc259233401",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT38a",
+      "source_id": "MD-4.3.6-LINCSInverse",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT38/a",
+      "total_bytes": 75108,
+      "manifest_sha256": "f5f23135c82ce45c3da0ad16402a52b249dd8f498b56c926d5f9ab950d8f86df"
+    },
+    {
+      "subtask": "EAUDIT38b",
+      "source_id": "MD-4.3.6-LINCSConvergence",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT38/b",
+      "total_bytes": 75632,
+      "manifest_sha256": "76846ec9f7f5ee30a3a56cd19b53506f5d1320565f400da7e65e6b24c2e9c8fa"
+    }
+  ]
+}

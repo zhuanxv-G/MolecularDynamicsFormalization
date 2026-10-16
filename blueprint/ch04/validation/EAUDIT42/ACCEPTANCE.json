@@ -1,0 +1,26 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT42",
+  "section": "4.4",
+  "source_ids": [
+    "MD-4.4-RigidMatrixRelation"
+  ],
+  "reaudit_ids": [
+    "MD-4.4-RigidMatrixRelation"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.4-RigidMatrixRelation",
+      "prior_eaudit": "EAUDIT20",
+      "acceptance": "blueprint/ch04/validation/EAUDIT20/ACCEPTANCE.json",
+      "sha256": "e62d4483dfffb25433b0ab6bf0bdf20bc4c82718a68e12fbc948dd68617a5288"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT42/INDEX.md"
+}

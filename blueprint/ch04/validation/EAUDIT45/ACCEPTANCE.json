@@ -1,0 +1,66 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT45",
+  "section": "4.4.2",
+  "source_ids": [
+    "MD-4.4.2-RigidForce",
+    "MD-4.4.2-RigidTorque",
+    "MD-4.4.2-DLMPrinted",
+    "MD-4.4.2-DriftSpinCommute",
+    "MD-4.4.2-DLMPrintedStructure",
+    "MD-4.4.2-RigidSystemForce"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.2-RigidForce",
+    "MD-4.4.2-RigidTorque",
+    "MD-4.4.2-DLMPrinted",
+    "MD-4.4.2-DriftSpinCommute",
+    "MD-4.4.2-DLMPrintedStructure",
+    "MD-4.4.2-RigidSystemForce"
+  ],
+  "human_ids": [],
+  "lean_sha256": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "source_sha256": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.4.2-RigidForce",
+      "prior_eaudit": "EAUDIT23",
+      "acceptance": "blueprint/ch04/validation/EAUDIT23/ACCEPTANCE.json",
+      "sha256": "4a342c146dfc2cf6a7134144a591a0b79a8dc91039597bcdb447beb8a0a2747d"
+    },
+    {
+      "source_id": "MD-4.4.2-RigidTorque",
+      "prior_eaudit": "EAUDIT23",
+      "acceptance": "blueprint/ch04/validation/EAUDIT23/ACCEPTANCE.json",
+      "sha256": "4a342c146dfc2cf6a7134144a591a0b79a8dc91039597bcdb447beb8a0a2747d"
+    },
+    {
+      "source_id": "MD-4.4.2-DLMPrinted",
+      "prior_eaudit": "EAUDIT23",
+      "acceptance": "blueprint/ch04/validation/EAUDIT23/ACCEPTANCE.json",
+      "sha256": "4a342c146dfc2cf6a7134144a591a0b79a8dc91039597bcdb447beb8a0a2747d"
+    },
+    {
+      "source_id": "MD-4.4.2-DriftSpinCommute",
+      "prior_eaudit": "EAUDIT23",
+      "acceptance": "blueprint/ch04/validation/EAUDIT23/ACCEPTANCE.json",
+      "sha256": "4a342c146dfc2cf6a7134144a591a0b79a8dc91039597bcdb447beb8a0a2747d"
+    },
+    {
+      "source_id": "MD-4.4.2-DLMPrintedStructure",
+      "prior_eaudit": "EAUDIT23",
+      "acceptance": "blueprint/ch04/validation/EAUDIT23/ACCEPTANCE.json",
+      "sha256": "4a342c146dfc2cf6a7134144a591a0b79a8dc91039597bcdb447beb8a0a2747d"
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemForce",
+      "prior_eaudit": "EAUDIT23",
+      "acceptance": "blueprint/ch04/validation/EAUDIT23/ACCEPTANCE.json",
+      "sha256": "4a342c146dfc2cf6a7134144a591a0b79a8dc91039597bcdb447beb8a0a2747d"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT45/INDEX.md"
+}

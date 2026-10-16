@@ -1,0 +1,84 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.4-RotationTrajectory；原PDF页映射=[190]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT41_review.json，对象含batch=EAUDIT41、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT41.md": "ef73bb51e57d412522ef03133c32bd60463136df0ec8cf80cfb1f40254bb61cd",
+  "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+  "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89",
+  "EAUDIT41h_materials": "e4fb9241f46d63f4dcd9faa899a5df82cd79c56e9a07203cb0b7658deb802d79",
+  "EAUDIT41h_PAGES.pdf": "75c541d7aa9b9af38cd09fcfbb93cf2b444349f7efab0dfc6c13ce4581d4410b"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.4-RotationTrajectory",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4.4",
+  "printed_page": "168",
+  "pdf_page": "190",
+  "statement_latex": "$\\delta_i(t)=\\Theta(t)\\delta_i(0)$, see Fig. 4.7, thus we have\n\\[K_{\\rm rot}=\\frac12\\sum_{i=1}^N m_i\\delta_i(0)^T\\dot\\Theta^T\\dot\\Theta\\delta_i(0).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "δ_i(t)为相对质心的位置，δ_i(0)为参考构形；Θ(t)为3×3正交方向矩阵，m_i为各粒子质量，dotΘ为时间导数。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.rotationTrajectory",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅δ_i(t)=Θ(t)δ_i(0)的真实导数辅助；原段落旋转动能有限和及trace等价由MD-4.4-RotationTraceIdentity承担。"
+  ],
+  "statement_scope": "仅δ_i(t)=Θ(t)δ_i(0)的真实导数辅助；原段落旋转动能有限和及trace等价由MD-4.4-RotationTraceIdentity承担。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT20_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T19:04:11.964235",
+      "before_sha256": "7891f694c7c894b513cb1c2d42c2248951f436beba14c299ef1086a8bb5fa65f",
+      "after_sha256": "cb836426bafa8d6c344a9da79b2f35bcb7a0d4e8aeca77236a0e334cb7553b7b",
+      "changed_fields": [
+        "statement_latex",
+        "context_notation",
+        "statement_scope"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem rotationTrajectory : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (d : MolecularDynamics.Chapter04Review.Mat3) (δ : MolecularDynamics.Chapter04Review.V) t,
+  HasDerivAt Θ d t → HasDerivAt (fun s => Θ s *ᵥ δ) (d *ᵥ δ) t := by
+  intro Θ d δ t hd
+  have he : ∀ i, HasDerivAt (fun s => ∑ j, Θ s i j*δ j) (∑ j,d i j*δ j) t := by
+    intro i
+    apply HasDerivAt.fun_sum
+    intro j hj
+    exact (hasDerivAt_pi.mp (hasDerivAt_pi.mp hd i) j).mul_const (δ j)
+  exact hasDerivAt_pi.mpr he
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```

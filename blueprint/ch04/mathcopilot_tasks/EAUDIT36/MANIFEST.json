@@ -1,0 +1,24 @@
+{
+  "eaudit": "EAUDIT36",
+  "input_sha256": {
+    "BATCH_EAUDIT36.md": "85272db90622fb58287d2e13b7a489183505cc3f6ee57c64274c431eba9770f3",
+    "Blueprint/Ch04.lean": "36c130286099fbf24cbc0ec09f597cf6876a6095a7f53da0bb17fbd00488720b",
+    "blueprint/ch04/ch04_source.json": "7463d079f6099c2e69ba53ef1728dc9f9531e6975bd05dcab3887b332e45ee89"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT36a",
+      "source_id": "MD-4.3.5-ConstrainedOrders",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT36/a",
+      "total_bytes": 132520,
+      "manifest_sha256": "a5f69c6406df974658e8014d9f1ebd6255babc92392c955f0fb0ac7812c3ce63"
+    },
+    {
+      "subtask": "EAUDIT36b",
+      "source_id": "MD-4.3.5-RATTLESymplectic",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT36/b",
+      "total_bytes": 114174,
+      "manifest_sha256": "fec471b99a3c0ddb4352ed8bd9d3d839274b3dae620404d43d2b909835a5020a"
+    }
+  ]
+}
