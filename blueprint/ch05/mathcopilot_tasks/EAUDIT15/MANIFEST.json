@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT15",
+  "input_sha256": {
+    "BATCH_EAUDIT15.md": "1f4a0436539178a702a065694b2999d7b35b344c49b04581d17ed4058ca424e4",
+    "Blueprint/Ch05.lean": "a101cbc5aa200e0dc4e902f9e6ed3f511dbe1517088c2db78c7cc4c5d84f645f",
+    "blueprint/ch05/ch05_source.json": "94966b62e35d7f4a29f3879e278c60efab224cfccc5ac0b50fa876992a89edac"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT15a",
+      "source_id": "MD-5.3.2-WeakStationary",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT15/a",
+      "total_bytes": 102731,
+      "manifest_sha256": "266185e24583f175b7281c58f9737ac803394a32b327605d88cebcf19d57b5eb"
+    }
+  ]
+}

@@ -72,7 +72,7 @@
 | MD-5.3.1-DiracEvaluates | 189/210 | PASS | 待复审 / EAUDIT07 | self-contained |
 | MD-5.3.1-GaussianDeltaProbability | 189/210 | PASS | 待复审 / EAUDIT07 | self-contained |
 | MD-5.3.1-GaussianDeltaWeak | 189/210 | PASS | 待复审 / EAUDIT07 | self-contained |
-| MD-5.3.2-WeakStationary | 189–190/210–211 | PASS | 待复审 / EAUDIT08 | self-contained |
+| MD-5.3.2-WeakStationary | 189–190/210–211 | PASS | 待复审 / EAUDIT15 | self-contained |
 | MD-5.3.2-EnsembleAverage | 190/211 | PASS | 待复审 / EAUDIT08 | self-contained |
 | MD-5.3.2-ConvergenceHeuristic | 190/211 | NEEDS_HUMAN | 待导师 / EAUDIT08（原返回FAIL保留） | incomplete |
 | MD-5.3.2-HamiltonianEnergyIntegral | 190/211 | PASS | 待复审 / EAUDIT08 | incomplete |
@@ -3617,7 +3617,7 @@ def weakStationary {n : ℕ}
 
 本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
 
-网站审计：**待复审 / EAUDIT08**。原文JSON：CORRECTED；未冻结。
+网站审计：**待复审 / EAUDIT15**。原文JSON：CORRECTED；未冻结。
 
 本轮依补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学含义：EuclideanSpace ℝ (Fin n) 是欧氏 ℝⁿ，volume 是标准 Lebesgue 测度，积分是 Bochner 积分（不可积时为 0），受限测度、可测性、可积性、紧支撑、光滑性和极限均按标准含义解释；不在 Ch05_deps.txt 寻找 Mathlib 定义体，不因其未收录而判材料不足。本次仅使用与 input_sha256 一致的三个附件；不使用其他旧 Ch0x.lean 或 ch0x_source.json。项目自定义已核对 Chapter05/ReviewDefinitions 分段的 E、testSpace、lie、weakStationary：E n=EuclideanSpace ℝ (Fin n)，testSpace 是满足 C∞ 与紧支撑的实值函数子类型，lie f φ z=(fderiv ℝ φ z)(f z)。Ch05.lean:698–699 对所有这些 φ 同时要求 Lie 导数对 μ 可积和积分为零。这就是 L_f^†μ=0 的分布测试函数条件，对普通概率密度与 Dirac 型概率测度均适用。[EXTRA] 可积性使零配对成为实际可定义的有限积分，不会因不可积积分总化为 0 而误判；测度表达对应源文的 nonsmooth distributions，扩域合理。本定义是弱方程谓词，概率资格应由其使用处另行给出；它没有宣称任意满足谓词的 μ 都是概率测度。若 μ 来自受限域 D，应按全空间受限测度的分布方程理解，边界贡献包含在分布导数中，不能将之替换为任意 D 内部的经典零导数方程。对象、测试函数量词和零配对结论忠实；PASS。该条为 def，无 sorry；本批此条无 [ERRATUM?] 标注。
 
