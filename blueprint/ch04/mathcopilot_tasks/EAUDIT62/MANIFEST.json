@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT62",
+  "input_sha256": {
+    "BATCH_EAUDIT62.md": "d970e0d6bed048da8bae75c91a5c79e90b4bd958cf7127e0ae2da4032ddaabcf",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT62a",
+      "source_id": "MD-4.4-SkewMatrix",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT62/a",
+      "total_bytes": 90452,
+      "manifest_sha256": "f05272a7ff02ed5c506068ae74ae8e704ba8c99d0962cdec0231fca0d5a46924"
+    },
+    {
+      "subtask": "EAUDIT62b",
+      "source_id": "MD-4.4-CrossProduct",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT62/b",
+      "total_bytes": 89516,
+      "manifest_sha256": "49f40166177c99b3bb3096738771452168d01e3802c98678cba53cef9af30c91"
+    },
+    {
+      "subtask": "EAUDIT62c",
+      "source_id": "MD-4.4-SkewRepresentation",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT62/c",
+      "total_bytes": 91211,
+      "manifest_sha256": "e2ab8bc7261f424caa1541e147896def23c522f9198179a69eeb1abfe1e7daae"
+    },
+    {
+      "subtask": "EAUDIT62d",
+      "source_id": "MD-4.4-CrossMatrix",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT62/d",
+      "total_bytes": 91855,
+      "manifest_sha256": "53bb021935706fd23d4e72d020df067b7381d71ac814039b9ddf3a23d0e7d412"
+    },
+    {
+      "subtask": "EAUDIT62e",
+      "source_id": "MD-4.4-RigidVelocity",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT62/e",
+      "total_bytes": 92943,
+      "manifest_sha256": "ee2c1d8594779e686fd0e295fd9efa26787df0ec1bf9643805ab7c683999e949"
+    },
+    {
+      "subtask": "EAUDIT62f",
+      "source_id": "MD-4.4-InertiaTensor",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT62/f",
+      "total_bytes": 93544,
+      "manifest_sha256": "6b7c6edbb52be8a0d8005b396c38c74f20378894fc5f9c0c89be603cbf3ace13"
+    },
+    {
+      "subtask": "EAUDIT62g",
+      "source_id": "MD-4.4-RotationalEnergy",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT62/g",
+      "total_bytes": 92018,
+      "manifest_sha256": "897286a298ba320f04d9e9e25b676f003c7434faca77600f6f4e9e29124317f8"
+    },
+    {
+      "subtask": "EAUDIT62h",
+      "source_id": "MD-4.4-InertiaTraceCorrected",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT62/h",
+      "total_bytes": 95568,
+      "manifest_sha256": "682ea3f327b95df5dd3a970b69dca7c7e922026f7bd7c97334fbb6c89a9be855"
+    }
+  ]
+}

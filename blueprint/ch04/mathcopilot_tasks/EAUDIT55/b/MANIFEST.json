@@ -1,0 +1,98 @@
+{
+  "eaudit": "EAUDIT55",
+  "source_id": "MD-4.3.2-ProjectionJacobian",
+  "input_sha256": {
+    "BATCH_EAUDIT55.md": "880770a4d88edf1adb1f51365aa6c97a93204ece9412d3a37af7fe457e28f12b",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+    "EAUDIT55b_materials": "542b3adb2e3086fabb950714bb2ed6bc5411ae3052d9e732baaff753c7616ce8",
+    "EAUDIT55b_PAGES.pdf": "77d9fdcc94a3478a21eed7240d822a6d063b124e6bf548ffee6478b27fffa7e4"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    179
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "f204c9a3cdd585d9d6bbc2b8f6b339da3611defe9ff519327273abafc9af8abd",
+  "source_block_sha256": "7aa5e512f9bc9afd80efedbb5d9447203aa6b02e3a87a060a9c50c508f8ce580",
+  "source_declarations": [
+    "projectionJacobian",
+    "projectionNewtonIncrement"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.invMass",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "invMass",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "6bc06c3aeca6611a169a58248159d183a674fdbf2371ea2a292ab8cbcc48b361"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "projectionJacobian",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "77b38957fafef6c8777ec345ab159b0b0d3f031a9ce803317d99ab6c121ca6c9"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "projectionNewtonIncrement",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "d161e5b349d49765f038006aaa2c5e804a57a3054b0a06ea13e893a957e2af70"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "projectionResidual",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "b95035b14226d0c683ddc169850d6e7f327933f99af384df7965f935d81ff5d5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ConstrainedProjection.lean",
+      "name": "textbookConstraintGradient",
+      "file_sha256": "890274c6144406ad066b0a624cf08e3b95995c17b495545de8c3c05f260d4e44",
+      "excerpt_sha256": "e1f5ed01ff43a9173f48ebe5a6e40782d892ab711fe20ef1699864f0c46f851b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "name": "textbookConstraintJacobian",
+      "file_sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce",
+      "excerpt_sha256": "8cf31fc6e8fc4d97e435434cd3ff311cd4bdc6e77b6c39dac71331c66249f03a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/CotangentProjection.lean",
+      "name": "textbookInverseMassMatrix",
+      "file_sha256": "42a0e5999b51755cf07ad36018d414330aebb99e1d3fc1438485f826186bdbce",
+      "excerpt_sha256": "9e7434aa6e315ddbe11e2a45e46a9d927661975aa91274386af7c31412a7c330"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT55_review.json",
+  "total_task_bytes": 96218
+}

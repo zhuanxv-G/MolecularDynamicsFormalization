@@ -1,0 +1,50 @@
+{
+  "eaudit": "EAUDIT47",
+  "source_id": "MD-4-VerletStability",
+  "input_sha256": {
+    "BATCH_EAUDIT47.md": "eb38f5af1f83efd5aa447835197e7bcebc5e58008a94dd3691a82aad4649a5fc",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+    "EAUDIT47d_materials": "a5982bb8e0653f76b048b6f1e273dd12a66bb63c9808182f167a673a966ba329",
+    "EAUDIT47d_PAGES.pdf": "8005b85584d526c3413cea51c8dcf1d02bd6f03f74b28084cf4114d9c3559298"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    163
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "fba078c6968ed0f99b0eea37ffe1384cfc42c7d78ef82c709d327e1cd0eb911a",
+  "source_block_sha256": "10c4d5a369eef785078c4e4fc38b480db9d995a5782a4470acbd3caa797802b7",
+  "source_declarations": [
+    "verletStability",
+    "verletStability_zero"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.matrixStable",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "dfbed950168921b593ebe039dc22139bf0ae582c770a62d29984251b5ac71af3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.verletMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "4e9fc4cbc25adb9ad1b2edf9385c1df342cda16290b266ee31306eacbfc2d899"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "matrixStable",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "dfbed950168921b593ebe039dc22139bf0ae582c770a62d29984251b5ac71af3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "verletMatrix",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "4e9fc4cbc25adb9ad1b2edf9385c1df342cda16290b266ee31306eacbfc2d899"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT47_review.json",
+  "total_task_bytes": 125917
+}

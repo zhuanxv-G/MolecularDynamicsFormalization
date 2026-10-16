@@ -1,0 +1,116 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.3-CotangentInvariant；原PDF页映射=[175]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT53_review.json，对象含batch=EAUDIT53、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT53.md": "1c71dfbbffb57aad5c7bfcb882607fdc209c38fab61cec4e1609d66ad56560e5",
+  "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+  "EAUDIT53c_materials": "0b9abfe1e74121fe2e4f2c313a854ef25ccc9133f695e2dc4e1d31ed28b81718",
+  "EAUDIT53c_PAGES.pdf": "e89721099a30b5ae2285ff33ed8f91a16a1e36c4e0b7f3b9a72e9afaaa3b3001"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.3-CotangentInvariant",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4.3",
+  "printed_page": "153",
+  "pdf_page": "175",
+  "statement_latex": "Reinserting this expression for $\\lambda$ into (4.8) then gives a system of ordinary differential equations whose solutions, starting from a point on $T^*\\mathcal M$, will remain on $T^*\\mathcal M$ for all time. The co-tangent bundle becomes an invariant manifold of this ODE system. $\\lambda$ is defined at any time by the physical variables $q$ and $p$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "$q,p\\in\\mathbb R^{N_c}$ 为位置和动量；$M$ 为质量矩阵，$F(q)=-\\nabla U(q)$（PDF174/印刷152，(4.7)–(4.8)）。",
+    "$g:\\mathbb R^{N_c}\\to\\mathbb R^l$ 汇集约束，$g\\prime(q)$ 为其 Jacobian，$\\lambda\\in\\mathbb R^l$ 为 Lagrange 乘子（PDF174/印刷152）。",
+    "$\\varphi_k=p^TM^{-1}\\nabla^2g_k(q)M^{-1}p$，且 $g\\prime(q)M^{-1}[F-g\\prime(q)^T\\lambda]+\\varphi\\equiv0$（PDF175/印刷153，页首两个展示公式）。",
+    "$\\mathcal M=\\{q:g(q)=0\\}$；$T^*\\mathcal M=\\{(q,p):g(q)=0,\\ g\\prime(q)M^{-1}p=0\\}$（PDF174/印刷152）。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.cotangentInvariant",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookConstrainedODE_cotangent_invariant_of_mass_and_independence"
+  ],
+  "extra_assumptions": [
+    "给定闭区间实际ODE解、C²约束、正质量及沿解梯度独立；“for all time”仅在实际解定义区间，不声称任意长时域解存在。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT08_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:58:11.914481",
+      "before_sha256": "049cf0767639149d90853ff884d15d87decbf2022c451755baf9a867740d6af2",
+      "after_sha256": "1a2c6c94c1523b46378e9d4f290a863d3e0e17ba72f30dafd2e77b0b9243a71f",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH09_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem cotangentInvariant {Nc Mc : ℕ}
+    (m : Fin Nc → ℝ) (γ : Fin Mc → (Fin Nc → ℝ) → ℝ)
+    (F : (Fin Nc → ℝ) → Fin Nc → ℝ) (q p : ℝ → Fin Nc → ℝ) (τ : ℝ)
+    (hm : ∀ i, 0 < m i) (hγ : ∀ j, ContDiff ℝ 2 (γ j))
+    (hind : ∀ t ∈ Icc 0 τ, LinearIndependent ℝ (fun j => textbookConstraintGradient (γ j) (q t)))
+    (hq : ∀ t ∈ Icc 0 τ, HasDerivWithinAt q (textbookInverseMassMatrix m *ᵥ p t) (Icc 0 τ) t)
+    (hp : ∀ t ∈ Icc 0 τ, HasDerivWithinAt p
+      (F (q t) - (textbookConstraintJacobian γ (q t))ᵀ *ᵥ
+        textbookConstrainedReactionMultiplier m γ F (q t) (p t)) (Icc 0 τ) t)
+    (hpos₀ : ∀ j, γ j (q 0) = 0)
+    (hhidden₀ : ∀ j, (fderiv ℝ (γ j) (q 0)) (textbookInverseMassMatrix m *ᵥ p 0) = 0) :
+    ∀ t ∈ Icc 0 τ, ∀ j, γ j (q t) = 0 ∧
+      (fderiv ℝ (γ j) (q t)) (textbookInverseMassMatrix m *ᵥ p t) = 0 := by
+  apply MolecularDynamics.textbookConstrainedODE_cotangent_invariant_of_mass_and_independence <;> assumption
+```
+### 实际依赖 MolecularDynamics.textbookConstrainedReactionMultiplier
+```lean
+noncomputable def textbookConstrainedReactionMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (F : (Fin Nc → ℝ) → Fin Nc → ℝ)
+    (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
+  (textbookConstraintGram m γ q)⁻¹ *ᵥ
+    (textbookConstraintJacobian γ q *ᵥ (textbookInverseMassMatrix m *ᵥ F q) +
+      textbookConstraintCurvature m γ q p)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintCurvature
+```lean
+noncomputable def textbookConstraintCurvature {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
+  fun j => (fderiv ℝ (fderiv ℝ (γ j)) q)
+    (textbookInverseMassMatrix m *ᵥ p) (textbookInverseMassMatrix m *ᵥ p)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGram
+```lean
+noncomputable def textbookConstraintGram {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Matrix (Fin Mc) (Fin Mc) ℝ :=
+  textbookConstraintJacobian γ q * textbookInverseMassMatrix m *
+    (textbookConstraintJacobian γ q)ᵀ
+```
+### 实际依赖 MolecularDynamics.textbookConstraintJacobian
+```lean
+noncomputable def textbookConstraintJacobian {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Matrix (Fin Mc) (Fin Nc) ℝ :=
+  fun j i => textbookConstraintGradient (γ j) q i
+```
+### 实际依赖 MolecularDynamics.textbookInverseMassMatrix
+```lean
+noncomputable def textbookInverseMassMatrix {Nc : ℕ} (m : Fin Nc → ℝ) :
+    Matrix (Fin Nc) (Fin Nc) ℝ := Matrix.diagonal fun i => (m i)⁻¹
+```

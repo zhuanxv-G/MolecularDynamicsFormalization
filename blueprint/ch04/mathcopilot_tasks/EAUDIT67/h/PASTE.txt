@@ -1,0 +1,143 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.4.2-RigidSystemKick；原PDF页映射=[196]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT67_review.json，对象含batch=EAUDIT67、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT67.md": "ac433b6615e87e6513c0868237da9ed1d2df9dc890de7cf5e02a4088079e4037",
+  "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+  "EAUDIT67h_materials": "7ac84317173e5a5b8e04f1a70ca85f691f4e96bb80b4a3c677c2b0d714d539a3",
+  "EAUDIT67h_PAGES.pdf": "542aeeb0a5d55750dd691f4145116004567b0c7bb0ff32365b276650a2609850"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.4.2-RigidSystemKick",
+  "kind": "definition",
+  "label": null,
+  "section": "4.4.2",
+  "printed_page": "174",
+  "pdf_page": "196",
+  "statement_latex": "“Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k;\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "参数h表示本次kick长度；整体算法以h/2调用，全部力/力矩从同一当前状态同时计算。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.rigidSystemKick",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT24_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T19:09:07.422469",
+      "before_sha256": "ccf409f66e1144ce95c4cb8f8eb3ee6965f5ec31d6c576566c93478b76e856a8",
+      "after_sha256": "c2128a8a8805e081d2e9f876c411cc3c04e9e84154aed3d6a27fc833761909f6",
+      "changed_fields": [
+        "statement_latex"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH28_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT24/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def rigidSystemKick {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ)
+    (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => (((z k).1.1,(z k).1.2+h • rigidSystemForce U z k),
+    ((z k).2.1+h • rigidSystemTorque U z k,(z k).2.2))
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Mat3
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.matrixGrad
+```lean
+def matrixGrad (U : Mat3 → ℝ) (Θ : Mat3) : Mat3 :=
+  fun i j => (fderiv ℝ U Θ) (Pi.single i (Pi.single j 1))
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.matrixRot
+```lean
+def matrixRot (A : Mat3) : V := ![A 2 1-A 1 2,A 0 2-A 2 0,A 1 0-A 0 1]
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.V
+```lean
+abbrev V := Fin 3 → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.matrixGrad
+```lean
+def matrixGrad (U : Mat3 → ℝ) (Θ : Mat3) : Mat3 :=
+  fun i j => (fderiv ℝ U Θ) (Pi.single i (Pi.single j 1))
+```
+### 实际依赖 MD.Ch04.matrixRot
+```lean
+def matrixRot (A : MolecularDynamics.Chapter04Review.Mat3) : MolecularDynamics.Chapter04Review.V := ![A 2 1-A 1 2,A 0 2-A 2 0,A 1 0-A 0 1]
+```
+### 实际依赖 MD.Ch04.rigidSystemForce
+```lean
+def rigidSystemForce {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ)
+    (z : rigidSystemState N) (k : Fin N) : MolecularDynamics.Chapter04Review.V :=
+  -MolecularDynamics.Chapter04Review.grad (fun x => U (Function.update (fun j => (z j).1.1) k x) (fun j => (z j).2.2)) (z k).1.1
+```
+### 实际依赖 MD.Ch04.rigidSystemKick
+```lean
+def rigidSystemKick {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ)
+    (z : rigidSystemState N) : rigidSystemState N :=
+  fun k => (((z k).1.1,(z k).1.2+h • rigidSystemForce U z k),
+    ((z k).2.1+h • rigidSystemTorque U z k,(z k).2.2))
+```
+### 实际依赖 MD.Ch04.rigidSystemTorque
+```lean
+def rigidSystemTorque {N : ℕ}
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ)
+    (z : rigidSystemState N) (k : Fin N) : MolecularDynamics.Chapter04Review.V :=
+  -MolecularDynamics.Chapter04Review.matrixRot ((z k).2.2ᵀ * MolecularDynamics.Chapter04Review.matrixGrad
+    (fun A => U (fun j => (z j).1.1) (Function.update (fun j => (z j).2.2) k A)) (z k).2.2)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```

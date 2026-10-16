@@ -1,0 +1,37 @@
+{
+  "eaudit": "EAUDIT52",
+  "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+  "input_sha256": {
+    "BATCH_EAUDIT52.md": "1a4ae670f2d9b76a65e4b6dd96ee6cb92e3ce9309965370a5b59390fec3574d3",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+    "EAUDIT52e_materials": "4f1da51dc36da85c7628ce69646f8a3e81d816752a16cc8356c0885444f7feae",
+    "EAUDIT52e_PAGES.pdf": "e20d5ed6a2a801e5b21bf9b9b99abaee32d883025a10d24ddb8bd8872b04d927"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    172
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "2bc8d61324a65816db5d9fe1e0e2f634f9917dede864b4c1cd6ddb3bcbeef639",
+  "source_block_sha256": "c56c831a5c18f9de398e7be25c649c50871cd4bf715294b067c3b136da782632",
+  "source_declarations": [
+    "flexiblePendulumHamiltonian"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "name": "Position",
+      "file_sha256": "bb1a15770c904a355f60f7ee76b55d7bff040d0e225c379c56b467f116c90588",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "flexiblePendulumHamiltonian",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "c56c831a5c18f9de398e7be25c649c50871cd4bf715294b067c3b136da782632"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT52_review.json",
+  "total_task_bytes": 79314
+}

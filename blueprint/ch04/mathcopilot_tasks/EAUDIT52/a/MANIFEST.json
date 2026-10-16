@@ -1,0 +1,49 @@
+{
+  "eaudit": "EAUDIT52",
+  "source_id": "MD-4.3-HolonomicRelation",
+  "input_sha256": {
+    "BATCH_EAUDIT52.md": "1a4ae670f2d9b76a65e4b6dd96ee6cb92e3ce9309965370a5b59390fec3574d3",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+    "EAUDIT52a_materials": "aef86cd47c02206ed9458cae0ae3768a83168fd860f8fc726be597a4273d35df",
+    "EAUDIT52a_PAGES.pdf": "e20d5ed6a2a801e5b21bf9b9b99abaee32d883025a10d24ddb8bd8872b04d927"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    172
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "01fd27d4d5964b4e67f4f3d01304d1292f334d962f81931ba4007454057fb3ff",
+  "source_block_sha256": "0fa4cca16676fd6a93cfb364fa06a0c4b15a535d5f7925ccc0194e32fbf5a353",
+  "source_declarations": [
+    "holonomicRelation"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter04Review.Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "name": "Q",
+      "file_sha256": "3cd988425b7a6ca8060f364f98ec63c8f10b650c49e4bd552d6c294db2cfaf39",
+      "excerpt_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "holonomicRelation",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "0fa4cca16676fd6a93cfb364fa06a0c4b15a535d5f7925ccc0194e32fbf5a353"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT52_review.json",
+  "total_task_bytes": 79957
+}

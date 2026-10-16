@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT64",
+  "input_sha256": {
+    "BATCH_EAUDIT64.md": "dd099720547df8778f265c3b982d24d119a5d5767f9132623097bc3a18229428",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT64a",
+      "source_id": "MD-4.4-RigidMatrixRelation",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT64/a",
+      "total_bytes": 94564,
+      "manifest_sha256": "c6337b8d55fa979171ac9078b6b60c91293d72657a51cf7042fa88678ae7fa2f"
+    }
+  ]
+}

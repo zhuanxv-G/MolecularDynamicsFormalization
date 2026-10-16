@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT54",
+  "input_sha256": {
+    "BATCH_EAUDIT54.md": "1647cee30abf76ed0e124771e94e0cdba0573adcead91537f5d602763d3cdbb4",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT54a",
+      "source_id": "MD-4.3.1-RestrictedForm",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT54/a",
+      "total_bytes": 100469,
+      "manifest_sha256": "b52ddc72a4b1f94096a06c86958c132aed32e402615484175f1a8bedf732305f"
+    },
+    {
+      "subtask": "EAUDIT54b",
+      "source_id": "MD-4.3.1-VariationalFormula",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT54/b",
+      "total_bytes": 84611,
+      "manifest_sha256": "af6322055a9ad4dd2a4fa7a3d6460640c1b474c1300901716530e65d080f7044"
+    },
+    {
+      "subtask": "EAUDIT54c",
+      "source_id": "MD-4.3.1-HessianPullbackCancel",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT54/c",
+      "total_bytes": 84067,
+      "manifest_sha256": "ae2307be18dcba33db059ce0505affc686cde6d067bdac1a31b29f5b65baf615"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT51",
+  "section": "4.2.2",
+  "source_ids": [
+    "MD-4.2.2-MollifiedPotential"
+  ],
+  "reaudit_ids": [
+    "MD-4.2.2-MollifiedPotential"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.2.2-MollifiedPotential",
+      "prior_eaudit": "EAUDIT29",
+      "acceptance": "blueprint/ch04/validation/EAUDIT29/ACCEPTANCE.json",
+      "sha256": "36008db62c12a8c669b8db583b977010a791c8fd82a0215d94ca6718a2bd9b3e"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT51/INDEX.md"
+}

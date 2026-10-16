@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT63",
+  "input_sha256": {
+    "BATCH_EAUDIT63.md": "257fcd22a3b167aa8cd2912e82198066b2fd478f57b3f9aac3c69e893f14b901",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT63a",
+      "source_id": "MD-4.4-DipolarHamiltonian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT63/a",
+      "total_bytes": 101243,
+      "manifest_sha256": "52b160e824c46082217467f3d5d3a32bd2aa8db0ba08dd3323c27a19674be42f"
+    },
+    {
+      "subtask": "EAUDIT63b",
+      "source_id": "MD-4.4-DipolarPairPotential",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT63/b",
+      "total_bytes": 96296,
+      "manifest_sha256": "1adaf2e9a0eb3f817c275f60a7a2ba5d66d0bed10a5248d349ddcc9ec56cd02e"
+    },
+    {
+      "subtask": "EAUDIT63c",
+      "source_id": "MD-4.4-RigidHamiltonian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT63/c",
+      "total_bytes": 93423,
+      "manifest_sha256": "7a28a0ca3961acde9ba5e5b0e9051e6d2c9406a5cb48cfeb40d30fe98f4be5c9"
+    },
+    {
+      "subtask": "EAUDIT63d",
+      "source_id": "MD-4.4-SecondMomentDiagonal",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT63/d",
+      "total_bytes": 149789,
+      "manifest_sha256": "babbe98dd40e034d10e547853c5eff03dac7803e85069724757cad9e4ba8b15b"
+    },
+    {
+      "subtask": "EAUDIT63e",
+      "source_id": "MD-4.4-RotationBodyEnergy",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT63/e",
+      "total_bytes": 99526,
+      "manifest_sha256": "ac19f6e4b79b4d93851e3c58b34e5fc6fd9e4159b310eacab46baf90830db165"
+    },
+    {
+      "subtask": "EAUDIT63f",
+      "source_id": "MD-4.4-DipolarConstraint",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT63/f",
+      "total_bytes": 91624,
+      "manifest_sha256": "77aa11db47be21e9abfe5d280d42dfa2779420e89820c95473383d8eed84a48f"
+    },
+    {
+      "subtask": "EAUDIT63g",
+      "source_id": "MD-4.4-DipolarPotentialSum",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT63/g",
+      "total_bytes": 94604,
+      "manifest_sha256": "851abf8a0df5f0f8018a9b1928f94b51fc6678256332a1a07784e5588f466e4e"
+    },
+    {
+      "subtask": "EAUDIT63h",
+      "source_id": "MD-4.4-RotationTrajectory",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT63/h",
+      "total_bytes": 147604,
+      "manifest_sha256": "80a8c50982a13b015ca3f3c90883f8152aed837b32663f64ef96209c7633c714"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT63",
+  "section": "4.4",
+  "source_ids": [
+    "MD-4.4-DipolarHamiltonian",
+    "MD-4.4-DipolarPairPotential",
+    "MD-4.4-RigidHamiltonian",
+    "MD-4.4-SecondMomentDiagonal",
+    "MD-4.4-RotationBodyEnergy",
+    "MD-4.4-DipolarConstraint",
+    "MD-4.4-DipolarPotentialSum",
+    "MD-4.4-RotationTrajectory"
+  ],
+  "reaudit_ids": [
+    "MD-4.4-DipolarHamiltonian",
+    "MD-4.4-DipolarPairPotential",
+    "MD-4.4-RigidHamiltonian",
+    "MD-4.4-SecondMomentDiagonal",
+    "MD-4.4-RotationBodyEnergy",
+    "MD-4.4-DipolarConstraint",
+    "MD-4.4-DipolarPotentialSum",
+    "MD-4.4-RotationTrajectory"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.4-DipolarHamiltonian",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch04/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "b17321adf253e8d583e73c8429c11780927d2532c46e981c547a5df4b3bc7952"
+    },
+    {
+      "source_id": "MD-4.4-DipolarPairPotential",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch04/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "b17321adf253e8d583e73c8429c11780927d2532c46e981c547a5df4b3bc7952"
+    },
+    {
+      "source_id": "MD-4.4-RigidHamiltonian",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch04/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "b17321adf253e8d583e73c8429c11780927d2532c46e981c547a5df4b3bc7952"
+    },
+    {
+      "source_id": "MD-4.4-SecondMomentDiagonal",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch04/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "b17321adf253e8d583e73c8429c11780927d2532c46e981c547a5df4b3bc7952"
+    },
+    {
+      "source_id": "MD-4.4-RotationBodyEnergy",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch04/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "b17321adf253e8d583e73c8429c11780927d2532c46e981c547a5df4b3bc7952"
+    },
+    {
+      "source_id": "MD-4.4-DipolarConstraint",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch04/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "b17321adf253e8d583e73c8429c11780927d2532c46e981c547a5df4b3bc7952"
+    },
+    {
+      "source_id": "MD-4.4-DipolarPotentialSum",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch04/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "b17321adf253e8d583e73c8429c11780927d2532c46e981c547a5df4b3bc7952"
+    },
+    {
+      "source_id": "MD-4.4-RotationTrajectory",
+      "prior_eaudit": "EAUDIT41",
+      "acceptance": "blueprint/ch04/validation/EAUDIT41/ACCEPTANCE.json",
+      "sha256": "b17321adf253e8d583e73c8429c11780927d2532c46e981c547a5df4b3bc7952"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT63/INDEX.md"
+}

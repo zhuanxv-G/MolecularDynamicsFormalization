@@ -1,0 +1,81 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4-SymplecticEulerUnitRoots；原PDF页映射=[162]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT47_review.json，对象含batch=EAUDIT47、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT47.md": "eb38f5af1f83efd5aa447835197e7bcebc5e58008a94dd3691a82aad4649a5fc",
+  "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+  "EAUDIT47g_materials": "171e95b0905a8c9c200a65d105d32d6a2d9dfc13619af9da5e5fd136fed25786",
+  "EAUDIT47g_PAGES.pdf": "6f95aca8b0b9a1cf6513e61abb0da46ee2b32aac37550a800bc4fe601db85615"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4-SymplecticEulerUnitRoots",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "4",
+  "printed_page": "140",
+  "pdf_page": "162",
+  "statement_latex": "Then we observe that for $h^2\\Omega^2\\le4$, they are complex and their squared magnitude is\n\\[|\\lambda_{1,2}|^2=\\left(1-\\frac{h^2\\Omega^2}{2}\\right)^2+\\frac14(4h^2\\Omega^2-h^4\\Omega^4)=1,\\]\nthus both eigenvalues lie on the unit circle in the complex plane as long as $h\\Omega\\le2$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "λ₁,₂ 指 PDF p.162 上方 Symplectic Euler 矩阵的特征值；平方条件 h²Ω²≤4 包括0和4两个重根端点。",
+    "原文 they are complex 在端点根为实数±1；只有0<h²Ω²<4时为非实复共轭根。原文末句 hΩ≤2 按正频率、正步长背景理解；任意实参数需|hΩ|≤2。",
+    "模平方公式为原页推导，不是独立完整证明；单位圆谱不等于幂有界。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.symplecticEulerUnitRoots",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "CORRECTED",
+  "repair_log": [
+    {
+      "stage": "EAUDIT02_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T12:51:09.667335",
+      "before_sha256": "f2cee3fa5c32f4de58e397e5accc8e89b02801cae69b83009c08284af5eb70ee",
+      "after_sha256": "9d4a11c940f8d874e01ec46641ad916b3f3cefd2f7dfe5743d1d2100f8f7a261",
+      "changed_fields": [
+        "context_notation"
+      ],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+theorem symplecticEulerUnitRoots :
+    ∀ Ω h : ℝ, ∀ ζ : ℂ, h^2*Ω^2 ≤ 4 →
+      ζ^2-(2-h^2*Ω^2 : ℝ)*ζ+1=0 → ‖ζ‖=1 := by
+  intro Ω h ζ ht he
+  have hr := congrArg Complex.re he
+  have hi := congrArg Complex.im he
+  simp [pow_two, Complex.mul_re, Complex.mul_im] at hr hi
+  have hz : (2*ζ.re-(2-h^2*Ω^2))*ζ.im=0 := by nlinarith [hi]
+  have hn : ζ.re^2+ζ.im^2=1 := by
+    rcases mul_eq_zero.mp hz with hz|hz
+    · nlinarith [hr]
+    · by_cases hpos : 0 ≤ ζ.re
+      · have hab : 0 ≤ h^2*Ω^2*ζ.re := mul_nonneg (mul_nonneg (sq_nonneg h) (sq_nonneg Ω)) hpos
+        have hs : (ζ.re-1)^2=0 := by nlinarith [hr,sq_nonneg (ζ.re-1)]
+        have hzre := sq_eq_zero_iff.mp hs
+        nlinarith
+      · have hab : 0 ≤ (4-h^2*Ω^2)*(-ζ.re) := mul_nonneg (by linarith) (by linarith)
+        have hs : (ζ.re+1)^2=0 := by nlinarith [hr,sq_nonneg (ζ.re+1)]
+        have hzre := sq_eq_zero_iff.mp hs
+        nlinarith
+  have hnorm : ‖ζ‖^2=1 := by
+    rw [Complex.sq_norm,Complex.normSq_apply]
+    nlinarith [hn]
+  nlinarith [norm_nonneg ζ]
+```

@@ -1,0 +1,82 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT47",
+  "section": "4",
+  "source_ids": [
+    "MD-4-EulerFactor",
+    "MD-4-EulerImaginaryGrowth",
+    "MD-4-SymplecticEulerCharacteristic",
+    "MD-4-VerletStability",
+    "MD-4-OscillatorSpectrum",
+    "MD-4-SymplecticEulerRoots",
+    "MD-4-SymplecticEulerUnitRoots",
+    "MD-4-SymplecticEulerStability"
+  ],
+  "reaudit_ids": [
+    "MD-4-EulerFactor",
+    "MD-4-EulerImaginaryGrowth",
+    "MD-4-SymplecticEulerCharacteristic",
+    "MD-4-VerletStability",
+    "MD-4-OscillatorSpectrum",
+    "MD-4-SymplecticEulerRoots",
+    "MD-4-SymplecticEulerUnitRoots",
+    "MD-4-SymplecticEulerStability"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4-EulerFactor",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch04/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "39698a31410316ab9de94b72718bc7cc74219b3df872be9938e85811a3052a14"
+    },
+    {
+      "source_id": "MD-4-EulerImaginaryGrowth",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch04/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "39698a31410316ab9de94b72718bc7cc74219b3df872be9938e85811a3052a14"
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerCharacteristic",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch04/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "39698a31410316ab9de94b72718bc7cc74219b3df872be9938e85811a3052a14"
+    },
+    {
+      "source_id": "MD-4-VerletStability",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch04/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "39698a31410316ab9de94b72718bc7cc74219b3df872be9938e85811a3052a14"
+    },
+    {
+      "source_id": "MD-4-OscillatorSpectrum",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch04/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "39698a31410316ab9de94b72718bc7cc74219b3df872be9938e85811a3052a14"
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerRoots",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch04/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "39698a31410316ab9de94b72718bc7cc74219b3df872be9938e85811a3052a14"
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerUnitRoots",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch04/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "39698a31410316ab9de94b72718bc7cc74219b3df872be9938e85811a3052a14"
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerStability",
+      "prior_eaudit": "EAUDIT25",
+      "acceptance": "blueprint/ch04/validation/EAUDIT25/ACCEPTANCE.json",
+      "sha256": "39698a31410316ab9de94b72718bc7cc74219b3df872be9938e85811a3052a14"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT47/INDEX.md"
+}

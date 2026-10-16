@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT47",
+  "source_id": "MD-4-EulerFactor",
+  "input_sha256": {
+    "BATCH_EAUDIT47.md": "eb38f5af1f83efd5aa447835197e7bcebc5e58008a94dd3691a82aad4649a5fc",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+    "EAUDIT47a_materials": "3a9bd627f5c22234a297675b29d96d7bdfb11002097e073b9819836d9f7bcdec",
+    "EAUDIT47a_PAGES.pdf": "d7ce7e64bd0cad21810da9d6c4d863ecf7f5940bbfc8183b02545185428fa885"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    161
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "3c41c1fffce2a40519ea9412340696139d9b10deb3fb68ef8c48bee2d85cdd05",
+  "source_block_sha256": "945ea42f3215592b72949d649a29895ead3dffa8d8f1eb1579fc65b319b273b2",
+  "source_declarations": [
+    "eulerFactor"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "eulerFactor",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "945ea42f3215592b72949d649a29895ead3dffa8d8f1eb1579fc65b319b273b2"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT47_review.json",
+  "total_task_bytes": 91928
+}

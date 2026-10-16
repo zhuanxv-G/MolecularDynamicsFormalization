@@ -1,0 +1,241 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-4.3.5.1-AdjointEuler；原PDF页映射=[185]。必须实际写入 /workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT59_review.json，对象含batch=EAUDIT59、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT59.md": "0a813d17fa00a9362dfbe1312ac37202290289b3a4ba71c212dc6c4eef99a150",
+  "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+  "EAUDIT59a_materials": "c45ed88516459cced5c934450a978fec5dace8e0e7663b38f4a839cde6c4c57d",
+  "EAUDIT59a_PAGES.pdf": "71c4618ec14366c698eec7d83bd3822ce2cf4925f9a450263967bb2753319ca7"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-4.3.5.1-AdjointEuler",
+  "kind": "definition",
+  "label": null,
+  "section": "4.3.5.1",
+  "printed_page": "163",
+  "pdf_page": "185",
+  "statement_latex": "Now replace $h$ by $-h$ and then swap $Q$ with $q$ and $P$ with $p$, resulting in\n\\[\\widehat P=p-hg'(q)^T\\lambda,\\quad Q=q+hM^{-1}\\widehat P,\\quad P=\\widehat P+hF(Q)-hg'(Q)^T\\mu,\\]\nwhere $\\lambda,\\mu$ are again defined by the constraint conditions. This defines the adjoint method, another first order method for the constrained system.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "真实末位置/隐藏约束；原正h、乘子吸收缩放须h≠0。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch04.adjointEulerRelation",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] 保留原三式；补非零h、两端余切域上的真实逆步关系等价（对应所选局部逆分支），及正质量/光滑分支上实际ODE的O(h²)局部误差。未把逆映射或误差结论作为资格。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT15_LOCAL_REPAIR",
+      "timestamp": "2026-10-15T18:58:18.044200",
+      "before_sha256": "5488f6a4d2f415b6e0fc2496bb528d8c0ad38845f40d55035c535e534d5556d5",
+      "after_sha256": "cc526a923d8775b287d6ac7c0f68312baf8b3db341de2f68370545a343b93488",
+      "changed_fields": [],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch04/mathcopilot_results/BATCH18_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def adjointEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (half : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  half=z.2-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m half ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+  out.2=half+h • F out.1-h • ((textbookConstraintJacobian g out.1)ᵀ *ᵥ μ) ∧
+  out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
+
+theorem adjointEuler_inverseRelation (n l : ℕ) (m : Fin n → ℝ)
+    (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (_hh : h ≠ 0)
+    (z out : MolecularDynamics.Chapter04Review.Z n)
+    (_hz : z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g)
+    (_hout : out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g) :
+    (∃ half rho μ, adjointEulerRelation m F g h z out half rho μ) ↔
+      ∃ pbar rho μ, MolecularDynamics.Chapter04Review.projectedEulerRelation m F g (-h) out z pbar rho μ := by
+  sorry
+
+theorem adjointEulerLocalOrder :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (z : MolecularDynamics.Chapter04Review.Z n) (Φ E A : ℝ → MolecularDynamics.Chapter04Review.Z n) (pE pR : ℝ → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoR μR : ℝ → MolecularDynamics.Chapter04Review.Q l),
+    (∀ i, 0 < m i) → ContDiff ℝ 4 U → (∀ j, ContDiff ℝ 4 (g j)) →
+    z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g → (textbookConstraintGram m g z.1).det ≠ 0 →
+    ContDiff ℝ 3 E → ContDiff ℝ 3 A → ContDiff ℝ 3 Φ → E 0=z → A 0=z → Φ 0=z →
+    ContDiff ℝ 2 rhoE → ContDiff ℝ 2 μE → ContDiff ℝ 2 rhoR → ContDiff ℝ 2 μR →
+    μE 0=0 → μR 0=0 →
+    (∃ δ > 0, ∀ h ∈ Ioo (-δ) δ,
+      MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h) (pE h) (rhoE h) (μE h) ∧
+      MolecularDynamics.Chapter04Review.adjointEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (A h) (pR h) (rhoR h) (μR h) ∧
+      HasDerivAt Φ (textbookConstrainedPhaseVectorField m g U (Φ h)) h) →
+    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ‖E h-Φ h‖ ≤ C*h^2 ∧ ‖A h-Φ h‖ ≤ C*h^2 := by
+  sorry
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.adjointEulerRelation
+```lean
+def adjointEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : Q n → Q n)
+    (g : Fin l → Q n → ℝ) (h : ℝ) (z out : Z n) (half : Q n) (rho μ : Q l) : Prop :=
+  half=z.2-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • invMass m half ∧ out.1 ∈ constraintSet g ∧
+  out.2=half+h • F out.1-h • ((textbookConstraintJacobian g out.1)ᵀ *ᵥ μ) ∧
+  out ∈ cotangentSet m g
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.constraintSet
+```lean
+def constraintSet {n l : ℕ} (g : Fin l → Q n → ℝ) : Set (Q n) := {q | ∀ j, g j q=0}
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.cotangentSet
+```lean
+def cotangentSet {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → Q n → ℝ) : Set (Z n) :=
+  {z | z.1 ∈ constraintSet g ∧ textbookConstraintJacobian g z.1 *ᵥ invMass m z.2=0}
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.invMass
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.projectedEulerRelation
+```lean
+def projectedEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : Q n → Q n)
+    (g : Fin l → Q n → ℝ) (h : ℝ) (z out : Z n) (pbar : Q n) (rho μ : Q l) : Prop :=
+  pbar=z.2+h • F z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • invMass m pbar ∧ out.1 ∈ constraintSet g ∧
+  out.2=pbar-(textbookConstraintJacobian g out.1)ᵀ *ᵥ μ ∧ out ∈ cotangentSet m g
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Q
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.Z
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+### 实际依赖 MD.Ch04.adjointEulerRelation
+```lean
+def adjointEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (half : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  half=z.2-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m half ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+  out.2=half+h • F out.1-h • ((textbookConstraintJacobian g out.1)ᵀ *ᵥ μ) ∧
+  out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
+```
+### 实际依赖 MD.Ch04.constraintSet
+```lean
+def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}
+```
+### 实际依赖 MD.Ch04.cotangentSet
+```lean
+def cotangentSet {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Z n) :=
+  {z | z.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧ textbookConstraintJacobian g z.1 *ᵥ MolecularDynamics.Chapter04Review.invMass m z.2=0}
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := fun i => (fderiv ℝ U q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.grad
+```lean
+def grad {n : ℕ} (U : Q n → ℝ) (q : Q n) : Q n := textbookConstraintGradient U q
+```
+### 实际依赖 MolecularDynamics.Chapter02Review.invMass
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+### 实际依赖 MolecularDynamics.Chapter04Review.invMass
+```lean
+def invMass {n : ℕ} (m : Fin n → ℝ) (v : Q n) : Q n := fun i => (m i)⁻¹ * v i
+```
+### 实际依赖 MD.Ch04.projectedEulerRelation
+```lean
+def projectedEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (pbar : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  pbar=z.2+h • F z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m pbar ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+  out.2=pbar-(textbookConstraintJacobian g out.1)ᵀ *ᵥ μ ∧ out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
+```
+### 实际依赖 MolecularDynamics.textbookConstrainedPhaseVectorField
+```lean
+noncomputable def textbookConstrainedPhaseVectorField {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (U : (Fin Nc → ℝ) → ℝ)
+    (z : (Fin Nc → ℝ) × (Fin Nc → ℝ)) : (Fin Nc → ℝ) × (Fin Nc → ℝ) :=
+  (textbookInverseMassMatrix m *ᵥ z.2,
+    textbookPotentialForce U z.1 - (textbookConstraintJacobian γ z.1)ᵀ *ᵥ
+      textbookConstrainedReactionMultiplier m γ (textbookPotentialForce U) z.1 z.2)
+```
+### 实际依赖 MolecularDynamics.textbookConstrainedReactionMultiplier
+```lean
+noncomputable def textbookConstrainedReactionMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (F : (Fin Nc → ℝ) → Fin Nc → ℝ)
+    (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
+  (textbookConstraintGram m γ q)⁻¹ *ᵥ
+    (textbookConstraintJacobian γ q *ᵥ (textbookInverseMassMatrix m *ᵥ F q) +
+      textbookConstraintCurvature m γ q p)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintCurvature
+```lean
+noncomputable def textbookConstraintCurvature {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
+  fun j => (fderiv ℝ (fderiv ℝ (γ j)) q)
+    (textbookInverseMassMatrix m *ᵥ p) (textbookInverseMassMatrix m *ᵥ p)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGradient
+```lean
+noncomputable def textbookConstraintGradient {Nc : ℕ}
+    (γ : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => (fderiv ℝ γ q) (Pi.single i 1)
+```
+### 实际依赖 MolecularDynamics.textbookConstraintGram
+```lean
+noncomputable def textbookConstraintGram {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Matrix (Fin Mc) (Fin Mc) ℝ :=
+  textbookConstraintJacobian γ q * textbookInverseMassMatrix m *
+    (textbookConstraintJacobian γ q)ᵀ
+```
+### 实际依赖 MolecularDynamics.textbookConstraintJacobian
+```lean
+noncomputable def textbookConstraintJacobian {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Matrix (Fin Mc) (Fin Nc) ℝ :=
+  fun j i => textbookConstraintGradient (γ j) q i
+```
+### 实际依赖 MolecularDynamics.textbookInverseMassMatrix
+```lean
+noncomputable def textbookInverseMassMatrix {Nc : ℕ} (m : Fin Nc → ℝ) :
+    Matrix (Fin Nc) (Fin Nc) ℝ := Matrix.diagonal fun i => (m i)⁻¹
+```
+### 实际依赖 MolecularDynamics.textbookPotentialForce
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
+```

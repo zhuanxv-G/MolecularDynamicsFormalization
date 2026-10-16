@@ -1,0 +1,31 @@
+{
+  "eaudit": "EAUDIT61",
+  "source_id": "MD-4.4-WaterPairPotential",
+  "input_sha256": {
+    "BATCH_EAUDIT61.md": "ae2a0a98c740ad76d22c6acbe55008af1870ee8d3b93a2e6b7f225afb9bfa7be",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+    "EAUDIT61a_materials": "b9aeee14b6299fe901ffc5242423467b8683007b869cdd0d4038ecdaa8967214",
+    "EAUDIT61a_PAGES.pdf": "f1219880c00a6167d11a6be101dc034b59bc8e5b86c18b247baf701b8716a3a6"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    189
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "397132331b17396f015c937cfb923a79130bf616d29fc88751153b443de4733e",
+  "source_block_sha256": "9543a62516549cb97cf1fe25e5977b5fbea43273cc75907ff863919bc3b51ae6",
+  "source_declarations": [
+    "waterPairPotential"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch04.lean",
+      "name": "waterPairPotential",
+      "file_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "excerpt_sha256": "9543a62516549cb97cf1fe25e5977b5fbea43273cc75907ff863919bc3b51ae6"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch04_eaudit/EAUDIT61_review.json",
+  "total_task_bytes": 138154
+}

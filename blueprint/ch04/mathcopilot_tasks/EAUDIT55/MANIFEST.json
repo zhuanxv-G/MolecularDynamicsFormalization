@@ -1,0 +1,52 @@
+{
+  "eaudit": "EAUDIT55",
+  "input_sha256": {
+    "BATCH_EAUDIT55.md": "880770a4d88edf1adb1f51365aa6c97a93204ece9412d3a37af7fe457e28f12b",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT55a",
+      "source_id": "MD-4.3.2-ProjectionResidual",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT55/a",
+      "total_bytes": 97973,
+      "manifest_sha256": "5f0ee954e7addf1a25051791c402eef2e8d1f7928a4a2fee3356c8542c400c30"
+    },
+    {
+      "subtask": "EAUDIT55b",
+      "source_id": "MD-4.3.2-ProjectionJacobian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT55/b",
+      "total_bytes": 96218,
+      "manifest_sha256": "99ae5bd5128602c4d27b9ade19c856c09f97365f0044c61fa016dc6d0e8bc988"
+    },
+    {
+      "subtask": "EAUDIT55c",
+      "source_id": "MD-4.3.2-NewtonConstraint",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT55/c",
+      "total_bytes": 99605,
+      "manifest_sha256": "054bfcc2d58fd20ce52a2ce4211a4bfd6d6e16fb0379235e0bc200fe4a1a60c4"
+    },
+    {
+      "subtask": "EAUDIT55d",
+      "source_id": "MD-4.3.2-NewtonQuadratic",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT55/d",
+      "total_bytes": 98841,
+      "manifest_sha256": "2ded3eb586acbb9915ce039a5205782f2fbf892b7d34dfb1fbc773ad35cc5605"
+    },
+    {
+      "subtask": "EAUDIT55e",
+      "source_id": "MD-4.3.2-FrozenNewtonLinear",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT55/e",
+      "total_bytes": 100067,
+      "manifest_sha256": "e71d408242b6204fb6556a9332807c4a82f2a2baa91d39720b40f195967cd6bf"
+    },
+    {
+      "subtask": "EAUDIT55f",
+      "source_id": "MD-4.3.2-ProjectionScale",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT55/f",
+      "total_bytes": 104405,
+      "manifest_sha256": "8f9c46965f007714f3c8f6627ab32c077b2b52db7e4125f3acf59c74ec15104f"
+    }
+  ]
+}

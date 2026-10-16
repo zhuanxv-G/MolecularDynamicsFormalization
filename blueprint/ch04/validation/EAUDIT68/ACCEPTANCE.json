@@ -1,0 +1,42 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT68",
+  "section": "4.4.2",
+  "source_ids": [
+    "MD-4.4.2-DLMPrintedSystem",
+    "MD-4.4.2-RigidSystemSymplectic",
+    "MD-4.4.2-DLMPrintedSystemStructure"
+  ],
+  "reaudit_ids": [
+    "MD-4.4.2-DLMPrintedSystem",
+    "MD-4.4.2-RigidSystemSymplectic",
+    "MD-4.4.2-DLMPrintedSystemStructure"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.4.2-DLMPrintedSystem",
+      "prior_eaudit": "EAUDIT24",
+      "acceptance": "blueprint/ch04/validation/EAUDIT24/ACCEPTANCE.json",
+      "sha256": "eea42f67b46139a52346e0d242fcffae38c2c4f3a02a374e21124de62444af87"
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemSymplectic",
+      "prior_eaudit": "EAUDIT24",
+      "acceptance": "blueprint/ch04/validation/EAUDIT24/ACCEPTANCE.json",
+      "sha256": "eea42f67b46139a52346e0d242fcffae38c2c4f3a02a374e21124de62444af87"
+    },
+    {
+      "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+      "prior_eaudit": "EAUDIT24",
+      "acceptance": "blueprint/ch04/validation/EAUDIT24/ACCEPTANCE.json",
+      "sha256": "eea42f67b46139a52346e0d242fcffae38c2c4f3a02a374e21124de62444af87"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT68/INDEX.md"
+}

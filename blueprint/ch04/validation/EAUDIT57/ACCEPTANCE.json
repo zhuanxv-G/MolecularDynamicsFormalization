@@ -1,0 +1,74 @@
+{
+  "chapter": 4,
+  "eaudit": "EAUDIT57",
+  "section": "4.3.4",
+  "source_ids": [
+    "MD-4.3.4-Lemma41",
+    "MD-4.3.4-ProjectedEulerPullback",
+    "MD-4.3.4-CotangentMultiplier",
+    "MD-4.3.4-CotangentProjection",
+    "MD-4.3.4-CotangentRegularity",
+    "MD-4.3.4-CotangentPullback",
+    "MD-4.3.4-GramProjectedEuler"
+  ],
+  "reaudit_ids": [
+    "MD-4.3.4-Lemma41",
+    "MD-4.3.4-ProjectedEulerPullback",
+    "MD-4.3.4-CotangentMultiplier",
+    "MD-4.3.4-CotangentProjection",
+    "MD-4.3.4-CotangentRegularity",
+    "MD-4.3.4-CotangentPullback",
+    "MD-4.3.4-GramProjectedEuler"
+  ],
+  "human_ids": [],
+  "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+  "source_sha256": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034",
+  "kind": "delivery-only refresh; all source_id declarations included",
+  "reused_local_checks": [
+    {
+      "source_id": "MD-4.3.4-Lemma41",
+      "prior_eaudit": "EAUDIT35",
+      "acceptance": "blueprint/ch04/validation/EAUDIT35/ACCEPTANCE.json",
+      "sha256": "409ba2185d199d07188fb9b8df170788c91210f698e3cca3026bd1b13b4de023"
+    },
+    {
+      "source_id": "MD-4.3.4-ProjectedEulerPullback",
+      "prior_eaudit": "EAUDIT35",
+      "acceptance": "blueprint/ch04/validation/EAUDIT35/ACCEPTANCE.json",
+      "sha256": "409ba2185d199d07188fb9b8df170788c91210f698e3cca3026bd1b13b4de023"
+    },
+    {
+      "source_id": "MD-4.3.4-CotangentMultiplier",
+      "prior_eaudit": "EAUDIT35",
+      "acceptance": "blueprint/ch04/validation/EAUDIT35/ACCEPTANCE.json",
+      "sha256": "409ba2185d199d07188fb9b8df170788c91210f698e3cca3026bd1b13b4de023"
+    },
+    {
+      "source_id": "MD-4.3.4-CotangentProjection",
+      "prior_eaudit": "EAUDIT35",
+      "acceptance": "blueprint/ch04/validation/EAUDIT35/ACCEPTANCE.json",
+      "sha256": "409ba2185d199d07188fb9b8df170788c91210f698e3cca3026bd1b13b4de023"
+    },
+    {
+      "source_id": "MD-4.3.4-CotangentRegularity",
+      "prior_eaudit": "EAUDIT35",
+      "acceptance": "blueprint/ch04/validation/EAUDIT35/ACCEPTANCE.json",
+      "sha256": "409ba2185d199d07188fb9b8df170788c91210f698e3cca3026bd1b13b4de023"
+    },
+    {
+      "source_id": "MD-4.3.4-CotangentPullback",
+      "prior_eaudit": "EAUDIT35",
+      "acceptance": "blueprint/ch04/validation/EAUDIT35/ACCEPTANCE.json",
+      "sha256": "409ba2185d199d07188fb9b8df170788c91210f698e3cca3026bd1b13b4de023"
+    },
+    {
+      "source_id": "MD-4.3.4-GramProjectedEuler",
+      "prior_eaudit": "EAUDIT35",
+      "acceptance": "blueprint/ch04/validation/EAUDIT35/ACCEPTANCE.json",
+      "sha256": "409ba2185d199d07188fb9b8df170788c91210f698e3cca3026bd1b13b4de023"
+    }
+  ],
+  "new_proofs": "none",
+  "website": "awaiting user submission",
+  "task_index": "blueprint/ch04/mathcopilot_tasks/EAUDIT57/INDEX.md"
+}

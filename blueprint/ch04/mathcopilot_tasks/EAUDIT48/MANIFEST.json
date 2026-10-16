@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT48",
+  "input_sha256": {
+    "BATCH_EAUDIT48.md": "8cc00d8eb43411f5b4267c6ebf564e551f5770403b7646132cc850c5601b70d6",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT48a",
+      "source_id": "MD-4.1-PrintedImplicitRelation",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT48/a",
+      "total_bytes": 78284,
+      "manifest_sha256": "b4897e4c35db83db4e1789e56196cdc6edfef030efd6a122065ef71349e75436"
+    },
+    {
+      "subtask": "EAUDIT48b",
+      "source_id": "MD-4.1-ImplicitFactor",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT48/b",
+      "total_bytes": 76974,
+      "manifest_sha256": "0ab86a76a3b7ac0c5b7fa1501de0a27ac7b2ba1dee6c3c59fa5c834e79a917a4"
+    },
+    {
+      "subtask": "EAUDIT48c",
+      "source_id": "MD-4.1-ImplicitModulus",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT48/c",
+      "total_bytes": 77984,
+      "manifest_sha256": "f32e30d1c2f5bdf2404a2870c7f707b927cf0a6d74a9f9347597869f886374ea"
+    },
+    {
+      "subtask": "EAUDIT48d",
+      "source_id": "MD-4.1-ModifiedFrequencyLimit",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT48/d",
+      "total_bytes": 144778,
+      "manifest_sha256": "2672152be0090936da690a4f537deff80f87a13c3a135267a657be2c2e9d1519"
+    },
+    {
+      "subtask": "EAUDIT48e",
+      "source_id": "MD-4.1-MidpointElimination",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT48/e",
+      "total_bytes": 94386,
+      "manifest_sha256": "05c7c382148313b6c5f15f5335c1b30df8fe51ca144e90b4c56651eb682733cb"
+    }
+  ]
+}

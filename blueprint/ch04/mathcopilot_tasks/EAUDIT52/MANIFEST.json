@@ -1,0 +1,66 @@
+{
+  "eaudit": "EAUDIT52",
+  "input_sha256": {
+    "BATCH_EAUDIT52.md": "1a4ae670f2d9b76a65e4b6dd96ee6cb92e3ce9309965370a5b59390fec3574d3",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "47dc1a8ed6d7933f50c413051498da9d9318fc781fee9a8230a9a0c490ad3034"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT52a",
+      "source_id": "MD-4.3-HolonomicRelation",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT52/a",
+      "total_bytes": 79957,
+      "manifest_sha256": "29831c970bf0a9dcae355e08eb694168c25d6e15929e11587c2d84cc3d298856"
+    },
+    {
+      "subtask": "EAUDIT52b",
+      "source_id": "MD-4.3-ConstrainedSolution",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT52/b",
+      "total_bytes": 105306,
+      "manifest_sha256": "3fc4a70eed5689943433b0baa0ed4fa6dd09c80f32db504a0c0917f791fbef0d"
+    },
+    {
+      "subtask": "EAUDIT52c",
+      "source_id": "MD-4.3-ConstraintJacobian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT52/c",
+      "total_bytes": 98743,
+      "manifest_sha256": "cf42183426b330897c201595254aa408223de652b55c86d70298963676babf69"
+    },
+    {
+      "subtask": "EAUDIT52d",
+      "source_id": "MD-4.3-JacobianActualDerivative",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT52/d",
+      "total_bytes": 100504,
+      "manifest_sha256": "42df05842d1159f73fb55ef1d4084baf417bc1fbf43762e0f3824186adba674e"
+    },
+    {
+      "subtask": "EAUDIT52e",
+      "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT52/e",
+      "total_bytes": 79314,
+      "manifest_sha256": "5044c1287070d3e4f98e74253a17106b7e3420585c4f6fe3b097e691b87595b5"
+    },
+    {
+      "subtask": "EAUDIT52f",
+      "source_id": "MD-4.3-ConstrainedPendulum",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT52/f",
+      "total_bytes": 131744,
+      "manifest_sha256": "2b770347fe34975c3d9bf473d344d4b6f3c64179c0ed2311f5a7b8e3a86c824f"
+    },
+    {
+      "subtask": "EAUDIT52g",
+      "source_id": "MD-4.3-ReactionMultiplier",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT52/g",
+      "total_bytes": 96505,
+      "manifest_sha256": "e8f2f52dbe957d35c0a51cea10a747b6d3d6a1ea706b839d06ffe088e21361c1"
+    },
+    {
+      "subtask": "EAUDIT52h",
+      "source_id": "MD-4.3-ReactionBalance",
+      "path": "blueprint/ch04/mathcopilot_tasks/EAUDIT52/h",
+      "total_bytes": 96687,
+      "manifest_sha256": "e77be92011192f50871ea5cdf9367298a9681d9a2b841a74d168d7934acac0eb"
+    }
+  ]
+}
