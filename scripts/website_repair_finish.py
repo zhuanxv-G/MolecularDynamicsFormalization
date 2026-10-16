@@ -2,7 +2,7 @@
 import re,subprocess
 from datetime import datetime
 from integrate_website_returns import ROOT,read,dump,sha
-from eaudit_review_tasks import declarations,declaration_names,render_document
+from eaudit_review_tasks import declarations,declaration_names,axiom_pattern,render_document
 from local_compile import compile_recorded
 from repair_queue import render
 from local_stage import stage
@@ -30,7 +30,7 @@ def finish(ch,round_name=None):
         if saved.get('exit_code')!=0 or saved.get('input_sha256')!=lean_hash or not log.exists():continue
         if saved.get('log_sha256')!=sha(log):continue
         output=log.read_bytes();decoded=output.decode('utf-8')
-        if all(re.search("'"+re.escape(n)+r"' (?:depends on axioms:|does not depend on any axioms)",decoded) for n in names):
+        if all(re.search(axiom_pattern(n),decoded) for n in names):
             reusable=(saved,output,candidate);break
     if reusable:
         r,out,origin=reusable
@@ -42,7 +42,7 @@ def finish(ch,round_name=None):
     assert r['exit_code']==0,out.decode('utf-8',errors='replace')
     parsed={}
     for n in names:
-        m=re.search("'"+re.escape(n)+r"' (?:depends on axioms:\s*\[([^\]]*)\]|does not depend on any axioms)",out.decode('utf-8'));assert m,n
+        m=re.search(axiom_pattern(n),out.decode('utf-8'));assert m,n
         parsed[n]=[x.strip() for x in (m.group(1) or '').split(',') if x.strip()]
     dump(folder/'AXIOM_DECLARATIONS.json',parsed)
     audit=read(base/'local_audit.json')

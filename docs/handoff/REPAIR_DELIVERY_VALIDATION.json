@@ -1,0 +1,88 @@
+{
+  "time": "2026-10-16T11:10:50.801848",
+  "chapters": {
+    "2": {
+      "total": 160,
+      "awaiting_reaudit": 75,
+      "website_pass": 67,
+      "awaiting_mentor": 18,
+      "repairing": 0,
+      "axiom_declarations": 182,
+      "current_batches": 24,
+      "single_item_packets": 75,
+      "lean_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "source_sha256": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+    },
+    "3": {
+      "total": 149,
+      "awaiting_reaudit": 78,
+      "website_pass": 51,
+      "awaiting_mentor": 20,
+      "repairing": 0,
+      "axiom_declarations": 178,
+      "current_batches": 19,
+      "single_item_packets": 78,
+      "lean_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "source_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+    },
+    "4": {
+      "total": 179,
+      "website_pass": 42,
+      "awaiting_reaudit": 110,
+      "awaiting_mentor": 27,
+      "repairing": 0,
+      "axiom_declarations": 223,
+      "current_batches": 23,
+      "single_item_packets": 110,
+      "lean_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "source_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+    },
+    "5": {
+      "total": 183,
+      "website_pass": 51,
+      "awaiting_reaudit": 117,
+      "awaiting_mentor": 15,
+      "repairing": 0,
+      "axiom_declarations": 217,
+      "current_batches": 20,
+      "single_item_packets": 117,
+      "lean_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "source_sha256": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+    }
+  },
+  "website": "not submitted; no fresh website PASS claimed",
+  "mentor": "not confirmed",
+  "new_proofs": "none",
+  "chapter06": {
+    "status": "paused",
+    "wip_commit": "6b822a9a524f",
+    "batch27": "unverified; not rerun",
+    "batch26_pdf": "document closed recorded, not repaired"
+  },
+  "totals": {
+    "total": 671,
+    "website_pass": 211,
+    "awaiting_reaudit": 380,
+    "awaiting_mentor": 80,
+    "repairing": 0,
+    "axiom_declarations": 800,
+    "current_batches": 86,
+    "single_item_packets": 380
+  },
+  "attributed_definition_expansion": {
+    "status": "passed",
+    "checked_source_ids": [
+      "MD-2.4.1-KineticFlow",
+      "MD-4.4.2-RigidSystemForce",
+      "MD-4.4.2-RigidSystemTorque",
+      "MD-4.4.2-RigidSystemKick",
+      "MD-4.4.2-DLMPrintedSystem",
+      "MD-4.4.2-RigidSystemSymplectic",
+      "MD-4.4.2-DLMPrintedSystemStructure",
+      "MD-5.2.1-DomainL2",
+      "MD-5.2.1-L2Norm",
+      "MD-5.2.1-L2NormSquare",
+      "MD-5.2.1-L2Complete"
+    ]
+  }
+}

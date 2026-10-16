@@ -8,7 +8,7 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 from integrate_website_returns import ROOT, read, dump, sha, display
-from eaudit_review_tasks import declarations, declaration_names, build, render_document
+from eaudit_review_tasks import declarations, declaration_names, axiom_pattern, build, render_document
 from local_compile import compile_recorded
 from repair_queue import render as render_queue
 
@@ -132,7 +132,7 @@ def verify(ch,eaudit):
         assert r['exit_code']==0,log.decode('utf-8',errors='replace')
     parsed={}
     for name in names:
-        m=re.search("'"+re.escape(name)+r"' (?:depends on axioms:\s*\[([^\]]*)\]|does not depend on any axioms)",log.decode('utf-8'))
+        m=re.search(axiom_pattern(name),log.decode('utf-8'))
         assert m,name;parsed[name]=[x.strip() for x in (m.group(1) or '').split(',') if x.strip()]
     audit=read(base/'local_audit.json')
     for sid in prep['source_ids']:

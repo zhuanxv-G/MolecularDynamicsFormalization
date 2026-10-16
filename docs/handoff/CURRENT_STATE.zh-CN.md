@@ -1,7 +1,7 @@
 # 当前可操作状态
 
-当前任务：修复第2–5章网站审计问题（见 docs/handoff/REPAIR_QUEUE.md）；第6章暂停；不进入第7章。
-下一步：第5章本轮已修/分流完成且章末完整检查通过；按队列继续第6章。网站复审未提交。
+第2–5章修复完成，等待用户提交 EAUDIT 复审包（见各章 mathcopilot_tasks/EAUDIT*/INDEX.md）
+下一步：本轮停止，只确认状态；等待用户明确新指令。第6章暂停，不进入第7章。
 
 第2章：网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
 第3章：网站PASS 51 / 已修待复审 78 / 待导师 20 / 修复中 0。
@@ -9,6 +9,10 @@
 第5章：网站PASS 51 / 已修待复审 117 / 待导师 15 / 修复中 0。
 第6章：暂停，§6.3.3 WIP 6b822a9a524f；批27未验证，不重跑；batch26裁页document closed只记录。
 heartbeat lean：新授权范围已保存，ACTIVE/15分钟/target/去重哈希已读回核对，未实测额度恢复接续。
+
+最终交付：671条；800项声明公理已核对；380个逐条复审包、86个现行批次，哈希/预算/完整结论/定义闭包已验。
+已验证：原PDF页、相关既有证明重查、固定版本单文件及各章完整check；未验证：网站新复审、导师裁定、额度恢复自动接续实测。
+提交入口：[EAUDIT_SUBMISSION_INDEX.md](EAUDIT_SUBMISSION_INDEX.md)；终验：[REPAIR_DELIVERY_VALIDATION.json](REPAIR_DELIVERY_VALIDATION.json)。
 
 ## 历史状态（以下推进第6章、交替修复及旧停止条件均被2026-10-14指令覆盖）
 

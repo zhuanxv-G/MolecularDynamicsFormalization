@@ -1,3 +1,25 @@
+# 第5章待导师问题：当前15条
+
+当前清单以website_audit.json中awaiting_mentor为准；不在本清单中的旧记录仅作历史。以下问题未自行裁定，现有签名保持。
+
+- MD-5.3.2-ConvergenceHeuristic：原句“condition is just that”是否必要且充分、现充分方向是否真由所列动力学背景保证，均需数学判断；一般导数趋零不能推出函数收敛。选项：补可检验谱/混合或可积导数条件后给严格版本／保留启发式与未覆盖方向。网站要求必要方向但未提供满足全前提的反例；保持原签名等待导师。 网站反例：缺失条款：在原段落的“condition ... is just that”完整条件读法下，缺少 (∃ L, Tendsto (ensembleAverageOn D ρ φ) atTop (𝓝 L)) → Tendsto (fun t => ∫ z in D,φ z*deriv (fun s => ρ s z) t) atTop (𝓝 0)。这是一项范围缺失，不是对现有充分方向的反例。 [原返回](mathcopilot_results/BATCH12_result.json)
+- MD-5.3.2-ShellWeakPrinted：PDF212式(5.8)对已归一化ρ_ε再次乘Z_ε⁻¹，重复归一化；另有尾部条件与Liouville不变性范围问题。选项：确认删外层Z后的独立修正版（已有ShellWeakLimitCorrected）／按原印保留疑误。保持签名，不能以补证明处理错误极限。 网站反例：取n=2，H(z)=‖z‖²，c=1。单位圆能量面非空紧，grad=2z，raw总质量π>0且有限，故全部签名前提满足。取C∞紧支φ，在能量面某邻域恒1。由极坐标Z_ε=π∫₀^∞exp(−(u−1)²/(2ε))du ~ π√(2πε)→0，而∫φρ_ε→1。因此额外乘Z_ε⁻¹后的左侧发散，microAverage=1。此反例中权确实可积，Bochner总化不参与反例。 [原返回](mathcopilot_results/BATCH13_result.json)
+- MD-5.3.2-PatchShellVolume：原印ΔV=∫ξdσ漏曲率Jacobian，一般仅渐近成立；例圆周外法线管体积还有二次项。选项：将精确式改为∫∫J ds dσ并把现O(e)目标独立标修正版／保留原印疑误。须导师判断来源路线，现签名保持。 网站反例：取ℝ²中H(z)=‖z‖²/2、c=1/2，M为单位圆，ξ>0为统一向外法向厚度。薄壳真实面积π((1+ξ)²−1)=2πξ+πξ²，但∫_M ξdσ=2πξ。 [原返回](mathcopilot_results/BATCH14_result.json)
+- MD-5.3.2-WholeShellVolumeLimit：当前是紧能量带控制下整面极限，原文范围含任意片与O(e)，相关PatchShellVolume原印精确等式又有Jacobian疑误；选项：导师确认将本条明确登记为该修正版的整面推论／另补完整片的修正陈述。保持当前签名，避免静默把一般原句降为整面特例。 网站反例：缺失条款为任意紧可测M⊂Σ_c的片壳结论及∃C,δ>0、∀0<ε<δ的误差≤Cε。一般仅极限不蕴含O(ε)：ε↦L+√ε趋于L却无该误差界；此例只说明结论强弱，不是本几何模型的反例。 [原返回](mathcopilot_results/BATCH14_result.json)
+- MD-5.3.2-ShellPointValuePrinted：原印把依赖φ的标量配对写成分布ρ₀(q,p)点值且重复归一化；当前仅配对记号也不含极限。选项：保留原印疑误并独立绑定已修弱极限／确认完整分布配对规范。保持签名，等待导师来源解释。 网站反例：原式若按字面点值解释，则φ=0使两端配对为0，中间ρ₀却是非零归一化Dirac型分布；该分布通常没有逐点ρ₀(q,p)。签名还缺全部ε→0的收敛条款，无法用一个固定配对定义替代。 [原返回](mathcopilot_results/BATCH14_result.json)
+- MD-5.3.2-HarmonicQuadraturePrinted：原页第一积分上界√(2E)漏/Ω，之后两行才是√(2E)/Ω；Ω≠1时两积分不等。选项：导师确认更正第一上界并补完整积分链／保留原印疑误。保持字面签名，正确末两行由HarmonicPartition单列。 网站反例：取Ω=1/2、c=1/2，满足全部正性前提。在q∈[0,1]上左被积函数准确化为(1−q²/4)^(-1/2)，故左值4∫₀¹dq/√(1−q²/4)=4π/3。右值4∫₀²dq/√(1−q²/4)=4π；终点总化不改变该可积积分。因此当前等式为假。 [原返回](mathcopilot_results/BATCH15_result.json)
+- MD-5.4.1-TwoOscillatorTori：原句称整个正总能量面是正分能量二维环面之并，遗漏一个分能量为零的圆层；选项：导师确认补退化圆层/原点后重述／现条仅标正层特例并另列原印疑误。当前正层/稠密与非遍历签名保持。 网站反例：Ω=(1,1),E=1,z=(0,0,√2,0)位于总能量面，但H₂=0，不在任何两项都正的2-torus中。它反驳原书按严格正层解释的穷尽表述；当前签名则完全缺少分解子句。 [原返回](mathcopilot_results/BATCH19_result.json)
+- MD-5.4.1-KAMPersistence：现通用KAM命题不包含原双摆对象/参数和数值观察所需可核查非退化资格；选项：导师确认将通用KAM独立标背景并保留双摆经验描述／提供双摆可验证KAM资格后另立定理。不能把数值图像当作通用KAM实例，保持现状。 网站反例：缺失对象/结论：原书双摆及其指定能量面，图示隔离区域与不变环面的对应。未提出通用KAM数学命题的反例。 [原返回](mathcopilot_results/BATCH19_result.json)
+- MD-5.4.1-AnisotropicAxisPrinted：原“径向力”解释与各向异性势不符，且全时间轨道可能穿过势不光滑原点；选项：远离原点的最大解域+唯一性下只证轴不变并把探索叙述列观察／导师确认其他修订。原签名保持。 网站反例：缺失条款：E₀、x∈[1.05,1.15]、p_x=0、p_y=√(2(E₀−U(x,0))) 及探索描述。对原书“力沿径向”的反例：κ₀=l₀=1、ε=1/2，在 r=2、θ=π/6 处 ∂θU=9/8≠0，故力有切向分量；这只反驳径向力理由，不是对轴不变性的反例。 [原返回](mathcopilot_results/BATCH20_result.json)
+- MD-5.4.1-PendulumRegionPrinted：圆盘交替代真实距离等值导致一般区域等式错误；网站反例针对弹簧伸长/压缩与半径上界混淆。选项：改能量投影为{U≤c}并另述E=4数值观察／保留一般圆盘并原印疑误。需导师判断，签名不改。 网站反例：k₁=k₂=2、l₁=l₂=3、c=1、q=(0,0)。d₁=0、d₂=2、U=9+1=10，所以 q 不属于左集。取 r₁=r₂=3+1/√2>0，则(r₁−3)²+(r₂−3)²=1，且 d₁≤r₁、d₂≤r₂，故 q 属于右集。所有声明前提满足。 [原返回](mathcopilot_results/BATCH20_result.json)
+- MD-5.4.1-InitialSegmentPrinted：原书四维“line segment”实际初始动量sqrt(2(c−U(x,0)))通常非仿射；位置投影才为直线段。选项：确认相空间参数曲线勘误并给正根号光滑资格／保留原印线段疑误。保持现签名。 网站反例：取 κ₀=l₀=c=1、ε=0。对所有 x∈[21/20,23/20]，U(x,0)=(x−1)²/2<1，所以满足全部前提；p_y(x)=√(2−(x−1)²)，在此区间的二阶导数为−2/(2−(x−1)²)^(3/2)<0。两端初值的中点位置是 x=11/10，其动量严格小于 p_y(11/10)，故该中点不在 γ(I)。γ(I) 不凸，而每个 segment 都凸，因此不可能等于任何 segment。 [原返回](mathcopilot_results/BATCH20_result.json)
+- MD-5.5-CorrelationTimePrinted：原any trajectory超过通常遍历性的AE结论；例能量面内零测异常轨道不由AE排除。选项：导师确认原any改AE（已有CorrelationTimeAE）／另增明确全点动力学资格。保持原印签名，不能把目标等式作资格。 网站反例：取n=d=1，以ℝ¹坐标x写H(x)=x²，c=0；Φ(s,x)=x；a(x)=b(x)=单位向量1；k=1，t=0。Σ={0}，grad H(0)=0，实数‖grad H(0)‖⁻¹=0，故withDensity在Σ上的权重为0，microRaw=0。注意microMeasure的质量逆元是ENNReal逆元：0⁻¹=∞，但∞ • 零测度仍是零测度，故μ=0。microErgodic的AE命题在μ=0下自动成立，lag观测也可积，恒等flow满足两条群律。z=0∈Σ，时间被积函数恒为1，对所有T>0，T⁻¹∫₀ᵀ1 ds=1；右端correlation μ...=0。极限1不等于0。 [原返回](mathcopilot_results/BATCH22_result.json)
+- MD-5.5-MixingCorrelationPrinted：原极限漏相关归一化k，取常数a=b=1,k=2，左极限2而右1。选项：导师确认补回k／明确k=1特例，另需向量观测量完整范围。保持原印签名，修订版MixingCorrelation独立保留。 网站反例：n=1，μ=δ₀，Φ_t=id，a=b≡2，k=1/4。对于每个可积非负r，∫r dδ₀=1即r(0)=1，因此任意有界连续φ都有∫φ(Φ_t z)r(z)dδ₀=φ(0)=average μ φ，weakMixing成立。全部列出的前提成立，且Φ保测、C_ab(0)=1。左端相关函数恒为(1/4)·4=1，右端为2·2=4；恒为1的函数不趋向4。该反例同时满足前文常用的归一化选择。 [原返回](mathcopilot_results/BATCH23_result.json)
+- MD-5.6-ForwardComponentsPrinted：原“两分量绝对值均趋无穷”假，h=1,z=(1,0)有无限多零分量；选项：导师确认替换成范数发散／保留原印疑误并单列谱与修正范数结论。保持原字面签名。 网站反例：h=1，z=(1,0)。A²=[[0,2],[−2,0]]，A⁴=−4I。对所有m≥0，A^(4m)z=((-4)^m,0)，A^(4m+2)z=(0,−2(-4)^m)。故p的绝对值在4m子列为0，q的绝对值在4m+2子列为0，两个Tendsto结论均失败。 [原返回](mathcopilot_results/BATCH24_result.json)
+- MD-5.6-ForwardNormDivergence：当前范数发散是正确独立修正版，但所引原句“两分量发散”有h=1无限零分量反例；选项：导师确认本条改为修正候选范围并保留原印Printed／继续只记疑误。保持已证范数签名，不冒称覆盖原两分量。 网站反例：h=1，z₀=(1,0)。z_k=(√2)^k(cos(kπ/4),−sin(kπ/4))；p_{4m}=0，q_{4m+2}=0，因此连两个分量的绝对值分别趋于∞都不成立，范数却确实趋于∞。 [原返回](mathcopilot_results/BATCH27_result.json)
+
+## 历史记录（原样保留，不作为当前待裁定清单）
+
 # 网站NEEDS_HUMAN分流
 
 原始返回和完整理由见website_audit.json；以下问题未替导师作数学选择。

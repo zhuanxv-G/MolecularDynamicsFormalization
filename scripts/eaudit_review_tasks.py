@@ -9,6 +9,9 @@ from build_mathcopilot_compact import definitions,referenced
 def declaration_names(text):
  return re.findall(r'(?m)^(?:@\[[^\]\n]+\]\s*)*(?:(?:noncomputable|private|protected)\s+)*(?:theorem|lemma|def|abbrev)\s+(\w+)',text)
 
+def axiom_pattern(name):
+ return r"'(?:_private\.[^']+\.)?"+re.escape(name)+r"' (?:depends on axioms:\s*\[([^\]]*)\]|does not depend on any axioms)"
+
 def declarations(ch):
  text=(ROOT/f'Blueprint/Ch{ch:02}.lean').read_text(encoding='utf-8-sig')
  marks=list(re.finditer(r'/-- source_id:\s*([^\s·]+)[\s\S]*?-/',text));out={}
