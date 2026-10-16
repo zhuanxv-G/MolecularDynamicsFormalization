@@ -52,7 +52,7 @@
 | MD-3.3.2-VerletHamiltonianParts | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
 | MD-3.3.2-VerletStructure | DRAFT/原页已核 | 已编译/公理已核 | PASS | 网站PASS（绑定版本 433a13ca6407） | existing_bridge / checked+documented priors |
 | MD-3.3.2-VerletModifiedHamiltonian | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
-| MD-3.3.2-VerletModifiedMatching | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT07 | placeholder / incomplete；缺完整BCH嵌套Poisson系数推导及实际流余项；非PASS不证明。 |
+| MD-3.3.2-VerletModifiedMatching | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待复审 / EAUDIT42 | placeholder / incomplete；缺完整BCH嵌套Poisson系数推导及实际流余项；非PASS不证明。 |
 | MD-3.3.2-ModifiedEven | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | placeholder / incomplete；缺形式反步恒等式→formalLog奇性的完整桥接；不建设大型非交换formalLog理论。 |
 | MD-3.3.2-Strang | DRAFT/原页已核 | 已核/单文件通过/公理已核 | PASS | 待复审 / EAUDIT07 | definition / self-contained |
 | MD-3.3.2-DifferentLogsCommute | DRAFT/原页已核 | 已核/单文件通过/公理已核 | NEEDS_HUMAN | 待导师 / EAUDIT07（原返回FAIL保留） | placeholder / incomplete；印刷不同步长交换断言待独立反例/导师裁定；非PASS不证明。 |
@@ -425,3 +425,5 @@ EAUDIT21 §3.4：4条落盘，单文件与5项公理通过；未写新证明；�
 EAUDIT40 §3.3：2条落盘，单文件与4项公理通过；未写新证明；完整check留到章末；网站待复审。
 
 EAUDIT41 §3.3.1：1条落盘，单文件与1项公理通过；未写新证明；完整check留到章末；网站待复审。
+
+EAUDIT42 §3.3.2：1条落盘，单文件与2项公理通过；未写新证明；完整check留到章末；网站待复审。

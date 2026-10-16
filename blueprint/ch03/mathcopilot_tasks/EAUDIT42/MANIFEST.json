@@ -1,0 +1,17 @@
+{
+  "eaudit": "EAUDIT42",
+  "input_sha256": {
+    "BATCH_EAUDIT42.md": "acc4fb3d44548179f83141fc92b0c627592863858c1e7eabf8898accd39fbc52",
+    "Blueprint/Ch03.lean": "e59239845f8d8f91b6846943010db9abffe5f3ccfaee4ad91c6c4fb775b500b1",
+    "blueprint/ch03/ch03_source.json": "5db6921b45ff8b004d9dd895b8c2bc7a63688f262a53eee1d87bfc95229cc550"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT42a",
+      "source_id": "MD-3.3.2-VerletModifiedMatching",
+      "path": "blueprint/ch03/mathcopilot_tasks/EAUDIT42/a",
+      "total_bytes": 104185,
+      "manifest_sha256": "b4ab08767541dccc3f128bc2ce071b2f29c4f40b9fbe498cfa4fcc9cc87ff946"
+    }
+  ]
+}

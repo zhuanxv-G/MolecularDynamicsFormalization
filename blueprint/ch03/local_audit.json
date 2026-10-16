@@ -1580,8 +1580,8 @@
       "lean_decl": "MD.Ch03.verletModifiedMatching",
       "verdict": "NEEDS_HUMAN",
       "explanation": "印刷h²系数对应哪个Verlet和状态/pullback次序需要核对；完整印刷有限函数的匹配存在结论保留，未用较弱h²另一签名替代。",
-      "signature_sha256": "fe9833daea8b9fbf3f4f9db2a417c1c8ea2209c36166b1a15cd47e2af00b70a2",
-      "block_sha256": "72846b301749c25914f0e93eb67ac3fad5b4c3858f8628293f13252982d0be5a",
+      "signature_sha256": "e2a85ddea4882560cedcf01119e9e43528aa889b610aae0ee9d2fa5c5ad43aed",
+      "block_sha256": "2a16e714586a0b3094d874f968d3eb672fe25b993e5205b9dd116c93945c4b26",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -1599,7 +1599,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch03/validation/batch21-classical-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint/ch03/validation/WEBSITE_REPAIR_CHAPTER_END/axioms.log"
+      "axiom_log": "blueprint/ch03/validation/EAUDIT42/axioms.log"
     },
     "MD-3.3.2-ModifiedEven": {
       "checked": true,

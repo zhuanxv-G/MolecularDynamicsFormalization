@@ -506,17 +506,18 @@ def verletModifiedH {n : ℕ} (T U : SymplecticCoordinates n → ℝ) (h : ℝ) 
 /-- source_id: MD-3.3.2-VerletModifiedMatching · unnumbered_claim · §3.3.2 · 印刷p.107 / PDFp.129
 [EXTRA] 正对角质量、U全域C∞、紧初值B；完整印刷h⁴截断实际O(h⁶)端点匹配为额外严格化。
 [NEEDS_HUMAN] 与速度/位置Verlet的组合次序共同核对h²,h⁴系数；原文Hamiltonian O(h⁶)与实际匹配阶也需裁定。 
-[EXTRA] 保留已列机械特例，新增一般分离T(p),U(q)、真实局部子流、h⁴系数及所有截断匹配；Hamiltonian余项从h⁶起（奇项零），对应端点O(h⁷)，不混同两个余项。新结论暂sorry，未裁定印刷系数是否正确。 -/
+[EXTRA] 保留已列机械特例，新增一般分离T(p),U(q)、真实局部子流、h⁴系数及所有截断匹配；Hamiltonian余项从h⁶起（奇项零），对应端点O(h⁷)，不混同两个余项。新结论暂sorry，未裁定印刷系数是否正确。 
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
 theorem verletModifiedMatching :
   ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),
-    positiveMass m → ContDiff ℝ ⊤ U → IsCompact B →
+    positiveMass m → ContDiff ℝ ∞ U → IsCompact B →
     matchesHamiltonian (verletModifiedH (fun z => quadraticKinetic m (unpack z).2) (fun z => U (unpack z).1))
       (coordinateVerlet m (textbookPotentialForce U)) B 5 := by
   sorry
 
 theorem verletModifiedMatching_general (n : ℕ) (T U : Q n → ℝ)
     (D B : Set (SymplecticCoordinates n)) (Φ Ψ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
-    (η : ℝ) (_hT : ContDiff ℝ ⊤ T) (_hU : ContDiff ℝ ⊤ U)
+    (η : ℝ) (_hT : ContDiff ℝ ∞ T) (_hU : ContDiff ℝ ∞ U)
     (_hD : IsOpen D) (_hB : IsCompact B) (_hBD : B ⊆ D)
     (_hΦ : actualFlow (textbookHamiltonianVectorField (fun z ↦ T (unpack z).2)) D Φ η)
     (_hΨ : actualFlow (textbookHamiltonianVectorField (fun z ↦ U (unpack z).1)) D Ψ η) :
@@ -525,7 +526,7 @@ theorem verletModifiedMatching_general (n : ℕ) (T U : Q n → ℝ)
     let G := fun h ↦ Ψ (h/2) ∘ Φ h ∘ Ψ (h/2)
     matchesHamiltonian (verletModifiedH Tp Uq) G B 6 ∧
     (∃ Hj : ℕ → SymplecticCoordinates n → ℝ,
-      (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧
+      (∀ j, ContDiffOn ℝ ∞ (Hj j) D) ∧
       (∀ z ∈ D, Hj 0 z = Tp z+Uq z) ∧
       (∀ z ∈ D, Hj 2 z =
         (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq) z-

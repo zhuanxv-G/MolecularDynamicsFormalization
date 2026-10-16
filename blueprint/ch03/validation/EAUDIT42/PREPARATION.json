@@ -1,0 +1,21 @@
+{
+  "chapter": 3,
+  "eaudit": "EAUDIT42",
+  "section": "3.3.2",
+  "source_ids": [
+    "MD-3.3.2-VerletModifiedMatching"
+  ],
+  "reaudit_ids": [
+    "MD-3.3.2-VerletModifiedMatching"
+  ],
+  "human_ids": [],
+  "old_lean_sha256": "318d44d1a47f56b44c64d81dff571b252d6a591d744f59de56cf736f59549534",
+  "lean_sha256": "e59239845f8d8f91b6846943010db9abffe5f3ccfaee4ad91c6c4fb775b500b1",
+  "source_sha256": "5db6921b45ff8b004d9dd895b8c2bc7a63688f262a53eee1d87bfc95229cc550",
+  "pages": [
+    129
+  ],
+  "prior_proof_blocks": {
+    "MD-3.3.2-VerletModifiedMatching": "theorem verletModifiedMatching :\n  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),\n    positiveMass m → ContDiff ℝ ⊤ U → IsCompact B →\n    matchesHamiltonian (verletModifiedH (fun z => quadraticKinetic m (unpack z).2) (fun z => U (unpack z).1))\n      (coordinateVerlet m (textbookPotentialForce U)) B 5 := by\n  sorry\n\ntheorem verletModifiedMatching_general (n : ℕ) (T U : Q n → ℝ)\n    (D B : Set (SymplecticCoordinates n)) (Φ Ψ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)\n    (η : ℝ) (_hT : ContDiff ℝ ⊤ T) (_hU : ContDiff ℝ ⊤ U)\n    (_hD : IsOpen D) (_hB : IsCompact B) (_hBD : B ⊆ D)\n    (_hΦ : actualFlow (textbookHamiltonianVectorField (fun z ↦ T (unpack z).2)) D Φ η)\n    (_hΨ : actualFlow (textbookHamiltonianVectorField (fun z ↦ U (unpack z).1)) D Ψ η) :\n    let Tp := fun z : SymplecticCoordinates n ↦ T (unpack z).2\n    let Uq := fun z : SymplecticCoordinates n ↦ U (unpack z).1\n    let G := fun h ↦ Ψ (h/2) ∘ Φ h ∘ Ψ (h/2)\n    matchesHamiltonian (verletModifiedH Tp Uq) G B 6 ∧\n    (∃ Hj : ℕ → SymplecticCoordinates n → ℝ,\n      (∀ j, ContDiffOn ℝ ⊤ (Hj j) D) ∧\n      (∀ z ∈ D, Hj 0 z = Tp z+Uq z) ∧\n      (∀ z ∈ D, Hj 2 z =\n        (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq) z-\n          textbookPoissonBracket Uq (textbookPoissonBracket Uq Tp) z/2)/12) ∧\n      (∀ z ∈ D, Hj 4 z =\n        (-textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/6+\n          textbookPoissonBracket Uq (textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/3-\n          textbookPoissonBracket Uq (textbookPoissonBracket Uq (textbookPoissonBracket Tp (textbookPoissonBracket Tp Uq))) z/4+\n          textbookPoissonBracket Tp (textbookPoissonBracket Tp (textbookPoissonBracket Uq (textbookPoissonBracket Uq Tp))) z)/120) ∧\n      (∀ j z, Hj (2*j+1) z = 0) ∧\n      ∀ k ≥ 6, matchesHamiltonian (fun h z ↦ ∑ j ∈ Finset.range k, h^j*Hj j z) G B k) := by\n  sorry"
+  }
+}

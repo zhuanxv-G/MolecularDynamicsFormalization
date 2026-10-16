@@ -217,7 +217,7 @@ A/B/C/D初筛仅是关键词估计；须逐条阅读网站理由后确认，初�
 | 3 | MD-3.3.2-VerletHamiltonianParts | FAIL | C | 绑定真实正对角质量、T(p)=pᵀM⁻¹p/2及U(q)，补H1+H2+H3=H；移除任意相空间函数替代机械分解。 | 已修待复审 | EAUDIT26 |
 | 3 | MD-3.3.2-VerletStructure | PASS | — | 复用绑定快照证据 | 网站PASS（绑定版本 433a13ca6407） | — |
 | 3 | MD-3.3.2-VerletModifiedHamiltonian | FAIL | B | 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。 | 已修待复审 | EAUDIT26 |
-| 3 | MD-3.3.2-VerletModifiedMatching | FAIL | B | 保留已列机械特例，新增一般分离T(p),U(q)、真实局部子流、h⁴系数及所有截断匹配；Hamiltonian余项从h⁶起（奇项零），对应端点O(h⁷)，不混同两个余项。新结论暂sorry，未裁定印刷系数是否正确。 | 已修待复审 | EAUDIT26 |
+| 3 | MD-3.3.2-VerletModifiedMatching | FAIL | C | C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | 已修待复审 | EAUDIT42 |
 | 3 | MD-3.3.2-ModifiedEven | FAIL | B | 补一阶log系数A+B并保留全部偶次零，表达至少二阶及Hamiltonian偶性/log奇性；不沿用不同步长log交换的错误推理。 | 已修待复审 | EAUDIT26 |
 | 3 | MD-3.3.2-Strang | PASS | B | 原文CORRECTED原页复核合并；签名复用，补材料复审 | 已修待复审 | EAUDIT26 |
 | 3 | MD-3.3.2-DifferentLogsCommute | FAIL | D | 仅登记问题/选项/网站反例，保持签名现状 | 待导师 | EAUDIT07 |
