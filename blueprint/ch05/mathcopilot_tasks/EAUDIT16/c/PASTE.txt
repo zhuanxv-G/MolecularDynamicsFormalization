@@ -1,0 +1,122 @@
+以本 PASTE 和附件为准；/workspace 中的 Ch0x.lean、ch0x_source.json、BATCH*.md 等是旧版本，忽略它们。Mathlib 标准库定义按标准数学含义直接采信，只需展开 MolecularDynamics / MD.* 命名空间的项目定义。
+先A原文逐字核对，再C只读核对全部对象/域/量词/前提/完整结论及EXTRA；不修改工程或补证明，不因sorry判签名FAIL。原书数学疑误保留并NEEDS_HUMAN。
+本条MD-5.4.1-CircleInitialPoints；原PDF页映射=[223]。必须实际写入 /workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT16_review.json，对象含batch=EAUDIT16、input_sha256、items。共享输入哈希相同则按source_id追加合并，版本冲突则报告；逐项回显哈希。
+items每条source_id,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}；status=APPROVED/CORRECTED/NEEDS_HUMAN，verdict=PASS/FAIL/NEEDS_HUMAN。必须用代码实际写入JSON对象（batch、input_sha256、items），写完用json.loads读取自检；对话只回复路径与PASS/FAIL/NEEDS_HUMAN统计。以下input_sha256的全部键和值必须原样回显。
+input_sha256：
+{
+  "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
+  "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+  "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4",
+  "EAUDIT16c_materials": "d3be50c5cfff80662bc06c7e7beb5808571694a87e439bbdb0d34228713125d3",
+  "EAUDIT16c_PAGES.pdf": "728cda519da059b35d6d718cf15378728ce7345f00647800db1ae52363a8849a"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-5.4.1-CircleInitialPoints",
+  "kind": "definition",
+  "label": null,
+  "section": "5.4.1",
+  "printed_page": "202",
+  "pdf_page": "223",
+  "statement_latex": "Now consider an alternative initial set. Begin, as before, with a line segment on the $x$-axis, but now choose the initial momenta from the uniform distribution on the circle $p_x^2+p_y^2=2(E_0-U(x,0))$. In this way we again get initial conditions on the $H=E_0$ energy surface, but this time the points are not close to one another in phase space, since the momenta of successive points may differ greatly.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "实际动量圆的角参数化；根号非负时对应书中圆，半径0允许退化点，均匀角概率推送另条。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch05.circleInitialPoints",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA] 将实际初值域限定可行能量及原x区间；θ为后条均匀角分布的取样变量，定性样本图像不强化为全样本必然分离。零半径为允许退化；总延拓仅作独立辅助定义。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [
+    {
+      "stage": "EAUDIT16_LOCAL_REPAIR",
+      "timestamp": "2026-10-16T10:11:44.974098",
+      "before_sha256": "adab45a28d2a7f9629cde36aec7b04323422a3dcf04bb6d16785c2cd632f2cdc",
+      "after_sha256": "e4d3129a3897690e414faa695fdbd947b4472829f7b0e42cfbb6d3c5b7021d6e",
+      "changed_fields": [],
+      "annotation_corrections": {},
+      "raw_return": "blueprint/ch05/mathcopilot_results/BATCH21_result.json",
+      "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+    }
+  ],
+  "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
+}
+```
+## 完整当前Lean（同一source_id的全部声明）
+```lean
+def circleInitialPoints (κ l ε c x θ : ℝ)
+    (_hfeas : 0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0]))
+    (_hx : x ∈ Icc (105/100 : ℝ) (115/100)) : MolecularDynamics.Chapter05Review.Phase 2 :=
+  let R := Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))
+  (WithLp.toLp 2 ![x,0],WithLp.toLp 2 ![R*Real.cos θ,R*Real.sin θ])
+
+def circleInitialPoints_total (κ l ε c x θ : ℝ) : MolecularDynamics.Chapter05Review.Phase 2 :=
+  let R := Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))
+  (WithLp.toLp 2 ![x,0],WithLp.toLp 2 ![R*Real.cos θ,R*Real.sin θ])
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.anisotropicEnergy
+```lean
+def anisotropicEnergy (κ₀ l₀ ε x y v w : ℝ) :=
+  let p := anisotropicParameters κ₀ l₀ ε (anisotropicAngular x y)
+  (v^2+w^2)/2+p.1/2*(Real.sqrt (x^2+y^2)-p.2)^2
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.E
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.Phase
+```lean
+abbrev Phase (n : ℕ) := E n × E n
+```
+### 实际依赖 MolecularDynamics.Chapter05Review.Phase
+```lean
+abbrev Phase (n : ℕ) := E n × E n
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.anisotropicAngular
+```lean
+def anisotropicAngular (x y : ℝ) :=
+  let c := x/Real.sqrt (x^2+y^2)
+  4*c^3-3*c
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.anisotropicEnergy
+```lean
+def anisotropicEnergy (κ₀ l₀ ε x y v w : ℝ) :=
+  let p := anisotropicParameters κ₀ l₀ ε (anisotropicAngular x y)
+  (v^2+w^2)/2+p.1/2*(Real.sqrt (x^2+y^2)-p.2)^2
+```
+### 实际依赖 MolecularDynamics.Chapter01Review.anisotropicParameters
+```lean
+def anisotropicParameters (κ₀ l₀ ε c₃ : ℝ) : ℝ × ℝ :=
+  (κ₀*(1-ε*c₃/2),l₀*(1+ε*c₃/2))
+```
+### 实际依赖 MD.Ch05.anisotropicPotential
+```lean
+def anisotropicPotential (κ l ε : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) :=
+  MolecularDynamics.Chapter01Review.anisotropicEnergy κ l ε (z 0) (z 1) 0 0
+```
+### 实际依赖 MD.Ch05.circleInitialPoints
+```lean
+def circleInitialPoints (κ l ε c x θ : ℝ)
+    (_hfeas : 0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0]))
+    (_hx : x ∈ Icc (105/100 : ℝ) (115/100)) : MolecularDynamics.Chapter05Review.Phase 2 :=
+  let R := Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))
+  (WithLp.toLp 2 ![x,0],WithLp.toLp 2 ![R*Real.cos θ,R*Real.sin θ])
+```
+### 实际依赖 MD.Ch05.circleInitialPoints_total
+```lean
+def circleInitialPoints_total (κ l ε c x θ : ℝ) : MolecularDynamics.Chapter05Review.Phase 2 :=
+  let R := Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))
+  (WithLp.toLp 2 ![x,0],WithLp.toLp 2 ![R*Real.cos θ,R*Real.sin θ])
+```

@@ -4489,17 +4489,17 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.curveImageDimension",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "aac43a23772b06006912071ec9cf22b7e15ed87012bc481823295fdfc3c93cb5",
-      "block_sha256": "1a8cdc4983665b478d70656802345655721ffa4212c20d8f009647bf13a13545",
+      "signature_sha256": "29c679ba93374b2b0a14e16a874e166eae7a04d615475ac4f21b56c7890e08ad",
+      "block_sha256": "7220ea4d08b14d29cdba5cf13e6bea8b7a424dbc3f7fd6712d7078ba3f6f8c56",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4517,15 +4517,15 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT16/axioms.log"
     },
     "MD-5.4.1-PendulumPotential": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.pendulumPotential",
@@ -4550,16 +4550,16 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT16/axioms.log"
     },
     "MD-5.4.1-PendulumRegionPrinted": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.pendulumRegionPrinted",
@@ -4584,7 +4584,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT16/axioms.log"
     },
     "MD-5.4.1-AnisotropicInitialCurve": {
       "checked": true,
@@ -4657,10 +4657,10 @@
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.initialSegmentPrinted",
@@ -4685,22 +4685,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT16/axioms.log"
     },
     "MD-5.4.1-CircleInitialPoints": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.circleInitialPoints",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "c55c50e01f890f1051736300ef8719589d7c13d0ea2474a4f5dc7aab0a1150d4",
-      "block_sha256": "c55c50e01f890f1051736300ef8719589d7c13d0ea2474a4f5dc7aab0a1150d4",
+      "signature_sha256": "16714b1711ca1534c64bc0fc132ad3e1938e1ced80d7b028115179bcf9c6f625",
+      "block_sha256": "16714b1711ca1534c64bc0fc132ad3e1938e1ced80d7b028115179bcf9c6f625",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4718,22 +4718,22 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT16/axioms.log"
     },
     "MD-5.4.1-CircleInitialLaw": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext"
       ],
       "final_status": "self-contained",
       "lean_decl": "MD.Ch05.circleInitialLaw",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "a648e743b146267cb9f3e57ad626ec7febfe3c4101220c14e91fa33efda34ec8",
-      "block_sha256": "a648e743b146267cb9f3e57ad626ec7febfe3c4101220c14e91fa33efda34ec8",
+      "signature_sha256": "bae8e6144fe460615e4caeab535a75e5b9499641f12ee74b73c62b69cee996e7",
+      "block_sha256": "bae8e6144fe460615e4caeab535a75e5b9499641f12ee74b73c62b69cee996e7",
       "direct_placeholder": false,
       "proof_status": "definition",
       "documented_priors": [],
@@ -4751,23 +4751,23 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT16/axioms.log"
     },
     "MD-5.4.1-CircleInitialEnergy": {
       "checked": true,
       "compiled": true,
       "axioms": [
-        "propext",
-        "sorryAx",
         "Classical.choice",
-        "Quot.sound"
+        "Quot.sound",
+        "propext",
+        "sorryAx"
       ],
       "final_status": "incomplete",
       "lean_decl": "MD.Ch05.circleInitialEnergy",
       "verdict": "PASS",
       "explanation": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
-      "signature_sha256": "ab86b0997dc8928f6f1bfdf143515614e37f38c56bf0560628d12ff65f4c0776",
-      "block_sha256": "37e6326e40fff7325aef81eb0669a0620d11b4ae9820d4c82f200821984b26e5",
+      "signature_sha256": "255e8075c188c8bca3560e66409ee974e1c3e95679da0106e4bcade255e4abc9",
+      "block_sha256": "343d274f80ef0d0c073628e5dc3a0a45d8dfa7a4ade5a3bed486c0040d660a1e",
       "direct_placeholder": true,
       "proof_status": "placeholder",
       "documented_priors": [],
@@ -4785,7 +4785,7 @@
       "proof_attempts": 0,
       "compile_evidence": "blueprint/ch05/validation/batch47-COMPILE.json",
       "transitive_placeholder": false,
-      "axiom_log": "blueprint\\ch05\\validation\\section56\\chapter_axioms.log"
+      "axiom_log": "blueprint/ch05/validation/EAUDIT16/axioms.log"
     },
     "MD-5.5-Correlation": {
       "checked": true,

@@ -2073,5 +2073,40 @@
     "category": "D",
     "handling": "仅登记问题/选项/网站反例，保持签名现状",
     "section": "5.4.1"
+  },
+  "MD-5.4.1-CircleInitialPoints": {
+    "category": "A",
+    "handling": "将实际初值域限定可行能量及原x区间；θ为后条均匀角分布的取样变量，定性样本图像不强化为全样本必然分离。零半径为允许退化；总延拓仅作独立辅助定义。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-CircleInitialLaw": {
+    "category": "A",
+    "handling": "均匀圆概率主接口限定可行能量和原x区间，使用归一化角测度推前；c=U为退化Dirac，不默认负能差的sqrt总化初值。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-CircleInitialEnergy": {
+    "category": "A",
+    "handling": "原能量恒等式保留为正式库总延拓的辅助证明；本条适用前提仍是非负能差，实际取样主接口由CircleInitialPoints/Law限定区间及可行域。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-CurveImageDimension": {
+    "category": "C",
+    "handling": "恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-PendulumPotential": {
+    "category": "B",
+    "handling": "原文CORRECTED原页复核合并；签名复用，补材料复审",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-PendulumRegionPrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.4.1"
+  },
+  "MD-5.4.1-InitialSegmentPrinted": {
+    "category": "D",
+    "handling": "仅登记问题/选项/网站反例，保持签名现状",
+    "section": "5.4.1"
   }
 }

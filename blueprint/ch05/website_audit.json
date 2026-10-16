@@ -10527,7 +10527,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT16",
+    "repair": {
+      "eaudit": "EAUDIT16",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
+        "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+        "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4"
+      }
+    }
   },
   {
     "source_id": "MD-5.4.1-PendulumPotential",
@@ -10614,7 +10626,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT16",
+    "repair": {
+      "eaudit": "EAUDIT16",
+      "status": "awaiting_reaudit",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
+        "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+        "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4"
+      }
+    }
   },
   {
     "source_id": "MD-5.4.1-PendulumRegionPrinted",
@@ -10703,8 +10727,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT16（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT16",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "圆盘交替代真实距离等值导致一般区域等式错误；网站反例针对弹簧伸长/压缩与半径上界混淆。选项：改能量投影为{U≤c}并另述E=4数值观察／保留一般圆盘并原印疑误。需导师判断，签名不改。"
+    }
   },
   {
     "source_id": "MD-5.4.1-AnisotropicInitialCurve",
@@ -10898,8 +10929,15 @@
     "audit_round": "first",
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
-    "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "needs_category": "原文数学判断",
+    "effective_status": "待导师 / EAUDIT16（原返回FAIL保留）",
+    "repair": {
+      "eaudit": "EAUDIT16",
+      "status": "awaiting_mentor",
+      "signature_changed": false,
+      "json_review_locally_verified": true,
+      "mentor_question": "原书四维“line segment”实际初始动量sqrt(2(c−U(x,0)))通常非仿射；位置投影才为直线段。选项：确认相空间参数曲线勘误并给正根号光滑资格／保留原印线段疑误。保持现签名。"
+    }
   },
   {
     "source_id": "MD-5.4.1-CircleInitialPoints",
@@ -10952,7 +10990,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH21_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT16",
+    "repair": {
+      "eaudit": "EAUDIT16",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
+        "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+        "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4"
+      }
+    }
   },
   {
     "source_id": "MD-5.4.1-CircleInitialLaw",
@@ -11005,7 +11055,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH21_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "FAIL（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT16",
+    "repair": {
+      "eaudit": "EAUDIT16",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
+        "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+        "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4"
+      }
+    }
   },
   {
     "source_id": "MD-5.4.1-CircleInitialEnergy",
@@ -11058,7 +11120,19 @@
     "json_review_round": "first",
     "json_review_raw_path": "blueprint/ch05/mathcopilot_results/BATCH21_result.json",
     "needs_category": "材料缺失",
-    "effective_status": "网站PASS（绑定版本 e9c5ec7b563a4f805045e28ca5d392e588e21ad2d6101d581a241cfea2275286）"
+    "effective_status": "待复审 / EAUDIT16",
+    "repair": {
+      "eaudit": "EAUDIT16",
+      "status": "awaiting_reaudit",
+      "signature_changed": true,
+      "json_review_locally_verified": true,
+      "task_index": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/INDEX.md",
+      "input_sha256": {
+        "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
+        "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+        "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4"
+      }
+    }
   },
   {
     "source_id": "MD-5.5-Correlation",

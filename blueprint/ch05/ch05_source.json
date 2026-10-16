@@ -4282,12 +4282,24 @@
     "lean_decl": "MD.Ch05.curveImageDimension",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]原“one-dimensional”以实际正则参数曲线及全平滑自治流实现；由群律推出可逆场导数而非假设最终像曲线正则。位置投影未必浸入，且有限时刻的曲线本身不是一般二维开集；视觉稠密覆盖仅作为数值观察保留。"
+      "[EXTRA]原“one-dimensional”以实际正则参数曲线及全平滑自治流实现；由群律推出可逆场导数而非假设最终像曲线正则。位置投影未必浸入，且有限时刻的曲线本身不是一般二维开集；视觉稠密覆盖仅作为数值观察保留。",
+      "[EXTRA] 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:11:44.974098",
+        "before_sha256": "f8d7b37835044307945ee600ff2d7df02b41e9f94000f0aa8912a1b8965c14a2",
+        "after_sha256": "08d16d25867b87917ec53588f71b2d3c36fc01b3dc2b36963e6fc9102a2360b2",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-PendulumPotential",
@@ -4301,7 +4313,9 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [
-      "本条为第5章引用对象的本地定义；不改变已完成第3章文件。"
+      "本条为第5章引用的第3章双弹簧对象的本地定义；不改变第3章文件。",
+      "q=(x,y)，两固定端为(0,0)、(0,−2)，r₁=√(x²+y²)，r₂=√(x²+(y+2)²)，k_i 为弹簧系数、l_i 为自然长度，物理情形均为正。",
+      "U(q)=k₁(r₁−l₁)²/2+k₂(r₂−l₂)²/2；公式回指教材 PDF148/印刷126。"
     ],
     "issues": [],
     "lean_decl": "MD.Ch05.pendulumPotential",
@@ -4310,9 +4324,22 @@
       "[EXTRA]引用的真实双弹簧势按§3.5印刷126/PDF148已存在原页核对：U=k₁(r₁−l₁)²/2+k₂(r₂−l₂)²/2，r₁=√(x²+y²)、r₂=√(x²+(y+2)²)；不是把数值轨迹图当势的定义。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:11:44.974098",
+        "before_sha256": "a427f739a4b25b2f783774040898c3f3ebdba886b4120c763add9f3479130dd4",
+        "after_sha256": "9c8f22efdb5d02db0053ad760f63b164b1d5e74c0f642285b78ac950811acb6b",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-PendulumRegionPrinted",
@@ -4325,7 +4352,11 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "U 为双弹簧势 k₁(d₁−l₁)²/2+k₂(d₂−l₂)²/2，d₁=√(x²+y²)，d₂=√(x²+(y+2)²)。",
+      "单位质量 H=|p|²/2+U；所有能量初值的位置投影为 U≤E，不等同于单条轨道覆盖范围。",
+      "原书圆盘并描述及 interior 用语按原样保留，数学问题见 issues/audit；r_i 为原文用来参数化椭圆的半径。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.pendulumRegionPrinted",
     "reusable_proofs": [],
@@ -4333,9 +4364,22 @@
       "[EXTRA]原描述的可达region按所有能量初值的位置投影解释，单位动能；真实两圆盘中心、正半径和半径能量椭圆完整保留，不假设所求等式。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:11:44.974098",
+        "before_sha256": "688565edf384681fda532bce180c66891ad7267af800edbbe9e92838c28981b1",
+        "after_sha256": "b5e0805b24da3c28d835ff42e5c463f2b46b53a15fdbc9d57fad049244a29dff",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-AnisotropicInitialCurve",
@@ -4394,7 +4438,10 @@
     "proof_latex": null,
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
-    "context_notation": [],
+    "context_notation": [
+      "初值集合为 γ([1.05,1.15])，γ(x)=((x,0),(0,√(2(E₀−U(x,0)))))，单位质量。",
+      "line segment 按原书四维相空间字面保留；仅其位置投影必为直线段，相空间像通常为曲线，原书疑误见 issues/audit。"
+    ],
     "issues": [],
     "lean_decl": "MD.Ch05.initialSegmentPrinted",
     "reusable_proofs": [],
@@ -4402,9 +4449,22 @@
       "[EXTRA]保留真实相空间对象、书中区间及实初值的非负根号资格；不把线段结论作假设。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
-    "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "review_status": "CORRECTED",
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:11:44.974098",
+        "before_sha256": "24b4b136f67092826e736a20ebec526df4d097bef025abc420ac92af0bc3e926",
+        "after_sha256": "c0aa3953a112958a9725d556f59577f409ad93c205a53e518dce62a0222fd45c",
+        "changed_fields": [
+          "context_notation"
+        ],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-CircleInitialPoints",
@@ -4423,11 +4483,24 @@
     "issues": [],
     "lean_decl": "MD.Ch05.circleInitialPoints",
     "reusable_proofs": [],
-    "extra_assumptions": [],
+    "extra_assumptions": [
+      "[EXTRA] 将实际初值域限定可行能量及原x区间；θ为后条均匀角分布的取样变量，定性样本图像不强化为全样本必然分离。零半径为允许退化；总延拓仅作独立辅助定义。"
+    ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:11:44.974098",
+        "before_sha256": "adab45a28d2a7f9629cde36aec7b04323422a3dcf04bb6d16785c2cd632f2cdc",
+        "after_sha256": "e4d3129a3897690e414faa695fdbd947b4472829f7b0e42cfbb6d3c5b7021d6e",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-CircleInitialLaw",
@@ -4445,12 +4518,24 @@
     "lean_decl": "MD.Ch05.circleInitialLaw",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]固定x的真实均匀角测度及角参数化推送；不把任意集合叫uniform，不添加跨x独立性假设；概率总质量尚未逐条证明。"
+      "[EXTRA]固定x的真实均匀角测度及角参数化推送；不把任意集合叫uniform，不添加跨x独立性假设；概率总质量尚未逐条证明。",
+      "[EXTRA] 均匀圆概率主接口限定可行能量和原x区间，使用归一化角测度推前；c=U为退化Dirac，不默认负能差的sqrt总化初值。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:11:44.974098",
+        "before_sha256": "292afd0627d47d88f3926fa3fe674ad2ebd33954ab5ebd0c6d2ed974e3b32687",
+        "after_sha256": "1ecf9d4ae739c26820c064b6008b38c3bf44ad9d81edf1d954e677a07b9e317f",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.4.1-CircleInitialEnergy",
@@ -4468,12 +4553,24 @@
     "lean_decl": "MD.Ch05.circleInitialEnergy",
     "reusable_proofs": [],
     "extra_assumptions": [
-      "[EXTRA]固定位置的实动量圆，根号非负；全能量等式不意味着极限图像填满可达区域。"
+      "[EXTRA]固定位置的实动量圆，根号非负；全能量等式不意味着极限图像填满可达区域。",
+      "[EXTRA] 原能量恒等式保留为正式库总延拓的辅助证明；本条适用前提仍是非负能差，实际取样主接口由CircleInitialPoints/Law限定区间及可行域。"
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
-    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+    "repair_log": [
+      {
+        "stage": "EAUDIT16_LOCAL_REPAIR",
+        "timestamp": "2026-10-16T10:11:44.974098",
+        "before_sha256": "eb6cda603046bb1c7f9ae602cfd0a6954e8026ebfe8a6d42776462a865db1957",
+        "after_sha256": "8510eb5cc3ba09d3103caf1c9b2aca0432f23467af85cdca898b7761f65e36d7",
+        "changed_fields": [],
+        "annotation_corrections": {},
+        "raw_return": "blueprint/ch05/mathcopilot_results/BATCH21_result.json",
+        "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
   },
   {
     "source_id": "MD-5.5-Correlation",

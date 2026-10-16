@@ -1,0 +1,43 @@
+{
+  "chapter": 5,
+  "eaudit": "EAUDIT16",
+  "section": "5.4.1",
+  "source_ids": [
+    "MD-5.4.1-CircleInitialEnergy",
+    "MD-5.4.1-CircleInitialLaw",
+    "MD-5.4.1-CircleInitialPoints",
+    "MD-5.4.1-CurveImageDimension",
+    "MD-5.4.1-InitialSegmentPrinted",
+    "MD-5.4.1-PendulumPotential",
+    "MD-5.4.1-PendulumRegionPrinted"
+  ],
+  "reaudit_ids": [
+    "MD-5.4.1-CurveImageDimension",
+    "MD-5.4.1-PendulumPotential",
+    "MD-5.4.1-CircleInitialPoints",
+    "MD-5.4.1-CircleInitialLaw",
+    "MD-5.4.1-CircleInitialEnergy"
+  ],
+  "human_ids": [
+    "MD-5.4.1-PendulumRegionPrinted",
+    "MD-5.4.1-InitialSegmentPrinted"
+  ],
+  "old_lean_sha256": "a101cbc5aa200e0dc4e902f9e6ed3f511dbe1517088c2db78c7cc4c5d84f645f",
+  "lean_sha256": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+  "source_sha256": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4",
+  "pages": [
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224
+  ],
+  "prior_proof_blocks": {
+    "MD-5.4.1-CircleInitialPoints": "def circleInitialPoints (κ l ε c x θ : ℝ) : MolecularDynamics.Chapter05Review.Phase 2 :=\n  let R := Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))\n  (WithLp.toLp 2 ![x,0],WithLp.toLp 2 ![R*Real.cos θ,R*Real.sin θ])",
+    "MD-5.4.1-CircleInitialLaw": "def circleInitialLaw (κ l ε c x : ℝ) : Measure (MolecularDynamics.Chapter05Review.Phase 2) :=\n  Measure.map (circleInitialPoints κ l ε c x)\n    ((ENNReal.ofReal (2*Real.pi))⁻¹ • (volume.restrict (Ioc (0 : ℝ) (2*Real.pi))))",
+    "MD-5.4.1-CircleInitialEnergy": "theorem circleInitialEnergy : ∀ κ l ε c x θ : ℝ,\n  0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0]) →\n  let z := circleInitialPoints κ l ε c x θ\n  ((z.2 0)^2+(z.2 1)^2)/2+anisotropicPotential κ l ε z.1=c := by\n  sorry",
+    "MD-5.4.1-CurveImageDimension": "theorem curveImageDimension : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (γ : ℝ → MolecularDynamics.Chapter05Review.E n),\n  MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ ⊤ (Function.uncurry Φ) → ContDiff ℝ ⊤ γ →\n  (∀ s,deriv γ s ≠ 0) → ∀ t,\n  ContDiff ℝ ⊤ (fun s => Φ t (γ s)) ∧ (∀ s,deriv (fun r => Φ t (γ r)) s ≠ 0) := by\n  sorry"
+  }
+}

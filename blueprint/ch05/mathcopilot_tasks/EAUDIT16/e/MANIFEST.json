@@ -1,0 +1,85 @@
+{
+  "eaudit": "EAUDIT16",
+  "source_id": "MD-5.4.1-CircleInitialEnergy",
+  "input_sha256": {
+    "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
+    "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+    "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4",
+    "EAUDIT16e_materials": "27556a2ea2f89c0c728f134040a187d368e3cf70f444aa4f7d69b97d3ad2fadd",
+    "EAUDIT16e_PAGES.pdf": "728cda519da059b35d6d718cf15378728ce7345f00647800db1ae52363a8849a"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    223
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "3def0732600da5fad1a5bbec7589f0d2993567a302cee71c5eae72c60b5afc9b",
+  "source_block_sha256": "343d274f80ef0d0c073628e5dc3a0a45d8dfa7a4ade5a3bed486c0040d660a1e",
+  "source_declarations": [
+    "circleInitialEnergy"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter01Review.anisotropicEnergy",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "438069aac96d69c718610e36a9e82f0b54dc5a64c7fa3bca6a68e8e6384cfee5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.Phase",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "Phase",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "3ed02de319509f2fc95d04c3259a1049fe6016894deb4660afb25c75f472371c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "anisotropicAngular",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "61efc1343e97e5be94b44e187a410313ecf1f836c3528dc708db7b590b4d2298"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "anisotropicEnergy",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "438069aac96d69c718610e36a9e82f0b54dc5a64c7fa3bca6a68e8e6384cfee5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/ReviewDefinitions.lean",
+      "name": "anisotropicParameters",
+      "file_sha256": "89fe29e677dd177d648fb54a8b85ccf732bfee5b3aa793adf1075405b000cacb",
+      "excerpt_sha256": "dd6f9fbbcdad1568441179a4510863e797db4584740e00aedd226691496390e0"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "anisotropicPotential",
+      "file_sha256": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+      "excerpt_sha256": "6b501d55e81b68de2c63857c8285c2c8ba0309cdbbdf8c1387459b8a12923b72"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "circleInitialPoints_total",
+      "file_sha256": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+      "excerpt_sha256": "c05b3b50dc6739c5e23a938566fd990950b4f8acfa8da8a0ad18876699a69c70"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT16_review.json",
+  "total_task_bytes": 134448
+}

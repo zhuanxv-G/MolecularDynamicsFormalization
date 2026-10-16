@@ -1427,11 +1427,12 @@ theorem twoOscillatorEnergyDecomposition : ∀ (Ω : Fin 2 → ℝ) (E : ℝ) (z
   sorry
 
 /-- source_id: MD-5.4.1-CurveImageDimension · unnumbered_claim · §5.4.1 · 印刷p.202 / PDFp.223
-[EXTRA] [EXTRA]原“one-dimensional”以实际正则参数曲线及全平滑自治流实现；由群律推出可逆场导数而非假设最终像曲线正则。位置投影未必浸入，且有限时刻的曲线本身不是一般二维开集；视觉稠密覆盖仅作为数值观察保留。 -/
+[EXTRA] [EXTRA]原“one-dimensional”以实际正则参数曲线及全平滑自治流实现；由群律推出可逆场导数而非假设最终像曲线正则。位置投影未必浸入，且有限时刻的曲线本身不是一般二维开集；视觉稠密覆盖仅作为数值观察保留。 
+[EXTRA] 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 -/
 theorem curveImageDimension : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (γ : ℝ → MolecularDynamics.Chapter05Review.E n),
-  MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ ⊤ (Function.uncurry Φ) → ContDiff ℝ ⊤ γ →
+  MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ ∞ (Function.uncurry Φ) → ContDiff ℝ ∞ γ →
   (∀ s,deriv γ s ≠ 0) → ∀ t,
-  ContDiff ℝ ⊤ (fun s => Φ t (γ s)) ∧ (∀ s,deriv (fun r => Φ t (γ r)) s ≠ 0) := by
+  ContDiff ℝ ∞ (fun s => Φ t (γ s)) ∧ (∀ s,deriv (fun r => Φ t (γ r)) s ≠ 0) := by
   sorry
 
 /-- source_id: MD-5.4.1-PendulumPotential · Example 5.5 · §5.4.1 · 印刷p.200 / PDFp.221
@@ -1470,22 +1471,33 @@ theorem initialSegmentPrinted : ∀ κ l ε c : ℝ,
   ∃ a b : MolecularDynamics.Chapter05Review.Phase 2,anisotropicInitialCurve κ l ε c '' Icc (105/100 : ℝ) (115/100)=segment ℝ a b := by
   sorry
 
-/-- source_id: MD-5.4.1-CircleInitialPoints · definition · §5.4.1 · 印刷p.202 / PDFp.223 -/
-def circleInitialPoints (κ l ε c x θ : ℝ) : MolecularDynamics.Chapter05Review.Phase 2 :=
+/-- source_id: MD-5.4.1-CircleInitialPoints · definition · §5.4.1 · 印刷p.202 / PDFp.223 
+[EXTRA] 将实际初值域限定可行能量及原x区间；θ为后条均匀角分布的取样变量，定性样本图像不强化为全样本必然分离。零半径为允许退化；总延拓仅作独立辅助定义。 -/
+def circleInitialPoints (κ l ε c x θ : ℝ)
+    (_hfeas : 0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0]))
+    (_hx : x ∈ Icc (105/100 : ℝ) (115/100)) : MolecularDynamics.Chapter05Review.Phase 2 :=
+  let R := Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))
+  (WithLp.toLp 2 ![x,0],WithLp.toLp 2 ![R*Real.cos θ,R*Real.sin θ])
+
+def circleInitialPoints_total (κ l ε c x θ : ℝ) : MolecularDynamics.Chapter05Review.Phase 2 :=
   let R := Real.sqrt (2*(c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])))
   (WithLp.toLp 2 ![x,0],WithLp.toLp 2 ![R*Real.cos θ,R*Real.sin θ])
 
 /-- source_id: MD-5.4.1-CircleInitialLaw · definition · §5.4.1 · 印刷p.202 / PDFp.223
-[EXTRA] [EXTRA]固定x的真实均匀角测度及角参数化推送；不把任意集合叫uniform，不添加跨x独立性假设；概率总质量尚未逐条证明。 -/
-def circleInitialLaw (κ l ε c x : ℝ) : Measure (MolecularDynamics.Chapter05Review.Phase 2) :=
-  Measure.map (circleInitialPoints κ l ε c x)
+[EXTRA] [EXTRA]固定x的真实均匀角测度及角参数化推送；不把任意集合叫uniform，不添加跨x独立性假设；概率总质量尚未逐条证明。 
+[EXTRA] 均匀圆概率主接口限定可行能量和原x区间，使用归一化角测度推前；c=U为退化Dirac，不默认负能差的sqrt总化初值。 -/
+def circleInitialLaw (κ l ε c x : ℝ)
+    (hfeas : 0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0]))
+    (hx : x ∈ Icc (105/100 : ℝ) (115/100)) : Measure (MolecularDynamics.Chapter05Review.Phase 2) :=
+  Measure.map (fun θ ↦ circleInitialPoints κ l ε c x θ hfeas hx)
     ((ENNReal.ofReal (2*Real.pi))⁻¹ • (volume.restrict (Ioc (0 : ℝ) (2*Real.pi))))
 
 /-- source_id: MD-5.4.1-CircleInitialEnergy · unnumbered_claim · §5.4.1 · 印刷p.202 / PDFp.223
-[EXTRA] [EXTRA]固定位置的实动量圆，根号非负；全能量等式不意味着极限图像填满可达区域。 -/
+[EXTRA] [EXTRA]固定位置的实动量圆，根号非负；全能量等式不意味着极限图像填满可达区域。 
+[EXTRA] 原能量恒等式保留为正式库总延拓的辅助证明；本条适用前提仍是非负能差，实际取样主接口由CircleInitialPoints/Law限定区间及可行域。 -/
 theorem circleInitialEnergy : ∀ κ l ε c x θ : ℝ,
   0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0]) →
-  let z := circleInitialPoints κ l ε c x θ
+  let z := circleInitialPoints_total κ l ε c x θ
   ((z.2 0)^2+(z.2 1)^2)/2+anisotropicPotential κ l ε z.1=c := by
   sorry
 
@@ -2266,6 +2278,7 @@ end MD.Ch05
 #print axioms MD.Ch05.anisotropicInitialEnergy
 #print axioms MD.Ch05.initialSegmentPrinted
 #print axioms MD.Ch05.circleInitialPoints
+#print axioms MD.Ch05.circleInitialPoints_total
 #print axioms MD.Ch05.circleInitialLaw
 #print axioms MD.Ch05.circleInitialEnergy
 #print axioms MD.Ch05.correlation

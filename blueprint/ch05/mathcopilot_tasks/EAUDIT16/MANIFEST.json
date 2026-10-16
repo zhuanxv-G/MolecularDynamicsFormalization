@@ -1,0 +1,45 @@
+{
+  "eaudit": "EAUDIT16",
+  "input_sha256": {
+    "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
+    "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+    "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4"
+  },
+  "subtasks": [
+    {
+      "subtask": "EAUDIT16a",
+      "source_id": "MD-5.4.1-CurveImageDimension",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/a",
+      "total_bytes": 132138,
+      "manifest_sha256": "da9e785d3edea6f282cb8c3f2107682013542362a53e33812aeb833cf594449c"
+    },
+    {
+      "subtask": "EAUDIT16b",
+      "source_id": "MD-5.4.1-PendulumPotential",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/b",
+      "total_bytes": 72972,
+      "manifest_sha256": "7a1e7a59c55d1a74bffa98aa5ab9999f8488375b8df452c98bec8df4b9e6a4b2"
+    },
+    {
+      "subtask": "EAUDIT16c",
+      "source_id": "MD-5.4.1-CircleInitialPoints",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/c",
+      "total_bytes": 135939,
+      "manifest_sha256": "5f0dddd342a1d9c75994db6d863e3a59034efa12ad9cfbed1db16760f3c9a3ee"
+    },
+    {
+      "subtask": "EAUDIT16d",
+      "source_id": "MD-5.4.1-CircleInitialLaw",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/d",
+      "total_bytes": 135425,
+      "manifest_sha256": "178c03f625ca0035ae1fffdd285c4ee0bb1b3737b9b09b8622ddd45c94935efa"
+    },
+    {
+      "subtask": "EAUDIT16e",
+      "source_id": "MD-5.4.1-CircleInitialEnergy",
+      "path": "blueprint/ch05/mathcopilot_tasks/EAUDIT16/e",
+      "total_bytes": 134448,
+      "manifest_sha256": "46531722f0429f494bef57712f28710ddc4c6ac0518d335d9442a3767f3dfc6c"
+    }
+  ]
+}

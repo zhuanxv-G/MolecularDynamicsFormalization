@@ -1,0 +1,43 @@
+{
+  "eaudit": "EAUDIT16",
+  "source_id": "MD-5.4.1-PendulumPotential",
+  "input_sha256": {
+    "BATCH_EAUDIT16.md": "4547696aeb8752da7664580fb1da3e2d0e420ac28c00fb9946ea63648c574837",
+    "Blueprint/Ch05.lean": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+    "blueprint/ch05/ch05_source.json": "d909eb97fc9da15be816e0523bc528292fbc42079fac1f231325f99d33b0aec4",
+    "EAUDIT16b_materials": "51b28310e1551f39fe6acdc54d38793488a2fa3b282a9bb66283fdfe6e58341a",
+    "EAUDIT16b_PAGES.pdf": "9c14a9d2816235f777667ca47248a02faee7319e8c41ef90569a9c94f2de5c68"
+  },
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    221
+  ],
+  "crop_pixel_identity": "PASS",
+  "paste_sha256": "d53b932a74481831b90288f8569987dbed1b61ec82e49d884dcbf92945ade64b",
+  "source_block_sha256": "e7a037b6d046800c623236b4fe3a6ac05ab1644a1f4fb080240f70f692847b49",
+  "source_declarations": [
+    "pendulumPotential"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "name": "MolecularDynamics.Chapter05Review.E",
+      "file_sha256": "afeeb14713ed8acdfb7aaad6540809e774ed054f0c0c018e95cefeb644536591",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "Blueprint/Ch05.lean",
+      "name": "pendulumPotential",
+      "file_sha256": "49ffd58abbb6fcddababb3051cdc8544286edce1a578292d69bf37d06a25d520",
+      "excerpt_sha256": "e7a037b6d046800c623236b4fe3a6ac05ab1644a1f4fb080240f70f692847b49"
+    }
+  ],
+  "expected_output": "/workspace/.mathcopilot/reviews/ch05_eaudit/EAUDIT16_review.json",
+  "total_task_bytes": 72972
+}
