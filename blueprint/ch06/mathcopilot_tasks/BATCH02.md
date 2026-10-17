@@ -224,7 +224,15 @@ def inverseThermal (kB T : ℝ) : ℝ := (kB * T)⁻¹
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "精确Boltzmann因子增加整个能量区间的恒定熵斜率；一般热浴只保留带余项近似。",
+      "corrected_decl": "MD.Ch06.bathBoltzmannPrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

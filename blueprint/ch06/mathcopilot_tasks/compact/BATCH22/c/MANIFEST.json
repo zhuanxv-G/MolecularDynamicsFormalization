@@ -17,15 +17,15 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
-  "lean_sha256": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
+  "source_json_sha256": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+  "lean_sha256": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
   "input_sha256": {
-    "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-    "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
     "BATCH22c_PAGES.pdf": "5d20633651a1e3e3aa642f289c8a8affc42b9cc982299da921032610b2548d44",
-    "signature_sha256": "ea1f56337c045b1b5bacf253a8bf51504e8fe21dea4181a96105df7b11d5850b"
+    "signature_sha256": "e15757cf69578a3bb2d693e63bf62c7d9628d7979f29031640222ae521937153"
   },
-  "signature_sha256": "ea1f56337c045b1b5bacf253a8bf51504e8fe21dea4181a96105df7b11d5850b",
+  "signature_sha256": "e15757cf69578a3bb2d693e63bf62c7d9628d7979f29031640222ae521937153",
   "definition_excerpts": [
     {
       "path": "MolecularDynamics/Chapter06/BrownianComplexKernel.lean",
@@ -234,6 +234,12 @@
     {
       "path": "Blueprint/Ch06.lean",
       "namespace": "MD.Ch06",
+      "name": "bathForceWeakLimitMeaning_corrected",
+      "code_sha256": "0aea2f63e1c1eee94d536d96bcdbefc324f6f6e6037e6dbf17d5f8044dda37f0"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
       "name": "bathFrequency",
       "code_sha256": "f0ea80751f0a429588bb931b70788d0b9c9d35b58bfc63ec00c1105cc98b7da8"
     },
@@ -412,11 +418,11 @@
       "code_sha256": "e26dd47f5c122900493506ccbe55a9fe93351b063566435477f1cbd5e0803040"
     }
   ],
-  "paste_plus_pdf_bytes": 140788,
+  "paste_plus_pdf_bytes": 143341,
   "files": {
     "PASTE.txt": {
-      "bytes": 28594,
-      "sha256": "c038862404079a3e9a1bf29e52e996bee1a3f691fd22c97ebdaf6a5fd8564f22"
+      "bytes": 31147,
+      "sha256": "2e0016b21d7d84868f6fabac80468eedc54887b986de906d29a9c8a4d57406f3"
     },
     "BATCH22c_PAGES.pdf": {
       "bytes": 112194,
@@ -429,5 +435,5 @@
     "pdf_rendered_pixel_equality_dpi": 72,
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 158835
+  "total_task_bytes": 161615
 }

@@ -1,0 +1,82 @@
+{
+  "result": "PASS",
+  "chapter": 6,
+  "source_entries": 249,
+  "old_rows_mapped": 126,
+  "full_batches": 42,
+  "compact_subtasks": 249,
+  "max_total_task_bytes": 252596,
+  "protected_unchanged": 925,
+  "statuses": {
+    "self-contained": 112,
+    "incomplete": 84,
+    "checked+documented priors": 53
+  },
+  "local_verdicts": {
+    "PASS": 218,
+    "NEEDS_HUMAN": 31
+  },
+  "direct_sorry": 74,
+  "transitive_only_sorry": 0,
+  "original_pages_rendered_and_visually_checked": 48,
+  "section_check_report_hashes": {
+    "section61": {
+      "shared": "1aa80ebacbfc7e8ec2e044cbcc547290ac307ea910bedc2be63a02523c9f400e",
+      "chapter": "4b5fa25250961b78e949e19686a8e37a2966b05ea195f1ad03f36870c8bc4ab3"
+    },
+    "section62": {
+      "shared": "5cc263e33360cbe4de20fb22d84618a0076d5c15bed79c08d09ae091f471e05b",
+      "chapter": "da45494b47647761cb4b2bca6ae8fa11ef51d7e43c3dc04e8b77d0a173fb121b"
+    },
+    "section631": {
+      "shared": "be089e619651ea4d3871fd94ecef25c85c88cdbce76611bdf1ab0529a1a6fa57",
+      "chapter": "66dba91324f994c50489b3fae0c82c01a410f7ffdd1ad3c9bc0c45ee0ce1715b"
+    },
+    "section632-resume1": {
+      "shared": "7170c065f390da77a39e7fcc260b29ffee5d9af8bbf46551cdb14ab4ba07d989",
+      "chapter": "d16da06e9b1a74856515e3814cfe8c4e21a1abed13fd4b200c0483ff681c3b92"
+    },
+    "section633-resume1": {
+      "shared": "f876fd0c6aee9de3a01bfca8de59ebcabfa883b47f3874063466518eadd864a5",
+      "chapter": "fccabfc0c767807f3ae8f386c2f307843f795333c130d97db20204860c6d5943"
+    },
+    "section634-637": {
+      "shared": "791f8bde65e0c81edfa6f8979d0884c9066c36c73095adc22b80db85852bdeda",
+      "chapter": "555d98af0c9e7def9579a77180d7b7188e8ad3905cca1d7370ceb437e7857918"
+    },
+    "section634-637-final": {
+      "shared": "791f8bde65e0c81edfa6f8979d0884c9066c36c73095adc22b80db85852bdeda",
+      "chapter": "d123552b0d99eb45aa8982c0303aeb3e5e7b811167fe5659e2231ce3b5e8d380"
+    },
+    "section638": {
+      "shared": "82a2b0f8e3679415bae47d297e4893a0e9ab84b80b1a44a63e9270b3fea5843f",
+      "chapter": "5f0f6b509640f28a4d5a6f93ab6b57a91dd3caa2c8b3a6ad321f62d94db8bb94"
+    },
+    "section641": {
+      "shared": "82a2b0f8e3679415bae47d297e4893a0e9ab84b80b1a44a63e9270b3fea5843f",
+      "chapter": "8346600daed7bd5175e7d6d5d6a18f3644ee900bbfbea63ac33377617b362830"
+    },
+    "section642": {
+      "shared": "82a2b0f8e3679415bae47d297e4893a0e9ab84b80b1a44a63e9270b3fea5843f",
+      "chapter": "de68bdcc4a2f6ee4ef9802979ec842b8033be4ae87dc705f39349dda5c1a71ee"
+    },
+    "section643": {
+      "shared": "82a2b0f8e3679415bae47d297e4893a0e9ab84b80b1a44a63e9270b3fea5843f",
+      "chapter": "7ab45bf64eae8320625c3ee1334e60a4741da45859c2dc64677301453153ba5f"
+    },
+    "section644": {
+      "shared": "82a2b0f8e3679415bae47d297e4893a0e9ab84b80b1a44a63e9270b3fea5843f",
+      "chapter": "737a736b237d218fbb8aa2965ea06c155a0bdfae6baea73a8cea34d5cb9e9d42"
+    },
+    "section645": {
+      "shared": "82a2b0f8e3679415bae47d297e4893a0e9ab84b80b1a44a63e9270b3fea5843f",
+      "chapter": "ba1b6d2176dc334014c86a4bad89497a3f6f6ca596a5bf10cacd7fa78155b6c9"
+    },
+    "CLOSEOUT22": {
+      "shared": "07b6835df5494070c07be8809b81b9035b88d16c6be52c6aff42bb8d158b6780",
+      "chapter": "47eed1677b63fdab8a128f925e445572ea85ae1613db4dec2399f37021226015"
+    }
+  },
+  "website_audit": "待网站审计",
+  "mentor_issues": "已记录，尚未确认"
+}

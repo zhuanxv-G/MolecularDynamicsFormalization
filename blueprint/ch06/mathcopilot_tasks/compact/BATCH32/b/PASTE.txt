@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH32b；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH32b_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH32b_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
   "signature_sha256": "0967f232e5773a65270f5af12c4bd89c6ebb22636c35f0e2f74823e86629e9db"
 }
@@ -116,46 +116,46 @@ abbrev V := Fin 3 → ℝ
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch06.aperiodic (Blueprint/Ch06.lean:1610)
+### MD.Ch06.aperiodic (Blueprint/Ch06.lean:1857)
 ```lean
 def aperiodic {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i, MolecularDynamics.Chapter06Review.period PiMark i = 1
 ```
 
-### MD.Ch06.finiteDistribution (Blueprint/Ch06.lean:1585)
+### MD.Ch06.finiteDistribution (Blueprint/Ch06.lean:1811)
 ```lean
 def finiteDistribution {k : ℕ} (ψ : MolecularDynamics.Chapter06Review.V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
 ```
 
-### MD.Ch06.finiteEvolution (Blueprint/Ch06.lean:1588)
+### MD.Ch06.finiteEvolution (Blueprint/Ch06.lean:1835)
 ```lean
 def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : MolecularDynamics.Chapter06Review.V k) (n : ℕ) : MolecularDynamics.Chapter06Review.V k :=
   Matrix.vecMul ψ (PiMark^n)
 ```
 
-### MD.Ch06.finiteInvariant (Blueprint/Ch06.lean:1616)
+### MD.Ch06.finiteInvariant (Blueprint/Ch06.lean:1863)
 ```lean
 def finiteInvariant {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : MolecularDynamics.Chapter06Review.V k) : Prop :=
   MolecularDynamics.Chapter06Review.finiteDistribution ψ ∧ Matrix.vecMul ψ PiMark = ψ
 ```
 
-### MD.Ch06.irreducible (Blueprint/Ch06.lean:1613)
+### MD.Ch06.irreducible (Blueprint/Ch06.lean:1860)
 ```lean
 def irreducible {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i j, ∃ n : ℕ, 0 < (PiMark^n) i j
 ```
 
-### MD.Ch06.period (Blueprint/Ch06.lean:1606)
+### MD.Ch06.period (Blueprint/Ch06.lean:1853)
 ```lean
 def period {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : ℕ :=
   sSup {d : ℕ | ∀ n ∈ MolecularDynamics.Chapter06Review.returnTimes PiMark i, d ∣ n}
 ```
 
-### MD.Ch06.returnTimes (Blueprint/Ch06.lean:1602)
+### MD.Ch06.returnTimes (Blueprint/Ch06.lean:1849)
 ```lean
 def returnTimes {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : Set ℕ :=
   {n | 0 < n ∧ 0 < (PiMark^n) i i}
 ```
 
-### MD.Ch06.stochasticMatrix (Blueprint/Ch06.lean:1579)
+### MD.Ch06.stochasticMatrix (Blueprint/Ch06.lean:1805)
 ```lean
 def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
   (∀ i j, 0 ≤ PiMark i j) ∧ ∀ i, ∑ j, PiMark i j = 1

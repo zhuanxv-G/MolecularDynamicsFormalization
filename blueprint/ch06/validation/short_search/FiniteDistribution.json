@@ -1,0 +1,23 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": "constructor\n  · constructor\n    · intro i\n      split_ifs <;> norm_num\n    · norm_num [Fin.sum_univ_two]\n  · intro h\n    have hi := h.1 (1 : Fin 2)\n    norm_num at hi",
+    "source": "blueprint/ch06/validation/batch_axioms/errata22-03-1362e06ae7.lean",
+    "log": "blueprint/ch06/validation/batch_axioms/errata22-03-1362e06ae7.log",
+    "source_sha256": "33594c10750ed667bb8dd0c268f21b76d6d71ed1a36d6e965af4fd975414eac3",
+    "log_sha256": "6a35a15ac5aeab3577ad021a57b8f225992b794ed7b7135037c9dd85df92c425",
+    "inline_bridge": true,
+    "diagnostic": "split_ifs did not beta-reduce the applied lambda; insert dsimp only before splitting."
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "constructor\n  · constructor\n    · intro i\n      dsimp only\n      split_ifs <;> norm_num\n    · norm_num [Fin.sum_univ_two]\n  · intro h\n    have hi := h.1 (1 : Fin 2)\n    norm_num at hi",
+    "source": "blueprint/ch06/validation/batch_axioms/errata22-03-44cc54c875.lean",
+    "log": "blueprint/ch06/validation/batch_axioms/errata22-03-44cc54c875.log",
+    "source_sha256": "4d409d003de94b46b3eb48e8bbeebcab7c759e103243d0f2e49f4b222219043e",
+    "log_sha256": "fccf6114b58626b3d5b7a6ad4d35db64e9a88c91ecd7313f263b8f9ca982dddc",
+    "inline_bridge": true
+  }
+]

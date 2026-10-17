@@ -207,6 +207,11 @@ theorem bathConvolutionIBP :
 def bathForce {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V k) (_hμ : ∀ i, 0 < μ i) (q0 p0 : MolecularDynamics.Chapter06Review.V k) (Q0 t : ℝ) : ℝ :=
   (k : ℝ)⁻¹ * ∑ i, (Real.cos (MolecularDynamics.Chapter06Review.bathFrequency μ i*t)*(q0 i-Q0) +
     (MolecularDynamics.Chapter06Review.bathFrequency μ i)⁻¹ * Real.sin (MolecularDynamics.Chapter06Review.bathFrequency μ i*t)*p0 i/μ i)
+
+/-- 修正版，对应原文 MD-6.3.3-BathForcePrinted；改动：选择正的初值合力f，使(6.29)保留+f；等价选项是保留原f并将(6.29)改为−f。 -/
+def bathForcePrinted_corrected {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V k) (_hμ : ∀ i, 0 < μ i) (q0 p0 : MolecularDynamics.Chapter06Review.V k) (Q0 t : ℝ) : ℝ :=
+  (k : ℝ)⁻¹ * ∑ i, (Real.cos (MolecularDynamics.Chapter06Review.bathFrequency μ i*t)*(q0 i-Q0) +
+    (MolecularDynamics.Chapter06Review.bathFrequency μ i)⁻¹ * Real.sin (MolecularDynamics.Chapter06Review.bathFrequency μ i*t)*p0 i/μ i)
 ```
 
 ### MD-6.3.3-BathForcePrinted
@@ -236,7 +241,15 @@ def bathForce {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V 
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "选择正的初值合力f，使(6.29)保留+f；等价选项是保留原f并将(6.29)改为−f。",
+      "corrected_decl": "MD.Ch06.bathForcePrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

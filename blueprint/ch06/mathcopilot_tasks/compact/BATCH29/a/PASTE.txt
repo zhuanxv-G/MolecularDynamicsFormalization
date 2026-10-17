@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH29a；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH29a_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH29a_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
   "signature_sha256": "4e6cb960613c12d507ace661ea65f6177a04a886c1a20b545336637088c30496"
 }
@@ -105,7 +105,7 @@ abbrev V := Fin 3 → ℝ
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch06.langevinMassForward (Blueprint/Ch06.lean:1505)
+### MD.Ch06.langevinMassForward (Blueprint/Ch06.lean:1722)
 ```lean
 def langevinMassForward {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : MolecularDynamics.Chapter06Review.V n → ℝ) (γ β : ℝ)
     (ρ : MolecularDynamics.Chapter06Review.Phase n → ℝ) (x : MolecularDynamics.Chapter06Review.Phase n) : ℝ :=
@@ -114,7 +114,7 @@ def langevinMassForward {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U
     γ*β⁻¹*m i*fderiv ℝ (fun z ↦ fderiv ℝ ρ z (0,Pi.single i 1)) x (0,Pi.single i 1))
 ```
 
-### MD.Ch06.massHamiltonian (Blueprint/Ch06.lean:199)
+### MD.Ch06.massHamiltonian (Blueprint/Ch06.lean:231)
 ```lean
 def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : MolecularDynamics.Chapter06Review.V n → ℝ) (x : MolecularDynamics.Chapter06Review.Phase n) : ℝ :=
   (∑ i, (x.2 i) ^ 2 / (2 * m i)) + U x.1

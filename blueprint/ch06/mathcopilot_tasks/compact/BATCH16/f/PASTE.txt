@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH16f；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH16f_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH16f_PAGES.pdf": "6f6a357923477e514795546ce778a6a81e3a770c786d9cb9e2d4f4c8411f18a9",
   "signature_sha256": "30b55b07da29df5e2b4be5174a6be6c8427a6d155142c70ac1a7d7bf1f9b739e"
 }
@@ -42,7 +42,15 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
   "extra_assumptions": [],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "采用区间积分∫[tₙ,tₙ₊₁]g²及同一过程的独立增量资格。",
+      "corrected_decl": "MD.Ch06.deterministicStrobePrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -67,21 +75,21 @@ def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (samp
     (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
 ```
 
-### MD.Ch06.deterministicIntegralProcess (Blueprint/Ch06.lean:862)
+### MD.Ch06.deterministicIntegralProcess (Blueprint/Ch06.lean:943)
 ```lean
 def deterministicIntegralProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
     (W Y : ℝ → Ω → ℝ) (g : ℝ → ℝ) : Prop :=
   ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W (fun s _ ↦ g s) T (Y T)
 ```
 
-### MD.Ch06.itoLeftSum (Blueprint/Ch06.lean:722)
+### MD.Ch06.itoLeftSum (Blueprint/Ch06.lean:779)
 ```lean
 def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
   ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
     (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
 ```
 
-### MD.Ch06.strictItoIntegral (Blueprint/Ch06.lean:728)
+### MD.Ch06.strictItoIntegral (Blueprint/Ch06.lean:785)
 ```lean
 def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
     (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=

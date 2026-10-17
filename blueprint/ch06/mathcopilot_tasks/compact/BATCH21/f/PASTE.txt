@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH21f；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH21f_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH21f_PAGES.pdf": "caf0649b504cdd9b1aef8c3686dd2a0a0da5f8b0eea5da0805c1ad484c9a9b19",
   "signature_sha256": "9f07c0d1189e93bb43d6a6e98ce5777518e8884055301f64c7a428d68c8cf730"
 }
@@ -77,14 +77,14 @@ def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (samp
     (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
 ```
 
-### MD.Ch06.itoLeftSum (Blueprint/Ch06.lean:722)
+### MD.Ch06.itoLeftSum (Blueprint/Ch06.lean:779)
 ```lean
 def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
   ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
     (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
 ```
 
-### MD.Ch06.strictItoIntegral (Blueprint/Ch06.lean:728)
+### MD.Ch06.strictItoIntegral (Blueprint/Ch06.lean:785)
 ```lean
 def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
     (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
@@ -111,7 +111,7 @@ structure textbookIsWienerVector {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
   cont : ∀ᵐ ω ∂P, Continuous (fun t ↦ B t ω)
 ```
 
-### MD.Ch06.variableFriction (Blueprint/Ch06.lean:1193)
+### MD.Ch06.variableFriction (Blueprint/Ch06.lean:1340)
 ```lean
 def variableFriction {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
     (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → ((Fin n → ℝ) × (Fin n → ℝ)))

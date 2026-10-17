@@ -69,7 +69,15 @@ theorem scalarItoFormula :
   "extra_assumptions": [],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "C²加强为C³，使三阶Taylor余项与扩散缩放匹配。",
+      "corrected_decl": "MD.Ch06.diffusiveTaylorPrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -107,7 +115,15 @@ theorem diffusiveTaylorPrinted : ∀ (φ : ℝ → ℝ) (x a b : ℝ), ContDiff 
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "原文右端以形式微分占位量记录，时间偏导补dt；完整修正积分公式独立命名。",
+      "corrected_decl": "MD.Ch06.timeItoFormula_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

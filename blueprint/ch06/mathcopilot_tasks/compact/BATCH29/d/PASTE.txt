@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH29d；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH29d_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH29d_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
   "signature_sha256": "674ab98b4bfdf8887f342e0b152d68aeb4140810efffe4258f3e302193a6dcbb"
 }
@@ -68,14 +68,14 @@ def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (samp
     (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
 ```
 
-### MD.Ch06.cylinderCoordinates (Blueprint/Ch06.lean:1685)
+### MD.Ch06.cylinderCoordinates (Blueprint/Ch06.lean:1932)
 ```lean
 def cylinderCoordinates {k₁ k₂ : ℕ} (z : Fin (k₁+k₂) → ℝ) :
     (Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ) :=
   (fun i ↦ (z ⟨i.val, by omega⟩ : AddCircle (1 : ℝ)), fun j ↦ z ⟨k₁+j.val, by omega⟩)
 ```
 
-### MD.Ch06.cylinderSDE (Blueprint/Ch06.lean:1691)
+### MD.Ch06.cylinderSDE (Blueprint/Ch06.lean:1938)
 ```lean
 def cylinderSDE {Ω : Type*} [MeasurableSpace Ω] {k₁ k₂ r : ℕ} (P : Measure Ω)
     (W : ℝ → Ω → (Fin r → ℝ))
@@ -89,14 +89,14 @@ def cylinderSDE {Ω : Type*} [MeasurableSpace Ω] {k₁ k₂ r : ℕ} (P : Measu
     (∀ᵐ sample ∂P, ∀ t : ℝ, 0 ≤ t → X t sample=cylinderCoordinates (lift t sample))
 ```
 
-### MD.Ch06.itoLeftSum (Blueprint/Ch06.lean:722)
+### MD.Ch06.itoLeftSum (Blueprint/Ch06.lean:779)
 ```lean
 def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
   ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
     (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
 ```
 
-### MD.Ch06.strictItoIntegral (Blueprint/Ch06.lean:728)
+### MD.Ch06.strictItoIntegral (Blueprint/Ch06.lean:785)
 ```lean
 def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
     (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
@@ -105,7 +105,7 @@ def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
     (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample-Y sample)^2 ∂P) atTop (𝓝 0)
 ```
 
-### MD.Ch06.strictVectorSDE (Blueprint/Ch06.lean:924)
+### MD.Ch06.strictVectorSDE (Blueprint/Ch06.lean:1015)
 ```lean
 def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
     (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))

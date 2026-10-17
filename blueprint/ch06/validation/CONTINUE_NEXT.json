@@ -1,54 +1,10 @@
 {
   "active_records": 249,
-  "current_native": "section634-637-final/chapter_build.compile-RUNNING.json",
-  "next_after_pass": "正文全部落盘后完成22号勘误双版本、导师总结和章末完整check；通过并push后停止。",
-  "remaining_sections": [
-    [
-      "6.3.8",
-      [
-        "ch06_section638"
-      ]
-    ],
-    [
-      "6.4.1",
-      [
-        "ch06_section641",
-        "ch06_section641b"
-      ]
-    ],
-    [
-      "6.4.2",
-      [
-        "ch06_section642"
-      ]
-    ],
-    [
-      "6.4.3",
-      [
-        "ch06_section643",
-        "ch06_section643b"
-      ]
-    ],
-    [
-      "6.4.4",
-      [
-        "ch06_section644",
-        "ch06_section644b",
-        "ch06_section644c",
-        "ch06_section644d",
-        "ch06_section644e",
-        "ch06_section644f"
-      ]
-    ],
-    [
-      "6.4.5",
-      [
-        "ch06_section645"
-      ]
-    ]
-  ],
+  "current_native": null,
+  "next_after_pass": "停止并等待用户新指令；不进入第7章；网站与导师审阅待用户安排。",
+  "remaining_sections": [],
   "rule": "one native compiler at a time; do not restore sealed proofs; reuse shared checks by actual current hashes",
-  "status": "active_directive22",
-  "current_verified_section": "6.4.5",
-  "current_check": "blueprint/ch06/validation/section645"
+  "status": "complete_directive22",
+  "current_verified_section": "第6章正文结束",
+  "current_check": "blueprint/ch06/validation/CLOSEOUT22"
 }

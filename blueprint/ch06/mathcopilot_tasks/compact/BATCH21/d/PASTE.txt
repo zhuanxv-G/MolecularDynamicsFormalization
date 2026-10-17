@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH21d；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH21d_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH21d_PAGES.pdf": "2c8a92b05e50247abafa2a6f76ee327b75e85a181c4cb7284c9c22be7895eb70",
   "signature_sha256": "513cc664075076bec0f05ee77c622478cfe1cc0668188523fd7528a526a4f860"
 }
@@ -80,14 +80,14 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch06.itoLeftSum (Blueprint/Ch06.lean:722)
+### MD.Ch06.itoLeftSum (Blueprint/Ch06.lean:779)
 ```lean
 def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
   ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
     (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
 ```
 
-### MD.Ch06.scalarLangevin (Blueprint/Ch06.lean:1162)
+### MD.Ch06.scalarLangevin (Blueprint/Ch06.lean:1309)
 ```lean
 def scalarLangevin {Ω : Type*} [MeasurableSpace Ω] (law : Measure Ω)
     (W Q momentum : ℝ → Ω → ℝ) (U : ℝ → ℝ) (γ σ q0 p0 : ℝ) : Prop :=
@@ -102,7 +102,7 @@ def scalarLangevin {Ω : Type*} [MeasurableSpace Ω] (law : Measure Ω)
     (fun sample ↦ momentum T sample-p0-∫ s in 0..T, -deriv U (Q s sample)-γ*momentum s sample)
 ```
 
-### MD.Ch06.strictItoIntegral (Blueprint/Ch06.lean:728)
+### MD.Ch06.strictItoIntegral (Blueprint/Ch06.lean:785)
 ```lean
 def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
     (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=

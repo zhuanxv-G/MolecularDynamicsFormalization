@@ -36,7 +36,7 @@ SPECS={
 'PeriodicPotentialBound':('PeriodicPotentialBound','周期势有界，不可能同时在其欧氏lift上随|q|→∞趋于∞；U=0也不满足Umin>1。','保留周期势有界结论；正下界通过加常数归一单独实现。'),
 'PeriodicConfiningPrinted':('LangevinLyapunov','正维周期lift沿整数平移取相同势值，无法趋于∞。','围束对象改为环面×动量空间上的Hamiltonian幂；无穷远只涉及动量方向。'),
 'LaplacianBoundPrinted':('LaplacianBoundCorrect','n=1、U=2、l=2、p=4时，实际Laplacian为52，印刷上界为40。','系数l(l+Nc−1)改为2l(l−1)+Nc·l。'),
-'LyapunovYoungBounds':('LyapunovYoungBounds','U(q)≤Umax不能推出严格U(q)<Umax；原Laplacian错系数也不能由Young估计补救。','可选严格外上界；同时保存原有效标量界和正确系数所需界。'),
+'LyapunovYoungBounds':(None,'U(q)≤Umax不能推出严格U(q)<Umax；原Laplacian错系数也不能由Young估计补救。','采用非严格上界，并列原有效标量界和正确Laplacian系数所需界；若另选严格外上界才可写原严格号。'),
 'Definition61':(None,'一维确定性dX=dt的漂移b₀=1已张成R，但点初始转移法则始终为Dirac，没有Lebesgue密度。单独把漂移放入生成族不能保证随机平滑。','用于密度结论时，从噪声字段开始，允许与漂移及噪声反复取括号；不把漂移本身直接加入初始生成族。'),
 'Lemma61Printed':('Lemma61Nonempty','C=∅是开集，但概率为0。','增加目标开集非空；保留任意点初值、任意t>0的实际核正概率。'),
 'Proposition64Printed':('Proposition64Relative','flat前向算子的像应满足相对于体积的零质量条件；原却用Gibbs加权零均值，同时把核写成Gibbs密度，混合两种坐标。','选择相对Gibbs密度坐标与真实加权伴随算子，核相应为常数；保留完整H¹解存在与唯一性目标。'),
@@ -94,6 +94,7 @@ theorem finiteDistributionPrinted_counterexample :
   constructor
   · constructor
     · intro i
+      dsimp only
       split_ifs <;> norm_num
     · norm_num [Fin.sum_univ_two]
   · intro h
@@ -135,6 +136,33 @@ def brownianMassGeneratorPrinted {n : ℕ} (m : Fin n → ℝ) (U f : (Fin n →
             r['code']+='\n\n/-- 修正版，Brownian扩散使用逆质量权重；实际生成元的表达式定义。 -/\n'+rename(originals['BrownianGenerator'],'brownianMassGeneratorPrinted_corrected')
         elif key=='Theorem62':
             r['code']+='\n\n/-- 【原书疑误】采用印刷Assumption1的版本；技术量词仍显式保留，不证。 -/\n'+rename(originals[key],'theorem62Printed').replace('Chapter06Review.assumption1 ','Chapter06Review.assumption1Printed ')
+        elif key=='PeriodicPotentialBound':
+            r['code']+='''\n\n/-- 【原书疑误】光滑周期势本身不能推出印刷的严格正下界；不证。 -/
+theorem periodicPotentialBoundPrinted : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ),
+    ContDiff ℝ ∞ U → textbookUnitPeriodicPotential U →
+    ∃ Umin Umax : ℝ, 1 < Umin ∧ ∀ q, Umin ≤ U q ∧ U q ≤ Umax := by
+  sorry
+
+/-- 零势的下界不可能严格大于1。 -/
+theorem periodicPotentialBoundPrinted_counterexample :
+    ¬ (∃ Umin Umax : ℝ, 1 < Umin ∧ ∀ q : Fin 1 → ℝ,
+      Umin ≤ (fun _ ↦ (0 : ℝ)) q ∧ (fun _ ↦ (0 : ℝ)) q ≤ Umax) := by
+  rintro ⟨Umin,Umax,hmin,hbound⟩
+  have hzero := (hbound 0).1
+  dsimp only at hzero
+  linarith'''
+        elif key=='LyapunovYoungBounds':
+            r['code']+='''\n\n/-- 【原书疑误】保留印刷严格中间不等号，仅有Uq≤Umax时不证明此版。 -/
+theorem lyapunovYoungBoundsPrinted : ∀ (l n : ℕ) (Umax : ℝ), 1 ≤ l → 1 ≤ Umax →
+  ∃ c d : ℝ, 0 < c ∧ 0 < d ∧ ∀ H : ℝ, 1 ≤ H → ∀ Uq : ℝ, Uq ≤ Umax →
+    ((l : ℝ)*((l : ℝ)+(n : ℝ)-1)*H^(l-1) ≤ (l : ℝ)/2*H^l+c) ∧
+    (2*(l : ℝ)*H^(l-1)*Uq < 2*(l : ℝ)*H^(l-1)*Umax) ∧
+    (2*(l : ℝ)*H^(l-1)*Umax ≤ (l : ℝ)/2*H^l+d) := by
+  sorry
+
+theorem lyapunovYoungBoundsPrinted_counterexample :
+    ¬ (2*(1 : ℝ)*1^(1-1)*1 < 2*(1 : ℝ)*1^(1-1)*1) := by
+  norm_num'''
         elif key=='Definition61':
             r['code']+='\n\n/-- 【原书疑误】保留原含漂移的张成条件，不能据此推出一般转移密度。 -/\n'+rename(originals[key],'definition61Printed')
         if key=='BathTaylor':
@@ -144,6 +172,20 @@ def brownianMassGeneratorPrinted {n : ℕ} (m : Fin n → ℝ) (U f : (Fin n →
   norm_num at hn'''
 
 def custom(key,r,name):
+    if key=='LyapunovYoungBounds':return '''theorem '''+name+''' :
+  ∀ (l n : ℕ) (Umax : ℝ), 1 ≤ l → 1 ≤ Umax →
+  ∃ c d : ℝ, 0 < c ∧ 0 < d ∧ ∀ H : ℝ, 1 ≤ H → ∀ Uq : ℝ, Uq ≤ Umax →
+    ((l : ℝ)*((l : ℝ)+(n : ℝ)-1)*H^(l-1) ≤ (l : ℝ)/2*H^l+c) ∧
+    (2*(l : ℝ)*H^(l-1)*Uq ≤ 2*(l : ℝ)*H^(l-1)*Umax) ∧
+    (2*(l : ℝ)*H^(l-1)*Umax ≤ (l : ℝ)/2*H^l+d) ∧
+    ((2*(l : ℝ)*((l : ℝ)-1)+(n : ℝ)*l)*H^(l-1) ≤ (l : ℝ)/2*H^l+c) := by
+  intro l n Umax hl hU
+  obtain ⟨c,d,hc,hd,hbounds⟩ := lyapunovYoungBounds l n Umax hl hU
+  refine ⟨c,d,hc,hd,?_⟩
+  intro H hH Uq hUq
+  have hH0 : 0 ≤ H := le_trans zero_le_one hH
+  have hb := hbounds H hH
+  exact ⟨hb.1,mul_le_mul_of_nonneg_left hUq (by positivity),hb.2.1,hb.2.2⟩'''
     if key=='CanonicalCDFPrinted':return '''def '''+name+''' (ZA ZB : ℝ → ℝ) (energy α : ℝ) : ℝ :=
   (∫ s in 0..α, ZA s*ZB (energy-s))/(∫ s in 0..energy, ZA s*ZB (energy-s))'''
     if key=='FiniteDomainPrinted':return '''theorem '''+name+''' {n : ℕ} (Q : Set (Fin n → ℝ))

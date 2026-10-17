@@ -32,7 +32,15 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "联合连续性的时间域由[0,∞)改为(0,∞)。",
+      "corrected_decl": "MD.Ch06.assumption1Printed_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -75,6 +83,16 @@ def assumption1Printed {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpa
 ```
 ```lean
 def assumption1 {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D) : Prop :=
+  IsCompact C ∧ (∃ y ∈ interior C, ∀ δ : ℝ, 0 < δ → ∃ t : ℝ≥0, 0 < t ∧
+    ∀ x ∈ C, 0 < K t x (Metric.ball y δ)) ∧
+  ∃ ρ : D → D → ℝ → ℝ, (∀ x z t, 0 ≤ ρ x z t) ∧
+    (∀ t : ℝ≥0, 0 < t → ∀ x ∈ C, ∀ A : Set D, MeasurableSet A → A ⊆ C →
+      K t x A = ∫⁻ z in A, ENNReal.ofReal (ρ x z t) ∂ν) ∧
+    ContinuousOn (fun w : (D×D)×ℝ ↦ ρ w.1.1 w.1.2 w.2) ((C×ˢ C)×ˢ Ioi 0)
+
+/-- 修正版，对应原文 MD-6.4.4-Assumption1Printed；改动：联合连续性的时间域由[0,∞)改为(0,∞)。 -/
+def assumption1Printed_corrected {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
     (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D) : Prop :=
   IsCompact C ∧ (∃ y ∈ interior C, ∀ δ : ℝ, 0 < δ → ∃ t : ℝ≥0, 0 < t ∧
     ∀ x ∈ C, 0 < K t x (Metric.ball y δ)) ∧
@@ -143,7 +161,15 @@ local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
   "extra_assumptions": [],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "只保留在明确正时刻密度、可达性条件下到小集下界的充分方向。",
+      "corrected_decl": "MD.Ch06.minorizationPrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -217,7 +243,15 @@ theorem minorizationCorrectedImplication :
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "明示实际Markov/Feller演化、正确正时刻密度、generator联系和先于过程选择的阈值；整条仍未证明。",
+      "corrected_decl": "MD.Ch06.theorem62_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -274,7 +308,15 @@ theorem theorem62 :
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "保留周期势有界结论；正下界通过加常数归一单独实现。",
+      "corrected_decl": "MD.Ch06.periodicPotentialBound_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

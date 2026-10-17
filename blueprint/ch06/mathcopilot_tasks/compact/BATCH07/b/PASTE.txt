@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH07b；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH07b_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH07b_PAGES.pdf": "6a6b4014c48f977d47afa698ef45f4f2e4f8712da06f24aee99ec7ff1c583c67",
   "signature_sha256": "7ee5d2038154421c958f085f0817b9c6f83e5bf7dc8aa94edfe3c02cadcdf30b"
 }
@@ -42,7 +42,15 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
   "extra_assumptions": [],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "去掉对已经归一化ρβ的第二次Zcan⁻¹；沿用未归一权重乘一次Zcan⁻¹的定义。",
+      "corrected_decl": "MD.Ch06.canonicalAveragePrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -69,7 +77,7 @@ def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch06.canonicalAveragePrinted (Blueprint/Ch06.lean:290)
+### MD.Ch06.canonicalAveragePrinted (Blueprint/Ch06.lean:328)
 ```lean
 def canonicalAveragePrinted {Nc : ℕ} (H : SymplecticCoordinates Nc → ℝ) (β : ℝ)
     (f : SymplecticCoordinates Nc → ℝ) : ℝ :=
@@ -77,7 +85,7 @@ def canonicalAveragePrinted {Nc : ℕ} (H : SymplecticCoordinates Nc → ℝ) (�
     ∫ z, f z * MolecularDynamics.Chapter06Review.canonicalDensity volume H β z
 ```
 
-### MD.Ch06.canonicalDensity (Blueprint/Ch06.lean:195)
+### MD.Ch06.canonicalDensity (Blueprint/Ch06.lean:227)
 ```lean
 def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (H : D → ℝ) (β : ℝ) (x : D) : ℝ := Real.exp (-β * H x) / (∫ z, Real.exp (-β * H z) ∂ν)

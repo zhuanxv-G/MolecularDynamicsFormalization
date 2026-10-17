@@ -67,4 +67,5 @@ apply_source_rechecks(RECORDS)
 from blueprint_source import apply_saved_routes
 from ch06_short_candidates import proofs as short_candidates
 apply_saved_routes(6,RECORDS,[key for key in short_candidates if any(r['source_id'].endswith('-'+key) for r in RECORDS)])
-
+from ch06_errata import apply as apply_errata22
+apply_errata22(RECORDS)

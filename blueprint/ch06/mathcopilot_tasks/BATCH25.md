@@ -204,6 +204,13 @@ theorem fpDriftAdjoint :
         "statement_latex": "With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho)_{xx}dx.\\]"
       },
       "website": "待网站审计"
+    },
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "仅将两次分部积分后的外负号改为正号，保留原C²和紧支资格。",
+      "corrected_decl": "MD.Ch06.fpDiffusionPrinted_corrected",
+      "website": "未提交；待网站审计"
     }
   ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
@@ -276,7 +283,15 @@ theorem fpAdjointCompact :
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "显式约束所需导数的多项式增长和密度导数的指数衰减。",
+      "corrected_decl": "MD.Ch06.fpPolynomialAdjoint_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

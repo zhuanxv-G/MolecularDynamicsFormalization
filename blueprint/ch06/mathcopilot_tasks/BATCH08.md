@@ -300,7 +300,15 @@ theorem periodicBoundaryCancellation {Nc : ℕ}
   "extra_assumptions": [],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "Zcan定义为积分本身；归一密度的结论另见DensityNormalization，避免把定义重述作新定理。",
+      "corrected_decl": "MD.Ch06.partitionInversePrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

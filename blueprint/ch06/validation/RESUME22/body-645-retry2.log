@@ -18,3 +18,122 @@ Counts: {"entries": 249, "local_PASS": 219, "local_NEEDS_HUMAN": 30, "errata_rec
 Running: D:\anaconda\python.exe scripts/local_section_check.py 6 blueprint/ch06/validation/section645 --reuse-shared blueprint/ch01/validation/CLOSEOUT21/full
 Section complete with verified batch check reuse: blueprint/ch06/validation/section645
 Running: D:\anaconda\python.exe scripts/local_checkpoint.py 6 6.4.5 blueprint/ch06/validation/section645 正文全部落盘后完成22号勘误双版本、导师总结和章末完整check；通过并push后停止。
+warning: in the working copy of 'scripts/blueprint_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_stage.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_chapter_check.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_checkpoint.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/render_local_source.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/validate_local_delivery.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_archive_obsolete.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_chapter_start.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_short_search.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_compile.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_preflight.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_section_check.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/local_advance_ch06.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_batch_axioms.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_errata.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_sync22.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section611.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section612b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section613.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section614.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section615.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section615b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section621b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section621c.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section622.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section622b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section622c.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section63.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section632.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section636.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section641.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section641b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section642.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section643.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section643b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section644.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section644b.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section644d.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section644e.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch06_section644f.py', LF will be replaced by CRLF the next time Git touches it
+[chapter06-blueprint 965bd28f] ch06 sec6.4.5: faithful local blueprint and checked checkpoint
+ 572 files changed, 50722 insertions(+), 2477 deletions(-)
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/BATCH42.md
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/a/BATCH42a_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/a/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/a/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/b/BATCH42b_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/b/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/b/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/c/BATCH42c_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/c/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/c/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/d/BATCH42d_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/d/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/d/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/e/BATCH42e_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/e/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/e/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/f/BATCH42f_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/f/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/f/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/g/BATCH42g_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/g/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/g/PASTE.txt
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/h/BATCH42h_PAGES.pdf
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/h/MANIFEST.json
+ create mode 100644 blueprint/ch06/mathcopilot_tasks/compact/BATCH42/h/PASTE.txt
+ create mode 100644 blueprint/ch06/validation/RESUME22/body-645-retry1.log
+ create mode 100644 blueprint/ch06/validation/RESUME22/body-645-retry2.log
+ create mode 100644 blueprint/ch06/validation/RESUME22/body-645.log
+ create mode 100644 blueprint/ch06/validation/batch_axioms/sec6.4.5-proofs-5ff01d674d-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch_axioms/sec6.4.5-proofs-5ff01d674d-binding.json
+ create mode 100644 blueprint/ch06/validation/batch_axioms/sec6.4.5-proofs-5ff01d674d.json
+ create mode 100644 blueprint/ch06/validation/batch_axioms/sec6.4.5-proofs-5ff01d674d.lean
+ create mode 100644 blueprint/ch06/validation/batch_axioms/sec6.4.5-proofs-5ff01d674d.log
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-1f5b8086-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-1f5b8086-binding.json
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-1f5b8086.json
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-1f5b8086.lean
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-1f5b8086.log
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-6060280a-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-6060280a.json
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-6060280a.lean
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-6060280a.log
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-ace876f5-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-ace876f5.json
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-ace876f5.lean
+ create mode 100644 blueprint/ch06/validation/batch_axioms/section645-ace876f5.log
+ create mode 100644 blueprint/ch06/validation/section645/CHECK_REPORT.json
+ create mode 100644 blueprint/ch06/validation/section645/LOCAL_CHECK_REPORT.json
+ create mode 100644 blueprint/ch06/validation/section645/SHARED_REUSE.json
+ create mode 100644 blueprint/ch06/validation/section645/axiom_dependencies.log
+ create mode 100644 blueprint/ch06/validation/section645/blueprint_axiom_dependencies.log
+ create mode 100644 blueprint/ch06/validation/section645/blueprint_fresh_Ch01.log
+ create mode 100644 blueprint/ch06/validation/section645/blueprint_fresh_Ch02.log
+ create mode 100644 blueprint/ch06/validation/section645/chapter02_axiom_dependencies.log
+ create mode 100644 blueprint/ch06/validation/section645/chapter_axioms.log
+ create mode 100644 blueprint/ch06/validation/section645/git_branch.log
+ create mode 100644 blueprint/ch06/validation/section645/git_head.log
+ create mode 100644 blueprint/ch06/validation/section645/git_status.log
+ create mode 100644 blueprint/ch06/validation/section645/lake_build.log
+ create mode 100644 blueprint/ch06/validation/section645/lake_version.log
+ create mode 100644 blueprint/ch06/validation/section645/lean_version.log
+ create mode 100644 blueprint/ch06/validation/section645/mathlib_revision.log
+ create mode 100644 blueprint/ch06/validation/section645/mathlib_status.log
+ create mode 100644 blueprint/ch06/validation/section645/scratch.log
+ create mode 100644 blueprint/ch06/validation/short_search/KernelDuality.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-f83b42aa25f10fa89505.compile-RUNNING.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-f83b42aa25f10fa89505.compile.json
+ create mode 100644 blueprint/ch06/validation/short_search/route-f83b42aa25f10fa89505.lean
+ create mode 100644 blueprint/ch06/validation/short_search/route-f83b42aa25f10fa89505.log
+ create mode 100644 scripts/ch06_section645.py
+To https://github.com/zhuanxv-G/MolecularDynamicsFormalization.git
+   699f5d56..965bd28f  chapter06-blueprint -> chapter06-blueprint
+branch 'chapter06-blueprint' set up to track 'origin/chapter06-blueprint'.
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+Committed and pushed 965bd28f0636b42e49a3bfee1aa6ab27e7675831 ; live cross-chapter pointer updated.
+SECTION COMMITTED AND PUSHED: 6.4.5
+BODY CHECKPOINTS FINISHED; ERRATA AND FINAL ACCEPTANCE STILL REQUIRED

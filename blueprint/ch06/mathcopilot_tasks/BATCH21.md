@@ -83,6 +83,13 @@ theorem bathReduction :
       "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
       "evidence": "source_transcription_fixes.json; PDF258/259",
       "website": "待网站审计"
+    },
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "使用从原Hamilton方程实际代入所得的正合力卷积方程。",
+      "corrected_decl": "MD.Ch06.bathReductionPrinted_corrected",
+      "website": "未提交；待网站审计"
     }
   ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
@@ -134,6 +141,13 @@ theorem bathReductionPrinted :
       "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
       "evidence": "source_transcription_fixes.json; PDF258/259",
       "website": "待网站审计"
+    },
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "仅给分布收敛的精确定义，并明确正质量资格；不声称任意热浴满足该极限。",
+      "corrected_decl": "MD.Ch06.memoryKernelDeltaMeaning_corrected",
+      "website": "未提交；待网站审计"
     }
   ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
@@ -142,6 +156,12 @@ theorem bathReductionPrinted :
 ```lean
 def memoryKernelDeltaMeaning (masses : (k : ℕ) → (Fin k → ℝ)) (γ : ℝ) : Prop :=
   0 < γ ∧ ∀ f : ℝ → ℝ, ContDiff ℝ ∞ f → HasCompactSupport f →
+    Tendsto (fun k ↦ ∫ t, MolecularDynamics.Chapter06Review.memoryKernel (masses k) t*f t)
+      atTop (𝓝 (γ*f 0))
+
+/-- 修正版，对应原文 MD-6.3.3-MemoryKernelDeltaMeaning；改动：仅给分布收敛的精确定义，并明确正质量资格；不声称任意热浴满足该极限。 -/
+def memoryKernelDeltaMeaning_corrected (masses : (k : ℕ) → (Fin k → ℝ)) (γ : ℝ) : Prop :=
+  (∀ k, ∀ i, 0 < masses k i) ∧ 0 < γ ∧ ∀ f : ℝ → ℝ, ContDiff ℝ ∞ f → HasCompactSupport f →
     Tendsto (fun k ↦ ∫ t, MolecularDynamics.Chapter06Review.memoryKernel (masses k) t*f t)
       atTop (𝓝 (γ*f 0))
 ```

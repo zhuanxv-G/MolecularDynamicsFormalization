@@ -1,10 +1,10 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH22c；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH22c_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH22c_PAGES.pdf": "5d20633651a1e3e3aa642f289c8a8affc42b9cc982299da921032610b2548d44",
-  "signature_sha256": "ea1f56337c045b1b5bacf253a8bf51504e8fe21dea4181a96105df7b11d5850b"
+  "signature_sha256": "e15757cf69578a3bb2d693e63bf62c7d9628d7979f29031640222ae521937153"
 }
 
 请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH22c_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
@@ -45,7 +45,15 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "将与Wiener过程比较的对象改为时间积分后的热浴力；仍只定义极限意义。",
+      "corrected_decl": "MD.Ch06.bathForceWeakLimitMeaning_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -61,6 +69,22 @@ def bathForceWeakLimitMeaning {A : Type*} [MeasurableSpace A] (P : Measure A)
   (∀ k, 0 < k → ∀ i, 0 < masses k i) ∧
   (∀ k T sample s, forcePaths k T sample s =
     MolecularDynamics.Chapter06Review.bathForcePrinted (masses k) (q0 k sample) (p0 k sample) Q0 s) ∧
+  (∀ T sample s, wienerPaths T sample s=W s sample) ∧
+  ∀ T : ℝ, 0 < T → ∀ f : C(Icc (0 : ℝ) T, ℝ) → ℝ,
+    Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun k ↦ ∫ sample, f (forcePaths k T sample) ∂P) atTop
+      (𝓝 (∫ sample, f (wienerPaths T sample) ∂P))
+
+/-- 修正版，对应原文 MD-6.3.3-BathForceWeakLimitMeaning；改动：将与Wiener过程比较的对象改为时间积分后的热浴力；仍只定义极限意义。 -/
+def bathForceWeakLimitMeaning_corrected {A : Type*} [MeasurableSpace A] (P : Measure A)
+    (masses : (k : ℕ) → Fin k → ℝ) (q0 p0 : (k : ℕ) → A → (Fin k → ℝ))
+    (Q0 : ℝ) (W : ℝ → A → ℝ)
+    (forcePaths : (k : ℕ) → (T : ℝ) → A → C(Icc (0 : ℝ) T, ℝ))
+    (wienerPaths : (T : ℝ) → A → C(Icc (0 : ℝ) T, ℝ)) : Prop :=
+  IsPreBrownianReal (fun t sample ↦ W t sample) P ∧
+  (∀ k, 0 < k → ∀ i, 0 < masses k i) ∧
+  (∀ k T sample s, forcePaths k T sample s =
+    ∫ u in (0 : ℝ)..(s : ℝ), MolecularDynamics.Chapter06Review.bathForce (masses k) (q0 k sample) (p0 k sample) Q0 u) ∧
   (∀ T sample s, wienerPaths T sample s=W s sample) ∧
   ∀ T : ℝ, 0 < T → ∀ f : C(Icc (0 : ℝ) T, ℝ) → ℝ,
     Continuous f → Bornology.IsBounded (Set.range f) →
@@ -251,19 +275,19 @@ abbrev V := Fin 3 → ℝ
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch06.bathForce (Blueprint/Ch06.lean:1111)
+### MD.Ch06.bathForce (Blueprint/Ch06.lean:1235)
 ```lean
 def bathForce {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V k) (_hμ : ∀ i, 0 < μ i) (q0 p0 : MolecularDynamics.Chapter06Review.V k) (Q0 t : ℝ) : ℝ :=
   (k : ℝ)⁻¹ * ∑ i, (Real.cos (MolecularDynamics.Chapter06Review.bathFrequency μ i*t)*(q0 i-Q0) +
     (MolecularDynamics.Chapter06Review.bathFrequency μ i)⁻¹ * Real.sin (MolecularDynamics.Chapter06Review.bathFrequency μ i*t)*p0 i/μ i)
 ```
 
-### MD.Ch06.bathForcePrinted (Blueprint/Ch06.lean:1118)
+### MD.Ch06.bathForcePrinted (Blueprint/Ch06.lean:1247)
 ```lean
 def bathForcePrinted {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V k) (_hμ : ∀ i, 0 < μ i) (q0 p0 : MolecularDynamics.Chapter06Review.V k) (Q0 t : ℝ) : ℝ := -MolecularDynamics.Chapter06Review.bathForce μ q0 p0 Q0 t
 ```
 
-### MD.Ch06.bathForceWeakLimitMeaning (Blueprint/Ch06.lean:1258)
+### MD.Ch06.bathForceWeakLimitMeaning (Blueprint/Ch06.lean:1405)
 ```lean
 def bathForceWeakLimitMeaning {A : Type*} [MeasurableSpace A] (P : Measure A)
     (masses : (k : ℕ) → Fin k → ℝ) (q0 p0 : (k : ℕ) → A → (Fin k → ℝ))
@@ -281,7 +305,25 @@ def bathForceWeakLimitMeaning {A : Type*} [MeasurableSpace A] (P : Measure A)
       (𝓝 (∫ sample, f (wienerPaths T sample) ∂P))
 ```
 
-### MD.Ch06.bathFrequency (Blueprint/Ch06.lean:1086)
+### MD.Ch06.bathForceWeakLimitMeaning_corrected (Blueprint/Ch06.lean:1421)
+```lean
+def bathForceWeakLimitMeaning_corrected {A : Type*} [MeasurableSpace A] (P : Measure A)
+    (masses : (k : ℕ) → Fin k → ℝ) (q0 p0 : (k : ℕ) → A → (Fin k → ℝ))
+    (Q0 : ℝ) (W : ℝ → A → ℝ)
+    (forcePaths : (k : ℕ) → (T : ℝ) → A → C(Icc (0 : ℝ) T, ℝ))
+    (wienerPaths : (T : ℝ) → A → C(Icc (0 : ℝ) T, ℝ)) : Prop :=
+  IsPreBrownianReal (fun t sample ↦ W t sample) P ∧
+  (∀ k, 0 < k → ∀ i, 0 < masses k i) ∧
+  (∀ k T sample s, forcePaths k T sample s =
+    ∫ u in (0 : ℝ)..(s : ℝ), MolecularDynamics.Chapter06Review.bathForce (masses k) (q0 k sample) (p0 k sample) Q0 u) ∧
+  (∀ T sample s, wienerPaths T sample s=W s sample) ∧
+  ∀ T : ℝ, 0 < T → ∀ f : C(Icc (0 : ℝ) T, ℝ) → ℝ,
+    Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun k ↦ ∫ sample, f (forcePaths k T sample) ∂P) atTop
+      (𝓝 (∫ sample, f (wienerPaths T sample) ∂P))
+```
+
+### MD.Ch06.bathFrequency (Blueprint/Ch06.lean:1210)
 ```lean
 def bathFrequency {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review.V k) (_hμ : ∀ i, 0 < μ i) (i : Fin k) : ℝ := (Real.sqrt ((k : ℝ)*μ i))⁻¹
 ```

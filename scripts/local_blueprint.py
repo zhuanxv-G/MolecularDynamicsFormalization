@@ -17,7 +17,9 @@ def pipeline(ch):
     lo,hi,p0,p1=RANGES[ch];off=p0-lo
     text=text.replace('75<=p<=116',f'{p0}<=p<={p1}').replace('p-22',f'p-{off}')
     text=text.replace('53–94/PDF75–116',f'{lo}–{hi}/PDF{p0}–{p1}')
-    text=text.replace('第1、2章均等待用户提交MathCopilot批次',f'第{ch}章等待用户提交MathCopilot批次；继续下一章本地流程')
+    handoff=(f'第{ch}章等待用户提交MathCopilot批次；本章完成后停止并等待用户新指令，不进入第7章'
+             if ch==6 else f'第{ch}章等待用户提交MathCopilot批次；继续下一章本地流程')
+    text=text.replace('第1、2章均等待用户提交MathCopilot批次',handoff)
     text=text.replace('namespace MD.Ch'+f'{ch:02}'+'；open',f'namespace MD.Ch{ch:02}；open')
     text=text.replace('import MolecularDynamics.Chapter02.ReviewProofs',
         f'import MolecularDynamics.Chapter{ch:02}.ReviewProofs\nimport MolecularDynamics.Chapter02.ReviewProofs',1)

@@ -1,10 +1,10 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH30c；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH30c_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH30c_PAGES.pdf": "8177071121fb292231a8d5e19bf9dbbfbe5f36a7923b3c8f6383ed07e10bbfb9",
-  "signature_sha256": "486c5affcba616cf461b2ddc19617a3c0bc0d9b103cdb50b19c183bd0d65ffd2"
+  "signature_sha256": "847d79cc229cb5df7a3646b0b1c7d07e40c08b995f74165fcbbeddd5a01c17e9"
 }
 
 请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH30c_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
@@ -48,6 +48,10 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
 ```lean
 def ouDensity (γ σ x0 t x : ℝ) : ℝ :=
   MolecularDynamics.Chapter06Review.ouDensityPrinted γ σ x0 t x / Real.sqrt (2*Real.pi*MolecularDynamics.Chapter06Review.ouVariance γ σ t)
+
+/-- 修正版，对应原文 MD-6.4.2-OUDensityPrinted；改动：增加(2πσ²(t))⁻¹/²，并限γ>0、噪声非零、t>0的密度解释。 -/
+def ouDensityPrinted_corrected (γ σ x0 t x : ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.ouDensityPrinted γ σ x0 t x / Real.sqrt (2*Real.pi*MolecularDynamics.Chapter06Review.ouVariance γ σ t)
 ```
 
 原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
@@ -69,16 +73,22 @@ def ouMean (γ x0 t : ℝ) : ℝ := Real.exp (-γ*t)*x0
 def ouVariance (γ σ t : ℝ) : ℝ := σ^2 * (1-Real.exp (-2*γ*t))/(2*γ)
 ```
 
-### MD.Ch06.ouDensity (Blueprint/Ch06.lean:1961)
+### MD.Ch06.ouDensity (Blueprint/Ch06.lean:2314)
 ```lean
 def ouDensity (γ σ x0 t x : ℝ) : ℝ :=
   MolecularDynamics.Chapter06Review.ouDensityPrinted γ σ x0 t x / Real.sqrt (2*Real.pi*MolecularDynamics.Chapter06Review.ouVariance γ σ t)
 ```
 
-### MD.Ch06.ouDensityPrinted (Blueprint/Ch06.lean:1956)
+### MD.Ch06.ouDensityPrinted (Blueprint/Ch06.lean:2309)
 ```lean
 def ouDensityPrinted (γ σ x0 t x : ℝ) : ℝ :=
   Real.exp (-(x-MolecularDynamics.Chapter06Review.ouMean γ x0 t)^2/(2*MolecularDynamics.Chapter06Review.ouVariance γ σ t))
+```
+
+### MD.Ch06.ouDensityPrinted_corrected (Blueprint/Ch06.lean:2318)
+```lean
+def ouDensityPrinted_corrected (γ σ x0 t x : ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.ouDensityPrinted γ σ x0 t x / Real.sqrt (2*Real.pi*MolecularDynamics.Chapter06Review.ouVariance γ σ t)
 ```
 
 ### MolecularDynamics.Chapter06Review.ouMean (MolecularDynamics/Chapter06/ReviewDefinitions.lean:85)

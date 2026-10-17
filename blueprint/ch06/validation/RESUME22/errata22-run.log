@@ -1,0 +1,83 @@
+RUN D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch errata22-01 --step 22号勘误原文/修正版配对
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+RUN D:\anaconda\python.exe scripts/ch06_batch_axioms.py errata22-01-feebbbe713
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+Batch axioms passed: errata22-01-feebbbe713 249
+RUN D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 249, "local_PASS": 219, "local_NEEDS_HUMAN": 30, "errata_records": 37, "source_errata_records": 36, "declarations": {"\u5b9a\u4e49": 100, "\u5df2\u8bc1": 90, "\u672a\u8bc1": 72}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 18, "\u65f6\u95f4\u76d2\u6b62": 17, "\u7f3a\u5927\u578b\u7406\u8bba": 37}, "website_submitted": false}
+RUN D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch errata22-02 --step 22号勘误原文/修正版配对
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+RUN D:\anaconda\python.exe scripts/ch06_batch_axioms.py errata22-02-5409128176
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+Batch axioms passed: errata22-02-5409128176 249
+RUN D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 249, "local_PASS": 219, "local_NEEDS_HUMAN": 30, "errata_records": 37, "source_errata_records": 36, "declarations": {"\u5b9a\u4e49": 104, "\u5df2\u8bc1": 90, "\u672a\u8bc1": 77}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 18, "\u65f6\u95f4\u76d2\u6b62": 18, "\u7f3a\u5927\u578b\u7406\u8bba": 41}, "website_submitted": false}
+RUN D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch errata22-03 --step 22号勘误原文/修正版配对
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+RUN D:\anaconda\python.exe scripts/ch06_batch_axioms.py errata22-03-1362e06ae7
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\ch06_batch_axioms.py", line 13, in <module>
+    assert receipt['exit_code']==0,out.decode('utf-8',errors='replace')[-5000:]
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: t, Classical.choice, Quot.sound]
+'MD.Ch06.assumption1Printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.assumption1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.assumption2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.minorizationPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.minorizationCorrectedImplication' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.theorem62' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.periodicPotentialBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.potentialNormalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.unitLangevinModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.periodicConfiningPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerCancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerMomentumDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerMomentumLaplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.laplacianBoundPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.laplacianBoundCounterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.laplacianBoundCorrect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.lyapunovYoungBounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinLyapunov' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.lieBracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.lieBracketProperties' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.definition61' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinDrift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinNoise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinNoiseBracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinBracketIndependent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinHormander' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinTransitionDensity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.lemma61Printed' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.lemma61Nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.controlPath' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.controlEndpointStable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.wienerControlTube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinCanonicalStationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinGeometricErgodicity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.langevinTimeAverage' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.weightedH1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.weightedH1Norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.proposition64Printed' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.proposition64Relative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.fredholmAlternative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.backwardKernelConstants' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.forwardKernelGibbs' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.weightedFunctionNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.weightedVectorNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.kernelEvolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.kernelAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.densityEvolutionMeaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.kernelDuality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.smoothTestL2Printed' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.complexInitialDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinForwardSemigroupMeaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.complexEigenmodeDecay' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\run_ch06_errata22.py", line 29, in <module>
+    subprocess.run(command,cwd=ROOT,check=True)
+  File "D:\anaconda\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['D:\\anaconda\\python.exe', 'scripts/ch06_batch_axioms.py', 'errata22-03-1362e06ae7']' returned non-zero exit status 1.

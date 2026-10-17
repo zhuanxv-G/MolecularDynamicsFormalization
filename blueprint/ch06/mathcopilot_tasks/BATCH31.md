@@ -63,12 +63,41 @@ def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "原nonzero单独保留为严格正权重版本；一般定义采用非负权重、总和1。",
+      "corrected_decl": "MD.Ch06.finiteDistribution_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
 ```lean
 def finiteDistribution {k : ℕ} (ψ : MolecularDynamics.Chapter06Review.V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
+
+/-- 修正版，对应原文 MD-6.4.1-FiniteDistribution；改动：原nonzero单独保留为严格正权重版本；一般定义采用非负权重、总和1。 -/
+def finiteDistribution_corrected {k : ℕ} (ψ : MolecularDynamics.Chapter06Review.V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
+
+/-- 【原书疑误】保留nonzero按正概率权重的字面版本。 -/
+def finiteDistributionPrinted {k : ℕ} (ψ : Fin k → ℝ) : Prop :=
+  (∀ i, 0 < ψ i) ∧ ∑ i, ψ i=1
+
+/-- 边界概率向量(1,0)是概率分布，但不满足印刷nonzero权重资格。 -/
+theorem finiteDistributionPrinted_counterexample :
+    finiteDistribution (fun i : Fin 2 ↦ if i=0 then 1 else 0) ∧
+      ¬ finiteDistributionPrinted (fun i : Fin 2 ↦ if i=0 then 1 else 0) := by
+  constructor
+  · constructor
+    · intro i
+      dsimp only
+      split_ifs <;> norm_num
+    · norm_num [Fin.sum_univ_two]
+  · intro h
+    have hi := h.1 (1 : Fin 2)
+    norm_num at hi
 ```
 
 ### MD-6.4.1-FiniteEvolution

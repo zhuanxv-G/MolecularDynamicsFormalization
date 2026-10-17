@@ -65,7 +65,15 @@ def unitLangevinModel {n : ℕ} {A : Type*} [MeasurableSpace A] (P : Measure A)
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "围束对象改为环面×动量空间上的Hamiltonian幂；无穷远只涉及动量方向。",
+      "corrected_decl": "MD.Ch06.periodicConfiningPrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -239,7 +247,15 @@ theorem hamiltonianPowerMomentumLaplacian {Nc : ℕ}
   "extra_assumptions": [],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "系数l(l+Nc−1)改为2l(l−1)+Nc·l。",
+      "corrected_decl": "MD.Ch06.laplacianBoundPrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

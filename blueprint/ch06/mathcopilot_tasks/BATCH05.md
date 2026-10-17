@@ -30,7 +30,15 @@ Lean4.34.0 / Mathlibv4.34.0。完整依赖工程版本以MANIFEST哈希为准；
   "extra_assumptions": [],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "将有限体积域内光滑改为紧域上连续，使用紧性保证权重可积。",
+      "corrected_decl": "MD.Ch06.finiteDomainPrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

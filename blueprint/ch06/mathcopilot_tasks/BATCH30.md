@@ -77,7 +77,15 @@ theorem langevinCanonicalMixing :
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "增加(2πσ²(t))⁻¹/²，并限γ>0、噪声非零、t>0的密度解释。",
+      "corrected_decl": "MD.Ch06.ouDensityPrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -114,6 +122,10 @@ def ouDensityPrinted (γ σ x0 t x : ℝ) : ℝ :=
 ```
 ```lean
 def ouDensity (γ σ x0 t x : ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.ouDensityPrinted γ σ x0 t x / Real.sqrt (2*Real.pi*MolecularDynamics.Chapter06Review.ouVariance γ σ t)
+
+/-- 修正版，对应原文 MD-6.4.2-OUDensityPrinted；改动：增加(2πσ²(t))⁻¹/²，并限γ>0、噪声非零、t>0的密度解释。 -/
+def ouDensityPrinted_corrected (γ σ x0 t x : ℝ) : ℝ :=
   MolecularDynamics.Chapter06Review.ouDensityPrinted γ σ x0 t x / Real.sqrt (2*Real.pi*MolecularDynamics.Chapter06Review.ouVariance γ σ t)
 ```
 

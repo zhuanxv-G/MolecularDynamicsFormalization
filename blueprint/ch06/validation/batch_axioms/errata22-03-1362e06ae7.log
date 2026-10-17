@@ -1,0 +1,502 @@
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:40:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:41:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:76:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:121:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:176:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:205:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:216:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:236:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:245:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:258:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:281:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:289:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:350:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:354:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:364:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:420:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:457:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:488:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:566:36: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:605:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:627:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:636:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:646:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:686:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:694:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:709:90: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:709:90: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:716:57: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:723:62: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:731:66: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:738:74: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:742:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:771:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:824:72: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:831:72: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:851:69: warning: Variable name `P` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _P
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:867:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:874:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:891:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:900:72: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:925:59: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:949:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:959:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:969:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1029:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1043:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1050:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1059:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1072:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1091:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1118:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1146:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1156:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1164:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1173:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1199:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1214:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1225:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1256:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1268:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1281:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1438:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1458:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1481:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1516:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1603:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1614:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1625:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1637:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1662:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1695:4: warning: This simp argument is unused:
+  Finset.mul_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.trace, Matrix.diag, Matrix.mul_apply, Matrix.transpose_apply, Finset.sum_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1707:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1735:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1750:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1778:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1787:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1796:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1827:6: error: Tactic `split_ifs` failed: no if-then-else conditions to split
+
+case left.left
+i : Fin 2
+⊢ 0 ≤ (fun i => if i = 0 then 1 else 0) i
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1867:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1923:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1971:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:1995:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2099:81: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2099:81: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2107:78: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2107:78: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2139:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2164:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2189:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2233:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2286:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2338:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2347:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2358:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2447:48: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2447:48: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2446:122: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2467:78: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2471:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2484:94: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2484:94: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2632:62: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2638:74: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2650:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2667:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2731:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2754:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2782:70: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2782:70: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2786:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2805:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2825:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2836:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2847:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2896:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2897:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2905:8: warning: declaration uses `sorry`
+blueprint\ch06\validation\batch_axioms\errata22-03-1362e06ae7.lean:2938:8: warning: declaration uses `sorry`
+'MD.Ch06.microcanonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.entropy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.independentPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.entropyAdditivity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.entropyEquilibrium' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.temperature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.inverseThermal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathBoltzmannPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.bathBoltzmannPrinted_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.logTemperature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathMeanValue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathTaylorEstimate' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.boltzmannConstantSlope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathBoltzmannPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalCDFPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalCDFPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalEnergyDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.entropyFunctional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.constrainedEntropyModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.entropyFirstVariation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.entropyVariation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.massHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.partitionMass' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.partitionDomain' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.finiteDomainPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.finiteDomainPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.periodicPartitionBridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.confiningPartition' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.lennardJonesNonintegrable' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.lennardJonesConfinement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.periodicWeightIntegrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.periodicPartitionPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.polynomialObservable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalAveragePrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalAveragePrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalAverageOne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.equipartition' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.configTemperature' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.proposition61' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.weightedFluxZero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalDivergenceIdentity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.temperatureChoiceDerivatives' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.periodicBoundaryCancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.meanEnergyConstraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.densityNormalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.partitionInversePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.partitionInversePrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.weightedFluxIdentity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.virialTemperature' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.virialFieldNotPeriodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.densityPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.kineticWeightFactorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.energySupportObstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalSamplingObstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.rademacherJumps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.randomWalk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.walkRecurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.walkInitial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.walkVariance' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.diffusiveWalk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.interpolatedWalk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.walkIncrement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.walkGridMoments' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.interpolatedWalkMean' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.walkDiffusion' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.wienerVector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.wienerIncrement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.wienerContinuousVersion' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.wienerNondifferentiable' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.wienerFutureCompletedHistory' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.gridWienerIncrementLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.gridIncrementIndependent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.wienerContinuousPathEval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.wienerContinuousPathMeasurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.coarseMarkovPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.stateMarkovMeaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.coarseMarkovPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.riemannTags' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.itoLeftSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.strictItoIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.weakItoAlias_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.weakItoAlias' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.stratonovichSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.selfItoFiniteIdentity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.proposition62' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.proposition62_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.proposition62Printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.proposition62Expansion_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.proposition62Printed_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.meanSquareConvergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.wienerMidpointSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.gaussianIncrementMean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.gaussianIncrementSecond' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.gaussianIncrementFourth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.quadraticMeanSquareError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.selfItoIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.selfStratonovichIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.proposition63' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.quadraticSumExpectation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.selfItoLimitL2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.selfItoSumsL2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.midpointSumsL2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.deterministicIntegralProcess' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.deterministicStrobePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.deterministicStrobeCorrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.deterministicStrobePrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.stochasticDifferentialIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.biasedWalk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.biasedWalkSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.strictScalarSDE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.strictVectorSDE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.scalarItoFormula' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.diffusiveTaylorPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.diffusiveTaylorPrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.timeItoFormula' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.timeItoFormula_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.timeItoFormulaPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.biasedWalkDiffusion' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.strictOUProcess' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.ouIntegratingFactor' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.ouVarianceIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.ouLawPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.ouLawCorrect' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.ouLawPrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.ouGibbsLimit' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.momentumOU' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.gibbsGaussianDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathHamiltonEquations' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.bathFrequency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathOscillatorSolution' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.bathConvolutionIBP' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.bathForce' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathForcePrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathForcePrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.memoryKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathReduction' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.bathReductionPrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.bathReductionPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.memoryKernelDeltaMeaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.memoryKernelDeltaMeaning_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.scalarLangevin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinMassSDE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.variableFriction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.particleDiagonalFriction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianMassSDE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.frequencyMemoryKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.figure64Frequencies' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.figure65Frequencies' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathForceWeakLimitMeaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.bathForceWeakLimitMeaning_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.overdampedLimit' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.scalarGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.generatorExpectation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.polynomialSmooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.densityExpectation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.scalarForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.fpDriftAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.fpDiffusionPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.fpDiffusionPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.fpAdjointCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.fpPolynomialAdjoint' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.fpPolynomialAdjoint_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.fpPolynomialAdjointPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.fpEquation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.zeroNoise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.vectorIto' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.vectorForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.cylinderForwardPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.diffusionTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.vectorFPEquation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.langevinMassForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.momentumMassLaplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinFPEquation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.massGibbsStationary' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.unitMassGibbsStationaryBridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.variableFrictionForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.variableFrictionCanonicalPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.variableFrictionCommutingStationary' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.variableFrictionCanonicalPrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.stochasticMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteDistribution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteDistribution_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteDistributionPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteDistributionPrinted_counterexample' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.finiteEvolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteEvolutionRecurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.returnTimes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.period' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.aperiodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.irreducible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteInvariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteErgodicity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.stochasticEntryBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteChainExample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.exampleStochastic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.exampleNotIrreducible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.communicates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.directedGraphIrreducible' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.cylinderCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.cylinderSDE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.cylinderGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.cylinderForwardPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.stationaryDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.stationaryInvariant' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalMixingMeaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinCanonicalMixing' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.brownianGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianWeightedInner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianDirichlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianSymmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianNonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianNonpositive_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianRealEigenvalue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianClosedSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianCompactResolvent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianDiscreteSpectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianSpectralGap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.theorem61' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.theorem61_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.theorem61Printed' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.brownianMassGeneratorPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianMassGeneratorPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.theorem61TimeAveragePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.brownianEnsembleExponential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.theorem61TimeAveragePrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianNegativeDefinitePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.ouDensityPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.ouDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.assumption1Printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.assumption1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.assumption2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.minorizationPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.minorizationCorrectedImplication' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.theorem62' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.periodicPotentialBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.potentialNormalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.unitLangevinModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.periodicConfiningPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerCancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerMomentumDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerMomentumLaplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.laplacianBoundPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.laplacianBoundCounterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.laplacianBoundCorrect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.lyapunovYoungBounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinLyapunov' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.lieBracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.lieBracketProperties' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.definition61' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinDrift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinNoise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinNoiseBracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinBracketIndependent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinHormander' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinTransitionDensity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.lemma61Printed' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.lemma61Nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.controlPath' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.controlEndpointStable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.wienerControlTube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinCanonicalStationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinGeometricErgodicity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.langevinTimeAverage' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.weightedH1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.weightedH1Norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.proposition64Printed' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.proposition64Relative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.fredholmAlternative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.backwardKernelConstants' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.forwardKernelGibbs' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.weightedFunctionNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.weightedVectorNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.kernelEvolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.kernelAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.densityEvolutionMeaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.kernelDuality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.smoothTestL2Printed' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.complexInitialDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinForwardSemigroupMeaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.complexEigenmodeDecay' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH29e；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH29e_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH29e_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
   "signature_sha256": "2a803ca8e42e6538301aa9b0462f2c426c484c3a9459804de70764fbcb6f1aff"
 }
@@ -73,14 +73,14 @@ abbrev V := Fin 3 → ℝ
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch06.cylinderCoordinates (Blueprint/Ch06.lean:1685)
+### MD.Ch06.cylinderCoordinates (Blueprint/Ch06.lean:1932)
 ```lean
 def cylinderCoordinates {k₁ k₂ : ℕ} (z : Fin (k₁+k₂) → ℝ) :
     (Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ) :=
   (fun i ↦ (z ⟨i.val, by omega⟩ : AddCircle (1 : ℝ)), fun j ↦ z ⟨k₁+j.val, by omega⟩)
 ```
 
-### MD.Ch06.cylinderGenerator (Blueprint/Ch06.lean:1703)
+### MD.Ch06.cylinderGenerator (Blueprint/Ch06.lean:1950)
 ```lean
 def cylinderGenerator {k₁ k₂ r : ℕ}
     (b₀ : ((Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ)) → (Fin (k₁+k₂) → ℝ))

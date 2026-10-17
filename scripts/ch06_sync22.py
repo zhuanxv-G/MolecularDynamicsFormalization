@@ -82,8 +82,8 @@ for key,(target,example,change) in SPECS.items():
     original={'Proposition62':'proposition62Printed','FiniteDistribution':'finiteDistributionPrinted',
         'TimeItoFormula':'timeItoFormulaPrinted','FPPolynomialAdjoint':'fpPolynomialAdjointPrinted',
         'Theorem61':'theorem61Printed','Theorem62':'theorem62Printed',
-        'BrownianNonpositive':'brownianNegativeDefinitePrinted','PeriodicPotentialBound':'periodicConfiningPrinted',
-        'LyapunovYoungBounds':'laplacianBoundPrinted'}.get(key,name)
+        'BrownianNonpositive':'brownianNegativeDefinitePrinted','PeriodicPotentialBound':'periodicPotentialBoundPrinted',
+        'LyapunovYoungBounds':'lyapunovYoungBoundsPrinted'}.get(key,name)
     corrected=name+'_corrected'
     issues=' '.join(x['detail'].removeprefix('[ERRATUM?]') for x in r['issues'])
     if key=='Proposition62':issues+=' 原书p.230末句印刷ν→0，实际应为ν→∞。'

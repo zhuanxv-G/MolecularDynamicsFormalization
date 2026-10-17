@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH15a；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH15a_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH15a_PAGES.pdf": "46fe0c1f4f3ba2b76ebe9fbea4cdd02da75e696114911d5241c5895a2494f36c",
   "signature_sha256": "09e60f5dfd8faf15e64b16aba1a020e3e59e6f5017b7002f1a80105de1375996"
 }
@@ -67,7 +67,7 @@ noncomputable def textbookWienerTime (T : ℝ≥0) (K k : ℕ) : ℝ≥0 :=
   (k : ℝ≥0) * (T / (K : ℝ≥0))
 ```
 
-### MD.Ch06.wienerMidpointSum (Blueprint/Ch06.lean:770)
+### MD.Ch06.wienerMidpointSum (Blueprint/Ch06.lean:851)
 ```lean
 noncomputable def wienerMidpointSum {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} (W : ℝ≥0 → Ω → ℝ) (T : ℝ≥0) (K : ℕ) : Ω → ℝ :=
   fun sample ↦ ∑ k : Fin K, W (textbookWienerTime T (2 * K) (2 * k.val + 1)) sample *

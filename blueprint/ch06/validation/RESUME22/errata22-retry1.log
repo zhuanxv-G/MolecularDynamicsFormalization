@@ -1,0 +1,22 @@
+RUN D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch errata22-03 --step 22号勘误原文/修正版配对
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+RUN D:\anaconda\python.exe scripts/ch06_batch_axioms.py errata22-03-44cc54c875
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+Batch axioms passed: errata22-03-44cc54c875 249
+RUN D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 249, "local_PASS": 219, "local_NEEDS_HUMAN": 30, "errata_records": 37, "source_errata_records": 36, "declarations": {"\u5b9a\u4e49": 109, "\u5df2\u8bc1": 94, "\u672a\u8bc1": 82}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 20, "\u65f6\u95f4\u76d2\u6b62": 18, "\u7f3a\u5927\u578b\u7406\u8bba": 44}, "website_submitted": false}
+RUN D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch errata22-04 --step 22号勘误原文/修正版配对
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+RUN D:\anaconda\python.exe scripts/ch06_batch_axioms.py errata22-04-6161db83a3
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+Batch axioms passed: errata22-04-6161db83a3 249
+RUN D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 249, "local_PASS": 219, "local_NEEDS_HUMAN": 30, "errata_records": 37, "source_errata_records": 36, "declarations": {"\u5b9a\u4e49": 111, "\u5df2\u8bc1": 98, "\u672a\u8bc1": 85}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 21, "\u65f6\u95f4\u76d2\u6b62": 18, "\u7f3a\u5927\u578b\u7406\u8bba": 46}, "website_submitted": false}
+RUN D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch errata22-05 --step 22号勘误原文/修正版配对
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+RUN D:\anaconda\python.exe scripts/ch06_batch_axioms.py errata22-05-441b7590ba
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+Batch axioms passed: errata22-05-441b7590ba 249
+RUN D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 249, "local_PASS": 218, "local_NEEDS_HUMAN": 31, "errata_records": 37, "source_errata_records": 36, "declarations": {"\u5b9a\u4e49": 115, "\u5df2\u8bc1": 100, "\u672a\u8bc1": 86}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 21, "\u65f6\u95f4\u76d2\u6b62": 18, "\u7f3a\u5927\u578b\u7406\u8bba": 47}, "website_submitted": false}
+ALL REVIEW PAIRS LANDED; FINAL ACCEPTANCE STILL REQUIRED

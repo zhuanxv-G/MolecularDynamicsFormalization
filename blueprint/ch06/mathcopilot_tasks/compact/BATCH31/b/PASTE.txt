@@ -1,10 +1,10 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH31b；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH31b_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH31b_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
-  "signature_sha256": "c05c97ddf04ee4838e242feef7cb8517b944365a6bb878c2b03caa97ea5e6e81"
+  "signature_sha256": "c439f19b97c80ea0c5b88957d2fd5cf771c9293f0eb39cf559b13e73df276b8b"
 }
 
 请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH31b_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
@@ -44,7 +44,15 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "原nonzero单独保留为严格正权重版本；一般定义采用非负权重、总和1。",
+      "corrected_decl": "MD.Ch06.finiteDistribution_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -52,6 +60,27 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
 ## 实际Lean签名/定义
 ```lean
 def finiteDistribution {k : ℕ} (ψ : MolecularDynamics.Chapter06Review.V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
+
+/-- 修正版，对应原文 MD-6.4.1-FiniteDistribution；改动：原nonzero单独保留为严格正权重版本；一般定义采用非负权重、总和1。 -/
+def finiteDistribution_corrected {k : ℕ} (ψ : MolecularDynamics.Chapter06Review.V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
+
+/-- 【原书疑误】保留nonzero按正概率权重的字面版本。 -/
+def finiteDistributionPrinted {k : ℕ} (ψ : Fin k → ℝ) : Prop :=
+  (∀ i, 0 < ψ i) ∧ ∑ i, ψ i=1
+
+/-- 边界概率向量(1,0)是概率分布，但不满足印刷nonzero权重资格。 -/
+theorem finiteDistributionPrinted_counterexample :
+    finiteDistribution (fun i : Fin 2 ↦ if i=0 then 1 else 0) ∧
+      ¬ finiteDistributionPrinted (fun i : Fin 2 ↦ if i=0 then 1 else 0) := by
+  constructor
+  · constructor
+    · intro i
+      dsimp only
+      split_ifs <;> norm_num
+    · norm_num [Fin.sum_univ_two]
+  · intro h
+    have hi := h.1 (1 : Fin 2)
+    norm_num at hi
 ```
 
 原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
@@ -72,7 +101,18 @@ abbrev V := Fin 3 → ℝ
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch06.finiteDistribution (Blueprint/Ch06.lean:1585)
+### MD.Ch06.finiteDistribution (Blueprint/Ch06.lean:1811)
 ```lean
 def finiteDistribution {k : ℕ} (ψ : MolecularDynamics.Chapter06Review.V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
+```
+
+### MD.Ch06.finiteDistributionPrinted (Blueprint/Ch06.lean:1817)
+```lean
+def finiteDistributionPrinted {k : ℕ} (ψ : Fin k → ℝ) : Prop :=
+  (∀ i, 0 < ψ i) ∧ ∑ i, ψ i=1
+```
+
+### MD.Ch06.finiteDistribution_corrected (Blueprint/Ch06.lean:1814)
+```lean
+def finiteDistribution_corrected {k : ℕ} (ψ : MolecularDynamics.Chapter06Review.V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
 ```

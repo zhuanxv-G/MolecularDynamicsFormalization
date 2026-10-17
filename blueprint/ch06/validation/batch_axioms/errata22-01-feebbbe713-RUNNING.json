@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint\\ch06\\validation\\batch_axioms\\errata22-01-feebbbe713.lean"
+  ],
+  "input_sha256": "5d9139160ccb81957bf544148a0d0c8eefdaa994180fe38079c1fbccdaae2ba0",
+  "parent_pid": 4940,
+  "parent_create_time": 1792227926.547166,
+  "compiler_pid": 14836,
+  "compiler_create_time": 1792227927.121863,
+  "started_at": "2026-10-17T17:05:27.127403",
+  "status": "completed",
+  "exit_code": 0,
+  "completed_at": "2026-10-17T17:05:55.267984"
+}

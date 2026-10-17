@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH22e；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH22e_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH22e_PAGES.pdf": "caf0649b504cdd9b1aef8c3686dd2a0a0da5f8b0eea5da0805c1ad484c9a9b19",
   "signature_sha256": "829fa031e1f12dd1f159f4db901058475c0a9f3698dbb4828587c07d6f1c4c2b"
 }
@@ -44,7 +44,15 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "增加ΓΓᵀ与质量矩阵M交换条件；另一个可选修法是修改漂移以匹配噪声协方差。",
+      "corrected_decl": "MD.Ch06.variableFrictionCanonicalPrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -102,7 +110,7 @@ abbrev V := Fin 3 → ℝ
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch06.massHamiltonian (Blueprint/Ch06.lean:199)
+### MD.Ch06.massHamiltonian (Blueprint/Ch06.lean:231)
 ```lean
 def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : MolecularDynamics.Chapter06Review.V n → ℝ) (x : MolecularDynamics.Chapter06Review.Phase n) : ℝ :=
   (∑ i, (x.2 i) ^ 2 / (2 * m i)) + U x.1
@@ -115,7 +123,7 @@ noncomputable def textbookConfigurationPartial {Nc : ℕ}
   fderiv ℝ f q (Pi.single i 1)
 ```
 
-### MD.Ch06.variableFrictionForward (Blueprint/Ch06.lean:1549)
+### MD.Ch06.variableFrictionForward (Blueprint/Ch06.lean:1766)
 ```lean
 def variableFrictionForward {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ)
     (Γ : (Fin n → ℝ) → Matrix (Fin n) (Fin r) ℝ) (θ : ℝ)

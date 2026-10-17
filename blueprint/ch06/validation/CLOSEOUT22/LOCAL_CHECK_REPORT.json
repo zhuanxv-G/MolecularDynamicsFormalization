@@ -1,0 +1,52 @@
+{
+  "chapter": 6,
+  "machine_check_status": "passed",
+  "shared_check_sha256": "07b6835df5494070c07be8809b81b9035b88d16c6be52c6aff42bb8d158b6780",
+  "inputs": [
+    {
+      "relative_path": "Blueprint/Ch06.lean",
+      "sha256": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e"
+    },
+    {
+      "relative_path": "blueprint/ch06/CheckAxioms.lean",
+      "sha256": "53389ed967893447b2cf0e21f9a1365f8e7bb0e91d530e4822852f024469a4e6"
+    },
+    {
+      "relative_path": "lakefile.toml",
+      "sha256": "eadb8599a3d2ddca7ae22e2865fab9f138332e67b4b65653b9fe780a8a3621bc"
+    },
+    {
+      "relative_path": "lean-toolchain",
+      "sha256": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632"
+    },
+    {
+      "relative_path": "lake-manifest.json",
+      "sha256": "5156c987301057f3386cd99b43d5125e87b82bd245e712c60152cc4b5f357aba"
+    },
+    {
+      "relative_path": "scripts/local_chapter_check.ps1",
+      "sha256": "be85325b1323e9498051708bf44f87e3e8588078e1fa4926e60224604a51935a"
+    }
+  ],
+  "checks": [
+    {
+      "name": "chapter_fresh_and_axioms_reused",
+      "exit_code": 0,
+      "raw_log": "chapter_axioms.log",
+      "raw_log_sha256": "0597f4b8887dfe5da68b8c8656e873b6030f10f2943cd8a5bcfc90b4da2a9aeb",
+      "original_receipt": "blueprint/ch06/validation/batch_axioms/errata22-06-0a02a34ec6.json",
+      "original_receipt_sha256": "b12f132c7427fb896c0c37478ffb95dc3bff90cd02b1ec6b08a2a1013789c5e3",
+      "original_command": [
+        "lake",
+        "env",
+        "lean",
+        "blueprint\\ch06\\validation\\batch_axioms\\errata22-06-0a02a34ec6.lean"
+      ],
+      "reuse_basis": "entire current canonical source plus all current axiom commands; exact source and log hashes checked",
+      "native_rerun": false
+    }
+  ],
+  "current_chapter_build_receipt_sha256": null,
+  "native_build_rerun": false,
+  "section_acceptance": "All shared full-check components reused by exact current hashes; changed chapter checked by complete native single-file plus every declaration axiom command. No second elaboration of identical chapter source."
+}

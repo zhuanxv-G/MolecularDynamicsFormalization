@@ -12,15 +12,15 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
-  "lean_sha256": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
+  "source_json_sha256": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+  "lean_sha256": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
   "input_sha256": {
-    "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-    "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
     "BATCH21c_PAGES.pdf": "8e56181fe4956f8bef3a1ce62bd5f9a0d7e9a2d027a0ebdfcf42c8e1e54a7303",
-    "signature_sha256": "c4190aa91c728c5ba207ac3c84893552108b0fe6e62ca5909aea968e21695076"
+    "signature_sha256": "53d51f1eb49d52d71a5adeebb543dac0aa995804569253a51e8636b003d605a6"
   },
-  "signature_sha256": "c4190aa91c728c5ba207ac3c84893552108b0fe6e62ca5909aea968e21695076",
+  "signature_sha256": "53d51f1eb49d52d71a5adeebb543dac0aa995804569253a51e8636b003d605a6",
   "definition_excerpts": [
     {
       "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
@@ -69,13 +69,19 @@
       "namespace": "MD.Ch06",
       "name": "memoryKernelDeltaMeaning",
       "code_sha256": "c4190aa91c728c5ba207ac3c84893552108b0fe6e62ca5909aea968e21695076"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "memoryKernelDeltaMeaning_corrected",
+      "code_sha256": "24db34b56a23854f888d73364cfdaa6e72b8aafcb3236cd030ec89f4bb048209"
     }
   ],
-  "paste_plus_pdf_bytes": 217299,
+  "paste_plus_pdf_bytes": 218602,
   "files": {
     "PASTE.txt": {
-      "bytes": 6509,
-      "sha256": "a025bff4a0e0ea1359acc74f4a2930351801231d1765ee8f701d5d3e6c4b020a"
+      "bytes": 7812,
+      "sha256": "a47a2a897441c1139315f8104a0f120be135488a8faa337c0d9417f8c223fe71"
     },
     "BATCH21c_PAGES.pdf": {
       "bytes": 210790,
@@ -88,5 +94,5 @@
     "pdf_rendered_pixel_equality_dpi": 144,
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 220832
+  "total_task_bytes": 222361
 }

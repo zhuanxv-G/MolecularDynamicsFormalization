@@ -12,15 +12,15 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
-  "lean_sha256": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
+  "source_json_sha256": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+  "lean_sha256": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
   "input_sha256": {
-    "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-    "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
     "BATCH30c_PAGES.pdf": "8177071121fb292231a8d5e19bf9dbbfbe5f36a7923b3c8f6383ed07e10bbfb9",
-    "signature_sha256": "486c5affcba616cf461b2ddc19617a3c0bc0d9b103cdb50b19c183bd0d65ffd2"
+    "signature_sha256": "847d79cc229cb5df7a3646b0b1c7d07e40c08b995f74165fcbbeddd5a01c17e9"
   },
-  "signature_sha256": "486c5affcba616cf461b2ddc19617a3c0bc0d9b103cdb50b19c183bd0d65ffd2",
+  "signature_sha256": "847d79cc229cb5df7a3646b0b1c7d07e40c08b995f74165fcbbeddd5a01c17e9",
   "definition_excerpts": [
     {
       "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
@@ -53,6 +53,12 @@
       "code_sha256": "183af3ea1c6c47a406b73358a0e0f2ef0f31c4185de4cd86c398579685007ce2"
     },
     {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "ouDensityPrinted_corrected",
+      "code_sha256": "8ea7fc638261e0a3581293b181f3178502dd18cfe5b594e38c4ad4225c46a3fb"
+    },
+    {
       "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
       "namespace": "MolecularDynamics.Chapter06Review",
       "name": "ouMean",
@@ -65,11 +71,11 @@
       "code_sha256": "20860191b8c74dc295e90b89f4faf150d4a73ff53834bacec1e06fd750c42839"
     }
   ],
-  "paste_plus_pdf_bytes": 85987,
+  "paste_plus_pdf_bytes": 86633,
   "files": {
     "PASTE.txt": {
-      "bytes": 5356,
-      "sha256": "b467ff27cbdf9d9f3d1a4fec6bb4b731c042712035d27dde1f7a578ac5d75032"
+      "bytes": 6002,
+      "sha256": "207f9cc8a08dc19ffe969192fdbdd3f8d0f79aba67cda49033e8dfa43791760f"
     },
     "BATCH30c_PAGES.pdf": {
       "bytes": 80631,
@@ -82,5 +88,5 @@
     "pdf_rendered_pixel_equality_dpi": 72,
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 89312
+  "total_task_bytes": 90176
 }

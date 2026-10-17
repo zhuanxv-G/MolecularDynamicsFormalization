@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH11e；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH11e_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH11e_PAGES.pdf": "c2a16b12e18e22ab2b659c05e029e59a3216cb2fc24c51ab323d7be7797e6ad8",
   "signature_sha256": "bc80671099dd0c60099b62b82e9cfc6eaea99c11405b3fd2bfbf4e53e80eb654"
 }
@@ -214,7 +214,7 @@ abbrev Q (n : ℕ) := Fin n → ℝ
 abbrev Q (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch06.rademacherJumps (Blueprint/Ch06.lean:530)
+### MD.Ch06.rademacherJumps (Blueprint/Ch06.lean:579)
 ```lean
 def rademacherJumps {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
     (J : ℕ → Ω → ℝ) : Prop :=
@@ -223,7 +223,7 @@ def rademacherJumps {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
     (∀ᵐ sample ∂P, J k sample = 1 ∨ J k sample = -1) ∧ (∫ sample, J k sample ∂P) = 0
 ```
 
-### MD.Ch06.randomWalk (Blueprint/Ch06.lean:537)
+### MD.Ch06.randomWalk (Blueprint/Ch06.lean:586)
 ```lean
 def randomWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω) : ℝ :=
   dx * ∑ k ∈ Finset.range n, J k sample

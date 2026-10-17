@@ -1,8 +1,18 @@
+# 第6章本地流程完成，等待用户新指令
+
+第6章正文全部条目已落盘；章末完整check通过。249条；印刷p.258/PDF279正文结束。Exercises与参考文献排除。
+
+下一步：停止并等待用户新指令；不进入第7章；网站与导师审阅待用户安排。
+
+验证：validation/CLOSEOUT22；DELIVERY_VALIDATION.json；proof_attempts.json。网站未提交。
+
+---
+
 # 第6章本地五步流程进度
 
 范围：印刷p.211–258/PDF232–279，Exercises及参考文献排除；第1–5章冻结，正式库冻结，heartbeat ACTIVE/15分钟原样。
-第6章本地部分完成；第6章等待用户提交MathCopilot批次；继续下一章本地流程。网站不可用，未冻结。
-当前249条；旧清单映射126/126；本地PASS 219；网站返回0。
+第6章本地流程已通过章末验收；等待用户提交MathCopilot批次；停止并等待用户新指令，不进入第7章。
+当前249条；旧清单映射126/126；本地PASS 218；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -208,7 +218,7 @@
 | MD-6.4.4-MinorizationPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原等价适用对象/密度和时间域需导师；保留完整双向字面陈述。 |
 | MD-6.4.4-MinorizationCorrectedImplication | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺真实kernel小集/联合连续密度的完整组合桥接；不建立一般Harris理论。 |
 | MD-6.4.4-Theorem62 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；没有现成完整Thm6.2桥接；保持sorry，不恢复封存Harris长证明或构建缺失大型理论。 |
-| MD-6.4.4-PeriodicPotentialBound | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-PeriodicPotentialBound | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete |
 | MD-6.4.4-PotentialNormalization | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-6.4.4-UnitLangevinModel | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-6.4.4-PeriodicConfiningPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；原周期/配置围束条件须导师签核，实际H^l在动量无穷远的proper结论另列。 |
@@ -220,11 +230,11 @@
 | MD-6.4.4-LaplacianBoundCounterexample | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-6.4.4-HamiltonianPowerGenerator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-6.4.4-LaplacianBoundCorrect | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
-| MD-6.4.4-LyapunovYoungBounds | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.4.4-LyapunovYoungBounds | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete |
 | MD-6.4.4-LangevinLyapunov | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-6.4.4-LieBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-6.4.4-LieBracketProperties | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
-| MD-6.4.4-Definition61 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.4-Definition61 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete |
 | MD-6.4.4-LangevinFields | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-6.4.4-LangevinNoiseBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
 | MD-6.4.4-LangevinBracketIndependent | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
@@ -464,6 +474,7 @@
 - MD-6.4.4-PeriodicConfiningPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 原周期/配置围束条件须导师签核，实际H^l在动量无穷远的proper结论另列。原周期位置域与同一势能lift的q→∞围束条件冲突；保留字面资格而非构造一个不存在的周期围束势。
 - MD-6.4.4-LaplacianBoundPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 保留字面错误不等式，不能证明；正确完整上界另条。用|p|²≤2H推导时遗漏系数2；一般原界不成立，具体52>40反例另给。
 - MD-6.4.4-LyapunovYoungBounds：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 原中间严格U上界需要Umax选严格外界；原错误Laplacian系数不能由这些正确标量估计证明。
+- MD-6.4.4-Definition61：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 印刷定义将漂移b0直接纳入张成族；用于转移密度的抛物型Hörmander条件需区分仅由噪声及其与漂移括号生成的族。
 - MD-6.4.4-LangevinTransitionDensity：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际Langevin hypoelliptic/Malliavin转移密度存在桥接；不建设大型理论。
 - MD-6.4.4-Lemma61Printed：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 保留原缺非空的完整字面断言，不证；下一条桥接原单位周期实际过程的完整非空版本。字面all open C包括空集，概率为0；需Nonempty。原(6.47)单位质量，旧清单一般质量扩展须另标技术范围。
 - MD-6.4.4-LangevinGeometricErgodicity：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际transition density、Harris/minorization及canonical invariance完整桥接；保留sorry，不恢复Thm6.2封存长证明。

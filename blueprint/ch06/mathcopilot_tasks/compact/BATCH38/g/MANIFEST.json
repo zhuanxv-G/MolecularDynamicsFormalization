@@ -12,21 +12,27 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
-  "lean_sha256": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
+  "source_json_sha256": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+  "lean_sha256": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
   "input_sha256": {
-    "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-    "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
     "BATCH38g_PAGES.pdf": "c95217de05e6cb102e729ffa28db3dc07fa38ceeaa8653d0ce0ed7a07a2da1c6",
-    "signature_sha256": "74bd169fc54808fa440596f0968419c3d25791e0bb0201106721432e3389757a"
+    "signature_sha256": "58bef36bd424f8e4a1fa28fdbb4f70775362cbf3765ba8afa25ef0cfcbd695c9"
   },
-  "signature_sha256": "74bd169fc54808fa440596f0968419c3d25791e0bb0201106721432e3389757a",
+  "signature_sha256": "58bef36bd424f8e4a1fa28fdbb4f70775362cbf3765ba8afa25ef0cfcbd695c9",
   "definition_excerpts": [
     {
       "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
       "namespace": "MolecularDynamics.Chapter05Review",
       "name": "E",
       "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "lieBracket",
+      "code_sha256": "c137c9bb6f12e565cc6ac85d8b17a51e05972b398b006211cf78b8eecf3268ca"
     },
     {
       "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
@@ -47,6 +53,30 @@
       "code_sha256": "74bd169fc54808fa440596f0968419c3d25791e0bb0201106721432e3389757a"
     },
     {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "definition61Printed",
+      "code_sha256": "dbfff64095f178d2a9e2cc11ec8eda6ed8160deea628669a3f01c4ca96d62252"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "definition61_corrected",
+      "code_sha256": "137a5d5df982240c259191f8070e3214f620702cbd361f695273966b38bd564f"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "lieBracket",
+      "code_sha256": "0904141e181e585ad9d65cf2e084edae0b6906186c1165456e5678407e0f6c32"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "parabolicNoiseBracketLevels",
+      "code_sha256": "e3fdccc4680cceacafc54d97733fbe170b51a2b131b339e0f4db320b4db5374c"
+    },
+    {
       "path": "MolecularDynamics/Chapter08/HormanderClosure.lean",
       "namespace": "MolecularDynamics",
       "name": "textbookBracketPointSpan",
@@ -59,11 +89,11 @@
       "code_sha256": "15f9fa88d5934a94ad8fd2b07f88f907824bded0569c13ab96d75c015d01f0e2"
     }
   ],
-  "paste_plus_pdf_bytes": 109985,
+  "paste_plus_pdf_bytes": 113642,
   "files": {
     "PASTE.txt": {
-      "bytes": 5610,
-      "sha256": "bc652dba7991d0f71cbc249ece1597a0aeaead6ed16d721f0a54a7f77c8203a3"
+      "bytes": 9267,
+      "sha256": "5da8915d3fc8a77ba5f0a2b512135a55d5cbf78d4aebd989b0e95c80710a27b3"
     },
     "BATCH38g_PAGES.pdf": {
       "bytes": 104375,
@@ -76,5 +106,5 @@
     "pdf_rendered_pixel_equality_dpi": 72,
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 113068
+  "total_task_bytes": 117830
 }

@@ -1,10 +1,10 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH07c；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH07c_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH07c_PAGES.pdf": "d3d3044a9747f0967ecfd253d25552676f7293d68b3ecfd0340e42053d02fac6",
-  "signature_sha256": "657e6d5b34f67a801d9b47af48f04758bc91128466d4c738928ae450732551bb"
+  "signature_sha256": "fa8d6af4dd85a9b06f4aeda083a7977be68ea6d21ebf90f93f3fe8112360fcea"
 }
 
 请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH07c_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
@@ -52,6 +52,11 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
 noncomputable def canonicalAverage {Nc : ℕ}
     (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) (f : SymplecticCoordinates Nc → ℝ) : ℝ :=
   (textbookCanonicalPartition H β)⁻¹ * ∫ z, f z * textbookHamiltonianGibbsWeight H β z
+
+/-- 修正版，对应原文 MD-6.1.4-CanonicalAveragePrinted；改动：去掉对已经归一化ρβ的第二次Zcan⁻¹；沿用未归一权重乘一次Zcan⁻¹的定义。 -/
+noncomputable def canonicalAveragePrinted_corrected {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) (f : SymplecticCoordinates Nc → ℝ) : ℝ :=
+  (textbookCanonicalPartition H β)⁻¹ * ∫ z, f z * textbookHamiltonianGibbsWeight H β z
 ```
 
 原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
@@ -62,9 +67,16 @@ noncomputable def canonicalAverage {Nc : ℕ}
 abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
 ```
 
-### MD.Ch06.canonicalAverage (Blueprint/Ch06.lean:297)
+### MD.Ch06.canonicalAverage (Blueprint/Ch06.lean:335)
 ```lean
 noncomputable def canonicalAverage {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) (f : SymplecticCoordinates Nc → ℝ) : ℝ :=
+  (textbookCanonicalPartition H β)⁻¹ * ∫ z, f z * textbookHamiltonianGibbsWeight H β z
+```
+
+### MD.Ch06.canonicalAveragePrinted_corrected (Blueprint/Ch06.lean:340)
+```lean
+noncomputable def canonicalAveragePrinted_corrected {Nc : ℕ}
     (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) (f : SymplecticCoordinates Nc → ℝ) : ℝ :=
   (textbookCanonicalPartition H β)⁻¹ * ∫ z, f z * textbookHamiltonianGibbsWeight H β z
 ```

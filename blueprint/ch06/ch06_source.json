@@ -187,7 +187,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "精确Boltzmann因子增加整个能量区间的恒定熵斜率；一般热浴只保留带余项近似。",
+        "corrected_decl": "MD.Ch06.bathBoltzmannPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -305,7 +313,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "能量累计概率的分子分母均保留ZA(s)权重；改为正确累计概率的定义。",
+        "corrected_decl": "MD.Ch06.canonicalCDFPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -539,7 +555,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "将有限体积域内光滑改为紧域上连续，使用紧性保证权重可积。",
+        "corrected_decl": "MD.Ch06.finiteDomainPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -732,7 +756,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "去掉对已经归一化ρβ的第二次Zcan⁻¹；沿用未归一权重乘一次Zcan⁻¹的定义。",
+        "corrected_decl": "MD.Ch06.canonicalAveragePrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -1023,7 +1055,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "Zcan定义为积分本身；归一密度的结论另见DensityNormalization，避免把定义重述作新定理。",
+        "corrected_decl": "MD.Ch06.partitionInversePrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -1680,7 +1720,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "以完整当前状态生成的σ代数写条件期望Markov性质。",
+        "corrected_decl": "MD.Ch06.coarseMarkovPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -1798,7 +1846,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "严格定义要求每个有限和及极限变量均属于L²；正式库冻结，只在Blueprint使用严格版。",
+        "corrected_decl": "MD.Ch06.weakItoAlias_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -1876,7 +1932,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "保持已证二次变差结论；独立记录印刷平方展开与其正确代数式，并注明极限方向。",
+        "corrected_decl": "MD.Ch06.proposition62_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -2247,7 +2311,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "采用区间积分∫[tₙ,tₙ₊₁]g²及同一过程的独立增量资格。",
+        "corrected_decl": "MD.Ch06.deterministicStrobePrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -2434,7 +2506,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "C²加强为C³，使三阶Taylor余项与扩散缩放匹配。",
+        "corrected_decl": "MD.Ch06.diffusiveTaylorPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -2462,7 +2542,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "原文右端以形式微分占位量记录，时间偏导补dt；完整修正积分公式独立命名。",
+        "corrected_decl": "MD.Ch06.timeItoFormula_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -2580,7 +2668,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "把整个(1−e^(−2γt))/(2γ)放入根号；只断言同一OU过程的单时刻法则。",
+        "corrected_decl": "MD.Ch06.ouLawPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -2843,7 +2939,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "选择正的初值合力f，使(6.29)保留+f；等价选项是保留原f并将(6.29)改为−f。",
+        "corrected_decl": "MD.Ch06.bathForcePrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -2940,6 +3044,13 @@
         "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
         "evidence": "source_transcription_fixes.json; PDF258/259",
         "website": "待网站审计"
+      },
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "使用从原Hamilton方程实际代入所得的正合力卷积方程。",
+        "corrected_decl": "MD.Ch06.bathReductionPrinted_corrected",
+        "website": "未提交；待网站审计"
       }
     ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
@@ -2976,6 +3087,13 @@
         "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
         "evidence": "source_transcription_fixes.json; PDF258/259",
         "website": "待网站审计"
+      },
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "仅给分布收敛的精确定义，并明确正质量资格；不声称任意热浴满足该极限。",
+        "corrected_decl": "MD.Ch06.memoryKernelDeltaMeaning_corrected",
+        "website": "未提交；待网站审计"
       }
     ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
@@ -3221,7 +3339,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "将与Wiener过程比较的对象改为时间积分后的热浴力；仍只定义极限意义。",
+        "corrected_decl": "MD.Ch06.bathForceWeakLimitMeaning_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -3452,6 +3578,13 @@
           "statement_latex": "With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho)_{xx}dx.\\]"
         },
         "website": "待网站审计"
+      },
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "仅将两次分部积分后的外负号改为正号，保留原C²和紧支资格。",
+        "corrected_decl": "MD.Ch06.fpDiffusionPrinted_corrected",
+        "website": "未提交；待网站审计"
       }
     ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
@@ -3504,7 +3637,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "显式约束所需导数的多项式增长和密度导数的指数衰减。",
+        "corrected_decl": "MD.Ch06.fpPolynomialAdjoint_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -3806,7 +3947,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "增加ΓΓᵀ与质量矩阵M交换条件；另一个可选修法是修改漂移以匹配噪声协方差。",
+        "corrected_decl": "MD.Ch06.variableFrictionCanonicalPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -3880,7 +4029,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "原nonzero单独保留为严格正权重版本；一般定义采用非负权重、总和1。",
+        "corrected_decl": "MD.Ch06.finiteDistribution_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -4291,7 +4448,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "扩散项中的φ″改为ρ″。",
+        "corrected_decl": "MD.Ch06.cylinderForwardPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -4509,7 +4674,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "采用≤0并区分闭算子实现与光滑核心；严格负定字面另见BrownianNegativeDefinitePrinted。",
+        "corrected_decl": "MD.Ch06.brownianNonpositive_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -4666,7 +4839,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "明确闭Gibbs-L²实现、半负定、离散谱、谱隙和L²初始相对密度的演化分布平均；Brownian扩散使用逆质量权重，不混用p.244动量算子的ΔM；不声称已证原轨道时间平均。",
+        "corrected_decl": "MD.Ch06.theorem61_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -4694,7 +4875,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "选择演化分布平均，限定L²初始相对密度；轨道遍历极限应另行陈述，不赋予指数逐路径率。",
+        "corrected_decl": "MD.Ch06.theorem61TimeAveragePrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -4747,7 +4936,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "将严格小于0改为小于等于0；零特征值与常数核保留。",
+        "corrected_decl": "MD.Ch06.brownianNegativeDefinitePrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -4775,7 +4972,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "增加(2πσ²(t))⁻¹/²，并限γ>0、噪声非零、t>0的密度解释。",
+        "corrected_decl": "MD.Ch06.ouDensityPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -4826,7 +5031,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "联合连续性的时间域由[0,∞)改为(0,∞)。",
+        "corrected_decl": "MD.Ch06.assumption1Printed_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -4898,7 +5111,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "只保留在明确正时刻密度、可达性条件下到小集下界的充分方向。",
+        "corrected_decl": "MD.Ch06.minorizationPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -4949,7 +5170,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "明示实际Markov/Feller演化、正确正时刻密度、generator联系和先于过程选择的阈值；整条仍未证明。",
+        "corrected_decl": "MD.Ch06.theorem62_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -4979,7 +5208,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "保留周期势有界结论；正下界通过加常数归一单独实现。",
+        "corrected_decl": "MD.Ch06.periodicPotentialBound_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -5056,7 +5293,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "围束对象改为环面×动量空间上的Hamiltonian幂；无穷远只涉及动量方向。",
+        "corrected_decl": "MD.Ch06.periodicConfiningPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -5178,7 +5423,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "系数l(l+Nc−1)改为2l(l−1)+Nc·l。",
+        "corrected_decl": "MD.Ch06.laplacianBoundPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -5281,7 +5534,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "采用非严格上界，并列原有效标量界和正确Laplacian系数所需界；若另选严格外上界才可写原严格号。",
+        "corrected_decl": "MD.Ch06.lyapunovYoungBounds_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -5368,7 +5629,12 @@
     "proof_note": "原书未给独立完整证明。",
     "proof_discussion_latex": null,
     "context_notation": [],
-    "issues": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "印刷定义将漂移b0直接纳入张成族；用于转移密度的抛物型Hörmander条件需区分仅由噪声及其与漂移括号生成的族。"
+      }
+    ],
     "lean_decl": "MD.Ch06.definition61",
     "reusable_proofs": [],
     "extra_assumptions": [
@@ -5377,7 +5643,15 @@
     ],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "用于密度结论时，从噪声字段开始，允许与漂移及噪声反复取括号；不把漂移本身直接加入初始生成族。",
+        "corrected_decl": "MD.Ch06.definition61_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -5524,7 +5798,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "增加目标开集非空；保留任意点初值、任意t>0的实际核正概率。",
+        "corrected_decl": "MD.Ch06.lemma61Printed_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -5769,7 +6051,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "选择相对Gibbs密度坐标与真实加权伴随算子，核相应为常数；保留完整H¹解存在与唯一性目标。",
+        "corrected_decl": "MD.Ch06.proposition64Printed_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {
@@ -6025,7 +6315,15 @@
     "extra_assumptions": [],
     "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
     "review_status": "DRAFT",
-    "repair_log": [],
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "明确要求检验函数属于所选L²空间；给出正确检验函数域定义，不冒称所有C∞函数可积。",
+        "corrected_decl": "MD.Ch06.smoothTestL2Printed_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   },
   {

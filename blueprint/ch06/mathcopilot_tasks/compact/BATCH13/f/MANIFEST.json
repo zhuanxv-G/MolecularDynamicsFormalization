@@ -12,16 +12,22 @@
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
-  "lean_sha256": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
+  "source_json_sha256": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+  "lean_sha256": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
   "input_sha256": {
-    "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-    "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
     "BATCH13f_PAGES.pdf": "b999283c3a3011a3e65e617cbd0c6a4f689eba983b2e56b33e976c38a66d523d",
-    "signature_sha256": "fb76687701f1ced759d8553520c0520e68bcd05545b728d3af91d61df37f9b1d"
+    "signature_sha256": "e13b9029854e659f8324192044ca2bf144e2a06da8918039bb322dd55d873192"
   },
-  "signature_sha256": "fb76687701f1ced759d8553520c0520e68bcd05545b728d3af91d61df37f9b1d",
+  "signature_sha256": "e13b9029854e659f8324192044ca2bf144e2a06da8918039bb322dd55d873192",
   "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "coarseMarkovPrinted_corrected",
+      "code_sha256": "0fce52b6bc9ea222837646b6c2d8052efa4a1085b07a0b0cdfdaaf6f9b027587"
+    },
     {
       "path": "Blueprint/Ch06.lean",
       "namespace": "MD.Ch06",
@@ -29,11 +35,11 @@
       "code_sha256": "fb76687701f1ced759d8553520c0520e68bcd05545b728d3af91d61df37f9b1d"
     }
   ],
-  "paste_plus_pdf_bytes": 82806,
+  "paste_plus_pdf_bytes": 84037,
   "files": {
     "PASTE.txt": {
-      "bytes": 4672,
-      "sha256": "5c491c010ff83e488a4e7009415c3375fb607437ee9ac7a7a904d3af183f6e12"
+      "bytes": 5903,
+      "sha256": "e7baebcc07cc4e952556c06f2a53ccd337c889482798b639509015e871f97077"
     },
     "BATCH13f_PAGES.pdf": {
       "bytes": 78134,
@@ -46,5 +52,5 @@
     "pdf_rendered_pixel_equality_dpi": 72,
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 84641
+  "total_task_bytes": 86093
 }

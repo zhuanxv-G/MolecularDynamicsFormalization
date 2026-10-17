@@ -167,7 +167,15 @@ theorem wienerContinuousPathMeasurable {Nc : ℕ} {Ω : Type*} [MeasurableSpace 
   "extra_assumptions": [],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "以完整当前状态生成的σ代数写条件期望Markov性质。",
+      "corrected_decl": "MD.Ch06.coarseMarkovPrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -210,6 +218,14 @@ theorem coarseMarkovPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω]
 ```
 ```lean
 def stateMarkovMeaning {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (X : ℝ≥0 → Ω → ℝ) (history : ℝ≥0 → MeasurableSpace Ω) : Prop :=
+  ∀ s t : ℝ≥0, s ≤ t → ∀ a : Set ℝ, MeasurableSet a →
+    MeasureTheory.condExp (history s) P (fun sample ↦ a.indicator (fun _ ↦ (1 : ℝ)) (X t sample)) =ᵐ[P]
+    MeasureTheory.condExp (MeasurableSpace.comap (X s) inferInstance) P
+      (fun sample ↦ a.indicator (fun _ ↦ (1 : ℝ)) (X t sample))
+
+/-- 修正版，对应原文 MD-6.2.1-CoarseMarkovPrinted；改动：以完整当前状态生成的σ代数写条件期望Markov性质。 -/
+def coarseMarkovPrinted_corrected {Ω : Type*} [MeasurableSpace Ω]
     (P : Measure Ω) (X : ℝ≥0 → Ω → ℝ) (history : ℝ≥0 → MeasurableSpace Ω) : Prop :=
   ∀ s t : ℝ≥0, s ≤ t → ∀ a : Set ℝ, MeasurableSet a →
     MeasureTheory.condExp (history s) P (fun sample ↦ a.indicator (fun _ ↦ (1 : ℝ)) (X t sample)) =ᵐ[P]

@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH25g；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH25g_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
-  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+  "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
   "BATCH25g_PAGES.pdf": "b1025110b527af9087426591ff4dc587a52485676e492cbd3aa98e9095c1ecbe",
   "signature_sha256": "b86cee8f0e52b1e0f38e52252226f09f80113fc3b14fa6671b44ce09d1ca8a2d"
 }
@@ -45,7 +45,15 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "显式约束所需导数的多项式增长和密度导数的指数衰减。",
+      "corrected_decl": "MD.Ch06.fpPolynomialAdjoint_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -76,13 +84,13 @@ def scalarForward (a b ρ : ℝ → ℝ) (x : ℝ) : ℝ :=
 def scalarGenerator (a b f : ℝ → ℝ) (x : ℝ) : ℝ := a x*deriv f x + b x^2/2*deriv (deriv f) x
 ```
 
-### MD.Ch06.scalarForward (Blueprint/Ch06.lean:1328)
+### MD.Ch06.scalarForward (Blueprint/Ch06.lean:1491)
 ```lean
 def scalarForward (a b ρ : ℝ → ℝ) (x : ℝ) : ℝ :=
   -deriv (fun z ↦ a z*ρ z) x + deriv (deriv (fun z ↦ b z^2*ρ z)) x/2
 ```
 
-### MD.Ch06.scalarGenerator (Blueprint/Ch06.lean:1290)
+### MD.Ch06.scalarGenerator (Blueprint/Ch06.lean:1453)
 ```lean
 def scalarGenerator (a b f : ℝ → ℝ) (x : ℝ) : ℝ := a x*deriv f x + b x^2/2*deriv (deriv f) x
 ```

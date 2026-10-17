@@ -176,7 +176,15 @@ theorem langevinTransitionDensity :
   "extra_assumptions": [],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "增加目标开集非空；保留任意点初值、任意t>0的实际核正概率。",
+      "corrected_decl": "MD.Ch06.lemma61Printed_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

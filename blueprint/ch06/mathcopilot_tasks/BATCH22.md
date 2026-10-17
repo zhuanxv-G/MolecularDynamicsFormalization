@@ -123,7 +123,15 @@ def figure65Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "将与Wiener过程比较的对象改为时间积分后的热浴力；仍只定义极限意义。",
+      "corrected_decl": "MD.Ch06.bathForceWeakLimitMeaning_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```
@@ -137,6 +145,22 @@ def bathForceWeakLimitMeaning {A : Type*} [MeasurableSpace A] (P : Measure A)
   (∀ k, 0 < k → ∀ i, 0 < masses k i) ∧
   (∀ k T sample s, forcePaths k T sample s =
     MolecularDynamics.Chapter06Review.bathForcePrinted (masses k) (q0 k sample) (p0 k sample) Q0 s) ∧
+  (∀ T sample s, wienerPaths T sample s=W s sample) ∧
+  ∀ T : ℝ, 0 < T → ∀ f : C(Icc (0 : ℝ) T, ℝ) → ℝ,
+    Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun k ↦ ∫ sample, f (forcePaths k T sample) ∂P) atTop
+      (𝓝 (∫ sample, f (wienerPaths T sample) ∂P))
+
+/-- 修正版，对应原文 MD-6.3.3-BathForceWeakLimitMeaning；改动：将与Wiener过程比较的对象改为时间积分后的热浴力；仍只定义极限意义。 -/
+def bathForceWeakLimitMeaning_corrected {A : Type*} [MeasurableSpace A] (P : Measure A)
+    (masses : (k : ℕ) → Fin k → ℝ) (q0 p0 : (k : ℕ) → A → (Fin k → ℝ))
+    (Q0 : ℝ) (W : ℝ → A → ℝ)
+    (forcePaths : (k : ℕ) → (T : ℝ) → A → C(Icc (0 : ℝ) T, ℝ))
+    (wienerPaths : (T : ℝ) → A → C(Icc (0 : ℝ) T, ℝ)) : Prop :=
+  IsPreBrownianReal (fun t sample ↦ W t sample) P ∧
+  (∀ k, 0 < k → ∀ i, 0 < masses k i) ∧
+  (∀ k T sample s, forcePaths k T sample s =
+    ∫ u in (0 : ℝ)..(s : ℝ), MolecularDynamics.Chapter06Review.bathForce (masses k) (q0 k sample) (p0 k sample) Q0 u) ∧
   (∀ T sample s, wienerPaths T sample s=W s sample) ∧
   ∀ T : ℝ, 0 < T → ∀ f : C(Icc (0 : ℝ) T, ℝ) → ℝ,
     Continuous f → Bornology.IsBounded (Set.range f) →
@@ -208,7 +232,15 @@ def variableFrictionForward {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ)
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
-  "repair_log": [],
+  "repair_log": [
+    {
+      "date": "2026-10-17",
+      "action": "directive22_printed_corrected_pair",
+      "change": "增加ΓΓᵀ与质量矩阵M交换条件；另一个可选修法是修改漂移以匹配噪声协方差。",
+      "corrected_decl": "MD.Ch06.variableFrictionCanonicalPrinted_corrected",
+      "website": "未提交；待网站审计"
+    }
+  ],
   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
 }
 ```

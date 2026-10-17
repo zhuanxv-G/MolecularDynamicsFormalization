@@ -77,6 +77,11 @@ theorem vectorIto : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measu
 def vectorForward {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
     (B : Matrix (Fin n) (Fin r) ℝ) (ρ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
   MolecularDynamics.Chapter06Review.vectorForward a B ρ x
+
+/-- 修正版，对应原文 MD-6.4.2-CylinderForwardPrinted；改动：扩散项中的φ″改为ρ″。 -/
+def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
+    (B : Matrix (Fin n) (Fin r) ℝ) (ρ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.vectorForward a B ρ x
 ```
 
 ### MD-6.3.7-DiffusionTrace
