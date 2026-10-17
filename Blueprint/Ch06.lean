@@ -1764,4 +1764,201 @@ theorem langevinCanonicalMixing :
         (𝓝 (∫ z, f z ∂textbookLangevinCanonicalMeasure U β hβ)) := by
   sorry
 
+/-- source_id: MD-6.4.3-BrownianGenerator · (6.46) · §6.4.3 · 印刷p.249 / PDFp.270
+[EXTRA] [EXTRA]实际任意对角质量版本，取m≡1即此处公式；不声称原6.46本身含一般质量。 -/
+noncomputable def brownianGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (f : (Fin Nc → ℝ) → ℝ)
+    (q : Fin Nc → ℝ) : ℝ :=
+  ∑ i, (m i)⁻¹ * (β⁻¹ * textbookConfigurationPartial
+    (textbookConfigurationPartial f i) i q -
+      textbookConfigurationPartial U i q * textbookConfigurationPartial f i q)
+
+/-- source_id: MD-6.4.3-BrownianWeightedInner · definition · §6.4.3 · 印刷p.249 / PDFp.270
+[EXTRA] [EXTRA]本章后续周期Q的单位基本域；保留原未归一权重，不偷加Z⁻¹。C₀²域与闭算子域另行区别。 -/
+def brownianWeightedInner {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ)
+    (f g : (Fin n → ℝ) → ℝ) : ℝ :=
+  ∫ q in textbookConfigurationCube n, f q*g q*Real.exp (-β*U q)
+
+/-- source_id: MD-6.4.3-BrownianDirichlet · unnumbered_claim · §6.4.3 · 印刷p.249–250 / PDFp.270–271
+[EXTRA] [EXTRA]真实C∞周期资格保证边界通量消去；实际全质量逆M梯度积，m≡1还原原式；β≠0。 -/
+theorem brownianDirichlet {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)
+    (f g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hPg : textbookUnitPeriodicPotential g) :
+    (∫ q in textbookConfigurationCube Nc,
+      f q * textbookBrownianGenerator m U β g q * textbookConfigurationGibbsWeight U β q) =
+      -β⁻¹ * ∫ q in textbookConfigurationCube Nc,
+        textbookConfigurationGradientPair m f g q * textbookConfigurationGibbsWeight U β q := by
+  apply MolecularDynamics.textbookBrownianGenerator_integral_dirichlet <;> assumption
+
+/-- source_id: MD-6.4.3-BrownianSymmetry · unnumbered_claim · §6.4.3 · 印刷p.250 / PDFp.271
+[EXTRA] [EXTRA]完整未归一配对等式，由现成归一配对消去正Z⁻¹；C∞周期核心上的形式对称，不宣称C₀²核心本身已闭自伴。 -/
+theorem brownianSymmetry {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)
+    (f g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hPg : textbookUnitPeriodicPotential g) :
+    brownianWeightedInner U β f (textbookBrownianGenerator m U β g) =
+      brownianWeightedInner U β (textbookBrownianGenerator m U β f) g := by
+  have hs := textbookBrownianGenerator_inner_symmetric m U β hβ f g hU hf hg hPU hPf hPg
+  unfold textbookConfigurationInner at hs
+  have hz := (textbookConfigurationPartition_pos U hU β).ne'
+  have hc := mul_left_cancel₀ (inv_ne_zero hz) hs
+  simpa [brownianWeightedInner, textbookConfigurationGibbsWeight] using hc
+
+/-- source_id: MD-6.4.3-BrownianNonpositive · unnumbered_claim · §6.4.3 · 印刷p.250 / PDFp.271
+[EXTRA] [EXTRA]正质量与β>0，未归一配对；本条结论精确保留≤0，原negative definite术语错误另记录。
+[ERRATUM?] 常数属于核，≤0只证明半负定，不能升级严格负定。 -/
+theorem brownianNonpositive {Nc : ℕ} (m : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f) :
+    brownianWeightedInner U β f (textbookBrownianGenerator m U β f) ≤ 0 := by
+  have hn := textbookBrownianGenerator_inner_nonpos m hm U β hβ f hU hf hPU hPf
+  unfold textbookConfigurationInner at hn
+  have hc := nonpos_of_mul_nonpos_right hn (inv_pos.mpr (textbookConfigurationPartition_pos U hU β))
+  simpa [brownianWeightedInner, textbookConfigurationGibbsWeight] using hc
+
+/-- source_id: MD-6.4.3-BrownianRealEigenvalue · unnumbered_claim · §6.4.3 · 印刷p.250 / PDFp.271
+[EXTRA] [EXTRA]真正非零L²特征函数、C∞周期、正质量与β>0；不以特征值符号作假设。 -/
+theorem brownianRealEigenvalue {Nc : ℕ} (m : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hne : ¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0)
+    (ℓ : ℝ) (heig : ∀ q, textbookBrownianGenerator m U β f q = ℓ * f q) :
+    ℓ ≤ 0 := by
+  exact MolecularDynamics.textbookBrownianGenerator_real_eigenvalue_nonpos m hm U β hβ f hU hf hPU hPf hne ℓ heig
+
+/-- source_id: MD-6.4.3-BrownianClosedSelfAdjoint · unnumbered_claim · §6.4.3 · 印刷p.249–250 / PDFp.270–271
+[EXTRA] [EXTRA]使用现成实际Gibbs复L²闭实现及完整adjoint域；原C₀²核心对称不等于闭自伴。权重归一不改变自伴关系。 -/
+theorem brownianClosedSelfAdjoint {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+    IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ) := by
+  apply MolecularDynamics.textbookBrownianGibbsComplexOperator_isSelfAdjoint <;> assumption
+
+/-- source_id: MD-6.4.3-BrownianCompactResolvent · unnumbered_claim · §6.4.3 · 印刷p.250 / PDFp.271
+[EXTRA] [EXTRA]实际Gibbs复L²闭实现的(1−L)⁻¹；全部离散谱子结论另条保留，未从本条自动声称原C₀²域自伴。 -/
+theorem brownianCompactResolvent {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+    IsCompactOperator (textbookBrownianGibbsComplexResolvent m hm U hU hPU β hβ) := by
+  apply MolecularDynamics.textbookBrownianGibbsComplexResolvent_isCompact <;> assumption
+
+/-- source_id: MD-6.4.3-BrownianDiscreteSpectrum · unnumbered_claim · §6.4.3 · 印刷p.250 / PDFp.271
+[EXTRA] [EXTRA]实际闭Gibbs复L²域的全谱，非另选某有限模式；包含可数、实值与每个点孤立。 -/
+theorem brownianDiscreteSpectrum {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+  (textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ).Countable ∧
+  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ, z.im=0) ∧
+  ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ,
+    ∃ N : Set ℂ, IsOpen N ∧ z ∈ N ∧
+      N ∩ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ={z} := by
+  refine ⟨textbookBrownianGibbsGeneratorComplexSpectrum_countable m hm U hU hPU β hβ, ?_, ?_⟩
+  · exact fun z hz ↦ textbookBrownianGibbsGeneratorComplexSpectrum_im_zero m hm U hU hPU β hβ z hz
+  · exact fun z hz ↦ textbookBrownianGibbsGeneratorComplexSpectrum_isolated m hm U hU hPU β hβ z hz
+
+/-- source_id: MD-6.4.3-BrownianSpectralGap · unnumbered_claim · §6.4.3 · 印刷p.251 / PDFp.272
+[EXTRA] [EXTRA]现成实际全闭谱；正谱隙从真实Poincaré常数得出，不把目标谱隙作前提。 -/
+theorem brownianSpectralGap {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+  ∃ α : ℝ, 0 < α ∧ ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ,
+    z ≠ 0 → z.im=0 ∧ z.re ≤ -α := by
+  refine ⟨textbookBrownianGibbsCoercivityRate m U hU hPU β,
+    textbookBrownianGibbsCoercivityRate_pos m U hU hPU β hβ, ?_⟩
+  intro z hz hn
+  exact ⟨textbookBrownianGibbsGeneratorComplexSpectrum_im_zero m hm U hU hPU β hβ z hz,
+    textbookBrownianGibbsGeneratorComplexSpectrum_gap m hm U hU hPU β hβ z hn hz⟩
+
+/-- source_id: MD-6.4.3-Theorem61 · Theorem 6.1 · §6.4.3 · 印刷p.250–251 / PDFp.271–272
+[EXTRA] [EXTRA]明确采用现成闭复Gibbs-L²实现、非正谱和完整离散/谱隙；第三部分选择实际演化分布平均，并限定真实非负质量1的L²初始相对密度。全部条款保留，不用部分桥接代替整个定理。
+[ERRATUM?] 原C₀²核心域、自伴闭实现及negative definite术语需要签核；原末句时间平均与前句分布平均冲突。原一般初始分布未证明，本条技术范围限定另行披露。 -/
+theorem theorem61 :
+  ∀ {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (hm : ∀ i, 0 < m i)
+    (U : MolecularDynamics.Chapter06Review.V n → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β : ℝ) (hβ : 0 < β),
+  IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hp β hβ) ∧
+  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ,
+    z.im=0 ∧ z.re ≤ 0) ∧
+  (textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ).Countable ∧
+  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ, ∃ ε : ℝ, 0 < ε ∧
+    ∀ w ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ, dist w z < ε → w=z) ∧
+  (∃ α : ℝ, 0 < α ∧ ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ,
+    z ≠ 0 → z.re ≤ -α) ∧
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω),
+    textbookIsWienerVector B P →
+    ∀ ρ : Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β),
+      0 ≤ᵐ[textbookConfigurationTorusGibbsMeasure U β] ρ →
+      (∫ Q, ρ Q ∂textbookConfigurationTorusGibbsMeasure U β)=1 →
+      ∃ K α : ℝ, 0 < K ∧ 0 < α ∧ ∀ (f : textbookPeriodicSmoothSpace n) (t : ℝ≥0),
+        |textbookBrownianDensityAverage m hm U hU hp β hβ B P ρ t
+          (textbookConfigurationContinuousObservable f f.prop.1.continuous f.prop.2) -
+          (∫ Q, textbookConfigurationTorusObservable f Q ∂textbookConfigurationTorusGibbsMeasure U β)| ≤
+            K * ‖textbookPeriodicSmoothEmbedding U hU hp β f‖ * Real.exp (-α*(t : ℝ)) := by
+  sorry
+
+/-- source_id: MD-6.4.3-Theorem61TimeAveragePrinted · Theorem 6.1(3) printed time average · §6.4.3 · 印刷p.251 / PDFp.272
+[EXTRA] [EXTRA]实际Brownian全时torus过程、任意点初值、AE路径资格和t>0明确；原C∞紧支检验在紧torus周期表示。
+[ERRATUM?] 保留原5.6轨道时间平均读法；通常随机时间平均并无原指称指数路径误差界。原文未说明随机量的概率资格，不能改成分布平均后冒称原结论已证。 -/
+
+theorem theorem61TimeAveragePrinted {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P) :
+  ∀ x : UnitAddTorus (Fin Nc), ∃ K α : ℝ, 0 < K ∧ 0 < α ∧
+    ∀ f : textbookPeriodicSmoothSpace Nc, ∀ᵐ sample ∂P, ∀ t : ℝ, 0 < t →
+      |t⁻¹*(∫ s in (0 : ℝ)..t,
+          textbookConfigurationTorusObservable f
+            (textbookBrownianTorusGlobalRandomConfiguration m hm U hU hPU β hβ x B s sample)) -
+        (∫ Q, textbookConfigurationTorusObservable f Q ∂textbookConfigurationTorusGibbsMeasure U β)| ≤
+          K*‖textbookPeriodicSmoothEmbedding U hU hPU β f‖*Real.exp (-α*t) := by
+  sorry
+
+/-- source_id: MD-6.4.3-BrownianEnsembleExponential · unnumbered_claim · §6.4.3 · 印刷p.251 / PDFp.272
+[EXTRA] [EXTRA]选择实际演化分布平均；真实Wiener/kernel和非负质量1的L²初始相对密度，所有光滑周期检验同时受界。范围限定不覆盖singular点初始law，不是原轨道时间平均证明。 -/
+theorem brownianEnsembleExponential {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+    {Ω : Type*} [MeasurableSpace Ω] (B : ℝ≥0 → Ω → (Fin Nc → ℝ))
+    (P : Measure Ω) (hB : textbookIsWienerVector B P)
+    (ρ : Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β))
+    (hρpos : 0 ≤ᵐ[textbookConfigurationTorusGibbsMeasure U β] ρ)
+    (hρmass : (∫ Q, ρ Q ∂textbookConfigurationTorusGibbsMeasure U β) = 1) :
+    ∃ K α : ℝ, 0 < K ∧ 0 < α ∧ ∀ (f : textbookPeriodicSmoothSpace Nc) (t : ℝ≥0),
+      |textbookBrownianDensityAverage m hm U hU hPU β hβ B P ρ t
+          (textbookConfigurationContinuousObservable f f.prop.1.continuous f.prop.2) -
+        (textbookConfigurationPartition U β)⁻¹ *
+          (∫ q in textbookConfigurationCube Nc, (f : (Fin Nc → ℝ) → ℝ) q *
+            textbookConfigurationGibbsWeight U β q)| ≤
+        K * ‖textbookPeriodicSmoothEmbedding U hU hPU β f‖ * Real.exp (-α * (t : ℝ)) := by
+  apply MolecularDynamics.textbookBrownianDensityAverage_smooth_exponential <;> assumption
+
+/-- source_id: MD-6.4.3-BrownianNegativeDefinitePrinted · unnumbered_claim · §6.4.3 · 印刷p.250 / PDFp.271
+[EXTRA] [EXTRA]明确严格负定含全部非零周期光滑L²函数的读法。
+[ERRATUM?] 常数非零函数给零二次型，严格负定字面不成立；原非正谱正确子结论独立保留。 -/
+theorem brownianNegativeDefinitePrinted {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+  ∀ f : (Fin Nc → ℝ) → ℝ, ContDiff ℝ ∞ f → textbookUnitPeriodicPotential f →
+    (¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0) →
+      brownianWeightedInner U β f (textbookBrownianGenerator m U β f) < 0 := by
+  sorry
+
+/-- source_id: MD-6.4.2-OUDensityPrinted · (6.44)–(6.45) · §6.4.2 · 印刷p.248 / PDFp.269
+[EXTRA] [EXTRA]定义中使用通用噪声σ，取σ=√(2γkBTm)即6.45；t=0资格另记录。
+[ERRATUM?] (6.44)遗漏(2πσ²(t))⁻¹/²归一化系数；t=0为Dirac，不能声称每个有限t都是非退化Lebesgue密度。 -/
+def ouDensityPrinted (γ σ x0 t x : ℝ) : ℝ :=
+  Real.exp (-(x-MolecularDynamics.Chapter06Review.ouMean γ x0 t)^2/(2*MolecularDynamics.Chapter06Review.ouVariance γ σ t))
+
+/-- source_id: MD-6.4.2-OUDensityCorrect · (6.44) correction · §6.4.2 · 印刷p.248 / PDFp.269
+[EXTRA] [EXTRA]补归一化系数，正γ/温度/质量且t>0使用；仅实际密度公式定义，原OU严格law结论在§6.3.2保留，不计密度积分或过程law已证。 -/
+def ouDensity (γ σ x0 t x : ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.ouDensityPrinted γ σ x0 t x / Real.sqrt (2*Real.pi*MolecularDynamics.Chapter06Review.ouVariance γ σ t)
+
 end MD.Ch06

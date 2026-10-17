@@ -1,0 +1,19 @@
+START SECTION 6.4.3
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch section643-b805abe2 --step ③–⑤§6.4.3逐批验证
+Generated 196 entries; 95 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py section643-b805abe2
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\ch06_batch_axioms.py", line 9, in <module>
+    if probe.exists():assert probe.read_text(encoding='utf-8')==text
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_advance_ch06.py", line 35, in <module>
+    generate(label)
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_advance_ch06.py", line 19, in generate
+    call([PY,'scripts/ch06_batch_axioms.py',label])
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_advance_ch06.py", line 13, in call
+    subprocess.run(list(map(str,args)),cwd=ROOT,check=True)
+  File "D:\anaconda\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['D:\\anaconda\\python.exe', 'scripts/ch06_batch_axioms.py', 'section643-b805abe2']' returned non-zero exit status 1.

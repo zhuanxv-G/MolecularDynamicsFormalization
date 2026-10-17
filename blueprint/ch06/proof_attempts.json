@@ -1,14 +1,14 @@
 {
   "rule": "最多3种路线；失败分类只用缺大型理论/原书疑误不证/时间盒止；definitions do not create theorem obligations",
   "counts": {
-    "定义": 72,
-    "已证": 54,
-    "未证": 54
+    "定义": 76,
+    "已证": 63,
+    "未证": 57
   },
   "unproved_reasons": {
-    "原书疑误不证": 11,
+    "原书疑误不证": 13,
     "时间盒止": 2,
-    "缺大型理论": 41
+    "缺大型理论": 42
   },
   "items": {
     "MD-6.1.1-Microcanonical": {
@@ -3480,6 +3480,313 @@
             "Quot.sound"
           ],
           "reason": "缺完整原Langevin正密度/Harris/kernel混合验收桥接；不恢复封存的Theorem6.2长证明。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.3-BrownianGenerator": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.brownianGenerator": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.3-BrownianWeightedInner": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.brownianWeightedInner": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.3-BrownianDirichlet": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.brownianDirichlet": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.3-BrownianSymmetry": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.brownianSymmetry": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 2,
+          "route_evidence": "blueprint/ch06/validation/short_search/BrownianSymmetry.json"
+        }
+      }
+    },
+    "MD-6.4.3-BrownianNonpositive": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.brownianNonpositive": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 2,
+          "route_evidence": "blueprint/ch06/validation/short_search/BrownianNonpositive.json"
+        }
+      }
+    },
+    "MD-6.4.3-BrownianRealEigenvalue": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.brownianRealEigenvalue": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 2,
+          "route_evidence": "blueprint/ch06/validation/short_search/BrownianRealEigenvalue.json"
+        }
+      }
+    },
+    "MD-6.4.3-BrownianClosedSelfAdjoint": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.brownianClosedSelfAdjoint": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.3-BrownianCompactResolvent": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.brownianCompactResolvent": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.3-BrownianDiscreteSpectrum": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.brownianDiscreteSpectrum": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.3-BrownianSpectralGap": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.brownianSpectralGap": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 2,
+          "route_evidence": "blueprint/ch06/validation/short_search/BrownianSpectralGap.json"
+        }
+      }
+    },
+    "MD-6.4.3-Theorem61": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.theorem61": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "无现成整个原Thm6.1域/严格负定/时间平均完整桥接；保持sorry，不恢复封存长证明。各已证子条款单独登记。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.3-Theorem61TimeAveragePrinted": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.theorem61TimeAveragePrinted": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "原书疑误不证",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "原时间平均/演化分布平均冲突待导师；不证明字面指数轨道界。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.3-BrownianEnsembleExponential": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.brownianEnsembleExponential": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.3-BrownianNegativeDefinitePrinted": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.brownianNegativeDefinitePrinted": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "原书疑误不证",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "字面严格负定被常数核反驳，不能证明。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.2-OUDensityPrinted": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.ouDensityPrinted": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.2-OUDensityCorrect": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.ouDensity": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
           "compiler_route_count": 0,
           "route_evidence": null
         }

@@ -1,0 +1,107 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本子任务batch=BATCH34c；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH34c_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
+{
+  "Blueprint/Ch06.lean": "1d0261523c31372934ca023ce6b56d8e31306b691978d89f776c260fe962d0da",
+  "blueprint/ch06/ch06_source.json": "b1c5e095219fbe4e26423acc1e94d12b7a891e1df0d59c07bc5858ae7d515161",
+  "BATCH34c_PAGES.pdf": "06c1e6eeccea8072072dae7f1a371f08084e0eb547b6e5c3c8a9125d2491ed5c",
+  "signature_sha256": "76dfc5743bd00510b0aa48e73bb13a16f44382ea87151e2cec48c56855a3d05a"
+}
+
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH34c_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+用代码写入JSON对象(batch,input_sha256,items)，哈希按本PASTE开头逐项原样回显；items中每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 270 | 249 |
+| 2 | 271 | 250 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-6.4.3-BrownianDirichlet",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.4.3",
+  "printed_page": "249–250",
+  "pdf_page": "270–271",
+  "statement_latex": "Combining this with the first part of the inner product, we see that\n\\[\\langle f,\\mathcal Lg\\rangle_\\beta=-\\beta^{-1}\\int_{\\mathcal Q}\\nabla g^T\\nabla f\\bar\\rho_\\beta d\\omega_q.\\]",
+  "proof_latex": "\\[\\langle f,\\mathcal Lg\\rangle_\\beta=\\int_{\\mathcal Q}f[-\\nabla U^T\\nabla g+\\beta^{-1}\\Delta g]\\bar\\rho_\\beta d\\omega_q.\\]\nIntegrating by parts in the second term we have\n\\[\\beta^{-1}\\int_{\\mathcal Q}f\\Delta g\\bar\\rho_\\beta d\\omega_q=-\\beta^{-1}\\int_{\\mathcal Q}\\nabla g^T\\nabla(f\\bar\\rho_\\beta)d\\omega_q\n=-\\beta^{-1}\\int_{\\mathcal Q}\\nabla g^T\\nabla f\\bar\\rho_\\beta d\\omega_q+\\int_{\\mathcal Q}f(\\nabla g^T\\nabla U)\\bar\\rho_\\beta d\\omega_q.\\]\nCombining this with the first part of the inner product, we see that\n\\[\\langle f,\\mathcal Lg\\rangle_\\beta=-\\beta^{-1}\\int_{\\mathcal Q}\\nabla g^T\\nabla f\\bar\\rho_\\beta d\\omega_q.\\]",
+  "proof_note": "原书计算按原页转录。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch06.brownianDirichlet",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookBrownianGenerator_integral_dirichlet"
+  ],
+  "extra_assumptions": [
+    "[EXTRA]真实C∞周期资格保证边界通量消去；实际全质量逆M梯度积，m≡1还原原式；β≠0。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem brownianDirichlet {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)
+    (f g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hPg : textbookUnitPeriodicPotential g) :
+    (∫ q in textbookConfigurationCube Nc,
+      f q * textbookBrownianGenerator m U β g q * textbookConfigurationGibbsWeight U β q) =
+      -β⁻¹ * ∫ q in textbookConfigurationCube Nc,
+        textbookConfigurationGradientPair m f g q * textbookConfigurationGibbsWeight U β q
+```
+
+原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.textbookBrownianGenerator (MolecularDynamics/Chapter06/BrownianDirichlet.lean:31)
+```lean
+noncomputable def textbookBrownianGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (f : (Fin Nc → ℝ) → ℝ)
+    (q : Fin Nc → ℝ) : ℝ :=
+  ∑ i, (m i)⁻¹ * (β⁻¹ * textbookConfigurationPartial
+    (textbookConfigurationPartial f i) i q -
+      textbookConfigurationPartial U i q * textbookConfigurationPartial f i q)
+```
+
+### MolecularDynamics.textbookConfigurationCube (MolecularDynamics/Chapter06/BrownianDirichlet.lean:18)
+```lean
+def textbookConfigurationCube (Nc : ℕ) : Set (Fin Nc → ℝ) := Icc 0 1
+```
+
+### MolecularDynamics.textbookConfigurationGibbsWeight (MolecularDynamics/Chapter06/BrownianDirichlet.lean:21)
+```lean
+noncomputable def textbookConfigurationGibbsWeight {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (q : Fin Nc → ℝ) : ℝ :=
+  Real.exp (-β * U q)
+```
+
+### MolecularDynamics.textbookConfigurationGradientPair (MolecularDynamics/Chapter06/BrownianDirichlet.lean:26)
+```lean
+noncomputable def textbookConfigurationGradientPair {Nc : ℕ} (m : Fin Nc → ℝ)
+    (f g : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : ℝ :=
+  ∑ i, (m i)⁻¹ * textbookConfigurationPartial f i q * textbookConfigurationPartial g i q
+```
+
+### MolecularDynamics.textbookConfigurationPartial (MolecularDynamics/Chapter06/BrownianDirichlet.lean:13)
+```lean
+noncomputable def textbookConfigurationPartial {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (i : Fin Nc) (q : Fin Nc → ℝ) : ℝ :=
+  fderiv ℝ f q (Pi.single i 1)
+```
+
+### MolecularDynamics.textbookUnitPeriodicPotential (MolecularDynamics/Chapter06/LangevinPeriodicForce.lean:13)
+```lean
+def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Prop :=
+  ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
+```

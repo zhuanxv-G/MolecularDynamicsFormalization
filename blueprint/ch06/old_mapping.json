@@ -84,19 +84,19 @@
     "CH06-081": "MD-6.4.1-DirectedGraphIrreducible",
     "CH06-082": "MD-6.4.1-FiniteErgodicity",
     "CH06-083": "MD-6.4.2-CylinderForwardPrinted",
-    "CH06-085": "MD-6.4.2-LangevinCanonicalMixing"
+    "CH06-085": "MD-6.4.2-LangevinCanonicalMixing",
+    "CH06-087": "MD-6.4.3-BrownianGenerator",
+    "CH06-088": "MD-6.4.3-BrownianWeightedInner",
+    "CH06-089": "MD-6.4.3-BrownianSymmetry",
+    "CH06-090": "MD-6.4.3-BrownianNegativeDefinitePrinted",
+    "CH06-091": "MD-6.4.3-BrownianClosedSelfAdjoint",
+    "CH06-092": "MD-6.4.3-BrownianDiscreteSpectrum",
+    "CH06-094": "MD-6.4.3-BrownianSpectralGap",
+    "CH06-093": "MD-6.4.3-BrownianNegativeDefinitePrinted",
+    "CH06-095": "MD-6.4.3-BrownianEnsembleExponential",
+    "CH06-086": "MD-6.4.2-OUDensityCorrect"
   },
   "pending": [
-    "CH06-086",
-    "CH06-087",
-    "CH06-088",
-    "CH06-089",
-    "CH06-090",
-    "CH06-091",
-    "CH06-092",
-    "CH06-093",
-    "CH06-094",
-    "CH06-095",
     "CH06-096",
     "CH06-097",
     "CH06-098",
@@ -482,6 +482,43 @@
     "CH06-085": [
       "MD-6.4-CanonicalMixingMeaning",
       "MD-6.4.2-LangevinCanonicalMixing"
+    ],
+    "CH06-087": [
+      "MD-6.4.3-BrownianGenerator"
+    ],
+    "CH06-088": [
+      "MD-6.4.3-BrownianWeightedInner"
+    ],
+    "CH06-089": [
+      "MD-6.4.3-BrownianDirichlet",
+      "MD-6.4.3-BrownianSymmetry"
+    ],
+    "CH06-090": [
+      "MD-6.4.3-BrownianNonpositive",
+      "MD-6.4.3-BrownianRealEigenvalue",
+      "MD-6.4.3-BrownianNegativeDefinitePrinted"
+    ],
+    "CH06-091": [
+      "MD-6.4.3-BrownianClosedSelfAdjoint"
+    ],
+    "CH06-092": [
+      "MD-6.4.3-BrownianCompactResolvent",
+      "MD-6.4.3-BrownianDiscreteSpectrum"
+    ],
+    "CH06-094": [
+      "MD-6.4.3-BrownianSpectralGap"
+    ],
+    "CH06-093": [
+      "MD-6.4.3-Theorem61",
+      "MD-6.4.3-Theorem61TimeAveragePrinted",
+      "MD-6.4.3-BrownianNegativeDefinitePrinted"
+    ],
+    "CH06-095": [
+      "MD-6.4.3-BrownianEnsembleExponential"
+    ],
+    "CH06-086": [
+      "MD-6.4.2-OUDensityPrinted",
+      "MD-6.4.2-OUDensityCorrect"
     ]
   }
 }

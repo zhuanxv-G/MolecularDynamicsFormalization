@@ -10,6 +10,19 @@ bykey={r['source_id'].split('-')[-1]:r for r in p.RECORDS}
 out={};counts=Counter();reasons=Counter()
 for r in p.RECORDS:
     a=audit[r['source_id']];declarations={}
+    route_path=B/'validation/short_search'/(r['source_id'].split('-')[-1]+'.json')
+    if route_path.exists():
+        saved=json.loads(route_path.read_text(encoding='utf-8'))
+        if saved and saved[-1].get('inline_bridge') and saved[-1]['exit_code']!=0 and a.get('checked') and a.get('compiled') and 'sorryAx' not in a['axioms']:
+            receipt=ROOT/a['compile_evidence'];rr=json.loads(receipt.read_text(encoding='utf-8'))
+            assert rr['exit_code']==0
+            probe=ROOT/rr['command'][-1];raw=receipt.with_suffix('.log')
+            assert p.sha(probe)==rr['input_sha256'] and p.sha(raw)==rr['log_sha256']
+            assert len(saved)<3
+            saved.append(dict(route=len(saved)+1,exit_code=0,proof=r['code'].split(' := by',1)[1].strip(),
+                source=probe.relative_to(ROOT).as_posix(),log=raw.relative_to(ROOT).as_posix(),
+                source_sha256=p.sha(probe),log_sha256=p.sha(raw),inline_bridge=True))
+            p.dump(route_path,saved)
     code=re.sub(r'(?s)/-.*?-/', '',r['code'])
     matches=list(re.finditer(r'(?m)^(?:noncomputable )?(def|theorem|lemma|abbrev) (\w+)',code))
     for i,m in enumerate(matches):
@@ -46,7 +59,7 @@ p.dump(B/'proof_attempts.json',dict(rule='最多3种路线；失败分类只用�
 lines=['# 第6章原书疑误与双版本审阅单','',
     '教材：B. Leimkuhler 与 C. Matthews，Molecular Dynamics: With Deterministic and Stochastic Numerical Methods，Springer，2015，第6章正文。',
     '页码：PDF物理页从1起数，本章PDF页＝印刷页＋21。原句和原公式逐字保留；修正版是工作建议，均待导师裁定。网站审计尚未提交。',
-    '原文版的错误断言不证明；原文公式的定义仅记录表达式。修正版定义、已证定理与未证定理分别标明。第7项属于既有Lean辅助定义缺口，不归因于教材。','']
+    '原文版的错误断言不证明；原文公式的定义仅记录表达式。对形式微分、算子域等尚有歧义的原句，逐字文字完整保留，Lean表达式或明确实现仅记录其可陈述部分，不等同于原句全部含义已获证明。修正版定义、已证定理与未证定理分别标明。第7项属于既有Lean辅助定义缺口，不归因于教材。','']
 def decl_status(name):
     q='MD.Ch06.'+name
     for v in out.values():
@@ -66,6 +79,9 @@ for key,(target,example,change) in SPECS.items():
     corrected=name+'_corrected'
     issues=' '.join(x['detail'].removeprefix('[ERRATUM?]') for x in r['issues'])
     if key=='Proposition62':issues+=' 原书p.230末句印刷ν→0，实际应为ν→∞。'
+    if key=='Theorem61':issues+=' 质量Laplacian表达式另列`MD.Ch06.brownianMassGeneratorPrinted`与`MD.Ch06.brownianMassGeneratorPrinted_corrected`；二者只定义表达式，状态分别为'+decl_status('brownianMassGeneratorPrinted')+'、'+decl_status('brownianMassGeneratorPrinted_corrected')+'。'
+    counters=[name for name in out[r['source_id']]['declarations'] if 'counterexample' in name.lower()]
+    if counters:example+=' Lean反例：'+'；'.join('`'+name+'`（'+decl_status(name.rsplit('.',1)[1])+'）' for name in counters)+'。'
     lines += ['## '+str(len([x for x in lines if x.startswith('## ')])+1)+'. '+r['source_id'],'',
         '- source_id：'+r['source_id']+'；印刷页 '+r['printed_page']+' / PDF页 '+r['pdf_page']+'。',
         '- 原文引文（逐字）：','',*['> '+s for s in r['statement_latex'].splitlines()],'',

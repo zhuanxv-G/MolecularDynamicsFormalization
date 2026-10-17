@@ -1,0 +1,10 @@
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch section643b-054d65e0 --step ③–⑤§6.4.3逐批验证
+Generated 196 entries; 95 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py section643b-054d65e0
+Generated 196 entries; 95 /126 old rows mapped; protected 925
+Batch axioms passed: section643b-054d65e0 196
+Running: D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 196, "local_PASS": 174, "local_NEEDS_HUMAN": 22, "errata_records": 26, "source_errata_records": 25, "declarations": {"\u5b9a\u4e49": 76, "\u5df2\u8bc1": 63, "\u672a\u8bc1": 57}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 13, "\u65f6\u95f4\u76d2\u6b62": 2, "\u7f3a\u5927\u578b\u7406\u8bba": 42}, "website_submitted": false}
+Running: D:\anaconda\python.exe scripts/local_section_check.py 6 blueprint/ch06/validation/section643 --reuse-shared blueprint/ch01/validation/CLOSEOUT21/full
+Section complete with verified batch check reuse: blueprint/ch06/validation/section643
+Running: D:\anaconda\python.exe scripts/local_checkpoint.py 6 6.4.3 blueprint/ch06/validation/section643 继续§6.4.4：按ch06_section644至644f顺序；不恢复封存长证明。

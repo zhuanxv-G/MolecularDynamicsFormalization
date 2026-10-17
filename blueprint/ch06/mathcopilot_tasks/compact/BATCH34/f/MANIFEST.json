@@ -1,0 +1,68 @@
+{
+  "batch": "BATCH34",
+  "subtask": "BATCH34f",
+  "source_ids": [
+    "MD-6.4.3-BrownianRealEigenvalue"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 271,
+      "printed_page": 250
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "b1c5e095219fbe4e26423acc1e94d12b7a891e1df0d59c07bc5858ae7d515161",
+  "lean_sha256": "1d0261523c31372934ca023ce6b56d8e31306b691978d89f776c260fe962d0da",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "1d0261523c31372934ca023ce6b56d8e31306b691978d89f776c260fe962d0da",
+    "blueprint/ch06/ch06_source.json": "b1c5e095219fbe4e26423acc1e94d12b7a891e1df0d59c07bc5858ae7d515161",
+    "BATCH34f_PAGES.pdf": "eecf344ee3103d1b26e1e625b43f01c8a75f2f63fb243aee929985f7a0735540",
+    "signature_sha256": "3ab7fea4ee784d74d4535c35d0334e65f926c6e3c71acd1a9fb7cf8c23bb497a"
+  },
+  "signature_sha256": "3ab7fea4ee784d74d4535c35d0334e65f926c6e3c71acd1a9fb7cf8c23bb497a",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookBrownianGenerator",
+      "code_sha256": "e539c16e70580030677c468fb87e72c8ec94f2adcc60826e179399ea7dc1af00"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConfigurationCube",
+      "code_sha256": "09df86f1ec71f9b7683204ae6fb4a4c17076a4a71db9c03a87623d7423d83273"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConfigurationPartial",
+      "code_sha256": "fbca5c0abb1ddc15e963008415ea72d955f5e4a49bbc36888fbf88ab7a80409d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookUnitPeriodicPotential",
+      "code_sha256": "e26dd47f5c122900493506ccbe55a9fe93351b063566435477f1cbd5e0803040"
+    }
+  ],
+  "paste_plus_pdf_bytes": 98884,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5290,
+      "sha256": "563cbd09dde64ef06c359d757123b504085f10386cf84fc86ae81ca7263b1016"
+    },
+    "BATCH34f_PAGES.pdf": {
+      "bytes": 93594,
+      "sha256": "eecf344ee3103d1b26e1e625b43f01c8a75f2f63fb243aee929985f7a0735540"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 101557
+}

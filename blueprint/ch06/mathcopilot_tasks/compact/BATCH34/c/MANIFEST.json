@@ -1,0 +1,85 @@
+{
+  "batch": "BATCH34",
+  "subtask": "BATCH34c",
+  "source_ids": [
+    "MD-6.4.3-BrownianDirichlet"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 270,
+      "printed_page": 249
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 271,
+      "printed_page": 250
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "b1c5e095219fbe4e26423acc1e94d12b7a891e1df0d59c07bc5858ae7d515161",
+  "lean_sha256": "1d0261523c31372934ca023ce6b56d8e31306b691978d89f776c260fe962d0da",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "1d0261523c31372934ca023ce6b56d8e31306b691978d89f776c260fe962d0da",
+    "blueprint/ch06/ch06_source.json": "b1c5e095219fbe4e26423acc1e94d12b7a891e1df0d59c07bc5858ae7d515161",
+    "BATCH34c_PAGES.pdf": "06c1e6eeccea8072072dae7f1a371f08084e0eb547b6e5c3c8a9125d2491ed5c",
+    "signature_sha256": "76dfc5743bd00510b0aa48e73bb13a16f44382ea87151e2cec48c56855a3d05a"
+  },
+  "signature_sha256": "76dfc5743bd00510b0aa48e73bb13a16f44382ea87151e2cec48c56855a3d05a",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookBrownianGenerator",
+      "code_sha256": "e539c16e70580030677c468fb87e72c8ec94f2adcc60826e179399ea7dc1af00"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConfigurationCube",
+      "code_sha256": "09df86f1ec71f9b7683204ae6fb4a4c17076a4a71db9c03a87623d7423d83273"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConfigurationGibbsWeight",
+      "code_sha256": "a5bd766d1cbfda65d529ec6b709aea756a842e8914cf452dd793034c4f50877b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConfigurationGradientPair",
+      "code_sha256": "ac874e25b1a5e642c57ec1c99c9937fac9c3e2d2c5beaeeccea12d0415c61f6f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConfigurationPartial",
+      "code_sha256": "fbca5c0abb1ddc15e963008415ea72d955f5e4a49bbc36888fbf88ab7a80409d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookUnitPeriodicPotential",
+      "code_sha256": "e26dd47f5c122900493506ccbe55a9fe93351b063566435477f1cbd5e0803040"
+    }
+  ],
+  "paste_plus_pdf_bytes": 114151,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6920,
+      "sha256": "1dd1a483627e2aa3241d18fbc200e5fdc9231d86765e6584fdf1c39a697b64a3"
+    },
+    "BATCH34c_PAGES.pdf": {
+      "bytes": 107231,
+      "sha256": "06c1e6eeccea8072072dae7f1a371f08084e0eb547b6e5c3c8a9125d2491ed5c"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 117456
+}

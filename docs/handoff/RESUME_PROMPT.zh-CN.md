@@ -4,7 +4,7 @@
 先核对AGENTS、CURRENT_STATE顶部、WORK_LOG最新及blueprint/ch06/PROGRESS.md，从最近已验证检查点接续；先 git status 并复用已通过证据。
 第1–5章不动，不进入第7章。
 
-下一步：继续§6.4.3：ch06_section643、ch06_section643b；不进入第7章。
+下一步：继续§6.4.4：按ch06_section644至644f顺序；不恢复封存长证明。
 
 ---
 历史接续提示（冲突处以22号为准）：

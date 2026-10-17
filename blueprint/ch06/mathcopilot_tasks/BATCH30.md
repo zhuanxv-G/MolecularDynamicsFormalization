@@ -50,3 +50,70 @@ theorem langevinCanonicalMixing :
         (𝓝 (∫ z, f z ∂textbookLangevinCanonicalMeasure U β hβ))
 ```
 
+### MD-6.4.2-OUDensityPrinted
+```json
+{
+  "source_id": "MD-6.4.2-OUDensityPrinted",
+  "kind": "definition",
+  "label": "(6.44)–(6.45)",
+  "section": "6.4.2",
+  "printed_page": "248",
+  "pdf_page": "269",
+  "statement_latex": "The solution $p(t)$ to the Ornstein-Uhlenbeck equation, for any finite time $t$, is always normally distributed\n\\[\\rho(p,t)=\\exp\\left[-\\frac{(p-\\mu(t))^2}{2\\sigma(t)^2}\\right];\\tag{6.44}\\]\nwhere\n\\[\\mu(t)=p_0e^{-\\gamma t};\\qquad\\sigma^2(t)=k_BT m[1-e^{-2\\gamma t}].\\tag{6.45}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "(6.44)遗漏(2πσ²(t))⁻¹/²归一化系数；t=0为Dirac，不能声称每个有限t都是非退化Lebesgue密度。"
+    }
+  ],
+  "lean_decl": "MD.Ch06.ouDensityPrinted",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]定义中使用通用噪声σ，取σ=√(2γkBTm)即6.45；t=0资格另记录。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+```lean
+def ouDensityPrinted (γ σ x0 t x : ℝ) : ℝ :=
+  Real.exp (-(x-MolecularDynamics.Chapter06Review.ouMean γ x0 t)^2/(2*MolecularDynamics.Chapter06Review.ouVariance γ σ t))
+```
+
+### MD-6.4.2-OUDensityCorrect
+```json
+{
+  "source_id": "MD-6.4.2-OUDensityCorrect",
+  "kind": "definition",
+  "label": "(6.44) correction",
+  "section": "6.4.2",
+  "printed_page": "248",
+  "pdf_page": "269",
+  "statement_latex": "The solution $p(t)$ to the Ornstein-Uhlenbeck equation, for any finite time $t$, is always normally distributed\n\\[\\rho(p,t)=\\exp\\left[-\\frac{(p-\\mu(t))^2}{2\\sigma(t)^2}\\right];\\tag{6.44}\\]\nwhere\n\\[\\mu(t)=p_0e^{-\\gamma t};\\qquad\\sigma^2(t)=k_BT m[1-e^{-2\\gamma t}].\\tag{6.45}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch06.ouDensity",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]补归一化系数，正γ/温度/质量且t>0使用；仅实际密度公式定义，原OU严格law结论在§6.3.2保留，不计密度积分或过程law已证。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+```lean
+def ouDensity (γ σ x0 t x : ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.ouDensityPrinted γ σ x0 t x / Real.sqrt (2*Real.pi*MolecularDynamics.Chapter06Review.ouVariance γ σ t)
+```
+

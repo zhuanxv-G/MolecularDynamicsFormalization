@@ -1,0 +1,23 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "reason": "mul_nonpos_iff_of_pos_left无此API，改用nonpos_of_mul_nonpos_right",
+    "source": "blueprint/ch06/validation/batch_axioms/section643-8a2b3a66.lean",
+    "log": "blueprint/ch06/validation/batch_axioms/section643-8a2b3a66.log",
+    "source_sha256": "a7d513fe51dd77ec36fadb2cf9932f8ee139da122b0d446cfbc5f03fa6a36d87",
+    "log_sha256": "54fb2307c4f3a0daba60386aa5fb69f61fac6ac3143a1c6206969055ce2648e6",
+    "inline_bridge": true
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "have hn := textbookBrownianGenerator_inner_nonpos m hm U β hβ f hU hf hPU hPf\n  unfold textbookConfigurationInner at hn\n  have hc := nonpos_of_mul_nonpos_right hn (inv_pos.mpr (textbookConfigurationPartition_pos U hU β))\n  simpa [brownianWeightedInner, textbookConfigurationGibbsWeight] using hc",
+    "source": "blueprint/ch06/validation/batch_axioms/section643-b805abe2.lean",
+    "log": "blueprint/ch06/validation/batch_axioms/section643-b805abe2.log",
+    "source_sha256": "ad590d15325489d8cc30827c9fab99805155d9030b29528650abfc6ee8c8c7ae",
+    "log_sha256": "80569dd1fe7d080ecbb4ab0f33a056eafe8e3aba30d109dc1a7be4472a584f3a",
+    "inline_bridge": true
+  }
+]

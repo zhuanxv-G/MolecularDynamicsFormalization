@@ -85,7 +85,20 @@ theorem proposition62Printed_counterexample : ¬ ((1+1 : ℝ)^2=1^2+1^2-4*1*1) :
         elif key=='FiniteDistribution':
             r['code']+='''\n\n/-- 【原书疑误】保留nonzero按正概率权重的字面版本。 -/
 def finiteDistributionPrinted {k : ℕ} (ψ : Fin k → ℝ) : Prop :=
-  (∀ i, 0 < ψ i) ∧ ∑ i, ψ i=1'''
+  (∀ i, 0 < ψ i) ∧ ∑ i, ψ i=1
+
+/-- 边界概率向量(1,0)是概率分布，但不满足印刷nonzero权重资格。 -/
+theorem finiteDistributionPrinted_counterexample :
+    finiteDistribution (fun i : Fin 2 ↦ if i=0 then 1 else 0) ∧
+      ¬ finiteDistributionPrinted (fun i : Fin 2 ↦ if i=0 then 1 else 0) := by
+  constructor
+  · constructor
+    · intro i
+      split_ifs <;> norm_num
+    · norm_num [Fin.sum_univ_two]
+  · intro h
+    have hi := h.1 (1 : Fin 2)
+    norm_num at hi'''
         elif key=='TimeItoFormula':
             r['code']+='''\n\n/-- 【原书疑误】(6.17)逐字右端形式表达，dX/dXX为形式微分占位；不宣称它是正确积分等式。 -/
 def timeItoFormulaPrinted (φ : ℝ×ℝ → ℝ) (x t dX dXX : ℝ) : ℝ :=
@@ -118,6 +131,7 @@ def brownianMassGeneratorPrinted {n : ℕ} (m : Fin n → ℝ) (U f : (Fin n →
     (β : ℝ) (x : Fin n → ℝ) : ℝ :=
   ∑ i, (-(m i)⁻¹*fderiv ℝ U x (Pi.single i 1)*fderiv ℝ f x (Pi.single i 1)+
     β⁻¹*m i*fderiv ℝ (fun y ↦ fderiv ℝ f y (Pi.single i 1)) x (Pi.single i 1))'''
+            r['code']+='\n\n/-- 修正版，Brownian扩散使用逆质量权重；实际生成元的表达式定义。 -/\n'+rename(originals['BrownianGenerator'],'brownianMassGeneratorPrinted_corrected')
         elif key=='Theorem62':
             r['code']+='\n\n/-- 【原书疑误】采用印刷Assumption1的版本；技术量词仍显式保留，不证。 -/\n'+rename(originals[key],'theorem62Printed').replace('Chapter06Review.assumption1 ','Chapter06Review.assumption1Printed ')
         elif key=='Definition61':

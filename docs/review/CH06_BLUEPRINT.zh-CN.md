@@ -184,6 +184,22 @@
 | MD-6.4.2-StationaryInvariant | 247/268 | PASS | 待网站审计 | incomplete |
 | MD-6.4-CanonicalMixingMeaning | 244/265 | PASS | 待网站审计 | self-contained |
 | MD-6.4.2-LangevinCanonicalMixing | 248/269 | PASS | 待网站审计 | incomplete |
+| MD-6.4.3-BrownianGenerator | 249/270 | PASS | 待网站审计 | self-contained |
+| MD-6.4.3-BrownianWeightedInner | 249/270 | PASS | 待网站审计 | self-contained |
+| MD-6.4.3-BrownianDirichlet | 249–250/270–271 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.3-BrownianSymmetry | 250/271 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.3-BrownianNonpositive | 250/271 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.3-BrownianRealEigenvalue | 250/271 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.3-BrownianClosedSelfAdjoint | 249–250/270–271 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.3-BrownianCompactResolvent | 250/271 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.3-BrownianDiscreteSpectrum | 250/271 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.3-BrownianSpectralGap | 251/272 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.3-Theorem61 | 250–251/271–272 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.3-Theorem61TimeAveragePrinted | 251/272 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.3-BrownianEnsembleExponential | 251/272 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.3-BrownianNegativeDefinitePrinted | 250/271 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.2-OUDensityPrinted | 248/269 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.2-OUDensityCorrect | 248/269 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -229,6 +245,16 @@
   印刷nonzero应区分典型正权重与一般非负概率；原句完整保留，未声明字面nonzero定义网站PASS。
 - MD-6.4.2-CylinderForwardPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
   印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。
+- MD-6.4.3-BrownianNonpositive：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  常数属于核，≤0只证明半负定，不能升级严格负定。
+- MD-6.4.3-Theorem61：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  原C₀²核心域、自伴闭实现及negative definite术语需要签核；原末句时间平均与前句分布平均冲突。原一般初始分布未证明，本条技术范围限定另行披露。
+- MD-6.4.3-Theorem61TimeAveragePrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  保留原5.6轨道时间平均读法；通常随机时间平均并无原指称指数路径误差界。原文未说明随机量的概率资格，不能改成分布平均后冒称原结论已证。
+- MD-6.4.3-BrownianNegativeDefinitePrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  常数非零函数给零二次型，严格负定字面不成立；原非正谱正确子结论独立保留。
+- MD-6.4.2-OUDensityPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  (6.44)遗漏(2πσ²(t))⁻¹/²归一化系数；t=0为Dirac，不能声称每个有限t都是非退化Lebesgue密度。
 
 ## 1. MD-6.1.1-Microcanonical · definition · 印刷p.214 / PDFp.235
 
@@ -9168,3 +9194,868 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 缺失/继续路线：缺完整原Langevin正密度/Harris/kernel混合验收桥接；不恢复封存的Theorem6.2长证明。
 
 签名SHA256：`6771c0129ba54a6bcfe6e60894f1b6a38891a368cf4fc952c6ffdc83083adadc`；原文SHA256：`e636714269aac2d2098fde813a1fbe9c0043bd1ad86637b16a29b4afe5568046`。
+
+## 1. MD-6.4.3-BrownianGenerator · (6.46) · 印刷p.249 / PDFp.270
+
+### 2. 原文陈述
+
+> For example, let us return to Brownian dynamics (or overdamped Langevin dynamics) and set $M=I$ and $\gamma=1$ in (6.36), giving an equation of motion
+> \[dq=-\nabla U(q)dt+\sqrt{2k_BT}dW.\tag{6.46}\]
+> Writing $\beta^{-1}=k_BT$ as usual, the generator of the stochastic process may be written as
+> \[\mathcal L f=-\nabla U^T\nabla f+\beta^{-1}\Delta f.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def brownianGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (f : (Fin Nc → ℝ) → ℝ)
+    (q : Fin Nc → ℝ) : ℝ :=
+  ∑ i, (m i)⁻¹ * (β⁻¹ * textbookConfigurationPartial
+    (textbookConfigurationPartial f i) i q -
+      textbookConfigurationPartial U i q * textbookConfigurationPartial f i q)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianGenerator；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际任意对角质量版本，取m≡1即此处公式；不声称原6.46本身含一般质量。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1769](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1769>)（`MD.Ch06.brownianGenerator`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0d6befe343d112e588a9b96830c7ae2709f1acbe7fd987bf658db771e04cee0a`；原文SHA256：`017a5e341a4aa597a9ef92ad7182f09ea615ac6c8bdaed8727fae0be23b238bb`。
+
+## 1. MD-6.4.3-BrownianWeightedInner · definition · 印刷p.249 / PDFp.270
+
+### 2. 原文陈述
+
+> Let $\bar\rho_\beta=\exp(-\beta U)$, and define the space of functions $C_0^2(\bar\rho_\beta)$ consisting of functions in $C_0^2$ on the configuration space $\mathcal Q\subset\mathbb R^{N_c}$ together with the inner product
+> \[\langle f,g\rangle_\beta\stackrel{\rm def}=\int_{\mathcal Q}f(q)g(q)\bar\rho_\beta(d\omega_q)=\int_{\mathcal Q}f(q)g(q)\bar\rho_\beta(q)d\omega_q;\]
+> where $d\omega_q=dq_1dq_2\cdots dq_{N_c}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def brownianWeightedInner {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ)
+    (f g : (Fin n → ℝ) → ℝ) : ℝ :=
+  ∫ q in textbookConfigurationCube n, f q*g q*Real.exp (-β*U q)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianWeightedInner；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]本章后续周期Q的单位基本域；保留原未归一权重，不偷加Z⁻¹。C₀²域与闭算子域另行区别。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1778](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1778>)（`MD.Ch06.brownianWeightedInner`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`8b503f667765a8b1f8ae62b3ed7d2211f7aab6e57e71525f4bf7ee2e5b02ec60`；原文SHA256：`faf667676f26bee3502e7d6d2fe9ab21f23503e67137b2f9429cc73333afa0f0`。
+
+## 1. MD-6.4.3-BrownianDirichlet · unnumbered_claim · 印刷p.249–250 / PDFp.270–271
+
+### 2. 原文陈述
+
+> Combining this with the first part of the inner product, we see that
+> \[\langle f,\mathcal Lg\rangle_\beta=-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla f\bar\rho_\beta d\omega_q.\]
+
+### 3. 原文证明
+
+> \[\langle f,\mathcal Lg\rangle_\beta=\int_{\mathcal Q}f[-\nabla U^T\nabla g+\beta^{-1}\Delta g]\bar\rho_\beta d\omega_q.\]
+> Integrating by parts in the second term we have
+> \[\beta^{-1}\int_{\mathcal Q}f\Delta g\bar\rho_\beta d\omega_q=-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla(f\bar\rho_\beta)d\omega_q
+> =-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla f\bar\rho_\beta d\omega_q+\int_{\mathcal Q}f(\nabla g^T\nabla U)\bar\rho_\beta d\omega_q.\]
+> Combining this with the first part of the inner product, we see that
+> \[\langle f,\mathcal Lg\rangle_\beta=-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla f\bar\rho_\beta d\omega_q.\]
+
+原书计算按原页转录。
+
+### 4. Lean陈述
+
+```lean
+theorem brownianDirichlet {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)
+    (f g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hPg : textbookUnitPeriodicPotential g) :
+    (∫ q in textbookConfigurationCube Nc,
+      f q * textbookBrownianGenerator m U β g q * textbookConfigurationGibbsWeight U β q) =
+      -β⁻¹ * ∫ q in textbookConfigurationCube Nc,
+        textbookConfigurationGradientPair m f g q * textbookConfigurationGibbsWeight U β q
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianDirichlet；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实C∞周期资格保证边界通量消去；实际全质量逆M梯度积，m≡1还原原式；β≠0。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:1784](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1784>)（`MD.Ch06.brownianDirichlet`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookBrownianGenerator_integral_dirichlet。
+
+签名SHA256：`76dfc5743bd00510b0aa48e73bb13a16f44382ea87151e2cec48c56855a3d05a`；原文SHA256：`2027fabc50e285db78559140cd809a08631f17a0a989d69eeb8a6b683dc3733d`。
+
+## 1. MD-6.4.3-BrownianSymmetry · unnumbered_claim · 印刷p.250 / PDFp.271
+
+### 2. 原文陈述
+
+> In this form we see that $f$ and $g$ appear symmetrically, so we may write
+> \[\langle f,\mathcal Lg\rangle_\beta=\langle\mathcal Lf,g\rangle_\beta;\]
+> hence, with respect to the weighted inner product, $\mathcal L=\mathcal L^*$. (Note that the adjoint indicated here is quite different than the $L^2$ adjoint mentioned previously in connection with the Fokker-Planck operator.)
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem brownianSymmetry {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)
+    (f g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hPg : textbookUnitPeriodicPotential g) :
+    brownianWeightedInner U β f (textbookBrownianGenerator m U β g) =
+      brownianWeightedInner U β (textbookBrownianGenerator m U β f) g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianSymmetry；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整未归一配对等式，由现成归一配对消去正Z⁻¹；C∞周期核心上的形式对称，不宣称C₀²核心本身已闭自伴。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:1798](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1798>)（`MD.Ch06.brownianSymmetry`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/BrownianSymmetry.json；blueprint/ch06/validation/batch_axioms/section643-8a2b3a66.lean；blueprint/ch06/validation/batch_axioms/section643-8a2b3a66.log；blueprint/ch06/validation/batch_axioms/section643-b805abe2.lean；blueprint/ch06/validation/batch_axioms/section643-b805abe2.log。
+
+已登记前置证明/定义：MolecularDynamics.textbookBrownianGenerator_inner_symmetric。
+
+签名SHA256：`ad5a4057dfce028fb8a8297fc72f654e25b2bf808ff2d1baa83487006945500d`；原文SHA256：`dd56d11b48b5e7af4c439adbc3e6ecf7863bdd93d03ad21ea657db5b58e357b1`。
+
+## 1. MD-6.4.3-BrownianNonpositive · unnumbered_claim · 印刷p.250 / PDFp.271
+
+### 2. 原文陈述
+
+> Moreover, from the calculation above,
+> \[\langle f,\mathcal Lf\rangle=-\beta^{-1}\int_{\mathcal Q}\|\nabla f\|^2\bar\rho_\beta d\omega_q;\]
+> so that $\langle f,\mathcal Lf\rangle\le0$ so the operator is negative definite and can only have non-positive eigenvalues.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem brownianNonpositive {Nc : ℕ} (m : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f) :
+    brownianWeightedInner U β f (textbookBrownianGenerator m U β f) ≤ 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianNonpositive；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]正质量与β>0，未归一配对；本条结论精确保留≤0，原negative definite术语错误另记录。 | [EXTRA] |
+| 原页核对/疑点 | 常数属于核，≤0只证明半负定，不能升级严格负定。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:1815](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1815>)（`MD.Ch06.brownianNonpositive`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/BrownianNonpositive.json；blueprint/ch06/validation/batch_axioms/section643-8a2b3a66.lean；blueprint/ch06/validation/batch_axioms/section643-8a2b3a66.log；blueprint/ch06/validation/batch_axioms/section643-b805abe2.lean；blueprint/ch06/validation/batch_axioms/section643-b805abe2.log。
+
+已登记前置证明/定义：MolecularDynamics.textbookBrownianGenerator_inner_nonpos。
+
+签名SHA256：`c3aeb9fa77a489c0520b422d2c5de39fb177d7b9e739385ab3950d9d7eb56d0d`；原文SHA256：`18140a52e7b5a4f5fd4fa095e8e67e3c289999f9c02d89a7821cf03ddbcddfab`。
+
+## 1. MD-6.4.3-BrownianRealEigenvalue · unnumbered_claim · 印刷p.250 / PDFp.271
+
+### 2. 原文陈述
+
+> so that $\langle f,\mathcal Lf\rangle\le0$ so the operator is negative definite and can only have non-positive eigenvalues.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem brownianRealEigenvalue {Nc : ℕ} (m : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hne : ¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0)
+    (ℓ : ℝ) (heig : ∀ q, textbookBrownianGenerator m U β f q = ℓ * f q) :
+    ℓ ≤ 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianRealEigenvalue；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真正非零L²特征函数、C∞周期、正质量与β>0；不以特征值符号作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:1827](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1827>)（`MD.Ch06.brownianRealEigenvalue`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/BrownianRealEigenvalue.json；blueprint/ch06/validation/batch_axioms/section643-8a2b3a66.lean；blueprint/ch06/validation/batch_axioms/section643-8a2b3a66.log；blueprint/ch06/validation/batch_axioms/section643-b805abe2.lean；blueprint/ch06/validation/batch_axioms/section643-b805abe2.log。
+
+已登记前置证明/定义：MolecularDynamics.textbookBrownianGenerator_real_eigenvalue_nonpos。
+
+签名SHA256：`3ab7fea4ee784d74d4535c35d0334e65f926c6e3c71acd1a9fb7cf8c23bb497a`；原文SHA256：`e0c3ec5d0917b72f0297cffbc330c8ad7e44a919626fd1731884127f2a40a5c3`。
+
+## 1. MD-6.4.3-BrownianClosedSelfAdjoint · unnumbered_claim · 印刷p.249–250 / PDFp.270–271
+
+### 2. 原文陈述
+
+> Then $\mathcal L$ is self-adjoint with respect to this inner product.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem brownianClosedSelfAdjoint {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+    IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianClosedSelfAdjoint；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]使用现成实际Gibbs复L²闭实现及完整adjoint域；原C₀²核心对称不等于闭自伴。权重归一不改变自伴关系。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:1838](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1838>)（`MD.Ch06.brownianClosedSelfAdjoint`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookBrownianGibbsComplexOperator_isSelfAdjoint。
+
+签名SHA256：`53bd7db5256d05c121162a8ea9618031c3348feb1114ef35ac82aed3d22d241c`；原文SHA256：`baf0293ab0b588af7ddd4ade79e3a19437de127a6b0013233ce1785ef6b9aa96`。
+
+## 1. MD-6.4.3-BrownianCompactResolvent · unnumbered_claim · 印刷p.250 / PDFp.271
+
+### 2. 原文陈述
+
+> In particular, it has a compact resolvent [360]; this can be shown to imply that the spectrum consists only of a countable collection of eigenvalues, i.e. that the operator has a discrete spectrum.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem brownianCompactResolvent {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+    IsCompactOperator (textbookBrownianGibbsComplexResolvent m hm U hU hPU β hβ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianCompactResolvent；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际Gibbs复L²闭实现的(1−L)⁻¹；全部离散谱子结论另条保留，未从本条自动声称原C₀²域自伴。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:1846](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1846>)（`MD.Ch06.brownianCompactResolvent`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookBrownianGibbsComplexResolvent_isCompact。
+
+签名SHA256：`77055e92a4740854e0c80e68a37b1c6d7b4f9728a87884e82702df1e10630484`；原文SHA256：`1f726f842ea9fe90345277fafd6237f8f1307a4051c2d8cbc2e889f58f1868df`。
+
+## 1. MD-6.4.3-BrownianDiscreteSpectrum · unnumbered_claim · 印刷p.250 / PDFp.271
+
+### 2. 原文陈述
+
+> In particular, it has a compact resolvent [360]; this can be shown to imply that the spectrum consists only of a countable collection of eigenvalues, i.e. that the operator has a discrete spectrum.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem brownianDiscreteSpectrum {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+  (textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ).Countable ∧
+  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ, z.im=0) ∧
+  ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ,
+    ∃ N : Set ℂ, IsOpen N ∧ z ∈ N ∧
+      N ∩ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ={z}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianDiscreteSpectrum；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际闭Gibbs复L²域的全谱，非另选某有限模式；包含可数、实值与每个点孤立。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:1854](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1854>)（`MD.Ch06.brownianDiscreteSpectrum`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_countable; MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_im_zero; MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_isolated。
+
+签名SHA256：`79eb60df1e1a8f0034db56fe34e71194f0442f0f533ab0ef452c5febd065b71d`；原文SHA256：`9535b534f8b77b14f13f186b43aa67eb23c04763224c0453321c426ecf96f5c0`。
+
+## 1. MD-6.4.3-BrownianSpectralGap · unnumbered_claim · 印刷p.251 / PDFp.272
+
+### 2. 原文陈述
+
+> $\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\sigma(\mathcal L)\subset(-\infty,-\alpha]$ for some $\alpha>0$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem brownianSpectralGap {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+  ∃ α : ℝ, 0 < α ∧ ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ,
+    z ≠ 0 → z.im=0 ∧ z.re ≤ -α
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianSpectralGap；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]现成实际全闭谱；正谱隙从真实Poincaré常数得出，不把目标谱隙作前提。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:1868](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1868>)（`MD.Ch06.brownianSpectralGap`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/BrownianSpectralGap.json；blueprint/ch06/validation/batch_axioms/section643b-c1e24c99.lean；blueprint/ch06/validation/batch_axioms/section643b-c1e24c99.log。
+
+已登记前置证明/定义：MolecularDynamics.textbookBrownianGibbsCoercivityRate_pos; MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_gap; MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_im_zero。
+
+签名SHA256：`74ada1c08909f934374db6bb19eb91e57658f52c5e7cef9bec8d5fd8f7a28488`；原文SHA256：`cb15a6a8ef53e3352c6f33b38f598de56ddebe9d448f75089d3362ffbf4b2e67`。
+
+## 1. MD-6.4.3-Theorem61 · Theorem 6.1 · 印刷p.250–251 / PDFp.271–272
+
+### 2. 原文陈述
+
+> Theorem 6.1 Define the generator of Brownian dynamics by
+> \[\mathcal Lf\stackrel{\rm def}=-M^{-1}\nabla U^T\nabla f+\beta^{-1}\Delta_Mf.\]
+> Suppose that $U$ is smooth with periodic boundary conditions $\mathcal Q=\mathbb T^{N_c}$ ($\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\rho_\beta)$ with inner product $\langle f,g\rangle_\beta$ as defined above, we have:
+> 1. $\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\infty,0]$.
+> 2. $\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\sigma(\mathcal L)\subset(-\infty,-\alpha]$ for some $\alpha>0$.
+> 3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\varphi$, we have
+> \[|\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t};\]
+> for some positive $K$ and $\alpha$, where recall $\bar\varphi(t)$ denotes the time average of $\varphi$ defined in (5.6).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem theorem61 :
+  ∀ {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (hm : ∀ i, 0 < m i)
+    (U : MolecularDynamics.Chapter06Review.V n → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β : ℝ) (hβ : 0 < β),
+  IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hp β hβ) ∧
+  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ,
+    z.im=0 ∧ z.re ≤ 0) ∧
+  (textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ).Countable ∧
+  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ, ∃ ε : ℝ, 0 < ε ∧
+    ∀ w ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ, dist w z < ε → w=z) ∧
+  (∃ α : ℝ, 0 < α ∧ ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ,
+    z ≠ 0 → z.re ≤ -α) ∧
+  ∀ {Ω : Type*} [MeasurableSpace Ω] (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω),
+    textbookIsWienerVector B P →
+    ∀ ρ : Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β),
+      0 ≤ᵐ[textbookConfigurationTorusGibbsMeasure U β] ρ →
+      (∫ Q, ρ Q ∂textbookConfigurationTorusGibbsMeasure U β)=1 →
+      ∃ K α : ℝ, 0 < K ∧ 0 < α ∧ ∀ (f : textbookPeriodicSmoothSpace n) (t : ℝ≥0),
+        |textbookBrownianDensityAverage m hm U hU hp β hβ B P ρ t
+          (textbookConfigurationContinuousObservable f f.prop.1.continuous f.prop.2) -
+          (∫ Q, textbookConfigurationTorusObservable f Q ∂textbookConfigurationTorusGibbsMeasure U β)| ≤
+            K * ‖textbookPeriodicSmoothEmbedding U hU hp β f‖ * Real.exp (-α*(t : ℝ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.theorem61；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]明确采用现成闭复Gibbs-L²实现、非正谱和完整离散/谱隙；第三部分选择实际演化分布平均，并限定真实非负质量1的L²初始相对密度。全部条款保留，不用部分桥接代替整个定理。 | [EXTRA] |
+| 原页核对/疑点 | 原C₀²核心域、自伴闭实现及negative definite术语需要签核；原末句时间平均与前句分布平均冲突。原一般初始分布未证明，本条技术范围限定另行披露。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1882](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1882>)（`MD.Ch06.theorem61`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：无现成整个原Thm6.1域/严格负定/时间平均完整桥接；保持sorry，不恢复封存长证明。各已证子条款单独登记。
+
+签名SHA256：`a385982198a5db5bc284bcafdf2a32768d76916f4b8bd50b19674d14c302ec0b`；原文SHA256：`872e595a07ed1f6dcb1168f416535190f503cd5fe472c09ba4f59c4d314d5f66`。
+
+## 1. MD-6.4.3-Theorem61TimeAveragePrinted · Theorem 6.1(3) printed time average · 印刷p.251 / PDFp.272
+
+### 2. 原文陈述
+
+> Theorem 6.1 Define the generator of Brownian dynamics by
+> \[\mathcal Lf\stackrel{\rm def}=-M^{-1}\nabla U^T\nabla f+\beta^{-1}\Delta_Mf.\]
+> Suppose that $U$ is smooth with periodic boundary conditions $\mathcal Q=\mathbb T^{N_c}$ ($\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\rho_\beta)$ with inner product $\langle f,g\rangle_\beta$ as defined above, we have:
+> 1. $\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\infty,0]$.
+> 2. $\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\sigma(\mathcal L)\subset(-\infty,-\alpha]$ for some $\alpha>0$.
+> 3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\varphi$, we have
+> \[|\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t};\]
+> for some positive $K$ and $\alpha$, where recall $\bar\varphi(t)$ denotes the time average of $\varphi$ defined in (5.6).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem theorem61TimeAveragePrinted {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P) :
+  ∀ x : UnitAddTorus (Fin Nc), ∃ K α : ℝ, 0 < K ∧ 0 < α ∧
+    ∀ f : textbookPeriodicSmoothSpace Nc, ∀ᵐ sample ∂P, ∀ t : ℝ, 0 < t →
+      |t⁻¹*(∫ s in (0 : ℝ)..t,
+          textbookConfigurationTorusObservable f
+            (textbookBrownianTorusGlobalRandomConfiguration m hm U hU hPU β hβ x B s sample)) -
+        (∫ Q, textbookConfigurationTorusObservable f Q ∂textbookConfigurationTorusGibbsMeasure U β)| ≤
+          K*‖textbookPeriodicSmoothEmbedding U hU hPU β f‖*Real.exp (-α*t)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.theorem61TimeAveragePrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]实际Brownian全时torus过程、任意点初值、AE路径资格和t>0明确；原C∞紧支检验在紧torus周期表示。 | [EXTRA] |
+| 原页核对/疑点 | 保留原5.6轨道时间平均读法；通常随机时间平均并无原指称指数路径误差界。原文未说明随机量的概率资格，不能改成分布平均后冒称原结论已证。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1909](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1909>)（`MD.Ch06.theorem61TimeAveragePrinted`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原时间平均/演化分布平均冲突待导师；不证明字面指数轨道界。
+
+签名SHA256：`3f537b88723a89bf66e63d13afbd09aec190128a0a33813f4818622b8c7120ef`；原文SHA256：`4b0973eaa4b7853940a10dbf761a0d0fa779f9ff279e950a2f92d317066e40f8`。
+
+## 1. MD-6.4.3-BrownianEnsembleExponential · unnumbered_claim · 印刷p.251 / PDFp.272
+
+### 2. 原文陈述
+
+> averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\varphi$, we have
+> \[|\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem brownianEnsembleExponential {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+    {Ω : Type*} [MeasurableSpace Ω] (B : ℝ≥0 → Ω → (Fin Nc → ℝ))
+    (P : Measure Ω) (hB : textbookIsWienerVector B P)
+    (ρ : Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β))
+    (hρpos : 0 ≤ᵐ[textbookConfigurationTorusGibbsMeasure U β] ρ)
+    (hρmass : (∫ Q, ρ Q ∂textbookConfigurationTorusGibbsMeasure U β) = 1) :
+    ∃ K α : ℝ, 0 < K ∧ 0 < α ∧ ∀ (f : textbookPeriodicSmoothSpace Nc) (t : ℝ≥0),
+      |textbookBrownianDensityAverage m hm U hU hPU β hβ B P ρ t
+          (textbookConfigurationContinuousObservable f f.prop.1.continuous f.prop.2) -
+        (textbookConfigurationPartition U β)⁻¹ *
+          (∫ q in textbookConfigurationCube Nc, (f : (Fin Nc → ℝ) → ℝ) q *
+            textbookConfigurationGibbsWeight U β q)| ≤
+        K * ‖textbookPeriodicSmoothEmbedding U hU hPU β f‖ * Real.exp (-α * (t : ℝ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianEnsembleExponential；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]选择实际演化分布平均；真实Wiener/kernel和非负质量1的L²初始相对密度，所有光滑周期检验同时受界。范围限定不覆盖singular点初始law，不是原轨道时间平均证明。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:1925](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1925>)（`MD.Ch06.brownianEnsembleExponential`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookBrownianDensityAverage_smooth_exponential。
+
+签名SHA256：`76e187228345470a44ff2927d4963ee177b8d5fd2afc49648fb4db7a9e93a232`；原文SHA256：`68944985c828aa10d2311e7260b0fbf1b47e8bf5368e698183b5b3db6ab6ed95`。
+
+## 1. MD-6.4.3-BrownianNegativeDefinitePrinted · unnumbered_claim · 印刷p.250 / PDFp.271
+
+### 2. 原文陈述
+
+> so that $\langle f,\mathcal Lf\rangle\le0$ so the operator is negative definite and can only have non-positive eigenvalues.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem brownianNegativeDefinitePrinted {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+  ∀ f : (Fin Nc → ℝ) → ℝ, ContDiff ℝ ∞ f → textbookUnitPeriodicPotential f →
+    (¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0) →
+      brownianWeightedInner U β f (textbookBrownianGenerator m U β f) < 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.brownianNegativeDefinitePrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]明确严格负定含全部非零周期光滑L²函数的读法。 | [EXTRA] |
+| 原页核对/疑点 | 常数非零函数给零二次型，严格负定字面不成立；原非正谱正确子结论独立保留。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1945](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1945>)（`MD.Ch06.brownianNegativeDefinitePrinted`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：字面严格负定被常数核反驳，不能证明。
+
+签名SHA256：`cccc0289883341cd6df1c7a88bec33fe55f465bf720dfda0774f7fe0071ddd81`；原文SHA256：`8dd25d6157dd114dafc7e5b92a8fdfd7b006730725f2af470991b92c8ee2842b`。
+
+## 1. MD-6.4.2-OUDensityPrinted · (6.44)–(6.45) · 印刷p.248 / PDFp.269
+
+### 2. 原文陈述
+
+> The solution $p(t)$ to the Ornstein-Uhlenbeck equation, for any finite time $t$, is always normally distributed
+> \[\rho(p,t)=\exp\left[-\frac{(p-\mu(t))^2}{2\sigma(t)^2}\right];\tag{6.44}\]
+> where
+> \[\mu(t)=p_0e^{-\gamma t};\qquad\sigma^2(t)=k_BT m[1-e^{-2\gamma t}].\tag{6.45}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def ouDensityPrinted (γ σ x0 t x : ℝ) : ℝ :=
+  Real.exp (-(x-MolecularDynamics.Chapter06Review.ouMean γ x0 t)^2/(2*MolecularDynamics.Chapter06Review.ouVariance γ σ t))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.ouDensityPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]定义中使用通用噪声σ，取σ=√(2γkBTm)即6.45；t=0资格另记录。 | [EXTRA] |
+| 原页核对/疑点 | (6.44)遗漏(2πσ²(t))⁻¹/²归一化系数；t=0为Dirac，不能声称每个有限t都是非退化Lebesgue密度。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1956](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1956>)（`MD.Ch06.ouDensityPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：字面式只为未归一权重；不证明它是概率密度。
+
+签名SHA256：`183af3ea1c6c47a406b73358a0e0f2ef0f31c4185de4cd86c398579685007ce2`；原文SHA256：`bca30bc7f53f8b2563b9e2329b69f4ecc74bea3a550e7619ba6c2dd49e4cdb49`。
+
+## 1. MD-6.4.2-OUDensityCorrect · (6.44) correction · 印刷p.248 / PDFp.269
+
+### 2. 原文陈述
+
+> The solution $p(t)$ to the Ornstein-Uhlenbeck equation, for any finite time $t$, is always normally distributed
+> \[\rho(p,t)=\exp\left[-\frac{(p-\mu(t))^2}{2\sigma(t)^2}\right];\tag{6.44}\]
+> where
+> \[\mu(t)=p_0e^{-\gamma t};\qquad\sigma^2(t)=k_BT m[1-e^{-2\gamma t}].\tag{6.45}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def ouDensity (γ σ x0 t x : ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.ouDensityPrinted γ σ x0 t x / Real.sqrt (2*Real.pi*MolecularDynamics.Chapter06Review.ouVariance γ σ t)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.ouDensity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]补归一化系数，正γ/温度/质量且t>0使用；仅实际密度公式定义，原OU严格law结论在§6.3.2保留，不计密度积分或过程law已证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1961](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1961>)（`MD.Ch06.ouDensity`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`486c5affcba616cf461b2ddc19617a3c0bc0d9b103cdb50b19c183bd0d65ffd2`；原文SHA256：`dd6ea83dfb65290a01779bcb471cee3a360195a53caaffbeab76b7069fce7918`。

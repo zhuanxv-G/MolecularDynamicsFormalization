@@ -1,0 +1,23 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "reason": "多传质量正性参数hm；核对签名后删除该参数，现成正性定理只需β的正性hβ。",
+    "source": "blueprint/ch06/validation/batch_axioms/section643b-c1e24c99.lean",
+    "log": "blueprint/ch06/validation/batch_axioms/section643b-c1e24c99.log",
+    "source_sha256": "bbeae0fcb40d06944dca914e9edcec341f96887fffb901a88d46ddac56f052cc",
+    "log_sha256": "5e08dfbbefd9fb67894d3a43ca4261ddcbebb3759d54d21537f135993d564c4a",
+    "inline_bridge": true
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "refine ⟨textbookBrownianGibbsCoercivityRate m U hU hPU β,\n    textbookBrownianGibbsCoercivityRate_pos m U hU hPU β hβ, ?_⟩\n  intro z hz hn\n  exact ⟨textbookBrownianGibbsGeneratorComplexSpectrum_im_zero m hm U hU hPU β hβ z hz,\n    textbookBrownianGibbsGeneratorComplexSpectrum_gap m hm U hU hPU β hβ z hn hz⟩",
+    "source": "blueprint/ch06/validation/batch_axioms/section643b-054d65e0.lean",
+    "log": "blueprint/ch06/validation/batch_axioms/section643b-054d65e0.log",
+    "source_sha256": "2073745dc5198b5142b7fa72dbd2139af04cb85d22916408604d1999b95b7919",
+    "log_sha256": "2e33bb5854dffb50013fa802c68b94fb7ad7272e9ae5e3ae4734b40458120f96",
+    "inline_bridge": true
+  }
+]

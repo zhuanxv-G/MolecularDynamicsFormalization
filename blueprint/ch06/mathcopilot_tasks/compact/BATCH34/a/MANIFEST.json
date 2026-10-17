@@ -1,0 +1,56 @@
+{
+  "batch": "BATCH34",
+  "subtask": "BATCH34a",
+  "source_ids": [
+    "MD-6.4.3-BrownianGenerator"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 270,
+      "printed_page": 249
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "b1c5e095219fbe4e26423acc1e94d12b7a891e1df0d59c07bc5858ae7d515161",
+  "lean_sha256": "1d0261523c31372934ca023ce6b56d8e31306b691978d89f776c260fe962d0da",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "1d0261523c31372934ca023ce6b56d8e31306b691978d89f776c260fe962d0da",
+    "blueprint/ch06/ch06_source.json": "b1c5e095219fbe4e26423acc1e94d12b7a891e1df0d59c07bc5858ae7d515161",
+    "BATCH34a_PAGES.pdf": "1cda0dd4b6c2916c05a5a9085fc5ee7964acc150d411ecfff9ffb310e8da56cc",
+    "signature_sha256": "0d6befe343d112e588a9b96830c7ae2709f1acbe7fd987bf658db771e04cee0a"
+  },
+  "signature_sha256": "0d6befe343d112e588a9b96830c7ae2709f1acbe7fd987bf658db771e04cee0a",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "brownianGenerator",
+      "code_sha256": "0d6befe343d112e588a9b96830c7ae2709f1acbe7fd987bf658db771e04cee0a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConfigurationPartial",
+      "code_sha256": "fbca5c0abb1ddc15e963008415ea72d955f5e4a49bbc36888fbf88ab7a80409d"
+    }
+  ],
+  "paste_plus_pdf_bytes": 104984,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4786,
+      "sha256": "9d36c967d7db568aec8529be22b6cac84c3c3659ca3cfdcc867b3e5ff7112642"
+    },
+    "BATCH34a_PAGES.pdf": {
+      "bytes": 100198,
+      "sha256": "1cda0dd4b6c2916c05a5a9085fc5ee7964acc150d411ecfff9ffb310e8da56cc"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 107081
+}

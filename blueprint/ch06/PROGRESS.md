@@ -2,7 +2,7 @@
 
 范围：印刷p.211–258/PDF232–279，Exercises及参考文献排除；第1–5章冻结，正式库冻结，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前180条；旧清单映射85/126；本地PASS 162；网站返回0。
+当前196条；旧清单映射95/126；本地PASS 174；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -186,6 +186,22 @@
 | MD-6.4.2-StationaryInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺抽象generator域与求导换积分/测度分离的完整短桥；不建一般半群理论。 |
 | MD-6.4-CanonicalMixingMeaning | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-6.4.2-LangevinCanonicalMixing | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺完整原Langevin正密度/Harris/kernel混合验收桥接；不恢复封存的Theorem6.2长证明。 |
+| MD-6.4.3-BrownianGenerator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.3-BrownianWeightedInner | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.3-BrownianDirichlet | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.3-BrownianSymmetry | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.3-BrownianNonpositive | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.3-BrownianRealEigenvalue | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.3-BrownianClosedSelfAdjoint | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.3-BrownianCompactResolvent | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.3-BrownianDiscreteSpectrum | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.3-BrownianSpectralGap | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.3-Theorem61 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；无现成整个原Thm6.1域/严格负定/时间平均完整桥接；保持sorry，不恢复封存长证明。各已证子条款单独登记。 |
+| MD-6.4.3-Theorem61TimeAveragePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原时间平均/演化分布平均冲突待导师；不证明字面指数轨道界。 |
+| MD-6.4.3-BrownianEnsembleExponential | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.3-BrownianNegativeDefinitePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；字面严格负定被常数核反驳，不能证明。 |
+| MD-6.4.2-OUDensityPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；字面式只为未归一权重；不证明它是概率密度。 |
+| MD-6.4.2-OUDensityCorrect | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 
 ## 旧126条完整映射
 
@@ -276,16 +292,16 @@
 | CH06-083 | MD-6.4.2-CylinderForwardPrinted |
 | CH06-084 | MD-6.4.2-StationaryInvariant |
 | CH06-085 | MD-6.4.2-LangevinCanonicalMixing |
-| CH06-086 | PENDING：所属节尚未处理 |
-| CH06-087 | PENDING：所属节尚未处理 |
-| CH06-088 | PENDING：所属节尚未处理 |
-| CH06-089 | PENDING：所属节尚未处理 |
-| CH06-090 | PENDING：所属节尚未处理 |
-| CH06-091 | PENDING：所属节尚未处理 |
-| CH06-092 | PENDING：所属节尚未处理 |
-| CH06-093 | PENDING：所属节尚未处理 |
-| CH06-094 | PENDING：所属节尚未处理 |
-| CH06-095 | PENDING：所属节尚未处理 |
+| CH06-086 | MD-6.4.2-OUDensityCorrect |
+| CH06-087 | MD-6.4.3-BrownianGenerator |
+| CH06-088 | MD-6.4.3-BrownianWeightedInner |
+| CH06-089 | MD-6.4.3-BrownianSymmetry |
+| CH06-090 | MD-6.4.3-BrownianNegativeDefinitePrinted |
+| CH06-091 | MD-6.4.3-BrownianClosedSelfAdjoint |
+| CH06-092 | MD-6.4.3-BrownianDiscreteSpectrum |
+| CH06-093 | MD-6.4.3-BrownianNegativeDefinitePrinted |
+| CH06-094 | MD-6.4.3-BrownianSpectralGap |
+| CH06-095 | MD-6.4.3-BrownianEnsembleExponential |
 | CH06-096 | PENDING：所属节尚未处理 |
 | CH06-097 | PENDING：所属节尚未处理 |
 | CH06-098 | PENDING：所属节尚未处理 |
@@ -382,6 +398,11 @@
 - MD-6.4.2-CylinderForwardPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 网站/导师待裁定印刷φ/ρ笔误。印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。
 - MD-6.4.2-StationaryInvariant：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺抽象generator域与求导换积分/测度分离的完整短桥；不建一般半群理论。
 - MD-6.4.2-LangevinCanonicalMixing：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺完整原Langevin正密度/Harris/kernel混合验收桥接；不恢复封存的Theorem6.2长证明。
+- MD-6.4.3-BrownianNonpositive：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 常数属于核，≤0只证明半负定，不能升级严格负定。
+- MD-6.4.3-Theorem61：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 无现成整个原Thm6.1域/严格负定/时间平均完整桥接；保持sorry，不恢复封存长证明。各已证子条款单独登记。原C₀²核心域、自伴闭实现及negative definite术语需要签核；原末句时间平均与前句分布平均冲突。原一般初始分布未证明，本条技术范围限定另行披露。
+- MD-6.4.3-Theorem61TimeAveragePrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 原时间平均/演化分布平均冲突待导师；不证明字面指数轨道界。保留原5.6轨道时间平均读法；通常随机时间平均并无原指称指数路径误差界。原文未说明随机量的概率资格，不能改成分布平均后冒称原结论已证。
+- MD-6.4.3-BrownianNegativeDefinitePrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 字面严格负定被常数核反驳，不能证明。常数非零函数给零二次型，严格负定字面不成立；原非正谱正确子结论独立保留。
+- MD-6.4.2-OUDensityPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 字面式只为未归一权重；不证明它是概率密度。(6.44)遗漏(2πσ²(t))⁻¹/²归一化系数；t=0为Dirac，不能声称每个有限t都是非退化Lebesgue密度。
 
 ## 定性段落排除
 

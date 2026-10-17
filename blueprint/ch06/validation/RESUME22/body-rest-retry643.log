@@ -1,0 +1,81 @@
+START SECTION 6.4.3
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch section643-b805abe2 --step ③–⑤§6.4.3逐批验证
+Generated 188 entries; 91 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py section643-b805abe2
+Generated 188 entries; 91 /126 old rows mapped; protected 925
+Batch axioms passed: section643-b805abe2 188
+Running: D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 188, "local_PASS": 170, "local_NEEDS_HUMAN": 18, "errata_records": 22, "source_errata_records": 21, "declarations": {"\u5b9a\u4e49": 74, "\u5df2\u8bc1": 60, "\u672a\u8bc1": 54}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 11, "\u65f6\u95f4\u76d2\u6b62": 2, "\u7f3a\u5927\u578b\u7406\u8bba": 41}, "website_submitted": false}
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch section643b-c1e24c99 --step ③–⑤§6.4.3逐批验证
+Generated 196 entries; 95 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py section643b-c1e24c99
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\ch06_batch_axioms.py", line 13, in <module>
+    assert receipt['exit_code']==0,out.decode('utf-8',errors='replace')[-5000:]
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 6.fpPolynomialAdjoint' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.fpEquation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.zeroNoise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.vectorIto' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.vectorForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.diffusionTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.vectorFPEquation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.langevinMassForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.momentumMassLaplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinFPEquation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.massGibbsStationary' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.unitMassGibbsStationaryBridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.variableFrictionForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.variableFrictionCanonicalPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.variableFrictionCommutingStationary' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.stochasticMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteDistribution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteEvolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteEvolutionRecurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.returnTimes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.period' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.aperiodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.irreducible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteInvariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteErgodicity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.stochasticEntryBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.finiteChainExample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.exampleStochastic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.exampleNotIrreducible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.communicates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.directedGraphIrreducible' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.cylinderCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.cylinderSDE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.cylinderGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.cylinderForwardPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.stationaryDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.stationaryInvariant' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.canonicalMixingMeaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinCanonicalMixing' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.brownianGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianWeightedInner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianDirichlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianSymmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianNonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianRealEigenvalue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianClosedSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianCompactResolvent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianDiscreteSpectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianSpectralGap' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.theorem61' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.theorem61TimeAveragePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.brownianEnsembleExponential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.brownianNegativeDefinitePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.ouDensityPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.ouDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_advance_ch06.py", line 35, in <module>
+    generate(label)
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_advance_ch06.py", line 19, in generate
+    call([PY,'scripts/ch06_batch_axioms.py',label])
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_advance_ch06.py", line 13, in call
+    subprocess.run(list(map(str,args)),cwd=ROOT,check=True)
+  File "D:\anaconda\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['D:\\anaconda\\python.exe', 'scripts/ch06_batch_axioms.py', 'section643b-c1e24c99']' returned non-zero exit status 1.

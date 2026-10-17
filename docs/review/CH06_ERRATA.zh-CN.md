@@ -2,7 +2,7 @@
 
 教材：B. Leimkuhler 与 C. Matthews，Molecular Dynamics: With Deterministic and Stochastic Numerical Methods，Springer，2015，第6章正文。
 页码：PDF物理页从1起数，本章PDF页＝印刷页＋21。原句和原公式逐字保留；修正版是工作建议，均待导师裁定。网站审计尚未提交。
-原文版的错误断言不证明；原文公式的定义仅记录表达式。修正版定义、已证定理与未证定理分别标明。第7项属于既有Lean辅助定义缺口，不归因于教材。
+原文版的错误断言不证明；原文公式的定义仅记录表达式。对形式微分、算子域等尚有歧义的原句，逐字文字完整保留，Lean表达式或明确实现仅记录其可陈述部分，不等同于原句全部含义已获证明。修正版定义、已证定理与未证定理分别标明。第7项属于既有Lean辅助定义缺口，不归因于教材。
 
 ## 1. MD-6.1.2-BathTaylor
 
@@ -360,6 +360,100 @@
 - 反例或理由：密度前向算子不应依赖独立的检验函数φ；即使ρ固定，改变φ会改变印刷右端。
 - 原文版 Lean 名称及状态：`MD.Ch06.cylinderForwardPrinted`：定义已落盘；公理/类型已核。原文文字和完整展示式见上；启发式极限只登记其意义，不声称一般热浴已满足。
 - 修正版 Lean 名称、改动内容、证明状态：`MD.Ch06.cylinderForwardPrinted_corrected`：尚未落盘，不计完成；扩散项中的φ″改为ρ″。
+- 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
+- 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
+- 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。
+
+## 22. MD-6.4.3-BrownianNonpositive
+
+- source_id：MD-6.4.3-BrownianNonpositive；印刷页 250 / PDF页 271。
+- 原文引文（逐字）：
+
+> Moreover, from the calculation above,
+> \[\langle f,\mathcal Lf\rangle=-\beta^{-1}\int_{\mathcal Q}\|\nabla f\|^2\bar\rho_\beta d\omega_q;\]
+> so that $\langle f,\mathcal Lf\rangle\le0$ so the operator is negative definite and can only have non-positive eigenvalues.
+
+- 问题所在：常数属于核，≤0只证明半负定，不能升级严格负定。
+- 反例或理由：非零常数函数的梯度为0，二次型等于0；故仅为半负定。
+- 原文版 Lean 名称及状态：`MD.Ch06.brownianNegativeDefinitePrinted`：未证；原书疑误不证。原文文字和完整展示式见上；启发式极限只登记其意义，不声称一般热浴已满足。
+- 修正版 Lean 名称、改动内容、证明状态：`MD.Ch06.brownianNonpositive_corrected`：尚未落盘，不计完成；采用≤0并区分闭算子实现与光滑核心；严格负定字面另见BrownianNegativeDefinitePrinted。
+- 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
+- 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
+- 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。
+
+## 23. MD-6.4.3-Theorem61
+
+- source_id：MD-6.4.3-Theorem61；印刷页 250–251 / PDF页 271–272。
+- 原文引文（逐字）：
+
+> Theorem 6.1 Define the generator of Brownian dynamics by
+> \[\mathcal Lf\stackrel{\rm def}=-M^{-1}\nabla U^T\nabla f+\beta^{-1}\Delta_Mf.\]
+> Suppose that $U$ is smooth with periodic boundary conditions $\mathcal Q=\mathbb T^{N_c}$ ($\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\rho_\beta)$ with inner product $\langle f,g\rangle_\beta$ as defined above, we have:
+> 1. $\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\infty,0]$.
+> 2. $\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\sigma(\mathcal L)\subset(-\infty,-\alpha]$ for some $\alpha>0$.
+> 3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\varphi$, we have
+> \[|\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t};\]
+> for some positive $K$ and $\alpha$, where recall $\bar\varphi(t)$ denotes the time average of $\varphi$ defined in (5.6).
+
+- 问题所在：原C₀²核心域、自伴闭实现及negative definite术语需要签核；原末句时间平均与前句分布平均冲突。原一般初始分布未证明，本条技术范围限定另行披露。 质量Laplacian表达式另列`MD.Ch06.brownianMassGeneratorPrinted`与`MD.Ch06.brownianMassGeneratorPrinted_corrected`；二者只定义表达式，状态分别为尚未落盘，不计完成、尚未落盘，不计完成。
+- 反例或理由：常数核反驳严格负定；随机轨道时间平均通常不具有原式的逐路径指数误差界；核心域上的对称性不自动等于闭实现的自伴性。此外p.244将ΔM定义为正质量权重，Brownian生成元扩散应为逆质量权重；m=2、U=0、f(x)=x²可区分二者。
+- 原文版 Lean 名称及状态：`MD.Ch06.theorem61Printed`：尚未落盘，不计完成。原文文字和完整展示式见上；启发式极限只登记其意义，不声称一般热浴已满足。
+- 修正版 Lean 名称、改动内容、证明状态：`MD.Ch06.theorem61_corrected`：尚未落盘，不计完成；明确闭Gibbs-L²实现、半负定、离散谱、谱隙和L²初始相对密度的演化分布平均；Brownian扩散使用逆质量权重，不混用p.244动量算子的ΔM；不声称已证原轨道时间平均。
+- 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
+- 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
+- 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。
+
+## 24. MD-6.4.3-Theorem61TimeAveragePrinted
+
+- source_id：MD-6.4.3-Theorem61TimeAveragePrinted；印刷页 251 / PDF页 272。
+- 原文引文（逐字）：
+
+> Theorem 6.1 Define the generator of Brownian dynamics by
+> \[\mathcal Lf\stackrel{\rm def}=-M^{-1}\nabla U^T\nabla f+\beta^{-1}\Delta_Mf.\]
+> Suppose that $U$ is smooth with periodic boundary conditions $\mathcal Q=\mathbb T^{N_c}$ ($\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\rho_\beta)$ with inner product $\langle f,g\rangle_\beta$ as defined above, we have:
+> 1. $\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\infty,0]$.
+> 2. $\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\sigma(\mathcal L)\subset(-\infty,-\alpha]$ for some $\alpha>0$.
+> 3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\varphi$, we have
+> \[|\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t};\]
+> for some positive $K$ and $\alpha$, where recall $\bar\varphi(t)$ denotes the time average of $\varphi$ defined in (5.6).
+
+- 问题所在：保留原5.6轨道时间平均读法；通常随机时间平均并无原指称指数路径误差界。原文未说明随机量的概率资格，不能改成分布平均后冒称原结论已证。
+- 反例或理由：对非平凡平稳扩散，时间平均的随机波动通常为代数尺度；原句前半讨论演化分布平均，末句却引用(5.6)时间平均。
+- 原文版 Lean 名称及状态：`MD.Ch06.theorem61TimeAveragePrinted`：未证；原书疑误不证。原文文字和完整展示式见上；启发式极限只登记其意义，不声称一般热浴已满足。
+- 修正版 Lean 名称、改动内容、证明状态：`MD.Ch06.theorem61TimeAveragePrinted_corrected`：尚未落盘，不计完成；选择演化分布平均，限定L²初始相对密度；轨道遍历极限应另行陈述，不赋予指数逐路径率。
+- 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
+- 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
+- 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。
+
+## 25. MD-6.4.3-BrownianNegativeDefinitePrinted
+
+- source_id：MD-6.4.3-BrownianNegativeDefinitePrinted；印刷页 250 / PDF页 271。
+- 原文引文（逐字）：
+
+> so that $\langle f,\mathcal Lf\rangle\le0$ so the operator is negative definite and can only have non-positive eigenvalues.
+
+- 问题所在：常数非零函数给零二次型，严格负定字面不成立；原非正谱正确子结论独立保留。
+- 反例或理由：取f≡1，非零而〈f,Lf〉=0。
+- 原文版 Lean 名称及状态：`MD.Ch06.brownianNegativeDefinitePrinted`：未证；原书疑误不证。原文文字和完整展示式见上；启发式极限只登记其意义，不声称一般热浴已满足。
+- 修正版 Lean 名称、改动内容、证明状态：`MD.Ch06.brownianNegativeDefinitePrinted_corrected`：尚未落盘，不计完成；将严格小于0改为小于等于0；零特征值与常数核保留。
+- 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
+- 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
+- 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。
+
+## 26. MD-6.4.2-OUDensityPrinted
+
+- source_id：MD-6.4.2-OUDensityPrinted；印刷页 248 / PDF页 269。
+- 原文引文（逐字）：
+
+> The solution $p(t)$ to the Ornstein-Uhlenbeck equation, for any finite time $t$, is always normally distributed
+> \[\rho(p,t)=\exp\left[-\frac{(p-\mu(t))^2}{2\sigma(t)^2}\right];\tag{6.44}\]
+> where
+> \[\mu(t)=p_0e^{-\gamma t};\qquad\sigma^2(t)=k_BT m[1-e^{-2\gamma t}].\tag{6.45}\]
+
+- 问题所在：(6.44)遗漏(2πσ²(t))⁻¹/²归一化系数；t=0为Dirac，不能声称每个有限t都是非退化Lebesgue密度。
+- 反例或理由：高斯权重积分为sqrt(2πσ²(t))而非1；t=0为Dirac测度。
+- 原文版 Lean 名称及状态：`MD.Ch06.ouDensityPrinted`：定义已落盘；公理/类型已核。原文文字和完整展示式见上；启发式极限只登记其意义，不声称一般热浴已满足。
+- 修正版 Lean 名称、改动内容、证明状态：`MD.Ch06.ouDensityPrinted_corrected`：尚未落盘，不计完成；增加(2πσ²(t))⁻¹/²，并限γ>0、噪声非零、t>0的密度解释。
 - 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
 - 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
 - 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。

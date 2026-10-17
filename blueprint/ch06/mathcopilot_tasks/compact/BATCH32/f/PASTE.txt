@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH32f；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH32f_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "a4208537b0977572c0cad3140f8458b8b80dcb6f57c0675b80eaeccf0ee9b117",
-  "blueprint/ch06/ch06_source.json": "1617c389af2ccad00e7b7f8975e45ecd7241a2829374d5d8588ffdbb1971a5fc",
+  "Blueprint/Ch06.lean": "1d0261523c31372934ca023ce6b56d8e31306b691978d89f776c260fe962d0da",
+  "blueprint/ch06/ch06_source.json": "b1c5e095219fbe4e26423acc1e94d12b7a891e1df0d59c07bc5858ae7d515161",
   "BATCH32f_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
   "signature_sha256": "6cfcb9ae1ceb471b39d635825267f30a1be7479e14bac2cf34e302f3eacd33cf"
 }
