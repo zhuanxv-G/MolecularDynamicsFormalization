@@ -105,6 +105,7 @@ def timeItoFormulaPrinted (φ : ℝ×ℝ → ℝ) (x t dX dXX : ℝ) : ℝ :=
   fderiv ℝ φ (x,t) (0,1)+fderiv ℝ φ (x,t) (1,0)*dX+
     fderiv ℝ (fun z ↦ fderiv ℝ φ z (1,0)) (x,t) (1,0)*dXX/2'''
         elif key=='FPPolynomialAdjoint':
+            assert 'k ≤ 2 →' in originals[key]
             printed=rename(originals[key],'fpPolynomialAdjointPrinted').replace('k ≤ 2 →','k = 0 →')
             r['code']+='\n\n/-- 【原书疑误】仅函数值增长条件的字面伴随断言；不证。 -/\n'+printed
         elif key=='Theorem61' and 'Theorem61TimeAveragePrinted' in bykey:

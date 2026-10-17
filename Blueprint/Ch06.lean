@@ -1961,4 +1961,565 @@ def ouDensityPrinted (γ σ x0 t x : ℝ) : ℝ :=
 def ouDensity (γ σ x0 t x : ℝ) : ℝ :=
   MolecularDynamics.Chapter06Review.ouDensityPrinted γ σ x0 t x / Real.sqrt (2*Real.pi*MolecularDynamics.Chapter06Review.ouVariance γ σ t)
 
+/-- source_id: MD-6.4.4-Assumption1Printed · Assumption 1 printed · §6.4.4 · 印刷p.252 / PDFp.273
+[EXTRA] [EXTRA]真实Borel Markov kernel与局部参考测度；完整同一内点可达、全部初值与可测子集及联合连续资格。
+[ERRATUM?] 正维连续状态中t=0初始Dirac通常不具有可连续延拓的Lebesgue转移密度；字面[0,∞)与正时刻密度不能混同。 -/
+def assumption1Printed {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D) : Prop :=
+  IsCompact C ∧ (∃ y ∈ interior C, ∀ δ : ℝ, 0 < δ → ∃ t : ℝ≥0, 0 < t ∧
+    ∀ x ∈ C, 0 < K t x (Metric.ball y δ)) ∧
+  ∃ ρ : D → D → ℝ → ℝ, (∀ x z t, 0 ≤ ρ x z t) ∧
+    (∀ t : ℝ≥0, 0 < t → ∀ x ∈ C, ∀ A : Set D, MeasurableSet A → A ⊆ C →
+      K t x A = ∫⁻ z in A, ENNReal.ofReal (ρ x z t) ∂ν) ∧
+    ContinuousOn (fun w : (D×D)×ℝ ↦ ρ w.1.1 w.1.2 w.2) ((C×ˢ C)×ˢ Ici 0)
+
+/-- source_id: MD-6.4.4-Assumption1Correct · Assumption 1 positive-time version · §6.4.4 · 印刷p.252 / PDFp.273
+[EXTRA] [EXTRA]联合连续域改为C×C×(0,∞)，正时刻实际密度与全部可达资格保留；只定义修正版，未计任何具体SDE已满足。 -/
+def assumption1 {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D) : Prop :=
+  IsCompact C ∧ (∃ y ∈ interior C, ∀ δ : ℝ, 0 < δ → ∃ t : ℝ≥0, 0 < t ∧
+    ∀ x ∈ C, 0 < K t x (Metric.ball y δ)) ∧
+  ∃ ρ : D → D → ℝ → ℝ, (∀ x z t, 0 ≤ ρ x z t) ∧
+    (∀ t : ℝ≥0, 0 < t → ∀ x ∈ C, ∀ A : Set D, MeasurableSet A → A ⊆ C →
+      K t x A = ∫⁻ z in A, ENNReal.ofReal (ρ x z t) ∂ν) ∧
+    ContinuousOn (fun w : (D×D)×ℝ ↦ ρ w.1.1 w.1.2 w.2) ((C×ˢ C)×ˢ Ioi 0)
+
+/-- source_id: MD-6.4.4-Assumption2 · Assumption 2 · §6.4.4 · 印刷p.252 / PDFp.273
+[EXTRA] [EXTRA]柱形相空间以真实compact sublevels表达趋无穷；连续正Lyapunov及正α/δ，未把Harris结论藏进定义。具体generator域资格在对应命题明确。 -/
+def assumption2 {D : Type*} [TopologicalSpace D] (L : (D → ℝ) → D → ℝ)
+    (φ : D → ℝ) (α δ : ℝ) : Prop :=
+  (∀ x, 0 < φ x) ∧ Continuous φ ∧ (∀ R : ℝ, IsCompact {x | φ x ≤ R}) ∧
+    0 < α ∧ 0 < δ ∧ ∀ x, L φ x ≤ -α*φ x+δ
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+
+/-- source_id: MD-6.4.4-MinorizationPrinted · unnumbered_claim · §6.4.4 · 印刷p.252 / PDFp.273
+[ERRATUM?] 原tantamount按双向等价读取；一般小集下界并不自动产生原要求的联合连续密度，且原时间0连续性需勘误。不能只证单向后冒称原等价已证。 -/
+theorem minorizationPrinted : ∀ {S : Type*} [MetricSpace S] [MeasurableSpace S] [BorelSpace S]
+    (ν : Measure S) (K : ℝ≥0 → Kernel S S) (C : Set S),
+  MolecularDynamics.Chapter06Review.assumption1Printed ν K C ↔
+    ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure S,
+      IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x := by
+  sorry
+
+/-- source_id: MD-6.4.4-MinorizationCorrectedImplication · unnumbered_claim · §6.4.4 · 印刷p.252 / PDFp.273
+[EXTRA] [EXTRA]仅单向充分条件，正时刻Assumption1加全部非空开集严格可达；实际测度下界完整，字面双向版独立保留。 -/
+theorem minorizationCorrectedImplication :
+  ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D), MolecularDynamics.Chapter06Review.assumption1 ν K C →
+  (∀ t : ℝ≥0, ∀ x : D, ∀ A : Set D, IsOpen A → A.Nonempty → 0 < t → 0 < K t x A) →
+  ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure D,
+    IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x := by
+  sorry
+
+/-- source_id: MD-6.4.4-Theorem62 · Theorem 6.2 · §6.4.4 · 印刷p.252 / PDFp.273
+[EXTRA] [EXTRA]阈值函数先于全部过程/Lyapunov量词选择，不能临时选使Assumption1假而空真；真实Markov semigroup/Feller、Polish局部紧状态及σ有限参考测度。全状态正时刻密度资格用于完整不变概率密度结论；L*ρ=0按真实generator检验的弱意义，不是先假定不变性。全部函数/初值/时刻统一加权指数界与唯一性均保留。
+[ERRATUM?] 原未指定阈值、generator域或非爆炸/Markov域识别；原Assumption1时间0勘误和全状态密度资格需要明确签核。 -/
+theorem theorem62 :
+  ∃ threshold : ℝ → ℝ → ℝ,
+    (∀ α δ : ℝ, 0 < α → 0 < δ → 0 < threshold α δ) ∧
+  ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D] [CompleteSpace D] [SecondCountableTopology D] [LocallyCompactSpace D]
+    (ν : Measure D) [SigmaFinite ν] (K : ℝ≥0 → Kernel D D), MolecularDynamics.Chapter06Review.markovSemigroup K →
+  (∀ f : D → ℝ, Continuous f → Bornology.IsBounded (Set.range f) → ∀ t,
+    Continuous (MolecularDynamics.Chapter06Review.kernelAverage K f t)) →
+  (∀ t : ℝ≥0, 0 < t → ∀ x : D, ∃ density : D → ℝ,
+    Measurable density ∧ (∀ z, 0 ≤ density z) ∧
+      K t x = ν.withDensity (fun z ↦ ENNReal.ofReal (density z))) →
+  ∀ (φ : D → ℝ) (α δ : ℝ), MolecularDynamics.Chapter06Review.assumption2 (MolecularDynamics.Chapter06Review.kernelGenerator K) φ α δ →
+    MolecularDynamics.Chapter06Review.assumption1 ν K {x | φ x ≤ threshold α δ} →
+      ∃ μ : Measure D, IsProbabilityMeasure μ ∧ MolecularDynamics.Chapter06Review.invariantKernel K μ ∧
+      (∀ μ' : Measure D, IsProbabilityMeasure μ' → MolecularDynamics.Chapter06Review.invariantKernel K μ' → μ'=μ) ∧
+      (∃ ρ : D → ℝ, Measurable ρ ∧ (∀ x, 0 ≤ ρ x) ∧
+        μ=ν.withDensity (fun x ↦ ENNReal.ofReal (ρ x))) ∧
+      (∀ f : D → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+        Integrable (MolecularDynamics.Chapter06Review.kernelGenerator K f) μ → (∫ x, MolecularDynamics.Chapter06Review.kernelGenerator K f x ∂μ)=0) ∧
+      ∃ κ lambdaParam : ℝ, 0 < κ ∧ 0 < lambdaParam ∧ ∀ f : D → ℝ, Measurable f → (∀ x, |f x| ≤ φ x) →
+        Integrable f μ ∧ ∀ (t : ℝ≥0) (x : D),
+          |MolecularDynamics.Chapter06Review.kernelAverage K f t x-(∫ z, f z ∂μ)| ≤ κ*Real.exp (-lambdaParam*(t : ℝ))*φ x := by
+  sorry
+
+/-- source_id: MD-6.4.4-PeriodicPotentialBound · unnumbered_claim · §6.4.4 · 印刷p.253 / PDFp.274
+[EXTRA] [EXTRA]完整全域有限范数界，给上下界±M；正下界>1需实际势能平移，另条给出。原周期与q→∞围束资格冲突另留字面记录，不由本条消去。
+[ERRATUM?] 非恒零维周期势在lift上不会趋∞；光滑周期本身也不推出原1<Umin。 -/
+theorem periodicPotentialBound {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : Continuous U) (hP : textbookUnitPeriodicPotential U) :
+    ∃ M : ℝ, 0 ≤ M ∧ ∀ q, ‖U q‖ ≤ M := by
+  apply MolecularDynamics.textbookUnitPeriodicPotential_bound <;> assumption
+
+/-- source_id: MD-6.4.4-PotentialNormalization · unnumbered_claim · §6.4.4 · 印刷p.253 / PDFp.274
+[EXTRA] [EXTRA]将Umin>1解释为实际加常数归一；严格>1与真实力不变全部保留，而非直接假定任何原势已大于1。 -/
+theorem potentialNormalization {n : ℕ} (U : (Fin n → ℝ) → ℝ)
+    (hU : Continuous U) (hp : textbookUnitPeriodicPotential U) :
+  ∃ c : ℝ, (∀ q, 1 < U q+c) ∧
+    textbookPotentialForce (fun q ↦ U q+c)=textbookPotentialForce U := by
+  obtain ⟨c,hc⟩ := textbookUnitPeriodicPotential_normalization U hU hp
+  refine ⟨c+1, ?_, textbookPotentialForce_add_const U (c+1)⟩
+  intro q
+  linarith [hc q]
+
+/-- source_id: MD-6.4.4-UnitLangevinModel · (6.47) · §6.4.4 · 印刷p.251 / PDFp.272
+[EXTRA] [EXTRA]真实单位质量完整耦合路径方程；β>0及光滑势保证原梯度存在，γ>0由实际MassLangevin资格保留。Wiener law在对应定理另给，不宣称任意W是Wiener。 -/
+def unitLangevinModel {n : ℕ} {A : Type*} [MeasurableSpace A] (P : Measure A)
+    (W : ℝ → A → (Fin n → ℝ)) (X : ℝ → A → ((Fin n → ℝ) × (Fin n → ℝ)))
+    (U : (Fin n → ℝ) → ℝ) (γ β : ℝ) (x0 : (Fin n → ℝ) × (Fin n → ℝ)) : Prop :=
+  0 < β ∧ ContDiff ℝ ∞ U ∧ MD.Ch06.langevinMassSDE P W X (fun _ ↦ 1) U γ β⁻¹ x0
+
+/-- source_id: MD-6.4.4-PeriodicConfiningPrinted · definition · §6.4.4 · 印刷p.253 / PDFp.274
+[EXTRA] [EXTRA]实际正维单位周期lift，cocompact表达配置无穷远；不是动量Hamiltonian的围束。
+[ERRATUM?] 原周期位置域与同一势能lift的q→∞围束条件冲突；保留字面资格而非构造一个不存在的周期围束势。 -/
+def periodicConfiningPrinted {n : ℕ} (_hn : 0 < n) (U : (Fin n → ℝ) → ℝ) : Prop :=
+  ContDiff ℝ ∞ U ∧ textbookUnitPeriodicPotential U ∧
+    Tendsto U (cocompact (Fin n → ℝ)) atTop
+
+/-- source_id: MD-6.4.4-HamiltonianPower · definition · §6.4.4 · 印刷p.253 / PDFp.274
+[EXTRA] [EXTRA]l≥1编码，真实单位质量Hamiltonian，未把形式jet当真实函数；正性与柱形proper在后续实际桥接证明。 -/
+noncomputable def hamiltonianPower {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (l : ℕ) (_hl : 1 ≤ l)
+    (z : textbookLangevinPhase Nc) : ℝ := textbookLangevinHamiltonian U z ^ l
+
+/-- source_id: MD-6.4.4-HamiltonianPowerCancellation · unnumbered_claim · §6.4.4 · 印刷p.253 / PDFp.274
+[EXTRA] [EXTRA]实际沿Hamiltonian方向的真实导数为0；γ=0只在此Hamiltonian部分，非把整个物理Langevin摩擦设零。 -/
+theorem hamiltonianPowerCancellation {n : ℕ} (U : (Fin n → ℝ) → ℝ)
+    (hU : Differentiable ℝ U) (l : ℕ) (_hl : 1 ≤ l) (z : textbookLangevinPhase n) :
+  HasDerivAt (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l
+    (z+t • textbookLangevinDrift U 0 z)) 0 0 := by
+  simpa using textbookLangevinHamiltonianPower_drift_hasDerivAt U hU (0 : ℝ) l z
+
+/-- source_id: MD-6.4.4-HamiltonianPowerMomentumDerivative · unnumbered_claim · §6.4.4 · 印刷p.253 / PDFp.274
+[EXTRA] [EXTRA]真实沿动量p方向的导数及全部两个表达式，不仅登记事先给定的导数值；实际所有坐标平方和。 -/
+theorem hamiltonianPowerMomentumDerivative : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ)
+    (l : ℕ) (z : textbookLangevinPhase n), 1 ≤ l →
+  HasDerivAt (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l (z.1,(1+t) • z.2))
+    ((l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*(∑ i, z.2 i^2)) 0 ∧
+  (l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*(∑ i, z.2 i^2) =
+    2*(l : ℝ)*textbookLangevinHamiltonianPower U l z -
+      2*(l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*U z.1 := by
+  intro n U l z hl
+  let S : ℝ := ∑ i, z.2 i^2
+  have he : ∀ t : ℝ, textbookLangevinHamiltonian U (z.1,(1+t) • z.2)=
+      (1+t)^2*S/2+U z.1 := by
+    intro t
+    simp only [textbookLangevinHamiltonian, Pi.smul_apply, smul_eq_mul, mul_pow,
+      ← Finset.mul_sum]
+    rfl
+  have hd : HasDerivAt (fun t : ℝ ↦ ((1+t)^2*S/2+U z.1)^l)
+      ((l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*S) 0 := by
+    convert! (((((hasDerivAt_id (0 : ℝ)).const_add 1).pow 2).mul_const S).div_const 2 |>.add_const (U z.1)).pow l using 1 <;>
+      simp [textbookLangevinHamiltonian, S] <;> ring
+  constructor
+  · simpa only [textbookLangevinHamiltonianPower, he] using hd
+  · change (l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*S=
+      2*(l : ℝ)*textbookLangevinHamiltonian U z^l-
+        2*(l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*U z.1
+    rw [show textbookLangevinHamiltonian U z^l=
+      textbookLangevinHamiltonian U z^(l-1)*textbookLangevinHamiltonian U z by
+      rw [← pow_succ, Nat.sub_add_cancel hl]]
+    dsimp [textbookLangevinHamiltonian, S]
+    ring
+
+/-- source_id: MD-6.4.4-HamiltonianPowerMomentumLaplacian · unnumbered_claim · §6.4.4 · 印刷p.253 / PDFp.274
+[EXTRA] [EXTRA]完整实际坐标二阶导数和及正确等式，l≥1；原随后不等式单独原样保存，未据等式声称它成立。 -/
+theorem hamiltonianPowerMomentumLaplacian {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (l : ℕ) (hl : 1 ≤ l) (z : textbookLangevinPhase Nc) :
+    (∑ i : Fin Nc, deriv (deriv (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l
+      (z + t • ((0 : Fin Nc → ℝ), Pi.single i 1)))) 0) =
+      (l : ℝ) * ((l : ℝ) - 1) * textbookLangevinHamiltonian U z ^ (l - 2) * (∑ i, z.2 i ^ 2) +
+        (Nc : ℝ) * l * textbookLangevinHamiltonian U z ^ (l - 1) := by
+  apply MolecularDynamics.textbookLangevinHamiltonianPower_momentum_laplacian <;> assumption
+
+/-- source_id: MD-6.4.4-LaplacianBoundPrinted · unnumbered_claim · §6.4.4 · 印刷p.253 / PDFp.274
+[ERRATUM?] 用|p|²≤2H推导时遗漏系数2；一般原界不成立，具体52>40反例另给。 -/
+theorem laplacianBoundPrinted : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ),
+  (∀ q, 1 ≤ U q) → ∀ (l : ℕ), 1 ≤ l → ∀ z : textbookLangevinPhase n,
+    (∑ i : Fin n, deriv (deriv (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l
+      (z+t • ((0 : Fin n → ℝ), Pi.single i 1)))) 0) ≤
+      (l : ℝ)*((l : ℝ)+(n : ℝ)-1)*textbookLangevinHamiltonian U z^(l-1) := by
+  sorry
+
+/-- source_id: MD-6.4.4-LaplacianBoundCounterexample · unnumbered_claim · §6.4.4 · 印刷p.253 / PDFp.274
+[EXTRA] [EXTRA]现成具体n=1、U=2、l=2、p=4反例52>40；仅差异证据，未用它替代原全量词界或完整Lyapunov论证。 -/
+theorem laplacianBoundCounterexample :
+    deriv (deriv (fun p : ℝ ↦ (p ^ 2 / 2 + 2) ^ 2)) 4 = 52 ∧
+      ¬ deriv (deriv (fun p : ℝ ↦ (p ^ 2 / 2 + 2) ^ 2)) 4 ≤
+        (2 : ℝ) * (2 + 1 - 1) * (4 ^ 2 / 2 + 2) ^ (2 - 1 : ℕ) := by
+  apply MolecularDynamics.textbookLangevinLyapunov_printed_laplacian_bound_counterexample <;> assumption
+
+/-- source_id: MD-6.4.4-HamiltonianPowerGenerator · unnumbered_claim · §6.4.4 · 印刷p.253–254 / PDFp.274–275
+[EXTRA] [EXTRA]实际全坐标一二阶导数与完整H^l，现成通用σ算子取σ=√(2γkBT)使σ²/2=γkBT；不是给定目标导数再改写。物理热参数代入在下一完整Lyapunov桥接实际出现。 -/
+theorem hamiltonianPowerGenerator {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : Differentiable ℝ U) (γ σ : ℝ) (l : ℕ) (hl : 1 ≤ l)
+    (z : textbookLangevinPhase Nc) :
+    textbookLangevinDifferentialOperator U γ σ (textbookLangevinHamiltonianPower U l) z =
+      -γ * l * textbookLangevinHamiltonian U z ^ (l - 1) * (∑ i, z.2 i ^ 2) +
+        σ ^ 2 / 2 * ((l : ℝ) * ((l : ℝ) - 1) * textbookLangevinHamiltonian U z ^ (l - 2) *
+          (∑ i, z.2 i ^ 2) + (Nc : ℝ) * l * textbookLangevinHamiltonian U z ^ (l - 1)) := by
+  apply MolecularDynamics.textbookLangevinHamiltonianPower_differentialOperator <;> assumption
+
+/-- source_id: MD-6.4.4-LaplacianBoundCorrect · unnumbered_claim · §6.4.4 · 印刷p.253 / PDFp.274
+[EXTRA] [EXTRA]修正上界系数为2l(l−1)+Nc l；原错误l(l+Nc−1)另列NEEDS，未静默更换JSON原句。 -/
+theorem laplacianBoundCorrect {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ∀ q, 1 ≤ U q) (l : ℕ) (hl : 1 ≤ l)
+    (z : textbookLangevinPhase Nc) :
+    (∑ i : Fin Nc, deriv (deriv (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l
+      (z + t • ((0 : Fin Nc → ℝ), Pi.single i 1)))) 0) ≤
+      (2 * (l : ℝ) * ((l : ℝ) - 1) + (Nc : ℝ) * l) * textbookLangevinHamiltonian U z ^ (l - 1) := by
+  apply MolecularDynamics.textbookLangevinHamiltonianPower_momentum_laplacian_bound <;> assumption
+
+/-- source_id: MD-6.4.4-LyapunovYoungBounds · unnumbered_claim · §6.4.4 · 印刷p.253 / PDFp.274
+[EXTRA] [EXTRA]完整同时覆盖原两个标量界与修正系数界，常数可依赖l/n/Umax但不依赖H；H≥1来自已归一物理势。原U(q)<Umax一环需选择严格外界，本条没有从≤假推出<。
+[ERRATUM?] 原中间严格U上界需要Umax选严格外界；原错误Laplacian系数不能由这些正确标量估计证明。 -/
+theorem lyapunovYoungBounds : ∀ (l n : ℕ) (Umax : ℝ), 1 ≤ l → 1 ≤ Umax →
+  ∃ c d : ℝ, 0 < c ∧ 0 < d ∧ ∀ H : ℝ, 1 ≤ H →
+    ((l : ℝ)*((l : ℝ)+(n : ℝ)-1)*H^(l-1) ≤ (l : ℝ)/2*H^l+c) ∧
+    (2*(l : ℝ)*H^(l-1)*Umax ≤ (l : ℝ)/2*H^l+d) ∧
+    ((2*(l : ℝ)*((l : ℝ)-1)+(n : ℝ)*l)*H^(l-1) ≤ (l : ℝ)/2*H^l+c) := by
+  intro l n Umax hl hU
+  have hlpos : (0 : ℝ) < l := by exact_mod_cast (lt_of_lt_of_le Nat.zero_lt_one hl)
+  let A1 : ℝ := (l : ℝ)*((l : ℝ)+(n : ℝ)-1)
+  let A2 : ℝ := 2*(l : ℝ)*Umax
+  let A3 : ℝ := 2*(l : ℝ)*((l : ℝ)-1)+(n : ℝ)*l
+  let A : ℝ := max 0 (max A1 (max A2 A3))
+  let ε : ℝ := (l : ℝ)/2
+  have hε : 0 < ε := by dsimp [ε]; positivity
+  have hA : 0 ≤ A := le_max_left _ _
+  let M : ℝ := max 1 (A/ε)
+  have hM : 0 ≤ M := le_trans zero_le_one (le_max_left _ _)
+  have hAM : A ≤ ε*M := by
+    have hd : A/ε ≤ M := le_max_right _ _
+    simpa only [mul_comm] using (div_le_iff₀ hε).mp hd
+  let C : ℝ := A*M^(l-1)+1
+  have hC : 0 < C := by dsimp [C]; positivity
+  have hbound : ∀ H : ℝ, 1 ≤ H → A*H^(l-1) ≤ ε*H^l+C := by
+    intro H hH
+    have hH0 : 0 ≤ H := le_trans zero_le_one hH
+    by_cases h : M ≤ H
+    · have hAH := hAM.trans (mul_le_mul_of_nonneg_left h hε.le)
+      calc
+        _ ≤ (ε*H)*H^(l-1) := mul_le_mul_of_nonneg_right hAH (pow_nonneg hH0 _)
+        _ = ε*(H^(l-1)*H) := by ring
+        _ = ε*H^l := by rw [← pow_succ, Nat.sub_add_cancel hl]
+        _ ≤ ε*H^l+C := le_add_of_nonneg_right hC.le
+    · have hpow := pow_le_pow_left₀ hH0 (le_of_lt (lt_of_not_ge h)) (l-1)
+      have hb := mul_le_mul_of_nonneg_left hpow hA
+      have hp : 0 ≤ ε*H^l := mul_nonneg hε.le (pow_nonneg hH0 _)
+      dsimp [C]
+      linarith
+  have h1 : A1 ≤ A := (le_max_left _ _).trans (le_max_right _ _)
+  have h2 : A2 ≤ A := (le_max_left _ _).trans ((le_max_right _ _).trans (le_max_right _ _))
+  have h3 : A3 ≤ A := (le_max_right _ _).trans ((le_max_right _ _).trans (le_max_right _ _))
+  refine ⟨C,C,hC,hC,fun H hH ↦ ?_⟩
+  have hp : 0 ≤ H^(l-1) := pow_nonneg (le_trans zero_le_one hH) _
+  exact ⟨(mul_le_mul_of_nonneg_right h1 hp).trans (hbound H hH),
+    (by simpa only [A2, mul_assoc, mul_left_comm, mul_comm] using (mul_le_mul_of_nonneg_right h2 hp).trans (hbound H hH)),
+    (mul_le_mul_of_nonneg_right h3 hp).trans (hbound H hH)⟩
+
+/-- source_id: MD-6.4.4-LangevinLyapunov · unnumbered_claim · §6.4.4 · 印刷p.253–254 / PDFp.274–275
+[EXTRA] [EXTRA]实际单位质量周期模型、归一U≥1、γ/β>0及l≥1；完整正性/紧子水平集/无穷远proper/正δ全域线性恢复界，采用真实更正系数2。原证明计算的错系数仍按原句保留；不是整个Thm6.2或canonical invariance桥接。 -/
+theorem langevinLyapunov {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hP : textbookUnitPeriodicPotential U)
+    (hL : ∀ q, 1 ≤ U q) (γ β : ℝ) (hγ : 0 < γ) (hβ : 0 < β) (l : ℕ) (hl : 1 ≤ l) :
+    0 < γ * l ∧ (Real.sqrt (2 * γ * β⁻¹)) ^ 2 / 2 = γ * β⁻¹ ∧
+      (∀ z : textbookLangevinPeriodicPhase Nc, 0 < textbookLangevinPeriodicHamiltonianPower U l z) ∧
+      (∀ R : ℝ, IsCompact {z : textbookLangevinPeriodicPhase Nc | textbookLangevinPeriodicHamiltonianPower U l z ≤ R}) ∧
+      Tendsto (textbookLangevinPeriodicHamiltonianPower U l)
+        (cocompact (textbookLangevinPeriodicPhase Nc)) atTop ∧
+      ∃ δ : ℝ, 0 < δ ∧ ∀ z : textbookLangevinPeriodicPhase Nc,
+        textbookLangevinPeriodicDifferentialOperator U γ (Real.sqrt (2 * γ * β⁻¹))
+          (textbookLangevinPeriodicHamiltonianPower U l) z ≤
+            -(γ * l) * textbookLangevinPeriodicHamiltonianPower U l z + δ := by
+  apply MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_physical_lyapunov <;> assumption
+
+/-- source_id: MD-6.4.4-LieBracket · definition · §6.4.4 · 印刷p.254 / PDFp.275
+[EXTRA] [EXTRA]实际Fréchet导数括号，具体性质/迭代均要求适当可微字段；其通用辅助函数的非可微总化值不作经典Jacobian解释。有限坐标式由真实fderiv在basis上取分量。
+[EXTRA] [EXTRA]实际字段仅需原开域内C¹，输出点属于D，非可微/域外的总化fderiv值不作为经典Jacobian。 -/
+def lieBracket {n : ℕ} (D : Set (Fin n → ℝ)) (_hD : IsOpen D)
+    (u v : (Fin n → ℝ) → (Fin n → ℝ)) (_hu : ContDiffOn ℝ 1 u D)
+    (_hv : ContDiffOn ℝ 1 v D) (x : D) : (Fin n → ℝ) :=
+  MolecularDynamics.Chapter06Review.lieBracket u v x
+
+/-- source_id: MD-6.4.4-LieBracketProperties · unnumbered_claim · §6.4.4 · 印刷p.254 / PDFp.275
+[EXTRA] [EXTRA]全部双槽线性、skew及自身零明确，真实全域可微资格；不只保存某一固定字段或单槽例子。 -/
+theorem lieBracketProperties : ∀ {n : ℕ} (u v w : (Fin n → ℝ) → (Fin n → ℝ)) (a b : ℝ),
+  Differentiable ℝ u → Differentiable ℝ v → Differentiable ℝ w →
+  (MolecularDynamics.Chapter06Review.lieBracket (fun x ↦ a • u x+b • v x) w =
+    fun x ↦ a • MolecularDynamics.Chapter06Review.lieBracket u w x+b • MolecularDynamics.Chapter06Review.lieBracket v w x) ∧
+  (MolecularDynamics.Chapter06Review.lieBracket u (fun x ↦ a • v x+b • w x) =
+    fun x ↦ a • MolecularDynamics.Chapter06Review.lieBracket u v x+b • MolecularDynamics.Chapter06Review.lieBracket u w x) ∧
+  MolecularDynamics.Chapter06Review.lieBracket u v = -MolecularDynamics.Chapter06Review.lieBracket v u ∧
+  MolecularDynamics.Chapter06Review.lieBracket u u=0 := by
+  intro n u v w a b hu hv hw
+  have hb : ∀ (u v : (Fin n → ℝ) → (Fin n → ℝ)),
+      MolecularDynamics.Chapter06Review.lieBracket u v=VectorField.lieBracket ℝ u v :=
+    fun u v ↦ rfl
+  simp_rw [hb]
+  refine ⟨?_,?_,?_,?_⟩
+  · funext x
+    change VectorField.lieBracket ℝ (a • u+b • v) w x = _
+    rw [VectorField.lieBracket_add_left ((hu x).const_smul a) ((hv x).const_smul b),
+      VectorField.lieBracket_const_smul_left (hu x),
+      VectorField.lieBracket_const_smul_left (hv x)]
+  · funext x
+    change VectorField.lieBracket ℝ u (a • v+b • w) x = _
+    rw [VectorField.lieBracket_add_right ((hv x).const_smul a) ((hw x).const_smul b),
+      VectorField.lieBracket_const_smul_right (hv x),
+      VectorField.lieBracket_const_smul_right (hw x)]
+  · funext x
+    exact VectorField.lieBracket_swap
+  · exact VectorField.lieBracket_self
+
+/-- source_id: MD-6.4.4-Definition61 · Definition 6.1 · §6.4.4 · 印刷p.254 / PDFp.275
+[EXTRA] [EXTRA]Fin(S+1)完整包含原drift b0与全部噪声，实际无限次括号及实span；明确C∞字段资格。保留原定义含b0，不冒充一般parabolic噪声生成条件；具体Langevin rank另证。
+[EXTRA] [EXTRA]原开域U和域内点完整保留；坐标字段全空间任意总化只用于函数表示，C∞仅要求在原开域，不要求全局光滑延拓。开域内真实fderiv/全部迭代括号是局部对象。 -/
+def definition61 {m S : ℕ} (D : Set (Fin m → ℝ)) (_hD : IsOpen D)
+    (b : Fin (S+1) → ((Fin m → ℝ) → (Fin m → ℝ))) (x : Fin m → ℝ) : Prop :=
+  x ∈ D ∧ (∀ i, ContDiffOn ℝ ∞ (b i) D) ∧ textbookHormanderAt (Set.range b) x
+
+/-- source_id: MD-6.4.4-LangevinFields · definition · §6.4.4 · 印刷p.255 / PDFp.276
+[EXTRA] [EXTRA]实际全部2Nc相空间坐标的真实drift/noise，C∞势资格编码，通用σ在物理定理取√(2γkBT)；不把noise定义计作独立Wiener law或密度存在证明。 -/
+noncomputable def langevinDrift {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ : ℝ) (_hU : ContDiff ℝ ∞ U) : textbookLangevinPhase Nc → textbookLangevinPhase Nc :=
+  fun z ↦ (z.2, textbookPotentialForce U z.1 - γ • z.2)
+
+def langevinNoise (Nc : ℕ) (σ : ℝ) (i : Fin Nc) :
+    textbookLangevinPhase Nc → textbookLangevinPhase Nc := fun _ ↦ (0, σ • Pi.single i 1)
+
+/-- source_id: MD-6.4.4-LangevinNoiseBracket · unnumbered_claim · §6.4.4 · 印刷p.255 / PDFp.276
+[EXTRA] [EXTRA]真实C²势的Fréchet Jacobian、全部噪声坐标；σ任意，非零条件在独立性条明确。 -/
+theorem langevinNoiseBracket {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ 2 U) (γ σ : ℝ)
+    (i : Fin Nc) (z : textbookLangevinPhase Nc) :
+    VectorField.lieBracket ℝ (textbookLangevinDrift U γ) (textbookLangevinNoise Nc σ i) z =
+      (-σ • Pi.single i 1, (σ * γ) • Pi.single i 1) := by
+  apply MolecularDynamics.textbookLangevinDrift_noise_bracket <;> assumption
+
+/-- source_id: MD-6.4.4-LangevinBracketIndependent · unnumbered_claim · §6.4.4 · 印刷p.255 / PDFp.276
+[EXTRA] [EXTRA]真实Fin Nc⊕Fin Nc的全部2Nc向量族、σ≠0；不以维数计数代替独立性。 -/
+theorem langevinBracketIndependent (Nc : ℕ) (γ σ : ℝ) (hσ : σ ≠ 0) :
+    LinearIndependent ℝ (textbookLangevinBracketFamily Nc γ σ) := by
+  apply MolecularDynamics.textbookLangevinBracketFamily_linearIndependent <;> assumption
+
+/-- source_id: MD-6.4.4-LangevinHormander · unnumbered_claim · §6.4.4 · 印刷p.255 / PDFp.276
+[EXTRA] [EXTRA]完整物理σ=√(2γθ)、γ/θ>0、C∞ U的实际噪声及括号span；本桥只证rank，转移密度存在另条未证。 -/
+theorem langevinHormander {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (γ θ : ℝ)
+    (hγ : 0 < γ) (hθ : 0 < θ) (z : textbookLangevinPhase Nc) :
+    textbookHormanderAt (textbookLangevinSeed U γ (Real.sqrt (2 * γ * θ))) z := by
+  apply MolecularDynamics.textbookLangevin_hormander_physicalNoise <;> assumption
+
+/-- source_id: MD-6.4.4-LangevinTransitionDensity · unnumbered_claim · §6.4.4 · 印刷p.255 / PDFp.276
+[EXTRA] [EXTRA]具体实际单位周期Langevin、C∞势、正γ/β，全部点初值的正时间连续转移密度及真实平坦相空间测度表示；没有从含drift的任意原Definition6.1断言一般parabolic密度定理。 -/
+theorem langevinTransitionDensity :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U) (β γ : ℝ)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U))
+    {Ω : Type*} [MeasurableSpace Ω] (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω),
+  textbookIsWienerVector B P → 0 < β → 0 < γ →
+  ∃ ρ : textbookLangevinPeriodicPhase n → textbookLangevinPeriodicPhase n → ℝ → ℝ,
+    (∀ x z t, 0 < t → 0 ≤ ρ x z t) ∧
+    ContinuousOn (fun w : (textbookLangevinPeriodicPhase n × textbookLangevinPeriodicPhase n) × ℝ ↦
+      ρ w.1.1 w.1.2 w.2) (univ ×ˢ Ioi 0) ∧
+    ∀ (t : ℝ≥0), 0 < t → ∀ x A, MeasurableSet A →
+      textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*β⁻¹)) t x A =
+        ∫⁻ z in A, ENNReal.ofReal (ρ x z t) ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n := by
+  sorry
+
+/-- source_id: MD-6.4.4-Lemma61Printed · Lemma 6.1 · §6.4.4 · 印刷p.255 / PDFp.276
+[ERRATUM?] 字面all open C包括空集，概率为0；需Nonempty。原(6.47)单位质量，旧清单一般质量扩展须另标技术范围。 -/
+theorem lemma61Printed :
+  ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (m : MolecularDynamics.Chapter06Review.V n) (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (γ β : ℝ) (x0 : MolecularDynamics.Chapter06Review.Phase n) (X : ℝ → Ω → MolecularDynamics.Chapter06Review.Phase n),
+  textbookIsWienerVector B P → (∀ i, 0 < m i) → ContDiff ℝ ∞ U →
+  0 < γ → 0 < β → MolecularDynamics.Chapter06Review.langevinMassSDE P (fun t sample ↦ B t.toNNReal sample) X m U γ β⁻¹ x0 →
+  (∀ t : ℝ, 0 ≤ t → AEMeasurable (X t) P) →
+  ∀ t : ℝ, 0 < t → ∀ C : Set (MolecularDynamics.Chapter06Review.Phase n), IsOpen C → 0 < P {sample | X t sample ∈ C} := by
+  sorry
+
+/-- source_id: MD-6.4.4-Lemma61Nonempty · unnumbered_claim · §6.4.4 · 印刷p.255 / PDFp.276
+[EXTRA] [EXTRA]补非空目标；桥接实际单位周期相空间、原单位质量、真实Wiener/实际完整Langevin核，σ≠0。原一般质量扩大版不计已证。 -/
+theorem lemma61Nonempty {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin N → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P)
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (γ σ : ℝ) (T : ℝ≥0) (hT : (0 : ℝ) < T)
+    (hσ : σ ≠ 0) (x : textbookLangevinPeriodicPhase N)
+    (C : Set (textbookLangevinPeriodicPhase N)) (hC : IsOpen C) (hCN : C.Nonempty) :
+    0 < textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ T x C := by
+  apply MolecularDynamics.textbookLangevinPeriodicTransitionKernel_open_pos <;> assumption
+
+/-- source_id: MD-6.4.4-ControlPath · unnumbered_claim · §6.4.4 · 印刷p.255 / PDFp.276
+[EXTRA] [EXTRA]完整实际任意位置/速度端点、q/p/R全光滑、R0=0及真实全时ODE；σ≠0，未冒充随机正概率。 -/
+theorem controlPath {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (γ σ T : ℝ)
+    (hσ : σ ≠ 0) (hT : 0 < T) (x y : textbookLangevinPhase Nc) :
+    ∃ q p R : ℝ → (Fin Nc → ℝ),
+      ContDiff ℝ ∞ q ∧ ContDiff ℝ ∞ p ∧ ContDiff ℝ ∞ R ∧
+      q 0 = x.1 ∧ p 0 = x.2 ∧ q T = y.1 ∧ p T = y.2 ∧ R 0 = 0 ∧
+      ∀ t, HasDerivAt q (p t) t ∧
+        HasDerivAt p (textbookPotentialForce U (q t) - γ • p t + σ • deriv R t) t := by
+  apply MolecularDynamics.textbookLangevinControlledEndpoint <;> assumption
+
+/-- source_id: MD-6.4.4-ControlEndpointStable · unnumbered_claim · §6.4.4 · 印刷p.256 / PDFp.277
+[EXTRA] [EXTRA]实际完整受控积分方程和原平滑势局部cutoff稳定性，全部端点/δ/ε；未假设全局Lipschitz势，原环面投影由上一真实核桥接。 -/
+theorem controlEndpointStable {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (γ σ T δ : ℝ)
+    (hσ : σ ≠ 0) (hT : 0 < T) (hδ : 0 < δ) (x y : textbookLangevinPhase Nc) :
+    ∃ ε > 0, ∀ W q p : ℝ → (Fin Nc → ℝ),
+      textbookLangevinIntegralSolution U γ σ T x W q p →
+      (∀ t ∈ Icc 0 T, ‖W t - textbookLangevinControlPath U γ σ T x y t‖ ≤ ε) →
+      dist (q T, p T) y < δ := by
+  apply MolecularDynamics.textbookLangevinControlledEndpoint_stable <;> assumption
+
+/-- source_id: MD-6.4.4-WienerControlTube · unnumbered_claim · §6.4.4 · 印刷p.256 / PDFp.277
+[EXTRA] [EXTRA]完整实际标准多维Wiener法则、真实连续控制R0=0、T/ε>0及sup管道事件；非仅某单时Gaussian边际。 -/
+theorem wienerControlTube {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P)
+    (T : ℝ) (hT : 0 < T) (R : ℝ → (Fin Nc → ℝ)) (hR : Continuous R)
+    (hR0 : R 0 = 0) (ε : ℝ) (hε : 0 < ε) :
+    0 < P (textbookWienerVectorRealControlTube B T R ε) := by
+  apply MolecularDynamics.textbookWienerVectorRealControlTube_pos <;> assumption
+
+/-- source_id: MD-6.4.4-LangevinCanonicalStationary · unnumbered_claim · §6.4.4 · 印刷p.256 / PDFp.277
+[EXTRA] [EXTRA]实际归一canonical density（原式缺Z为未归一权重，常数不影响微分式）、全部相空间点及物理噪声；这里只证stationary differential expression，真实invariance/ergodicity在下一条。 -/
+theorem langevinCanonicalStationary {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β γ : ℝ) (hβ : 0 < β) (hγ : 0 < γ) (z : textbookLangevinPhase N) :
+    textbookLangevinForwardDifferentialOperator U γ (Real.sqrt (2 * γ * β⁻¹))
+      (fun y ↦ textbookLangevinCanonicalDensity U β (textbookLangevinPeriodicProjection y)) z = 0 := by
+  apply MolecularDynamics.textbookLangevinForwardDifferentialOperator_physical_canonical_eq_zero <;> assumption
+
+/-- source_id: MD-6.4.4-LangevinGeometricErgodicity · unnumbered_claim · §6.4.4 · 印刷p.256 / PDFp.277
+[EXTRA] [EXTRA]实际单位周期Langevin完整Gibbs不变/唯一概率及任意l≥1全部可测加权可积观测量的统一指数估计，常数在x/f/t之外；有界周期U使H^l与(1+‖p‖²)^l等价，没有弱化为紧支函数。 -/
+theorem langevinGeometricErgodicity :
+  ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω) (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U))
+    (γ β : ℝ) (hβ : 0 < β), textbookIsWienerVector B P → 0 < γ →
+  MolecularDynamics.Chapter06Review.invariantKernel (textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*β⁻¹)))
+    (textbookLangevinCanonicalMeasure U β hβ) ∧
+  (∀ ν : Measure (textbookLangevinPeriodicPhase n), IsProbabilityMeasure ν →
+    MolecularDynamics.Chapter06Review.invariantKernel
+      (textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*β⁻¹))) ν →
+    ν=textbookLangevinCanonicalMeasure U β hβ) ∧
+  ∀ l : ℕ, 1 ≤ l → ∃ C lambdaParam : ℝ, 0 < C ∧ 0 < lambdaParam ∧
+    ∀ x : textbookLangevinPeriodicPhase n, ∀ f : textbookLangevinPeriodicPhase n → ℝ,
+      Measurable f → (∀ y, |f y| ≤ (1+‖y.2‖^2)^l) → ∀ t : ℝ≥0,
+      |MolecularDynamics.Chapter06Review.kernelAverage
+        (textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*β⁻¹))) f t x
+        -(∫ z, f z ∂textbookLangevinCanonicalMeasure U β hβ)| ≤
+        C*(1+‖x.2‖^2)^l*Real.exp (-lambdaParam*(t : ℝ)) := by
+  sorry
+
+/-- source_id: MD-6.4.4-LangevinTimeAverage · unnumbered_claim · §6.4.4 · 印刷p.256 / PDFp.277
+[EXTRA] [EXTRA]实际同一全时随机周期Langevin轨迹，任意点初始状态、全部可测多项式动量增长观测量、几乎处处时间均值；不把初始density的ensemble衰减当轨迹时间均值。 -/
+theorem langevinTimeAverage :
+  ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω) (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (_hU : ContDiff ℝ ∞ U) (_hp : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U))
+    (γ β : ℝ) (hβ : 0 < β), textbookIsWienerVector B P → 0 < γ →
+  ∀ x : textbookLangevinPeriodicPhase n, ∀ f : textbookLangevinPeriodicPhase n → ℝ,
+    Measurable f →
+    (∃ l : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∀ y, |f y| ≤ C*(1+‖y.2‖^2)^l) → ∀ᵐ sample ∂P,
+      Tendsto (fun T : ℝ ↦ T⁻¹ * ∫ s in 0..T,
+        f (textbookLangevinPeriodicGlobalRandomPhase U L hF γ (Real.sqrt (2*γ*β⁻¹)) x B s sample))
+        atTop (𝓝 (∫ z, f z ∂textbookLangevinCanonicalMeasure U β hβ)) := by
+  sorry
+
+/-- source_id: MD-6.4.4-WeightedH1 · definition · §6.4.4 · 印刷p.256 / PDFp.277
+[EXTRA] [EXTRA]实际Gibbs加权弱导数闭图及AE商的完整Hilbert H1；不是smooth jet子集，函数/导数投影和范数下一条明确。 -/
+def weightedH1 {N : ℕ} (U : (Fin N → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) : Type :=
+  textbookLangevinCanonicalWeakH1 U hU hp β hβ
+
+/-- source_id: MD-6.4.4-WeightedH1Norm · unnumbered_claim · §6.4.4 · 印刷p.257 / PDFp.278
+[EXTRA] [EXTRA]实际全部位置/动量弱导数的L²范数平方和；真实函数/弱导数投影定义随compact依赖闭包给出。 -/
+theorem weightedH1Norm {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β : ℝ) (hβ : 0 < β) (f : textbookLangevinCanonicalWeakH1 U hU hp β hβ) :
+    ‖f‖ ^ 2 = ‖textbookLangevinCanonicalWeakH1Value U hU hp β hβ f‖ ^ 2 +
+      (∑ i : Fin N, ‖textbookLangevinCanonicalWeakH1Derivative U hU hp β hβ (Sum.inl i) f‖ ^ 2) +
+      (∑ i : Fin N, ‖textbookLangevinCanonicalWeakH1Derivative U hU hp β hβ (Sum.inr i) f‖ ^ 2) := by
+  apply MolecularDynamics.textbookLangevinCanonicalWeakH1_norm_sq <;> assumption
+
+/-- source_id: MD-6.4.4-Proposition64Printed · Proposition 6.4 · §6.4.4 · 印刷p.257 / PDFp.278
+[ERRATUM?] 印刷flat forward PDE与Gibbs加权mean-zero/adjoint pairing混用；测度及density-vs-relative-density选择待导师，原式完整保留。 -/
+theorem proposition64Printed :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β γ : ℝ) (hβ : 0 < β), 0 < γ →
+  ∀ g : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+    (∫ x, textbookLangevinCanonicalWeakH1Value U hU hp β hβ g x ∂textbookLangevinCanonicalMeasure U β hβ)=0 →
+    ∃ φ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+      MolecularDynamics.Chapter06Review.flatForwardWeak U β γ (textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ)
+        (textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) ∧
+      ∀ ψ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+        MolecularDynamics.Chapter06Review.flatForwardWeak U β γ (textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ)
+          (textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) →
+        ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ,
+          textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ x -
+            textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ x = c*textbookLangevinCanonicalDensity U β x := by
+  sorry
+
+/-- source_id: MD-6.4.4-Proposition64Relative · unnumbered_claim · §6.4.4 · 印刷p.257 / PDFp.278
+[EXTRA] [EXTRA]明确相对Gibbs密度坐标，实际加权Hilbert闭算子adjoint图与完整H1、加权零均值、解存在/唯一模常数；与印刷flat-density Gibbs倍数版分列，非静默纠错。 -/
+theorem proposition64Relative :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β γ : ℝ) (hβ : 0 < β), 0 < γ →
+  let A := (textbookLangevinCanonicalHilbertClosedOperator U β γ (Real.sqrt (2*γ*β⁻¹)) hβ).adjoint
+  ∀ g : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+    (∫ x, textbookLangevinCanonicalWeakH1Value U hU hp β hβ g x ∂textbookLangevinCanonicalMeasure U β hβ)=0 →
+    ∃ φ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+      (textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ,
+        textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) ∈ A.graph ∧
+      ∀ ψ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+        (textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ,
+          textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) ∈ A.graph →
+        ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ,
+          textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ x -
+            textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ x=c := by
+  sorry
+
+/-- source_id: MD-6.4.4-FredholmAlternative · unnumbered_claim · §6.4.4 · 印刷p.257 / PDFp.278
+[EXTRA] [EXTRA]实际稠密域闭Hilbert partialoperator图、actual adjoint以及shift1的完整紧resolvent（含逆的存在/唯一）；全部g可解当且仅当adjoint kernel正交，没有假设目标可解性。 -/
+theorem fredholmAlternative :
+  ∀ {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [CompleteSpace E] (A : E →ₗ.[ℝ] E), Dense (A.domain : Set E) → IsClosed (A.graph : Set (E × E)) →
+  (∃ R : E →L[ℝ] E, IsCompactOperator R ∧
+    (∀ x, (R x, R x-x) ∈ A.graph) ∧
+    ∀ x y, (y,y-x) ∈ A.graph → y=R x) →
+  ∀ g : E, (∃ φ : E, (φ,g) ∈ A.graph) ↔ ∀ y : E, (y,0) ∈ A.adjoint.graph → ⟪y,g⟫_ℝ=0 := by
+  sorry
+
+/-- source_id: MD-6.4.4-BackwardKernelConstants · unnumbered_claim · §6.4.4 · 印刷p.257 / PDFp.278
+[EXTRA] [EXTRA]真实Gibbs加权Lp²闭backward operator图的全部粗域元素；不能用已证C0固定观测量特例替代。 -/
+theorem backwardKernelConstants :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (_hU : ContDiff ℝ ∞ U) (_hp : textbookUnitPeriodicPotential U)
+    (β γ : ℝ) (hβ : 0 < β), 0 < γ →
+  ∀ f : Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ),
+    (f,0) ∈ (textbookLangevinCanonicalHilbertClosedOperator U β γ (Real.sqrt (2*γ*β⁻¹)) hβ).graph →
+    ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ, f x=c := by
+  sorry
+
+/-- source_id: MD-6.4.4-ForwardKernelGibbs · unnumbered_claim · §6.4.4 · 印刷p.257 / PDFp.278
+[EXTRA] [EXTRA]完整原flat forward弱PDE与真实H1类，全部stationary modes为Gibbs倍数；相对加权adjoint kernel对应常数而非Gibbs，不能混同二者。 -/
+theorem forwardKernelGibbs : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U) (β γ : ℝ) (hβ : 0 < β),
+  0 < γ → ∀ w : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+    MolecularDynamics.Chapter06Review.flatForwardWeak U β γ
+      (textbookLangevinCanonicalWeakH1Value U hU hp β hβ w) 0 →
+    ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ,
+      textbookLangevinCanonicalWeakH1Value U hU hp β hβ w x=c*textbookLangevinCanonicalDensity U β x := by
+  sorry
+
+/-- source_id: MD-6.4.4-WeightedFunctionNorm · definition · §6.4.4 · 印刷p.256 / PDFp.277
+[EXTRA] [EXTRA]实际Lp² AE类范数；Mathlib的eLpNorm定义为真实二阶积分，不把任意非可积函数的默认Bochner积分当范数。 -/
+def weightedFunctionNorm {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (f : Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) : ℝ := ‖f‖^2
+
+/-- source_id: MD-6.4.4-WeightedVectorNorm · definition · §6.4.4 · 印刷p.257 / PDFp.278
+[EXTRA] [EXTRA]完整任意维度的所有真实L²分量，弱导数族使用同一实际Gibbs测度；不遗漏向量范数定义。 -/
+def weightedVectorNorm {n r : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (w : Fin r → Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) : ℝ := ∑ i, ‖w i‖^2
+
 end MD.Ch06

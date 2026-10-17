@@ -1,0 +1,14 @@
+Running: D:\anaconda\python.exe scripts/local_short_search.py 6 HamiltonianPowerMomentumDerivative LyapunovYoungBounds LieBracketProperties
+HamiltonianPowerMomentumDerivative PASS
+LyapunovYoungBounds PASS
+LieBracketProperties PASS
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch sec6.4.4-proofs-05f687003f --step ③–⑤§6.4.4逐批验证
+Generated 241 entries; 123 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py sec6.4.4-proofs-05f687003f
+Generated 241 entries; 123 /126 old rows mapped; protected 925
+Batch axioms passed: sec6.4.4-proofs-05f687003f 241
+Running: D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 241, "local_PASS": 212, "local_NEEDS_HUMAN": 29, "errata_records": 36, "source_errata_records": 35, "declarations": {"\u5b9a\u4e49": 89, "\u5df2\u8bc1": 83, "\u672a\u8bc1": 70}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 17, "\u65f6\u95f4\u76d2\u6b62": 17, "\u7f3a\u5927\u578b\u7406\u8bba": 36}, "website_submitted": false}
+Running: D:\anaconda\python.exe scripts/local_section_check.py 6 blueprint/ch06/validation/section644 --reuse-shared blueprint/ch01/validation/CLOSEOUT21/full
+Section complete with verified batch check reuse: blueprint/ch06/validation/section644
+Running: D:\anaconda\python.exe scripts/local_checkpoint.py 6 6.4.4 blueprint/ch06/validation/section644 继续§6.4.5；随后22号勘误与章末完整check，不进入第7章。

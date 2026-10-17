@@ -46,6 +46,12 @@ import ch06_section641b
 import ch06_section642
 import ch06_section643
 import ch06_section643b
+import ch06_section644
+import ch06_section644b
+import ch06_section644c
+import ch06_section644d
+import ch06_section644e
+import ch06_section644f
 import json
 _transcription=BASE/'source_transcription_fixes.json'
 if _transcription.exists():

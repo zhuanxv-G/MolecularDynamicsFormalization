@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro n U l z hl\n  let S : ℝ := ∑ i, z.2 i^2\n  have he : ∀ t : ℝ, textbookLangevinHamiltonian U (z.1,(1+t) • z.2)=\n      (1+t)^2*S/2+U z.1 := by\n    intro t\n    simp only [textbookLangevinHamiltonian, Pi.smul_apply, smul_eq_mul, mul_pow,\n      ← Finset.mul_sum]\n    rfl\n  have hd : HasDerivAt (fun t : ℝ ↦ ((1+t)^2*S/2+U z.1)^l)\n      ((l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*S) 0 := by\n    convert! (((((hasDerivAt_id (0 : ℝ)).const_add 1).pow 2).mul_const S).div_const 2 |>.add_const (U z.1)).pow l using 1 <;>\n      simp [textbookLangevinHamiltonian, S] <;> ring\n  constructor\n  · simpa only [textbookLangevinHamiltonianPower, he] using hd\n  · change (l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*S=\n      2*(l : ℝ)*textbookLangevinHamiltonian U z^l-\n        2*(l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*U z.1\n    rw [show textbookLangevinHamiltonian U z^l=\n      textbookLangevinHamiltonian U z^(l-1)*textbookLangevinHamiltonian U z by\n      rw [← pow_succ, Nat.sub_add_cancel hl]]\n    dsimp [textbookLangevinHamiltonian, S]\n    ring",
+    "source": "blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.lean",
+    "log": "blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.log",
+    "source_sha256": "939d9687e0c870d25837c432dadc8802801cf3d2fa17533c469c4b84932d7453",
+    "log_sha256": "ab99cf0539652713d5fb67e45e2d36bd9cd8b226112e943ec8ea41a2fc24a543"
+  }
+]

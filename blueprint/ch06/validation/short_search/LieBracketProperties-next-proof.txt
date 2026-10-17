@@ -1,0 +1,19 @@
+intro n u v w a b hu hv hw
+  have hb : ∀ (u v : (Fin n → ℝ) → (Fin n → ℝ)),
+      MolecularDynamics.Chapter06Review.lieBracket u v=VectorField.lieBracket ℝ u v :=
+    fun u v ↦ rfl
+  simp_rw [hb]
+  refine ⟨?_,?_,?_,?_⟩
+  · funext x
+    change VectorField.lieBracket ℝ (a • u+b • v) w x = _
+    rw [VectorField.lieBracket_add_left ((hu x).const_smul a) ((hv x).const_smul b),
+      VectorField.lieBracket_const_smul_left (hu x),
+      VectorField.lieBracket_const_smul_left (hv x)]
+  · funext x
+    change VectorField.lieBracket ℝ u (a • v+b • w) x = _
+    rw [VectorField.lieBracket_add_right ((hv x).const_smul a) ((hw x).const_smul b),
+      VectorField.lieBracket_const_smul_right (hv x),
+      VectorField.lieBracket_const_smul_right (hw x)]
+  · funext x
+    exact VectorField.lieBracket_swap
+  · exact VectorField.lieBracket_self

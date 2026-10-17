@@ -1,0 +1,62 @@
+{
+  "batch": "BATCH38",
+  "subtask": "BATCH38b",
+  "source_ids": [
+    "MD-6.4.4-LaplacianBoundCorrect"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 274,
+      "printed_page": 253
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+  "lean_sha256": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+    "blueprint/ch06/ch06_source.json": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+    "BATCH38b_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+    "signature_sha256": "a605b49596eebd5acb0e9e71c890119f60308bf31de63061e9be9d21f7f97960"
+  },
+  "signature_sha256": "a605b49596eebd5acb0e9e71c890119f60308bf31de63061e9be9d21f7f97960",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinLyapunov.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinHamiltonian",
+      "code_sha256": "cd2e2ee9e33d05070add45db9db9e28b19ce150d25b247ae14f0b1df613127f5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinLyapunov.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinHamiltonianPower",
+      "code_sha256": "90efb85b772b2c91852fa73469db0544f38de5400e0ac1726557adad9b0f57be"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinPhase",
+      "code_sha256": "ee32316762cd33e19f1e5e47745da89914943aa66b85fb83f71d95c9b012a326"
+    }
+  ],
+  "paste_plus_pdf_bytes": 101546,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4706,
+      "sha256": "ef3d7f98762407c1b7aa7bb6de1ab394e634010107bfe01fde5648c7b6f9df55"
+    },
+    "BATCH38b_PAGES.pdf": {
+      "bytes": 96840,
+      "sha256": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 103953
+}

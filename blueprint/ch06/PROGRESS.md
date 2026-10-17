@@ -2,7 +2,7 @@
 
 范围：印刷p.211–258/PDF232–279，Exercises及参考文献排除；第1–5章冻结，正式库冻结，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前196条；旧清单映射95/126；本地PASS 174；网站返回0。
+当前241条；旧清单映射123/126；本地PASS 212；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -202,6 +202,51 @@
 | MD-6.4.3-BrownianNegativeDefinitePrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；字面严格负定被常数核反驳，不能证明。 |
 | MD-6.4.2-OUDensityPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；字面式只为未归一权重；不证明它是概率密度。 |
 | MD-6.4.2-OUDensityCorrect | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.4-Assumption1Printed | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；保留原包含t=0的字面资格；不证明当前物理扩散满足它。 |
+| MD-6.4.4-Assumption1Correct | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.4-Assumption2 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.4-MinorizationPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；原等价适用对象/密度和时间域需导师；保留完整双向字面陈述。 |
+| MD-6.4.4-MinorizationCorrectedImplication | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺真实kernel小集/联合连续密度的完整组合桥接；不建立一般Harris理论。 |
+| MD-6.4.4-Theorem62 | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；没有现成完整Thm6.2桥接；保持sorry，不恢复封存Harris长证明或构建缺失大型理论。 |
+| MD-6.4.4-PeriodicPotentialBound | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-PotentialNormalization | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-UnitLangevinModel | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.4-PeriodicConfiningPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；原周期/配置围束条件须导师签核，实际H^l在动量无穷远的proper结论另列。 |
+| MD-6.4.4-HamiltonianPower | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.4-HamiltonianPowerCancellation | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-HamiltonianPowerMomentumDerivative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.4.4-HamiltonianPowerMomentumLaplacian | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-LaplacianBoundPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；保留字面错误不等式，不能证明；正确完整上界另条。 |
+| MD-6.4.4-LaplacianBoundCounterexample | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-HamiltonianPowerGenerator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-LaplacianBoundCorrect | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-LyapunovYoungBounds | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.4.4-LangevinLyapunov | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-LieBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.4-LieBracketProperties | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.4.4-Definition61 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.4-LangevinFields | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.4-LangevinNoiseBracket | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-LangevinBracketIndependent | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-LangevinHormander | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-LangevinTransitionDensity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际Langevin hypoelliptic/Malliavin转移密度存在桥接；不建设大型理论。 |
+| MD-6.4.4-Lemma61Printed | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；保留原缺非空的完整字面断言，不证；下一条桥接原单位周期实际过程的完整非空版本。 |
+| MD-6.4.4-Lemma61Nonempty | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-ControlPath | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-ControlEndpointStable | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-WienerControlTube | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-LangevinCanonicalStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-LangevinGeometricErgodicity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际transition density、Harris/minorization及canonical invariance完整桥接；保留sorry，不恢复Thm6.2封存长证明。 |
+| MD-6.4.4-LangevinTimeAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际canonical唯一不变/遍历及weighted观测量强大数桥接；不建设大型理论。 |
+| MD-6.4.4-WeightedH1 | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.4-WeightedH1Norm | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | existing_bridge / checked+documented priors |
+| MD-6.4.4-Proposition64Printed | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；无现成整条桥接；不恢复封存Prop6.4长证明，保留sorry。 |
+| MD-6.4.4-Proposition64Relative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺实际加权adjoint域、compact resolvent与rough kernel；无现成整条桥接保留sorry，封存不恢复。 |
+| MD-6.4.4-FredholmAlternative | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺一般closed partialoperator的Fredholm alternative现成完整桥接；不建设大型谱理论。 |
+| MD-6.4.4-BackwardKernelConstants | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；rough加权Hilbert generator kernel尚缺完整桥接；CanonicalKernelConstant封存长证明不恢复。 |
+| MD-6.4.4-ForwardKernelGibbs | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺flat forward弱域与实际adjoint/relative坐标转换、kernel识别；不恢复封存长证明。 |
+| MD-6.4.4-WeightedFunctionNorm | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.4-WeightedVectorNorm | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 
 ## 旧126条完整映射
 
@@ -302,34 +347,34 @@
 | CH06-093 | MD-6.4.3-BrownianNegativeDefinitePrinted |
 | CH06-094 | MD-6.4.3-BrownianSpectralGap |
 | CH06-095 | MD-6.4.3-BrownianEnsembleExponential |
-| CH06-096 | PENDING：所属节尚未处理 |
-| CH06-097 | PENDING：所属节尚未处理 |
-| CH06-098 | PENDING：所属节尚未处理 |
-| CH06-099 | PENDING：所属节尚未处理 |
-| CH06-100 | PENDING：所属节尚未处理 |
-| CH06-101 | PENDING：所属节尚未处理 |
-| CH06-102 | PENDING：所属节尚未处理 |
-| CH06-103 | PENDING：所属节尚未处理 |
-| CH06-104 | PENDING：所属节尚未处理 |
-| CH06-105 | PENDING：所属节尚未处理 |
-| CH06-106 | PENDING：所属节尚未处理 |
-| CH06-107 | PENDING：所属节尚未处理 |
-| CH06-108 | PENDING：所属节尚未处理 |
-| CH06-109 | PENDING：所属节尚未处理 |
-| CH06-110 | PENDING：所属节尚未处理 |
-| CH06-111 | PENDING：所属节尚未处理 |
-| CH06-112 | PENDING：所属节尚未处理 |
-| CH06-113 | PENDING：所属节尚未处理 |
-| CH06-114 | PENDING：所属节尚未处理 |
-| CH06-115 | PENDING：所属节尚未处理 |
-| CH06-116 | PENDING：所属节尚未处理 |
-| CH06-117 | PENDING：所属节尚未处理 |
-| CH06-118 | PENDING：所属节尚未处理 |
-| CH06-119 | PENDING：所属节尚未处理 |
-| CH06-120 | PENDING：所属节尚未处理 |
-| CH06-121 | PENDING：所属节尚未处理 |
-| CH06-122 | PENDING：所属节尚未处理 |
-| CH06-123 | PENDING：所属节尚未处理 |
+| CH06-096 | MD-6.4.4-Assumption1Correct |
+| CH06-097 | MD-6.4.4-Assumption2 |
+| CH06-098 | MD-6.4.4-MinorizationCorrectedImplication |
+| CH06-099 | MD-6.4.4-Theorem62 |
+| CH06-100 | MD-6.4.4-PeriodicConfiningPrinted |
+| CH06-101 | MD-6.4.4-HamiltonianPower |
+| CH06-102 | MD-6.4.4-HamiltonianPowerGenerator |
+| CH06-103 | MD-6.4.4-LaplacianBoundCorrect |
+| CH06-104 | MD-6.4.4-LaplacianBoundCorrect |
+| CH06-105 | MD-6.4.4-LangevinLyapunov |
+| CH06-106 | MD-6.4.4-LieBracket |
+| CH06-107 | MD-6.4.4-LieBracketProperties |
+| CH06-108 | MD-6.4.4-Definition61 |
+| CH06-109 | MD-6.4.4-LangevinFields |
+| CH06-110 | MD-6.4.4-LangevinBracketIndependent |
+| CH06-111 | MD-6.4.4-LangevinHormander |
+| CH06-112 | MD-6.4.4-LangevinTransitionDensity |
+| CH06-113 | MD-6.4.4-Lemma61Nonempty |
+| CH06-114 | MD-6.4.4-ControlPath |
+| CH06-115 | MD-6.4.4-ControlEndpointStable |
+| CH06-116 | MD-6.4.4-WienerControlTube |
+| CH06-117 | MD-6.4.4-LangevinCanonicalStationary |
+| CH06-118 | MD-6.4.4-LangevinTimeAverage |
+| CH06-119 | MD-6.4.4-WeightedFunctionNorm |
+| CH06-120 | MD-6.4.4-WeightedVectorNorm |
+| CH06-121 | MD-6.4.4-Proposition64Relative |
+| CH06-122 | MD-6.4.4-FredholmAlternative |
+| CH06-123 | MD-6.4.4-ForwardKernelGibbs |
 | CH06-124 | PENDING：所属节尚未处理 |
 | CH06-125 | PENDING：所属节尚未处理 |
 | CH06-126 | PENDING：所属节尚未处理 |
@@ -403,6 +448,23 @@
 - MD-6.4.3-Theorem61TimeAveragePrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 原时间平均/演化分布平均冲突待导师；不证明字面指数轨道界。保留原5.6轨道时间平均读法；通常随机时间平均并无原指称指数路径误差界。原文未说明随机量的概率资格，不能改成分布平均后冒称原结论已证。
 - MD-6.4.3-BrownianNegativeDefinitePrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 字面严格负定被常数核反驳，不能证明。常数非零函数给零二次型，严格负定字面不成立；原非正谱正确子结论独立保留。
 - MD-6.4.2-OUDensityPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 字面式只为未归一权重；不证明它是概率密度。(6.44)遗漏(2πσ²(t))⁻¹/²归一化系数；t=0为Dirac，不能声称每个有限t都是非退化Lebesgue密度。
+- MD-6.4.4-Assumption1Printed：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 保留原包含t=0的字面资格；不证明当前物理扩散满足它。正维连续状态中t=0初始Dirac通常不具有可连续延拓的Lebesgue转移密度；字面[0,∞)与正时刻密度不能混同。
+- MD-6.4.4-MinorizationPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 原等价适用对象/密度和时间域需导师；保留完整双向字面陈述。原tantamount按双向等价读取；一般小集下界并不自动产生原要求的联合连续密度，且原时间0连续性需勘误。不能只证单向后冒称原等价已证。
+- MD-6.4.4-MinorizationCorrectedImplication：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺真实kernel小集/联合连续密度的完整组合桥接；不建立一般Harris理论。
+- MD-6.4.4-Theorem62：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 没有现成完整Thm6.2桥接；保持sorry，不恢复封存Harris长证明或构建缺失大型理论。原未指定阈值、generator域或非爆炸/Markov域识别；原Assumption1时间0勘误和全状态密度资格需要明确签核。
+- MD-6.4.4-PeriodicPotentialBound：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 非恒零维周期势在lift上不会趋∞；光滑周期本身也不推出原1<Umin。
+- MD-6.4.4-PeriodicConfiningPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 原周期/配置围束条件须导师签核，实际H^l在动量无穷远的proper结论另列。原周期位置域与同一势能lift的q→∞围束条件冲突；保留字面资格而非构造一个不存在的周期围束势。
+- MD-6.4.4-LaplacianBoundPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 保留字面错误不等式，不能证明；正确完整上界另条。用|p|²≤2H推导时遗漏系数2；一般原界不成立，具体52>40反例另给。
+- MD-6.4.4-LyapunovYoungBounds：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 原中间严格U上界需要Umax选严格外界；原错误Laplacian系数不能由这些正确标量估计证明。
+- MD-6.4.4-LangevinTransitionDensity：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际Langevin hypoelliptic/Malliavin转移密度存在桥接；不建设大型理论。
+- MD-6.4.4-Lemma61Printed：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 保留原缺非空的完整字面断言，不证；下一条桥接原单位周期实际过程的完整非空版本。字面all open C包括空集，概率为0；需Nonempty。原(6.47)单位质量，旧清单一般质量扩展须另标技术范围。
+- MD-6.4.4-LangevinGeometricErgodicity：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际transition density、Harris/minorization及canonical invariance完整桥接；保留sorry，不恢复Thm6.2封存长证明。
+- MD-6.4.4-LangevinTimeAverage：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际canonical唯一不变/遍历及weighted观测量强大数桥接；不建设大型理论。
+- MD-6.4.4-Proposition64Printed：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 无现成整条桥接；不恢复封存Prop6.4长证明，保留sorry。印刷flat forward PDE与Gibbs加权mean-zero/adjoint pairing混用；测度及density-vs-relative-density选择待导师，原式完整保留。
+- MD-6.4.4-Proposition64Relative：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺实际加权adjoint域、compact resolvent与rough kernel；无现成整条桥接保留sorry，封存不恢复。
+- MD-6.4.4-FredholmAlternative：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺一般closed partialoperator的Fredholm alternative现成完整桥接；不建设大型谱理论。
+- MD-6.4.4-BackwardKernelConstants：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 rough加权Hilbert generator kernel尚缺完整桥接；CanonicalKernelConstant封存长证明不恢复。
+- MD-6.4.4-ForwardKernelGibbs：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺flat forward弱域与实际adjoint/relative坐标转换、kernel识别；不恢复封存长证明。
 
 ## 定性段落排除
 

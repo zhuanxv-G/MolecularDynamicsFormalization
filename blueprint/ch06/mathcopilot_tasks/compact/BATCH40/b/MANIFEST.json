@@ -1,0 +1,170 @@
+{
+  "batch": "BATCH40",
+  "subtask": "BATCH40b",
+  "source_ids": [
+    "MD-6.4.4-LangevinCanonicalStationary"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 277,
+      "printed_page": 256
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+  "lean_sha256": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+    "blueprint/ch06/ch06_source.json": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+    "BATCH40b_PAGES.pdf": "c8777368a0a4791687943c6e8e0bab7713f9d6639639860f00aff50dc5eeb3bb",
+    "signature_sha256": "5455b74c0c4779dcd75a9d302c546897385b9b6e762ac1b4693f2d768e4c650e"
+  },
+  "signature_sha256": "5455b74c0c4779dcd75a9d302c546897385b9b6e762ac1b4693f2d768e4c650e",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter02Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "Q",
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConfigurationCube",
+      "code_sha256": "09df86f1ec71f9b7683204ae6fb4a4c17076a4a71db9c03a87623d7423d83273"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConfigurationGibbsWeight",
+      "code_sha256": "a5bd766d1cbfda65d529ec6b709aea756a842e8914cf452dd793034c4f50877b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookConfigurationPartition",
+      "code_sha256": "bf3cd0410e09c0f547733bf9b24c116b519d674f74b7f0eeba4a189faceb3344"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinCanonicalDensity",
+      "code_sha256": "5f92d95299a968205c00668b52d6790675e8038d63176864ca2b689252e3adf7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinDrift",
+      "code_sha256": "6461847f6949915260e99ffc5f06d2865896b565b154c8d6aeae3b4c98ff3f7d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinGibbsStationaryExpression.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinForwardDifferentialOperator",
+      "code_sha256": "6552a225dc45604fc6d70d8d7936c2011571ce05a44b98675d679af596523ba1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinLyapunov.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinHamiltonian",
+      "code_sha256": "cd2e2ee9e33d05070add45db9db9e28b19ce150d25b247ae14f0b1df613127f5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinLyapunov.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinHamiltonianPower",
+      "code_sha256": "90efb85b772b2c91852fa73469db0544f38de5400e0ac1726557adad9b0f57be"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinGibbsStationaryExpression.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinPeriodicGibbsWeight",
+      "code_sha256": "7492f2089c091451c7dde3e4e7f0c9db257314a5e27b93120b1ead0f60fab8e8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicLyapunov.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinPeriodicHamiltonianPower",
+      "code_sha256": "496fd1a8e1410664dc050737a80b7bb0e2182fcd7b5822adbda4fb1ad0a0c785"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinPeriodicPhase",
+      "code_sha256": "102d1bb0e87353db402a2cc858c5fb35b9a9c5730062ef3342e6b0f813ccfb58"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinPeriodicProjection",
+      "code_sha256": "9039e1043deb7d19fcb9c957cf2941bda97bce3ad50948a5df792ac90b7d7020"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicLift.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinPeriodicRepresentative",
+      "code_sha256": "715c000bcdf4305c31f192559ae4ddee6ab23563a0c96566e7225ec32fa3de49"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinPhase",
+      "code_sha256": "ee32316762cd33e19f1e5e47745da89914943aa66b85fb83f71d95c9b012a326"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinGibbsStationaryExpression.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinPhaseDivergence",
+      "code_sha256": "94ce17b5edaa958f11cbac4e31e77739c0bd5b2f0fee3e0367a0eac906bffe0d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPotentialForce",
+      "code_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookUnitPeriodicPotential",
+      "code_sha256": "e26dd47f5c122900493506ccbe55a9fe93351b063566435477f1cbd5e0803040"
+    }
+  ],
+  "paste_plus_pdf_bytes": 117336,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10411,
+      "sha256": "0c954f59d0d8d68b08b093696559649c81fe5d1dad6f3581485a08f77757cf78"
+    },
+    "BATCH40b_PAGES.pdf": {
+      "bytes": 106925,
+      "sha256": "c8777368a0a4791687943c6e8e0bab7713f9d6639639860f00aff50dc5eeb3bb"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 124539
+}

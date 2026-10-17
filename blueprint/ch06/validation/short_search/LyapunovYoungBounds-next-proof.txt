@@ -1,0 +1,39 @@
+intro l n Umax hl hU
+  have hlpos : (0 : ℝ) < l := by exact_mod_cast (lt_of_lt_of_le Nat.zero_lt_one hl)
+  let A1 : ℝ := (l : ℝ)*((l : ℝ)+(n : ℝ)-1)
+  let A2 : ℝ := 2*(l : ℝ)*Umax
+  let A3 : ℝ := 2*(l : ℝ)*((l : ℝ)-1)+(n : ℝ)*l
+  let A : ℝ := max 0 (max A1 (max A2 A3))
+  let ε : ℝ := (l : ℝ)/2
+  have hε : 0 < ε := by dsimp [ε]; positivity
+  have hA : 0 ≤ A := le_max_left _ _
+  let M : ℝ := max 1 (A/ε)
+  have hM : 0 ≤ M := le_trans zero_le_one (le_max_left _ _)
+  have hAM : A ≤ ε*M := by
+    have hd : A/ε ≤ M := le_max_right _ _
+    simpa only [mul_comm] using (div_le_iff₀ hε).mp hd
+  let C : ℝ := A*M^(l-1)+1
+  have hC : 0 < C := by dsimp [C]; positivity
+  have hbound : ∀ H : ℝ, 1 ≤ H → A*H^(l-1) ≤ ε*H^l+C := by
+    intro H hH
+    have hH0 : 0 ≤ H := le_trans zero_le_one hH
+    by_cases h : M ≤ H
+    · have hAH := hAM.trans (mul_le_mul_of_nonneg_left h hε.le)
+      calc
+        _ ≤ (ε*H)*H^(l-1) := mul_le_mul_of_nonneg_right hAH (pow_nonneg hH0 _)
+        _ = ε*(H^(l-1)*H) := by ring
+        _ = ε*H^l := by rw [← pow_succ, Nat.sub_add_cancel hl]
+        _ ≤ ε*H^l+C := le_add_of_nonneg_right hC.le
+    · have hpow := pow_le_pow_left₀ hH0 (le_of_lt (lt_of_not_ge h)) (l-1)
+      have hb := mul_le_mul_of_nonneg_left hpow hA
+      have hp : 0 ≤ ε*H^l := mul_nonneg hε.le (pow_nonneg hH0 _)
+      dsimp [C]
+      linarith
+  have h1 : A1 ≤ A := (le_max_left _ _).trans (le_max_right _ _)
+  have h2 : A2 ≤ A := (le_max_left _ _).trans ((le_max_right _ _).trans (le_max_right _ _))
+  have h3 : A3 ≤ A := (le_max_right _ _).trans ((le_max_right _ _).trans (le_max_right _ _))
+  refine ⟨C,C,hC,hC,fun H hH ↦ ?_⟩
+  have hp : 0 ≤ H^(l-1) := pow_nonneg (le_trans zero_le_one hH) _
+  exact ⟨(mul_le_mul_of_nonneg_right h1 hp).trans (hbound H hH),
+    (by simpa only [A2, mul_assoc, mul_left_comm, mul_comm] using (mul_le_mul_of_nonneg_right h2 hp).trans (hbound H hH)),
+    (mul_le_mul_of_nonneg_right h3 hp).trans (hbound H hH)⟩

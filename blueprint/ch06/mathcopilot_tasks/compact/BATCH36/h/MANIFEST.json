@@ -1,0 +1,56 @@
+{
+  "batch": "BATCH36",
+  "subtask": "BATCH36h",
+  "source_ids": [
+    "MD-6.4.4-PotentialNormalization"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 274,
+      "printed_page": 253
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+  "lean_sha256": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+    "blueprint/ch06/ch06_source.json": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+    "BATCH36h_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+    "signature_sha256": "279a245f384999c6178913c2a15b874830683fd1ccf827a8240dd9c2f7b71c6d"
+  },
+  "signature_sha256": "279a245f384999c6178913c2a15b874830683fd1ccf827a8240dd9c2f7b71c6d",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPotentialForce",
+      "code_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookUnitPeriodicPotential",
+      "code_sha256": "e26dd47f5c122900493506ccbe55a9fe93351b063566435477f1cbd5e0803040"
+    }
+  ],
+  "paste_plus_pdf_bytes": 101452,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4612,
+      "sha256": "79b6016f621b62817c388efbe8d3bd476d8c23b7c38b546f7c51965eab749423"
+    },
+    "BATCH36h_PAGES.pdf": {
+      "bytes": 96840,
+      "sha256": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 103602
+}

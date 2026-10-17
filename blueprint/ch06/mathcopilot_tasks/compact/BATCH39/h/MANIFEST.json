@@ -1,0 +1,104 @@
+{
+  "batch": "BATCH39",
+  "subtask": "BATCH39h",
+  "source_ids": [
+    "MD-6.4.4-ControlEndpointStable"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 277,
+      "printed_page": 256
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+  "lean_sha256": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+    "blueprint/ch06/ch06_source.json": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+    "BATCH39h_PAGES.pdf": "c8777368a0a4791687943c6e8e0bab7713f9d6639639860f00aff50dc5eeb3bb",
+    "signature_sha256": "c6a35d554b709049ba995aae6c5c6c78de3c83edbeecfa1fd7a173aa067b66b3"
+  },
+  "signature_sha256": "c6a35d554b709049ba995aae6c5c6c78de3c83edbeecfa1fd7a173aa067b66b3",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinControlPath.lean",
+      "namespace": "MolecularDynamics",
+      "name": "controlAcceleration",
+      "code_sha256": "0334e2b7a894466e2103b5fe0f7cc982f7debc2e8919e5ebfe784cbe536561a6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinControlPath.lean",
+      "namespace": "MolecularDynamics",
+      "name": "controlCubic",
+      "code_sha256": "5c264692ecbe0bc48859877359b23e36d480b71ab7fcf39364b40398f1957433"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinControlPath.lean",
+      "namespace": "MolecularDynamics",
+      "name": "controlQuadratic",
+      "code_sha256": "f0250f9bc28238213ef7dfe51f4b498808a2406fb6cb5ef17f70094c2d634344"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinControlPath.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinControlMomentum",
+      "code_sha256": "fd360844fd600294905f2d336d6e547847bb187869b612d51c367d03f8d45bbb"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinControlPath.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinControlPath",
+      "code_sha256": "86e18e70b30e2e534ef7c07c677413585ce896e1b5a5caa124024c9d7823435d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinControlPath.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinControlPosition",
+      "code_sha256": "5a26d6d191754fcb6f0c5529486d915c15b1c2f57aeab99847d4353a5c7ac1c8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinControlPath.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinControlRate",
+      "code_sha256": "1f2fd30ecdb1912a65458d71d7acc34e6e6b3d21cdf5c9c647082246ae4d6c60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinNoiseStability.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinIntegralSolution",
+      "code_sha256": "0bbb921f8c2f814b9ebc1be51dd9e5ab04cc0d6dc7e283e0a6ee4ef826323847"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinPhase",
+      "code_sha256": "ee32316762cd33e19f1e5e47745da89914943aa66b85fb83f71d95c9b012a326"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPotentialForce",
+      "code_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    }
+  ],
+  "paste_plus_pdf_bytes": 114641,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7716,
+      "sha256": "64b115a504cec504961f56bc671cb8167572c96f7cb8e9ab82fa1161548c9d95"
+    },
+    "BATCH39h_PAGES.pdf": {
+      "bytes": 106925,
+      "sha256": "c8777368a0a4791687943c6e8e0bab7713f9d6639639860f00aff50dc5eeb3bb"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 118857
+}

@@ -200,6 +200,51 @@
 | MD-6.4.3-BrownianNegativeDefinitePrinted | 250/271 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-6.4.2-OUDensityPrinted | 248/269 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-6.4.2-OUDensityCorrect | 248/269 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-Assumption1Printed | 252/273 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.4-Assumption1Correct | 252/273 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-Assumption2 | 252/273 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-MinorizationPrinted | 252/273 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.4-MinorizationCorrectedImplication | 252/273 | PASS | 待网站审计 | incomplete |
+| MD-6.4.4-Theorem62 | 252/273 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.4-PeriodicPotentialBound | 253/274 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-PotentialNormalization | 253/274 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-UnitLangevinModel | 251/272 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-PeriodicConfiningPrinted | 253/274 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.4-HamiltonianPower | 253/274 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-HamiltonianPowerCancellation | 253/274 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-HamiltonianPowerMomentumDerivative | 253/274 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-HamiltonianPowerMomentumLaplacian | 253/274 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-LaplacianBoundPrinted | 253/274 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.4-LaplacianBoundCounterexample | 253/274 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-HamiltonianPowerGenerator | 253–254/274–275 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-LaplacianBoundCorrect | 253/274 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-LyapunovYoungBounds | 253/274 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-LangevinLyapunov | 253–254/274–275 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-LieBracket | 254/275 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-LieBracketProperties | 254/275 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-Definition61 | 254/275 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-LangevinFields | 255/276 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-LangevinNoiseBracket | 255/276 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-LangevinBracketIndependent | 255/276 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-LangevinHormander | 255/276 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-LangevinTransitionDensity | 255/276 | PASS | 待网站审计 | incomplete |
+| MD-6.4.4-Lemma61Printed | 255/276 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.4-Lemma61Nonempty | 255/276 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-ControlPath | 255/276 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-ControlEndpointStable | 256/277 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-WienerControlTube | 256/277 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-LangevinCanonicalStationary | 256/277 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-LangevinGeometricErgodicity | 256/277 | PASS | 待网站审计 | incomplete |
+| MD-6.4.4-LangevinTimeAverage | 256/277 | PASS | 待网站审计 | incomplete |
+| MD-6.4.4-WeightedH1 | 256/277 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-WeightedH1Norm | 257/278 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.4.4-Proposition64Printed | 257/278 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.4-Proposition64Relative | 257/278 | PASS | 待网站审计 | incomplete |
+| MD-6.4.4-FredholmAlternative | 257/278 | PASS | 待网站审计 | incomplete |
+| MD-6.4.4-BackwardKernelConstants | 257/278 | PASS | 待网站审计 | incomplete |
+| MD-6.4.4-ForwardKernelGibbs | 257/278 | PASS | 待网站审计 | incomplete |
+| MD-6.4.4-WeightedFunctionNorm | 256/277 | PASS | 待网站审计 | self-contained |
+| MD-6.4.4-WeightedVectorNorm | 257/278 | PASS | 待网站审计 | self-contained |
 
 ## 需要导师判断的问题
 
@@ -255,6 +300,24 @@
   常数非零函数给零二次型，严格负定字面不成立；原非正谱正确子结论独立保留。
 - MD-6.4.2-OUDensityPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
   (6.44)遗漏(2πσ²(t))⁻¹/²归一化系数；t=0为Dirac，不能声称每个有限t都是非退化Lebesgue密度。
+- MD-6.4.4-Assumption1Printed：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  正维连续状态中t=0初始Dirac通常不具有可连续延拓的Lebesgue转移密度；字面[0,∞)与正时刻密度不能混同。
+- MD-6.4.4-MinorizationPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  原tantamount按双向等价读取；一般小集下界并不自动产生原要求的联合连续密度，且原时间0连续性需勘误。不能只证单向后冒称原等价已证。
+- MD-6.4.4-Theorem62：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  原未指定阈值、generator域或非爆炸/Markov域识别；原Assumption1时间0勘误和全状态密度资格需要明确签核。
+- MD-6.4.4-PeriodicPotentialBound：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  非恒零维周期势在lift上不会趋∞；光滑周期本身也不推出原1<Umin。
+- MD-6.4.4-PeriodicConfiningPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  原周期位置域与同一势能lift的q→∞围束条件冲突；保留字面资格而非构造一个不存在的周期围束势。
+- MD-6.4.4-LaplacianBoundPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  用|p|²≤2H推导时遗漏系数2；一般原界不成立，具体52>40反例另给。
+- MD-6.4.4-LyapunovYoungBounds：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  原中间严格U上界需要Umax选严格外界；原错误Laplacian系数不能由这些正确标量估计证明。
+- MD-6.4.4-Lemma61Printed：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  字面all open C包括空集，概率为0；需Nonempty。原(6.47)单位质量，旧清单一般质量扩展须另标技术范围。
+- MD-6.4.4-Proposition64Printed：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  印刷flat forward PDE与Gibbs加权mean-zero/adjoint pairing混用；测度及density-vs-relative-density选择待导师，原式完整保留。
 
 ## 1. MD-6.1.1-Microcanonical · definition · 印刷p.214 / PDFp.235
 
@@ -9709,7 +9772,7 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
-本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/BrownianSpectralGap.json；blueprint/ch06/validation/batch_axioms/section643b-c1e24c99.lean；blueprint/ch06/validation/batch_axioms/section643b-c1e24c99.log。
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/BrownianSpectralGap.json；blueprint/ch06/validation/batch_axioms/section643b-c1e24c99.lean；blueprint/ch06/validation/batch_axioms/section643b-c1e24c99.log；blueprint/ch06/validation/batch_axioms/section643b-054d65e0.lean；blueprint/ch06/validation/batch_axioms/section643b-054d65e0.log。
 
 已登记前置证明/定义：MolecularDynamics.textbookBrownianGibbsCoercivityRate_pos; MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_gap; MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_im_zero。
 
@@ -10059,3 +10122,2341 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`486c5affcba616cf461b2ddc19617a3c0bc0d9b103cdb50b19c183bd0d65ffd2`；原文SHA256：`dd6ea83dfb65290a01779bcb471cee3a360195a53caaffbeab76b7069fce7918`。
+
+## 1. MD-6.4.4-Assumption1Printed · Assumption 1 printed · 印刷p.252 / PDFp.273
+
+### 2. 原文陈述
+
+> Assumption 1 The Markov process generated by the SDE (6.43) satisfies, for some fixed compact set $C\in\mathcal B(D)$, the conditions:
+> (i) For some $y\in\operatorname{int}(C)$, we have that for any $\delta>0$ there is a $t_0>0$ such that
+> \[\operatorname{Pr}(X(t_0)\in B_\delta(y)\mid X(0)=X_0)>0,\quad\forall X_0\in C.\]
+> (ii) For $t>0$, the transition kernel possesses a density $\widehat\rho(X,z,t)$ such that
+> \[\operatorname{Pr}(X(t)\in A\mid X(0)=X_0)=\int_A\widehat\rho(X_0,z,t)dz,\quad\forall X_0\in C,\ A\in\mathcal B(D)\cap\mathcal B(C);\]
+> and $\widehat\rho(X,z,t)$ is jointly continuous in $C\times C\times[0,\infty)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def assumption1Printed {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D) : Prop :=
+  IsCompact C ∧ (∃ y ∈ interior C, ∀ δ : ℝ, 0 < δ → ∃ t : ℝ≥0, 0 < t ∧
+    ∀ x ∈ C, 0 < K t x (Metric.ball y δ)) ∧
+  ∃ ρ : D → D → ℝ → ℝ, (∀ x z t, 0 ≤ ρ x z t) ∧
+    (∀ t : ℝ≥0, 0 < t → ∀ x ∈ C, ∀ A : Set D, MeasurableSet A → A ⊆ C →
+      K t x A = ∫⁻ z in A, ENNReal.ofReal (ρ x z t) ∂ν) ∧
+    ContinuousOn (fun w : (D×D)×ℝ ↦ ρ w.1.1 w.1.2 w.2) ((C×ˢ C)×ˢ Ici 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.assumption1Printed；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]真实Borel Markov kernel与局部参考测度；完整同一内点可达、全部初值与可测子集及联合连续资格。 | [EXTRA] |
+| 原页核对/疑点 | 正维连续状态中t=0初始Dirac通常不具有可连续延拓的Lebesgue转移密度；字面[0,∞)与正时刻密度不能混同。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1967](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1967>)（`MD.Ch06.assumption1Printed`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：保留原包含t=0的字面资格；不证明当前物理扩散满足它。
+
+签名SHA256：`83d6cd798da574cd3538deee74c01854dd61f6b7830709d852d202f47fa8d2ca`；原文SHA256：`3721e4f9d94edd1fcd64428e66b8473b451350bf66ea8a3e084f0b955e8614cb`。
+
+## 1. MD-6.4.4-Assumption1Correct · Assumption 1 positive-time version · 印刷p.252 / PDFp.273
+
+### 2. 原文陈述
+
+> Assumption 1 The Markov process generated by the SDE (6.43) satisfies, for some fixed compact set $C\in\mathcal B(D)$, the conditions:
+> (i) For some $y\in\operatorname{int}(C)$, we have that for any $\delta>0$ there is a $t_0>0$ such that
+> \[\operatorname{Pr}(X(t_0)\in B_\delta(y)\mid X(0)=X_0)>0,\quad\forall X_0\in C.\]
+> (ii) For $t>0$, the transition kernel possesses a density $\widehat\rho(X,z,t)$ such that
+> \[\operatorname{Pr}(X(t)\in A\mid X(0)=X_0)=\int_A\widehat\rho(X_0,z,t)dz,\quad\forall X_0\in C,\ A\in\mathcal B(D)\cap\mathcal B(C);\]
+> and $\widehat\rho(X,z,t)$ is jointly continuous in $C\times C\times[0,\infty)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def assumption1 {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D) : Prop :=
+  IsCompact C ∧ (∃ y ∈ interior C, ∀ δ : ℝ, 0 < δ → ∃ t : ℝ≥0, 0 < t ∧
+    ∀ x ∈ C, 0 < K t x (Metric.ball y δ)) ∧
+  ∃ ρ : D → D → ℝ → ℝ, (∀ x z t, 0 ≤ ρ x z t) ∧
+    (∀ t : ℝ≥0, 0 < t → ∀ x ∈ C, ∀ A : Set D, MeasurableSet A → A ⊆ C →
+      K t x A = ∫⁻ z in A, ENNReal.ofReal (ρ x z t) ∂ν) ∧
+    ContinuousOn (fun w : (D×D)×ℝ ↦ ρ w.1.1 w.1.2 w.2) ((C×ˢ C)×ˢ Ioi 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.assumption1；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]联合连续域改为C×C×(0,∞)，正时刻实际密度与全部可达资格保留；只定义修正版，未计任何具体SDE已满足。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1978](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1978>)（`MD.Ch06.assumption1`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0d57965536608e60186a81c948ff72655a0d3d5bff40577280c84acb748a628e`；原文SHA256：`11ad8640e918c42e5fc224b41d4952005990440b4c322a9f46db278d972e42bb`。
+
+## 1. MD-6.4.4-Assumption2 · Assumption 2 · 印刷p.252 / PDFp.273
+
+### 2. 原文陈述
+
+> Assumption 2 There is a function $\varphi:D\to(0,\infty)$, with $\varphi(X)\to\infty$ as $|X|\to\infty$ such that
+> \[\mathcal L\varphi\le-\alpha\varphi+\delta\]
+> for positive constants $\alpha$ and $\delta$, where $\mathcal L$ is the generator of the stochastic process (6.43). The function $\varphi$ is known as a Lyapunov function.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def assumption2 {D : Type*} [TopologicalSpace D] (L : (D → ℝ) → D → ℝ)
+    (φ : D → ℝ) (α δ : ℝ) : Prop :=
+  (∀ x, 0 < φ x) ∧ Continuous φ ∧ (∀ R : ℝ, IsCompact {x | φ x ≤ R}) ∧
+    0 < α ∧ 0 < δ ∧ ∀ x, L φ x ≤ -α*φ x+δ
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.assumption2；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]柱形相空间以真实compact sublevels表达趋无穷；连续正Lyapunov及正α/δ，未把Harris结论藏进定义。具体generator域资格在对应命题明确。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1989](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1989>)（`MD.Ch06.assumption2`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`a46092a48c68f3aff32039fb6c273962d7253bab202873164f01b4d51db9a6d7`；原文SHA256：`156c6f8c6c6528351330cd37105d04ddf4e6c883aef4acd3afff944f3051df6c`。
+
+## 1. MD-6.4.4-MinorizationPrinted · unnumbered_claim · 印刷p.252 / PDFp.273
+
+### 2. 原文陈述
+
+> It can be shown that this assumption is tantamount to the SDE satisfying a minorization condition. This condition is a particular case of the general concept of small sets, found in Markov literature for proving ergodicity.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem minorizationPrinted : ∀ {S : Type*} [MetricSpace S] [MeasurableSpace S] [BorelSpace S]
+    (ν : Measure S) (K : ℝ≥0 → Kernel S S) (C : Set S),
+  MolecularDynamics.Chapter06Review.assumption1Printed ν K C ↔
+    ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure S,
+      IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.minorizationPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 原tantamount按双向等价读取；一般小集下界并不自动产生原要求的联合连续密度，且原时间0连续性需勘误。不能只证单向后冒称原等价已证。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1997](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1997>)（`MD.Ch06.minorizationPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原等价适用对象/密度和时间域需导师；保留完整双向字面陈述。
+
+签名SHA256：`71817bdb106e30da2322530c4bc3810eb319e6bec83b39744114130307219dd5`；原文SHA256：`05b74621536052cc7bc9b7500ae4fdcb3b13f7fd3b5c8a8e96595d168ac914b3`。
+
+## 1. MD-6.4.4-MinorizationCorrectedImplication · unnumbered_claim · 印刷p.252 / PDFp.273
+
+### 2. 原文陈述
+
+> It can be shown that this assumption is tantamount to the SDE satisfying a minorization condition. This condition is a particular case of the general concept of small sets, found in Markov literature for proving ergodicity.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem minorizationCorrectedImplication :
+  ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D), MolecularDynamics.Chapter06Review.assumption1 ν K C →
+  (∀ t : ℝ≥0, ∀ x : D, ∀ A : Set D, IsOpen A → A.Nonempty → 0 < t → 0 < K t x A) →
+  ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure D,
+    IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.minorizationCorrectedImplication；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]仅单向充分条件，正时刻Assumption1加全部非空开集严格可达；实际测度下界完整，字面双向版独立保留。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2006](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2006>)（`MD.Ch06.minorizationCorrectedImplication`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺真实kernel小集/联合连续密度的完整组合桥接；不建立一般Harris理论。
+
+签名SHA256：`74a9215300abd98c22609c6a4b7f01ed28fa4cd4dd962f01e1280dcbd21288f4`；原文SHA256：`15c3883b65494ade271fca0fa7694827a76e98a72e433f6a8862d556f89c3bc8`。
+
+## 1. MD-6.4.4-Theorem62 · Theorem 6.2 · 印刷p.252 / PDFp.273
+
+### 2. 原文陈述
+
+> Theorem 6.2 (Geometric Ergodicity) Let the solution to (6.43) be denoted $X(t)$. If Assumption 1 and Assumption 2 are satisfied for
+> \[C=\{X\in D\mid\varphi(X)\le K_{\alpha,\delta}\},\]
+> where $K_{\alpha,\delta}$ is a particular positive value depending on $\alpha$ and $\delta$, then
+> (i) there exists a unique invariant measure $\rho$, with $\mathcal L^*\rho=0$, and
+> (ii) there exist positive constants $k$ and $\lambda$ such that for all suitable functions $f$ with $|f|\le\varphi$,
+> \[|e^{t\mathcal L}f(X_0)-\operatorname{Av}(f)|\le ke^{-\lambda t}\varphi(X_0);\tag{6.48}\]
+> where $\operatorname{Av}(f)=\int_D f(z)\rho(z)dz$ is the spatial average.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem theorem62 :
+  ∃ threshold : ℝ → ℝ → ℝ,
+    (∀ α δ : ℝ, 0 < α → 0 < δ → 0 < threshold α δ) ∧
+  ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D] [CompleteSpace D] [SecondCountableTopology D] [LocallyCompactSpace D]
+    (ν : Measure D) [SigmaFinite ν] (K : ℝ≥0 → Kernel D D), MolecularDynamics.Chapter06Review.markovSemigroup K →
+  (∀ f : D → ℝ, Continuous f → Bornology.IsBounded (Set.range f) → ∀ t,
+    Continuous (MolecularDynamics.Chapter06Review.kernelAverage K f t)) →
+  (∀ t : ℝ≥0, 0 < t → ∀ x : D, ∃ density : D → ℝ,
+    Measurable density ∧ (∀ z, 0 ≤ density z) ∧
+      K t x = ν.withDensity (fun z ↦ ENNReal.ofReal (density z))) →
+  ∀ (φ : D → ℝ) (α δ : ℝ), MolecularDynamics.Chapter06Review.assumption2 (MolecularDynamics.Chapter06Review.kernelGenerator K) φ α δ →
+    MolecularDynamics.Chapter06Review.assumption1 ν K {x | φ x ≤ threshold α δ} →
+      ∃ μ : Measure D, IsProbabilityMeasure μ ∧ MolecularDynamics.Chapter06Review.invariantKernel K μ ∧
+      (∀ μ' : Measure D, IsProbabilityMeasure μ' → MolecularDynamics.Chapter06Review.invariantKernel K μ' → μ'=μ) ∧
+      (∃ ρ : D → ℝ, Measurable ρ ∧ (∀ x, 0 ≤ ρ x) ∧
+        μ=ν.withDensity (fun x ↦ ENNReal.ofReal (ρ x))) ∧
+      (∀ f : D → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+        Integrable (MolecularDynamics.Chapter06Review.kernelGenerator K f) μ → (∫ x, MolecularDynamics.Chapter06Review.kernelGenerator K f x ∂μ)=0) ∧
+      ∃ κ lambdaParam : ℝ, 0 < κ ∧ 0 < lambdaParam ∧ ∀ f : D → ℝ, Measurable f → (∀ x, |f x| ≤ φ x) →
+        Integrable f μ ∧ ∀ (t : ℝ≥0) (x : D),
+          |MolecularDynamics.Chapter06Review.kernelAverage K f t x-(∫ z, f z ∂μ)| ≤ κ*Real.exp (-lambdaParam*(t : ℝ))*φ x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.theorem62；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]阈值函数先于全部过程/Lyapunov量词选择，不能临时选使Assumption1假而空真；真实Markov semigroup/Feller、Polish局部紧状态及σ有限参考测度。全状态正时刻密度资格用于完整不变概率密度结论；L*ρ=0按真实generator检验的弱意义，不是先假定不变性。全部函数/初值/时刻统一加权指数界与唯一性均保留。 | [EXTRA] |
+| 原页核对/疑点 | 原未指定阈值、generator域或非爆炸/Markov域识别；原Assumption1时间0勘误和全状态密度资格需要明确签核。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2017](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2017>)（`MD.Ch06.theorem62`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：没有现成完整Thm6.2桥接；保持sorry，不恢复封存Harris长证明或构建缺失大型理论。
+
+签名SHA256：`4f16f199946b089bc9187798b1f7a70dc070bf1beca07309b5d3f6c9b5ff1c30`；原文SHA256：`9f35554d52cb4c8eda808838ca9ae5cfa4aa84356ebd5a9da4c701a8746737ce`。
+
+## 1. MD-6.4.4-PeriodicPotentialBound · unnumbered_claim · 印刷p.253 / PDFp.274
+
+### 2. 原文陈述
+
+> We also consider the potential energy to be smooth ($C^\infty$) with $U(q)\to\infty$ as $|q|\to\infty$. As we have a smooth potential on a bounded (position) domain, we have
+> \[1<U_{\min}\le U(q)\le U_{\max}<\infty,\quad\forall q\in\mathcal Q,\]
+> for some constants $U_{\min}$ and $U_{\max}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem periodicPotentialBound {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : Continuous U) (hP : textbookUnitPeriodicPotential U) :
+    ∃ M : ℝ, 0 ≤ M ∧ ∀ q, ‖U q‖ ≤ M
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.periodicPotentialBound；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整全域有限范数界，给上下界±M；正下界>1需实际势能平移，另条给出。原周期与q→∞围束资格冲突另留字面记录，不由本条消去。 | [EXTRA] |
+| 原页核对/疑点 | 非恒零维周期势在lift上不会趋∞；光滑周期本身也不推出原1<Umin。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2043](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2043>)（`MD.Ch06.periodicPotentialBound`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookUnitPeriodicPotential_bound。
+
+签名SHA256：`3ec63b7e4f15cd2a10aaeabc00fb3753c24b3632f5b5e1498a5bfadd16ed2b85`；原文SHA256：`65d3e1315c79406131a83c80ec605cabb297023595578aaff4b72145a90d26fe`。
+
+## 1. MD-6.4.4-PotentialNormalization · unnumbered_claim · 印刷p.253 / PDFp.274
+
+### 2. 原文陈述
+
+> We also consider the potential energy to be smooth ($C^\infty$) with $U(q)\to\infty$ as $|q|\to\infty$. As we have a smooth potential on a bounded (position) domain, we have
+> \[1<U_{\min}\le U(q)\le U_{\max}<\infty,\quad\forall q\in\mathcal Q,\]
+> for some constants $U_{\min}$ and $U_{\max}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem potentialNormalization {n : ℕ} (U : (Fin n → ℝ) → ℝ)
+    (hU : Continuous U) (hp : textbookUnitPeriodicPotential U) :
+  ∃ c : ℝ, (∀ q, 1 < U q+c) ∧
+    textbookPotentialForce (fun q ↦ U q+c)=textbookPotentialForce U
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.potentialNormalization；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]将Umin>1解释为实际加常数归一；严格>1与真实力不变全部保留，而非直接假定任何原势已大于1。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2050](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2050>)（`MD.Ch06.potentialNormalization`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookUnitPeriodicPotential_normalization; MolecularDynamics.textbookPotentialForce_add_const。
+
+签名SHA256：`279a245f384999c6178913c2a15b874830683fd1ccf827a8240dd9c2f7b71c6d`；原文SHA256：`80c7eee80705ed309e5cfa5a7527381a2cae80b273ae3bdc5adf73a232c1cf01`。
+
+## 1. MD-6.4.4-UnitLangevinModel · (6.47) · 印刷p.251 / PDFp.272
+
+### 2. 原文陈述
+
+> In Langevin dynamics, taking $M=I$ for simplicity,
+> \[dq=pdt;\qquad dp=-\nabla U(q)dt-\gamma pdt+\sqrt{2\gamma k_BT}dW;\tag{6.47}\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def unitLangevinModel {n : ℕ} {A : Type*} [MeasurableSpace A] (P : Measure A)
+    (W : ℝ → A → (Fin n → ℝ)) (X : ℝ → A → ((Fin n → ℝ) × (Fin n → ℝ)))
+    (U : (Fin n → ℝ) → ℝ) (γ β : ℝ) (x0 : (Fin n → ℝ) × (Fin n → ℝ)) : Prop :=
+  0 < β ∧ ContDiff ℝ ∞ U ∧ MD.Ch06.langevinMassSDE P W X (fun _ ↦ 1) U γ β⁻¹ x0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.unitLangevinModel；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实单位质量完整耦合路径方程；β>0及光滑势保证原梯度存在，γ>0由实际MassLangevin资格保留。Wiener law在对应定理另给，不宣称任意W是Wiener。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2061](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2061>)（`MD.Ch06.unitLangevinModel`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`1d676750a9f9c8c1e9ebc0ed4c8725b221b116689fb4f698cf3ca1b776580853`；原文SHA256：`bdc39fdec921b847c29af226bcb2ce48ad4b35501042e1d6c0be3e43daf931eb`。
+
+## 1. MD-6.4.4-PeriodicConfiningPrinted · definition · 印刷p.253 / PDFp.274
+
+### 2. 原文陈述
+
+> The whole phase space is $D=\mathbb T^{N_c}\times\mathbb R^{N_c}$. We also consider the potential energy to be smooth ($C^\infty$) with $U(q)\to\infty$ as $|q|\to\infty$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def periodicConfiningPrinted {n : ℕ} (_hn : 0 < n) (U : (Fin n → ℝ) → ℝ) : Prop :=
+  ContDiff ℝ ∞ U ∧ textbookUnitPeriodicPotential U ∧
+    Tendsto U (cocompact (Fin n → ℝ)) atTop
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.periodicConfiningPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]实际正维单位周期lift，cocompact表达配置无穷远；不是动量Hamiltonian的围束。 | [EXTRA] |
+| 原页核对/疑点 | 原周期位置域与同一势能lift的q→∞围束条件冲突；保留字面资格而非构造一个不存在的周期围束势。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2069](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2069>)（`MD.Ch06.periodicConfiningPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：原周期/配置围束条件须导师签核，实际H^l在动量无穷远的proper结论另列。
+
+签名SHA256：`01dbab896804a5de1ad50566281f04c73096c364883215a4d3b8eadd4ad3fef7`；原文SHA256：`80cd0573343495866c957e2b630d68cc2721f9a4e30d0adeb618ea141b13520a`。
+
+## 1. MD-6.4.4-HamiltonianPower · definition · 印刷p.253 / PDFp.274
+
+### 2. 原文陈述
+
+> For the Lyapunov condition (Assumption 2), we choose the Lyapunov function
+> \[\varphi(q,p)=H^l(q,p)=\left[\tfrac12\|p\|^2+U(q)\right]^l;\]
+> for a fixed positive integer $l$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def hamiltonianPower {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (l : ℕ) (_hl : 1 ≤ l)
+    (z : textbookLangevinPhase Nc) : ℝ := textbookLangevinHamiltonian U z ^ l
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.hamiltonianPower；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]l≥1编码，真实单位质量Hamiltonian，未把形式jet当真实函数；正性与柱形proper在后续实际桥接证明。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2075](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2075>)（`MD.Ch06.hamiltonianPower`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`5d77d3b497c16221028f9e51cca883a96d66e041c136ebd835684028ceae2003`；原文SHA256：`af0d03f42e7e497ed90290d448e8e3c1def31eedcf0d4a274c99332e3e6bd181`。
+
+## 1. MD-6.4.4-HamiltonianPowerCancellation · unnumbered_claim · 印刷p.253 / PDFp.274
+
+### 2. 原文陈述
+
+> we can see that
+> \[p\cdot\nabla_q\varphi-\nabla U(q)\cdot\nabla_p\varphi=\mathcal L_H\varphi=0;\]
+> where $\mathcal L_H$ is the Lie derivative of our original Hamiltonian system (which preserves all functions of the Hamiltonian).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonianPowerCancellation {n : ℕ} (U : (Fin n → ℝ) → ℝ)
+    (hU : Differentiable ℝ U) (l : ℕ) (_hl : 1 ≤ l) (z : textbookLangevinPhase n) :
+  HasDerivAt (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l
+    (z+t • textbookLangevinDrift U 0 z)) 0 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.hamiltonianPowerCancellation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际沿Hamiltonian方向的真实导数为0；γ=0只在此Hamiltonian部分，非把整个物理Langevin摩擦设零。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2080](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2080>)（`MD.Ch06.hamiltonianPowerCancellation`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinHamiltonianPower_drift_hasDerivAt。
+
+签名SHA256：`ee3531ed7124852db46d75e1eea733d8db7c22fd299a31400ac77ab1aaec4d88`；原文SHA256：`2f297aadc2a67d31a050d8c4591c2329919e52d24ad35f972230d99c51b73a93`。
+
+## 1. MD-6.4.4-HamiltonianPowerMomentumDerivative · unnumbered_claim · 印刷p.253 / PDFp.274
+
+### 2. 原文陈述
+
+> Using $\|p\|^2<2H$, we compute derivatives to find
+> \[p\cdot\nabla_p\varphi=lH^{l-1}\|p\|^2=2l\varphi-2lH^{l-1}U(q).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonianPowerMomentumDerivative : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ)
+    (l : ℕ) (z : textbookLangevinPhase n), 1 ≤ l →
+  HasDerivAt (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l (z.1,(1+t) • z.2))
+    ((l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*(∑ i, z.2 i^2)) 0 ∧
+  (l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*(∑ i, z.2 i^2) =
+    2*(l : ℝ)*textbookLangevinHamiltonianPower U l z -
+      2*(l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*U z.1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.hamiltonianPowerMomentumDerivative；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实沿动量p方向的导数及全部两个表达式，不仅登记事先给定的导数值；实际所有坐标平方和。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:2088](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2088>)（`MD.Ch06.hamiltonianPowerMomentumDerivative`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/HamiltonianPowerMomentumDerivative.json；blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.lean；blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.log。
+
+签名SHA256：`0d21cdfb4b9b3e9cb7f4e8fd0eb1d5f167a530c08b1f314fcd3a08406e8377c6`；原文SHA256：`2a42770792d7d9e70c784018e37ae4c0b061603e5fb175edde33ded39e271bad`。
+
+## 1. MD-6.4.4-HamiltonianPowerMomentumLaplacian · unnumbered_claim · 印刷p.253 / PDFp.274
+
+### 2. 原文陈述
+
+> \[\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonianPowerMomentumLaplacian {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (l : ℕ) (hl : 1 ≤ l) (z : textbookLangevinPhase Nc) :
+    (∑ i : Fin Nc, deriv (deriv (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l
+      (z + t • ((0 : Fin Nc → ℝ), Pi.single i 1)))) 0) =
+      (l : ℝ) * ((l : ℝ) - 1) * textbookLangevinHamiltonian U z ^ (l - 2) * (∑ i, z.2 i ^ 2) +
+        (Nc : ℝ) * l * textbookLangevinHamiltonian U z ^ (l - 1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.hamiltonianPowerMomentumLaplacian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整实际坐标二阶导数和及正确等式，l≥1；原随后不等式单独原样保存，未据等式声称它成立。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2120](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2120>)（`MD.Ch06.hamiltonianPowerMomentumLaplacian`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinHamiltonianPower_momentum_laplacian。
+
+签名SHA256：`8bce91b5f296b939c59ab42ca15f2c4ffeeb5e6fb4801be92d51fcda541a5a01`；原文SHA256：`cf3d78277f9c6a08f29cc108ae73293c394f1e3ab932db1fc7e18b4132ccc1b5`。
+
+## 1. MD-6.4.4-LaplacianBoundPrinted · unnumbered_claim · 印刷p.253 / PDFp.274
+
+### 2. 原文陈述
+
+> \[\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem laplacianBoundPrinted : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ),
+  (∀ q, 1 ≤ U q) → ∀ (l : ℕ), 1 ≤ l → ∀ z : textbookLangevinPhase n,
+    (∑ i : Fin n, deriv (deriv (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l
+      (z+t • ((0 : Fin n → ℝ), Pi.single i 1)))) 0) ≤
+      (l : ℝ)*((l : ℝ)+(n : ℝ)-1)*textbookLangevinHamiltonian U z^(l-1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.laplacianBoundPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 用\|p\|²≤2H推导时遗漏系数2；一般原界不成立，具体52>40反例另给。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2130](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2130>)（`MD.Ch06.laplacianBoundPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：保留字面错误不等式，不能证明；正确完整上界另条。
+
+签名SHA256：`9063b57c1377dcf6bac8bd69e3adf71ae41d07a8f25f8cfe3a61a128cf1efe4a`；原文SHA256：`9714b256f645ad321014c872c33b4cf130996edc0b466c6628c170304fdeec1b`。
+
+## 1. MD-6.4.4-LaplacianBoundCounterexample · unnumbered_claim · 印刷p.253 / PDFp.274
+
+### 2. 原文陈述
+
+> \[\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem laplacianBoundCounterexample :
+    deriv (deriv (fun p : ℝ ↦ (p ^ 2 / 2 + 2) ^ 2)) 4 = 52 ∧
+      ¬ deriv (deriv (fun p : ℝ ↦ (p ^ 2 / 2 + 2) ^ 2)) 4 ≤
+        (2 : ℝ) * (2 + 1 - 1) * (4 ^ 2 / 2 + 2) ^ (2 - 1 : ℕ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.laplacianBoundCounterexample；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]现成具体n=1、U=2、l=2、p=4反例52>40；仅差异证据，未用它替代原全量词界或完整Lyapunov论证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2139](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2139>)（`MD.Ch06.laplacianBoundCounterexample`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinLyapunov_printed_laplacian_bound_counterexample。
+
+签名SHA256：`a4f030d6805f8ddcae6d561cb0db235f0f656170c8df3f07c3b60e644645175c`；原文SHA256：`c4ba44f8d03c1d49e99820fe7f94e36a5fc0684af11ac1925cc20856c0bbe48b`。
+
+## 1. MD-6.4.4-HamiltonianPowerGenerator · unnumbered_claim · 印刷p.253–254 / PDFp.274–275
+
+### 2. 原文陈述
+
+> Computing the generator of Langevin dynamics as
+> \[\mathcal L_{LD}f=p\cdot\nabla_qf-\nabla U(q)\cdot\nabla_pf-\gamma p\cdot\nabla_pf+\gamma k_BT\Delta_pf,\]
+> we can see that $\mathcal L_H\varphi=0$. Hence
+> \[\mathcal L_{LD}\varphi=-\gamma p\cdot\nabla_p\varphi+\gamma k_BT\Delta_p\varphi.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem hamiltonianPowerGenerator {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : Differentiable ℝ U) (γ σ : ℝ) (l : ℕ) (hl : 1 ≤ l)
+    (z : textbookLangevinPhase Nc) :
+    textbookLangevinDifferentialOperator U γ σ (textbookLangevinHamiltonianPower U l) z =
+      -γ * l * textbookLangevinHamiltonian U z ^ (l - 1) * (∑ i, z.2 i ^ 2) +
+        σ ^ 2 / 2 * ((l : ℝ) * ((l : ℝ) - 1) * textbookLangevinHamiltonian U z ^ (l - 2) *
+          (∑ i, z.2 i ^ 2) + (Nc : ℝ) * l * textbookLangevinHamiltonian U z ^ (l - 1))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.hamiltonianPowerGenerator；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际全坐标一二阶导数与完整H^l，现成通用σ算子取σ=√(2γkBT)使σ²/2=γkBT；不是给定目标导数再改写。物理热参数代入在下一完整Lyapunov桥接实际出现。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2147](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2147>)（`MD.Ch06.hamiltonianPowerGenerator`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinHamiltonianPower_differentialOperator。
+
+签名SHA256：`c7d000bcd10c7045fe03f43a7cd1a613074f6b7c6d883a41a6c1aa25c6e68337`；原文SHA256：`45e75e891e4a12f63afa6318b369e3d0b1a7c13f9fb34630b1deeb3024e9980d`。
+
+## 1. MD-6.4.4-LaplacianBoundCorrect · unnumbered_claim · 印刷p.253 / PDFp.274
+
+### 2. 原文陈述
+
+> \[\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem laplacianBoundCorrect {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ∀ q, 1 ≤ U q) (l : ℕ) (hl : 1 ≤ l)
+    (z : textbookLangevinPhase Nc) :
+    (∑ i : Fin Nc, deriv (deriv (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l
+      (z + t • ((0 : Fin Nc → ℝ), Pi.single i 1)))) 0) ≤
+      (2 * (l : ℝ) * ((l : ℝ) - 1) + (Nc : ℝ) * l) * textbookLangevinHamiltonian U z ^ (l - 1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.laplacianBoundCorrect；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]修正上界系数为2l(l−1)+Nc l；原错误l(l+Nc−1)另列NEEDS，未静默更换JSON原句。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2158](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2158>)（`MD.Ch06.laplacianBoundCorrect`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinHamiltonianPower_momentum_laplacian_bound。
+
+签名SHA256：`a605b49596eebd5acb0e9e71c890119f60308bf31de63061e9be9d21f7f97960`；原文SHA256：`cb99822179a57220fd4c9a068d5b39e12f8681f76b766ac4b611911782c6602e`。
+
+## 1. MD-6.4.4-LyapunovYoungBounds · unnumbered_claim · 印刷p.253 / PDFp.274
+
+### 2. 原文陈述
+
+> As $H^l$ grows faster than $H^{l-1}$, for any fixed $l$ we are able to find positive constants $c$ and $d$ such that
+> \[l(l+N_c-1)H^{l-1}\le\tfrac l2H^l+c;\qquad 2lH^{l-1}U(q)<2lH^{l-1}U_{\max}\le\tfrac l2H^l+d.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem lyapunovYoungBounds : ∀ (l n : ℕ) (Umax : ℝ), 1 ≤ l → 1 ≤ Umax →
+  ∃ c d : ℝ, 0 < c ∧ 0 < d ∧ ∀ H : ℝ, 1 ≤ H →
+    ((l : ℝ)*((l : ℝ)+(n : ℝ)-1)*H^(l-1) ≤ (l : ℝ)/2*H^l+c) ∧
+    (2*(l : ℝ)*H^(l-1)*Umax ≤ (l : ℝ)/2*H^l+d) ∧
+    ((2*(l : ℝ)*((l : ℝ)-1)+(n : ℝ)*l)*H^(l-1) ≤ (l : ℝ)/2*H^l+c)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.lyapunovYoungBounds；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整同时覆盖原两个标量界与修正系数界，常数可依赖l/n/Umax但不依赖H；H≥1来自已归一物理势。原U(q)<Umax一环需选择严格外界，本条没有从≤假推出<。 | [EXTRA] |
+| 原页核对/疑点 | 原中间严格U上界需要Umax选严格外界；原错误Laplacian系数不能由这些正确标量估计证明。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:2169](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2169>)（`MD.Ch06.lyapunovYoungBounds`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/LyapunovYoungBounds.json；blueprint/ch06/validation/short_search/route-4a37aecc3118be0f6372.lean；blueprint/ch06/validation/short_search/route-4a37aecc3118be0f6372.log；blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.lean；blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.log。
+
+签名SHA256：`37a65606e4ffb08dfff70dc6eb5ec124d2fc6e8f6ddd180cb23b5c8f0dc9e4aa`；原文SHA256：`56f223f23646cd53d97e3cc063b01fb459443d2de064253df4525c187fb8f86e`。
+
+## 1. MD-6.4.4-LangevinLyapunov · unnumbered_claim · 印刷p.253–254 / PDFp.274–275
+
+### 2. 原文陈述
+
+> giving
+> \[\mathcal L_{LD}\varphi\le-2\gamma l\varphi+2\gamma lH^{l-1}U(q)+\gamma k_BT l(l+N_c-1)H^{l-1}
+> \le-\gamma l\varphi+\gamma k_BT c+\gamma d
+> =-\alpha\varphi+\delta,\]
+> satisfying Assumption 2. The purpose of using the $l$ exponent in the Lyapunov function is to ensure that we can apply the theorem to a wide enough class of observables, as (6.48) is only valid for functions $f$ with magnitude less than or equal to the Lyapunov function.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem langevinLyapunov {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hP : textbookUnitPeriodicPotential U)
+    (hL : ∀ q, 1 ≤ U q) (γ β : ℝ) (hγ : 0 < γ) (hβ : 0 < β) (l : ℕ) (hl : 1 ≤ l) :
+    0 < γ * l ∧ (Real.sqrt (2 * γ * β⁻¹)) ^ 2 / 2 = γ * β⁻¹ ∧
+      (∀ z : textbookLangevinPeriodicPhase Nc, 0 < textbookLangevinPeriodicHamiltonianPower U l z) ∧
+      (∀ R : ℝ, IsCompact {z : textbookLangevinPeriodicPhase Nc | textbookLangevinPeriodicHamiltonianPower U l z ≤ R}) ∧
+      Tendsto (textbookLangevinPeriodicHamiltonianPower U l)
+        (cocompact (textbookLangevinPeriodicPhase Nc)) atTop ∧
+      ∃ δ : ℝ, 0 < δ ∧ ∀ z : textbookLangevinPeriodicPhase Nc,
+        textbookLangevinPeriodicDifferentialOperator U γ (Real.sqrt (2 * γ * β⁻¹))
+          (textbookLangevinPeriodicHamiltonianPower U l) z ≤
+            -(γ * l) * textbookLangevinPeriodicHamiltonianPower U l z + δ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinLyapunov；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际单位质量周期模型、归一U≥1、γ/β>0及l≥1；完整正性/紧子水平集/无穷远proper/正δ全域线性恢复界，采用真实更正系数2。原证明计算的错系数仍按原句保留；不是整个Thm6.2或canonical invariance桥接。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2216](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2216>)（`MD.Ch06.langevinLyapunov`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_physical_lyapunov。
+
+签名SHA256：`e0a33bcfd6593b12e49a07010d79cef0c6e6681e1cbad3e0c548d2ffb8a94806`；原文SHA256：`2de3b34279464da2cf674df50997a80735661682543cfc06c0fc76ad686090be`。
+
+## 1. MD-6.4.4-LieBracket · definition · 印刷p.254 / PDFp.275
+
+### 2. 原文陈述
+
+> The Lie bracket of a pair of vector fields $u(z),v(z)$ is another vector field
+> \[[u,v]=v'u-u'v;\]
+> where $u'$ is the Jacobian matrix of the vector field $u$. In coordinates, if we let $w=[u,v]$, then the coordinates of $w$ are
+> \[w_i=\sum_{j=1}^m\left(u_j\frac{\partial v_i}{\partial z_j}-v_j\frac{\partial u_i}{\partial z_j}\right).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def lieBracket {n : ℕ} (D : Set (Fin n → ℝ)) (_hD : IsOpen D)
+    (u v : (Fin n → ℝ) → (Fin n → ℝ)) (_hu : ContDiffOn ℝ 1 u D)
+    (_hv : ContDiffOn ℝ 1 v D) (x : D) : (Fin n → ℝ) :=
+  MolecularDynamics.Chapter06Review.lieBracket u v x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.lieBracket；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际Fréchet导数括号，具体性质/迭代均要求适当可微字段；其通用辅助函数的非可微总化值不作经典Jacobian解释。有限坐标式由真实fderiv在basis上取分量。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际字段仅需原开域内C¹，输出点属于D，非可微/域外的总化fderiv值不作为经典Jacobian。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2233](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2233>)（`MD.Ch06.lieBracket`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0904141e181e585ad9d65cf2e084edae0b6906186c1165456e5678407e0f6c32`；原文SHA256：`71b849ed3f4ba6309256673e650ed94f9e20da966fe66cf5721ebed7cd7a4453`。
+
+## 1. MD-6.4.4-LieBracketProperties · unnumbered_claim · 印刷p.254 / PDFp.275
+
+### 2. 原文陈述
+
+> The Lie bracket is bilinear and skew symmetric, and the Lie bracket of any vector field with itself is zero.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem lieBracketProperties : ∀ {n : ℕ} (u v w : (Fin n → ℝ) → (Fin n → ℝ)) (a b : ℝ),
+  Differentiable ℝ u → Differentiable ℝ v → Differentiable ℝ w →
+  (MolecularDynamics.Chapter06Review.lieBracket (fun x ↦ a • u x+b • v x) w =
+    fun x ↦ a • MolecularDynamics.Chapter06Review.lieBracket u w x+b • MolecularDynamics.Chapter06Review.lieBracket v w x) ∧
+  (MolecularDynamics.Chapter06Review.lieBracket u (fun x ↦ a • v x+b • w x) =
+    fun x ↦ a • MolecularDynamics.Chapter06Review.lieBracket u v x+b • MolecularDynamics.Chapter06Review.lieBracket u w x) ∧
+  MolecularDynamics.Chapter06Review.lieBracket u v = -MolecularDynamics.Chapter06Review.lieBracket v u ∧
+  MolecularDynamics.Chapter06Review.lieBracket u u=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.lieBracketProperties；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]全部双槽线性、skew及自身零明确，真实全域可微资格；不只保存某一固定字段或单槽例子。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:2240](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2240>)（`MD.Ch06.lieBracketProperties`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/LieBracketProperties.json；blueprint/ch06/validation/short_search/route-4a37aecc3118be0f6372.lean；blueprint/ch06/validation/short_search/route-4a37aecc3118be0f6372.log；blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.lean；blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.log。
+
+签名SHA256：`b318a185b5e79bf0bdbab46fa8ee0159198a1056acbd8d095166f0b5e2ba072f`；原文SHA256：`d140bb17217512fecbf0ff7cbfb4581210bd17097ccc9cf5d3ca05aa23b5aabf`。
+
+## 1. MD-6.4.4-Definition61 · Definition 6.1 · 印刷p.254 / PDFp.275
+
+### 2. 原文陈述
+
+> Definition 6.1 (Hörmander's Condition) Let $U\subset\mathbb R^m$ be open. The SDE (6.43) with $C^\infty$ vector fields $b_0,b_1,\ldots,b_r:U\to\mathbb R^m$ are said to satisfy Hörmander's condition at $z\in U$ if the vector space spanned by the collection of iterated Lie brackets
+> \[b_0,b_1,\ldots,b_r,[b_0,b_1],[b_0,b_2],\ldots,[b_{r-1},b_r],[b_0,[b_0,b_1]],\ldots\]
+> (evaluated at $z$) is $\mathbb R^m$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def definition61 {m S : ℕ} (D : Set (Fin m → ℝ)) (_hD : IsOpen D)
+    (b : Fin (S+1) → ((Fin m → ℝ) → (Fin m → ℝ))) (x : Fin m → ℝ) : Prop :=
+  x ∈ D ∧ (∀ i, ContDiffOn ℝ ∞ (b i) D) ∧ textbookHormanderAt (Set.range b) x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.definition61；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]Fin(S+1)完整包含原drift b0与全部噪声，实际无限次括号及实span；明确C∞字段资格。保留原定义含b0，不冒充一般parabolic噪声生成条件；具体Langevin rank另证。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原开域U和域内点完整保留；坐标字段全空间任意总化只用于函数表示，C∞仅要求在原开域，不要求全局光滑延拓。开域内真实fderiv/全部迭代括号是局部对象。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2271](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2271>)（`MD.Ch06.definition61`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`74bd169fc54808fa440596f0968419c3d25791e0bb0201106721432e3389757a`；原文SHA256：`20e2078644d520dabea7c0d331be7852dd5fbbfcbe251f66f51bd284686d9573`。
+
+## 1. MD-6.4.4-LangevinFields · definition · 印刷p.255 / PDFp.276
+
+### 2. 原文陈述
+
+> For Langevin dynamics we have
+> \[b_0=\begin{bmatrix}p\\-\nabla U(q)-\gamma p\end{bmatrix};\qquad b_i=\sigma\begin{bmatrix}0\\e_i\end{bmatrix},\quad i=1,\ldots,N_c,\]
+> where $\sigma=\sqrt{2\gamma k_BT}$ and $e_i$ is the $i$th coordinate unit vector in $\mathbb R^{N_c}$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+noncomputable def langevinDrift {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ : ℝ) (_hU : ContDiff ℝ ∞ U) : textbookLangevinPhase Nc → textbookLangevinPhase Nc :=
+  fun z ↦ (z.2, textbookPotentialForce U z.1 - γ • z.2)
+
+def langevinNoise (Nc : ℕ) (σ : ℝ) (i : Fin Nc) :
+    textbookLangevinPhase Nc → textbookLangevinPhase Nc := fun _ ↦ (0, σ • Pi.single i 1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinDrift；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际全部2Nc相空间坐标的真实drift/noise，C∞势资格编码，通用σ在物理定理取√(2γkBT)；不把noise定义计作独立Wiener law或密度存在证明。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2277](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2277>)（`MD.Ch06.langevinDrift`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`dea9bce38cbe7ddf77c174f383ae54fc7348eeb2675dcdcb141b5dcee89577a0`；原文SHA256：`ec522d8d58294a1dab2ca0eebc9dd4166eaf29bfc3dd9c9ecc83f0495748abf3`。
+
+## 1. MD-6.4.4-LangevinNoiseBracket · unnumbered_claim · 印刷p.255 / PDFp.276
+
+### 2. 原文陈述
+
+> For $i=1,\ldots,N_c$, using the fact that $b_i$ is a constant vector field and so its Jacobian matrix vanishes,
+> \[[b_0,b_i]=-\begin{bmatrix}0&I\\-U''(q)&-\gamma I\end{bmatrix}b_i
+> =-\sigma\begin{bmatrix}e_i\\-\gamma e_i\end{bmatrix}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem langevinNoiseBracket {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ 2 U) (γ σ : ℝ)
+    (i : Fin Nc) (z : textbookLangevinPhase Nc) :
+    VectorField.lieBracket ℝ (textbookLangevinDrift U γ) (textbookLangevinNoise Nc σ i) z =
+      (-σ • Pi.single i 1, (σ * γ) • Pi.single i 1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinNoiseBracket；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实C²势的Fréchet Jacobian、全部噪声坐标；σ任意，非零条件在独立性条明确。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2286](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2286>)（`MD.Ch06.langevinNoiseBracket`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinDrift_noise_bracket。
+
+签名SHA256：`033e8a46b38fdc66a76860efde5ece56f854bf78d3b2bbd6ac5148e858b65c69`；原文SHA256：`78ab6a3dc2103ba15beb79881018a911b0920b6ae11fbb2f4850f82f60f9a6af`。
+
+## 1. MD-6.4.4-LangevinBracketIndependent · unnumbered_claim · 印刷p.255 / PDFp.276
+
+### 2. 原文陈述
+
+> These $N_c$ vectors, taken together with the original $b_i$, clearly provide a linearly independent set of $2N_c$ vectors.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem langevinBracketIndependent (Nc : ℕ) (γ σ : ℝ) (hσ : σ ≠ 0) :
+    LinearIndependent ℝ (textbookLangevinBracketFamily Nc γ σ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinBracketIndependent；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实Fin Nc⊕Fin Nc的全部2Nc向量族、σ≠0；不以维数计数代替独立性。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2295](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2295>)（`MD.Ch06.langevinBracketIndependent`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinBracketFamily_linearIndependent。
+
+签名SHA256：`9e340fe61cff0d5188b9922ef1f6f19dcdaefac0c49a114d8a4b919b54606a54`；原文SHA256：`dc5c6a9f48c4a7ea80ff7f79a489785c2e4cb4f9daa41101d3fc07ffa760a30d`。
+
+## 1. MD-6.4.4-LangevinHormander · unnumbered_claim · 印刷p.255 / PDFp.276
+
+### 2. 原文陈述
+
+> We have verified Hörmander's condition. Thus Assumption 1(ii) holds in the case of Langevin dynamics.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem langevinHormander {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (γ θ : ℝ)
+    (hγ : 0 < γ) (hθ : 0 < θ) (z : textbookLangevinPhase Nc) :
+    textbookHormanderAt (textbookLangevinSeed U γ (Real.sqrt (2 * γ * θ))) z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinHormander；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整物理σ=√(2γθ)、γ/θ>0、C∞ U的实际噪声及括号span；本桥只证rank，转移密度存在另条未证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2301](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2301>)（`MD.Ch06.langevinHormander`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevin_hormander_physicalNoise。
+
+签名SHA256：`57c98f3a0aba75cd24738f0ca0e5e091c6ed8a6170e7eb908f36991807fd4f0c`；原文SHA256：`9ba585dbaaf72d4ff27264112001e320645fd42bd2d95359b8081195f1bf111b`。
+
+## 1. MD-6.4.4-LangevinTransitionDensity · unnumbered_claim · 印刷p.255 / PDFp.276
+
+### 2. 原文陈述
+
+> Thus Assumption 1(ii) holds in the case of Langevin dynamics.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem langevinTransitionDensity :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U) (β γ : ℝ)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U))
+    {Ω : Type*} [MeasurableSpace Ω] (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω),
+  textbookIsWienerVector B P → 0 < β → 0 < γ →
+  ∃ ρ : textbookLangevinPeriodicPhase n → textbookLangevinPeriodicPhase n → ℝ → ℝ,
+    (∀ x z t, 0 < t → 0 ≤ ρ x z t) ∧
+    ContinuousOn (fun w : (textbookLangevinPeriodicPhase n × textbookLangevinPeriodicPhase n) × ℝ ↦
+      ρ w.1.1 w.1.2 w.2) (univ ×ˢ Ioi 0) ∧
+    ∀ (t : ℝ≥0), 0 < t → ∀ x A, MeasurableSet A →
+      textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*β⁻¹)) t x A =
+        ∫⁻ z in A, ENNReal.ofReal (ρ x z t) ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinTransitionDensity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]具体实际单位周期Langevin、C∞势、正γ/β，全部点初值的正时间连续转移密度及真实平坦相空间测度表示；没有从含drift的任意原Definition6.1断言一般parabolic密度定理。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2309](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2309>)（`MD.Ch06.langevinTransitionDensity`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺实际Langevin hypoelliptic/Malliavin转移密度存在桥接；不建设大型理论。
+
+签名SHA256：`ab8a63f5335eee836b8201f812ba169d81b9690fea39bf1e3255324692768e79`；原文SHA256：`6771708b5ead3b3bfb398e1f6d2fab20cc34c2fd17c5d58ca6a40a56a5a6fb57`。
+
+## 1. MD-6.4.4-Lemma61Printed · Lemma 6.1 · 印刷p.255 / PDFp.276
+
+### 2. 原文陈述
+
+> Lemma 6.1 For all $t>0$ and all open $C\subset D$, we have that
+> \[\Pr(X(t)\in C\mid X(0)=X_0)>0,\quad\forall X_0\in D,\]
+> where $X(t)=(q(t),p(t))^T$ is a solution to Langevin dynamics (6.47).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem lemma61Printed :
+  ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (P : Measure Ω) (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (m : MolecularDynamics.Chapter06Review.V n) (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (γ β : ℝ) (x0 : MolecularDynamics.Chapter06Review.Phase n) (X : ℝ → Ω → MolecularDynamics.Chapter06Review.Phase n),
+  textbookIsWienerVector B P → (∀ i, 0 < m i) → ContDiff ℝ ∞ U →
+  0 < γ → 0 < β → MolecularDynamics.Chapter06Review.langevinMassSDE P (fun t sample ↦ B t.toNNReal sample) X m U γ β⁻¹ x0 →
+  (∀ t : ℝ, 0 ≤ t → AEMeasurable (X t) P) →
+  ∀ t : ℝ, 0 < t → ∀ C : Set (MolecularDynamics.Chapter06Review.Phase n), IsOpen C → 0 < P {sample | X t sample ∈ C}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.lemma61Printed；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 字面all open C包括空集，概率为0；需Nonempty。原(6.47)单位质量，旧清单一般质量扩展须另标技术范围。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2326](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2326>)（`MD.Ch06.lemma61Printed`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：保留原缺非空的完整字面断言，不证；下一条桥接原单位周期实际过程的完整非空版本。
+
+签名SHA256：`cbb897aa469f9070586bfae6a015c6147b28e8c2d11c0a34f4d790d4d816810c`；原文SHA256：`bcb792ed5a73385a4e6e6bccc33f527e330ce892605682894114fa1d7bc4e864`。
+
+## 1. MD-6.4.4-Lemma61Nonempty · unnumbered_claim · 印刷p.255 / PDFp.276
+
+### 2. 原文陈述
+
+> \[\Pr(X(t)\in C\mid X(0)=X_0)>0,\quad\forall X_0\in D.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem lemma61Nonempty {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin N → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P)
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (γ σ : ℝ) (T : ℝ≥0) (hT : (0 : ℝ) < T)
+    (hσ : σ ≠ 0) (x : textbookLangevinPeriodicPhase N)
+    (C : Set (textbookLangevinPeriodicPhase N)) (hC : IsOpen C) (hCN : C.Nonempty) :
+    0 < textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ T x C
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.lemma61Nonempty；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]补非空目标；桥接实际单位周期相空间、原单位质量、真实Wiener/实际完整Langevin核，σ≠0。原一般质量扩大版不计已证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2338](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2338>)（`MD.Ch06.lemma61Nonempty`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinPeriodicTransitionKernel_open_pos。
+
+签名SHA256：`14609a20a597ff7367860229766c5135ed814d6793fba2e128c76b0edff3701c`；原文SHA256：`9a1c8a9a54bc673213441d8d9cfb58b58ed7787852d0052b2efb87a133a81661`。
+
+## 1. MD-6.4.4-ControlPath · unnumbered_claim · 印刷p.255 / PDFp.276
+
+### 2. 原文陈述
+
+> Consider the ODE
+> \[\frac{d^2q}{dt^2}+\nabla U(q)+\gamma\frac{dq}{dt}=\sigma\frac{dR}{dt}.\tag{6.49}\]
+> Choose $q$ to be a $C^\infty$ path such that for a given $t>0$,
+> \[(q(0),\dot q(0))^T=X_0;\quad(q(t),\dot q(t))^T=y.\]
+> Taking $R(0)=0$, we can obtain a $C^\infty$ function $dR/dt$ by substitution.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem controlPath {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (γ σ T : ℝ)
+    (hσ : σ ≠ 0) (hT : 0 < T) (x y : textbookLangevinPhase Nc) :
+    ∃ q p R : ℝ → (Fin Nc → ℝ),
+      ContDiff ℝ ∞ q ∧ ContDiff ℝ ∞ p ∧ ContDiff ℝ ∞ R ∧
+      q 0 = x.1 ∧ p 0 = x.2 ∧ q T = y.1 ∧ p T = y.2 ∧ R 0 = 0 ∧
+      ∀ t, HasDerivAt q (p t) t ∧
+        HasDerivAt p (textbookPotentialForce U (q t) - γ • p t + σ • deriv R t) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.controlPath；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整实际任意位置/速度端点、q/p/R全光滑、R0=0及真实全时ODE；σ≠0，未冒充随机正概率。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2349](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2349>)（`MD.Ch06.controlPath`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinControlledEndpoint。
+
+签名SHA256：`ad9e759fb5e4f67accff4669f658e3e62937060a38619b6233becae748fbba45`；原文SHA256：`6067d6f51339b04993544be7c5817060336b29eded74d2a6b8bb807d34165eaa`。
+
+## 1. MD-6.4.4-ControlEndpointStable · unnumbered_claim · 印刷p.256 / PDFp.277
+
+### 2. 原文陈述
+
+> For any $\delta>0$, there exists a sufficiently small $\varepsilon>0$ such that if a realization of the Wiener process $W$ remains close to our solution $R$,
+> \[\sup_{0\le s\le t}\|W(s)-R(s)\|\le\varepsilon,\tag{6.50}\]
+> then $X(t)\in B_\delta(y)$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem controlEndpointStable {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (γ σ T δ : ℝ)
+    (hσ : σ ≠ 0) (hT : 0 < T) (hδ : 0 < δ) (x y : textbookLangevinPhase Nc) :
+    ∃ ε > 0, ∀ W q p : ℝ → (Fin Nc → ℝ),
+      textbookLangevinIntegralSolution U γ σ T x W q p →
+      (∀ t ∈ Icc 0 T, ‖W t - textbookLangevinControlPath U γ σ T x y t‖ ≤ ε) →
+      dist (q T, p T) y < δ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.controlEndpointStable；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际完整受控积分方程和原平滑势局部cutoff稳定性，全部端点/δ/ε；未假设全局Lipschitz势，原环面投影由上一真实核桥接。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2361](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2361>)（`MD.Ch06.controlEndpointStable`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinControlledEndpoint_stable。
+
+签名SHA256：`c6a35d554b709049ba995aae6c5c6c78de3c83edbeecfa1fd7a173aa067b66b3`；原文SHA256：`64c1045cea2623bc9dc85800e1e83aa0a220ef4560b42dec817ae440e13c0101`。
+
+## 1. MD-6.4.4-WienerControlTube · unnumbered_claim · 印刷p.256 / PDFp.277
+
+### 2. 原文陈述
+
+> The event (6.50) is shown in [349] to have positive probability for any $\varepsilon>0$, and hence the required property is shown for any open set.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem wienerControlTube {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P)
+    (T : ℝ) (hT : 0 < T) (R : ℝ → (Fin Nc → ℝ)) (hR : Continuous R)
+    (hR0 : R 0 = 0) (ε : ℝ) (hε : 0 < ε) :
+    0 < P (textbookWienerVectorRealControlTube B T R ε)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.wienerControlTube；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整实际标准多维Wiener法则、真实连续控制R0=0、T/ε>0及sup管道事件；非仅某单时Gaussian边际。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2372](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2372>)（`MD.Ch06.wienerControlTube`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookWienerVectorRealControlTube_pos。
+
+签名SHA256：`74dbe82e0bcb4fadbfcc529743fd5b1cde5de5d15a78ea382fe4f1863b7e023c`；原文SHA256：`485ede08e15274fa017f624c36771a05971bfbfbedac292ef1527091995115e7`。
+
+## 1. MD-6.4.4-LangevinCanonicalStationary · unnumbered_claim · 印刷p.256 / PDFp.277
+
+### 2. 原文陈述
+
+> Langevin dynamics is geometrically ergodic with respect to the canonical distribution
+> \[\rho_\beta(q,p)=\exp(-\beta H(q,p)),\]
+> where it is easily checked that
+> \[\mathcal L_{LD}^*\rho_\beta=0.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem langevinCanonicalStationary {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β γ : ℝ) (hβ : 0 < β) (hγ : 0 < γ) (z : textbookLangevinPhase N) :
+    textbookLangevinForwardDifferentialOperator U γ (Real.sqrt (2 * γ * β⁻¹))
+      (fun y ↦ textbookLangevinCanonicalDensity U β (textbookLangevinPeriodicProjection y)) z = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinCanonicalStationary；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际归一canonical density（原式缺Z为未归一权重，常数不影响微分式）、全部相空间点及物理噪声；这里只证stationary differential expression，真实invariance/ergodicity在下一条。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2381](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2381>)（`MD.Ch06.langevinCanonicalStationary`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinForwardDifferentialOperator_physical_canonical_eq_zero。
+
+签名SHA256：`5455b74c0c4779dcd75a9d302c546897385b9b6e762ac1b4693f2d768e4c650e`；原文SHA256：`9817e22ab9acedd87a6f8be15e51e633c4d4625cde568657873fed37d4242e84`。
+
+## 1. MD-6.4.4-LangevinGeometricErgodicity · unnumbered_claim · 印刷p.256 / PDFp.277
+
+### 2. 原文陈述
+
+> Hence Langevin dynamics is geometrically ergodic with respect to the canonical distribution.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem langevinGeometricErgodicity :
+  ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω) (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U))
+    (γ β : ℝ) (hβ : 0 < β), textbookIsWienerVector B P → 0 < γ →
+  MolecularDynamics.Chapter06Review.invariantKernel (textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*β⁻¹)))
+    (textbookLangevinCanonicalMeasure U β hβ) ∧
+  (∀ ν : Measure (textbookLangevinPeriodicPhase n), IsProbabilityMeasure ν →
+    MolecularDynamics.Chapter06Review.invariantKernel
+      (textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*β⁻¹))) ν →
+    ν=textbookLangevinCanonicalMeasure U β hβ) ∧
+  ∀ l : ℕ, 1 ≤ l → ∃ C lambdaParam : ℝ, 0 < C ∧ 0 < lambdaParam ∧
+    ∀ x : textbookLangevinPeriodicPhase n, ∀ f : textbookLangevinPeriodicPhase n → ℝ,
+      Measurable f → (∀ y, |f y| ≤ (1+‖y.2‖^2)^l) → ∀ t : ℝ≥0,
+      |MolecularDynamics.Chapter06Review.kernelAverage
+        (textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*β⁻¹))) f t x
+        -(∫ z, f z ∂textbookLangevinCanonicalMeasure U β hβ)| ≤
+        C*(1+‖x.2‖^2)^l*Real.exp (-lambdaParam*(t : ℝ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinGeometricErgodicity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际单位周期Langevin完整Gibbs不变/唯一概率及任意l≥1全部可测加权可积观测量的统一指数估计，常数在x/f/t之外；有界周期U使H^l与(1+‖p‖²)^l等价，没有弱化为紧支函数。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2390](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2390>)（`MD.Ch06.langevinGeometricErgodicity`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺实际transition density、Harris/minorization及canonical invariance完整桥接；保留sorry，不恢复Thm6.2封存长证明。
+
+签名SHA256：`cf7291dad534111dbf25b4d0b26a5c9782d9f87460195f82a29b60adf9f80755`；原文SHA256：`7321df959bd28550f2ef48a351e1b8cb24debe13729d8b6a3683581f3669e07e`。
+
+## 1. MD-6.4.4-LangevinTimeAverage · unnumbered_claim · 印刷p.256 / PDFp.277
+
+### 2. 原文陈述
+
+> Hence averages along solutions to (6.47) will converge to the spatial average with respect to $\rho_\beta$. Thus, Langevin dynamics is a useful tool for sampling the canonical distribution, as we may sample $\rho_\beta$ by computing solutions to the SDE.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem langevinTimeAverage :
+  ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω) (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (_hU : ContDiff ℝ ∞ U) (_hp : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U))
+    (γ β : ℝ) (hβ : 0 < β), textbookIsWienerVector B P → 0 < γ →
+  ∀ x : textbookLangevinPeriodicPhase n, ∀ f : textbookLangevinPeriodicPhase n → ℝ,
+    Measurable f →
+    (∃ l : ℕ, ∃ C : ℝ, 0 ≤ C ∧ ∀ y, |f y| ≤ C*(1+‖y.2‖^2)^l) → ∀ᵐ sample ∂P,
+      Tendsto (fun T : ℝ ↦ T⁻¹ * ∫ s in 0..T,
+        f (textbookLangevinPeriodicGlobalRandomPhase U L hF γ (Real.sqrt (2*γ*β⁻¹)) x B s sample))
+        atTop (𝓝 (∫ z, f z ∂textbookLangevinCanonicalMeasure U β hβ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinTimeAverage；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际同一全时随机周期Langevin轨迹，任意点初始状态、全部可测多项式动量增长观测量、几乎处处时间均值；不把初始density的ensemble衰减当轨迹时间均值。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2413](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2413>)（`MD.Ch06.langevinTimeAverage`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺实际canonical唯一不变/遍历及weighted观测量强大数桥接；不建设大型理论。
+
+签名SHA256：`0e693808fb086cad5e71c929a58a23c6f98059506f004fc1ccb2100e00955d8f`；原文SHA256：`fe1be5dfe011f810a34b4a79daa3306f2eb9a01c6308ba65774befb2c95e2aae`。
+
+## 1. MD-6.4.4-WeightedH1 · definition · 印刷p.256 / PDFp.277
+
+### 2. 原文陈述
+
+> We denote by $H^1(\mu)$ the space of functions $f(q,p)$ defined on $D=\mathbb T^{N_c}\times\mathbb R^{N_c}$ with bounded norm
+> \[\|f\|_{H^1(\mu)}^2\stackrel{\mathrm{def}}=\|f\|_{L^2(\mu)}^2+\|\nabla_qf\|_{L^2(\mu)}^2+\|\nabla_pf\|_{L^2(\mu)}^2.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def weightedH1 {N : ℕ} (U : (Fin N → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) : Type :=
+  textbookLangevinCanonicalWeakH1 U hU hp β hβ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.weightedH1；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际Gibbs加权弱导数闭图及AE商的完整Hilbert H1；不是smooth jet子集，函数/导数投影和范数下一条明确。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2429](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2429>)（`MD.Ch06.weightedH1`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2df7ea14776764e4158f05ac5b2335735f2d54c70e85207909f2fd67f94faafb`；原文SHA256：`5ec9a895e8c2f6bb2004e594e2bef9a73bac57af879feb4c5080a319bd19ab48`。
+
+## 1. MD-6.4.4-WeightedH1Norm · unnumbered_claim · 印刷p.257 / PDFp.278
+
+### 2. 原文陈述
+
+> \[\|f\|_{L^2(\mu)}^2=\int_D f^2\mu(d\omega);\qquad
+> \|w\|_{L^2(\mu)}^2=\sum_{i=1}^{N_c}\|w_i\|_{L^2(\mu)}^2.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem weightedH1Norm {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β : ℝ) (hβ : 0 < β) (f : textbookLangevinCanonicalWeakH1 U hU hp β hβ) :
+    ‖f‖ ^ 2 = ‖textbookLangevinCanonicalWeakH1Value U hU hp β hβ f‖ ^ 2 +
+      (∑ i : Fin N, ‖textbookLangevinCanonicalWeakH1Derivative U hU hp β hβ (Sum.inl i) f‖ ^ 2) +
+      (∑ i : Fin N, ‖textbookLangevinCanonicalWeakH1Derivative U hU hp β hβ (Sum.inr i) f‖ ^ 2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.weightedH1Norm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际全部位置/动量弱导数的L²范数平方和；真实函数/弱导数投影定义随compact依赖闭包给出。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:2435](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2435>)（`MD.Ch06.weightedH1Norm`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinCanonicalWeakH1_norm_sq。
+
+签名SHA256：`79fc1816c8f3e4d894c67c87181265f46aa75a8eb34ee76bac6ec718c3773e71`；原文SHA256：`04d2865ca5a87152bd36964de646ae81e2652cf04988f805c555920ad3d035cb`。
+
+## 1. MD-6.4.4-Proposition64Printed · Proposition 6.4 · 印刷p.257 / PDFp.278
+
+### 2. 原文陈述
+
+> Proposition 6.4 Let $U$ be $C^\infty$ on the position domain $Q=\mathbb T^{N_c}$ and suppose $g\in H^1(\mu)$ satisfies
+> \[\int_D g\,d\rho_\beta=0,\]
+> where $\rho_\beta$ is the canonical measure, then the Poisson equation
+> \[\mathcal L_{LD}^*\varphi=g\]
+> has a solution $\varphi\in H^1(\mu)$ which is unique up to addition of a constant multiple of the Gibbs density.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem proposition64Printed :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β γ : ℝ) (hβ : 0 < β), 0 < γ →
+  ∀ g : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+    (∫ x, textbookLangevinCanonicalWeakH1Value U hU hp β hβ g x ∂textbookLangevinCanonicalMeasure U β hβ)=0 →
+    ∃ φ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+      MolecularDynamics.Chapter06Review.flatForwardWeak U β γ (textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ)
+        (textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) ∧
+      ∀ ψ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+        MolecularDynamics.Chapter06Review.flatForwardWeak U β γ (textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ)
+          (textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) →
+        ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ,
+          textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ x -
+            textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ x = c*textbookLangevinCanonicalDensity U β x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.proposition64Printed；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 印刷flat forward PDE与Gibbs加权mean-zero/adjoint pairing混用；测度及density-vs-relative-density选择待导师，原式完整保留。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2445](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2445>)（`MD.Ch06.proposition64Printed`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：无现成整条桥接；不恢复封存Prop6.4长证明，保留sorry。
+
+签名SHA256：`2c8ef78d53a137b70501b93885bb71e17f5fb98ff00281d99d73221190b39845`；原文SHA256：`2563798bfb722fdf2ea6565097e8209df27e160d441368f0b403e6de41bf1cd0`。
+
+## 1. MD-6.4.4-Proposition64Relative · unnumbered_claim · 印刷p.257 / PDFp.278
+
+### 2. 原文陈述
+
+> \[\mathcal L_{LD}^*\varphi=g.\] The solution is unique up to addition of a constant multiple of the Gibbs density.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem proposition64Relative :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β γ : ℝ) (hβ : 0 < β), 0 < γ →
+  let A := (textbookLangevinCanonicalHilbertClosedOperator U β γ (Real.sqrt (2*γ*β⁻¹)) hβ).adjoint
+  ∀ g : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+    (∫ x, textbookLangevinCanonicalWeakH1Value U hU hp β hβ g x ∂textbookLangevinCanonicalMeasure U β hβ)=0 →
+    ∃ φ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+      (textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ,
+        textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) ∈ A.graph ∧
+      ∀ ψ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+        (textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ,
+          textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) ∈ A.graph →
+        ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ,
+          textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ x -
+            textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ x=c
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.proposition64Relative；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确相对Gibbs密度坐标，实际加权Hilbert闭算子adjoint图与完整H1、加权零均值、解存在/唯一模常数；与印刷flat-density Gibbs倍数版分列，非静默纠错。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2464](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2464>)（`MD.Ch06.proposition64Relative`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺实际加权adjoint域、compact resolvent与rough kernel；无现成整条桥接保留sorry，封存不恢复。
+
+签名SHA256：`527b43948f01543edc6cf4f6b61abd138dfe1ee82ffc12c9330ea40245ac1f0e`；原文SHA256：`e0256686d879b11b48296e20c9ef9af5709d1e090553108716a0890edea87e46`。
+
+## 1. MD-6.4.4-FredholmAlternative · unnumbered_claim · 印刷p.257 / PDFp.278
+
+### 2. 原文陈述
+
+> The Fredholm Alternative says that, for a linear operator $A$ with compact resolvent, we have one of the following two conditions:
+> • $A\varphi=g$ has a solution.
+> • There is a function $y$ with $A^*y=0$ and $\langle y,g\rangle\ne0$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem fredholmAlternative :
+  ∀ {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [CompleteSpace E] (A : E →ₗ.[ℝ] E), Dense (A.domain : Set E) → IsClosed (A.graph : Set (E × E)) →
+  (∃ R : E →L[ℝ] E, IsCompactOperator R ∧
+    (∀ x, (R x, R x-x) ∈ A.graph) ∧
+    ∀ x y, (y,y-x) ∈ A.graph → y=R x) →
+  ∀ g : E, (∃ φ : E, (φ,g) ∈ A.graph) ↔ ∀ y : E, (y,0) ∈ A.adjoint.graph → ⟪y,g⟫_ℝ=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.fredholmAlternative；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际稠密域闭Hilbert partialoperator图、actual adjoint以及shift1的完整紧resolvent（含逆的存在/唯一）；全部g可解当且仅当adjoint kernel正交，没有假设目标可解性。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2484](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2484>)（`MD.Ch06.fredholmAlternative`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺一般closed partialoperator的Fredholm alternative现成完整桥接；不建设大型谱理论。
+
+签名SHA256：`f95ff07cc96c236d01752b183dbeb708895b4bb18f640089deff7306f3d53cf1`；原文SHA256：`8504209e3bb7392a1512c3628be4bb1d42ce799df2b6585e9c3e2d26cbffa078`。
+
+## 1. MD-6.4.4-BackwardKernelConstants · unnumbered_claim · 印刷p.257 / PDFp.278
+
+### 2. 原文陈述
+
+> In our case, $A=\mathcal L_{LD}^*$. The only solutions of $\mathcal L_{LD}y=0$ (conserved quantities of Langevin dynamics) are the constants.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem backwardKernelConstants :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (_hU : ContDiff ℝ ∞ U) (_hp : textbookUnitPeriodicPotential U)
+    (β γ : ℝ) (hβ : 0 < β), 0 < γ →
+  ∀ f : Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ),
+    (f,0) ∈ (textbookLangevinCanonicalHilbertClosedOperator U β γ (Real.sqrt (2*γ*β⁻¹)) hβ).graph →
+    ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ, f x=c
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.backwardKernelConstants；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实Gibbs加权Lp²闭backward operator图的全部粗域元素；不能用已证C0固定观测量特例替代。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2495](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2495>)（`MD.Ch06.backwardKernelConstants`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：rough加权Hilbert generator kernel尚缺完整桥接；CanonicalKernelConstant封存长证明不恢复。
+
+签名SHA256：`cc9c32ec6eda76ed58b7cde692b10245eb3194c3febe0955cae0966d4ce64a61`；原文SHA256：`e9001d759ee3d03dac706f801f4f5cc2375bd07ccbb909630385e760d4423bb6`。
+
+## 1. MD-6.4.4-ForwardKernelGibbs · unnumbered_claim · 印刷p.257 / PDFp.278
+
+### 2. 原文陈述
+
+> If we have two solutions $\varphi_1,\varphi_2$ of $\mathcal L_{LD}^*\varphi=g$, then their difference $w$ must be a solution of $\mathcal L_{LD}^*w=0$ and the only such solution is a constant multiple of the Gibbs density $\rho_\beta$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem forwardKernelGibbs : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U) (β γ : ℝ) (hβ : 0 < β),
+  0 < γ → ∀ w : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+    MolecularDynamics.Chapter06Review.flatForwardWeak U β γ
+      (textbookLangevinCanonicalWeakH1Value U hU hp β hβ w) 0 →
+    ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ,
+      textbookLangevinCanonicalWeakH1Value U hU hp β hβ w x=c*textbookLangevinCanonicalDensity U β x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.forwardKernelGibbs；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整原flat forward弱PDE与真实H1类，全部stationary modes为Gibbs倍数；相对加权adjoint kernel对应常数而非Gibbs，不能混同二者。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2506](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2506>)（`MD.Ch06.forwardKernelGibbs`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺flat forward弱域与实际adjoint/relative坐标转换、kernel识别；不恢复封存长证明。
+
+签名SHA256：`2ce21e7f2b4cc9c6b2ab891aa0a3271954ef6e8de372fde56a2fbe91dbfcd1dd`；原文SHA256：`40b10496122e107c62d5b8f713718276d992612208837fe3ef24b0723d569c19`。
+
+## 1. MD-6.4.4-WeightedFunctionNorm · definition · 印刷p.256 / PDFp.277
+
+### 2. 原文陈述
+
+> \[\|f\|_{L^2(\mu)}^2=\int_D f^2\mu(d\omega).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def weightedFunctionNorm {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (f : Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) : ℝ := ‖f‖^2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.weightedFunctionNorm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际Lp² AE类范数；Mathlib的eLpNorm定义为真实二阶积分，不把任意非可积函数的默认Bochner积分当范数。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2517](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2517>)（`MD.Ch06.weightedFunctionNorm`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`46bd6d3ab1ae6fc84025d3811daf5808ff516d4845fc58d92fe8ab71c564e86a`；原文SHA256：`4021b8d37311d7b2a4f0579a693f44d496f8d0228e777aba717b5dd3a37466e5`。
+
+## 1. MD-6.4.4-WeightedVectorNorm · definition · 印刷p.257 / PDFp.278
+
+### 2. 原文陈述
+
+> For a vector function $w:D\to\mathbb R^{N_c}$, we have
+> \[\|w\|_{L^2(\mu)}^2=\sum_{i=1}^{N_c}\|w_i\|_{L^2(\mu)}^2.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def weightedVectorNorm {n r : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (w : Fin r → Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) : ℝ := ∑ i, ‖w i‖^2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.weightedVectorNorm；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整任意维度的所有真实L²分量，弱导数族使用同一实际Gibbs测度；不遗漏向量范数定义。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2522](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2522>)（`MD.Ch06.weightedVectorNorm`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c02f15325ce9cee032042052a69dc4a60568c0fffa9415569eca2912ef13b314`；原文SHA256：`1d8086e6ee2fd6ba5563b5cedffc77a3c18339897596b65787ba40d8f4a8c503`。

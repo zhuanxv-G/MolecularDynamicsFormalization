@@ -1,0 +1,21 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "reason": "原生诊断已定位该目标内错误；另有检索背景命名空间错误，未据本次报告其他目标通过。",
+    "source": "blueprint/ch06/validation/short_search/route-4a37aecc3118be0f6372.lean",
+    "log": "blueprint/ch06/validation/short_search/route-4a37aecc3118be0f6372.log",
+    "source_sha256": "2633dfd413e57feb69526f1fdbb04c7e2c6d9edcd458d36001a8631463d8c734",
+    "log_sha256": "40d30f6eaa9fb40939cb8e1dd040bf38d971b32257d52810eb3d4ed4e3a13f7a"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro n u v w a b hu hv hw\n  have hb : ∀ (u v : (Fin n → ℝ) → (Fin n → ℝ)),\n      MolecularDynamics.Chapter06Review.lieBracket u v=VectorField.lieBracket ℝ u v :=\n    fun u v ↦ rfl\n  simp_rw [hb]\n  refine ⟨?_,?_,?_,?_⟩\n  · funext x\n    change VectorField.lieBracket ℝ (a • u+b • v) w x = _\n    rw [VectorField.lieBracket_add_left ((hu x).const_smul a) ((hv x).const_smul b),\n      VectorField.lieBracket_const_smul_left (hu x),\n      VectorField.lieBracket_const_smul_left (hv x)]\n  · funext x\n    change VectorField.lieBracket ℝ u (a • v+b • w) x = _\n    rw [VectorField.lieBracket_add_right ((hv x).const_smul a) ((hw x).const_smul b),\n      VectorField.lieBracket_const_smul_right (hv x),\n      VectorField.lieBracket_const_smul_right (hw x)]\n  · funext x\n    exact VectorField.lieBracket_swap\n  · exact VectorField.lieBracket_self",
+    "source": "blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.lean",
+    "log": "blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.log",
+    "source_sha256": "939d9687e0c870d25837c432dadc8802801cf3d2fa17533c469c4b84932d7453",
+    "log_sha256": "ab99cf0539652713d5fb67e45e2d36bd9cd8b226112e943ec8ea41a2fc24a543"
+  }
+]

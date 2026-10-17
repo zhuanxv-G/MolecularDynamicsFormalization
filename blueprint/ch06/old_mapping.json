@@ -94,37 +94,37 @@
     "CH06-094": "MD-6.4.3-BrownianSpectralGap",
     "CH06-093": "MD-6.4.3-BrownianNegativeDefinitePrinted",
     "CH06-095": "MD-6.4.3-BrownianEnsembleExponential",
-    "CH06-086": "MD-6.4.2-OUDensityCorrect"
+    "CH06-086": "MD-6.4.2-OUDensityCorrect",
+    "CH06-096": "MD-6.4.4-Assumption1Correct",
+    "CH06-097": "MD-6.4.4-Assumption2",
+    "CH06-098": "MD-6.4.4-MinorizationCorrectedImplication",
+    "CH06-099": "MD-6.4.4-Theorem62",
+    "CH06-100": "MD-6.4.4-PeriodicConfiningPrinted",
+    "CH06-101": "MD-6.4.4-HamiltonianPower",
+    "CH06-109": "MD-6.4.4-LangevinFields",
+    "CH06-102": "MD-6.4.4-HamiltonianPowerGenerator",
+    "CH06-103": "MD-6.4.4-LaplacianBoundCorrect",
+    "CH06-104": "MD-6.4.4-LaplacianBoundCorrect",
+    "CH06-105": "MD-6.4.4-LangevinLyapunov",
+    "CH06-106": "MD-6.4.4-LieBracket",
+    "CH06-107": "MD-6.4.4-LieBracketProperties",
+    "CH06-108": "MD-6.4.4-Definition61",
+    "CH06-110": "MD-6.4.4-LangevinBracketIndependent",
+    "CH06-111": "MD-6.4.4-LangevinHormander",
+    "CH06-112": "MD-6.4.4-LangevinTransitionDensity",
+    "CH06-113": "MD-6.4.4-Lemma61Nonempty",
+    "CH06-114": "MD-6.4.4-ControlPath",
+    "CH06-115": "MD-6.4.4-ControlEndpointStable",
+    "CH06-116": "MD-6.4.4-WienerControlTube",
+    "CH06-117": "MD-6.4.4-LangevinCanonicalStationary",
+    "CH06-118": "MD-6.4.4-LangevinTimeAverage",
+    "CH06-119": "MD-6.4.4-WeightedFunctionNorm",
+    "CH06-120": "MD-6.4.4-WeightedVectorNorm",
+    "CH06-121": "MD-6.4.4-Proposition64Relative",
+    "CH06-122": "MD-6.4.4-FredholmAlternative",
+    "CH06-123": "MD-6.4.4-ForwardKernelGibbs"
   },
   "pending": [
-    "CH06-096",
-    "CH06-097",
-    "CH06-098",
-    "CH06-099",
-    "CH06-100",
-    "CH06-101",
-    "CH06-102",
-    "CH06-103",
-    "CH06-104",
-    "CH06-105",
-    "CH06-106",
-    "CH06-107",
-    "CH06-108",
-    "CH06-109",
-    "CH06-110",
-    "CH06-111",
-    "CH06-112",
-    "CH06-113",
-    "CH06-114",
-    "CH06-115",
-    "CH06-116",
-    "CH06-117",
-    "CH06-118",
-    "CH06-119",
-    "CH06-120",
-    "CH06-121",
-    "CH06-122",
-    "CH06-123",
     "CH06-124",
     "CH06-125",
     "CH06-126"
@@ -519,6 +519,112 @@
     "CH06-086": [
       "MD-6.4.2-OUDensityPrinted",
       "MD-6.4.2-OUDensityCorrect"
+    ],
+    "CH06-096": [
+      "MD-6.4.4-Assumption1Printed",
+      "MD-6.4.4-Assumption1Correct"
+    ],
+    "CH06-097": [
+      "MD-6.4.4-Assumption2"
+    ],
+    "CH06-098": [
+      "MD-6.4.4-MinorizationPrinted",
+      "MD-6.4.4-MinorizationCorrectedImplication"
+    ],
+    "CH06-099": [
+      "MD-6.4.4-Theorem62"
+    ],
+    "CH06-100": [
+      "MD-6.4.4-PeriodicPotentialBound",
+      "MD-6.4.4-PotentialNormalization",
+      "MD-6.4.4-PeriodicConfiningPrinted"
+    ],
+    "CH06-101": [
+      "MD-6.4.4-UnitLangevinModel",
+      "MD-6.4.4-HamiltonianPower"
+    ],
+    "CH06-109": [
+      "MD-6.4.4-UnitLangevinModel",
+      "MD-6.4.4-LangevinFields"
+    ],
+    "CH06-102": [
+      "MD-6.4.4-HamiltonianPowerCancellation",
+      "MD-6.4.4-HamiltonianPowerMomentumDerivative",
+      "MD-6.4.4-HamiltonianPowerGenerator"
+    ],
+    "CH06-103": [
+      "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+      "MD-6.4.4-LaplacianBoundPrinted",
+      "MD-6.4.4-LaplacianBoundCorrect"
+    ],
+    "CH06-104": [
+      "MD-6.4.4-LaplacianBoundPrinted",
+      "MD-6.4.4-LaplacianBoundCounterexample",
+      "MD-6.4.4-LaplacianBoundCorrect"
+    ],
+    "CH06-105": [
+      "MD-6.4.4-HamiltonianPowerGenerator",
+      "MD-6.4.4-LyapunovYoungBounds",
+      "MD-6.4.4-LangevinLyapunov"
+    ],
+    "CH06-106": [
+      "MD-6.4.4-LieBracket"
+    ],
+    "CH06-107": [
+      "MD-6.4.4-LieBracketProperties"
+    ],
+    "CH06-108": [
+      "MD-6.4.4-Definition61"
+    ],
+    "CH06-110": [
+      "MD-6.4.4-LangevinNoiseBracket",
+      "MD-6.4.4-LangevinBracketIndependent"
+    ],
+    "CH06-111": [
+      "MD-6.4.4-LangevinHormander"
+    ],
+    "CH06-112": [
+      "MD-6.4.4-LangevinTransitionDensity"
+    ],
+    "CH06-113": [
+      "MD-6.4.4-Lemma61Printed",
+      "MD-6.4.4-Lemma61Nonempty"
+    ],
+    "CH06-114": [
+      "MD-6.4.4-ControlPath"
+    ],
+    "CH06-115": [
+      "MD-6.4.4-ControlEndpointStable"
+    ],
+    "CH06-116": [
+      "MD-6.4.4-WienerControlTube"
+    ],
+    "CH06-117": [
+      "MD-6.4.4-LangevinCanonicalStationary"
+    ],
+    "CH06-118": [
+      "MD-6.4.4-LangevinGeometricErgodicity",
+      "MD-6.4.4-LangevinTimeAverage"
+    ],
+    "CH06-119": [
+      "MD-6.4.4-WeightedH1",
+      "MD-6.4.4-WeightedFunctionNorm"
+    ],
+    "CH06-120": [
+      "MD-6.4.4-WeightedH1Norm",
+      "MD-6.4.4-WeightedFunctionNorm",
+      "MD-6.4.4-WeightedVectorNorm"
+    ],
+    "CH06-121": [
+      "MD-6.4.4-Proposition64Printed",
+      "MD-6.4.4-Proposition64Relative"
+    ],
+    "CH06-122": [
+      "MD-6.4.4-FredholmAlternative"
+    ],
+    "CH06-123": [
+      "MD-6.4.4-BackwardKernelConstants",
+      "MD-6.4.4-ForwardKernelGibbs"
     ]
   }
 }

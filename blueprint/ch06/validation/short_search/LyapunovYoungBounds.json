@@ -1,0 +1,21 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "reason": "原生诊断已定位该目标内错误；另有检索背景命名空间错误，未据本次报告其他目标通过。",
+    "source": "blueprint/ch06/validation/short_search/route-4a37aecc3118be0f6372.lean",
+    "log": "blueprint/ch06/validation/short_search/route-4a37aecc3118be0f6372.log",
+    "source_sha256": "2633dfd413e57feb69526f1fdbb04c7e2c6d9edcd458d36001a8631463d8c734",
+    "log_sha256": "40d30f6eaa9fb40939cb8e1dd040bf38d971b32257d52810eb3d4ed4e3a13f7a"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "intro l n Umax hl hU\n  have hlpos : (0 : ℝ) < l := by exact_mod_cast (lt_of_lt_of_le Nat.zero_lt_one hl)\n  let A1 : ℝ := (l : ℝ)*((l : ℝ)+(n : ℝ)-1)\n  let A2 : ℝ := 2*(l : ℝ)*Umax\n  let A3 : ℝ := 2*(l : ℝ)*((l : ℝ)-1)+(n : ℝ)*l\n  let A : ℝ := max 0 (max A1 (max A2 A3))\n  let ε : ℝ := (l : ℝ)/2\n  have hε : 0 < ε := by dsimp [ε]; positivity\n  have hA : 0 ≤ A := le_max_left _ _\n  let M : ℝ := max 1 (A/ε)\n  have hM : 0 ≤ M := le_trans zero_le_one (le_max_left _ _)\n  have hAM : A ≤ ε*M := by\n    have hd : A/ε ≤ M := le_max_right _ _\n    simpa only [mul_comm] using (div_le_iff₀ hε).mp hd\n  let C : ℝ := A*M^(l-1)+1\n  have hC : 0 < C := by dsimp [C]; positivity\n  have hbound : ∀ H : ℝ, 1 ≤ H → A*H^(l-1) ≤ ε*H^l+C := by\n    intro H hH\n    have hH0 : 0 ≤ H := le_trans zero_le_one hH\n    by_cases h : M ≤ H\n    · have hAH := hAM.trans (mul_le_mul_of_nonneg_left h hε.le)\n      calc\n        _ ≤ (ε*H)*H^(l-1) := mul_le_mul_of_nonneg_right hAH (pow_nonneg hH0 _)\n        _ = ε*(H^(l-1)*H) := by ring\n        _ = ε*H^l := by rw [← pow_succ, Nat.sub_add_cancel hl]\n        _ ≤ ε*H^l+C := le_add_of_nonneg_right hC.le\n    · have hpow := pow_le_pow_left₀ hH0 (le_of_lt (lt_of_not_ge h)) (l-1)\n      have hb := mul_le_mul_of_nonneg_left hpow hA\n      have hp : 0 ≤ ε*H^l := mul_nonneg hε.le (pow_nonneg hH0 _)\n      dsimp [C]\n      linarith\n  have h1 : A1 ≤ A := (le_max_left _ _).trans (le_max_right _ _)\n  have h2 : A2 ≤ A := (le_max_left _ _).trans ((le_max_right _ _).trans (le_max_right _ _))\n  have h3 : A3 ≤ A := (le_max_right _ _).trans ((le_max_right _ _).trans (le_max_right _ _))\n  refine ⟨C,C,hC,hC,fun H hH ↦ ?_⟩\n  have hp : 0 ≤ H^(l-1) := pow_nonneg (le_trans zero_le_one hH) _\n  exact ⟨(mul_le_mul_of_nonneg_right h1 hp).trans (hbound H hH),\n    (by simpa only [A2, mul_assoc, mul_left_comm, mul_comm] using (mul_le_mul_of_nonneg_right h2 hp).trans (hbound H hH)),\n    (mul_le_mul_of_nonneg_right h3 hp).trans (hbound H hH)⟩",
+    "source": "blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.lean",
+    "log": "blueprint/ch06/validation/short_search/route-bd078a7b778f9194f1c3.log",
+    "source_sha256": "939d9687e0c870d25837c432dadc8802801cf3d2fa17533c469c4b84932d7453",
+    "log_sha256": "ab99cf0539652713d5fb67e45e2d36bd9cd8b226112e943ec8ea41a2fc24a543"
+  }
+]

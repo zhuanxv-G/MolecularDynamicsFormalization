@@ -48,6 +48,7 @@ if ch==5:
 if not (ROOT/f'MolecularDynamics/Chapter{ch:02}/ReviewProofs.lean').exists():
     header=header.replace(f'import MolecularDynamics.Chapter{ch:02}.ReviewProofs',f'import MolecularDynamics.Chapter{ch:02}.Statements')
 if ch==6:
+    background=background.replace('MD.Ch06.','MD.Ch06Short.')
     header=header.replace('import Mathlib.Tactic',
         'import MolecularDynamics.Chapter06.WienerStratonovich\nimport MolecularDynamics.Chapter06.WienerDeterministicLaw\nimport Mathlib.Analysis.Calculus.Deriv.MeanValue\nimport Mathlib.Analysis.Calculus.Deriv.Shift\nimport Mathlib.Analysis.Calculus.Taylor\nimport Mathlib.Tactic')
     header=header.replace('open Set Filter Matrix MeasureTheory MolecularDynamics',

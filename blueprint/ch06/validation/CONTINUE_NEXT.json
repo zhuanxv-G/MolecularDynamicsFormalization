@@ -1,7 +1,7 @@
 {
-  "active_records": 196,
+  "active_records": 241,
   "current_native": "section634-637-final/chapter_build.compile-RUNNING.json",
-  "next_after_pass": "继续§6.4.4：按ch06_section644至644f顺序；不恢复封存长证明。",
+  "next_after_pass": "继续§6.4.5；随后22号勘误与章末完整check，不进入第7章。",
   "remaining_sections": [
     [
       "6.3.8",
@@ -49,6 +49,6 @@
   ],
   "rule": "one native compiler at a time; do not restore sealed proofs; reuse shared checks by actual current hashes",
   "status": "active_directive22",
-  "current_verified_section": "6.4.3",
-  "current_check": "blueprint/ch06/validation/section643"
+  "current_verified_section": "6.4.4",
+  "current_check": "blueprint/ch06/validation/section644"
 }

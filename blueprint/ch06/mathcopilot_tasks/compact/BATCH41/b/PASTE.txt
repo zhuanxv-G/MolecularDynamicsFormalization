@@ -1,0 +1,271 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本子任务batch=BATCH41b；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH41b_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
+{
+  "Blueprint/Ch06.lean": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+  "blueprint/ch06/ch06_source.json": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+  "BATCH41b_PAGES.pdf": "83da1ef5e86aab7bf716f29e064980cb74e6881508a8765ad565e83f8d7e442d",
+  "signature_sha256": "cc9c32ec6eda76ed58b7cde692b10245eb3194c3febe0955cae0966d4ce64a61"
+}
+
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH41b_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+用代码写入JSON对象(batch,input_sha256,items)，哈希按本PASTE开头逐项原样回显；items中每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 278 | 257 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-6.4.4-BackwardKernelConstants",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.4.4",
+  "printed_page": "257",
+  "pdf_page": "278",
+  "statement_latex": "In our case, $A=\\mathcal L_{LD}^*$. The only solutions of $\\mathcal L_{LD}y=0$ (conserved quantities of Langevin dynamics) are the constants.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch06.backwardKernelConstants",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]真实Gibbs加权Lp²闭backward operator图的全部粗域元素；不能用已证C0固定观测量特例替代。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem backwardKernelConstants :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (_hU : ContDiff ℝ ∞ U) (_hp : textbookUnitPeriodicPotential U)
+    (β γ : ℝ) (hβ : 0 < β), 0 < γ →
+  ∀ f : Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ),
+    (f,0) ∈ (textbookLangevinCanonicalHilbertClosedOperator U β γ (Real.sqrt (2*γ*β⁻¹)) hβ).graph →
+    ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ, f x=c
+```
+
+原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.canonicalVariance (MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean:20)
+```lean
+private def canonicalVariance (β : ℝ) (hβ : 0 < β) : ℝ≥0 := ⟨β⁻¹, (inv_pos.mpr hβ).le⟩
+```
+
+### MolecularDynamics.textbookConfigurationCube (MolecularDynamics/Chapter06/BrownianDirichlet.lean:18)
+```lean
+def textbookConfigurationCube (Nc : ℕ) : Set (Fin Nc → ℝ) := Icc 0 1
+```
+
+### MolecularDynamics.textbookConfigurationGibbsWeight (MolecularDynamics/Chapter06/BrownianDirichlet.lean:21)
+```lean
+noncomputable def textbookConfigurationGibbsWeight {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (q : Fin Nc → ℝ) : ℝ :=
+  Real.exp (-β * U q)
+```
+
+### MolecularDynamics.textbookConfigurationPartition (MolecularDynamics/Chapter06/BrownianDirichlet.lean:271)
+```lean
+noncomputable def textbookConfigurationPartition {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) : ℝ :=
+  ∫ q in textbookConfigurationCube Nc, textbookConfigurationGibbsWeight U β q
+```
+
+### MolecularDynamics.textbookConfigurationTorusGibbsMeasure (MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:159)
+```lean
+noncomputable def textbookConfigurationTorusGibbsMeasure {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) : Measure (UnitAddTorus (Fin Nc)) :=
+  volume.withDensity (fun Q ↦ ENNReal.ofReal
+    ((textbookConfigurationPartition U β)⁻¹ * textbookConfigurationTorusGibbsWeight U β Q))
+```
+
+### MolecularDynamics.textbookConfigurationTorusGibbsWeight (MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:128)
+```lean
+noncomputable def textbookConfigurationTorusGibbsWeight {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (Q : UnitAddTorus (Fin Nc)) : ℝ :=
+  Real.exp (-β * textbookConfigurationTorusObservable U Q)
+```
+
+### MolecularDynamics.textbookConfigurationTorusObservable (MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:61)
+```lean
+def textbookConfigurationTorusObservable {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (Q : UnitAddTorus (Fin Nc)) : ℝ :=
+  f (textbookConfigurationTorusRepresentative Q)
+```
+
+### MolecularDynamics.textbookConfigurationTorusRepresentative (MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:26)
+```lean
+def textbookConfigurationTorusRepresentative {Nc : ℕ}
+    (Q : UnitAddTorus (Fin Nc)) : Fin Nc → ℝ :=
+  (UnitAddTorus.measurableEquivPiIoc (0 : Fin Nc → ℝ) Q).val
+```
+
+### MolecularDynamics.textbookLangevinCanonicalHilbertClosedOperator (MolecularDynamics/Chapter06/LangevinCanonicalHilbertClosed.lean:110)
+```lean
+def textbookLangevinCanonicalHilbertClosedOperator {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (β γ σ : ℝ) (hβ : 0 < β) :
+    Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ) →ₗ.[ℝ]
+      Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ) :=
+  (textbookLangevinCanonicalHilbertTestGraphSubmodule U β γ σ hβ).topologicalClosure.toLinearPMap
+```
+
+### MolecularDynamics.textbookLangevinCanonicalHilbertTestGraph (MolecularDynamics/Chapter06/LangevinCanonicalHilbertGraph.lean:137)
+```lean
+def textbookLangevinCanonicalHilbertTestGraph {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (β γ σ : ℝ) (hβ : 0 < β) :
+    Set (Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ) ×
+      Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) :=
+  {p | ∃ F : textbookLangevinPeriodicPhase N → ℝ,
+    HasCompactSupport F ∧ ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection) ∧
+    p.1 =ᵐ[textbookLangevinCanonicalMeasure U β hβ] F ∧
+    p.2 =ᵐ[textbookLangevinCanonicalMeasure U β hβ] textbookLangevinPeriodicDifferentialOperator U γ σ F}
+```
+
+### MolecularDynamics.textbookLangevinCanonicalHilbertTestGraphSubmodule (MolecularDynamics/Chapter06/LangevinCanonicalHilbertClosed.lean:74)
+```lean
+def textbookLangevinCanonicalHilbertTestGraphSubmodule {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (β γ σ : ℝ) (hβ : 0 < β) :
+    Submodule ℝ (Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ) ×
+      Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) where
+  carrier := textbookLangevinCanonicalHilbertTestGraph U β γ σ hβ
+  zero_mem' := by
+    refine ⟨fun _ ↦ 0, HasCompactSupport.zero, contDiff_const, ?_, ?_⟩
+    · exact Lp.coeFn_zero ℝ 2 _
+    · filter_upwards [Lp.coeFn_zero ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)] with x hx
+      exact hx.trans (closed_L_zero U γ σ x).symm
+  add_mem' := by
+    rintro p q ⟨F, hsF, hF, hf1, hf2⟩ ⟨G, hsG, hG, hg1, hg2⟩
+    have hFG : ContDiff ℝ ∞ ((F + G) ∘ textbookLangevinPeriodicProjection) := hF.add hG
+    refine ⟨F + G, hsF.add hsG, hFG, ?_, ?_⟩
+    · filter_upwards [Lp.coeFn_add p.1 q.1, hf1, hg1] with x hx hy hz
+      simp only [Prod.fst_add, hx, Pi.add_apply, hy, hz]
+    · filter_upwards [Lp.coeFn_add p.2 q.2, hf2, hg2] with x hx hy hz
+      simp only [Prod.snd_add, hx, Pi.add_apply, hy, hz,
+        textbookLangevinPeriodicDifferentialOperator_smooth_add U γ σ F G hF hG]
+  smul_mem' := by
+    rintro c p ⟨F, hsF, hF, hf1, hf2⟩
+    have hcF : ContDiff ℝ ∞ ((c • F) ∘ textbookLangevinPeriodicProjection) := hF.const_smul c
+    have hcs : HasCompactSupport (c • F) := hsF.smul_left
+    refine ⟨c • F, hcs, hcF, ?_, ?_⟩
+    · filter_upwards [Lp.coeFn_smul c p.1, hf1] with x hx hy
+      change (c • p.1 : Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) x = c • F x
+      rw [hx]
+      simp only [Pi.smul_apply, hy]
+    · filter_upwards [Lp.coeFn_smul c p.2, hf2] with x hx hy
+      change (c • p.2 : Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) x =
+        textbookLangevinPeriodicDifferentialOperator U γ σ (c • F) x
+      rw [hx, textbookLangevinPeriodicDifferentialOperator_smooth_smul U γ σ c F hF]
+      simp only [Pi.smul_apply, smul_eq_mul, hy]
+```
+
+### MolecularDynamics.textbookLangevinCanonicalMeasure (MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean:110)
+```lean
+def textbookLangevinCanonicalMeasure {N : ℕ} (U : (Fin N → ℝ) → ℝ)
+    (β : ℝ) (hβ : 0 < β) : Measure (textbookLangevinPeriodicPhase N) :=
+  (textbookConfigurationTorusGibbsMeasure U β).prod (textbookLangevinCanonicalMomentumMeasure N β hβ)
+```
+
+### MolecularDynamics.textbookLangevinCanonicalMomentumMeasure (MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean:29)
+```lean
+def textbookLangevinCanonicalMomentumMeasure (N : ℕ) (β : ℝ) (hβ : 0 < β) :
+    Measure (Fin N → ℝ) :=
+  Measure.pi (fun _ : Fin N ↦ gaussianReal 0 (canonicalVariance β hβ))
+```
+
+### MolecularDynamics.textbookLangevinDifferentialOperator (MolecularDynamics/Chapter06/LangevinLyapunov.lean:20)
+```lean
+noncomputable def textbookLangevinDifferentialOperator {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ σ : ℝ) (f : textbookLangevinPhase Nc → ℝ)
+    (z : textbookLangevinPhase Nc) : ℝ :=
+  deriv (fun t : ℝ ↦ f (z + t • textbookLangevinDrift U γ z)) 0 +
+    σ ^ 2 / 2 * ∑ i : Fin Nc,
+      deriv (deriv (fun t : ℝ ↦ f (z + t • ((0 : Fin Nc → ℝ), Pi.single i 1)))) 0
+```
+
+### MolecularDynamics.textbookLangevinDrift (MolecularDynamics/Chapter06/LangevinHormander.lean:15)
+```lean
+noncomputable def textbookLangevinDrift {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ : ℝ) : textbookLangevinPhase Nc → textbookLangevinPhase Nc :=
+  fun z ↦ (z.2, textbookPotentialForce U z.1 - γ • z.2)
+```
+
+### MolecularDynamics.textbookLangevinPeriodicDifferentialOperator (MolecularDynamics/Chapter06/LangevinPeriodicLyapunov.lean:118)
+```lean
+noncomputable def textbookLangevinPeriodicDifferentialOperator {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ σ : ℝ) (f : textbookLangevinPeriodicPhase Nc → ℝ)
+    (z : textbookLangevinPeriodicPhase Nc) : ℝ :=
+  textbookLangevinDifferentialOperator U γ σ (f ∘ textbookLangevinPeriodicProjection)
+    (textbookLangevinPeriodicRepresentative z.1, z.2)
+```
+
+### MolecularDynamics.textbookLangevinPeriodicPhase (MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:14)
+```lean
+abbrev textbookLangevinPeriodicPhase (Nc : ℕ) := UnitAddTorus (Fin Nc) × (Fin Nc → ℝ)
+```
+
+### MolecularDynamics.textbookLangevinPeriodicProjection (MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:17)
+```lean
+def textbookLangevinPeriodicProjection {Nc : ℕ}
+    (z : textbookLangevinPhase Nc) : textbookLangevinPeriodicPhase Nc :=
+  (fun i ↦ (z.1 i : UnitAddCircle), z.2)
+```
+
+### MolecularDynamics.textbookLangevinPeriodicRepresentative (MolecularDynamics/Chapter06/LangevinPeriodicLift.lean:13)
+```lean
+noncomputable def textbookLangevinPeriodicRepresentative {Nc : ℕ}
+    (Q : UnitAddTorus (Fin Nc)) : Fin Nc → ℝ := fun i ↦ Quotient.out (Q i)
+```
+
+### MolecularDynamics.textbookLangevinPhase (MolecularDynamics/Chapter06/LangevinHormander.lean:12)
+```lean
+abbrev textbookLangevinPhase (Nc : ℕ) := (Fin Nc → ℝ) × (Fin Nc → ℝ)
+```
+
+### MolecularDynamics.textbookPotentialForce (MolecularDynamics/Chapter02/SymplecticEuler.lean:34)
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
+```
+
+### MolecularDynamics.textbookUnitPeriodicPotential (MolecularDynamics/Chapter06/LangevinPeriodicForce.lean:13)
+```lean
+def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Prop :=
+  ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
+```

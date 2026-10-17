@@ -1,0 +1,50 @@
+{
+  "batch": "BATCH36",
+  "subtask": "BATCH36g",
+  "source_ids": [
+    "MD-6.4.4-PeriodicPotentialBound"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 274,
+      "printed_page": 253
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+  "lean_sha256": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+    "blueprint/ch06/ch06_source.json": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+    "BATCH36g_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+    "signature_sha256": "3ec63b7e4f15cd2a10aaeabc00fb3753c24b3632f5b5e1498a5bfadd16ed2b85"
+  },
+  "signature_sha256": "3ec63b7e4f15cd2a10aaeabc00fb3753c24b3632f5b5e1498a5bfadd16ed2b85",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookUnitPeriodicPotential",
+      "code_sha256": "e26dd47f5c122900493506ccbe55a9fe93351b063566435477f1cbd5e0803040"
+    }
+  ],
+  "paste_plus_pdf_bytes": 101242,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4402,
+      "sha256": "ec0546df0d931ddcbc44dd5d0fa64ee3e3b9317a43ea4d27a52afed5ba0e5e07"
+    },
+    "BATCH36g_PAGES.pdf": {
+      "bytes": 96840,
+      "sha256": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 103139
+}

@@ -1,0 +1,104 @@
+{
+  "batch": "BATCH39",
+  "subtask": "BATCH39c",
+  "source_ids": [
+    "MD-6.4.4-LangevinHormander"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 276,
+      "printed_page": 255
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+  "lean_sha256": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+    "blueprint/ch06/ch06_source.json": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+    "BATCH39c_PAGES.pdf": "974f7ad71997f3252515153a560b13b741e8200998eb1ebae674886184542ba0",
+    "signature_sha256": "57c98f3a0aba75cd24738f0ca0e5e091c6ed8a6170e7eb908f36991807fd4f0c"
+  },
+  "signature_sha256": "57c98f3a0aba75cd24738f0ca0e5e091c6ed8a6170e7eb908f36991807fd4f0c",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter05Review",
+      "name": "E",
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter08/HormanderClosure.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookBracketPointSpan",
+      "code_sha256": "adb68f2e9a0c14a76660beb31071f15c5ed538fdd7dd593fee25f6bf8cf0c675"
+    },
+    {
+      "path": "MolecularDynamics/Chapter08/HormanderClosure.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookHormanderAt",
+      "code_sha256": "15f9fa88d5934a94ad8fd2b07f88f907824bded0569c13ab96d75c015d01f0e2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinDrift",
+      "code_sha256": "6461847f6949915260e99ffc5f06d2865896b565b154c8d6aeae3b4c98ff3f7d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinNoise",
+      "code_sha256": "cb7dd5e019519ec58de02bdaf5b522ebc626a8b9cd5384e503a05ac82b39c13d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinPhase",
+      "code_sha256": "ee32316762cd33e19f1e5e47745da89914943aa66b85fb83f71d95c9b012a326"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookLangevinSeed",
+      "code_sha256": "e590f99aef135d848baddeeff7c18ddc82bc85e360dca1320dc0938e28b67435"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "namespace": "MolecularDynamics",
+      "name": "textbookPotentialForce",
+      "code_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    }
+  ],
+  "paste_plus_pdf_bytes": 107645,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6192,
+      "sha256": "0f5119a57f3496dbd2dfc3d5eca118e39531397924c88851cd04ab2a1ab90007"
+    },
+    "BATCH39c_PAGES.pdf": {
+      "bytes": 101453,
+      "sha256": "974f7ad71997f3252515153a560b13b741e8200998eb1ebae674886184542ba0"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 111797
+}

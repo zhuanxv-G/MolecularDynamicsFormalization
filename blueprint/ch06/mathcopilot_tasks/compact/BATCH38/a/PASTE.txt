@@ -1,0 +1,103 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本子任务batch=BATCH38a；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH38a_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
+{
+  "Blueprint/Ch06.lean": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
+  "blueprint/ch06/ch06_source.json": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+  "BATCH38a_PAGES.pdf": "50903605869ccd84782dd4f5e0633ee451a85118158d7fb47b26fe19aec5e53d",
+  "signature_sha256": "c7d000bcd10c7045fe03f43a7cd1a613074f6b7c6d883a41a6c1aa25c6e68337"
+}
+
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH38a_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+用代码写入JSON对象(batch,input_sha256,items)，哈希按本PASTE开头逐项原样回显；items中每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 274 | 253 |
+| 2 | 275 | 254 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-6.4.4-HamiltonianPowerGenerator",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.4.4",
+  "printed_page": "253–254",
+  "pdf_page": "274–275",
+  "statement_latex": "Computing the generator of Langevin dynamics as\n\\[\\mathcal L_{LD}f=p\\cdot\\nabla_qf-\\nabla U(q)\\cdot\\nabla_pf-\\gamma p\\cdot\\nabla_pf+\\gamma k_BT\\Delta_pf,\\]\nwe can see that $\\mathcal L_H\\varphi=0$. Hence\n\\[\\mathcal L_{LD}\\varphi=-\\gamma p\\cdot\\nabla_p\\varphi+\\gamma k_BT\\Delta_p\\varphi.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch06.hamiltonianPowerGenerator",
+  "reusable_proofs": [
+    "MolecularDynamics.textbookLangevinHamiltonianPower_differentialOperator"
+  ],
+  "extra_assumptions": [
+    "[EXTRA]实际全坐标一二阶导数与完整H^l，现成通用σ算子取σ=√(2γkBT)使σ²/2=γkBT；不是给定目标导数再改写。物理热参数代入在下一完整Lyapunov桥接实际出现。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem hamiltonianPowerGenerator {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : Differentiable ℝ U) (γ σ : ℝ) (l : ℕ) (hl : 1 ≤ l)
+    (z : textbookLangevinPhase Nc) :
+    textbookLangevinDifferentialOperator U γ σ (textbookLangevinHamiltonianPower U l) z =
+      -γ * l * textbookLangevinHamiltonian U z ^ (l - 1) * (∑ i, z.2 i ^ 2) +
+        σ ^ 2 / 2 * ((l : ℝ) * ((l : ℝ) - 1) * textbookLangevinHamiltonian U z ^ (l - 2) *
+          (∑ i, z.2 i ^ 2) + (Nc : ℝ) * l * textbookLangevinHamiltonian U z ^ (l - 1))
+```
+
+原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.textbookLangevinDifferentialOperator (MolecularDynamics/Chapter06/LangevinLyapunov.lean:20)
+```lean
+noncomputable def textbookLangevinDifferentialOperator {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ σ : ℝ) (f : textbookLangevinPhase Nc → ℝ)
+    (z : textbookLangevinPhase Nc) : ℝ :=
+  deriv (fun t : ℝ ↦ f (z + t • textbookLangevinDrift U γ z)) 0 +
+    σ ^ 2 / 2 * ∑ i : Fin Nc,
+      deriv (deriv (fun t : ℝ ↦ f (z + t • ((0 : Fin Nc → ℝ), Pi.single i 1)))) 0
+```
+
+### MolecularDynamics.textbookLangevinDrift (MolecularDynamics/Chapter06/LangevinHormander.lean:15)
+```lean
+noncomputable def textbookLangevinDrift {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ : ℝ) : textbookLangevinPhase Nc → textbookLangevinPhase Nc :=
+  fun z ↦ (z.2, textbookPotentialForce U z.1 - γ • z.2)
+```
+
+### MolecularDynamics.textbookLangevinHamiltonian (MolecularDynamics/Chapter06/LangevinLyapunov.lean:12)
+```lean
+noncomputable def textbookLangevinHamiltonian {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ)
+    (z : textbookLangevinPhase Nc) : ℝ := (∑ i, z.2 i ^ 2) / 2 + U z.1
+```
+
+### MolecularDynamics.textbookLangevinHamiltonianPower (MolecularDynamics/Chapter06/LangevinLyapunov.lean:16)
+```lean
+noncomputable def textbookLangevinHamiltonianPower {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (l : ℕ)
+    (z : textbookLangevinPhase Nc) : ℝ := textbookLangevinHamiltonian U z ^ l
+```
+
+### MolecularDynamics.textbookLangevinPhase (MolecularDynamics/Chapter06/LangevinHormander.lean:12)
+```lean
+abbrev textbookLangevinPhase (Nc : ℕ) := (Fin Nc → ℝ) × (Fin Nc → ℝ)
+```
+
+### MolecularDynamics.textbookPotentialForce (MolecularDynamics/Chapter02/SymplecticEuler.lean:34)
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
+```

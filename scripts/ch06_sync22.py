@@ -8,6 +8,12 @@ p=pipeline(6);B=p.BASE
 audit=json.loads((B/'local_audit.json').read_text(encoding='utf-8'))['items']
 bykey={r['source_id'].split('-')[-1]:r for r in p.RECORDS}
 out={};counts=Counter();reasons=Counter()
+# Existing local calculations with no completed short bridge are time-box
+# stops, not evidence that Mathlib lacks an entire major theory.
+bounded_local={'partitionMass','partitionDomain','lennardJonesNonintegrable','equipartition',
+    'temperatureChoiceDerivatives','walkVariance','walkGridMoments','interpolatedWalkMean',
+    'riemannTags','ouGibbsLimit','bathHamiltonEquations','densityExpectation','massGibbsStationary',
+    'variableFrictionCommutingStationary','directedGraphIrreducible'}
 for r in p.RECORDS:
     a=audit[r['source_id']];declarations={}
     route_path=B/'validation/short_search'/(r['source_id'].split('-')[-1]+'.json')
@@ -42,8 +48,10 @@ for r in p.RECORDS:
             status='未证'
             if not corrected and ('Printed' in m[2] or a['verdict']!='PASS'):
                 category='原书疑误不证'
-            elif any(word in (reason or '') for word in ['三条','时间盒','短证明路线']) or m[2].startswith('diffusiveTaylorPrinted_corrected'):
+            elif any(word in (reason or '') for word in ['三条','时间盒','短证明路线']) or m[2].startswith('diffusiveTaylorPrinted_corrected') or m[2] in bounded_local or (route_path.exists() and len(saved)>=3 and all(q['exit_code']!=0 for q in saved)):
                 category='时间盒止'
+                if m[2] in bounded_local:reason='本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：'+(reason or '')
+                elif route_path.exists() and len(saved)>=3 and all(q['exit_code']!=0 for q in saved):reason='三条编译支持的短证明路线均失败，时间盒止。具体缺项：'+(reason or '')
             else:category='缺大型理论'
             reasons[category]+=1
         path=B/'validation/short_search'/f'{key}.json'

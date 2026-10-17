@@ -1,14 +1,14 @@
 {
   "rule": "最多3种路线；失败分类只用缺大型理论/原书疑误不证/时间盒止；definitions do not create theorem obligations",
   "counts": {
-    "定义": 76,
-    "已证": 63,
-    "未证": 57
+    "定义": 89,
+    "已证": 83,
+    "未证": 70
   },
   "unproved_reasons": {
-    "原书疑误不证": 13,
-    "时间盒止": 2,
-    "缺大型理论": 42
+    "原书疑误不证": 17,
+    "时间盒止": 17,
+    "缺大型理论": 36
   },
   "items": {
     "MD-6.1.1-Microcanonical": {
@@ -216,7 +216,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "三条短证明路线失败，停止该条；保存证据见validation/short_search/BathTaylorEstimate.json。",
+          "reason": "三条编译支持的短证明路线均失败，时间盒止。具体缺项：三条短证明路线失败，停止该条；保存证据见validation/short_search/BathTaylorEstimate.json。",
           "compiler_route_count": 3,
           "route_evidence": "blueprint/ch06/validation/short_search/BathTaylorEstimate.json"
         }
@@ -402,7 +402,7 @@
         "MD.Ch06.partitionMass": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -410,7 +410,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "现有正式公式只覆盖单位质量/周期模型；一般质量Gaussian乘积积分无现成完整桥接，保留sorry。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：现有正式公式只覆盖单位质量/周期模型；一般质量Gaussian乘积积分无现成完整桥接，保留sorry。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -422,7 +422,7 @@
         "MD.Ch06.partitionDomain": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -430,7 +430,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "待一般质量Gaussian有限积及实际Fubini分离；无现成完整桥接保留sorry。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：待一般质量Gaussian有限积及实际Fubini分离；无现成完整桥接保留sorry。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -501,7 +501,7 @@
         "MD.Ch06.lennardJonesNonintegrable": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -509,7 +509,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "需q→∞时权重→1以及无穷半轴不可积的实际尾部比较；无现成完整桥接，保留sorry。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：需q→∞时权重→1以及无穷半轴不可积的实际尾部比较；无现成完整桥接，保留sorry。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -654,7 +654,7 @@
         "MD.Ch06.equipartition": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -662,7 +662,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "现成单位质量Gaussian测度未打包任意质量的真实Phase积分归一化二阶矩；缺完整桥接，保留sorry。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：现成单位质量Gaussian测度未打包任意质量的真实Phase积分归一化二阶矩；缺完整桥接，保留sorry。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -751,7 +751,7 @@
         "MD.Ch06.temperatureChoiceDerivatives": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -759,7 +759,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "待实际Fréchet有限和导数、正对角质量及坐标基计算；缺现成完整桥接保留sorry。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：待实际Fréchet有限和导数、正对角质量及坐标基计算；缺现成完整桥接保留sorry。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -1058,7 +1058,7 @@
         "MD.Ch06.walkVariance": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -1066,7 +1066,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "待Mathlib有限独立和二阶矩及Rademacher单位二阶矩短桥；缺项具体保留，不把标量CLT当作该证明。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：待Mathlib有限独立和二阶矩及Rademacher单位二阶矩短桥；缺项具体保留，不把标量CLT当作该证明。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -1135,7 +1135,7 @@
         "MD.Ch06.walkGridMoments": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -1143,7 +1143,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "依赖有限独立中心和二阶矩短桥；不以连续插值的近似方差代替。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：依赖有限独立中心和二阶矩短桥；不以连续插值的近似方差代替。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -1155,7 +1155,7 @@
         "MD.Ch06.interpolatedWalkMean": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -1163,7 +1163,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "待实际有限和零均值及线性插值积分短桥。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：待实际有限和零均值及线性插值积分短桥。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -1407,7 +1407,7 @@
         "MD.Ch06.riemannTags": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -1415,7 +1415,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "待现成带任意标记的Riemann求积完整桥接；不建立积分构造理论。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：待现成带任意标记的Riemann求积完整桥接；不建立积分构造理论。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -2120,7 +2120,7 @@
         "MD.Ch06.ouGibbsLimit": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -2128,7 +2128,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "待Gaussian law参数连续性与指数极限完整短桥；现成一般Gaussian连续性可复用，保留未核桥接。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：待Gaussian law参数连续性与指数极限完整短桥；现成一般Gaussian连续性可复用，保留未核桥接。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -2197,7 +2197,7 @@
         "MD.Ch06.bathHamiltonEquations": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -2205,7 +2205,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "待真实Fréchet有限和导数桥接；不恢复封存长证明。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：待真实Fréchet有限和导数桥接；不恢复封存长证明。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -2264,7 +2264,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "三条短证明路线失败，停止该条；保存证据见validation/short_search/BathConvolutionIBP.json。",
+          "reason": "三条编译支持的短证明路线均失败，时间盒止。具体缺项：三条短证明路线失败，停止该条；保存证据见validation/short_search/BathConvolutionIBP.json。",
           "compiler_route_count": 3,
           "route_evidence": "blueprint/ch06/validation/short_search/BathConvolutionIBP.json"
         }
@@ -2641,7 +2641,7 @@
         "MD.Ch06.densityExpectation": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -2649,7 +2649,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "缺多项式乘指数尾积分及withDensity实积分的完整打包桥接。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：缺多项式乘指数尾积分及withDensity实积分的完整打包桥接。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -2933,7 +2933,7 @@
         "MD.Ch06.massGibbsStationary": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -2941,7 +2941,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "现成单位质量表达已证，任意质量坐标包装尚缺短桥；实际过程不变另条。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：现成单位质量表达已证，任意质量坐标包装尚缺短桥；实际过程不变另条。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -3011,7 +3011,7 @@
         "MD.Ch06.variableFrictionCommutingStationary": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -3019,7 +3019,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "缺任意质量/矩阵交换的完整坐标涨落耗散代数打包；不建设一般随机理论。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：缺任意质量/矩阵交换的完整坐标涨落耗散代数打包；不建设一般随机理论。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -3317,7 +3317,7 @@
         "MD.Ch06.directedGraphIrreducible": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "缺大型理论",
+          "classification": "时间盒止",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -3325,7 +3325,7 @@
             "Classical.choice",
             "Quot.sound"
           ],
-          "reason": "缺非负矩阵幂正项与有向路径的完整有限求和桥接；不建设一般PF理论。",
+          "reason": "本轮未完成现成完整短桥的本地检索，按时间盒停止；不据此声称缺整套理论。具体缺项：缺非负矩阵幂正项与有向路径的完整有限求和桥接；不建设一般PF理论。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -3777,6 +3777,888 @@
       "local_verdict": "PASS",
       "declarations": {
         "MD.Ch06.ouDensity": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-Assumption1Printed": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.assumption1Printed": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-Assumption1Correct": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.assumption1": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-Assumption2": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.assumption2": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-MinorizationPrinted": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.minorizationPrinted": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "原书疑误不证",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "原等价适用对象/密度和时间域需导师；保留完整双向字面陈述。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-MinorizationCorrectedImplication": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.minorizationCorrectedImplication": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺真实kernel小集/联合连续密度的完整组合桥接；不建立一般Harris理论。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-Theorem62": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.theorem62": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "没有现成完整Thm6.2桥接；保持sorry，不恢复封存Harris长证明或构建缺失大型理论。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-PeriodicPotentialBound": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.periodicPotentialBound": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-PotentialNormalization": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.potentialNormalization": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-UnitLangevinModel": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.unitLangevinModel": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-PeriodicConfiningPrinted": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.periodicConfiningPrinted": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-HamiltonianPower": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.hamiltonianPower": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-HamiltonianPowerCancellation": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.hamiltonianPowerCancellation": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-HamiltonianPowerMomentumDerivative": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.hamiltonianPowerMomentumDerivative": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 1,
+          "route_evidence": "blueprint/ch06/validation/short_search/HamiltonianPowerMomentumDerivative.json"
+        }
+      }
+    },
+    "MD-6.4.4-HamiltonianPowerMomentumLaplacian": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.hamiltonianPowerMomentumLaplacian": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LaplacianBoundPrinted": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.laplacianBoundPrinted": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "原书疑误不证",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "保留字面错误不等式，不能证明；正确完整上界另条。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LaplacianBoundCounterexample": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.laplacianBoundCounterexample": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-HamiltonianPowerGenerator": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.hamiltonianPowerGenerator": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LaplacianBoundCorrect": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.laplacianBoundCorrect": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LyapunovYoungBounds": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.lyapunovYoungBounds": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 2,
+          "route_evidence": "blueprint/ch06/validation/short_search/LyapunovYoungBounds.json"
+        }
+      }
+    },
+    "MD-6.4.4-LangevinLyapunov": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.langevinLyapunov": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LieBracket": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.lieBracket": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LieBracketProperties": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.lieBracketProperties": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 2,
+          "route_evidence": "blueprint/ch06/validation/short_search/LieBracketProperties.json"
+        }
+      }
+    },
+    "MD-6.4.4-Definition61": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.definition61": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LangevinFields": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.langevinDrift": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        },
+        "MD.Ch06.langevinNoise": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LangevinNoiseBracket": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.langevinNoiseBracket": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LangevinBracketIndependent": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.langevinBracketIndependent": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LangevinHormander": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.langevinHormander": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LangevinTransitionDensity": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.langevinTransitionDensity": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺实际Langevin hypoelliptic/Malliavin转移密度存在桥接；不建设大型理论。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-Lemma61Printed": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.lemma61Printed": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "原书疑误不证",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "保留原缺非空的完整字面断言，不证；下一条桥接原单位周期实际过程的完整非空版本。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-Lemma61Nonempty": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.lemma61Nonempty": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-ControlPath": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.controlPath": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-ControlEndpointStable": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.controlEndpointStable": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-WienerControlTube": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.wienerControlTube": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LangevinCanonicalStationary": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.langevinCanonicalStationary": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LangevinGeometricErgodicity": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.langevinGeometricErgodicity": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺实际transition density、Harris/minorization及canonical invariance完整桥接；保留sorry，不恢复Thm6.2封存长证明。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-LangevinTimeAverage": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.langevinTimeAverage": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺实际canonical唯一不变/遍历及weighted观测量强大数桥接；不建设大型理论。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-WeightedH1": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.weightedH1": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-WeightedH1Norm": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.weightedH1Norm": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-Proposition64Printed": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.proposition64Printed": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "原书疑误不证",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "无现成整条桥接；不恢复封存Prop6.4长证明，保留sorry。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-Proposition64Relative": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.proposition64Relative": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺实际加权adjoint域、compact resolvent与rough kernel；无现成整条桥接保留sorry，封存不恢复。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-FredholmAlternative": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.fredholmAlternative": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺一般closed partialoperator的Fredholm alternative现成完整桥接；不建设大型谱理论。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-BackwardKernelConstants": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.backwardKernelConstants": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "rough加权Hilbert generator kernel尚缺完整桥接；CanonicalKernelConstant封存长证明不恢复。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-ForwardKernelGibbs": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.forwardKernelGibbs": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺flat forward弱域与实际adjoint/relative坐标转换、kernel识别；不恢复封存长证明。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-WeightedFunctionNorm": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.weightedFunctionNorm": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.4-WeightedVectorNorm": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.weightedVectorNorm": {
           "kind": "def",
           "status": "定义",
           "classification": null,
