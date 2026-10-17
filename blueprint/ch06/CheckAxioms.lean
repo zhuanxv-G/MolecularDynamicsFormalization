@@ -148,3 +148,11 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.vectorForward
 #print axioms MD.Ch06.diffusionTrace
 #print axioms MD.Ch06.vectorFPEquation
+#print axioms MD.Ch06.langevinMassForward
+#print axioms MD.Ch06.momentumMassLaplacian
+#print axioms MD.Ch06.langevinFPEquation
+#print axioms MD.Ch06.massGibbsStationary
+#print axioms MD.Ch06.unitMassGibbsStationaryBridge
+#print axioms MD.Ch06.variableFrictionForward
+#print axioms MD.Ch06.variableFrictionCanonicalPrinted
+#print axioms MD.Ch06.variableFrictionCommutingStationary

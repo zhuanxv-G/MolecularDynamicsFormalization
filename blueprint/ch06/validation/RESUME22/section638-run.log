@@ -1,0 +1,13 @@
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --compile --batch section638-a518c395 --step �ۨC�ݡ�6.3.8������֤
+Generated 156 entries; 78 /126 old rows mapped; protected 925
+Single-file Lean passed: section638-a518c395
+Generated 156 entries; 78 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py section638-a518c395
+Generated 156 entries; 78 /126 old rows mapped; protected 925
+Batch axioms passed: section638-a518c395 156
+Running: D:\anaconda\python.exe scripts/local_section_check.py 6 blueprint/ch06/validation/section638 --reuse-shared blueprint/ch01/validation/CLOSEOUT21/full
+Current chapter build passed; shared checks reused with unchanged input hashes.
+Reused passed shared check with unchanged inputs and log hashes.
+Full check and supplementary Chapter 6 fresh check/axioms passed.
+Section complete: blueprint/ch06/validation/section638
+Running: D:\anaconda\python.exe scripts/local_checkpoint.py 6 6.3.8 blueprint/ch06/validation/section638 ������6.4.1������ch06_section641��ch06_section641b����1�C5�¶��ᡣ

@@ -1,0 +1,128 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本子任务batch=BATCH22e；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH22e_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
+{
+  "Blueprint/Ch06.lean": "66a75b9c65fc8dc5ea3db4890bfccb2fa439410e14e2de2bc1c335d0f03dd8ed",
+  "blueprint/ch06/ch06_source.json": "c89758d8dbaaf9629dc536128ae1e7e1c5c6ec7cd534bbcce9849d3a63e935cc",
+  "BATCH22e_PAGES.pdf": "caf0649b504cdd9b1aef8c3686dd2a0a0da5f8b0eea5da0805c1ad484c9a9b19",
+  "signature_sha256": "829fa031e1f12dd1f159f4db901058475c0a9f3698dbb4828587c07d6f1c4c2b"
+}
+
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH22e_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+用代码写入JSON对象(batch,input_sha256,items)，哈希按本PASTE开头逐项原样回显；items中每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 260 | 239 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-6.3.3-VariableFrictionCanonicalPrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.3.3",
+  "printed_page": "239",
+  "pdf_page": "260",
+  "statement_latex": "However, it should be noted that in many types of modelling, the physical nature of the interaction with the solvent bath is neglected and $\\gamma$ or $\\Gamma(q)$ are simply viewed as artificial parameters which allow recovery of averages with respect to the canonical distribution.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "任意ΓΓᵀ与对角质量不交换时，印刷漂移ΓΓᵀp与噪声M½Γ不自动满足Gibbs涨落耗散平衡；原canonical目标不能推广为任意质量/任意矩阵全称定理。"
+    }
+  ],
+  "lean_decl": "MD.Ch06.variableFrictionCanonicalPrinted",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]该条为原恢复canonical目标的必要形式stationarity检验；完整任意质量/Γ对象保留，不以必要检验计完整采样收敛已证。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+theorem variableFrictionCanonicalPrinted : ∀ {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ)
+    (Γ : (Fin n → ℝ) → Matrix (Fin n) (Fin r) ℝ) (θ : ℝ),
+  (∀ i, 0 < m i) → ContDiff ℝ ∞ U → ContDiff ℝ ∞ Γ → 0 < θ →
+  ∀ x, variableFrictionForward m U Γ θ
+    (fun z ↦ Real.exp (-θ⁻¹*MolecularDynamics.Chapter06Review.massHamiltonian m U z)) x=0
+```
+
+原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter06Review.Phase (MolecularDynamics/Chapter06/ReviewDefinitions.lean:18)
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.massHamiltonian (MolecularDynamics/Chapter06/ReviewDefinitions.lean:37)
+```lean
+def massHamiltonian {n : ℕ} (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
+  (∑ i, (x.2 i) ^ 2 / (2 * m i)) + U x.1
+```
+
+### MolecularDynamics.Chapter05Review.Phase (MolecularDynamics/Chapter05/ReviewDefinitions.lean:19)
+```lean
+abbrev Phase (n : ℕ) := E n × E n
+```
+
+### MolecularDynamics.Chapter06Review.Phase (MolecularDynamics/Chapter06/ReviewDefinitions.lean:18)
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch06.massHamiltonian (Blueprint/Ch06.lean:199)
+```lean
+def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : MolecularDynamics.Chapter06Review.V n → ℝ) (x : MolecularDynamics.Chapter06Review.Phase n) : ℝ :=
+  (∑ i, (x.2 i) ^ 2 / (2 * m i)) + U x.1
+```
+
+### MolecularDynamics.textbookConfigurationPartial (MolecularDynamics/Chapter06/BrownianDirichlet.lean:13)
+```lean
+noncomputable def textbookConfigurationPartial {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (i : Fin Nc) (q : Fin Nc → ℝ) : ℝ :=
+  fderiv ℝ f q (Pi.single i 1)
+```
+
+### MD.Ch06.variableFrictionForward (Blueprint/Ch06.lean:1549)
+```lean
+def variableFrictionForward {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ)
+    (Γ : (Fin n → ℝ) → Matrix (Fin n) (Fin r) ℝ) (θ : ℝ)
+    (ρ : ((Fin n → ℝ) × (Fin n → ℝ)) → ℝ) (x : (Fin n → ℝ) × (Fin n → ℝ)) : ℝ :=
+  (∑ i, (-(m i)⁻¹*x.2 i*fderiv ℝ ρ x (Pi.single i 1,0) +
+    fderiv ℝ (fun z ↦ (textbookConfigurationPartial U i z.1+
+      ((Γ z.1*(Γ z.1).transpose).mulVec z.2) i)*ρ z) x (0,Pi.single i 1))) +
+  ∑ i, ∑ k, θ*Real.sqrt (m i)*Real.sqrt (m k)*(Γ x.1*(Γ x.1).transpose) i k *
+    fderiv ℝ (fun z ↦ fderiv ℝ ρ z (0,Pi.single k 1)) x (0,Pi.single i 1)
+```

@@ -1,0 +1,79 @@
+"""Produce honest per-declaration reasons, review pairs and mentor-facing totals."""
+import re,json,sys
+from pathlib import Path
+from collections import Counter
+from local_blueprint import ROOT,pipeline
+from ch06_errata import SPECS
+p=pipeline(6);B=p.BASE
+audit=json.loads((B/'local_audit.json').read_text(encoding='utf-8'))['items']
+bykey={r['source_id'].split('-')[-1]:r for r in p.RECORDS}
+out={};counts=Counter();reasons=Counter()
+for r in p.RECORDS:
+    a=audit[r['source_id']];declarations={}
+    code=re.sub(r'(?s)/-.*?-/', '',r['code'])
+    matches=list(re.finditer(r'(?m)^(?:noncomputable )?(def|theorem|lemma|abbrev) (\w+)',code))
+    for i,m in enumerate(matches):
+        block=code[m.start():matches[i+1].start() if i+1<len(matches) else len(code)]
+        name='MD.Ch06.'+m[2];axioms=a.get('declaration_axioms',{}).get(name)
+        placeholder=bool(re.search(r'\bsorry\b',block))
+        if m[1] in ('def','abbrev'):status='定义';category=None
+        elif axioms is not None and 'sorryAx' not in axioms and a.get('checked'):status='已证';category=None
+        else:
+            status='未证'
+            if ('Printed' in m[2] or (a['verdict']!='PASS' and not m[2].endswith('_corrected'))) and m[2] not in ('theorem61','theorem62'):
+                category='原书疑误不证'
+            elif any(word in (r.get('missing') or '') for word in ['三条','时间盒','短证明路线']) or m[2].startswith('diffusiveTaylorPrinted_corrected'):
+                category='时间盒止'
+            else:category='缺大型理论'
+            reasons[category]+=1
+        key=r['source_id'].split('-')[-1]
+        path=B/'validation/short_search'/f'{key}.json'
+        routes=json.loads(path.read_text(encoding='utf-8')) if path.exists() else []
+        declarations[name]=dict(kind=m[1],status=status,classification=category,direct_placeholder=placeholder,
+            axioms=axioms,reason=(r.get('missing') or a.get('explanation')) if status=='未证' else None,
+            compiler_route_count=len(routes),route_evidence=path.relative_to(ROOT).as_posix() if routes else None)
+        counts[status]+=1
+    out[r['source_id']]=dict(local_verdict=a['verdict'],declarations=declarations)
+p.dump(B/'proof_attempts.json',dict(rule='最多3种路线；失败分类只用缺大型理论/原书疑误不证/时间盒止；definitions do not create theorem obligations',
+    counts=dict(counts),unproved_reasons=dict(reasons),items=out))
+lines=['# 第6章原书疑误与双版本审阅单','',
+    '教材：B. Leimkuhler 与 C. Matthews，Molecular Dynamics: With Deterministic and Stochastic Numerical Methods，Springer，2015，第6章正文。',
+    '页码：PDF物理页从1起数，本章PDF页＝印刷页＋21。原句和原公式逐字保留；修正版是工作建议，均待导师裁定。网站审计尚未提交。',
+    '原文版的错误断言不证明；原文公式的定义仅记录表达式。修正版定义、已证定理与未证定理分别标明。第7项属于既有Lean辅助定义缺口，不归因于教材。','']
+def decl_status(name):
+    q='MD.Ch06.'+name
+    for v in out.values():
+        if q in v['declarations']:
+            z=v['declarations'][q]
+            if z['status']=='定义':return '定义已落盘；'+('公理/类型已核' if z['axioms'] is not None else '待本批编译核验')
+            return z['status']+('；'+z['classification'] if z['classification'] else '')
+    return '尚未落盘，不计完成'
+for key,(target,example,change) in SPECS.items():
+    if key not in bykey:continue
+    r=bykey[key];name=r['lean_decl'].rsplit('.',1)[1]
+    original={'Proposition62':'proposition62Printed','FiniteDistribution':'finiteDistributionPrinted',
+        'TimeItoFormula':'timeItoFormulaPrinted','FPPolynomialAdjoint':'fpPolynomialAdjointPrinted',
+        'Theorem61':'theorem61Printed','Theorem62':'theorem62Printed',
+        'BrownianNonpositive':'brownianNegativeDefinitePrinted','PeriodicPotentialBound':'periodicConfiningPrinted',
+        'LyapunovYoungBounds':'laplacianBoundPrinted'}.get(key,name)
+    corrected=name+'_corrected'
+    issues=' '.join(x['detail'].removeprefix('[ERRATUM?]') for x in r['issues'])
+    if key=='Proposition62':issues+=' 原书p.230末句印刷ν→0，实际应为ν→∞。'
+    lines += ['## '+str(len([x for x in lines if x.startswith('## ')])+1)+'. '+r['source_id'],'',
+        '- source_id：'+r['source_id']+'；印刷页 '+r['printed_page']+' / PDF页 '+r['pdf_page']+'。',
+        '- 原文引文（逐字）：','',*['> '+s for s in r['statement_latex'].splitlines()],'',
+        *(['- 原书证明中的相关逐字段落：','',*['> '+s for s in r['proof_latex'].splitlines()],''] if key=='Proposition62' else []),
+        '- 问题所在：'+issues,
+        '- 反例或理由：'+example,
+        '- 原文版 Lean 名称及状态：`MD.Ch06.'+original+'`：'+decl_status(original)+'。原文文字和完整展示式见上；启发式极限只登记其意义，不声称一般热浴已满足。',
+        '- 修正版 Lean 名称、改动内容、证明状态：`MD.Ch06.'+corrected+'`：'+decl_status(corrected)+'；'+change,
+        '- 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。',
+        '- 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。',
+        '- 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。','']
+(ROOT/'docs/review/CH06_ERRATA.zh-CN.md').write_text('\n'.join(lines),encoding='utf-8')
+summary=dict(entries=len(p.RECORDS),local_PASS=sum(v['verdict']=='PASS' for v in audit.values()),
+    local_NEEDS_HUMAN=sum(v['verdict']!='PASS' for v in audit.values()),
+    errata_records=sum(k in bykey for k in SPECS),source_errata_records=sum(k in bykey and k!='WeakItoAlias' for k in SPECS),
+    declarations=dict(counts),unproved_reasons=dict(reasons),website_submitted=False)
+p.dump(B/'validation/RESUME22/COUNTS.json',summary)
+print('Counts:',json.dumps(summary,ensure_ascii=True))

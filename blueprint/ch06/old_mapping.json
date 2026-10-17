@@ -63,7 +63,7 @@
     "CH06-060": "MD-6.3.3-BathReductionPrinted",
     "CH06-062": "MD-6.3.3-BathForceWeakLimitMeaning",
     "CH06-063": "MD-6.3.3-MassLangevin",
-    "CH06-064": "MD-6.3.3-ParticleDiagonalFriction",
+    "CH06-064": "MD-6.3.3-VariableFrictionCommutingStationary",
     "CH06-065": "MD-6.3.4-OverdampedLimit",
     "CH06-067": "MD-6.3.5-ScalarGenerator",
     "CH06-066": "MD-6.3.5-GeneratorExpectation",
@@ -75,17 +75,17 @@
     "CH06-073": "MD-6.3.6-ZeroNoise",
     "CH06-074": "MD-6.3.7-VectorIto",
     "CH06-075": "MD-6.3.7-VectorFPEquation",
-    "CH06-076": "MD-6.3.7-DiffusionTrace"
+    "CH06-076": "MD-6.3.7-DiffusionTrace",
+    "CH06-077": "MD-6.3.8-LangevinFPEquation",
+    "CH06-084": "MD-6.4.2-UnitMassGibbsStationaryBridge"
   },
   "pending": [
-    "CH06-077",
     "CH06-078",
     "CH06-079",
     "CH06-080",
     "CH06-081",
     "CH06-082",
     "CH06-083",
-    "CH06-084",
     "CH06-085",
     "CH06-086",
     "CH06-087",
@@ -391,7 +391,10 @@
     ],
     "CH06-064": [
       "MD-6.3.3-VariableFriction",
-      "MD-6.3.3-ParticleDiagonalFriction"
+      "MD-6.3.3-ParticleDiagonalFriction",
+      "MD-6.3.3-VariableFrictionForward",
+      "MD-6.3.3-VariableFrictionCanonicalPrinted",
+      "MD-6.3.3-VariableFrictionCommutingStationary"
     ],
     "CH06-065": [
       "MD-6.3.4-BrownianMassModel",
@@ -435,6 +438,15 @@
     ],
     "CH06-076": [
       "MD-6.3.7-DiffusionTrace"
+    ],
+    "CH06-077": [
+      "MD-6.3.8-LangevinMassForward",
+      "MD-6.3.8-MomentumMassLaplacian",
+      "MD-6.3.8-LangevinFPEquation"
+    ],
+    "CH06-084": [
+      "MD-6.4.2-MassGibbsStationary",
+      "MD-6.4.2-UnitMassGibbsStationaryBridge"
     ]
   }
 }

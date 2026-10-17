@@ -152,6 +152,14 @@
 | MD-6.3.7-VectorForward | 243/264 | PASS | 待网站审计 | self-contained |
 | MD-6.3.7-DiffusionTrace | 243/264 | PASS | 待网站审计 | self-contained |
 | MD-6.3.7-VectorFPEquation | 243/264 | PASS | 待网站审计 | incomplete |
+| MD-6.3.8-LangevinMassForward | 244/265 | PASS | 待网站审计 | self-contained |
+| MD-6.3.8-MomentumMassLaplacian | 244/265 | PASS | 待网站审计 | self-contained |
+| MD-6.3.8-LangevinFPEquation | 244/265 | PASS | 待网站审计 | incomplete |
+| MD-6.4.2-MassGibbsStationary | 247/268 | PASS | 待网站审计 | incomplete |
+| MD-6.4.2-UnitMassGibbsStationaryBridge | 247/268 | PASS | 待网站审计 | checked+documented priors |
+| MD-6.3.3-VariableFrictionForward | 239/260 | PASS | 待网站审计 | self-contained |
+| MD-6.3.3-VariableFrictionCanonicalPrinted | 239/260 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.3.3-VariableFrictionCommutingStationary | 239/260 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -191,6 +199,8 @@
   原页两次IBP后仍打印负号；正确应正号，且(6.39)最终算子已经使用正号。
 - MD-6.3.6-FPPolynomialAdjoint：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
   原只给函数值尾部增长而未约束导数；完整IBP及边界消失需技术资格，已全部明示，不静默添加。
+- MD-6.3.3-VariableFrictionCanonicalPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  任意ΓΓᵀ与对角质量不交换时，印刷漂移ΓΓᵀp与噪声M½Γ不自动满足Gibbs涨落耗散平衡；原canonical目标不能推广为任意质量/任意矩阵全称定理。
 
 ## 1. MD-6.1.1-Microcanonical · definition · 印刷p.214 / PDFp.235
 
@@ -7609,3 +7619,398 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 缺失/继续路线：缺多维Ito/鞅期望及真实law到强Fokker–Planck完整桥接。
 
 签名SHA256：`20762283d7a02abcf53c00abac2f3c6c7b3834e1d5ca267e8b06fab1aa81dada`；原文SHA256：`6767878675a034158b2cbbc0c3fcc3c8b91fee729846b8ad2a2bb338dbe6b25f`。
+
+## 1. MD-6.3.8-LangevinMassForward · (6.42) · 印刷p.244 / PDFp.265
+
+### 2. 原文陈述
+
+> In the special case of Langevin dynamics (6.32)–(6.33) for a system with $N_c$ configuration variables, the density is a function of the vectors of positions $q$, momenta $p$, and time, and the formula for the Kolmogorov operator becomes
+> \[\mathcal L_{\rm LD}^*\rho=-\nabla_q\cdot(M^{-1}p\rho)+\nabla_p\cdot([\nabla U(q)+\gamma p]\rho)+\gamma k_BT\Delta_M\rho;\tag{6.42}\]
+> where the mass-weighted Laplacian $\Delta_M$ is defined as
+> \[\Delta_M\stackrel{\rm def}=\nabla\cdot(M\nabla)=\sum_{i=1}^{N_c}m_i\frac{\partial^2}{\partial p_i^2}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def langevinMassForward {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : MolecularDynamics.Chapter06Review.V n → ℝ) (γ β : ℝ)
+    (ρ : MolecularDynamics.Chapter06Review.Phase n → ℝ) (x : MolecularDynamics.Chapter06Review.Phase n) : ℝ :=
+  ∑ i, (-(m i)⁻¹*x.2 i * fderiv ℝ ρ x (Pi.single i 1,0) +
+    fderiv ℝ (fun z : MolecularDynamics.Chapter06Review.Phase n ↦ (textbookConfigurationPartial U i z.1+γ*z.2 i)*ρ z) x (0,Pi.single i 1) +
+    γ*β⁻¹*m i*fderiv ℝ (fun z ↦ fderiv ℝ ρ z (0,Pi.single i 1)) x (0,Pi.single i 1))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinMassForward；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1505](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1505>)（`MD.Ch06.langevinMassForward`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`bde3fbeabbd6c3b08bfef0280eb430b6142d73ef459850336474adcfbd80a6c8`；原文SHA256：`1ca02e8db619402faeeff68de17e0c924ab21e99bbf7000f927c9a83e3911708`。
+
+## 1. MD-6.3.8-MomentumMassLaplacian · definition · 印刷p.244 / PDFp.265
+
+### 2. 原文陈述
+
+> \[\Delta_M\stackrel{\rm def}=\nabla\cdot(M\nabla)=\sum_{i=1}^{N_c}m_i\frac{\partial^2}{\partial p_i^2}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def momentumMassLaplacian {n : ℕ} (m : Fin n → ℝ)
+    (ρ : ((Fin n → ℝ) × (Fin n → ℝ)) → ℝ) (x : (Fin n → ℝ) × (Fin n → ℝ)) : ℝ :=
+  ∑ i, m i*fderiv ℝ (fun y ↦ fderiv ℝ ρ y (0,Pi.single i 1)) x (0,Pi.single i 1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.momentumMassLaplacian；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1512](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1512>)（`MD.Ch06.momentumMassLaplacian`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`19abb3494a5c7ac337cd4d6a9e99e870e378448debd896aff268135933efe9a7`；原文SHA256：`b5eefd14ed54fd3ac6020825e909f1a159f53056b9a6fad2377e66dfa50c2a7e`。
+
+## 1. MD-6.3.8-LangevinFPEquation · unnumbered_claim · 印刷p.244 / PDFp.265
+
+### 2. 原文陈述
+
+> the formula for the Kolmogorov operator becomes
+> \[\mathcal L_{\rm LD}^*\rho=-\nabla_q\cdot(M^{-1}p\rho)+\nabla_p\cdot([\nabla U(q)+\gamma p]\rho)+\gamma k_BT\Delta_M\rho.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem langevinFPEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin n → ℝ)) (X : ℝ → Ω → ((Fin n → ℝ) × (Fin n → ℝ)))
+    (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ) (γ β : ℝ)
+    (x0 : (Fin n → ℝ) × (Fin n → ℝ)) (ρ : ℝ → ((Fin n → ℝ) × (Fin n → ℝ)) → ℝ),
+  textbookIsWienerVector (fun t sample ↦ W t sample) P → (∀ i, 0 < m i) → 0 < γ → 0 < β →
+  MolecularDynamics.Chapter06Review.langevinMassSDE P W X m U γ β⁻¹ x0 → ContDiff ℝ ∞ U →
+  ContDiff ℝ ∞ (Function.uncurry ρ) →
+  (∀ t : ℝ, 0 < t → (∀ x, 0 ≤ ρ t x) ∧ HasLaw (X t) (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ t x))) P) →
+  (∀ lo hi : ℝ, 0 < lo → lo ≤ hi → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∀ t ∈ Icc lo hi,
+    ∀ x, |ρ t x|+|deriv (fun s ↦ ρ s x) t| ≤ C*Real.exp (-c*‖x‖)) →
+  ∀ t x, 0 < t → deriv (fun s ↦ ρ s x) t=MolecularDynamics.Chapter06Review.langevinMassForward m U γ β (ρ t) x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinFPEquation；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实任意质量Langevin过程和实际非负平滑密度law及求导尾部资格；不以弱PDE或强PDE作假设。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1518](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1518>)（`MD.Ch06.langevinFPEquation`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺一般质量Langevin law的完整Fokker–Planck桥接；单位质量形式算子不是过程密度PDE证明。
+
+签名SHA256：`136fade39271f9933118cf7f507505f985d2cd9254b7e82a2a58763fbb056af8`；原文SHA256：`70667c0cd7c4bdd7835d1a738a4b5d2f1303e324343aa2f8121fb0b837f26c07`。
+
+## 1. MD-6.4.2-MassGibbsStationary · extra_claim · 印刷p.247 / PDFp.268
+
+### 2. 原文陈述
+
+> We have a stationary distribution if $\mathcal L^*\rho=0$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem massGibbsStationary : ∀ {n : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ) (γ β : ℝ),
+  (∀ i, 0 < m i) → ContDiff ℝ ∞ U → 0 < γ → 0 < β →
+  ∀ x, MolecularDynamics.Chapter06Review.langevinMassForward m U γ β
+    (fun z ↦ Real.exp (-β*MolecularDynamics.Chapter06Review.massHamiltonian m U z)) x=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.massGibbsStationary；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实任意正质量与匹配β⁻¹噪声；完整原Gibbs权重的形式stationarity验证，不将它计为Markov演化测度不变性。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1533](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1533>)（`MD.Ch06.massGibbsStationary`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：现成单位质量表达已证，任意质量坐标包装尚缺短桥；实际过程不变另条。
+
+签名SHA256：`4e6cb960613c12d507ace661ea65f6177a04a886c1a20b545336637088c30496`；原文SHA256：`0955bfd60f7d2e04a0158355b36adcc83d2b3b7ab9a0cf97b28bf5bbe5012d01`。
+
+## 1. MD-6.4.2-UnitMassGibbsStationaryBridge · extra_claim · 印刷p.247 / PDFp.268
+
+### 2. 原文陈述
+
+> We have a stationary distribution if $\mathcal L^*\rho=0$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem unitMassGibbsStationaryBridge {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (hU : Differentiable ℝ U) (β γ σ : ℝ) (hβ : 0 < β)
+    (hσ : σ ^ 2 = 2 * γ / β) (z : textbookLangevinPhase N) :
+    textbookLangevinForwardDifferentialOperator U γ σ (textbookLangevinGibbsWeight U β) z = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.unitMassGibbsStationaryBridge；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]现成真实单位质量原机械Hamiltonian权重、σ²=2γ/β的前向形式表达；未代表任意质量或真实过程测度不变性全部已证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**checked+documented priors**；本地证明状态：existing_bridge。
+
+位置：[Blueprint/Ch06.lean:1541](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1541>)（`MD.Ch06.unitMassGibbsStationaryBridge`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+已登记前置证明/定义：MolecularDynamics.textbookLangevinForwardDifferentialOperator_gibbs_eq_zero。
+
+签名SHA256：`9e6c8fe0df31f0a462c0f473f8096f9089898f456ea16ef34db03abcb1f594cf`；原文SHA256：`662b1c3a5115102306d5490f0ee96bc9017066528f0f76689177e81baf9fe45b`。
+
+## 1. MD-6.3.3-VariableFrictionForward · extra_claim · 印刷p.239 / PDFp.260
+
+### 2. 原文陈述
+
+> \[dp=-\nabla U(q)dt-\Gamma(q)\Gamma(q)^T pdt+\sqrt{2k_BT}M^{1/2}\Gamma(q)d\widetilde W.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def variableFrictionForward {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ)
+    (Γ : (Fin n → ℝ) → Matrix (Fin n) (Fin r) ℝ) (θ : ℝ)
+    (ρ : ((Fin n → ℝ) × (Fin n → ℝ)) → ℝ) (x : (Fin n → ℝ) × (Fin n → ℝ)) : ℝ :=
+  (∑ i, (-(m i)⁻¹*x.2 i*fderiv ℝ ρ x (Pi.single i 1,0) +
+    fderiv ℝ (fun z ↦ (textbookConfigurationPartial U i z.1+
+      ((Γ z.1*(Γ z.1).transpose).mulVec z.2) i)*ρ z) x (0,Pi.single i 1))) +
+  ∑ i, ∑ k, θ*Real.sqrt (m i)*Real.sqrt (m k)*(Γ x.1*(Γ x.1).transpose) i k *
+    fderiv ℝ (fun z ↦ fderiv ℝ ρ z (0,Pi.single k 1)) x (0,Pi.single i 1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.variableFrictionForward；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整原矩形Γ、任意质量的实际漂移与噪声协方差导出形式前向表达，供验证canonical资格；没有偷换为常矩阵或单位质量。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1549](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1549>)（`MD.Ch06.variableFrictionForward`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`3f76041e39bf2790a8eadf01d0d4144e2b036393724ebf91b0da80f56b19b591`；原文SHA256：`1ef65e00715a53cd18046972c9e6237f85e0b779d7c0f7e1e923dc2631e7b9ca`。
+
+## 1. MD-6.3.3-VariableFrictionCanonicalPrinted · unnumbered_claim · 印刷p.239 / PDFp.260
+
+### 2. 原文陈述
+
+> However, it should be noted that in many types of modelling, the physical nature of the interaction with the solvent bath is neglected and $\gamma$ or $\Gamma(q)$ are simply viewed as artificial parameters which allow recovery of averages with respect to the canonical distribution.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem variableFrictionCanonicalPrinted : ∀ {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ)
+    (Γ : (Fin n → ℝ) → Matrix (Fin n) (Fin r) ℝ) (θ : ℝ),
+  (∀ i, 0 < m i) → ContDiff ℝ ∞ U → ContDiff ℝ ∞ Γ → 0 < θ →
+  ∀ x, variableFrictionForward m U Γ θ
+    (fun z ↦ Real.exp (-θ⁻¹*MolecularDynamics.Chapter06Review.massHamiltonian m U z)) x=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.variableFrictionCanonicalPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]该条为原恢复canonical目标的必要形式stationarity检验；完整任意质量/Γ对象保留，不以必要检验计完整采样收敛已证。 | [EXTRA] |
+| 原页核对/疑点 | 任意ΓΓᵀ与对角质量不交换时，印刷漂移ΓΓᵀp与噪声M½Γ不自动满足Gibbs涨落耗散平衡；原canonical目标不能推广为任意质量/任意矩阵全称定理。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1561](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1561>)（`MD.Ch06.variableFrictionCanonicalPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：等待网站/导师明确Γ与M的交换或正确漂移；不证明一般错误stationarity，更不伪造采样收敛。
+
+签名SHA256：`829fa031e1f12dd1f159f4db901058475c0a9f3698dbb4828587c07d6f1c4c2b`；原文SHA256：`01dd58cd5e98090a9b33cef68815cd89a25278efc07b7b08e2b0c0918a8a3b85`。
+
+## 1. MD-6.3.3-VariableFrictionCommutingStationary · unnumbered_claim · 印刷p.239 / PDFp.260
+
+### 2. 原文陈述
+
+> $\gamma$ or $\Gamma(q)$ are simply viewed as artificial parameters which allow recovery of averages with respect to the canonical distribution.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem variableFrictionCommutingStationary : ∀ {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ)
+    (Γ : (Fin n → ℝ) → Matrix (Fin n) (Fin r) ℝ) (θ : ℝ),
+  (∀ i, 0 < m i) → ContDiff ℝ ∞ U → ContDiff ℝ ∞ Γ → 0 < θ →
+  (∀ q, (Γ q*(Γ q).transpose)*Matrix.diagonal m=Matrix.diagonal m*(Γ q*(Γ q).transpose)) →
+  ∀ x, variableFrictionForward m U Γ θ
+    (fun z ↦ Real.exp (-θ⁻¹*MolecularDynamics.Chapter06Review.massHamiltonian m U z)) x=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.variableFrictionCommutingStationary；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确ΓΓᵀ与M交换，保留任意维度/矩形Γ及完整Gibbs权重stationarity；未直接假设stationarity或声称采样收敛。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1570](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1570>)（`MD.Ch06.variableFrictionCommutingStationary`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺任意质量/矩阵交换的完整坐标涨落耗散代数打包；不建设一般随机理论。
+
+签名SHA256：`f179338cfc890b97f44c0d7660787c098df5231ff342f7a23bd54a795eef6063`；原文SHA256：`001d560df7ff4462efd2058d4e2afa2aede700673ab048d10e4d7b1cacd5c678`。

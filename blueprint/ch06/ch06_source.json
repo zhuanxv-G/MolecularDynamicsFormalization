@@ -3640,5 +3640,196 @@
     "review_status": "DRAFT",
     "repair_log": [],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.8-LangevinMassForward",
+    "kind": "definition",
+    "label": "(6.42)",
+    "section": "6.3.8",
+    "printed_page": "244",
+    "pdf_page": "265",
+    "statement_latex": "In the special case of Langevin dynamics (6.32)–(6.33) for a system with $N_c$ configuration variables, the density is a function of the vectors of positions $q$, momenta $p$, and time, and the formula for the Kolmogorov operator becomes\n\\[\\mathcal L_{\\rm LD}^*\\rho=-\\nabla_q\\cdot(M^{-1}p\\rho)+\\nabla_p\\cdot([\\nabla U(q)+\\gamma p]\\rho)+\\gamma k_BT\\Delta_M\\rho;\\tag{6.42}\\]\nwhere the mass-weighted Laplacian $\\Delta_M$ is defined as\n\\[\\Delta_M\\stackrel{\\rm def}=\\nabla\\cdot(M\\nabla)=\\sum_{i=1}^{N_c}m_i\\frac{\\partial^2}{\\partial p_i^2}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "β⁻¹=kBT，完整全部mi；动量扩散正质量mi，区别于过阻尼配置逆质量mi⁻¹。定义不计真实密度PDE已证。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.langevinMassForward",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.8-MomentumMassLaplacian",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.8",
+    "printed_page": "244",
+    "pdf_page": "265",
+    "statement_latex": "\\[\\Delta_M\\stackrel{\\rm def}=\\nabla\\cdot(M\\nabla)=\\sum_{i=1}^{N_c}m_i\\frac{\\partial^2}{\\partial p_i^2}.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [
+      "实际全部动量坐标二阶偏导正质量权重。"
+    ],
+    "issues": [],
+    "lean_decl": "MD.Ch06.momentumMassLaplacian",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.8-LangevinFPEquation",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.8",
+    "printed_page": "244",
+    "pdf_page": "265",
+    "statement_latex": "the formula for the Kolmogorov operator becomes\n\\[\\mathcal L_{\\rm LD}^*\\rho=-\\nabla_q\\cdot(M^{-1}p\\rho)+\\nabla_p\\cdot([\\nabla U(q)+\\gamma p]\\rho)+\\gamma k_BT\\Delta_M\\rho.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.langevinFPEquation",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实任意质量Langevin过程和实际非负平滑密度law及求导尾部资格；不以弱PDE或强PDE作假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.4.2-MassGibbsStationary",
+    "kind": "extra_claim",
+    "label": null,
+    "section": "6.4.2",
+    "printed_page": "247",
+    "pdf_page": "268",
+    "statement_latex": "We have a stationary distribution if $\\mathcal L^*\\rho=0$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.massGibbsStationary",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实任意正质量与匹配β⁻¹噪声；完整原Gibbs权重的形式stationarity验证，不将它计为Markov演化测度不变性。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.4.2-UnitMassGibbsStationaryBridge",
+    "kind": "extra_claim",
+    "label": null,
+    "section": "6.4.2",
+    "printed_page": "247",
+    "pdf_page": "268",
+    "statement_latex": "We have a stationary distribution if $\\mathcal L^*\\rho=0$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.unitMassGibbsStationaryBridge",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookLangevinForwardDifferentialOperator_gibbs_eq_zero"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]现成真实单位质量原机械Hamiltonian权重、σ²=2γ/β的前向形式表达；未代表任意质量或真实过程测度不变性全部已证。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-VariableFrictionForward",
+    "kind": "extra_claim",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "239",
+    "pdf_page": "260",
+    "statement_latex": "\\[dp=-\\nabla U(q)dt-\\Gamma(q)\\Gamma(q)^T pdt+\\sqrt{2k_BT}M^{1/2}\\Gamma(q)d\\widetilde W.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.variableFrictionForward",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]完整原矩形Γ、任意质量的实际漂移与噪声协方差导出形式前向表达，供验证canonical资格；没有偷换为常矩阵或单位质量。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-VariableFrictionCanonicalPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "239",
+    "pdf_page": "260",
+    "statement_latex": "However, it should be noted that in many types of modelling, the physical nature of the interaction with the solvent bath is neglected and $\\gamma$ or $\\Gamma(q)$ are simply viewed as artificial parameters which allow recovery of averages with respect to the canonical distribution.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "任意ΓΓᵀ与对角质量不交换时，印刷漂移ΓΓᵀp与噪声M½Γ不自动满足Gibbs涨落耗散平衡；原canonical目标不能推广为任意质量/任意矩阵全称定理。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.variableFrictionCanonicalPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]该条为原恢复canonical目标的必要形式stationarity检验；完整任意质量/Γ对象保留，不以必要检验计完整采样收敛已证。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.3.3-VariableFrictionCommutingStationary",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "239",
+    "pdf_page": "260",
+    "statement_latex": "$\\gamma$ or $\\Gamma(q)$ are simply viewed as artificial parameters which allow recovery of averages with respect to the canonical distribution.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.variableFrictionCommutingStationary",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]明确ΓΓᵀ与M交换，保留任意维度/矩形Γ及完整Gibbs权重stationarity；未直接假设stationarity或声称采样收敛。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   }
 ]

@@ -1,0 +1,50 @@
+{
+  "batch": "BATCH28",
+  "subtask": "BATCH28b",
+  "source_ids": [
+    "MD-6.3.8-MomentumMassLaplacian"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 265,
+      "printed_page": 244
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "c89758d8dbaaf9629dc536128ae1e7e1c5c6ec7cd534bbcce9849d3a63e935cc",
+  "lean_sha256": "66a75b9c65fc8dc5ea3db4890bfccb2fa439410e14e2de2bc1c335d0f03dd8ed",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "66a75b9c65fc8dc5ea3db4890bfccb2fa439410e14e2de2bc1c335d0f03dd8ed",
+    "blueprint/ch06/ch06_source.json": "c89758d8dbaaf9629dc536128ae1e7e1c5c6ec7cd534bbcce9849d3a63e935cc",
+    "BATCH28b_PAGES.pdf": "fc272e27e94445fc6407552fe5c778186711a9a97461b015345cbebb03701681",
+    "signature_sha256": "19abb3494a5c7ac337cd4d6a9e99e870e378448debd896aff268135933efe9a7"
+  },
+  "signature_sha256": "19abb3494a5c7ac337cd4d6a9e99e870e378448debd896aff268135933efe9a7",
+  "definition_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "momentumMassLaplacian",
+      "code_sha256": "19abb3494a5c7ac337cd4d6a9e99e870e378448debd896aff268135933efe9a7"
+    }
+  ],
+  "paste_plus_pdf_bytes": 94764,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3965,
+      "sha256": "bc0a93840fe38d2524dfaeec18913f366df6504056cf230227c43ada18efee8d"
+    },
+    "BATCH28b_PAGES.pdf": {
+      "bytes": 90799,
+      "sha256": "fc272e27e94445fc6407552fe5c778186711a9a97461b015345cbebb03701681"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 96605
+}

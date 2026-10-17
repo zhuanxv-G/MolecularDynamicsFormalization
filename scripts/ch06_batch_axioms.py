@@ -11,7 +11,12 @@ else:probe.write_text(text,encoding='utf-8')
 receipt,out,reused=compile_recorded(['lake','env','lean',str(probe.relative_to(ROOT))],ROOT,probe,
     probe.with_suffix('.log'),probe.with_suffix('.json'),reuse_failure=True)
 assert receipt['exit_code']==0,out.decode('utf-8',errors='replace')[-5000:]
-p.checked(probe.with_suffix('.log'));p.generate();render(6,p)
+p.checked(probe.with_suffix('.log'))
+state=json.loads((p.BASE/'local_audit.json').read_text(encoding='utf-8'))
+for row in state['items'].values():
+    row.update(compiled=True,compile_evidence=probe.with_suffix('.json').relative_to(ROOT).as_posix())
+p.dump(p.BASE/'local_audit.json',state)
+p.generate();render(6,p)
 p.dump(folder/(label+'-binding.json'),dict(canonical_source='Blueprint/Ch06.lean',canonical_sha256=p.sha(source),
     audit_source_sha256=p.sha(audit),combined_source_sha256=p.sha(probe),receipt_sha256=p.sha(probe.with_suffix('.json')),
     scope='entire canonical source followed by all current #print axioms commands; no import of stale chapter olean'))

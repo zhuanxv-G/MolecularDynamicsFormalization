@@ -4,7 +4,7 @@
 先核对AGENTS、CURRENT_STATE顶部、WORK_LOG最新及blueprint/ch06/PROGRESS.md，从最近已验证检查点接续；先 git status 并复用已通过证据。
 第1–5章不动，不进入第7章。
 
-下一步：激活§6.3.8的8条；复用已通过证据，按CONTINUE_NEXT顺序至§6.4.5章末停止。
+下一步：继续§6.4.1，激活ch06_section641和ch06_section641b；第1–5章冻结。
 
 ---
 历史接续提示（冲突处以22号为准）：

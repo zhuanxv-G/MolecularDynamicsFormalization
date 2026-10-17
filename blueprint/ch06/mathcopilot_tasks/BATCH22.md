@@ -144,3 +144,114 @@ def bathForceWeakLimitMeaning {A : Type*} [MeasurableSpace A] (P : Measure A)
       (𝓝 (∫ sample, f (wienerPaths T sample) ∂P))
 ```
 
+### MD-6.3.3-VariableFrictionForward
+```json
+{
+  "source_id": "MD-6.3.3-VariableFrictionForward",
+  "kind": "extra_claim",
+  "label": null,
+  "section": "6.3.3",
+  "printed_page": "239",
+  "pdf_page": "260",
+  "statement_latex": "\\[dp=-\\nabla U(q)dt-\\Gamma(q)\\Gamma(q)^T pdt+\\sqrt{2k_BT}M^{1/2}\\Gamma(q)d\\widetilde W.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch06.variableFrictionForward",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]完整原矩形Γ、任意质量的实际漂移与噪声协方差导出形式前向表达，供验证canonical资格；没有偷换为常矩阵或单位质量。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+```lean
+def variableFrictionForward {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ)
+    (Γ : (Fin n → ℝ) → Matrix (Fin n) (Fin r) ℝ) (θ : ℝ)
+    (ρ : ((Fin n → ℝ) × (Fin n → ℝ)) → ℝ) (x : (Fin n → ℝ) × (Fin n → ℝ)) : ℝ :=
+  (∑ i, (-(m i)⁻¹*x.2 i*fderiv ℝ ρ x (Pi.single i 1,0) +
+    fderiv ℝ (fun z ↦ (textbookConfigurationPartial U i z.1+
+      ((Γ z.1*(Γ z.1).transpose).mulVec z.2) i)*ρ z) x (0,Pi.single i 1))) +
+  ∑ i, ∑ k, θ*Real.sqrt (m i)*Real.sqrt (m k)*(Γ x.1*(Γ x.1).transpose) i k *
+    fderiv ℝ (fun z ↦ fderiv ℝ ρ z (0,Pi.single k 1)) x (0,Pi.single i 1)
+```
+
+### MD-6.3.3-VariableFrictionCanonicalPrinted
+```json
+{
+  "source_id": "MD-6.3.3-VariableFrictionCanonicalPrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.3.3",
+  "printed_page": "239",
+  "pdf_page": "260",
+  "statement_latex": "However, it should be noted that in many types of modelling, the physical nature of the interaction with the solvent bath is neglected and $\\gamma$ or $\\Gamma(q)$ are simply viewed as artificial parameters which allow recovery of averages with respect to the canonical distribution.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "任意ΓΓᵀ与对角质量不交换时，印刷漂移ΓΓᵀp与噪声M½Γ不自动满足Gibbs涨落耗散平衡；原canonical目标不能推广为任意质量/任意矩阵全称定理。"
+    }
+  ],
+  "lean_decl": "MD.Ch06.variableFrictionCanonicalPrinted",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]该条为原恢复canonical目标的必要形式stationarity检验；完整任意质量/Γ对象保留，不以必要检验计完整采样收敛已证。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+```lean
+theorem variableFrictionCanonicalPrinted : ∀ {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ)
+    (Γ : (Fin n → ℝ) → Matrix (Fin n) (Fin r) ℝ) (θ : ℝ),
+  (∀ i, 0 < m i) → ContDiff ℝ ∞ U → ContDiff ℝ ∞ Γ → 0 < θ →
+  ∀ x, variableFrictionForward m U Γ θ
+    (fun z ↦ Real.exp (-θ⁻¹*MolecularDynamics.Chapter06Review.massHamiltonian m U z)) x=0
+```
+
+### MD-6.3.3-VariableFrictionCommutingStationary
+```json
+{
+  "source_id": "MD-6.3.3-VariableFrictionCommutingStationary",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.3.3",
+  "printed_page": "239",
+  "pdf_page": "260",
+  "statement_latex": "$\\gamma$ or $\\Gamma(q)$ are simply viewed as artificial parameters which allow recovery of averages with respect to the canonical distribution.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "issues": [],
+  "lean_decl": "MD.Ch06.variableFrictionCommutingStationary",
+  "reusable_proofs": [],
+  "extra_assumptions": [
+    "[EXTRA]明确ΓΓᵀ与M交换，保留任意维度/矩形Γ及完整Gibbs权重stationarity；未直接假设stationarity或声称采样收敛。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+```lean
+theorem variableFrictionCommutingStationary : ∀ {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ)
+    (Γ : (Fin n → ℝ) → Matrix (Fin n) (Fin r) ℝ) (θ : ℝ),
+  (∀ i, 0 < m i) → ContDiff ℝ ∞ U → ContDiff ℝ ∞ Γ → 0 < θ →
+  (∀ q, (Γ q*(Γ q).transpose)*Matrix.diagonal m=Matrix.diagonal m*(Γ q*(Γ q).transpose)) →
+  ∀ x, variableFrictionForward m U Γ θ
+    (fun z ↦ Real.exp (-θ⁻¹*MolecularDynamics.Chapter06Review.massHamiltonian m U z)) x=0
+```
+

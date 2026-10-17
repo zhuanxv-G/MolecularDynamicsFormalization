@@ -11,9 +11,12 @@ def call(args):
     print('Running:', ' '.join(map(str,args)),flush=True)
     subprocess.run(list(map(str,args)),cwd=ROOT,check=True)
 def generate(label):
-    call([PY,'scripts/local_blueprint.py','6','--compile','--batch',label,
+    # The axiom probe is the entire canonical source followed by #print commands;
+    # one fresh Lean invocation therefore performs both batch checks.
+    call([PY,'scripts/local_blueprint.py','6','--batch',label,
           '--step','③–⑤§'+x.section+'逐批验证'])
     call([PY,'scripts/ch06_batch_axioms.py',label])
+    call([PY,'scripts/ch06_sync22.py'])
 for module in x.modules:
     assert module.startswith('ch06_section') and (ROOT/'scripts'/f'{module}.py').exists()
     old=data.read_text(encoding='utf-8')

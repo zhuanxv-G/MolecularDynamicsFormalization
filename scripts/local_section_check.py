@@ -35,6 +35,35 @@ receipt,output,reused=compile_recorded(['lake','build',f'+Blueprint.Ch{x.chapter
     target/'chapter_build.log',target/'chapter_build.compile.json',reuse_failure=True)
 assert receipt['exit_code']==0,output.decode('utf-8',errors='replace')[-5000:]
 print('Current chapter build passed; shared checks reused with unchanged input hashes.',flush=True)
+if x.chapter==6:
+    # A current batch probe already typechecks the entire canonical source and
+    # prints every axiom in that same native run. Reuse its exact bytes/logs;
+    # never relabel this as a new native fresh check.
+    candidates=[]
+    for binding in (p.BASE/'validation/batch_axioms').glob('*-binding.json'):
+        b=json.loads(binding.read_text(encoding='utf-8'))
+        if b['canonical_sha256']==p.sha(source) and b['audit_source_sha256']==p.sha(p.BASE/'CheckAxioms.lean'):
+            candidates.append((binding,b))
+    assert candidates,'No current complete batch proof/axiom evidence'
+    binding,b=max(candidates,key=lambda q:q[0].stat().st_mtime)
+    probe=binding.with_name(binding.name.replace('-binding.json','.lean'))
+    receipt_path=probe.with_suffix('.json');raw=probe.with_suffix('.log')
+    rr=json.loads(receipt_path.read_text(encoding='utf-8'))
+    assert rr['exit_code']==0 and rr['input_sha256']==p.sha(probe)==b['combined_source_sha256']
+    assert p.sha(receipt_path)==b['receipt_sha256'] and rr['log_sha256']==p.sha(raw)
+    expected=source.read_text(encoding='utf-8')+'\n'+(p.BASE/'CheckAxioms.lean').read_text(encoding='utf-8').partition('\n')[2]
+    assert probe.read_text(encoding='utf-8')==expected
+    (target/'chapter_axioms.log').write_bytes(raw.read_bytes())
+    paths=['Blueprint/Ch06.lean','blueprint/ch06/CheckAxioms.lean','lakefile.toml','lean-toolchain','lake-manifest.json','scripts/local_chapter_check.ps1']
+    p.dump(target/'LOCAL_CHECK_REPORT.json',dict(chapter=6,machine_check_status='passed',
+        shared_check_sha256=p.sha(target/'CHECK_REPORT.json'),
+        inputs=[dict(relative_path=q,sha256=p.sha(ROOT/q)) for q in paths],
+        checks=[dict(name='chapter_fresh_and_axioms_reused',exit_code=0,raw_log='chapter_axioms.log',raw_log_sha256=p.sha(raw),
+            original_receipt=receipt_path.relative_to(ROOT).as_posix(),original_receipt_sha256=p.sha(receipt_path),
+            original_command=rr['command'],reuse_basis='entire current canonical source plus all current axiom commands; exact source and log hashes checked',native_rerun=False)],
+        current_chapter_build_receipt_sha256=p.sha(target/'chapter_build.compile.json')))
+    print('Section complete with verified batch check reuse:',x.report,flush=True)
+    raise SystemExit(0)
 subprocess.run(['pwsh','-NoProfile','-File',str(ROOT/'scripts/local_chapter_check.ps1'),
     '-Chapter',str(x.chapter),'-ReportDirectory',str(target)],cwd=ROOT,check=True)
 assert p.sha(source)==receipt['input_sha256']

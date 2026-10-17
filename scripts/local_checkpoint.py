@@ -67,6 +67,10 @@ if ch==6 and 'ch06_source_rechecks' in sys.modules:
     paths.append('scripts/ch06_source_rechecks.py')
 if ch==6 and (ROOT/'scripts/local_advance_ch06.py').exists():
     paths.append('scripts/local_advance_ch06.py')
+if ch==6:
+    paths += ['scripts/ch06_batch_axioms.py','scripts/ch06_errata.py','scripts/ch06_sync22.py']
+    if (ROOT/'docs/review/CH06_ERRATA.zh-CN.md').exists():
+        paths.append('docs/review/CH06_ERRATA.zh-CN.md')
 if (ROOT/f'scripts/ch{ch:02}_short_candidates.py').exists():
     paths.append(f'scripts/ch{ch:02}_short_candidates.py')
 if ch==5:
