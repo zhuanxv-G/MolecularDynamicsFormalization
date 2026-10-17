@@ -176,6 +176,14 @@
 | MD-6.4.1-ExampleNotIrreducible | 246/267 | PASS | 待网站审计 | self-contained |
 | MD-6.4.1-Communicates | 245–246/266–267 | PASS | 待网站审计 | self-contained |
 | MD-6.4.1-DirectedGraphIrreducible | 246/267 | PASS | 待网站审计 | incomplete |
+| MD-6.4.2-CylinderCoordinates | 247/268 | PASS | 待网站审计 | self-contained |
+| MD-6.4.2-CylinderSDE | 247/268 | PASS | 待网站审计 | self-contained |
+| MD-6.4.2-CylinderGenerator | 247/268 | PASS | 待网站审计 | self-contained |
+| MD-6.4.2-CylinderForwardPrinted | 247/268 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.2-StationaryDensity | 247/268 | PASS | 待网站审计 | self-contained |
+| MD-6.4.2-StationaryInvariant | 247/268 | PASS | 待网站审计 | incomplete |
+| MD-6.4-CanonicalMixingMeaning | 244/265 | PASS | 待网站审计 | self-contained |
+| MD-6.4.2-LangevinCanonicalMixing | 248/269 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -219,6 +227,8 @@
   任意ΓΓᵀ与对角质量不交换时，印刷漂移ΓΓᵀp与噪声M½Γ不自动满足Gibbs涨落耗散平衡；原canonical目标不能推广为任意质量/任意矩阵全称定理。
 - MD-6.4.1-FiniteDistribution：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
   印刷nonzero应区分典型正权重与一般非负概率；原句完整保留，未声明字面nonzero定义网站PASS。
+- MD-6.4.2-CylinderForwardPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。
 
 ## 1. MD-6.1.1-Microcanonical · definition · 印刷p.214 / PDFp.235
 
@@ -8754,3 +8764,407 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 缺失/继续路线：缺非负矩阵幂正项与有向路径的完整有限求和桥接；不建设一般PF理论。
 
 签名SHA256：`43c3da9bba95a7cb44e133c5280356e406fd76fff50d5ebd16e6fb2537e39735`；原文SHA256：`3f3747fe87410355ea4f6633684dc86e4d8e3f645e2c00cc533b99386cab8754`。
+
+## 1. MD-6.4.2-CylinderCoordinates · extra_claim · 印刷p.247 / PDFp.268
+
+### 2. 原文陈述
+
+> Now consider an SDE system defined on the space $D=\mathbb T^{k_1}\times\mathbb R^{k_2}$ for non-negative integers $k_1$ and $k_2$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def cylinderCoordinates {k₁ k₂ : ℕ} (z : Fin (k₁+k₂) → ℝ) :
+    (Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ) :=
+  (fun i ↦ (z ⟨i.val, by omega⟩ : AddCircle (1 : ℝ)), fun j ↦ z ⟨k₁+j.val, by omega⟩)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.cylinderCoordinates；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际圆环商坐标与Euclidean非紧坐标；局部微分表达通过周期lift解释，不偷换D为纯ℝⁿ。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1685](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1685>)（`MD.Ch06.cylinderCoordinates`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`4eaf19155333c4e32df78880ff30f970378d8478f3c4e391508ee76bfb0cd29f`；原文SHA256：`3030bdf1a21113171d164f13df62481a3d212067cb36f526bbfe5955422bf9d8`。
+
+## 1. MD-6.4.2-CylinderSDE · (6.43) · 印刷p.247 / PDFp.268
+
+### 2. 原文陈述
+
+> Now consider an SDE system defined on the space $D=\mathbb T^{k_1}\times\mathbb R^{k_2}$ for non-negative integers $k_1$ and $k_2$:
+> \[dX=b_0(X)dt+\sum_{i=1}^r b_i dW_i;\tag{6.43}\]
+> where $b_0$ is $C^\infty$ and the $W_i$ are independent standard Wiener processes. In this book, we will only consider the analysis for the case of additive noise (i.e. the $b_i$ vectors multiplying a Wiener process are constant).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def cylinderSDE {Ω : Type*} [MeasurableSpace Ω] {k₁ k₂ r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ))
+    (X : ℝ → Ω → ((Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ)))
+    (b₀ : ((Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ)) → (Fin (k₁+k₂) → ℝ))
+    (B : Matrix (Fin (k₁+k₂)) (Fin r) ℝ) (x0 : Fin (k₁+k₂) → ℝ) : Prop :=
+  ContDiff ℝ ∞ (fun z ↦ b₀ (cylinderCoordinates z)) ∧
+  textbookIsWienerVector (fun t sample ↦ W t sample) P ∧
+  ∃ lift : ℝ → Ω → (Fin (k₁+k₂) → ℝ),
+    strictVectorSDE P W lift (fun z _ ↦ b₀ (cylinderCoordinates z)) (fun _ _ ↦ B) x0 ∧
+    (∀ᵐ sample ∂P, ∀ t : ℝ, 0 ≤ t → X t sample=cylinderCoordinates (lift t sample))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.cylinderSDE；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实D及其周期lift、原C∞漂移、常矩形B和全部严格Ito积分；仅方程意义，不预置遍历/不变结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1691](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1691>)（`MD.Ch06.cylinderSDE`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`674ab98b4bfdf8887f342e0b152d68aeb4140810efffe4258f3e302193a6dcbb`；原文SHA256：`de70e0a20bb23e0c6b041bfc9abe58b53c07c6c788e9feb30a55f40aef429165`。
+
+## 1. MD-6.4.2-CylinderGenerator · definition · 印刷p.247 / PDFp.268
+
+### 2. 原文陈述
+
+> Working in flat $L^2$ space, we have that the infinitesmal generator for (6.43) acting on a smooth test function $\phi(X)$ is
+> \[\mathcal L\phi=b_0\cdot\nabla\phi+\tfrac12\operatorname{Tr}(B^T\phi''B);\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def cylinderGenerator {k₁ k₂ r : ℕ}
+    (b₀ : ((Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ)) → (Fin (k₁+k₂) → ℝ))
+    (B : Matrix (Fin (k₁+k₂)) (Fin r) ℝ)
+    (φ : ((Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ)) → ℝ) (z : Fin (k₁+k₂) → ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.vectorGenerator (fun y ↦ b₀ (cylinderCoordinates y)) B
+    (fun y ↦ φ (cylinderCoordinates y)) z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.cylinderGenerator；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1703](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1703>)（`MD.Ch06.cylinderGenerator`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`2a803ca8e42e6538301aa9b0462f2c426c484c3a9459804de70764fbcb6f1aff`；原文SHA256：`47cc204229526b46e7610aafe49274a04552ee076998421e95ada570f5319847`。
+
+## 1. MD-6.4.2-CylinderForwardPrinted · definition · 印刷p.247 / PDFp.268
+
+### 2. 原文陈述
+
+> Taking the adjoint, the forward Kolmogorov or Fokker-Planck operator is $\mathcal L^*$, acting on a density $\rho(X)$ as
+> \[\mathcal L^*\rho=-\nabla\cdot(b_0\rho)+\tfrac12\operatorname{Tr}(B^T\phi''B).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def cylinderForwardPrinted {n r : ℕ} (b₀ : (Fin n → ℝ) → (Fin n → ℝ))
+    (B : Matrix (Fin n) (Fin r) ℝ) (ρ φ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
+  -(∑ i, fderiv ℝ (fun z ↦ b₀ z i*ρ z) x (Pi.single i 1)) +
+    MolecularDynamics.Chapter06Review.vectorDiffusion B φ x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.cylinderForwardPrinted；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原文省略/技术资格 | [EXTRA]周期lift中的完整实际负散度与错误φ扩散，正确ρ算子已有VectorForward定义。 | [EXTRA] |
+| 原页核对/疑点 | 印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1713](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1713>)（`MD.Ch06.cylinderForwardPrinted`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：网站/导师待裁定印刷φ/ρ笔误。
+
+签名SHA256：`c0c4d694322f52cfd0bce13a831706fd41ffc37320725dcbf0d8f4bceef55d3f`；原文SHA256：`e7cb1727339c4c95e7e5e2fc0076f57ffe03424b1a14a6e0dd6d6daeed5c2865`。
+
+## 1. MD-6.4.2-StationaryDensity · definition · 印刷p.247 / PDFp.268
+
+### 2. 原文陈述
+
+> We have a stationary distribution if $\mathcal L^*\rho=0$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def stationaryDensity {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
+    (B : Matrix (Fin n) (Fin r) ℝ) (ρ : (Fin n → ℝ) → ℝ) : Prop :=
+  ∀ x, MolecularDynamics.Chapter06Review.vectorForward a B ρ x=0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.stationaryDensity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1719](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1719>)（`MD.Ch06.stationaryDensity`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`d2fd2021f6601bcbda2188887242440c53cf3e7cc61e5bec1d2b0c5edf2130d7`；原文SHA256：`1431d709d385582186e36c2bbeb21b671918967c4b61e07d5cdecb4c829d3af2`。
+
+## 1. MD-6.4.2-StationaryInvariant · unnumbered_claim · 印刷p.247 / PDFp.268
+
+### 2. 原文陈述
+
+> This is completely analogous to the deterministiccase in which stationary distributions were defined by $\mathcal L^*\rho=0$ where $\mathcal L^*$ refers to the Liouvillian. Any stationary solution is also referred to as an invariant probability distribution, or invariant probability measure for the system. The condition $\mathcal L^*\rho=0$ implies the property that the distribution is unchanged in time, $\exp(t\mathcal L^*)\rho=\rho$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem stationaryInvariant :
+  ∀ {D : Type*} [MeasurableSpace D]
+    (K : ℝ≥0 → Kernel D D) (μ : Measure D) (L : (D → ℝ) → D → ℝ),
+  MolecularDynamics.Chapter06Review.markovSemigroup K → IsProbabilityMeasure μ →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) → ∀ T : ℝ, 0 ≤ T →
+    ∃ bound : D → ℝ, Integrable bound μ ∧ ∀ s ∈ Icc 0 T, ∀ x,
+      |L (fun y ↦ MolecularDynamics.Chapter06Review.kernelAverage K f s.toNNReal y) x| ≤ bound x) →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) →
+    (∀ t, Integrable (L (fun x ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t x)) μ) ∧
+    (∀ x t, HasDerivWithinAt (fun s : ℝ ↦ MolecularDynamics.Chapter06Review.kernelAverage K f s.toNNReal x)
+      (L (fun y ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal y) x) (Ici 0) t)) →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) → (∫ x, L f x ∂μ)=0) →
+  MolecularDynamics.Chapter06Review.invariantKernel K μ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.stationaryInvariant；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]实际Markov kernel semigroup、真实generator对演化检验的导数关系与弱stationarity，并明确局部可积支配保证求导换积分；完整kernel测度不变，未假设不变结论或把形式exp当实际流。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1725](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1725>)（`MD.Ch06.stationaryInvariant`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺抽象generator域与求导换积分/测度分离的完整短桥；不建一般半群理论。
+
+签名SHA256：`494a3a2b6e1c7b372665a052cfeb7c89cf2fd0e22ff9d215f1d04dc9da8d3077`；原文SHA256：`cb5d66f4fcfeb8b1faae3e044476b0f37306294afc1172d94e2ec64cad498029`。
+
+## 1. MD-6.4-CanonicalMixingMeaning · definition · 印刷p.244 / PDFp.265
+
+### 2. 原文陈述
+
+> At any time $t$ we take a snapshot $M_t$ of the resulting set of random variables. Eventually we hope that the points will be distributed in the entire phase space in accordance with the target measure (usually the Gibbs distribution $e^{-\beta H}$).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def canonicalMixingMeaning {D : Type*} [TopologicalSpace D] [MeasurableSpace D]
+    (K : ℝ≥0 → Kernel D D) (μ : Measure D) : Prop :=
+  IsProbabilityMeasure μ ∧ ∀ x : D, ∀ f : D → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun t : ℝ ↦ ∫ z, f z ∂K t.toNNReal x) atTop (𝓝 (∫ z, f z ∂μ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.canonicalMixingMeaning；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实概率目标和任意点初始law、全部有界连续检验函数弱混合定义；没有宣称所有SDE自动满足。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1742](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1742>)（`MD.Ch06.canonicalMixingMeaning`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`0fcab25a334d27271e7aa0062ee21a8e01048fb9fce32eab2f775888e368ad0d`；原文SHA256：`b66bb0a1ad96da88b0a8b87bafdd9b7a5bbb5cef298bf775bec583fcf708e7d2`。
+
+## 1. MD-6.4.2-LangevinCanonicalMixing · unnumbered_claim · 印刷p.248 / PDFp.269
+
+### 2. 原文陈述
+
+> Even a single phase space point, which corresponds to a delta-function initial distribution, will instantly diffuse as the solution of the Fokker-Planck equation and, eventually, would cover the entire phase space.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem langevinCanonicalMixing :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ) (β γ : ℝ) (hβ : 0 < β)
+    {Ω : Type*} [MeasurableSpace Ω] (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)),
+  textbookIsWienerVector B P → 0 < γ →
+  (∀ t : ℝ≥0, 0 < t → ∃ density : textbookLangevinPeriodicPhase n × textbookLangevinPeriodicPhase n → ℝ,
+    Continuous density ∧ (∀ x y, 0 < density (x,y)) ∧
+    ∀ x, textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ
+      (Real.sqrt (2*γ*β⁻¹)) t x =
+        (MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun y ↦ ENNReal.ofReal (density (x,y)))) ∧
+  ∀ x : textbookLangevinPeriodicPhase n,
+    ∀ f : textbookLangevinPeriodicPhase n → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun t : ℝ ↦ ∫ z, f z ∂textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ
+      (Real.sqrt (2*γ*β⁻¹)) t.toNNReal x) atTop
+        (𝓝 (∫ z, f z ∂textbookLangevinCanonicalMeasure U β hβ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinCanonicalMixing；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实现有周期单位质量Langevin kernel、正γ/β、原光滑力全局Lipschitz；完整任意点初值的正时刻严格正连续转移密度以及全部有界连续检验弱混合，原一般混合意义另条，不以单位质量特例替代一般定义。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1749](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1749>)（`MD.Ch06.langevinCanonicalMixing`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺完整原Langevin正密度/Harris/kernel混合验收桥接；不恢复封存的Theorem6.2长证明。
+
+签名SHA256：`6771c0129ba54a6bcfe6e60894f1b6a38891a368cf4fc952c6ffdc83083adadc`；原文SHA256：`e636714269aac2d2098fde813a1fbe9c0043bd1ad86637b16a29b4afe5568046`。

@@ -1,10 +1,10 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH31b；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH31b_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "30359bca9783227904d55e96d2e90f8faa027706cb8d735af5700d4054111eb1",
-  "blueprint/ch06/ch06_source.json": "5131e8db5aa454bf18bc06a2882cc59f702891758467f4db10b65cb97530f875",
-  "BATCH31b_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
-  "signature_sha256": "0967f232e5773a65270f5af12c4bd89c6ebb22636c35f0e2f74823e86629e9db"
+  "Blueprint/Ch06.lean": "a4208537b0977572c0cad3140f8458b8b80dcb6f57c0675b80eaeccf0ee9b117",
+  "blueprint/ch06/ch06_source.json": "1617c389af2ccad00e7b7f8975e45ecd7241a2829374d5d8588ffdbb1971a5fc",
+  "BATCH31b_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+  "signature_sha256": "c05c97ddf04ee4838e242feef7cb8517b944365a6bb878c2b03caa97ea5e6e81"
 }
 
 请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH31b_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
@@ -15,27 +15,32 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
 ## 原页映射
 | 附件页 | 原PDF页 | 印刷页 |
 |---|---|---|
-| 1 | 267 | 246 |
+| 1 | 266 | 245 |
 
 ## 完整原文JSON
 ```json
 {
-  "source_id": "MD-6.4.1-FiniteErgodicity",
-  "kind": "unnumbered_claim",
+  "source_id": "MD-6.4.1-FiniteDistribution",
+  "kind": "definition",
   "label": null,
   "section": "6.4.1",
-  "printed_page": "246",
-  "pdf_page": "267",
-  "statement_latex": "The fundamental result for Markov chains is the following: If a given Markov chain is both irreducible and aperiodic, then it can be shown that there is a unique invariant distribution $\\psi^*$ such that\n\\[\\lim_{n\\to\\infty}\\psi_n=\\psi^*,\\]\nfor arbitrary initial distribution $\\psi_0$. The convergence of an irreducible finite Markov chain to its stationary distribution can be understood through the properties of its eigenvalues by applying of the Perron-Frobenius theorem (see [269]).",
+  "printed_page": "245",
+  "pdf_page": "266",
+  "statement_latex": "A distribution on the state space is typically associated to a row vector $\\psi=(\\psi_1,\\psi_2,\\ldots,\\psi_k)$ with nonzero elements and which is normalized such that\n\\[\\sum_{i=1}^k\\psi_i=1.\\]",
   "proof_latex": null,
   "proof_note": "原书未给独立完整证明。",
   "proof_discussion_latex": null,
   "context_notation": [],
-  "issues": [],
-  "lean_decl": "MD.Ch06.finiteErgodicity",
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "印刷nonzero应区分典型正权重与一般非负概率；原句完整保留，未声明字面nonzero定义网站PASS。"
+    }
+  ],
+  "lean_decl": "MD.Ch06.finiteDistribution",
   "reusable_proofs": [],
   "extra_assumptions": [
-    "[EXTRA]非空真实有限状态、右随机矩阵、全部幂Πⁿ、真实全部初始概率；完整存在、唯一性及任意初值向量收敛，不假设谱隙或收敛结论。"
+    "[EXTRA]概率权重取非负，允许零概率状态；原nonzero作为“typically”的描述而非概率的必要条件，不添加严格正初值要求。"
   ],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
   "review_status": "DRAFT",
@@ -46,11 +51,7 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
 
 ## 实际Lean签名/定义
 ```lean
-theorem finiteErgodicity :
-  ∀ {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ),
-  0 < k → MolecularDynamics.Chapter06Review.stochasticMatrix PiMark → MolecularDynamics.Chapter06Review.irreducible PiMark → MolecularDynamics.Chapter06Review.aperiodic PiMark →
-  ∃ ψ : MolecularDynamics.Chapter06Review.V k, MolecularDynamics.Chapter06Review.finiteInvariant PiMark ψ ∧ (∀ χ, MolecularDynamics.Chapter06Review.finiteInvariant PiMark χ → χ=ψ) ∧
-    ∀ ψ0 : MolecularDynamics.Chapter06Review.V k, MolecularDynamics.Chapter06Review.finiteDistribution ψ0 → Tendsto (MolecularDynamics.Chapter06Review.finiteEvolution PiMark ψ0) atTop (𝓝 ψ)
+def finiteDistribution {k : ℕ} (ψ : MolecularDynamics.Chapter06Review.V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
 ```
 
 原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
@@ -59,51 +60,6 @@ theorem finiteErgodicity :
 ### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
 ```lean
 abbrev V (n : ℕ) := Fin n → ℝ
-```
-
-### MolecularDynamics.Chapter06Review.aperiodic (MolecularDynamics/Chapter06/ReviewDefinitions.lean:155)
-```lean
-def aperiodic {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i, period PiMark i = 1
-```
-
-### MolecularDynamics.Chapter06Review.finiteDistribution (MolecularDynamics/Chapter06/ReviewDefinitions.lean:148)
-```lean
-def finiteDistribution {k : ℕ} (ψ : V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
-```
-
-### MolecularDynamics.Chapter06Review.finiteEvolution (MolecularDynamics/Chapter06/ReviewDefinitions.lean:149)
-```lean
-def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : V k) (n : ℕ) : V k :=
-  Matrix.vecMul ψ (PiMark^n)
-```
-
-### MolecularDynamics.Chapter06Review.finiteInvariant (MolecularDynamics/Chapter06/ReviewDefinitions.lean:157)
-```lean
-def finiteInvariant {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : V k) : Prop :=
-  finiteDistribution ψ ∧ Matrix.vecMul ψ PiMark = ψ
-```
-
-### MolecularDynamics.Chapter06Review.irreducible (MolecularDynamics/Chapter06/ReviewDefinitions.lean:156)
-```lean
-def irreducible {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i j, ∃ n : ℕ, 0 < (PiMark^n) i j
-```
-
-### MolecularDynamics.Chapter06Review.period (MolecularDynamics/Chapter06/ReviewDefinitions.lean:153)
-```lean
-def period {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : ℕ :=
-  sSup {d : ℕ | ∀ n ∈ returnTimes PiMark i, d ∣ n}
-```
-
-### MolecularDynamics.Chapter06Review.returnTimes (MolecularDynamics/Chapter06/ReviewDefinitions.lean:151)
-```lean
-def returnTimes {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : Set ℕ :=
-  {n | 0 < n ∧ 0 < (PiMark^n) i i}
-```
-
-### MolecularDynamics.Chapter06Review.stochasticMatrix (MolecularDynamics/Chapter06/ReviewDefinitions.lean:146)
-```lean
-def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
-  (∀ i j, 0 ≤ PiMark i j) ∧ ∀ i, ∑ j, PiMark i j = 1
 ```
 
 ### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
@@ -116,47 +72,7 @@ abbrev V := Fin 3 → ℝ
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch06.aperiodic (Blueprint/Ch06.lean:1610)
-```lean
-def aperiodic {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i, MolecularDynamics.Chapter06Review.period PiMark i = 1
-```
-
 ### MD.Ch06.finiteDistribution (Blueprint/Ch06.lean:1585)
 ```lean
 def finiteDistribution {k : ℕ} (ψ : MolecularDynamics.Chapter06Review.V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
-```
-
-### MD.Ch06.finiteEvolution (Blueprint/Ch06.lean:1588)
-```lean
-def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : MolecularDynamics.Chapter06Review.V k) (n : ℕ) : MolecularDynamics.Chapter06Review.V k :=
-  Matrix.vecMul ψ (PiMark^n)
-```
-
-### MD.Ch06.finiteInvariant (Blueprint/Ch06.lean:1616)
-```lean
-def finiteInvariant {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : MolecularDynamics.Chapter06Review.V k) : Prop :=
-  MolecularDynamics.Chapter06Review.finiteDistribution ψ ∧ Matrix.vecMul ψ PiMark = ψ
-```
-
-### MD.Ch06.irreducible (Blueprint/Ch06.lean:1613)
-```lean
-def irreducible {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i j, ∃ n : ℕ, 0 < (PiMark^n) i j
-```
-
-### MD.Ch06.period (Blueprint/Ch06.lean:1606)
-```lean
-def period {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : ℕ :=
-  sSup {d : ℕ | ∀ n ∈ MolecularDynamics.Chapter06Review.returnTimes PiMark i, d ∣ n}
-```
-
-### MD.Ch06.returnTimes (Blueprint/Ch06.lean:1602)
-```lean
-def returnTimes {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : Set ℕ :=
-  {n | 0 < n ∧ 0 < (PiMark^n) i i}
-```
-
-### MD.Ch06.stochasticMatrix (Blueprint/Ch06.lean:1579)
-```lean
-def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
-  (∀ i j, 0 ≤ PiMark i j) ∧ ∀ i, ∑ j, PiMark i j = 1
 ```

@@ -172,3 +172,11 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.exampleNotIrreducible
 #print axioms MD.Ch06.communicates
 #print axioms MD.Ch06.directedGraphIrreducible
+#print axioms MD.Ch06.cylinderCoordinates
+#print axioms MD.Ch06.cylinderSDE
+#print axioms MD.Ch06.cylinderGenerator
+#print axioms MD.Ch06.cylinderForwardPrinted
+#print axioms MD.Ch06.stationaryDensity
+#print axioms MD.Ch06.stationaryInvariant
+#print axioms MD.Ch06.canonicalMixingMeaning
+#print axioms MD.Ch06.langevinCanonicalMixing

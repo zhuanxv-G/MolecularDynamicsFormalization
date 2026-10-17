@@ -1,0 +1,62 @@
+{
+  "batch": "BATCH32",
+  "subtask": "BATCH32e",
+  "source_ids": [
+    "MD-6.4.1-ExampleStochastic"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 267,
+      "printed_page": 246
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "1617c389af2ccad00e7b7f8975e45ecd7241a2829374d5d8588ffdbb1971a5fc",
+  "lean_sha256": "a4208537b0977572c0cad3140f8458b8b80dcb6f57c0675b80eaeccf0ee9b117",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "a4208537b0977572c0cad3140f8458b8b80dcb6f57c0675b80eaeccf0ee9b117",
+    "blueprint/ch06/ch06_source.json": "1617c389af2ccad00e7b7f8975e45ecd7241a2829374d5d8588ffdbb1971a5fc",
+    "BATCH32e_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
+    "signature_sha256": "75977c533ddccb4f1deb66d0a3e7077a4b2f831830e157929323b6f2ef6e9900"
+  },
+  "signature_sha256": "75977c533ddccb4f1deb66d0a3e7077a4b2f831830e157929323b6f2ef6e9900",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "stochasticMatrix",
+      "code_sha256": "4cde2c58f29e20994124dfc87ed21f68198f6ac4f1befb5d580bc53fba851c15"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "finiteChainExample",
+      "code_sha256": "5f8f58d40c9b5727b84f861cda56168a75b2b5ebfdef6eb1c682e429aa690982"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "stochasticMatrix",
+      "code_sha256": "4cde2c58f29e20994124dfc87ed21f68198f6ac4f1befb5d580bc53fba851c15"
+    }
+  ],
+  "paste_plus_pdf_bytes": 120715,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4175,
+      "sha256": "2b0880bf310521232b18bb301c2fe4e80420efbd19037a2c1087827695546a1e"
+    },
+    "BATCH32e_PAGES.pdf": {
+      "bytes": 116540,
+      "sha256": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 123025
+}

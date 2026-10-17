@@ -53,11 +53,12 @@ def primary(r):
 def rename(code,name):
     return re.sub(r'\b(def|theorem|lemma)\s+\w+',lambda m:m[1]+' '+name,code,count=1)
 
-def apply(records):
+def apply(records,enabled=None):
     from ch06_data import BASE
     enabled_path=BASE/'errata_enabled.json'
-    if not enabled_path.exists():return
-    enabled=json.loads(enabled_path.read_text(encoding='utf-8'))['enabled']
+    if enabled is None:
+        if not enabled_path.exists():return
+        enabled=json.loads(enabled_path.read_text(encoding='utf-8'))['enabled']
     bykey={r['source_id'].split('-')[-1]:r for r in records}
     # Capture originals before appending any declaration to avoid cloning pairs.
     originals={k:primary(r) for k,r in bykey.items()}
@@ -94,7 +95,24 @@ def timeItoFormulaPrinted (φ : ℝ×ℝ → ℝ) (x t dX dXX : ℝ) : ℝ :=
             printed=rename(originals[key],'fpPolynomialAdjointPrinted').replace('k ≤ 2 →','k = 0 →')
             r['code']+='\n\n/-- 【原书疑误】仅函数值增长条件的字面伴随断言；不证。 -/\n'+printed
         elif key=='Theorem61' and 'Theorem61TimeAveragePrinted' in bykey:
-            r['code']+='\n\n/-- 【原书疑误】Theorem6.1第三款按(5.6)轨道时间平均读法；第一款严格负定另见brownianNegativeDefinitePrinted。 -/\n'+rename(originals['Theorem61TimeAveragePrinted'],'theorem61Printed')
+            head=originals[key].split('  ∀ {Ω : Type*}')[0]
+            # Preserve all three printed clauses, including both disputed claims.
+            # The closed operator is only the explicit realization vocabulary;
+            # its choice and the ambiguous printed mass Laplacian remain flagged.
+            tail='''  (∀ f : (Fin n → ℝ) → ℝ, ContDiff ℝ ∞ f → textbookUnitPeriodicPotential f →
+    (¬ f =ᵐ[volume.restrict (textbookConfigurationCube n)] 0) →
+      brownianWeightedInner U β f (textbookBrownianGenerator m U β f) < 0) ∧
+  ∀ {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin n → ℝ)) (P : Measure Ω), textbookIsWienerVector B P →
+    ∀ x : UnitAddTorus (Fin n), ∃ K α : ℝ, 0 < K ∧ 0 < α ∧
+      ∀ f : textbookPeriodicSmoothSpace n, ∀ᵐ sample ∂P, ∀ t : ℝ, 0 < t →
+        |t⁻¹*(∫ s in (0 : ℝ)..t,
+            textbookConfigurationTorusObservable f
+              (textbookBrownianTorusGlobalRandomConfiguration m hm U hU hp β hβ x B s sample)) -
+          (∫ Q, textbookConfigurationTorusObservable f Q ∂textbookConfigurationTorusGibbsMeasure U β)| ≤
+            K*‖textbookPeriodicSmoothEmbedding U hU hp β f‖*Real.exp (-α*t) := by
+  sorry'''
+            r['code']+='\n\n/-- 【原书疑误】Theorem6.1三款并列，保留严格负定及(5.6)轨道时间平均；闭算子实现与质量Laplacian歧义另列，不证明此版。 -/\n'+rename(head+tail,'theorem61Printed')
             r['code']+='''\n\n/-- 【原书疑误】按p.244既定ΔM=Σmi∂ii逐字代入Theorem6.1的形式表达；不宣称它是Brownian过程生成元。 -/
 def brownianMassGeneratorPrinted {n : ℕ} (m : Fin n → ℝ) (U f : (Fin n → ℝ) → ℝ)
     (β : ℝ) (x : Fin n → ℝ) : ℝ :=

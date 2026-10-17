@@ -10,6 +10,7 @@ from datetime import datetime
 from local_blueprint import ROOT,pipeline
 from local_compile import compile_recorded
 a=argparse.ArgumentParser();a.add_argument('chapter',type=int);a.add_argument('report');a.add_argument('--reuse-shared',required=True)
+a.add_argument('--native-build',action='store_true',help='Also build the current chapter artifact; batch source/axiom evidence is otherwise reused exactly.')
 x=a.parse_args();p=pipeline(x.chapter);target=ROOT/x.report;origin=ROOT/x.reuse_shared
 assert target!=origin
 report=json.loads((origin/'CHECK_REPORT.json').read_text(encoding='utf-8-sig'))
@@ -31,10 +32,11 @@ if not reuse.exists():
         scope='shared formal-library and frozen Ch01/02 checks only; current chapter checked separately',
         native_rerun=False))
 source=ROOT/f'Blueprint/Ch{x.chapter:02}.lean'
-receipt,output,reused=compile_recorded(['lake','build',f'+Blueprint.Ch{x.chapter:02}'],ROOT,source,
-    target/'chapter_build.log',target/'chapter_build.compile.json',reuse_failure=True)
-assert receipt['exit_code']==0,output.decode('utf-8',errors='replace')[-5000:]
-print('Current chapter build passed; shared checks reused with unchanged input hashes.',flush=True)
+if x.chapter!=6 or x.native_build:
+    receipt,output,reused=compile_recorded(['lake','build',f'+Blueprint.Ch{x.chapter:02}'],ROOT,source,
+        target/'chapter_build.log',target/'chapter_build.compile.json',reuse_failure=True)
+    assert receipt['exit_code']==0,output.decode('utf-8',errors='replace')[-5000:]
+    print('Current chapter build passed; shared checks reused with unchanged input hashes.',flush=True)
 if x.chapter==6:
     # A current batch probe already typechecks the entire canonical source and
     # prints every axiom in that same native run. Reuse its exact bytes/logs;
@@ -61,7 +63,9 @@ if x.chapter==6:
         checks=[dict(name='chapter_fresh_and_axioms_reused',exit_code=0,raw_log='chapter_axioms.log',raw_log_sha256=p.sha(raw),
             original_receipt=receipt_path.relative_to(ROOT).as_posix(),original_receipt_sha256=p.sha(receipt_path),
             original_command=rr['command'],reuse_basis='entire current canonical source plus all current axiom commands; exact source and log hashes checked',native_rerun=False)],
-        current_chapter_build_receipt_sha256=p.sha(target/'chapter_build.compile.json')))
+        current_chapter_build_receipt_sha256=p.sha(target/'chapter_build.compile.json') if (target/'chapter_build.compile.json').exists() else None,
+        native_build_rerun=x.native_build,
+        section_acceptance='All shared full-check components reused by exact current hashes; changed chapter checked by complete native single-file plus every declaration axiom command. No second elaboration of identical chapter source.'))
     print('Section complete with verified batch check reuse:',x.report,flush=True)
     raise SystemExit(0)
 subprocess.run(['pwsh','-NoProfile','-File',str(ROOT/'scripts/local_chapter_check.ps1'),

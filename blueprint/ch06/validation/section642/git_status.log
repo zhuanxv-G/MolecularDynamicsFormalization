@@ -1,0 +1,110 @@
+ M Blueprint/Ch01.lean
+ M blueprint/ch01/CheckAxioms.lean
+ M blueprint/ch01/PROGRESS.md
+ M blueprint/ch01/WEBSITE_SUMMARY.json
+ M blueprint/ch01/ch01_source.json
+ M blueprint/ch01/local_audit.json
+ M blueprint/ch01/mathcopilot_tasks/EAUDIT_INDEX.md
+ M blueprint/ch01/website_audit.json
+ M blueprint/ch02/validation/EAUDIT01/finalize-run.log
+ M blueprint/ch03/validation/section37-commit.log
+ M blueprint/ch04/validation/section442-commit-retry.log
+ M blueprint/ch05/validation/section56-commit.log
+ M docs/handoff/CURRENT_STATE.zh-CN.md
+ M docs/handoff/LOCAL_PIPELINE.md
+ M docs/handoff/WORK_LOG.zh-CN.md
+ M docs/review/CH01_BLUEPRINT.zh-CN.md
+ M docs/review/CH01_ERRATA.zh-CN.md
+ M docs/review/CH01_SUMMARY_FOR_MENTOR.zh-CN.md
+?? blueprint/ch01/closeout/__pycache__/
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT04_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT05_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT06_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT07_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT08_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT09_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT10_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT11_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT12_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT13_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT14_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT15_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT16_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT17_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT18_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT19_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT20_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT21_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT22_result.json
+?? blueprint/ch01/mathcopilot_results/eaudit/EAUDIT23_result.json
+?? blueprint/ch01/validation/CLOSEOUT21/AXIOM_DECLARATIONS.json
+?? blueprint/ch01/validation/CLOSEOUT21/AngleBond-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT21/AngleBond.diff
+?? blueprint/ch01/validation/CLOSEOUT21/AngleBond.json
+?? blueprint/ch01/validation/CLOSEOUT21/Ch01.before.txt
+?? blueprint/ch01/validation/CLOSEOUT21/DECLARATION_COUNTS.json
+?? blueprint/ch01/validation/CLOSEOUT21/DECLARATION_STATUS.json
+?? blueprint/ch01/validation/CLOSEOUT21/EAUDIT_PACKETS_BEFORE.json
+?? blueprint/ch01/validation/CLOSEOUT21/FROZEN_INPUTS.json
+?? blueprint/ch01/validation/CLOSEOUT21/GayBerne-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT21/GayBerne.diff
+?? blueprint/ch01/validation/CLOSEOUT21/GayBerne.json
+?? blueprint/ch01/validation/CLOSEOUT21/HEARTBEAT_UPDATE.json
+?? blueprint/ch01/validation/CLOSEOUT21/HarmonicProbe.lean
+?? blueprint/ch01/validation/CLOSEOUT21/HarmonicSolution-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT21/HarmonicSolution.diff
+?? blueprint/ch01/validation/CLOSEOUT21/HarmonicSolution.json
+?? blueprint/ch01/validation/CLOSEOUT21/LJTimeScaling-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT21/LJTimeScaling.diff
+?? blueprint/ch01/validation/CLOSEOUT21/LJTimeScaling.json
+?? blueprint/ch01/validation/CLOSEOUT21/METADATA_FINALIZED.json
+?? blueprint/ch01/validation/CLOSEOUT21/NewtonCompact-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT21/NewtonCompact.diff
+?? blueprint/ch01/validation/CLOSEOUT21/NewtonCompact.json
+?? blueprint/ch01/validation/CLOSEOUT21/PeriodicTranslationMomentum-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT21/PeriodicTranslationMomentum.diff
+?? blueprint/ch01/validation/CLOSEOUT21/PeriodicTranslationMomentum.json
+?? blueprint/ch01/validation/CLOSEOUT21/REPAIRS.json
+?? blueprint/ch01/validation/CLOSEOUT21/RETURN_REGISTRATION.json
+?? blueprint/ch01/validation/CLOSEOUT21/RhombicLattice-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT21/RhombicLattice.diff
+?? blueprint/ch01/validation/CLOSEOUT21/RhombicLattice.json
+?? blueprint/ch01/validation/CLOSEOUT21/SOURCE_JSON_CHANGES.json
+?? blueprint/ch01/validation/CLOSEOUT21/ScalarFirstIntegral-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT21/ScalarFirstIntegral.diff
+?? blueprint/ch01/validation/CLOSEOUT21/ScalarFirstIntegral.json
+?? blueprint/ch01/validation/CLOSEOUT21/ScalarMechanical-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT21/ScalarMechanical.diff
+?? blueprint/ch01/validation/CLOSEOUT21/ScalarMechanical.json
+?? blueprint/ch01/validation/CLOSEOUT21/UnitCell-RUNNING.json
+?? blueprint/ch01/validation/CLOSEOUT21/UnitCell.diff
+?? blueprint/ch01/validation/CLOSEOUT21/UnitCell.json
+?? blueprint/ch01/validation/CLOSEOUT21/VERSION_VERDICTS.json
+?? blueprint/ch01/validation/CLOSEOUT21/finalize21.py
+?? blueprint/ch01/validation/CLOSEOUT21/full/
+?? blueprint/ch01/validation/CLOSEOUT21/repair21.py
+?? blueprint/ch01/validation/CLOSEOUT21/source.before.json
+?? blueprint/ch01/validation/CLOSEOUT21/source_pages/
+?? blueprint/ch02/validation/repair_20261014/
+?? blueprint/ch03/validation/EAUDIT01-full-RUNNING.json
+?? blueprint/ch03/validation/repair_20261014/
+?? blueprint/ch04/validation/repair_20261014/
+?? blueprint/ch05/validation/repair_20261014/
+?? docs/review/check-full06/
+?? output/
+?? scripts/__pycache__/
+?? scripts/ch06_section638.py
+?? scripts/ch06_section641.py
+?? scripts/ch06_section641b.py
+?? scripts/ch06_section642.py
+?? scripts/ch06_section643.py
+?? scripts/ch06_section643b.py
+?? scripts/ch06_section644.py
+?? scripts/ch06_section644b.py
+?? scripts/ch06_section644c.py
+?? scripts/ch06_section644d.py
+?? scripts/ch06_section644e.py
+?? scripts/ch06_section644f.py
+?? scripts/ch06_section645.py
+?? scripts/export_ch01_review_pdf.py
+?? tmp/

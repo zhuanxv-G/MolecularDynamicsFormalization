@@ -1,0 +1,12 @@
+START SECTION 6.4.2
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch section642-5e254e0a --step ③–⑤§6.4.2逐批验证
+Generated 180 entries; 85 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py section642-5e254e0a
+Generated 180 entries; 85 /126 old rows mapped; protected 925
+Batch axioms passed: section642-5e254e0a 180
+Running: D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 180, "local_PASS": 162, "local_NEEDS_HUMAN": 18, "errata_records": 21, "source_errata_records": 20, "declarations": {"\u5b9a\u4e49": 72, "\u5df2\u8bc1": 54, "\u672a\u8bc1": 54}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 11, "\u65f6\u95f4\u76d2\u6b62": 2, "\u7f3a\u5927\u578b\u7406\u8bba": 41}, "website_submitted": false}
+Running: D:\anaconda\python.exe scripts/local_section_check.py 6 blueprint/ch06/validation/section642 --reuse-shared blueprint/ch01/validation/CLOSEOUT21/full
+Current chapter build passed; shared checks reused with unchanged input hashes.
+Section complete with verified batch check reuse: blueprint/ch06/validation/section642
+Running: D:\anaconda\python.exe scripts/local_checkpoint.py 6 6.4.2 blueprint/ch06/validation/section642 继续§6.4.3：ch06_section643、ch06_section643b；不进入第7章。

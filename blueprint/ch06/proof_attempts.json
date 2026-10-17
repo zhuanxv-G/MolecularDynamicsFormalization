@@ -1,14 +1,14 @@
 {
   "rule": "最多3种路线；失败分类只用缺大型理论/原书疑误不证/时间盒止；definitions do not create theorem obligations",
   "counts": {
-    "定义": 66,
+    "定义": 72,
     "已证": 54,
-    "未证": 52
+    "未证": 54
   },
   "unproved_reasons": {
     "原书疑误不证": 11,
     "时间盒止": 2,
-    "缺大型理论": 39
+    "缺大型理论": 41
   },
   "items": {
     "MD-6.1.1-Microcanonical": {
@@ -3326,6 +3326,160 @@
             "Quot.sound"
           ],
           "reason": "缺非负矩阵幂正项与有向路径的完整有限求和桥接；不建设一般PF理论。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.2-CylinderCoordinates": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.cylinderCoordinates": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.2-CylinderSDE": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.cylinderSDE": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.2-CylinderGenerator": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.cylinderGenerator": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.2-CylinderForwardPrinted": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.cylinderForwardPrinted": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.2-StationaryDensity": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.stationaryDensity": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.2-StationaryInvariant": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.stationaryInvariant": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺抽象generator域与求导换积分/测度分离的完整短桥；不建一般半群理论。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4-CanonicalMixingMeaning": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.canonicalMixingMeaning": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.2-LangevinCanonicalMixing": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.langevinCanonicalMixing": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺完整原Langevin正密度/Harris/kernel混合验收桥接；不恢复封存的Theorem6.2长证明。",
           "compiler_route_count": 0,
           "route_evidence": null
         }

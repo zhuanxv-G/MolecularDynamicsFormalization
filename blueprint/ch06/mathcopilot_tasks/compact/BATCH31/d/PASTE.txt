@@ -1,10 +1,10 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH31d；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH31d_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "30359bca9783227904d55e96d2e90f8faa027706cb8d735af5700d4054111eb1",
-  "blueprint/ch06/ch06_source.json": "5131e8db5aa454bf18bc06a2882cc59f702891758467f4db10b65cb97530f875",
-  "BATCH31d_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
-  "signature_sha256": "5f8f58d40c9b5727b84f861cda56168a75b2b5ebfdef6eb1c682e429aa690982"
+  "Blueprint/Ch06.lean": "a4208537b0977572c0cad3140f8458b8b80dcb6f57c0675b80eaeccf0ee9b117",
+  "blueprint/ch06/ch06_source.json": "1617c389af2ccad00e7b7f8975e45ecd7241a2829374d5d8588ffdbb1971a5fc",
+  "BATCH31d_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+  "signature_sha256": "39e7d23dd717860efd21628e1378ef185ed381ab5451b2f595f44073a394529c"
 }
 
 请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH31d_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
@@ -15,26 +15,24 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
 ## 原页映射
 | 附件页 | 原PDF页 | 印刷页 |
 |---|---|---|
-| 1 | 267 | 246 |
+| 1 | 266 | 245 |
 
 ## 完整原文JSON
 ```json
 {
-  "source_id": "MD-6.4.1-FiniteChainExample",
-  "kind": "definition",
-  "label": "Fig. 6.6",
+  "source_id": "MD-6.4.1-FiniteEvolutionRecurrence",
+  "kind": "unnumbered_claim",
+  "label": null,
   "section": "6.4.1",
-  "printed_page": "246",
-  "pdf_page": "267",
-  "statement_latex": "Fig. 6.6 A Markov matrix (left) and its graph representation (right). In this example, the Markov Chain is not irreducible.\n\\[\\Pi=\\begin{bmatrix}0.2&0.1&0.7&0&0\\\\0&0&0&1&0\\\\0.3&0&0&0.3&0.4\\\\0&0.5&0&0.3&0.2\\\\0&0&0&1&0\\end{bmatrix}.\\]",
+  "printed_page": "245",
+  "pdf_page": "266",
+  "statement_latex": "\\[\\psi_{n+1}=\\psi_n\\Pi.\\]",
   "proof_latex": null,
   "proof_note": "原书未给独立完整证明。",
   "proof_discussion_latex": null,
-  "context_notation": [
-    "原数值矩阵全项保留，decimal精确有理数；图示的非不可约数学结论另条，不列为纯定性排除。"
-  ],
+  "context_notation": [],
   "issues": [],
-  "lean_decl": "MD.Ch06.finiteChainExample",
+  "lean_decl": "MD.Ch06.finiteEvolutionRecurrence",
   "reusable_proofs": [],
   "extra_assumptions": [],
   "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
@@ -46,23 +44,38 @@ A：逐字核对原页的陈述、证明、上下文和页码，不静默修正�
 
 ## 实际Lean签名/定义
 ```lean
-def finiteChainExample : Matrix (Fin 5) (Fin 5) ℝ :=
-  !![(1/5),(1/10),(7/10),0,0;
-     0,0,0,1,0;
-     (3/10),0,0,(3/10),(2/5);
-     0,(1/2),0,(3/10),(1/5);
-     0,0,0,1,0]
+theorem finiteEvolutionRecurrence : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ)
+    (initial : Fin k → ℝ) (n : ℕ),
+  MolecularDynamics.Chapter06Review.finiteEvolution matrix initial (n+1)=
+    Matrix.vecMul (MolecularDynamics.Chapter06Review.finiteEvolution matrix initial n) matrix
 ```
 
 原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
 标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
 
-### MD.Ch06.finiteChainExample (Blueprint/Ch06.lean:1636)
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
 ```lean
-def finiteChainExample : Matrix (Fin 5) (Fin 5) ℝ :=
-  !![(1/5),(1/10),(7/10),0,0;
-     0,0,0,1,0;
-     (3/10),0,0,(3/10),(2/5);
-     0,(1/2),0,(3/10),(1/5);
-     0,0,0,1,0]
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.finiteEvolution (MolecularDynamics/Chapter06/ReviewDefinitions.lean:149)
+```lean
+def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : V k) (n : ℕ) : V k :=
+  Matrix.vecMul ψ (PiMark^n)
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch06.finiteEvolution (Blueprint/Ch06.lean:1588)
+```lean
+def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : MolecularDynamics.Chapter06Review.V k) (n : ℕ) : MolecularDynamics.Chapter06Review.V k :=
+  Matrix.vecMul ψ (PiMark^n)
 ```

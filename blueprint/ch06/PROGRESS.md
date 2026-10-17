@@ -2,7 +2,7 @@
 
 范围：印刷p.211–258/PDF232–279，Exercises及参考文献排除；第1–5章冻结，正式库冻结，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前172条；旧清单映射83/126；本地PASS 155；网站返回0。
+当前180条；旧清单映射85/126；本地PASS 162；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -178,6 +178,14 @@
 | MD-6.4.1-ExampleNotIrreducible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
 | MD-6.4.1-Communicates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-6.4.1-DirectedGraphIrreducible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺非负矩阵幂正项与有向路径的完整有限求和桥接；不建设一般PF理论。 |
+| MD-6.4.2-CylinderCoordinates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.2-CylinderSDE | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.2-CylinderGenerator | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.2-CylinderForwardPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | definition / incomplete；网站/导师待裁定印刷φ/ρ笔误。 |
+| MD-6.4.2-StationaryDensity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.2-StationaryInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺抽象generator域与求导换积分/测度分离的完整短桥；不建一般半群理论。 |
+| MD-6.4-CanonicalMixingMeaning | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.2-LangevinCanonicalMixing | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺完整原Langevin正密度/Harris/kernel混合验收桥接；不恢复封存的Theorem6.2长证明。 |
 
 ## 旧126条完整映射
 
@@ -265,9 +273,9 @@
 | CH06-080 | MD-6.4.1-Aperiodic |
 | CH06-081 | MD-6.4.1-DirectedGraphIrreducible |
 | CH06-082 | MD-6.4.1-FiniteErgodicity |
-| CH06-083 | PENDING：所属节尚未处理 |
-| CH06-084 | MD-6.4.2-UnitMassGibbsStationaryBridge |
-| CH06-085 | PENDING：所属节尚未处理 |
+| CH06-083 | MD-6.4.2-CylinderForwardPrinted |
+| CH06-084 | MD-6.4.2-StationaryInvariant |
+| CH06-085 | MD-6.4.2-LangevinCanonicalMixing |
 | CH06-086 | PENDING：所属节尚未处理 |
 | CH06-087 | PENDING：所属节尚未处理 |
 | CH06-088 | PENDING：所属节尚未处理 |
@@ -371,6 +379,9 @@
 - MD-6.4.1-FiniteDistribution：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 印刷nonzero应区分典型正权重与一般非负概率；原句完整保留，未声明字面nonzero定义网站PASS。
 - MD-6.4.1-FiniteErgodicity：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺现成有限非负随机矩阵Perron–Frobenius/primitive极限完整打包桥接；不建设大型理论。
 - MD-6.4.1-DirectedGraphIrreducible：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺非负矩阵幂正项与有向路径的完整有限求和桥接；不建设一般PF理论。
+- MD-6.4.2-CylinderForwardPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 网站/导师待裁定印刷φ/ρ笔误。印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。
+- MD-6.4.2-StationaryInvariant：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺抽象generator域与求导换积分/测度分离的完整短桥；不建一般半群理论。
+- MD-6.4.2-LangevinCanonicalMixing：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺完整原Langevin正密度/Harris/kernel混合验收桥接；不恢复封存的Theorem6.2长证明。
 
 ## 定性段落排除
 

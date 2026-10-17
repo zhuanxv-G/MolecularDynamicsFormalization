@@ -1680,4 +1680,88 @@ theorem directedGraphIrreducible : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k
     ∀ i j, Relation.ReflTransGen (fun a b ↦ 0 < matrix a b) i j) := by
   sorry
 
+/-- source_id: MD-6.4.2-CylinderCoordinates · extra_claim · §6.4.2 · 印刷p.247 / PDFp.268
+[EXTRA] [EXTRA]实际圆环商坐标与Euclidean非紧坐标；局部微分表达通过周期lift解释，不偷换D为纯ℝⁿ。 -/
+def cylinderCoordinates {k₁ k₂ : ℕ} (z : Fin (k₁+k₂) → ℝ) :
+    (Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ) :=
+  (fun i ↦ (z ⟨i.val, by omega⟩ : AddCircle (1 : ℝ)), fun j ↦ z ⟨k₁+j.val, by omega⟩)
+
+/-- source_id: MD-6.4.2-CylinderSDE · (6.43) · §6.4.2 · 印刷p.247 / PDFp.268
+[EXTRA] [EXTRA]真实D及其周期lift、原C∞漂移、常矩形B和全部严格Ito积分；仅方程意义，不预置遍历/不变结论。 -/
+def cylinderSDE {Ω : Type*} [MeasurableSpace Ω] {k₁ k₂ r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ))
+    (X : ℝ → Ω → ((Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ)))
+    (b₀ : ((Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ)) → (Fin (k₁+k₂) → ℝ))
+    (B : Matrix (Fin (k₁+k₂)) (Fin r) ℝ) (x0 : Fin (k₁+k₂) → ℝ) : Prop :=
+  ContDiff ℝ ∞ (fun z ↦ b₀ (cylinderCoordinates z)) ∧
+  textbookIsWienerVector (fun t sample ↦ W t sample) P ∧
+  ∃ lift : ℝ → Ω → (Fin (k₁+k₂) → ℝ),
+    strictVectorSDE P W lift (fun z _ ↦ b₀ (cylinderCoordinates z)) (fun _ _ ↦ B) x0 ∧
+    (∀ᵐ sample ∂P, ∀ t : ℝ, 0 ≤ t → X t sample=cylinderCoordinates (lift t sample))
+
+/-- source_id: MD-6.4.2-CylinderGenerator · definition · §6.4.2 · 印刷p.247 / PDFp.268 -/
+def cylinderGenerator {k₁ k₂ r : ℕ}
+    (b₀ : ((Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ)) → (Fin (k₁+k₂) → ℝ))
+    (B : Matrix (Fin (k₁+k₂)) (Fin r) ℝ)
+    (φ : ((Fin k₁ → AddCircle (1 : ℝ)) × (Fin k₂ → ℝ)) → ℝ) (z : Fin (k₁+k₂) → ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.vectorGenerator (fun y ↦ b₀ (cylinderCoordinates y)) B
+    (fun y ↦ φ (cylinderCoordinates y)) z
+
+/-- source_id: MD-6.4.2-CylinderForwardPrinted · definition · §6.4.2 · 印刷p.247 / PDFp.268
+[EXTRA] [EXTRA]周期lift中的完整实际负散度与错误φ扩散，正确ρ算子已有VectorForward定义。
+[ERRATUM?] 印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。 -/
+def cylinderForwardPrinted {n r : ℕ} (b₀ : (Fin n → ℝ) → (Fin n → ℝ))
+    (B : Matrix (Fin n) (Fin r) ℝ) (ρ φ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
+  -(∑ i, fderiv ℝ (fun z ↦ b₀ z i*ρ z) x (Pi.single i 1)) +
+    MolecularDynamics.Chapter06Review.vectorDiffusion B φ x
+
+/-- source_id: MD-6.4.2-StationaryDensity · definition · §6.4.2 · 印刷p.247 / PDFp.268 -/
+def stationaryDensity {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
+    (B : Matrix (Fin n) (Fin r) ℝ) (ρ : (Fin n → ℝ) → ℝ) : Prop :=
+  ∀ x, MolecularDynamics.Chapter06Review.vectorForward a B ρ x=0
+
+/-- source_id: MD-6.4.2-StationaryInvariant · unnumbered_claim · §6.4.2 · 印刷p.247 / PDFp.268
+[EXTRA] [EXTRA]实际Markov kernel semigroup、真实generator对演化检验的导数关系与弱stationarity，并明确局部可积支配保证求导换积分；完整kernel测度不变，未假设不变结论或把形式exp当实际流。 -/
+theorem stationaryInvariant :
+  ∀ {D : Type*} [MeasurableSpace D]
+    (K : ℝ≥0 → Kernel D D) (μ : Measure D) (L : (D → ℝ) → D → ℝ),
+  MolecularDynamics.Chapter06Review.markovSemigroup K → IsProbabilityMeasure μ →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) → ∀ T : ℝ, 0 ≤ T →
+    ∃ bound : D → ℝ, Integrable bound μ ∧ ∀ s ∈ Icc 0 T, ∀ x,
+      |L (fun y ↦ MolecularDynamics.Chapter06Review.kernelAverage K f s.toNNReal y) x| ≤ bound x) →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) →
+    (∀ t, Integrable (L (fun x ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t x)) μ) ∧
+    (∀ x t, HasDerivWithinAt (fun s : ℝ ↦ MolecularDynamics.Chapter06Review.kernelAverage K f s.toNNReal x)
+      (L (fun y ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal y) x) (Ici 0) t)) →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) → (∫ x, L f x ∂μ)=0) →
+  MolecularDynamics.Chapter06Review.invariantKernel K μ := by
+  sorry
+
+/-- source_id: MD-6.4-CanonicalMixingMeaning · definition · §6.4 · 印刷p.244 / PDFp.265
+[EXTRA] [EXTRA]真实概率目标和任意点初始law、全部有界连续检验函数弱混合定义；没有宣称所有SDE自动满足。 -/
+def canonicalMixingMeaning {D : Type*} [TopologicalSpace D] [MeasurableSpace D]
+    (K : ℝ≥0 → Kernel D D) (μ : Measure D) : Prop :=
+  IsProbabilityMeasure μ ∧ ∀ x : D, ∀ f : D → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun t : ℝ ↦ ∫ z, f z ∂K t.toNNReal x) atTop (𝓝 (∫ z, f z ∂μ))
+
+/-- source_id: MD-6.4.2-LangevinCanonicalMixing · unnumbered_claim · §6.4.2 · 印刷p.248 / PDFp.269
+[EXTRA] [EXTRA]真实现有周期单位质量Langevin kernel、正γ/β、原光滑力全局Lipschitz；完整任意点初值的正时刻严格正连续转移密度以及全部有界连续检验弱混合，原一般混合意义另条，不以单位质量特例替代一般定义。 -/
+theorem langevinCanonicalMixing :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ) (β γ : ℝ) (hβ : 0 < β)
+    {Ω : Type*} [MeasurableSpace Ω] (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)),
+  textbookIsWienerVector B P → 0 < γ →
+  (∀ t : ℝ≥0, 0 < t → ∃ density : textbookLangevinPeriodicPhase n × textbookLangevinPeriodicPhase n → ℝ,
+    Continuous density ∧ (∀ x y, 0 < density (x,y)) ∧
+    ∀ x, textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ
+      (Real.sqrt (2*γ*β⁻¹)) t x =
+        (MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun y ↦ ENNReal.ofReal (density (x,y)))) ∧
+  ∀ x : textbookLangevinPeriodicPhase n,
+    ∀ f : textbookLangevinPeriodicPhase n → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+    Tendsto (fun t : ℝ ↦ ∫ z, f z ∂textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ
+      (Real.sqrt (2*γ*β⁻¹)) t.toNNReal x) atTop
+        (𝓝 (∫ z, f z ∂textbookLangevinCanonicalMeasure U β hβ)) := by
+  sorry
+
 end MD.Ch06

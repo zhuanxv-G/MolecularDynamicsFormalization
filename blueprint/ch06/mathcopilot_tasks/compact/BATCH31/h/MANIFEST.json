@@ -2,60 +2,47 @@
   "batch": "BATCH31",
   "subtask": "BATCH31h",
   "source_ids": [
-    "MD-6.4.1-DirectedGraphIrreducible"
+    "MD-6.4.1-Irreducible"
   ],
   "page_mapping": [
     {
       "attachment_page": 1,
+      "original_pdf_page": 266,
+      "printed_page": 245
+    },
+    {
+      "attachment_page": 2,
       "original_pdf_page": 267,
       "printed_page": 246
     }
   ],
   "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
-  "source_json_sha256": "5131e8db5aa454bf18bc06a2882cc59f702891758467f4db10b65cb97530f875",
-  "lean_sha256": "30359bca9783227904d55e96d2e90f8faa027706cb8d735af5700d4054111eb1",
+  "source_json_sha256": "1617c389af2ccad00e7b7f8975e45ecd7241a2829374d5d8588ffdbb1971a5fc",
+  "lean_sha256": "a4208537b0977572c0cad3140f8458b8b80dcb6f57c0675b80eaeccf0ee9b117",
   "input_sha256": {
-    "Blueprint/Ch06.lean": "30359bca9783227904d55e96d2e90f8faa027706cb8d735af5700d4054111eb1",
-    "blueprint/ch06/ch06_source.json": "5131e8db5aa454bf18bc06a2882cc59f702891758467f4db10b65cb97530f875",
-    "BATCH31h_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
-    "signature_sha256": "43c3da9bba95a7cb44e133c5280356e406fd76fff50d5ebd16e6fb2537e39735"
+    "Blueprint/Ch06.lean": "a4208537b0977572c0cad3140f8458b8b80dcb6f57c0675b80eaeccf0ee9b117",
+    "blueprint/ch06/ch06_source.json": "1617c389af2ccad00e7b7f8975e45ecd7241a2829374d5d8588ffdbb1971a5fc",
+    "BATCH31h_PAGES.pdf": "83dcf90778aa2a4a2d4bf81c15578defc83495497e220e9d5c7f46911c01e9a0",
+    "signature_sha256": "b500404952dbe2828f09460b05e2c77190b7300a55cf7116332076472832c455"
   },
-  "signature_sha256": "43c3da9bba95a7cb44e133c5280356e406fd76fff50d5ebd16e6fb2537e39735",
+  "signature_sha256": "b500404952dbe2828f09460b05e2c77190b7300a55cf7116332076472832c455",
   "definition_excerpts": [
     {
-      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
-      "namespace": "MolecularDynamics.Chapter06Review",
-      "name": "irreducible",
-      "code_sha256": "b500404952dbe2828f09460b05e2c77190b7300a55cf7116332076472832c455"
-    },
-    {
-      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
-      "namespace": "MolecularDynamics.Chapter06Review",
-      "name": "stochasticMatrix",
-      "code_sha256": "4cde2c58f29e20994124dfc87ed21f68198f6ac4f1befb5d580bc53fba851c15"
-    },
-    {
       "path": "Blueprint/Ch06.lean",
       "namespace": "MD.Ch06",
       "name": "irreducible",
       "code_sha256": "b500404952dbe2828f09460b05e2c77190b7300a55cf7116332076472832c455"
-    },
-    {
-      "path": "Blueprint/Ch06.lean",
-      "namespace": "MD.Ch06",
-      "name": "stochasticMatrix",
-      "code_sha256": "4cde2c58f29e20994124dfc87ed21f68198f6ac4f1befb5d580bc53fba851c15"
     }
   ],
-  "paste_plus_pdf_bytes": 121266,
+  "paste_plus_pdf_bytes": 145690,
   "files": {
     "PASTE.txt": {
-      "bytes": 4726,
-      "sha256": "26d57240c9a23627bc4348f1eceb8bfd9e973dbc1ee879eec76fff42e08465e9"
+      "bytes": 4095,
+      "sha256": "ccd381744d8b72ff3b254a72c51d4d9815d2cc354f9a69f4582c46366c12c452"
     },
     "BATCH31h_PAGES.pdf": {
-      "bytes": 116540,
-      "sha256": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f"
+      "bytes": 141595,
+      "sha256": "83dcf90778aa2a4a2d4bf81c15578defc83495497e220e9d5c7f46911c01e9a0"
     }
   },
   "validation": {
@@ -64,5 +51,5 @@
     "pdf_rendered_pixel_equality_dpi": 72,
     "website_acceptance": "NOT_TESTED"
   },
-  "total_task_bytes": 123836
+  "total_task_bytes": 147618
 }

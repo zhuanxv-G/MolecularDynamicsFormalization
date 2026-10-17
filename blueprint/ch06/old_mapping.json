@@ -77,16 +77,16 @@
     "CH06-075": "MD-6.3.7-VectorFPEquation",
     "CH06-076": "MD-6.3.7-DiffusionTrace",
     "CH06-077": "MD-6.3.8-LangevinFPEquation",
-    "CH06-084": "MD-6.4.2-UnitMassGibbsStationaryBridge",
+    "CH06-084": "MD-6.4.2-StationaryInvariant",
     "CH06-078": "MD-6.4.1-StochasticEntryBound",
     "CH06-079": "MD-6.4.1-FiniteEvolutionRecurrence",
     "CH06-080": "MD-6.4.1-Aperiodic",
     "CH06-081": "MD-6.4.1-DirectedGraphIrreducible",
-    "CH06-082": "MD-6.4.1-FiniteErgodicity"
+    "CH06-082": "MD-6.4.1-FiniteErgodicity",
+    "CH06-083": "MD-6.4.2-CylinderForwardPrinted",
+    "CH06-085": "MD-6.4.2-LangevinCanonicalMixing"
   },
   "pending": [
-    "CH06-083",
-    "CH06-085",
     "CH06-086",
     "CH06-087",
     "CH06-088",
@@ -446,7 +446,9 @@
     ],
     "CH06-084": [
       "MD-6.4.2-MassGibbsStationary",
-      "MD-6.4.2-UnitMassGibbsStationaryBridge"
+      "MD-6.4.2-UnitMassGibbsStationaryBridge",
+      "MD-6.4.2-StationaryDensity",
+      "MD-6.4.2-StationaryInvariant"
     ],
     "CH06-078": [
       "MD-6.4.1-StochasticMatrix",
@@ -470,6 +472,16 @@
     ],
     "CH06-082": [
       "MD-6.4.1-FiniteErgodicity"
+    ],
+    "CH06-083": [
+      "MD-6.4.2-CylinderCoordinates",
+      "MD-6.4.2-CylinderSDE",
+      "MD-6.4.2-CylinderGenerator",
+      "MD-6.4.2-CylinderForwardPrinted"
+    ],
+    "CH06-085": [
+      "MD-6.4-CanonicalMixingMeaning",
+      "MD-6.4.2-LangevinCanonicalMixing"
     ]
   }
 }

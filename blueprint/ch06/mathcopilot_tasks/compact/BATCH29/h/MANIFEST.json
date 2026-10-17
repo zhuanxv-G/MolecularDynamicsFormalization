@@ -1,0 +1,86 @@
+{
+  "batch": "BATCH29",
+  "subtask": "BATCH29h",
+  "source_ids": [
+    "MD-6.4.2-StationaryInvariant"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 268,
+      "printed_page": 247
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "1617c389af2ccad00e7b7f8975e45ecd7241a2829374d5d8588ffdbb1971a5fc",
+  "lean_sha256": "a4208537b0977572c0cad3140f8458b8b80dcb6f57c0675b80eaeccf0ee9b117",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "a4208537b0977572c0cad3140f8458b8b80dcb6f57c0675b80eaeccf0ee9b117",
+    "blueprint/ch06/ch06_source.json": "1617c389af2ccad00e7b7f8975e45ecd7241a2829374d5d8588ffdbb1971a5fc",
+    "BATCH29h_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
+    "signature_sha256": "494a3a2b6e1c7b372665a052cfeb7c89cf2fd0e22ff9d215f1d04dc9da8d3077"
+  },
+  "signature_sha256": "494a3a2b6e1c7b372665a052cfeb7c89cf2fd0e22ff9d215f1d04dc9da8d3077",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "invariantKernel",
+      "code_sha256": "8611e1e6038d01d8c2bb29c0b25399b30c6cc263b25dfc737d4d65740f794452"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "kernelAverage",
+      "code_sha256": "040338bc2ba5855cfe804d143e04799a1071818368f8b71e808316c671bd9182"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "markovSemigroup",
+      "code_sha256": "24513b322cd8ce723974b7b551e95e9f91290d3d9e8669bf7a61a3bf6fb77d8d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "invariantKernel",
+      "code_sha256": "8611e1e6038d01d8c2bb29c0b25399b30c6cc263b25dfc737d4d65740f794452"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "kernelAverage",
+      "code_sha256": "040338bc2ba5855cfe804d143e04799a1071818368f8b71e808316c671bd9182"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "kernelEvolution",
+      "code_sha256": "982e3128e0ed8753bc95ef260730eddc1668ee26c1d7bded9aad476e1b9d74e2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "markovSemigroup",
+      "code_sha256": "24513b322cd8ce723974b7b551e95e9f91290d3d9e8669bf7a61a3bf6fb77d8d"
+    }
+  ],
+  "paste_plus_pdf_bytes": 104407,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6989,
+      "sha256": "fe709be607528046504919404d7776f9a3fbd667b6a4a1fc92bc0b96acfc1255"
+    },
+    "BATCH29h_PAGES.pdf": {
+      "bytes": 97418,
+      "sha256": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 107879
+}

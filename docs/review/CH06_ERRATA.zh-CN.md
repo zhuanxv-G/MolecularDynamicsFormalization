@@ -347,3 +347,19 @@
 - 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
 - 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
 - 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。
+
+## 21. MD-6.4.2-CylinderForwardPrinted
+
+- source_id：MD-6.4.2-CylinderForwardPrinted；印刷页 247 / PDF页 268。
+- 原文引文（逐字）：
+
+> Taking the adjoint, the forward Kolmogorov or Fokker-Planck operator is $\mathcal L^*$, acting on a density $\rho(X)$ as
+> \[\mathcal L^*\rho=-\nabla\cdot(b_0\rho)+\tfrac12\operatorname{Tr}(B^T\phi''B).\]
+
+- 问题所在：印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。
+- 反例或理由：密度前向算子不应依赖独立的检验函数φ；即使ρ固定，改变φ会改变印刷右端。
+- 原文版 Lean 名称及状态：`MD.Ch06.cylinderForwardPrinted`：定义已落盘；公理/类型已核。原文文字和完整展示式见上；启发式极限只登记其意义，不声称一般热浴已满足。
+- 修正版 Lean 名称、改动内容、证明状态：`MD.Ch06.cylinderForwardPrinted_corrected`：尚未落盘，不计完成；扩散项中的φ″改为ρ″。
+- 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
+- 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
+- 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。
