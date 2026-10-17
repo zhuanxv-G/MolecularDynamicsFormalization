@@ -1,0 +1,60 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本子任务batch=BATCH30a；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH30a_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
+{
+  "Blueprint/Ch06.lean": "30359bca9783227904d55e96d2e90f8faa027706cb8d735af5700d4054111eb1",
+  "blueprint/ch06/ch06_source.json": "5131e8db5aa454bf18bc06a2882cc59f702891758467f4db10b65cb97530f875",
+  "BATCH30a_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+  "signature_sha256": "4cde2c58f29e20994124dfc87ed21f68198f6ac4f1befb5d580bc53fba851c15"
+}
+
+请直接使用下方完整材料执行A+C；无需读取Markdown附件。原页见附件 BATCH30a_PAGES.pdf。PDF读取失败明确报告工具错误，未核对不记通过。
+
+A：逐字核对原页的陈述、证明、上下文和页码，不静默修正原书疑误。C：只读核对实际Lean定义展开、对象、量词、前提及全部结论，逐条判断[EXTRA]与[ERRATUM?]；签名语义和sorry分开。材料不足或PDF读失败写NEEDS_HUMAN，未核对不得记PASS。不得改工程或补证明。
+用代码写入JSON对象(batch,input_sha256,items)，哈希按本PASTE开头逐项原样回显；items中每个source_id恰一次，字段：source_id；json_review{status,issue_codes,corrected_json,issues,evidence}；audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。status=APPROVED/CORRECTED/NEEDS_HUMAN；verdict=PASS/FAIL/NEEDS_HUMAN。修订时corrected_json给完整条目，否则null；反例/建议无则null。证据标原PDF页和具体公式/短语。无围栏或额外文字。
+
+## 原页映射
+| 附件页 | 原PDF页 | 印刷页 |
+|---|---|---|
+| 1 | 266 | 245 |
+
+## 完整原文JSON
+```json
+{
+  "source_id": "MD-6.4.1-StochasticMatrix",
+  "kind": "definition",
+  "label": null,
+  "section": "6.4.1",
+  "printed_page": "245",
+  "pdf_page": "266",
+  "statement_latex": "A discrete Markov Chain is a stochastic process in which, at each step, a transition is made from the current state $i$ to another $j$ selected from a given probability distribution. In the case of a finite collection of states $\\Sigma=\\{1,2,\\ldots,k\\}$, we assume that the transition probabilities $\\pi_{ij}\\in[0,1]$ are given and denote the state at time $n$ by $S_n$. Thus we have\n\\[\\Pr(S_{n+1}=j\\mid S_n=i)=\\pi_{ij}.\\]\nThe sum of the elements in row $i$ gives the probability of being in some state at time $n+1$ given that we were in state $i$ at time $n$, thus it is one.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "真实右随机矩阵：所有元素非负和每行和1；≤1由这两条件推出，另条显式保存。"
+  ],
+  "issues": [],
+  "lean_decl": "MD.Ch06.stochasticMatrix",
+  "reusable_proofs": [],
+  "extra_assumptions": [],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "review_status": "DRAFT",
+  "repair_log": [],
+  "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+}
+```
+
+## 实际Lean签名/定义
+```lean
+def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
+  (∀ i j, 0 ≤ PiMark i j) ∧ ∀ i, ∑ j, PiMark i j = 1
+```
+
+原上下文：namespace MD.Ch06；open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review；open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator；noncomputable section；variable {n Nc : ℕ}；variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]；variable {R : Type*} [Ring R] [Algebra ℝ R]。
+标准Mathlib符号按4.34.0解释；如下为项目实际依赖定义，保留原代码。多个同名定义列出命名空间，若仍缺决定性上下文需NEEDS_HUMAN。
+
+### MD.Ch06.stochasticMatrix (Blueprint/Ch06.lean:1579)
+```lean
+def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
+  (∀ i j, 0 ≤ PiMark i j) ∧ ∀ i, ∑ j, PiMark i j = 1
+```

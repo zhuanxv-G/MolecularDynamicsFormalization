@@ -2,7 +2,7 @@
 
 范围：印刷p.211–258/PDF232–279，Exercises及参考文献排除；第1–5章冻结，正式库冻结，heartbeat ACTIVE/15分钟原样。
 下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前156条；旧清单映射78/126；本地PASS 139；网站返回0。
+当前172条；旧清单映射83/126；本地PASS 155；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -162,6 +162,22 @@
 | MD-6.3.3-VariableFrictionForward | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-6.3.3-VariableFrictionCanonicalPrinted | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；等待网站/导师明确Γ与M的交换或正确漂移；不证明一般错误stationarity，更不伪造采样收敛。 |
 | MD-6.3.3-VariableFrictionCommutingStationary | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺任意质量/矩阵交换的完整坐标涨落耗散代数打包；不建设一般随机理论。 |
+| MD-6.4.1-StochasticMatrix | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.1-FiniteDistribution | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.1-FiniteEvolution | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.1-FiniteEvolutionRecurrence | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.4.1-ReturnTimes | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.1-Period | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.1-Aperiodic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.1-Irreducible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.1-FiniteInvariant | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.1-FiniteErgodicity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺现成有限非负随机矩阵Perron–Frobenius/primitive极限完整打包桥接；不建设大型理论。 |
+| MD-6.4.1-StochasticEntryBound | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.4.1-FiniteChainExample | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.1-ExampleStochastic | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.4.1-ExampleNotIrreducible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.4.1-Communicates | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.1-DirectedGraphIrreducible | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺非负矩阵幂正项与有向路径的完整有限求和桥接；不建设一般PF理论。 |
 
 ## 旧126条完整映射
 
@@ -244,11 +260,11 @@
 | CH06-075 | MD-6.3.7-VectorFPEquation |
 | CH06-076 | MD-6.3.7-DiffusionTrace |
 | CH06-077 | MD-6.3.8-LangevinFPEquation |
-| CH06-078 | PENDING：所属节尚未处理 |
-| CH06-079 | PENDING：所属节尚未处理 |
-| CH06-080 | PENDING：所属节尚未处理 |
-| CH06-081 | PENDING：所属节尚未处理 |
-| CH06-082 | PENDING：所属节尚未处理 |
+| CH06-078 | MD-6.4.1-StochasticEntryBound |
+| CH06-079 | MD-6.4.1-FiniteEvolutionRecurrence |
+| CH06-080 | MD-6.4.1-Aperiodic |
+| CH06-081 | MD-6.4.1-DirectedGraphIrreducible |
+| CH06-082 | MD-6.4.1-FiniteErgodicity |
 | CH06-083 | PENDING：所属节尚未处理 |
 | CH06-084 | MD-6.4.2-UnitMassGibbsStationaryBridge |
 | CH06-085 | PENDING：所属节尚未处理 |
@@ -352,6 +368,9 @@
 - MD-6.4.2-MassGibbsStationary：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 现成单位质量表达已证，任意质量坐标包装尚缺短桥；实际过程不变另条。
 - MD-6.3.3-VariableFrictionCanonicalPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 等待网站/导师明确Γ与M的交换或正确漂移；不证明一般错误stationarity，更不伪造采样收敛。任意ΓΓᵀ与对角质量不交换时，印刷漂移ΓΓᵀp与噪声M½Γ不自动满足Gibbs涨落耗散平衡；原canonical目标不能推广为任意质量/任意矩阵全称定理。
 - MD-6.3.3-VariableFrictionCommutingStationary：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺任意质量/矩阵交换的完整坐标涨落耗散代数打包；不建设一般随机理论。
+- MD-6.4.1-FiniteDistribution：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 印刷nonzero应区分典型正权重与一般非负概率；原句完整保留，未声明字面nonzero定义网站PASS。
+- MD-6.4.1-FiniteErgodicity：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺现成有限非负随机矩阵Perron–Frobenius/primitive极限完整打包桥接；不建设大型理论。
+- MD-6.4.1-DirectedGraphIrreducible：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺非负矩阵幂正项与有向路径的完整有限求和桥接；不建设一般PF理论。
 
 ## 定性段落排除
 

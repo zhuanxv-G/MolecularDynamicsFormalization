@@ -331,3 +331,19 @@
 - 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
 - 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
 - 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。
+
+## 20. MD-6.4.1-FiniteDistribution
+
+- source_id：MD-6.4.1-FiniteDistribution；印刷页 245 / PDF页 266。
+- 原文引文（逐字）：
+
+> A distribution on the state space is typically associated to a row vector $\psi=(\psi_1,\psi_2,\ldots,\psi_k)$ with nonzero elements and which is normalized such that
+> \[\sum_{i=1}^k\psi_i=1.\]
+
+- 问题所在：印刷nonzero应区分典型正权重与一般非负概率；原句完整保留，未声明字面nonzero定义网站PASS。
+- 反例或理由：一般概率向量可为(1,0)；nonzero不能作为全部分布的定义。
+- 原文版 Lean 名称及状态：`MD.Ch06.finiteDistributionPrinted`：尚未落盘，不计完成。原文文字和完整展示式见上；启发式极限只登记其意义，不声称一般热浴已满足。
+- 修正版 Lean 名称、改动内容、证明状态：`MD.Ch06.finiteDistribution_corrected`：尚未落盘，不计完成；原nonzero单独保留为严格正权重版本；一般定义采用非负权重、总和1。
+- 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
+- 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
+- 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。

@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro k matrix h i j\n  rw [← h.2 i]\n  exact Finset.single_le_sum (fun k _ ↦ h.1 i k) (Finset.mem_univ j)",
+    "source": "blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-StochasticEntryBound.lean",
+    "log": "blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-StochasticEntryBound.log",
+    "source_sha256": "15b28f813901f270eb6a0f4b0d137af412fdaef4829542def404ad1b6ce1bd84",
+    "log_sha256": "090c6f20001b2e8d6d6d450ab71f3dfda2e92b2ba492036d911496a938e9efd0"
+  }
+]

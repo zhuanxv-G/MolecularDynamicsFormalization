@@ -1,0 +1,96 @@
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch section641-7b05c994 --step ③–⑤§6.4.1逐批验证
+Generated 164 entries; 82 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py section641-7b05c994
+Generated 164 entries; 82 /126 old rows mapped; protected 925
+Batch axioms passed: section641-7b05c994 164
+Running: D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 164, "local_PASS": 147, "local_NEEDS_HUMAN": 17, "errata_records": 20, "source_errata_records": 19, "declarations": {"\u5b9a\u4e49": 63, "\u5df2\u8bc1": 50, "\u672a\u8bc1": 51}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 12, "\u65f6\u95f4\u76d2\u6b62": 2, "\u7f3a\u5927\u578b\u7406\u8bba": 37}, "website_submitted": false}
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch section641b-e552536c --step ③–⑤§6.4.1逐批验证
+Generated 172 entries; 83 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py section641b-e552536c
+Generated 172 entries; 83 /126 old rows mapped; protected 925
+Batch axioms passed: section641b-e552536c 172
+Running: D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 172, "local_PASS": 155, "local_NEEDS_HUMAN": 17, "errata_records": 20, "source_errata_records": 19, "declarations": {"\u5b9a\u4e49": 66, "\u5df2\u8bc1": 50, "\u672a\u8bc1": 56}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 12, "\u65f6\u95f4\u76d2\u6b62": 2, "\u7f3a\u5927\u578b\u7406\u8bba": 42}, "website_submitted": false}
+Running: D:\anaconda\python.exe scripts/local_short_search.py 6 FiniteEvolutionRecurrence StochasticEntryBound ExampleStochastic ExampleNotIrreducible
+FiniteEvolutionRecurrence PASS
+StochasticEntryBound PASS
+ExampleStochastic PASS
+ExampleNotIrreducible failed route 1
+d) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _P
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+blueprint\ch06\validation\short_search\route-e6e1ab86703cf7f9ca35.lean:437:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-e6e1ab86703cf7f9ca35.lean:442:64: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-e6e1ab86703cf7f9ca35.lean:455:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-e6e1ab86703cf7f9ca35.lean:462:72: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-e6e1ab86703cf7f9ca35.lean:481:59: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch06\validation\short_search\route-e6e1ab86703cf7f9ca35.lean:774:4: warning: This simp argument is unused:
+  Finset.mul_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.trace, Matrix.diag, Matrix.mul_apply, Matrix.transpose_apply, Finset.sum_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+blueprint\ch06\validation\short_search\route-e6e1ab86703cf7f9ca35.lean:869:16: error: unsolved goals
+case succ
+n : ℕ
+ih : (finiteChainExample ^ n) 1 0 = 0 ∧ (finiteChainExample ^ n) 3 0 = 0 ∧ (finiteChainExample ^ n) 4 0 = 0
+⊢ (!![1 / 5, 1 / 10, 7 / 10, 0, 0;
+            0, 0, 0, 1, 0;
+            3 / 10, 0, 0, 3 / 10, 2 / 5;
+            0, 1 / 2, 0, 3 / 10, 1 / 5;
+            0, 0, 0, 1, 0] ^
+          n)
+        3 0 =
+      0 ∧
+    1 / 2 *
+            (!![1 / 5, 1 / 10, 7 / 10, 0, 0;
+                  0, 0, 0, 1, 0;
+                  3 / 10, 0, 0, 3 / 10, 2 / 5;
+                  0, 1 / 2, 0, 3 / 10, 1 / 5;
+                  0, 0, 0, 1, 0] ^
+                n)
+              1 0 +
+          (3 / 10 *
+              (!![1 / 5, 1 / 10, 7 / 10, 0, 0;
+                    0, 0, 0, 1, 0;
+                    3 / 10, 0, 0, 3 / 10, 2 / 5;
+                    0, 1 / 2, 0, 3 / 10, 1 / 5;
+                    0, 0, 0, 1, 0] ^
+                  n)
+                3 0 +
+            1 / 5 *
+              (!![1 / 5, 1 / 10, 7 / 10, 0, 0;
+                    0, 0, 0, 1, 0;
+                    3 / 10, 0, 0, 3 / 10, 2 / 5;
+                    0, 1 / 2, 0, 3 / 10, 1 / 5;
+                    0, 0, 0, 1, 0] ^
+                  n)
+                4 0) =
+        0 ∧
+      (!![1 / 5, 1 / 10, 7 / 10, 0, 0;
+              0, 0, 0, 1, 0;
+              3 / 10, 0, 0, 3 / 10, 2 / 5;
+              0, 1 / 2, 0, 3 / 10, 1 / 5;
+              0, 0, 0, 1, 0] ^
+            n)
+          3 0 =
+        0
+
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_advance_ch06.py", line 36, in <module>
+    assert any(r['exit_code']==0 for r in routes) or len(routes)>=3, 'Inspect and revise bounded proof route: '+key
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Inspect and revise bounded proof route: ExampleNotIrreducible

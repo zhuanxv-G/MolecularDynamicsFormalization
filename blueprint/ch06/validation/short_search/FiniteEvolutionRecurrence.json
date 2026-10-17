@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro k matrix initial n\n  simp only [MolecularDynamics.Chapter06Review.finiteEvolution, pow_succ]\n  exact (Matrix.vecMul_vecMul initial (matrix^n) matrix).symm",
+    "source": "blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-FiniteEvolutionRecurrence.lean",
+    "log": "blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-FiniteEvolutionRecurrence.log",
+    "source_sha256": "64a69cddb96dba088ba11654dedaeceb36372005e63ed52b0557e135cccaadcc",
+    "log_sha256": "19fe8133e6b23d4e36c988b153a009efe25207e5c6e752bd074a55e26388715e"
+  }
+]

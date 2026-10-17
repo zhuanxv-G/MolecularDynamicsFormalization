@@ -1,7 +1,7 @@
 {
-  "active_records": 148,
+  "active_records": 172,
   "current_native": "section634-637-final/chapter_build.compile-RUNNING.json",
-  "next_after_pass": "下一步：激活§6.3.8的8条；复用已通过证据，按CONTINUE_NEXT顺序至§6.4.5章末停止。",
+  "next_after_pass": "继续§6.4.2：ch06_section642；第1–5章冻结，不进入第7章。",
   "remaining_sections": [
     [
       "6.3.8",
@@ -48,5 +48,7 @@
     ]
   ],
   "rule": "one native compiler at a time; do not restore sealed proofs; reuse shared checks by actual current hashes",
-  "status": "active_directive22"
+  "status": "active_directive22",
+  "current_verified_section": "6.4.1",
+  "current_check": "blueprint/ch06/validation/section641"
 }

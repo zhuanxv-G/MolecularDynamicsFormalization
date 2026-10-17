@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "constructor\n  · intro i j\n    fin_cases i <;> fin_cases j <;> norm_num [finiteChainExample]\n  · intro i\n    fin_cases i <;> norm_num [finiteChainExample, Fin.sum_univ_succ]",
+    "source": "blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-ExampleStochastic.lean",
+    "log": "blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-ExampleStochastic.log",
+    "source_sha256": "7a223f7f0a65bf351b73bf5cc42081c10e35423e1a451fa10c934dbd4b4490be",
+    "log_sha256": "17577ffd8d9df0245972d2585f7d69d9f4bbf210fe769fc187ba308523e7f05a"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint\\ch06\\validation\\batch_axioms\\sec6.4.1-proofs-f111535ccc.lean"
+  ],
+  "input_sha256": "5b9942ec402160053272b30819690f2b749b0d197bda10e6cb15d13189f86e48",
+  "parent_pid": 12156,
+  "parent_create_time": 1792224123.6318152,
+  "compiler_pid": 31356,
+  "compiler_create_time": 1792224124.2193892,
+  "started_at": "2026-10-17T16:02:04.218016",
+  "status": "completed",
+  "exit_code": 0,
+  "completed_at": "2026-10-17T16:06:32.671714"
+}

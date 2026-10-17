@@ -49,6 +49,12 @@ for relative in ['AGENTS.md','docs/handoff/RESUME_PROMPT.zh-CN.md']:
 with (ROOT/'docs/handoff/WORK_LOG.zh-CN.md').open('a',encoding='utf-8') as f:
     f.write(f'\n## {datetime.now().date()} 第{ch}章：§{section}检查点\n{len(p.RECORDS)}条JSON/Blueprint/本地预审/compact/7段文档；完整check与逐条公理通过，冻结文件不变。\n下一步：{next_step}；网站待审，原模型及heartbeat调度保留。\n')
 p.verify_protected()
+if ch==6:
+    pointer=p.BASE/'validation/CONTINUE_NEXT.json'
+    saved=json.loads(pointer.read_text(encoding='utf-8'))
+    saved.update(active_records=len(p.RECORDS),status='active_directive22',current_verified_section=section,
+        current_check=report,next_after_pass=next_step)
+    p.dump(pointer,saved)
 paths=['.gitattributes','AGENTS.md','lakefile.toml','docs/handoff/CURRENT_STATE.zh-CN.md','docs/handoff/RESUME_PROMPT.zh-CN.md','docs/handoff/WORK_LOG.zh-CN.md','docs/handoff/LOCAL_PIPELINE.md',f'Blueprint/Ch{ch:02}.lean',f'blueprint/ch{ch:02}',f'docs/review/CH{ch:02}_BLUEPRINT.zh-CN.md',
     'scripts/blueprint_source.py','scripts/local_blueprint.py','scripts/local_stage.py','scripts/local_chapter_check.ps1','scripts/local_checkpoint.py',f'scripts/ch{ch:02}_data.py']
 paths += ['scripts/render_local_source.py','scripts/validate_local_delivery.py']

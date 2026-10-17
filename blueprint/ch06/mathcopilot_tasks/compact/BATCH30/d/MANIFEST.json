@@ -1,0 +1,74 @@
+{
+  "batch": "BATCH30",
+  "subtask": "BATCH30d",
+  "source_ids": [
+    "MD-6.4.1-FiniteEvolutionRecurrence"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 266,
+      "printed_page": 245
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "5131e8db5aa454bf18bc06a2882cc59f702891758467f4db10b65cb97530f875",
+  "lean_sha256": "30359bca9783227904d55e96d2e90f8faa027706cb8d735af5700d4054111eb1",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "30359bca9783227904d55e96d2e90f8faa027706cb8d735af5700d4054111eb1",
+    "blueprint/ch06/ch06_source.json": "5131e8db5aa454bf18bc06a2882cc59f702891758467f4db10b65cb97530f875",
+    "BATCH30d_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+    "signature_sha256": "39e7d23dd717860efd21628e1378ef185ed381ab5451b2f595f44073a394529c"
+  },
+  "signature_sha256": "39e7d23dd717860efd21628e1378ef185ed381ab5451b2f595f44073a394529c",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "finiteEvolution",
+      "code_sha256": "14e3bc9b37d5523c6f6f65568dcfa52e5f7d374019c24a1d7c7d6f417dc96880"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "finiteEvolution",
+      "code_sha256": "e320d5194ce5ef4475040cd0a6412dce72ad4b294a83214a5b6dcc218f32a231"
+    }
+  ],
+  "paste_plus_pdf_bytes": 87749,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4507,
+      "sha256": "d1ecd27c3973941c141312bbd1fcdc0719a7693f9215641c15a25a17c8b29df1"
+    },
+    "BATCH30d_PAGES.pdf": {
+      "bytes": 83242,
+      "sha256": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 90602
+}

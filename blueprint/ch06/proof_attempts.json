@@ -1,14 +1,14 @@
 {
   "rule": "最多3种路线；失败分类只用缺大型理论/原书疑误不证/时间盒止；definitions do not create theorem obligations",
   "counts": {
-    "定义": 56,
-    "已证": 49,
-    "未证": 51
+    "定义": 66,
+    "已证": 54,
+    "未证": 52
   },
   "unproved_reasons": {
-    "原书疑误不证": 12,
+    "原书疑误不证": 11,
     "时间盒止": 2,
-    "缺大型理论": 37
+    "缺大型理论": 39
   },
   "items": {
     "MD-6.1.1-Microcanonical": {
@@ -1982,7 +1982,7 @@
         "MD.Ch06.timeItoFormula": {
           "kind": "theorem",
           "status": "未证",
-          "classification": "原书疑误不证",
+          "classification": "缺大型理论",
           "direct_placeholder": true,
           "axioms": [
             "propext",
@@ -2877,7 +2877,11 @@
           "status": "定义",
           "classification": null,
           "direct_placeholder": false,
-          "axioms": null,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
           "reason": null,
           "compiler_route_count": 0,
           "route_evidence": null
@@ -2892,7 +2896,11 @@
           "status": "定义",
           "classification": null,
           "direct_placeholder": false,
-          "axioms": null,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
           "reason": null,
           "compiler_route_count": 0,
           "route_evidence": null
@@ -2907,7 +2915,12 @@
           "status": "未证",
           "classification": "缺大型理论",
           "direct_placeholder": true,
-          "axioms": null,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
           "reason": "缺一般质量Langevin law的完整Fokker–Planck桥接；单位质量形式算子不是过程密度PDE证明。",
           "compiler_route_count": 0,
           "route_evidence": null
@@ -2922,7 +2935,12 @@
           "status": "未证",
           "classification": "缺大型理论",
           "direct_placeholder": true,
-          "axioms": null,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
           "reason": "现成单位质量表达已证，任意质量坐标包装尚缺短桥；实际过程不变另条。",
           "compiler_route_count": 0,
           "route_evidence": null
@@ -2934,11 +2952,15 @@
       "declarations": {
         "MD.Ch06.unitMassGibbsStationaryBridge": {
           "kind": "theorem",
-          "status": "未证",
-          "classification": "缺大型理论",
+          "status": "已证",
+          "classification": null,
           "direct_placeholder": false,
-          "axioms": null,
-          "reason": "本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
           "compiler_route_count": 0,
           "route_evidence": null
         }
@@ -2952,7 +2974,11 @@
           "status": "定义",
           "classification": null,
           "direct_placeholder": false,
-          "axioms": null,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
           "reason": null,
           "compiler_route_count": 0,
           "route_evidence": null
@@ -2967,7 +2993,12 @@
           "status": "未证",
           "classification": "原书疑误不证",
           "direct_placeholder": true,
-          "axioms": null,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
           "reason": "等待网站/导师明确Γ与M的交换或正确漂移；不证明一般错误stationarity，更不伪造采样收敛。",
           "compiler_route_count": 0,
           "route_evidence": null
@@ -2982,8 +3013,319 @@
           "status": "未证",
           "classification": "缺大型理论",
           "direct_placeholder": true,
-          "axioms": null,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
           "reason": "缺任意质量/矩阵交换的完整坐标涨落耗散代数打包；不建设一般随机理论。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-StochasticMatrix": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.stochasticMatrix": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-FiniteDistribution": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.finiteDistribution": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-FiniteEvolution": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.finiteEvolution": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-FiniteEvolutionRecurrence": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.finiteEvolutionRecurrence": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 1,
+          "route_evidence": "blueprint/ch06/validation/short_search/FiniteEvolutionRecurrence.json"
+        }
+      }
+    },
+    "MD-6.4.1-ReturnTimes": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.returnTimes": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-Period": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.period": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-Aperiodic": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.aperiodic": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-Irreducible": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.irreducible": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-FiniteInvariant": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.finiteInvariant": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-FiniteErgodicity": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.finiteErgodicity": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺现成有限非负随机矩阵Perron–Frobenius/primitive极限完整打包桥接；不建设大型理论。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-StochasticEntryBound": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.stochasticEntryBound": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 1,
+          "route_evidence": "blueprint/ch06/validation/short_search/StochasticEntryBound.json"
+        }
+      }
+    },
+    "MD-6.4.1-FiniteChainExample": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.finiteChainExample": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-ExampleStochastic": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.exampleStochastic": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 1,
+          "route_evidence": "blueprint/ch06/validation/short_search/ExampleStochastic.json"
+        }
+      }
+    },
+    "MD-6.4.1-ExampleNotIrreducible": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.exampleNotIrreducible": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 2,
+          "route_evidence": "blueprint/ch06/validation/short_search/ExampleNotIrreducible.json"
+        }
+      }
+    },
+    "MD-6.4.1-Communicates": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.communicates": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.1-DirectedGraphIrreducible": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.directedGraphIrreducible": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺非负矩阵幂正项与有向路径的完整有限求和桥接；不建设一般PF理论。",
           "compiler_route_count": 0,
           "route_evidence": null
         }

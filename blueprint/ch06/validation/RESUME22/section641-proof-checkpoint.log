@@ -1,0 +1,16 @@
+Running: D:\anaconda\python.exe scripts/local_short_search.py 6 FiniteEvolutionRecurrence StochasticEntryBound ExampleStochastic ExampleNotIrreducible
+FiniteEvolutionRecurrence saved routes reused
+StochasticEntryBound saved routes reused
+ExampleStochastic saved routes reused
+ExampleNotIrreducible saved routes reused
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch sec6.4.1-proofs-f111535ccc --step ③–⑤§6.4.1逐批验证
+Generated 172 entries; 83 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py sec6.4.1-proofs-f111535ccc
+Generated 172 entries; 83 /126 old rows mapped; protected 925
+Batch axioms passed: sec6.4.1-proofs-f111535ccc 172
+Running: D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 172, "local_PASS": 155, "local_NEEDS_HUMAN": 17, "errata_records": 20, "source_errata_records": 19, "declarations": {"\u5b9a\u4e49": 66, "\u5df2\u8bc1": 54, "\u672a\u8bc1": 52}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 11, "\u65f6\u95f4\u76d2\u6b62": 2, "\u7f3a\u5927\u578b\u7406\u8bba": 39}, "website_submitted": false}
+Running: D:\anaconda\python.exe scripts/local_section_check.py 6 blueprint/ch06/validation/section641 --reuse-shared blueprint/ch01/validation/CLOSEOUT21/full
+Current chapter build passed; shared checks reused with unchanged input hashes.
+Section complete with verified batch check reuse: blueprint/ch06/validation/section641
+Running: D:\anaconda\python.exe scripts/local_checkpoint.py 6 6.4.1 blueprint/ch06/validation/section641 继续§6.4.2：ch06_section642；第1–5章冻结，不进入第7章。

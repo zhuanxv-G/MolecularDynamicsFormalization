@@ -1,0 +1,20 @@
+[
+  {
+    "route": 1,
+    "exit_code": 1,
+    "proof": null,
+    "source": "blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35.lean",
+    "log": "blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35.log",
+    "source_sha256": "114166e4429c0da3683c10b3297dec0c9359b5f459ef23f4005e7c354b1f9c39",
+    "log_sha256": "dd84a94775dc4f035a366b3c4a9bdcc24f9c98f4576a5ae59e0ae94f88419b62"
+  },
+  {
+    "route": 2,
+    "exit_code": 0,
+    "proof": "have hz : ∀ n : ℕ,\n      (finiteChainExample^n) (1 : Fin 5) 0=0 ∧\n      (finiteChainExample^n) (3 : Fin 5) 0=0 ∧\n      (finiteChainExample^n) (4 : Fin 5) 0=0 := by\n    intro n\n    induction n with\n    | zero => norm_num\n    | succ n ih =>\n      rw [pow_succ']\n      simp only [finiteChainExample] at ih\n      norm_num [Matrix.mul_apply, Fin.sum_univ_succ, finiteChainExample,\n        ih.1, ih.2.1, ih.2.2]\n  intro h\n  obtain ⟨n,hn⟩ := h (1 : Fin 5) (0 : Fin 5)\n  rw [(hz n).1] at hn\n  linarith",
+    "source": "blueprint/ch06/validation/short_search/route-d890573e8df7fc5ec41d.lean",
+    "log": "blueprint/ch06/validation/short_search/route-d890573e8df7fc5ec41d.log",
+    "source_sha256": "0b9315317d4319daaafd22c582565f32962197d8be08ec0c5e095e48f711832c",
+    "log_sha256": "33fef1ea0f49444c3235c58f6efab5e8f48ac2be541e76c3899e93af8be547d8"
+  }
+]

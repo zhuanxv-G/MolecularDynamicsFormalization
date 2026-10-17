@@ -1,0 +1,158 @@
+{
+  "batch": "BATCH31",
+  "subtask": "BATCH31b",
+  "source_ids": [
+    "MD-6.4.1-FiniteErgodicity"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 267,
+      "printed_page": 246
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "5131e8db5aa454bf18bc06a2882cc59f702891758467f4db10b65cb97530f875",
+  "lean_sha256": "30359bca9783227904d55e96d2e90f8faa027706cb8d735af5700d4054111eb1",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "30359bca9783227904d55e96d2e90f8faa027706cb8d735af5700d4054111eb1",
+    "blueprint/ch06/ch06_source.json": "5131e8db5aa454bf18bc06a2882cc59f702891758467f4db10b65cb97530f875",
+    "BATCH31b_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
+    "signature_sha256": "0967f232e5773a65270f5af12c4bd89c6ebb22636c35f0e2f74823e86629e9db"
+  },
+  "signature_sha256": "0967f232e5773a65270f5af12c4bd89c6ebb22636c35f0e2f74823e86629e9db",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "aperiodic",
+      "code_sha256": "655555977a6ef757c6b6ea871dd064f782bd1a7592fb7d6e04c4cd861e86829b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "finiteDistribution",
+      "code_sha256": "f4f50a79a10c63874afec369d5f2bf008aed3ef18bf72908dc7ca9242294f54d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "finiteEvolution",
+      "code_sha256": "14e3bc9b37d5523c6f6f65568dcfa52e5f7d374019c24a1d7c7d6f417dc96880"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "finiteInvariant",
+      "code_sha256": "35ade6ea7774536949cab37fbc9d48672dc97fc97e86962fc1c740fadd968d12"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "irreducible",
+      "code_sha256": "b500404952dbe2828f09460b05e2c77190b7300a55cf7116332076472832c455"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "period",
+      "code_sha256": "32975ff8171d7e8eaa8f42a9bb13d6b789865fe2fd846acc88a23c082e62ff91"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "returnTimes",
+      "code_sha256": "340b92951db45d305f733fb31470bf24270946fd6dc744a3baeb290994116d4f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "stochasticMatrix",
+      "code_sha256": "4cde2c58f29e20994124dfc87ed21f68198f6ac4f1befb5d580bc53fba851c15"
+    },
+    {
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter04Review",
+      "name": "V",
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "V",
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "aperiodic",
+      "code_sha256": "88534cd0cf7f6db49808a28889d8027aa42333d14e49b5f90a5a15f8cbf928d6"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "finiteDistribution",
+      "code_sha256": "c05c97ddf04ee4838e242feef7cb8517b944365a6bb878c2b03caa97ea5e6e81"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "finiteEvolution",
+      "code_sha256": "e320d5194ce5ef4475040cd0a6412dce72ad4b294a83214a5b6dcc218f32a231"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "finiteInvariant",
+      "code_sha256": "14a7d6ba154cc917641bd1c101aed81d58a7477b85b994374670652541f18e33"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "irreducible",
+      "code_sha256": "b500404952dbe2828f09460b05e2c77190b7300a55cf7116332076472832c455"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "period",
+      "code_sha256": "7902181f6cef117b2f1b4db8507b45c173fa6345272640c58548e99e1bb5dd45"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "returnTimes",
+      "code_sha256": "340b92951db45d305f733fb31470bf24270946fd6dc744a3baeb290994116d4f"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "stochasticMatrix",
+      "code_sha256": "4cde2c58f29e20994124dfc87ed21f68198f6ac4f1befb5d580bc53fba851c15"
+    }
+  ],
+  "paste_plus_pdf_bytes": 125338,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8798,
+      "sha256": "f27b0ae9100d3118491fc114f35c2918c6bf6f4187e986585009d8a01422110f"
+    },
+    "BATCH31b_PAGES.pdf": {
+      "bytes": 116540,
+      "sha256": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 131444
+}

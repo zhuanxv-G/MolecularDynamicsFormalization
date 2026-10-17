@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 PY=__import__('sys').executable
 a=argparse.ArgumentParser();a.add_argument('section');a.add_argument('modules',nargs='+')
 a.add_argument('--proofs',nargs='*',default=[]);a.add_argument('--next',required=True)
+a.add_argument('--resume-after-batches',action='store_true')
 x=a.parse_args();assert len(x.proofs)<=8
 base=ROOT/'blueprint/ch06';data=ROOT/'scripts/ch06_data.py'
 def call(args):
@@ -21,6 +22,9 @@ for module in x.modules:
     assert module.startswith('ch06_section') and (ROOT/'scripts'/f'{module}.py').exists()
     old=data.read_text(encoding='utf-8')
     before=len(json.loads((base/'ch06_source.json').read_text(encoding='utf-8')))
+    if x.resume_after_batches:
+        assert 'import '+module+'\n' in old,module
+        continue
     if 'import '+module+'\n' not in old:
         assert '\nimport json\n' in old
         data.write_text(old.replace('\nimport json\n','\nimport '+module+'\nimport json\n',1),encoding='utf-8')

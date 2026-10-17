@@ -1,0 +1,16 @@
+have hz : ∀ n : ℕ,
+      (finiteChainExample^n) (1 : Fin 5) 0=0 ∧
+      (finiteChainExample^n) (3 : Fin 5) 0=0 ∧
+      (finiteChainExample^n) (4 : Fin 5) 0=0 := by
+    intro n
+    induction n with
+    | zero => norm_num
+    | succ n ih =>
+      rw [pow_succ']
+      simp only [finiteChainExample] at ih
+      norm_num [Matrix.mul_apply, Fin.sum_univ_succ, finiteChainExample,
+        ih.1, ih.2.1, ih.2.2]
+  intro h
+  obtain ⟨n,hn⟩ := h (1 : Fin 5) (0 : Fin 5)
+  rw [(hz n).1] at hn
+  linarith

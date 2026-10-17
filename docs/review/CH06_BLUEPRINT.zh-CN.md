@@ -160,6 +160,22 @@
 | MD-6.3.3-VariableFrictionForward | 239/260 | PASS | 待网站审计 | self-contained |
 | MD-6.3.3-VariableFrictionCanonicalPrinted | 239/260 | NEEDS_HUMAN | 待网站审计 | incomplete |
 | MD-6.3.3-VariableFrictionCommutingStationary | 239/260 | PASS | 待网站审计 | incomplete |
+| MD-6.4.1-StochasticMatrix | 245/266 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-FiniteDistribution | 245/266 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-FiniteEvolution | 245/266 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-FiniteEvolutionRecurrence | 245/266 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-ReturnTimes | 245/266 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-Period | 245/266 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-Aperiodic | 245/266 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-Irreducible | 245–246/266–267 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-FiniteInvariant | 246/267 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-FiniteErgodicity | 246/267 | PASS | 待网站审计 | incomplete |
+| MD-6.4.1-StochasticEntryBound | 245/266 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-FiniteChainExample | 246/267 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-ExampleStochastic | 246/267 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-ExampleNotIrreducible | 246/267 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-Communicates | 245–246/266–267 | PASS | 待网站审计 | self-contained |
+| MD-6.4.1-DirectedGraphIrreducible | 246/267 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -201,6 +217,8 @@
   原只给函数值尾部增长而未约束导数；完整IBP及边界消失需技术资格，已全部明示，不静默添加。
 - MD-6.3.3-VariableFrictionCanonicalPrinted：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
   任意ΓΓᵀ与对角质量不交换时，印刷漂移ΓΓᵀp与噪声M½Γ不自动满足Gibbs涨落耗散平衡；原canonical目标不能推广为任意质量/任意矩阵全称定理。
+- MD-6.4.1-FiniteDistribution：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  印刷nonzero应区分典型正权重与一般非负概率；原句完整保留，未声明字面nonzero定义网站PASS。
 
 ## 1. MD-6.1.1-Microcanonical · definition · 印刷p.214 / PDFp.235
 
@@ -8014,3 +8032,725 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 缺失/继续路线：缺任意质量/矩阵交换的完整坐标涨落耗散代数打包；不建设一般随机理论。
 
 签名SHA256：`f179338cfc890b97f44c0d7660787c098df5231ff342f7a23bd54a795eef6063`；原文SHA256：`001d560df7ff4462efd2058d4e2afa2aede700673ab048d10e4d7b1cacd5c678`。
+
+## 1. MD-6.4.1-StochasticMatrix · definition · 印刷p.245 / PDFp.266
+
+### 2. 原文陈述
+
+> A discrete Markov Chain is a stochastic process in which, at each step, a transition is made from the current state $i$ to another $j$ selected from a given probability distribution. In the case of a finite collection of states $\Sigma=\{1,2,\ldots,k\}$, we assume that the transition probabilities $\pi_{ij}\in[0,1]$ are given and denote the state at time $n$ by $S_n$. Thus we have
+> \[\Pr(S_{n+1}=j\mid S_n=i)=\pi_{ij}.\]
+> The sum of the elements in row $i$ gives the probability of being in some state at time $n+1$ given that we were in state $i$ at time $n$, thus it is one.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
+  (∀ i j, 0 ≤ PiMark i j) ∧ ∀ i, ∑ j, PiMark i j = 1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.stochasticMatrix；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1579](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1579>)（`MD.Ch06.stochasticMatrix`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`4cde2c58f29e20994124dfc87ed21f68198f6ac4f1befb5d580bc53fba851c15`；原文SHA256：`0c0b93e1b5e466c0e361a713785b3659f143172d1c61a41fe0496656c0aa3fd9`。
+
+## 1. MD-6.4.1-FiniteDistribution · definition · 印刷p.245 / PDFp.266
+
+### 2. 原文陈述
+
+> A distribution on the state space is typically associated to a row vector $\psi=(\psi_1,\psi_2,\ldots,\psi_k)$ with nonzero elements and which is normalized such that
+> \[\sum_{i=1}^k\psi_i=1.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def finiteDistribution {k : ℕ} (ψ : MolecularDynamics.Chapter06Review.V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.finiteDistribution；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]概率权重取非负，允许零概率状态；原nonzero作为“typically”的描述而非概率的必要条件，不添加严格正初值要求。 | [EXTRA] |
+| 原页核对/疑点 | 印刷nonzero应区分典型正权重与一般非负概率；原句完整保留，未声明字面nonzero定义网站PASS。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1585](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1585>)（`MD.Ch06.finiteDistribution`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`c05c97ddf04ee4838e242feef7cb8517b944365a6bb878c2b03caa97ea5e6e81`；原文SHA256：`27344db64774107d18b0f94758a916dc9cec1a7bad345739ae2dfc4ea8c27933`。
+
+## 1. MD-6.4.1-FiniteEvolution · definition · 印刷p.245 / PDFp.266
+
+### 2. 原文陈述
+
+> The probability of being in state $i$ at the $n+1$st iteration, is the sum over $j$ of the probabilities of being in state $j$ multiplied by the probability of transitioning from state $j$ to state $i$, thus
+> \[\psi_{n+1}=\psi_n\Pi.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : MolecularDynamics.Chapter06Review.V k) (n : ℕ) : MolecularDynamics.Chapter06Review.V k :=
+  Matrix.vecMul ψ (PiMark^n)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.finiteEvolution；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1588](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1588>)（`MD.Ch06.finiteEvolution`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`e320d5194ce5ef4475040cd0a6412dce72ad4b294a83214a5b6dcc218f32a231`；原文SHA256：`faaccdfac11c19b145cda4b3f39240ea623d7dcc0573838cd028c53ff307cb7d`。
+
+## 1. MD-6.4.1-FiniteEvolutionRecurrence · unnumbered_claim · 印刷p.245 / PDFp.266
+
+### 2. 原文陈述
+
+> \[\psi_{n+1}=\psi_n\Pi.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem finiteEvolutionRecurrence : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ)
+    (initial : Fin k → ℝ) (n : ℕ),
+  MolecularDynamics.Chapter06Review.finiteEvolution matrix initial (n+1)=
+    Matrix.vecMul (MolecularDynamics.Chapter06Review.finiteEvolution matrix initial n) matrix
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.finiteEvolutionRecurrence；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:1592](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1592>)（`MD.Ch06.finiteEvolutionRecurrence`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/FiniteEvolutionRecurrence.json；blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-FiniteEvolutionRecurrence.lean；blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-FiniteEvolutionRecurrence.log。
+
+签名SHA256：`39e7d23dd717860efd21628e1378ef185ed381ab5451b2f595f44073a394529c`；原文SHA256：`6e5ed8182d499e1be42b4a05365baec1ed4f28d94c05f61e7094983e9dd17adf`。
+
+## 1. MD-6.4.1-ReturnTimes · definition · 印刷p.245 / PDFp.266
+
+### 2. 原文陈述
+
+> For each state of the chain, we define the number $d(i)$ to be the greatest common divisor of all integers $l$ such that $\pi_{ii}^{(l)}>0$ (if the probability of return to state $i$ is zero, then we set $d(i)=0$).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def returnTimes {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : Set ℕ :=
+  {n | 0 < n ∧ 0 < (PiMark^n) i i}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.returnTimes；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实Πˡ正返回时间l>0，排除0步恒等阵；原gcd周期定义必须如此解读。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1602](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1602>)（`MD.Ch06.returnTimes`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`340b92951db45d305f733fb31470bf24270946fd6dc744a3baeb290994116d4f`；原文SHA256：`62ff0dd11707382b0960589ab140177ef08cf7b3c316fc65f0aed6178c311116`。
+
+## 1. MD-6.4.1-Period · definition · 印刷p.245 / PDFp.266
+
+### 2. 原文陈述
+
+> For each state of the chain, we define the number $d(i)$ to be the greatest common divisor of all integers $l$ such that $\pi_{ii}^{(l)}>0$ (if the probability of return to state $i$ is zero, then we set $d(i)=0$).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def period {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : ℕ :=
+  sSup {d : ℕ | ∀ n ∈ MolecularDynamics.Chapter06Review.returnTimes PiMark i, d ∣ n}
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.period；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1606](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1606>)（`MD.Ch06.period`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`7902181f6cef117b2f1b4db8507b45c173fa6345272640c58548e99e1bb5dd45`；原文SHA256：`9c2c1a2a9382c0ee46b9d38017ad6651e8cd17f7b015d9a7966ccf7510e6b67c`。
+
+## 1. MD-6.4.1-Aperiodic · definition · 印刷p.245 / PDFp.266
+
+### 2. 原文陈述
+
+> If $d(i)=1$, for all $i$ then we say that the chain is aperiodic.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def aperiodic {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i, MolecularDynamics.Chapter06Review.period PiMark i = 1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.aperiodic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1610](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1610>)（`MD.Ch06.aperiodic`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`88534cd0cf7f6db49808a28889d8027aa42333d14e49b5f90a5a15f8cbf928d6`；原文SHA256：`3f7fb153d0af80dcd11ff1ad256e41156e7d1f809ec89dfb57b8d98d7e44802a`。
+
+## 1. MD-6.4.1-Irreducible · definition · 印刷p.245–246 / PDFp.266–267
+
+### 2. 原文陈述
+
+> States $i$ and $j$ are said to communicate if $\pi_{ij}^{(l_1)}>0$ and $\pi_{ji}^{(l_2)}>0$ for some integers $l_1$ and $l_2$. This means that it is possible to reach $j$ from $i$ with positive probability and vice-versa.
+> A finite state space model is irreducible if every state is reachable from every other state in a finite “time”, where time in this context refers to the number of iterations of the chain. Equivalently, we say the model is irreducible if all states communicate.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def irreducible {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i j, ∃ n : ℕ, 0 < (PiMark^n) i j
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.irreducible；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1613](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1613>)（`MD.Ch06.irreducible`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`b500404952dbe2828f09460b05e2c77190b7300a55cf7116332076472832c455`；原文SHA256：`5645c42726d1c33fece404820871258052214eee2284d381e05c93803aef354a`。
+
+## 1. MD-6.4.1-FiniteInvariant · definition · 印刷p.246 / PDFp.267
+
+### 2. 原文陈述
+
+> An invariant distribution is a left eigenvector of $\Pi$, having only non-negative elements, and corresponding to the eigenvalue 1. That is, an invariant distribution $\psi^*$ satisfies
+> \[\psi^*=\psi^*\Pi.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def finiteInvariant {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : MolecularDynamics.Chapter06Review.V k) : Prop :=
+  MolecularDynamics.Chapter06Review.finiteDistribution ψ ∧ Matrix.vecMul ψ PiMark = ψ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.finiteInvariant；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1616](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1616>)（`MD.Ch06.finiteInvariant`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`14a7d6ba154cc917641bd1c101aed81d58a7477b85b994374670652541f18e33`；原文SHA256：`63d227b3016e13b933fcef1d253dbd84b4fb72c629d3b7c0737f17350e99813a`。
+
+## 1. MD-6.4.1-FiniteErgodicity · unnumbered_claim · 印刷p.246 / PDFp.267
+
+### 2. 原文陈述
+
+> The fundamental result for Markov chains is the following: If a given Markov chain is both irreducible and aperiodic, then it can be shown that there is a unique invariant distribution $\psi^*$ such that
+> \[\lim_{n\to\infty}\psi_n=\psi^*,\]
+> for arbitrary initial distribution $\psi_0$. The convergence of an irreducible finite Markov chain to its stationary distribution can be understood through the properties of its eigenvalues by applying of the Perron-Frobenius theorem (see [269]).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem finiteErgodicity :
+  ∀ {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ),
+  0 < k → MolecularDynamics.Chapter06Review.stochasticMatrix PiMark → MolecularDynamics.Chapter06Review.irreducible PiMark → MolecularDynamics.Chapter06Review.aperiodic PiMark →
+  ∃ ψ : MolecularDynamics.Chapter06Review.V k, MolecularDynamics.Chapter06Review.finiteInvariant PiMark ψ ∧ (∀ χ, MolecularDynamics.Chapter06Review.finiteInvariant PiMark χ → χ=ψ) ∧
+    ∀ ψ0 : MolecularDynamics.Chapter06Review.V k, MolecularDynamics.Chapter06Review.finiteDistribution ψ0 → Tendsto (MolecularDynamics.Chapter06Review.finiteEvolution PiMark ψ0) atTop (𝓝 ψ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.finiteErgodicity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]非空真实有限状态、右随机矩阵、全部幂Πⁿ、真实全部初始概率；完整存在、唯一性及任意初值向量收敛，不假设谱隙或收敛结论。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1621](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1621>)（`MD.Ch06.finiteErgodicity`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺现成有限非负随机矩阵Perron–Frobenius/primitive极限完整打包桥接；不建设大型理论。
+
+签名SHA256：`0967f232e5773a65270f5af12c4bd89c6ebb22636c35f0e2f74823e86629e9db`；原文SHA256：`4d234d2d7816889e56795ac4e072846d1d7c64475b41f7e5fed112ea5ed6a77d`。
+
+## 1. MD-6.4.1-StochasticEntryBound · unnumbered_claim · 印刷p.245 / PDFp.266
+
+### 2. 原文陈述
+
+> it is a matrix whose entries are all nonnegative and less than or equal to 1.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem stochasticEntryBound : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ),
+  MolecularDynamics.Chapter06Review.stochasticMatrix matrix → ∀ i j, matrix i j ≤ 1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.stochasticEntryBound；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:1629](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1629>)（`MD.Ch06.stochasticEntryBound`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/StochasticEntryBound.json；blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-StochasticEntryBound.lean；blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-StochasticEntryBound.log。
+
+签名SHA256：`af299da3b2d8afac84213a6765aba10435e85d27c0bd0b6ccbdcdbde30c2b516`；原文SHA256：`504bd598a8741624d20a787eeb6641faaf915a67bd0374978f56b8d1cde718f0`。
+
+## 1. MD-6.4.1-FiniteChainExample · Fig. 6.6 · 印刷p.246 / PDFp.267
+
+### 2. 原文陈述
+
+> Fig. 6.6 A Markov matrix (left) and its graph representation (right). In this example, the Markov Chain is not irreducible.
+> \[\Pi=\begin{bmatrix}0.2&0.1&0.7&0&0\\0&0&0&1&0\\0.3&0&0&0.3&0.4\\0&0.5&0&0.3&0.2\\0&0&0&1&0\end{bmatrix}.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def finiteChainExample : Matrix (Fin 5) (Fin 5) ℝ :=
+  !![(1/5),(1/10),(7/10),0,0;
+     0,0,0,1,0;
+     (3/10),0,0,(3/10),(2/5);
+     0,(1/2),0,(3/10),(1/5);
+     0,0,0,1,0]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.finiteChainExample；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1636](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1636>)（`MD.Ch06.finiteChainExample`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`5f8f58d40c9b5727b84f861cda56168a75b2b5ebfdef6eb1c682e429aa690982`；原文SHA256：`0ca5a61b8fec202e6f12eb67003647962550446a74354d578979fcbb04a0fd3e`。
+
+## 1. MD-6.4.1-ExampleStochastic · extra_claim · 印刷p.246 / PDFp.267
+
+### 2. 原文陈述
+
+> Fig. 6.6 A Markov matrix (left) and its graph representation (right).
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem exampleStochastic : MolecularDynamics.Chapter06Review.stochasticMatrix finiteChainExample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.exampleStochastic；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]原具体数值矩阵的真实随机行资格检查。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:1645](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1645>)（`MD.Ch06.exampleStochastic`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/ExampleStochastic.json；blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-ExampleStochastic.lean；blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35-ExampleStochastic.log。
+
+签名SHA256：`75977c533ddccb4f1deb66d0a3e7077a4b2f831830e157929323b6f2ef6e9900`；原文SHA256：`f92dca829f1094915f481fcff748e34495c79edab9ec6e0015dfae943fb25792`。
+
+## 1. MD-6.4.1-ExampleNotIrreducible · Fig. 6.6 · 印刷p.246 / PDFp.267
+
+### 2. 原文陈述
+
+> In this example, the Markov Chain is not irreducible.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem exampleNotIrreducible : ¬ MolecularDynamics.Chapter06Review.irreducible finiteChainExample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.exampleNotIrreducible；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:1653](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1653>)（`MD.Ch06.exampleNotIrreducible`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试2次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/ExampleNotIrreducible.json；blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35.lean；blueprint/ch06/validation/short_search/route-e6e1ab86703cf7f9ca35.log；blueprint/ch06/validation/short_search/route-d890573e8df7fc5ec41d.lean；blueprint/ch06/validation/short_search/route-d890573e8df7fc5ec41d.log。
+
+签名SHA256：`6cfcb9ae1ceb471b39d635825267f30a1be7479e14bac2cf34e302f3eacd33cf`；原文SHA256：`1dfdc69076c8e76a22f1976e52d8ac463a2421d7da4fde11cf54121245e176be`。
+
+## 1. MD-6.4.1-Communicates · definition · 印刷p.245–246 / PDFp.266–267
+
+### 2. 原文陈述
+
+> States $i$ and $j$ are said to communicate if $\pi_{ij}^{(l_1)}>0$ and $\pi_{ji}^{(l_2)}>0$ for some integers $l_1$ and $l_2$. This means that it is possible to reach $j$ from $i$ with positive probability and vice-versa.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def communicates {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ) (i j : Fin k) : Prop :=
+  (∃ n : ℕ, 0 < (matrix^n) i j) ∧ ∃ n : ℕ, 0 < (matrix^n) j i
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.communicates；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:1672](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1672>)（`MD.Ch06.communicates`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`fa0a46323ae0740838cb3df0415fccf30d49075ac5c0f9751f0ff20eed0aa9ad`；原文SHA256：`403b95a2b08222c5ac62daed8ed210d733625e3d9e6961f033067564b10140cd`。
+
+## 1. MD-6.4.1-DirectedGraphIrreducible · unnumbered_claim · 印刷p.246 / PDFp.267
+
+### 2. 原文陈述
+
+> Then one may understand irreducibility as expressing the connectedness of this graph.
+> For a directed graph, we must have, for any pair of vertices $A$ and $B$, paths which take us from $A$ to $B$ and vice-versa.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem directedGraphIrreducible : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ),
+  MolecularDynamics.Chapter06Review.stochasticMatrix matrix →
+  (MolecularDynamics.Chapter06Review.irreducible matrix ↔
+    ∀ i j, Relation.ReflTransGen (fun a b ↦ 0 < matrix a b) i j)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.directedGraphIrreducible；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实正权边与有向路径可达关系；∀i,j强连通，不用无向连通偷换。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:1677](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:1677>)（`MD.Ch06.directedGraphIrreducible`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺非负矩阵幂正项与有向路径的完整有限求和桥接；不建设一般PF理论。
+
+签名SHA256：`43c3da9bba95a7cb44e133c5280356e406fd76fff50d5ebd16e6fb2537e39735`；原文SHA256：`3f3747fe87410355ea4f6633684dc86e4d8e3f645e2c00cc533b99386cab8754`。

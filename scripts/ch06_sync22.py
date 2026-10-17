@@ -16,21 +16,28 @@ for r in p.RECORDS:
         block=code[m.start():matches[i+1].start() if i+1<len(matches) else len(code)]
         name='MD.Ch06.'+m[2];axioms=a.get('declaration_axioms',{}).get(name)
         placeholder=bool(re.search(r'\bsorry\b',block))
+        key=r['source_id'].split('-')[-1]
+        corrected=m[2].endswith('_corrected') or m[2] in ('theorem61','theorem62','timeItoFormula')
+        reason=r.get('missing') or a.get('explanation')
+        if corrected and key in SPECS:
+            target=SPECS[key][0]
+            if target and target in bykey:reason=bykey[target].get('missing') or '修正版整体尚缺现成完整桥接；不建立大型理论。'
+            if key=='DiffusiveTaylorPrinted':reason='C³修正后的Taylor余项与sqrt(dt)扩散缩放复合，未找到直接短桥；本轮时间盒止，未声称编译证明通过。'
         if m[1] in ('def','abbrev'):status='定义';category=None
         elif axioms is not None and 'sorryAx' not in axioms and a.get('checked'):status='已证';category=None
         else:
             status='未证'
-            if ('Printed' in m[2] or (a['verdict']!='PASS' and not m[2].endswith('_corrected'))) and m[2] not in ('theorem61','theorem62'):
+            if not corrected and ('Printed' in m[2] or a['verdict']!='PASS'):
                 category='原书疑误不证'
-            elif any(word in (r.get('missing') or '') for word in ['三条','时间盒','短证明路线']) or m[2].startswith('diffusiveTaylorPrinted_corrected'):
+            elif any(word in (reason or '') for word in ['三条','时间盒','短证明路线']) or m[2].startswith('diffusiveTaylorPrinted_corrected'):
                 category='时间盒止'
             else:category='缺大型理论'
             reasons[category]+=1
-        key=r['source_id'].split('-')[-1]
         path=B/'validation/short_search'/f'{key}.json'
         routes=json.loads(path.read_text(encoding='utf-8')) if path.exists() else []
+        assert len(routes)<=3,(key,len(routes))
         declarations[name]=dict(kind=m[1],status=status,classification=category,direct_placeholder=placeholder,
-            axioms=axioms,reason=(r.get('missing') or a.get('explanation')) if status=='未证' else None,
+            axioms=axioms,reason=reason if status=='未证' else None,
             compiler_route_count=len(routes),route_evidence=path.relative_to(ROOT).as_posix() if routes else None)
         counts[status]+=1
     out[r['source_id']]=dict(local_verdict=a['verdict'],declarations=declarations)

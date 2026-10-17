@@ -26,12 +26,12 @@ SPECS={
 'FiniteDistribution':('FiniteDistribution','一般概率向量可为(1,0)；nonzero不能作为全部分布的定义。','原nonzero单独保留为严格正权重版本；一般定义采用非负权重、总和1。'),
 'CylinderForwardPrinted':('VectorForward','密度前向算子不应依赖独立的检验函数φ；即使ρ固定，改变φ会改变印刷右端。','扩散项中的φ″改为ρ″。'),
 'BrownianNonpositive':('BrownianNonpositive','非零常数函数的梯度为0，二次型等于0；故仅为半负定。','采用≤0并区分闭算子实现与光滑核心；严格负定字面另见BrownianNegativeDefinitePrinted。'),
-'Theorem61':('Theorem61','常数核反驳严格负定；随机轨道时间平均通常不具有原式的逐路径指数误差界；核心域上的对称性不自动等于闭实现的自伴性。','明确闭Gibbs-L²实现、半负定、离散谱、谱隙和L²初始相对密度的演化分布平均；不声称已证原轨道时间平均。'),
+'Theorem61':('Theorem61','常数核反驳严格负定；随机轨道时间平均通常不具有原式的逐路径指数误差界；核心域上的对称性不自动等于闭实现的自伴性。此外p.244将ΔM定义为正质量权重，Brownian生成元扩散应为逆质量权重；m=2、U=0、f(x)=x²可区分二者。','明确闭Gibbs-L²实现、半负定、离散谱、谱隙和L²初始相对密度的演化分布平均；Brownian扩散使用逆质量权重，不混用p.244动量算子的ΔM；不声称已证原轨道时间平均。'),
 'Theorem61TimeAveragePrinted':('BrownianEnsembleExponential','对非平凡平稳扩散，时间平均的随机波动通常为代数尺度；原句前半讨论演化分布平均，末句却引用(5.6)时间平均。','选择演化分布平均，限定L²初始相对密度；轨道遍历极限应另行陈述，不赋予指数逐路径率。'),
 'BrownianNegativeDefinitePrinted':('BrownianNonpositive','取f≡1，非零而〈f,Lf〉=0。','将严格小于0改为小于等于0；零特征值与常数核保留。'),
 'OUDensityPrinted':('OUDensityCorrect','高斯权重积分为sqrt(2πσ²(t))而非1；t=0为Dirac测度。','增加(2πσ²(t))⁻¹/²，并限γ>0、噪声非零、t>0的密度解释。'),
 'Assumption1Printed':('Assumption1Correct','Brownian热核对角线上随t↓0发散，t=0转移核是Dirac测度。','联合连续性的时间域由[0,∞)改为(0,∞)。'),
-'MinorizationPrinted':('MinorizationCorrectedImplication','离散或含原子的小集下界不保证相对于所选连续参考测度存在联合连续密度，故一般反向不成立。','只保留在明确正时刻密度、可达性条件下到小集下界的充分方向。'),
+'MinorizationPrinted':('MinorizationCorrectedImplication','取C=∅，小集下界对全部x∈C空真，但Assumption1要求y∈int(C)，因此不成立。即使C非空，小集下界也不自动给相对于指定参考测度的联合连续密度。','只保留在明确正时刻密度、可达性条件下到小集下界的充分方向。'),
 'Theorem62':('Theorem62','原Assumption1在0时刻的密度问题需先修正；抽象generator与实际Markov演化的域、全状态密度和非爆炸资格不能省略。','明示实际Markov/Feller演化、正确正时刻密度、generator联系和先于过程选择的阈值；整条仍未证明。'),
 'PeriodicPotentialBound':('PeriodicPotentialBound','周期势有界，不可能同时在其欧氏lift上随|q|→∞趋于∞；U=0也不满足Umin>1。','保留周期势有界结论；正下界通过加常数归一单独实现。'),
 'PeriodicConfiningPrinted':('LangevinLyapunov','正维周期lift沿整数平移取相同势值，无法趋于∞。','围束对象改为环面×动量空间上的Hamiltonian幂；无穷远只涉及动量方向。'),
@@ -95,6 +95,11 @@ def timeItoFormulaPrinted (φ : ℝ×ℝ → ℝ) (x t dX dXX : ℝ) : ℝ :=
             r['code']+='\n\n/-- 【原书疑误】仅函数值增长条件的字面伴随断言；不证。 -/\n'+printed
         elif key=='Theorem61' and 'Theorem61TimeAveragePrinted' in bykey:
             r['code']+='\n\n/-- 【原书疑误】Theorem6.1第三款按(5.6)轨道时间平均读法；第一款严格负定另见brownianNegativeDefinitePrinted。 -/\n'+rename(originals['Theorem61TimeAveragePrinted'],'theorem61Printed')
+            r['code']+='''\n\n/-- 【原书疑误】按p.244既定ΔM=Σmi∂ii逐字代入Theorem6.1的形式表达；不宣称它是Brownian过程生成元。 -/
+def brownianMassGeneratorPrinted {n : ℕ} (m : Fin n → ℝ) (U f : (Fin n → ℝ) → ℝ)
+    (β : ℝ) (x : Fin n → ℝ) : ℝ :=
+  ∑ i, (-(m i)⁻¹*fderiv ℝ U x (Pi.single i 1)*fderiv ℝ f x (Pi.single i 1)+
+    β⁻¹*m i*fderiv ℝ (fun y ↦ fderiv ℝ f y (Pi.single i 1)) x (Pi.single i 1))'''
         elif key=='Theorem62':
             r['code']+='\n\n/-- 【原书疑误】采用印刷Assumption1的版本；技术量词仍显式保留，不证。 -/\n'+rename(originals[key],'theorem62Printed').replace('Chapter06Review.assumption1 ','Chapter06Review.assumption1Printed ')
         elif key=='Definition61':
@@ -121,7 +126,27 @@ def custom(key,r,name):
     if key=='MemoryKernelDeltaMeaning':return rename(primary(r),name).replace('0 < γ ∧','(∀ k, ∀ i, 0 < masses k i) ∧ 0 < γ ∧',1)
     if key=='BathForceWeakLimitMeaning':return rename(primary(r),name).replace('MolecularDynamics.Chapter06Review.bathForcePrinted (masses k) (q0 k sample) (p0 k sample) Q0 s)',
         '∫ u in (0 : ℝ)..(s : ℝ), MolecularDynamics.Chapter06Review.bathForce (masses k) (q0 k sample) (p0 k sample) Q0 u)')
-    if key=='FPDiffusionPrinted':return rename(primary(r),name).replace('-(∫ x, φ x*deriv','(∫ x, φ x*deriv')
+    if key=='FPDiffusionPrinted':return rename(primary(r),name).replace('-(∫ x, φ x*deriv','(∫ x, φ x*deriv').replace('  sorry','''  intro b ρ φ hb hρ hφ hc
+  have ibp : ∀ (g f : ℝ → ℝ), ContDiff ℝ 1 g → ContDiff ℝ 1 f → HasCompactSupport f →
+      (∫ x, g x*deriv f x)=-(∫ x, deriv g x*f x) := by
+    intro g f hg hf hs
+    have he := fpDriftAdjoint g (fun _ ↦ 1) f hg contDiff_const hf hs
+    simpa only [mul_one, mul_neg, integral_neg, mul_comm] using he
+  have hG : ContDiff ℝ 2 (fun x ↦ b x^2*ρ x) := (hb.pow 2).mul hρ
+  have hG1 : ContDiff ℝ 1 (fun x ↦ b x^2*ρ x) := hG.of_le (by norm_num)
+  have hφ1 : ContDiff ℝ 1 φ := hφ.of_le (by norm_num)
+  have h1 := ibp (fun x ↦ b x^2*ρ x) (deriv φ) hG1 hφ.deriv' hc.deriv
+  have h2 := ibp (deriv (fun x ↦ b x^2*ρ x)) φ hG.deriv' hφ1 hc
+  calc
+    _ = (∫ x, (b x^2*ρ x)*deriv (deriv φ) x) := by
+      apply integral_congr_ae
+      filter_upwards [] with x
+      ring
+    _ = _ := by
+      rw [h1,h2,neg_neg]
+      apply integral_congr_ae
+      filter_upwards [] with x
+      ring''')
     if key=='SmoothTestL2Printed':return '''def '''+name+''' {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ) : Prop :=
   ContDiff ℝ ∞ (f ∘ textbookLangevinPeriodicProjection) ∧
     MemLp f 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)'''

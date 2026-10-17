@@ -1575,4 +1575,109 @@ theorem variableFrictionCommutingStationary : ∀ {n r : ℕ} (m : Fin n → ℝ
     (fun z ↦ Real.exp (-θ⁻¹*MolecularDynamics.Chapter06Review.massHamiltonian m U z)) x=0 := by
   sorry
 
+/-- source_id: MD-6.4.1-StochasticMatrix · definition · §6.4.1 · 印刷p.245 / PDFp.266 -/
+def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
+  (∀ i j, 0 ≤ PiMark i j) ∧ ∀ i, ∑ j, PiMark i j = 1
+
+/-- source_id: MD-6.4.1-FiniteDistribution · definition · §6.4.1 · 印刷p.245 / PDFp.266
+[EXTRA] [EXTRA]概率权重取非负，允许零概率状态；原nonzero作为“typically”的描述而非概率的必要条件，不添加严格正初值要求。
+[ERRATUM?] 印刷nonzero应区分典型正权重与一般非负概率；原句完整保留，未声明字面nonzero定义网站PASS。 -/
+def finiteDistribution {k : ℕ} (ψ : MolecularDynamics.Chapter06Review.V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ ∑ i, ψ i = 1
+
+/-- source_id: MD-6.4.1-FiniteEvolution · definition · §6.4.1 · 印刷p.245 / PDFp.266 -/
+def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : MolecularDynamics.Chapter06Review.V k) (n : ℕ) : MolecularDynamics.Chapter06Review.V k :=
+  Matrix.vecMul ψ (PiMark^n)
+
+/-- source_id: MD-6.4.1-FiniteEvolutionRecurrence · unnumbered_claim · §6.4.1 · 印刷p.245 / PDFp.266 -/
+theorem finiteEvolutionRecurrence : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ)
+    (initial : Fin k → ℝ) (n : ℕ),
+  MolecularDynamics.Chapter06Review.finiteEvolution matrix initial (n+1)=
+    Matrix.vecMul (MolecularDynamics.Chapter06Review.finiteEvolution matrix initial n) matrix := by
+  intro k matrix initial n
+  simp only [MolecularDynamics.Chapter06Review.finiteEvolution, pow_succ]
+  exact (Matrix.vecMul_vecMul initial (matrix^n) matrix).symm
+
+/-- source_id: MD-6.4.1-ReturnTimes · definition · §6.4.1 · 印刷p.245 / PDFp.266
+[EXTRA] [EXTRA]真实Πˡ正返回时间l>0，排除0步恒等阵；原gcd周期定义必须如此解读。 -/
+def returnTimes {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : Set ℕ :=
+  {n | 0 < n ∧ 0 < (PiMark^n) i i}
+
+/-- source_id: MD-6.4.1-Period · definition · §6.4.1 · 印刷p.245 / PDFp.266 -/
+def period {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : ℕ :=
+  sSup {d : ℕ | ∀ n ∈ MolecularDynamics.Chapter06Review.returnTimes PiMark i, d ∣ n}
+
+/-- source_id: MD-6.4.1-Aperiodic · definition · §6.4.1 · 印刷p.245 / PDFp.266 -/
+def aperiodic {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i, MolecularDynamics.Chapter06Review.period PiMark i = 1
+
+/-- source_id: MD-6.4.1-Irreducible · definition · §6.4.1 · 印刷p.245–246 / PDFp.266–267 -/
+def irreducible {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i j, ∃ n : ℕ, 0 < (PiMark^n) i j
+
+/-- source_id: MD-6.4.1-FiniteInvariant · definition · §6.4.1 · 印刷p.246 / PDFp.267 -/
+def finiteInvariant {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : MolecularDynamics.Chapter06Review.V k) : Prop :=
+  MolecularDynamics.Chapter06Review.finiteDistribution ψ ∧ Matrix.vecMul ψ PiMark = ψ
+
+/-- source_id: MD-6.4.1-FiniteErgodicity · unnumbered_claim · §6.4.1 · 印刷p.246 / PDFp.267
+[EXTRA] [EXTRA]非空真实有限状态、右随机矩阵、全部幂Πⁿ、真实全部初始概率；完整存在、唯一性及任意初值向量收敛，不假设谱隙或收敛结论。 -/
+theorem finiteErgodicity :
+  ∀ {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ),
+  0 < k → MolecularDynamics.Chapter06Review.stochasticMatrix PiMark → MolecularDynamics.Chapter06Review.irreducible PiMark → MolecularDynamics.Chapter06Review.aperiodic PiMark →
+  ∃ ψ : MolecularDynamics.Chapter06Review.V k, MolecularDynamics.Chapter06Review.finiteInvariant PiMark ψ ∧ (∀ χ, MolecularDynamics.Chapter06Review.finiteInvariant PiMark χ → χ=ψ) ∧
+    ∀ ψ0 : MolecularDynamics.Chapter06Review.V k, MolecularDynamics.Chapter06Review.finiteDistribution ψ0 → Tendsto (MolecularDynamics.Chapter06Review.finiteEvolution PiMark ψ0) atTop (𝓝 ψ) := by
+  sorry
+
+/-- source_id: MD-6.4.1-StochasticEntryBound · unnumbered_claim · §6.4.1 · 印刷p.245 / PDFp.266 -/
+theorem stochasticEntryBound : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ),
+  MolecularDynamics.Chapter06Review.stochasticMatrix matrix → ∀ i j, matrix i j ≤ 1 := by
+  intro k matrix h i j
+  rw [← h.2 i]
+  exact Finset.single_le_sum (fun k _ ↦ h.1 i k) (Finset.mem_univ j)
+
+/-- source_id: MD-6.4.1-FiniteChainExample · Fig. 6.6 · §6.4.1 · 印刷p.246 / PDFp.267 -/
+def finiteChainExample : Matrix (Fin 5) (Fin 5) ℝ :=
+  !![(1/5),(1/10),(7/10),0,0;
+     0,0,0,1,0;
+     (3/10),0,0,(3/10),(2/5);
+     0,(1/2),0,(3/10),(1/5);
+     0,0,0,1,0]
+
+/-- source_id: MD-6.4.1-ExampleStochastic · extra_claim · §6.4.1 · 印刷p.246 / PDFp.267
+[EXTRA] [EXTRA]原具体数值矩阵的真实随机行资格检查。 -/
+theorem exampleStochastic : MolecularDynamics.Chapter06Review.stochasticMatrix finiteChainExample := by
+  constructor
+  · intro i j
+    fin_cases i <;> fin_cases j <;> norm_num [finiteChainExample]
+  · intro i
+    fin_cases i <;> norm_num [finiteChainExample, Fin.sum_univ_succ]
+
+/-- source_id: MD-6.4.1-ExampleNotIrreducible · Fig. 6.6 · §6.4.1 · 印刷p.246 / PDFp.267 -/
+theorem exampleNotIrreducible : ¬ MolecularDynamics.Chapter06Review.irreducible finiteChainExample := by
+  have hz : ∀ n : ℕ,
+      (finiteChainExample^n) (1 : Fin 5) 0=0 ∧
+      (finiteChainExample^n) (3 : Fin 5) 0=0 ∧
+      (finiteChainExample^n) (4 : Fin 5) 0=0 := by
+    intro n
+    induction n with
+    | zero => norm_num
+    | succ n ih =>
+      rw [pow_succ']
+      simp only [finiteChainExample] at ih
+      norm_num [Matrix.mul_apply, Fin.sum_univ_succ, finiteChainExample,
+        ih.1, ih.2.1, ih.2.2]
+  intro h
+  obtain ⟨n,hn⟩ := h (1 : Fin 5) (0 : Fin 5)
+  rw [(hz n).1] at hn
+  linarith
+
+/-- source_id: MD-6.4.1-Communicates · definition · §6.4.1 · 印刷p.245–246 / PDFp.266–267 -/
+def communicates {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ) (i j : Fin k) : Prop :=
+  (∃ n : ℕ, 0 < (matrix^n) i j) ∧ ∃ n : ℕ, 0 < (matrix^n) j i
+
+/-- source_id: MD-6.4.1-DirectedGraphIrreducible · unnumbered_claim · §6.4.1 · 印刷p.246 / PDFp.267
+[EXTRA] [EXTRA]真实正权边与有向路径可达关系；∀i,j强连通，不用无向连通偷换。 -/
+theorem directedGraphIrreducible : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ),
+  MolecularDynamics.Chapter06Review.stochasticMatrix matrix →
+  (MolecularDynamics.Chapter06Review.irreducible matrix ↔
+    ∀ i j, Relation.ReflTransGen (fun a b ↦ 0 < matrix a b) i j) := by
+  sorry
+
 end MD.Ch06

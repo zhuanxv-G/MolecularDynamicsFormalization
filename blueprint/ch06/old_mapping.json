@@ -77,14 +77,14 @@
     "CH06-075": "MD-6.3.7-VectorFPEquation",
     "CH06-076": "MD-6.3.7-DiffusionTrace",
     "CH06-077": "MD-6.3.8-LangevinFPEquation",
-    "CH06-084": "MD-6.4.2-UnitMassGibbsStationaryBridge"
+    "CH06-084": "MD-6.4.2-UnitMassGibbsStationaryBridge",
+    "CH06-078": "MD-6.4.1-StochasticEntryBound",
+    "CH06-079": "MD-6.4.1-FiniteEvolutionRecurrence",
+    "CH06-080": "MD-6.4.1-Aperiodic",
+    "CH06-081": "MD-6.4.1-DirectedGraphIrreducible",
+    "CH06-082": "MD-6.4.1-FiniteErgodicity"
   },
   "pending": [
-    "CH06-078",
-    "CH06-079",
-    "CH06-080",
-    "CH06-081",
-    "CH06-082",
     "CH06-083",
     "CH06-085",
     "CH06-086",
@@ -447,6 +447,29 @@
     "CH06-084": [
       "MD-6.4.2-MassGibbsStationary",
       "MD-6.4.2-UnitMassGibbsStationaryBridge"
+    ],
+    "CH06-078": [
+      "MD-6.4.1-StochasticMatrix",
+      "MD-6.4.1-FiniteDistribution",
+      "MD-6.4.1-StochasticEntryBound"
+    ],
+    "CH06-079": [
+      "MD-6.4.1-FiniteEvolution",
+      "MD-6.4.1-FiniteEvolutionRecurrence"
+    ],
+    "CH06-080": [
+      "MD-6.4.1-ReturnTimes",
+      "MD-6.4.1-Period",
+      "MD-6.4.1-Aperiodic"
+    ],
+    "CH06-081": [
+      "MD-6.4.1-Irreducible",
+      "MD-6.4.1-FiniteInvariant",
+      "MD-6.4.1-Communicates",
+      "MD-6.4.1-DirectedGraphIrreducible"
+    ],
+    "CH06-082": [
+      "MD-6.4.1-FiniteErgodicity"
     ]
   }
 }
