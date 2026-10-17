@@ -1,0 +1,5 @@
+{
+  "source_id": "MD-2.4.1-Splitting",
+  "diff_summary": "本条只定义组合构造；Hamilton子流资格及O(h²)近似由MD-2.4.1-SplittingLocal / MD.Ch02.splittingLocal共同覆盖。新增rfl桥接核对与该条所用F₁ h (F₂ h u)及splittingMap一致，不从任意函数族推断Hamilton流。",
+  "lean_sha256": "335cbae54c372e87b5047ac7ec1deb9e29c1abb86bdf27ff0067f87a24642f01"
+}

@@ -1,0 +1,408 @@
+{
+  "batch": "EAUDIT46",
+  "input_sha256": {
+    "BATCH_EAUDIT46.md": "e45b8d67b4c4f4d96f41eb515b6449c047c0425c2b94b6b7e11f88a42bcdfbc1",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.2.2-LieCoordinates",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING",
+          "DERIVED_NOT_LITERAL_QUOTE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-LieCoordinates",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "statement_latex": "$\\mathcal L_fv=\\sum_i f_i\\frac{\\partial v}{\\partial z_i}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "z∈ℝ^m，f_i为向量场f的第i个坐标，v为可微标量函数，求和遍历所有m个坐标；本页通过截断内积公式使用Lie导数的坐标表达，并无独立同形展示公式。"
+          ],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            },
+            {
+              "code": "DERIVED_NOT_LITERAL_QUOTE",
+              "detail": "本页没有独立展示L_f v=Σ_i f_i∂ᵢv的等式；它由原页截断内积公式中的被积函数识别而来。context已承认此事，但statement_scope仍称“所引原句及展示公式”，应标为提炼的辅助表达而非逐字原句。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.lieCoordinates",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际Euclidean规范基、Fréchet导数线性和坐标投影，明确原文全部有限求和；恒等式不要求另造形式梯度。"
+          ],
+          "statement_scope": "从原页截断内积公式提炼的Lie导数坐标辅助表达；并非原书独立原句或独立展示公式。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT04_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:52:37.087651",
+              "before_sha256": "12f74bcd27fad6f0bbf1c0bd6ce060a6c12bcd844f67349d453c87372d7ad307",
+              "after_sha256": "a6046891c82ad41f83df7f46993e7778145a33369bd582276687c3d76ccf50bd",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH07_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页206已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          },
+          {
+            "code": "DERIVED_NOT_LITERAL_QUOTE",
+            "detail": "本页没有独立展示L_f v=Σ_i f_i∂ᵢv的等式；它由原页截断内积公式中的被积函数识别而来。context已承认此事，但statement_scope仍称“所引原句及展示公式”，应标为提炼的辅助表达而非逐字原句。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 206,
+            "printed_page": "185",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page206.png",
+            "finding": "原页积分式中出现u L_f v及uΣ_i f_i∂ᵢv；独立的本条等式不曾逐字印出。保留数学表达，修正提炼性质的范围注释。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 17,
+            "finding": "对任意n、f:E n→E n、g:E n→ℝ及z，将线性映射fderiv g z在f(z)上的值展开为所有i:Fin n的f_i(z)乘其在真实正交规范基e_i上的值。有限求和、系数、基向量与实值域正确；对可微g后一项即∂ᵢg。没有显式可微前提时，仍是总化Fréchet导数的线性恒等式，不是声称任意g存在经典偏导；[EXTRA]所说无需另造形式梯度成立。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.lieCoordinates"
+        ],
+        "verdict": "PASS",
+        "explanation": "对任意n、f:E n→E n、g:E n→ℝ及z，将线性映射fderiv g z在f(z)上的值展开为所有i:Fin n的f_i(z)乘其在真实正交规范基e_i上的值。有限求和、系数、基向量与实值域正确；对可微g后一项即∂ᵢg。没有显式可微前提时，仍是总化Fréchet导数的线性恒等式，不是声称任意g存在经典偏导；[EXTRA]所说无需另造形式梯度成立。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-DivergenceCoordinates",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING",
+          "CROSS_SOURCE_DECL_NOT_PROVIDED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-DivergenceCoordinates",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "statement_latex": "$\\frac{\\partial\\rho}{\\partial t}=-\\sum_i\\left(\\rho\\frac{\\partial f_i}{\\partial z_i}+f_i\\frac{\\partial\\rho}{\\partial z_i}\\right)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "ρ(z;t)是随向量场f输运的光滑概率密度；z∈ℝ^m，求和遍历所有坐标，偏导对时间或相应空间坐标取。"
+          ],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            },
+            {
+              "code": "CROSS_SOURCE_DECL_NOT_PROVIDED",
+              "detail": "本条已披露为静态辅助引理，但所声称承载完整时间坐标PDE的LiouvilleProductCoordinates未随本任务给出，无法只凭当前材料核实完整跨条结论。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.divergenceCoordinates",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际可微向量场的导数迹等于所有坐标对角偏导之和；和LiouvilleProduct共同保留原完整展开，不将任意矩阵命名为Jacobian。",
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅真实散度的坐标辅助引理；同段完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates承担。"
+          ],
+          "statement_scope": "仅真实散度的坐标辅助引理；同段完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates承担。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT04_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:52:37.087651",
+              "before_sha256": "b0765ee5a62a4af400f7bf434621a02611b4cdb51a25d1ee7b32e53502994cde",
+              "after_sha256": "bd1b8471a5493647972e81ecb22b402972c467cf70c7c380ef3c34f43d818b67",
+              "changed_fields": [
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH07_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页206已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          },
+          {
+            "code": "CROSS_SOURCE_DECL_NOT_PROVIDED",
+            "detail": "本条已披露为静态辅助引理，但所声称承载完整时间坐标PDE的LiouvilleProductCoordinates未随本任务给出，无法只凭当前材料核实完整跨条结论。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 206,
+            "printed_page": "185",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page206.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 18,
+            "finding": "divergenceCoordinates正确断言任意n、f,z在f于z可微时，真实散度等于Σ_i D(f_i)(z)e_i，是完整对角偏导和。它不含ρ或时间导数，statement_scope已明确为辅助引理；所引原文却是完整连续性方程的乘积展开。其跨条承载者MD-5.2.2-LiouvilleProductCoordinates不在本任务材料，不能据名称确认该完整结论已保存；需要人工提供该声明核对。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.divergenceCoordinates"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "divergenceCoordinates正确断言任意n、f,z在f于z可微时，真实散度等于Σ_i D(f_i)(z)e_i，是完整对角偏导和。它不含ρ或时间导数，statement_scope已明确为辅助引理；所引原文却是完整连续性方程的乘积展开。其跨条承载者MD-5.2.2-LiouvilleProductCoordinates不在本任务材料，不能据名称确认该完整结论已保存；需要人工提供该声明核对。",
+        "counterexample": null,
+        "suggested_fix": "保留散度坐标辅助引理；核实并附上当前完整LiouvilleProductCoordinates声明以及与本条的映射，覆盖时间导数、ρ和f两部分坐标乘积及输运条件。"
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "1",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "A_text_check": "对应原页连续性方程的alternative form句；总负号、ρ∂if_i、f_i∂iρ及时间导数均一致。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.liouvilleProductCoordinates",
+          "MD.Ch05.liouvilleProductCoordinates_evolution"
+        ],
+        "verdict": "PASS",
+        "explanation": "同时核对两个声明。E n为实n维欧氏空间；第一式对任意n、f、ρ及z在点可微条件下展开-div(ρf)，两个坐标项和总负号正确。evolution对开且全时流不变的D、C¹场、实际全时间自治流及其C²联合正则性、D上的联合C¹密度逐点给出所有t及z∈D的时间导数。probabilityDensityOn要求非负、可积及积分1；densityMeasureOn是限制体积上的真实密度测度。推前等式是输运条件，并非把所求PDE作为假设；开域与连续性使测度层面的相等能确定点态密度。两个声明合起来保留完整时间导数和有限坐标和。[EXTRA]的强化足够且未循环；第一条EXTRA关于其他条目的旧说明不影响本条已有evolution覆盖。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-FaceFlux",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "2",
+          "printed_page": "184",
+          "pdf_page": "205",
+          "A_text_check": "原页质量导数等于负边界通量公式一致；ν为质量比例，n为外单位法向。原页以逗号分隔ρ的时空变量，分号为无语义差别的排版规范化。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.faceFlux"
+        ],
+        "verdict": "PASS",
+        "explanation": "按本条明确的statement_scope审校：faceFlux是任意n、f、ρ、a、b、i及side上的单面无定向坐标通量辅助定义，而非原文整条质量守恒定理。boxFace取闭矩形中第i坐标等于side的面；hausdorffArea(n-1)采用单位球体积除2^(n-1)的Hausdorff面积归一化，积分ρ f_i正确。side并未被限制到上下端点；作为辅助定义可总定义，实际上下端点在条目3中代入。条目3的下端减上端给出质量导数，与外法向符号一致。接受显式拆分后的矩形范围；没有据此确认本任务未提供的GeneralFluxBalance，也不将本定义认证为一般域通量定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-BoxFluxBalance",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "3",
+          "printed_page": "184",
+          "pdf_page": "205",
+          "A_text_check": "Using the divergence theorem句及负散度体积分一致；不是只摘∫div而漏掉质量导数。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.fluxBalance"
+        ],
+        "verdict": "PASS",
+        "explanation": "核对所有n>0、严格非退化矩形a_i<b_i、C¹场、满足群律和ODE的实际流、联合C²流与联合C¹密度、每时概率密度及Measure.map输运。结论同时含所有t的真实质量函数导数和散度积分等于上面减下面通量。两式合起来正好是dν/dt=-∫_A div(ρf)，无符号错误、无PDE前提。紧矩形及连续导数足够支撑积分求导和散度定理。原书允许矩形例子，[EXTRA]公开了矩形特化，故按此特化PASS；未审核未附的一般域条目。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-BoundaryTerm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "4",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "A_text_check": "原页B的求和、边界积分、u f_i v ν_i以及外单位法向解释一致。A字体的数学花体视为LaTeX排版规范化。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.boxBoundaryTerm"
+        ],
+        "verdict": "PASS",
+        "explanation": "核对f、u、v、ell及维数参数；a=(-ell,…), b=(ell,…)。每坐标上面减下面的通量作用于ρ=uv，正是∑∫uf_i v ν_i；u v f_i与原文u f_i v相同。n≥1、ell>0的原文盒子语境下，棱角是面积零集合，不妨碍面分解；n=1时0维面积是计数测度。函数作为总定义允许其他ell及任意数据，没有额外断言这些情形存在原文的光滑外法向。[EXTRA]为空不影响其作为积分表达式的定义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-TruncatedIntegrationByParts",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "5",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "A_text_check": "截断盒边长2ell、中心在原点、近似符号≈以及(5.4)、(5.5)全部保留；B项正号及体积分前负号一致。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.truncatedIntegrationByParts"
+        ],
+        "verdict": "PASS",
+        "explanation": "核对所有n>0、ell>0、全空间C¹场和标量u,v，以及实际盒A。lie f v=Dv[f]，liouvillian f u=-div(uf)，故右侧B+∫liouvillian(f,u)v正好是B-∫v div(uf)。有限维坐标展开和积分的有限和分配在紧盒与C¹条件下等价于(5.4)，结论编码(5.5)。原文≈没有被编码成精确全空间等号；本条局部积分恒等式不需要无穷远衰减，[EXTRA]的局部C¹及正边长条件合理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-RapidAdjoint",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_GROWTH_CONDITION_UNSPECIFIED",
+          "SUBSTANTIVE_EXTRA_BOUNDARY_ASSUMPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-RapidAdjoint",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185–186",
+          "pdf_page": "206–207",
+          "statement_latex": "Let $u,v$ be two scalar valued functions in $\\mathbb R^m$ which tend to zero sufficiently rapidly at infinity. By our assumptions that $u$ and $v$ are rapidly decaying we know that $B\\to0$, as $\\ell\\to\\infty$. Taking the limit, we are thus left with the equation\n\\[\\langle u,\\mathcal L_fv\\rangle=-\\sum_i\\int_{\\mathbb R^m}v\\frac{\\partial}{\\partial z_i}(uf_i)\\,d\\omega=\\langle M_fu,v\\rangle.\\]\nWe refer to $M_f$ as the adjoint operator of $\\mathcal L_f$ and we write $M_f=\\mathcal L_f^\\dagger$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathcal M_f w=-\\nabla\\cdot(wf)$；原页将此算子记为$\\mathcal L_f^\\dagger$。",
+            "$\\mathcal L_fv=\\sum_i f_i\\partial v/\\partial z_i$；$\\langle u,v\\rangle=\\int_{\\mathbb R^m}uv\\,d\\omega$，$d\\omega$为Lebesgue体积。",
+            "$\\mathcal A_\\ell=[-\\ell,\\ell]^m$；$B=\\sum_i\\int_{\\partial\\mathcal A_\\ell}uf_i v\\nu_i\\,d\\sigma$，$\\nu$为外单位法向。",
+            "原书由u,v迅速衰减推出B→0，未在该段明确f的增长约束；此处保留原句，不能视为对任意f已成立的无条件断言。"
+          ],
+          "issues": [
+            "原书由u,v迅速衰减推出B→0，缺少对f增长或混合乘积的明确资格；当前Lean已把边界极限和可积性补成前提，但不能反向认证原书无条件推断。"
+          ],
+          "lean_decl": "MD.Ch05.rapidAdjoint",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]快速衰减函数用真实SchwartzMap资格；明确混合乘积可积及原证明所用实际B→0条件（任意增长的f下不能仅凭u/v衰减推出）；不是把最终伴随等式作前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT04_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:52:37.087651",
+              "before_sha256": "bc6c9af90ba333593807cf428f5720ac0f423f551b3b1a99433f56a025576dad",
+              "after_sha256": "480e487ca24db647c327f8dcdf9652cb0666774ba78dd67c6cc0ddb9da868bf7",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH08_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "原书由u,v迅速衰减推出B→0，缺少对f增长或混合乘积的明确资格；当前Lean已把边界极限和可积性补成前提，但不能反向认证原书无条件推断。"
+        ],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "6–7",
+          "printed_page": "185–186",
+          "pdf_page": "206–207",
+          "A_text_check": "附件第6页的rapid decay、B→0、全空间配对等式及第7页首句的伴随命名均一致；是跨段选摘，未把额外增长控制伪写为原书文字。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.rapidAdjoint"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "声明本身是正确的条件化版本：n>0，f为C¹，u,v为SchwartzMap，两个实际混合乘积分别可积，且真实盒边界项B趋0，才推出全空间积分配对相等。由紧盒分部积分和两个可积函数的盒截断极限可得该结论；没有将最终配对相等作为假设。但原页声称仅由u,v迅速衰减便知B→0，未明确f的增长控制；[EXTRA]把B→0改为前提是实质补充，不能据此宣布原书推论已成立。按任务规定保留原句并将原书条件疑点交人工；形式伴随记号也不等于闭Hilbert算子伴随的定义域识别。",
+        "counterexample": "针对原书未限制f的B→0推断：m=1，u(x)=v(x)=exp(-x²)均为Schwartz函数，取C∞场f(x)=x exp(2x²)。则uvf=x，盒[-ell,ell]的B=ell-(-ell)=2ell，不趋0。这里混合乘积并不可积，故此例不反驳当前带可积性及B→0前提的Lean声明，只说明原书需明确额外资格。",
+        "suggested_fix": "保留原书字面句，人工决定f的增长/边界条件应如何注明；可保留目前明确可积性与B→0的条件化Lean版本，或另列具有足够增长控制的f的推论。"
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

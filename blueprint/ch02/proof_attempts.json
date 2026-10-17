@@ -78,6 +78,866 @@
         "route": "same actual mean point and continuous linear map operator bound",
         "evidence": "validation/section22-mvt-real2.log"
       }
+    ],
+    "MD-2.2.1-Admissible": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.admissibleSmooth_corrected",
+            "kind": "def",
+            "status": "定义",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.2.1-Admissible",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.2.1-VariationalDerivativePrinted": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.printedVariationalDerivative_corrected",
+            "kind": "def",
+            "status": "定义",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.2.1-VariationalDerivativePrinted",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.2.1-StationaryNotMin": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.stationaryNotMinimum_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.2.1-StationaryNotMin",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.2.2-DiscreteAction": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.bp_discreteAction_corrected",
+            "kind": "def",
+            "status": "定义",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.2.2-DiscreteAction",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.2.2-DiscreteStationaryPrinted": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.printedDiscreteStationary_corrected",
+            "kind": "def",
+            "status": "定义",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.2.2-DiscreteStationaryPrinted",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.2.3-Consistency": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.consistency_corrected",
+            "kind": "def",
+            "status": "定义",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.2.3-Consistency",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.2.3-ErrorBound": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.errorBound_corrected",
+            "kind": "theorem",
+            "status": "已证",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.2.3-ErrorBound",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.2.3-DefectPrinted": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.defectPrinted_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.2.3-DefectPrinted",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.2.3-VerletConsistency": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.verletConsistency_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.2.3-VerletConsistency",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.2.4-IntegralErrorPrinted": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.integralErrorPrinted_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.2.4-IntegralErrorPrinted",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.3.1-VariationalPrinted": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.variationalPrinted_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.3.1-VariationalPrinted",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.3.2-EulerVolumePrinted": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.eulerVolumePrinted_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.3.2-EulerVolumePrinted",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.3.4-HamiltonVariationalPrinted": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.hamiltonVariationalPrinted_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.3.4-HamiltonVariationalPrinted",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.3.4-HamiltonSymplectic": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.hamiltonSymplectic_corrected",
+            "kind": "theorem",
+            "status": "已证",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.3.4-HamiltonSymplectic",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.3.5-ChainRule": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.chainRule_corrected",
+            "kind": "theorem",
+            "status": "已证",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.3.5-ChainRule",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.3.5-SymplecticInverse": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.symplecticInverse_corrected",
+            "kind": "theorem",
+            "status": "已证",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.3.5-SymplecticInverse",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.3.5-GlobalGroupPrinted": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.globalGroupPrinted_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.3.5-GlobalGroupPrinted",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.3.7-Adjoint": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.bp_adjoint_corrected",
+            "kind": "def",
+            "status": "定义",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.3.7-Adjoint",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.4.1-SymmetricEven": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.symmetricEven_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.4.1-SymmetricEven",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.4.2-CompositionOrder": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.compositionOrder_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.4.2-CompositionOrder",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.4.4-ImplicitLocal": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.implicitLocal_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.4.4-ImplicitLocal",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.4.4-Newton": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.newtonPrinted_corrected",
+            "kind": "def",
+            "status": "定义",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.4.4-Newton",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.4.5-ConjugateLimits": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.conjugateLimits_corrected",
+            "kind": "theorem",
+            "status": "已证",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.4.5-ConjugateLimits",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.5.1-RKSymplectic": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.rkSymplectic_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.5.1-RKSymplectic",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.5.1-GaussFamily": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.gaussFamily_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.5.1-GaussFamily",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.5.3-NewmarkReduction": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.newmarkReduction_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.5.3-NewmarkReduction",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.5.3-NewmarkNotSymplectic": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.newmarkNotSymplectic_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.5.3-NewmarkNotSymplectic",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.5.4-TIPotential": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.tiMethod_corrected",
+            "kind": "def",
+            "status": "定义",
+            "axioms": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": null,
+            "direct_placeholder": false,
+            "source_id": "MD-2.5.4-TIPotential",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.5.4-TIForce": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.tiForce_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.5.4-TIForce",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.5.4-TIOrder": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.tiOrder_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.5.4-TIOrder",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
+    ],
+    "MD-2.5.5-BeemanOrder": [
+      {
+        "stage": "CLOSEOUT24_CORRECTED",
+        "routes": [
+          "直接反身性rfl",
+          "现有假设assumption",
+          "仅基础化简simp only；未解决者明确保留未证"
+        ],
+        "evidence": "blueprint/closeout24/ch02/errata-05.log",
+        "declarations": [
+          {
+            "name": "MD.Ch02.beemanOrder_corrected",
+            "kind": "theorem",
+            "status": "未证",
+            "axioms": [
+              "propext",
+              "sorryAx",
+              "Classical.choice",
+              "Quot.sound"
+            ],
+            "unproved_reason": "时间盒止",
+            "direct_placeholder": true,
+            "source_id": "MD-2.5.5-BeemanOrder",
+            "corrected": true
+          }
+        ],
+        "result": "依当前逐声明公理结果分别记已证或未证；原有疑误字面版不证明"
+      }
     ]
   }
 }

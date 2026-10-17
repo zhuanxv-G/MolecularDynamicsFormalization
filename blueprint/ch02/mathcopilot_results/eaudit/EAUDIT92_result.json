@@ -1,0 +1,99 @@
+{
+  "batch": "EAUDIT92",
+  "input_sha256": {
+    "BATCH_EAUDIT92.md": "e2b4053fdb2561f7184a0a48ae0c059e4bab62250b6de3c12fa86c3673ca080d",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.4.4-ImplicitLocal",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_LOCALITY_QUALIFICATION"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原句bounded and smooth inverse未明说局部或正则性；全域有界解释不能成立。保留原文，将本条作为局部逆函数定理的有资格解释交人工确认。"
+        ],
+        "evidence": [
+          "R4_PAGES.pdf 附件第6页；书面页码86。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.implicitLocal",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "对每个n、联合C∞的g(h,x)、基点x及零步可逆导数A，存在统一小步长δ；每个小步长有开U,V包含x,g_h(x)，MapsTo及双向逆等式。inv在V内C∞且函数值有界；可通过缩小局部邻域取得该界，不等于宣称全域逆有界。前提和局部性均明确，未假设所需逆已经存在。 当前限定版/Printed签名本身忠实且合理；本条综合判NEEDS_HUMAN来自必须保留的原书数学资格或疑误，并非据此判Lean签名错误。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": "g_h(x)=x在实直线上全域可逆且光滑，但全域逆不有界；当前Lean只在缩小V内要求有界，避开该问题。",
+        "suggested_fix": "原句bounded and smooth inverse未明说局部或正则性；全域有界解释不能成立。保留原文，将本条作为局部逆函数定理的有资格解释交人工确认。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.4-BackwardEulerSolve",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R4_PAGES.pdf 附件第7页；书面页码86。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.backwardEulerResidual；MD.Ch02.backwardEulerResidual_zero_iff；MD.Ch02.backwardEulerMapRelation",
+        "verdict": "PASS",
+        "explanation": "残差w−z−h•f(w)、其零点等价式、以及给定G的逐点隐式关系均吻合；未从定义推断解的存在唯一性。E的减法和实数作用按该表达式所需的实向量空间背景解释；摘录没有完整外围变量声明，本次仅作所给签名的语义核对。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.4-Newton",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_INDEX_AND_JACOBIAN_CAVEAT"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原页确实混用z_(n+1)与z_n的Newton迭代索引；此外可逆函数本身不能保证导数可逆。忠实版不改公式，原书疑误交人工。"
+        ],
+        "evidence": [
+          "R4_PAGES.pdf 附件第8–9页；书面页码86–87。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.newtonPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "newtonPrinted特意把当前被更新量xNext与残差求值量xPrev分开：xNext−J⁻¹(g(xPrev)−τ)，忠实保留原页n+1/n的混用，未擅改为标准Newton。J为连续线性同构对应可逆矩阵，也容纳所述可逆近似矩阵。原书的线性求解重写与该公式代数等价；未提供该等价的Lean定理，但定义没有错误变更字面公式。原书索引及“可逆映射所以Jacobian非奇异”的理由另须人工处理。 当前限定版/Printed签名本身忠实且合理；本条综合判NEEDS_HUMAN来自必须保留的原书数学资格或疑误，并非据此判Lean签名错误。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": "实函数x↦x³是连续可逆光滑映射，但在0的导数为0；因此仅凭映射可逆不能推出Jacobian非奇异。",
+        "suggested_fix": "原页确实混用z_(n+1)与z_n的Newton迭代索引；此外可逆函数本身不能保证导数可逆。忠实版不改公式，原书疑误交人工。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.4-NewtonQuadratic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R4_PAGES.pdf 附件第10页；书面页码87。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.newtonQuadratic",
+        "verdict": "PASS",
+        "explanation": "任意n、C²映射g、简单零点x及其可逆实际导数A；存在统一C,δ，对每个邻点y提供该点的可逆实际导数B，并给标准newtonStep g 0 y B的一步二次误差界。不是近似Jacobian，且不复用Printed版的错位索引。缩小δ可保证Cδ<1而获得持续迭代；所列EXTRA充分。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

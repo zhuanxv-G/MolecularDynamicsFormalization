@@ -1,0 +1,264 @@
+{
+  "batch": "EAUDIT77",
+  "input_sha256": {
+    "BATCH_EAUDIT77.md": "06caa46c2d66436619cbffb1721044240d8e77a6ed091ea8b651c901006f68c5",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.2-ProjectionResidual",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "本轮依据：R3_任务.md 条目 5/10 及 R3_PAGES.pdf 附件第5页（原书 PDF 178 / 印刷 156）；实际渲染图 R3_evidence/page-05.png。",
+          "所引英文、(4.17)、G_n=g′(q_n)、Λ=h²λ_n 均与原页一致；原页 (4.15) 和 Q_n 展开中确实都印为减去 F_n 项，输入没有擅自改号。",
+          "原页将 Q_n、G_n、Λ 分行排印，输入合为同一展示环境；符号、项次和内容未改变。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch04.projectionResidual",
+          "MD.Ch04.projectionEquation",
+          "MD.Ch04.projectionResidual_elimination"
+        ],
+        "verdict": "PASS",
+        "explanation": "对任意 n,l,m、l 个位置约束 g、旧位置 q、给定预测位置 base 和乘子 η，projectionResidual 的值域为 Q l，逐分量为 g_j(base−M^{-1}G(q)^Tη)；projectionEquation 正确规定该向量等于零，不宣称根存在。消元声明另量化 Fprinted、实步长 h、旧/新相点 z/out 和 lam；前提完整保留原印 out.p=z.p−hFprinted(z.q)−hG(z.q)^Tlam 与 out.q=z.q+hM^{-1}out.p，结论将 out.q 的全部位置约束为零等价为 base=z.q+hM^{-1}z.p−h²M^{-1}Fprinted(z.q)、η=h²lam 的零残差方程。固定对角逆质量的线性性使该等价对全部实 h 成立，含 h=0；未除以 h，亦不需要正质量或可逆 Gram 才能陈述此代数等价。Fprinted 明确按原印符号使用，不在本条擅改为常见力记号；[EXTRA] 补充消元等价与零残差资格准确。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-ProjectionJacobian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "本轮依据：R3_任务.md 条目 6/10 及 R3_PAGES.pdf 附件第6页（原书 PDF 179 / 印刷 157）；实际渲染图 R3_evidence/page-06.png。",
+          "R^(l)ΔΛ^(l)=g(Q^(l)) 以及 R^(l) 的定义、矩阵因子次序、转置和式尾逗号与原页一致。",
+          "原页下一行明确 ΔΛ^(l)=Λ^(l+1)−Λ^(l)；projectionNewtonIncrement 使用相同差分方向。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch04.projectionJacobian",
+          "MD.Ch04.projectionNewtonIncrement"
+        ],
+        "verdict": "PASS",
+        "explanation": "对任意 n,l,m,g、q/base∈Q n、η∈Q l，projectionJacobian 的行列均索引于 Fin l，实际为 G(base−M^{-1}G(q)^Tη)M^{-1}G(q)^T；各乘法维数正确且当前 Jacobian 的求值点为 Q^(l)，右侧固定 Jacobian 的求值点为旧 q。projectionNewtonIncrement 对额外的 ηnext 定义 Δ=ηnext−η，完整命题为 R(η)Δ=r(η)，同时保留源文线性方程和增量含义。R 为残差对 η 的负 Jacobian，因此 Newton 更新是加号；没有把 R 误称为正的残差导数。两个都是定义，不要求矩阵可逆，也不宣称增量存在、唯一或已求解。[EXTRA] 对线性方程的补充说明准确。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-NewtonConstraint",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "本轮依据：R3_任务.md 条目 7/10 及 R3_PAGES.pdf 附件第7页（原书 PDF 179 / 印刷 157）；实际渲染图 R3_evidence/page-07.png。",
+          "原页称 Gauss-Newton，展示式 (4.18) 是方阵非线性方程的 Newton 更新；本轮保持原书名称，不将术语差异判为公式错误。",
+          "(4.18) 的加号、(4.19) 的减号和建议初值 Λ^(0)=0 全部与输入一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch04.newtonConstraint",
+          "MD.Ch04.newtonConstraintSequence"
+        ],
+        "verdict": "PASS",
+        "explanation": "主接口对任意 n,l,m,g、q/base 和 η，显式要求当前 R(η).det≠0，返回 η+R(η)^{-1}r(η)，与原印公式完全一致；该前提是合法求解步所需的 [EXTRA] 资格，不是假设误差结论。有限序列另量化 k∈ℕ，使用带完整命名空间的 MolecularDynamics.Chapter04Review.newtonConstraint（无证明参数的底层总函数）从 0 迭代 k 次；_hvalid 要求每个 i<k 时该实际轨道上的 R 均非奇异。因此前 k 次更新均合法，k=0 返回 0 且条件空真，不误要求最终第 k 个点处还需可逆。已区分底层函数与 MD.Ch04.newtonConstraint 的签名，未把带 det 证明参数的接口直接当作可迭代自映射，也未因逆矩阵总化而接受奇异点为合法 Newton 步。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-NewtonQuadratic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXTRA_ANNOTATION_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.2-NewtonQuadratic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.2",
+          "printed_page": "157",
+          "pdf_page": "179",
+          "statement_latex": "When the solution is unique, the constraints sufficiently smooth, and the determinant of $R$ is bounded well away from zero, Newton’s method has a very rapid asymptotic convergence property. It is possible to show that, if $\\Lambda_*$ is the solution of (4.17), then sufficiently near the zero we have\n\\[\\|\\Lambda^{(l+1)}-\\Lambda_*\\|\\le C\\|\\Lambda^{(l)}-\\Lambda_*\\|^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "extra_assumptions 已明确描述局部正则根条件，但未用 [EXTRA] 标记全局 C² 到局部二次界的精确化；应说明无需全局唯一根，根处非奇异已保证局部唯一和邻域非奇异。"
+          ],
+          "lean_decl": "MD.Ch04.newtonQuadratic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 以各 g_j 全局 C²、实际残差在 root 为零及实际 R(root).det≠0 精确化源文光滑性和正则根资格；根处非奇异给出局部唯一与邻域内可逆，不要求或证明全局唯一。结论为存在 C>0、δ>0 的局部一步二次误差界，不把该误差界作为前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT10_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T13:03:51.275819",
+              "before_sha256": "420ba5cfe570cb14c03871bfc0bbee53a367425c1a2b10b5320731ffb098c344",
+              "after_sha256": "9e8432a7a285837592185da1e898641f0f3fd2af63f2899a8282a97b789d9742",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EAUDIT11_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T18:52:56.028825",
+              "before_sha256": "9e8432a7a285837592185da1e898641f0f3fd2af63f2899a8282a97b789d9742",
+              "after_sha256": "5fdb4584a3c25ff65bfb5c06b9e1497585f536fbb8ca49bf93bb6cc2bb77fc1e",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH11_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R3本轮实际渲染核对：R3_PAGES.pdf，附件第8页；证据 .mathcopilot/reviews/ch04_eaudit/R3_evidence/page-08.png。旧 repair_log 仅作为输入历史保留，不作为本轮核验依据。"
+        },
+        "issues": [
+          "extra_assumptions 已明确描述局部正则根条件，但未用 [EXTRA] 标记全局 C² 到局部二次界的精确化；应说明无需全局唯一根，根处非奇异已保证局部唯一和邻域非奇异。"
+        ],
+        "evidence": [
+          "本轮依据：R3_任务.md 条目 8/10 及 R3_PAGES.pdf 附件第8页（原书 PDF 179 / 印刷 157）；实际渲染图 R3_evidence/page-08.png。",
+          "源文英文两句和展示不等式逐字一致，含“sufficiently near the zero”、C、二次幂与末尾句号。",
+          "本声明调用底层 MolecularDynamics.Chapter04Review.newtonConstraint；其实际定义已展开审查，不混同 MD 的带可逆证明参数接口。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.newtonQuadratic",
+        "verdict": "PASS",
+        "explanation": "对任意 n,l,m,g、固定 q/base 和 root，前提为每个 g_j∈C²、r(root)=0、R(root).det≠0；结论的量词为 ∃C>0,∃δ>0,∀η,‖η−root‖<δ→‖N(η)−root‖≤C‖η−root‖²。这里 r(η)=g(base−M^{-1}G(q)^Tη)，Dr(η)=−R(η)，N(η)=η+R(η)^{-1}r(η)，因而确为通常 Newton 映射而非反号更新。C² 及根处非奇异可在缩小的邻域给出有界逆矩阵和二阶 Taylor 余项，足以支持完整二次界；无需把全局唯一性和全域 determinant 下界作为额外前提。m 不要求逐项正也不破坏该一般方程的局部 Newton 结论，因为有效正则性由 R(root) 非奇异直接给出。该声明是局部一步误差估计；继续缩小 δ 可用于迭代收敛，但本次不冒充已另建收敛序列或已完成 sorry 证明。",
+        "counterexample": null,
+        "suggested_fix": "仅将精确正则根资格明确标为 [EXTRA] 并区分局部/全局唯一性；不修改 Lean。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-FrozenNewtonLinear",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "本轮依据：R3_任务.md 条目 9/10 及 R3_PAGES.pdf 附件第9页（原书 PDF 179 / 印刷 157）；实际渲染图 R3_evidence/page-09.png。",
+          "逐字核对所引英文、误差一次幂、帽常数 Ĉ、展示式末尾逗号及其后的 sufficiently near to the solution.，均与原页一致。",
+          "原文展示式没有印 Ĉ<1；JSON 已明确这一点，并将导数范数小于 1 作为单独 [EXTRA]，没有伪称原页逐字含此条件。",
+          "本条按其 statement_scope 只审所引线性误差界，不把相邻未摘录的其他展示式并入本条待证结论。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.frozenNewtonLinear",
+        "verdict": "PASS",
+        "explanation": "对任意 n,l,m,g、q/base、root，前提完整包括 g_j∈C²、真实根 r(root)=0、固定矩阵 R(0).det≠0，以及实际冻结映射 T(η)=η+R(0)^{-1}r(η) 在 root 的 Fréchet 导数算子范数严格小于 1。结论为存在 0<C<1 和 δ>0，使所有 ‖η−root‖<δ 的 η 满足 ‖T(η)−root‖≤C‖η−root‖。根条件给 T(root)=root，光滑性与根处导数范数严格小于 1 足以支持邻域的一步收缩界，未直接把待证误差界放进前提。冻结点是乘子 η=0，矩阵不随 η 更新，与零初值语境一致。[EXTRA] 正确限制了源文的 small-step 收敛说法；本声明给“至少有线性收缩界”，没有断言精确收敛阶必为 1，也没有声称所有冻结迭代都自动收敛。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.2-ProjectionScale",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_BIG_O_PRECONDITION_NEEDS_HUMAN",
+          "LEAN_PREDICTOR_SIGN_MISMATCH",
+          "SOURCE_BIG_O_TYPOGRAPHY",
+          "EXTRA_ANNOTATION_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.2-ProjectionScale",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.2",
+          "printed_page": "158",
+          "pdf_page": "180",
+          "statement_latex": "It is worth noting that $\\Lambda(h)=\\mathcal{O}(h^2)$, i.e. for small steps $\\Lambda$ will also be small. This justifies the initial guess $\\Lambda^{(0)}=0$,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$g$ is the vector of holonomic constraints; $G_n=g^{\\prime}(q_n)$ is its Jacobian at the old position. PDF p.178 / printed p.156, immediately below (4.17).",
+            "$Q_n=q_n+hM^{-1}p_n-h^2M^{-1}F_n$ is the predictor printed below (4.17); retain this minus sign literally. PDF p.178 / printed p.156.",
+            "$\\Lambda=h^2\\lambda_n$ is the scaled vector of constraint multipliers, and $g(Q_n-M^{-1}G_n^T\\Lambda)=0$ is (4.17). PDF p.178 / printed p.156.",
+            "$Q^{(l)}=Q_n-M^{-1}G_n^T\\Lambda^{(l)}$ and $R^{(l)}=g^{\\prime}(Q^{(l)})M^{-1}G_n^T$; $l$ is the iteration index. PDF p.179 / printed p.157, (4.19) and the definition of $R^{(l)}$.",
+            "$M^{-1}$ is the inverse mass matrix; $h$ is the timestep, and the subscript $n$ labels the old timestep. In the Lean signature, $n$ instead denotes the number of position coordinates, $l$ the number of scalar constraints, and $m$ the vector of diagonal masses.",
+            "$\\Lambda(h)$ denotes the solution multiplier of (4.17) as the timestep $h$ varies; $O(h^2)$ is its asymptotic size as $h\\to0$, not the size of the unscaled $\\lambda_n$. PDF p.180 / printed p.158, first paragraph; scaling is printed on PDF p.178.",
+            "$\\Lambda^{(0)}=0$ is the initial Newton iterate for a fixed timestep, whereas $\\Lambda(0)=0$ would be the value of a step-dependent root branch at zero step. These are different uses of zero. PDF p.179, (4.18)–(4.19), and PDF p.180, first paragraph.",
+            "The excerpt stops after the initial-guess clause; the actual second sentence continues with “and it also suggests” a smaller timestep if convergence is poor. Its printed comma is preserved at the excerpt boundary. PDF p.180 / printed p.158.",
+            "PDF p.178 explicitly permits violation of the hidden constraint in the discussed method. The conditional Lean estimate assumes an initially compatible cotangent state; this is a declared extra hypothesis, not an assertion that every method step satisfies the hidden constraint exactly."
+          ],
+          "issues": [
+            "原页首行使用书写体大 O；corrected_json 将 O(h²) 的排版恢复为 \\mathcal{O}(h²)。摘录在初值从句后的逗号处停止，与原页后续 and it also suggests 的衔接已由 context_notation 说明。",
+            "原书在前页明确允许隐藏约束被违反；若把本句视为仅要求初始位置约束成立的普遍陈述，则 Λ(h)=O(h²) 缺少隐藏约束相容性（或随步长为 O(h) 的隐藏残差）等资格。保留原书原句，提交 NEEDS_HUMAN 判断其意指的初始状态和渐近范围；不将反例归咎于已经增加相容前提的 Lean 条件定理。",
+            "当前 Lean 根分支前提的预测位置含 +h²M^{-1}F(z.q)，而本条 context_notation 和原印 Q_n 均含 −h²M^{-1}F_n；没有声明 F 是 −F_n，也没有将该处标记为 corrected 版本。此为可独立确定的签名/原文对应失配。",
+            "分支 C²、η(0)=0、Gram 非奇异和初始 cotangentSet 相容性是明确的附加资格，extra_assumptions 应统一标 [EXTRA]，并说明只给条件估计，不构造根分支。"
+          ],
+          "lean_decl": "MD.Ch04.projectionScale",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 给定 η:ℝ→Q l 的全局 C² 根分支、η(0)=0、初始位置和隐藏约束相容性，以及旧位置 Gram 非奇异；只证明已给分支的 O(h²) 条件估计，不由此构造或证明分支存在。",
+            "[审校待修] 当前 Lean 的根方程预测位置使用 +h²M^{-1}F(z.q)，与本条原印 −h²M^{-1}F_n 不符。需恢复负号，或另作明确标名/说明的力变量反号版本；此处仅记录建议，不修改 Lean 或源文。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT10_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T13:03:51.275819",
+              "before_sha256": "15c058656a8168c4fc44d45921af69245bcb319141d5236db89702e41f46a5fe",
+              "after_sha256": "b1fbbb40c220d8ae569bbb9a82806b41d6f8d5a4da07e271da4947c9cfc62cca",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R3本轮实际渲染核对：R3_PAGES.pdf，附件第10页；证据 .mathcopilot/reviews/ch04_eaudit/R3_evidence/page-10.png。旧 repair_log 仅作为输入历史保留，不作为本轮核验依据。"
+        },
+        "issues": [
+          "原页首行使用书写体大 O；corrected_json 将 O(h²) 的排版恢复为 \\mathcal{O}(h²)。摘录在初值从句后的逗号处停止，与原页后续 and it also suggests 的衔接已由 context_notation 说明。",
+          "原书在前页明确允许隐藏约束被违反；若把本句视为仅要求初始位置约束成立的普遍陈述，则 Λ(h)=O(h²) 缺少隐藏约束相容性（或随步长为 O(h) 的隐藏残差）等资格。保留原书原句，提交 NEEDS_HUMAN 判断其意指的初始状态和渐近范围；不将反例归咎于已经增加相容前提的 Lean 条件定理。",
+          "当前 Lean 根分支前提的预测位置含 +h²M^{-1}F(z.q)，而本条 context_notation 和原印 Q_n 均含 −h²M^{-1}F_n；没有声明 F 是 −F_n，也没有将该处标记为 corrected 版本。此为可独立确定的签名/原文对应失配。",
+          "分支 C²、η(0)=0、Gram 非奇异和初始 cotangentSet 相容性是明确的附加资格，extra_assumptions 应统一标 [EXTRA]，并说明只给条件估计，不构造根分支。"
+        ],
+        "evidence": [
+          "本轮依据：R3_任务.md 条目 10/10 及 R3_PAGES.pdf 附件第10页（原书 PDF 180 / 印刷 158）；实际渲染图 R3_evidence/page-10.png。",
+          "附件第10页首段确实印 Λ(h)=𝒪(h²)，随后用它解释初值 Λ^(0)=0；原页未在该句重述隐藏约束相容性。",
+          "附件第5页 (4.15) 和 Q_n 定义均为减去力项，本文件条目5的 Fprinted 消元也保留负号；本条 Lean 却为加号，不能以该差异源自 PDF 识别作解释。",
+          "本条 cotangentSet 的实际定义已展开：g(z.q)=0 且 G(z.q)M^{-1}z.p=0；它恰好排除了下述针对源文无条件解释的反例。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.projectionScale",
+        "verdict": "FAIL",
+        "explanation": "签名量化任意 n,l,m、位置力 F:Q n→Q n、约束 g、初始相点 z 及分支 η:ℝ→Q l；假设 z∈cotangentSet、g_j∈C²、η∈C²、η(0)=0、Gram(z.q).det≠0，以及某个双侧开邻域内的实际零残差根方程。完整结论为存在 C>0、δ>0，对全部 h∈(−δ,δ) 有 ‖η(h)‖≤Ch²，包含 h=0。作为当前所写“加号预测器”的条件数学定理，该结论正确：由根方程在 0 的一阶微分、初始隐藏约束和 Gram 可逆得到 η′(0)=0，再由 C² 分支得到二阶界；F 只在固定 z.q 处取值，故无需 F 对位置可微。没有循环假设 O(h²)，也没有宣称已找到根分支。然而原文/notation 的预测器是 z.q+hM^{-1}z.p−h²M^{-1}F_n，当前签名却写成加号，且未注明反号变量关系或修正版，故源文对应审校为 FAIL，而非数学定理本身被反例否定。原书 O(h²) 适用范围的疑问另在 json_review 标记 NEEDS_HUMAN，保持原文并交由人工判断。",
+        "counterexample": {
+          "scope": "两例分别说明原书无隐藏相容性时的范围问题，以及加/减号预测器根分支不同；均不否定当前 Lean 条件估计本身。以下是直接代入的解析例，不是数值模拟或 Lean 验证。",
+          "source_scope_example": "取 n=l=1，m=1，g(x)=x，q=0，p=1，F_n=0。位置约束 g(q)=0、Gram=1，但隐藏约束不成立。原印残差为 h−Λ，唯一光滑根为 Λ(h)=h；|h|≤Ch² 不可能在任意固定 C 的零邻域成立。该例不满足 Lean 的 z∈cotangentSet。",
+          "predictor_sign_example": "取 n=l=1，m=1，g(x)=x，q=p=0，F_n=F(0)=1。此时初始余切相容且 Gram=1。原印负号预测器残差为 −h²−η，根为 η(h)=−h²；当前 Lean 加号预测器残差为 h²−η，根为 η(h)=h²。两分支均为 O(h²)，但不是同一原文根方程。"
+        },
+        "suggested_fix": "不修改原书 statement_latex。Lean 若仍以 F 表示原印 F_n，将根方程预测位置中的 +h² • invMass m (F z.1) 改为 −h² • invMass m (F z.1)；若 F 特指物理力而与原印量反号，则需明确 F=−Fprinted 的记号关系并单独标名该版本。保留现有根分支、相容性和非奇异 [EXTRA] 条件；由人工确认原书 O(h²) 的初态/随步长范围。"
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

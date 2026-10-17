@@ -1,0 +1,12 @@
+--- before
++++ after
+@@ -2721,7 +2721,8 @@
+     z 1*Real.cos (b*t)-z 0*Real.sin (b*t)]
+ 
+ /-- source_id: MD-5.6-EulerLogCorrespondence · unnumbered_claim · §5.6 · 印刷p.206–207 / PDFp.227–228
+-[EXTRA] [EXTRA]只对书中实际单位线性振子给出选定logarithmic场与两Euler更新的真实对应及全部t的ODE；不把更新等式或ODE作假设。 -/
++[EXTRA] [EXTRA]只对书中实际单位线性振子给出选定logarithmic场与两Euler更新的真实对应及全部t的ODE；不把更新等式或ODE作假设。 [EXTRA] 24号：Euler两个离散更新与连续对数向量场的精确单步插值，以及全时间线性ODE；仅这两个子句由当前Lean覆盖。 原引文完整保留，密度及伴随分解另列覆盖缺口，不宣称这些结论已证明。
++-/
+ theorem eulerLogCorrespondence : ∀ h : ℝ,0 < h →
+   (∀ z,eulerLogFlow false h h z=MolecularDynamics.Chapter05Review.forwardEuler h z ∧
+     eulerLogFlow true h h z=MolecularDynamics.Chapter05Review.backwardEuler h z) ∧

@@ -1,0 +1,284 @@
+{
+  "batch": "EAUDIT78",
+  "input_sha256": {
+    "BATCH_EAUDIT78.md": "8e817add0260ab810885bb7da9993b1e586ba71c0dc8c95d68196ebfd6ed89f5",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.3-ComponentPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_INDEX_UNDEFINED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.3-ComponentPrinted",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3.3",
+          "printed_page": "158",
+          "pdf_page": "180",
+          "statement_latex": "In general, we perform a sequence of updates\n\\[\\Delta\\Lambda_j=[\\nabla g_j(Q)^TM^{-1}G_j^1]^{-1}g_j(Q),\\qquad Q:=Q-M^{-1}G_n^j\\Delta\\Lambda_j,\\]\nas $j$ cycles repeatedly from $1$ to $m$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF第180页（印刷第158页）§4.3.3：G_n^k=\\nabla g_k(q_n)，为G_n^T的第k列；q_n为固定旧位置，Q为在分量更新过程中不断改变的位置，Q_n为初始试探位置。",
+            "约束分量编号为j=1,...,m；M为质量矩阵，M^{-1}作用于梯度向量。Lean中的n是位置坐标维数，l是约束数，m : Fin n → ℝ是各坐标质量，Fin l的0,...,l-1对应原文1,...,m。",
+            "本页初始化为Λ=0、Q=Q_n；ΔΛ_j是第j个乘子分量的增量，Q:=Q-M^{-1}G_n^jΔΛ_j使用当前Q计算后立即覆盖Q。",
+            "原文方括号的逆是标量逆；有意义的线性化步骤要求该分母非零，M可逆，并要求g_j在求梯度处可微。原句未把这些技术资格逐一写成假设。",
+            "原书一般式分母确印为G_j^1，而同页已定义的是G_n^k、更新方向为G_n^j；保留印刷索引，不将其静默改为G_n^j。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "一般分量式分母G_j^1疑为G_n^j的索引误写；原文不静默改。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.componentPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]Gsup1是未定义印刷G_j^1的显式参数，未假设它等于已定义梯度。",
+            "[EXTRA] 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。"
+          ],
+          "statement_scope": "单个有效分量步骤；重复顺序循环由MD-4.3.3-ComponentSweep承担。印刷Gsup1与梯度解释分开保留。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT12_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T18:54:20.419406",
+              "before_sha256": "4a3ab9761a017080e1ec7ba9ee787b52206133c9d7c5a93591a5814322dd510a",
+              "after_sha256": "3f12733fb438efae3d6152154d6582fb5e3ea892a40c2ac3482b76af132ab3f3",
+              "changed_fields": [
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH13_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_INDEX_UNDEFINED",
+            "detail": "A：附件第1页一般式分母确为G_j^1，更新方向为G_n^j；原文JSON忠实。原页只定义G_n^k，不能静默裁定G_j^1的数学含义。C：字面版使用独立参数忠实；原书疑误保留。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "pdf": "/workspace/R4_PAGES.pdf",
+            "attachment_pages": [
+              1
+            ],
+            "printed_page": "158",
+            "method": "逐页渲染视觉核对，并对照pdftotext提取文本；以视觉字形为准。",
+            "result": "上述issues列出原印疑误、转录或注释差异；未列出的所引正文、公式与原页一致。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R4_任务.md",
+            "scope": "仅使用本条完整当前Lean及摘录的MD/MolecularDynamics实际依赖；标准库按标准数学含义。只读审签名，未编译或补证明，未使用旧工程。",
+            "result": "位置域为Fin n→ℝ，约束族Fin l，j任意；质量逐坐标为正，旧点q与当前点Qnow可微，当前标量分母非零。dot、grad、invMass展开后，返回值正是Qnow−[g_j(Qnow)/(∇g_j(Qnow)ᵀM⁻¹Gsup1_j)]M⁻¹∇g_j(q)。未把Gsup1认作梯度；这忠实保留原印分母G_j^1，与更新方向G_n^j分开。[EXTRA]均已明示，单步范围明确；但原印G_j^1未定义，数学含义仍需人工确认。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.componentPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "位置域为Fin n→ℝ，约束族Fin l，j任意；质量逐坐标为正，旧点q与当前点Qnow可微，当前标量分母非零。dot、grad、invMass展开后，返回值正是Qnow−[g_j(Qnow)/(∇g_j(Qnow)ᵀM⁻¹Gsup1_j)]M⁻¹∇g_j(q)。未把Gsup1认作梯度；这忠实保留原印分母G_j^1，与更新方向G_n^j分开。[EXTRA]均已明示，单步范围明确；但原印G_j^1未定义，数学含义仍需人工确认。",
+        "counterexample": null,
+        "suggested_fix": "人工确认一般式G_j^1是否应为G_n^j；字面版继续保留独立Gsup1，另列明确命名的修订版。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.3-ComponentConstraintStep",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PUNCTUATION",
+          "EXTRA_ANNOTATION_CROSSTALK"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.3-ComponentConstraintStep",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3.3",
+          "printed_page": "158",
+          "pdf_page": "180",
+          "statement_latex": "\\[\\Delta\\Lambda_1=[\\nabla g_1(Q)^TM^{-1}G_n^1]^{-1}g_1(Q).\\]\nWe then update $Q$ by\n\\[Q:=Q-M^{-1}G_n^1\\Delta\\Lambda_1,\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF第180页（印刷第158页）§4.3.3：G_n^k=\\nabla g_k(q_n)，为G_n^T的第k列；q_n为固定旧位置，Q为在分量更新过程中不断改变的位置，Q_n为初始试探位置。",
+            "约束分量编号为j=1,...,m；M为质量矩阵，M^{-1}作用于梯度向量。Lean中的n是位置坐标维数，l是约束数，m : Fin n → ℝ是各坐标质量，Fin l的0,...,l-1对应原文1,...,m。",
+            "本页初始化为Λ=0、Q=Q_n；ΔΛ_j是第j个乘子分量的增量，Q:=Q-M^{-1}G_n^jΔΛ_j使用当前Q计算后立即覆盖Q。",
+            "原文方括号的逆是标量逆；有意义的线性化步骤要求该分母非零，M可逆，并要求g_j在求梯度处可微。原句未把这些技术资格逐一写成假设。",
+            "原书一般式分母确印为G_j^1，而同页已定义的是G_n^k、更新方向为G_n^j；保留印刷索引，不将其静默改为G_n^j。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.componentConstraintStep",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 采用一般j的统一梯度解释G_n^j=∇g_j(q_n)；Fin首项0对应原书1。质量逐坐标为正，g_j在旧点及当前点可微，当前标量分母非零。原印一般式的独立Gsup1参数仅属于ComponentPrinted。"
+          ],
+          "statement_scope": "单个有效梯度分量步骤；j=0恢复原印首项，任意j为已披露推广。重复扫描见ComponentSweep。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT12_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T18:54:20.419508",
+              "before_sha256": "3b5bd4364d1862d56d67fe807da4dbb346b1269ed57856a19829145eb736f216",
+              "after_sha256": "079244dd9d01aeda6f35eec44864d2465fbdb1bffa64d4c0ab81535c7482d4f3",
+              "changed_fields": [
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH13_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PUNCTUATION",
+            "detail": "A：首项Q更新公式原页以逗号结尾，JSON写成句号；仅修正标点。"
+          },
+          {
+            "code": "EXTRA_ANNOTATION_CROSSTALK",
+            "detail": "C：本声明无Gsup1；删除从Printed串入的参数说明。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "pdf": "/workspace/R4_PAGES.pdf",
+            "attachment_pages": [
+              2
+            ],
+            "printed_page": "158",
+            "method": "逐页渲染视觉核对，并对照pdftotext提取文本；以视觉字形为准。",
+            "result": "上述issues列出原印疑误、转录或注释差异；未列出的所引正文、公式与原页一致。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R4_任务.md",
+            "scope": "仅使用本条完整当前Lean及摘录的MD/MolecularDynamics实际依赖；标准库按标准数学含义。只读审签名，未编译或补证明，未使用旧工程。",
+            "result": "对任意n,l、正对角质量、约束族、旧位置q、当前位置Qnow和j，返回当前梯度与旧梯度形成的非零标量分母所给Newton分量更新。j=0对应印刷首项1，一般j是已披露的统一梯度解释；不是断言一步达到g_j=0。旧点/当前点可微及分母非零均显式限定。[EXTRA]中提Gsup1属于串入的另一条注释，不是本声明参数。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.componentConstraintStep",
+        "verdict": "PASS",
+        "explanation": "对任意n,l、正对角质量、约束族、旧位置q、当前位置Qnow和j，返回当前梯度与旧梯度形成的非零标量分母所给Newton分量更新。j=0对应印刷首项1，一般j是已披露的统一梯度解释；不是断言一步达到g_j=0。旧点/当前点可微及分母非零均显式限定。[EXTRA]中提Gsup1属于串入的另一条注释，不是本声明参数。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3.3-ComponentSweep",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_INDEX_UNDEFINED",
+          "STOP_BOUNDARY_MISMATCH",
+          "TOTALIZED_AUXILIARY_DOMAIN"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.3-ComponentSweep",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3.3",
+          "printed_page": "158",
+          "pdf_page": "180",
+          "statement_latex": "and continue to update $\\Lambda_2$ in the same manner (using the second constraint). In general, we perform a sequence of updates\n\\[\\Delta\\Lambda_j=[\\nabla g_j(Q)^TM^{-1}G_j^1]^{-1}g_j(Q),\\qquad Q:=Q-M^{-1}G_n^j\\Delta\\Lambda_j,\\]\nas $j$ cycles repeatedly from $1$ to $m$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF第180页（印刷第158页）§4.3.3：G_n^k=\\nabla g_k(q_n)，为G_n^T的第k列；q_n为固定旧位置，Q为在分量更新过程中不断改变的位置，Q_n为初始试探位置。",
+            "约束分量编号为j=1,...,m；M为质量矩阵，M^{-1}作用于梯度向量。Lean中的n是位置坐标维数，l是约束数，m : Fin n → ℝ是各坐标质量，Fin l的0,...,l-1对应原文1,...,m。",
+            "本页初始化为Λ=0、Q=Q_n；ΔΛ_j是第j个乘子分量的增量，Q:=Q-M^{-1}G_n^jΔΛ_j使用当前Q计算后立即覆盖Q。",
+            "原文方括号的逆是标量逆；有意义的线性化步骤要求该分母非零，M可逆，并要求g_j在求梯度处可微。原句未把这些技术资格逐一写成假设。",
+            "原书一般式分母确印为G_j^1，而同页已定义的是G_n^k、更新方向为G_n^j；保留印刷索引，不将其静默改为G_n^j。",
+            "原页实际给出的停止建议是$\\|\\Delta\\Lambda_j\\|\\leq\\mathrm{tol}$，$j=1,2,\\ldots,m$；“或残差”不是这句原文给出的条件。本条不声称收敛。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.componentSweep",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]一次完整顺序sweep，使用上一条统一Gn索引；多轮为其真实函数迭代。",
+            "[EXTRA] 保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。",
+            "[EXTRA] componentSweep/Delta/Trajectory/Stop为无资格参数的总化辅助，零分母时不能解释为有效Newton步骤；Iteration为所执行步骤另加有效域。Stop当前严格不等式与原页非严格不等式不符，尚未修复。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT12_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T18:54:20.419570",
+              "before_sha256": "e50c9c99546cdd8ca9e30fab7cec54838ab913c85ab125ee712afa541276385f",
+              "after_sha256": "9b12f1b88bbd7034135cbd549115cb600f5ad1339d50e70c156ba2aa85011d02",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH13_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_INDEX_UNDEFINED",
+            "detail": "A：原句忠实保留G_j^1；其索引疑误仍待人工确认。"
+          },
+          {
+            "code": "STOP_BOUNDARY_MISMATCH",
+            "detail": "C：原页建议全部分量增量范数≤tol，componentPrintedStop却为绝对值<tol，排除了等号边界。"
+          },
+          {
+            "code": "TOTALIZED_AUXILIARY_DOMAIN",
+            "detail": "C：componentSweep、Delta、Trajectory、Stop本身没有有效域资格；Iteration只保证所执行前rounds*l步，不能自动保证另一round的Stop测试有效。须区分总化辅助与有效算法使用。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "pdf": "/workspace/R4_PAGES.pdf",
+            "attachment_pages": [
+              3
+            ],
+            "printed_page": "158",
+            "method": "逐页渲染视觉核对，并对照pdftotext提取文本；以视觉字形为准。",
+            "result": "上述issues列出原印疑误、转录或注释差异；未列出的所引正文、公式与原页一致。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R4_任务.md",
+            "scope": "仅使用本条完整当前Lean及摘录的MD/MolecularDynamics实际依赖；标准库按标准数学含义。只读审签名，未编译或补证明，未使用旧工程。",
+            "result": "componentSweep按finRange l升序foldl，每次用刚更新的Qcur，使用梯度修订方向；它调用的是Chapter04Review.componentConstraintStep，无有效域假设，是实数逆零总化下的辅助函数。componentPrintedDelta忠实保留Gsup1；Trajectory以k mod l循环、旧q不变，l=0时恒等；Iteration在正质量、l>0和每个已执行步骤可微/分母非零条件下返回rounds*l步位置。Stop检查round*l+j处、更新前计算的一整轮各分量增量，顺序正确，却使用<tol，原页是≤tol；故本条全部声明不能整体PASS。原印索引疑误另需人工裁定。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.componentSweep",
+        "verdict": "FAIL",
+        "explanation": "componentSweep按finRange l升序foldl，每次用刚更新的Qcur，使用梯度修订方向；它调用的是Chapter04Review.componentConstraintStep，无有效域假设，是实数逆零总化下的辅助函数。componentPrintedDelta忠实保留Gsup1；Trajectory以k mod l循环、旧q不变，l=0时恒等；Iteration在正质量、l>0和每个已执行步骤可微/分母非零条件下返回rounds*l步位置。Stop检查round*l+j处、更新前计算的一整轮各分量增量，顺序正确，却使用<tol，原页是≤tol；故本条全部声明不能整体PASS。原印索引疑误另需人工裁定。",
+        "counterexample": "边界见证：n=l=1，m=1，g₀(t)=t，q=0，Q₀=1，Gsup1₀=1，round=0，tol=1。分母为1、增量为1；原书1≤1成立，而当前Stop要求1<1为假。此为精确代入，非数值搜索。",
+        "suggested_fix": "将componentPrintedStop的<tol改为≤tol，或另命名严格停止变体并保留原印非严格版；有效使用Stop时补测试轮全部步骤资格。保留G_j^1疑误待人工裁定。本次不修改工程。"
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

@@ -1,0 +1,463 @@
+{
+  "batch": "EAUDIT81",
+  "input_sha256": {
+    "BATCH_EAUDIT81.md": "cf2222c8bdaac5819867360c4836d763f816c5ba9424a42de35cc91061ae912b",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.1-Divergence",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "REGULARITY_METADATA_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.1-Divergence",
+          "kind": "definition",
+          "label": null,
+          "section": "2.3.1",
+          "printed_page": "72",
+          "pdf_page": "94",
+          "statement_latex": "the divergence of $f$ vanishes, i.e.\n\\[\\nabla\\cdot f=\\sum_{i=1}^m\\frac{\\partial f_i}{\\partial z_i}=0.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "div f为实际Jacobian的迹；divergenceFree要求f在全空间可微，不要求C¹。"
+          ],
+          "issues": [
+            {
+              "code": "REGULARITY_METADATA_MISMATCH",
+              "status": "CORRECTED",
+              "fields": [
+                "context_notation"
+              ],
+              "detail": "说明声称f C¹，实际零散度谓词只要求Differentiable；修正说明，与签名保持一致。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.bp_divergence",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 保留散度辅助定义，并补经典可微向量场的散度恒零谓词；覆盖原句零条件。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:10:09.931611",
+              "before_sha256": "f65c755778fdf003ed02b69cd360ac5f6534b65e75dba99476d5fc8baaa852cf",
+              "after_sha256": "350e0be5a5a06ef7f719c52969531eaa058c3c96bbf7f51c22c3e5b820cf0d5a",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "REGULARITY_METADATA_MISMATCH",
+            "status": "CORRECTED",
+            "fields": [
+              "context_notation"
+            ],
+            "detail": "说明声称f C¹，实际零散度谓词只要求Differentiable；修正说明，与签名保持一致。"
+          }
+        ],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              6
+            ],
+            "printed_page": "72",
+            "original_pdf_page": "94",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "原文散度消失句及从i=1到m的对角偏导和为零一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.bp_divergence",
+              "MD.Ch02.divergenceFree"
+            ],
+            "finding": "原文散度消失句及从i=1到m的对角偏导和为零一致。bp_divergence是实际Fréchet导数坐标矩阵的trace；divergenceFree补充全局可微并对所有z要求trace=0，覆盖原句完整零条件。bp_divergence作为辅助函数未单独声明可微，但组合谓词提供资格。context_notation所称f C¹强于实际Differentiable，已在修正JSON中改为可微。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.bp_divergence",
+          "MD.Ch02.divergenceFree"
+        ],
+        "verdict": "PASS",
+        "explanation": "原文散度消失句及从i=1到m的对角偏导和为零一致。bp_divergence是实际Fréchet导数坐标矩阵的trace；divergenceFree补充全局可微并对所有z要求trace=0，覆盖原句完整零条件。bp_divergence作为辅助函数未单独声明可微，但组合谓词提供资格。context_notation所称f C¹强于实际Differentiable，已在修正JSON中改为可微。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": "采用json_review.corrected_json中的转录或元数据修正；不修改当前Lean工程。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-Liouville",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NONEXISTENT_TAU_POSITIVITY",
+          "UNMARKED_SOURCE_TRUNCATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.1-Liouville",
+          "kind": "unnumbered_claim",
+          "label": "Liouville’s theorem",
+          "section": "2.3.1",
+          "printed_page": "72",
+          "pdf_page": "94",
+          "statement_latex": "Consider a set of points $S(t)$ in phase space with evolution associated to a differential equation $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$ described by the flow map $\\mathcal F_t(S(0))=S(t)$. Liouville’s theorem [16] states that the volume of such a set is invariant with respect to $t$ if the divergence of $f$ vanishes, i.e.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "NONEXISTENT_TAU_POSITIVITY",
+              "status": "CORRECTED",
+              "fields": [
+                "extra_assumptions"
+              ],
+              "detail": "extra_assumptions提到τ>0，但当前签名没有此假设；修正为任意τ及实际Icc 0 τ时间域。"
+            },
+            {
+              "code": "UNMARKED_SOURCE_TRUNCATION",
+              "status": "CORRECTED",
+              "fields": [
+                "statement_latex"
+              ],
+              "detail": "原页该句末为vanishes, i.e.；当前在逗号处截断而未标示省略，补回i.e.，不合并相邻散度条目。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.liouville",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookDivergenceFreeFlow_volume_image_of_jointC2"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] f全局C¹、散度处处为零；实际解族Φ联合C²，Φ(0,·)=id，并在Icc 0 τ满足真实ODE；对窗内每个t及每个可测S表达Lebesgue体积。τ是任意实数，签名不要求τ>0；τ<0时该时间窗为空，τ=0时仅有恒等映射。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:10:09.931611",
+              "before_sha256": "38b7c400886bec64429142bb8889c22eb85c78dc2c33252d204d222d4f01739c",
+              "after_sha256": "3734129202806e73e8abbf51c5934c391cba67d2086bcbbe8519310e3d3fdb5b",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "NONEXISTENT_TAU_POSITIVITY",
+            "status": "CORRECTED",
+            "fields": [
+              "extra_assumptions"
+            ],
+            "detail": "extra_assumptions提到τ>0，但当前签名没有此假设；修正为任意τ及实际Icc 0 τ时间域。"
+          },
+          {
+            "code": "UNMARKED_SOURCE_TRUNCATION",
+            "status": "CORRECTED",
+            "fields": [
+              "statement_latex"
+            ],
+            "detail": "原页该句末为vanishes, i.e.；当前在逗号处截断而未标示省略，补回i.e.，不合并相邻散度条目。"
+          }
+        ],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              7
+            ],
+            "printed_page": "72",
+            "original_pdf_page": "94",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "原文描述S(t)=F_t(S(0))、Liouville定理[16]及体积不变措辞一致；末尾原页为vanishes, i.e.，当前摘录截去i.e.而未标明省略，修正JSON补回，散度展示式仍归相邻条目。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.liouville"
+            ],
+            "finding": "原文描述S(t)=F_t(S(0))、Liouville定理[16]及体积不变措辞一致；末尾原页为vanishes, i.e.，当前摘录截去i.e.而未标明省略，修正JSON补回，散度展示式仍归相邻条目。Lean对任意维数、C¹向量场f、处处trace=0、联合C²实际解族Φ、Φ(0,·)=id、t∈[0,τ]和任意可测s断言真实Lebesgue像集体积相等。C¹给局部唯一性，实际流在该时间窗单射，未用体积结论作为前提。签名没有0<τ；τ<0时无t可取，τ=0时由恒等初值成立。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.liouville"
+        ],
+        "verdict": "PASS",
+        "explanation": "原文描述S(t)=F_t(S(0))、Liouville定理[16]及体积不变措辞一致；末尾原页为vanishes, i.e.，当前摘录截去i.e.而未标明省略，修正JSON补回，散度展示式仍归相邻条目。Lean对任意维数、C¹向量场f、处处trace=0、联合C²实际解族Φ、Φ(0,·)=id、t∈[0,τ]和任意可测s断言真实Lebesgue像集体积相等。C¹给局部唯一性，实际流在该时间窗单射，未用体积结论作为前提。签名没有0<τ；τ<0时无t可取，τ=0时由恒等初值成立。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": "采用json_review.corrected_json中的转录或元数据修正；不修改当前Lean工程。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-HamiltonVolume",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NONEXISTENT_TAU_POSITIVITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.1-HamiltonVolume",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.1",
+          "printed_page": "72",
+          "pdf_page": "94",
+          "statement_latex": "Thus Hamiltonian systems always have volume preserving flows.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "流为实际Hamilton向量场的解族；完整体积结论覆盖闭时间窗每个t及每个可测S。"
+          ],
+          "issues": [
+            {
+              "code": "NONEXISTENT_TAU_POSITIVITY",
+              "status": "CORRECTED",
+              "fields": [
+                "extra_assumptions"
+              ],
+              "detail": "extra_assumptions提到τ>0，但当前签名没有此假设；修正为任意τ及实际Icc 0 τ时间域。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.hamiltonVolume",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] H全局C²，实际解族Φ联合C²、Φ(0,·)=id，并在Icc 0 τ满足Hamilton ODE；对窗内每个t及每个可测S给Lebesgue像集体积保存。τ任意，不要求τ>0。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:10:09.932113",
+              "before_sha256": "062557aea424f64921c592dd516b34127799171ea670f940ccbe0a3d6773d714",
+              "after_sha256": "71b80b96cceda4340a126c6204be0b6b5408ad8eca27063ceaf4eb9ceb7322ff",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "NONEXISTENT_TAU_POSITIVITY",
+            "status": "CORRECTED",
+            "fields": [
+              "extra_assumptions"
+            ],
+            "detail": "extra_assumptions提到τ>0，但当前签名没有此假设；修正为任意τ及实际Icc 0 τ时间域。"
+          }
+        ],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              8
+            ],
+            "printed_page": "72",
+            "original_pdf_page": "94",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "原文Thus Hamiltonian systems always have volume preserving flows.逐字一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.hamiltonVolume"
+            ],
+            "finding": "原文Thus Hamiltonian systems always have volume preserving flows.逐字一致。任意Nc和H:C^{2}，坐标为q/p两个Fin Nc块，J=[[0,I],[-I,0]]；向量场J∇H的符号与教材相同。Φ联合C²、在[0,τ]满足实际ODE且Φ0=id，对每个窗内t和每个可测s给出Lebesgue像集体积相等。没有额外假设散度零或体积守恒；前者由Hamilton结构产生。签名没有τ>0，需修正说明。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.hamiltonVolume"
+        ],
+        "verdict": "PASS",
+        "explanation": "原文Thus Hamiltonian systems always have volume preserving flows.逐字一致。任意Nc和H:C^{2}，坐标为q/p两个Fin Nc块，J=[[0,I],[-I,0]]；向量场J∇H的符号与教材相同。Φ联合C²、在[0,τ]满足实际ODE且Φ0=id，对每个窗内t和每个可测s给出Lebesgue像集体积相等。没有额外假设散度零或体积守恒；前者由Hamilton结构产生。签名没有τ>0，需修正说明。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": "采用json_review.corrected_json中的转录或元数据修正；不修改当前Lean工程。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-DeterminantODE",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              9
+            ],
+            "printed_page": "73",
+            "original_pdf_page": "95",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "印刷73页Now let D=det(W)、Ḋ/D=tr(ẆW⁻¹)、This implies that及最终Ḋ=div(f(z(t)))D均一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.determinantODE"
+            ],
+            "finding": "印刷73页Now let D=det(W)、Ḋ/D=tr(ẆW⁻¹)、This implies that及最终Ḋ=div(f(z(t)))D均一致。A,W是任意n维实矩阵曲线，在指定t要求真实导数W′=A(t)W(t)且det W(t)≠0；结论同时给det曲线的HasDerivAt以及导数除det等于trace((AW)W⁻¹)。取A=f′(z(t))即为教材实例；非零行列式正好许可原文两处除法。A不被签名限定为某个f的Jacobian，是已披露的线性变分方程推广。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.determinantODE"
+        ],
+        "verdict": "PASS",
+        "explanation": "印刷73页Now let D=det(W)、Ḋ/D=tr(ẆW⁻¹)、This implies that及最终Ḋ=div(f(z(t)))D均一致。A,W是任意n维实矩阵曲线，在指定t要求真实导数W′=A(t)W(t)且det W(t)≠0；结论同时给det曲线的HasDerivAt以及导数除det等于trace((AW)W⁻¹)。取A=f′(z(t))即为教材实例；非零行列式正好许可原文两处除法。A不被签名限定为某个f的Jacobian，是已披露的线性变分方程推广。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-FlowDet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              10
+            ],
+            "printed_page": "73",
+            "original_pdf_page": "95",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "印刷73页In particular至紧凑展示式逐字一致，保留D≡D(0)=1及体积恒定。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.flowDet"
+            ],
+            "finding": "印刷73页In particular至紧凑展示式逐字一致，保留D≡D(0)=1及体积恒定。签名任意维数，f为C¹且全局散度零，Φ联合C²、真实ODE、恒等初值，另明确0<τ。结论在整个[0,τ]上对每个初值给实际流Jacobian det=1，并对每个可测S给实际体积保存。D(0)=1来自初值；没有把Jacobian、det或体积结论放进假设。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.flowDet"
+        ],
+        "verdict": "PASS",
+        "explanation": "印刷73页In particular至紧凑展示式逐字一致，保留D≡D(0)=1及体积恒定。签名任意维数，f为C¹且全局散度零，Φ联合C²、真实ODE、恒等初值，另明确0<τ。结论在整个[0,τ]上对每个初值给实际流Jacobian det=1，并对每个可测S给实际体积保存。D(0)=1来自初值；没有把Jacobian、det或体积结论放进假设。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-LJOscillator",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              11,
+              12
+            ],
+            "printed_page": "73",
+            "original_pdf_page": "95",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "印刷73页Example 2.3的模型句和q̇=p、ṗ=−φ′_LJ(q)一致；74页只提供后续例子背景。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.ljOscillatorEquation",
+              "MD.Ch02.oscillatorEquation"
+            ],
+            "finding": "印刷73页Example 2.3的模型句和q̇=p、ṗ=−φ′_LJ(q)一致；74页只提供后续例子背景。主定义绑定明确LJ势4ε[(σ/q)^12−(σ/q)^6]、σ>0、ε>0，要求每个t∈I的位置正且γ在该时刻有真实二分量导数(p,−φ′)。这是单位质量振子，两个方程及负号完整。一般oscillatorEquation是额外辅助定义，不代替主定义的LJ资格。正q使显式势光滑，排除了q=0除法总化。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.ljOscillatorEquation",
+          "MD.Ch02.oscillatorEquation"
+        ],
+        "verdict": "PASS",
+        "explanation": "印刷73页Example 2.3的模型句和q̇=p、ṗ=−φ′_LJ(q)一致；74页只提供后续例子背景。主定义绑定明确LJ势4ε[(σ/q)^12−(σ/q)^6]、σ>0、ε>0，要求每个t∈I的位置正且γ在该时刻有真实二分量导数(p,−φ′)。这是单位质量振子，两个方程及负号完整。一般oscillatorEquation是额外辅助定义，不代替主定义的LJ资格。正q使显式势光滑，排除了q=0除法总化。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.1-LJBoundedPeriodic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              13
+            ],
+            "printed_page": "74",
+            "original_pdf_page": "96",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "印刷74页原句逐字一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.ljBoundedPeriodic"
+            ],
+            "finding": "印刷74页原句逐字一致。Lean对正参数σ,ε、定义于全部实时间的实际LJ解γ、始终q>0、整条相轨迹范围有界，推出存在T>0且对所有实t有γ(t+T)=γ(t)。全时量化避免仅在有限时间窗内有界的逃逸解成为反例。LJ势在正半轴只有一个有限临界点（极小值）；非平衡有界全轨道处于两个有限转向点之间的闭能量曲线，平衡轨迹也满足存在正周期。没有将一般一维势的有界必周期误用为无条件命题，签名明确绑定LJ。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.ljBoundedPeriodic"
+        ],
+        "verdict": "PASS",
+        "explanation": "印刷74页原句逐字一致。Lean对正参数σ,ε、定义于全部实时间的实际LJ解γ、始终q>0、整条相轨迹范围有界，推出存在T>0且对所有实t有γ(t+T)=γ(t)。全时量化避免仅在有限时间窗内有界的逃逸解成为反例。LJ势在正半轴只有一个有限临界点（极小值）；非平衡有界全轨道处于两个有限转向点之间的闭能量曲线，平衡轨迹也满足存在正周期。没有将一般一维势的有界必周期误用为无条件命题，签名明确绑定LJ。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

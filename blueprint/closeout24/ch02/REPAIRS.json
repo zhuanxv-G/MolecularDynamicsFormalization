@@ -1,0 +1,90 @@
+[
+  {
+    "source_id": "MD-2.4.1-Splitting",
+    "diff_summary": "本条只定义组合构造；Hamilton子流资格及O(h²)近似由MD-2.4.1-SplittingLocal / MD.Ch02.splittingLocal共同覆盖。新增rfl桥接核对与该条所用F₁ h (F₂ h u)及splittingMap一致，不从任意函数族推断Hamilton流。",
+    "suggested_fix": "保留构造定义；增加带实际Hamilton流关系的近似声明，或在本条明确列出下一条splittingLocal及bp_splittingMap与其组合表达式的对应声明，并明确这是跨条共同覆盖。不得仅凭名字认定任意F₁,F₂是Hamilton子流。",
+    "original_fail": {
+      "lean_decl": "MD.Ch02.bp_splittingMap",
+      "verdict": "FAIL",
+      "explanation": "bp_splittingMap仅对任意类型E和任意两个函数族F₁、F₂定义F₁ h∘F₂ h，复合公式本身正确。但本条statement_scope含整个引句：H=H₁+H₂、三者Hamilton流及近似结论；当前声明没有H、H₁、H₂、总流F、ODE/Flow前提或任何近似性质。context_notation把精度交给下一条是合理分工说明，却没有建立本条定义与下一条splittingLocal的形式联系；该定理还使用独立的splittingMap定义。按要求核对完整结论，不能把纯组合构造视作全部数学断言已形式化。",
+      "counterexample": null,
+      "suggested_fix": "保留构造定义；增加带实际Hamilton流关系的近似声明，或在本条明确列出下一条splittingLocal及bp_splittingMap与其组合表达式的对应声明，并明确这是跨条共同覆盖。不得仅凭名字认定任意F₁,F₂是Hamilton子流。"
+    },
+    "diff_file": "blueprint/closeout24/ch02/Splitting.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch02.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "335cbae54c372e87b5047ac7ec1deb9e29c1abb86bdf27ff0067f87a24642f01",
+    "log_sha256": "f3ec55631f2e01b1a44daa3977646af5c6185e2e2199e95000dc85fc8d66140a"
+  },
+  {
+    "source_id": "MD-2.4.1-KineticFlow",
+    "diff_summary": "保留总化代数公式和kick导数辅助；新增正质量下动能Hamiltonian、初值及真实Hamilton方程声明。kick导数不作为kinetic流证明；Hamilton识别尚未证明。",
+    "suggested_fix": "保留显式公式及有效辅助导数声明；另补非零（或正）质量域上的动能Hamiltonian定义、该曲线的初值与Hamilton方程/流识别声明。不要把kick导数声明算成kinetic流证明。",
+    "original_fail": {
+      "lean_decl": "MD.Ch02.bp_kineticFlow",
+      "verdict": "FAIL",
+      "explanation": "bp_kineticFlow对任意Nc、m、h、z给出Q_i=q_i+h(m_i)⁻¹p_i与P_i=p_i，坐标公式正确。另两条private声明momentumKickDerivative和momentumKick_hasFDerivAt只论任意C¹力F的kick导数：位置投影不变，动量导数为dp+h DF(q)dq，其类型及前提合理，但与动能Hamilton流识别无关。全部声明均没有H₁=pᵀM⁻¹p/2、H=H₁+H₂、时间ODE或流初值/群律结论，不能核验引句的完整Hamilton流断言。m非零只在context文字中，不是Lean前提；零质量总化可作代数扩展，不能被称为教材M的实际逆。",
+      "counterexample": null,
+      "suggested_fix": "保留显式公式及有效辅助导数声明；另补非零（或正）质量域上的动能Hamiltonian定义、该曲线的初值与Hamilton方程/流识别声明。不要把kick导数声明算成kinetic流证明。"
+    },
+    "diff_file": "blueprint/closeout24/ch02/KineticFlow.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch02.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "cdc548a127e043982d2d246acea4a20309fdb77c4e0ce81794bfc788fd022b62",
+    "log_sha256": "7813c8307b14ed9c884487b30217b5e8bcdb3e070d7ef946323e97943d598469"
+  },
+  {
+    "source_id": "MD-2.4.1-PotentialFlow",
+    "diff_summary": "原总化公式仅作候选辅助；新增H₂=U∘位置投影、初值及C¹势下候选轨道的真实Hamilton方程声明；Hamilton识别尚未证明，不将不可微点的fderiv总化值称为经典梯度。",
+    "suggested_fix": "修复JSON梯度转义；增加适当可微/C¹条件、H₂及候选轨道的Hamilton方程和初值声明，或清楚把当前条目缩为公式定义并另设流识别义务。",
+    "original_fail": {
+      "lean_decl": "MD.Ch02.bp_potentialFlow",
+      "verdict": "FAIL",
+      "explanation": "bp_potentialFlow对任意Nc、任意势U及实h返回kick(-fderiv U)。展开得到Q=q、P_i=p_i-h(fderiv ℝ U q)e_i，符号、坐标次序正确。但是声明没有U可微前提，也没有H₂=U∘位置投影及HasDerivAt/Flow性质；fderiv在不可微点总化，不能无条件等同经典梯度。因此它只定义候选公式，没有完整覆盖原书“system with Hamiltonian H₂=U”的实际流断言。",
+      "counterexample": "取一维U(q)=|q|，q=0处经典梯度不存在；Lean的fderiv总化仍使本定义有值。这说明定义的参数域比经典Hamilton流陈述宽，不能据此识别为该经典流；不是对光滑势的书中公式的反例。",
+      "suggested_fix": "修复JSON梯度转义；增加适当可微/C¹条件、H₂及候选轨道的Hamilton方程和初值声明，或清楚把当前条目缩为公式定义并另设流识别义务。"
+    },
+    "diff_file": "blueprint/closeout24/ch02/PotentialFlow.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch02.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "6034fffbc0897bb4d0408e717c3ea6bb52adf38a0b10300411640f7b6eb9fd4f",
+    "log_sha256": "486230924db55a8036384aeaa75a25587b8321155d1644742a04b8b3e7055c04"
+  },
+  {
+    "source_id": "MD-2.5.1-RK4",
+    "diff_summary": "算法定义与MD-2.5.1-RK4Order / MD.Ch02.rk4Order共同覆盖原句；新增定义相等桥接bp_rk4_eq_rk4，使四阶声明所用rk4与本条公式明确对应。四阶定理原证明状态独立保留。",
+    "suggested_fix": "定义复现系数，但完整声明列表没有四阶定理；请提供另列条目的source_id/声明或补充适当正则性下的阶数声明。",
+    "original_fail": {
+      "lean_decl": "MD.Ch02.bp_rk4",
+      "verdict": "FAIL",
+      "explanation": "四阶段定义正确展开a21=a32=1/2,a43=1及权重1/6,1/3,1/3,1/6，对任意有限维实向量场f、h,z有效。但本条完整当前Lean只有算法定义，未包含原句的四阶结论；context_notation称“四阶陈述单列”，本任务给出的同一source_id全部声明中没有该条或可核对的映射。因完整结论覆盖缺失判FAIL，而非算法公式错误。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+      "counterexample": null,
+      "suggested_fix": "定义复现系数，但完整声明列表没有四阶定理；请提供另列条目的source_id/声明或补充适当正则性下的阶数声明。"
+    },
+    "diff_file": "blueprint/closeout24/ch02/RK4.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch02.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "404565d11a2be8f22bef5297ff3ce66cbcc9cd8e0496231ef90aa01fb6f4b647",
+    "log_sha256": "b5f75f860e2e384eddf381fb2b4575d37d70aa997c3d4695a3817c72d6a7da7a"
+  }
+]

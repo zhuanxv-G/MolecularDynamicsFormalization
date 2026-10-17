@@ -1,0 +1,30 @@
+--- before
++++ after
+@@ -1425,13 +1425,18 @@
+     (b : Fin s → ℝ) (h : ℝ) (z w : Q n) (F : Fin s → Q n) : Prop :=
+   (∀ i, F i = f (z + h • ∑ j, A i j • F j)) ∧ w = z + h • ∑ i, b i • F i
+ 
+-/-- source_id: MD-2.5.1-RK4 · definition · §2.5.1 · 印刷p.89 / PDFp.111 -/
++/-- source_id: MD-2.5.1-RK4 · definition · §2.5.1 · 印刷p.89 / PDFp.111 [EXTRA] 24号：算法定义与MD-2.5.1-RK4Order / MD.Ch02.rk4Order共同覆盖原句；新增定义相等桥接bp_rk4_eq_rk4，使四阶声明所用rk4与本条公式明确对应。四阶定理原证明状态独立保留。
++-/
+ def bp_rk4 {n : ℕ} (f : Q n → Q n) (h : ℝ) (z : Q n) : Q n :=
+   let k₁ := f z
+   let k₂ := f (z + (h/2) • k₁)
+   let k₃ := f (z + (h/2) • k₂)
+   let k₄ := f (z + h • k₃)
+   z + (h/6) • (k₁ + (2 : ℝ) • k₂ + (2 : ℝ) • k₃ + k₄)
++
++theorem bp_rk4_eq_rk4 {n : ℕ} (f : Q n → Q n) (h : ℝ) (z : Q n) :
++    bp_rk4 f h z = MolecularDynamics.Chapter02Review.rk4 f h z := rfl
++
+ 
+ /-- source_id: MD-2.5.1-RK4Order · unnumbered_claim · §2.5.1 · 印刷p.89 / PDFp.111
+ [EXTRA] [EXTRA]compactTrajectory实际C⁶向量场与紧窗实际轨迹；高阶资格强于原文简写。 -/
+@@ -1844,6 +1849,7 @@
+ #print axioms MD.Ch02.eulerEffectiveOrder
+ #print axioms MD.Ch02.bp_rungeKuttaRelation
+ #print axioms MD.Ch02.bp_rk4
++#print axioms MD.Ch02.bp_rk4_eq_rk4
+ #print axioms MD.Ch02.rk4Order
+ #print axioms MD.Ch02.explicitRK
+ #print axioms MD.Ch02.rkSymplectic

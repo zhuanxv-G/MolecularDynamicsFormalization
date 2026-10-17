@@ -1,0 +1,123 @@
+{
+  "batch": "EAUDIT82",
+  "input_sha256": {
+    "BATCH_EAUDIT82.md": "3ea9d1d5ae11fede80c877b2e2f302c3c8ae58cca31868a7c882cc204b89ebed",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.6-LINCSInverse",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NORMALIZATION_CONTEXT_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.6-LINCSInverse",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3.6",
+          "printed_page": "165",
+          "pdf_page": "187",
+          "statement_latex": "LINCS In solving the Eqs. (4.27)–(4.29) by Newton iteration, the largest cost and the most significant barrier to parallelization is the linear solve. The LINCS method [119, 175] uses a series expansion to approximate the inverse matrix (which is valid only under certain conditions).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "C为归一化Newton线性系统中的迭代矩阵；该定义仅为(I−C)⁻¹的Neumann截断模型，不包含原始系统的缩放矩阵或完整LINCS算法。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.lincsInverse",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]标准Neumann有限和Σ(j=0..k) C^j表达series inverse，正文没有印系数公式；收敛条件另条。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT16_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T18:59:31.999109",
+              "before_sha256": "5ec0ff086efb0a209d11763e48ca13a1812a11d8435cb29070ea7f80aa635ca0",
+              "after_sha256": "9d4f3a79a30f6068ab706bf50653d007e579d49847d9de311fe89f0cb5a1a4be",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH19_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "NORMALIZATION_CONTEXT_MISSING",
+            "field": "context_notation",
+            "explanation": "C为归一化Newton线性系统中的迭代矩阵；该定义仅为(I−C)⁻¹的Neumann截断模型，不包含原始系统的缩放矩阵或完整LINCS算法。",
+            "severity": "annotation"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              3
+            ],
+            "book_pdf_pages": "187",
+            "printed_pages": "165",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "任意有限阶实方阵C和自然数k，range(k+1)给出从0至k共k+1项，含单位阵C⁰。定义的是归一化逆(I−C)⁻¹的Neumann截断，不是原始Newton矩阵逆的完整LINCS实现；原书仅定性提及级数，没有该公式。作为显式EXTRA的标准模型合理，需补明归一化及范围。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.lincsInverse",
+        "verdict": "PASS",
+        "explanation": "任意有限阶实方阵C和自然数k，range(k+1)给出从0至k共k+1项，含单位阵C⁰。定义的是归一化逆(I−C)⁻¹的Neumann截断，不是原始Newton矩阵逆的完整LINCS实现；原书仅定性提及级数，没有该公式。作为显式EXTRA的标准模型合理，需补明归一化及范围。",
+        "counterexample": null,
+        "suggested_fix": "仅更新JSON注释或引文，见corrected_json；无需修改本条Lean代数签名。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.6-LINCSConvergence",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              4
+            ],
+            "book_pdf_pages": "187",
+            "printed_pages": "165",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "任意l及实方阵C；假设是C在Fin l→ℝ上的连续线性算子范数<1，而非逐元素最大值。结论是k→∞时Σ(j=0..k)C^j在矩阵空间收敛到(I−C)⁻¹，逆是矩阵逆。有限维下算子与矩阵拓扑相容，条件足以保证可逆与收敛；包含l=0也无矛盾。只是充分条件，不断言必要性，也未证明实际LINCS矩阵必满足此条件。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.lincsConvergence",
+        "verdict": "PASS",
+        "explanation": "任意l及实方阵C；假设是C在Fin l→ℝ上的连续线性算子范数<1，而非逐元素最大值。结论是k→∞时Σ(j=0..k)C^j在矩阵空间收敛到(I−C)⁻¹，逆是矩阵逆。有限维下算子与矩阵拓扑相容，条件足以保证可逆与收敛；包含l=0也无矛盾。只是充分条件，不断言必要性，也未证明实际LINCS矩阵必满足此条件。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

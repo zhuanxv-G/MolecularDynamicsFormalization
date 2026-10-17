@@ -1,0 +1,12 @@
+--- before
++++ after
+@@ -2848,7 +2848,8 @@
+   ext i
+   fin_cases i <;> simp [MolecularDynamics.Chapter04Review.rigidPoissonMatrix,MolecularDynamics.Chapter04Review.skewMatrix,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
+ 
+-/-- source_id: MD-4.4.1-AxisRotation · definition · §4.4.1 · 印刷p.173–174 / PDFp.195–196 -/
++/-- source_id: MD-4.4.1-AxisRotation · definition · §4.4.1 · 印刷p.173–174 / PDFp.195–196 [EXTRA] 24号：三个标准右手轴旋转矩阵的公式定义；第一句平面子流可积性是背景，移出本条承诺，由MD-4.4.1-ExactPlanarRotation的带负角修正版单独给出。 不以矩阵名字推断ODE解。
++-/
+ def axisRotation (i : Fin 3) (φ : ℝ) : MolecularDynamics.Chapter04Review.Mat3 :=
+   if i=0 then !![1,0,0; 0,Real.cos φ,-Real.sin φ; 0,Real.sin φ,Real.cos φ]
+   else if i=1 then !![Real.cos φ,0,Real.sin φ; 0,1,0; -Real.sin φ,0,Real.cos φ]

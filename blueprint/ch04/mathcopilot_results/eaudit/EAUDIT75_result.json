@@ -1,0 +1,230 @@
+{
+  "batch": "EAUDIT75",
+  "input_sha256": {
+    "BATCH_EAUDIT75.md": "a09522f0b0c1d3dbf8662ea9a5cd7d2aa163f23ceb1164c3d749300e70f08f6a",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3-ReactionBalance",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第16页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.reactionBalance",
+          "对所有有限维m、γ、F,q,p，在真实Gram行列式非零条件下断言由逆Gram构造的乘子使G M⁻¹(F−Gᵀλ)+φ=0。φ由实际迭代Fréchet二阶导数沿v=M⁻¹p两次评价，次序无误。此命题是代数平衡，不宣称任意非光滑γ也具有经典Hessian；用于机械系统时再取光滑约束。一般F推广已标明，F=−grad U可实例化。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.reactionBalance",
+        "verdict": "PASS",
+        "explanation": "对所有有限维m、γ、F,q,p，在真实Gram行列式非零条件下断言由逆Gram构造的乘子使G M⁻¹(F−Gᵀλ)+φ=0。φ由实际迭代Fréchet二阶导数沿v=M⁻¹p两次评价，次序无误。此命题是代数平衡，不宣称任意非光滑γ也具有经典Hessian；用于机械系统时再取光滑约束。一般F推广已标明，F=−grad U可实例化。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-GramPositive",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第17页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.gramPositive",
+          "对任意有限Nc,Mc，严格正的每个质量以及真实梯度族的实线性独立，推出G diag(m⁻¹) Gᵀ正定。对于非零a，二次型为Σ_i m_i⁻¹(Σ_j a_j G_ji)²，独立性保证至少一项非零；这验证充分条件，不把正定当作前提。statement_scope已明确仅为EXTRA辅助；原句乘子可解内容由第16条单独完整承担。零维情形与标准正定语义相容。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.gramPositive",
+        "verdict": "PASS",
+        "explanation": "对任意有限Nc,Mc，严格正的每个质量以及真实梯度族的实线性独立，推出G diag(m⁻¹) Gᵀ正定。对于非零a，二次型为Σ_i m_i⁻¹(Σ_j a_j G_ji)²，独立性保证至少一项非零；这验证充分条件，不把正定当作前提。statement_scope已明确仅为EXTRA辅助；原句乘子可解内容由第16条单独完整承担。零维情形与标准正定语义相容。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-GramInvertible",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LATEX_OVERESCAPED_CONTEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-GramInvertible",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "153",
+          "pdf_page": "175",
+          "statement_latex": "Assuming $g'(q)M^{-1}g'(q)^T$ is invertible, we may solve for $\\lambda$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$q,p\\in\\mathbb R^{N_c}$ 为位置和动量；$M$ 为质量矩阵，$F(q)=-\\nabla U(q)$（PDF174/印刷152，(4.7)–(4.8)）。",
+            "$g:\\mathbb R^{N_c}\\to\\mathbb R^l$ 汇集约束，$g\\prime(q)$ 为其 Jacobian，$\\lambda\\in\\mathbb R^l$ 为 Lagrange 乘子（PDF174/印刷152）。",
+            "$\\varphi_k=p^TM^{-1}\\nabla^2g_k(q)M^{-1}p$，且 $g\\prime(q)M^{-1}[F-g\\prime(q)^T\\lambda]+\\varphi\\equiv0$（PDF175/印刷153，页首两个展示公式）。"
+          ],
+          "issues": [
+            "context_notation中的LaTeX命令在JSON解码后仍含双反斜线，应为单反斜线。"
+          ],
+          "lean_decl": "MD.Ch04.gramInvertible",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookConstraintGram_det_ne_zero"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]质量正及梯度独立推出真实Gram det≠0；不是将该结论作为前提。",
+            "[EXTRA] 保留原可逆性充分条件证明，补det≠0下反力乘子唯一可解及明确逆Gram公式；F和φ是给定线性方程数据，不把所求λ作假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT08_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:58:11.914481",
+              "before_sha256": "92398eda7b398e738fb7d43e850bd05a8bf60e72dd0febfbebd2e76e9000588b",
+              "after_sha256": "1d9c78e00d2cf8de46821f3ac1b1285b7d877ff23d44fed021e533a1b1f78193",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH09_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "LATEX_OVERESCAPED_CONTEXT",
+            "detail": "context_notation中的LaTeX命令在JSON解码后仍含双反斜线，应为单反斜线。"
+          }
+        ],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第18页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.gramInvertible, MD.Ch04.gramInvertible_multiplier",
+          "gramInvertible由正质量和真实梯度独立推出实际Gram det≠0；multiplier在原本的det≠0前提下，对任意维数及给定q,F,φ同时给出存在唯一λ与所有λ的方程↔逆Gram公式。invMass与实际对角逆质量矩阵相同，线性方程整理为Gram λ=G m⁻¹F+φ，正负号及转置正确。F、φ作为给定右端数据而非所求解，不要求把λ存在作为假设；未因sorry判失败。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.gramInvertible",
+        "verdict": "PASS",
+        "explanation": "gramInvertible由正质量和真实梯度独立推出实际Gram det≠0；multiplier在原本的det≠0前提下，对任意维数及给定q,F,φ同时给出存在唯一λ与所有λ的方程↔逆Gram公式。invMass与实际对角逆质量矩阵相同，线性方程整理为Gram λ=G m⁻¹F+φ，正负号及转置正确。F、φ作为给定右端数据而非所求解，不要求把λ存在作为假设；未因sorry判失败。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-CotangentInvariant",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LATEX_OVERESCAPED_CONTEXT",
+          "UNMARKED_EXTRA_GENERAL_FORCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-CotangentInvariant",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "153",
+          "pdf_page": "175",
+          "statement_latex": "Reinserting this expression for $\\lambda$ into (4.8) then gives a system of ordinary differential equations whose solutions, starting from a point on $T^*\\mathcal M$, will remain on $T^*\\mathcal M$ for all time. The co-tangent bundle becomes an invariant manifold of this ODE system. $\\lambda$ is defined at any time by the physical variables $q$ and $p$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$q,p\\in\\mathbb R^{N_c}$ 为位置和动量；$M$ 为质量矩阵，$F(q)=-\\nabla U(q)$（PDF174/印刷152，(4.7)–(4.8)）。",
+            "$g:\\mathbb R^{N_c}\\to\\mathbb R^l$ 汇集约束，$g\\prime(q)$ 为其 Jacobian，$\\lambda\\in\\mathbb R^l$ 为 Lagrange 乘子（PDF174/印刷152）。",
+            "$\\varphi_k=p^TM^{-1}\\nabla^2g_k(q)M^{-1}p$，且 $g\\prime(q)M^{-1}[F-g\\prime(q)^T\\lambda]+\\varphi\\equiv0$（PDF175/印刷153，页首两个展示公式）。",
+            "$\\mathcal M=\\{q:g(q)=0\\}$；$T^*\\mathcal M=\\{(q,p):g(q)=0,\\ g\\prime(q)M^{-1}p=0\\}$（PDF174/印刷152）。"
+          ],
+          "issues": [
+            "context_notation中的LaTeX命令过度转义。",
+            "实际接口对任意位置力F成立，是对书中保守力F=−∇U的推广，应明确标EXTRA。"
+          ],
+          "lean_decl": "MD.Ch04.cotangentInvariant",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookConstrainedODE_cotangent_invariant_of_mass_and_independence"
+          ],
+          "extra_assumptions": [
+            "给定闭区间实际ODE解、C²约束、正质量及沿解梯度独立；“for all time”仅在实际解定义区间，不声称任意长时域解存在。",
+            "[EXTRA] Lean以任意位置力F推广原书F=−∇U；并只断言给定解存在区间内不变性。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT08_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:58:11.914481",
+              "before_sha256": "049cf0767639149d90853ff884d15d87decbf2022c451755baf9a867740d6af2",
+              "after_sha256": "1a2c6c94c1523b46378e9d4f290a863d3e0e17ba72f30dafd2e77b0b9243a71f",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH09_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "LATEX_OVERESCAPED_CONTEXT",
+            "detail": "context_notation中的LaTeX命令过度转义。"
+          },
+          {
+            "code": "UNMARKED_EXTRA_GENERAL_FORCE",
+            "detail": "实际接口对任意位置力F成立，是对书中保守力F=−∇U的推广，应明确标EXTRA。"
+          }
+        ],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第19页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.cotangentInvariant",
+          "在给定实际q,p曲线的Icc 0 τ上，正质量、每个约束C²、沿解梯度独立保证Gram可逆；hq和hp是代入实际逆Gram乘子的ODE，初始位置约束与隐藏约束分别显式给定。结论对每个区间时刻及每个约束同时保持两条件，恰为该余切集合不变性。τ<0时区间空而结论真，τ=0由初值，均无反例。仅在给定解存在区间断言保持是合理的for all time解释，不声称全局解存在；F不必保守，作为更一般力的推广应补标EXTRA。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.cotangentInvariant",
+        "verdict": "PASS",
+        "explanation": "在给定实际q,p曲线的Icc 0 τ上，正质量、每个约束C²、沿解梯度独立保证Gram可逆；hq和hp是代入实际逆Gram乘子的ODE，初始位置约束与隐藏约束分别显式给定。结论对每个区间时刻及每个约束同时保持两条件，恰为该余切集合不变性。τ<0时区间空而结论真，τ=0由初值，均无反例。仅在给定解存在区间断言保持是合理的for all time解释，不声称全局解存在；F不必保守，作为更一般力的推广应补标EXTRA。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-ReducedFieldRegularity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "本轮依据：R3_任务.md 条目 1/10 及 R3_PAGES.pdf 附件第1页（原书 PDF 175 / 印刷 153）；实际渲染图 R3_evidence/page-01.png。",
+          "逐字核对所选英文片段，原页在 equations 后继续叙述不变性；本条 statement_scope 截止于该词，没有将后续的全时存在或不变性算入本条结论。",
+          "页首 φ_k=p(t)^T M^{-1}∇²g_k(q(t))M^{-1}p(t) 及 g′(q)M^{-1}[F−g′(q)^Tλ]+φ≡0 与 context_notation 一致；原页明确先假定 Gram 矩阵可逆再消去 λ。",
+          "印刷页、原书 PDF 页及小节号一致。context_notation 对 PDF174 的引用不在本附件中，本轮没有宣称已核对该前页，也没有使用旧工程补证。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.reducedFieldRegularity",
+        "verdict": "PASS",
+        "explanation": "对任意自然数 Nc、Mc，质量 m:Fin Nc→ℝ、Mc 个实值位置约束 γ、势 U 及相点 z=(q,p)，前提为逐项正质量、U 全局 C²、γ_j 全局 C³，以及真实坐标梯度在 q 处线性独立；结论恰为代入反作用乘子后的相空间向量场在 z 处 C¹。所给依赖将逆质量实现为 diag(1/m_i)，Jacobian 的第 j 行实现为 Dγ_j，Gram 为 GM^{-1}G^T，曲率为 D²γ_j[M^{-1}p,M^{-1}p]，乘子为 Gram^{-1}(GM^{-1}F+φ)，动量分量为 F−G^Tλ，符号及对象相符。上述正则性和质量/独立性均有 [EXTRA] 说明，确保局部逆矩阵有意义；本定理是所引 ODE 构造的局部正则性补充，没有声称已构造流、证明约束不变或证明全时存在。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

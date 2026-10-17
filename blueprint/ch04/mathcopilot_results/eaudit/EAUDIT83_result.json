@@ -1,0 +1,436 @@
+{
+  "batch": "EAUDIT83",
+  "input_sha256": {
+    "BATCH_EAUDIT83.md": "aa0b4541c270d222feb95e62f1e4f07b4aef0e10df8915cf11b631cd80678206",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4-WaterPairPotential",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "DOMAIN_ANNOTATION_NOT_ENCODED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-WaterPairPotential",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "166–167",
+          "pdf_page": "188–189",
+          "statement_latex": "The potential energy for the interaction of a pair of such molecules, the sets of whose charge sites are denoted by $A$ and $B$, takes the form\n\\[\\varphi^{\\rm water-water}=\\sum_{i\\in A}\\sum_{j\\in B}\\frac{k_1Q_iQ_j}{r_{ij}}+\\frac{k_2}{r_{OO}^{12}}-\\frac{k_3}{r_{OO}^{6}},\\]\nwhere $r_{OO}$ represents the distance between the oxygen atoms of the two molecules, and $k_1,k_2,k_3$ are positive constants.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "A、B为两分子电荷位点集合；TIP4P每分子有三个电荷位点（两个氢核及一个ghost位点）；Q_i为位点电荷，r_{ij}为位点间距离。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.waterPairPotential",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "有限位点通过Fin实现；正距离及k1,k2,k3>0是物理应用域，当前Lean定义未以类型或前提强制这些条件，而是在全体实参数上全定义地延拓公式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT17_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:01:02.573179",
+              "before_sha256": "eeb0d80682adf800ee0f7775e48f7080b97cdbcaf88bebbaa96340b14aa65442",
+              "after_sha256": "cf9c173ab5940ce267532d1af0983043efa8349c38deaab8505920944e937a39",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:27:39.597807",
+              "before_sha256": "cf9c173ab5940ce267532d1af0983043efa8349c38deaab8505920944e937a39",
+              "after_sha256": "9a08913c13fd0333d724f7b8bc9cca7e8b9b872d21dce3494f8ea3f5ee97b178",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "167",
+                  "after": "166–167"
+                },
+                "pdf_page": {
+                  "before": "189",
+                  "after": "188–189"
+                }
+              },
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
+        },
+        "issues": [
+          {
+            "code": "DOMAIN_ANNOTATION_NOT_ENCODED",
+            "field": "extra_assumptions",
+            "explanation": "有限位点通过Fin实现；正距离及k1,k2,k3>0是物理应用域，当前Lean定义未以类型或前提强制这些条件，而是在全体实参数上全定义地延拓公式。",
+            "severity": "annotation"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              5,
+              6
+            ],
+            "book_pdf_pages": "188–189",
+            "printed_pages": "166–167",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "两个有限电荷集合用Fin a、Fin b参数化；Coulomb双和、氧间12次排斥和6次吸引的符号、指数及系数均对应原式。签名接受所有实数，实际没有k1,k2,k3及距离的正性前提；这是Lean实数除法的全定义代数表达式，在正文正参数、正距离域上解释为势能。应纠正EXTRA中仿佛已限制形式定义域的表述，不应把零距离处的形式值解释为物理势。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.waterPairPotential",
+        "verdict": "PASS",
+        "explanation": "两个有限电荷集合用Fin a、Fin b参数化；Coulomb双和、氧间12次排斥和6次吸引的符号、指数及系数均对应原式。签名接受所有实数，实际没有k1,k2,k3及距离的正性前提；这是Lean实数除法的全定义代数表达式，在正文正参数、正距离域上解释为势能。应纠正EXTRA中仿佛已限制形式定义域的表述，不应把零距离处的形式值解释为物理势。",
+        "counterexample": null,
+        "suggested_fix": "仅更新JSON注释或引文，见corrected_json；无需修改本条Lean代数签名。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-CenterMass",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TOTALIZED_DIVISION_CONTEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-CenterMass",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "167",
+          "pdf_page": "189",
+          "statement_latex": "The atomic positions may be referred to a coordinate system placed at the center of mass of the collection $q_{\\rm cm}=\\frac{\\sum_{i=1}^Nm_iq_i}{M}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "q_i为原子位置、m_i为其质量，M=∑_{i=1}^N m_i；q_cm为质心位置（物理适用域M>0）。",
+            "当前Lean定义在M=0时采用实数逆的全定义约定；原文质心解释仅用于M≠0，物理质量情形为M>0。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.centerMass",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT17_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:01:02.573339",
+              "before_sha256": "696ec4ae28f3df0e62e686245745656844b51d3cd1b2d1f9b30c9c48720237c1",
+              "after_sha256": "96a93c8455205448e64c2183900f9a1131a67d5a6e7914c585e218c26306b1ca",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "TOTALIZED_DIVISION_CONTEXT",
+            "field": "context_notation",
+            "explanation": "当前Lean定义在M=0时采用实数逆的全定义约定；原文质心解释仅用于M≠0，物理质量情形为M>0。",
+            "severity": "annotation"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              7
+            ],
+            "book_pdf_pages": "189",
+            "printed_pages": "167",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "位置是三维实向量，质量是任意实权重；totalMass确为Σm_i。逆总质量的标量作用等于原式向量除以M。定义无M≠0前提，Lean取0⁻¹=0；在物理应用域M>0时忠实，在M=0时只是代数延拓。原文没有给零总质量情形赋予质心含义。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.centerMass",
+        "verdict": "PASS",
+        "explanation": "位置是三维实向量，质量是任意实权重；totalMass确为Σm_i。逆总质量的标量作用等于原式向量除以M。定义无M≠0前提，Lean取0⁻¹=0；在物理应用域M>0时忠实，在M=0时只是代数延拓。原文没有给零总质量情形赋予质心含义。",
+        "counterexample": null,
+        "suggested_fix": "仅更新JSON注释或引文，见corrected_json；无需修改本条Lean代数签名。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-RelativePositions",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              8
+            ],
+            "book_pdf_pages": "189",
+            "printed_pages": "167",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "对任意N、实质量和三维位置，逐项定义δ_i=q_i−centerMass m q，故q_i=q_cm+δ_i恒成立。仅定义相对位置；未在本声明得出Σm_iδ_i=0。该后件已明确分配给RelativeWeightedZero，未在本任务给出，不能声称已核验该外部定理；尤其不能在任意总质量为零的实权重上无条件推广零和。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.relativePositions",
+        "verdict": "PASS",
+        "explanation": "对任意N、实质量和三维位置，逐项定义δ_i=q_i−centerMass m q，故q_i=q_cm+δ_i恒成立。仅定义相对位置；未在本声明得出Σm_iδ_i=0。该后件已明确分配给RelativeWeightedZero，未在本任务给出，不能声称已核验该外部定理；尤其不能在任意总质量为零的实权重上无条件推广零和。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-KineticSplit",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ALGEBRAIC_SCOPE_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-KineticSplit",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "167",
+          "pdf_page": "189",
+          "statement_latex": "Thus the kinetic energy becomes\n\\[K=\\frac12\\sum_{i=1}^Nm_i\\|\\dot q_{\\rm cm}\\|^2+\\sum_{i=1}^Nm_i\\dot q_{\\rm cm}\\cdot\\dot\\delta_i+\\frac12\\sum_{i=1}^Nm_i\\|\\dot\\delta_i\\|^2\n=\\frac M2\\|\\dot q_{\\rm cm}\\|^2+\\frac12\\sum_{i=1}^Nm_i\\|\\dot\\delta_i\\|^2,\\]\nwhere we have used the fact that $\\sum_{i=1}^Nm_i\\delta_i\\equiv0$, hence that the time derivative also vanishes, in order to remove the middle term.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "点号表示时间导数；M=∑_{i=1}^N m_i，∑m_i δ_i恒为零；原文将两项分别记为K_trans和K_rot。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.kineticSplit",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "核对速度层面的动能代数分解；假设Σm_i w_i=0，并未形式化从随时间恒零的相对位置和求导得到该前提的步骤。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT17_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:01:02.573552",
+              "before_sha256": "b048541b91b64bb5a56898e8c3f13735551d3327565b17288a7ff170b375888a",
+              "after_sha256": "9933d7a2d5b8f2e8d377daa725c0f29f7cf05ba8ec7eee52409c5900d9ff0949",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH20_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "ALGEBRAIC_SCOPE_CLARIFICATION",
+            "field": "statement_scope",
+            "explanation": "核对速度层面的动能代数分解；假设Σm_i w_i=0，并未形式化从随时间恒零的相对位置和求导得到该前提的步骤。",
+            "severity": "annotation"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              9
+            ],
+            "book_pdf_pages": "189",
+            "printed_pages": "167",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "对任意N、实权重、公共速度v及相对速度w_i，以Σm_i w_i=0为前提，给出Σm_i|v+w_i|²/2=M|v|²/2+Σm_i|w_i|²/2。dot实际为坐标乘积和，确为欧氏内积；代数上不需要质量正性。签名没有时间变量、轨道或求导，故原文从Σm_iδ_i恒零推导其时间导数为零这一解释应明确属于应用背景，前提hz是其速度层面的代数输入。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.kineticSplit",
+        "verdict": "PASS",
+        "explanation": "对任意N、实权重、公共速度v及相对速度w_i，以Σm_i w_i=0为前提，给出Σm_i|v+w_i|²/2=M|v|²/2+Σm_i|w_i|²/2。dot实际为坐标乘积和，确为欧氏内积；代数上不需要质量正性。签名没有时间变量、轨道或求导，故原文从Σm_iδ_i恒零推导其时间导数为零这一解释应明确属于应用背景，前提hz是其速度层面的代数输入。",
+        "counterexample": null,
+        "suggested_fix": "仅更新JSON注释或引文，见corrected_json；无需修改本条Lean代数签名。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-SecondMoment",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              10
+            ],
+            "book_pdf_pages": "190",
+            "printed_pages": "168",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "任意有限N、实权重及三维参考向量δ，outer v的(i,j)分量为v_i v_j，有限和正是R=Σm_iδ_i(0)δ_i(0)ᵀ。δ参数应解释为固定初始参考位置，不是随时间的当前位置；定义没有错误引入时间依赖。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.secondMoment",
+        "verdict": "PASS",
+        "explanation": "任意有限N、实权重及三维参考向量δ，outer v的(i,j)分量为v_i v_j，有限和正是R=Σm_iδ_i(0)δ_i(0)ᵀ。δ参数应解释为固定初始参考位置，不是随时间的当前位置；定义没有错误引入时间依赖。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationKinetic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              11
+            ],
+            "book_pdf_pages": "190",
+            "printed_pages": "168",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "任意两个实3×3矩阵R、dΘ，定义trace(dΘ R dΘᵀ)/2。R的质量外积结构及dΘ为旋转轨道导数是应用解释，并非此代数定义的前提。有限粒子和与trace的等价已在明确scope中分给下一条RotationTraceIdentity；本条不单独声称两式等价。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationKinetic",
+        "verdict": "PASS",
+        "explanation": "任意两个实3×3矩阵R、dΘ，定义trace(dΘ R dΘᵀ)/2。R的质量外积结构及dΘ为旋转轨道导数是应用解释，并非此代数定义的前提。有限粒子和与trace的等价已在明确scope中分给下一条RotationTraceIdentity；本条不单独声称两式等价。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationTraceIdentity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              12
+            ],
+            "book_pdf_pages": "190",
+            "printed_pages": "168",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "对任意N、实权重m、三维参考向量δ和任意实3×3矩阵dΘ，结论将Σm_i dot(dΘδ_i,dΘδ_i)/2等于rotationKinetic(secondMoment m δ,dΘ)。展开后恰是δ_iᵀdΘᵀdΘδ_i与trace形式的恒等式；不需正交或正质量，使用任意矩阵比物理应用更一般且正确。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationTraceIdentity",
+        "verdict": "PASS",
+        "explanation": "对任意N、实权重m、三维参考向量δ和任意实3×3矩阵dΘ，结论将Σm_i dot(dΘδ_i,dΘδ_i)/2等于rotationKinetic(secondMoment m δ,dΘ)。展开后恰是δ_iᵀdΘᵀdΘδ_i与trace形式的恒等式；不需正交或正质量，使用任意矩阵比物理应用更一般且正确。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationSkew",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              13,
+              14
+            ],
+            "book_pdf_pages": "190–191",
+            "printed_pages": "168–169",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "量词为真实矩阵轨道Θ、时刻t及导数d；HasDerivAt给出真实导数，邻域eventually正交条件足以对ΘΘᵀ=I求导。结论是(d*(Θ t)ᵀ)ᵀ=−(d*(Θ t)ᵀ)，即乘积d*(Θ t)ᵀ反对称。由矩阵转置乘法公式，它等价于d*(Θ t)ᵀ+Θ t*dᵀ=0，故同时涵盖原文中间恒等式；未将待证导数恒等式放入假设。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationSkew",
+        "verdict": "PASS",
+        "explanation": "量词为真实矩阵轨道Θ、时刻t及导数d；HasDerivAt给出真实导数，邻域eventually正交条件足以对ΘΘᵀ=I求导。结论是(d*(Θ t)ᵀ)ᵀ=−(d*(Θ t)ᵀ)，即乘积d*(Θ t)ᵀ反对称。由矩阵转置乘法公式，它等价于d*(Θ t)ᵀ+Θ t*dᵀ=0，故同时涵盖原文中间恒等式；未将待证导数恒等式放入假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

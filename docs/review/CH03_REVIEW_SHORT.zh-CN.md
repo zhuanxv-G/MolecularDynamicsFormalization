@@ -1,3 +1,5 @@
+> 已过时，以 [CH03_SUMMARY_FOR_MENTOR.zh-CN.md](CH03_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
+
 # 第3章导师快速审阅（15条）
 
 印刷97–136 / PDF119–158，止于印刷136的Exercises标题；数值实验、图表及纯实现伪代码排除。

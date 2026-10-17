@@ -1,0 +1,390 @@
+{
+  "total": 78,
+  "counts": {
+    "FAIL": 10,
+    "PASS": 55,
+    "NEEDS_HUMAN": 13
+  },
+  "bindings": [
+    {
+      "batch": "EAUDIT67",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT67_result.json",
+      "sha256": "1bd1b27f4f5d6ec5b09aaa23f1b6b4ba2890bc89cd43139f126f92fa3345fb38",
+      "input_hashes": {
+        "BATCH_EAUDIT67.md": {
+          "expected": "c2c695e6f78de6ebf3eefb5487aabe1065bd70f2d2100bc8736e9ce67b6f1cd0",
+          "actual": "c2c695e6f78de6ebf3eefb5487aabe1065bd70f2d2100bc8736e9ce67b6f1cd0"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT68",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT68_result.json",
+      "sha256": "d89675021265c4c2c691b18065be9afef0b9f9517305fb8672ee2601b4435bec",
+      "input_hashes": {
+        "BATCH_EAUDIT68.md": {
+          "expected": "0736987ea1550526c089dc346ba59b77235ee155a5e5446639d34325bb25b8fd",
+          "actual": "0736987ea1550526c089dc346ba59b77235ee155a5e5446639d34325bb25b8fd"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT69",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT69_result.json",
+      "sha256": "2bbf9a196bba423e47eb05825268c9158ff411acd26a01e921a30d6534ae63cd",
+      "input_hashes": {
+        "BATCH_EAUDIT69.md": {
+          "expected": "cc31dbd2dfc4c0059686422b846f2e2abdaf9388a1c5d2ed371c242df2bc2b05",
+          "actual": "cc31dbd2dfc4c0059686422b846f2e2abdaf9388a1c5d2ed371c242df2bc2b05"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT70",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT70_result.json",
+      "sha256": "22a72c57bc2bba67809cd63a4d5921d6bf29386603673dda58a0194500b5462f",
+      "input_hashes": {
+        "BATCH_EAUDIT70.md": {
+          "expected": "dd1f9336814bd2dfbc1edf9c5ba959b0cdba98c9235e1b7cb51bdf9b40666701",
+          "actual": "dd1f9336814bd2dfbc1edf9c5ba959b0cdba98c9235e1b7cb51bdf9b40666701"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT71",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT71_result.json",
+      "sha256": "aa807c3b21500c42c84b0a885d77da4c08c89e27fe89003c3719f4f236521e80",
+      "input_hashes": {
+        "BATCH_EAUDIT71.md": {
+          "expected": "e69beecfac1e8ad68a7756837f52fa20a6247430fd1879a150bfdedf154cf238",
+          "actual": "e69beecfac1e8ad68a7756837f52fa20a6247430fd1879a150bfdedf154cf238"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT72",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT72_result.json",
+      "sha256": "350ad171a8ca7664ae4a3a72043c0dbed4d9f2046f4f8e2e4ae81a3b3aaa82a2",
+      "input_hashes": {
+        "BATCH_EAUDIT72.md": {
+          "expected": "ac5ea31ef4aa8f65e107b518f1220b0449ea5028534d434cd728d2552218c290",
+          "actual": "ac5ea31ef4aa8f65e107b518f1220b0449ea5028534d434cd728d2552218c290"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT73",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT73_result.json",
+      "sha256": "fadf5a26a79459eddf4ef816a8c8e932368534dc5269105979da97cfef5e3cfa",
+      "input_hashes": {
+        "BATCH_EAUDIT73.md": {
+          "expected": "a35aaad6aacdd4a0c0a5cc3e7790e2b93ddf9953799c24f58de1d9b9a64c74fd",
+          "actual": "a35aaad6aacdd4a0c0a5cc3e7790e2b93ddf9953799c24f58de1d9b9a64c74fd"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT74",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT74_result.json",
+      "sha256": "24108c0d55037a501f00a056b3a07e29568eedc0608ad501c9f6dd159a275228",
+      "input_hashes": {
+        "BATCH_EAUDIT74.md": {
+          "expected": "602c5e9e961c8ef12029cd14732fe164aa283d1603ac5a08abafeae1435ab725",
+          "actual": "602c5e9e961c8ef12029cd14732fe164aa283d1603ac5a08abafeae1435ab725"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT75",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT75_result.json",
+      "sha256": "9a00d2c54daedc4bc546c3824c7441ea3cb7a81dc1e0e14677c86bc36bf376fe",
+      "input_hashes": {
+        "BATCH_EAUDIT75.md": {
+          "expected": "82e5d9c2df5958ed2dbf41324fe46ce657d4dab1eae89a2f49b062bd87dc9704",
+          "actual": "82e5d9c2df5958ed2dbf41324fe46ce657d4dab1eae89a2f49b062bd87dc9704"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT76",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT76_result.json",
+      "sha256": "84543daf166662feb9af9ad04dd8942ff87ebc5b351fc0df584a5e3c21b4b905",
+      "input_hashes": {
+        "BATCH_EAUDIT76.md": {
+          "expected": "d19162a8f77bd922cf74522856142df123ba9850136aeb0ad4676e7d1d02b511",
+          "actual": "d19162a8f77bd922cf74522856142df123ba9850136aeb0ad4676e7d1d02b511"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT77",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT77_result.json",
+      "sha256": "f458b6e288b729303b16908f7f37d50862b85b1c19464873f8c655158efe6434",
+      "input_hashes": {
+        "BATCH_EAUDIT77.md": {
+          "expected": "519b3eba9a3bb88401c688a5f7a09f2a2ab9d367990e2b1c0f5ef9feeea06067",
+          "actual": "519b3eba9a3bb88401c688a5f7a09f2a2ab9d367990e2b1c0f5ef9feeea06067"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT78",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT78_result.json",
+      "sha256": "66a987695d1d1e5094a9793017bb9c69a01bdd1646d9a8360ae9a1810cc840de",
+      "input_hashes": {
+        "BATCH_EAUDIT78.md": {
+          "expected": "830504b7668bc43b4c9fb32c1ce47ec3b4fc2dee078451c08a271fe78cc74ba8",
+          "actual": "830504b7668bc43b4c9fb32c1ce47ec3b4fc2dee078451c08a271fe78cc74ba8"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT79",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT79_result.json",
+      "sha256": "43c69289e057cec46899adbfd39ac45be8c5d602e2c409d71215a863e66a8023",
+      "input_hashes": {
+        "BATCH_EAUDIT79.md": {
+          "expected": "7bcf3292b13a453349db9d10687f9afc5457180357c99194246d953200c457df",
+          "actual": "7bcf3292b13a453349db9d10687f9afc5457180357c99194246d953200c457df"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT80",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT80_result.json",
+      "sha256": "6c0afed7869caf66b04fdd49f966bc7403339361ac4c54411b015e96f7e7a724",
+      "input_hashes": {
+        "BATCH_EAUDIT80.md": {
+          "expected": "def4d7526ff3a1c33a2ffd818617e93b745fa130e81873ede13026f5432db878",
+          "actual": "def4d7526ff3a1c33a2ffd818617e93b745fa130e81873ede13026f5432db878"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT81",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT81_result.json",
+      "sha256": "bed6b88b87ee054ce5677d549fff574471cc88430e82012c0103f3d38ada607d",
+      "input_hashes": {
+        "BATCH_EAUDIT81.md": {
+          "expected": "fce53b0092a564f0c0b99cb4f6d906b8493ed49a1ea7a026fec03ba785deba52",
+          "actual": "fce53b0092a564f0c0b99cb4f6d906b8493ed49a1ea7a026fec03ba785deba52"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT82",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT82_result.json",
+      "sha256": "7231e6fe2cc60e52bedd5f1cda8aad4d6a809fd984044a3f561c9b584371bddb",
+      "input_hashes": {
+        "BATCH_EAUDIT82.md": {
+          "expected": "0a267352ee5d868a7d76b3d44d59c1b380712ea8b6a9723b64abc8b05457a097",
+          "actual": "0a267352ee5d868a7d76b3d44d59c1b380712ea8b6a9723b64abc8b05457a097"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT83",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT83_result.json",
+      "sha256": "75beb4a616fd5b5d6c238ed36f7d2a9c990a776a6fd469a8e2c5df8fd15f26f7",
+      "input_hashes": {
+        "BATCH_EAUDIT83.md": {
+          "expected": "17b0b50577cd4ba2d936a21147a73972b4e2f065d7db8aa5d7b24285edff45f6",
+          "actual": "17b0b50577cd4ba2d936a21147a73972b4e2f065d7db8aa5d7b24285edff45f6"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT84",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT84_result.json",
+      "sha256": "76f47217d79a572058cbfdc0a43ec43d06d123532dfd948aec97db8381624c25",
+      "input_hashes": {
+        "BATCH_EAUDIT84.md": {
+          "expected": "66c9357730fe0be2ea4de3bc8afb04bbffe8dffc08a817ffea579ceab9d658c4",
+          "actual": "66c9357730fe0be2ea4de3bc8afb04bbffe8dffc08a817ffea579ceab9d658c4"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT85",
+      "path": "blueprint/ch03/mathcopilot_results/eaudit/EAUDIT85_result.json",
+      "sha256": "aef9626b484d084b0057966dd4e887e0a35a3c3e98ef33d53a1fda8061e9f636",
+      "input_hashes": {
+        "BATCH_EAUDIT85.md": {
+          "expected": "e6b498656ad8c7f0be8df7520f1c64e57c88907432a88499212c12c0d26328a3",
+          "actual": "e6b498656ad8c7f0be8df7520f1c64e57c88907432a88499212c12c0d26328a3"
+        },
+        "Blueprint/Ch03.lean": {
+          "expected": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+          "actual": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4"
+        },
+        "blueprint/ch03/ch03_source.json": {
+          "expected": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+          "actual": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+        }
+      },
+      "merged_from": "ch03_eaudit_merged"
+    }
+  ]
+}

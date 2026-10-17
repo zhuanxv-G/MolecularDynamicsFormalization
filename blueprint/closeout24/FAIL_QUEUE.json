@@ -1,0 +1,2457 @@
+[
+  {
+    "chapter": 2,
+    "batch": "EAUDIT88",
+    "source_id": "MD-2.4.1-Splitting",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "LEAN_INCOMPLETE_STATEMENT"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-Splitting",
+        "kind": "definition",
+        "label": null,
+        "section": "2.4.1",
+        "printed_page": "83",
+        "pdf_page": "105",
+        "statement_latex": "Let $H(\\boldsymbol q,\\boldsymbol p)=H_1(\\boldsymbol q,\\boldsymbol p)+H_2(\\boldsymbol q,\\boldsymbol p)$ have flow map $\\mathcal F_h$, and indicate by $\\mathcal F_h^1,\\mathcal F_h^2$ the flow maps for the systems with Hamiltonians $H_1,H_2$, respectively. The proposal is that the map\n\\[\\mathcal G_h=\\mathcal F_h^1\\circ\\mathcal F_h^2\\]\nis an approximation of $\\mathcal F_h$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "只定义给定实际子流的组合；近似精度由后项给出，不把任意映射称为实际流。"
+        ],
+        "issues": [
+          {
+            "code": "LEAN_INCOMPLETE_STATEMENT",
+            "note": "bp_splittingMap仅对任意类型E和任意两个函数族F₁、F₂定义F₁ h∘F₂ h，复合公式本身正确。但本条statement_scope含整个引句：H=H₁+H₂、三者Hamilton流及近似结论；当前声明没有H、H₁、H₂、总流F、ODE/Flow前提或任何近似性质。context_notation把精度交给下一条是合理分工说明，却没有建立本条定义与下一条splittingLocal的形式联系；该定理还使用独立的splittingMap定义。按要求核对完整结论，不能把纯组合构造视作全部数学断言已形式化。"
+          }
+        ],
+        "lean_decl": "MD.Ch02.bp_splittingMap",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "APPROVED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT14_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T11:19:46.414902",
+            "before_sha256": "36b43b98e7b04d926a75be3820b903e1ddc5c0574d69fa930ac8be3d19e64387",
+            "after_sha256": "41abf2f7f1fafcb2c6ea11469fac974653a578878d62e45e17c5e018a3b7fdb8",
+            "changed_fields": [
+              "statement_latex"
+            ],
+            "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "LEAN_INCOMPLETE_STATEMENT",
+          "field": "lean_decl",
+          "explanation": "bp_splittingMap仅对任意类型E和任意两个函数族F₁、F₂定义F₁ h∘F₂ h，复合公式本身正确。但本条statement_scope含整个引句：H=H₁+H₂、三者Hamilton流及近似结论；当前声明没有H、H₁、H₂、总流F、ODE/Flow前提或任何近似性质。context_notation把精度交给下一条是合理分工说明，却没有建立本条定义与下一条splittingLocal的形式联系；该定理还使用独立的splittingMap定义。按要求核对完整结论，不能把纯组合构造视作全部数学断言已形式化。"
+        }
+      ],
+      "evidence": [
+        {
+          "phase": "A",
+          "pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            10
+          ],
+          "printed_page": "83",
+          "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。"
+        },
+        {
+          "phase": "C",
+          "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+          "declarations": [
+            "bp_splittingMap"
+          ],
+          "finding": "bp_splittingMap仅对任意类型E和任意两个函数族F₁、F₂定义F₁ h∘F₂ h，复合公式本身正确。但本条statement_scope含整个引句：H=H₁+H₂、三者Hamilton流及近似结论；当前声明没有H、H₁、H₂、总流F、ODE/Flow前提或任何近似性质。context_notation把精度交给下一条是合理分工说明，却没有建立本条定义与下一条splittingLocal的形式联系；该定理还使用独立的splittingMap定义。按要求核对完整结论，不能把纯组合构造视作全部数学断言已形式化。",
+          "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_splittingMap",
+      "verdict": "FAIL",
+      "explanation": "bp_splittingMap仅对任意类型E和任意两个函数族F₁、F₂定义F₁ h∘F₂ h，复合公式本身正确。但本条statement_scope含整个引句：H=H₁+H₂、三者Hamilton流及近似结论；当前声明没有H、H₁、H₂、总流F、ODE/Flow前提或任何近似性质。context_notation把精度交给下一条是合理分工说明，却没有建立本条定义与下一条splittingLocal的形式联系；该定理还使用独立的splittingMap定义。按要求核对完整结论，不能把纯组合构造视作全部数学断言已形式化。",
+      "counterexample": null,
+      "suggested_fix": "保留构造定义；增加带实际Hamilton流关系的近似声明，或在本条明确列出下一条splittingLocal及bp_splittingMap与其组合表达式的对应声明，并明确这是跨条共同覆盖。不得仅凭名字认定任意F₁,F₂是Hamilton子流。"
+    }
+  },
+  {
+    "chapter": 2,
+    "batch": "EAUDIT88",
+    "source_id": "MD-2.4.1-KineticFlow",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "LEAN_INCOMPLETE_STATEMENT",
+        "TOTALIZED_DOMAIN_CLARIFICATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-KineticFlow",
+        "kind": "definition",
+        "label": "Example 2.4",
+        "section": "2.4.1",
+        "printed_page": "83",
+        "pdf_page": "105",
+        "statement_latex": "Let\n\\[H_1(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^TM^{-1}\\boldsymbol p/2,\\qquad H_2(\\boldsymbol q,\\boldsymbol p)=U(\\boldsymbol q),\\]\nthen a splitting method for $H=H_1+H_2$ may be obtained by determining the flow maps for each of the two parts. For $H_1$ we have the differential equations\n\\[\\dot{\\boldsymbol q}=M^{-1}\\boldsymbol p,\\qquad\\dot{\\boldsymbol p}=\\boldsymbol0.\\]\nThe second equation tells us that $\\boldsymbol p$ is constant, so it is fixed at its initial value, whereas the first equation says that $\\boldsymbol q$ evolves on a linear path, hence its flow map is\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p,\\qquad\\boldsymbol P=\\boldsymbol p.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "固定对角质量，mᵢ≠0资格由机械模型；闭式映射逐坐标表达。",
+          "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+        ],
+        "issues": [
+          {
+            "code": "LEAN_INCOMPLETE_STATEMENT",
+            "note": "bp_kineticFlow对任意Nc、m、h、z给出Q_i=q_i+h(m_i)⁻¹p_i与P_i=p_i，坐标公式正确。另两条private声明momentumKickDerivative和momentumKick_hasFDerivAt只论任意C¹力F的kick导数：位置投影不变，动量导数为dp+h DF(q)dq，其类型及前提合理，但与动能Hamilton流识别无关。全部声明均没有H₁=pᵀM⁻¹p/2、H=H₁+H₂、时间ODE或流初值/群律结论，不能核验引句的完整Hamilton流断言。m非零只在context文字中，不是Lean前提；零质量总化可作代数扩展，不能被称为教材M的实际逆。"
+          },
+          {
+            "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+            "note": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+          }
+        ],
+        "lean_decl": "MD.Ch02.bp_kineticFlow",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT14_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T11:19:46.414902",
+            "before_sha256": "c08fe5d8e590cbc6a4afc475f7ab49c7b7f8e13971e68af96a2d437fdb25a1c0",
+            "after_sha256": "1015e30957b256ceea570e068301f743a858b3bd9d54d86c7cd79d8be1e55648",
+            "changed_fields": [
+              "statement_latex"
+            ],
+            "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          },
+          {
+            "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+            "timestamp": "2026-10-16T10:26:18.212960",
+            "before_sha256": "1015e30957b256ceea570e068301f743a858b3bd9d54d86c7cd79d8be1e55648",
+            "after_sha256": "e6fdb34802feac6761387d7e862eaa84b085ae545cd663848898cbb0aeb96772",
+            "changed_fields": [
+              "label",
+              "printed_page",
+              "pdf_page"
+            ],
+            "changes": {
+              "label": {
+                "before": "Example 2.4 (kinetic)",
+                "after": "Example 2.4"
+              },
+              "printed_page": {
+                "before": "83–84",
+                "after": "83"
+              },
+              "pdf_page": {
+                "before": "105–106",
+                "after": "105"
+              }
+            },
+            "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+            "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+        "review_context_pdf_pages": [
+          106
+        ]
+      },
+      "issues": [
+        {
+          "code": "LEAN_INCOMPLETE_STATEMENT",
+          "field": "lean_decl",
+          "explanation": "bp_kineticFlow对任意Nc、m、h、z给出Q_i=q_i+h(m_i)⁻¹p_i与P_i=p_i，坐标公式正确。另两条private声明momentumKickDerivative和momentumKick_hasFDerivAt只论任意C¹力F的kick导数：位置投影不变，动量导数为dp+h DF(q)dq，其类型及前提合理，但与动能Hamilton流识别无关。全部声明均没有H₁=pᵀM⁻¹p/2、H=H₁+H₂、时间ODE或流初值/群律结论，不能核验引句的完整Hamilton流断言。m非零只在context文字中，不是Lean前提；零质量总化可作代数扩展，不能被称为教材M的实际逆。"
+        },
+        {
+          "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+          "field": "context_notation",
+          "explanation": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+        }
+      ],
+      "evidence": [
+        {
+          "phase": "A",
+          "pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            12,
+            13
+          ],
+          "printed_page": "83",
+          "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。Example 2.4及动力学叙述均在附件第12页（印刷83）；第13页（84）是后续势流和组合。所给83–84/105–106页范围包含相邻上下文，不据此虚增本条正文。"
+        },
+        {
+          "phase": "C",
+          "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+          "declarations": [
+            "bp_kineticFlow",
+            "momentumKickDerivative",
+            "momentumKick_hasFDerivAt"
+          ],
+          "finding": "bp_kineticFlow对任意Nc、m、h、z给出Q_i=q_i+h(m_i)⁻¹p_i与P_i=p_i，坐标公式正确。另两条private声明momentumKickDerivative和momentumKick_hasFDerivAt只论任意C¹力F的kick导数：位置投影不变，动量导数为dp+h DF(q)dq，其类型及前提合理，但与动能Hamilton流识别无关。全部声明均没有H₁=pᵀM⁻¹p/2、H=H₁+H₂、时间ODE或流初值/群律结论，不能核验引句的完整Hamilton流断言。m非零只在context文字中，不是Lean前提；零质量总化可作代数扩展，不能被称为教材M的实际逆。",
+          "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_kineticFlow",
+      "verdict": "FAIL",
+      "explanation": "bp_kineticFlow对任意Nc、m、h、z给出Q_i=q_i+h(m_i)⁻¹p_i与P_i=p_i，坐标公式正确。另两条private声明momentumKickDerivative和momentumKick_hasFDerivAt只论任意C¹力F的kick导数：位置投影不变，动量导数为dp+h DF(q)dq，其类型及前提合理，但与动能Hamilton流识别无关。全部声明均没有H₁=pᵀM⁻¹p/2、H=H₁+H₂、时间ODE或流初值/群律结论，不能核验引句的完整Hamilton流断言。m非零只在context文字中，不是Lean前提；零质量总化可作代数扩展，不能被称为教材M的实际逆。",
+      "counterexample": null,
+      "suggested_fix": "保留显式公式及有效辅助导数声明；另补非零（或正）质量域上的动能Hamiltonian定义、该曲线的初值与Hamilton方程/流识别声明。不要把kick导数声明算成kinetic流证明。"
+    }
+  },
+  {
+    "chapter": 2,
+    "batch": "EAUDIT88",
+    "source_id": "MD-2.4.1-PotentialFlow",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "JSON_LATEX_ESCAPE",
+        "LEAN_INCOMPLETE_STATEMENT"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.4.1-PotentialFlow",
+        "kind": "definition",
+        "label": null,
+        "section": "2.4.1",
+        "printed_page": "84",
+        "pdf_page": "106",
+        "statement_latex": "Similarly, the flow map of the system with Hamiltonian $H_2=U$ is\n\\[\\boldsymbol Q=\\boldsymbol q,\\qquad\\boldsymbol P=\\boldsymbol p-h\\nabla U(\\boldsymbol q).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "F=-∇U；实际闭式映射。"
+        ],
+        "issues": [
+          {
+            "code": "JSON_LATEX_ESCAPE",
+            "note": "JSON原串把\\nabla误写为单反斜杠n，解码成换行符加abla，共1处；PDF实际是梯度∇。修正为合法LaTeX反斜杠nabla（JSON编码需双反斜杠）。"
+          },
+          {
+            "code": "LEAN_INCOMPLETE_STATEMENT",
+            "note": "bp_potentialFlow对任意Nc、任意势U及实h返回kick(-fderiv U)。展开得到Q=q、P_i=p_i-h(fderiv ℝ U q)e_i，符号、坐标次序正确。但是声明没有U可微前提，也没有H₂=U∘位置投影及HasDerivAt/Flow性质；fderiv在不可微点总化，不能无条件等同经典梯度。因此它只定义候选公式，没有完整覆盖原书“system with Hamiltonian H₂=U”的实际流断言。"
+          }
+        ],
+        "lean_decl": "MD.Ch02.bp_potentialFlow",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT14_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T11:19:46.414902",
+            "before_sha256": "040b4dcd226289258bd06eb010961d3c5157182b2ecd377e5a6b76c171788db5",
+            "after_sha256": "725116820e28f0413ef1782402ab6b60fc7b32475bef94db32e3080c9410e13b",
+            "changed_fields": [
+              "statement_latex"
+            ],
+            "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "JSON_LATEX_ESCAPE",
+          "field": "statement_latex",
+          "explanation": "JSON原串把\\nabla误写为单反斜杠n，解码成换行符加abla，共1处；PDF实际是梯度∇。修正为合法LaTeX反斜杠nabla（JSON编码需双反斜杠）。"
+        },
+        {
+          "code": "LEAN_INCOMPLETE_STATEMENT",
+          "field": "lean_decl",
+          "explanation": "bp_potentialFlow对任意Nc、任意势U及实h返回kick(-fderiv U)。展开得到Q=q、P_i=p_i-h(fderiv ℝ U q)e_i，符号、坐标次序正确。但是声明没有U可微前提，也没有H₂=U∘位置投影及HasDerivAt/Flow性质；fderiv在不可微点总化，不能无条件等同经典梯度。因此它只定义候选公式，没有完整覆盖原书“system with Hamiltonian H₂=U”的实际流断言。"
+        }
+      ],
+      "evidence": [
+        {
+          "phase": "A",
+          "pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            14
+          ],
+          "printed_page": "84",
+          "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。原文转录更正见issues；修正只恢复PDF文字/符号，不改写书中数学。"
+        },
+        {
+          "phase": "C",
+          "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+          "declarations": [
+            "bp_potentialFlow"
+          ],
+          "finding": "bp_potentialFlow对任意Nc、任意势U及实h返回kick(-fderiv U)。展开得到Q=q、P_i=p_i-h(fderiv ℝ U q)e_i，符号、坐标次序正确。但是声明没有U可微前提，也没有H₂=U∘位置投影及HasDerivAt/Flow性质；fderiv在不可微点总化，不能无条件等同经典梯度。因此它只定义候选公式，没有完整覆盖原书“system with Hamiltonian H₂=U”的实际流断言。",
+          "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_potentialFlow",
+      "verdict": "FAIL",
+      "explanation": "bp_potentialFlow对任意Nc、任意势U及实h返回kick(-fderiv U)。展开得到Q=q、P_i=p_i-h(fderiv ℝ U q)e_i，符号、坐标次序正确。但是声明没有U可微前提，也没有H₂=U∘位置投影及HasDerivAt/Flow性质；fderiv在不可微点总化，不能无条件等同经典梯度。因此它只定义候选公式，没有完整覆盖原书“system with Hamiltonian H₂=U”的实际流断言。",
+      "counterexample": "取一维U(q)=|q|，q=0处经典梯度不存在；Lean的fderiv总化仍使本定义有值。这说明定义的参数域比经典Hamilton流陈述宽，不能据此识别为该经典流；不是对光滑势的书中公式的反例。",
+      "suggested_fix": "修复JSON梯度转义；增加适当可微/C¹条件、H₂及候选轨道的Hamilton方程和初值声明，或清楚把当前条目缩为公式定义并另设流识别义务。"
+    }
+  },
+  {
+    "chapter": 2,
+    "batch": "EAUDIT94",
+    "source_id": "MD-2.5.1-RK4",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "MISSING_ORDER_DECLARATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-2.5.1-RK4",
+        "kind": "definition",
+        "label": null,
+        "section": "2.5.1",
+        "printed_page": "89",
+        "pdf_page": "111",
+        "statement_latex": "An example of a popular 4th order explicit method is the choice of matrix $A$ with coefficients $a_{ij}\\equiv 0$ except $a_{21}=1/2$, $a_{32}=1/2$ and $a_{43}=1$, and $b_1=1/6$, $b_2=1/3$, $b_3=1/3$, $b_4=1/6$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "实际四阶段定义正确复现A/b；本条当前所给Lean未覆盖四阶结论，尚需明确另列声明。"
+        ],
+        "issues": [
+          "定义复现系数，但完整声明列表没有四阶定理；请提供另列条目的source_id/声明或补充适当正则性下的阶数声明。"
+        ],
+        "lean_decl": "MD.Ch02.bp_rk4",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT20_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T11:26:18.510671",
+            "before_sha256": "320c7304b6dfeb67935ad056f91684e42cdc98783e02f259f2ae5f90d7a97f79",
+            "after_sha256": "e0551ea2e00095e9f840a6ba2123f19f6e70b605c76197850f1c5c48e943b55c",
+            "changed_fields": [
+              "statement_latex"
+            ],
+            "raw_return": "blueprint/ch02/mathcopilot_results/BATCH27_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        "定义复现系数，但完整声明列表没有四阶定理；请提供另列条目的source_id/声明或补充适当正则性下的阶数声明。"
+      ],
+      "evidence": [
+        "R4_PAGES.pdf 附件第16页；书面页码89。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+        "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch02.bp_rk4",
+      "verdict": "FAIL",
+      "explanation": "四阶段定义正确展开a21=a32=1/2,a43=1及权重1/6,1/3,1/3,1/6，对任意有限维实向量场f、h,z有效。但本条完整当前Lean只有算法定义，未包含原句的四阶结论；context_notation称“四阶陈述单列”，本任务给出的同一source_id全部声明中没有该条或可核对的映射。因完整结论覆盖缺失判FAIL，而非算法公式错误。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+      "counterexample": null,
+      "suggested_fix": "定义复现系数，但完整声明列表没有四阶定理；请提供另列条目的source_id/声明或补充适当正则性下的阶数声明。"
+    }
+  },
+  {
+    "chapter": 3,
+    "batch": "EAUDIT67",
+    "source_id": "MD-3-ModifiedConstruction",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "C_REGULARITY_MISMATCH",
+        "EXTRA_INACCURATE_REGULARITY"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3-ModifiedConstruction",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3",
+        "printed_page": "97",
+        "pdf_page": "119",
+        "statement_latex": "We can express the fundamental consequence as follows: not only are Hamiltonian flow maps symplectic, but also near-identity symplectic maps are (in an approximate sense) Hamiltonian flow maps [31]. The fact leads to the existence of a modified (perturbed) Hamiltonian from which the discrete trajectory may be derived (as snapshots of continuous trajectories). In some cases we may derive this perturbed Hamiltonian as an expansion in powers of the stepsize.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "The starting point is that symplectic integrators are symplectic maps that are “near to the identity” since they depend on a parameter (the stepsize $h$) which can be chosen as small as needed, and, if consistent, in the limit $h\\to0$, such a map must tend to the identity map."
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.modifiedConstruction",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "近恒等、光滑、阶r≥1用smoothSymplecticData实际定义表达：开放凸D、紧凸B⊆D、H及(h,z)↦G_h(z)无限可微、G₀=id、逐h辛、实际原始ODE流和局部阶。",
+          "按任意有限截断匹配解释“in an approximate sense”；不将形式无限级数当实际收敛解，不将finiteMatching结论作前提。",
+          "[EXTRA] EAUDIT01补原首句Hamiltonian流辛性为独立完整结论，与原近恒等辛映射修正Hamiltonian有限匹配合取；两个真实项目命题全部量词展开供审校，未把流辛性作构造前提。",
+          "R1审校：当前摘录 smoothSymplecticData 的 H、G 和 Hj 输出均使用 ContDiffOn ℝ ⊤；按本任务的指定版本说明为解析资格，不能标作已实现 C∞。本条 Lean 尚需把对应平滑资格统一恢复为 scoped ∞ 后另审。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT01_LOCAL_PAGE_RECHECK",
+            "timestamp": "2026-10-13T20:57:11.855696",
+            "before_sha256": "6172396c1a8ccaf362e87370db94fbb7b43d3654feaa980c0b88a4a3fd23e237",
+            "after_sha256": "6172396c1a8ccaf362e87370db94fbb7b43d3654feaa980c0b88a4a3fd23e237",
+            "changed_fields": [],
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH01_result.json",
+            "raw_sha256": "120deaa07feab89b86e0bb7ae296ba4fadc1614604f7bb1e18866e1acb26bb97",
+            "reason": "原页119/120/122视觉核对后合并A的标点/记号修订；按绑定FAIL补齐四条全部结论/阶数/真实导数资格，不采用未批准数学勘误。"
+          },
+          {
+            "stage": "EAUDIT02_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T11:56:17.118408",
+            "before_sha256": "8ec25d4f891a8d9a13183996f28ad1b6c4f39de0221b7861bcc5e49ffafe2a84",
+            "after_sha256": "de3b6f6d67ee086cb9b46d092f1f217d63748eec64be2929a346fa0b1ab4dd8c",
+            "changed_fields": [],
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH01_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "stage": "C",
+          "field": "extra_assumptions",
+          "detail": "smoothSymplecticData 及 Hj 输出中的裸 ⊤，按本任务第17条给出的指定版本说明为解析而非 C∞；本条注释却说无限可微。签名把适用对象收窄，且把系数结论强化到解析，未保留所宣称 smooth 版本。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "source": "/workspace/R1_PAGES.pdf 附件第1页；印刷页 97 / 原PDF页 119",
+          "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+          "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+        },
+        {
+          "stage": "C",
+          "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+          "declarations": [
+            "modifiedConstruction"
+          ],
+          "finding": "完整结论是 Hamiltonian 流辛性与修正 Hamiltonian 有限匹配的合取，没有把其中任一结论当作前提。前者量化 n,H,Φ,τ，H 为 C²、Φ 为 C¹，初值恒等且在 Icc 0 τ 满足实际 ODE；τ<0 时结论区间为空，τ=0 时由初值恒等成立。后者量化 n,r,H,D,B,G,Φ；0<r、开放凸 D、紧凸 B⊆D、G₀=id、逐 h 辛、实际流与局部误差均已展开。Hj 是一次选择的整个序列，对所有 k≥r 存在 δ,A,Γ，截断 Hamiltonian 含 r 至 k 次项、轨道留在 D、误差 ≤A h^(k+1)，只断言正小步长的有限截断。问题在于 smoothSymplecticData、Hj 输出采用 ContDiffOn ℝ ⊤，按本任务给出的版本约定是解析资格，不能称作原文的 C∞ 资格；与同批第17条特别修复说明矛盾。局部阶只在 B 上给出，本次不将它擅自提升为 D 上的阶条件。",
+          "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.modifiedConstruction",
+      "verdict": "FAIL",
+      "explanation": "完整结论是 Hamiltonian 流辛性与修正 Hamiltonian 有限匹配的合取，没有把其中任一结论当作前提。前者量化 n,H,Φ,τ，H 为 C²、Φ 为 C¹，初值恒等且在 Icc 0 τ 满足实际 ODE；τ<0 时结论区间为空，τ=0 时由初值恒等成立。后者量化 n,r,H,D,B,G,Φ；0<r、开放凸 D、紧凸 B⊆D、G₀=id、逐 h 辛、实际流与局部误差均已展开。Hj 是一次选择的整个序列，对所有 k≥r 存在 δ,A,Γ，截断 Hamiltonian 含 r 至 k 次项、轨道留在 D、误差 ≤A h^(k+1)，只断言正小步长的有限截断。问题在于 smoothSymplecticData、Hj 输出采用 ContDiffOn ℝ ⊤，按本任务给出的版本约定是解析资格，不能称作原文的 C∞ 资格；与同批第17条特别修复说明矛盾。局部阶只在 B 上给出，本次不将它擅自提升为 D 上的阶条件。",
+      "counterexample": null,
+      "suggested_fix": "只读审校未改 Lean。将 smoothSymplecticData 中 H、G 及 modifiedConstruction_statement 中 Hj 的 ContDiffOn 阶数统一改成指定版本的 scoped ∞，保留完整合取、全部量词与有限匹配结论；另行检查修订后的命题，不以现有 sorry 判失败。"
+    }
+  },
+  {
+    "chapter": 3,
+    "batch": "EAUDIT70",
+    "source_id": "MD-3.3-DifferenceCommutator",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "A_DISPLAY_TERM_OMITTED",
+        "C_EXTRA_CUBIC_MISSING"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.3-DifferenceCommutator",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.3",
+        "printed_page": "104",
+        "pdf_page": "126",
+        "statement_latex": "So the difference is\n\\[\\begin{aligned}e^{hA}e^{hB}-e^{h(A+B)}&=\\frac{h^2}{2}(AB-BA)\\\\&\\quad+\\frac{h^3}{6}(2AB^2+2A^2B-BA^2-BAB-B^2A-ABA)+O(h^4)\\\\&=\\frac{h^2}{2}[A,B]+O(h^3),\\end{aligned}\\]\nwhere $[A,B]=AB-BA$ is the commutator of $A$ and $B$.\nFor a splitting method, we have, replacing $A$ by $\\mathcal L_{H_1}$ and $B$ by $\\mathcal L_{H_2}$,\n\\[e^{h\\mathcal L_{H_1}}e^{h\\mathcal L_{H_2}}-e^{h\\mathcal L_H}=\\frac{h^2}{2}[\\mathcal L_{H_1},\\mathcal L_{H_2}]+O(h^3).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$[A,B]=AB-BA$定义合并旧CH03-032；Hamiltonian算子是同一形式代数恒等式的实例；H=H₁+H₂及Lie加法见p.103/PDF125。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.differenceCommutator",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookFormalOperatorDifference_coeff_two"
+        ],
+        "extra_assumptions": [
+          "[EXTRA] 当前摘录合取零次/一次/二次系数，并保留原二次系数辅助定理；原页三次系数尚未写入这些声明，R1判覆盖不完整。完整陈述中的 sorry 不作为本次失败原因。",
+          "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT06_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T12:04:52.365030",
+            "before_sha256": "4900ca0b64dc0c57f28fd88769cd8108b0a8f1ccf3f3b960fb298d8d1825c32a",
+            "after_sha256": "5f854aba91b319dd5c7e87f4fcbab3a3863d6b9bf4910f6a7b59855bda86c328",
+            "changed_fields": [],
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          },
+          {
+            "stage": "EAUDIT40_LOCAL_REPAIR",
+            "timestamp": "2026-10-16T09:36:10.671141",
+            "before_sha256": "5f854aba91b319dd5c7e87f4fcbab3a3863d6b9bf4910f6a7b59855bda86c328",
+            "after_sha256": "9c13b9b1aee97bbf925dbb24272a4c59287591532cf092534e042a6508933fe5",
+            "changed_fields": [],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT40/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "stage": "A",
+          "field": "statement_latex",
+          "detail": "原页 So the difference is 后同一展示式先给 h² 项、h³ 项和 O(h⁴)，再写成 h²[A,B]/2+O(h³)。当前 JSON 只录后一个等式，遗漏中间三次项；此项亦为 EXTRA 明确要求审校的结论。"
+        },
+        {
+          "stage": "C",
+          "field": "differenceCommutator / differenceCommutator_coeff2 / differenceCommutator_hamiltonian",
+          "detail": "一般版和 Hamiltonian 版均只断言 coeff 0、1、2；辅助版只有 coeff 2。没有 EXTRA 所称的三次系数。已有 O(h³) 签名本身正确，但全条加 EXTRA 的覆盖不完整。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "source": "/workspace/R1_PAGES.pdf 附件第18页；印刷页 104 / 原PDF页 126",
+          "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+          "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+        },
+        {
+          "stage": "C",
+          "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+          "declarations": [
+            "differenceCommutator",
+            "differenceCommutator_coeff2",
+            "differenceCommutator_hamiltonian"
+          ],
+          "finding": "已逐一核对 differenceCommutator、differenceCommutator_coeff2 与 differenceCommutator_hamiltonian。一般代数版包含差的零、一次系数为零及二次系数 (AB−BA)/2；辅助版仅二次系数；Hamiltonian 版在 n 自由度、A,B,φ 全域 C∞ 下对所有 z 给出同样三项，右边是 (L_A L_Bφ−L_B L_Aφ)(z)/2。它们正确覆盖 JSON 当前摘录的 O(h³) 结论。但 [EXTRA] 明确声称还包含三次系数，三份声明均没有该项；原页同一个差的展示式还给出三次项及 O(h⁴)，JSON 将该行省略。不能把二次系数辅助定理当作三次结论。",
+          "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.differenceCommutator",
+      "verdict": "FAIL",
+      "explanation": "已逐一核对 differenceCommutator、differenceCommutator_coeff2 与 differenceCommutator_hamiltonian。一般代数版包含差的零、一次系数为零及二次系数 (AB−BA)/2；辅助版仅二次系数；Hamiltonian 版在 n 自由度、A,B,φ 全域 C∞ 下对所有 z 给出同样三项，右边是 (L_A L_Bφ−L_B L_Aφ)(z)/2。它们正确覆盖 JSON 当前摘录的 O(h³) 结论。但 [EXTRA] 明确声称还包含三次系数，三份声明均没有该项；原页同一个差的展示式还给出三次项及 O(h⁴)，JSON 将该行省略。不能把二次系数辅助定理当作三次结论。",
+      "counterexample": null,
+      "suggested_fix": "一般版补充 coeff 3 = (1/6:ℝ) • (2•(A*B^2)+2•(A^2*B)−B*A^2−B*A*B−B^2*A−A*B*A)，乘法保持非交换次序。Hamiltonian 版若也要求三次覆盖，则在原 C∞ 前提下对 φ,z 写出同一算子多项式的实例。保留既有零至二次结论；JSON 恢复原页完整差的展示式。"
+    }
+  },
+  {
+    "chapter": 3,
+    "batch": "EAUDIT72",
+    "source_id": "MD-3.3.2-Strang",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "ANNOTATION_FALSE_ALARM",
+        "INCOMPLETE_LEAN_CONCLUSION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.3.2-Strang",
+        "kind": "definition",
+        "label": null,
+        "section": "3.3.2",
+        "printed_page": "108",
+        "pdf_page": "130",
+        "statement_latex": "For Hamiltonians $X$ and $Y$, consider symmetrizing a composition of exponentials (a Strang splitting), such that\n\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(tZ_t)=\\exp(t\\widetilde Z_{[1]}+t^2\\widetilde Z_{[2]}+t^3\\widetilde Z_{[3]}+t^4\\widetilde Z_{[4]}+\\cdots).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "本定义为左端真实形式乘积；PDF130右端为exp(t widetilde Z_[1]+t² widetilde Z_[2]+t³ widetilde Z_[3]+⋯)，没有共同外层t。各Z_[j]按指数总幂编号，与(3.5)一致；不假设不同步长log交换。",
+          "原记号Z_[j]按指数总幂编号，与(3.5)一致；旧索引疑误标记删除。当前Lean只定义左端，尚缺整条形式exp/log展开等式。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.formalStrang",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT07_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T12:15:22.765671",
+            "before_sha256": "1f2639c516fa471bc20fa64aa12a6a5685559514017929bbba58be018a4c19a5",
+            "after_sha256": "4bb2a1a9bfe4b9cb679de8b0da239ba84a2bbd21fd3c827347026bbfe8283b55",
+            "changed_fields": [
+              "statement_latex",
+              "context_notation"
+            ],
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        "A：原JSON的整个展示式忠实；原issues声称t²/t³的指数编号与(3.5)不一致属于误报，二者按同一总幂编号，无需改动原文。C：formalStrang只定义左端三指数乘积，未给出所引右端exp(tZ_t)及其形式级数表示。当前extra_assumptions为空；不能把同章其他只到低次的系数声明视为本条完整右端等式。"
+      ],
+      "evidence": [
+        "A：附件第10页（书页108，原PDF 130），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+        "C：本次仅使用R2_任务.md第9小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。",
+        "附件中的重复页已逐页核对渲染文件摘要相同：第3=4页，第5=6=7=8页，第9=10=11页，第12=13页，第14=15页。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.formalStrang",
+      "verdict": "FAIL",
+      "explanation": "C：formalStrang对任意实代数及A/B定义三次形式指数乘积，1/2只缩放外侧生成元，乘法次序与原文相同，形式变量由PowerSeries携带。但原文陈述同时断言该乘积等于exp(tZ_t)=exp(∑t^j Z_[j])；定义体没有Z_t、任何Z_[j]存在性、formalLog或重建指数的等式。context仅解释左端，不能替代全部结论；本条[EXTRA]也未披露完整性缺口。按完整结论审校为FAIL，不是因为原文数学错误或sorry。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+      "counterexample": null,
+      "suggested_fix": "保留formalStrang为辅助定义，另加常项为1、Z=formalLog(formalStrang A B)及零常项形式指数重建该乘积的等式（或等价的全阶系数存在性）；明确Z_t为Z除以形式变量。"
+    }
+  },
+  {
+    "chapter": 3,
+    "batch": "EAUDIT75",
+    "source_id": "MD-3.4-FiniteMatchingConstruction",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SMOOTHNESS_DOMAIN_MISMATCH",
+        "EXTRA_ASSUMPTION_MISDISCLOSURE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-FiniteMatchingConstruction",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "115",
+        "pdf_page": "137",
+        "statement_latex": "By construction, we have\n\\[\\boldsymbol z_{n+1}=\\mathcal F_h^{(k)}(\\boldsymbol z_n)+\\boldsymbol\\eta_n\\]\nwhere $\\|\\boldsymbol\\eta_n\\|\\le Ch^{k+1}$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "真实数值一步与截断Hamiltonian实际一步的差；construction完整存在性同MD-3-ModifiedConstruction，旧CH03-074以此处原文独立映射。"
+        ],
+        "issues": [
+          "smoothSymplecticData实际依赖仍有两处ContDiffOn ℝ ⊤；按本任务指定语义是实解析前提，不是附注宣称的C∞。因此当前签名仅覆盖较强解析子类，原书smooth范围尚未忠实覆盖。"
+        ],
+        "lean_decl": "MD.Ch03.finiteMatchingConstruction",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "smoothSymplecticData与原书构造上下文相同；保留任意k的真实finiteMatching为结论，不当作前提。",
+          "[EXTRA] 当前依赖smoothSymplecticData仍对H及联合G使用ContDiffOn ℝ ⊤（本版本为Cω）；不能声称已恢复C∞。主结论系数为C∞。此为待修签名问题，本审校不修改工程。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT45_LOCAL_REPAIR",
+            "timestamp": "2026-10-16T09:39:30.646379",
+            "before_sha256": "6e6c7ac7777cb5a8db67d4c390c97b209fca4d95b32b88ca1fc39367cc3ca4b7",
+            "after_sha256": "304de5117837c8f6c87d2997ce1fc34e386954d7a7b46e1c1ad387998c315978",
+            "changed_fields": [],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH12_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT45/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        "smoothSymplecticData实际依赖仍有两处ContDiffOn ℝ ⊤；按本任务指定语义是实解析前提，不是附注宣称的C∞。因此当前签名仅覆盖较强解析子类，原书smooth范围尚未忠实覆盖。"
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "attachment_pages": [
+            9
+          ],
+          "printed_page": "115",
+          "pdf_page": "137",
+          "finding": "已逐字/公式对照附件对应原页；同页复印件通过pdftotext全文相同确认，并视觉核对原页112、113、114、115、116。排版换行及数学字体作等价LaTeX转写。"
+        },
+        {
+          "stage": "C",
+          "finding": "结论量词∃同一Hj族，∀k≥r给真实finiteMatching，确实保留构造而未预设匹配；finiteMatching包含γ0=z、真实ODE、留D和统一端点误差。但实际smoothSymplecticData在H及联合G的ContDiffOn位置仍使用裸⊤，与[EXTRA]声称恢复scoped ∞直接矛盾。在任务指定的库语义下这是Cω前提，严格加强原书的smooth，不能标为C∞版本。开放凸D和紧凸B等其余域条件、辛Jacobian及局部阶数与所述充分条件相容。",
+          "scope": "只读核对任务所给全部声明及项目依赖定义；未编译、未修改工程、未补证明；不因sorry判FAIL。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": [
+        "MD.Ch03.finiteMatchingConstruction"
+      ],
+      "verdict": "FAIL",
+      "explanation": "结论量词∃同一Hj族，∀k≥r给真实finiteMatching，确实保留构造而未预设匹配；finiteMatching包含γ0=z、真实ODE、留D和统一端点误差。但实际smoothSymplecticData在H及联合G的ContDiffOn位置仍使用裸⊤，与[EXTRA]声称恢复scoped ∞直接矛盾。在任务指定的库语义下这是Cω前提，严格加强原书的smooth，不能标为C∞版本。开放凸D和紧凸B等其余域条件、辛Jacobian及局部阶数与所述充分条件相容。",
+      "counterexample": null,
+      "suggested_fix": "若意图覆盖原书smooth，须在实际smoothSymplecticData定义的两处⊤均改为scoped ∞并另行核查构造定理；如保留当前签名，则明确仅审为解析充分条件版，不能声称已完成C∞修复。"
+    }
+  },
+  {
+    "chapter": 3,
+    "batch": "EAUDIT76",
+    "source_id": "MD-3.4-ArbitraryFiniteTruncation",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "C_SMOOTHNESS_SCOPE_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-ArbitraryFiniteTruncation",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "116",
+        "pdf_page": "138",
+        "statement_latex": "If the differential equations are infinitely differentiable, we may take the truncation index $k$ as large as we like, but the constants appearing in the above theorem will depend on the truncation index in a complicated way.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "同章原始近恒等辛Hamiltonian方法上下文；无限可微不意味着解析或指数误差；每个固定k有自己的δ,A。"
+        ],
+        "issues": [
+          {
+            "code": "C_SMOOTHNESS_SCOPE_MISMATCH",
+            "detail": "声称C∞前提已修复，但实际依赖中H及联合G的正则性仍为裸⊤，将原句C∞范围缩为Cω。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.arbitraryFiniteTruncation",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "smoothSymplecticData保留Hamiltonian、近恒等辛、开放凸域及紧集条件；∀k匹配位于结论，δ、A可依赖k。",
+          "[EXTRA] 当前摘录并未完成C∞前提修复：smoothSymplecticData中H和联合G仍用裸⊤（Cω），仅Hj输出用∞（C∞）。这是待修复的签名范围差异；本次只读审校未修改Lean。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT45_LOCAL_REPAIR",
+            "timestamp": "2026-10-16T09:39:30.646379",
+            "before_sha256": "86583387a72c192eebe4d8e52afd1270e52ef14356e3ff6a7288cc70d7d7de9f",
+            "after_sha256": "e4f02d684926af6a854134884f02fade9d0315af67d8e941b4f38f24871cc133",
+            "changed_fields": [],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH13_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT45/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "C_SMOOTHNESS_SCOPE_MISMATCH",
+          "field": "extra_assumptions / smoothSymplecticData",
+          "detail": "声称C∞前提已修复，但实际依赖中H及联合G的正则性仍为裸⊤，将原句C∞范围缩为Cω。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "source": "R4_PAGES.pdf",
+          "attachment_pages": [
+            1
+          ],
+          "original_pdf_pages": [
+            138
+          ],
+          "printed_pages": [
+            116
+          ],
+          "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+          "render_sha256": {
+            "1": "7137e64d0eb6c43855353bbfa14da5b2a4b66b8ab17528fa9a3a6d6cc6cb770a"
+          },
+          "finding": "p116所引整句与原页一致；没有把同页后续指数小误差的讨论混入该句。"
+        },
+        {
+          "stage": "C",
+          "source": "R4_任务.md / 条目1 / 完整当前Lean及实际依赖",
+          "declarations": [
+            "MD.Ch03.arbitraryFiniteTruncation"
+          ],
+          "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+          "finding": "n,r,H,D,B,G,Φ的对象及Hamiltonian向量场、辛Jacobian、真实局部流、紧集、凸域和局部阶均已展开核对。结论先选统一的Hj序列，再对所有k≥r给出finiteMatching；δ、A和Γ位于每个finiteMatching的存在量词内，允许依赖k，且保留全z∈B及0<h<δ的实际截断流和端点误差。问题在于smoothSymplecticData仍有两处ContDiffOn ℝ ⊤：H和联合映射(h,z)↦G h z。按指定Mathlib含义这是Cω，而结论Hj的∞才是C∞；[EXTRA]称前提和输出均已恢复∞与本次实际摘录不符。当前声明至多覆盖解析输入的子情形，未忠实覆盖原句任意C∞输入。FAIL来自前提范围及修复标注不符，非sorry，也不表示解析子情形已被反驳。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.arbitraryFiniteTruncation",
+      "verdict": "FAIL",
+      "explanation": "n,r,H,D,B,G,Φ的对象及Hamiltonian向量场、辛Jacobian、真实局部流、紧集、凸域和局部阶均已展开核对。结论先选统一的Hj序列，再对所有k≥r给出finiteMatching；δ、A和Γ位于每个finiteMatching的存在量词内，允许依赖k，且保留全z∈B及0<h<δ的实际截断流和端点误差。问题在于smoothSymplecticData仍有两处ContDiffOn ℝ ⊤：H和联合映射(h,z)↦G h z。按指定Mathlib含义这是Cω，而结论Hj的∞才是C∞；[EXTRA]称前提和输出均已恢复∞与本次实际摘录不符。当前声明至多覆盖解析输入的子情形，未忠实覆盖原句任意C∞输入。FAIL来自前提范围及修复标注不符，非sorry，也不表示解析子情形已被反驳。",
+      "counterexample": null,
+      "suggested_fix": "在后续获准修改工程时，把smoothSymplecticData中H及联合G两处正则性改为scoped ∞，保持其它条件及∃Hj后∀k的量词次序；随后单独检查。此次不修改工程。"
+    }
+  },
+  {
+    "chapter": 3,
+    "batch": "EAUDIT76",
+    "source_id": "MD-3.4-ScalarVerletShadow4",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "A_FORMULA_NOT_LITERAL",
+        "SOURCE_SHADOW_COEFFICIENT_SUSPECT",
+        "C_FALSE_ADDED_MATCHING"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.4-ScalarVerletShadow4",
+        "kind": "definition",
+        "label": null,
+        "section": "3.4",
+        "printed_page": "117",
+        "pdf_page": "139",
+        "statement_latex": "The modified energy for the Verlet method for a single degree of freedom system with energy $H=p^2/2+U(q)$ is\n\\[\\widetilde H_h=H+\\frac{h^2}{24}(2p^{T}U''p-(U')^2)\n+h^4\\left(\\frac1{720}p^4U''''-\\frac1{120}p^2U'U'''-\\frac1{240}(U')^2U''-\\frac1{60}p^2((U'')^2+U'U''')\\right)+O(h^6).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原文脚注1。有限式保留全部原印系数；h²项恢复原印2pᵀU″p，一自由度下可化为2p²U″。",
+          "当前另有scalarVerletShadow4_matching，不能仍仅称实际匹配尚未陈述；该新增声明有谐振子反例。原书h⁴系数疑误须人工确认。"
+        ],
+        "issues": [
+          {
+            "code": "NEEDS_HUMAN",
+            "detail": "原印h⁴系数在谐振子特例出现实际匹配障碍；保留原式，不静默改系数。"
+          },
+          {
+            "code": "A_FORMULA_NOT_LITERAL",
+            "detail": "原印为2pᵀU″p；输入改写为2p²U″。恢复原记号，其标量数学值不变。"
+          },
+          {
+            "code": "SOURCE_SHADOW_COEFFICIENT_SUSPECT",
+            "detail": "原印h⁴系数在谐振子特例已不能产生所称Verlet修改流；保留全部原印系数并标记NEEDS_HUMAN。"
+          },
+          {
+            "code": "C_FALSE_ADDED_MATCHING",
+            "detail": "新增的O(h⁷)实际流匹配被U(q)=q²/2、B={(0,1)}反驳。"
+          }
+        ],
+        "lean_decl": "MD.Ch03.scalarVerletShadow4",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA] 新增全局C∞势与紧集上的实际局部流O(h⁷)端点匹配；实际签名存在，但结论被谐振子特例反驳。",
+          "[EXTRA] 本条势函数正则性已使用scoped ∞；这不消除原印系数导致的匹配错误。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "NEEDS_HUMAN",
+        "repair_log": [
+          {
+            "stage": "EAUDIT11_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T12:23:10.109001",
+            "before_sha256": "a5101cc532d90ef5c944cc85a3abb2ecd4d1336227b4f6eae41db0e689774c27",
+            "after_sha256": "4e8c062b7b955ade6f531b8432fba74ae5e52183ee108657b56cc523cd8b5636",
+            "changed_fields": [],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH14_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          },
+          {
+            "stage": "EAUDIT45_LOCAL_REPAIR",
+            "timestamp": "2026-10-16T09:39:30.646379",
+            "before_sha256": "4e8c062b7b955ade6f531b8432fba74ae5e52183ee108657b56cc523cd8b5636",
+            "after_sha256": "32b90fe1e8497066198760ff87f4426ace8bbb5a0555c957855aea684dc9ba6f",
+            "changed_fields": [],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH14_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT45/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "A_FORMULA_NOT_LITERAL",
+          "field": "statement_latex",
+          "detail": "原印为2pᵀU″p；输入改写为2p²U″。恢复原记号，其标量数学值不变。"
+        },
+        {
+          "code": "SOURCE_SHADOW_COEFFICIENT_SUSPECT",
+          "field": "statement_latex / issues",
+          "detail": "原印h⁴系数在谐振子特例已不能产生所称Verlet修改流；保留全部原印系数并标记NEEDS_HUMAN。"
+        },
+        {
+          "code": "C_FALSE_ADDED_MATCHING",
+          "field": "scalarVerletShadow4_matching",
+          "detail": "新增的O(h⁷)实际流匹配被U(q)=q²/2、B={(0,1)}反驳。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "source": "R4_PAGES.pdf",
+          "attachment_pages": [
+            2
+          ],
+          "original_pdf_pages": [
+            139
+          ],
+          "printed_pages": [
+            117
+          ],
+          "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+          "render_sha256": {
+            "2": "b8c91bc4500c10d9e5866fb5045f5b075d7779a67494135797b0f72ccd9e1131"
+          },
+          "finding": "脚注正文、h²/24以及h⁴内四项的系数、正负号和O(h⁶)均已视觉核对。原页h²括号中印为2pᵀU″p，输入JSON改写成2p²U″；一自由度下等价，但不满足本轮逐字要求，corrected_json恢复转置形式。原页h⁴最后一项确为负号，保留原印；该系数导致下述谐振子不匹配，属于原书数学疑误。"
+        },
+        {
+          "stage": "C",
+          "source": "R4_任务.md / 条目2 / 完整当前Lean及实际依赖",
+          "declarations": [
+            "MD.Ch03.scalarVerletShadow4",
+            "MD.Ch03.scalarVerletShadow4_matching"
+          ],
+          "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+          "finding": "两个声明均已审校。scalarVerletShadow4取z=(q,p)，所定义有限h⁴多项式在标量化后忠实于原印，不能因定义中没有O项而当作余项已证。新增scalarVerletShadow4_matching确实量化任意C∞势、紧B和统一正C、δ，给出从z出发的真实Hamiltonian局部流及velocity Verlet的O(h⁷)端点匹配。C∞的∞编码在本条实际正确；但这个新增结论本身为假：U(q)=q²/2时，印刷多项式产生的q端点与Verlet已有非零h⁵差项，故不能有O(h⁷)界。FAIL针对新增matching的数学结论；忠实的印刷有限式本身应保留，并把原书系数问题转人工，不能通过补sorry解决。"
+        },
+        {
+          "stage": "C_EXACT_COEFFICIENT_CHECK",
+          "operation_id": "formal_series.rational.multiply.compute",
+          "domain": "QQ[[x]]/(x³)，x=h²；已先检查公开payload契约，无附加可选后端要求。",
+          "inputs": {
+            "a": [
+              "1",
+              "1/6",
+              "−1/30"
+            ],
+            "b": [
+              "1",
+              "−1/12",
+              "−1/120"
+            ]
+          },
+          "results": {
+            "a*b": [
+              "1",
+              "1/12",
+              "−1/18"
+            ],
+            "a*(a*b)": [
+              "1",
+              "1/4",
+              "−3/40"
+            ]
+          },
+          "validation": "两次计算均成功，返回EXACT_MOD_X_TO_N；这是有限精确系数检查。反例的渐近结论另由线性ODE解析闭式及Taylor展开给出，不以有限数值测试充当一般证明。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.scalarVerletShadow4",
+      "verdict": "FAIL",
+      "explanation": "两个声明均已审校。scalarVerletShadow4取z=(q,p)，所定义有限h⁴多项式在标量化后忠实于原印，不能因定义中没有O项而当作余项已证。新增scalarVerletShadow4_matching确实量化任意C∞势、紧B和统一正C、δ，给出从z出发的真实Hamiltonian局部流及velocity Verlet的O(h⁷)端点匹配。C∞的∞编码在本条实际正确；但这个新增结论本身为假：U(q)=q²/2时，印刷多项式产生的q端点与Verlet已有非零h⁵差项，故不能有O(h⁷)界。FAIL针对新增matching的数学结论；忠实的印刷有限式本身应保留，并把原书系数问题转人工，不能通过补sorry解决。",
+      "counterexample": "令U(q)=q²/2，B={(0,1)}，均满足光滑性和紧性。有限式K_h=(1/2+h²/12−h⁴/60)p²+(1/2−h²/24−h⁴/240)q²。置a=1+h²/6−h⁴/30，b=1−h²/12−h⁴/120，其向量场为(q̇,ṗ)=(ap,−bq)。从(0,1)出发的唯一流在时刻h有q(h)=a·sin(h√(ab))/√(ab)=h−h⁵/15+O(h⁷)。该展开在足够小h处由解析闭式给出；h⁵系数为−1/30−(1/4)/6+1/120=−1/15。velocity Verlet的Q=h，故|Q−q(h)|/h⁷~1/(15h²)→∞。任何满足solution及初值的Γ在正时间区间都由线性ODE唯一性等于该流，不能另选Γ绕开反例。",
+      "suggested_fix": "保留scalarVerletShadow4作为印刷字面有限式并标记原书疑误；另设明确命名的corrected版本，先独立核对完整h⁴系数，再给实际流匹配。谐振子特例至少要求h⁴的p²系数为+1/60，原印为−1/60；本审校不据此擅改一般势的全部系数。"
+    }
+  },
+  {
+    "chapter": 3,
+    "batch": "EAUDIT82",
+    "source_id": "MD-3.7-HardCoreDomain",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "INCOMPLETE_STATEMENT_COVERAGE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.7-HardCoreDomain",
+        "kind": "definition",
+        "label": null,
+        "section": "3.7",
+        "printed_page": "132",
+        "pdf_page": "154",
+        "statement_latex": "We assume, as usual a Hamiltonian $H=p^TM^{-1}p/2+U(q)$ but we add the inequality constraint $\\|q_i-q_j\\|\\ge\\sigma_i+\\sigma_j$ where $\\sigma_i$, $i=1,\\ldots,N$ is a core radius. The condition $\\|q_i-q_j\\|=\\sigma_i+\\sigma_j$, some $i,j$ defines the constraint surface.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原书未显式写出 i≠j；不同粒子之间的硬核约束按物理语境理解为 i≠j，此为解释性补充，不能称原文明确。接触等号允许，不当重叠。σ作为半径通常非负，但原句未显式给出非负假设。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.hardCoreDomain",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA] i≠j按不同粒子的物理语境解释；σ的非负性未编码，若解释为物理半径须另作资格。"
+        ],
+        "statement_scope": "仅定义不同粒子之间满足闭非重叠约束的构型域；Hamiltonian H=K+U及至少一对接触的接触面未由本条当前声明表达。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT17_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T12:31:30.636685",
+            "before_sha256": "11b09e2c7d2d4fba6839ab5ede43bded88aa0fbcb1d05f982e89ee9788088c24",
+            "after_sha256": "8ec443e661ffaff983101430256f64b5998d705387536103ae9a4d2e906a6763",
+            "changed_fields": [
+              "context_notation"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "INCOMPLETE_STATEMENT_COVERAGE",
+          "detail": "唯一声明只定义允许域，没有Hamiltonian对象及接触面；statement_scope却仍泛指所引整句。"
+        }
+      ],
+      "evidence": [
+        {
+          "phase": "A",
+          "source": "R5_PAGES.pdf 附件第7页；印刷页132",
+          "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+          "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+        },
+        {
+          "phase": "C",
+          "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+          "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.hardCoreDomain",
+      "verdict": "FAIL",
+      "explanation": "hardCoreDomain本身正确表达N个d维欧氏位置的闭非重叠区域：对所有不同粒子i,j，距离≥半径和，接触等号允许。i≠j来自物理语境而非原文显式，context已如实披露。任意实σ的集合定义有意义；物理半径非负未编码，应明确限定其物理解释。按本条现有完整statement_scope，所引Hamiltonian H=K+U以及“某一粒子对取等号”的接触面均未在唯一Lean声明中表达；不能把域定义称为所引全部内容的完整对应。",
+      "counterexample": null,
+      "suggested_fix": "另行补充或明确映射H=K+U与{q∈hardCoreDomain σ | ∃ i≠j, ‖q i−q j‖=σ i+σ j}；本次只记录，不改工程。"
+    }
+  },
+  {
+    "chapter": 3,
+    "batch": "EAUDIT82",
+    "source_id": "MD-3.7-CollisionComposition",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "UNSPECIFIED_TIME_LIST_ORDER",
+        "ABSTRACT_COMBINATOR_SCOPE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.7-CollisionComposition",
+        "kind": "definition",
+        "label": null,
+        "section": "3.7",
+        "printed_page": "132–133",
+        "pdf_page": "154–155",
+        "statement_latex": "Let $\\mathcal R_c$ denote the action of the collision operator on the vector of positions and momenta. Then we can write the evolution formally as\n\\[\\mathcal F_\\tau^{\\mathrm{h.s.}}(q,p)=\\mathcal G_{\\Delta\\tau_r}\\circ\\mathcal R_c\\circ\\mathcal G_{\\Delta\\tau_{r-1}}\\cdots\\circ\\mathcal R_c\\circ\\mathcal G_{\\Delta\\tau_0}\\]\nwhere $\\Delta\\tau_1,\\Delta\\tau_2,\\ldots,\\Delta\\tau_{r-1}$ are the times between collisions, $\\Delta\\tau_0$ is the time until the first collision, and $\\Delta\\tau_r$ is the time between the last collision and $\\tau$. Here $\\mathcal G_t$ is the flow map of the smooth system (Hamiltonian $H$).",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "当前递归要求times=[Δτr,…,Δτ0]按时间逆序存储；例如两段输出G(Δτ1)∘Rc∘G(Δτ0)。不能传入自然时间顺序列表。",
+          "该声明仅为有限形式组合器；真实事件还需非负时长、总时长τ、实际Hamiltonian流及接触反射资格。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.collisionComposition",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "有限形式流/反射复合组合器；必须采用逆时间段列表才能对应原印公式。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT17_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T12:31:30.636685",
+            "before_sha256": "591a845affe8f92c6d93fea2c97dc86a42773a390dda780e5b434d618ef4acee",
+            "after_sha256": "9372a02ac4362685ec931a7889dfe67a360271b94b113453685c775c3a658c4e",
+            "changed_fields": [
+              "statement_latex"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "UNSPECIFIED_TIME_LIST_ORDER",
+          "detail": "缺少times=[Δτr,…,Δτ0]的明确约定或桥接；自然时间列表下复合反序。"
+        },
+        {
+          "code": "ABSTRACT_COMBINATOR_SCOPE",
+          "detail": "任意G,Rc,实列表只给形式复合，需将与实际事件流的资格区别清楚。"
+        }
+      ],
+      "evidence": [
+        {
+          "phase": "A",
+          "source": "R5_PAGES.pdf 附件第8–9页；印刷页132–133",
+          "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+          "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+        },
+        {
+          "phase": "C",
+          "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+          "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.collisionComposition",
+      "verdict": "FAIL",
+      "explanation": "递归定义对任意E、G、Rc及有限实列表存在意义，空表为id、单元素为单个流。对[t0,t1]展开为G t0∘Rc∘G t1；因此它只有在列表按[Δτr,…,Δτ0]逆时间存储时才与原公式相符。当前JSON和签名均没有给出这一关键映射；按原文从首段到末段的自然列表[Δτ0,…,Δτr]理解，得到反向时间次序。[EXTRA]为空，context仅说右到左不能确定列表含义。也未编码事件时长非负、总和τ、G为H流或Rc为实际碰撞；可作形式组合器，不是实际流存在定理。",
+      "counterexample": "取E=ℝ、G(t)(x)=x+t、Rc(x)=−x，Δτ0=1、Δτ1=2、x=0。原文G2∘Rc∘G1得1，当前定义传[1,2]得−1。",
+      "suggested_fix": "工程后续可改为按自然时间顺序递归；或明确要求逆序列表并给出与原公式的桥接声明。"
+    }
+  },
+  {
+    "chapter": 3,
+    "batch": "EAUDIT82",
+    "source_id": "MD-3.7-CollisionRegularity",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SMOOTH_VS_ANALYTIC",
+        "EXTRA_SIGNATURE_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.7-CollisionRegularity",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "3.7",
+        "printed_page": "133",
+        "pdf_page": "155",
+        "statement_latex": "The trajectory is thus piecewise smooth with continuous configurational path and momenta exhibiting finite jump discontinuities.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch03.collisionRegularity",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA] 仅审校有限严格递增隔离碰撞、正质量、C∞力、C¹接触函数、非零法向严格入射及每段合法域下的拼接。",
+          "[EXTRA] 当前签名内段ContDiffAt仍为裸⊤，并未完成所称∞修复；该解析性结论不能由C∞力推出。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "DRAFT",
+        "repair_log": [
+          {
+            "stage": "EAUDIT17_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T12:31:30.636685",
+            "before_sha256": "6f0faec19da8b5033efdf683d2dfe8555fb27a4211db1409c6f788770ba1461e",
+            "after_sha256": "9d32b5a04ac10a340512f4312fc5a52af5ed09f76be51adfb5c10461d3f58342",
+            "changed_fields": [],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          },
+          {
+            "stage": "EAUDIT47_LOCAL_REPAIR",
+            "timestamp": "2026-10-16T09:40:48.522316",
+            "before_sha256": "9d32b5a04ac10a340512f4312fc5a52af5ed09f76be51adfb5c10461d3f58342",
+            "after_sha256": "9ad77ac332f19fffc089edbb3b2f8d4af6e7be6b765b2c278bb65732c9c590a8",
+            "changed_fields": [],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT47/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "SMOOTH_VS_ANALYTIC",
+          "detail": "内段结论残留裸⊤，严格强于C∞，不是原文piecewise smooth。"
+        },
+        {
+          "code": "EXTRA_SIGNATURE_MISMATCH",
+          "detail": "[EXTRA]宣称输出已修复为∞，实际仍为⊤。"
+        }
+      ],
+      "evidence": [
+        {
+          "phase": "A",
+          "source": "R5_PAGES.pdf 附件第10页；印刷页133",
+          "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+          "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+        },
+        {
+          "phase": "C",
+          "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+          "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.collisionRegularity",
+      "verdict": "FAIL",
+      "explanation": "量词覆盖所有n、正质量m、C∞力F、C¹接触函数g、有限ν碰撞及ν+1个ODE段。拼接条件给严格递增事件、各闭段ODE、接触位置相等和质量加权法向反射；非零法向/严格入射保证非零动量跳跃；合法域g≥0是物理资格。gluedCollision选择已开始的最大段，足以表达右连续拼接、位置连续和左右动量极限。然而内段结论仍写ContDiffAt ℝ ⊤，按本任务指定的现代光滑阶语义它要求实解析，而前提F仅∞光滑，不能推出解析。[EXTRA]声称前提及输出均恢复∞，与实际输出不符。有限事件、横截等都是明确加强，未伪装成从原文无条件推出。",
+      "counterexample": "取ν=0以消去所有碰撞条件，n=1、m=1、g≡1。令F(q)=0(q≤0)，F(q)=exp(−1/q²)(q>0)，这是C∞非解析力。取一条在区间内点t0穿过q=0且p(t0)=1的机械ODE解；若(q,p)在t0解析，则q局部有解析逆且F(q(t))=p′(t)，将推出F在0解析，矛盾。该解满足全部无碰撞前提。",
+      "suggested_fix": "将内段结论ContDiffAt ℝ ⊤改为ContDiffAt ℝ ∞；本次不修改工程。"
+    }
+  },
+  {
+    "chapter": 3,
+    "batch": "EAUDIT85",
+    "source_id": "MD-3.7.3-ModifiedCollisionProjection",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "UNBOUND_MODIFIED_HAMILTONIAN",
+        "INCOMPLETE_STATEMENT_COVERAGE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-3.7.3-ModifiedCollisionProjection",
+        "kind": "definition",
+        "label": null,
+        "section": "3.7.3",
+        "printed_page": "136",
+        "pdf_page": "158",
+        "statement_latex": "In particular, one may use the backward error analysis to obtain a modified Hamiltonian $\\widetilde H_h$ corresponding to the Verlet method with stepsize $h$, then to project during collisions not onto the energy surface, but onto the modified energy surface, so that\n\\[\\widetilde H_h\\equiv\\mathrm{const}.\\]\n(In practice, a low order approximation of $\\widetilde H_h$ is used, such as the truncation to terms of order four or six in the stepsize.)",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "当前定义仅要求两个状态的同一给定截断值相等。",
+          "没有BEA或Verlet系数资格，不保证投影存在唯一，不证明轨道守恒或统计准确性。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch03.modifiedCollisionProjection",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA] Hj,r,k均为任意输入。若按原书解释，须另给Verlet修正Hamiltonian系数的资格及所用四阶或六阶截断，并明确碰撞前后使用相同h。"
+        ],
+        "statement_scope": "仅为给定有限级数的两点等值关系；不表达该级数确为Verlet的修正Hamiltonian，不表达投影存在/唯一或整个变步长轨道的共同守恒。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT20_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T12:33:32.430543",
+            "before_sha256": "9aa0f7520efe36efe9f59e762105eff41c9f55a7c6e83ab5c613959b2deae3fb",
+            "after_sha256": "ad482d5aada0a4f4dcbbea8737e2a94cd2aba0e5e3e6a6b57ec647ac9a6be19f",
+            "changed_fields": [
+              "statement_latex"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch03/mathcopilot_results/BATCH26_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "UNBOUND_MODIFIED_HAMILTONIAN",
+          "detail": "任意Hj和任意r,k没有保证它是Verlet的修正Hamiltonian截断。"
+        },
+        {
+          "code": "INCOMPLETE_STATEMENT_COVERAGE",
+          "detail": "仅是两点等值关系，scope没有清楚剥离原段中BEA对象构造与沿轨道常值的资格。"
+        }
+      ],
+      "evidence": [
+        {
+          "phase": "A",
+          "source": "R5_PAGES.pdf 附件第17页；印刷页136",
+          "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+          "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+        },
+        {
+          "phase": "C",
+          "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+          "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch03.modifiedCollisionProjection",
+      "verdict": "FAIL",
+      "explanation": "modifiedCollisionProjection对任意相空间维数、任意H/Hj、任意自然r,k、实h和两状态，仅定义H(w)+∑j∈[r,k]h^jHj(w)=同一表达式在z的值。等值关系本身正确，并不保证投影存在唯一，context对此已披露；但Hj与Verlet没有任何资格绑定，r,k也不指定四阶/六阶或Verlet偶次修正，因而不能表达所引“Verlet对应的修正Hamiltonian”的完整结论。当前statement_scope仍泛指整段，[EXTRA]为空，遗漏的是核心对象资格，不是要求补证明。即便关系成立也不能推出整个变步长轨道有一个共同修正能量，更不能推出BEA/统计精度。",
+      "counterexample": "取任意H且Hj≡0，则关系退化为H(w)=H(z)，与Verlet修正系数无关；取H≡0且Hj≡0更使所有z,w均满足。",
+      "suggested_fix": "后续增加或明确映射Verlet修正系数资格及截断级数对象；或正式将该source映射范围限制为通用等值辅助关系，不宣称覆盖原段全部内容。"
+    }
+  },
+  {
+    "chapter": 4,
+    "batch": "EAUDIT71",
+    "source_id": "MD-4.2.1-RESPA",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_UNMARKED_OMISSION",
+        "MISSING_POSITIVE_SUBSTEP_COUNT",
+        "PROJECT_DEPENDENCY_NOT_SUPPLIED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-4.2.1-RESPA",
+        "kind": "definition",
+        "label": "(4.2)",
+        "section": "4.2.1",
+        "printed_page": "145",
+        "pdf_page": "167",
+        "statement_latex": "Now consider the map constructed by taking $r$ steps using $\\mathcal G_{F,h/r}$ and composing this with kicks from the soft force:\n\\[\\mathcal G_h^{\\mathrm{MTS}}=\\mathrm e^{\\frac h2\\mathcal L_{U_S}}[\\mathcal G_{h/r}^F]^r\\mathrm e^{\\frac h2\\mathcal L_{U_S}}.\\]\nOne step of the multiple timestepping algorithm is then implemented as follows:\nReversible RESPA Algorithm\n\\[P:=p-(h/2)\\nabla U_S(q),\\quad Q:=q;\\]\nRepeat $r$ times:\n\\[P:=P-(h/2)\\nabla U_F(Q)/r,\\quad Q:=Q+hM^{-1}P/r,\\quad P:=P-(h/2)\\nabla U_F(Q)/r;\\tag{4.2}\\]\n\\[P:=P-(h/2)\\nabla U_S(Q).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "R1复审：算子式和算法更新均与PDF一致；公式与标题之间漏了 One step of the multiple timestepping algorithm is then implemented as follows:，应恢复或明示省略。"
+        ],
+        "issues": [
+          {
+            "code": "SOURCE_UNMARKED_OMISSION",
+            "detail": "算子式和算法更新均与PDF一致；公式与标题之间漏了 One step of the multiple timestepping algorithm is then implemented as follows:，应恢复或明示省略。"
+          },
+          {
+            "code": "MISSING_POSITIVE_SUBSTEP_COUNT",
+            "detail": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。"
+          },
+          {
+            "code": "PROJECT_DEPENDENCY_NOT_SUPPLIED",
+            "detail": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。"
+          }
+        ],
+        "lean_decl": "MD.Ch04.respa",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "r为正自然数，实际r次函数迭代；不把形式算子等式当实际ODE流。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT04_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T12:53:50.635472",
+            "before_sha256": "68eee220ede28012b4bf51e6ead5d6bf17c8665741e9410577b6d82ddbba7873",
+            "after_sha256": "61724ed42dff3da9f32d92d453cb7e10ff520f064f4d4c92bfac3b372b40ad62",
+            "changed_fields": [
+              "statement_latex"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch04/mathcopilot_results/BATCH04_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_UNMARKED_OMISSION",
+          "detail": "算子式和算法更新均与PDF一致；公式与标题之间漏了 One step of the multiple timestepping algorithm is then implemented as follows:，应恢复或明示省略。"
+        },
+        {
+          "code": "MISSING_POSITIVE_SUBSTEP_COUNT",
+          "detail": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。"
+        },
+        {
+          "code": "PROJECT_DEPENDENCY_NOT_SUPPLIED",
+          "detail": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。"
+        }
+      ],
+      "evidence": {
+        "A": {
+          "attachment": "R1_PAGES.pdf",
+          "attachment_page": 15,
+          "original_pdf_page": "167",
+          "printed_page": "145",
+          "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+          "finding": "算子式和算法更新均与PDF一致；公式与标题之间漏了 One step of the multiple timestepping algorithm is then implemented as follows:，应恢复或明示省略。"
+        },
+        "C": {
+          "declarations": [
+            "MD.Ch04.respa"
+          ],
+          "finding": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。",
+          "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+        }
+      }
+    },
+    "audit": {
+      "lean_decl": "MD.Ch04.respa",
+      "verdict": "FAIL",
+      "explanation": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。",
+      "counterexample": "r=0在当前签名中合法；函数迭代^[0]为恒等，故结果=kick US (h/2)(kick US (h/2) z)，即(q,p-h grad US(q))。这不是原文正r细分定义的h/r快步算法，且与extra_assumptions宣称r为正不一致。",
+      "suggested_fix": "在签名增加0<r参数或将r改为正自然数，并同步调用域；补回漏句。另提供同版本Chapter02Review.verlet定义供核对，不能仅用函数名称认定实现正确。"
+    }
+  },
+  {
+    "chapter": 4,
+    "batch": "EAUDIT74",
+    "source_id": "MD-4.3-ReactionMultiplier",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SCOPE_EXCEEDS_DECLARATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-4.3-ReactionMultiplier",
+        "kind": "definition",
+        "label": null,
+        "section": "4.3",
+        "printed_page": "153",
+        "pdf_page": "175",
+        "statement_latex": "Using (4.8) in (4.10) we obtain\n\\[g'(q)M^{-1}[F-g'(q)^T\\lambda]+\\varphi\\equiv0.\\]\nThis is a system of linear equations for $\\lambda$. Assuming $g'(q)M^{-1}g'(q)^T$ is invertible, we may solve for $\\lambda$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "λ为真实Gram逆乘(GM⁻¹F+φ)；矩阵逆的语义资格det≠0在下一定理及Gram性质中明确。"
+        ],
+        "issues": [
+          "原句是可逆前提下解方程；当前只有不带可逆资格的总化公式定义，需缩小scope并明确跨条关联，或补同source_id条件性结论。"
+        ],
+        "lean_decl": "MD.Ch04.reactionMultiplier",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA] 公式总化定义；作为唯一反力乘子解释须Gram det≠0，并使用平衡及唯一性定理。"
+        ],
+        "statement_scope": "[EXTRA] 仅定义逆Gram候选乘子公式；所引原句的平衡及唯一可解内容分别由本批MD-4.3-ReactionBalance、MD-4.3-GramInvertible审校，不宣称本定义单独完整形式化原句。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT08_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T12:58:11.914481",
+            "before_sha256": "44ce2841af26995d099911aacbe19eabc71c414a61d6b15329c7df84f1268453",
+            "after_sha256": "be91ee1027b0df723b8cfae4dc153c2997c3e6498d061dc247ecd28e7ce6643d",
+            "changed_fields": [
+              "statement_latex"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch04/mathcopilot_results/BATCH08_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "SCOPE_EXCEEDS_DECLARATION",
+          "detail": "原句是可逆前提下解方程；当前只有不带可逆资格的总化公式定义，需缩小scope并明确跨条关联，或补同source_id条件性结论。"
+        }
+      ],
+      "evidence": [
+        "A：已查看R2_PAGES.pdf附件第15页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+        "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+        "覆盖声明：MD.Ch04.reactionMultiplier",
+        "reactionMultiplier给出的逆Gram公式代数符号、各域及曲率二阶导数正确，但这是对任意m、γ、q,p,F总化的函数定义。本条statement_scope仍声称覆盖所引全部原句，而本条同source_id并没有det≠0条件下满足线性方程或唯一可解的命题。其它条目的reactionBalance及gramInvertible_multiplier可补这一逻辑内容，但不能冒充本条定义本身已含条件性求解结论。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch04.reactionMultiplier",
+      "verdict": "FAIL",
+      "explanation": "reactionMultiplier给出的逆Gram公式代数符号、各域及曲率二阶导数正确，但这是对任意m、γ、q,p,F总化的函数定义。本条statement_scope仍声称覆盖所引全部原句，而本条同source_id并没有det≠0条件下满足线性方程或唯一可解的命题。其它条目的reactionBalance及gramInvertible_multiplier可补这一逻辑内容，但不能冒充本条定义本身已含条件性求解结论。",
+      "counterexample": "例如n=l=1、m=1、g≡0、F≡0时Gram=0且总化定义仍返回0，线性方程却对每个λ成立，无法从该定义推出唯一求解。该例不反驳原书的可逆条件句，只说明无条件总化定义不能代替它。",
+      "suggested_fix": "将本条statement_scope明确改成EXTRA逆Gram候选公式定义，并显式将原句解方程内容链接到本批第14、16条；或在同一source_id补det≠0下的平衡与唯一性定理。"
+    }
+  },
+  {
+    "chapter": 4,
+    "batch": "EAUDIT77",
+    "source_id": "MD-4.3.2-ProjectionScale",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "SOURCE_BIG_O_PRECONDITION_NEEDS_HUMAN",
+        "LEAN_PREDICTOR_SIGN_MISMATCH",
+        "SOURCE_BIG_O_TYPOGRAPHY",
+        "EXTRA_ANNOTATION_CLARIFICATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-4.3.2-ProjectionScale",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "4.3.2",
+        "printed_page": "158",
+        "pdf_page": "180",
+        "statement_latex": "It is worth noting that $\\Lambda(h)=\\mathcal{O}(h^2)$, i.e. for small steps $\\Lambda$ will also be small. This justifies the initial guess $\\Lambda^{(0)}=0$,",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$g$ is the vector of holonomic constraints; $G_n=g^{\\prime}(q_n)$ is its Jacobian at the old position. PDF p.178 / printed p.156, immediately below (4.17).",
+          "$Q_n=q_n+hM^{-1}p_n-h^2M^{-1}F_n$ is the predictor printed below (4.17); retain this minus sign literally. PDF p.178 / printed p.156.",
+          "$\\Lambda=h^2\\lambda_n$ is the scaled vector of constraint multipliers, and $g(Q_n-M^{-1}G_n^T\\Lambda)=0$ is (4.17). PDF p.178 / printed p.156.",
+          "$Q^{(l)}=Q_n-M^{-1}G_n^T\\Lambda^{(l)}$ and $R^{(l)}=g^{\\prime}(Q^{(l)})M^{-1}G_n^T$; $l$ is the iteration index. PDF p.179 / printed p.157, (4.19) and the definition of $R^{(l)}$.",
+          "$M^{-1}$ is the inverse mass matrix; $h$ is the timestep, and the subscript $n$ labels the old timestep. In the Lean signature, $n$ instead denotes the number of position coordinates, $l$ the number of scalar constraints, and $m$ the vector of diagonal masses.",
+          "$\\Lambda(h)$ denotes the solution multiplier of (4.17) as the timestep $h$ varies; $O(h^2)$ is its asymptotic size as $h\\to0$, not the size of the unscaled $\\lambda_n$. PDF p.180 / printed p.158, first paragraph; scaling is printed on PDF p.178.",
+          "$\\Lambda^{(0)}=0$ is the initial Newton iterate for a fixed timestep, whereas $\\Lambda(0)=0$ would be the value of a step-dependent root branch at zero step. These are different uses of zero. PDF p.179, (4.18)–(4.19), and PDF p.180, first paragraph.",
+          "The excerpt stops after the initial-guess clause; the actual second sentence continues with “and it also suggests” a smaller timestep if convergence is poor. Its printed comma is preserved at the excerpt boundary. PDF p.180 / printed p.158.",
+          "PDF p.178 explicitly permits violation of the hidden constraint in the discussed method. The conditional Lean estimate assumes an initially compatible cotangent state; this is a declared extra hypothesis, not an assertion that every method step satisfies the hidden constraint exactly."
+        ],
+        "issues": [
+          "原页首行使用书写体大 O；corrected_json 将 O(h²) 的排版恢复为 \\mathcal{O}(h²)。摘录在初值从句后的逗号处停止，与原页后续 and it also suggests 的衔接已由 context_notation 说明。",
+          "原书在前页明确允许隐藏约束被违反；若把本句视为仅要求初始位置约束成立的普遍陈述，则 Λ(h)=O(h²) 缺少隐藏约束相容性（或随步长为 O(h) 的隐藏残差）等资格。保留原书原句，提交 NEEDS_HUMAN 判断其意指的初始状态和渐近范围；不将反例归咎于已经增加相容前提的 Lean 条件定理。",
+          "当前 Lean 根分支前提的预测位置含 +h²M^{-1}F(z.q)，而本条 context_notation 和原印 Q_n 均含 −h²M^{-1}F_n；没有声明 F 是 −F_n，也没有将该处标记为 corrected 版本。此为可独立确定的签名/原文对应失配。",
+          "分支 C²、η(0)=0、Gram 非奇异和初始 cotangentSet 相容性是明确的附加资格，extra_assumptions 应统一标 [EXTRA]，并说明只给条件估计，不构造根分支。"
+        ],
+        "lean_decl": "MD.Ch04.projectionScale",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA] 给定 η:ℝ→Q l 的全局 C² 根分支、η(0)=0、初始位置和隐藏约束相容性，以及旧位置 Gram 非奇异；只证明已给分支的 O(h²) 条件估计，不由此构造或证明分支存在。",
+          "[审校待修] 当前 Lean 的根方程预测位置使用 +h²M^{-1}F(z.q)，与本条原印 −h²M^{-1}F_n 不符。需恢复负号，或另作明确标名/说明的力变量反号版本；此处仅记录建议，不修改 Lean 或源文。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "NEEDS_HUMAN",
+        "repair_log": [
+          {
+            "stage": "EAUDIT10_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T13:03:51.275819",
+            "before_sha256": "15c058656a8168c4fc44d45921af69245bcb319141d5236db89702e41f46a5fe",
+            "after_sha256": "b1fbbb40c220d8ae569bbb9a82806b41d6f8d5a4da07e271da4947c9cfc62cca",
+            "changed_fields": [
+              "statement_latex",
+              "context_notation"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch04/mathcopilot_results/BATCH12_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "R3本轮实际渲染核对：R3_PAGES.pdf，附件第10页；证据 .mathcopilot/reviews/ch04_eaudit/R3_evidence/page-10.png。旧 repair_log 仅作为输入历史保留，不作为本轮核验依据。"
+      },
+      "issues": [
+        "原页首行使用书写体大 O；corrected_json 将 O(h²) 的排版恢复为 \\mathcal{O}(h²)。摘录在初值从句后的逗号处停止，与原页后续 and it also suggests 的衔接已由 context_notation 说明。",
+        "原书在前页明确允许隐藏约束被违反；若把本句视为仅要求初始位置约束成立的普遍陈述，则 Λ(h)=O(h²) 缺少隐藏约束相容性（或随步长为 O(h) 的隐藏残差）等资格。保留原书原句，提交 NEEDS_HUMAN 判断其意指的初始状态和渐近范围；不将反例归咎于已经增加相容前提的 Lean 条件定理。",
+        "当前 Lean 根分支前提的预测位置含 +h²M^{-1}F(z.q)，而本条 context_notation 和原印 Q_n 均含 −h²M^{-1}F_n；没有声明 F 是 −F_n，也没有将该处标记为 corrected 版本。此为可独立确定的签名/原文对应失配。",
+        "分支 C²、η(0)=0、Gram 非奇异和初始 cotangentSet 相容性是明确的附加资格，extra_assumptions 应统一标 [EXTRA]，并说明只给条件估计，不构造根分支。"
+      ],
+      "evidence": [
+        "本轮依据：R3_任务.md 条目 10/10 及 R3_PAGES.pdf 附件第10页（原书 PDF 180 / 印刷 158）；实际渲染图 R3_evidence/page-10.png。",
+        "附件第10页首段确实印 Λ(h)=𝒪(h²)，随后用它解释初值 Λ^(0)=0；原页未在该句重述隐藏约束相容性。",
+        "附件第5页 (4.15) 和 Q_n 定义均为减去力项，本文件条目5的 Fprinted 消元也保留负号；本条 Lean 却为加号，不能以该差异源自 PDF 识别作解释。",
+        "本条 cotangentSet 的实际定义已展开：g(z.q)=0 且 G(z.q)M^{-1}z.p=0；它恰好排除了下述针对源文无条件解释的反例。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch04.projectionScale",
+      "verdict": "FAIL",
+      "explanation": "签名量化任意 n,l,m、位置力 F:Q n→Q n、约束 g、初始相点 z 及分支 η:ℝ→Q l；假设 z∈cotangentSet、g_j∈C²、η∈C²、η(0)=0、Gram(z.q).det≠0，以及某个双侧开邻域内的实际零残差根方程。完整结论为存在 C>0、δ>0，对全部 h∈(−δ,δ) 有 ‖η(h)‖≤Ch²，包含 h=0。作为当前所写“加号预测器”的条件数学定理，该结论正确：由根方程在 0 的一阶微分、初始隐藏约束和 Gram 可逆得到 η′(0)=0，再由 C² 分支得到二阶界；F 只在固定 z.q 处取值，故无需 F 对位置可微。没有循环假设 O(h²)，也没有宣称已找到根分支。然而原文/notation 的预测器是 z.q+hM^{-1}z.p−h²M^{-1}F_n，当前签名却写成加号，且未注明反号变量关系或修正版，故源文对应审校为 FAIL，而非数学定理本身被反例否定。原书 O(h²) 适用范围的疑问另在 json_review 标记 NEEDS_HUMAN，保持原文并交由人工判断。",
+      "counterexample": {
+        "scope": "两例分别说明原书无隐藏相容性时的范围问题，以及加/减号预测器根分支不同；均不否定当前 Lean 条件估计本身。以下是直接代入的解析例，不是数值模拟或 Lean 验证。",
+        "source_scope_example": "取 n=l=1，m=1，g(x)=x，q=0，p=1，F_n=0。位置约束 g(q)=0、Gram=1，但隐藏约束不成立。原印残差为 h−Λ，唯一光滑根为 Λ(h)=h；|h|≤Ch² 不可能在任意固定 C 的零邻域成立。该例不满足 Lean 的 z∈cotangentSet。",
+        "predictor_sign_example": "取 n=l=1，m=1，g(x)=x，q=p=0，F_n=F(0)=1。此时初始余切相容且 Gram=1。原印负号预测器残差为 −h²−η，根为 η(h)=−h²；当前 Lean 加号预测器残差为 h²−η，根为 η(h)=h²。两分支均为 O(h²)，但不是同一原文根方程。"
+      },
+      "suggested_fix": "不修改原书 statement_latex。Lean 若仍以 F 表示原印 F_n，将根方程预测位置中的 +h² • invMass m (F z.1) 改为 −h² • invMass m (F z.1)；若 F 特指物理力而与原印量反号，则需明确 F=−Fprinted 的记号关系并单独标名该版本。保留现有根分支、相容性和非奇异 [EXTRA] 条件；由人工确认原书 O(h²) 的初态/随步长范围。"
+    }
+  },
+  {
+    "chapter": 4,
+    "batch": "EAUDIT78",
+    "source_id": "MD-4.3.3-ComponentSweep",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "PRINTED_INDEX_UNDEFINED",
+        "STOP_BOUNDARY_MISMATCH",
+        "TOTALIZED_AUXILIARY_DOMAIN"
+      ],
+      "corrected_json": {
+        "source_id": "MD-4.3.3-ComponentSweep",
+        "kind": "definition",
+        "label": null,
+        "section": "4.3.3",
+        "printed_page": "158",
+        "pdf_page": "180",
+        "statement_latex": "and continue to update $\\Lambda_2$ in the same manner (using the second constraint). In general, we perform a sequence of updates\n\\[\\Delta\\Lambda_j=[\\nabla g_j(Q)^TM^{-1}G_j^1]^{-1}g_j(Q),\\qquad Q:=Q-M^{-1}G_n^j\\Delta\\Lambda_j,\\]\nas $j$ cycles repeatedly from $1$ to $m$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "PDF第180页（印刷第158页）§4.3.3：G_n^k=\\nabla g_k(q_n)，为G_n^T的第k列；q_n为固定旧位置，Q为在分量更新过程中不断改变的位置，Q_n为初始试探位置。",
+          "约束分量编号为j=1,...,m；M为质量矩阵，M^{-1}作用于梯度向量。Lean中的n是位置坐标维数，l是约束数，m : Fin n → ℝ是各坐标质量，Fin l的0,...,l-1对应原文1,...,m。",
+          "本页初始化为Λ=0、Q=Q_n；ΔΛ_j是第j个乘子分量的增量，Q:=Q-M^{-1}G_n^jΔΛ_j使用当前Q计算后立即覆盖Q。",
+          "原文方括号的逆是标量逆；有意义的线性化步骤要求该分母非零，M可逆，并要求g_j在求梯度处可微。原句未把这些技术资格逐一写成假设。",
+          "原书一般式分母确印为G_j^1，而同页已定义的是G_n^k、更新方向为G_n^j；保留印刷索引，不将其静默改为G_n^j。",
+          "原页实际给出的停止建议是$\\|\\Delta\\Lambda_j\\|\\leq\\mathrm{tol}$，$j=1,2,\\ldots,m$；“或残差”不是这句原文给出的条件。本条不声称收敛。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch04.componentSweep",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]一次完整顺序sweep，使用上一条统一Gn索引；多轮为其真实函数迭代。",
+          "[EXTRA] 保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。",
+          "[EXTRA] componentSweep/Delta/Trajectory/Stop为无资格参数的总化辅助，零分母时不能解释为有效Newton步骤；Iteration为所执行步骤另加有效域。Stop当前严格不等式与原页非严格不等式不符，尚未修复。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "NEEDS_HUMAN",
+        "repair_log": [
+          {
+            "stage": "EAUDIT12_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T18:54:20.419570",
+            "before_sha256": "e50c9c99546cdd8ca9e30fab7cec54838ab913c85ab125ee712afa541276385f",
+            "after_sha256": "9b12f1b88bbd7034135cbd549115cb600f5ad1339d50e70c156ba2aa85011d02",
+            "changed_fields": [
+              "statement_latex",
+              "context_notation"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch04/mathcopilot_results/BATCH13_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "PRINTED_INDEX_UNDEFINED",
+          "detail": "A：原句忠实保留G_j^1；其索引疑误仍待人工确认。"
+        },
+        {
+          "code": "STOP_BOUNDARY_MISMATCH",
+          "detail": "C：原页建议全部分量增量范数≤tol，componentPrintedStop却为绝对值<tol，排除了等号边界。"
+        },
+        {
+          "code": "TOTALIZED_AUXILIARY_DOMAIN",
+          "detail": "C：componentSweep、Delta、Trajectory、Stop本身没有有效域资格；Iteration只保证所执行前rounds*l步，不能自动保证另一round的Stop测试有效。须区分总化辅助与有效算法使用。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "pdf": "/workspace/R4_PAGES.pdf",
+          "attachment_pages": [
+            3
+          ],
+          "printed_page": "158",
+          "method": "逐页渲染视觉核对，并对照pdftotext提取文本；以视觉字形为准。",
+          "result": "上述issues列出原印疑误、转录或注释差异；未列出的所引正文、公式与原页一致。"
+        },
+        {
+          "stage": "C",
+          "source": "/workspace/R4_任务.md",
+          "scope": "仅使用本条完整当前Lean及摘录的MD/MolecularDynamics实际依赖；标准库按标准数学含义。只读审签名，未编译或补证明，未使用旧工程。",
+          "result": "componentSweep按finRange l升序foldl，每次用刚更新的Qcur，使用梯度修订方向；它调用的是Chapter04Review.componentConstraintStep，无有效域假设，是实数逆零总化下的辅助函数。componentPrintedDelta忠实保留Gsup1；Trajectory以k mod l循环、旧q不变，l=0时恒等；Iteration在正质量、l>0和每个已执行步骤可微/分母非零条件下返回rounds*l步位置。Stop检查round*l+j处、更新前计算的一整轮各分量增量，顺序正确，却使用<tol，原页是≤tol；故本条全部声明不能整体PASS。原印索引疑误另需人工裁定。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch04.componentSweep",
+      "verdict": "FAIL",
+      "explanation": "componentSweep按finRange l升序foldl，每次用刚更新的Qcur，使用梯度修订方向；它调用的是Chapter04Review.componentConstraintStep，无有效域假设，是实数逆零总化下的辅助函数。componentPrintedDelta忠实保留Gsup1；Trajectory以k mod l循环、旧q不变，l=0时恒等；Iteration在正质量、l>0和每个已执行步骤可微/分母非零条件下返回rounds*l步位置。Stop检查round*l+j处、更新前计算的一整轮各分量增量，顺序正确，却使用<tol，原页是≤tol；故本条全部声明不能整体PASS。原印索引疑误另需人工裁定。",
+      "counterexample": "边界见证：n=l=1，m=1，g₀(t)=t，q=0，Q₀=1，Gsup1₀=1，round=0，tol=1。分母为1、增量为1；原书1≤1成立，而当前Stop要求1<1为假。此为精确代入，非数值搜索。",
+      "suggested_fix": "将componentPrintedStop的<tol改为≤tol，或另命名严格停止变体并保留原印非严格版；有效使用Stop时补测试轮全部步骤资格。保留G_j^1疑误待人工裁定。本次不修改工程。"
+    }
+  },
+  {
+    "chapter": 4,
+    "batch": "EAUDIT85",
+    "source_id": "MD-4.4-DipolarPotentialSum",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "DECLARED_DOMAIN_NOT_ENFORCED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-4.4-DipolarPotentialSum",
+        "kind": "definition",
+        "label": null,
+        "section": "4.4",
+        "printed_page": "170",
+        "pdf_page": "192",
+        "statement_latex": "$\\varphi^{\\rm dip}_{ij}=\\varphi_{\\rm LJ}(r_{ij})+\\mu_i^TL(q_{ij})\\mu_j$, with $U$ given as the sum of these over pairs.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "q_ij=q_i−q_j，r_ij=||q_ij||为欧氏距离；μ_i、μ_j为单位偶极方向。",
+          "原PDF写 L(q_ij)=1/r_ij³−(3/r_ij⁵)q_ij q_ij^T，并称L为3×3矩阵；首项按标量乘单位矩阵理解，原式未显式印I。",
+          "U是所有不同粒子无序配对的相互作用势之和；φ_LJ为Lennard–Jones径向势，使用r_ij>0的无重叠构形。",
+          "当前Lean未限制物理构形域；碰撞处的总函数值不是原书奇异势的物理定义。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch04.dipolarPotentialSum",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA] 当前Lean为任意位置和方向的总函数；只有另加q_i≠q_j及dot(μ_i,μ_i)=1的物理实例才解释为无碰撞单位偶极势。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT20_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T19:04:11.964101",
+            "before_sha256": "0b9ca44fa171ddd8d3ac4cff0327df07d663d3132e416517af5ee3f8f86a78f7",
+            "after_sha256": "311814d1b2f52872358595211eeb815243a20426bccc51a2a3edd76c6b2674ab",
+            "changed_fields": [
+              "statement_latex",
+              "context_notation"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        "C：EXTRA所称非碰撞域未在完整声明中实现，且单位偶极方向也未限制。"
+      ],
+      "evidence": [
+        "附件12页印170：势对公式与with U given as the sum of these over pairs一致；距离及无序计数解释符合上下文。",
+        "求和指标i,j均遍历Fin N，if i<j确保每个无序不同粒子对恰计一次；q差与sqrt(dot差差)确实绑定实际距离，pair核依赖也正确。但签名没有位置非碰撞前提，也没有μ单位约束，而context_notation及EXTRA明确声称无重叠位置和单位方向。Lean实数逆在0处仍有总值，故碰撞状态被实际纳入定义域；这不能表述为已实现r_ij>0的物理接口。",
+        {
+          "attachment_pages": [
+            12
+          ],
+          "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+          "render_sha256": {
+            "12": "20574cf8b72516350df6fdbb607d70aacd249b848e7675076b744a5fc14dc63d"
+          }
+        },
+        "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch04.dipolarPotentialSum",
+      "verdict": "FAIL",
+      "explanation": "求和指标i,j均遍历Fin N，if i<j确保每个无序不同粒子对恰计一次；q差与sqrt(dot差差)确实绑定实际距离，pair核依赖也正确。但签名没有位置非碰撞前提，也没有μ单位约束，而context_notation及EXTRA明确声称无重叠位置和单位方向。Lean实数逆在0处仍有总值，故碰撞状态被实际纳入定义域；这不能表述为已实现r_ij>0的物理接口。",
+      "counterexample": "N=2，q_0=q_1=0，μ_0=μ_1=(1,0,0)。当前接口允许该输入且r_01=0；形式核逆幂均取0并返回lj(0)，不满足声明背景r_01>0。",
+      "suggested_fix": "在物理主接口补∀i j,i≠j→q_i≠q_j与∀i,dot(μ_i)(μ_i)=1，或明确将当前声明仅列为总化代数核，并另给受约束物理包装。"
+    }
+  },
+  {
+    "chapter": 4,
+    "batch": "EAUDIT87",
+    "source_id": "MD-4.4.1-AngularInertia",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "INCOMPLETE_FULL_CONCLUSION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-4.4.1-AngularInertia",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "4.4.1",
+        "printed_page": "171",
+        "pdf_page": "193",
+        "statement_latex": "From Eq. (4.39) we may write this as $l=\\sum_im_i\\delta_i\\times\\omega\\times\\delta_i$, from which, using the vector triple product identity $a\\times b\\times c=(a\\cdot c)b-(a\\cdot b)c$, we obtain $l=\\sum_im_i[\\|\\delta_i\\|^2I-\\delta_i\\delta_i^T]\\omega$. Define $\\pi=\\Theta^Tl$, then we have (using $\\delta_i=\\Theta\\delta_i(0)$): $\\pi=T\\omega_b$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "$\\delta_i(t)=\\Theta(t)\\delta_i(0)$，$\\dot\\delta_i=\\omega\\times\\delta_i$（4.39）；$\\omega_b=\\Theta^T\\omega$。",
+          "$T=\\sum_{i=1}^Nm_i[\\|\\delta_i(0)\\|^2I-\\delta_i(0)\\delta_i(0)^T]$；$\\pi=\\Theta^Tl$。",
+          "原书三重叉积未加括号；原页给出的恒等式及（4.39）确定其为右嵌套 $a\\times(b\\times c)$，保留原排版，不默改。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch04.angularInertia",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "真实SO(3)矩阵和cross3，嵌套为δ×(ω×δ)；原无括号三重积含糊，明确上下文对象。"
+        ],
+        "statement_scope": "当前Lean仅覆盖在δ_i=Θδ_i(0)、dotδ_i=ω×δ_i下的最终体坐标结论π=Tω_b；引文中的一般三重积恒等式和空间角动量二次型等式尚未作为独立结论覆盖。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT21_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T19:05:44.832739",
+            "before_sha256": "0575efa5a1f7ff53c2cab4faef618ba80417640f369dfc104d4b545c54bc1b6f",
+            "after_sha256": "b51efe9de877903c6fb6c461170f6a41bcf184b5f9611a078c4ebf662e816560",
+            "changed_fields": [
+              "context_notation"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch04/mathcopilot_results/BATCH24_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        "C：完整引用所列空间角动量中间式及一般三重积恒等式未列入声明结论；局部证明步骤不替代完整签名。"
+      ],
+      "evidence": [
+        "附件17页印171：原页确无三重叉积括号，所给(a·c)b−(a·b)c确定右嵌套。各空间角动量式与π=Tω_b一致；JSON省略中间重复引导短语并拼接句子，数学内容未改。",
+        "全称N,m,参考δ,Θ,ω，并以前提ΘᵀΘ=I及detΘ=1，结论确实是ΘᵀΣm_i[(Θδ_i)×(ω×Θδ_i)]=T(Θᵀω)，右嵌套与原文给出的三重积公式一致。然而本条statement_scope声称覆盖全部引文，签名仅给最终体坐标等式；未陈述一般三重积恒等式以及空间角动量等于Σm_i[||δ_i||²I−δ_iδ_iᵀ]ω的中间等式。证明体中的局部hc只给u×(w×u)特例，不是可替代完整结论的声明。",
+        {
+          "attachment_pages": [
+            17
+          ],
+          "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+          "render_sha256": {
+            "17": "c79ddbbed33c8bbbd1c5a77b3cd84a12e875cf85776656f4243caa51b4c296d3"
+          }
+        },
+        "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch04.angularInertia",
+      "verdict": "FAIL",
+      "explanation": "全称N,m,参考δ,Θ,ω，并以前提ΘᵀΘ=I及detΘ=1，结论确实是ΘᵀΣm_i[(Θδ_i)×(ω×Θδ_i)]=T(Θᵀω)，右嵌套与原文给出的三重积公式一致。然而本条statement_scope声称覆盖全部引文，签名仅给最终体坐标等式；未陈述一般三重积恒等式以及空间角动量等于Σm_i[||δ_i||²I−δ_iδ_iᵀ]ω的中间等式。证明体中的局部hc只给u×(w×u)特例，不是可替代完整结论的声明。",
+      "counterexample": null,
+      "suggested_fix": "保留完整引文，补独立声明或合取结论表达一般a×(b×c)恒等式及空间角动量矩阵等式；若采用分工，须明确指向实际对应声明后另行核对。"
+    }
+  },
+  {
+    "chapter": 4,
+    "batch": "EAUDIT89",
+    "source_id": "MD-4.4.1-AxisRotation",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [],
+      "corrected_json": {
+        "source_id": "MD-4.4.1-AxisRotation",
+        "kind": "definition",
+        "label": null,
+        "section": "4.4.1; 4.4.2",
+        "printed_page": "173–174",
+        "pdf_page": "195–196",
+        "statement_latex": "Each of these is, it turns out, easily integrated as a planar rotation (see Exercise 7). The notation $\\Theta^x(\\phi)$ refers to a rotation around the x-axis by an angle $\\phi$, that is\n\\[\\Theta^x(\\phi)=\\begin{bmatrix}1&0&0\\\\0&\\cos(\\phi)&-\\sin(\\phi)\\\\0&\\sin(\\phi)&\\cos(\\phi)\\end{bmatrix},\\]\nwith corresponding formulae for $\\Theta^y$ and $\\Theta^z$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "右手主动轴旋转；原书使用上标Θ^x、Θ^y、Θ^z；Fin 3的0,1,2对应书1,2,3。",
+          "平面旋转句在§4.4.1 PDF195；旋转矩阵定义在§4.4.2 PDF196。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch04.axisRotation",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "APPROVED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT22_LOCAL_REPAIR",
+            "timestamp": "2026-10-15T19:06:47.837950",
+            "before_sha256": "67600283bd49520a46abeda6d1244110a66a8489e81de7ef7db957c0bf3e5836",
+            "after_sha256": "f5d416463e8e975f69206a07ef3ee92a15b062d7c1c9c9bbe275e0fee86d2c3d",
+            "changed_fields": [
+              "statement_latex",
+              "context_notation"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          },
+          {
+            "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+            "timestamp": "2026-10-16T10:27:39.597807",
+            "before_sha256": "f5d416463e8e975f69206a07ef3ee92a15b062d7c1c9c9bbe275e0fee86d2c3d",
+            "after_sha256": "e2a39150e5539b58aa84be3f0a2f1189bd05c5e17510b5aeb83d09e7e117d482",
+            "changed_fields": [
+              "section"
+            ],
+            "changes": {
+              "section": {
+                "before": "4.4.1",
+                "after": "4.4.1; 4.4.2"
+              }
+            },
+            "raw_return": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
+            "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; R8_PAGES.pdf 附件第8、9页；本次 R8 视觉复核，见本条 json_review.evidence。"
+      },
+      "issues": [],
+      "evidence": {
+        "source_file": "R8_任务.md",
+        "source_file_sha256": "7959d1c3a32519cecfeab143035c742d40c548cd428719df6bf031f8798691d8",
+        "pdf_file": "R8_PAGES.pdf",
+        "pdf_file_sha256": "7c9f969e07f7f8ac5525c5534a391d44d951871710766b37f6e6b5ee85aa6897",
+        "attachment_pages": [
+          8,
+          9
+        ],
+        "visual_verification": "已视觉查看印刷页172、173、174的三种页面；15张附件页的渲染哈希分组逐页校验相同，复用相同页面的视觉结果。非仅依赖文本抽取或旧审校标记。",
+        "render_equivalence_groups": [
+          {
+            "attachment_pages": [
+              7,
+              8,
+              10,
+              11,
+              14
+            ],
+            "printed_page": 173,
+            "book_pdf_page": 195,
+            "render_sha256": "525af8548750a65e6c8e9b414e8e4ace598e9ec4676dd11b603b32493d407d76"
+          },
+          {
+            "attachment_pages": [
+              9,
+              12,
+              13,
+              15
+            ],
+            "printed_page": 174,
+            "book_pdf_page": 196,
+            "render_sha256": "e4d7c56a9d89eaf0c44a2e8b57ef0a43a284dd06375edbd6967e698591683d95"
+          }
+        ],
+        "A_source_check": "附件第8页印刷173页首段的平面旋转句与附件第9页印刷174页的“The notation Θˣ(φ) ...”和展示矩阵逐项一致。两段并非原书连续段，已由context_notation分别定位；section=4.4.1;4.4.2、两页页码正确。",
+        "C_signature_check": "对象只有(i:Fin 3)(φ:ℝ):Mat3，三个分支全部9个元素均已核对。i=1时(1,3)=sinφ,(3,1)=−sinφ；i=2时(1,2)=−sinφ,(2,1)=sinφ。不存在表达单轴Euler子流的Prop或定理。",
+        "reviewed_lean_declarations": [
+          "MD.Ch04.axisRotation"
+        ],
+        "EXTRA_check": "extra_assumptions为空且statement_scope为全引文，不能仅凭axisRotation这个名字把第一句的积分结论忽略。条目6有明确外部分工，不自动修改本条范围。",
+        "method_limit": "只读审校任务内摘录及附件；未读旧 Ch04.lean/旧 source JSON/旧批次材料，未改工程、未补证明、未运行 Lean 编译。PASS 是签名与限定范围审校结论，不表示消除了 sorry。输入哈希按任务原值回显，并非对旧版本文件重新计算。"
+      }
+    },
+    "audit": {
+      "lean_decl": "MD.Ch04.axisRotation",
+      "verdict": "FAIL",
+      "explanation": "axisRotation 本身的三支矩阵完全正确：i=0给出所印x轴矩阵，i=1与i=2分别是对应右手y、z轴矩阵，且∀φ:ℝ无额外前提。但原JSON的完整statement_scope包含“Each of these ... easily integrated as a planar rotation”这一单轴ODE可积性结论；同一source_id所给全部Lean只有矩阵定义，未出现子场、时间、初值、解或积分关系，extra_assumptions也没有将该句排除/分配。故完整范围的签名FAIL，原因是结论遗漏；不是矩阵符号错误，也不是sorry。",
+      "counterexample": null,
+      "suggested_fix": "矩阵定义保留。另行明确登记覆盖平面子流结论的声明及其精确source_id映射，并与本条范围对应；或经范围修订把第一句作为背景摘录明确移出本条承诺。若将来陈述子流，应核查Euler场π×ω对应的旋转角符号。本次不修改工程或补证明。"
+    }
+  },
+  {
+    "chapter": 5,
+    "batch": "EAUDIT48",
+    "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "MISSING_HAMILTONIAN_DIVERGENCE_BRIDGE",
+        "INCOMPLETE_STATEMENT_COVERAGE",
+        "UNVERIFIED_EXTRA_MAPPING"
+      ],
+      "corrected_json": {
+        "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "5.2.3",
+        "printed_page": "186",
+        "pdf_page": "207",
+        "statement_latex": "From the above we know that for a smooth scalar function $u=u(z)$, $\\mathcal L_f^\\daggeru=-\\nabla\\cdot(uf)=-f\\cdot\\nabla u-u\\nabla\\cdot f$. The term $\\nabla\\cdot f$ vanishes for $f=J\\nabla H$. Thus we have $\\mathcal L_f^\\daggeru=-f\\cdot\\nabla u=-\\mathcal L_fu$. If this holds for all smooth $u$, we write $\\mathcal L_f^\\dagger=-\\mathcal L_f$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          "完整原句中的Hamiltonian场散度零没有被本条声明推出；[EXTRA]提及的正式库桥接不在提供的可核查声明中。"
+        ],
+        "lean_decl": "MD.Ch05.hamiltonianSkewExpression",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA] 当前Lean仅编码可微零散度场的负Lie恒等式；原段Hamiltonian场散度零尚缺本输入可核查的桥接声明，不视为已覆盖。形式伴随不作闭Hilbert算子域识别。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT06_LOCAL_REPAIR",
+            "timestamp": "2026-10-16T09:56:45.362027",
+            "before_sha256": "0bfa6a60ca51404b73d1cc331420c350d58b14475683b32b4024a7e366fcb947",
+            "after_sha256": "0436e3160e5ea19aaa49dd82753faae592b472e50a24332b0502897fe258977b",
+            "changed_fields": [
+              "statement_latex"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch05/mathcopilot_results/BATCH09_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        "完整原句中的Hamiltonian场散度零没有被本条声明推出；[EXTRA]提及的正式库桥接不在提供的可核查声明中。"
+      ],
+      "evidence": {
+        "source": "R2_PAGES.pdf",
+        "attachment_pages": "11",
+        "printed_page": "186",
+        "pdf_page": "207",
+        "A_text_check": "原页乘积散度展开、f=J∇H时散度消失及负Lie表达式、形式算子身份均已保留。",
+        "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+      }
+    },
+    "audit": {
+      "lean_decl": [
+        "MD.Ch05.hamiltonianSkewExpression"
+      ],
+      "verdict": "FAIL",
+      "explanation": "所列定理作为一般零散度场的条件命题正确：∀n,f,u，f和u可微，假设∀z div f z=0，再得∀z -div(uf)=-Du[f]。但本条statement_scope覆盖整个原段，其中还包含f=J∇H时散度为零这一实质结论。当前所有声明既无H、J或Phase，也无从HamiltonianField推出div f=0的桥接。将散度零直接列为前提不能覆盖该结论。[EXTRA]称正式库另有桥接，却未给出其声明及所需正则性，不能按本任务的唯一输入核实。因此就完整原句覆盖判FAIL，并非认为已列的条件恒等式为假。",
+      "counterexample": "覆盖缺项，无需以数学反例反驳现有条件命题/定义；现有部分自身正确。",
+      "suggested_fix": "在本条附上并核对实际HamiltonianField在C² Hamiltonian下散度为零的桥接声明及其精确项目定义；随后实例化当前零散度恒等式。若只保留条件版本，必须明确缩小statement_scope并将原段的Hamiltonian散度零另列且给出可核查映射。"
+    }
+  },
+  {
+    "chapter": 5,
+    "batch": "EAUDIT49",
+    "source_id": "MD-5.3.1-TestSpace",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "MISSING_SCHWARTZ_OPTION",
+        "INCOMPLETE_STATEMENT_COVERAGE",
+        "CONTEXT_COVERAGE_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-5.3.1-TestSpace",
+        "kind": "definition",
+        "label": null,
+        "section": "5.3.1",
+        "printed_page": "188",
+        "pdf_page": "209",
+        "statement_latex": "The functions on which the generalized function acts are called test functions. Some choices for the space of test functions $\\mathcal T^m$ defined on $\\mathbb R^m$ include: the $C^\\infty$ functions with compact support in $\\mathbb R^m$, denoted $C_0^\\infty(\\mathbb R^m)$; the space $\\mathcal S(\\mathbb R^m)$ of $C^\\infty$ functions on $\\mathbb R^m$ whose derivatives decay rapidly at infinity (the so-called Schwarz space).",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原书给出C∞紧支持和Schwarz空间两个选项；当前本source_id仅实现C∞紧支持子类型，第二选项尚未在所给声明中覆盖。"
+        ],
+        "issues": [
+          "原文两个测试空间选项中仅编码C∞紧支持；context_notation关于“两选项都保留”的断言与本条全部声明不符。"
+        ],
+        "lean_decl": "MD.Ch05.testSpace",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA] 将Cω误编码改为原书C∞（scoped ∞）；只改Blueprint实际测试空间，正式库冻结。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT07_LOCAL_REPAIR",
+            "timestamp": "2026-10-16T09:57:24.308932",
+            "before_sha256": "3025fabb512c2d3501e542f4dab5dc643d4df7e51433dfc9956f8cfeeaef6692",
+            "after_sha256": "cb27a1acc178e78b65d3c98d2041b444a26dd3bf734f5f5c3d683684ad39cf15",
+            "changed_fields": [],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        "原文两个测试空间选项中仅编码C∞紧支持；context_notation关于“两选项都保留”的断言与本条全部声明不符。"
+      ],
+      "evidence": {
+        "source": "R2_PAGES.pdf",
+        "attachment_pages": "15",
+        "printed_page": "188",
+        "pdf_page": "209",
+        "A_text_check": "原页两个项目分别为C∞紧支持和Schwarz空间，JSON正文两项均忠实；Schwarz拼写为原书原样，未擅改。",
+        "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+      }
+    },
+    "audit": {
+      "lean_decl": [
+        "MD.Ch05.testSpace"
+      ],
+      "verdict": "FAIL",
+      "explanation": "当前仅有testSpace n这一声明：实n维欧氏空间上的实值函数子类型，ContDiff ℝ ∞与HasCompactSupport正确编码第一选项C∞紧支持，未误用Cω。但原文及本条statement_scope还完整列出第二选项S(R^m)，且context_notation声称两个选项都保留。所给本source_id全部声明与依赖里没有SchwartzMap/Schwartz空间选项、二选一接口或对应映射；不能因其他条目6引用过schwartzSpace就认定本条已经覆盖第二选项。因此完整覆盖FAIL；第一选项自身PASS。",
+      "counterexample": "覆盖缺项，无需以数学反例反驳现有条件命题/定义；现有部分自身正确。",
+      "suggested_fix": "保持现有C∞紧支持定义，并为本source_id增加第二个SchwartzMap (E n) ℝ选项的实际声明/明确映射；相应更新context_notation。审校不修改工程。"
+    }
+  },
+  {
+    "chapter": 5,
+    "batch": "EAUDIT53",
+    "source_id": "MD-5.3.3-LowerDimensionNull",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "AMBIENT_NULL_CLAUSE_NOT_COVERED",
+        "DIMENSION_REQUIRES_REGULAR_VALUE",
+        "LOWER_DIMENSION_MEANING_UNSPECIFIED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-5.3.3-LowerDimensionNull",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "5.3.3",
+        "printed_page": "195",
+        "pdf_page": "216",
+        "statement_latex": "We also note that lower order objects such as a point or a curve in $\\mathbb R^2$, or a surface in $\\mathbb R^3$, have zero measure with respect to Lebesgue measure for the ambient space. Similarly, for a Hamiltonian system with $N_d$ degrees of freedom, the energy surface is of dimension $2N_d-1$ and the probability measure of sets of lower dimension than this will vanish.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原书维数及低维零测措辞保留待人工确认；当前 Lean 只处理正则水平集以及 C¹ 可数紧参数像。原文第一句的一般环境低维零测尚缺 d<n、无需能级限制的独立声明。"
+        ],
+        "issues": [
+          {
+            "code": "AMBIENT_NULL_CLAUSE_NOT_COVERED",
+            "field": "lean_decl / extra_assumptions",
+            "category": "lean_scope",
+            "description": "本条原文第一句要求一般环境 Lebesgue 低维对象零测。现有唯一 volume 结论同时要求 d+1<n 且像集位于一个指定能级，未覆盖原文 R² 曲线(d=1,n=2) 或 R³ 曲面(d=2,n=3)。此为完整结论覆盖缺口，不是 sorry 问题。"
+          },
+          {
+            "code": "DIMENSION_REQUIRES_REGULAR_VALUE",
+            "field": "statement_latex / issues",
+            "category": "source_math",
+            "description": "原文将能量面维数直接写作2N_d−1；该断言需正则水平集资格，临界能级未必具有此维数。现有 Lean 已加正则性，但原文疑误仍需保留并转人工。"
+          },
+          {
+            "code": "LOWER_DIMENSION_MEANING_UNSPECIFIED",
+            "field": "statement_latex / context_notation",
+            "category": "source_math",
+            "description": "原文未界定 curve、surface 和 lower dimension 的正则性或维数概念；不能自动理解为任意拓扑低维集合。Lean 的 C¹ 可数紧参数块是一种明确且正确的受限版本。"
+          }
+        ],
+        "lean_decl": "MD.Ch05.lowerDimensionNull",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]低维光滑参数化的紧像、正则C¹能量面，维数严格小于能量面；未将任意“拓扑低维集合”自动视为零测。",
+          "[EXTRA] 保留紧面子引理，新增无需全能量面紧性的可数紧参数块零测推广，以及正则水平集局部同胚于开ℝ^(n−1)的维数结论（相空间n=2N_d）。环境Lebesgue零测也在本批同列。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "NEEDS_HUMAN",
+        "repair_log": [
+          {
+            "stage": "EAUDIT11_LOCAL_REPAIR",
+            "timestamp": "2026-10-16T09:59:47.094333",
+            "before_sha256": "5f6e1c75c04a88778e013afcaee78058e0e0a72b648c0bced19878846979a332",
+            "after_sha256": "f625570e130cfe766eca6bbc30c8c44f323c6273723b4e8113393dcaff30e77a",
+            "changed_fields": [],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; R4_PAGES.pdf 附件第14页；本次渲染像素等价组见 .mathcopilot/reviews/ch05_eaudit/R4_evidence/render_groups.json"
+      },
+      "issues": [
+        {
+          "code": "AMBIENT_NULL_CLAUSE_NOT_COVERED",
+          "field": "lean_decl / extra_assumptions",
+          "category": "lean_scope",
+          "description": "本条原文第一句要求一般环境 Lebesgue 低维对象零测。现有唯一 volume 结论同时要求 d+1<n 且像集位于一个指定能级，未覆盖原文 R² 曲线(d=1,n=2) 或 R³ 曲面(d=2,n=3)。此为完整结论覆盖缺口，不是 sorry 问题。"
+        },
+        {
+          "code": "DIMENSION_REQUIRES_REGULAR_VALUE",
+          "field": "statement_latex / issues",
+          "category": "source_math",
+          "description": "原文将能量面维数直接写作2N_d−1；该断言需正则水平集资格，临界能级未必具有此维数。现有 Lean 已加正则性，但原文疑误仍需保留并转人工。"
+        },
+        {
+          "code": "LOWER_DIMENSION_MEANING_UNSPECIFIED",
+          "field": "statement_latex / context_notation",
+          "category": "source_math",
+          "description": "原文未界定 curve、surface 和 lower dimension 的正则性或维数概念；不能自动理解为任意拓扑低维集合。Lean 的 C¹ 可数紧参数块是一种明确且正确的受限版本。"
+        }
+      ],
+      "evidence": {
+        "inputs": {
+          "task": "R4_任务.md",
+          "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+          "pdf": "R4_PAGES.pdf",
+          "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+          "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+        },
+        "attachment_pages": [
+          14
+        ],
+        "original_pdf_pages": [
+          216
+        ],
+        "printed_pages": [
+          195
+        ],
+        "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+        "rendered_pages": [
+          {
+            "page": 14,
+            "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-14.png",
+            "rgb_pixel_sha256": "8594963a3888b596399cd8eedc6f6e93ca275bcee43b89d5ecc9096f77dcf6a0"
+          }
+        ],
+        "text_check": "附件14页与附件13页渲染相同。两句原文逐字一致，特别包括第一句的 R² 曲线及 R³ 曲面，也包括第二句的能级维数与微正则零概率；未删去前半句。",
+        "declaration_checks": [
+          {
+            "lean_decl": "MD.Ch05.lowerDimensionNull",
+            "verdict": "PASS",
+            "detail": "∀n,d,H,c,g,K；d+1<n，H 为 C¹，regularEnergy H c，g:E d→E n 为 C¹，K 紧，g(K)⊂能级；结论为 microMeasure(g(K))=0。条件精确表达 d<n−1 的光滑紧像情形。"
+          },
+          {
+            "lean_decl": "MD.Ch05.lowerDimensionNull_countable",
+            "verdict": "PASS",
+            "detail": "同一维数限制 d+1<n；H 为 C¹且仅要求能级上梯度非零，不要求全能级紧。每个 g k 为全空间 C¹，K k 紧且像在能级；结论同时给出可数并的 microMeasure 和环境 volume 为0。数学正确，但此 volume 子结论范围仍严格小于一般 d<n 的环境零测断言。"
+          },
+          {
+            "lean_decl": "MD.Ch05.lowerDimensionNull_level_dimension",
+            "verdict": "PASS",
+            "detail": "n>0、H 为 C¹、能级梯度非零；每个能级点有环境开邻域 U，且该片能级与 E(n−1) 的某个开集 V 同胚。完整表达正则水平集的局部维数，含 n=1 情形；不是任意临界能级的维数结论。"
+          }
+        ],
+        "project_dependency_check": "surfaceMeasure 使用(n−1)维面积，C¹紧参数像在 d<n−1 时该面积为0，withDensity 及常数缩放保留零测性。regularEnergy 的紧性和正有限总质量仅在第一条引理中；countable 与 level_dimension 未调用它。countable 不保证归一化非退化，因此其结论是测度零结论，不单独证明所得 measure 为概率。",
+        "scope_check": {
+          "existing_declarations": "3条签名分别通过；可数版本的环境零测仅在 d<n−1 且像位于能级时有效。",
+          "uncovered_original_clause": "一般 R² 中曲线、R³ 中曲面相对环境 Lebesgue 测度的零测性。",
+          "source_math_disposition": "保留原文，正则性与维数解释转 NEEDS_HUMAN；整条签名覆盖判 FAIL。"
+        }
+      }
+    },
+    "audit": {
+      "lean_decl": "MD.Ch05.lowerDimensionNull",
+      "verdict": "FAIL",
+      "explanation": "FAIL（整条原文的完整覆盖），同时原书的未限定维数语言需人工确认。三个现有 Lean 声明本身均数学正确，且第二条确有环境 volume=0；但这只覆盖位于能级且 d<n−1 的集合，不能冒称原文第一句的一般环境低维零测已覆盖。n=2,d=1 的曲线及 n=3,d=2 的曲面都不满足其严格维数前提，而它们恰是原文列举对象。第二句的正则能级、光滑低维零测已有合理受限实现；该部分通过不能补上第一句的缺口。",
+      "counterexample": "覆盖缺口见光滑直线 g(t)=(t,0)⊂ℝ²，或光滑平面 g(s,t)=(s,t,0)⊂ℝ³：它们环境 Lebesgue 零测，但分别对应 d+1=n，无法实例化当前 countable 声明。这是缺少覆盖的见证，不是否定现有三个定理。针对原文无条件能级维数，取一自由度 H(q,p)=q²+p²、E=0，能级只有一点，维数0而非2·1−1=1；它不满足 Lean 的正则性前提。",
+      "suggested_fix": "另列一般环境零测声明：∀n,d，d<n，∀g:ℕ→E d→E n 及紧 K k，若每个 g k 为 C¹，则 volume(⋃k,g k  K k)=0；该声明无需 H、c 或像集位于能级的前提，即可覆盖原文光滑曲线/曲面的例子。保留当前三个声明，并将正则能级及“低维”的精确解释登记为修正版范围；原书字面句子保留 NEEDS_HUMAN。本次不编辑工程、不补证明。"
+    }
+  },
+  {
+    "chapter": 5,
+    "batch": "EAUDIT56",
+    "source_id": "MD-5.4.1-Mixing",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "LEAN_REFERENCE_INVARIANCE_MISSING",
+        "EXTRA_INVARIANCE_NOT_ENCODED",
+        "NONSTANDARD_MIXING_NAME"
+      ],
+      "corrected_json": {
+        "source_id": "MD-5.4.1-Mixing",
+        "kind": "definition",
+        "label": null,
+        "section": "5.4.1",
+        "printed_page": "199",
+        "pdf_page": "220",
+        "statement_latex": "An even stronger property than the ergodic property is the concept of a mixing system. For a mixing system, the finite time density $\\rho(z;t)$ converges, in the weak sense, to the invariant distribution $\\rho_\\infty(z)$, as $t\\to\\infty$. That is, we have, for all test functions $\\phi$ in some chosen space\n\\[\\lim_{t\\to\\infty}\\langle\\phi,\\rho(\\cdot;t)\\rangle=\\langle\\phi,\\rho_\\infty\\rangle.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "原文弱收敛的配对可用μ参考测度、AC概率初值r及有界连续φ解释；当前Lean谓词缺少μ的流不变性，因此尚不能代表原文的不变极限分布。",
+          "weakMixing在本工程意图表示混合导致分布弱收敛，不应与标准弱混合混为一谈。"
+        ],
+        "issues": [
+          {
+            "code": "LEAN_REFERENCE_INVARIANCE_MISSING",
+            "phase": "C",
+            "field": "weakMixing",
+            "message": "缺少参考概率μ在Φ_t下不变的条件；单凭当前的联合可测流和所列弱极限不能保证这一点。"
+          },
+          {
+            "code": "EXTRA_INVARIANCE_NOT_ENCODED",
+            "phase": "C",
+            "field": "extra_assumptions[0]",
+            "message": "[EXTRA]宣称使用实际不变参考测度，但实际谓词没有编码其不变性；不得把注释当作已有Lean前提。"
+          },
+          {
+            "code": "NONSTANDARD_MIXING_NAME",
+            "phase": "C",
+            "field": "lean_decl",
+            "message": "weakMixing易与标准弱混合概念混淆。源文说mixing，而“weak”修饰分布收敛。命名本身不单独造成FAIL。"
+          }
+        ],
+        "lean_decl": "MD.Ch05.weakMixing",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA] 选择AC概率初值和有界连续测试函数，密度可积性相对于μ；μ必须是实际不变参考概率测度，但当前Lean定义尚未写入这一要求。",
+          "[EXTRA] 当前谓词已编码概率性、零时恒等、群律与联合可测；这四项不能替代参考测度的流不变性。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT14_LOCAL_REPAIR",
+            "timestamp": "2026-10-16T10:01:37.070895",
+            "before_sha256": "59e3cf2aaeef819acde67366c80351cdd160c9049256e1461abf68037a224c1f",
+            "after_sha256": "db0eb975725b316611365b25d5a83156a55ba4626a531ef1502efeaf6541d9a2",
+            "changed_fields": [],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "code": "LEAN_REFERENCE_INVARIANCE_MISSING",
+          "phase": "C",
+          "field": "weakMixing",
+          "message": "缺少参考概率μ在Φ_t下不变的条件；单凭当前的联合可测流和所列弱极限不能保证这一点。"
+        },
+        {
+          "code": "EXTRA_INVARIANCE_NOT_ENCODED",
+          "phase": "C",
+          "field": "extra_assumptions[0]",
+          "message": "[EXTRA]宣称使用实际不变参考测度，但实际谓词没有编码其不变性；不得把注释当作已有Lean前提。"
+        },
+        {
+          "code": "NONSTANDARD_MIXING_NAME",
+          "phase": "C",
+          "field": "lean_decl",
+          "message": "weakMixing易与标准弱混合概念混淆。源文说mixing，而“weak”修饰分布收敛。命名本身不单独造成FAIL。"
+        }
+      ],
+      "evidence": [
+        "R6_任务.md:621：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+        "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+        "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+        "附件第9页＝PDF220／印刷199页末，从“An even stronger property…”至弱配对极限；转录中的invariant distribution、全部测试函数和t→∞均与原页一致。",
+        "R6_evidence/page_09.png与page_04.png相同；所列完整weakMixing定义第一合取止于Measurable (Function.uncurry Φ)，没有MeasurePreserving。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch05.weakMixing",
+      "verdict": "FAIL",
+      "explanation": "weakMixing的概率μ、零时恒等、全实时间群律、联合可测均已写在第一合取内。第二合取对所有L¹、逐点非负、积分为1的初始密度r，以及所有有界连续实测试函数φ，要求∫φ(Φ_t z)r(z)dμ→∫φdμ；这准确表达了AC初始概率分布的弱收敛，测试函数与初始密度的量词及极限方向正确。但定义既没有∀t,MeasurePreserving (Φ t) μ μ，也没有足以从弱收敛推出不变性的空间连续性条件。因此μ不一定是源文及[EXTRA]所说的不变参考分布。下面的联合可测群作用满足整个当前谓词，却不保持μ。此外weakMixing这个名称不能按标准术语读作“弱混合”；这里本来意图表达的是混合导致分布弱收敛。",
+      "counterexample": "在ℝ（与E 1等同）取μ=δ₀。令O={0}∪((0,∞)\\{1})，定义Borel双射h:ℝ→O：h(0)=0，u≠0时h(u)=exp(−u)。在O上令Φ_t(x)=h(h⁻¹(x)+t)，在ℝ\\O上令Φ_t(x)=x。这是联合Borel可测的全实时间群作用，Φ₀=id。任何合格r均有r(0)=1，故测试积分为φ(h(t))，t→+∞时趋于φ(0)=∫φdμ，所有当前weakMixing条件都成立。然而Φ₁(0)=exp(−1)≠0，(Φ₁)_*δ₀=δ_exp(−1)≠δ₀，参考测度不是不变测度。",
+      "suggested_fix": "在谓词中增加∀ t,MeasurePreserving (Φ t) μ μ，或将其作为明确不可省略的接口前提；再保留现有AC密度弱收敛部分。建议将名称/文档改为明确的mixing或density convergence措辞。本次只报告，未修改工程。"
+    }
+  },
+  {
+    "chapter": 5,
+    "batch": "EAUDIT61",
+    "source_id": "MD-5.6-WeakAttractor",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TARGET_PROBABILITY_DOMAIN_MISSING"
+      ],
+      "corrected_json": {
+        "source_id": "MD-5.6-WeakAttractor",
+        "kind": "definition",
+        "label": null,
+        "section": "5.6",
+        "printed_page": "207",
+        "pdf_page": "228",
+        "statement_latex": "this solution is not “asymptotically stable.”",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "z_n=(q_n,p_n), H(q,p)=p^2/2+q^2/2；h为数值时间步长。",
+          "\\widetilde f 是数值方法的modified向量场；\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=-\\nabla\\cdot(\\rho\\widetilde f)；\\delta[q]\\delta[p] 是原点Dirac概率。",
+          "this solution指Forward Euler相关弱稳态δ[q]δ[p]，并非任意平衡。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch05.weakAttractor",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]“attractive”取概率弱拓扑中某邻域内所有初值概率的有界连续测试函数收敛；邻域以有限测试族和正ε明确，不把个别轨道收敛当全密度吸引。此为三个后续结论共用的技术定义；不添加已收敛或已不变的前提。",
+          "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅弱概率局部吸引的辅助技术定义；原负吸引性断言由MD-5.6-ForwardWeakStationary承担，不把定义本身当否定结论。",
+          "[R8审校] 当前weakAttractor未要求IsProbabilityMeasure μ；仅在调用处另有该条件时解释为概率弱拓扑局部吸引。定义的目标域仍需修正，不能据此认定签名已修复。"
+        ],
+        "statement_scope": "仅弱概率局部吸引的辅助技术定义；原负吸引性断言由MD-5.6-ForwardWeakStationary承担，不把定义本身当否定结论。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT22_LOCAL_REPAIR",
+            "timestamp": "2026-10-16T10:19:08.743239",
+            "before_sha256": "d8891d2e6ba51c25808ae4cf6025e35f25cabe2b4bf71c5c919c839231440c07",
+            "after_sha256": "fc98987170c28da62f7dd431a8abfa70ab2620d7f12a893e019e87dcf95faf43",
+            "changed_fields": [
+              "context_notation",
+              "statement_scope"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch05/mathcopilot_results/BATCH27_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT22/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "stage": "C",
+          "detail": "weakAttractor未限制目标μ是概率测度，允许通过空概率邻域获得真空吸引性。当前[EXTRA]描述强于签名实际保证。"
+        }
+      ],
+      "evidence": {
+        "A_source_check": "附件第11页（原PDF228/印刷207）Forward Euler段末语一致；原页引号内有句号，JSON以句外句号作排版规范化。this solution指原点Dirac。",
+        "attachment_pages": [
+          11
+        ],
+        "C_signature_check": "有限族有界连续ψ、共同ε>0、对邻域内所有概率ν及所有有界连续φ的t→+∞收敛，正确编码了局部弱吸引的收敛部分。但是目标μ的域是所有Measure，签名既没有IsProbabilityMeasure μ参数，也没有将其作为合取条件。因此可选择不含任何概率测度的所谓邻域而令全称命题真空成立，与[EXTRA]“概率弱拓扑中某邻域”的承诺不符。该缺陷独立于原书否定吸引的断言；辅助定义分流不能补足目标对象的域。",
+        "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+      }
+    },
+    "audit": {
+      "lean_decl": "MD.Ch05.weakAttractor",
+      "verdict": "FAIL",
+      "explanation": "有限族有界连续ψ、共同ε>0、对邻域内所有概率ν及所有有界连续φ的t→+∞收敛，正确编码了局部弱吸引的收敛部分。但是目标μ的域是所有Measure，签名既没有IsProbabilityMeasure μ参数，也没有将其作为合取条件。因此可选择不含任何概率测度的所谓邻域而令全称命题真空成立，与[EXTRA]“概率弱拓扑中某邻域”的承诺不符。该缺陷独立于原书否定吸引的断言；辅助定义分流不能补足目标对象的域。",
+      "counterexample": "取n=1、μ=0测度、Φ(t,z)=z、m=1、ψ₀≡1及ε=1/2。ψ₀有界连续；任意概率ν都有∫1 dν=1，而∫1 dμ=0，故邻域条件|1−0|<1/2恒假。于是对所有ν的蕴含真空成立，weakAttractor Φ 0为真。零测度不属于概率空间，更不可能是概率推送测度的弱极限（用φ≡1即否定）。",
+      "suggested_fix": "在定义体增加IsProbabilityMeasure μ ∧ (...)，或把目标直接取概率测度类型；随后在概率空间中使用有限测试族邻域。Φ为可测流的资格可在实际应用定理中另行要求。本次只读审校，未修改Lean工程。"
+    }
+  },
+  {
+    "chapter": 5,
+    "batch": "EAUDIT61",
+    "source_id": "MD-5.6-EulerLogCorrespondence",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_DEFINITION_SYMBOL",
+        "LEAN_MISSING_LIOUVILLE_CONCLUSION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-5.6-EulerLogCorrespondence",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "5.6",
+        "printed_page": "206–207",
+        "pdf_page": "227–228",
+        "statement_latex": "Let us assume that the perturbed equation is a realistic model for the numerical solutions, then define the evolving density by $\\frac{\\partial\\rho}{\\partial t}=\\mathcal L_{\\widetilde f}^{\\dagger}\\rho\\overset{\\mathrm{def}}{\\equiv}\\mathcal L_f^{\\dagger}\\rho+h^r\\mathcal L_{f_{(r)}}^{\\dagger}\\rho$. […] Applying Forward Euler to the harmonic oscillator, we have $q_{n+1}=q_n+hp_n$, $p_{n+1}=p_n-hq_n$. […] As an alternative, consider the Backward Euler method: $q_{n+1}=q_n+hp_{n+1}$, $p_{n+1}=p_n-hq_{n+1}$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "z_n=(q_n,p_n), H(q,p)=p^2/2+q^2/2；h为数值时间步长。",
+          "\\widetilde f 是数值方法的modified向量场；\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=-\\nabla\\cdot(\\rho\\widetilde f)；\\delta[q]\\delta[p] 是原点Dirac概率。"
+        ],
+        "issues": [],
+        "lean_decl": "MD.Ch05.eulerLogCorrespondence",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]只对书中实际单位线性振子给出选定logarithmic场与两Euler更新的真实对应及全部t的ODE；不把更新等式或ODE作假设。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "stage": "EAUDIT23_LOCAL_REPAIR",
+            "timestamp": "2026-10-16T10:19:38.401044",
+            "before_sha256": "7a684c10e6780947b8c47c4c9653e1562582b151d36fc0463d74e0fb7efd9c48",
+            "after_sha256": "1ccdcff1310fa912ee1e10310e3d02a832013b509b3c59e918f8243c3e4c199b",
+            "changed_fields": [
+              "statement_latex",
+              "context_notation"
+            ],
+            "annotation_corrections": {},
+            "raw_return": "blueprint/ch05/mathcopilot_results/BATCH27_result.json",
+            "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT23/SOURCE_PAGE_VERIFICATION.json"
+      },
+      "issues": [
+        {
+          "stage": "A",
+          "severity": "minor",
+          "field": "statement_latex",
+          "description": "附件第1页密度方程中 def 位于恒等定义符号 ≡ 上方，输入转写为等号 =；修正转写，保留原书内容。"
+        },
+        {
+          "stage": "C",
+          "severity": "major",
+          "field": "lean_decl",
+          "description": "声明只给两Euler单步与选定对数流的对应及轨道ODE，没有原文首个展示公式的密度演化、伴随Liouville算子或 L_f†+h^r L_f_(r)† 分解。[EXTRA]已披露仅处理线性振子，但不能使这部分原文结论成为已表达的结论。"
+        }
+      ],
+      "evidence": [
+        "A：已视觉核对附件第1页（印刷206/PDF227）密度方程和Forward Euler两更新，及第2页（印刷207/PDF228）Backward Euler两隐式更新。英文摘录及省略号所衔接段落一致；唯一公式转写修正为定义恒等符号。",
+        "C：E 2为实二维欧氏空间，z 0=q、z 1=p；h为任意实数但前提0<h。false/true分别选取径向增幅/衰减 a=±log(1+h²)/(2h)，共同角频率 b=arctan(h)/h。时间h的旋转伸缩分别给出 (q+hp,p-hq) 和 ((q+hp)/(1+h²),(p-hq)/(1+h²))。",
+        "C：第二合取对所有Bool、所有初值z和所有实时间t给出HasDerivAt，恰是所列线性场的ODE；Φ(0,z)=z也由流定义直接成立。无更新等式或ODE充作前提。但结论中没有ρ、r、f_(r)或伴随算子。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch05.eulerLogCorrespondence",
+      "verdict": "FAIL",
+      "explanation": "两Euler更新和全时间线性ODE部分的对象、量词、正步长前提与计算均正确；对数场是合理的精确单步插值。整条引文还明确包含密度Liouville演化及生成元分解，当前签名未表达该部分，故按完整结论审校FAIL。此结论与证明是否含sorry无关。",
+      "counterexample": null,
+      "suggested_fix": "另设密度/测度演化及伴随算子的明确接口，补足原文所述Liouville演化和线性分解声明；或者明确将本source_id的statement_scope和摘录拆分，单独审校Euler对数流对应。只建议，不改工程。"
+    }
+  }
+]

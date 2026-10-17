@@ -1,0 +1,231 @@
+{
+  "batch": "EAUDIT83",
+  "input_sha256": {
+    "BATCH_EAUDIT83.md": "17b0b50577cd4ba2d936a21147a73972b4e2f065d7db8aa5d7b24285edff45f6",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.7.1-HardCorePotential",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_CONTACT_BOUNDARY_CONFLICT"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "SOURCE_CONTACT_BOUNDARY_CONFLICT",
+            "detail": "p132允许接触等号，p133原印≤又使接触势∞；两个版本均已忠实分开，原书边界疑点未解决。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第11页；印刷页133",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.hardCorePotential",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "原印≤已目视确认。hardCorePotential以ENNReal表达不同粒子距离≤半径和则∞、否则0，字面忠实；hardSphereHamiltonianPrinted在同一判据下返回∞，否则正质量动能和任意实U，WithTop ℝ容许负有限势，完整H表达正确。contactAllowed辅助为闭允许域内0、外∞，对应严格重叠才惩罚的物理边界，明确分名，不能代替Printed。定义本身无签名错误；原书p132允许等号和p133将等号判∞的冲突必须保留人工裁定。",
+        "counterexample": "两球σ1=σ2=1/2，中心距离1：hardCoreDomain允许该构型，hardCorePotential及hardSphereHamiltonianPrinted却取∞；contactAllowed取0势。",
+        "suggested_fix": "原印≤与Printed定义保持；由人工决定是否另以严格<作为物理勘误，不静默覆盖原句。"
+      }
+    },
+    {
+      "source_id": "MD-3.7.1-ObstacleReflection",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第12页；印刷页134",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.obstacleReflection",
+        "verdict": "PASS",
+        "explanation": "obstacleReflection对任意有限欧氏维数、法向u及碰前动量p返回p−(2⟨u,p⟩/⟨u,u⟩)u，即原书P̂=P̄+αu⊥，第二参数明确是P̄，返回值明确不是α。[EXTRA]为空。context给定原点固定障碍、运动质量1、两半径0.5及‖qc‖=1，保证物理调用u=qc≠0。函数在u=0按实数全除法有定义但不声称此时物理接触有效；能量守恒定理由明确的其他条目承担。本条是反射更新定义，未冒称本函数定义已经证明能量守恒。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.7.1-PrimitiveDefect",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_MOMENTUM_ANNOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.7.1-PrimitiveDefect",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.7.1",
+          "printed_page": "134",
+          "pdf_page": "156",
+          "statement_latex": "We next calculate the change in energy in a single step by inserting $Q$ and $P$ into the Hamiltonian and expanding around the point of collision $q_c$, obtaining\n\\[\\Delta H\\stackrel{\\mathrm{def}}=H(Q,P)-H(q,p)=-(h-2\\tau_c)\\frac{q_c^T\\overline P}{q_c^Tq_c}q_c^T\\nabla U(q_c)+O(h^2).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "固定原点球、运动球质量1，两球半径均0.5；‖qc‖=1，0<tc(h)<h。",
+            "Lean形参pbar为固定初始动量；实际公式和碰撞更新均使用pminus=pbar−(h/2)gradient U(initial h).1，对应原书P̄。",
+            "C³势与初态位置趋向qc给出局部统一Taylor控制；能量差加主项的绝对值≤Ch²，等价于原书带负号主项及O(h²)。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.primitiveDefect",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "C³势、固定非零qc、真实初末碰撞步族和0<tc(h)<h；O(h²)以小正h的一致界表示。",
+            "[EXTRA] 仅小正h、单位接触点及初态趋近接触点的首次单碰撞物理分支；系数使用原书碰前P̄（含半kick），不再用初始p冒充；保留O(h²)余项。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT18_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:32:10.077383",
+              "before_sha256": "dfb1721f2443d1e7ad060226b3b72f532896b17291287782cd59c87af45bfb88",
+              "after_sha256": "1c6c6745180860f3f3593fa00c2b9624bf97dd05ba704b657a68007ff25ebdb2",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH24_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "STALE_MOMENTUM_ANNOTATION",
+            "detail": "context/issues仍将系数描述为初始pbar而非半kick后动量；实际系数已经修正，旧待审点过时。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第13页；印刷页134",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.primitiveDefect",
+        "verdict": "PASS",
+        "explanation": "对任意维数、C³势、固定单位qc和固定初动量pbar，量化真实初末状态族与tc(h)。小正h的假设包含0<tc<h、第一次半kick后的pminus、初态动量=pbar、初位置=qc−tc pminus、此前在球外及完整反射和末次半kick。结论是存在正C、δ，对所有0<h<δ能量差加原书主项的绝对值≤Ch²，符号与原书一致；δ可缩小到Δ以内，无需把δ≤Δ写成前提。系数实际已使用pbar+(h/2)(−gradient U(initial h).1)，正是P̄。初态趋向qc和C³提供局部有界梯度及Taylor余项，故旧的“将初动量冒充P̄”疑问已不适用于当前声明。[EXTRA]中的固定单位接触、固定初动量和局部单碰撞是透明的局部版本。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.7.1-FreeHardSphereHamiltonian",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_CONTACT_BOUNDARY_CONFLICT",
+          "STALE_BOUNDARY_ANNOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.7.1-FreeHardSphereHamiltonian",
+          "kind": "definition",
+          "label": null,
+          "section": "3.7.1",
+          "printed_page": "133",
+          "pdf_page": "155",
+          "statement_latex": "The hard sphere system described by\n\\[H_{\\mathrm{free}}=p^TM^{-1}p/2+U_{\\mathrm{h.s.}}\\]\nconsists of purely ballistic (straight line) motion punctuated by momentum jumps.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "位置不接触时自由ODE为q′=M⁻¹p,p′=0；事件复合与真实动量反射在CollisionComposition/CollisionRegularity/ElasticEnergy保留。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.freeHardSphereHamiltonian",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 主freeHardSphereHamiltonian显式正质量，以WithTop ℝ表达动能和原印≤无穷势；p132/p133边界冲突保留人工处理。",
+            "[EXTRA] contactAllowed辅助允许接触，未自行限制质量，物理解释须加正质量。ballistic只给自由段直线/常动量ODE，实际接触反射由其他条目承担。"
+          ],
+          "statement_scope": "原印自由硬球Hamiltonian、非接触弹道ODE；所引动力学中接触弹性反射关系及能量保存由MD-3.7-ElasticReflection和MD-3.7-ElasticEnergy承担。原印≤边界与接触允许物理版本独立命名。",
+          "review_status": "DRAFT",
+          "repair_log": [
+            {
+              "stage": "EAUDIT18_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:32:10.077383",
+              "before_sha256": "f55cf5b35261a9c39c484a19b2c898c6b94f6cfdb28441cc4e75bb6bc1488191",
+              "after_sha256": "05d01985e08988ec7650ac326964d32d3551b5745f24e3ac7a3c334c90e13605",
+              "changed_fields": [
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH24_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_CONTACT_BOUNDARY_CONFLICT",
+            "detail": "自由Hamiltonian继承原印≤与接触允许语境的边界冲突。"
+          },
+          {
+            "code": "STALE_BOUNDARY_ANNOTATION",
+            "detail": "extra_assumptions第一项说沿用接触允许边界，但主定义实际是原印≤；contactAllowed才允许接触。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第14页；印刷页133",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.freeHardSphereHamiltonian",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "主定义对正质量、N个d维位置和动量给出原印≤障碍的自由Hamiltonian，有限区动能∑‖pi‖²/(2mi)及WithTop ℝ编码正确。ballistic辅助对所有t给出q_i(t)=q_i+t p_i/mi的全局导数及常动量导数0，公式正确；它是自由段ODE公式，不声称直线路径穿过障碍仍是实际硬球轨道。contactAllowed辅助保留闭可行域版本；其自身未带正质量前提，作为实全除法定义有意义，物理使用须另加正质量。scope已明确接触反射由其他条目承担。旧[EXTRA]第一项说主版本沿用p132接触允许，与当前主定义矛盾，应更正；原印边界冲突仍须人工处理。",
+        "counterexample": null,
+        "suggested_fix": "保留主定义原印≤及辅助命名；不将ballistic公式当全局无碰撞资格，人工确认原书障碍边界。"
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

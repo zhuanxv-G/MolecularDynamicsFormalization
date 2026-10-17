@@ -1,0 +1,935 @@
+{
+  "batch": "EAUDIT50",
+  "input_sha256": {
+    "BATCH_EAUDIT50.md": "ac8545b26bd259af82f5a0c585bbd564eb184cfd23586a9e83a535c86b3cc534",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.3.2-WeakStationary",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-WeakStationary",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "189–190",
+          "pdf_page": "210–211",
+          "statement_latex": "We are inclined to view the steady states (equilibrium solutions) of the Liouville equation as solutions of\n\\[\\mathcal L_f^\\dagger\\rho=0.\\]\nHowever, this requires a little care. In general, we would like to be able to apply $\\mathcal L_f^\\dagger$ to nonsmooth distributions such as Dirac delta functions for which the application of the Liouville operator does not make obvious sense (as we have not mentioned how to differentiate delta functions). Instead we will define the stationary solution in terms of integrals against test functions.\nthis suggests that the condition for the invariant probability density function $\\rho_\\infty$ should be\n\\[\\int_{\\mathcal D}\\phi\\mathcal L_f^\\dagger\\rho_\\infty\\,d\\omega=0,\\]\nfor all suitable functions $\\phi\\in C_0^\\infty(\\mathbb R^m)$. We say that $\\rho_\\infty$ satisfies\n\\[\\mathcal L^\\dagger\\rho_\\infty=0,\\]\nin the weak or variational sense.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathcal D\\subset\\mathbb R^m$ 为可容许相空间，$d\\omega=dz_1\\cdots dz_m$ 为 Lebesgue 体积元；$\\rho_\\infty$ 是待讨论的平稳概率分布或其密度。",
+            "PDF p.211 在 “this suggests” 前的原文背景是 $\\partial\\rho/\\partial t=\\mathcal L_f^\\dagger\\rho$；本条摘录跨越 p.189–190 的不同段落。",
+            "$C_0^\\infty(\\mathbb R^m)$ 是光滑紧支撑测试函数空间；对奇异测度，展示积分应按分布对偶理解。对受限测度的零延拓求分布导数时，边界贡献不能删除。",
+            "原书末式为 $\\mathcal L^\\dagger\\rho_\\infty=0$，省略 f 下标；这里按原页保留，并不更换其所指算子。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.weakStationary",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实测度对实际测试Lie导数的零配对实现弱方程，来自形式伴随；不是把不可微分布当普通密度求导。用全空间上的测度表达，包括受限D的测度。",
+            "[EXTRA] Blueprint弱稳态接口实际量化修正后的全部C∞紧支撑测试函数，避免冻结正式库中的Cω测试类型；不修改正式库。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT08_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:05.599147",
+              "before_sha256": "a1a447db25bf0f1d3c1e791ec30174f2c76eb079f2cd79181911d3c9ab8fadcb",
+              "after_sha256": "e634d3d84adbb35e29b73fa3f086835de860f5eddf4883211c288f077314e5af",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EAUDIT15_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:11:04.673565",
+              "before_sha256": "e634d3d84adbb35e29b73fa3f086835de860f5eddf4883211c288f077314e5af",
+              "after_sha256": "82ce6441d4aeb19724444dcbffd451e7bf808f6c7025c9bbf52c0e781b2da7b4",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EAUDIT18_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:16:48.094524",
+              "before_sha256": "82ce6441d4aeb19724444dcbffd451e7bf808f6c7025c9bbf52c0e781b2da7b4",
+              "after_sha256": "760b30e17d0786b9d95259909d59c7028ca8c25b211f7e910d9d9b3bec1724d4",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件8页的稳态方程和关于奇异分布的说明，与附件9页 “this suggests ...” 及紧支撑光滑测试函数的段落逐句吻合。摘录跨过中间段落，context_notation 已明示；末式原页确实没有 f 下标，应保留。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            8,
+            9
+          ],
+          "original_pdf_pages": [
+            210,
+            211
+          ],
+          "printed_pages": "189–190",
+          "rendered_pages": [
+            {
+              "attachment_page": 8,
+              "visually_inspected_identical_representative": 2,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_08.png",
+              "rendered_sha256": "72c3b94bf6b9304791a1dade0eba21ccf38987852ab078fc8aadc4504ae6b502"
+            },
+            {
+              "attachment_page": 9,
+              "visually_inspected_identical_representative": 9,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_09.png",
+              "rendered_sha256": "e81774ca60c352f6eed6397646365b14a652f05a66dce397d4540bdec5b79aa7"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MolecularDynamics.Chapter05Review.lie",
+            "MD.Ch05.testSpace",
+            "MD.Ch05.weakStationary"
+          ],
+          "C_EXTRA_check": "[EXTRA] 全空间测度配对、C∞ 紧支撑测试和显式可积性均实际落实；概率质量资格与这个方程谓词分开。",
+          "declarations_in_current_item": [
+            "weakStationary"
+          ],
+          "current_item_lean_excerpt_sha256": "1e27b75550916d3c98c70debef72fb38f3889395e81334f61d5f167d73ef1cb7",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.weakStationary",
+        "verdict": "PASS",
+        "explanation": "testSpace n 展开后恰为所有满足 ContDiff ℝ ∞ 和 HasCompactSupport 的实函数，不是 Cω 类型。lie f φ z 是真实 fderiv ℝ φ z 作用于 f z。weakStationary 对每个这样的 φ 同时要求 lie 的 μ 可积性和积分为0，因此保留全部测试量词及非平凡弱方程；没有依赖不可积 Bochner 积分的默认0。全空间测度 μ 可取受限域 D 上密度测度的零延拓，分布伴随的边界作用由该配对保留。μ 类型允许一般正测度，是稳态方程本身的推广；若要称为原书的概率分布，还应另有 μ(univ)=1 的资格。本定义没有声称每个 weakStationary μ 都已经归一化，也未声称在任意不规则 f 下与某个流的不变性等价。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-EnsembleAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_EQUATION_LABEL_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-EnsembleAverage",
+          "kind": "definition",
+          "label": "5.6",
+          "section": "5.3.2",
+          "printed_page": "190",
+          "pdf_page": "211",
+          "statement_latex": "Let $\\phi$ be a $C^\\infty$ function of the phase variables with compact support and define the time $t$ average by\n\\[\\bar\\phi(t)=\\frac{\\int_{\\mathcal D}\\phi(\\mathbf q,\\mathbf p)\\rho(\\mathbf q,\\mathbf p,t)\\,d\\omega}{\\int_{\\mathcal D}\\rho(\\mathbf q,\\mathbf p,t)\\,d\\omega}.\\tag{5.6}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathbf q,\\mathbf p$ 为相空间的位置和动量坐标；$\\phi\\in C_0^\\infty(\\mathbb R^m)$；$\\rho(\\mathbf q,\\mathbf p,t)$ 是时刻 t 的概率密度，$\\mathcal D$ 为其相空间域。",
+            "原文 “time t average” 在式 (5.6) 中是瞬时系综平均；分母为该时刻的总质量，在概率密度语境中为 1。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_EQUATION_LABEL_MISSING",
+              "scope": "A_METADATA",
+              "location": "label",
+              "explanation": "原页明确编号(5.6)，且 statement_latex 已有相同 tag，但 label=null。",
+              "action": "将 label 补为 \"5.6\"；不修改公式。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.ensembleAverageOn",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT08_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:05.599147",
+              "before_sha256": "fcba520226e6c7bb56490bf6c53ae9f542d78edc3e287101ae0995640650dc00",
+              "after_sha256": "497dece218ae2ddc8a8ce94d263cfa182c6734a754c05262de0a869a373aa247",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_EQUATION_LABEL_MISSING",
+            "scope": "A_METADATA",
+            "location": "label",
+            "explanation": "原页明确编号(5.6)，且 statement_latex 已有相同 tag，但 label=null。",
+            "action": "将 label 补为 \"5.6\"；不修改公式。"
+          }
+        ],
+        "evidence": {
+          "A_source_check": "附件10页的原句和分式、时刻 t、两个受限于 𝒟 的积分及公式编号(5.6)均吻合。statement_latex 已含 tag{5.6}，但独立 label 字段仍为空；本次补记编号，正文不变。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            10
+          ],
+          "original_pdf_pages": [
+            211
+          ],
+          "printed_pages": "190",
+          "rendered_pages": [
+            {
+              "attachment_page": 10,
+              "visually_inspected_identical_representative": 9,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_10.png",
+              "rendered_sha256": "e81774ca60c352f6eed6397646365b14a652f05a66dce397d4540bdec5b79aa7"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MD.Ch05.densityAverageOn",
+            "MD.Ch05.ensembleAverageOn"
+          ],
+          "C_EXTRA_check": "无定理前提；原书的可积概率密度和测试资格是使用这个比值的语境。",
+          "declarations_in_current_item": [
+            "ensembleAverageOn"
+          ],
+          "current_item_lean_excerpt_sha256": "13aee1ba13ea6426d5e44c5cc370b13b3c55b72ee3b5545db81cb4b529e94a12",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.ensembleAverageOn",
+        "verdict": "PASS",
+        "explanation": "ensembleAverageOn 的参数完整含 n、域 D、随时间变化的 ρ:ℝ→E n→ℝ、观测函数 φ 和时刻 t。densityAverageOn 展开后为 (∫_D φ(z)ρ(t,z))/(∫_D ρ(t,z))，没有漏掉分母、域或时间参数。定义的函数类型较原书的概率密度和 C∞ 紧支撑观测函数更宽；在原书资格下恰为(5.6)。这是时刻 t 的系综平均，没有换成时间轨道平均；对总质量0或不可积输入的总化值不赋予概率平均含义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-HamiltonianEnergyIntegral",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-HamiltonianEnergyIntegral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "190",
+          "pdf_page": "211",
+          "statement_latex": "In the case of a Hamiltonian system, we know that $\\mathcal L_f^\\dagger=-\\mathcal L_f$, and, moreover, $\\mathcal L_fH=0$, so that $H$ is a first integral.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$f=J\\nabla H$ 为自治 Hamiltonian 向量场，$\\mathcal L_f u=D u[f]$，$\\mathcal L_f^\\dagger u=-\\nabla\\cdot(u f)$；Hamiltonian 场散度为零给出 $\\mathcal L_f^\\dagger=-\\mathcal L_f$。",
+            "本条范围包括伴随算子关系、$\\mathcal L_fH=0$ 和能量第一积分含义。第一积分指 H 沿实际 Hamiltonian 轨道恒定，不仅是一个对总化 fderiv 的形式等式。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.hamiltonianEnergyIntegral",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookLieDerivative_hamiltonian_eq_poisson",
+            "MolecularDynamics.textbookPoissonBracket_self"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] 补真实Hamiltonian场的−div(u f)=−L_f u及实际解上能量恒定，H为C²、u为C¹、合法闭区间轨道；保留已证L_fH=0，不把散度零/能量守恒当假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT08_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:05.599147",
+              "before_sha256": "f1321865fc311f1855b3d94e522682dd171c803ce6cd1e98bb12b117717c0e1a",
+              "after_sha256": "d145f44a3641e13a73a6e7cf369e11466147a793aa55b0a8e3ca4c73ca46a02e",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件11页 “In the case of a Hamiltonian system ... and, moreover ... so that H is a first integral” 与两个算子等式逐句吻合；原句未给独立编号。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            11
+          ],
+          "original_pdf_pages": [
+            211
+          ],
+          "printed_pages": "190",
+          "rendered_pages": [
+            {
+              "attachment_page": 11,
+              "visually_inspected_identical_representative": 9,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_11.png",
+              "rendered_sha256": "e81774ca60c352f6eed6397646365b14a652f05a66dce397d4540bdec5b79aa7"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.SymplecticCoordinates",
+            "MolecularDynamics.SymplecticCoordinateMatrix",
+            "MolecularDynamics.textbookJ",
+            "MolecularDynamics.textbookHamiltonianVectorField",
+            "MolecularDynamics.textbookLieDerivative"
+          ],
+          "C_EXTRA_check": "[EXTRA] 的 C²、C¹、合法闭区间和真实轨道条件均存在，且是合理的正则性资格。主声明及 MD.Ch05.hamiltonianEnergyIntegral_full 两个声明一起覆盖原句全部内容。",
+          "declarations_in_current_item": [
+            "hamiltonianEnergyIntegral",
+            "hamiltonianEnergyIntegral_full"
+          ],
+          "current_item_lean_excerpt_sha256": "b783c026a29462b76c98ccb0eb49ab733a5c4fdc17f3f07e8f828107fb2f71ba",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.hamiltonianEnergyIntegral",
+        "verdict": "PASS",
+        "explanation": "本条两项声明均已核对。hamiltonianEnergyIntegral 对任意 Nc、实 Hamiltonian H 及 z 给出真实 Hamiltonian 向量场的 L_f H(z)=0；J 的项目定义为块矩阵 [0,I;−I,0]，Lie 导数为实际 Fréchet 导数沿 f 的作用。这个基础等式允许任意 H，是导数总化下的代数恒等式。hamiltonianEnergyIntegral_full 另量化 k、H、u、z、实际轨道 γ、闭区间端点 a,b；要求 H 为 C²、u 为 C¹、a≤b，并在 Icc a b 每点满足正确的 HasDerivWithinAt Hamiltonian 轨道方程。其合取结论完整包含 −trace D(u f)(z)=−L_f u(z)，以及对每个 t∈Icc a b 的 H(γ t)=H(γ a)。前者是书中形式伴随的点态表达，后者落实真实轨道上的第一积分；未把散度零或能量守恒当成假设。闭区间退化为单点时结论也正确。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-ShellWeight",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-ShellWeight",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "190",
+          "pdf_page": "211",
+          "statement_latex": "In particular, consider the density $\\rho_\\varepsilon(\\mathbf q,\\mathbf p)=Z_\\varepsilon^{-1}e^{-(H(\\mathbf q,\\mathbf p)-E)^2/(2\\varepsilon)}$, where $\\varepsilon$ is an arbitrary small positive constant and $E$ is an accessible energy level.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原句定义的是完整归一化密度 $\\rho_\\varepsilon$。未归一化指数权可另记为 $w_\\varepsilon(z)=e^{-(H(z)-E)^2/(2\\varepsilon)}$，两者相差 $Z_\\varepsilon^{-1}$。",
+            "$\\varepsilon>0$，E 为可达能级；H 为此前 Hamiltonian 系统的能量，$z=(\\mathbf q,\\mathbf p)$。下文 p.190–191 假设 H 充分增长以使权可积并选取归一化因子。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.shellWeight",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅归一化密度公式中的未归一化指数权因子；完整Z与ρ由MD-5.3.2-ShellPartition及MD-5.3.2-ShellDensity承担。"
+          ],
+          "statement_scope": "仅归一化密度公式中的未归一化指数权因子；完整Z与ρ由MD-5.3.2-ShellPartition及MD-5.3.2-ShellDensity承担。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT08_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:05.599147",
+              "before_sha256": "075ceeded3d91cb68332a9059a8b4ac425bda6bf6934bd021cbc15b0bd29c5d1",
+              "after_sha256": "8bc7f8ce5eaa85a91be72280066337c1ebd9273c196bb9e38d81b9868adc2c28",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件12页的完整归一化密度、任意小正 ε、可达能级 E 原句吻合，原文没有把未归一化权另命名。JSON 的 statement_scope 明确只取指数权因子，并把其余定义映射给本批条目11、12。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            12
+          ],
+          "original_pdf_pages": [
+            211
+          ],
+          "printed_pages": "190",
+          "rendered_pages": [
+            {
+              "attachment_page": 12,
+              "visually_inspected_identical_representative": 9,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_12.png",
+              "rendered_sha256": "e81774ca60c352f6eed6397646365b14a652f05a66dce397d4540bdec5b79aa7"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MD.Ch05.shellWeight"
+          ],
+          "C_EXTRA_check": "[EXTRA] 明示的部分范围和两项跨 source_id 映射完整有效；未把原句其余内容静默删掉。",
+          "declarations_in_current_item": [
+            "shellWeight"
+          ],
+          "current_item_lean_excerpt_sha256": "080eedbdf44f3eeaa43bc2649fc7b270ac7c91394f6cae674603d3e29277f629",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.shellWeight",
+        "verdict": "PASS",
+        "explanation": "shellWeight 对 n、H:E n→ℝ、实 c、ε 以及 z 定义 exp(−(H(z)−c)²/(2ε))。能级 c 对应原文 E；平方、负号和2ε均正确。它确实只是未归一化权，没有被错认成 ρε；按已明示的范围，由 shellPartition 和 shellDensity 分别处理 Z 和完整密度。ε>0、可达性和增长性是原书的使用资格，裸函数定义的总化参数域并不声称任意输入都是概率密度。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-ShellPartition",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-ShellPartition",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "190–191",
+          "pdf_page": "211–212",
+          "statement_latex": "We assume that $H$ tends to infinity sufficiently rapidly as $\\|\\mathbf z\\|\\to\\infty$ so that the exponential decays sufficiently rapidly (and thus the total integral exists) and take $Z_\\varepsilon$ to be a normalization factor that insures that we have, for each $\\varepsilon$, a well defined probability density function.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathbf z=(\\mathbf q,\\mathbf p)$，$\\varepsilon>0$；上一段的指数权为 $w_\\varepsilon=e^{-(H-E)^2/(2\\varepsilon)}$，归一化要求确定 $Z_\\varepsilon=\\int_{\\mathbb R^m}w_\\varepsilon\\,d\\omega$。",
+            "此全相空间表达沿用原文 H 充分增长以保证总积分存在的语境。可积性及 $0<Z_\\varepsilon<\\infty$ 是实际概率使用资格；总化积分定义不自动提供资格证明。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.shellPartition",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT08_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:05.599147",
+              "before_sha256": "22e657a2c453f27d5f059bb49aaa4825b09fabb4d88f98d30533c65305d72493",
+              "after_sha256": "db8a69333c977bd041fb9e98a50d44ebeea7043f61b5d76b22ba05944033925e",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件13页末 “We assume that H tends to infinity sufficiently rapidly ... and take” 与附件14页首的 Zε 归一化句连续相接。英文原书确为 “insures”，应保持；190–191／211–212跨页正确。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            13,
+            14
+          ],
+          "original_pdf_pages": [
+            211,
+            212
+          ],
+          "printed_pages": "190–191",
+          "rendered_pages": [
+            {
+              "attachment_page": 13,
+              "visually_inspected_identical_representative": 9,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_13.png",
+              "rendered_sha256": "e81774ca60c352f6eed6397646365b14a652f05a66dce397d4540bdec5b79aa7"
+            },
+            {
+              "attachment_page": 14,
+              "visually_inspected_identical_representative": 14,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_14.png",
+              "rendered_sha256": "fe95d3a2ffd4d6d2de967dd3e994db4a394b46834cdca13c75d10a0ccf5d12c2"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MolecularDynamics.Chapter05Review.shellWeight",
+            "MD.Ch05.shellWeight",
+            "MD.Ch05.shellPartition"
+          ],
+          "C_EXTRA_check": "无新增假设；原文已假定可积，定义不承担另一个增长性定理。",
+          "declarations_in_current_item": [
+            "shellPartition"
+          ],
+          "current_item_lean_excerpt_sha256": "f8cc277f511f9c543f5c22a11f5b5f944017d7f61edfc898019995963de5f073",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.shellPartition",
+        "verdict": "PASS",
+        "explanation": "shellPartition 的 n、H、能级 c、ε 与实际 shellWeight 一致；定义的是全 E n 上未归一化权的 Lebesgue 体积积分，正是原书归一化要求确定的 Zε。原文把增长足够快、从而总积分存在作为假定；当前声明是归一化因子的定义，没有另外声称从一个未指定速率的定量增长条件推出可积性。在原书的正 ε、可积权语境下指数处处为正，因此该积分是有限正归一化因子。context_notation 已明确区分总化定义和实际概率使用资格；不能据此定义推断任意 H 的归一化可行。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-ShellDensity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-ShellDensity",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "190",
+          "pdf_page": "211",
+          "statement_latex": "$\\rho_\\varepsilon(\\mathbf q,\\mathbf p)=Z_\\varepsilon^{-1}e^{-(H(\\mathbf q,\\mathbf p)-E)^2/(2\\varepsilon)}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\varepsilon>0$，E 为可达能级，$\\mathbf z=(\\mathbf q,\\mathbf p)$；归一化因子由实际全相空间指数权的积分确定。原文在后续句子登记 H 的充分增长/可积资格。",
+            "ρ_ε 已除一次 $Z_\\varepsilon$；原有对后文 (5.8) 若再除一次须单列字面疑误的提示予以保留。本条只审计 PDF p.211 的密度定义，不处理 (5.8) 的其他 source_id。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.shellDensity",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT08_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:05.599147",
+              "before_sha256": "fe4def89a217921af24d01f5c4eeded8faed076ff2c76288c7474b1900261095",
+              "after_sha256": "c2ffdeceaf7665ea44219ecaa8ca90899d9c24e3ced9dd9a1411d0dd0d5273c3",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:28:28.864805",
+              "before_sha256": "c2ffdeceaf7665ea44219ecaa8ca90899d9c24e3ced9dd9a1411d0dd0d5273c3",
+              "after_sha256": "5538969862680c6606562d408ef01e392d4073ba0ed048e31b55bf7e18a96191",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "190–191",
+                  "after": "190"
+                },
+                "pdf_page": {
+                  "before": "211–212",
+                  "after": "211"
+                }
+              },
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH12_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+          "review_context_pdf_pages": [
+            212
+          ]
+        },
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件15页的 ρε 定义与 JSON 一致；附件16页是归一化和弱极限的后续上下文。printed_page=190、pdf_page=211 只定位本条定义，合理；不将后页(5.8)的重复归一化并入本条。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            15,
+            16
+          ],
+          "original_pdf_pages": [
+            211,
+            212
+          ],
+          "printed_pages": "190",
+          "rendered_pages": [
+            {
+              "attachment_page": 15,
+              "visually_inspected_identical_representative": 9,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_15.png",
+              "rendered_sha256": "e81774ca60c352f6eed6397646365b14a652f05a66dce397d4540bdec5b79aa7"
+            },
+            {
+              "attachment_page": 16,
+              "visually_inspected_identical_representative": 14,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_16.png",
+              "rendered_sha256": "fe95d3a2ffd4d6d2de967dd3e994db4a394b46834cdca13c75d10a0ccf5d12c2"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MolecularDynamics.Chapter05Review.shellWeight",
+            "MolecularDynamics.Chapter05Review.shellPartition",
+            "MD.Ch05.shellWeight",
+            "MD.Ch05.shellPartition",
+            "MD.Ch05.shellDensity"
+          ],
+          "C_EXTRA_check": "无新增假设；使用资格和后页原书疑误已有明确界定。",
+          "declarations_in_current_item": [
+            "shellDensity"
+          ],
+          "current_item_lean_excerpt_sha256": "b242f49fb518982a581a21a1744c61b8ef8bf30627b212e27f0ecdd64e346d0c",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.shellDensity",
+        "verdict": "PASS",
+        "explanation": "shellDensity 使用真实 shellWeight H c ε z 除以真实 shellPartition H c ε，展开后恰为 Zε⁻¹ exp(−(H(z)−c)²/(2ε))；只除一次 Zε，所有参数和同一能级均保持。它没有偷换成另一个函数或常数，也未重复归一化。作为定义允许较大参数类型；概率密度的非负可积及正分母资格仍按原书及 context_notation 使用，不由总化除法自动提供。此项没有额外宣称任意 H 或非正 ε 都是概率密度。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_LITERAL_TYPOGRAPHY",
+          "SOURCE_EQUATION_LABEL_MISSING",
+          "BOOK_DOUBLE_NORMALIZATION",
+          "BOOK_UNSCALED_PARTITION_LIMIT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+          "kind": "unnumbered_claim",
+          "label": "5.8",
+          "section": "5.3.2",
+          "printed_page": "191",
+          "pdf_page": "212",
+          "statement_latex": "\\[\\lim_{\\varepsilon\\to0}Z_\\varepsilon^{-1}\\int_{\\mathcal D}\\phi(\\mathbf q,\\mathbf p)\\rho_\\varepsilon\\,d\\omega,\\tag{5.8}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "此statement_latex逐字保留原式(5.8)，并非修正后的公式；Lean是独立勘误版本：ρ_ε已含Z_ε^{-1}，正确配对为lim_{ε↓0}∫φρ_ε dω。",
+            "PDF211已定义归一化ρ_ε并要求无穷远增长使权可积；PDF212重复除Z_ε属于原书疑误。修正不回写statement_latex。",
+            "microAverage指raw有限正总质量归一化后的曲面积分，不能把未缩放Z_ε的普通极限直接认作该曲面质量。",
+            "R3：本次只修复花体积分域、粗体相变量及(5.8)编号；原书重复归一化因子原样保留。当前 shellWeakLimit 单独作为勘误版通过签名审校，原书疑误仍须人工登记。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_LITERAL_TYPOGRAPHY",
+              "scope": "A_TRANSCRIPTION",
+              "location": "statement_latex",
+              "explanation": "原页为积分域 \\mathcal D 和粗体相变量 q,p；输入使用普通 D、q,p。",
+              "action": "恢复原页记号，不改变积分或原书的重复归一化。"
+            },
+            {
+              "code": "SOURCE_EQUATION_LABEL_MISSING",
+              "scope": "A_METADATA",
+              "location": "label / statement_latex",
+              "explanation": "原页此展示式有编号(5.8)，输入 label=null 且未记 tag。",
+              "action": "补记 label=\"5.8\" 与展示式 tag{5.8}。"
+            },
+            {
+              "code": "BOOK_DOUBLE_NORMALIZATION",
+              "scope": "A_BOOK_MATHEMATICS",
+              "location": "原书(5.8)",
+              "explanation": "PDF211已经定义 ρε=权/Zε，PDF212的(5.8)又对其配对除以 Zε；字面式通常发散，不能等于归一化微正则配对。",
+              "action": "原文保持字面式并交人工勘误；当前 Lean 作为独立修正版删除多余因子是合理的。"
+            },
+            {
+              "code": "BOOK_UNSCALED_PARTITION_LIMIT",
+              "scope": "A_BOOK_CONTEXT",
+              "location": "原书(5.7)后对 Z_{H=E} 的说明",
+              "explanation": "原页称曲面归一化常数为 Zε 的 appropriate limiting value，未说明必要的 √(2πε) 缩放；不能按通常未缩放极限理解。",
+              "action": "保留原书说明作为疑误；正确曲面质量与 Zε/√(2πε) 对应。此处只作上下文登记，不扩审(5.7)的其他声明。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.shellWeakLimit",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]独立修正版：不再对已归一化ρ_ε重复除Zε；可达非空正则能量、C²、紧带及小ε权可积/分母正，全部明示。采用D=ℝ^m；不覆盖附加其他守恒约束的情形。",
+            "[EXTRA] 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:34.669281",
+              "before_sha256": "d8505cc25dbcff4ca695d22ff24cad3285f430053342bfc4f0f1491d4c107bba",
+              "after_sha256": "1ebaf756a9688656a48575177460630f6e10e9952f94d15b37a1dc1f6996f936",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH13_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_LITERAL_TYPOGRAPHY",
+            "scope": "A_TRANSCRIPTION",
+            "location": "statement_latex",
+            "explanation": "原页为积分域 \\mathcal D 和粗体相变量 q,p；输入使用普通 D、q,p。",
+            "action": "恢复原页记号，不改变积分或原书的重复归一化。"
+          },
+          {
+            "code": "SOURCE_EQUATION_LABEL_MISSING",
+            "scope": "A_METADATA",
+            "location": "label / statement_latex",
+            "explanation": "原页此展示式有编号(5.8)，输入 label=null 且未记 tag。",
+            "action": "补记 label=\"5.8\" 与展示式 tag{5.8}。"
+          },
+          {
+            "code": "BOOK_DOUBLE_NORMALIZATION",
+            "scope": "A_BOOK_MATHEMATICS",
+            "location": "原书(5.8)",
+            "explanation": "PDF211已经定义 ρε=权/Zε，PDF212的(5.8)又对其配对除以 Zε；字面式通常发散，不能等于归一化微正则配对。",
+            "action": "原文保持字面式并交人工勘误；当前 Lean 作为独立修正版删除多余因子是合理的。"
+          },
+          {
+            "code": "BOOK_UNSCALED_PARTITION_LIMIT",
+            "scope": "A_BOOK_CONTEXT",
+            "location": "原书(5.7)后对 Z_{H=E} 的说明",
+            "explanation": "原页称曲面归一化常数为 Zε 的 appropriate limiting value，未说明必要的 √(2πε) 缩放；不能按通常未缩放极限理解。",
+            "action": "保留原书说明作为疑误；正确曲面质量与 Zε/√(2πε) 对应。此处只作上下文登记，不扩审(5.7)的其他声明。"
+          }
+        ],
+        "evidence": {
+          "A_source_check": "附件17页(5.8)确实在 ∫φρε 外又写一次 Zε⁻¹，不能把这个因子从原文中删掉。原页积分域是花体 𝒟、q,p 是粗体，并带编号(5.8)；本次只恢复这些转录／编号信息，保留重复归一化及 ε→0 的原书写法。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            17
+          ],
+          "original_pdf_pages": [
+            212
+          ],
+          "printed_pages": "191",
+          "rendered_pages": [
+            {
+              "attachment_page": 17,
+              "visually_inspected_identical_representative": 14,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_17.png",
+              "rendered_sha256": "fe95d3a2ffd4d6d2de967dd3e994db4a394b46834cdca13c75d10a0ccf5d12c2"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MD.Ch05.testSpace",
+            "MolecularDynamics.Chapter05Review.regularEnergy",
+            "MolecularDynamics.Chapter05Review.energySurface",
+            "MolecularDynamics.Chapter05Review.grad",
+            "MolecularDynamics.Chapter05Review.hausdorffArea",
+            "MolecularDynamics.Chapter05Review.surfaceMeasure",
+            "MolecularDynamics.Chapter05Review.microRaw",
+            "MolecularDynamics.Chapter05Review.microMeasure",
+            "MolecularDynamics.Chapter05Review.average",
+            "MolecularDynamics.Chapter05Review.microAverage",
+            "MolecularDynamics.Chapter05Review.shellWeight",
+            "MolecularDynamics.Chapter05Review.shellPartition",
+            "MolecularDynamics.Chapter05Review.shellDensity"
+          ],
+          "C_EXTRA_check": "[EXTRA] 的全空间版本、正则可达能级、C²、紧带、小 ε 可积／正分母以及删除重复归一化均实际存在。∞ 资格属于 testSpace 的测试函数，H 本身在此为 C²。当前声明不覆盖其他守恒约束。",
+          "declarations_in_current_item": [
+            "shellWeakLimit"
+          ],
+          "current_item_lean_excerpt_sha256": "03dcc04297b2444faa45816a1639c9ae7228f3ef92006d6d2fc005b142793de6",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.shellWeakLimit",
+        "verdict": "PASS",
+        "explanation": "这是 source_id 明示的独立勘误版本，不能按字面(5.8)要求它再除一次 Zε。声明完整量化 n、H、c，要求 n>0、H 为 C²、regularEnergy H c、能级可达，以及存在正 δ 的紧能带与所有 ε∈(0,δ) 的真实权可积及正分母。regularEnergy 展开后含非空紧能量面、其上处处非零的真实梯度、microRaw 有限正总质量；单列可达条件虽冗余但无害。测试空间确为全部 C∞ 紧支撑函数。被积式是 φ乘已经归一化的 shellDensity，ε 从正侧趋零。microAverage 展开为将曲面 Hausdorff 面积按 1/‖∇H‖ 加权后，再以该 raw 总质量归一化的真实测度积分。所有对象和归一化均匹配正确的 coarea 弱极限；紧带及一个较大正参数下的权可积控制带外尾部，所以假设足够，没有把极限当假设。未缩放的 Zε 通常趋零，曲面质量对应 Zε/√(2πε) 的极限而非 Zε 的普通极限。故当前勘误签名 PASS；原书重复归一化仍作为独立疑误 NEEDS_HUMAN 保留。",
+        "counterexample": "仅针对原书(5.8)，不是当前勘误 Lean：取二维 H(q,p)=(q²+p²)/2、c=1，以及在能量圆附近恒为1的 C∞ 紧支撑 φ。极坐标给出 Zε=2π∫₀∞exp(−(s−1)²/(2ε))ds，故 Zε/√(2πε)→2π、Zε→0；归一化配对 ∫φρε→1。因此原书额外乘 Zε⁻¹ 的式子发散，而当前 Lean 的配对极限为1。",
+        "suggested_fix": "不改原文(5.8)；保留其重复 Zε⁻¹ 并登记人工勘误。独立修正版维持当前 Lean 的单次归一化；将曲面质量明确解释为缩放后的 Zε/√(2πε) 极限。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-SurfaceAreaFormula",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_LITERAL_TYPOGRAPHY",
+          "BOOK_OPEN_SET_MEMBERSHIP",
+          "BOOK_AREA_MULTIPLICITY_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-SurfaceAreaFormula",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "191",
+          "pdf_page": "212",
+          "statement_latex": "If we can represent the $m-1$-dimensional set $\\mathcal M$ as the image of an open set $\\mathcal U\\in\\mathbb R^{m-1}$ under a smooth mapping $\\mathbf g:\\mathbb R^{m-1}\\to\\Sigma_E$, then we have\n\\[\\operatorname{Vol}(\\mathcal M)=\\int_{\\mathcal U}\\sqrt{\\det[(\\mathbf g^{\\prime}(\\boldsymbol\\zeta))^T\\mathbf g^{\\prime}(\\boldsymbol\\zeta)]}\\,d\\zeta_1d\\zeta_2\\cdots d\\zeta_{m-1}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原页参数化公式写g′(ζ)及dζ₁⋯dζ_{m−1}；原JSON改成θ，逐字审校恢复ζ。",
+            "保留原书U∈ℝ^{m−1}，尽管作为开集应写U⊂ℝ^{m−1}；不静默纠正原文。",
+            "原文仅说smooth mapping，未显式排除重复覆盖；无重数面积公式需单射参数化，EXTRA补充这一资格合理。",
+            "R3：原页集合为花体 ℳ、𝒰，g 为粗体向量映射，映射参数为粗体 ζ，坐标微元为 dζ_i。原书 𝒰∈ℝ^{m−1} 与任意光滑映射的重数问题保留为人工疑误，不静默改原句。Lean 的单射条件实际为全局单射。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_LITERAL_TYPOGRAPHY",
+              "scope": "A_TRANSCRIPTION",
+              "location": "statement_latex / context_notation",
+              "explanation": "原页集合为花体 ℳ、𝒰，映射 g 和参数向量 ζ 使用粗体；输入统一成了普通 M、U、g、ζ。",
+              "action": "只恢复原页字形及 ζ；不把原书 ∈ 改为子集符号。"
+            },
+            {
+              "code": "BOOK_OPEN_SET_MEMBERSHIP",
+              "scope": "A_BOOK_MATHEMATICS",
+              "location": "原句 open set 𝒰∈ℝ^{m−1}",
+              "explanation": "开集应是 ℝ^{m−1} 的子集；原书却写为其元素。",
+              "action": "原文保留 ∈ 并交人工处理，另行勘误时写 𝒰⊂ℝ^{m−1}。"
+            },
+            {
+              "code": "BOOK_AREA_MULTIPLICITY_GAP",
+              "scope": "A_BOOK_MATHEMATICS_AND_C_SCOPE",
+              "location": "原书面积公式的 smooth mapping 前提",
+              "explanation": "仅有光滑映射及给定像集不能推出无重数面积公式；重复覆盖会在参数积分中计算重数。Lean 的单射浸入 [EXTRA] 确实是对原书的资格补充。",
+              "action": "保留原文；人工确认按单射参数化理解，或单列修正版／改成计重数面积公式。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.surfaceAreaFormula",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]单射C¹浸入及实际Gram矩阵；书中的图须避免重复覆盖和退化，不能把任意光滑映射当无重数面积参数化。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:34.669281",
+              "before_sha256": "c6888bd83a92de48f264bd0852d3ec3c01ccfeee4ff8f872506986e5305639ad",
+              "after_sha256": "10b8dd5c6e4fc0dc137b7aba818a3548a5ba7f89d7e760dcbcfe6389e8f86ebb",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH13_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_LITERAL_TYPOGRAPHY",
+            "scope": "A_TRANSCRIPTION",
+            "location": "statement_latex / context_notation",
+            "explanation": "原页集合为花体 ℳ、𝒰，映射 g 和参数向量 ζ 使用粗体；输入统一成了普通 M、U、g、ζ。",
+            "action": "只恢复原页字形及 ζ；不把原书 ∈ 改为子集符号。"
+          },
+          {
+            "code": "BOOK_OPEN_SET_MEMBERSHIP",
+            "scope": "A_BOOK_MATHEMATICS",
+            "location": "原句 open set 𝒰∈ℝ^{m−1}",
+            "explanation": "开集应是 ℝ^{m−1} 的子集；原书却写为其元素。",
+            "action": "原文保留 ∈ 并交人工处理，另行勘误时写 𝒰⊂ℝ^{m−1}。"
+          },
+          {
+            "code": "BOOK_AREA_MULTIPLICITY_GAP",
+            "scope": "A_BOOK_MATHEMATICS_AND_C_SCOPE",
+            "location": "原书面积公式的 smooth mapping 前提",
+            "explanation": "仅有光滑映射及给定像集不能推出无重数面积公式；重复覆盖会在参数积分中计算重数。Lean 的单射浸入 [EXTRA] 确实是对原书的资格补充。",
+            "action": "保留原文；人工确认按单射参数化理解，或单列修正版／改成计重数面积公式。"
+          }
+        ],
+        "evidence": {
+          "A_source_check": "附件18页用花体 ℳ、𝒰、粗体向量映射 g 和粗体参数向量 ζ；积分微元为 dζ₁⋯dζ_{m−1}。输入丢失这些字形，本次恢复。原页确写 𝒰∈ℝ^{m−1}，而非子集符号，应原样保留并登记疑误；原句也只说 smooth mapping，未显式排除重复覆盖。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            18
+          ],
+          "original_pdf_pages": [
+            212
+          ],
+          "printed_pages": "191",
+          "rendered_pages": [
+            {
+              "attachment_page": 18,
+              "visually_inspected_identical_representative": 14,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_18.png",
+              "rendered_sha256": "fe95d3a2ffd4d6d2de967dd3e994db4a394b46834cdca13c75d10a0ccf5d12c2"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MolecularDynamics.Chapter05Review.hausdorffArea"
+          ],
+          "C_EXTRA_check": "[EXTRA] 单射 C¹ 浸入及真实 Gram 矩阵均存在；实际单射条件是全局 Function.Injective g。它修补了原书遗漏，而不是原句已经明示的假设。",
+          "declarations_in_current_item": [
+            "surfaceAreaFormula"
+          ],
+          "current_item_lean_excerpt_sha256": "6427a3387232c6b0b2751209070c68e1031812d515a909caf09a2d1c51310120",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.surfaceAreaFormula",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "限定后的 Lean 面积公式在数学上正确：∀ d、g:E d→E(d+1)、开集 U，要求 U 上 C¹、g 全局单射，并要求 U 上每点的真实 fderiv 单射。结论左边使用项目 hausdorffArea d 在 g像U 上的测度，右边由标准欧氏基的导数向量内积构成完整 d×d Gram 矩阵，取 determinant 的非负平方根并在 U 上积分；正是 m=d+1 的无重数面积公式。hausdorffArea 的项目缩放为 d维单位球体积/2^d，落实标准欧氏面积。由于两边分别使用 ENNReal.toReal 和实值 Bochner 积分，非有限情形是总化解释，并不额外宣称面积有限；有限面积时即通常数值公式。未要求像落在某一特定能量面，是对与 H 无关的局部面积公式的合理推广。须明确的是 Function.Injective g 为全局单射，比仅在 U 上单射更强，且 C¹ 比原书 smooth 所需的正则性更弱；这两点都不使受限公式错误。[EXTRA] 确实补入了单射浸入资格，但原书仅凭任意 smooth mapping 的原句不成立，另有 ∈ 的类型错误；按任务要求原书疑误不能静默按 chart 解读，因此本条整体 NEEDS_HUMAN，而非因 sorry 或限定后公式错误判 FAIL。",
+        "counterexample": "针对缺少单射假设的原书字面公式：令 m=2，H(x,y)=(x²+y²)/2，E=1/2，g(t)=(cos t,sin t)，U=(0,4π)。g 是映到该能量圆的光滑浸入，像 M 是整个单位圆，面积即弧长为2π；Gram 因子恒为1，参数积分为4π。故原书任意 smooth mapping 版本不成立。此例不满足当前 Lean 的全局单射条件，不是限定后 Lean 公式的反例。",
+        "suggested_fix": "原文保持字面并保留 NEEDS_HUMAN。将当前带单射浸入条件的 Lean 明确标作独立资格补充版；如需最小假设，可把全局单射减弱为在 U 上单射。若保留任意光滑映射，应使用计重数面积公式。不要仅为取有限实数而忽略 toReal／积分总化语义。"
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

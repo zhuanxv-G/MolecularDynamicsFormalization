@@ -1,0 +1,168 @@
+[
+  {
+    "number": 1,
+    "source_ids": [
+      "MD-5.2.1-DomainL2",
+      "MD-5.2.1-L2Complete",
+      "MD-5.2.1-L2Norm"
+    ]
+  },
+  {
+    "number": 2,
+    "source_ids": [
+      "MD-5.2.2-OutwardNormal"
+    ]
+  },
+  {
+    "number": 3,
+    "source_ids": [
+      "MD-5.2.2-GeneralFluxBalance"
+    ]
+  },
+  {
+    "number": 4,
+    "source_ids": [
+      "MD-5.2.2-RapidAdjoint"
+    ]
+  },
+  {
+    "number": 5,
+    "source_ids": [
+      "MD-5.3.2-ConvergenceHeuristic"
+    ]
+  },
+  {
+    "number": 6,
+    "source_ids": [
+      "MD-5.3.2-ShellWeakPrinted",
+      "MD-5.3.2-ShellWeakLimitCorrected"
+    ]
+  },
+  {
+    "number": 7,
+    "source_ids": [
+      "MD-5.3.2-SurfaceAreaFormula"
+    ]
+  },
+  {
+    "number": 8,
+    "source_ids": [
+      "MD-5.3.2-PatchShellVolume"
+    ]
+  },
+  {
+    "number": 9,
+    "source_ids": [
+      "MD-5.3.2-WholeShellVolumeLimit"
+    ]
+  },
+  {
+    "number": 10,
+    "source_ids": [
+      "MD-5.3.2-ShellPointValuePrinted"
+    ]
+  },
+  {
+    "number": 11,
+    "source_ids": [
+      "MD-5.3.2-HarmonicPartition",
+      "MD-5.3.2-HarmonicQuadraturePrinted"
+    ]
+  },
+  {
+    "number": 12,
+    "source_ids": [
+      "MD-5.3.3-MicroMeasure"
+    ]
+  },
+  {
+    "number": 13,
+    "source_ids": [
+      "MD-5.3.3-LowerDimensionNull"
+    ]
+  },
+  {
+    "number": 14,
+    "source_ids": [
+      "MD-5.4.1-UniformMicroErgodic"
+    ]
+  },
+  {
+    "number": 15,
+    "source_ids": [
+      "MD-5.4.1-ErgodicTimeEquivalence"
+    ]
+  },
+  {
+    "number": 16,
+    "source_ids": [
+      "MD-5.4.1-TwoOscillatorTori",
+      "MD-5.4.1-TwoOscillatorEnergyDecomposition"
+    ]
+  },
+  {
+    "number": 17,
+    "source_ids": [
+      "MD-5.4.1-KAMPersistence"
+    ]
+  },
+  {
+    "number": 18,
+    "source_ids": [
+      "MD-5.4.1-AnisotropicAxisPrinted"
+    ]
+  },
+  {
+    "number": 19,
+    "source_ids": [
+      "MD-5.4.1-PendulumRegionPrinted"
+    ]
+  },
+  {
+    "number": 20,
+    "source_ids": [
+      "MD-5.4.1-InitialSegmentPrinted"
+    ]
+  },
+  {
+    "number": 21,
+    "source_ids": [
+      "MD-5.5-Correlation"
+    ]
+  },
+  {
+    "number": 22,
+    "source_ids": [
+      "MD-5.5-CorrelationTimePrinted",
+      "MD-5.5-CorrelationTimeAE"
+    ]
+  },
+  {
+    "number": 23,
+    "source_ids": [
+      "MD-5.5-MixingCorrelation",
+      "MD-5.5-MixingCorrelationPrinted"
+    ]
+  },
+  {
+    "number": 24,
+    "source_ids": [
+      "MD-5.6-ForwardComponentsPrinted",
+      "MD-5.6-ForwardNormDivergence"
+    ]
+  },
+  {
+    "number": 25,
+    "source_ids": [
+      "MD-5.6-BackwardEulerLimit",
+      "MD-5.6-EulerInvariant"
+    ]
+  },
+  {
+    "number": 26,
+    "source_ids": [
+      "MD-5.6-SymplecticEulerEllipse",
+      "MD-5.6-SymplecticEulerShadow"
+    ]
+  }
+]

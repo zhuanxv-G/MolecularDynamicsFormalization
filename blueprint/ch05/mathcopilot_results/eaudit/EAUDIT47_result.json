@@ -1,0 +1,65 @@
+{
+  "batch": "EAUDIT47",
+  "input_sha256": {
+    "BATCH_EAUDIT47.md": "ba82fdc134ff39bda3b9c37a94d262afccb6e527729ed10c2f774a92e09391ee",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.2.2-CompactAdjoint",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "8–9",
+          "printed_page": "185–186",
+          "pdf_page": "206–207",
+          "A_text_check": "对应附件第8页末行配对等式的首末项；第9页用dagger继续解释。这里是已明确的等式摘录，不将compact-support版本冒充原书单列定理。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.liouvillianAdjoint"
+        ],
+        "verdict": "PASS",
+        "explanation": "核对任意n、C¹向量场及C¹实函数u,v，二者均有紧支持；结论为真实Lebesgue积分的配对相等。相关乘积及导数连续且有紧支持，故可积、边界项在充分大盒上消失。n=0时导数场为零，仍成立。此为已明确另列的紧支持版本，不宣称所有C¹紧支持函数属于SchwartzMap，也不把形式配对等同于闭算子伴随。与原页所摘等式及[EXTRA]范围一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-MeasurePropagator",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "10",
+          "printed_page": "186",
+          "pdf_page": "207",
+          "A_text_check": "原页密度PDE、仅对空间作用、formally及测度传播子解释一致；原书未在此构造抽象算子指数。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.measurePropagator",
+          "MD.Ch05.measurePropagator_general",
+          "MD.Ch05.measurePropagator_density_evolution"
+        ],
+        "verdict": "PASS",
+        "explanation": "逐一核对主定义、general辅助定义和density_evolution。主接口包含真实自治流资格并作正时间Φ_t推前；general仅为任意可测空间上Measure.map的总定义，不额外宣称任意Φ都是物理流。evolution对任意开且流不变D、C¹场、联合C²实际流、联合C¹且各时为概率密度的ρ，假设各时密度测度是初始密度的推前，推出每个t及z∈D处∂tρ=liouvillian f (ρ t)。ρ初值为ρ 0而非任意强加解；时间符号正确。形式指数只是演化算子记号，未声称已经构造一般无界算子的指数；[EXTRA]与实际编码相符。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

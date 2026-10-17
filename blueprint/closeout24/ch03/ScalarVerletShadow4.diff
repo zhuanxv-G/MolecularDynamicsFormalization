@@ -1,0 +1,56 @@
+--- before
++++ after
+@@ -1453,20 +1453,40 @@
+ /-- source_id: MD-3.4-ScalarVerletShadow4 · definition · §3.4 · 印刷p.117 / PDFp.139
+ [NEEDS_HUMAN] O(h⁶)的实际修正匹配另为未完成理论；有限函数与余项分开。 
+ [EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。 
+-[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
++[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 [EXTRA] 24号：【原书疑误】保留印刷有限式及原匹配断言（另名Printed，不证明）；独立精确有理数jet核对kick-drift-kick后，修正版h⁴四项系数为−1/720,+1/120,+1/60,−1/240，分别乘p⁴U⁗、p²U′U‴、p²(U″)²、(U′)²U″。SymPy验到h⁶；统一实际流O(h⁷)估计仍未证明，交导师核查。
++-/
+ def scalarVerletShadow4 (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ :=
+   let p := z.2; let q := z.1
+   p^2/2+U q+h^2/24*(2*p^2*deriv (deriv U) q-(deriv U q)^2)+h^4*(
+     p^4*iteratedDeriv 4 U q/720-p^2*deriv U q*iteratedDeriv 3 U q/120-
+     (deriv U q)^2*iteratedDeriv 2 U q/240-p^2*((iteratedDeriv 2 U q)^2+deriv U q*iteratedDeriv 3 U q)/60)
+ 
+-theorem scalarVerletShadow4_matching (U : ℝ → ℝ) (_hU : ContDiff ℝ ∞ U)
++theorem scalarVerletShadow4_matching_Printed (U : ℝ → ℝ) (_hU : ContDiff ℝ ∞ U)
+     (B : Set (ℝ × ℝ)) (_hB : IsCompact B) :
+     ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → (ℝ × ℝ) → ℝ → (ℝ × ℝ),
+       ∀ h ∈ Ioo 0 δ, ∀ z ∈ B, Γ h z 0=z ∧
+         solution (fun x : ℝ × ℝ ↦
+           (deriv (fun p ↦ scalarVerletShadow4 U h (x.1,p)) x.2,
+            -deriv (fun q ↦ scalarVerletShadow4 U h (q,x.2)) x.1)) (Γ h z) 0 h ∧
++        ‖(let P := z.2-(h/2)*deriv U z.1
++           let Q := z.1+h*P
++           (Q,P-(h/2)*deriv U Q))-Γ h z h‖ ≤ C*h^7 := by
++  sorry
++
++/-- 修正版；对应MD-3.4-ScalarVerletShadow4，原印式独立保留。 -/
++def scalarVerletShadow4_corrected (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ :=
++  let p := z.2; let q := z.1
++  p^2/2+U q+h^2/24*(2*p^2*deriv (deriv U) q-(deriv U q)^2)+h^4*(
++    -p^4*iteratedDeriv 4 U q/720+p^2*deriv U q*iteratedDeriv 3 U q/120+
++    p^2*(iteratedDeriv 2 U q)^2/60-(deriv U q)^2*iteratedDeriv 2 U q/240)
++
++theorem scalarVerletShadow4_matching_corrected (U : ℝ → ℝ) (_hU : ContDiff ℝ ∞ U)
++    (B : Set (ℝ × ℝ)) (_hB : IsCompact B) :
++    ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → (ℝ × ℝ) → ℝ → (ℝ × ℝ),
++      ∀ h ∈ Ioo 0 δ, ∀ z ∈ B, Γ h z 0=z ∧
++        solution (fun x : ℝ × ℝ ↦
++          (deriv (fun p ↦ scalarVerletShadow4_corrected U h (x.1,p)) x.2,
++           -deriv (fun q ↦ scalarVerletShadow4_corrected U h (q,x.2)) x.1)) (Γ h z) 0 h ∧
+         ‖(let P := z.2-(h/2)*deriv U z.1
+            let Q := z.1+h*P
+            (Q,P-(h/2)*deriv U Q))-Γ h z h‖ ≤ C*h^7 := by
+@@ -2812,7 +2832,9 @@
+ #print axioms MD.Ch03.optimalTruncation_corrected
+ #print axioms MD.Ch03.exponentialFlat
+ #print axioms MD.Ch03.scalarVerletShadow4
+-#print axioms MD.Ch03.scalarVerletShadow4_matching
++#print axioms MD.Ch03.scalarVerletShadow4_matching_Printed
++#print axioms MD.Ch03.scalarVerletShadow4_corrected
++#print axioms MD.Ch03.scalarVerletShadow4_matching_corrected
+ #print axioms MD.Ch03.commutingEnergy
+ #print axioms MD.Ch03.commutingEnergy_corrected
+ #print axioms MD.Ch03.commutingEnergySymmetry

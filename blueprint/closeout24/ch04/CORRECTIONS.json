@@ -1,0 +1,720 @@
+[
+  {
+    "source_id": "MD-4-PRKThreshold",
+    "original_names": [
+      "prkThreshold"
+    ],
+    "corrected_names": [
+      "prkThreshold_corrected"
+    ],
+    "note": "删除一般多级PRK的普遍阈值2，只给反例所用两个半步辛Euler的实际稳定区0<hΩ<4；未对所有PRK给新的最优阈值。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4-SymplecticEulerBoundaryPrinted",
+    "original_names": [
+      "symplecticEulerBoundaryPrinted"
+    ],
+    "corrected_names": [
+      "symplecticEulerBoundaryPrinted_corrected"
+    ],
+    "note": "幂有界稳定区排除hΩ=2的Jordan端点，只保留0<hΩ<2。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4-VerletBoundaryPrinted",
+    "original_names": [
+      "verletBoundaryPrinted"
+    ],
+    "corrected_names": [
+      "verletBoundaryPrinted_corrected"
+    ],
+    "note": "幂有界稳定区排除hΩ=2的Jordan端点，只保留0<hΩ<2。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.1-ActualMidpointRelation",
+    "original_names": [
+      "actualMidpointRelation"
+    ],
+    "corrected_names": [
+      "actualMidpointRelation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.1-PrintedModifiedFrequency",
+    "original_names": [
+      "printedModifiedFrequency"
+    ],
+    "corrected_names": [
+      "printedModifiedFrequency_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.2.1-RESPAStructure",
+    "original_names": [
+      "respaStructure"
+    ],
+    "corrected_names": [
+      "respaStructure_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.2.1-ResonanceEigenPrinted",
+    "original_names": [
+      "resonanceEigenPrinted"
+    ],
+    "corrected_names": [
+      "resonanceEigenPrinted_corrected"
+    ],
+    "note": "去掉平方根内错误因子1/2；本独立修正版仅一支特征根估计，完整双支谱分解列覆盖缺口。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.2.1-ResonanceGrowth",
+    "original_names": [
+      "resonanceGrowth"
+    ],
+    "corrected_names": [
+      "resonanceGrowth_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-4.2.1-ResonanceLinearRate",
+    "original_names": [
+      "resonanceLinearRate"
+    ],
+    "corrected_names": [
+      "resonanceLinearRate_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3-ConstrainedPendulum",
+    "original_names": [
+      "constrainedPendulum"
+    ],
+    "corrected_names": [
+      "constrainedPendulum_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3-ConstraintSet",
+    "original_names": [
+      "constraintSet",
+      "constraintSet_regularLevel"
+    ],
+    "corrected_names": [
+      "constraintSet_corrected"
+    ],
+    "note": "修正版明确满秩、C∞和维数资格，以局部可逆坐标描述正则约束面；任意零点集合不自动是流形。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.3-RestraintForcePrinted",
+    "original_names": [
+      "restraintForcePrinted"
+    ],
+    "corrected_names": [
+      "restraintForcePrinted_corrected"
+    ],
+    "note": "独立定义物理恢复力为势能负梯度；不保留原书把标量势与向量力相等的类型混淆为可证定理。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3.2-FrozenGramPrinted",
+    "original_names": [
+      "frozenGramPrinted"
+    ],
+    "corrected_names": [
+      "frozenGramPrinted_corrected"
+    ],
+    "note": "真实残差Jacobian为新预测点/旧点的交叉矩阵，不无条件等于旧点Gram或对称矩阵。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.3.2-FrozenNewtonConstraint",
+    "original_names": [
+      "frozenNewtonConstraint"
+    ],
+    "corrected_names": [
+      "frozenNewtonConstraint_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3.2-PositionEulerForceConvention",
+    "original_names": [
+      "positionEulerRelation"
+    ],
+    "corrected_names": [
+      "positionEulerRelation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3.3-ComponentPrinted",
+    "original_names": [
+      "componentPrinted"
+    ],
+    "corrected_names": [
+      "componentPrinted_corrected"
+    ],
+    "note": "把一般分量式分母中的G_j^1明确改为当前约束在旧点的梯度G_n^j，与分子所用方向一致；原Gsup1参数版完整保留。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3.4-GramProjectedEuler",
+    "original_names": [
+      "gramProjectedEuler",
+      "gramProjectedEuler_general"
+    ],
+    "corrected_names": [
+      "gramProjectedEuler_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3.4-Lemma41",
+    "original_names": [
+      "lemma41"
+    ],
+    "corrected_names": [
+      "lemma41_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3.4-ProjectedEulerRelation",
+    "original_names": [
+      "projectedEulerRelation"
+    ],
+    "corrected_names": [
+      "projectedEulerRelation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3.5-ConstrainedOrders",
+    "original_names": [
+      "constrainedOrders",
+      "constrainedOrders_global",
+      "constrainedOrders_firstOrderSharp"
+    ],
+    "corrected_names": [
+      "constrainedOrders_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.3.5-SHAKEElimination",
+    "original_names": [
+      "shakeElimination"
+    ],
+    "corrected_names": [
+      "shakeElimination_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3.5-SHAKEPositionMass",
+    "original_names": [
+      "shakePositionRelation"
+    ],
+    "corrected_names": [
+      "shakePositionRelation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3.5-SHAKEPositionOrder",
+    "original_names": [
+      "shakePositionOrder"
+    ],
+    "corrected_names": [
+      "shakePositionOrder_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.3.5-SHAKERATTLEEquivalence",
+    "original_names": [
+      "shakeRattlePositions"
+    ],
+    "corrected_names": [
+      "shakeRattlePositions_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.3.5-StaggeredConstraint",
+    "original_names": [
+      "staggeredConstraintRelation"
+    ],
+    "corrected_names": [
+      "staggeredConstraintRelation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.4-DipolarRotationalPrinted",
+    "original_names": [
+      "dipolarRotationalPrinted"
+    ],
+    "corrected_names": [
+      "dipolarRotationalPrinted_corrected"
+    ],
+    "note": "转动动能补系数1/2；R应按trace(T)/2·I−T解释并与InertiaTracePrinted_corrected共同核查。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.4-InertiaTracePrinted",
+    "original_names": [
+      "inertiaTracePrinted"
+    ],
+    "corrected_names": [
+      "inertiaTracePrinted_corrected"
+    ],
+    "note": "二阶矩与惯性张量关系的trace(T)系数修正为1/2；原式保留。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.4-RotationDerivativePrinted",
+    "original_names": [
+      "rotationDerivativePrinted"
+    ],
+    "corrected_names": [
+      "rotationDerivativePrinted_corrected"
+    ],
+    "note": "右端末因子从Θ̇δ改为Θδ，恢复Θ̇δ=(Θ̇Θᵀ)(Θδ)。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.4.1-AxisFlowFormal",
+    "original_names": [
+      "axisFlow"
+    ],
+    "corrected_names": [
+      "axisFlow_corrected"
+    ],
+    "note": "采用负角旋转子流，独立给初值、轴分量恒定及π×ω的ODE，正角Printed算法保留。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.4.1-ExactPlanarRotation",
+    "original_names": [
+      "exactPlanarRotation"
+    ],
+    "corrected_names": [
+      "exactPlanarRotation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.4.1-PrincipalAxisField",
+    "original_names": [
+      "principalAxisField"
+    ],
+    "corrected_names": [
+      "principalAxisField_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.4.1-SecondAxisPrinted",
+    "original_names": [
+      "secondAxisPrinted"
+    ],
+    "corrected_names": [
+      "secondAxisPrinted_corrected"
+    ],
+    "note": "将未定义标量a绑定第二动量分量π₂，补正主惯量；原无下标π保留。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.4.1-ThirdAxisPrinted",
+    "original_names": [
+      "thirdAxisPrinted"
+    ],
+    "corrected_names": [
+      "thirdAxisPrinted_corrected"
+    ],
+    "note": "将未定义标量a绑定第三动量分量π₃，补正主惯量；原无下标π保留。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.4.2-DLMMassOnly",
+    "original_names": [
+      "dlmMassOnly"
+    ],
+    "corrected_names": [
+      "dlmMassOnly_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrintedSystem",
+    "original_names": [
+      "dlmPrintedSystem"
+    ],
+    "corrected_names": [
+      "dlmPrintedSystem_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+    "original_names": [
+      "dlmPrintedSystemStructure"
+    ],
+    "corrected_names": [
+      "dlmPrintedSystemStructure_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.4.2-DLMStructureFormal",
+    "original_names": [
+      "dlmStructure"
+    ],
+    "corrected_names": [
+      "dlmStructure_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4-VerletStability",
+    "original_names": [
+      "verletStability",
+      "verletStability_zero"
+    ],
+    "corrected_names": [
+      "verletStability_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4-SymplecticEulerUnitRoots",
+    "original_names": [
+      "symplecticEulerUnitRoots"
+    ],
+    "corrected_names": [
+      "symplecticEulerUnitRoots_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-4-SymplecticEulerStability",
+    "original_names": [
+      "symplecticEulerStability",
+      "symplecticEulerStability_complete"
+    ],
+    "corrected_names": [
+      "symplecticEulerStability_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.1-PrintedImplicitRelation",
+    "original_names": [
+      "printedImplicitRelation"
+    ],
+    "corrected_names": [
+      "printedImplicitRelation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.1-ImplicitModulus",
+    "original_names": [
+      "implicitModulus",
+      "implicitModulus_iterates"
+    ],
+    "corrected_names": [
+      "implicitModulus_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.2.1-ResonanceTaylor",
+    "original_names": [
+      "resonanceTaylor"
+    ],
+    "corrected_names": [
+      "resonanceTaylor_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrinted",
+    "original_names": [
+      "dlmPrinted"
+    ],
+    "corrected_names": [
+      "dlmPrinted_corrected"
+    ],
+    "note": "独立保留单位质量的印刷算法解释，质量取1才将Drift写成q+hp；Spin仍按印刷约定，仅解释该组合定义，不称其为一般质量或π×ω原动力学的一致子流。质量修订和轴流符号另列工作版本。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-4.3.2-ProjectionScale",
+    "original_names": [
+      "projectionScale"
+    ],
+    "corrected_names": [
+      "projectionScale_corrected"
+    ],
+    "note": "独立限定版本采用原印负号预测器，并要求初态满足位置及隐藏余切约束、Gram非奇异、C²根分支且η(0)=0；只有位置约束不保证O(h²)。翻译预测器符号修复与原书缺相容性问题分开。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-4.3.3-ComponentSweep",
+    "original_names": [
+      "componentSweep",
+      "componentPrintedDelta",
+      "componentPrintedTrajectory",
+      "componentPrintedIteration",
+      "componentPrintedStop"
+    ],
+    "corrected_names": [
+      "componentSweep_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  }
+]

@@ -1,0 +1,456 @@
+{
+  "batch": "EAUDIT69",
+  "input_sha256": {
+    "BATCH_EAUDIT69.md": "cc31dbd2dfc4c0059686422b846f2e2abdaf9388a1c5d2ed371c242df2bc2b05",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.2-ObservableDerivative",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第6–7页；印刷页 100–101 / 原PDF页 122–123",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "observableDerivative"
+            ],
+            "finding": "任意实赋范空间 E 中，f:E→E、φ:E→ℝ、实际曲线 γ、任意 t；只需 φ 在 γ(t) 可微及 γ 在 t 有导数 f(γ(t))。结论是 φ∘γ 在 t 的 HasDerivAt，导数正是 fderiv φ (γ t) 作用于 f(γ t)。这是比原文全局唯一解及全局光滑假设更一般的局部链式法则，原文解当然可实例化；t=0 且 γ(0)=ζ 给出首式，无遗漏演化式。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.observableDerivative",
+        "verdict": "PASS",
+        "explanation": "任意实赋范空间 E 中，f:E→E、φ:E→ℝ、实际曲线 γ、任意 t；只需 φ 在 γ(t) 可微及 γ 在 t 有导数 f(γ(t))。结论是 φ∘γ 在 t 的 HasDerivAt，导数正是 fderiv φ (γ t) 作用于 f(γ t)。这是比原文全局唯一解及全局光滑假设更一般的局部链式法则，原文解当然可实例化；t=0 且 γ(0)=ζ 给出首式，无遗漏演化式。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.2-PoissonBracket",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第8页；印刷页 102 / 原PDF页 124",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "textbookPoissonBracket"
+            ],
+            "finding": "定义取 F 的真实 Fréchet 导数作用于 X_G；X_G=J∇G，故在原文光滑函数域上就是 ∇FᵀJ∇G。空间为 (Fin Nc⊕Fin Nc)→ℝ，维数 2Nc，未误把 Nc 当总维数。定义在非光滑函数上也有 Lean 的总化值，这只是域扩张；不声称非光滑函数有经典偏导。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.textbookPoissonBracket",
+        "verdict": "PASS",
+        "explanation": "定义取 F 的真实 Fréchet 导数作用于 X_G；X_G=J∇G，故在原文光滑函数域上就是 ∇FᵀJ∇G。空间为 (Fin Nc⊕Fin Nc)→ℝ，维数 2Nc，未误把 Nc 当总维数。定义在非光滑函数上也有 Lean 的总化值，这只是域扩张；不声称非光滑函数有经典偏导。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.2-PoissonCoordinates",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第9页；印刷页 102 / 原PDF页 124",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "poissonCoordinates"
+            ],
+            "finding": "∀F,G,z 的坐标恒等式：inl 是 q，inr 是 p，求和 i:Fin Nc；第一项 F_q G_p，第二项 G_q F_p，符号及两个因子均与原式一致。fderiv 本身总是连续线性映射，所以即使未假设可微，有限维坐标展开仍成立；在原文光滑域上得到标准偏导公式。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.poissonCoordinates",
+        "verdict": "PASS",
+        "explanation": "∀F,G,z 的坐标恒等式：inl 是 q，inr 是 p，求和 i:Fin Nc；第一项 F_q G_p，第二项 G_q F_p，符号及两个因子均与原式一致。fderiv 本身总是连续线性映射，所以即使未假设可微，有限维坐标展开仍成立；在原文光滑域上得到标准偏导公式。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.2-PoissonBilinearity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_DISCUSSION_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.2-PoissonBilinearity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.2",
+          "printed_page": "102",
+          "pdf_page": "124",
+          "statement_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables):\nBilinearity $\\{g_1,\\alpha g_2+\\beta g_3\\}=\\alpha\\{g_1,g_2\\}+\\beta\\{g_1,g_3\\}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables):",
+          "context_notation": [
+            "$\\alpha,\\beta\\in\\mathbb R$；Poisson定义见同页；第一变量线性由下一条反对称性推出。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.poissonBilinearity",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookPoissonBracket_linear_right",
+            "MolecularDynamics.textbookPoissonBracket_linear_left"
+          ],
+          "extra_assumptions": [
+            "原文smooth函数按点可微资格显式化；保留旧清单双变量线性的完整两条结论。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT04_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:00:38.885629",
+              "before_sha256": "732dfa03e2fb1942ccaf468c0baae3d57468d3bb29e5678cb3d17320bf84ea91",
+              "after_sha256": "22d12b4d82eee7935dd08d5e22ff7ebb17cdf2edd68a717bc3df3545d2660d1d",
+              "changed_fields": [
+                "proof_discussion_latex"
+              ],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "field": "proof_discussion_latex",
+            "detail": "原页引出性质列表的公共句以冒号结尾，当前讨论摘录改为句号；恢复原页冒号。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第10页；印刷页 102 / 原PDF页 124",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "poissonBilinearity"
+            ],
+            "finding": "∀F,G,H,α,β,z，分别假设三个函数在 z 可微；合取右变量与左变量的实线性。原文只显示右变量线性，额外左线性明确记录且可由反对称性推出；没有遗漏系数或错用函数顺序。逐点可微比原 smooth 弱，足以应用 fderiv 的加法与数乘规则。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.poissonBilinearity",
+        "verdict": "PASS",
+        "explanation": "∀F,G,H,α,β,z，分别假设三个函数在 z 可微；合取右变量与左变量的实线性。原文只显示右变量线性，额外左线性明确记录且可由反对称性推出；没有遗漏系数或错用函数顺序。逐点可微比原 smooth 弱，足以应用 fderiv 的加法与数乘规则。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.2-PoissonSkew",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_DISCUSSION_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.2-PoissonSkew",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.2",
+          "printed_page": "102",
+          "pdf_page": "124",
+          "statement_latex": "Skew symmetry $\\{g_1,g_2\\}=-\\{g_2,g_1\\}$",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables):",
+          "context_notation": [
+            "$J$为同页规范辛矩阵；不要求J另有任意自定义参数。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.poissonSkew",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookPoissonBracket_skew"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT04_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:00:38.885629",
+              "before_sha256": "e9b9960d13bbebbe33bc681fcab620c3b02637f083f082253e1b415eba810d7b",
+              "after_sha256": "89d10d08ee38671bde7c43194f251db0a5792f5582fba3fc8cfcdaaebedf5d5c",
+              "changed_fields": [
+                "proof_discussion_latex"
+              ],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "field": "proof_discussion_latex",
+            "detail": "原页引出性质列表的公共句以冒号结尾，当前讨论摘录改为句号；恢复原页冒号。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第11页；印刷页 102 / 原PDF页 124",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "poissonSkew"
+            ],
+            "finding": "∀F,G,z，无额外前提，结论 {F,G}(z)=−{G,F}(z)。项目 J 的两个非零块互为负转置，因此两个总化 fderiv 的配对也满足反对称；对非可微函数的扩张不妨碍原 smooth 域上的忠实性。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.poissonSkew",
+        "verdict": "PASS",
+        "explanation": "∀F,G,z，无额外前提，结论 {F,G}(z)=−{G,F}(z)。项目 J 的两个非零块互为负转置，因此两个总化 fderiv 的配对也满足反对称；对非可微函数的扩张不妨碍原 smooth 域上的忠实性。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.2-PoissonSelf",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_DISCUSSION_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.2-PoissonSelf",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.2",
+          "printed_page": "102",
+          "pdf_page": "124",
+          "statement_latex": "and this implies $\\{g_1,g_1\\}=0$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables):",
+          "context_notation": [
+            "由同页Skew symmetry；实数域特征不为2。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.poissonSelf",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookPoissonBracket_self"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT04_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:00:38.885629",
+              "before_sha256": "a0f35ae7a7075fd6ab1ab5c9636c5a252b4e1decc0f59f5dde4895692763292f",
+              "after_sha256": "6a5a4acb138560d45b910ed500ca6295b3e276a9281becefeec0a5c5136caed5",
+              "changed_fields": [
+                "proof_discussion_latex"
+              ],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "field": "proof_discussion_latex",
+            "detail": "原页引出性质列表的公共句以冒号结尾，当前讨论摘录改为句号；恢复原页冒号。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第12页；印刷页 102 / 原PDF页 124",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "poissonSelf"
+            ],
+            "finding": "∀F,z，结论 {F,F}(z)=0；底域 ℝ，反对称性可推出 2{F,F}=0。与原文 and this implies 的结论一致，未增加无关域或前提。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.poissonSelf",
+        "verdict": "PASS",
+        "explanation": "∀F,z，结论 {F,F}(z)=0；底域 ℝ，反对称性可推出 2{F,F}=0。与原文 and this implies 的结论一致，未增加无关域或前提。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.2-PoissonJacobi",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_DISCUSSION_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.2-PoissonJacobi",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.2",
+          "printed_page": "102",
+          "pdf_page": "124",
+          "statement_latex": "Jacobi identity $\\{g_1,\\{g_2,g_3\\}\\}+\\{g_3,\\{g_1,g_2\\}\\}+\\{g_2,\\{g_3,g_1\\}\\}=0$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables):",
+          "context_notation": [
+            "同页三个smooth scalar-valued函数；非任意未微分函数。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.poissonJacobi",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookPoissonBracket_jacobi"
+          ],
+          "extra_assumptions": [
+            "显式各函数在z为C²；真实二阶导数对称性支持Jacobi。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT05_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:02:37.900044",
+              "before_sha256": "70289abb3d895c372ff744518fe38678ee326dd4396b2647b1685a0edcfbf2c9",
+              "after_sha256": "996f564fa082861f17c3a50e458a2297cfea38032d62143405ab989d207ddf69",
+              "changed_fields": [
+                "proof_discussion_latex"
+              ],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH04_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "field": "proof_discussion_latex",
+            "detail": "原页引出性质列表的公共句以冒号结尾，当前讨论摘录改为句号；恢复原页冒号。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第13页；印刷页 102 / 原PDF页 124",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "poissonJacobi"
+            ],
+            "finding": "∀F,G,H,z，每个函数在 z 为 ContDiffAt ℝ 2；三个嵌套括号的次序严格为 {F,{G,H}}+{H,{F,G}}+{G,{H,F}}。C² 局部资格足以保证内层括号可微及 Hessian 对称性，原文 smooth 可以满足；不是对任意不可微函数无条件宣称 Jacobi。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.poissonJacobi",
+        "verdict": "PASS",
+        "explanation": "∀F,G,H,z，每个函数在 z 为 ContDiffAt ℝ 2；三个嵌套括号的次序严格为 {F,{G,H}}+{H,{F,G}}+{G,{H,F}}。C² 局部资格足以保证内层括号可微及 Hessian 对称性，原文 smooth 可以满足；不是对任意不可微函数无条件宣称 Jacobi。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.2-HamiltonianLie",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第14页；印刷页 102 / 原PDF页 124",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "hamiltonianLie_eq_poisson"
+            ],
+            "finding": "∀F,H，结论是两个相空间函数相等，故包括所有 z；左边 L_(J∇H) F，右边 {F,H}，与两个项目定义逐字展开后相同。L_H 的简写由左边的 Hamiltonian 向量场参数实现，没有误取 {H,F}。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.hamiltonianLie_eq_poisson",
+        "verdict": "PASS",
+        "explanation": "∀F,H，结论是两个相空间函数相等，故包括所有 z；左边 L_(J∇H) F，右边 {F,H}，与两个项目定义逐字展开后相同。L_H 的简写由左边的 Hamiltonian 向量场参数实现，没有误取 {H,F}。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

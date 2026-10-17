@@ -1,0 +1,35 @@
+--- before
++++ after
+@@ -2271,9 +2271,21 @@
+   | solve | simp only
+   | sorry
+ 
+-/-- source_id: MD-3.7-HardCoreDomain · definition · §3.7 · 印刷p.132 / PDFp.154 -/
++/-- source_id: MD-3.7-HardCoreDomain · definition · §3.7 · 印刷p.132 / PDFp.154 [EXTRA] 24号：hardCoreDomain保留任意实半径的代数集合辅助；新增非负半径物理包装、接触面（至少一对取等号）及H=K+U的明确对象。域不自动保证动力学存在。
++-/
+ def hardCoreDomain {N d : ℕ} (σ : Fin N → ℝ) : Set (Fin N → Position d) :=
+   {q | ∀ i j, i ≠ j → σ i+σ j ≤ ‖q i-q j‖}
++
++def hardCoreDomainPhysical {N d : ℕ} (σ : Fin N → ℝ) (_hσ : ∀ i, 0 ≤ σ i) :
++    Set (Fin N → Position d) := hardCoreDomain σ
++
++def hardCoreContactSurface {N d : ℕ} (σ : Fin N → ℝ) : Set (Fin N → Position d) :=
++  {q ∈ hardCoreDomain σ | ∃ i j, i ≠ j ∧ ‖q i-q j‖ = σ i+σ j}
++
++def hardCoreMechanicalHamiltonian {N d : ℕ} (m : Fin N → ℝ) (_hm : ∀ i, 0 < m i)
++    (U : (Fin N → Position d) → ℝ) (q p : Fin N → Position d) : ℝ :=
++  (∑ i, ‖p i‖^2/(2*m i))+U q
++
+ 
+ /-- source_id: MD-3.7-ElasticReflection · definition · §3.7 · 印刷p.132 / PDFp.154
+ [EXTRA] [EXTRA]选取质量度量反射α=−2Σuᵢpᵢ/mᵢ ÷ Σuᵢ²/mᵢ，具体α原书在障碍特例p134给出；正质量/非零法向是后条守恒资格。 -/
+@@ -2900,6 +2912,9 @@
+ #print axioms MD.Ch03.reversibleVolumeFailure
+ #print axioms MD.Ch03.reversibleVolumeFailure_corrected
+ #print axioms MD.Ch03.hardCoreDomain
++#print axioms MD.Ch03.hardCoreDomainPhysical
++#print axioms MD.Ch03.hardCoreContactSurface
++#print axioms MD.Ch03.hardCoreMechanicalHamiltonian
+ #print axioms MD.Ch03.elasticReflection
+ #print axioms MD.Ch03.elasticEnergy
+ #print axioms MD.Ch03.collisionComposition

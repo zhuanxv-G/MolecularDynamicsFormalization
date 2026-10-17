@@ -1,0 +1,492 @@
+{
+  "batch": "EAUDIT91",
+  "input_sha256": {
+    "BATCH_EAUDIT91.md": "48ef0a654f8841259876140f91ad018f59389adfb9b718b85a4515a9d0793703",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4.2-DLMPrintedSystem",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_PUNCTUATION",
+          "SOURCE_MASS_CONVENTION_UNRESOLVED",
+          "SOURCE_SPIN_CONVENTION_UNRESOLVED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-DLMPrintedSystem",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "174",
+          "pdf_page": "196",
+          "statement_latex": "DLM Rigid Body Molecular Dynamics Step\n1. “Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k,\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]\n2. “Drift”: step forward a whole step in positions\n\\[q^k:=q^k+hp^k.\\]\n3. “Spin”: update the rotational state of the kth rigid body by the sequence of steps\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T\\]\n\\[\\Theta:=\\Theta^z(h\\pi_3^k/I_3);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T\\]\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T\\]\n4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F^k$ and torques $\\tau^k$ evaluated at the current $q,\\Theta$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF195（印刷173）规定：每个刚体的 q^k 是质心位置，p^k 是线动量，π^k 是体坐标角动量，Θ^k 是3×3旋转矩阵；对每个刚体执行该步骤。π_i^k 表示第i分量，I_1,I_2,I_3 是当前刚体的主惯性矩；Lean中各体惯性可分别取 I k。",
+            "力与力矩使用上标k：\\(F^k=-\\partial U/\\partial q^k\\)，\\(\\tau^k=-\\operatorname{rot}((\\Theta^k)^T\\,\\partial U/\\partial\\Theta^k)\\)。U可依赖所有刚体的位置和方向。首次kick使用当前输入构型的力/力矩，末kick在更新后的全部q,Θ处重新求值，不冻结旧力/力矩。",
+            "PDF196（印刷174）定义 \\(\\operatorname{rot}(A)=\\operatorname{skew}^{-1}(A-A^T)\\)。其分量为 \\((A_{32}-A_{23},A_{13}-A_{31},A_{21}-A_{12})\\)。这里原书分量从1起编号，Lean Fin 3从0起编号。",
+            "PDF196步骤3后的记号说明：\\(\\Theta^x(\\phi)=\\begin{pmatrix}1&0&0\\\\0&\\cos\\phi&-\\sin\\phi\\\\0&\\sin\\phi&\\cos\\phi\\end{pmatrix}\\)，Θ^y、Θ^z有对应的绕轴旋转公式。这确定了原表的正角主动旋转约定；五个角度均用各子步执行时的当前π^k计算。",
+            "保留原表q^k:=q^k+hp^k以及正角π^k:=Θπ^k、Θ^k:=Θ^kΘ^T，不补1/M_k、不改为负角。[ERRATUM?]针对与物理运动方程的一致性；这些疑误本身不能推出该映射不辛。",
+            "本条为Printed字面版：Lean函数定义允许任意实h和I，故除法也采用实数域的总化约定；这不是原书允许零惯性矩的物理断言。结构定理另有∀k i, 0 < I k i前提。",
+            "待人审事项仅是原书与物理约定的关系：第195页称p^k为线动量，而第196页Drift未写质量；正角Spin与第195页给出的方向演化方程之间也需统一约定。不得把这些疑点直接升级为“不辛”结论。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "完整原表的缺质量drift与正角spin疑点保持；编译定义不代表正确辛性。"
+            },
+            {
+              "code": "SOURCE_PUNCTUATION",
+              "detail": "步骤1原式以逗号连接两种动量更新；步骤3的五行旋转更新末尾没有输入所加的四个逗号和一个句号。已恢复这些字面标点，五个角度及所有更新公式保持原样。"
+            },
+            {
+              "code": "SOURCE_MASS_CONVENTION_UNRESOLVED",
+              "detail": "第195页称p^k为linear momentum vector，第196页原Drift却为q^k := q^k + h p^k。若质量未取单位值，通常需要质量约定；附件这两页没有给出归一化解释。按要求保留原式并交人审，不静默插入1/M_k。"
+            },
+            {
+              "code": "SOURCE_SPIN_CONVENTION_UNRESOLVED",
+              "detail": "原表使用正角Θ^x/Θ^y/Θ^z、π^k := Θπ^k、Θ^k := Θ^kΘ^T，且页上明确Θ^x的正角矩阵；第195页另列方向演化方程。其与原物理动力学的一致性保留为原书约定/勘误疑点，不自动判为映射不辛。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.dlmPrintedSystem",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT24_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:09:07.422606",
+              "before_sha256": "c51495f9c2acdbdcad6da932e22c97d058b017c3fe25e2a3e931c6b067f540b2",
+              "after_sha256": "a026443cc83f04fecff9d7054aeac581b2dc2df66c1da03dfec1bc353be0410f",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch04_eaudit/R9_evidence/verification_manifest.json; R9_review.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PUNCTUATION",
+            "field": "statement_latex",
+            "severity": "correction",
+            "detail": "步骤1原式以逗号连接两种动量更新；步骤3的五行旋转更新末尾没有输入所加的四个逗号和一个句号。已恢复这些字面标点，五个角度及所有更新公式保持原样。"
+          },
+          {
+            "code": "SOURCE_MASS_CONVENTION_UNRESOLVED",
+            "field": "context_notation / issues",
+            "severity": "source_needs_human",
+            "detail": "第195页称p^k为linear momentum vector，第196页原Drift却为q^k := q^k + h p^k。若质量未取单位值，通常需要质量约定；附件这两页没有给出归一化解释。按要求保留原式并交人审，不静默插入1/M_k。"
+          },
+          {
+            "code": "SOURCE_SPIN_CONVENTION_UNRESOLVED",
+            "field": "context_notation / issues",
+            "severity": "source_needs_human",
+            "detail": "原表使用正角Θ^x/Θ^y/Θ^z、π^k := Θπ^k、Θ^k := Θ^kΘ^T，且页上明确Θ^x的正角矩阵；第195页另列方向演化方程。其与原物理动力学的一致性保留为原书约定/勘误疑点，不自动判为映射不辛。"
+          }
+        ],
+        "evidence": [
+          {
+            "type": "PDF_VISUAL",
+            "file": "/workspace/R9_PAGES.pdf",
+            "attachment_pages": [
+              4
+            ],
+            "printed_page": "174",
+            "original_pdf_page": "196",
+            "location": "完整DLM Rigid Body Molecular Dynamics Step表、绕x轴矩阵说明及步骤4",
+            "finding": "标题和步骤1至4逐项核对：K半步、Drift整步、x半/y半/z整/y半/x半五个Spin子步、末K在当前全部q,Θ重新评估F^k和τ^k。原表确无质量除数，五个角度均为所印正号。",
+            "verification": "已直接查看附件第1、3页的1800像素渲染；8页全部按相同参数渲染。第1/2/5/7页像素文件SHA-256相同，第3/4/6/8页相同，因此每项相应附件页均已核对。",
+            "rendered_page_sha256": {
+              "4": "8dd0e67a598392be8615d2558952f883c0795fad885abb63e2819d1a62621a67"
+            },
+            "pdf_sha256": "c21a917d80e315962ccf5a9e4b75abeea5e4579c2d1ea05a55432cd0cad6bb56"
+          },
+          {
+            "type": "PDF_VISUAL",
+            "file": "/workspace/R9_PAGES.pdf",
+            "attachment_pages": [
+              2
+            ],
+            "printed_page": "173",
+            "original_pdf_page": "195",
+            "location": "§4.4.2逐体变量说明、全部刚体执行说明、力/力矩公式及方向微分方程（上下文）",
+            "finding": "p^k明确为线动量；程序对所有刚体执行，力和力矩来自势U。该上下文支持记录原表质量及旋转约定疑点，不能据此否定两形式保持。",
+            "verification": "已直接查看附件第1、3页的1800像素渲染；8页全部按相同参数渲染。第1/2/5/7页像素文件SHA-256相同，第3/4/6/8页相同，因此每项相应附件页均已核对。",
+            "rendered_page_sha256": {
+              "2": "c39927d9e95b065e2be4089a66f0a7cf547c6d172b273bf92114457de5302d87"
+            },
+            "pdf_sha256": "c21a917d80e315962ccf5a9e4b75abeea5e4579c2d1ea05a55432cd0cad6bb56"
+          },
+          {
+            "type": "LEAN_READ_ONLY",
+            "file": "/workspace/R9_任务.md",
+            "task_sha256": "aed82923dfea4747e6ae0fa5cf416ca67917a057a38929f44c31ee7aec68bf1b",
+            "item": 4,
+            "declarations_checked": [
+              "MD.Ch04.dlmPrintedSystem",
+              "MD.Ch04.rigidSystemKick",
+              "MD.Ch04.rigidSystemDriftPrinted",
+              "MD.Ch04.rigidSystemSpinPrinted",
+              "MD.Ch04.printedSpinStep",
+              "MD.Ch04.printedSpinAxis",
+              "MolecularDynamics.Chapter04Review.axisRotation",
+              "MD.Ch04.axisRotation",
+              "MD.Ch04.rigidSystemForce",
+              "MD.Ch04.rigidSystemTorque",
+              "MolecularDynamics.Chapter04Review.grad",
+              "MolecularDynamics.Chapter04Review.matrixGrad",
+              "MolecularDynamics.Chapter04Review.matrixRot"
+            ],
+            "finding": "复合从右至左执行K(h/2)→Drift(h)→Spin(I,h)→K(h/2)。逐轴R为当前π分量给出的正角，输出(Rπ,ΘR^T)；五轴复合的执行顺序为0半、1半、2整、1半、0半。各体I k对应原表当前刚体的I1/I2/I3，允许不同刚体有不同惯性。",
+            "scope": "仅核对本任务给出的当前Lean声明及MolecularDynamics/MD项目定义；Mathlib原语按标准含义采信。未读取旧Ch0x.lean、旧source.json或旧任务来补本轮材料，未修改工程、未补证明、未运行Lean编译，未将sorry视为签名错误。",
+            "material_limit": "任务未独立摘录rigidSystemState的定义。本次按所给函数的逐体调用、显式四字段返回项及条目5/6所给RBState := (V × V) × (V × Mat3)核对N体状态的用法；未声称已另行展开或验证未提供的别名本体。此证据范围遵照任务“只需核对本文件中摘录的项目定义”。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dlmPrintedSystem",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "字面忠实性核对通过，未发现应判FAIL的Lean语义偏差：Drift确为q+h p，未私补质量；Spin保留正角及配对的Rπ、ΘRᵀ，矩阵乘法方向正确。每个子步从其输入重新计算角度，不冻结初始π；所有刚体均执行。两次kick分别从各自输入完整状态计算耦合力/力矩，末kick使用Drift/Spin后的全部q、Θ，不复用旧力。定义域包括N : ℕ、逐体三维惯性I、任意实数h及任意所给U；定义无I>0或光滑性前提，这些物理资格不能假称已在定义中。总体NEEDS_HUMAN仅依任务对原书数学疑点的分流规则：质量归一化及旋转动力学约定待确认。Printed版忠实，故不判FAIL；质量/旋转方向疑点也不是不辛反例。",
+        "counterexample": null,
+        "suggested_fix": "保留全部Printed公式和Lean定义。采用corrected_json修复摘录标点并保留原书疑点；由人工核查单位质量/动量约定及Spin与原动力学的符号约定。若需物理勘误版，应另立_corrected声明并单独审校，本轮不修改工程。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemSymplectic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-RigidSystemSymplectic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "173",
+          "pdf_page": "195",
+          "statement_latex": "the combined scheme is a symplectic method in the generalized sense of constrained dynamics.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "该短句出自PDF195（印刷173）的算法辛性断言，并非原书给出的独立定义；原文的主语the combined scheme指§4.4.2随后列出的完整刚体分裂算法。PDF196仅接续记号说明和算法表。",
+            "rigidSystemSymplectic是为解释该断言引入的Lean辅助谓词；它描述N体SO(3)相空间上的约束保持及两形式拉回，单独定义这个谓词尚未断言combined scheme满足它。",
+            "rbForm中ξ=(1/2)rot(Θ^T δΘ)、η=(1/2)rot(Θ^T δ′Θ)提取切向反对称矩阵的轴向量；此处1/2与力矩公式中的rot无额外1/2并不冲突。",
+            "本谓词使用全环境空间的fderiv，不单独列Differentiable或ContDiff，也未声明全局可逆性；它是当前光滑算法的约束保持及两形式拉回检查性质，不能脱离既定statement_scope冒充原书给出的独立光滑辛微分同胚定义。具体算法的光滑性资格另由结构定理前提负责。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rigidSystemSymplectic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]完整N体SO(3)配置、实际切向量和各体rbForm之和；明确包含输出配置约束及真实Fréchet拉回，不假设辛性或以抽象形式替代。",
+            "[EXTRA] 本条仅定义全系统受约束两形式拉回性质，原句算法确实满足该性质由已有DLMPrintedSystemStructure断言，区分性质定义与算法定理。"
+          ],
+          "statement_scope": "仅全系统辛性辅助谓词定义；原文算法性质由MD-4.4.2-DLMPrintedSystemStructure承担。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT24_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:09:07.422754",
+              "before_sha256": "18a87ef7268607f302f514a2fd3a3db5e559ed81977b1f06ae815340cbee925d",
+              "after_sha256": "63f474987e633bd34686954c6d118354d6d01d32214ddb10dec0dd9dd22fd1e3",
+              "changed_fields": [
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:27:39.597807",
+              "before_sha256": "63f474987e633bd34686954c6d118354d6d01d32214ddb10dec0dd9dd22fd1e3",
+              "after_sha256": "54f0d407df02c115aaa1d52393d75ee3603c4fd5c4de02c9a1fbd0d5ed64cba0",
+              "changed_fields": [
+                "kind",
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "kind": {
+                  "before": "definition",
+                  "after": "unnumbered_claim"
+                },
+                "printed_page": {
+                  "before": "173–174",
+                  "after": "173"
+                },
+                "pdf_page": {
+                  "before": "195–196",
+                  "after": "195"
+                }
+              },
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch04_eaudit/R9_evidence/verification_manifest.json; R9_review.json",
+          "review_context_pdf_pages": [
+            196
+          ]
+        },
+        "issues": [],
+        "evidence": [
+          {
+            "type": "PDF_VISUAL",
+            "file": "/workspace/R9_PAGES.pdf",
+            "attachment_pages": [
+              5
+            ],
+            "printed_page": "173",
+            "original_pdf_page": "195",
+            "location": "§4.4.2第二段完整辛性句中的子句",
+            "finding": "“the combined scheme is a symplectic method in the generalized sense of constrained dynamics.”为原句的连续子句，大小写、词语和句末句号相符。原书没有在这里定义名为rigidSystemSymplectic的性质。",
+            "verification": "已直接查看附件第1、3页的1800像素渲染；8页全部按相同参数渲染。第1/2/5/7页像素文件SHA-256相同，第3/4/6/8页相同，因此每项相应附件页均已核对。",
+            "rendered_page_sha256": {
+              "5": "c39927d9e95b065e2be4089a66f0a7cf547c6d172b273bf92114457de5302d87"
+            },
+            "pdf_sha256": "c21a917d80e315962ccf5a9e4b75abeea5e4579c2d1ea05a55432cd0cad6bb56"
+          },
+          {
+            "type": "PDF_VISUAL",
+            "file": "/workspace/R9_PAGES.pdf",
+            "attachment_pages": [
+              6
+            ],
+            "printed_page": "174",
+            "original_pdf_page": "196",
+            "location": "下接算法表（仅为combined scheme指代上下文）",
+            "finding": "本页是前述combined scheme的算法内容，不是该辛性子句所在页。输入主页173/195与review_context_pdf_pages=[196]区分正确。",
+            "verification": "已直接查看附件第1、3页的1800像素渲染；8页全部按相同参数渲染。第1/2/5/7页像素文件SHA-256相同，第3/4/6/8页相同，因此每项相应附件页均已核对。",
+            "rendered_page_sha256": {
+              "6": "8dd0e67a598392be8615d2558952f883c0795fad885abb63e2819d1a62621a67"
+            },
+            "pdf_sha256": "c21a917d80e315962ccf5a9e4b75abeea5e4579c2d1ea05a55432cd0cad6bb56"
+          },
+          {
+            "type": "LEAN_READ_ONLY",
+            "file": "/workspace/R9_任务.md",
+            "task_sha256": "aed82923dfea4747e6ae0fa5cf416ca67917a057a38929f44c31ee7aec68bf1b",
+            "item": 5,
+            "declarations_checked": [
+              "MD.Ch04.rigidSystemSymplectic",
+              "MolecularDynamics.Chapter04Review.rbTangent",
+              "MolecularDynamics.Chapter04Review.rbForm",
+              "MolecularDynamics.Chapter04Review.phaseForm",
+              "MolecularDynamics.Chapter04Review.dot",
+              "MD.Ch04.cross3",
+              "MD.Ch04.matrixRot",
+              "MolecularDynamics.Chapter04Review.RBState",
+              "MolecularDynamics.Chapter04Review.V",
+              "MolecularDynamics.Chapter04Review.Mat3"
+            ],
+            "finding": "∀SO(3)输入状态z，先要求全部输出方向矩阵亦在SO(3)，再∀完整N体切向量u,v要求两形式有限和的全系统Fréchet拉回相等。每体切向条件是ΘᵀδΘ+δΘᵀΘ=0；其余q,p,π方向自由。",
+            "scope": "仅核对本任务给出的当前Lean声明及MolecularDynamics/MD项目定义；Mathlib原语按标准含义采信。未读取旧Ch0x.lean、旧source.json或旧任务来补本轮材料，未修改工程、未补证明、未运行Lean编译，未将sorry视为签名错误。",
+            "material_limit": "任务未独立摘录rigidSystemState的定义。本次按所给函数的逐体调用、显式四字段返回项及条目5/6所给RBState := (V × V) × (V × Mat3)核对N体状态的用法；未声称已另行展开或验证未提供的别名本体。此证据范围遵照任务“只需核对本文件中摘录的项目定义”。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidSystemSymplectic",
+        "verdict": "PASS",
+        "explanation": "在输入明确限定的“辅助谓词定义”范围内PASS，不把def当作原句算法定理。参数为任意全系统映射G；对所有输入z，全部k的ΘᵀΘ=1及detΘ=1作为蕴含前件，结论明确包含全部输出SO(3)约束。随后量化完整u、v，分别要求每体rbTangent，再比较∑k rbForm(Gz_k,(DG_z u)_k,(DG_z v)_k)与∑k rbForm(z_k,u_k,v_k)。DG是整个G在整个z上的fderiv，故保留所有跨体耦合导数，未偷换为逐体局部导数。rbForm包含dq·δp−δq·dp及ξ·δπ−η·dπ+π·(ξ×η)；ξ、η中的1/2正确地抵消matrixRot对反对称矩阵的倍数。已列[EXTRA]准确揭示SO(3)、实际切向量、有限和与真实导数的形式化内容，没有以假设辛性替代结论。定义未单独断言G光滑或全局可逆，按既定scope只把它当作约束保持及拉回性质；实际算法性质仍须由条目6的theorem承担。",
+        "counterexample": null,
+        "suggested_fix": "保持辅助谓词及已给statement_scope；保留corrected_json中对rbForm的1/2及ambient fderiv范围的解释。不要因def名称而把本条当作已证明原算法辛性，也不要删去条目6的实质算法断言。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "EXTRA_GLOBAL_REGULARITY_CLARIFIED",
+          "SOURCE_MASS_CONVENTION_UNRESOLVED",
+          "SOURCE_SPIN_CONVENTION_UNRESOLVED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "173",
+          "pdf_page": "195",
+          "statement_latex": "The reliability of these methods is supported by the fact that the combined scheme is a symplectic method in the generalized sense of constrained dynamics.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "此句完整位于PDF195（印刷173）§4.4.2，所指combined scheme是下接PDF196原表的完整N体Kick/Drift/Spin/Kick组合；该页说明逐体执行并由势U产生力与力矩。",
+            "“symplectic”是约束相空间上的保两形式断言；该句没有另行断言全局误差、物理一致性阶数或经验可靠性的量化界。原表的质量及正角Spin疑点应独立记录，不静默改动。",
+            "本声明审校的是dlmPrintedSystem的原表字面版本及其结构性质；不得把质量或Spin物理一致性疑点直接当作两形式保持的反例。原书疑点单独保留并人工确认。"
+          ],
+          "issues": [
+            {
+              "code": "EXTRA_GLOBAL_REGULARITY_CLARIFIED",
+              "detail": "原备注“C³耦合势”不够精确。Lean要求Function.uncurry U在完整位置×实矩阵环境空间上全局联合C³，强于仅在SO(3)配置上的光滑性，已按[EXTRA]技术资格明确；另逐项列出∀k i的正惯性及N、h的量词域。"
+            },
+            {
+              "code": "SOURCE_MASS_CONVENTION_UNRESOLVED",
+              "detail": "本条指向条目4同一个原表，而原表的p线动量与q+h p之间的质量约定仍待人工确认。保留原句和Printed对象，不把疑点写成Lean遗漏的质量变量。"
+            },
+            {
+              "code": "SOURCE_SPIN_CONVENTION_UNRESOLVED",
+              "detail": "combined scheme指向原表字面正角Spin，还是意指与原运动方程一致的物理方案，其符号约定需人审确认；原句不作静默勘误。此分流不是对所给两形式保持结论的否证。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.dlmPrintedSystemStructure",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] Lean逐体要求∀k i, 0 < I k i；这是正主惯性矩资格，原引句没有逐字写成这一量词前提。",
+            "[EXTRA] ContDiff ℝ 3 (Function.uncurry U)是在全部N体位置和全部3×3实矩阵的整个环境空间上要求联合全局C³，不只是沿SO(3)方向光滑或在单个输入附近光滑；属于显式技术性限缩，不能概括为原书已明说的无条件假设。",
+            "[EXTRA] N量化为任意自然数（含空系统），h量化为任意实数（含零及负值）。SO(3)输入/输出约束、实际切向量和N体两形式有限和均在rigidSystemSymplectic内展开，不是另行假设辛性。"
+          ],
+          "statement_scope": "原书完整辛性句的数学内容：按原表字面组合的全系统受约束辛性；“reliability ... supported”不另行形式化为误差或经验可靠性的定量界。正惯性与环境空间全局C³为已明示[EXTRA]技术资格。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT24_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:09:07.422859",
+              "before_sha256": "510b4993c7671371f37c889b93ac2e2242c6ccfe3b898f5f68ea991a68b95d12",
+              "after_sha256": "5a2f4b86705f6975c518fddef7547778f7219b85099ecf542d13cad4014a57ee",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:27:39.597807",
+              "before_sha256": "5a2f4b86705f6975c518fddef7547778f7219b85099ecf542d13cad4014a57ee",
+              "after_sha256": "89847cd01e0c326cc44c906340f62766cd53352f2d181833063422204d2b852d",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "173–174",
+                  "after": "173"
+                },
+                "pdf_page": {
+                  "before": "195–196",
+                  "after": "195"
+                }
+              },
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH29_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch04_eaudit/R9_evidence/verification_manifest.json; R9_review.json",
+          "review_context_pdf_pages": [
+            196
+          ]
+        },
+        "issues": [
+          {
+            "code": "EXTRA_GLOBAL_REGULARITY_CLARIFIED",
+            "field": "extra_assumptions / statement_scope",
+            "severity": "correction",
+            "detail": "原备注“C³耦合势”不够精确。Lean要求Function.uncurry U在完整位置×实矩阵环境空间上全局联合C³，强于仅在SO(3)配置上的光滑性，已按[EXTRA]技术资格明确；另逐项列出∀k i的正惯性及N、h的量词域。"
+          },
+          {
+            "code": "SOURCE_MASS_CONVENTION_UNRESOLVED",
+            "field": "issues / context_notation",
+            "severity": "source_needs_human",
+            "detail": "本条指向条目4同一个原表，而原表的p线动量与q+h p之间的质量约定仍待人工确认。保留原句和Printed对象，不把疑点写成Lean遗漏的质量变量。"
+          },
+          {
+            "code": "SOURCE_SPIN_CONVENTION_UNRESOLVED",
+            "field": "issues / context_notation",
+            "severity": "source_needs_human",
+            "detail": "combined scheme指向原表字面正角Spin，还是意指与原运动方程一致的物理方案，其符号约定需人审确认；原句不作静默勘误。此分流不是对所给两形式保持结论的否证。"
+          }
+        ],
+        "evidence": [
+          {
+            "type": "PDF_VISUAL",
+            "file": "/workspace/R9_PAGES.pdf",
+            "attachment_pages": [
+              7
+            ],
+            "printed_page": "173",
+            "original_pdf_page": "195",
+            "location": "§4.4.2第二段完整“The reliability ... constrained dynamics.”句",
+            "finding": "完整英文逐字相符。主引文仅在173/195；“reliability”是对辛性意义的叙述，不另给误差阶、稳定性界或经验概率界。",
+            "verification": "已直接查看附件第1、3页的1800像素渲染；8页全部按相同参数渲染。第1/2/5/7页像素文件SHA-256相同，第3/4/6/8页相同，因此每项相应附件页均已核对。",
+            "rendered_page_sha256": {
+              "7": "c39927d9e95b065e2be4089a66f0a7cf547c6d172b273bf92114457de5302d87"
+            },
+            "pdf_sha256": "c21a917d80e315962ccf5a9e4b75abeea5e4579c2d1ea05a55432cd0cad6bb56"
+          },
+          {
+            "type": "PDF_VISUAL",
+            "file": "/workspace/R9_PAGES.pdf",
+            "attachment_pages": [
+              8
+            ],
+            "printed_page": "174",
+            "original_pdf_page": "196",
+            "location": "下接完整DLM算法表及绕轴旋转说明",
+            "finding": "combined scheme的字面对象为两次半步Kick、无质量除数的Drift和正角五轴Spin；该页仅为指代及数学疑点的上下文，输入页码元数据正确。",
+            "verification": "已直接查看附件第1、3页的1800像素渲染；8页全部按相同参数渲染。第1/2/5/7页像素文件SHA-256相同，第3/4/6/8页相同，因此每项相应附件页均已核对。",
+            "rendered_page_sha256": {
+              "8": "8dd0e67a598392be8615d2558952f883c0795fad885abb63e2819d1a62621a67"
+            },
+            "pdf_sha256": "c21a917d80e315962ccf5a9e4b75abeea5e4579c2d1ea05a55432cd0cad6bb56"
+          },
+          {
+            "type": "LEAN_READ_ONLY",
+            "file": "/workspace/R9_任务.md",
+            "task_sha256": "aed82923dfea4747e6ae0fa5cf416ca67917a057a38929f44c31ee7aec68bf1b",
+            "item": 6,
+            "declarations_checked": [
+              "MD.Ch04.dlmPrintedSystemStructure",
+              "MD.Ch04.dlmPrintedSystem",
+              "MD.Ch04.rigidSystemSymplectic",
+              "MD.Ch04.rigidSystemKick",
+              "MD.Ch04.rigidSystemDriftPrinted",
+              "MD.Ch04.rigidSystemSpinPrinted",
+              "MD.Ch04.printedSpinStep",
+              "MD.Ch04.printedSpinAxis",
+              "MolecularDynamics.Chapter04Review.axisRotation",
+              "MD.Ch04.rigidSystemForce",
+              "MD.Ch04.rigidSystemTorque",
+              "MolecularDynamics.Chapter04Review.rbTangent",
+              "MolecularDynamics.Chapter04Review.rbForm",
+              "MolecularDynamics.Chapter04Review.phaseForm",
+              "MolecularDynamics.Chapter04Review.dot",
+              "MD.Ch04.cross3",
+              "MolecularDynamics.Chapter04Review.grad",
+              "MolecularDynamics.Chapter04Review.matrixGrad",
+              "MolecularDynamics.Chapter04Review.matrixRot"
+            ],
+            "finding": "完整量词为∀N，∀I : Fin N → V，∀U : (Fin N → V) → (Fin N → Mat3) → ℝ；前提为∀k i,0<I k i及ContDiff ℝ 3 (Function.uncurry U)；结论为∀h : ℝ，rigidSystemSymplectic(dlmPrintedSystem I U h)。没有假设待证辛性。其后全部输出约束、切向量和两形式等式由实际定义展开。",
+            "scope": "仅核对本任务给出的当前Lean声明及MolecularDynamics/MD项目定义；Mathlib原语按标准含义采信。未读取旧Ch0x.lean、旧source.json或旧任务来补本轮材料，未修改工程、未补证明、未运行Lean编译，未将sorry视为签名错误。",
+            "material_limit": "任务未独立摘录rigidSystemState的定义。本次按所给函数的逐体调用、显式四字段返回项及条目5/6所给RBState := (V × V) × (V × Mat3)核对N体状态的用法；未声称已另行展开或验证未提供的别名本体。此证据范围遵照任务“只需核对本文件中摘录的项目定义”。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dlmPrintedSystemStructure",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "签名的字面忠实性核对通过。全部对象、域、量词及两个实质前提与给定定义相容：任意有限N体、逐体正主惯性矩、联合全局C³耦合势、任意实h。结论是该具体完整Printed组合对每一个SO(3)输入保持SO(3)输出，并对任意两条全系统切向量保持∑rbForm的真实Fréchet拉回；没有缩为单体、没有遗漏末次力/力矩重算、没有以预设辛性或抽象占位形式替换目标。正惯性和全环境全局C³属于显式[EXTRA]限缩，已细化披露。原句的可靠性解释不是额外定量定理，未形式化为误差界不构成结论遗漏。theorem中sorry仅表示证明未交付，不作为FAIL理由，本轮也不声称Lean证明已完成。总体NEEDS_HUMAN依任务对原书质量及Spin动力学约定疑点的保留规则；这与签名忠实性通过并存。特别是无质量Drift及正角配对Spin本身都不能推出映射不辛，未据此提出辛性反例。",
+        "counterexample": null,
+        "suggested_fix": "不修改该Printed声明或补证明。采用corrected_json明确全局联合C³等[EXTRA]资格，并人工确认原书表格与物理约定、combined scheme的指代。若另需物理一致性修正版，应以独立_corrected对象处理；不得在本条悄悄补质量、翻转角度或因sorry判FAIL。"
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

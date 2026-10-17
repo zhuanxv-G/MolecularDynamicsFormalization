@@ -1,0 +1,40 @@
+--- before
++++ after
+@@ -1161,10 +1161,26 @@
+   sorry
+ 
+ 
+-/-- source_id: MD-2.4.1-PotentialFlow · definition · §2.4.1 · 印刷p.84 / PDFp.106 -/
++/-- source_id: MD-2.4.1-PotentialFlow · definition · §2.4.1 · 印刷p.84 / PDFp.106 [EXTRA] 24号：原总化公式仅作候选辅助；新增H₂=U∘位置投影、初值及C¹势下候选轨道的真实Hamilton方程声明；Hamilton识别尚未证明，不将不可微点的fderiv总化值称为经典梯度。
++-/
+ def bp_potentialFlow {Nc : ℕ} (U : Q Nc → ℝ)
+     (h : ℝ) : SymplecticCoordinates Nc → SymplecticCoordinates Nc :=
+   textbookMomentumKick (textbookPotentialForce U) h
++
++def potentialHamiltonian {Nc : ℕ} (U : Q Nc → ℝ) (z : SymplecticCoordinates Nc) : ℝ :=
++  U (textbookPositionProjection Nc z)
++
++theorem bp_potentialFlow_initial {Nc : ℕ} (U : Q Nc → ℝ) (z : SymplecticCoordinates Nc) :
++    bp_potentialFlow U 0 z = z := by
++  funext i
++  cases i <;> simp [bp_potentialFlow, textbookMomentumKick]
++
++theorem bp_potentialFlow_hamiltonian {Nc : ℕ} (U : Q Nc → ℝ)
++    (_hU : ContDiff ℝ 1 U) (z : SymplecticCoordinates Nc) (t : ℝ) :
++    HasDerivAt (fun s => bp_potentialFlow U s z)
++      (textbookHamiltonianVectorField (potentialHamiltonian U) (bp_potentialFlow U t z)) t := by
++  sorry
++
+ 
+ /-- source_id: MD-2.4.1-SplitEuler · unnumbered_claim · §2.4.1 · 印刷p.84 / PDFp.106 -/
+ theorem splitEuler :
+@@ -1798,6 +1814,9 @@
+ #print axioms MD.Ch02.bp_kineticFlow_initial
+ #print axioms MD.Ch02.bp_kineticFlow_hamiltonian
+ #print axioms MD.Ch02.bp_potentialFlow
++#print axioms MD.Ch02.potentialHamiltonian
++#print axioms MD.Ch02.bp_potentialFlow_initial
++#print axioms MD.Ch02.bp_potentialFlow_hamiltonian
+ #print axioms MD.Ch02.splitEuler
+ #print axioms MD.Ch02.verletComposition
+ #print axioms MD.Ch02.verletSymplectic

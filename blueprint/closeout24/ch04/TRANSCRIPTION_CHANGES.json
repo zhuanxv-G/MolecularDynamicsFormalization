@@ -1,0 +1,691 @@
+[
+  {
+    "source_id": "MD-4-EulerImaginaryGrowth",
+    "batch": "EAUDIT69",
+    "fields": {
+      "statement_latex": {
+        "before": "The eigenvalues are $\\pm i\\omega$. The stability condition always fails to hold and, for Euler’s method, $z_n$ grows exponentially rapidly away from the equilibrium point.",
+        "after": "The eigenvalues are $\\pm i\\omega$. The reason a method like Euler’s method can never perform well for molecular dynamics is that molecular dynamics is a Hamiltonian system and at the bottoms of basins on the energy surface, which correspond to stable centers, we expect all the eigenvalues of a local linearization of the problem to be purely imaginary. The stability condition always fails to hold and, for Euler’s method, $z_n$ grows exponentially rapidly away from the equilibrium point."
+      },
+      "context_notation": {
+        "before": [
+          "原页从Ω改用ω；矩阵的完整±iΩ谱另列，不由增长结论替代。"
+        ],
+        "after": [
+          "原页从Ω改用ω；矩阵的完整±iΩ谱另列，不由增长结论替代。",
+          "R1复审：首句与末句一致，但两句之间删去一整段解释且未标省略，不能称连续逐字引文。恢复原段并标清定理仅覆盖谐振子。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_UNMARKED_OMISSION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4-VerletStability",
+    "batch": "EAUDIT69",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "R1复审：原句确实印作 hΩ≤2 且声称所有时间有界；忠实转录，但端点陈述有数学疑误，保留原句。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "BOOK_ENDPOINT_ERRATUM",
+      "CORRECTED_SCOPE_EXPLICIT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4-SymplecticEulerUnitRoots",
+    "batch": "EAUDIT69",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "λ₁,₂ 指 PDF p.162 上方 Symplectic Euler 矩阵的特征值；平方条件 h²Ω²≤4 包括0和4两个重根端点。",
+          "原文 they are complex 在端点根为实数±1；只有0<h²Ω²<4时为非实复共轭根。原文末句 hΩ≤2 按正频率、正步长背景理解；任意实参数需|hΩ|≤2。",
+          "模平方公式为原页推导，不是独立完整证明；单位圆谱不等于幂有界。"
+        ],
+        "after": [
+          "λ₁,₂ 指 PDF p.162 上方 Symplectic Euler 矩阵的特征值；平方条件 h²Ω²≤4 包括0和4两个重根端点。",
+          "原文 they are complex 在端点根为实数±1；只有0<h²Ω²<4时为非实复共轭根。原文末句 hΩ≤2 按正频率、正步长背景理解；任意实参数需|hΩ|≤2。",
+          "模平方公式为原页推导，不是独立完整证明；单位圆谱不等于幂有界。",
+          "R1复审：不等式、模平方展开和末句均忠实。原文 they are complex 若指非实根，则在 h²Ω²=0、4 不成立；末句 hΩ≤2 依赖正步长正频率背景，任意实参数下须用绝对值。保留原句，交人工确认术语和隐含域。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "BOOK_NONREAL_ENDPOINT_AMBIGUITY",
+      "IMPLICIT_POSITIVE_PARAMETER_DOMAIN"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4-SymplecticEulerStability",
+    "batch": "EAUDIT69",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "R1复审：整段逐句一致；hΩ≤2 的端点稳定性有疑误，原文保留。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "BOOK_ENDPOINT_ERRATUM",
+      "CORRECTED_SCOPE_EXPLICIT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.1-PrintedImplicitRelation",
+    "batch": "EAUDIT70",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "R1复审：原页确实把梯形更新式命名为 Implicit Midpoint，转录正确；保留疑误。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "BOOK_METHOD_NAME_FORMULA_MISMATCH"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.1-ImplicitModulus",
+    "batch": "EAUDIT70",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "R1复审：公式和末句均忠实；末句 a linear system 若脱离纯虚振子背景会过强，保留原话并标注范围疑问。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "BOOK_LINEAR_SYSTEM_SCOPE_AMBIGUITY"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.2.1-FastVerlet",
+    "batch": "EAUDIT71",
+    "fields": {
+      "statement_latex": {
+        "before": "Let $\\mathcal G_h^F$ denote the map associated to the Verlet method for the system without $U_S$, using a stepsize $h$:\n\\[\\mathcal G_h^F=\\mathrm e^{\\frac h2\\mathcal L_{U_F}}\\mathrm e^{h\\mathcal L_K}\\mathrm e^{\\frac h2\\mathcal L_{U_F}},\\]\nwhere $\\mathcal L_K$ is the Lie-derivative corresponding to the kinetic energy component of the Hamiltonian $(K=p^TM^{-1}p/2)$.",
+        "after": "Let us $\\mathcal G_h^F$ denote the map associated to the Verlet method for the system without $U_S$, using a stepsize $h$:\n\\[\\mathcal G_h^F=\\mathrm e^{\\frac h2\\mathcal L_{U_F}}\\mathrm e^{h\\mathcal L_K}\\mathrm e^{\\frac h2\\mathcal L_{U_F}},\\]\nwhere $\\mathcal L_K$ is the Lie-derivative corresponding to the kinetic energy component of Hamiltonian $(K=p^TM^{-1}p/2)$."
+      },
+      "context_notation": {
+        "before": [
+          "Lie指数按实际势kick与质量drift作用解释；复用第2章实际数学映射。"
+        ],
+        "after": [
+          "Lie指数按实际势kick与质量drift作用解释；复用第2章实际数学映射。",
+          "R1复审：PDF 是 Let us ...，当前转录为 Let ...，遗漏 us；原页写 Hamiltonian (K=...)，当前多了定冠词 the，均应修正。公式和其余内容一致。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_WORD_MISMATCH",
+      "PROJECT_DEPENDENCY_NOT_SUPPLIED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.2.1-RESPA",
+    "batch": "EAUDIT71",
+    "fields": {
+      "statement_latex": {
+        "before": "Now consider the map constructed by taking $r$ steps using $\\mathcal G_{F,h/r}$ and composing this with kicks from the soft force:\n\\[\\mathcal G_h^{\\mathrm{MTS}}=\\mathrm e^{\\frac h2\\mathcal L_{U_S}}[\\mathcal G_{h/r}^F]^r\\mathrm e^{\\frac h2\\mathcal L_{U_S}}.\\]\nReversible RESPA Algorithm\n\\[P:=p-(h/2)\\nabla U_S(q),\\quad Q:=q;\\]\nRepeat $r$ times:\n\\[P:=P-(h/2)\\nabla U_F(Q)/r,\\quad Q:=Q+hM^{-1}P/r,\\quad P:=P-(h/2)\\nabla U_F(Q)/r;\\tag{4.2}\\]\n\\[P:=P-(h/2)\\nabla U_S(Q).\\]",
+        "after": "Now consider the map constructed by taking $r$ steps using $\\mathcal G_{F,h/r}$ and composing this with kicks from the soft force:\n\\[\\mathcal G_h^{\\mathrm{MTS}}=\\mathrm e^{\\frac h2\\mathcal L_{U_S}}[\\mathcal G_{h/r}^F]^r\\mathrm e^{\\frac h2\\mathcal L_{U_S}}.\\]\nOne step of the multiple timestepping algorithm is then implemented as follows:\nReversible RESPA Algorithm\n\\[P:=p-(h/2)\\nabla U_S(q),\\quad Q:=q;\\]\nRepeat $r$ times:\n\\[P:=P-(h/2)\\nabla U_F(Q)/r,\\quad Q:=Q+hM^{-1}P/r,\\quad P:=P-(h/2)\\nabla U_F(Q)/r;\\tag{4.2}\\]\n\\[P:=P-(h/2)\\nabla U_S(Q).\\]"
+      },
+      "context_notation": {
+        "before": [],
+        "after": [
+          "R1复审：算子式和算法更新均与PDF一致；公式与标题之间漏了 One step of the multiple timestepping algorithm is then implemented as follows:，应恢复或明示省略。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_UNMARKED_OMISSION",
+      "MISSING_POSITIVE_SUBSTEP_COUNT",
+      "PROJECT_DEPENDENCY_NOT_SUPPLIED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.1-RestrictedForm",
+    "batch": "EAUDIT76",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "真实可微约束图的标准2-form拉回；抽象余切丛存在/非退化未由定义证明。"
+        ],
+        "after": [
+          "Q n=Fin n→ℝ，Z n=Q n×Q n；phaseForm(u,v)=u_q·v_p−v_q·u_p 为标准相空间二形式。",
+          "restrictedForm 为一般同维映射 chart 的形式拉回表达式；当 chart 在 z 可微时具有通常的微分拉回解释。定义本身不保证任意 chart 的拉回非退化。",
+          "restrictedForm_nondegenerate 另对实际约束映射 c(q,p)=(g(q),G(q)M^{-1}p) 的导数核 T 陈述 phaseForm|T 的非退化；本条没有以 Lean 流形对象构造抽象余切丛，也没有另列闭性定理。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "ANNOTATION_SCOPE_CLARIFICATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.1-VariationalFormula",
+    "batch": "EAUDIT76",
+    "fields": {
+      "statement_latex": {
+        "before": "Next, we interchange time derivatives and differentials, and use the chain rule to write\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\mathrm dq=M^{-1}\\mathrm dp,\\tag{4.11}\\]\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\mathrm dp=-U''(q)\\mathrm dq-\\sum_{k=1}^l[(\\mathrm d\\lambda_k)\\nabla g_k(q)+\\lambda_kg_k''\\mathrm dq],\\tag{4.12}\\]\n\\[0=g_j'(q)\\mathrm dq,\\quad j=1,\\ldots,l.\\tag{4.13}\\]",
+        "after": "Next, we interchange time derivatives and differentials, and use the chain rule to write\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\mathrm dq=M^{-1}\\mathrm dp,\\tag{4.11}\\]\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\mathrm dp=-U''(q)\\mathrm dq-\\sum_{k=1}^l[(\\mathrm d\\lambda_k)\\nabla g_k(q)+\\lambda_kg_k''\\mathrm dq],\\tag{4.12}\\]\n\\[0=g_j'(q)\\mathrm dq,\\quad j=1,2,\\ldots,l,\\tag{4.13}\\]"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_INDEX_RANGE_TRANSCRIPTION",
+      "SOURCE_PUNCTUATION",
+      "EXTRA_ANNOTATION_CLARIFICATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.1-HessianPullbackCancel",
+    "batch": "EAUDIT76",
+    "fields": {
+      "statement_latex": {
+        "before": "This follows from the antisymmetry of the wedge product $(\\mathrm dx\\wedge\\mathrm dy=-\\mathrm dy\\wedge\\mathrm dx)$, and the fact that the Hessian matrix of $U$ is symmetric. Next, note that\n\\[\\sum_{i=1}^{N_c}\\sum_{k=1}^{l}\\mathrm dq_i\\wedge\\lambda_k\\sum_{j=1}^{N_c}(g_k^{\\prime\\prime})_{ij}\\mathrm dq_j=\\sum_{k=1}^{l}\\lambda_k\\sum_{i=1}^{N_c}\\mathrm dq_i\\wedge\\sum_{j=1}^{N_c}(g_k^{\\prime\\prime})_{ij}\\mathrm dq_j=0,\\]\nby the same reasoning, since each of $g_k^{\\prime\\prime}$ is a symmetric matrix. Finally\n\\[\\sum_{i=1}^{N_c}\\sum_{k=1}^{l}[\\mathrm dq_i\\wedge(\\mathrm d\\lambda_k)g_{ki}^{\\prime}]=\\sum_{k=1}^{l}\\left(\\sum_{i=1}^{N_c}g_{ki}^{\\prime}\\mathrm dq_i\\right)\\wedge\\mathrm d\\lambda_k=\\sum_{k=1}^{l}\\mathrm dg_k\\wedge\\mathrm d\\lambda_k=0,\\]\nsince we know that $\\mathrm dg_k=0$ from (4.13). Therefore\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\sum_{j=1}^{N_c}\\mathrm dq_j\\wedge\\mathrm dp_j=0.\\]",
+        "after": "This follows from the antisymmetry of the wedge product $(\\mathrm dx\\wedge\\mathrm dy=-\\mathrm dy\\wedge\\mathrm dx)$, and the fact that the Hessian matrix of $U$ is symmetric. Next, note that\n\\[\\sum_{i=1}^{N_c}\\sum_{k=1}^{l}\\mathrm dq_i\\wedge\\lambda_k\\sum_{j=1}^{N_c}(g_k^{\\prime\\prime})_{ij}\\mathrm dq_j=\\sum_{k=1}^{l}\\lambda_k\\sum_{i=1}^{N_c}\\mathrm dq_i\\wedge\\sum_{j=1}^{N_c}(g_k^{\\prime\\prime})_{ij}\\mathrm dq_j=0,\\]\nby the same reasoning, since each of $g_k^{\\prime\\prime}$ is a symmetric matrix. Finally\n\\[\\sum_{i=1}^{N_c}\\sum_{k=1}^{l}[\\mathrm dq_i\\wedge(\\mathrm d\\lambda_k)g_{ki}^{\\prime}=\\sum_{k=1}^{l}\\left(\\sum_{i=1}^{N_c}g_{ki}^{\\prime}\\mathrm dq_i\\right)\\wedge\\mathrm d\\lambda_k=\\sum_{k=1}^{l}\\mathrm dg_k\\wedge\\mathrm d\\lambda_k=0,\\]\nsince we know that $\\mathrm dg_k=0$ from (4.13). Therefore\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\sum_{i=1}^{N_c}\\mathrm dq_i\\wedge\\mathrm dp_i=0.\\]"
+      },
+      "proof_note": {
+        "before": "原书未给独立完整证明。",
+        "after": "原页给出逐项消去推导，并由 Leibniz 规则得到完整二形式的时间导数为零；不是单列编号定理。原书 Finally 后首个双重求和有未闭合的排印方括号，本摘录按原页保留。"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_DUMMY_INDEX_TRANSCRIPTION",
+      "SOURCE_TYPOGRAPHY_PRESERVED",
+      "PROOF_NOTE_CLARIFICATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.2-ProjectionScale",
+    "batch": "EAUDIT77",
+    "fields": {
+      "statement_latex": {
+        "before": "It is worth noting that $\\Lambda(h)=O(h^2)$, i.e. for small steps $\\Lambda$ will also be small. This justifies the initial guess $\\Lambda^{(0)}=0$,",
+        "after": "It is worth noting that $\\Lambda(h)=\\mathcal{O}(h^2)$, i.e. for small steps $\\Lambda$ will also be small. This justifies the initial guess $\\Lambda^{(0)}=0$,"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_BIG_O_PRECONDITION_NEEDS_HUMAN",
+      "LEAN_PREDICTOR_SIGN_MISMATCH",
+      "SOURCE_BIG_O_TYPOGRAPHY",
+      "EXTRA_ANNOTATION_CLARIFICATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.3-ComponentConstraintStep",
+    "batch": "EAUDIT78",
+    "fields": {
+      "statement_latex": {
+        "before": "\\[\\Delta\\Lambda_1=[\\nabla g_1(Q)^TM^{-1}G_n^1]^{-1}g_1(Q).\\]\nWe then update $Q$ by\n\\[Q:=Q-M^{-1}G_n^1\\Delta\\Lambda_1.\\]",
+        "after": "\\[\\Delta\\Lambda_1=[\\nabla g_1(Q)^TM^{-1}G_n^1]^{-1}g_1(Q).\\]\nWe then update $Q$ by\n\\[Q:=Q-M^{-1}G_n^1\\Delta\\Lambda_1,\\]"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_PUNCTUATION",
+      "EXTRA_ANNOTATION_CROSSTALK"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.4-Lemma41",
+    "batch": "EAUDIT79",
+    "fields": {
+      "proof_latex": {
+        "before": "Clearly the result follows provided\n\\[\\sum_{j=1}^{N_c}dq_j\\wedge d[\\mu\\nabla\\gamma(q)]_j=0,\\]\nwhere $[\\ldots]_j$ indicates the jth component of the term in brackets. We have\n\\[\\sum_jdq_j\\wedge d[\\mu\\nabla\\gamma(q)]_j=\\sum_jdq_j\\wedge\\left(\\frac{\\partial\\gamma}{\\partial q_j}d\\mu+\\mu\\sum_i\\gamma''_{ij}dq_j\\right).\\]\nThen we note\n\\[\\sum_jdq_j\\wedge\\frac{\\partial\\gamma}{\\partial q_j}d\\mu=\\sum_j\\frac{\\partial\\gamma}{\\partial q_j}dq_j\\wedge d\\mu=0,\\]\nsince $\\gamma(q)\\equiv0$ implies $d\\gamma(q)=\\sum_j\\frac{\\partial\\gamma}{\\partial q_j}dq_j\\equiv0$. Moreover\n\\[\\sum_jdq_j\\wedge\\sum_i\\gamma''_{ij}dq_j=0,\\]\nsince the Hessian matrix $\\gamma''$ is symmetric.",
+        "after": "Clearly the result follows provided\n\\[\\sum_{j=1}^{N_c}dq_j\\wedge d[\\mu\\nabla\\gamma(q)]_j=0,\\]\nwhere $[\\ldots]_j$ indicates the jth component of the term in brackets. We have\n\\[\\sum_{j=1}^{N_c}dq_j\\wedge d[\\mu\\nabla\\gamma(q)]_j=\\sum_{j=1}^{N_c}dq_j\\wedge\\left(\\frac{\\partial\\gamma}{\\partial q_j}d\\mu+\\mu\\sum_{i=1}^{N_c}\\gamma''_{ij}dq_j\\right).\\]\nThen we note\n\\[\\sum_{j=1}^{N_c}dq_j\\wedge\\frac{\\partial\\gamma}{\\partial q_j}d\\mu=\\sum_{j=1}^{N_c}\\frac{\\partial\\gamma}{\\partial q_j}dq_j\\wedge d\\mu=0,\\]\nsince $\\gamma(q)\\equiv0$ implies $d\\gamma(q)=\\sum_{j=1}^{N_c}\\frac{\\partial\\gamma}{\\partial q_j}dq_j\\equiv0$. Moreover\n\\[\\sum_{j=1}^{N_c}dq_j\\wedge\\sum_{i=1}^{N_c}\\gamma''_{ij}dq_j=0,\\]\nsince the Hessian matrix $\\gamma''$ is symmetric."
+      }
+    },
+    "issue_codes": [
+      "PRINTED_HESSIAN_INDEX",
+      "SOURCE_SUM_LIMITS"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.4-ProjectedEulerPullback",
+    "batch": "EAUDIT79",
+    "fields": {
+      "statement_latex": {
+        "before": "Using similar argumentation based on the properties of the wedge product, we next show\n\\[\\sum_jdq_{n+1,j}\\wedge d\\bar p_{n+1,j}=\\sum_jdq_{n,j}\\wedge d\\bar p_{n+1,j};\\]\nand, finally, invoking Lemma 4.1 again,\n\\[\\sum_jdq_{n,j}\\wedge d\\bar p_{n+1,j}=\\sum_jdq_{n,j}\\wedge dp_{n,j}.\\]",
+        "after": "Using similar argumentation based on the properties of the wedge product, we next show\n\\[\\sum_{j=1}^{N_c}dq_{n+1,j}\\wedge d\\bar p_{n+1,j}=\\sum_{j=1}^{N_c}dq_{n,j}\\wedge d\\bar p_{n+1,j};\\]\nand, finally, invoking Lemma 4.1 again,\n\\[\\sum_{j=1}^{N_c}dq_{n,j}\\wedge d\\bar p_{n+1,j}=\\sum_{j=1}^{N_c}dq_{n,j}\\wedge dp_{n,j}.\\]"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_SUM_LIMITS"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.4-CotangentMultiplier",
+    "batch": "EAUDIT79",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "q表示q_{n+1}；p表示预投影动量\\bar p_{n+1}；P（若出现）表示p_{n+1}。G=g'(q)，D=diag(m_i^{-1})，A=GDG^T。主原印方程与det A≠0下的Gram专项构造须区分。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "CONTEXT_MAPPING_ADDED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.4-CotangentProjection",
+    "batch": "EAUDIT79",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "q表示q_{n+1}；p表示预投影动量\\bar p_{n+1}；P（若出现）表示p_{n+1}。G=g'(q)，D=diag(m_i^{-1})，A=GDG^T。主原印方程与det A≠0下的Gram专项构造须区分。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "CONTEXT_MAPPING_ADDED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.4-CotangentRegularity",
+    "batch": "EAUDIT79",
+    "fields": {
+      "proof_discussion_latex": {
+        "before": "Observe that $g\\prime(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$. Thus we may apply Lemma 4.1 with $\\gamma$ replaced by each $g_k$.",
+        "after": "Observe that $g^{\\prime}(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$. Thus we may apply Lemma 4.1 with $\\gamma$ replaced by each $g_k$."
+      },
+      "context_notation": {
+        "before": [
+          "$q_{n+1}\\in\\mathbb R^{N_c}$ satisfies $g(q_{n+1})=0$; $g=(g_1,\\ldots,g_l)$.",
+          "$\\bar p_{n+1}$ is the pre-projection momentum; $p_{n+1}=\\bar p_{n+1}-g\\prime(q_{n+1})^T\\mu_{n+1}$ (4.23).",
+          "$g\\prime(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$; Lemma 4.1 assumes $\\gamma\\in C^2$.",
+          "The displayed two-forms are restricted to constrained parameter variations, with $d g_k(q_{n+1})=0$; $j=1,\\ldots,N_c$."
+        ],
+        "after": [
+          "$q_{n+1}\\in\\mathbb R^{N_c}$ satisfies $g(q_{n+1})=0$; $g=(g_1,\\ldots,g_l)$.",
+          "$\\bar p_{n+1}$ is the pre-projection momentum; $p_{n+1}=\\bar p_{n+1}-g^{\\prime}(q_{n+1})^T\\mu_{n+1}$ (4.23).",
+          "$g^{\\prime}(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$; Lemma 4.1 assumes $\\gamma\\in C^2$.",
+          "The displayed two-forms are restricted to constrained parameter variations, with $d g_k(q_{n+1})=0$; $j=1,\\ldots,N_c$."
+        ]
+      }
+    },
+    "issue_codes": [
+      "EXPLICIT_AUXILIARY_SCOPE",
+      "LATEX_PRIME_ATTACHMENT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.4-CotangentPullback",
+    "batch": "EAUDIT79",
+    "fields": {
+      "proof_discussion_latex": {
+        "before": "Observe that $g\\prime(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$. Thus we may apply Lemma 4.1 with $\\gamma$ replaced by each $g_k$.",
+        "after": "Observe that $g^{\\prime}(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$. Thus we may apply Lemma 4.1 with $\\gamma$ replaced by each $g_k$."
+      },
+      "context_notation": {
+        "before": [
+          "$q_{n+1}\\in\\mathbb R^{N_c}$ satisfies $g(q_{n+1})=0$; $g=(g_1,\\ldots,g_l)$.",
+          "$\\bar p_{n+1}$ is the pre-projection momentum; $p_{n+1}=\\bar p_{n+1}-g\\prime(q_{n+1})^T\\mu_{n+1}$ (4.23).",
+          "$g\\prime(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$; Lemma 4.1 assumes $\\gamma\\in C^2$.",
+          "The displayed two-forms are restricted to constrained parameter variations, with $d g_k(q_{n+1})=0$; $j=1,\\ldots,N_c$."
+        ],
+        "after": [
+          "$q_{n+1}\\in\\mathbb R^{N_c}$ satisfies $g(q_{n+1})=0$; $g=(g_1,\\ldots,g_l)$.",
+          "$\\bar p_{n+1}$ is the pre-projection momentum; $p_{n+1}=\\bar p_{n+1}-g^{\\prime}(q_{n+1})^T\\mu_{n+1}$ (4.23).",
+          "$g^{\\prime}(q_{n+1})^T\\mu_{n+1}=\\sum_{k=1}^{l}\\mu_{n+1,k}\\nabla g_k(q_{n+1})$; Lemma 4.1 assumes $\\gamma\\in C^2$.",
+          "The displayed two-forms are restricted to constrained parameter variations, with $d g_k(q_{n+1})=0$; $j=1,\\ldots,N_c$."
+        ]
+      }
+    },
+    "issue_codes": [
+      "LATEX_PRIME_ATTACHMENT",
+      "EXTRA_MARKER_ADDED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.3.6-LINCSInverse",
+    "batch": "EAUDIT82",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "C为归一化Newton线性系统中的迭代矩阵；该定义仅为(I−C)⁻¹的Neumann截断模型，不包含原始系统的缩放矩阵或完整LINCS算法。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "NORMALIZATION_CONTEXT_MISSING"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4-CenterMass",
+    "batch": "EAUDIT83",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "q_i为原子位置、m_i为其质量，M=∑_{i=1}^N m_i；q_cm为质心位置（物理适用域M>0）。"
+        ],
+        "after": [
+          "q_i为原子位置、m_i为其质量，M=∑_{i=1}^N m_i；q_cm为质心位置（物理适用域M>0）。",
+          "当前Lean定义在M=0时采用实数逆的全定义约定；原文质心解释仅用于M≠0，物理质量情形为M>0。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "TOTALIZED_DIVISION_CONTEXT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4-SkewRepresentation",
+    "batch": "EAUDIT84",
+    "fields": {
+      "statement_latex": {
+        "before": "Any $3\\times3$ skew matrix may be written as $\\operatorname{skew}(\\omega)$.",
+        "after": "Any $3\\times3$ skew matrix may be written as\n\\[\\dot\\Theta\\Theta^T=\\operatorname{skew}(\\omega)\\equiv\\begin{bmatrix}0&-\\omega_3&\\omega_2\\\\\\omega_3&0&-\\omega_1\\\\-\\omega_2&\\omega_1&0\\end{bmatrix}.\\tag{4.38}\\]"
+      }
+    },
+    "issue_codes": [
+      "NONVERBATIM_RECONSTRUCTION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4-DipolarPairPotential",
+    "batch": "EAUDIT85",
+    "fields": {
+      "statement_latex": {
+        "before": "The total dipole-dipole interaction potential then takes the form $\\varphi^{\\rm dip}_{ij}=\\varphi_{\\rm LJ}(r_{ij})+\\mu_i^TL(q_{ij})\\mu_j$, with $U$ given as the sum of these over pairs. The $3\\times3$ matrix $L$ is given by\n\\[L(q_{ij})=\\frac1{r_{ij}^3}I-\\frac3{r_{ij}^5}q_{ij}q_{ij}^T,\\qquad q_{ij}=q_i-q_j.\\]",
+        "after": "The total dipole-dipole interaction potential then takes the form $\\varphi^{\\rm dip}_{ij}=\\varphi_{\\rm LJ}(r_{ij})+\\mu_i^TL(q_{ij})\\mu_j$, with $U$ given as the sum of these over pairs. The $3\\times3$ matrix $L$ is given by\n\\[L(q_{ij})=\\frac1{r_{ij}^3}-\\frac3{r_{ij}^5}q_{ij}q_{ij}^T,\\qquad q_{ij}=q_i-q_j.\\]"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_EXPLICIT_IDENTITY_INSERTION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4-DipolarPotentialSum",
+    "batch": "EAUDIT85",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "q_ij=q_i−q_j，r_ij=||q_ij||为欧氏距离；μ_i、μ_j为单位偶极方向。",
+          "原PDF写 L(q_ij)=1/r_ij³−(3/r_ij⁵)q_ij q_ij^T，并称L为3×3矩阵；首项按标量乘单位矩阵理解，原式未显式印I。",
+          "U是所有不同粒子无序配对的相互作用势之和；φ_LJ为Lennard–Jones径向势，使用r_ij>0的无重叠构形。"
+        ],
+        "after": [
+          "q_ij=q_i−q_j，r_ij=||q_ij||为欧氏距离；μ_i、μ_j为单位偶极方向。",
+          "原PDF写 L(q_ij)=1/r_ij³−(3/r_ij⁵)q_ij q_ij^T，并称L为3×3矩阵；首项按标量乘单位矩阵理解，原式未显式印I。",
+          "U是所有不同粒子无序配对的相互作用势之和；φ_LJ为Lennard–Jones径向势，使用r_ij>0的无重叠构形。",
+          "当前Lean未限制物理构形域；碰撞处的总函数值不是原书奇异势的物理定义。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "DECLARED_DOMAIN_NOT_ENFORCED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4.1-PrincipalAxisField",
+    "batch": "EAUDIT88",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "Fin 3的0,1,2对应原书轴1,2,3；I_i是对角惯性分量，物理场景取正值。",
+          "续页原印列向量依次为(T₁⁻¹π₁,0,0)ᵀ、(0,T₂⁻¹π,0)ᵀ、(0,0,T₃⁻¹π)ᵀ；后两项原印π没有分量下标，保持记录，不静默改原式。",
+          "Lean的π_i/I_i是对原印后两项的显式补义解释；本次未裁定为正式书籍勘误。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "PRINTED_COMPONENT_SUBSCRIPTS_MISSING",
+      "SOURCE_CORRECTION_REQUIRES_HUMAN"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidForce",
+    "batch": "EAUDIT90",
+    "fields": {
+      "statement_latex": {
+        "before": "The relevant expressions are $F^k=-\\partial U/\\partial q^k$.",
+        "after": "The relevant expressions are:\n\\[F^k=-\\partial U/\\partial q^k,\\]"
+      },
+      "context_notation": {
+        "before": [
+          "真实Fréchet偏导，不用新力公理。"
+        ],
+        "after": [
+          "原式为第k个刚体的力；在多体情形，其余刚体的位置和方向固定，U在Lean中可解释为该第k个刚体变量(q,Θ)上的切片势。单体情形无需冻结其他变量。",
+          "grad是按标准坐标方向从真实fderiv取出的梯度。该定义对所有输入函数作总运算延拓；只有在相应势切片可微处才解释为通常偏导。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_DISPLAY_PUNCTUATION",
+      "LOCAL_POTENTIAL_SLICE_UNDOCUMENTED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidTorque",
+    "batch": "EAUDIT90",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "原书印刷174页定义rot(A)=skew⁻¹(A−Aᵀ)；因此rot(A)=(A₃₂−A₂₃,A₁₃−A₃₁,A₂₁−A₁₂)，无额外1/2。",
+          "∂U/∂Θ是对旋转矩阵各元素的偏导构成的3×3矩阵；q及其他刚体的变量在该偏导中固定。",
+          "Lean的U可为多体耦合势在固定其余体变量后的切片；没有假设全系统势可分离。",
+          "matrixGrad在可微处给出通常Fréchet偏导；定义对不可微输入仍按Mathlib fderiv总运算约定取值，本条不证明可微性。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "TORQUE_NOTATION_CONTEXT_INCOMPLETE"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrinted",
+    "batch": "EAUDIT90",
+    "fields": {
+      "statement_latex": {
+        "before": "DLM Rigid Body Molecular Dynamics Step\n1. “Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k;\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]\n2. “Drift”: step forward a whole step in positions\n\\[q^k:=q^k+hp^k.\\]\n3. “Spin”: update the rotational state of the kth rigid body by the sequence of steps\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^z(h\\pi_3^k/I_3);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T.\\]\n4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F^k$ and torques $\\tau^k$ evaluated at the current $q,\\Theta$.",
+        "after": "DLM Rigid Body Molecular Dynamics Step\n1. “Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k,\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]\n2. “Drift”: step forward a whole step in positions\n\\[q^k:=q^k+hp^k.\\]\n3. “Spin”: update the rotational state of the kth rigid body by the sequence of steps\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^z(h\\pi_3^k/I_3);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T.\\]\n4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F^k$ and torques $\\tau^k$ evaluated at the current $q,\\Theta$."
+      }
+    },
+    "issue_codes": [
+      "PRINTED_DRIFT_MASS_FACTOR_QUERY",
+      "PRINTED_SPIN_SIGN_QUERY",
+      "SOURCE_DISPLAY_PUNCTUATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrintedStructure",
+    "batch": "EAUDIT90",
+    "fields": {
+      "printed_page": {
+        "before": "173–174",
+        "after": "173"
+      },
+      "pdf_page": {
+        "before": "195–196",
+        "after": "195"
+      }
+    },
+    "issue_codes": [
+      "QUOTE_PAGE_VS_CONTEXT_PAGE",
+      "EXTRA_REGULARITY_PREMISES_UNRECORDED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidSystemForce",
+    "batch": "EAUDIT90",
+    "fields": {
+      "statement_latex": {
+        "before": "The relevant expressions are: $F^k=-\\partial U/\\partial q^k$.",
+        "after": "The relevant expressions are:\n\\[F^k=-\\frac{\\partial U}{\\partial q^k},\\]"
+      },
+      "context_notation": {
+        "before": [
+          "真实耦合势的第k个位置切片Fréchet梯度；其余坐标保持在当前完整状态。"
+        ],
+        "after": [
+          "真实耦合势的第k个位置切片Fréchet梯度；其余坐标保持在当前完整状态。",
+          "本条截取原书同一展示式的力分量；其后原为逗号，接条目RigidSystemTorque的力矩分量。V为三维实向量，原书粗体排印按向量记号读取。",
+          "Lean的grad经textbookConstraintGradient展开为对坐标基向量的Fréchet导数求值。与原书偏导的对应在位置切片Fréchet可微处成立；定义未声明光滑性假设，fderiv在不可微处的总化值不能解释为原书已定义的物理导数。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_PUNCTUATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidSystemTorque",
+    "batch": "EAUDIT90",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "真实矩阵元素Fréchet偏导；rot(A)=skew⁻¹(A−Aᵀ)，没有额外1/2。"
+        ],
+        "after": [
+          "真实矩阵元素Fréchet偏导；rot(A)=skew⁻¹(A−Aᵀ)，没有额外1/2。",
+          "matrixGrad逐项在Pi.single i (Pi.single j 1)上求fderiv，不是对旋转参数或角动量求导；与原书矩阵元素偏导的对应在该矩阵切片Fréchet可微处成立。定义本身对任意U总化，不声称不可微处存在原书导数。"
+        ]
+      }
+    },
+    "issue_codes": [],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidSystemKick",
+    "batch": "EAUDIT90",
+    "fields": {
+      "statement_latex": {
+        "before": "“Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k;\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]",
+        "after": "“Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k,\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]"
+      },
+      "context_notation": {
+        "before": [
+          "参数h表示本次kick长度；整体算法以h/2调用，全部力/力矩从同一当前状态同时计算。"
+        ],
+        "after": [
+          "记原书整步长度为H、Lean函数的子步参数为s：rigidSystemKick U s实施p^k += s F^k、π^k += s τ^k；原书半步公式对应rigidSystemKick U (H/2)，而不是把函数参数s直接等同于原书H。原文statement_latex仍使用原书h。全部力和力矩由同一个当前完整状态同时计算，q及Θ保持不变。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_PUNCTUATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrintedSystem",
+    "batch": "EAUDIT91",
+    "fields": {
+      "statement_latex": {
+        "before": "DLM Rigid Body Molecular Dynamics Step\n1. “Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k;\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]\n2. “Drift”: step forward a whole step in positions\n\\[q^k:=q^k+hp^k.\\]\n3. “Spin”: update the rotational state of the kth rigid body by the sequence of steps\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^z(h\\pi_3^k/I_3);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T.\\]\n4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F^k$ and torques $\\tau^k$ evaluated at the current $q,\\Theta$.",
+        "after": "DLM Rigid Body Molecular Dynamics Step\n1. “Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k,\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]\n2. “Drift”: step forward a whole step in positions\n\\[q^k:=q^k+hp^k.\\]\n3. “Spin”: update the rotational state of the kth rigid body by the sequence of steps\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T\\]\n\\[\\Theta:=\\Theta^z(h\\pi_3^k/I_3);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T\\]\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T\\]\n4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F^k$ and torques $\\tau^k$ evaluated at the current $q,\\Theta$."
+      },
+      "context_notation": {
+        "before": [
+          "PDF195（印刷173）规定：每个刚体的 q^k 是质心位置，p^k 是线动量，π^k 是体坐标角动量，Θ^k 是3×3旋转矩阵；对每个刚体执行该步骤。π_i^k 表示第i分量，I_1,I_2,I_3 是当前刚体的主惯性矩；Lean中各体惯性可分别取 I k。",
+          "力与力矩使用上标k：\\(F^k=-\\partial U/\\partial q^k\\)，\\(\\tau^k=-\\operatorname{rot}((\\Theta^k)^T\\,\\partial U/\\partial\\Theta^k)\\)。U可依赖所有刚体的位置和方向。首次kick使用当前输入构型的力/力矩，末kick在更新后的全部q,Θ处重新求值，不冻结旧力/力矩。",
+          "PDF196（印刷174）定义 \\(\\operatorname{rot}(A)=\\operatorname{skew}^{-1}(A-A^T)\\)。其分量为 \\((A_{32}-A_{23},A_{13}-A_{31},A_{21}-A_{12})\\)。这里原书分量从1起编号，Lean Fin 3从0起编号。",
+          "PDF196步骤3后的记号说明：\\(\\Theta^x(\\phi)=\\begin{pmatrix}1&0&0\\\\0&\\cos\\phi&-\\sin\\phi\\\\0&\\sin\\phi&\\cos\\phi\\end{pmatrix}\\)，Θ^y、Θ^z有对应的绕轴旋转公式。这确定了原表的正角主动旋转约定；五个角度均用各子步执行时的当前π^k计算。",
+          "保留原表q^k:=q^k+hp^k以及正角π^k:=Θπ^k、Θ^k:=Θ^kΘ^T，不补1/M_k、不改为负角。[ERRATUM?]针对与物理运动方程的一致性；这些疑误本身不能推出该映射不辛。"
+        ],
+        "after": [
+          "PDF195（印刷173）规定：每个刚体的 q^k 是质心位置，p^k 是线动量，π^k 是体坐标角动量，Θ^k 是3×3旋转矩阵；对每个刚体执行该步骤。π_i^k 表示第i分量，I_1,I_2,I_3 是当前刚体的主惯性矩；Lean中各体惯性可分别取 I k。",
+          "力与力矩使用上标k：\\(F^k=-\\partial U/\\partial q^k\\)，\\(\\tau^k=-\\operatorname{rot}((\\Theta^k)^T\\,\\partial U/\\partial\\Theta^k)\\)。U可依赖所有刚体的位置和方向。首次kick使用当前输入构型的力/力矩，末kick在更新后的全部q,Θ处重新求值，不冻结旧力/力矩。",
+          "PDF196（印刷174）定义 \\(\\operatorname{rot}(A)=\\operatorname{skew}^{-1}(A-A^T)\\)。其分量为 \\((A_{32}-A_{23},A_{13}-A_{31},A_{21}-A_{12})\\)。这里原书分量从1起编号，Lean Fin 3从0起编号。",
+          "PDF196步骤3后的记号说明：\\(\\Theta^x(\\phi)=\\begin{pmatrix}1&0&0\\\\0&\\cos\\phi&-\\sin\\phi\\\\0&\\sin\\phi&\\cos\\phi\\end{pmatrix}\\)，Θ^y、Θ^z有对应的绕轴旋转公式。这确定了原表的正角主动旋转约定；五个角度均用各子步执行时的当前π^k计算。",
+          "保留原表q^k:=q^k+hp^k以及正角π^k:=Θπ^k、Θ^k:=Θ^kΘ^T，不补1/M_k、不改为负角。[ERRATUM?]针对与物理运动方程的一致性；这些疑误本身不能推出该映射不辛。",
+          "本条为Printed字面版：Lean函数定义允许任意实h和I，故除法也采用实数域的总化约定；这不是原书允许零惯性矩的物理断言。结构定理另有∀k i, 0 < I k i前提。",
+          "待人审事项仅是原书与物理约定的关系：第195页称p^k为线动量，而第196页Drift未写质量；正角Spin与第195页给出的方向演化方程之间也需统一约定。不得把这些疑点直接升级为“不辛”结论。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_PUNCTUATION",
+      "SOURCE_MASS_CONVENTION_UNRESOLVED",
+      "SOURCE_SPIN_CONVENTION_UNRESOLVED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidSystemSymplectic",
+    "batch": "EAUDIT91",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "该短句出自PDF195（印刷173）的算法辛性断言，并非原书给出的独立定义；原文的主语the combined scheme指§4.4.2随后列出的完整刚体分裂算法。PDF196仅接续记号说明和算法表。",
+          "rigidSystemSymplectic是为解释该断言引入的Lean辅助谓词；它描述N体SO(3)相空间上的约束保持及两形式拉回，单独定义这个谓词尚未断言combined scheme满足它。"
+        ],
+        "after": [
+          "该短句出自PDF195（印刷173）的算法辛性断言，并非原书给出的独立定义；原文的主语the combined scheme指§4.4.2随后列出的完整刚体分裂算法。PDF196仅接续记号说明和算法表。",
+          "rigidSystemSymplectic是为解释该断言引入的Lean辅助谓词；它描述N体SO(3)相空间上的约束保持及两形式拉回，单独定义这个谓词尚未断言combined scheme满足它。",
+          "rbForm中ξ=(1/2)rot(Θ^T δΘ)、η=(1/2)rot(Θ^T δ′Θ)提取切向反对称矩阵的轴向量；此处1/2与力矩公式中的rot无额外1/2并不冲突。",
+          "本谓词使用全环境空间的fderiv，不单独列Differentiable或ContDiff，也未声明全局可逆性；它是当前光滑算法的约束保持及两形式拉回检查性质，不能脱离既定statement_scope冒充原书给出的独立光滑辛微分同胚定义。具体算法的光滑性资格另由结构定理前提负责。"
+        ]
+      }
+    },
+    "issue_codes": [],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+    "batch": "EAUDIT91",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "此句完整位于PDF195（印刷173）§4.4.2，所指combined scheme是下接PDF196原表的完整N体Kick/Drift/Spin/Kick组合；该页说明逐体执行并由势U产生力与力矩。",
+          "“symplectic”是约束相空间上的保两形式断言；该句没有另行断言全局误差、物理一致性阶数或经验可靠性的量化界。原表的质量及正角Spin疑点应独立记录，不静默改动。"
+        ],
+        "after": [
+          "此句完整位于PDF195（印刷173）§4.4.2，所指combined scheme是下接PDF196原表的完整N体Kick/Drift/Spin/Kick组合；该页说明逐体执行并由势U产生力与力矩。",
+          "“symplectic”是约束相空间上的保两形式断言；该句没有另行断言全局误差、物理一致性阶数或经验可靠性的量化界。原表的质量及正角Spin疑点应独立记录，不静默改动。",
+          "本声明审校的是dlmPrintedSystem的原表字面版本及其结构性质；不得把质量或Spin物理一致性疑点直接当作两形式保持的反例。原书疑点单独保留并人工确认。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "EXTRA_GLOBAL_REGULARITY_CLARIFIED",
+      "SOURCE_MASS_CONVENTION_UNRESOLVED",
+      "SOURCE_SPIN_CONVENTION_UNRESOLVED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  }
+]

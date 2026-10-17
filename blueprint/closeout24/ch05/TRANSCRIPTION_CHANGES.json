@@ -1,0 +1,632 @@
+[
+  {
+    "source_id": "MD-5.3.1-TestSpace",
+    "batch": "EAUDIT49",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "两个测试空间选项都保留；紧支持C∞子类型是实际函数与资格，不把任意函数称测试函数。"
+        ],
+        "after": [
+          "原书给出C∞紧支持和Schwarz空间两个选项；当前本source_id仅实现C∞紧支持子类型，第二选项尚未在所给声明中覆盖。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "MISSING_SCHWARTZ_OPTION",
+      "INCOMPLETE_STATEMENT_COVERAGE",
+      "CONTEXT_COVERAGE_MISMATCH"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.2-EnsembleAverage",
+    "batch": "EAUDIT50",
+    "fields": {
+      "label": {
+        "before": null,
+        "after": "5.6"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_EQUATION_LABEL_MISSING"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+    "batch": "EAUDIT50",
+    "fields": {
+      "label": {
+        "before": null,
+        "after": "5.8"
+      },
+      "statement_latex": {
+        "before": "$\\lim_{\\varepsilon\\to0}Z_\\varepsilon^{-1}\\int_D\\phi(q,p)\\rho_\\varepsilon d\\omega$.",
+        "after": "\\[\\lim_{\\varepsilon\\to0}Z_\\varepsilon^{-1}\\int_{\\mathcal D}\\phi(\\mathbf q,\\mathbf p)\\rho_\\varepsilon\\,d\\omega,\\tag{5.8}\\]"
+      },
+      "context_notation": {
+        "before": [
+          "此statement_latex逐字保留原式(5.8)，并非修正后的公式；Lean是独立勘误版本：ρ_ε已含Z_ε^{-1}，正确配对为lim_{ε↓0}∫φρ_ε dω。",
+          "PDF211已定义归一化ρ_ε并要求无穷远增长使权可积；PDF212重复除Z_ε属于原书疑误。修正不回写statement_latex。",
+          "microAverage指raw有限正总质量归一化后的曲面积分，不能把未缩放Z_ε的普通极限直接认作该曲面质量。"
+        ],
+        "after": [
+          "此statement_latex逐字保留原式(5.8)，并非修正后的公式；Lean是独立勘误版本：ρ_ε已含Z_ε^{-1}，正确配对为lim_{ε↓0}∫φρ_ε dω。",
+          "PDF211已定义归一化ρ_ε并要求无穷远增长使权可积；PDF212重复除Z_ε属于原书疑误。修正不回写statement_latex。",
+          "microAverage指raw有限正总质量归一化后的曲面积分，不能把未缩放Z_ε的普通极限直接认作该曲面质量。",
+          "R3：本次只修复花体积分域、粗体相变量及(5.8)编号；原书重复归一化因子原样保留。当前 shellWeakLimit 单独作为勘误版通过签名审校，原书疑误仍须人工登记。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_LITERAL_TYPOGRAPHY",
+      "SOURCE_EQUATION_LABEL_MISSING",
+      "BOOK_DOUBLE_NORMALIZATION",
+      "BOOK_UNSCALED_PARTITION_LIMIT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.2-SurfaceAreaFormula",
+    "batch": "EAUDIT50",
+    "fields": {
+      "statement_latex": {
+        "before": "If we can represent the $m-1$-dimensional set $M$ as the image of an open set $U\\in\\mathbb R^{m-1}$ under a smooth mapping $g:\\mathbb R^{m-1}\\to\\Sigma_E$, then we have\n\\[\\operatorname{Vol}(M)=\\int_U\\sqrt{\\det[(g'(\\zeta))^Tg'(\\zeta)]}\\,d\\zeta_1d\\zeta_2\\cdots d\\zeta_{m-1}.\\]",
+        "after": "If we can represent the $m-1$-dimensional set $\\mathcal M$ as the image of an open set $\\mathcal U\\in\\mathbb R^{m-1}$ under a smooth mapping $\\mathbf g:\\mathbb R^{m-1}\\to\\Sigma_E$, then we have\n\\[\\operatorname{Vol}(\\mathcal M)=\\int_{\\mathcal U}\\sqrt{\\det[(\\mathbf g^{\\prime}(\\boldsymbol\\zeta))^T\\mathbf g^{\\prime}(\\boldsymbol\\zeta)]}\\,d\\zeta_1d\\zeta_2\\cdots d\\zeta_{m-1}.\\]"
+      },
+      "context_notation": {
+        "before": [
+          "原页参数化公式写g′(ζ)及dζ₁⋯dζ_{m−1}；原JSON改成θ，逐字审校恢复ζ。",
+          "保留原书U∈ℝ^{m−1}，尽管作为开集应写U⊂ℝ^{m−1}；不静默纠正原文。",
+          "原文仅说smooth mapping，未显式排除重复覆盖；无重数面积公式需单射参数化，EXTRA补充这一资格合理。"
+        ],
+        "after": [
+          "原页参数化公式写g′(ζ)及dζ₁⋯dζ_{m−1}；原JSON改成θ，逐字审校恢复ζ。",
+          "保留原书U∈ℝ^{m−1}，尽管作为开集应写U⊂ℝ^{m−1}；不静默纠正原文。",
+          "原文仅说smooth mapping，未显式排除重复覆盖；无重数面积公式需单射参数化，EXTRA补充这一资格合理。",
+          "R3：原页集合为花体 ℳ、𝒰，g 为粗体向量映射，映射参数为粗体 ζ，坐标微元为 dζ_i。原书 𝒰∈ℝ^{m−1} 与任意光滑映射的重数问题保留为人工疑误，不静默改原句。Lean 的单射条件实际为全局单射。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_LITERAL_TYPOGRAPHY",
+      "BOOK_OPEN_SET_MEMBERSHIP",
+      "BOOK_AREA_MULTIPLICITY_GAP"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.2-NormalEnergyTaylor",
+    "batch": "EAUDIT51",
+    "fields": {
+      "statement_latex": {
+        "before": "$\\Delta E=H(z+n\\xi)-H(z)=\\nabla H\\cdot n\\xi+O(\\Delta E^2)$, and $n=\\nabla H/\\|\\nabla H\\|$, we have $\\xi=\\Delta E/\\|\\nabla H\\|+O(\\Delta E^2)$.",
+        "after": "$\\Delta E=H(\\mathbf z+\\mathbf n\\xi)-H(\\mathbf z)=\\nabla H\\cdot\\mathbf n\\xi+\\mathcal O(\\Delta E^2)$, and $\\mathbf n=\\nabla H/\\|\\nabla H\\|$, we have $\\xi=\\Delta E/\\|\\nabla H\\|+\\mathcal O(\\Delta E^2)$."
+      },
+      "context_notation": {
+        "before": [],
+        "after": [
+          "PDF213／印刷192：z 是 Σ_E 上固定基点，原文粗体 n=∇H(z)/‖∇H(z)‖ 是单位法向，不是 Lean 的维数参数 n；ξ 为沿固定法向的局部有符号坐标，ΔE 是小能量偏移。",
+          "R3：原文以 ΔE 为余项变量，保持不改。本条只承担已登记的正向 O(ξ²) 子引理；完整逆向及 O(ΔE²) 由同批 MD-5.3.2-NormalInverseTaylor 承担。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_VECTOR_AND_BIG_O_TYPOGRAPHY"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.2-NormalInverseTaylor",
+    "batch": "EAUDIT51",
+    "fields": {
+      "statement_latex": {
+        "before": "$\\Delta E=H(z+n\\xi)-H(z)=\\nabla H\\cdot n\\xi+O(\\Delta E^2)$, and $n=\\nabla H/\\|\\nabla H\\|$, we have $\\xi=\\Delta E/\\|\\nabla H\\|+O(\\Delta E^2)$.",
+        "after": "$\\Delta E=H(\\mathbf z+\\mathbf n\\xi)-H(\\mathbf z)=\\nabla H\\cdot\\mathbf n\\xi+\\mathcal O(\\Delta E^2)$, and $\\mathbf n=\\nabla H/\\|\\nabla H\\|$, we have $\\xi=\\Delta E/\\|\\nabla H\\|+\\mathcal O(\\Delta E^2)$."
+      }
+    },
+    "issue_codes": [
+      "SOURCE_VECTOR_AND_BIG_O_TYPOGRAPHY"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.2-MicroRawInvariant",
+    "batch": "EAUDIT51",
+    "fields": {
+      "statement_latex": {
+        "before": "As both volume and energy are invariant under the Hamiltonian flow, $\\mu(M)$ must be invariant under the flow, thus $\\mu(\\mathcal F_t(M))=\\mu(M)$.",
+        "after": "As both volume and energy are invariant under the Hamiltonian flow, $\\mu(\\mathcal M)$ must be invariant under the flow, thus $\\mu(\\mathcal F_t(\\mathcal M))=\\mu(\\mathcal M)$."
+      }
+    },
+    "issue_codes": [
+      "MATHCAL_M_TRANSCRIPTION",
+      "EXTRA_REGULARITY_SCOPE"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.2-MicroInvariant",
+    "batch": "EAUDIT51",
+    "fields": {
+      "statement_latex": {
+        "before": "$\\mu(\\mathcal F_t(M))=\\mu(M)$.",
+        "after": "$\\mu(\\mathcal F_t(\\mathcal M))=\\mu(\\mathcal M)$."
+      }
+    },
+    "issue_codes": [
+      "MATHCAL_M_TRANSCRIPTION",
+      "EXTRA_REGULARITY_SCOPE"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.2-HarmonicPartition",
+    "batch": "EAUDIT51",
+    "fields": {
+      "proof_discussion_latex": {
+        "before": null,
+        "after": "The partition function is obtained by integrating in the standard way. Parameterizing the surface by $q$, we have $p=\\sqrt{2E-\\Omega^2q^2}$, then\n\\[\\begin{aligned}\\mu(\\Sigma_E)&=4\\int_0^{\\sqrt{2E}}\\frac{\\sqrt{1+p_q^2}}{\\sqrt{H_p^2+H_q^2}}\\,dq\\\\&=4\\int_0^{\\sqrt{2E}/\\Omega}\\frac{\\sqrt{1+\\frac{\\Omega^4q^2}{2E-\\Omega^2q^2}}}{\\sqrt{p^2+\\Omega^4q^2}}\\,dq\\\\&=4\\int_0^{\\sqrt{2E}/\\Omega}\\frac{1}{\\sqrt{2E-\\Omega^2q^2}}\\,dq\\\\&=2\\pi/\\Omega.\\end{aligned}\\]"
+      },
+      "proof_note": {
+        "before": "原书未给独立完整证明。",
+        "after": "原页给出 Example 5.1 的参数积分计算，未另设命题证明；首个参数积分上限有原印疑点，保留待人工确认。"
+      },
+      "context_notation": {
+        "before": [
+          "H(q,p)=p²/2+Ω²q²/2，Σ_E={H=E}，E>0；μ(Σ_E)=Z_E为未归一化微正则分区函数。"
+        ],
+        "after": [
+          "H(q,p)=p²/2+Ω²q²/2，Σ_E={H=E}，E>0；μ(Σ_E)=Z_E为未归一化微正则分区函数。",
+          "原印第一行上限为 √(2E)，后两行为 √(2E)/Ω。statement_latex 只摘正确的后两行；此范围不能用来消除原页首行疑误。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "PRINTED_FIRST_QUADRATURE_BOUND",
+      "PRINTED_DERIVATION_NOT_RECORDED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.2-IdealGasPositionDomain",
+    "batch": "EAUDIT52",
+    "fields": {
+      "statement_latex": {
+        "before": "$Z_E=V^N\\int_S(m/r)d\\sigma$, where $S$ is the $3N-1$ dimensional sphere in $3N$ dimensions of radius $r=\\sqrt{2mE}$, and $d\\sigma$ is the surface area element on this sphere. $V^N$ is the contribution due to integration over positions.",
+        "after": "$Z_E=V^N\\int_{\\mathcal S}(m/r)d\\sigma$, where $\\mathcal S$ is the $3N-1$ dimensional sphere in $3N$ dimensions of radius $r=\\sqrt{2mE}$, and $d\\sigma$ is the surface area element on this sphere. $V^N$ is the contribution due to integration over positions."
+      }
+    },
+    "issue_codes": [
+      "MATHCAL_S_TRANSCRIPTION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.2-IdealGasPartition",
+    "batch": "EAUDIT52",
+    "fields": {
+      "statement_latex": {
+        "before": "Thus we have\n\\[Z_E=V^N\\frac{m}{\\sqrt{2mE}}A(S)\n=V^N\\frac{\\sqrt m}{\\sqrt{2E}}\\frac{3N\\pi^{3N/2}(2mE)^{(3N-1)/2}}{\\Gamma(3N/2+1)}\n=V^N\\frac{(2\\pi mE)^{3N/2}}{E\\Gamma(3N/2)}.\\]",
+        "after": "Thus we have\n\\[Z_E=V^N\\frac{m}{\\sqrt{2mE}}A(\\mathcal S)\n=V^N\\frac{\\sqrt m}{\\sqrt{2E}}\\frac{3N\\pi^{3N/2}(2mE)^{(3N-1)/2}}{\\Gamma(3N/2+1)}\n=V^N\\frac{(2\\pi mE)^{3N/2}}{E\\Gamma(3N/2)}.\\]"
+      },
+      "context_notation": {
+        "before": [
+          "S为3N维动量空间中半径r=√(2mE)的(3N−1)维球面；A(S)为其面积，Γ为gamma函数，V^N为位置积分体积因子，Z_E为微正则分区函数。"
+        ],
+        "after": [
+          "𝓢为3N维动量空间中半径r=√(2mE)的(3N−1)维球面；A(𝓢)为其面积，Γ为gamma函数，V^N为位置积分体积因子，Z_E为微正则分区函数。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "MATHCAL_S_TRANSCRIPTION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.3-MicroMeasure",
+    "batch": "EAUDIT53",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "资格提示（不改原句）：概率解释需要 0<raw 总质量<∞，并沿用光滑 Hamiltonian 背景。可测性是定义域条件，不等价于存在显式面积计算公式。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "PROBABILITY_NORMALIZATION_PREREQUISITES",
+      "MEASURABLE_NOT_COMPUTABLE"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.3-LowerDimensionNull",
+    "batch": "EAUDIT53",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "原书维数及低维零测措辞保留待人工确认；当前 Lean 只处理正则水平集以及 C¹ 可数紧参数像。原文第一句的一般环境低维零测尚缺 d<n、无需能级限制的独立声明。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "AMBIENT_NULL_CLAUSE_NOT_COVERED",
+      "DIMENSION_REQUIRES_REGULAR_VALUE",
+      "LOWER_DIMENSION_MEANING_UNSPECIFIED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.3.3-MicroAverage",
+    "batch": "EAUDIT53",
+    "fields": {
+      "statement_latex": {
+        "before": "As we mentioned in motivating the microcanonical distribution, we could alternatively view microcanonical averages as integrals with respect to the singular measure on the ambient space $\\mathcal D$ defined by $\\rho'_Ed\\omega=Z_E^{-1}\\delta[H-E]d\\omega$. Regardless of which formulation is adopted, we may use the probability measure to compute expectations (averages) of (suitable) functions defined on the phase space. We write such an expectation as\n\\[\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)d\\mu_E=\\int_{\\mathcal D}g(z)\\rho'_Ed\\omega.\\]\nAs shorthand, where the underlying space and probability density are assumed, one may write such an average more simply as $\\operatorname{Av}_{H=E}(g)=\\langle g\\rangle$.",
+        "after": "As we mentioned in motivating the microcanonical distribution, we could alternatively view microcanonical averages as integrals with respect to the singular measure on the ambient space $\\mathcal D$ defined by $\\rho'_Ed\\omega=Z_E^{-1}\\delta[H-E]d\\omega$, where $\\delta$ represents the Dirac delta function. The notation $d\\omega$ represents the volume element in the Euclidean space defined by all coordinates and momenta. This is the more common definition of the microcanonical distribution encountered in physics treatments.\n\nRegardless of which formulation is adopted, we may use the probability measure to compute expectations (averages) of (suitable) functions defined on the phase space. We write such an expectation as\n\\[\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)d\\mu_E=\\int_{\\mathcal D}g(z)\\rho'_Ed\\omega.\\]\nIncidentally, any such function is referred to as an observable function (or, simply, an observable) of the system in this context.\n\nAs shorthand, where the underlying space and probability density are assumed, one may write such an average more simply as $\\operatorname{Av}_{H=E}(g)=\\langle g\\rangle$."
+      },
+      "context_notation": {
+        "before": [
+          "原书ρ'_E dω=Z_E^{-1}δ[H−E]dω；δ为Dirac delta记号，dω为全部坐标和动量所定义欧氏空间的体积元；𝒟为环境相空间。实际Lean采用归一化奇异测度上的积分；面积/δ两描述的识别仍为coarea义务。"
+        ],
+        "after": [
+          "原书 δ 为 Dirac delta 记号，dω 为全部坐标与动量的欧氏体积元；Lean 使用能量面上逆梯度密度的归一化奇异测度。附加定理已陈述 C∞ 紧支撑测试函数的面积等式与薄壳极限；本次只审校其签名，不声称其中 sorry 的 coarea 证明已完成。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_UNMARKED_OMISSIONS"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.4-TimeAverage",
+    "batch": "EAUDIT54",
+    "fields": {
+      "statement_latex": {
+        "before": "Given an autonomous system of differential equations $\\dot z=f(z)$ in $\\mathbb R^m$, and a trajectory $\\Gamma=\\{z(t)\\mid t\\in[0,\\infty)\\}$, let $g=g(z)$ be any smooth scalar valued function of $z$ (an observable) and define (assuming it exists) the infinite time average of $g$ along $\\Gamma$ by\n\\[\\bar g_\\Gamma=\\lim_{\\tau\\to\\infty}\\tau^{-1}\\int_0^\\tau g(z(t))dt.\\tag{5.9}\\]",
+        "after": "Given an autonomous system of differential equations $\\dot z=f(z)$ in $\\mathbb R^m$, and a trajectory $\\Gamma=\\{z(t)\\mid t\\in[0,\\infty]\\}$, let $g=g(z)$ be any smooth scalar valued function of $z$ (an observable) and define (assuming it exists) the infinite time average of $g$ along $\\Gamma$ by\n\\[\\bar g_\\Gamma=\\lim_{\\tau\\to\\infty}\\tau^{-1}\\int_0^\\tau g(z(t))dt.\\tag{5.9}\\]"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_ENDPOINT_TRANSCRIPTION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.4-ConservedAverage",
+    "batch": "EAUDIT54",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "statement_latex 是两段非连续原文摘录：印刷196页（PDF217）Considering any conservative system...initial condition.；印刷197页（PDF218）More generally...initial condition.。两段之间的讨论及 Example 5.3 不在本条摘录范围内；不得当作原书连续一段。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_NONCONTIGUOUS_EXCERPTS"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.4-ConservedInfiniteAverage",
+    "batch": "EAUDIT54",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "保留第一积分及任意依赖它的量两个无限平均结论；不只保留有限时间积分。"
+        ],
+        "after": [
+          "保留第一积分及任意依赖它的量两个无限平均结论；不只保留有限时间积分。",
+          "statement_latex 是两段非连续原文摘录：印刷196页（PDF217）Considering any conservative system...initial condition.；印刷197页（PDF218）More generally...initial condition.。两段之间的讨论及 Example 5.3 不在本条摘录范围内；不得当作原书连续一段。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_NONCONTIGUOUS_EXCERPTS"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.4.1-MicroErgodicStandard",
+    "batch": "EAUDIT55",
+    "fields": {
+      "statement_latex": {
+        "before": "for almost all trajectories $\\Gamma$ emanating from initial conditions on $\\Sigma_E$, and for any observable $g$, $\\bar g_\\Gamma=\\operatorname{Av}_{H=E}(g)$.",
+        "after": "for almost all trajectories $\\Gamma$ emanating from initial conditions on $\\Sigma_E$, and for any observable $g$, the following holds $\\bar g_\\Gamma=\\operatorname{Av}_{H=E}(g)$."
+      }
+    },
+    "issue_codes": [
+      "SOURCE_OMITTED_LINKING_WORDS",
+      "EXTRA_STALE_INTERFACE_DESCRIPTION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.4.1-HarmonicFlow",
+    "batch": "EAUDIT56",
+    "fields": {
+      "kind": {
+        "before": "definition",
+        "after": "unnumbered_claim"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_KIND_MISMATCH"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.4.1-TwoOscillatorEnergy",
+    "batch": "EAUDIT56",
+    "fields": {
+      "kind": {
+        "before": "definition",
+        "after": "example"
+      },
+      "statement_latex": {
+        "before": "Example 5.4 (2D Harmonic System) Consider a two-dimensional harmonic system, i.e. the system with Hamiltonian\n\\[H=p_1^2/2+p_2^2/2+\\Omega_1^2q_1^2/2+\\Omega_2^2q_2^2/2,\\]\nwhere $\\Omega_1$ and $\\Omega_2$ are two nonzero parameters. Because the two systems involving $q_1,p_1$ and $q_2,p_2$ are not coupled in the equations of motion, this system has two invariants $H_1=p_1^2/2+\\Omega_1^2q_1^2/2$ and $H_2=p_2^2/2+\\Omega_2^2q_2^2/2$.",
+        "after": "Example 5.4 (2D Harmonic System) Consider a two-dimensional harmonic system, i.e. the system with Hamiltonian\n\\[H=p_1^2/2+p_2^2/2+\\Omega_1^2q_1^2/2+\\Omega_2^2q_2^2/2;\\]\nwhere $\\Omega_1,\\Omega_2$ are two nonzero parameters. Because the two systems involving $q_1,p_1$ and $q_2,p_2$ are not coupled in the equations of motion, this system has two invariants $H_1=p_1^2/2+\\Omega_1^2q_1^2/2$ and $H_2=p_2^2/2+\\Omega_2^2q_2^2/2$."
+      },
+      "context_notation": {
+        "before": [],
+        "after": [
+          "相空间顺序为(q₁,q₂,p₁,p₂)，总Hamiltonian为∑ᵢHᵢ；原例Ω₁、Ω₂非零，分能量多项式本身可总延拓到零频率。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_KIND_MISMATCH",
+      "SOURCE_LITERAL_WORDING",
+      "STALE_CROSS_SOURCE_MAPPING"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.4.1-TwoOscillatorFlow",
+    "batch": "EAUDIT56",
+    "fields": {
+      "kind": {
+        "before": "definition",
+        "after": "unnumbered_claim"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_KIND_MISMATCH",
+      "STALE_FREQUENCY_ANNOTATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.4.1-Mixing",
+    "batch": "EAUDIT56",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "原文弱收敛的配对可用μ参考测度、AC概率初值r及有界连续φ解释；当前Lean谓词缺少μ的流不变性，因此尚不能代表原文的不变极限分布。",
+          "weakMixing在本工程意图表示混合导致分布弱收敛，不应与标准弱混合混为一谈。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "LEAN_REFERENCE_INVARIANCE_MISSING",
+      "EXTRA_INVARIANCE_NOT_ENCODED",
+      "NONSTANDARD_MIXING_NAME"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.4.1-PendulumPotential",
+    "batch": "EAUDIT56",
+    "fields": {
+      "kind": {
+        "before": "definition",
+        "after": "example"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_KIND_MISMATCH",
+      "DERIVED_DEFINITION_SCOPE_UNCLEAR"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.4.1-CircleInitialEnergy",
+    "batch": "EAUDIT57",
+    "fields": {
+      "statement_latex": {
+        "before": "In this way we again get initial conditions on the $H=E_0$ energy surface.",
+        "after": "In this way we again get initial conditions on the $H=E_0$ energy surface,"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_EXCERPT_PUNCTUATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.5-Correlation",
+    "batch": "EAUDIT58",
+    "fields": {
+      "statement_latex": {
+        "before": "Let $a$ and $b$ be mappings from the phase space to the same Euclidean space, and define the temporal correlation of $a$ and $b$ (on the surface of energy $E$) by\n\\[C_{ab}(\\tau)\\stackrel{\\rm def}{=}k\\operatorname{Av}_{H=E}(a(\\mathcal F_t(z))\\cdot b(z))\n=kZ_E^{-1}\\int_{\\Sigma_E}a(\\mathcal F_t(z))\\cdot b(z)\\delta[H-E]d\\omega,\\]\nwhere $k$ is a normalization constant that is often incorporated to ensure that $C_{ab}(0)=1$.",
+        "after": "Let $a$ and $b$ be mappings from the phase space to the same Euclidean space, and define the temporal correlation of $a$ and $b$ (on the surface of energy $E$) by\n\\[C_{ab}(\\tau)\\stackrel{\\rm def}{=}k\\operatorname{Av}_{H=E}(a(\\mathcal F_t(z))\\cdot b(z))\n=kZ_E^{-1}\\int_{\\Sigma_E}a(\\mathcal F_t(z))\\cdot b(z)\\delta[H-E]d\\omega;\\]\nwhere $k$ is a normalization constant that is often incorporated to ensure that $C_{ab}(0)=1$."
+      },
+      "context_notation": {
+        "before": [
+          "真实向量内积与µ积分；原左τ右t记号保留、Lean用单个lag参数；k只在零lag非零时能归一。δ积分解释为真实微正则测度配对。"
+        ],
+        "after": [
+          "真实向量内积与µ积分；原左τ右t记号保留、Lean用单个lag参数；k只在零lag非零时能归一。δ积分解释为真实微正则测度配对。",
+          "μ在Lean中是任意测度；只有将它明确取为归一化微正则测度时，本积分核才解释为原书Av_(H=E)与δ记号。这里未形式化δ积分的构造或等价定理。",
+          "原页τ/t混用仍保留待人工；通常统计解释另需相关乘积可积。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_LAG_VARIABLE_MISMATCH",
+      "SOURCE_LITERAL_PUNCTUATION",
+      "MICROCANONICAL_SPECIALIZATION_MUST_BE_EXPLICIT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.5-PositionTransition",
+    "batch": "EAUDIT58",
+    "fields": {
+      "statement_latex": {
+        "before": "Now let $A$ and $B$ be subsets of configuration space (i.e. subsets in the position space) of nonzero measure, and define $T_{AB}(\\tau)\\stackrel{\\rm def}{=}C_{1_B,1_A}(\\tau)$.",
+        "after": "Now let $A$ and $B$ be subsets of configuration space (i.e. subsets in the position space) of nonzero measure, and define $T_{AB}(\\tau)\\stackrel{\\rm def}{=}C_{1_B,1_A}(\\tau)$,"
+      },
+      "context_notation": {
+        "before": [
+          "π是实际位置投影，配置集合在相空间上的逆像；真实指标乘积平均，不把状态点概率误作首次到达时间。",
+          "原T_AB=C_{1_B,1_A}继承C定义的k；当前Lean无k，仅对应k=1。随后概率公式暗示未归一化指标相关，应公开该解释，不能默认为逐字相同。"
+        ],
+        "after": [
+          "π在原文用法中取实际位置投影，A、B通过它拉回相空间；定义保留1_B在时刻t、1_A在时刻0的顺序。",
+          "当前Lean已含任意归一化常数k，和相关定义一致。k=1是未归一化事件计数特例；条件转移概率还须除以起始事件的正概率，且不是首次到达时间。",
+          "本函数对一般μ、π、集合作公式总延拓；原书概率解释另须选择微正则概率μ、真实位置投影和适当可测非零事件。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "STALE_NORMALIZATION_ANNOTATION",
+      "SOURCE_LITERAL_PUNCTUATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.5-MeasureDuality",
+    "batch": "EAUDIT58",
+    "fields": {
+      "kind": {
+        "before": "unnumbered_claim",
+        "after": "equation"
+      },
+      "label": {
+        "before": null,
+        "after": "(5.10)"
+      },
+      "context_notation": {
+        "before": [],
+        "after": [
+          "本条Lean用measurePropagator=Measure.map表示分布演化，用pullback=φ∘Φ_t表示可观测量演化；未定义生成元L或证明算子指数表示。",
+          "在measureDuality_RN中取ν为参考概率（应用时为微正则概率），r为初始概率相对于ν的非负RN密度，μ₀=ν.withDensity(ofReal∘r)。原ρ₀/ρ_E按此解释，不对奇异δ作逐点函数商。",
+          "原页(5.10)后对比值有界及归一化的说明属语境；本条RN定理以L¹概率密度和有界连续测试函数给出更一般的合法加权配对。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "NUMBERED_EQUATION_METADATA_MISSING",
+      "RN_INTERPRETATION_SCOPE"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.5-MixingCorrelation",
+    "batch": "EAUDIT58",
+    "fields": {
+      "statement_latex": {
+        "before": "$\\lim_{t\\to\\infty}C_{ab}(t)=\\operatorname{Av}_{H=E}(a)\\operatorname{Av}_{H=E}(b)$.",
+        "after": "$\\lim_{t\\to\\infty}C_{ab}(t)=\\operatorname{Av}_{H=E}(a)\\cdot\\operatorname{Av}_{H=E}(b)$."
+      }
+    },
+    "issue_codes": [
+      "SOURCE_TRANSCRIPTION_INNER_PRODUCT",
+      "PRINTED_NORMALIZATION_AMBIGUITY"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.6-ModifiedLiouvillian",
+    "batch": "EAUDIT59",
+    "fields": {
+      "statement_latex": {
+        "before": "Let us assume that the perturbed equation is a realistic model for the numerical solutions, then define the evolving density by\n\\[\\frac{\\partial\\rho}{\\partial t}=\\mathcal L_{\\widetilde f}^{*}\\rho\n\\stackrel{\\rm def}{\\equiv}\\mathcal L_f^{\\dagger}\\rho+h^r\\mathcal L_{f_{(r)}}^{\\dagger}\\rho.\\]",
+        "after": "Let us assume that the perturbed equation is a realistic model for the numerical solutions, then define the evolving density by\n\\[\\frac{\\partial\\rho}{\\partial t}=\\mathcal L_{\\widetilde f}^{\\dagger}\\rho\n\\stackrel{\\rm def}{=}\\mathcal L_f^{\\dagger}\\rho+h^r\\mathcal L_{f_{(r)}}^{\\dagger}\\rho.\\]"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_TRANSCRIPTION_ADJOINT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.6-PerturbationCorrection",
+    "batch": "EAUDIT60",
+    "fields": {
+      "statement_latex": {
+        "before": "$\\operatorname{Av}_{H=E}(g)-\\operatorname{Av}_{\\widetilde H=E}(g)=\\operatorname{Av}_{\\widetilde H=E}(\\nabla\\cdot gu)-\\operatorname{Av}_{\\widetilde H=E}(g)\\operatorname{Av}_{\\widetilde H=E}(\\nabla\\cdot u)+O(\\varepsilon^2)$.",
+        "after": "$\\operatorname{Av}_{H=E}(g)-\\operatorname{Av}_{\\widetilde H=E}(g)=\\operatorname{Av}_{\\widetilde H=E}(\\nabla\\cdot gu)-\\operatorname{Av}_{\\widetilde H=E}(g)\\operatorname{Av}_{\\widetilde H=E}(\\nabla\\cdot u)+O(\\varepsilon^2)$;"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_TERMINAL_PUNCTUATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.6-EulerLogCorrespondence",
+    "batch": "EAUDIT61",
+    "fields": {
+      "statement_latex": {
+        "before": "Let us assume that the perturbed equation is a realistic model for the numerical solutions, then define the evolving density by $\\frac{\\partial\\rho}{\\partial t}=\\mathcal L_{\\widetilde f}^{\\dagger}\\rho\\overset{\\mathrm{def}}{=}\\mathcal L_f^{\\dagger}\\rho+h^r\\mathcal L_{f_{(r)}}^{\\dagger}\\rho$. […] Applying Forward Euler to the harmonic oscillator, we have $q_{n+1}=q_n+hp_n$, $p_{n+1}=p_n-hq_n$. […] As an alternative, consider the Backward Euler method: $q_{n+1}=q_n+hp_{n+1}$, $p_{n+1}=p_n-hq_{n+1}$.",
+        "after": "Let us assume that the perturbed equation is a realistic model for the numerical solutions, then define the evolving density by $\\frac{\\partial\\rho}{\\partial t}=\\mathcal L_{\\widetilde f}^{\\dagger}\\rho\\overset{\\mathrm{def}}{\\equiv}\\mathcal L_f^{\\dagger}\\rho+h^r\\mathcal L_{f_{(r)}}^{\\dagger}\\rho$. […] Applying Forward Euler to the harmonic oscillator, we have $q_{n+1}=q_n+hp_n$, $p_{n+1}=p_n-hq_n$. […] As an alternative, consider the Backward Euler method: $q_{n+1}=q_n+hp_{n+1}$, $p_{n+1}=p_n-hq_{n+1}$."
+      }
+    },
+    "issue_codes": [
+      "SOURCE_DEFINITION_SYMBOL",
+      "LEAN_MISSING_LIOUVILLE_CONCLUSION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.6-BackwardWeakStationary",
+    "batch": "EAUDIT62",
+    "fields": {
+      "statement_latex": {
+        "before": "The only (distributional) solution of $\\mathcal L_{\\widetilde f}^{*}\\rho=0$ is again $\\delta[q]\\delta[p]$, which in this case is attractive.",
+        "after": "The only (distributional) solution of $\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=0$ is again $\\delta[q]\\delta[p]$, which in this case is attractive."
+      }
+    },
+    "issue_codes": [
+      "SOURCE_ADJOINT_SYMBOL"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.6-SymplecticWeakStationary",
+    "batch": "EAUDIT62",
+    "fields": {
+      "statement_latex": {
+        "before": "This implies that a density which is a function of $\\widetilde H_h$ will remain invariant under the associated Liouville equation. There are many solutions of $\\mathcal L_{\\widetilde f}^{*}\\rho=0$, none of which is attractive.",
+        "after": "This implies that a density which is a function of $\\widetilde H_h$ will remain invariant under the associated Liouville equation. There are many solutions of $\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=0$, none of which is attractive."
+      }
+    },
+    "issue_codes": [
+      "SOURCE_ADJOINT_SYMBOL"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-5.1-FlowFieldTransport",
+    "batch": "EAUDIT43",
+    "fields": {
+      "statement_latex": {
+        "before": "On the other hand, viewing $\\mathcal L_f$ as an operator on the phase variables only, we have\n\\[(\\mathcal L_f\\widetilde g)(z)=f(z)\\cdot\\nabla_z[g(\\mathcal F_t(z))]\n=f(z)\\cdot\\mathcal F_t'(z)^T\\nabla g(\\mathcal F_t(z))\n=\\mathcal F_t'(z)f(z)\\cdot\\nabla g(\\mathcal F_t(z))\n=f(\\mathcal F_t(z))\\cdot\\nabla g(\\mathcal F_t(z))\n=(\\mathcal L_fg)(\\mathcal F_t(z)).\\]",
+        "after": "On the other hand, viewing $\\mathcal L_f$ as an operator on the phase variables only, we have\n\\[(\\mathcal L_f\\widetilde g)(z)=f(z)\\cdot\\nabla_z[g(\\mathcal F_t(z))]\n=f(z)\\cdot[\\mathcal F_t'(z)^T\\nabla g(\\mathcal F_t(z))]\n=[\\mathcal F_t'(z)f(z)]\\cdot\\nabla g(\\mathcal F_t(z))\n=f(\\mathcal F_t(z))\\cdot\\nabla g(\\mathcal F_t(z))\n=(\\mathcal L_fg)(\\mathcal F_t(z)).\\]"
+      }
+    },
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING",
+      "TRANSCRIPTION_GROUPING"
+    ],
+    "basis": "24号：本地原书PDF物理页202已渲染并视觉核对，第二、三行两处方括号恢复；未核指定R1附件同一性。"
+  }
+]

@@ -1,0 +1,470 @@
+{
+  "total": 75,
+  "counts": {
+    "PASS": 59,
+    "NEEDS_HUMAN": 12,
+    "FAIL": 4
+  },
+  "bindings": [
+    {
+      "batch": "EAUDIT74",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT74_result.json",
+      "sha256": "676e378bfd412f207a2c13d8a30b0e450d050498d08c9dd039848b7c2d061872",
+      "input_hashes": {
+        "BATCH_EAUDIT74.md": {
+          "expected": "38a76360b914b6c94dae6bb568285b69a2ce64c1188755b7d02de0319f9cfa00",
+          "actual": "38a76360b914b6c94dae6bb568285b69a2ce64c1188755b7d02de0319f9cfa00"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT75",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT75_result.json",
+      "sha256": "0ff3567a422a106d3b3b86278eb4297a0b4fb5b1cbd86fc08d2c4f8cb60cf430",
+      "input_hashes": {
+        "BATCH_EAUDIT75.md": {
+          "expected": "2a05a7cf80e82d428cc523111e38891cc0b3aff6ab1d6bc036be02c5fd6ca023",
+          "actual": "2a05a7cf80e82d428cc523111e38891cc0b3aff6ab1d6bc036be02c5fd6ca023"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT76",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT76_result.json",
+      "sha256": "2d43f2a01e5536edfbfdc1f434409e53b3d0cdba73ae2793cf8c0fc1f0b3e590",
+      "input_hashes": {
+        "BATCH_EAUDIT76.md": {
+          "expected": "d23995f6c544abfda417f7131a668951f611b6249d67cb143456843cf10f5ea8",
+          "actual": "d23995f6c544abfda417f7131a668951f611b6249d67cb143456843cf10f5ea8"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT77",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT77_result.json",
+      "sha256": "d0d916fd755b4606fc65cca44e4fb45cab7e02fbbfe406b83371d9120070e9f9",
+      "input_hashes": {
+        "BATCH_EAUDIT77.md": {
+          "expected": "9bd947702fbcf41a448f0f0300c6cc428dc102f72f1e5033d9879646d013bf26",
+          "actual": "9bd947702fbcf41a448f0f0300c6cc428dc102f72f1e5033d9879646d013bf26"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT78",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT78_result.json",
+      "sha256": "67327f39dca3fd298bb044959b3c49f366dde6df5b9bea68e4c62b42b1a0d3cd",
+      "input_hashes": {
+        "BATCH_EAUDIT78.md": {
+          "expected": "e9afe77ce518d179f4e95045fed7443f065f37b1558e766adb54a56f2fc57783",
+          "actual": "e9afe77ce518d179f4e95045fed7443f065f37b1558e766adb54a56f2fc57783"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT79",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT79_result.json",
+      "sha256": "f89875fd5850d80233af2985166e99239853b6000dee0617371e9c14503e8fd0",
+      "input_hashes": {
+        "BATCH_EAUDIT79.md": {
+          "expected": "33ea2d6fe5c51e9c0542d99745f33d1874fee5a69290a9f4c9cefc3baa15e7df",
+          "actual": "33ea2d6fe5c51e9c0542d99745f33d1874fee5a69290a9f4c9cefc3baa15e7df"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT80",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT80_result.json",
+      "sha256": "7652fbcaefdb2bdb484e1b466b70b3c75b0966b7d0b14c6d3364e0037d45efb1",
+      "input_hashes": {
+        "BATCH_EAUDIT80.md": {
+          "expected": "b9b9bc06c22ccf4b318f7c7cb0a033e22ac095098f8e2613118833a369572697",
+          "actual": "b9b9bc06c22ccf4b318f7c7cb0a033e22ac095098f8e2613118833a369572697"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT81",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT81_result.json",
+      "sha256": "999fd8377596ad9426cbda541ac885374615ad3bcfec575e1c04877ec05b4ec5",
+      "input_hashes": {
+        "BATCH_EAUDIT81.md": {
+          "expected": "cf2222c8bdaac5819867360c4836d763f816c5ba9424a42de35cc91061ae912b",
+          "actual": "cf2222c8bdaac5819867360c4836d763f816c5ba9424a42de35cc91061ae912b"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT82",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT82_result.json",
+      "sha256": "cac9c4970449b35af9c8a9caaae6e06b5b5975aaefb7895ca7b2e9403079c652",
+      "input_hashes": {
+        "BATCH_EAUDIT82.md": {
+          "expected": "200338d3e61899c04930d781b2909aabf7ba656dc17d3d25f587a9c2c664d0b4",
+          "actual": "200338d3e61899c04930d781b2909aabf7ba656dc17d3d25f587a9c2c664d0b4"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT83",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT83_result.json",
+      "sha256": "b672ff3a79c06a78edd58febb26919d02d841645e276052d3249c391f8e3749b",
+      "input_hashes": {
+        "BATCH_EAUDIT83.md": {
+          "expected": "79b34c40c0129c8b9b269b5b9c69229b2ddbe43d1f98369d6f8873dcff9df8b5",
+          "actual": "79b34c40c0129c8b9b269b5b9c69229b2ddbe43d1f98369d6f8873dcff9df8b5"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT84",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT84_result.json",
+      "sha256": "0f276629ae9e70755dfc443557098fabb872c1d69ef9b20af4b350675e961371",
+      "input_hashes": {
+        "BATCH_EAUDIT84.md": {
+          "expected": "8db78a085c1b7e43c00b459b363a23d0d915347ee2520b58c3461130d67e1531",
+          "actual": "8db78a085c1b7e43c00b459b363a23d0d915347ee2520b58c3461130d67e1531"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT85",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT85_result.json",
+      "sha256": "bb8156da5bedb45653b44a44db4ccf48b39f70df6779792ffd73fc90f1012c57",
+      "input_hashes": {
+        "BATCH_EAUDIT85.md": {
+          "expected": "4798e1aa76de22198f77e4a67a42f05c566dd179bb6f18d8cb2f80cdd746f92f",
+          "actual": "4798e1aa76de22198f77e4a67a42f05c566dd179bb6f18d8cb2f80cdd746f92f"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT86",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT86_result.json",
+      "sha256": "e605847444217e9913dca041487ff255227fa8be63bc3a87e7deb177b3e2d0dd",
+      "input_hashes": {
+        "BATCH_EAUDIT86.md": {
+          "expected": "947294200251d0365668058bdb7782f63eaa04c231477e53f260b66779f3c8ec",
+          "actual": "947294200251d0365668058bdb7782f63eaa04c231477e53f260b66779f3c8ec"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT87",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT87_result.json",
+      "sha256": "b493f7c8fcb4e64416e9480cbe29396c35c73d2ec951ed342622b5178fc8efe1",
+      "input_hashes": {
+        "BATCH_EAUDIT87.md": {
+          "expected": "e73c32cf660031fdc6097eb4fc525d26e2a00e2df6033a00f53b51f22e58dee3",
+          "actual": "e73c32cf660031fdc6097eb4fc525d26e2a00e2df6033a00f53b51f22e58dee3"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT88",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT88_result.json",
+      "sha256": "b2a6d94a89bbb178c31f2446c30321c9aac01c660b1421f7e50614a8da919503",
+      "input_hashes": {
+        "BATCH_EAUDIT88.md": {
+          "expected": "51d4b566bcb5f5bd2b104b67b555ebd45b57a24b3f868c861fa5950ccc1bb2a1",
+          "actual": "51d4b566bcb5f5bd2b104b67b555ebd45b57a24b3f868c861fa5950ccc1bb2a1"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT89",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT89_result.json",
+      "sha256": "1e1b68271034811c1123d3a7099cf59b6620715db11c4bd6bf34414aa42ff7db",
+      "input_hashes": {
+        "BATCH_EAUDIT89.md": {
+          "expected": "7ce32f97d7276e2930042d1b49ebb00529a905f183e82f68e8bf288a3c2c9bee",
+          "actual": "7ce32f97d7276e2930042d1b49ebb00529a905f183e82f68e8bf288a3c2c9bee"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT90",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT90_result.json",
+      "sha256": "e3e3251559fe432d4d8e7085cde3a68a503d1dbbcc75c782a4ce2816a8603602",
+      "input_hashes": {
+        "BATCH_EAUDIT90.md": {
+          "expected": "3429a2aace5038218cb9a1cf1eb90a6aa465c40067b6d86bc4a753f477ee29e1",
+          "actual": "3429a2aace5038218cb9a1cf1eb90a6aa465c40067b6d86bc4a753f477ee29e1"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT91",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT91_result.json",
+      "sha256": "d8aeace4399b459e5f5792bbd9d1d93ad38d81cb49e0017f620e199d897b909b",
+      "input_hashes": {
+        "BATCH_EAUDIT91.md": {
+          "expected": "1f3644d16b873bc1f309024d6881f6defef03fe107fe0e2f97b8749d1597d1d9",
+          "actual": "1f3644d16b873bc1f309024d6881f6defef03fe107fe0e2f97b8749d1597d1d9"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT92",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT92_result.json",
+      "sha256": "5680a951bfccab320e3fd89a26a325bc13ceda59bbe1505e739807bf03b7aad6",
+      "input_hashes": {
+        "BATCH_EAUDIT92.md": {
+          "expected": "e2b4053fdb2561f7184a0a48ae0c059e4bab62250b6de3c12fa86c3673ca080d",
+          "actual": "e2b4053fdb2561f7184a0a48ae0c059e4bab62250b6de3c12fa86c3673ca080d"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT93",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT93_result.json",
+      "sha256": "2732806bc88b7af9657112a4708b67621872f8de6eb1e2bbb7acb4addee63911",
+      "input_hashes": {
+        "BATCH_EAUDIT93.md": {
+          "expected": "81e5d45df2052e8e135dab2793515069d0ca8192054b31389903016752506928",
+          "actual": "81e5d45df2052e8e135dab2793515069d0ca8192054b31389903016752506928"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT94",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT94_result.json",
+      "sha256": "1af50644d758ee4977d421f8b874f4cee73faa8e82a2e12f69beb22994543e7c",
+      "input_hashes": {
+        "BATCH_EAUDIT94.md": {
+          "expected": "9cd0d62062419b2f3fb783aaedb6254a2569b2ec0bc2f2567b831e5ab8984ce3",
+          "actual": "9cd0d62062419b2f3fb783aaedb6254a2569b2ec0bc2f2567b831e5ab8984ce3"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT95",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT95_result.json",
+      "sha256": "2fcb51486b58d059543a40ecdf7d6800ea12424a6fd4dc3b7d0499120b47afb2",
+      "input_hashes": {
+        "BATCH_EAUDIT95.md": {
+          "expected": "980673c7ab1a172a23edd30c5cd7ea124baa58e1d1b45e03cb411783f9be63be",
+          "actual": "980673c7ab1a172a23edd30c5cd7ea124baa58e1d1b45e03cb411783f9be63be"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    },
+    {
+      "batch": "EAUDIT96",
+      "path": "blueprint/ch02/mathcopilot_results/eaudit/EAUDIT96_result.json",
+      "sha256": "2f195b15cd0d9d61aa56d308b94d5b66eacfa6606c71e728c3e083f7baf34e40",
+      "input_hashes": {
+        "BATCH_EAUDIT96.md": {
+          "expected": "7b45116bcfcc39a2690456e037d91e84553ed51bf145b598fdf65c5fae2b89e6",
+          "actual": "7b45116bcfcc39a2690456e037d91e84553ed51bf145b598fdf65c5fae2b89e6"
+        },
+        "Blueprint/Ch02.lean": {
+          "expected": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+          "actual": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76"
+        },
+        "blueprint/ch02/ch02_source.json": {
+          "expected": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+          "actual": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+        }
+      },
+      "merged_from": "ch02_eaudit_merged"
+    }
+  ]
+}

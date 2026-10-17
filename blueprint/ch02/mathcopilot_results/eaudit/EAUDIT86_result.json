@@ -1,0 +1,183 @@
+{
+  "batch": "EAUDIT86",
+  "input_sha256": {
+    "BATCH_EAUDIT86.md": "947294200251d0365668058bdb7782f63eaa04c231477e53f260b66779f3c8ec",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.6-SymplecticIntegrator",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-2.3.6-SymplecticIntegrator",
+          "kind": "definition",
+          "label": null,
+          "section": "2.3.6",
+          "printed_page": "80",
+          "pdf_page": "102",
+          "statement_latex": "A symplectic integrator is an approximation of the flow map that conserves the symplectic 2-form.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "G为给定单步方法；精度资格在前节另行定义；每个可用h步映射保辛。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.bp_symplecticIntegrator",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 补实际Hamiltonian流、正阶局部一致性及可用正步长域；保辛性质与数值近似资格合取，C²为充分[EXTRA]，未把无关辛映射冒充积分方法。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT12_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:15:41.757944",
+              "before_sha256": "9f0dacdb07c272752283eb8ef022a48f80287c29c6b17b97f1c8a4599062f970",
+              "after_sha256": "ffcfe357e27f21b6dcf16c058b8e90f22f4db27f0e21b7877032d7c188222af1",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH19_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              3
+            ],
+            "printed_page": "80",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "bp_symplecticIntegrator"
+            ],
+            "finding": "n任意；H在整个相空间C²，F是已给全球Flow并在所有t,z满足Hamilton方程。存在统一δ>0，对每个0<h<δ的G h要求可微且逐点保J；存在一个对所有z通用的实数r>0，每个z另有K≥0和0<d≤δ，使0<h<d时误差≤K*h^(r+1)。这确实把保辛与实际流的正阶局部近似合取；G 0、负步长、全局误差、对z一致误差没有被声称。全球流、C²及正步长范围均属已明示的充分限定。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_symplecticIntegrator",
+        "verdict": "PASS",
+        "explanation": "n任意；H在整个相空间C²，F是已给全球Flow并在所有t,z满足Hamilton方程。存在统一δ>0，对每个0<h<δ的G h要求可微且逐点保J；存在一个对所有z通用的实数r>0，每个z另有K≥0和0<d≤δ，使0<h<d时误差≤K*h^(r+1)。这确实把保辛与实际流的正阶局部近似合取；G 0、负步长、全局误差、对z一致误差没有被声称。全球流、C²及正步长范围均属已明示的充分限定。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.6-SymplecticEulerPreserves",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXTRA_MARKER",
+          "TOTALIZED_DOMAIN_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.6-SymplecticEulerPreserves",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.6",
+          "printed_page": "81",
+          "pdf_page": "103",
+          "statement_latex": "This implies that\n\\[\\sum_{i=1}^{N_c}dQ_i\\wedge dP_i=\\sum_{i=1}^{N_c}dq_i\\wedge dp_i,\\]\nwhich means that the method is symplectic.",
+          "proof_latex": null,
+          "proof_note": "原书给出保辛结论的计算性论证；其中 Hessian 双重求和为零明示留作 simple exercise，未逐项展开该消去计算。原论证完整转录在 proof_discussion_latex 中，不补写原书省略的演算。",
+          "proof_discussion_latex": "Computing the 2-form,\n\\[dQ_i\\wedge dP_i=dq_i\\wedge dP_i+hm_i^{-1}dP_i\\wedge dP_i;\\]\nbut $du\\wedge du\\equiv0$ for any $u$, hence\n\\[dQ_i\\wedge dP_i=dq_i\\wedge dP_i;\\]\nand (2.21) implies\n\\[dQ_i\\wedge dP_i=dq_i\\wedge dp_i-h\\sum_{j=1}^{N_c}dq_i\\wedge\\frac{\\partial^2U}{\\partial q_j\\partial q_i}dq_j.\\]\nIt is then a simple exercise to show that\n\\[\\sum_{i=1}^{N_c}\\sum_{j=1}^{N_c}dq_i\\wedge\\frac{\\partial^2U}{\\partial q_j\\partial q_i}dq_j=0,\\]\nusing the skew-symmetry of the wedge product and the fact that the Hessian matrix is symmetric.",
+          "context_notation": [
+            "Q_i、P_i 为式(2.18)–(2.19)完整一步映射输出的分量，q_i、p_i 为输入分量；dQ_i、dP_i 是该映射对初始 q,p 的微分，N_c 为坐标数。",
+            "接续 PDF 第102页的机械 Hamiltonian 模型 H=pᵀM^{-1}p/2+U(q)，M 为固定对角质量矩阵，F(q)=−∇_qU(q)，本条使用 Hessian 对称性与楔积反对称性。",
+            "全局 C² 正则性是 Lean 为实际梯度和 Hessian 添加的充分条件，原文此段未逐字列出 C² 假设；标准矩阵逆 M^{-1} 的教材参数域为可逆质量矩阵。",
+            "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+          ],
+          "issues": [
+            {
+              "code": "EXTRA_MARKER",
+              "note": "当前列出的充分条件未使用要求的[EXTRA]标记；只规范元数据，不把充分条件当成原文逐字假设。"
+            },
+            {
+              "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+              "note": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.symplecticEulerPreserves",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookSymplecticEuler_isSymplectic"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] U C²，固定对角质量；真实完整步映射。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT12_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:15:41.757944",
+              "before_sha256": "3e676c5683cb7b44ab0798f7b32a3e425b18943a4d79d7309fea91648a02d838",
+              "after_sha256": "8d9accafa9cca4ff851ec7a8e5bd5945e3f3865e8a08ee7ddc68cbb86fccd649",
+              "changed_fields": [
+                "proof_note",
+                "proof_discussion_latex",
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH19_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "EXTRA_MARKER",
+            "field": "extra_assumptions",
+            "explanation": "当前列出的充分条件未使用要求的[EXTRA]标记；只规范元数据，不把充分条件当成原文逐字假设。"
+          },
+          {
+            "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+            "field": "context_notation",
+            "explanation": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              4
+            ],
+            "printed_page": "81",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "symplecticEulerPreserves"
+            ],
+            "finding": "任意Nc、固定对角系数m、势U、实步长h；hU要求U全局C²。完整步映射先动量kick p-h∇U(q)，后位置drift q+h m⁻¹P，输出保辛且C¹，与楔积求和结论一致。未假设正质量或非零质量；在教材非零质量域成立，Lean还把m=0按实数逆的总化定义扩展，保辛结论仍成立，不构成虚假定理。C²为充分[EXTRA]，应统一标记。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.symplecticEulerPreserves",
+        "verdict": "PASS",
+        "explanation": "任意Nc、固定对角系数m、势U、实步长h；hU要求U全局C²。完整步映射先动量kick p-h∇U(q)，后位置drift q+h m⁻¹P，输出保辛且C¹，与楔积求和结论一致。未假设正质量或非零质量；在教材非零质量域成立，Lean还把m=0按实数逆的总化定义扩展，保辛结论仍成立，不构成虚假定理。C²为充分[EXTRA]，应统一标记。",
+        "counterexample": null,
+        "suggested_fix": "仅整理元数据：为C²充分正则性加[EXTRA]，明确零质量总化扩展不表示教材可逆质量矩阵。"
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

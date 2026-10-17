@@ -1,0 +1,490 @@
+[
+  {
+    "source_id": "MD-2.2.1-Admissible",
+    "original_names": [
+      "admissibleSmooth"
+    ],
+    "corrected_names": [
+      "admissibleSmooth_corrected"
+    ],
+    "note": "默认C∞区间版，补a<b；只对闭区间限制要求光滑，不强制任意全线代表光滑。C²与C∞的原文冲突保留导师选项。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-2.2.1-StationaryNotMin",
+    "original_names": [
+      "stationaryNotMinimum"
+    ],
+    "corrected_names": [
+      "stationaryNotMinimum_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.2.1-VariationalDerivativePrinted",
+    "original_names": [
+      "printedVariationalDerivative"
+    ],
+    "corrected_names": [
+      "printedVariationalDerivative_corrected"
+    ],
+    "note": "补被漏去的F(q)常项，保留逐方向O(ε²)及连续线性泛函，不将其混称一般Fréchet可微的必要条件。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-2.2.2-DiscreteAction",
+    "original_names": [
+      "bp_discreteAction"
+    ],
+    "corrected_names": [
+      "bp_discreteAction_corrected"
+    ],
+    "note": "按原展示式采用动能−U的机械离散作用量，并限制h>0；正文+U原印保留。Riemann收敛只作背景，未给极限定理。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-2.2.2-DiscreteStationaryPrinted",
+    "original_names": [
+      "printedDiscreteStationary"
+    ],
+    "corrected_names": [
+      "printedDiscreteStationary_corrected"
+    ],
+    "note": "双端点固定的驻值只变动0<k<ν内部节点，保留原印≤ν供比较。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-2.2.3-Consistency",
+    "original_names": [
+      "consistency"
+    ],
+    "corrected_names": [
+      "consistency_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-2.2.3-DefectPrinted",
+    "original_names": [
+      "defectPrinted"
+    ],
+    "corrected_names": [
+      "defectPrinted_corrected"
+    ],
+    "note": "位置残差改加h³F′p/6，动量三阶残差保持原样；不证明原印反号式。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.2.3-ErrorBound",
+    "original_names": [
+      "errorBound"
+    ],
+    "corrected_names": [
+      "errorBound_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-2.2.3-VerletConsistency",
+    "original_names": [
+      "verletConsistency"
+    ],
+    "corrected_names": [
+      "verletConsistency_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.2.4-IntegralErrorPrinted",
+    "original_names": [
+      "integralErrorPrinted"
+    ],
+    "corrected_names": [
+      "integralErrorPrinted_corrected"
+    ],
+    "note": "由给定点误差只推出KB/L，去掉不成立的因子1/2，不加倍K也不预设待证积分误差。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.3.1-VariationalPrinted",
+    "original_names": [
+      "variationalPrinted"
+    ],
+    "corrected_names": [
+      "variationalPrinted_corrected"
+    ],
+    "note": "Jacobian在固定初值ζ求值；联合C²及变分矩阵非奇异作为显式充分资格，Df仍在真实轨道点求值。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.3.2-EulerVolumePrinted",
+    "original_names": [
+      "eulerVolumePrinted"
+    ],
+    "corrected_names": [
+      "eulerVolumePrinted_corrected"
+    ],
+    "note": "标准无向体积的判据为绝对行列式1；原det=1不作必要条件。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.3.4-HamiltonSymplectic",
+    "original_names": [
+      "hamiltonSymplectic"
+    ],
+    "corrected_names": [
+      "hamiltonSymplectic_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-2.3.4-HamiltonVariationalPrinted",
+    "original_names": [
+      "hamiltonVariationalPrinted"
+    ],
+    "corrected_names": [
+      "hamiltonVariationalPrinted_corrected"
+    ],
+    "note": "固定初值ζ处的空间Jacobian，联合C²解族；原移动点评价式不证明。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.3.5-ChainRule",
+    "original_names": [
+      "chainRule"
+    ],
+    "corrected_names": [
+      "chainRule_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-2.3.5-GlobalGroupPrinted",
+    "original_names": [
+      "globalGroupPrinted"
+    ],
+    "corrected_names": [
+      "globalGroupPrinted_corrected"
+    ],
+    "note": "只对已给全局双射且逆C¹的辛微分同胚断言逆辛；逐点非奇异不推出任意保辛自映射全局满射。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.3.5-SymplecticInverse",
+    "original_names": [
+      "symplecticInverse"
+    ],
+    "corrected_names": [
+      "symplecticInverse_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-2.4.1-SymmetricEven",
+    "original_names": [
+      "symmetricEven"
+    ],
+    "corrected_names": [
+      "symmetricEven_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.4.2-CompositionOrder",
+    "original_names": [
+      "compositionOrder"
+    ],
+    "corrected_names": [
+      "compositionOrder_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.4.4-ImplicitLocal",
+    "original_names": [
+      "implicitLocal"
+    ],
+    "corrected_names": [
+      "implicitLocal_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.4.4-Newton",
+    "original_names": [
+      "newtonPrinted"
+    ],
+    "corrected_names": [
+      "newtonPrinted_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-2.4.5-ConjugateLimits",
+    "original_names": [
+      "conjugateLimits"
+    ],
+    "corrected_names": [
+      "conjugateLimits_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-2.5.1-GaussFamily",
+    "original_names": [
+      "gaussFamily"
+    ],
+    "corrected_names": [
+      "gaussFamily_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.5.1-RKSymplectic",
+    "original_names": [
+      "rkSymplectic"
+    ],
+    "corrected_names": [
+      "rkSymplectic_corrected"
+    ],
+    "note": "保留系数条件的充分方向，删除对可约Butcher表不成立的必要性；未建设不可约表理论。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.5.3-NewmarkNotSymplectic",
+    "original_names": [
+      "newmarkNotSymplectic"
+    ],
+    "corrected_names": [
+      "newmarkNotSymplectic_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.5.3-NewmarkReduction",
+    "original_names": [
+      "newmarkReduction"
+    ],
+    "corrected_names": [
+      "newmarkReduction_corrected"
+    ],
+    "note": "采用显式质量一致Newmark关系，再与Verlet对应；原漏质量公式及反例保留。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.5.4-TIForce",
+    "original_names": [
+      "tiForce"
+    ],
+    "corrected_names": [
+      "tiForce_corrected"
+    ],
+    "note": "保留负号改势，负梯度力修正项应为加号；未改原书展示式。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.5.4-TIOrder",
+    "original_names": [
+      "tiOrder"
+    ],
+    "corrected_names": [
+      "tiOrder_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.5.4-TIPotential",
+    "original_names": [
+      "tiMethod"
+    ],
+    "corrected_names": [
+      "tiMethod_corrected"
+    ],
+    "note": "选择原负号改势路线，物理包装明示正质量和C²势；力式修正的加号在TIForce_corrected中另列。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-2.5.5-BeemanOrder",
+    "original_names": [
+      "beemanOrder"
+    ],
+    "corrected_names": [
+      "beemanOrder_corrected"
+    ],
+    "note": "全相空间有限时间收敛修正为二阶；原three的其它阶概念待导师，二阶正向估计尚需证明。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-2.3.7-Adjoint",
+    "original_names": [
+      "bp_adjoint"
+    ],
+    "corrected_names": [
+      "bp_adjoint_corrected"
+    ],
+    "note": "把负步映射明示为Equiv可逆映射后定义伴随；不把任意数值积分器无条件当作全局可逆。原书any表述和Euler反例保留。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  }
+]

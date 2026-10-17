@@ -1,0 +1,348 @@
+{
+  "batch": "EAUDIT85",
+  "input_sha256": {
+    "BATCH_EAUDIT85.md": "54d9132f53c29708e1efc0e1a492cf120de782e220735bfb67398d587d9dfc0d",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4-DipolarHamiltonian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "附件4页印169给出例4.1标题及三项Hamiltonian；附件5页印170给出单位方向句。跨页摘录中的符号及单位约束一致，省略处不改变数学含义。",
+          "N个位置、平移动量、单位方向和体角动量均为Fin N→ℝ³；共同三个正惯量给出Σ_iΣ_j π_ij²/(2I_j)，正质量给出Σ_i||p_i||²/(2m_i)，再加U q μ。逐i单位约束由dot=1实现，正性均已披露。允许质量随i变化是相同椭球模型的代数推广；在相同质量实例上完全一致，不影响定义公式。",
+          {
+            "attachment_pages": [
+              4,
+              5
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "4": "688c0592deef3457e322fadda09f1e34b5373b50b2ebb42e216f520c85e340d7",
+              "5": "20574cf8b72516350df6fdbb607d70aacd249b848e7675076b744a5fc14dc63d"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dipolarHamiltonian",
+        "verdict": "PASS",
+        "explanation": "N个位置、平移动量、单位方向和体角动量均为Fin N→ℝ³；共同三个正惯量给出Σ_iΣ_j π_ij²/(2I_j)，正质量给出Σ_i||p_i||²/(2m_i)，再加U q μ。逐i单位约束由dot=1实现，正性均已披露。允许质量随i变化是相同椭球模型的代数推广；在相同质量实例上完全一致，不影响定义公式。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-DipolarPairPotential",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_EXPLICIT_IDENTITY_INSERTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-DipolarPairPotential",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "170",
+          "pdf_page": "192",
+          "statement_latex": "The total dipole-dipole interaction potential then takes the form $\\varphi^{\\rm dip}_{ij}=\\varphi_{\\rm LJ}(r_{ij})+\\mu_i^TL(q_{ij})\\mu_j$, with $U$ given as the sum of these over pairs. The $3\\times3$ matrix $L$ is given by\n\\[L(q_{ij})=\\frac1{r_{ij}^3}-\\frac3{r_{ij}^5}q_{ij}q_{ij}^T,\\qquad q_{ij}=q_i-q_j.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 原式 L 的首项为标量 1/r_{ij}³；因 L 为3×3矩阵，该项表示 (1/r_{ij}³)I，JSON 显式补出 I。",
+            "q_{ij}=q_i−q_j；r_{ij} 为其欧氏长度；U 为非重复粒子对的相互作用和。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.dipolarPairPotential",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "r=Euclidean距离>0；本条实际pair函数，不声称经验模型准确性。",
+            "[EXTRA] 保留代数核；新增实际非碰撞粒子对q_i−q_j、r_ij=√(r·r)实例和仅i<j的完整系统势能求和，避免任意r与q脱钩。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT19_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:03:23.692073",
+              "before_sha256": "32c83b3f8981a17a7b38b32c808e9f65f0ef51976a736d0e4bf7d388eb65daa3",
+              "after_sha256": "5fcf69e246485b0fb85613e22771a63f2840b213e88c0565e11161800ce9c997",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH22_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "A：原文statement_latex的L首项多出显式I；这是合理的矩阵解释，但不应混入逐字原文。C：三个声明签名通过。"
+        ],
+        "evidence": [
+          "附件6页印170：φ^dip_ij=φ_LJ(r_ij)+μ_iᵀL(q_ij)μ_j及配对求和一致。原页L首项只印1/r_ij³，JSON额外显式补I；虽已在context解释且数学解释合理，逐字原文栏仍应保留原印排版。",
+          "共三个声明：代数核保留独立r及q，故该核单独不宣称r=||q||；particles接口以q_i−q_j及sqrt(dot r r)绑定距离，并要求不同指标且不碰撞；system接口对所有非碰撞构形仅求i<j一次。矩阵核的幂次、负号、outer顺序及μᵀLν都正确；非碰撞保证物理实例距离正。lj是径向势参数，实例化为φ_LJ即原模型。",
+          {
+            "attachment_pages": [
+              6
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "6": "20574cf8b72516350df6fdbb607d70aacd249b848e7675076b744a5fc14dc63d"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch04.dipolarPairPotential",
+          "MD.Ch04.dipolarPairPotential_particles",
+          "MD.Ch04.dipolarSystemPotential"
+        ],
+        "verdict": "PASS",
+        "explanation": "共三个声明：代数核保留独立r及q，故该核单独不宣称r=||q||；particles接口以q_i−q_j及sqrt(dot r r)绑定距离，并要求不同指标且不碰撞；system接口对所有非碰撞构形仅求i<j一次。矩阵核的幂次、负号、outer顺序及μᵀLν都正确；非碰撞保证物理实例距离正。lj是径向势参数，实例化为φ_LJ即原模型。",
+        "counterexample": null,
+        "suggested_fix": "原文栏去掉补入的I，保留context中按标量乘单位矩阵解释的说明；无需改Lean。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-RigidHamiltonian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "附件7页印170：H_RB的平移动能、trace项1/2及U(q_cm,Θ)一致；附件8页印171续句明确ΘᵀΘ=I。",
+          "参数M>0、R.det≠0已披露；q,p∈ℝ³，Θ,Π∈Mat3，并由实参证明ΘᵀΘ=I限定姿态。返回||p||²/(2M)+trace(ΠR⁻¹Πᵀ)/2+U(q,Θ)，乘法顺序和系数完整。R作为给定参考二阶矩使用；函数未断言任意可逆R都可由某个物理构形实现。",
+          {
+            "attachment_pages": [
+              7,
+              8
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "7": "20574cf8b72516350df6fdbb607d70aacd249b848e7675076b744a5fc14dc63d",
+              "8": "c79ddbbed33c8bbbd1c5a77b3cd84a12e875cf85776656f4243caa51b4c296d3"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidHamiltonian",
+        "verdict": "PASS",
+        "explanation": "参数M>0、R.det≠0已披露；q,p∈ℝ³，Θ,Π∈Mat3，并由实参证明ΘᵀΘ=I限定姿态。返回||p||²/(2M)+trace(ΠR⁻¹Πᵀ)/2+U(q,Θ)，乘法顺序和系数完整。R作为给定参考二阶矩使用；函数未断言任意可逆R都可由某个物理构形实现。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-SecondMomentDiagonal",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "附件9页印168：appropriate coordinate frame、insure、symmetric matrix R、diagonal matrix逐词一致。",
+          "对任意有限实权构形，存在O∈Mat3满足OᵀO=I且OᵀRO所有非对角元为零，正是选择正交坐标使实对称R对角化。无质量正性也成立；无须把特征值非负或det O=1另作原文结论。",
+          {
+            "attachment_pages": [
+              9
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "9": "3f4d36a3f3bc279125a244a3a197f478b90e0b8923c650b81becd0d417af3023"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.secondMomentDiagonal",
+        "verdict": "PASS",
+        "explanation": "对任意有限实权构形，存在O∈Mat3满足OᵀO=I且OᵀRO所有非对角元为零，正是选择正交坐标使实对称R对角化。无质量正性也成立；无须把特征值非负或det O=1另作原文结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationBodyEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "附件10页印169：与第2条同一body angular velocity原句、ω_b及能量二次型一致。",
+          "任意N,m,参考δ及SO(3)矩阵Θ和空间角速度ω，左边是Σm_i||ω×(Θδ_i)||²/2，右边用真实inertiaTensor及rotationalEnergy展开为(Θᵀω)ᵀT(Θᵀω)/2。正交与det=1均显式前提，未把能量相等本身当前提。该代数身份允许任意实权，覆盖物理质量。",
+          {
+            "attachment_pages": [
+              10
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "10": "688c0592deef3457e322fadda09f1e34b5373b50b2ebb42e216f520c85e340d7"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationBodyEnergy",
+        "verdict": "PASS",
+        "explanation": "任意N,m,参考δ及SO(3)矩阵Θ和空间角速度ω，左边是Σm_i||ω×(Θδ_i)||²/2，右边用真实inertiaTensor及rotationalEnergy展开为(Θᵀω)ᵀT(Θᵀω)/2。正交与det=1均显式前提，未把能量相等本身当前提。该代数身份允许任意实权，覆盖物理质量。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-DipolarConstraint",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "附件11页印170：unit vectors、dipole orientation、||μ_k||≡1原句一致。",
+          "有限族三维实方向向量的Prop为∀i, μ_i·μ_i=1，与每个方向的欧氏长度为1等价。它是瞬时构形约束；沿轨道每时刻满足该Prop即可表达原文恒等号，不另声称由运动方程自动保持。",
+          {
+            "attachment_pages": [
+              11
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "11": "20574cf8b72516350df6fdbb607d70aacd249b848e7675076b744a5fc14dc63d"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dipolarConstraint",
+        "verdict": "PASS",
+        "explanation": "有限族三维实方向向量的Prop为∀i, μ_i·μ_i=1，与每个方向的欧氏长度为1等价。它是瞬时构形约束；沿轨道每时刻满足该Prop即可表达原文恒等号，不另声称由运动方程自动保持。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-DipolarPotentialSum",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "DECLARED_DOMAIN_NOT_ENFORCED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-DipolarPotentialSum",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "170",
+          "pdf_page": "192",
+          "statement_latex": "$\\varphi^{\\rm dip}_{ij}=\\varphi_{\\rm LJ}(r_{ij})+\\mu_i^TL(q_{ij})\\mu_j$, with $U$ given as the sum of these over pairs.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "q_ij=q_i−q_j，r_ij=||q_ij||为欧氏距离；μ_i、μ_j为单位偶极方向。",
+            "原PDF写 L(q_ij)=1/r_ij³−(3/r_ij⁵)q_ij q_ij^T，并称L为3×3矩阵；首项按标量乘单位矩阵理解，原式未显式印I。",
+            "U是所有不同粒子无序配对的相互作用势之和；φ_LJ为Lennard–Jones径向势，使用r_ij>0的无重叠构形。",
+            "当前Lean未限制物理构形域；碰撞处的总函数值不是原书奇异势的物理定义。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.dipolarPotentialSum",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 当前Lean为任意位置和方向的总函数；只有另加q_i≠q_j及dot(μ_i,μ_i)=1的物理实例才解释为无碰撞单位偶极势。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT20_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:04:11.964101",
+              "before_sha256": "0b9ca44fa171ddd8d3ac4cff0327df07d663d3132e416517af5ee3f8f86a78f7",
+              "after_sha256": "311814d1b2f52872358595211eeb815243a20426bccc51a2a3edd76c6b2674ab",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH23_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "C：EXTRA所称非碰撞域未在完整声明中实现，且单位偶极方向也未限制。"
+        ],
+        "evidence": [
+          "附件12页印170：势对公式与with U given as the sum of these over pairs一致；距离及无序计数解释符合上下文。",
+          "求和指标i,j均遍历Fin N，if i<j确保每个无序不同粒子对恰计一次；q差与sqrt(dot差差)确实绑定实际距离，pair核依赖也正确。但签名没有位置非碰撞前提，也没有μ单位约束，而context_notation及EXTRA明确声称无重叠位置和单位方向。Lean实数逆在0处仍有总值，故碰撞状态被实际纳入定义域；这不能表述为已实现r_ij>0的物理接口。",
+          {
+            "attachment_pages": [
+              12
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "12": "20574cf8b72516350df6fdbb607d70aacd249b848e7675076b744a5fc14dc63d"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dipolarPotentialSum",
+        "verdict": "FAIL",
+        "explanation": "求和指标i,j均遍历Fin N，if i<j确保每个无序不同粒子对恰计一次；q差与sqrt(dot差差)确实绑定实际距离，pair核依赖也正确。但签名没有位置非碰撞前提，也没有μ单位约束，而context_notation及EXTRA明确声称无重叠位置和单位方向。Lean实数逆在0处仍有总值，故碰撞状态被实际纳入定义域；这不能表述为已实现r_ij>0的物理接口。",
+        "counterexample": "N=2，q_0=q_1=0，μ_0=μ_1=(1,0,0)。当前接口允许该输入且r_01=0；形式核逆幂均取0并返回lj(0)，不满足声明背景r_01>0。",
+        "suggested_fix": "在物理主接口补∀i j,i≠j→q_i≠q_j与∀i,dot(μ_i)(μ_i)=1，或明确将当前声明仅列为总化代数核，并另给受约束物理包装。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationTrajectory",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "附件13页印168：δ_i(t)=Θ(t)δ_i(0)及K_rot=(1/2)Σm_iδ_i(0)ᵀdotΘᵀdotΘδ_i(0)一致。",
+          "对任意矩阵轨道Θ、导数d、固定三维向量δ及实t，HasDerivAt Θ d t蕴含HasDerivAt (Θ(·)δ) (dδ) t，是真实时间导数的线性映射规则。按显式statement_scope这是运动学辅助；不含原段动能有限和或trace结论，也不把未提供的RotationTraceIdentity当作已审校。正交性并非此导数规则所需。",
+          {
+            "attachment_pages": [
+              13
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "13": "3f4d36a3f3bc279125a244a3a197f478b90e0b8923c650b81becd0d417af3023"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationTrajectory",
+        "verdict": "PASS",
+        "explanation": "对任意矩阵轨道Θ、导数d、固定三维向量δ及实t，HasDerivAt Θ d t蕴含HasDerivAt (Θ(·)δ) (dδ) t，是真实时间导数的线性映射规则。按显式statement_scope这是运动学辅助；不含原段动能有限和或trace结论，也不把未提供的RotationTraceIdentity当作已审校。正交性并非此导数规则所需。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

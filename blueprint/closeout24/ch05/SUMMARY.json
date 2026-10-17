@@ -1,0 +1,32 @@
+{
+  "chapter": 5,
+  "total": 183,
+  "website_pass": 148,
+  "historical_pass": 51,
+  "closeout24_returns": {
+    "PASS": 97,
+    "NEEDS_HUMAN": 14,
+    "FAIL": 6
+  },
+  "local_repairs": 6,
+  "repairing": 0,
+  "awaiting_reaudit": 0,
+  "local_excerpt_verified": 2,
+  "errata": 26,
+  "errata_source_ids": 36,
+  "awaiting_mentor": 36,
+  "declarations": {
+    "定义": 97,
+    "已证": 57,
+    "未证": 100
+  },
+  "unproved_reasons": {
+    "缺大型理论": 46,
+    "原书疑误不证": 31,
+    "时间盒止": 23
+  },
+  "current_lean_sha256": "4044260333063d4a4c02811433b41a5b096d23563ef9880c4e29a50139725e79",
+  "axiom_log": "blueprint/closeout24/ch05/full-run.log",
+  "full_check": "blueprint/closeout24/ch05/full/CHECK_REPORT.json",
+  "website_scope_note": "网站PASS数字对应收到返回的审校版本；新增声明及本轮修改未再次送网站。"
+}

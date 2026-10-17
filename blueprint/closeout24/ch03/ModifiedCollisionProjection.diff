@@ -1,0 +1,12 @@
+--- before
++++ after
+@@ -2685,7 +2685,8 @@
+   | solve | simp only
+   | sorry
+ 
+-/-- source_id: MD-3.7.3-ModifiedCollisionProjection · definition · §3.7.3 · 印刷p.136 / PDFp.158 -/
++/-- source_id: MD-3.7.3-ModifiedCollisionProjection · definition · §3.7.3 · 印刷p.136 / PDFp.158 [EXTRA] 24号：[EXTRA] 通用有限截断Hamiltonian等值辅助关系；不覆盖原段Verlet专属修正系数、投影存在唯一、变步长共同修正能量或统计精度。 未覆盖内容已列coverage_gaps；原引文保留。
++-/
+ def modifiedCollisionProjection {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+     (Hj : ℕ → SymplecticCoordinates n → ℝ) (r k : ℕ) (h : ℝ)
+     (z w : SymplecticCoordinates n) : Prop :=

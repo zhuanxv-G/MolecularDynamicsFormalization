@@ -1,0 +1,431 @@
+[
+  {
+    "source_id": "MD-2.2.1-FirstVariation",
+    "batch": "EAUDIT77",
+    "fields": {
+      "statement_latex": {
+        "before": "Using a Taylor series expansion of the Lagrangian, we have\n\\[\\mathcal A_L(\\Gamma^\\epsilon)-\\mathcal A_L(\\Gamma)=\\int_\\alpha^\\beta[L(\\boldsymbol q(t)+\\epsilon\\boldsymbol\\eta(t),\\dot{\\boldsymbol q}(t)+\\epsilon\\dot{\\boldsymbol\\eta}(t))-L(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t))]\\,dt,\\]\n\\[=\\int_\\alpha^\\beta\\left[\\epsilon\\left(\\frac{\\partial L}{\\partial\\boldsymbol q}(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t))\\boldsymbol\\eta(t)+\\frac{\\partial L}{\\partial\\dot{\\boldsymbol q}}(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t))\\dot{\\boldsymbol\\eta}(t)\\right)+O(\\epsilon^2)\\right]\\,dt.\\]",
+        "after": "Using a Taylor series expansion of the Lagrangian\\textsuperscript{3}, we have\n\\[\\mathcal A_L(\\Gamma^\\epsilon)-\\mathcal A_L(\\Gamma)=\\int_\\alpha^\\beta[L(\\boldsymbol q(t)+\\epsilon\\boldsymbol\\eta(t),\\dot{\\boldsymbol q}(t)+\\epsilon\\dot{\\boldsymbol\\eta}(t))-L(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t))]\\,dt,\\]\n\\[=\\int_\\alpha^\\beta\\left[\\epsilon\\left(\\frac{\\partial L}{\\partial\\boldsymbol q}(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t))\\boldsymbol\\eta(t)+\\frac{\\partial L}{\\partial\\dot{\\boldsymbol q}}(\\boldsymbol q(t),\\dot{\\boldsymbol q}(t))\\dot{\\boldsymbol\\eta}(t)\\right)+O(\\epsilon^2)\\right]\\,dt.\\]"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_FOOTNOTE_MARKER"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.2.3-Consistency",
+    "batch": "EAUDIT79",
+    "fields": {
+      "statement_latex": {
+        "before": "The first assumption is that $\\mathcal G_h$ is an $O(h^{p+1})$ approximation of $\\mathcal F_h$ in the sense that there is a constant $K\\ge0$ and a constant $\\Delta>0$ such that, for $t\\in[0,\\tau]$, we have\n\\[\\|\\mathcal F_h(\\boldsymbol z(t))-\\mathcal G_h(\\boldsymbol z(t))\\|\\le\\bar K h^{p+1},\\qquad h<\\Delta.\\tag{2.10}\\]\nThe assumption (2.10) that the local error is of order $p+1$, $p>0$, is termed the consistency of the numerical method. We say the method is consistent of order $p$.",
+        "after": "The first assumption is that $\\mathscr G_h$ is an $O(h^{p+1})$ approximation of $\\mathscr F_h$ in the sense that there is a constant $K\\ge0$ and a constant $\\Delta>0$ such that, for $t\\in[0,\\tau]$, we have\n\\[\\|\\mathscr F_h(\\boldsymbol z(t))-\\mathscr G_h(\\boldsymbol z(t))\\|\\le\\bar K h^{p+1},\\qquad h<\\Delta.\\tag{2.10}\\]\nThe assumption (2.10) that the local error is of order $p+1$, $p>0$, is termed the consistency of the numerical method. We say the method is consistent of order $p$."
+      }
+    },
+    "issue_codes": [
+      "SOURCE_CALLIGRAPHY",
+      "PRINTED_CONSTANT_MISMATCH"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.2.3-VerletConsistency",
+    "batch": "EAUDIT79",
+    "fields": {
+      "statement_latex": {
+        "before": "These relations can be summarized as telling us that\n\\[\\|\\mathcal G_h(\\boldsymbol z)-\\mathcal F_h(\\boldsymbol z)\\|=\\kappa(\\boldsymbol z)h^3+O(h^4),\\]\nwhere $\\kappa(\\boldsymbol z)=\\kappa(q,p)$ is a function of the position and momentum. We may then define\n\\[\\bar K=\\max_{t\\in[0,\\tau]}\\kappa(\\boldsymbol z(t))\\]\nbounding the local error by (with neglect of the fourth order terms) $\\bar K h^3$. Thus the Verlet method is consistent of order two.",
+        "after": "These relations can be summarized as telling us that\n\\[\\|\\mathscr G_h(\\boldsymbol z)-\\mathscr F_h(\\boldsymbol z)\\|=\\kappa(\\boldsymbol z)h^3+O(h^4),\\]\nwhere $\\kappa(\\boldsymbol z)=\\kappa(q,p)$ is a function of the position and momentum. We may then define\n\\[\\bar K=\\max_{t\\in[0,\\tau]}\\kappa(\\boldsymbol z(t))\\]\nbounding the local error by (with neglect of the fourth order terms) $\\bar K h^3$. Thus the Verlet method is consistent of order two."
+      },
+      "context_notation": {
+        "before": [
+          "Example 2.2 的背景为单自由度 $q,p\\in\\mathbb R$、$M=1$，印刷p.67/PDF89。",
+          "$F,F\\prime,F\\prime\\prime$ 在展开式中分别表示 $F(q),F\\prime(q),F\\prime\\prime(q)$；$q=q(t),p=p(t)$ 为展开起点；印刷p.68/PDF90。",
+          "数值输出为 $(Q,P)$：$Q=q+hp+h^2F(q)/2$，$P=p+h(F(q)+F(Q))/2$，式(2.13)–(2.14)，印刷p.67/PDF89。",
+          "$\\boldsymbol z=(q,p)$；$\\mathcal G_h$ 是 Verlet 单步映射，$\\mathcal F_h$ 是精确解单步映射；误差范数及一致性阶数的说明见印刷p.67/PDF89；$\\tau$ 为考察的时间区间终点，$\\bar K$ 是该轨迹上 $\\kappa$ 的最大值，印刷p.68/PDF90。"
+        ],
+        "after": [
+          "Example 2.2 的背景为单自由度 $q,p\\in\\mathbb R$、$M=1$，印刷p.67/PDF89。",
+          "$F,F\\prime,F\\prime\\prime$ 在展开式中分别表示 $F(q),F\\prime(q),F\\prime\\prime(q)$；$q=q(t),p=p(t)$ 为展开起点；印刷p.68/PDF90。",
+          "数值输出为 $(Q,P)$：$Q=q+hp+h^2F(q)/2$，$P=p+h(F(q)+F(Q))/2$，式(2.13)–(2.14)，印刷p.67/PDF89。",
+          "$\\boldsymbol z=(q,p)$；$\\mathscr G_h$ 是 Verlet 单步映射，$\\mathscr F_h$ 是精确解单步映射；误差范数及一致性阶数的说明见印刷p.67/PDF89；$\\tau$ 为考察的时间区间终点，$\\bar K$ 是该轨迹上 $\\kappa$ 的最大值，印刷p.68/PDF90。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_CALLIGRAPHY",
+      "NEGLECTED_REMAINDER"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.3.1-Divergence",
+    "batch": "EAUDIT81",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "div f为实际Jacobian的迹；f C¹。"
+        ],
+        "after": [
+          "div f为实际Jacobian的迹；divergenceFree要求f在全空间可微，不要求C¹。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "REGULARITY_METADATA_MISMATCH"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.3.1-Liouville",
+    "batch": "EAUDIT81",
+    "fields": {
+      "statement_latex": {
+        "before": "Consider a set of points $S(t)$ in phase space with evolution associated to a differential equation $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$ described by the flow map $\\mathcal F_t(S(0))=S(t)$. Liouville’s theorem [16] states that the volume of such a set is invariant with respect to $t$ if the divergence of $f$ vanishes,",
+        "after": "Consider a set of points $S(t)$ in phase space with evolution associated to a differential equation $\\dot{\\boldsymbol z}=f(\\boldsymbol z)$ described by the flow map $\\mathcal F_t(S(0))=S(t)$. Liouville’s theorem [16] states that the volume of such a set is invariant with respect to $t$ if the divergence of $f$ vanishes, i.e."
+      }
+    },
+    "issue_codes": [
+      "NONEXISTENT_TAU_POSITIVITY",
+      "UNMARKED_SOURCE_TRUNCATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.3.3-SymplecticMap",
+    "batch": "EAUDIT83",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "m=2Nc，Jacobian是真实Fréchet导数矩阵；J=[[0,I],[-I,0]]，p.53/PDF75；资格Differentiable。"
+        ],
+        "after": [
+          "m=2Nc，Jacobian是真实Fréchet导数矩阵；J=[[0,I],[-I,0]]，本条附件15页（印刷76页/PDF98）直接列出；资格为Differentiable。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_POINTER_REPLACED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.3.3-FormSumWedges",
+    "batch": "EAUDIT83",
+    "fields": {
+      "statement_latex": {
+        "before": "The wedge product of the coordinate differentials $dq_i,dp_i$ may be written\n\\[dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\xi_i\\eta_{i+N_c}-\\xi_{i+N_c}\\eta_i=\\boldsymbol\\xi^TJ^{(i)}\\boldsymbol\\eta.\\]\nSumming these terms results in the symplectic 2-form, denoted $\\psi_S$:\n\\[\\psi_S=\\sum_{i=1}^{N_c}dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\boldsymbol\\xi^T\\left(\\sum_{i=1}^{N_c}J^{(i)}\\right)\\boldsymbol\\eta=\\boldsymbol\\xi^TJ\\boldsymbol\\eta.\\]",
+        "after": "The wedge product of the coordinate differentials $dq_i,dp_i$ may be written\n\\[dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\xi_i\\eta_{i+N_c}-\\xi_{i+N_c}\\eta_i=\\boldsymbol\\xi^TJ^{(i)}\\boldsymbol\\eta.\\]\nwhere $J^{(i)}$ is the matrix which has zeros everywhere except for $(J^{(i)})_{i,i+N_c}=1$, $(J^{(i)})_{i+N_c,i}=-1$. Summing these terms results in the symplectic 2-form, denoted $\\psi_S$:\n\\[\\psi_S=\\sum_{i=1}^{N_c}dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\boldsymbol\\xi^T\\left(\\sum_{i=1}^{N_c}J^{(i)}\\right)\\boldsymbol\\eta=\\boldsymbol\\xi^TJ\\boldsymbol\\eta.\\]"
+      }
+    },
+    "issue_codes": [
+      "OMITTED_COMPONENT_MATRIX_SENTENCE"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.3.4-MatrixCancellation",
+    "batch": "EAUDIT84",
+    "fields": {
+      "statement_latex": {
+        "before": "Hence\n\\[\\frac{\\mathrm d}{\\mathrm dt}W^TJW=W^TJ\\dot W+\\dot W^TJW=0.\\]",
+        "after": "hence\n\\[\\frac{\\mathrm d}{\\mathrm dt}W^TJW=W^TJ\\dot W+\\dot W^TJW=0.\\]"
+      },
+      "proof_note": {
+        "before": "两个中间矩阵等式属于原文证明计算，逐字保留于proof_latex；实际时间乘积导数及常值由FormConstant承担。",
+        "after": "原文Computing、whereas和hence的矩阵计算按原页保留于proof_latex；本条matrixCancellation_time已登记实际乘积求导及零导数，时间区间上推出常值是后续步骤。"
+      },
+      "context_notation": {
+        "before": [
+          "W′=JSW由前项背景；本条矩阵恒等式两个乘积项之和为0，实际乘积求导见FormConstant。"
+        ],
+        "after": [
+          "W′=JSW为前项变分方程背景；matrixCancellation是代数消去，matrixCancellation_time在本条直接给真实时间曲线的乘积导数两项表达式及零导数。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_CAPITALIZATION",
+      "STALE_DEPENDENCY_DESCRIPTION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.3.4-HamiltonSymplectic",
+    "batch": "EAUDIT84",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "原文W移动取值点疑点另项记录；本最终结论以实际固定时刻流映射的Jacobian表达，不假设其变分方程。"
+        ],
+        "after": [
+          "原页上下文写$W(t)=\\mathcal F_t^{\\prime}(z(t,\\xi))$（此处prime表示原页撇号）。实际变分矩阵通常为固定初值处的$D_\\xi\\mathcal F_t(\\xi)$；移动取值点可能引入额外链式项。原文最终公式保留；Lean采用真实固定时刻流对初值的Jacobian，未沿用移动取值点定义。需人工确认教材W的记号约定。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "NONEXISTENT_TAU_POSITIVITY",
+      "PRINTED_MOVING_BASEPOINT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.3.5-SymplecticComposition",
+    "batch": "EAUDIT85",
+    "fields": {
+      "proof_discussion_latex": {
+        "before": "By the chain rule, hence\n\\[[(\\Phi_1\\circ\\Phi_2)^\\prime]^T J(\\Phi_1\\circ\\Phi_2)^\\prime=[\\Phi_1^\\prime\\Phi_2^\\prime]^T J\\Phi_1^\\prime\\Phi_2^\\prime=\\Phi_2^{\\prime T}\\Phi_1^{\\prime T}J\\Phi_1^\\prime\\Phi_2^\\prime=\\Phi_2^{\\prime T}J\\Phi_2^\\prime=J.\\]",
+        "after": "by the chain rule, hence\n\\[[(\\Phi_1\\circ\\Phi_2)^\\prime]^T J(\\Phi_1\\circ\\Phi_2)^\\prime=[\\Phi_1^\\prime\\Phi_2^\\prime]^T J\\Phi_1^\\prime\\Phi_2^\\prime=\\Phi_2^{\\prime T}\\Phi_1^{\\prime T}J\\Phi_1^\\prime\\Phi_2^\\prime=\\Phi_2^{\\prime T}J\\Phi_2^\\prime=J.\\]"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_CASE"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.3.6-SymplecticEulerPreserves",
+    "batch": "EAUDIT86",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "Q_i、P_i 为式(2.18)–(2.19)完整一步映射输出的分量，q_i、p_i 为输入分量；dQ_i、dP_i 是该映射对初始 q,p 的微分，N_c 为坐标数。",
+          "接续 PDF 第102页的机械 Hamiltonian 模型 H=pᵀM^{-1}p/2+U(q)，M 为固定对角质量矩阵，F(q)=−∇_qU(q)，本条使用 Hessian 对称性与楔积反对称性。",
+          "全局 C² 正则性是 Lean 为实际梯度和 Hessian 添加的充分条件，原文此段未逐字列出 C² 假设；标准矩阵逆 M^{-1} 的教材参数域为可逆质量矩阵。"
+        ],
+        "after": [
+          "Q_i、P_i 为式(2.18)–(2.19)完整一步映射输出的分量，q_i、p_i 为输入分量；dQ_i、dP_i 是该映射对初始 q,p 的微分，N_c 为坐标数。",
+          "接续 PDF 第102页的机械 Hamiltonian 模型 H=pᵀM^{-1}p/2+U(q)，M 为固定对角质量矩阵，F(q)=−∇_qU(q)，本条使用 Hessian 对称性与楔积反对称性。",
+          "全局 C² 正则性是 Lean 为实际梯度和 Hessian 添加的充分条件，原文此段未逐字列出 C² 假设；标准矩阵逆 M^{-1} 的教材参数域为可逆质量矩阵。",
+          "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "EXTRA_MARKER",
+      "TOTALIZED_DOMAIN_CLARIFICATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.4.1-SplittingLocal",
+    "batch": "EAUDIT88",
+    "fields": {
+      "proof_latex": {
+        "before": "Expand $\\mathcal F_h(\\boldsymbol u)$ in a Taylor series:\n\\[\\mathcal F_h(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H+\\mathcal O(h^2)=\\boldsymbol u+h(J\nabla H_1+J\nabla H_2)+\\mathcal O(h^2).\\tag{2.24}\\]\nOn the other hand,\n\\[\\mathcal F_h^1(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_1(\\boldsymbol u)+\\mathcal O(h^2),\\qquad\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u)+\\mathcal O(h^2).\\]\nComposing the maps we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u)+hJ\nabla H_1(\\boldsymbol u+hJ\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\]\nAssuming $H_1$ is $C^2$, we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+h(J\nabla H_2(\\boldsymbol u)+J\nabla H_1(\\boldsymbol u))+\\mathcal O(h^2),\\]\nwhich agrees with the expansion (2.24) of the flow map through the terms of first order. Thus the splitting method does indeed provide a second order local approximation of the flow map.",
+        "after": "Expand $\\mathcal F_h(\\boldsymbol u)$ in a Taylor series:\n\\[\\mathcal F_h(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H+\\mathcal O(h^2)=\\boldsymbol u+h(J\\nabla H_1+J\\nabla H_2)+\\mathcal O(h^2).\\tag{2.24}\\]\nOn the other hand,\n\\[\\mathcal F_h^1(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_1(\\boldsymbol u)+\\mathcal O(h^2),\\qquad\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u)+\\mathcal O(h^2).\\]\nComposing the maps we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u)+hJ\\nabla H_1(\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\]\nAssuming $H_1$ is $C^2$, we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+h(J\\nabla H_2(\\boldsymbol u)+J\\nabla H_1(\\boldsymbol u))+\\mathcal O(h^2),\\]\nwhich agrees with the expansion (2.24) of the flow map through the terms of first order. Thus the splitting method does indeed provide a second order local approximation of the flow map."
+      }
+    },
+    "issue_codes": [
+      "JSON_LATEX_ESCAPE",
+      "EXTRA_MARKER"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.4.1-KineticFlow",
+    "batch": "EAUDIT88",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "固定对角质量，mᵢ≠0资格由机械模型；闭式映射逐坐标表达。"
+        ],
+        "after": [
+          "固定对角质量，mᵢ≠0资格由机械模型；闭式映射逐坐标表达。",
+          "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "LEAN_INCOMPLETE_STATEMENT",
+      "TOTALIZED_DOMAIN_CLARIFICATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.4.1-PotentialFlow",
+    "batch": "EAUDIT88",
+    "fields": {
+      "statement_latex": {
+        "before": "Similarly, the flow map of the system with Hamiltonian $H_2=U$ is\n\\[\\boldsymbol Q=\\boldsymbol q,\\qquad\\boldsymbol P=\\boldsymbol p-h\nabla U(\\boldsymbol q).\\]",
+        "after": "Similarly, the flow map of the system with Hamiltonian $H_2=U$ is\n\\[\\boldsymbol Q=\\boldsymbol q,\\qquad\\boldsymbol P=\\boldsymbol p-h\\nabla U(\\boldsymbol q).\\]"
+      }
+    },
+    "issue_codes": [
+      "JSON_LATEX_ESCAPE",
+      "LEAN_INCOMPLETE_STATEMENT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.4.1-SplitEuler",
+    "batch": "EAUDIT88",
+    "fields": {
+      "statement_latex": {
+        "before": "The composition of these maps simplifies to\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol P,\\qquad\\boldsymbol P=\\boldsymbol p-h\nabla U(\\boldsymbol q),\\]\nwhich is precisely the Symplectic Euler method. Similarly, composing the same two maps in the opposite order gives the adjoint Symplectic Euler method.",
+        "after": "The composition of these maps simplifies to\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol P,\\qquad\\boldsymbol P=\\boldsymbol p-h\\nabla U(\\boldsymbol q),\\]\nwhich is precisely the Symplectic Euler method. Similarly, composing the same two maps in the opposite order gives the adjoint Symplectic Euler method."
+      },
+      "context_notation": {
+        "before": [],
+        "after": [
+          "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "JSON_LATEX_ESCAPE",
+      "TOTALIZED_DOMAIN_CLARIFICATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.4.1-VerletComposition",
+    "batch": "EAUDIT88",
+    "fields": {
+      "proof_latex": {
+        "before": "Let\n\\[\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix}=\\mathcal G_{h/2}\\begin{bmatrix}\\boldsymbol q\\\\\\boldsymbol p\\end{bmatrix},\\]\ni.e.,\n\\[\\bar{\\boldsymbol q}=\\boldsymbol q+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\bar{\\boldsymbol p}=\\boldsymbol p-(h/2)\nabla U(\\boldsymbol q).\\]\nand set\n\\[\\begin{bmatrix}\\boldsymbol Q\\\\\\boldsymbol P\\end{bmatrix}=\\mathcal G_{h/2}^\\dagger\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix},\\]\ni.e.,\n\\[\\boldsymbol Q=\\bar{\\boldsymbol q}+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-(h/2)\nabla U(\\boldsymbol Q).\\]\nThe composition simplifies to\n\\[\\bar{\\boldsymbol p}=\\boldsymbol p-\\frac h2\nabla U(\\boldsymbol q),\\qquad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-\\frac h2\nabla U(\\boldsymbol Q).\\]\nThis is just the leapfrog/Verlet method in its Hamiltonian form.",
+        "after": "Let\n\\[\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix}=\\mathcal G_{h/2}\\begin{bmatrix}\\boldsymbol q\\\\\\boldsymbol p\\end{bmatrix},\\]\ni.e.,\n\\[\\bar{\\boldsymbol q}=\\boldsymbol q+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\bar{\\boldsymbol p}=\\boldsymbol p-(h/2)\\nabla U(\\boldsymbol q).\\]\nand set\n\\[\\begin{bmatrix}\\boldsymbol Q\\\\\\boldsymbol P\\end{bmatrix}=\\mathcal G_{h/2}^\\dagger\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix},\\]\ni.e.,\n\\[\\boldsymbol Q=\\bar{\\boldsymbol q}+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-(h/2)\\nabla U(\\boldsymbol Q).\\]\nThe composition simplifies to\n\\[\\bar{\\boldsymbol p}=\\boldsymbol p-\\frac h2\\nabla U(\\boldsymbol q),\\qquad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-\\frac h2\\nabla U(\\boldsymbol Q).\\]\nThis is just the leapfrog/Verlet method in its Hamiltonian form."
+      },
+      "context_notation": {
+        "before": [],
+        "after": [
+          "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "JSON_LATEX_ESCAPE",
+      "TOTALIZED_DOMAIN_CLARIFICATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.4.1-VerletSymplectic",
+    "batch": "EAUDIT88",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "EXTRA_MARKER",
+      "TOTALIZED_DOMAIN_CLARIFICATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.4.3-HarmonicSplit",
+    "batch": "EAUDIT91",
+    "fields": {
+      "statement_latex": {
+        "before": "Some systems can be decomposed into a harmonic (quadratic) part $H_0(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^T M^{-1}\\boldsymbol p/2+\\boldsymbol q^T A\\boldsymbol q/2$ and an anharmonic part $H_1(\\boldsymbol q,\\boldsymbol p)=\\hat U(\\boldsymbol q)$. Then a splitting method can be formulated based on exact solution of the linear system together with “kicks” representing impulses defined by the anharmonic part. For a simple system consisting of a harmonic oscillator $H_0(q,p)=p^2/2+\\Omega^2q^2/2$, such a method can be written\n\\[\\begin{bmatrix}Q\\\\\\hat p\\end{bmatrix}=\\begin{bmatrix}\\cos h\\Omega&\\frac{1}{\\Omega}\\sin h\\Omega\\\\-\\Omega\\sin h\\Omega&\\cos h\\Omega\\end{bmatrix}\\begin{bmatrix}q\\\\p\\end{bmatrix},\\qquad P=\\hat p-h\\hat U'(Q).\\]",
+        "after": "Some systems can be decomposed into a harmonic (quadratic) part $H_0(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^T M^{-1}\\boldsymbol p/2+\\boldsymbol q^T A\\boldsymbol q/2$ and an anharmonic part $H_1(\\boldsymbol q,\\boldsymbol p)=\\breve U(\\boldsymbol q)$. Then a splitting method can be formulated based on exact solution of the linear system together with “kicks” representing impulses defined by the anharmonic part. For a simple system consisting of a harmonic oscillator $H_0(q,p)=p^2/2+\\Omega^2q^2/2$, such a method can be written\n\\[\\begin{bmatrix}Q\\\\\\hat p\\end{bmatrix}=\\begin{bmatrix}\\cos h\\Omega&\\frac{1}{\\Omega}\\sin h\\Omega\\\\-\\Omega\\sin h\\Omega&\\cos h\\Omega\\end{bmatrix}\\begin{bmatrix}q\\\\p\\end{bmatrix},\\qquad P=\\hat p-h\\breve U'(Q).\\]"
+      },
+      "context_notation": {
+        "before": [
+          "原文一般情形中 q、p 为向量，M 为质量矩阵，A 为二次势矩阵；标量简例中的 q、p、Q、p̂、P 为实数，Ω 为振子频率，h 为步长，原文扰动势记为 Û。Lean 的 U 对应原文 Û；Lean 定义仅覆盖原文明确给出的标量简例，一般矩阵分裂保留为背景。"
+        ],
+        "after": [
+          "原文一般情形中 q、p 为向量，M 为质量矩阵，A 为二次势矩阵；标量简例中的 q、p、Q、p̂、P 为实数，Ω 为振子频率，h 为步长，原文扰动势记为 Ŭ。Lean 的 U 对应原文 Ŭ；Lean 定义仅覆盖原文明确给出的标量简例，一般矩阵分裂保留为背景。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_DIACRITIC"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.5.1-RK4",
+    "batch": "EAUDIT94",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "展开实际四阶段给出同一A/b权重；4阶陈述单列。"
+        ],
+        "after": [
+          "实际四阶段定义正确复现A/b；本条当前所给Lean未覆盖四阶结论，尚需明确另列声明。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "MISSING_ORDER_DECLARATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.5.1-MidpointProperties",
+    "batch": "EAUDIT94",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "来自GLRK辛RK上下文，保留二阶与辛性两个结论；实际中点关系见同页。"
+        ],
+        "after": [
+          "来自GLRK辛RK上下文，保留二阶与辛性两个结论；实际中点关系见同页。",
+          "which指隐式中点法：\\(Z=z+hF_1,\\quad F_1=f(z+\\frac h2 F_1)\\)。二阶为方法的一般阶数，给定ODE上误差可更高阶或为零。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "CONTEXT_ANCHOR_INCOMPLETE"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.5.1-GaussTwoOrder",
+    "batch": "EAUDIT94",
+    "fields": {
+      "statement_latex": {
+        "before": "The 4th order method ($s=2$) has coefficients",
+        "after": "The 4th order method ($s=2$) has coefficients\\[b_1=b_2=\\frac12,\\qquad A=(a_{ij})=\\begin{bmatrix}\\frac14&\\frac14-\\frac{\\sqrt3}{6}\\\\\\frac14+\\frac{\\sqrt3}{6}&\\frac14\\end{bmatrix}.\\]"
+      },
+      "context_notation": {
+        "before": [
+          "同页GaussTwoData保存全部A、b；此条保存确切2阶段方法全局4阶结论而非仅系数。"
+        ],
+        "after": [
+          "本条为具体两阶段Gauss方法的至少全局四阶结论；上述A,b与Lean中实际阶段关系一致。globalOrder不声称每个特定ODE恰四阶。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "COEFFICIENT_DISPLAY_OMITTED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.5.2-GeneralSymplectic",
+    "batch": "EAUDIT95",
+    "fields": {
+      "statement_latex": {
+        "before": "To see that it is symplectic, we first note that this is a symmetric composition of the form\n\\[\\mathcal K_h=\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2},\\]\nso it is enough to show that this basic method is symplectic.",
+        "after": "To see that it is symplectic, we first note that this is a symmetric composition of the form\n\\[\\mathcal K_h=\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2},\\]\nwhere $\\mathcal G_h$ is defined by\n\\[P=p-h\\nabla_qH(q,P),\\tag{2.29}\\]\n\\[Q=q+h\\nabla_pH(q,P),\\tag{2.30}\\]\nso it is enough to show that this basic method is symplectic."
+      },
+      "proof_latex": {
+        "before": "Taking differentials of (2.30) defining $\\mathcal G_h$ and then wedge products and summing, we have\n\\[\\sum_i dQ_i\\wedge dP_i=\\sum_i dq_i\\wedge dP_i+h\\sum_i\\sum_j H_{p_iq_j}dq_j\\wedge dP_i+h\\sum_i\\sum_j H_{p_ip_j}dP_j\\wedge dP_i.\\]\nThe last term on the right vanishes by equality of mixed partials and the antisymmetry of the wedge product. On the other hand, using (2.29), we obtain, by similar means,\n\\[\\sum_i dq_i\\wedge dP_i=\\sum_i dq_i\\wedge dp_i-h\\sum_i\\sum_j H_{q_ip_j}dq_i\\wedge dP_j.\\]\nRelabelling the indices in the sum and using our previous work results in\n\\[\\sum_i dQ_i\\wedge dP_i=\\sum_i dq_i\\wedge dp_i,\\]\nimplying that the method is symplectic.",
+        "after": "Taking differentials of (2.30) defining $\\mathcal G_h$ and then wedge products and summing, we have\n\\[\\sum_i dQ_i\\wedge dP_i=\\sum_i dq_i\\wedge dP_i+h\\sum_i\\sum_j H_{p_iq_j}dq_j\\wedge dP_i+h\\sum_i\\sum_j H_{p_ip_j}dP_j\\wedge dP_i.\\]\nThe last term on the right vanishes by equality of mixed partials and the antisymmetry of the wedge product. On the other hand, using (2.29), we obtain, by similar means,\n\\[\\sum_i dq_i\\wedge dP_i=\\sum_i dq_i\\wedge dp_i-h\\sum_i\\sum_j H_{q_ip_j}dq_i\\wedge dP_j.\\]\nRelabelling the indices in this sum and using our previous work results in\n\\[\\sum_i dQ_i\\wedge dP_i=\\sum_i dq_i\\wedge dp_i,\\]\nimplying that the method is symplectic."
+      }
+    },
+    "issue_codes": [
+      "SOURCE_TRANSCRIPTION_AND_ELLIPSIS"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-2.5.2-GeneralVerletSymplectic",
+    "batch": "EAUDIT95",
+    "fields": {
+      "statement_latex": {
+        "before": "To see that it is symplectic, we first note that this is a symmetric composition",
+        "after": "To see that it is symplectic, we first note that this is a symmetric composition of the form\n\\[\\mathcal K_h=\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2},\\]\nwhere \\(\\mathcal G_h\\) is defined by\n\\[\\boldsymbol P=\\boldsymbol p-h\\nabla_q H(\\boldsymbol q,\\boldsymbol P),\\tag{2.29}\\]\n\\[\\boldsymbol Q=\\boldsymbol q+h\\nabla_p H(\\boldsymbol q,\\boldsymbol P).\\tag{2.30}\\]"
+      }
+    },
+    "issue_codes": [
+      "OMITTED_DISPLAYED_FORMULAS"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "batch": "EAUDIT57",
+  "input_sha256": {
+    "BATCH_EAUDIT57.md": "c53ea29632e2d8101ac83ad8684234f8fbfceffbd136c9a1cd3499be349b338e",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.4.1-CircleInitialLaw",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R6_任务.md:1085：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第14页＝PDF223／印刷202，中段“choose the initial momenta from the uniform distribution on the circle…”及圆方程吻合。",
+          "R6_evidence/page_14.png与page_11.png相同；已检查测度限制是Ioc 0 (2π)、系数为ENNReal.ofReal (2π)的倒数，以及Measure.map的方向。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.circleInitialLaw",
+        "verdict": "PASS",
+        "explanation": "circleInitialLaw对固定κ,l,ε,c,x及其可行性、区间资格，定义Phase 2上的真实Measure.map。原测度是(2π)⁻¹倍的Lebesgue测度在(0,2π]上的限制；π>0，区间长度为2π，归一化系数和端点选择正确。推前映射恰是条目10的实际可行接口，关于θ连续，因此推前确有概率总质量1；没有把“尚未证明概率实例”误作公式错误。当R>0，这给出固定位置下对动量圆的均匀角/归一化弧长概率分布；R=0时退化为该固定相点的Dirac概率。原文没有指定跨x的联合抽样规律，本定义也没有擅加x均匀性或不同x之间的独立性。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-CircleInitialEnergy",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_EXCERPT_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-CircleInitialEnergy",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "202",
+          "pdf_page": "223",
+          "statement_latex": "In this way we again get initial conditions on the $H=E_0$ energy surface,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_EXCERPT_PUNCTUATION",
+              "phase": "A",
+              "field": "statement_latex/statement_scope",
+              "message": "原书该处是“In this way … energy surface, but this time …”同一长句。原JSON把前半句的逗号改成句号而未标摘录；恢复逗号并明确仅摘取前半句。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.circleInitialEnergy",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]固定位置的实动量圆，根号非负；全能量等式不意味着极限图像填满可达区域。",
+            "[EXTRA] 原能量恒等式保留为正式库总延拓的辅助证明；本条适用前提仍是非负能差，实际取样主接口由CircleInitialPoints/Law限定区间及可行域。"
+          ],
+          "statement_scope": "仅摘录原长句截至energy surface后的前半句（保留原逗号）；后半句关于样本在相空间可能相距很远的定性说明见MD-5.4.1-CircleInitialPoints。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT16_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:11:44.974098",
+              "before_sha256": "eb6cda603046bb1c7f9ae602cfd0a6954e8026ebfe8a6d42776462a865db1957",
+              "after_sha256": "8510eb5cc3ba09d3103caf1c9b2aca0432f23467af85cdca898b7761f65e36d7",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH21_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_EXCERPT_PUNCTUATION",
+            "phase": "A",
+            "field": "statement_latex/statement_scope",
+            "message": "原书该处是“In this way … energy surface, but this time …”同一长句。原JSON把前半句的逗号改成句号而未标摘录；恢复逗号并明确仅摘取前半句。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:1209：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第15页＝PDF223／印刷202，中段“In this way…”跨行原句；能量面是H=E₀，surface后实际为逗号，随后接but this time。",
+          "R6_evidence/page_15.png与page_11.png相同；已核对z.2两个动量坐标、z.1势能位置及非负能差前提。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.circleInitialEnergy",
+        "verdict": "PASS",
+        "explanation": "circleInitialEnergy对所有κ,l,ε,c,x,θ∈ℝ，仅要求c−U(x,0)≥0，在circleInitialPoints_total上断言两动量平方和的一半加同一势能等于c。cos²θ+sin²θ=1及非负根号平方给出该恒等式，动能系数与圆半径的因子2相抵；R=0同样成立。本条作为辅助总定义的结论不限制x区间是正确的推广，实际书中抽样接口的区间限制在条目10、11，且两种点定义在其共同可行域的表达式相同。没有偷换势能，未把能量等式本身作前提。",
+        "counterexample": null,
+        "suggested_fix": "采用corrected_json中的摘录边界和标点说明；不要据此增加能量恒等式所不需要的参数或区间前提。"
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

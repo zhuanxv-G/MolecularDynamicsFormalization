@@ -1,0 +1,178 @@
+[
+  {
+    "number": 1,
+    "source_ids": [
+      "MD-4-PRKThreshold"
+    ]
+  },
+  {
+    "number": 2,
+    "source_ids": [
+      "MD-4-SymplecticEulerBoundaryPrinted",
+      "MD-4-VerletBoundaryPrinted",
+      "MD-4-VerletStability",
+      "MD-4-SymplecticEulerUnitRoots",
+      "MD-4-SymplecticEulerStability"
+    ]
+  },
+  {
+    "number": 3,
+    "source_ids": [
+      "MD-4.1-ActualMidpointRelation",
+      "MD-4.1-PrintedImplicitRelation"
+    ]
+  },
+  {
+    "number": 4,
+    "source_ids": [
+      "MD-4.1-PrintedModifiedFrequency",
+      "MD-4.1-ImplicitModulus"
+    ]
+  },
+  {
+    "number": 5,
+    "source_ids": [
+      "MD-4.2.1-RESPAStructure"
+    ]
+  },
+  {
+    "number": 6,
+    "source_ids": [
+      "MD-4.2.1-ResonanceEigenPrinted",
+      "MD-4.2.1-ResonanceTaylor"
+    ]
+  },
+  {
+    "number": 7,
+    "source_ids": [
+      "MD-4.2.1-ResonanceGrowth",
+      "MD-4.2.1-ResonanceLinearRate"
+    ]
+  },
+  {
+    "number": 8,
+    "source_ids": [
+      "MD-4.3-ConstraintSet"
+    ]
+  },
+  {
+    "number": 9,
+    "source_ids": [
+      "MD-4.3-RestraintForcePrinted"
+    ]
+  },
+  {
+    "number": 10,
+    "source_ids": [
+      "MD-4.3-ConstrainedPendulum"
+    ]
+  },
+  {
+    "number": 11,
+    "source_ids": [
+      "MD-4.3.2-PositionEulerForceConvention",
+      "MD-4.3.4-GramProjectedEuler",
+      "MD-4.3.4-ProjectedEulerRelation",
+      "MD-4.3.5-ConstrainedOrders"
+    ]
+  },
+  {
+    "number": 12,
+    "source_ids": [
+      "MD-4.3.2-FrozenGramPrinted",
+      "MD-4.3.2-FrozenNewtonConstraint"
+    ]
+  },
+  {
+    "number": 13,
+    "source_ids": [
+      "MD-4.3.2-ProjectionScale"
+    ]
+  },
+  {
+    "number": 14,
+    "source_ids": [
+      "MD-4.3.3-ComponentPrinted",
+      "MD-4.3.3-ComponentSweep"
+    ]
+  },
+  {
+    "number": 15,
+    "source_ids": [
+      "MD-4.3.4-Lemma41"
+    ]
+  },
+  {
+    "number": 16,
+    "source_ids": [
+      "MD-4.3.5-SHAKEPositionMass"
+    ]
+  },
+  {
+    "number": 17,
+    "source_ids": [
+      "MD-4.3.5-StaggeredConstraint"
+    ]
+  },
+  {
+    "number": 18,
+    "source_ids": [
+      "MD-4.3.5-SHAKERATTLEEquivalence"
+    ]
+  },
+  {
+    "number": 19,
+    "source_ids": [
+      "MD-4.3.5-SHAKEElimination"
+    ]
+  },
+  {
+    "number": 20,
+    "source_ids": [
+      "MD-4.3.5-SHAKEPositionOrder"
+    ]
+  },
+  {
+    "number": 21,
+    "source_ids": [
+      "MD-4.4-InertiaTracePrinted"
+    ]
+  },
+  {
+    "number": 22,
+    "source_ids": [
+      "MD-4.4-DipolarRotationalPrinted"
+    ]
+  },
+  {
+    "number": 23,
+    "source_ids": [
+      "MD-4.4-RotationDerivativePrinted"
+    ]
+  },
+  {
+    "number": 24,
+    "source_ids": [
+      "MD-4.4.1-PrincipalAxisField",
+      "MD-4.4.1-SecondAxisPrinted",
+      "MD-4.4.1-ThirdAxisPrinted"
+    ]
+  },
+  {
+    "number": 25,
+    "source_ids": [
+      "MD-4.4.1-AxisFlowFormal",
+      "MD-4.4.1-ExactPlanarRotation"
+    ]
+  },
+  {
+    "number": 26,
+    "source_ids": [
+      "MD-4.4.2-DLMMassOnly",
+      "MD-4.4.2-DLMPrintedSystem",
+      "MD-4.4.2-DLMPrintedSystemStructure",
+      "MD-4.4.2-DLMStructureFormal",
+      "MD-4.4.2-DLMPrinted"
+    ]
+  }
+]

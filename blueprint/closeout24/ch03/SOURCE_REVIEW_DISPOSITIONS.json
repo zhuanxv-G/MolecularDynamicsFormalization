@@ -1,0 +1,732 @@
+[
+  {
+    "source_id": "MD-3-ModifiedConstruction",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "C_REGULARITY_MISMATCH",
+      "EXTRA_INACCURATE_REGULARITY"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.1-EnergyFailure",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.1-ShadowInvariant",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.1-FormalHamiltonian",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.1-FormalHamiltonianField",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.2-ObservableDerivative",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.2-PoissonBracket",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.2-PoissonCoordinates",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.2-PoissonBilinearity",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "A_DISCUSSION_PUNCTUATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.2-PoissonSkew",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "A_DISCUSSION_PUNCTUATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.2-PoissonSelf",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "A_DISCUSSION_PUNCTUATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.2-PoissonJacobi",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "A_DISCUSSION_PUNCTUATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.2-HamiltonianLie",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3-HamiltonianLieAdditivity",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3-FormalSplitting",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3-ExactExponentialCubic",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3-DifferenceCommutator",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "A_DISPLAY_TERM_OMITTED",
+      "C_EXTRA_CUBIC_MISSING"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3-DifferenceCubic",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3-LeadingModifiedExponential",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_MATHEMATICAL_ERROR",
+      "ANNOTATION_FALSE_ALARM",
+      "LEAN_SCOPE_RESTRICTED"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3-CommutingFlows",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.1-SymplecticEulerShadowMatching",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "RESOLVED_ORDER_AND_COORDINATE_QUERY"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.2-VerletHamiltonianParts",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_GENERAL_T_SCOPE_ERROR"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.2-VerletModifiedMatching",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_GENERAL_T_SCOPE_ERROR",
+      "FALSE_GENERAL_MATCHING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.2-ModifiedEven",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_PROOF_GAP"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.2-Strang",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "ANNOTATION_FALSE_ALARM",
+      "INCOMPLETE_LEAN_CONCLUSION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.2-StrangCubic",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.3-YoshidaRaiseOrder",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.3-Yoshida4",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.3-Yoshida4Structure",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_PUNCTUATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.4-TakahashiPotential",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.3.4-TakahashiShadow",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-LeadingModifiedField",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-TruncatedHamiltonian",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-TruncationSmooth",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-Thm3.1",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_MATHEMATICAL_AMBIGUITY",
+      "SOURCE_INEQUALITY_TRANSCRIPTION",
+      "SOURCE_ACCENT_TRANSCRIPTION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-TruncatedFlow",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-FiniteMatchingConstruction",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "SMOOTHNESS_DOMAIN_MISMATCH",
+      "EXTRA_ASSUMPTION_MISDISCLOSURE"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-TruncatedConservation",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "PRINTED_MATHEMATICAL_AMBIGUITY"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-EnergyTelescoping",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "PRINTED_MATHEMATICAL_AMBIGUITY"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-UniformTruncatedLipschitz",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "PRINTED_MATHEMATICAL_AMBIGUITY"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-TruncationRemainder",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-PhysicalEnergyDrift",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "PRINTED_MATHEMATICAL_AMBIGUITY"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-StepCountPower",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-ArbitraryFiniteTruncation",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "C_SMOOTHNESS_SCOPE_MISMATCH"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.4-ScalarVerletShadow4",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "A_FORMULA_NOT_LITERAL",
+      "SOURCE_SHADOW_COEFFICIENT_SUSPECT",
+      "C_FALSE_ADDED_MATCHING"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.5-LinearEulerIntegral",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.5-VerletOscillatorEnergy",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_STABILITY_QUALIFICATION_MISSING",
+      "SOURCE_EULER_DEGENERATE_CASES",
+      "C_SCOPE_MAPPING_UNVERIFIED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.5-MomentumProjection",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.5-ProjectionConstraint",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.5-ProjectionFactor",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.5-NoHamiltonianAttractor",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6-HamiltonianFlowStructures",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "JSON_STALE_LEAN_DESCRIPTION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6-VolumeNotSymplectic",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "JSON_STALE_LEAN_DESCRIPTION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.1-MechanicalReversal",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "JSON_STALE_REVERSAL_DESCRIPTION",
+      "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedTrajectory",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.1-MechanicalReversalCorrect",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.2-FlowReversal",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.2-FlowReversalIdentity",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.2-SymmetricMethod",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.2-AffineInvariant",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_TRANSFORMED_COORDINATE_TYPO"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.2-SymmetricAffineReversible",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_METHOD_CLASS_QUALIFICATION_MISSING"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.2-RKAffine",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_PRK_GENERALITY",
+      "SOURCE_REVERSIBILITY_CONTEXT"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.2-PartitionedAffine",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_PRK_GENERALITY"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.3-TrapezoidalProperties",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.3-SymplecticSpectrum",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "STALE_SCOPE_ANNOTATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.6.3-ConjugateIterates",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_INVERTIBILITY_AMBIGUITY",
+      "STALE_SCOPE_ANNOTATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.7-HardCoreDomain",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "INCOMPLETE_STATEMENT_COVERAGE"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.7-CollisionComposition",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "UNSPECIFIED_TIME_LIST_ORDER",
+      "ABSTRACT_COMBINATOR_SCOPE"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.7-CollisionRegularity",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "SMOOTH_VS_ANALYTIC",
+      "EXTRA_SIGNATURE_MISMATCH"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.7.1-HardCorePotential",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_CONTACT_BOUNDARY_CONFLICT"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.7.1-ObstacleReflection",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.7.1-PrimitiveDefect",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "STALE_MOMENTUM_ANNOTATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.7.1-FreeHardSphereHamiltonian",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_CONTACT_BOUNDARY_CONFLICT",
+      "STALE_BOUNDARY_ANNOTATION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionTimeRelation",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "STALE_CVA_ANNOTATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionalVerletRelation",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_EQUALITY_BRANCH"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-3.7.3-ModifiedCollisionProjection",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "UNBOUND_MODIFIED_HAMILTONIAN",
+      "INCOMPLETE_STATEMENT_COVERAGE"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  }
+]

@@ -196,11 +196,23 @@ theorem densityProbabilityBounds : ∀ n (D A : Set (MolecularDynamics.Chapter05
   exact setIntegral_mono_set hp.1.2.2.2 hnD (Filter.Eventually.of_forall hAD)
 
 /-- source_id: MD-5.2.1-DomainL2 · definition · §5.2.1 · 印刷p.183 / PDFp.204
-[EXTRA] [EXTRA]Mathlib Lp使用Lebesgue可测函数的AE等价类；书中未写商空间，若不取AE类，所谓范数可能为0而原始函数非零。保留一般D；透明别名复用实际Lp的实例。 -/
+[EXTRA] [EXTRA]Mathlib Lp使用Lebesgue可测函数的AE等价类；书中未写商空间，若不取AE类，所谓范数可能为0而原始函数非零。保留一般D；透明别名复用实际Lp的实例。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：明确采用Lebesgue可测函数按几乎处处相等取商的Lp空间；原生函数集合不直接宣称为Hilbert空间。
+-/
 @[reducible] def domainL2 (n : ℕ) (D : Set (MolecularDynamics.Chapter05Review.E n)) := Lp ℝ 2 (volume.restrict D)
 
-/-- source_id: MD-5.2.1-L2Norm · definition · §5.2.1 · 印刷p.183 / PDFp.204 -/
+
+
+/-- 修正版，对应原文 MD-5.2.1-DomainL2。改动：明确采用Lebesgue可测函数按几乎处处相等取商的Lp空间；原生函数集合不直接宣称为Hilbert空间。 -/
+@[reducible] def domainL2_corrected (n : ℕ) (D : Set (MolecularDynamics.Chapter05Review.E n)) := Lp ℝ 2 (volume.restrict D)
+
+/-- source_id: MD-5.2.1-L2Norm · definition · §5.2.1 · 印刷p.183 / PDFp.204 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def domainL2Norm {n : ℕ} {D : Set (MolecularDynamics.Chapter05Review.E n)} (g : domainL2 n D) := ‖g‖
+
+
+
+/-- 修正版，对应原文 MD-5.2.1-L2Norm。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def domainL2Norm_corrected {n : ℕ} {D : Set (MolecularDynamics.Chapter05Review.E n)} (g : domainL2 n D) := ‖g‖
 
 /-- source_id: MD-5.2.1-L2Inner · definition · §5.2.1 · 印刷p.183 / PDFp.204 -/
 def domainL2Inner {n : ℕ} {D : Set (MolecularDynamics.Chapter05Review.E n)} (f g : domainL2 n D) : ℝ :=
@@ -214,8 +226,17 @@ theorem domainL2NormSquare : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E
   simpa only [MeasureTheory.L2.inner_def,Real.inner_apply] using (real_inner_self_eq_norm_sq g).symm
 
 /-- source_id: MD-5.2.1-L2Complete · unnumbered_claim · §5.2.1 · 印刷p.183 / PDFp.204
-[EXTRA] [EXTRA]完备结论在AE商L²上；原生函数集合的正定性缺AE资格。 -/
+[EXTRA] [EXTRA]完备结论在AE商L²上；原生函数集合的正定性缺AE资格。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem domainL2Complete : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (u : ℕ → domainL2 n D),
+  CauchySeq u → ∃ v : domainL2 n D,Tendsto u atTop (𝓝 v) := by
+  intro n D u hu
+  exact cauchySeq_tendsto_of_complete hu
+
+
+
+/-- 修正版，对应原文 MD-5.2.1-L2Complete。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem domainL2Complete_corrected : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n)) (u : ℕ → domainL2 n D),
   CauchySeq u → ∃ v : domainL2 n D,Tendsto u atTop (𝓝 v) := by
   intro n D u hu
   exact cauchySeq_tendsto_of_complete hu
@@ -355,15 +376,26 @@ theorem massDerivative_smooth (n : ℕ)
   sorry
 
 /-- source_id: MD-5.2.2-OutwardNormal · definition · §5.2.2 · 印刷p.184 / PDFp.205
-[EXTRA] [EXTRA]通过局部真实光滑定义函数r的负侧表示域，并由实际梯度定义正向单位法线。这里采用C²光滑边界资格；矩形的角点另条以分面公式保存，不假设边界通量恒等式。 -/
+[EXTRA] [EXTRA]通过局部真实光滑定义函数r的负侧表示域，并由实际梯度定义正向单位法线。这里采用C²光滑边界资格；矩形的角点另条以分面公式保存，不假设边界通量恒等式。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def outwardNormalFor {n : ℕ} (A : Set (MolecularDynamics.Chapter05Review.E n)) (ν : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
   ∀ z ∈ frontier A,∃ O : Set (MolecularDynamics.Chapter05Review.E n),∃ r : MolecularDynamics.Chapter05Review.E n → ℝ,
     IsOpen O ∧ z ∈ O ∧ ContDiffOn ℝ 2 r O ∧
     (∀ x ∈ O,x ∈ A ↔ r x < 0) ∧ MolecularDynamics.Chapter05Review.grad r z ≠ 0 ∧
     ν z=‖MolecularDynamics.Chapter05Review.grad r z‖⁻¹ • MolecularDynamics.Chapter05Review.grad r z
 
+
+
+/-- 修正版，对应原文 MD-5.2.2-OutwardNormal。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def outwardNormalFor_corrected {n : ℕ} (A : Set (MolecularDynamics.Chapter05Review.E n)) (ν : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
+  ∀ z ∈ frontier A,∃ O : Set (MolecularDynamics.Chapter05Review.E n),∃ r : MolecularDynamics.Chapter05Review.E n → ℝ,
+    IsOpen O ∧ z ∈ O ∧ ContDiffOn ℝ 2 r O ∧
+    (∀ x ∈ O,x ∈ A ↔ r x < 0) ∧ MolecularDynamics.Chapter05Review.grad r z ≠ 0 ∧
+    ν z=‖MolecularDynamics.Chapter05Review.grad r z‖⁻¹ • MolecularDynamics.Chapter05Review.grad r z
+
 /-- source_id: MD-5.2.2-GeneralFluxBalance · unnumbered_claim · §5.2.2 · 印刷p.184 / PDFp.205
-[EXTRA] [EXTRA]保留一般开放流不变相空间D，A闭包在D内，实际受限密度Measure.map条件及光滑有界域/真实法线资格；不要求ρ在D外光滑或归一化。两个原通量与散度结论都保存。矩形分面版本另列，未用单一区域计算替代此条。 -/
+[EXTRA] [EXTRA]保留一般开放流不变相空间D，A闭包在D内，实际受限密度Measure.map条件及光滑有界域/真实法线资格；不要求ρ在D外光滑或归一化。两个原通量与散度结论都保存。矩形分面版本另列，未用单一区域计算替代此条。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem generalFluxBalance : ∀ n (D A : Set (MolecularDynamics.Chapter05Review.E n)) (ν f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
   (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ),
   0 < n → IsOpen D → IsOpen A → closure A ⊆ D → Bornology.IsBounded A → outwardNormalFor A ν →
@@ -375,6 +407,25 @@ theorem generalFluxBalance : ∀ n (D A : Set (MolecularDynamics.Chapter05Review
     (∫ z in A,MolecularDynamics.Chapter05Review.divergence (fun x => ρ t x • f x) z)=
       ∫ z in frontier A,(inner ℝ (f z) (ν z))*ρ t z ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1)) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.2.2-GeneralFluxBalance。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem generalFluxBalance_corrected : ∀ n (D A : Set (MolecularDynamics.Chapter05Review.E n)) (ν f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+  (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ),
+  0 < n → IsOpen D → IsOpen A → closure A ⊆ D → Bornology.IsBounded A → outwardNormalFor A ν →
+  ContDiffOn ℝ 1 f D → MolecularDynamics.Chapter05Review.flow f Φ → ContDiff ℝ 2 (Function.uncurry Φ) → (∀ t,Φ t '' D=D) →
+  ContDiffOn ℝ 1 (Function.uncurry ρ) (Set.univ ×ˢ D) → (∀ t,probabilityDensityOn D (ρ t)) →
+  (∀ t,densityMeasureOn D (ρ t)=MolecularDynamics.Chapter05Review.measurePropagator Φ t (densityMeasureOn D (ρ 0))) →
+  ∀ t,HasDerivAt (MolecularDynamics.Chapter05Review.massFraction ρ A)
+    (-(∫ z in frontier A,(inner ℝ (f z) (ν z))*ρ t z ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1)))) t ∧
+    (∫ z in A,MolecularDynamics.Chapter05Review.divergence (fun x => ρ t x • f x) z)=
+      ∫ z in frontier A,(inner ℝ (f z) (ν z))*ρ t z ∂(MolecularDynamics.Chapter05Review.hausdorffArea (n-1)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.2.2-Divergence · definition · §5.2.2 · 印刷p.185 / PDFp.206
 [EXTRA] [EXTRA]实际Fréchet导数的线性迹，等价坐标偏导和需要标准有限维接口；不以任意矩阵命名Jacobian。 
@@ -505,7 +556,8 @@ theorem truncatedIntegrationByParts : ∀ n (f : MolecularDynamics.Chapter05Revi
   sorry
 
 /-- source_id: MD-5.2.2-RapidAdjoint · unnumbered_claim · §5.2.2 · 印刷p.185–186 / PDFp.206–207
-[EXTRA] [EXTRA]快速衰减函数用真实SchwartzMap资格；明确混合乘积可积及原证明所用实际B→0条件（任意增长的f下不能仅凭u/v衰减推出）；不是把最终伴随等式作前提。 -/
+[EXTRA] [EXTRA]快速衰减函数用真实SchwartzMap资格；明确混合乘积可积及原证明所用实际B→0条件（任意增长的f下不能仅凭u/v衰减推出）；不是把最终伴随等式作前提。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem rapidAdjoint : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u v : MolecularDynamics.Chapter05Review.schwartzSpace n),
   0 < n → ContDiff ℝ 1 f →
   Integrable (fun z => u z*MolecularDynamics.Chapter05Review.lie f v z) volume →
@@ -513,6 +565,21 @@ theorem rapidAdjoint : ∀ n (f : MolecularDynamics.Chapter05Review.E n → Mole
   Tendsto (boxBoundaryTerm f u v) atTop (𝓝 0) →
   (∫ z,u z*MolecularDynamics.Chapter05Review.lie f v z)=(∫ z,MolecularDynamics.Chapter05Review.liouvillian f u z*v z) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.2.2-RapidAdjoint。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem rapidAdjoint_corrected : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u v : MolecularDynamics.Chapter05Review.schwartzSpace n),
+  0 < n → ContDiff ℝ 1 f →
+  Integrable (fun z => u z*MolecularDynamics.Chapter05Review.lie f v z) volume →
+  Integrable (fun z => MolecularDynamics.Chapter05Review.liouvillian f u z*v z) volume →
+  Tendsto (boxBoundaryTerm f u v) atTop (𝓝 0) →
+  (∫ z,u z*MolecularDynamics.Chapter05Review.lie f v z)=(∫ z,MolecularDynamics.Chapter05Review.liouvillian f u z*v z) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.2.2-CompactAdjoint · unnumbered_claim · §5.2.2 · 印刷p.185–186 / PDFp.206–207
 [EXTRA] [EXTRA]紧支持C¹版本，作为快速衰减完整条目的特殊情形另列；是微分表达式的积分配对，不是闭Hilbert算子伴随的域识别。 -/
@@ -550,7 +617,8 @@ theorem hamiltonianDivergence {Nc : ℕ}
   apply MolecularDynamics.textbookHamiltonianVectorField_divergence_zero <;> assumption
 
 /-- source_id: MD-5.2.3-HamiltonianSkewExpression · unnumbered_claim · §5.2.3 · 印刷p.186 / PDFp.207
-[EXTRA] [EXTRA]本条保留任意零散度场的实际表达式；Hamiltonian散度零另以正式库桥接；原书的skew-adjoint用语只作形式积分伴随记号，未声称已构造闭算子及其Hilbert空间定义域。 -/
+[EXTRA] [EXTRA]本条保留任意零散度场的实际表达式；Hamiltonian散度零另以正式库桥接；原书的skew-adjoint用语只作形式积分伴随记号，未声称已构造闭算子及其Hilbert空间定义域。 [EXTRA] 24号：零散度可微向量场的条件乘积恒等式；原段从Hamilton场推散度零的桥接另为覆盖义务，不在本条预先假设后再声称证明。
+-/
 theorem hamiltonianSkewExpression :
   ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ),
   Differentiable ℝ f → Differentiable ℝ u → (∀ z,MolecularDynamics.Chapter05Review.divergence f z=0) →
@@ -586,8 +654,13 @@ theorem mechanicalLiouvillianIdentity : ∀ n (m : Fin n → ℝ) (U : Molecular
   sorry
 
 /-- source_id: MD-5.3.1-TestSpace · definition · §5.3.1 · 印刷p.188 / PDFp.209 
-[EXTRA] 将Cω误编码改为原书C∞（scoped ∞）；只改Blueprint实际测试空间，正式库冻结。 -/
+[EXTRA] 将Cω误编码改为原书C∞（scoped ∞）；只改Blueprint实际测试空间，正式库冻结。 [EXTRA] 24号：紧支持C∞选项保留，并在同一source_id新增实际SchwartzMap选项testSpaceSchwartz；二者各自独立，不用其它条目的名称替代第二选项。
+-/
 def testSpace (n : ℕ) := {φ : MolecularDynamics.Chapter05Review.E n → ℝ // ContDiff ℝ ∞ φ ∧ HasCompactSupport φ}
+
+/-- 原文第二选项，独立保留Schwartz空间。 -/
+def testSpaceSchwartz (n : ℕ) := SchwartzMap (MolecularDynamics.Chapter05Review.E n) ℝ
+
 
 /-- source_id: MD-5.3.1-SchwartzSpace · definition · §5.3.1 · 印刷p.188 / PDFp.209
 [EXTRA] [EXTRA]Mathlib实际SchwartzMap以全阶Fréchet导数及多项式权界编码快速衰减；使用其既有空间，未把名称当任意类型。 -/
@@ -775,7 +848,8 @@ def ensembleAverageOn {n : ℕ} (D : Set (MolecularDynamics.Chapter05Review.E n)
   densityAverageOn D (ρ t) φ
 
 /-- source_id: MD-5.3.2-ConvergenceHeuristic · unnumbered_claim · §5.3.2 · 印刷p.190 / PDFp.211
-[EXTRA] [EXTRA]实际流、流不变D、原Hamiltonian背景使用的体积保持先验、平滑概率密度和紧支持测试函数明示；不替换成任意标量函数，不将最终平均收敛作假设。 -/
+[EXTRA] [EXTRA]实际流、流不变D、原Hamiltonian背景使用的体积保持先验、平滑概率密度和紧支持测试函数明示；不替换成任意标量函数，不将最终平均收敛作假设。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：导数趋零不蕴含函数收敛；修正版对真实观测平均A显式采用一阶连续可微及导数在正半轴绝对可积的充分条件。将A实例化为原平均仍需积分换导资格，单列覆盖缺口。
+-/
 theorem convergenceHeuristic : ∀ n (D : Set (MolecularDynamics.Chapter05Review.E n))
     (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) Φ (ρ : ℝ → MolecularDynamics.Chapter05Review.E n → ℝ) (φ : MolecularDynamics.Chapter05Review.E n → ℝ),
   NullMeasurableSet D volume → MolecularDynamics.Chapter05Review.flow f Φ → (∀ t,Φ t '' D=D) →
@@ -786,6 +860,18 @@ theorem convergenceHeuristic : ∀ n (D : Set (MolecularDynamics.Chapter05Review
   Tendsto (fun t => ∫ z in D,φ z*deriv (fun s => ρ s z) t) atTop (𝓝 0) →
     ∃ L : ℝ,Tendsto (ensembleAverageOn D ρ φ) atTop (𝓝 L) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.3.2-ConvergenceHeuristic。改动：导数趋零不蕴含函数收敛；修正版对真实观测平均A显式采用一阶连续可微及导数在正半轴绝对可积的充分条件。将A实例化为原平均仍需积分换导资格，单列覆盖缺口。 -/
+theorem convergenceHeuristic_corrected (A : ℝ → ℝ)
+    (_hA : ContDiff ℝ 1 A) (_hint : IntegrableOn (deriv A) (Ici (0 : ℝ))) :
+    ∃ L : ℝ, Tendsto A atTop (𝓝 L) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.3.2-HamiltonianEnergyIntegral · unnumbered_claim · §5.3.2 · 印刷p.190 / PDFp.211 
 [EXTRA] 补真实Hamiltonian场的−div(u f)=−L_f u及实际解上能量恒定，H为C²、u为C¹、合法闭区间轨道；保留已证L_fH=0，不把散度零/能量守恒当假设。 -/
@@ -840,7 +926,8 @@ def microRaw {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : 
   (MolecularDynamics.Chapter05Review.surfaceMeasure H c).withDensity (fun z => ENNReal.ofReal (‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹))
 
 /-- source_id: MD-5.3.2-ShellWeakPrinted · unnumbered_claim · §5.3.2 · 印刷p.191 / PDFp.212
-[EXTRA] [EXTRA]此处记录全相空间版本D=ℝ^m，微正则测度定义给出分布配对目标；其他约束需重定义相应曲面。 -/
+[EXTRA] [EXTRA]此处记录全相空间版本D=ℝ^m，微正则测度定义给出分布配对目标；其他约束需重定义相应曲面。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：删除重复归一化，补紧正则能量带作为尾部控制充分资格；Hamilton不变性不由本极限定理替代。
+-/
 theorem shellWeakPrinted :
   ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
   ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c → ∀ φ : MolecularDynamics.Chapter05Review.testSpace n,
@@ -848,9 +935,26 @@ theorem shellWeakPrinted :
       (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microAverage H c φ.1)) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-5.3.2-ShellWeakPrinted。改动：删除重复归一化，补紧正则能量带作为尾部控制充分资格；Hamilton不变性不由本极限定理替代。 -/
+theorem shellWeakPrinted_corrected :
+  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
+  ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
+  (∃ δ > 0, IsCompact {z | |H z-c| ≤ δ} ∧
+    ∀ z, |H z-c| ≤ δ → MolecularDynamics.Chapter05Review.grad H z ≠ 0) → ∀ φ : MolecularDynamics.Chapter05Review.testSpace n,
+    Tendsto (fun ε => (∫ z,φ.1 z*MolecularDynamics.Chapter05Review.shellDensity H c ε z))
+      (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microAverage H c φ.1)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-5.3.2-ShellWeakLimitCorrected · unnumbered_claim · §5.3.2 · 印刷p.191 / PDFp.212
 [EXTRA] [EXTRA]独立修正版：不再对已归一化ρ_ε重复除Zε；可达非空正则能量、C²、紧带及小ε权可积/分母正，全部明示。采用D=ℝ^m；不覆盖附加其他守恒约束的情形。 
-[EXTRA] 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 -/
+[EXTRA] 恢复原smooth的C∞资格（∞），不把Cω误作C∞；旧证明重查，必要时按≤3次规则记录占位。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem shellWeakLimit :
   ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
   0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c → (∃ z,H z=c) →
@@ -860,8 +964,25 @@ theorem shellWeakLimit :
     (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microAverage H c φ.1)) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-5.3.2-ShellWeakLimitCorrected。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem shellWeakLimit_corrected :
+  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
+  0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c → (∃ z,H z=c) →
+  (∃ δ > 0, IsCompact {z | |H z-c| ≤ δ} ∧ (∀ ε ∈ Ioo 0 δ,
+    Integrable (MolecularDynamics.Chapter05Review.shellWeight H c ε) volume ∧ 0 < MolecularDynamics.Chapter05Review.shellPartition H c ε)) →
+  ∀ φ : MD.Ch05.testSpace n, Tendsto (fun ε => ∫ z,φ.1 z*MolecularDynamics.Chapter05Review.shellDensity H c ε z)
+    (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microAverage H c φ.1)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-5.3.2-SurfaceAreaFormula · unnumbered_claim · §5.3.2 · 印刷p.191 / PDFp.212
-[EXTRA] [EXTRA]单射C¹浸入及实际Gram矩阵；书中的图须避免重复覆盖和退化，不能把任意光滑映射当无重数面积参数化。 -/
+[EXTRA] [EXTRA]单射C¹浸入及实际Gram矩阵；书中的图须避免重复覆盖和退化，不能把任意光滑映射当无重数面积参数化。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem surfaceAreaFormula :
   ∀ d (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E (d+1)) (U : Set (MolecularDynamics.Chapter05Review.E d)),
   IsOpen U → ContDiffOn ℝ 1 g U → Function.Injective g →
@@ -871,6 +992,23 @@ theorem surfaceAreaFormula :
       inner ℝ ((fderiv ℝ g x) (WithLp.toLp 2 (Pi.single i 1)))
         ((fderiv ℝ g x) (WithLp.toLp 2 (Pi.single j 1))) : Matrix (Fin d) (Fin d) ℝ)) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.3.2-SurfaceAreaFormula。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem surfaceAreaFormula_corrected :
+  ∀ d (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E (d+1)) (U : Set (MolecularDynamics.Chapter05Review.E d)),
+  IsOpen U → ContDiffOn ℝ 1 g U → Function.Injective g →
+  (∀ x ∈ U,Function.Injective (fderiv ℝ g x)) →
+  ((MolecularDynamics.Chapter05Review.hausdorffArea d) (g '' U)).toReal=
+    ∫ x in U,Real.sqrt (Matrix.det (fun i j : Fin d =>
+      inner ℝ ((fderiv ℝ g x) (WithLp.toLp 2 (Pi.single i 1)))
+        ((fderiv ℝ g x) (WithLp.toLp 2 (Pi.single j 1))) : Matrix (Fin d) (Fin d) ℝ)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.3.2-NormalField · definition · §5.3.2 · 印刷p.192 / PDFp.213 -/
 def normalField {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (z : MolecularDynamics.Chapter05Review.E n) := ‖MolecularDynamics.Chapter05Review.grad H z‖⁻¹ • MolecularDynamics.Chapter05Review.grad H z
@@ -895,7 +1033,8 @@ theorem normalInverseTaylor : ∀ n (H : MolecularDynamics.Chapter05Review.E n �
   sorry
 
 /-- source_id: MD-5.3.2-PatchShellVolume · unnumbered_claim · §5.3.2 · 印刷p.192–193 / PDFp.213–214
-[EXTRA] [EXTRA]实际紧可测正则曲面片M及薄法线管；原“clearly”体积式实际还需法线管Jacobian=1+O(ξ)，不是一般曲面的精确体积等式；最终O(ΔE)误差保留。 -/
+[EXTRA] [EXTRA]实际紧可测正则曲面片M及薄法线管；原“clearly”体积式实际还需法线管Jacobian=1+O(ξ)，不是一般曲面的精确体积等式；最终O(ΔE)误差保留。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem patchShellVolume : ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (M : Set (MolecularDynamics.Chapter05Review.E n)),
   0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
   IsCompact M → MeasurableSet M → M ⊆ MolecularDynamics.Chapter05Review.energySurface H c →
@@ -905,8 +1044,25 @@ theorem patchShellVolume : ∀ n (H : MolecularDynamics.Chapter05Review.E n → 
         ((MolecularDynamics.Chapter05Review.microRaw H c) M).toReal| ≤ C*e := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-5.3.2-PatchShellVolume。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem patchShellVolume_corrected : ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (M : Set (MolecularDynamics.Chapter05Review.E n)),
+  0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
+  IsCompact M → MeasurableSet M → M ⊆ MolecularDynamics.Chapter05Review.energySurface H c →
+  ∃ C > 0,∃ δ > 0,∀ e ∈ Ioo 0 δ,
+    |(volume {x | ∃ z ∈ M,∃ s ∈ Ico (0 : ℝ) δ,
+        x=z+s • MolecularDynamics.Chapter05Review.normalField H z ∧ H x-H z ≤ e}).toReal/e-
+        ((MolecularDynamics.Chapter05Review.microRaw H c) M).toReal| ≤ C*e := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-5.3.2-WholeShellVolumeLimit · unnumbered_claim · §5.3.2 · 印刷p.192–193 / PDFp.213–214
-[EXTRA] [EXTRA]整个正则紧能量面的壳层极限特例，原任意紧曲面片及O(ΔE)结论另条保留，不用特例替换原全结论。 -/
+[EXTRA] [EXTRA]整个正则紧能量面的壳层极限特例，原任意紧曲面片及O(ΔE)结论另条保留，不用特例替换原全结论。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem shellVolumeLimit :
   ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
   0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
@@ -914,6 +1070,21 @@ theorem shellVolumeLimit :
   Tendsto (fun ε => (volume {z | c ≤ H z ∧ H z ≤ c+ε}).toReal/ε)
     (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microPartition H c)) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.3.2-WholeShellVolumeLimit。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem shellVolumeLimit_corrected :
+  ∀ n (H : MolecularDynamics.Chapter05Review.E n → ℝ) c,
+  0 < n → ContDiff ℝ 2 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
+  (∃ δ > 0,IsCompact {z | |H z-c| ≤ δ} ∧ ∀ z, |H z-c| ≤ δ → MolecularDynamics.Chapter05Review.grad H z ≠ 0) →
+  Tendsto (fun ε => (volume {z | c ≤ H z ∧ H z ≤ c+ε}).toReal/ε)
+    (𝓝[>] 0) (𝓝 (MolecularDynamics.Chapter05Review.microPartition H c)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.3.2-MicroRawInvariant · unnumbered_claim · §5.3.2 · 印刷p.193 / PDFp.214
 [EXTRA] [EXTRA]原正文调用的实际全流、体积与能量保持先验明确写出；需要推出的是曲面加权raw测度保持，未把该结论作前提。 -/
@@ -938,8 +1109,15 @@ theorem microInvariant :
 def microPartition {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) := ((MolecularDynamics.Chapter05Review.microRaw H c) univ).toReal
 
 /-- source_id: MD-5.3.2-ShellPointValuePrinted · notation · §5.3.2 · 印刷p.191 / PDFp.212
-[EXTRA] [EXTRA]Lean仅提供良类型的测试函数配对记号，不把配对记号的编译当原印刷等式的证明；完整正确弱极限另条，重复Z版本也保留。 -/
+[EXTRA] [EXTRA]Lean仅提供良类型的测试函数配对记号，不把配对记号的编译当原印刷等式的证明；完整正确弱极限另条，重复Z版本也保留。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def shellWeakPairing {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (φ : MolecularDynamics.Chapter05Review.E n → ℝ) :=
+  MolecularDynamics.Chapter05Review.microAverage H c φ
+
+
+
+/-- 修正版，对应原文 MD-5.3.2-ShellPointValuePrinted。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def shellWeakPairing_corrected {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (φ : MolecularDynamics.Chapter05Review.E n → ℝ) :=
   MolecularDynamics.Chapter05Review.microAverage H c φ
 
 /-- source_id: MD-5.3.2-HarmonicEnergy · Example 5.1 · §5.3.2 · 印刷p.193 / PDFp.214 
@@ -953,16 +1131,31 @@ theorem harmonicEnergy_ellipse (Ω c : ℝ) (_hΩ : Ω ≠ 0) (_hc : 0 < c)
   sorry
 
 /-- source_id: MD-5.3.2-HarmonicQuadraturePrinted · unnumbered_claim · §5.3.2 · 印刷p.193 / PDFp.214
-[EXTRA] [EXTRA]Ω>0及E>0，保存两个不同实际积分上界；端点导数用实平方根总化表达，不提升为已识别曲面面积。 -/
+[EXTRA] [EXTRA]Ω>0及E>0，保存两个不同实际积分上界；端点导数用实平方根总化表达，不提升为已识别曲面面积。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：首积分上界补/Ω，后续积分及microPartition由HarmonicPartition配套声明；原印上界不改。
+-/
 theorem harmonicQuadraturePrinted : ∀ Ω c : ℝ,0 < Ω → 0 < c →
   (4*(∫ q in (0 : ℝ)..Real.sqrt (2*c),
     Real.sqrt (1+(Ω^2*q/Real.sqrt (2*c-Ω^2*q^2))^2)/Real.sqrt (2*c-Ω^2*q^2+Ω^4*q^2)))=
   4*(∫ q in (0 : ℝ)..Real.sqrt (2*c)/Ω,1/Real.sqrt (2*c-Ω^2*q^2)) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-5.3.2-HarmonicQuadraturePrinted。改动：首积分上界补/Ω，后续积分及microPartition由HarmonicPartition配套声明；原印上界不改。 -/
+theorem harmonicQuadraturePrinted_corrected : ∀ Ω c : ℝ,0 < Ω → 0 < c →
+  (4*(∫ q in (0 : ℝ)..Real.sqrt (2*c)/Ω,
+    Real.sqrt (1+(Ω^2*q/Real.sqrt (2*c-Ω^2*q^2))^2)/Real.sqrt (2*c-Ω^2*q^2+Ω^4*q^2)))=
+  4*(∫ q in (0 : ℝ)..Real.sqrt (2*c)/Ω,1/Real.sqrt (2*c-Ω^2*q^2)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-5.3.2-HarmonicPartition · Example 5.1 · §5.3.2 · 印刷p.193 / PDFp.214
 [EXTRA] [EXTRA]正频率和正能量；是真实Hausdorff加权测度的分区函数，不把参数积分写成定义冒充面积识别。 
-[EXTRA] 保留真实曲面微正则质量终值，补其与正确参数积分的等式及该积分的终值；不更改原印首积分疑误。 -/
+[EXTRA] 保留真实曲面微正则质量终值，补其与正确参数积分的等式及该积分的终值；不更改原印首积分疑误。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem harmonicPartition : ∀ Ω c : ℝ,0 < Ω → 0 < c →
   MolecularDynamics.Chapter05Review.microPartition (harmonicEnergy Ω) c=2*Real.pi/Ω := by
   sorry
@@ -972,6 +1165,17 @@ theorem harmonicPartition_quadrature (Ω c : ℝ) (_hΩ : 0 < Ω) (_hc : 0 < c) 
       4*(∫ q in (0 : ℝ)..Real.sqrt (2*c)/Ω,1/Real.sqrt (2*c-Ω^2*q^2)) ∧
     4*(∫ q in (0 : ℝ)..Real.sqrt (2*c)/Ω,1/Real.sqrt (2*c-Ω^2*q^2))=2*Real.pi/Ω := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.3.2-HarmonicPartition。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem harmonicPartition_corrected : ∀ Ω c : ℝ,0 < Ω → 0 < c →
+  MolecularDynamics.Chapter05Review.microPartition (harmonicEnergy Ω) c=2*Real.pi/Ω := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.3.2-IdealGasEnergy · Example 5.2 · §5.3.2 · 印刷p.193–194 / PDFp.214–215 -/
 def idealGasEnergy (N : ℕ) (m : ℝ) (z : MolecularDynamics.Chapter05Review.E (3*N+3*N)) :=
@@ -1005,8 +1209,18 @@ theorem idealGasPartition_factors (N : ℕ) (m c L : ℝ)
   sorry
 
 /-- source_id: MD-5.3.3-MicroMeasure · definition · §5.3.3 · 印刷p.194 / PDFp.215
-[EXTRA] [EXTRA]总raw质量正且有限是使用概率意义的必要资格；定义用实际ENNReal标量归一化，不把无穷总质量逆值0解释成概率测度。 -/
+[EXTRA] [EXTRA]总raw质量正且有限是使用概率意义的必要资格；定义用实际ENNReal标量归一化，不把无穷总质量逆值0解释成概率测度。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：归一化主接口显式要求原始质量正且有限；任意H,c的总化公式仍保留为原辅助，不声称退化能级也是概率分布。
+-/
 def microMeasure {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) : Measure (MolecularDynamics.Chapter05Review.E n) :=
+  ((MolecularDynamics.Chapter05Review.microRaw H c) univ)⁻¹ • MolecularDynamics.Chapter05Review.microRaw H c
+
+
+
+/-- 修正版，对应原文 MD-5.3.3-MicroMeasure。改动：归一化主接口显式要求原始质量正且有限；任意H,c的总化公式仍保留为原辅助，不声称退化能级也是概率分布。 -/
+def microMeasure_corrected {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ)
+    (_hpos : 0 < (MolecularDynamics.Chapter05Review.microRaw H c) univ)
+    (_hfinite : (MolecularDynamics.Chapter05Review.microRaw H c) univ < ⊤) :
+    Measure (MolecularDynamics.Chapter05Review.E n) :=
   ((MolecularDynamics.Chapter05Review.microRaw H c) univ)⁻¹ • MolecularDynamics.Chapter05Review.microRaw H c
 
 /-- source_id: MD-5.3.3-MicroProbability · unnumbered_claim · §5.3.3 · 印刷p.195 / PDFp.216
@@ -1041,7 +1255,8 @@ theorem microProbability : ∀ n (H : MolecularDynamics.Chapter05Review.E n → 
 
 /-- source_id: MD-5.3.3-LowerDimensionNull · unnumbered_claim · §5.3.3 · 印刷p.195 / PDFp.216
 [EXTRA] [EXTRA]低维光滑参数化的紧像、正则C¹能量面，维数严格小于能量面；未将任意“拓扑低维集合”自动视为零测。 
-[EXTRA] 保留紧面子引理，新增无需全能量面紧性的可数紧参数块零测推广，以及正则水平集局部同胚于开ℝ^(n−1)的维数结论（相空间n=2N_d）。环境Lebesgue零测也在本批同列。 -/
+[EXTRA] 保留紧面子引理，新增无需全能量面紧性的可数紧参数块零测推广，以及正则水平集局部同胚于开ℝ^(n−1)的维数结论（相空间n=2N_d）。环境Lebesgue零测也在本批同列。 [EXTRA] 24号：保留既有三个正则能级声明，另加不依赖H、c或能级包含关系的一般d<n环境Lebesgue零测声明，覆盖平面曲线和三维曲面；新增声明尚未证明。原书无条件能级维数句保留疑误。
+-/
 theorem lowerDimensionNull :
   ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c (g : MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n)
     (K : Set (MolecularDynamics.Chapter05Review.E d)), d+1 < n → ContDiff ℝ 1 H → MolecularDynamics.Chapter05Review.regularEnergy H c →
@@ -1069,6 +1284,14 @@ theorem lowerDimensionNull_level_dimension (n : ℕ) (_hn : 0 < n)
       IsOpen U ∧ z ∈ U ∧ ∃ V : Set (MolecularDynamics.Chapter05Review.E (n-1)),
       IsOpen V ∧ Nonempty (V ≃ₜ ↥(MolecularDynamics.Chapter05Review.energySurface H c ∩ U)) := by
   sorry
+
+theorem lowerDimensionNull_ambient_corrected (n d : ℕ)
+    (g : ℕ → MolecularDynamics.Chapter05Review.E d → MolecularDynamics.Chapter05Review.E n)
+    (K : ℕ → Set (MolecularDynamics.Chapter05Review.E d)) (_hd : d < n)
+    (_hblocks : ∀ k, ContDiff ℝ 1 (g k) ∧ IsCompact (K k)) :
+    volume (⋃ k, g k '' K k) = 0 := by
+  sorry
+
 
 /-- source_id: MD-5.3.3-MicroAverage · definition · §5.3.3 · 印刷p.195 / PDFp.216 
 [EXTRA] 补曲面限制逆梯度积分等式，并以真实对称薄壳积分比极限表达归一化δ配对；紧正则能量带控制尾部，不把δ当普通Lebesgue函数或同测度重命名。 -/
@@ -1218,8 +1441,24 @@ theorem doubleWellBasin_average_witness (c : ℝ) (_hc : c ∈ Ioo (0 : ℝ) 1)
 
 /-- source_id: MD-5.4.1-UniformMicroErgodic · Definition 5.1 · §5.4.1 · 印刷p.197 / PDFp.218
 [EXTRA] [EXTRA]沿用前文光滑可观测量且明确µ可积，避免给不存在空间平均的函数套等式；AE采用真实µ_E零测资格。 
-[EXTRA] 明示C² Hamiltonian、常非退化反对称J生成的实际流、能量保持与正有限正则能量面背景；保留AE后∀可积光滑观测量的原量词顺序。 并恢复C∞而非Cω资格。 -/
+[EXTRA] 明示C² Hamiltonian、常非退化反对称J生成的实际流、能量保持与正有限正则能量面背景；保留AE后∀可积光滑观测量的原量词顺序。 并恢复C∞而非Cω资格。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def uniformMicroErgodic {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (_hf : MolecularDynamics.Chapter05Review.flow f Φ)
+    (_hreg : MolecularDynamics.Chapter05Review.regularEnergy H c)
+    (_hH : ContDiff ℝ 2 H) (_hE : ∀ t z,H (Φ t z)=H z)
+    (_hHam : ∃ J : Matrix (Fin n) (Fin n) ℝ,Jᵀ= -J ∧ J.det ≠ 0 ∧
+      ∀ z,f z=WithLp.toLp 2 (J *ᵥ WithLp.ofLp (gradient H z))) : Prop :=
+
+  ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c,∀ g : MolecularDynamics.Chapter05Review.E n → ℝ,
+    ContDiff ℝ ∞ g → Integrable g (MolecularDynamics.Chapter05Review.microMeasure H c) →
+      MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.microAverage H c g)
+
+
+
+/-- 修正版，对应原文 MD-5.4.1-UniformMicroErgodic。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def uniformMicroErgodic_corrected {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (c : ℝ) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
     (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
     (_hf : MolecularDynamics.Chapter05Review.flow f Φ)
     (_hreg : MolecularDynamics.Chapter05Review.regularEnergy H c)
@@ -1280,7 +1519,8 @@ theorem invariantIndicatorAverage {X : Type*} (Φ : ℝ → X → X) (A : Set X)
 
 /-- source_id: MD-5.4.1-ErgodicTimeEquivalence · unnumbered_claim · §5.4.1 · 印刷p.198 / PDFp.219
 [EXTRA] [EXTRA]完整全实时间可测流、概率保持、群律及L¹资格；对应标准每观测量AE版本，未将原共满测集量词交换当无条件事实。 
-[EXTRA] 保留标准L¹双向定理，补紧支持概率流上共同AE光滑定义的连接及正概率不变集分支/实际indicator平均，区分原定义与标准替代定义。 -/
+[EXTRA] 保留标准L¹双向定理，补紧支持概率流上共同AE光滑定义的连接及正概率不变集分支/实际indicator平均，区分原定义与标准替代定义。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem ergodicTimeAverage :
   ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ,
   IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
@@ -1315,6 +1555,22 @@ theorem ergodicTimeAverage_positive_invariant (n : ℕ)
     (∀ z ∈ A,MolecularDynamics.Chapter05Review.hasTimeAverage (fun t ↦ Φ t z)
       (Aᶜ.indicator (fun _ ↦ (1 : ℝ))) 0) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.4.1-ErgodicTimeEquivalence。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem ergodicTimeAverage_corrected :
+  ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ,
+  IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
+  (∀ z,Φ 0 z=z) → (∀ s t z,Φ (s+t) z=Φ s (Φ t z)) →
+  Measurable (Function.uncurry Φ) →
+  (MolecularDynamics.Chapter05Review.setErgodic μ Φ ↔ ∀ g : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable g μ →
+    ∀ᵐ z ∂μ, MolecularDynamics.Chapter05Review.hasTimeAverage (fun t => Φ t z) g (MolecularDynamics.Chapter05Review.average μ g)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.4.1-NonergodicSet · unnumbered_claim · §5.4.1 · 印刷p.198 / PDFp.219 
 [EXTRA] 补中间概率不变集合内真实轨道保持、补集indicator无限平均零及空间平均非零的见证；可用于实际能量面概率流，不把不等式作假设。 -/
@@ -1369,7 +1625,8 @@ theorem twoOscillatorFlow_invariants (Ω : Fin 2 → ℝ) (_hΩ : ∀ i,Ω i ≠
   sorry
 
 /-- source_id: MD-5.4.1-TwoOscillatorTori · Example 5.4 · §5.4.1 · 印刷p.199 / PDFp.220
-[EXTRA] [EXTRA]正分能量、非零频率；“填满”解释为实际轨道稠密，非有限时间覆盖；原总能量面分解包括一个分能量为0的退化圆，不能只以正分能量2-tori穷尽整个集合。 -/
+[EXTRA] [EXTRA]正分能量、非零频率；“填满”解释为实际轨道稠密，非有限时间覆盖；原总能量面分解包括一个分能量为0的退化圆，不能只以正分能量2-tori穷尽整个集合。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem twoOscillatorTori : ∀ (Ω : Fin 2 → ℝ) (c : Fin 2 → ℝ),
   (∀ i,Ω i ≠ 0) → (∀ i,0 < c i) →
   let T := {z : MolecularDynamics.Chapter05Review.E 4 | ∀ i,twoOscillatorEnergy Ω i z=c i}
@@ -1380,18 +1637,37 @@ theorem twoOscillatorTori : ∀ (Ω : Fin 2 → ℝ) (c : Fin 2 → ℝ),
     (twoOscillatorFlow Ω)) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-5.4.1-TwoOscillatorTori。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem twoOscillatorTori_corrected : ∀ (Ω : Fin 2 → ℝ) (c : Fin 2 → ℝ),
+  (∀ i,Ω i ≠ 0) → (∀ i,0 < c i) →
+  let T := {z : MolecularDynamics.Chapter05Review.E 4 | ∀ i,twoOscillatorEnergy Ω i z=c i}
+  (Nonempty (T ≃ₜ (Metric.sphere (0 : MolecularDynamics.Chapter05Review.E 2) 1 × Metric.sphere (0 : MolecularDynamics.Chapter05Review.E 2) 1))) ∧
+  (∀ z ∈ T,∀ t,∀ i,twoOscillatorEnergy Ω i (twoOscillatorFlow Ω t z)=c i) ∧
+  (Irrational (Ω 0/Ω 1) → ∀ z ∈ T,closure (range (fun t => twoOscillatorFlow Ω t z))=T) ∧
+  (∀ E > 0,¬MolecularDynamics.Chapter05Review.setErgodic (MolecularDynamics.Chapter05Review.microMeasure (fun z => ∑ i,twoOscillatorEnergy Ω i z) E)
+    (twoOscillatorFlow Ω)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-5.4.1-Mixing · definition · §5.4.1 · 印刷p.199 / PDFp.220
 [EXTRA] [EXTRA]实际不变参考测度上的AC概率初值、有界连续测试函数；参考测度是μ，可取微正则测度；避免旧density r谓词暗中以Lebesgue可积替代微正则可积。 
-[EXTRA] 混合定义在谓词内记录概率参考测度、零时恒等、群律、联合可测实际流；保留AC初始概率与有界连续测试配对。相关已有证明取第二合取后重查。 -/
+[EXTRA] 混合定义在谓词内记录概率参考测度、零时恒等、群律、联合可测实际流；保留AC初始概率与有界连续测试配对。相关已有证明取第二合取后重查。 [EXTRA] 24号：补全部实时间的MeasurePreserving，μ明确为不变概率参考分布。weakMixing为兼容保留的名称，含义是密度在有界连续测试下的弱收敛，不用作标准术语“弱混合”。
+-/
 def weakMixing {n : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) : Prop :=
-  (IsProbabilityMeasure μ ∧ (∀ z,Φ 0 z=z) ∧
+  (IsProbabilityMeasure μ ∧ (∀ t, MeasurePreserving (Φ t) μ μ) ∧ (∀ z,Φ 0 z=z) ∧
     (∀ s t z,Φ (s+t) z=Φ s (Φ t z)) ∧ Measurable (Function.uncurry Φ)) ∧
   ∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ,Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
   Continuous φ → Bornology.IsBounded (range φ) →
   Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))
 
 /-- source_id: MD-5.4.1-KAMPersistence · unnumbered_claim · §5.4.1 · 印刷p.200 / PDFp.221
-[EXTRA] [EXTRA]书中引用的KAM持久化作独立完整定理展开：解析近可积Hamiltonian、频率映射非退化和Diophantine条件，实际周期提升的C¹浸入不变环面及动力学共轭；不宣称图中双摆的参数已满足这些资格，也不称环面是三维能量面拓扑连通分支。 -/
+[EXTRA] [EXTRA]书中引用的KAM持久化作独立完整定理展开：解析近可积Hamiltonian、频率映射非退化和Diophantine条件，实际周期提升的C¹浸入不变环面及动力学共轭；不宣称图中双摆的参数已满足这些资格，也不称环面是三维能量面拓扑连通分支。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem kam :
   ∀ n (H0 : MolecularDynamics.Chapter05Review.E n → ℝ) (P : MolecularDynamics.Chapter05Review.Phase n → ℝ) (I0 : MolecularDynamics.Chapter05Review.E n) κ τ,
   0 < n → AnalyticOnNhd ℝ H0 univ → AnalyticOnNhd ℝ P univ → MolecularDynamics.Chapter05Review.periodicPerturbation P →
@@ -1406,25 +1682,73 @@ theorem kam :
     (∀ x,‖(K x).2-I0‖ < 1) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-5.4.1-KAMPersistence。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem kam_corrected :
+  ∀ n (H0 : MolecularDynamics.Chapter05Review.E n → ℝ) (P : MolecularDynamics.Chapter05Review.Phase n → ℝ) (I0 : MolecularDynamics.Chapter05Review.E n) κ τ,
+  0 < n → AnalyticOnNhd ℝ H0 univ → AnalyticOnNhd ℝ P univ → MolecularDynamics.Chapter05Review.periodicPerturbation P →
+  Function.Bijective (fderiv ℝ (gradient H0) I0) → MolecularDynamics.Chapter05Review.diophantine (gradient H0 I0) κ τ →
+  ∃ δ > 0, ∀ ε : ℝ, |ε| < δ → ∃ K : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.Phase n,
+    ContDiff ℝ 1 K ∧
+    (∀ x,Function.Injective (fderiv ℝ K x)) ∧
+    (∀ x (k : Fin n → ℤ), K (x+WithLp.toLp 2 (fun i => (k i : ℝ)))=
+      ((K x).1+WithLp.toLp 2 (fun i => (k i : ℝ)),(K x).2)) ∧
+    (∀ x,(fderiv ℝ K x) (gradient H0 I0)=MolecularDynamics.Chapter05Review.hamiltonianField
+      (fun z => H0 z.2+ε*P z) (K x)) ∧
+    (∀ x,‖(K x).2-I0‖ < 1) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-5.4.1-AnisotropicPotential · Example 5.6 · §5.4.1 · 印刷p.201 / PDFp.222 -/
 def anisotropicPotential (κ l ε : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) :=
   MolecularDynamics.Chapter01Review.anisotropicEnergy κ l ε (z 0) (z 1) 0 0
 
 /-- source_id: MD-5.4.1-AnisotropicAxisPrinted · unnumbered_claim · §5.4.1 · 印刷p.201 / PDFp.222
-[EXTRA] [EXTRA]用第1章实际各向异性势陈述全真实轨道上的轴不变义务；κ/l正及全时间可微轨道，不把轴不变结论作假设。 -/
+[EXTRA] [EXTRA]用第1章实际各向异性势陈述全真实轨道上的轴不变义务；κ/l正及全时间可微轨道，不把轴不变结论作假设。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：只在整条经典轨道避开原点的光滑域内给轴不变性；原点的范数势不可微资格不能省去。
+-/
 theorem anisotropicAxisPrinted : ∀ (κ l ε : ℝ) (z : ℝ → MolecularDynamics.Chapter05Review.Phase 2),
   0 < κ → 0 < l →
   (∀ t,HasDerivAt z ((z t).2,-gradient (anisotropicPotential κ l ε) (z t).1) t) →
   (z 0).1 1=0 → (z 0).2 1=0 → ∀ t,(z t).1 1=0 ∧ (z t).2 1=0 := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-5.4.1-AnisotropicAxisPrinted。改动：只在整条经典轨道避开原点的光滑域内给轴不变性；原点的范数势不可微资格不能省去。 -/
+theorem anisotropicAxisPrinted_corrected : ∀ (κ l ε : ℝ) (z : ℝ → MolecularDynamics.Chapter05Review.Phase 2),
+  0 < κ → 0 < l →
+  (∀ t,HasDerivAt z ((z t).2,-gradient (anisotropicPotential κ l ε) (z t).1) t) →
+  (∀ t, (z t).1 ≠ 0) → (z 0).1 1=0 → (z 0).2 1=0 → ∀ t,(z t).1 1=0 ∧ (z t).2 1=0 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-5.4.1-TwoOscillatorEnergyDecomposition · unnumbered_claim · §5.4.1 · 印刷p.199 / PDFp.220
 [EXTRA] [EXTRA]包括c_i=0的退化边界；原“all such 2-tori”字面忽略零分能量层，完整全能量面分解不能遗漏这些层。 
-[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。 -/
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem twoOscillatorEnergyDecomposition : ∀ (Ω : Fin 2 → ℝ) (E : ℝ) (z : MolecularDynamics.Chapter05Review.E 4),
   ((∑ i,twoOscillatorEnergy Ω i z)=E) ↔
   ∃ c : Fin 2 → ℝ,(∀ i,0 ≤ c i) ∧ (∑ i,c i)=E ∧ (∀ i,twoOscillatorEnergy Ω i z=c i) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.4.1-TwoOscillatorEnergyDecomposition。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem twoOscillatorEnergyDecomposition_corrected : ∀ (Ω : Fin 2 → ℝ) (E : ℝ) (z : MolecularDynamics.Chapter05Review.E 4),
+  ((∑ i,twoOscillatorEnergy Ω i z)=E) ↔
+  ∃ c : Fin 2 → ℝ,(∀ i,0 ≤ c i) ∧ (∑ i,c i)=E ∧ (∀ i,twoOscillatorEnergy Ω i z=c i) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.4.1-CurveImageDimension · unnumbered_claim · §5.4.1 · 印刷p.202 / PDFp.223
 [EXTRA] [EXTRA]原“one-dimensional”以实际正则参数曲线及全平滑自治流实现；由群律推出可逆场导数而非假设最终像曲线正则。位置投影未必浸入，且有限时刻的曲线本身不是一般二维开集；视觉稠密覆盖仅作为数值观察保留。 
@@ -1442,7 +1766,8 @@ def pendulumPotential (k₁ k₂ l₁ l₂ : ℝ) (q : MolecularDynamics.Chapter
     k₂/2*(Real.sqrt ((q 0)^2+(q 1+2)^2)-l₂)^2
 
 /-- source_id: MD-5.4.1-PendulumRegionPrinted · unnumbered_claim · §5.4.1 · 印刷p.200 / PDFp.221
-[EXTRA] [EXTRA]原描述的可达region按所有能量初值的位置投影解释，单位动能；真实两圆盘中心、正半径和半径能量椭圆完整保留，不假设所求等式。 -/
+[EXTRA] [EXTRA]原描述的可达region按所有能量初值的位置投影解释，单位动能；真实两圆盘中心、正半径和半径能量椭圆完整保留，不假设所求等式。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：能量面的位置投影修正为势能次水平集，删除不成立的一般圆盘并参数化。
+-/
 theorem pendulumRegionPrinted : ∀ k₁ k₂ l₁ l₂ c : ℝ,
   0 < k₁ → 0 < k₂ → 0 < l₁ → 0 < l₂ → 0 < c →
   {q : MolecularDynamics.Chapter05Review.E 2 | ∃ p : MolecularDynamics.Chapter05Review.E 2,
@@ -1451,6 +1776,19 @@ theorem pendulumRegionPrinted : ∀ k₁ k₂ l₁ l₂ c : ℝ,
     k₁/2*(r₁-l₁)^2+k₂/2*(r₂-l₂)^2=c ∧
     Real.sqrt ((q 0)^2+(q 1)^2) ≤ r₁ ∧ Real.sqrt ((q 0)^2+(q 1+2)^2) ≤ r₂} := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.4.1-PendulumRegionPrinted。改动：能量面的位置投影修正为势能次水平集，删除不成立的一般圆盘并参数化。 -/
+theorem pendulumRegionPrinted_corrected (k₁ k₂ l₁ l₂ c : ℝ) :
+  {q : MolecularDynamics.Chapter05Review.E 2 | ∃ p : MolecularDynamics.Chapter05Review.E 2,
+    ((p 0)^2+(p 1)^2)/2+pendulumPotential k₁ k₂ l₁ l₂ q=c} =
+  {q : MolecularDynamics.Chapter05Review.E 2 | pendulumPotential k₁ k₂ l₁ l₂ q ≤ c} := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.4.1-AnisotropicInitialCurve · definition · §5.4.1 · 印刷p.201 / PDFp.222 -/
 def anisotropicInitialCurve (κ l ε c x : ℝ) : MolecularDynamics.Chapter05Review.Phase 2 :=
@@ -1465,11 +1803,18 @@ theorem anisotropicInitialEnergy : ∀ κ l ε c x : ℝ,
   sorry
 
 /-- source_id: MD-5.4.1-InitialSegmentPrinted · unnumbered_claim · §5.4.1 · 印刷p.201 / PDFp.222
-[EXTRA] [EXTRA]保留真实相空间对象、书中区间及实初值的非负根号资格；不把线段结论作假设。 -/
+[EXTRA] [EXTRA]保留真实相空间对象、书中区间及实初值的非负根号资格；不把线段结论作假设。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：四维相空间初值集只定义为参数曲线像，不再宣称一般为仿射线段；位置投影直线与动量根号依赖分别解释。
+-/
 theorem initialSegmentPrinted : ∀ κ l ε c : ℝ,
   (∀ x ∈ Icc (105/100 : ℝ) (115/100),0 ≤ c-anisotropicPotential κ l ε (WithLp.toLp 2 ![x,0])) →
   ∃ a b : MolecularDynamics.Chapter05Review.Phase 2,anisotropicInitialCurve κ l ε c '' Icc (105/100 : ℝ) (115/100)=segment ℝ a b := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.4.1-InitialSegmentPrinted。改动：四维相空间初值集只定义为参数曲线像，不再宣称一般为仿射线段；位置投影直线与动量根号依赖分别解释。 -/
+def initialSegmentPrinted_corrected (κ l ε c : ℝ) : Set (MolecularDynamics.Chapter05Review.Phase 2) :=
+  anisotropicInitialCurve κ l ε c '' Icc (105/100 : ℝ) (115/100)
 
 /-- source_id: MD-5.4.1-CircleInitialPoints · definition · §5.4.1 · 印刷p.202 / PDFp.223 
 [EXTRA] 将实际初值域限定可行能量及原x区间；θ为后条均匀角分布的取样变量，定性样本图像不强化为全样本必然分离。零半径为允许退化；总延拓仅作独立辅助定义。 -/
@@ -1501,8 +1846,15 @@ theorem circleInitialEnergy : ∀ κ l ε c x θ : ℝ,
   ((z.2 0)^2+(z.2 1)^2)/2+anisotropicPotential κ l ε z.1=c := by
   sorry
 
-/-- source_id: MD-5.5-Correlation · definition · §5.5 · 印刷p.203 / PDFp.224 -/
+/-- source_id: MD-5.5-Correlation · definition · §5.5 · 印刷p.203 / PDFp.224 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def correlation {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (k t : ℝ) := k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)
+
+
+
+/-- 修正版，对应原文 MD-5.5-Correlation。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def correlation_corrected {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
     (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) (k t : ℝ) := k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)
 
 /-- source_id: MD-5.5-CorrelationPullback · unnumbered_claim · §5.5 · 印刷p.204 / PDFp.225 -/
@@ -1511,7 +1863,8 @@ theorem correlationPullback {n d : ℕ} (μ : Measure (MolecularDynamics.Chapter
   apply MolecularDynamics.Chapter05Review.correlationPullback_proved <;> assumption
 
 /-- source_id: MD-5.5-CorrelationTimePrinted · unnumbered_claim · §5.5 · 印刷p.204 / PDFp.225
-[EXTRA] [EXTRA]真实能量面/微正则测度、标准遍历先验及给定lag相关可积资格；原字面全能量初值只作为待裁定义务，不能当本地PASS。 -/
+[EXTRA] [EXTRA]真实能量面/微正则测度、标准遍历先验及给定lag相关可积资格；原字面全能量初值只作为待裁定义务，不能当本地PASS。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：any初值改为微正则几乎处处初值，并补正则概率能级资格；一般可积相关观测量的Birkhoff桥接尚未证明。
+-/
 theorem correlationTimePrinted : ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c Φ
     (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t,
   (∀ z,Φ 0 z=z) → (∀ s u z,Φ (s+u) z=Φ s (Φ u z)) →
@@ -1521,9 +1874,45 @@ theorem correlationTimePrinted : ∀ n d (H : MolecularDynamics.Chapter05Review.
     atTop (𝓝 (MolecularDynamics.Chapter05Review.correlation (MolecularDynamics.Chapter05Review.microMeasure H c) Φ a b k t)) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-5.5-CorrelationTimePrinted。改动：any初值改为微正则几乎处处初值，并补正则概率能级资格；一般可积相关观测量的Birkhoff桥接尚未证明。 -/
+theorem correlationTimePrinted_corrected : ∀ n d (H : MolecularDynamics.Chapter05Review.E n → ℝ) c Φ
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t,
+  (∀ z,Φ 0 z=z) → (∀ s u z,Φ (s+u) z=Φ s (Φ u z)) →
+  MolecularDynamics.Chapter05Review.regularEnergy H c →
+  MolecularDynamics.Chapter05Review.microErgodic H c Φ → Integrable (fun z => inner ℝ (a (Φ t z)) (b z)) (MolecularDynamics.Chapter05Review.microMeasure H c) →
+  ∀ᵐ z ∂MolecularDynamics.Chapter05Review.microMeasure H c,Tendsto
+    (fun T => k*T⁻¹*(∫ s in (0 : ℝ)..T,inner ℝ (a (Φ (s+t) z)) (b (Φ s z))))
+    atTop (𝓝 (MolecularDynamics.Chapter05Review.correlation (MolecularDynamics.Chapter05Review.microMeasure H c) Φ a b k t)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-5.5-CorrelationTimeAE · unnumbered_claim · §5.5 · 印刷p.204 / PDFp.225
-[EXTRA] [EXTRA]按本章标准遍历结论修正为对给定lag逐次AE初值；保留真实时间积分、向量内积、可积性和flow群律，原any字面另条。 -/
+[EXTRA] [EXTRA]按本章标准遍历结论修正为对给定lag逐次AE初值；保留真实时间积分、向量内积、可积性和flow群律，原any字面另条。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem correlationTime :
+  ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t,
+  (∀ z,Φ 0 z=z) → (∀ s u z,Φ (s+u) z=Φ s (Φ u z)) →
+  (∀ g : MolecularDynamics.Chapter05Review.E n → ℝ,Integrable g μ → ∀ᵐ z ∂μ, MolecularDynamics.Chapter05Review.hasTimeAverage (fun s => Φ s z) g (MolecularDynamics.Chapter05Review.average μ g)) →
+  Integrable (fun z => inner ℝ (a (Φ t z)) (b z)) μ →
+  ∀ᵐ z ∂μ,Tendsto (fun T => k*T⁻¹*(∫ s in (0 : ℝ)..T,inner ℝ (a (Φ (s+t) z)) (b (Φ s z))))
+    atTop (𝓝 (MolecularDynamics.Chapter05Review.correlation μ Φ a b k t)) := by
+  intro n d μ Φ a b k t h0 hg he hi
+  filter_upwards [he (fun z => inner ℝ (a (Φ t z)) (b z)) hi] with z hz
+  unfold MolecularDynamics.Chapter05Review.hasTimeAverage MolecularDynamics.Chapter05Review.timeAverage at hz
+  have hh := hz.const_mul k
+  have ht (s : ℝ) : Φ (s+t) z=Φ t (Φ s z) := by rw [add_comm,hg]
+  simpa only [MolecularDynamics.Chapter05Review.average,MolecularDynamics.Chapter05Review.correlation,ht,mul_assoc] using hh
+
+
+
+/-- 修正版，对应原文 MD-5.5-CorrelationTimeAE。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem correlationTime_corrected :
   ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ
     (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k t,
   (∀ z,Φ 0 z=z) → (∀ s u z,Φ (s+u) z=Φ s (Φ u z)) →
@@ -1613,7 +2002,8 @@ theorem mixingMemoryLoss : ∀ n (μ : Measure (MolecularDynamics.Chapter05Revie
 
 /-- source_id: MD-5.5-MixingCorrelationPrinted · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
 [EXTRA] [EXTRA]明确概率测度及有界连续函数；k任意，字面版不改最终右侧。 
-[EXTRA] 修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。 -/
+[EXTRA] 修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：独立修正版恢复任意向量维数及k因子，给有界连续向量观测量的内积均值极限；无k实值原式独立保留。
+-/
 theorem mixingCorrelationPrinted :
   ∀ n (μ : Measure (MolecularDynamics.Chapter05Review.E n)) Φ
     (a b : MolecularDynamics.Chapter05Review.E n → ℝ) k, IsProbabilityMeasure μ → weakMixing μ Φ → Continuous a → Continuous b →
@@ -1621,8 +2011,26 @@ theorem mixingCorrelationPrinted :
     Tendsto (fun t => k*(∫ z,a (Φ t z)*b z ∂μ)) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ a*MolecularDynamics.Chapter05Review.average μ b)) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-5.5-MixingCorrelationPrinted。改动：独立修正版恢复任意向量维数及k因子，给有界连续向量观测量的内积均值极限；无k实值原式独立保留。 -/
+theorem mixingCorrelationPrinted_corrected :
+  ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k, IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
+  (∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
+    Continuous φ → Bornology.IsBounded (range φ) →
+    Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))) →
+  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+  Tendsto (fun t => k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)) atTop (𝓝 (k*inner ℝ (∫ z,a z ∂μ) (∫ z,b z ∂μ))) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-5.5-MixingCorrelation · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
-[EXTRA] [EXTRA]独立修正版右侧保留k，实际AC概率初值的弱mixing条件及有界连续a/b；原参考微正则分布的不变资格明确为MeasurePreserving，保障各时积分可积和常数项不变。未以目标相关极限作假设。 -/
+[EXTRA] [EXTRA]独立修正版右侧保留k，实际AC概率初值的弱mixing条件及有界连续a/b；原参考微正则分布的不变资格明确为MeasurePreserving，保障各时积分可积和常数项不变。未以目标相关极限作假设。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem mixingCorrelation :
   ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
     (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k, IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
@@ -1693,6 +2101,23 @@ theorem mixingCorrelation_scalar :
   unfold MolecularDynamics.Chapter05Review.average
   dsimp [M]
   ring
+
+
+
+/-- 修正版，对应原文 MD-5.5-MixingCorrelation。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem mixingCorrelation_corrected :
+  ∀ n d (μ : Measure (MolecularDynamics.Chapter05Review.E n)) (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n)
+    (a b : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E d) k, IsProbabilityMeasure μ → (∀ t,MeasurePreserving (Φ t) μ μ) →
+  (∀ r φ : MolecularDynamics.Chapter05Review.E n → ℝ, Integrable r μ → (∀ z,0 ≤ r z) → (∫ z,r z ∂μ)=1 →
+    Continuous φ → Bornology.IsBounded (range φ) →
+    Tendsto (fun t => ∫ z,φ (Φ t z)*r z ∂μ) atTop (𝓝 (MolecularDynamics.Chapter05Review.average μ φ))) →
+  Continuous a → Continuous b → Bornology.IsBounded (range a) → Bornology.IsBounded (range b) →
+  Tendsto (fun t => k*(∫ z,inner ℝ (a (Φ t z)) (b z) ∂μ)) atTop (𝓝 (k*inner ℝ (∫ z,a z ∂μ) (∫ z,b z ∂μ))) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.5-CenteredCorrelation · unnumbered_claim · §5.5 · 印刷p.205 / PDFp.226
 [EXTRA] [EXTRA]概率测度/有界连续资格，k仍保留；由实际混合相关式推导的绝对值结论，不只保留未中心化极限。 
@@ -1783,11 +2208,23 @@ theorem modifiedLiouvillian_model_equivalence (n : ℕ)
 def forwardEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : MolecularDynamics.Chapter05Review.E 2 := WithLp.toLp 2 ![z 0+h*z 1,z 1-h*z 0]
 
 /-- source_id: MD-5.6-ForwardComponentsPrinted · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
-[EXTRA] [EXTRA]h非零、非原点初值；“趋无穷”按绝对值解释仍有反例。 -/
+[EXTRA] [EXTRA]h非零、非原点初值；“趋无穷”按绝对值解释仍有反例。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：两分量各自发散修正为非零初值的范数发散；原分量断言的旋转反例保留。
+-/
 theorem forwardComponentsPrinted : ∀ h : ℝ,h ≠ 0 → ∀ z : MolecularDynamics.Chapter05Review.E 2,z ≠ 0 →
   Tendsto (fun k : ℕ => |(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z 0|) atTop atTop ∧
   Tendsto (fun k : ℕ => |(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z 1|) atTop atTop := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.6-ForwardComponentsPrinted。改动：两分量各自发散修正为非零初值的范数发散；原分量断言的旋转反例保留。 -/
+theorem forwardComponentsPrinted_corrected : ∀ h : ℝ,h ≠ 0 → ∀ z : MolecularDynamics.Chapter05Review.E 2,z ≠ 0 →
+  Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖) atTop atTop := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.6-ForwardEnergyGrowth · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
 [EXTRA] [EXTRA]实际有限步能量增长恒等式，作为原谱外扩的直接代数后果另列；本式允许h=0，渐近发散需h≠0和非原点。 
@@ -1817,7 +2254,8 @@ theorem forwardEnergyGrowth_spectrum (h : ℝ) (_hh : h ≠ 0) :
 
 /-- source_id: MD-5.6-EulerInvariant · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
 [EXTRA] [EXTRA]真实Forward Euler映射的不变概率测度，h≠0；一般modified微分方程的弱稳态并非自动等同离散不变测度，原记号作为解释而非未经证明的算子识别。 
-[EXTRA] 除离散唯一性再补非Dirac初始概率的离散推前无任何弱概率极限；连续modified模型/稳态/非吸引分别明确绑定EulerLogCorrespondence与ForwardWeakStationary。 -/
+[EXTRA] 除离散唯一性再补非Dirac初始概率的离散推前无任何弱概率极限；连续modified模型/稳态/非吸引分别明确绑定EulerLogCorrespondence与ForwardWeakStationary。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem eulerInvariant :
   ∀ h : ℝ, h ≠ 0 → ∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),
   IsProbabilityMeasure μ → MeasurePreserving (MolecularDynamics.Chapter05Review.forwardEuler h) μ μ → μ=MolecularDynamics.Chapter05Review.diracMeasure 2 := by
@@ -1855,6 +2293,18 @@ theorem eulerInvariant_no_probability_limit (h : ℝ) (_hh : h ≠ 0)
         Tendsto (fun k : ℕ ↦ ∫ z,φ ((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z) ∂μ)
           atTop (𝓝 (∫ z,φ z ∂ν)) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.6-EulerInvariant。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem eulerInvariant_corrected :
+  ∀ h : ℝ, h ≠ 0 → ∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),
+  IsProbabilityMeasure μ → MeasurePreserving (MolecularDynamics.Chapter05Review.forwardEuler h) μ μ → μ=MolecularDynamics.Chapter05Review.diracMeasure 2 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.6-BackwardEuler · definition · §5.6 · 印刷p.207 / PDFp.228
 [EXTRA] [EXTRA]解出的实际二维线性更新，分母1+h²恒正；收缩需h≠0，h=0恒等映射不收缩。 
@@ -1894,8 +2344,51 @@ theorem backwardEnergyDecay_spectrum (h : ℝ) (_hh : h ≠ 0) :
 
 /-- source_id: MD-5.6-BackwardEulerLimit · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
 [EXTRA] [EXTRA]h≠0及实际任意初始概率测度；全轨道收缩与对每个有界连续测试函数的弱趋Dirac两个结论，非普通密度逐点收敛。 
-[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅所有离散迭代趋零及任意初始概率弱趋Dirac；实际modified流一步对应由MD-5.6-EulerLogCorrespondence，概率弱稳态唯一及连续吸引由MD-5.6-BackwardWeakStationary承担。 -/
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅所有离散迭代趋零及任意初始概率弱趋Dirac；实际modified流一步对应由MD-5.6-EulerLogCorrespondence，概率弱稳态唯一及连续吸引由MD-5.6-BackwardWeakStationary承担。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem backwardEulerLimit :
+  ∀ h : ℝ,h ≠ 0 →
+  (∀ z : MolecularDynamics.Chapter05Review.E 2,Tendsto (fun k : ℕ => (MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) atTop (𝓝 0)) ∧
+  ∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ → ∀ φ : MolecularDynamics.Chapter05Review.E 2 → ℝ,
+    Continuous φ → Bornology.IsBounded (range φ) →
+    Tendsto (fun k : ℕ => ∫ z,φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) ∂μ) atTop (𝓝 (φ 0)) := by
+  intro h hh
+  have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]
+  have hc : Continuous (MolecularDynamics.Chapter05Review.backwardEuler h) := by
+    unfold MolecularDynamics.Chapter05Review.backwardEuler
+    fun_prop
+  have hz (z : MolecularDynamics.Chapter05Review.E 2) :
+      Tendsto (fun k : ℕ => (MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) atTop (𝓝 0) := by
+    apply tendsto_zero_iff_norm_tendsto_zero.mpr
+    have he (k : ℕ) : ‖(MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z‖^2=
+        (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2) := by
+      rw [EuclideanSpace.norm_sq_eq]
+      simpa [Fin.sum_univ_two,Real.norm_eq_abs] using backwardEnergyDecay h z k
+    have hs : Tendsto (fun k : ℕ => (1+h^2)⁻¹^k*((z 0)^2+(z 1)^2)) atTop (𝓝 0) := by
+      simpa only [zero_mul] using (tendsto_pow_atTop_nhds_zero_of_lt_one
+        (inv_nonneg.mpr (by positivity : 0 ≤ 1+h^2)) ((inv_lt_one₀ (by positivity)).mpr hp)).mul_const ((z 0)^2+(z 1)^2)
+    convert (Real.continuous_sqrt.tendsto 0).comp hs using 1
+    · funext k
+      simp only [Function.comp_apply]
+      rw [←he,Real.sqrt_sq (norm_nonneg _)]
+    · simp
+  refine ⟨hz,?_⟩
+  intro μ hμ φ hφ hb
+  letI := hμ
+  obtain ⟨C,hC,hB⟩ := hb.exists_pos_norm_le
+  have hd := tendsto_integral_filter_of_dominated_convergence
+    (μ:=μ) (fun _ : MolecularDynamics.Chapter05Review.E 2 => C)
+    (F:=fun k z => φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z))
+    (f:=fun _ => φ 0)
+    (Eventually.of_forall (fun k => (hφ.comp (hc.iterate k)).measurable.aestronglyMeasurable))
+    (Eventually.of_forall (fun k => ae_of_all μ (fun z => hB (φ ((MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z)) (mem_range_self _))))
+    (integrable_const C) (ae_of_all μ (fun z => (hφ.tendsto 0).comp (hz z)))
+  simpa using hd
+
+
+
+/-- 修正版，对应原文 MD-5.6-BackwardEulerLimit。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem backwardEulerLimit_corrected :
   ∀ h : ℝ,h ≠ 0 →
   (∀ z : MolecularDynamics.Chapter05Review.E 2,Tendsto (fun k : ℕ => (MolecularDynamics.Chapter05Review.backwardEuler h)^[k] z) atTop (𝓝 0)) ∧
   ∀ μ : Measure (MolecularDynamics.Chapter05Review.E 2),IsProbabilityMeasure μ → ∀ φ : MolecularDynamics.Chapter05Review.E 2 → ℝ,
@@ -1939,7 +2432,8 @@ def symplecticEuler (h : ℝ) (z : MolecularDynamics.Chapter05Review.E 2) : Mole
 
 /-- source_id: MD-5.6-SymplecticEulerShadow · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
 [EXTRA] [EXTRA]完整实际二次修正能量的一步保持恒等式；正定椭圆资格及所有n保持另条，不以一步式称全部椭圆结论已证。 
-[EXTRA] 保留一步不变量证明，补稳定区内主对数Hamiltonian=c(h)·二次不变量、c>0、实际矩阵指数Hamiltonian流及其时间h恰为离散步，并给两能量有界域O(h²)比例差；全部k/椭圆由SymplecticEulerEllipse、弱稳态由SymplecticWeakStationary承担。新增模型是显式技术选择，不冒称唯一修正能量。 -/
+[EXTRA] 保留一步不变量证明，补稳定区内主对数Hamiltonian=c(h)·二次不变量、c>0、实际矩阵指数Hamiltonian流及其时间h恰为离散步，并给两能量有界域O(h²)比例差；全部k/椭圆由SymplecticEulerEllipse、弱稳态由SymplecticWeakStationary承担。新增模型是显式技术选择，不冒称唯一修正能量。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem symplecticEulerShadow : symplecticEulerShadow_statement := by
   apply MolecularDynamics.Chapter05Review.symplecticEulerShadow_proved <;> assumption
 
@@ -1970,9 +2464,20 @@ theorem symplecticEulerShadow_modified_scale_order (R : ℝ) (_hR : 0 < R) :
         |symplecticEulerModifiedHamiltonian h z-MolecularDynamics.Chapter05Review.shadowOscillator h z| ≤ C*h^2 := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-5.6-SymplecticEulerShadow。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem symplecticEulerShadow_corrected : symplecticEulerShadow_statement := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-5.6-SymplecticEulerEllipse · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
 [EXTRA] [EXTRA]稳定条件|h|<2；原不加资格的椭圆说法在|h|≥2失败。本条保留正定/紧性和所有迭代保持；0能量是退化点。 
-[EXTRA] 保留正定/全部k保持证明，并补正能级椭圆拓扑及零能级单点退化；二次不变量作为modified Hamiltonian的显式固定选择，实际场/流资格见SymplecticWeakStationary，不声称唯一修正能量。 -/
+[EXTRA] 保留正定/全部k保持证明，并补正能级椭圆拓扑及零能级单点退化；二次不变量作为modified Hamiltonian的显式固定选择，实际场/流资格见SymplecticWeakStationary，不声称唯一修正能量。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem symplecticEulerEllipse : ∀ h : ℝ,|h| < 2 →
   (∀ z : MolecularDynamics.Chapter05Review.E 2,z ≠ 0 → 0 < MolecularDynamics.Chapter05Review.shadowOscillator h z) ∧
   (∀ c : ℝ,IsCompact {z : MolecularDynamics.Chapter05Review.E 2 | MolecularDynamics.Chapter05Review.shadowOscillator h z ≤ c}) ∧
@@ -2025,6 +2530,20 @@ theorem symplecticEulerEllipse_geometry (h : ℝ) (_hh : |h| < 2) :
       (↥{z : MolecularDynamics.Chapter05Review.E 2 | MolecularDynamics.Chapter05Review.shadowOscillator h z=c} ≃ₜ
         ↥(Metric.sphere (0 : MolecularDynamics.Chapter05Review.E 2) 1))) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-5.6-SymplecticEulerEllipse。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem symplecticEulerEllipse_corrected : ∀ h : ℝ,|h| < 2 →
+  (∀ z : MolecularDynamics.Chapter05Review.E 2,z ≠ 0 → 0 < MolecularDynamics.Chapter05Review.shadowOscillator h z) ∧
+  (∀ c : ℝ,IsCompact {z : MolecularDynamics.Chapter05Review.E 2 | MolecularDynamics.Chapter05Review.shadowOscillator h z ≤ c}) ∧
+  (∀ z : MolecularDynamics.Chapter05Review.E 2,∀ k : ℕ,MolecularDynamics.Chapter05Review.shadowOscillator h ((MolecularDynamics.Chapter05Review.symplecticEuler h)^[k] z)=
+    MolecularDynamics.Chapter05Review.shadowOscillator h z) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-5.6-SymplecticEulerDensity · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
 [EXTRA] [EXTRA]真实离散映射MeasurePreserving、不变二次能量、实际概率密度r∘Htilde；完整弱Liouville稳态及非吸引另条，所有r都可归一不能自动推出。 
@@ -2123,8 +2642,31 @@ theorem dynamicalCorrection :
   sorry
 
 /-- source_id: MD-5.6-ForwardNormDivergence · unnumbered_claim · §5.6 · 印刷p.207 / PDFp.228
-[EXTRA] [EXTRA]独立修正为实际范数发散，不覆盖原两分量字面版；h≠0及非原点。 -/
+[EXTRA] [EXTRA]独立修正为实际范数发散，不覆盖原两分量字面版；h≠0及非原点。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem forwardNormDivergence : ∀ h : ℝ,h ≠ 0 → ∀ z : MolecularDynamics.Chapter05Review.E 2,z ≠ 0 →
+  Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖) atTop atTop := by
+  intro h hh z hz
+  have hs : 0 < (z 0)^2+(z 1)^2 := by
+    have hn : 0 < ‖z‖^2 := pow_pos (norm_pos_iff.mpr hz) _
+    rw [EuclideanSpace.norm_sq_eq] at hn
+    simpa [Fin.sum_univ_two,Real.norm_eq_abs] using hn
+  have hp : 1 < 1+h^2 := by nlinarith [sq_pos_of_ne_zero hh]
+  have he (k : ℕ) : ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖^2=
+      (1+h^2)^k*((z 0)^2+(z 1)^2) := by
+    rw [EuclideanSpace.norm_sq_eq]
+    simpa [Fin.sum_univ_two,Real.norm_eq_abs] using forwardEnergyGrowth h z k
+  have ht := (tendsto_pow_atTop_atTop_of_one_lt hp).atTop_mul_const hs
+  apply tendsto_atTop.2
+  intro b
+  filter_upwards [ht.eventually (eventually_ge_atTop ((max b 0)^2+1))] with k hk
+  rw [←he] at hk
+  nlinarith [norm_nonneg ((MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z),le_max_left b 0,le_max_right b 0]
+
+
+
+/-- 修正版，对应原文 MD-5.6-ForwardNormDivergence。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem forwardNormDivergence_corrected : ∀ h : ℝ,h ≠ 0 → ∀ z : MolecularDynamics.Chapter05Review.E 2,z ≠ 0 →
   Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter05Review.forwardEuler h)^[k] z‖) atTop atTop := by
   intro h hh z hz
   have hs : 0 < (z 0)^2+(z 1)^2 := by
@@ -2151,9 +2693,10 @@ def weakStationaryModel {n : ℕ} (f : MolecularDynamics.Chapter05Review.E n →
 
 /-- source_id: MD-5.6-WeakAttractor · definition · §5.6 · 印刷p.207 / PDFp.228
 [EXTRA] [EXTRA]“attractive”取概率弱拓扑中某邻域内所有初值概率的有界连续测试函数收敛；邻域以有限测试族和正ε明确，不把个别轨道收敛当全密度吸引。此为三个后续结论共用的技术定义；不添加已收敛或已不变的前提。 
-[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅弱概率局部吸引的辅助技术定义；原负吸引性断言由MD-5.6-ForwardWeakStationary承担，不把定义本身当否定结论。 -/
+[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅弱概率局部吸引的辅助技术定义；原负吸引性断言由MD-5.6-ForwardWeakStationary承担，不把定义本身当否定结论。 [EXTRA] 24号：目标测度资格直接加入定义体IsProbabilityMeasure μ∧…，排除μ=0下空概率邻域的真空成立；其余有限测试族、共同ε和概率ν收敛量词不变。
+-/
 def weakAttractor {n : ℕ} (Φ : ℝ → MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (μ : Measure (MolecularDynamics.Chapter05Review.E n)) : Prop :=
-  ∃ m : ℕ,∃ ψ : Fin m → MolecularDynamics.Chapter05Review.E n → ℝ,∃ ε > 0,
+  IsProbabilityMeasure μ ∧ ∃ m : ℕ,∃ ψ : Fin m → MolecularDynamics.Chapter05Review.E n → ℝ,∃ ε > 0,
     (∀ i,Continuous (ψ i) ∧ Bornology.IsBounded (range (ψ i))) ∧
     ∀ ν : Measure (MolecularDynamics.Chapter05Review.E n),IsProbabilityMeasure ν →
       (∀ i,|(∫ z,ψ i z ∂ν)-(∫ z,ψ i z ∂μ)| < ε) →
@@ -2178,7 +2721,8 @@ def eulerLogFlow (backward : Bool) (h t : ℝ) (z : MolecularDynamics.Chapter05R
     z 1*Real.cos (b*t)-z 0*Real.sin (b*t)]
 
 /-- source_id: MD-5.6-EulerLogCorrespondence · unnumbered_claim · §5.6 · 印刷p.206–207 / PDFp.227–228
-[EXTRA] [EXTRA]只对书中实际单位线性振子给出选定logarithmic场与两Euler更新的真实对应及全部t的ODE；不把更新等式或ODE作假设。 -/
+[EXTRA] [EXTRA]只对书中实际单位线性振子给出选定logarithmic场与两Euler更新的真实对应及全部t的ODE；不把更新等式或ODE作假设。 [EXTRA] 24号：Euler两个离散更新与连续对数向量场的精确单步插值，以及全时间线性ODE；仅这两个子句由当前Lean覆盖。 原引文完整保留，密度及伴随分解另列覆盖缺口，不宣称这些结论已证明。
+-/
 theorem eulerLogCorrespondence : ∀ h : ℝ,0 < h →
   (∀ z,eulerLogFlow false h h z=MolecularDynamics.Chapter05Review.forwardEuler h z ∧
     eulerLogFlow true h h z=MolecularDynamics.Chapter05Review.backwardEuler h z) ∧
@@ -2264,6 +2808,8 @@ theorem symplecticWeakStationary : ∀ h : ℝ,|h| < 2 →
 end MD.Ch05
 
 /- BEGIN WEBSITE REPAIR AXIOMS -/
+/- END WEBSITE REPAIR AXIOMS -/
+
 #print axioms MD.Ch05.lie
 #print axioms MD.Ch05.trajectoryChain
 #print axioms MD.Ch05.flow
@@ -2285,10 +2831,14 @@ end MD.Ch05
 #print axioms MD.Ch05.lebesgueClosure
 #print axioms MD.Ch05.borelSigma
 #print axioms MD.Ch05.densityProbabilityBounds
+#print axioms MD.Ch05.domainL2
+#print axioms MD.Ch05.domainL2_corrected
 #print axioms MD.Ch05.domainL2Norm
+#print axioms MD.Ch05.domainL2Norm_corrected
 #print axioms MD.Ch05.domainL2Inner
 #print axioms MD.Ch05.domainL2NormSquare
 #print axioms MD.Ch05.domainL2Complete
+#print axioms MD.Ch05.domainL2Complete_corrected
 #print axioms MD.Ch05.domainL2SymmetricBilinear
 #print axioms MD.Ch05.compactL2
 #print axioms MD.Ch05.densityAverageOn
@@ -2300,7 +2850,9 @@ end MD.Ch05
 #print axioms MD.Ch05.massDerivative
 #print axioms MD.Ch05.massDerivative_smooth
 #print axioms MD.Ch05.outwardNormalFor
+#print axioms MD.Ch05.outwardNormalFor_corrected
 #print axioms MD.Ch05.generalFluxBalance
+#print axioms MD.Ch05.generalFluxBalance_corrected
 #print axioms MD.Ch05.divergence
 #print axioms MD.Ch05.liouvillian
 #print axioms MD.Ch05.liouvilleEquation
@@ -2315,6 +2867,7 @@ end MD.Ch05
 #print axioms MD.Ch05.boxBoundaryTerm
 #print axioms MD.Ch05.truncatedIntegrationByParts
 #print axioms MD.Ch05.rapidAdjoint
+#print axioms MD.Ch05.rapidAdjoint_corrected
 #print axioms MD.Ch05.liouvillianAdjoint
 #print axioms MD.Ch05.measurePropagator
 #print axioms MD.Ch05.measurePropagator_general
@@ -2325,6 +2878,7 @@ end MD.Ch05
 #print axioms MD.Ch05.mechanicalLiouvillian
 #print axioms MD.Ch05.mechanicalLiouvillianIdentity
 #print axioms MD.Ch05.testSpace
+#print axioms MD.Ch05.testSpaceSchwartz
 #print axioms MD.Ch05.schwartzTestSpace
 #print axioms MD.Ch05.generalizedFunction
 #print axioms MD.Ch05.schwartzFunctional
@@ -2340,6 +2894,7 @@ end MD.Ch05
 #print axioms MD.Ch05.weakStationary
 #print axioms MD.Ch05.ensembleAverageOn
 #print axioms MD.Ch05.convergenceHeuristic
+#print axioms MD.Ch05.convergenceHeuristic_corrected
 #print axioms MD.Ch05.hamiltonianEnergyIntegral
 #print axioms MD.Ch05.hamiltonianEnergyIntegral_full
 #print axioms MD.Ch05.energyDensityInvariant
@@ -2350,31 +2905,41 @@ end MD.Ch05
 #print axioms MD.Ch05.surfaceMeasure
 #print axioms MD.Ch05.microRaw
 #print axioms MD.Ch05.shellWeakPrinted
+#print axioms MD.Ch05.shellWeakPrinted_corrected
 #print axioms MD.Ch05.shellWeakLimit
+#print axioms MD.Ch05.shellWeakLimit_corrected
 #print axioms MD.Ch05.surfaceAreaFormula
+#print axioms MD.Ch05.surfaceAreaFormula_corrected
 #print axioms MD.Ch05.normalField
 #print axioms MD.Ch05.normalEnergyTaylor
 #print axioms MD.Ch05.normalInverseTaylor
 #print axioms MD.Ch05.patchShellVolume
+#print axioms MD.Ch05.patchShellVolume_corrected
 #print axioms MD.Ch05.shellVolumeLimit
+#print axioms MD.Ch05.shellVolumeLimit_corrected
 #print axioms MD.Ch05.microRawInvariant
 #print axioms MD.Ch05.microInvariant
 #print axioms MD.Ch05.microPartition
 #print axioms MD.Ch05.shellWeakPairing
+#print axioms MD.Ch05.shellWeakPairing_corrected
 #print axioms MD.Ch05.harmonicEnergy
 #print axioms MD.Ch05.harmonicEnergy_ellipse
 #print axioms MD.Ch05.harmonicQuadraturePrinted
+#print axioms MD.Ch05.harmonicQuadraturePrinted_corrected
 #print axioms MD.Ch05.harmonicPartition
 #print axioms MD.Ch05.harmonicPartition_quadrature
+#print axioms MD.Ch05.harmonicPartition_corrected
 #print axioms MD.Ch05.idealGasEnergy
 #print axioms MD.Ch05.idealGasPositionDomain
 #print axioms MD.Ch05.idealGasPartition
 #print axioms MD.Ch05.idealGasPartition_factors
 #print axioms MD.Ch05.microMeasure
+#print axioms MD.Ch05.microMeasure_corrected
 #print axioms MD.Ch05.microProbability
 #print axioms MD.Ch05.lowerDimensionNull
 #print axioms MD.Ch05.lowerDimensionNull_countable
 #print axioms MD.Ch05.lowerDimensionNull_level_dimension
+#print axioms MD.Ch05.lowerDimensionNull_ambient_corrected
 #print axioms MD.Ch05.microAverage
 #print axioms MD.Ch05.microAverage_surface_and_delta_limit
 #print axioms MD.Ch05.ambientLowerDimensionNull
@@ -2388,6 +2953,7 @@ end MD.Ch05
 #print axioms MD.Ch05.doubleWellBasin
 #print axioms MD.Ch05.doubleWellBasin_average_witness
 #print axioms MD.Ch05.uniformMicroErgodic
+#print axioms MD.Ch05.uniformMicroErgodic_corrected
 #print axioms MD.Ch05.microErgodic
 #print axioms MD.Ch05.microErgodic_L1_alternative
 #print axioms MD.Ch05.flowInvariant
@@ -2397,6 +2963,7 @@ end MD.Ch05
 #print axioms MD.Ch05.ergodicTimeAverage
 #print axioms MD.Ch05.ergodicTimeAverage_common_smooth
 #print axioms MD.Ch05.ergodicTimeAverage_positive_invariant
+#print axioms MD.Ch05.ergodicTimeAverage_corrected
 #print axioms MD.Ch05.nonergodicSet
 #print axioms MD.Ch05.nonergodicSet_average_witness
 #print axioms MD.Ch05.harmonicFlow
@@ -2405,25 +2972,34 @@ end MD.Ch05
 #print axioms MD.Ch05.twoOscillatorFlow
 #print axioms MD.Ch05.twoOscillatorFlow_invariants
 #print axioms MD.Ch05.twoOscillatorTori
+#print axioms MD.Ch05.twoOscillatorTori_corrected
 #print axioms MD.Ch05.weakMixing
 #print axioms MD.Ch05.kam
+#print axioms MD.Ch05.kam_corrected
 #print axioms MD.Ch05.anisotropicPotential
 #print axioms MD.Ch05.anisotropicAxisPrinted
+#print axioms MD.Ch05.anisotropicAxisPrinted_corrected
 #print axioms MD.Ch05.twoOscillatorEnergyDecomposition
+#print axioms MD.Ch05.twoOscillatorEnergyDecomposition_corrected
 #print axioms MD.Ch05.curveImageDimension
 #print axioms MD.Ch05.pendulumPotential
 #print axioms MD.Ch05.pendulumRegionPrinted
+#print axioms MD.Ch05.pendulumRegionPrinted_corrected
 #print axioms MD.Ch05.anisotropicInitialCurve
 #print axioms MD.Ch05.anisotropicInitialEnergy
 #print axioms MD.Ch05.initialSegmentPrinted
+#print axioms MD.Ch05.initialSegmentPrinted_corrected
 #print axioms MD.Ch05.circleInitialPoints
 #print axioms MD.Ch05.circleInitialPoints_total
 #print axioms MD.Ch05.circleInitialLaw
 #print axioms MD.Ch05.circleInitialEnergy
 #print axioms MD.Ch05.correlation
+#print axioms MD.Ch05.correlation_corrected
 #print axioms MD.Ch05.correlationPullback
 #print axioms MD.Ch05.correlationTimePrinted
+#print axioms MD.Ch05.correlationTimePrinted_corrected
 #print axioms MD.Ch05.correlationTime
+#print axioms MD.Ch05.correlationTime_corrected
 #print axioms MD.Ch05.velocityCorrelation
 #print axioms MD.Ch05.positionTransition
 #print axioms MD.Ch05.transitionProbability
@@ -2431,8 +3007,10 @@ end MD.Ch05
 #print axioms MD.Ch05.measureDuality_RN
 #print axioms MD.Ch05.mixingMemoryLoss
 #print axioms MD.Ch05.mixingCorrelationPrinted
+#print axioms MD.Ch05.mixingCorrelationPrinted_corrected
 #print axioms MD.Ch05.mixingCorrelation
 #print axioms MD.Ch05.mixingCorrelation_scalar
+#print axioms MD.Ch05.mixingCorrelation_corrected
 #print axioms MD.Ch05.centeredCorrelation
 #print axioms MD.Ch05.centeredCorrelation_scalar
 #print axioms MD.Ch05.discreteAveragePrinted
@@ -2444,14 +3022,17 @@ end MD.Ch05
 #print axioms MD.Ch05.modifiedLiouvillian_model_equivalence
 #print axioms MD.Ch05.forwardEuler
 #print axioms MD.Ch05.forwardComponentsPrinted
+#print axioms MD.Ch05.forwardComponentsPrinted_corrected
 #print axioms MD.Ch05.forwardEnergyGrowth
 #print axioms MD.Ch05.forwardEnergyGrowth_spectrum
 #print axioms MD.Ch05.eulerInvariant
 #print axioms MD.Ch05.eulerInvariant_no_probability_limit
+#print axioms MD.Ch05.eulerInvariant_corrected
 #print axioms MD.Ch05.backwardEuler
 #print axioms MD.Ch05.backwardEnergyDecay
 #print axioms MD.Ch05.backwardEnergyDecay_spectrum
 #print axioms MD.Ch05.backwardEulerLimit
+#print axioms MD.Ch05.backwardEulerLimit_corrected
 #print axioms MD.Ch05.symplecticEuler
 #print axioms MD.Ch05.symplecticEulerShadow
 #print axioms MD.Ch05.symplecticEulerLogScale
@@ -2459,8 +3040,10 @@ end MD.Ch05
 #print axioms MD.Ch05.symplecticEulerModifiedFlow
 #print axioms MD.Ch05.symplecticEulerShadow_modified_model
 #print axioms MD.Ch05.symplecticEulerShadow_modified_scale_order
+#print axioms MD.Ch05.symplecticEulerShadow_corrected
 #print axioms MD.Ch05.symplecticEulerEllipse
 #print axioms MD.Ch05.symplecticEulerEllipse_geometry
+#print axioms MD.Ch05.symplecticEulerEllipse_corrected
 #print axioms MD.Ch05.symplecticEulerDensity
 #print axioms MD.Ch05.verletShadow2
 #print axioms MD.Ch05.theorem51
@@ -2472,6 +3055,7 @@ end MD.Ch05
 #print axioms MD.Ch05.gradientTransverse
 #print axioms MD.Ch05.dynamicalCorrection
 #print axioms MD.Ch05.forwardNormDivergence
+#print axioms MD.Ch05.forwardNormDivergence_corrected
 #print axioms MD.Ch05.weakStationaryModel
 #print axioms MD.Ch05.weakAttractor
 #print axioms MD.Ch05.eulerLogField
@@ -2480,4 +3064,3 @@ end MD.Ch05
 #print axioms MD.Ch05.forwardWeakStationary
 #print axioms MD.Ch05.backwardWeakStationary
 #print axioms MD.Ch05.symplecticWeakStationary
-/- END WEBSITE REPAIR AXIOMS -/

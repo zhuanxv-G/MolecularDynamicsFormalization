@@ -1,0 +1,38 @@
+{
+  "MD-5.2.2-DivergenceCoordinates": {
+    "status": "local_cross_reference_verified",
+    "book_erratum": false,
+    "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+    "declarations": [
+      "MD.Ch05.liouvilleProductCoordinates",
+      "MD.Ch05.liouvilleProductCoordinates_evolution"
+    ],
+    "checked_components": [
+      "实时间HasDerivAt",
+      "ρ·∂ᵢfᵢ",
+      "fᵢ·∂ᵢρ",
+      "真实流、域不变、概率密度及测度输运前提"
+    ],
+    "conclusion": "坐标静态乘积公式已有证明；完整时间PDE声明存在但尚未证明，不把静态辅助引理冒充时间PDE。",
+    "current_group": "theorem divergenceCoordinates : ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) z,\n  DifferentiableAt ℝ f z → MolecularDynamics.Chapter05Review.divergence f z=\n    ∑ i,(fderiv ℝ (fun x => f x i) z) (EuclideanSpace.basisFun (Fin n) ℝ i) := by\n  intro n f z hf\n  unfold MolecularDynamics.Chapter05Review.divergence\n  rw [LinearMap.trace_eq_matrix_trace ℝ (EuclideanSpace.basisFun (Fin n) ℝ).toBasis]\n  simp only [Matrix.trace,Matrix.diag,LinearMap.toMatrix_apply,OrthonormalBasis.coe_toBasis_repr_apply,EuclideanSpace.basisFun_repr,OrthonormalBasis.coe_toBasis]\n  apply Finset.sum_congr rfl\n  intro i hi\n  have hc := (PiLp.proj 2 (fun _ : Fin n => ℝ) i).hasFDerivAt.comp z hf.hasFDerivAt\n  change HasFDerivAt (fun x => f x i) _ z at hc\n  rw [hc.fderiv]\n  rfl",
+    "current_lean_sha256": "4044260333063d4a4c02811433b41a5b096d23563ef9880c4e29a50139725e79"
+  },
+  "MD-5.2.2-LiouvilleProduct": {
+    "status": "local_cross_reference_verified",
+    "book_erratum": false,
+    "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+    "declarations": [
+      "MD.Ch05.liouvilleProductCoordinates",
+      "MD.Ch05.liouvilleProductCoordinates_evolution"
+    ],
+    "checked_components": [
+      "实时间HasDerivAt",
+      "ρ·∂ᵢfᵢ",
+      "fᵢ·∂ᵢρ",
+      "真实流、域不变、概率密度及测度输运前提"
+    ],
+    "conclusion": "坐标静态乘积公式已有证明；完整时间PDE声明存在但尚未证明，不把静态辅助引理冒充时间PDE。",
+    "current_group": "theorem liouvilleProduct :\n  ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (ρ : MolecularDynamics.Chapter05Review.E n → ℝ) z,\n  DifferentiableAt ℝ f z → DifferentiableAt ℝ ρ z →\n  MolecularDynamics.Chapter05Review.liouvillian f ρ z = -ρ z*MolecularDynamics.Chapter05Review.divergence f z-MolecularDynamics.Chapter05Review.lie f ρ z := by\n  intro n f ρ z hf hρ\n  have hd := hρ.hasFDerivAt.smul hf.hasFDerivAt\n  change HasFDerivAt (fun x => ρ x • f x)\n    (ρ z • fderiv ℝ f z+(fderiv ℝ ρ z).smulRight (f z)) z at hd\n  unfold MolecularDynamics.Chapter05Review.liouvillian MolecularDynamics.Chapter05Review.divergence MolecularDynamics.Chapter05Review.lie\n  rw [hd.fderiv]\n  change -(LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n)\n    (ρ z • (fderiv ℝ f z).toLinearMap+(fderiv ℝ ρ z).toLinearMap.smulRight (f z))) =\n    -ρ z*LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap-\n      (fderiv ℝ ρ z) (f z)\n  simp only [map_add,map_smul,LinearMap.trace_smulRight,smul_eq_mul]\n  change -(ρ z*LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap+(fderiv ℝ ρ z) (f z)) =\n    -ρ z*LinearMap.trace ℝ (MolecularDynamics.Chapter05Review.E n) (fderiv ℝ f z).toLinearMap-(fderiv ℝ ρ z) (f z)\n  ring",
+    "current_lean_sha256": "4044260333063d4a4c02811433b41a5b096d23563ef9880c4e29a50139725e79"
+  }
+}

@@ -1,0 +1,28 @@
+--- before
++++ after
+@@ -546,9 +546,15 @@
+   <;> ring
+ 
+ /-- source_id: MD-4.2.1-RESPA · (4.2) · §4.2.1 · 印刷p.145 / PDFp.167
+-[EXTRA] r为正自然数，实际r次函数迭代；不把形式算子等式当实际ODE流。 -/
+-def respa {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (r : ℕ) (h : ℝ) (z : MolecularDynamics.Chapter04Review.Z n) : MolecularDynamics.Chapter04Review.Z n :=
++[EXTRA] r为正自然数，实际r次函数迭代；不把形式算子等式当实际ODE流。 [EXTRA] 24号：总化辅助respaTotalized保留；主接口respa增加0<r。当前Blueprint没有主接口下游调用需调整；正式库旧辅助不改。已展开同版本Chapter02Review.verlet核对为kick(h/2)→drift(h)→kick(h/2)，桥接见FastVerlet本地核验记录。原文网站漏句按corrected_json补回。
++-/
++def respaTotalized {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (r : ℕ) (h : ℝ) (z : MolecularDynamics.Chapter04Review.Z n) : MolecularDynamics.Chapter04Review.Z n :=
+   MolecularDynamics.Chapter04Review.kick US (h/2) ((MolecularDynamics.Chapter04Review.fastVerlet m UF (h/r))^[r] (MolecularDynamics.Chapter04Review.kick US (h/2) z))
++
++def respa {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ)
++    (r : ℕ) (_hr : 0 < r) (h : ℝ) (z : MolecularDynamics.Chapter04Review.Z n) :
++    MolecularDynamics.Chapter04Review.Z n := respaTotalized m US UF r h z
++
+ 
+ /-- source_id: MD-4.2.1-RESPAStructure · unnumbered_claim · §4.2.1 · 印刷p.145 / PDFp.167
+ [EXTRA] [EXTRA]本段Reversible名称及p149明确辛性合并成实际保结构声明：正质量、US/UF C²、r>0。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+@@ -2657,6 +2663,7 @@
+ #print axioms MD.Ch04.splitHamiltonian
+ #print axioms MD.Ch04.fastVerlet
+ #print axioms MD.Ch04.fastVerlet_kick_drift_kick
++#print axioms MD.Ch04.respaTotalized
+ #print axioms MD.Ch04.respa
+ #print axioms MD.Ch04.respaStructure
+ #print axioms MD.Ch04.respaStructure_corrected

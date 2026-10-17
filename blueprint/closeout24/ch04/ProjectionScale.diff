@@ -1,0 +1,20 @@
+--- before
++++ after
+@@ -1312,14 +1312,15 @@
+   sorry
+ 
+ /-- source_id: MD-4.3.2-ProjectionScale · unnumbered_claim · §4.3.2 · 印刷p.158 / PDFp.180
+-[EXTRA] 给定真实C²选根分支η0=0、正则Gram及初始余切资格；非线性根存在是独立缺项，不把O(h²)结论作假设。 -/
++[EXTRA] 给定真实C²选根分支η0=0、正则Gram及初始余切资格；非线性根存在是独立缺项，不把O(h²)结论作假设。 [EXTRA] 24号：F按原印F_n解释，预测位置+h²M⁻¹F改为−h²M⁻¹F；保留根分支、初态余切相容及Gram可逆资格，原句不改。原书O(h²)的初态范围另列勘误待导师，不把两种根方程混为一谈。
++-/
+ theorem projectionScale :
+   ∀ n l (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+     (z : MolecularDynamics.Chapter04Review.Z n) (η : ℝ → MolecularDynamics.Chapter04Review.Q l), z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+     (∀ j, ContDiff ℝ 2 (g j)) → ContDiff ℝ 2 η → η 0=0 →
+     (textbookConstraintGram m g z.1).det ≠ 0 →
+     (∃ δ > 0, ∀ h ∈ Ioo (-δ) δ,
+-      MolecularDynamics.Chapter04Review.projectionResidual m g z.1 (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2+h^2 • MolecularDynamics.Chapter04Review.invMass m (F z.1)) (η h)=0) →
++      MolecularDynamics.Chapter04Review.projectionResidual m g z.1 (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2-h^2 • MolecularDynamics.Chapter04Review.invMass m (F z.1)) (η h)=0) →
+     ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo (-δ) δ, ‖η h‖ ≤ C*h^2 := by
+   sorry
+ 

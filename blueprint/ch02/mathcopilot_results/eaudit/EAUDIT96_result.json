@@ -1,0 +1,94 @@
+{
+  "batch": "EAUDIT96",
+  "input_sha256": {
+    "BATCH_EAUDIT96.md": "7b45116bcfcc39a2690456e037d91e84553ed51bf145b598fdf65c5fae2b89e6",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.5.4-MultiTaylor",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已视觉逐字核对附件第2页（印刷92，原PDF114）2.5.4节。英文起止、h²/2、h^k/k!、第k阶时间导数及 elementary differentials 均一致；数学字体和换行归一化不改变内容。",
+          "context_notation准确限定d(0)=z_n、d(j)=z^(j)(t_n)，并明确没有误差阶定理。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_multiTaylor",
+        "verdict": "PASS",
+        "explanation": "这是截断Taylor步的定义而非关于任意导数数据的收敛定理。隐式n∈ℕ，d:ℕ→(Fin n→ℝ)，h∈ℝ、k∈ℕ；range(k+1)恰取j=0,…,k，实数阶乘强制转换和标量乘法正确。j=0项为d(0)，其余为h^j/j!乘d(j)，与原式逐项对应；k=0得到d(0)。d与真实解时间导数的对应已在context_notation交代，定义无需再加入ODE解存在或可微性假设。没有声称已实现由向量场计算elementary differentials，也没有额外误差阶结论。[EXTRA]为空，与声明一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.5.4-TIPotential",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_POTENTIAL_FORCE_SIGN_CONFLICT",
+          "MASS_MATRIX_SCOPE_UNSPECIFIED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.5.4-TIPotential",
+          "kind": "definition",
+          "label": null,
+          "section": "2.5.4",
+          "printed_page": "92–93",
+          "pdf_page": "114–115",
+          "statement_latex": "the Takahashi-Imada method [355] (also known as Rowlands’ method [316]) has the same form as the Verlet method\n\\[\\hat{\\boldsymbol P}=\\boldsymbol p-(h/2)\\nabla\\tilde U(\\boldsymbol q),\\quad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\hat{\\boldsymbol P},\\quad\\boldsymbol P=\\hat{\\boldsymbol P}-(h/2)\\nabla\\tilde U(\\boldsymbol Q),\\]\nwhere the corresponding potential energy function is\n\\[\\tilde U(\\boldsymbol q)=U(\\boldsymbol q)-\\frac{h^2}{24}\\nabla U(\\boldsymbol q)^TM^{-1}\\nabla U(\\boldsymbol q).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原文所在机械系统的 Hamiltonian 为 H(q,p)=p^T M^{-1}p/2+U(q)（PDF114，印刷92页）；q、Q 为位置，p、P 为动量，hat(P) 为半步动量，h 为步长，M 为质量矩阵，tilde(U) 为所展示的改势。",
+            "PDF115（印刷93页）的改势字面为 U−(h²/24)∇U^T M^{-1}∇U；紧接其后的力式写为 −[I+(h²/12)U''M^{-1}]∇U，两式存在符号冲突，保留原文，不在本条静默改号。"
+          ],
+          "issues": [
+            "原页改势的负号与紧随其后的力式括号内正号冲突；保留原文，待人工裁定。"
+          ],
+          "lean_decl": "MD.Ch02.tiMethod",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT23_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:32:38.314404",
+              "before_sha256": "f71e4daf65ad035d0aeb7207a14e3f8b7fc7775ab50d95398a3755a3fcad6278",
+              "after_sha256": "1364161c355dd28b82e02b6a8f185a5bee068b4664bc382cb89ffa7df9dff15d",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH31_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT23/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "原文摘录本身忠实：改势确为减号，不能根据后续力式静默改成加号。原书同页力式与之不相容，需人工裁定。",
+          "原文写M及M⁻¹，当前摘录未明确M仅为对角矩阵；Lean仅提供逐坐标质量m。应明确这是对角质量矩阵情形，不能无说明声称覆盖任意质量矩阵。"
+        ],
+        "evidence": [
+          "已视觉逐字核对附件第3页（印刷92，原PDF114）的名称、引文[355]/[316]和三条半步公式，以及附件第4页（印刷93，原PDF115）的改势。摘录没有转录符号错误。",
+          "附件第4页直接显示 Ũ=U−(h²/24)∇UᵀM⁻¹∇U，而下一式显示 F̃=−[I+(h²/12)U″M⁻¹]∇U；两者符号冲突已被原JSON的context_notation忠实记录。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.tiMethod",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "逐项展开定义：n∈ℕ，m:Fin n→ℝ，U:Q n→ℝ，h∈ℝ，输入输出均为位置/动量对Z n。takahashiPotential中的减号、1/24、h²及Σ_i(∂_iU)²/m_i，与原页在M=diag(m_i)时的改势完全一致；tiMethod使用该改势的负梯度。令F=−grad Ũ，verlet的位置为q+h M⁻¹p+(h²/2)M⁻¹F(q)，等于原页用p̂=p+(h/2)F(q)所得q+hM⁻¹p̂；输出动量为p+(h/2)(F(q)+F(Q))，等于p̂+(h/2)F(Q)。故没有半步系数或力号的转录错误。但本定义忠实于原页负号改势，并不同时满足紧随的正号括号力式；按要求将原书数学疑误交人工，不静默修复。另需人工确认M的对角质量约定：此签名没有一般矩阵参数；m也没有正性/非零约束，U没有可微性约束，故只能把物理方法理解为限制到非零（通常正）质量和足够光滑势的使用域。Lean在零质量或不可微势处的总函数扩展不构成原书物理含义。无_corrected/_counterexample声明可供另审；没有[EXTRA]说明来补充上述使用域。",
+        "counterexample": "说明原书两式冲突的精确一维例子（并非反驳字面负号定义）：m=1，U(q)=q²/2，则Ũ(q)=(1/2−h²/24)q²，因而−∂q Ũ=−(1−h²/12)q；原页后续力式给−(1+h²/12)q。取h=1、q=1，二者分别为−11/12与−13/12。",
+        "suggested_fix": "保留当前负号字面版；人工决定是否另建明确命名的勘误版：保留负号改势则力式括号应为I−(h²/12)U″M⁻¹；保留原力式则改势应改为加号（对称常质量矩阵、光滑势下）。同时在context_notation明确M=diag(m_i)、m_i>0及势的光滑使用域；若要覆盖任意对称正定M，需另用矩阵逆和二次型定义，不能将当前逐坐标版本视为一般矩阵版。不在本任务修改工程或补证明。"
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

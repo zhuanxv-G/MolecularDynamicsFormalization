@@ -1,0 +1,79 @@
+{
+  "batch": "EAUDIT76",
+  "input_sha256": {
+    "BATCH_EAUDIT76.md": "d23995f6c544abfda417f7131a668951f611b6249d67cb143456843cf10f5ea8",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.2-VerletOrder",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-2.2-VerletOrder",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2",
+          "printed_page": "60",
+          "pdf_page": "82",
+          "statement_latex": "The Verlet method (also known as leapfrog or Störmer-Verlet) is a second order method that is popular for molecular simulation. It is specialized to problems that can be expressed in the form $\\dot{\\boldsymbol q}=\\boldsymbol v$, $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$, with even dimensional phase space $\\mathbb R^{2\\mathrm{N}_c}$, which includes constant energy molecular dynamics.",
+          "proof_latex": null,
+          "proof_note": "本条所引 PDF 第82页（印刷第60页）仅陈述 Verlet 的二阶性质，未在该页附独立证明；本批不对后续节是否给出完整证明作结论。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\boldsymbol q$ 与 $\\boldsymbol v$：本句机械系统的位置与速度向量；原式为 $\\dot{\\boldsymbol q}=\\boldsymbol v$。依据：PDF 第82页（印刷第60页）§2.2 首段。",
+            "$\\boldsymbol M$：质量矩阵；本页稍后的文字明确为“the mass matrix”。本条首段未额外声明正性或对角性，不能把 Lean 的这些附加限制写成原句假设。依据：PDF 第82页（印刷第60页）。",
+            "$\\boldsymbol F(\\boldsymbol q)$：本句右端仅依赖位置的力向量，满足 $\\boldsymbol M\\dot{\\boldsymbol v}=\\boldsymbol F(\\boldsymbol q)$；该句未给出势函数表达式。依据：PDF 第82页（印刷第60页）§2.2 首段。",
+            "$\\mathbb R^{2\\mathrm{N}_c}$：原句给出的偶数维相空间，$\\mathrm{N}_c$ 表示对应配置变量的分量数；本页未单独展开其与粒子数的关系，不补入 $\\mathrm{N}_c=3N$ 等约定。依据：PDF 第82页（印刷第60页）§2.2 首段。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.verletOrder",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "固定正对角质量、力全域C⁴、τ>0及实际解在闭时间窗连续；原文未逐一给出的阶定理正则性显式列出。",
+            "[EXTRA] 网站首选路线：直接保留原文(q,v)速度变量，使用已定义velocityVerlet与真实速度场(v,M⁻¹F(q))；正对角质量及C⁴为充分但非最小资格，闭窗连续性为冗余明确限制。未更改正式mechanicalField/verlet，不新增证明。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT02_LOCAL_REPAIR",
+              "timestamp": "2026-10-14T23:55:22.191696",
+              "before_sha256": "69ad2b9747ad9e40afaf8841e94ecedc9f433bd9080c66a134bb6a355770c47b",
+              "after_sha256": "2891afd6cb7d8ce5d5a203a5435af0afde8df4bbd2d021c998a69dbc40a750a3",
+              "changed_fields": [
+                "statement_latex",
+                "proof_note",
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH04_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "attachment": "/workspace/R1_PAGES.pdf",
+          "attachment_pages": [
+            6
+          ],
+          "book_pdf_page": "82",
+          "printed_page": "60",
+          "A": "已对照附件原页的正文、公式、标点和上下文；重复原页经文本一致性核对，并视觉核对对应唯一页。选定范围内未发现需修订的转录差异。",
+          "C": "仅依据任务文件摘录的全部同source_id声明及项目依赖定义作只读语义审校；Mathlib按标准含义采信。未修改Lean工程、未补证明、未运行编译，不以sorry判失败。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.verletOrder",
+        "verdict": "PASS",
+        "explanation": "逐项展开positiveMass、solution、velocityVerlet、oneStepMaxError：第二分量是速度v，场为(v,M⁻¹F(q))，不是动量p。solution在[0,τ]为HasDerivWithinAt；τ>0且轨道连续。F C⁴、正对角质量为充分资格。存在C>0、正整数ν₀，对所有ν≥ν₀用h=τ/ν控制0至ν全部网格点的最大实际迭代误差≤Ch²。这是二阶全局收敛的正确具体化，未偷换成仅局部误差。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

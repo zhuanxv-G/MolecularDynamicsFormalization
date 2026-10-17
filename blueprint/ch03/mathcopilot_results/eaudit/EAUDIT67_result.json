@@ -1,0 +1,100 @@
+{
+  "batch": "EAUDIT67",
+  "input_sha256": {
+    "BATCH_EAUDIT67.md": "c2c695e6f78de6ebf3eefb5487aabe1065bd70f2d2100bc8736e9ce67b6f1cd0",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3-ModifiedConstruction",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "C_REGULARITY_MISMATCH",
+          "EXTRA_INACCURATE_REGULARITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3-ModifiedConstruction",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3",
+          "printed_page": "97",
+          "pdf_page": "119",
+          "statement_latex": "We can express the fundamental consequence as follows: not only are Hamiltonian flow maps symplectic, but also near-identity symplectic maps are (in an approximate sense) Hamiltonian flow maps [31]. The fact leads to the existence of a modified (perturbed) Hamiltonian from which the discrete trajectory may be derived (as snapshots of continuous trajectories). In some cases we may derive this perturbed Hamiltonian as an expansion in powers of the stepsize.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "The starting point is that symplectic integrators are symplectic maps that are “near to the identity” since they depend on a parameter (the stepsize $h$) which can be chosen as small as needed, and, if consistent, in the limit $h\\to0$, such a map must tend to the identity map."
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.modifiedConstruction",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "近恒等、光滑、阶r≥1用smoothSymplecticData实际定义表达：开放凸D、紧凸B⊆D、H及(h,z)↦G_h(z)无限可微、G₀=id、逐h辛、实际原始ODE流和局部阶。",
+            "按任意有限截断匹配解释“in an approximate sense”；不将形式无限级数当实际收敛解，不将finiteMatching结论作前提。",
+            "[EXTRA] EAUDIT01补原首句Hamiltonian流辛性为独立完整结论，与原近恒等辛映射修正Hamiltonian有限匹配合取；两个真实项目命题全部量词展开供审校，未把流辛性作构造前提。",
+            "R1审校：当前摘录 smoothSymplecticData 的 H、G 和 Hj 输出均使用 ContDiffOn ℝ ⊤；按本任务的指定版本说明为解析资格，不能标作已实现 C∞。本条 Lean 尚需把对应平滑资格统一恢复为 scoped ∞ 后另审。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT01_LOCAL_PAGE_RECHECK",
+              "timestamp": "2026-10-13T20:57:11.855696",
+              "before_sha256": "6172396c1a8ccaf362e87370db94fbb7b43d3654feaa980c0b88a4a3fd23e237",
+              "after_sha256": "6172396c1a8ccaf362e87370db94fbb7b43d3654feaa980c0b88a4a3fd23e237",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH01_result.json",
+              "raw_sha256": "120deaa07feab89b86e0bb7ae296ba4fadc1614604f7bb1e18866e1acb26bb97",
+              "reason": "原页119/120/122视觉核对后合并A的标点/记号修订；按绑定FAIL补齐四条全部结论/阶数/真实导数资格，不采用未批准数学勘误。"
+            },
+            {
+              "stage": "EAUDIT02_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:56:17.118408",
+              "before_sha256": "8ec25d4f891a8d9a13183996f28ad1b6c4f39de0221b7861bcc5e49ffafe2a84",
+              "after_sha256": "de3b6f6d67ee086cb9b46d092f1f217d63748eec64be2929a346fa0b1ab4dd8c",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH01_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "stage": "C",
+            "field": "extra_assumptions",
+            "detail": "smoothSymplecticData 及 Hj 输出中的裸 ⊤，按本任务第17条给出的指定版本说明为解析而非 C∞；本条注释却说无限可微。签名把适用对象收窄，且把系数结论强化到解析，未保留所宣称 smooth 版本。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第1页；印刷页 97 / 原PDF页 119",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "modifiedConstruction"
+            ],
+            "finding": "完整结论是 Hamiltonian 流辛性与修正 Hamiltonian 有限匹配的合取，没有把其中任一结论当作前提。前者量化 n,H,Φ,τ，H 为 C²、Φ 为 C¹，初值恒等且在 Icc 0 τ 满足实际 ODE；τ<0 时结论区间为空，τ=0 时由初值恒等成立。后者量化 n,r,H,D,B,G,Φ；0<r、开放凸 D、紧凸 B⊆D、G₀=id、逐 h 辛、实际流与局部误差均已展开。Hj 是一次选择的整个序列，对所有 k≥r 存在 δ,A,Γ，截断 Hamiltonian 含 r 至 k 次项、轨道留在 D、误差 ≤A h^(k+1)，只断言正小步长的有限截断。问题在于 smoothSymplecticData、Hj 输出采用 ContDiffOn ℝ ⊤，按本任务给出的版本约定是解析资格，不能称作原文的 C∞ 资格；与同批第17条特别修复说明矛盾。局部阶只在 B 上给出，本次不将它擅自提升为 D 上的阶条件。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.modifiedConstruction",
+        "verdict": "FAIL",
+        "explanation": "完整结论是 Hamiltonian 流辛性与修正 Hamiltonian 有限匹配的合取，没有把其中任一结论当作前提。前者量化 n,H,Φ,τ，H 为 C²、Φ 为 C¹，初值恒等且在 Icc 0 τ 满足实际 ODE；τ<0 时结论区间为空，τ=0 时由初值恒等成立。后者量化 n,r,H,D,B,G,Φ；0<r、开放凸 D、紧凸 B⊆D、G₀=id、逐 h 辛、实际流与局部误差均已展开。Hj 是一次选择的整个序列，对所有 k≥r 存在 δ,A,Γ，截断 Hamiltonian 含 r 至 k 次项、轨道留在 D、误差 ≤A h^(k+1)，只断言正小步长的有限截断。问题在于 smoothSymplecticData、Hj 输出采用 ContDiffOn ℝ ⊤，按本任务给出的版本约定是解析资格，不能称作原文的 C∞ 资格；与同批第17条特别修复说明矛盾。局部阶只在 B 上给出，本次不将它擅自提升为 D 上的阶条件。",
+        "counterexample": null,
+        "suggested_fix": "只读审校未改 Lean。将 smoothSymplecticData 中 H、G 及 modifiedConstruction_statement 中 Hj 的 ContDiffOn 阶数统一改成指定版本的 scoped ∞，保留完整合取、全部量词与有限匹配结论；另行检查修订后的命题，不以现有 sorry 判失败。"
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

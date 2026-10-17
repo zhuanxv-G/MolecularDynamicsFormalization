@@ -1,0 +1,12 @@
+--- before
++++ after
+@@ -1353,7 +1353,8 @@
+ 
+ /-- source_id: MD-3.4-ArbitraryFiniteTruncation · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
+ [EXTRA] smoothSymplecticData保持全部Hamiltonian/近恒等辛/compact条件；完整∀k匹配作为结论，没有把它当作前提。 
+-[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
++[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 [EXTRA] 24号：本声明的smoothSymplecticData现解析到MD.Ch03本地C∞定义（在MD-3-ModifiedConstruction同组完整列出）；H、联合G及Hj统一scoped ∞，其它资格和∃Hj后∀k顺序不变。
++-/
+ theorem arbitraryFiniteTruncation :
+   ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+     (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),

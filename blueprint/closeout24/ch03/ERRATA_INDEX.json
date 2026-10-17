@@ -1,0 +1,195 @@
+[
+  {
+    "number": 1,
+    "source_ids": [
+      "MD-3.1-ShadowEllipses"
+    ]
+  },
+  {
+    "number": 2,
+    "source_ids": [
+      "MD-3.2-FiniteLieTaylor"
+    ]
+  },
+  {
+    "number": 3,
+    "source_ids": [
+      "MD-3.2-FlowCoordinates"
+    ]
+  },
+  {
+    "number": 4,
+    "source_ids": [
+      "MD-3.3-LeadingModifiedExponential"
+    ]
+  },
+  {
+    "number": 5,
+    "source_ids": [
+      "MD-3.3-BCHHamiltonianMatching",
+      "MD-3.3-LeadingShadowHamiltonian"
+    ]
+  },
+  {
+    "number": 6,
+    "source_ids": [
+      "MD-3.3.2-VerletModifiedHamiltonian",
+      "MD-3.3.2-VerletModifiedMatching"
+    ]
+  },
+  {
+    "number": 7,
+    "source_ids": [
+      "MD-3.3.2-DifferentLogsCommute",
+      "MD-3.3.2-ModifiedEven"
+    ]
+  },
+  {
+    "number": 8,
+    "source_ids": [
+      "MD-3.3.4-ProcessorEnergyPrinted"
+    ]
+  },
+  {
+    "number": 9,
+    "source_ids": [
+      "MD-3.3.4-TakahashiEffectiveOrder"
+    ]
+  },
+  {
+    "number": 10,
+    "source_ids": [
+      "MD-3.4-Thm3.1",
+      "MD-3.4-TruncatedConservation",
+      "MD-3.4-EnergyTelescoping",
+      "MD-3.4-UniformTruncatedLipschitz",
+      "MD-3.4-PhysicalEnergyDrift"
+    ]
+  },
+  {
+    "number": 11,
+    "source_ids": [
+      "MD-3.4-AnalyticDefect"
+    ]
+  },
+  {
+    "number": 12,
+    "source_ids": [
+      "MD-3.4-OptimalTruncation"
+    ]
+  },
+  {
+    "number": 13,
+    "source_ids": [
+      "MD-3.4-ScalarVerletShadow4"
+    ]
+  },
+  {
+    "number": 14,
+    "source_ids": [
+      "MD-3.4-CommutingEnergy"
+    ]
+  },
+  {
+    "number": 15,
+    "source_ids": [
+      "MD-3.4-EnergySymplecticNoGo"
+    ]
+  },
+  {
+    "number": 16,
+    "source_ids": [
+      "MD-3.5-VerletOscillatorEnergy"
+    ]
+  },
+  {
+    "number": 17,
+    "source_ids": [
+      "MD-3.6.2-FlowReversal",
+      "MD-3.6.2-FlowReversalIdentity",
+      "MD-3.6.1-ReversedTrajectoryPrinted",
+      "MD-3.6.1-ReversedTrajectory"
+    ]
+  },
+  {
+    "number": 18,
+    "source_ids": [
+      "MD-3.6.2-AffineInvariant"
+    ]
+  },
+  {
+    "number": 19,
+    "source_ids": [
+      "MD-3.6.2-SymmetricAffineReversible"
+    ]
+  },
+  {
+    "number": 20,
+    "source_ids": [
+      "MD-3.6.2-PartitionedAffine",
+      "MD-3.6.2-PartitionedAffinePrinted",
+      "MD-3.6.2-RKAffine"
+    ]
+  },
+  {
+    "number": 21,
+    "source_ids": [
+      "MD-3.6.3-ConjugateIterates"
+    ]
+  },
+  {
+    "number": 22,
+    "source_ids": [
+      "MD-3.6.3-ConjugateOrderPrinted"
+    ]
+  },
+  {
+    "number": 23,
+    "source_ids": [
+      "MD-3.6.3-ReversibleVolumeFailure"
+    ]
+  },
+  {
+    "number": 24,
+    "source_ids": [
+      "MD-3.7.1-FreeHardSphereHamiltonian",
+      "MD-3.7.1-HardCorePotential"
+    ]
+  },
+  {
+    "number": 25,
+    "source_ids": [
+      "MD-3.7.1-PrimitiveOrder"
+    ]
+  },
+  {
+    "number": 26,
+    "source_ids": [
+      "MD-3.7.1-EndImpactThirdOrderPrinted"
+    ]
+  },
+  {
+    "number": 27,
+    "source_ids": [
+      "MD-3.7.2-CollisionalVerletRelation"
+    ]
+  },
+  {
+    "number": 28,
+    "source_ids": [
+      "MD-3.7.2-CollisionalVerletOrder"
+    ]
+  },
+  {
+    "number": 29,
+    "source_ids": [
+      "MD-3.7.3-PairForceDecoupling"
+    ]
+  },
+  {
+    "number": 30,
+    "source_ids": [
+      "MD-3.7.3-DecoupledOrder"
+    ]
+  }
+]

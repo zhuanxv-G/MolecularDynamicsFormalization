@@ -1,0 +1,306 @@
+{
+  "batch": "EAUDIT61",
+  "input_sha256": {
+    "BATCH_EAUDIT61.md": "93f14a61de70741222b48695fd1acf0d4a79243728de1cbbaa08b24fd16940f8",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.6-SmoothDenominatorBound",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件第6页（原PDF230/印刷209）首句逐字对应；C²/连续的一般化是新增引理，非原书字面假设。",
+          "attachment_pages": [
+            6
+          ],
+          "C_signature_check": "任意维数H/w/c；H为C²、w连续、能量面紧、横截分母非零。C²保证∇H连续，因而绝对内积连续，得到统一正下界；空能量面亦成立。C²/连续条件弱于原smooth，是合理的一般化且已在[EXTRA]披露；完整扰动公式不属于此条。",
+          "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.smoothDenominatorBound",
+        "verdict": "PASS",
+        "explanation": "任意维数H/w/c；H为C²、w连续、能量面紧、横截分母非零。C²保证∇H连续，因而绝对内积连续，得到统一正下界；空能量面亦成立。C²/连续条件弱于原smooth，是合理的一般化且已在[EXTRA]披露；完整扰动公式不属于此条。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-ZeroPerturbation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件第7页（原PDF229/印刷208）定理开头有H̃(q,p)=H(q,p)+εη(q,p)，第8页（原PDF230/印刷209）有u=εηw/(w·∇H)。JSON为两段公式的摘录拼接，分号是编辑分隔；不是原书另有η=0命题，statement_scope已说明。",
+          "attachment_pages": [
+            7,
+            8
+          ],
+          "C_signature_check": "任意维数、H/g/w及c/ε，无额外正则假设，η恒0时位移恒为零。Lean实数除法的总化约定使0/0也为0；零向量场及g乘零场的导数、散度为零，两个零函数积分为零。因此实际perturbationCorrection恒0，对奇异面或零分母亦成立。结论严格限于校正量的零扰动特例。",
+          "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.zeroPerturbation",
+        "verdict": "PASS",
+        "explanation": "任意维数、H/g/w及c/ε，无额外正则假设，η恒0时位移恒为零。Lean实数除法的总化约定使0/0也为0；零向量场及g乘零场的导数、散度为零，两个零函数积分为零。因此实际perturbationCorrection恒0，对奇异面或零分母亦成立。结论严格限于校正量的零扰动特例。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-DynamicalCorrection",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件第9页（原PDF230/印刷209）末段首句逐字对应，包括dynamical average、括注autocorrelation及such computations as well。",
+          "attachment_pages": [
+            9
+          ],
+          "C_signature_check": "量化n/d、H/η/w、向量观测a/b、任意时间族Φ及固定c/t；n>0，相关函数及Φ t均C∞，原面regularEnergy，扰动面由同一紧K容纳且K上分母非零。g(z)=⟨a(Φ(t,z)),b(z)⟩光滑，对这个固定且不随ε变化的g，完整Cε²平均差结论是Theorem5.1的实例。不要求Φ为H的流，是对固定光滑pullback的合法推广；不证明H与Hε各自不同动力学之间的相关函数误差。[EXTRA]已明确这一限制，不能据此推广到随ε变化的Φ。",
+          "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.dynamicalCorrection",
+        "verdict": "PASS",
+        "explanation": "量化n/d、H/η/w、向量观测a/b、任意时间族Φ及固定c/t；n>0，相关函数及Φ t均C∞，原面regularEnergy，扰动面由同一紧K容纳且K上分母非零。g(z)=⟨a(Φ(t,z)),b(z)⟩光滑，对这个固定且不随ε变化的g，完整Cε²平均差结论是Theorem5.1的实例。不要求Φ为H的流，是对固定光滑pullback的合法推广；不证明H与Hε各自不同动力学之间的相关函数误差。[EXTRA]已明确这一限制，不能据此推广到随ε变化的Φ。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-WeakStationary",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件第10页（原PDF228/印刷207）Forward Euler段摘句一致；原页句子随后以逗号接and this solution...，JSON摘录处加句号是片段收束；不改变命题。",
+          "attachment_pages": [
+            10
+          ],
+          "C_signature_check": "任意维数、向量场f及任意正测度μ，weakStationaryModel展开为对每个C∞紧支测试函数φ，Lie导数Dφ(f)可积且其μ积分为0；Lie使用fderiv的正确方向作用。这是弱散度方程的技术定义，允许Dirac且不强制绝对连续或概率归一化。定义本身不宣称唯一稳态，未把离散map不变性偷换为弱PDE；原书唯一概率结论已明确分流至另一source_id，此次不核验未给出的声明。",
+          "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.weakStationaryModel",
+        "verdict": "PASS",
+        "explanation": "任意维数、向量场f及任意正测度μ，weakStationaryModel展开为对每个C∞紧支测试函数φ，Lie导数Dφ(f)可积且其μ积分为0；Lie使用fderiv的正确方向作用。这是弱散度方程的技术定义，允许Dirac且不强制绝对连续或概率归一化。定义本身不宣称唯一稳态，未把离散map不变性偷换为弱PDE；原书唯一概率结论已明确分流至另一source_id，此次不核验未给出的声明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-WeakAttractor",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TARGET_PROBABILITY_DOMAIN_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-WeakAttractor",
+          "kind": "definition",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "207",
+          "pdf_page": "228",
+          "statement_latex": "this solution is not “asymptotically stable.”",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "z_n=(q_n,p_n), H(q,p)=p^2/2+q^2/2；h为数值时间步长。",
+            "\\widetilde f 是数值方法的modified向量场；\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=-\\nabla\\cdot(\\rho\\widetilde f)；\\delta[q]\\delta[p] 是原点Dirac概率。",
+            "this solution指Forward Euler相关弱稳态δ[q]δ[p]，并非任意平衡。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.weakAttractor",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]“attractive”取概率弱拓扑中某邻域内所有初值概率的有界连续测试函数收敛；邻域以有限测试族和正ε明确，不把个别轨道收敛当全密度吸引。此为三个后续结论共用的技术定义；不添加已收敛或已不变的前提。",
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅弱概率局部吸引的辅助技术定义；原负吸引性断言由MD-5.6-ForwardWeakStationary承担，不把定义本身当否定结论。",
+            "[R8审校] 当前weakAttractor未要求IsProbabilityMeasure μ；仅在调用处另有该条件时解释为概率弱拓扑局部吸引。定义的目标域仍需修正，不能据此认定签名已修复。"
+          ],
+          "statement_scope": "仅弱概率局部吸引的辅助技术定义；原负吸引性断言由MD-5.6-ForwardWeakStationary承担，不把定义本身当否定结论。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT22_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:19:08.743239",
+              "before_sha256": "d8891d2e6ba51c25808ae4cf6025e35f25cabe2b4bf71c5c919c839231440c07",
+              "after_sha256": "fc98987170c28da62f7dd431a8abfa70ab2620d7f12a893e019e87dcf95faf43",
+              "changed_fields": [
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH27_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT22/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "stage": "C",
+            "detail": "weakAttractor未限制目标μ是概率测度，允许通过空概率邻域获得真空吸引性。当前[EXTRA]描述强于签名实际保证。"
+          }
+        ],
+        "evidence": {
+          "A_source_check": "附件第11页（原PDF228/印刷207）Forward Euler段末语一致；原页引号内有句号，JSON以句外句号作排版规范化。this solution指原点Dirac。",
+          "attachment_pages": [
+            11
+          ],
+          "C_signature_check": "有限族有界连续ψ、共同ε>0、对邻域内所有概率ν及所有有界连续φ的t→+∞收敛，正确编码了局部弱吸引的收敛部分。但是目标μ的域是所有Measure，签名既没有IsProbabilityMeasure μ参数，也没有将其作为合取条件。因此可选择不含任何概率测度的所谓邻域而令全称命题真空成立，与[EXTRA]“概率弱拓扑中某邻域”的承诺不符。该缺陷独立于原书否定吸引的断言；辅助定义分流不能补足目标对象的域。",
+          "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.weakAttractor",
+        "verdict": "FAIL",
+        "explanation": "有限族有界连续ψ、共同ε>0、对邻域内所有概率ν及所有有界连续φ的t→+∞收敛，正确编码了局部弱吸引的收敛部分。但是目标μ的域是所有Measure，签名既没有IsProbabilityMeasure μ参数，也没有将其作为合取条件。因此可选择不含任何概率测度的所谓邻域而令全称命题真空成立，与[EXTRA]“概率弱拓扑中某邻域”的承诺不符。该缺陷独立于原书否定吸引的断言；辅助定义分流不能补足目标对象的域。",
+        "counterexample": "取n=1、μ=0测度、Φ(t,z)=z、m=1、ψ₀≡1及ε=1/2。ψ₀有界连续；任意概率ν都有∫1 dν=1，而∫1 dμ=0，故邻域条件|1−0|<1/2恒假。于是对所有ν的蕴含真空成立，weakAttractor Φ 0为真。零测度不属于概率空间，更不可能是概率推送测度的弱极限（用φ≡1即否定）。",
+        "suggested_fix": "在定义体增加IsProbabilityMeasure μ ∧ (...)，或把目标直接取概率测度类型；随后在概率空间中使用有限测试族邻域。Φ为可测流的资格可在实际应用定理中另行要求。本次只读审校，未修改Lean工程。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-EulerLogField",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件第12页（原PDF228/印刷207）与第8条所引同一Forward Euler弱稳态摘句一致；原页并未给出精确对数场公式，新增技术模型身份已在[EXTRA]/scope注明。",
+          "attachment_pages": [
+            12
+          ],
+          "C_signature_check": "定义在Bool、所有实h和二维z上：a=±log(1+h²)/(2h)，b=arctan(h)/h，场为(aq+bp,ap−bq)。h>0时forward径向增长、backward径向衰减，旋转方向均为(q̇,ṗ)=(p,−q)方向；对应矩阵分别I+hJ及(I−hJ)⁻¹的主实对数除以h。h=0的Lean总化值为零场，不是物理极限Jz，[EXTRA]明确排除该解释，故不判失败。定义未证明一步对应、ODE资格或一般BEA级数收敛，范围已披露。",
+          "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.eulerLogField",
+        "verdict": "PASS",
+        "explanation": "定义在Bool、所有实h和二维z上：a=±log(1+h²)/(2h)，b=arctan(h)/h，场为(aq+bp,ap−bq)。h>0时forward径向增长、backward径向衰减，旋转方向均为(q̇,ṗ)=(p,−q)方向；对应矩阵分别I+hJ及(I−hJ)⁻¹的主实对数除以h。h=0的Lean总化值为零场，不是物理极限Jz，[EXTRA]明确排除该解释，故不判失败。定义未证明一步对应、ODE资格或一般BEA级数收敛，范围已披露。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-EulerLogFlow",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件第13页（原PDF227/印刷206）中部原句中的连续短语逐字一致；后续紧邻展示式及段落明确finite truncation与r的意义。附件第14页为原PDF228上下文，不应将本摘句页码改回228。",
+          "attachment_pages": [
+            13,
+            14
+          ],
+          "C_signature_check": "对Bool、实h/t和二维z，返回exp(at)倍角度bt的顺时针旋转；在t=0恒为z，对t求导给出所列对数场，指数和旋转均满足时间加法。h>0时t=h的倍率为sqrt(1+h²)或其倒数，角为arctan h，分别得到前/后Euler一步。h=0时为恒等流，属已披露的总延拓。该技术定义不等同于任意数值方法有限截断的精确流，原文近似措辞及跨条对应义务均被保留。",
+          "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.eulerLogFlow",
+        "verdict": "PASS",
+        "explanation": "对Bool、实h/t和二维z，返回exp(at)倍角度bt的顺时针旋转；在t=0恒为z，对t求导给出所列对数场，指数和旋转均满足时间加法。h>0时t=h的倍率为sqrt(1+h²)或其倒数，角为arctan h，分别得到前/后Euler一步。h=0时为恒等流，属已披露的总延拓。该技术定义不等同于任意数值方法有限截断的精确流，原文近似措辞及跨条对应义务均被保留。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-EulerLogCorrespondence",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_DEFINITION_SYMBOL",
+          "LEAN_MISSING_LIOUVILLE_CONCLUSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-EulerLogCorrespondence",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "206–207",
+          "pdf_page": "227–228",
+          "statement_latex": "Let us assume that the perturbed equation is a realistic model for the numerical solutions, then define the evolving density by $\\frac{\\partial\\rho}{\\partial t}=\\mathcal L_{\\widetilde f}^{\\dagger}\\rho\\overset{\\mathrm{def}}{\\equiv}\\mathcal L_f^{\\dagger}\\rho+h^r\\mathcal L_{f_{(r)}}^{\\dagger}\\rho$. […] Applying Forward Euler to the harmonic oscillator, we have $q_{n+1}=q_n+hp_n$, $p_{n+1}=p_n-hq_n$. […] As an alternative, consider the Backward Euler method: $q_{n+1}=q_n+hp_{n+1}$, $p_{n+1}=p_n-hq_{n+1}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "z_n=(q_n,p_n), H(q,p)=p^2/2+q^2/2；h为数值时间步长。",
+            "\\widetilde f 是数值方法的modified向量场；\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=-\\nabla\\cdot(\\rho\\widetilde f)；\\delta[q]\\delta[p] 是原点Dirac概率。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.eulerLogCorrespondence",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]只对书中实际单位线性振子给出选定logarithmic场与两Euler更新的真实对应及全部t的ODE；不把更新等式或ODE作假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT23_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:19:38.401044",
+              "before_sha256": "7a684c10e6780947b8c47c4c9653e1562582b151d36fc0463d74e0fb7efd9c48",
+              "after_sha256": "1ccdcff1310fa912ee1e10310e3d02a832013b509b3c59e918f8243c3e4c199b",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH27_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT23/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "severity": "minor",
+            "field": "statement_latex",
+            "description": "附件第1页密度方程中 def 位于恒等定义符号 ≡ 上方，输入转写为等号 =；修正转写，保留原书内容。"
+          },
+          {
+            "stage": "C",
+            "severity": "major",
+            "field": "lean_decl",
+            "description": "声明只给两Euler单步与选定对数流的对应及轨道ODE，没有原文首个展示公式的密度演化、伴随Liouville算子或 L_f†+h^r L_f_(r)† 分解。[EXTRA]已披露仅处理线性振子，但不能使这部分原文结论成为已表达的结论。"
+          }
+        ],
+        "evidence": [
+          "A：已视觉核对附件第1页（印刷206/PDF227）密度方程和Forward Euler两更新，及第2页（印刷207/PDF228）Backward Euler两隐式更新。英文摘录及省略号所衔接段落一致；唯一公式转写修正为定义恒等符号。",
+          "C：E 2为实二维欧氏空间，z 0=q、z 1=p；h为任意实数但前提0<h。false/true分别选取径向增幅/衰减 a=±log(1+h²)/(2h)，共同角频率 b=arctan(h)/h。时间h的旋转伸缩分别给出 (q+hp,p-hq) 和 ((q+hp)/(1+h²),(p-hq)/(1+h²))。",
+          "C：第二合取对所有Bool、所有初值z和所有实时间t给出HasDerivAt，恰是所列线性场的ODE；Φ(0,z)=z也由流定义直接成立。无更新等式或ODE充作前提。但结论中没有ρ、r、f_(r)或伴随算子。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.eulerLogCorrespondence",
+        "verdict": "FAIL",
+        "explanation": "两Euler更新和全时间线性ODE部分的对象、量词、正步长前提与计算均正确；对数场是合理的精确单步插值。整条引文还明确包含密度Liouville演化及生成元分解，当前签名未表达该部分，故按完整结论审校FAIL。此结论与证明是否含sorry无关。",
+        "counterexample": null,
+        "suggested_fix": "另设密度/测度演化及伴随算子的明确接口，补足原文所述Liouville演化和线性分解声明；或者明确将本source_id的statement_scope和摘录拆分，单独审校Euler对数流对应。只建议，不改工程。"
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

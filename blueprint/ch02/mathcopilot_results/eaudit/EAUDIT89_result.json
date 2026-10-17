@@ -1,0 +1,35 @@
+{
+  "batch": "EAUDIT89",
+  "input_sha256": {
+    "BATCH_EAUDIT89.md": "7ce32f97d7276e2930042d1b49ebb00529a905f183e82f68e8bf288a3c2c9bee",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.4.1-SymmetricEven",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_ORDER_QUALIFICATION"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原书未写有限、正、确切阶及正则性；精确流没有有限确切阶。保留引文，人工确认资格注记。"
+        ],
+        "evidence": [
+          "R4_PAGES.pdf 附件第2页；书面页码85。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.symmetricEven",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Q n为有限维实空间；r为正自然数，G、F均实际可逆且联合C∞，F具有群律。逐点局部误差O(|h|^(r+1))且非O(|h|^(r+2))编码有限确切阶；光滑自伴随族的首个非零局部误差次数为奇数，故r偶。群律与可逆性推出F 0=id；正阶误差推出G 0=id。加强条件已标EXTRA，结论合理；原句省略有限确切阶资格须保留提醒。 当前限定版/Printed签名本身忠实且合理；本条综合判NEEDS_HUMAN来自必须保留的原书数学资格或疑误，并非据此判Lean签名错误。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": "若把order理解为误差界的下界，精确恒等流G=F=id满足每个r的局部阶界，也满足r=1；故必须保留非(r+1)阶的确切性。此例不反驳当前Lean前提。",
+        "suggested_fix": "原书未写有限、正、确切阶及正则性；精确流没有有限确切阶。保留引文，人工确认资格注记。"
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

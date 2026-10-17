@@ -1,0 +1,514 @@
+{
+  "batch": "EAUDIT69",
+  "input_sha256": {
+    "BATCH_EAUDIT69.md": "686fe257c41b546a6d59f4d4afcbdaf5deb4fd5c41658345dc5baf2be2449158",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4-EulerFactor",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 1,
+            "original_pdf_page": "161",
+            "printed_page": "139",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "逐句及展示式一致。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.eulerFactor"
+            ],
+            "finding": "h 为实数，rho 为复数，返回复数 1+h*rho；rho 对应原 λ。定义提取迭代因子，未把标量推广为矩阵，未增加限制。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.eulerFactor",
+        "verdict": "PASS",
+        "explanation": "h 为实数，rho 为复数，返回复数 1+h*rho；rho 对应原 λ。定义提取迭代因子，未把标量推广为矩阵，未增加限制。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-EulerImaginaryGrowth",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_UNMARKED_OMISSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4-EulerImaginaryGrowth",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4",
+          "printed_page": "140",
+          "pdf_page": "162",
+          "statement_latex": "The eigenvalues are $\\pm i\\omega$. The reason a method like Euler’s method can never perform well for molecular dynamics is that molecular dynamics is a Hamiltonian system and at the bottoms of basins on the energy surface, which correspond to stable centers, we expect all the eigenvalues of a local linearization of the problem to be purely imaginary. The stability condition always fails to hold and, for Euler’s method, $z_n$ grows exponentially rapidly away from the equilibrium point.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原页从Ω改用ω；矩阵的完整±iΩ谱另列，不由增长结论替代。",
+            "R1复审：首句与末句一致，但两句之间删去一整段解释且未标省略，不能称连续逐字引文。恢复原段并标清定理仅覆盖谐振子。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_UNMARKED_OMISSION",
+              "detail": "首句与末句一致，但两句之间删去一整段解释且未标省略，不能称连续逐字引文。恢复原段并标清定理仅覆盖谐振子。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.eulerImaginaryGrowth",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "h≠0、Ω≠0、复标量非零初值；只证明此线性振荡例，不声称所有非线性Hamiltonian平衡点都有纯虚谱。",
+            "[EXTRA] 保留已证趋无穷，并补精确指数率r>1和实际实振子Euler轨道的加权范数等式；矩阵完整复谱已由MD-4-OscillatorSpectrum单列承担，原ω=Ω。非零步长/频率为[EXTRA]资格，新结论暂sorry。"
+          ],
+          "statement_scope": "本条覆盖Euler的标量/实轨道指数增长；振子完整谱由MD-4-OscillatorSpectrum承担，未删原句。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT01_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:50:14.632895",
+              "before_sha256": "e38c2acd14c0910a188d09e1ce551823aa5a2deb9f4c7e8df81fc2d9339bb69d",
+              "after_sha256": "cd75303a71ce523965f1b6e04f2cea0852cc4e9be8e0b9887fbc7e0d39f302c3",
+              "changed_fields": [
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH01_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT01/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_UNMARKED_OMISSION",
+            "detail": "首句与末句一致，但两句之间删去一整段解释且未标省略，不能称连续逐字引文。恢复原段并标清定理仅覆盖谐振子。"
+          }
+        ],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 2,
+            "original_pdf_page": "162",
+            "printed_page": "140",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "首句与末句一致，但两句之间删去一整段解释且未标省略，不能称连续逐字引文。恢复原段并标清定理仅覆盖谐振子。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.eulerImaginaryGrowth",
+              "MD.Ch04.eulerImaginaryGrowth_rate"
+            ],
+            "finding": "全部 h,Ω∈ℝ，非零条件及非零复初值明确；第一条是趋无穷，补充条给 r=sqrt(1+(hΩ)²)>1、所有复初值和自然数步数的精确范数率，以及真实实矩阵轨道的加权范数率。对 Ω≠0，该加权范数正定，非零实轨道指数增长。零初值在恒等式中允许，与趋无穷条的非零前提不冲突。谱由条目5承担。[EXTRA] 已显式说明限制，均合理。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.eulerImaginaryGrowth; MD.Ch04.eulerImaginaryGrowth_rate",
+        "verdict": "PASS",
+        "explanation": "全部 h,Ω∈ℝ，非零条件及非零复初值明确；第一条是趋无穷，补充条给 r=sqrt(1+(hΩ)²)>1、所有复初值和自然数步数的精确范数率，以及真实实矩阵轨道的加权范数率。对 Ω≠0，该加权范数正定，非零实轨道指数增长。零初值在恒等式中允许，与趋无穷条的非零前提不冲突。谱由条目5承担。[EXTRA] 已显式说明限制，均合理。",
+        "counterexample": null,
+        "suggested_fix": "恢复被无标记删去的解释段；保留ω原印及现有谐振子限定。"
+      }
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerCharacteristic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 3,
+            "original_pdf_page": "162",
+            "printed_page": "140",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "特征值公式的字母、正负号、分母及根号范围均一致。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.symplecticEulerCharacteristic"
+            ],
+            "finding": "∀Ω,h∈ℝ、∀rho∈ℂ，计算实际复化矩阵 det(rho I-A)=rho²-(2-h²Ω²)rho+1。量词和常数项正确；本条明确只是辅助特征多项式，完整求根由条目6承担，不把本条独立当成完整求根。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.symplecticEulerCharacteristic",
+        "verdict": "PASS",
+        "explanation": "∀Ω,h∈ℝ、∀rho∈ℂ，计算实际复化矩阵 det(rho I-A)=rho²-(2-h²Ω²)rho+1。量词和常数项正确；本条明确只是辅助特征多项式，完整求根由条目6承担，不把本条独立当成完整求根。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-VerletStability",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_ENDPOINT_ERRATUM",
+          "CORRECTED_SCOPE_EXPLICIT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4-VerletStability",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4",
+          "printed_page": "141",
+          "pdf_page": "163",
+          "statement_latex": "For example, applying the Verlet method to the harmonic oscillator with frequency $\\Omega$ we find that the origin is stable (and the numerical solution stays bounded for all time) provided $h\\Omega\\le2$ (the same condition as for stability of Symplectic Euler).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "R1复审：原句确实印作 hΩ≤2 且声称所有时间有界；忠实转录，但端点陈述有数学疑误，保留原句。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "Verlet的hΩ=2矩阵也有Jordan增长，不能以谱模1推出所有轨道有界。"
+            },
+            {
+              "code": "BOOK_ENDPOINT_ERRATUM",
+              "detail": "原句确实印作 hΩ≤2 且声称所有时间有界；忠实转录，但端点陈述有数学疑误，保留原句。"
+            },
+            {
+              "code": "CORRECTED_SCOPE_EXPLICIT",
+              "detail": "修订版资格和原印断言不同，已明示且数学上合理；不以修订版PASS为原书背书。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.verletStability",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真正幂有界版本0<|hΩ|<2；原文≤2字面版另列待审。",
+            "[EXTRA] 本条明确是严格稳定内区间的修订版本，另补h=0分支；原印含端点结论保留MD-4-VerletBoundaryPrinted待导师，不宣称与原句等价。"
+          ],
+          "statement_scope": "显式修订的严格稳定内区间及零步长；原印≤端点由MD-4-VerletBoundaryPrinted保留为疑误。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT01_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:50:14.632895",
+              "before_sha256": "577c00f0f15ddcf00504f711009586809b5477d28cbb51dd35835833f47b9e38",
+              "after_sha256": "1d26830a3c62019289fc9a4756a1c16aaabc948ade04289a8c4a88e4c646e2e2",
+              "changed_fields": [
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT01/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "BOOK_ENDPOINT_ERRATUM",
+            "detail": "原句确实印作 hΩ≤2 且声称所有时间有界；忠实转录，但端点陈述有数学疑误，保留原句。"
+          },
+          {
+            "code": "CORRECTED_SCOPE_EXPLICIT",
+            "detail": "修订版资格和原印断言不同，已明示且数学上合理；不以修订版PASS为原书背书。"
+          }
+        ],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 4,
+            "original_pdf_page": "163",
+            "printed_page": "141",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "原句确实印作 hΩ≤2 且声称所有时间有界；忠实转录，但端点陈述有数学疑误，保留原句。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.verletStability",
+              "MD.Ch04.verletStability_zero"
+            ],
+            "finding": "两个签名分别为 0<|hΩ|<2 时的矩阵幂有界和任意 Ω 下 h=0 的幂有界；matrixStable 是同一 C 同时控制所有自然步数和所有实初值，非仅谱模≤1。verletMatrix 为实际速度Verlet矩阵。严格区间的正定二次型 p²+Ω²(1-h²Ω²/4)q²保持，h=0 为恒等矩阵，修订合理且陈述正确；PASS仅针对明示修订版，不认可原印≤端点。引用的 BoundaryPrinted 不在19条内，未据此宣称它已审。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.verletStability; MD.Ch04.verletStability_zero",
+        "verdict": "PASS",
+        "explanation": "两个签名分别为 0<|hΩ|<2 时的矩阵幂有界和任意 Ω 下 h=0 的幂有界；matrixStable 是同一 C 同时控制所有自然步数和所有实初值，非仅谱模≤1。verletMatrix 为实际速度Verlet矩阵。严格区间的正定二次型 p²+Ω²(1-h²Ω²/4)q²保持，h=0 为恒等矩阵，修订合理且陈述正确；PASS仅针对明示修订版，不认可原印≤端点。引用的 BoundaryPrinted 不在19条内，未据此宣称它已审。",
+        "counterexample": "Ω=1,h=2 时 Verlet 矩阵 A=[[-1,2],[0,-1]]。对 v=(0,1)，A^k v=((-1)^(k+1)2k,(-1)^k)，范数无界；原句 hΩ≤2 成立。此反例不反驳已明确的严格区间修订版。",
+        "suggested_fix": "保留≤2原印文字及疑误标记；勘误版沿用0<|hΩ|<2与h=0分支，人工确认如何发表端点勘误。"
+      }
+    },
+    {
+      "source_id": "MD-4-OscillatorSpectrum",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 5,
+            "original_pdf_page": "162",
+            "printed_page": "140",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "原页确实是小写 ω，保留而未静默改成 Ω。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.oscillatorSpectrum"
+            ],
+            "finding": "∀Ω∈ℝ、∀ζ∈ℂ，以非零复向量的实际特征方程定义谱，等价于 ζ=±iΩ。实矩阵 [[0,1],[-Ω²,0]] 正确，Ω=0 时谱集合退化为{0}，未误称可对角化或出现两个独立特征向量。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.oscillatorSpectrum",
+        "verdict": "PASS",
+        "explanation": "∀Ω∈ℝ、∀ζ∈ℂ，以非零复向量的实际特征方程定义谱，等价于 ζ=±iΩ。实矩阵 [[0,1],[-Ω²,0]] 正确，Ω=0 时谱集合退化为{0}，未误称可对角化或出现两个独立特征向量。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerRoots",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 6,
+            "original_pdf_page": "162",
+            "printed_page": "140",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "与条目3同一原公式，完整保留复根所需的±及判别式。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.symplecticEulerRoots"
+            ],
+            "finding": "∀Ω,h∈ℝ、∀ζ∈ℂ；左侧是实际复特征向量存在，右侧存在 d∈ℂ 满足 d²=h⁴Ω⁴-4h²Ω² 且 ζ=1-h²Ω²/2±d/2。存在式避免强制实平方根或主值分支，覆盖正、负、零判别式及重根。作为根集合结论完整，不额外声称重根的几何重数。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.symplecticEulerRoots",
+        "verdict": "PASS",
+        "explanation": "∀Ω,h∈ℝ、∀ζ∈ℂ；左侧是实际复特征向量存在，右侧存在 d∈ℂ 满足 d²=h⁴Ω⁴-4h²Ω² 且 ζ=1-h²Ω²/2±d/2。存在式避免强制实平方根或主值分支，覆盖正、负、零判别式及重根。作为根集合结论完整，不额外声称重根的几何重数。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerUnitRoots",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_NONREAL_ENDPOINT_AMBIGUITY",
+          "IMPLICIT_POSITIVE_PARAMETER_DOMAIN"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4-SymplecticEulerUnitRoots",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4",
+          "printed_page": "140",
+          "pdf_page": "162",
+          "statement_latex": "Then we observe that for $h^2\\Omega^2\\le4$, they are complex and their squared magnitude is\n\\[|\\lambda_{1,2}|^2=\\left(1-\\frac{h^2\\Omega^2}{2}\\right)^2+\\frac14(4h^2\\Omega^2-h^4\\Omega^4)=1,\\]\nthus both eigenvalues lie on the unit circle in the complex plane as long as $h\\Omega\\le2$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "λ₁,₂ 指 PDF p.162 上方 Symplectic Euler 矩阵的特征值；平方条件 h²Ω²≤4 包括0和4两个重根端点。",
+            "原文 they are complex 在端点根为实数±1；只有0<h²Ω²<4时为非实复共轭根。原文末句 hΩ≤2 按正频率、正步长背景理解；任意实参数需|hΩ|≤2。",
+            "模平方公式为原页推导，不是独立完整证明；单位圆谱不等于幂有界。",
+            "R1复审：不等式、模平方展开和末句均忠实。原文 they are complex 若指非实根，则在 h²Ω²=0、4 不成立；末句 hΩ≤2 依赖正步长正频率背景，任意实参数下须用绝对值。保留原句，交人工确认术语和隐含域。"
+          ],
+          "issues": [
+            {
+              "code": "BOOK_NONREAL_ENDPOINT_AMBIGUITY",
+              "detail": "不等式、模平方展开和末句均忠实。原文 they are complex 若指非实根，则在 h²Ω²=0、4 不成立；末句 hΩ≤2 依赖正步长正频率背景，任意实参数下须用绝对值。保留原句，交人工确认术语和隐含域。"
+            },
+            {
+              "code": "IMPLICIT_POSITIVE_PARAMETER_DOMAIN",
+              "detail": "不等式、模平方展开和末句均忠实。原文 they are complex 若指非实根，则在 h²Ω²=0、4 不成立；末句 hΩ≤2 依赖正步长正频率背景，任意实参数下须用绝对值。保留原句，交人工确认术语和隐含域。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.symplecticEulerUnitRoots",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT02_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:51:09.667335",
+              "before_sha256": "f2cee3fa5c32f4de58e397e5accc8e89b02801cae69b83009c08284af5eb70ee",
+              "after_sha256": "9d4a11c940f8d874e01ec46641ad916b3f3cefd2f7dfe5743d1d2100f8f7a261",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "BOOK_NONREAL_ENDPOINT_AMBIGUITY",
+            "detail": "不等式、模平方展开和末句均忠实。原文 they are complex 若指非实根，则在 h²Ω²=0、4 不成立；末句 hΩ≤2 依赖正步长正频率背景，任意实参数下须用绝对值。保留原句，交人工确认术语和隐含域。"
+          },
+          {
+            "code": "IMPLICIT_POSITIVE_PARAMETER_DOMAIN",
+            "detail": "不等式、模平方展开和末句均忠实。原文 they are complex 若指非实根，则在 h²Ω²=0、4 不成立；末句 hΩ≤2 依赖正步长正频率背景，任意实参数下须用绝对值。保留原句，交人工确认术语和隐含域。"
+          }
+        ],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 7,
+            "original_pdf_page": "162",
+            "printed_page": "140",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "不等式、模平方展开和末句均忠实。原文 they are complex 若指非实根，则在 h²Ω²=0、4 不成立；末句 hΩ≤2 依赖正步长正频率背景，任意实参数下须用绝对值。保留原句，交人工确认术语和隐含域。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.symplecticEulerUnitRoots"
+            ],
+            "finding": "∀Ω,h∈ℝ、∀ζ∈ℂ，在 h²Ω²≤4 及实际特征二次式为零的条件下 ‖ζ‖=1 正确，包括重根±1。借条目3明确连接到实际矩阵谱；未断言根非实、未把单位圆谱当幂有界。原模平方恒等式与该范数结论一致。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.symplecticEulerUnitRoots",
+        "verdict": "PASS",
+        "explanation": "∀Ω,h∈ℝ、∀ζ∈ℂ，在 h²Ω²≤4 及实际特征二次式为零的条件下 ‖ζ‖=1 正确，包括重根±1。借条目3明确连接到实际矩阵谱；未断言根非实、未把单位圆谱当幂有界。原模平方恒等式与该范数结论一致。",
+        "counterexample": "h=0 时根为1；hΩ=2 时根为-1，都不是非实数。若允许任意实hΩ，则hΩ=-3满足末句hΩ≤2却有一根模长>1；平方条件h²Ω²≤4不满足，故不反驳本条Lean。",
+        "suggested_fix": "保留原句，人工决定是否将非实解释限定为0<h²Ω²<4；一般实参数域的单位圆条件用|hΩ|≤2。现有Lean无需为此修改。"
+      }
+    },
+    {
+      "source_id": "MD-4-SymplecticEulerStability",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_ENDPOINT_ERRATUM",
+          "CORRECTED_SCOPE_EXPLICIT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4-SymplecticEulerStability",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4",
+          "printed_page": "140",
+          "pdf_page": "162",
+          "statement_latex": "This is the so-called linear stability condition of the Symplectic Euler method: if $h\\Omega\\le2$ the integrator is stable. When $h\\Omega>2$, the eigenvalues of the discretization method are both real, with one strictly inside and one strictly outside the unit circle. This implies that the method will exhibit exponentially growing solutions. We say that the stability threshold of the Symplectic Euler method is $2/\\Omega$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "R1复审：整段逐句一致；hΩ≤2 的端点稳定性有疑误，原文保留。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "≤2端点有单位圆谱但通常Jordan线性增长；幂有界不能包含端点。"
+            },
+            {
+              "code": "BOOK_ENDPOINT_ERRATUM",
+              "detail": "整段逐句一致；hΩ≤2 的端点稳定性有疑误，原文保留。"
+            },
+            {
+              "code": "CORRECTED_SCOPE_EXPLICIT",
+              "detail": "修订版资格和原印断言不同，已明示且数学上合理；不以修订版PASS为原书背书。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.symplecticEulerStability",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]正确的幂有界资格改为0<|hΩ|<2；原≤2字面版独立保留，未声称已审核修复。",
+            "[EXTRA] 明确为修订稳定内区间结论；补超阈值实谱恰为一内一外非零实根、真实指数增长轨道及正步长稳定集合上确界2/Ω。原端点错误单列保留，未新增证明。"
+          ],
+          "statement_scope": "修订的严格内区间、超阈值两实根/指数轨道及阈值上确界；原印含端点句由MD-4-SymplecticEulerBoundaryPrinted保留。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT02_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:51:09.667335",
+              "before_sha256": "28985695ae56de2dd0f7e38ad125d4ec3b646409a837e48c2ede5cc7cb3f288e",
+              "after_sha256": "14840bd1b01872dfe78f07ba450440416f2f34b62f894f857dcb47765be2fd33",
+              "changed_fields": [
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH02_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT02/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "BOOK_ENDPOINT_ERRATUM",
+            "detail": "整段逐句一致；hΩ≤2 的端点稳定性有疑误，原文保留。"
+          },
+          {
+            "code": "CORRECTED_SCOPE_EXPLICIT",
+            "detail": "修订版资格和原印断言不同，已明示且数学上合理；不以修订版PASS为原书背书。"
+          }
+        ],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 8,
+            "original_pdf_page": "162",
+            "printed_page": "140",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "整段逐句一致；hΩ≤2 的端点稳定性有疑误，原文保留。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.symplecticEulerStability",
+              "MD.Ch04.symplecticEulerStability_complete"
+            ],
+            "finding": "首条在严格非零内区间给真实矩阵幂有界，在 2<|hΩ| 给实际复特征值在单位圆外。补充条要求 Ω>0，正步长稳定集合的实上确界为2/Ω；对任意超阈值 h，存在两个实根 a,b，0<|a|<1<|b|，完整谱等价式排除遗漏，并存在非零实初值满足所有 k 的 A^k v=b^k v。该精确轨道足以推出指数增长，不是仅有谱断言。修订范围和正频率条件已明示，陈述正确；PASS不认可原印端点。BoundaryPrinted 未随本任务给出，不纳入已审结论。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.symplecticEulerStability; MD.Ch04.symplecticEulerStability_complete",
+        "verdict": "PASS",
+        "explanation": "首条在严格非零内区间给真实矩阵幂有界，在 2<|hΩ| 给实际复特征值在单位圆外。补充条要求 Ω>0，正步长稳定集合的实上确界为2/Ω；对任意超阈值 h，存在两个实根 a,b，0<|a|<1<|b|，完整谱等价式排除遗漏，并存在非零实初值满足所有 k 的 A^k v=b^k v。该精确轨道足以推出指数增长，不是仅有谱断言。修订范围和正频率条件已明示，陈述正确；PASS不认可原印端点。BoundaryPrinted 未随本任务给出，不纳入已审结论。",
+        "counterexample": "Ω=1,h=2 时 A=[[-3,2],[-2,1]]=-I+N，N=[[-2,2],[-2,2]]≠0且N²=0。对v=(1,0)，A^k v=(-1)^k(1+2k,2k)，无界。",
+        "suggested_fix": "保留原印段落；勘误版继续严格稳定区间，阈值2/Ω理解为正步长稳定集合上确界，不宣称上确界处稳定。"
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

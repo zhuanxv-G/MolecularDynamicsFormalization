@@ -1,0 +1,1018 @@
+[
+  {
+    "source_id": "MD-4-EulerFactor",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4-EulerImaginaryGrowth",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_UNMARKED_OMISSION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4-SymplecticEulerCharacteristic",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4-VerletStability",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "BOOK_ENDPOINT_ERRATUM",
+      "CORRECTED_SCOPE_EXPLICIT"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4-OscillatorSpectrum",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4-SymplecticEulerRoots",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4-SymplecticEulerUnitRoots",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "BOOK_NONREAL_ENDPOINT_AMBIGUITY",
+      "IMPLICIT_POSITIVE_PARAMETER_DOMAIN"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4-SymplecticEulerStability",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "BOOK_ENDPOINT_ERRATUM",
+      "CORRECTED_SCOPE_EXPLICIT"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.1-PrintedImplicitRelation",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "BOOK_METHOD_NAME_FORMULA_MISMATCH"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.1-ImplicitFactor",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.1-ImplicitModulus",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "BOOK_LINEAR_SYSTEM_SCOPE_AMBIGUITY"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.1-ModifiedFrequencyLimit",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.1-MidpointElimination",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.2.1-FastVerlet",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_WORD_MISMATCH",
+      "PROJECT_DEPENDENCY_NOT_SUPPLIED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.2.1-RESPA",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "SOURCE_UNMARKED_OMISSION",
+      "MISSING_POSITIVE_SUBSTEP_COUNT",
+      "PROJECT_DEPENDENCY_NOT_SUPPLIED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.2.1-SlowMatrix",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.2.1-FastMatrix",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.2.1-ImpulseDet",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.2.1-ImpulseTrace",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.2.1-ResonancePower",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.2.1-ResonanceTaylor",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "PRINTED_TAYLOR_REMAINDER"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.2.1-ResonanceInstability",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.2.1-ResonanceGrowth",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_NORM_OSCILLATION",
+      "INCOMPLETE_LINEAR_RATE"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.2.2-MollifiedPotential",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-HolonomicRelation",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-ConstrainedSolution",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-ConstraintSet",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_REGULARITY_OMITTED"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-ConstraintJacobian",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-JacobianActualDerivative",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-ConstrainedPendulum",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_MASS_NORMALIZATION",
+      "CLASSICAL_POTENTIAL_DOMAIN"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-ReactionMultiplier",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "SCOPE_EXCEEDS_DECLARATION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-ReactionBalance",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-GramPositive",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-GramInvertible",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "LATEX_OVERESCAPED_CONTEXT"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-CotangentInvariant",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "LATEX_OVERESCAPED_CONTEXT",
+      "UNMARKED_EXTRA_GENERAL_FORCE"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3-ReducedFieldRegularity",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.1-RestrictedForm",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "ANNOTATION_SCOPE_CLARIFICATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.1-VariationalFormula",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_INDEX_RANGE_TRANSCRIPTION",
+      "SOURCE_PUNCTUATION",
+      "EXTRA_ANNOTATION_CLARIFICATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.1-HessianPullbackCancel",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_DUMMY_INDEX_TRANSCRIPTION",
+      "SOURCE_TYPOGRAPHY_PRESERVED",
+      "PROOF_NOTE_CLARIFICATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.2-ProjectionResidual",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.2-ProjectionJacobian",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.2-NewtonConstraint",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.2-NewtonQuadratic",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "EXTRA_ANNOTATION_CLARIFICATION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.2-FrozenNewtonLinear",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.2-ProjectionScale",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "SOURCE_BIG_O_PRECONDITION_NEEDS_HUMAN",
+      "LEAN_PREDICTOR_SIGN_MISMATCH",
+      "SOURCE_BIG_O_TYPOGRAPHY",
+      "EXTRA_ANNOTATION_CLARIFICATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.3-ComponentPrinted",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_INDEX_UNDEFINED"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.3-ComponentConstraintStep",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_PUNCTUATION",
+      "EXTRA_ANNOTATION_CROSSTALK"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.3-ComponentSweep",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "PRINTED_INDEX_UNDEFINED",
+      "STOP_BOUNDARY_MISMATCH",
+      "TOTALIZED_AUXILIARY_DOMAIN"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.4-Lemma41",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_HESSIAN_INDEX",
+      "SOURCE_SUM_LIMITS"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.4-ProjectedEulerPullback",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_SUM_LIMITS"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.4-CotangentMultiplier",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "CONTEXT_MAPPING_ADDED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.4-CotangentProjection",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "CONTEXT_MAPPING_ADDED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.4-CotangentRegularity",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "EXPLICIT_AUXILIARY_SCOPE",
+      "LATEX_PRIME_ATTACHMENT"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.4-CotangentPullback",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "LATEX_PRIME_ATTACHMENT",
+      "EXTRA_MARKER_ADDED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.4-GramProjectedEuler",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_FORCE_SIGN_CONFLICT"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.5-ConstrainedOrders",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_FORCE_SIGN_CONFLICT",
+      "CORRECTED_METHOD_NOT_LABELLED",
+      "SHAKE_ORDER_OUTSIDE_SUPPLIED_SCOPE"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.5-RATTLESymplectic",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.5.1-AdjointEuler",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.5.1-ConstrainedComposition",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "ORDER_CLAUSE_NOT_SUPPLIED",
+      "EXTRA_BRANCH_OVERCLAIM"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.5.1-ConstrainedCompositionOrder",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "MULTIPLIER_RESCALE_UNDOCUMENTED"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.5.1-GeodesicRelation",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.6-LINCSInverse",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "NORMALIZATION_CONTEXT_MISSING"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.3.6-LINCSConvergence",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-WaterPairPotential",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "DOMAIN_ANNOTATION_NOT_ENCODED"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-CenterMass",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "TOTALIZED_DIVISION_CONTEXT"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-RelativePositions",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-KineticSplit",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "ALGEBRAIC_SCOPE_CLARIFICATION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-SecondMoment",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-RotationKinetic",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-RotationTraceIdentity",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-RotationSkew",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-SkewMatrix",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-CrossProduct",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-SkewRepresentation",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "NONVERBATIM_RECONSTRUCTION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-CrossMatrix",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-RigidVelocity",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-InertiaTensor",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-RotationalEnergy",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-InertiaTraceCorrected",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-DipolarHamiltonian",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-DipolarPairPotential",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_EXPLICIT_IDENTITY_INSERTION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-RigidHamiltonian",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-SecondMomentDiagonal",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-RotationBodyEnergy",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-DipolarConstraint",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-DipolarPotentialSum",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "DECLARED_DOMAIN_NOT_ENFORCED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-RotationTrajectory",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4-RigidMatrixRelation",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.1-AngularMomentum",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.1-BodyMomentum",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.1-AngularInertia",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "INCOMPLETE_FULL_CONCLUSION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.1-EulerRigidField",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.1-FreeRigidSolution",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.1-RigidInvariants",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SUPPLEMENTARY_CONCLUSION_NOT_EXPLICIT"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.1-RigidPoissonMatrix",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.1-PoissonDegeneracy",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.1-AxisRotation",
+    "source_status": "APPROVED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.1-PrincipalAxisField",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_COMPONENT_SUBSCRIPTS_MISSING",
+      "SOURCE_CORRECTION_REQUIRES_HUMAN"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidForce",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_DISPLAY_PUNCTUATION",
+      "LOCAL_POTENTIAL_SLICE_UNDOCUMENTED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidTorque",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "TORQUE_NOTATION_CONTEXT_INCOMPLETE"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrinted",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "PRINTED_DRIFT_MASS_FACTOR_QUERY",
+      "PRINTED_SPIN_SIGN_QUERY",
+      "SOURCE_DISPLAY_PUNCTUATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.2-DriftSpinCommute",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrintedStructure",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "QUOTE_PAGE_VS_CONTEXT_PAGE",
+      "EXTRA_REGULARITY_PREMISES_UNRECORDED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidSystemForce",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_PUNCTUATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidSystemTorque",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidSystemKick",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_PUNCTUATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrintedSystem",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_PUNCTUATION",
+      "SOURCE_MASS_CONVENTION_UNRESOLVED",
+      "SOURCE_SPIN_CONVENTION_UNRESOLVED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.2-RigidSystemSymplectic",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "EXTRA_GLOBAL_REGULARITY_CLARIFIED",
+      "SOURCE_MASS_CONVENTION_UNRESOLVED",
+      "SOURCE_SPIN_CONVENTION_UNRESOLVED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  }
+]

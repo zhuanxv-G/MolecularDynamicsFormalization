@@ -18,10 +18,29 @@ variable {R : Type*} [Ring R] [Algebra ℝ R]
 /-- source_id: MD-3-ModifiedConstruction · unnumbered_claim · §3 · 印刷p.97 / PDFp.119
 [EXTRA] 近恒等、光滑、阶r≥1用smoothSymplecticData实际定义表达：开放凸D、紧凸B⊆D、H及(h,z)↦G_h(z)无限可微、G₀=id、逐h辛、实际原始ODE流和局部阶。
 [EXTRA] 按任意有限截断匹配解释“in an approximate sense”；不将形式无限级数当实际收敛解，不将finiteMatching结论作前提。
-[EXTRA] EAUDIT01补原首句Hamiltonian流辛性为独立完整结论，与原近恒等辛映射修正Hamiltonian有限匹配合取；两个真实项目命题全部量词展开供审校，未把流辛性作构造前提。 -/
+[EXTRA] EAUDIT01补原首句Hamiltonian流辛性为独立完整结论，与原近恒等辛映射修正Hamiltonian有限匹配合取；两个真实项目命题全部量词展开供审校，未把流辛性作构造前提。 [EXTRA] 24号：正式库冻结；在本Blueprint同名局部定义中把H、联合G的正则性改为scoped ∞，构造结论Hj也使用∞。主定理改接该本地完整命题，保留Hamilton流辛性合取及∃Hj后∀k量词。未改冻结库，未把解析充分条件当作C∞证明。
+-/
+def smoothSymplecticData {n : ℕ} (H : SymplecticCoordinates n → ℝ)
+    (D B : Set (SymplecticCoordinates n)) (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
+    (r : ℕ) : Prop :=
+  0 < r ∧ IsOpen D ∧ Convex ℝ D ∧ IsCompact B ∧ Convex ℝ B ∧ B ⊆ D ∧
+  ContDiffOn ℝ ∞ H D ∧
+  (∀ z ∈ D, G 0 z=z) ∧
+  (∃ η > 0, ContDiffOn ℝ ∞ (fun hz : ℝ × SymplecticCoordinates n => G hz.1 hz.2)
+      (Ioo (-η) η ×ˢ D) ∧
+    (∀ h ∈ Ioo (-η) η, ∀ z ∈ D, IsTextbookSymplectic (textbookJacobian (G h) z)) ∧
+    actualFlowNearCompact (textbookHamiltonianVectorField H) D B Φ η) ∧ localOrder G Φ B r
+
+def modifiedConstruction_statement24 : Prop :=
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, ContDiffOn ℝ ∞ (Hj j) D) ∧
+      ∀ k ≥ r, finiteMatching H Hj r k D B G
+
 theorem modifiedConstruction :
   MolecularDynamics.Chapter02Review.hamiltonianSymplectic_statement ∧
-  MolecularDynamics.Chapter03Review.modifiedConstruction_statement := by
+  modifiedConstruction_statement24 := by
   sorry
 
 /-- source_id: MD-3.1-AdjointEulerOscillator · definition · §3.1 · 印刷p.98 / PDFp.120 -/
@@ -73,7 +92,8 @@ theorem oscillatorShadowInvariant :
 
 /-- source_id: MD-3.1-ShadowEllipses · unnumbered_claim · §3.1 · 印刷p.99 / PDFp.121
 [EXTRA] 显式Ω>0、|hΩ|<2，排除退化与不稳定步长；线性等价给出振子二次型标准形。
-[NEEDS_HUMAN] 一般a,b,ε椭圆旋转与振子特例之间仍需完整统一；不以特例冒充全部结论。 -/
+[NEEDS_HUMAN] 一般a,b,ε椭圆旋转与振子特例之间仍需完整统一；不以特例冒充全部结论。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem shadowEllipses :
     (∀ a b : ℝ, a ≠ 0 → b ≠ 0 →
       ∃ δ > 0, ∃ θ A B : ℝ → ℝ,
@@ -87,6 +107,27 @@ theorem shadowEllipses :
       ∃ L : (ℝ × ℝ) ≃ₗ[ℝ] (ℝ × ℝ), ∀ z,
         oscillatorShadow Ω h (L z)=(z.1^2+z.2^2)/2) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.1-ShadowEllipses。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem shadowEllipses_corrected :
+    (∀ a b : ℝ, a ≠ 0 → b ≠ 0 →
+      ∃ δ > 0, ∃ θ A B : ℝ → ℝ,
+        Tendsto A (𝓝 0) (𝓝 |a|) ∧ Tendsto B (𝓝 0) (𝓝 |b|) ∧
+        (∀ ε ∈ Ioo (-δ) δ, 0 < A ε ∧ 0 < B ε ∧ ∀ x y : ℝ,
+          x^2/a^2+y^2/b^2+ε*x*y =
+            (Real.cos (θ ε)*x+Real.sin (θ ε)*y)^2/(A ε)^2+
+            (-Real.sin (θ ε)*x+Real.cos (θ ε)*y)^2/(B ε)^2)) ∧
+    (∀ Ω h : ℝ, 0 < Ω → |h*Ω| < 2 →
+      (∀ z : ℝ × ℝ, z ≠ 0 → 0 < oscillatorShadow Ω h z) ∧
+      ∃ L : (ℝ × ℝ) ≃ₗ[ℝ] (ℝ × ℝ), ∀ z,
+        oscillatorShadow Ω h (L z)=(z.1^2+z.2^2)/2) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.1-EulerGrowth · unnumbered_claim · §3.1 · 印刷p.100 / PDFp.122
 [EXTRA] Ω≠0、固定h≠0且初始能量>0，排除平衡点和零步长。 -/
@@ -160,7 +201,8 @@ def formalObservable {n : ℕ} (f : Q n → Q n) (φ : Q n → ℝ) (z : Q n) : 
 /-- source_id: MD-3.2-FiniteLieTaylor · unnumbered_claim · §3.2 · 印刷p.101 / PDFp.123
 [EXTRA] [EXTRA]有限阶k+1统一局部余项是原文形式展开的额外严格有限解释，原文未明写常数C与δ。
 [EXTRA] [EXTRA]f与φ取全域C∞并给定实际ODE解；不预设无限级数收敛。
-[NEEDS_HUMAN] 是否将额外有限余项定理作为原文的忠实严格化，由导师/网站裁定；本地不进入证明。 -/
+[NEEDS_HUMAN] 是否将额外有限余项定理作为原文的忠实严格化，由导师/网站裁定；本地不进入证明。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem lieTaylor :
   ∀ (n k : ℕ) (f : Q n → Q n) (φ : Q n → ℝ) (γ : ℝ → Q n),
     ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ φ →
@@ -170,9 +212,26 @@ theorem lieTaylor :
         ((textbookLieDerivative f)^[j] φ) (γ 0)| ≤ C*|t|^(k+1) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.2-FiniteLieTaylor。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem lieTaylor_corrected :
+  ∀ (n k : ℕ) (f : Q n → Q n) (φ : Q n → ℝ) (γ : ℝ → Q n),
+    ContDiff ℝ ∞ f → ContDiff ℝ ∞ φ →
+    (∀ t, HasDerivAt γ (f (γ t)) t) →
+    ∃ C > 0, ∃ δ > 0, ∀ t ∈ Ioo (-δ) δ,
+      |φ (γ t)-∑ j ∈ Finset.range (k+1), t^j/(Nat.factorial j:ℝ)*
+        ((textbookLieDerivative f)^[j] φ) (γ 0)| ≤ C*|t|^(k+1) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.2-FlowCoordinates · unnumbered_claim · §3.2 · 印刷p.101 / PDFp.123
 [EXTRA] 有限截断阶k+1真实余项是额外严格化，原文没有此显式不等式；f全域C∞。
-[NEEDS_HUMAN] 形式exp作用于坐标的等式无实际收敛主张；严格化为有限Taylor余项是否超出原文需裁定。 -/
+[NEEDS_HUMAN] 形式exp作用于坐标的等式无实际收敛主张；严格化为有限Taylor余项是否超出原文需裁定。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem flowCoordinates :
     ∀ (n k : ℕ) (f : Q n → Q n) (D : Set (Q n))
       (Φ : ℝ → Q n → Q n) (η : ℝ),
@@ -183,6 +242,24 @@ theorem flowCoordinates :
             t^j * PowerSeries.coeff j (formalObservable f (fun z => z i) ζ)|
             ≤ C * |t|^(k+1) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.2-FlowCoordinates。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem flowCoordinates_corrected :
+    ∀ (n k : ℕ) (f : Q n → Q n) (D : Set (Q n))
+      (Φ : ℝ → Q n → Q n) (η : ℝ),
+      ContDiff ℝ ∞ f → actualFlow f D Φ η →
+      ∀ ζ ∈ D, ∀ i : Fin n, ∃ C > 0, ∃ δ > 0, δ ≤ η ∧
+        ∀ t ∈ Ioo (-δ) δ,
+          |Φ t ζ i - ∑ j ∈ Finset.range (k+1),
+            t^j * PowerSeries.coeff j (formalObservable f (fun z => z i) ζ)|
+            ≤ C * |t|^(k+1) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.2-PoissonBracket · definition · §3.2 · 印刷p.102 / PDFp.124 -/
 noncomputable def textbookPoissonBracket (F G : SymplecticCoordinates Nc → ℝ)
@@ -316,7 +393,8 @@ theorem productExponentialCubic (A B : R) :
 
 /-- source_id: MD-3.3-DifferenceCommutator · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 
 [EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 
-[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 [EXTRA] 24号：保留零至二次结论；补一般非交换代数三次系数及Hamilton算子实例。原JSON恢复印刷p.104/PDF126的三次项和O(h⁴)展示式，已视觉复核原页。一般三次系数尝试有限代数展开证明；Hamilton算子实例尚未证明，最终逐声明状态以本地核验日志为准。
+-/
 theorem differenceCommutator (A B : R) :
     PowerSeries.coeff 0 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
     PowerSeries.coeff 1 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
@@ -341,6 +419,32 @@ theorem differenceCommutator_hamiltonian (n : ℕ)
        textbookLieDerivative (textbookHamiltonianVectorField B)
         (textbookLieDerivative (textbookHamiltonianVectorField A) φ) z) := by
   sorry
+
+theorem differenceCommutator_coeff3 (A B : R) :
+    PowerSeries.coeff 3 (textbookFormalOperatorExponential A *
+      textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) =
+      (1/6 : ℝ) • ((2 : ℝ) • (A*B^2)+(2 : ℝ) • (A^2*B)-
+        B*A^2-B*A*B-B^2*A-A*B*A) := by
+  rw [map_sub, textbookFormalOperatorProduct_coeff_three,
+    textbookFormalOperatorExponential_coeff]
+  norm_num
+  have hp : (A+B)^3 = A^3+A^2*B+A*B*A+A*B^2+
+      B*A^2+B*A*B+B^2*A+B^3 := by noncomm_ring
+  rw [hp]
+  module
+
+theorem differenceCommutator_hamiltonian_coeff3 (n : ℕ)
+    (A B φ : SymplecticCoordinates n → ℝ)
+    (_hA : ContDiff ℝ ∞ A) (_hB : ContDiff ℝ ∞ B) (_hφ : ContDiff ℝ ∞ φ)
+    (z : SymplecticCoordinates n) :
+    let LA := textbookLieDerivative (textbookHamiltonianVectorField A)
+    let LB := textbookLieDerivative (textbookHamiltonianVectorField B)
+    PowerSeries.coeff 3 (hamiltonianSplittingObservable A B φ z-
+      hamiltonianExactObservable A B φ z) = (1/6 : ℝ)*
+      (2*LA (LB (LB φ)) z+2*LA (LA (LB φ)) z-
+        LB (LA (LA φ)) z-LB (LA (LB φ)) z-LB (LB (LA φ)) z-LA (LB (LA φ)) z) := by
+  sorry
+
 
 /-- source_id: MD-3.3-DifferenceCubic · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 
 [EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 -/
@@ -384,7 +488,8 @@ theorem leadingShadowPrinted :
   sorry
 
 /-- source_id: MD-3.3-LeadingModifiedExponential · unnumbered_claim · §3.3 · 印刷p.105 / PDFp.127
-[ERRATUM?] p.105/PDF127比较式似应为二次系数之差（第二项前负号）；展示h³交叉项似缺1/2。最终R₀式与既有匹配一致。 -/
+[ERRATUM?] p.105/PDF127比较式似应为二次系数之差（第二项前负号）；展示h³交叉项似缺1/2。最终R₀式与既有匹配一致。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem leadingModifiedExponential (A B : R) (n : ℕ) (hn : n < 3) :
     PowerSeries.coeff n
       (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B) =
@@ -392,9 +497,24 @@ theorem leadingModifiedExponential (A B : R) (n : ℕ) (hn : n < 3) :
         (textbookFormalModifiedExponential A B ((1 / 2 : ℝ) • (A * B - B * A))) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.3-LeadingModifiedExponential。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem leadingModifiedExponential_corrected (A B : R) (n : ℕ) (hn : n < 3) :
+    PowerSeries.coeff n
+      (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B) =
+      PowerSeries.coeff n
+        (textbookFormalModifiedExponential A B ((1 / 2 : ℝ) • (A * B - B * A))) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.3-LeadingShadowHamiltonian · unnumbered_claim · §3.3 · 印刷p.105 / PDFp.127
 [EXTRA] D开放、K紧且K⊆D、A/B在D无限可微并给定真实局部流；实际修正ODE解及O(h³)端点余项为结论。
-[ERRATUM?] 与同页印刷交换子和状态/pullback组合约定一起核对，不能静默换号。 -/
+[ERRATUM?] 与同页印刷交换子和状态/pullback组合约定一起核对，不能静默换号。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：默认保留状态复合Φ_h∘Ψ_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL_B)exp(hL_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。
+-/
 theorem leadingShadowHamiltonian :
   ∀ (n : ℕ) (A B : SymplecticCoordinates n → ℝ) (D K : Set (SymplecticCoordinates n))
     (Φ Ψ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
@@ -405,6 +525,24 @@ theorem leadingShadowHamiltonian :
         solution (textbookHamiltonianVectorField (fun x => A x+B x+h/2*textbookPoissonBracket A B x)) (Γ h z) 0 h ∧
         ‖Φ h (Ψ h z)-Γ h z h‖ ≤ C*h^3 := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.3-LeadingShadowHamiltonian。改动：默认保留状态复合Φ_h∘Ψ_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL_B)exp(hL_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。 -/
+theorem leadingShadowHamiltonian_corrected :
+  ∀ (n : ℕ) (A B : SymplecticCoordinates n → ℝ) (D K : Set (SymplecticCoordinates n))
+    (Φ Ψ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    IsOpen D → IsCompact K → K ⊆ D → ContDiffOn ℝ ∞ A D → ContDiffOn ℝ ∞ B D →
+    actualFlow (textbookHamiltonianVectorField A) D Φ η → actualFlow (textbookHamiltonianVectorField B) D Ψ η →
+    ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+      ∀ h ∈ Ioo 0 δ, ∀ z ∈ K, Γ h z 0=z ∧
+        solution (textbookHamiltonianVectorField (fun x => A x+B x+h/2*textbookPoissonBracket A B x)) (Γ h z) 0 h ∧
+        ‖Φ h (Ψ h z)-Γ h z h‖ ≤ C*h^3 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.3-BCH4 · unnumbered_claim · §3.3 · 印刷p.106 / PDFp.128 -/
 theorem bch4 :
@@ -421,7 +559,8 @@ def bchHamiltonian3 {n : ℕ} (A B : SymplecticCoordinates n → ℝ) (h : ℝ) 
 
 /-- source_id: MD-3.3-BCHHamiltonianMatching · unnumbered_claim · §3.3 · 印刷p.106 / PDFp.128
 [EXTRA] 实际匹配按截断至h³、端点误差O(h⁵)表达；D开放、K紧、光滑Hamiltonian与真实局部流明示。
-[NEEDS_HUMAN] 需确定原书组合顺序和有限截断的实际余项阶；未把匹配结论当假设。 -/
+[NEEDS_HUMAN] 需确定原书组合顺序和有限截断的实际余项阶；未把匹配结论当假设。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：默认保留状态复合Φ_h∘Ψ_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL_B)exp(hL_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。
+-/
 theorem bchHamiltonianMatching :
   ∀ (n : ℕ) (A B : SymplecticCoordinates n → ℝ) (D K : Set (SymplecticCoordinates n))
     (Φ Ψ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
@@ -429,6 +568,21 @@ theorem bchHamiltonianMatching :
     actualFlow (textbookHamiltonianVectorField A) D Φ η → actualFlow (textbookHamiltonianVectorField B) D Ψ η →
     matchesHamiltonian (bchHamiltonian3 A B) (fun h => Φ h ∘ Ψ h) K 4 := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.3-BCHHamiltonianMatching。改动：默认保留状态复合Φ_h∘Ψ_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL_B)exp(hL_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。 -/
+theorem bchHamiltonianMatching_corrected :
+  ∀ (n : ℕ) (A B : SymplecticCoordinates n → ℝ) (D K : Set (SymplecticCoordinates n))
+    (Φ Ψ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    IsOpen D → IsCompact K → K ⊆ D → ContDiffOn ℝ ∞ A D → ContDiffOn ℝ ∞ B D →
+    actualFlow (textbookHamiltonianVectorField A) D Φ η → actualFlow (textbookHamiltonianVectorField B) D Ψ η →
+    matchesHamiltonian (bchHamiltonian3 A B) (fun h => Φ h ∘ Ψ h) K 4 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.3-CommutingFlows · unnumbered_claim · §3.3 · 印刷p.106 / PDFp.128
 [EXTRA] 光滑Hamiltonian、开放域及三个真实局部流；|h|<η/2保证复合时间在所给流的定义区间。 
@@ -494,8 +648,20 @@ theorem verletStructure :
   exact MolecularDynamics.Chapter03Review.verletVariants_proved
 
 /-- source_id: MD-3.3.2-VerletModifiedHamiltonian · definition · §3.3.2 · 印刷p.107 / PDFp.129 
-[EXTRA] 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。 -/
+[EXTRA] 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：这份独立表达式只按机械二次动能解释，不能用于一般非二次T；机械匹配见verletModifiedMatching_corrected。一般T的h⁴公式尚待导师，不声称本通用函数对任意T正确。
+-/
 def verletModifiedH {n : ℕ} (T U : SymplecticCoordinates n → ℝ) (h : ℝ) (z : SymplecticCoordinates n) : ℝ :=
+  T z+U z+h^2/12*(textbookPoissonBracket T (textbookPoissonBracket T U) z-
+    textbookPoissonBracket U (textbookPoissonBracket U T) z/2)+h^4/120*(
+      -textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T U))) z/6+
+      textbookPoissonBracket U (textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T U))) z/3-
+      textbookPoissonBracket U (textbookPoissonBracket U (textbookPoissonBracket T (textbookPoissonBracket T U))) z/4+
+      textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket U (textbookPoissonBracket U T))) z)
+
+
+
+/-- 修正版，对应原文 MD-3.3.2-VerletModifiedHamiltonian。改动：这份独立表达式只按机械二次动能解释，不能用于一般非二次T；机械匹配见verletModifiedMatching_corrected。一般T的h⁴公式尚待导师，不声称本通用函数对任意T正确。 -/
+def verletModifiedH_corrected {n : ℕ} (T U : SymplecticCoordinates n → ℝ) (h : ℝ) (z : SymplecticCoordinates n) : ℝ :=
   T z+U z+h^2/12*(textbookPoissonBracket T (textbookPoissonBracket T U) z-
     textbookPoissonBracket U (textbookPoissonBracket U T) z/2)+h^4/120*(
       -textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T (textbookPoissonBracket T U))) z/6+
@@ -507,7 +673,8 @@ def verletModifiedH {n : ℕ} (T U : SymplecticCoordinates n → ℝ) (h : ℝ) 
 [EXTRA] 正对角质量、U全域C∞、紧初值B；完整印刷h⁴截断实际O(h⁶)端点匹配为额外严格化。
 [NEEDS_HUMAN] 与速度/位置Verlet的组合次序共同核对h²,h⁴系数；原文Hamiltonian O(h⁶)与实际匹配阶也需裁定。 
 [EXTRA] 保留已列机械特例，新增一般分离T(p),U(q)、真实局部子流、h⁴系数及所有截断匹配；Hamiltonian余项从h⁶起（奇项零），对应端点O(h⁷)，不混同两个余项。新结论暂sorry，未裁定印刷系数是否正确。 
-[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：独立修正版仅保留正质量机械二次动能的有限匹配，不复制一般T的有疑h⁴结论。标量h⁴另有独立系数核对。
+-/
 theorem verletModifiedMatching :
   ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),
     positiveMass m → ContDiff ℝ ∞ U → IsCompact B →
@@ -540,26 +707,87 @@ theorem verletModifiedMatching_general (n : ℕ) (T U : Q n → ℝ)
       ∀ k ≥ 6, matchesHamiltonian (fun h z ↦ ∑ j ∈ Finset.range k, h^j*Hj j z) G B k) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.3.2-VerletModifiedMatching。改动：独立修正版仅保留正质量机械二次动能的有限匹配，不复制一般T的有疑h⁴结论。标量h⁴另有独立系数核对。 -/
+theorem verletModifiedMatching_corrected :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (SymplecticCoordinates n)),
+    positiveMass m → ContDiff ℝ ∞ U → IsCompact B →
+    matchesHamiltonian (verletModifiedH (fun z => quadraticKinetic m (unpack z).2) (fun z => U (unpack z).1))
+      (coordinateVerlet m (textbookPotentialForce U)) B 5 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.3.2-ModifiedEven · unnumbered_claim · §3.3.2 · 印刷p.107–108 / PDFp.129–130 
-[EXTRA] 补一阶log系数A+B并保留全部偶次零，表达至少二阶及Hamiltonian偶性/log奇性；不沿用不同步长log交换的错误推理。 -/
+[EXTRA] 补一阶log系数A+B并保留全部偶次零，表达至少二阶及Hamiltonian偶性/log奇性；不沿用不同步长log交换的错误推理。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem modifiedEven :
   ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),
     PowerSeries.coeff 1 (formalLog (formalStrang A B))=A+B ∧ ∀ j : ℕ,
     PowerSeries.coeff (2*j) (formalLog (formalStrang A B))=0 := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.3.2-ModifiedEven。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem modifiedEven_corrected :
+  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R),
+    PowerSeries.coeff 1 (formalLog (formalStrang A B))=A+B ∧ ∀ j : ℕ,
+    PowerSeries.coeff (2*j) (formalLog (formalStrang A B))=0 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.3.2-Strang · definition · §3.3.2 · 印刷p.108 / PDFp.130
-[ERRATUM?] p.108/PDF130第一展开把Z_[2]配t²、Z_[3]配t³，而下一展开(3.5)按总指数幂2、3排列；保留原页不静默纠正索引。 -/
+[ERRATUM?] p.108/PDF130第一展开把Z_[2]配t²、Z_[3]配t³，而下一展开(3.5)按总指数幂2、3排列；保留原页不静默纠正索引。 [EXTRA] 24号：formalStrang保留构造；补常项为1、log常项为0及零常项形式指数重建的全阶等式。Z_t明确为log级数去掉一因子X后的移位级数；重建声明尚未证明，不声称真实ODE收敛。
+-/
 def formalStrang {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R :=
   textbookFormalOperatorExponential ((1/2 : ℝ) • A) * textbookFormalOperatorExponential B *
     textbookFormalOperatorExponential ((1/2 : ℝ) • A)
 
+def formalStrang_Zt {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R :=
+  PowerSeries.mk (fun j => PowerSeries.coeff (j+1) (formalLog (formalStrang A B)))
+
+theorem formalStrang_constant {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) :
+    PowerSeries.coeff 0 (formalStrang A B) = 1 := by
+  simp [formalStrang, PowerSeries.coeff_mul, textbookFormalOperatorExponential]
+
+theorem formalStrang_log_constant {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) :
+    PowerSeries.constantCoeff (formalLog (formalStrang A B)) = 0 := by
+  rw [← PowerSeries.coeff_zero_eq_constantCoeff_apply]
+  simp [formalLog]
+
+theorem formalStrang_log_reconstruction {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) :
+    PowerSeries.coeff 0 (formalLog (formalStrang A B)) = 0 ∧
+    PowerSeries.X * formalStrang_Zt A B = formalLog (formalStrang A B) ∧
+    textbookFormalZeroConstantExponential ⟨formalLog (formalStrang A B), formalStrang_log_constant A B⟩ = formalStrang A B := by
+  sorry
+
+
 /-- source_id: MD-3.3.2-DifferentLogsCommute · (3.4)–(3.5) · §3.3.2 · 印刷p.108 / PDFp.130
-[ERRATUM?] p.108/PDF130 “Z_s commutes with Z_t” 对一般非交换X,Y可疑；应由反步关系单独推导奇性。 -/
+[ERRATUM?] p.108/PDF130 “Z_s commutes with Z_t” 对一般非交换X,Y可疑；应由反步关系单独推导奇性。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：仅在A、B交换这一明示充分条件下给不同步长log交换；不使用原书一般交换断言证明奇性。
+-/
 theorem differentLogsCommute :
   ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R) (s t : ℝ),
     commutator (formalLog (formalStrang (s • A) (s • B))) (formalLog (formalStrang (t • A) (t • B)))=0 := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.3.2-DifferentLogsCommute。改动：仅在A、B交换这一明示充分条件下给不同步长log交换；不使用原书一般交换断言证明奇性。 -/
+theorem differentLogsCommute_corrected :
+  ∀ (R : Type) [Ring R] [Algebra ℝ R] (A B : R) (s t : ℝ), A*B=B*A →
+    commutator (formalLog (formalStrang (s • A) (s • B))) (formalLog (formalStrang (t • A) (t • B)))=0 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.3.2-StrangInverse · unnumbered_claim · §3.3.2 · 印刷p.108 / PDFp.130 -/
 theorem strangInverse :
@@ -736,7 +964,8 @@ def takahashiProcessor {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ)
 
 /-- source_id: MD-3.3.4-ProcessorEnergyPrinted · unnumbered_claim · §3.3.4 · 印刷p.113 / PDFp.135
 [EXTRA] 正对角质量、U全域C⁴、紧初值集B；展示O(h⁴)按小h统一实际余项解释。
-[ERRATUM?] 第一行“T + h²/12(...)”似应为“H + h²/12(...)”；原文逐字保留，未改变正式库。 -/
+[ERRATUM?] 第一行“T + h²/12(...)”似应为“H + h²/12(...)”；原文逐字保留，未改变正式库。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：首界补回遗漏势能U(q)，把T改成H；其余统一余项资格和第二界不变。
+-/
 theorem processorEnergyPrinted :
     ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (Z n)),
       positiveMass m → ContDiff ℝ 4 U → IsCompact B →
@@ -748,9 +977,28 @@ theorem processorEnergyPrinted :
           ≤ C*h^4) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.3.4-ProcessorEnergyPrinted。改动：首界补回遗漏势能U(q)，把T改成H；其余统一余项资格和第二界不变。 -/
+theorem processorEnergyPrinted_corrected :
+    ∀ (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ) (B : Set (Z n)),
+      positiveMass m → ContDiff ℝ 4 U → IsCompact B →
+      ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ B,
+        (|mechanicalEnergy m U (takahashiProcessor m U h z) -
+          (mechanicalEnergy m U z+h^2/12*((shadowTerms m U z).1-(shadowTerms m U z).2.1))|
+          ≤ C*h^4) ∧
+        (|mechanicalEnergy m U (takahashiProcessor m U h z)-takahashiShadow2 m U h z|
+          ≤ C*h^4) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.3.4-TakahashiEffectiveOrder · unnumbered_claim · §3.3.4 · 印刷p.113 / PDFp.135
 [EXTRA] 正对角质量、U全域C∞、实际有限时间解连续；处理器χ要求全局homeomorphism，强于原文局部坐标展开。
-[NEEDS_HUMAN] 全局χ是否过强，以及可选局部处理器和其作用方向，需导师判断。 -/
+[NEEDS_HUMAN] 全局χ是否过强，以及可选局部处理器和其作用方向，需导师判断。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem takahashiEffectiveOrder :
     ∀ n (m : Fin n → ℝ) (U : Q n → ℝ), positiveMass m → ContDiff ℝ ⊤ U →
       ∃ χ : ℝ → Z n ≃ₜ Z n, ∀ (γ : ℝ → Z n) τ, 0 < τ →
@@ -760,6 +1008,23 @@ theorem takahashiEffectiveOrder :
             (fun k => verlet m (fun q => -grad (takahashiPotential m U k) q) k) h)
             (τ/ν) γ ν ≤ C*(τ/ν)^4 := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.3.4-TakahashiEffectiveOrder。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem takahashiEffectiveOrder_corrected :
+    ∀ n (m : Fin n → ℝ) (U : Q n → ℝ), positiveMass m → ContDiff ℝ ∞ U →
+      ∃ χ : ℝ → Z n ≃ₜ Z n, ∀ (γ : ℝ → Z n) τ, 0 < τ →
+        solution (mechanicalField m (fun q => -grad U q)) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
+        ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
+          oneStepMaxError (fun h => textbookProcessedMethod χ
+            (fun k => verlet m (fun q => -grad (takahashiPotential m U k) q) k) h)
+            (τ/ν) γ ν ≤ C*(τ/ν)^4 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.4-ModifiedField · definition · §3.4 · 印刷p.113 / PDFp.135 -/
 def formalField {n : ℕ} (f : Q n → Q n) (fj : ℕ → Q n → Q n) (r : ℕ)
@@ -809,7 +1074,8 @@ theorem truncationSmooth_C1 (H : E → ℝ) (Hj : ℕ → E → ℝ)
 [EXTRA] 统一截断L及缺陷A由独立Lipschitz/PhysicalEnergyDrift条目明确列出；原文不静默改写。 
 [EXTRA] 将构造与能量估计分开：Hj及实际有限匹配由FiniteMatchingConstruction/ArbitraryFiniteTruncation提供；本条不再要求从B每点出发的全部截断短轨迹留B，保留原数值轨道约束和正确长时间量词。 
 [EXTRA] 本条是给定已构造Hj及finiteMatching后的能量定理；系数存在性与匹配构造明确由FiniteMatchingConstruction及ArbitraryFiniteTruncation承担，数值轨道约束不变。 
-[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem theorem31 (n r k : ℕ)
     (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)
     (D B : Set (SymplecticCoordinates n)) (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
@@ -822,6 +1088,26 @@ theorem theorem31 (n r k : ℕ)
       (ν:ℝ)*h*h^(k-r) ≤ T →
       ‖H (oneStepIterate G h z₀ ν)-H z₀‖ ≤ M*h^r := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.4-Thm3.1。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem theorem31_corrected (n r k : ℕ)
+    (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → SymplecticCoordinates n → ℝ)
+    (D B : Set (SymplecticCoordinates n)) (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
+    (_hr : 0 < r) (_hrk : r ≤ k) (_hD : IsOpen D) (_hconvD : Convex ℝ D)
+    (_hB : IsCompact B) (_hconvB : Convex ℝ B) (_hBD : B ⊆ D)
+    (_hH : ContDiffOn ℝ ∞ H D) (_hHj : ∀ j, ContDiffOn ℝ ∞ (Hj j) D)
+    (_hmatching : finiteMatching H Hj r k D B G) :
+    ∀ T > 0, ∃ M > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ∀ z₀ ∈ B, ∀ ν : ℕ,
+      (∀ i ≤ ν, oneStepIterate G h z₀ i ∈ B) →
+      (ν:ℝ)*h*h^(k-r) ≤ T →
+      ‖H (oneStepIterate G h z₀ ν)-H z₀‖ ≤ M*h^r := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.4-CompactLipschitz · unnumbered_claim · §3.4 · 印刷p.114 / PDFp.136
 [EXTRA] 显式开放环境D及B⊆D、H在D为C¹；L由真实导数紧集界推出，未作假设。 -/
@@ -838,7 +1124,8 @@ def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → 
 
 /-- source_id: MD-3.4-FiniteMatchingConstruction · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
 [EXTRA] smoothSymplecticData与原书构造上下文相同；保留任意k的真实finiteMatching为结论，不当作前提。 
-[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 [EXTRA] 24号：本声明的smoothSymplecticData现解析到MD.Ch03本地C∞定义（在MD-3-ModifiedConstruction同组完整列出）；H、联合G及Hj统一scoped ∞，其它资格和∃Hj后∀k顺序不变。
+-/
 theorem finiteMatchingConstruction :
   ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
     (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
@@ -848,7 +1135,8 @@ theorem finiteMatchingConstruction :
   sorry
 
 /-- source_id: MD-3.4-TruncatedConservation · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
-[EXTRA] 沿γ对K的可微性与真实ODE在闭区间明示，包含端点；构造γ属于另项。 -/
+[EXTRA] 沿γ对K的可微性与真实ODE在闭区间明示，包含端点；构造γ属于另项。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem truncatedConservation (H : SymplecticCoordinates Nc → ℝ)
     (γ : ℝ → SymplecticCoordinates Nc) (τ : ℝ)
     (hH : ∀ t ∈ Icc 0 τ, DifferentiableAt ℝ H (γ t))
@@ -857,8 +1145,20 @@ theorem truncatedConservation (H : SymplecticCoordinates Nc → ℝ)
     ∀ t ∈ Icc 0 τ, H (γ t) = H (γ 0) := by
   apply MolecularDynamics.textbookHamiltonian_energy_const_on_Icc <;> assumption
 
+
+
+/-- 修正版，对应原文 MD-3.4-TruncatedConservation。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem truncatedConservation_corrected (H : SymplecticCoordinates Nc → ℝ)
+    (γ : ℝ → SymplecticCoordinates Nc) (τ : ℝ)
+    (hH : ∀ t ∈ Icc 0 τ, DifferentiableAt ℝ H (γ t))
+    (hγ : ∀ t ∈ Icc 0 τ,
+      HasDerivWithinAt γ (textbookHamiltonianVectorField H (γ t)) (Icc 0 τ) t) :
+    ∀ t ∈ Icc 0 τ, H (γ t) = H (γ 0) := by
+  apply MolecularDynamics.textbookHamiltonian_energy_const_on_Icc <;> assumption
+
 /-- source_id: MD-3.4-EnergyTelescoping · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137 
-[EXTRA] 保留已证首行望远镜恒等式；补给定守恒截断步F、真实差η=数值步−F的完整三行等式，不以待证能量差为前提。 -/
+[EXTRA] 保留已证首行望远镜恒等式；补给定守恒截断步F、真实差η=数值步−F的完整三行等式，不以待证能量差为前提。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem energyTelescoping {E : Type*} (K : E → ℝ)
     (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
     ∑ i ∈ Finset.range n, (K (oneStepIterate G h z₀ (i + 1)) -
@@ -877,9 +1177,23 @@ theorem energyTelescoping_complete (K : E → ℝ) (G : ℝ → E → E)
       ∑ i ∈ Finset.range n, (K (F (z i)+η i)-K (F (z i))) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.4-EnergyTelescoping。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem energyTelescoping_corrected {E : Type*} (K : E → ℝ)
+    (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n : ℕ) :
+    ∑ i ∈ Finset.range n, (K (oneStepIterate G h z₀ (i + 1)) -
+      K (oneStepIterate G h z₀ i)) = K (oneStepIterate G h z₀ n) - K z₀ := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.4-UniformTruncatedLipschitz · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
 [EXTRA] 开放D、紧凸B⊆D及H和有限H_j在D C¹；0≤h≤1；L由有限系数导数界推出。 
-[EXTRA] 保留统一截断Lipschitz定理，补原完整能量差≤LΣ‖η‖≤LAνh^(k+1)链；A为原文缺陷常数重命名，F为所给守恒截断一步。 -/
+[EXTRA] 保留统一截断Lipschitz定理，补原完整能量差≤LΣ‖η‖≤LAνh^(k+1)链；A为原文缺陷常数重命名，F为所给守恒截断一步。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem uniformTruncatedLipschitz
     (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (D B : Set E) (hD : IsOpen D)
     (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
@@ -904,6 +1218,23 @@ theorem uniformTruncatedLipschitz_chain (K : E → ℝ) (G : ℝ → E → E)
       L*A*(n:ℝ)*h^(k+1) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.4-UniformTruncatedLipschitz。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem uniformTruncatedLipschitz_corrected
+    (H : E → ℝ) (Hj : ℕ → E → ℝ) (r k : ℕ) (D B : Set E) (hD : IsOpen D)
+    (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
+    (hH : ContDiffOn ℝ 1 H D)
+    (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D) :
+    ∃ L : ℝ, 0 < L ∧ ∀ h ∈ Icc (0 : ℝ) 1, ∀ u ∈ B, ∀ v ∈ B,
+      ‖textbookTruncatedHamiltonian H Hj r k h v -
+        textbookTruncatedHamiltonian H Hj r k h u‖ ≤ L * ‖v - u‖ := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.4-TruncationRemainder · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
 [EXTRA] 各有限系数在紧B连续；0≤h≤1；统一正C由紧性推出，未供应所需余项界。 -/
 theorem truncationRemainder
@@ -915,7 +1246,8 @@ theorem truncationRemainder
 
 /-- source_id: MD-3.4-PhysicalEnergyDrift · unnumbered_claim · §3.4 · 印刷p.115 / PDFp.137
 [EXTRA] 开放D、紧凸B⊆D及有限C¹系数；给定真实截断ODE族γ及其留B、γ(h,z,0)=z，未假设γ的能量守恒或误差界。 
-[EXTRA] 保留已证实际缺陷和界，新增实际截断流的统一一步匹配误差资格与完整2Ch^r+LAνh^(k+1)结论；不是以能量结论为假设。 -/
+[EXTRA] 保留已证实际缺陷和界，新增实际截断流的统一一步匹配误差资格与完整2Ch^r+LAνh^(k+1)结论；不是以能量结论为假设。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem physicalEnergyDrift
     (H : SymplecticCoordinates Nc → ℝ) (Hj : ℕ → SymplecticCoordinates Nc → ℝ)
     (r k : ℕ) (D B : Set (SymplecticCoordinates Nc))
@@ -959,6 +1291,34 @@ theorem physicalEnergyDrift_complete
           L*A*(n:ℝ)*h^(k+1) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.4-PhysicalEnergyDrift。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem physicalEnergyDrift_corrected
+    (H : SymplecticCoordinates Nc → ℝ) (Hj : ℕ → SymplecticCoordinates Nc → ℝ)
+    (r k : ℕ) (D B : Set (SymplecticCoordinates Nc))
+    (hD : IsOpen D) (hB : IsCompact B) (hconv : Convex ℝ B) (hBD : B ⊆ D)
+    (hH : ContDiffOn ℝ 1 H D) (hHj : ∀ j ∈ Finset.Icc r k, ContDiffOn ℝ 1 (Hj j) D)
+    (G : ℝ → SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (γ : ℝ → SymplecticCoordinates Nc → ℝ → SymplecticCoordinates Nc)
+    (hγ₀ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, γ h z 0 = z)
+    (hγB : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h, γ h z t ∈ B)
+    (hγ : ∀ h ∈ Icc (0 : ℝ) 1, ∀ z ∈ B, ∀ t ∈ Icc 0 h,
+      HasDerivWithinAt (γ h z)
+        (textbookHamiltonianVectorField (textbookTruncatedHamiltonian H Hj r k h)
+          (γ h z t)) (Icc 0 h) t) :
+    ∃ C : ℝ, 0 < C ∧ ∃ L : ℝ, 0 < L ∧
+      ∀ h ∈ Icc (0 : ℝ) 1, ∀ z₀, ∀ n : ℕ,
+        (∀ i ≤ n, oneStepIterate G h z₀ i ∈ B) →
+        ‖H (oneStepIterate G h z₀ n) - H z₀‖ ≤ 2 * C * h ^ r +
+          L * ∑ i ∈ Finset.range n, ‖G h (oneStepIterate G h z₀ i) -
+            γ h (oneStepIterate G h z₀ i) h‖ := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.4-PolynomialEnergyRate · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
 [EXTRA] [EXTRA]hdefect是假设明确给出的实际一步O(h^(k+1))端点界，源自原书“By construction”尚未形式化的先验；不是本条能量结论。
 [EXTRA] D/B及C¹、实际截断ODE留B、r≤k、A,T≥0、0<h≤1、数值轨道留B；长时间条件νhh^(k−r)≤T。 -/
@@ -993,7 +1353,8 @@ theorem stepCountPower (r k n : ℕ) (hrk : r ≤ k) (h : ℝ) :
 
 /-- source_id: MD-3.4-ArbitraryFiniteTruncation · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
 [EXTRA] smoothSymplecticData保持全部Hamiltonian/近恒等辛/compact条件；完整∀k匹配作为结论，没有把它当作前提。 
-[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 [EXTRA] 24号：本声明的smoothSymplecticData现解析到MD.Ch03本地C∞定义（在MD-3-ModifiedConstruction同组完整列出）；H、联合G及Hj统一scoped ∞，其它资格和∃Hj后∀k顺序不变。
+-/
 theorem arbitraryFiniteTruncation :
   ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
     (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
@@ -1004,7 +1365,8 @@ theorem arbitraryFiniteTruncation :
 
 /-- source_id: MD-3.4-AnalyticDefect · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
 [EXTRA] 原文many standard classes未明说正则性；显式H和联合步映射解析、原有smoothSymplecticData及紧域；全阶系数构造与指数截断仍为结论。
-[NEEDS_HUMAN] many standard classes的精确方法类及解析邻域条件原文未给。 -/
+[NEEDS_HUMAN] many standard classes的精确方法类及解析邻域条件原文未给。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem analyticBEA :
   ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
     (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
@@ -1023,14 +1385,53 @@ theorem analyticBEA :
             ‖G h z-Γ h z h‖ ≤ C*h*Real.exp (-γ/h) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.4-AnalyticDefect。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem analyticBEA_corrected :
+  ∀ (n r : ℕ) (H : SymplecticCoordinates n → ℝ) (D B : Set (SymplecticCoordinates n))
+    (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n),
+    smoothSymplecticData H D B G Φ r → AnalyticOnNhd ℝ H D →
+    AnalyticOnNhd ℝ (fun hz : ℝ × SymplecticCoordinates n => G hz.1 hz.2)
+      (Ioo (-1:ℝ) 1 ×ˢ D) →
+    ∃ Hj : ℕ → SymplecticCoordinates n → ℝ, (∀ j, AnalyticOnNhd ℝ (Hj j) D) ∧
+    ∃ C > 0, ∃ A > 0, ∃ δ > 0,
+      (∀ k ≥ r, ∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+        ∀ h ∈ Ioo 0 δ, A*((k+1:ℕ):ℝ)*h ≤ 1 → ∀ z ∈ B,
+          truncatedFlow H Hj r k h z (Γ h z) ∧ (∀ t ∈ Icc 0 h, Γ h z t ∈ D) ∧
+          ‖G h z-Γ h z h‖ ≤ C*h*(A*((k+1:ℕ):ℝ)*h)^(k+1)) ∧
+      ∃ γ > 0, ∃ κ : ℝ → ℕ, ∃ Γ : ℝ → SymplecticCoordinates n → ℝ → SymplecticCoordinates n,
+        ∀ h ∈ Ioo 0 δ, r ≤ κ h ∧
+          ∀ z ∈ B, truncatedFlow H Hj r (κ h) h z (Γ h z) ∧
+            ‖G h z-Γ h z h‖ ≤ C*h*Real.exp (-γ/h) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.4-OptimalTruncation · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
 [EXTRA] D>0；足够小正h；取整后允许独立正C吸收误差。
-[NEEDS_HUMAN] 连续最优k未必整数；Lean整数界不冒充原文全部连续最小化结论。 -/
+[NEEDS_HUMAN] 连续最优k未必整数；Lean整数界不冒充原文全部连续最小化结论。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem optimalTruncation :
   ∀ A > 0, ∃ δ > 0, ∃ C > 0, ∀ h ∈ Ioo 0 δ,
     let k := Nat.floor (1/(A*Real.exp 1*h))
     0 < k ∧ (A*(k:ℝ)*h)^k ≤ C*Real.exp (-(1/(A*Real.exp 1))/h) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.4-OptimalTruncation。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem optimalTruncation_corrected :
+  ∀ A > 0, ∃ δ > 0, ∃ C > 0, ∀ h ∈ Ioo 0 δ,
+    let k := Nat.floor (1/(A*Real.exp 1*h))
+    0 < k ∧ (A*(k:ℝ)*h)^k ≤ C*Real.exp (-(1/(A*Real.exp 1))/h) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.4-ExponentialFlat · unnumbered_claim · §3.4 · 印刷p.116 / PDFp.138
 [EXTRA] γ>0、h→0⁺；不声称只有C∞就有指数缺陷。 -/
@@ -1052,14 +1453,15 @@ theorem exponentialFlat :
 /-- source_id: MD-3.4-ScalarVerletShadow4 · definition · §3.4 · 印刷p.117 / PDFp.139
 [NEEDS_HUMAN] O(h⁶)的实际修正匹配另为未完成理论；有限函数与余项分开。 
 [EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。 
-[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 [EXTRA] 24号：【原书疑误】保留印刷有限式及原匹配断言（另名Printed，不证明）；独立精确有理数jet核对kick-drift-kick后，修正版h⁴四项系数为−1/720,+1/120,+1/60,−1/240，分别乘p⁴U⁗、p²U′U‴、p²(U″)²、(U′)²U″。SymPy验到h⁶；统一实际流O(h⁷)估计仍未证明，交导师核查。
+-/
 def scalarVerletShadow4 (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ :=
   let p := z.2; let q := z.1
   p^2/2+U q+h^2/24*(2*p^2*deriv (deriv U) q-(deriv U q)^2)+h^4*(
     p^4*iteratedDeriv 4 U q/720-p^2*deriv U q*iteratedDeriv 3 U q/120-
     (deriv U q)^2*iteratedDeriv 2 U q/240-p^2*((iteratedDeriv 2 U q)^2+deriv U q*iteratedDeriv 3 U q)/60)
 
-theorem scalarVerletShadow4_matching (U : ℝ → ℝ) (_hU : ContDiff ℝ ∞ U)
+theorem scalarVerletShadow4_matching_Printed (U : ℝ → ℝ) (_hU : ContDiff ℝ ∞ U)
     (B : Set (ℝ × ℝ)) (_hB : IsCompact B) :
     ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → (ℝ × ℝ) → ℝ → (ℝ × ℝ),
       ∀ h ∈ Ioo 0 δ, ∀ z ∈ B, Γ h z 0=z ∧
@@ -1071,15 +1473,49 @@ theorem scalarVerletShadow4_matching (U : ℝ → ℝ) (_hU : ContDiff ℝ ∞ U
            (Q,P-(h/2)*deriv U Q))-Γ h z h‖ ≤ C*h^7 := by
   sorry
 
+/-- 修正版；对应MD-3.4-ScalarVerletShadow4，原印式独立保留。 -/
+def scalarVerletShadow4_corrected (U : ℝ → ℝ) (h : ℝ) (z : ℝ × ℝ) : ℝ :=
+  let p := z.2; let q := z.1
+  p^2/2+U q+h^2/24*(2*p^2*deriv (deriv U) q-(deriv U q)^2)+h^4*(
+    -p^4*iteratedDeriv 4 U q/720+p^2*deriv U q*iteratedDeriv 3 U q/120+
+    p^2*(iteratedDeriv 2 U q)^2/60-(deriv U q)^2*iteratedDeriv 2 U q/240)
+
+theorem scalarVerletShadow4_matching_corrected (U : ℝ → ℝ) (_hU : ContDiff ℝ ∞ U)
+    (B : Set (ℝ × ℝ)) (_hB : IsCompact B) :
+    ∃ C > 0, ∃ δ > 0, ∃ Γ : ℝ → (ℝ × ℝ) → ℝ → (ℝ × ℝ),
+      ∀ h ∈ Ioo 0 δ, ∀ z ∈ B, Γ h z 0=z ∧
+        solution (fun x : ℝ × ℝ ↦
+          (deriv (fun p ↦ scalarVerletShadow4_corrected U h (x.1,p)) x.2,
+           -deriv (fun q ↦ scalarVerletShadow4_corrected U h (q,x.2)) x.1)) (Γ h z) 0 h ∧
+        ‖(let P := z.2-(h/2)*deriv U z.1
+           let Q := z.1+h*P
+           (Q,P-(h/2)*deriv U Q))-Γ h z h‖ ≤ C*h^7 := by
+  sorry
+
 /-- source_id: MD-3.4-CommutingEnergy · unnumbered_claim · §3.4 · 印刷p.117 / PDFp.139
 [EXTRA] H在开放D为C¹、实际K-Hamiltonian流存在正η且全轨道H守恒。
-[NEEDS_HUMAN] 离散快照守恒不直接推出连续修正流守恒。 -/
+[NEEDS_HUMAN] 离散快照守恒不直接推出连续修正流守恒。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem commutingEnergy :
   ∀ (n : ℕ) (H K : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))
     (Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
     ContDiffOn ℝ 1 H D → IsOpen D → actualFlow (textbookHamiltonianVectorField K) D Φ η →
     (∀ z ∈ D, ∀ t ∈ Ioo (-η) η, H (Φ t z)=H z) → ∀ z ∈ D, textbookPoissonBracket H K z=0 := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.4-CommutingEnergy。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem commutingEnergy_corrected :
+  ∀ (n : ℕ) (H K : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))
+    (Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
+    ContDiffOn ℝ 1 H D → IsOpen D → actualFlow (textbookHamiltonianVectorField K) D Φ η →
+    (∀ z ∈ D, ∀ t ∈ Ioo (-η) η, H (Φ t z)=H z) → ∀ z ∈ D, textbookPoissonBracket H K z=0 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.4-CommutingEnergySymmetry · unnumbered_claim · §3.4 · 印刷p.118 / PDFp.140
 [EXTRA] 开放D、K为C¹、实际H流存在正η。 -/
@@ -1112,7 +1548,8 @@ theorem commutingEnergySymmetry :
 
 /-- source_id: MD-3.4-EnergySymplecticNoGo · unnumbered_claim · §3.4 · 印刷p.118 / PDFp.140
 [EXTRA] [EXTRA]noExtraIntegrals明确所有光滑第一积分是H的函数；开放D、全光滑实际流与近恒等辛方法；该强资格原文未列。
-[NEEDS_HUMAN] 原文practical排他陈述缺精确非可积性/无额外第一积分等假设。 -/
+[NEEDS_HUMAN] 原文practical排他陈述缺精确非可积性/无额外第一积分等假设。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：只给能量保持的局部微分链式约束；一般全域时间重参数结论仍须连通能量层、局部流域与一致时间窗资格，保留为未覆盖问题，未拿此局部式充当原全局结论。
+-/
 theorem energySymplecticNoGo :
   ∀ (n : ℕ) (H : SymplecticCoordinates n → ℝ) (D : Set (SymplecticCoordinates n))
     (G Φ : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) η,
@@ -1123,6 +1560,16 @@ theorem energySymplecticNoGo :
     (∀ h ∈ Ioo (-η) η, ∀ z ∈ D, H (G h z)=H z) →
     ∃ δ > 0, ∃ τ : ℝ → ℝ → ℝ, ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ D, G h z=Φ (τ h (H z)) z := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.4-EnergySymplecticNoGo。改动：只给能量保持的局部微分链式约束；一般全域时间重参数结论仍须连通能量层、局部流域与一致时间窗资格，保留为未覆盖问题，未拿此局部式充当原全局结论。 -/
+theorem energySymplecticNoGo_corrected (n : ℕ)
+    (H : SymplecticCoordinates n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n)
+    (z : SymplecticCoordinates n) (hH : DifferentiableAt ℝ H (G z))
+    (hG : DifferentiableAt ℝ G z) (hE : H ∘ G = H) :
+    fderiv ℝ H z = (fderiv ℝ H (G z)).comp (fderiv ℝ G z) := by
+  simpa only [hE] using (fderiv_comp z hH hG)
 
 /-- source_id: MD-3.5-EqualComponentIntegral · unnumbered_claim · §3.5 · 印刷p.122 / PDFp.144
 [EXTRA] 真实轨道导数资格显式，采用全实时间轨道版本，不宣称任意f都全时间有解。 -/
@@ -1168,8 +1615,78 @@ theorem linearRKIntegral :
   exact MolecularDynamics.Chapter03Review.linearRKIntegral_proved
 
 /-- source_id: MD-3.5-VerletOscillatorEnergy · unnumbered_claim · §3.5 · 印刷p.123 / PDFp.145
-[EXTRA] Ω>0，固定ρ∈(0,2)，|hΩ|≤ρ；排除不稳定及阈值步长。 -/
+[EXTRA] Ω>0，固定ρ∈(0,2)，|hΩ|≤ρ；排除不稳定及阈值步长。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem verletOscillatorEnergy :
+  ∀ Ω ρ : ℝ, 0 < Ω → 0 < ρ → ρ < 2 → ∀ z : Z 1,
+    ∃ C ≥ 0, ∀ h : ℝ, |h*Ω| ≤ ρ → ∀ ν : ℕ, |mechanicalEnergy (fun _ => 1) (fun q => Ω^2*q 0^2/2)
+      (oneStepIterate (verlet (fun _ => 1) (fun q _ => -Ω^2*q 0)) h z ν)-
+      mechanicalEnergy (fun _ => 1) (fun q => Ω^2*q 0^2/2) z| ≤ C*h^2 := by
+  intro Ω ρ hΩ hρ hρ2 z
+  let A : ℝ := 1-ρ^2/4
+  have hA : 0 < A := by dsimp [A]; nlinarith
+  let E0 : ℝ := (z.2 0)^2+Ω^2*(z.1 0)^2
+  refine ⟨Ω^2*E0/(4*A), by dsimp [E0]; positivity, ?_⟩
+  intro h hh ν
+  have hh2 : h^2*Ω^2 ≤ ρ^2 := by
+    have hp := abs_le.mp hh
+    nlinarith
+  have hcoeff : A ≤ 1-h^2*Ω^2/4 := by dsimp [A]; linarith
+  let K : Z 1 → ℝ := fun w => (w.2 0)^2+Ω^2*(1-h^2*Ω^2/4)*(w.1 0)^2
+  have hstep : ∀ w, K (verlet (fun _ => 1) (fun q _ => -Ω^2*q 0) h w) = K w := by
+    intro w
+    simp only [K, verlet, invMass, Pi.add_apply, Pi.smul_apply, smul_eq_mul, inv_one, one_mul]
+    ring
+  have hi : K (oneStepIterate (verlet (fun _ => 1) (fun q _ => -Ω^2*q 0)) h z ν) = K z := by
+    induction ν with
+    | zero => rfl
+    | succ ν ih => rw [oneStepIterate_succ, hstep, ih]
+  have hupper : K z ≤ E0 := by
+    dsimp [K, E0]
+    nlinarith [mul_nonneg (sq_nonneg h) (mul_nonneg (sq_nonneg Ω)
+      (mul_nonneg (sq_nonneg Ω) (sq_nonneg (z.1 0))))]
+  have hlower : ∀ w, Ω^2*A*(w.1 0)^2 ≤ K w := by
+    intro w
+    dsimp [K]
+    nlinarith [sq_nonneg (w.2 0), mul_nonneg (sq_nonneg Ω)
+      (mul_nonneg (sub_nonneg.mpr hcoeff) (sq_nonneg (w.1 0)))]
+  let w := oneStepIterate (verlet (fun _ => 1) (fun q _ => -Ω^2*q 0)) h z ν
+  have hden : 0 < Ω^2*A := mul_pos (sq_pos_of_pos hΩ) hA
+  have hw : (w.1 0)^2 ≤ E0/(Ω^2*A) := by
+    apply (le_div_iff₀ hden).mpr
+    have hlow := hlower w
+    change K w=K z at hi
+    nlinarith
+  have hz : (z.1 0)^2 ≤ E0/(Ω^2*A) := by
+    apply (le_div_iff₀ hden).mpr
+    have hlow := hlower z
+    nlinarith
+  have habs : |(w.1 0)^2-(z.1 0)^2| ≤ 2*E0/(Ω^2*A) := by
+    rw [mul_div_assoc]
+    apply abs_le.mpr
+    constructor <;> nlinarith [sq_nonneg (w.1 0), sq_nonneg (z.1 0)]
+  have heq : mechanicalEnergy (fun _ => 1) (fun q => Ω^2*q 0^2/2) w-
+      mechanicalEnergy (fun _ => 1) (fun q => Ω^2*q 0^2/2) z =
+      (h^2*Ω^4/8)*((w.1 0)^2-(z.1 0)^2) := by
+    norm_num [mechanicalEnergy, quadraticKinetic, Fin.sum_univ_one]
+    change K w=K z at hi
+    dsimp [K] at hi
+    nlinarith
+  change |mechanicalEnergy (fun _ => 1) (fun q => Ω^2*q 0^2/2) w-
+    mechanicalEnergy (fun _ => 1) (fun q => Ω^2*q 0^2/2) z| ≤ _
+  rw [heq, abs_mul, abs_of_nonneg (show 0 ≤ h^2*Ω^4/8 by positivity)]
+  calc
+    _ ≤ (h^2*Ω^4/8)*(2*E0/(Ω^2*A)) := mul_le_mul_of_nonneg_left habs (by positivity)
+    _ = Ω^2*E0/(4*A)*h^2 := by
+      have hg : Ω ≠ 0 := ne_of_gt hΩ
+      have ha : A ≠ 0 := ne_of_gt hA
+      field_simp
+      ring
+
+
+
+/-- 修正版，对应原文 MD-3.5-VerletOscillatorEnergy。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem verletOscillatorEnergy_corrected :
   ∀ Ω ρ : ℝ, 0 < Ω → 0 < ρ → ρ < 2 → ∀ z : Z 1,
     ∃ C ≥ 0, ∀ h : ℝ, |h*Ω| ≤ ρ → ∀ ν : ℕ, |mechanicalEnergy (fun _ => 1) (fun q => Ω^2*q 0^2/2)
       (oneStepIterate (verlet (fun _ => 1) (fun q _ => -Ω^2*q 0)) h z ν)-
@@ -1342,7 +1859,8 @@ theorem mechanicalReversalPrinted :
 /-- source_id: MD-3.6.1-ReversedTrajectoryPrinted · unnumbered_claim · §3.6.1 · 印刷p.128–129 / PDFp.150–151
 [ERRATUM?] p128的Rᵀ字面反转与p129的R链式法则不能一般同时成立；具体二维反例见本地审计。 
 [EXTRA] 按PDF151真实链式法则写−R f(γ(−t))，另列纯坐标变化Rf(Rz̃)及纯时间反向−f；不以转置reversedField偷换原链式右端。 
-[EXTRA] 补R的坐标矩阵对称资格，与R²=id合起来使Rᵀ=R=R⁻¹，现有经典反演条件才与原字面转置定义等价；该限制显式EXTRA。 -/
+[EXTRA] 补R的坐标矩阵对称资格，与R²=id合起来使Rᵀ=R=R⁻¹，现有经典反演条件才与原字面转置定义等价；该限制显式EXTRA。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem reversedTrajectoryPrinted :
   ∀ (n : ℕ) (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (γ : ℝ → Q n),
     R*R=1 → (∀ t, HasDerivAt γ (f (γ t)) t) →
@@ -1362,8 +1880,23 @@ theorem reversedTrajectoryPrinted_timeChange (n : ℕ) (f : Q n → Q n) (γ : �
     ∀ t, HasDerivAt (fun s ↦ γ (-s)) (-f (γ (-t))) t := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.6.1-ReversedTrajectoryPrinted。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem reversedTrajectoryPrinted_corrected :
+  ∀ (n : ℕ) (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (γ : ℝ → Q n),
+    R*R=1 → (∀ t, HasDerivAt γ (f (γ t)) t) →
+    ∀ t, HasDerivAt (fun s => R.mulVec (γ (-s)))
+      (-R.mulVec (f (γ (-t)))) t := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.6.1-ReversedTrajectory · unnumbered_claim · §3.6.1 · 印刷p.129 / PDFp.151
-[EXTRA] [EXTRA]采用正确f(Rz)=−Rf(z)而非一般Rᵀ字面定义；每个实t均有真实γ导数。 -/
+[EXTRA] [EXTRA]采用正确f(Rz)=−Rf(z)而非一般Rᵀ字面定义；每个实t均有真实γ导数。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem reversedTrajectory :
   ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (γ : ℝ → Q n),
     linearInvolution R → (∀ i j, R (Pi.single j 1) i = R (Pi.single i 1) j) → (∀ z, f (R z)=-R (f z)) →
@@ -1371,8 +1904,23 @@ theorem reversedTrajectory :
       HasDerivAt (fun s => R (γ (-s))) (f (R (γ (-t)))) t := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.6.1-ReversedTrajectory。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem reversedTrajectory_corrected :
+  ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (γ : ℝ → Q n),
+    linearInvolution R → (∀ i j, R (Pi.single j 1) i = R (Pi.single i 1) j) → (∀ z, f (R z)=-R (f z)) →
+    (∀ t, HasDerivAt γ (f (γ t)) t) → ∀ t,
+      HasDerivAt (fun s => R (γ (-s))) (f (R (γ (-t)))) t := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.6.2-FlowReversal · unnumbered_claim · §3.6.2 · 印刷p.129 / PDFp.151
-[EXTRA] 正确R反转、C¹场和全实时间真实流；不把所需反转等式藏进流假设。 -/
+[EXTRA] 正确R反转、C¹场和全实时间真实流；不把所需反转等式藏进流假设。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem flowReversal :
   ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (Φ : ℝ → Q n → Q n),
     linearInvolution R → ContDiff ℝ 1 f → (∀ z, f (R z)=-R (f z)) →
@@ -1380,14 +1928,43 @@ theorem flowReversal :
     ∀ t z, Φ (-t) (R z)=R (Φ t z) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.6.2-FlowReversal。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem flowReversal_corrected :
+  ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (Φ : ℝ → Q n → Q n),
+    linearInvolution R → ContDiff ℝ 1 f → (∀ z, f (R z)=-R (f z)) →
+    (∀ z, Φ 0 z=z) → (∀ z t, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t) →
+    ∀ t z, Φ (-t) (R z)=R (Φ t z) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.6.2-FlowReversalIdentity · (3.14) · §3.6.2 · 印刷p.129 / PDFp.151
-[EXTRA] 正确R反转、C¹场、实际全时间流、群性质；不供应结论。 -/
+[EXTRA] 正确R反转、C¹场、实际全时间流、群性质；不供应结论。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem flowReversalIdentity :
   ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (Φ : ℝ → Q n → Q n),
     linearInvolution R → ContDiff ℝ 1 f → (∀ z, f (R z)=-R (f z)) →
     (∀ z, Φ 0 z=z) → (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) →
     (∀ z t, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t) → ∀ t z, R (Φ t (R (Φ t z)))=z := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.6.2-FlowReversalIdentity。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem flowReversalIdentity_corrected :
+  ∀ (n : ℕ) (R : Q n →L[ℝ] Q n) (f : Q n → Q n) (Φ : ℝ → Q n → Q n),
+    linearInvolution R → ContDiff ℝ 1 f → (∀ z, f (R z)=-R (f z)) →
+    (∀ z, Φ 0 z=z) → (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) →
+    (∀ z t, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t) → ∀ t z, R (Φ t (R (Φ t z)))=z := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.6.2-ReversibleMethod · (3.15) · §3.6.2 · 印刷p.130 / PDFp.152 -/
 def reversibleMethod {E : Type*} (R : E → E) (G : ℝ → E → E) : Prop := ∀ h z, R (G h (R (G h z)))=z
@@ -1396,14 +1973,22 @@ def reversibleMethod {E : Type*} (R : E → E) (G : ℝ → E → E) : Prop := �
 def symmetricMethod {E : Type*} (G : ℝ → Equiv.Perm E) : Prop := ∀ h, G (-h)=(G h).symm
 
 /-- source_id: MD-3.6.2-AffineInvariant · Definition 3.1 · §3.6.2 · 印刷p.130 / PDFp.152
-[ERRATUM?] (3.17)左端印刷z而不是z̃；保留原文，语义按前后说明的变换坐标。 -/
+[ERRATUM?] (3.17)左端印刷z而不是z̃；保留原文，语义按前后说明的变换坐标。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def affineInvariant {n : ℕ} (G : (Q n → Q n) → ℝ → Q n → Q n) : Prop :=
+  ∀ (A : Q n ≃L[ℝ] Q n) f h z, G (transportedField A f) h (A z) = A (G f h z)
+
+
+
+/-- 修正版，对应原文 MD-3.6.2-AffineInvariant。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def affineInvariant_corrected {n : ℕ} (G : (Q n → Q n) → ℝ → Q n → Q n) : Prop :=
   ∀ (A : Q n ≃L[ℝ] Q n) f h z, G (transportedField A f) h (A z) = A (G f h z)
 
 /-- source_id: MD-3.6.2-SymmetricAffineReversible · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152
 [EXTRA] [EXTRA]G_{−f}(h)=G_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。
 [NEEDS_HUMAN] 一般方法需要G_{−f}(h)=G_f(−h)，否则原文蕴含式条件不全。 
-[EXTRA] 明确本条是原印省略方法类资格后的受限修复；符号/时间尺度相容仅要求固定f，不对所有无关g全称。保留原书疑误说明。 -/
+[EXTRA] 明确本条是原印省略方法类资格后的受限修复；符号/时间尺度相容仅要求固定f，不对所有无关g全称。保留原书疑误说明。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem symmetricAffineReversible :
   ∀ (n : ℕ) (R : Q n ≃L[ℝ] Q n) (f : Q n → Q n)
     (G : (Q n → Q n) → ℝ → Q n → Q n),
@@ -1412,9 +1997,35 @@ theorem symmetricAffineReversible :
     (∀ h z, G f (-h) (G f h z)=z) → reversibleMethod R (G f) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.6.2-SymmetricAffineReversible。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem symmetricAffineReversible_corrected :
+  ∀ (n : ℕ) (R : Q n ≃L[ℝ] Q n) (f : Q n → Q n)
+    (G : (Q n → Q n) → ℝ → Q n → Q n),
+    (∀ z, R (R z)=z) → (∀ z, f (R z)=-R (f z)) → affineInvariant G →
+    (∀ h z, G (fun x => -f x) h z=G f (-h) z) →
+    (∀ h z, G f (-h) (G f h z)=z) → reversibleMethod R (G f) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.6.2-RKAffine · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152 
-[EXTRA] 仅承担普通RK阶段/更新的线性等变；PRK分区修复及对称方法反演另映射PartitionedAffine、SymmetricAffineReversible，原文整句保留。 -/
+[EXTRA] 仅承担普通RK阶段/更新的线性等变；PRK分区修复及对称方法反演另映射PartitionedAffine、SymmetricAffineReversible，原文整句保留。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem rkAffine :
+  ∀ (n s : ℕ) (L : Q n ≃L[ℝ] Q n) (f : Q n → Q n)
+    (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ) h z w F,
+    rungeKuttaRelation f A b h z w F →
+      rungeKuttaRelation (transportedField L f) A b h (L z) (L w) (fun i => L (F i)) := by
+  exact MolecularDynamics.Chapter03Review.rkAffine_proved
+
+
+
+/-- 修正版，对应原文 MD-3.6.2-RKAffine。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem rkAffine_corrected :
   ∀ (n s : ℕ) (L : Q n ≃L[ℝ] Q n) (f : Q n → Q n)
     (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ) h z w F,
     rungeKuttaRelation f A b h z w F →
@@ -1423,7 +2034,8 @@ theorem rkAffine :
 
 /-- source_id: MD-3.6.2-PartitionedAffinePrinted · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152
 [ERRATUM?] PRK一般只对保持分区的分块线性变换等变；任意混合变换的全称可疑。 
-[EXTRA] 本条显式仅为保持分区的PRK阶段/更新等变修复；普通RK及有符号相容、对称资格的时间反演推论归RKAffine/SymmetricAffineReversible。保留混合变换错误的Printed导师条目。 -/
+[EXTRA] 本条显式仅为保持分区的PRK阶段/更新等变修复；普通RK及有符号相容、对称资格的时间反演推论归RKAffine/SymmetricAffineReversible。保留混合变换错误的Printed导师条目。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：默认两套PRK表相同退化为普通相空间RK，才允许任意混合可逆线性变换；保持分区的更一般版本独立保留。
+-/
 theorem partitionedAffinePrinted :
   ∀ (n s : ℕ) (L : Z n ≃L[ℝ] Z n) (f : Z n → Z n)
     (Aq Ap : Matrix (Fin s) (Fin s) ℝ) (bq bp : Fin s → ℝ) h z w F,
@@ -1431,9 +2043,59 @@ theorem partitionedAffinePrinted :
       partitionedRKRelation (fun x => L (f (L.symm x))) Aq Ap bq bp h (L z) (L w) (fun i => L (F i)) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.6.2-PartitionedAffinePrinted。改动：默认两套PRK表相同退化为普通相空间RK，才允许任意混合可逆线性变换；保持分区的更一般版本独立保留。 -/
+theorem partitionedAffinePrinted_corrected :
+  ∀ (n s : ℕ) (L : Z n ≃L[ℝ] Z n) (f : Z n → Z n)
+    (Aq Ap : Matrix (Fin s) (Fin s) ℝ) (bq bp : Fin s → ℝ) h z w F,
+    Aq=Ap → bq=bp → partitionedRKRelation f Aq Ap bq bp h z w F →
+      partitionedRKRelation (fun x => L (f (L.symm x))) Aq Ap bq bp h (L z) (L w) (fun i => L (F i)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.6.2-PartitionedAffine · unnumbered_claim · §3.6.2 · 印刷p.130 / PDFp.152
-[EXTRA] [EXTRA]正确限定为保持q,p分区的连续线性等价Lq,Lp；不同分区表格不要求混合线性等变。 -/
+[EXTRA] [EXTRA]正确限定为保持q,p分区的连续线性等价Lq,Lp；不同分区表格不要求混合线性等变。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem partitionedAffine :
+  ∀ (n s : ℕ) (Lq Lp : Q n ≃L[ℝ] Q n) (fq fp : Z n → Q n)
+    (Aq Ap : Matrix (Fin s) (Fin s) ℝ) (bq bp : Fin s → ℝ) (h : ℝ) (z w : Z n) (Fq Fp : Fin s → Q n),
+    (∀ i, Fq i=fq (z.1+h • ∑ j, Aq i j • Fq j,z.2+h • ∑ j, Ap i j • Fp j)) →
+    (∀ i, Fp i=fp (z.1+h • ∑ j, Aq i j • Fq j,z.2+h • ∑ j, Ap i j • Fp j)) →
+    w=(z.1+h • ∑ i, bq i • Fq i,z.2+h • ∑ i, bp i • Fp i) →
+    (∀ i, Lq (Fq i)=Lq (fq (Lq.symm (Lq z.1+h • ∑ j, Aq i j • Lq (Fq j)),
+      Lp.symm (Lp z.2+h • ∑ j, Ap i j • Lp (Fp j))))) ∧
+    (∀ i, Lp (Fp i)=Lp (fp (Lq.symm (Lq z.1+h • ∑ j, Aq i j • Lq (Fq j)),
+      Lp.symm (Lp z.2+h • ∑ j, Ap i j • Lp (Fp j))))) ∧
+    (Lq w.1,Lp w.2)=(Lq z.1+h • ∑ i, bq i • Lq (Fq i),Lp z.2+h • ∑ i, bp i • Lp (Fp i)) := by
+  intro n s Lq Lp fq fp Aq Ap bq bp h z w Fq Fp hq hp hw
+  have tq : ∀ a : Fin s → ℝ,
+      Lq.symm (Lq z.1+h • ∑ j, a j • Lq (Fq j)) = z.1+h • ∑ j, a j • Fq j := by
+    intro a
+    apply Lq.injective
+    simp
+  have tp : ∀ a : Fin s → ℝ,
+      Lp.symm (Lp z.2+h • ∑ j, a j • Lp (Fp j)) = z.2+h • ∑ j, a j • Fp j := by
+    intro a
+    apply Lp.injective
+    simp
+  refine ⟨?_, ?_, ?_⟩
+  · intro i
+    rw [tq, tp]
+    exact congrArg Lq (hq i)
+  · intro i
+    rw [tq, tp]
+    exact congrArg Lp (hp i)
+  · rw [hw]
+    simp
+
+
+
+/-- 修正版，对应原文 MD-3.6.2-PartitionedAffine。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem partitionedAffine_corrected :
   ∀ (n s : ℕ) (Lq Lp : Q n ≃L[ℝ] Q n) (fq fp : Z n → Q n)
     (Aq Ap : Matrix (Fin s) (Fin s) ℝ) (bq bp : Fin s → ℝ) (h : ℝ) (z w : Z n) (Fq Fp : Fin s → Q n),
     (∀ i, Fq i=fq (z.1+h • ∑ j, Aq i j • Fq j,z.2+h • ∑ j, Ap i j • Fp j)) →
@@ -1530,7 +2192,8 @@ theorem reversibleSpectrum :
 /-- source_id: MD-3.6.3-ConjugateIterates · unnumbered_claim · §3.6.3 · 印刷p.131–132 / PDFp.153–154
 [EXTRA] χ明确为equivalence，以使原文χ⁻¹有定义；原文homomorphism的用词待审。
 [ERRATUM?] 原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。 
-[EXTRA] 纯迭代恒等式推广到任意类型及真实Equiv，不附拓扑/范数；原Homeomorph已证版本保留辅助，用于拓扑轨道结论。 -/
+[EXTRA] 纯迭代恒等式推广到任意类型及真实Equiv，不附拓扑/范数；原Homeomorph已证版本保留辅助，用于拓扑轨道结论。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem conjugateIterates {α : Type*} (χ : α ≃ α) (A B : α → α)
     (_hA : A = χ.symm ∘ B ∘ χ) (n : ℕ) :
     A^[n] = χ.symm ∘ (B^[n]) ∘ χ := by
@@ -1540,6 +2203,18 @@ theorem conjugateIterates_homeomorph (χ : E ≃ₜ E) (A B : E → E)
     (hA : A = textbookConjugateMap χ B) (n : ℕ) :
     A^[n] = textbookConjugateMap χ (B^[n]) := by
   apply MolecularDynamics.textbook_conjugate_iterates <;> assumption
+
+
+
+/-- 修正版，对应原文 MD-3.6.3-ConjugateIterates。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem conjugateIterates_corrected {α : Type*} (χ : α ≃ α) (A B : α → α)
+    (_hA : A = χ.symm ∘ B ∘ χ) (n : ℕ) :
+    A^[n] = χ.symm ∘ (B^[n]) ∘ χ := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.6.1-MechanicalReversalCorrect · unnumbered_claim · §3.6.1 · 印刷p.128 / PDFp.150
 [EXTRA] 独立机械R反转结论；原印展示式核对正确，原先错误判断已撤销。 
@@ -1551,7 +2226,8 @@ theorem mechanicalReversalCorrect :
 
 /-- source_id: MD-3.6.3-ConjugateOrderPrinted · unnumbered_claim · §3.6.3 · 印刷p.132 / PDFp.154
 [EXTRA] 将“same effective order”按同一局部误差幂阶和真实共轭参考流解释；χ至少homeomorphism、紧初值域、r>0。
-[NEEDS_HUMAN] homeomorphism可用平方根改变误差阶；原文缺定量正则性，不能由迭代共轭冒充已证同有效阶。 -/
+[NEEDS_HUMAN] homeomorphism可用平方根改变误差阶；原文缺定量正则性，不能由迭代共轭冒充已证同有效阶。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：补运输映射的全局Lipschitz充分资格；只给单向局部误差阶运输，不声称全部effective order、性能或稳定性。
+-/
 theorem conjugateOrderPrinted :
     ∀ (n r : ℕ) (χ : Q n ≃ₜ Q n) (G Φ : ℝ → Q n → Q n) (B : Set (Q n)),
       0 < r → IsCompact B → MolecularDynamics.Chapter03Review.localOrder G Φ B r →
@@ -1559,16 +2235,57 @@ theorem conjugateOrderPrinted :
         (fun h z => χ (G h (χ.symm z))) (fun h z => χ (Φ h (χ.symm z))) (χ '' B) r := by
   sorry
 
-/-- source_id: MD-3.6.3-ReversibleVolumeFailure · unnumbered_claim · §3.6.3 · 印刷p.132 / PDFp.154 -/
+
+
+/-- 修正版，对应原文 MD-3.6.3-ConjugateOrderPrinted。改动：补运输映射的全局Lipschitz充分资格；只给单向局部误差阶运输，不声称全部effective order、性能或稳定性。 -/
+theorem conjugateOrderPrinted_corrected :
+    ∀ (n r : ℕ) (χ : Q n ≃ₜ Q n) (G Φ : ℝ → Q n → Q n) (B : Set (Q n)),
+      0 < r → IsCompact B →
+      (∃ L ≥ 0, ∀ x y, ‖χ x-χ y‖ ≤ L*‖x-y‖) → MolecularDynamics.Chapter03Review.localOrder G Φ B r →
+      MolecularDynamics.Chapter03Review.localOrder
+        (fun h z => χ (G h (χ.symm z))) (fun h z => χ (Φ h (χ.symm z))) (χ '' B) r := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
+/-- source_id: MD-3.6.3-ReversibleVolumeFailure · unnumbered_claim · §3.6.3 · 印刷p.132 / PDFp.154 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem reversibleVolumeFailure :
   ∃ (n : ℕ) (R : Q n →L[ℝ] Q n) (G : Q n ≃ Q n), linearInvolution R ∧
     ContDiff ℝ 1 G ∧ ContDiff ℝ 1 G.symm ∧ (∀ z, R (G (R (G z)))=z) ∧
     ∃ z, |(textbookCoordinateJacobian G z).det| ≠ 1 := by
   sorry
 
-/-- source_id: MD-3.7-HardCoreDomain · definition · §3.7 · 印刷p.132 / PDFp.154 -/
+
+
+/-- 修正版，对应原文 MD-3.6.3-ReversibleVolumeFailure。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem reversibleVolumeFailure_corrected :
+  ∃ (n : ℕ) (R : Q n →L[ℝ] Q n) (G : Q n ≃ Q n), linearInvolution R ∧
+    ContDiff ℝ 1 G ∧ ContDiff ℝ 1 G.symm ∧ (∀ z, R (G (R (G z)))=z) ∧
+    ∃ z, |(textbookCoordinateJacobian G z).det| ≠ 1 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
+/-- source_id: MD-3.7-HardCoreDomain · definition · §3.7 · 印刷p.132 / PDFp.154 [EXTRA] 24号：hardCoreDomain保留任意实半径的代数集合辅助；新增非负半径物理包装、接触面（至少一对取等号）及H=K+U的明确对象。域不自动保证动力学存在。
+-/
 def hardCoreDomain {N d : ℕ} (σ : Fin N → ℝ) : Set (Fin N → Position d) :=
   {q | ∀ i j, i ≠ j → σ i+σ j ≤ ‖q i-q j‖}
+
+def hardCoreDomainPhysical {N d : ℕ} (σ : Fin N → ℝ) (_hσ : ∀ i, 0 ≤ σ i) :
+    Set (Fin N → Position d) := hardCoreDomain σ
+
+def hardCoreContactSurface {N d : ℕ} (σ : Fin N → ℝ) : Set (Fin N → Position d) :=
+  {q ∈ hardCoreDomain σ | ∃ i j, i ≠ j ∧ ‖q i-q j‖ = σ i+σ j}
+
+def hardCoreMechanicalHamiltonian {N d : ℕ} (m : Fin N → ℝ) (_hm : ∀ i, 0 < m i)
+    (U : (Fin N → Position d) → ℝ) (q p : Fin N → Position d) : ℝ :=
+  (∑ i, ‖p i‖^2/(2*m i))+U q
+
 
 /-- source_id: MD-3.7-ElasticReflection · definition · §3.7 · 印刷p.132 / PDFp.154
 [EXTRA] [EXTRA]选取质量度量反射α=−2Σuᵢpᵢ/mᵢ ÷ Σuᵢ²/mᵢ，具体α原书在障碍特例p134给出；正质量/非零法向是后条守恒资格。 -/
@@ -1614,18 +2331,25 @@ theorem elasticEnergy :
     field_simp
     ring
 
-/-- source_id: MD-3.7-CollisionComposition · definition · §3.7 · 印刷p.132–133 / PDFp.154–155 -/
+/-- source_id: MD-3.7-CollisionComposition · definition · §3.7 · 印刷p.132–133 / PDFp.154–155 [EXTRA] 24号：列表现在按自然时间顺序[Δτ₀,…,Δτᵣ]存储，递归先执行首段、再碰撞、再余段；二段桥接展开递归核对为G t₁∘Rc∘G t₀。此为形式组合器，非负时长、总时长及G/Rc来自实际Hamilton碰撞的资格不由任意函数定义推出。
+-/
 def collisionComposition {E : Type*} (G : ℝ → E → E) (Rc : E → E) (times : List ℝ) : E → E :=
   match times with
   | [] => id
   | [t] => G t
-  | t::u::ts => G t ∘ Rc ∘ collisionComposition G Rc (u::ts)
+  | t::u::ts => collisionComposition G Rc (u::ts) ∘ Rc ∘ G t
 termination_by times.length
+
+theorem collisionComposition_two {E : Type*} (G : ℝ → E → E) (Rc : E → E)
+    (t₀ t₁ : ℝ) : collisionComposition G Rc [t₀,t₁] = G t₁ ∘ Rc ∘ G t₀ := by
+  simp [collisionComposition]
+
 
 /-- source_id: MD-3.7-CollisionRegularity · unnumbered_claim · §3.7 · 印刷p.133 / PDFp.155
 [EXTRA] 有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。 
 [EXTRA] 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。 
-[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 [EXTRA] 24号：仅将各内段结论ContDiffAt ℝ ⊤改为scoped ∞，与C∞力前提一致；全部有限事件、横截、拼接及左右极限条件不变。
+-/
 theorem collisionRegularity :
   ∀ (n : ℕ) (m : Fin n → ℝ) (F : Q n → Q n) (g : Q n → ℝ)
     (times : ℕ → ℝ) (segments : ℕ → ℝ → Z n) ν,
@@ -1638,7 +2362,7 @@ theorem collisionRegularity :
     (∀ j < ν, (segments j (times (j+1))).2 ≠ (segments (j+1) (times (j+1))).2) ∧
     ContinuousOn (fun t => (gluedCollision times segments ν t).1) (Icc (times 0) (times (ν+1))) ∧
     (∀ j ≤ ν, ∀ t ∈ Ioo (times j) (times (j+1)),
-      ContDiffAt ℝ ⊤ (gluedCollision times segments ν) t) ∧
+      ContDiffAt ℝ ∞ (gluedCollision times segments ν) t) ∧
     (∀ j < ν, Tendsto (fun t => (gluedCollision times segments ν t).2)
       (𝓝[<] (times (j+1))) (𝓝 ((segments j (times (j+1))).2)) ∧
       Tendsto (fun t => (gluedCollision times segments ν t).2)
@@ -1647,7 +2371,8 @@ theorem collisionRegularity :
 
 /-- source_id: MD-3.7.1-HardCorePotential · definition · §3.7.1 · 印刷p.133 / PDFp.155
 [ERRATUM?] p133括号印刷≤与p132接触等号允许冲突；不静默改成<。 
-[EXTRA] 原印≤接触也取∞独立忠实定义，并补K+U+U_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。 -/
+[EXTRA] 原印≤接触也取∞独立忠实定义，并补K+U+U_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：允许接触等号，只有严格重叠才取∞；原印≤判∞独立保留。
+-/
 def hardCorePotential {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d) : ENNReal :=
   if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤ else 0
 
@@ -1660,6 +2385,13 @@ def hardSphereHamiltonianPrinted {N d : ℕ} (m σ : Fin N → ℝ)
 def hardCorePotential_contactAllowed {N d : ℕ} (σ : Fin N → ℝ) (q : Fin N → Position d) : ENNReal :=
   @ite ENNReal (q ∈ hardCoreDomain σ) (Classical.propDecidable _) 0 ⊤
 
+
+
+/-- 修正版，对应原文 MD-3.7.1-HardCorePotential。改动：允许接触等号，只有严格重叠才取∞；原印≤判∞独立保留。 -/
+def hardCorePotential_corrected {N d : ℕ} (σ : Fin N → ℝ)
+    (_hσ : ∀ i, 0 ≤ σ i) (q : Fin N → Position d) : ENNReal :=
+  if ∃ i j, i ≠ j ∧ ‖q i-q j‖ < σ i+σ j then ⊤ else 0
+
 /-- source_id: MD-3.7.1-PrimitiveSplitting · definition · §3.7.1 · 印刷p.133 / PDFp.155 -/
 def primitiveSplitting {n : ℕ} (U : Q n → ℝ)
     (Gfree : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) (h : ℝ) :=
@@ -1667,7 +2399,8 @@ def primitiveSplitting {n : ℕ} (U : Q n → ℝ)
 
 /-- source_id: MD-3.7.1-PrimitiveOrder · unnumbered_claim · §3.7.1 · 印刷p.133–134 / PDFp.155–156
 [EXTRA] 正质量、C∞势/接触函数、有限横截隔离单接触、真实freeCollisionFlow；采用O(h)单调时间对齐以比较跳跃动量，不假设结论误差界。
-[NEEDS_HUMAN] 时间对齐误差度量、有限单接触资格及长期energy无界的量化均需审。 -/
+[NEEDS_HUMAN] 时间对齐误差度量、有限单接触资格及长期energy无界的量化均需审。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：限定为事件表穷尽真实接触、非零法向、初端右连续、终端左连续且终端无碰撞、事件取碰后动量的轨道；只保留明确的时间对齐误差目标，不宣称同时间动量阶。精确子流Strang仍是独立限定解释，原混合法及无根事件分支未覆盖。二阶项另限数值碰撞横截；尚缺统一事件稳定性与误差累积理论。
+-/
 theorem primitiveOrder :
   ∀ (n : ℕ) (m : Fin n → ℝ) (U g : Q n → ℝ) (Gfree : ℝ → Z n → Z n)
     (q p : ℝ → Q n) τ events,
@@ -1677,6 +2410,32 @@ theorem primitiveOrder :
       (fun z : Z n => (z.1,z.2-(h/2) • grad U z.1)) ∘ Gfree h ∘
       (fun z : Z n => (z.1,z.2-(h/2) • grad U z.1))) q p τ 1 := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.7.1-PrimitiveOrder。改动：限定为事件表穷尽真实接触、非零法向、初端右连续、终端左连续且终端无碰撞、事件取碰后动量的轨道；只保留明确的时间对齐误差目标，不宣称同时间动量阶。精确子流Strang仍是独立限定解释，原混合法及无根事件分支未覆盖。二阶项另限数值碰撞横截；尚缺统一事件稳定性与误差累积理论。 -/
+def finiteCollisionTrajectory_corrected {n : ℕ} (m : Fin n → ℝ)
+    (F : Q n → Q n) (g : Q n → ℝ) (q p : ℝ → Q n) (τ : ℝ) (events : Finset ℝ) : Prop :=
+  finiteCollisionTrajectory m F g q p 0 τ events ∧
+  admissibleCollisionState m g (q 0,p 0) ∧ 0 < g (q τ) ∧
+  Tendsto p (𝓝[>] 0) (𝓝 (p 0)) ∧ Tendsto p (𝓝[<] τ) (𝓝 (p τ)) ∧
+  (∀ t ∈ Ico 0 τ, Tendsto p (𝓝[>] t) (𝓝 (p t))) ∧
+  (∀ t ∈ Ioo 0 τ, g (q t)=0 ↔ t ∈ events) ∧
+  (∀ t ∈ events, grad g (q t) ≠ 0)
+
+theorem primitiveOrder_corrected :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U g : Q n → ℝ) (Gfree : ℝ → Z n → Z n)
+    (q p : ℝ → Q n) τ events,
+    positiveMass m → ContDiff ℝ ∞ U → ContDiff ℝ ∞ g → 0 < τ →
+    finiteCollisionTrajectory_corrected m (fun x => -grad U x) g q p τ events → freeCollisionFlow m g Gfree →
+    collisionalGlobalOrder (fun h =>
+      (fun z : Z n => (z.1,z.2-(h/2) • grad U z.1)) ∘ Gfree h ∘
+      (fun z : Z n => (z.1,z.2-(h/2) • grad U z.1))) q p τ 1 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.7.1-ObstacleReflection · definition · §3.7.1 · 印刷p.134 / PDFp.156 -/
 def obstacleReflection {d : ℕ} (u p : Position d) : Position d := p- (2*inner ℝ u p / inner ℝ u u) • u
@@ -1707,7 +2466,8 @@ theorem collisionDefectZero :
   exact MolecularDynamics.Chapter03Review.collisionDefectZero_proved
 
 /-- source_id: MD-3.7.1-EndImpactThirdOrderPrinted · unnumbered_claim · §3.7.1 · 印刷p.134 / PDFp.156
-[ERRATUM?] 原文end-step豁免与同页−(h−2tc)线性项冲突；具体单位障碍反例见审计。 -/
+[ERRATUM?] 原文end-step豁免与同页−(h−2tc)线性项冲突；具体单位障碍反例见审计。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：原末端碰撞三阶能量断言有反例；对接近接触点的初值族只给一阶上界，新增趋近资格排除隐式方程的远端分支，不声称二阶或三阶。
+-/
 theorem endImpactThirdOrderPrinted :
   ∀ (d : ℕ) (U : Position d → ℝ) (qc pbar : Position d)
     (initial final : ℝ → Position d × Position d) (tc : ℝ → ℝ),
@@ -1721,6 +2481,27 @@ theorem endImpactThirdOrderPrinted :
     ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ,
       |((‖(final h).2‖^2/2+U (final h).1)-(‖(initial h).2‖^2/2+U (initial h).1))| ≤ C*h^3 := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-3.7.1-EndImpactThirdOrderPrinted。改动：原末端碰撞三阶能量断言有反例；对接近接触点的初值族只给一阶上界，新增趋近资格排除隐式方程的远端分支，不声称二阶或三阶。 -/
+theorem endImpactThirdOrderPrinted_corrected :
+  ∀ (d : ℕ) (U : Position d → ℝ) (qc pbar : Position d)
+    (initial final : ℝ → Position d × Position d) (tc : ℝ → ℝ),
+    ContDiff ℝ 3 U → qc ≠ 0 → Tendsto (fun h => (initial h).1) (𝓝[>] 0) (𝓝 qc) →
+    (∀ h > 0, tc h = h ∧
+      let F := -gradient U (initial h).1
+      let pminus := pbar+(h/2) • F
+      (initial h).2=pbar ∧ (initial h).1=qc-tc h • pminus ∧
+      final h=(qc+(h-tc h) • obstacleReflection qc pminus,
+        obstacleReflection qc pminus+(h/2) • (-gradient U (qc+(h-tc h) • obstacleReflection qc pminus)))) →
+    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ,
+      |((‖(final h).2‖^2/2+U (final h).1)-(‖(initial h).2‖^2/2+U (initial h).1))| ≤ C*h := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-3.7.2-CollisionQuadraticPath · (3.18) · §3.7.2 · 印刷p.135 / PDFp.157 -/
 def collisionQuadraticPath {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (z : Z n) (t : ℝ) : Q n :=
@@ -1741,7 +2522,8 @@ theorem collisionQuartic :
 /-- source_id: MD-3.7.2-CollisionalVerletRelation · definition · §3.7.2 · 印刷p.135 / PDFp.157
 [EXTRA] tc>0,hmax>0明示；tc必须是下一接触时刻，求根实现不是数学定理。
 [NEEDS_HUMAN] tc=hmax边界时原伪代码不反射，之后的二阶陈述排除此边界，不能冒充一般结果。 
-[EXTRA] 保留给定tc/Rc的更新辅助；补实际粒子二次路径、正质量/半径、F=−∇U的对偶资格、不同粒子对的最早真实接触、唯一单碰撞及该接触面的质量加权弹性反射。Option.none明确无正根；严格tc<hmax及等号else照原印保留，不静默修改算法。 -/
+[EXTRA] 保留给定tc/Rc的更新辅助；补实际粒子二次路径、正质量/半径、F=−∇U的对偶资格、不同粒子对的最早真实接触、唯一单碰撞及该接触面的质量加权弹性反射。Option.none明确无正根；严格tc<hmax及等号else照原印保留，不静默修改算法。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def collisionalVerletRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (Rc : Z n → Z n)
     (tc hmax h : ℝ) (z w : Z n) : Prop :=
   0 < tc ∧ 0 < hmax ∧ h=min tc hmax ∧
@@ -1789,9 +2571,18 @@ def physicalCVARelation {N d : ℕ} (m σ : Fin N → ℝ)
     h=min tc hmax ∧ w=if tc<hmax then particleReflection m i j (particleVerlet m F h z)
       else particleVerlet m F h z
 
+
+
+/-- 修正版，对应原文 MD-3.7.2-CollisionalVerletRelation。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def collisionalVerletRelation_corrected {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (Rc : Z n → Z n)
+    (tc hmax h : ℝ) (z w : Z n) : Prop :=
+  0 < tc ∧ 0 < hmax ∧ h=min tc hmax ∧
+    w=if tc<hmax then Rc (verlet m F h z) else verlet m F h z
+
 /-- source_id: MD-3.7.2-CollisionalVerletOrder · unnumbered_claim · §3.7.2 · 印刷p.135 / PDFp.157
 [EXTRA] 正质量、C∞势/接触函数、有限横截隔离事件、最小正接触根；自适应累计真实时间及O(hmax²)单调时间对齐；所有内部接触严格早于hmax，排除伪代码未反射的相等边界。
-[NEEDS_HUMAN] 同时间全相空间误差与时间对齐、tc=hmax边界、隔离接触资格需裁定。 -/
+[NEEDS_HUMAN] 同时间全相空间误差与时间对齐、tc=hmax边界、隔离接触资格需裁定。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：限定为事件表穷尽真实接触、非零法向、初端右连续、终端左连续且终端无碰撞、事件取碰后动量的轨道；只保留明确的时间对齐误差目标，不宣称同时间动量阶。精确子流Strang仍是独立限定解释，原混合法及无根事件分支未覆盖。二阶项另限数值碰撞横截；尚缺统一事件稳定性与误差累积理论。
+-/
 theorem collisionalVerletOrder :
   ∀ (n : ℕ) (m : Fin n → ℝ) (U g : Q n → ℝ) (q p : ℝ → Q n) τ events
     (tc : Z n → ℝ) (Rc : Z n → Z n) (G : ℝ → Z n → Z n),
@@ -1812,14 +2603,52 @@ theorem collisionalVerletOrder :
           ‖oneStepIterate G hmax (q 0,p 0) j-(q (θ (times j)),p (θ (times j)))‖ ≤ C*hmax^2 := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-3.7.2-CollisionalVerletOrder。改动：限定为事件表穷尽真实接触、非零法向、初端右连续、终端左连续且终端无碰撞、事件取碰后动量的轨道；只保留明确的时间对齐误差目标，不宣称同时间动量阶。精确子流Strang仍是独立限定解释，原混合法及无根事件分支未覆盖。二阶项另限数值碰撞横截；尚缺统一事件稳定性与误差累积理论。 -/
+theorem collisionalVerletOrder_corrected :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U g : Q n → ℝ) (q p : ℝ → Q n) τ events
+    (tc : Z n → ℝ) (Rc : Z n → Z n) (G : ℝ → Z n → Z n),
+    positiveMass m → ContDiff ℝ ∞ U → ContDiff ℝ ∞ g → 0 < τ →
+    finiteCollisionTrajectory_corrected m (fun x => -grad U x) g q p τ events →
+    (∀ z, admissibleCollisionState m g z → 0 < tc z ∧
+      g (collisionQuadraticPath m (fun x => -grad U x) z (tc z))=0 ∧
+      ∀ t ∈ Ioo 0 (tc z), 0 < g (collisionQuadraticPath m (fun x => -grad U x) z t)) →
+    (∀ z, admissibleCollisionState m g z →
+      ∑ i, grad g (collisionQuadraticPath m (fun x => -grad U x) z (tc z)) i *
+        invMass m (z.2+(tc z) • (-grad U z.1)) i < 0) →
+    (∀ z, Rc z=(z.1,z.2+(-2*(∑ i, grad g z.1 i*z.2 i/m i)/
+      (∑ i, grad g z.1 i^2/m i)) • grad g z.1)) →
+    (∀ h > 0, ∀ z, collisionalVerletRelation m (fun x => -grad U x) Rc (tc z) h (min (tc z) h) z (G h z)) →
+    ∃ C > 0, ∃ δ > 0, ∀ hmax ∈ Ioo 0 δ, ∀ times : ℕ → ℝ,
+      times 0=0 → (∀ j, times (j+1)=times j+min (tc (oneStepIterate G hmax (q 0,p 0) j)) hmax) →
+      (∀ j, times j < τ → admissibleCollisionState m g (oneStepIterate G hmax (q 0,p 0) j) ∧
+        tc (oneStepIterate G hmax (q 0,p 0) j) ≠ hmax) →
+      ∃ θ : ℝ ≃o ℝ, θ 0=0 ∧ θ τ=τ ∧ (∀ t ∈ Icc 0 τ, |θ t-t| ≤ C*hmax^2) ∧
+        ∀ j, times j ≤ τ →
+          ‖oneStepIterate G hmax (q 0,p 0) j-(q (θ (times j)),p (θ (times j)))‖ ≤ C*hmax^2 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-3.7.3-PairForceDecoupling · definition · §3.7.3 · 印刷p.136 / PDFp.158
-[ERRATUM?] “second term”与α′接触为0不一致；不静默改为β′。 -/
+[ERRATUM?] “second term”与α′接触为0不一致；不静默改为β′。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：明确α为kick势并补接触点可微，deriv α contact=0才作为经典零接触力；α/β文字冲突保留导师选项。
+-/
 def pairForceDecoupling (φ α β : ℝ → ℝ) (contact : ℝ) : Prop :=
   (∀ r, φ r=α r+β r) ∧ deriv α contact=0
 
+
+
+/-- 修正版，对应原文 MD-3.7.3-PairForceDecoupling。改动：明确α为kick势并补接触点可微，deriv α contact=0才作为经典零接触力；α/β文字冲突保留导师选项。 -/
+def pairForceDecoupling_corrected (φ α β : ℝ → ℝ) (contact : ℝ) : Prop :=
+  (∀ r, φ r=α r+β r) ∧ DifferentiableAt ℝ α contact ∧ deriv α contact=0
+
 /-- source_id: MD-3.7.3-DecoupledOrder · unnumbered_claim · §3.7.3 · 印刷p.136 / PDFp.158
 [EXTRA] 以U表示真正kick势并要求它在接触法向导数0；另一V用于碰撞子流；正质量、有限横截隔离事件与时间对齐误差。
-[ERRATUM?] 结合PairForceDecoupling，哪个势负责零法向kick需导师判定。 -/
+[ERRATUM?] 结合PairForceDecoupling，哪个势负责零法向kick需导师判定。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：限定为事件表穷尽真实接触、非零法向、初端右连续、终端左连续且终端无碰撞、事件取碰后动量的轨道；只保留明确的时间对齐误差目标，不宣称同时间动量阶。精确子流Strang仍是独立限定解释，原混合法及无根事件分支未覆盖。二阶项另限数值碰撞横截；尚缺统一事件稳定性与误差累积理论。
+-/
 theorem decoupledOrder :
   ∀ (n : ℕ) (m : Fin n → ℝ) (U V g : Q n → ℝ) (q p : ℝ → Q n) τ events
     (Gfree : ℝ → Z n → Z n), positiveMass m → ContDiff ℝ ⊤ U → ContDiff ℝ ⊤ V →
@@ -1834,7 +2663,30 @@ theorem decoupledOrder :
       (fun z : Z n => (z.1,z.2-(h/2) • grad U z.1))) q p τ 2 := by
   sorry
 
-/-- source_id: MD-3.7.3-ModifiedCollisionProjection · definition · §3.7.3 · 印刷p.136 / PDFp.158 -/
+
+
+/-- 修正版，对应原文 MD-3.7.3-DecoupledOrder。改动：限定为事件表穷尽真实接触、非零法向、初端右连续、终端左连续且终端无碰撞、事件取碰后动量的轨道；只保留明确的时间对齐误差目标，不宣称同时间动量阶。精确子流Strang仍是独立限定解释，原混合法及无根事件分支未覆盖。二阶项另限数值碰撞横截；尚缺统一事件稳定性与误差累积理论。 -/
+theorem decoupledOrder_corrected :
+  ∀ (n : ℕ) (m : Fin n → ℝ) (U V g : Q n → ℝ) (q p : ℝ → Q n) τ events
+    (Gfree : ℝ → Z n → Z n), positiveMass m → ContDiff ℝ ∞ U → ContDiff ℝ ∞ V →
+    ContDiff ℝ ∞ g → 0 < τ →
+    (∀ x, g x=0 → ∑ i, grad g x i*invMass m (grad U x) i=0) →
+    finiteCollisionTrajectory_corrected m (fun x => -grad U x-grad V x) g q p τ events →
+    (∀ z, 0 ≤ g z.1 → (∀ t ≥ 0, Tendsto (fun s => (Gfree s z).2) (𝓝[>] t) (𝓝 ((Gfree t z).2)))) →
+    (∀ z, 0 ≤ g z.1 → ∀ T > 0, ∃ ev, Gfree 0 z=z ∧
+      finiteCollisionTrajectory m (fun x => -grad V x) g
+        (fun t => (Gfree t z).1) (fun t => (Gfree t z).2) 0 T ev) →
+    collisionalGlobalOrder (fun h =>
+      (fun z : Z n => (z.1,z.2-(h/2) • grad U z.1)) ∘ Gfree h ∘
+      (fun z : Z n => (z.1,z.2-(h/2) • grad U z.1))) q p τ 2 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
+/-- source_id: MD-3.7.3-ModifiedCollisionProjection · definition · §3.7.3 · 印刷p.136 / PDFp.158 [EXTRA] 24号：[EXTRA] 通用有限截断Hamiltonian等值辅助关系；不覆盖原段Verlet专属修正系数、投影存在唯一、变步长共同修正能量或统计精度。 未覆盖内容已列coverage_gaps；原引文保留。
+-/
 def modifiedCollisionProjection {n : ℕ} (H : SymplecticCoordinates n → ℝ)
     (Hj : ℕ → SymplecticCoordinates n → ℝ) (r k : ℕ) (h : ℝ)
     (z w : SymplecticCoordinates n) : Prop :=
@@ -1842,7 +2694,8 @@ def modifiedCollisionProjection {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 /-- source_id: MD-3.7.1-FreeHardSphereHamiltonian · definition · §3.7.1 · 印刷p.133 / PDFp.155
 [EXTRA] 正质量下用WithTop ℝ保留有限动能和+∞障碍；沿用p132接触允许的边界，p133≤疑点仍由HardCorePotential保留。 
-[EXTRA] 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。 -/
+[EXTRA] 忠实保留原印≤无穷势并显式正质量，接触允许物理版本另名存档；补非接触直线运动q′=M⁻¹p,p′=0，接触弹性反射由ElasticReflection/ElasticEnergy原有条目承担。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def freeHardSphereHamiltonian {N d : ℕ} (m σ : Fin N → ℝ)
     (_hm : ∀ i, 0 < m i) (q p : Fin N → Position d) : WithTop ℝ :=
   if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤
@@ -1860,15 +2713,28 @@ def freeHardSphereHamiltonian_contactAllowed {N d : ℕ} (m σ : Fin N → ℝ)
   @ite (WithTop ℝ) (q ∈ MolecularDynamics.Chapter03Review.hardCoreDomain σ)
     (Classical.propDecidable _) ((∑ i, ‖p i‖^2/(2*m i) : ℝ) : WithTop ℝ) ⊤
 
+
+
+/-- 修正版，对应原文 MD-3.7.1-FreeHardSphereHamiltonian。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def freeHardSphereHamiltonian_corrected {N d : ℕ} (m σ : Fin N → ℝ)
+    (_hm : ∀ i, 0 < m i) (q p : Fin N → Position d) : WithTop ℝ :=
+  if ∃ i j, i ≠ j ∧ ‖q i-q j‖ ≤ σ i+σ j then ⊤
+  else ((∑ i, ‖p i‖^2/(2*m i) : ℝ) : WithTop ℝ)
+
 end MD.Ch03
 
 /- BEGIN WEBSITE REPAIR AXIOMS -/
+/- END WEBSITE REPAIR AXIOMS -/
+
+#print axioms MD.Ch03.smoothSymplecticData
+#print axioms MD.Ch03.modifiedConstruction_statement24
 #print axioms MD.Ch03.modifiedConstruction
 #print axioms MD.Ch03.oscillatorAdjointEuler
 #print axioms MD.Ch03.oscillatorShadow
 #print axioms MD.Ch03.oscillatorEnergyFailure
 #print axioms MD.Ch03.oscillatorShadowInvariant
 #print axioms MD.Ch03.shadowEllipses
+#print axioms MD.Ch03.shadowEllipses_corrected
 #print axioms MD.Ch03.eulerOscillatorGrowth
 #print axioms MD.Ch03.formalHamiltonian
 #print axioms MD.Ch03.formalHamiltonianField
@@ -1878,7 +2744,9 @@ end MD.Ch03
 #print axioms MD.Ch03.formalOperatorExponential
 #print axioms MD.Ch03.formalObservable
 #print axioms MD.Ch03.lieTaylor
+#print axioms MD.Ch03.lieTaylor_corrected
 #print axioms MD.Ch03.flowCoordinates
+#print axioms MD.Ch03.flowCoordinates_corrected
 #print axioms MD.Ch03.textbookPoissonBracket
 #print axioms MD.Ch03.poissonCoordinates
 #print axioms MD.Ch03.poissonBilinearity
@@ -1898,15 +2766,20 @@ end MD.Ch03
 #print axioms MD.Ch03.differenceCommutator
 #print axioms MD.Ch03.differenceCommutator_coeff2
 #print axioms MD.Ch03.differenceCommutator_hamiltonian
+#print axioms MD.Ch03.differenceCommutator_coeff3
+#print axioms MD.Ch03.differenceCommutator_hamiltonian_coeff3
 #print axioms MD.Ch03.differenceCubic
 #print axioms MD.Ch03.differenceCubic_coeff3
 #print axioms MD.Ch03.hamiltonianCommutator
 #print axioms MD.Ch03.leadingShadowPrinted
 #print axioms MD.Ch03.leadingModifiedExponential
+#print axioms MD.Ch03.leadingModifiedExponential_corrected
 #print axioms MD.Ch03.leadingShadowHamiltonian
+#print axioms MD.Ch03.leadingShadowHamiltonian_corrected
 #print axioms MD.Ch03.bch4
 #print axioms MD.Ch03.bchHamiltonian3
 #print axioms MD.Ch03.bchHamiltonianMatching
+#print axioms MD.Ch03.bchHamiltonianMatching_corrected
 #print axioms MD.Ch03.commutingFlows
 #print axioms MD.Ch03.symplecticEulerShadow3
 #print axioms MD.Ch03.symplecticEulerShadowMatching
@@ -1915,11 +2788,19 @@ end MD.Ch03
 #print axioms MD.Ch03.verletHamiltonianParts_sum
 #print axioms MD.Ch03.verletStructure
 #print axioms MD.Ch03.verletModifiedH
+#print axioms MD.Ch03.verletModifiedH_corrected
 #print axioms MD.Ch03.verletModifiedMatching
 #print axioms MD.Ch03.verletModifiedMatching_general
+#print axioms MD.Ch03.verletModifiedMatching_corrected
 #print axioms MD.Ch03.modifiedEven
+#print axioms MD.Ch03.modifiedEven_corrected
 #print axioms MD.Ch03.formalStrang
+#print axioms MD.Ch03.formalStrang_Zt
+#print axioms MD.Ch03.formalStrang_constant
+#print axioms MD.Ch03.formalStrang_log_constant
+#print axioms MD.Ch03.formalStrang_log_reconstruction
 #print axioms MD.Ch03.differentLogsCommute
+#print axioms MD.Ch03.differentLogsCommute_corrected
 #print axioms MD.Ch03.strangInverse
 #print axioms MD.Ch03.strangCubic
 #print axioms MD.Ch03.strangCubic_coeff3
@@ -1937,41 +2818,55 @@ end MD.Ch03
 #print axioms MD.Ch03.takahashiShadow2_matching
 #print axioms MD.Ch03.takahashiProcessor
 #print axioms MD.Ch03.processorEnergyPrinted
+#print axioms MD.Ch03.processorEnergyPrinted_corrected
 #print axioms MD.Ch03.takahashiEffectiveOrder
+#print axioms MD.Ch03.takahashiEffectiveOrder_corrected
 #print axioms MD.Ch03.formalField
 #print axioms MD.Ch03.leadingModifiedField
 #print axioms MD.Ch03.truncatedHamiltonian
 #print axioms MD.Ch03.truncationSmooth
 #print axioms MD.Ch03.truncationSmooth_C1
 #print axioms MD.Ch03.theorem31
+#print axioms MD.Ch03.theorem31_corrected
 #print axioms MD.Ch03.compactLipschitz
 #print axioms MD.Ch03.truncatedFlow
 #print axioms MD.Ch03.finiteMatchingConstruction
 #print axioms MD.Ch03.truncatedConservation
+#print axioms MD.Ch03.truncatedConservation_corrected
 #print axioms MD.Ch03.energyTelescoping
 #print axioms MD.Ch03.energyTelescoping_complete
+#print axioms MD.Ch03.energyTelescoping_corrected
 #print axioms MD.Ch03.uniformTruncatedLipschitz
 #print axioms MD.Ch03.uniformTruncatedLipschitz_chain
+#print axioms MD.Ch03.uniformTruncatedLipschitz_corrected
 #print axioms MD.Ch03.truncationRemainder
 #print axioms MD.Ch03.physicalEnergyDrift
 #print axioms MD.Ch03.physicalEnergyDrift_complete
+#print axioms MD.Ch03.physicalEnergyDrift_corrected
 #print axioms MD.Ch03.polynomialEnergyRate
 #print axioms MD.Ch03.stepCountPower
 #print axioms MD.Ch03.arbitraryFiniteTruncation
 #print axioms MD.Ch03.analyticBEA
+#print axioms MD.Ch03.analyticBEA_corrected
 #print axioms MD.Ch03.optimalTruncation
+#print axioms MD.Ch03.optimalTruncation_corrected
 #print axioms MD.Ch03.exponentialFlat
 #print axioms MD.Ch03.scalarVerletShadow4
-#print axioms MD.Ch03.scalarVerletShadow4_matching
+#print axioms MD.Ch03.scalarVerletShadow4_matching_Printed
+#print axioms MD.Ch03.scalarVerletShadow4_corrected
+#print axioms MD.Ch03.scalarVerletShadow4_matching_corrected
 #print axioms MD.Ch03.commutingEnergy
+#print axioms MD.Ch03.commutingEnergy_corrected
 #print axioms MD.Ch03.commutingEnergySymmetry
 #print axioms MD.Ch03.energySymplecticNoGo
+#print axioms MD.Ch03.energySymplecticNoGo_corrected
 #print axioms MD.Ch03.equalComponentFirstIntegral
 #print axioms MD.Ch03.equalEulerIntegral
 #print axioms MD.Ch03.linearEulerIntegral
 #print axioms MD.Ch03.linearEulerIntegral_continuous
 #print axioms MD.Ch03.linearRKIntegral
 #print axioms MD.Ch03.verletOscillatorEnergy
+#print axioms MD.Ch03.verletOscillatorEnergy_corrected
 #print axioms MD.Ch03.momentumProjection
 #print axioms MD.Ch03.projectionConstraint
 #print axioms MD.Ch03.projectionFactor
@@ -1990,16 +2885,25 @@ end MD.Ch03
 #print axioms MD.Ch03.reversedTrajectoryPrinted
 #print axioms MD.Ch03.reversedTrajectoryPrinted_coordinateChange
 #print axioms MD.Ch03.reversedTrajectoryPrinted_timeChange
+#print axioms MD.Ch03.reversedTrajectoryPrinted_corrected
 #print axioms MD.Ch03.reversedTrajectory
+#print axioms MD.Ch03.reversedTrajectory_corrected
 #print axioms MD.Ch03.flowReversal
+#print axioms MD.Ch03.flowReversal_corrected
 #print axioms MD.Ch03.flowReversalIdentity
+#print axioms MD.Ch03.flowReversalIdentity_corrected
 #print axioms MD.Ch03.reversibleMethod
 #print axioms MD.Ch03.symmetricMethod
 #print axioms MD.Ch03.affineInvariant
+#print axioms MD.Ch03.affineInvariant_corrected
 #print axioms MD.Ch03.symmetricAffineReversible
+#print axioms MD.Ch03.symmetricAffineReversible_corrected
 #print axioms MD.Ch03.rkAffine
+#print axioms MD.Ch03.rkAffine_corrected
 #print axioms MD.Ch03.partitionedAffinePrinted
+#print axioms MD.Ch03.partitionedAffinePrinted_corrected
 #print axioms MD.Ch03.partitionedAffine
+#print axioms MD.Ch03.partitionedAffine_corrected
 #print axioms MD.Ch03.symplecticNotReversible
 #print axioms MD.Ch03.trapezoidalRelation
 #print axioms MD.Ch03.trapezoidalProperties
@@ -2009,23 +2913,34 @@ end MD.Ch03
 #print axioms MD.Ch03.reversibleSpectrum
 #print axioms MD.Ch03.conjugateIterates
 #print axioms MD.Ch03.conjugateIterates_homeomorph
+#print axioms MD.Ch03.conjugateIterates_corrected
 #print axioms MD.Ch03.mechanicalReversalCorrect
 #print axioms MD.Ch03.conjugateOrderPrinted
+#print axioms MD.Ch03.conjugateOrderPrinted_corrected
 #print axioms MD.Ch03.reversibleVolumeFailure
+#print axioms MD.Ch03.reversibleVolumeFailure_corrected
 #print axioms MD.Ch03.hardCoreDomain
+#print axioms MD.Ch03.hardCoreDomainPhysical
+#print axioms MD.Ch03.hardCoreContactSurface
+#print axioms MD.Ch03.hardCoreMechanicalHamiltonian
 #print axioms MD.Ch03.elasticReflection
 #print axioms MD.Ch03.elasticEnergy
 #print axioms MD.Ch03.collisionComposition
+#print axioms MD.Ch03.collisionComposition_two
 #print axioms MD.Ch03.collisionRegularity
 #print axioms MD.Ch03.hardCorePotential
 #print axioms MD.Ch03.hardSphereHamiltonianPrinted
 #print axioms MD.Ch03.hardCorePotential_contactAllowed
+#print axioms MD.Ch03.hardCorePotential_corrected
 #print axioms MD.Ch03.primitiveSplitting
 #print axioms MD.Ch03.primitiveOrder
+#print axioms MD.Ch03.finiteCollisionTrajectory_corrected
+#print axioms MD.Ch03.primitiveOrder_corrected
 #print axioms MD.Ch03.obstacleReflection
 #print axioms MD.Ch03.primitiveDefect
 #print axioms MD.Ch03.collisionDefectZero
 #print axioms MD.Ch03.endImpactThirdOrderPrinted
+#print axioms MD.Ch03.endImpactThirdOrderPrinted_corrected
 #print axioms MD.Ch03.collisionQuadraticPath
 #print axioms MD.Ch03.collisionTimeRelation
 #print axioms MD.Ch03.collisionQuartic
@@ -2034,11 +2949,15 @@ end MD.Ch03
 #print axioms MD.Ch03.particleVerlet
 #print axioms MD.Ch03.particleReflection
 #print axioms MD.Ch03.physicalCVARelation
+#print axioms MD.Ch03.collisionalVerletRelation_corrected
 #print axioms MD.Ch03.collisionalVerletOrder
+#print axioms MD.Ch03.collisionalVerletOrder_corrected
 #print axioms MD.Ch03.pairForceDecoupling
+#print axioms MD.Ch03.pairForceDecoupling_corrected
 #print axioms MD.Ch03.decoupledOrder
+#print axioms MD.Ch03.decoupledOrder_corrected
 #print axioms MD.Ch03.modifiedCollisionProjection
 #print axioms MD.Ch03.freeHardSphereHamiltonian
 #print axioms MD.Ch03.freeHardSphereHamiltonian_ballistic
 #print axioms MD.Ch03.freeHardSphereHamiltonian_contactAllowed
-/- END WEBSITE REPAIR AXIOMS -/
+#print axioms MD.Ch03.freeHardSphereHamiltonian_corrected

@@ -1,0 +1,158 @@
+{
+  "batch": "EAUDIT48",
+  "input_sha256": {
+    "BATCH_EAUDIT48.md": "6d3c45e0c14d4f1fc6ac8ba979d4170d916f7f49c212ad1d3577753cc4237424",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_HAMILTONIAN_DIVERGENCE_BRIDGE",
+          "INCOMPLETE_STATEMENT_COVERAGE",
+          "UNVERIFIED_EXTRA_MAPPING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.3",
+          "printed_page": "186",
+          "pdf_page": "207",
+          "statement_latex": "From the above we know that for a smooth scalar function $u=u(z)$, $\\mathcal L_f^\\daggeru=-\\nabla\\cdot(uf)=-f\\cdot\\nabla u-u\\nabla\\cdot f$. The term $\\nabla\\cdot f$ vanishes for $f=J\\nabla H$. Thus we have $\\mathcal L_f^\\daggeru=-f\\cdot\\nabla u=-\\mathcal L_fu$. If this holds for all smooth $u$, we write $\\mathcal L_f^\\dagger=-\\mathcal L_f$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "完整原句中的Hamiltonian场散度零没有被本条声明推出；[EXTRA]提及的正式库桥接不在提供的可核查声明中。"
+          ],
+          "lean_decl": "MD.Ch05.hamiltonianSkewExpression",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 当前Lean仅编码可微零散度场的负Lie恒等式；原段Hamiltonian场散度零尚缺本输入可核查的桥接声明，不视为已覆盖。形式伴随不作闭Hilbert算子域识别。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT06_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:56:45.362027",
+              "before_sha256": "0bfa6a60ca51404b73d1cc331420c350d58b14475683b32b4024a7e366fcb947",
+              "after_sha256": "0436e3160e5ea19aaa49dd82753faae592b472e50a24332b0502897fe258977b",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH09_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "完整原句中的Hamiltonian场散度零没有被本条声明推出；[EXTRA]提及的正式库桥接不在提供的可核查声明中。"
+        ],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "11",
+          "printed_page": "186",
+          "pdf_page": "207",
+          "A_text_check": "原页乘积散度展开、f=J∇H时散度消失及负Lie表达式、形式算子身份均已保留。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.hamiltonianSkewExpression"
+        ],
+        "verdict": "FAIL",
+        "explanation": "所列定理作为一般零散度场的条件命题正确：∀n,f,u，f和u可微，假设∀z div f z=0，再得∀z -div(uf)=-Du[f]。但本条statement_scope覆盖整个原段，其中还包含f=J∇H时散度为零这一实质结论。当前所有声明既无H、J或Phase，也无从HamiltonianField推出div f=0的桥接。将散度零直接列为前提不能覆盖该结论。[EXTRA]称正式库另有桥接，却未给出其声明及所需正则性，不能按本任务的唯一输入核实。因此就完整原句覆盖判FAIL，并非认为已列的条件恒等式为假。",
+        "counterexample": "覆盖缺项，无需以数学反例反驳现有条件命题/定义；现有部分自身正确。",
+        "suggested_fix": "在本条附上并核对实际HamiltonianField在C² Hamiltonian下散度为零的桥接声明及其精确项目定义；随后实例化当前零散度恒等式。若只保留条件版本，必须明确缩小statement_scope并将原段的Hamiltonian散度零另列且给出可核查映射。"
+      }
+    },
+    {
+      "source_id": "MD-5.2.3-HamiltonianDensityPropagation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "12",
+          "printed_page": "187",
+          "pdf_page": "208",
+          "A_text_check": "原页四项积分链的t与-t、区域D和体积保持换元句一致。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.hamiltonianDensityPropagation"
+        ],
+        "verdict": "PASS",
+        "explanation": "核对∀n、D、f、Φ、ρ；D仅需Lebesgue零可测而不强制开，C¹场具有联合C²全时间实际流，全空间div f=0，D对每个时间流不变；densityOn要求D上非负、可测及可积而不要求归一化。结论对每个实t同时给出D上ρ∘Φ_{-t}的积分不变及其密度测度等于Φ_t推前初始密度测度。全局流的逆是Φ_{-t}，散度零和正则性足以推出Jacobian行列式1，继而体积保持；未将体积保持作为前提。正负时间方向和限制域均正确。形式指数用实际拉回/推前表达，[EXTRA]合理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.3-MechanicalLiouvillian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "13",
+          "printed_page": "187",
+          "pdf_page": "208",
+          "A_text_check": "原页一般机械Hamiltonian、两项负号、坐标质量m_i及F_i=-∂U/∂q_i全部一致。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.mechanicalLiouvillian"
+        ],
+        "verdict": "PASS",
+        "explanation": "核对Phase n=E n×E n、m为固定坐标质量、F仅依赖q、u和z为完整相空间标量函数与点。负Fréchet导数作用于(p_i/m_i,F(q))，在u可微处恰为-∑(p_i/m_i)∂q_i u-∑F_i∂p_i u，两个负号正确。这是可复用的微分表达式定义，不自身断言任意F均由势生成。其Hamiltonian特化F=-gradient U、正质量和C²势由本批条目12明确给出并核对，故结合该显式特化可接受；单独此定义不构成从H推出身份的证明。零质量或不可微u下Lean的总定义扩展不解释为原书物理算子。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.3-MechanicalLiouvillianIdentity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "14",
+          "printed_page": "187",
+          "pdf_page": "208",
+          "A_text_check": "与条目11取自相同原段；一般势U、完整q,p、两个负号与原页一致。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.mechanicalLiouvillianIdentity"
+        ],
+        "verdict": "PASS",
+        "explanation": "核对∀n、所有坐标正质量m、任意C²势U、任意全空间可微实函数u及所有z∈Phase n。H为∑p_i²/(2m_i)+U(q)，hamiltonianField实际定义是(∇pH,-∇qH)；由固定非零m及势仅依赖q，恰得(p_i/m_i,-∇U(q))。结论将此场的负方向导数等同于mechanicalLiouvillian m (-gradient U)，完整保留一般势、所有q,p和所有u，并无只测二次势的弱化。[EXTRA]明确这是负Lie表达式身份而非无界Hilbert算子域的识别；正质量和C²强化合理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

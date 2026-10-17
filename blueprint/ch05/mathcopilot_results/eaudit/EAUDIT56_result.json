@@ -1,0 +1,660 @@
+{
+  "batch": "EAUDIT56",
+  "input_sha256": {
+    "BATCH_EAUDIT56.md": "c649c1f342ff5cae002684247d1a051b5f7cac74388ba713d67ed7e0a68c0ca7",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.4.1-HarmonicFlow",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_KIND_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-HarmonicFlow",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "198",
+          "pdf_page": "219",
+          "statement_latex": "As a very simple example, the harmonic oscillator is always ergodic on its energy surfaces (i.e. energy curves, in this case).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_KIND_MISMATCH",
+              "phase": "A",
+              "field": "kind",
+              "message": "原页是关于振子遍历性的未编号断言，不是在定义解析流。修正源文类别；保留原句及已公开的辅助定义范围。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.harmonicFlow",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实解析振子流，用于完整遍历命题；Ω>0使用资格另条。",
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅原系统推导的辅助解析流；原遍历结论由MD-5.4.1-HarmonicErgodic承担，频率正及能量正按该定理。"
+          ],
+          "statement_scope": "仅原系统推导的辅助解析流；原遍历结论由MD-5.4.1-HarmonicErgodic承担，频率正及能量正按该定理。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:01:37.070895",
+              "before_sha256": "6c39216b29aca6e3b47a219733d4e5d6361a73120aa122eceebc549820b92b5b",
+              "after_sha256": "fdca99dea8db9d84d40836a2fb27187ab24fe273829ebd13cfc97cc7a558a3f8",
+              "changed_fields": [
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:28:28.864805",
+              "before_sha256": "fdca99dea8db9d84d40836a2fb27187ab24fe273829ebd13cfc97cc7a558a3f8",
+              "after_sha256": "5a3030ae8bb93801200fb2233fde68f1a7cd4fcde85dfcab16b6e06b4b0d2205",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "198–199",
+                  "after": "198"
+                },
+                "pdf_page": {
+                  "before": "219–220",
+                  "after": "219"
+                }
+              },
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+          "review_context_pdf_pages": [
+            220
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_KIND_MISMATCH",
+            "phase": "A",
+            "field": "kind",
+            "message": "原页是关于振子遍历性的未编号断言，不是在定义解析流。修正源文类别；保留原句及已公开的辅助定义范围。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:323：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第3页＝PDF219／印刷198，下半页“As a very simple example”一句；第4页＝PDF220只提供后续二维系统语境，现有页码198／219正确。",
+          "R6_evidence/page_03.png与page_01.png相同；page_04.png为后续语境。逐项检查了cos、sin的参数、1/Ω系数及p分量的负号。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.harmonicFlow",
+        "verdict": "PASS",
+        "explanation": "本条只有harmonicFlow定义，输入Ω,t∈ℝ和z∈E 2，输出仍为E 2；坐标顺序为(q,p)。两个分量分别为q cos(Ωt)+(p/Ω)sin(Ωt)和p cos(Ωt)−Ωq sin(Ωt)，非零频率时是单位质量振子的正确解析流，正负非零频率均适用。[EXTRA]与statement_scope已明确本条只是辅助定义，原句的能量面遍历性分配给MD-5.4.1-HarmonicErgodic，故不把这个def当成遍历定理。该外部source_id的声明未在R6给出，本次未核查其结论或证明。Ω=0处Lean除零总化得到恒等映射，不代表零频自由粒子的流；原有正频率使用限定是必要的。",
+        "counterexample": null,
+        "suggested_fix": "采用corrected_json中的kind。保留辅助定义范围；使用该函数描述物理振子时明确Ω≠0（或Ω>0），并另审HarmonicErgodic，不能据本条PASS宣称遍历性已经形式化通过。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-TwoOscillatorEnergy",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_KIND_MISMATCH",
+          "SOURCE_LITERAL_WORDING",
+          "STALE_CROSS_SOURCE_MAPPING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-TwoOscillatorEnergy",
+          "kind": "example",
+          "label": "Example 5.4",
+          "section": "5.4.1",
+          "printed_page": "198–199",
+          "pdf_page": "219–220",
+          "statement_latex": "Example 5.4 (2D Harmonic System) Consider a two-dimensional harmonic system, i.e. the system with Hamiltonian\n\\[H=p_1^2/2+p_2^2/2+\\Omega_1^2q_1^2/2+\\Omega_2^2q_2^2/2;\\]\nwhere $\\Omega_1,\\Omega_2$ are two nonzero parameters. Because the two systems involving $q_1,p_1$ and $q_2,p_2$ are not coupled in the equations of motion, this system has two invariants $H_1=p_1^2/2+\\Omega_1^2q_1^2/2$ and $H_2=p_2^2/2+\\Omega_2^2q_2^2/2$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "相空间顺序为(q₁,q₂,p₁,p₂)，总Hamiltonian为∑ᵢHᵢ；原例Ω₁、Ω₂非零，分能量多项式本身可总延拓到零频率。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_KIND_MISMATCH",
+              "phase": "A",
+              "field": "kind",
+              "message": "本摘录是带标题的Example 5.4，包含Hamiltonian定义及不变量说明；元数据宜标example，避免将整段仅归为定义。"
+            },
+            {
+              "code": "SOURCE_LITERAL_WORDING",
+              "phase": "A",
+              "field": "statement_latex",
+              "message": "原页写“where Ω₁, Ω₂ are two nonzero parameters”，不是“Ω₁ and Ω₂”；Hamiltonian展示式以分号结束。作逐字转录修正，不改变数学。"
+            },
+            {
+              "code": "STALE_CROSS_SOURCE_MAPPING",
+              "phase": "C",
+              "field": "statement_scope/extra_assumptions",
+              "message": "原映射只指向外部TwoOscillatorTori，但本批条目5已经给出适用于所有初值的分能量不变性；更新可直接核查的对应关系。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.twoOscillatorEnergy",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 仅两项分能量H₁/H₂定义；总能量与层分解见MD-5.4.1-TwoOscillatorEnergyDecomposition；所有初值的分能量不变性在本批MD-5.4.1-TwoOscillatorFlow的twoOscillatorFlow_invariants中明确给出。正能量共同层的拓扑结论另由MD-5.4.1-TwoOscillatorTori承担，本批未审该外部条目。"
+          ],
+          "statement_scope": "仅两项分能量H₁/H₂定义；总能量与层分解见MD-5.4.1-TwoOscillatorEnergyDecomposition；所有初值的分能量不变性在本批MD-5.4.1-TwoOscillatorFlow的twoOscillatorFlow_invariants中明确给出。正能量共同层的拓扑结论另由MD-5.4.1-TwoOscillatorTori承担，本批未审该外部条目。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:01:37.070895",
+              "before_sha256": "b98ebc78935c46a75a5c738acaf39dcaf7ec09f3b9b25e8972f2ed593415f64a",
+              "after_sha256": "258e4c3a8744c62c99246e9dcf235ee912119a2d0c2b3090e6c50eb265a6bfe1",
+              "changed_fields": [
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_KIND_MISMATCH",
+            "phase": "A",
+            "field": "kind",
+            "message": "本摘录是带标题的Example 5.4，包含Hamiltonian定义及不变量说明；元数据宜标example，避免将整段仅归为定义。"
+          },
+          {
+            "code": "SOURCE_LITERAL_WORDING",
+            "phase": "A",
+            "field": "statement_latex",
+            "message": "原页写“where Ω₁, Ω₂ are two nonzero parameters”，不是“Ω₁ and Ω₂”；Hamiltonian展示式以分号结束。作逐字转录修正，不改变数学。"
+          },
+          {
+            "code": "STALE_CROSS_SOURCE_MAPPING",
+            "phase": "C",
+            "field": "statement_scope/extra_assumptions",
+            "message": "原映射只指向外部TwoOscillatorTori，但本批条目5已经给出适用于所有初值的分能量不变性；更新可直接核查的对应关系。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:426：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第5页＝PDF219／印刷198页末Example 5.4标题及总Hamiltonian；第6页＝PDF220／印刷199续行的参数条件与两个分能量。",
+          "R6_evidence/page_05.png与page_01.png相同；page_06.png与page_04.png相同。原文使用逗号列举Ω₁, Ω₂；两项二次势能系数及动能系数均为1/2。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.twoOscillatorEnergy",
+        "verdict": "PASS",
+        "explanation": "twoOscillatorEnergy的Ω:Fin 2→ℝ、i:Fin 2、z:E 4均与两个子系统相符。Fin.castAdd 2 i取下标0、1的q_i，Fin.natAdd 2 i取下标2、3的p_i，故在(q₁,q₂,p₁,p₂)顺序下确为p_i²/2+Ω_i²q_i²/2。这个多项式定义对零频率也有意义，较原非零参数域的总延拓不造成虚假动力学结论。本条公开范围仅是H₁、H₂定义；总能量用两项求和表示（条目7），全初值不变性已经由本批条目5的定理承担。未把单个def当作独立证明总能量守恒或二维环面拓扑。",
+        "counterexample": null,
+        "suggested_fix": "采用corrected_json中的转录、类别和映射注释；不改Lean分能量定义。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-TwoOscillatorFlow",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_KIND_MISMATCH",
+          "STALE_FREQUENCY_ANNOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-TwoOscillatorFlow",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "199",
+          "pdf_page": "220",
+          "statement_latex": "Because the two systems involving $q_1,p_1$ and $q_2,p_2$ are not coupled in the equations of motion, this system has two invariants $H_1=p_1^2/2+\\Omega_1^2q_1^2/2$ and $H_2=p_2^2/2+\\Omega_2^2q_2^2/2$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本句承接Example 5.4；Ω₁、Ω₂为非零参数；H₁、H₂为对应两个无耦合子系统的分能量。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_KIND_MISMATCH",
+              "phase": "A",
+              "field": "kind",
+              "message": "原句实质断言因解耦而有两个不变量；当前还包含相应定理，按源文归为unnumbered_claim更准确。"
+            },
+            {
+              "code": "STALE_FREQUENCY_ANNOTATION",
+              "phase": "C",
+              "field": "extra_assumptions[0]",
+              "message": "“非零频率资格另条”已过时：本条twoOscillatorFlow_invariants明确含∀i,Ω i≠0。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.twoOscillatorFlow",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 明确相空间排列(q₁,q₂,p₁,p₂)，增加由解耦方程导出的解析流；本条twoOscillatorFlow_invariants显式要求各频率非零。",
+            "[EXTRA] 保留解析流并补任意初值（包括零分能量退化层）的两个真实分能量不变量，不再只依赖正共同层的Tori结论。原非零频率资格显式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:01:37.070895",
+              "before_sha256": "da881e325b703a642176c7b6710a014e6c7d60402162b6e84767b75ab1627436",
+              "after_sha256": "ef63113f4bdf0b4d08e2086c72e232d51677fe4150bdbde0a6db4f59b6f1da35",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:28:28.864805",
+              "before_sha256": "ef63113f4bdf0b4d08e2086c72e232d51677fe4150bdbde0a6db4f59b6f1da35",
+              "after_sha256": "12d1f1a63a1ff2e52bee06feed9fbe4fcde06edd47a2f8cf703f29dd1e322cda",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "198–199",
+                  "after": "199"
+                },
+                "pdf_page": {
+                  "before": "219–220",
+                  "after": "220"
+                }
+              },
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+          "review_context_pdf_pages": [
+            219
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_KIND_MISMATCH",
+            "phase": "A",
+            "field": "kind",
+            "message": "原句实质断言因解耦而有两个不变量；当前还包含相应定理，按源文归为unnumbered_claim更准确。"
+          },
+          {
+            "code": "STALE_FREQUENCY_ANNOTATION",
+            "phase": "C",
+            "field": "extra_assumptions[0]",
+            "message": "“非零频率资格另条”已过时：本条twoOscillatorFlow_invariants明确含∀i,Ω i≠0。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:501：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第8页＝PDF220／印刷199，图5.3之后第一段中的“Because the two systems…”原句完整吻合；第7页是Example 5.4开头语境，当前主张页码199／220正确。",
+          "R6_evidence/page_07.png与page_01.png相同；page_08.png与page_04.png相同。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.twoOscillatorFlow",
+        "verdict": "PASS",
+        "explanation": "已核对twoOscillatorFlow及twoOscillatorFlow_invariants。四维状态确按(q₁,q₂,p₁,p₂)排列；每个q分量只使用相应p和Ω，两个p分量分别带−Ω_i q_i sin(Ω_i t)，未交换下标或符号。不变量定理要求∀i,Ω_i≠0，随后对任意初值z、任意实时间t和任意i断言H_i(Φ_t z)=H_i(z)，包含零分能量的退化层，并非仅在正能量共同层上给出条件结论。这覆盖了原句的两个不变量；源文没有给出显式流公式，该公式是已公开的派生构造。",
+        "counterexample": null,
+        "suggested_fix": "采用corrected_json的源文类别与频率注释；现有两个Lean声明的数学签名无需修改。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-Mixing",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LEAN_REFERENCE_INVARIANCE_MISSING",
+          "EXTRA_INVARIANCE_NOT_ENCODED",
+          "NONSTANDARD_MIXING_NAME"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-Mixing",
+          "kind": "definition",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "199",
+          "pdf_page": "220",
+          "statement_latex": "An even stronger property than the ergodic property is the concept of a mixing system. For a mixing system, the finite time density $\\rho(z;t)$ converges, in the weak sense, to the invariant distribution $\\rho_\\infty(z)$, as $t\\to\\infty$. That is, we have, for all test functions $\\phi$ in some chosen space\n\\[\\lim_{t\\to\\infty}\\langle\\phi,\\rho(\\cdot;t)\\rangle=\\langle\\phi,\\rho_\\infty\\rangle.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原文弱收敛的配对可用μ参考测度、AC概率初值r及有界连续φ解释；当前Lean谓词缺少μ的流不变性，因此尚不能代表原文的不变极限分布。",
+            "weakMixing在本工程意图表示混合导致分布弱收敛，不应与标准弱混合混为一谈。"
+          ],
+          "issues": [
+            {
+              "code": "LEAN_REFERENCE_INVARIANCE_MISSING",
+              "phase": "C",
+              "field": "weakMixing",
+              "message": "缺少参考概率μ在Φ_t下不变的条件；单凭当前的联合可测流和所列弱极限不能保证这一点。"
+            },
+            {
+              "code": "EXTRA_INVARIANCE_NOT_ENCODED",
+              "phase": "C",
+              "field": "extra_assumptions[0]",
+              "message": "[EXTRA]宣称使用实际不变参考测度，但实际谓词没有编码其不变性；不得把注释当作已有Lean前提。"
+            },
+            {
+              "code": "NONSTANDARD_MIXING_NAME",
+              "phase": "C",
+              "field": "lean_decl",
+              "message": "weakMixing易与标准弱混合概念混淆。源文说mixing，而“weak”修饰分布收敛。命名本身不单独造成FAIL。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.weakMixing",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 选择AC概率初值和有界连续测试函数，密度可积性相对于μ；μ必须是实际不变参考概率测度，但当前Lean定义尚未写入这一要求。",
+            "[EXTRA] 当前谓词已编码概率性、零时恒等、群律与联合可测；这四项不能替代参考测度的流不变性。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:01:37.070895",
+              "before_sha256": "59e3cf2aaeef819acde67366c80351cdd160c9049256e1461abf68037a224c1f",
+              "after_sha256": "db0eb975725b316611365b25d5a83156a55ba4626a531ef1502efeaf6541d9a2",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH19_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "LEAN_REFERENCE_INVARIANCE_MISSING",
+            "phase": "C",
+            "field": "weakMixing",
+            "message": "缺少参考概率μ在Φ_t下不变的条件；单凭当前的联合可测流和所列弱极限不能保证这一点。"
+          },
+          {
+            "code": "EXTRA_INVARIANCE_NOT_ENCODED",
+            "phase": "C",
+            "field": "extra_assumptions[0]",
+            "message": "[EXTRA]宣称使用实际不变参考测度，但实际谓词没有编码其不变性；不得把注释当作已有Lean前提。"
+          },
+          {
+            "code": "NONSTANDARD_MIXING_NAME",
+            "phase": "C",
+            "field": "lean_decl",
+            "message": "weakMixing易与标准弱混合概念混淆。源文说mixing，而“weak”修饰分布收敛。命名本身不单独造成FAIL。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:621：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第9页＝PDF220／印刷199页末，从“An even stronger property…”至弱配对极限；转录中的invariant distribution、全部测试函数和t→∞均与原页一致。",
+          "R6_evidence/page_09.png与page_04.png相同；所列完整weakMixing定义第一合取止于Measurable (Function.uncurry Φ)，没有MeasurePreserving。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.weakMixing",
+        "verdict": "FAIL",
+        "explanation": "weakMixing的概率μ、零时恒等、全实时间群律、联合可测均已写在第一合取内。第二合取对所有L¹、逐点非负、积分为1的初始密度r，以及所有有界连续实测试函数φ，要求∫φ(Φ_t z)r(z)dμ→∫φdμ；这准确表达了AC初始概率分布的弱收敛，测试函数与初始密度的量词及极限方向正确。但定义既没有∀t,MeasurePreserving (Φ t) μ μ，也没有足以从弱收敛推出不变性的空间连续性条件。因此μ不一定是源文及[EXTRA]所说的不变参考分布。下面的联合可测群作用满足整个当前谓词，却不保持μ。此外weakMixing这个名称不能按标准术语读作“弱混合”；这里本来意图表达的是混合导致分布弱收敛。",
+        "counterexample": "在ℝ（与E 1等同）取μ=δ₀。令O={0}∪((0,∞)\\{1})，定义Borel双射h:ℝ→O：h(0)=0，u≠0时h(u)=exp(−u)。在O上令Φ_t(x)=h(h⁻¹(x)+t)，在ℝ\\O上令Φ_t(x)=x。这是联合Borel可测的全实时间群作用，Φ₀=id。任何合格r均有r(0)=1，故测试积分为φ(h(t))，t→+∞时趋于φ(0)=∫φdμ，所有当前weakMixing条件都成立。然而Φ₁(0)=exp(−1)≠0，(Φ₁)_*δ₀=δ_exp(−1)≠δ₀，参考测度不是不变测度。",
+        "suggested_fix": "在谓词中增加∀ t,MeasurePreserving (Φ t) μ μ，或将其作为明确不可省略的接口前提；再保留现有AC密度弱收敛部分。建议将名称/文档改为明确的mixing或density convergence措辞。本次只报告，未修改工程。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_DEGENERATE_ENERGY_FIBERS",
+          "SOURCE_NONERGODIC_ENERGY_QUALIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "199",
+          "pdf_page": "220",
+          "statement_latex": "On the other hand, the energy surface $H=E$ is the union of all such 2-tori with $E_1+E_2=E$. There is no mechanism for the system to move from one torus to the other, so the system is not ergodic.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "相空间坐标顺序(q₁,q₂,p₁,p₂)，H_i=p_i²/2+Ω_i²q_i²/2，H=H₁+H₂；原语境 Ω₁,Ω₂≠0。",
+            "原文 such 2-tori 指前文 E₁,E₂>0 的层；E_i=0 的退化层未被原句字面涵盖，保留该原书疑误。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_DEGENERATE_ENERGY_FIBERS",
+              "phase": "A",
+              "field": "statement_latex",
+              "message": "原文such 2-tori回指前文E₁,E₂>0的共同层，不能覆盖H=E的零分能量边界层；保留字面并转人工。"
+            },
+            {
+              "code": "SOURCE_NONERGODIC_ENERGY_QUALIFICATION",
+              "phase": "A",
+              "field": "statement_latex",
+              "message": "“so the system is not ergodic”在此能量面语境需区分E>0与E=0；零能量面在非零频率时为单点，不能不加限定地说非遍历。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.twoOscillatorEnergyDecomposition",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]包括c_i=0的退化边界；原“all such 2-tori”字面忽略零分能量层，完整全能量面分解不能遗漏这些层。",
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。"
+          ],
+          "statement_scope": "仅含零分能量退化边界的静态能量层分解；正层拓扑/不变性/非遍历由MD-5.4.1-TwoOscillatorTori承担并保留其原书退化层疑误待导师。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:01:37.070895",
+              "before_sha256": "4dd9174a2898578d9d9b5a6e6f2731fee76e4a8eb129408e7dabc33f3f0cd0c4",
+              "after_sha256": "f11cf2bb64db234e2066399a6596c354d045dfdbca9d05eb9174138ded367248",
+              "changed_fields": [
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_DEGENERATE_ENERGY_FIBERS",
+            "phase": "A",
+            "field": "statement_latex",
+            "message": "原文such 2-tori回指前文E₁,E₂>0的共同层，不能覆盖H=E的零分能量边界层；保留字面并转人工。"
+          },
+          {
+            "code": "SOURCE_NONERGODIC_ENERGY_QUALIFICATION",
+            "phase": "A",
+            "field": "statement_latex",
+            "message": "“so the system is not ergodic”在此能量面语境需区分E>0与E=0；零能量面在非零频率时为单点，不能不加限定地说非遍历。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:711：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第10页＝PDF220／印刷199第一正文段；前文明确写“For any E₁,E₂>0”，本条紧接“all such 2-tori”。原JSON所引两句忠实。",
+          "R6_evidence/page_10.png与page_04.png相同。Lean右侧确为0≤c_i，不是0<c_i；也没有声称存在环面同胚或不变测度的中间概率集合。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.twoOscillatorEnergyDecomposition",
+        "verdict": "PASS",
+        "explanation": "twoOscillatorEnergyDecomposition逐点量化任意实频率Ω、任意实E和z:E 4。左侧是两个真实分能量之和等于E；右侧存在c:Fin 2→ℝ，各c_i非负、总和等于E且逐项H_i(z)=c_i。各H_i是平方项之和，故取c_i=H_i(z)得到这一双向分解；E<0时两侧均不能成立，E=0时也没有被排除。这是正确的、含边界退化层的静态修订。[EXTRA]与statement_scope已明确不在本条断言各层都是二维环面、轨道稠密性或非遍历性；这些额外结论不能由当前静态等价式获得。本条签名PASS不改变原书关于“all such 2-tori”的疑误，外部TwoOscillatorTori未在本批复核。",
+        "counterexample": "针对原书字面并集：Ω₁=Ω₂=1、E=1、z=(√2,0,0,0)时H₁=1、H₂=0，位于总能量面，却不在任何E₁,E₂>0的二维环面上。另E=0时能量面仅为原点，相应Dirac概率流遍历。这两点均不反驳当前含退化层的Lean静态等价式。",
+        "suggested_fix": "保留原文与NEEDS_HUMAN标记。人工修订时将全能量面写为包括E_i=0退化层的并，并在非遍历论断中明确E>0及所用微正则测度；不要把静态分解冒充非遍历证明。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-CurveImageDimension",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R6_任务.md:793：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第11页＝PDF223／印刷202，在图5.6后“The segment of initial conditions…”两句逐字吻合。",
+          "R6_evidence/page_11.png；已检查当前ContDiff参数是∞，不是ω；γ及Φ_t∘γ的deriv均属于E n，不是实值导数。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.curveImageDimension",
+        "verdict": "PASS",
+        "explanation": "curveImageDimension对任意n、向量场f、全实时间流Φ和γ:ℝ→E n量化。flow依赖确实包含零时恒等、群律及轨道微分方程；另有Φ的联合C∞、γ的C∞和所有参数处deriv γ≠0。结论对每个固定实时间t给出像参数曲线的C∞及处处非零导数。群律使Φ_t与Φ_−t互为逆，其光滑微分互逆，故不会把非零切向量压为0；这不是把结论正则性预先作为假设。γ全实参数及正则性是已公开的精确版本，蕴含区间上的局部曲线结论。[EXTRA]准确区分相空间的正则曲线和位置投影；没有断言投影仍浸入或有限时间曲线覆盖二维开集。原句“appears”是数值外观的描述，未被强化为数学稠密性定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-PendulumPotential",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_KIND_MISMATCH",
+          "DERIVED_DEFINITION_SCOPE_UNCLEAR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-PendulumPotential",
+          "kind": "example",
+          "label": "Example 5.5",
+          "section": "5.4.1",
+          "printed_page": "200",
+          "pdf_page": "221",
+          "statement_latex": "Example 5.5 (Double Pendulum) To explore some of the issues related to ergodicity, let us return to the double pendulum considered in Chap. 3.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本条为第5章引用的第3章双弹簧对象的本地定义；不改变第3章文件。",
+            "q=(x,y)，两固定端为(0,0)、(0,−2)，r₁=√(x²+y²)，r₂=√(x²+(y+2)²)，k_i 为弹簧系数、l_i 为自然长度，物理情形均为正。",
+            "U(q)=k₁(r₁−l₁)²/2+k₂(r₂−l₂)²/2；公式回指教材 PDF148/印刷126。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_KIND_MISMATCH",
+              "phase": "A",
+              "field": "kind",
+              "message": "所引第5章原句是Example 5.5的引言与回指，不是本页显式给出的势能定义；按源文标example。"
+            },
+            {
+              "code": "DERIVED_DEFINITION_SCOPE_UNCLEAR",
+              "phase": "A",
+              "field": "statement_scope",
+              "message": "本条公式来自第3章回指及[EXTRA]，未出现在附件第12页的所引句内；需公开本地定义范围，避免宣称该公式逐字出现于第5章引句。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.pendulumPotential",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]引用的真实双弹簧势按§3.5印刷126/PDF148已存在原页核对：U=k₁(r₁−l₁)²/2+k₂(r₂−l₂)²/2，r₁=√(x²+y²)、r₂=√(x²+(y+2)²)；不是把数值轨迹图当势的定义。"
+          ],
+          "statement_scope": "第5章所引句为Example 5.5引言；本条Lean仅补齐其回指的第3章双弹簧势的本地定义。公式依据context_notation与[EXTRA]，不声称公式直接出现在所引第5章句内，不包括整例的数值轨迹或非遍历结论。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT16_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:11:44.974098",
+              "before_sha256": "a427f739a4b25b2f783774040898c3f3ebdba886b4120c763add9f3479130dd4",
+              "after_sha256": "9c8f22efdb5d02db0053ad760f63b164b1d5e74c0f642285b78ac950811acb6b",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH20_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_KIND_MISMATCH",
+            "phase": "A",
+            "field": "kind",
+            "message": "所引第5章原句是Example 5.5的引言与回指，不是本页显式给出的势能定义；按源文标example。"
+          },
+          {
+            "code": "DERIVED_DEFINITION_SCOPE_UNCLEAR",
+            "phase": "A",
+            "field": "statement_scope",
+            "message": "本条公式来自第3章回指及[EXTRA]，未出现在附件第12页的所引句内；需公开本地定义范围，避免宣称该公式逐字出现于第5章引句。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:877：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第12页＝PDF221／印刷200，Example 5.5标题及“To explore…”一句准确；后文还明确提到两圆盘中心为原点和(0,−2)。",
+          "R6_evidence/page_12.png；辅助核对原书文件Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf第148页／印刷126，见R6_evidence/book_pdf_148.png，势公式和两个根号半径与本条摘录一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.pendulumPotential",
+        "verdict": "PASS",
+        "explanation": "pendulumPotential输入四个实参数及二维位置q，给出k₁/2·(r₁−l₁)²+k₂/2·(r₂−l₂)²。r₁²=x²+y²，r₂²=x²+(y+2)²，故第二固定端确为(0,−2)，不是(0,2)。与本条context_notation及[EXTRA]摘录的第3章真实双弹簧势完全一致。函数对任意实参数作多项式/平方根表达式的总延拓；物理使用时要求正弹簧系数和正自然长度，不影响定义本身的正确性。本条没有形式化整个Example 5.5的数值非遍历现象。本次另查同目录原书PDF148只用于核实已在本条明确回指的公式；没有使用旧项目定义。",
+        "counterexample": null,
+        "suggested_fix": "采用corrected_json中的源文类别与派生定义范围。Lean公式无需修改；第3章文件保持不动。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-CircleInitialPoints",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R6_任务.md:958：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第13页＝PDF223／印刷202，从“Now consider an alternative initial set”到“may differ greatly”逐字吻合，圆方程、因子2及位置参数都正确。",
+          "R6_evidence/page_13.png与page_11.png相同。原x区间另可在原书PDF222／印刷201的Example 5.6首段核实，见R6_evidence/book_pdf_222.png；此辅助核对仅确认已在任务中给出的区间。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.circleInitialPoints",
+        "verdict": "PASS",
+        "explanation": "已核对circleInitialPoints及circleInitialPoints_total。Phase 2确为E 2×E 2，位置为(x,0)，动量为(R cos θ,R sin θ)，R=√(2(c−U(x,0)))。实际接口显式要求c−U(x,0)≥0及x∈[1.05,1.15]，与可行能量及“as before”的原位置区间相符；κ,l,ε,c,x,θ均为实参数，θ没有在本定义中被伪称随机变量的概率律。U实际调用给出的anisotropicPotential→anisotropicEnergy，零速度消去了动能；角向参数是4 cos³α−3 cosα，对应给出的各向异性参数定义，没有换成双弹簧势。total接口明确是无前提的辅助总延拓，负能差时不能称为能量c上的初值。均匀性在条目11另作测度定义，能量等式在条目12另作结论；[EXTRA]没有将样本可能相距很远强化为所有θ、所有样本都分离。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

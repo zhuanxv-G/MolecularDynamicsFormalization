@@ -1,0 +1,31 @@
+--- before
++++ after
+@@ -2331,13 +2331,18 @@
+     field_simp
+     ring
+ 
+-/-- source_id: MD-3.7-CollisionComposition · definition · §3.7 · 印刷p.132–133 / PDFp.154–155 -/
++/-- source_id: MD-3.7-CollisionComposition · definition · §3.7 · 印刷p.132–133 / PDFp.154–155 [EXTRA] 24号：列表现在按自然时间顺序[Δτ₀,…,Δτᵣ]存储，递归先执行首段、再碰撞、再余段；二段桥接rfl核对为G t₁∘Rc∘G t₀。此为形式组合器，非负时长、总时长及G/Rc来自实际Hamilton碰撞的资格不由任意函数定义推出。
++-/
+ def collisionComposition {E : Type*} (G : ℝ → E → E) (Rc : E → E) (times : List ℝ) : E → E :=
+   match times with
+   | [] => id
+   | [t] => G t
+-  | t::u::ts => G t ∘ Rc ∘ collisionComposition G Rc (u::ts)
++  | t::u::ts => collisionComposition G Rc (u::ts) ∘ Rc ∘ G t
+ termination_by times.length
++
++theorem collisionComposition_two {E : Type*} (G : ℝ → E → E) (Rc : E → E)
++    (t₀ t₁ : ℝ) : collisionComposition G Rc [t₀,t₁] = G t₁ ∘ Rc ∘ G t₀ := rfl
++
+ 
+ /-- source_id: MD-3.7-CollisionRegularity · unnumbered_claim · §3.7 · 印刷p.133 / PDFp.155
+ [EXTRA] 有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。 
+@@ -2918,6 +2923,7 @@
+ #print axioms MD.Ch03.elasticReflection
+ #print axioms MD.Ch03.elasticEnergy
+ #print axioms MD.Ch03.collisionComposition
++#print axioms MD.Ch03.collisionComposition_two
+ #print axioms MD.Ch03.collisionRegularity
+ #print axioms MD.Ch03.hardCorePotential
+ #print axioms MD.Ch03.hardSphereHamiltonianPrinted

@@ -1,0 +1,226 @@
+{
+  "batch": "EAUDIT81",
+  "input_sha256": {
+    "BATCH_EAUDIT81.md": "d4fc5bcb31b2780d56c06023ed33692fc3a18946c5b8546401e9605b376a8a74",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.5.1-AdjointEuler",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已视觉核对附件6页印刷163/PDF185，“Now replace …”至“constrained system”与三式吻合；widehat/hat为同一排印记号。",
+          "该页正向法采用+hF；末投影在该页写−h g′ᵀμ，而项目正向关系写−g′ᵀμ；inverseRelation显式h≠0允许吸收缩放。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch04.adjointEulerRelation",
+          "MD.Ch04.adjointEuler_inverseRelation",
+          "MD.Ch04.adjointEulerLocalOrder"
+        ],
+        "verdict": "PASS",
+        "explanation": "adjointEulerRelation对任意n/l、质量、F、约束、h和输入输出相点及三个辅助向量定义三式，并要求输出位置约束、输出隐藏约束。定义自身未要求输入在余切域，使用时另给；这不等同自动存在求解。inverseRelation在h≠0且两端余切约束下，对存在乘子的伴随关系与反向步长−h的正向关系给双向等价，质量无需正性，因为这里只作代数改写；乘子交换并缩放即可。该关系等价不声称局部分支唯一或逆映射存在。adjointEulerLocalOrder另设正质量、C⁴ U/g、初点Gram非零、C³ E/A/Φ、C²乘子、零步初值及μE(0)=μR(0)=0，配真实步关系和ODE，结论Euler与伴随各自局部O(h²)，数学合理且符合[EXTRA]所限定局部精度范围。未提供全局一阶或严格非二阶下界，不将局部结论冒称这些更强命题。",
+        "counterexample": null,
+        "suggested_fix": "文字说明“对应所选局部逆分支”只能作条件解释：当前inverseRelation证明对象是关系的存在量词等价，并未证明分支存在、唯一或可逆。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.5.1-ConstrainedComposition",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ORDER_CLAUSE_NOT_SUPPLIED",
+          "EXTRA_BRANCH_OVERCLAIM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.5.1-ConstrainedComposition",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.5.1",
+          "printed_page": "163",
+          "pdf_page": "185",
+          "statement_latex": "By composing the maps $G_{h/2}$ and $G^*_{h/2}$ we get a second order symplectic method. In the sense that it is defined by first order maps which reduce to the Symplectic Euler method and its adjoint, this is an analogous scheme to the Störmer-Verlet method. Interestingly, this method is not equivalent to SHAKE or RATTLE.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch04.constrainedComposition",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "U/g为C³，正质量及独立约束；小步长窗口内C¹空间分支资格显式。",
+            "[EXTRA]本条给组合受限辛性、无约束Euler/伴随退化，以及单位圆自由运动固定步长下存在乘子的非等价位置实例；circleExample不声明局部分支存在或唯一。二阶精度委托ConstrainedCompositionOrder，其声明未包含在本次材料内，待核验。"
+          ],
+          "statement_scope": "小h光滑分支上的组合辛性、无约束退化及非等价实例；二阶精度子句由MD-4.3.5.1-ConstrainedCompositionOrder承担，原文保留。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT15_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T18:58:18.044288",
+              "before_sha256": "4ea18f6452a46f96e549fa31150efc9e6f69bbd058d6ca40e58646a3ad3d54ac",
+              "after_sha256": "836ff5b4234046febaf62ef6f145e101920aa518b88d8db23975334d1ce40751",
+              "changed_fields": [
+                "extra_assumptions",
+                "statement_scope"
+              ],
+              "annotation_corrections": {
+                "extra_assumptions": {
+                  "before": [
+                    "给定真实C¹半步分支、C²势与约束，前后位置约束；本条完整拉回形式结论，二阶精度另条。"
+                  ],
+                  "after": [
+                    "U/g为C³，正质量及独立约束；小步长窗口内C¹空间分支资格显式。",
+                    "[EXTRA] 分支关系限制小h窗口、C¹空间资格及独立约束，保留辛性；补无约束Euler/伴随退化及单位圆自由运动中与RATTLE/SHAKE位置不同的具体单值近分支实例。二阶精度明确由ConstrainedCompositionOrder承担；C³是本签名实际充分资格。"
+                  ]
+                }
+              },
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH18_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "原文三句、页码与附件7页吻合。",
+          "本条完整当前Lean未含二阶精度声明；statement_scope虽将其委托ConstrainedCompositionOrder，但本任务未提供该声明，不能把引文完整结论判为已覆盖。",
+          "[EXTRA]将单位圆实例说成“具体单值近分支实例”超过circleExample的签名：该声明只是一个固定步长的存在乘子与位置不等，未量化近分支函数、唯一性或步长趋零。"
+        ],
+        "evidence": [
+          "附件7页印刷163/PDF185，三句连续且逐字吻合。",
+          "constrainedComposition结论仅restrictedSymplectic m g (A(h/2) ∘ E(h/2))。",
+          "circleExample固定两次1/4与一次1/2，比较a.1=(7/8,√15/8)和r.1=(√3/2,1/2)；noConstraints给两个无约束关系的完整等价式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch04.constrainedComposition",
+          "MD.Ch04.constrainedComposition_circleExample",
+          "MD.Ch04.constrainedComposition_noConstraints"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "主定理量化n/l、正质量、C³ U/g、约束集上梯度独立以及η>0；E/A和所有辅助输出在每个|h|<η上对空间为C¹；对所有余切初点满足真实正向/伴随关系。结论仅组合在每个|h|<η上受限辛；h/2仍在窗口内，E输出在余切域，可再次应用A，故几何结论合理。这里无需步长光滑性，也没有步长光滑性，故不能由该签名附带得出二阶或对称性。circleExample：自由单位圆、m=1、初点((1,0),(0,1))，正向1/4得到e，伴随1/4得到a，RATTLE1/2得到r，SHAKE1/2存在同r位置的输出；a位置不同，确实给一组非等价候选更新。noConstraints准确退化为kick-drift Euler和drift-kick伴随，对任意质量/F/h成立，未声称任意F下辛。完整原文二阶子句仍须外部委托声明，按本任务材料不能核验；实例单值近分支资格也未覆盖。",
+        "counterexample": "a.1的第一分量为7/8，r.1为√3/2；其平方差49/64−3/4=1/64，故不相等。此为签名中的合法非等价实例，不是对辛性的反例，也不证明全体求解分支唯一。",
+        "suggested_fix": "提供ConstrainedCompositionOrder完整声明供只读审校；将[EXTRA]的“具体单值近分支实例”改为“固定步长、存在乘子的非等价位置实例”，或另补明确分支与唯一性声明。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.5.1-ConstrainedCompositionOrder",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MULTIPLIER_RESCALE_UNDOCUMENTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.5.1-ConstrainedCompositionOrder",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.5.1",
+          "printed_page": "163",
+          "pdf_page": "185",
+          "statement_latex": "By composing the maps $G_{h/2}$ and $G^*_{h/2}$ we get a second order symplectic method.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch04.constrainedCompositionOrder",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "真实光滑隐式分支、正质量、C⁴势/约束和一致时间区间；实际局部O(h³)精度。",
+            "[EXTRA] 本条限定二阶局部精度，辛性在ConstrainedComposition同域对应的空间光滑分支中单列；将关系限制实际小h窗口，避免强迫全步长隐式分支存在。",
+            "补记：projectedEulerRelation中的muE为原书hμ的重参数化；零步长采用muE 0 z=0的连续分支。"
+          ],
+          "statement_scope": "组合方法O(h³)局部误差（二阶精度）子句；辛性、退化及非等价实例由MD-4.3.5.1-ConstrainedComposition承担；不冒充全局二阶收敛。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT15_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T18:58:18.044344",
+              "before_sha256": "9ae5f0f1e7bbf694e287adda8107861fe1dd1891f4f3f1eff5458fe1bb1910af",
+              "after_sha256": "a323d3a95345d5e960bf7b78e98935af2eb807b731c3ea4ecee23340a88c273f",
+              "changed_fields": [
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH18_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "MULTIPLIER_RESCALE_UNDOCUMENTED",
+            "field": "extra_assumptions",
+            "explanation": "补记：projectedEulerRelation中的muE为原书hμ的重参数化；零步长采用muE 0 z=0的连续分支。",
+            "severity": "annotation"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              1
+            ],
+            "book_pdf_pages": "185",
+            "printed_pages": "163",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "量词覆盖任意有限维n、约束数l、正质量、C⁴势和约束，以及在同一对称步长窗口内满足两种离散关系的C³相空间映射E、A。初值恒等且muE在零步长为零；起点属于余切约束集且Gram行列式非零。对任意同初值C³精确局部ODE轨道，结论是正小步长局部误差≤C h³；不是全局误差估计。辛性不在本签名中，已由statement_scope明确分出，外部ConstrainedComposition未在本任务提供，不能据本条认证它。projectedEulerRelation末次修正未乘h，是将原页乘子hμ吸收到muE中的参数化；muE 0 z=0与该参数化相容。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constrainedCompositionOrder",
+        "verdict": "PASS",
+        "explanation": "量词覆盖任意有限维n、约束数l、正质量、C⁴势和约束，以及在同一对称步长窗口内满足两种离散关系的C³相空间映射E、A。初值恒等且muE在零步长为零；起点属于余切约束集且Gram行列式非零。对任意同初值C³精确局部ODE轨道，结论是正小步长局部误差≤C h³；不是全局误差估计。辛性不在本签名中，已由statement_scope明确分出，外部ConstrainedComposition未在本任务提供，不能据本条认证它。projectedEulerRelation末次修正未乘h，是将原页乘子hμ吸收到muE中的参数化；muE 0 z=0与该参数化相容。",
+        "counterexample": null,
+        "suggested_fix": "仅更新JSON注释或引文，见corrected_json；无需修改本条Lean代数签名。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.5.1-GeodesicRelation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              2
+            ],
+            "book_pdf_pages": "186",
+            "printed_pages": "164",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "Q=Fin n→ℝ；constrainedSolution实际被引用的是Chapter04Review中以力F为参数的版本，而非同名MD中以势U为参数的版本。F=0展开后正好是qdot=M⁻¹p、pdot=−Dgᵀrho及g(q)=0。IsOpen使within导数与普通导数一致。massMetric为Σm_i u_i v_i；等价定理在C²约束、C²轨道、轨道留在约束面且梯度线性无关条件下，将质量正交加速度与存在p=M qdot及乘子对应。量词顺序允许选取整条轨道上的p、rho；不要求额外全局流存在。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.geodesicRelation",
+        "verdict": "PASS",
+        "explanation": "Q=Fin n→ℝ；constrainedSolution实际被引用的是Chapter04Review中以力F为参数的版本，而非同名MD中以势U为参数的版本。F=0展开后正好是qdot=M⁻¹p、pdot=−Dgᵀrho及g(q)=0。IsOpen使within导数与普通导数一致。massMetric为Σm_i u_i v_i；等价定理在C²约束、C²轨道、轨道留在约束面且梯度线性无关条件下，将质量正交加速度与存在p=M qdot及乘子对应。量词顺序允许选取整条轨道上的p、rho；不要求额外全局流存在。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

@@ -1,0 +1,114 @@
+{
+  "batch": "EAUDIT73",
+  "input_sha256": {
+    "BATCH_EAUDIT73.md": "a35aaad6aacdd4a0c0a5cc3e7790e2b93ddf9953799c24f58de1d9b9a64c74fd",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.3.3-YoshidaRaiseOrder",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第12页（书页109，原PDF 131），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第11小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.yoshidaRaiseOrder",
+        "verdict": "PASS",
+        "explanation": "C：所有n/s、f、G/Φ、D/B及η均量化，s≥1，f和联合(h,z)↦G_h(z)全域C∞；D开放、B紧且包含于D；actualFlow提供真实双向时间流；G对所有h/z满足反步互逆。localOrder假设不是只在B上，而在每个D内紧集上一致为2s，且含正负小步，覆盖移动中间点及负Yoshida步长。根κ=2^(1/(2s+1))，a=1/(2−κ)、b=−κ/(2−κ)，三步回文G_ah∘G_bh∘G_ah。结论既在B上也在每个D内紧集上提高到2s+2，同时保留联合C∞及全h/z的反步对称，足够重复迭代；localOrder的幂为r+1，未把局部端点阶误作r。所有[EXTRA]为合理的严格化与递归资格，无把升阶当前提。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.3.3-Yoshida4",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第13–14页（书页109–110，原PDF 131–132），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第12小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。",
+          "附件中的重复页已逐页核对渲染文件摘要相同：第3=4页，第5=6=7=8页，第9=10=11页，第12=13页，第14=15页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.yoshida4",
+        "verdict": "PASS",
+        "explanation": "C：定义量化n、m、正质量证明、势U及可微证明和任意h，返回完整相空间映射。yoshidaRoot 1是正实立方根2，两个系数即书中τ0/τ1。yoshidaCompose用回文三次coordinateVerlet，实际每次为半kick→全drift→半kick；代入负梯度逐条展开正是Pα/Qα、Pβ/Qβ、P/Q的九次原地赋值，最后返回Q/P。组合由右向左求值不改变τ0、τ1、τ0的执行顺序。正质量及可微资格已由[EXTRA]说明。算法名fourth-order在此是名称，未把本定义冒称为四阶证明，实际升阶义务在第11条。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.3.3-Yoshida4Structure",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.3.3-Yoshida4Structure",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.3.3",
+          "printed_page": "110",
+          "pdf_page": "132",
+          "statement_latex": "Yoshida fourth-order scheme (velocity Verlet):",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "同页九阶段(3.8)全文见Yoshida4；p.109/PDF131的对称三次辛复合；本条只列辛性和反步对称，不假冒已证4阶。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.yoshida4Structure",
+          "reusable_proofs": [
+            "MolecularDynamics.Chapter03Review.yoshida4Structure_proved"
+          ],
+          "extra_assumptions": [
+            "U全域C²；真实kick/drift及三次回文复合。",
+            "[EXTRA] 依赖小修：原无质量限制的结构定理继续对应正式总化辅助算法；教材受限接口另有正质量/可微资格，原已证结论保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT08_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:16:24.137455",
+              "before_sha256": "db0d17ae22327e6fd52fc350df6f16112a32724638f77d3ee45e990bec19211f",
+              "after_sha256": "c58eec4171ba21c4c5bb4f037b77e907875a9cc8d0c95dad19c7f9218e3593e8",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH10_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "A：原页算法标题末尾有冒号，原statement_latex漏掉；补为“Yoshida fourth-order scheme (velocity Verlet):”。除该标点外标题一致，本条按context只审结构性质，不重复算法及四阶义务。"
+        ],
+        "evidence": [
+          "A：附件第15页（书页110，原PDF 132），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第13小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。",
+          "附件中的重复页已逐页核对渲染文件摘要相同：第3=4页，第5=6=7=8页，第9=10=11页，第12=13页，第14=15页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.yoshida4Structure",
+        "verdict": "PASS",
+        "explanation": "C：量化n、任意实质量列表m及全域C²的U；结论为所有h的辛映射（C¹且雅可比满足AᵀJA=J），和所有h/z的负步恢复原点。这里显式引用正式库Chapter03Review.yoshida4，不误认成另一个要求hm/hU参数的MD接口。它的体与同一三次Verlet组合一致。C²保证势梯度C¹及对称Hessian，足以使kick辛；diagonal invMass即便m含零仍是实对称线性drift，故这些结构性质在总化辅助算法上不需要正质量。[EXTRA]明确保留总化辅助组合，合理；在正质量教材范围它与第12条的映射相同。没有断言四阶，也未遗漏反步结论。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

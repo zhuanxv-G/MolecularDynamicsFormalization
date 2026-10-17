@@ -1,0 +1,535 @@
+{
+  "batch": "EAUDIT80",
+  "input_sha256": {
+    "BATCH_EAUDIT80.md": "def4d7526ff3a1c33a2ffd818617e93b745fa130e81873ede13026f5432db878",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.6.2-FlowReversal",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.6.2-FlowReversal",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.6.2",
+          "printed_page": "129",
+          "pdf_page": "151",
+          "statement_latex": "From this we see that if we start from a point $z_0$ and integrate forward in time (i.e apply $\\mathcal F_t$) then apply the involution $R$, we get the exact same result as if we start from $\\widetilde z(0)=Rz_0$ and integrate backward in time (i.e apply $\\mathcal F_{-t}$). In sum, since $z_0$ is an arbitrary point,\n\\[\\mathcal F_{-t}(Rz)=R\\mathcal F_t(z).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$z\\in\\mathbb R^n$；$R$ 同时表示线性 involution 矩阵及映射 $z\\mapsto Rz$，$R^2=I$。",
+            "本页推导针对时间可逆向量场，使用 $f(Rz)=-Rf(z)$；$\\mathcal F_t(z_0)$ 为该 ODE 从 $z_0$ 出发的真实流。",
+            "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+            },
+            {
+              "code": "SOURCE_REVERSAL_DEFINITION_CONFLICT",
+              "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.flowReversal",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 当前采用经典反转f(Rz)=−Rf(z)、C¹场及全实时间真实流；该关系与原印p128的Rᵀ定义在一般非对称involution下不等价，属于须明确确认的勘误解释。未把所需流反转结论当作前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT15_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:25:58.165808",
+              "before_sha256": "e6a57d71b5fc0fdea5bff5cfff2403773c730017f72ad558800eb015555a1c58",
+              "after_sha256": "db241f11a1c89cf76cfb9814f1b1a55afbb5644aa4c844bb4a7542458a076fa7",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH19_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_REVERSAL_DEFINITION_CONFLICT",
+            "field": "context_notation / extra_assumptions",
+            "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              17
+            ],
+            "original_pdf_pages": [
+              151
+            ],
+            "printed_pages": [
+              129
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "17": "8a570ff03efc785c23eca9a0090ad76be16dc3a3995c071fd08d40f855f382e1"
+            },
+            "finding": "p129从From this we see至F_{−t}(Rz)=RF_t(z)的文字及公式一致。原页推导确实使用R，但不能因此忽略p128一般“reversible”定义印成Rᵀ的问题。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目15 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.flowReversal"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "flowReversal作为经典修正版数学正确：任意n与连续线性involution R、全局C¹ f，显式要求f(Rz)=−Rf(z)，Φ对每个初值在全部实时间有正确初值和ODE导数，结论对所有t,z为Φ(−t,Rz)=RΦ(t,z)。C¹场保证唯一性；没有把所需反转等式塞进Φ的资格，也不需预先假设群律。对应原文的唯一未决点是“reversible”的含义：当前关系采用正确R版，而p128字面定义用Rᵀ；仅involution不使二者等价，且本条未像reversedTrajectory那样补对称R资格。因此不给数学正确的经典定理判FAIL，但原书与当前签名之间的定义对应仍需人工确认；NEEDS_HUMAN不是sorry导致的。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.flowReversal",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "flowReversal作为经典修正版数学正确：任意n与连续线性involution R、全局C¹ f，显式要求f(Rz)=−Rf(z)，Φ对每个初值在全部实时间有正确初值和ODE导数，结论对所有t,z为Φ(−t,Rz)=RΦ(t,z)。C¹场保证唯一性；没有把所需反转等式塞进Φ的资格，也不需预先假设群律。对应原文的唯一未决点是“reversible”的含义：当前关系采用正确R版，而p128字面定义用Rᵀ；仅involution不使二者等价，且本条未像reversedTrajectory那样补对称R资格。因此不给数学正确的经典定理判FAIL，但原书与当前签名之间的定义对应仍需人工确认；NEEDS_HUMAN不是sorry导致的。",
+        "counterexample": "这是原书一般定义与后续推导的反例，不是当前采用经典反转前提的Lean定理的反例：令n=2，R=[[1,1],[0,−1]]，f(z)=(0,1)，γ(t)=(0,t)，Φ(t,z)=z+(0,t)。R²=I，且−Rᵀf(Rz)=(0,1)=f(z)，符合p128字面定义；但−Rf(z)=(−1,1)≠f(Rz)。因此d/dt[Rγ(−t)]=(−1,1)≠f(Rγ(−t))。在t=1,z=0，Φ(−1,Rz)=(0,−1)，RΦ(1,z)=(1,−1)；并有RΦ(t,RΦ(t,z))=z+(t,0)，不等于z。",
+        "suggested_fix": "原文继续逐字保留并标记NEEDS_HUMAN。人工确定采用勘误后的经典反转定义，或在保留原印定义时明确限制R对称；不能静默把两个定义当成同一个。"
+      }
+    },
+    {
+      "source_id": "MD-3.6.2-FlowReversalIdentity",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.6.2-FlowReversalIdentity",
+          "kind": "unnumbered_claim",
+          "label": "(3.14)",
+          "section": "3.6.2",
+          "printed_page": "129",
+          "pdf_page": "151",
+          "statement_latex": "For the flow map, $\\mathcal F_{-t}=\\mathcal F_t^{-1}$ so we can recast the identity as\n\\[R\\circ\\mathcal F_t\\circ R\\circ\\mathcal F_t=\\mathrm{Id},\\tag{3.14}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$z\\in\\mathbb R^n$；$R$ 同时表示线性 involution 矩阵及映射 $z\\mapsto Rz$，$R^2=I$。",
+            "本页推导针对时间可逆向量场，使用 $f(Rz)=-Rf(z)$；$\\mathcal F_t(z_0)$ 为该 ODE 从 $z_0$ 出发的真实流。",
+            "$\\mathcal F_{-t}=\\mathcal F_t^{-1}$；$\\mathrm{Id}$ 为相空间上的恒等映射。",
+            "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+            },
+            {
+              "code": "SOURCE_REVERSAL_DEFINITION_CONFLICT",
+              "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.flowReversalIdentity",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 采用经典R反转、C¹场、实际全时间流及群律；群律供应实际逆流，未供应所需R复合结论。经典R反转与原印Rᵀ定义的差异须人工确认。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT15_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:25:58.165808",
+              "before_sha256": "626e39d022e8a0002d70c9b481f4e86a2fdee5efb8e7ebd93c5e860b7e2ee1eb",
+              "after_sha256": "a87f39125c60a7a4383367208ae6b81e388dd59619bff490760c6af8e09ce774",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH19_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_REVERSAL_DEFINITION_CONFLICT",
+            "field": "context_notation / extra_assumptions",
+            "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              18
+            ],
+            "original_pdf_pages": [
+              151
+            ],
+            "printed_pages": [
+              129
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "18": "8a570ff03efc785c23eca9a0090ad76be16dc3a3995c071fd08d40f855f382e1"
+            },
+            "finding": "p129的F_{−t}=F_t^{-1}及式(3.14)的复合次序R∘F_t∘R∘F_t=Id均一致；问题来自承接的一般反转定义，不是公式抄写错误。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目16 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.flowReversalIdentity"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "flowReversalIdentity逐项包含线性involution、C¹向量场、经典反转条件、Φ初值、全实时间ODE和群律，完整结论对任意t,z给R(Φ t(R(Φ t z)))=z。群律加初值确实给Φ(−t)为双侧逆；结合经典反转得到(3.14)，无循环假设。和上一条一样，这个经典版本正确，但原印p128的Rᵀ定义与当前f(Rz)=−Rf(z)在一般R下不等价；本条没有对称性限定。NEEDS_HUMAN用于确认原文到当前声明的勘误解释，不否定所给条件下的代数/ODE结论。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.flowReversalIdentity",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "flowReversalIdentity逐项包含线性involution、C¹向量场、经典反转条件、Φ初值、全实时间ODE和群律，完整结论对任意t,z给R(Φ t(R(Φ t z)))=z。群律加初值确实给Φ(−t)为双侧逆；结合经典反转得到(3.14)，无循环假设。和上一条一样，这个经典版本正确，但原印p128的Rᵀ定义与当前f(Rz)=−Rf(z)在一般R下不等价；本条没有对称性限定。NEEDS_HUMAN用于确认原文到当前声明的勘误解释，不否定所给条件下的代数/ODE结论。",
+        "counterexample": "这是原书一般定义与后续推导的反例，不是当前采用经典反转前提的Lean定理的反例：令n=2，R=[[1,1],[0,−1]]，f(z)=(0,1)，γ(t)=(0,t)，Φ(t,z)=z+(0,t)。R²=I，且−Rᵀf(Rz)=(0,1)=f(z)，符合p128字面定义；但−Rf(z)=(−1,1)≠f(Rz)。因此d/dt[Rγ(−t)]=(−1,1)≠f(Rγ(−t))。在t=1,z=0，Φ(−1,Rz)=(0,−1)，RΦ(1,z)=(1,−1)；并有RΦ(t,RΦ(t,z))=z+(t,0)，不等于z。",
+        "suggested_fix": "与FlowReversal统一原文/勘误版本的定义和资格；保留原印及NEEDS_HUMAN标记。确认采用经典反转后，当前完整结论及复合次序可保留。"
+      }
+    },
+    {
+      "source_id": "MD-3.6.2-SymmetricMethod",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              19
+            ],
+            "original_pdf_pages": [
+              152
+            ],
+            "printed_pages": [
+              130
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "19": "bc681f63ffe99a2f44f92493e1ec384265494cc17df950d80fcd063ab2e636f5"
+            },
+            "finding": "p130所引Recall句及G_{−h}=G_h^{-1}一致。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目17 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.symmetricMethod"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "symmetricMethod对任意类型E，以G:ℝ→Equiv.Perm E显式保证各一步映射可逆，再对所有实h规定G(−h)=(G h).symm。右端是实际逆置换，而非任意候选反步或单侧逆；对象、步长符号和等号方向均与定义相同，不额外宣称R时间可逆性。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.symmetricMethod",
+        "verdict": "PASS",
+        "explanation": "symmetricMethod对任意类型E，以G:ℝ→Equiv.Perm E显式保证各一步映射可逆，再对所有实h规定G(−h)=(G h).symm。右端是实际逆置换，而非任意候选反步或单侧逆；对象、步长符号和等号方向均与定义相同，不额外宣称R时间可逆性。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.6.2-AffineInvariant",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_TRANSFORMED_COORDINATE_TYPO"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.6.2-AffineInvariant",
+          "kind": "definition",
+          "label": "Definition 3.1",
+          "section": "3.6.2",
+          "printed_page": "130",
+          "pdf_page": "152",
+          "statement_latex": "Definition 3.1 (Affine Invariance) Let\n\\[\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=f(\\boldsymbol z)\\tag{3.16}\\]\nbe a given ordinary differential equation. The transformation $\\widetilde{\\boldsymbol z}=A\\boldsymbol z$, where $A$ is a non-singular square matrix, results in the modified differential equation\n\\[\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=Af(A^{-1}\\widetilde{\\boldsymbol z}).\\tag{3.17}\\]\nLet $z_0,z_1,\\ldots$ be a sequence of points obtained by application of the numerical method $\\mathcal G_h$ to (3.16). If the same method, when applied to (3.17) produces the set of points $Az_0,Az_1,\\ldots$, then we say that the numerical method is invariant with respect to the transformation $\\widetilde{\\boldsymbol z}=Az$. An affine invariant method is one which is invariant under any such transformation.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$A$ 为非奇异方阵；$\\widetilde{\\boldsymbol z}=A\\boldsymbol z$，变换后的向量场为 $Af(A^{-1}\\widetilde{\\boldsymbol z})$。",
+            "$z_0,z_1,\\ldots$ 为同一步长方法产生的序列，变换方程从 $Az_0$ 出发产生 $Az_0,Az_1,\\ldots$；本书这一定义仅量化线性变换，未包含平移。",
+            "(3.17)左端原印为 $\\mathrm d\\boldsymbol z/\\mathrm dt$，没有波浪号；保留原印，并单独标记疑误。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "(3.17)左端原印为dz/dt，无波浪号；原文保留。变换后的坐标语义要求d z̃/dt，此记号疑误交人工确认。"
+            },
+            {
+              "code": "SOURCE_TRANSFORMED_COORDINATE_TYPO",
+              "detail": "(3.17)左端原印缺少z的波浪号；按变换坐标解释Lean定义合理，但原文不得静默修订。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.affineInvariant",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT15_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:25:58.166807",
+              "before_sha256": "212ad08358d6b9196f61d5e21f4b052ec021a3261fefe8fe06b5e51a24de80f1",
+              "after_sha256": "a3375e7dc3a0d60ac3e75a120cf71ba693d5675dc3cf2f3329f346699bcdac89",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH19_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_TRANSFORMED_COORDINATE_TYPO",
+            "field": "statement_latex / issues",
+            "detail": "(3.17)左端原印缺少z的波浪号；按变换坐标解释Lean定义合理，但原文不得静默修订。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              20
+            ],
+            "original_pdf_pages": [
+              152
+            ],
+            "printed_pages": [
+              130
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "20": "bc681f63ffe99a2f44f92493e1ec384265494cc17df950d80fcd063ab2e636f5"
+            },
+            "finding": "p130 Definition 3.1、标签(3.16)/(3.17)、非奇异A及序列Az₀,Az₁,…均一致。(3.17)左端原印确为dz/dt而非dz̃/dt，输入保留原印并已标ERRATUM?，应继续转人工，不能静默补波浪号。本书这里名为affine invariance但实际只量化线性Az，未包含平移，输入context对此说明正确。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目18 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.affineInvariant"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "affineInvariant量化固定有限维实空间上的全部连续线性同构A、向量场f、实步长h和初值z；transportedField A f(z)=A(f(A⁻¹z))。完整关系G_{A f A⁻¹}(h,Az)=A(G_f(h,z))正是变换初值后每一步等变，归纳即得所述序列。≃L准确表示有限维非奇异方阵；未偷加平移，也未把A限制成正交矩阵。PASS针对上下文已明示的变换坐标语义及当前方法定义；原印(3.17)左端记号疑误在json_review保留NEEDS_HUMAN。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.affineInvariant",
+        "verdict": "PASS",
+        "explanation": "affineInvariant量化固定有限维实空间上的全部连续线性同构A、向量场f、实步长h和初值z；transportedField A f(z)=A(f(A⁻¹z))。完整关系G_{A f A⁻¹}(h,Az)=A(G_f(h,z))正是变换初值后每一步等变，归纳即得所述序列。≃L准确表示有限维非奇异方阵；未偷加平移，也未把A限制成正交矩阵。PASS针对上下文已明示的变换坐标语义及当前方法定义；原印(3.17)左端记号疑误在json_review保留NEEDS_HUMAN。",
+        "counterexample": null,
+        "suggested_fix": "原文(3.17)保持印刷字面，继续标NEEDS_HUMAN；另注勘误解释应为d z̃/dt=A f(A⁻¹ z̃)。现行按该语义给出的affineInvariant定义可保留。"
+      }
+    },
+    {
+      "source_id": "MD-3.6.2-SymmetricAffineReversible",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_METHOD_CLASS_QUALIFICATION_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.6.2-SymmetricAffineReversible",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.6.2",
+          "printed_page": "130",
+          "pdf_page": "152",
+          "statement_latex": "If a differential equation is time-reversible with respect to the involution $R$, and we apply a method which is affine invariant and symmetric, then the method will be time-reversible (3.15).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "当前Lean是对原句补足方法资格后的受限修复，额外的G_{−f}(h)=G_f(−h)只要求本固定f。",
+            "采用经典向量场反转f(Rz)=−Rf(z)；原印p128对一般involution写Rᵀ的上下文疑误亦不能据此消除。"
+          ],
+          "issues": [
+            {
+              "code": "NEEDS_HUMAN",
+              "detail": "任意抽象方法仅线性等变与对称不足；须确认原书隐含的方法类/时间尺度相容资格。现有Lean已显式加入固定f的变号相容性，属于正确受限修复。"
+            },
+            {
+              "code": "SOURCE_METHOD_CLASS_QUALIFICATION_MISSING",
+              "detail": "仅线性等变和对称不足以对任意抽象G推出R可逆；原书省略的方法类或变号相容性资格需要人工确认，当前已作为[EXTRA]加入。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.symmetricAffineReversible",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]G_{−f}(h)=G_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。",
+            "[EXTRA] 明确本条是原印省略方法类资格后的受限修复；符号/时间尺度相容仅要求固定f，不对所有无关g全称。保留原书疑误说明。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT15_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:25:58.166807",
+              "before_sha256": "6f84c9e1d5e1c2f352231bc74e8be59564d0acd8b3b2f0421636b67eb822cba3",
+              "after_sha256": "1463a36d278a94bc40627890daa24308b53adaafc34f4b60fde7df80974f98cc",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH19_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT15/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_METHOD_CLASS_QUALIFICATION_MISSING",
+            "field": "statement_latex / issues",
+            "detail": "仅线性等变和对称不足以对任意抽象G推出R可逆；原书省略的方法类或变号相容性资格需要人工确认，当前已作为[EXTRA]加入。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              21
+            ],
+            "original_pdf_pages": [
+              152
+            ],
+            "printed_pages": [
+              130
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "21": "bc681f63ffe99a2f44f92493e1ec384265494cc17df950d80fcd063ab2e636f5"
+            },
+            "finding": "p130所引If a differential equation句与原页一致；原句确实只列affine invariant和symmetric，没有单列向量场变号/步长变号相容性。保留原句及其省略资格的疑误。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目19 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.symmetricAffineReversible"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "symmetricAffineReversible的全部条件已核对：R为连续线性同构且平方为id；f有经典R反转；方法对全部线性同构等变；另只对本固定f显式要求G_{−f}(h)=G_f(−h)；并要求所有h的反步复合G_f(−h)∘G_f(h)=id。因为量化所有h，最后一个条件同时给另一方向的逆关系，不必再把G编码为Perm。对R使用affineInvariant，利用transportedField R f=−f及变号相容性，得到R∘G_f(h)∘R=G_f(−h)，再复合G_f(h)即为reversibleMethod。完整结论∀h,z,R(G_f(h,R(G_f(h,z))))=z与(3.15)一致；不存在把所需结论作为假设的问题。[EXTRA]变号相容性是实质新增且已明示的合理修复，不能把当前受限正确版本当作原句对所有抽象方法已成立。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.symmetricAffineReversible",
+        "verdict": "PASS",
+        "explanation": "symmetricAffineReversible的全部条件已核对：R为连续线性同构且平方为id；f有经典R反转；方法对全部线性同构等变；另只对本固定f显式要求G_{−f}(h)=G_f(−h)；并要求所有h的反步复合G_f(−h)∘G_f(h)=id。因为量化所有h，最后一个条件同时给另一方向的逆关系，不必再把G编码为Perm。对R使用affineInvariant，利用transportedField R f=−f及变号相容性，得到R∘G_f(h)∘R=G_f(−h)，再复合G_f(h)即为reversibleMethod。完整结论∀h,z,R(G_f(h,R(G_f(h,z))))=z与(3.15)一致；不存在把所需结论作为假设的问题。[EXTRA]变号相容性是实质新增且已明示的合理修复，不能把当前受限正确版本当作原句对所有抽象方法已成立。",
+        "counterexample": "反例针对省略相容性的原文抽象蕴含，不满足当前Lean新增相容性：在ℝ上令R=id、f=0，定义所有g的G_g(h,z)=exp(h³)z。此族对全部非奇异线性变换等变，各G(−h)是G(h)的逆，且G(0)=id（对f=0亦有正确一阶一致性）。但是R∘G_f(h)∘R∘G_f(h)(z)=exp(2h³)z，一般不等于z；G_{−f}(h)=G_f(h)也不等于G_f(−h)。所以原句按已给抽象定义需要附加资格；此例不声称满足一个未在本任务中规定的更强数值方法类。",
+        "suggested_fix": "保留当前已明示[EXTRA]的正确受限声明及原书NEEDS_HUMAN标记；若要解除原句疑误，需人工明确适用方法类并确认其变号相容性，不能删去新增前提。"
+      }
+    },
+    {
+      "source_id": "MD-3.6.2-RKAffine",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_PRK_GENERALITY",
+          "SOURCE_REVERSIBILITY_CONTEXT"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "SOURCE_PRK_GENERALITY",
+            "detail": "原页确实印有All ... Partitioned Runge-Kutta ... affine invariant；不同分区表格的PRK一般只对保持分区的变换等变，不能将原句当无条件正确结论。"
+          },
+          {
+            "code": "SOURCE_REVERSIBILITY_CONTEXT",
+            "detail": "原页上一段先假设微分方程对R可逆；末句应在该语境读取，不能仅由方法对称性推出任意ODE的时间反演。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第1页；印刷页130",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.rkAffine",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "普通RK子句签名正确：n、s允许零维/零阶段，L为实连续线性自同构；任意f、实系数A,b及实h，给定完整阶段解F与终点w，结论正是运输场L∘f∘L⁻¹下运输阶段、初末状态满足同一关系。没有偷加求解唯一性，也没有断言存在数值单值映射。原页定义所谓affine invariance实际只写非奇异线性变换，故本条不因缺平移判FAIL。[EXTRA]/scope明确只覆盖普通RK，未覆盖PRK和时间反演推论。原句对任意混合q,p变换的PRK全称过强，且时间反演仍须原微分方程对R可逆；这些原书资格疑点须保留。",
+        "counterexample": "PRK取单阶段Aq=Ap=0、bq=1、bp=2，f(q,p)=(q,p)，h=1。更新为(2q,3p)。交换q,p后按相同分区表格得到(2p,3q)，而交换原更新为(3p,2q)，一般不同。",
+        "suggested_fix": "保持statement_latex原文；将普通RK子签名标为通过，原句PRK全称交人工处理；时间反演另条须保留f(Rz)=−Rf(z)资格。"
+      }
+    },
+    {
+      "source_id": "MD-3.6.2-PartitionedAffine",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_PRK_GENERALITY"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "SOURCE_PRK_GENERALITY",
+            "detail": "受限修复正确，但它不能消除原印PRK对所有非奇异变换等变的数学疑误。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第2页；印刷页130",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.partitionedAffine",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "partitionedAffine作为受限修正版通过：对所有n,s及任意Lq,Lp、fq,fp、两套阶段和更新系数，三个前提精确给出PRK两阶段方程与更新；三个结论是分块运输后两阶段方程及终点更新。Lp/Lq逆像的位置和各自系数相配，h无额外限制。该修复不允许混合q,p，也不包含平移或时间反演；这些限制已明确写进scope/[EXTRA]，不是证明原文任意变换全称。[EXTRA]合理，但原印全称仍待人工勘误。",
+        "counterexample": "PRK取单阶段Aq=Ap=0、bq=1、bp=2，f(q,p)=(q,p)，h=1。更新为(2q,3p)。交换q,p后按相同分区表格得到(2p,3q)，而交换原更新为(3p,2q)，一般不同。",
+        "suggested_fix": "保留原句；将修复正式说明为保持分区的线性等变，原印全称单独标NEEDS_HUMAN。"
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

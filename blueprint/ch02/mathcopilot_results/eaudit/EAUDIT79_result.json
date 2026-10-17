@@ -1,0 +1,459 @@
+{
+  "batch": "EAUDIT79",
+  "input_sha256": {
+    "BATCH_EAUDIT79.md": "33ea2d6fe5c51e9c0542d99745f33d1874fee5a69290a9f4c9cefc3baa15e7df",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.2.3-Consistency",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_CALLIGRAPHY",
+          "PRINTED_CONSTANT_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-Consistency",
+          "kind": "definition",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "66–67",
+          "pdf_page": "88–89",
+          "statement_latex": "The first assumption is that $\\mathscr G_h$ is an $O(h^{p+1})$ approximation of $\\mathscr F_h$ in the sense that there is a constant $K\\ge0$ and a constant $\\Delta>0$ such that, for $t\\in[0,\\tau]$, we have\n\\[\\|\\mathscr F_h(\\boldsymbol z(t))-\\mathscr G_h(\\boldsymbol z(t))\\|\\le\\bar K h^{p+1},\\qquad h<\\Delta.\\tag{2.10}\\]\nThe assumption (2.10) that the local error is of order $p+1$, $p>0$, is termed the consistency of the numerical method. We say the method is consistent of order $p$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "正文存在常数K≥0、Δ>0，式(2.10)使用\\bar K；疑似记号不一致，原文未在本处明确K=\\bar K，不静默修正。",
+            "δ对应原文Δ；h>0来自PDF88本节起点；一致性阶要求p>0（PDF89）。"
+          ],
+          "issues": [
+            {
+              "code": "PRINTED_CONSTANT_MISMATCH",
+              "status": "NEEDS_HUMAN",
+              "detail": "正文存在K≥0，式(2.10)使用Kbar，未在本段绑定二者；不能静默改书。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.consistency",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 显式0<p；本条只登记正自然数阶，属于[EXTRA]整数阶限制；保持统一K、δ及严格0<h<δ，不静默扩大端点。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT05_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:08:20.565003",
+              "before_sha256": "03fc6a3cbe82b1675ccada0daff93d270dbe8c603215b5ae095e654f95bebf73",
+              "after_sha256": "3b8421931d792be9cb60af178210d39a5d97cba522d1fabc569e2c7d4c19d76c",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH09_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_CALLIGRAPHY",
+            "detail": "原页流与单步映射使用花体mathscr F、mathscr G，摘录写mathcal，统一为原页字形。",
+            "stage": "A"
+          },
+          {
+            "code": "PRINTED_CONSTANT_MISMATCH",
+            "detail": "正文存在K≥0，式(2.10)使用Kbar，未在本段绑定二者；不能静默改书。",
+            "stage": "SOURCE_MATHEMATICS"
+          }
+        ],
+        "evidence": {
+          "attachment": "/workspace/R1_PAGES.pdf",
+          "attachment_pages": [
+            16,
+            17
+          ],
+          "book_pdf_page": "88–89",
+          "printed_page": "66–67",
+          "A": "已对照附件原页的正文、公式、标点和上下文；重复原页经文本一致性核对，并视觉核对对应唯一页。所需修订详见issues及corrected_json。",
+          "C": "仅依据任务文件摘录的全部同source_id声明及项目依赖定义作只读语义审校；Mathlib按标准含义采信。未修改Lean工程、未补证明、未运行编译，不以sorry判失败。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.consistency",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "consistency固定G、F、γ、τ和自然数阶p；要求p>0，并先存在与t、h无关的K≥0、δ>0，再对全部t∈[0,τ]、0<h<δ给局部误差界Kh^(p+1)。严格步长范围与原式一致，整数阶限制已明确为[EXTRA]。未要求F必须是流是此纯误差关系的抽象接口。正文K和式中Kbar不一致已保留，不能在来源层面擅自等同，转人工。",
+        "counterexample": null,
+        "suggested_fix": "人工确认K与Kbar是否仅为同一非负常数的排印差异；若确认，再在修正版显式统一。保留自然数阶限制的[EXTRA]。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-ErrorBound",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_STEPSIZE_ENDPOINT",
+          "PRINTED_ZERO_STABILITY_CONSTANT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-ErrorBound",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "67",
+          "pdf_page": "89",
+          "statement_latex": "From this, the bound\n\\[\\epsilon_n\\le\\frac{\\bar K}{L}e^{Lnh}h^p,\\qquad n=0,1,\\ldots,\\nu,\\tag{2.12}\\]\nfollows by a straightforward calculation, for $h\\le\\Delta$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "式(2.12)中Kbar是局部误差界常数；正文K与式(2.10)的Kbar存在原书记号不一致。",
+            "原文前提(2.10)只保证h<Δ，而此处结句写h≤Δ；端点需额外论证或假设，不静默修正。",
+            "原式分母L需要L>0；已有非负稳定常数可放大为正数。固定L=0时应另用ε_n≤n Kbar h^{p+1}。"
+          ],
+          "issues": [
+            {
+              "code": "PRINTED_STEPSIZE_ENDPOINT",
+              "status": "NEEDS_HUMAN",
+              "detail": "(2.10)为h<Δ，(2.12)结句为h≤Δ；前者未控制h=Δ。"
+            },
+            {
+              "code": "PRINTED_ZERO_STABILITY_CONSTANT",
+              "status": "NEEDS_HUMAN",
+              "detail": "原界除以L，需取L>0或单独处理L=0，不能将实数除零延拓视为原数学公式。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.errorBound",
+          "reusable_proofs": [
+            "MolecularDynamics.oneStep_error_bound"
+          ],
+          "extra_assumptions": [
+            "h>0、L>0及K≥0显式化；L=0时可增大为正L，除零界不能字面使用；假设精确与数值留域来自原文。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT05_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:08:20.565003",
+              "before_sha256": "f5523de91a933b9651a81279f21746213e7e9d8ff1559c1153b92a43c1734bf5",
+              "after_sha256": "0a1a7408f9d7681bc5a9fc378860b013552b9ac1833290222b7a8dce66df4d85",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH09_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_STEPSIZE_ENDPOINT",
+            "detail": "(2.10)为h<Δ，(2.12)结句为h≤Δ；前者未控制h=Δ。",
+            "stage": "SOURCE_MATHEMATICS"
+          },
+          {
+            "code": "PRINTED_ZERO_STABILITY_CONSTANT",
+            "detail": "原界除以L，需取L>0或单独处理L=0，不能将实数除零延拓视为原数学公式。",
+            "stage": "SOURCE_MATHEMATICS"
+          }
+        ],
+        "evidence": {
+          "attachment": "/workspace/R1_PAGES.pdf",
+          "attachment_pages": [
+            18
+          ],
+          "book_pdf_page": "89",
+          "printed_page": "67",
+          "A": "已对照附件原页的正文、公式、标点和上下文；重复原页经文本一致性核对，并视觉核对对应唯一页。所需修订详见issues及corrected_json。",
+          "C": "仅依据任务文件摘录的全部同source_id声明及项目依赖定义作只读语义审校；Mathlib按标准含义采信。未修改Lean工程、未补证明、未运行编译，不以sorry判失败。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.errorBound",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "errorBound对给定正h、正L、非负K和ν，要求0至ν实际迭代与精确网格值均在D，G在D上稳定，且全部n<ν上的实际局部缺陷≤Kh^(p+1)。初始误差由迭代起点γ(0)保证为零。结论对所有n≤ν为(K/L)exp(Lnh)h^p；p为实数，h>0使实幂有意义。此加强前提的界正确，不需要额外p>0才能成立。但没有δ及h≤Δ的量词，不能据此消除书中从严格步长范围跳到闭端点的问题，整体转人工。",
+        "counterexample": "端点不足的抽象反例：h=Δ=1，γ≡0，G_h(x)=x（0<h<1），G_1(x)=x+1。h<1时局部误差常数K=0且G始终满足L=1的稳定上界，但h=1一步误差为1，印刷闭端点结论给0。此反例针对来源严格局部误差前提，不满足Lean在h=1明确要求的hconsistent。",
+        "suggested_fix": "原文版保留h≤Δ并标疑误。严格修正版限制0<h<Δ，或将局部误差假设加强到h≤Δ；取L>0，L=0另给nKh^(p+1)界。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-VerletExpansion",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-VerletExpansion",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "68",
+          "pdf_page": "90",
+          "statement_latex": "Combining terms of like powers of $h$, we have\n\\[P=p+hF+\\frac{h^2}{2}pF'+\\frac{h^3}{4}[F'F+p^2F'']+O(h^4).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$F,F',F''$均在q取值；p.67/PDF89展开F(q+hp+h²F/2)，标量M=1。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.verletExpansion",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "F C³，使O(h⁴)余项有实际意义。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT05_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:08:20.565003",
+              "before_sha256": "8717bc2d1e72b8d4185762b4913dc734969320aa7fb5d5a94950609ba76bf517",
+              "after_sha256": "5239cec349f8fdf67dda16b9037eb075e6b3e5974f984260071c2738f66681be",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH09_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:26:18.212960",
+              "before_sha256": "5239cec349f8fdf67dda16b9037eb075e6b3e5974f984260071c2738f66681be",
+              "after_sha256": "1da0427b7c25b9138e313fe250a182f5cda9faafd06c22ab0eb0100d73d05202",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "67–68",
+                  "after": "68"
+                },
+                "pdf_page": {
+                  "before": "89–90",
+                  "after": "90"
+                }
+              },
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH09_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+          "review_context_pdf_pages": [
+            89
+          ]
+        },
+        "issues": [],
+        "evidence": {
+          "attachment": "/workspace/R1_PAGES.pdf",
+          "attachment_pages": [
+            19,
+            20
+          ],
+          "book_pdf_page": "90",
+          "printed_page": "68",
+          "A": "已对照附件原页的正文、公式、标点和上下文；重复原页经文本一致性核对，并视觉核对对应唯一页。选定范围内未发现需修订的转录差异。",
+          "C": "仅依据任务文件摘录的全部同source_id声明及项目依赖定义作只读语义审校；Mathlib按标准含义采信。未修改Lean工程、未补证明、未运行编译，不以sorry判失败。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.verletExpansion",
+        "verdict": "PASS",
+        "explanation": "展开scalarVerlet：Q=q+hp+h²F(q)/2，P=p+h(F(q)+F(Q))/2。F C³足以在固定q,p处产生O(h⁴)动量余项；所减多项式逐项为p+hF+(h²/2)pF′+(h³/4)(F′F+p²F″)，系数、求导点和双侧h→0均正确。不把邻近页位置误差符号疑误归到本条动量公式。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-ExactExpansion",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-ExactExpansion",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "68",
+          "pdf_page": "90",
+          "statement_latex": "Since $\\dot q=p$, we have $\\ddot q=\\dot p=F(q)$, and the third derivative is $q^{(3)}=F'(q)p$. On the other hand $\\dot p=F(q)$ implies that $\\ddot p=F'(q)\\dot q=pF'$, and thus\n\\[p^{(3)}=p^2F''+F'F.\\]\nThe Taylor expansion of the solution is (taking $q(t)=q$, $p(t)=p$):\n\\[q(t+h)=q+hp+\\frac{h^2}{2}F+\\frac{h^3}{6}F'p+O(h^4),\\]\n\\[p(t+h)=p+hF+\\frac{h^2}{2}pF'+\\frac{h^3}{6}[p^2F''+F'F]+O(h^4).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Example 2.2 的背景为单自由度 $q,p\\in\\mathbb R$、$M=1$，印刷p.67/PDF89。",
+            "$F,F\\prime,F\\prime\\prime$ 在展开式中分别表示 $F(q),F\\prime(q),F\\prime\\prime(q)$；$q=q(t),p=p(t)$ 为展开起点；印刷p.68/PDF90。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.exactExpansion",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "F C³及实际标量Hamilton轨迹；以t=0归一时间原点，不改变自治系统陈述。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT05_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:08:20.565003",
+              "before_sha256": "d8ac1a2efed04e6f7d9f996e09461de9dea5952bf90f291eace5ceeafcc02d3a",
+              "after_sha256": "ce7ac0b6994b5dec5349fb3081b2e32c5dc41b4665a8f3ba54433ed1f05e93d5",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH10_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "attachment": "/workspace/R1_PAGES.pdf",
+          "attachment_pages": [
+            21
+          ],
+          "book_pdf_page": "90",
+          "printed_page": "68",
+          "A": "已对照附件原页的正文、公式、标点和上下文；重复原页经文本一致性核对，并视觉核对对应唯一页。选定范围内未发现需修订的转录差异。",
+          "C": "仅依据任务文件摘录的全部同source_id声明及项目依赖定义作只读语义审校；Mathlib按标准含义采信。未修改Lean工程、未补证明、未运行编译，不以sorry判失败。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.exactExpansion",
+        "verdict": "PASS",
+        "explanation": "F C³、全时实际轨迹γ且γ′=(p,F(q))；在t=0处同时给出位置和动量的三阶Taylor多项式，余项均为双侧O(h⁴)。位置三阶项F′p/6，动量三阶项(p²F″+F′F)/6，全部导数在初始q上取值。原文先写的q″、q⁽³⁾、p″、p⁽³⁾为展开的链式法则推导，已由同一实际ODE与正则性支持，并未改为任意指定Taylor系数。时间原点平移资格已披露。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-VerletConsistency",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_CALLIGRAPHY",
+          "NEGLECTED_REMAINDER"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.3-VerletConsistency",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.3",
+          "printed_page": "68",
+          "pdf_page": "90",
+          "statement_latex": "These relations can be summarized as telling us that\n\\[\\|\\mathscr G_h(\\boldsymbol z)-\\mathscr F_h(\\boldsymbol z)\\|=\\kappa(\\boldsymbol z)h^3+O(h^4),\\]\nwhere $\\kappa(\\boldsymbol z)=\\kappa(q,p)$ is a function of the position and momentum. We may then define\n\\[\\bar K=\\max_{t\\in[0,\\tau]}\\kappa(\\boldsymbol z(t))\\]\nbounding the local error by (with neglect of the fourth order terms) $\\bar K h^3$. Thus the Verlet method is consistent of order two.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Example 2.2 的背景为单自由度 $q,p\\in\\mathbb R$、$M=1$，印刷p.67/PDF89。",
+            "$F,F\\prime,F\\prime\\prime$ 在展开式中分别表示 $F(q),F\\prime(q),F\\prime\\prime(q)$；$q=q(t),p=p(t)$ 为展开起点；印刷p.68/PDF90。",
+            "数值输出为 $(Q,P)$：$Q=q+hp+h^2F(q)/2$，$P=p+h(F(q)+F(Q))/2$，式(2.13)–(2.14)，印刷p.67/PDF89。",
+            "$\\boldsymbol z=(q,p)$；$\\mathscr G_h$ 是 Verlet 单步映射，$\\mathscr F_h$ 是精确解单步映射；误差范数及一致性阶数的说明见印刷p.67/PDF89；$\\tau$ 为考察的时间区间终点，$\\bar K$ 是该轨迹上 $\\kappa$ 的最大值，印刷p.68/PDF90。"
+          ],
+          "issues": [
+            {
+              "code": "NEGLECTED_REMAINDER",
+              "status": "NEEDS_HUMAN",
+              "detail": "原文忽略O(h⁴)后用maxκ界误差，不是严格界；保留κ主项和严格一致性，常数区分maxκ与吸收余项后的C。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.verletConsistency",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "实际标量M=1流、F C³、正时间窗和连续紧轨迹；O余项在h→0+解释；严格界C允许吸收余项，不宣称C=maxκ。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT05_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:08:20.565003",
+              "before_sha256": "3971dfbe4ffe6f0e2750936a3a879f884b4b777422de58041537fa13bdfbc6d3",
+              "after_sha256": "b2249027e0dc516bf1a24bdc366ba9a980cd3d36202cf174c27d4ddbdcd04d83",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH10_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_CALLIGRAPHY",
+            "detail": "原页使用mathscr G_h与mathscr F_h，摘录写mathcal。",
+            "stage": "A"
+          },
+          {
+            "code": "NEGLECTED_REMAINDER",
+            "detail": "max κ只控制三阶主项；O(h⁴)不能未经吸收就从严格局部误差界中删除。",
+            "stage": "SOURCE_MATHEMATICS"
+          }
+        ],
+        "evidence": {
+          "attachment": "/workspace/R1_PAGES.pdf",
+          "attachment_pages": [
+            22
+          ],
+          "book_pdf_page": "90",
+          "printed_page": "68",
+          "A": "已对照附件原页的正文、公式、标点和上下文；重复原页经文本一致性核对，并视觉核对对应唯一页。所需修订详见issues及corrected_json。",
+          "C": "仅依据任务文件摘录的全部同source_id声明及项目依赖定义作只读语义审校；Mathlib按标准含义采信。未修改Lean工程、未补证明、未运行编译，不以sorry判失败。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.verletConsistency",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "检查全部量词与四部分结论：F C³、τ和δ正、γ在闭窗连续；Φ从每个z出发在统一局部时间窗满足实际ODE且Φ₀z=z；γ与Φ在所需正步长内一致。κ在range γ上连续非负并逐z给正侧h→0的h³主项及O(h⁴)；闭窗上存在真正达到的最大值K；另有统一C、δ₀使闭窗全部t的局部误差≤Ch³。正侧避免|h|³与h³混淆，C吸收余项而不强称C=max κ。该严格修正版合理，但来源忽略余项的界仍需人工确认。",
+        "counterexample": null,
+        "suggested_fix": "保留原引文及疑误；严格结论采用独立C≥0吸收统一余项，不宣称C等于max κ；现有Lean已采用该方案。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.3-VerletStability",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              1,
+              2
+            ],
+            "printed_page": "68–69",
+            "original_pdf_page": "90–91",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "逐字核对印刷68页末段、式(2.15)和69页续段，一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.verletStability"
+            ],
+            "finding": "逐字核对印刷68页末段、式(2.15)和69页续段，一致。全空间力F的Lipschitz条件、正质量、L≥0、δ>0均在前提；C在h之前存在，故同一C适用于[0,δ]全部步长及全部相点z,w。Q是有限维坐标空间的上确界范数，Z是乘积最大范数；verlet确为含逆质量的速度Verlet位置/动量更新。更新为恒等映射加O(h)的全局Lipschitz扰动，有限步长窗吸收h²、h³项，因子1+hC合理。采用全空间版本而非局部邻域版本已明确披露，且h=0结论为恒等式。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.verletStability"
+        ],
+        "verdict": "PASS",
+        "explanation": "逐字核对印刷68页末段、式(2.15)和69页续段，一致。全空间力F的Lipschitz条件、正质量、L≥0、δ>0均在前提；C在h之前存在，故同一C适用于[0,δ]全部步长及全部相点z,w。Q是有限维坐标空间的上确界范数，Z是乘积最大范数；verlet确为含逆质量的速度Verlet位置/动量更新。更新为恒等映射加O(h)的全局Lipschitz扰动，有限步长窗吸收h²、h³项，因子1+hC合理。采用全空间版本而非局部邻域版本已明确披露，且h=0结论为恒等式。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

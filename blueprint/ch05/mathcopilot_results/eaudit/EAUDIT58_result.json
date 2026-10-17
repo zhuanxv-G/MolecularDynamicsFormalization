@@ -1,0 +1,518 @@
+{
+  "batch": "EAUDIT58",
+  "input_sha256": {
+    "BATCH_EAUDIT58.md": "7734343856d57a6d696c771ea0bfe2bac00fbeab33e2cdb48a1a814fe9e8f7ee",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.5-Correlation",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_LAG_VARIABLE_MISMATCH",
+          "SOURCE_LITERAL_PUNCTUATION",
+          "MICROCANONICAL_SPECIALIZATION_MUST_BE_EXPLICIT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.5-Correlation",
+          "kind": "definition",
+          "label": null,
+          "section": "5.5",
+          "printed_page": "203–204",
+          "pdf_page": "224–225",
+          "statement_latex": "Let $a$ and $b$ be mappings from the phase space to the same Euclidean space, and define the temporal correlation of $a$ and $b$ (on the surface of energy $E$) by\n\\[C_{ab}(\\tau)\\stackrel{\\rm def}{=}k\\operatorname{Av}_{H=E}(a(\\mathcal F_t(z))\\cdot b(z))\n=kZ_E^{-1}\\int_{\\Sigma_E}a(\\mathcal F_t(z))\\cdot b(z)\\delta[H-E]d\\omega;\\]\nwhere $k$ is a normalization constant that is often incorporated to ensure that $C_{ab}(0)=1$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实向量内积与µ积分；原左τ右t记号保留、Lean用单个lag参数；k只在零lag非零时能归一。δ积分解释为真实微正则测度配对。",
+            "μ在Lean中是任意测度；只有将它明确取为归一化微正则测度时，本积分核才解释为原书Av_(H=E)与δ记号。这里未形式化δ积分的构造或等价定理。",
+            "原页τ/t混用仍保留待人工；通常统计解释另需相关乘积可积。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_LAG_VARIABLE_MISMATCH",
+              "phase": "A",
+              "field": "statement_latex",
+              "message": "原页左侧C_ab(τ)，右侧两次使用F_t，原JSON忠实保留。将t视为τ的勘误需人工确认，不在原文内悄改。"
+            },
+            {
+              "code": "SOURCE_LITERAL_PUNCTUATION",
+              "phase": "A",
+              "field": "statement_latex",
+              "message": "原展示式以分号结束，随后跨页接where k；原JSON写逗号，作纯转录修正。"
+            },
+            {
+              "code": "MICROCANONICAL_SPECIALIZATION_MUST_BE_EXPLICIT",
+              "phase": "C",
+              "field": "context_notation/extra_assumptions",
+              "message": "当前Lean只定义任意μ下的积分核；微正则δ积分是μ选取后的解释，不是这条定义已证明的额外等式。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.correlation",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 通用测度相关核对原书能量面相关函数的特化：μ须选为相应归一化微正则概率测度；Lean统一lag为t，未把任意μ等同于δ[H−E]dω/Z_E。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT17_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:12:25.337909",
+              "before_sha256": "843180caf62584a602f05b76853dd503b07db2ff0e1277b08bba8daa28a5eba2",
+              "after_sha256": "b0e7d84d451ac23a515ea50386e17290e1043474dad0c07b550624b3e8758f8a",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:28:28.864805",
+              "before_sha256": "b0e7d84d451ac23a515ea50386e17290e1043474dad0c07b550624b3e8758f8a",
+              "after_sha256": "1f6fc3ea1eaed9020b7498eff2652fa5546ec2e8cbccf51c7dea4e7b28f81a2a",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "203",
+                  "after": "203–204"
+                },
+                "pdf_page": {
+                  "before": "224",
+                  "after": "224–225"
+                }
+              },
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_LAG_VARIABLE_MISMATCH",
+            "phase": "A",
+            "field": "statement_latex",
+            "message": "原页左侧C_ab(τ)，右侧两次使用F_t，原JSON忠实保留。将t视为τ的勘误需人工确认，不在原文内悄改。"
+          },
+          {
+            "code": "SOURCE_LITERAL_PUNCTUATION",
+            "phase": "A",
+            "field": "statement_latex",
+            "message": "原展示式以分号结束，随后跨页接where k；原JSON写逗号，作纯转录修正。"
+          },
+          {
+            "code": "MICROCANONICAL_SPECIALIZATION_MUST_BE_EXPLICIT",
+            "phase": "C",
+            "field": "context_notation/extra_assumptions",
+            "message": "当前Lean只定义任意μ下的积分核；微正则δ积分是μ选取后的解释，不是这条定义已证明的额外等式。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:1323：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第16页＝PDF224／印刷203页末，两行公式的左侧确为C_ab(τ)，右侧均为F_t；δ[H−E]及Z_E⁻¹也准确。",
+          "附件第17页＝PDF225／印刷204页首，where k…C_ab(0)=1与JSON一致，故当前跨页203–204／224–225正确。",
+          "R6_evidence/page_16.png和page_17.png；本次保留τ/t原书记号，未用Lean的t反改源文。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.correlation",
+        "verdict": "PASS",
+        "explanation": "correlation对任意状态维n、共同输出维d，接受μ、Φ及a,b:E n→E d和实k,t，返回k乘以真实实欧氏内积的μ积分；只在a上施加Φ_t，b取初始状态，次序与源文相符。这里定义的是通用测度下的相关核，取μ为已归一化微正则概率测度时才对应原Av_(H=E)；不能据此声称对任意μ都等于原δ积分，也未在此定义或证明微正则测度构造。积分定义可以总延拓至任意观测量；作通常统计相关解释时仍须有相关乘积的可积性。k任意是正确的，“often”并未要求无条件C(0)=1；零lag积分非零时才能取其倒数归一化。Lean统一用一个lag参数t，是对源文τ/t混用的已公开合理修订。",
+        "counterexample": null,
+        "suggested_fix": "保留原书τ/t并标NEEDS_HUMAN，人工决定统一的lag记号；采用corrected_json中的微正则特化说明。现有通用相关定义无需修改。"
+      }
+    },
+    {
+      "source_id": "MD-5.5-CorrelationTimeAE",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_ANY_TRAJECTORY_OVERSTATEMENT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.5-CorrelationTimeAE",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.5",
+          "printed_page": "204",
+          "pdf_page": "225",
+          "statement_latex": "If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $H=E$ energy surface:\n\\[C_{a,b}(t)=k\\lim_{\\tau\\to\\infty}\\frac1\\tau\\int_0^{\\tau} a(z(s+t))\\cdot b(z(s))ds.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原书字面为any trajectory；本条Lean是明确的几乎处处修订版，不可将AE当作逐字原文。对每个给定t有AE集合，未断言同一满测集同时适用所有t。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_ANY_TRAJECTORY_OVERSTATEMENT",
+              "phase": "A",
+              "field": "statement_latex",
+              "message": "原页确写any trajectory；一般概率遍历结论允许零测异常初值，不能推出每条轨道。原文保留，当前AE修订合理，但不能把AE称为逐字原文。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.correlationTime",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]按本章标准遍历结论修正为对给定lag逐次AE初值；保留真实时间积分、向量内积、可积性和flow群律，原any字面另条。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT17_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:12:25.337909",
+              "before_sha256": "e5b0bda8269eee8e13e48a9f0874b4c20e855d97aeaf7ee9ebe5d2216bac0b27",
+              "after_sha256": "74ac292cf095d33d99c99325620b7578fe0663fb941b2b69ab48ac138ce47517",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_ANY_TRAJECTORY_OVERSTATEMENT",
+            "phase": "A",
+            "field": "statement_latex",
+            "message": "原页确写any trajectory；一般概率遍历结论允许零测异常初值，不能推出每条轨道。原文保留，当前AE修订合理，但不能把AE称为逐字原文。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:1418：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第18页＝PDF225／印刷204上部“If the system is ergodic…”及紧随时间积分公式逐字吻合，原文any未遗漏。",
+          "R6_evidence/page_18.png与page_17.png相同；当前AE量词位于实lag t之后，所给已有proof也只对g_t应用AE性质。这里只审该声明和证明文本的语义，没有运行Lean编译。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.correlationTime",
+        "verdict": "PASS",
+        "explanation": "correlationTime已逐项核对全部n,d,μ,Φ,a,b,k,t量词、零时恒等及群律。遍历资格在此作为“每个L¹实观测量有各自AE时间平均”的标准性质传入，并要求给定lag的相关观测量可积；在条目1的概率保测可测流条件下，这个资格可由setErgodic取得，未把特定相关等式直接作为假设。结论对给定t几乎处处z，保留k、T⁻¹、真实0到T积分以及a(Φ_(s+t)z)与b(Φ_s z)的实内积。群律和实数加法交换保证该 integrand 是固定观测量g_t沿Φ_s的值，极限目标是同一μ、Φ、a、b、k、t的correlation。没有交换∀t与AE z；也没有从一般遍历性推出每个初值。因此AE修订版完整签名PASS，原书any trajectory仍独立标为待人工。",
+        "counterexample": "反驳从一般测度遍历性推出逐点结论的简单模型：E 1上取μ=δ₀、Φ_t=id、a(x)=x、b(x)=1、k=1。此概率流满足setErgodic，所有L¹观测量在μ几乎处处有正确时间平均；但初值z=1的相关时间平均为1，μ相关值为0。该例说明量词不能从AE改为所有环境空间初值，并非声称它是书中某个特定正则微正则能量面的物理反例。",
+        "suggested_fix": "保留原文any并交人工确认其适用范围；将当前correlationTime明确保留为AE修订版，不改成∀z，也不把逐lag的AE集合当作对所有实lag共同适用。"
+      }
+    },
+    {
+      "source_id": "MD-5.5-PositionTransition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_NORMALIZATION_ANNOTATION",
+          "SOURCE_LITERAL_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.5-PositionTransition",
+          "kind": "definition",
+          "label": null,
+          "section": "5.5",
+          "printed_page": "204",
+          "pdf_page": "225",
+          "statement_latex": "Now let $A$ and $B$ be subsets of configuration space (i.e. subsets in the position space) of nonzero measure, and define $T_{AB}(\\tau)\\stackrel{\\rm def}{=}C_{1_B,1_A}(\\tau)$,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "π在原文用法中取实际位置投影，A、B通过它拉回相空间；定义保留1_B在时刻t、1_A在时刻0的顺序。",
+            "当前Lean已含任意归一化常数k，和相关定义一致。k=1是未归一化事件计数特例；条件转移概率还须除以起始事件的正概率，且不是首次到达时间。",
+            "本函数对一般μ、π、集合作公式总延拓；原书概率解释另须选择微正则概率μ、真实位置投影和适当可测非零事件。"
+          ],
+          "issues": [
+            {
+              "code": "STALE_NORMALIZATION_ANNOTATION",
+              "phase": "A/C",
+              "field": "context_notation[1]",
+              "message": "注释仍说“当前Lean无k，仅对应k=1”，但本条完整定义显式含(k t:ℝ)和积分外k因子；删除这项过时判断。"
+            },
+            {
+              "code": "SOURCE_LITERAL_PUNCTUATION",
+              "phase": "A",
+              "field": "statement_latex",
+              "message": "原书T_AB=C_(1_B,1_A)展示式以逗号接where指标函数定义；原JSON改成句号，恢复源文标点并明确摘录范围。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.positionTransition",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 恢复相关定义中完整归一化常数k，原k=1未归一化概率计数作为明确实例；位置投影及两个indicator积分均保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT17_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:12:25.337909",
+              "before_sha256": "481fe546111d291d2900febed8892dc56823d0fdaed3f90668bdaee58a094896",
+              "after_sha256": "8a509ba2a289dae0102da9ffda473929823695b6d77f3dec9745120d21c16209",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "STALE_NORMALIZATION_ANNOTATION",
+            "phase": "A/C",
+            "field": "context_notation[1]",
+            "message": "注释仍说“当前Lean无k，仅对应k=1”，但本条完整定义显式含(k t:ℝ)和积分外k因子；删除这项过时判断。"
+          },
+          {
+            "code": "SOURCE_LITERAL_PUNCTUATION",
+            "phase": "A",
+            "field": "statement_latex",
+            "message": "原书T_AB=C_(1_B,1_A)展示式以逗号接where指标函数定义；原JSON改成句号，恢复源文标点并明确摘录范围。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:1539：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第19页＝PDF225／印刷204中部，“Now let A and B…”及T_AB(τ)=C_(1_B,1_A)(τ)吻合；原式末尾为逗号。",
+          "R6_evidence/page_19.png与page_17.png相同；同页后续条件概率用未带k的指标乘积比值，不能把任意k版本直接叫概率。",
+          "完整Lean及实际依赖MD.Ch05.positionTransition两处均明确写(k t : ℝ)及k*积分，故当前无k的注释可确定为过时。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.positionTransition",
+        "verdict": "PASS",
+        "explanation": "positionTransition接受同一μ、Φ、实k和t，位置映射π:E n→E d，以及配置集合A、B。被积函数是1_B(π(Φ_t z))·1_A(π z)，并在积分外完整保留k，正对应C_(1_B,1_A)的顺序；没有交换始发集合A和目标集合B。π作为参数是通用观测映射，实际原文用法须选为位置投影；原非零测度和可测性要求在一般定义中可以放宽，因为本条没有做除法或断言条件概率。若作概率解释则还须相应概率测度、可测集/映射；特别应取k=1，再除以起始事件的正概率。当前定义本身不是首次到达分布，也不保证对任意k其值都在[0,1]。",
+        "counterexample": null,
+        "suggested_fix": "采用corrected_json中的标点和归一化说明；保留当前已恢复k的Lean定义，不再次添加或删除k。"
+      }
+    },
+    {
+      "source_id": "MD-5.5-MeasureDuality",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NUMBERED_EQUATION_METADATA_MISSING",
+          "RN_INTERPRETATION_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.5-MeasureDuality",
+          "kind": "equation",
+          "label": "(5.10)",
+          "section": "5.5",
+          "printed_page": "205",
+          "pdf_page": "226",
+          "statement_latex": "\\[\\int_{\\Sigma_E}\\phi(z)\\rho(z;t)d\\omega\n=\\int_{\\Sigma_E}\\phi(z)e^{t\\mathcal L^\\dagger}\\rho(z,0)d\\omega\n=\\int_{\\Sigma_E}[e^{t\\mathcal L}\\phi(z)]\\rho(z,0)d\\omega\n=\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))\\rho(z,0)d\\omega\n=\\int_{\\Sigma_E}\\phi(\\mathcal F_t(z))\\frac{\\rho(z,0)}{\\rho_E(z)}\\rho_E(z)d\\omega.\\tag{5.10}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本条Lean用measurePropagator=Measure.map表示分布演化，用pullback=φ∘Φ_t表示可观测量演化；未定义生成元L或证明算子指数表示。",
+            "在measureDuality_RN中取ν为参考概率（应用时为微正则概率），r为初始概率相对于ν的非负RN密度，μ₀=ν.withDensity(ofReal∘r)。原ρ₀/ρ_E按此解释，不对奇异δ作逐点函数商。",
+            "原页(5.10)后对比值有界及归一化的说明属语境；本条RN定理以L¹概率密度和有界连续测试函数给出更一般的合法加权配对。"
+          ],
+          "issues": [
+            {
+              "code": "NUMBERED_EQUATION_METADATA_MISSING",
+              "phase": "A",
+              "field": "kind/label",
+              "message": "原式明确编号(5.10)，且statement_latex已带该tag；kind=unnumbered_claim、label=null与原页不符。"
+            },
+            {
+              "code": "RN_INTERPRETATION_SCOPE",
+              "phase": "A/C",
+              "field": "context_notation/statement_scope",
+              "message": "需把[EXTRA]中的RN解释及推前/拉回范围写入上下文；当前未形式化生成元与算子指数，也未将奇异ρ_E当成可逐点相除的普通密度。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.measureDuality",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]演化密度用真实Measure.map，微正则ρE的比值应理解为对参考奇异测度的Radon–Nikodym密度；不当普通Lebesgue密度相除。明确可测及map下可积，不将最终等式作前提。",
+            "[EXTRA] 保留推前对偶已有证明，补参考概率ν上的非负RN密度r、初始withDensity、演化Measure.map与全部加权配对链；公开ρ/ρ_E的RN解释，不对奇异δ作函数相除。"
+          ],
+          "statement_scope": "保留原编号公式(5.10)的完整原文；Lean覆盖[EXTRA]明示的推前/拉回及RN加权配对解释，不另声称已建立生成元、算子指数或奇异密度逐点商的理论。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT17_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:12:25.337909",
+              "before_sha256": "da2d37934e10d51e12e127abc50ee4f03ae7d349da4fa93f326bf508c3d53e73",
+              "after_sha256": "7686dc288fa58c0bb87ce8138afac385b9d96c59a141db44d5d5ecbaf9cdd09d",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH22_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "NUMBERED_EQUATION_METADATA_MISSING",
+            "phase": "A",
+            "field": "kind/label",
+            "message": "原式明确编号(5.10)，且statement_latex已带该tag；kind=unnumbered_claim、label=null与原页不符。"
+          },
+          {
+            "code": "RN_INTERPRETATION_SCOPE",
+            "phase": "A/C",
+            "field": "context_notation/statement_scope",
+            "message": "需把[EXTRA]中的RN解释及推前/拉回范围写入上下文；当前未形式化生成元与算子指数，也未将奇异ρ_E当成可逐点相除的普通密度。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:1623：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第20页＝PDF226／印刷205上半页，(5.10)五个积分项的顺序、L†与L的方向、Φ_t的作用及最后ρ₀/ρ_E加权项均与原JSON一致。",
+          "R6_evidence/page_20.png；公式右侧清楚印有(5.10)。公式后的原文另外假设比值有界、微正则平均为1，未将随后混合极限结论混入本条签名。",
+          "实际调用的MolecularDynamics.Chapter05Review.measurePropagator只有Φ,t,μ参数，不是另外列出的带f和flow证明参数的MD.Ch05.measurePropagator；未混淆两种接口。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.measureDuality",
+        "verdict": "PASS",
+        "explanation": "已分别核对measureDuality和measureDuality_RN。前者对任意n、μ、Φ、实值φ和实t，在Φ_t可测且φ对推前measurePropagator可积时，断言推前积分等于初始测度下的pullback积分。实际measurePropagator定义确为Measure.map，pullback确为φ∘Φ_t，方向与原配对链相符，未把最终等式作前提；这一单时刻换元无需额外流群律。后者对概率参考ν、非负L¹密度r且∫r=1，置μ₀=ν.withDensity(ofReal∘r)，对可测Φ_t及有界连续φ，依次给出推前配对=μ₀下pullback配对=∫φ(Φ_t z)r(z)dν。非负性确保ofReal不截去密度，归一化确保μ₀为概率，有界连续φ使所需配对可积。这里的r是相对于ν的RN密度，对应原ρ₀/ρ_E的已公开测度解释，不是对Dirac分布作函数相除。原来有界密度的语境被推广为非负L¹概率密度，仍足以保证本条有界测试函数的配对链。PASS限于推前/拉回及加权积分的这套明示解释；本条没有定义生成元或证明算子指数e^(tL)、e^(tL†)的解析半群理论。",
+        "counterexample": null,
+        "suggested_fix": "采用corrected_json中的编号、类别及解释范围；保持当前两个数学签名。后续若要求字面算子指数理论，应另列任务，不能据当前PASS宣称它已经得到证明。"
+      }
+    },
+    {
+      "source_id": "MD-5.5-MixingMemoryLoss",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：所引英文、密度比、质量1、相关极限及展示积分均与附件第1页相符；逗号/分号及数学排版作等义规范化。",
+          "附件第1页；原书印刷页205，PDF页226。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "0a116c0bc69c2c02df6533c846db824a4c4bafd0b9e02f9db11517999887d91e"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.mixingMemoryLoss",
+        "verdict": "PASS",
+        "explanation": "C：n任意，E n为有限维实欧氏空间；μ是表示能量面参考概率的环境测度，未额外假设Lebesgue密度。Φ为实时间流，weakMixing第一合取规定概率、单位元、群律及联合可测，第二合取是对任意可积非负质量1密度和有界连续测试函数的弱收敛；这是混合的密度测试刻画，并非标准仅Cesàro意义的weak mixing。β可积、有界、非负且积分1，φ有界连续，各时Φ保持μ，结论是整个中心化积分随实t→+∞趋0。由测度保持和质量1亦恢复非中心化极限；[EXTRA]限制明确且充分，未把本条特定中心化结论作假设。 本条全部本地声明：MD.Ch05.mixingMemoryLoss。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.5-MixingCorrelation",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION_INNER_PRODUCT",
+          "PRINTED_NORMALIZATION_AMBIGUITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.5-MixingCorrelation",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.5",
+          "printed_page": "205",
+          "pdf_page": "226",
+          "statement_latex": "$\\lim_{t\\to\\infty}C_{ab}(t)=\\operatorname{Av}_{H=E}(a)\\cdot\\operatorname{Av}_{H=E}(b)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "\\Sigma_E=\\{z:H(z)=E\\}; \\mathcal F_t 为动力学流。",
+            "\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)\\rho_E(z)\\,d\\omega；\\rho_E\\,d\\omega为参考微正则概率测度。",
+            "C_{ab}(t)=k\\operatorname{Av}_{H=E}(a(\\mathcal F_t(z))\\cdot b(z))；a,b取值于同一Euclidean空间，k为归一化常数（PDF224–225）。"
+          ],
+          "issues": [
+            "A：附件第2页原式右侧为Av(a) · Av(b)，JSON漏掉中间点乘号；向量语境下不能仅写并置乘积。原页确实没有k，须保留该原书疑误。附件不含所称PDF224–225，不能独立核实那两页对k的定义；此处仅按任务摘录的context核对其一致性。"
+          ],
+          "lean_decl": "MD.Ch05.mixingCorrelation",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]独立修正版右侧保留k，实际AC概率初值的弱mixing条件及有界连续a/b；原参考微正则分布的不变资格明确为MeasurePreserving，保障各时积分可积和常数项不变。未以目标相关极限作假设。",
+            "[EXTRA] 修订版扩至任意有限维向量观测量并以Bochner均值及inner表达完整k相关极限；保留原标量证明为辅助，新向量结论暂sorry，原漏k版本单列待导师。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT17_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:12:25.337909",
+              "before_sha256": "c63baa427b12c7a546b5381271a37c8cef0ee6cd39f771b8f506f4877d4eb99d",
+              "after_sha256": "039d6a6bcf6ef7d14129adacf50d3d3d7ddce296980e886fe04b9b11155007bc",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH23_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "A：附件第2页原式右侧为Av(a) · Av(b)，JSON漏掉中间点乘号；向量语境下不能仅写并置乘积。原页确实没有k，须保留该原书疑误。附件不含所称PDF224–225，不能独立核实那两页对k的定义；此处仅按任务摘录的context核对其一致性。",
+          "C：主声明量化n,d、任意实k、概率μ、各时保持测度的Φ和有界连续向量a,b；密度测试混合前提作用于所有标量r,φ。有限维逐分量推出带k的内积均值极限，数学正确；scalar声明是相应d=1公式，k*Av(a)*Av(b)括号无误。未要求Φ群律不妨碍此蕴含。全部[EXTRA]与修正版相符，sorry不影响签名审核。但名为mixingCorrelation的结论是带k的修正版，不能同时认证为原书无k字面版本；需人工确认原文/勘误分流。"
+        ],
+        "evidence": [
+          "A：附件第2页原式右侧为Av(a) · Av(b)，JSON漏掉中间点乘号；向量语境下不能仅写并置乘积。原页确实没有k，须保留该原书疑误。附件不含所称PDF224–225，不能独立核实那两页对k的定义；此处仅按任务摘录的context核对其一致性。",
+          "附件第2页；原书印刷页205，PDF页226。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "0a116c0bc69c2c02df6533c846db824a4c4bafd0b9e02f9db11517999887d91e"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.mixingCorrelation",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：主声明量化n,d、任意实k、概率μ、各时保持测度的Φ和有界连续向量a,b；密度测试混合前提作用于所有标量r,φ。有限维逐分量推出带k的内积均值极限，数学正确；scalar声明是相应d=1公式，k*Av(a)*Av(b)括号无误。未要求Φ群律不妨碍此蕴含。全部[EXTRA]与修正版相符，sorry不影响签名审核。但名为mixingCorrelation的结论是带k的修正版，不能同时认证为原书无k字面版本；需人工确认原文/勘误分流。 本条全部本地声明：MD.Ch05.mixingCorrelation, MD.Ch05.mixingCorrelation_scalar。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": "按所给C_ab=k Av(a∘Φ_t·b)定义，取μ=δ₀、Φ_t=id、a=b=1、k=2；所有混合/概率/连续有界前提成立，左极限2而原印右侧1。向量版取d=1即可。",
+        "suggested_fix": "原文statement只补回点乘，不添加k；另在勘误字段记录k·⟨Av(a),Av(b)⟩。将现主声明标明_corrected，并独立标记无k原式待人工裁定。"
+      }
+    },
+    {
+      "source_id": "MD-5.5-CenteredCorrelation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第3页So if either property...zero整句逐字相符，原书确实使用autocorrelation一词。",
+          "附件第3页；原书印刷页205，PDF页226。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "0a116c0bc69c2c02df6533c846db824a4c4bafd0b9e02f9db11517999887d91e"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.centeredCorrelation",
+        "verdict": "PASS",
+        "explanation": "C：主声明对任意n,d,k、概率μ、测度保持Φ、weakMixing及有界连续向量a,b，要求任一Bochner均值为零，结论是带k内积相关的绝对值趋0。scalar声明相同地使用实均值及乘积。两种均值零的析取及绝对值均未遗漏；衰减解释为趋零而非单调性，与[EXTRA]一致。标准混合前提通过所摘weakMixing的密度测试合取落实。 本条全部本地声明：MD.Ch05.centeredCorrelation, MD.Ch05.centeredCorrelation_scalar。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

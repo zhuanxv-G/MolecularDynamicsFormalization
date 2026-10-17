@@ -1,0 +1,125 @@
+{
+  "batch": "EAUDIT80",
+  "input_sha256": {
+    "BATCH_EAUDIT80.md": "b9b9bc06c22ccf4b318f7c7cb0a033e22ac095098f8e2613118833a369572697",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.2.4-FirstIntegral",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              3
+            ],
+            "printed_page": "70",
+            "original_pdf_page": "92",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "原句、梯度点积、求和指标j=1,…,m及恒零号逐字一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.bp_firstIntegral"
+            ],
+            "finding": "原句、梯度点积、求和指标j=1,…,m及恒零号逐字一致。n为任意自然数，I:Q n→ℝ、f:Q n→Q n，D为开放域。谓词同时要求IsOpen D、I在D可微，以及每个z∈D的真实导数作用于f(z)为0；在开放域可微保证fderiv是经典导数，与原坐标求和相同。开放域是原文下一句明许的范围；未把不可微点总化导数为零误当条件。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.bp_firstIntegral"
+        ],
+        "verdict": "PASS",
+        "explanation": "原句、梯度点积、求和指标j=1,…,m及恒零号逐字一致。n为任意自然数，I:Q n→ℝ、f:Q n→Q n，D为开放域。谓词同时要求IsOpen D、I在D可微，以及每个z∈D的真实导数作用于f(z)为0；在开放域可微保证fderiv是经典导数，与原坐标求和相同。开放域是原文下一句明许的范围；未把不可微点总化导数为零误当条件。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.4-IntegralPreserved",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              4
+            ],
+            "printed_page": "70",
+            "original_pdf_page": "92",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "印刷70页从It is important到I(F_t(z))≡I(z)的原文、括号及所有初始条件措辞一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.firstIntegralPreserved"
+            ],
+            "finding": "印刷70页从It is important到I(F_t(z))≡I(z)的原文、括号及所有初始条件措辞一致。量化任意n,I,f,D,γ,a,b，要求a≤b、I可微、D开放、firstIntegral逐点为零、γ在整个闭窗留域并满足真实ODE。结论对全部t∈[a,b]为I(γ(t))=I(γ(a))。任意γ的全称量化覆盖任意初始条件；a替代0为时间平移推广。a=b退化窗结论仍正确，端点没有遗漏。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.firstIntegralPreserved"
+        ],
+        "verdict": "PASS",
+        "explanation": "印刷70页从It is important到I(F_t(z))≡I(z)的原文、括号及所有初始条件措辞一致。量化任意n,I,f,D,γ,a,b，要求a≤b、I可微、D开放、firstIntegral逐点为零、γ在整个闭窗留域并满足真实ODE。结论对全部t∈[a,b]为I(γ(t))=I(γ(a))。任意γ的全称量化覆盖任意初始条件；a替代0为时间平移推广。a=b退化窗结论仍正确，端点没有遗漏。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.4-IntegralLipschitz",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              5
+            ],
+            "printed_page": "71",
+            "original_pdf_page": "93",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "印刷71页Hence及不等式的绝对值、梯度范数和a−b次序一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.integralPointwiseBound"
+            ],
+            "finding": "印刷71页Hence及不等式的绝对值、梯度范数和a−b次序一致。采用实际EuclideanSpace而非Pi最大范数；D开放、包含闭线段且I在D为C¹。存在同一个c在线段上，既满足均值等式I(a)−I(b)=DI(c)(a−b)，又满足所需点态上界。在实Euclidean空间标量泛函的算子范数就是梯度的Euclidean范数；没有换成其他点或擅加统一梯度界。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.integralPointwiseBound"
+        ],
+        "verdict": "PASS",
+        "explanation": "印刷71页Hence及不等式的绝对值、梯度范数和a−b次序一致。采用实际EuclideanSpace而非Pi最大范数；D开放、包含闭线段且I在D为C¹。存在同一个c在线段上，既满足均值等式I(a)−I(b)=DI(c)(a−b)，又满足所需点态上界。在实Euclidean空间标量泛函的算子范数就是梯度的Euclidean范数；没有换成其他点或擅加统一梯度界。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

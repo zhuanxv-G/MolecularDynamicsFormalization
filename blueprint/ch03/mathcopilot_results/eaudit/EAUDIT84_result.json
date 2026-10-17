@@ -1,0 +1,120 @@
+{
+  "batch": "EAUDIT84",
+  "input_sha256": {
+    "BATCH_EAUDIT84.md": "66c9357730fe0be2ea4de3bc8afb04bbffe8dffc08a817ffea579ceab9d658c4",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.7.2-CollisionTimeRelation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_CVA_ANNOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.7.2-CollisionTimeRelation",
+          "kind": "definition",
+          "label": "(3.19)",
+          "section": "3.7.2",
+          "printed_page": "135",
+          "pdf_page": "157",
+          "statement_latex": "It is then possible to calculate the collision times by solving equations\n\\[\\|Q_i(t)-Q_j(t)\\|=\\sigma_i+\\sigma_j,\\qquad i\\ne j.\\tag{3.19}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "对预先选定的不同粒子i≠j，a(t)=Qi(t)、b(t)=Qj(t)、radius=σi+σj；范数为物理空间欧氏范数。",
+            "此关系只定义t>0接触候选，不编码二次路径、最早性、根存在或横截性。",
+            "同批physicalCVARelation另外绑定实际粒子二次路径、正质量/半径及最早唯一接触；本条不冒称已实现求根算法。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.collisionTimeRelation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT19_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:32:51.271067",
+              "before_sha256": "36d3b3a1aaa579685d6cf77302dc5590c65ebfa147d62407e9c3b27c9936de57",
+              "after_sha256": "1c5f5408ad1c60302980bc87d06b0aa8b704b6a640623d65c7a86977113be365",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH25_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT19/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "STALE_CVA_ANNOTATION",
+            "detail": "context第三项忽略同批physicalCVARelation现已编码粒子二次路径和最早唯一接触。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第15页；印刷页135",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.collisionTimeRelation",
+        "verdict": "PASS",
+        "explanation": "定义对任意d维位置路径a,b、实radius和t给出0<t及欧氏距离=radius；context将它们明确绑定为选定不同粒子Qi,Qj和σi+σj，正好是式(3.19)的正时间接触候选。没有最早性、路径二次性或根存在定理，但这些已明说不属于该辅助关系。原文式(3.19)本身不是最早根定义，故不以缺最早性判FAIL。当前本批已含physicalCVARelation，旧context仍说本批仅给定tc后的更新，不再准确。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.7.2-CollisionalVerletRelation",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_EQUALITY_BRANCH"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "SOURCE_EQUALITY_BRANCH",
+            "detail": "原印tc=hmax不反射；若接触时正入射，下步只找严格正根不能补上t=0事件，须人工确定边界处理。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第16页；印刷页135",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.collisionalVerletRelation",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "辅助collisionalVerletRelation精确保留0<tc、0<hmax、h=min(tc,hmax)和严格tc<hmax才反射的分支；m,F,Rc任意，故仅是参数化更新。physicalCVARelation已补正质量/半径、可微U及F的负微分对偶、初态非重叠、粒子二次路径、全体粒子对先前严格分离、唯一碰撞对（交换同一对除外）和质量加权弹性反射。particleVerlet与二次路径位置一致，particleReflection的法向两粒子分量相反，分母由正质量及接触距离正而非零。none分支要求所有正时间无接触，表示无未来根而非仅步长内无根；some允许tc超过hmax，不会误反射。tc=hmax严格走else忠实于原书；但下一步从接触初态选严格正根可能遗漏即时反射，算法边界疑点保留。额外排除多重碰撞、要求初态合法和保守力均明确披露，未声称阶数或求根实现。",
+        "counterexample": "一维两球相向匀速，初始间距=半径和+相对速度×hmax，F=0。则tc=hmax，原分支到接触仍保持入射动量；从该接触态继续寻找严格正接触根，不能表达当下应发生的反射。",
+        "suggested_fix": "原印严格<保持不动；人工决定是否另立≤反射的修正版或明示端点事件传递约定。"
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

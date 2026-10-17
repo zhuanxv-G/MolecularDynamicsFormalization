@@ -1,0 +1,39 @@
+--- before
++++ after
+@@ -730,10 +730,25 @@
+   sorry
+ 
+ /-- source_id: MD-3.3.2-Strang · definition · §3.3.2 · 印刷p.108 / PDFp.130
+-[ERRATUM?] p.108/PDF130第一展开把Z_[2]配t²、Z_[3]配t³，而下一展开(3.5)按总指数幂2、3排列；保留原页不静默纠正索引。 -/
++[ERRATUM?] p.108/PDF130第一展开把Z_[2]配t²、Z_[3]配t³，而下一展开(3.5)按总指数幂2、3排列；保留原页不静默纠正索引。 [EXTRA] 24号：formalStrang保留构造；补常项为1、log常项为0及零常项形式指数重建的全阶等式。Z_t明确为log级数去掉一因子X后的移位级数；重建声明尚未证明，不声称真实ODE收敛。
++-/
+ def formalStrang {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R :=
+   textbookFormalOperatorExponential ((1/2 : ℝ) • A) * textbookFormalOperatorExponential B *
+     textbookFormalOperatorExponential ((1/2 : ℝ) • A)
++
++def formalStrang_Zt {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R :=
++  PowerSeries.mk (fun j => PowerSeries.coeff (j+1) (formalLog (formalStrang A B)))
++
++theorem formalStrang_constant {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) :
++    PowerSeries.coeff 0 (formalStrang A B) = 1 := by
++  simp [formalStrang, PowerSeries.coeff_mul, textbookFormalOperatorExponential]
++
++theorem formalStrang_log_reconstruction {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) :
++    PowerSeries.coeff 0 (formalLog (formalStrang A B)) = 0 ∧
++    PowerSeries.X * formalStrang_Zt A B = formalLog (formalStrang A B) ∧
++    textbookFormalZeroConstantExponential (formalLog (formalStrang A B)) = formalStrang A B := by
++  sorry
++
+ 
+ /-- source_id: MD-3.3.2-DifferentLogsCommute · (3.4)–(3.5) · §3.3.2 · 印刷p.108 / PDFp.130
+ [ERRATUM?] p.108/PDF130 “Z_s commutes with Z_t” 对一般非交换X,Y可疑；应由反步关系单独推导奇性。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：仅在A、B交换这一明示充分条件下给不同步长log交换；不使用原书一般交换断言证明奇性。
+@@ -2442,6 +2457,9 @@
+ #print axioms MD.Ch03.verletModifiedMatching_corrected
+ #print axioms MD.Ch03.modifiedEven
+ #print axioms MD.Ch03.formalStrang
++#print axioms MD.Ch03.formalStrang_Zt
++#print axioms MD.Ch03.formalStrang_constant
++#print axioms MD.Ch03.formalStrang_log_reconstruction
+ #print axioms MD.Ch03.differentLogsCommute
+ #print axioms MD.Ch03.differentLogsCommute_corrected
+ #print axioms MD.Ch03.strangInverse

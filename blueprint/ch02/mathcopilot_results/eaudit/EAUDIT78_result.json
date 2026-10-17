@@ -1,0 +1,211 @@
+{
+  "batch": "EAUDIT78",
+  "input_sha256": {
+    "BATCH_EAUDIT78.md": "e9afe77ce518d179f4e95045fed7443f065f37b1558e766adb54a56f2fc57783",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.2.2-DiscreteStationaryPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_ENDPOINT_RANGE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.2.2-DiscreteStationaryPrinted",
+          "kind": "definition",
+          "label": null,
+          "section": "2.2.2",
+          "printed_page": "63–64",
+          "pdf_page": "85–86",
+          "statement_latex": "Critical points of this function satisfy\n\\[\\nabla\\hat{\\mathcal A}=0,\\]\nwhere the gradient must be taken with respect to all configurational points on the path (and all coordinates). This condition leads to the equations\n\\[\\frac{\\partial\\hat{\\mathcal A}}{\\partial\\boldsymbol q_n}=0,\\qquad n=1,\\ldots,\\nu,\\]\nsince we think of the starting point $\\boldsymbol q_0$ as fixed.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "status": "NEEDS_HUMAN",
+              "detail": "原页n=1,…,ν包含右端点，后页说端点固定且只对1,…,ν-1求导。保留字面≤ν，不默改为<ν。"
+            },
+            {
+              "code": "PRINTED_ENDPOINT_RANGE",
+              "status": "NEEDS_HUMAN",
+              "detail": "印刷n=1,…,ν包含右端点，下一页只对1,…,ν−1求导并称端点固定；保留字面范围。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.printedDiscreteStationary",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 保留原印0<k≤ν范围和端点疑误；改用HasFDerivAt表达经典零导数，防止不可微处fderiv总化为零；内部节点版本已有独立DiscreteVerlet条目，不裁定端点勘误。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT04_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:02:34.602086",
+              "before_sha256": "6bef9197c9207cc2703475072ff737bf33abc6ed2d626ebb466918ab916b7979",
+              "after_sha256": "8db01bee76c768883e621c73bab2b697c3bad0d560fea82efbe7dd71593962f1",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH07_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_ENDPOINT_RANGE",
+            "detail": "印刷n=1,…,ν包含右端点，下一页只对1,…,ν−1求导并称端点固定；保留字面范围。",
+            "stage": "SOURCE_MATHEMATICS"
+          }
+        ],
+        "evidence": {
+          "attachment": "/workspace/R1_PAGES.pdf",
+          "attachment_pages": [
+            12,
+            13
+          ],
+          "book_pdf_page": "85–86",
+          "printed_page": "63–64",
+          "A": "已对照附件原页的正文、公式、标点和上下文；重复原页经文本一致性核对，并视觉核对对应唯一页。所需修订详见issues及corrected_json。",
+          "C": "仅依据任务文件摘录的全部同source_id声明及项目依赖定义作只读语义审校；Mathlib按标准含义采信。未修改Lean工程、未补证明、未运行编译，不以sorry判失败。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.printedDiscreteStationary",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "printedDiscreteStationary对所有0<k≤ν要求替换第k个节点后的真实HasFDerivAt为零；replaceNode为Function.update，discreteAction为k=0至ν-1的hL(q_k,(q_{k+1}-q_k)/h)和。q₀未被变动，q_ν仍被变动，完全保留印刷范围。经典导数资格避免不可微处fderiv=0的伪驻值。[EXTRA]正确，但书中右端点是否固定的矛盾须人工裁定。",
+        "counterexample": "取一维自由L(q,v)=v²/2、ν=1、h=1、q₀=0、q₁=1。固定两端点时没有内部驻值方程；字面末节点条件却要求d(x²/2)/dx|₁=0，即1=0。",
+        "suggested_fix": "保留printed的≤ν；固定双端点版本另设0<k<ν。若确实仅固定起点，应另列右端点自然边界条件。"
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-DiscreteDerivative",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-2.2.2-DiscreteDerivative",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.2.2",
+          "printed_page": "64",
+          "pdf_page": "86",
+          "statement_latex": "To calculate the derivative of $\\hat{\\mathcal A}$ with respect to $\\boldsymbol q_n$, $n=1,2,\\ldots,\\nu-1$, note that only a few terms of the discrete action involve this configurational point, thus\n\\[\\frac{\\partial\\hat{\\mathcal A}}{\\partial\\boldsymbol q_n}=\\frac{\\partial}{\\partial\\boldsymbol q_n}\\left[\\frac{1}{2h}\\left((\\boldsymbol q_n-\\boldsymbol q_{n-1})^TM(\\boldsymbol q_n-\\boldsymbol q_{n-1})+(\\boldsymbol q_{n+1}-\\boldsymbol q_n)^TM(\\boldsymbol q_{n+1}-\\boldsymbol q_n)\\right)-U(\\boldsymbol q_n)h\\right]=\\frac1h[M(\\boldsymbol q_n-\\boldsymbol q_{n-1})-M(\\boldsymbol q_{n+1}-\\boldsymbol q_n)]-\\nabla U(\\boldsymbol q_n)h,\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.discreteActionDerivative",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "固定正对角质量、实际U可微、h≠0；仅内部节点0<k<ν；沿p.60及p.63展示的-U作用量。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT04_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:02:34.602086",
+              "before_sha256": "96a4006c27b45a2ac3b8c8a9d6c7d7acefc4296638a1c86acc290f9e707e7506",
+              "after_sha256": "ad47b7dc3a89653b9fffce17494cb632dbda61b31ee2eabceac41ebd6f855010",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH07_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "attachment": "/workspace/R1_PAGES.pdf",
+          "attachment_pages": [
+            14
+          ],
+          "book_pdf_page": "86",
+          "printed_page": "64",
+          "A": "已对照附件原页的正文、公式、标点和上下文；重复原页经文本一致性核对，并视觉核对对应唯一页。选定范围内未发现需修订的转录差异。",
+          "C": "仅依据任务文件摘录的全部同source_id声明及项目依赖定义作只读语义审校；Mathlib按标准含义采信。未修改Lean工程、未补证明、未运行编译，不以sorry判失败。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.discreteActionDerivative",
+        "verdict": "PASS",
+        "explanation": "对每个n、正对角质量、全域可微U、任意节点序列、h≠0及0<k<ν，对任意方向v计算真实离散作用量的fderiv作用：Σ_i[m_i(2q_k−q_{k−1}−q_{k+1})/h−h∂_iU(q_k)]v_i。两相邻动能项和当前势能项全部保留；k>0防止自然数减法截断，k<ν排除末端缺项。全域可微U保证此处fderiv确为导数。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.2.2-Stormer",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-2.2.2-Stormer",
+          "kind": "definition",
+          "label": null,
+          "section": "2.2.2",
+          "printed_page": "64",
+          "pdf_page": "86",
+          "statement_latex": "The method (2.4) is commonly referred to as Störmer’s rule.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "式(2.4)在F(q_n)=−∇U(q_n)下写为$M(q_{n+1}-2q_n+q_{n-1})=h^2F(q_n)$；p.93/PDF115重述逆质量形式；从速度Verlet消去速度的说明及计算见p.65/PDF87。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.bp_stormerRelation",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 直接使用原文质量乘法形式M(qₙ₊₁−2qₙ+qₙ₋₁)=h²F(qₙ)，避免零质量下逆质量总化造成对象不等价；仅更改Blueprint本条。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT04_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:02:34.602086",
+              "before_sha256": "a6ccd6a16abfc21ccb1521859c24bba19ebc006915784255943630537c3e40c0",
+              "after_sha256": "c4775ec2c8c8173bc44b9271829aa6f24c114de764e52699bac73c68237f2a30",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH07_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "attachment": "/workspace/R1_PAGES.pdf",
+          "attachment_pages": [
+            15
+          ],
+          "book_pdf_page": "86",
+          "printed_page": "64",
+          "A": "已对照附件原页的正文、公式、标点和上下文；重复原页经文本一致性核对，并视觉核对对应唯一页。选定范围内未发现需修订的转录差异。",
+          "C": "仅依据任务文件摘录的全部同source_id声明及项目依赖定义作只读语义审校；Mathlib按标准含义采信。未修改Lean工程、未补证明、未运行编译，不以sorry判失败。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_stormerRelation",
+        "verdict": "PASS",
+        "explanation": "检查mass逐坐标乘法，a、b、c分别表示q_{n−1}、q_n、q_{n+1}，关系为M(c−2b+a)=h²F(b)。没有用逆质量扩展替代原乘法形式。作为给定三个节点的一步关系不需要序列量词或启动过程；没有声称零质量模型的存在唯一性。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

@@ -1,0 +1,201 @@
+{
+  "batch": "EAUDIT81",
+  "input_sha256": {
+    "BATCH_EAUDIT81.md": "fce53b0092a564f0c0b99cb4f6d906b8493ed49a1ea7a026fec03ba785deba52",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.6.3-TrapezoidalProperties",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第3页；印刷页131",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.trapezoidalProperties",
+        "verdict": "PASS",
+        "explanation": "第一合取对任意维数、连续线性对合R、R可逆场f及任意h,z,w，给出梯形关系在(z,w)↦(Rw,Rz)下不变；反对易条件的负号正确，不要求隐式解存在或唯一。第二合取存在有限维真实Hamiltonian H（C∞）、某h及C¹的全局选解G h，逐点满足完整梯形隐式更新，且该C¹映射非辛；不是以任意非Hamiltonian向量场或不光滑解伪造反例。G其他步长不受约束，与所需某一步反例相符。原句的Symplectic Euler例子由context明确另列，本条只覆盖梯形例子。[EXTRA]中∞已用于H，1用于G h，均与声明一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.6.3-SymplecticSpectrum",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_SCOPE_ANNOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.6.3-SymplecticSpectrum",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.6.3",
+          "printed_page": "131",
+          "pdf_page": "153",
+          "statement_latex": "The flow map is\n\\[\\mathcal F_t(z)=\\mathrm e^{tJA}z\\]\nand the exponential matrix will inherit a related structure within the spectrum: $\\lambda$ an eigenvalue of $\\exp(tJA)$ implies that $\\overline\\lambda$, $1/\\lambda$ and $1/\\overline\\lambda$ are all eigenvalues of $\\exp(tJA)$. This eigenvalue structure is generic for linear symplectic maps in general.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "一般辛矩阵谱由symplecticSpectrum表达。symplecticSpectrum_linearHamiltonian对实对称K给出exp(tJK)的初值、ODE、辛性及谱实例；倒数共轭由对共轭特征值再次应用一般结论得到。ζ≠0由结论给出，不作为假设。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.symplecticSpectrum",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 保留一般辛矩阵谱结论；补对称K的实际线性Hamiltonian流exp(tJK)、ODE、辛矩阵及对应倒数/共轭谱实例。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT16_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:26:38.547668",
+              "before_sha256": "78788a1ddee2177e27ade859ac5e8c4d0b5dc1a4f50b8c66664c016b063a2d54",
+              "after_sha256": "24ff475a9a78ae0aad41188db416d31bea71ca3d93c8e450ead2dac40c40bb97",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH21_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "STALE_SCOPE_ANNOTATION",
+            "detail": "context_notation仍声称指数流公式及其谱实例未在签名表达，忽略现有symplecticSpectrum_linearHamiltonian。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第4页；印刷页131",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.symplecticSpectrum",
+        "verdict": "PASS",
+        "explanation": "一般声明量化所有实2n阶辛矩阵和其复特征值，以非零复特征向量定义特征值，结论ζ≠0、倒数及共轭谱正确；再对共轭特征值使用同一定理即得倒数共轭，不是漏掉第四个谱点。零维无特征值，量词无问题。linearHamiltonian补充对所有实对称K，令A=JK，Φ(t)=exp(tA)，给出初值恒等、每个t,z的完整ODE、生成元正负共轭谱、指数矩阵辛性及其倒数共轭谱；实指数、乘法次序、t全实均正确。旧context声称指数流未表达，已与当前全部声明不符；[EXTRA]所称补充实际已经存在。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.6.3-ConjugateIterates",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_INVERTIBILITY_AMBIGUITY",
+          "STALE_SCOPE_ANNOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.6.3-ConjugateIterates",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.6.3",
+          "printed_page": "131–132",
+          "pdf_page": "153–154",
+          "statement_latex": "Recall that a pair of maps $\\Phi$ and $\\Psi$ are said to be conjugate if there is a homomorphism $\\chi$ such that\n\\[\\Phi=\\chi^{-1}\\Psi\\chi.\\]\nIn such a case the iterates of the two maps will also be conjugate",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "主声明为任意类型上的Equiv共轭迭代恒等式；homeomorph版本是保留辅助。",
+            "原书写homomorphism但使用χ⁻¹，需可逆性；此原书用词疑误保留交人工处理。",
+            "有效阶等附加数值断言不属于本条迭代恒等式。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原文homomorphism至少需可逆；连续渐近运输还需homeomorphism。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.conjugateIterates",
+          "reusable_proofs": [
+            "MolecularDynamics.textbook_conjugate_iterates"
+          ],
+          "extra_assumptions": [
+            "χ明确为equivalence，以使原文χ⁻¹有定义；原文homomorphism的用词待审。",
+            "[EXTRA] 纯迭代恒等式推广到任意类型及真实Equiv，不附拓扑/范数；原Homeomorph已证版本保留辅助，用于拓扑轨道结论。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT16_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:26:38.547668",
+              "before_sha256": "f5fb862f044bcc6a0492a630be97ff47b66ee9d4cd2f76ef2c9bc7f68037d77a",
+              "after_sha256": "14d4fe0adadf403bedc1831d5f841e392a7b3d385352a97f4eb4878c3564007f",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH21_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT16/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_INVERTIBILITY_AMBIGUITY",
+            "detail": "原印homomorphism不能单独保证χ⁻¹存在，保留原文并标注疑误。"
+          },
+          {
+            "code": "STALE_SCOPE_ANNOTATION",
+            "detail": "主声明现已为任意类型Equiv；旧context错误限制主声明。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第5–6页；印刷页131–132",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.conjugateIterates",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "主声明已为任意类型α、任意可逆Equiv χ及A,B，假设A=χ⁻¹∘B∘χ，对所有自然数n给出完整共轭迭代恒等式，包含n=0；没有拓扑或范数前提。homeomorph辅助版同样正确，额外连续性仅属于辅助版本。原页确实写homomorphism并随后使用χ⁻¹；一般同态不保证可逆，原书用词须人工处理，Equiv是合理显式修复。context仍把主签名说成实赋范空间和Homeomorph，已经过时。",
+        "counterexample": null,
+        "suggested_fix": "原句不改；确认作者是否意指可逆同态或homeomorphism，并保留Equiv修正版。"
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

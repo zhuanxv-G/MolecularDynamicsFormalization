@@ -1,0 +1,14 @@
+[
+  {
+    "source_id": "MD-4.2.1-FastVerlet",
+    "reason": "将Prod.ext拆为两个目标，位置rfl，动量逐坐标展开F并ring，避免部分应用产生未定乘积。",
+    "failed_log": "RESPA-attempt1.log",
+    "diff": "--- \n+++ \n@@ -540,10 +540,11 @@\n   change (z.1+h • Chapter02Review.invMass m z.2+(h^2/2) • Chapter02Review.invMass m (F z.1),\n     z.2+(h/2) • (F z.1+F (z.1+h • Chapter02Review.invMass m z.2+(h^2/2) • Chapter02Review.invMass m (F z.1)))) = _\n   rw [hq]\n-  apply Prod.ext rfl\n-  ext i\n-  simp\n-  <;> ring\n+  apply Prod.ext\n+  · rfl\n+  · ext i\n+    simp [F]\n+    <;> ring\n \n /-- source_id: MD-4.2.1-RESPA · (4.2) · §4.2.1 · 印刷p.145 / PDFp.167\n [EXTRA] r为正自然数，实际r次函数迭代；不把形式算子等式当实际ODE流。 [EXTRA] 24号：总化辅助respaTotalized保留；主接口respa增加0<r。当前Blueprint没有主接口下游调用需调整；正式库旧辅助不改。已展开同版本Chapter02Review.verlet核对为kick(h/2)→drift(h)→kick(h/2)，桥接见FastVerlet本地核验记录。原文网站漏句按corrected_json补回。\n"
+  },
+  {
+    "source_id": "MD-4.4.1-AngularInertia",
+    "reason": "ω为已占用语法记号，改局部变量omegaVec；空间等式复用已证angularInertia取单位旋转，替换暂存未证。",
+    "failed_log": "AngularInertia-attempt1.log",
+    "diff": "--- \n+++ \n@@ -2708,7 +2708,7 @@\n def bodyMomentum (Θ : MolecularDynamics.Chapter04Review.Mat3) (l : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := Θᵀ *ᵥ l\n \n /-- source_id: MD-4.4.1-AngularInertia · unnumbered_claim · §4.4.1 · 印刷p.171 / PDFp.193\n-[EXTRA] 真实SO(3)矩阵和cross3，嵌套为δ×(ω×δ)；原无括号三重积含糊，明确上下文对象。 [EXTRA] 24号：原体坐标等式与证明完整保留；另列一般三重积（逐坐标ring证明）及空间角动量矩阵中间等式（暂未证明），覆盖引文遗漏。\n+[EXTRA] 真实SO(3)矩阵和cross3，嵌套为δ×(ω×δ)；原无括号三重积含糊，明确上下文对象。 [EXTRA] 24号：原体坐标等式与证明完整保留；另列一般三重积（逐坐标ring证明）及空间角动量矩阵中间等式（体坐标已证式取Θ=1），覆盖引文遗漏。\n -/\n theorem angularInertia :\n   ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) (Θ : MolecularDynamics.Chapter04Review.Mat3) («ω» : MolecularDynamics.Chapter04Review.V),\n@@ -2754,11 +2754,12 @@\n     MolecularDynamics.Chapter04Review.dot, Fin.sum_univ_three, Pi.smul_apply, smul_eq_mul] <;> ring\n \n theorem spatialAngularInertia (N : ℕ) (m : Fin N → ℝ)\n-    (δ : Fin N → MolecularDynamics.Chapter04Review.V) (ω : MolecularDynamics.Chapter04Review.V) :\n+    (δ : Fin N → MolecularDynamics.Chapter04Review.V) (omegaVec : MolecularDynamics.Chapter04Review.V) :\n     MolecularDynamics.Chapter04Review.angularMomentum m δ\n-      (fun i => MolecularDynamics.Chapter04Review.cross3 ω (δ i)) =\n-      MolecularDynamics.Chapter04Review.inertiaTensor m δ *ᵥ ω := by\n-  sorry\n+      (fun i => MolecularDynamics.Chapter04Review.cross3 omegaVec (δ i)) =\n+      MolecularDynamics.Chapter04Review.inertiaTensor m δ *ᵥ omegaVec := by\n+  simpa [MolecularDynamics.Chapter04Review.bodyMomentum] using\n+    (angularInertia N m δ (1 : MolecularDynamics.Chapter04Review.Mat3) omegaVec (by simp) (by simp))\n \n \n /-- source_id: MD-4.4.1-EulerRigidField · (4.41) · §4.4.1 · 印刷p.172 / PDFp.194 -/\n"
+  }
+]

@@ -1,0 +1,716 @@
+[
+  {
+    "source_id": "MD-3.1-ShadowEllipses",
+    "original_names": [
+      "shadowEllipses"
+    ],
+    "corrected_names": [
+      "shadowEllipses_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.2-FiniteLieTaylor",
+    "original_names": [
+      "lieTaylor"
+    ],
+    "corrected_names": [
+      "lieTaylor_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.2-FlowCoordinates",
+    "original_names": [
+      "flowCoordinates"
+    ],
+    "corrected_names": [
+      "flowCoordinates_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.3-BCHHamiltonianMatching",
+    "original_names": [
+      "bchHamiltonianMatching"
+    ],
+    "corrected_names": [
+      "bchHamiltonianMatching_corrected"
+    ],
+    "note": "默认保留状态复合Φ_h∘Ψ_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL_B)exp(hL_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.3-LeadingModifiedExponential",
+    "original_names": [
+      "leadingModifiedExponential"
+    ],
+    "corrected_names": [
+      "leadingModifiedExponential_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.3-LeadingShadowHamiltonian",
+    "original_names": [
+      "leadingShadowHamiltonian"
+    ],
+    "corrected_names": [
+      "leadingShadowHamiltonian_corrected"
+    ],
+    "note": "默认保留状态复合Φ_h∘Ψ_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL_B)exp(hL_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.3.2-DifferentLogsCommute",
+    "original_names": [
+      "differentLogsCommute"
+    ],
+    "corrected_names": [
+      "differentLogsCommute_corrected"
+    ],
+    "note": "仅在A、B交换这一明示充分条件下给不同步长log交换；不使用原书一般交换断言证明奇性。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+    "original_names": [
+      "verletModifiedH"
+    ],
+    "corrected_names": [
+      "verletModifiedH_corrected"
+    ],
+    "note": "这份独立表达式只按机械二次动能解释，不能用于一般非二次T；机械匹配见verletModifiedMatching_corrected。一般T的h⁴公式尚待导师，不声称本通用函数对任意T正确。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-3.3.2-VerletModifiedMatching",
+    "original_names": [
+      "verletModifiedMatching",
+      "verletModifiedMatching_general"
+    ],
+    "corrected_names": [
+      "verletModifiedMatching_corrected"
+    ],
+    "note": "独立修正版仅保留正质量机械二次动能的有限匹配，不复制一般T的有疑h⁴结论。标量h⁴另有独立系数核对。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.3.4-ProcessorEnergyPrinted",
+    "original_names": [
+      "processorEnergyPrinted"
+    ],
+    "corrected_names": [
+      "processorEnergyPrinted_corrected"
+    ],
+    "note": "首界补回遗漏势能U(q)，把T改成H；其余统一余项资格和第二界不变。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.3.4-TakahashiEffectiveOrder",
+    "original_names": [
+      "takahashiEffectiveOrder"
+    ],
+    "corrected_names": [
+      "takahashiEffectiveOrder_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.4-AnalyticDefect",
+    "original_names": [
+      "analyticBEA"
+    ],
+    "corrected_names": [
+      "analyticBEA_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.4-CommutingEnergy",
+    "original_names": [
+      "commutingEnergy"
+    ],
+    "corrected_names": [
+      "commutingEnergy_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.4-EnergySymplecticNoGo",
+    "original_names": [
+      "energySymplecticNoGo"
+    ],
+    "corrected_names": [
+      "energySymplecticNoGo_corrected"
+    ],
+    "note": "只给能量保持的局部微分链式约束；一般全域时间重参数结论仍须连通能量层、局部流域与一致时间窗资格，保留为未覆盖问题，未拿此局部式充当原全局结论。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-3.4-OptimalTruncation",
+    "original_names": [
+      "optimalTruncation"
+    ],
+    "corrected_names": [
+      "optimalTruncation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.4-Thm3.1",
+    "original_names": [
+      "theorem31"
+    ],
+    "corrected_names": [
+      "theorem31_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.5-VerletOscillatorEnergy",
+    "original_names": [
+      "verletOscillatorEnergy"
+    ],
+    "corrected_names": [
+      "verletOscillatorEnergy_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-3.6.2-FlowReversal",
+    "original_names": [
+      "flowReversal"
+    ],
+    "corrected_names": [
+      "flowReversal_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.6.2-FlowReversalIdentity",
+    "original_names": [
+      "flowReversalIdentity"
+    ],
+    "corrected_names": [
+      "flowReversalIdentity_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.6.2-PartitionedAffine",
+    "original_names": [
+      "partitionedAffine"
+    ],
+    "corrected_names": [
+      "partitionedAffine_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-3.6.2-PartitionedAffinePrinted",
+    "original_names": [
+      "partitionedAffinePrinted"
+    ],
+    "corrected_names": [
+      "partitionedAffinePrinted_corrected"
+    ],
+    "note": "默认两套PRK表相同退化为普通相空间RK，才允许任意混合可逆线性变换；保持分区的更一般版本独立保留。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.6.2-RKAffine",
+    "original_names": [
+      "rkAffine"
+    ],
+    "corrected_names": [
+      "rkAffine_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-3.6.3-ConjugateIterates",
+    "original_names": [
+      "conjugateIterates",
+      "conjugateIterates_homeomorph"
+    ],
+    "corrected_names": [
+      "conjugateIterates_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.6.3-ConjugateOrderPrinted",
+    "original_names": [
+      "conjugateOrderPrinted"
+    ],
+    "corrected_names": [
+      "conjugateOrderPrinted_corrected"
+    ],
+    "note": "补运输映射的全局Lipschitz充分资格；只给单向局部误差阶运输，不声称全部effective order、性能或稳定性。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.6.3-ReversibleVolumeFailure",
+    "original_names": [
+      "reversibleVolumeFailure"
+    ],
+    "corrected_names": [
+      "reversibleVolumeFailure_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.7.1-EndImpactThirdOrderPrinted",
+    "original_names": [
+      "endImpactThirdOrderPrinted"
+    ],
+    "corrected_names": [
+      "endImpactThirdOrderPrinted_corrected"
+    ],
+    "note": "原末端碰撞三阶能量断言有反例；对接近接触点的初值族只给一阶上界，新增趋近资格排除隐式方程的远端分支，不声称二阶或三阶。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.7.1-FreeHardSphereHamiltonian",
+    "original_names": [
+      "freeHardSphereHamiltonian",
+      "freeHardSphereHamiltonian_ballistic",
+      "freeHardSphereHamiltonian_contactAllowed"
+    ],
+    "corrected_names": [
+      "freeHardSphereHamiltonian_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-3.7.1-HardCorePotential",
+    "original_names": [
+      "hardCorePotential",
+      "hardSphereHamiltonianPrinted",
+      "hardCorePotential_contactAllowed"
+    ],
+    "corrected_names": [
+      "hardCorePotential_corrected"
+    ],
+    "note": "允许接触等号，只有严格重叠才取∞；原印≤判∞独立保留。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-3.7.1-PrimitiveOrder",
+    "original_names": [
+      "primitiveOrder"
+    ],
+    "corrected_names": [
+      "finiteCollisionTrajectory_corrected",
+      "primitiveOrder_corrected"
+    ],
+    "note": "限定为事件表穷尽真实接触、非零法向、初端右连续、终端左连续且终端无碰撞、事件取碰后动量的轨道；只保留明确的时间对齐误差目标，不宣称同时间动量阶。精确子流Strang仍是独立限定解释，原混合法及无根事件分支未覆盖。二阶项另限数值碰撞横截；尚缺统一事件稳定性与误差累积理论。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionalVerletOrder",
+    "original_names": [
+      "collisionalVerletOrder"
+    ],
+    "corrected_names": [
+      "collisionalVerletOrder_corrected"
+    ],
+    "note": "限定为事件表穷尽真实接触、非零法向、初端右连续、终端左连续且终端无碰撞、事件取碰后动量的轨道；只保留明确的时间对齐误差目标，不宣称同时间动量阶。精确子流Strang仍是独立限定解释，原混合法及无根事件分支未覆盖。二阶项另限数值碰撞横截；尚缺统一事件稳定性与误差累积理论。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionalVerletRelation",
+    "original_names": [
+      "collisionalVerletRelation",
+      "particleQuadraticPath",
+      "particleVerlet",
+      "particleReflection",
+      "physicalCVARelation"
+    ],
+    "corrected_names": [
+      "collisionalVerletRelation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-3.7.3-DecoupledOrder",
+    "original_names": [
+      "decoupledOrder"
+    ],
+    "corrected_names": [
+      "decoupledOrder_corrected"
+    ],
+    "note": "限定为事件表穷尽真实接触、非零法向、初端右连续、终端左连续且终端无碰撞、事件取碰后动量的轨道；只保留明确的时间对齐误差目标，不宣称同时间动量阶。精确子流Strang仍是独立限定解释，原混合法及无根事件分支未覆盖。二阶项另限数值碰撞横截；尚缺统一事件稳定性与误差累积理论。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.7.3-PairForceDecoupling",
+    "original_names": [
+      "pairForceDecoupling"
+    ],
+    "corrected_names": [
+      "pairForceDecoupling_corrected"
+    ],
+    "note": "明确α为kick势并补接触点可微，deriv α contact=0才作为经典零接触力；α/β文字冲突保留导师选项。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-3.3.2-ModifiedEven",
+    "original_names": [
+      "modifiedEven"
+    ],
+    "corrected_names": [
+      "modifiedEven_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.4-TruncatedConservation",
+    "original_names": [
+      "truncatedConservation"
+    ],
+    "corrected_names": [
+      "truncatedConservation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-3.4-EnergyTelescoping",
+    "original_names": [
+      "energyTelescoping",
+      "energyTelescoping_complete"
+    ],
+    "corrected_names": [
+      "energyTelescoping_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.4-UniformTruncatedLipschitz",
+    "original_names": [
+      "uniformTruncatedLipschitz",
+      "uniformTruncatedLipschitz_chain"
+    ],
+    "corrected_names": [
+      "uniformTruncatedLipschitz_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.4-PhysicalEnergyDrift",
+    "original_names": [
+      "physicalEnergyDrift",
+      "physicalEnergyDrift_complete"
+    ],
+    "corrected_names": [
+      "physicalEnergyDrift_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+    "original_names": [
+      "reversedTrajectoryPrinted",
+      "reversedTrajectoryPrinted_coordinateChange",
+      "reversedTrajectoryPrinted_timeChange"
+    ],
+    "corrected_names": [
+      "reversedTrajectoryPrinted_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedTrajectory",
+    "original_names": [
+      "reversedTrajectory"
+    ],
+    "corrected_names": [
+      "reversedTrajectory_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.6.2-AffineInvariant",
+    "original_names": [
+      "affineInvariant"
+    ],
+    "corrected_names": [
+      "affineInvariant_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-3.6.2-SymmetricAffineReversible",
+    "original_names": [
+      "symmetricAffineReversible"
+    ],
+    "corrected_names": [
+      "symmetricAffineReversible_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-3.4-ScalarVerletShadow4",
+    "original_names": [
+      "scalarVerletShadow4",
+      "scalarVerletShadow4_matching_Printed"
+    ],
+    "corrected_names": [
+      "scalarVerletShadow4_corrected",
+      "scalarVerletShadow4_matching_corrected"
+    ],
+    "added": false,
+    "note": "保留原印系数及原印匹配声明，独立列修正系数和匹配声明；精确代数核对见SHADOW4_ALGEBRA.json，实际流误差定理未证明。",
+    "proof_routes": [
+      "独立SymPy有限jet代数核对通过",
+      "实际流统一余项需缺失Taylor/ODE桥接，未建立大型理论"
+    ]
+  }
+]

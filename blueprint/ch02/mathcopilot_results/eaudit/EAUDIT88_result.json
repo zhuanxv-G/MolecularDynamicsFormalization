@@ -1,0 +1,735 @@
+{
+  "batch": "EAUDIT88",
+  "input_sha256": {
+    "BATCH_EAUDIT88.md": "51d4b566bcb5f5bd2b104b67b555ebd45b57a24b3f868c861fa5950ccc1bb2a1",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.4.1-Splitting",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "LEAN_INCOMPLETE_STATEMENT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-Splitting",
+          "kind": "definition",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "83",
+          "pdf_page": "105",
+          "statement_latex": "Let $H(\\boldsymbol q,\\boldsymbol p)=H_1(\\boldsymbol q,\\boldsymbol p)+H_2(\\boldsymbol q,\\boldsymbol p)$ have flow map $\\mathcal F_h$, and indicate by $\\mathcal F_h^1,\\mathcal F_h^2$ the flow maps for the systems with Hamiltonians $H_1,H_2$, respectively. The proposal is that the map\n\\[\\mathcal G_h=\\mathcal F_h^1\\circ\\mathcal F_h^2\\]\nis an approximation of $\\mathcal F_h$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "只定义给定实际子流的组合；近似精度由后项给出，不把任意映射称为实际流。"
+          ],
+          "issues": [
+            {
+              "code": "LEAN_INCOMPLETE_STATEMENT",
+              "note": "bp_splittingMap仅对任意类型E和任意两个函数族F₁、F₂定义F₁ h∘F₂ h，复合公式本身正确。但本条statement_scope含整个引句：H=H₁+H₂、三者Hamilton流及近似结论；当前声明没有H、H₁、H₂、总流F、ODE/Flow前提或任何近似性质。context_notation把精度交给下一条是合理分工说明，却没有建立本条定义与下一条splittingLocal的形式联系；该定理还使用独立的splittingMap定义。按要求核对完整结论，不能把纯组合构造视作全部数学断言已形式化。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.bp_splittingMap",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:19:46.414902",
+              "before_sha256": "36b43b98e7b04d926a75be3820b903e1ddc5c0574d69fa930ac8be3d19e64387",
+              "after_sha256": "41abf2f7f1fafcb2c6ea11469fac974653a578878d62e45e17c5e018a3b7fdb8",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "LEAN_INCOMPLETE_STATEMENT",
+            "field": "lean_decl",
+            "explanation": "bp_splittingMap仅对任意类型E和任意两个函数族F₁、F₂定义F₁ h∘F₂ h，复合公式本身正确。但本条statement_scope含整个引句：H=H₁+H₂、三者Hamilton流及近似结论；当前声明没有H、H₁、H₂、总流F、ODE/Flow前提或任何近似性质。context_notation把精度交给下一条是合理分工说明，却没有建立本条定义与下一条splittingLocal的形式联系；该定理还使用独立的splittingMap定义。按要求核对完整结论，不能把纯组合构造视作全部数学断言已形式化。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              10
+            ],
+            "printed_page": "83",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "bp_splittingMap"
+            ],
+            "finding": "bp_splittingMap仅对任意类型E和任意两个函数族F₁、F₂定义F₁ h∘F₂ h，复合公式本身正确。但本条statement_scope含整个引句：H=H₁+H₂、三者Hamilton流及近似结论；当前声明没有H、H₁、H₂、总流F、ODE/Flow前提或任何近似性质。context_notation把精度交给下一条是合理分工说明，却没有建立本条定义与下一条splittingLocal的形式联系；该定理还使用独立的splittingMap定义。按要求核对完整结论，不能把纯组合构造视作全部数学断言已形式化。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_splittingMap",
+        "verdict": "FAIL",
+        "explanation": "bp_splittingMap仅对任意类型E和任意两个函数族F₁、F₂定义F₁ h∘F₂ h，复合公式本身正确。但本条statement_scope含整个引句：H=H₁+H₂、三者Hamilton流及近似结论；当前声明没有H、H₁、H₂、总流F、ODE/Flow前提或任何近似性质。context_notation把精度交给下一条是合理分工说明，却没有建立本条定义与下一条splittingLocal的形式联系；该定理还使用独立的splittingMap定义。按要求核对完整结论，不能把纯组合构造视作全部数学断言已形式化。",
+        "counterexample": null,
+        "suggested_fix": "保留构造定义；增加带实际Hamilton流关系的近似声明，或在本条明确列出下一条splittingLocal及bp_splittingMap与其组合表达式的对应声明，并明确这是跨条共同覆盖。不得仅凭名字认定任意F₁,F₂是Hamilton子流。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-SplittingLocal",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "JSON_LATEX_ESCAPE",
+          "EXTRA_MARKER"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-SplittingLocal",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "83",
+          "pdf_page": "105",
+          "statement_latex": "For this to be a first order method, we need at least $\\|\\mathcal G_h(\\boldsymbol u)-\\mathcal F_h(\\boldsymbol u)\\|\\le C(\\boldsymbol u)h^2$.",
+          "proof_latex": "Expand $\\mathcal F_h(\\boldsymbol u)$ in a Taylor series:\n\\[\\mathcal F_h(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H+\\mathcal O(h^2)=\\boldsymbol u+h(J\\nabla H_1+J\\nabla H_2)+\\mathcal O(h^2).\\tag{2.24}\\]\nOn the other hand,\n\\[\\mathcal F_h^1(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_1(\\boldsymbol u)+\\mathcal O(h^2),\\qquad\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u)+\\mathcal O(h^2).\\]\nComposing the maps we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u)+hJ\\nabla H_1(\\boldsymbol u+hJ\\nabla H_2(\\boldsymbol u))+\\mathcal O(h^2).\\]\nAssuming $H_1$ is $C^2$, we have\n\\[\\mathcal F_h^1\\circ\\mathcal F_h^2(\\boldsymbol u)=\\boldsymbol u+h(J\\nabla H_2(\\boldsymbol u)+J\\nabla H_1(\\boldsymbol u))+\\mathcal O(h^2),\\]\nwhich agrees with the expansion (2.24) of the flow map through the terms of first order. Thus the splitting method does indeed provide a second order local approximation of the flow map.",
+          "proof_note": "原书计算按原页转录。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "JSON_LATEX_ESCAPE",
+              "note": "JSON原串把\\nabla误写为单反斜杠n，解码成换行符加abla，共10处；PDF实际是梯度∇。修正为合法LaTeX反斜杠nabla（JSON编码需双反斜杠）。"
+            },
+            {
+              "code": "EXTRA_MARKER",
+              "note": "当前列出的充分条件未使用要求的[EXTRA]标记；只规范元数据，不把充分条件当成原文逐字假设。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.splittingLocal",
+          "reusable_proofs": [
+            "MolecularDynamics.exists_hamiltonian_splitting_localError_bound"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] 实际H及两个子Hamilton局部ODE、初值及留开放域；H₁,H₂ C²，组合在紧时间矩形连续；没有假设待证局部误差。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:19:46.414902",
+              "before_sha256": "f1e383c94d50722ca9de7c4a4e6c6a5f502a0a5af05819f9d387d039573535cc",
+              "after_sha256": "bf174bdb16ddb8510dcb6934acd666a319e8efd2f11d7dd7041ecc0763f102b7",
+              "changed_fields": [
+                "proof_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "JSON_LATEX_ESCAPE",
+            "field": "proof_latex",
+            "explanation": "JSON原串把\\nabla误写为单反斜杠n，解码成换行符加abla，共10处；PDF实际是梯度∇。修正为合法LaTeX反斜杠nabla（JSON编码需双反斜杠）。"
+          },
+          {
+            "code": "EXTRA_MARKER",
+            "field": "extra_assumptions",
+            "explanation": "当前列出的充分条件未使用要求的[EXTRA]标记；只规范元数据，不把充分条件当成原文逐字假设。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              11
+            ],
+            "printed_page": "83",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。原文转录更正见issues；修正只恢复PDF文字/符号，不改写书中数学。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "splittingLocal"
+            ],
+            "finding": "任意Nc、开放域D，H₁,H₂在D上C²；u任意但由F 0 u=u与留域条件保证u∈D。τ≥0，F在[0,τ]上满足H₁+H₂的ODE，F₂满足H₂，F₁在F₂(s,u)出发的整矩形轨道满足H₁；初值、留域、矩形联合连续条件齐备。结论存在C>0使所有0≤h≤τ的实际复合与总流差≤C h²，τ>0还给右侧h→0的O(h²)。常数可依赖u及固定输入，未假设待证误差。τ=0时只需初值相等，BigO有τ>0前提，未把退化区间当作局部渐近结论。C²双势、留域及连续性均为充分[EXTRA]；原书second order local指O(h²)，不误读成全局二阶。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.splittingLocal",
+        "verdict": "PASS",
+        "explanation": "任意Nc、开放域D，H₁,H₂在D上C²；u任意但由F 0 u=u与留域条件保证u∈D。τ≥0，F在[0,τ]上满足H₁+H₂的ODE，F₂满足H₂，F₁在F₂(s,u)出发的整矩形轨道满足H₁；初值、留域、矩形联合连续条件齐备。结论存在C>0使所有0≤h≤τ的实际复合与总流差≤C h²，τ>0还给右侧h→0的O(h²)。常数可依赖u及固定输入，未假设待证误差。τ=0时只需初值相等，BigO有τ>0前提，未把退化区间当作局部渐近结论。C²双势、留域及连续性均为充分[EXTRA]；原书second order local指O(h²)，不误读成全局二阶。",
+        "counterexample": null,
+        "suggested_fix": "修正JSON里被解码为换行+abla的10个梯度符号，并为充分条件加[EXTRA]。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-KineticFlow",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LEAN_INCOMPLETE_STATEMENT",
+          "TOTALIZED_DOMAIN_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-KineticFlow",
+          "kind": "definition",
+          "label": "Example 2.4",
+          "section": "2.4.1",
+          "printed_page": "83",
+          "pdf_page": "105",
+          "statement_latex": "Let\n\\[H_1(\\boldsymbol q,\\boldsymbol p)=\\boldsymbol p^TM^{-1}\\boldsymbol p/2,\\qquad H_2(\\boldsymbol q,\\boldsymbol p)=U(\\boldsymbol q),\\]\nthen a splitting method for $H=H_1+H_2$ may be obtained by determining the flow maps for each of the two parts. For $H_1$ we have the differential equations\n\\[\\dot{\\boldsymbol q}=M^{-1}\\boldsymbol p,\\qquad\\dot{\\boldsymbol p}=\\boldsymbol0.\\]\nThe second equation tells us that $\\boldsymbol p$ is constant, so it is fixed at its initial value, whereas the first equation says that $\\boldsymbol q$ evolves on a linear path, hence its flow map is\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p,\\qquad\\boldsymbol P=\\boldsymbol p.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "固定对角质量，mᵢ≠0资格由机械模型；闭式映射逐坐标表达。",
+            "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+          ],
+          "issues": [
+            {
+              "code": "LEAN_INCOMPLETE_STATEMENT",
+              "note": "bp_kineticFlow对任意Nc、m、h、z给出Q_i=q_i+h(m_i)⁻¹p_i与P_i=p_i，坐标公式正确。另两条private声明momentumKickDerivative和momentumKick_hasFDerivAt只论任意C¹力F的kick导数：位置投影不变，动量导数为dp+h DF(q)dq，其类型及前提合理，但与动能Hamilton流识别无关。全部声明均没有H₁=pᵀM⁻¹p/2、H=H₁+H₂、时间ODE或流初值/群律结论，不能核验引句的完整Hamilton流断言。m非零只在context文字中，不是Lean前提；零质量总化可作代数扩展，不能被称为教材M的实际逆。"
+            },
+            {
+              "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+              "note": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.bp_kineticFlow",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:19:46.414902",
+              "before_sha256": "c08fe5d8e590cbc6a4afc475f7ab49c7b7f8e13971e68af96a2d437fdb25a1c0",
+              "after_sha256": "1015e30957b256ceea570e068301f743a858b3bd9d54d86c7cd79d8be1e55648",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:26:18.212960",
+              "before_sha256": "1015e30957b256ceea570e068301f743a858b3bd9d54d86c7cd79d8be1e55648",
+              "after_sha256": "e6fdb34802feac6761387d7e862eaa84b085ae545cd663848898cbb0aeb96772",
+              "changed_fields": [
+                "label",
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "label": {
+                  "before": "Example 2.4 (kinetic)",
+                  "after": "Example 2.4"
+                },
+                "printed_page": {
+                  "before": "83–84",
+                  "after": "83"
+                },
+                "pdf_page": {
+                  "before": "105–106",
+                  "after": "105"
+                }
+              },
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+          "review_context_pdf_pages": [
+            106
+          ]
+        },
+        "issues": [
+          {
+            "code": "LEAN_INCOMPLETE_STATEMENT",
+            "field": "lean_decl",
+            "explanation": "bp_kineticFlow对任意Nc、m、h、z给出Q_i=q_i+h(m_i)⁻¹p_i与P_i=p_i，坐标公式正确。另两条private声明momentumKickDerivative和momentumKick_hasFDerivAt只论任意C¹力F的kick导数：位置投影不变，动量导数为dp+h DF(q)dq，其类型及前提合理，但与动能Hamilton流识别无关。全部声明均没有H₁=pᵀM⁻¹p/2、H=H₁+H₂、时间ODE或流初值/群律结论，不能核验引句的完整Hamilton流断言。m非零只在context文字中，不是Lean前提；零质量总化可作代数扩展，不能被称为教材M的实际逆。"
+          },
+          {
+            "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+            "field": "context_notation",
+            "explanation": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              12,
+              13
+            ],
+            "printed_page": "83",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。Example 2.4及动力学叙述均在附件第12页（印刷83）；第13页（84）是后续势流和组合。所给83–84/105–106页范围包含相邻上下文，不据此虚增本条正文。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "bp_kineticFlow",
+              "momentumKickDerivative",
+              "momentumKick_hasFDerivAt"
+            ],
+            "finding": "bp_kineticFlow对任意Nc、m、h、z给出Q_i=q_i+h(m_i)⁻¹p_i与P_i=p_i，坐标公式正确。另两条private声明momentumKickDerivative和momentumKick_hasFDerivAt只论任意C¹力F的kick导数：位置投影不变，动量导数为dp+h DF(q)dq，其类型及前提合理，但与动能Hamilton流识别无关。全部声明均没有H₁=pᵀM⁻¹p/2、H=H₁+H₂、时间ODE或流初值/群律结论，不能核验引句的完整Hamilton流断言。m非零只在context文字中，不是Lean前提；零质量总化可作代数扩展，不能被称为教材M的实际逆。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_kineticFlow",
+        "verdict": "FAIL",
+        "explanation": "bp_kineticFlow对任意Nc、m、h、z给出Q_i=q_i+h(m_i)⁻¹p_i与P_i=p_i，坐标公式正确。另两条private声明momentumKickDerivative和momentumKick_hasFDerivAt只论任意C¹力F的kick导数：位置投影不变，动量导数为dp+h DF(q)dq，其类型及前提合理，但与动能Hamilton流识别无关。全部声明均没有H₁=pᵀM⁻¹p/2、H=H₁+H₂、时间ODE或流初值/群律结论，不能核验引句的完整Hamilton流断言。m非零只在context文字中，不是Lean前提；零质量总化可作代数扩展，不能被称为教材M的实际逆。",
+        "counterexample": null,
+        "suggested_fix": "保留显式公式及有效辅助导数声明；另补非零（或正）质量域上的动能Hamiltonian定义、该曲线的初值与Hamilton方程/流识别声明。不要把kick导数声明算成kinetic流证明。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-PotentialFlow",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "JSON_LATEX_ESCAPE",
+          "LEAN_INCOMPLETE_STATEMENT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-PotentialFlow",
+          "kind": "definition",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "84",
+          "pdf_page": "106",
+          "statement_latex": "Similarly, the flow map of the system with Hamiltonian $H_2=U$ is\n\\[\\boldsymbol Q=\\boldsymbol q,\\qquad\\boldsymbol P=\\boldsymbol p-h\\nabla U(\\boldsymbol q).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "F=-∇U；实际闭式映射。"
+          ],
+          "issues": [
+            {
+              "code": "JSON_LATEX_ESCAPE",
+              "note": "JSON原串把\\nabla误写为单反斜杠n，解码成换行符加abla，共1处；PDF实际是梯度∇。修正为合法LaTeX反斜杠nabla（JSON编码需双反斜杠）。"
+            },
+            {
+              "code": "LEAN_INCOMPLETE_STATEMENT",
+              "note": "bp_potentialFlow对任意Nc、任意势U及实h返回kick(-fderiv U)。展开得到Q=q、P_i=p_i-h(fderiv ℝ U q)e_i，符号、坐标次序正确。但是声明没有U可微前提，也没有H₂=U∘位置投影及HasDerivAt/Flow性质；fderiv在不可微点总化，不能无条件等同经典梯度。因此它只定义候选公式，没有完整覆盖原书“system with Hamiltonian H₂=U”的实际流断言。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.bp_potentialFlow",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:19:46.414902",
+              "before_sha256": "040b4dcd226289258bd06eb010961d3c5157182b2ecd377e5a6b76c171788db5",
+              "after_sha256": "725116820e28f0413ef1782402ab6b60fc7b32475bef94db32e3080c9410e13b",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "JSON_LATEX_ESCAPE",
+            "field": "statement_latex",
+            "explanation": "JSON原串把\\nabla误写为单反斜杠n，解码成换行符加abla，共1处；PDF实际是梯度∇。修正为合法LaTeX反斜杠nabla（JSON编码需双反斜杠）。"
+          },
+          {
+            "code": "LEAN_INCOMPLETE_STATEMENT",
+            "field": "lean_decl",
+            "explanation": "bp_potentialFlow对任意Nc、任意势U及实h返回kick(-fderiv U)。展开得到Q=q、P_i=p_i-h(fderiv ℝ U q)e_i，符号、坐标次序正确。但是声明没有U可微前提，也没有H₂=U∘位置投影及HasDerivAt/Flow性质；fderiv在不可微点总化，不能无条件等同经典梯度。因此它只定义候选公式，没有完整覆盖原书“system with Hamiltonian H₂=U”的实际流断言。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              14
+            ],
+            "printed_page": "84",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。原文转录更正见issues；修正只恢复PDF文字/符号，不改写书中数学。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "bp_potentialFlow"
+            ],
+            "finding": "bp_potentialFlow对任意Nc、任意势U及实h返回kick(-fderiv U)。展开得到Q=q、P_i=p_i-h(fderiv ℝ U q)e_i，符号、坐标次序正确。但是声明没有U可微前提，也没有H₂=U∘位置投影及HasDerivAt/Flow性质；fderiv在不可微点总化，不能无条件等同经典梯度。因此它只定义候选公式，没有完整覆盖原书“system with Hamiltonian H₂=U”的实际流断言。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_potentialFlow",
+        "verdict": "FAIL",
+        "explanation": "bp_potentialFlow对任意Nc、任意势U及实h返回kick(-fderiv U)。展开得到Q=q、P_i=p_i-h(fderiv ℝ U q)e_i，符号、坐标次序正确。但是声明没有U可微前提，也没有H₂=U∘位置投影及HasDerivAt/Flow性质；fderiv在不可微点总化，不能无条件等同经典梯度。因此它只定义候选公式，没有完整覆盖原书“system with Hamiltonian H₂=U”的实际流断言。",
+        "counterexample": "取一维U(q)=|q|，q=0处经典梯度不存在；Lean的fderiv总化仍使本定义有值。这说明定义的参数域比经典Hamilton流陈述宽，不能据此识别为该经典流；不是对光滑势的书中公式的反例。",
+        "suggested_fix": "修复JSON梯度转义；增加适当可微/C¹条件、H₂及候选轨道的Hamilton方程和初值声明，或清楚把当前条目缩为公式定义并另设流识别义务。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-SplitEuler",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "JSON_LATEX_ESCAPE",
+          "TOTALIZED_DOMAIN_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-SplitEuler",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "84",
+          "pdf_page": "106",
+          "statement_latex": "The composition of these maps simplifies to\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol P,\\qquad\\boldsymbol P=\\boldsymbol p-h\\nabla U(\\boldsymbol q),\\]\nwhich is precisely the Symplectic Euler method. Similarly, composing the same two maps in the opposite order gives the adjoint Symplectic Euler method.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+          ],
+          "issues": [
+            {
+              "code": "JSON_LATEX_ESCAPE",
+              "note": "JSON原串把\\nabla误写为单反斜杠n，解码成换行符加abla，共1处；PDF实际是梯度∇。修正为合法LaTeX反斜杠nabla（JSON编码需双反斜杠）。"
+            },
+            {
+              "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+              "note": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.splitEuler",
+          "reusable_proofs": [
+            "MolecularDynamics.Chapter02Review.kineticPotentialComposition_proved"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:19:46.414902",
+              "before_sha256": "5467dab516e1c6ffaa422c157c633664edb5c4c9e06629c644e9cf4651d63952",
+              "after_sha256": "9f19b1fa093092c76c6b723c4507ddc3e68ffa1fee00a73eb72f6614997cc84e",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "JSON_LATEX_ESCAPE",
+            "field": "statement_latex",
+            "explanation": "JSON原串把\\nabla误写为单反斜杠n，解码成换行符加abla，共1处；PDF实际是梯度∇。修正为合法LaTeX反斜杠nabla（JSON编码需双反斜杠）。"
+          },
+          {
+            "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+            "field": "context_notation",
+            "explanation": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              15
+            ],
+            "printed_page": "84",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。原文转录更正见issues；修正只恢复PDF文字/符号，不改写书中数学。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "splitEuler"
+            ],
+            "finding": "∀n,m,U,h，两个函数等式均审查：splittingMap drift kick=原辛Euler（先kick后drift），splittingMap kick drift=伴随辛Euler（先drift后kick）。textbookSymplecticEulerEquiv采用置换乘法即函数复合，逆使顺序交换；输出P在原法drift中使用，伴随法在新位置Q施力。Q n和坐标直和空间转换无混淆。结论只是代数函数相等，故不需要U可微或m≠0来保证这个总化恒等式；物理质量/经典梯度解释应限定教材域。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.splitEuler",
+        "verdict": "PASS",
+        "explanation": "∀n,m,U,h，两个函数等式均审查：splittingMap drift kick=原辛Euler（先kick后drift），splittingMap kick drift=伴随辛Euler（先drift后kick）。textbookSymplecticEulerEquiv采用置换乘法即函数复合，逆使顺序交换；输出P在原法drift中使用，伴随法在新位置Q施力。Q n和坐标直和空间转换无混淆。结论只是代数函数相等，故不需要U可微或m≠0来保证这个总化恒等式；物理质量/经典梯度解释应限定教材域。",
+        "counterexample": null,
+        "suggested_fix": "修复JSON梯度转义；在context_notation说明此代数恒等式使用总化fderiv及标量逆，教材Hamilton解释仍在正规质量/可微势域。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-VerletComposition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "JSON_LATEX_ESCAPE",
+          "TOTALIZED_DOMAIN_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-VerletComposition",
+          "kind": "unnumbered_claim",
+          "label": "Example 2.5 (Verlet is Symplectic)",
+          "section": "2.4.1",
+          "printed_page": "84–85",
+          "pdf_page": "106–107",
+          "statement_latex": "For the Symplectic Euler method $\\mathcal G_h$ and its adjoint method $\\mathcal G_h^\\dagger$, consider the composition\n\\[\\mathcal K_h:=\\mathcal G_{h/2}^\\dagger\\circ\\mathcal G_{h/2}.\\]",
+          "proof_latex": "Let\n\\[\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix}=\\mathcal G_{h/2}\\begin{bmatrix}\\boldsymbol q\\\\\\boldsymbol p\\end{bmatrix},\\]\ni.e.,\n\\[\\bar{\\boldsymbol q}=\\boldsymbol q+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\bar{\\boldsymbol p}=\\boldsymbol p-(h/2)\\nabla U(\\boldsymbol q).\\]\nand set\n\\[\\begin{bmatrix}\\boldsymbol Q\\\\\\boldsymbol P\\end{bmatrix}=\\mathcal G_{h/2}^\\dagger\\begin{bmatrix}\\bar{\\boldsymbol q}\\\\\\bar{\\boldsymbol p}\\end{bmatrix},\\]\ni.e.,\n\\[\\boldsymbol Q=\\bar{\\boldsymbol q}+(h/2)M^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-(h/2)\\nabla U(\\boldsymbol Q).\\]\nThe composition simplifies to\n\\[\\bar{\\boldsymbol p}=\\boldsymbol p-\\frac h2\\nabla U(\\boldsymbol q),\\qquad\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\bar{\\boldsymbol p},\\qquad\\boldsymbol P=\\bar{\\boldsymbol p}-\\frac h2\\nabla U(\\boldsymbol Q).\\]\nThis is just the leapfrog/Verlet method in its Hamiltonian form.",
+          "proof_note": "原书计算按原页转录。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+          ],
+          "issues": [
+            {
+              "code": "JSON_LATEX_ESCAPE",
+              "note": "JSON原串把\\nabla误写为单反斜杠n，解码成换行符加abla，共4处；PDF实际是梯度∇。修正为合法LaTeX反斜杠nabla（JSON编码需双反斜杠）。"
+            },
+            {
+              "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+              "note": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.verletComposition",
+          "reusable_proofs": [
+            "MolecularDynamics.Chapter02Review.verletComposition_proved"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:19:46.414902",
+              "before_sha256": "9cc16bde6cf373626fb9a369826231cb9149ad6389c66e5c564e395c73952126",
+              "after_sha256": "403eaa92e1a9bdb5e0606b573e751be75ef428bcae341b599f7f59aa4204cdab",
+              "changed_fields": [
+                "statement_latex",
+                "proof_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:26:18.212960",
+              "before_sha256": "403eaa92e1a9bdb5e0606b573e751be75ef428bcae341b599f7f59aa4204cdab",
+              "after_sha256": "3898d3f9d96d9cc3902273037038e20223871d0a88804f0def6cfa2f4e5b03bd",
+              "changed_fields": [
+                "label"
+              ],
+              "changes": {
+                "label": {
+                  "before": "Example 2.5 (composition)",
+                  "after": "Example 2.5 (Verlet is Symplectic)"
+                }
+              },
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
+        },
+        "issues": [
+          {
+            "code": "JSON_LATEX_ESCAPE",
+            "field": "proof_latex",
+            "explanation": "JSON原串把\\nabla误写为单反斜杠n，解码成换行符加abla，共4处；PDF实际是梯度∇。修正为合法LaTeX反斜杠nabla（JSON编码需双反斜杠）。"
+          },
+          {
+            "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+            "field": "context_notation",
+            "explanation": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              16,
+              17
+            ],
+            "printed_page": "84–85",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。原文转录更正见issues；修正只恢复PDF文字/符号，不改写书中数学。Example 2.5标题及中间变量计算在附件第16页（84），末句“This is just...”续于第17页（85），跨页范围正确。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "verletComposition"
+            ],
+            "finding": "∀n,m,U,h,z，两个合取均正确：coordinateVerlet=pack(verlet(...)(unpack z))，且等于G†_(h/2)(G_(h/2)z)。前者的位置更新q+h m⁻¹p+(h²/2)m⁻¹F(q)，动量更新p+(h/2)(F(q)+F(Q))与两次半kick一次全drift一致；后者是kick(h/2)∘drift(h/2)∘drift(h/2)∘kick(h/2)，次序没有倒置。任意力函数的代数恒等式不需要正则性；U、零质量的总化扩展同上一条，不在本结论中声称实际Hamilton流或精度。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.verletComposition",
+        "verdict": "PASS",
+        "explanation": "∀n,m,U,h,z，两个合取均正确：coordinateVerlet=pack(verlet(...)(unpack z))，且等于G†_(h/2)(G_(h/2)z)。前者的位置更新q+h m⁻¹p+(h²/2)m⁻¹F(q)，动量更新p+(h/2)(F(q)+F(Q))与两次半kick一次全drift一致；后者是kick(h/2)∘drift(h/2)∘drift(h/2)∘kick(h/2)，次序没有倒置。任意力函数的代数恒等式不需要正则性；U、零质量的总化扩展同上一条，不在本结论中声称实际Hamilton流或精度。",
+        "counterexample": null,
+        "suggested_fix": "修复proof_latex中4个梯度符号的JSON转义；补注总化代数恒等式与教材可逆质量/经典势的解释域。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-VerletSymplectic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXTRA_MARKER",
+          "TOTALIZED_DOMAIN_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.4.1-VerletSymplectic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.4.1",
+          "printed_page": "85",
+          "pdf_page": "107",
+          "statement_latex": "Since we have obtained the method as the composition of two symplectic maps, and the symplectic maps form a group, we know that this method will also be symplectic.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+          ],
+          "issues": [
+            {
+              "code": "EXTRA_MARKER",
+              "note": "当前列出的充分条件未使用要求的[EXTRA]标记；只规范元数据，不把充分条件当成原文逐字假设。"
+            },
+            {
+              "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+              "note": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.verletSymplectic",
+          "reusable_proofs": [
+            "MolecularDynamics.Chapter02Review.verletSymplectic_proved"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] U C²；真实完整步映射。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:19:46.414902",
+              "before_sha256": "f6dd866dbdb1ae2a339fb7e23fe40eb7b594dc76ed3177e07dda3b8e6f6c723a",
+              "after_sha256": "063a4814dc32328ed5f10c5157bda0bd6740f26dafca87b2e993afc539453ba2",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH21_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "EXTRA_MARKER",
+            "field": "extra_assumptions",
+            "explanation": "当前列出的充分条件未使用要求的[EXTRA]标记；只规范元数据，不把充分条件当成原文逐字假设。"
+          },
+          {
+            "code": "TOTALIZED_DOMAIN_CLARIFICATION",
+            "field": "context_notation",
+            "explanation": "审校注：Lean的标量逆及fderiv采用总化定义；教材质量矩阵可逆、梯度有经典意义的参数域与该总化代数扩展须区分。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              18
+            ],
+            "printed_page": "85",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "verletSymplectic"
+            ],
+            "finding": "∀n、任意固定对角m、任意势U、实h，在U全局C²下，coordinateVerlet的完整kick(h/2)∘drift(h)∘kick(h/2)是C¹且逐点DΦᵀJDΦ=J。不是只验证某个子步。U C²为充分[EXTRA]，各实步长及零维均包括；零质量的总化仍使drift为保辛剪切，不使定理为假。原句借群性说明结论，在本例两个子法确有显式逆；保辛结论不需要一般保辛自映射都全球可逆。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.verletSymplectic",
+        "verdict": "PASS",
+        "explanation": "∀n、任意固定对角m、任意势U、实h，在U全局C²下，coordinateVerlet的完整kick(h/2)∘drift(h)∘kick(h/2)是C¹且逐点DΦᵀJDΦ=J。不是只验证某个子步。U C²为充分[EXTRA]，各实步长及零维均包括；零质量的总化仍使drift为保辛剪切，不使定理为假。原句借群性说明结论，在本例两个子法确有显式逆；保辛结论不需要一般保辛自映射都全球可逆。",
+        "counterexample": null,
+        "suggested_fix": "为U C²加[EXTRA]标记，并注明群性在此用于有实际逆的子步；不把它泛化成任意保辛自映射均全局可逆。"
+      }
+    },
+    {
+      "source_id": "MD-2.4.1-SymmetricComposition",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R4_PAGES.pdf 附件第1页；书面页码85。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.symmetricComposition",
+        "verdict": "PASS",
+        "explanation": "任意类型E及所有实步长的实际可逆映射；伴随为G(-h)的逆，组合为G†(h/2)乘G(h/2)，Perm乘法对应先右后左。结论为整个步族的自伴随等式，半步、次序和负步长均正确。Equiv.Perm为已披露的可逆资格。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

@@ -1,0 +1,244 @@
+[
+  {
+    "source_id": "MD-3-ModifiedConstruction",
+    "diff_summary": "正式库冻结；在本Blueprint同名局部定义中把H、联合G的正则性改为scoped ∞，构造结论Hj也使用∞。主定理改接该本地完整命题，保留Hamilton流辛性合取及∃Hj后∀k量词。未改冻结库，未把解析充分条件当作C∞证明。",
+    "suggested_fix": "只读审校未改 Lean。将 smoothSymplecticData 中 H、G 及 modifiedConstruction_statement 中 Hj 的 ContDiffOn 阶数统一改成指定版本的 scoped ∞，保留完整合取、全部量词与有限匹配结论；另行检查修订后的命题，不以现有 sorry 判失败。",
+    "original_fail": {
+      "lean_decl": "MD.Ch03.modifiedConstruction",
+      "verdict": "FAIL",
+      "explanation": "完整结论是 Hamiltonian 流辛性与修正 Hamiltonian 有限匹配的合取，没有把其中任一结论当作前提。前者量化 n,H,Φ,τ，H 为 C²、Φ 为 C¹，初值恒等且在 Icc 0 τ 满足实际 ODE；τ<0 时结论区间为空，τ=0 时由初值恒等成立。后者量化 n,r,H,D,B,G,Φ；0<r、开放凸 D、紧凸 B⊆D、G₀=id、逐 h 辛、实际流与局部误差均已展开。Hj 是一次选择的整个序列，对所有 k≥r 存在 δ,A,Γ，截断 Hamiltonian 含 r 至 k 次项、轨道留在 D、误差 ≤A h^(k+1)，只断言正小步长的有限截断。问题在于 smoothSymplecticData、Hj 输出采用 ContDiffOn ℝ ⊤，按本任务给出的版本约定是解析资格，不能称作原文的 C∞ 资格；与同批第17条特别修复说明矛盾。局部阶只在 B 上给出，本次不将它擅自提升为 D 上的阶条件。",
+      "counterexample": null,
+      "suggested_fix": "只读审校未改 Lean。将 smoothSymplecticData 中 H、G 及 modifiedConstruction_statement 中 Hj 的 ContDiffOn 阶数统一改成指定版本的 scoped ∞，保留完整合取、全部量词与有限匹配结论；另行检查修订后的命题，不以现有 sorry 判失败。"
+    },
+    "diff_file": "blueprint/closeout24/ch03/ModifiedConstruction.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "c1d0e0b8c11dcd5ca22464f5c51b08455c9352afb6137ef1fa218056a85f41a4",
+    "log_sha256": "0ef55c891f9d2bb181dba9506d9868044b7cf4ee144b6607a3bf6b284c4af222",
+    "local_adjustment_file": "blueprint/closeout24/ch03/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-3.3-DifferenceCommutator",
+    "diff_summary": "保留零至二次结论；补一般非交换代数三次系数及Hamilton算子实例。原JSON恢复印刷p.104/PDF126的三次项和O(h⁴)展示式，已视觉复核原页。一般三次系数尝试有限代数展开证明；Hamilton算子实例尚未证明，最终逐声明状态以本地核验日志为准。",
+    "suggested_fix": "一般版补充 coeff 3 = (1/6:ℝ) • (2•(A*B^2)+2•(A^2*B)−B*A^2−B*A*B−B^2*A−A*B*A)，乘法保持非交换次序。Hamiltonian 版若也要求三次覆盖，则在原 C∞ 前提下对 φ,z 写出同一算子多项式的实例。保留既有零至二次结论；JSON 恢复原页完整差的展示式。",
+    "original_fail": {
+      "lean_decl": "MD.Ch03.differenceCommutator",
+      "verdict": "FAIL",
+      "explanation": "已逐一核对 differenceCommutator、differenceCommutator_coeff2 与 differenceCommutator_hamiltonian。一般代数版包含差的零、一次系数为零及二次系数 (AB−BA)/2；辅助版仅二次系数；Hamiltonian 版在 n 自由度、A,B,φ 全域 C∞ 下对所有 z 给出同样三项，右边是 (L_A L_Bφ−L_B L_Aφ)(z)/2。它们正确覆盖 JSON 当前摘录的 O(h³) 结论。但 [EXTRA] 明确声称还包含三次系数，三份声明均没有该项；原页同一个差的展示式还给出三次项及 O(h⁴)，JSON 将该行省略。不能把二次系数辅助定理当作三次结论。",
+      "counterexample": null,
+      "suggested_fix": "一般版补充 coeff 3 = (1/6:ℝ) • (2•(A*B^2)+2•(A^2*B)−B*A^2−B*A*B−B^2*A−A*B*A)，乘法保持非交换次序。Hamiltonian 版若也要求三次覆盖，则在原 C∞ 前提下对 φ,z 写出同一算子多项式的实例。保留既有零至二次结论；JSON 恢复原页完整差的展示式。"
+    },
+    "diff_file": "blueprint/closeout24/ch03/DifferenceCommutator.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "625511b362dd44e34281f26578d8931070ded13d81c50124581486411c2d052f",
+    "log_sha256": "e648b147bef180eb67ba8616f2e5c66c68f11e2735657feb486b126bfbe7e6d8",
+    "local_adjustment_file": "blueprint/closeout24/ch03/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-3.3.2-Strang",
+    "diff_summary": "formalStrang保留构造；补常项为1、log常项为0及零常项形式指数重建的全阶等式。Z_t明确为log级数去掉一因子X后的移位级数；重建声明尚未证明，不声称真实ODE收敛。",
+    "suggested_fix": "保留formalStrang为辅助定义，另加常项为1、Z=formalLog(formalStrang A B)及零常项形式指数重建该乘积的等式（或等价的全阶系数存在性）；明确Z_t为Z除以形式变量。",
+    "original_fail": {
+      "lean_decl": "MD.Ch03.formalStrang",
+      "verdict": "FAIL",
+      "explanation": "C：formalStrang对任意实代数及A/B定义三次形式指数乘积，1/2只缩放外侧生成元，乘法次序与原文相同，形式变量由PowerSeries携带。但原文陈述同时断言该乘积等于exp(tZ_t)=exp(∑t^j Z_[j])；定义体没有Z_t、任何Z_[j]存在性、formalLog或重建指数的等式。context仅解释左端，不能替代全部结论；本条[EXTRA]也未披露完整性缺口。按完整结论审校为FAIL，不是因为原文数学错误或sorry。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+      "counterexample": null,
+      "suggested_fix": "保留formalStrang为辅助定义，另加常项为1、Z=formalLog(formalStrang A B)及零常项形式指数重建该乘积的等式（或等价的全阶系数存在性）；明确Z_t为Z除以形式变量。"
+    },
+    "diff_file": "blueprint/closeout24/ch03/Strang.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "7e370bf00bb118fb3d1a04298058dcb678934f1264aa6444b25b3b60650651da",
+    "log_sha256": "05bbafa8b15c93403155545844ede8e0f88c7893506cf67578ac34b54a323a8c",
+    "local_adjustment_file": "blueprint/closeout24/ch03/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-3.4-FiniteMatchingConstruction",
+    "diff_summary": "本声明的smoothSymplecticData现解析到MD.Ch03本地C∞定义（在MD-3-ModifiedConstruction同组完整列出）；H、联合G及Hj统一scoped ∞，其它资格和∃Hj后∀k顺序不变。",
+    "suggested_fix": "若意图覆盖原书smooth，须在实际smoothSymplecticData定义的两处⊤均改为scoped ∞并另行核查构造定理；如保留当前签名，则明确仅审为解析充分条件版，不能声称已完成C∞修复。",
+    "original_fail": {
+      "lean_decl": [
+        "MD.Ch03.finiteMatchingConstruction"
+      ],
+      "verdict": "FAIL",
+      "explanation": "结论量词∃同一Hj族，∀k≥r给真实finiteMatching，确实保留构造而未预设匹配；finiteMatching包含γ0=z、真实ODE、留D和统一端点误差。但实际smoothSymplecticData在H及联合G的ContDiffOn位置仍使用裸⊤，与[EXTRA]声称恢复scoped ∞直接矛盾。在任务指定的库语义下这是Cω前提，严格加强原书的smooth，不能标为C∞版本。开放凸D和紧凸B等其余域条件、辛Jacobian及局部阶数与所述充分条件相容。",
+      "counterexample": null,
+      "suggested_fix": "若意图覆盖原书smooth，须在实际smoothSymplecticData定义的两处⊤均改为scoped ∞并另行核查构造定理；如保留当前签名，则明确仅审为解析充分条件版，不能声称已完成C∞修复。"
+    },
+    "diff_file": "blueprint/closeout24/ch03/FiniteMatchingConstruction.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "c7f8e160b3a07ae59844936eec3a6445cdd2f75d76317e6a37e657a42706f332",
+    "log_sha256": "c57bc9bbd4d8e60a1108060d24b541fa639c9451247bad7f579f2b650e0931d5",
+    "local_adjustment_file": "blueprint/closeout24/ch03/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-3.4-ArbitraryFiniteTruncation",
+    "diff_summary": "本声明的smoothSymplecticData现解析到MD.Ch03本地C∞定义（在MD-3-ModifiedConstruction同组完整列出）；H、联合G及Hj统一scoped ∞，其它资格和∃Hj后∀k顺序不变。",
+    "suggested_fix": "在后续获准修改工程时，把smoothSymplecticData中H及联合G两处正则性改为scoped ∞，保持其它条件及∃Hj后∀k的量词次序；随后单独检查。此次不修改工程。",
+    "original_fail": {
+      "lean_decl": "MD.Ch03.arbitraryFiniteTruncation",
+      "verdict": "FAIL",
+      "explanation": "n,r,H,D,B,G,Φ的对象及Hamiltonian向量场、辛Jacobian、真实局部流、紧集、凸域和局部阶均已展开核对。结论先选统一的Hj序列，再对所有k≥r给出finiteMatching；δ、A和Γ位于每个finiteMatching的存在量词内，允许依赖k，且保留全z∈B及0<h<δ的实际截断流和端点误差。问题在于smoothSymplecticData仍有两处ContDiffOn ℝ ⊤：H和联合映射(h,z)↦G h z。按指定Mathlib含义这是Cω，而结论Hj的∞才是C∞；[EXTRA]称前提和输出均已恢复∞与本次实际摘录不符。当前声明至多覆盖解析输入的子情形，未忠实覆盖原句任意C∞输入。FAIL来自前提范围及修复标注不符，非sorry，也不表示解析子情形已被反驳。",
+      "counterexample": null,
+      "suggested_fix": "在后续获准修改工程时，把smoothSymplecticData中H及联合G两处正则性改为scoped ∞，保持其它条件及∃Hj后∀k的量词次序；随后单独检查。此次不修改工程。"
+    },
+    "diff_file": "blueprint/closeout24/ch03/ArbitraryFiniteTruncation.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "b99c13213509382bfbe468f6ac5a79fc1ca54ecb42d09227e32af946b5e3962a",
+    "log_sha256": "cb34dc4bbeca2872db5bd23cbdc82fe8a38e9bb235bcab8eba7678d40cc66306",
+    "local_adjustment_file": "blueprint/closeout24/ch03/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-3.4-ScalarVerletShadow4",
+    "diff_summary": "【原书疑误】保留印刷有限式及原匹配断言（另名Printed，不证明）；独立精确有理数jet核对kick-drift-kick后，修正版h⁴四项系数为−1/720,+1/120,+1/60,−1/240，分别乘p⁴U⁗、p²U′U‴、p²(U″)²、(U′)²U″。SymPy验到h⁶；统一实际流O(h⁷)估计仍未证明，交导师核查。",
+    "suggested_fix": "保留scalarVerletShadow4作为印刷字面有限式并标记原书疑误；另设明确命名的corrected版本，先独立核对完整h⁴系数，再给实际流匹配。谐振子特例至少要求h⁴的p²系数为+1/60，原印为−1/60；本审校不据此擅改一般势的全部系数。",
+    "original_fail": {
+      "lean_decl": "MD.Ch03.scalarVerletShadow4",
+      "verdict": "FAIL",
+      "explanation": "两个声明均已审校。scalarVerletShadow4取z=(q,p)，所定义有限h⁴多项式在标量化后忠实于原印，不能因定义中没有O项而当作余项已证。新增scalarVerletShadow4_matching确实量化任意C∞势、紧B和统一正C、δ，给出从z出发的真实Hamiltonian局部流及velocity Verlet的O(h⁷)端点匹配。C∞的∞编码在本条实际正确；但这个新增结论本身为假：U(q)=q²/2时，印刷多项式产生的q端点与Verlet已有非零h⁵差项，故不能有O(h⁷)界。FAIL针对新增matching的数学结论；忠实的印刷有限式本身应保留，并把原书系数问题转人工，不能通过补sorry解决。",
+      "counterexample": "令U(q)=q²/2，B={(0,1)}，均满足光滑性和紧性。有限式K_h=(1/2+h²/12−h⁴/60)p²+(1/2−h²/24−h⁴/240)q²。置a=1+h²/6−h⁴/30，b=1−h²/12−h⁴/120，其向量场为(q̇,ṗ)=(ap,−bq)。从(0,1)出发的唯一流在时刻h有q(h)=a·sin(h√(ab))/√(ab)=h−h⁵/15+O(h⁷)。该展开在足够小h处由解析闭式给出；h⁵系数为−1/30−(1/4)/6+1/120=−1/15。velocity Verlet的Q=h，故|Q−q(h)|/h⁷~1/(15h²)→∞。任何满足solution及初值的Γ在正时间区间都由线性ODE唯一性等于该流，不能另选Γ绕开反例。",
+      "suggested_fix": "保留scalarVerletShadow4作为印刷字面有限式并标记原书疑误；另设明确命名的corrected版本，先独立核对完整h⁴系数，再给实际流匹配。谐振子特例至少要求h⁴的p²系数为+1/60，原印为−1/60；本审校不据此擅改一般势的全部系数。"
+    },
+    "diff_file": "blueprint/closeout24/ch03/ScalarVerletShadow4.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "8021d71672982d9d64be82ed0d2f9bc90d7d2bf36dd919d48c66ef7f10659689",
+    "log_sha256": "b70d2453b71e28ed487295834819769be4c8edfc2b50c4ba817fc067df03bb99",
+    "local_adjustment_file": "blueprint/closeout24/ch03/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-3.7-HardCoreDomain",
+    "diff_summary": "hardCoreDomain保留任意实半径的代数集合辅助；新增非负半径物理包装、接触面（至少一对取等号）及H=K+U的明确对象。域不自动保证动力学存在。",
+    "suggested_fix": "另行补充或明确映射H=K+U与{q∈hardCoreDomain σ | ∃ i≠j, ‖q i−q j‖=σ i+σ j}；本次只记录，不改工程。",
+    "original_fail": {
+      "lean_decl": "MD.Ch03.hardCoreDomain",
+      "verdict": "FAIL",
+      "explanation": "hardCoreDomain本身正确表达N个d维欧氏位置的闭非重叠区域：对所有不同粒子i,j，距离≥半径和，接触等号允许。i≠j来自物理语境而非原文显式，context已如实披露。任意实σ的集合定义有意义；物理半径非负未编码，应明确限定其物理解释。按本条现有完整statement_scope，所引Hamiltonian H=K+U以及“某一粒子对取等号”的接触面均未在唯一Lean声明中表达；不能把域定义称为所引全部内容的完整对应。",
+      "counterexample": null,
+      "suggested_fix": "另行补充或明确映射H=K+U与{q∈hardCoreDomain σ | ∃ i≠j, ‖q i−q j‖=σ i+σ j}；本次只记录，不改工程。"
+    },
+    "diff_file": "blueprint/closeout24/ch03/HardCoreDomain.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "0e65132982bf429d0437aab0741c6ddac0c9c62c3ce7e2fd39500e3d70a777d8",
+    "log_sha256": "39e5410a195385e6157e4619b8d03b261b5a53b1e560d8a666ec2cff4d6b15cd",
+    "local_adjustment_file": "blueprint/closeout24/ch03/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-3.7-CollisionComposition",
+    "diff_summary": "列表现在按自然时间顺序[Δτ₀,…,Δτᵣ]存储，递归先执行首段、再碰撞、再余段；二段桥接展开递归核对为G t₁∘Rc∘G t₀。此为形式组合器，非负时长、总时长及G/Rc来自实际Hamilton碰撞的资格不由任意函数定义推出。",
+    "suggested_fix": "工程后续可改为按自然时间顺序递归；或明确要求逆序列表并给出与原公式的桥接声明。",
+    "original_fail": {
+      "lean_decl": "MD.Ch03.collisionComposition",
+      "verdict": "FAIL",
+      "explanation": "递归定义对任意E、G、Rc及有限实列表存在意义，空表为id、单元素为单个流。对[t0,t1]展开为G t0∘Rc∘G t1；因此它只有在列表按[Δτr,…,Δτ0]逆时间存储时才与原公式相符。当前JSON和签名均没有给出这一关键映射；按原文从首段到末段的自然列表[Δτ0,…,Δτr]理解，得到反向时间次序。[EXTRA]为空，context仅说右到左不能确定列表含义。也未编码事件时长非负、总和τ、G为H流或Rc为实际碰撞；可作形式组合器，不是实际流存在定理。",
+      "counterexample": "取E=ℝ、G(t)(x)=x+t、Rc(x)=−x，Δτ0=1、Δτ1=2、x=0。原文G2∘Rc∘G1得1，当前定义传[1,2]得−1。",
+      "suggested_fix": "工程后续可改为按自然时间顺序递归；或明确要求逆序列表并给出与原公式的桥接声明。"
+    },
+    "diff_file": "blueprint/closeout24/ch03/CollisionComposition.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "dfb8e8467de4c303dfed71d756d2ab51fda527c395c9d14fe58d2792e41cb7a1",
+    "log_sha256": "02cad59b3eb5b58c4141780fa71e6cc0fd20ec1f35ba9b8302b5cb8a71199219",
+    "local_adjustment_file": "blueprint/closeout24/ch03/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-3.7-CollisionRegularity",
+    "diff_summary": "仅将各内段结论ContDiffAt ℝ ⊤改为scoped ∞，与C∞力前提一致；全部有限事件、横截、拼接及左右极限条件不变。",
+    "suggested_fix": "将内段结论ContDiffAt ℝ ⊤改为ContDiffAt ℝ ∞；本次不修改工程。",
+    "original_fail": {
+      "lean_decl": "MD.Ch03.collisionRegularity",
+      "verdict": "FAIL",
+      "explanation": "量词覆盖所有n、正质量m、C∞力F、C¹接触函数g、有限ν碰撞及ν+1个ODE段。拼接条件给严格递增事件、各闭段ODE、接触位置相等和质量加权法向反射；非零法向/严格入射保证非零动量跳跃；合法域g≥0是物理资格。gluedCollision选择已开始的最大段，足以表达右连续拼接、位置连续和左右动量极限。然而内段结论仍写ContDiffAt ℝ ⊤，按本任务指定的现代光滑阶语义它要求实解析，而前提F仅∞光滑，不能推出解析。[EXTRA]声称前提及输出均恢复∞，与实际输出不符。有限事件、横截等都是明确加强，未伪装成从原文无条件推出。",
+      "counterexample": "取ν=0以消去所有碰撞条件，n=1、m=1、g≡1。令F(q)=0(q≤0)，F(q)=exp(−1/q²)(q>0)，这是C∞非解析力。取一条在区间内点t0穿过q=0且p(t0)=1的机械ODE解；若(q,p)在t0解析，则q局部有解析逆且F(q(t))=p′(t)，将推出F在0解析，矛盾。该解满足全部无碰撞前提。",
+      "suggested_fix": "将内段结论ContDiffAt ℝ ⊤改为ContDiffAt ℝ ∞；本次不修改工程。"
+    },
+    "diff_file": "blueprint/closeout24/ch03/CollisionRegularity.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "a54c8a262a2dbe74fa4cd218ce9663b44fbb9fcfe30613d6d65ac00f98b343b7",
+    "log_sha256": "e6fb2eef7c5ca0d0388bd65814c010fe99c72bb3fa47da86e4b7161dbffb6cca",
+    "local_adjustment_file": "blueprint/closeout24/ch03/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-3.7.3-ModifiedCollisionProjection",
+    "diff_summary": "[EXTRA] 通用有限截断Hamiltonian等值辅助关系；不覆盖原段Verlet专属修正系数、投影存在唯一、变步长共同修正能量或统计精度。 未覆盖内容已列coverage_gaps；原引文保留。",
+    "suggested_fix": "后续增加或明确映射Verlet修正系数资格及截断级数对象；或正式将该source映射范围限制为通用等值辅助关系，不宣称覆盖原段全部内容。",
+    "original_fail": {
+      "lean_decl": "MD.Ch03.modifiedCollisionProjection",
+      "verdict": "FAIL",
+      "explanation": "modifiedCollisionProjection对任意相空间维数、任意H/Hj、任意自然r,k、实h和两状态，仅定义H(w)+∑j∈[r,k]h^jHj(w)=同一表达式在z的值。等值关系本身正确，并不保证投影存在唯一，context对此已披露；但Hj与Verlet没有任何资格绑定，r,k也不指定四阶/六阶或Verlet偶次修正，因而不能表达所引“Verlet对应的修正Hamiltonian”的完整结论。当前statement_scope仍泛指整段，[EXTRA]为空，遗漏的是核心对象资格，不是要求补证明。即便关系成立也不能推出整个变步长轨道有一个共同修正能量，更不能推出BEA/统计精度。",
+      "counterexample": "取任意H且Hj≡0，则关系退化为H(w)=H(z)，与Verlet修正系数无关；取H≡0且Hj≡0更使所有z,w均满足。",
+      "suggested_fix": "后续增加或明确映射Verlet修正系数资格及截断级数对象；或正式将该source映射范围限制为通用等值辅助关系，不宣称覆盖原段全部内容。"
+    },
+    "diff_file": "blueprint/closeout24/ch03/ModifiedCollisionProjection.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch03.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "3ebbab496f8efcc38ead0aabcd9cc932a4c5b01563b25ec4951b05e3b700e632",
+    "log_sha256": "b116b1876ab0d799424d5bacaa5b4c53c0e8756bb67476ca7db53c1127f7c260",
+    "local_adjustment_file": "blueprint/closeout24/ch03/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  }
+]

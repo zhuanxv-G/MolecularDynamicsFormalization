@@ -1,0 +1,610 @@
+{
+  "batch": "EAUDIT49",
+  "input_sha256": {
+    "BATCH_EAUDIT49.md": "c89920ea228cd66a32ba1177ce9c66d409517eb356efc976392ee2108ec89e7d",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.3.1-TestSpace",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_SCHWARTZ_OPTION",
+          "INCOMPLETE_STATEMENT_COVERAGE",
+          "CONTEXT_COVERAGE_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-TestSpace",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "188",
+          "pdf_page": "209",
+          "statement_latex": "The functions on which the generalized function acts are called test functions. Some choices for the space of test functions $\\mathcal T^m$ defined on $\\mathbb R^m$ include: the $C^\\infty$ functions with compact support in $\\mathbb R^m$, denoted $C_0^\\infty(\\mathbb R^m)$; the space $\\mathcal S(\\mathbb R^m)$ of $C^\\infty$ functions on $\\mathbb R^m$ whose derivatives decay rapidly at infinity (the so-called Schwarz space).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原书给出C∞紧支持和Schwarz空间两个选项；当前本source_id仅实现C∞紧支持子类型，第二选项尚未在所给声明中覆盖。"
+          ],
+          "issues": [
+            "原文两个测试空间选项中仅编码C∞紧支持；context_notation关于“两选项都保留”的断言与本条全部声明不符。"
+          ],
+          "lean_decl": "MD.Ch05.testSpace",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 将Cω误编码改为原书C∞（scoped ∞）；只改Blueprint实际测试空间，正式库冻结。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:57:24.308932",
+              "before_sha256": "3025fabb512c2d3501e542f4dab5dc643d4df7e51433dfc9956f8cfeeaef6692",
+              "after_sha256": "cb27a1acc178e78b65d3c98d2041b444a26dd3bf734f5f5c3d683684ad39cf15",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "原文两个测试空间选项中仅编码C∞紧支持；context_notation关于“两选项都保留”的断言与本条全部声明不符。"
+        ],
+        "evidence": {
+          "source": "R2_PAGES.pdf",
+          "attachment_pages": "15",
+          "printed_page": "188",
+          "pdf_page": "209",
+          "A_text_check": "原页两个项目分别为C∞紧支持和Schwarz空间，JSON正文两项均忠实；Schwarz拼写为原书原样，未擅改。",
+          "C_scope": "只读检查任务文件所列全部声明与项目定义；标准库定义按标准数学意义采信；没有编译、修改工程或补证明，sorry不作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.testSpace"
+        ],
+        "verdict": "FAIL",
+        "explanation": "当前仅有testSpace n这一声明：实n维欧氏空间上的实值函数子类型，ContDiff ℝ ∞与HasCompactSupport正确编码第一选项C∞紧支持，未误用Cω。但原文及本条statement_scope还完整列出第二选项S(R^m)，且context_notation声称两个选项都保留。所给本source_id全部声明与依赖里没有SchwartzMap/Schwartz空间选项、二选一接口或对应映射；不能因其他条目6引用过schwartzSpace就认定本条已经覆盖第二选项。因此完整覆盖FAIL；第一选项自身PASS。",
+        "counterexample": "覆盖缺项，无需以数学反例反驳现有条件命题/定义；现有部分自身正确。",
+        "suggested_fix": "保持现有C∞紧支持定义，并为本source_id增加第二个SchwartzMap (E n) ℝ选项的实际声明/明确映射；相应更新context_notation。审校不修改工程。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-RegularDistribution",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-RegularDistribution",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "188–189",
+          "pdf_page": "209–210",
+          "statement_latex": "If $f$ is a bounded, smooth function on $\\mathbb R^m$, we may define a generalized function $T_f$ by reference to its action on a test function $\\phi\\in\\mathcal T$ via integration:\n\\[T_f(\\phi)=\\int_{\\mathbb R^m}f(z)\\phi(z)d\\omega.\\]\nThis is very like the $L^2$ inner product, but the functions involved do not both need to lie in $L^2$. Nevertheless, we write $T_f(\\phi)=\\langle f,\\phi\\rangle$, as a helpful shorthand.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际Lebesgue积分配对；线性泛函性质及有界光滑f下可积性须另证，定义编译未代替这一结论。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.regularDistribution",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:57:24.308932",
+              "before_sha256": "bb7ea56efbc4935d1abc093fefcd4deaca0cb80b6f15e3d26f260d1e0a727124",
+              "after_sha256": "88277dc08a9391e5dac116d37607ba2360a18adfe1f373951961f0aff0047a72",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:28:28.864805",
+              "before_sha256": "88277dc08a9391e5dac116d37607ba2360a18adfe1f373951961f0aff0047a72",
+              "after_sha256": "f7b0cfb3ad64acdece66dd78027da14648aa1e7eba0899bea60c2ee5fb06a1bf",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "188",
+                  "after": "188–189"
+                },
+                "pdf_page": {
+                  "before": "209",
+                  "after": "209–210"
+                }
+              },
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件1页末的有界光滑 f、测试函数 φ、全空间积分及 L² 对比，与附件2页首的 “as a helpful shorthand.” 连续相接；188–189／209–210 的跨页登记正确。只规范化 LaTeX 排版，不改变原句。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            1,
+            2
+          ],
+          "original_pdf_pages": [
+            209,
+            210
+          ],
+          "printed_pages": "188–189",
+          "rendered_pages": [
+            {
+              "attachment_page": 1,
+              "visually_inspected_identical_representative": 1,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_01.png",
+              "rendered_sha256": "00bb2fd964096c786bc5fe03b38f38cc5aff8d03987edd1a27ae603453c58177"
+            },
+            {
+              "attachment_page": 2,
+              "visually_inspected_identical_representative": 2,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_02.png",
+              "rendered_sha256": "72c3b94bf6b9304791a1dade0eba21ccf38987852ab078fc8aadc4504ae6b502"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MolecularDynamics.Chapter05Review.schwartzSpace",
+            "MD.Ch05.regularDistribution"
+          ],
+          "C_EXTRA_check": "没有额外定理前提；选择原页允许的 Schwartz 测试空间。任意 f 的总化定义不等于任意 f 的分布资格。",
+          "declarations_in_current_item": [
+            "regularDistribution"
+          ],
+          "current_item_lean_excerpt_sha256": "5bbb267bd2d3c84f528863e5070534c758dd2fcff77c6e7daaefbe10fb557067",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.regularDistribution",
+        "verdict": "PASS",
+        "explanation": "E n 是实 n 维欧氏空间，schwartzSpace n 是实值 SchwartzMap。声明对任意 n、任意实函数 f 及 Schwartz 测试函数 φ 定义体积积分 ∫ fφ，积分域和被积式正确。它把原书的有界光滑 f 定义式延伸到更大的函数类型；总化积分在这一定义中不声称任意 f 都产生线性分布。在原书有界 C∞ 范围，可积性和完整实线性由本批条目2的 regularDistributionLinearity 承担；本定义无需把这些结论充当参数。原页明列 Schwartz 为一种可选测试空间，因此所选测试域忠实。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-RegularDistributionLinearity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-RegularDistributionLinearity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "188",
+          "pdf_page": "209",
+          "statement_latex": "If $f$ is a bounded, smooth function on $\\mathbb R^m$, we may define a generalized function $T_f$ by reference to its action on a test function $\\phi\\in\\mathcal T$ via integration: $T_f(\\phi)=\\int_{\\mathbb R^m}f(z)\\phi(z)d\\omega$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.regularDistributionLinearity",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原有界光滑f及明确选择的Schwartz测试空间；可积与完整线性两个结论都保留，不把可积作结论假设。",
+            "[EXTRA] 将不必要的实解析限制恢复为原书C∞，保留有界性、Schwartz选择及原可积/线性结论；已有证明随本批编译复查。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:57:24.308932",
+              "before_sha256": "0fd41af0f8f39405a594fdc30a02bf80cc5e31a3a47060861838d7ff2d795f5f",
+              "after_sha256": "c441d60331f1c7260438916f13f224529e97bdee2c02776f960916ca252b14a3",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH10_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件3页 “If f is a bounded, smooth function ... via integration” 及其展示积分逐句吻合；PDF209／印刷188正确。原页还将 generalized function 定义为实线性泛函，故本条的线性资格有来源。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            3
+          ],
+          "original_pdf_pages": [
+            209
+          ],
+          "printed_pages": "188",
+          "rendered_pages": [
+            {
+              "attachment_page": 3,
+              "visually_inspected_identical_representative": 1,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_03.png",
+              "rendered_sha256": "00bb2fd964096c786bc5fe03b38f38cc5aff8d03987edd1a27ae603453c58177"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MolecularDynamics.Chapter05Review.schwartzSpace",
+            "MolecularDynamics.Chapter05Review.regularDistribution",
+            "MD.Ch05.regularDistribution"
+          ],
+          "C_EXTRA_check": "[EXTRA] 所述有界 C∞、Schwartz 选择及两个完整结论均实际存在；没有额外的解析性限制。",
+          "declarations_in_current_item": [
+            "regularDistributionLinearity"
+          ],
+          "current_item_lean_excerpt_sha256": "e18b916917c83b1f545fbfe865d0327fac73fe780651728cea4cd640a95c9eee",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.regularDistributionLinearity",
+        "verdict": "PASS",
+        "explanation": "全部量词为 ∀ n、∀ f，随后要求 ContDiff ℝ ∞ f 和一个对所有 z 通用的实上界 C。∞ 是 C∞，不是实解析。结论保留两个部分：每个 Schwartz φ 的 fφ 体积可积，以及对任意 φ、ψ 和任意实标量 a、b 的完整线性等式。regularDistribution 的依赖是真实积分；没有将可积性或线性改放进假设。有界光滑是原书条件，Schwartz 是书中明列的测试选择；[EXTRA] 的实质与签名一致。审校不将已有证明文本当作本次编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-GaussianDelta",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-GaussianDelta",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "189",
+          "pdf_page": "210",
+          "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\varepsilon\\pi}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Gaussian替代族的真实函数，ε>0下有概率解释；其支撑是整个ℝ，未声称它满足上一条紧支撑收缩条件。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.gaussianDelta",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:57:24.308932",
+              "before_sha256": "e1421336f82a2c6bba8b950588d14e2f98ca018fbac418da9bee6c6cec1eae16",
+              "after_sha256": "af7ae2daf1cae4f65bd826ade53e31b14041698bba82d454572c3ab11dbbd720",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件4页确为 “Alternatively ... a sequence of smooth functions ... in one dimension” 及 dε = exp(−z²/(2ε))/√(2επ)。分母、负号、平方和一维限定均吻合。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            4
+          ],
+          "original_pdf_pages": [
+            210
+          ],
+          "printed_pages": "189",
+          "rendered_pages": [
+            {
+              "attachment_page": 4,
+              "visually_inspected_identical_representative": 2,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_04.png",
+              "rendered_sha256": "72c3b94bf6b9304791a1dade0eba21ccf38987852ab078fc8aadc4504ae6b502"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MD.Ch05.gaussianDelta"
+          ],
+          "C_EXTRA_check": "无新增假设；概率语义中的 ε>0 与裸函数定义分开。",
+          "declarations_in_current_item": [
+            "gaussianDelta"
+          ],
+          "current_item_lean_excerpt_sha256": "5768edbdea5cd2b3e9a59210edec0e33d7784f2ef10ea6ece2f3f1057973dffc",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.gaussianDelta",
+        "verdict": "PASS",
+        "explanation": "参数 ε、z 均为实数，Real.exp (−z²/(2ε))/Real.sqrt (2*pi*ε) 与原式仅相差乘法因子次序。作为函数的总化定义允许所有 ε；其概率或逼近单位元含义只在 ε>0 下使用，已由 context_notation 说明，并由条目5、6分别审校。高斯对 ε>0 的支撑是全实线；原页用 Alternatively 引入另一种近似族，并未把紧支撑收缩作为本定义的条件。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-DiracEvaluates",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-DiracEvaluates",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "189",
+          "pdf_page": "210",
+          "statement_latex": "$\\langle\\delta,\\phi\\rangle=\\int\\delta(z)\\phi(z)d\\omega=\\phi(0)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "形式积分以真实Dirac测度实现；不是给δ(z)定义普通Lebesgue函数。",
+            "φ∈𝒯；上文 PDF209／印刷188页列出可选测试空间 C_c^∞(ℝ^m) 与 Schwartz 空间 𝒮(ℝ^m)，此条 Lean 选择后者；dω 为欧氏空间体积积分记号，δ 处的积分为分布配对的形式写法。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.diracEvaluates",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:57:24.308932",
+              "before_sha256": "945575ce2975c939b7e9dc22b07ec1ab27dd38dcb3889a06cdbe5c6f0f918d95",
+              "after_sha256": "c86ee6d608307f67672c2c2101cedf87805f08994f00aeaae54a435af11719e2",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件5页展示式确为 ⟨δ,φ⟩ = ∫δ(z)φ(z)dω = φ(0)；前一句明示 δ[φ]=φ(0)。PDF210／印刷189正确。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            5
+          ],
+          "original_pdf_pages": [
+            210
+          ],
+          "printed_pages": "189",
+          "rendered_pages": [
+            {
+              "attachment_page": 5,
+              "visually_inspected_identical_representative": 2,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_05.png",
+              "rendered_sha256": "72c3b94bf6b9304791a1dade0eba21ccf38987852ab078fc8aadc4504ae6b502"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MolecularDynamics.Chapter05Review.schwartzSpace",
+            "MolecularDynamics.Chapter05Review.diracMeasure",
+            "MolecularDynamics.Chapter05Review.diracAction"
+          ],
+          "C_EXTRA_check": "无新增数学前提；分布形式积分的测度实现和 Schwartz 选择已经明确登记。",
+          "declarations_in_current_item": [
+            "diracEvaluates"
+          ],
+          "current_item_lean_excerpt_sha256": "262bd26f36c03394c48deef26958587f1472ce992b1c2bf2cc99686d36e1302f",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.diracEvaluates",
+        "verdict": "PASS",
+        "explanation": "∀ n 和 ∀ 实值 Schwartz φ 的量化完整。diracMeasure n 展开为 E n 上的 Measure.dirac 0，diracAction φ 展开为 φ 0，故结论是真实 Dirac 测度积分等于在原点取值。δ 处的书面形式积分被正确解释为测度／分布配对，没有把 δ 换成普通 Lebesgue 密度。Schwartz 是前页给出的可选测试空间；无附加可积性假设，也没有漏掉右端的取值结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-GaussianDeltaProbability",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-GaussianDeltaProbability",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "189",
+          "pdf_page": "210",
+          "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\varepsilon\\pi}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.gaussianDeltaProbability",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]ε>0，完整真实概率密度资格另列；定义没有替代归一化证明。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:57:24.308932",
+              "before_sha256": "f442228c15bccaa64f44fad09ef947e9b256c2786bc39f09306fe9c2b878c131",
+              "after_sha256": "415fc0540e926753a920692744d5acc2edfadaef92aa4f4ed01a23e6b3b7b3eb",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件6页的 Gaussian 原句及公式与条目3的原式相同；此前一段登记近似族积分为1的动机。此 JSON 没有把本条新增的概率资格定理伪装成原页另一个展示式。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            6
+          ],
+          "original_pdf_pages": [
+            210
+          ],
+          "printed_pages": "189",
+          "rendered_pages": [
+            {
+              "attachment_page": 6,
+              "visually_inspected_identical_representative": 2,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_06.png",
+              "rendered_sha256": "72c3b94bf6b9304791a1dade0eba21ccf38987852ab078fc8aadc4504ae6b502"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.gaussianDelta",
+            "MD.Ch05.gaussianDelta"
+          ],
+          "C_EXTRA_check": "[EXTRA] ε>0 实际写入签名；可积及归一化保留为结论。",
+          "declarations_in_current_item": [
+            "gaussianDeltaProbability"
+          ],
+          "current_item_lean_excerpt_sha256": "7d354fe6efad7961f35b2cb914918ab74d0d4a610ebb545a02b0a4b2f7bd8bb9",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.gaussianDeltaProbability",
+        "verdict": "PASS",
+        "explanation": "声明对每个实 ε，在 0<ε 的明确条件下，同时断言对所有实 x 的非负性、相对于实线 Lebesgue 体积的可积性以及完整全空间积分等于1。依赖 gaussianDelta 的指数为 −x²/(2ε)，归一化为 √(2πε)；这是真实的方差 ε 高斯密度。三个概率密度资格都在结论里，未由总化定义或预设积分等于1替代。[EXTRA] 的正参数条件必要且合理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.1-GaussianDeltaWeak",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.1-GaussianDeltaWeak",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.1",
+          "printed_page": "189",
+          "pdf_page": "210",
+          "statement_latex": "Alternatively, one may use a sequence of smooth functions $\\{d_\\varepsilon\\}$, such as, in one dimension,\n\\[d_\\varepsilon=\\frac1{\\sqrt{2\\varepsilon\\pi}}\\exp\\left(-\\frac{z^2}{2\\varepsilon}\\right).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.gaussianDeltaWeak",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明确选择有界连续测试函数的实际概率弱极限；原“suitable test”以此资格实现，Schwartz测试也适用。全空间Gaussian没有收缩support，不用上一条support假设套用。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:57:24.308932",
+              "before_sha256": "a3cf004e1b687c4d119ea4126608b44d3287c3adeee46aa24428dd02f20e5427",
+              "after_sha256": "853ac0244308e9f43f40535c31e81e52128406ca8dd6bbf28d6fef5a720c57b5",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH11_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件7页 Gaussian 原句、系数、指数和变量均吻合。原页紧邻文字说 delta 的作用可视为 dε 作用的极限；当前 weak 定理是在该语境下另行明确测试资格。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            7
+          ],
+          "original_pdf_pages": [
+            210
+          ],
+          "printed_pages": "189",
+          "rendered_pages": [
+            {
+              "attachment_page": 7,
+              "visually_inspected_identical_representative": 2,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_07.png",
+              "rendered_sha256": "72c3b94bf6b9304791a1dade0eba21ccf38987852ab078fc8aadc4504ae6b502"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.gaussianDelta",
+            "MD.Ch05.gaussianDelta"
+          ],
+          "C_EXTRA_check": "[EXTRA] 明示有界连续测试资格；这是正确的概率弱收敛版本，适用于原书两类测试函数。",
+          "declarations_in_current_item": [
+            "gaussianDeltaWeak"
+          ],
+          "current_item_lean_excerpt_sha256": "a3f4e4809f0c688affb8ce61c5c8412e49a57fc4aaec3cf16122d15a11ad3e95",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.gaussianDeltaWeak",
+        "verdict": "PASS",
+        "explanation": "量化所有 φ:ℝ→ℝ，要求 Continuous φ 及 Bornology.IsBounded (range φ)，即有界连续测试函数。对真实配对 ∫φ(x)dε(x) 的结论使用 𝓝[>]0，正确表示 ε 从正侧趋于0，目标是 φ 0。它覆盖书中 Schwartz 和光滑紧支撑测试函数，并合理推广到有界连续测试；没有错误地要求高斯支撑收缩。正侧滤子、全实线积分、乘法配对及极限值均完整；[EXTRA] 没有把所求极限作为假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

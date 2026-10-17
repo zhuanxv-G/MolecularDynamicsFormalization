@@ -1,0 +1,297 @@
+{
+  "batch": "EAUDIT85",
+  "input_sha256": {
+    "BATCH_EAUDIT85.md": "4798e1aa76de22198f77e4a67a42f05c566dd179bb6f18d8cb2f80cdd746f92f",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.5-ChainRule",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "REGULARITY_METADATA_MISMATCH",
+          "OMITTED_EVALUATION_POINT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.5-ChainRule",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.5",
+          "printed_page": "79",
+          "pdf_page": "101",
+          "statement_latex": "Let $\\Phi_1$ and $\\Phi_2$ be any pair of symplectic maps. Then\n\\[(\\Phi_1\\circ\\Phi_2)'=\\Phi_1'\\Phi_2',\\]\nby the chain rule,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\Phi_1,\\Phi_2$ 是辛映射；撇号表示映射的 Jacobian。原书省略导数取值点；外导数取值于 $\\Phi_2(z)$ 是链式法则的解释，并非原文新增公式。",
+            "辛映射在 PDF 第100页（印刷78页）定义为保持辛2形式的映射，坐标条件为 $\\Phi^{\\prime T}J\\Phi^\\prime=J$（2.17）。"
+          ],
+          "issues": [
+            {
+              "code": "OMITTED_EVALUATION_POINT",
+              "status": "NEEDS_HUMAN",
+              "detail": "原文Φ₁′Φ₂′未写外导数的Φ₂(z)取值点；Lean用正确链式法则，需审校确认简写约定。"
+            },
+            {
+              "code": "REGULARITY_METADATA_MISMATCH",
+              "status": "CORRECTED",
+              "fields": [
+                "extra_assumptions"
+              ],
+              "detail": "extra_assumptions所称在相应点可微不是当前全局Differentiable签名；修正并说明去掉辛前提的有效推广。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.chainRule",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookJacobian_comp"
+          ],
+          "extra_assumptions": [
+            "Lean对两个实际映射假设全局Differentiable ℝ，而非仅相应点可微；不要求辛性，是对原文的有效推广。外导数明确在Ψ(z)评价；原文省略评价点的展示式保持原样，交人工确认简写约定。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT11_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:14:51.635235",
+              "before_sha256": "8dab3a87da555b06f844450e241cc54e9900294d98e6c0d6393f7c978515308e",
+              "after_sha256": "26e925f9d79d14410318037ae137589ef81dd8f75855c0208d1acb5f1872cc03",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH18_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "REGULARITY_METADATA_MISMATCH",
+            "status": "CORRECTED",
+            "fields": [
+              "extra_assumptions"
+            ],
+            "detail": "extra_assumptions所称在相应点可微不是当前全局Differentiable签名；修正并说明去掉辛前提的有效推广。"
+          },
+          {
+            "code": "OMITTED_EVALUATION_POINT",
+            "status": "NEEDS_HUMAN",
+            "fields": [
+              "issues",
+              "context_notation"
+            ],
+            "detail": "保留原JSON已有NEEDS_HUMAN：原文没有显写外导数在Φ₂(z)评价。Lean正确，但原文简写约定仍交人工确认。"
+          }
+        ],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              22
+            ],
+            "printed_page": "79",
+            "original_pdf_page": "101",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "原页22（印刷79页）两辛映射、链式展示式和by the chain rule,逐字一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.chainRule"
+            ],
+            "finding": "原页22（印刷79页）两辛映射、链式展示式和by the chain rule,逐字一致。Lean对任意两个全局可微实际映射Φ,Ψ及每个z，明确给Jacobian(Φ∘Ψ)(z)=Jacobian Φ(Ψ(z))·Jacobian Ψ(z)，矩阵乘法顺序正确。辛性对链式法则不必要，去掉该前提是有效推广；hΦ,hΨ是全局可微而不是extra说明中的仅在相应点可微。原文外导数评价点省略的NEEDS_HUMAN问题已存在，本次保留：按标准简写约定可解释正确，若按同一z字面解释则不正确，需人工确认原文约定；不改动原文展示式。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.chainRule"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "原页22（印刷79页）两辛映射、链式展示式和by the chain rule,逐字一致。Lean对任意两个全局可微实际映射Φ,Ψ及每个z，明确给Jacobian(Φ∘Ψ)(z)=Jacobian Φ(Ψ(z))·Jacobian Ψ(z)，矩阵乘法顺序正确。辛性对链式法则不必要，去掉该前提是有效推广；hΦ,hΨ是全局可微而不是extra说明中的仅在相应点可微。原文外导数评价点省略的NEEDS_HUMAN问题已存在，本次保留：按标准简写约定可解释正确，若按同一z字面解释则不正确，需人工确认原文约定；不改动原文展示式。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": "说明为何必须确认评价点而非两处均取同一z：令Φ(q,p)=(q,p+q²)，Ψ(q,p)=(q+1,p)，二者均辛。在z=(0,0)，D(Φ∘Ψ)(z)=[[1,0],[2,1]]，而DΦ(z)DΨ(z)=I。正确的DΦ(Ψ(z))DΨ(z)与Lean一致。",
+        "suggested_fix": "人工确认教材撇号乘积采用链式法则的通常基点约定。保留原文简写，在注释或独立勘误中显写D(Φ₁∘Φ₂)(z)=DΦ₁(Φ₂(z))DΦ₂(z)；当前Lean无须修改。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.5-SymplecticComposition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_CASE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.5-SymplecticComposition",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.5",
+          "printed_page": "79",
+          "pdf_page": "101",
+          "statement_latex": "Thus the composition of any pair of symplectic maps is a symplectic map.",
+          "proof_latex": null,
+          "proof_note": "原书在结论前给出链式法则和保持辛矩阵的连续等式推导，无独立编号证明；推导记录于 proof_discussion_latex。",
+          "proof_discussion_latex": "by the chain rule, hence\n\\[[(\\Phi_1\\circ\\Phi_2)^\\prime]^T J(\\Phi_1\\circ\\Phi_2)^\\prime=[\\Phi_1^\\prime\\Phi_2^\\prime]^T J\\Phi_1^\\prime\\Phi_2^\\prime=\\Phi_2^{\\prime T}\\Phi_1^{\\prime T}J\\Phi_1^\\prime\\Phi_2^\\prime=\\Phi_2^{\\prime T}J\\Phi_2^\\prime=J.\\]",
+          "context_notation": [
+            "$\\Phi_1,\\Phi_2$ 为前段任意辛映射；撇号表示 Jacobian，$T$ 表示转置，$J$ 为辛2形式的矩阵，满足（2.17）。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_CASE",
+              "note": "PDF此处接上一展示式用小写“by the chain rule, hence”；原JSON改成大写By。仅修正文句大小写，不改原书省略求值点的公式。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.symplecticComposition",
+          "reusable_proofs": [
+            "MolecularDynamics.IsTextbookSymplecticMap.comp"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT11_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:14:51.636254",
+              "before_sha256": "10ffe19807c7e84baa23fc1c205bbf219d8155e6bb94c4f99d4d8c4a94672944",
+              "after_sha256": "464a1ac9545205306d351364efb5a5d3d8ba3d8511a4b7cdce1fcfd60142112e",
+              "changed_fields": [
+                "proof_note",
+                "proof_discussion_latex",
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH18_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_CASE",
+            "field": "proof_discussion_latex",
+            "explanation": "PDF此处接上一展示式用小写“by the chain rule, hence”；原JSON改成大写By。仅修正文句大小写，不改原书省略求值点的公式。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              1
+            ],
+            "printed_page": "79",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。原文转录更正见issues；修正只恢复PDF文字/符号，不改写书中数学。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "symplecticComposition"
+            ],
+            "finding": "任意自然数Nc（含0），相空间为(Fin Nc⊕Fin Nc)→ℝ；Φ、Ψ为同一空间自映射，两个前提各含全局C¹及每一点DΦᵀJDΦ=J，结论是Φ∘Ψ全局C¹且逐点保J。textbookJacobian为标准基下Fréchet导数矩阵，J=[0 I;-I 0]，与dq∧dp一致。复合次序正确，无额外假设。原书省略Jacobian求值点的记号按链式法则解释。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.symplecticComposition",
+        "verdict": "PASS",
+        "explanation": "任意自然数Nc（含0），相空间为(Fin Nc⊕Fin Nc)→ℝ；Φ、Ψ为同一空间自映射，两个前提各含全局C¹及每一点DΦᵀJDΦ=J，结论是Φ∘Ψ全局C¹且逐点保J。textbookJacobian为标准基下Fréchet导数矩阵，J=[0 I;-I 0]，与dq∧dp一致。复合次序正确，无额外假设。原书省略Jacobian求值点的记号按链式法则解释。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.5-SymplecticInverse",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_GLOBAL_INVERSE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.5-SymplecticInverse",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.5",
+          "printed_page": "79",
+          "pdf_page": "101",
+          "statement_latex": "and the inverse of a symplectic map is symplectic since $\\Phi'^TJ\\Phi'=J$ implies $J=\\Phi'^{-T}J\\Phi'^{-1}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\Phi$ 为辛映射；$\\Phi^\\prime$ 为 Jacobian，$T$ 表示转置，$J$ 为辛2形式的矩阵，$\\Phi^{\\prime -T}$ 表示 Jacobian 的逆转置。矩阵的逆与映射的全局逆须区分。"
+          ],
+          "issues": [
+            {
+              "code": "BOOK_GLOBAL_INVERSE_GAP",
+              "note": "PDF同段从det非零推出映射全局可逆，结论不成立；本条逆矩阵恒等式忠实保留。现有[EXTRA]足以使Lean定理正确，但全球群性不得无条件推广。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.symplecticInverse",
+          "reusable_proofs": [
+            "MolecularDynamics.IsTextbookSymplecticEquiv.symm"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]e为确实全局双射且e和e⁻¹可微的辛微分同胚；原文前句从det非零推出全球逆无效，另项字面保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT11_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:14:51.636254",
+              "before_sha256": "207a59b5bddd92a97d216c88e39a6eb74230278422ebb49094fede6c71b7ab2b",
+              "after_sha256": "75a53f3058cbf0151208b0110dd2e5a64784e75a416ea0c2be431ef9aa4c22de",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH18_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "BOOK_GLOBAL_INVERSE_GAP",
+            "field": "context_notation",
+            "explanation": "PDF同段从det非零推出映射全局可逆，结论不成立；本条逆矩阵恒等式忠实保留。现有[EXTRA]足以使Lean定理正确，但全球群性不得无条件推广。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              2
+            ],
+            "printed_page": "79",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "symplecticInverse"
+            ],
+            "finding": "Lean对任意Nc、实际双射e，假设e全局C¹且保J，并另有e.symm全局C¹，结论给出逆映射保J以及其逆C¹；这个受限定理正确，[EXTRA]已披露。可是本页上下文把Jacobian非奇异当作全局可逆的理由；此Lean没有证明原文所暗含的任意保辛自映射均有全球逆。矩阵恒等式与映射可逆性必须分开，保留原书疑误供人工处理。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.symplecticInverse",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Lean对任意Nc、实际双射e，假设e全局C¹且保J，并另有e.symm全局C¹，结论给出逆映射保J以及其逆C¹；这个受限定理正确，[EXTRA]已披露。可是本页上下文把Jacobian非奇异当作全局可逆的理由；此Lean没有证明原文所暗含的任意保辛自映射均有全球逆。矩阵恒等式与映射可逆性必须分开，保留原书疑误供人工处理。",
+        "counterexample": "二维例Φ(q,p)=(sqrt(2*exp(q))*cos(p*exp(-q)),sqrt(2*exp(q))*sin(p*exp(-q)))光滑。令r=sqrt(2exp(q)),θ=p exp(-q)，则dX∧dY=r dr∧dθ=dq∧dp，因此DΦᵀJDΦ=J；但Φ(q,p+2πexp(q))=Φ(q,p)，非单射。",
+        "suggested_fix": "保留原文并注明全球逆须另假设存在。可将已给Lean清楚标为全局辛微分同胚版本；不要宣称它证明所有保辛自映射构成群。"
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

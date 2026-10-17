@@ -1,0 +1,588 @@
+[
+  {
+    "source_id": "MD-5.2.1-DomainL2",
+    "original_names": [
+      "domainL2"
+    ],
+    "corrected_names": [
+      "domainL2_corrected"
+    ],
+    "note": "明确采用Lebesgue可测函数按几乎处处相等取商的Lp空间；原生函数集合不直接宣称为Hilbert空间。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-5.2.1-L2Complete",
+    "original_names": [
+      "domainL2Complete"
+    ],
+    "corrected_names": [
+      "domainL2Complete_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-5.2.2-RapidAdjoint",
+    "original_names": [
+      "rapidAdjoint"
+    ],
+    "corrected_names": [
+      "rapidAdjoint_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.3.2-ConvergenceHeuristic",
+    "original_names": [
+      "convergenceHeuristic"
+    ],
+    "corrected_names": [
+      "convergenceHeuristic_corrected"
+    ],
+    "note": "导数趋零不蕴含函数收敛；修正版对真实观测平均A显式采用一阶连续可微及导数在正半轴绝对可积的充分条件。将A实例化为原平均仍需积分换导资格，单列覆盖缺口。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.3.2-HarmonicPartition",
+    "original_names": [
+      "harmonicPartition",
+      "harmonicPartition_quadrature"
+    ],
+    "corrected_names": [
+      "harmonicPartition_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.3.2-HarmonicQuadraturePrinted",
+    "original_names": [
+      "harmonicQuadraturePrinted"
+    ],
+    "corrected_names": [
+      "harmonicQuadraturePrinted_corrected"
+    ],
+    "note": "首积分上界补/Ω，后续积分及microPartition由HarmonicPartition配套声明；原印上界不改。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.3.2-PatchShellVolume",
+    "original_names": [
+      "patchShellVolume"
+    ],
+    "corrected_names": [
+      "patchShellVolume_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.3.2-ShellPointValuePrinted",
+    "original_names": [
+      "shellWeakPairing"
+    ],
+    "corrected_names": [
+      "shellWeakPairing_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-5.3.2-ShellWeakPrinted",
+    "original_names": [
+      "shellWeakPrinted"
+    ],
+    "corrected_names": [
+      "shellWeakPrinted_corrected"
+    ],
+    "note": "删除重复归一化，补紧正则能量带作为尾部控制充分资格；Hamilton不变性不由本极限定理替代。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.3.2-SurfaceAreaFormula",
+    "original_names": [
+      "surfaceAreaFormula"
+    ],
+    "corrected_names": [
+      "surfaceAreaFormula_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.3.2-WholeShellVolumeLimit",
+    "original_names": [
+      "shellVolumeLimit"
+    ],
+    "corrected_names": [
+      "shellVolumeLimit_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.3.3-MicroMeasure",
+    "original_names": [
+      "microMeasure"
+    ],
+    "corrected_names": [
+      "microMeasure_corrected"
+    ],
+    "note": "归一化主接口显式要求原始质量正且有限；任意H,c的总化公式仍保留为原辅助，不声称退化能级也是概率分布。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-5.4.1-AnisotropicAxisPrinted",
+    "original_names": [
+      "anisotropicAxisPrinted"
+    ],
+    "corrected_names": [
+      "anisotropicAxisPrinted_corrected"
+    ],
+    "note": "只在整条经典轨道避开原点的光滑域内给轴不变性；原点的范数势不可微资格不能省去。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.4.1-InitialSegmentPrinted",
+    "original_names": [
+      "initialSegmentPrinted"
+    ],
+    "corrected_names": [
+      "initialSegmentPrinted_corrected"
+    ],
+    "note": "四维相空间初值集只定义为参数曲线像，不再宣称一般为仿射线段；位置投影直线与动量根号依赖分别解释。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-5.4.1-KAMPersistence",
+    "original_names": [
+      "kam"
+    ],
+    "corrected_names": [
+      "kam_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.4.1-PendulumRegionPrinted",
+    "original_names": [
+      "pendulumRegionPrinted"
+    ],
+    "corrected_names": [
+      "pendulumRegionPrinted_corrected"
+    ],
+    "note": "能量面的位置投影修正为势能次水平集，删除不成立的一般圆盘并参数化。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.4.1-TwoOscillatorTori",
+    "original_names": [
+      "twoOscillatorTori"
+    ],
+    "corrected_names": [
+      "twoOscillatorTori_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.4.1-UniformMicroErgodic",
+    "original_names": [
+      "uniformMicroErgodic"
+    ],
+    "corrected_names": [
+      "uniformMicroErgodic_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-5.5-CorrelationTimePrinted",
+    "original_names": [
+      "correlationTimePrinted"
+    ],
+    "corrected_names": [
+      "correlationTimePrinted_corrected"
+    ],
+    "note": "any初值改为微正则几乎处处初值，并补正则概率能级资格；一般可积相关观测量的Birkhoff桥接尚未证明。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.5-MixingCorrelation",
+    "original_names": [
+      "mixingCorrelation",
+      "mixingCorrelation_scalar"
+    ],
+    "corrected_names": [
+      "mixingCorrelation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.5-MixingCorrelationPrinted",
+    "original_names": [
+      "mixingCorrelationPrinted"
+    ],
+    "corrected_names": [
+      "mixingCorrelationPrinted_corrected"
+    ],
+    "note": "独立修正版恢复任意向量维数及k因子，给有界连续向量观测量的内积均值极限；无k实值原式独立保留。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.6-BackwardEulerLimit",
+    "original_names": [
+      "backwardEulerLimit"
+    ],
+    "corrected_names": [
+      "backwardEulerLimit_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-5.6-EulerInvariant",
+    "original_names": [
+      "eulerInvariant",
+      "eulerInvariant_no_probability_limit"
+    ],
+    "corrected_names": [
+      "eulerInvariant_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.6-ForwardComponentsPrinted",
+    "original_names": [
+      "forwardComponentsPrinted"
+    ],
+    "corrected_names": [
+      "forwardComponentsPrinted_corrected"
+    ],
+    "note": "两分量各自发散修正为非零初值的范数发散；原分量断言的旋转反例保留。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.6-ForwardNormDivergence",
+    "original_names": [
+      "forwardNormDivergence"
+    ],
+    "corrected_names": [
+      "forwardNormDivergence_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-5.6-SymplecticEulerEllipse",
+    "original_names": [
+      "symplecticEulerEllipse",
+      "symplecticEulerEllipse_geometry"
+    ],
+    "corrected_names": [
+      "symplecticEulerEllipse_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.6-SymplecticEulerShadow",
+    "original_names": [
+      "symplecticEulerShadow",
+      "symplecticEulerLogScale",
+      "symplecticEulerModifiedHamiltonian",
+      "symplecticEulerModifiedFlow",
+      "symplecticEulerShadow_modified_model",
+      "symplecticEulerShadow_modified_scale_order"
+    ],
+    "corrected_names": [
+      "symplecticEulerShadow_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.2.1-L2Norm",
+    "original_names": [
+      "domainL2Norm"
+    ],
+    "corrected_names": [
+      "domainL2Norm_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-5.2.2-OutwardNormal",
+    "original_names": [
+      "outwardNormalFor"
+    ],
+    "corrected_names": [
+      "outwardNormalFor_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-5.2.2-GeneralFluxBalance",
+    "original_names": [
+      "generalFluxBalance"
+    ],
+    "corrected_names": [
+      "generalFluxBalance_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+    "original_names": [
+      "shellWeakLimit"
+    ],
+    "corrected_names": [
+      "shellWeakLimit_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+    "original_names": [
+      "ergodicTimeAverage",
+      "ergodicTimeAverage_common_smooth",
+      "ergodicTimeAverage_positive_invariant"
+    ],
+    "corrected_names": [
+      "ergodicTimeAverage_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+    "original_names": [
+      "twoOscillatorEnergyDecomposition"
+    ],
+    "corrected_names": [
+      "twoOscillatorEnergyDecomposition_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "直接反身性rfl",
+      "现有假设assumption",
+      "仅基础化简simp only；未解决者明确保留未证"
+    ],
+    "bridge_lookup": "先核对既有无占位桥接；未找到可直接使用的完整证明。"
+  },
+  {
+    "source_id": "MD-5.5-Correlation",
+    "original_names": [
+      "correlation"
+    ],
+    "corrected_names": [
+      "correlation_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "定义对象已完成；无定理证明义务，不虚构证明尝试。"
+    ]
+  },
+  {
+    "source_id": "MD-5.5-CorrelationTimeAE",
+    "original_names": [
+      "correlationTime"
+    ],
+    "corrected_names": [
+      "correlationTime_corrected"
+    ],
+    "note": "将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。",
+    "added": true,
+    "proof_routes": [
+      "复用既有完整证明或直接给出短证明；逐声明依赖检查决定已证/未证，不把定义算定理。"
+    ]
+  },
+  {
+    "source_id": "MD-5.3.3-LowerDimensionNull",
+    "original_names": [
+      "lowerDimensionNull",
+      "lowerDimensionNull_countable",
+      "lowerDimensionNull_level_dimension"
+    ],
+    "corrected_names": [
+      "lowerDimensionNull_ambient_corrected"
+    ],
+    "note": "本条网站意见已由FAIL修复处理，完整引文保留并独立登记覆盖问题；一般环境零测结论不作无条件能级维数定理。",
+    "proof_routes": [
+      "对应FAIL修复及其逐声明公理日志"
+    ],
+    "added": false
+  }
+]

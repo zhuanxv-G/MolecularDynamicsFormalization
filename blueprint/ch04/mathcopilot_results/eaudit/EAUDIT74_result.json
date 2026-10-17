@@ -1,0 +1,338 @@
+{
+  "batch": "EAUDIT74",
+  "input_sha256": {
+    "BATCH_EAUDIT74.md": "dbf1584c1ee91fc7f08fea212d4805abdfb45dd4102dc258fbe76bb07f1e18b8",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3-HolonomicRelation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第7,8页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.holonomicRelation",
+          "g的位置参数为Q n、显式时间参数为ℝ、值为Q l；沿给定位置曲线对每个实时间要求g(q(t),t)=0。没有独立动量参数或错误地删除显式时间依赖。它是全实轴曲线满足完整约束的定义，不是声称任意曲线均满足约束。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.holonomicRelation",
+        "verdict": "PASS",
+        "explanation": "g的位置参数为Q n、显式时间参数为ℝ、值为Q l；沿给定位置曲线对每个实时间要求g(q(t),t)=0。没有独立动量参数或错误地删除显式时间依赖。它是全实轴曲线满足完整约束的定义，不是声称任意曲线均满足约束。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-ConstrainedSolution",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第9页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.constrainedSolution, MD.Ch04.constrainedSolution_generalForce",
+          "主定义在开时间域I逐时要求真实HasDerivAt：q′=m⁻¹p、p′=−grad U−Gᵀρ及每个标量约束为零。m分量严格正、U及所有g_j可微都显式给出；grad和G来自实际Fréchet导数，矩阵转置乘法正是逐约束求和。ρ是待检验曲线的参数而非已假设存在的乘子。generalForce允许任意F及within导数，作为明确命名的辅助定义保留合理；一般域包含退化域，因此不可单独当经典运动的主接口。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constrainedSolution",
+        "verdict": "PASS",
+        "explanation": "主定义在开时间域I逐时要求真实HasDerivAt：q′=m⁻¹p、p′=−grad U−Gᵀρ及每个标量约束为零。m分量严格正、U及所有g_j可微都显式给出；grad和G来自实际Fréchet导数，矩阵转置乘法正是逐约束求和。ρ是待检验曲线的参数而非已假设存在的乘子。generalForce允许任意F及within导数，作为明确命名的辅助定义保留合理；一般域包含退化域，因此不可单独当经典运动的主接口。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-ConstraintSet",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_REGULARITY_OMITTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-ConstraintSet",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "152",
+          "pdf_page": "174",
+          "statement_latex": "Constraints such as those described above define a manifold in the configuration space $\\mathcal M=\\{q\\mid g(q)=0\\}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "原文不带正则性泛称流形；所给EXTRA正规形正确但不是无条件原句。"
+          ],
+          "lean_decl": "MD.Ch04.constraintSet",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "定义仅集合；称为光滑流形需要独立梯度/正则值资格，未构造抽象流形。",
+            "[EXTRA] 零点集合定义保留；补C∞及满秩的真实局部光滑坐标正规形，零点集对应l个坐标为零，即余维l嵌入流形资格；l≤n及正则性均标EXTRA，新结论暂sorry。",
+            "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:57:09.937079",
+              "before_sha256": "5b9fa63b38ada516a0db2fd84d8f0a57e165820cd63183b87bcc6967d4b61e5d",
+              "after_sha256": "0a50905b46c803f3683604e6776c80d5ba596658d618679e3903ded1bf267b97",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH07_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EAUDIT46_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:45:33.373516",
+              "before_sha256": "0a50905b46c803f3683604e6776c80d5ba596658d618679e3903ded1bf267b97",
+              "after_sha256": "5de56d43990526888872bb04c1676b2a3c6128a1304e1c66bdbcb39a4193c10a",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH07_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT46/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_REGULARITY_OMITTED",
+            "detail": "原文不带正则性泛称流形；所给EXTRA正规形正确但不是无条件原句。"
+          }
+        ],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第10页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.constraintSet, MD.Ch04.constraintSet_regularLevel",
+          "零点集合定义忠实。regularLevel在l≤n、各g_j光滑、q为零点及真实向量导数满射的EXTRA条件下给出开邻域、双向光滑互逆坐标、q映至0及前l个坐标为零的完整等价，确实是余维l局部嵌入流形正规形。∞用于C∞符合目标。修正版签名正确，但原句未注明正则性即泛称流形，不能用增加前提消除原书疑误。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constraintSet",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "零点集合定义忠实。regularLevel在l≤n、各g_j光滑、q为零点及真实向量导数满射的EXTRA条件下给出开邻域、双向光滑互逆坐标、q映至0及前l个坐标为零的完整等价，确实是余维l局部嵌入流形正规形。∞用于C∞符合目标。修正版签名正确，但原句未注明正则性即泛称流形，不能用增加前提消除原书疑误。",
+        "counterexample": "在ℝ²取单一光滑约束g(x,y)=xy，零点集为两坐标轴的交叉；原点附近删去原点有四个分支，不是1维嵌入流形。",
+        "suggested_fix": "保留原句；标注需在零点处满秩等正则性，regularLevel明确作为带EXTRA的修正版。"
+      }
+    },
+    {
+      "source_id": "MD-4.3-ConstraintJacobian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第11页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.constraintJacobian, MD.Ch04.combineConstraints",
+          "combineConstraints把Fin l族标量函数按q↦(j↦g_j(q))组合成Q n→Q l，完整覆盖原句。constraintJacobian的行j列i为真实Fréchet导数在第i个基向量上的取值，尺寸l×n，作为相邻(4.8)的附加对象已被EXTRA区分；没有只交付Jacobian而遗漏向量函数。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constraintJacobian",
+        "verdict": "PASS",
+        "explanation": "combineConstraints把Fin l族标量函数按q↦(j↦g_j(q))组合成Q n→Q l，完整覆盖原句。constraintJacobian的行j列i为真实Fréchet导数在第i个基向量上的取值，尺寸l×n，作为相邻(4.8)的附加对象已被EXTRA区分；没有只交付Jacobian而遗漏向量函数。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-JacobianActualDerivative",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第12页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.jacobianActualDerivative, MD.Ch04.jacobianActualDerivative_curve",
+          "首声明在各标量函数于q可微时把实际Jacobian等同向量函数Fréchet导数的标准矩阵。curve声明在任意时刻t、实际速度v、v=m⁻¹p及邻域内所有约束恒零的前提下，同时给出Gv=0和Gm⁻¹p=0。局部邻域恒零是从完整运动中抽取的足够条件；未循环假设隐藏约束。只需速度方程，不需无关的加速度/乘子前提。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.jacobianActualDerivative",
+        "verdict": "PASS",
+        "explanation": "首声明在各标量函数于q可微时把实际Jacobian等同向量函数Fréchet导数的标准矩阵。curve声明在任意时刻t、实际速度v、v=m⁻¹p及邻域内所有约束恒零的前提下，同时给出Gv=0和Gm⁻¹p=0。局部邻域恒零是从完整运动中抽取的足够条件；未循环假设隐藏约束。只需速度方程，不需无关的加速度/乘子前提。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第13页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.flexiblePendulumHamiltonian",
+          "Position 3按附件定义为EuclideanSpace ℝ (Fin 3)，所以动量和位置均用欧氏范数。z.1是q、z.2是p，动能分母2m、势能U(q)、弹簧项ε⁻¹(‖q‖−r₀)²/2均正确。作为总化的数值表达式定义可接受所有实参数；物理使用应限m>0、ε>0及通常r₀>0，此定义未宣称零参数也构成物理模型。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.flexiblePendulumHamiltonian",
+        "verdict": "PASS",
+        "explanation": "Position 3按附件定义为EuclideanSpace ℝ (Fin 3)，所以动量和位置均用欧氏范数。z.1是q、z.2是p，动能分母2m、势能U(q)、弹簧项ε⁻¹(‖q‖−r₀)²/2均正确。作为总化的数值表达式定义可接受所有实参数；物理使用应限m>0、ε>0及通常r₀>0，此定义未宣称零参数也构成物理模型。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.3-ConstrainedPendulum",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_MASS_NORMALIZATION",
+          "CLASSICAL_POTENTIAL_DOMAIN"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-ConstrainedPendulum",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "151",
+          "pdf_page": "173",
+          "statement_latex": "The equations of motion for the constrained system take the form\n\\[\\dot q=v,\\qquad\\dot v=-\\nabla U(q)-q\\lambda,\\qquad0=\\|q\\|^2-r_0^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Gauss法向力Fc=−qλ由本关系保留；不将约束力唯一存在作已证结论。"
+          ],
+          "issues": [
+            "与前页一般m衔接时，单位质量或势归一化约定未由原页明示。",
+            "U没有可微资格；总化gradient表达式作为字面关系可读，但经典机械系统应用需补资格。"
+          ],
+          "lean_decl": "MD.Ch04.constrainedPendulum",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "原所写v′方程按单位质量，λ吸收法向grad(‖q‖²)=2q的因子；真实欧氏曲线和导数。",
+            "[EXTRA] 增加开时间域，保证within导数确为经典运动导数，排除单点域任意导数的伪运动。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:57:09.952011",
+              "before_sha256": "3963678b6c66235262f317a9acdd22c73990d8b4c325d20343adfe0738377142",
+              "after_sha256": "88436bad890bb19183d405f2c129d3dc4b5f0160bb0cf9020b035ef94a549bce",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH08_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_MASS_NORMALIZATION",
+            "detail": "与前页一般m衔接时，单位质量或势归一化约定未由原页明示。"
+          },
+          {
+            "code": "CLASSICAL_POTENTIAL_DOMAIN",
+            "detail": "U没有可微资格；总化gradient表达式作为字面关系可读，但经典机械系统应用需补资格。"
+          }
+        ],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第14页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.constrainedPendulum",
+          "按本页字面三个方程核对：真实欧氏q,v曲线，q′=v、v′=−gradient U−λq、‖q‖²−r₀²=0，开I使within导数等同普通导数，均忠实。原前页仍保留一般质量m，本页加速度式未说明单位质量或势的重新归一化；把因子2吸收到λ可行，但吸收质量不能同时消除势力中的1/m。另U未附可微资格，gradient作为标准总化算子时，只有可微U才是经典势力语义。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.constrainedPendulum",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "按本页字面三个方程核对：真实欧氏q,v曲线，q′=v、v′=−gradient U−λq、‖q‖²−r₀²=0，开I使within导数等同普通导数，均忠实。原前页仍保留一般质量m，本页加速度式未说明单位质量或势的重新归一化；把因子2吸收到λ可行，但吸收质量不能同时消除势力中的1/m。另U未附可微资格，gradient作为标准总化算子时，只有可微U才是经典势力语义。",
+        "counterexample": "若沿用前页m=2且U(q)=q的第一坐标，则对应无约束加速度的势力部分为−e₁/2，本页字面式为−e₁；这不是单纯重定义法向λ就能在所有位置吸收的切向差异。",
+        "suggested_fix": "原方程照录；请人工确认单位质量/势归一化约定。若作为经典光滑机械系统接口，增加U可微的资格；若推广一般m，使用m⁻¹势梯度并一致归一化乘子。"
+      }
+    },
+    {
+      "source_id": "MD-4.3-ReactionMultiplier",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SCOPE_EXCEEDS_DECLARATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3-ReactionMultiplier",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3",
+          "printed_page": "153",
+          "pdf_page": "175",
+          "statement_latex": "Using (4.8) in (4.10) we obtain\n\\[g'(q)M^{-1}[F-g'(q)^T\\lambda]+\\varphi\\equiv0.\\]\nThis is a system of linear equations for $\\lambda$. Assuming $g'(q)M^{-1}g'(q)^T$ is invertible, we may solve for $\\lambda$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "λ为真实Gram逆乘(GM⁻¹F+φ)；矩阵逆的语义资格det≠0在下一定理及Gram性质中明确。"
+          ],
+          "issues": [
+            "原句是可逆前提下解方程；当前只有不带可逆资格的总化公式定义，需缩小scope并明确跨条关联，或补同source_id条件性结论。"
+          ],
+          "lean_decl": "MD.Ch04.reactionMultiplier",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 公式总化定义；作为唯一反力乘子解释须Gram det≠0，并使用平衡及唯一性定理。"
+          ],
+          "statement_scope": "[EXTRA] 仅定义逆Gram候选乘子公式；所引原句的平衡及唯一可解内容分别由本批MD-4.3-ReactionBalance、MD-4.3-GramInvertible审校，不宣称本定义单独完整形式化原句。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT08_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:58:11.914481",
+              "before_sha256": "44ce2841af26995d099911aacbe19eabc71c414a61d6b15329c7df84f1268453",
+              "after_sha256": "be91ee1027b0df723b8cfae4dc153c2997c3e6498d061dc247ecd28e7ce6643d",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH08_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT08/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SCOPE_EXCEEDS_DECLARATION",
+            "detail": "原句是可逆前提下解方程；当前只有不带可逆资格的总化公式定义，需缩小scope并明确跨条关联，或补同source_id条件性结论。"
+          }
+        ],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第15页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.reactionMultiplier",
+          "reactionMultiplier给出的逆Gram公式代数符号、各域及曲率二阶导数正确，但这是对任意m、γ、q,p,F总化的函数定义。本条statement_scope仍声称覆盖所引全部原句，而本条同source_id并没有det≠0条件下满足线性方程或唯一可解的命题。其它条目的reactionBalance及gramInvertible_multiplier可补这一逻辑内容，但不能冒充本条定义本身已含条件性求解结论。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.reactionMultiplier",
+        "verdict": "FAIL",
+        "explanation": "reactionMultiplier给出的逆Gram公式代数符号、各域及曲率二阶导数正确，但这是对任意m、γ、q,p,F总化的函数定义。本条statement_scope仍声称覆盖所引全部原句，而本条同source_id并没有det≠0条件下满足线性方程或唯一可解的命题。其它条目的reactionBalance及gramInvertible_multiplier可补这一逻辑内容，但不能冒充本条定义本身已含条件性求解结论。",
+        "counterexample": "例如n=l=1、m=1、g≡0、F≡0时Gram=0且总化定义仍返回0，线性方程却对每个λ成立，无法从该定义推出唯一求解。该例不反驳原书的可逆条件句，只说明无条件总化定义不能代替它。",
+        "suggested_fix": "将本条statement_scope明确改成EXTRA逆Gram候选公式定义，并显式将原句解方程内容链接到本批第14、16条；或在同一source_id补det≠0下的平衡与唯一性定理。"
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

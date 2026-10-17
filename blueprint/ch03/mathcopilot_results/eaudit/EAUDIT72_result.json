@@ -1,0 +1,326 @@
+{
+  "batch": "EAUDIT72",
+  "input_sha256": {
+    "BATCH_EAUDIT72.md": "ac5ea31ef4aa8f65e107b518f1220b0449ea5028534d434cd728d2552218c290",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.3.2-VerletHamiltonianParts",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第5页（书页107，原PDF 129），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第5小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。",
+          "附件中的重复页已逐页核对渲染文件摘要相同：第3=4页，第5=6=7=8页，第9=10=11页，第12=13页，第14=15页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.verletHamiltonianParts; MD.Ch03.verletHamiltonianParts_sum",
+        "verdict": "PASS",
+        "explanation": "C：任意n、m及正质量证明hm、任意U，定义Fin 3索引的三个真实相空间函数，依次为U(q)/2、(∑p_i²/m_i)/2、U(q)/2；不把T或U替换成任意相空间函数。sum声明对每个z断言三项之和为T(p)+U(q)，覆盖原文H=H1+H2+H3。正对角质量由[EXTRA]明确，既无额外轨迹假设也无漏掉的求和结论。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_GENERAL_T_SCOPE_ERROR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+          "kind": "definition",
+          "label": null,
+          "section": "3.3.2",
+          "printed_page": "107",
+          "pdf_page": "129",
+          "statement_latex": "In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH lemma gives\n\\[\\begin{aligned}\\widetilde H_h={}&T+U+\\frac{h^2}{12}\\left(\\{T,\\{T,U\\}\\}-\\frac12\\{U,\\{U,T\\}\\}\\right)\\\\\n&+\\frac{h^4}{120}\\left(-\\frac16\\{T,\\{T,\\{T,\\{T,U\\}\\}\\}\\}+\\frac13\\{U,\\{T,\\{T,\\{T,U\\}\\}\\}\\}-\\frac14\\{U,\\{U,\\{T,\\{T,U\\}\\}\\}\\}+\\{T,\\{T,\\{U,\\{U,T\\}\\}\\}\\}\\right)+O(h^6).\\end{aligned}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "只定义到h⁴的印刷有限函数；h²/h⁴系数实际匹配另条；一般T,U暂未假定机械T。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "印刷h⁴式对任意光滑可分离T(p),U(q)并非普遍匹配；见本次audit反例。二次动能机械范围与一般T必须区分；原文保持不变。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.verletModifiedH",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。"
+          ],
+          "statement_scope": "展示式中到h⁴的有限多项式辅助定义；BCH系数匹配及Hamiltonian O(h⁶)余项范围由MD-3.3.2-VerletModifiedMatching承担。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:15:22.765671",
+              "before_sha256": "8c4ae90750d51f811616403fd6e9f730eaf406471d67fb6fcf0b8f3d325b3f28",
+              "after_sha256": "c82e85855f8da74ffa53fbf4c1785a3e227007a8fd8a32da21ebf050df911878",
+              "changed_fields": [
+                "statement_latex",
+                "statement_scope"
+              ],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "A：h²、h⁴四个括号项的嵌套顺序、−1/6、1/3、−1/4、1及O(h⁶)均忠实。C：有限函数定义逐项忠实，且已通过[EXTRA]把匹配义务分给第7条；但原文“In general ... T(p)+U(q)”对任意可分离T过宽，当前有限式不能提供该一般性的修正Hamiltonian。不得静默把原文改成二次T。"
+        ],
+        "evidence": [
+          "A：附件第6页（书页107，原PDF 129），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第6小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.verletModifiedH",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：verletModifiedH对任意n及任意两个相空间实函数T/U、任意h/z定义总化有限多项式；所有Poisson括号均用dF(J∇G)，与所引符号一致，h²两项和h⁴四项逐项完全一致。作为有限式定义它不主张可微性、可分离性、真实流或O(h^6)匹配，extra明确将这些义务分给第7条。定义的字面翻译通过；但整条原文一般T的数学主张有反例，因此合并裁定需人工，不能把有限式的忠实性当成一般BCH正确性。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": "取n=1，T(p)=p^4/4，U(q)=q^2/2，D=ℝ²，B={(q,p)=(1,0)}。两个子流全局光滑：Φ_t(q,p)=(q+t p³,p)，Ψ_t(q,p)=(q,p−tq)，满足任意η>0的actualFlow。印刷有限K为p⁴/4+q²/2+h²(p⁶/12−q²p²/8)+h⁴(p⁸/20−q²p⁴/16)。kick-drift-kick的端点为q=1−h⁴/8，p=−h+h⁵/16。K_h的真实时间h流在同一初值的p分量为−h+11h⁵/120+O(h⁶)：沿0≤t≤h有q(t)=1−t⁴/4+h²t²/8+O(h⁶)，故ṗ=−1+t⁴/4+h²t²/8+O(h⁶)，积分得到上述系数。数值端点减真实端点的p分量=−7h⁵/240+O(h⁶)，不是O(h⁷)。这是对所写一般光滑可分离T/U的具体反例；不是对正质量二次动能机械特例的反例。",
+        "suggested_fix": "保留印刷表达式和原文范围；人工决定是否把匹配限制为机械二次T，或另列一般T的正确h⁴项。不得用修正内容覆盖原书字面式。"
+      }
+    },
+    {
+      "source_id": "MD-3.3.2-VerletModifiedMatching",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_GENERAL_T_SCOPE_ERROR",
+          "FALSE_GENERAL_MATCHING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.3.2-VerletModifiedMatching",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.3.2",
+          "printed_page": "107",
+          "pdf_page": "129",
+          "statement_latex": "In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH lemma gives",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "完整印刷h²,h⁴展开见同页VerletModifiedHamiltonian；本条不静默换成另一种Verlet或改h²系数。"
+          ],
+          "issues": [
+            {
+              "code": "NEEDS_HUMAN",
+              "detail": "二次机械T的速度Verlet次序与h²系数相符；一般光滑可分离T的印刷h⁴公式不成立，verletModifiedMatching_general有明确反例。保留原文提交人工，不因sorry判FAIL。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.verletModifiedMatching",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "正对角质量、U全域C∞、紧初值B；完整印刷h⁴截断实际O(h⁶)端点匹配为额外严格化。",
+            "[EXTRA] 保留已列机械特例，新增一般分离T(p),U(q)、真实局部子流、h⁴系数及所有截断匹配；Hamiltonian余项从h⁶起（奇项零），对应端点O(h⁷)，不混同两个余项。新结论暂sorry，未裁定印刷系数是否正确。",
+            "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:15:22.765671",
+              "before_sha256": "42b5a580bd6a41b2ecb6ac6bf3879597e7ac2cfa3e2b9324b67bf300762b9ed9",
+              "after_sha256": "73b7f9ae7ac0d6ad3aee77c79dac138ae121348051e4f3b5fed4a9d3495bff37",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EAUDIT42_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:37:29.483494",
+              "before_sha256": "73b7f9ae7ac0d6ad3aee77c79dac138ae121348051e4f3b5fed4a9d3495bff37",
+              "after_sha256": "d7f342444f77d324e4af12a08a871a86bda03f05822773171e1dc025ea8f9c6b",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT42/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "A：所引引导句忠实；完整展示式按context由第6条提供，未在此改动。C：机械特例和一般可分离版本须分别判断。前者p=5是较弱但合理的端点O(h⁶)要求；后者p=6及Hj4约束对任意光滑T不成立，问题源自印刷式的一般性。"
+        ],
+        "evidence": [
+          "A：附件第7页（书页107，原PDF 129），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第7小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。",
+          "附件中的重复页已逐页核对渲染文件摘要相同：第3=4页，第5=6=7=8页，第9=10=11页，第12=13页，第14=15页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.verletModifiedMatching; MD.Ch03.verletModifiedMatching_general",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：verletModifiedMatching量化正质量m、全域C∞的U及紧B；K以二次T和位置U代入，G是先半kick、全drift、半kick，matchesHamiltonian(...,5)为O(h⁶)，与更强的正确截断阶相容。general则量化任意全域C∞ T/U、开放D、紧B⊆D、η及两条D内真实子流；结论含K4截断匹配O(h⁷)、存在全套D上C∞ Hj、H0/H2/H4精确值、所有奇次全域为零、每个k≥6的截断匹配O(h^(k+1))。这些量词和余项阶已完整保留，负号和次序也正确；但[EXTRA]把二次动能式提升到任意T，所固定H4有具体反例，故不能批准general。机械版本单独在签名语义上通过；本条总裁定依原书疑误规则NEEDS_HUMAN。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": "取n=1，T(p)=p^4/4，U(q)=q^2/2，D=ℝ²，B={(q,p)=(1,0)}。两个子流全局光滑：Φ_t(q,p)=(q+t p³,p)，Ψ_t(q,p)=(q,p−tq)，满足任意η>0的actualFlow。印刷有限K为p⁴/4+q²/2+h²(p⁶/12−q²p²/8)+h⁴(p⁸/20−q²p⁴/16)。kick-drift-kick的端点为q=1−h⁴/8，p=−h+h⁵/16。K_h的真实时间h流在同一初值的p分量为−h+11h⁵/120+O(h⁶)：沿0≤t≤h有q(t)=1−t⁴/4+h²t²/8+O(h⁶)，故ṗ=−1+t⁴/4+h²t²/8+O(h⁶)，积分得到上述系数。数值端点减真实端点的p分量=−7h⁵/240+O(h⁶)，不是O(h⁷)。这是对所写一般光滑可分离T/U的具体反例；不是对正质量二次动能机械特例的反例。",
+        "suggested_fix": "将机械特例与一般T公式分别标记；一般版本须在人工裁定原书疑误后限制T或修正H4。保留现有原书字面记录，不修改工程。"
+      }
+    },
+    {
+      "source_id": "MD-3.3.2-ModifiedEven",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_PROOF_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.3.2-ModifiedEven",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.3.2",
+          "printed_page": "107–108",
+          "pdf_page": "129–130",
+          "statement_latex": "The extra power of $h$ in the leading perturbation reflects the fact that this method is 2nd order accurate, rather than first order, as Symplectic Euler. Note that only even order terms $(h^2,h^4,\\ldots)$ appear in the perturbative expansion; this is a consequence of the symmetry of the method.\nSetting $s=-t$, the left hand side of (3.4) collapses to the identity. Hence the surviving even-powered terms in the expansion on the right hand side of (3.5) must be zero. If the even order terms vanish, then the effect of composing linear operators symmetrically is to keep only odd order terms in the exponent, giving the symmetric BCH formula\n\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(t(X+Y)+t^3\\widetilde Z_{[3]}+\\cdots).\\tag{3.6}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "formalLog奇次⇔除以形式变量h后的modifiedHamiltonian为偶次；原文证明中使用不同步长log交换的额外断言另列ERRATUM，结论不靠该假设。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原页先声称不同步长Z_t与Z_s可交换，据此得到(3.5)，一般不成立。偶性结论本身正确，可用S(−t)=S(t)⁻¹及形式log证明；保留原文推理交人工。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.modifiedEven",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 补一阶log系数A+B并保留全部偶次零，表达至少二阶及Hamiltonian偶性/log奇性；不沿用不同步长log交换的错误推理。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:15:22.765671",
+              "before_sha256": "fa8f8d23dbb14fc9d12a2908f7068e957cffa558addcea4105f968be08199849",
+              "after_sha256": "de2a692cd0a6dc7c25592b63a8d366765dd2fddd97b909cf059c1a37a5fbaed1",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "A：两页引文及(3.6)忠实。原页(3.5)前“But we know that Z_t commutes with Z_s”对一般非交换生成元没有依据；在s=−t时用逆关系即可证明奇性，但不能据此认可任意s/t的对数可交换。原context称“另列ERRATUM”，本条issues却为空，现补入。C：当前Lean只断言正确结论，不使用该错误前提。"
+        ],
+        "evidence": [
+          "A：附件第8–9页（书页107–108，原PDF 129–130），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第8小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。",
+          "附件中的重复页已逐页核对渲染文件摘要相同：第3=4页，第5=6=7=8页，第9=10=11页，第12=13页，第14=15页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.modifiedEven",
+        "verdict": "PASS",
+        "explanation": "C：任意实代数R（Ring而非CommRing）及A/B，formalStrang是e^(XA/2)e^(XB)e^(XA/2)，formalLog为对P−1展开的形式log。结论一次系数A+B，且对所有j∈ℕ包括j=0，2j次系数均为0；因此指数含h(A+B)及至少h³的奇项，除以h后修正生成元只有偶项，涵盖至少二阶。formalStrang常项1确保formalLog使用合法，不需要收敛或不同步长log交换。[EXTRA]新增一次项并未把错误的原书证明当前提。Lean签名PASS；JSON因保留原书推理缺口NEEDS_HUMAN。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.3.2-Strang",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ANNOTATION_FALSE_ALARM",
+          "INCOMPLETE_LEAN_CONCLUSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.3.2-Strang",
+          "kind": "definition",
+          "label": null,
+          "section": "3.3.2",
+          "printed_page": "108",
+          "pdf_page": "130",
+          "statement_latex": "For Hamiltonians $X$ and $Y$, consider symmetrizing a composition of exponentials (a Strang splitting), such that\n\\[\\exp(\\tfrac t2X)\\exp(tY)\\exp(\\tfrac t2X)=\\exp(tZ_t)=\\exp(t\\widetilde Z_{[1]}+t^2\\widetilde Z_{[2]}+t^3\\widetilde Z_{[3]}+t^4\\widetilde Z_{[4]}+\\cdots).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本定义为左端真实形式乘积；PDF130右端为exp(t widetilde Z_[1]+t² widetilde Z_[2]+t³ widetilde Z_[3]+⋯)，没有共同外层t。各Z_[j]按指数总幂编号，与(3.5)一致；不假设不同步长log交换。",
+            "原记号Z_[j]按指数总幂编号，与(3.5)一致；旧索引疑误标记删除。当前Lean只定义左端，尚缺整条形式exp/log展开等式。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.formalStrang",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT07_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:15:22.765671",
+              "before_sha256": "1f2639c516fa471bc20fa64aa12a6a5685559514017929bbba58be018a4c19a5",
+              "after_sha256": "4bb2a1a9bfe4b9cb679de8b0da239ba84a2bbd21fd3c827347026bbfe8283b55",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH08_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT07/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "A：原JSON的整个展示式忠实；原issues声称t²/t³的指数编号与(3.5)不一致属于误报，二者按同一总幂编号，无需改动原文。C：formalStrang只定义左端三指数乘积，未给出所引右端exp(tZ_t)及其形式级数表示。当前extra_assumptions为空；不能把同章其他只到低次的系数声明视为本条完整右端等式。"
+        ],
+        "evidence": [
+          "A：附件第10页（书页108，原PDF 130），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第9小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。",
+          "附件中的重复页已逐页核对渲染文件摘要相同：第3=4页，第5=6=7=8页，第9=10=11页，第12=13页，第14=15页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.formalStrang",
+        "verdict": "FAIL",
+        "explanation": "C：formalStrang对任意实代数及A/B定义三次形式指数乘积，1/2只缩放外侧生成元，乘法次序与原文相同，形式变量由PowerSeries携带。但原文陈述同时断言该乘积等于exp(tZ_t)=exp(∑t^j Z_[j])；定义体没有Z_t、任何Z_[j]存在性、formalLog或重建指数的等式。context仅解释左端，不能替代全部结论；本条[EXTRA]也未披露完整性缺口。按完整结论审校为FAIL，不是因为原文数学错误或sorry。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": null,
+        "suggested_fix": "保留formalStrang为辅助定义，另加常项为1、Z=formalLog(formalStrang A B)及零常项形式指数重建该乘积的等式（或等价的全阶系数存在性）；明确Z_t为Z除以形式变量。"
+      }
+    },
+    {
+      "source_id": "MD-3.3.2-StrangCubic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第11页（书页108，原PDF 130），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第10小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。",
+          "附件中的重复页已逐页核对渲染文件摘要相同：第3=4页，第5=6=7=8页，第9=10=11页，第12=13页，第14=15页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.strangCubic; MD.Ch03.strangCubic_coeff3",
+        "verdict": "PASS",
+        "explanation": "C：strangCubic量化所有实代数R及A/B，结论完整包含一次系数A+B、所有偶次系数零（包括常项），以及三次系数[B,[B,A]]/12−[A,[A,B]]/24；commutator的定义AB−BA与原书一致。strangCubic_coeff3单独保留同一三次等式，未以辅助单系数替代主结论。两个声明均无交换性假设。[EXTRA]补低次及奇性正好表达(3.6)省略的高阶奇次形式展开，(3.7)的两个符号和系数相符。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

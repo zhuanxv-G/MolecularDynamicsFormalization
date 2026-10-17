@@ -1,0 +1,267 @@
+{
+  "batch": "EAUDIT60",
+  "input_sha256": {
+    "BATCH_EAUDIT60.md": "783ccb86b14aeb1cde4bc88c37a02c8c4933e22ca39630017fa6e8d0fa13ada9",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.6-BackwardEnergyDecay",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第12页所摘both eigenvalues...increasing n逐字相符。",
+          "附件第12页；原书印刷页207，PDF页228。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "2bf31fc4d50ea30d95fe1a596498ea8ec0c568a34cae41c0b3e656f60c4b6cbe"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.backwardEnergyDecay",
+        "verdict": "PASS",
+        "explanation": "C：首声明对所有h,z,k给平方范数乘((1+h²)⁻¹)^k，逆元与幂括号正确。spectrum在h≠0下以复矩阵B=(1+h²)⁻¹[[1,h],[-h,1]]刻画全部特征值(1±ih)/(1+h²)，两模1/sqrt(1+h²)且严格小于1；实分母转为复数无歧义。迭代趋零按scope归条目13且可核实，外部连续模型不在此条承诺范围。[EXTRA]与定义一致。 本条全部本地声明：MD.Ch05.backwardEnergyDecay, MD.Ch05.backwardEnergyDecay_spectrum。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-BackwardEulerLimit",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_MISSING_ADJOINT",
+          "PRINTED_DISTRIBUTION_CLASS_AMBIGUITY",
+          "EXTERNAL_SCOPE_NOT_VERIFIED"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件第13页此处确实印L_f̃ ρ=0，没有dagger；JSON忠实，不应在原文字段擅补。其余all solutions、all densities、Dirac及attractive原句相符。",
+          "C：声明对每个h≠0同时给所有二维初值的离散轨道趋0，以及对任意初始概率μ、任意有界连续φ的积分随自然k趋φ(0)，即概率推前弱趋δ₀；无矩条件需求，量词和结论完整，[EXTRA]准确。没有给连续密度生成元稳态唯一性/连续吸引性，scope将其交外部两个source_id，本任务无其签名不可审。所给离散签名正确，但原页L无dagger和未限定分布类别是必须人工裁定的原书疑误。"
+        ],
+        "evidence": [
+          "A：附件第13页此处确实印L_f̃ ρ=0，没有dagger；JSON忠实，不应在原文字段擅补。其余all solutions、all densities、Dirac及attractive原句相符。",
+          "附件第13页；原书印刷页207，PDF页228。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "2bf31fc4d50ea30d95fe1a596498ea8ec0c568a34cae41c0b3e656f60c4b6cbe"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.backwardEulerLimit",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：声明对每个h≠0同时给所有二维初值的离散轨道趋0，以及对任意初始概率μ、任意有界连续φ的积分随自然k趋φ(0)，即概率推前弱趋δ₀；无矩条件需求，量词和结论完整，[EXTRA]准确。没有给连续密度生成元稳态唯一性/连续吸引性，scope将其交外部两个source_id，本任务无其签名不可审。所给离散签名正确，但原页L无dagger和未限定分布类别是必须人工裁定的原书疑误。 本条全部本地声明：MD.Ch05.backwardEulerLimit。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": "将L理解为作用于观测量的Lie算子时不能无说明把其核称为密度稳态；即便修为密度伴随算子，所有分布中零分布及δ₀的常数倍也破坏唯一性。",
+        "suggested_fix": "原文保留无dagger；另列勘误为密度侧L†，限定稳态为概率测度，并提供所引连续模型/稳态声明。不能把离散收缩定理当连续分布方程的完整审核。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-SymplecticEulerShadow",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_MISSING_STABILITY_RANGE",
+          "PRINTED_DEGENERATE_LEVEL"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件第14页the solution...ellipse...backward error analysis整句及H̃_h等能式相符，原页未在此处写|h|<2或排除原点。",
+          "C：symplecticEulerShadow_statement是所有实h、所有z的一步Q_h保持，Q_h=(q²+p²−hqp)/2；对摘录辛Euler步[[1−h²,h],[-h,1]]此恒等式正确。新增c(h)在h=0特判1，|h|<2内为正；A=c(h)[[-h/2,1],[-1,h/2]]正是cQ_h的Hamilton向量场。设s=sqrt(1−h²/4)，该未缩放矩阵平方=−s²I，角θ=2arcsin(h/2)满足sinθ=hs、cosθ=1−h²/2，故exp(hA)精确给数值步。flow定义含初值、群律和每时刻ODE，主模型全部合取正确，h=0亦成立。c(h)=1+h²/6+O(h⁴)，有界球上差界C h²合理，量词C,δ可依赖R。[EXTRA]准确；但原书无条件椭圆说法不成立，需保留疑误人工处理，新增正确模型不消除此原文问题。"
+        ],
+        "evidence": [
+          "A：附件第14页the solution...ellipse...backward error analysis整句及H̃_h等能式相符，原页未在此处写|h|<2或排除原点。",
+          "附件第14页；原书印刷页207，PDF页228。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "2bf31fc4d50ea30d95fe1a596498ea8ec0c568a34cae41c0b3e656f60c4b6cbe"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.symplecticEulerShadow",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：symplecticEulerShadow_statement是所有实h、所有z的一步Q_h保持，Q_h=(q²+p²−hqp)/2；对摘录辛Euler步[[1−h²,h],[-h,1]]此恒等式正确。新增c(h)在h=0特判1，|h|<2内为正；A=c(h)[[-h/2,1],[-1,h/2]]正是cQ_h的Hamilton向量场。设s=sqrt(1−h²/4)，该未缩放矩阵平方=−s²I，角θ=2arcsin(h/2)满足sinθ=hs、cosθ=1−h²/2，故exp(hA)精确给数值步。flow定义含初值、群律和每时刻ODE，主模型全部合取正确，h=0亦成立。c(h)=1+h²/6+O(h⁴)，有界球上差界C h²合理，量词C,δ可依赖R。[EXTRA]准确；但原书无条件椭圆说法不成立，需保留疑误人工处理，新增正确模型不消除此原文问题。 本条全部本地声明：MD.Ch05.symplecticEulerShadow, MD.Ch05.symplecticEulerLogScale, MD.Ch05.symplecticEulerModifiedHamiltonian, MD.Ch05.symplecticEulerModifiedFlow, MD.Ch05.symplecticEulerShadow_modified_model, MD.Ch05.symplecticEulerShadow_modified_scale_order。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": "h=3时辛Euler矩阵[[-8,3],[-3,1]]迹−7、行列式1，有模大于1的实特征值，部分轨道无界，不能全困于椭圆；z₀=0时任意稳定步长下能级为单点。",
+        "suggested_fix": "保留原文；勘误版本明确|h|<2、z₀≠0给椭圆，原点给退化点。将新增模型与一步保持声明明确标记为修正版，全部迭代/几何使用条目15。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-SymplecticEulerEllipse",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_MISSING_STABILITY_RANGE",
+          "PRINTED_DEGENERATE_LEVEL"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件第15页原句及H̃_h(q,p)=H̃_h(q₀,p₀)相符；原书无限定any given initial point，不应悄改原文。",
+          "C：修正版主定理对所有|h|<2给非零点Q_h>0、每个实c的次水平集紧性、每个z及全部自然k的能量保持；包含负c时空集和k=0。geometry另断言零能级={0}，每个c>0的能级与单位圆同胚，数学正确。二次型矩阵[[1,−h/2],[-h/2,1]]特征值1±h/2均正，结合显式二次型可认定几何椭圆；单独同胚本身只表达拓扑圆，不能作为一般集合是几何椭圆的充分定义。条目14还提供与主对数Hamiltonian的正比例联系，故修正版范围内能级与modified模型一致。[EXTRA]明确，sorry不构成签名FAIL。原文无稳定区及零初值例外须人工裁定。"
+        ],
+        "evidence": [
+          "A：附件第15页原句及H̃_h(q,p)=H̃_h(q₀,p₀)相符；原书无限定any given initial point，不应悄改原文。",
+          "附件第15页；原书印刷页207，PDF页228。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "2bf31fc4d50ea30d95fe1a596498ea8ec0c568a34cae41c0b3e656f60c4b6cbe"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.symplecticEulerEllipse",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：修正版主定理对所有|h|<2给非零点Q_h>0、每个实c的次水平集紧性、每个z及全部自然k的能量保持；包含负c时空集和k=0。geometry另断言零能级={0}，每个c>0的能级与单位圆同胚，数学正确。二次型矩阵[[1,−h/2],[-h/2,1]]特征值1±h/2均正，结合显式二次型可认定几何椭圆；单独同胚本身只表达拓扑圆，不能作为一般集合是几何椭圆的充分定义。条目14还提供与主对数Hamiltonian的正比例联系，故修正版范围内能级与modified模型一致。[EXTRA]明确，sorry不构成签名FAIL。原文无稳定区及零初值例外须人工裁定。 本条全部本地声明：MD.Ch05.symplecticEulerEllipse, MD.Ch05.symplecticEulerEllipse_geometry。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": "h=2时Q=(q−p)²/2，正能级是两条平行直线而非椭圆，零能级是一整条直线；|h|<2但z₀=0则能级仅{0}。",
+        "suggested_fix": "原文保持不变，另列|h|<2且初值非零的椭圆勘误，附零能级退化为单点；本批已给Lean修正版无须因sorry修改。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-SymplecticEulerDensity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件第1页（原PDF228/印刷207）辛Euler段两句逐字对应；H̃_h、Liouville方程上标†及“none ... attractive”一致。",
+          "attachment_pages": [
+            1
+          ],
+          "C_signature_check": "对象为实二维欧氏相空间；对所有实 h 满足 |h|<2 及所有 r:ℝ→ℝ，前提要求 r∘shadowOscillator 可测、非负、可积且积分为1，结论为实际辛Euler映射对该密度测度的 MeasurePreserving。矩阵为 [[1-h²,h],[-h,1]]，行列式为1，保持 (q²+p²-hqp)/2，故结论正确；h=0亦无问题。能量与原modified Hamiltonian只差可能的h依赖常数因子，不改变“能量的函数”这一类。这里只通过已明示的离散密度不变范围；连续弱稳态、多解和非吸引不在该签名内，跨条映射仅记录，未以未提供的声明作为已核验证据。",
+          "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.symplecticEulerDensity",
+        "verdict": "PASS",
+        "explanation": "对象为实二维欧氏相空间；对所有实 h 满足 |h|<2 及所有 r:ℝ→ℝ，前提要求 r∘shadowOscillator 可测、非负、可积且积分为1，结论为实际辛Euler映射对该密度测度的 MeasurePreserving。矩阵为 [[1-h²,h],[-h,1]]，行列式为1，保持 (q²+p²-hqp)/2，故结论正确；h=0亦无问题。能量与原modified Hamiltonian只差可能的h依赖常数因子，不改变“能量的函数”这一类。这里只通过已明示的离散密度不变范围；连续弱稳态、多解和非吸引不在该签名内，跨条映射仅记录，未以未提供的声明作为已核验证据。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-Theorem51",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件第2页末与第3页首（原PDF229–230/印刷208–209）跨页定理逐字对应；两种紧能量面、任意smooth w、非零横截条件、全部平均下标、减号、O(ε²)及u公式一致。",
+          "attachment_pages": [
+            2,
+            3
+          ],
+          "C_signature_check": "量化所有正维实欧氏空间、H/η/g/w及能量c；四个对象均C∞。regularEnergy明确含非空、紧、梯度非零及微正则原始质量有限正。统一紧集K同时包含ε邻域内全部扰动能量面（ε=0亦包含原面），其上分母不为零；这些是已披露的加强条件，防止从无穷远产生未控制分支。microRaw为面积测度乘1/‖∇H‖，microMeasure按总质量归一。结论完整保留平均差、校正项和存在C>0、δ>0对所有|ε|<δ成立的Cε²界。u的分母使用原H，两个右端平均使用H+εη，div(gu)包含g div u；符号及归一化协方差项与原式一致。任意正维推广不依赖辛结构，属合法几何推广。",
+          "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.theorem51",
+        "verdict": "PASS",
+        "explanation": "量化所有正维实欧氏空间、H/η/g/w及能量c；四个对象均C∞。regularEnergy明确含非空、紧、梯度非零及微正则原始质量有限正。统一紧集K同时包含ε邻域内全部扰动能量面（ε=0亦包含原面），其上分母不为零；这些是已披露的加强条件，防止从无穷远产生未控制分支。microRaw为面积测度乘1/‖∇H‖，microMeasure按总质量归一。结论完整保留平均差、校正项和存在C>0、δ>0对所有|ε|<δ成立的Cε²界。u的分母使用原H，两个右端平均使用H+εη，div(gu)包含g div u；符号及归一化协方差项与原式一致。任意正维推广不依赖辛结构，属合法几何推广。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-PerturbationCorrection",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TERMINAL_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-PerturbationCorrection",
+          "kind": "definition",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "209",
+          "pdf_page": "230",
+          "statement_latex": "$\\operatorname{Av}_{H=E}(g)-\\operatorname{Av}_{\\widetilde H=E}(g)=\\operatorname{Av}_{\\widetilde H=E}(\\nabla\\cdot gu)-\\operatorname{Av}_{\\widetilde H=E}(g)\\operatorname{Av}_{\\widetilde H=E}(\\nabla\\cdot u)+O(\\varepsilon^2)$;",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际div(g u)，保留g·div u项；不是仅grad g·u。定义校正函数不等于完整Theorem5.1已证。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.perturbationCorrection",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Theorem5.1右端两个平均组成的校正项定义；完整正则能量族平均误差估计由MD-5.6-Theorem51承担。"
+          ],
+          "statement_scope": "仅Theorem5.1右端两个平均组成的校正项定义；完整正则能量族平均误差估计由MD-5.6-Theorem51承担。",
+          "review_status": "DRAFT",
+          "repair_log": [
+            {
+              "stage": "EAUDIT21_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:18:38.392728",
+              "before_sha256": "df023626f377af2d0b9d359b2c9981779601adc40f2565c973005405746ba919",
+              "after_sha256": "807f3253c15aa93af7f0f8452421f424b9f2de8d590586c164b9d5e17c3ef9d0",
+              "changed_fields": [
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH26_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "detail": "公式原页以分号结束，JSON改为句号。数学内容无误，恢复原页终止符。"
+          }
+        ],
+        "evidence": {
+          "A_source_check": "附件第4页（原PDF230/印刷209）展示式的数学内容完全一致。原页公式终止符为分号，当前JSON改成了句号；逐字核对下应恢复分号。",
+          "attachment_pages": [
+            4
+          ],
+          "C_signature_check": "对任意维数、实值H/η/g、向量场w及实c/ε，定义Hε=H+εη、u=(εη/⟨w,∇H⟩)w，返回Av_Hε(div(gu))−Av_Hε(g)Av_Hε(div u)。乘法次序、负号、两处能量面及完整散度均正确。该定义是总函数，未假设光滑、正则或分母非零；这些条件应由使用它的定理提供，不能仅凭定义推得原公式。已披露范围仅为校正项。",
+          "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.perturbationCorrection",
+        "verdict": "PASS",
+        "explanation": "对任意维数、实值H/η/g、向量场w及实c/ε，定义Hε=H+εη、u=(εη/⟨w,∇H⟩)w，返回Av_Hε(div(gu))−Av_Hε(g)Av_Hε(div u)。乘法次序、负号、两处能量面及完整散度均正确。该定义是总函数，未假设光滑、正则或分母非零；这些条件应由使用它的定理提供，不能仅凭定义推得原公式。已披露范围仅为校正项。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-DenominatorBound",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件第5页（原PDF230/印刷209）首句逐字对应；原书没有另立“分母下界”定理，衍生身份已披露。",
+          "attachment_pages": [
+            5
+          ],
+          "C_signature_check": "任意维数及H/w/c，假设原能量面紧、绝对分母在该面连续且分母逐点非零，结论是存在统一a>0使面上绝对分母≥a。非空情形用紧集上正连续函数的最小值；空面情形结论真空成立，故无需增补非空性。无需H光滑即可作为已明示的衍生引理成立；不替代Theorem5.1。",
+          "review_method": "仅使用R8任务内当前声明及项目定义与R8_PAGES.pdf；标准库按标准数学含义采信。重复附件页提取文本相同，核对相应同版原页图像。没有修改工程、补证明或因sorry判FAIL；PASS是给定范围的签名审校，不声称证明已编译。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.denominatorBound",
+        "verdict": "PASS",
+        "explanation": "任意维数及H/w/c，假设原能量面紧、绝对分母在该面连续且分母逐点非零，结论是存在统一a>0使面上绝对分母≥a。非空情形用紧集上正连续函数的最小值；空面情形结论真空成立，故无需增补非空性。无需H光滑即可作为已明示的衍生引理成立；不替代Theorem5.1。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

@@ -1,0 +1,1112 @@
+[
+  {
+    "source_id": "MD-5.1-FlowFieldTransport",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING",
+      "TRANSCRIPTION_GROUPING"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限",
+    "local_original_page_verified": "24号：本地原书PDF物理页202已渲染并视觉核对，第二、三行两处方括号恢复；未核指定R1附件同一性。",
+    "evidence": "blueprint/closeout24/pdf202.png"
+  },
+  {
+    "source_id": "MD-5.1-SolutionOperator",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.1-CoordinateLie",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.1-LiePullbackCommutes",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.1-DomainL2",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING",
+      "BOOK_L2_AE_QUALIFICATION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.1-L2Norm",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING",
+      "BOOK_L2_AE_QUALIFICATION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.1-L2NormSquare",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.1-L2Complete",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING",
+      "BOOK_L2_AE_QUALIFICATION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.2-MassFraction",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.2-MassDerivative",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.2-OutwardNormal",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING",
+      "BOOK_NORMAL_AE_QUALIFICATION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.2-GeneralFluxBalance",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING",
+      "EXTRA_NORMALIZATION_AMBIGUITY"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.2-Divergence",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.2-Liouvillian",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.2-LiouvilleEquation",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.2-LiouvilleProduct",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING",
+      "CROSS_SOURCE_DECL_NOT_PROVIDED"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.2-LieCoordinates",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING",
+      "DERIVED_NOT_LITERAL_QUOTE"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.2-DivergenceCoordinates",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "R1_ATTACHMENT_MISSING",
+      "CROSS_SOURCE_DECL_NOT_PROVIDED"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "未核指定R1附件同一性；返回可见部分以其原书PDF核对记录为限"
+  },
+  {
+    "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.2.2-FaceFlux",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.2.2-BoxFluxBalance",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.2.2-BoundaryTerm",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.2.2-TruncatedIntegrationByParts",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.2.2-RapidAdjoint",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_GROWTH_CONDITION_UNSPECIFIED",
+      "SUBSTANTIVE_EXTRA_BOUNDARY_ASSUMPTION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.2.2-CompactAdjoint",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.2.2-MeasurePropagator",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "MISSING_HAMILTONIAN_DIVERGENCE_BRIDGE",
+      "INCOMPLETE_STATEMENT_COVERAGE",
+      "UNVERIFIED_EXTRA_MAPPING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.2.3-HamiltonianDensityPropagation",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.2.3-MechanicalLiouvillian",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.2.3-MechanicalLiouvillianIdentity",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.1-TestSpace",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "MISSING_SCHWARTZ_OPTION",
+      "INCOMPLETE_STATEMENT_COVERAGE",
+      "CONTEXT_COVERAGE_MISMATCH"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.1-RegularDistribution",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.1-RegularDistributionLinearity",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.1-GaussianDelta",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.1-DiracEvaluates",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.1-GaussianDeltaProbability",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.1-GaussianDeltaWeak",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-WeakStationary",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-EnsembleAverage",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_EQUATION_LABEL_MISSING"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-HamiltonianEnergyIntegral",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-ShellWeight",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-ShellPartition",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-ShellDensity",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_LITERAL_TYPOGRAPHY",
+      "SOURCE_EQUATION_LABEL_MISSING",
+      "BOOK_DOUBLE_NORMALIZATION",
+      "BOOK_UNSCALED_PARTITION_LIMIT"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-SurfaceAreaFormula",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_LITERAL_TYPOGRAPHY",
+      "BOOK_OPEN_SET_MEMBERSHIP",
+      "BOOK_AREA_MULTIPLICITY_GAP"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-NormalEnergyTaylor",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_VECTOR_AND_BIG_O_TYPOGRAPHY"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-NormalInverseTaylor",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_VECTOR_AND_BIG_O_TYPOGRAPHY"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-MicroRawInvariant",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "MATHCAL_M_TRANSCRIPTION",
+      "EXTRA_REGULARITY_SCOPE"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-MicroInvariant",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "MATHCAL_M_TRANSCRIPTION",
+      "EXTRA_REGULARITY_SCOPE"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-MicroPartition",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "FINITE_REAL_PARTITION_SCOPE"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-HarmonicEnergy",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-HarmonicPartition",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_FIRST_QUADRATURE_BOUND",
+      "PRINTED_DERIVATION_NOT_RECORDED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-IdealGasEnergy",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-IdealGasPositionDomain",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "MATHCAL_S_TRANSCRIPTION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.2-IdealGasPartition",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "MATHCAL_S_TRANSCRIPTION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.3-MicroMeasure",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PROBABILITY_NORMALIZATION_PREREQUISITES",
+      "MEASURABLE_NOT_COMPUTABLE"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.3-MicroProbability",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.3-LowerDimensionNull",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "AMBIENT_NULL_CLAUSE_NOT_COVERED",
+      "DIMENSION_REQUIRES_REGULAR_VALUE",
+      "LOWER_DIMENSION_MEANING_UNSPECIFIED"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.3.3-MicroAverage",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_UNMARKED_OMISSIONS"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4-TimeAverage",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_ENDPOINT_TRANSCRIPTION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4-HasTimeAverage",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4-ConservedAverage",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_NONCONTIGUOUS_EXCERPTS"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4-ConservedInfiniteAverage",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_NONCONTIGUOUS_EXCERPTS"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4-DoubleWellEnergy",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4-DoubleWellBasin",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-UniformMicroErgodic",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "ORIGINAL_ALMOST_ALL_DIMENSION_AMBIGUITY"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-MicroErgodicStandard",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_OMITTED_LINKING_WORDS",
+      "EXTRA_STALE_INTERFACE_DESCRIPTION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-FlowInvariant",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "EXTRA_STALE_ZERO_TIME_DESCRIPTION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-SetErgodic",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-InvariantIndicator",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-InvariantIndicatorAverage",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_POSITIVE_MASS_BRANCH_OMITTED"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-NonergodicSet",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-HarmonicFlow",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_KIND_MISMATCH"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-TwoOscillatorEnergy",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_KIND_MISMATCH",
+      "SOURCE_LITERAL_WORDING",
+      "STALE_CROSS_SOURCE_MAPPING"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-TwoOscillatorFlow",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_KIND_MISMATCH",
+      "STALE_FREQUENCY_ANNOTATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-Mixing",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "LEAN_REFERENCE_INVARIANCE_MISSING",
+      "EXTRA_INVARIANCE_NOT_ENCODED",
+      "NONSTANDARD_MIXING_NAME"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_DEGENERATE_ENERGY_FIBERS",
+      "SOURCE_NONERGODIC_ENERGY_QUALIFICATION"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-CurveImageDimension",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-PendulumPotential",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_KIND_MISMATCH",
+      "DERIVED_DEFINITION_SCOPE_UNCLEAR"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-CircleInitialPoints",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-CircleInitialLaw",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.4.1-CircleInitialEnergy",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_EXCERPT_PUNCTUATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.5-Correlation",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_LAG_VARIABLE_MISMATCH",
+      "SOURCE_LITERAL_PUNCTUATION",
+      "MICROCANONICAL_SPECIALIZATION_MUST_BE_EXPLICIT"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.5-CorrelationTimeAE",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_ANY_TRAJECTORY_OVERSTATEMENT"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.5-PositionTransition",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "STALE_NORMALIZATION_ANNOTATION",
+      "SOURCE_LITERAL_PUNCTUATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.5-MeasureDuality",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "NUMBERED_EQUATION_METADATA_MISSING",
+      "RN_INTERPRETATION_SCOPE"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.5-MixingMemoryLoss",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.5-MixingCorrelation",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "SOURCE_TRANSCRIPTION_INNER_PRODUCT",
+      "PRINTED_NORMALIZATION_AMBIGUITY"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.5-CenteredCorrelation",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-DiscreteAveragePrinted",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-DiscreteAverage",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-DiscretePropagator",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-ModifiedField",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-ModifiedLiouvillian",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_TRANSCRIPTION_ADJOINT"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-ForwardEnergyGrowth",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-EulerInvariant",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_DISTRIBUTION_CLASS_AMBIGUITY",
+      "EXTERNAL_SCOPE_NOT_VERIFIED"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-BackwardEuler",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-BackwardEnergyDecay",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-BackwardEulerLimit",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_MISSING_ADJOINT",
+      "PRINTED_DISTRIBUTION_CLASS_AMBIGUITY",
+      "EXTERNAL_SCOPE_NOT_VERIFIED"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-SymplecticEulerShadow",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_MISSING_STABILITY_RANGE",
+      "PRINTED_DEGENERATE_LEVEL"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-SymplecticEulerEllipse",
+    "source_status": "NEEDS_HUMAN",
+    "signature_verdict": "NEEDS_HUMAN",
+    "issue_codes": [
+      "PRINTED_MISSING_STABILITY_RANGE",
+      "PRINTED_DEGENERATE_LEVEL"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-SymplecticEulerDensity",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-Theorem51",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-PerturbationCorrection",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_TERMINAL_PUNCTUATION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-DenominatorBound",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-SmoothDenominatorBound",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-ZeroPerturbation",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-DynamicalCorrection",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-WeakStationary",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-WeakAttractor",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "TARGET_PROBABILITY_DOMAIN_MISSING"
+    ],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-EulerLogField",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-EulerLogFlow",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-EulerLogCorrespondence",
+    "source_status": "CORRECTED",
+    "signature_verdict": "FAIL",
+    "issue_codes": [
+      "SOURCE_DEFINITION_SYMBOL",
+      "LEAN_MISSING_LIOUVILLE_CONCLUSION"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-ForwardWeakStationary",
+    "source_status": "APPROVED",
+    "signature_verdict": "PASS",
+    "issue_codes": [],
+    "transcription_integrated": false,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-BackwardWeakStationary",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_ADJOINT_SYMBOL"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  },
+  {
+    "source_id": "MD-5.6-SymplecticWeakStationary",
+    "source_status": "CORRECTED",
+    "signature_verdict": "PASS",
+    "issue_codes": [
+      "SOURCE_ADJOINT_SYMBOL"
+    ],
+    "transcription_integrated": true,
+    "attachment_identity": "依原返回输入绑定及原页核对记录"
+  }
+]

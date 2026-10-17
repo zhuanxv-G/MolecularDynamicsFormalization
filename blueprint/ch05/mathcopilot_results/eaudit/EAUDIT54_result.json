@@ -1,0 +1,339 @@
+{
+  "batch": "EAUDIT54",
+  "input_sha256": {
+    "BATCH_EAUDIT54.md": "8ddd50bbd56487d4a203724da9721c96541013caf08a09adca8ae38bbe5506c4",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.4-TimeAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_ENDPOINT_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4-TimeAverage",
+          "kind": "definition",
+          "label": null,
+          "section": "5.4",
+          "printed_page": "195",
+          "pdf_page": "216",
+          "statement_latex": "Given an autonomous system of differential equations $\\dot z=f(z)$ in $\\mathbb R^m$, and a trajectory $\\Gamma=\\{z(t)\\mid t\\in[0,\\infty]\\}$, let $g=g(z)$ be any smooth scalar valued function of $z$ (an observable) and define (assuming it exists) the infinite time average of $g$ along $\\Gamma$ by\n\\[\\bar g_\\Gamma=\\lim_{\\tau\\to\\infty}\\tau^{-1}\\int_0^\\tau g(z(t))dt.\\tag{5.9}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实0..T区间积分；T>0及极限存在意义另条，T=0总化值不赋予平均意义。",
+            "原PDF式(5.9)使用 Γ 表示轨道、τ 表示截断时间、ḡ_Γ 表示依赖轨道的平均；Lean 用 z 和 T 表示相应对象。"
+          ],
+          "issues": [
+            {
+              "stage": "A",
+              "code": "SOURCE_ENDPOINT_TRANSCRIPTION",
+              "description": "附件第2页原印轨道参数区间为 [0,∞]，JSON 默改成 [0,∞)。逐字版恢复原印 ]；t 仍取实数，该排印记号不增添 t=∞ 的轨道值，不改成数学勘误版。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.timeAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅式(5.9)有限截断平均因子；无限时间极限存在谓词由MD-5.4-HasTimeAverage承担。"
+          ],
+          "statement_scope": "仅式(5.9)有限截断平均因子；无限时间极限存在谓词由MD-5.4-HasTimeAverage承担。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT12_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:00:27.167822",
+              "before_sha256": "6fc82c38dcd5991add90b39dae3ee0371cfb24a9692acb7a3078691af54ffe3d",
+              "after_sha256": "7b8c750bd3f2c5621d88d3e051a4128ee82e394b2b76161b92f93aa5579cfe0b",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH17_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R5: verified against R5_PAGES.pdf rendered original pages and extracted text; attachment page numbers in this review evidence."
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "SOURCE_ENDPOINT_TRANSCRIPTION",
+            "description": "附件第2页原印轨道参数区间为 [0,∞]，JSON 默改成 [0,∞)。逐字版恢复原印 ]；t 仍取实数，该排印记号不增添 t=∞ 的轨道值，不改成数学勘误版。"
+          }
+        ],
+        "evidence": {
+          "attachment_pages": [
+            2
+          ],
+          "printed_page": "195",
+          "pdf_page": "216",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "仅式(5.9)有限截断平均因子；无限时间极限存在谓词由MD-5.4-HasTimeAverage承担。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.timeAverage",
+        "verdict": "PASS",
+        "explanation": "X 是任意类型，z:ℝ→X，g:X→ℝ，T:ℝ；定义恰为 T⁻¹ 乘 0..T 的真实有向区间积分。按明确 statement_scope 本条仅承担有限截断因子，无限极限由下一条承担，未把有限值冒充无限平均。任意路径和函数是公式层面的自然推广；原书光滑正向轨道是其适用特例。T=0 或不可积函数的 Lean 总化值不赋予原书平均意义，负 T 仅属定义延拓。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4-HasTimeAverage",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "attachment_pages": [
+            3
+          ],
+          "printed_page": "195",
+          "pdf_page": "216",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.hasTimeAverage",
+        "verdict": "PASS",
+        "explanation": "对任意 X,z,g 及候选实数 a，以 Tendsto (timeAverage z g) atTop (𝓝 a) 表达式(5.9)。使用的是摘录的 Chapter05Review.timeAverage，即真实 0..T 区间积分。a 是平均值参数，并未假设每个可观测量都有极限。atTop 的最终正时间使负时延拓和 T=0 不影响结论；原文的轨道及光滑性背景不被误写成极限自动存在的定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4-ConservedAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_NONCONTIGUOUS_EXCERPTS"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4-ConservedAverage",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4",
+          "printed_page": "196–197",
+          "pdf_page": "217–218",
+          "statement_latex": "Considering any conservative system, we know that the energy itself is a conserved quantity along trajectories, and its average is therefore a function of the initial condition. More generally, if a given system has a first integral (conserved quantity) $I=I(z)$, different from the energy, which is preserved along trajectories, then the average of this conserved quantity (and any other quantity that depends upon it) will be dependent on the choice of initial condition.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "statement_latex 是两段非连续原文摘录：印刷196页（PDF217）Considering any conservative system...initial condition.；印刷197页（PDF218）More generally...initial condition.。两段之间的讨论及 Example 5.3 不在本条摘录范围内；不得当作原书连续一段。"
+          ],
+          "issues": [
+            {
+              "stage": "A",
+              "code": "SOURCE_NONCONTIGUOUS_EXCERPTS",
+              "description": "前两句来自印刷196页首段，More generally... 来自197页首段，中间隔有关于平均及 Example 5.3 的正文。所选句逐字相符，但应显式标记为两段非连续摘录。保留原句，在 context_notation 中列明摘录边界。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.conservedAverage",
+          "reusable_proofs": [
+            "MolecularDynamics.Chapter05Review.conservedAverage_proved"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]任意真实轨道和已给出的第一积分守恒值；有限T≠0平均等于其值，T→∞结论另条，不把有限式称无限极限已经检查。",
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅守恒观测量的有限平均辅助恒等式；第一积分及任意函数复合的无限平均由MD-5.4-ConservedInfiniteAverage承担。"
+          ],
+          "statement_scope": "仅守恒观测量的有限平均辅助恒等式；第一积分及任意函数复合的无限平均由MD-5.4-ConservedInfiniteAverage承担。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT12_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:00:27.167822",
+              "before_sha256": "6fd3927d311cea313272eefb3829838f5dd7dc28d361691ae6e7e59485608b3f",
+              "after_sha256": "19e5e0d419bf9055dd5b9080e01a07a31fc3ef17c1a02426ba64f46eb59436ba",
+              "changed_fields": [
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH17_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R5: verified against R5_PAGES.pdf rendered original pages and extracted text; attachment page numbers in this review evidence."
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "SOURCE_NONCONTIGUOUS_EXCERPTS",
+            "description": "前两句来自印刷196页首段，More generally... 来自197页首段，中间隔有关于平均及 Example 5.3 的正文。所选句逐字相符，但应显式标记为两段非连续摘录。保留原句，在 context_notation 中列明摘录边界。"
+          }
+        ],
+        "evidence": {
+          "attachment_pages": [
+            4,
+            5
+          ],
+          "printed_page": "196–197",
+          "pdf_page": "217–218",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "仅守恒观测量的有限平均辅助恒等式；第一积分及任意函数复合的无限平均由MD-5.4-ConservedInfiniteAverage承担。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.conservedAverage",
+        "verdict": "PASS",
+        "explanation": "∀X,z,g,a，前提 ∀t∈ℝ,g(z t)=a，结论对每个非零实数 T 为有限时间平均=a。任意负 T 的有向积分也满足该恒等式；T≠0 必须保留，因为 T=0 时总化平均为0。此条按 scope 是守恒观测量的有限平均辅助引理；原文第一积分及其函数的无限时间结论映射至下一条，并非遗漏后仍宣称完成全部原文结论。比正时间轨道更强的全实时间守恒前提是明确延拓，实际第一积分满足。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4-ConservedInfiniteAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_NONCONTIGUOUS_EXCERPTS"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4-ConservedInfiniteAverage",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4",
+          "printed_page": "196–197",
+          "pdf_page": "217–218",
+          "statement_latex": "Considering any conservative system, we know that the energy itself is a conserved quantity along trajectories, and its average is therefore a function of the initial condition. More generally, if a given system has a first integral (conserved quantity) $I=I(z)$, different from the energy, which is preserved along trajectories, then the average of this conserved quantity (and any other quantity that depends upon it) will be dependent on the choice of initial condition.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "保留第一积分及任意依赖它的量两个无限平均结论；不只保留有限时间积分。",
+            "statement_latex 是两段非连续原文摘录：印刷196页（PDF217）Considering any conservative system...initial condition.；印刷197页（PDF218）More generally...initial condition.。两段之间的讨论及 Example 5.3 不在本条摘录范围内；不得当作原书连续一段。"
+          ],
+          "issues": [
+            {
+              "stage": "A",
+              "code": "SOURCE_NONCONTIGUOUS_EXCERPTS",
+              "description": "前两句来自印刷196页首段，More generally... 来自197页首段，中间隔有关于平均及 Example 5.3 的正文。所选句逐字相符，但应显式标记为两段非连续摘录。保留原句，在 context_notation 中列明摘录边界。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.conservedInfiniteAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT12_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:00:27.167822",
+              "before_sha256": "9848fd92290ef4a1d82f52ea0ce6c57e51505fd4f2e53c5c34f28a913004d071",
+              "after_sha256": "fdf737e3485af2284363a1b16aa9e58b68a9d246f1a3143bb69c6c0f685eedfb",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH17_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R5: verified against R5_PAGES.pdf rendered original pages and extracted text; attachment page numbers in this review evidence."
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "SOURCE_NONCONTIGUOUS_EXCERPTS",
+            "description": "前两句来自印刷196页首段，More generally... 来自197页首段，中间隔有关于平均及 Example 5.3 的正文。所选句逐字相符，但应显式标记为两段非连续摘录。保留原句，在 context_notation 中列明摘录边界。"
+          }
+        ],
+        "evidence": {
+          "attachment_pages": [
+            6,
+            7
+          ],
+          "printed_page": "196–197",
+          "pdf_page": "217–218",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.conservedInfiniteAverage",
+        "verdict": "PASS",
+        "explanation": "∀X,z,I,r，hI 要求每个实时间的 I(z t)=I(z 0)。完整合取分别给出 I 的无限平均 I(z 0)，以及任意函数 r∘I 的无限平均 r(I(z 0))。不需 r 连续或可测，因为沿此轨道两个被积函数都恒定；不存在把“复合量有平均”作为前提的问题。结果准确表达平均由初值的积分值决定，不承诺不同初值一定产生不同平均；例如常值 r 的平均可以相同。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4-DoubleWellEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "attachment_pages": [
+            8
+          ],
+          "printed_page": "196",
+          "pdf_page": "217",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "仅双阱势与能量公式定义；非负及强制性由MD-5.4-DoubleWellCoercivity承担。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.doubleWellEnergy",
+        "verdict": "PASS",
+        "explanation": "E 2 是 Fin 2 上的实欧氏空间，z 0 对应 q、z 1 对应 p；定义严格为 p²/2+(1−q²)²。仅按 scope 核对公式定义：原文非负及趋于无穷的断言未包含于此定义，其映射的 DoubleWellCoercivity 不在本任务提供的声明中，因此不声称本次已核对该外部条目。定义对所有 z 总化，实数平方和不会引入额外域限制。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4-DoubleWellBasin",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "attachment_pages": [
+            9
+          ],
+          "printed_page": "196",
+          "pdf_page": "217",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.doubleWellBasin",
+        "verdict": "PASS",
+        "explanation": "第一条声明量化所有连续实时间路径与 0<c<1 的守恒能量，结论对所有 t 同时保留初值及当前值的同一严格正号或同一严格负号。q=0 时能量≥1，故连续路径不能穿越，两阱结论完整。第二条声明在同样前提下存在全局 C∞ 紧支撑实值 g，在整个能量面上等于右阱的0/1分支值，且真实 microAverage=1/2、沿指定路径有无限平均 g(z0)、该平均不等于空间平均，三个结论均未作为前提。两条紧分离能量分支允许光滑截断；q↦−q 的欧氏等距对称保持能量、面测度及梯度范数，使两个分支质量相等且正有限。故该加强见证正确，不把全局不连续示性函数说成光滑函数，也未伪造“许多”的数量或误差界。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

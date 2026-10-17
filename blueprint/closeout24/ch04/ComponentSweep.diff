@@ -1,0 +1,30 @@
+--- before
++++ after
+@@ -1381,7 +1381,8 @@
+ 
+ /-- source_id: MD-4.3.3-ComponentSweep · definition · §4.3.3 · 印刷p.158 / PDFp.180
+ [EXTRA] [EXTRA]一次完整顺序sweep，使用上一条统一Gn索引；多轮为其真实函数迭代。 
+-[EXTRA] 保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。 -/
++[EXTRA] 保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。 [EXTRA] 24号：停止判据恢复原印非严格≤tol，并要求含测试轮全部步骤的可微/分母非零资格；原G_j^1索引疑误保留待导师。没有更改逐分量更新次序。
++-/
+ def componentSweep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+     (q Qnow : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=
+   (List.finRange l).foldl (fun Qcur j => MolecularDynamics.Chapter04Review.componentConstraintStep m g q Qcur j) Qnow
+@@ -1424,9 +1425,15 @@
+     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+     (q Q₀ : MolecularDynamics.Chapter04Review.Q n)
+     (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n)
+-    (round : ℕ) (tol : ℝ) (_hl : 0 < l) : Prop :=
++    (round : ℕ) (tol : ℝ) (_hl : 0 < l)
++    (_hvalid : ∀ k < (round+1)*l,
++      let j : Fin l := ⟨k%l,Nat.mod_lt k _hl⟩
++      let Q := componentPrintedTrajectory m g q Q₀ Gsup1 k
++      DifferentiableAt ℝ (g j) q ∧ DifferentiableAt ℝ (g j) Q ∧
++        MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Q)
++          (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j)) ≠ 0) : Prop :=
+   ∀ j : Fin l, |componentPrintedDelta m g
+-    (componentPrintedTrajectory m g q Q₀ Gsup1 (round*l+j.val)) Gsup1 j| < tol
++    (componentPrintedTrajectory m g q Q₀ Gsup1 (round*l+j.val)) Gsup1 j| ≤ tol
+ 
+ /-- source_id: MD-4.3.4-ProjectedEulerPrinted · definition · §4.3.4 · 印刷p.159 / PDFp.181
+ [ERRATUM?] p159(4.21)力符号与p163及F=−∇U定义不一致。 -/

@@ -1,0 +1,903 @@
+{
+  "batch": "EAUDIT51",
+  "input_sha256": {
+    "BATCH_EAUDIT51.md": "e15d5da91c967ee77b242ffcedbb80e7340ddf72254d53814ca223402c88cb97",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.3.2-NormalEnergyTaylor",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_VECTOR_AND_BIG_O_TYPOGRAPHY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-NormalEnergyTaylor",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "192",
+          "pdf_page": "213",
+          "statement_latex": "$\\Delta E=H(\\mathbf z+\\mathbf n\\xi)-H(\\mathbf z)=\\nabla H\\cdot\\mathbf n\\xi+\\mathcal O(\\Delta E^2)$, and $\\mathbf n=\\nabla H/\\|\\nabla H\\|$, we have $\\xi=\\Delta E/\\|\\nabla H\\|+\\mathcal O(\\Delta E^2)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF213／印刷192：z 是 Σ_E 上固定基点，原文粗体 n=∇H(z)/‖∇H(z)‖ 是单位法向，不是 Lean 的维数参数 n；ξ 为沿固定法向的局部有符号坐标，ΔE 是小能量偏移。",
+            "R3：原文以 ΔE 为余项变量，保持不改。本条只承担已登记的正向 O(ξ²) 子引理；完整逆向及 O(ΔE²) 由同批 MD-5.3.2-NormalInverseTaylor 承担。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_VECTOR_AND_BIG_O_TYPOGRAPHY",
+              "scope": "A_TRANSCRIPTION",
+              "location": "statement_latex / context_notation",
+              "explanation": "原页向量 z、n 为粗体，余项为花体 O；输入以普通 z、n、O 排版，且本条缺少法向符号的上下文。",
+              "action": "恢复原页字形并补充局部符号解释；保留原文 ΔE 自变量和已登记的子引理范围。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.normalEnergyTaylor",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]本条写正向实际C²局部Taylor余项O(ξ²)，原ΔE参数与反向ξ展开另条；非零梯度用于局部逆坐标，未以正向式替代所有结论。",
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅正向法线Taylor子引理；以ΔE为变量的逆存在及O(ΔE²)结论由MD-5.3.2-NormalInverseTaylor承担。"
+          ],
+          "statement_scope": "仅正向法线Taylor子引理；以ΔE为变量的逆存在及O(ΔE²)结论由MD-5.3.2-NormalInverseTaylor承担。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:34.669281",
+              "before_sha256": "02245cb55a85d908a521a1167179408a3fe00b9a91094961c395f1beccc5baf6",
+              "after_sha256": "1dc6f90afef718d23f7e46a68ec150aaef126773b5d671d0e555a4fb2db65c69",
+              "changed_fields": [
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH13_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_VECTOR_AND_BIG_O_TYPOGRAPHY",
+            "scope": "A_TRANSCRIPTION",
+            "location": "statement_latex / context_notation",
+            "explanation": "原页向量 z、n 为粗体，余项为花体 O；输入以普通 z、n、O 排版，且本条缺少法向符号的上下文。",
+            "action": "恢复原页字形并补充局部符号解释；保留原文 ΔE 自变量和已登记的子引理范围。"
+          }
+        ],
+        "evidence": {
+          "A_source_check": "附件19页的两个展开式、梯度归一化法向、连接词和 O(ΔE²) 的自变量均吻合。原页 z,n 为粗体向量，余项使用花体 O；本次恢复排版，并补记 n 是法向、非维数的上下文。没有把原文 O(ΔE²) 改成 O(ξ²)。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            19
+          ],
+          "original_pdf_pages": [
+            213
+          ],
+          "printed_pages": "192",
+          "rendered_pages": [
+            {
+              "attachment_page": 19,
+              "visually_inspected_identical_representative": 19,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_19.png",
+              "rendered_sha256": "380f85264514b997f024a77df9396e9c55d3055b8c00201f2406df84bd506cfa"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MolecularDynamics.Chapter05Review.grad",
+            "MolecularDynamics.Chapter05Review.normalField",
+            "MD.Ch05.normalField"
+          ],
+          "C_EXTRA_check": "[EXTRA] 的正向 O(ξ²) 子范围、C²、非零梯度和跨条目16的逆向／O(ΔE²) 映射全部落实。",
+          "declarations_in_current_item": [
+            "normalEnergyTaylor"
+          ],
+          "current_item_lean_excerpt_sha256": "17350b513313dae37805e4aa9673e6c8ed036fb47c78fd677655ea1ed79a4eae",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.normalEnergyTaylor",
+        "verdict": "PASS",
+        "explanation": "∀ 维数 n、H:E n→ℝ 和基点 z，C² 及 grad H z≠0 后给出 ∃C>0、∃δ>0，再对每个 |s|<δ 断言二阶余项估计。grad 是实际 gradient，normalField 是 ‖grad‖⁻¹•grad，故线性项确为 s‖∇H(z)‖，位置 z+s•normalField 正确。此结论是固定基点的实际 O(s²) 正向 Taylor 子引理；它没有单独给出以 e=ΔE 为参数的逆坐标或 O(e²)。输入 statement_scope 和 [EXTRA] 已将这些剩余结论明确映射到本批条目16，后者确实完整包含，所以不把子引理冒充整句。C² 和非零梯度是合理的局部资格；没有从总化 gradient 推断任意 H 的 Taylor 展开。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-NormalInverseTaylor",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_VECTOR_AND_BIG_O_TYPOGRAPHY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-NormalInverseTaylor",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "192",
+          "pdf_page": "213",
+          "statement_latex": "$\\Delta E=H(\\mathbf z+\\mathbf n\\xi)-H(\\mathbf z)=\\nabla H\\cdot\\mathbf n\\xi+\\mathcal O(\\Delta E^2)$, and $\\mathbf n=\\nabla H/\\|\\nabla H\\|$, we have $\\xi=\\Delta E/\\|\\nabla H\\|+\\mathcal O(\\Delta E^2)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 213（印刷192）：z∈Σ_E={H=E}；n=∇H(z)/‖∇H(z)‖ 为单位法向（不是维数）；ξ是沿此固定法向到Σ_{E+ΔE}的局部距离；∇H在z处取值；ΔE为小能量偏移。",
+            "该页假定‖∇H‖在Σ_E上远离零；前页假定能量面有界。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_VECTOR_AND_BIG_O_TYPOGRAPHY",
+              "scope": "A_TRANSCRIPTION",
+              "location": "statement_latex",
+              "explanation": "原页使用粗体向量 z,n 与花体 O；输入将这些字形压成普通 z,n,O。",
+              "action": "恢复原页字形；原有上下文、所有 O(ΔE²) 及逆向结论均保留。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.normalInverseTaylor",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际C²和非零梯度，ξ由真实局部能量方程得到；保留反向ξ及以ΔE计的正向余项两个结论，不只证明O(ξ²)。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:34.669281",
+              "before_sha256": "3f3cf1825073604b6b88658f36364629042f58e73359535b70b0ea99e7f6b6d5",
+              "after_sha256": "88c34d9c12cd712cd0a8955f1b44d9ed0e1f01a2c33b1581163a1a5e6fbb4c19",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH14_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_VECTOR_AND_BIG_O_TYPOGRAPHY",
+            "scope": "A_TRANSCRIPTION",
+            "location": "statement_latex",
+            "explanation": "原页使用粗体向量 z,n 与花体 O；输入将这些字形压成普通 z,n,O。",
+            "action": "恢复原页字形；原有上下文、所有 O(ΔE²) 及逆向结论均保留。"
+          }
+        ],
+        "evidence": {
+          "A_source_check": "附件20页与附件19页渲染完全相同。原文两项余项均为 O(ΔE²)，不是 O(ξ²)；梯度归一化法向和逆向 ξ 的一阶项均正确转录。仅恢复粗体向量 z,n 与花体 O。",
+          "attachment_pdf": "R3_PAGES.pdf",
+          "attachment_pages": [
+            20
+          ],
+          "original_pdf_pages": [
+            213
+          ],
+          "printed_pages": "192",
+          "rendered_pages": [
+            {
+              "attachment_page": 20,
+              "visually_inspected_identical_representative": 19,
+              "rendered_path": "/workspace/.mathcopilot/reviews/ch05_eaudit/R3_evidence/page_20.png",
+              "rendered_sha256": "380f85264514b997f024a77df9396e9c55d3055b8c00201f2406df84bd506cfa"
+            }
+          ],
+          "C_reviewed_project_definitions": [
+            "MolecularDynamics.Chapter05Review.E",
+            "MolecularDynamics.Chapter05Review.grad",
+            "MolecularDynamics.Chapter05Review.normalField",
+            "MD.Ch05.normalField"
+          ],
+          "C_EXTRA_check": "[EXTRA] 的实际 C²、非零梯度、局部能量方程、反向估计和以 ΔE 计的正向估计均实际存在，顺序为 ∃C,δ 后 ∀e 再 ∃ξ。",
+          "declarations_in_current_item": [
+            "normalInverseTaylor"
+          ],
+          "current_item_lean_excerpt_sha256": "19be7c17516db29b1fbb15151f1385d3587b63e3668ac86ef6c219ad59861386",
+          "method": "先逐字视觉核对附件原页，再只读核对本任务摘录的当前声明和项目定义。20页已逐页渲染并按图片SHA256确认重复页；检查了5种不同原页。未读取旧版本工程／任务，不修改 Lean，不补证明，不运行编译，不因 sorry 判签名失败；Mathlib 标准对象按标准数学意义采信。",
+          "input_sha256_policy": "本条 input_sha256 从任务小节原样回显；未用旧文件重算或替换。",
+          "task_file_sha256": "e50c461bf8e38a694d0bf40f5481d3160d1dc793e0d0217a0058a6e3c7f65f5e",
+          "attachment_pdf_sha256": "abcdcbb692eb2a99da90cc75b142118dafc757c2493e7fc18bbe74cbce7c9f30"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.normalInverseTaylor",
+        "verdict": "PASS",
+        "explanation": "声明对每个 n、C² 函数 H 和非临界基点 z，先选择依赖 H,z 的 C>0 和 δ>0，再对每个实 |e|<δ 选择 ξ。三个合取结论都保留：真实能量方程 H(z+ξn)=H(z)+e；|ξ−e/‖∇H(z)‖|≤Ce²；以及同一 ξ 上 |H(z+ξn)−H(z)−‖∇H(z)‖ξ|≤Ce²。最后一项正是原文以 ΔE 为变量的正向余项，而不是只提供 O(ξ²)。同一 C 可通过增大常数同时控制两项；非零梯度给出一维法向能量映射的非零导数，C² 局部逆资格足够。估计还使 ξ 在 e→0 时趋0，故存在性不是无关的远处能量交点。原文 E 在此为 H(z)，法向取在固定基点；本条不声称对整个能量面有统一的常数。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-MicroRawInvariant",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MATHCAL_M_TRANSCRIPTION",
+          "EXTRA_REGULARITY_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-MicroRawInvariant",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "193",
+          "pdf_page": "214",
+          "statement_latex": "As both volume and energy are invariant under the Hamiltonian flow, $\\mu(\\mathcal M)$ must be invariant under the flow, thus $\\mu(\\mathcal F_t(\\mathcal M))=\\mu(\\mathcal M)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 214（印刷193）：μ(M)=∫_M‖∇H‖⁻¹dσ 是未归一化测度；M⊂Σ_E；𝓕_t是Hamiltonian流，正文调用体积及能量保持。"
+          ],
+          "issues": [
+            {
+              "code": "MATHCAL_M_TRANSCRIPTION",
+              "field": "statement_latex",
+              "category": "transcription",
+              "description": "原页集合记号是花体 \\mathcal M，输入三处写作普通 M；仅校正记号字形，不改命题。"
+            },
+            {
+              "code": "EXTRA_REGULARITY_SCOPE",
+              "field": "extra_assumptions",
+              "category": "annotation",
+              "description": "应完整登记 C² Hamiltonian、时空联合 C² 全流，以及 regularEnergy 内的非空、紧性、无临界点、正有限 raw 总质量。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.microRawInvariant",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原正文调用的实际全流、体积与能量保持先验明确写出；需要推出的是曲面加权raw测度保持，未把该结论作前提。",
+            "[EXTRA] 本签名还要求 H 为 C²、(t,z)↦Φ(t,z) 联合 C²；regularEnergy 包含能级非空且紧、梯度处处非零，以及 raw 总质量严格正且有限。这些是适用范围限制，并非不变性结论。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:34.669281",
+              "before_sha256": "ccdbdc942cc2bbe4f43aee14877737661d74869c97496d3f6d1829ddcc4a5d5b",
+              "after_sha256": "c01ce9fbe162ed337a13f4c139368b15bac324f4c27b319ba277f7486aa54b19",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH14_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R4_PAGES.pdf 附件第1页；本次渲染像素等价组见 .mathcopilot/reviews/ch05_eaudit/R4_evidence/render_groups.json"
+        },
+        "issues": [
+          {
+            "code": "MATHCAL_M_TRANSCRIPTION",
+            "field": "statement_latex",
+            "category": "transcription",
+            "description": "原页集合记号是花体 \\mathcal M，输入三处写作普通 M；仅校正记号字形，不改命题。"
+          },
+          {
+            "code": "EXTRA_REGULARITY_SCOPE",
+            "field": "extra_assumptions",
+            "category": "annotation",
+            "description": "应完整登记 C² Hamiltonian、时空联合 C² 全流，以及 regularEnergy 内的非空、紧性、无临界点、正有限 raw 总质量。"
+          }
+        ],
+        "evidence": {
+          "inputs": {
+            "task": "R4_任务.md",
+            "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+            "pdf": "R4_PAGES.pdf",
+            "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+            "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+          },
+          "attachment_pages": [
+            1
+          ],
+          "original_pdf_pages": [
+            214
+          ],
+          "printed_pages": [
+            193
+          ],
+          "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+          "rendered_pages": [
+            {
+              "page": 1,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-01.png",
+              "rgb_pixel_sha256": "92d7a7f2eed396f3f9b9e2e4373dceddfbc13de0bb921bb9d621532a05145249"
+            }
+          ],
+          "text_check": "附件1页（印刷193）原句与等式均已核对；英文无漏词。原页为 μ(𝓕_t(𝓜))=μ(𝓜)，且此处 μ 未归一化。",
+          "declaration_checks": [
+            {
+              "lean_decl": "MD.Ch05.microRawInvariant",
+              "verdict": "PASS",
+              "detail": "n∈ℕ，H:E n→ℝ，c∈ℝ，f:E n→E n，Φ:ℝ→E n→E n 全称量化。前提为 H 的 C²、regularEnergy H c、flow f Φ、Φ 的联合 C²、每个时间的环境体积保持和逐点能量保持。结论对每个实时间同时给出 microRaw 的 MeasurePreserving 及每个可测环境集合的像测度等式；两个合取均保留。"
+            }
+          ],
+          "project_dependency_check": "E 是 n 维欧氏空间；surfaceMeasure 是能级上的归一化 Hausdorff 面积；microRaw 的密度为 ENNReal.ofReal(‖∇H‖⁻¹)。flow 含零时恒等、全实时间群律及轨道导数，故每个时间映射有逆 Φ(-t)。regularEnergy 没有把测度不变性当前提。Chapter02/04 的同名 grad 不参与本声明的全限定名解释。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microRawInvariant",
+        "verdict": "PASS",
+        "explanation": "PASS。光滑全流、体积保持和能量保持是本条的实际输入，待证的加权曲面测度不变性没有被假设。联合光滑性及逆时间使像集合结论与 MeasurePreserving 相容。原书只写 M⊂Σ_E；Lean 对任意可测环境 M 陈述等式是支持于能级的测度的自然扩展。regularEnergy 的额外限制较原句强，已在 corrected_json 明示。",
+        "counterexample": null,
+        "suggested_fix": "仅更正原文记号及 [EXTRA] 注释；当前 Lean 签名无需修改。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-MicroInvariant",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MATHCAL_M_TRANSCRIPTION",
+          "EXTRA_REGULARITY_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-MicroInvariant",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "193",
+          "pdf_page": "214",
+          "statement_latex": "$\\mu(\\mathcal F_t(\\mathcal M))=\\mu(\\mathcal M)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 214（印刷193）：此处μ仍是未归一化曲面加权测度，M⊂Σ_E，𝓕_t是Hamiltonian流；该句尚未引入概率归一化。"
+          ],
+          "issues": [
+            {
+              "code": "MATHCAL_M_TRANSCRIPTION",
+              "field": "statement_latex",
+              "category": "transcription",
+              "description": "原页等式中的集合是花体 \\mathcal M，输入使用普通 M。"
+            },
+            {
+              "code": "EXTRA_REGULARITY_SCOPE",
+              "field": "extra_assumptions",
+              "category": "annotation",
+              "description": "完整补记本条与上一条相同的光滑性、正则紧能级及正有限 raw 总质量资格。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.microInvariant",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]归一化measure版本另列；原始未归一化µ的不变及集合像等式由上一完整条目保留，不能只凭归一化定义编译称全部已证。",
+            "[EXTRA] H 为 C²，Φ 为联合 C² 全实时间流；regularEnergy 要求能级非空且紧、梯度非零、raw 总质量严格正且有限。本条结论是归一化变体，原始像测度等式见 MD.Ch05.microRawInvariant。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:58:34.669281",
+              "before_sha256": "c4707bc35137b0f474a520f751ce0e3fad112ff3f97e895f04ac1e6c7e228c29",
+              "after_sha256": "70d4db7ba59b0df2172f2488b9ede17f0f910d12e07d342c47efdb857563d470",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH14_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R4_PAGES.pdf 附件第2页；本次渲染像素等价组见 .mathcopilot/reviews/ch05_eaudit/R4_evidence/render_groups.json"
+        },
+        "issues": [
+          {
+            "code": "MATHCAL_M_TRANSCRIPTION",
+            "field": "statement_latex",
+            "category": "transcription",
+            "description": "原页等式中的集合是花体 \\mathcal M，输入使用普通 M。"
+          },
+          {
+            "code": "EXTRA_REGULARITY_SCOPE",
+            "field": "extra_assumptions",
+            "category": "annotation",
+            "description": "完整补记本条与上一条相同的光滑性、正则紧能级及正有限 raw 总质量资格。"
+          }
+        ],
+        "evidence": {
+          "inputs": {
+            "task": "R4_任务.md",
+            "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+            "pdf": "R4_PAGES.pdf",
+            "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+            "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+          },
+          "attachment_pages": [
+            2
+          ],
+          "original_pdf_pages": [
+            214
+          ],
+          "printed_pages": [
+            193
+          ],
+          "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+          "rendered_pages": [
+            {
+              "page": 2,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-02.png",
+              "rgb_pixel_sha256": "92d7a7f2eed396f3f9b9e2e4373dceddfbc13de0bb921bb9d621532a05145249"
+            }
+          ],
+          "text_check": "附件2页与附件1页渲染逐像素相同。等式位于归一化之前，确实是未归一化 μ 的像集合等式。",
+          "declaration_checks": [
+            {
+              "lean_decl": "MD.Ch05.microInvariant",
+              "verdict": "PASS",
+              "detail": "n,H,c,f,Φ 全称量化，全部前提与上一条相同；结论为每个实时间保持 microMeasure H c。该对象是归一化测度，不能直接读作原页的 raw μ。"
+            }
+          ],
+          "project_dependency_check": "microMeasure H c=((microRaw H c) univ)⁻¹ • microRaw H c。regularEnergy 保证该标量严格正且有限，从而归一化与 raw 不变性等价；flow 的群律给出逆时间。",
+          "scope_check": "第1条负责原页 raw μ 及像等式，第2条负责其正有限归一化变体；分别保留两个条目，没有合并。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microInvariant",
+        "verdict": "PASS",
+        "explanation": "PASS（按已明示的归一化变体及跨条目映射审校）。当前声明的对象确为 microMeasure，并未冒称其定义就是原页 μ。正有限的总质量使这一变体与 raw 不变性相容；原页 raw 的像集合等式已经由本批第1条 microRawInvariant 完整保留。MeasurePreserving 虽按逆像表述，在此光滑可逆全流下不会丢失原书的像集合含义。",
+        "counterexample": null,
+        "suggested_fix": "保留原始 μ 的说明及指向第1条的映射；不要把本声明单独标注成未归一化 μ 的直接字面版。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-MicroPartition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "FINITE_REAL_PARTITION_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-MicroPartition",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "193",
+          "pdf_page": "214",
+          "statement_latex": "The invariant measure of the whole level set $\\Sigma_E$ is defined as the microcanonical partition function $Z_E=\\mu(\\Sigma_E)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 214（印刷193）：Σ_E={H=E}；μ(A)=∫_{A∩Σ_E}‖∇H‖⁻¹dσ 为未归一化测度；Z_E=μ(Σ_E)。",
+            "raw测度本身受限于Σ_E，univ总质量对应Σ_E；ENNReal转实只有有限总质量时适用物理Z_E，概率归一化条件后续明确。"
+          ],
+          "issues": [
+            {
+              "code": "FINITE_REAL_PARTITION_SCOPE",
+              "field": "extra_assumptions",
+              "category": "annotation",
+              "description": "有限总质量限制原已记在 context_notation，但 extra_assumptions 为空；将实值 toReal 实现的适用范围同步明示，防止把 ∞.toReal=0 当成物理 Z_E。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.microPartition",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] microPartition 是书中配分函数在 raw 总质量有限时的实值实现；不将 ENNReal.toReal 在∞处的总化值0解释为书中 Z_E。概率归一化另需总质量严格正。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT10_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:59:03.890531",
+              "before_sha256": "e46413abaa0fe84412819253079b30adf7224d0d53ab34dc03280a71430c6e0d",
+              "after_sha256": "042ae2b1d7707d47751a61a1d150c7f84016af098b5c2d4f06b3cf1be7da34ee",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH14_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R4_PAGES.pdf 附件第3页；本次渲染像素等价组见 .mathcopilot/reviews/ch05_eaudit/R4_evidence/render_groups.json"
+        },
+        "issues": [
+          {
+            "code": "FINITE_REAL_PARTITION_SCOPE",
+            "field": "extra_assumptions",
+            "category": "annotation",
+            "description": "有限总质量限制原已记在 context_notation，但 extra_assumptions 为空；将实值 toReal 实现的适用范围同步明示，防止把 ∞.toReal=0 当成物理 Z_E。"
+          }
+        ],
+        "evidence": {
+          "inputs": {
+            "task": "R4_任务.md",
+            "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+            "pdf": "R4_PAGES.pdf",
+            "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+            "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+          },
+          "attachment_pages": [
+            3
+          ],
+          "original_pdf_pages": [
+            214
+          ],
+          "printed_pages": [
+            193
+          ],
+          "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+          "rendered_pages": [
+            {
+              "page": 3,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-03.png",
+              "rgb_pixel_sha256": "92d7a7f2eed396f3f9b9e2e4373dceddfbc13de0bb921bb9d621532a05145249"
+            }
+          ],
+          "text_check": "附件3页原句、microcanonical partition function 名称及 Z_E=μ(Σ_E) 等式一致；印刷193、PDF214的元数据正确。",
+          "declaration_checks": [
+            {
+              "lean_decl": "MD.Ch05.microPartition",
+              "verdict": "PASS",
+              "detail": "对任意 n、H:E n→ℝ、实数 c 定义实值函数 ((microRaw H c) univ).toReal；无命题前提、无隐藏量词。它是在原注释明确限定的有限质量情形下实现书中 Z_E；不代表无限总质量时仍有实值相等。"
+            }
+          ],
+          "project_dependency_check": "microRaw 使用能级上的限制面积和梯度倒数密度；在书中光滑能级背景下，univ 的质量与 Σ_E 的质量相同。toReal 的值域为 ℝ，∞ 输入被总化为0。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microPartition",
+        "verdict": "PASS",
+        "explanation": "PASS（有限质量的实值实现）。原注释已经明确 ENNReal 转实只在有限总质量时适用，因此这里没有把 ∞ 解释成有限配分函数。univ 与能级的差别由 raw 测度受限于能级解释。定义本身允许任意 H,c，是一个总化函数；审校通过不包含“所有能级的 Z_E 都有限”的额外结论。概率用途还需正质量，见第9、10条。",
+        "counterexample": "适用范围边界说明，不是上述有限情形的反例：取 n=2、H(q,p)=p²/2、c=1，并允许 q∈ℝ；能级是两条无限直线且权重为正常数，raw 总质量为∞。本定义给出0，不能在此把该实值当作原书的扩展实数 Z_E。",
+        "suggested_fix": "使用此实值定义时保留“raw 总质量有限”的资格；若需覆盖无限情形，可另设 ENNReal 值的 partition 定义。本次不修改工程。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-HarmonicEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-HarmonicEnergy",
+          "kind": "definition",
+          "label": "Example 5.1",
+          "section": "5.3.2",
+          "printed_page": "193",
+          "pdf_page": "214",
+          "statement_latex": "Example 5.1 Consider the harmonic oscillator $H(q,p)=p^2/2+\\Omega^2q^2/2$. The energy surface $H=E>0$ is an ellipse.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF 214（印刷193），Example 5.1：q为位置，p为动量，Ω为振子频率，E>0为能量；Lean坐标对应z 0=q，z 1=p。",
+            "“ellipse”隐含Ω≠0（物理频率通常Ω>0）；原句未显式写此条件，不静默补入statement_latex。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.harmonicEnergy",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 补非零频率、正能量下能量面椭圆的完整等价式；质量为单位，原定义与坐标顺序保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT10_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:59:03.890531",
+              "before_sha256": "0b78b553d2225d34d4686af324fb2c612ecd2e9c5cff6c9365077803afc34746",
+              "after_sha256": "3e32c0a32c462cd42410ae832a31f4df472ffc428c832026334186d060af97f6",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH14_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "inputs": {
+            "task": "R4_任务.md",
+            "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+            "pdf": "R4_PAGES.pdf",
+            "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+            "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+          },
+          "attachment_pages": [
+            4
+          ],
+          "original_pdf_pages": [
+            214
+          ],
+          "printed_pages": [
+            193
+          ],
+          "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+          "rendered_pages": [
+            {
+              "page": 4,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-04.png",
+              "rgb_pixel_sha256": "92d7a7f2eed396f3f9b9e2e4373dceddfbc13de0bb921bb9d621532a05145249"
+            }
+          ],
+          "text_check": "附件4页 Example 5.1 的两句及 H(q,p)=p²/2+Ω²q²/2 已逐字核对。原书未在这两句内显写 Ω≠0，输入已在注释中保留这一事实。",
+          "declaration_checks": [
+            {
+              "lean_decl": "MD.Ch05.harmonicEnergy",
+              "verdict": "PASS",
+              "detail": "Ω∈ℝ，z∈E 2；z 0=q、z 1=p，动能和势能的坐标、平方、1/2 系数均正确。"
+            },
+            {
+              "lean_decl": "MD.Ch05.harmonicEnergy_ellipse",
+              "verdict": "PASS",
+              "detail": "对所有 Ω,c,z，在 Ω≠0、c>0 下，H=c 等价于 q/(√(2c)/|Ω|)、p/√(2c) 的平方和为1；两条半轴非零且正，完整表达椭圆。"
+            }
+          ],
+          "project_dependency_check": "本条使用的 E 2 是欧氏平面；harmonicEnergy 定义与后续调用同一对象。[EXTRA] 的非零频率及正能量与定理前提完全一致。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.harmonicEnergy",
+        "verdict": "PASS",
+        "explanation": "PASS。能量定义和椭圆等价式均忠实；|Ω| 正确处理负的形式参数。Ω=0 会退化，原文的 oscillator 语境及已有 [EXTRA] 已将其排除在椭圆断言的适用范围之外，没有静默改写原句。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-HarmonicPartition",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_FIRST_QUADRATURE_BOUND",
+          "PRINTED_DERIVATION_NOT_RECORDED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-HarmonicPartition",
+          "kind": "unnumbered_claim",
+          "label": "Example 5.1",
+          "section": "5.3.2",
+          "printed_page": "193",
+          "pdf_page": "214",
+          "statement_latex": "$\\mu(\\Sigma_E)=4\\int_0^{\\sqrt{2E}/\\Omega}\\frac1{\\sqrt{2E-\\Omega^2q^2}}dq=2\\pi/\\Omega$.",
+          "proof_latex": null,
+          "proof_note": "原页给出 Example 5.1 的参数积分计算，未另设命题证明；首个参数积分上限有原印疑点，保留待人工确认。",
+          "proof_discussion_latex": "The partition function is obtained by integrating in the standard way. Parameterizing the surface by $q$, we have $p=\\sqrt{2E-\\Omega^2q^2}$, then\n\\[\\begin{aligned}\\mu(\\Sigma_E)&=4\\int_0^{\\sqrt{2E}}\\frac{\\sqrt{1+p_q^2}}{\\sqrt{H_p^2+H_q^2}}\\,dq\\\\&=4\\int_0^{\\sqrt{2E}/\\Omega}\\frac{\\sqrt{1+\\frac{\\Omega^4q^2}{2E-\\Omega^2q^2}}}{\\sqrt{p^2+\\Omega^4q^2}}\\,dq\\\\&=4\\int_0^{\\sqrt{2E}/\\Omega}\\frac{1}{\\sqrt{2E-\\Omega^2q^2}}\\,dq\\\\&=2\\pi/\\Omega.\\end{aligned}\\]",
+          "context_notation": [
+            "H(q,p)=p²/2+Ω²q²/2，Σ_E={H=E}，E>0；μ(Σ_E)=Z_E为未归一化微正则分区函数。",
+            "原印第一行上限为 √(2E)，后两行为 √(2E)/Ω。statement_latex 只摘正确的后两行；此范围不能用来消除原页首行疑误。"
+          ],
+          "issues": [
+            {
+              "code": "PRINTED_FIRST_QUADRATURE_BOUND",
+              "field": "proof_discussion_latex",
+              "category": "source_math",
+              "description": "原页第一行参数积分的上限印为 √(2E)，随后两行上限为 √(2E)/Ω。前者一般不能参数化整个第一象限椭圆弧；原印疑误须保留并转人工，不把它改成后者再称逐字正确。"
+            },
+            {
+              "code": "PRINTED_DERIVATION_NOT_RECORDED",
+              "field": "proof_note / proof_discussion_latex",
+              "category": "annotation",
+              "description": "原页确有 Example 5.1 的参数积分计算。补存原印推导（含可疑首上限），区分“未另设完整证明”和“没有计算论证”。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.harmonicPartition",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]正频率和正能量；是真实Hausdorff加权测度的分区函数，不把参数积分写成定义冒充面积识别。",
+            "[EXTRA] 保留真实曲面微正则质量终值，补其与正确参数积分的等式及该积分的终值；不更改原印首积分疑误。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT10_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:59:03.890531",
+              "before_sha256": "0954be332917d3f41f9ada2af797626564ecbb5939d543e2694aa06198a4182a",
+              "after_sha256": "3620b08b44913e1fcf279ca01f1468f5c15e3ab36d640c5be2c60870aacf58a2",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R4_PAGES.pdf 附件第5页；本次渲染像素等价组见 .mathcopilot/reviews/ch05_eaudit/R4_evidence/render_groups.json"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_FIRST_QUADRATURE_BOUND",
+            "field": "proof_discussion_latex",
+            "category": "source_math",
+            "description": "原页第一行参数积分的上限印为 √(2E)，随后两行上限为 √(2E)/Ω。前者一般不能参数化整个第一象限椭圆弧；原印疑误须保留并转人工，不把它改成后者再称逐字正确。"
+          },
+          {
+            "code": "PRINTED_DERIVATION_NOT_RECORDED",
+            "field": "proof_note / proof_discussion_latex",
+            "category": "annotation",
+            "description": "原页确有 Example 5.1 的参数积分计算。补存原印推导（含可疑首上限），区分“未另设完整证明”和“没有计算论证”。"
+          }
+        ],
+        "evidence": {
+          "inputs": {
+            "task": "R4_任务.md",
+            "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+            "pdf": "R4_PAGES.pdf",
+            "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+            "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+          },
+          "attachment_pages": [
+            5
+          ],
+          "original_pdf_pages": [
+            214
+          ],
+          "printed_pages": [
+            193
+          ],
+          "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+          "rendered_pages": [
+            {
+              "page": 5,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-05.png",
+              "rgb_pixel_sha256": "92d7a7f2eed396f3f9b9e2e4373dceddfbc13de0bb921bb9d621532a05145249"
+            }
+          ],
+          "text_check": "附件5页目视确认：statement_latex 所摘第三行积分与终值 2π/Ω 均忠实；问题位于同页该计算链第一行的上限，不是摘录中的第三行。",
+          "declaration_checks": [
+            {
+              "lean_decl": "MD.Ch05.harmonicPartition",
+              "verdict": "PASS",
+              "detail": "∀Ω,c∈ℝ，Ω>0、c>0；真实加权曲面总质量的实值配分函数等于2π/Ω。对象和正参数前提正确。"
+            },
+            {
+              "lean_decl": "MD.Ch05.harmonicPartition_quadrature",
+              "verdict": "PASS",
+              "detail": "同样的正参数下，两个合取分别为真实 microPartition 等于上限 √(2c)/Ω 的四倍区间积分，以及该积分等于2π/Ω；不是把参数积分直接定义成面积。端点的 Real.sqrt/实数逆总化不影响可积的端点奇性。"
+            }
+          ],
+          "project_dependency_check": "microPartition 展开为实际 microRaw 总质量的 toReal；harmonicEnergy 的两个坐标正确，曲面维数为1。两个声明均未将待证积分或终值当前提。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.harmonicPartition",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "NEEDS_HUMAN 是原页推导疑误的分流，不是因 sorry 或因当前两个签名错误。两条 Lean 签名在 Ω,c>0 下均通过；quadrature 实现原印后两行的正确积分。原印第一行另有不一致上限，不能用这两条签名声称整段印刷推导已经逐字正确。",
+        "counterexample": "仅针对原印首上限：令 Ω=2、E=1，第一象限椭圆弧的 q 范围止于 √2/2；原印首积分却到 √2。其 p=√(2−4q²) 的实椭圆参数解释超出合法范围。当前 Lean 两条声明都使用正确上限或正确终值，未受此反例否定。",
+        "suggested_fix": "人工确认首行上限是否漏印 /Ω。原文字面证据保留 √(2E)，另将修正版标明 √(2E)/Ω；当前两个 Lean 签名可保留。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-IdealGasEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-IdealGasEnergy",
+          "kind": "definition",
+          "label": "Example 5.2",
+          "section": "5.3.2",
+          "printed_page": "193",
+          "pdf_page": "214",
+          "statement_latex": "Example 5.2 Consider a system of $N$ non-interacting particles of mass $m$ moving in periodic boundary conditions within a box of volume $V$. The Hamiltonian is\n\\[H=\\frac1{2m}\\sum_{i=1}^N\\|p_i\\|^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "N为三维粒子数，m为各粒子质量，p_i为第i粒子的三维动量，V为周期边界盒子的体积；H不依赖位置。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch05.idealGasEnergy",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT10_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:59:03.890531",
+              "before_sha256": "187251b0a1618f5089728e5d9dad45d5736b715a5d8f4e7a5f69b10c37770fe3",
+              "after_sha256": "08aaa20d109b388bf82f737c2362ee17e0dc4918f73ac0a493996d334b3d2da3",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:28:28.864805",
+              "before_sha256": "08aaa20d109b388bf82f737c2362ee17e0dc4918f73ac0a493996d334b3d2da3",
+              "after_sha256": "41b7bf33318ff9af84771deab4dd4524a6917d65408d77dcfee97147a9b8bdd2",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "193–194",
+                  "after": "193"
+                },
+                "pdf_page": {
+                  "before": "214–215",
+                  "after": "214"
+                }
+              },
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+          "review_context_pdf_pages": [
+            215
+          ]
+        },
+        "issues": [],
+        "evidence": {
+          "inputs": {
+            "task": "R4_任务.md",
+            "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+            "pdf": "R4_PAGES.pdf",
+            "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+            "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+          },
+          "attachment_pages": [
+            6,
+            7
+          ],
+          "original_pdf_pages": [
+            214,
+            215
+          ],
+          "printed_pages": [
+            193,
+            194
+          ],
+          "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+          "rendered_pages": [
+            {
+              "page": 6,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-06.png",
+              "rgb_pixel_sha256": "92d7a7f2eed396f3f9b9e2e4373dceddfbc13de0bb921bb9d621532a05145249"
+            },
+            {
+              "page": 7,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-07.png",
+              "rgb_pixel_sha256": "208cebc6492f909b973e46c0dff2054a9142eaaf6fd9246e854934d731826f70"
+            }
+          ],
+          "text_check": "附件6页 Example 5.2 起始句和 Hamiltonian 展示式一致。该摘录到公式为止均在印刷193/PDF214；附件7页的球面计算是背景，现有 review_context_pdf_pages=[215] 正确。",
+          "declaration_checks": [
+            {
+              "lean_decl": "MD.Ch05.idealGasEnergy",
+              "verdict": "PASS",
+              "detail": "N∈ℕ、m∈ℝ、z∈E(3N+3N)。Fin.natAdd(3N) i 取最后3N个动量坐标；3N个标量平方之和等于 N 个三维动量范数平方之和，整体除以2m；前3N个位置坐标不进入 H。"
+            }
+          ],
+          "project_dependency_check": "E 的标准欧氏范数与展平的三维粒子坐标一致。此条仅定义能量，不断言全欧氏位置空间的配分函数有限；有限基本胞由第7条给出并在第8条实际使用。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.idealGasEnergy",
+        "verdict": "PASS",
+        "explanation": "PASS。周期边界不影响局部动能公式，展平坐标没有改变粒子数或质量因子。定义在所有形式参数上的总化扩展不产生质量为0时的物理断言；后续配分函数明确要求 N,m,c,L>0。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

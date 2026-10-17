@@ -1,0 +1,242 @@
+[
+  {
+    "source_id": "MD-2.2.1-Admissible",
+    "names": [
+      "admissibleSmooth"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.2.1-StationaryNotMin",
+    "names": [
+      "stationaryNotMinimum"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.2.1-VariationalDerivativePrinted",
+    "names": [
+      "printedVariationalDerivative"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.2.2-DiscreteAction",
+    "names": [
+      "bp_discreteAction"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.2.2-DiscreteStationaryPrinted",
+    "names": [
+      "printedDiscreteStationary"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.2.3-Consistency",
+    "names": [
+      "consistency"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.2.3-DefectPrinted",
+    "names": [
+      "defectPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.2.3-ErrorBound",
+    "names": [
+      "errorBound"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.2.3-VerletConsistency",
+    "names": [
+      "verletConsistency"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.2.4-IntegralErrorPrinted",
+    "names": [
+      "integralErrorPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.3.1-VariationalPrinted",
+    "names": [
+      "variationalPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.3.2-EulerVolumePrinted",
+    "names": [
+      "eulerVolumePrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.3.4-HamiltonSymplectic",
+    "names": [
+      "hamiltonSymplectic"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.3.4-HamiltonVariationalPrinted",
+    "names": [
+      "hamiltonVariationalPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.3.5-ChainRule",
+    "names": [
+      "chainRule"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.3.5-GlobalGroupPrinted",
+    "names": [
+      "globalGroupPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.3.5-SymplecticInverse",
+    "names": [
+      "symplecticInverse"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.4.1-SymmetricEven",
+    "names": [
+      "symmetricEven"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.4.2-CompositionOrder",
+    "names": [
+      "compositionOrder"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.4.4-ImplicitLocal",
+    "names": [
+      "implicitLocal"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.4.4-Newton",
+    "names": [
+      "newtonPrinted"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.4.5-ConjugateLimits",
+    "names": [
+      "conjugateLimits"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.5.1-GaussFamily",
+    "names": [
+      "gaussFamily"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.5.1-RKSymplectic",
+    "names": [
+      "rkSymplectic"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.5.3-NewmarkNotSymplectic",
+    "names": [
+      "newmarkNotSymplectic"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.5.3-NewmarkReduction",
+    "names": [
+      "newmarkReduction"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.5.4-TIForce",
+    "names": [
+      "tiForce"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.5.4-TIOrder",
+    "names": [
+      "tiOrder"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-2.5.4-TIPotential",
+    "names": [
+      "tiMethod"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-2.5.5-BeemanOrder",
+    "names": [
+      "beemanOrder"
+    ],
+    "old": true,
+    "new": false
+  }
+]

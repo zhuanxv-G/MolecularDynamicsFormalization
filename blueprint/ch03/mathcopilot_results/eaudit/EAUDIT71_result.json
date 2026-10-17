@@ -1,0 +1,72 @@
+{
+  "batch": "EAUDIT71",
+  "input_sha256": {
+    "BATCH_EAUDIT71.md": "e69beecfac1e8ad68a7756837f52fa20a6247430fd1879a150bfdedf154cf238",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.3.1-SymplecticEulerShadowMatching",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "RESOLVED_ORDER_AND_COORDINATE_QUERY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.3.1-SymplecticEulerShadowMatching",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.3.1",
+          "printed_page": "106",
+          "pdf_page": "128",
+          "statement_latex": "The BCH expansion gives the perturbed Hamiltonian",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "同页展示式逐字保存在SymplecticEulerShadow；数值symplectic Euler采用第2章坐标约定。",
+            "本条Hamiltonian截断至h³；matchesHamiltonian(...,4)表示紧初值集上的一步端点O(h⁵)，与原Hamiltonian O(h⁴)区分。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.symplecticEulerShadowMatching",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "正对角质量、U全域C∞、紧初值集B；截断h³的实际局部流端点O(h⁵)为额外严格化。",
+            "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT41_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:36:50.397597",
+              "before_sha256": "e0de91710efc9ccff65cd35bc2835c4a6bf79e46972f5bd964defd1a1edfe62d",
+              "after_sha256": "5aa56fbb27920459630cde305d462a9c2c093f8a5d8f8d41b88bb88a85a6f348",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH07_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT41/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "A：被引片语逐字一致；本条显式分工为匹配结论，不重复另一source_id中的Hamiltonian展示式。C：已确认kick后drift、q/p坐标及Hamiltonian O(h^4)对应端点O(h^5)，原NEEDS_HUMAN注记已可解除。"
+        ],
+        "evidence": [
+          "A：附件第4页（书页106，原PDF 128），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第4小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.symplecticEulerShadowMatching",
+        "verdict": "PASS",
+        "explanation": "C：量化n、正对角质量m、全域C∞势U及任意紧初值集B；unpack将inl/inr坐标分别解释为q/p。算法为drift_h∘kick_h，先p减h∇U(q)，再q加hM⁻¹p_new。symplecticEulerShadow3中h、h²、h³的符号及两项h²收缩、h³收缩均与附件第4页相同；J的约定使这些符号匹配此数值次序。matchesHamiltonian的p=4精确要求存在C>0、δ>0、对每个0<h<δ和z∈B有真实初值解且端点差≤Ch^5，而不是Hamiltonian余项O(h^5)。从Hamiltonian截断误差O(h^4)经一步时间h得到该端点阶，[EXTRA]紧集一致局部解及光滑性是合理严格化。原issues中的次序/阶疑问由所给定义可消除。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

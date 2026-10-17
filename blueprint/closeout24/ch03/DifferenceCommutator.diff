@@ -1,0 +1,54 @@
+--- before
++++ after
+@@ -393,7 +393,8 @@
+ 
+ /-- source_id: MD-3.3-DifferenceCommutator · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 
+ [EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 
+-[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
++[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 [EXTRA] 24号：保留零至二次结论；补一般非交换代数三次系数及Hamilton算子实例。原JSON恢复印刷p.104/PDF126的三次项和O(h⁴)展示式，已视觉复核原页。一般三次系数尝试有限代数展开证明；Hamilton算子实例尚未证明，最终逐声明状态以本地核验日志为准。
++-/
+ theorem differenceCommutator (A B : R) :
+     PowerSeries.coeff 0 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
+     PowerSeries.coeff 1 (textbookFormalOperatorExponential A * textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) = 0 ∧
+@@ -418,6 +419,32 @@
+        textbookLieDerivative (textbookHamiltonianVectorField B)
+         (textbookLieDerivative (textbookHamiltonianVectorField A) φ) z) := by
+   sorry
++
++theorem differenceCommutator_coeff3 (A B : R) :
++    PowerSeries.coeff 3 (textbookFormalOperatorExponential A *
++      textbookFormalOperatorExponential B - textbookFormalOperatorExponential (A+B)) =
++      (1/6 : ℝ) • ((2 : ℝ) • (A*B^2)+(2 : ℝ) • (A^2*B)-
++        B*A^2-B*A*B-B^2*A-A*B*A) := by
++  rw [map_sub, textbookFormalOperatorProduct_coeff_three,
++    textbookFormalOperatorExponential_coeff]
++  norm_num
++  have hp : (A+B)^3 = A^3+A^2*B+A*B*A+A*B^2+
++      B*A^2+B*A*B+B^2*A+B^3 := by noncomm_ring
++  rw [hp]
++  module
++
++theorem differenceCommutator_hamiltonian_coeff3 (n : ℕ)
++    (A B φ : SymplecticCoordinates n → ℝ)
++    (_hA : ContDiff ℝ ∞ A) (_hB : ContDiff ℝ ∞ B) (_hφ : ContDiff ℝ ∞ φ)
++    (z : SymplecticCoordinates n) :
++    let LA := textbookLieDerivative (textbookHamiltonianVectorField A)
++    let LB := textbookLieDerivative (textbookHamiltonianVectorField B)
++    PowerSeries.coeff 3 (hamiltonianSplittingObservable A B φ z-
++      hamiltonianExactObservable A B φ z) = (1/6 : ℝ)*
++      (2*LA (LB (LB φ)) z+2*LA (LA (LB φ)) z-
++        LB (LA (LA φ)) z-LB (LA (LB φ)) z-LB (LB (LA φ)) z-LA (LB (LA φ)) z) := by
++  sorry
++
+ 
+ /-- source_id: MD-3.3-DifferenceCubic · unnumbered_claim · §3.3 · 印刷p.104 / PDFp.126 
+ [EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 -/
+@@ -2196,6 +2223,8 @@
+ #print axioms MD.Ch03.differenceCommutator
+ #print axioms MD.Ch03.differenceCommutator_coeff2
+ #print axioms MD.Ch03.differenceCommutator_hamiltonian
++#print axioms MD.Ch03.differenceCommutator_coeff3
++#print axioms MD.Ch03.differenceCommutator_hamiltonian_coeff3
+ #print axioms MD.Ch03.differenceCubic
+ #print axioms MD.Ch03.differenceCubic_coeff3
+ #print axioms MD.Ch03.hamiltonianCommutator

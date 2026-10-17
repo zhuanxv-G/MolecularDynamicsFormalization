@@ -1,0 +1,31 @@
+{
+  "batch": "EAUDIT90",
+  "input_sha256": {
+    "BATCH_EAUDIT90.md": "3429a2aace5038218cb9a1cf1eb90a6aa465c40067b6d86bc4a753f477ee29e1",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.4.2-CompositionSymplectic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R4_PAGES.pdf 附件第3页；书面页码85。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.compositionSymplectic",
+        "verdict": "PASS",
+        "explanation": "任意Nc、两族全实步长C¹辛映射，h为任意实数。项目定义用标准J及DΦᵀ J DΦ=J；textbookComposeMaps确为G₁(h/2)∘G₂(h/2)。结论包括复合C¹及每点Jacobian保辛，域和复合方向完整。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

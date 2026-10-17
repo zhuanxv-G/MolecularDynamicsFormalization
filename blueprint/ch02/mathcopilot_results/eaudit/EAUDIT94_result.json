@@ -1,0 +1,264 @@
+{
+  "batch": "EAUDIT94",
+  "input_sha256": {
+    "BATCH_EAUDIT94.md": "9cd0d62062419b2f3fb783aaedb6254a2569b2ec0bc2f2567b831e5ab8984ce3",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.5.1-RK4",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MISSING_ORDER_DECLARATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.5.1-RK4",
+          "kind": "definition",
+          "label": null,
+          "section": "2.5.1",
+          "printed_page": "89",
+          "pdf_page": "111",
+          "statement_latex": "An example of a popular 4th order explicit method is the choice of matrix $A$ with coefficients $a_{ij}\\equiv 0$ except $a_{21}=1/2$, $a_{32}=1/2$ and $a_{43}=1$, and $b_1=1/6$, $b_2=1/3$, $b_3=1/3$, $b_4=1/6$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际四阶段定义正确复现A/b；本条当前所给Lean未覆盖四阶结论，尚需明确另列声明。"
+          ],
+          "issues": [
+            "定义复现系数，但完整声明列表没有四阶定理；请提供另列条目的source_id/声明或补充适当正则性下的阶数声明。"
+          ],
+          "lean_decl": "MD.Ch02.bp_rk4",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT20_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:26:18.510671",
+              "before_sha256": "320c7304b6dfeb67935ad056f91684e42cdc98783e02f259f2ae5f90d7a97f79",
+              "after_sha256": "e0551ea2e00095e9f840a6ba2123f19f6e70b605c76197850f1c5c48e943b55c",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH27_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "定义复现系数，但完整声明列表没有四阶定理；请提供另列条目的source_id/声明或补充适当正则性下的阶数声明。"
+        ],
+        "evidence": [
+          "R4_PAGES.pdf 附件第16页；书面页码89。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_rk4",
+        "verdict": "FAIL",
+        "explanation": "四阶段定义正确展开a21=a32=1/2,a43=1及权重1/6,1/3,1/3,1/6，对任意有限维实向量场f、h,z有效。但本条完整当前Lean只有算法定义，未包含原句的四阶结论；context_notation称“四阶陈述单列”，本任务给出的同一source_id全部声明中没有该条或可核对的映射。因完整结论覆盖缺失判FAIL，而非算法公式错误。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": "定义复现系数，但完整声明列表没有四阶定理；请提供另列条目的source_id/声明或补充适当正则性下的阶数声明。"
+      }
+    },
+    {
+      "source_id": "MD-2.5.1-ExplicitRK",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "UNDISCLOSED_CONSISTENCY_ASSUMPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.5.1-ExplicitRK",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.5.1",
+          "printed_page": "89",
+          "pdf_page": "111",
+          "statement_latex": "This method is not symplectic, and it is in fact impossible to find symplectic explicit methods within the Runge-Kutta family.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "补记[EXTRA] ∑b_i=1以排除零权重恒等方法等不一致退化法；不是任意Hamilton系统上每个显式RK都非辛。"
+          ],
+          "lean_decl": "MD.Ch02.explicitRK",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] ∑ i, b i = 1为一致性资格；非辛性结论为存在光滑Hamilton系统及正步长的反例，不排除特定系统的偶然保辛。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT20_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:26:18.510671",
+              "before_sha256": "8e4eb7844929520aadd22ab929aca8e27b9732dfb6eb60fa87ee282f6f2bb189",
+              "after_sha256": "4c9d664f9d55de8dc1bb69c240569bf32f58f8dfea6b74c52d4e49c5660af714",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH27_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EAUDIT50_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:29:25.859638",
+              "before_sha256": "4c9d664f9d55de8dc1bb69c240569bf32f58f8dfea6b74c52d4e49c5660af714",
+              "after_sha256": "3f408ae20576b59c8d364a645ae06dc510d0c98729ce2c6f157f841b5a48676f",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH27_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT50/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "补记[EXTRA] ∑b_i=1以排除零权重恒等方法等不一致退化法；不是任意Hamilton系统上每个显式RK都非辛。"
+        ],
+        "evidence": [
+          "R4_PAGES.pdf 附件第17页；书面页码89。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.explicitRK",
+        "verdict": "PASS",
+        "explanation": "对任意有限阶段数s、严格下三角A及一致性∑b=1，存在一自由度的光滑Hamilton量、正h及满足真实RK阶段方程的全域G使G非辛。量词正确表达不能对所有Hamilton系统保辛，允许某些特殊系统恰好保辛。∑b=1是必要的非平凡一致性资格，原extra_assumptions为空，需补记。原书“不能找到”的措辞也应按一致RK方法理解。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": "若去掉一致性资格并取所有b_i=0，RK更新恒为恒等映射，因而保辛；当前∑b_i=1排除此例。",
+        "suggested_fix": "补记[EXTRA] ∑b_i=1以排除零权重恒等方法等不一致退化法；不是任意Hamilton系统上每个显式RK都非辛。"
+      }
+    },
+    {
+      "source_id": "MD-2.5.1-MidpointProperties",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "CONTEXT_ANCHOR_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.5.1-MidpointProperties",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.5.1",
+          "printed_page": "90",
+          "pdf_page": "112",
+          "statement_latex": "which has order 2.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "来自GLRK辛RK上下文，保留二阶与辛性两个结论；实际中点关系见同页。",
+            "which指隐式中点法：\\(Z=z+hF_1,\\quad F_1=f(z+\\frac h2 F_1)\\)。二阶为方法的一般阶数，给定ODE上误差可更高阶或为零。"
+          ],
+          "issues": [
+            "which缺少明确先行对象；补context_notation中的原页中点阶段方程，保留短引文本身。"
+          ],
+          "lean_decl": "MD.Ch02.midpointProperties",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]H C⁴，实际C¹求解映射及Hamilton解族；原文省略的资格明示。",
+            "[EXTRA] 补一般ODE局部二阶与Hamilton情形局部保辛；显式G0=id及实际方程、开状态域/小步长分支和真实流，移除全步长全初值解要求。C³分支及全域光滑场为充分[EXTRA]；二阶指至少二阶，非每个方程恰二阶。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT20_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:26:18.510671",
+              "before_sha256": "3c3cb51b16331c9836bda40975342d6769835498180eb90d447624154462f38e",
+              "after_sha256": "b70f2001ede3089f8b016f8a05e4fa4bfdf5d37107d4794dc74d3959da21fbac",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH27_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "which缺少明确先行对象；补context_notation中的原页中点阶段方程，保留短引文本身。"
+        ],
+        "evidence": [
+          "R4_PAGES.pdf 附件第18页；书面页码90。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.midpointProperties；MD.Ch02.midpointProperties_generalODE",
+        "verdict": "PASS",
+        "explanation": "两条定理均已核对：Hamilton版H C⁴、实际联合C³分支G、开U、小步长区间、G0=id、真实隐式中点方程和真实解族F；结论是该域每点Jacobian保辛及每个初值局部O(h³)。一般ODE版使用C³场与分支，给同样二阶局部界。不要求F在所有初值联合光滑，逐点ODE及场光滑已足够。保辛为局部域上的性质，并未错误要求G在U外C¹。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": "which缺少明确先行对象；补context_notation中的原页中点阶段方程，保留短引文本身。"
+      }
+    },
+    {
+      "source_id": "MD-2.5.1-GaussTwoOrder",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "COEFFICIENT_DISPLAY_OMITTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.5.1-GaussTwoOrder",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.5.1",
+          "printed_page": "90",
+          "pdf_page": "112",
+          "statement_latex": "The 4th order method ($s=2$) has coefficients\\[b_1=b_2=\\frac12,\\qquad A=(a_{ij})=\\begin{bmatrix}\\frac14&\\frac14-\\frac{\\sqrt3}{6}\\\\\\frac14+\\frac{\\sqrt3}{6}&\\frac14\\end{bmatrix}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本条为具体两阶段Gauss方法的至少全局四阶结论；上述A,b与Lean中实际阶段关系一致。globalOrder不声称每个特定ODE恰四阶。"
+          ],
+          "issues": [
+            "引文结束于has coefficients却没有展示系数；补原页b和A。context_notation中的“确切”应改为“具体的两阶段、至少四阶”，globalOrder不排除特殊ODE上更高阶。"
+          ],
+          "lean_decl": "MD.Ch02.gaussTwoOrder",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]C⁶实际向量场/解轨迹，实际C⁶步族且满足阶段关系；实际求解资格，不把4阶误差作为前提。",
+            "[EXTRA] 改为紧轨迹开邻域U、δ小步长内的真实光滑阶段分支，显式G0=id；补充分细迭代留U，保留全网格四阶。C⁶分支为充分[EXTRA]，未无条件声称任意步长可解。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT20_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:26:18.510671",
+              "before_sha256": "cd308356f8fa4040a5c4d0d9d3a15b2984350ac9c325098d47b7a53e7e1146f6",
+              "after_sha256": "c44f1f8834d52664410e77c8cf102028fd7c55feaa8a7984258c56871c5cb9ad",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH28_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "引文结束于has coefficients却没有展示系数；补原页b和A。context_notation中的“确切”应改为“具体的两阶段、至少四阶”，globalOrder不排除特殊ODE上更高阶。"
+        ],
+        "evidence": [
+          "R4_PAGES.pdf 附件第19页；书面页码90。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.gaussTwoOrder",
+        "verdict": "PASS",
+        "explanation": "两阶段A的四项与b=(1/2,1/2)正确；真实阶段及零步阶段值均明确。compactTrajectory提供τ>0、C⁶场、真实解及闭时间段连续性；开U覆盖紧轨迹，G与stages在小步长×U内C⁶、G0=id。结论为全网格O((τ/ν)^4)及充分细网格迭代留U，能由一致性、局部误差及紧轨迹邻域稳定性获得；没有把四阶界放进前提。globalOrder仅表示至少四阶，不是每个特定ODE恰四阶。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": "f=0时G=id，实际误差为0并满足任意阶界；故不能把当前globalOrder解读为每个问题都恰四阶。",
+        "suggested_fix": "引文结束于has coefficients却没有展示系数；补原页b和A。context_notation中的“确切”应改为“具体的两阶段、至少四阶”，globalOrder不排除特殊ODE上更高阶。"
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

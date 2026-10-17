@@ -1,0 +1,170 @@
+{
+  "batch": "EAUDIT88",
+  "input_sha256": {
+    "BATCH_EAUDIT88.md": "42b47d1dc35e5d20887852b90ce28b4e16e2b76a5c061aedf6189ec17b7b9b9f",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4.1-PrincipalAxisField",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_COMPONENT_SUBSCRIPTS_MISSING",
+          "SOURCE_CORRECTION_REQUIRES_HUMAN"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.1-PrincipalAxisField",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.1",
+          "printed_page": "172",
+          "pdf_page": "194",
+          "statement_latex": "If $T$ is a diagonal matrix, $T=\\operatorname{diag}(I_1,I_2,I_3)$, then we split the Euler equations and approximate the solution by successive rotations around the three axes of inertia,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Fin 3的0,1,2对应原书轴1,2,3；I_i是对角惯性分量，物理场景取正值。",
+            "续页原印列向量依次为(T₁⁻¹π₁,0,0)ᵀ、(0,T₂⁻¹π,0)ᵀ、(0,0,T₃⁻¹π)ᵀ；后两项原印π没有分量下标，保持记录，不静默改原式。",
+            "Lean的π_i/I_i是对原印后两项的显式补义解释；本次未裁定为正式书籍勘误。"
+          ],
+          "issues": [
+            {
+              "code": "PRINTED_COMPONENT_SUBSCRIPTS_MISSING",
+              "detail": "印刷173页的第二、第三个单轴列向量分别印为T₂⁻¹π、T₃⁻¹π，π后没有分量下标；第一项明确印为T₁⁻¹π₁。Lean统一写π_i/I_i是已说明的补义，不可当成逐字原式。原书疑误保留待人工。"
+            },
+            {
+              "code": "SOURCE_CORRECTION_REQUIRES_HUMAN",
+              "detail": "principalAxisField既非Printed/literal名，也未标_corrected；虽[EXTRA]披露了补分量下标，当前条目仍混合原文版本与修正解释。补义后的场合理，但本次不替原书裁定两处缺字。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.principalAxisField",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]将第二和第三子场的分量分别明确为π₂/π₃；原印刷两处缺下标另列待审，不覆盖原式。",
+            "[EXTRA] 本条为单轴分裂场定义；完整印刷五次轴复合由PrintedSpinStep承担，实际子流的负角与原印正角冲突保留AxisFlowFormal/ExactPlanarRotation待导师。"
+          ],
+          "statement_scope": "仅各单轴子向量场的定义；完整印刷五次复合由MD-4.4.1-PrintedSpinStep承担，精确平面子流解释由MD-4.4.1-ExactPlanarRotation单列待导师。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-11",
+              "reason": "原页高倍率复核纠正预备转录：列动量Rπ、方向ΘRᵀ与正式库一致；第二及第三拆分均缺下标。原记录归档，正角与π×ω子流符号疑点仍待审。",
+              "before": "blueprint/ch04/validation/transcription-repair-20261011/BEFORE.json",
+              "visual_sha256": {
+                "blueprint/ch04/source_pages/p195-split-detail.png": "2187e0fc326143559f3ee751a3d628e8168e8376ed833d5b4d440bb1cf5039b0",
+                "blueprint/ch04/source_pages/p196-spin-detail.png": "103c0a22caee08e216a7a749055fb24cd007afd063c43f0139555845b335c501"
+              }
+            },
+            {
+              "stage": "EAUDIT22_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:06:47.838276",
+              "before_sha256": "774a90154c526837dd0378beb1b03489dd2c49827b07bd7426fddfa7cf16ed72",
+              "after_sha256": "1e9b4b8025c9d2e73b7df4e010e0fed36eb336ba66b490f65b607d9d94b96602",
+              "changed_fields": [
+                "statement_latex",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:27:39.597807",
+              "before_sha256": "1e9b4b8025c9d2e73b7df4e010e0fed36eb336ba66b490f65b607d9d94b96602",
+              "after_sha256": "41bc804261bd3befd3db1da8b045c5a8743181514c5f6167fd6980eba5ef0b09",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "173",
+                  "after": "172"
+                },
+                "pdf_page": {
+                  "before": "195",
+                  "after": "194"
+                }
+              },
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH25_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R8_PAGES.pdf 附件第6、7页；本次 R8 视觉复核，见本条 json_review.evidence。",
+          "review_context_pdf_pages": [
+            195
+          ]
+        },
+        "issues": [
+          {
+            "code": "PRINTED_COMPONENT_SUBSCRIPTS_MISSING",
+            "stage": "A/C",
+            "detail": "印刷173页的第二、第三个单轴列向量分别印为T₂⁻¹π、T₃⁻¹π，π后没有分量下标；第一项明确印为T₁⁻¹π₁。Lean统一写π_i/I_i是已说明的补义，不可当成逐字原式。原书疑误保留待人工。"
+          },
+          {
+            "code": "SOURCE_CORRECTION_REQUIRES_HUMAN",
+            "stage": "C",
+            "detail": "principalAxisField既非Printed/literal名，也未标_corrected；虽[EXTRA]披露了补分量下标，当前条目仍混合原文版本与修正解释。补义后的场合理，但本次不替原书裁定两处缺字。"
+          }
+        ],
+        "evidence": {
+          "source_file": "R8_任务.md",
+          "source_file_sha256": "7959d1c3a32519cecfeab143035c742d40c548cd428719df6bf031f8798691d8",
+          "pdf_file": "R8_PAGES.pdf",
+          "pdf_file_sha256": "7c9f969e07f7f8ac5525c5534a391d44d951871710766b37f6e6b5ee85aa6897",
+          "attachment_pages": [
+            6,
+            7
+          ],
+          "visual_verification": "已视觉查看印刷页172、173、174的三种页面；15张附件页的渲染哈希分组逐页校验相同，复用相同页面的视觉结果。非仅依赖文本抽取或旧审校标记。",
+          "render_equivalence_groups": [
+            {
+              "attachment_pages": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "printed_page": 172,
+              "book_pdf_page": 194,
+              "render_sha256": "0b7258db7bce0d730bbf94cc199b19296f5edb296935100604186ef765650cc2"
+            },
+            {
+              "attachment_pages": [
+                7,
+                8,
+                10,
+                11,
+                14
+              ],
+              "printed_page": 173,
+              "book_pdf_page": 195,
+              "render_sha256": "525af8548750a65e6c8e9b414e8e4ace598e9ec4676dd11b603b32493d407d76"
+            }
+          ],
+          "A_source_check": "附件第6页印刷172页末句“If T is a diagonal matrix, T=diag(I₁,I₂,I₃), then we split ... successive rotations around the three axes of inertia,”与statement_latex一致。附件第7页印刷173页开头为续文和三项子场；已看原图，第二、三项π无下标属原印，非转录遗漏。当前printed_page=172/pdf_page=194和review_context_pdf_pages=[195]准确区分选句与续页。",
+          "C_signature_check": "I:V、i:Fin 3、π:V，返回V。Pi.single仅在第i项置π_i/I_i，cross3顺序为π×ω；未有正角流或五次组合的结论。定义未要求I_i≠0，实数除法在零处分支为总运算延拓，物理解读限定正惯性。",
+          "reviewed_lean_declarations": [
+            "MD.Ch04.principalAxisField"
+          ],
+          "EXTRA_check": "已核对现有两项[EXTRA]：补π₂、π₃及仅单轴场的范围限制均已披露；未据外部PrintedSpinStep/AxisFlowFormal/ExactPlanarRotation的名称认定其证明已完成。源页正角子流的符号问题不属于这个纯定义的结论。",
+          "method_limit": "只读审校任务内摘录及附件；未读旧 Ch04.lean/旧 source JSON/旧批次材料，未改工程、未补证明、未运行 Lean 编译。PASS 是签名与限定范围审校结论，不表示消除了 sorry。输入哈希按任务原值回显，并非对旧版本文件重新计算。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.principalAxisField",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "数学上，定义cross3 π (Pi.single i (π i/I i))是对角惯性下合理且正确的单轴分裂场；在I各分量为正的物理域，三个子场之和对应Euler右端，轴编号0,1,2也正确。不得把这个分裂等式推广到任意奇异对角矩阵，因为矩阵总逆与逐分量总除法在奇异处可能不同。本条仅定义场，不声称已证明正角印刷旋转就是其时间h子流。但原书后续第二、第三项确实缺分量下标，当前非明确_corrected名称的定义采用了补义版本。按原书数学疑误保留并分流要求，整条标NEEDS_HUMAN，而非将正确的补义场判成数学反例型FAIL。",
+        "counterexample": null,
+        "suggested_fix": "保留原书缺下标的字面记录和NEEDS_HUMAN。人工确认后，将该统一公式明确登记为principalAxisField_corrected或等效修正版映射；物理惯性资格与总除法延拓分开说明。不要在字面原式中直接补下标。"
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

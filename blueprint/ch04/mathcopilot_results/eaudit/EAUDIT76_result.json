@@ -1,0 +1,224 @@
+{
+  "batch": "EAUDIT76",
+  "input_sha256": {
+    "BATCH_EAUDIT76.md": "1f7e216e060d5b38eb5059bbd7ee0a3af19a7c5c0a87811ffd0b709130184fb7",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.1-RestrictedForm",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ANNOTATION_SCOPE_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.1-RestrictedForm",
+          "kind": "definition",
+          "label": null,
+          "section": "4.3.1",
+          "printed_page": "153",
+          "pdf_page": "175",
+          "statement_latex": "The simplifying concept that we exploit is that the symplectic $2$-form in the ambient space can be projected to the co-tangent bundle to define an associated symplectic form on the manifold.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Q n=Fin n→ℝ，Z n=Q n×Q n；phaseForm(u,v)=u_q·v_p−v_q·u_p 为标准相空间二形式。",
+            "restrictedForm 为一般同维映射 chart 的形式拉回表达式；当 chart 在 z 可微时具有通常的微分拉回解释。定义本身不保证任意 chart 的拉回非退化。",
+            "restrictedForm_nondegenerate 另对实际约束映射 c(q,p)=(g(q),G(q)M^{-1}p) 的导数核 T 陈述 phaseForm|T 的非退化；本条没有以 Lean 流形对象构造抽象余切丛，也没有另列闭性定理。"
+          ],
+          "issues": [
+            "context_notation 的“抽象余切丛存在/非退化未由定义证明”容易混淆一般拉回定义与当前已补入的 restrictedForm_nondegenerate 声明；应明确后者已经陈述了实际约束切空间上的非退化，证明体仍为 sorry。"
+          ],
+          "lean_decl": "MD.Ch04.restrictedForm",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 保留一般拉回定义，并补实际位置/隐藏约束余切流形切空间上限制标准二形式的非退化；正质量、C²、梯度独立为EXTRA正则资格。任意chart本身不声称辛。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T13:03:16.151063",
+              "before_sha256": "c8dfa43d82a2a29148a302c1834c13b0a0ab91f2e8b912a726600ab40b28becc",
+              "after_sha256": "466e853da56e0eac47a6acb9577221ec1fa87d8730dccf32a8311504e83b1a55",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH10_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R3本轮实际渲染核对：R3_PAGES.pdf，附件第2页；证据 .mathcopilot/reviews/ch04_eaudit/R3_evidence/page-02.png。旧 repair_log 仅作为输入历史保留，不作为本轮核验依据。"
+        },
+        "issues": [
+          "context_notation 的“抽象余切丛存在/非退化未由定义证明”容易混淆一般拉回定义与当前已补入的 restrictedForm_nondegenerate 声明；应明确后者已经陈述了实际约束切空间上的非退化，证明体仍为 sorry。"
+        ],
+        "evidence": [
+          "本轮依据：R3_任务.md 条目 2/10 及 R3_PAGES.pdf 附件第2页（原书 PDF 175 / 印刷 153）；实际渲染图 R3_evidence/page-02.png。",
+          "原页 4.3.1 首段所选英文整句逐字一致；2-form 的行末断行已正常合并，句末句号保留。",
+          "本轮审查包含 restrictedForm 与 restrictedForm_nondegenerate 两条声明；未将任意 chart 的拉回误判为辛形式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch04.restrictedForm",
+          "MD.Ch04.restrictedForm_nondegenerate"
+        ],
+        "verdict": "PASS",
+        "explanation": "restrictedForm 对任意 n、chart:Z n→Z n 及 z,u,v 定义 B(Dchart(z)u,Dchart(z)v)，输出实数；这是一般形式表达式，定义可总化，不暗含 chart 是坐标图、浸入或辛映射。补充定理对任意 n,l,m,g,z，在 m_i>0、g_j∈C²、g(z.q)=0、G(z.q)M^{-1}z.p=0、真实约束梯度独立的前提下，令 T=ker Dc(z)，完整结论为每个 u∈T 若与全部 v∈T 的标准二形式配对均为零，则 u=0。该结论是限制形式的非退化，量词次序和两个实际约束均正确。正质量与梯度独立使 GM^{-1}G^T 可逆，正是这一限制非退化的充分资格。一般拉回与实际切空间非退化分别陈述是合理的代数表述；不额外宣称抽象流形、闭性或任意 chart 的非退化已经由此定义构造。sorry 不影响本次签名结论。",
+        "counterexample": null,
+        "suggested_fix": "仅澄清 JSON 中一般拉回与补充非退化定理的说明；不修改 Lean。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.1-VariationalFormula",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_INDEX_RANGE_TRANSCRIPTION",
+          "SOURCE_PUNCTUATION",
+          "EXTRA_ANNOTATION_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.1-VariationalFormula",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.1",
+          "printed_page": "154",
+          "pdf_page": "176",
+          "statement_latex": "Next, we interchange time derivatives and differentials, and use the chain rule to write\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\mathrm dq=M^{-1}\\mathrm dp,\\tag{4.11}\\]\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\mathrm dp=-U''(q)\\mathrm dq-\\sum_{k=1}^l[(\\mathrm d\\lambda_k)\\nabla g_k(q)+\\lambda_kg_k''\\mathrm dq],\\tag{4.12}\\]\n\\[0=g_j'(q)\\mathrm dq,\\quad j=1,2,\\ldots,l,\\tag{4.13}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "原页 (4.13) 的范围逐字为 j=1,2,…,l,；输入 JSON 省略了显式的 2，并将页末承接逗号改成句号。两者不改变数学范围，但不符合逐字摘录要求。",
+            "第一条 extra_assumptions 未带 [EXTRA]，且“另保留”未准确反映本条已有 variational_constraints 将切向方程与变分场公式合取。"
+          ],
+          "lean_decl": "MD.Ch04.variational",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 用实际 Fréchet 导数表达变分场：U/g 全局 C²，乘子 ρ:Z n→Q l 在 z 可微。variational 是场导数恒等式，不单独构造时间流。",
+            "[EXTRA] variational_constraints 另量化可微相空间曲线 c、参数 t，假设 c(t)=z、c′(t)=v 且邻域内全部位置约束为零；结论同时给出 G(q)v_q=0 和两分量的场导数公式。沿真实流的时间变分方程还需通常的线性变分关系，不由本声明另行构造。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T13:03:16.151063",
+              "before_sha256": "b714f90e885502901876a3db11678d64bb635a6e865dea07ed14fe072e27cb43",
+              "after_sha256": "914a6c2c70f724aa8aed169b3943e03602828aba4e7536c872aaf01993fb43da",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH10_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R3本轮实际渲染核对：R3_PAGES.pdf，附件第3页；证据 .mathcopilot/reviews/ch04_eaudit/R3_evidence/page-03.png。旧 repair_log 仅作为输入历史保留，不作为本轮核验依据。"
+        },
+        "issues": [
+          "原页 (4.13) 的范围逐字为 j=1,2,…,l,；输入 JSON 省略了显式的 2，并将页末承接逗号改成句号。两者不改变数学范围，但不符合逐字摘录要求。",
+          "第一条 extra_assumptions 未带 [EXTRA]，且“另保留”未准确反映本条已有 variational_constraints 将切向方程与变分场公式合取。"
+        ],
+        "evidence": [
+          "本轮依据：R3_任务.md 条目 3/10 及 R3_PAGES.pdf 附件第3页（原书 PDF 176 / 印刷 154）；实际渲染图 R3_evidence/page-03.png。",
+          "(4.11) 的 M^{-1}dp、(4.12) 中势 Hessian 的负号和两个约束乘子项，连同式号，均与原页一致。",
+          "仅校正 (4.13) 的显式枚举和承接标点，不改变原书数学陈述。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch04.variational",
+          "MD.Ch04.variational_constraints"
+        ],
+        "verdict": "PASS",
+        "explanation": "两条声明均量化 n,l、对角质量 m、势 U、l 个约束 g、状态依赖乘子 rho、相点 z 与方向 v。U/g 的 C² 和 rho 在 z 可微保证实际场 X(q,p)=(M^{-1}p,−∇U(q)−G(q)^Tρ(q,p)) 可微。结论的第一分量为 M^{-1}v_p，第二分量为 −D∇U(q)v_q−Σ_j[(Dρ(z)v)_j∇g_j(q)+ρ_j(z)D∇g_j(q)v_q]；每个求和域、方向、符号及乘子微分均与 (4.11)–(4.12) 的链式法则内容对应。variational 本身没有无条件声称 Gv_q=0；variational_constraints 通过 c(t)=z、HasDerivAt c v t 和邻域内 g_j((c s).q)=0，另得 ∀j,Dg_j(q)v_q=0，并与相同的完整场导数公式合取，覆盖 (4.13)。质量只出现在固定线性映射中，代数导数公式无需再假设正质量。此为变分方程的场导数表述，未额外声称构造了随时间的变分解。",
+        "counterexample": null,
+        "suggested_fix": "采用 corrected_json 中的 (4.13) 原文枚举/标点及明确的 [EXTRA] 说明；不修改 Lean。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.1-HessianPullbackCancel",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_DUMMY_INDEX_TRANSCRIPTION",
+          "SOURCE_TYPOGRAPHY_PRESERVED",
+          "PROOF_NOTE_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.1-HessianPullbackCancel",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.1",
+          "printed_page": "155",
+          "pdf_page": "177",
+          "statement_latex": "This follows from the antisymmetry of the wedge product $(\\mathrm dx\\wedge\\mathrm dy=-\\mathrm dy\\wedge\\mathrm dx)$, and the fact that the Hessian matrix of $U$ is symmetric. Next, note that\n\\[\\sum_{i=1}^{N_c}\\sum_{k=1}^{l}\\mathrm dq_i\\wedge\\lambda_k\\sum_{j=1}^{N_c}(g_k^{\\prime\\prime})_{ij}\\mathrm dq_j=\\sum_{k=1}^{l}\\lambda_k\\sum_{i=1}^{N_c}\\mathrm dq_i\\wedge\\sum_{j=1}^{N_c}(g_k^{\\prime\\prime})_{ij}\\mathrm dq_j=0,\\]\nby the same reasoning, since each of $g_k^{\\prime\\prime}$ is a symmetric matrix. Finally\n\\[\\sum_{i=1}^{N_c}\\sum_{k=1}^{l}[\\mathrm dq_i\\wedge(\\mathrm d\\lambda_k)g_{ki}^{\\prime}=\\sum_{k=1}^{l}\\left(\\sum_{i=1}^{N_c}g_{ki}^{\\prime}\\mathrm dq_i\\right)\\wedge\\mathrm d\\lambda_k=\\sum_{k=1}^{l}\\mathrm dg_k\\wedge\\mathrm d\\lambda_k=0,\\]\nsince we know that $\\mathrm dg_k=0$ from (4.13). Therefore\n\\[\\frac{\\mathrm d}{\\mathrm dt}\\sum_{i=1}^{N_c}\\mathrm dq_i\\wedge\\mathrm dp_i=0.\\]",
+          "proof_latex": null,
+          "proof_note": "原页给出逐项消去推导，并由 Leibniz 规则得到完整二形式的时间导数为零；不是单列编号定理。原书 Finally 后首个双重求和有未闭合的排印方括号，本摘录按原页保留。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "U及各g_k的双撇表示Hessian；质量矩阵常对角，m_i为第i个对角元。完整时间导数还使用本页上半部 Σ_i m_i^{-1} dp_i∧dp_i=0 和Leibniz规则。"
+          ],
+          "issues": [
+            "原页末行时间导数公式使用求和指标 i，输入改写成 j；哑指标改名数学等价，但逐字审校须恢复 i。",
+            "原页 Finally 后的首个双重求和印有左方括号而未印右方括号；输入 JSON 静默补了 ]。corrected_json 保留该原书排印缺括号，并在此注明；它不造成数学内容歧义，也不作为签名失败依据。",
+            "原页给出了势 Hessian、约束 Hessian、dg_k∧dλ_k 及动量楔积项的逐项消去推导；proof_note 应说明有完整推导，而非笼统暗示没有证明。"
+          ],
+          "lean_decl": "MD.Ch04.hessianPullbackCancel",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookConstrainedAcceleration_pullback_zero"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] hessianPullbackCancel 对实赋范向量空间 E 中的参数 x,u,v，以及在 x 可微的位置参数化 q 和各乘子 ρ_j 陈述实际动量场微分的拉回消去；U/g 为 C²，且各 γ_j∘q 在 x 的邻域为零。E 的实赋范空间结构是 fderiv 所需的环境资格，摘录未显示所在 section 的变量声明。",
+            "[EXTRA] hessianPullbackCancel_time 对实际时间曲线 γ 与线性变分 u,v，在同一 t 假定运动方程、两个线性变分方程及两向量的位置切向条件，结论为标准二形式配对在 t 具有导数零；常对角逆质量的对称性消去位置分量，未把二形式导数零作为前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T13:03:16.151063",
+              "before_sha256": "7bf2230f1ff34a04a9e4c4a9a4c34f8cb287ec26ec547a14b56256b88efb592d",
+              "after_sha256": "d849e243847e799656d8abd85f97e46927d65f34a9006e423018c5832435cac2",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH10_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R3本轮实际渲染核对：R3_PAGES.pdf，附件第4页；证据 .mathcopilot/reviews/ch04_eaudit/R3_evidence/page-04.png。旧 repair_log 仅作为输入历史保留，不作为本轮核验依据。"
+        },
+        "issues": [
+          "原页末行时间导数公式使用求和指标 i，输入改写成 j；哑指标改名数学等价，但逐字审校须恢复 i。",
+          "原页 Finally 后的首个双重求和印有左方括号而未印右方括号；输入 JSON 静默补了 ]。corrected_json 保留该原书排印缺括号，并在此注明；它不造成数学内容歧义，也不作为签名失败依据。",
+          "原页给出了势 Hessian、约束 Hessian、dg_k∧dλ_k 及动量楔积项的逐项消去推导；proof_note 应说明有完整推导，而非笼统暗示没有证明。"
+        ],
+        "evidence": [
+          "本轮依据：R3_任务.md 条目 4/10 及 R3_PAGES.pdf 附件第4页（原书 PDF 177 / 印刷 155）；实际渲染图 R3_evidence/page-04.png。",
+          "已逐段核对反对称说明、两个长展示公式、dg_k=0 的引用和末行结论；势与约束 Hessian 的对称性推理没有数学疑误。",
+          "缺右方括号及末行 i 的放大证据：R3_evidence/page04_bracket.png、page04_detail.png。",
+          "完整时间导数还使用本页上半部 Σ_i m_i^{-1}dp_i∧dp_i=0；已计入审校，没有只检查动量部分。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch04.hessianPullbackCancel",
+          "MD.Ch04.hessianPullbackCancel_time"
+        ],
+        "verdict": "PASS",
+        "explanation": "第一条对任意 Nc、Mc、势 U、约束族 γ，以及 E 上的位置参数化 q 和逐分量乘子 ρ，在 U/γ 为 C²、q/ρ 在 x 可微、γ_j∘q 局部为零的前提下，陈述 Dq(u)·DA(v)−DA(u)·Dq(v)=0；给定 textbookMultiConstrainedMomentum 的实际定义使 A=−∇U(q)−Σρ_j∇γ_j(q)，并非未经说明的假动量。第二条对任意 n,l,m,U,g、C¹ 乘子 ρ，以及时间曲线 γ,u,v 和时刻 t，显式假定 γ 的动力学导数、u/v 的线性变分导数和两者的位置切向条件，完整结论为 HasDerivAt(s↦phaseForm(u(s),v(s))) 0 t。phaseForm 的两个位置/动量配对均保留；逆质量项因对角对称性抵消，势与各约束 Hessian 因对称性抵消，乘子微分项由两条切向条件抵消。无需正质量即可得到此固定对角映射的消去恒等式。第二条只在给定 t 陈述导数零，不自行推出全局流存在；对每一时刻应用才得到源文沿流守恒的通常解释。E 的类型类环境没有在摘录中展开，本轮依 fderiv 所要求的实赋范向量空间语义审查，未运行或宣称编译验证。sorry 不构成失败。",
+        "counterexample": null,
+        "suggested_fix": "仅按 corrected_json 恢复末行指标、注明并保留原书排印缺括号、澄清已有推导和环境资格；不修改工程或补证明。"
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

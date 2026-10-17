@@ -1,0 +1,357 @@
+{
+  "batch": "EAUDIT77",
+  "input_sha256": {
+    "BATCH_EAUDIT77.md": "519b3eba9a3bb88401c688a5f7a09f2a2ab9d367990e2b1c0f5ef9feeea06067",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.5-LinearEulerIntegral",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              3
+            ],
+            "original_pdf_pages": [
+              145
+            ],
+            "printed_pages": [
+              123
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "3": "9d1d2956ae755ca0ba9a4d3bf691a9bb702bda68b8c7c84eda6466f54e095393"
+            },
+            "finding": "p123从Generalizing this slightly至many other popular numerical methods的文字和两式一致；未把浮点运算误差说成严格为零。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目3 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.linearEulerIntegral",
+              "MD.Ch03.linearEulerIntegral_continuous"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "linearEulerIntegral与linearEulerIntegral_continuous均已核对。Q n为有限维实坐标，连续线性泛函b等价于原文向量点积；∀z,b(f z)=0正是恒等条件。第一声明对任意实步长h与初值z给出b(z+h•f z)=b z。第二声明在a≤d的闭区间上要求γ满足真实ODE的区间内导数，再对所有t∈[a,d]断言b(γ t)=b(γ a)。区间端点的HasDerivWithinAt还给出所需相对连续性；a=d也正确。[EXTRA]补连续第一积分结论已实际出现，没有把恒定性当作前提。原句对其它popular methods未给明确方法类，未据此虚构一个全称方法定理。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.linearEulerIntegral",
+        "verdict": "PASS",
+        "explanation": "linearEulerIntegral与linearEulerIntegral_continuous均已核对。Q n为有限维实坐标，连续线性泛函b等价于原文向量点积；∀z,b(f z)=0正是恒等条件。第一声明对任意实步长h与初值z给出b(z+h•f z)=b z。第二声明在a≤d的闭区间上要求γ满足真实ODE的区间内导数，再对所有t∈[a,d]断言b(γ t)=b(γ a)。区间端点的HasDerivWithinAt还给出所需相对连续性；a=d也正确。[EXTRA]补连续第一积分结论已实际出现，没有把恒定性当作前提。原句对其它popular methods未给明确方法类，未据此虚构一个全称方法定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.5-VerletOscillatorEnergy",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_STABILITY_QUALIFICATION_MISSING",
+          "SOURCE_EULER_DEGENERATE_CASES",
+          "C_SCOPE_MAPPING_UNVERIFIED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.5-VerletOscillatorEnergy",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.5",
+          "printed_page": "123",
+          "pdf_page": "145",
+          "statement_latex": "In the case of Euler's method applied to the harmonic oscillator, the error in energy grows with time and without bound. In the case of Störmer-Verlet, the energy fluctuates but remains bounded for all time and at its worst is of size proportional to $h^2$, a numerical observation that is supported by the existence of the modified Hamiltonian.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "当前Lean仅给稳定步长范围内的Verlet谐振子全时间能量误差上界；Euler无界分句被注释分流到EulerGrowth，但本任务没有该声明，不计为已审校。",
+            "Ω>0、先固定0<ρ<2、再对|hΩ|≤ρ给统一界是对原书未写资格的显式补充。零初值无能量波动，零步长Euler无增长；原句按典型非退化情形理解须人工确认。"
+          ],
+          "issues": [
+            {
+              "code": "NEEDS_HUMAN",
+              "detail": "原书省略Verlet稳定步长以及Euler非退化资格；原文保留。当前仅核对了稳定范围Verlet声明，Euler跨条分流待确认。"
+            },
+            {
+              "code": "SOURCE_STABILITY_QUALIFICATION_MISSING",
+              "detail": "原书省略稳定步长范围；当前显式[EXTRA]是合理受限修复，但原句应保留疑误标记。"
+            },
+            {
+              "code": "SOURCE_EULER_DEGENERATE_CASES",
+              "detail": "Euler能量无界还需要非零步长及非零初始能量；零解不能作无界增长解释。"
+            },
+            {
+              "code": "C_SCOPE_MAPPING_UNVERIFIED",
+              "detail": "本条完整摘录仅给Verlet上界，未给EulerGrowth声明；不能据旧注释认定Euler分句已核验。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.verletOscillatorEnergy",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "Ω>0，固定ρ∈(0,2)，|hΩ|≤ρ；排除不稳定及阈值步长。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT12_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:23:57.297656",
+              "before_sha256": "838a0f5955cbb970b344bf1aec3b13120ed6ea6aab7e440d208617d361ae907b",
+              "after_sha256": "4bc067503482b66507a6146b7778f8ae17a6d2145fd3189bf27935ad2bb423a4",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH15_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT12/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_STABILITY_QUALIFICATION_MISSING",
+            "field": "statement_latex / issues",
+            "detail": "原书省略稳定步长范围；当前显式[EXTRA]是合理受限修复，但原句应保留疑误标记。"
+          },
+          {
+            "code": "SOURCE_EULER_DEGENERATE_CASES",
+            "field": "statement_latex / issues",
+            "detail": "Euler能量无界还需要非零步长及非零初始能量；零解不能作无界增长解释。"
+          },
+          {
+            "code": "C_SCOPE_MAPPING_UNVERIFIED",
+            "field": "statement_scope / context_notation",
+            "detail": "本条完整摘录仅给Verlet上界，未给EulerGrowth声明；不能据旧注释认定Euler分句已核验。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              4
+            ],
+            "original_pdf_pages": [
+              145
+            ],
+            "printed_pages": [
+              123
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "4": "9d1d2956ae755ca0ba9a4d3bf691a9bb702bda68b8c7c84eda6466f54e095393"
+            },
+            "finding": "两句英文与p123一致。原句没有写Verlet的稳定步长限定，也没有排除Euler的零初值或零步长。保留原句，不能把补充限定写进原文。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目4 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.verletOscillatorEnergy"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "当前verletOscillatorEnergy是正确的受限版本：一自由度、单位质量、Ω>0，先固定0<ρ<2和z，再选C≥0，随后对所有|hΩ|≤ρ及所有ν∈ℕ统一控制真实机械能差≤Ch²。常数不依赖h或ν，符合稳定范围内全时间O(h²)能量误差；h=0和零初值也不成问题。展开verlet、mechanicalEnergy和oneStepIterate后对象一致。但原句无条件的全时间断言在稳定阈值及不稳定步长下失败；[EXTRA]确实限制了适用范围，不能当作无条件原句已核验。另原句Euler无界分句在当前给出的全部声明中没有对应结论。context_notation虽说另属EulerGrowth，本任务未提供它，且statement_scope仍称覆盖所引原句；该分流及原书省略资格需人工确认。NEEDS_HUMAN不否定当前受限Verlet上界的数学正确性。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.verletOscillatorEnergy",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "当前verletOscillatorEnergy是正确的受限版本：一自由度、单位质量、Ω>0，先固定0<ρ<2和z，再选C≥0，随后对所有|hΩ|≤ρ及所有ν∈ℕ统一控制真实机械能差≤Ch²。常数不依赖h或ν，符合稳定范围内全时间O(h²)能量误差；h=0和零初值也不成问题。展开verlet、mechanicalEnergy和oneStepIterate后对象一致。但原句无条件的全时间断言在稳定阈值及不稳定步长下失败；[EXTRA]确实限制了适用范围，不能当作无条件原句已核验。另原句Euler无界分句在当前给出的全部声明中没有对应结论。context_notation虽说另属EulerGrowth，本任务未提供它，且statement_scope仍称覆盖所引原句；该分流及原书省略资格需人工确认。NEEDS_HUMAN不否定当前受限Verlet上界的数学正确性。",
+        "counterexample": "反例针对原书未加限定的断言，不满足当前Lean的ρ<2前提：取Ω=1、h=2、z₀=(q₀,p₀)=(0,1)。velocity Verlet矩阵为[[-1,2],[0,−1]]，故qν=2ν(−1)^(ν−1)、pν=(−1)^ν，Hν=(4ν²+1)/2无界。Euler的“无界”分句另有退化例z₀=0或h=0，此时能量恒定。",
+        "suggested_fix": "原文逐字保留并标记NEEDS_HUMAN；保留现有合理稳定资格。明确Verlet受限子结论与Euler跨条结论的审校范围；若要声明整段已形式化，需要提供本版EulerGrowth完整签名及其非退化资格。"
+      }
+    },
+    {
+      "source_id": "MD-3.5-MomentumProjection",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              5
+            ],
+            "original_pdf_pages": [
+              145
+            ],
+            "printed_pages": [
+              123
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "5": "9d1d2956ae755ca0ba9a4d3bf691a9bb702bda68b8c7c84eda6466f54e095393"
+            },
+            "finding": "p123所引文字、Q=Q̄及P=γP̄均一致；原文能量选择的后续关系由相邻条目展开。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目5 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.momentumProjection"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "momentumProjection对任意n、实γ和中间相点z:Z n定义(z.1,γ•z.2)。Z n=Q n×Q n，第一分量位置不变，第二分量动量统一缩放，正是显示式。这是带给定γ的映射定义，未声称所有γ都守能，也未声称所有中间点都存在可用γ；本条context已把选择条件明确交给ProjectionConstraint/ProjectionFactor，故不是漏掉一个已宣称的存在性定理。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.momentumProjection",
+        "verdict": "PASS",
+        "explanation": "momentumProjection对任意n、实γ和中间相点z:Z n定义(z.1,γ•z.2)。Z n=Q n×Q n，第一分量位置不变，第二分量动量统一缩放，正是显示式。这是带给定γ的映射定义，未声称所有γ都守能，也未声称所有中间点都存在可用γ；本条context已把选择条件明确交给ProjectionConstraint/ProjectionFactor，故不是漏掉一个已宣称的存在性定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.5-ProjectionConstraint",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              6
+            ],
+            "original_pdf_pages": [
+              145
+            ],
+            "printed_pages": [
+              123
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "6": "9d1d2956ae755ca0ba9a4d3bf691a9bb702bda68b8c7c84eda6466f54e095393"
+            },
+            "finding": "p123式(3.12)的γ²、P̄ᵀM⁻¹P̄/2、U(Q̄)以及右端E均一致，标签和页码正确。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目6 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.projectionConstraint"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "projectionConstraint(E,K,U,γ):Prop定义γ²K+U=E；按context中K=P̄ᵀM⁻¹P̄/2、U=U(Q̄)作标量缩写，与式(3.12)逐项相同。各参数为实数；等式约束本身不需要K>0，故无需在这个Prop定义中增加平方根可解性前提。这里没有声称γ存在、唯一或取非负分支。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.projectionConstraint",
+        "verdict": "PASS",
+        "explanation": "projectionConstraint(E,K,U,γ):Prop定义γ²K+U=E；按context中K=P̄ᵀM⁻¹P̄/2、U=U(Q̄)作标量缩写，与式(3.12)逐项相同。各参数为实数；等式约束本身不需要K>0，故无需在这个Prop定义中增加平方根可解性前提。这里没有声称γ存在、唯一或取非负分支。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.5-ProjectionFactor",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              7
+            ],
+            "original_pdf_pages": [
+              146
+            ],
+            "printed_pages": [
+              124
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "7": "ce157c7225d929eeac5e7a7ac752be8036895fbb2a3f190cfb98ab6c9e759e81"
+            },
+            "finding": "p124式(3.13)及紧随其后的Ū、K̄定义一致；1/2次幂按原文取非负实平方根。后文明确提到K̄趋零的障碍及E−Ū≥0。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目7 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.projectionFactor"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "projectionFactor(E,K,U)=Real.sqrt((E−U)/K)正确编码显示的非负分支。context已写明实际投影使用K>0且E−U≥0。该Lean函数在所有实参数上采用除法及Real.sqrt的总化定义，这里只作为公式定义审校；它没有断言任意实参数都满足projectionConstraint，也不能用总化的K=0值绕过原文的不可定义情形。实际约束解性质被明确分流到ProjectionEnergy，本轮未把那个未提供的定理算作已验证。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.projectionFactor",
+        "verdict": "PASS",
+        "explanation": "projectionFactor(E,K,U)=Real.sqrt((E−U)/K)正确编码显示的非负分支。context已写明实际投影使用K>0且E−U≥0。该Lean函数在所有实参数上采用除法及Real.sqrt的总化定义，这里只作为公式定义审校；它没有断言任意实参数都满足projectionConstraint，也不能用总化的K=0值绕过原文的不可定义情形。实际约束解性质被明确分流到ProjectionEnergy，本轮未把那个未提供的定理算作已验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.5-NoHamiltonianAttractor",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              8
+            ],
+            "original_pdf_pages": [
+              148
+            ],
+            "printed_pages": [
+              126
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "8": "dd46778ec0ce766ae882dedec371aea1a76a1191e433ff54770af5914e70f726"
+            },
+            "finding": "p126从In the first phase至introduced by the projection method的文字一致；原文说的是吸引的周期轨道，不是禁止一般周期轨道。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目8 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.noHamiltonianAttractor"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "noHamiltonianAttractor量化任意维数的C² Hamiltonian和全实时间真实流，具有初值及群律。orbit要求紧、非空、零体积；B要求开放、正且有限体积。完整结论否定对所有z∈B，t→+∞时到orbit的距离趋零，确实排除正体积开放盆的吸引，不是错误地排除一条特殊收敛轨道。该声明甚至不需orbit周期性或不变性，覆盖任何紧零体积目标集，故包含普通周期轨道的情形。C² H给C¹向量场；ODE唯一性使所给全时间解族成为保体积流。取足够小的有限体积轨道邻域，点态吸引和保体积的Fatou估计即产生矛盾；无需把一致吸引偷加为前提。[EXTRA]的正有限盆及紧零体积目标是合理明确化。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.noHamiltonianAttractor",
+        "verdict": "PASS",
+        "explanation": "noHamiltonianAttractor量化任意维数的C² Hamiltonian和全实时间真实流，具有初值及群律。orbit要求紧、非空、零体积；B要求开放、正且有限体积。完整结论否定对所有z∈B，t→+∞时到orbit的距离趋零，确实排除正体积开放盆的吸引，不是错误地排除一条特殊收敛轨道。该声明甚至不需orbit周期性或不变性，覆盖任何紧零体积目标集，故包含普通周期轨道的情形。C² H给C¹向量场；ODE唯一性使所给全时间解族成为保体积流。取足够小的有限体积轨道邻域，点态吸引和保体积的Fatou估计即产生矛盾；无需把一致吸引偷加为前提。[EXTRA]的正有限盆及紧零体积目标是合理明确化。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

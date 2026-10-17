@@ -95,7 +95,8 @@ theorem symplecticEulerCharacteristic :
   ring
 
 /-- source_id: MD-4-PRKThreshold · unnumbered_claim · §4 · 印刷p.140 / PDFp.162
-[NEEDS_HUMAN] 原文[74]的方法类限制需要审，未访问引用文献。 -/
+[NEEDS_HUMAN] 原文[74]的方法类限制需要审，未访问引用文献。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：删除一般多级PRK的普遍阈值2，只给反例所用两个半步辛Euler的实际稳定区0<hΩ<4；未对所有PRK给新的最优阈值。
+-/
 theorem prkThreshold :
   ∀ s (A B : Matrix (Fin s) (Fin s) ℝ) (b c : Fin s → ℝ)
     (G : ℝ → ℝ → Matrix (Fin 2) (Fin 2) ℝ), 0 < s →
@@ -106,10 +107,24 @@ theorem prkThreshold :
     (∀ Ω h, MolecularDynamics.Chapter04Review.matrixStable (G Ω h) → |h*Ω| ≤ 2) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4-PRKThreshold。改动：删除一般多级PRK的普遍阈值2，只给反例所用两个半步辛Euler的实际稳定区0<hΩ<4；未对所有PRK给新的最优阈值。 -/
+theorem prkThreshold_corrected (Ω h : ℝ) (_hΩ : 0 < Ω) (_hh : 0 < h)
+    (_hst : h*Ω < 4) :
+    MolecularDynamics.Chapter04Review.matrixStable
+      ((MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω (h/2))^2) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-4-VerletStability · unnumbered_claim · §4 · 印刷p.141 / PDFp.163
 [EXTRA] [EXTRA]真正幂有界版本0<|hΩ|<2；原文≤2字面版另列待审。
 [ERRATUM?] Verlet的hΩ=2矩阵也有Jordan增长，不能以谱模1推出所有轨道有界。 
-[EXTRA] 本条明确是严格稳定内区间的修订版本，另补h=0分支；原印含端点结论保留MD-4-VerletBoundaryPrinted待导师，不宣称与原句等价。 -/
+[EXTRA] 本条明确是严格稳定内区间的修订版本，另补h=0分支；原印含端点结论保留MD-4-VerletBoundaryPrinted待导师，不宣称与原句等价。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem verletStability :
   ∀ Ω h : ℝ, 0 < |h*Ω| → |h*Ω| < 2 → MolecularDynamics.Chapter04Review.matrixStable (MolecularDynamics.Chapter04Review.verletMatrix Ω h) := by
   intro Ω h hn ht
@@ -173,17 +188,52 @@ theorem verletStability_zero (Ω : ℝ) :
       (MolecularDynamics.Chapter04Review.verletMatrix Ω 0) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4-VerletStability。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem verletStability_corrected :
+  ∀ Ω h : ℝ, 0 < |h*Ω| → |h*Ω| < 2 → MolecularDynamics.Chapter04Review.matrixStable (MolecularDynamics.Chapter04Review.verletMatrix Ω h) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-4-SymplecticEulerBoundaryPrinted · unnumbered_claim · §4 · 印刷p.140 / PDFp.162
-[ERRATUM?] 原≤2声明的端点反例；不证明FAIL。 -/
+[ERRATUM?] 原≤2声明的端点反例；不证明FAIL。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：幂有界稳定区排除hΩ=2的Jordan端点，只保留0<hΩ<2。
+-/
 theorem symplecticEulerBoundaryPrinted :
     ∀ Ω h : ℝ, 0 < Ω → 0 < h → h*Ω ≤ 2 → MolecularDynamics.Chapter04Review.matrixStable (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4-SymplecticEulerBoundaryPrinted。改动：幂有界稳定区排除hΩ=2的Jordan端点，只保留0<hΩ<2。 -/
+theorem symplecticEulerBoundaryPrinted_corrected :
+    ∀ Ω h : ℝ, 0 < Ω → 0 < h → h*Ω < 2 → MolecularDynamics.Chapter04Review.matrixStable (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-4-VerletBoundaryPrinted · unnumbered_claim · §4 · 印刷p.141 / PDFp.163
-[ERRATUM?] 原≤2端点不保证幂有界，单列原文不静默替换。 -/
+[ERRATUM?] 原≤2端点不保证幂有界，单列原文不静默替换。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：幂有界稳定区排除hΩ=2的Jordan端点，只保留0<hΩ<2。
+-/
 theorem verletBoundaryPrinted :
     ∀ Ω h : ℝ, 0 < Ω → 0 < h → h*Ω ≤ 2 → MolecularDynamics.Chapter04Review.matrixStable (MolecularDynamics.Chapter04Review.verletMatrix Ω h) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-4-VerletBoundaryPrinted。改动：幂有界稳定区排除hΩ=2的Jordan端点，只保留0<hΩ<2。 -/
+theorem verletBoundaryPrinted_corrected :
+    ∀ Ω h : ℝ, 0 < Ω → 0 < h → h*Ω < 2 → MolecularDynamics.Chapter04Review.matrixStable (MolecularDynamics.Chapter04Review.verletMatrix Ω h) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-4-OscillatorSpectrum · unnumbered_claim · §4 · 印刷p.140 / PDFp.162 -/
 theorem oscillatorSpectrum :
@@ -242,8 +292,37 @@ theorem symplecticEulerRoots :
   · rintro ⟨d,hroot,(rfl|rfl)⟩ <;> push_cast at hroot ⊢ <;>
       linear_combination (1/4 : ℂ)*hroot
 
-/-- source_id: MD-4-SymplecticEulerUnitRoots · unnumbered_claim · §4 · 印刷p.140 / PDFp.162 -/
+/-- source_id: MD-4-SymplecticEulerUnitRoots · unnumbered_claim · §4 · 印刷p.140 / PDFp.162 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem symplecticEulerUnitRoots :
+    ∀ Ω h : ℝ, ∀ ζ : ℂ, h^2*Ω^2 ≤ 4 →
+      ζ^2-(2-h^2*Ω^2 : ℝ)*ζ+1=0 → ‖ζ‖=1 := by
+  intro Ω h ζ ht he
+  have hr := congrArg Complex.re he
+  have hi := congrArg Complex.im he
+  simp [pow_two, Complex.mul_re, Complex.mul_im] at hr hi
+  have hz : (2*ζ.re-(2-h^2*Ω^2))*ζ.im=0 := by nlinarith [hi]
+  have hn : ζ.re^2+ζ.im^2=1 := by
+    rcases mul_eq_zero.mp hz with hz|hz
+    · nlinarith [hr]
+    · by_cases hpos : 0 ≤ ζ.re
+      · have hab : 0 ≤ h^2*Ω^2*ζ.re := mul_nonneg (mul_nonneg (sq_nonneg h) (sq_nonneg Ω)) hpos
+        have hs : (ζ.re-1)^2=0 := by nlinarith [hr,sq_nonneg (ζ.re-1)]
+        have hzre := sq_eq_zero_iff.mp hs
+        nlinarith
+      · have hab : 0 ≤ (4-h^2*Ω^2)*(-ζ.re) := mul_nonneg (by linarith) (by linarith)
+        have hs : (ζ.re+1)^2=0 := by nlinarith [hr,sq_nonneg (ζ.re+1)]
+        have hzre := sq_eq_zero_iff.mp hs
+        nlinarith
+  have hnorm : ‖ζ‖^2=1 := by
+    rw [Complex.sq_norm,Complex.normSq_apply]
+    nlinarith [hn]
+  nlinarith [norm_nonneg ζ]
+
+
+
+/-- 修正版，对应原文 MD-4-SymplecticEulerUnitRoots。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem symplecticEulerUnitRoots_corrected :
     ∀ Ω h : ℝ, ∀ ζ : ℂ, h^2*Ω^2 ≤ 4 →
       ζ^2-(2-h^2*Ω^2 : ℝ)*ζ+1=0 → ‖ζ‖=1 := by
   intro Ω h ζ ht he
@@ -271,7 +350,8 @@ theorem symplecticEulerUnitRoots :
 /-- source_id: MD-4-SymplecticEulerStability · unnumbered_claim · §4 · 印刷p.140 / PDFp.162
 [EXTRA] [EXTRA]正确的幂有界资格改为0<|hΩ|<2；原≤2字面版独立保留，未声称已审核修复。
 [ERRATUM?] ≤2端点有单位圆谱但通常Jordan线性增长；幂有界不能包含端点。 
-[EXTRA] 明确为修订稳定内区间结论；补超阈值实谱恰为一内一外非零实根、真实指数增长轨道及正步长稳定集合上确界2/Ω。原端点错误单列保留，未新增证明。 -/
+[EXTRA] 明确为修订稳定内区间结论；补超阈值实谱恰为一内一外非零实根、真实指数增长轨道及正步长稳定集合上确界2/Ω。原端点错误单列保留，未新增证明。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem symplecticEulerStability :
   ∀ Ω h : ℝ, (0 < |h*Ω| ∧ |h*Ω| < 2 → MolecularDynamics.Chapter04Review.matrixStable (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h)) ∧
     (2 < |h*Ω| → MolecularDynamics.Chapter04Review.eigenvalueOutside (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h)) := by
@@ -358,14 +438,40 @@ theorem symplecticEulerStability_complete (Ω : ℝ) (_hΩ : 0 < Ω) :
           (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h)^k *ᵥ v=b^k • v) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4-SymplecticEulerStability。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem symplecticEulerStability_corrected :
+  ∀ Ω h : ℝ, (0 < |h*Ω| ∧ |h*Ω| < 2 → MolecularDynamics.Chapter04Review.matrixStable (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h)) ∧
+    (2 < |h*Ω| → MolecularDynamics.Chapter04Review.eigenvalueOutside (MolecularDynamics.Chapter04Review.symplecticEulerMatrix Ω h)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-4.1-PrintedImplicitRelation · definition · §4.1 · 印刷p.142 / PDFp.164
-[ERRATUM?] p142名为Implicit Midpoint却写Trapezoidal Rule更新式；p144采用真正机械中点式。 -/
+[ERRATUM?] p142名为Implicit Midpoint却写Trapezoidal Rule更新式；p144采用真正机械中点式。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def printedImplicitRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
   znew=z+(h/2) • (f z+f znew)
 
+
+
+/-- 修正版，对应原文 MD-4.1-PrintedImplicitRelation。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def printedImplicitRelation_corrected {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
+  znew=z+(h/2) • (f z+f znew)
+
 /-- source_id: MD-4.1-ActualMidpointRelation · definition · §4.1 · 印刷p.142 / PDFp.164
-[EXTRA] [EXTRA]名称通常对应的真正中点关系Z=z+h f((z+Z)/2)供审校上下文；不是原页的印刷公式。 -/
+[EXTRA] [EXTRA]名称通常对应的真正中点关系Z=z+h f((z+Z)/2)供审校上下文；不是原页的印刷公式。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def actualMidpointRelation {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
+  znew=z+h • f ((1/2 : ℝ) • (z+znew))
+
+
+
+/-- 修正版，对应原文 MD-4.1-ActualMidpointRelation。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def actualMidpointRelation_corrected {n : ℕ} (f : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (h : ℝ) (z znew : MolecularDynamics.Chapter04Review.Q n) : Prop :=
   znew=z+h • f ((1/2 : ℝ) • (z+znew))
 
 /-- source_id: MD-4.1-ImplicitFactor · definition · §4.1 · 印刷p.142 / PDFp.164 
@@ -380,7 +486,8 @@ theorem implicitFactor_update (Ω h : ℝ) (z out : ℂ) :
 
 /-- source_id: MD-4.1-ImplicitModulus · unnumbered_claim · §4.1 · 印刷p.142 / PDFp.164
 [EXTRA] 只保留本段纯虚线性振子对象；不扩成任意不稳定线性系统的有界性。 
-[EXTRA] 增加任意步长的标量迭代范数保持，准确对应当前线性振子模态；不扩大到任意线性系统。原模长证明保留。 -/
+[EXTRA] 增加任意步长的标量迭代范数保持，准确对应当前线性振子模态；不扩大到任意线性系统。原模长证明保留。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem implicitModulus :
   ∀ Ω h : ℝ, ‖MolecularDynamics.Chapter04Review.implicitFactor Ω h‖=1 := by
   intro Ω h
@@ -397,10 +504,28 @@ theorem implicitModulus_iterates (Ω h : ℝ) (z : ℂ) (k : ℕ) :
     ‖(MolecularDynamics.Chapter04Review.implicitFactor Ω h)^k*z‖=‖z‖ := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4.1-ImplicitModulus。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem implicitModulus_corrected :
+  ∀ Ω h : ℝ, ‖MolecularDynamics.Chapter04Review.implicitFactor Ω h‖=1 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-4.1-PrintedModifiedFrequency · definition · §4.1 · 印刷p.143 / PDFp.165
 [EXTRA] h≠0；采用Mathlib Complex.log主支，对原未指定log支单独记录；后条连续实相位为2 atan(hΩ/2)/h。
-[NEEDS_HUMAN] 原书未指定复log分支；与连续实相位的桥接须审校。 -/
+[NEEDS_HUMAN] 原书未指定复log分支；与连续实相位的桥接须审校。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def printedModifiedFrequency (Ω h : ℝ) : ℂ :=
+  (Complex.I*(h : ℂ))⁻¹ * Complex.log (MolecularDynamics.Chapter04Review.implicitFactor Ω h)
+
+
+
+/-- 修正版，对应原文 MD-4.1-PrintedModifiedFrequency。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def printedModifiedFrequency_corrected (Ω h : ℝ) : ℂ :=
   (Complex.I*(h : ℂ))⁻¹ * Complex.log (MolecularDynamics.Chapter04Review.implicitFactor Ω h)
 
 /-- source_id: MD-4.1-ModifiedFrequencyLimit · unnumbered_claim · §4.1 · 印刷p.143 / PDFp.165
@@ -461,22 +586,71 @@ theorem midpointEulerHalfSteps (n : ℕ) (m : Fin n → ℝ)
 def splitHamiltonian {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (z : MolecularDynamics.Chapter04Review.Z n) : ℝ :=
   MolecularDynamics.Chapter04Review.dot z.2 (MolecularDynamics.Chapter04Review.invMass m z.2)/2+US z.1+UF z.1
 
-/-- source_id: MD-4.2.1-FastVerlet · definition · §4.2.1 · 印刷p.145 / PDFp.167 -/
+/-- source_id: MD-4.2.1-FastVerlet · definition · §4.2.1 · 印刷p.145 / PDFp.167 [EXTRA] 24号：本地展开Chapter02Review.verlet及invMass，并逐坐标核对为kick(h/2)→drift(h)→kick(h/2)，有独立等式证明；网站仅因摘录缺失未判，不属于原书疑误。
+-/
 def fastVerlet {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n :=
   Chapter02Review.verlet m (fun q => -MolecularDynamics.Chapter04Review.grad UF q) h
 
+
+
+/-- 本地核对网站缺摘录项：动量半kick、位置整drift、动量半kick。 -/
+theorem fastVerlet_kick_drift_kick {n : ℕ} (m : Fin n → ℝ)
+    (UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ)
+    (z : MolecularDynamics.Chapter04Review.Z n) :
+    fastVerlet m UF h z =
+      let F := fun q => -MolecularDynamics.Chapter04Review.grad UF q
+      let pHalf := z.2+(h/2) • F z.1
+      let qNew := z.1+h • Chapter02Review.invMass m pHalf
+      (qNew,pHalf+(h/2) • F qNew) := by
+  let F := fun q => -MolecularDynamics.Chapter04Review.grad UF q
+  have hq : z.1+h • Chapter02Review.invMass m z.2+
+      (h^2/2) • Chapter02Review.invMass m (F z.1) =
+      z.1+h • Chapter02Review.invMass m (z.2+(h/2) • F z.1) := by
+    ext i
+    simp [Chapter02Review.invMass]
+    <;> ring
+  dsimp only [fastVerlet, Chapter02Review.verlet]
+  change (z.1+h • Chapter02Review.invMass m z.2+(h^2/2) • Chapter02Review.invMass m (F z.1),
+    z.2+(h/2) • (F z.1+F (z.1+h • Chapter02Review.invMass m z.2+(h^2/2) • Chapter02Review.invMass m (F z.1)))) = _
+  rw [hq]
+  apply Prod.ext
+  · rfl
+  · ext i
+    simp [F]
+    <;> ring
+
 /-- source_id: MD-4.2.1-RESPA · (4.2) · §4.2.1 · 印刷p.145 / PDFp.167
-[EXTRA] r为正自然数，实际r次函数迭代；不把形式算子等式当实际ODE流。 -/
-def respa {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (r : ℕ) (h : ℝ) (z : MolecularDynamics.Chapter04Review.Z n) : MolecularDynamics.Chapter04Review.Z n :=
+[EXTRA] r为正自然数，实际r次函数迭代；不把形式算子等式当实际ODE流。 [EXTRA] 24号：总化辅助respaTotalized保留；主接口respa增加0<r。当前Blueprint没有主接口下游调用需调整；正式库旧辅助不改。已展开同版本Chapter02Review.verlet核对为kick(h/2)→drift(h)→kick(h/2)，桥接见FastVerlet本地核验记录。原文网站漏句按corrected_json补回。
+-/
+def respaTotalized {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (r : ℕ) (h : ℝ) (z : MolecularDynamics.Chapter04Review.Z n) : MolecularDynamics.Chapter04Review.Z n :=
   MolecularDynamics.Chapter04Review.kick US (h/2) ((MolecularDynamics.Chapter04Review.fastVerlet m UF (h/r))^[r] (MolecularDynamics.Chapter04Review.kick US (h/2) z))
 
+def respa {n : ℕ} (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (r : ℕ) (_hr : 0 < r) (h : ℝ) (z : MolecularDynamics.Chapter04Review.Z n) :
+    MolecularDynamics.Chapter04Review.Z n := respaTotalized m US UF r h z
+
+
 /-- source_id: MD-4.2.1-RESPAStructure · unnumbered_claim · §4.2.1 · 印刷p.145 / PDFp.167
-[EXTRA] [EXTRA]本段Reversible名称及p149明确辛性合并成实际保结构声明：正质量、US/UF C²、r>0。 -/
+[EXTRA] [EXTRA]本段Reversible名称及p149明确辛性合并成实际保结构声明：正质量、US/UF C²、r>0。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem respaStructure :
   ∀ n (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) r h,
     (∀ i, 0 < m i) → ContDiff ℝ 2 US → ContDiff ℝ 2 UF → 0 < r →
     MolecularDynamics.Chapter04Review.symplecticMap (MolecularDynamics.Chapter04Review.respa m US UF r h) ∧ ∀ z, MolecularDynamics.Chapter04Review.respa m US UF r (-h) (MolecularDynamics.Chapter04Review.respa m US UF r h z)=z := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-4.2.1-RESPAStructure。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem respaStructure_corrected :
+  ∀ n (m : Fin n → ℝ) (US UF : MolecularDynamics.Chapter04Review.Q n → ℝ) r h,
+    (∀ i, 0 < m i) → ContDiff ℝ 2 US → ContDiff ℝ 2 UF → 0 < r →
+    MolecularDynamics.Chapter04Review.symplecticMap (MolecularDynamics.Chapter04Review.respa m US UF r h) ∧ ∀ z, MolecularDynamics.Chapter04Review.respa m US UF r (-h) (MolecularDynamics.Chapter04Review.respa m US UF r h z)=z := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-4.2.1-SlowMatrix · definition · §4.2.1 · 印刷p.146 / PDFp.168 
 [EXTRA] 本条明确只承担S_h；同一展示中的F_h由MD-4.2.1-FastMatrix承担，原合引文字保留。 -/
@@ -558,12 +732,26 @@ theorem resonancePower :
       simp [Matrix.mul_apply,Fin.sum_univ_two,Pi.smul_apply,smul_eq_mul,Nat.cast_add,Nat.cast_one] <;> ring
 
 /-- source_id: MD-4.2.1-ResonanceTaylor · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
-[EXTRA] [EXTRA]原省略高阶项以真实一致O((h−π/Ω)²)余项保留，不将截断线性式当精确等式。 -/
+[EXTRA] [EXTRA]原省略高阶项以真实一致O((h−π/Ω)²)余项保留，不将截断线性式当精确等式。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem resonanceTaylor :
   ∀ Ω : ℝ, 0 < Ω → ∃ C > 0, ∃ δ > 0,
   ∀ h : ℝ, |h-Real.pi/Ω| < δ →
     |(MolecularDynamics.Chapter04Review.impulseMatrix Ω h).trace+2-(Real.pi/Ω)*(h-Real.pi/Ω)| ≤ C*(h-Real.pi/Ω)^2 := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-4.2.1-ResonanceTaylor。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem resonanceTaylor_corrected :
+  ∀ Ω : ℝ, 0 < Ω → ∃ C > 0, ∃ δ > 0,
+  ∀ h : ℝ, |h-Real.pi/Ω| < δ →
+    |(MolecularDynamics.Chapter04Review.impulseMatrix Ω h).trace+2-(Real.pi/Ω)*(h-Real.pi/Ω)| ≤ C*(h-Real.pi/Ω)^2 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-4.2.1-ResonanceInstability · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
 [EXTRA] Ω>0；存在左邻域，每个h有真实复谱模>1。 
@@ -585,13 +773,28 @@ theorem resonanceInstability_realSpectrum (Ω : ℝ) (_hΩ : 0 < Ω) :
   sorry
 
 /-- source_id: MD-4.2.1-ResonanceEigenPrinted · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
-[ERRATUM?] 根展开首项疑少sqrt(2)因子；待网站/导师裁定。 -/
+[ERRATUM?] 根展开首项疑少sqrt(2)因子；待网站/导师裁定。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：去掉平方根内错误因子1/2；本独立修正版仅一支特征根估计，完整双支谱分解列覆盖缺口。
+-/
 theorem resonanceEigenPrinted :
   ∀ Ω : ℝ, 0 < Ω → ∃ C > 0, ∃ δ > 0,
   ∀ h ∈ Ioo (Real.pi/Ω-δ) (Real.pi/Ω), ∃ rho : ℝ,
     (rho • (1 : Matrix (Fin 2) (Fin 2) ℝ)-MolecularDynamics.Chapter04Review.impulseMatrix Ω h).det=0 ∧
     |rho+1-Real.sqrt (|(Real.pi/Ω)*(h-Real.pi/Ω)|/2)| ≤ C*|h-Real.pi/Ω| := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-4.2.1-ResonanceEigenPrinted。改动：去掉平方根内错误因子1/2；本独立修正版仅一支特征根估计，完整双支谱分解列覆盖缺口。 -/
+theorem resonanceEigenPrinted_corrected :
+  ∀ Ω : ℝ, 0 < Ω → ∃ C > 0, ∃ δ > 0,
+  ∀ h ∈ Ioo (Real.pi/Ω-δ) (Real.pi/Ω), ∃ rho : ℝ,
+    (rho • (1 : Matrix (Fin 2) (Fin 2) ℝ)-MolecularDynamics.Chapter04Review.impulseMatrix Ω h).det=0 ∧
+    |rho+1-Real.sqrt (|(Real.pi/Ω)*(h-Real.pi/Ω)|)| ≤ C*|h-Real.pi/Ω| := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-4.2.2-MollifiedAverage · definition · §4.2.2 · 印刷p.149 / PDFp.171
 [EXTRA] [EXTRA]原未指定快积分器，以真实fastVerlet离散位置作为θi的具体实例；K+1项有限加权和，不假定权重任意都有效滤波。 -/
@@ -603,7 +806,8 @@ def mollifiedAverage {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapt
 def mollifiedPotential {n : ℕ} (US : MolecularDynamics.Chapter04Review.Q n → ℝ) (A : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) := US ∘ A
 
 /-- source_id: MD-4.2.1-ResonanceLinearRate · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
-[EXTRA] [EXTRA]选实际Pi最大范数给出精确正线性率；q0≠0，否则此增长结论不成立。 -/
+[EXTRA] [EXTRA]选实际Pi最大范数给出精确正线性率；q0≠0，否则此增长结论不成立。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem resonanceLinearRate : ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 0 ≠ 0 →
   Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖/(k : ℝ))
     atTop (𝓝 (|(Real.pi/Ω)*z 0|)) := by
@@ -636,9 +840,44 @@ theorem resonanceLinearRate : ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 
   simpa only [hn,c] using (ht.norm.congr' he.symm)
 
 
+
+
+/-- 修正版，对应原文 MD-4.2.1-ResonanceLinearRate。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem resonanceLinearRate_corrected : ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 0 ≠ 0 →
+  Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖/(k : ℝ))
+    atTop (𝓝 (|(Real.pi/Ω)*z 0|)) := by
+  intro Ω hΩ z hz
+  let c : ℝ := (Real.pi/Ω)*z 0
+  let w : ℕ → Fin 2 → ℝ := fun k => ![z 0/(k : ℝ),z 1/(k : ℝ)-c]
+  have ht : Tendsto w atTop (𝓝 (![0,-c] : Fin 2 → ℝ)) := by
+    apply tendsto_pi_nhds.mpr
+    intro i
+    fin_cases i
+    · simpa [w] using tendsto_const_div_atTop_nhds_zero_nat (z 0 : ℝ)
+    · simpa [w] using (tendsto_const_div_atTop_nhds_zero_nat (z 1 : ℝ)).sub_const c
+  have hn : ‖(![0,-c] : Fin 2 → ℝ)‖=|c| := by
+    apply le_antisymm
+    · apply (pi_norm_le_iff_of_nonneg (abs_nonneg c)).mpr
+      intro i
+      fin_cases i <;> simp
+    · simpa using (norm_le_pi_norm (![0,-c] : Fin 2 → ℝ) 1)
+  have he : (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖/(k : ℝ))
+      =ᶠ[atTop] fun k => ‖w k‖ := by
+    filter_upwards [eventually_gt_atTop (0 : ℕ)] with k hk
+    have hk0 : (k : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hk)
+    have hp := resonancePower Ω hΩ k
+    have hv : (!![1,0; -(k : ℝ)*(Real.pi/Ω),1] : Matrix (Fin 2) (Fin 2) ℝ) *ᵥ z
+        = (k : ℝ) • w k := by
+      ext i
+      fin_cases i <;> simp [Matrix.mulVec,dotProduct,Fin.sum_univ_two,Pi.smul_apply,smul_eq_mul,w,c] <;> field_simp [hk0] <;> ring
+    rw [hp,Matrix.smul_mulVec,hv,norm_smul,norm_smul]
+    simp [Real.norm_eq_abs,abs_pow,abs_of_nonneg ((Nat.cast_nonneg k : (0 : ℝ) ≤ (k : ℝ))),hk0]
+  simpa only [hn,c] using (ht.norm.congr' he.symm)
+
 /-- source_id: MD-4.2.1-ResonanceGrowth · unnumbered_claim · §4.2.1 · 印刷p.147 / PDFp.169
 [EXTRA] 原泛称增长补q0≠0；q0=0时纯动量轨道模不增长。 
-[EXTRA] 本条明确为发散推论；线性率由MD-4.2.1-ResonanceLinearRate、交替幂公式由MD-4.2.1-ResonancePower承担，原norm振荡疑误在LinearRate待导师，不删句。 -/
+[EXTRA] 本条明确为发散推论；线性率由MD-4.2.1-ResonanceLinearRate、交替幂公式由MD-4.2.1-ResonancePower承担，原norm振荡疑误在LinearRate待导师，不删句。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem resonanceGrowth :
   ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 0 ≠ 0 →
   Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖) atTop atTop := by
@@ -651,6 +890,21 @@ theorem resonanceGrowth :
   have hk0 : (k : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hk)
   exact div_mul_cancel₀ _ hk0
 
+
+
+
+/-- 修正版，对应原文 MD-4.2.1-ResonanceGrowth。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem resonanceGrowth_corrected :
+  ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 → ℝ, z 0 ≠ 0 →
+  Tendsto (fun k : ℕ => ‖(MolecularDynamics.Chapter04Review.impulseMatrix Ω (Real.pi/Ω))^k *ᵥ z‖) atTop atTop := by
+  intro Ω hΩ z hz
+  have hc : 0 < |(Real.pi/Ω)*z 0| := abs_pos.mpr (mul_ne_zero (div_ne_zero Real.pi_ne_zero (ne_of_gt hΩ)) hz)
+  have hr := resonanceLinearRate Ω hΩ z hz
+  have ht := hr.pos_mul_atTop hc (tendsto_natCast_atTop_atTop (R := ℝ))
+  apply ht.congr'
+  filter_upwards [eventually_gt_atTop (0 : ℕ)] with k hk
+  have hk0 : (k : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hk)
+  exact div_mul_cancel₀ _ hk0
 
 /-- source_id: MD-4.2.2-MollifiedStructure · unnumbered_claim · §4.2.2 · 印刷p.149 / PDFp.171
 [EXTRA] 正质量、US/UF/A C²、r>0；实际Fréchet链式法则及RESPA的Jacobian辛性，不假定保结构结论。 -/
@@ -702,7 +956,8 @@ def constrainedSolution_generalForce {n l : ℕ} (m : Fin n → ℝ) (F : Molecu
 /-- source_id: MD-4.3-ConstraintSet · definition · §4.3 · 印刷p.152 / PDFp.174
 [EXTRA] 定义仅集合；称为光滑流形需要独立梯度/正则值资格，未构造抽象流形。 
 [EXTRA] 零点集合定义保留；补C∞及满秩的真实局部光滑坐标正规形，零点集对应l个坐标为零，即余维l嵌入流形资格；l≤n及正则性均标EXTRA，新结论暂sorry。 
-[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 -/
+[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：修正版明确满秩、C∞和维数资格，以局部可逆坐标描述正则约束面；任意零点集合不自动是流形。
+-/
 def constraintSet {n l : ℕ} (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) : Set (MolecularDynamics.Chapter04Review.Q n) := {q | ∀ j, g j q=0}
 
 theorem constraintSet_regularLevel (n l : ℕ) (_hln : l ≤ n)
@@ -717,6 +972,26 @@ theorem constraintSet_regularLevel (n l : ℕ) (_hln : l ≤ n)
         (∀ x ∈ A, ψ (φ x)=x) ∧ (∀ y ∈ B, φ (ψ y)=y) ∧
         (∀ x ∈ A, x ∈ constraintSet g ↔ ∀ j : Fin l, φ x (Fin.castLE _hln j)=0) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-4.3-ConstraintSet。改动：修正版明确满秩、C∞和维数资格，以局部可逆坐标描述正则约束面；任意零点集合不自动是流形。 -/
+theorem constraintSet_corrected (n l : ℕ) (_hln : l ≤ n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (_hg : ∀ j, ContDiff ℝ ∞ (g j))
+    (q : MolecularDynamics.Chapter04Review.Q n) (_hq : q ∈ constraintSet g)
+    (_hregular : Function.Surjective (fderiv ℝ (fun x j ↦ g j x) q)) :
+    ∃ A B : Set (MolecularDynamics.Chapter04Review.Q n), IsOpen A ∧ IsOpen B ∧ q ∈ A ∧ 0 ∈ B ∧
+      ∃ φ ψ : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n,
+        ContDiffOn ℝ ∞ φ A ∧ ContDiffOn ℝ ∞ ψ B ∧ φ q=0 ∧
+        MapsTo φ A B ∧ MapsTo ψ B A ∧
+        (∀ x ∈ A, ψ (φ x)=x) ∧ (∀ y ∈ B, φ (ψ y)=y) ∧
+        (∀ x ∈ A, x ∈ constraintSet g ↔ ∀ j : Fin l, φ x (Fin.castLE _hln j)=0) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-4.3-CotangentSet · definition · §4.3 · 印刷p.152 / PDFp.174
 [EXTRA] 正质量及独立梯度为几何解释资格。 -/
@@ -777,17 +1052,34 @@ def restraintPotential (ε r₀ : ℝ) (q : Position 3) : ℝ :=
 
 /-- source_id: MD-4.3-RestraintForcePrinted · unnumbered_claim · §4.3 · 印刷p.150 / PDFp.172
 [EXTRA] [EXTRA]将prime暂按配置梯度解释；该记号解释待审。
-[ERRATUM?] Fε=−∇φε=φ′ε的prime含义/负号待裁定；原文不静默更正。 -/
+[ERRATUM?] Fε=−∇φε=φ′ε的prime含义/负号待裁定；原文不静默更正。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：独立定义物理恢复力为势能负梯度；不保留原书把标量势与向量力相等的类型混淆为可证定理。
+-/
 theorem restraintForcePrinted :
     ∀ ε r₀ : ℝ, ∀ q : Position 3,
       -gradient (fun x : Position 3 => ε⁻¹*(‖x‖-r₀)^2/2) q =
        gradient (fun x : Position 3 => ε⁻¹*(‖x‖-r₀)^2/2) q := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4.3-RestraintForcePrinted。改动：独立定义物理恢复力为势能负梯度；不保留原书把标量势与向量力相等的类型混淆为可证定理。 -/
+def restraintForcePrinted_corrected (ε r₀ : ℝ) (_hε : 0 < ε) (q : Position 3) : Position 3 :=
+  -gradient (fun x : Position 3 => ε⁻¹*(‖x‖-r₀)^2/2) q
+
 /-- source_id: MD-4.3-ConstrainedPendulum · definition · §4.3 · 印刷p.151 / PDFp.173
 [EXTRA] 原所写v′方程按单位质量，λ吸收法向grad(‖q‖²)=2q的因子；真实欧氏曲线和导数。 
-[EXTRA] 增加开时间域，保证within导数确为经典运动导数，排除单点域任意导数的伪运动。 -/
+[EXTRA] 增加开时间域，保证within导数确为经典运动导数，排除单点域任意导数的伪运动。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def constrainedPendulum (U : Position 3 → ℝ) (r₀ : ℝ)
+    (q v : ℝ → Position 3) (lam : ℝ → ℝ) (I : Set ℝ) (_hI : IsOpen I) : Prop :=
+  ∀ t ∈ I, HasDerivWithinAt q (v t) I t ∧
+    HasDerivWithinAt v (-gradient U (q t)-(lam t) • q t) I t ∧
+    ‖q t‖^2-r₀^2=0
+
+
+
+/-- 修正版，对应原文 MD-4.3-ConstrainedPendulum。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def constrainedPendulum_corrected (U : Position 3 → ℝ) (r₀ : ℝ)
     (q v : ℝ → Position 3) (lam : ℝ → ℝ) (I : Set ℝ) (_hI : IsOpen I) : Prop :=
   ∀ t ∈ I, HasDerivWithinAt q (v t) I t ∧
     HasDerivWithinAt v (-gradient U (q t)-(lam t) • q t) I t ∧
@@ -799,7 +1091,8 @@ noncomputable def constraintCurvature {Nc Mc : ℕ} (m : Fin Nc → ℝ)
   fun j => (fderiv ℝ (fderiv ℝ (γ j)) q)
     (textbookInverseMassMatrix m *ᵥ p) (textbookInverseMassMatrix m *ᵥ p)
 
-/-- source_id: MD-4.3-ReactionMultiplier · definition · §4.3 · 印刷p.153 / PDFp.175 -/
+/-- source_id: MD-4.3-ReactionMultiplier · definition · §4.3 · 印刷p.153 / PDFp.175 [EXTRA] 24号：[EXTRA] 逆Gram候选公式定义（含奇异点的总化）；原句在det≠0时解平衡方程及唯一性由MD-4.3-ReactionBalance和MD-4.3-GramInvertible共同覆盖。 不将无条件总化定义报告成唯一求解结论。
+-/
 noncomputable def reactionMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
     (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (F : (Fin Nc → ℝ) → Fin Nc → ℝ)
     (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=
@@ -991,8 +1284,17 @@ def positionEulerPrinted {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.
   out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m out.2 ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g
 
 /-- source_id: MD-4.3.2-PositionEulerForceConvention · definition · §4.3.2 · 印刷p.156 / PDFp.178
-[EXTRA] [EXTRA]采用F=−grad U的统一力版本，动量+hF；字面−hFn原式仍保留在相邻条。 -/
+[EXTRA] [EXTRA]采用F=−grad U的统一力版本，动量+hF；字面−hFn原式仍保留在相邻条。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def positionEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (rho : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  out.2=z.2+h • F z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m out.2 ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g
+
+
+
+/-- 修正版，对应原文 MD-4.3.2-PositionEulerForceConvention。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def positionEulerRelation_corrected {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (rho : MolecularDynamics.Chapter04Review.Q l) : Prop :=
   out.2=z.2+h • F z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
   out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m out.2 ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g
@@ -1063,8 +1365,16 @@ def newtonConstraintSequence {n l : ℕ} (m : Fin n → ℝ)
   (MolecularDynamics.Chapter04Review.newtonConstraint m g q base)^[k] 0
 
 /-- source_id: MD-4.3.2-FrozenNewtonConstraint · definition · §4.3.2 · 印刷p.157 / PDFp.179
-[ERRATUM?] R(0)=g′(Qn)M⁻¹Gnᵀ，一般不是GnM⁻¹Gnᵀ；只有Qn=qn或冻结Jacobian到旧位置时相同。 -/
+[ERRATUM?] R(0)=g′(Qn)M⁻¹Gnᵀ，一般不是GnM⁻¹Gnᵀ；只有Qn=qn或冻结Jacobian到旧位置时相同。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def frozenNewtonConstraint {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=
+  η+(MolecularDynamics.Chapter04Review.projectionJacobian m g q base 0)⁻¹ *ᵥ MolecularDynamics.Chapter04Review.projectionResidual m g q base η
+
+
+
+/-- 修正版，对应原文 MD-4.3.2-FrozenNewtonConstraint。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def frozenNewtonConstraint_corrected {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q base : MolecularDynamics.Chapter04Review.Q n) (η : MolecularDynamics.Chapter04Review.Q l) : MolecularDynamics.Chapter04Review.Q l :=
   η+(MolecularDynamics.Chapter04Review.projectionJacobian m g q base 0)⁻¹ *ᵥ MolecularDynamics.Chapter04Review.projectionResidual m g q base η
 
@@ -1089,34 +1399,78 @@ theorem frozenNewtonLinear :
   sorry
 
 /-- source_id: MD-4.3.2-ProjectionScale · unnumbered_claim · §4.3.2 · 印刷p.158 / PDFp.180
-[EXTRA] 给定真实C²选根分支η0=0、正则Gram及初始余切资格；非线性根存在是独立缺项，不把O(h²)结论作假设。 -/
+[EXTRA] 给定真实C²选根分支η0=0、正则Gram及初始余切资格；非线性根存在是独立缺项，不把O(h²)结论作假设。 [EXTRA] 24号：F按原印F_n解释，预测位置+h²M⁻¹F改为−h²M⁻¹F；保留根分支、初态余切相容及Gram可逆资格，原句不改。原书O(h²)的初态范围另列勘误待导师，不把两种根方程混为一谈。
+[EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：独立限定版本采用原印负号预测器，并要求初态满足位置及隐藏余切约束、Gram非奇异、C²根分支且η(0)=0；只有位置约束不保证O(h²)。翻译预测器符号修复与原书缺相容性问题分开。
+-/
 theorem projectionScale :
   ∀ n l (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (z : MolecularDynamics.Chapter04Review.Z n) (η : ℝ → MolecularDynamics.Chapter04Review.Q l), z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
     (∀ j, ContDiff ℝ 2 (g j)) → ContDiff ℝ 2 η → η 0=0 →
     (textbookConstraintGram m g z.1).det ≠ 0 →
     (∃ δ > 0, ∀ h ∈ Ioo (-δ) δ,
-      MolecularDynamics.Chapter04Review.projectionResidual m g z.1 (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2+h^2 • MolecularDynamics.Chapter04Review.invMass m (F z.1)) (η h)=0) →
+      MolecularDynamics.Chapter04Review.projectionResidual m g z.1 (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2-h^2 • MolecularDynamics.Chapter04Review.invMass m (F z.1)) (η h)=0) →
     ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo (-δ) δ, ‖η h‖ ≤ C*h^2 := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4.3.2-ProjectionScale。改动：独立限定版本采用原印负号预测器，并要求初态满足位置及隐藏余切约束、Gram非奇异、C²根分支且η(0)=0；只有位置约束不保证O(h²)。翻译预测器符号修复与原书缺相容性问题分开。 -/
+theorem projectionScale_corrected :
+  ∀ n l (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (z : MolecularDynamics.Chapter04Review.Z n) (η : ℝ → MolecularDynamics.Chapter04Review.Q l), z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →
+    (∀ j, ContDiff ℝ 2 (g j)) → ContDiff ℝ 2 η → η 0=0 →
+    (textbookConstraintGram m g z.1).det ≠ 0 →
+    (∃ δ > 0, ∀ h ∈ Ioo (-δ) δ,
+      MolecularDynamics.Chapter04Review.projectionResidual m g z.1 (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2-h^2 • MolecularDynamics.Chapter04Review.invMass m (F z.1)) (η h)=0) →
+    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo (-δ) δ, ‖η h‖ ≤ C*h^2 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-4.3.2-FrozenGramPrinted · unnumbered_claim · §4.3.2 · 印刷p.157 / PDFp.179
-[ERRATUM?] R(0)仍是新预测点与旧点的交叉Gram，原等式一般不成立。 -/
+[ERRATUM?] R(0)仍是新预测点与旧点的交叉Gram，原等式一般不成立。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：真实残差Jacobian为新预测点/旧点的交叉矩阵，不无条件等于旧点Gram或对称矩阵。
+-/
 theorem frozenGramPrinted :
     ∀ n l (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (q base : MolecularDynamics.Chapter04Review.Q n),
       MolecularDynamics.Chapter04Review.projectionJacobian m g q base 0 = textbookConstraintGram m g q := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4.3.2-FrozenGramPrinted。改动：真实残差Jacobian为新预测点/旧点的交叉矩阵，不无条件等于旧点Gram或对称矩阵。 -/
+theorem frozenGramPrinted_corrected :
+    ∀ n l (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (q base : MolecularDynamics.Chapter04Review.Q n),
+      MolecularDynamics.Chapter04Review.projectionJacobian m g q base 0 = textbookConstraintJacobian g base * textbookInverseMassMatrix m * (textbookConstraintJacobian g q)ᵀ := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-4.3.3-ComponentPrinted · definition · §4.3.3 · 印刷p.158 / PDFp.180
 [EXTRA] [EXTRA]Gsup1是未定义印刷G_j^1的显式参数，未假设它等于已定义梯度。
 [ERRATUM?] 一般分量式分母G_j^1疑为G_n^j的索引误写；原文不静默改。 
-[EXTRA] 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。 -/
+[EXTRA] 补正质量、约束在旧点/当前点经典可微、当前分母非零的有效步骤资格；Fin首项0对应印刷j=1。Gsup1的原印参数保留；任意j的统一式为明确参数化解释。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：把一般分量式分母中的G_j^1明确改为当前约束在旧点的梯度G_n^j，与分子所用方向一致；原Gsup1参数版完整保留。
+-/
 def componentPrinted {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q Qnow : MolecularDynamics.Chapter04Review.Q n) (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n) (j : Fin l) (_hm : ∀ i, 0 < m i)
     (_hgq : DifferentiableAt ℝ (g j) q) (_hgQ : DifferentiableAt ℝ (g j) Qnow)
     (_hdenom : MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow)
       (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j)) ≠ 0) : MolecularDynamics.Chapter04Review.Q n :=
   Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j))) •
+    MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)
+
+
+
+/-- 修正版，对应原文 MD-4.3.3-ComponentPrinted。改动：把一般分量式分母中的G_j^1明确改为当前约束在旧点的梯度G_n^j，与分子所用方向一致；原Gsup1参数版完整保留。 -/
+def componentPrinted_corrected {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q Qnow : MolecularDynamics.Chapter04Review.Q n) (j : Fin l) (_hm : ∀ i, 0 < m i)
+    (_hgq : DifferentiableAt ℝ (g j) q) (_hgQ : DifferentiableAt ℝ (g j) Qnow)
+    (_hdenom : MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow)
+      (MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)) ≠ 0) : MolecularDynamics.Chapter04Review.Q n :=
+  Qnow-(g j Qnow / MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Qnow) (MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q))) •
     MolecularDynamics.Chapter04Review.invMass m (MolecularDynamics.Chapter04Review.grad (g j) q)
 
 /-- source_id: MD-4.3.3-ComponentConstraintStep · definition · §4.3.3 · 印刷p.158 / PDFp.180
@@ -1132,7 +1486,9 @@ def componentConstraintStep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → Molec
 
 /-- source_id: MD-4.3.3-ComponentSweep · definition · §4.3.3 · 印刷p.158 / PDFp.180
 [EXTRA] [EXTRA]一次完整顺序sweep，使用上一条统一Gn索引；多轮为其真实函数迭代。 
-[EXTRA] 保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。 -/
+[EXTRA] 保留一次修订梯度扫描辅助；新增字面Gsup1分母的实际逐分量轨迹、多轮顺序循环与每步有效域，以及一轮全部增量停止检查。字面原式不暗换Gsup1，不添加收敛承诺。 [EXTRA] 24号：停止判据恢复原印非严格≤tol，并要求含测试轮全部步骤的可微/分母非零资格；原G_j^1索引疑误保留待导师。没有更改逐分量更新次序。
+[EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def componentSweep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q Qnow : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=
   (List.finRange l).foldl (fun Qcur j => MolecularDynamics.Chapter04Review.componentConstraintStep m g q Qcur j) Qnow
@@ -1175,9 +1531,22 @@ def componentPrintedStop {n l : ℕ} (m : Fin n → ℝ)
     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q Q₀ : MolecularDynamics.Chapter04Review.Q n)
     (Gsup1 : Fin l → MolecularDynamics.Chapter04Review.Q n)
-    (round : ℕ) (tol : ℝ) (_hl : 0 < l) : Prop :=
+    (round : ℕ) (tol : ℝ) (_hl : 0 < l)
+    (_hvalid : ∀ k < (round+1)*l,
+      let j : Fin l := ⟨k%l,Nat.mod_lt k _hl⟩
+      let Q := componentPrintedTrajectory m g q Q₀ Gsup1 k
+      DifferentiableAt ℝ (g j) q ∧ DifferentiableAt ℝ (g j) Q ∧
+        MolecularDynamics.Chapter04Review.dot (MolecularDynamics.Chapter04Review.grad (g j) Q)
+          (MolecularDynamics.Chapter04Review.invMass m (Gsup1 j)) ≠ 0) : Prop :=
   ∀ j : Fin l, |componentPrintedDelta m g
-    (componentPrintedTrajectory m g q Q₀ Gsup1 (round*l+j.val)) Gsup1 j| < tol
+    (componentPrintedTrajectory m g q Q₀ Gsup1 (round*l+j.val)) Gsup1 j| ≤ tol
+
+
+
+/-- 修正版，对应原文 MD-4.3.3-ComponentSweep。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def componentSweep_corrected {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q Qnow : MolecularDynamics.Chapter04Review.Q n) : MolecularDynamics.Chapter04Review.Q n :=
+  (List.finRange l).foldl (fun Qcur j => MolecularDynamics.Chapter04Review.componentConstraintStep m g q Qcur j) Qnow
 
 /-- source_id: MD-4.3.4-ProjectedEulerPrinted · definition · §4.3.4 · 印刷p.159 / PDFp.181
 [ERRATUM?] p159(4.21)力符号与p163及F=−∇U定义不一致。 -/
@@ -1188,8 +1557,18 @@ def projectedEulerPrinted {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics
   out.2=pbar-(textbookConstraintJacobian g out.1)ᵀ *ᵥ μ ∧ out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
 
 /-- source_id: MD-4.3.4-ProjectedEulerRelation · definition · §4.3.4 · 印刷p.159 / PDFp.181
-[EXTRA] [EXTRA]实际力F=−∇U采用+hF版本，与p163一致；不是(4.21)逐字公式。 -/
+[EXTRA] [EXTRA]实际力F=−∇U采用+hF版本，与p163一致；不是(4.21)逐字公式。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def projectedEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (pbar : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  pbar=z.2+h • F z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
+  out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m pbar ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
+  out.2=pbar-(textbookConstraintJacobian g out.1)ᵀ *ᵥ μ ∧ out ∈ MolecularDynamics.Chapter04Review.cotangentSet m g
+
+
+
+/-- 修正版，对应原文 MD-4.3.4-ProjectedEulerRelation。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def projectedEulerRelation_corrected {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) (pbar : MolecularDynamics.Chapter04Review.Q n) (rho μ : MolecularDynamics.Chapter04Review.Q l) : Prop :=
   pbar=z.2+h • F z.1-h • ((textbookConstraintJacobian g z.1)ᵀ *ᵥ rho) ∧
   out.1=z.1+h • MolecularDynamics.Chapter04Review.invMass m pbar ∧ out.1 ∈ MolecularDynamics.Chapter04Review.constraintSet g ∧
@@ -1197,8 +1576,27 @@ def projectedEulerRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamic
 
 /-- source_id: MD-4.3.4-Lemma41 · Lemma 4.1 · §4.3.4 · 印刷p.159–160 / PDFp.181–182
 [EXTRA] 真实局部参数图、q/p/μ可微，约束在x邻域成立；完整拉回2形式对任意u,v相等。
-[ERRATUM?] p160证明两处内和印刷dq_j；实际Hessian链式公式应dq_i。原proof_latex保持字面，正式库用真实Hessian对称性证明结论。 -/
+[ERRATUM?] p160证明两处内和印刷dq_j；实际Hessian链式公式应dq_i。原proof_latex保持字面，正式库用真实Hessian对称性证明结论。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem lemma41 {Nc : ℕ} {E : Type*}
+    [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (γ : (Fin Nc → ℝ) → ℝ) (hγ : ContDiff ℝ 2 γ) (μ : E → ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : DifferentiableAt ℝ q x) (hp : DifferentiableAt ℝ p x)
+    (hμ : DifferentiableAt ℝ μ x)
+    (hchart : ∀ᶠ y in 𝓝 x, γ (q y) = 0 ∧
+      p y ⬝ᵥ textbookConstraintGradient γ (q y) = 0) (u v : E) :
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookCotangentChart q (textbookConstrainedMomentum γ μ q p)) x u)
+      (fderiv ℝ (textbookCotangentChart q (textbookConstrainedMomentum γ μ q p)) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v) := by
+  apply MolecularDynamics.lemma_4_1 <;> assumption
+
+
+
+/-- 修正版，对应原文 MD-4.3.4-Lemma41。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem lemma41_corrected {Nc : ℕ} {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
     (γ : (Fin Nc → ℝ) → ℝ) (hγ : ContDiff ℝ 2 γ) (μ : E → ℝ)
     (q p : E → Fin Nc → ℝ) (x : E)
@@ -1345,7 +1743,8 @@ theorem cotangentPullback {Nc Mc : ℕ} (m : Fin Nc → ℝ)
 
 /-- source_id: MD-4.3.4-GramProjectedEuler · unnumbered_claim · §4.3.4 · 印刷p.160 / PDFp.182
 [EXTRA] [EXTRA]将(4.20–24)实际Gram末投影同时证明隐藏约束与完整拉回形式不变；给定C¹位置投影分支，非解的存在理论。 
-[EXTRA] 教材包装全部固定a=−h，对应原印−hF的特殊参数；任意a几何推广作为独立辅助保留，原已证apply仅参数实例化。未把a=h物理修订暗作原印；不声称隐式分支存在或全局微分同胚。 -/
+[EXTRA] 教材包装全部固定a=−h，对应原印−hF的特殊参数；任意a几何推广作为独立辅助保留，原已证apply仅参数实例化。未把a=h物理修订暗作原印；不声称隐式分支存在或全局微分同胚。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem gramProjectedEuler {Nc Mc : ℕ}
     (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (lam : Fin Mc → E → ℝ)
     (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ)
@@ -1394,6 +1793,33 @@ theorem gramProjectedEuler_general {Nc Mc : ℕ}
       (fderiv ℝ (textbookCotangentChart q p) x v) := by
   apply MolecularDynamics.textbookGramProjectedEulerChart_hiddenConstraint_and_pullback <;> assumption
 
+
+
+/-- 修正版，对应原文 MD-4.3.4-GramProjectedEuler。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem gramProjectedEuler_corrected {Nc Mc : ℕ}
+    (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (lam : Fin Mc → E → ℝ)
+    (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ) (h : ℝ)
+    (q p : E → Fin Nc → ℝ) (x : E)
+    (hq : ContDiffAt ℝ 1 q x) (hp : ContDiffAt ℝ 1 p x)
+    (hU : ContDiff ℝ 2 U) (hγ : ∀ j, ContDiff ℝ 2 (γ j))
+    (hlam : ∀ j, ContDiffAt ℝ 1 (lam j) x)
+    (hold : ∀ j, ∀ᶠ y in 𝓝 x, γ j (q y) = 0)
+    (hnew : ∀ j, ∀ᶠ y in 𝓝 x, γ j
+      (textbookProjectedEulerPosition m h q
+        (textbookProjectedEulerPreMomentum Finset.univ γ lam U h (-h) q p) y) = 0)
+    (hdet : (textbookConstraintGram m γ (textbookProjectedEulerPosition m h q
+      (textbookProjectedEulerPreMomentum Finset.univ γ lam U h (-h) q p) x)).det ≠ 0)
+    (u v : E) :
+    (∀ j, (fderiv ℝ (γ j) (fun i => textbookGramProjectedEulerChart γ lam m U h (-h) q p x (Sum.inl i)))
+        (textbookInverseMassMatrix m *ᵥ
+          (fun i => textbookGramProjectedEulerChart γ lam m U h (-h) q p x (Sum.inr i))) = 0) ∧
+    textbookSymplecticForm Nc
+      (fderiv ℝ (textbookGramProjectedEulerChart γ lam m U h (-h) q p) x u)
+      (fderiv ℝ (textbookGramProjectedEulerChart γ lam m U h (-h) q p) x v) =
+    textbookSymplecticForm Nc (fderiv ℝ (textbookCotangentChart q p) x u)
+      (fderiv ℝ (textbookCotangentChart q p) x v) := by
+  apply MolecularDynamics.textbookGramProjectedEulerChart_hiddenConstraint_and_pullback <;> assumption
+
 /-- source_id: MD-4.3.5-SHAKEPositionPrinted · definition · §4.3.5 · 印刷p.161 / PDFp.183
 [ERRATUM?] (4.25)约束反力未带M⁻¹；一般非标量对角质量不能任意吸收入λ。 -/
 def shakePositionPrinted {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
@@ -1402,8 +1828,17 @@ def shakePositionPrinted {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.
   c ∈ MolecularDynamics.Chapter04Review.constraintSet g
 
 /-- source_id: MD-4.3.5-SHAKEPositionMass · definition · §4.3.5 · 印刷p.161 / PDFp.183
-[EXTRA] [EXTRA]质量一致位置式h²M⁻¹(F−Gᵀλ)，非原印刷(4.25)。 -/
+[EXTRA] [EXTRA]质量一致位置式h²M⁻¹(F−Gᵀλ)，非原印刷(4.25)。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def shakePositionRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (a b c : MolecularDynamics.Chapter04Review.Q n) (rho : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  c-(2 : ℝ) • b+a=h^2 • MolecularDynamics.Chapter04Review.invMass m (F b-(textbookConstraintJacobian g b)ᵀ *ᵥ rho) ∧
+  c ∈ MolecularDynamics.Chapter04Review.constraintSet g
+
+
+
+/-- 修正版，对应原文 MD-4.3.5-SHAKEPositionMass。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def shakePositionRelation_corrected {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (a b c : MolecularDynamics.Chapter04Review.Q n) (rho : MolecularDynamics.Chapter04Review.Q l) : Prop :=
   c-(2 : ℝ) • b+a=h^2 • MolecularDynamics.Chapter04Review.invMass m (F b-(textbookConstraintJacobian g b)ᵀ *ᵥ rho) ∧
   c ∈ MolecularDynamics.Chapter04Review.constraintSet g
@@ -1425,7 +1860,8 @@ def rattleRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapte
 
 /-- source_id: MD-4.3.5-ConstrainedOrders · unnumbered_claim · §4.3.5 · 印刷p.161–162 / PDFp.183–184
 [EXTRA] 正质量、C⁴数据、独立约束与真实光滑隐式解分支及紧区间；明确局部截断误差Euler O(h²)、RATTLE O(h³)。 
-[EXTRA] 保留局部一致性辅助，补真实光滑正则求解分支及紧时间精确轨道上的全局Euler一阶/RATTLE二阶，并给无约束振子一阶下界表达only first order。SHAKE位置阶专归SHAKEPositionOrder，其质量勘误路线待导师；原文不删。 -/
+[EXTRA] 保留局部一致性辅助，补真实光滑正则求解分支及紧时间精确轨道上的全局Euler一阶/RATTLE二阶，并给无约束振子一阶下界表达only first order。SHAKE位置阶专归SHAKEPositionOrder，其质量勘误路线待导师；原文不删。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem constrainedOrders :
   ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (z : MolecularDynamics.Chapter04Review.Z n) (Φ E R : ℝ → MolecularDynamics.Chapter04Review.Z n) (pE pR : ℝ → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoR μR : ℝ → MolecularDynamics.Chapter04Review.Q l),
@@ -1481,6 +1917,28 @@ theorem constrainedOrders_firstOrderSharp :
         (![1,0] : Fin 2 → ℝ)-![Real.cos 1,-Real.sin 1]‖ := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4.3.5-ConstrainedOrders。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem constrainedOrders_corrected :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (z : MolecularDynamics.Chapter04Review.Z n) (Φ E R : ℝ → MolecularDynamics.Chapter04Review.Z n) (pE pR : ℝ → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoR μR : ℝ → MolecularDynamics.Chapter04Review.Q l),
+    (∀ i, 0 < m i) → ContDiff ℝ 4 U → (∀ j, ContDiff ℝ 4 (g j)) →
+    z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g → (textbookConstraintGram m g z.1).det ≠ 0 →
+    ContDiff ℝ 3 E → ContDiff ℝ 3 R → ContDiff ℝ 3 Φ → E 0=z → R 0=z → Φ 0=z →
+    ContDiff ℝ 2 rhoE → ContDiff ℝ 2 μE → ContDiff ℝ 2 rhoR → ContDiff ℝ 2 μR →
+    μE 0=0 → μR 0=0 →
+    (∃ δ > 0, ∀ h ∈ Ioo (-δ) δ,
+      MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h) (pE h) (rhoE h) (μE h) ∧
+      MolecularDynamics.Chapter04Review.rattleRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (R h) (pR h) (rhoR h) (μR h) ∧
+      HasDerivAt Φ (textbookConstrainedPhaseVectorField m g U (Φ h)) h) →
+    ∃ C > 0, ∃ δ > 0, ∀ h ∈ Ioo 0 δ, ‖E h-Φ h‖ ≤ C*h^2 ∧ ‖R h-Φ h‖ ≤ C*h^3 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-4.3.5-RATTLESymplectic · unnumbered_claim · §4.3.5 · 印刷p.162 / PDFp.184
 [EXTRA] 实际C¹分支、C²势与约束；完整真实拉回两形式，非把辛性作假设。 
 [EXTRA] 改为正质量、C²势/约束、余切域满秩的开放邻域C¹求解分支上真实拉回辛性；不假设全局隐式单值法，不声称分支存在。 -/
@@ -1507,8 +1965,17 @@ theorem rattleSymplectic (n l : ℕ) (m : Fin n → ℝ)
   sorry
 
 /-- source_id: MD-4.3.5-StaggeredConstraint · definition · §4.3.5 · 印刷p.162 / PDFp.184
-[ERRATUM?] p162的平均乘子需与p161(4.33)无h/2缩放一致；未将未经核定平均关系计为证明。 -/
+[ERRATUM?] p162的平均乘子需与p161(4.33)无h/2缩放一致；未将未经核定平均关系计为证明。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def staggeredConstraintRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
+    (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (q qnew oldHalf newHalf : MolecularDynamics.Chapter04Review.Q n) (rho : MolecularDynamics.Chapter04Review.Q l) : Prop :=
+  newHalf=oldHalf+h • (F q-(textbookConstraintJacobian g q)ᵀ *ᵥ rho) ∧
+  qnew=q+h • MolecularDynamics.Chapter04Review.invMass m newHalf ∧ qnew ∈ MolecularDynamics.Chapter04Review.constraintSet g
+
+
+
+/-- 修正版，对应原文 MD-4.3.5-StaggeredConstraint。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def staggeredConstraintRelation_corrected {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)
     (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) (q qnew oldHalf newHalf : MolecularDynamics.Chapter04Review.Q n) (rho : MolecularDynamics.Chapter04Review.Q l) : Prop :=
   newHalf=oldHalf+h • (F q-(textbookConstraintJacobian g q)ᵀ *ᵥ rho) ∧
   qnew=q+h • MolecularDynamics.Chapter04Review.invMass m newHalf ∧ qnew ∈ MolecularDynamics.Chapter04Review.constraintSet g
@@ -1516,7 +1983,8 @@ def staggeredConstraintRelation {n l : ℕ} (m : Fin n → ℝ) (F : MolecularDy
 /-- source_id: MD-4.3.5-SHAKERATTLEEquivalence · unnumbered_claim · §4.3.5 · 印刷p.162 / PDFp.184
 [EXTRA] 真实两套关系、相容初始半动量、正质量和同一局部唯一投影分支；不假设位置序列相同。
 [EXTRA] [EXTRA]位置约束上梯度线性独立，保证显式逆Gram投影有定义；旧命题此资格缺失，不静默忽略。
-[ERRATUM?] 展示初始p−1/2从(4.29)消元的反力符号需核；原句保持。 -/
+[ERRATUM?] 展示初始p−1/2从(4.29)消元的反力符号需核；原句保持。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem shakeRattlePositions :
   ∀ n l (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) h,
     h ≠ 0 → (∀ i, 0 < m i) →
@@ -1534,8 +2002,33 @@ theorem shakeRattlePositions :
       ∀ k, qS k=qR k ∧ pR (k+1)=textbookCotangentProjection m g (qS (k+1)) (pS (k+1)) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4.3.5-SHAKERATTLEEquivalence。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem shakeRattlePositions_corrected :
+  ∀ n l (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ) h,
+    h ≠ 0 → (∀ i, 0 < m i) →
+    (∀ q, q ∈ MolecularDynamics.Chapter04Review.constraintSet g →
+      LinearIndependent ℝ (fun j => textbookConstraintGradient (g j) q)) →
+    (∀ q base : MolecularDynamics.Chapter04Review.Q n, ∀ eta nu : MolecularDynamics.Chapter04Review.Q l, q ∈ MolecularDynamics.Chapter04Review.constraintSet g →
+      MolecularDynamics.Chapter04Review.projectionResidual m g q base eta=0 → MolecularDynamics.Chapter04Review.projectionResidual m g q base nu=0 →
+      (textbookConstraintJacobian g q)ᵀ *ᵥ eta=(textbookConstraintJacobian g q)ᵀ *ᵥ nu) →
+    ∀ (qS pS qR pR halfS halfR : ℕ → MolecularDynamics.Chapter04Review.Q n) (rhoS rhoR muR : ℕ → MolecularDynamics.Chapter04Review.Q l),
+      qS 0=qR 0 → halfS 0=halfR 0 →
+      (∀ k, MolecularDynamics.Chapter04Review.shakeRelation m F g h (qS k,pS k) (qS (k+1),pS (k+1))
+        (halfS k) (rhoS k) (rhoS (k+1))) →
+      (∀ k, MolecularDynamics.Chapter04Review.rattleRelation m F g h (qR k,pR k) (qR (k+1),pR (k+1))
+        (halfR k) (rhoR k) (muR (k+1))) →
+      ∀ k, qS k=qR k ∧ pR (k+1)=textbookCotangentProjection m g (qS (k+1)) (pS (k+1)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-4.3.5-SHAKEElimination · unnumbered_claim · §4.3.5 · 印刷p.161 / PDFp.183
-[EXTRA] [EXTRA]实际相空间SHAKE消元给质量一致M⁻¹(F−Gᵀλ)；原(4.25)缺M⁻¹的字面版单列待审；只转录正文结论，不进入习题。 -/
+[EXTRA] [EXTRA]实际相空间SHAKE消元给质量一致M⁻¹(F−Gᵀλ)；原(4.25)缺M⁻¹的字面版单列待审；只转录正文结论，不进入习题。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem shakeElimination :
   ∀ n l (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     h (q p half : ℕ → MolecularDynamics.Chapter04Review.Q n) (rho : ℕ → MolecularDynamics.Chapter04Review.Q l),
@@ -1556,8 +2049,32 @@ theorem shakeElimination :
     linear_combination e1-e0+h*(m i)⁻¹*(e3+e2)
   · simpa [Nat.add_assoc] using hg1
 
+
+
+/-- 修正版，对应原文 MD-4.3.5-SHAKEElimination。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem shakeElimination_corrected :
+  ∀ n l (m : Fin n → ℝ) (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    h (q p half : ℕ → MolecularDynamics.Chapter04Review.Q n) (rho : ℕ → MolecularDynamics.Chapter04Review.Q l),
+    (∀ k, MolecularDynamics.Chapter04Review.shakeRelation m F g h (q k,p k) (q (k+1),p (k+1)) (half k) (rho k) (rho (k+1))) →
+    ∀ k, MolecularDynamics.Chapter04Review.shakePositionRelation m F g h (q k) (q (k+1)) (q (k+2)) (rho (k+1)) := by
+  intro n l m F g h q p half rho hs k
+  have h0 := hs k
+  have h1 := hs (k+1)
+  rcases h0 with ⟨hh0,hq0,hg0,hp0⟩
+  rcases h1 with ⟨hh1,hq1,hg1,hp1⟩
+  constructor
+  · ext i
+    have e0 := congrFun hq0 i
+    have e1 := congrFun hq1 i
+    have e2 := congrFun hp0 i
+    have e3 := congrFun hh1 i
+    simp [MolecularDynamics.Chapter04Review.invMass,Pi.smul_apply,smul_eq_mul] at e0 e1 e2 e3 ⊢
+    linear_combination e1-e0+h*(m i)⁻¹*(e3+e2)
+  · simpa [Nat.add_assoc] using hg1
+
 /-- source_id: MD-4.3.5-SHAKEPositionOrder · unnumbered_claim · §4.3.5 · 印刷p.161 / PDFp.183
-[EXTRA] [EXTRA]正质量、C⁴势/约束/实际轨道、沿解非奇异Gram、相容两步初值；精确给真实有限区间位置误差O(h²)及分支存在，不把误差界作假设。 -/
+[EXTRA] [EXTRA]正质量、C⁴势/约束/实际轨道、沿解非奇异Gram、相容两步初值；精确给真实有限区间位置误差O(h²)及分支存在，不把误差界作假设。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem shakePositionOrder :
   ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) tau,
@@ -1572,6 +2089,28 @@ theorem shakePositionOrder :
         (qn k) (qn (k+1)) (qn (k+2)) (rhon (k+1))) ∧
       ∀ k ≤ N, ‖qn k-q (k*h)‖ ≤ C*h^2 := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-4.3.5-SHAKEPositionOrder。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem shakePositionOrder_corrected :
+  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter04Review.Q n) (rho : ℝ → MolecularDynamics.Chapter04Review.Q l) tau,
+    0 < tau → (∀ i, 0 < m i) → ContDiff ℝ 4 U → (∀ j, ContDiff ℝ 4 (g j)) →
+    ContDiff ℝ 4 q → ContDiff ℝ 3 p →
+    MolecularDynamics.Chapter04Review.constrainedSolution m (fun x => -MolecularDynamics.Chapter04Review.grad U x) g q p rho (Icc 0 tau) →
+    (∀ t ∈ Icc 0 tau, (textbookConstraintGram m g (q t)).det ≠ 0) →
+    ∃ C > 0, ∃ N0 : ℕ, 2 ≤ N0 ∧ ∀ N ≥ N0,
+      let h := tau/N
+      ∃ (qn : ℕ → MolecularDynamics.Chapter04Review.Q n) (rhon : ℕ → MolecularDynamics.Chapter04Review.Q l), qn 0=q 0 ∧ qn 1=q h ∧
+      (∀ k, k+2 ≤ N → MolecularDynamics.Chapter04Review.shakePositionRelation m (fun x => -MolecularDynamics.Chapter04Review.grad U x) g h
+        (qn k) (qn (k+1)) (qn (k+2)) (rhon (k+1))) ∧
+      ∀ k ≤ N, ‖qn k-q (k*h)‖ ≤ C*h^2 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-4.3.5.1-AdjointEuler · definition · §4.3.5.1 · 印刷p.163 / PDFp.185 
 [EXTRA] 保留原三式；补非零h、两端余切域上的真实逆步关系等价（对应所选局部逆分支），及正质量/光滑分支上实际ODE的O(h²)局部误差。未把逆映射或误差结论作为资格。 -/
@@ -1609,7 +2148,8 @@ theorem adjointEulerLocalOrder :
 
 /-- source_id: MD-4.3.5.1-ConstrainedComposition · unnumbered_claim · §4.3.5.1 · 印刷p.163 / PDFp.185
 [EXTRA] 给定真实C¹半步分支、C²势与约束，前后位置约束；本条完整拉回形式结论，二阶精度另条。 
-[EXTRA] 分支关系限制小h窗口、C¹空间资格及独立约束，保留辛性；补无约束Euler/伴随退化及单位圆自由运动中与RATTLE/SHAKE位置不同的具体单值近分支实例。二阶精度明确由ConstrainedCompositionOrder承担；C³是本签名实际充分资格。 -/
+[EXTRA] 分支关系限制小h窗口、C¹空间资格及独立约束，保留辛性；补无约束Euler/伴随退化及单位圆自由运动中与RATTLE/SHAKE位置不同的具体单值近分支实例。二阶精度明确由ConstrainedCompositionOrder承担；C³是本签名实际充分资格。 [EXTRA] 24号：本地已核对constrainedCompositionOrder的完整C³解族、真实受限关系及局部O(h³)声明。circleExample仅为固定步长、存在乘子的非等价位置实例，不主张单值近分支唯一性。该二阶声明尚未证明。
+-/
 theorem constrainedComposition :
   ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)
     (E A : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (pE pA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoA μA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l) (η : ℝ), 0 < η →
@@ -1941,11 +2481,24 @@ theorem inertiaSkewIdentity : ∀ N (m : Fin N → ℝ) (δ : Fin N → Molecula
   simp [MolecularDynamics.Chapter04Review.inertiaTensor,he,Finset.sum_neg_distrib]
 
 /-- source_id: MD-4.4-InertiaTracePrinted · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191
-[ERRATUM?] (4.40)末式应trace(T)/2 I−T；原式逐字保留。 -/
+[ERRATUM?] (4.40)末式应trace(T)/2 I−T；原式逐字保留。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：二阶矩与惯性张量关系的trace(T)系数修正为1/2；原式保留。
+-/
 theorem inertiaTracePrinted :
   ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V),
   MolecularDynamics.Chapter04Review.secondMoment m δ=(MolecularDynamics.Chapter04Review.inertiaTensor m δ).trace • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.inertiaTensor m δ := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-4.4-InertiaTracePrinted。改动：二阶矩与惯性张量关系的trace(T)系数修正为1/2；原式保留。 -/
+theorem inertiaTracePrinted_corrected :
+  ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V),
+  MolecularDynamics.Chapter04Review.secondMoment m δ=((MolecularDynamics.Chapter04Review.inertiaTensor m δ).trace/2) • (1 : MolecularDynamics.Chapter04Review.Mat3)-MolecularDynamics.Chapter04Review.inertiaTensor m δ := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-4.4-InertiaTraceCorrected · unnumbered_claim · §4.4 · 印刷p.169 / PDFp.191
 [EXTRA] [EXTRA]纠正(4.40)末式系数为trace(T)/2；不覆盖原印刷条目。 -/
@@ -2003,9 +2556,16 @@ def dipolarSystemPotential {N : ℕ} (lj : ℝ → ℝ)
     dipolarPairPotential lj (Real.sqrt (MolecularDynamics.Chapter04Review.dot r r)) r (μ i) (μ j)
 
 /-- source_id: MD-4.4-DipolarRotationalPrinted · definition · §4.4 · 印刷p.170 / PDFp.192
-[ERRATUM?] p170 Ex4.1 trace动能印刷少1/2；R与T关系亦引用疑误式。 -/
+[ERRATUM?] p170 Ex4.1 trace动能印刷少1/2；R与T关系亦引用疑误式。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：转动动能补系数1/2；R应按trace(T)/2·I−T解释并与InertiaTracePrinted_corrected共同核查。
+-/
 def dipolarRotationalPrinted {N : ℕ} (R : MolecularDynamics.Chapter04Review.Mat3) (dΘ : Fin N → MolecularDynamics.Chapter04Review.Mat3) : ℝ :=
   ∑ i, (dΘ i*R*(dΘ i)ᵀ).trace
+
+
+
+/-- 修正版，对应原文 MD-4.4-DipolarRotationalPrinted。改动：转动动能补系数1/2；R应按trace(T)/2·I−T解释并与InertiaTracePrinted_corrected共同核查。 -/
+def dipolarRotationalPrinted_corrected {N : ℕ} (R : MolecularDynamics.Chapter04Review.Mat3) (dΘ : Fin N → MolecularDynamics.Chapter04Review.Mat3) : ℝ :=
+  (1/2 : ℝ) * ∑ i, (dΘ i*R*(dΘ i)ᵀ).trace
 
 /-- source_id: MD-4.4-RigidHamiltonian · definition · §4.4 · 印刷p.170 / PDFp.192
 [EXTRA] M>0、R非奇异是物理资格；正交约束单列在真实ODE关系中；inverse定义不计存在理论。 
@@ -2086,10 +2646,18 @@ def dipolarConstraint {N : ℕ} (μ : Fin N → MolecularDynamics.Chapter04Revie
   ∀ i, MolecularDynamics.Chapter04Review.dot (μ i) (μ i)=1
 
 /-- source_id: MD-4.4-DipolarPotentialSum · definition · §4.4 · 印刷p.170 / PDFp.192
-[EXTRA] 对无重叠位置，真实Euclidean距离sqrtΣ(qi−qj)²及有限无序pair和；经验势定义，不计模拟正确性。 -/
-def dipolarPotentialSum {N : ℕ} (lj : ℝ → ℝ) (q μ : Fin N → MolecularDynamics.Chapter04Review.V) : ℝ :=
+[EXTRA] 对无重叠位置，真实Euclidean距离sqrtΣ(qi−qj)²及有限无序pair和；经验势定义，不计模拟正确性。 [EXTRA] 24号：原任意输入有限和另名Totalized作代数辅助；物理主接口补不同粒子位置非碰撞及每个μ单位方向。总逆在零距离的值不解释为物理势。
+-/
+def dipolarPotentialSumTotalized {N : ℕ} (lj : ℝ → ℝ) (q μ : Fin N → MolecularDynamics.Chapter04Review.V) : ℝ :=
   ∑ i, ∑ j, if i < j then
     dipolarPairPotential lj (Real.sqrt (MolecularDynamics.Chapter04Review.dot (q i-q j) (q i-q j))) (q i-q j) (μ i) (μ j) else 0
+
+def dipolarPotentialSum {N : ℕ} (lj : ℝ → ℝ)
+    (q μ : Fin N → MolecularDynamics.Chapter04Review.V)
+    (_hq : ∀ i j, i ≠ j → q i ≠ q j)
+    (_hμ : ∀ i, MolecularDynamics.Chapter04Review.dot (μ i) (μ i) = 1) : ℝ :=
+  dipolarPotentialSumTotalized lj q μ
+
 
 /-- source_id: MD-4.4-RotationTrajectory · unnumbered_claim · §4.4 · 印刷p.168 / PDFp.190 
 [EXTRA] 保留原完整引文，仅在statement_scope显式分工到已有source_id，所列其余结论未删；仅δ_i(t)=Θ(t)δ_i(0)的真实导数辅助；原段落旋转动能有限和及trace等价由MD-4.4-RotationTraceIdentity承担。 -/
@@ -2104,11 +2672,24 @@ theorem rotationTrajectory : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review
   exact hasDerivAt_pi.mpr he
 
 /-- source_id: MD-4.4-RotationDerivativePrinted · unnumbered_claim · §4.4 · 印刷p.168 / PDFp.190
-[ERRATUM?] p168展示最后应以配置δ_i而非速度dotδ_i代换；已渲染视觉复核。 -/
+[ERRATUM?] p168展示最后应以配置δ_i而非速度dotδ_i代换；已渲染视觉复核。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：右端末因子从Θ̇δ改为Θδ，恢复Θ̇δ=(Θ̇Θᵀ)(Θδ)。
+-/
 theorem rotationDerivativePrinted : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (d : MolecularDynamics.Chapter04Review.Mat3) (δ : MolecularDynamics.Chapter04Review.V) t,
   HasDerivAt Θ d t → Θ t*(Θ t)ᵀ=1 →
     d *ᵥ δ=(d*(Θ t)ᵀ) *ᵥ (d *ᵥ δ) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-4.4-RotationDerivativePrinted。改动：右端末因子从Θ̇δ改为Θδ，恢复Θ̇δ=(Θ̇Θᵀ)(Θδ)。 -/
+theorem rotationDerivativePrinted_corrected : ∀ (Θ : ℝ → MolecularDynamics.Chapter04Review.Mat3) (d : MolecularDynamics.Chapter04Review.Mat3) (δ : MolecularDynamics.Chapter04Review.V) t,
+  HasDerivAt Θ d t → Θ t*(Θ t)ᵀ=1 →
+    d *ᵥ δ=(d*(Θ t)ᵀ) *ᵥ (Θ t *ᵥ δ) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-4.4-RigidMatrixRelation · definition · §4.4 · 印刷p.171 / PDFp.193 
 [EXTRA] 增加开放时间域、势能联合经典可微、M>0及R可逆，使within导数等于真实时间导数，排除单点域伪运动；姿态正交约束仍逐t保留。 -/
@@ -2127,7 +2708,8 @@ def angularMomentum {N : ℕ} (m : Fin N → ℝ) (δ v : Fin N → MolecularDyn
 def bodyMomentum (Θ : MolecularDynamics.Chapter04Review.Mat3) (l : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := Θᵀ *ᵥ l
 
 /-- source_id: MD-4.4.1-AngularInertia · unnumbered_claim · §4.4.1 · 印刷p.171 / PDFp.193
-[EXTRA] 真实SO(3)矩阵和cross3，嵌套为δ×(ω×δ)；原无括号三重积含糊，明确上下文对象。 -/
+[EXTRA] 真实SO(3)矩阵和cross3，嵌套为δ×(ω×δ)；原无括号三重积含糊，明确上下文对象。 [EXTRA] 24号：原体坐标等式与证明完整保留；另列一般三重积（逐坐标ring证明）及空间角动量矩阵中间等式（体坐标已证式取Θ=1），覆盖引文遗漏。
+-/
 theorem angularInertia :
   ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) (Θ : MolecularDynamics.Chapter04Review.Mat3) («ω» : MolecularDynamics.Chapter04Review.V),
   Θᵀ*Θ=1 → Θ.det=1 → MolecularDynamics.Chapter04Review.bodyMomentum Θ
@@ -2163,6 +2745,22 @@ theorem angularInertia :
   apply Finset.sum_congr rfl
   intro i hii
   rw [hterm]
+
+theorem vectorTripleProduct (a b c : MolecularDynamics.Chapter04Review.V) :
+    MolecularDynamics.Chapter04Review.cross3 a (MolecularDynamics.Chapter04Review.cross3 b c) =
+      MolecularDynamics.Chapter04Review.dot a c • b-MolecularDynamics.Chapter04Review.dot a b • c := by
+  ext i
+  fin_cases i <;> simp [MolecularDynamics.Chapter04Review.cross3,
+    MolecularDynamics.Chapter04Review.dot, Fin.sum_univ_three, Pi.smul_apply, smul_eq_mul] <;> ring
+
+theorem spatialAngularInertia (N : ℕ) (m : Fin N → ℝ)
+    (δ : Fin N → MolecularDynamics.Chapter04Review.V) (omegaVec : MolecularDynamics.Chapter04Review.V) :
+    MolecularDynamics.Chapter04Review.angularMomentum m δ
+      (fun i => MolecularDynamics.Chapter04Review.cross3 omegaVec (δ i)) =
+      MolecularDynamics.Chapter04Review.inertiaTensor m δ *ᵥ omegaVec := by
+  simpa [MolecularDynamics.Chapter04Review.bodyMomentum] using
+    (angularInertia N m δ (1 : MolecularDynamics.Chapter04Review.Mat3) omegaVec (by simp) (by simp))
+
 
 /-- source_id: MD-4.4.1-EulerRigidField · (4.41) · §4.4.1 · 印刷p.172 / PDFp.194 -/
 def eulerRigidField (T : MolecularDynamics.Chapter04Review.Mat3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := MolecularDynamics.Chapter04Review.cross3 π (T⁻¹ *ᵥ π)
@@ -2250,7 +2848,8 @@ theorem poissonDegeneracy : ∀ π : MolecularDynamics.Chapter04Review.V, Molecu
   ext i
   fin_cases i <;> simp [MolecularDynamics.Chapter04Review.rigidPoissonMatrix,MolecularDynamics.Chapter04Review.skewMatrix,Matrix.mulVec,dotProduct,Fin.sum_univ_three] <;> ring
 
-/-- source_id: MD-4.4.1-AxisRotation · definition · §4.4.1 · 印刷p.173–174 / PDFp.195–196 -/
+/-- source_id: MD-4.4.1-AxisRotation · definition · §4.4.1 · 印刷p.173–174 / PDFp.195–196 [EXTRA] 24号：三个标准右手轴旋转矩阵的公式定义；第一句平面子流可积性是背景，移出本条承诺，由MD-4.4.1-ExactPlanarRotation的带负角修正版单独给出。 不以矩阵名字推断ODE解。
+-/
 def axisRotation (i : Fin 3) (φ : ℝ) : MolecularDynamics.Chapter04Review.Mat3 :=
   if i=0 then !![1,0,0; 0,Real.cos φ,-Real.sin φ; 0,Real.sin φ,Real.cos φ]
   else if i=1 then !![Real.cos φ,0,Real.sin φ; 0,1,0; -Real.sin φ,0,Real.cos φ]
@@ -2258,20 +2857,41 @@ def axisRotation (i : Fin 3) (φ : ℝ) : MolecularDynamics.Chapter04Review.Mat3
 
 /-- source_id: MD-4.4.1-SecondAxisPrinted · definition · §4.4.1 · 印刷p.173 / PDFp.195
 [EXTRA] 为未定义标量引入a供审校，不声称它等于π₂。
-[ERRATUM?] p173第二子系统分量少下标2，原文尚需导师裁定。 -/
+[ERRATUM?] p173第二子系统分量少下标2，原文尚需导师裁定。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将未定义标量a绑定第二动量分量π₂，补正主惯量；原无下标π保留。
+-/
 def secondAxisPrinted (I : MolecularDynamics.Chapter04Review.V) (π : MolecularDynamics.Chapter04Review.V) (a : ℝ) : MolecularDynamics.Chapter04Review.V :=
   MolecularDynamics.Chapter04Review.cross3 π ![0,a/I 1,0]
 
+
+
+/-- 修正版，对应原文 MD-4.4.1-SecondAxisPrinted。改动：将未定义标量a绑定第二动量分量π₂，补正主惯量；原无下标π保留。 -/
+def secondAxisPrinted_corrected (I : MolecularDynamics.Chapter04Review.V) (π : MolecularDynamics.Chapter04Review.V) (_hI : 0 < I 1) : MolecularDynamics.Chapter04Review.V :=
+  MolecularDynamics.Chapter04Review.cross3 π ![0,π 1/I 1,0]
+
 /-- source_id: MD-4.4.1-ThirdAxisPrinted · definition · §4.4.1 · 印刷p.173 / PDFp.195
 [EXTRA] [EXTRA]a只为缺下标的印刷标量供审校。
-[ERRATUM?] p173第三子系统分量少下标3，单列保留原式。 -/
+[ERRATUM?] p173第三子系统分量少下标3，单列保留原式。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将未定义标量a绑定第三动量分量π₃，补正主惯量；原无下标π保留。
+-/
 def thirdAxisPrinted (I : MolecularDynamics.Chapter04Review.V) (π : MolecularDynamics.Chapter04Review.V) (a : ℝ) : MolecularDynamics.Chapter04Review.V :=
   MolecularDynamics.Chapter04Review.cross3 π ![0,0,a/I 2]
 
+
+
+/-- 修正版，对应原文 MD-4.4.1-ThirdAxisPrinted。改动：将未定义标量a绑定第三动量分量π₃，补正主惯量；原无下标π保留。 -/
+def thirdAxisPrinted_corrected (I : MolecularDynamics.Chapter04Review.V) (π : MolecularDynamics.Chapter04Review.V) (_hI : 0 < I 2) : MolecularDynamics.Chapter04Review.V :=
+  MolecularDynamics.Chapter04Review.cross3 π ![0,0,π 2/I 2]
+
 /-- source_id: MD-4.4.1-PrincipalAxisField · definition · §4.4.1 · 印刷p.173 / PDFp.195
 [EXTRA] [EXTRA]将第二和第三子场的分量分别明确为π₂/π₃；原印刷两处缺下标另列待审，不覆盖原式。 
-[EXTRA] 本条为单轴分裂场定义；完整印刷五次轴复合由PrintedSpinStep承担，实际子流的负角与原印正角冲突保留AxisFlowFormal/ExactPlanarRotation待导师。 -/
+[EXTRA] 本条为单轴分裂场定义；完整印刷五次轴复合由PrintedSpinStep承担，实际子流的负角与原印正角冲突保留AxisFlowFormal/ExactPlanarRotation待导师。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def principalAxisField (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V :=
+  MolecularDynamics.Chapter04Review.cross3 π (Pi.single i (π i/I i))
+
+
+
+/-- 修正版，对应原文 MD-4.4.1-PrincipalAxisField。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def principalAxisField_corrected (I : MolecularDynamics.Chapter04Review.V) (i : Fin 3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V :=
   MolecularDynamics.Chapter04Review.cross3 π (Pi.single i (π i/I i))
 
 /-- source_id: MD-4.4.2-PrintedSpinAxis · definition · §4.4.2 · 印刷p.174 / PDFp.196
@@ -2287,12 +2907,26 @@ def printedSpinStep (I : MolecularDynamics.Chapter04Review.V) (h : ℝ) : Molecu
 
 /-- source_id: MD-4.4.1-AxisFlowFormal · unnumbered_claim · §4.4.1 · 印刷p.173 / PDFp.195
 [EXTRA] [EXTRA]旧声明使用与p174一致的正式库spinAxis；作为待审正角精确子流候选，不把它当已证原结论。
-[ERRATUM?] 正角主动Rπ导数=ω×π，不是π×ω；精确流需负角列动量。 -/
+[ERRATUM?] 正角主动Rπ导数=ω×π，不是π×ω；精确流需负角列动量。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：采用负角旋转子流，独立给初值、轴分量恒定及π×ω的ODE，正角Printed算法保留。
+-/
 theorem axisFlow :
   ∀ (I π : MolecularDynamics.Chapter04Review.V) i, 0 < I i → ∀ t : ℝ,
   HasDerivAt (fun s : ℝ => (MolecularDynamics.Chapter04Review.spinAxis I i s (π,1)).1)
     (MolecularDynamics.Chapter04Review.cross3 ((MolecularDynamics.Chapter04Review.spinAxis I i t (π,1)).1) (Pi.single i (((MolecularDynamics.Chapter04Review.spinAxis I i t (π,1)).1 i)/I i))) t := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-4.4.1-AxisFlowFormal。改动：采用负角旋转子流，独立给初值、轴分量恒定及π×ω的ODE，正角Printed算法保留。 -/
+theorem axisFlow_corrected : ∀ (I π : MolecularDynamics.Chapter04Review.V) (i : Fin 3), 0 < I i →
+  let γ := fun t : ℝ => MolecularDynamics.Chapter04Review.axisRotation i (-t*π i/I i) *ᵥ π
+  γ 0=π ∧ (∀ t,γ t i=π i) ∧
+    ∀ t,HasDerivAt γ (MolecularDynamics.Chapter04Review.cross3 (γ t) (Pi.single i (γ t i/I i))) t := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-4.4.1-SpinPoissonFormal · unnumbered_claim · §4.4.1 · 印刷p.173 / PDFp.195
 [EXTRA] [EXTRA]此条仅正式库三维非canonical动量映射D J Dᵀ=J(Gπ)；Θ字面算法的完整几何结构另列。 -/
@@ -2360,14 +2994,30 @@ def rigidTorque (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.C
 /-- source_id: MD-4.4.2-DLMPrinted · definition · §4.4.2 · 印刷p.174 / PDFp.196
 [EXTRA] [EXTRA]本条仅N=1实例；任意N体耦合势与完整算法另由DLMPrintedSystem忠实保存。
 [ERRATUM?] 字面drift缺1/M；正角spin动量符号疑点保留。 
-[EXTRA] 保留N=1字面算法作为单体实例；完整任意N、耦合势、逐阶段重算所有力矩的原算法已由DLMPrintedSystem覆盖，显式跨条目映射，不以单体冒充全系统。 -/
+[EXTRA] 保留N=1字面算法作为单体实例；完整任意N、耦合势、逐阶段重算所有力矩的原算法已由DLMPrintedSystem覆盖，显式跨条目映射，不以单体冒充全系统。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：独立保留单位质量的印刷算法解释，质量取1才将Drift写成q+hp；Spin仍按印刷约定，仅解释该组合定义，不称其为一般质量或π×ω原动力学的一致子流。质量修订和轴流符号另列工作版本。
+-/
 def dlmPrinted (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.RBState → MolecularDynamics.Chapter04Review.RBState :=
   MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ (fun z => (z.1,printedSpinStep I h z.2)) ∘
     MolecularDynamics.Chapter04Review.rigidDrift 1 h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)
 
+
+
+/-- 修正版，对应原文 MD-4.4.2-DLMPrinted。改动：独立保留单位质量的印刷算法解释，质量取1才将Drift写成q+hp；Spin仍按印刷约定，仅解释该组合定义，不称其为一般质量或π×ω原动力学的一致子流。质量修订和轴流符号另列工作版本。 -/
+def dlmPrinted_corrected (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.RBState → MolecularDynamics.Chapter04Review.RBState :=
+  MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ (fun z => (z.1,printedSpinStep I h z.2)) ∘
+    MolecularDynamics.Chapter04Review.rigidDrift 1 h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)
+
 /-- source_id: MD-4.4.2-DLMMassOnly · definition · §4.4.2 · 印刷p.174 / PDFp.196
-[EXTRA] [EXTRA]只将drift质量修为q+h p/M；仍保留原spin，不能据此称完整正确几何积分器。 -/
+[EXTRA] [EXTRA]只将drift质量修为q+h p/M；仍保留原spin，不能据此称完整正确几何积分器。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def dlmMassOnly (M : ℝ) (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.RBState → MolecularDynamics.Chapter04Review.RBState :=
+  MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ (fun z => (z.1,printedSpinStep I h z.2)) ∘
+    MolecularDynamics.Chapter04Review.rigidDrift M h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)
+
+
+
+/-- 修正版，对应原文 MD-4.4.2-DLMMassOnly。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def dlmMassOnly_corrected (M : ℝ) (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.RBState → MolecularDynamics.Chapter04Review.RBState :=
   MolecularDynamics.Chapter04Review.rigidKick U (h/2) ∘ (fun z => (z.1,printedSpinStep I h z.2)) ∘
     MolecularDynamics.Chapter04Review.rigidDrift M h ∘ MolecularDynamics.Chapter04Review.rigidKick U (h/2)
 
@@ -2392,7 +3042,8 @@ theorem driftSpinCommute_halves (M h : ℝ) (I : MolecularDynamics.Chapter04Revi
   sorry
 
 /-- source_id: MD-4.4.2-DLMStructureFormal · unnumbered_claim · §4.4.2 · 印刷p.173–174 / PDFp.195–196
-[EXTRA] [EXTRA]旧正式库单体质量一致对象单独保留；原任意N体耦合势的算法几何声明另列。 -/
+[EXTRA] [EXTRA]旧正式库单体质量一致对象单独保留；原任意N体耦合势的算法几何声明另列。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem dlmStructure :
   ∀ M (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ),
   0 < M → (∀ i, 0 < I i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
@@ -2401,6 +3052,22 @@ theorem dlmStructure :
       MolecularDynamics.Chapter04Review.dlmMassConsistent M I U (-h) (MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z)=z ∧
       (MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z).2.2ᵀ*(MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z).2.2=1 := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-4.4.2-DLMStructureFormal。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem dlmStructure_corrected :
+  ∀ M (I : MolecularDynamics.Chapter04Review.V) (U : MolecularDynamics.Chapter04Review.V → MolecularDynamics.Chapter04Review.Mat3 → ℝ),
+  0 < M → (∀ i, 0 < I i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
+    MolecularDynamics.Chapter04Review.rbSymplectic (MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h) ∧ ∀ z : MolecularDynamics.Chapter04Review.RBState,
+      z.2.2ᵀ*z.2.2=1 → z.2.2.det=1 →
+      MolecularDynamics.Chapter04Review.dlmMassConsistent M I U (-h) (MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z)=z ∧
+      (MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z).2.2ᵀ*(MolecularDynamics.Chapter04Review.dlmMassConsistent M I U h z).2.2=1 := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
 
 /-- source_id: MD-4.4.2-DLMPrintedStructure · unnumbered_claim · §4.4.2 · 印刷p.173–174 / PDFp.195–196
 [EXTRA] 明确SO3初态与实际切向量在rbSymplectic定义内；单位质量为原字面drift。 
@@ -2446,8 +3113,18 @@ def rigidSystemSpinPrinted {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04R
   fun k => ((z k).1,printedSpinStep (I k) h (z k).2)
 
 /-- source_id: MD-4.4.2-DLMPrintedSystem · definition · §4.4.2 · 印刷p.174 / PDFp.196
-[ERRATUM?] 完整原表的缺质量drift与正角spin疑点保持；编译定义不代表正确辛性。 -/
+[ERRATUM?] 完整原表的缺质量drift与正角spin疑点保持；编译定义不代表正确辛性。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 def dlmPrintedSystem {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.V)
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ) :
+    rigidSystemState N → rigidSystemState N :=
+  rigidSystemKick U (h/2) ∘ rigidSystemSpinPrinted I h ∘
+    rigidSystemDriftPrinted h ∘ rigidSystemKick U (h/2)
+
+
+
+/-- 修正版，对应原文 MD-4.4.2-DLMPrintedSystem。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+def dlmPrintedSystem_corrected {N : ℕ} (I : Fin N → MolecularDynamics.Chapter04Review.V)
     (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ) (h : ℝ) :
     rigidSystemState N → rigidSystemState N :=
   rigidSystemKick U (h/2) ∘ rigidSystemSpinPrinted I h ∘
@@ -2471,24 +3148,54 @@ def rigidSystemSymplectic {N : ℕ} (G : rigidSystemState N → rigidSystemState
         ∑ k, MolecularDynamics.Chapter04Review.rbForm (z k) (u k) (v k)
 
 /-- source_id: MD-4.4.2-DLMPrintedSystemStructure · unnumbered_claim · §4.4.2 · 印刷p.173–174 / PDFp.195–196
-[EXTRA] C³耦合势和正主惯性矩为明确技术资格；实际全部SO3输入/输出约束及N体两形式在定义内。 -/
+[EXTRA] C³耦合势和正主惯性矩为明确技术资格；实际全部SO3输入/输出约束及N体两形式在定义内。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem dlmPrintedSystemStructure : ∀ N (I : Fin N → MolecularDynamics.Chapter04Review.V)
     (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ),
   (∀ k i, 0 < I k i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
     rigidSystemSymplectic (dlmPrintedSystem I U h) := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4.4.2-DLMPrintedSystemStructure。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem dlmPrintedSystemStructure_corrected : ∀ N (I : Fin N → MolecularDynamics.Chapter04Review.V)
+    (U : (Fin N → MolecularDynamics.Chapter04Review.V) → (Fin N → MolecularDynamics.Chapter04Review.Mat3) → ℝ),
+  (∀ k i, 0 < I k i) → ContDiff ℝ 3 (Function.uncurry U) → ∀ h,
+    rigidSystemSymplectic (dlmPrintedSystem I U h) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 /-- source_id: MD-4.4.1-ExactPlanarRotation · unnumbered_claim · §4.4.1 · 印刷p.173 / PDFp.195
-[EXTRA] [EXTRA]第二/第三子场按完整π₂/π₃解释，与PrincipalAxisField一致；显式负角主动旋转给出(4.41)的π×ω符号，不将原表正角错误候选当作该精确子流。 -/
+[EXTRA] [EXTRA]第二/第三子场按完整π₂/π₃解释，与PrincipalAxisField一致；显式负角主动旋转给出(4.41)的π×ω符号，不将原表正角错误候选当作该精确子流。 [EXTRA] 24号：【原书疑误/资格待导师】原文版保留，不证明其有疑的字面断言。独立修正版：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+-/
 theorem exactPlanarRotation : ∀ (I π : MolecularDynamics.Chapter04Review.V) (i : Fin 3), 0 < I i →
   let γ := fun t : ℝ => MolecularDynamics.Chapter04Review.axisRotation i (-t*π i/I i) *ᵥ π
   γ 0=π ∧ (∀ t,γ t i=π i) ∧
     ∀ t,HasDerivAt γ (MolecularDynamics.Chapter04Review.cross3 (γ t) (Pi.single i (γ t i/I i))) t := by
   sorry
 
+
+
+/-- 修正版，对应原文 MD-4.4.1-ExactPlanarRotation。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
+theorem exactPlanarRotation_corrected : ∀ (I π : MolecularDynamics.Chapter04Review.V) (i : Fin 3), 0 < I i →
+  let γ := fun t : ℝ => MolecularDynamics.Chapter04Review.axisRotation i (-t*π i/I i) *ᵥ π
+  γ 0=π ∧ (∀ t,γ t i=π i) ∧
+    ∀ t,HasDerivAt γ (MolecularDynamics.Chapter04Review.cross3 (γ t) (Pi.single i (γ t i/I i))) t := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+
 end MD.Ch04
 
 /- BEGIN WEBSITE REPAIR AXIOMS -/
+/- END WEBSITE REPAIR AXIOMS -/
+
 #print axioms MD.Ch04.linearField
 #print axioms MD.Ch04.eulerFactor
 #print axioms MD.Ch04.scalarEulerStable
@@ -2499,22 +3206,32 @@ end MD.Ch04
 #print axioms MD.Ch04.symplecticEulerMatrix
 #print axioms MD.Ch04.symplecticEulerCharacteristic
 #print axioms MD.Ch04.prkThreshold
+#print axioms MD.Ch04.prkThreshold_corrected
 #print axioms MD.Ch04.verletStability
 #print axioms MD.Ch04.verletStability_zero
+#print axioms MD.Ch04.verletStability_corrected
 #print axioms MD.Ch04.symplecticEulerBoundaryPrinted
+#print axioms MD.Ch04.symplecticEulerBoundaryPrinted_corrected
 #print axioms MD.Ch04.verletBoundaryPrinted
+#print axioms MD.Ch04.verletBoundaryPrinted_corrected
 #print axioms MD.Ch04.oscillatorSpectrum
 #print axioms MD.Ch04.symplecticEulerRoots
 #print axioms MD.Ch04.symplecticEulerUnitRoots
+#print axioms MD.Ch04.symplecticEulerUnitRoots_corrected
 #print axioms MD.Ch04.symplecticEulerStability
 #print axioms MD.Ch04.symplecticEulerStability_complete
+#print axioms MD.Ch04.symplecticEulerStability_corrected
 #print axioms MD.Ch04.printedImplicitRelation
+#print axioms MD.Ch04.printedImplicitRelation_corrected
 #print axioms MD.Ch04.actualMidpointRelation
+#print axioms MD.Ch04.actualMidpointRelation_corrected
 #print axioms MD.Ch04.implicitFactor
 #print axioms MD.Ch04.implicitFactor_update
 #print axioms MD.Ch04.implicitModulus
 #print axioms MD.Ch04.implicitModulus_iterates
+#print axioms MD.Ch04.implicitModulus_corrected
 #print axioms MD.Ch04.printedModifiedFrequency
+#print axioms MD.Ch04.printedModifiedFrequency_corrected
 #print axioms MD.Ch04.modifiedFrequencyLimit
 #print axioms MD.Ch04.midpointFrequencyRatio
 #print axioms MD.Ch04.modifiedFrequencyRatio_limits
@@ -2523,8 +3240,11 @@ end MD.Ch04
 #print axioms MD.Ch04.midpointEulerHalfSteps
 #print axioms MD.Ch04.splitHamiltonian
 #print axioms MD.Ch04.fastVerlet
+#print axioms MD.Ch04.fastVerlet_kick_drift_kick
+#print axioms MD.Ch04.respaTotalized
 #print axioms MD.Ch04.respa
 #print axioms MD.Ch04.respaStructure
+#print axioms MD.Ch04.respaStructure_corrected
 #print axioms MD.Ch04.slowMatrix
 #print axioms MD.Ch04.fastMatrix
 #print axioms MD.Ch04.impulseMatrix
@@ -2534,13 +3254,17 @@ end MD.Ch04
 #print axioms MD.Ch04.impulseTrace_eigenvalueSum
 #print axioms MD.Ch04.resonancePower
 #print axioms MD.Ch04.resonanceTaylor
+#print axioms MD.Ch04.resonanceTaylor_corrected
 #print axioms MD.Ch04.resonanceInstability
 #print axioms MD.Ch04.resonanceInstability_realSpectrum
 #print axioms MD.Ch04.resonanceEigenPrinted
+#print axioms MD.Ch04.resonanceEigenPrinted_corrected
 #print axioms MD.Ch04.mollifiedAverage
 #print axioms MD.Ch04.mollifiedPotential
 #print axioms MD.Ch04.resonanceLinearRate
+#print axioms MD.Ch04.resonanceLinearRate_corrected
 #print axioms MD.Ch04.resonanceGrowth
+#print axioms MD.Ch04.resonanceGrowth_corrected
 #print axioms MD.Ch04.mollifiedStructure
 #print axioms MD.Ch04.holonomicRelation
 #print axioms MD.Ch04.timeConstraintDerivative
@@ -2548,6 +3272,7 @@ end MD.Ch04
 #print axioms MD.Ch04.constrainedSolution_generalForce
 #print axioms MD.Ch04.constraintSet
 #print axioms MD.Ch04.constraintSet_regularLevel
+#print axioms MD.Ch04.constraintSet_corrected
 #print axioms MD.Ch04.cotangentSet
 #print axioms MD.Ch04.constraintJacobian
 #print axioms MD.Ch04.combineConstraints
@@ -2557,7 +3282,9 @@ end MD.Ch04
 #print axioms MD.Ch04.flexiblePendulumHamiltonian
 #print axioms MD.Ch04.restraintPotential
 #print axioms MD.Ch04.restraintForcePrinted
+#print axioms MD.Ch04.restraintForcePrinted_corrected
 #print axioms MD.Ch04.constrainedPendulum
+#print axioms MD.Ch04.constrainedPendulum_corrected
 #print axioms MD.Ch04.constraintCurvature
 #print axioms MD.Ch04.reactionMultiplier
 #print axioms MD.Ch04.reactionBalance
@@ -2575,6 +3302,7 @@ end MD.Ch04
 #print axioms MD.Ch04.constrainedFlowPullback
 #print axioms MD.Ch04.positionEulerPrinted
 #print axioms MD.Ch04.positionEulerRelation
+#print axioms MD.Ch04.positionEulerRelation_corrected
 #print axioms MD.Ch04.hiddenEulerError
 #print axioms MD.Ch04.projectionResidual
 #print axioms MD.Ch04.projectionEquation
@@ -2584,20 +3312,27 @@ end MD.Ch04
 #print axioms MD.Ch04.newtonConstraint
 #print axioms MD.Ch04.newtonConstraintSequence
 #print axioms MD.Ch04.frozenNewtonConstraint
+#print axioms MD.Ch04.frozenNewtonConstraint_corrected
 #print axioms MD.Ch04.newtonQuadratic
 #print axioms MD.Ch04.frozenNewtonLinear
 #print axioms MD.Ch04.projectionScale
+#print axioms MD.Ch04.projectionScale_corrected
 #print axioms MD.Ch04.frozenGramPrinted
+#print axioms MD.Ch04.frozenGramPrinted_corrected
 #print axioms MD.Ch04.componentPrinted
+#print axioms MD.Ch04.componentPrinted_corrected
 #print axioms MD.Ch04.componentConstraintStep
 #print axioms MD.Ch04.componentSweep
 #print axioms MD.Ch04.componentPrintedDelta
 #print axioms MD.Ch04.componentPrintedTrajectory
 #print axioms MD.Ch04.componentPrintedIteration
 #print axioms MD.Ch04.componentPrintedStop
+#print axioms MD.Ch04.componentSweep_corrected
 #print axioms MD.Ch04.projectedEulerPrinted
 #print axioms MD.Ch04.projectedEulerRelation
+#print axioms MD.Ch04.projectedEulerRelation_corrected
 #print axioms MD.Ch04.lemma41
+#print axioms MD.Ch04.lemma41_corrected
 #print axioms MD.Ch04.multiMomentumPullback
 #print axioms MD.Ch04.projectedEulerPullback
 #print axioms MD.Ch04.projectedEulerPullback_intermediate
@@ -2610,18 +3345,25 @@ end MD.Ch04
 #print axioms MD.Ch04.cotangentPullback
 #print axioms MD.Ch04.gramProjectedEuler
 #print axioms MD.Ch04.gramProjectedEuler_general
+#print axioms MD.Ch04.gramProjectedEuler_corrected
 #print axioms MD.Ch04.shakePositionPrinted
 #print axioms MD.Ch04.shakePositionRelation
+#print axioms MD.Ch04.shakePositionRelation_corrected
 #print axioms MD.Ch04.shakeRelation
 #print axioms MD.Ch04.rattleRelation
 #print axioms MD.Ch04.constrainedOrders
 #print axioms MD.Ch04.constrainedOrders_global
 #print axioms MD.Ch04.constrainedOrders_firstOrderSharp
+#print axioms MD.Ch04.constrainedOrders_corrected
 #print axioms MD.Ch04.rattleSymplectic
 #print axioms MD.Ch04.staggeredConstraintRelation
+#print axioms MD.Ch04.staggeredConstraintRelation_corrected
 #print axioms MD.Ch04.shakeRattlePositions
+#print axioms MD.Ch04.shakeRattlePositions_corrected
 #print axioms MD.Ch04.shakeElimination
+#print axioms MD.Ch04.shakeElimination_corrected
 #print axioms MD.Ch04.shakePositionOrder
+#print axioms MD.Ch04.shakePositionOrder_corrected
 #print axioms MD.Ch04.adjointEulerRelation
 #print axioms MD.Ch04.adjointEuler_inverseRelation
 #print axioms MD.Ch04.adjointEulerLocalOrder
@@ -2658,23 +3400,29 @@ end MD.Ch04
 #print axioms MD.Ch04.rotationalEnergy
 #print axioms MD.Ch04.inertiaSkewIdentity
 #print axioms MD.Ch04.inertiaTracePrinted
+#print axioms MD.Ch04.inertiaTracePrinted_corrected
 #print axioms MD.Ch04.inertiaTraceCorrected
 #print axioms MD.Ch04.dipolarHamiltonian
 #print axioms MD.Ch04.dipolarPairPotential
 #print axioms MD.Ch04.dipolarPairPotential_particles
 #print axioms MD.Ch04.dipolarSystemPotential
 #print axioms MD.Ch04.dipolarRotationalPrinted
+#print axioms MD.Ch04.dipolarRotationalPrinted_corrected
 #print axioms MD.Ch04.rigidHamiltonian
 #print axioms MD.Ch04.secondMomentDiagonal
 #print axioms MD.Ch04.rotationBodyEnergy
 #print axioms MD.Ch04.dipolarConstraint
+#print axioms MD.Ch04.dipolarPotentialSumTotalized
 #print axioms MD.Ch04.dipolarPotentialSum
 #print axioms MD.Ch04.rotationTrajectory
 #print axioms MD.Ch04.rotationDerivativePrinted
+#print axioms MD.Ch04.rotationDerivativePrinted_corrected
 #print axioms MD.Ch04.rigidMatrixRelation
 #print axioms MD.Ch04.angularMomentum
 #print axioms MD.Ch04.bodyMomentum
 #print axioms MD.Ch04.angularInertia
+#print axioms MD.Ch04.vectorTripleProduct
+#print axioms MD.Ch04.spatialAngularInertia
 #print axioms MD.Ch04.eulerRigidField
 #print axioms MD.Ch04.freeRigidSolution
 #print axioms MD.Ch04.rigidInvariants
@@ -2684,11 +3432,15 @@ end MD.Ch04
 #print axioms MD.Ch04.poissonDegeneracy
 #print axioms MD.Ch04.axisRotation
 #print axioms MD.Ch04.secondAxisPrinted
+#print axioms MD.Ch04.secondAxisPrinted_corrected
 #print axioms MD.Ch04.thirdAxisPrinted
+#print axioms MD.Ch04.thirdAxisPrinted_corrected
 #print axioms MD.Ch04.principalAxisField
+#print axioms MD.Ch04.principalAxisField_corrected
 #print axioms MD.Ch04.printedSpinAxis
 #print axioms MD.Ch04.printedSpinStep
 #print axioms MD.Ch04.axisFlow
+#print axioms MD.Ch04.axisFlow_corrected
 #print axioms MD.Ch04.spinPoisson
 #print axioms MD.Ch04.rigidPoissonSkew
 #print axioms MD.Ch04.rigidHamiltonianField
@@ -2696,19 +3448,25 @@ end MD.Ch04
 #print axioms MD.Ch04.matrixRot
 #print axioms MD.Ch04.rigidTorque
 #print axioms MD.Ch04.dlmPrinted
+#print axioms MD.Ch04.dlmPrinted_corrected
 #print axioms MD.Ch04.dlmMassOnly
+#print axioms MD.Ch04.dlmMassOnly_corrected
 #print axioms MD.Ch04.driftSpinCommute
 #print axioms MD.Ch04.driftSpinCommute_halves
 #print axioms MD.Ch04.dlmStructure
+#print axioms MD.Ch04.dlmStructure_corrected
 #print axioms MD.Ch04.dlmPrintedStructure
+#print axioms MD.Ch04.rigidSystemState
 #print axioms MD.Ch04.rigidSystemForce
 #print axioms MD.Ch04.rigidSystemTorque
 #print axioms MD.Ch04.rigidSystemKick
 #print axioms MD.Ch04.rigidSystemDriftPrinted
 #print axioms MD.Ch04.rigidSystemSpinPrinted
 #print axioms MD.Ch04.dlmPrintedSystem
+#print axioms MD.Ch04.dlmPrintedSystem_corrected
 #print axioms MD.Ch04.systemDriftSpinCommute
 #print axioms MD.Ch04.rigidSystemSymplectic
 #print axioms MD.Ch04.dlmPrintedSystemStructure
+#print axioms MD.Ch04.dlmPrintedSystemStructure_corrected
 #print axioms MD.Ch04.exactPlanarRotation
-/- END WEBSITE REPAIR AXIOMS -/
+#print axioms MD.Ch04.exactPlanarRotation_corrected

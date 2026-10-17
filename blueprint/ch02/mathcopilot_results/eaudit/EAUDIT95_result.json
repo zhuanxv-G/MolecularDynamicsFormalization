@@ -1,0 +1,132 @@
+{
+  "batch": "EAUDIT95",
+  "input_sha256": {
+    "BATCH_EAUDIT95.md": "980673c7ab1a172a23edd30c5cd7ea124baa58e1d1b45e03cb411783f9be63be",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.5.2-GeneralSymplectic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION_AND_ELLIPSIS"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.5.2-GeneralSymplectic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.5.2",
+          "printed_page": "91",
+          "pdf_page": "113",
+          "statement_latex": "To see that it is symplectic, we first note that this is a symmetric composition of the form\n\\[\\mathcal K_h=\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2},\\]\nwhere $\\mathcal G_h$ is defined by\n\\[P=p-h\\nabla_qH(q,P),\\tag{2.29}\\]\n\\[Q=q+h\\nabla_pH(q,P),\\tag{2.30}\\]\nso it is enough to show that this basic method is symplectic.",
+          "proof_latex": "Taking differentials of (2.30) defining $\\mathcal G_h$ and then wedge products and summing, we have\n\\[\\sum_i dQ_i\\wedge dP_i=\\sum_i dq_i\\wedge dP_i+h\\sum_i\\sum_j H_{p_iq_j}dq_j\\wedge dP_i+h\\sum_i\\sum_j H_{p_ip_j}dP_j\\wedge dP_i.\\]\nThe last term on the right vanishes by equality of mixed partials and the antisymmetry of the wedge product. On the other hand, using (2.29), we obtain, by similar means,\n\\[\\sum_i dq_i\\wedge dP_i=\\sum_i dq_i\\wedge dp_i-h\\sum_i\\sum_j H_{q_ip_j}dq_i\\wedge dP_j.\\]\nRelabelling the indices in this sum and using our previous work results in\n\\[\\sum_i dQ_i\\wedge dP_i=\\sum_i dq_i\\wedge dp_i,\\]\nimplying that the method is symplectic.",
+          "proof_note": "原书计算按原页转录。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "statement_latex在复合公式后无省略标记地跳过where G_h is defined by及(2.29),(2.30)；补回中间定义。proof_latex原页为Relabelling the indices in this sum，当前误作the sum。"
+          ],
+          "lean_decl": "MD.Ch02.generalSymplectic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "H C²，真实C¹完整求解映射，逐点满足实际隐式关系。",
+            "[EXTRA] 本条承担基本隐式辛Euler的辛性；同一原句的伴随半步复合、三步关系与对称性由MD-2.5.2-GeneralVerletSymplectic补全，原文不删。"
+          ],
+          "statement_scope": "基本隐式辛Euler的辛性子结论；所引原句的半步伴随复合、三步对应及对称辛性归MD-2.5.2-GeneralVerletSymplectic。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT21_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:29:29.340383",
+              "before_sha256": "05543a12c6101687f9590ea88b7506409638990c85368ef8f6e705f7d075bf28",
+              "after_sha256": "f3a57be1c092b4a56a8a5cd3424a8e73be28fd40492797d5014917efbdc2a252",
+              "changed_fields": [
+                "statement_latex",
+                "statement_scope"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH29_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "statement_latex在复合公式后无省略标记地跳过where G_h is defined by及(2.29),(2.30)；补回中间定义。proof_latex原页为Relabelling the indices in this sum，当前误作the sum。"
+        ],
+        "evidence": [
+          "R4_PAGES.pdf 附件第20页；书面页码91。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.generalSymplectic",
+        "verdict": "PASS",
+        "explanation": "Z n为(q,p)对，unpack把标准坐标先q后p分解；关系为P=p−h H_q(q,P)、Q=q+h H_p(q,P)。H C²、G C¹且每点真实求解该关系，结论为全域C¹及标准J意义保辛。h可任意但仅对满足求解关系的实际G断言，未断言任意h必可求解。按明确statement_scope只审基本隐式辛Euler；完整对称复合已明确交由另一个source_id，本次未验证未提供的那一条。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": "statement_latex在复合公式后无省略标记地跳过where G_h is defined by及(2.29),(2.30)；补回中间定义。proof_latex原页为Relabelling the indices in this sum，当前误作the sum。"
+      }
+    },
+    {
+      "source_id": "MD-2.5.2-GeneralVerletSymplectic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "OMITTED_DISPLAYED_FORMULAS"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.5.2-GeneralVerletSymplectic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.5.2",
+          "printed_page": "91",
+          "pdf_page": "113",
+          "statement_latex": "To see that it is symplectic, we first note that this is a symmetric composition of the form\n\\[\\mathcal K_h=\\mathcal G_{h/2}^{\\dagger}\\circ\\mathcal G_{h/2},\\]\nwhere \\(\\mathcal G_h\\) is defined by\n\\[\\boldsymbol P=\\boldsymbol p-h\\nabla_q H(\\boldsymbol q,\\boldsymbol P),\\tag{2.29}\\]\n\\[\\boldsymbol Q=\\boldsymbol q+h\\nabla_p H(\\boldsymbol q,\\boldsymbol P).\\tag{2.30}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "完整原文主语是(2.26)–(2.28)；GeneralSymplectic条目保存全部原书证明。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.generalVerletSymplectic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "H C²，实际C¹中间动量和完整求解映射，满足三步隐式关系。",
+            "[EXTRA] 以真实可逆且C¹的基本求解族构造伴随半步复合V，补三步关系、V自伴随及辛性；仅δ小步长要求真实Euler关系，全球可逆族明确为条件性[EXTRA]，不宣称一般隐式方程必有全球解。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT21_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:29:29.340383",
+              "before_sha256": "42e856af9e9a513a842f5e7e88c9558e4a0ed972aba84d83675d7451cbd4b497",
+              "after_sha256": "d136e9e03d24de80a9f1487c1473fa3a16b4cdfb52a61ba9b32bfb73007a847c",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH29_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT21/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "所摘英文片段逐字正确，但止于 symmetric composition，未收入同句 of the form 及紧随的复合公式；原书随后明确给出基本法(2.29)–(2.30)。按本条 statement_scope 所称“本条所引原句及展示公式”补入这些内容，不重复抄录归于 GeneralSymplectic 的后续微分证明。"
+        ],
+        "evidence": [
+          "已视觉逐字核对 R5_PAGES.pdf 附件第1页（印刷91，原PDF113）。原页显示 K_h=G_{h/2}†∘G_{h/2}，且(2.29)在(q,P)取q偏导，(2.30)在同一点取p偏导。",
+          "现有 proof_note 的“未给独立完整证明”按条目拆分理解；原页确有基本法辛性的完整微分论证，context_notation 已指向另条保存，不把它误报为原书无证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.generalVerletSymplectic",
+        "verdict": "PASS",
+        "explanation": "逐项核对：n为任意自然数，q、p均为Fin n→ℝ，H定义于Q n×Q n；unpack按inl/inr取位置/动量，partialQ/partialP的求导变量和坐标方向正确。H为C²；δ>0；G是每个实步长上的双射族，仅在(-δ,δ)要求G及逆C¹并满足两条真实Euler关系。结论中Equiv.trans先作用G(h/2)再作用(G(-h/2))⁻¹，与原页复合方向相同。伴随的定义准确；V的全步长自伴随由逆映射及复合顺序直接成立，不依赖区间外Euler关系。区间内h/2和-h/2仍在区间，故两半步可合法使用假设；从第二半步的负步长Euler关系消去中间位置，所得三式正是partitionedVerletRelation，指定中间动量为unpack(G(h/2)z)的第二分量。辛性定义为C¹及DΦᵀ J DΦ=J，J的块号、坐标顺序和Jacobian均吻合。全局可逆族与双向C¹、真实求解关系是明确标注的条件性[EXTRA]，未把一般隐式方程的全球可解性当作结论。没有把辛性本身作为前提，也没有缺失所列完整结论。sorry不影响本次只读签名判定。",
+        "counterexample": null,
+        "suggested_fix": "Lean声明无需修改；JSON补入原页复合公式及基本法两式，并保留[EXTRA]的条件性说明。"
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

@@ -1,0 +1,310 @@
+{
+  "batch": "EAUDIT84",
+  "input_sha256": {
+    "BATCH_EAUDIT84.md": "c39fbe8e44ea8ae7d12d72cc8902989b30b3e211b4eca47b425401cdfba1a750",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4-SkewMatrix",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              15
+            ],
+            "book_pdf_pages": "191",
+            "printed_pages": "169",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "三维实向量映为实3×3矩阵，0基坐标v 0、v 1、v 2分别对应原书ω₁、ω₂、ω₃；六个非对角元的符号全部正确，主对角为0。scope仅定义；任意反对称矩阵的表示由本批第15条给出，旋转导数反对称性由第12条给出。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.skewMatrix",
+        "verdict": "PASS",
+        "explanation": "三维实向量映为实3×3矩阵，0基坐标v 0、v 1、v 2分别对应原书ω₁、ω₂、ω₃；六个非对角元的符号全部正确，主对角为0。scope仅定义；任意反对称矩阵的表示由本批第15条给出，旋转导数反对称性由第12条给出。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-CrossProduct",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              16
+            ],
+            "book_pdf_pages": "191",
+            "printed_pages": "169",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "任意三维实向量u、v，三个分量依次是u₂v₃−u₃v₂、u₃v₁−u₁v₃、u₁v₂−u₂v₁，符合右手叉积。定义本身不涉及真实时间导数或完整三个等号；scope已明确，第17条承担导数结论。外部CrossIdentityFull未在本任务给出，不能把本条定义当作已核验该外部完整声明。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.cross3",
+        "verdict": "PASS",
+        "explanation": "任意三维实向量u、v，三个分量依次是u₂v₃−u₃v₂、u₃v₁−u₁v₃、u₁v₂−u₂v₁，符合右手叉积。定义本身不涉及真实时间导数或完整三个等号；scope已明确，第17条承担导数结论。外部CrossIdentityFull未在本任务给出，不能把本条定义当作已核验该外部完整声明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-SkewRepresentation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NONVERBATIM_RECONSTRUCTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4-SkewRepresentation",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4",
+          "printed_page": "169",
+          "pdf_page": "191",
+          "statement_latex": "Any $3\\times3$ skew matrix may be written as\n\\[\\dot\\Theta\\Theta^T=\\operatorname{skew}(\\omega)\\equiv\\begin{bmatrix}0&-\\omega_3&\\omega_2\\\\\\omega_3&0&-\\omega_1\\\\-\\omega_2&\\omega_1&0\\end{bmatrix}.\\tag{4.38}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF191（印刷169）式(4.38)：skew(ω)=[[0,-ω_3,ω_2],[ω_3,0,-ω_1],[-ω_2,ω_1,0]]；skew matrix指实3×3反对称矩阵。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.skewRepresentation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT18_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:02:01.119680",
+              "before_sha256": "b31188927ec18ce036393aca55294096f6da67e8e0badfec64df05b9c90bbbd9",
+              "after_sha256": "65db48efa604bc145f598ba6000e085bda66515148b3e5a961a73d010842a86a",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH21_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT18/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "NONVERBATIM_RECONSTRUCTION",
+            "field": "statement_latex",
+            "explanation": "Any $3\\times3$ skew matrix may be written as\\n\\[\\dot\\Theta\\Theta^T=\\operatorname{skew}(\\omega)\\equiv\\begin{bmatrix}0&-\\omega_3&\\omega_2\\\\\\omega_3&0&-\\omega_1\\\\-\\omega_2&\\omega_1&0\\end{bmatrix}.\\tag{4.38}\\]",
+            "severity": "source_transcription"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              17
+            ],
+            "book_pdf_pages": "191",
+            "printed_pages": "169",
+            "finding": "原页“may be written as”后直接接(4.38)展示公式，原JSON用“as skew(ω)”重构了句子，不是逐字引文；corrected_json恢复原展示式。"
+          },
+          {
+            "stage": "C",
+            "finding": "对任意实3×3矩阵A，在Aᵀ=−A前提下，存在唯一实三维向量ω使Chapter04Review.skewMatrix ω=A。该依赖的坐标定义与本批MD版本相同。原文只说可表示，唯一性是正确加强：ω=(A₃₂,A₁₃,A₂₁)，与Lean的![A 2 1,A 0 2,A 1 0]相同；无额外隐藏前提。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.skewRepresentation",
+        "verdict": "PASS",
+        "explanation": "对任意实3×3矩阵A，在Aᵀ=−A前提下，存在唯一实三维向量ω使Chapter04Review.skewMatrix ω=A。该依赖的坐标定义与本批MD版本相同。原文只说可表示，唯一性是正确加强：ω=(A₃₂,A₁₃,A₂₁)，与Lean的![A 2 1,A 0 2,A 1 0]相同；无额外隐藏前提。",
+        "counterexample": null,
+        "suggested_fix": "仅更新JSON注释或引文，见corrected_json；无需修改本条Lean代数签名。"
+      }
+    },
+    {
+      "source_id": "MD-4.4-CrossMatrix",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              18
+            ],
+            "book_pdf_pages": "191",
+            "printed_pages": "169",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "对任意三维实向量u、v，证明skewMatrix u *ᵥ v=cross3 u v，类型、乘法方向及右手符号均正确。结论仅为原文代数链首等式；另一等式等价于叉积反交换性。本条scope和EXTRA已声明此分工；未提供的CrossIdentityFull签名不在本批认证范围。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.crossMatrix",
+        "verdict": "PASS",
+        "explanation": "对任意三维实向量u、v，证明skewMatrix u *ᵥ v=cross3 u v，类型、乘法方向及右手符号均正确。结论仅为原文代数链首等式；另一等式等价于叉积反交换性。本条scope和EXTRA已声明此分工；未提供的CrossIdentityFull签名不在本批认证范围。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RigidVelocity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R6_PAGES.pdf",
+            "attachment_pages": [
+              19
+            ],
+            "book_pdf_pages": "191",
+            "printed_pages": "169",
+            "finding": "已对照原页渲染图和提取文本逐字核查；除本条issues列出的改动外，引文的文字、公式系数、符号、指数和求和范围相符。"
+          },
+          {
+            "stage": "C",
+            "finding": "任意矩阵轨道Θ、候选导数dΘ、固定参考向量δ、空间角速度ω及t；前提HasDerivAt、时刻t的ΘΘᵀ=I以及dΘΘᵀ=skew(ω)足以推出真实轨道s↦Θ(s)δ的导数为ω×(Θ(t)δ)。参考δ与原文δ_i(0)对应，结果中的Θ(t)δ才是当前δ_i。方阵单侧正交足以推出反侧正交，不需另加邻域正交。已明示只承担导数与叉积的等式；完整代数链所指外部CrossIdentityFull未提供，不作额外认证。",
+            "method": "只读审查任务所给完整声明及项目依赖；按已明确statement_scope审查本条承诺范围，外部分工不冒充已核验；不运行工程、不补证明，sorry不作为FAIL依据。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidVelocity",
+        "verdict": "PASS",
+        "explanation": "任意矩阵轨道Θ、候选导数dΘ、固定参考向量δ、空间角速度ω及t；前提HasDerivAt、时刻t的ΘΘᵀ=I以及dΘΘᵀ=skew(ω)足以推出真实轨道s↦Θ(s)δ的导数为ω×(Θ(t)δ)。参考δ与原文δ_i(0)对应，结果中的Θ(t)δ才是当前δ_i。方阵单侧正交足以推出反侧正交，不需另加邻域正交。已明示只承担导数与叉积的等式；完整代数链所指外部CrossIdentityFull未提供，不作额外认证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-InertiaTensor",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "附件1页印169：动能二次型、负的skew平方及欧氏有限和的符号、δ_i(0)、转置和1/2一致；将跨段公式接入同一引文属于摘录拼接。",
+          "对任意有限N、实质量权m和三维参考向量δ，返回3×3实矩阵Σm_i((δ_i·δ_i)I−δ_iδ_iᵀ)。dot、outer和单位矩阵展开均吻合欧氏公式；无需正质量前提即可定义。按显式statement_scope仅核对该定义；本声明不证明skew平方或动能恒等式，跨条目分工不当作本声明已经证明的内容。",
+          {
+            "attachment_pages": [
+              1
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "1": "688c0592deef3457e322fadda09f1e34b5373b50b2ebb42e216f520c85e340d7"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.inertiaTensor",
+        "verdict": "PASS",
+        "explanation": "对任意有限N、实质量权m和三维参考向量δ，返回3×3实矩阵Σm_i((δ_i·δ_i)I−δ_iδ_iᵀ)。dot、outer和单位矩阵展开均吻合欧氏公式；无需正质量前提即可定义。按显式statement_scope仅核对该定义；本声明不证明skew平方或动能恒等式，跨条目分工不当作本声明已经证明的内容。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-RotationalEnergy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "附件2页印169：body angular velocity句和ω_b=Θᵀω、K_rot=ω_bᵀTω_b/2一致；展示公式转行归一。",
+          "任意3×3实矩阵T与三维实向量ωb映到ωb·(Tωb)/2，完整表达所声明的二次型定义。ωb=Θᵀω及真实粒子动能由本批第8条实际核对；这里不把任意T、ωb当作已满足刚体运动关系的对象。",
+          {
+            "attachment_pages": [
+              2
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "2": "688c0592deef3457e322fadda09f1e34b5373b50b2ebb42e216f520c85e340d7"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rotationalEnergy",
+        "verdict": "PASS",
+        "explanation": "任意3×3实矩阵T与三维实向量ωb映到ωb·(Tωb)/2，完整表达所声明的二次型定义。ωb=Θᵀω及真实粒子动能由本批第8条实际核对；这里不把任意T、ωb当作已满足刚体运动关系的对象。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4-InertiaTraceCorrected",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "附件3页印169式(4.40)：JSON忠实摘取前两段R=Σm_iδ_iδ_iᵀ=Σm_i||δ_i||²I−T；原书随后印(T11+T22+T33)I−T，未印/2。context与EXTRA明确区分纠正版本。",
+          "全称量化任意N、实权m和三维δ，无额外前提；secondMoment=Σm_iδ_iδ_iᵀ，inertiaTensor=Σm_i((δ_i·δ_i)I−δ_iδ_iᵀ)。三维时trace(T)=2Σm_i||δ_i||²，所以R=(trace(T)/2)I−T正确。/2已明确标为纠正，不伪称原书印式。",
+          {
+            "attachment_pages": [
+              3
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "3": "688c0592deef3457e322fadda09f1e34b5373b50b2ebb42e216f520c85e340d7"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.inertiaTraceCorrected",
+        "verdict": "PASS",
+        "explanation": "全称量化任意N、实权m和三维δ，无额外前提；secondMoment=Σm_iδ_iδ_iᵀ，inertiaTensor=Σm_i((δ_i·δ_i)I−δ_iδ_iᵀ)。三维时trace(T)=2Σm_i||δ_i||²，所以R=(trace(T)/2)I−T正确。/2已明确标为纠正，不伪称原书印式。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

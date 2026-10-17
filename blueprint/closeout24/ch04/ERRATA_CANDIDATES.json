@@ -1,0 +1,320 @@
+[
+  {
+    "source_id": "MD-4-PRKThreshold",
+    "names": [
+      "prkThreshold"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4-SymplecticEulerBoundaryPrinted",
+    "names": [
+      "symplecticEulerBoundaryPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4-VerletBoundaryPrinted",
+    "names": [
+      "verletBoundaryPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.1-ActualMidpointRelation",
+    "names": [
+      "actualMidpointRelation"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.1-PrintedModifiedFrequency",
+    "names": [
+      "printedModifiedFrequency"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.2.1-FastVerlet",
+    "names": [
+      "fastVerlet"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.2.1-RESPAStructure",
+    "names": [
+      "respaStructure"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.2.1-ResonanceEigenPrinted",
+    "names": [
+      "resonanceEigenPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.2.1-ResonanceGrowth",
+    "names": [
+      "resonanceGrowth"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.2.1-ResonanceLinearRate",
+    "names": [
+      "resonanceLinearRate"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.3-ConstrainedPendulum",
+    "names": [
+      "constrainedPendulum"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.3-ConstraintSet",
+    "names": [
+      "constraintSet",
+      "constraintSet_regularLevel"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.3-RestraintForcePrinted",
+    "names": [
+      "restraintForcePrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.3.2-FrozenGramPrinted",
+    "names": [
+      "frozenGramPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.3.2-FrozenNewtonConstraint",
+    "names": [
+      "frozenNewtonConstraint"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.3.2-PositionEulerForceConvention",
+    "names": [
+      "positionEulerRelation"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.3.3-ComponentPrinted",
+    "names": [
+      "componentPrinted"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.3.4-GramProjectedEuler",
+    "names": [
+      "gramProjectedEuler",
+      "gramProjectedEuler_general"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.3.4-Lemma41",
+    "names": [
+      "lemma41"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.3.4-ProjectedEulerRelation",
+    "names": [
+      "projectedEulerRelation"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.3.5-ConstrainedOrders",
+    "names": [
+      "constrainedOrders",
+      "constrainedOrders_global",
+      "constrainedOrders_firstOrderSharp"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.3.5-SHAKEElimination",
+    "names": [
+      "shakeElimination"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.3.5-SHAKEPositionMass",
+    "names": [
+      "shakePositionRelation"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.3.5-SHAKEPositionOrder",
+    "names": [
+      "shakePositionOrder"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.3.5-SHAKERATTLEEquivalence",
+    "names": [
+      "shakeRattlePositions"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.3.5-StaggeredConstraint",
+    "names": [
+      "staggeredConstraintRelation"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.3.5.1-ConstrainedComposition",
+    "names": [
+      "constrainedComposition",
+      "constrainedComposition_circleExample",
+      "constrainedComposition_noConstraints"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.4-DipolarRotationalPrinted",
+    "names": [
+      "dipolarRotationalPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.4-InertiaTracePrinted",
+    "names": [
+      "inertiaTracePrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.4-RotationDerivativePrinted",
+    "names": [
+      "rotationDerivativePrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.4.1-AxisFlowFormal",
+    "names": [
+      "axisFlow"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.4.1-ExactPlanarRotation",
+    "names": [
+      "exactPlanarRotation"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.4.1-PrincipalAxisField",
+    "names": [
+      "principalAxisField"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.4.1-SecondAxisPrinted",
+    "names": [
+      "secondAxisPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.4.1-ThirdAxisPrinted",
+    "names": [
+      "thirdAxisPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.4.2-DLMMassOnly",
+    "names": [
+      "dlmMassOnly"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrintedSystem",
+    "names": [
+      "dlmPrintedSystem"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+    "names": [
+      "dlmPrintedSystemStructure"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-4.4.2-DLMStructureFormal",
+    "names": [
+      "dlmStructure"
+    ],
+    "old": true,
+    "new": false
+  }
+]

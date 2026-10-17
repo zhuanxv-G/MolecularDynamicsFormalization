@@ -1,0 +1,5 @@
+{
+  "source_id": "MD-4.2.1-RESPA",
+  "diff_summary": "总化辅助respaTotalized保留；主接口respa增加0<r。当前Blueprint没有主接口下游调用需调整；正式库旧辅助不改。已展开同版本Chapter02Review.verlet核对为kick(h/2)→drift(h)→kick(h/2)，桥接见FastVerlet本地核验记录。原文网站漏句按corrected_json补回。",
+  "lean_sha256": "ba1020c3adf7c450ce4ae2f20ab718c7884babba22cfbdc48409874b4b5626c7"
+}

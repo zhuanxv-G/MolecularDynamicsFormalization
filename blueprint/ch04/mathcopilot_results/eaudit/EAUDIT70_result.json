@@ -1,0 +1,280 @@
+{
+  "batch": "EAUDIT70",
+  "input_sha256": {
+    "BATCH_EAUDIT70.md": "a1920a75dc809b01ede7336d1116d7d7784a54ce4b99c30507ed034b4e307707",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.1-PrintedImplicitRelation",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_METHOD_NAME_FORMULA_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.1-PrintedImplicitRelation",
+          "kind": "definition",
+          "label": null,
+          "section": "4.1",
+          "printed_page": "142",
+          "pdf_page": "164",
+          "statement_latex": "The Implicit Midpoint method which, for the ODE $\\dot z=f(z)$ takes the form\n\\[z_{n+1}=z_n+h\\frac{f(z_n)+f(z_{n+1})}{2},\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "R1复审：原页确实把梯形更新式命名为 Implicit Midpoint，转录正确；保留疑误。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "p142名为Implicit Midpoint却写Trapezoidal Rule更新式；p144采用真正机械中点式。"
+            },
+            {
+              "code": "BOOK_METHOD_NAME_FORMULA_MISMATCH",
+              "detail": "原页确实把梯形更新式命名为 Implicit Midpoint，转录正确；保留疑误。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.printedImplicitRelation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT03_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:52:31.915585",
+              "before_sha256": "fa498573eaca1631807e654059f2a8dc68d6dc7accf2b9cbc803e064bd3a3ced",
+              "after_sha256": "a95bd1a243e3205e600dc2ee64b1e4228bf46b1c217e25abd9fdd7cf9bbfe068",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "BOOK_METHOD_NAME_FORMULA_MISMATCH",
+            "detail": "原页确实把梯形更新式命名为 Implicit Midpoint，转录正确；保留疑误。"
+          }
+        ],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 9,
+            "original_pdf_page": "164",
+            "printed_page": "142",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "原页确实把梯形更新式命名为 Implicit Midpoint，转录正确；保留疑误。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.printedImplicitRelation"
+            ],
+            "finding": "名称 printedImplicitRelation 标识字面版。∀维数、任意实向量场及实步长和两个实状态，关系 out=z+(h/2)(f(z)+f(out)) 正是原印梯形式，系数和端点函数值均正确。按任务只审忠实性，不要求把字面版改成真中点。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.printedImplicitRelation",
+        "verdict": "PASS",
+        "explanation": "名称 printedImplicitRelation 标识字面版。∀维数、任意实向量场及实步长和两个实状态，关系 out=z+(h/2)(f(z)+f(out)) 正是原印梯形式，系数和端点函数值均正确。按任务只审忠实性，不要求把字面版改成真中点。",
+        "counterexample": "取f(x)=x²、h=1、z=0、out=2。原印梯形式2=0+(0²+2²)/2成立，真正中点式2=0+f((0+2)/2)=1不成立，说明两方法在非线性场上不同。",
+        "suggested_fix": "保留Printed字面版；在注释中指明这是梯形法，真正中点另用out=z+h f((z+out)/2)，勿静默替换本字面声明。"
+      }
+    },
+    {
+      "source_id": "MD-4.1-ImplicitFactor",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 10,
+            "original_pdf_page": "164",
+            "printed_page": "142",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "引导短句和复更新因子逐字、逐符号一致。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.implicitFactor",
+              "MD.Ch04.implicitFactor_update"
+            ],
+            "finding": "implicitFactor 对任意实 Ω,h 定义原复比值。implicitFactor_update 对任意复 z,out 给印刷线性隐式更新与乘因子的双向等价；iΩ 的乘法、h/2 和 out 位置正确。分母实部为1，对这些域永不为零；无需增加分母假设。在线性场上梯形与中点一致。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.implicitFactor; MD.Ch04.implicitFactor_update",
+        "verdict": "PASS",
+        "explanation": "implicitFactor 对任意实 Ω,h 定义原复比值。implicitFactor_update 对任意复 z,out 给印刷线性隐式更新与乘因子的双向等价；iΩ 的乘法、h/2 和 out 位置正确。分母实部为1，对这些域永不为零；无需增加分母假设。在线性场上梯形与中点一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.1-ImplicitModulus",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_LINEAR_SYSTEM_SCOPE_AMBIGUITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.1-ImplicitModulus",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.1",
+          "printed_page": "142",
+          "pdf_page": "164",
+          "statement_latex": "For all real $\\Omega$, we find\n\\[\\left|\\frac{1+ih\\Omega/2}{1-ih\\Omega/2}\\right|=1.\\]\nThis indicates that the Implicit Midpoint method has no stability threshold for the stepsize when solving a linear system!",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "R1复审：公式和末句均忠实；末句 a linear system 若脱离纯虚振子背景会过强，保留原话并标注范围疑问。"
+          ],
+          "issues": [
+            {
+              "code": "BOOK_LINEAR_SYSTEM_SCOPE_AMBIGUITY",
+              "detail": "公式和末句均忠实；末句 a linear system 若脱离纯虚振子背景会过强，保留原话并标注范围疑问。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.implicitModulus",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "只保留本段纯虚线性振子对象；不扩成任意不稳定线性系统的有界性。",
+            "[EXTRA] 增加任意步长的标量迭代范数保持，准确对应当前线性振子模态；不扩大到任意线性系统。原模长证明保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT03_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:52:31.915585",
+              "before_sha256": "c387ecd515fe9fc15e624613052d82f8db93f0191f143eb7fff0a601f2805c3f",
+              "after_sha256": "c32ba6090fc753c66b44495b750f1006a56bcda0cba0ba8ec30fff80d72a9747",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH03_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT03/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "BOOK_LINEAR_SYSTEM_SCOPE_AMBIGUITY",
+            "detail": "公式和末句均忠实；末句 a linear system 若脱离纯虚振子背景会过强，保留原话并标注范围疑问。"
+          }
+        ],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 11,
+            "original_pdf_page": "164",
+            "printed_page": "142",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "公式和末句均忠实；末句 a linear system 若脱离纯虚振子背景会过强，保留原话并标注范围疑问。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.implicitModulus",
+              "MD.Ch04.implicitModulus_iterates"
+            ],
+            "finding": "对任意实 Ω,h 的模长等式及任意复初值、自然步数的范数保持均正确，且涵盖零频率零步长。[EXTRA] 明确限定纯虚标量模态，足以表达当前振子无步长稳定阈值；不把它推广为任意线性系统有界性。原书泛称仍交人工，不以缩域签名静默消除疑误。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.implicitModulus; MD.Ch04.implicitModulus_iterates",
+        "verdict": "PASS",
+        "explanation": "对任意实 Ω,h 的模长等式及任意复初值、自然步数的范数保持均正确，且涵盖零频率零步长。[EXTRA] 明确限定纯虚标量模态，足以表达当前振子无步长稳定阈值；不把它推广为任意线性系统有界性。原书泛称仍交人工，不以缩域签名静默消除疑误。",
+        "counterexample": "若把原句解释为所有线性系统：z′=z的隐式中点因子(1+h/2)/(1-h/2)，h=1时为3，h=2时分母为0；甚至零谱Jordan系统z′=[[0,1],[0,0]]z也可有线性增长。两例均不在本条iΩ振子签名内。",
+        "suggested_fix": "保留原句并由人工确认泛称范围；注释限于当前纯虚振子模态，不能宣称任意线性系统的所有轨道有界。"
+      }
+    },
+    {
+      "source_id": "MD-4.1-ModifiedFrequencyLimit",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 12,
+            "original_pdf_page": "165",
+            "printed_page": "143",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "两句与原页一致，特别是 hΩ≫1 而非 h≫1。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.modifiedFrequencyLimit",
+              "MD.Ch04.midpointFrequencyRatio",
+              "MD.Ch04.modifiedFrequencyRatio_limits"
+            ],
+            "finding": "modifiedFrequency=2 atan(hΩ/2)/h。∀实 Ω，沿去掉零点的 h→0 趋Ω；midpointFrequencyRatio 定义2 atan(x/2)/x，沿去零x→0趋1、x→+∞趋0；∀实Ω,h且hΩ≠0，频率比桥接正确。负频率和负步长均无代数问题。明确实连续相位，不在本条擅自断言任意复log分支或耦合系统误差估计。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.modifiedFrequencyLimit; MD.Ch04.midpointFrequencyRatio; MD.Ch04.modifiedFrequencyRatio_limits",
+        "verdict": "PASS",
+        "explanation": "modifiedFrequency=2 atan(hΩ/2)/h。∀实 Ω，沿去掉零点的 h→0 趋Ω；midpointFrequencyRatio 定义2 atan(x/2)/x，沿去零x→0趋1、x→+∞趋0；∀实Ω,h且hΩ≠0，频率比桥接正确。负频率和负步长均无代数问题。明确实连续相位，不在本条擅自断言任意复log分支或耦合系统误差估计。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.1-MidpointElimination",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 13,
+            "original_pdf_page": "166",
+            "printed_page": "144",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "组合描述、消去 p-hat 后的公式、负号及 h²/4 均一致。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.midpointElimination",
+              "MD.Ch04.midpointEulerHalfSteps"
+            ],
+            "finding": "∀n、质量函数、实势函数、实h、相空间 z,mid,out；以实际四关系为前提推出位置消元，并用同一机械向量场给隐式Euler半步后显式Euler半步的双向等价。Q和Z为有限实坐标及其乘积，grad 的 fderiv 坐标定义一致，invMass 是逐坐标乘质量倒数，故所需线性性成立。结论是关系代数式，不声称解存在、唯一或迭代收敛；对非物理质量或非光滑势的总化扩域也不使这两个代数命题变假，但不能据此解释为真实机械流。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.midpointElimination; MD.Ch04.midpointEulerHalfSteps",
+        "verdict": "PASS",
+        "explanation": "∀n、质量函数、实势函数、实h、相空间 z,mid,out；以实际四关系为前提推出位置消元，并用同一机械向量场给隐式Euler半步后显式Euler半步的双向等价。Q和Z为有限实坐标及其乘积，grad 的 fderiv 坐标定义一致，invMass 是逐坐标乘质量倒数，故所需线性性成立。结论是关系代数式，不声称解存在、唯一或迭代收敛；对非物理质量或非光滑势的总化扩域也不使这两个代数命题变假，但不能据此解释为真实机械流。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

@@ -1,0 +1,12 @@
+{
+  "coefficients": {
+    "a": "-1/720",
+    "b": "1/120",
+    "c": "1/60",
+    "d": "-1/240"
+  },
+  "q_endpoint_jet_through_h6": "equal",
+  "p_endpoint_jet_through_h6": "equal",
+  "method": "exact symbolic independent jet expansion of exp(h X_K) and kick-drift-kick",
+  "limitations": "Finite jets verified by SymPy. Uniform O(h^7) real-flow estimate remains an unproved Lean statement."
+}

@@ -1,0 +1,66 @@
+{
+  "batch": "EAUDIT74",
+  "input_sha256": {
+    "BATCH_EAUDIT74.md": "602c5e9e961c8ef12029cd14732fe164aa283d1603ac5a08abafeae1435ab725",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.3.4-TakahashiPotential",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第16页（书页112，原PDF 134），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第14小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.takahashiImada",
+        "verdict": "PASS",
+        "explanation": "C：任意n、固定对角m、U及步长h，takahashiImada以同一个h构造修正势并调用coordinateVerlet。takahashiPotential精确为U(q)−h²/24∑(grad U(q)_i)²/m_i；textbookPotentialForce对整个修正势取负梯度，非仅把原U梯度代入。半kick、全drift、半kick的次序及两个求梯度的位置q/Q完整匹配原文。正质量可微机械背景由上下文理解；当前是用总化逆元和fderiv给出的函数定义，未宣称零质量或不可微势也是物理方法或满足阶/结构定理。固定对角质量[EXTRA]合理，定义无额外错误命题。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.3.4-TakahashiShadow",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment_pages": [
+              1
+            ],
+            "printed_page": "112",
+            "pdf_page": "134",
+            "finding": "已逐字/公式对照附件对应原页；同页复印件通过pdftotext全文相同确认，并视觉核对原页112、113、114、115、116。排版换行及数学字体作等价LaTeX转写。"
+          },
+          {
+            "stage": "C",
+            "finding": "有限函数的二次项为(1/12)(pᵀM⁻¹U″M⁻¹p−∇UᵀM⁻¹∇U)，与原页末式一致。positiveMass、全域C∞及紧B足以给出一致局部流和四阶截断影子Hamiltonian的端点O(h⁵)匹配；matchesHamiltonian的p=4确为h^(4+1)，只要求正小步长。第二合取是在对称小邻域上的势替换多项式差O(h⁴)，不声称无限级数收敛。shadowTerms、invMass、grad、unpack、J及kick/drift的对象和符号相符；无额外能量守恒假设。",
+            "scope": "只读核对任务所给全部声明及项目依赖定义；未编译、未修改工程、未补证明；不因sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch03.takahashiShadow2",
+          "MD.Ch03.takahashiShadow2_matching"
+        ],
+        "verdict": "PASS",
+        "explanation": "有限函数的二次项为(1/12)(pᵀM⁻¹U″M⁻¹p−∇UᵀM⁻¹∇U)，与原页末式一致。positiveMass、全域C∞及紧B足以给出一致局部流和四阶截断影子Hamiltonian的端点O(h⁵)匹配；matchesHamiltonian的p=4确为h^(4+1)，只要求正小步长。第二合取是在对称小邻域上的势替换多项式差O(h⁴)，不声称无限级数收敛。shadowTerms、invMass、grad、unpack、J及kick/drift的对象和符号相符；无额外能量守恒假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

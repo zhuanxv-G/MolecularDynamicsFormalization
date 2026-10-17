@@ -1,0 +1,246 @@
+{
+  "batch": "EAUDIT82",
+  "input_sha256": {
+    "BATCH_EAUDIT82.md": "0a267352ee5d868a7d76b3d44d59c1b380712ea8b6a9723b64abc8b05457a097",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.7-HardCoreDomain",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "INCOMPLETE_STATEMENT_COVERAGE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.7-HardCoreDomain",
+          "kind": "definition",
+          "label": null,
+          "section": "3.7",
+          "printed_page": "132",
+          "pdf_page": "154",
+          "statement_latex": "We assume, as usual a Hamiltonian $H=p^TM^{-1}p/2+U(q)$ but we add the inequality constraint $\\|q_i-q_j\\|\\ge\\sigma_i+\\sigma_j$ where $\\sigma_i$, $i=1,\\ldots,N$ is a core radius. The condition $\\|q_i-q_j\\|=\\sigma_i+\\sigma_j$, some $i,j$ defines the constraint surface.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原书未显式写出 i≠j；不同粒子之间的硬核约束按物理语境理解为 i≠j，此为解释性补充，不能称原文明确。接触等号允许，不当重叠。σ作为半径通常非负，但原句未显式给出非负假设。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.hardCoreDomain",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] i≠j按不同粒子的物理语境解释；σ的非负性未编码，若解释为物理半径须另作资格。"
+          ],
+          "statement_scope": "仅定义不同粒子之间满足闭非重叠约束的构型域；Hamiltonian H=K+U及至少一对接触的接触面未由本条当前声明表达。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT17_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:31:30.636685",
+              "before_sha256": "11b09e2c7d2d4fba6839ab5ede43bded88aa0fbcb1d05f982e89ee9788088c24",
+              "after_sha256": "8ec443e661ffaff983101430256f64b5998d705387536103ae9a4d2e906a6763",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "INCOMPLETE_STATEMENT_COVERAGE",
+            "detail": "唯一声明只定义允许域，没有Hamiltonian对象及接触面；statement_scope却仍泛指所引整句。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第7页；印刷页132",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.hardCoreDomain",
+        "verdict": "FAIL",
+        "explanation": "hardCoreDomain本身正确表达N个d维欧氏位置的闭非重叠区域：对所有不同粒子i,j，距离≥半径和，接触等号允许。i≠j来自物理语境而非原文显式，context已如实披露。任意实σ的集合定义有意义；物理半径非负未编码，应明确限定其物理解释。按本条现有完整statement_scope，所引Hamiltonian H=K+U以及“某一粒子对取等号”的接触面均未在唯一Lean声明中表达；不能把域定义称为所引全部内容的完整对应。",
+        "counterexample": null,
+        "suggested_fix": "另行补充或明确映射H=K+U与{q∈hardCoreDomain σ | ∃ i≠j, ‖q i−q j‖=σ i+σ j}；本次只记录，不改工程。"
+      }
+    },
+    {
+      "source_id": "MD-3.7-CollisionComposition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "UNSPECIFIED_TIME_LIST_ORDER",
+          "ABSTRACT_COMBINATOR_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.7-CollisionComposition",
+          "kind": "definition",
+          "label": null,
+          "section": "3.7",
+          "printed_page": "132–133",
+          "pdf_page": "154–155",
+          "statement_latex": "Let $\\mathcal R_c$ denote the action of the collision operator on the vector of positions and momenta. Then we can write the evolution formally as\n\\[\\mathcal F_\\tau^{\\mathrm{h.s.}}(q,p)=\\mathcal G_{\\Delta\\tau_r}\\circ\\mathcal R_c\\circ\\mathcal G_{\\Delta\\tau_{r-1}}\\cdots\\circ\\mathcal R_c\\circ\\mathcal G_{\\Delta\\tau_0}\\]\nwhere $\\Delta\\tau_1,\\Delta\\tau_2,\\ldots,\\Delta\\tau_{r-1}$ are the times between collisions, $\\Delta\\tau_0$ is the time until the first collision, and $\\Delta\\tau_r$ is the time between the last collision and $\\tau$. Here $\\mathcal G_t$ is the flow map of the smooth system (Hamiltonian $H$).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "当前递归要求times=[Δτr,…,Δτ0]按时间逆序存储；例如两段输出G(Δτ1)∘Rc∘G(Δτ0)。不能传入自然时间顺序列表。",
+            "该声明仅为有限形式组合器；真实事件还需非负时长、总时长τ、实际Hamiltonian流及接触反射资格。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.collisionComposition",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "有限形式流/反射复合组合器；必须采用逆时间段列表才能对应原印公式。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT17_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:31:30.636685",
+              "before_sha256": "591a845affe8f92c6d93fea2c97dc86a42773a390dda780e5b434d618ef4acee",
+              "after_sha256": "9372a02ac4362685ec931a7889dfe67a360271b94b113453685c775c3a658c4e",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT17/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "UNSPECIFIED_TIME_LIST_ORDER",
+            "detail": "缺少times=[Δτr,…,Δτ0]的明确约定或桥接；自然时间列表下复合反序。"
+          },
+          {
+            "code": "ABSTRACT_COMBINATOR_SCOPE",
+            "detail": "任意G,Rc,实列表只给形式复合，需将与实际事件流的资格区别清楚。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第8–9页；印刷页132–133",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.collisionComposition",
+        "verdict": "FAIL",
+        "explanation": "递归定义对任意E、G、Rc及有限实列表存在意义，空表为id、单元素为单个流。对[t0,t1]展开为G t0∘Rc∘G t1；因此它只有在列表按[Δτr,…,Δτ0]逆时间存储时才与原公式相符。当前JSON和签名均没有给出这一关键映射；按原文从首段到末段的自然列表[Δτ0,…,Δτr]理解，得到反向时间次序。[EXTRA]为空，context仅说右到左不能确定列表含义。也未编码事件时长非负、总和τ、G为H流或Rc为实际碰撞；可作形式组合器，不是实际流存在定理。",
+        "counterexample": "取E=ℝ、G(t)(x)=x+t、Rc(x)=−x，Δτ0=1、Δτ1=2、x=0。原文G2∘Rc∘G1得1，当前定义传[1,2]得−1。",
+        "suggested_fix": "工程后续可改为按自然时间顺序递归；或明确要求逆序列表并给出与原公式的桥接声明。"
+      }
+    },
+    {
+      "source_id": "MD-3.7-CollisionRegularity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SMOOTH_VS_ANALYTIC",
+          "EXTRA_SIGNATURE_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.7-CollisionRegularity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.7",
+          "printed_page": "133",
+          "pdf_page": "155",
+          "statement_latex": "The trajectory is thus piecewise smooth with continuous configurational path and momenta exhibiting finite jump discontinuities.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch03.collisionRegularity",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 仅审校有限严格递增隔离碰撞、正质量、C∞力、C¹接触函数、非零法向严格入射及每段合法域下的拼接。",
+            "[EXTRA] 当前签名内段ContDiffAt仍为裸⊤，并未完成所称∞修复；该解析性结论不能由C∞力推出。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "DRAFT",
+          "repair_log": [
+            {
+              "stage": "EAUDIT17_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:31:30.636685",
+              "before_sha256": "6f0faec19da8b5033efdf683d2dfe8555fb27a4211db1409c6f788770ba1461e",
+              "after_sha256": "9d32b5a04ac10a340512f4312fc5a52af5ed09f76be51adfb5c10461d3f58342",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EAUDIT47_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:40:48.522316",
+              "before_sha256": "9d32b5a04ac10a340512f4312fc5a52af5ed09f76be51adfb5c10461d3f58342",
+              "after_sha256": "9ad77ac332f19fffc089edbb3b2f8d4af6e7be6b765b2c278bb65732c9c590a8",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH23_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT47/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SMOOTH_VS_ANALYTIC",
+            "detail": "内段结论残留裸⊤，严格强于C∞，不是原文piecewise smooth。"
+          },
+          {
+            "code": "EXTRA_SIGNATURE_MISMATCH",
+            "detail": "[EXTRA]宣称输出已修复为∞，实际仍为⊤。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第10页；印刷页133",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.collisionRegularity",
+        "verdict": "FAIL",
+        "explanation": "量词覆盖所有n、正质量m、C∞力F、C¹接触函数g、有限ν碰撞及ν+1个ODE段。拼接条件给严格递增事件、各闭段ODE、接触位置相等和质量加权法向反射；非零法向/严格入射保证非零动量跳跃；合法域g≥0是物理资格。gluedCollision选择已开始的最大段，足以表达右连续拼接、位置连续和左右动量极限。然而内段结论仍写ContDiffAt ℝ ⊤，按本任务指定的现代光滑阶语义它要求实解析，而前提F仅∞光滑，不能推出解析。[EXTRA]声称前提及输出均恢复∞，与实际输出不符。有限事件、横截等都是明确加强，未伪装成从原文无条件推出。",
+        "counterexample": "取ν=0以消去所有碰撞条件，n=1、m=1、g≡1。令F(q)=0(q≤0)，F(q)=exp(−1/q²)(q>0)，这是C∞非解析力。取一条在区间内点t0穿过q=0且p(t0)=1的机械ODE解；若(q,p)在t0解析，则q局部有解析逆且F(q(t))=p′(t)，将推出F在0解析，矛盾。该解满足全部无碰撞前提。",
+        "suggested_fix": "将内段结论ContDiffAt ℝ ⊤改为ContDiffAt ℝ ∞；本次不修改工程。"
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

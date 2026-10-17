@@ -1,3 +1,13 @@
+# 按24号继续第2–5章收口
+
+先读AGENTS、CURRENT_STATE顶部、WORK_LOG最新和第2–5章PROGRESS，先git status并复用通过证据。完整24号原文见blueprint/closeout24/USER_INSTRUCTION.zh-CN.md。仅第2–5章，正式库与第1/6章冻结，不进入第7章，不再送网站。
+完成标准为24号第6节：27项FAIL修复中0、逐条单文件与公理检查、每章一次完整check通过、正式库0 sorry/0 axiom；四章七段BLUEPRINT、ERRATA和导师摘要齐全；提交push后CURRENT_STATE写完成终态并停止。
+当前终态：第2–5章最终收口完成，等待用户新指令。27项修复、四章完整check及12份文档均已通过，总验收见blueprint/closeout24/DELIVERY_VALIDATION.json。最终提交随该状态推送后即停止；自动唤醒先核对Git推送状态与完成条件，已满足则不继续工作。
+
+---
+
+历史接续（冲突处以24号为准）：
+
 # 第6章本地流程完成，等待用户新指令
 
 当前22号任务已经完成。先读取CURRENT_STATE顶部和第6章PROGRESS；没有用户新指令时停止，不进入第7章。

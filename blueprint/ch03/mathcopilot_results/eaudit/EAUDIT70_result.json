@@ -1,0 +1,321 @@
+{
+  "batch": "EAUDIT70",
+  "input_sha256": {
+    "BATCH_EAUDIT70.md": "dd1f9336814bd2dfbc1edf9c5ba959b0cdba98c9235e1b7cb51bdf9b40666701",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.3-HamiltonianLieAdditivity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第15页；印刷页 103 / 原PDF页 125",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "hamiltonianLieAdditivity"
+            ],
+            "finding": "∀F,H₁,H₂,z，仅需 H₁,H₂ 在 z 可微；结论逐点为 L_(X_(H₁+H₂))F=L_(X_H₁)F+L_(X_H₂)F。fderiv H 的加法给出向量场加法，再由 fderiv F 的线性推出，F 即使没有可微前提也可使用总化导数，原文光滑对象当然涵盖。全称 F,z 对应算子等式。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.hamiltonianLieAdditivity",
+        "verdict": "PASS",
+        "explanation": "∀F,H₁,H₂,z，仅需 H₁,H₂ 在 z 可微；结论逐点为 L_(X_(H₁+H₂))F=L_(X_H₁)F+L_(X_H₂)F。fderiv H 的加法给出向量场加法，再由 fderiv F 的线性推出，F 即使没有可微前提也可使用总化导数，原文光滑对象当然涵盖。全称 F,z 对应算子等式。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.3-FormalSplitting",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第16页；印刷页 103 / 原PDF页 125",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "formalSplitting",
+              "formalExactSplit",
+              "hamiltonianSplittingObservable",
+              "hamiltonianExactObservable"
+            ],
+            "finding": "formalExactSplit 在任意实结合环代数中取 exp(A+B)，formalSplitting 取 exp(A)exp(B)，未增加 AB=BA。指数第 j 系数为 A^j/j!。Hamiltonian 实例的 split 系数为 Σ_(i=0)^k (L_A^i L_B^(k−i)φ)(z)/(i!(k−i)!)，顺序与原显示一致；exact 实例为 L_(A+B)^jφ/j!。这些是定义，不是关于所有非光滑函数的算子加法定理；在原文光滑域用第14条连接。状态流与 pullback 的组合顺序不同，当前定义采用原文形式算子顺序，并未错误声称相反状态组合。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.formalSplitting",
+        "verdict": "PASS",
+        "explanation": "formalExactSplit 在任意实结合环代数中取 exp(A+B)，formalSplitting 取 exp(A)exp(B)，未增加 AB=BA。指数第 j 系数为 A^j/j!。Hamiltonian 实例的 split 系数为 Σ_(i=0)^k (L_A^i L_B^(k−i)φ)(z)/(i!(k−i)!)，顺序与原显示一致；exact 实例为 L_(A+B)^jφ/j!。这些是定义，不是关于所有非光滑函数的算子加法定理；在原文光滑域用第14条连接。状态流与 pullback 的组合顺序不同，当前定义采用原文形式算子顺序，并未错误声称相反状态组合。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.3-ExactExponentialCubic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第17页；印刷页 103 / 原PDF页 125",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "exactExponentialCubic"
+            ],
+            "finding": "任意实结合环代数的 A,B，不设交换性；∀j<4 给出 exp(A+B) 的系数，另合取平方的四个词和立方的八个词展开。常数与一次系数由 j=0,1 实例得到，平方与立方恰对应 1/2、1/6，八个词各出现一次。PowerSeries 语境中余项的次数至少四，不暗中断言范数 O(h⁴) 或解析收敛。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.exactExponentialCubic",
+        "verdict": "PASS",
+        "explanation": "任意实结合环代数的 A,B，不设交换性；∀j<4 给出 exp(A+B) 的系数，另合取平方的四个词和立方的八个词展开。常数与一次系数由 j=0,1 实例得到，平方与立方恰对应 1/2、1/6，八个词各出现一次。PowerSeries 语境中余项的次数至少四，不暗中断言范数 O(h⁴) 或解析收敛。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.3-DifferenceCommutator",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_DISPLAY_TERM_OMITTED",
+          "C_EXTRA_CUBIC_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.3-DifferenceCommutator",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.3",
+          "printed_page": "104",
+          "pdf_page": "126",
+          "statement_latex": "So the difference is\n\\[\\begin{aligned}e^{hA}e^{hB}-e^{h(A+B)}&=\\frac{h^2}{2}(AB-BA)\\\\&\\quad+\\frac{h^3}{6}(2AB^2+2A^2B-BA^2-BAB-B^2A-ABA)+O(h^4)\\\\&=\\frac{h^2}{2}[A,B]+O(h^3),\\end{aligned}\\]\nwhere $[A,B]=AB-BA$ is the commutator of $A$ and $B$.\nFor a splitting method, we have, replacing $A$ by $\\mathcal L_{H_1}$ and $B$ by $\\mathcal L_{H_2}$,\n\\[e^{h\\mathcal L_{H_1}}e^{h\\mathcal L_{H_2}}-e^{h\\mathcal L_H}=\\frac{h^2}{2}[\\mathcal L_{H_1},\\mathcal L_{H_2}]+O(h^3).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$[A,B]=AB-BA$定义合并旧CH03-032；Hamiltonian算子是同一形式代数恒等式的实例；H=H₁+H₂及Lie加法见p.103/PDF125。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.differenceCommutator",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookFormalOperatorDifference_coeff_two"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] 当前摘录合取零次/一次/二次系数，并保留原二次系数辅助定理；原页三次系数尚未写入这些声明，R1判覆盖不完整。完整陈述中的 sorry 不作为本次失败原因。",
+            "[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT06_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:04:52.365030",
+              "before_sha256": "4900ca0b64dc0c57f28fd88769cd8108b0a8f1ccf3f3b960fb298d8d1825c32a",
+              "after_sha256": "5f854aba91b319dd5c7e87f4fcbab3a3863d6b9bf4910f6a7b59855bda86c328",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EAUDIT40_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:36:10.671141",
+              "before_sha256": "5f854aba91b319dd5c7e87f4fcbab3a3863d6b9bf4910f6a7b59855bda86c328",
+              "after_sha256": "9c13b9b1aee97bbf925dbb24272a4c59287591532cf092534e042a6508933fe5",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH05_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT40/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "field": "statement_latex",
+            "detail": "原页 So the difference is 后同一展示式先给 h² 项、h³ 项和 O(h⁴)，再写成 h²[A,B]/2+O(h³)。当前 JSON 只录后一个等式，遗漏中间三次项；此项亦为 EXTRA 明确要求审校的结论。"
+          },
+          {
+            "stage": "C",
+            "field": "differenceCommutator / differenceCommutator_coeff2 / differenceCommutator_hamiltonian",
+            "detail": "一般版和 Hamiltonian 版均只断言 coeff 0、1、2；辅助版只有 coeff 2。没有 EXTRA 所称的三次系数。已有 O(h³) 签名本身正确，但全条加 EXTRA 的覆盖不完整。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第18页；印刷页 104 / 原PDF页 126",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "differenceCommutator",
+              "differenceCommutator_coeff2",
+              "differenceCommutator_hamiltonian"
+            ],
+            "finding": "已逐一核对 differenceCommutator、differenceCommutator_coeff2 与 differenceCommutator_hamiltonian。一般代数版包含差的零、一次系数为零及二次系数 (AB−BA)/2；辅助版仅二次系数；Hamiltonian 版在 n 自由度、A,B,φ 全域 C∞ 下对所有 z 给出同样三项，右边是 (L_A L_Bφ−L_B L_Aφ)(z)/2。它们正确覆盖 JSON 当前摘录的 O(h³) 结论。但 [EXTRA] 明确声称还包含三次系数，三份声明均没有该项；原页同一个差的展示式还给出三次项及 O(h⁴)，JSON 将该行省略。不能把二次系数辅助定理当作三次结论。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.differenceCommutator",
+        "verdict": "FAIL",
+        "explanation": "已逐一核对 differenceCommutator、differenceCommutator_coeff2 与 differenceCommutator_hamiltonian。一般代数版包含差的零、一次系数为零及二次系数 (AB−BA)/2；辅助版仅二次系数；Hamiltonian 版在 n 自由度、A,B,φ 全域 C∞ 下对所有 z 给出同样三项，右边是 (L_A L_Bφ−L_B L_Aφ)(z)/2。它们正确覆盖 JSON 当前摘录的 O(h³) 结论。但 [EXTRA] 明确声称还包含三次系数，三份声明均没有该项；原页同一个差的展示式还给出三次项及 O(h⁴)，JSON 将该行省略。不能把二次系数辅助定理当作三次结论。",
+        "counterexample": null,
+        "suggested_fix": "一般版补充 coeff 3 = (1/6:ℝ) • (2•(A*B^2)+2•(A^2*B)−B*A^2−B*A*B−B^2*A−A*B*A)，乘法保持非交换次序。Hamiltonian 版若也要求三次覆盖，则在原 C∞ 前提下对 φ,z 写出同一算子多项式的实例。保留既有零至二次结论；JSON 恢复原页完整差的展示式。"
+      }
+    },
+    {
+      "source_id": "MD-3.3-DifferenceCubic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第1页（书页104，原PDF 126），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第1小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.differenceCubic; MD.Ch03.differenceCubic_coeff3",
+        "verdict": "PASS",
+        "explanation": "C：differenceCubic对任意环境实代数中的A、B，合取差式0、1次系数为0、2次系数为(AB−BA)/2及完整3次六项系数；differenceCubic_coeff3是同一3次等式的辅助声明。项目指数定义的第n项为A^n/n!，乘法次序为先A后B；没有交换性前提。形式O(h^4)恰为0至3次这些系数约束，不涉及解析收敛。[EXTRA]增加低次合取恢复了完整差式，合理。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.3-LeadingModifiedExponential",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_MATHEMATICAL_ERROR",
+          "ANNOTATION_FALSE_ALARM",
+          "LEAN_SCOPE_RESTRICTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.3-LeadingModifiedExponential",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.3",
+          "printed_page": "105",
+          "pdf_page": "127",
+          "statement_latex": "Because of this, we may interpret the first term in the expansion of the error as itself being derived from a Hamiltonian. This is a crucial observation which suggests an alternative perspective on the error expansion in splitting. The idea is to view the product of exponentials as an exponential:\n\\[e^{hA}e^{hB}=e^{h(A+B+hR)},\\]\nfor some operator $R$. Expanding out the right hand side gives\n\\[\\begin{aligned}e^{h(A+B+hR)}&=\\mathrm{Id}+h(A+B+hR)+\\frac{h^2}{2}(A+B+hR)^2+\\cdots\\\\\n&=\\mathrm{Id}+hA+hB+h^2R+\\frac{h^2}{2}\\bigl(A^2+AB+BA+B^2+h^2R^2+h(A+B)R+hR(A+B)\\bigr)+\\cdots.\\end{aligned}\\]\nComparing this to our expansion for $e^{hA}e^{hB}$, for agreement to $O(h^2)$ we must have\n\\[\\frac12(2AB+A^2+B^2)=R+\\frac12(A^2+AB+BA+B^2)=O(h),\\]\nor\n\\[R=AB-\\frac12(AB+BA)=\\frac12[A,B]+O(h),\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "A、B 为非交换算子，[A,B]=AB−BA；R 可随 h 变化。Lean 只核对形式变量 h 的次数 0、1、2，取 R 的首项 R₀=(AB−BA)/2；不形式化原页全部印刷等式或无限级数收敛。",
+            "保留原页比较式的连续两个等号及末尾 O(h)，不静默改成系数之差。原页括号内含 h²R² 和两个 h 交叉项，整体受 h²/2 乘子作用。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原页比较式把两个二次系数和O(h)用等号相连，一般不成立；保留字面引文，提交人工裁定。交叉项整体已受h²/2乘子作用，不缺1/2。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.leadingModifiedExponential",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookFormalModifiedExponential_matches_product"
+          ],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT06_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:04:52.365030",
+              "before_sha256": "c899a170045791e031c109d355f6e7287a44d2939fe963ab560ebad35f633b0d",
+              "after_sha256": "30a8f70b4e1b05e1f003c77b0661bd116f3694badbb141300d99958b4c179ebc",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH06_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT06/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "A：引文忠实，包括原书比较式的连续两个等号和最后的=O(h)，不得把它静默改写为系数差。该比较式作为一般算子等式不成立，属于原书问题。",
+          "原issues中“展示h³交叉项似缺1/2”不成立：两项h(A+B)R、hR(A+B)均在h²/2的大括号内，已经含有1/2。",
+          "C：声明正确表达R的首项所给出的0、1、2次系数匹配，但不包含原文存在完整R(h)的全阶指数表示及错误的比较式；不能将此声明视作整段逐式形式化。"
+        ],
+        "evidence": [
+          "A：附件第2页（书页105，原PDF 127），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第2小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.leadingModifiedExponential",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：A、B属于同一实代数；n为自然数且n<3，即全部低于3次的系数相等。modifiedGenerator为(A+B)X+CX²；textbookFormalZeroConstantExponential确为零常项形式级数的指数，故C=(AB−BA)/2时结论正确。没有假设完整R(h)存在，更未形式化原书错误的系数比较链。context已披露该限制，但extra_assumptions空列表未列出这一范围缩减；整段原文的数学问题需人工保留处理。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": "取标量A=1、B=0：比较式左侧恒为1/2，不能为O(h)。这不反驳当前Lean的低次匹配命题。",
+        "suggested_fix": "保留原文比较式；另列正确的低次系数推论，并明确这只核对R₀而非完整R(h)存在性。删除缺1/2的误报。"
+      }
+    },
+    {
+      "source_id": "MD-3.3-CommutingFlows",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第3页（书页106，原PDF 128），已与渲染页逐句、逐项比对；数学排版换行及行内/展示形式不计为文字差异。",
+          "C：本次仅使用R2_任务.md第3小节“完整当前Lean”及该小节实际依赖定义；详见audit.explanation。",
+          "附件中的重复页已逐页核对渲染文件摘要相同：第3=4页，第5=6=7=8页，第9=10=11页，第12=13页，第14=15页。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.commutingFlows",
+        "verdict": "PASS",
+        "explanation": "C：量化任意有限维n、Hamiltonian A/B、开放域D、三个时间参数流Φ/Ψ/Χ及η；A/B在D上C∞，Poisson括号在D上恒零。actualFlow含η>0、初值恒等、整段(−η,η)的ODE及D内不变性，不预设复合等于总流。结论对D内全部z及|h|<η/2给出Φ_h∘Ψ_h=Χ_h。J=[0 I;−I 0]及括号dA(X_B)符合标准坐标。光滑性保证局部唯一性；域内不变性保证中间点合法。[EXTRA]这些局部流及光滑域资格合理，∞恢复C∞也合理。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

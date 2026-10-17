@@ -1,0 +1,221 @@
+{
+  "batch": "EAUDIT78",
+  "input_sha256": {
+    "BATCH_EAUDIT78.md": "830504b7668bc43b4c9fb32c1ce47ec3b4fc2dee078451c08a271fe78cc74ba8",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.6-HamiltonianFlowStructures",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "JSON_STALE_LEAN_DESCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.6-HamiltonianFlowStructures",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.6",
+          "printed_page": "127–128",
+          "pdf_page": "149–150",
+          "statement_latex": "The flow of a Hamiltonian system of the form $H=p^TM^{-1}p/2+U(q)$ will preserve all of the following:\n1. The symplectic two-form $\\mathrm dq\\wedge\\mathrm dp$.\n2. The Hamiltonian (i.e., the energy) $H$.\n3. The volume in phase space (as the vector field is divergence free).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原书H=p^T M^{-1}p/2+U(q)，q和p分别为配置与动量，M为质量矩阵，U为势能；PDF150页完整列表共四项。本条按批次约定只摘录第1–3项，第4项为time-reversal symmetry。",
+            "当前Lean采用任意H在开放D上的C²正则性与localFlowC1，完整结论依次为变分方程、辛性、Jacobian行列式1、Hamiltonian能量守恒及可测子集的真实像体积守恒。能量合取已存在。"
+          ],
+          "issues": [
+            {
+              "code": "JSON_STALE_LEAN_DESCRIPTION",
+              "detail": "注释称尚未陈述能量守恒，但当前完整签名已包含∀t∈[0,τ],∀z∈Ω,H(Φ(t,z))=H z。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.hamiltonianFlowStructures",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "Hamiltonian在开放域C²；真实localFlowC1的初值、ODE与局部定义域资格，未假设显式反步。",
+            "[EXTRA] 补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT13_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:24:41.776948",
+              "before_sha256": "be4c01973d74b1024513aa9dc954a553d1bd9ca6ca779efa749b3e8714ef8388",
+              "after_sha256": "00bc96652f524c2013fada812e77e49f991b5aabc8da2242b6164c6182011dca",
+              "changed_fields": [
+                "context_notation",
+                "extra_assumptions"
+              ],
+              "annotation_corrections": {
+                "extra_assumptions": {
+                  "before": [
+                    "原场在开放域C¹，真实局部流、反步与局部定义域资格显式。"
+                  ],
+                  "after": [
+                    "Hamiltonian在开放域C²；真实localFlowC1的初值、ODE与局部定义域资格，未假设显式反步。",
+                    "[EXTRA] 补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。"
+                  ]
+                }
+              },
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH17_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "JSON_STALE_LEAN_DESCRIPTION",
+            "field": "context_notation[1]",
+            "detail": "注释称尚未陈述能量守恒，但当前完整签名已包含∀t∈[0,τ],∀z∈Ω,H(Φ(t,z))=H z。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              9,
+              10
+            ],
+            "original_pdf_pages": [
+              149,
+              150
+            ],
+            "printed_pages": [
+              127,
+              128
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "9": "9beb50f94fd12637744fb0a70c0a3c21484680c924756bce0daeb357a7ccffa8",
+              "10": "d2e74f0550810828717d8ec4bf09f334e9bb6719fdb7d32d32895009a88970c2"
+            },
+            "finding": "p127末句接p128列表，所录第1–3项与原页一致。完整原列表还有第4项time-reversal symmetry，输入context已明确本条只摘1–3项，故未误认为原书仅列三项。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目9 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.hamiltonianFlowStructures"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "逐项展开localFlowC1、J、Jacobian、Hessian与Hamiltonian向量场后，声明量化开放D、Ω⊆D、τ>0、H在D上C²及真实C¹局部流。完整结论有五组：内部时间上的Jacobian变分方程；闭时间区间上的辛性；det=1；H(Φ(t,z))=H z；以及每个可测S⊆Ω的像集合体积守恒。能量结论已经明确在第四个合取中，不能沿用旧注释说它缺失。初值与ODE资格没有预先供应辛性、能量或体积结论；虽然未假设反步公式，ODE局部唯一性仍给固定时刻的单射性。任意C² H是对原机械型H的合理推广；Ω的开放性使各时刻空间全导数有意义，变分式只取内部时间，端点保留空间辛性等结论，域与量词无缺漏。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.hamiltonianFlowStructures",
+        "verdict": "PASS",
+        "explanation": "逐项展开localFlowC1、J、Jacobian、Hessian与Hamiltonian向量场后，声明量化开放D、Ω⊆D、τ>0、H在D上C²及真实C¹局部流。完整结论有五组：内部时间上的Jacobian变分方程；闭时间区间上的辛性；det=1；H(Φ(t,z))=H z；以及每个可测S⊆Ω的像集合体积守恒。能量结论已经明确在第四个合取中，不能沿用旧注释说它缺失。初值与ODE资格没有预先供应辛性、能量或体积结论；虽然未假设反步公式，ODE局部唯一性仍给固定时刻的单射性。任意C² H是对原机械型H的合理推广；Ω的开放性使各时刻空间全导数有意义，变分式只取内部时间，端点保留空间辛性等结论，域与量词无缺漏。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.6-VolumeNotSymplectic",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "JSON_STALE_LEAN_DESCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.6-VolumeNotSymplectic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.6",
+          "printed_page": "128",
+          "pdf_page": "150",
+          "statement_latex": "The phase volume conservation can be seen as a consequence of the symplectic property, but it is a weaker condition. It is possible to construct methods that preserve volume but which are not symplectic, and we can build methods that exactly conserve the energy (as we shall show below).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原文将相空间体积守恒称为辛性的后果及更弱条件，并断言存在保体积但不辛的方法、存在精确守恒能量的方法；能量方法在此处写作as we shall show below。",
+            "当前主声明在四维空间要求C¹、全局单射、所有可测集合的真实像体积保持、det=1且不辛；同一source_id另有volumeNotSymplectic_symplectic_volume，证明资格是C¹全局辛单射，结论是真实集合体积保持。精确守能方法的跨条构造不在本轮给出的Lean材料中。"
+          ],
+          "issues": [
+            {
+              "code": "JSON_STALE_LEAN_DESCRIPTION",
+              "detail": "旧注释遗漏当前主声明的真实集合体积保持和单射性，也遗漏新增的辛单射蕴含体积保持声明。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.volumeNotSymplectic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 补真实可测集合体积保存及单射，保留det=1和非辛见证；其余原句明确跨条映射HamiltonianFlowStructures及ProjectionEnergy，不静默删原文。"
+          ],
+          "statement_scope": "辛C¹全局单射映射的真实体积保持及保体积非辛见证；精确能量方法构造由MD-3.5-ProjectionEnergy承担，Hamiltonian流实例由MD-3.6-HamiltonianFlowStructures承担。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT13_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:24:41.776948",
+              "before_sha256": "7297168c3c98dde9259b1fca9f4895c33759c60292ed0864e60282fbe2197bb8",
+              "after_sha256": "552ec5b7f8fd60d521e587debf38c9bed314235103ec5199215c818306c7a084",
+              "changed_fields": [
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH17_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "JSON_STALE_LEAN_DESCRIPTION",
+            "field": "context_notation[1]",
+            "detail": "旧注释遗漏当前主声明的真实集合体积保持和单射性，也遗漏新增的辛单射蕴含体积保持声明。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              11
+            ],
+            "original_pdf_pages": [
+              150
+            ],
+            "printed_pages": [
+              128
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "11": "d2e74f0550810828717d8ec4bf09f334e9bb6719fdb7d32d32895009a88970c2"
+            },
+            "finding": "p128所引整段一致，包括辛性蕴含体积守恒、严格更弱以及后续精确守能方法的预告。statement_scope已明确将守能构造分流到ProjectionEnergy，本轮不声称核验未提供的跨条声明。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目10 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.volumeNotSymplectic",
+              "MD.Ch03.volumeNotSymplectic_symplectic_volume"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "两个声明全部核对。volumeNotSymplectic在SymplecticCoordinates 2即四维实空间选C¹单射G，明确要求所有可测集合的真实像体积相同、各点det=1且G不辛；它不只是一个行列式条件。第二个volumeNotSymplectic_symplectic_volume对任意n的全局C¹辛单射G给出全部可测集合的像体积守恒，确已覆盖“辛性蕴含体积守恒”。单射性排除重数造成的全局像体积问题，是已明示scope内的合理资格。四维足以提供严格较弱见证；例如按(q₁,q₂,p₁,p₂)取diag(2,1,1,1/2)，其det为1且全局保体积，但两个辛配对缩放分别为2与1/2，故不辛。旧context称仅有det=1且未覆盖其它结论，与当前两个完整签名不符，须更正元数据；不构成现行Lean签名失败。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.volumeNotSymplectic",
+        "verdict": "PASS",
+        "explanation": "两个声明全部核对。volumeNotSymplectic在SymplecticCoordinates 2即四维实空间选C¹单射G，明确要求所有可测集合的真实像体积相同、各点det=1且G不辛；它不只是一个行列式条件。第二个volumeNotSymplectic_symplectic_volume对任意n的全局C¹辛单射G给出全部可测集合的像体积守恒，确已覆盖“辛性蕴含体积守恒”。单射性排除重数造成的全局像体积问题，是已明示scope内的合理资格。四维足以提供严格较弱见证；例如按(q₁,q₂,p₁,p₂)取diag(2,1,1,1/2)，其det为1且全局保体积，但两个辛配对缩放分别为2与1/2，故不辛。旧context称仅有det=1且未覆盖其它结论，与当前两个完整签名不符，须更正元数据；不构成现行Lean签名失败。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

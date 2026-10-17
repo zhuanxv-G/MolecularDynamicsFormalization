@@ -1,0 +1,453 @@
+[
+  {
+    "source_id": "MD-3.2-PoissonBilinearity",
+    "batch": "EAUDIT69",
+    "fields": {
+      "proof_discussion_latex": {
+        "before": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
+        "after": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables):"
+      }
+    },
+    "issue_codes": [
+      "A_DISCUSSION_PUNCTUATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.2-PoissonSkew",
+    "batch": "EAUDIT69",
+    "fields": {
+      "proof_discussion_latex": {
+        "before": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
+        "after": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables):"
+      }
+    },
+    "issue_codes": [
+      "A_DISCUSSION_PUNCTUATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.2-PoissonSelf",
+    "batch": "EAUDIT69",
+    "fields": {
+      "proof_discussion_latex": {
+        "before": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
+        "after": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables):"
+      }
+    },
+    "issue_codes": [
+      "A_DISCUSSION_PUNCTUATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.2-PoissonJacobi",
+    "batch": "EAUDIT69",
+    "fields": {
+      "proof_discussion_latex": {
+        "before": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables).",
+        "after": "The Poisson bracket has the following properties, which are easily verified from the definition (for $g_1,g_2,g_3$ being three arbitrary functions of the phase variables):"
+      }
+    },
+    "issue_codes": [
+      "A_DISCUSSION_PUNCTUATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.3-DifferenceCommutator",
+    "batch": "EAUDIT70",
+    "fields": {
+      "statement_latex": {
+        "before": "So the difference is\n\\[e^{hA}e^{hB}-e^{h(A+B)}=\\frac{h^2}{2}[A,B]+O(h^3),\\]\nwhere $[A,B]=AB-BA$ is the commutator of $A$ and $B$.\nFor a splitting method, we have, replacing $A$ by $\\mathcal L_{H_1}$ and $B$ by $\\mathcal L_{H_2}$,\n\\[e^{h\\mathcal L_{H_1}}e^{h\\mathcal L_{H_2}}-e^{h\\mathcal L_H}=\\frac{h^2}{2}[\\mathcal L_{H_1},\\mathcal L_{H_2}]+O(h^3).\\]",
+        "after": "So the difference is\n\\[\\begin{aligned}e^{hA}e^{hB}-e^{h(A+B)}&=\\frac{h^2}{2}(AB-BA)\\\\&\\quad+\\frac{h^3}{6}(2AB^2+2A^2B-BA^2-BAB-B^2A-ABA)+O(h^4)\\\\&=\\frac{h^2}{2}[A,B]+O(h^3),\\end{aligned}\\]\nwhere $[A,B]=AB-BA$ is the commutator of $A$ and $B$.\nFor a splitting method, we have, replacing $A$ by $\\mathcal L_{H_1}$ and $B$ by $\\mathcal L_{H_2}$,\n\\[e^{h\\mathcal L_{H_1}}e^{h\\mathcal L_{H_2}}-e^{h\\mathcal L_H}=\\frac{h^2}{2}[\\mathcal L_{H_1},\\mathcal L_{H_2}]+O(h^3).\\]"
+      }
+    },
+    "issue_codes": [
+      "A_DISPLAY_TERM_OMITTED",
+      "C_EXTRA_CUBIC_MISSING"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.3.1-SymplecticEulerShadowMatching",
+    "batch": "EAUDIT71",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "同页展示式逐字保存在SymplecticEulerShadow；数值symplectic Euler采用第2章坐标约定。"
+        ],
+        "after": [
+          "同页展示式逐字保存在SymplecticEulerShadow；数值symplectic Euler采用第2章坐标约定。",
+          "本条Hamiltonian截断至h³；matchesHamiltonian(...,4)表示紧初值集上的一步端点O(h⁵)，与原Hamiltonian O(h⁴)区分。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "RESOLVED_ORDER_AND_COORDINATE_QUERY"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.3.2-Strang",
+    "batch": "EAUDIT72",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "本定义为左端真实形式乘积；PDF130右端为exp(t widetilde Z_[1]+t² widetilde Z_[2]+t³ widetilde Z_[3]+⋯)，没有共同外层t。各Z_[j]按指数总幂编号，与(3.5)一致；不假设不同步长log交换。"
+        ],
+        "after": [
+          "本定义为左端真实形式乘积；PDF130右端为exp(t widetilde Z_[1]+t² widetilde Z_[2]+t³ widetilde Z_[3]+⋯)，没有共同外层t。各Z_[j]按指数总幂编号，与(3.5)一致；不假设不同步长log交换。",
+          "原记号Z_[j]按指数总幂编号，与(3.5)一致；旧索引疑误标记删除。当前Lean只定义左端，尚缺整条形式exp/log展开等式。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "ANNOTATION_FALSE_ALARM",
+      "INCOMPLETE_LEAN_CONCLUSION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.3.3-Yoshida4Structure",
+    "batch": "EAUDIT73",
+    "fields": {
+      "statement_latex": {
+        "before": "Yoshida fourth-order scheme (velocity Verlet)",
+        "after": "Yoshida fourth-order scheme (velocity Verlet):"
+      }
+    },
+    "issue_codes": [
+      "SOURCE_PUNCTUATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.4-Thm3.1",
+    "batch": "EAUDIT75",
+    "fields": {
+      "proof_latex": {
+        "before": "Proof First observe that due to smoothness and the assumptions on $\\mathcal B$, we have a global Lipschitz constant\n\\[|H(\\boldsymbol u)-H(\\boldsymbol v)|\\le L\\|\\boldsymbol u-\\boldsymbol v\\|\\]\nfor all $\\boldsymbol u,\\boldsymbol v\\in\\mathcal B$.\nDenote by $\\mathcal F_h^{(k)}$ the flow map of the truncated Hamiltonian expansion $\\bar H_k$,\n\\[\\mathcal F_h^{(k)}\\stackrel{\\mathrm{def}}=\\exp(h\\mathcal L_{\\bar H_k}).\\]\nBy construction, we have\n\\[\\boldsymbol z_{n+1}=\\mathcal F_h^{(k)}(\\boldsymbol z_n)+\\boldsymbol\\eta_n\\]\nwhere $\\|\\boldsymbol\\eta_n\\|\\le Ch^{k+1}$.\nSince $\\mathcal F_h^{(k)}$ preserves its Hamiltonian (3.11), we have\n\\[\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n))=\\widetilde H_k(\\boldsymbol z_n).\\]\nNow\n\\[\\begin{aligned}\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\boldsymbol z_{n+1})-\\bar H_k(\\boldsymbol z_n)\\\\\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\boldsymbol z_{n+1})-\\widetilde H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n))\\\\\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n)+\\boldsymbol\\eta_n)-\\widetilde H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n)).\\end{aligned}\\]\nHence\n\\[|\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)|\\le L\\sum_{n=0}^{\\nu-1}\\|\\boldsymbol\\eta_n\\|\\le L\\nu h^{k+1}.\\]\nWe have $\\nu=\\tau/h$, thus\n\\[|\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)|\\le L\\tau h^k.\\]\nNext observe that\n\\[H=\\bar H_k-h^rH_{(r)}-h^{r+1}H_{(r+1)}-\\cdots-h^kH_{(k)}=\\bar H_k+O(h^r).\\]\nTherefore\n\\[|H(\\boldsymbol z_\\nu)-H(\\boldsymbol z_0)|\\le L\\nu h^{k+1}+O(h^r),\\]\nso that, as long as $\\nu\\le C_2h^{-k+r-1}$, we have\n\\[|H(\\boldsymbol z_\\nu)-H(\\boldsymbol z_0)|\\le O(h^r).\\quad\\square\\]",
+        "after": "Proof First observe that due to smoothness and the assumptions on $\\mathcal B$, we have a global Lipschitz constant\n\\[|H(\\boldsymbol u)-H(\\boldsymbol v)|< L\\|\\boldsymbol u-\\boldsymbol v\\|\\]\nfor all $\\boldsymbol u,\\boldsymbol v\\in\\mathcal B$.\nDenote by $\\mathcal F_h^{(k)}$ the flow map of the truncated Hamiltonian expansion $\\bar H_k$,\n\\[\\mathcal F_h^{(k)}\\stackrel{\\mathrm{def}}=\\exp(h\\mathcal L_{\\bar H_k}).\\]\nBy construction, we have\n\\[\\boldsymbol z_{n+1}=\\mathcal F_h^{(k)}(\\boldsymbol z_n)+\\boldsymbol\\eta_n\\]\nwhere $\\|\\boldsymbol\\eta_n\\|\\le Ch^{k+1}$.\nSince $\\mathcal F_h^{(k)}$ preserves its Hamiltonian (3.11), we have\n\\[\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n))=\\widetilde H_k(\\boldsymbol z_n).\\]\nNow\n\\[\\begin{aligned}\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\boldsymbol z_{n+1})-\\bar H_k(\\boldsymbol z_n)\\\\\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\boldsymbol z_{n+1})-\\widetilde H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n))\\\\\n&=\\sum_{n=0}^{\\nu-1}\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n)+\\boldsymbol\\eta_n)-\\bar H_k(\\mathcal F_h^{(k)}(\\boldsymbol z_n)).\\end{aligned}\\]\nHence\n\\[|\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)|\\le L\\sum_{n=0}^{\\nu-1}\\|\\boldsymbol\\eta_n\\|\\le L\\nu h^{k+1}.\\]\nWe have $\\nu=\\tau/h$, thus\n\\[|\\bar H_k(\\boldsymbol z_\\nu)-\\bar H_k(\\boldsymbol z_0)|\\le L\\tau h^k.\\]\nNext observe that\n\\[H=\\bar H_k-h^rH_{(r)}-h^{r+1}H_{(r+1)}-\\cdots-h^kH_{(k)}=\\bar H_k+O(h^r).\\]\nTherefore\n\\[|H(\\boldsymbol z_\\nu)-H(\\boldsymbol z_0)|\\le L\\nu h^{k+1}+O(h^r),\\]\nso that, as long as $\\nu\\le C_2h^{-k+r-1}$, we have\n\\[|H(\\boldsymbol z_\\nu)-H(\\boldsymbol z_0)|\\le O(h^r).\\quad\\square\\]"
+      }
+    },
+    "issue_codes": [
+      "PRINTED_MATHEMATICAL_AMBIGUITY",
+      "SOURCE_INEQUALITY_TRANSCRIPTION",
+      "SOURCE_ACCENT_TRANSCRIPTION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.4-ScalarVerletShadow4",
+    "batch": "EAUDIT76",
+    "fields": {
+      "statement_latex": {
+        "before": "The modified energy for the Verlet method for a single degree of freedom system with energy $H=p^2/2+U(q)$ is\n\\[\\widetilde H_h=H+\\frac{h^2}{24}(2p^2U''-(U')^2)\n+h^4\\left(\\frac1{720}p^4U''''-\\frac1{120}p^2U'U'''-\\frac1{240}(U')^2U''-\\frac1{60}p^2((U'')^2+U'U''')\\right)+O(h^6).\\]",
+        "after": "The modified energy for the Verlet method for a single degree of freedom system with energy $H=p^2/2+U(q)$ is\n\\[\\widetilde H_h=H+\\frac{h^2}{24}(2p^{T}U''p-(U')^2)\n+h^4\\left(\\frac1{720}p^4U''''-\\frac1{120}p^2U'U'''-\\frac1{240}(U')^2U''-\\frac1{60}p^2((U'')^2+U'U''')\\right)+O(h^6).\\]"
+      },
+      "context_notation": {
+        "before": [
+          "原文脚注1；有限式只定义h⁴截断，O(h⁶)系数匹配和实际流余项不从定义证明，关联VerletModifiedMatching。"
+        ],
+        "after": [
+          "原文脚注1。有限式保留全部原印系数；h²项恢复原印2pᵀU″p，一自由度下可化为2p²U″。",
+          "当前另有scalarVerletShadow4_matching，不能仍仅称实际匹配尚未陈述；该新增声明有谐振子反例。原书h⁴系数疑误须人工确认。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "A_FORMULA_NOT_LITERAL",
+      "SOURCE_SHADOW_COEFFICIENT_SUSPECT",
+      "C_FALSE_ADDED_MATCHING"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.5-VerletOscillatorEnergy",
+    "batch": "EAUDIT77",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "Euler无界另为EulerGrowth；本条保留Verlet谐振子全时间能量界。",
+          "原文此句未写步长稳定性条件；Verlet 的全时间 O(h²) 能量误差界只在稳定步长范围解释。Lean 的 Ω>0、固定0<ρ<2、|hΩ|≤ρ 是对原文省略限定的显式补充，不是原文逐字假设。零初值并无能量波动，故“fluctuates”按典型行为理解；这里只形式化误差上界。"
+        ],
+        "after": [
+          "当前Lean仅给稳定步长范围内的Verlet谐振子全时间能量误差上界；Euler无界分句被注释分流到EulerGrowth，但本任务没有该声明，不计为已审校。",
+          "Ω>0、先固定0<ρ<2、再对|hΩ|≤ρ给统一界是对原书未写资格的显式补充。零初值无能量波动，零步长Euler无增长；原句按典型非退化情形理解须人工确认。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_STABILITY_QUALIFICATION_MISSING",
+      "SOURCE_EULER_DEGENERATE_CASES",
+      "C_SCOPE_MAPPING_UNVERIFIED"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.6-HamiltonianFlowStructures",
+    "batch": "EAUDIT78",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "原书H=p^T M^{-1}p/2+U(q)，q和p分别为配置与动量，M为质量矩阵，U为势能；PDF150页完整列表共四项。本条按批次约定只摘录第1–3项，第4项为time-reversal symmetry。",
+          "当前Lean签名采用任意H在开放域D上的C²正则性及localFlowC1条件；它陈述变分方程、辛性、Jacobian行列式为1及可测集合体积守恒，尚未陈述能量守恒。"
+        ],
+        "after": [
+          "原书H=p^T M^{-1}p/2+U(q)，q和p分别为配置与动量，M为质量矩阵，U为势能；PDF150页完整列表共四项。本条按批次约定只摘录第1–3项，第4项为time-reversal symmetry。",
+          "当前Lean采用任意H在开放D上的C²正则性与localFlowC1，完整结论依次为变分方程、辛性、Jacobian行列式1、Hamiltonian能量守恒及可测子集的真实像体积守恒。能量合取已存在。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "JSON_STALE_LEAN_DESCRIPTION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.6-VolumeNotSymplectic",
+    "batch": "EAUDIT78",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "原文将相空间体积守恒称为辛性的后果及更弱条件，并断言存在保体积但不辛的方法、存在精确守恒能量的方法；能量方法在此处写作as we shall show below。",
+          "当前Lean选用SymplecticCoordinates 2，即四维实相空间，G为C¹映射；它只显式要求各点Jacobian行列式为1及G不辛，未显式陈述全局集合体积守恒，也未覆盖该段其他结论。"
+        ],
+        "after": [
+          "原文将相空间体积守恒称为辛性的后果及更弱条件，并断言存在保体积但不辛的方法、存在精确守恒能量的方法；能量方法在此处写作as we shall show below。",
+          "当前主声明在四维空间要求C¹、全局单射、所有可测集合的真实像体积保持、det=1且不辛；同一source_id另有volumeNotSymplectic_symplectic_volume，证明资格是C¹全局辛单射，结论是真实集合体积保持。精确守能方法的跨条构造不在本轮给出的Lean材料中。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "JSON_STALE_LEAN_DESCRIPTION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+    "batch": "EAUDIT79",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "将p128字面−Rᵀ定义代入反向轨道得到的待审断言；不是p129实际R链式法则的正确版本。"
+        ],
+        "after": [
+          "本条statement为印刷页129的真实坐标及时间链式法则，当前三条Lean均使用R而非Rᵀ；主声明是两种变化的组合。",
+          "印刷页128仅作上下文；其一般involution反转定义含Rᵀ，与后续经典可逆性推导有疑误，不能将此问题误写成当前链式声明采用了转置。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "JSON_STALE_REVERSAL_DESCRIPTION",
+      "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.6.1-ReversedTrajectory",
+    "batch": "EAUDIT79",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "p129正确R链式法则版本；与字面Rᵀ断言分开；γ的真实时间导数明示。"
+        ],
+        "after": [
+          "p129正确R链式法则版本；与字面Rᵀ断言分开；γ的真实时间导数明示。",
+          "当前Lean额外要求R的基矩阵对称，已显式列为[EXTRA]；此受限版本正确，不能据此称原印定义下任意involution的原句已经核验。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.6.2-FlowReversal",
+    "batch": "EAUDIT80",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "$z\\in\\mathbb R^n$；$R$ 同时表示线性 involution 矩阵及映射 $z\\mapsto Rz$，$R^2=I$。",
+          "本页推导针对时间可逆向量场，使用 $f(Rz)=-Rf(z)$；$\\mathcal F_t(z_0)$ 为该 ODE 从 $z_0$ 出发的真实流。"
+        ],
+        "after": [
+          "$z\\in\\mathbb R^n$；$R$ 同时表示线性 involution 矩阵及映射 $z\\mapsto Rz$，$R^2=I$。",
+          "本页推导针对时间可逆向量场，使用 $f(Rz)=-Rf(z)$；$\\mathcal F_t(z_0)$ 为该 ODE 从 $z_0$ 出发的真实流。",
+          "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.6.2-FlowReversalIdentity",
+    "batch": "EAUDIT80",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "$z\\in\\mathbb R^n$；$R$ 同时表示线性 involution 矩阵及映射 $z\\mapsto Rz$，$R^2=I$。",
+          "本页推导针对时间可逆向量场，使用 $f(Rz)=-Rf(z)$；$\\mathcal F_t(z_0)$ 为该 ODE 从 $z_0$ 出发的真实流。",
+          "$\\mathcal F_{-t}=\\mathcal F_t^{-1}$；$\\mathrm{Id}$ 为相空间上的恒等映射。"
+        ],
+        "after": [
+          "$z\\in\\mathbb R^n$；$R$ 同时表示线性 involution 矩阵及映射 $z\\mapsto Rz$，$R^2=I$。",
+          "本页推导针对时间可逆向量场，使用 $f(Rz)=-Rf(z)$；$\\mathcal F_t(z_0)$ 为该 ODE 从 $z_0$ 出发的真实流。",
+          "$\\mathcal F_{-t}=\\mathcal F_t^{-1}$；$\\mathrm{Id}$ 为相空间上的恒等映射。",
+          "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.6.2-SymmetricAffineReversible",
+    "batch": "EAUDIT80",
+    "fields": {
+      "context_notation": {
+        "before": [],
+        "after": [
+          "当前Lean是对原句补足方法资格后的受限修复，额外的G_{−f}(h)=G_f(−h)只要求本固定f。",
+          "采用经典向量场反转f(Rz)=−Rf(z)；原印p128对一般involution写Rᵀ的上下文疑误亦不能据此消除。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_METHOD_CLASS_QUALIFICATION_MISSING"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.6.3-SymplecticSpectrum",
+    "batch": "EAUDIT81",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "原文一般线性辛矩阵的谱结论由本签名表达；指数流公式 F_t(z)=exp(tJA)z 及其谱实例未在本签名中表达，需另给线性流公式与 exp(tJA) 辛性的桥接结果。ζ≠0明确，不假设逆谱。"
+        ],
+        "after": [
+          "一般辛矩阵谱由symplecticSpectrum表达。symplecticSpectrum_linearHamiltonian对实对称K给出exp(tJK)的初值、ODE、辛性及谱实例；倒数共轭由对共轭特征值再次应用一般结论得到。ζ≠0由结论给出，不作为假设。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "STALE_SCOPE_ANNOTATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.6.3-ConjugateIterates",
+    "batch": "EAUDIT81",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "数值effective order的附加断言另列ConjugateOrderPrinted，不靠有限共轭恒等式声称已证。",
+          "实际签名将空间限制为实赋范空间并将χ限制为homeomorphism；原文迭代代数恒等式只需可逆映射。"
+        ],
+        "after": [
+          "主声明为任意类型上的Equiv共轭迭代恒等式；homeomorph版本是保留辅助。",
+          "原书写homomorphism但使用χ⁻¹，需可逆性；此原书用词疑误保留交人工处理。",
+          "有效阶等附加数值断言不属于本条迭代恒等式。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "SOURCE_INVERTIBILITY_AMBIGUITY",
+      "STALE_SCOPE_ANNOTATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.7-CollisionComposition",
+    "batch": "EAUDIT82",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "有限事件序列，实际右到左流/反射复合；不宣称任意多重或无限碰撞解存在唯一。"
+        ],
+        "after": [
+          "当前递归要求times=[Δτr,…,Δτ0]按时间逆序存储；例如两段输出G(Δτ1)∘Rc∘G(Δτ0)。不能传入自然时间顺序列表。",
+          "该声明仅为有限形式组合器；真实事件还需非负时长、总时长τ、实际Hamiltonian流及接触反射资格。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "UNSPECIFIED_TIME_LIST_ORDER",
+      "ABSTRACT_COMBINATOR_SCOPE"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.7.1-PrimitiveDefect",
+    "batch": "EAUDIT83",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "沿用原点固定球、运动球质量1、两球半径均0.5的模型；接触点‖q_c‖=1，讨论步内单碰撞0<τ_c<h。",
+          "H(q,p)=‖p‖²/2+U(q)；P̄=p−(h/2)∇U(q)，q_c=q+τ_cP̄，P̂=P̄+αq_c，Q=q_c+(h−τ_c)P̂，P=P̂−(h/2)∇U(Q)。",
+          "公式的P̄是第一次半kick后的动量。Lean形参pbar却是整步初始动量；二者差是否可吸收到O(h²)须检查局部性，不能靠符号名称断定。"
+        ],
+        "after": [
+          "固定原点球、运动球质量1，两球半径均0.5；‖qc‖=1，0<tc(h)<h。",
+          "Lean形参pbar为固定初始动量；实际公式和碰撞更新均使用pminus=pbar−(h/2)gradient U(initial h).1，对应原书P̄。",
+          "C³势与初态位置趋向qc给出局部统一Taylor控制；能量差加主项的绝对值≤Ch²，等价于原书带负号主项及O(h²)。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "STALE_MOMENTUM_ANNOTATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionTimeRelation",
+    "batch": "EAUDIT84",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "对预先选定的不同粒子索引 i≠j，a(t)=Q_i(t)、b(t)=Q_j(t)、radius=σ_i+σ_j，其中 σ_i、σ_j 为球的核半径，‖·‖为物理空间欧氏范数。",
+          "式(3.19)给出接触候选方程；collisionTimeRelation 取其中 t>0 的候选时刻，不编码最小性、根的存在性或横截性。下一碰撞需要从各不同粒子对的候选根中选择最早的合格正根；原页没有单独陈述横截假设。",
+          "本批 collisionalVerletRelation 仅给定 tc 后的更新分支；collisionalVerletOrder 另以 g 规定首个正接触根，但没有对该数值根规定横截性。"
+        ],
+        "after": [
+          "对预先选定的不同粒子i≠j，a(t)=Qi(t)、b(t)=Qj(t)、radius=σi+σj；范数为物理空间欧氏范数。",
+          "此关系只定义t>0接触候选，不编码二次路径、最早性、根存在或横截性。",
+          "同批physicalCVARelation另外绑定实际粒子二次路径、正质量/半径及最早唯一接触；本条不冒称已实现求根算法。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "STALE_CVA_ANNOTATION"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  },
+  {
+    "source_id": "MD-3.7.3-ModifiedCollisionProjection",
+    "batch": "EAUDIT85",
+    "fields": {
+      "context_notation": {
+        "before": [
+          "原书实际使用有限截断；关系只要求起点终点有同一截断值，不证明投影存在/唯一、不供应BEA或统计准确。"
+        ],
+        "after": [
+          "当前定义仅要求两个状态的同一给定截断值相等。",
+          "没有BEA或Verlet系数资格，不保证投影存在唯一，不证明轨道守恒或统计准确性。"
+        ]
+      }
+    },
+    "issue_codes": [
+      "UNBOUND_MODIFIED_HAMILTONIAN",
+      "INCOMPLETE_STATEMENT_COVERAGE"
+    ],
+    "basis": "采用网站A对原页的排印/省略更正；保留原书数学疑误，未用工作修正版覆盖原文。非全部页面本轮重复视觉核对。"
+  }
+]

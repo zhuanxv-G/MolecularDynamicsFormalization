@@ -1,0 +1,409 @@
+{
+  "batch": "EAUDIT87",
+  "input_sha256": {
+    "BATCH_EAUDIT87.md": "e73c32cf660031fdc6097eb4fc525d26e2a00e2df6033a00f53b51f22e58dee3",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.7-Adjoint",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_INVERTIBILITY_QUALIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.7-Adjoint",
+          "kind": "definition",
+          "label": null,
+          "section": "2.3.7",
+          "printed_page": "81",
+          "pdf_page": "103",
+          "statement_latex": "Given any numerical integrator $\\mathcal G_h$, consider the map\n\\[\\mathcal G_h^\\dagger=\\mathcal G_{-h}^{-1}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "BOOK_INVERTIBILITY_QUALIFICATION",
+              "note": "原书“any numerical integrator”须在负步映射确实可逆的范围理解；如一维显式Euler f(x)=-x、h=1时G_h恒为0，并非置换。已给[EXTRA]是限定版本，保留原书字面，泛称的严格解释交人工。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.bp_adjoint",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]方法G每个可用h为实际Equiv.Perm；只在负步可逆时定义伴随，不能宣称任意步映射天然可逆。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT13_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:16:33.518100",
+              "before_sha256": "4b531db4dd9bf254954826b7d7f9d7a6e8b820ca4533b908c2906f1431d1d6ff",
+              "after_sha256": "5b2af04df8b9d3df19a094f651c79bf50838a94969a9f1b31ea8fba246fdbd65",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH20_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "BOOK_INVERTIBILITY_QUALIFICATION",
+            "field": "extra_assumptions",
+            "explanation": "原书“any numerical integrator”须在负步映射确实可逆的范围理解；如一维显式Euler f(x)=-x、h=1时G_h恒为0，并非置换。已给[EXTRA]是限定版本，保留原书字面，泛称的严格解释交人工。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              5
+            ],
+            "printed_page": "81",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "bp_adjoint"
+            ],
+            "finding": "E任意类型，G为每个实数步长都取实际置换的族；对任意h输出(G(-h)).symm，负号及求逆顺序完全符合定义。全球双射族比教材局部可逆方法强，[EXTRA]已披露，不会把任意非可逆一步法直接变成置换。这个定义只给伴随运算，不主张其精度或所有数值法可逆。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_adjoint",
+        "verdict": "PASS",
+        "explanation": "E任意类型，G为每个实数步长都取实际置换的族；对任意h输出(G(-h)).symm，负号及求逆顺序完全符合定义。全球双射族比教材局部可逆方法强，[EXTRA]已披露，不会把任意非可逆一步法直接变成置换。这个定义只给伴随运算，不主张其精度或所有数值法可逆。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.7-FlowSelfAdjoint",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-2.3.7-FlowSelfAdjoint",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.7",
+          "printed_page": "82",
+          "pdf_page": "104",
+          "statement_latex": "For the flow map $\\mathcal F_h$, we know that the inverse map is precisely $\\mathcal F_{-h}$, so $\\mathcal F_h^\\dagger=\\mathcal F_h$, i.e. the flow map is in the normal sense “self-adjoint,” i.e. symmetric.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch02.flowSelfAdjoint",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookFlowMethod_isSelfAdjoint"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]给定全球Flow群；原文局部流若无全球存在，须在正负步都可用域解释，未宣称所有ODE有全球流。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT13_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:16:33.518100",
+              "before_sha256": "c2c696d89b89ccea6e0d6f647e13c02e56464e2e7fe0afb33f516450b85b3c5e",
+              "after_sha256": "3d780cf8031a6d71f30b921760b3e20a5051355de6c882e7fd8e2322b76e673d",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH20_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              6
+            ],
+            "printed_page": "82",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "flowSelfAdjoint"
+            ],
+            "finding": "任意拓扑空间E及实参数全球Flow F；textbookFlowMethod F h=(F.toHomeomorph h).toEquiv。结论是整族函数相等，对全部实h有(F(-h))⁻¹=F(h)，完整表达自伴随。Flow按标准群作用含义采信；全球存在是已披露[EXTRA]，并非给任意ODE无条件断言全球存在。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.flowSelfAdjoint",
+        "verdict": "PASS",
+        "explanation": "任意拓扑空间E及实参数全球Flow F；textbookFlowMethod F h=(F.toHomeomorph h).toEquiv。结论是整族函数相等，对全部实h有(F(-h))⁻¹=F(h)，完整表达自伴随。Flow按标准群作用含义采信；全球存在是已披露[EXTRA]，并非给任意ODE无条件断言全球存在。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.7-BackwardEuler",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-2.3.7-BackwardEuler",
+          "kind": "definition",
+          "label": null,
+          "section": "2.3.7",
+          "printed_page": "82",
+          "pdf_page": "104",
+          "statement_latex": "The adjoint method is defined by\n\\[\\boldsymbol Z=\\boldsymbol z+hf(\\boldsymbol Z),\\]\nand where the first was explicit, the second is implicit (it is the so-called backward Euler method).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF第104页本句前的 first 指显式Euler：$\\boldsymbol Z=\\boldsymbol z+hf(\\boldsymbol z)$；second 指本条的隐式关系。",
+            "审阅注：这里只给隐式关系，不宣称对所有f、h和起点均存在唯一解；此注不是原书引文。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch02.bp_backwardEulerRelation",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT13_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:16:33.518100",
+              "before_sha256": "61c0fdd632f080e7383a47e0e20e8cddb6ab281389fecdc2c9601b1589cbcc04",
+              "after_sha256": "612716a1c5b43db1bf6c5622e526e302b005bfed0969737bc31fe7660aecc584",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH20_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              7
+            ],
+            "printed_page": "82",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "bp_backwardEulerRelation"
+            ],
+            "finding": "任意有限维Q n=Fin n→ℝ、任意向量场f、实h及输入z、输出w，关系w=z+h•f(w)逐分量正是隐式Euler方程。原文只给隐式方程，context_notation明确不声称存在唯一解，因而用Prop关系而非无条件的输出函数合适；first/second指代与前句显式Euler一致。它不证明全局逆存在，也没有作此断言。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_backwardEulerRelation",
+        "verdict": "PASS",
+        "explanation": "任意有限维Q n=Fin n→ℝ、任意向量场f、实h及输入z、输出w，关系w=z+h•f(w)逐分量正是隐式Euler方程。原文只给隐式方程，context_notation明确不声称存在唯一解，因而用Prop关系而非无条件的输出函数合适；first/second指代与前句显式Euler一致。它不证明全局逆存在，也没有作此断言。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.7-AdjointSymplecticEuler",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "UNRELATED_WORKFLOW_METADATA"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.7-AdjointSymplecticEuler",
+          "kind": "definition",
+          "label": null,
+          "section": "2.3.7",
+          "printed_page": "82",
+          "pdf_page": "104",
+          "statement_latex": "Its adjoint method has a similar structure:\n\\[\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol p,\\tag{2.22}\\]\n\\[\\boldsymbol P=\\boldsymbol p+hF(\\boldsymbol Q).\\tag{2.23}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "其（Its）指PDF第102页（印刷第80页）的辛Euler：(2.18) $\\boldsymbol Q=\\boldsymbol q+hM^{-1}\\boldsymbol P$，(2.19) $\\boldsymbol P=\\boldsymbol p+hF(\\boldsymbol q)$。",
+            "同页机械Hamiltonian为 $H=\\boldsymbol p^TM^{-1}\\boldsymbol p/2+U(\\boldsymbol q)$，M为对角质量矩阵，$F(\\boldsymbol q)=-\\nabla_{\\boldsymbol q}U(\\boldsymbol q)$；小写q,p为初始位置、动量，大写Q,P为步后位置、动量。"
+          ],
+          "issues": [
+            {
+              "code": "UNRELATED_WORKFLOW_METADATA",
+              "note": "原字段混入FlowSelfAdjoint、补材料和暂sorry等工作流备注；这些不是本条数学额外前提。保留真实前提，删除无关工作流文字。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.bp_adjointSymplecticEuler",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 正质量m_i>0、U全局可微；伴随使用实际置换族。坐标定理的sorry不影响本次签名审校。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT13_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:16:33.518100",
+              "before_sha256": "c99075bf6e4e37b8c813a382dd2c7ecf55ec1bbd1eb01625d2b1e320e256e1a6",
+              "after_sha256": "156c5b18df74ce57531f6dfa10463f6bf8f588cafe29a6b3cb3aea968739153a",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH20_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "UNRELATED_WORKFLOW_METADATA",
+            "field": "extra_assumptions",
+            "explanation": "原字段混入FlowSelfAdjoint、补材料和暂sorry等工作流备注；这些不是本条数学额外前提。保留真实前提，删除无关工作流文字。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              8
+            ],
+            "printed_page": "82",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "bp_adjointSymplecticEuler",
+              "bp_adjointSymplecticEuler_coordinates"
+            ],
+            "finding": "同时审查定义bp_adjointSymplecticEuler和定理bp_adjointSymplecticEuler_coordinates。任意Nc，正质量hm、全局可微势hU、任意实h与初态z；伴随是原kick后drift置换在-h处的逆，故正步先drift后kick。结论两个∀i分别为Q_i=q_i+h m_i⁻¹p_i与P_i=p_i-h DU(Q)e_i，求值位置Q及负号均正确。定义中的_hm、_hU虽不参与计算，但定理显式携带这些前提。[EXTRA]充分且合理；sorry只表示未证明，不据此判签名失败。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_adjointSymplecticEuler",
+        "verdict": "PASS",
+        "explanation": "同时审查定义bp_adjointSymplecticEuler和定理bp_adjointSymplecticEuler_coordinates。任意Nc，正质量hm、全局可微势hU、任意实h与初态z；伴随是原kick后drift置换在-h处的逆，故正步先drift后kick。结论两个∀i分别为Q_i=q_i+h m_i⁻¹p_i与P_i=p_i-h DU(Q)e_i，求值位置Q及负号均正确。定义中的_hm、_hU虽不参与计算，但定理显式携带这些前提。[EXTRA]充分且合理；sorry只表示未证明，不据此判签名失败。",
+        "counterexample": null,
+        "suggested_fix": "去掉extra_assumptions中与本条无关的FlowSelfAdjoint工作流备注，只保留数学前提及坐标说明。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.7-AdjointInvolution",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXTRA_MARKER"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.7-AdjointInvolution",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.7",
+          "printed_page": "82",
+          "pdf_page": "104",
+          "statement_latex": "the adjoint of the adjoint is the original method:\n\\[\\mathcal G_h^{\\dagger\\dagger}=[\\mathcal G_{-h}^\\dagger]^{-1}=[\\mathcal G_h^{-1}]^{-1}=\\mathcal G_h.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "EXTRA_MARKER",
+              "note": "当前列出的充分条件未使用要求的[EXTRA]标记；只规范元数据，不把充分条件当成原文逐字假设。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.adjointInvolution",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookAdjointMethod_involutive"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] 实际可逆步方法族Equiv.Perm；负步及双逆确实存在。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT13_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:16:33.518100",
+              "before_sha256": "d97e525eec4e3af6bcfb6f4aaa4e14f5e8ba262686bc8d7bd55958a352c13275",
+              "after_sha256": "fab6bd08500d6ec23cdb0fe1bb0e4e3a2629c255272bfed296ac3ed09a4ba4ec",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH20_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "EXTRA_MARKER",
+            "field": "extra_assumptions",
+            "explanation": "当前列出的充分条件未使用要求的[EXTRA]标记；只规范元数据，不把充分条件当成原文逐字假设。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "pdf": "R3_PAGES.pdf",
+            "attachment_pages": [
+              9
+            ],
+            "printed_page": "82",
+            "finding": "已对照R3_PAGES.pdf指定页的正文、公式、编号、印刷页码及标签；忽略换行排版和等价LaTeX布局。引文的词句、正负号、上下标与复合次序一致，无须改动原文。"
+          },
+          {
+            "phase": "C",
+            "basis": "R3_任务.md本条完整Lean及实际依赖摘录；Mathlib标准定义按任务要求采信。",
+            "declarations": [
+              "adjointInvolution"
+            ],
+            "finding": "E任意类型，G:ℝ→Equiv.Perm E为全实步长实际可逆族；结论是伴随算子连续作用两次后的整族等式。逐h计算为((G(-(-h))).symm).symm=G h，量词、负步长及双逆齐全。全实可逆族为充分[EXTRA]，当前元数据应加统一标记。",
+            "method": "只读语义/签名核对；未编译、未改工程、未补证明，未以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.adjointInvolution",
+        "verdict": "PASS",
+        "explanation": "E任意类型，G:ℝ→Equiv.Perm E为全实步长实际可逆族；结论是伴随算子连续作用两次后的整族等式。逐h计算为((G(-(-h))).symm).symm=G h，量词、负步长及双逆齐全。全实可逆族为充分[EXTRA]，当前元数据应加统一标记。",
+        "counterexample": null,
+        "suggested_fix": "仅为实际全实步长可逆族补[EXTRA]标记。"
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

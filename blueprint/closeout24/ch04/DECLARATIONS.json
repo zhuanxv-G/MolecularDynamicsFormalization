@@ -1,0 +1,3917 @@
+[
+  {
+    "name": "MD.Ch04.linearField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-LinearField",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.eulerFactor",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-EulerFactor",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.scalarEulerStable",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-ScalarEulerStable",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.eulerStabilityRegion",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-EulerRegion",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.oscillatorMatrix",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-OscillatorMatrix",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.eulerImaginaryGrowth",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-EulerImaginaryGrowth",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.eulerImaginaryGrowth_rate",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4-EulerImaginaryGrowth",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.symplecticEulerMatrix",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-SymplecticEulerMatrix",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.symplecticEulerCharacteristic",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-SymplecticEulerCharacteristic",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.prkThreshold",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4-PRKThreshold",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.prkThreshold_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4-PRKThreshold",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.verletStability",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-VerletStability",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.verletStability_zero",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4-VerletStability",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.verletStability_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4-VerletStability",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.symplecticEulerBoundaryPrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4-SymplecticEulerBoundaryPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.symplecticEulerBoundaryPrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4-SymplecticEulerBoundaryPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.verletBoundaryPrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4-VerletBoundaryPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.verletBoundaryPrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4-VerletBoundaryPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.oscillatorSpectrum",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-OscillatorSpectrum",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.symplecticEulerRoots",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-SymplecticEulerRoots",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.symplecticEulerUnitRoots",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-SymplecticEulerUnitRoots",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.symplecticEulerUnitRoots_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-SymplecticEulerUnitRoots",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.symplecticEulerStability",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4-SymplecticEulerStability",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.symplecticEulerStability_complete",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4-SymplecticEulerStability",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.symplecticEulerStability_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4-SymplecticEulerStability",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.printedImplicitRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-PrintedImplicitRelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.printedImplicitRelation_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-PrintedImplicitRelation",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.actualMidpointRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-ActualMidpointRelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.actualMidpointRelation_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-ActualMidpointRelation",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.implicitFactor",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-ImplicitFactor",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.implicitFactor_update",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.1-ImplicitFactor",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.implicitModulus",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-ImplicitModulus",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.implicitModulus_iterates",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.1-ImplicitModulus",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.implicitModulus_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.1-ImplicitModulus",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.printedModifiedFrequency",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-PrintedModifiedFrequency",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.printedModifiedFrequency_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-PrintedModifiedFrequency",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.modifiedFrequencyLimit",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-ModifiedFrequencyLimit",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.midpointFrequencyRatio",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-ModifiedFrequencyLimit",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.modifiedFrequencyRatio_limits",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.1-ModifiedFrequencyLimit",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.mechanicalMidpointRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-MechanicalMidpoint",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.midpointElimination",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.1-MidpointElimination",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.midpointEulerHalfSteps",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.1-MidpointElimination",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.splitHamiltonian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-SplitHamiltonian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.fastVerlet",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-FastVerlet",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.fastVerlet_kick_drift_kick",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-FastVerlet",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.respaTotalized",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-RESPA",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.respa",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-RESPA",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.respaStructure",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.2.1-RESPAStructure",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.respaStructure_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.2.1-RESPAStructure",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.slowMatrix",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-SlowMatrix",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.fastMatrix",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-FastMatrix",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.impulseMatrix",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-ImpulseMatrix",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.impulseDet",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-ImpulseDet",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.impulseDet_eigenvalueProduct",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.2.1-ImpulseDet",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.impulseTrace",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-ImpulseTrace",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.impulseTrace_eigenvalueSum",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.2.1-ImpulseTrace",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.resonancePower",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-ResonancePower",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.resonanceTaylor",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.2.1-ResonanceTaylor",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.resonanceTaylor_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.2.1-ResonanceTaylor",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.resonanceInstability",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.2.1-ResonanceInstability",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.resonanceInstability_realSpectrum",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.2.1-ResonanceInstability",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.resonanceEigenPrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.2.1-ResonanceEigenPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.resonanceEigenPrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.2.1-ResonanceEigenPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.mollifiedAverage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.2-MollifiedAverage",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.mollifiedPotential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.2-MollifiedPotential",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.resonanceLinearRate",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-ResonanceLinearRate",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.resonanceLinearRate_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-ResonanceLinearRate",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.resonanceGrowth",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-ResonanceGrowth",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.resonanceGrowth_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.2.1-ResonanceGrowth",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.mollifiedStructure",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.2.2-MollifiedStructure",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.holonomicRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-HolonomicRelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.timeConstraintDerivative",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-TimeConstraintDerivative",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedSolution",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ConstrainedSolution",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedSolution_generalForce",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ConstrainedSolution",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constraintSet",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ConstraintSet",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constraintSet_regularLevel",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3-ConstraintSet",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constraintSet_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3-ConstraintSet",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.cotangentSet",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-CotangentSet",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constraintJacobian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ConstraintJacobian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.combineConstraints",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ConstraintJacobian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.jacobianActualDerivative",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-JacobianActualDerivative",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.jacobianActualDerivative_curve",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3-JacobianActualDerivative",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constraintDegrees",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ConstraintDegrees",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.flexiblePendulumHamiltonian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-FlexiblePendulumHamiltonian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.restraintPotential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-RestraintPotential",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.restraintForcePrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3-RestraintForcePrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.restraintForcePrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-RestraintForcePrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.constrainedPendulum",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ConstrainedPendulum",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedPendulum_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ConstrainedPendulum",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.constraintCurvature",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ConstraintCurvature",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.reactionMultiplier",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ReactionMultiplier",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.reactionBalance",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ReactionBalance",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.gramPositive",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-GramPositive",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.gramInvertible",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-GramInvertible",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.gramInvertible_multiplier",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3-GramInvertible",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.cotangentInvariant",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-CotangentInvariant",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.reducedFieldRegularity",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3-ReducedFieldRegularity",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.restrictedForm",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.1-RestrictedForm",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.restrictedForm_nondegenerate",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.1-RestrictedForm",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.variational",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.1-VariationalFormula",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.variational_constraints",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.1-VariationalFormula",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.hessianPullbackCancel",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.1-HessianPullbackCancel",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.hessianPullbackCancel_time",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.1-HessianPullbackCancel",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedFlowPullback",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.1-ConstrainedFlowPullback",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.positionEulerPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.2-PositionEulerPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.positionEulerRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.2-PositionEulerForceConvention",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.positionEulerRelation_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.2-PositionEulerForceConvention",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.hiddenEulerError",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.2-HiddenEulerError",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.projectionResidual",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.2-ProjectionResidual",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.projectionEquation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.2-ProjectionResidual",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.projectionResidual_elimination",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.2-ProjectionResidual",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.projectionJacobian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.2-ProjectionJacobian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.projectionNewtonIncrement",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.2-ProjectionJacobian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.newtonConstraint",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.2-NewtonConstraint",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.newtonConstraintSequence",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.2-NewtonConstraint",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.frozenNewtonConstraint",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.2-FrozenNewtonConstraint",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.frozenNewtonConstraint_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.2-FrozenNewtonConstraint",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.newtonQuadratic",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.2-NewtonQuadratic",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.frozenNewtonLinear",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.2-FrozenNewtonLinear",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.projectionScale",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.2-ProjectionScale",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.projectionScale_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.2-ProjectionScale",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.frozenGramPrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.2-FrozenGramPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.frozenGramPrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.2-FrozenGramPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.componentPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.3-ComponentPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.componentPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.3-ComponentPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.componentConstraintStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.3-ComponentConstraintStep",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.componentSweep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.3-ComponentSweep",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.componentPrintedDelta",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.3-ComponentSweep",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.componentPrintedTrajectory",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.3-ComponentSweep",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.componentPrintedIteration",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.3-ComponentSweep",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.componentPrintedStop",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.3-ComponentSweep",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.componentSweep_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.3-ComponentSweep",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.projectedEulerPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-ProjectedEulerPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.projectedEulerRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-ProjectedEulerRelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.projectedEulerRelation_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-ProjectedEulerRelation",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.lemma41",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-Lemma41",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.lemma41_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-Lemma41",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.multiMomentumPullback",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-MultiMomentumPullback",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.projectedEulerPullback",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-ProjectedEulerPullback",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.projectedEulerPullback_intermediate",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.4-ProjectedEulerPullback",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.cotangentMultiplier",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-CotangentMultiplier",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.cotangentMultiplier_hidden",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.4-CotangentMultiplier",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.cotangentProjection",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-CotangentProjection",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.cotangentProjection_gram",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-CotangentProjection",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.cotangentHidden",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-CotangentHidden",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.cotangentRegularity",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-CotangentRegularity",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.cotangentPullback",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-CotangentPullback",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.gramProjectedEuler",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-GramProjectedEuler",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.gramProjectedEuler_general",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-GramProjectedEuler",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.gramProjectedEuler_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.4-GramProjectedEuler",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.shakePositionPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5-SHAKEPositionPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.shakePositionRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5-SHAKEPositionMass",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.shakePositionRelation_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5-SHAKEPositionMass",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.shakeRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5-SHAKEPhase",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rattleRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5-RATTLE",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedOrders",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5-ConstrainedOrders",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedOrders_global",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5-ConstrainedOrders",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedOrders_firstOrderSharp",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5-ConstrainedOrders",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedOrders_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5-ConstrainedOrders",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.rattleSymplectic",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5-RATTLESymplectic",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.staggeredConstraintRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5-StaggeredConstraint",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.staggeredConstraintRelation_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5-StaggeredConstraint",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.shakeRattlePositions",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5-SHAKERATTLEEquivalence",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.shakeRattlePositions_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5-SHAKERATTLEEquivalence",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.shakeElimination",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5-SHAKEElimination",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.shakeElimination_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5-SHAKEElimination",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.shakePositionOrder",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5-SHAKEPositionOrder",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.shakePositionOrder_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5-SHAKEPositionOrder",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.adjointEulerRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5.1-AdjointEuler",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.adjointEuler_inverseRelation",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5.1-AdjointEuler",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.adjointEulerLocalOrder",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5.1-AdjointEuler",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedComposition",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5.1-ConstrainedComposition",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedComposition_circleExample",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5.1-ConstrainedComposition",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedComposition_noConstraints",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5.1-ConstrainedComposition",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedCompositionOrder",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5.1-ConstrainedCompositionOrder",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.momentumProjector",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5.1-MomentumProjector",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.constrainedPotentialFlow",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5.1-ConstrainedPotentialFlow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.geodesicRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5.1-GeodesicRelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.massMetric",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.5.1-GeodesicRelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.geodesicRelation_massMetric",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.5.1-GeodesicRelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.mShakeIteration",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.6-MShakeIteration",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.settleRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.6-SETTLE",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.lincsInverse",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.3.6-LINCSInverse",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.lincsConvergence",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.3.6-LINCSConvergence",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.waterPairPotential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-WaterPairPotential",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.totalMass",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-TotalMass",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.centerMass",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-CenterMass",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.relativePositions",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-RelativePositions",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.relativeWeightedZero",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-RelativeWeightedZero",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.kineticSplit",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-KineticSplit",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.secondMoment",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-SecondMoment",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rotationKinetic",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-RotationKinetic",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rotationTraceIdentity",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-RotationTraceIdentity",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rotationSkew",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-RotationSkew",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.skewMatrix",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-SkewMatrix",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.cross3",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-CrossProduct",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.skewRepresentation",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-SkewRepresentation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.crossMatrix",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-CrossMatrix",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidVelocity",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-RigidVelocity",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.inertiaTensor",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-InertiaTensor",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.crossIdentityFull",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-CrossIdentityFull",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rotationalEnergy",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-RotationalEnergy",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.inertiaSkewIdentity",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-InertiaSkewIdentity",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.inertiaTracePrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4-InertiaTracePrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.inertiaTracePrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4-InertiaTracePrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.inertiaTraceCorrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-InertiaTraceCorrected",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dipolarHamiltonian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-DipolarHamiltonian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dipolarPairPotential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-DipolarPairPotential",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dipolarPairPotential_particles",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-DipolarPairPotential",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dipolarSystemPotential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-DipolarPairPotential",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dipolarRotationalPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-DipolarRotationalPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dipolarRotationalPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-DipolarRotationalPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.rigidHamiltonian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-RigidHamiltonian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.secondMomentDiagonal",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-SecondMomentDiagonal",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rotationBodyEnergy",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-RotationBodyEnergy",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dipolarConstraint",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-DipolarConstraint",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dipolarPotentialSumTotalized",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-DipolarPotentialSum",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dipolarPotentialSum",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-DipolarPotentialSum",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rotationTrajectory",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-RotationTrajectory",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rotationDerivativePrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4-RotationDerivativePrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rotationDerivativePrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4-RotationDerivativePrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.rigidMatrixRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4-RigidMatrixRelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.angularMomentum",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-AngularMomentum",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.bodyMomentum",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-BodyMomentum",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.angularInertia",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-AngularInertia",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.vectorTripleProduct",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-AngularInertia",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.spatialAngularInertia",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-AngularInertia",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.eulerRigidField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-EulerRigidField",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.freeRigidSolution",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-FreeRigidSolution",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidInvariants",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-RigidInvariants",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidPoissonMatrix",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-RigidPoissonMatrix",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidBodyHamiltonian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-RigidPoissonMatrix",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidPoissonMatrix_hamiltonian",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.1-RigidPoissonMatrix",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.poissonDegeneracy",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-PoissonDegeneracy",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.axisRotation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-AxisRotation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.secondAxisPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-SecondAxisPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.secondAxisPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-SecondAxisPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.thirdAxisPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-ThirdAxisPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.thirdAxisPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-ThirdAxisPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.principalAxisField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-PrincipalAxisField",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.principalAxisField_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-PrincipalAxisField",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.printedSpinAxis",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-PrintedSpinAxis",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.printedSpinStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-PrintedSpinStep",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.axisFlow",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.1-AxisFlowFormal",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.axisFlow_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.1-AxisFlowFormal",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.spinPoisson",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.1-SpinPoissonFormal",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidPoissonSkew",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-RigidPoissonSkew",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidHamiltonianField",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.1-RigidHamiltonianField",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidForce",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-RigidForce",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.matrixRot",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-MatrixRot",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidTorque",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-RigidTorque",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dlmPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-DLMPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dlmPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-DLMPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.dlmMassOnly",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-DLMMassOnly",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dlmMassOnly_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-DLMMassOnly",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.driftSpinCommute",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-DriftSpinCommute",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.driftSpinCommute_halves",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.2-DriftSpinCommute",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dlmStructure",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.2-DLMStructureFormal",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dlmStructure_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.2-DLMStructureFormal",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.dlmPrintedStructure",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.2-DLMPrintedStructure",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidSystemState",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-RigidSystemState",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidSystemForce",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-RigidSystemForce",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidSystemTorque",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-RigidSystemTorque",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidSystemKick",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-RigidSystemKick",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidSystemDriftPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-RigidSystemDriftPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidSystemSpinPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-RigidSystemSpinPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dlmPrintedSystem",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-DLMPrintedSystem",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dlmPrintedSystem_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-DLMPrintedSystem",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.systemDriftSpinCommute",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-SystemDriftSpinCommute",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.rigidSystemSymplectic",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-4.4.2-RigidSystemSymplectic",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dlmPrintedSystemStructure",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.dlmPrintedSystemStructure_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.2-DLMPrintedSystemStructure",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch04.exactPlanarRotation",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.1-ExactPlanarRotation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch04.exactPlanarRotation_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-4.4.1-ExactPlanarRotation",
+    "corrected": true
+  }
+]

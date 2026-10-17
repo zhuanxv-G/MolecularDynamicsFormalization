@@ -1,0 +1,276 @@
+[
+  {
+    "source_id": "MD-3.1-ShadowEllipses",
+    "names": [
+      "shadowEllipses"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.2-FiniteLieTaylor",
+    "names": [
+      "lieTaylor"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.2-FlowCoordinates",
+    "names": [
+      "flowCoordinates"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.3-BCHHamiltonianMatching",
+    "names": [
+      "bchHamiltonianMatching"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.3-LeadingModifiedExponential",
+    "names": [
+      "leadingModifiedExponential"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.3-LeadingShadowHamiltonian",
+    "names": [
+      "leadingShadowHamiltonian"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.3.2-DifferentLogsCommute",
+    "names": [
+      "differentLogsCommute"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.3.2-VerletModifiedHamiltonian",
+    "names": [
+      "verletModifiedH"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.3.2-VerletModifiedMatching",
+    "names": [
+      "verletModifiedMatching",
+      "verletModifiedMatching_general"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.3.4-ProcessorEnergyPrinted",
+    "names": [
+      "processorEnergyPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.3.4-TakahashiEffectiveOrder",
+    "names": [
+      "takahashiEffectiveOrder"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.4-AnalyticDefect",
+    "names": [
+      "analyticBEA"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.4-CommutingEnergy",
+    "names": [
+      "commutingEnergy"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.4-EnergySymplecticNoGo",
+    "names": [
+      "energySymplecticNoGo"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.4-OptimalTruncation",
+    "names": [
+      "optimalTruncation"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.4-Thm3.1",
+    "names": [
+      "theorem31"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.5-VerletOscillatorEnergy",
+    "names": [
+      "verletOscillatorEnergy"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.6.2-FlowReversal",
+    "names": [
+      "flowReversal"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.6.2-FlowReversalIdentity",
+    "names": [
+      "flowReversalIdentity"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.6.2-PartitionedAffine",
+    "names": [
+      "partitionedAffine"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.6.2-PartitionedAffinePrinted",
+    "names": [
+      "partitionedAffinePrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.6.2-RKAffine",
+    "names": [
+      "rkAffine"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.6.3-ConjugateIterates",
+    "names": [
+      "conjugateIterates",
+      "conjugateIterates_homeomorph"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.6.3-ConjugateOrderPrinted",
+    "names": [
+      "conjugateOrderPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.6.3-ReversibleVolumeFailure",
+    "names": [
+      "reversibleVolumeFailure"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.7.1-EndImpactThirdOrderPrinted",
+    "names": [
+      "endImpactThirdOrderPrinted"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.7.1-FreeHardSphereHamiltonian",
+    "names": [
+      "freeHardSphereHamiltonian",
+      "freeHardSphereHamiltonian_ballistic",
+      "freeHardSphereHamiltonian_contactAllowed"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.7.1-HardCorePotential",
+    "names": [
+      "hardCorePotential",
+      "hardSphereHamiltonianPrinted",
+      "hardCorePotential_contactAllowed"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.7.1-PrimitiveOrder",
+    "names": [
+      "primitiveOrder"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionalVerletOrder",
+    "names": [
+      "collisionalVerletOrder"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.7.2-CollisionalVerletRelation",
+    "names": [
+      "collisionalVerletRelation",
+      "particleQuadraticPath",
+      "particleVerlet",
+      "particleReflection",
+      "physicalCVARelation"
+    ],
+    "old": false,
+    "new": true
+  },
+  {
+    "source_id": "MD-3.7.3-DecoupledOrder",
+    "names": [
+      "decoupledOrder"
+    ],
+    "old": true,
+    "new": false
+  },
+  {
+    "source_id": "MD-3.7.3-PairForceDecoupling",
+    "names": [
+      "pairForceDecoupling"
+    ],
+    "old": true,
+    "new": false
+  }
+]

@@ -1,168 +1,169 @@
-# 第2章网站审计修复进度
+# 第2章24号最终收口记录
 
-当前160条；网站返回已登记。原页、单文件、公理与章末固定版本检查已验；网站复审待用户提交，导师问题未裁定。
-第6章暂停，不进入第7章；正式库冻结。旧网站PASS只覆盖绑定快照。
-网站PASS 67 / 已修待复审 75 / 待导师 18 / 修复中 0。
+160条；网站PASS 126 / 本地按意见修复4 / 原书疑误相关31条（合并25项） / 摘录问题本地核验0 / 修复中0。
+本轮返回：PASS 59 / FAIL 4 / NEEDS_HUMAN 12。所有原始判定保留；未再送网站，不生成新EAUDIT包。签名PASS与原书疑误可以重叠，不把上述数字作互斥分类。
+当前完整审阅稿、勘误及摘要：docs/review/CH02_{BLUEPRINT,ERRATA,SUMMARY_FOR_MENTOR}.zh-CN.md。
+单文件与逐声明检查：blueprint/closeout24/ch02/errata-05.log；完整check：blueprint/closeout24/ch02/full/CHECK_REPORT.json。
 
-| source_id | 原文审校 | 网站状态 | 本地证明状态 | EAUDIT |
+| source_id | 原文审校 | 网站/本轮处理状态 | 本地证明状态 | 复审批次 |
 |---|---|---|---|---|
-| MD-2-HamiltonianODE | CORRECTED | 待复审 / EAUDIT74 | self-contained | EAUDIT74 |
-| MD-2-Hamiltonian | CORRECTED | 待复审 / EAUDIT74 | self-contained | EAUDIT74 |
-| MD-2-Euler | CORRECTED | 待复审 / EAUDIT74 | self-contained | EAUDIT74 |
-| MD-2-OneStep | CORRECTED | 待复审 / EAUDIT74 | self-contained | EAUDIT74 |
-| MD-2.1-Convergence | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.1-Order | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.1-Error | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.1-Thm2.1 | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.1.2-SecondDerivative | CORRECTED | 待复审 / EAUDIT75 | self-contained | EAUDIT75 |
-| MD-2.1.2-Taylor2 | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.1.2-Taylor2Order | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.2-VerletOrder | CORRECTED | 待复审 / EAUDIT76 | incomplete | EAUDIT76 |
-| MD-2.2.1-Lagrangian | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.1-Admissible | NEEDS_HUMAN | 待导师 / EAUDIT03（原返回NEEDS_HUMAN保留） | self-contained | EAUDIT03 |
-| MD-2.2.1-Action | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.1-Variation | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.1-FirstVariation | APPROVED | 待复审 / EAUDIT77 | incomplete | EAUDIT77 |
-| MD-2.2.1-TaylorPrinted | NEEDS_HUMAN | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.2.1-StationaryAction | APPROVED | 待复审 / EAUDIT77 | incomplete | EAUDIT77 |
-| MD-2.2.1-Parts | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.2.1-EulerLagrange | CORRECTED | 待复审 / EAUDIT77 | incomplete | EAUDIT77 |
-| MD-2.2.1-VariationalDerivativePrinted | CORRECTED | 待复审 / EAUDIT77 | self-contained | EAUDIT77 |
-| MD-2.2.1-StationaryNotMin | CORRECTED | 待导师 / EAUDIT03（原返回FAIL保留） | incomplete | EAUDIT03 |
-| MD-2.2.2-DiscretePath | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.2-DiscreteVelocity | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.2-DiscreteAction | APPROVED | 待导师 / EAUDIT04（原返回FAIL保留） | self-contained | EAUDIT04 |
-| MD-2.2.2-DiscreteStationaryPrinted | APPROVED | 待复审 / EAUDIT78 | self-contained | EAUDIT78 |
-| MD-2.2.2-DiscreteDerivative | CORRECTED | 待复审 / EAUDIT78 | incomplete | EAUDIT78 |
-| MD-2.2.2-DiscreteVerlet | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.2.2-Stormer | CORRECTED | 待复审 / EAUDIT78 | self-contained | EAUDIT78 |
-| MD-2.2.2-VelocityVerlet | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.2-EliminateVelocity | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.2.2-MomentumVerlet | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.2-Leapfrog | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.2-LeapfrogInit | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.2-LeapfrogReconstruct | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.3-ErrorDifference | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.2.3-Consistency | CORRECTED | 待复审 / EAUDIT79 | self-contained | EAUDIT79 |
-| MD-2.2.3-Stability | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.3-ErrorRecursion | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.2.3-ErrorBound | CORRECTED | 待复审 / EAUDIT79 | checked+documented priors | EAUDIT79 |
-| MD-2.2.3-ConsistencyConvergence | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.2.3-ScalarVerlet | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.3-VerletExpansion | CORRECTED | 待复审 / EAUDIT79 | incomplete | EAUDIT79 |
-| MD-2.2.3-ExactExpansion | CORRECTED | 待复审 / EAUDIT79 | incomplete | EAUDIT79 |
-| MD-2.2.3-DefectPrinted | CORRECTED | 待导师 / EAUDIT05（原返回FAIL保留） | incomplete | EAUDIT05 |
-| MD-2.2.3-VerletConsistency | CORRECTED | 待复审 / EAUDIT79 | incomplete | EAUDIT79 |
-| MD-2.2.3-VerletStability | CORRECTED | 待复审 / EAUDIT79 | incomplete | EAUDIT79 |
-| MD-2.2.4-FirstIntegral | CORRECTED | 待复审 / EAUDIT80 | self-contained | EAUDIT80 |
-| MD-2.2.4-IntegralPreserved | CORRECTED | 待复审 / EAUDIT80 | self-contained | EAUDIT80 |
-| MD-2.2.4-EnergyPreserved | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.2.4-AngularMomentum | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.2.4-IntegralMeanValue | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.2.4-IntegralLipschitz | CORRECTED | 待复审 / EAUDIT80 | self-contained | EAUDIT80 |
-| MD-2.2.4-IntegralErrorPrinted | APPROVED | 待导师 / EAUDIT06（原返回FAIL保留） | incomplete | EAUDIT06 |
-| MD-2.3.1-Divergence | APPROVED | 待复审 / EAUDIT81 | self-contained | EAUDIT81 |
-| MD-2.3.1-Liouville | CORRECTED | 待复审 / EAUDIT81 | checked+documented priors | EAUDIT81 |
-| MD-2.3.1-HamiltonDivergence | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.3.1-HamiltonVolume | CORRECTED | 待复审 / EAUDIT81 | checked+documented priors | EAUDIT81 |
-| MD-2.3.1-VolumeChange | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.1-VariationalPrinted | APPROVED | 待导师 / EAUDIT07（原返回FAIL保留） | incomplete | EAUDIT07 |
-| MD-2.3.1-DeterminantODE | CORRECTED | 待复审 / EAUDIT81 | checked+documented priors | EAUDIT81 |
-| MD-2.3.1-DeterminantExponential | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.3.1-FlowDet | CORRECTED | 待复审 / EAUDIT81 | checked+documented priors | EAUDIT81 |
-| MD-2.3.1-LJOscillator | CORRECTED | 待复审 / EAUDIT81 | self-contained | EAUDIT81 |
-| MD-2.3.1-LJBoundedPeriodic | CORRECTED | 待复审 / EAUDIT81 | incomplete | EAUDIT81 |
-| MD-2.3.2-LinearDivergence | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.3.2-LinearEuler | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.2-EulerVolumePrinted | APPROVED | 待导师 / EAUDIT08（原返回FAIL保留） | incomplete | EAUDIT08 |
-| MD-2.3.2-EulerVolumeCounterexample | APPROVED | 待复审 / EAUDIT82 | incomplete | EAUDIT82 |
-| MD-2.3.2-AsymmetricEuler | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.2-AsymmetricJacobian | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.3.2-AsymmetricArea | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.3.3-SymplecticMap | APPROVED | 待复审 / EAUDIT83 | self-contained | EAUDIT83 |
-| MD-2.3.3-OneForm | APPROVED | 待复审 / EAUDIT83 | incomplete | EAUDIT83 |
-| MD-2.3.3-Differential | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.3-CoordinateDifferentials | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.3-Wedge | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.3-SymplecticForm | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.3-FormSumWedges | CORRECTED | 待复审 / EAUDIT83 | incomplete | EAUDIT83 |
-| MD-2.3.3-GeneralTwoForm | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.3-PullbackOne | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.3-PullbackTwo | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.3-PullbackMatrix | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.3-PreservesForm | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.3-SymplecticIffForm | APPROVED | 待复审 / EAUDIT83 | incomplete | EAUDIT83 |
-| MD-2.3.3-SymplecticDet | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.3.3-HamiltonDet | CORRECTED | 待复审 / EAUDIT83 | checked+documented priors | EAUDIT83 |
-| MD-2.3.4-Hessian | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.4-HessianSymmetry | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.3.4-HamiltonVariationalPrinted | APPROVED | 待导师 / EAUDIT10（原返回FAIL保留） | incomplete | EAUDIT10 |
-| MD-2.3.4-MatrixCancellation | APPROVED | 待复审 / EAUDIT84 | incomplete | EAUDIT84 |
-| MD-2.3.4-FormConstant | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.3.4-HamiltonSymplectic | CORRECTED | 待复审 / EAUDIT84 | checked+documented priors | EAUDIT84 |
-| MD-2.3.5-ChainRule | CORRECTED | 待复审 / EAUDIT85 | checked+documented priors | EAUDIT85 |
-| MD-2.3.5-SymplecticComposition | CORRECTED | 待复审 / EAUDIT85 | checked+documented priors | EAUDIT85 |
-| MD-2.3.5-SymplecticInverse | CORRECTED | 待复审 / EAUDIT85 | checked+documented priors | EAUDIT85 |
-| MD-2.3.5-GlobalGroupPrinted | CORRECTED | 待导师 / EAUDIT11（原返回FAIL保留） | incomplete | EAUDIT11 |
-| MD-2.3.6-SymplecticIntegrator | APPROVED | 待复审 / EAUDIT86 | self-contained | EAUDIT86 |
-| MD-2.3.6-SymplecticEuler | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.3.6-KickDifferential | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.3.6-WedgeSelf | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.3.6-SymplecticEulerPreserves | CORRECTED | 待复审 / EAUDIT86 | checked+documented priors | EAUDIT86 |
-| MD-2.3.7-Adjoint | CORRECTED | 待复审 / EAUDIT87 | self-contained | EAUDIT87 |
-| MD-2.3.7-FlowSelfAdjoint | CORRECTED | 待复审 / EAUDIT87 | checked+documented priors | EAUDIT87 |
-| MD-2.3.7-BackwardEuler | CORRECTED | 待复审 / EAUDIT87 | self-contained | EAUDIT87 |
-| MD-2.3.7-EulerAdjoint | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.3.7-AdjointSymplecticEuler | CORRECTED | 待复审 / EAUDIT87 | incomplete | EAUDIT87 |
-| MD-2.3.7-AdjointInvolution | CORRECTED | 待复审 / EAUDIT87 | checked+documented priors | EAUDIT87 |
-| MD-2.4.1-Splitting | CORRECTED | 待复审 / EAUDIT88 | self-contained | EAUDIT88 |
-| MD-2.4.1-FieldAdd | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | — |
-| MD-2.4.1-SplittingLocal | CORRECTED | 待复审 / EAUDIT88 | checked+documented priors | EAUDIT88 |
-| MD-2.4.1-KineticFlow | CORRECTED | 待复审 / EAUDIT88 | self-contained | EAUDIT88 |
-| MD-2.4.1-PotentialFlow | CORRECTED | 待复审 / EAUDIT88 | self-contained | EAUDIT88 |
-| MD-2.4.1-SplitEuler | CORRECTED | 待复审 / EAUDIT88 | checked+documented priors | EAUDIT88 |
-| MD-2.4.1-VerletComposition | CORRECTED | 待复审 / EAUDIT88 | checked+documented priors | EAUDIT88 |
-| MD-2.4.1-VerletSymplectic | CORRECTED | 待复审 / EAUDIT88 | checked+documented priors | EAUDIT88 |
-| MD-2.4.1-SymmetricComposition | CORRECTED | 待复审 / EAUDIT88 | checked+documented priors | EAUDIT88 |
-| MD-2.4.1-SymmetricEven | CORRECTED | 待复审 / EAUDIT89 | incomplete | EAUDIT89 |
-| MD-2.4.2-CompositionSymplectic | CORRECTED | 待复审 / EAUDIT90 | checked+documented priors | EAUDIT90 |
-| MD-2.4.2-CompositionOrder | CORRECTED | 待导师 / EAUDIT16（原返回FAIL保留） | incomplete | EAUDIT16 |
-| MD-2.4.3-HarmonicSplit | CORRECTED | 待复审 / EAUDIT91 | self-contained | EAUDIT91 |
-| MD-2.4.4-ImplicitLocal | CORRECTED | 待复审 / EAUDIT92 | incomplete | EAUDIT92 |
-| MD-2.4.4-BackwardEulerSolve | CORRECTED | 待复审 / EAUDIT92 | incomplete | EAUDIT92 |
-| MD-2.4.4-Newton | CORRECTED | 待复审 / EAUDIT92 | self-contained | EAUDIT92 |
-| MD-2.4.4-NewtonQuadratic | CORRECTED | 待复审 / EAUDIT92 | incomplete | EAUDIT92 |
-| MD-2.4.4-FrozenNewton | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.4.5-Conjugacy | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.4.5-ConjugateIterates | CORRECTED | 待复审 / EAUDIT93 | checked+documented priors | EAUDIT93 |
-| MD-2.4.5-ConjugateLimits | APPROVED | 待导师 / EAUDIT19（原返回NEEDS_HUMAN保留） | checked+documented priors | EAUDIT19 |
-| MD-2.4.5-EulerConjugacy | CORRECTED | 待复审 / EAUDIT93 | incomplete | EAUDIT93 |
-| MD-2.4.5-Processing | CORRECTED | 待复审 / EAUDIT93 | self-contained | EAUDIT93 |
-| MD-2.4.5-ProcessingIterates | CORRECTED | 待复审 / EAUDIT93 | checked+documented priors | EAUDIT93 |
-| MD-2.4.5-ProcessingOrder | CORRECTED | 待复审 / EAUDIT93 | checked+documented priors | EAUDIT93 |
-| MD-2.4.5-EulerEffectiveOrder | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.5.1-RK | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.5.1-RK4 | CORRECTED | 待复审 / EAUDIT94 | self-contained | EAUDIT94 |
-| MD-2.5.1-RK4Order | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.5.1-ExplicitRK | CORRECTED | 待复审 / EAUDIT94 | incomplete | EAUDIT94 |
-| MD-2.5.1-RKSymplectic | APPROVED | 待导师 / EAUDIT20（原返回FAIL保留） | incomplete | EAUDIT20 |
-| MD-2.5.1-GaussFamily | APPROVED | 待导师 / EAUDIT20（原返回FAIL保留） | incomplete | EAUDIT20 |
-| MD-2.5.1-Midpoint | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.5.1-MidpointProperties | APPROVED | 待复审 / EAUDIT94 | incomplete | EAUDIT94 |
-| MD-2.5.1-GaussTwo | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.5.1-GaussTwoOrder | APPROVED | 待复审 / EAUDIT94 | incomplete | EAUDIT94 |
-| MD-2.5.2-PartitionedVerlet | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.5.2-PartitionedReduction | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.5.2-GeneralEuler | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.5.2-GeneralSymplectic | CORRECTED | 待复审 / EAUDIT95 | incomplete | EAUDIT95 |
-| MD-2.5.2-GeneralVerletSymplectic | APPROVED | 待复审 / EAUDIT95 | incomplete | EAUDIT95 |
-| MD-2.5.3-Newmark | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.5.3-NewmarkReduction | APPROVED | 待导师 / EAUDIT22（原返回FAIL保留） | incomplete | EAUDIT22 |
-| MD-2.5.3-NewmarkDamping | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | — |
-| MD-2.5.3-NewmarkNotSymplectic | CORRECTED | 待导师 / EAUDIT22（原返回FAIL保留） | incomplete | EAUDIT22 |
-| MD-2.5.4-MultiTaylor | CORRECTED | 待复审 / EAUDIT96 | self-contained | EAUDIT96 |
-| MD-2.5.4-TIPotential | CORRECTED | 待复审 / EAUDIT96 | self-contained | EAUDIT96 |
-| MD-2.5.4-TIForce | APPROVED | 待导师 / EAUDIT23（原返回FAIL保留） | incomplete | EAUDIT23 |
-| MD-2.5.4-TIOrder | APPROVED | 待导师 / EAUDIT23（原返回FAIL保留） | incomplete | EAUDIT23 |
-| MD-2.5.5-Beeman | APPROVED | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | — |
-| MD-2.5.5-BeemanOrder | APPROVED | 待导师 / EAUDIT24（原返回FAIL保留） | incomplete | EAUDIT24 |
+| MD-2-HamiltonianODE | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT74 |
+| MD-2-Hamiltonian | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT74 |
+| MD-2-Euler | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT74 |
+| MD-2-OneStep | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT74 |
+| MD-2.1-Convergence | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.1-Order | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.1-Error | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.1-Thm2.1 | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.1.2-SecondDerivative | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT75 |
+| MD-2.1.2-Taylor2 | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.1.2-Taylor2Order | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.2-VerletOrder | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT76 |
+| MD-2.2.1-Lagrangian | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.1-Admissible | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | self-contained | 既有返回 |
+| MD-2.2.1-Action | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.1-Variation | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.1-FirstVariation | DRAFT | 网站PASS（EAUDIT复审） | incomplete | EAUDIT77 |
+| MD-2.2.1-TaylorPrinted | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.2.1-StationaryAction | DRAFT | 网站PASS（EAUDIT复审） | incomplete | EAUDIT77 |
+| MD-2.2.1-Parts | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.2.1-EulerLagrange | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT77 |
+| MD-2.2.1-VariationalDerivativePrinted | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | self-contained | EAUDIT77 |
+| MD-2.2.1-StationaryNotMin | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.2.2-DiscretePath | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.2-DiscreteVelocity | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.2-DiscreteAction | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | self-contained | 既有返回 |
+| MD-2.2.2-DiscreteStationaryPrinted | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | self-contained | EAUDIT78 |
+| MD-2.2.2-DiscreteDerivative | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT78 |
+| MD-2.2.2-DiscreteVerlet | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.2.2-Stormer | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT78 |
+| MD-2.2.2-VelocityVerlet | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.2-EliminateVelocity | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.2.2-MomentumVerlet | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.2-Leapfrog | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.2-LeapfrogInit | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.2-LeapfrogReconstruct | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.3-ErrorDifference | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.2.3-Consistency | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | self-contained | EAUDIT79 |
+| MD-2.2.3-Stability | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.3-ErrorRecursion | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.2.3-ErrorBound | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | checked+documented priors | EAUDIT79 |
+| MD-2.2.3-ConsistencyConvergence | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.2.3-ScalarVerlet | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.3-VerletExpansion | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT79 |
+| MD-2.2.3-ExactExpansion | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT79 |
+| MD-2.2.3-DefectPrinted | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.2.3-VerletConsistency | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | incomplete | EAUDIT79 |
+| MD-2.2.3-VerletStability | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT79 |
+| MD-2.2.4-FirstIntegral | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT80 |
+| MD-2.2.4-IntegralPreserved | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT80 |
+| MD-2.2.4-EnergyPreserved | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.2.4-AngularMomentum | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.2.4-IntegralMeanValue | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.2.4-IntegralLipschitz | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT80 |
+| MD-2.2.4-IntegralErrorPrinted | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.3.1-Divergence | DRAFT | 网站PASS（EAUDIT复审） | self-contained | EAUDIT81 |
+| MD-2.3.1-Liouville | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT81 |
+| MD-2.3.1-HamiltonDivergence | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.3.1-HamiltonVolume | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT81 |
+| MD-2.3.1-VolumeChange | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.1-VariationalPrinted | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.3.1-DeterminantODE | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT81 |
+| MD-2.3.1-DeterminantExponential | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.3.1-FlowDet | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT81 |
+| MD-2.3.1-LJOscillator | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT81 |
+| MD-2.3.1-LJBoundedPeriodic | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT81 |
+| MD-2.3.2-LinearDivergence | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.3.2-LinearEuler | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.2-EulerVolumePrinted | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.3.2-EulerVolumeCounterexample | DRAFT | 网站PASS（EAUDIT复审） | incomplete | EAUDIT82 |
+| MD-2.3.2-AsymmetricEuler | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.2-AsymmetricJacobian | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.3.2-AsymmetricArea | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.3.3-SymplecticMap | DRAFT | 网站PASS（EAUDIT复审） | self-contained | EAUDIT83 |
+| MD-2.3.3-OneForm | DRAFT | 网站PASS（EAUDIT复审） | incomplete | EAUDIT83 |
+| MD-2.3.3-Differential | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.3-CoordinateDifferentials | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.3-Wedge | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.3-SymplecticForm | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.3-FormSumWedges | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT83 |
+| MD-2.3.3-GeneralTwoForm | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.3-PullbackOne | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.3-PullbackTwo | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.3-PullbackMatrix | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.3-PreservesForm | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.3-SymplecticIffForm | DRAFT | 网站PASS（EAUDIT复审） | incomplete | EAUDIT83 |
+| MD-2.3.3-SymplecticDet | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.3.3-HamiltonDet | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT83 |
+| MD-2.3.4-Hessian | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.4-HessianSymmetry | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.3.4-HamiltonVariationalPrinted | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.3.4-MatrixCancellation | DRAFT | 网站PASS（EAUDIT复审） | incomplete | EAUDIT84 |
+| MD-2.3.4-FormConstant | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.3.4-HamiltonSymplectic | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | checked+documented priors | EAUDIT84 |
+| MD-2.3.5-ChainRule | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | checked+documented priors | EAUDIT85 |
+| MD-2.3.5-SymplecticComposition | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT85 |
+| MD-2.3.5-SymplecticInverse | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | checked+documented priors | EAUDIT85 |
+| MD-2.3.5-GlobalGroupPrinted | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.3.6-SymplecticIntegrator | DRAFT | 网站PASS（EAUDIT复审） | self-contained | EAUDIT86 |
+| MD-2.3.6-SymplecticEuler | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.3.6-KickDifferential | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.3.6-WedgeSelf | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.3.6-SymplecticEulerPreserves | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT86 |
+| MD-2.3.7-Adjoint | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | self-contained | EAUDIT87 |
+| MD-2.3.7-FlowSelfAdjoint | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT87 |
+| MD-2.3.7-BackwardEuler | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT87 |
+| MD-2.3.7-EulerAdjoint | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.3.7-AdjointSymplecticEuler | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT87 |
+| MD-2.3.7-AdjointInvolution | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT87 |
+| MD-2.4.1-Splitting | CORRECTED | 按网站审校意见修复，本地核验通过（未再送网站） | self-contained | EAUDIT88 |
+| MD-2.4.1-FieldAdd | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | checked+documented priors | 既有返回 |
+| MD-2.4.1-SplittingLocal | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT88 |
+| MD-2.4.1-KineticFlow | CORRECTED | 按网站审校意见修复，本地核验通过（未再送网站） | incomplete | EAUDIT88 |
+| MD-2.4.1-PotentialFlow | CORRECTED | 按网站审校意见修复，本地核验通过（未再送网站） | incomplete | EAUDIT88 |
+| MD-2.4.1-SplitEuler | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT88 |
+| MD-2.4.1-VerletComposition | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT88 |
+| MD-2.4.1-VerletSymplectic | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT88 |
+| MD-2.4.1-SymmetricComposition | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT88 |
+| MD-2.4.1-SymmetricEven | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | incomplete | EAUDIT89 |
+| MD-2.4.2-CompositionSymplectic | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT90 |
+| MD-2.4.2-CompositionOrder | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.4.3-HarmonicSplit | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT91 |
+| MD-2.4.4-ImplicitLocal | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | incomplete | EAUDIT92 |
+| MD-2.4.4-BackwardEulerSolve | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT92 |
+| MD-2.4.4-Newton | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | self-contained | EAUDIT92 |
+| MD-2.4.4-NewtonQuadratic | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT92 |
+| MD-2.4.4-FrozenNewton | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.4.5-Conjugacy | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.4.5-ConjugateIterates | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT93 |
+| MD-2.4.5-ConjugateLimits | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | checked+documented priors | 既有返回 |
+| MD-2.4.5-EulerConjugacy | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT93 |
+| MD-2.4.5-Processing | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT93 |
+| MD-2.4.5-ProcessingIterates | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT93 |
+| MD-2.4.5-ProcessingOrder | CORRECTED | 网站PASS（EAUDIT复审） | checked+documented priors | EAUDIT93 |
+| MD-2.4.5-EulerEffectiveOrder | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.5.1-RK | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.5.1-RK4 | CORRECTED | 按网站审校意见修复，本地核验通过（未再送网站） | self-contained | EAUDIT94 |
+| MD-2.5.1-RK4Order | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.5.1-ExplicitRK | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT94 |
+| MD-2.5.1-RKSymplectic | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.5.1-GaussFamily | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.5.1-Midpoint | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.5.1-MidpointProperties | DRAFT | 网站PASS（EAUDIT复审） | incomplete | EAUDIT94 |
+| MD-2.5.1-GaussTwo | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.5.1-GaussTwoOrder | DRAFT | 网站PASS（EAUDIT复审） | incomplete | EAUDIT94 |
+| MD-2.5.2-PartitionedVerlet | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.5.2-PartitionedReduction | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.5.2-GeneralEuler | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.5.2-GeneralSymplectic | CORRECTED | 网站PASS（EAUDIT复审） | incomplete | EAUDIT95 |
+| MD-2.5.2-GeneralVerletSymplectic | DRAFT | 网站PASS（EAUDIT复审） | incomplete | EAUDIT95 |
+| MD-2.5.3-Newmark | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.5.3-NewmarkReduction | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.5.3-NewmarkDamping | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | incomplete | 既有返回 |
+| MD-2.5.3-NewmarkNotSymplectic | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.5.4-MultiTaylor | CORRECTED | 网站PASS（EAUDIT复审） | self-contained | EAUDIT96 |
+| MD-2.5.4-TIPotential | CORRECTED | 原书疑误/资格待导师；原文与修正版并列 | self-contained | EAUDIT96 |
+| MD-2.5.4-TIForce | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.5.4-TIOrder | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |
+| MD-2.5.5-Beeman | DRAFT | 网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb） | self-contained | 既有返回 |
+| MD-2.5.5-BeemanOrder | DRAFT | 原书疑误/资格待导师；原文与修正版并列 | incomplete | 既有返回 |

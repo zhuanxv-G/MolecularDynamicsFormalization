@@ -1,0 +1,377 @@
+{
+  "batch": "EAUDIT44",
+  "input_sha256": {
+    "BATCH_EAUDIT44.md": "a7b2d07c0b82ee3ae6d6b3eca8129048ab73c6f8ba9a8e7a1ab01f7a9e593a0e",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.2.1-DomainL2",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING",
+          "BOOK_L2_AE_QUALIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.1-DomainL2",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.1",
+          "printed_page": "183",
+          "pdf_page": "204",
+          "statement_latex": "The set of functions from $\\mathcal D\\subset\\mathbb R^m$ to $\\mathbb R$ which satisfy (5.3) is referred to as the space $L^2(\\mathcal D)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.204，式(5.3)：$\\int_{\\mathcal D}\\phi^2(z)\\,d\\omega<\\infty$；原书此处使用 $\\phi$，不是 $\\rho$。"
+          ],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            },
+            {
+              "code": "BOOK_L2_AE_QUALIFICATION",
+              "detail": "原书未显式说明可测性及AE等价类；标准L²解释合理，但原生函数集合上的积分平方根仅为半范数，原书数学资格省略保留供人工确认。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.domainL2",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]Mathlib Lp使用Lebesgue可测函数的AE等价类；书中未写商空间，若不取AE类，所谓范数可能为0而原始函数非零。保留一般D；透明别名复用实际Lp的实例。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT02_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:51:26.481234",
+              "before_sha256": "5b14d53d3ecc891cdc6c25e192ddadefd31f6c9e9dbb3fadeb974646c89c474d",
+              "after_sha256": "db07d8909315a28443eb49c5c8d8134ca979dedfb8226a961d9736a703db2b01",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH04_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页204已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          },
+          {
+            "code": "BOOK_L2_AE_QUALIFICATION",
+            "detail": "原书未显式说明可测性及AE等价类；标准L²解释合理，但原生函数集合上的积分平方根仅为半范数，原书数学资格省略保留供人工确认。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 204,
+            "printed_page": "183",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page204.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 5,
+            "finding": "domainL2对任意n和D采用Lp ℝ 2 (volume.restrict D)，是可测平方可积函数的几乎处处等价类，数学上是合理的标准L²实现。[EXTRA]已披露AE商，然而原句字面是原生函数集合；这是原书的语义省略，不能把商空间静默当作逐字原文。修正方案合理，但忠实字面版与标准解释仍需人工确认。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.domainL2"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "domainL2对任意n和D采用Lp ℝ 2 (volume.restrict D)，是可测平方可积函数的几乎处处等价类，数学上是合理的标准L²实现。[EXTRA]已披露AE商，然而原句字面是原生函数集合；这是原书的语义省略，不能把商空间静默当作逐字原文。修正方案合理，但忠实字面版与标准解释仍需人工确认。",
+        "counterexample": "n=1，D=ℝ；φ=1_{ {0} }与零函数逐点不同，均平方可积且积分平方为0；在Lp中二者是同一元素。",
+        "suggested_fix": "保留原书句子；人工确认标准解释，并在context明确Lebesgue可测及AE商。若需要字面原生函数集合，应另列定义，不能声称其积分半范数是正定范数。"
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-L2Norm",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING",
+          "BOOK_L2_AE_QUALIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.1-L2Norm",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.1",
+          "printed_page": "183",
+          "pdf_page": "204",
+          "statement_latex": "we define the $L^2(\\mathcal D)$ norm by $\\|\\phi\\|_{L^2(\\mathcal D)}\\stackrel{\\rm def}{=}[\\int_{\\mathcal D}\\phi^2(z)\\,d\\omega]^{1/2}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际Lp范数；与原积分公式的等式独立定理，不将定义编译冒称公式已证。"
+          ],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            },
+            {
+              "code": "BOOK_L2_AE_QUALIFICATION",
+              "detail": "原书未显式说明可测性及AE等价类；标准L²解释合理，但原生函数集合上的积分平方根仅为半范数，原书数学资格省略保留供人工确认。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.domainL2Norm",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT02_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:51:26.481234",
+              "before_sha256": "9d485865bb964f6e09b5aaa29e28e8a47c358f39bb1bf72ce2fe8ac3a0dbfb11",
+              "after_sha256": "b423168e85956f512c4c600c57cc292a1e1997a4b7c8dbfe3d64949700b79f3c",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH04_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页204已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          },
+          {
+            "code": "BOOK_L2_AE_QUALIFICATION",
+            "detail": "原书未显式说明可测性及AE等价类；标准L²解释合理，但原生函数集合上的积分平方根仅为半范数，原书数学资格省略保留供人工确认。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 204,
+            "printed_page": "183",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page204.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 6,
+            "finding": "domainL2Norm的g属于先前标准Lp实现的domainL2 n D，定义为其真实范数。按用户允许直接采信Mathlib标准含义，该实L²范数正是积分平方的平方根；不需要额外假设g的可积性或另造范数。所给定义没有独立积分公式定理，不能据此宣称该独立接口已经提供；这不改变定义的数学签名正确性。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.domainL2Norm"
+        ],
+        "verdict": "PASS",
+        "explanation": "domainL2Norm的g属于先前标准Lp实现的domainL2 n D，定义为其真实范数。按用户允许直接采信Mathlib标准含义，该实L²范数正是积分平方的平方根；不需要额外假设g的可积性或另造范数。所给定义没有独立积分公式定理，不能据此宣称该独立接口已经提供；这不改变定义的数学签名正确性。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-L2NormSquare",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.1-L2NormSquare",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.1",
+          "printed_page": "183",
+          "pdf_page": "204",
+          "statement_latex": "Thus $\\|\\phi\\|_{L^2(\\mathcal D)}^2=\\langle\\phi,\\phi\\rangle_{L^2(\\mathcal D)}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际Lp内积到积分桥接，不假设范数积分公式。"
+          ],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.domainL2NormSquare",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT02_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:51:26.481234",
+              "before_sha256": "0bbc6044264c8a525c1e2da29e8b3dc0ff8a05e3c8a567527265969e30fae948",
+              "after_sha256": "8feb6bc495d82481ed6f8870f7054ecda42fbac60f3168ed2cf7eab3728c6239",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH04_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页204已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 204,
+            "printed_page": "183",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page204.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 7,
+            "finding": "对所有n,D及g:domainL2 n D断言domainL2Norm g²=domainL2Inner g g。摘录的inner确为∫_D g(z)g(z)，norm为Lp范数，实值域、平方与自内积的顺序正确；标准Lp资格已包含平方可积性。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.domainL2NormSquare"
+        ],
+        "verdict": "PASS",
+        "explanation": "对所有n,D及g:domainL2 n D断言domainL2Norm g²=domainL2Inner g g。摘录的inner确为∫_D g(z)g(z)，norm为Lp范数，实值域、平方与自内积的顺序正确；标准Lp资格已包含平方可积性。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.1-L2Complete",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING",
+          "BOOK_L2_AE_QUALIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.1-L2Complete",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.1",
+          "printed_page": "183",
+          "pdf_page": "204",
+          "statement_latex": "This is a real Hilbert space or complete inner product space in which, for any $\\phi,\\psi\\in L^2(\\mathcal D)$, the inner product is defined by $\\langle\\phi,\\psi\\rangle_{L^2(\\mathcal D)}\\stackrel{\\rm def}{=}\\int_{\\mathcal D}\\phi(z)\\psi(z)\\,d\\omega$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            },
+            {
+              "code": "BOOK_L2_AE_QUALIFICATION",
+              "detail": "原书未显式说明可测性及AE等价类；标准L²解释合理，但原生函数集合上的积分平方根仅为半范数，原书数学资格省略保留供人工确认。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.domainL2Complete",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]完备结论在AE商L²上；原生函数集合的正定性缺AE资格。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT02_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:51:26.481234",
+              "before_sha256": "488a8082a07280aaf75f7f09e67ed38a546eb410aea0251bc62a7fb18f2012d3",
+              "after_sha256": "1d3f9ac8414ff11433e182bcf7600702337a0b7945bc12589020fcdfb3764ca1",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH04_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页204已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          },
+          {
+            "code": "BOOK_L2_AE_QUALIFICATION",
+            "detail": "原书未显式说明可测性及AE等价类；标准L²解释合理，但原生函数集合上的积分平方根仅为半范数，原书数学资格省略保留供人工确认。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 204,
+            "printed_page": "183",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page204.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 8,
+            "finding": "在domainL2采用标准AE商Lp解释下，∀n,D及所有Cauchy序列u存在同空间极限v的声明正确，等价于该度量空间完备性；Lp的实内积结构与积分自洽。但原书将前述原生函数集合直接称为Hilbert空间，正定性存在AE资格省略。[EXTRA]披露了修正；不能把修正版的正确性等同于原书字面正确性。所引内积积分定义不在本条主声明中，项目在条目7摘录了domainL2Inner，可作配套定义。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.domainL2Complete"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "在domainL2采用标准AE商Lp解释下，∀n,D及所有Cauchy序列u存在同空间极限v的声明正确，等价于该度量空间完备性；Lp的实内积结构与积分自洽。但原书将前述原生函数集合直接称为Hilbert空间，正定性存在AE资格省略。[EXTRA]披露了修正；不能把修正版的正确性等同于原书字面正确性。所引内积积分定义不在本条主声明中，项目在条目7摘录了domainL2Inner，可作配套定义。",
+        "counterexample": "D=ℝ、φ=1_{ {0} }非零而⟨φ,φ⟩=0，故逐点函数集合配该双线性型并非内积空间。",
+        "suggested_fix": "由人工确认以AE商L²作为原书默认解释；保留字面摘录并明确这是资格补充，同时引用domainL2Inner的积分定义。"
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

@@ -1,0 +1,438 @@
+{
+  "batch": "EAUDIT53",
+  "input_sha256": {
+    "BATCH_EAUDIT53.md": "c0466e871ea40c066a5e5faa1c0cfc0afdbd2a52c3aa451ec26c12c3642375e3",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.3.3-MicroMeasure",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PROBABILITY_NORMALIZATION_PREREQUISITES",
+          "MEASURABLE_NOT_COMPUTABLE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.3-MicroMeasure",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.3",
+          "printed_page": "194",
+          "pdf_page": "215",
+          "statement_latex": "Let $d\\mu_E=Z_E^{-1}\\|\\nabla H\\|^{-1}d\\sigma$. We refer to this as the microcanonical probability density and write, for an “appropriate” set $\\mathcal A$, $\\operatorname{Pr}(\\mathcal A)=\\mu_E(\\mathcal A)=\\int_{\\mathcal A} d\\mu_E$. The only requirement for this to make sense is that the set $\\mathcal A$ be a measurable subset of the $H=E$ energy surface, i.e. that it be possible to compute its surface area.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "资格提示（不改原句）：概率解释需要 0<raw 总质量<∞，并沿用光滑 Hamiltonian 背景。可测性是定义域条件，不等价于存在显式面积计算公式。"
+          ],
+          "issues": [
+            {
+              "code": "PROBABILITY_NORMALIZATION_PREREQUISITES",
+              "field": "statement_latex / issues",
+              "category": "source_math",
+              "description": "原书声称“唯一要求”是 A 为可测能级子集；若未在背景另保证 0<Z_E<∞，可测性本身不足以产生概率测度。保留原句并转人工核实隐含的全局资格，不静默添加到原文。"
+            },
+            {
+              "code": "MEASURABLE_NOT_COMPUTABLE",
+              "field": "statement_latex / issues",
+              "category": "source_math",
+              "description": "“可测”与“能够计算其表面积”不是严格等价的数学定义；原书 i.e. 语句保留为解释性原话，不能用作可测性的定义。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.microMeasure",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]总raw质量正且有限是使用概率意义的必要资格；定义用实际ENNReal标量归一化，不把无穷总质量逆值0解释成概率测度。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT11_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:59:47.094333",
+              "before_sha256": "ea3e3ee3a7a9e80d22dcb8fb31f791aa49c08ad652172c7b69f62ada3e930b55",
+              "after_sha256": "97a645e208f2bdf09531812467476986f3a8af7c5250c33b2f070d48d475700a",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R4_PAGES.pdf 附件第12页；本次渲染像素等价组见 .mathcopilot/reviews/ch05_eaudit/R4_evidence/render_groups.json"
+        },
+        "issues": [
+          {
+            "code": "PROBABILITY_NORMALIZATION_PREREQUISITES",
+            "field": "statement_latex / issues",
+            "category": "source_math",
+            "description": "原书声称“唯一要求”是 A 为可测能级子集；若未在背景另保证 0<Z_E<∞，可测性本身不足以产生概率测度。保留原句并转人工核实隐含的全局资格，不静默添加到原文。"
+          },
+          {
+            "code": "MEASURABLE_NOT_COMPUTABLE",
+            "field": "statement_latex / issues",
+            "category": "source_math",
+            "description": "“可测”与“能够计算其表面积”不是严格等价的数学定义；原书 i.e. 语句保留为解释性原话，不能用作可测性的定义。"
+          }
+        ],
+        "evidence": {
+          "inputs": {
+            "task": "R4_任务.md",
+            "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+            "pdf": "R4_PAGES.pdf",
+            "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+            "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+          },
+          "attachment_pages": [
+            12
+          ],
+          "original_pdf_pages": [
+            215
+          ],
+          "printed_pages": [
+            194
+          ],
+          "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+          "rendered_pages": [
+            {
+              "page": 12,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-12.png",
+              "rgb_pixel_sha256": "208cebc6492f909b973e46c0dff2054a9142eaaf6fd9246e854934d731826f70"
+            }
+          ],
+          "text_check": "附件12页（印刷194/PDF215）的 Let、密度式、appropriate 引号、Pr(A)=μ_E(A)=∫_A dμ_E，以及最后整句均忠实；公式的 Z_E^(-1) 和 ‖∇H‖^(-1) 无漏项。",
+          "declaration_checks": [
+            {
+              "lean_decl": "MD.Ch05.microMeasure",
+              "verdict": "PASS",
+              "detail": "n 隐式自然数、H:E n→ℝ、c∈ℝ；返回环境空间上的 Measure，以实际 raw 总质量的 ENNReal 逆标量缩放 microRaw。它是总化的测度定义；声明本身并没有断言对所有 H,c 都是概率测度。"
+            }
+          ],
+          "project_dependency_check": "microRaw 为限制面积的 withDensity，归一化采用其 univ 总质量。0 或∞的总质量均不能经该总化公式产生总质量1；[EXTRA] 的正有限资格与后续 microProbability 的两个质量前提完全相符。连续/光滑 H 背景使能级可测，并使环境测度表示与能级上的积分表示衔接。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microMeasure",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "NEEDS_HUMAN 针对原书“唯一要求”及可测性解释的资格问题。Lean 定义作为一个总化测度通过签名审校，[EXTRA] 也正确声明了概率解释必须有正有限 raw 总质量；不能因此把原书未写出的条件说成已在原句中出现。当前定义的每个值都是测度，而它成为概率测度的范围由第10条严格规定。",
+        "counterexample": "取 H(q,p)=p²/2、c=1，位置 q 取整个ℝ。任意有界能级弧段 A 都可测，但全能级的 raw 总质量为∞，ENNReal 的逆为0，定义所得 microMeasure 是零测度而非概率测度。此例不满足 [EXTRA] 的正有限资格，所否定的是“仅可测性就足够”的无条件读法。",
+        "suggested_fix": "人工确认前文是否已经全局假设 0<Z_E<∞；若未假设，另设带该条件的修正版，原文版继续保留原句及 NEEDS_HUMAN。将表面积可计算性仅作为非正式解释。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.3-MicroProbability",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-5.3.3-MicroProbability",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.3",
+          "printed_page": "195",
+          "pdf_page": "216",
+          "statement_latex": "We have the standard properties of a probability function: $0\\leq\\operatorname{Pr}(\\mathcal A)\\leq1$ for all measurable sets $\\mathcal A$; $\\operatorname{Pr}(\\Sigma_E)=1$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.microProbability",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原H光滑背景及正有限总质量明示；ΣE总概率1也保留，不仅证明ambient univ质量1。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT11_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:59:47.094333",
+              "before_sha256": "aa5334141b9def888ce3e5ee4e861fdd8502dde90928672fcce01c8b0966f253",
+              "after_sha256": "3a124022f49be0b8128afe5c7c9416f2ec1620ba3c275303160a1bee839fbf6a",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT11/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [],
+        "evidence": {
+          "inputs": {
+            "task": "R4_任务.md",
+            "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+            "pdf": "R4_PAGES.pdf",
+            "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+            "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+          },
+          "attachment_pages": [
+            13
+          ],
+          "original_pdf_pages": [
+            216
+          ],
+          "printed_pages": [
+            195
+          ],
+          "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+          "rendered_pages": [
+            {
+              "page": 13,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-13.png",
+              "rgb_pixel_sha256": "8594963a3888b596399cd8eedc6f6e93ca275bcee43b89d5ecc9096f77dcf6a0"
+            }
+          ],
+          "text_check": "附件13页（印刷195/PDF216）开头原句和两个项目符号均已核对；原文的“所有可测 A”及 Pr(Σ_E)=1 两部分均保留。",
+          "declaration_checks": [
+            {
+              "lean_decl": "MD.Ch05.microProbability",
+              "verdict": "PASS",
+              "detail": "∀n,H,c，前提为 H 的 C¹、raw 总质量>0、raw 总质量<⊤。三部分结论为 ambient univ 质量1、energySurface H c 质量1，以及所有环境集合 A 的质量介于0和1。没有遗漏能级总概率1。"
+            }
+          ],
+          "project_dependency_check": "H 连续保证 energySurface 闭且可测。microRaw 绝对连续于限制在该能级的面积，故能级补集质量0；microMeasure 使用同一 raw 总质量归一化。以上性质与给出的代码中的对象一致。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microProbability",
+        "verdict": "PASS",
+        "explanation": "PASS。两个正有限质量前提保证逆标量合法，闭能级及支持性质保证能级本身的质量为1。Measure 的集合函数对所有集合按外测度取值，因此把界限推广到任意 A 是正确加强，包含原文所有可测子集。[EXTRA] 完整登记了这些资格；没有靠缺失的证明将签名判为失败。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.3.3-LowerDimensionNull",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "AMBIENT_NULL_CLAUSE_NOT_COVERED",
+          "DIMENSION_REQUIRES_REGULAR_VALUE",
+          "LOWER_DIMENSION_MEANING_UNSPECIFIED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.3-LowerDimensionNull",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.3.3",
+          "printed_page": "195",
+          "pdf_page": "216",
+          "statement_latex": "We also note that lower order objects such as a point or a curve in $\\mathbb R^2$, or a surface in $\\mathbb R^3$, have zero measure with respect to Lebesgue measure for the ambient space. Similarly, for a Hamiltonian system with $N_d$ degrees of freedom, the energy surface is of dimension $2N_d-1$ and the probability measure of sets of lower dimension than this will vanish.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原书维数及低维零测措辞保留待人工确认；当前 Lean 只处理正则水平集以及 C¹ 可数紧参数像。原文第一句的一般环境低维零测尚缺 d<n、无需能级限制的独立声明。"
+          ],
+          "issues": [
+            {
+              "code": "AMBIENT_NULL_CLAUSE_NOT_COVERED",
+              "field": "lean_decl / extra_assumptions",
+              "category": "lean_scope",
+              "description": "本条原文第一句要求一般环境 Lebesgue 低维对象零测。现有唯一 volume 结论同时要求 d+1<n 且像集位于一个指定能级，未覆盖原文 R² 曲线(d=1,n=2) 或 R³ 曲面(d=2,n=3)。此为完整结论覆盖缺口，不是 sorry 问题。"
+            },
+            {
+              "code": "DIMENSION_REQUIRES_REGULAR_VALUE",
+              "field": "statement_latex / issues",
+              "category": "source_math",
+              "description": "原文将能量面维数直接写作2N_d−1；该断言需正则水平集资格，临界能级未必具有此维数。现有 Lean 已加正则性，但原文疑误仍需保留并转人工。"
+            },
+            {
+              "code": "LOWER_DIMENSION_MEANING_UNSPECIFIED",
+              "field": "statement_latex / context_notation",
+              "category": "source_math",
+              "description": "原文未界定 curve、surface 和 lower dimension 的正则性或维数概念；不能自动理解为任意拓扑低维集合。Lean 的 C¹ 可数紧参数块是一种明确且正确的受限版本。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.lowerDimensionNull",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]低维光滑参数化的紧像、正则C¹能量面，维数严格小于能量面；未将任意“拓扑低维集合”自动视为零测。",
+            "[EXTRA] 保留紧面子引理，新增无需全能量面紧性的可数紧参数块零测推广，以及正则水平集局部同胚于开ℝ^(n−1)的维数结论（相空间n=2N_d）。环境Lebesgue零测也在本批同列。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT11_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:59:47.094333",
+              "before_sha256": "5f6e1c75c04a88778e013afcaee78058e0e0a72b648c0bced19878846979a332",
+              "after_sha256": "f625570e130cfe766eca6bbc30c8c44f323c6273723b4e8113393dcaff30e77a",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R4_PAGES.pdf 附件第14页；本次渲染像素等价组见 .mathcopilot/reviews/ch05_eaudit/R4_evidence/render_groups.json"
+        },
+        "issues": [
+          {
+            "code": "AMBIENT_NULL_CLAUSE_NOT_COVERED",
+            "field": "lean_decl / extra_assumptions",
+            "category": "lean_scope",
+            "description": "本条原文第一句要求一般环境 Lebesgue 低维对象零测。现有唯一 volume 结论同时要求 d+1<n 且像集位于一个指定能级，未覆盖原文 R² 曲线(d=1,n=2) 或 R³ 曲面(d=2,n=3)。此为完整结论覆盖缺口，不是 sorry 问题。"
+          },
+          {
+            "code": "DIMENSION_REQUIRES_REGULAR_VALUE",
+            "field": "statement_latex / issues",
+            "category": "source_math",
+            "description": "原文将能量面维数直接写作2N_d−1；该断言需正则水平集资格，临界能级未必具有此维数。现有 Lean 已加正则性，但原文疑误仍需保留并转人工。"
+          },
+          {
+            "code": "LOWER_DIMENSION_MEANING_UNSPECIFIED",
+            "field": "statement_latex / context_notation",
+            "category": "source_math",
+            "description": "原文未界定 curve、surface 和 lower dimension 的正则性或维数概念；不能自动理解为任意拓扑低维集合。Lean 的 C¹ 可数紧参数块是一种明确且正确的受限版本。"
+          }
+        ],
+        "evidence": {
+          "inputs": {
+            "task": "R4_任务.md",
+            "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+            "pdf": "R4_PAGES.pdf",
+            "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+            "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+          },
+          "attachment_pages": [
+            14
+          ],
+          "original_pdf_pages": [
+            216
+          ],
+          "printed_pages": [
+            195
+          ],
+          "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+          "rendered_pages": [
+            {
+              "page": 14,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-14.png",
+              "rgb_pixel_sha256": "8594963a3888b596399cd8eedc6f6e93ca275bcee43b89d5ecc9096f77dcf6a0"
+            }
+          ],
+          "text_check": "附件14页与附件13页渲染相同。两句原文逐字一致，特别包括第一句的 R² 曲线及 R³ 曲面，也包括第二句的能级维数与微正则零概率；未删去前半句。",
+          "declaration_checks": [
+            {
+              "lean_decl": "MD.Ch05.lowerDimensionNull",
+              "verdict": "PASS",
+              "detail": "∀n,d,H,c,g,K；d+1<n，H 为 C¹，regularEnergy H c，g:E d→E n 为 C¹，K 紧，g(K)⊂能级；结论为 microMeasure(g(K))=0。条件精确表达 d<n−1 的光滑紧像情形。"
+            },
+            {
+              "lean_decl": "MD.Ch05.lowerDimensionNull_countable",
+              "verdict": "PASS",
+              "detail": "同一维数限制 d+1<n；H 为 C¹且仅要求能级上梯度非零，不要求全能级紧。每个 g k 为全空间 C¹，K k 紧且像在能级；结论同时给出可数并的 microMeasure 和环境 volume 为0。数学正确，但此 volume 子结论范围仍严格小于一般 d<n 的环境零测断言。"
+            },
+            {
+              "lean_decl": "MD.Ch05.lowerDimensionNull_level_dimension",
+              "verdict": "PASS",
+              "detail": "n>0、H 为 C¹、能级梯度非零；每个能级点有环境开邻域 U，且该片能级与 E(n−1) 的某个开集 V 同胚。完整表达正则水平集的局部维数，含 n=1 情形；不是任意临界能级的维数结论。"
+            }
+          ],
+          "project_dependency_check": "surfaceMeasure 使用(n−1)维面积，C¹紧参数像在 d<n−1 时该面积为0，withDensity 及常数缩放保留零测性。regularEnergy 的紧性和正有限总质量仅在第一条引理中；countable 与 level_dimension 未调用它。countable 不保证归一化非退化，因此其结论是测度零结论，不单独证明所得 measure 为概率。",
+          "scope_check": {
+            "existing_declarations": "3条签名分别通过；可数版本的环境零测仅在 d<n−1 且像位于能级时有效。",
+            "uncovered_original_clause": "一般 R² 中曲线、R³ 中曲面相对环境 Lebesgue 测度的零测性。",
+            "source_math_disposition": "保留原文，正则性与维数解释转 NEEDS_HUMAN；整条签名覆盖判 FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.lowerDimensionNull",
+        "verdict": "FAIL",
+        "explanation": "FAIL（整条原文的完整覆盖），同时原书的未限定维数语言需人工确认。三个现有 Lean 声明本身均数学正确，且第二条确有环境 volume=0；但这只覆盖位于能级且 d<n−1 的集合，不能冒称原文第一句的一般环境低维零测已覆盖。n=2,d=1 的曲线及 n=3,d=2 的曲面都不满足其严格维数前提，而它们恰是原文列举对象。第二句的正则能级、光滑低维零测已有合理受限实现；该部分通过不能补上第一句的缺口。",
+        "counterexample": "覆盖缺口见光滑直线 g(t)=(t,0)⊂ℝ²，或光滑平面 g(s,t)=(s,t,0)⊂ℝ³：它们环境 Lebesgue 零测，但分别对应 d+1=n，无法实例化当前 countable 声明。这是缺少覆盖的见证，不是否定现有三个定理。针对原文无条件能级维数，取一自由度 H(q,p)=q²+p²、E=0，能级只有一点，维数0而非2·1−1=1；它不满足 Lean 的正则性前提。",
+        "suggested_fix": "另列一般环境零测声明：∀n,d，d<n，∀g:ℕ→E d→E n 及紧 K k，若每个 g k 为 C¹，则 volume(⋃k,g k  K k)=0；该声明无需 H、c 或像集位于能级的前提，即可覆盖原文光滑曲线/曲面的例子。保留当前三个声明，并将正则能级及“低维”的精确解释登记为修正版范围；原书字面句子保留 NEEDS_HUMAN。本次不编辑工程、不补证明。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.3-MicroAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_UNMARKED_OMISSIONS"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.3-MicroAverage",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.3",
+          "printed_page": "195",
+          "pdf_page": "216",
+          "statement_latex": "As we mentioned in motivating the microcanonical distribution, we could alternatively view microcanonical averages as integrals with respect to the singular measure on the ambient space $\\mathcal D$ defined by $\\rho'_Ed\\omega=Z_E^{-1}\\delta[H-E]d\\omega$, where $\\delta$ represents the Dirac delta function. The notation $d\\omega$ represents the volume element in the Euclidean space defined by all coordinates and momenta. This is the more common definition of the microcanonical distribution encountered in physics treatments.\n\nRegardless of which formulation is adopted, we may use the probability measure to compute expectations (averages) of (suitable) functions defined on the phase space. We write such an expectation as\n\\[\\operatorname{Av}_{H=E}(g)=\\int_{\\Sigma_E}g(z)d\\mu_E=\\int_{\\mathcal D}g(z)\\rho'_Ed\\omega.\\]\nIncidentally, any such function is referred to as an observable function (or, simply, an observable) of the system in this context.\n\nAs shorthand, where the underlying space and probability density are assumed, one may write such an average more simply as $\\operatorname{Av}_{H=E}(g)=\\langle g\\rangle$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原书 δ 为 Dirac delta 记号，dω 为全部坐标与动量的欧氏体积元；Lean 使用能量面上逆梯度密度的归一化奇异测度。附加定理已陈述 C∞ 紧支撑测试函数的面积等式与薄壳极限；本次只审校其签名，不声称其中 sorry 的 coarea 证明已完成。"
+          ],
+          "issues": [
+            {
+              "stage": "A",
+              "code": "SOURCE_UNMARKED_OMISSIONS",
+              "description": "statement_latex 在 δ 定义后遗漏 where δ...physics treatments 三句，平均公式后遗漏 Incidentally...context 一句，却直接拼接成连续原文；已恢复这些原文，并消除 context_notation 将已存在的 coarea 定理误说成未陈述的歧义。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.microAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 补曲面限制逆梯度积分等式，并以真实对称薄壳积分比极限表达归一化δ配对；紧正则能量带控制尾部，不把δ当普通Lebesgue函数或同测度重命名。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT11_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:59:47.094333",
+              "before_sha256": "0d29f1ea0f1598c966a83dd8aa0ba70929926c814996bf987e4b94835f14d552",
+              "after_sha256": "d2f862a709b0928e4859f8cc91d7151d372c8dc20534ad0c1384dff2489b16a2",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH16_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R5: verified against R5_PAGES.pdf rendered original pages and extracted text; attachment page numbers in this review evidence."
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "SOURCE_UNMARKED_OMISSIONS",
+            "description": "statement_latex 在 δ 定义后遗漏 where δ...physics treatments 三句，平均公式后遗漏 Incidentally...context 一句，却直接拼接成连续原文；已恢复这些原文，并消除 context_notation 将已存在的 coarea 定理误说成未陈述的歧义。"
+          }
+        ],
+        "evidence": {
+          "attachment_pages": [
+            1
+          ],
+          "printed_page": "195",
+          "pdf_page": "216",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microAverage",
+        "verdict": "PASS",
+        "explanation": "对象为 n 维实欧氏空间，H,c,g 的类型正确；average 是实际 Bochner 积分，microRaw 是能量面上归一化 Hausdorff 面积的逆梯度密度，microMeasure 用总质量归一化，并非把 Dirac δ 当普通函数。定义在任意 H,c 上总化；只有正有限总质量时才解释为概率平均。附加定理明确 n>0、H∈C²、非空紧正则能量面及正有限原始质量，并进一步要求整个闭能量带紧且无临界点；φ 为全局 C∞ 紧支撑函数。完整结论既有曲面积分等式，也有正 ε 趋零的真实体积薄壳积分比极限。紧正则能量带足以排除远端薄壳质量，归一化使分子分母的 2ε 因子抵消；签名合理。该定理只覆盖所列测试函数，不宣称所有可测 g 都有 δ 配对极限。未检查或补写 sorry 证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

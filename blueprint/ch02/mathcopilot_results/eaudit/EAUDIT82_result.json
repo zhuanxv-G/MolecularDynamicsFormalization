@@ -1,0 +1,51 @@
+{
+  "batch": "EAUDIT82",
+  "input_sha256": {
+    "BATCH_EAUDIT82.md": "200338d3e61899c04930d781b2909aabf7ba656dc17d3d25f587a9c2c664d0b4",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.2-EulerVolumeCounterexample",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              14
+            ],
+            "printed_page": "75",
+            "original_pdf_page": "97",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "印刷75页关于Euler一般不保体积的两句逐字一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.eulerVolumeCounterexample",
+              "MD.Ch02.eulerVolumeCounterexample_det_only"
+            ],
+            "finding": "印刷75页关于Euler一般不保体积的两句逐字一致。linearEuler=I+hS。主定理要求一个固定二维实矩阵S满足trace S=0，同时对每个非零实h有|det(I+hS)|≠1，确实区别真实体积与带符号行列式。辅定理只断言det≠1，并未冒称单凭它即可推出体积不保。取S=[[0,1],[-1,0]]，trace=0且det(I+hS)=1+h²>1，为两个声明的共同见证；这说明新增绝对值版本陈述正确。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.eulerVolumeCounterexample",
+          "MD.Ch02.eulerVolumeCounterexample_det_only"
+        ],
+        "verdict": "PASS",
+        "explanation": "印刷75页关于Euler一般不保体积的两句逐字一致。linearEuler=I+hS。主定理要求一个固定二维实矩阵S满足trace S=0，同时对每个非零实h有|det(I+hS)|≠1，确实区别真实体积与带符号行列式。辅定理只断言det≠1，并未冒称单凭它即可推出体积不保。取S=[[0,1],[-1,0]]，trace=0且det(I+hS)=1+h²>1，为两个声明的共同见证；这说明新增绝对值版本陈述正确。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": "作为Euler保体积一般性断言的反例见证，可取S=[[0,1],[-1,0]]；trace(S)=0，det(I+hS)=1+h²，故对每个h≠0其绝对值严格大于1。两个待审Lean存在性陈述本身没有反例。",
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

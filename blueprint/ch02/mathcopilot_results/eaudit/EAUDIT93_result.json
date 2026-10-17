@@ -1,0 +1,111 @@
+{
+  "batch": "EAUDIT93",
+  "input_sha256": {
+    "BATCH_EAUDIT93.md": "81e5d45df2052e8e135dab2793515069d0ca8192054b31389903016752506928",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.4.5-ConjugateIterates",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R4_PAGES.pdf 附件第11页；书面页码88。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.conjugateIterates",
+        "verdict": "PASS",
+        "explanation": "χ为实际Homeomorph，A、B为同一E上的自映射，假设A=χ⁻¹∘B∘χ；对任意自然数n（包括0），结论为函数等式A^[n]=χ⁻¹∘B^[n]∘χ。抵消方向和复合顺序正确。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.5-EulerConjugacy",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R4_PAGES.pdf 附件第12页；书面页码88。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.eulerConjugacy；MD.Ch02.eulerConjugacy_homeomorph",
+        "verdict": "PASS",
+        "explanation": "同时审查代数恒等式与homeomorph版本。kick记为K、drift为D，Euler=D_h∘K_h；K_(h/2)∘Euler∘K_(-h/2)=K_(h/2)∘D_h∘K_(h/2)=Verlet。后一定理取χ=K_(-h/2)，连续力保证正负kick连续且互逆；正质量已明列。所有n,m,U,h量词及共轭方向正确。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.5-Processing",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R4_PAGES.pdf 附件第13页；书面页码88。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.bp_processedIterate；MD.Ch02.processingData",
+        "verdict": "PASS",
+        "explanation": "bp_processedIterate为χ_h⁻¹(B_h^[n](χ_h z₀))，先预处理再迭代再后处理；n=0也恢复z₀。processingData增加共同实际ODE流F、共轭关系、0<s<r、G的至少r阶及B的确切s阶局部误差资格。属于原文所假设的数据，未凭共轭无条件推出任意提高阶数。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.5-ProcessingIterates",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R4_PAGES.pdf 附件第14页；书面页码88。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.processingIterates",
+        "verdict": "PASS",
+        "explanation": "该条已在statement_scope明确只承担精确迭代恒等式；所有χ,B,G,h,z₀,n及逐h共轭假设均完整。等式左端按同一步长先χ_h、迭代B_h、后χ_h⁻¹，右端迭代G_h；阶数部分由紧邻第13条单独承接，未在这里误声称已从恒等式推出误差估计。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.4.5-ProcessingOrder",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R4_PAGES.pdf 附件第15页；书面页码88。已对该原页文字、公式及必要上下文核对；重复页按目录逐条定位。",
+          "原文文字和数学排版的等价LaTeX编码视为忠实；不把历史review_status或repair_log当成本次审校证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch02.processingOrder",
+        "verdict": "PASS",
+        "explanation": "正时间窗τ、0<s<r、实际共轭与共同ODE流及轨迹资格均有列出。horder假定G的全网格全局r阶，这是原文“G有r阶”的资格，结论通过精确迭代恒等式转移给后处理算法；不是从B的s阶单独推出r阶。额外_hB和processingData提供低阶背景但不用于等式转移，逻辑上可冗余。最大误差包括0至ν所有节点；两个结论与该范围一致。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

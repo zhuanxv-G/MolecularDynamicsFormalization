@@ -1,3 +1,5 @@
+> 已过时，以 [CH05_SUMMARY_FOR_MENTOR.zh-CN.md](CH05_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
+
 # 第5章导师快速审阅（15条）
 
 扫描用户指定PDF199–231；实际页码及章节标题边界以本章PAGE_SCAN.json为准。数值实验、介绍性模型和Exercises不纳入。微正则、Liouville、遍历和KAM一般理论只登记明确缺口，不搭建。

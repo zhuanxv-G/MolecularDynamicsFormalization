@@ -1,0 +1,379 @@
+{
+  "batch": "EAUDIT83",
+  "input_sha256": {
+    "BATCH_EAUDIT83.md": "79b34c40c0129c8b9b269b5b9c69229b2ddbe43d1f98369d6f8873dcff9df8b5",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.3-SymplecticMap",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_POINTER_REPLACED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.3-SymplecticMap",
+          "kind": "definition",
+          "label": null,
+          "section": "2.3.3",
+          "printed_page": "76",
+          "pdf_page": "98",
+          "statement_latex": "Let $m=2N_c$. A symplectic map $\\Phi:\\mathbb R^m\\to\\mathbb R^m$ is one that preserves the symplectic differential 2-form. The simplest way to write this is as the following algebraic condition on the Jacobian matrix of $\\Phi$:\n\\[\\Phi'^TJ\\Phi'=J.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "m=2Nc，Jacobian是真实Fréchet导数矩阵；J=[[0,I],[-I,0]]，本条附件15页（印刷76页/PDF98）直接列出；资格为Differentiable。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_POINTER_REPLACED",
+              "status": "CORRECTED",
+              "fields": [
+                "context_notation"
+              ],
+              "detail": "原context指向附件外p.53/PDF75；改用本次附件中直接展示J的印刷76页/PDF98，便于复核。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.bp_IsSymplecticMap",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 采用原文经典可微辛映射资格，移除不必要C¹限制；正式库C¹定义保持不变。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:11:56.115019",
+              "before_sha256": "b0f30a6e3771f7a3a757fb150590e48bce00b0e8e7a47fae90deb2d1419fd943",
+              "after_sha256": "05f2d56b6271ea8cbc57cbc5ab46fd8cdee5db893d3c38a27bce6a671b8cdbf3",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH15_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_POINTER_REPLACED",
+            "status": "CORRECTED",
+            "fields": [
+              "context_notation"
+            ],
+            "detail": "原context指向附件外p.53/PDF75；改用本次附件中直接展示J的印刷76页/PDF98，便于复核。"
+          }
+        ],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              15
+            ],
+            "printed_page": "76",
+            "original_pdf_page": "98",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "印刷76页从Let m=2Nc到Φ′ᵀJΦ′=J的定义逐字一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.bp_IsSymplecticMap"
+            ],
+            "finding": "印刷76页从Let m=2Nc到Φ′ᵀJΦ′=J的定义逐字一致。bp_IsSymplecticMap对两个Fin Nc块上的实际映射要求全局可微，且每个z的真实Jacobian满足AᵀJA=J；J块矩阵符号正确。没有要求额外C¹，也没有把抽象矩阵当作无关实际映射的Jacobian。此处只审教材局部导数/保形式意义的定义，不从非奇异Jacobian擅推全局可逆。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.bp_IsSymplecticMap"
+        ],
+        "verdict": "PASS",
+        "explanation": "印刷76页从Let m=2Nc到Φ′ᵀJΦ′=J的定义逐字一致。bp_IsSymplecticMap对两个Fin Nc块上的实际映射要求全局可微，且每个z的真实Jacobian满足AᵀJA=J；J块矩阵符号正确。没有要求额外C¹，也没有把抽象矩阵当作无关实际映射的Jacobian。此处只审教材局部导数/保形式意义的定义，不从非奇异Jacobian擅推全局可逆。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": "采用json_review.corrected_json中的转录或元数据修正；不修改当前Lean工程。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-OneForm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              16
+            ],
+            "printed_page": "76",
+            "original_pdf_page": "98",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "印刷76页1-form线性映射族定义以及α(x)(ξ)=a(x)ᵀξ逐字一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.oneFormFamily",
+              "MD.Ch02.oneFormOfCoefficients",
+              "MD.Ch02.oneFormOfCoefficients_apply"
+            ],
+            "finding": "印刷76页1-form线性映射族定义以及α(x)(ξ)=a(x)ᵀξ逐字一致。oneFormFamily对每个基点给一个连续线性实泛函；有限维中连续性自动成立，不是额外光滑条件。oneFormOfCoefficients是逐坐标投影的有限线性组合，对任意a,z,ξ，辅助定理断言评价恰为Σ_i a(z)_i ξ_i；对象、基点及完整评价式均覆盖。未错误要求a对z可微。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.oneFormFamily",
+          "MD.Ch02.oneFormOfCoefficients",
+          "MD.Ch02.oneFormOfCoefficients_apply"
+        ],
+        "verdict": "PASS",
+        "explanation": "印刷76页1-form线性映射族定义以及α(x)(ξ)=a(x)ᵀξ逐字一致。oneFormFamily对每个基点给一个连续线性实泛函；有限维中连续性自动成立，不是额外光滑条件。oneFormOfCoefficients是逐坐标投影的有限线性组合，对任意a,z,ξ，辅助定理断言评价恰为Σ_i a(z)_i ξ_i；对象、基点及完整评价式均覆盖。未错误要求a对z可微。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-FormSumWedges",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "OMITTED_COMPONENT_MATRIX_SENTENCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.3-FormSumWedges",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.3",
+          "printed_page": "77",
+          "pdf_page": "99",
+          "statement_latex": "The wedge product of the coordinate differentials $dq_i,dp_i$ may be written\n\\[dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\xi_i\\eta_{i+N_c}-\\xi_{i+N_c}\\eta_i=\\boldsymbol\\xi^TJ^{(i)}\\boldsymbol\\eta.\\]\nwhere $J^{(i)}$ is the matrix which has zeros everywhere except for $(J^{(i)})_{i,i+N_c}=1$, $(J^{(i)})_{i+N_c,i}=-1$. Summing these terms results in the symplectic 2-form, denoted $\\psi_S$:\n\\[\\psi_S=\\sum_{i=1}^{N_c}dq_i\\wedge dp_i(\\boldsymbol\\xi,\\boldsymbol\\eta)=\\boldsymbol\\xi^T\\left(\\sum_{i=1}^{N_c}J^{(i)}\\right)\\boldsymbol\\eta=\\boldsymbol\\xi^TJ\\boldsymbol\\eta.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "J^(i)单项坐标矩阵公式来自dq/dp真实定义，和式为完整最终结论。"
+          ],
+          "issues": [
+            {
+              "code": "OMITTED_COMPONENT_MATRIX_SENTENCE",
+              "status": "CORRECTED",
+              "fields": [
+                "statement_latex"
+              ],
+              "detail": "两条展示式之间漏录原文where句；补回J^(i)只有两个非零矩阵元的定义，正负号按原页保留。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.formSumWedges",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookSymplecticForm_eq_sum_wedges"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] 保留原总楔积等式，补单项J⁽ⁱ⁾矩阵、逐项评价及ΣJ⁽ⁱ⁾=J；全部原结论保留，新补陈述不写证明。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:11:56.115019",
+              "before_sha256": "dc73e5163fd381ef570ea1c73d78eb0878f3f3647bfcc44e4e797e67f097829d",
+              "after_sha256": "e4cc1111e327250576175e055461af5d6d894c88c4be88ecd221ba0cd6b79ea3",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH15_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "OMITTED_COMPONENT_MATRIX_SENTENCE",
+            "status": "CORRECTED",
+            "fields": [
+              "statement_latex"
+            ],
+            "detail": "两条展示式之间漏录原文where句；补回J^(i)只有两个非零矩阵元的定义，正负号按原页保留。"
+          }
+        ],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              17
+            ],
+            "printed_page": "77",
+            "original_pdf_page": "99",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "原页17（印刷77页）两条展示式的符号和求和一致，但两式之间where J^(i) is the matrix…的定义句被无省略标志地删去。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.formSumWedges",
+              "MD.Ch02.symplecticComponentMatrix",
+              "MD.Ch02.formSumWedges_components"
+            ],
+            "finding": "原页17（印刷77页）两条展示式的符号和求和一致，但两式之间where J^(i) is the matrix…的定义句被无省略标志地删去。修正JSON补回该句，明确两个非零位置和正负号。Lean主定理给双线性形式等式；symplecticComponentMatrix逐点定义q_i,p_i交叉元+1和−1，其余0。components定理对每个i,u,v给楔积等于uᵀJ^(i)v，并给Σ_i J^(i)=J。textbookDq/Dp分别取q/p坐标，wedge=α(u)β(v)−α(v)β(u)，textbookSymplecticForm=J.toBilin，故单项坐标式及最终uᵀJv没有符号或二倍因子错误。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.formSumWedges",
+          "MD.Ch02.symplecticComponentMatrix",
+          "MD.Ch02.formSumWedges_components"
+        ],
+        "verdict": "PASS",
+        "explanation": "原页17（印刷77页）两条展示式的符号和求和一致，但两式之间where J^(i) is the matrix…的定义句被无省略标志地删去。修正JSON补回该句，明确两个非零位置和正负号。Lean主定理给双线性形式等式；symplecticComponentMatrix逐点定义q_i,p_i交叉元+1和−1，其余0。components定理对每个i,u,v给楔积等于uᵀJ^(i)v，并给Σ_i J^(i)=J。textbookDq/Dp分别取q/p坐标，wedge=α(u)β(v)−α(v)β(u)，textbookSymplecticForm=J.toBilin，故单项坐标式及最终uᵀJv没有符号或二倍因子错误。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": "采用json_review.corrected_json中的转录或元数据修正；不修改当前Lean工程。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-SymplecticIffForm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              18
+            ],
+            "printed_page": "78",
+            "original_pdf_page": "100",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "印刷78页专门辛2形式A=J、式(2.17)、末句命名定义一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.symplecticIffForm",
+              "MD.Ch02.symplecticIffForm_C1"
+            ],
+            "finding": "印刷78页专门辛2形式A=J、式(2.17)、末句命名定义一致。symplecticIffForm使用任意实际Φ，左侧教材可微谓词，右侧可微且对每个基点z及向量u,v有ψ(DΦ_z u,DΦ_z v)=ψ(u,v)，完整双向等价。辅助_C1版本两侧一致使用ContDiff ℝ 1；没有将C¹版和仅可微版混用。实际J矩阵与双线性形式相符，未遗漏任何基点或切向量。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.symplecticIffForm",
+          "MD.Ch02.symplecticIffForm_C1"
+        ],
+        "verdict": "PASS",
+        "explanation": "印刷78页专门辛2形式A=J、式(2.17)、末句命名定义一致。symplecticIffForm使用任意实际Φ，左侧教材可微谓词，右侧可微且对每个基点z及向量u,v有ψ(DΦ_z u,DΦ_z v)=ψ(u,v)，完整双向等价。辅助_C1版本两侧一致使用ContDiff ℝ 1；没有将C¹版和仅可微版混用。实际J矩阵与双线性形式相符，未遗漏任何基点或切向量。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-2.3.3-HamiltonDet",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "NONEXISTENT_TAU_POSITIVITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.3-HamiltonDet",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.3",
+          "printed_page": "78",
+          "pdf_page": "100",
+          "statement_latex": "If the system is Hamiltonian, the map is symplectic for all $t$, and the determinant will be a continuous function of $t$, so the cases of interest have $\\det(\\mathcal F_t')=+1$. The flow map of a Hamiltonian system is volume preserving.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "同时保留真实流Jacobian det=1及所有可测集合体积保存，不遗漏原文最后一句。"
+          ],
+          "issues": [
+            {
+              "code": "NONEXISTENT_TAU_POSITIVITY",
+              "status": "CORRECTED",
+              "fields": [
+                "extra_assumptions"
+              ],
+              "detail": "extra_assumptions提到τ>0，但当前签名没有此假设；修正为任意τ及实际Icc 0 τ时间域。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.hamiltonDet",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookHamiltonianFlowJacobian_det_eq_one_of_jointC2"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] H全局C²、实际解族Φ联合C²、Φ(0,·)=id，并在Icc 0 τ满足真实Hamilton ODE；同一条声明完整给出流辛性、逐点det=1及全部可测集合体积保存。τ任意实数，签名不要求τ>0。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT09_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:11:56.115019",
+              "before_sha256": "a241c4a20045140f14e764e85241f6b5009f23618cc8aa3aa36a85c7b2b5b6f9",
+              "after_sha256": "2c12d569605fa91890ff81fd3149e3504e24403c0dbd522351b7b0d5eb6b159c",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH16_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT09/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "NONEXISTENT_TAU_POSITIVITY",
+            "status": "CORRECTED",
+            "fields": [
+              "extra_assumptions"
+            ],
+            "detail": "extra_assumptions提到τ>0，但当前签名没有此假设；修正为任意τ及实际Icc 0 τ时间域。"
+          }
+        ],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              19
+            ],
+            "printed_page": "78",
+            "original_pdf_page": "100",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "印刷78页Hamiltonian流辛性、行列式随t连续、det=+1及体积保存句均逐字一致。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.hamiltonDet"
+            ],
+            "finding": "印刷78页Hamiltonian流辛性、行列式随t连续、det=+1及体积保存句均逐字一致。Lean给任意n、C² Hamiltonian和联合C²实际流、恒等初值及窗内ODE，结论有三项：每个时刻流为C¹辛映射；每点Jacobian det=1；每个可测集合体积保存。行列式的时间连续性由联合C²正则性得到，并且窗内恒等于1也直接给其限制连续。旧extra_assumptions一条称τ>0、一条说不假称τ>0，自相矛盾；实际无该前提，已统一修正。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.hamiltonDet"
+        ],
+        "verdict": "PASS",
+        "explanation": "印刷78页Hamiltonian流辛性、行列式随t连续、det=+1及体积保存句均逐字一致。Lean给任意n、C² Hamiltonian和联合C²实际流、恒等初值及窗内ODE，结论有三项：每个时刻流为C¹辛映射；每点Jacobian det=1；每个可测集合体积保存。行列式的时间连续性由联合C²正则性得到，并且窗内恒等于1也直接给其限制连续。旧extra_assumptions一条称τ>0、一条说不假称τ>0，自相矛盾；实际无该前提，已统一修正。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": "采用json_review.corrected_json中的转录或元数据修正；不修改当前Lean工程。"
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

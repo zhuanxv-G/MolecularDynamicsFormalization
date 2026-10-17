@@ -1,0 +1,277 @@
+{
+  "batch": "EAUDIT52",
+  "input_sha256": {
+    "BATCH_EAUDIT52.md": "3372a39feabb5682338ee34cf3a71c23213e3ed4b8e4c390b4871609e35caf60",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.3.2-IdealGasPositionDomain",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MATHCAL_S_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-IdealGasPositionDomain",
+          "kind": "definition",
+          "label": null,
+          "section": "5.3.2",
+          "printed_page": "193–194",
+          "pdf_page": "214–215",
+          "statement_latex": "$Z_E=V^N\\int_{\\mathcal S}(m/r)d\\sigma$, where $\\mathcal S$ is the $3N-1$ dimensional sphere in $3N$ dimensions of radius $r=\\sqrt{2mE}$, and $d\\sigma$ is the surface area element on this sphere. $V^N$ is the contribution due to integration over positions.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Z_E=μ(Σ_E)为微正则分区函数，N为三维粒子数，V为周期盒体积，m为质量，E为能量；S位于3N维动量空间。"
+          ],
+          "issues": [
+            {
+              "code": "MATHCAL_S_TRANSCRIPTION",
+              "field": "statement_latex",
+              "category": "transcription",
+              "description": "原页动量球面的记号为花体 \\mathcal S；输入中的普通 S 改为相同的花体记号。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.idealGasPositionDomain",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]选择边长L的三维立方基本胞，V=L³；实际位置域有限，不能对无限全位置空间积分再声称分区函数有限。周期边界的基本胞面零测度识别未证明。",
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅有限位置立方胞辅助域定义；球面半径、位置体积因子和真实微正则分解由MD-5.3.2-IdealGasPartition补全，闭胞边界零测不声称逐点周期识别。"
+          ],
+          "statement_scope": "仅有限位置立方胞辅助域定义；球面半径、位置体积因子和真实微正则分解由MD-5.3.2-IdealGasPartition补全，闭胞边界零测不声称逐点周期识别。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT10_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:59:03.890531",
+              "before_sha256": "1f7d380cc6c4127627f6fa65882028aad4cc903e0a7bf8261f44c65d77103642",
+              "after_sha256": "65983f592b1079ffd54abcf0326c2a78a06fbcc99eea870002c6517cf9c341fb",
+              "changed_fields": [
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R4_PAGES.pdf 附件第8、9页；本次渲染像素等价组见 .mathcopilot/reviews/ch05_eaudit/R4_evidence/render_groups.json"
+        },
+        "issues": [
+          {
+            "code": "MATHCAL_S_TRANSCRIPTION",
+            "field": "statement_latex",
+            "category": "transcription",
+            "description": "原页动量球面的记号为花体 \\mathcal S；输入中的普通 S 改为相同的花体记号。"
+          }
+        ],
+        "evidence": {
+          "inputs": {
+            "task": "R4_任务.md",
+            "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+            "pdf": "R4_PAGES.pdf",
+            "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+            "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+          },
+          "attachment_pages": [
+            8,
+            9
+          ],
+          "original_pdf_pages": [
+            214,
+            215
+          ],
+          "printed_pages": [
+            193,
+            194
+          ],
+          "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+          "rendered_pages": [
+            {
+              "page": 8,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-08.png",
+              "rgb_pixel_sha256": "92d7a7f2eed396f3f9b9e2e4373dceddfbc13de0bb921bb9d621532a05145249"
+            },
+            {
+              "page": 9,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-09.png",
+              "rgb_pixel_sha256": "208cebc6492f909b973e46c0dff2054a9142eaaf6fd9246e854934d731826f70"
+            }
+          ],
+          "text_check": "附件8页末的 Z_E=V^N∫_𝓢(m/r)dσ 与附件9页首的半径、维数、面积元及位置积分说明连续吻合。仅校正球面记号字形；原文未定义所选闭立方胞。",
+          "declaration_checks": [
+            {
+              "lean_decl": "MD.Ch05.idealGasPositionDomain",
+              "verdict": "PASS",
+              "detail": "对 N,L 定义 E(3N+3N) 中前3N个坐标逐个属于 [0,L] 的柱形集合；动量坐标不受限，正是“有限位置基本胞×全部动量”，不是把整个相空间限制为紧盒。"
+            }
+          ],
+          "project_dependency_check": "Fin.castAdd(3N) i 取前3N个位置坐标；Icc 是闭区间。N,L 的正性由使用本域的第8条给出。闭胞不是逐点的周期商，但 [EXTRA] 已明确其辅助域身份及边界识别的范围。",
+          "scope_check": {
+            "local": "有限位置闭立方胞辅助域定义",
+            "covered_by_item_8": [
+              "r=√(2mc) 的 E(3N) 动量球面",
+              "(L³)^N=V^N 的位置因子",
+              "Z 与加权球面积分的真实曲面测度等式"
+            ],
+            "not_claimed": "周期商的逐点等同及边界识别的已完成证明"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.idealGasPositionDomain",
+        "verdict": "PASS",
+        "explanation": "PASS（仅按已明示的辅助域范围）。此定义没有单独证明原文球面积分公式，也没有声称原文逐点定义了闭胞；statement_scope 和 [EXTRA] 已明确将剩余原文映射到第8条。该映射在本批可核对：idealGasPartition_factors 给出同一半径球面、(L³)^N 因子和真实 raw 曲面质量的积分分解。因映射明确且实际存在，不以辅助定义替代整段原文。",
+        "counterexample": null,
+        "suggested_fix": "仅将 S 的字体转录与原页统一；保留跨条目映射及“闭胞并非逐点周期商”的范围说明。"
+      }
+    },
+    {
+      "source_id": "MD-5.3.2-IdealGasPartition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "MATHCAL_S_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.3.2-IdealGasPartition",
+          "kind": "unnumbered_claim",
+          "label": "Example 5.2",
+          "section": "5.3.2",
+          "printed_page": "194",
+          "pdf_page": "215",
+          "statement_latex": "Thus we have\n\\[Z_E=V^N\\frac{m}{\\sqrt{2mE}}A(\\mathcal S)\n=V^N\\frac{\\sqrt m}{\\sqrt{2E}}\\frac{3N\\pi^{3N/2}(2mE)^{(3N-1)/2}}{\\Gamma(3N/2+1)}\n=V^N\\frac{(2\\pi mE)^{3N/2}}{E\\Gamma(3N/2)}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "𝓢为3N维动量空间中半径r=√(2mE)的(3N−1)维球面；A(𝓢)为其面积，Γ为gamma函数，V^N为位置积分体积因子，Z_E为微正则分区函数。"
+          ],
+          "issues": [
+            {
+              "code": "MATHCAL_S_TRANSCRIPTION",
+              "field": "statement_latex / context_notation",
+              "category": "transcription",
+              "description": "原页 A(𝓢) 的球面使用花体记号；输入 A(S) 统一为 A(\\mathcal S)，同时统一相关注释。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.idealGasPartition",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]正N/m/E/L、有限基本胞V=L³；微正则raw测度在位置胞上实际限制。3N系数是球面积的正确系数，不登记伪造勘误。",
+            "[EXTRA] 补真实动量(3N−1)维球面S、r=√(2mc)、位置体积(L³)^N及面积/Gamma两项中间分解，保留原终值；不以参数积分作microRaw定义。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT10_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:59:03.890531",
+              "before_sha256": "d3eea283bd0f906e565b58044737e7e3a7e5e698d78a7977dab2f96d918c3212",
+              "after_sha256": "2320acd02ed5db02c9f3ff7f26c0f57bd5d07c8943b4c402d339d89d63bf29f3",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:28:28.864805",
+              "before_sha256": "2320acd02ed5db02c9f3ff7f26c0f57bd5d07c8943b4c402d339d89d63bf29f3",
+              "after_sha256": "0886200657682fd40d737c67cd92ef7cf9ea9c603035822a81fdc053267f5603",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "193–194",
+                  "after": "194"
+                },
+                "pdf_page": {
+                  "before": "214–215",
+                  "after": "215"
+                }
+              },
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH15_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R4_PAGES.pdf 附件第10、11页；本次渲染像素等价组见 .mathcopilot/reviews/ch05_eaudit/R4_evidence/render_groups.json",
+          "review_context_pdf_pages": [
+            214
+          ]
+        },
+        "issues": [
+          {
+            "code": "MATHCAL_S_TRANSCRIPTION",
+            "field": "statement_latex / context_notation",
+            "category": "transcription",
+            "description": "原页 A(𝓢) 的球面使用花体记号；输入 A(S) 统一为 A(\\mathcal S)，同时统一相关注释。"
+          }
+        ],
+        "evidence": {
+          "inputs": {
+            "task": "R4_任务.md",
+            "task_sha256": "8c490b230b2d50c0cfe0c06b1be4438a4c6b3e932bed8c96253a0c17f83b456d",
+            "pdf": "R4_PAGES.pdf",
+            "pdf_sha256": "95a56d188316a19b883e34d3aafb49fd88068472caa27509b63f52b1250736b5",
+            "authority": "仅本任务内嵌 JSON、完整 Lean 声明及摘录的项目依赖、指定附件；未使用旧工程内容或旧审校结果。"
+          },
+          "attachment_pages": [
+            10,
+            11
+          ],
+          "original_pdf_pages": [
+            214,
+            215
+          ],
+          "printed_pages": [
+            193,
+            194
+          ],
+          "method": "先渲染并逐字比对原页，再只读核对本条全部声明及其摘录依赖；14页已全部渲染并按像素 SHA256 核实重复页。未修改工程、未补证明、未运行 Lean 编译；不以 sorry 判签名失败。",
+          "rendered_pages": [
+            {
+              "page": 10,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-10.png",
+              "rgb_pixel_sha256": "92d7a7f2eed396f3f9b9e2e4373dceddfbc13de0bb921bb9d621532a05145249"
+            },
+            {
+              "page": 11,
+              "file": ".mathcopilot/reviews/ch05_eaudit/R4_evidence/checkpage-11.png",
+              "rgb_pixel_sha256": "208cebc6492f909b973e46c0dff2054a9142eaaf6fd9246e854934d731826f70"
+            }
+          ],
+          "text_check": "附件10页提供 Example 5.2 的前文；附件11页印刷194/PDF215上的三项等式、3N 系数、π 的3N/2次幂、Γ(3N/2+1) 及最终 EΓ(3N/2) 分母均与输入一致。不存在“3N 应删去”的勘误。",
+          "declaration_checks": [
+            {
+              "lean_decl": "MD.Ch05.idealGasPartition",
+              "verdict": "PASS",
+              "detail": "∀N∈ℕ及m,c,L∈ℝ，四个参数分别严格正；左端为真实 microRaw 在 idealGasPositionDomain 上的质量之 toReal，右端以 V=L³、E=c 精确实现最终公式。不是全无限位置空间的质量。"
+            },
+            {
+              "lean_decl": "MD.Ch05.idealGasPartition_factors",
+              "verdict": "PASS",
+              "detail": "相同四个正性前提；S 为 E(3N) 中半径 √(2mc) 的真实球面，A 为 hausdorffArea(3N−1) 的球面质量之 toReal，Z 为同一有限位置胞上的 raw 质量。三个合取完整给出球面积分、(m/√(2mc))A、以及含3N和Γ(3N/2+1)的中间式。"
+            }
+          ],
+          "project_dependency_check": "idealGasEnergy 的后3N个坐标是动量，idealGasPositionDomain 只限制前3N个位置；microRaw 用完整6N维环境中能级的(6N−1)维面积和真实梯度倒数。factors 中的独立动量球面则使用(3N−1)维面积，二者角色不同且正确。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.idealGasPartition",
+        "verdict": "PASS",
+        "explanation": "PASS。对象、全部前提和各步结论吻合；位置体积(L³)^N、球面半径及其面积系数都保留。3N·π^(3N/2)/Γ(3N/2+1) 是正确球面积系数，代入梯度权重得到所列最终式。[EXTRA] 未把因子分解结论作为假设，也未用参数积分定义 microRaw。有限基本胞是明确且合理的实现范围。",
+        "counterexample": null,
+        "suggested_fix": "仅统一原页花体球面记号；无需更改数学系数或 Lean 签名。"
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

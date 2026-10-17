@@ -1,0 +1,43 @@
+--- before
++++ after
+@@ -2708,7 +2708,8 @@
+ def bodyMomentum (Θ : MolecularDynamics.Chapter04Review.Mat3) (l : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := Θᵀ *ᵥ l
+ 
+ /-- source_id: MD-4.4.1-AngularInertia · unnumbered_claim · §4.4.1 · 印刷p.171 / PDFp.193
+-[EXTRA] 真实SO(3)矩阵和cross3，嵌套为δ×(ω×δ)；原无括号三重积含糊，明确上下文对象。 -/
++[EXTRA] 真实SO(3)矩阵和cross3，嵌套为δ×(ω×δ)；原无括号三重积含糊，明确上下文对象。 [EXTRA] 24号：原体坐标等式与证明完整保留；另列一般三重积（逐坐标ring证明）及空间角动量矩阵中间等式（暂未证明），覆盖引文遗漏。
++-/
+ theorem angularInertia :
+   ∀ N (m : Fin N → ℝ) (δ : Fin N → MolecularDynamics.Chapter04Review.V) (Θ : MolecularDynamics.Chapter04Review.Mat3) («ω» : MolecularDynamics.Chapter04Review.V),
+   Θᵀ*Θ=1 → Θ.det=1 → MolecularDynamics.Chapter04Review.bodyMomentum Θ
+@@ -2744,6 +2745,21 @@
+   apply Finset.sum_congr rfl
+   intro i hii
+   rw [hterm]
++
++theorem vectorTripleProduct (a b c : MolecularDynamics.Chapter04Review.V) :
++    MolecularDynamics.Chapter04Review.cross3 a (MolecularDynamics.Chapter04Review.cross3 b c) =
++      MolecularDynamics.Chapter04Review.dot a c • b-MolecularDynamics.Chapter04Review.dot a b • c := by
++  ext i
++  fin_cases i <;> simp [MolecularDynamics.Chapter04Review.cross3,
++    MolecularDynamics.Chapter04Review.dot, Fin.sum_univ_three, Pi.smul_apply, smul_eq_mul] <;> ring
++
++theorem spatialAngularInertia (N : ℕ) (m : Fin N → ℝ)
++    (δ : Fin N → MolecularDynamics.Chapter04Review.V) (ω : MolecularDynamics.Chapter04Review.V) :
++    MolecularDynamics.Chapter04Review.angularMomentum m δ
++      (fun i => MolecularDynamics.Chapter04Review.cross3 ω (δ i)) =
++      MolecularDynamics.Chapter04Review.inertiaTensor m δ *ᵥ ω := by
++  sorry
++
+ 
+ /-- source_id: MD-4.4.1-EulerRigidField · (4.41) · §4.4.1 · 印刷p.172 / PDFp.194 -/
+ def eulerRigidField (T : MolecularDynamics.Chapter04Review.Mat3) (π : MolecularDynamics.Chapter04Review.V) : MolecularDynamics.Chapter04Review.V := MolecularDynamics.Chapter04Review.cross3 π (T⁻¹ *ᵥ π)
+@@ -3403,6 +3419,8 @@
+ #print axioms MD.Ch04.angularMomentum
+ #print axioms MD.Ch04.bodyMomentum
+ #print axioms MD.Ch04.angularInertia
++#print axioms MD.Ch04.vectorTripleProduct
++#print axioms MD.Ch04.spatialAngularInertia
+ #print axioms MD.Ch04.eulerRigidField
+ #print axioms MD.Ch04.freeRigidSolution
+ #print axioms MD.Ch04.rigidInvariants

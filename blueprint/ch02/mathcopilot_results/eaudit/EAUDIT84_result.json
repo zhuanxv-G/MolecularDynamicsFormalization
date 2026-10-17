@@ -1,0 +1,240 @@
+{
+  "batch": "EAUDIT84",
+  "input_sha256": {
+    "BATCH_EAUDIT84.md": "8db78a085c1b7e43c00b459b363a23d0d915347ee2520b58c3461130d67e1531",
+    "Blueprint/Ch02.lean": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+    "blueprint/ch02/ch02_source.json": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045"
+  },
+  "items": [
+    {
+      "source_id": "MD-2.3.4-MatrixCancellation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_CAPITALIZATION",
+          "STALE_DEPENDENCY_DESCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.4-MatrixCancellation",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.4",
+          "printed_page": "79",
+          "pdf_page": "101",
+          "statement_latex": "hence\n\\[\\frac{\\mathrm d}{\\mathrm dt}W^TJW=W^TJ\\dot W+\\dot W^TJW=0.\\]",
+          "proof_latex": "Computing\n\\[W^TJ\\dot W=W^TJ^2SW=-W^TSW,\\]\nwhereas\n\\[\\dot W^TJW=W^TS^TJ^TJW=W^TSW,\\]\nhence\n\\[\\frac{\\mathrm d}{\\mathrm dt}W^TJW=W^TJ\\dot W+\\dot W^TJW=0.\\]",
+          "proof_note": "原文Computing、whereas和hence的矩阵计算按原页保留于proof_latex；本条matrixCancellation_time已登记实际乘积求导及零导数，时间区间上推出常值是后续步骤。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "W′=JSW为前项变分方程背景；matrixCancellation是代数消去，matrixCancellation_time在本条直接给真实时间曲线的乘积导数两项表达式及零导数。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_CAPITALIZATION",
+              "status": "CORRECTED",
+              "fields": [
+                "statement_latex"
+              ],
+              "detail": "statement_latex开头原页为小写hence，修正当前大写Hence。"
+            },
+            {
+              "code": "STALE_DEPENDENCY_DESCRIPTION",
+              "status": "CORRECTED",
+              "fields": [
+                "context_notation",
+                "proof_note"
+              ],
+              "detail": "context和proof_note仍称实际时间导数由FormConstant承担，实际本条已有matrixCancellation_time，修正说明。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.matrixCancellation",
+          "reusable_proofs": [
+            "MolecularDynamics.hamiltonian_variational_matrix_cancellation"
+          ],
+          "extra_assumptions": [
+            "S对称；任意矩阵W。",
+            "[EXTRA] 保留已证代数消去；补真实时间矩阵曲线、对称S(t)、W′=JSW及完整乘积导数/零导数结论，未以导数结论为前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT10_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:12:48.900009",
+              "before_sha256": "8cbee23d0a77e621b06fa7d21c29169c14b1fab5e43558723f20e230009b0598",
+              "after_sha256": "ecf08d7e93193f9463159a98e6265b99e1dfef45ec2555e5f98250e3bdf90d0a",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH17_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_CAPITALIZATION",
+            "status": "CORRECTED",
+            "fields": [
+              "statement_latex"
+            ],
+            "detail": "statement_latex开头原页为小写hence，修正当前大写Hence。"
+          },
+          {
+            "code": "STALE_DEPENDENCY_DESCRIPTION",
+            "status": "CORRECTED",
+            "fields": [
+              "context_notation",
+              "proof_note"
+            ],
+            "detail": "context和proof_note仍称实际时间导数由FormConstant承担，实际本条已有matrixCancellation_time，修正说明。"
+          }
+        ],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              20
+            ],
+            "printed_page": "79",
+            "original_pdf_page": "101",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "原页20（印刷79页）Computing、whereas及两条中间矩阵等式一致；statement开头原页是小写hence，当前写成Hence，已作字面修正。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.matrixCancellation",
+              "MD.Ch02.matrixCancellation_time"
+            ],
+            "finding": "原页20（印刷79页）Computing、whereas及两条中间矩阵等式一致；statement开头原页是小写hence，当前写成Hence，已作字面修正。代数主定理对任意W和对称S断言(JSW)ᵀJW+WᵀJ(JSW)=0。time版本对任意集合I和点t，假设S(t)对称及W在I内真实导数JS(t)W(t)，同时给乘积导数的完整两项表达式和零导数结论。交换的是相加项顺序，不是矩阵乘积顺序；J²=−I和JᵀJ=I的消去符号正确。任意I无需额外可微性，因为HasDerivWithinAt已提供所需局部资格。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.matrixCancellation",
+          "MD.Ch02.matrixCancellation_time"
+        ],
+        "verdict": "PASS",
+        "explanation": "原页20（印刷79页）Computing、whereas及两条中间矩阵等式一致；statement开头原页是小写hence，当前写成Hence，已作字面修正。代数主定理对任意W和对称S断言(JSW)ᵀJW+WᵀJ(JSW)=0。time版本对任意集合I和点t，假设S(t)对称及W在I内真实导数JS(t)W(t)，同时给乘积导数的完整两项表达式和零导数结论。交换的是相加项顺序，不是矩阵乘积顺序；J²=−I和JᵀJ=I的消去符号正确。任意I无需额外可微性，因为HasDerivWithinAt已提供所需局部资格。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": "采用json_review.corrected_json中的转录或元数据修正；不修改当前Lean工程。"
+      }
+    },
+    {
+      "source_id": "MD-2.3.4-HamiltonSymplectic",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "NONEXISTENT_TAU_POSITIVITY",
+          "PRINTED_MOVING_BASEPOINT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-2.3.4-HamiltonSymplectic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "2.3.4",
+          "printed_page": "79",
+          "pdf_page": "101",
+          "statement_latex": "hence\n\\[W^TJW\\equiv W(0)^TJW(0)=J.\\]\nThis proves that the flow map of a Hamiltonian system is a symplectic map.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原页上下文写$W(t)=\\mathcal F_t^{\\prime}(z(t,\\xi))$（此处prime表示原页撇号）。实际变分矩阵通常为固定初值处的$D_\\xi\\mathcal F_t(\\xi)$；移动取值点可能引入额外链式项。原文最终公式保留；Lean采用真实固定时刻流对初值的Jacobian，未沿用移动取值点定义。需人工确认教材W的记号约定。"
+          ],
+          "issues": [
+            {
+              "code": "NONEXISTENT_TAU_POSITIVITY",
+              "status": "CORRECTED",
+              "fields": [
+                "extra_assumptions"
+              ],
+              "detail": "extra_assumptions提到τ>0，但当前签名没有此假设；修正为任意τ及实际Icc 0 τ时间域。"
+            },
+            {
+              "code": "PRINTED_MOVING_BASEPOINT",
+              "status": "NEEDS_HUMAN",
+              "fields": [
+                "context_notation",
+                "issues"
+              ],
+              "detail": "原书同页把W(t)写为F′_t(z(t,ξ))，与固定初值变分矩阵存在评价点疑误；不得以正确Lean流辛性结论掩盖原书推导的此项问题。"
+            }
+          ],
+          "lean_decl": "MD.Ch02.hamiltonSymplectic",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookHamiltonianFlow_isSymplectic_of_jointC2"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] H全局C²；实际解族Φ联合C²、Φ(0,·)=id，并在Icc 0 τ满足真实Hamilton ODE。τ任意实数，签名不要求τ>0；未假设变分方程或辛性结论。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT10_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T11:12:48.900009",
+              "before_sha256": "91e63a1cd1482dda0bd203d7e4a3c2ea74ae6f357ab73d09d61605b49d87b4dd",
+              "after_sha256": "177a2fc91707899e1d0f0dbeb3da673a4219d5d49b755828befbf18b694cccde",
+              "changed_fields": [],
+              "raw_return": "blueprint/ch02/mathcopilot_results/BATCH17_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT10/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "NONEXISTENT_TAU_POSITIVITY",
+            "status": "CORRECTED",
+            "fields": [
+              "extra_assumptions"
+            ],
+            "detail": "extra_assumptions提到τ>0，但当前签名没有此假设；修正为任意τ及实际Icc 0 τ时间域。"
+          },
+          {
+            "code": "PRINTED_MOVING_BASEPOINT",
+            "status": "NEEDS_HUMAN",
+            "fields": [
+              "context_notation",
+              "issues"
+            ],
+            "detail": "原书同页把W(t)写为F′_t(z(t,ξ))，与固定初值变分矩阵存在评价点疑误；不得以正确Lean流辛性结论掩盖原书推导的此项问题。"
+          }
+        ],
+        "evidence": {
+          "A_source": {
+            "pdf": "/workspace/R2_PAGES.pdf",
+            "attachment_pages": [
+              21
+            ],
+            "printed_page": "79",
+            "original_pdf_page": "101",
+            "method": "pdftotext -layout辅助定位；逐页渲染PNG视觉核对原句、展示公式、符号和标点。重复页以渲染PNG的SHA-256完全一致验证同页内容。",
+            "finding": "原页21（印刷79页）hence、WᵀJW≡W(0)ᵀJW(0)=J及最后流为辛映射原句忠实。"
+          },
+          "C_signature": {
+            "scope": "本条完整当前Lean栏的全部声明，以及本条摘录的MolecularDynamics/MD.*项目定义；Mathlib按标准数学语义采信。",
+            "declarations": [
+              "MD.Ch02.hamiltonSymplectic"
+            ],
+            "finding": "原页21（印刷79页）hence、WᵀJW≡W(0)ᵀJW(0)=J及最后流为辛映射原句忠实。Lean对象为真实H和联合C²实际解族Φ，Φ0=id且满足Hamilton ODE；结论对每个t∈[0,τ]为IsTextbookSymplecticMap，展开即C¹与每初值点的Jacobian辛恒等式，初始Jacobian由Φ0=id为I。该签名本身数学正确，且没有τ>0前提。但原页紧邻上下文实际写W(t)=F′_t(z(t,ξ))，而变分矩阵通常应为D_ξF_t(ξ)；随移动点评价的全导数另有空间链式项。当前context只称疑点另项记录，未具体登记；按照保留原书数学疑误要求，本条需人工明确W的约定，不将正确Lean结论冒充对原书该推导的逐字证明。"
+          },
+          "limits": "PASS仅为本次只读语义/签名审校结论，不声称已完成Lean证明或编译验证；未使用任何旧Ch0x.lean、旧source JSON或旧任务作为审校依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch02.hamiltonSymplectic"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "原页21（印刷79页）hence、WᵀJW≡W(0)ᵀJW(0)=J及最后流为辛映射原句忠实。Lean对象为真实H和联合C²实际解族Φ，Φ0=id且满足Hamilton ODE；结论对每个t∈[0,τ]为IsTextbookSymplecticMap，展开即C¹与每初值点的Jacobian辛恒等式，初始Jacobian由Φ0=id为I。该签名本身数学正确，且没有τ>0前提。但原页紧邻上下文实际写W(t)=F′_t(z(t,ξ))，而变分矩阵通常应为D_ξF_t(ξ)；随移动点评价的全导数另有空间链式项。当前context只称疑点另项记录，未具体登记；按照保留原书数学疑误要求，本条需人工明确W的约定，不将正确Lean结论冒充对原书该推导的逐字证明。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。",
+        "counterexample": null,
+        "suggested_fix": "人工确认原书W的评价点：若意指初值灵敏度，应在勘误/说明中另写W(t)=D_ξF_t(ξ)，保留原书字面记录；当前Lean声明无需改动。同步采用corrected_json中与实际签名一致的τ说明。"
+      }
+    }
+  ],
+  "merged_from": "ch02_eaudit_merged"
+}

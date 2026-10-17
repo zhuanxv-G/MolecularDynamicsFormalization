@@ -1,0 +1,428 @@
+{
+  "batch": "EAUDIT71",
+  "input_sha256": {
+    "BATCH_EAUDIT71.md": "bbbcf476a5e5487518dbec00eb9a22b564bb82ddedc1e25b0973e7d1cc3480ae",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.2.1-FastVerlet",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_WORD_MISMATCH",
+          "PROJECT_DEPENDENCY_NOT_SUPPLIED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-FastVerlet",
+          "kind": "definition",
+          "label": null,
+          "section": "4.2.1",
+          "printed_page": "145",
+          "pdf_page": "167",
+          "statement_latex": "Let us $\\mathcal G_h^F$ denote the map associated to the Verlet method for the system without $U_S$, using a stepsize $h$:\n\\[\\mathcal G_h^F=\\mathrm e^{\\frac h2\\mathcal L_{U_F}}\\mathrm e^{h\\mathcal L_K}\\mathrm e^{\\frac h2\\mathcal L_{U_F}},\\]\nwhere $\\mathcal L_K$ is the Lie-derivative corresponding to the kinetic energy component of Hamiltonian $(K=p^TM^{-1}p/2)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "Lie指数按实际势kick与质量drift作用解释；复用第2章实际数学映射。",
+            "R1复审：PDF 是 Let us ...，当前转录为 Let ...，遗漏 us；原页写 Hamiltonian (K=...)，当前多了定冠词 the，均应修正。公式和其余内容一致。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_WORD_MISMATCH",
+              "detail": "PDF 是 Let us ...，当前转录为 Let ...，遗漏 us；原页写 Hamiltonian (K=...)，当前多了定冠词 the，均应修正。公式和其余内容一致。"
+            },
+            {
+              "code": "PROJECT_DEPENDENCY_NOT_SUPPLIED",
+              "detail": "n、实质量函数、实势和步长、Q/Z及负梯度力的类型和符号可核对。关键调用 Chapter02Review.verlet 的定义未在本条、依赖摘录或本任务其他条中给出；这是项目定义，不能按Mathlib直接采信。仅凭名字不能确认它是 kick(h/2)→drift(h)→kick(h/2)、质量放置及返回(q,p)次序，因此无法完成实际映射的全依赖审校。未读取任务禁止的旧工程，未据缺失材料推断函数错误。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.fastVerlet",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT04_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:53:50.635472",
+              "before_sha256": "b650daedd4e8a64420815333f2ec08bd2cc004af0b0ee92eaa2407e77f4bc4df",
+              "after_sha256": "78e3a52528abea0780653f3fe43744081c79023c26298cf734df932a11e2b113",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH04_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_WORD_MISMATCH",
+            "detail": "PDF 是 Let us ...，当前转录为 Let ...，遗漏 us；原页写 Hamiltonian (K=...)，当前多了定冠词 the，均应修正。公式和其余内容一致。"
+          },
+          {
+            "code": "PROJECT_DEPENDENCY_NOT_SUPPLIED",
+            "detail": "n、实质量函数、实势和步长、Q/Z及负梯度力的类型和符号可核对。关键调用 Chapter02Review.verlet 的定义未在本条、依赖摘录或本任务其他条中给出；这是项目定义，不能按Mathlib直接采信。仅凭名字不能确认它是 kick(h/2)→drift(h)→kick(h/2)、质量放置及返回(q,p)次序，因此无法完成实际映射的全依赖审校。未读取任务禁止的旧工程，未据缺失材料推断函数错误。"
+          }
+        ],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 14,
+            "original_pdf_page": "167",
+            "printed_page": "145",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "PDF 是 Let us ...，当前转录为 Let ...，遗漏 us；原页写 Hamiltonian (K=...)，当前多了定冠词 the，均应修正。公式和其余内容一致。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.fastVerlet"
+            ],
+            "finding": "n、实质量函数、实势和步长、Q/Z及负梯度力的类型和符号可核对。关键调用 Chapter02Review.verlet 的定义未在本条、依赖摘录或本任务其他条中给出；这是项目定义，不能按Mathlib直接采信。仅凭名字不能确认它是 kick(h/2)→drift(h)→kick(h/2)、质量放置及返回(q,p)次序，因此无法完成实际映射的全依赖审校。未读取任务禁止的旧工程，未据缺失材料推断函数错误。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.fastVerlet",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "n、实质量函数、实势和步长、Q/Z及负梯度力的类型和符号可核对。关键调用 Chapter02Review.verlet 的定义未在本条、依赖摘录或本任务其他条中给出；这是项目定义，不能按Mathlib直接采信。仅凭名字不能确认它是 kick(h/2)→drift(h)→kick(h/2)、质量放置及返回(q,p)次序，因此无法完成实际映射的全依赖审校。未读取任务禁止的旧工程，未据缺失材料推断函数错误。",
+        "counterexample": null,
+        "suggested_fix": "修正原文漏词及多出的the；补充本版本Chapter02Review.verlet的准确项目定义（包括其所调kick/drift依赖）后再确认实际快Verlet映射；不读取旧工程代替证据。"
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-RESPA",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_UNMARKED_OMISSION",
+          "MISSING_POSITIVE_SUBSTEP_COUNT",
+          "PROJECT_DEPENDENCY_NOT_SUPPLIED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-RESPA",
+          "kind": "definition",
+          "label": "(4.2)",
+          "section": "4.2.1",
+          "printed_page": "145",
+          "pdf_page": "167",
+          "statement_latex": "Now consider the map constructed by taking $r$ steps using $\\mathcal G_{F,h/r}$ and composing this with kicks from the soft force:\n\\[\\mathcal G_h^{\\mathrm{MTS}}=\\mathrm e^{\\frac h2\\mathcal L_{U_S}}[\\mathcal G_{h/r}^F]^r\\mathrm e^{\\frac h2\\mathcal L_{U_S}}.\\]\nOne step of the multiple timestepping algorithm is then implemented as follows:\nReversible RESPA Algorithm\n\\[P:=p-(h/2)\\nabla U_S(q),\\quad Q:=q;\\]\nRepeat $r$ times:\n\\[P:=P-(h/2)\\nabla U_F(Q)/r,\\quad Q:=Q+hM^{-1}P/r,\\quad P:=P-(h/2)\\nabla U_F(Q)/r;\\tag{4.2}\\]\n\\[P:=P-(h/2)\\nabla U_S(Q).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "R1复审：算子式和算法更新均与PDF一致；公式与标题之间漏了 One step of the multiple timestepping algorithm is then implemented as follows:，应恢复或明示省略。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_UNMARKED_OMISSION",
+              "detail": "算子式和算法更新均与PDF一致；公式与标题之间漏了 One step of the multiple timestepping algorithm is then implemented as follows:，应恢复或明示省略。"
+            },
+            {
+              "code": "MISSING_POSITIVE_SUBSTEP_COUNT",
+              "detail": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。"
+            },
+            {
+              "code": "PROJECT_DEPENDENCY_NOT_SUPPLIED",
+              "detail": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.respa",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "r为正自然数，实际r次函数迭代；不把形式算子等式当实际ODE流。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT04_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:53:50.635472",
+              "before_sha256": "68eee220ede28012b4bf51e6ead5d6bf17c8665741e9410577b6d82ddbba7873",
+              "after_sha256": "61724ed42dff3da9f32d92d453cb7e10ff520f064f4d4c92bfac3b372b40ad62",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH04_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT04/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_UNMARKED_OMISSION",
+            "detail": "算子式和算法更新均与PDF一致；公式与标题之间漏了 One step of the multiple timestepping algorithm is then implemented as follows:，应恢复或明示省略。"
+          },
+          {
+            "code": "MISSING_POSITIVE_SUBSTEP_COUNT",
+            "detail": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。"
+          },
+          {
+            "code": "PROJECT_DEPENDENCY_NOT_SUPPLIED",
+            "detail": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。"
+          }
+        ],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 15,
+            "original_pdf_page": "167",
+            "printed_page": "145",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "算子式和算法更新均与PDF一致；公式与标题之间漏了 One step of the multiple timestepping algorithm is then implemented as follows:，应恢复或明示省略。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.respa"
+            ],
+            "finding": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.respa",
+        "verdict": "FAIL",
+        "explanation": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。",
+        "counterexample": "r=0在当前签名中合法；函数迭代^[0]为恒等，故结果=kick US (h/2)(kick US (h/2) z)，即(q,p-h grad US(q))。这不是原文正r细分定义的h/r快步算法，且与extra_assumptions宣称r为正不一致。",
+        "suggested_fix": "在签名增加0<r参数或将r改为正自然数，并同步调用域；补回漏句。另提供同版本Chapter02Review.verlet定义供核对，不能仅用函数名称认定实现正确。"
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-SlowMatrix",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 16,
+            "original_pdf_page": "168",
+            "printed_page": "146",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "with及两个矩阵的联合展示一致；按声明范围仅审S_h，F_h由条目17承担。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.slowMatrix"
+            ],
+            "finding": "任意实h的2×2实矩阵[[1,0],[-h,1]]，作用于(q,p)列向量给(q,p-hq)，与质量1、U_S=q²/2 的慢kick相符。未误把F_h也算作本声明定义。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.slowMatrix",
+        "verdict": "PASS",
+        "explanation": "任意实h的2×2实矩阵[[1,0],[-h,1]]，作用于(q,p)列向量给(q,p-hq)，与质量1、U_S=q²/2 的慢kick相符。未误把F_h也算作本声明定义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-FastMatrix",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 17,
+            "original_pdf_page": "168",
+            "printed_page": "146",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "同页联合矩阵展示一致；范围明确F_h，S_h由条目16承担。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.fastMatrix"
+            ],
+            "finding": "Ω,h∈ℝ且显式Ω≠0，矩阵对角cos(Ωh)，右上sin(Ωh)/Ω，左下-Ωsin(Ωh)，符号、坐标及分母正确。原Ω≫1背景允许推广至非零实Ω；正Ω频率是物理解释，并非本代数定义必须的附加资格。它是精确快流，不是单次Verlet。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.fastMatrix",
+        "verdict": "PASS",
+        "explanation": "Ω,h∈ℝ且显式Ω≠0，矩阵对角cos(Ωh)，右上sin(Ωh)/Ω，左下-Ωsin(Ωh)，符号、坐标及分母正确。原Ω≫1背景允许推广至非零实Ω；正Ω频率是物理解释，并非本代数定义必须的附加资格。它是精确快流，不是单次Verlet。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ImpulseDet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 18,
+            "original_pdf_page": "168",
+            "printed_page": "146",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "两个行列式和特征根乘积的原句一致。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.impulseDet",
+              "MD.Ch04.impulseDet_eigenvalueProduct"
+            ],
+            "finding": "∀实Ω,h且Ω≠0，实际S_h、F_h、W_h三项det=1。依赖的Chapter04Review.fastMatrix本身无非零参数，但本定理前提已正确限制，勿与条目17的MD包装定义混淆。W=S(h/2)F(h)S(h/2) 次序正确。补充存在复a,b满足ab=1，且对所有复ζ的完整首一二次分解，绑定计重的两个根，不是任取两根，正确覆盖重根。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.impulseDet; MD.Ch04.impulseDet_eigenvalueProduct",
+        "verdict": "PASS",
+        "explanation": "∀实Ω,h且Ω≠0，实际S_h、F_h、W_h三项det=1。依赖的Chapter04Review.fastMatrix本身无非零参数，但本定理前提已正确限制，勿与条目17的MD包装定义混淆。W=S(h/2)F(h)S(h/2) 次序正确。补充存在复a,b满足ab=1，且对所有复ζ的完整首一二次分解，绑定计重的两个根，不是任取两根，正确覆盖重根。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ImpulseTrace",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": {
+            "attachment": "R1_PAGES.pdf",
+            "attachment_page": 19,
+            "original_pdf_page": "168",
+            "printed_page": "146",
+            "method": "逐字及公式视觉核对。全部19页已渲染；重复页PNG的SHA256完全一致，按同一图像核对，无以OCR替代数学符号。",
+            "finding": "λ₁+λ₂、Tr(W_h)及三角表达式全部一致。"
+          },
+          "C": {
+            "declarations": [
+              "MD.Ch04.impulseTrace",
+              "MD.Ch04.impulseTrace_eigenvalueSum"
+            ],
+            "finding": "∀实Ω,h且Ω≠0，实际W的trace为2cos(hΩ)-(h/Ω)sin(hΩ)。补充存在复a,b给同一完整特征二次式的所有ζ分解并约束a+b为该实trace的复嵌入，正确表达按代数重数的根和，未重复选择同一简单根。与条目18的根对未要求顺序相同，完整同一多项式分解已经保证根多重集相同。",
+            "scope": "只读审校任务文件给出的声明、全部量词/域/前提/完整结论及项目依赖摘录；标准Mathlib定义按标准数学含义采信。未编译、未修改工程或补证明；sorry不参与签名判FAIL。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.impulseTrace; MD.Ch04.impulseTrace_eigenvalueSum",
+        "verdict": "PASS",
+        "explanation": "∀实Ω,h且Ω≠0，实际W的trace为2cos(hΩ)-(h/Ω)sin(hΩ)。补充存在复a,b给同一完整特征二次式的所有ζ分解并约束a+b为该实trace的复嵌入，正确表达按代数重数的根和，未重复选择同一简单根。与条目18的根对未要求顺序相同，完整同一多项式分解已经保证根多重集相同。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ResonancePower",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第1页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.resonancePower",
+          "对任意实Ω>0及每个自然数k，结论是实际S(h/2)F(h)S(h/2)的矩阵幂，而非另一种Verlet矩阵。负号标量幂、左下角−kπ/Ω、k=0均正确。k=1给出W的展示式，F(π/Ω)=−I由给定fastMatrix直接化简；此中间式也出现在当前证明中。Ω>0是合理物理资格，不需Ω≫1的定量界。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.resonancePower",
+        "verdict": "PASS",
+        "explanation": "对任意实Ω>0及每个自然数k，结论是实际S(h/2)F(h)S(h/2)的矩阵幂，而非另一种Verlet矩阵。负号标量幂、左下角−kπ/Ω、k=0均正确。k=1给出W的展示式，F(π/Ω)=−I由给定fastMatrix直接化简；此中间式也出现在当前证明中。Ω>0是合理物理资格，不需Ω≫1的定量界。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ResonanceTaylor",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_TAYLOR_REMAINDER"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-ResonanceTaylor",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.2.1",
+          "printed_page": "147",
+          "pdf_page": "169",
+          "statement_latex": "We can see this by expanding $\\mu(h)=2\\cos(h\\Omega)-\\frac h\\Omega\\sin(h\\Omega)$ in a Taylor expansion around $h=\\pi/\\Omega$:\n\\[\\mu(h)=-2+\\varepsilon,\\qquad\\varepsilon=\\frac\\pi\\Omega(h-\\pi/\\Omega).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.168（印刷p.146）：状态列向量为(q,p)ᵀ；Ω≫1是模型背景。此处代数结论适用于任意Ω>0，不需要定量大频率门槛。",
+            "S_h=[[1,0],[-h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}，快子系统在内步趋零时采用精确流，不是一次Verlet更新。",
+            "λ₁、λ₂是W_h的两个复特征根，按代数重数计；det(W_h)=1，μ(h)=Tr(W_h)=2cos(hΩ)−(h/Ω)sin(hΩ)。",
+            "h₀=π/Ω；ε=(π/Ω)(h−h₀)。原展示μ(h)=−2+ε是截断的一阶Taylor写法，非精确恒等式；同页随后λ+λ⁻¹=−2+ε+O(ε²)明确保留余项。"
+          ],
+          "issues": [
+            "原页展示为精确等号但叙述为Taylor展开，缺少二阶余项。保留原文并人工裁决；Lean二次余项修正版正确。"
+          ],
+          "lean_decl": "MD.Ch04.resonanceTaylor",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原省略高阶项以真实一致O((h−π/Ω)²)余项保留，不将截断线性式当精确等式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT05_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:54:42.701512",
+              "before_sha256": "c0737d6d1cdec4190a0dc4c275ae97292cecac54d570df8cfbbfdd848ef1061f",
+              "after_sha256": "576f876d207a2e3123fedebef6e77f31aed99e0a6789af8e42067ca469fb4fee",
+              "changed_fields": [
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH05_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_TAYLOR_REMAINDER",
+            "detail": "原页展示为精确等号但叙述为Taylor展开，缺少二阶余项。保留原文并人工裁决；Lean二次余项修正版正确。"
+          }
+        ],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第2页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.resonanceTaylor",
+          "固定每个Ω>0后才选择C、δ，二者允许依赖Ω；对整个双侧邻域以二次余项一致控制。实际trace的常数项为−2，一阶导数为π/Ω，故与截断Taylor的合理修正版一致；不是声称对所有Ω使用同一C。sorry仅表明未完成证明，不影响本次签名审校。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.resonanceTaylor",
+        "verdict": "PASS",
+        "explanation": "固定每个Ω>0后才选择C、δ，二者允许依赖Ω；对整个双侧邻域以二次余项一致控制。实际trace的常数项为−2，一阶导数为π/Ω，故与截断Taylor的合理修正版一致；不是声称对所有Ω使用同一C。sorry仅表明未完成证明，不影响本次签名审校。",
+        "counterexample": null,
+        "suggested_fix": "原文等号照录保留；另明示这是带二阶余项的修正版，不把省略余项的字面等式当恒等式。"
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

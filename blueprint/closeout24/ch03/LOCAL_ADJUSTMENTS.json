@@ -1,0 +1,20 @@
+[
+  {
+    "source_id": "MD-3.3.2-Strang",
+    "reason": "零常项形式指数接口需要子类型证明；加入并证明log常项为零，引入该证明后传入子类型。",
+    "failed_log": "Strang-attempt1.log",
+    "diff": "--- \n+++ \n@@ -743,10 +743,15 @@\n     PowerSeries.coeff 0 (formalStrang A B) = 1 := by\n   simp [formalStrang, PowerSeries.coeff_mul, textbookFormalOperatorExponential]\n \n+theorem formalStrang_log_constant {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) :\n+    PowerSeries.constantCoeff (formalLog (formalStrang A B)) = 0 := by\n+  rw [← PowerSeries.coeff_zero_eq_constantCoeff_apply]\n+  simp [formalLog]\n+\n theorem formalStrang_log_reconstruction {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) :\n     PowerSeries.coeff 0 (formalLog (formalStrang A B)) = 0 ∧\n     PowerSeries.X * formalStrang_Zt A B = formalLog (formalStrang A B) ∧\n-    textbookFormalZeroConstantExponential (formalLog (formalStrang A B)) = formalStrang A B := by\n+    textbookFormalZeroConstantExponential ⟨formalLog (formalStrang A B), formalStrang_log_constant A B⟩ = formalStrang A B := by\n   sorry\n \n \n@@ -2459,6 +2464,7 @@\n #print axioms MD.Ch03.formalStrang\n #print axioms MD.Ch03.formalStrang_Zt\n #print axioms MD.Ch03.formalStrang_constant\n+#print axioms MD.Ch03.formalStrang_log_constant\n #print axioms MD.Ch03.formalStrang_log_reconstruction\n #print axioms MD.Ch03.differentLogsCommute\n #print axioms MD.Ch03.differentLogsCommute_corrected\n"
+  },
+  {
+    "source_id": "MD-3.7.1-HardCorePotential",
+    "reason": "本模块未开放ℝ≥0∞记号，修正版类型用同义完整名ENNReal，数学对象不变。",
+    "failed_log": "FiniteMatchingConstruction-attempt1.log",
+    "diff": "--- \n+++ \n@@ -2209,7 +2209,7 @@\n \n /-- 修正版，对应原文 MD-3.7.1-HardCorePotential。改动：允许接触等号，只有严格重叠才取∞；原印≤判∞独立保留。 -/\n def hardCorePotential_corrected {N d : ℕ} (σ : Fin N → ℝ)\n-    (_hσ : ∀ i, 0 ≤ σ i) (q : Fin N → Position d) : ℝ≥0∞ :=\n+    (_hσ : ∀ i, 0 ≤ σ i) (q : Fin N → Position d) : ENNReal :=\n   if ∃ i j, i ≠ j ∧ ‖q i-q j‖ < σ i+σ j then ⊤ else 0\n \n /-- source_id: MD-3.7.1-PrimitiveSplitting · definition · §3.7.1 · 印刷p.133 / PDFp.155 -/\n"
+  },
+  {
+    "source_id": "MD-3.7-CollisionComposition",
+    "reason": "按长度终止的递归不按rfl约化；用simp展开递归等式证明二段次序，定义与目标不变。",
+    "failed_log": "CollisionComposition-attempt1.log",
+    "diff": "--- \n+++ \n@@ -2331,7 +2331,7 @@\n     field_simp\n     ring\n \n-/-- source_id: MD-3.7-CollisionComposition · definition · §3.7 · 印刷p.132–133 / PDFp.154–155 [EXTRA] 24号：列表现在按自然时间顺序[Δτ₀,…,Δτᵣ]存储，递归先执行首段、再碰撞、再余段；二段桥接rfl核对为G t₁∘Rc∘G t₀。此为形式组合器，非负时长、总时长及G/Rc来自实际Hamilton碰撞的资格不由任意函数定义推出。\n+/-- source_id: MD-3.7-CollisionComposition · definition · §3.7 · 印刷p.132–133 / PDFp.154–155 [EXTRA] 24号：列表现在按自然时间顺序[Δτ₀,…,Δτᵣ]存储，递归先执行首段、再碰撞、再余段；二段桥接展开递归核对为G t₁∘Rc∘G t₀。此为形式组合器，非负时长、总时长及G/Rc来自实际Hamilton碰撞的资格不由任意函数定义推出。\n -/\n def collisionComposition {E : Type*} (G : ℝ → E → E) (Rc : E → E) (times : List ℝ) : E → E :=\n   match times with\n@@ -2341,7 +2341,8 @@\n termination_by times.length\n \n theorem collisionComposition_two {E : Type*} (G : ℝ → E → E) (Rc : E → E)\n-    (t₀ t₁ : ℝ) : collisionComposition G Rc [t₀,t₁] = G t₁ ∘ Rc ∘ G t₀ := rfl\n+    (t₀ t₁ : ℝ) : collisionComposition G Rc [t₀,t₁] = G t₁ ∘ Rc ∘ G t₀ := by\n+  simp [collisionComposition]\n \n \n /-- source_id: MD-3.7-CollisionRegularity · unnumbered_claim · §3.7 · 印刷p.133 / PDFp.155\n"
+  }
+]

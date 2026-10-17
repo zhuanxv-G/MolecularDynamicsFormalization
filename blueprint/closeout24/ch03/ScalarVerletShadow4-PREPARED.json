@@ -1,0 +1,5 @@
+{
+  "source_id": "MD-3.4-ScalarVerletShadow4",
+  "diff_summary": "【原书疑误】保留印刷有限式及原匹配断言（另名Printed，不证明）；独立精确有理数jet核对kick-drift-kick后，修正版h⁴四项系数为−1/720,+1/120,+1/60,−1/240，分别乘p⁴U⁗、p²U′U‴、p²(U″)²、(U′)²U″。SymPy验到h⁶；统一实际流O(h⁷)估计仍未证明，交导师核查。",
+  "lean_sha256": "8021d71672982d9d64be82ed0d2f9bc90d7d2bf36dd919d48c66ef7f10659689"
+}

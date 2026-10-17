@@ -1,0 +1,164 @@
+{
+  "batch": "EAUDIT62",
+  "input_sha256": {
+    "BATCH_EAUDIT62.md": "caecf2f5161b39be2310c274b0bc748f3c53133c175a86ea77f721cb0e15eb19",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.6-ForwardWeakStationary",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已视觉核对附件第3页（印刷207/PDF228）第一段末句，英文、弱意义、dagger、原点Dirac及带引号的asymptotically stable均一致。",
+          "C：weakStationary对全部实值C∞紧支撑测试函数要求Lie导数可积且积分为零，正是有限概率测度的分布意义平稳连续性方程；本光滑线性场使紧支撑Lie导数有界，可积条件不额外删减概率解。",
+          "C：声明依次包含原点Dirac确为弱稳态、在所有二维Borel概率测度中唯一、以及相对于实际全时间对数流的¬weakAttractor。weakAttractor采用有限个有界连续测试函数给定的弱邻域，所有邻近概率的所有有界连续观测都须在t→+∞收敛；其否定确为无局部弱吸引性。",
+          "C：a=log(1+h²)/(2h)>0，流满足径向指数扩张。任意有限弱邻域都含某个非零且足够靠近原点的Dirac，其轨道逃离原点，不能弱收敛到δ0。平稳概率唯一性可由完整线性流的不变性及径向扩张判定；没有把离散不变性替代弱PDE。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.forwardWeakStationary",
+        "verdict": "PASS",
+        "explanation": "全体对象、域、量词、0<h前提、三项完整结论和[EXTRA]一致。以概率分布解读原书的distribution符合本节密度语境；不宣称所有未归一化或任意Schwartz分布的唯一性。签名正确，sorry不影响本次签名判定。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-BackwardWeakStationary",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_ADJOINT_SYMBOL"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-BackwardWeakStationary",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "207",
+          "pdf_page": "228",
+          "statement_latex": "The only (distributional) solution of $\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=0$ is again $\\delta[q]\\delta[p]$, which in this case is attractive.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.backwardWeakStationary",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]选定实际logarithmic modified场、正h与概率分布；完整弱PDE唯一性及弱概率吸引保留，实际离散全轨道与所有概率弱极限另条。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT23_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:19:38.401044",
+              "before_sha256": "402ffc397c824ae5e11e4d28c845886511dca5aa3cce10cef80c18f93792b9f9",
+              "after_sha256": "8c723183c00e932d95ba083793b4fc7d16712cf4c88ecaa5e2adf8fc9158af29",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH28_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT23/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "severity": "minor",
+            "field": "statement_latex",
+            "description": "原页Backward Euler句中伴随符号为dagger（†），不是星号（*）。仅修正忠实转写，不改原书断言。"
+          }
+        ],
+        "evidence": [
+          "A：已视觉核对附件第4页（印刷207/PDF228）Backward Euler段末句；其余英文、again、Dirac及attractive均与输入一致，L的上标应为†。",
+          "C：h遍历正实数，状态空间为实二维欧氏空间，场/流取true分支；a=−log(1+h²)/(2h)<0，b=arctan(h)/h。weakStationary和weakAttractor使用与上一条相同的完整测试函数接口。",
+          "C：结论完整保留δ0弱平稳、对所有概率测度的弱平稳唯一性以及δ0的局部弱概率吸引。实际流将每个初值送向0，任意概率初始分布的有界连续观测由有界收敛趋于φ(0)，足以满足该局部吸引定义。",
+          "C：[EXTRA]概率域和正步长均已明确；没有以离散轨道收敛代替本连续流/PDE命题。原文distributional按归一化非负概率分布语境解读，未扩大到任意广义函数。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.backwardWeakStationary",
+        "verdict": "PASS",
+        "explanation": "除原文JSON的伴随上标转写外，签名完整、正确：所有正h，实际Backward Euler对数场及流，唯一概率弱稳态和弱吸引性均匹配。sorry不作FAIL依据。",
+        "counterexample": null,
+        "suggested_fix": "将原文JSON的*改为dagger；Lean签名无需修改。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-SymplecticWeakStationary",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_ADJOINT_SYMBOL"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-SymplecticWeakStationary",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "207",
+          "pdf_page": "228",
+          "statement_latex": "This implies that a density which is a function of $\\widetilde H_h$ will remain invariant under the associated Liouville equation. There are many solutions of $\\mathcal L_{\\widetilde f}^{\\dagger}\\rho=0$, none of which is attractive.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch05.symplecticWeakStationary",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]稳定区|h|<2下的真实二次modified Hamiltonian、Hamilton场及其实际全时间flow；保留能量函数密度弱稳态、至少两个不同概率稳态、全部概率稳态非吸引三项，不以单步能量保持替代。能量的正比例因子仅重参数化时间，不改变稳态/吸引命题。",
+            "[EXTRA] 弱稳态接口使用前条实际一步对应的主对数modified Hamiltonian及其梯度场；函数能量密度、多种概率稳态和非吸引结论齐全，不把未按时间缩放的不变量场冒充数值步的时间h模型。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT23_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:19:38.401044",
+              "before_sha256": "a895478d36d856e9504e4274c1d6dfa03e749ee8c5f80f644a7fb84879402a51",
+              "after_sha256": "c65e4f542aab7e8043b51b0692a5d39143e440b32a47d2c186a0161847197399",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH28_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT23/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "severity": "minor",
+            "field": "statement_latex",
+            "description": "原页Symplectic Euler段中伴随符号为dagger（†），不是星号（*）；修正转写，保留原书断言。"
+          }
+        ],
+        "evidence": [
+          "A：已视觉核对附件第5页（印刷207/PDF228）Symplectic Euler段最后两句；function of modified Hamiltonian、invariant、many solutions、none attractive均一致。上标应为†。",
+          "C：对所有实h且|h|<2（包括h=0）定义H=c(h)(q²+p²−hqp)/2，c(0)=1，非零h时c=2arcsin(h/2)/(h√(1−h²/4))>0。二次型正定；Hamilton场确为(∂pH,−∂qH)。该尺度是稳定区主对数时间尺度，h=0的分支为连续延拓。",
+          "C：Φ量化为所有满足项目flow的全时间流：初值恒等、群性质、对所有t,z满足ODE。这不是将目标稳态结论作为前提；此线性光滑场有唯一完整流，因此条件不是空条件，也未筛去其他真实流。",
+          "C：第一合取量化所有r:ℝ→ℝ，仅要求组合密度r∘H可测、非负、Lebesgue可积且积分1，不暗加r的光滑性；Hamilton流保持H和体积，所以该密度弱平稳。第二合取明确给出两个不同概率弱稳态，保留多解性。第三合取对全部概率弱稳态断言无局部弱吸引性。",
+          "C：有界连续能量观测在流下守恒。对任一平稳概率μ，可用与μ有不同能量观测的另一平稳概率ν构成任意小混合(1−ε)μ+εν，落在μ的任何有限弱邻域但不趋于μ，故全部概率稳态非吸引。紧支撑测试函数的Lie导数有界，因此所加可积性无额外负担。",
+          "C：[EXTRA]的稳定区和概率归一化是合理明确化，正尺度保留稳态及吸引性质；定理保留三项PDE/概率结论，没有以单步能量守恒代替。原书前文未明说椭圆所需的稳定区，此处已明确限制，未将该限制伪装为原文逐字内容。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.symplecticWeakStationary",
+        "verdict": "PASS",
+        "explanation": "稳定区内主对数Hamiltonian、梯度场、全时间真实流条件均正确。能量函数概率密度的弱稳态、至少两种不同概率稳态及全部概率稳态无弱吸引性三项完整。只需修正原文JSON的伴随上标；无需因sorry判FAIL。",
+        "counterexample": null,
+        "suggested_fix": "将原文JSON的*改为dagger；保留[EXTRA]中|h|<2及概率语境说明，Lean签名无需修改。"
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

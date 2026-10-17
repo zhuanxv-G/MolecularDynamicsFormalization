@@ -1,0 +1,12 @@
+--- before
++++ after
+@@ -1004,7 +1004,8 @@
+   fun j => (fderiv ℝ (fderiv ℝ (γ j)) q)
+     (textbookInverseMassMatrix m *ᵥ p) (textbookInverseMassMatrix m *ᵥ p)
+ 
+-/-- source_id: MD-4.3-ReactionMultiplier · definition · §4.3 · 印刷p.153 / PDFp.175 -/
++/-- source_id: MD-4.3-ReactionMultiplier · definition · §4.3 · 印刷p.153 / PDFp.175 [EXTRA] 24号：[EXTRA] 逆Gram候选公式定义（含奇异点的总化）；原句在det≠0时解平衡方程及唯一性由MD-4.3-ReactionBalance和MD-4.3-GramInvertible共同覆盖。 不将无条件总化定义报告成唯一求解结论。
++-/
+ noncomputable def reactionMultiplier {Nc Mc : ℕ} (m : Fin Nc → ℝ)
+     (γ : Fin Mc → (Fin Nc → ℝ) → ℝ) (F : (Fin Nc → ℝ) → Fin Nc → ℝ)
+     (q p : Fin Nc → ℝ) : Fin Mc → ℝ :=

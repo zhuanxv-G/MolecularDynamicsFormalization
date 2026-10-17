@@ -1,0 +1,432 @@
+{
+  "batch": "EAUDIT55",
+  "input_sha256": {
+    "BATCH_EAUDIT55.md": "f046aaa19ae28a72364c1b1668a3c03d0c41d5ccc5b629f1da2e6815720c07a8",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.4.1-UniformMicroErgodic",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ORIGINAL_ALMOST_ALL_DIMENSION_AMBIGUITY"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "SOURCE_MATH",
+            "code": "ORIGINAL_ALMOST_ALL_DIMENSION_AMBIGUITY",
+            "description": "原书 By “almost all”...low-dimensional subset 逐字相符，应保留。但低维与微正则零测并非同义：零测集合可以有满 Hausdorff 维数。当前 Lean 仅表述零测异常集，未表述低维异常集。需人工确认该句只是解释性直观还是额外维数要求。"
+          }
+        ],
+        "evidence": {
+          "attachment_pages": [
+            10
+          ],
+          "printed_page": "197",
+          "pdf_page": "218",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "NEEDS_HUMAN"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.uniformMicroErgodic",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "主谓词的量词顺序准确为对 microMeasure 几乎处处 z，再对每个全局 C∞ 且该测度可积的实值 g；结论是实际无限时间平均等于实际空间平均。flow 明确零时恒等、实时间群律与逐时 ODE 导数；另有 H∈C²、全空间能量保持、非空紧正则面及正有限质量，并用常可逆反对称矩阵 J 指定 f=J∇H。这些 [EXTRA] 均在接口中，紧能量面上光滑 g 可积并不实质删去原文光滑观测量。问题在原书把 almost all 用 low-dimensional subset 解释：测度零与低维条件不能一般等同，Lean 未出现维数谓词。按通常微正则零测解释签名正确；若原文要求异常集严格低维则尚不忠实，需人工确定，不能静默裁定原书。",
+        "counterexample": "测度论差异的例子：实直线上存在 Lebesgue 零测且 Hausdorff 维数为1的集合；故“零测”本身不推出“严格低维”。这是原书术语解释的反例，不声称已给出满足本条 Hamiltonian 假设的动力学反例。",
+        "suggested_fix": "保留原文低维句；由人工决定其语义。若仅指 μ_E 零测，现签名可批准并补语义注释；若要求严格低维，则须另行明确所用维数并增加对应异常集条件。本次不修改 Lean 或原书。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-MicroErgodicStandard",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_OMITTED_LINKING_WORDS",
+          "EXTRA_STALE_INTERFACE_DESCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-MicroErgodicStandard",
+          "kind": "definition",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "197",
+          "pdf_page": "218",
+          "statement_latex": "for almost all trajectories $\\Gamma$ emanating from initial conditions on $\\Sigma_E$, and for any observable $g$, the following holds $\\bar g_\\Gamma=\\operatorname{Av}_{H=E}(g)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本句摘自Definition 5.1；原文先“almost all trajectories”，再“any observable”；$\\Gamma$ 和 $\\bar g_\\Gamma$ 同(5.9)，PDF216。"
+          ],
+          "issues": [
+            {
+              "stage": "A",
+              "code": "SOURCE_OMITTED_LINKING_WORDS",
+              "description": "摘录将原书 “and for any observable g, the following holds” 中的 “the following holds” 无标识删除；已恢复。"
+            },
+            {
+              "stage": "C_METADATA",
+              "code": "EXTRA_STALE_INTERFACE_DESCRIPTION",
+              "description": "首条 EXTRA 把本条整体描述为标准 ∀L¹ 后 AE，与当前主接口冲突；现区分主接口及替代定义，并明确外部等价条目不在本次核对范围。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.microErgodic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 主接口按原文保留共同 AE 初值后 ∀C∞ 可积观测量，并明确 flow、正则概率能量面、C² Hamiltonian、能量保持、常可逆反对称 J。",
+            "[EXTRA] microErgodic_L1_alternative 仅定义 ∀L¹ 观测量后各自 AE 初值的替代性质；该替代接口本身未附加 Hamiltonian/概率背景，不自动保证与主定义等价。所谓 ErgodicTimeEquivalence 不在本批提供内容中，本次不据此声称已核对或证明等价。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT13_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:01:07.827007",
+              "before_sha256": "9a6af3fffa0acf5ec55899d8df51812ec8db0dbbdc6ec02b957a3e63cf891ae9",
+              "after_sha256": "61f880427038b991fb1d97b2520969e6dbbeb9b037a72af8eb107d247087528f",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R5: verified against R5_PAGES.pdf rendered original pages and extracted text; attachment page numbers in this review evidence."
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "SOURCE_OMITTED_LINKING_WORDS",
+            "description": "摘录将原书 “and for any observable g, the following holds” 中的 “the following holds” 无标识删除；已恢复。"
+          },
+          {
+            "stage": "C_METADATA",
+            "code": "EXTRA_STALE_INTERFACE_DESCRIPTION",
+            "description": "首条 EXTRA 把本条整体描述为标准 ∀L¹ 后 AE，与当前主接口冲突；现区分主接口及替代定义，并明确外部等价条目不在本次核对范围。"
+          }
+        ],
+        "evidence": {
+          "attachment_pages": [
+            11
+          ],
+          "printed_page": "197",
+          "pdf_page": "218",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.microErgodic",
+        "verdict": "PASS",
+        "explanation": "主 microErgodic 与上一条共同满测集的 C∞ 版本相同，完整保留 AE z 后 ∀g 以及 flow、正则面、C²、能量保持、常非退化反对称 J 等所有参数前提。额外 microErgodic_L1_alternative 的顺序是 ∀g，Integrable g μ→AE z，允许不同 g 有不同异常集，且只要求 L¹ 而不要求光滑；该声明仅定义替代性质，不断言与主定义等价。它无 Hamiltonian/概率前提，故只能视为一般测度映射的性质，单独使用时不能保证动力系统背景；应在注释中明确。本条摘录本身没有 low-dimensional 句，故此处无该句的维数承诺。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-FlowInvariant",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXTRA_STALE_ZERO_TIME_DESCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-FlowInvariant",
+          "kind": "definition",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "197",
+          "pdf_page": "218",
+          "statement_latex": "An invariant set $\\mathcal A$ of the flow is one such that $\\mathcal F_t(\\mathcal A)=\\mathcal A$, for all $t\\ne0$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "$\\mathcal F_t$ 是流映射，$\\mathcal F_t(\\mathcal A)$ 是集合像；真实流有 $\\mathcal F_0=\\mathrm{id}$。"
+          ],
+          "issues": [
+            {
+              "stage": "C_METADATA",
+              "code": "EXTRA_STALE_ZERO_TIME_DESCRIPTION",
+              "description": "第一条 EXTRA 说“因而用实际全实时间集合像不变性”，与本条 MD 定义实际 t≠0 条件及第二条 EXTRA 冲突。仅修正文档；Lean 忠实。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.flowInvariant",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] MD.Ch05.flowInvariant 按原印仅要求 ∀t≠0 的集合像不变；没有默加 t=0。只有真实流的 Φ0=id 背景下，它才等价于 Chapter05Review.flowInvariant 的全实时间版本。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT13_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:01:07.827007",
+              "before_sha256": "d98bc3be1b1ba853702aeae81fd1a0450e6c2d29e6856df4ad4a05a80058a75d",
+              "after_sha256": "ee1dc646c80095d781f3b4f760aec4dea2c83dbfcbe1f6bbd234f9585d7ce244",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:28:28.864805",
+              "before_sha256": "ee1dc646c80095d781f3b4f760aec4dea2c83dbfcbe1f6bbd234f9585d7ce244",
+              "after_sha256": "947129188c45908e10cd511f2a02f7bc7c37887c5802e0fa42352db4d6c634e2",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "197–198",
+                  "after": "197"
+                },
+                "pdf_page": {
+                  "before": "218–219",
+                  "after": "218"
+                }
+              },
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "R5: verified against R5_PAGES.pdf rendered original pages and extracted text; attachment page numbers in this review evidence.",
+          "review_context_pdf_pages": [
+            219
+          ]
+        },
+        "issues": [
+          {
+            "stage": "C_METADATA",
+            "code": "EXTRA_STALE_ZERO_TIME_DESCRIPTION",
+            "description": "第一条 EXTRA 说“因而用实际全实时间集合像不变性”，与本条 MD 定义实际 t≠0 条件及第二条 EXTRA 冲突。仅修正文档；Lean 忠实。"
+          }
+        ],
+        "evidence": {
+          "attachment_pages": [
+            12,
+            13
+          ],
+          "printed_page": "197",
+          "pdf_page": "218",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.flowInvariant",
+        "verdict": "PASS",
+        "explanation": "对任意类型 X、任意 Φ:ℝ→X→X 和 A:Set X，定义恰为 ∀t,t≠0→Φ t''A=A，使用集合像而非原像/包含关系。没有默加 t=0，也不声称任意 Φ 自动具有流律。真实流满足 Φ0=id 时，才与全时间像不变等价。旧第一条 EXTRA 声称当前实现使用全时间条件，与实际 MD 定义冲突，已仅修正文档；Lean 声明本身通过。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-SetErgodic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "attachment_pages": [
+            14,
+            15
+          ],
+          "printed_page": "197",
+          "pdf_page": "218",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.setErgodic",
+        "verdict": "PASS",
+        "explanation": "X 带可测空间，μ 为概率测度；Φ 有零时恒等、所有实 s,t 的群律和联合可测性。结论只量化可测集合 A，以实际 Chapter05Review.flowInvariant（全实时间像相等）为前提，要求 μ A=0 或 μ A=1。因 h0，全时间不变与本批 MD.flowInvariant 的 t≠0 条件等价，命名空间差异不会改变真实流上的语义。可测性限制是概率集合定义的合理明确化。签名没有 MeasurePreserving 前提，因此本次仅批准原句的0/1定义，不把它当作已证明与时间平均相等的等价定理；建立这种等价通常还需保测等背景。原书 as ergodic 的语法错误应原样保留，不属数学修正。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-InvariantIndicator",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "attachment_pages": [
+            16
+          ],
+          "printed_page": "198",
+          "pdf_page": "219",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "仅不变集合内补集indicator逐点恒零辅助引理；无限平均零由MD-5.4.1-InvariantIndicatorAverage承担。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.invariantIndicator",
+        "verdict": "PASS",
+        "explanation": "任意 X,Φ,A，全时间集合像不变 h，以及 z∈A、任意实数 t；结论为 ambient 补集 Aᶜ 的常1示性函数在 Φt z 处=0。由 Φt''A=A 即有 Φt z∈A，不需可测性、可积性或 flow 群律。此沿轨道结论与原书能量面内补集示性函数一致，因为路径始终留在 A；不宣称两个示性函数在能量面外相等。scope 明确此条只给逐点辅助结论，完整无限平均另条承担。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-InvariantIndicatorAverage",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "attachment_pages": [
+            17
+          ],
+          "printed_page": "198",
+          "pdf_page": "219",
+          "source_check": "已对照附件相应页的提取文本及四个不同原页的渲染图逐字核对；重复页提取文本一致。",
+          "lean_check": "仅核对本任务摘录的完整声明及 MolecularDynamics / MD 项目依赖；按要求采信 Mathlib 标准含义；未编译、未修改 Lean、未补证明。",
+          "scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "A_result": "所引文字及公式与原页相符；如有不连续摘录、转录或注释问题，详见本条 issues。",
+          "C_result": "PASS"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.invariantIndicatorAverage",
+        "verdict": "PASS",
+        "explanation": "参数为任意 X,Φ,A、全时间集合像不变 hA、初值 z∈A；完整结论是实际 hasTimeAverage (fun t=>Φ t z) (Aᶜ.indicator 1) 0，已包含 Tendsto、0..T 积分及归一化，不仅是逐点等式或有限平均。像不变性保证轨道全时刻在 A，从而被积函数恒零，故无须额外可测或连续前提。使用全时间 Chapter05Review.flowInvariant；在真实流背景下和原印 t≠0 等价。sorry 不影响本次签名判定。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_POSITIVE_MASS_BRANCH_OMITTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.4.1",
+          "printed_page": "198",
+          "pdf_page": "219",
+          "statement_latex": "If we assume the system is ergodic, we must have $\\operatorname{Pr}(\\Sigma_E\\setminus\\mathcal A)=0$, thus $\\operatorname{Pr}(\\mathcal A)=1$. Since, according to the definition, equality of time and space averages is allowed to fail only on a set of probability measure zero, we have that either $\\operatorname{Pr}(\\mathcal A)=0$ or $\\operatorname{Pr}(\\mathcal A)=1$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF218–219：$\\mathcal A$ 不变，$\\chi=1_{\\Sigma_E\\setminus\\mathcal A}$；其空间平均为 $\\operatorname{Pr}(\\Sigma_E\\setminus\\mathcal A)$，在 $\\mathcal A$ 中的轨道平均为零。原书先写补集概率为0，最后才分辨 $\\operatorname{Pr}(\\mathcal A)=0$ 的情形；应用AE等式推出补集概率为0须先有 $\\operatorname{Pr}(\\mathcal A)>0$，这里仅记录而不改原句。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_POSITIVE_MASS_BRANCH_OMITTED",
+              "phase": "A",
+              "field": "statement_latex",
+              "message": "转录忠实，但原文直接从遍历性推出Pr(Σ_E\\A)=0，尚未排除Pr(A)=0；其后才陈述0/1分支。保留原句并转人工，不用正概率修订反写原文。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.ergodicTimeAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]完整全实时间可测流、概率保持、群律及L¹资格；对应标准每观测量AE版本，未将原共满测集量词交换当无条件事实。",
+            "[EXTRA] 保留标准L¹双向定理，补紧支持概率流上共同AE光滑定义的连接及正概率不变集分支/实际indicator平均，区分原定义与标准替代定义。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT13_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:01:07.828007",
+              "before_sha256": "ec8ddcefd5f505e431f9b421e33d182a7505f9da7c6bfc3beadbc2c6321a052b",
+              "after_sha256": "9d7da121a29567760a54ac5e617bf6b4effded8b54d02c861e7f869bffa2bbfd",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH18_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT13/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_POSITIVE_MASS_BRANCH_OMITTED",
+            "phase": "A",
+            "field": "statement_latex",
+            "message": "转录忠实，但原文直接从遍历性推出Pr(Σ_E\\A)=0，尚未排除Pr(A)=0；其后才陈述0/1分支。保留原句并转人工，不用正概率修订反写原文。"
+          }
+        ],
+        "evidence": [
+          "R6_任务.md:35：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第1页＝原书PDF219／印刷198；已视觉核对从“If we assume the system is ergodic”到“Pr(A)=1”的整段。",
+          "R6_evidence/page_01.png；前段说明χ=1_(Σ_E\\A)沿A内轨道平均为0；后段明确保留Pr(A)=0的可能性。",
+          "实际调用的是MolecularDynamics.Chapter05Review.flowInvariant（含t=0），不是仅写t≠0的MD.Ch05.flowInvariant；所列零时恒等条件使两种写法在此一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.ergodicTimeAverage",
+        "verdict": "PASS",
+        "explanation": "已分别核对ergodicTimeAverage、ergodicTimeAverage_common_smooth、ergodicTimeAverage_positive_invariant。E n为任意有限维实欧氏空间；第一条在概率测度、每个实时间保测、零时恒等、全实时间群律及联合可测前提下，给出严格不变可测集的0/1性质与“每个L¹实观测量各自几乎处处具有空间均值时间平均”的双向等价；积分为真实0到T区间积分，极限为T→+∞。第二条另要求联合连续及紧支撑，结论确实把AE置于所有C∞实观测量之前，这些增加的条件已经[EXTRA]公开，不能把第二条当成第一条无条件交换量词。第三条显式要求可测不变集A有正概率，结论同时包含μ(A)=1、所有实时间轨道留在A、补集指标函数的实际时间平均为0；未把这些结论作假设。三条修订/扩展签名合理。本条PASS只涉及这些明确声明，不认可原书省略正概率分支的中间推理。",
+        "counterexample": "针对原书中间句：取任何概率遍历流及A=∅。A可测且不变，但Pr(Σ_E\\A)=1。此例不反驳Lean中要求0<μ A的positive_invariant，也不反驳0/1结论。",
+        "suggested_fix": "保留原句，人工确认应先分Pr(A)=0与Pr(A)>0两种情形。当前三个Lean签名无需据此修改；不得声称本次已完成它们的证明。"
+      }
+    },
+    {
+      "source_id": "MD-5.4.1-NonergodicSet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "R6_任务.md:188：仅使用本条原文JSON、完整当前Lean和摘录的实际依赖；input_sha256按本条原样回显，未读取或复用旧工程、旧审校结果。",
+          "A与C分别判定：json_review.status审原文转录、元数据及原书疑误；audit.verdict审所列声明在明示statement_scope和[EXTRA]下的完整语义。原文NEEDS_HUMAN不等于已明示的正确修订版签名FAIL。",
+          "审校方式为PDF渲染视觉核对及Lean声明只读语义核对；没有修改工程、补证明或运行Lean编译；sorry不作为签名失败的理由。",
+          "附件第2页＝PDF219／印刷198；整段三个句子中的前两句与statement_latex相符，未将下一句分区描述并入本条。",
+          "R6_evidence/page_02.png与page_01.png渲染文件逐字节相同；已核对可测集、实时间像不变、真实指标积分和T→+∞定义。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.nonergodicSet",
+        "verdict": "PASS",
+        "explanation": "已核对nonergodicSet及nonergodicSet_average_witness。第一条对任意n、概率μ及实时间作用Φ，把非setErgodic准确展开为存在可测、严格流不变且0<μ A<1的集合；概率性保证不存在大于1或无限质量的遗漏分支。第二条对任意这样的A和实际群作用，结论逐一包含所有z∈A及所有t的轨道保持、补集实值指标的0到T时间平均趋于0，以及该指标的空间积分非0。后者由μ(Aᶜ)>0给出，与源文“至少某些观测量”相符；没有把平均不等式预先作假设。测度可集中在能量面，E n的环境空间参数化没有把μ误当Lebesgue测度。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

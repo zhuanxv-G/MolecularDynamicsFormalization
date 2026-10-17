@@ -1,0 +1,41 @@
+{
+  "batch": "EAUDIT86",
+  "input_sha256": {
+    "BATCH_EAUDIT86.md": "3e10b0f23f6378a0d254f1ebea4109511a342859b4d91c5a7d67d5378f7d4b6f",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4-RigidMatrixRelation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "附件14页印171：四条导数方程及I=ΘᵀΘ的符号、左右乘次序一致。",
+          "定义Prop而非存在性定理；对开放实时间域I逐t要求四个HasDerivWithinAt及ΘᵀΘ=I。开放域内within导数等同通常导数；M>0、R可逆、U在ℝ³×Mat3联合可微均已披露。grad和matrixGrad实际为按标准基取fderiv分量，四个右端的符号、矩阵乘法次序和势能冻结参数正确。Λ为给定矩阵乘子轨道，原摘录未另写对称条件；此处不新增解存在或唯一性断言。空开放域只给空域关系，不构成解存在断言。",
+          {
+            "attachment_pages": [
+              14
+            ],
+            "visual_verification": "已渲染核对四种不同原页（附件1、6、9、14）；其余附件页的渲染PNG与相应原页SHA256完全一致。",
+            "render_sha256": {
+              "14": "c79ddbbed33c8bbbd1c5a77b3cd84a12e875cf85776656f4243caa51b4c296d3"
+            }
+          },
+          "范围：只读核对任务摘录中的完整声明与全部项目依赖；未修改工程、未补证明、未运行Lean编译，未以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidMatrixRelation",
+        "verdict": "PASS",
+        "explanation": "定义Prop而非存在性定理；对开放实时间域I逐t要求四个HasDerivWithinAt及ΘᵀΘ=I。开放域内within导数等同通常导数；M>0、R可逆、U在ℝ³×Mat3联合可微均已披露。grad和matrixGrad实际为按标准基取fderiv分量，四个右端的符号、矩阵乘法次序和势能冻结参数正确。Λ为给定矩阵乘子轨道，原摘录未另写对称条件；此处不新增解存在或唯一性断言。空开放域只给空域关系，不构成解存在断言。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

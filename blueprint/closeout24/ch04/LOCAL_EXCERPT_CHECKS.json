@@ -1,0 +1,32 @@
+{
+  "MD-4.2.1-FastVerlet": {
+    "status": "local_definition_and_algebra_verified",
+    "definitions": [
+      "MolecularDynamics.Chapter02Review.verlet",
+      "MolecularDynamics.Chapter02Review.invMass"
+    ],
+    "definition_file": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+    "definition_sha256": "3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7",
+    "proof": "MD.Ch04.fastVerlet_kick_drift_kick",
+    "book_erratum": false,
+    "conclusion": "本地核验通过（网站因摘录缺失未判）；须与本章最终逐声明公理结果共同读取",
+    "current_group": "def fastVerlet {n : ℕ} (m : Fin n → ℝ) (UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ) : MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n :=\n  Chapter02Review.verlet m (fun q => -MolecularDynamics.Chapter04Review.grad UF q) h\n\n\n\n/-- 本地核对网站缺摘录项：动量半kick、位置整drift、动量半kick。 -/\ntheorem fastVerlet_kick_drift_kick {n : ℕ} (m : Fin n → ℝ)\n    (UF : MolecularDynamics.Chapter04Review.Q n → ℝ) (h : ℝ)\n    (z : MolecularDynamics.Chapter04Review.Z n) :\n    fastVerlet m UF h z =\n      let F := fun q => -MolecularDynamics.Chapter04Review.grad UF q\n      let pHalf := z.2+(h/2) • F z.1\n      let qNew := z.1+h • Chapter02Review.invMass m pHalf\n      (qNew,pHalf+(h/2) • F qNew) := by\n  let F := fun q => -MolecularDynamics.Chapter04Review.grad UF q\n  have hq : z.1+h • Chapter02Review.invMass m z.2+\n      (h^2/2) • Chapter02Review.invMass m (F z.1) =\n      z.1+h • Chapter02Review.invMass m (z.2+(h/2) • F z.1) := by\n    ext i\n    simp [Chapter02Review.invMass]\n    <;> ring\n  dsimp only [fastVerlet, Chapter02Review.verlet]\n  change (z.1+h • Chapter02Review.invMass m z.2+(h^2/2) • Chapter02Review.invMass m (F z.1),\n    z.2+(h/2) • (F z.1+F (z.1+h • Chapter02Review.invMass m z.2+(h^2/2) • Chapter02Review.invMass m (F z.1)))) = _\n  rw [hq]\n  apply Prod.ext\n  · rfl\n  · ext i\n    simp [F]\n    <;> ring",
+    "current_lean_sha256": "92933d3fce37c9c3e1fa601cc27fa0213d2120896370f9e2cfa78bc4255a0c46",
+    "proof_verified": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "axiom_log": "blueprint/closeout24/ch04/full-run.log"
+  },
+  "MD-4.3.5.1-ConstrainedComposition": {
+    "status": "local_cross_reference_verified",
+    "book_erratum": false,
+    "referenced_source_id": "MD-4.3.5.1-ConstrainedCompositionOrder",
+    "referenced_declaration": "MD.Ch04.constrainedCompositionOrder",
+    "conclusion": "完整局部误差阶声明已核对，C³与真实关系/小步长资格齐；声明尚未证明；circleExample不含唯一性。",
+    "current_group": "theorem constrainedComposition :\n  ∀ n l (m : Fin n → ℝ) (U : MolecularDynamics.Chapter04Review.Q n → ℝ) (g : Fin l → MolecularDynamics.Chapter04Review.Q n → ℝ)\n    (E A : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Z n) (pE pA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q n) (rhoE μE rhoA μA : ℝ → MolecularDynamics.Chapter04Review.Z n → MolecularDynamics.Chapter04Review.Q l) (η : ℝ), 0 < η →\n    (∀ j, ContDiff ℝ 3 (g j)) → ContDiff ℝ 3 U → (∀ i, 0 < m i) →\n    (∀ q ∈ MolecularDynamics.Chapter04Review.constraintSet g, LinearIndependent ℝ (fun j ↦ textbookConstraintGradient (g j) q)) →\n    (∀ h ∈ Ioo (-η) η, ContDiff ℝ 1 (E h) ∧ ContDiff ℝ 1 (A h) ∧\n      ContDiff ℝ 1 (pE h) ∧ ContDiff ℝ 1 (pA h) ∧ ContDiff ℝ 1 (rhoE h) ∧\n      ContDiff ℝ 1 (μE h) ∧ ContDiff ℝ 1 (rhoA h) ∧ ContDiff ℝ 1 (μA h)) →\n    (∀ h ∈ Ioo (-η) η, ∀ z, z ∈ MolecularDynamics.Chapter04Review.cotangentSet m g →\n      MolecularDynamics.Chapter04Review.projectedEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (E h z) (pE h z) (rhoE h z) (μE h z) ∧\n      MolecularDynamics.Chapter04Review.adjointEulerRelation m (fun q => -MolecularDynamics.Chapter04Review.grad U q) g h z (A h z) (pA h z) (rhoA h z) (μA h z)) →\n    ∀ h ∈ Ioo (-η) η, MolecularDynamics.Chapter04Review.restrictedSymplectic m g (A (h/2) ∘ E (h/2)) := by\n  sorry\n\ntheorem constrainedComposition_circleExample :\n    let m : Fin 2 → ℝ := fun _ ↦ 1\n    let g : Fin 1 → (Fin 2 → ℝ) → ℝ := fun _ q ↦ (q 0)^2+(q 1)^2-1\n    let F : (Fin 2 → ℝ) → Fin 2 → ℝ := fun _ ↦ 0\n    let z : MolecularDynamics.Chapter04Review.Z 2 := (![1,0],![0,1])\n    let e : MolecularDynamics.Chapter04Review.Z 2 :=\n      (![Real.sqrt 15/4,1/4],![-1/4,Real.sqrt 15/4])\n    let a : MolecularDynamics.Chapter04Review.Z 2 :=\n      (![7/8,Real.sqrt 15/8],![-Real.sqrt 15/8,7/8])\n    let r : MolecularDynamics.Chapter04Review.Z 2 :=\n      (![Real.sqrt 3/2,1/2],![-1/2,Real.sqrt 3/2])\n    ∃ pE pA pR pS ρE μE ρA μA ρR μR ρS ρSnew pSout,\n      MolecularDynamics.Chapter04Review.projectedEulerRelation m F g (1/4) z e pE ρE μE ∧\n      MolecularDynamics.Chapter04Review.adjointEulerRelation m F g (1/4) e a pA ρA μA ∧\n      MolecularDynamics.Chapter04Review.rattleRelation m F g (1/2) z r pR ρR μR ∧\n      MolecularDynamics.Chapter04Review.shakeRelation m F g (1/2) z (r.1,pSout) pS ρS ρSnew ∧\n      a.1 ≠ r.1 := by\n  sorry\n\ntheorem constrainedComposition_noConstraints (n : ℕ) (m : Fin n → ℝ)\n    (F : MolecularDynamics.Chapter04Review.Q n → MolecularDynamics.Chapter04Review.Q n)\n    (h : ℝ) (z out : MolecularDynamics.Chapter04Review.Z n) :\n    ((∃ pbar rho μ, MolecularDynamics.Chapter04Review.projectedEulerRelation m F\n      (Fin.elim0 : Fin 0 → MolecularDynamics.Chapter04Review.Q n → ℝ) h z out pbar rho μ) ↔\n      out=(z.1+h • MolecularDynamics.Chapter04Review.invMass m (z.2+h • F z.1),z.2+h • F z.1)) ∧\n    ((∃ half rho μ, MolecularDynamics.Chapter04Review.adjointEulerRelation m F\n      (Fin.elim0 : Fin 0 → MolecularDynamics.Chapter04Review.Q n → ℝ) h z out half rho μ) ↔\n      out=(z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2,\n        z.2+h • F (z.1+h • MolecularDynamics.Chapter04Review.invMass m z.2))) := by\n  sorry",
+    "current_lean_sha256": "92933d3fce37c9c3e1fa601cc27fa0213d2120896370f9e2cfa78bc4255a0c46"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "batch": "EAUDIT68",
+  "input_sha256": {
+    "BATCH_EAUDIT68.md": "0736987ea1550526c089dc346ba59b77235ee155a5e5446639d34325bb25b8fd",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.1-EnergyFailure",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第2页；印刷页 98 / 原PDF页 120",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "oscillatorEnergyFailure"
+            ],
+            "finding": "∀Ω,h，前提 Ω>0、h≠0；∀实相点 z 给出完整能量差恒等式及能量相等当且仅当 Ω(q+hp)=±p，并给出存在不守恒点。项目映射是先 Q=q+hp、再 P=p−hΩ²Q；能量是 (p²+Ω²q²)/2。因非零因子 h²Ω²/2，可约去得到两条例外直线；z=(1,0) 的能量增量 h²Ω⁴/2>0。它精确解释 typical，未错误断言所有初值均不守恒。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.oscillatorEnergyFailure",
+        "verdict": "PASS",
+        "explanation": "∀Ω,h，前提 Ω>0、h≠0；∀实相点 z 给出完整能量差恒等式及能量相等当且仅当 Ω(q+hp)=±p，并给出存在不守恒点。项目映射是先 Q=q+hp、再 P=p−hΩ²Q；能量是 (p²+Ω²q²)/2。因非零因子 h²Ω²/2，可约去得到两条例外直线；z=(1,0) 的能量增量 h²Ω⁴/2>0。它精确解释 typical，未错误断言所有初值均不守恒。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.1-ShadowInvariant",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第3页；印刷页 99 / 原PDF页 121",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "oscillatorShadowInvariant"
+            ],
+            "finding": "∀实数 Ω,h 及 z∈ℝ²，项目 shadow 恰为原式 (p²+hΩ²pq+Ω²q²)/2，项目映射恰为 adjoint symplectic Euler。代入后交叉项消去，得到原值；无需 h 小、Ω>0 或正定性。声明只谈守恒，没有把任意步长下的等值线都说成椭圆。proof_latex 的三行与原页对应。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.oscillatorShadowInvariant",
+        "verdict": "PASS",
+        "explanation": "∀实数 Ω,h 及 z∈ℝ²，项目 shadow 恰为原式 (p²+hΩ²pq+Ω²q²)/2，项目映射恰为 adjoint symplectic Euler。代入后交叉项消去，得到原值；无需 h 小、Ω>0 或正定性。声明只谈守恒，没有把任意步长下的等值线都说成椭圆。proof_latex 的三行与原页对应。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.1-FormalHamiltonian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第4页；印刷页 100 / 原PDF页 122",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "formalHamiltonian"
+            ],
+            "finding": "对象是 n 自由度实相空间，r∈ℕ 且显式 1≤r；对每点 z 构造 PowerSeries ℝ，零次为 H z，1≤j<r 为零，j≥r 为 Hj j z。正确避免 r=0 分支吞掉 H^(0)，不声称形式和收敛或实际嵌入流。此定义仅编码所 posit 的展开，不是构造系数或证明方法确为该流的存在性定理。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.formalHamiltonian",
+        "verdict": "PASS",
+        "explanation": "对象是 n 自由度实相空间，r∈ℕ 且显式 1≤r；对每点 z 构造 PowerSeries ℝ，零次为 H z，1≤j<r 为零，j≥r 为 Hj j z。正确避免 r=0 分支吞掉 H^(0)，不声称形式和收敛或实际嵌入流。此定义仅编码所 posit 的展开，不是构造系数或证明方法确为该流的存在性定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.1-FormalHamiltonianField",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "/workspace/R1_PAGES.pdf 附件第5页；印刷页 100 / 原PDF页 122",
+            "method": "以 pdftotext 布局文本对照正文、公式、proof_latex、proof_discussion_latex，并目视核对渲染页。重复页面经渲染PNG SHA256确认相同后共用目视核对。",
+            "finding": "除 issues 列明处外，所选原文及记号一致；排版换行、公式字体和等价 LaTeX 排版不计为数学改动。"
+          },
+          {
+            "stage": "C",
+            "source": "/workspace/R1_任务.md 本条完整当前Lean与全部实际依赖摘录",
+            "declarations": [
+              "formalHamiltonianField"
+            ],
+            "finding": "n,r,H,Hj,z 与坐标 i:Fin n⊕Fin n 均明确；1≤r、H 及每个 Hj 的 ContDiff ℝ ∞ 是光滑资格。零次为 J∇H 的 i 分量，r 起每次为 J∇Hj 的 i 分量，中间系数为零。项目 J=fromBlocks 0 1 (−1) 0、梯度由真实 fderiv 在单位基上取值，给出正确位置正、动量负的 Hamilton 方程。是逐坐标形式级数，不把无限级数当实际 ODE 解。",
+            "scope": "只读签名与语义审校；忽略旧工程，不运行或修改 Lean，不补证明，不因 sorry 判 FAIL。Mathlib 标准定义依任务直接采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.formalHamiltonianField",
+        "verdict": "PASS",
+        "explanation": "n,r,H,Hj,z 与坐标 i:Fin n⊕Fin n 均明确；1≤r、H 及每个 Hj 的 ContDiff ℝ ∞ 是光滑资格。零次为 J∇H 的 i 分量，r 起每次为 J∇Hj 的 i 分量，中间系数为零。项目 J=fromBlocks 0 1 (−1) 0、梯度由真实 fderiv 在单位基上取值，给出正确位置正、动量负的 Hamilton 方程。是逐坐标形式级数，不把无限级数当实际 ODE 解。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

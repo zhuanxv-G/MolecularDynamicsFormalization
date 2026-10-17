@@ -1,0 +1,56 @@
+--- before
++++ after
+@@ -1067,8 +1067,16 @@
+     textbookAdjointMethod (textbookAdjointMethod G) = G := by
+   apply MolecularDynamics.textbookAdjointMethod_involutive <;> assumption
+ 
+-/-- source_id: MD-2.4.1-Splitting · definition · §2.4.1 · 印刷p.83 / PDFp.105 -/
++/-- source_id: MD-2.4.1-Splitting · definition · §2.4.1 · 印刷p.83 / PDFp.105 [EXTRA] 24号：本条只定义组合构造；Hamilton子流资格及O(h²)近似由MD-2.4.1-SplittingLocal / MD.Ch02.splittingLocal共同覆盖。新增rfl桥接核对与该条所用F₁ h (F₂ h u)及splittingMap一致，不从任意函数族推断Hamilton流。
++-/
+ def bp_splittingMap {E : Type*} (F₁ F₂ : ℝ → E → E) (h : ℝ) : E → E := F₁ h ∘ F₂ h
++
++theorem bp_splittingMap_eq (F₁ F₂ : ℝ → E → E) (h : ℝ) :
++    bp_splittingMap F₁ F₂ h = splittingMap F₁ F₂ h := rfl
++
++theorem bp_splittingMap_apply (F₁ F₂ : ℝ → E → E) (h : ℝ) (u : E) :
++    bp_splittingMap F₁ F₂ h u = F₁ h (F₂ h u) := rfl
++
+ 
+ /-- source_id: MD-2.4.1-FieldAdd · unnumbered_claim · §2.4.1 · 印刷p.83 / PDFp.105
+ [EXTRA] H₁,H₂在实际点可微，实际Fréchet梯度。 -/
+@@ -1636,6 +1644,8 @@
+ end MD.Ch02
+ 
+ /- BEGIN WEBSITE REPAIR AXIOMS -/
++/- END WEBSITE REPAIR AXIOMS -/
++
+ #print axioms MD.Ch02.hamiltonianODE
+ #print axioms MD.Ch02.mechanicalHamiltonian
+ #print axioms MD.Ch02.euler
+@@ -1723,6 +1733,7 @@
+ #print axioms MD.Ch02.bp_differential
+ #print axioms MD.Ch02.coordinateDifferentials
+ #print axioms MD.Ch02.bp_wedge
++#print axioms MD.Ch02.textbookWedgeOneForms_apply
+ #print axioms MD.Ch02.bp_symplecticForm
+ #print axioms MD.Ch02.formSumWedges
+ #print axioms MD.Ch02.symplecticComponentMatrix
+@@ -1760,9 +1771,13 @@
+ #print axioms MD.Ch02.bp_adjointSymplecticEuler_coordinates
+ #print axioms MD.Ch02.adjointInvolution
+ #print axioms MD.Ch02.bp_splittingMap
++#print axioms MD.Ch02.bp_splittingMap_eq
++#print axioms MD.Ch02.bp_splittingMap_apply
+ #print axioms MD.Ch02.fieldAdd
+ #print axioms MD.Ch02.splittingLocal
+ #print axioms MD.Ch02.bp_kineticFlow
++#print axioms MD.Ch02.momentumKickDerivative
++#print axioms MD.Ch02.momentumKick_hasFDerivAt
+ #print axioms MD.Ch02.bp_potentialFlow
+ #print axioms MD.Ch02.splitEuler
+ #print axioms MD.Ch02.verletComposition
+@@ -1815,4 +1830,3 @@
+ #print axioms MD.Ch02.tiOrder
+ #print axioms MD.Ch02.beeman
+ #print axioms MD.Ch02.beemanOrder
+-/- END WEBSITE REPAIR AXIOMS -/

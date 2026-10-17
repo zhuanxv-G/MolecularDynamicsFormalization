@@ -1,0 +1,33 @@
+{
+  "batch": "EAUDIT73",
+  "input_sha256": {
+    "BATCH_EAUDIT73.md": "a0b3a724aaf6863798a965a5593dbc31f0a0af4fb1613c0acea75770ec4cb383",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.2.2-MollifiedPotential",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第5,6页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.mollifiedPotential",
+          "US:Q n→ℝ与A:Q n→Q n的复合，逐点恰为US(A(q))，维数一致，既未换成US(q)也未额外断言滤波效果或守恒性。此处只是修改势的定义，不需要把前后段的A加权构造并入定义签名。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.mollifiedPotential",
+        "verdict": "PASS",
+        "explanation": "US:Q n→ℝ与A:Q n→Q n的复合，逐点恰为US(A(q))，维数一致，既未换成US(q)也未额外断言滤波效果或守恒性。此处只是修改势的定义，不需要把前后段的A加权构造并入定义签名。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

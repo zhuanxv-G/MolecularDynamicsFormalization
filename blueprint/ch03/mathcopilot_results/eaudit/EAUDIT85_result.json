@@ -1,0 +1,90 @@
+{
+  "batch": "EAUDIT85",
+  "input_sha256": {
+    "BATCH_EAUDIT85.md": "e6b498656ad8c7f0be8df7520f1c64e57c88907432a88499212c12c0d26328a3",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.7.3-ModifiedCollisionProjection",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "UNBOUND_MODIFIED_HAMILTONIAN",
+          "INCOMPLETE_STATEMENT_COVERAGE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.7.3-ModifiedCollisionProjection",
+          "kind": "definition",
+          "label": null,
+          "section": "3.7.3",
+          "printed_page": "136",
+          "pdf_page": "158",
+          "statement_latex": "In particular, one may use the backward error analysis to obtain a modified Hamiltonian $\\widetilde H_h$ corresponding to the Verlet method with stepsize $h$, then to project during collisions not onto the energy surface, but onto the modified energy surface, so that\n\\[\\widetilde H_h\\equiv\\mathrm{const}.\\]\n(In practice, a low order approximation of $\\widetilde H_h$ is used, such as the truncation to terms of order four or six in the stepsize.)",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "当前定义仅要求两个状态的同一给定截断值相等。",
+            "没有BEA或Verlet系数资格，不保证投影存在唯一，不证明轨道守恒或统计准确性。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch03.modifiedCollisionProjection",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] Hj,r,k均为任意输入。若按原书解释，须另给Verlet修正Hamiltonian系数的资格及所用四阶或六阶截断，并明确碰撞前后使用相同h。"
+          ],
+          "statement_scope": "仅为给定有限级数的两点等值关系；不表达该级数确为Verlet的修正Hamiltonian，不表达投影存在/唯一或整个变步长轨道的共同守恒。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT20_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:33:32.430543",
+              "before_sha256": "9aa0f7520efe36efe9f59e762105eff41c9f55a7c6e83ab5c613959b2deae3fb",
+              "after_sha256": "ad482d5aada0a4f4dcbbea8737e2a94cd2aba0e5e3e6a6b57ec647ac9a6be19f",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH26_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "UNBOUND_MODIFIED_HAMILTONIAN",
+            "detail": "任意Hj和任意r,k没有保证它是Verlet的修正Hamiltonian截断。"
+          },
+          {
+            "code": "INCOMPLETE_STATEMENT_COVERAGE",
+            "detail": "仅是两点等值关系，scope没有清楚剥离原段中BEA对象构造与沿轨道常值的资格。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "source": "R5_PAGES.pdf 附件第17页；印刷页136",
+            "method": "当前附件逐页渲染目视核对，并以当前PDF文本提取辅助逐句比对；公式以页图为准。",
+            "finding": "statement_latex 的所引文字、公式、符号和边界与页面相符；换行、连字符和数学排版作等价规范化。"
+          },
+          {
+            "phase": "C",
+            "source": "R5_任务.md 本条完整当前Lean及全部摘录依赖",
+            "method": "只读语义审校：对象、域、量词、前提、结论、辅助声明及[EXTRA]。未编译、未修改工程、未补证明；sorry不作为FAIL理由。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.modifiedCollisionProjection",
+        "verdict": "FAIL",
+        "explanation": "modifiedCollisionProjection对任意相空间维数、任意H/Hj、任意自然r,k、实h和两状态，仅定义H(w)+∑j∈[r,k]h^jHj(w)=同一表达式在z的值。等值关系本身正确，并不保证投影存在唯一，context对此已披露；但Hj与Verlet没有任何资格绑定，r,k也不指定四阶/六阶或Verlet偶次修正，因而不能表达所引“Verlet对应的修正Hamiltonian”的完整结论。当前statement_scope仍泛指整段，[EXTRA]为空，遗漏的是核心对象资格，不是要求补证明。即便关系成立也不能推出整个变步长轨道有一个共同修正能量，更不能推出BEA/统计精度。",
+        "counterexample": "取任意H且Hj≡0，则关系退化为H(w)=H(z)，与Verlet修正系数无关；取H≡0且Hj≡0更使所有z,w均满足。",
+        "suggested_fix": "后续增加或明确映射Verlet修正系数资格及截断级数对象；或正式将该source映射范围限制为通用等值辅助关系，不宣称覆盖原段全部内容。"
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

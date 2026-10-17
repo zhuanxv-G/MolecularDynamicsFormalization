@@ -1,0 +1,25 @@
+--- before
++++ after
+@@ -618,8 +618,13 @@
+   sorry
+ 
+ /-- source_id: MD-5.3.1-TestSpace · definition · §5.3.1 · 印刷p.188 / PDFp.209 
+-[EXTRA] 将Cω误编码改为原书C∞（scoped ∞）；只改Blueprint实际测试空间，正式库冻结。 -/
++[EXTRA] 将Cω误编码改为原书C∞（scoped ∞）；只改Blueprint实际测试空间，正式库冻结。 [EXTRA] 24号：紧支持C∞选项保留，并在同一source_id新增实际SchwartzMap选项testSpaceSchwartz；二者各自独立，不用其它条目的名称替代第二选项。
++-/
+ def testSpace (n : ℕ) := {φ : MolecularDynamics.Chapter05Review.E n → ℝ // ContDiff ℝ ∞ φ ∧ HasCompactSupport φ}
++
++/-- 原文第二选项，独立保留Schwartz空间。 -/
++def testSpaceSchwartz (n : ℕ) := SchwartzMap (MolecularDynamics.Chapter05Review.E n) ℝ
++
+ 
+ /-- source_id: MD-5.3.1-SchwartzSpace · definition · §5.3.1 · 印刷p.188 / PDFp.209
+ [EXTRA] [EXTRA]Mathlib实际SchwartzMap以全阶Fréchet导数及多项式权界编码快速衰减；使用其既有空间，未把名称当任意类型。 -/
+@@ -2544,6 +2549,7 @@
+ #print axioms MD.Ch05.mechanicalLiouvillian
+ #print axioms MD.Ch05.mechanicalLiouvillianIdentity
+ #print axioms MD.Ch05.testSpace
++#print axioms MD.Ch05.testSpaceSchwartz
+ #print axioms MD.Ch05.schwartzTestSpace
+ #print axioms MD.Ch05.generalizedFunction
+ #print axioms MD.Ch05.schwartzFunctional

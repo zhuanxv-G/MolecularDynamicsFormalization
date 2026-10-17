@@ -1,0 +1,14 @@
+{
+  "command": [
+    "pwsh",
+    "-NoProfile",
+    "-File",
+    "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\scripts\\check.ps1",
+    "-ReportDirectory",
+    "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\blueprint\\closeout24\\ch04\\full",
+    "-PauseChapter06"
+  ],
+  "exit_code": 0,
+  "input_sha256": "92933d3fce37c9c3e1fa601cc27fa0213d2120896370f9e2cfa78bc4255a0c46",
+  "log_sha256": "629271c1f16ad78d69cbd49d193e37e92765773bd468b6b17871174b184063b7"
+}

@@ -1,0 +1,717 @@
+{
+  "batch": "EAUDIT45",
+  "input_sha256": {
+    "BATCH_EAUDIT45.md": "473bef8b39629f0f1ccc0e5609f9a357e2e77e29054d232873ede90c4990d68c",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.2.2-MassFraction",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-MassFraction",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "184",
+          "pdf_page": "205",
+          "statement_latex": "Let $\\rho(z,t)$ be the probability density associated to a collection of phase points moving under a vector field $f$ on the phase space $\\mathbb R^m$. Let $\\mathcal A$ be a suitable region of volume $V$ within the phase space (say a rectangular $m$-dimensional box). The fraction $\\nu$ of phase points present in $\\mathcal A$ at time $t$ is the integral of $\\rho$ over $\\mathcal A$:\n\\[\\nu(t)=\\int_\\mathcal A\\rho(z,t)\\,d\\omega,\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "𝒜 为固定空间区域；随时间变化的是密度及其区域积分 ν(t)=∫_𝒜ρ(z,t)dω，不是移动区域，也不是轨道时间平均。"
+          ],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.massFraction",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT03_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:52:07.490546",
+              "before_sha256": "f121ce2290c220996a67ec94df6977eefac7535afb0e60f04462f11528fe577e",
+              "after_sha256": "20ad156982176db645a790a570b28ab35952f2f25d7c2b2ebe7df3092ad607c4",
+              "changed_fields": [
+                "statement_latex",
+                "context_notation"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH06_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页205已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 205,
+            "printed_page": "184",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page205.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 9,
+            "finding": "massFraction对任意时间密度族ρ:ℝ→E n→ℝ、固定区域A及时间t定义∫_A ρ t。时间参数顺序与原ρ(z,t)仅是柯里化差异，积分域及Lebesgue体积正确。定义允许一般函数，不自行证明结果位于[0,1]；作为质量积分定义不需要把概率条件塞入定义。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.massFraction"
+        ],
+        "verdict": "PASS",
+        "explanation": "massFraction对任意时间密度族ρ:ℝ→E n→ℝ、固定区域A及时间t定义∫_A ρ t。时间参数顺序与原ρ(z,t)仅是柯里化差异，积分域及Lebesgue体积正确。定义允许一般函数，不自行证明结果位于[0,1]；作为质量积分定义不需要把概率条件塞入定义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-MassDerivative",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-MassDerivative",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "184",
+          "pdf_page": "205",
+          "statement_latex": "which may be viewed as a smooth function of time. On the one hand\n\\[\\frac{d\\nu}{dt}=\\int_\\mathcal A\\frac{\\partial\\rho(z,t)}{\\partial t}\\,d\\omega,\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.massDerivative",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明确参数微分与积分交换所需的可积支配界、邻域逐点可微及可积性；不假设已交换的导数等式。",
+            "[EXTRA] 保留已证的一阶积分交换，补紧空间域和联合C∞密度下质量函数C∞结论；紧域给各阶局部支配的充分资格，非结论前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT03_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:52:07.490546",
+              "before_sha256": "443b1092f472da07f2fa725ec34a2f50298f35a2b2f8dfb24279ed505c563c07",
+              "after_sha256": "09bfad1afc7bf4a093757320e89f2e7ab4f7a7e68e13eeff8cb3ff5ff62ecdc0",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH06_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页205已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 205,
+            "printed_page": "184",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page205.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 10,
+            "finding": "massDerivative在任意n、固定可测A与时间t下，显式要求每一时刻ρ可积，存在δ>0和A上可积支配b，邻域每个s及A上每个z具有真实时间导数并满足绝对值界，结论是质量函数在t的HasDerivAt及积分内偏导。没有把交换公式作为前提。smooth另在紧A与全局联合C∞密度下断言质量函数C∞，确为原smooth措辞的充分资格；两声明量词、局部区间及[EXTRA]一致。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.massDerivative",
+          "MD.Ch05.massDerivative_smooth"
+        ],
+        "verdict": "PASS",
+        "explanation": "massDerivative在任意n、固定可测A与时间t下，显式要求每一时刻ρ可积，存在δ>0和A上可积支配b，邻域每个s及A上每个z具有真实时间导数并满足绝对值界，结论是质量函数在t的HasDerivAt及积分内偏导。没有把交换公式作为前提。smooth另在紧A与全局联合C∞密度下断言质量函数C∞，确为原smooth措辞的充分资格；两声明量词、局部区间及[EXTRA]一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-OutwardNormal",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING",
+          "BOOK_NORMAL_AE_QUALIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-OutwardNormal",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "184",
+          "pdf_page": "205",
+          "statement_latex": "where $n(z)$ is the unit outward normal to the surface $\\partial \\mathcal A$ at the point $z$ and $d\\sigma$ is the surface element.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            },
+            {
+              "code": "BOOK_NORMAL_AE_QUALIFICATION",
+              "detail": "上下文允许矩形，而本句把外法线说成每个边界点均有定义；矩形角点需按分面或表面积几乎处处理解。原句保留；Lean的光滑边界限制已披露。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.outwardNormalFor",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]通过局部真实光滑定义函数r的负侧表示域，并由实际梯度定义正向单位法线。这里采用C²光滑边界资格；矩形的角点另条以分面公式保存，不假设边界通量恒等式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT03_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:52:07.491444",
+              "before_sha256": "09eb91726013927f959e697f97bafe807d561f25185b2f4a3ee7809fcd43d51e",
+              "after_sha256": "2cc72873c294dc40f10004b98dec1c46dc92e8953994ca72102cd29e97eb06b0",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH06_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页205已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          },
+          {
+            "code": "BOOK_NORMAL_AE_QUALIFICATION",
+            "detail": "上下文允许矩形，而本句把外法线说成每个边界点均有定义；矩形角点需按分面或表面积几乎处处理解。原句保留；Lean的光滑边界限制已披露。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 205,
+            "printed_page": "184",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page205.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 11,
+            "finding": "outwardNormalFor在每个z∈frontier A要求开邻域O、C²局部定义函数r、A在O内恰为r<0、非零真实梯度及ν z=∇r/‖∇r‖。边界点连续性迫使r(z)=0，正梯度方向指向A外，范数为1；资格确实限定光滑开放域。矩形角点不满足此全点条件，但[EXTRA]明确分面版本另列，未将角点假称光滑。dσ的具体测度在条目12定义。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.outwardNormalFor"
+        ],
+        "verdict": "PASS",
+        "explanation": "outwardNormalFor在每个z∈frontier A要求开邻域O、C²局部定义函数r、A在O内恰为r<0、非零真实梯度及ν z=∇r/‖∇r‖。边界点连续性迫使r(z)=0，正梯度方向指向A外，范数为1；资格确实限定光滑开放域。矩形角点不满足此全点条件，但[EXTRA]明确分面版本另列，未将角点假称光滑。dσ的具体测度在条目12定义。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-GeneralFluxBalance",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING",
+          "EXTRA_NORMALIZATION_AMBIGUITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-GeneralFluxBalance",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "184",
+          "pdf_page": "205",
+          "statement_latex": "this same rate of change may be written as the negative of the particle flux over the boundary of $\\mathcal A$:\n\\[\\frac{d\\nu}{dt}=-\\int_{\\partial \\mathcal A}f\\cdot n\\,\\rho(z,t)\\,d\\sigma,\\]\nUsing the divergence theorem, we may rewrite the latter quantity as a volume integral:\n\\[\\frac{d\\nu}{dt}=-\\int_\\mathcal A\\nabla\\cdot(f(z)\\rho(z,t))\\,d\\omega.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            },
+            {
+              "code": "EXTRA_NORMALIZATION_AMBIGUITY",
+              "detail": "“不要求ρ在D外光滑或归一化”未明确归一化限制的作用域；签名实际上要求D内每个时刻积分为1。应明确不要求的是D外资格，不可称不要求任何归一化。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.generalFluxBalance",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]保留一般开放流不变相空间D，A闭包在D内，实际受限密度Measure.map条件及光滑有界域/真实法线资格；不要求ρ在D外光滑或满足概率条件；实际要求ρ在D内每个时刻非负、可积且积分为1。两个原通量与散度结论都保存。矩形分面版本另列，未用单一区域计算替代此条。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT03_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:52:07.491444",
+              "before_sha256": "d4b2da305ef8dcd06e8a61e297fac7f5601a75e44bec9617389fe8d125dbdba8",
+              "after_sha256": "fc9c8313df1b67884e091a58b8fbd31ec41c946bd73caef7fa90c4b29b59655f",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH06_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页205已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          },
+          {
+            "code": "EXTRA_NORMALIZATION_AMBIGUITY",
+            "detail": "“不要求ρ在D外光滑或归一化”未明确归一化限制的作用域；签名实际上要求D内每个时刻积分为1。应明确不要求的是D外资格，不可称不要求任何归一化。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 205,
+            "printed_page": "184",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page205.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 12,
+            "finding": "两个结论本身在所列资格下合理：任意正维n、开放D与有界光滑开放A、closure A⊆D、真实外法线；f为D上C¹，Φ为全局C²实际自治流且保持D，ρ在ℝ×D上C¹，各时刻为D上的概率密度，受限密度测度按Measure.map输运。结论先给质量时间导数等于负边界通量，再给体散度积分等于边界通量，两者推出原第二式。hausdorffArea使用单位球体积/2^d归一化直径型Hausdorff测度，方向和负号正确。[EXTRA]中“不要求ρ在D外光滑或归一化”按“在D外”共同限定两项来读，与签名一致；为避免误读，corrected_json进一步明确D内确有概率归一化要求。这是注释澄清，不构成定理签名错误。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.generalFluxBalance"
+        ],
+        "verdict": "PASS",
+        "explanation": "两个结论本身在所列资格下合理：任意正维n、开放D与有界光滑开放A、closure A⊆D、真实外法线；f为D上C¹，Φ为全局C²实际自治流且保持D，ρ在ℝ×D上C¹，各时刻为D上的概率密度，受限密度测度按Measure.map输运。结论先给质量时间导数等于负边界通量，再给体散度积分等于边界通量，两者推出原第二式。hausdorffArea使用单位球体积/2^d归一化直径型Hausdorff测度，方向和负号正确。[EXTRA]中“不要求ρ在D外光滑或归一化”按“在D外”共同限定两项来读，与签名一致；为避免误读，corrected_json进一步明确D内确有概率归一化要求。这是注释澄清，不构成定理签名错误。",
+        "counterexample": null,
+        "suggested_fix": "建议把[EXTRA]改写为“不要求ρ在D外光滑或满足概率条件；实际要求ρ在D内每个时刻非负、可积且积分为1”，避免把“无需域外资格”误读成“无需D内归一化”。"
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-Divergence",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-Divergence",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "statement_latex": "$\\mathcal M_fw=-\\nabla\\cdot(wf)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.divergence",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际Fréchet导数的线性迹，等价坐标偏导和需要标准有限维接口；不以任意矩阵命名Jacobian。",
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian展示式中散度符号的真实导数迹辅助定义；完整M_f w=−div(wf)由MD-5.2.2-Liouvillian承担。"
+          ],
+          "statement_scope": "仅Liouvillian展示式中散度符号的真实导数迹辅助定义；完整M_f w=−div(wf)由MD-5.2.2-Liouvillian承担。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT03_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:52:07.491444",
+              "before_sha256": "9226df9f26c471b4d17166d2c173272fb1d3c23519e8062e89f78bce814775d7",
+              "after_sha256": "0b177e278cd6efbcd40dab3c5b1617eac932d94f02c254e484c2dd6ecc5dd1e5",
+              "changed_fields": [
+                "statement_latex",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH06_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页206已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 206,
+            "printed_page": "185",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page206.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 13,
+            "finding": "主定义对任意n、f:E n→E n和z取真实Fréchet导数的线性迹，正是可微向量场的散度。当前statement_scope明确只是散度辅助定义，完整M_fw=−div(wf)由本任务条目14实际提供，跨条映射可就所给文本核实，未将任意矩阵命名为Jacobian。不可微点的fderiv总化值不应被解释为经典散度存在。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.divergence"
+        ],
+        "verdict": "PASS",
+        "explanation": "主定义对任意n、f:E n→E n和z取真实Fréchet导数的线性迹，正是可微向量场的散度。当前statement_scope明确只是散度辅助定义，完整M_fw=−div(wf)由本任务条目14实际提供，跨条映射可就所给文本核实，未将任意矩阵命名为Jacobian。不可微点的fderiv总化值不应被解释为经典散度存在。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-Liouvillian",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-Liouvillian",
+          "kind": "definition",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "statement_latex": "The operator $\\mathcal M_f$, defined for a scalar valued function $w$ by $\\mathcal M_fw=-\\nabla\\cdot(wf)$, is called the Liouvillian operator.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实乘积向量场的导数迹，不把形式符号当闭算子已构造。"
+          ],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.liouvillian",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT03_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:52:07.491444",
+              "before_sha256": "0bce46a16aa488bbee4efdfc1dfb9e05949eec2a6625d0fbd8fea63121c75909",
+              "after_sha256": "a65a1a00a72ba4163db333b38341f7b796bf628cf6fe7dee239842a280ec376d",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH06_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页206已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 206,
+            "printed_page": "185",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page206.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 14,
+            "finding": "对任意n、向量场f、实值函数u与点z，liouvillian定义为−divergence(x↦u(x)•f(x))(z)。与原w的字母差异无语义影响，负号、乘积、空间导数及标量值域均正确。对经典含义需乘积向量场可微；当前定义为标准fderiv的总化扩展，没有断言任意函数经典可微。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.liouvillian"
+        ],
+        "verdict": "PASS",
+        "explanation": "对任意n、向量场f、实值函数u与点z，liouvillian定义为−divergence(x↦u(x)•f(x))(z)。与原w的字母差异无语义影响，负号、乘积、空间导数及标量值域均正确。对经典含义需乘积向量场可微；当前定义为标准fderiv的总化扩展，没有断言任意函数经典可微。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-LiouvilleEquation",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-LiouvilleEquation",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "statement_latex": "Therefore, since this should hold for an arbitrary domain $\\mathcal A$, we must have\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\nabla\\cdot(\\rho f).\\]\nThis is called the Liouville equation or continuity equation. It tells us how the distribution of phase points varies in time and space.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.liouvilleEquation",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]一般开放流不变D内的真实光滑密度及实际输运条件；不假设连续性方程，不要求域外ρ光滑，不构造一般PDE解存在或唯一性。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT03_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:52:07.491444",
+              "before_sha256": "2900ee0b50edc40aae2c4cd9794771ce55739438f8b63a5047956ad4d2623dc7",
+              "after_sha256": "de5ac1a238dd36e95fa82d881908acb81c8dbe41b990a95541496d5488f9ce69",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH06_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页206已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 206,
+            "printed_page": "185",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page206.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 15,
+            "finding": "对任意n和开放流不变D，f在D上C¹、Φ为联合C²的实际自治流，ρ在ℝ×D上C¹且各时刻为D上的概率密度，受限密度测度由Φ_t推前。结论对任意实t及所有z∈D给出HasDerivAt(ρ·z)(−div(ρ_t f)(z)) t，完整对应连续性方程。输运测度等式是真实分布输运条件而非预设PDE；开放域和连续密度使AE等式可提升为点态等式。不要求D外ρ光滑，无未披露的循环前提。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.liouvilleEquation"
+        ],
+        "verdict": "PASS",
+        "explanation": "对任意n和开放流不变D，f在D上C¹、Φ为联合C²的实际自治流，ρ在ℝ×D上C¹且各时刻为D上的概率密度，受限密度测度由Φ_t推前。结论对任意实t及所有z∈D给出HasDerivAt(ρ·z)(−div(ρ_t f)(z)) t，完整对应连续性方程。输运测度等式是真实分布输运条件而非预设PDE；开放域和连续密度使AE等式可提升为点态等式。不要求D外ρ光滑，无未披露的循环前提。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.2.2-LiouvilleProduct",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "R1_ATTACHMENT_MISSING",
+          "CROSS_SOURCE_DECL_NOT_PROVIDED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.2.2-LiouvilleProduct",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.2.2",
+          "printed_page": "185",
+          "pdf_page": "206",
+          "statement_latex": "An alternative form for the continuity equation is:\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\sum_i\\left[\\rho\\frac{\\partial f_i}{\\partial z_i}+f_i\\frac{\\partial\\rho}{\\partial z_i}\\right],\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R1_ATTACHMENT_MISSING",
+              "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+            },
+            {
+              "code": "CROSS_SOURCE_DECL_NOT_PROVIDED",
+              "detail": "本条已披露为静态辅助引理，但所声称承载完整时间坐标PDE的LiouvilleProductCoordinates未随本任务给出，无法只凭当前材料核实完整跨条结论。"
+            }
+          ],
+          "lean_decl": "MD.Ch05.liouvilleProduct",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明确ρ和f在z的真实可微性；原全部坐标乘积展开由线性迹与Df/ρ链式规则表达。",
+            "[EXTRA] 显式逐句范围及跨source_id映射；原文保留，repair_log追加。仅Liouvillian乘积法则的静态辅助引理；包含真实输运前提的完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates及MD-5.2.2-LiouvilleEquation承担。"
+          ],
+          "statement_scope": "仅Liouvillian乘积法则的静态辅助引理；包含真实输运前提的完整时间PDE由MD-5.2.2-LiouvilleProductCoordinates及MD-5.2.2-LiouvilleEquation承担。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT03_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T09:52:07.491444",
+              "before_sha256": "53175a52dd2dde698c8ba0fa6e99bf422baca5fc6e0d61ff9f7efe11849017dd",
+              "after_sha256": "e22d13373463a9fa2fc5cf8b79adf10405c47a51f69028d737d524cff5116afb",
+              "changed_fields": [
+                "statement_latex",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH06_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "R1: 原书PDF物理页206已视觉核对；R1_PAGES.pdf缺失，指定附件核对尚未完成。"
+        },
+        "issues": [
+          {
+            "code": "R1_ATTACHMENT_MISSING",
+            "detail": "指定附件/workspace/R1_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。"
+          },
+          {
+            "code": "CROSS_SOURCE_DECL_NOT_PROVIDED",
+            "detail": "本条已披露为静态辅助引理，但所声称承载完整时间坐标PDE的LiouvilleProductCoordinates未随本任务给出，无法只凭当前材料核实完整跨条结论。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "file": "Leimkuhler2015b_Molecular Dynamics_With Deterministic and Stochastic Numerical Methods(1).pdf",
+            "sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+            "pdf_page": 206,
+            "printed_page": "185",
+            "render": "/workspace/.mathcopilot/reviews/ch05_eaudit/page206.png",
+            "finding": "已视觉核对现有原书对应页；文字与公式数学内容一致，忽略排版换行和LaTeX等价编码。",
+            "limitation": "非指定R1_PAGES.pdf，不能认证附件页次或其一致性。"
+          },
+          {
+            "phase": "C",
+            "file": "R1_任务.md",
+            "item": 16,
+            "finding": "liouvilleProduct本身正确：对任意n,f、实值ρ及z，在f、ρ于z可微的条件下，−div(ρf)=−ρ div f−L_fρ。此为静态乘积法则，且statement_scope及[EXTRA]明确如此；它没有时间变量、HasDerivAt或任何输运前提，因此不能单独代表所引完整时间PDE。文本宣称完整坐标时间PDE由MD-5.2.2-LiouvilleProductCoordinates承担，但该source_id及声明不在本任务提供材料中，且用户禁止用旧工程补查，故跨条完整性待人工核实；不把正确辅助引理判为错误定理。",
+            "method": "只读声明与本任务摘录项目定义的数学语义审校；标准Mathlib按标准含义采信；没有运行Lean或修改工程，不以sorry判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch05.liouvilleProduct"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "liouvilleProduct本身正确：对任意n,f、实值ρ及z，在f、ρ于z可微的条件下，−div(ρf)=−ρ div f−L_fρ。此为静态乘积法则，且statement_scope及[EXTRA]明确如此；它没有时间变量、HasDerivAt或任何输运前提，因此不能单独代表所引完整时间PDE。文本宣称完整坐标时间PDE由MD-5.2.2-LiouvilleProductCoordinates承担，但该source_id及声明不在本任务提供材料中，且用户禁止用旧工程补查，故跨条完整性待人工核实；不把正确辅助引理判为错误定理。",
+        "counterexample": null,
+        "suggested_fix": "保留静态辅助引理；提供所引用LiouvilleProductCoordinates当前声明以核对全部坐标时间PDE，或补充映射证据。不要仅以本辅助引理宣称原完整PDE已覆盖。"
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

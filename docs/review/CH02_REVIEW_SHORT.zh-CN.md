@@ -1,3 +1,5 @@
+> 已过时，以 [CH02_SUMMARY_FOR_MENTOR.zh-CN.md](CH02_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
+
 # 第2章导师快速审阅（15条）
 
 印刷53–93 / PDF75–115；习题从印刷94开始，数值实验及数值图表排除。

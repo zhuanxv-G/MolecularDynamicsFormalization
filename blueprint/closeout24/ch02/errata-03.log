@@ -1,0 +1,423 @@
+Blueprint/Ch02.lean:110:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:118:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:153:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:174:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:189:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:198:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:209:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:223:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:250:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:260:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:310:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:320:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:392:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.errorRecursion`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:408:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.errorBound`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:422:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.errorBound_corrected`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:436:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.consistencyConvergence`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:488:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:498:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:512:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:524:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:541:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:559:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:580:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:625:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:667:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:678:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:715:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch02.lean:751:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:764:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:794:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:830:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:839:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:854:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:862:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:873:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:887:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:905:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:929:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:963:67: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch02.lean:963:67: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch02.lean:969:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1010:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1022:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch02.lean:1022:73: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch02.lean:1059:60: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch02.lean:1064:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1078:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1100:70: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch02.lean:1102:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1180:57: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch02.lean:1188:57: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch02.lean:1193:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1201:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1230:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1248:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch02.lean:1259:63: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch02.lean:1259:63: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch02.lean:1269:53: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch02.lean:1279:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1294:63: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch02.lean:1294:63: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch02.lean:1300:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.bp_splittingMap_eq`:
+  [NormedAddCommGroup E]
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedAddCommGroup E] [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:1303:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.bp_splittingMap_apply`:
+  [NormedAddCommGroup E]
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedAddCommGroup E] [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:1383:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1404:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1442:73: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Blueprint/Ch02.lean:1442:73: warning: Unused tactic linter: `assumption` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Blueprint/Ch02.lean:1448:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1461:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1486:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1497:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1521:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1535:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1554:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1575:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1584:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1595:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.conjugateIterates`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:1598:54: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch02.lean:1602:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.conjugateLimits`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:1612:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.conjugateLimits_corrected`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Blueprint/Ch02.lean:1634:49: warning: This simp argument is unused:
+  Function.comp_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [q, F, textbookPositionProjection, textbookSymplecticEuler, textbookMomentumKick, textbookPositionDrift]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Blueprint/Ch02.lean:1635:9: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch02.lean:1655:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1681:0: warning: automatically included section variable(s) unused in theorem `MD.Ch02.processingIterates`:
+  [NormedSpace ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Blueprint/Ch02.lean:1685:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Blueprint/Ch02.lean:1707:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1740:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1747:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1761:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1776:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1795:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1811:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1835:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1852:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1871:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1896:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1910:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1919:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1944:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1950:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1960:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1978:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:1988:8: warning: declaration uses `sorry`
+Blueprint/Ch02.lean:2009:8: warning: declaration uses `sorry`
+'MD.Ch02.hamiltonianODE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.mechanicalHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.euler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.numericalTrajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.numericalIterate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.oneStepTargetDifference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.maximumError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.theorem_2_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.odeSecondDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.taylorSecond' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.taylor2Order' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.verletOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_mechanicalL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.admissibleSmooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.admissibleSmooth_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_action' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_variation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.firstVariation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.taylorPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.stationarySmoothAction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.stationarySmoothAction_iff_first_variation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.stationarySmoothAction_hamilton' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.firstVariationParts' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.hamiltonPrinciple' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.printedVariationalDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.printedVariationalDerivative_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.stationaryNotMinimum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.stationaryNotMinimum_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.finiteDiscretePath' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_discreteVelocity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_discreteAction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_discreteAction_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.printedDiscreteStationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.printedDiscreteStationary_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.discreteActionDerivative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.discreteStationaryVerlet' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_stormerRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_velocityVerlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.velocityVerletStormer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_verlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_leapfrog' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_leapfrogInitialize' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_leapfrogReconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.errorDifference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.consistency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.consistency_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.stability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.errorRecursion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.errorBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.errorBound_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.consistencyConvergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_scalarVerlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.verletExpansion' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.exactExpansion' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.defectPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.defectPrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.verletConsistency' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.verletConsistency_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.verletStability' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_firstIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.firstIntegralPreserved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.energyPreserved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.centralAngularMomentum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.integralMeanValue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.integralPointwiseBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.integralErrorPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.integralErrorPrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_divergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.divergenceFree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.liouville' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.hamiltonDivergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.hamiltonVolume' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.volumeChange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.variationalPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.variationalPrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.determinantODE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.determinantExponential' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.flowDet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.ljOscillatorEquation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.oscillatorEquation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.ljBoundedPeriodic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.linearDivergence' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_linearEuler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.eulerVolumePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.eulerVolumePrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.eulerVolumeCounterexample' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.eulerVolumeCounterexample_det_only' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_asymmetricEulerRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.asymmetricDet' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.asymmetricArea' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_IsSymplecticMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.oneFormFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.oneFormOfCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.oneFormOfCoefficients_apply' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_differential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.coordinateDifferentials' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_wedge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.textbookWedgeOneForms_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_symplecticForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.formSumWedges' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.symplecticComponentMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.formSumWedges_components' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.coefficientTwoForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_pullbackOne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_pullbackTwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.pullbackMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_preservesTwoForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.symplecticIffForm' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.symplecticIffForm_C1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.symplecticDet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.hamiltonDet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_hessian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.hessianSymmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.hamiltonVariationalPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.hamiltonVariationalPrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.matrixCancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.matrixCancellation_time' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.formConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.hamiltonSymplectic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.hamiltonSymplectic_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.chainRule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.chainRule_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.symplecticComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.symplecticInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.symplecticInverse_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.globalGroupPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.globalGroupPrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_symplecticIntegrator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_symplecticEuler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.kickDifferential' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.wedgeSelf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.symplecticEulerPreserves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_adjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.flowSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_backwardEulerRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.eulerAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_adjointSymplecticEuler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_adjointSymplecticEuler_coordinates' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.adjointInvolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_splittingMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_splittingMap_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_splittingMap_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.fieldAdd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.splittingLocal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_kineticFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'_private.blueprint.Ch02.0.MD.Ch02.momentumKickDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'_private.blueprint.Ch02.0.MD.Ch02.momentumKick_hasFDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.kineticHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_kineticFlow_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_kineticFlow_hamiltonian' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_potentialFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.potentialHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_potentialFlow_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_potentialFlow_hamiltonian' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.splitEuler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.verletComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.verletSymplectic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.symmetricComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.symmetricEven' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.symmetricEven_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.compositionSymplectic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.compositionOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.compositionOrder_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_harmonicAnharmonic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.implicitLocal' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.implicitLocal_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.backwardEulerResidual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.backwardEulerResidual_zero_iff' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.backwardEulerMapRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.newtonPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.newtonPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.newtonQuadratic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.frozenNewton' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_conjugateMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.conjugateIterates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.conjugateLimits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.conjugateLimits_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.eulerConjugacy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.eulerConjugacy_homeomorph' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_processedIterate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.processingData' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.processingIterates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.processingOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.eulerEffectiveOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_rungeKuttaRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_rk4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.bp_rk4_eq_rk4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.rk4Order' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.explicitRK' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.rkSymplectic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.rkSymplectic_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.gaussFamily' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.gaussFamily_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_midpointRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.midpointProperties' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.midpointProperties_generalODE' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.gaussTwoData' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.gaussTwoOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_partitionedVerletRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.partitionedReduction' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_generalSymplecticEulerRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.generalSymplectic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.generalVerletSymplectic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_newmarkRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.newmarkReduction' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.newmarkDamping' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.newmarkNotSymplectic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.bp_multiTaylor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.tiMethod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.tiForce' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.tiOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch02.beeman' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch02.beemanOrder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

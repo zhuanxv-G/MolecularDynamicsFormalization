@@ -1,0 +1,131 @@
+{
+  "batch": "EAUDIT80",
+  "input_sha256": {
+    "BATCH_EAUDIT80.md": "7af6405ca1fd1d2e6b8454bfa70b5357cf90cd1f9a1c674bbb09ea321b73d794",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.3.5-ConstrainedOrders",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_FORCE_SIGN_CONFLICT",
+          "CORRECTED_METHOD_NOT_LABELLED",
+          "SHAKE_ORDER_OUTSIDE_SUPPLIED_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.3.5-ConstrainedOrders",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.3.5",
+          "printed_page": "161",
+          "pdf_page": "183",
+          "statement_latex": "The projected symplectic constrained method (4.20)–(4.24) is only first order accurate. We forego providing a detailed proof of this fact, but note that it could be demonstrated using standard methods [164]. There are several constraint-preserving, second-order alternatives which generalize the Störmer-Verlet scheme. One of these is the SHAKE method [322]. The symmetry suggests that this will be second order.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "statement_latex依原文先后选取非连续句子：省略“Note that (4.20)–(4.24) reduces ...”说明及SHAKE两步来源推导；末句“The symmetry suggests ...”位于(4.26)后。所引句子全部在印刷161/PDF183。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.constrainedOrders",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "正质量、C⁴数据、独立约束与真实光滑隐式解分支及紧区间；明确局部截断误差Euler O(h²)、RATTLE O(h³)。",
+            "[EXTRA] 保留局部一致性辅助，补真实光滑正则求解分支及紧时间精确轨道上的全局Euler一阶/RATTLE二阶，并给无约束振子一阶下界表达only first order。SHAKE位置阶专归SHAKEPositionOrder，其质量勘误路线待导师；原文不删。",
+            "[EXTRA][待人工裁定]本条精度签名采用pbar=p+hF−h g′ᵀρ，与p.159(4.21)原印−hF不同；这是力号修订，非原印字面版。"
+          ],
+          "statement_scope": "投影Euler全局一阶（含非二阶实例）及RATTLE全局二阶；SHAKE位置全局二阶由MD-4.3.5-SHAKEPositionOrder承担，其原印质量约定待导师。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T18:57:05.217421",
+              "before_sha256": "f53c93306fc9b7fdcad1d823b73e65959ccef9f18cc1db541dd5d2553ddda8ad",
+              "after_sha256": "63050ff359bff656aeb81e274fba78bad693a16cc416b1223a2132ab052b52fa",
+              "changed_fields": [
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:27:39.597807",
+              "before_sha256": "63050ff359bff656aeb81e274fba78bad693a16cc416b1223a2132ab052b52fa",
+              "after_sha256": "03da96c8eb451d48a104ff34d3ffcc2d64fe725b52374f23c5198a2c428413ba",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "161–162",
+                  "after": "161"
+                },
+                "pdf_page": {
+                  "before": "183–184",
+                  "after": "183"
+                }
+              },
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH16_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+          "review_context_pdf_pages": [
+            184
+          ]
+        },
+        "issues": [
+          "原文所选各句逐字吻合，非连续摘录已明确说明。",
+          "本条Lean使用projectedEulerRelation的+hF，而所引(4.21)原印为−hF；这是精度结论的实质勘误，现有[EXTRA]未明确标识该力号改动。",
+          "SHAKE位置二阶明确委托另一条，但其声明不在本任务，不能确认完整引文的SHAKE精度子句。附件(4.25)约束力质量因子及p.161隐藏约束记号亦有原书疑点，不擅自改写。"
+        ],
+        "evidence": [
+          "附件3页印刷161/PDF183首段及(4.26)后句，与statement_latex相符；附件4页为上下文。",
+          "projectedEulerRelation第一式pbar=p+hF−h g′ᵀρ；本条所有ODE比较均取F=−grad U。",
+          "symplecticEulerMatrix 1 h = [[1−h²,h],[−h,1]]，对应+hF的振子Euler。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch04.constrainedOrders",
+          "MD.Ch04.constrainedOrders_global",
+          "MD.Ch04.constrainedOrders_firstOrderSharp"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "constrainedOrders：正质量、C⁴势/约束、初点余切约束及Gram非零；E/R/Φ为C³步长曲线且在0等于z，乘子为C²，末投影μE、μR在0为零；真实步关系与精确ODE在双侧小窗口成立。结论是同一起点单步Euler O(h²)、RATTLE O(h³)，并非全局阶。pE/pR未单列光滑性，但步关系已给其光滑表达式。global另在开放D上设联合C³ E/R、联合C²乘子、零步恒等及正则余切域；精确轨道在[0,T]落于D内紧集。结论对充分大正整数N、全部k≤N给Euler Ch和RATTLE Ch²全局误差；没有将误差作为假设。firstOrderSharp对T=1振子初值(1,0)给全步误差c/N下界，确实排除该方法统一二阶。以上对正力号修订方法数学上合理，但与原印负力号不能无标记等同。",
+        "counterexample": "原印无约束m=1、U=q²/2、初值(q,p)=(1,0)时p(h)=h，而目标ODE动量为−sin h；误差h+sin h为2h+O(h³)，不满足局部O(h²)。这不是本条+hF版Lean的反例，而是原印与其精度解释的冲突。",
+        "suggested_fix": "人工确认后将+hF版本明确命名_corrected，并在[EXTRA]记录力号改动；原印文本保留。提供被委托SHAKEPositionOrder的准确声明后再审其子句。"
+      }
+    },
+    {
+      "source_id": "MD-4.3.5-RATTLESymplectic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "已视觉核对附件5页印刷162/PDF184；两处所引句均逐字一致，但中间有SHAKE/RATTLE等价讨论，属于非连续摘录。",
+          "附件3页(4.30)–(4.34)与rattleRelation的位置、半步动量、末动量及隐藏约束逐式吻合。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch04.rattleSymplectic"
+        ],
+        "verdict": "PASS",
+        "explanation": "任意n/l、正质量、C² U/g、开放D及固定实步长h；仅在D与余切约束集交上要求位置梯度独立。G、half、rho、μ均在D上C¹；真实RATTLE关系只对约束初点要求，输出由关系保证位置及隐藏约束。tangentPhase准确包含g的一阶切条件及g′M⁻¹p的一阶切条件。结论对每个该初点及任意两条切向量给phaseForm(DG u,DG v)=phaseForm(u,v)，是完整受限辛性。正质量和满秩使该受限域为正则余切流形，允许由约束集上的关系沿切向量微分。h=0亦无问题。未要求全局单值求解或分支存在。[EXTRA]与签名一致；sorry不参与判错。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

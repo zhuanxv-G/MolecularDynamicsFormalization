@@ -37,3 +37,9 @@ blueprint/ch01/processed_returns.json -text whitespace=cr-at-eol,-trailing-space
 blueprint/ch06/** -text whitespace=cr-at-eol,-trailing-space
 Blueprint/Ch06.lean -text whitespace=cr-at-eol
 docs/review/CH06_BLUEPRINT.zh-CN.md -text whitespace=cr-at-eol,-trailing-space
+
+# Preserve the exact source and evidence bytes of the authorised chapter 2-5 closeout.
+Blueprint/Ch0[235].lean -text whitespace=cr-at-eol,-trailing-space
+blueprint/ch05/** -text whitespace=cr-at-eol,-trailing-space
+blueprint/closeout24/** -text whitespace=cr-at-eol,-trailing-space
+docs/review/CH0[2345]_*.zh-CN.md -text whitespace=cr-at-eol,-trailing-space

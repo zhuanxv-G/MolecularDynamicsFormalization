@@ -1,0 +1,556 @@
+{
+  "status": "PASS",
+  "frozen_files_verified": 3084,
+  "formal_lean_files": 298,
+  "formal_sorry": 0,
+  "formal_axiom": 0,
+  "returns": {
+    "PASS": 302,
+    "NEEDS_HUMAN": 51,
+    "FAIL": 27
+  },
+  "raw_return_files": 85,
+  "fail_repairs": 27,
+  "repairing": 0,
+  "chapters": [
+    {
+      "chapter": 2,
+      "total": 160,
+      "website_pass": 126,
+      "historical_pass": 67,
+      "closeout24_returns": {
+        "PASS": 59,
+        "NEEDS_HUMAN": 12,
+        "FAIL": 4
+      },
+      "local_repairs": 4,
+      "repairing": 0,
+      "awaiting_reaudit": 0,
+      "local_excerpt_verified": 0,
+      "errata": 25,
+      "errata_source_ids": 31,
+      "awaiting_mentor": 31,
+      "declarations": {
+        "定义": 85,
+        "已证": 59,
+        "未证": 78
+      },
+      "unproved_reasons": {
+        "缺大型理论": 41,
+        "原书疑误不证": 18,
+        "时间盒止": 19
+      },
+      "current_lean_sha256": "681c039b5a463e94aaf677b9b1f4feebbd867e02dce02b50fcb4c23c851020d0",
+      "axiom_log": "blueprint/closeout24/ch02/errata-05.log",
+      "full_check": "blueprint/closeout24/ch02/full/CHECK_REPORT.json",
+      "website_scope_note": "网站PASS数字对应收到返回的审校版本；新增声明及本轮修改未再次送网站。"
+    },
+    {
+      "chapter": 3,
+      "total": 149,
+      "website_pass": 106,
+      "historical_pass": 51,
+      "closeout24_returns": {
+        "FAIL": 10,
+        "PASS": 55,
+        "NEEDS_HUMAN": 13
+      },
+      "local_repairs": 10,
+      "repairing": 0,
+      "awaiting_reaudit": 0,
+      "local_excerpt_verified": 0,
+      "errata": 30,
+      "errata_source_ids": 43,
+      "awaiting_mentor": 43,
+      "declarations": {
+        "定义": 73,
+        "未证": 103,
+        "已证": 59
+      },
+      "unproved_reasons": {
+        "缺大型理论": 35,
+        "原书疑误不证": 37,
+        "时间盒止": 31
+      },
+      "current_lean_sha256": "3ebbab496f8efcc38ead0aabcd9cc932a4c5b01563b25ec4951b05e3b700e632",
+      "axiom_log": "blueprint/closeout24/ch03/full-run.log",
+      "full_check": "blueprint/closeout24/ch03/full/CHECK_REPORT.json",
+      "website_scope_note": "网站PASS数字对应收到返回的审校版本；新增声明及本轮修改未再次送网站。"
+    },
+    {
+      "chapter": 4,
+      "total": 179,
+      "website_pass": 133,
+      "historical_pass": 42,
+      "closeout24_returns": {
+        "PASS": 91,
+        "NEEDS_HUMAN": 12,
+        "FAIL": 7
+      },
+      "local_repairs": 7,
+      "repairing": 0,
+      "awaiting_reaudit": 0,
+      "local_excerpt_verified": 2,
+      "errata": 26,
+      "errata_source_ids": 46,
+      "awaiting_mentor": 46,
+      "declarations": {
+        "定义": 130,
+        "已证": 65,
+        "未证": 79
+      },
+      "unproved_reasons": {
+        "缺大型理论": 34,
+        "原书疑误不证": 24,
+        "时间盒止": 21
+      },
+      "current_lean_sha256": "92933d3fce37c9c3e1fa601cc27fa0213d2120896370f9e2cfa78bc4255a0c46",
+      "axiom_log": "blueprint/closeout24/ch04/full-run.log",
+      "full_check": "blueprint/closeout24/ch04/full/CHECK_REPORT.json",
+      "website_scope_note": "网站PASS数字对应收到返回的审校版本；新增声明及本轮修改未再次送网站。"
+    },
+    {
+      "chapter": 5,
+      "total": 183,
+      "website_pass": 148,
+      "historical_pass": 51,
+      "closeout24_returns": {
+        "PASS": 97,
+        "NEEDS_HUMAN": 14,
+        "FAIL": 6
+      },
+      "local_repairs": 6,
+      "repairing": 0,
+      "awaiting_reaudit": 0,
+      "local_excerpt_verified": 2,
+      "errata": 26,
+      "errata_source_ids": 36,
+      "awaiting_mentor": 36,
+      "declarations": {
+        "定义": 97,
+        "已证": 57,
+        "未证": 100
+      },
+      "unproved_reasons": {
+        "缺大型理论": 46,
+        "原书疑误不证": 31,
+        "时间盒止": 23
+      },
+      "current_lean_sha256": "4044260333063d4a4c02811433b41a5b096d23563ef9880c4e29a50139725e79",
+      "axiom_log": "blueprint/closeout24/ch05/full-run.log",
+      "full_check": "blueprint/closeout24/ch05/full/CHECK_REPORT.json",
+      "website_scope_note": "网站PASS数字对应收到返回的审校版本；新增声明及本轮修改未再次送网站。"
+    }
+  ],
+  "original_input_evidence": {
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT74/BATCH_EAUDIT74.md": {
+      "original_sha256": "38a76360b914b6c94dae6bb568285b69a2ce64c1188755b7d02de0319f9cfa00",
+      "status": "原任务输入未改变"
+    },
+    "Blueprint/Ch02.lean": {
+      "original_sha256": "13e6b440b715dfeaa742fb5146ea0bb54a2099fce1520f53c0c5125ad35f5f76",
+      "original_snapshot": "blueprint/closeout24/ch02/Ch02.before.lean",
+      "current_sha256": "681c039b5a463e94aaf677b9b1f4feebbd867e02dce02b50fcb4c23c851020d0",
+      "status": "原返回绑定修复前输入；当前修复版另由编译及完整check核验。"
+    },
+    "blueprint/ch02/ch02_source.json": {
+      "original_sha256": "0415382f39e10936a21259dadd377b35bd80ca1dca99a634d17abe6f61737045",
+      "original_snapshot": "blueprint/closeout24/ch02/ch02_source.before.json",
+      "current_sha256": "8b40b0d759724a32a60d9432d7a70958c15fa1c80375a45d41a6bf9e85b9b18d",
+      "status": "原返回绑定修复前输入；当前修复版另由编译及完整check核验。"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT75/BATCH_EAUDIT75.md": {
+      "original_sha256": "2a05a7cf80e82d428cc523111e38891cc0b3aff6ab1d6bc036be02c5fd6ca023",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT76/BATCH_EAUDIT76.md": {
+      "original_sha256": "d23995f6c544abfda417f7131a668951f611b6249d67cb143456843cf10f5ea8",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT77/BATCH_EAUDIT77.md": {
+      "original_sha256": "9bd947702fbcf41a448f0f0300c6cc428dc102f72f1e5033d9879646d013bf26",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT78/BATCH_EAUDIT78.md": {
+      "original_sha256": "e9afe77ce518d179f4e95045fed7443f065f37b1558e766adb54a56f2fc57783",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT79/BATCH_EAUDIT79.md": {
+      "original_sha256": "33ea2d6fe5c51e9c0542d99745f33d1874fee5a69290a9f4c9cefc3baa15e7df",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT80/BATCH_EAUDIT80.md": {
+      "original_sha256": "b9b9bc06c22ccf4b318f7c7cb0a033e22ac095098f8e2613118833a369572697",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT81/BATCH_EAUDIT81.md": {
+      "original_sha256": "cf2222c8bdaac5819867360c4836d763f816c5ba9424a42de35cc91061ae912b",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT82/BATCH_EAUDIT82.md": {
+      "original_sha256": "200338d3e61899c04930d781b2909aabf7ba656dc17d3d25f587a9c2c664d0b4",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT83/BATCH_EAUDIT83.md": {
+      "original_sha256": "79b34c40c0129c8b9b269b5b9c69229b2ddbe43d1f98369d6f8873dcff9df8b5",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT84/BATCH_EAUDIT84.md": {
+      "original_sha256": "8db78a085c1b7e43c00b459b363a23d0d915347ee2520b58c3461130d67e1531",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT85/BATCH_EAUDIT85.md": {
+      "original_sha256": "4798e1aa76de22198f77e4a67a42f05c566dd179bb6f18d8cb2f80cdd746f92f",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT86/BATCH_EAUDIT86.md": {
+      "original_sha256": "947294200251d0365668058bdb7782f63eaa04c231477e53f260b66779f3c8ec",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT87/BATCH_EAUDIT87.md": {
+      "original_sha256": "e73c32cf660031fdc6097eb4fc525d26e2a00e2df6033a00f53b51f22e58dee3",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT88/BATCH_EAUDIT88.md": {
+      "original_sha256": "51d4b566bcb5f5bd2b104b67b555ebd45b57a24b3f868c861fa5950ccc1bb2a1",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT89/BATCH_EAUDIT89.md": {
+      "original_sha256": "7ce32f97d7276e2930042d1b49ebb00529a905f183e82f68e8bf288a3c2c9bee",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT90/BATCH_EAUDIT90.md": {
+      "original_sha256": "3429a2aace5038218cb9a1cf1eb90a6aa465c40067b6d86bc4a753f477ee29e1",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT91/BATCH_EAUDIT91.md": {
+      "original_sha256": "1f3644d16b873bc1f309024d6881f6defef03fe107fe0e2f97b8749d1597d1d9",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT92/BATCH_EAUDIT92.md": {
+      "original_sha256": "e2b4053fdb2561f7184a0a48ae0c059e4bab62250b6de3c12fa86c3673ca080d",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT93/BATCH_EAUDIT93.md": {
+      "original_sha256": "81e5d45df2052e8e135dab2793515069d0ca8192054b31389903016752506928",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT94/BATCH_EAUDIT94.md": {
+      "original_sha256": "9cd0d62062419b2f3fb783aaedb6254a2569b2ec0bc2f2567b831e5ab8984ce3",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT95/BATCH_EAUDIT95.md": {
+      "original_sha256": "980673c7ab1a172a23edd30c5cd7ea124baa58e1d1b45e03cb411783f9be63be",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch02/mathcopilot_tasks/EAUDIT96/BATCH_EAUDIT96.md": {
+      "original_sha256": "7b45116bcfcc39a2690456e037d91e84553ed51bf145b598fdf65c5fae2b89e6",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT67/BATCH_EAUDIT67.md": {
+      "original_sha256": "c2c695e6f78de6ebf3eefb5487aabe1065bd70f2d2100bc8736e9ce67b6f1cd0",
+      "status": "原任务输入未改变"
+    },
+    "Blueprint/Ch03.lean": {
+      "original_sha256": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+      "original_snapshot": "blueprint/closeout24/ch03/Ch03.before.lean",
+      "current_sha256": "3ebbab496f8efcc38ead0aabcd9cc932a4c5b01563b25ec4951b05e3b700e632",
+      "status": "原返回绑定修复前输入；当前修复版另由编译及完整check核验。"
+    },
+    "blueprint/ch03/ch03_source.json": {
+      "original_sha256": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c",
+      "original_snapshot": "blueprint/closeout24/ch03/ch03_source.before.json",
+      "current_sha256": "4b1205192ebd183aaa7135f0d9cad784ef0b40cb86b92f62e6575bffbc16225d",
+      "status": "原返回绑定修复前输入；当前修复版另由编译及完整check核验。"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT68/BATCH_EAUDIT68.md": {
+      "original_sha256": "0736987ea1550526c089dc346ba59b77235ee155a5e5446639d34325bb25b8fd",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT69/BATCH_EAUDIT69.md": {
+      "original_sha256": "cc31dbd2dfc4c0059686422b846f2e2abdaf9388a1c5d2ed371c242df2bc2b05",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT70/BATCH_EAUDIT70.md": {
+      "original_sha256": "dd1f9336814bd2dfbc1edf9c5ba959b0cdba98c9235e1b7cb51bdf9b40666701",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT71/BATCH_EAUDIT71.md": {
+      "original_sha256": "e69beecfac1e8ad68a7756837f52fa20a6247430fd1879a150bfdedf154cf238",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT72/BATCH_EAUDIT72.md": {
+      "original_sha256": "ac5ea31ef4aa8f65e107b518f1220b0449ea5028534d434cd728d2552218c290",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT73/BATCH_EAUDIT73.md": {
+      "original_sha256": "a35aaad6aacdd4a0c0a5cc3e7790e2b93ddf9953799c24f58de1d9b9a64c74fd",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT74/BATCH_EAUDIT74.md": {
+      "original_sha256": "602c5e9e961c8ef12029cd14732fe164aa283d1603ac5a08abafeae1435ab725",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT75/BATCH_EAUDIT75.md": {
+      "original_sha256": "82e5d9c2df5958ed2dbf41324fe46ce657d4dab1eae89a2f49b062bd87dc9704",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT76/BATCH_EAUDIT76.md": {
+      "original_sha256": "d19162a8f77bd922cf74522856142df123ba9850136aeb0ad4676e7d1d02b511",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT77/BATCH_EAUDIT77.md": {
+      "original_sha256": "519b3eba9a3bb88401c688a5f7a09f2a2ab9d367990e2b1c0f5ef9feeea06067",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT78/BATCH_EAUDIT78.md": {
+      "original_sha256": "830504b7668bc43b4c9fb32c1ce47ec3b4fc2dee078451c08a271fe78cc74ba8",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT79/BATCH_EAUDIT79.md": {
+      "original_sha256": "7bcf3292b13a453349db9d10687f9afc5457180357c99194246d953200c457df",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT80/BATCH_EAUDIT80.md": {
+      "original_sha256": "def4d7526ff3a1c33a2ffd818617e93b745fa130e81873ede13026f5432db878",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT81/BATCH_EAUDIT81.md": {
+      "original_sha256": "fce53b0092a564f0c0b99cb4f6d906b8493ed49a1ea7a026fec03ba785deba52",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT82/BATCH_EAUDIT82.md": {
+      "original_sha256": "0a267352ee5d868a7d76b3d44d59c1b380712ea8b6a9723b64abc8b05457a097",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT83/BATCH_EAUDIT83.md": {
+      "original_sha256": "17b0b50577cd4ba2d936a21147a73972b4e2f065d7db8aa5d7b24285edff45f6",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT84/BATCH_EAUDIT84.md": {
+      "original_sha256": "66c9357730fe0be2ea4de3bc8afb04bbffe8dffc08a817ffea579ceab9d658c4",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch03/mathcopilot_tasks/EAUDIT85/BATCH_EAUDIT85.md": {
+      "original_sha256": "e6b498656ad8c7f0be8df7520f1c64e57c88907432a88499212c12c0d26328a3",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT69/BATCH_EAUDIT69.md": {
+      "original_sha256": "686fe257c41b546a6d59f4d4afcbdaf5deb4fd5c41658345dc5baf2be2449158",
+      "status": "原任务输入未改变"
+    },
+    "Blueprint/Ch04.lean": {
+      "original_sha256": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+      "original_snapshot": "blueprint/closeout24/ch04/Ch04.before.lean",
+      "current_sha256": "92933d3fce37c9c3e1fa601cc27fa0213d2120896370f9e2cfa78bc4255a0c46",
+      "status": "原返回绑定修复前输入；当前修复版另由编译及完整check核验。"
+    },
+    "blueprint/ch04/ch04_source.json": {
+      "original_sha256": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf",
+      "original_snapshot": "blueprint/closeout24/ch04/ch04_source.before.json",
+      "current_sha256": "e3ef5cde245d896946f5bfeaac967d990a81a15cb59dec4780992ff2b9407c91",
+      "status": "原返回绑定修复前输入；当前修复版另由编译及完整check核验。"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT70/BATCH_EAUDIT70.md": {
+      "original_sha256": "a1920a75dc809b01ede7336d1116d7d7784a54ce4b99c30507ed034b4e307707",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT71/BATCH_EAUDIT71.md": {
+      "original_sha256": "bbbcf476a5e5487518dbec00eb9a22b564bb82ddedc1e25b0973e7d1cc3480ae",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT72/BATCH_EAUDIT72.md": {
+      "original_sha256": "511fd9102e7258e3d8c3ac601db31489a4cb658e9ca8788a9c7b6cc061a2e176",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT73/BATCH_EAUDIT73.md": {
+      "original_sha256": "a0b3a724aaf6863798a965a5593dbc31f0a0af4fb1613c0acea75770ec4cb383",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT74/BATCH_EAUDIT74.md": {
+      "original_sha256": "dbf1584c1ee91fc7f08fea212d4805abdfb45dd4102dc258fbe76bb07f1e18b8",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT75/BATCH_EAUDIT75.md": {
+      "original_sha256": "a09522f0b0c1d3dbf8662ea9a5cd7d2aa163f23ceb1164c3d749300e70f08f6a",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT76/BATCH_EAUDIT76.md": {
+      "original_sha256": "1f7e216e060d5b38eb5059bbd7ee0a3af19a7c5c0a87811ffd0b709130184fb7",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT77/BATCH_EAUDIT77.md": {
+      "original_sha256": "06caa46c2d66436619cbffb1721044240d8e77a6ed091ea8b651c901006f68c5",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT78/BATCH_EAUDIT78.md": {
+      "original_sha256": "8e817add0260ab810885bb7da9993b1e586ba71c0dc8c95d68196ebfd6ed89f5",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT79/BATCH_EAUDIT79.md": {
+      "original_sha256": "eed9abde368d256ed2d9ee8e255bb7083dfb9675d1547f11a6f0b6e645de5ebd",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT80/BATCH_EAUDIT80.md": {
+      "original_sha256": "7af6405ca1fd1d2e6b8454bfa70b5357cf90cd1f9a1c674bbb09ea321b73d794",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT81/BATCH_EAUDIT81.md": {
+      "original_sha256": "d4fc5bcb31b2780d56c06023ed33692fc3a18946c5b8546401e9605b376a8a74",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT82/BATCH_EAUDIT82.md": {
+      "original_sha256": "3ea9d1d5ae11fede80c877b2e2f302c3c8ae58cca31868a7c882cc204b89ebed",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT83/BATCH_EAUDIT83.md": {
+      "original_sha256": "aa0b4541c270d222feb95e62f1e4f07b4aef0e10df8915cf11b631cd80678206",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT84/BATCH_EAUDIT84.md": {
+      "original_sha256": "c39fbe8e44ea8ae7d12d72cc8902989b30b3e211b4eca47b425401cdfba1a750",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT85/BATCH_EAUDIT85.md": {
+      "original_sha256": "54d9132f53c29708e1efc0e1a492cf120de782e220735bfb67398d587d9dfc0d",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT86/BATCH_EAUDIT86.md": {
+      "original_sha256": "3e10b0f23f6378a0d254f1ebea4109511a342859b4d91c5a7d67d5378f7d4b6f",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT87/BATCH_EAUDIT87.md": {
+      "original_sha256": "b732d059b9c45baf72f00889b67d1618e68048cd3c76cbc1649a3242043ab9c0",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT88/BATCH_EAUDIT88.md": {
+      "original_sha256": "42b47d1dc35e5d20887852b90ce28b4e16e2b76a5c061aedf6189ec17b7b9b9f",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT89/BATCH_EAUDIT89.md": {
+      "original_sha256": "4aeda4c28598d05a9eb680c07b3be485bd3a2a8b6f20291ddbc6ead514fec45c",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT90/BATCH_EAUDIT90.md": {
+      "original_sha256": "887941e7e6cbda4ece9e7c2f01bf564a1ab1b23a408244644f67e62e0fcc993b",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch04/mathcopilot_tasks/EAUDIT91/BATCH_EAUDIT91.md": {
+      "original_sha256": "48ef0a654f8841259876140f91ad018f59389adfb9b718b85a4515a9d0793703",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT43/BATCH_EAUDIT43.md": {
+      "original_sha256": "9e4f5350e7f3a22e800c9433527404d38a8c782b96b3a2d93e5edadcb078a77a",
+      "status": "原任务输入未改变"
+    },
+    "Blueprint/Ch05.lean": {
+      "original_sha256": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+      "original_snapshot": "blueprint/closeout24/ch05/Ch05.before.lean",
+      "current_sha256": "4044260333063d4a4c02811433b41a5b096d23563ef9880c4e29a50139725e79",
+      "status": "原返回绑定修复前输入；当前修复版另由编译及完整check核验。"
+    },
+    "blueprint/ch05/ch05_source.json": {
+      "original_sha256": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df",
+      "original_snapshot": "blueprint/closeout24/ch05/ch05_source.before.json",
+      "current_sha256": "eae3a9548f1d5d5c91c74d4ac478b8dcdbb3ac87a0fb44dc6705c4694d1bc85c",
+      "status": "原返回绑定修复前输入；当前修复版另由编译及完整check核验。"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT44/BATCH_EAUDIT44.md": {
+      "original_sha256": "a7b2d07c0b82ee3ae6d6b3eca8129048ab73c6f8ba9a8e7a1ab01f7a9e593a0e",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT45/BATCH_EAUDIT45.md": {
+      "original_sha256": "473bef8b39629f0f1ccc0e5609f9a357e2e77e29054d232873ede90c4990d68c",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT46/BATCH_EAUDIT46.md": {
+      "original_sha256": "e45b8d67b4c4f4d96f41eb515b6449c047c0425c2b94b6b7e11f88a42bcdfbc1",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT47/BATCH_EAUDIT47.md": {
+      "original_sha256": "ba82fdc134ff39bda3b9c37a94d262afccb6e527729ed10c2f774a92e09391ee",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT48/BATCH_EAUDIT48.md": {
+      "original_sha256": "6d3c45e0c14d4f1fc6ac8ba979d4170d916f7f49c212ad1d3577753cc4237424",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT49/BATCH_EAUDIT49.md": {
+      "original_sha256": "c89920ea228cd66a32ba1177ce9c66d409517eb356efc976392ee2108ec89e7d",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT50/BATCH_EAUDIT50.md": {
+      "original_sha256": "ac8545b26bd259af82f5a0c585bbd564eb184cfd23586a9e83a535c86b3cc534",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT51/BATCH_EAUDIT51.md": {
+      "original_sha256": "e15d5da91c967ee77b242ffcedbb80e7340ddf72254d53814ca223402c88cb97",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT52/BATCH_EAUDIT52.md": {
+      "original_sha256": "3372a39feabb5682338ee34cf3a71c23213e3ed4b8e4c390b4871609e35caf60",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT53/BATCH_EAUDIT53.md": {
+      "original_sha256": "c0466e871ea40c066a5e5faa1c0cfc0afdbd2a52c3aa451ec26c12c3642375e3",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT54/BATCH_EAUDIT54.md": {
+      "original_sha256": "8ddd50bbd56487d4a203724da9721c96541013caf08a09adca8ae38bbe5506c4",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT55/BATCH_EAUDIT55.md": {
+      "original_sha256": "f046aaa19ae28a72364c1b1668a3c03d0c41d5ccc5b629f1da2e6815720c07a8",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT56/BATCH_EAUDIT56.md": {
+      "original_sha256": "c649c1f342ff5cae002684247d1a051b5f7cac74388ba713d67ed7e0a68c0ca7",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT57/BATCH_EAUDIT57.md": {
+      "original_sha256": "c53ea29632e2d8101ac83ad8684234f8fbfceffbd136c9a1cd3499be349b338e",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT58/BATCH_EAUDIT58.md": {
+      "original_sha256": "7734343856d57a6d696c771ea0bfe2bac00fbeab33e2cdb48a1a814fe9e8f7ee",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT59/BATCH_EAUDIT59.md": {
+      "original_sha256": "f79dc3ea70f394114ca35eaa85f8e7b1e897d29fb604101bffdfaddb39c0fa2f",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT60/BATCH_EAUDIT60.md": {
+      "original_sha256": "783ccb86b14aeb1cde4bc88c37a02c8c4933e22ca39630017fa6e8d0fa13ada9",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT61/BATCH_EAUDIT61.md": {
+      "original_sha256": "93f14a61de70741222b48695fd1acf0d4a79243728de1cbbaa08b24fd16940f8",
+      "status": "原任务输入未改变"
+    },
+    "blueprint/ch05/mathcopilot_tasks/EAUDIT62/BATCH_EAUDIT62.md": {
+      "original_sha256": "caecf2f5161b39be2310c274b0bc748f3c53133c175a86ea77f721cb0e15eb19",
+      "status": "原任务输入未改变"
+    }
+  },
+  "blueprint_entries": 671,
+  "errata": 107,
+  "checks": [
+    "原始返回与输入绑定",
+    "27条FAIL原文/建议/逐项编译收据保留",
+    "当前全声明公理记录",
+    "每章完整check及日志哈希",
+    "冻结源码字节一致",
+    "全篇逐字引文与完整当前Lean覆盖",
+    "七段结构",
+    "旧待导师及新原书疑误全部登记并按问题合并",
+    "四条摘录问题独立登记",
+    "导师摘要术语与统计",
+    "heartbeat ACTIVE/15分钟/原target/去重与24号停止条件"
+  ],
+  "limitations": [
+    "编译与公理检查不证明含占位的声明",
+    "修正版未再次送网站",
+    "勘误未获导师裁定"
+  ],
+  "publication": "此收据验证提交前交付内容；push结果由最终Git命令单独确认。"
+}

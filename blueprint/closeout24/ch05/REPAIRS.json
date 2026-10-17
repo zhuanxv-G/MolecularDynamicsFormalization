@@ -1,0 +1,138 @@
+[
+  {
+    "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+    "diff_summary": "零散度可微向量场的条件乘积恒等式；原段从Hamilton场推散度零的桥接另为覆盖义务，不在本条预先假设后再声称证明。",
+    "suggested_fix": "在本条附上并核对实际HamiltonianField在C² Hamiltonian下散度为零的桥接声明及其精确项目定义；随后实例化当前零散度恒等式。若只保留条件版本，必须明确缩小statement_scope并将原段的Hamiltonian散度零另列且给出可核查映射。",
+    "original_fail": {
+      "lean_decl": [
+        "MD.Ch05.hamiltonianSkewExpression"
+      ],
+      "verdict": "FAIL",
+      "explanation": "所列定理作为一般零散度场的条件命题正确：∀n,f,u，f和u可微，假设∀z div f z=0，再得∀z -div(uf)=-Du[f]。但本条statement_scope覆盖整个原段，其中还包含f=J∇H时散度为零这一实质结论。当前所有声明既无H、J或Phase，也无从HamiltonianField推出div f=0的桥接。将散度零直接列为前提不能覆盖该结论。[EXTRA]称正式库另有桥接，却未给出其声明及所需正则性，不能按本任务的唯一输入核实。因此就完整原句覆盖判FAIL，并非认为已列的条件恒等式为假。",
+      "counterexample": "覆盖缺项，无需以数学反例反驳现有条件命题/定义；现有部分自身正确。",
+      "suggested_fix": "在本条附上并核对实际HamiltonianField在C² Hamiltonian下散度为零的桥接声明及其精确项目定义；随后实例化当前零散度恒等式。若只保留条件版本，必须明确缩小statement_scope并将原段的Hamiltonian散度零另列且给出可核查映射。"
+    },
+    "diff_file": "blueprint/closeout24/ch05/HamiltonianSkewExpression.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "a565841ae53539ff7c4345dad374f549771c3896c0dac5c96474c850eeb89644",
+    "log_sha256": "d0043e9a2fd69006207d0df55d9af5cd1ee3d1d5b5714b2dd43f49c30fef1f2b"
+  },
+  {
+    "source_id": "MD-5.3.1-TestSpace",
+    "diff_summary": "紧支持C∞选项保留，并在同一source_id新增实际SchwartzMap选项testSpaceSchwartz；二者各自独立，不用其它条目的名称替代第二选项。",
+    "suggested_fix": "保持现有C∞紧支持定义，并为本source_id增加第二个SchwartzMap (E n) ℝ选项的实际声明/明确映射；相应更新context_notation。审校不修改工程。",
+    "original_fail": {
+      "lean_decl": [
+        "MD.Ch05.testSpace"
+      ],
+      "verdict": "FAIL",
+      "explanation": "当前仅有testSpace n这一声明：实n维欧氏空间上的实值函数子类型，ContDiff ℝ ∞与HasCompactSupport正确编码第一选项C∞紧支持，未误用Cω。但原文及本条statement_scope还完整列出第二选项S(R^m)，且context_notation声称两个选项都保留。所给本source_id全部声明与依赖里没有SchwartzMap/Schwartz空间选项、二选一接口或对应映射；不能因其他条目6引用过schwartzSpace就认定本条已经覆盖第二选项。因此完整覆盖FAIL；第一选项自身PASS。",
+      "counterexample": "覆盖缺项，无需以数学反例反驳现有条件命题/定义；现有部分自身正确。",
+      "suggested_fix": "保持现有C∞紧支持定义，并为本source_id增加第二个SchwartzMap (E n) ℝ选项的实际声明/明确映射；相应更新context_notation。审校不修改工程。"
+    },
+    "diff_file": "blueprint/closeout24/ch05/TestSpace.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "71a4119605648e848f4c3794e6263db2b1fc6d3b0097e9eeb31b6ec89bfc0f8c",
+    "log_sha256": "7a11f0a6587d15d84e74e750614956157004feade19c1f1f65c81b06c9288fea"
+  },
+  {
+    "source_id": "MD-5.3.3-LowerDimensionNull",
+    "diff_summary": "保留既有三个正则能级声明，另加不依赖H、c或能级包含关系的一般d<n环境Lebesgue零测声明，覆盖平面曲线和三维曲面；新增声明尚未证明。原书无条件能级维数句保留疑误。",
+    "suggested_fix": "另列一般环境零测声明：∀n,d，d<n，∀g:ℕ→E d→E n 及紧 K k，若每个 g k 为 C¹，则 volume(⋃k,g k  K k)=0；该声明无需 H、c 或像集位于能级的前提，即可覆盖原文光滑曲线/曲面的例子。保留当前三个声明，并将正则能级及“低维”的精确解释登记为修正版范围；原书字面句子保留 NEEDS_HUMAN。本次不编辑工程、不补证明。",
+    "original_fail": {
+      "lean_decl": "MD.Ch05.lowerDimensionNull",
+      "verdict": "FAIL",
+      "explanation": "FAIL（整条原文的完整覆盖），同时原书的未限定维数语言需人工确认。三个现有 Lean 声明本身均数学正确，且第二条确有环境 volume=0；但这只覆盖位于能级且 d<n−1 的集合，不能冒称原文第一句的一般环境低维零测已覆盖。n=2,d=1 的曲线及 n=3,d=2 的曲面都不满足其严格维数前提，而它们恰是原文列举对象。第二句的正则能级、光滑低维零测已有合理受限实现；该部分通过不能补上第一句的缺口。",
+      "counterexample": "覆盖缺口见光滑直线 g(t)=(t,0)⊂ℝ²，或光滑平面 g(s,t)=(s,t,0)⊂ℝ³：它们环境 Lebesgue 零测，但分别对应 d+1=n，无法实例化当前 countable 声明。这是缺少覆盖的见证，不是否定现有三个定理。针对原文无条件能级维数，取一自由度 H(q,p)=q²+p²、E=0，能级只有一点，维数0而非2·1−1=1；它不满足 Lean 的正则性前提。",
+      "suggested_fix": "另列一般环境零测声明：∀n,d，d<n，∀g:ℕ→E d→E n 及紧 K k，若每个 g k 为 C¹，则 volume(⋃k,g k  K k)=0；该声明无需 H、c 或像集位于能级的前提，即可覆盖原文光滑曲线/曲面的例子。保留当前三个声明，并将正则能级及“低维”的精确解释登记为修正版范围；原书字面句子保留 NEEDS_HUMAN。本次不编辑工程、不补证明。"
+    },
+    "diff_file": "blueprint/closeout24/ch05/LowerDimensionNull.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "c96fb8010cff941412dbbfce11a923c7b118f3d7ce1613a7b29d342f53b1ecc5",
+    "log_sha256": "1582eeca12ac458245aa4915e16a65a79b0c10338003b012c1f0574d5783d856"
+  },
+  {
+    "source_id": "MD-5.4.1-Mixing",
+    "diff_summary": "补全部实时间的MeasurePreserving，μ明确为不变概率参考分布。weakMixing为兼容保留的名称，含义是密度在有界连续测试下的弱收敛，不用作标准术语“弱混合”。",
+    "suggested_fix": "在谓词中增加∀ t,MeasurePreserving (Φ t) μ μ，或将其作为明确不可省略的接口前提；再保留现有AC密度弱收敛部分。建议将名称/文档改为明确的mixing或density convergence措辞。本次只报告，未修改工程。",
+    "original_fail": {
+      "lean_decl": "MD.Ch05.weakMixing",
+      "verdict": "FAIL",
+      "explanation": "weakMixing的概率μ、零时恒等、全实时间群律、联合可测均已写在第一合取内。第二合取对所有L¹、逐点非负、积分为1的初始密度r，以及所有有界连续实测试函数φ，要求∫φ(Φ_t z)r(z)dμ→∫φdμ；这准确表达了AC初始概率分布的弱收敛，测试函数与初始密度的量词及极限方向正确。但定义既没有∀t,MeasurePreserving (Φ t) μ μ，也没有足以从弱收敛推出不变性的空间连续性条件。因此μ不一定是源文及[EXTRA]所说的不变参考分布。下面的联合可测群作用满足整个当前谓词，却不保持μ。此外weakMixing这个名称不能按标准术语读作“弱混合”；这里本来意图表达的是混合导致分布弱收敛。",
+      "counterexample": "在ℝ（与E 1等同）取μ=δ₀。令O={0}∪((0,∞)\\{1})，定义Borel双射h:ℝ→O：h(0)=0，u≠0时h(u)=exp(−u)。在O上令Φ_t(x)=h(h⁻¹(x)+t)，在ℝ\\O上令Φ_t(x)=x。这是联合Borel可测的全实时间群作用，Φ₀=id。任何合格r均有r(0)=1，故测试积分为φ(h(t))，t→+∞时趋于φ(0)=∫φdμ，所有当前weakMixing条件都成立。然而Φ₁(0)=exp(−1)≠0，(Φ₁)_*δ₀=δ_exp(−1)≠δ₀，参考测度不是不变测度。",
+      "suggested_fix": "在谓词中增加∀ t,MeasurePreserving (Φ t) μ μ，或将其作为明确不可省略的接口前提；再保留现有AC密度弱收敛部分。建议将名称/文档改为明确的mixing或density convergence措辞。本次只报告，未修改工程。"
+    },
+    "diff_file": "blueprint/closeout24/ch05/Mixing.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "b7367ef28d5ece96e3d06e4766a7b4756f4fa4553d6bc20522d9ee819f24423c",
+    "log_sha256": "4746d6849802de2197e9b85d4f9e30064544aeee455441810978a03dd0481d68"
+  },
+  {
+    "source_id": "MD-5.6-WeakAttractor",
+    "diff_summary": "目标测度资格直接加入定义体IsProbabilityMeasure μ∧…，排除μ=0下空概率邻域的真空成立；其余有限测试族、共同ε和概率ν收敛量词不变。",
+    "suggested_fix": "在定义体增加IsProbabilityMeasure μ ∧ (...)，或把目标直接取概率测度类型；随后在概率空间中使用有限测试族邻域。Φ为可测流的资格可在实际应用定理中另行要求。本次只读审校，未修改Lean工程。",
+    "original_fail": {
+      "lean_decl": "MD.Ch05.weakAttractor",
+      "verdict": "FAIL",
+      "explanation": "有限族有界连续ψ、共同ε>0、对邻域内所有概率ν及所有有界连续φ的t→+∞收敛，正确编码了局部弱吸引的收敛部分。但是目标μ的域是所有Measure，签名既没有IsProbabilityMeasure μ参数，也没有将其作为合取条件。因此可选择不含任何概率测度的所谓邻域而令全称命题真空成立，与[EXTRA]“概率弱拓扑中某邻域”的承诺不符。该缺陷独立于原书否定吸引的断言；辅助定义分流不能补足目标对象的域。",
+      "counterexample": "取n=1、μ=0测度、Φ(t,z)=z、m=1、ψ₀≡1及ε=1/2。ψ₀有界连续；任意概率ν都有∫1 dν=1，而∫1 dμ=0，故邻域条件|1−0|<1/2恒假。于是对所有ν的蕴含真空成立，weakAttractor Φ 0为真。零测度不属于概率空间，更不可能是概率推送测度的弱极限（用φ≡1即否定）。",
+      "suggested_fix": "在定义体增加IsProbabilityMeasure μ ∧ (...)，或把目标直接取概率测度类型；随后在概率空间中使用有限测试族邻域。Φ为可测流的资格可在实际应用定理中另行要求。本次只读审校，未修改Lean工程。"
+    },
+    "diff_file": "blueprint/closeout24/ch05/WeakAttractor.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "6af28db5a8afbebb973cce0747ec66ac27ad2edd5b807f6341d70368a14a47aa",
+    "log_sha256": "73f1e804784ed25cba27a48d983487badb0975f47f53cef8599092b3f3f1357d"
+  },
+  {
+    "source_id": "MD-5.6-EulerLogCorrespondence",
+    "diff_summary": "Euler两个离散更新与连续对数向量场的精确单步插值，以及全时间线性ODE；仅这两个子句由当前Lean覆盖。 原引文完整保留，密度及伴随分解另列覆盖缺口，不宣称这些结论已证明。",
+    "suggested_fix": "另设密度/测度演化及伴随算子的明确接口，补足原文所述Liouville演化和线性分解声明；或者明确将本source_id的statement_scope和摘录拆分，单独审校Euler对数流对应。只建议，不改工程。",
+    "original_fail": {
+      "lean_decl": "MD.Ch05.eulerLogCorrespondence",
+      "verdict": "FAIL",
+      "explanation": "两Euler更新和全时间线性ODE部分的对象、量词、正步长前提与计算均正确；对数场是合理的精确单步插值。整条引文还明确包含密度Liouville演化及生成元分解，当前签名未表达该部分，故按完整结论审校FAIL。此结论与证明是否含sorry无关。",
+      "counterexample": null,
+      "suggested_fix": "另设密度/测度演化及伴随算子的明确接口，补足原文所述Liouville演化和线性分解声明；或者明确将本source_id的statement_scope和摘录拆分，单独审校Euler对数流对应。只建议，不改工程。"
+    },
+    "diff_file": "blueprint/closeout24/ch05/EulerLogCorrespondence.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch05.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "4044260333063d4a4c02811433b41a5b096d23563ef9880c4e29a50139725e79",
+    "log_sha256": "d19c008bbc6c6cc35bf725ad1e60c08b0dd12632942160a84f24b1f000095fd9"
+  }
+]

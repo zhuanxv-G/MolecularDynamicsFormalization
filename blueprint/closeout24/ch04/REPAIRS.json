@@ -1,0 +1,174 @@
+[
+  {
+    "source_id": "MD-4.2.1-RESPA",
+    "diff_summary": "总化辅助respaTotalized保留；主接口respa增加0<r。当前Blueprint没有主接口下游调用需调整；正式库旧辅助不改。已展开同版本Chapter02Review.verlet核对为kick(h/2)→drift(h)→kick(h/2)，桥接见FastVerlet本地核验记录。原文网站漏句按corrected_json补回。",
+    "suggested_fix": "在签名增加0<r参数或将r改为正自然数，并同步调用域；补回漏句。另提供同版本Chapter02Review.verlet定义供核对，不能仅用函数名称认定实现正确。",
+    "original_fail": {
+      "lean_decl": "MD.Ch04.respa",
+      "verdict": "FAIL",
+      "explanation": "r 声明为任意自然数，没有0<r或非零资格，和 extra_assumptions 的 r为正自然数矛盾。正r时外层两次慢kick以及内部真实函数迭代的组合顺序正确；但r=0被Lean总化为跳过快步、连续两个慢半kick，已超出原文h/r与正细分数的域。另继承条目14未给出 Chapter02Review.verlet 定义的材料缺口。FAIL来自明确缺失的r资格，不来自sorry或无法检查的实现。",
+      "counterexample": "r=0在当前签名中合法；函数迭代^[0]为恒等，故结果=kick US (h/2)(kick US (h/2) z)，即(q,p-h grad US(q))。这不是原文正r细分定义的h/r快步算法，且与extra_assumptions宣称r为正不一致。",
+      "suggested_fix": "在签名增加0<r参数或将r改为正自然数，并同步调用域；补回漏句。另提供同版本Chapter02Review.verlet定义供核对，不能仅用函数名称认定实现正确。"
+    },
+    "diff_file": "blueprint/closeout24/ch04/RESPA.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "ba1020c3adf7c450ce4ae2f20ab718c7884babba22cfbdc48409874b4b5626c7",
+    "log_sha256": "2525a44cd7d4b1efb451360830718524bcce8ddc451d05802aadafd8cefe50b5",
+    "local_adjustment_file": "blueprint/closeout24/ch04/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-4.3-ReactionMultiplier",
+    "diff_summary": "[EXTRA] 逆Gram候选公式定义（含奇异点的总化）；原句在det≠0时解平衡方程及唯一性由MD-4.3-ReactionBalance和MD-4.3-GramInvertible共同覆盖。 不将无条件总化定义报告成唯一求解结论。",
+    "suggested_fix": "将本条statement_scope明确改成EXTRA逆Gram候选公式定义，并显式将原句解方程内容链接到本批第14、16条；或在同一source_id补det≠0下的平衡与唯一性定理。",
+    "original_fail": {
+      "lean_decl": "MD.Ch04.reactionMultiplier",
+      "verdict": "FAIL",
+      "explanation": "reactionMultiplier给出的逆Gram公式代数符号、各域及曲率二阶导数正确，但这是对任意m、γ、q,p,F总化的函数定义。本条statement_scope仍声称覆盖所引全部原句，而本条同source_id并没有det≠0条件下满足线性方程或唯一可解的命题。其它条目的reactionBalance及gramInvertible_multiplier可补这一逻辑内容，但不能冒充本条定义本身已含条件性求解结论。",
+      "counterexample": "例如n=l=1、m=1、g≡0、F≡0时Gram=0且总化定义仍返回0，线性方程却对每个λ成立，无法从该定义推出唯一求解。该例不反驳原书的可逆条件句，只说明无条件总化定义不能代替它。",
+      "suggested_fix": "将本条statement_scope明确改成EXTRA逆Gram候选公式定义，并显式将原句解方程内容链接到本批第14、16条；或在同一source_id补det≠0下的平衡与唯一性定理。"
+    },
+    "diff_file": "blueprint/closeout24/ch04/ReactionMultiplier.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "50a9869196d92054e7391cd33fbfcef53a3f081b637b10d285f16709837fc566",
+    "log_sha256": "877a63e92f06ce3f3cc2ede497f6e31aed1d8f19b815be7c80ce7970fa58236e",
+    "local_adjustment_file": "blueprint/closeout24/ch04/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-4.3.2-ProjectionScale",
+    "diff_summary": "F按原印F_n解释，预测位置+h²M⁻¹F改为−h²M⁻¹F；保留根分支、初态余切相容及Gram可逆资格，原句不改。原书O(h²)的初态范围另列勘误待导师，不把两种根方程混为一谈。",
+    "suggested_fix": "不修改原书 statement_latex。Lean 若仍以 F 表示原印 F_n，将根方程预测位置中的 +h² • invMass m (F z.1) 改为 −h² • invMass m (F z.1)；若 F 特指物理力而与原印量反号，则需明确 F=−Fprinted 的记号关系并单独标名该版本。保留现有根分支、相容性和非奇异 [EXTRA] 条件；由人工确认原书 O(h²) 的初态/随步长范围。",
+    "original_fail": {
+      "lean_decl": "MD.Ch04.projectionScale",
+      "verdict": "FAIL",
+      "explanation": "签名量化任意 n,l,m、位置力 F:Q n→Q n、约束 g、初始相点 z 及分支 η:ℝ→Q l；假设 z∈cotangentSet、g_j∈C²、η∈C²、η(0)=0、Gram(z.q).det≠0，以及某个双侧开邻域内的实际零残差根方程。完整结论为存在 C>0、δ>0，对全部 h∈(−δ,δ) 有 ‖η(h)‖≤Ch²，包含 h=0。作为当前所写“加号预测器”的条件数学定理，该结论正确：由根方程在 0 的一阶微分、初始隐藏约束和 Gram 可逆得到 η′(0)=0，再由 C² 分支得到二阶界；F 只在固定 z.q 处取值，故无需 F 对位置可微。没有循环假设 O(h²)，也没有宣称已找到根分支。然而原文/notation 的预测器是 z.q+hM^{-1}z.p−h²M^{-1}F_n，当前签名却写成加号，且未注明反号变量关系或修正版，故源文对应审校为 FAIL，而非数学定理本身被反例否定。原书 O(h²) 适用范围的疑问另在 json_review 标记 NEEDS_HUMAN，保持原文并交由人工判断。",
+      "counterexample": {
+        "scope": "两例分别说明原书无隐藏相容性时的范围问题，以及加/减号预测器根分支不同；均不否定当前 Lean 条件估计本身。以下是直接代入的解析例，不是数值模拟或 Lean 验证。",
+        "source_scope_example": "取 n=l=1，m=1，g(x)=x，q=0，p=1，F_n=0。位置约束 g(q)=0、Gram=1，但隐藏约束不成立。原印残差为 h−Λ，唯一光滑根为 Λ(h)=h；|h|≤Ch² 不可能在任意固定 C 的零邻域成立。该例不满足 Lean 的 z∈cotangentSet。",
+        "predictor_sign_example": "取 n=l=1，m=1，g(x)=x，q=p=0，F_n=F(0)=1。此时初始余切相容且 Gram=1。原印负号预测器残差为 −h²−η，根为 η(h)=−h²；当前 Lean 加号预测器残差为 h²−η，根为 η(h)=h²。两分支均为 O(h²)，但不是同一原文根方程。"
+      },
+      "suggested_fix": "不修改原书 statement_latex。Lean 若仍以 F 表示原印 F_n，将根方程预测位置中的 +h² • invMass m (F z.1) 改为 −h² • invMass m (F z.1)；若 F 特指物理力而与原印量反号，则需明确 F=−Fprinted 的记号关系并单独标名该版本。保留现有根分支、相容性和非奇异 [EXTRA] 条件；由人工确认原书 O(h²) 的初态/随步长范围。"
+    },
+    "diff_file": "blueprint/closeout24/ch04/ProjectionScale.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "3c21968e69e27d571c7ee4c8bd94ddf8c02387323b6f54b571387992f6e00aae",
+    "log_sha256": "5f3eb1c583833749253f376c1f8976af8afd1824caa188a7de440a00a514574b",
+    "local_adjustment_file": "blueprint/closeout24/ch04/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-4.3.3-ComponentSweep",
+    "diff_summary": "停止判据恢复原印非严格≤tol，并要求含测试轮全部步骤的可微/分母非零资格；原G_j^1索引疑误保留待导师。没有更改逐分量更新次序。",
+    "suggested_fix": "将componentPrintedStop的<tol改为≤tol，或另命名严格停止变体并保留原印非严格版；有效使用Stop时补测试轮全部步骤资格。保留G_j^1疑误待人工裁定。本次不修改工程。",
+    "original_fail": {
+      "lean_decl": "MD.Ch04.componentSweep",
+      "verdict": "FAIL",
+      "explanation": "componentSweep按finRange l升序foldl，每次用刚更新的Qcur，使用梯度修订方向；它调用的是Chapter04Review.componentConstraintStep，无有效域假设，是实数逆零总化下的辅助函数。componentPrintedDelta忠实保留Gsup1；Trajectory以k mod l循环、旧q不变，l=0时恒等；Iteration在正质量、l>0和每个已执行步骤可微/分母非零条件下返回rounds*l步位置。Stop检查round*l+j处、更新前计算的一整轮各分量增量，顺序正确，却使用<tol，原页是≤tol；故本条全部声明不能整体PASS。原印索引疑误另需人工裁定。",
+      "counterexample": "边界见证：n=l=1，m=1，g₀(t)=t，q=0，Q₀=1，Gsup1₀=1，round=0，tol=1。分母为1、增量为1；原书1≤1成立，而当前Stop要求1<1为假。此为精确代入，非数值搜索。",
+      "suggested_fix": "将componentPrintedStop的<tol改为≤tol，或另命名严格停止变体并保留原印非严格版；有效使用Stop时补测试轮全部步骤资格。保留G_j^1疑误待人工裁定。本次不修改工程。"
+    },
+    "diff_file": "blueprint/closeout24/ch04/ComponentSweep.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "44259f681896d41795f21c0554b20db308148674f44500bf4506f71e7e214167",
+    "log_sha256": "bbe4c27be3613dc47be82ea8c0225abe4b457b678fd965175dd9d49810d49306",
+    "local_adjustment_file": "blueprint/closeout24/ch04/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-4.4-DipolarPotentialSum",
+    "diff_summary": "原任意输入有限和另名Totalized作代数辅助；物理主接口补不同粒子位置非碰撞及每个μ单位方向。总逆在零距离的值不解释为物理势。",
+    "suggested_fix": "在物理主接口补∀i j,i≠j→q_i≠q_j与∀i,dot(μ_i)(μ_i)=1，或明确将当前声明仅列为总化代数核，并另给受约束物理包装。",
+    "original_fail": {
+      "lean_decl": "MD.Ch04.dipolarPotentialSum",
+      "verdict": "FAIL",
+      "explanation": "求和指标i,j均遍历Fin N，if i<j确保每个无序不同粒子对恰计一次；q差与sqrt(dot差差)确实绑定实际距离，pair核依赖也正确。但签名没有位置非碰撞前提，也没有μ单位约束，而context_notation及EXTRA明确声称无重叠位置和单位方向。Lean实数逆在0处仍有总值，故碰撞状态被实际纳入定义域；这不能表述为已实现r_ij>0的物理接口。",
+      "counterexample": "N=2，q_0=q_1=0，μ_0=μ_1=(1,0,0)。当前接口允许该输入且r_01=0；形式核逆幂均取0并返回lj(0)，不满足声明背景r_01>0。",
+      "suggested_fix": "在物理主接口补∀i j,i≠j→q_i≠q_j与∀i,dot(μ_i)(μ_i)=1，或明确将当前声明仅列为总化代数核，并另给受约束物理包装。"
+    },
+    "diff_file": "blueprint/closeout24/ch04/DipolarPotentialSum.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "7ec7a54a657442740597f331004c2482c53e63c919e60a619433461f27601afa",
+    "log_sha256": "dbf64250cd90a1337e438fdd0bfe90fdf8cd39115b4377bacbc5619bec442e9f",
+    "local_adjustment_file": "blueprint/closeout24/ch04/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-4.4.1-AngularInertia",
+    "diff_summary": "原体坐标等式与证明完整保留；另列一般三重积（逐坐标ring证明）及空间角动量矩阵中间等式（体坐标已证式取Θ=1），覆盖引文遗漏。",
+    "suggested_fix": "保留完整引文，补独立声明或合取结论表达一般a×(b×c)恒等式及空间角动量矩阵等式；若采用分工，须明确指向实际对应声明后另行核对。",
+    "original_fail": {
+      "lean_decl": "MD.Ch04.angularInertia",
+      "verdict": "FAIL",
+      "explanation": "全称N,m,参考δ,Θ,ω，并以前提ΘᵀΘ=I及detΘ=1，结论确实是ΘᵀΣm_i[(Θδ_i)×(ω×Θδ_i)]=T(Θᵀω)，右嵌套与原文给出的三重积公式一致。然而本条statement_scope声称覆盖全部引文，签名仅给最终体坐标等式；未陈述一般三重积恒等式以及空间角动量等于Σm_i[||δ_i||²I−δ_iδ_iᵀ]ω的中间等式。证明体中的局部hc只给u×(w×u)特例，不是可替代完整结论的声明。",
+      "counterexample": null,
+      "suggested_fix": "保留完整引文，补独立声明或合取结论表达一般a×(b×c)恒等式及空间角动量矩阵等式；若采用分工，须明确指向实际对应声明后另行核对。"
+    },
+    "diff_file": "blueprint/closeout24/ch04/AngularInertia.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "0e8847247c7449dd6ce00764ba6db02d54eef5086163f4db0ae2ba3169f9b29a",
+    "log_sha256": "d01c6b9b05382c907ca5c50aea677f7f1a45ce4b78267de5f91b1544544a3e25",
+    "local_adjustment_file": "blueprint/closeout24/ch04/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  },
+  {
+    "source_id": "MD-4.4.1-AxisRotation",
+    "diff_summary": "三个标准右手轴旋转矩阵的公式定义；第一句平面子流可积性是背景，移出本条承诺，由MD-4.4.1-ExactPlanarRotation的带负角修正版单独给出。 不以矩阵名字推断ODE解。",
+    "suggested_fix": "矩阵定义保留。另行明确登记覆盖平面子流结论的声明及其精确source_id映射，并与本条范围对应；或经范围修订把第一句作为背景摘录明确移出本条承诺。若将来陈述子流，应核查Euler场π×ω对应的旋转角符号。本次不修改工程或补证明。",
+    "original_fail": {
+      "lean_decl": "MD.Ch04.axisRotation",
+      "verdict": "FAIL",
+      "explanation": "axisRotation 本身的三支矩阵完全正确：i=0给出所印x轴矩阵，i=1与i=2分别是对应右手y、z轴矩阵，且∀φ:ℝ无额外前提。但原JSON的完整statement_scope包含“Each of these ... easily integrated as a planar rotation”这一单轴ODE可积性结论；同一source_id所给全部Lean只有矩阵定义，未出现子场、时间、初值、解或积分关系，extra_assumptions也没有将该句排除/分配。故完整范围的签名FAIL，原因是结论遗漏；不是矩阵符号错误，也不是sorry。",
+      "counterexample": null,
+      "suggested_fix": "矩阵定义保留。另行明确登记覆盖平面子流结论的声明及其精确source_id映射，并与本条范围对应；或经范围修订把第一句作为背景摘录明确移出本条承诺。若将来陈述子流，应核查Euler场π×ω对应的旋转角符号。本次不修改工程或补证明。"
+    },
+    "diff_file": "blueprint/closeout24/ch04/AxisRotation.diff",
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "Blueprint/Ch04.lean"
+    ],
+    "exit_code": 0,
+    "input_sha256": "92933d3fce37c9c3e1fa601cc27fa0213d2120896370f9e2cfa78bc4255a0c46",
+    "log_sha256": "4063941a50304a3abde953dc4747016b3e5f051be3c1eb9595156306c418745c",
+    "local_adjustment_file": "blueprint/closeout24/ch04/LOCAL_ADJUSTMENTS.json",
+    "local_adjustment_note": "本文件保留首次编译诊断后的最小变更diff；主diff与本记录合读，最终证明状态以通过收据为准。"
+  }
+]

@@ -1,0 +1,44 @@
+--- before
++++ after
+@@ -1114,7 +1114,8 @@
+   exact MolecularDynamics.exists_hamiltonian_splitting_localError_bound
+     D hD H₁ H₂ hH₁ hH₂ F F₁ F₂ u hτ hFD hF₂D hF₁D hF hF₂ hF₁ hc hinit hinit₂ hinit₁
+ 
+-/-- source_id: MD-2.4.1-KineticFlow · Example 2.4 (kinetic) · §2.4.1 · 印刷p.83–84 / PDFp.105–106 -/
++/-- source_id: MD-2.4.1-KineticFlow · Example 2.4 (kinetic) · §2.4.1 · 印刷p.83–84 / PDFp.105–106 [EXTRA] 24号：保留总化代数公式和kick导数辅助；新增正质量下动能Hamiltonian、初值及真实Hamilton方程声明。kick导数不作为kinetic流证明；Hamilton识别尚未证明。
++-/
+ noncomputable def bp_kineticFlow {Nc : ℕ} (m : Fin Nc → ℝ) (h : ℝ)
+     (z : SymplecticCoordinates Nc) : SymplecticCoordinates Nc :=
+   Sum.elim (fun i => z (Sum.inl i) + h * (m i)⁻¹ * z (Sum.inr i))
+@@ -1144,6 +1145,21 @@
+     simpa only [textbookMomentumKick, Sum.elim_inr, Pi.add_apply, Pi.smul_apply,
+       Function.comp_apply, smul_eq_mul] using
+       (hasFDerivAt_apply (Sum.inr i) z).fun_add (hi.fun_const_smul h)
++
++def kineticHamiltonian {Nc : ℕ} (m : Fin Nc → ℝ) (z : SymplecticCoordinates Nc) : ℝ :=
++  ∑ i, (z (Sum.inr i))^2/(2*m i)
++
++theorem bp_kineticFlow_initial {Nc : ℕ} (m : Fin Nc → ℝ) (z : SymplecticCoordinates Nc) :
++    bp_kineticFlow m 0 z = z := by
++  funext i
++  cases i <;> simp [bp_kineticFlow]
++
++theorem bp_kineticFlow_hamiltonian {Nc : ℕ} (m : Fin Nc → ℝ)
++    (_hm : ∀ i, 0 < m i) (z : SymplecticCoordinates Nc) (t : ℝ) :
++    HasDerivAt (fun s => bp_kineticFlow m s z)
++      (textbookHamiltonianVectorField (kineticHamiltonian m) (bp_kineticFlow m t z)) t := by
++  sorry
++
+ 
+ /-- source_id: MD-2.4.1-PotentialFlow · definition · §2.4.1 · 印刷p.84 / PDFp.106 -/
+ def bp_potentialFlow {Nc : ℕ} (U : Q Nc → ℝ)
+@@ -1778,6 +1794,9 @@
+ #print axioms MD.Ch02.bp_kineticFlow
+ #print axioms MD.Ch02.momentumKickDerivative
+ #print axioms MD.Ch02.momentumKick_hasFDerivAt
++#print axioms MD.Ch02.kineticHamiltonian
++#print axioms MD.Ch02.bp_kineticFlow_initial
++#print axioms MD.Ch02.bp_kineticFlow_hamiltonian
+ #print axioms MD.Ch02.bp_potentialFlow
+ #print axioms MD.Ch02.splitEuler
+ #print axioms MD.Ch02.verletComposition

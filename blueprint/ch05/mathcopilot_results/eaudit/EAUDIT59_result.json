@@ -1,0 +1,251 @@
+{
+  "batch": "EAUDIT59",
+  "input_sha256": {
+    "BATCH_EAUDIT59.md": "f79dc3ea70f394114ca35eaa85f8e7b1e897d29fb604101bffdfaddb39c0fa2f",
+    "Blueprint/Ch05.lean": "3e042408351c5757856cdbdc99bd31a9321b937299a37decc69a194c12aaa0e8",
+    "blueprint/ch05/ch05_source.json": "835cd90367e0e803255a0acdef1955b2842e23c1eda498fd391ef4da04f2b8df"
+  },
+  "items": [
+    {
+      "source_id": "MD-5.6-DiscreteAveragePrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第4页确为n⁻¹∑_{k=0}^{n}g(z_k)，不是求和到n−1；英文引导句及≈、极限方向一致。",
+          "附件第4页；原书印刷页206，PDF页227。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "7ec773261776420c52ec2440162fc18d897440221af9dff827e36a785a4d1c5a"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.discreteAveragePrinted",
+        "verdict": "PASS",
+        "explanation": "C：对任意类型X、自治步进G、实观测量g、初值z及自然数N，range(N+1)精确包含0,…,N，前因子为实N的逆元；Printed定义忠实给出有限统计量。N=0因实数逆元总化而得0，只是形式定义，不宣称统计意义或极限存在。原页只是尝试估计并随即警告极限可能不存在，因此无需补一个无条件收敛定理。 本条全部本地声明：MD.Ch05.discreteAveragePrinted。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-DiscreteAverage",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第5页原式摘录忠实保留n+1项。",
+          "附件第5页；原书印刷页206，PDF页227。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "7ec773261776420c52ec2440162fc18d897440221af9dff827e36a785a4d1c5a"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.discreteAverage",
+        "verdict": "PASS",
+        "explanation": "C：X,G,g,z,N的域同Printed，range N只有0,…,N−1；这是[EXTRA]及statement_scope明确标出的独立标准N项变体，并非原式逐字形式化。N=0总化为0，未断言两有限统计量相同、极限存在或等于原时间平均。该范围划分合理，原字面版本在本批条目4可核实。 本条全部本地声明：MD.Ch05.discreteAverage。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-DiscretePropagator",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第6页所引numerical method...propagator整句相符。",
+          "附件第6页；原书印刷页206，PDF页227。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "7ec773261776420c52ec2440162fc18d897440221af9dff827e36a785a4d1c5a"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.discretePropagator",
+        "verdict": "PASS",
+        "explanation": "C：任意可测空间X、可测自映射G、任意测度μ，返回Measure.map G μ，恰是一个数值步的分布推前；G可取F_h，h不必作为独立参数。μ不要求概率是合法推广，若μ概率则可测推前仍概率；显式Measurable G排除了不可测map的总化问题。[EXTRA]落实，不声称精确modified流或存在密度。 本条全部本地声明：MD.Ch05.discretePropagator。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-ModifiedField",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第7页原句、dz/dt=f+h^r f_(r)≡f̃_h、截断说明及r为方法阶数均相符。",
+          "附件第7页；原书印刷页206，PDF页227。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "7ec773261776420c52ec2440162fc18d897440221af9dff827e36a785a4d1c5a"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.modifiedField",
+        "verdict": "PASS",
+        "explanation": "C：n自然数，f,fr:E n→E n，h实数，r自然数，返回z↦f z+h^r •fr z，向量加法及标量乘法正确。此为修正场的定义，允许r=0是代数扩域，不是声称0阶方法的数值分析结论；上下文仍应把实际方法阶数取正整数。没有证明或假设数值步与ODE近似程度、余项界或形式级数收敛；context已明示这些不由定义推出，故不把定义夸大为误差定理。 本条全部本地声明：MD.Ch05.modifiedField。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-ModifiedLiouvillian",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION_ADJOINT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-5.6-ModifiedLiouvillian",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "5.6",
+          "printed_page": "206",
+          "pdf_page": "227",
+          "statement_latex": "Let us assume that the perturbed equation is a realistic model for the numerical solutions, then define the evolving density by\n\\[\\frac{\\partial\\rho}{\\partial t}=\\mathcal L_{\\widetilde f}^{\\dagger}\\rho\n\\stackrel{\\rm def}{=}\\mathcal L_f^{\\dagger}\\rho+h^r\\mathcal L_{f_{(r)}}^{\\dagger}\\rho.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            "A：附件第8页左侧修正Liouville算子上标为dagger，与右侧两项一致；JSON却写star。定义等号原页是带def的等号，JSON的def上置equiv可规范回原式。"
+          ],
+          "lean_decl": "MD.Ch05.modifiedLiouvillian",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际Fréchet导数和trace，可微f/fr/u资格；只证微分表达式对场线性，不声称余项密度误差已受控。",
+            "[EXTRA] 保留算子线性证明，并新增原文假设的修正模型PDE定义（r≥1），与展开右侧的等价式；仅定义模型及其算子展开，不声称任意空间可微ρ自动满足PDE。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT20_LOCAL_REPAIR",
+              "timestamp": "2026-10-16T10:18:08.273883",
+              "before_sha256": "047c915859911186ee50716e92be9d0bb8d7fc7eae60c1518a5ddafb0248b07c",
+              "after_sha256": "c36f52cde8a300f93228d4b1a15329e7b51fdfad7548f84cc019ac42347ecc6a",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch05/mathcopilot_results/BATCH24_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT20/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          "A：附件第8页左侧修正Liouville算子上标为dagger，与右侧两项一致；JSON却写star。定义等号原页是带def的等号，JSON的def上置equiv可规范回原式。"
+        ],
+        "evidence": [
+          "A：附件第8页左侧修正Liouville算子上标为dagger，与右侧两项一致；JSON却写star。定义等号原页是带def的等号，JSON的def上置equiv可规范回原式。",
+          "附件第8页；原书印刷页206，PDF页227。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "7ec773261776420c52ec2440162fc18d897440221af9dff827e36a785a4d1c5a"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.modifiedLiouvillian",
+        "verdict": "PASS",
+        "explanation": "C：liouvillian f u=−div(u f)，div由Fréchet导数的trace定义，是密度侧伴随生成元，不是观测量侧lie。首定理对任意n、可微f,fr,u、实h及自然r、每点z断言场线性，符号及h^r正确。modifiedDensityEquation对r≥1和所有t,z，以HasDerivAt精确规定ρ时间导数等于修正场密度生成元；equivalence在f,fr及每个ρ_t空间可微时等价于展开PDE。全部新增声明完整涵盖模型定义及展开，未假装任意ρ自动解PDE，也未声称O(h^r)分布误差。[EXTRA]准确。 本条全部本地声明：MD.Ch05.modifiedLiouvillian, MD.Ch05.modifiedDensityEquation, MD.Ch05.modifiedLiouvillian_model_equivalence。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": null,
+        "suggested_fix": "只在输出corrected_json修正原文转录：star→dagger，def等号按原页恢复；工程不修改。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-ForwardEnergyGrowth",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第9页摘录的the eigenvalues...outside the unit disk逐字相符。相邻两分量都趋无穷的原句不在本条statement范围，不能拿能量增长为其背书。",
+          "附件第9页；原书印刷页207，PDF页228。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "2bf31fc4d50ea30d95fe1a596498ea8ec0c568a34cae41c0b3e656f60c4b6cbe"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.forwardEnergyGrowth",
+        "verdict": "PASS",
+        "explanation": "C：forwardEuler=(q+hp,p−hq)。首声明对所有实h、二维实z、自然k给平方范数精确因子(1+h²)^k，k=0及h=0均正确。spectrum另对h≠0给复矩阵[[1,h],[-h,1]]全部非零向量特征值的充要刻画1±ih、两个模均sqrt(1+h²)、以及严格大于1；无遗漏另一特征值。[EXTRA]条件与量词合理，谱外扩并非假设，sorry不构成FAIL。 本条全部本地声明：MD.Ch05.forwardEnergyGrowth, MD.Ch05.forwardEnergyGrowth_spectrum。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-5.6-EulerInvariant",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_DISTRIBUTION_CLASS_AMBIGUITY",
+          "EXTERNAL_SCOPE_NOT_VERIFIED"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件第10页原句、dagger、Dirac及not asymptotically stable相符，保留原句。",
+          "C：eulerInvariant量化非零h及所有概率μ，以真实forwardEuler保持μ为前提，结论μ=δ₀正确；no_probability_limit对每个非Dirac概率μ排除任何概率ν的全部有界连续测试函数弱极限，强度和量词正确，部分质量留在0也仍不紧。已给[EXTRA]诚实限定为离散概率测度，并将连续模型/弱稳态分配外部source_id；这些外部声明未在本任务摘录，不能认证其覆盖。原书声称唯一弱解若指所有分布而非概率测度，必须人工限定类别；亦不能把离散不变性直接当连续生成元核。故两条已给Lean声明本身通过，但整条原书弱稳态/稳定性尚不能PASS。"
+        ],
+        "evidence": [
+          "A：附件第10页原句、dagger、Dirac及not asymptotically stable相符，保留原句。",
+          "附件第10页；原书印刷页207，PDF页228。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "2bf31fc4d50ea30d95fe1a596498ea8ec0c568a34cae41c0b3e656f60c4b6cbe"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.eulerInvariant",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：eulerInvariant量化非零h及所有概率μ，以真实forwardEuler保持μ为前提，结论μ=δ₀正确；no_probability_limit对每个非Dirac概率μ排除任何概率ν的全部有界连续测试函数弱极限，强度和量词正确，部分质量留在0也仍不紧。已给[EXTRA]诚实限定为离散概率测度，并将连续模型/弱稳态分配外部source_id；这些外部声明未在本任务摘录，不能认证其覆盖。原书声称唯一弱解若指所有分布而非概率测度，必须人工限定类别；亦不能把离散不变性直接当连续生成元核。故两条已给Lean声明本身通过，但整条原书弱稳态/稳定性尚不能PASS。 本条全部本地声明：MD.Ch05.eulerInvariant, MD.Ch05.eulerInvariant_no_probability_limit。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": "若“distribution”按任意Schwartz分布理解，零分布已经解齐次稳态方程且不是δ₀；任意常数倍δ₀亦为解。唯一性至少须限制质量1非负概率类。",
+        "suggested_fix": "保留原文，将解释明确限定概率测度；提供EulerLogCorrespondence和ForwardWeakStationary实际声明后再审连续模型、弱解及非吸引性，不能凭source_id名称认证。"
+      }
+    },
+    {
+      "source_id": "MD-5.6-BackwardEuler",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第11页两条隐式递推、谱在单位圆内及轨道趋原点整句相符。",
+          "附件第11页；原书印刷页207，PDF页228。本批15页全部以pdftoppm渲染；第1–3、4–8、9–15页分别逐字节相同，已视觉核对三种原页。",
+          {
+            "render_sha256": "2bf31fc4d50ea30d95fe1a596498ea8ec0c568a34cae41c0b3e656f60c4b6cbe"
+          },
+          "仅用R7_任务.md提供的当前声明/实际依赖和R7_PAGES.pdf，未读取旧工程；原书外页的context仅作为任务所给语境，未冒称视觉核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch05.backwardEuler",
+        "verdict": "PASS",
+        "explanation": "C：本条statement_scope明确只定义解出的映射，任意实h和z=(q,p)返回((q+hp)/(1+h²),(p−hq)/(1+h²))。分母始终正，代回q′=q+hp′、p′=p−hq′成立；h=0是恒等映射。没有把原句谱或趋零含混放入定义，跨条目12和13在本批可直接核实且均补h≠0。[EXTRA]落实。 本条全部本地声明：MD.Ch05.backwardEuler。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch05_eaudit_merged"
+}

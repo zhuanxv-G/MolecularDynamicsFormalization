@@ -1,0 +1,3658 @@
+[
+  {
+    "name": "MD.Ch05.lie",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.1-LieDerivative",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.trajectoryChain",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.1-TrajectoryChain",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.flow",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.1-ActualFlow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.pullback",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.1-ObservablePullback",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.flowFieldTransport",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.1-FlowFieldTransport",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.flowFieldTransport_observable",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.1-FlowFieldTransport",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.pullbackPDE",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.1-PullbackPDE",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.steadyFirstIntegral",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.1-SteadyFirstIntegral",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.coordinatePullback",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.1-CoordinatePullback",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.solutionOperator",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.1-SolutionOperator",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.solutionOperator_initial",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.1-SolutionOperator",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.coordinateLie",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.1-CoordinateLie",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.liePullbackCommutes",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.1-LiePullbackCommutes",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.densityOn",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-DensityOn",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.probabilityDensityOn",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-ProbabilityDensityOn",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.densityOnNormalization",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-DensityOnNormalization",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.densityProbability",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-DensityProbability",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.densityMeasureOn",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-DensityMeasureOn",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.lebesgueClosure",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-LebesgueClosure",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.borelSigma",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-BorelSigma",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.densityProbabilityBounds",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-DensityProbabilityBounds",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.domainL2",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-DomainL2",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.domainL2_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-DomainL2",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.domainL2Norm",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-L2Norm",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.domainL2Norm_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-L2Norm",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.domainL2Inner",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-L2Inner",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.domainL2NormSquare",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-L2NormSquare",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.domainL2Complete",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-L2Complete",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.domainL2Complete_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-L2Complete",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.domainL2SymmetricBilinear",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-L2SymmetricBilinear",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.compactL2",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-CompactL2",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.densityAverageOn",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-DensityAverageOn",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.closedSupport",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-ClosedSupport",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.gaussianL2",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-GaussianL2",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.finiteJumpL2",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-FiniteJumpL2",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.normalizedAverageFormula",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.1-NormalizedAverageFormula",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.massFraction",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-MassFraction",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.massDerivative",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-MassDerivative",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.massDerivative_smooth",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.2-MassDerivative",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.outwardNormalFor",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-OutwardNormal",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.outwardNormalFor_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-OutwardNormal",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.generalFluxBalance",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.2-GeneralFluxBalance",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.generalFluxBalance_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.2-GeneralFluxBalance",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.divergence",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-Divergence",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.liouvillian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-Liouvillian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.liouvilleEquation",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.2-LiouvilleEquation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.liouvilleProduct",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-LiouvilleProduct",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.lieCoordinates",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-LieCoordinates",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.divergenceCoordinates",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-DivergenceCoordinates",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.liouvilleProductCoordinates",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.liouvilleProductCoordinates_evolution",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.2-LiouvilleProductCoordinates",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.rectangularDomain",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-RectangularDomain",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.faceFlux",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-FaceFlux",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.fluxBalance",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.2-BoxFluxBalance",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.boxBoundaryTerm",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-BoundaryTerm",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.truncatedIntegrationByParts",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.2-TruncatedIntegrationByParts",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.rapidAdjoint",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.2-RapidAdjoint",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.rapidAdjoint_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.2-RapidAdjoint",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.liouvillianAdjoint",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.2-CompactAdjoint",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.measurePropagator",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-MeasurePropagator",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.measurePropagator_general",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.2-MeasurePropagator",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.measurePropagator_density_evolution",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.2-MeasurePropagator",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.hamiltonianDivergence",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.3-HamiltonianDivergence",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.hamiltonianSkewExpression",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.3-HamiltonianSkewExpression",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.hamiltonianDensityPropagation",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.3-HamiltonianDensityPropagation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.mechanicalLiouvillian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.2.3-MechanicalLiouvillian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.mechanicalLiouvillianIdentity",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.2.3-MechanicalLiouvillianIdentity",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.testSpace",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-TestSpace",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.testSpaceSchwartz",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-TestSpace",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.schwartzTestSpace",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-SchwartzSpace",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.generalizedFunction",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-GeneralizedFunction",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.schwartzFunctional",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-SchwartzFunctional",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.regularDistribution",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-RegularDistribution",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.regularDistributionLinearity",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-RegularDistributionLinearity",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.diracAction",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-DiracAction",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.diracMeasure",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-DiracMeasure",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.diracApproximation",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-DiracApproximation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.gaussianDelta",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-GaussianDelta",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.diracEvaluates",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-DiracEvaluates",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.gaussianDeltaProbability",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-GaussianDeltaProbability",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.gaussianDeltaWeak",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.1-GaussianDeltaWeak",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.weakStationary",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-WeakStationary",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.ensembleAverageOn",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-EnsembleAverage",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.convergenceHeuristic",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-ConvergenceHeuristic",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.convergenceHeuristic_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-ConvergenceHeuristic",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.hamiltonianEnergyIntegral",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-HamiltonianEnergyIntegral",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.hamiltonianEnergyIntegral_full",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-HamiltonianEnergyIntegral",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.energyDensityInvariant",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-EnergyDensityInvariant",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.shellWeight",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-ShellWeight",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.shellPartition",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-ShellPartition",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.shellDensity",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-ShellDensity",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.energySurface",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-EnergySurface",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.surfaceMeasure",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-SurfaceMeasure",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.microRaw",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-MicroRaw",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.shellWeakPrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-ShellWeakPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.shellWeakPrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-ShellWeakPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.shellWeakLimit",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.shellWeakLimit_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-ShellWeakLimitCorrected",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.surfaceAreaFormula",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-SurfaceAreaFormula",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.surfaceAreaFormula_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-SurfaceAreaFormula",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.normalField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-NormalField",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.normalEnergyTaylor",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-NormalEnergyTaylor",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.normalInverseTaylor",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-NormalInverseTaylor",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.patchShellVolume",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-PatchShellVolume",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.patchShellVolume_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-PatchShellVolume",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.shellVolumeLimit",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-WholeShellVolumeLimit",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.shellVolumeLimit_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-WholeShellVolumeLimit",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.microRawInvariant",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-MicroRawInvariant",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.microInvariant",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-MicroInvariant",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.microPartition",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-MicroPartition",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.shellWeakPairing",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-ShellPointValuePrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.shellWeakPairing_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-ShellPointValuePrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.harmonicEnergy",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-HarmonicEnergy",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.harmonicEnergy_ellipse",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-HarmonicEnergy",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.harmonicQuadraturePrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-HarmonicQuadraturePrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.harmonicQuadraturePrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-HarmonicQuadraturePrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.harmonicPartition",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-HarmonicPartition",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.harmonicPartition_quadrature",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-HarmonicPartition",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.harmonicPartition_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-HarmonicPartition",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.idealGasEnergy",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-IdealGasEnergy",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.idealGasPositionDomain",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.2-IdealGasPositionDomain",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.idealGasPartition",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-IdealGasPartition",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.idealGasPartition_factors",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.2-IdealGasPartition",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.microMeasure",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.3-MicroMeasure",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.microMeasure_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.3-MicroMeasure",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.microProbability",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.3-MicroProbability",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.lowerDimensionNull",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.3-LowerDimensionNull",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.lowerDimensionNull_countable",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.3-LowerDimensionNull",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.lowerDimensionNull_level_dimension",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.3-LowerDimensionNull",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.lowerDimensionNull_ambient_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.3-LowerDimensionNull",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.microAverage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.3.3-MicroAverage",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.microAverage_surface_and_delta_limit",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.3-MicroAverage",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.ambientLowerDimensionNull",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.3.3-AmbientLowerDimensionNull",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.timeAverage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4-TimeAverage",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.hasTimeAverage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4-HasTimeAverage",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.conservedAverage",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4-ConservedAverage",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.conservedInfiniteAverage",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4-ConservedInfiniteAverage",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.doubleWellEnergy",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4-DoubleWellEnergy",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.doubleWellCoercivity",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4-DoubleWellCoercivity",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.doubleWellDisconnected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4-DoubleWellDisconnected",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.doubleWellBasin",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4-DoubleWellBasin",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.doubleWellBasin_average_witness",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4-DoubleWellBasin",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.uniformMicroErgodic",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-UniformMicroErgodic",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.uniformMicroErgodic_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-UniformMicroErgodic",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.microErgodic",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-MicroErgodicStandard",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.microErgodic_L1_alternative",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-MicroErgodicStandard",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.flowInvariant",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-FlowInvariant",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.setErgodic",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-SetErgodic",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.invariantIndicator",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-InvariantIndicator",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.invariantIndicatorAverage",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-InvariantIndicatorAverage",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.ergodicTimeAverage",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.ergodicTimeAverage_common_smooth",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.ergodicTimeAverage_positive_invariant",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.ergodicTimeAverage_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-ErgodicTimeEquivalence",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.nonergodicSet",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-NonergodicSet",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.nonergodicSet_average_witness",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-NonergodicSet",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.harmonicFlow",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-HarmonicFlow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.harmonicErgodic",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-HarmonicErgodic",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.twoOscillatorEnergy",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-TwoOscillatorEnergy",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.twoOscillatorFlow",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-TwoOscillatorFlow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.twoOscillatorFlow_invariants",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-TwoOscillatorFlow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.twoOscillatorTori",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-TwoOscillatorTori",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.twoOscillatorTori_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-TwoOscillatorTori",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.weakMixing",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-Mixing",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.kam",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-KAMPersistence",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.kam_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-KAMPersistence",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.anisotropicPotential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-AnisotropicPotential",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.anisotropicAxisPrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-AnisotropicAxisPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.anisotropicAxisPrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-AnisotropicAxisPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.twoOscillatorEnergyDecomposition",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.twoOscillatorEnergyDecomposition_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-TwoOscillatorEnergyDecomposition",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.curveImageDimension",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-CurveImageDimension",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.pendulumPotential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-PendulumPotential",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.pendulumRegionPrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-PendulumRegionPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.pendulumRegionPrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-PendulumRegionPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.anisotropicInitialCurve",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-AnisotropicInitialCurve",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.anisotropicInitialEnergy",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-AnisotropicInitialEnergy",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.initialSegmentPrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-InitialSegmentPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.initialSegmentPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-InitialSegmentPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.circleInitialPoints",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-CircleInitialPoints",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.circleInitialPoints_total",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-CircleInitialPoints",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.circleInitialLaw",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.4.1-CircleInitialLaw",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.circleInitialEnergy",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.4.1-CircleInitialEnergy",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.correlation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-Correlation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.correlation_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-Correlation",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.correlationPullback",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-CorrelationPullback",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.correlationTimePrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.5-CorrelationTimePrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.correlationTimePrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.5-CorrelationTimePrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.correlationTime",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-CorrelationTimeAE",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.correlationTime_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-CorrelationTimeAE",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.velocityCorrelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-VelocityCorrelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.positionTransition",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-PositionTransition",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.transitionProbability",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-TransitionProbability",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.measureDuality",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-MeasureDuality",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.measureDuality_RN",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.5-MeasureDuality",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.mixingMemoryLoss",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-MixingMemoryLoss",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.mixingCorrelationPrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.5-MixingCorrelationPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.mixingCorrelationPrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.5-MixingCorrelationPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.mixingCorrelation",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.5-MixingCorrelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.mixingCorrelation_scalar",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-MixingCorrelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.mixingCorrelation_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.5-MixingCorrelation",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.centeredCorrelation",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.5-CenteredCorrelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.centeredCorrelation_scalar",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.5-CenteredCorrelation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.discreteAveragePrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-DiscreteAveragePrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.discreteAverage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-DiscreteAverage",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.discretePropagator",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-DiscretePropagator",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.modifiedField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-ModifiedField",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.modifiedLiouvillian",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-ModifiedLiouvillian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.modifiedDensityEquation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-ModifiedLiouvillian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.modifiedLiouvillian_model_equivalence",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-ModifiedLiouvillian",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.forwardEuler",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-ForwardEuler",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.forwardComponentsPrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-ForwardComponentsPrinted",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.forwardComponentsPrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-ForwardComponentsPrinted",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.forwardEnergyGrowth",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-ForwardEnergyGrowth",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.forwardEnergyGrowth_spectrum",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-ForwardEnergyGrowth",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.eulerInvariant",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-EulerInvariant",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.eulerInvariant_no_probability_limit",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-EulerInvariant",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.eulerInvariant_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-EulerInvariant",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.backwardEuler",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-BackwardEuler",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.backwardEnergyDecay",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-BackwardEnergyDecay",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.backwardEnergyDecay_spectrum",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-BackwardEnergyDecay",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.backwardEulerLimit",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-BackwardEulerLimit",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.backwardEulerLimit_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-BackwardEulerLimit",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.symplecticEuler",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-SymplecticEuler",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.symplecticEulerShadow",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-SymplecticEulerShadow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.symplecticEulerLogScale",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-SymplecticEulerShadow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.symplecticEulerModifiedHamiltonian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-SymplecticEulerShadow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.symplecticEulerModifiedFlow",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-SymplecticEulerShadow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.symplecticEulerShadow_modified_model",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-SymplecticEulerShadow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.symplecticEulerShadow_modified_scale_order",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-SymplecticEulerShadow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.symplecticEulerShadow_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-SymplecticEulerShadow",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.symplecticEulerEllipse",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-SymplecticEulerEllipse",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.symplecticEulerEllipse_geometry",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-SymplecticEulerEllipse",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.symplecticEulerEllipse_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "时间盒止",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-SymplecticEulerEllipse",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.symplecticEulerDensity",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-SymplecticEulerDensity",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.verletShadow2",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-VerletShadow2",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.theorem51",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-Theorem51",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.perturbationDisplacement",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-PerturbationDisplacement",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.perturbationCorrection",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-PerturbationCorrection",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.denominatorBound",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-DenominatorBound",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.smoothDenominatorBound",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-SmoothDenominatorBound",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.zeroPerturbation",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-ZeroPerturbation",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.gradientTransverse",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-GradientTransverse",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.dynamicalCorrection",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-DynamicalCorrection",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.forwardNormDivergence",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-ForwardNormDivergence",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.forwardNormDivergence_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-ForwardNormDivergence",
+    "corrected": true
+  },
+  {
+    "name": "MD.Ch05.weakStationaryModel",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-WeakStationary",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.weakAttractor",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-WeakAttractor",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.eulerLogField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-EulerLogField",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.eulerLogFlow",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-EulerLogFlow",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.eulerLogCorrespondence",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": null,
+    "direct_placeholder": false,
+    "source_id": "MD-5.6-EulerLogCorrespondence",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.forwardWeakStationary",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-ForwardWeakStationary",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.backwardWeakStationary",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-BackwardWeakStationary",
+    "corrected": false
+  },
+  {
+    "name": "MD.Ch05.symplecticWeakStationary",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unproved_reason": "缺大型理论",
+    "direct_placeholder": true,
+    "source_id": "MD-5.6-SymplecticWeakStationary",
+    "corrected": false
+  }
+]

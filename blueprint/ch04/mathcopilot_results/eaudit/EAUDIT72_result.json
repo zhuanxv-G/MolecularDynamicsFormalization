@@ -1,0 +1,113 @@
+{
+  "batch": "EAUDIT72",
+  "input_sha256": {
+    "BATCH_EAUDIT72.md": "511fd9102e7258e3d8c3ac601db31489a4cb658e9ca8788a9c7b6cc061a2e176",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.2.1-ResonanceInstability",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第3页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.resonanceInstability, MD.Ch04.resonanceInstability_realSpectrum",
+          "两声明联合覆盖原句：旧声明给出真实复特征值及非零特征向量；realSpectrum在同一正步长左邻域给出实a,b、完整复特征多项式分解、至少一个模>1，以及对应非零实向量上的所有自然数次指数轨道。δ≤π/Ω避免负步长。det=1由已给矩阵定义决定，因此两根互为倒数。未把圆外性或指数轨道当作假设。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.resonanceInstability",
+        "verdict": "PASS",
+        "explanation": "两声明联合覆盖原句：旧声明给出真实复特征值及非零特征向量；realSpectrum在同一正步长左邻域给出实a,b、完整复特征多项式分解、至少一个模>1，以及对应非零实向量上的所有自然数次指数轨道。δ≤π/Ω避免负步长。det=1由已给矩阵定义决定，因此两根互为倒数。未把圆外性或指数轨道当作假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.2.1-ResonanceGrowth",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_NORM_OSCILLATION",
+          "INCOMPLETE_LINEAR_RATE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.2.1-ResonanceGrowth",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.2.1",
+          "printed_page": "147",
+          "pdf_page": "169",
+          "statement_latex": "and the norm of the solution will oscillate and grow linearly with $n$ as $n\\to\\infty$. This is the simplest type of linear resonance present in multiple timestepping.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "PDF p.168（印刷p.146）：状态列向量为(q,p)ᵀ；Ω≫1是模型背景。此处代数结论适用于任意Ω>0，不需要定量大频率门槛。",
+            "S_h=[[1,0],[-h,1]]；F_h=[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]；W_h=S_{h/2}F_hS_{h/2}，快子系统在内步趋零时采用精确流，不是一次Verlet更新。",
+            "λ₁、λ₂是W_h的两个复特征根，按代数重数计；det(W_h)=1，μ(h)=Tr(W_h)=2cos(hΩ)−(h/Ω)sin(hΩ)。",
+            "本句承接PDF p.168的W_h^n公式，固定h=π/Ω且z₀=(q₀,p₀)ᵀ：z_n=(−1)^n(q₀,p₀−nhq₀)ᵀ。线性增长需要q₀≠0；q₀=0时范数恒定。",
+            "原句norm ... oscillate照录保留；交替的是解的整体符号，范数一般没有交替振荡。Lean Fin 2→ℝ采用Pi最大范数；仅范数趋无穷没有表达所引句子的线性增长率。"
+          ],
+          "issues": [
+            "原文norm ... oscillate与矩阵幂所给整体交替符号不同，且增长需q₀≠0。",
+            "本条签名只给发散，线性率被分配给本批未提供条目，不能在本次核验。"
+          ],
+          "lean_decl": "MD.Ch04.resonanceGrowth",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "原泛称增长补q0≠0；q0=0时纯动量轨道模不增长。",
+            "[EXTRA] 本条明确为发散推论；线性率由MD-4.2.1-ResonanceLinearRate、交替幂公式由MD-4.2.1-ResonancePower承担，原norm振荡疑误在LinearRate待导师，不删句。"
+          ],
+          "statement_scope": "仅非零q初值轨道发散推论；完整线性率见MD-4.2.1-ResonanceLinearRate，带(-1)^k的精确幂见MD-4.2.1-ResonancePower，norm振荡措辞待导师。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT05_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:54:42.701512",
+              "before_sha256": "0d22e0146acf39de613a40c19d79cb5bb4fac67d9f194b92f44667b2dd20551e",
+              "after_sha256": "c3a725db50f0a0333cd8452142501a2563f60671687d6d344059edfeda5ab2d3",
+              "changed_fields": [
+                "context_notation",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH05_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT05/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_NORM_OSCILLATION",
+            "detail": "原文norm ... oscillate与矩阵幂所给整体交替符号不同，且增长需q₀≠0。"
+          },
+          {
+            "code": "INCOMPLETE_LINEAR_RATE",
+            "detail": "本条签名只给发散，线性率被分配给本批未提供条目，不能在本次核验。"
+          }
+        ],
+        "evidence": [
+          "A：已查看R2_PAGES.pdf附件第4页的实际渲染，与该条英文句子、展示公式、页码及上下文比对；数学字体、换行和LaTeX排版正规化不视为文字改写。原文statement_latex保留。",
+          "C：仅审读R2_任务.md本条列出的全部声明及项目实际依赖定义；Mathlib定义按标准含义采信。未使用旧工程文件，未修改Lean，未补证明，未运行编译；PASS表示本次签名与语义审校通过，不表示消除sorry或重新验证依赖证明。",
+          "覆盖声明：MD.Ch04.resonanceGrowth",
+          "当前声明对Ω>0、q₀≠0确实正确地断言Pi最大范数趋于无穷；然而它仅是发散推论，签名本身不表达线性率或振荡。EXTRA明确把线性率分配给本批未提供的ResonanceLinearRate，不能将那一外部声明视作本条已审通过。原句把解的交替符号说成范数振荡，且缺少q₀≠0，应保留并人工裁决。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.resonanceGrowth",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "当前声明对Ω>0、q₀≠0确实正确地断言Pi最大范数趋于无穷；然而它仅是发散推论，签名本身不表达线性率或振荡。EXTRA明确把线性率分配给本批未提供的ResonanceLinearRate，不能将那一外部声明视作本条已审通过。原句把解的交替符号说成范数振荡，且缺少q₀≠0，应保留并人工裁决。",
+        "counterexample": "取z=(0,1)，则W^k z=(−1)^k z，任何范数均恒为1；取z=(1,0)，Pi范数为max(1,kπ/Ω)，最终单调线性增长，范数并不交替振荡。",
+        "suggested_fix": "保留原句并标疑误；本条补送实际线性率声明供审校，例如lim ‖W^k z‖/k=|(π/Ω)z₀|，再把交替性表述为解的整体符号。"
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}

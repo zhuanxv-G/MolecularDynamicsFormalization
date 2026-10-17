@@ -1,0 +1,12 @@
+--- before
++++ after
+@@ -581,7 +581,8 @@
+   apply MolecularDynamics.textbookHamiltonianVectorField_divergence_zero <;> assumption
+ 
+ /-- source_id: MD-5.2.3-HamiltonianSkewExpression · unnumbered_claim · §5.2.3 · 印刷p.186 / PDFp.207
+-[EXTRA] [EXTRA]本条保留任意零散度场的实际表达式；Hamiltonian散度零另以正式库桥接；原书的skew-adjoint用语只作形式积分伴随记号，未声称已构造闭算子及其Hilbert空间定义域。 -/
++[EXTRA] [EXTRA]本条保留任意零散度场的实际表达式；Hamiltonian散度零另以正式库桥接；原书的skew-adjoint用语只作形式积分伴随记号，未声称已构造闭算子及其Hilbert空间定义域。 [EXTRA] 24号：零散度可微向量场的条件乘积恒等式；原段从Hamilton场推散度零的桥接另为覆盖义务，不在本条预先假设后再声称证明。
++-/
+ theorem hamiltonianSkewExpression :
+   ∀ n (f : MolecularDynamics.Chapter05Review.E n → MolecularDynamics.Chapter05Review.E n) (u : MolecularDynamics.Chapter05Review.E n → ℝ),
+   Differentiable ℝ f → Differentiable ℝ u → (∀ z,MolecularDynamics.Chapter05Review.divergence f z=0) →

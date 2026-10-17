@@ -1,0 +1,339 @@
+{
+  "batch": "EAUDIT79",
+  "input_sha256": {
+    "BATCH_EAUDIT79.md": "7bcf3292b13a453349db9d10687f9afc5457180357c99194246d953200c457df",
+    "Blueprint/Ch03.lean": "127367a727012017da56feedc74124ced43a23f13fd9cafd2eeff7a8766eced4",
+    "blueprint/ch03/ch03_source.json": "1e80574fd790b180c9095acce07b2bfbd29c4784c4f8a27df5f124828ce9264c"
+  },
+  "items": [
+    {
+      "source_id": "MD-3.6.1-MechanicalReversal",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              12
+            ],
+            "original_pdf_pages": [
+              150
+            ],
+            "printed_pages": [
+              128
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "12": "d2e74f0550810828717d8ec4bf09f334e9bb6719fdb7d32d32895009a88970c2"
+            },
+            "finding": "p128右侧列向量外的整体负号清晰存在：−[−M⁻¹p;∇U(q)]。JSON保留了它，两个场确实相等；此处不存在曾被误报的符号错误。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目11 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.mechanicalReversalPrinted"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "mechanicalReversalPrinted的三个合取全部核对：−R f(Rz)等于带外负号的列向量；该列向量等于f(z)；并有f(Rz)=−R f(z)。momentumReversal(q,p)=(q,−p)，mechanicalField=(invMass m p,−grad U q)，invMass逐坐标线性；展开后所有负号一致。任意实质量参数和任意U是这个代数恒等式的合法推广；不需要为了梯度的物理解释而把不必要的光滑或质量正性加入代数结论。[EXTRA]所述外负号修复确已落实。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.mechanicalReversalPrinted",
+        "verdict": "PASS",
+        "explanation": "mechanicalReversalPrinted的三个合取全部核对：−R f(Rz)等于带外负号的列向量；该列向量等于f(z)；并有f(Rz)=−R f(z)。momentumReversal(q,p)=(q,−p)，mechanicalField=(invMass m p,−grad U q)，invMass逐坐标线性；展开后所有负号一致。任意实质量参数和任意U是这个代数恒等式的合法推广；不需要为了梯度的物理解释而把不必要的光滑或质量正性加入代数结论。[EXTRA]所述外负号修复确已落实。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "JSON_STALE_REVERSAL_DESCRIPTION",
+          "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.6.1-ReversedTrajectoryPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.6.1",
+          "printed_page": "129",
+          "pdf_page": "151",
+          "statement_latex": "For the system $\\mathrm dz/\\mathrm dt=f(\\boldsymbol z)$, a coordinate transformation $\\boldsymbol z\\mapsto\\widetilde{\\boldsymbol z}=R\\boldsymbol z$ results in\n\\[\\frac{\\mathrm d\\widetilde{\\boldsymbol z}}{\\mathrm dt}=R\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=Rf(R^{-1}\\widetilde{\\boldsymbol z})=Rf(R\\widetilde{\\boldsymbol z}),\\]\nsince $R^{-1}=R$. A change of time $t\\mapsto\\tau=-t$ results in\n\\[\\frac{\\mathrm d\\boldsymbol z}{\\mathrm d\\tau}=\\frac{\\mathrm dt}{\\mathrm d\\tau}\\frac{\\mathrm d\\boldsymbol z}{\\mathrm dt}=-f(\\boldsymbol z).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本条statement为印刷页129的真实坐标及时间链式法则，当前三条Lean均使用R而非Rᵀ；主声明是两种变化的组合。",
+            "印刷页128仅作上下文；其一般involution反转定义含Rᵀ，与后续经典可逆性推导有疑误，不能将此问题误写成当前链式声明采用了转置。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+            },
+            {
+              "code": "JSON_STALE_REVERSAL_DESCRIPTION",
+              "detail": "注释称当前是−Rᵀ版本，实际主声明及两条补充声明均为R链式法则。"
+            },
+            {
+              "code": "SOURCE_REVERSAL_DEFINITION_CONFLICT",
+              "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.reversedTrajectoryPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 按PDF151真实链式法则写−R f(γ(−t))，另列纯坐标变化Rf(Rz̃)及纯时间反向−f；不以转置reversedField偷换原链式右端。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:25:19.432395",
+              "before_sha256": "ff0d176eb8772aaee564316be6dcf63ce0735488b75bb792bdb4f5015de8b505",
+              "after_sha256": "490ca4b2d1321c08da3c7c887530f09337b41fc2501f2700f85ed80d40ab9561",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH18_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            },
+            {
+              "stage": "EDITORIAL_METADATA_VISUAL_REVIEW",
+              "timestamp": "2026-10-16T10:26:57.974503",
+              "before_sha256": "490ca4b2d1321c08da3c7c887530f09337b41fc2501f2700f85ed80d40ab9561",
+              "after_sha256": "4e30a6e497f57e5206e3acc0f174c6304b48716d6f6e91b8915e573af745c09d",
+              "changed_fields": [
+                "printed_page",
+                "pdf_page"
+              ],
+              "changes": {
+                "printed_page": {
+                  "before": "128–129",
+                  "after": "129"
+                },
+                "pdf_page": {
+                  "before": "150–151",
+                  "after": "151"
+                }
+              },
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH18_result.json",
+              "reason": "已对照原页标题、展示式与跨页续文；合并页码/标签/原文类别，原文/签名及既有statement_scope不变。移出的相邻推导页明确保留为review_context_pdf_pages，不裁定数学疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/METADATA_REVIEW_20261016.json",
+          "review_context_pdf_pages": [
+            150
+          ]
+        },
+        "issues": [
+          {
+            "code": "JSON_STALE_REVERSAL_DESCRIPTION",
+            "field": "context_notation[0]",
+            "detail": "注释称当前是−Rᵀ版本，实际主声明及两条补充声明均为R链式法则。"
+          },
+          {
+            "code": "SOURCE_REVERSAL_DEFINITION_CONFLICT",
+            "field": "issues / review_context_pdf_pages",
+            "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              13,
+              14
+            ],
+            "original_pdf_pages": [
+              150,
+              151
+            ],
+            "printed_pages": [
+              128,
+              129
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "13": "d2e74f0550810828717d8ec4bf09f334e9bb6719fdb7d32d32895009a88970c2",
+              "14": "8a570ff03efc785c23eca9a0090ad76be16dc3a3995c071fd08d40f855f382e1"
+            },
+            "finding": "印刷页129的两段文字和两个链式公式均与statement_latex一致；页128在本条是上下文而不是被漏掉的statement正文。当前context误称本条仍是代入−Rᵀ的待审断言，实际三条Lean都已采用原页129的R链式法则，应更正该旧说明。同时保留p128一般反转定义的转置疑误并转人工，不把该上下文疑误误指为p129链式法则错误。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目12 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.reversedTrajectoryPrinted",
+              "MD.Ch03.reversedTrajectoryPrinted_coordinateChange",
+              "MD.Ch03.reversedTrajectoryPrinted_timeChange"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "同source_id三条声明全部正确且忠实于当前所录原页129：主声明给Rγ(−t)的导数−Rf(γ(−t))；coordinateChange给Rγ(t)的导数Rf(R(Rγ(t)))，R²=I使其等于Rf(γ(t))，正是Rf(Rz̃)；timeChange给γ(−t)的导数−f(γ(−t))。R是任意实方阵且R²=I，γ在所有实时间满足真实ODE；主结论并未声称变换轨道仍解原f，也未使用Rᵀ或要求R对称。因此Printed版本没有被换成错误的转置反转版本，[EXTRA]补出的分离链式规则已存在。PASS仅就本条原文链式规则及三个当前签名；p128定义争议另留NEEDS_HUMAN。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.reversedTrajectoryPrinted",
+        "verdict": "PASS",
+        "explanation": "同source_id三条声明全部正确且忠实于当前所录原页129：主声明给Rγ(−t)的导数−Rf(γ(−t))；coordinateChange给Rγ(t)的导数Rf(R(Rγ(t)))，R²=I使其等于Rf(γ(t))，正是Rf(Rz̃)；timeChange给γ(−t)的导数−f(γ(−t))。R是任意实方阵且R²=I，γ在所有实时间满足真实ODE；主结论并未声称变换轨道仍解原f，也未使用Rᵀ或要求R对称。因此Printed版本没有被换成错误的转置反转版本，[EXTRA]补出的分离链式规则已存在。PASS仅就本条原文链式规则及三个当前签名；p128定义争议另留NEEDS_HUMAN。",
+        "counterexample": "这是原书一般定义与后续推导的反例，不是当前采用经典反转前提的Lean定理的反例：令n=2，R=[[1,1],[0,−1]]，f(z)=(0,1)，γ(t)=(0,t)，Φ(t,z)=z+(0,t)。R²=I，且−Rᵀf(Rz)=(0,1)=f(z)，符合p128字面定义；但−Rf(z)=(−1,1)≠f(Rz)。因此d/dt[Rγ(−t)]=(−1,1)≠f(Rγ(−t))。在t=1,z=0，Φ(−1,Rz)=(0,−1)，RΦ(1,z)=(1,−1)；并有RΦ(t,RΦ(t,z))=z+(t,0)，不等于z。",
+        "suggested_fix": "只更新过时context，保留当前三个忠实链式签名；p128的Rᵀ定义继续标记NEEDS_HUMAN，若另建勘误版必须与印刷版本明确分开。"
+      }
+    },
+    {
+      "source_id": "MD-3.6.1-ReversedTrajectory",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_REVERSAL_DEFINITION_CONFLICT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-3.6.1-ReversedTrajectory",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "3.6.1",
+          "printed_page": "129",
+          "pdf_page": "151",
+          "statement_latex": "In other words, for a reversible vector field, the coordinate transformation $\\boldsymbol z\\mapsto R\\boldsymbol z$ is equivalent to the change of time $t\\mapsto-t$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "p129正确R链式法则版本；与字面Rᵀ断言分开；γ的真实时间导数明示。",
+            "当前Lean额外要求R的基矩阵对称，已显式列为[EXTRA]；此受限版本正确，不能据此称原印定义下任意involution的原句已经核验。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+            },
+            {
+              "code": "SOURCE_REVERSAL_DEFINITION_CONFLICT",
+              "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+            }
+          ],
+          "lean_decl": "MD.Ch03.reversedTrajectory",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]采用正确f(Rz)=−Rf(z)而非一般Rᵀ字面定义；每个实t均有真实γ导数。",
+            "[EXTRA] 补R的坐标矩阵对称资格，与R²=id合起来使Rᵀ=R=R⁻¹，现有经典反演条件才与原字面转置定义等价；该限制显式EXTRA。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT14_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T12:25:19.432395",
+              "before_sha256": "4baa833a06c089a2bacf665f848962ec813f5b7594c18aac6ab3e14036404d13",
+              "after_sha256": "be864df1e6257f22751e8b1df33d565e136b7e646c602de308fd9b84e0d04338",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch03/mathcopilot_results/BATCH18_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; validation/EAUDIT14/SOURCE_PAGE_VERIFICATION.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_REVERSAL_DEFINITION_CONFLICT",
+            "field": "statement_latex / issues",
+            "detail": "附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              15
+            ],
+            "original_pdf_pages": [
+              151
+            ],
+            "printed_pages": [
+              129
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "15": "8a570ff03efc785c23eca9a0090ad76be16dc3a3995c071fd08d40f855f382e1"
+            },
+            "finding": "p129的In other words句与原页一致。但“reversible vector field”承接p128含Rᵀ的一般定义；非对称involution时，不能直接据此推出所述轨道对称。原句保留，补原书疑误标记。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目13 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.reversedTrajectory"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "reversedTrajectory量化任意n、连续线性R、f和全实时间解γ；要求R²=id，另明确加入全部基矩阵元素R_ij=R_ji的对称资格，以及f(Rz)=−Rf(z)。结论Rγ(−t)仍满足原f的ODE；由链式法则导数=−Rf(γ(−t))=f(Rγ(−t))，数学正确。坐标对称资格不是隐藏的，它恰使Rᵀ=R=R⁻¹，从而可与原印反转定义兼容；这是一条合理但严格受限的修复，并未证明原书对任意非对称involution的宽泛句子。PASS针对已显式标注[EXTRA]的受限当前签名，原书一般性问题保留NEEDS_HUMAN。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.reversedTrajectory",
+        "verdict": "PASS",
+        "explanation": "reversedTrajectory量化任意n、连续线性R、f和全实时间解γ；要求R²=id，另明确加入全部基矩阵元素R_ij=R_ji的对称资格，以及f(Rz)=−Rf(z)。结论Rγ(−t)仍满足原f的ODE；由链式法则导数=−Rf(γ(−t))=f(Rγ(−t))，数学正确。坐标对称资格不是隐藏的，它恰使Rᵀ=R=R⁻¹，从而可与原印反转定义兼容；这是一条合理但严格受限的修复，并未证明原书对任意非对称involution的宽泛句子。PASS针对已显式标注[EXTRA]的受限当前签名，原书一般性问题保留NEEDS_HUMAN。",
+        "counterexample": "这是原书一般定义与后续推导的反例，不是当前采用经典反转前提的Lean定理的反例：令n=2，R=[[1,1],[0,−1]]，f(z)=(0,1)，γ(t)=(0,t)，Φ(t,z)=z+(0,t)。R²=I，且−Rᵀf(Rz)=(0,1)=f(z)，符合p128字面定义；但−Rf(z)=(−1,1)≠f(Rz)。因此d/dt[Rγ(−t)]=(−1,1)≠f(Rγ(−t))。在t=1,z=0，Φ(−1,Rz)=(0,−1)，RΦ(1,z)=(1,−1)；并有RΦ(t,RΦ(t,z))=z+(t,0)，不等于z。",
+        "suggested_fix": "保留当前明确对称资格的受限版本；原句及p128定义保留并标记NEEDS_HUMAN。若另立一般经典修正版，使用f(Rz)=−Rf(z)，并说明它与非对称R下原印Rᵀ定义不等价。"
+      }
+    },
+    {
+      "source_id": "MD-3.6.1-MechanicalReversalCorrect",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "source": "R4_PAGES.pdf",
+            "attachment_pages": [
+              16
+            ],
+            "original_pdf_pages": [
+              150
+            ],
+            "printed_pages": [
+              128
+            ],
+            "method": "逐页渲染视觉核对；文本提取仅辅助定位。重复原页另核对渲染图SHA256一致。",
+            "render_sha256": {
+              "16": "d2e74f0550810828717d8ec4bf09f334e9bb6719fdb7d32d32895009a88970c2"
+            },
+            "finding": "p128结论句与原页完全一致；前面机械展示式有整体负号，原书该机械特例无需符号勘误。"
+          },
+          {
+            "stage": "C",
+            "source": "R4_任务.md / 条目14 / 完整当前Lean及实际依赖",
+            "declarations": [
+              "MD.Ch03.mechanicalReversalCorrect"
+            ],
+            "method": "只读核对完整签名和本条摘录的项目定义；Mathlib按标准含义采信。未修改工程、未补证明、未以sorry作为失败理由，未声称执行Lean编译。",
+            "finding": "mechanicalReversalCorrect对任意位置力F给出mechanicalField m F(Rz)=−R(mechanicalField m F z)。位置分量invMass m p关于p线性，力仅依赖位置；R(q,p)=(q,−p)，故两端均为(−invMass m p,F q)。取F=−grad U即原书Hamiltonian机械系统。任意F和实m推广不破坏恒等式，R本身对称，故不存在一般非对称involution的转置问题。[EXTRA]撤销先前误报原书机械符号错误是正确的。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch03.mechanicalReversalCorrect",
+        "verdict": "PASS",
+        "explanation": "mechanicalReversalCorrect对任意位置力F给出mechanicalField m F(Rz)=−R(mechanicalField m F z)。位置分量invMass m p关于p线性，力仅依赖位置；R(q,p)=(q,−p)，故两端均为(−invMass m p,F q)。取F=−grad U即原书Hamiltonian机械系统。任意F和实m推广不破坏恒等式，R本身对称，故不存在一般非对称involution的转置问题。[EXTRA]撤销先前误报原书机械符号错误是正确的。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    }
+  ],
+  "merged_from": "ch03_eaudit_merged"
+}

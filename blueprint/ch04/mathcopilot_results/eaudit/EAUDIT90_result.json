@@ -1,0 +1,858 @@
+{
+  "batch": "EAUDIT90",
+  "input_sha256": {
+    "BATCH_EAUDIT90.md": "887941e7e6cbda4ece9e7c2f01bf564a1ab1b23a408244644f67e62e0fcc993b",
+    "Blueprint/Ch04.lean": "44eb9b5370c2c8d2ac81f4a2dbcba5b646c4157424c9d6bd16500038a3b5d890",
+    "blueprint/ch04/ch04_source.json": "84dcd92b342af08c9e25d41a6372ef5220b1e00d8070a9badcbedd219ab603cf"
+  },
+  "items": [
+    {
+      "source_id": "MD-4.4.2-RigidForce",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_DISPLAY_PUNCTUATION",
+          "LOCAL_POTENTIAL_SLICE_UNDOCUMENTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-RigidForce",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "173",
+          "pdf_page": "195",
+          "statement_latex": "The relevant expressions are:\n\\[F^k=-\\partial U/\\partial q^k,\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原式为第k个刚体的力；在多体情形，其余刚体的位置和方向固定，U在Lean中可解释为该第k个刚体变量(q,Θ)上的切片势。单体情形无需冻结其他变量。",
+            "grad是按标准坐标方向从真实fderiv取出的梯度。该定义对所有输入函数作总运算延拓；只有在相应势切片可微处才解释为通常偏导。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_DISPLAY_PUNCTUATION",
+              "detail": "原页前导语为“The relevant expressions are:”且两公式并列；已恢复冒号并保留第一公式后逗号，说明这是摘录的第一部分。"
+            },
+            {
+              "code": "LOCAL_POTENTIAL_SLICE_UNDOCUMENTED",
+              "detail": "原context未说明去掉k和其他体变量后的切片解释，亦未区分可微点的通常偏导与总fderiv延拓；现补充，未新增无耦合假设。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.rigidForce",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "共同展示式中F^k的定义部分；并列的τ^k公式由MD-4.4.2-RigidTorque承担。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT23_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:08:05.166905",
+              "before_sha256": "3547c82e3f532215698ac3d6e2bac146187dc01a4bfd7ca624fcdeffc18368e8",
+              "after_sha256": "f70e6e8be9a4fae5291e8721e2078009e93c1ee681adb1264c3d8895ff31a805",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH27_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R8_PAGES.pdf 附件第10页；本次 R8 视觉复核，见本条 json_review.evidence。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_DISPLAY_PUNCTUATION",
+            "stage": "A",
+            "detail": "原页前导语为“The relevant expressions are:”且两公式并列；已恢复冒号并保留第一公式后逗号，说明这是摘录的第一部分。"
+          },
+          {
+            "code": "LOCAL_POTENTIAL_SLICE_UNDOCUMENTED",
+            "stage": "A/C",
+            "detail": "原context未说明去掉k和其他体变量后的切片解释，亦未区分可微点的通常偏导与总fderiv延拓；现补充，未新增无耦合假设。"
+          }
+        ],
+        "evidence": {
+          "source_file": "R8_任务.md",
+          "source_file_sha256": "7959d1c3a32519cecfeab143035c742d40c548cd428719df6bf031f8798691d8",
+          "pdf_file": "R8_PAGES.pdf",
+          "pdf_file_sha256": "7c9f969e07f7f8ac5525c5534a391d44d951871710766b37f6e6b5ee85aa6897",
+          "attachment_pages": [
+            10
+          ],
+          "visual_verification": "已视觉查看印刷页172、173、174的三种页面；15张附件页的渲染哈希分组逐页校验相同，复用相同页面的视觉结果。非仅依赖文本抽取或旧审校标记。",
+          "render_equivalence_groups": [
+            {
+              "attachment_pages": [
+                7,
+                8,
+                10,
+                11,
+                14
+              ],
+              "printed_page": 173,
+              "book_pdf_page": 195,
+              "render_sha256": "525af8548750a65e6c8e9b414e8e4ace598e9ec4676dd11b603b32493d407d76"
+            }
+          ],
+          "A_source_check": "附件第10页，印刷173页末。原书“The relevant expressions are:”带冒号，随后同一展示式并列Fᵏ和τᵏ。原JSON把前导语直接接F并以句号结束；已恢复冒号，把所选F公式标明为共同展示式的第一部分，原公式负号及偏导变量无误。",
+          "C_signature_check": "V=Fin 3→ℝ，Mat3实矩阵；grad→textbookConstraintGradient→(fderiv ℝ γ q)(Pi.single i 1)。U x Θ只改变q，未把总势对全部刚体坐标的梯度误当本体三维力。",
+          "reviewed_lean_declarations": [
+            "MD.Ch04.rigidForce"
+          ],
+          "EXTRA_check": "未额外假设多体势可分离；切片允许任意耦合势。Lean没有可微性参数，因为这里只定义一个全域函数，没有定理从中推导任意U都可微。",
+          "method_limit": "只读审校任务内摘录及附件；未读旧 Ch04.lean/旧 source JSON/旧批次材料，未改工程、未补证明、未运行 Lean 编译。PASS 是签名与限定范围审校结论，不表示消除了 sorry。输入哈希按任务原值回显，并非对旧版本文件重新计算。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidForce",
+        "verdict": "PASS",
+        "explanation": "rigidForce 对任意单体/固定其他变量后的势切片U:V→Mat3→ℝ、位置q和方向Θ，返回−grad(fun x=>U x Θ) q。逐坐标即−∂U/∂q_i，方向及其他变量在求导中固定；不是独立给定的力公理。原书的k只是指定刚体指标，冻结其他体坐标即可应用此任意切片定义，不必假设势能无耦合。总fderiv在不可微函数上的约定不等于证明物理势可微，现明确记入注释。",
+        "counterexample": null,
+        "suggested_fix": "仅采用corrected_json中的来源标点和势切片/可微点注释；无需修改所给Lean定义。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-RigidTorque",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TORQUE_NOTATION_CONTEXT_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-RigidTorque",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "173",
+          "pdf_page": "195",
+          "statement_latex": "$\\tau^k=-\\operatorname{rot}(\\Theta^{kT}\\partial U/\\partial\\Theta^k)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原书印刷174页定义rot(A)=skew⁻¹(A−Aᵀ)；因此rot(A)=(A₃₂−A₂₃,A₁₃−A₃₁,A₂₁−A₁₂)，无额外1/2。",
+            "∂U/∂Θ是对旋转矩阵各元素的偏导构成的3×3矩阵；q及其他刚体的变量在该偏导中固定。",
+            "Lean的U可为多体耦合势在固定其余体变量后的切片；没有假设全系统势可分离。",
+            "matrixGrad在可微处给出通常Fréchet偏导；定义对不可微输入仍按Mathlib fderiv总运算约定取值，本条不证明可微性。"
+          ],
+          "issues": [
+            {
+              "code": "TORQUE_NOTATION_CONTEXT_INCOMPLETE",
+              "detail": "context_notation原为空；已补全rot的原书定义、矩阵偏导逐元素含义、k变量的切片解释及不可微点总运算约定。公式本身无转录错误。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.rigidTorque",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT23_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:08:05.166978",
+              "before_sha256": "20c33291461e2227e591dd3288aba53e00710cf2a7705ee985380ae56568ed49",
+              "after_sha256": "fd99cf822ad637ac4e9037b397280e533c437371b2ab01e1c81d74a74969eb52",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH27_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R8_PAGES.pdf 附件第11页；本次 R8 视觉复核，见本条 json_review.evidence。"
+        },
+        "issues": [
+          {
+            "code": "TORQUE_NOTATION_CONTEXT_INCOMPLETE",
+            "stage": "A/C",
+            "detail": "context_notation原为空；已补全rot的原书定义、矩阵偏导逐元素含义、k变量的切片解释及不可微点总运算约定。公式本身无转录错误。"
+          }
+        ],
+        "evidence": {
+          "source_file": "R8_任务.md",
+          "source_file_sha256": "7959d1c3a32519cecfeab143035c742d40c548cd428719df6bf031f8798691d8",
+          "pdf_file": "R8_PAGES.pdf",
+          "pdf_file_sha256": "7c9f969e07f7f8ac5525c5534a391d44d951871710766b37f6e6b5ee85aa6897",
+          "attachment_pages": [
+            11
+          ],
+          "visual_verification": "已视觉查看印刷页172、173、174的三种页面；15张附件页的渲染哈希分组逐页校验相同，复用相同页面的视觉结果。非仅依赖文本抽取或旧审校标记。",
+          "render_equivalence_groups": [
+            {
+              "attachment_pages": [
+                7,
+                8,
+                10,
+                11,
+                14
+              ],
+              "printed_page": 173,
+              "book_pdf_page": 195,
+              "render_sha256": "525af8548750a65e6c8e9b414e8e4ace598e9ec4676dd11b603b32493d407d76"
+            }
+          ],
+          "A_source_check": "附件第11页印刷173页末的τᵏ=−rot([Θᵏ]ᵀ∂U/∂Θᵏ)与JSON一致。为展开rot，另核对本附件第12/15页印刷174页首的rot(A)=skew⁻¹(A−Aᵀ)，不是依据旧项目定义猜测。",
+          "C_signature_check": "U:V→Mat3→ℝ；q固定，matrixGrad(U q) Θ的(i,j)项为(fderiv ℝ (U q) Θ)(Pi.single i (Pi.single j 1))，与原文逐元素偏导一致。矩阵乘序为ΘᵀD，不是DΘᵀ或其转置。",
+          "reviewed_lean_declarations": [
+            "MD.Ch04.rigidTorque"
+          ],
+          "EXTRA_check": "原extra_assumptions为空；补充的是记号/域解释，不是加上未给出的力矩公理或无耦合前提。",
+          "method_limit": "只读审校任务内摘录及附件；未读旧 Ch04.lean/旧 source JSON/旧批次材料，未改工程、未补证明、未运行 Lean 编译。PASS 是签名与限定范围审校结论，不表示消除了 sorry。输入哈希按任务原值回显，并非对旧版本文件重新计算。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidTorque",
+        "verdict": "PASS",
+        "explanation": "rigidTorque 的实矩阵梯度逐元素取真实fderiv，A=ΘᵀmatrixGrad(U q) Θ；matrixRot(A)=(A₃₂−A₂₃,A₁₃−A₃₁,A₂₁−A₁₂)，故正是原书skew⁻¹(A−Aᵀ)，外层负号正确。这里rot本身不带1/2；rbForm中另用1/2取斜对称矩阵的轴向量，不能混淆。任意势切片也能表示多体中固定其余变量后的第k个力矩，无须无耦合假设。",
+        "counterexample": null,
+        "suggested_fix": "采用corrected_json的记号说明；所给Lean定义无需改动。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-DLMPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_DRIFT_MASS_FACTOR_QUERY",
+          "PRINTED_SPIN_SIGN_QUERY",
+          "SOURCE_DISPLAY_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-DLMPrinted",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "174",
+          "pdf_page": "196",
+          "statement_latex": "DLM Rigid Body Molecular Dynamics Step\n1. “Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k,\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]\n2. “Drift”: step forward a whole step in positions\n\\[q^k:=q^k+hp^k.\\]\n3. “Spin”: update the rotational state of the kth rigid body by the sequence of steps\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^z(h\\pi_3^k/I_3);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^y(\\tfrac h2\\pi_2^k/I_2);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T,\\]\n\\[\\Theta:=\\Theta^x(\\tfrac h2\\pi_1^k/I_1);\\ \\pi^k:=\\Theta\\pi^k;\\ \\Theta^k:=\\Theta^k\\Theta^T.\\]\n4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F^k$ and torques $\\tau^k$ evaluated at the current $q,\\Theta$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原表列动量Rπ与方向ΘRᵀ，与正式库一致。"
+          ],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "字面drift缺1/M；正角spin动量符号疑点保留。"
+            },
+            {
+              "code": "PRINTED_DRIFT_MASS_FACTOR_QUERY",
+              "detail": "印刷drift确为qᵏ:=qᵏ+h pᵏ，无1/M。该字面算法可作单位质量约定；是否原书漏写一般质量因子，保留待人工，不擅自加因子。"
+            },
+            {
+              "code": "PRINTED_SPIN_SIGN_QUERY",
+              "detail": "印刷确为正角R、π:=Rπ、Θ:=ΘRᵀ。其一阶旋转方向与同页组Euler方程π×T⁻¹π及dotΘ=Θskew(T⁻¹π)存在符号疑点；这是原书问题，字面忠实性审校不能自动改成负角。"
+            },
+            {
+              "code": "SOURCE_DISPLAY_PUNCTUATION",
+              "detail": "原表第1步p与π的更新由逗号分隔，JSON原用分号；现按原页恢复，算法含义不变。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.dlmPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]本条仅N=1实例；任意N体耦合势与完整算法另由DLMPrintedSystem忠实保存。",
+            "[EXTRA] 保留N=1字面算法作为单体实例；完整任意N、耦合势、逐阶段重算所有力矩的原算法已由DLMPrintedSystem覆盖，显式跨条目映射，不以单体冒充全系统。"
+          ],
+          "statement_scope": "原DLM完整算法的N=1实例；任意N耦合系统的原算法由MD-4.4.2-DLMPrintedSystem承担。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "stage": "EAUDIT23_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:08:05.167047",
+              "before_sha256": "2977371f7c85a40fe01be775116598a1fa5ba83c4fc73c3d874e3594e7670836",
+              "after_sha256": "2643525c73aeb83492cd75e88bb0a64f0e6b63cb80c95f59fba586a42bed144f",
+              "changed_fields": [
+                "statement_latex",
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH27_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R8_PAGES.pdf 附件第12页；本次 R8 视觉复核，见本条 json_review.evidence。"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_DRIFT_MASS_FACTOR_QUERY",
+            "stage": "A",
+            "detail": "印刷drift确为qᵏ:=qᵏ+h pᵏ，无1/M。该字面算法可作单位质量约定；是否原书漏写一般质量因子，保留待人工，不擅自加因子。"
+          },
+          {
+            "code": "PRINTED_SPIN_SIGN_QUERY",
+            "stage": "A",
+            "detail": "印刷确为正角R、π:=Rπ、Θ:=ΘRᵀ。其一阶旋转方向与同页组Euler方程π×T⁻¹π及dotΘ=Θskew(T⁻¹π)存在符号疑点；这是原书问题，字面忠实性审校不能自动改成负角。"
+          },
+          {
+            "code": "SOURCE_DISPLAY_PUNCTUATION",
+            "stage": "A",
+            "detail": "原表第1步p与π的更新由逗号分隔，JSON原用分号；现按原页恢复，算法含义不变。"
+          }
+        ],
+        "evidence": {
+          "source_file": "R8_任务.md",
+          "source_file_sha256": "7959d1c3a32519cecfeab143035c742d40c548cd428719df6bf031f8798691d8",
+          "pdf_file": "R8_PAGES.pdf",
+          "pdf_file_sha256": "7c9f969e07f7f8ac5525c5534a391d44d951871710766b37f6e6b5ee85aa6897",
+          "attachment_pages": [
+            12
+          ],
+          "visual_verification": "已视觉查看印刷页172、173、174的三种页面；15张附件页的渲染哈希分组逐页校验相同，复用相同页面的视觉结果。非仅依赖文本抽取或旧审校标记。",
+          "render_equivalence_groups": [
+            {
+              "attachment_pages": [
+                9,
+                12,
+                13,
+                15
+              ],
+              "printed_page": 174,
+              "book_pdf_page": 196,
+              "render_sha256": "e4d7c56a9d89eaf0c44a2e8b57ef0a43a284dd06375edbd6967e698591683d95"
+            }
+          ],
+          "A_source_check": "附件第12页，印刷174页。逐行核对四步标题、两次半步kick、q:=q+hp、五行x/y/z/y/x的角度及两项赋值，以及最后在current q,Θ重新计算force/torque的句子。原JSON数学内容忠实；首个kick展示式中的分隔标点恢复原页逗号。旋转矩阵约定由本附件同页核对。",
+          "C_signature_check": "RBState=(V×V)×(V×Mat3)，次序为((q,p),(π,Θ))。rigidKick只改p与π；rigidDrift 1 h给q+h p；spin仅改z.2。printedSpinAxis调用Chapter04Review.axisRotation而非凭同名MD版本推断，已核对两者分量一致。每个阶段状态传递正确。",
+          "reviewed_lean_declarations": [
+            "MD.Ch04.dlmPrinted"
+          ],
+          "EXTRA_check": "两条[EXTRA]均明确本条只审N=1且另映射DLMPrintedSystem。本次未取得外部全系统声明，故不声称已审任意N或任意N的耦合更新。I的正值及SO(3)是物理域，当前定义用总除法/全矩阵延拓，未凭此定义断言所有I均物理有效。",
+          "method_limit": "只读审校任务内摘录及附件；未读旧 Ch04.lean/旧 source JSON/旧批次材料，未改工程、未补证明、未运行 Lean 编译。PASS 是签名与限定范围审校结论，不表示消除了 sorry。输入哈希按任务原值回显，并非对旧版本文件重新计算。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dlmPrinted",
+        "verdict": "PASS",
+        "explanation": "按Printed的字面忠实性标准PASS，限明确声明的N=1实例。右侧先作用的复合依次是Kick(h/2)、Drift(1,h)、Spin(h)、Kick(h/2)，与原表顺序一致。printedSpinStep虽为函数复合，回文轴序使实际顺序仍为x半、y半、z全、y半、x半；每一步角度从当前s.1分量重新取值。动量用Rπ，方向用ΘRᵀ；最后Kick在更新后的q、Θ处重新求力和力矩。没有擅自加入质量因子或改正角。原书质量和符号疑点在json_review标NEEDS_HUMAN，不作为字面定义的FAIL。",
+        "counterexample": {
+          "kind": "source_consistency_diagnostic_not_a_counterexample_to_literal_fidelity",
+          "detail": "手工一阶符号核对：x轴单步取I₁=1、π=(1,1,0)。π×(π₁e₁/I₁)=(0,0,−1)，而原印R_x(hπ₁/I₁)π在h=0的一阶变化为(0,0,1)。这说明不能从Printed定义另推其为同号Euler子流；不否定它逐字编码了原表，也不否定其辛性。非数值实验、非Lean验证。"
+        },
+        "suggested_fix": "保留dlmPrinted的正角、Rπ、ΘRᵀ和单位质量字面drift；人工核定一般质量约定及旋转方向。若需物理修正版，另立_corrected声明并记录改动，不覆盖Printed。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-DriftSpinCommute",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-DriftSpinCommute",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "174",
+          "pdf_page": "196",
+          "statement_latex": "Note that the symmetric character of the algorithm could be revealed more clearly by dividing the “Drift” step into two half steps sandwiched around the Spin step (Kick, Drift, Spin, Drift, Kick), but as the updates Drift/Spin are decoupled, the order they are performed is not important.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实原字面五轴spin与质量drift的全状态相等，非只算子标签。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.driftSpinCommute",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA] 保留原交换性证明，并补漂移半步合成与完整Kick/Drift/Spin/Drift/Kick排列恒等式；M=1即字面原算法，新结论暂sorry。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT23_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:08:05.167172",
+              "before_sha256": "029339cc1edf2426245e682d5bcf76afbc3e87a29a12fe1e5e35bc1e3981c5e6",
+              "after_sha256": "70502d8456d3d9349d97b1c5d41a98273f744f34f7fab7ce4136ef87ff4505c0",
+              "changed_fields": [],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH27_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R8_PAGES.pdf 附件第13页；本次 R8 视觉复核，见本条 json_review.evidence。"
+        },
+        "issues": [],
+        "evidence": {
+          "source_file": "R8_任务.md",
+          "source_file_sha256": "7959d1c3a32519cecfeab143035c742d40c548cd428719df6bf031f8798691d8",
+          "pdf_file": "R8_PAGES.pdf",
+          "pdf_file_sha256": "7c9f969e07f7f8ac5525c5534a391d44d951871710766b37f6e6b5ee85aa6897",
+          "attachment_pages": [
+            13
+          ],
+          "visual_verification": "已视觉查看印刷页172、173、174的三种页面；15张附件页的渲染哈希分组逐页校验相同，复用相同页面的视觉结果。非仅依赖文本抽取或旧审校标记。",
+          "render_equivalence_groups": [
+            {
+              "attachment_pages": [
+                9,
+                12,
+                13,
+                15
+              ],
+              "printed_page": 174,
+              "book_pdf_page": 196,
+              "render_sha256": "e4d7c56a9d89eaf0c44a2e8b57ef0a43a284dd06375edbd6967e698591683d95"
+            }
+          ],
+          "A_source_check": "附件第13页印刷174页末的完整Note段逐句一致，包括“two half steps sandwiched around the Spin step”、括号序列和“the order they are performed is not important”。本条没有把独立更新的交换性误转录为Kick也可任意交换。",
+          "C_signature_check": "主声明∀M h I z；补充声明(M h:ℝ)(I:V)(U:V→Mat3→ℝ)是函数等式的合取。所有复合右向左执行后与原文时序一致。M=0时总实数除法使Drift为恒等，所列两条代数等式仍成立，不是物理质量资格的断言。",
+          "reviewed_lean_declarations": [
+            "MD.Ch04.driftSpinCommute",
+            "MD.Ch04.driftSpinCommute_halves"
+          ],
+          "EXTRA_check": "[EXTRA]明确加入半步合成及完整排列恒等式，实际签名确实包括二者；其余质量取值是代数推广。该签名表达所选段落的换序与对称排列，不声称已证明精度、守恒或时间反演定理。",
+          "method_limit": "只读审校任务内摘录及附件；未读旧 Ch04.lean/旧 source JSON/旧批次材料，未改工程、未补证明、未运行 Lean 编译。PASS 是签名与限定范围审校结论，不表示消除了 sorry。输入哈希按任务原值回显，并非对旧版本文件重新计算。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.driftSpinCommute",
+        "verdict": "PASS",
+        "explanation": "两个声明均已审校。driftSpinCommute 对任意实M,h、I和全状态z给出Drift∘Spin=Spin∘Drift的全状态等式：Drift只改变q，Spin只改变(π,Θ)。driftSpinCommute_halves同时给出两个半步drift合成一步，以及含两端Kick的K(h/2)∘S(h)∘D(h)∘K(h/2)=K(h/2)∘D(h/2)∘S(h)∘D(h/2)∘K(h/2)。角度仍用整个spin步h，未误减半。M=1正是原印算法，任意M的代数推广不依赖旋转符号勘误；sorry不构成签名FAIL。",
+        "counterexample": null,
+        "suggested_fix": null
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-DLMPrintedStructure",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "QUOTE_PAGE_VS_CONTEXT_PAGE",
+          "EXTRA_REGULARITY_PREMISES_UNRECORDED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-DLMPrintedStructure",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "173",
+          "pdf_page": "195",
+          "statement_latex": "The reliability of these methods is supported by the fact that the combined scheme is a symplectic method in the generalized sense of constrained dynamics.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "QUOTE_PAGE_VS_CONTEXT_PAGE",
+              "detail": "英文引句只在印刷173页/PDF195；原173–174/195–196把具体算法背景页混入引文页。已拆分为引文页和review_context_pdf_pages=[196]。"
+            },
+            {
+              "code": "EXTRA_REGULARITY_PREMISES_UNRECORDED",
+              "detail": "原extra_assumptions未逐项列出∀i,0<I i和ContDiff ℝ 3 (Function.uncurry U)；现完整补记。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.dlmPrintedStructure",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "明确SO3初态与实际切向量在rbSymplectic定义内；单位质量为原字面drift。",
+            "[EXTRA] 本条仅为字面单体辛性实例；原句任意N耦合算法与输入/输出SO(3)域由DLMPrintedSystemStructure承担，不再把rbSymplectic名字当作完整输出约束。",
+            "[EXTRA] 逐项正惯性∀i,0<I i，以及势能联合C³正则性ContDiff ℝ 3 (Function.uncurry U)，均为本地声明加入的充分前提，原页未逐项列出；不能漏记。",
+            "[EXTRA] h遍历全部实数；rbSymplectic只要求在初态Θ∈SO(3)、u,v满足rbTangent条件时成立实际fderiv的两形式拉回等式，不包含输出SO(3)或输出切向量条件的独立断言。"
+          ],
+          "statement_scope": "仅N=1字面算法两形式拉回等式；原全系统含SO(3)域的结构断言由MD-4.4.2-DLMPrintedSystemStructure承担。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT23_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:08:05.167282",
+              "before_sha256": "bc75cdf59a42ab712b306f3ae3598c952d919e243c6da478e8ab46bbf3188ac0",
+              "after_sha256": "d485e6e4d92de883bc50c416d9b34145c52211f71cb6a7efb7f5b6778d2feac6",
+              "changed_fields": [
+                "statement_scope"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH28_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; R8_PAGES.pdf 附件第14、15页；本次 R8 视觉复核，见本条 json_review.evidence。",
+          "review_context_pdf_pages": [
+            196
+          ]
+        },
+        "issues": [
+          {
+            "code": "QUOTE_PAGE_VS_CONTEXT_PAGE",
+            "stage": "A",
+            "detail": "英文引句只在印刷173页/PDF195；原173–174/195–196把具体算法背景页混入引文页。已拆分为引文页和review_context_pdf_pages=[196]。"
+          },
+          {
+            "code": "EXTRA_REGULARITY_PREMISES_UNRECORDED",
+            "stage": "A/C",
+            "detail": "原extra_assumptions未逐项列出∀i,0<I i和ContDiff ℝ 3 (Function.uncurry U)；现完整补记。"
+          }
+        ],
+        "evidence": {
+          "source_file": "R8_任务.md",
+          "source_file_sha256": "7959d1c3a32519cecfeab143035c742d40c548cd428719df6bf031f8798691d8",
+          "pdf_file": "R8_PAGES.pdf",
+          "pdf_file_sha256": "7c9f969e07f7f8ac5525c5534a391d44d951871710766b37f6e6b5ee85aa6897",
+          "attachment_pages": [
+            14,
+            15
+          ],
+          "visual_verification": "已视觉查看印刷页172、173、174的三种页面；15张附件页的渲染哈希分组逐页校验相同，复用相同页面的视觉结果。非仅依赖文本抽取或旧审校标记。",
+          "render_equivalence_groups": [
+            {
+              "attachment_pages": [
+                7,
+                8,
+                10,
+                11,
+                14
+              ],
+              "printed_page": 173,
+              "book_pdf_page": 195,
+              "render_sha256": "525af8548750a65e6c8e9b414e8e4ace598e9ec4676dd11b603b32493d407d76"
+            },
+            {
+              "attachment_pages": [
+                9,
+                12,
+                13,
+                15
+              ],
+              "printed_page": 174,
+              "book_pdf_page": 196,
+              "render_sha256": "e4d7c56a9d89eaf0c44a2e8b57ef0a43a284dd06375edbd6967e698591683d95"
+            }
+          ],
+          "A_source_check": "附件第14页印刷173页中部存在完整“The reliability ... constrained dynamics.”句，与statement_latex逐字内容一致；第15页印刷174页提供被引用的具体算法。按本任务条目6同样的引文页/背景页区分，修正引文页为printed_page=173、pdf_page=195，并将196记为review_context_pdf_pages，而非宣称该英文句跨两页。",
+          "C_signature_check": "已展开Chapter04Review.rbSymplectic、rbTangent、rbForm、phaseForm、dot、matrixRot及dlmPrinted全部子步。rbForm=标准dq∧dp+ξ·δπ_v−η·δπ_u+π·(ξ×η)，ξ=(1/2)rot(ΘᵀδΘ_u)，η同理。因本条明确只承诺拉回等式，签名未显式保证Gz∈SO(3)及输出切向量的事实不被伪装成完整约束域定理；任意N版本亦不在本次PASS范围。",
+          "reviewed_lean_declarations": [
+            "MD.Ch04.dlmPrintedStructure"
+          ],
+          "EXTRA_check": "正惯性、C³势、任意实步长、初态SO(3)、两个真实切向量及实际fderiv均已核对。现有statement_scope明确限N=1两形式等式，外部DLMPrintedSystemStructure未提供，不声称本次验证该全系统对象。",
+          "method_limit": "只读审校任务内摘录及附件；未读旧 Ch04.lean/旧 source JSON/旧批次材料，未改工程、未补证明、未运行 Lean 编译。PASS 是签名与限定范围审校结论，不表示消除了 sorry。输入哈希按任务原值回显，并非对旧版本文件重新计算。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.dlmPrintedStructure",
+        "verdict": "PASS",
+        "explanation": "就明确限定的N=1两形式拉回等式PASS。定理量化所有I、U，在逐项正惯性与联合C³势前提下，对任意实h断言实际dlmPrinted映射满足rbSymplectic。已展开该谓词：初态ΘᵀΘ=1且detΘ=1，对任意满足ΘᵀδΘ+δΘᵀΘ=0的u,v，实际fderiv像上的rbForm等于输入rbForm；并非只检查一个叫symplectic的标签。rbForm中的1/2·matrixRot给出正确体坐标切向量，叉积项符号与标准刚体余切形式一致。正角Printed spin对应负旋转动能子流，符号疑点不破坏子步的辛性，因此不能据条目10的物理一致性疑点把此签名判为假。",
+        "counterexample": null,
+        "suggested_fix": "采用corrected_json补全正惯性/C³前提及引文页定位；保留本条两形式等式的限定范围，不将本次PASS报告为完整输出约束或全系统定理已检查。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemForce",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-RigidSystemForce",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "173",
+          "pdf_page": "195",
+          "statement_latex": "The relevant expressions are:\n\\[F^k=-\\frac{\\partial U}{\\partial q^k},\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实耦合势的第k个位置切片Fréchet梯度；其余坐标保持在当前完整状态。",
+            "本条截取原书同一展示式的力分量；其后原为逗号，接条目RigidSystemTorque的力矩分量。V为三维实向量，原书粗体排印按向量记号读取。",
+            "Lean的grad经textbookConstraintGradient展开为对坐标基向量的Fréchet导数求值。与原书偏导的对应在位置切片Fréchet可微处成立；定义未声明光滑性假设，fderiv在不可微处的总化值不能解释为原书已定义的物理导数。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_PUNCTUATION",
+              "detail": "附件第1页页末的共享展示式在F^k公式后用逗号衔接力矩公式，输入截取后改成句号。已恢复逗号并明确这是共享展示式的一个分量，未改变负号、U或q^k。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.rigidSystemForce",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "共享引导句及同一展示式中的力分量；保留原逗号，力矩分量由MD-4.4.2-RigidSystemTorque单列。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT23_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:08:05.167331",
+              "before_sha256": "d0481ad2d65a7511667780ccd459c9c97db9b7f38150cf1c39d803b928501f58",
+              "after_sha256": "592a432409baf4021cd88278fdeec11cfc78fbdb8bc07a6a2d6cc8ba43bc0e64",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH28_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch04_eaudit/R9_evidence/verification_manifest.json; R9_review.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PUNCTUATION",
+            "field": "statement_latex",
+            "severity": "correction",
+            "detail": "附件第1页页末的共享展示式在F^k公式后用逗号衔接力矩公式，输入截取后改成句号。已恢复逗号并明确这是共享展示式的一个分量，未改变负号、U或q^k。"
+          }
+        ],
+        "evidence": [
+          {
+            "type": "PDF_VISUAL",
+            "file": "/workspace/R9_PAGES.pdf",
+            "attachment_pages": [
+              1
+            ],
+            "printed_page": "173",
+            "original_pdf_page": "195",
+            "location": "§4.4.2页末“The relevant expressions are:”及其后展示式左半",
+            "finding": "英文引导句、F上标k、负号、对q^k的偏导均相符；唯一字面修订是恢复F公式后的逗号。",
+            "verification": "已直接查看附件第1、3页的1800像素渲染；8页全部按相同参数渲染。第1/2/5/7页像素文件SHA-256相同，第3/4/6/8页相同，因此每项相应附件页均已核对。",
+            "rendered_page_sha256": {
+              "1": "c39927d9e95b065e2be4089a66f0a7cf547c6d172b273bf92114457de5302d87"
+            },
+            "pdf_sha256": "c21a917d80e315962ccf5a9e4b75abeea5e4579c2d1ea05a55432cd0cad6bb56"
+          },
+          {
+            "type": "LEAN_READ_ONLY",
+            "file": "/workspace/R9_任务.md",
+            "task_sha256": "aed82923dfea4747e6ae0fa5cf416ca67917a057a38929f44c31ee7aec68bf1b",
+            "item": 1,
+            "declarations_checked": [
+              "MD.Ch04.rigidSystemForce",
+              "MolecularDynamics.Chapter04Review.V",
+              "MolecularDynamics.Chapter04Review.Mat3",
+              "MolecularDynamics.Chapter04Review.grad",
+              "MolecularDynamics.textbookConstraintGradient",
+              "MolecularDynamics.Chapter02Review.grad",
+              "MolecularDynamics.Chapter02Review.Q",
+              "MolecularDynamics.Chapter04Review.Q"
+            ],
+            "finding": "N : ℕ，k : Fin N；U接收完整N体位置数组和完整N体3×3实矩阵数组并输出实数。仅用Function.update替换第k个位置，其余位置和全部方向固定。Chapter04Review.grad经textbookConstraintGradient为fderiv在Pi.single i 1上的三个分量；Chapter02Review.grad的另一个同名定义未被误用。",
+            "scope": "仅核对本任务给出的当前Lean声明及MolecularDynamics/MD项目定义；Mathlib原语按标准含义采信。未读取旧Ch0x.lean、旧source.json或旧任务来补本轮材料，未修改工程、未补证明、未运行Lean编译，未将sorry视为签名错误。",
+            "material_limit": "任务未独立摘录rigidSystemState的定义。本次按所给函数的逐体调用、显式四字段返回项及条目5/6所给RBState := (V × V) × (V × Mat3)核对N体状态的用法；未声称已另行展开或验证未提供的别名本体。此证据范围遵照任务“只需核对本文件中摘录的项目定义”。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidSystemForce",
+        "verdict": "PASS",
+        "explanation": "签名和定义体忠实于F^k = −∂U/∂q^k。V = Fin 3 → ℝ，Mat3 = Matrix (Fin 3) (Fin 3) ℝ；结果为三维力。对任意N、输入状态z和k，切片x ↦ U(update q k x) Θ在当前q^k处求负梯度，允许U耦合所有刚体，未将U替换为逐体可分势，也未改变或冻结其他刚体的当前状态。没有额外Lean前提或被遗漏的定理结论；这是一个定义。fderiv总化所带来的域外取值只作为形式定义的延拓，不据此宣称不可微势具有物理力。原文句末逗号属JSON摘录问题，不构成Lean签名FAIL。",
+        "counterexample": null,
+        "suggested_fix": "采用corrected_json中的原标点和切片说明；Lean无需修改。若将此定义用于物理力定理，应另行明示相应位置切片的可微性；本轮不添加假设或证明。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemTorque",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-RigidSystemTorque",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "173",
+          "pdf_page": "195",
+          "statement_latex": "$\\tau^k=-\\operatorname{rot}([\\Theta^k]^T\\partial U/\\partial\\Theta^k)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实矩阵元素Fréchet偏导；rot(A)=skew⁻¹(A−Aᵀ)，没有额外1/2。",
+            "matrixGrad逐项在Pi.single i (Pi.single j 1)上求fderiv，不是对旋转参数或角动量求导；与原书矩阵元素偏导的对应在该矩阵切片Fréchet可微处成立。定义本身对任意U总化，不声称不可微处存在原书导数。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch04.rigidSystemTorque",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT24_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:09:07.422301",
+              "before_sha256": "083dfdb7adb783b7640827404eab5c106ea03aa6565e863d41e4a0c7ba7c8d34",
+              "after_sha256": "b5fd0decc63f66bd041a9e58924b54256fe9c1ed27b789f929c3b92f0e7a2903",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH28_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch04_eaudit/R9_evidence/verification_manifest.json; R9_review.json",
+          "review_context_pdf_pages": [
+            196
+          ]
+        },
+        "issues": [],
+        "evidence": [
+          {
+            "type": "PDF_VISUAL",
+            "file": "/workspace/R9_PAGES.pdf",
+            "attachment_pages": [
+              2
+            ],
+            "printed_page": "173",
+            "original_pdf_page": "195",
+            "location": "§4.4.2页末共享展示式右半",
+            "finding": "τ^k、外层负号、rot、[Θ^k]^T在左和∂U/∂Θ^k在右的乘法次序，以及末尾句号均相符。",
+            "verification": "已直接查看附件第1、3页的1800像素渲染；8页全部按相同参数渲染。第1/2/5/7页像素文件SHA-256相同，第3/4/6/8页相同，因此每项相应附件页均已核对。",
+            "rendered_page_sha256": {
+              "2": "c39927d9e95b065e2be4089a66f0a7cf547c6d172b273bf92114457de5302d87"
+            },
+            "pdf_sha256": "c21a917d80e315962ccf5a9e4b75abeea5e4579c2d1ea05a55432cd0cad6bb56"
+          },
+          {
+            "type": "PDF_VISUAL",
+            "file": "/workspace/R9_PAGES.pdf",
+            "attachment_pages": [
+              3
+            ],
+            "printed_page": "174",
+            "original_pdf_page": "196",
+            "location": "页首对∂U/∂Θ^k和rot(A)的解释（仅作记号上下文）",
+            "finding": "原书明确矩阵元素偏导，并给rot(A)=skew^{-1}(A−A^T)，没有额外的1/2。主引文页仍为195，不把此上下文页并入主引文页码。",
+            "verification": "已直接查看附件第1、3页的1800像素渲染；8页全部按相同参数渲染。第1/2/5/7页像素文件SHA-256相同，第3/4/6/8页相同，因此每项相应附件页均已核对。",
+            "rendered_page_sha256": {
+              "3": "8dd0e67a598392be8615d2558952f883c0795fad885abb63e2819d1a62621a67"
+            },
+            "pdf_sha256": "c21a917d80e315962ccf5a9e4b75abeea5e4579c2d1ea05a55432cd0cad6bb56"
+          },
+          {
+            "type": "LEAN_READ_ONLY",
+            "file": "/workspace/R9_任务.md",
+            "task_sha256": "aed82923dfea4747e6ae0fa5cf416ca67917a057a38929f44c31ee7aec68bf1b",
+            "item": 2,
+            "declarations_checked": [
+              "MD.Ch04.rigidSystemTorque",
+              "MolecularDynamics.Chapter04Review.matrixGrad",
+              "MolecularDynamics.Chapter04Review.matrixRot",
+              "MD.Ch04.matrixRot",
+              "MolecularDynamics.Chapter04Review.V",
+              "MolecularDynamics.Chapter04Review.Mat3"
+            ],
+            "finding": "matrixGrad是3×3实矩阵元素基上的Fréchet偏导。实际使用Chapter04Review.matrixRot，其分量与另列的MD.Ch04.matrixRot完全一致，均为(A21−A12,A02−A20,A10−A01)，这里下标从0起。",
+            "scope": "仅核对本任务给出的当前Lean声明及MolecularDynamics/MD项目定义；Mathlib原语按标准含义采信。未读取旧Ch0x.lean、旧source.json或旧任务来补本轮材料，未修改工程、未补证明、未运行Lean编译，未将sorry视为签名错误。",
+            "material_limit": "任务未独立摘录rigidSystemState的定义。本次按所给函数的逐体调用、显式四字段返回项及条目5/6所给RBState := (V × V) × (V × Mat3)核对N体状态的用法；未声称已另行展开或验证未提供的别名本体。此证据范围遵照任务“只需核对本文件中摘录的项目定义”。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidSystemTorque",
+        "verdict": "PASS",
+        "explanation": "逐项核对通过。N为自然数，k取Fin N，U为完整位置/方向数组上的实值耦合势，输出为V。矩阵切片A ↦ U(q, update Θ k A)只改变第k个方向矩阵，在当前Θ^k处求matrixGrad，再左乘(Θ^k)^T并施加外层负matrixRot；所有位置及其余方向均保持当前状态。Fin 3从0起编号，所给三个反对称差分正对应原书从1起编号的(A32−A23,A13−A31,A21−A12)。未误加1/2、未交换乘法次序、未用当前角动量代替方向矩阵；无额外前提或结论。与原书导数的数学对应在相应切片可微处读取，fderiv的总化规则并非新增物理断言。",
+        "counterexample": null,
+        "suggested_fix": "原文公式与Lean均无需修改；可保留corrected_json追加的可微性解释和196页记号上下文，以区分定义的总化域与物理解释。"
+      }
+    },
+    {
+      "source_id": "MD-4.4.2-RigidSystemKick",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-4.4.2-RigidSystemKick",
+          "kind": "definition",
+          "label": null,
+          "section": "4.4.2",
+          "printed_page": "174",
+          "pdf_page": "196",
+          "statement_latex": "“Kick”: update the momenta and angular momentum vectors with known forces and torques for a half step:\n\\[p^k:=p^k+\\tfrac h2 F^k,\\quad\\pi^k:=\\pi^k+\\tfrac h2\\tau^k.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "记原书整步长度为H、Lean函数的子步参数为s：rigidSystemKick U s实施p^k += s F^k、π^k += s τ^k；原书半步公式对应rigidSystemKick U (H/2)，而不是把函数参数s直接等同于原书H。原文statement_latex仍使用原书h。全部力和力矩由同一个当前完整状态同时计算，q及Θ保持不变。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_PUNCTUATION",
+              "detail": "附件第3页步骤1中，p^k更新式与π^k更新式之间为逗号，最后句号位于展示式结尾；输入用分号连接且把句号放在数学环境外。已恢复原展示式标点。"
+            }
+          ],
+          "lean_decl": "MD.Ch04.rigidSystemKick",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "stage": "EAUDIT24_LOCAL_REPAIR",
+              "timestamp": "2026-10-15T19:09:07.422469",
+              "before_sha256": "ccf409f66e1144ce95c4cb8f8eb3ee6965f5ec31d6c576566c93478b76e856a8",
+              "after_sha256": "c2128a8a8805e081d2e9f876c411cc3c04e9e84154aed3d6a27fc833761909f6",
+              "changed_fields": [
+                "statement_latex"
+              ],
+              "annotation_corrections": {},
+              "raw_return": "blueprint/ch04/mathcopilot_results/BATCH28_result.json",
+              "reason": "已视觉核对原PDF页；签名修复/审校或导师分流；不写新证明、不裁定原书疑误。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; .mathcopilot/reviews/ch04_eaudit/R9_evidence/verification_manifest.json; R9_review.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PUNCTUATION",
+            "field": "statement_latex",
+            "severity": "correction",
+            "detail": "附件第3页步骤1中，p^k更新式与π^k更新式之间为逗号，最后句号位于展示式结尾；输入用分号连接且把句号放在数学环境外。已恢复原展示式标点。"
+          }
+        ],
+        "evidence": [
+          {
+            "type": "PDF_VISUAL",
+            "file": "/workspace/R9_PAGES.pdf",
+            "attachment_pages": [
+              3
+            ],
+            "printed_page": "174",
+            "original_pdf_page": "196",
+            "location": "DLM表步骤1“Kick”及其展示式",
+            "finding": "英文动作、known forces and torques、for a half step和两个h/2系数正确。恢复逗号及展示式句末句号，不改原书半步系数。",
+            "verification": "已直接查看附件第1、3页的1800像素渲染；8页全部按相同参数渲染。第1/2/5/7页像素文件SHA-256相同，第3/4/6/8页相同，因此每项相应附件页均已核对。",
+            "rendered_page_sha256": {
+              "3": "8dd0e67a598392be8615d2558952f883c0795fad885abb63e2819d1a62621a67"
+            },
+            "pdf_sha256": "c21a917d80e315962ccf5a9e4b75abeea5e4579c2d1ea05a55432cd0cad6bb56"
+          },
+          {
+            "type": "LEAN_READ_ONLY",
+            "file": "/workspace/R9_任务.md",
+            "task_sha256": "aed82923dfea4747e6ae0fa5cf416ca67917a057a38929f44c31ee7aec68bf1b",
+            "item": 3,
+            "declarations_checked": [
+              "MD.Ch04.rigidSystemKick",
+              "MD.Ch04.rigidSystemForce",
+              "MD.Ch04.rigidSystemTorque",
+              "MolecularDynamics.Chapter04Review.grad",
+              "MolecularDynamics.textbookConstraintGradient",
+              "MolecularDynamics.Chapter04Review.matrixGrad",
+              "MolecularDynamics.Chapter04Review.matrixRot",
+              "MolecularDynamics.Chapter04Review.V",
+              "MolecularDynamics.Chapter04Review.Mat3"
+            ],
+            "finding": "函数参数是本次kick长度。定义对每个k同时返回(q^k,p^k+s F^k,π^k+s τ^k,Θ^k)，两种导数均在同一个输入z上求值。条目4实际以整体步长h/2两次调用它。",
+            "scope": "仅核对本任务给出的当前Lean声明及MolecularDynamics/MD项目定义；Mathlib原语按标准含义采信。未读取旧Ch0x.lean、旧source.json或旧任务来补本轮材料，未修改工程、未补证明、未运行Lean编译，未将sorry视为签名错误。",
+            "material_limit": "任务未独立摘录rigidSystemState的定义。本次按所给函数的逐体调用、显式四字段返回项及条目5/6所给RBState := (V × V) × (V × Mat3)核对N体状态的用法；未声称已另行展开或验证未提供的别名本体。此证据范围遵照任务“只需核对本文件中摘录的项目定义”。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch04.rigidSystemKick",
+        "verdict": "PASS",
+        "explanation": "签名及完整输出通过。N、U与前两项相同，新增实数子步参数和整个N体状态输入/输出；没有隐含的逐体顺序更新。q=(z k).1.1与Θ=(z k).2.2保持，p与π分别加相同子步长度乘当前力及力矩。源文h表示整体步长，Lean中同名局部参数表示子步时长；已给context_notation说明且dlmPrintedSystem实际传入h/2，因此不存在半步遗漏或两倍系数错误。参数重命名属于记号对应，不是额外物理假设。没有新增前提或超出定义的定理结论。",
+        "counterexample": null,
+        "suggested_fix": "保留Lean的一般kick定义；采用corrected_json用H/s区分整步与子步，并恢复原逗号。不得为追求同名参数而把Lean系数改成h/2，否则外层h/2调用会再减半。"
+      }
+    }
+  ],
+  "merged_from": "ch04_eaudit_merged"
+}
