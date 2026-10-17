@@ -1,8 +1,8 @@
 # 第6章本地五步流程进度
 
 范围：印刷p.211–258/PDF232–279，Exercises及参考文献排除；第1–5章冻结，正式库冻结，heartbeat ACTIVE/15分钟原样。
-下一步：见CURRENT_STATE顶部；按节推进。网站不可用，未冻结。
-当前241条；旧清单映射123/126；本地PASS 212；网站返回0。
+第6章本地部分完成；第6章等待用户提交MathCopilot批次；继续下一章本地流程。网站不可用，未冻结。
+当前249条；旧清单映射126/126；本地PASS 219；网站返回0。
 
 | source_id | JSON | Blueprint | 本地预审 | 网站审计 | 证明/状态 |
 |---|---|---|---|---|---|
@@ -247,6 +247,14 @@
 | MD-6.4.4-ForwardKernelGibbs | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺flat forward弱域与实际adjoint/relative坐标转换、kernel识别；不恢复封存长证明。 |
 | MD-6.4.4-WeightedFunctionNorm | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
 | MD-6.4.4-WeightedVectorNorm | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.5-KernelEvolution | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.5-KernelAverage | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.5-DensityEvolutionMeaning | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.5-KernelDuality | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | local_proof / self-contained |
+| MD-6.4.5-SmoothTestL2Printed | DRAFT/原页已核 | 已编译/公理已核 | NEEDS_HUMAN | 待网站审计 | placeholder / incomplete；不证明错误自动可积断言；下面完整衰减保留真实L²检验资格。 |
+| MD-6.4.5-ComplexInitialDensity | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.5-LangevinForwardSemigroupMeaning | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | definition / self-contained |
+| MD-6.4.5-ComplexEigenmodeDecay | DRAFT/原页已核 | 已编译/公理已核 | PASS | 待网站审计 | placeholder / incomplete；缺复C0生成元本征模式的现成完整桥接及实际Langevin forward semigroup识别；不建设大型谱/半群理论。 |
 
 ## 旧126条完整映射
 
@@ -375,9 +383,9 @@
 | CH06-121 | MD-6.4.4-Proposition64Relative |
 | CH06-122 | MD-6.4.4-FredholmAlternative |
 | CH06-123 | MD-6.4.4-ForwardKernelGibbs |
-| CH06-124 | PENDING：所属节尚未处理 |
-| CH06-125 | PENDING：所属节尚未处理 |
-| CH06-126 | PENDING：所属节尚未处理 |
+| CH06-124 | MD-6.4.5-LangevinForwardSemigroupMeaning |
+| CH06-125 | MD-6.4.5-KernelDuality |
+| CH06-126 | MD-6.4.5-ComplexEigenmodeDecay |
 
 ## NEEDS_HUMAN / [ERRATUM?] / 缺理论
 
@@ -465,6 +473,8 @@
 - MD-6.4.4-FredholmAlternative：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺一般closed partialoperator的Fredholm alternative现成完整桥接；不建设大型谱理论。
 - MD-6.4.4-BackwardKernelConstants：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 rough加权Hilbert generator kernel尚缺完整桥接；CanonicalKernelConstant封存长证明不恢复。
 - MD-6.4.4-ForwardKernelGibbs：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺flat forward弱域与实际adjoint/relative坐标转换、kernel识别；不恢复封存长证明。
+- MD-6.4.5-SmoothTestL2Printed：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 不证明错误自动可积断言；下面完整衰减保留真实L²检验资格。环面×无界动量上C∞不自动L²；常数1已不在flat L²，指数增长函数也可能不在Gibbs L²。需适当weighted空间/增长资格。
+- MD-6.4.5-ComplexEigenmodeDecay：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。 缺复C0生成元本征模式的现成完整桥接及实际Langevin forward semigroup识别；不建设大型谱/半群理论。
 
 ## 定性段落排除
 

@@ -245,6 +245,14 @@
 | MD-6.4.4-ForwardKernelGibbs | 257/278 | PASS | 待网站审计 | incomplete |
 | MD-6.4.4-WeightedFunctionNorm | 256/277 | PASS | 待网站审计 | self-contained |
 | MD-6.4.4-WeightedVectorNorm | 257/278 | PASS | 待网站审计 | self-contained |
+| MD-6.4.5-KernelEvolution | 257/278 | PASS | 待网站审计 | self-contained |
+| MD-6.4.5-KernelAverage | 258/279 | PASS | 待网站审计 | self-contained |
+| MD-6.4.5-DensityEvolutionMeaning | 257–258/278–279 | PASS | 待网站审计 | self-contained |
+| MD-6.4.5-KernelDuality | 258/279 | PASS | 待网站审计 | self-contained |
+| MD-6.4.5-SmoothTestL2Printed | 258/279 | NEEDS_HUMAN | 待网站审计 | incomplete |
+| MD-6.4.5-ComplexInitialDensity | 258/279 | PASS | 待网站审计 | self-contained |
+| MD-6.4.5-LangevinForwardSemigroupMeaning | 257–258/278–279 | PASS | 待网站审计 | self-contained |
+| MD-6.4.5-ComplexEigenmodeDecay | 258/279 | PASS | 待网站审计 | incomplete |
 
 ## 需要导师判断的问题
 
@@ -318,6 +326,8 @@
   字面all open C包括空集，概率为0；需Nonempty。原(6.47)单位质量，旧清单一般质量扩展须另标技术范围。
 - MD-6.4.4-Proposition64Printed：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
   印刷flat forward PDE与Gibbs加权mean-zero/adjoint pairing混用；测度及density-vs-relative-density选择待导师，原式完整保留。
+- MD-6.4.5-SmoothTestL2Printed：本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+  环面×无界动量上C∞不自动L²；常数1已不在flat L²，指数增长函数也可能不在Gibbs L²。需适当weighted空间/增长资格。
 
 ## 1. MD-6.1.1-Microcanonical · definition · 印刷p.214 / PDFp.235
 
@@ -12460,3 +12470,420 @@ Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, pr
 直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
 
 签名SHA256：`c02f15325ce9cee032042052a69dc4a60568c0fffa9415569eca2912ef13b314`；原文SHA256：`1d8086e6ee2fd6ba5563b5cedffc77a3c18339897596b65787ba40d8f4a8c503`。
+
+## 1. MD-6.4.5-KernelEvolution · definition · 印刷p.257 / PDFp.278
+
+### 2. 原文陈述
+
+> Given a collection of phase space points distributed according to the density $\rho_0(q,p)$, its evolution under Langevin dynamics after a time $t$ will be described by
+> \[\rho(q,p,t)=e^{t\mathcal L_{LD}^*}\rho_0(q,p).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def kernelEvolution {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+    (μ : Measure D) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.kernelEvolution；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实Markov kernel应用初始measure的compProd边缘，形式exp解释为实际演化，非无资格幂级数。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2527](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2527>)（`MD.Ch06.kernelEvolution`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`982e3128e0ed8753bc95ef260730eddc1668ee26c1d7bded9aad476e1b9d74e2`；原文SHA256：`df92586ab7ee26e83ac2d2d28c7e5230c9f859142dd49994f908bfdc1ed5629c`。
+
+## 1. MD-6.4.5-KernelAverage · definition · 印刷p.258 / PDFp.279
+
+### 2. 原文陈述
+
+> The average of a function $\varphi$ with respect to the distribution at time $t$ is equivalent to the average of the forward propagation of $\varphi$ with respect to the initial distribution.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def kernelAverage {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+    (f : D → ℝ) (t : ℝ≥0) (x : D) : ℝ := ∫ z, f z ∂K t x
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.kernelAverage；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实核积分的backward检验函数传播，可积资格在Duality定理明确。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2532](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2532>)（`MD.Ch06.kernelAverage`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`040338bc2ba5855cfe804d143e04799a1071818368f8b71e808316c671bd9182`；原文SHA256：`eed7dba6b1bf801dec12d3006359b332061562543366425c94b2ec4648ac5dd5`。
+
+## 1. MD-6.4.5-DensityEvolutionMeaning · definition · 印刷p.257–258 / PDFp.278–279
+
+### 2. 原文陈述
+
+> More precisely this relation should be interpreted in the variational sense, so that for any suitable test function $\varphi$, e.g. $\varphi\in C^\infty$,
+> \[\int_D\varphi\rho(q,p,t)d\omega=\int_D\varphi e^{t\mathcal L_{LD}^*}\rho_0(q,p)d\omega.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def densityEvolutionMeaning {n : ℕ} (K : ℝ≥0 → Kernel (textbookLangevinPeriodicPhase n) (textbookLangevinPeriodicPhase n))
+    (ρ0 : textbookLangevinPeriodicPhase n → ℝ) (ρ : ℝ≥0 → textbookLangevinPeriodicPhase n → ℝ) : Prop :=
+  (∀ x, 0 ≤ ρ0 x) ∧ Integrable ρ0 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) ∧
+  (∫ x, ρ0 x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n)=1 ∧
+  ∀ t, (∀ x, 0 ≤ ρ t x) ∧ Integrable (ρ t) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) ∧
+    MolecularDynamics.Chapter06Review.kernelEvolution K
+      ((MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun x ↦ ENNReal.ofReal (ρ0 x))) t =
+      (MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun x ↦ ENNReal.ofReal (ρ t x))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.densityEvolutionMeaning；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]真实初始概率density、全部时刻density及实际kernel measure等式的语义定义；未假设每个任意SDE必存在平滑density，未计存在性已证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2537](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2537>)（`MD.Ch06.densityEvolutionMeaning`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`9d6d7b13b6dee23d7337f7c7d835949270ec85b9ba702445be179d251090823e`；原文SHA256：`3d8cebb3687612adc888938dae9555ba5334140413e3051a28e8ee80aeeb395c`。
+
+## 1. MD-6.4.5-KernelDuality · unnumbered_claim · 印刷p.258 / PDFp.279
+
+### 2. 原文陈述
+
+> Due to the properties of the inner product, we may interpret the right hand side as
+> \[\int_D(e^{t\mathcal L_{LD}}\varphi)(q,p)\rho_0(q,p)d\omega.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem kernelDuality :
+  ∀ {D : Type*} [MeasurableSpace D]
+    (K : ℝ≥0 → Kernel D D) (μ : Measure D) (t : ℝ≥0) (f : D → ℝ),
+  IsProbabilityMeasure μ → IsMarkovKernel (K t) → Measurable f →
+  Integrable f (MolecularDynamics.Chapter06Review.kernelEvolution K μ t) →
+  (∫ x, f x ∂MolecularDynamics.Chapter06Review.kernelEvolution K μ t) = ∫ x, MolecularDynamics.Chapter06Review.kernelAverage K f t x ∂μ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.kernelDuality；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]全部实际可测可积检验、真实Markov kernel及初始概率measure；非仅Brownian谱模型配对。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：local_proof。
+
+位置：[Blueprint/Ch06.lean:2548](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2548>)（`MD.Ch06.kernelDuality`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+本地路线尝试1次，未通过0次（含超时或签名展开预算失败）；证据：blueprint/ch06/validation/short_search/KernelDuality.json；blueprint/ch06/validation/short_search/route-f83b42aa25f10fa89505.lean；blueprint/ch06/validation/short_search/route-f83b42aa25f10fa89505.log。
+
+签名SHA256：`09fb011750b00f749aaf08138215a2dbe5490f09b4b0898534b1cdfeb04f2e06`；原文SHA256：`79f15e7231421c16742590eb0320ffca61653f8186f5617b7ba4a9cc49d0aea1`。
+
+## 1. MD-6.4.5-SmoothTestL2Printed · unnumbered_claim · 印刷p.258 / PDFp.279
+
+### 2. 原文陈述
+
+> Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\varphi$ in $C^\infty$ we have
+> \[\int_D\varphi\rho(q,p,t)d\omega=\operatorname{Av}_\beta(\varphi)+\alpha e^{t\lambda_1}\int_D\varphi\rho^{(1)}d\omega.\]
+> The latter integral is bounded since both $\varphi$ and $\rho^{(1)}$ are in $L^2$.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem smoothTestL2Printed : ∀ {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ),
+  ContDiff ℝ ∞ (f ∘ textbookLangevinPeriodicProjection) →
+  MemLp f 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.smoothTestL2Printed；定义体/完整签名见上 | 字面签名保留；原文/资格疑点尚未裁定，见issues和本地审计。 |
+| 原页核对/疑点 | 环面×无界动量上C∞不自动L²；常数1已不在flat L²，指数增长函数也可能不在Gibbs L²。需适当weighted空间/增长资格。 | [ERRATUM?] |
+
+### 6. 审计结论
+
+本地预审：**NEEDS_HUMAN**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2564](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2564>)（`MD.Ch06.smoothTestL2Printed`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：不证明错误自动可积断言；下面完整衰减保留真实L²检验资格。
+
+签名SHA256：`3523f9ac4e96d25298094316a24e3bf9a77887f0e85f85e0159d0d95f36e6cca`；原文SHA256：`220704141cf76d5721c3958dfcd3295e78c0249ea6af442412b4e3fec81c0ef2`。
+
+## 1. MD-6.4.5-ComplexInitialDensity · definition · 印刷p.258 / PDFp.279
+
+### 2. 原文陈述
+
+> Assume that $\lambda_1,\rho^{(1)}$ is some eigenvalue, eigenfunction pair with $\operatorname{Re}(\lambda_1)<0$ and take the initial distribution to be
+> \[\rho_0=\rho_{eq}+\alpha\rho^{(1)},\qquad\alpha\in\mathbb R.\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def complexInitialDensity {n : ℕ}
+    (ρeq ρ1 : Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)) (α : ℝ) : Prop :=
+  (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n, (ρeq x).im=0 ∧ 0 ≤ (ρeq x).re) ∧
+  Integrable (fun x ↦ (ρeq x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) ∧
+  (∫ x, (ρeq x).re ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n)=1 ∧
+  (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n,
+    (ρeq x+(α : ℂ)*ρ1 x).im=0 ∧ 0 ≤ (ρeq x+(α : ℂ)*ρ1 x).re) ∧
+  Integrable (fun x ↦ (ρeq x+(α : ℂ)*ρ1 x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) ∧
+  (∫ x, (ρeq x+(α : ℂ)*ρ1 x).re ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n)=1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.complexInitialDensity；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]明确真实初始概率的实性/非负/积分1，原单复模式不自动是概率；保留复Lp空间与复本征值，未缩成实负λ玩具。复共轭成对构造可另建，但原单模式需这些资格。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2571](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2571>)（`MD.Ch06.complexInitialDensity`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`ffeea4d91057fc1b43d02b013575857994b48c47d1582e9bdd64ab360d7c2731`；原文SHA256：`2b340e84ba0db5a300f0e6e77f12453e07137fea34582c9e5cbc7eca541b4196`。
+
+## 1. MD-6.4.5-LangevinForwardSemigroupMeaning · definition · 印刷p.257–258 / PDFp.278–279
+
+### 2. 原文陈述
+
+> \[\rho(q,p,t)=e^{t\mathcal L_{LD}^*}\rho_0(q,p).\]
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+def langevinForwardSemigroupMeaning {n : ℕ}
+    (K : ℝ≥0 → Kernel (textbookLangevinPeriodicPhase n) (textbookLangevinPeriodicPhase n))
+    (S : ℝ≥0 → Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) →L[ℂ]
+      Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)) : Prop :=
+  ∀ v : Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n),
+    (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n, (v x).im=0 ∧ 0 ≤ (v x).re) →
+    Integrable (fun x ↦ (v x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) →
+    ∀ t, MolecularDynamics.Chapter06Review.kernelEvolution K
+      ((MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun x ↦ ENNReal.ofReal (v x).re)) t =
+      (MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun x ↦ ENNReal.ofReal ((S t v x).re))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.langevinForwardSemigroupMeaning；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]对所有真实非负实初始density的actual kernel/complex Lp²传播关联定义；不凭空把任意线性S命名Langevin，原forward identification仍未证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**self-contained**；本地证明状态：definition。
+
+位置：[Blueprint/Ch06.lean:2583](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2583>)（`MD.Ch06.langevinForwardSemigroupMeaning`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext`。
+
+直接占位：无直接sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+签名SHA256：`618bf4bf96075ef51d250b396e32fbf9eae01b37e00f3116d5b76d28a1ada085`；原文SHA256：`d86af6ee45109a81dadfe6078cf4f4f5e6143a3ea2e5cae0c8ec4c9180d74cde`。
+
+## 1. MD-6.4.5-ComplexEigenmodeDecay · unnumbered_claim · 印刷p.258 / PDFp.279
+
+### 2. 原文陈述
+
+> \[\rho(q,p,t)=e^{t\mathcal L_{LD}^*}\rho_0
+> =e^{t\mathcal L_{LD}^*}\rho_{eq}+\alpha e^{t\mathcal L_{LD}^*}\rho^{(1)}
+> =\rho_{eq}+\alpha e^{t\lambda_1}\rho^{(1)}.\]
+> Since $\operatorname{Re}(\lambda_1)<0$, this converges exponentially to the desired average.
+
+### 3. 原文证明
+
+原书无独立完整证明（proof_latex=null）。
+
+原书未给独立完整证明。
+
+### 4. Lean陈述
+
+```lean
+theorem complexEigenmodeDecay : ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin n → ℝ)) (P : Measure Ω) (U : (Fin n → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (β γ : ℝ)
+    (hβ : 0 < β) (_hγ : 0 < γ), textbookIsWienerVector B P →
+  let E := Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)
+  ∀ (S : ℝ≥0 → E →L[ℂ] E) (A : E →ₗ.[ℂ] E) (ρeq ρ1 : E) (α : ℝ) (ev : ℂ),
+    langevinForwardSemigroupMeaning
+      (textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*β⁻¹))) S →
+    (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n,
+      ρeq x=(textbookLangevinCanonicalDensity U β x : ℂ)) →
+    S 0=ContinuousLinearMap.id ℂ E → (∀ s t, S (s+t)=(S s).comp (S t)) →
+    (∀ v, Continuous (fun t : ℝ≥0 ↦ S t v)) →
+    (∀ v w, (v,w) ∈ A.graph → HasDerivWithinAt (fun t : ℝ ↦ S t.toNNReal v) w (Ici 0) 0) →
+    (ρeq,0) ∈ A.graph → (ρ1,ev • ρ1) ∈ A.graph → ρ1 ≠ 0 → ev.re < 0 →
+    complexInitialDensity ρeq ρ1 α →
+    (∀ t : ℝ≥0, S t (ρeq+(α : ℂ) • ρ1)=ρeq+((α : ℂ)*Complex.exp ((t : ℂ)*ev)) • ρ1) ∧
+    (∀ f : E, ∀ t : ℝ≥0,
+      ⟪f,S t (ρeq+(α : ℂ) • ρ1)⟫_ℂ=⟪f,ρeq⟫_ℂ+
+        ((α : ℂ)*Complex.exp ((t : ℂ)*ev))*⟪f,ρ1⟫_ℂ) ∧
+    (∀ f : E, ∀ t : ℝ≥0,
+      ‖⟪f,S t (ρeq+(α : ℂ) • ρ1)⟫_ℂ-⟪f,ρeq⟫_ℂ‖ ≤
+        |α| * ‖f‖*‖ρ1‖*Real.exp (ev.re*(t : ℝ))) ∧
+    ∀ f : E, Tendsto (fun t : ℝ≥0 ↦ ⟪f,S t (ρeq+(α : ℂ) • ρ1)⟫_ℂ)
+      atTop (𝓝 ⟪f,ρeq⟫_ℂ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 一致/[EXTRA]/[ERRATUM?] |
+|---|---|---|
+| 原文完整数学对象和展示式 | MD.Ch06.complexEigenmodeDecay；定义体/完整签名见上 | 一致；逐条技术条件见[EXTRA] |
+| 原文省略/技术资格 | [EXTRA]完整复λ/Reλ<0及原α∈ℝ，真实flat Lp² initial probability资格；实际C0 semigroup/0处generator图关系、stationary/eigenvector为前提，完整全时exp模式及所有L²检验CS衰减为结论，没有把全时模式演化作假设。S需识别为实际Langevin前向传播，下一条登记，不冒充已识别。 | [EXTRA] |
+| 原文省略/技术资格 | [EXTRA]S与原实际周期Langevin核在全部非负可积初始密度上的关联及rhoeq与真实归一Gibbs density的AE识别均显式编码；模式演化、平均恒等、CS界及极限全部为结论，仍未计forward semigroup的存在/识别已证。 | [EXTRA] |
+
+### 6. 审计结论
+
+本地预审：**PASS**。本地逐项核对原文对象、真实定义、量词、前提及全部结论；技术资格逐条[EXTRA]。
+
+网站审计：**待网站审计**。原文JSON：DRAFT；未冻结。
+
+### 7. 状态与证明位置
+
+**incomplete**；本地证明状态：placeholder。
+
+位置：[Blueprint/Ch06.lean:2597](<C:/Users/ustc/Desktop/formal math/MolecularDynamicsFormalization/Blueprint/Ch06.lean:2597>)（`MD.Ch06.complexEigenmodeDecay`）。
+
+Lean编译/公理检查：已验证；公理：`Classical.choice, Quot.sound, propext, sorryAx`。
+
+直接占位：有sorry；传递占位：未检出；直接sorry的sorryAx已单列。
+
+缺失/继续路线：缺复C0生成元本征模式的现成完整桥接及实际Langevin forward semigroup识别；不建设大型谱/半群理论。
+
+签名SHA256：`2a6499d4502d8e04e801dd90a17c87fade15d6336092b5ac9f6fec0ee432ae50`；原文SHA256：`453af8b67dc794270f5a04d02aff662ff453053863f9add7e793593ac2bd1886`。

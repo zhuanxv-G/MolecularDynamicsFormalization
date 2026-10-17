@@ -1,0 +1,74 @@
+START SECTION 6.4.5
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch section645-ace876f5 --step ③–⑤§6.4.5逐批验证
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py section645-ace876f5
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\ch06_batch_axioms.py", line 13, in <module>
+    assert receipt['exit_code']==0,out.decode('utf-8',errors='replace')[-5000:]
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: cal.choice, Quot.sound]
+'MD.Ch06.assumption1Printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.assumption1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.assumption2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.minorizationPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.minorizationCorrectedImplication' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.theorem62' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.periodicPotentialBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.potentialNormalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.unitLangevinModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.periodicConfiningPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerCancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerMomentumDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerMomentumLaplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.laplacianBoundPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.laplacianBoundCounterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.hamiltonianPowerGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.laplacianBoundCorrect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.lyapunovYoungBounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinLyapunov' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.lieBracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.lieBracketProperties' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.definition61' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinDrift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinNoise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinNoiseBracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinBracketIndependent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinHormander' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinTransitionDensity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.lemma61Printed' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.lemma61Nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.controlPath' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.controlEndpointStable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.wienerControlTube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinCanonicalStationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinGeometricErgodicity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.langevinTimeAverage' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.weightedH1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.weightedH1Norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.proposition64Printed' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.proposition64Relative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.fredholmAlternative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.backwardKernelConstants' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.forwardKernelGibbs' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.weightedFunctionNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.weightedVectorNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.kernelEvolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.kernelAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.densityEvolutionMeaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.kernelDuality' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.smoothTestL2Printed' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch06.complexInitialDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.langevinForwardSemigroupMeaning' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch06.complexEigenmodeDecay' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_advance_ch06.py", line 35, in <module>
+    generate(label)
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_advance_ch06.py", line 19, in generate
+    call([PY,'scripts/ch06_batch_axioms.py',label])
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\local_advance_ch06.py", line 13, in call
+    subprocess.run(list(map(str,args)),cwd=ROOT,check=True)
+  File "D:\anaconda\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['D:\\anaconda\\python.exe', 'scripts/ch06_batch_axioms.py', 'section645-ace876f5']' returned non-zero exit status 1.

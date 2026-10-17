@@ -1,0 +1,20 @@
+START SECTION 6.4.5
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch section645-1f5b8086 --step ③–⑤§6.4.5逐批验证
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py section645-1f5b8086
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+Batch axioms passed: section645-1f5b8086 249
+Running: D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 249, "local_PASS": 219, "local_NEEDS_HUMAN": 30, "errata_records": 37, "source_errata_records": 36, "declarations": {"\u5b9a\u4e49": 94, "\u5df2\u8bc1": 83, "\u672a\u8bc1": 73}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 18, "\u65f6\u95f4\u76d2\u6b62": 17, "\u7f3a\u5927\u578b\u7406\u8bba": 38}, "website_submitted": false}
+Running: D:\anaconda\python.exe scripts/local_short_search.py 6 KernelDuality
+KernelDuality PASS
+Running: D:\anaconda\python.exe scripts/local_blueprint.py 6 --batch sec6.4.5-proofs-5ff01d674d --step ③–⑤§6.4.5逐批验证
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+Running: D:\anaconda\python.exe scripts/ch06_batch_axioms.py sec6.4.5-proofs-5ff01d674d
+Generated 249 entries; 126 /126 old rows mapped; protected 925
+Batch axioms passed: sec6.4.5-proofs-5ff01d674d 249
+Running: D:\anaconda\python.exe scripts/ch06_sync22.py
+Counts: {"entries": 249, "local_PASS": 219, "local_NEEDS_HUMAN": 30, "errata_records": 37, "source_errata_records": 36, "declarations": {"\u5b9a\u4e49": 94, "\u5df2\u8bc1": 84, "\u672a\u8bc1": 72}, "unproved_reasons": {"\u539f\u4e66\u7591\u8bef\u4e0d\u8bc1": 18, "\u65f6\u95f4\u76d2\u6b62": 17, "\u7f3a\u5927\u578b\u7406\u8bba": 37}, "website_submitted": false}
+Running: D:\anaconda\python.exe scripts/local_section_check.py 6 blueprint/ch06/validation/section645 --reuse-shared blueprint/ch01/validation/CLOSEOUT21/full
+Section complete with verified batch check reuse: blueprint/ch06/validation/section645
+Running: D:\anaconda\python.exe scripts/local_checkpoint.py 6 6.4.5 blueprint/ch06/validation/section645 正文全部落盘后完成22号勘误双版本、导师总结和章末完整check；通过并push后停止。

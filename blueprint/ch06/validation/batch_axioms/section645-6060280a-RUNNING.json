@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint\\ch06\\validation\\batch_axioms\\section645-6060280a.lean"
+  ],
+  "input_sha256": "6eb5dda932eded69c4c0b64212bed9c8e076f1aa12bd7d5d93f7367fbcfdab58",
+  "parent_pid": 10916,
+  "parent_create_time": 1792227564.23425,
+  "compiler_pid": 23568,
+  "compiler_create_time": 1792227565.3445663,
+  "started_at": "2026-10-17T16:59:25.351389",
+  "status": "completed",
+  "exit_code": 1,
+  "completed_at": "2026-10-17T17:00:25.498440"
+}

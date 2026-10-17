@@ -5909,5 +5909,193 @@
     "review_status": "DRAFT",
     "repair_log": [],
     "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.4.5-KernelEvolution",
+    "kind": "definition",
+    "label": null,
+    "section": "6.4.5",
+    "printed_page": "257",
+    "pdf_page": "278",
+    "statement_latex": "Given a collection of phase space points distributed according to the density $\\rho_0(q,p)$, its evolution under Langevin dynamics after a time $t$ will be described by\n\\[\\rho(q,p,t)=e^{t\\mathcal L_{LD}^*}\\rho_0(q,p).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.kernelEvolution",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实Markov kernel应用初始measure的compProd边缘，形式exp解释为实际演化，非无资格幂级数。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.4.5-KernelAverage",
+    "kind": "definition",
+    "label": null,
+    "section": "6.4.5",
+    "printed_page": "258",
+    "pdf_page": "279",
+    "statement_latex": "The average of a function $\\varphi$ with respect to the distribution at time $t$ is equivalent to the average of the forward propagation of $\\varphi$ with respect to the initial distribution.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.kernelAverage",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实核积分的backward检验函数传播，可积资格在Duality定理明确。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.4.5-DensityEvolutionMeaning",
+    "kind": "definition",
+    "label": null,
+    "section": "6.4.5",
+    "printed_page": "257–258",
+    "pdf_page": "278–279",
+    "statement_latex": "More precisely this relation should be interpreted in the variational sense, so that for any suitable test function $\\varphi$, e.g. $\\varphi\\in C^\\infty$,\n\\[\\int_D\\varphi\\rho(q,p,t)d\\omega=\\int_D\\varphi e^{t\\mathcal L_{LD}^*}\\rho_0(q,p)d\\omega.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.densityEvolutionMeaning",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实初始概率density、全部时刻density及实际kernel measure等式的语义定义；未假设每个任意SDE必存在平滑density，未计存在性已证。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.4.5-KernelDuality",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.5",
+    "printed_page": "258",
+    "pdf_page": "279",
+    "statement_latex": "Due to the properties of the inner product, we may interpret the right hand side as\n\\[\\int_D(e^{t\\mathcal L_{LD}}\\varphi)(q,p)\\rho_0(q,p)d\\omega.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.kernelDuality",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]全部实际可测可积检验、真实Markov kernel及初始概率measure；非仅Brownian谱模型配对。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.4.5-SmoothTestL2Printed",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.5",
+    "printed_page": "258",
+    "pdf_page": "279",
+    "statement_latex": "Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\\varphi$ in $C^\\infty$ we have\n\\[\\int_D\\varphi\\rho(q,p,t)d\\omega=\\operatorname{Av}_\\beta(\\varphi)+\\alpha e^{t\\lambda_1}\\int_D\\varphi\\rho^{(1)}d\\omega.\\]\nThe latter integral is bounded since both $\\varphi$ and $\\rho^{(1)}$ are in $L^2$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "环面×无界动量上C∞不自动L²；常数1已不在flat L²，指数增长函数也可能不在Gibbs L²。需适当weighted空间/增长资格。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.smoothTestL2Printed",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.4.5-ComplexInitialDensity",
+    "kind": "definition",
+    "label": null,
+    "section": "6.4.5",
+    "printed_page": "258",
+    "pdf_page": "279",
+    "statement_latex": "Assume that $\\lambda_1,\\rho^{(1)}$ is some eigenvalue, eigenfunction pair with $\\operatorname{Re}(\\lambda_1)<0$ and take the initial distribution to be\n\\[\\rho_0=\\rho_{eq}+\\alpha\\rho^{(1)},\\qquad\\alpha\\in\\mathbb R.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.complexInitialDensity",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]明确真实初始概率的实性/非负/积分1，原单复模式不自动是概率；保留复Lp空间与复本征值，未缩成实负λ玩具。复共轭成对构造可另建，但原单模式需这些资格。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.4.5-LangevinForwardSemigroupMeaning",
+    "kind": "definition",
+    "label": null,
+    "section": "6.4.5",
+    "printed_page": "257–258",
+    "pdf_page": "278–279",
+    "statement_latex": "\\[\\rho(q,p,t)=e^{t\\mathcal L_{LD}^*}\\rho_0(q,p).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.langevinForwardSemigroupMeaning",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]对所有真实非负实初始density的actual kernel/complex Lp²传播关联定义；不凭空把任意线性S命名Langevin，原forward identification仍未证。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  {
+    "source_id": "MD-6.4.5-ComplexEigenmodeDecay",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.5",
+    "printed_page": "258",
+    "pdf_page": "279",
+    "statement_latex": "\\[\\rho(q,p,t)=e^{t\\mathcal L_{LD}^*}\\rho_0\n=e^{t\\mathcal L_{LD}^*}\\rho_{eq}+\\alpha e^{t\\mathcal L_{LD}^*}\\rho^{(1)}\n=\\rho_{eq}+\\alpha e^{t\\lambda_1}\\rho^{(1)}.\\]\nSince $\\operatorname{Re}(\\lambda_1)<0$, this converges exponentially to the desired average.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.complexEigenmodeDecay",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]完整复λ/Reλ<0及原α∈ℝ，真实flat Lp² initial probability资格；实际C0 semigroup/0处generator图关系、stationary/eigenvector为前提，完整全时exp模式及所有L²检验CS衰减为结论，没有把全时模式演化作假设。S需识别为实际Langevin前向传播，下一条登记，不冒充已识别。",
+      "[EXTRA]S与原实际周期Langevin核在全部非负可积初始密度上的关联及rhoeq与真实归一Gibbs density的AE识别均显式编码；模式演化、平均恒等、CS界及极限全部为结论，仍未计forward semigroup的存在/识别已证。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "DRAFT",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
   }
 ]

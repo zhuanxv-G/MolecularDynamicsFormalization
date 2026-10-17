@@ -242,3 +242,11 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.forwardKernelGibbs
 #print axioms MD.Ch06.weightedFunctionNorm
 #print axioms MD.Ch06.weightedVectorNorm
+#print axioms MD.Ch06.kernelEvolution
+#print axioms MD.Ch06.kernelAverage
+#print axioms MD.Ch06.densityEvolutionMeaning
+#print axioms MD.Ch06.kernelDuality
+#print axioms MD.Ch06.smoothTestL2Printed
+#print axioms MD.Ch06.complexInitialDensity
+#print axioms MD.Ch06.langevinForwardSemigroupMeaning
+#print axioms MD.Ch06.complexEigenmodeDecay

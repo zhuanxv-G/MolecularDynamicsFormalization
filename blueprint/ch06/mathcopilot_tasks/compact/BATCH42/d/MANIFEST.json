@@ -1,0 +1,68 @@
+{
+  "batch": "BATCH42",
+  "subtask": "BATCH42d",
+  "source_ids": [
+    "MD-6.4.5-KernelDuality"
+  ],
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 279,
+      "printed_page": 258
+    }
+  ],
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "source_json_sha256": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+  "lean_sha256": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
+    "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
+    "BATCH42d_PAGES.pdf": "a1452496650f35c505ba46020a634c9977f4744ee37ba9d3941d7c06e8cbc54c",
+    "signature_sha256": "09fb011750b00f749aaf08138215a2dbe5490f09b4b0898534b1cdfeb04f2e06"
+  },
+  "signature_sha256": "09fb011750b00f749aaf08138215a2dbe5490f09b4b0898534b1cdfeb04f2e06",
+  "definition_excerpts": [
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "kernelAverage",
+      "code_sha256": "040338bc2ba5855cfe804d143e04799a1071818368f8b71e808316c671bd9182"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "namespace": "MolecularDynamics.Chapter06Review",
+      "name": "kernelEvolution",
+      "code_sha256": "982e3128e0ed8753bc95ef260730eddc1668ee26c1d7bded9aad476e1b9d74e2"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "kernelAverage",
+      "code_sha256": "040338bc2ba5855cfe804d143e04799a1071818368f8b71e808316c671bd9182"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "namespace": "MD.Ch06",
+      "name": "kernelEvolution",
+      "code_sha256": "982e3128e0ed8753bc95ef260730eddc1668ee26c1d7bded9aad476e1b9d74e2"
+    }
+  ],
+  "paste_plus_pdf_bytes": 85265,
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4906,
+      "sha256": "86f84d2d2e38b6d6be7ff9f537ff85db901ed2ccb07097eda3925d134445442e"
+    },
+    "BATCH42d_PAGES.pdf": {
+      "bytes": 80359,
+      "sha256": "a1452496650f35c505ba46020a634c9977f4744ee37ba9d3941d7c06e8cbc54c"
+    }
+  },
+  "validation": {
+    "verbatim_source_signature_definitions": "PASS",
+    "pdf_rendered_pixel_equality": "PASS",
+    "pdf_rendered_pixel_equality_dpi": 72,
+    "website_acceptance": "NOT_TESTED"
+  },
+  "total_task_bytes": 87823
+}

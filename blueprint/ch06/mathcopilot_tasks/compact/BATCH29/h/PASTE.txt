@@ -1,8 +1,8 @@
 以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
 本子任务batch=BATCH29h；实际写入 /workspace/.mathcopilot/reviews/ch06/BATCH29h_review.json。写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：
 {
-  "Blueprint/Ch06.lean": "b060f95a2e5c2aadfed28bfb0c7de0f5f5d05bd58f0cf1a0557f279778dce183",
-  "blueprint/ch06/ch06_source.json": "c192efc1a3ac7459ee90e708d3ca2d4c9787949b3d65505d0f66f3d68e9c8bdf",
+  "Blueprint/Ch06.lean": "50bb6e12ec01c016acef76adf2919de866a8da4769262395627126250b21cf6b",
+  "blueprint/ch06/ch06_source.json": "36061a82a0b1a5038bbf1200dc78f787bcd9055bf53526d866fe91a726dfbf1f",
   "BATCH29h_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
   "signature_sha256": "494a3a2b6e1c7b372665a052cfeb7c89cf2fd0e22ff9d215f1d04dc9da8d3077"
 }
@@ -88,13 +88,13 @@ def invariantKernel {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
   ∀ t, kernelEvolution K μ t = μ
 ```
 
-### MolecularDynamics.Chapter06Review.kernelAverage (MolecularDynamics/Chapter06/ReviewDefinitions.lean:162)
+### MD.Ch06.kernelAverage (Blueprint/Ch06.lean:2532)
 ```lean
 def kernelAverage {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
     (f : D → ℝ) (t : ℝ≥0) (x : D) : ℝ := ∫ z, f z ∂K t x
 ```
 
-### MolecularDynamics.Chapter06Review.kernelEvolution (MolecularDynamics/Chapter06/ReviewDefinitions.lean:160)
+### MD.Ch06.kernelEvolution (Blueprint/Ch06.lean:2527)
 ```lean
 def kernelEvolution {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
     (μ : Measure D) (t : ℝ≥0) : Measure D := K t ∘ₘ μ

@@ -1,0 +1,11 @@
+[
+  {
+    "route": 1,
+    "exit_code": 0,
+    "proof": "intro D _ K μ t f hμ hK hf hi\n  letI : IsProbabilityMeasure μ := hμ\n  letI : IsMarkovKernel (K t) := hK\n  unfold MolecularDynamics.Chapter06Review.kernelEvolution MolecularDynamics.Chapter06Review.kernelAverage at *\n  rw [Measure.comp_eq_comp_const_apply]\n  apply Kernel.integral_comp\n  simpa only [← Measure.comp_eq_comp_const_apply] using hi",
+    "source": "blueprint/ch06/validation/short_search/route-f83b42aa25f10fa89505.lean",
+    "log": "blueprint/ch06/validation/short_search/route-f83b42aa25f10fa89505.log",
+    "source_sha256": "f50349675a8aa325715356542fb77a69561ef743501c2621bad61d78bf72daff",
+    "log_sha256": "1651db883ec68a68ddaf3ebca2722ad6fea90f726b389794197636f0a9c4cf8c"
+  }
+]

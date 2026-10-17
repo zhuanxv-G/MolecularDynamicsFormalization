@@ -122,13 +122,12 @@
     "CH06-120": "MD-6.4.4-WeightedVectorNorm",
     "CH06-121": "MD-6.4.4-Proposition64Relative",
     "CH06-122": "MD-6.4.4-FredholmAlternative",
-    "CH06-123": "MD-6.4.4-ForwardKernelGibbs"
+    "CH06-123": "MD-6.4.4-ForwardKernelGibbs",
+    "CH06-124": "MD-6.4.5-LangevinForwardSemigroupMeaning",
+    "CH06-125": "MD-6.4.5-KernelDuality",
+    "CH06-126": "MD-6.4.5-ComplexEigenmodeDecay"
   },
-  "pending": [
-    "CH06-124",
-    "CH06-125",
-    "CH06-126"
-  ],
+  "pending": [],
   "excluded": {},
   "all_source_ids_by_old_id": {
     "CH06-001": [
@@ -625,6 +624,22 @@
     "CH06-123": [
       "MD-6.4.4-BackwardKernelConstants",
       "MD-6.4.4-ForwardKernelGibbs"
+    ],
+    "CH06-124": [
+      "MD-6.4.5-KernelEvolution",
+      "MD-6.4.5-KernelAverage",
+      "MD-6.4.5-DensityEvolutionMeaning",
+      "MD-6.4.5-LangevinForwardSemigroupMeaning"
+    ],
+    "CH06-125": [
+      "MD-6.4.5-KernelAverage",
+      "MD-6.4.5-KernelDuality"
+    ],
+    "CH06-126": [
+      "MD-6.4.5-SmoothTestL2Printed",
+      "MD-6.4.5-ComplexInitialDensity",
+      "MD-6.4.5-LangevinForwardSemigroupMeaning",
+      "MD-6.4.5-ComplexEigenmodeDecay"
     ]
   }
 }

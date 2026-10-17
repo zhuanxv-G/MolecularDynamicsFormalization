@@ -629,3 +629,20 @@
 - 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
 - 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
 - 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。
+
+## 37. MD-6.4.5-SmoothTestL2Printed
+
+- source_id：MD-6.4.5-SmoothTestL2Printed；印刷页 258 / PDF页 279。
+- 原文引文（逐字）：
+
+> Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\varphi$ in $C^\infty$ we have
+> \[\int_D\varphi\rho(q,p,t)d\omega=\operatorname{Av}_\beta(\varphi)+\alpha e^{t\lambda_1}\int_D\varphi\rho^{(1)}d\omega.\]
+> The latter integral is bounded since both $\varphi$ and $\rho^{(1)}$ are in $L^2$.
+
+- 问题所在：环面×无界动量上C∞不自动L²；常数1已不在flat L²，指数增长函数也可能不在Gibbs L²。需适当weighted空间/增长资格。
+- 反例或理由：在正维无界动量空间上，f≡1光滑却不属于flat L²；一般光滑也不保证Gibbs L²。
+- 原文版 Lean 名称及状态：`MD.Ch06.smoothTestL2Printed`：未证；原书疑误不证。原文文字和完整展示式见上；启发式极限只登记其意义，不声称一般热浴已满足。
+- 修正版 Lean 名称、改动内容、证明状态：`MD.Ch06.smoothTestL2Printed_corrected`：尚未落盘，不计完成；明确要求检验函数属于所选L²空间；给出正确检验函数域定义，不冒称所有C∞函数可积。
+- 待人工核查点：核对原页上下文是否补足所缺条件，以及上述修法是否符合作者意图；特别区分实际过程、形式微分算子和概率密度。
+- 导师选项：采用本条明确修正版 / 指定另一组充分条件或测度坐标 / 只保留原文疑误；默认并列展示上述修正版，等待导师确认。
+- 网站复审结论：未提交，全部待审；不把本地检查计作网站通过。

@@ -1,14 +1,14 @@
 {
   "rule": "最多3种路线；失败分类只用缺大型理论/原书疑误不证/时间盒止；definitions do not create theorem obligations",
   "counts": {
-    "定义": 89,
-    "已证": 83,
-    "未证": 70
+    "定义": 94,
+    "已证": 84,
+    "未证": 72
   },
   "unproved_reasons": {
-    "原书疑误不证": 17,
+    "原书疑误不证": 18,
     "时间盒止": 17,
-    "缺大型理论": 36
+    "缺大型理论": 37
   },
   "items": {
     "MD-6.1.1-Microcanonical": {
@@ -4669,6 +4669,160 @@
             "Quot.sound"
           ],
           "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.5-KernelEvolution": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.kernelEvolution": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.5-KernelAverage": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.kernelAverage": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.5-DensityEvolutionMeaning": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.densityEvolutionMeaning": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.5-KernelDuality": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.kernelDuality": {
+          "kind": "theorem",
+          "status": "已证",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 1,
+          "route_evidence": "blueprint/ch06/validation/short_search/KernelDuality.json"
+        }
+      }
+    },
+    "MD-6.4.5-SmoothTestL2Printed": {
+      "local_verdict": "NEEDS_HUMAN",
+      "declarations": {
+        "MD.Ch06.smoothTestL2Printed": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "原书疑误不证",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "不证明错误自动可积断言；下面完整衰减保留真实L²检验资格。",
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.5-ComplexInitialDensity": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.complexInitialDensity": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.5-LangevinForwardSemigroupMeaning": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.langevinForwardSemigroupMeaning": {
+          "kind": "def",
+          "status": "定义",
+          "classification": null,
+          "direct_placeholder": false,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": null,
+          "compiler_route_count": 0,
+          "route_evidence": null
+        }
+      }
+    },
+    "MD-6.4.5-ComplexEigenmodeDecay": {
+      "local_verdict": "PASS",
+      "declarations": {
+        "MD.Ch06.complexEigenmodeDecay": {
+          "kind": "theorem",
+          "status": "未证",
+          "classification": "缺大型理论",
+          "direct_placeholder": true,
+          "axioms": [
+            "propext",
+            "sorryAx",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "reason": "缺复C0生成元本征模式的现成完整桥接及实际Langevin forward semigroup识别；不建设大型谱/半群理论。",
           "compiler_route_count": 0,
           "route_evidence": null
         }
