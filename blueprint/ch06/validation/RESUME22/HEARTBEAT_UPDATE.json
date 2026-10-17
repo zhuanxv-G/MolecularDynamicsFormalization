@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "lean-2",
+  "kind": "heartbeat",
+  "name": "lean",
+  "prompt": "按用户已授权的第6章本地流程继续（22号）。\n先核对AGENTS、CURRENT_STATE顶部、WORK_LOG最新及blueprint/ch06/PROGRESS.md，从最近已验证检查点接续；先 git status 并复用已通过证据。\n第1–5章不动，不进入第7章。\n\n这是原lean监测的第22号范围更新；全文见C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\blueprint\\ch06\\validation\\RESUME22\\USER_INSTRUCTION.zh-CN.md。第6章从148条已验证检查点继续至正文印刷p.258/PDF279，排除Exercises和参考文献。仅生成MathCopilot包，不提交不等待网站；每条最多3条证明路线，缺大型理论/原书疑误不证/时间盒止在proof_attempts.json记录。每批单文件编译与逐声明公理，每节一次完整check。原文版、修正版与能做的反例及勘误、导师总结齐全后提交push。\n\n每次唤醒先读上述入口及WORK_LOG最新、PROGRESS，再用wait_threads(timeoutMs:0)核对原执行目标。只做状态核对与授权额度恢复接续，不写工程共享文件、不运行Lean/构建/Git、不操作或轮询网站。执行目标沿用原resume_state.json记录，不改变target或模型设置。运行或已有排队消息时保持安静，不发送不打断。只有最新未完成轮明确usage limit/quota/rate limit或可信检查点明确记此次额度中断时，才用get_usage_limits检查；额度可用、任务未完成且原执行目标仍停止时，再核对状态，然后发送前3行完整接续消息。非额度故障首次通知，不擅自重启；notLoaded不能认定额度中断。禁止购买、重置、切换账号或模型。\n\n沿用C:\\Users\\ustc\\.codex\\automations\\lean\\resume_state.json既存去重路径和记录，不新建清空：每个失败轮最多成功发送一次，两次自动发送至少相隔30分钟；同章同检查点连续3次无进展中断则停发并通知。发送含糊时先核对消息/新一轮，不盲目重发；发送后一次compact snapshot确认运行，未端到端实测不声称恢复成功。保持ACTIVE、原15分钟和原target。只在 meaningful change、确认恢复、完成、新失败或必须用户行动时通知；其余保持安静。\n\n停止条件：blueprint/ch06/PROGRESS.md显示第6章正文全部条目已落盘、章末完整check通过。此后停止发送、等待用户新指令，绝不进入第7章；ACTIVE配置保留。",
+  "status": "ACTIVE",
+  "rrule": "FREQ=MINUTELY;INTERVAL=15",
+  "target_thread_id": "01a10bc0-bc8d-7043-8df9-21a6b0bde09a",
+  "created_at": 1792222488359,
+  "updated_at": 1792222488359,
+  "dedup_rules_preserved": true,
+  "resume_state_file_available": false,
+  "automatic_resume_end_to_end": "NOT_TESTED",
+  "resume_messages_sent_this_turn": 0,
+  "execution_note": "原lean-2在应用缺失，按原name/target/频率恢复；配置已实读，原去重路径未修改；自动恢复未实测。"
+}

@@ -12,7 +12,7 @@ def pipeline(ch):
     template=(ROOT/'scripts/ch02_pipeline.py').read_text(encoding='utf-8')
     text=template.replace('ch02',f'ch{ch:02}').replace('Ch02',f'Ch{ch:02}').replace('CH02',f'CH{ch:02}')
     text=text.replace('Chapter 2',f'Chapter {ch}').replace('第2章',f'第{ch}章')
-    text=text.replace('第1章冻结暂停', '第1章按授权网站修复例外处理，正式库冻结')
+    text=text.replace('第1章冻结暂停', '第1–5章冻结，正式库冻结' if ch==6 else '第1章按授权网站修复例外处理，正式库冻结')
     text=text.replace('160',str(len(__import__(f'ch{ch:02}_data').OLD_ROWS)))
     lo,hi,p0,p1=RANGES[ch];off=p0-lo
     text=text.replace('75<=p<=116',f'{p0}<=p<={p1}').replace('p-22',f'p-{off}')
@@ -82,7 +82,7 @@ def pipeline(ch):
         text=text.replace("size=(folder/'PASTE.txt').stat().st_size+pdfout.stat().st_size", """compact_inputs={f'Blueprint/Ch06.lean':sha(ROOT/'Blueprint/Ch06.lean'),
                 'blueprint/ch06/ch06_source.json':sha(BASE/'ch06_source.json'),
                 task+'_PAGES.pdf':sha(pdfout),'signature_sha256':ds[sid]['signature_sha256']}
-            prefix=('仅以本PASTE及附件为准，忽略网站/workspace旧版本。Mathlib标准定义按固定v4.34.0的标准数学含义采信。'
+            prefix=('以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。'
                 +f'\\n本子任务batch={task}；实际写入 /workspace/.mathcopilot/reviews/ch06/{task}_review.json。'
                 +'写入后用json.loads自检，最后只回复实际路径和统计。input_sha256必须逐项原样回显：\\n'
                 +json.dumps(compact_inputs,ensure_ascii=False,indent=2)+'\\n\\n')
@@ -197,7 +197,12 @@ def landing(ch,p,batch,step):
     checkpoint=old.split('|')[-3].strip()
     s=s.replace(old,row+checkpoint+' | 未完成 |');table.write_text(s,encoding='utf-8')
     state=ROOT/'docs/handoff/CURRENT_STATE.zh-CN.md';lines=state.read_text(encoding='utf-8').splitlines()
-    lines[3]=f'下一步：第{ch}章{step}；已落盘{len(p.RECORDS)}条，批{batch}；从blueprint/ch{ch:02}/PROGRESS.md读取缺项和现有编译结果继续。'
+    next_line=f'下一步：第{ch}章{step}；已落盘{len(p.RECORDS)}条，批{batch}；从blueprint/ch{ch:02}/PROGRESS.md读取缺项和现有编译结果继续。'
+    if ch==6 and '## 22号运行检查点' in lines:
+        at=lines.index('## 22号运行检查点')
+        index=next(i for i in range(at+1,len(lines)) if lines[i].startswith('下一步：'))
+        lines[index]=next_line
+    else:lines[3]=next_line
     for i,x in enumerate(lines[:20]):
         if x.startswith('跨章唯一总进度：'):lines[i]=f'跨章唯一总进度：docs/handoff/LOCAL_PIPELINE.md；当前章逐条进度：blueprint/ch{ch:02}/PROGRESS.md。'
     state.write_text('\n'.join(lines)+'\n',encoding='utf-8')

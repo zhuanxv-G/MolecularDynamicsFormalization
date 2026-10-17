@@ -34,9 +34,13 @@ if finish:
         '本章全部本地流程完成；验证见DELIVERY_VALIDATION.json。网站待审；下一章按LOCAL_PIPELINE自动接续。')
     progress.write_text(content,encoding='utf-8')
 state=ROOT/'docs/handoff/CURRENT_STATE.zh-CN.md';lines=state.read_text(encoding='utf-8').splitlines()
-lines[3]='下一步：'+next_step
+checkpoint_at=lines.index('## 22号运行检查点') if ch==6 and '## 22号运行检查点' in lines else None
+if checkpoint_at is not None:
+    next_at=next(i for i in range(checkpoint_at+1,len(lines)) if lines[i].startswith('下一步：'))
+    lines[next_at]='下一步：'+next_step
+else:lines[3]='下一步：'+next_step
 if finish:lines.insert(8,f'第{ch}章全部本地流程完成：{len(p.RECORDS)}条、旧映射全覆盖、七段文档、compact预算/哈希/裁页、全部节完整检查已验；网站和导师审校待完成。')
-lines.insert(8,f'§{section}检查点：{len(p.RECORDS)}条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。')
+lines.insert(checkpoint_at+2 if checkpoint_at is not None else 8,f'§{section}检查点：{len(p.RECORDS)}条已编译并逐条#print axioms；完整check及当前章补充检查通过；网站待审。')
 state.write_text('\n'.join(lines)+'\n',encoding='utf-8')
 for relative in ['AGENTS.md','docs/handoff/RESUME_PROMPT.zh-CN.md']:
     path=ROOT/relative;text=path.read_text(encoding='utf-8')

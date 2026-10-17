@@ -3,16 +3,15 @@
   "id": "lean-2",
   "kind": "heartbeat",
   "name": "lean",
-  "prompt": "监测用户2026-10-16第21号指令：唯一任务第1章最终收口，完整全文已置工程AGENTS.md及docs/handoff/CURRENT_STATE.zh-CN.md顶部，保存于blueprint/ch01/validation/CLOSEOUT21/USER_INSTRUCTION.zh-CN.md。第6章当前批次到最近已验证检查点提交后暂停；第2–5章不动，不进入第7章；正式库MolecularDynamics/字节冻结、0 sorry。\n\n每次唤醒先读取C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization下AGENTS.md、CURRENT_STATE顶部、WORK_LOG最新条目及blueprint/ch01/PROGRESS.md，执行聊天以原去重记录resume_state.json为准。只读检查状态及授权的额度恢复接续，不写共享文件、不运行Lean/构建/Git、不操作或轮询MathCopilot。登记EAUDIT04–23的93条返回（62 PASS/10 FAIL/21 NEEDS_HUMAN），分开原文忠实/修正版/反例结论；严格按suggested_fix修10项，仅blueprint数学改动，逐条单文件编译及#print axioms，最后一次完整check；保留原FAIL与suggested_fix及逐项diff，标本地核验通过未再送网站，不生成新EAUDIT包。补勘误与导师总结，提交push后CURRENT_STATE写“第1章最终收口完成，等待用户新指令”并停止，绝不自动回第6章。\n\n运行或已有排队消息时安静，不发送不打断。任务完成、等待用户、审批待处理、用户暂停或取消时不自动继续。含糊状态只读read_thread核对；notLoaded不能认定额度中断。只有最新未完成轮明确usage limit/quota/rate limit或可信检查点记此次额度中断，才检查get_usage_limits；额度不可用等待，禁止购买、重置、切换账号或模型。非额度连接故障首次通知，不擅自重启。额度已恢复、任务未完成且原执行聊天仍停止时，发送前再核对一次状态，向原执行聊天发送：按第21号指令从现有检查点继续第1章最终收口，先读AGENTS/CURRENT_STATE顶部、WORK_LOG和PROGRESS；复用已验收据，按网站意见修10项、不再送网站，完成提交push后停止不回第6章。保留现有模型设置。\n\n沿用C:\\Users\\ustc\\.codex\\automations\\lean\\resume_state.json原去重记录（若迁移则沿用既存路径，不新建清空记录）：目标、失败轮ID、发送时间和结果；每失败轮最多成功发送一次，两次自动发送至少相隔30分钟。同章同检查点连续3次无进展中断则停发并通知。含糊发送先核对消息/新一轮，禁止盲目重发。发送后一次compact snapshot确认运行；未端到端实测不声称恢复成功。保持ACTIVE、原15分钟频率、原target。状态无变化或不可行动保持安静，只在确认恢复、完成、新失败或必须用户介入时通知。CURRENT_STATE出现第1章最终收口完成时停止发送，等待用户新指令。",
+  "prompt": "按用户已授权的第6章本地流程继续（22号）。\n先核对AGENTS、CURRENT_STATE顶部、WORK_LOG最新及blueprint/ch06/PROGRESS.md，从最近已验证检查点接续；先 git status 并复用已通过证据。\n第1–5章不动，不进入第7章。\n\n这是原lean监测的第22号范围更新；全文见C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\blueprint\\ch06\\validation\\RESUME22\\USER_INSTRUCTION.zh-CN.md。第6章从148条已验证检查点继续至正文印刷p.258/PDF279，排除Exercises和参考文献。仅生成MathCopilot包，不提交不等待网站；每条最多3条证明路线，缺大型理论/原书疑误不证/时间盒止在proof_attempts.json记录。每批单文件编译与逐声明公理，每节一次完整check。原文版、修正版与能做的反例及勘误、导师总结齐全后提交push。\n\n每次唤醒先读上述入口及WORK_LOG最新、PROGRESS，再用wait_threads(timeoutMs:0)核对原执行目标。只做状态核对与授权额度恢复接续，不写工程共享文件、不运行Lean/构建/Git、不操作或轮询网站。执行目标沿用原resume_state.json记录，不改变target或模型设置。运行或已有排队消息时保持安静，不发送不打断。只有最新未完成轮明确usage limit/quota/rate limit或可信检查点明确记此次额度中断时，才用get_usage_limits检查；额度可用、任务未完成且原执行目标仍停止时，再核对状态，然后发送前3行完整接续消息。非额度故障首次通知，不擅自重启；notLoaded不能认定额度中断。禁止购买、重置、切换账号或模型。\n\n沿用C:\\Users\\ustc\\.codex\\automations\\lean\\resume_state.json既存去重路径和记录，不新建清空：每个失败轮最多成功发送一次，两次自动发送至少相隔30分钟；同章同检查点连续3次无进展中断则停发并通知。发送含糊时先核对消息/新一轮，不盲目重发；发送后一次compact snapshot确认运行，未端到端实测不声称恢复成功。保持ACTIVE、原15分钟和原target。只在 meaningful change、确认恢复、完成、新失败或必须用户行动时通知；其余保持安静。\n\n停止条件：blueprint/ch06/PROGRESS.md显示第6章正文全部条目已落盘、章末完整check通过。此后停止发送、等待用户新指令，绝不进入第7章；ACTIVE配置保留。",
   "status": "ACTIVE",
   "rrule": "FREQ=MINUTELY;INTERVAL=15",
   "target_thread_id": "01a10bc0-bc8d-7043-8df9-21a6b0bde09a",
-  "created_at": 1792160737588,
-  "updated_at": 1792160737588,
-  "dedup_preservation": "original record not overwritten; rules retained; existing local resume_state unavailable after account switch",
-  "automatic_resume_end_to_end": "NOT_TESTED",
+  "created_at": 1792222488359,
+  "updated_at": 1792222488359,
   "dedup_rules_preserved": true,
   "resume_state_file_available": false,
+  "automatic_resume_end_to_end": "NOT_TESTED",
   "resume_messages_sent_this_turn": 0,
-  "execution_note": "配置已读回；原去重文件当前账户不可见，未清空或重置；自动恢复未端到端实测。"
+  "execution_note": "原lean-2在应用缺失，按原name/target/频率恢复；配置已实读，原去重路径未修改；自动恢复未实测。"
 }

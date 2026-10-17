@@ -1,0 +1,63 @@
+{
+  "authorization": "用户2026-10-17第22号全文",
+  "head": "621e6a17d59f25d9541e8e76073c0c6724c65a95",
+  "initial_status": " M AGENTS.md\n M blueprint/ch02/validation/EAUDIT01/finalize-run.log\n M blueprint/ch03/validation/section37-commit.log\n M blueprint/ch04/validation/section442-commit-retry.log\n M blueprint/ch05/validation/section56-commit.log\n M docs/handoff/CURRENT_STATE.zh-CN.md\n M scripts/local_blueprint.py\n M scripts/local_checkpoint.py\n?? blueprint/ch01/closeout/__pycache__/\n?? blueprint/ch02/validation/repair_20261014/\n?? blueprint/ch03/validation/EAUDIT01-full-RUNNING.json\n?? blueprint/ch03/validation/repair_20261014/\n?? blueprint/ch04/validation/repair_20261014/\n?? blueprint/ch05/validation/repair_20261014/\n?? blueprint/ch06/validation/RESUME22/\n?? docs/review/check-full06/\n?? output/\n?? scripts/__pycache__/\n?? scripts/ch06_section638.py\n?? scripts/ch06_section641.py\n?? scripts/ch06_section641b.py\n?? scripts/ch06_section642.py\n?? scripts/ch06_section643.py\n?? scripts/ch06_section643b.py\n?? scripts/ch06_section644.py\n?? scripts/ch06_section644b.py\n?? scripts/ch06_section644c.py\n?? scripts/ch06_section644d.py\n?? scripts/ch06_section644e.py\n?? scripts/ch06_section644f.py\n?? scripts/ch06_section645.py\n?? scripts/export_ch01_review_pdf.py\n?? scripts/resume_ch06_22.py\n?? tmp/\n",
+  "accepted_ch01_changes": [
+    {
+      "path": "Blueprint/Ch01.lean",
+      "before": "77725e0c5b56c3b1d9b26e2130a2066e83e3d37ef562e1fc1dfcb6c4d0bb66ae",
+      "accepted": "68dfa6b8204a51b443eee6127ebc2856e525299ad80fb0480dc45fabb88d1ef4"
+    },
+    {
+      "path": "blueprint/ch01/CheckAxioms.lean",
+      "before": "3a9c8fd8b128b76e86ab76ed48aa412d9f3ef8789eb5e46ff405d82289c72ad7",
+      "accepted": "94e6baaf7cb1ef7716af16e6216273941a5b821e0d25cd2a77ff24ea34e44979"
+    },
+    {
+      "path": "blueprint/ch01/PROGRESS.md",
+      "before": "ed4704d92461bd7672743c9eb0a4f1944744d412ef51090f53b4172e9ff6adf0",
+      "accepted": "00a288dc75b4bd502c94ae1a685b79a70ad93e8f03789630dc58cfb5b3034507"
+    },
+    {
+      "path": "blueprint/ch01/ch01_source.json",
+      "before": "03866dd1a256552960f568b8c452d900bf7912518cd812b3ac10fb60f97ae47f",
+      "accepted": "c2236b43528a1eee9f9ab49175dc9a0468056af3e18f831c97e8b26258e81c6e"
+    },
+    {
+      "path": "blueprint/ch01/local_audit.json",
+      "before": "4015622de59cf748574891ce1413127c541d0f6854f3719a4c120bc080b1b03f",
+      "accepted": "7c002d4cb5d535cc2130dfc29ce321e4de8390d61a448ea894e02cf4c2378d10"
+    },
+    {
+      "path": "docs/review/CH01_BLUEPRINT.zh-CN.md",
+      "before": "2739f091f3bfdfca7e49d8181ebdd0883482f25cb978cc4f85e48119d5759142",
+      "accepted": "d99c05ec3e9a4309ff40cc4777e072bfc3fa748f1adb391bb93685eb53039cef"
+    },
+    {
+      "path": "blueprint/ch01/website_audit.json",
+      "before": "237c12aeeeea2067f0c4c351554174fa43260ab449f2f2c98d1221ae9c41431f",
+      "accepted": "1e1ba3ef62c79454ab6509b63973ffa72edfd2f0c2eb511fdfd006f695f2eb50"
+    },
+    {
+      "path": "blueprint/ch01/WEBSITE_SUMMARY.json",
+      "before": "ba0db3aba5d8d969e91c41a7a58f8aa1d83b2c9b8c212c4b98605403a975e7a8",
+      "accepted": "26a0f3aeaa92d3d75d2824ecd9a3cdac9100ae6a29a47d5ab78bf8346416bbc9"
+    },
+    {
+      "path": "docs/review/CH01_ERRATA.zh-CN.md",
+      "before": "532545d28e43dc410a8207f46108eece13f68d5edd2c801b173234e268992466",
+      "accepted": "6140942329d137d5474eac1851776e1f0ea590a93eef16aa82da19106dcc5ab7"
+    },
+    {
+      "path": "docs/review/CH01_SUMMARY_FOR_MENTOR.zh-CN.md",
+      "before": "2af0fcbab24ebfbef7ebd6fe3c00f55a327debe3e12482a4f92a4b4053c259ec",
+      "accepted": "fc67401926ab130014597992614861e4599d149761f2ad207624f255b9864ce6"
+    }
+  ],
+  "chapter1_delivery": "1db7b09d047f10e7739f5f158cbe6a65c66aae863cddbf659d77dd5f3f41ed8c",
+  "reused_ch06_check": "d123552b0d99eb45aa8982c0303aeb3e5e7b811167fe5659e2231ce3b5e8d380",
+  "shared_check": "blueprint/ch01/validation/CLOSEOUT21/full/CHECK_REPORT.json",
+  "shared_check_sha256": "82a2b0f8e3679415bae47d297e4893a0e9ab84b80b1a44a63e9270b3fea5843f",
+  "frozen_files": 12279,
+  "scope": "Chapter6 local only; Chapters1-5 frozen; no Chapter7"
+}

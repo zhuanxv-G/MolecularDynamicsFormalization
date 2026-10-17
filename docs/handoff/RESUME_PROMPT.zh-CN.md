@@ -1,3 +1,13 @@
+# 22号第6章接续
+
+按用户已授权的第6章本地流程继续（22号）。
+先核对AGENTS、CURRENT_STATE顶部、WORK_LOG最新及blueprint/ch06/PROGRESS.md，从最近已验证检查点接续；先 git status 并复用已通过证据。
+第1–5章不动，不进入第7章。
+
+下一步：激活§6.3.8的8条；复用已通过证据，按CONTINUE_NEXT顺序至§6.4.5章末停止。
+
+---
+历史接续提示（冲突处以22号为准）：
 第1章最终收口完成，等待用户新指令
 
 本轮已提交推送且全部本地验收通过。只确认等待状态，不自动回第6章，不生成或提交新网站包；只有用户明确新指令才开始新的数学工作。完整证据见blueprint/ch01/validation/CLOSEOUT21/DELIVERY_VALIDATION.json；导师摘要和勘误清单见docs/review/CH01_SUMMARY_FOR_MENTOR.zh-CN.md及CH01_ERRATA.zh-CN.md。

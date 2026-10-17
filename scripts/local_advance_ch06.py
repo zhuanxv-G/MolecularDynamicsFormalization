@@ -13,6 +13,7 @@ def call(args):
 def generate(label):
     call([PY,'scripts/local_blueprint.py','6','--compile','--batch',label,
           '--step','③–⑤§'+x.section+'逐批验证'])
+    call([PY,'scripts/ch06_batch_axioms.py',label])
 for module in x.modules:
     assert module.startswith('ch06_section') and (ROOT/'scripts'/f'{module}.py').exists()
     old=data.read_text(encoding='utf-8')
@@ -34,6 +35,6 @@ if x.proofs:
     generate('sec'+x.section+'-proofs-'+digest)
 folder='blueprint/ch06/validation/section'+x.section.replace('.','')
 call([PY,'scripts/local_section_check.py','6',folder,'--reuse-shared',
-      'blueprint/ch06/validation/section634-637'])
+      'blueprint/ch01/validation/CLOSEOUT21/full'])
 call([PY,'scripts/local_checkpoint.py','6',x.section,folder,x.next])
 print('SECTION COMMITTED AND PUSHED:',x.section,flush=True)
