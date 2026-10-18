@@ -1,7 +1,7 @@
 {
   "batches": 17,
-  "subtasks": 97,
-  "covered_entries": 97,
+  "subtasks": 99,
+  "covered_entries": 99,
   "checks": [
     {
       "source_id": "MD-7.1-Bias",
@@ -486,6 +486,16 @@
     {
       "source_id": "MD-7.9.3-ZeroFrictionVerlet",
       "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.11.1-TemperatureObservables",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition",
+      "project_constants": 4,
       "missing": []
     }
   ],

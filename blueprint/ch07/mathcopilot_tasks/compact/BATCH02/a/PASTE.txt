@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[285]；印刷页=[264].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "6559223155a454d42857e6266a414e7c29d8118c59be6f66abbe88ff9b335b98",
-  "blueprint/ch07/ch07_source.json": "f1f80be637c90a7dc02f76552bd1ec8b0f31eae282a38febfe9b8635d9d01ecb",
-  "BATCH02a_PAGES.pdf": "067566d5f85977586f529578d055f7e0af7ea2e06f9388713c8999fa03212515"
+  "Blueprint/Ch07.lean": "288b572c1c64796cb7b71a4c5cd0fd425c0f2a50764568abdd1e38e8721ad22a",
+  "blueprint/ch07/ch07_source.json": "f43c30028d91831671c09bbb205405ddd62df63922eec7596ba3e4a78a26f66d",
+  "BATCH02a_PAGES.pdf": "cc5736125852d87952d6b77c86f586cd238d8f033cd207e20f04880ed9fa4856"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH02a_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。

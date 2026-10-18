@@ -296,5 +296,11 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.11.1-TemperatureObservables": {
+    "reason": "需Gaussian二阶矩和多维Gibbs积分分部桥；不新建遍历性理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

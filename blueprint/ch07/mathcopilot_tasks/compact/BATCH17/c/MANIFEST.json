@@ -1,0 +1,66 @@
+{
+  "batch": "BATCH17",
+  "subtask": "BATCH17c",
+  "source_ids": [
+    "MD-7.11.1-VelocityAutocorrelationDefinition"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "288b572c1c64796cb7b71a4c5cd0fd425c0f2a50764568abdd1e38e8721ad22a",
+    "blueprint/ch07/ch07_source.json": "f43c30028d91831671c09bbb205405ddd62df63922eec7596ba3e4a78a26f66d",
+    "BATCH17c_PAGES.pdf": "680421b286b33db278d1b0464da1982f1a52d751e961d7fad08861d2546389b1"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 331,
+      "printed_page": 310
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.velocityAutocorrelation",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1343,
+      "code_sha256": "f61028e62fdefe93b9ea9467bf47a2151935cbf494a62222594b792732ab2aee"
+    },
+    {
+      "full_name": "MD.Ch07.greenKuboDiffusion",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1345,
+      "code_sha256": "1bfa98c3f55b8ccdc0e59a9aa602c622f90055e89cd153cb7624eea33d7785fb"
+    },
+    {
+      "full_name": "MD.Ch07.autocorrelation_rescale",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1347,
+      "code_sha256": "6e910175d526f7ed070aa1b74f7b77ef25af1eddb395cf215e6d7c506e7ab811"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5519,
+      "sha256": "f7c3c8f5f7e9421685c272cc8e12fc63cf0a36a6b6d5649212167afad844fc25"
+    },
+    "BATCH17c_PAGES.pdf": {
+      "bytes": 78895,
+      "sha256": "680421b286b33db278d1b0464da1982f1a52d751e961d7fad08861d2546389b1"
+    }
+  },
+  "total_task_bytes": 86478
+}

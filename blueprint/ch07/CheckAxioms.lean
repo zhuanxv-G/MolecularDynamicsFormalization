@@ -256,3 +256,10 @@ import Blueprint.Ch07
 #print axioms MD.Ch07.limitAccuracy_rescale
 #print axioms MD.Ch07.zeroFrictionOU
 #print axioms MD.Ch07.zeroFrictionBAOAB
+#print axioms MD.Ch07.kineticTemperatureObservable
+#print axioms MD.Ch07.configurationTemperatureObservable
+#print axioms MD.Ch07.kineticTemperature
+#print axioms MD.Ch07.configurationTemperature
+#print axioms MD.Ch07.velocityAutocorrelation
+#print axioms MD.Ch07.greenKuboDiffusion
+#print axioms MD.Ch07.autocorrelation_rescale

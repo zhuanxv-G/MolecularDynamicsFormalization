@@ -1,6 +1,6 @@
 # 第7章 Lean Blueprint 本地审阅材料
 
-当前已整理97条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
+当前已整理99条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
 
 ## 1. MD-7.1-Bias · definition · 印刷p.263 / PDFp.284
 
@@ -4761,4 +4761,110 @@ theorem zeroFrictionBAOAB (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) :
 未证陈述；单文件编译与逐声明公理核对通过。
 未证原因：两个A半步合并及函数组合化简的短桥尚未完成。
 位置：Blueprint/Ch07.lean；MD.Ch07.zeroFrictionOU, MD.Ch07.zeroFrictionBAOAB。
+
+## 1. MD-7.11.1-TemperatureObservables · (7.41)–(7.42) · 印刷p.310 / PDFp.331
+
+### 2. 原文陈述
+
+Indeed, calculating the temperature of the system from an average of kinetic energy by
+\[N_dk_BT=\langle p^TM^{-1}p\rangle,\tag{7.41}\]
+gives a similar problem. Using Proposition 6.1 we may formulate many alternative functions whose averages are proportional to the system temperature. In the following experiments we shall use the configurational temperature
+\[N_dk_BT=\langle q\cdot\nabla U(q)\rangle.\tag{7.42}\]
+Were one able to solve the dynamics exactly, the kinetic and configurational temperatures would of course be equal.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def kineticTemperatureObservable (m : V n) (x : Phase n) : ℝ := ∑ i, x.2 i^2/m i
+def configurationTemperatureObservable (U : V n → ℝ) (q : V n) : ℝ := ∑ i, q i*gradient U q i
+theorem kineticTemperature (m : V n) (U : V n → ℝ) (β : ℝ)
+    (hm : ∀ i, 0 < m i) (hβ : 0 < β) (hprob : IsProbabilityMeasure (positionGibbs U β)) :
+    (∫ x, kineticTemperatureObservable m x ∂productGibbs m U β) = (n : ℝ)/β := by
+  sorry
+theorem configurationTemperature (U : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hU : ContDiff ℝ 1 U)
+    (hw : Integrable (fun q ↦ Real.exp (-β*U q)) volume)
+    (hZ : 0 < ∫ q, Real.exp (-β*U q))
+    (hint : ∀ i, Integrable (fun q ↦ q i*gradient U q i*Real.exp (-β*U q)) volume)
+    (hb : ∀ q i, Filter.Tendsto (fun r : ℝ ↦ r*Real.exp (-β*U (Function.update q i r))) Filter.atTop (𝓝 0) ∧
+      Filter.Tendsto (fun r : ℝ ↦ r*Real.exp (-β*U (Function.update q i r))) Filter.atBot (𝓝 0)) :
+    (∫ q, configurationTemperatureObservable U q ∂positionGibbs U β) = (n : ℝ)/β := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.kineticTemperatureObservable, MD.Ch07.configurationTemperatureObservable, MD.Ch07.kineticTemperature, MD.Ch07.configurationTemperature | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 无约束n个独立坐标时Nd=n，θ=1/β；约束减少自由度时不能直接用此n公式。；构型温度需真实归一位置Gibbs、可积和边界通量条件；数值分布下两种温度不必一致，不声称该等式对离散链自动成立。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需Gaussian二阶矩和多维Gibbs积分分部桥；不新建遍历性理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.kineticTemperatureObservable, MD.Ch07.configurationTemperatureObservable, MD.Ch07.kineticTemperature, MD.Ch07.configurationTemperature。
+
+## 1. MD-7.11.1-VelocityAutocorrelationDefinition · definition · 印刷p.310 / PDFp.331
+
+### 2. 原文陈述
+
+The self-diffusion coefficient gives a metric quantifying the diffusion rate. It is often used as a way to compare the rate of phase space exploration between methods, and is typically calculated using the integral of the velocity auto-correlation function. However, in theory one can construct arbitrary methods to artificially scale the velocity auto-correlation function, hence giving inaccurate diffusion constants: the momentum sampled may not be the momentum we use to propagate the position with.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def velocityAutocorrelation (P : Measure Ω) (v : ℝ → Ω → V n) (t : ℝ) : ℝ :=
+  ∫ sample, ∑ i, v 0 sample i*v t sample i ∂P
+def greenKuboDiffusion (P : Measure Ω) (v : ℝ → Ω → V n) : ℝ :=
+  (n : ℝ)⁻¹*∫ t in Set.Ioi (0 : ℝ), velocityAutocorrelation P v t
+theorem autocorrelation_rescale (P : Measure Ω) (v : ℝ → Ω → V n) (c t : ℝ) :
+    velocityAutocorrelation P (fun t sample i ↦ c*v t sample i) t = c^2*velocityAutocorrelation P v t := by
+  simp only [velocityAutocorrelation]
+  have heq : ∀ sample, (∑ i, (c*v 0 sample i)*(c*v t sample i)) = c^2*(∑ i, v 0 sample i*v t sample i) := by
+    intro sample
+    rw [Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro i _
+    ring
+  simp_rw [heq]
+  rw [integral_const_mul]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.velocityAutocorrelation, MD.Ch07.greenKuboDiffusion, MD.Ch07.autocorrelation_rescale | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 原文未给常数因子的显式Green–Kubo式；此处按各向同性n维标准归一记录1/n，仅在P概率、速度平稳、中心化且自相关可积等资格下解释为物理扩散率。；已证的缩放恒等式说明动量观测被缩放时自相关改变；扩散系数与Einstein关系的等价仍需混合与积分极限理论，未证明。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.velocityAutocorrelation, MD.Ch07.greenKuboDiffusion, MD.Ch07.autocorrelation_rescale。
 

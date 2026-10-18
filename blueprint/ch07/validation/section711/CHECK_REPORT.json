@@ -1,0 +1,200 @@
+{
+  "machine_check_status": "passed",
+  "formal_full_check_reused": "blueprint\\ch06\\closeout26\\full",
+  "formal_report_sha256": "c0ba2cfe39f61150c4ae13ee6d31ba52075ab01fb23db6cab003801f6509cd84",
+  "original_formal_checks": [
+    {
+      "name": "git_branch",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "git_branch.log",
+      "raw_log_sha256": "2bbd5079125161a27702bc1d6113f7e776accda188ceabc5298acaad2e5ef263"
+    },
+    {
+      "name": "git_head",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "git_head.log",
+      "raw_log_sha256": "6e3022eb0f7ed5776525f75b0c8ab2b7c5de36d9d1981b114f6c8f7b58f7f1c7"
+    },
+    {
+      "name": "git_status",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+        "status",
+        "--short"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "git_status.log",
+      "raw_log_sha256": "3b086d7f22c7e7f35db013225566e669520bb749813302fdd774e9009dd6a831"
+    },
+    {
+      "name": "lake_version",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "--version"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "lake_version.log",
+      "raw_log_sha256": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc"
+    },
+    {
+      "name": "lean_version",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "lean_version.log",
+      "raw_log_sha256": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25"
+    },
+    {
+      "name": "mathlib_revision",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\.lake\\packages\\mathlib",
+        "-C",
+        "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\.lake\\packages\\mathlib",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "mathlib_revision.log",
+      "raw_log_sha256": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3"
+    },
+    {
+      "name": "mathlib_status",
+      "executable": "git",
+      "arguments": [
+        "-c",
+        "safe.directory=C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\.lake\\packages\\mathlib",
+        "-C",
+        "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\.lake\\packages\\mathlib",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "mathlib_status.log",
+      "raw_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "lake_build",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "build"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "lake_build.log",
+      "raw_log_sha256": "0255d32e8f065eb83b249e55316e77a845dd818e74dfc435a3dfc898acc87fcf"
+    },
+    {
+      "name": "scratch",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "Scratch.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "scratch.log",
+      "raw_log_sha256": "313d7d8a4c867ae94ec6c76233c3d92188bac4d996222614efc0510a71376c4f"
+    },
+    {
+      "name": "axiom_dependencies",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "scripts/CheckAxioms.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "axiom_dependencies.log",
+      "raw_log_sha256": "4752968d596e6e834b2fbc84d3455c8797eabeaec240b74c6a3624ff0969d5e0"
+    },
+    {
+      "name": "blueprint_fresh_Ch01",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "Blueprint\\Ch01.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "blueprint_fresh_Ch01.log",
+      "raw_log_sha256": "b1253aa55d05f0c70a73c25c7d09925e5c72213998958a8d301825d88c94eabb"
+    },
+    {
+      "name": "blueprint_fresh_Ch02",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "Blueprint\\Ch02.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "blueprint_fresh_Ch02.log",
+      "raw_log_sha256": "a4a5f862ca2175b2fb1807056f56714aa250d6fc4cb660f69125dfd64cf3b126"
+    },
+    {
+      "name": "blueprint_axiom_dependencies",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\blueprint\\ch01\\CheckAxioms.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "blueprint_axiom_dependencies.log",
+      "raw_log_sha256": "d4485e49ae607374689f4d2d0927e9713c606a0050c7b2ced24440b4dd79e385"
+    },
+    {
+      "name": "chapter02_axiom_dependencies",
+      "executable": "C:\\Users\\ustc\\.elan\\bin\\lake.exe",
+      "arguments": [
+        "env",
+        "lean",
+        "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\blueprint\\ch02\\CheckAxioms.lean"
+      ],
+      "cwd": "C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization",
+      "exit_code": 0,
+      "raw_log": "chapter02_axiom_dependencies.log",
+      "raw_log_sha256": "a4b0ebe8ceb224b25eb142371a463bcab37ce451e04739b8c2d695fa5f48b1ac"
+    }
+  ],
+  "current_ch07_receipt": "blueprint\\ch07\\validation\\batches\\s711-v1-binding.json",
+  "canonical_sha256": "288b572c1c64796cb7b71a4c5cd0fd425c0f2a50764568abdd1e38e8721ad22a",
+  "frozen_files": 15196,
+  "native_rerun": false,
+  "scope": "复用输入逐字不变的正式库全检查；当前第7章使用本节完整当前源码和逐声明公理输出。"
+}
